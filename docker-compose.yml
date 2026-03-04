@@ -1,0 +1,30 @@
+services:
+  knowledge-aio:
+    build: .
+    container_name: Renan-english-app
+    ports:
+      - '8080:8080'
+    volumes:
+      # Mount source code for live development updates
+      - ./:/usr/share/nginx/html
+      # Exclude node_modules and .git from volume mount
+      - /usr/share/nginx/html/node_modules
+      - /usr/share/nginx/html/.git
+
+    # Security: Drop unnecessary capabilities
+    cap_drop:
+      - ALL
+
+    # Security: Read-only root filesystem (optional, requires strict path volume mapping for temp dirs)
+    # read_only: true
+    # (Commented out for now to ensure dev volume mounting works smoothly,
+    #  will enable in Production Stage)
+
+    restart: unless-stopped
+    networks:
+      - knowledge-aio-net
+    # Healthcheck is defined in Dockerfile, but can be overridden here if needed
+
+networks:
+  knowledge-aio-net:
+    driver: bridge

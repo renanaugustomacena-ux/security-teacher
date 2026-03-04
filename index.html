@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Impara l'inglese con la musica hip-hop - Learn English with hip-hop music"
+    />
+    <title>Knowledge AIO - Impara l'Inglese con la Musica</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <canvas id="matrix-morph"></canvas>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+      <div class="splash-content">
+        <svg
+          class="splash-logo"
+          viewBox="0 0 48 48"
+          width="220"
+          height="220"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="splash-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00ff41" />
+              <stop offset="40%" stop-color="#00d9ff" />
+              <stop offset="75%" stop-color="#d4a574" />
+              <stop offset="100%" stop-color="#e67e22" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M12 36 L20 8 L28 36 L24 36 L20 20 L16 36 Z"
+            fill="none"
+            stroke="url(#splash-grad)"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+          />
+          <line x1="14" y1="28" x2="26" y2="28" stroke="url(#splash-grad)" stroke-width="1.5" />
+          <line
+            x1="24"
+            y1="6"
+            x2="24"
+            y2="42"
+            stroke="url(#splash-grad)"
+            stroke-width="1.5"
+            opacity="0.6"
+          />
+          <circle cx="24" cy="6" r="2.5" fill="url(#splash-grad)" />
+          <circle cx="24" cy="42" r="1.5" fill="url(#splash-grad)" opacity="0.5" />
+          <circle
+            cx="34"
+            cy="24"
+            r="10"
+            fill="none"
+            stroke="url(#splash-grad)"
+            stroke-width="1.8"
+          />
+          <line x1="34" y1="14" x2="34" y2="12" stroke="url(#splash-grad)" stroke-width="2" />
+          <line x1="34" y1="36" x2="34" y2="34" stroke="url(#splash-grad)" stroke-width="2" />
+          <line x1="44" y1="24" x2="42" y2="24" stroke="url(#splash-grad)" stroke-width="2" />
+          <line
+            x1="28"
+            y1="36"
+            x2="24"
+            y2="36"
+            stroke="url(#splash-grad)"
+            stroke-width="1"
+            opacity="0.4"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <div class="app-container">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="logo">
+          <svg
+            class="logo-icon"
+            viewBox="0 0 48 48"
+            width="100"
+            height="100"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00ff41" />
+                <stop offset="40%" stop-color="#00d9ff" />
+                <stop offset="75%" stop-color="#d4a574" />
+                <stop offset="100%" stop-color="#e67e22" />
+              </linearGradient>
+              <filter id="logo-blur">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="0.3" />
+              </filter>
+            </defs>
+            <!-- A: Geometric triangle -->
+            <path
+              d="M12 36 L20 8 L28 36 L24 36 L20 20 L16 36 Z"
+              fill="none"
+              stroke="url(#logo-grad)"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            />
+            <line x1="14" y1="28" x2="26" y2="28" stroke="url(#logo-grad)" stroke-width="1.5" />
+            <!-- I: Central vertical with circuit dot -->
+            <line
+              x1="24"
+              y1="6"
+              x2="24"
+              y2="42"
+              stroke="url(#logo-grad)"
+              stroke-width="1.5"
+              opacity="0.6"
+            />
+            <circle cx="24" cy="6" r="2.5" fill="url(#logo-grad)" />
+            <circle cx="24" cy="42" r="1.5" fill="url(#logo-grad)" opacity="0.5" />
+            <!-- O: Geometric circle with tech notch -->
+            <circle
+              cx="34"
+              cy="24"
+              r="10"
+              fill="none"
+              stroke="url(#logo-grad)"
+              stroke-width="1.8"
+            />
+            <line x1="34" y1="14" x2="34" y2="12" stroke="url(#logo-grad)" stroke-width="2" />
+            <line x1="34" y1="36" x2="34" y2="34" stroke="url(#logo-grad)" stroke-width="2" />
+            <line x1="44" y1="24" x2="42" y2="24" stroke="url(#logo-grad)" stroke-width="2" />
+            <!-- Circuit connection lines -->
+            <line
+              x1="28"
+              y1="36"
+              x2="24"
+              y2="36"
+              stroke="url(#logo-grad)"
+              stroke-width="1"
+              opacity="0.4"
+            />
+            <line
+              x1="24"
+              y1="24"
+              x2="24"
+              y2="24"
+              stroke="url(#logo-grad)"
+              stroke-width="1"
+              opacity="0.4"
+            />
+          </svg>
+          <div class="logo-text">
+            <span class="logo-title">Knowledge</span>
+            <span class="logo-accent">A I O</span>
+          </div>
+          <div class="logo-separator"></div>
+        </div>
+
+        <div class="user-level">
+          <span class="level-badge">Livello 0</span>
+          <span class="level-label">Principiante / Beginner</span>
+        </div>
+
+        <nav class="nav-menu">
+          <button class="nav-item active" data-section="home">
+            <svg
+              class="nav-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            <span>Home</span>
+          </button>
+          <button class="nav-item" data-section="learn">
+            <svg
+              class="nav-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+            </svg>
+            <span>Impara / Learn</span>
+          </button>
+          <button class="nav-item" data-section="music">
+            <svg
+              class="nav-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M9 18V5l12-2v13" />
+              <circle cx="6" cy="18" r="3" />
+              <circle cx="18" cy="16" r="3" />
+            </svg>
+            <span>Musica / Music</span>
+          </button>
+          <button class="nav-item" data-section="practice">
+            <svg
+              class="nav-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 19l7-7 3 3-7 7-3-3z" />
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+              <path d="M2 2l7.586 7.586" />
+              <circle cx="11" cy="11" r="2" />
+            </svg>
+            <span>Pratica / Practice</span>
+          </button>
+          <button class="nav-item" data-section="topics">
+            <svg
+              class="nav-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+            <span>Argomenti / Topics</span>
+          </button>
+          <button class="nav-item" data-section="progress">
+            <svg
+              class="nav-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+            <span>Progressi / Progress</span>
+          </button>
+        </nav>
+
+        <!-- Matrix theme is permanent - no toggle needed -->
+
+        <div class="sidebar-footer">
+          <a
+            href="https://github.com/renanaugustomacena-ux"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-link"
+            id="github-author-link"
+          >
+            <svg class="github-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            <span>Made by Renan</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- HOME SECTION -->
+        <section id="home" class="section active">
+          <header class="section-header">
+            <h2>Benvenuto! / Welcome! 👋</h2>
+            <p class="section-subtitle">
+              Il tuo percorso per imparare l'inglese con la musica / Your journey to learn English
+              with music
+            </p>
+          </header>
+
+          <div class="home-grid">
+            <!-- Quick Stats -->
+            <div class="home-card stats-card">
+              <h3>I Tuoi Progressi / Your Progress</h3>
+              <div class="mini-stats">
+                <div class="mini-stat">
+                  <span class="mini-stat-value" id="home-words-learned">0</span>
+                  <span class="mini-stat-label">Parole / Words</span>
+                </div>
+                <div class="mini-stat">
+                  <span class="mini-stat-value" id="home-songs-practiced">0</span>
+                  <span class="mini-stat-label">Canzoni / Songs</span>
+                </div>
+                <div class="mini-stat">
+                  <span class="mini-stat-value" id="home-streak">0</span>
+                  <span class="mini-stat-label">Giorni / Days</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Continue Learning -->
+            <div class="home-card action-card" data-go-to="learn">
+              <h3>Continua a Imparare / Continue Learning</h3>
+              <p>Lezioni dal livello base / Lessons from beginner level</p>
+              <button class="btn btn-primary">Inizia / Start →</button>
+            </div>
+
+            <!-- Music Practice -->
+            <div class="home-card action-card featured" data-go-to="music">
+              <h3>Pratica con la Musica / Practice with Music</h3>
+              <p>Impara cantando hip-hop / Learn by singing hip-hop</p>
+              <button class="btn btn-primary">Canta / Sing →</button>
+            </div>
+
+            <!-- Quick Translator -->
+            <div class="home-card translate-card">
+              <h3>Traduttore / Translator</h3>
+              <div class="translate-direction">
+                <button type="button" class="btn btn-mode active" id="dir-en-it" data-lang="en|it">EN → IT</button>
+                <button type="button" class="btn btn-mode" id="dir-it-en" data-lang="it|en">IT → EN</button>
+              </div>
+              <div class="translate-input-wrap">
+                <input type="text" id="translate-input" class="translate-input" placeholder="Scrivi qui... / Type here..." autocomplete="off" />
+                <button type="button" class="btn btn-primary" id="translate-btn">Traduci</button>
+              </div>
+              <div class="translate-result" id="translate-result"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEARN SECTION -->
+        <section id="learn" class="section">
+          <header class="section-header">
+            <h2>Impara / Learn</h2>
+            <p class="section-subtitle">Scegli il tuo livello / Choose your level</p>
+          </header>
+
+          <div class="levels-grid">
+            <!-- Level 0 -->
+            <div class="level-card active-level" data-level="0">
+              <div class="level-header">
+                <span class="level-number">0</span>
+                <span class="level-status">Sei qui / You're here</span>
+              </div>
+              <h3>Sopravvivenza / Survival</h3>
+              <ul class="level-topics">
+                <li>Saluti e Presentazioni / Greetings & Intros</li>
+                <li>Frasi Essenziali / Essential Phrases</li>
+                <li>Verbi di Ogni Giorno / Everyday Verbs</li>
+              </ul>
+              <button class="btn btn-primary" onclick="startLesson(0)">Inizia / Start</button>
+            </div>
+
+            <!-- Level 1 -->
+            <div class="level-card" data-level="1">
+              <div class="level-header">
+                <span class="level-number">1</span>
+                <span class="level-status">Disponibile / Available</span>
+              </div>
+              <h3>Vita Quotidiana / Daily Life</h3>
+              <ul class="level-topics">
+                <li>Descrivere Persone / Describing People</li>
+                <li>Routines e Abitudini / Routines & Habits</li>
+                <li>Opinioni e Preferenze / Opinions</li>
+                <li>Cibo e Situazioni Sociali / Food & Social</li>
+              </ul>
+              <button class="btn btn-primary" onclick="startLesson(1)">Inizia / Start</button>
+            </div>
+
+            <!-- Level 2 -->
+            <div class="level-card" data-level="2">
+              <div class="level-header">
+                <span class="level-number">2</span>
+                <span class="level-status">Disponibile / Available</span>
+              </div>
+              <h3>Grammatica Intermedia / Intermediate Grammar</h3>
+              <ul class="level-topics">
+                <li>Condizionali / Conditionals</li>
+                <li>Passivo e Strutture Formali / Passive Voice</li>
+                <li>Connettori e Coesione / Connectors</li>
+              </ul>
+              <button class="btn btn-primary" onclick="startLesson(2)">Inizia / Start</button>
+            </div>
+
+            <!-- Level 3 -->
+            <div class="level-card" data-level="3">
+              <div class="level-header">
+                <span class="level-number">3</span>
+                <span class="level-status">Disponibile / Available</span>
+              </div>
+              <h3>Verso il C1 / Toward C1</h3>
+              <ul class="level-topics">
+                <li>Phrasal Verbs Essenziali</li>
+                <li>Modi di Dire / Idioms & Expressions</li>
+                <li>Vocabolario Astratto / Abstract Vocabulary</li>
+              </ul>
+              <button class="btn btn-primary" onclick="startLesson(3)">Inizia / Start</button>
+            </div>
+          </div>
+
+          <!-- Active Lesson Container -->
+          <div class="lesson-container hidden" id="lesson-container">
+            <div class="lesson-header">
+              <button class="btn btn-secondary back-btn" onclick="closeLessonView()">
+                ← Indietro / Back
+              </button>
+              <h3 id="lesson-title">Lezione / Lesson</h3>
+              <span class="lesson-progress" id="lesson-progress">1/10</span>
+            </div>
+            <div class="lesson-content" id="lesson-content">
+              <!-- Dynamic lesson content -->
+            </div>
+          </div>
+        </section>
+
+        <!-- MUSIC SECTION - KARAOKE -->
+        <section id="music" class="section">
+          <header class="section-header">
+            <h2>Musica / Music</h2>
+            <p class="section-subtitle">
+              Impara l'inglese cantando hip-hop / Learn English by singing hip-hop
+            </p>
+          </header>
+
+          <!-- Song Selection -->
+          <div class="song-selection" id="song-selection">
+            <!-- Pre-loaded Song Catalog -->
+            <div class="songs-grid" id="songs-grid">
+              <!-- Rendered by MusicManager.renderSongCatalog() -->
+            </div>
+
+            <!-- Local File Upload -->
+            <div class="upload-cta-container">
+              <div class="upload-zone" id="karaoke-drop-zone">
+                <span class="upload-icon"></span>
+                <h3>Carica la tua Musica / Upload Your Music</h3>
+                <p>Scegli un file audio dal tuo dispositivo / Choose an audio file from your device</p>
+                <button type="button" id="main-upload-btn" class="btn btn-primary">
+                  Seleziona File / Select File
+                </button>
+                <input type="file" id="main-audio-input" accept="audio/*" class="hidden" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Karaoke Player -->
+          <div class="karaoke-container hidden" id="karaoke-container">
+            <div class="karaoke-header">
+              <button class="btn btn-secondary back-btn" onclick="closeSong()">
+                ← Torna alle Canzoni / Back to Songs
+              </button>
+              <div class="song-info">
+                <h3 id="karaoke-song-title">Song Title</h3>
+                <p id="karaoke-artist">Artist</p>
+              </div>
+              <div class="header-actions">
+                <button id="upload-audio-btn" class="btn btn-secondary">
+                  Carica Audio / Upload Audio
+                </button>
+                <input type="file" id="karaoke-audio-input" accept="audio/*" class="hidden" />
+              </div>
+            </div>
+
+            <!-- Mode Selection -->
+            <div class="karaoke-modes">
+              <label class="mode-label">Modalità / Mode:</label>
+              <div class="btn-group" id="karaoke-mode-toggle">
+                <button class="btn btn-mode active" data-mode="step">Step-by-Step</button>
+                <button class="btn btn-mode" data-mode="realtime">Real-time (Non-stop)</button>
+              </div>
+            </div>
+
+            <!-- Step Controls -->
+            <div class="step-controls">
+              <span class="step-label"
+                >Step <span id="current-step">1</span> di / of <span id="total-steps">5</span></span
+              >
+              <div class="step-progress">
+                <div class="step-progress-fill" id="step-progress-fill" style="width: 20%"></div>
+              </div>
+            </div>
+
+            <!-- Scrolling block for realtime -->
+            <div class="lyrics-scroll-container" id="lyrics-scroll-container">
+              <div class="lyrics-scroll-viewport" id="lyrics-scroll-viewport">
+                <div class="lyrics-scroll-placeholder" id="lyrics-scroll-placeholder">
+                  Sincronizzazione... / Syncing...
+                </div>
+              </div>
+            </div>
+
+            <!-- Display legacy for step-by-step (hidden by default in realtime) -->
+            <div class="lyrics-display lyrics-display-step hidden" id="lyrics-display-step">
+              <div class="lyrics-original">
+                <span class="lang-label">EN</span>
+                <p class="lyrics-text" id="lyrics-english">Loading...</p>
+              </div>
+              <div class="lyrics-translation">
+                <span class="lang-label">IT</span>
+                <p class="lyrics-text" id="lyrics-italian">Caricamento...</p>
+              </div>
+            </div>
+
+            <!-- Vocabulary Section -->
+            <div class="lyrics-vocabulary">
+              <h4>Parole Chiave / Key Words</h4>
+              <div class="vocab-list" id="step-vocabulary">
+                <!-- Dynamic vocabulary -->
+              </div>
+            </div>
+
+            <!-- Phonetics Section -->
+            <div class="lyrics-phonetics">
+              <h4>Come Pronunciare / How to Pronounce</h4>
+              <div class="phonetics-list" id="step-phonetics">
+                <!-- Dynamic phonetics -->
+              </div>
+            </div>
+
+            <!-- Speed Control -->
+            <div class="speed-control">
+              <label>Velocità / Speed:</label>
+              <input type="range" id="speed-slider" min="0.5" max="1" step="0.1" value="0.7" />
+              <span id="speed-value">0.7x</span>
+              <div class="speed-labels">
+                <span>Lento / Slow</span>
+                <span>Normale / Normal</span>
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="karaoke-nav">
+              <button class="btn btn-secondary" id="prev-step" onclick="prevStep()">
+                ← Step Precedente / Previous Step
+              </button>
+              <button class="btn btn-primary" id="next-step" onclick="nextStep()">
+                Step Successivo / Next Step →
+              </button>
+            </div>
+
+            <!-- Completion -->
+            <div class="step-completion hidden" id="step-completion">
+              <div class="completion-content">
+                <span class="completion-icon"></span>
+                <h3>Canzone Completata! / Song Completed!</h3>
+                <p>
+                  Hai finito tutti gli step di questa canzone. / You finished all steps of this
+                  song.
+                </p>
+                <div class="completion-actions">
+                  <button class="btn btn-secondary" onclick="restartSong()">
+                    Ricomincia / Restart
+                  </button>
+                  <button class="btn btn-primary" onclick="closeSong()">
+                    Scegli Altra Canzone / Choose Another Song
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PRACTICE SECTION -->
+        <section id="practice" class="section">
+          <header class="section-header">
+            <h2>Pratica / Practice</h2>
+            <p class="section-subtitle">
+              Esercitati con quello che hai imparato / Practice what you learned
+            </p>
+          </header>
+
+          <div class="practice-grid">
+            <div class="practice-card" onclick="startPractice('listening')">
+              <div class="practice-icon"></div>
+              <h3>Ascolto / Listening</h3>
+              <p>Ascolta e scegli la parola corretta / Listen and choose the correct word</p>
+            </div>
+
+            <div class="practice-card" onclick="startPractice('writing')">
+              <div class="practice-icon"></div>
+              <h3>Scrittura / Writing</h3>
+              <p>Scrivi la traduzione / Write the translation</p>
+            </div>
+
+            <div class="practice-card" onclick="startPractice('matching')">
+              <div class="practice-icon"></div>
+              <h3>Abbinamento / Matching</h3>
+              <p>Abbina parole e significati / Match words and meanings</p>
+            </div>
+
+            <div class="practice-card" onclick="startPractice('fillblank')">
+              <div class="practice-icon"></div>
+              <h3>Completa / Fill in the Blank</h3>
+              <p>Completa le frasi delle canzoni / Complete song lyrics</p>
+            </div>
+
+            <div class="practice-card" onclick="startPractice('sentence')">
+              <div class="practice-icon"></div>
+              <h3>Ricostruisci / Sentence</h3>
+              <p>Ordina le parole della frase / Order the words in the sentence</p>
+            </div>
+
+            <div class="practice-card" onclick="startPractice('comprehension')">
+              <div class="practice-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+                  <line x1="8" y1="7" x2="16" y2="7" />
+                  <line x1="8" y1="11" x2="14" y2="11" />
+                </svg>
+              </div>
+              <h3>Comprensione / Comprehension</h3>
+              <p>Leggi e rispondi alle domande / Read and answer questions</p>
+            </div>
+
+            <div class="practice-card" onclick="startPractice('scenario')">
+              <div class="practice-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                  <line x1="8" y1="8" x2="16" y2="8" />
+                  <line x1="8" y1="12" x2="13" y2="12" />
+                </svg>
+              </div>
+              <h3>Scenario / Dialogue</h3>
+              <p>Completa dialoghi situazionali / Complete situational dialogues</p>
+            </div>
+          </div>
+
+          <!-- Practice Container -->
+          <div class="practice-container hidden" id="practice-container">
+            <div class="practice-header">
+              <button class="btn btn-secondary" onclick="closePractice()">← Indietro / Back</button>
+              <div class="practice-meta">
+                <span class="practice-timer" id="practice-timer">0s</span>
+                <span class="practice-streak" id="practice-streak"></span>
+                <span class="practice-xp" id="practice-xp">0 XP</span>
+              </div>
+              <span class="practice-progress" id="practice-progress">1/10</span>
+            </div>
+            <div class="practice-progress-bar">
+              <div
+                class="practice-progress-fill"
+                id="practice-progress-fill"
+                style="width: 10%"
+              ></div>
+            </div>
+            <div class="practice-content" id="practice-content">
+              <!-- Dynamic practice content -->
+            </div>
+          </div>
+        </section>
+
+        <!-- TOPICS SECTION -->
+        <section id="topics" class="section">
+          <header class="section-header">
+            <h2>Argomenti Tecnici / Technical Topics</h2>
+            <p class="section-subtitle">
+              Impara il vocabolario tecnico in inglese / Learn technical English vocabulary
+            </p>
+          </header>
+
+          <!-- Topics Hub Grid -->
+          <div id="topics-hub">
+            <!-- Dynamically rendered by TopicManager.renderTopicsHub() -->
+          </div>
+
+          <!-- Topic Detail View (levels / lessons) -->
+          <div id="topic-detail" class="hidden">
+            <!-- Dynamically rendered by TopicManager.openTopic() -->
+          </div>
+
+          <!-- Topic Lesson Container -->
+          <div class="topic-lesson-container hidden" id="topic-lesson-container">
+            <div class="lesson-header">
+              <button class="btn btn-secondary back-btn" onclick="topicManager.backToDetail()">
+                ← Indietro / Back
+              </button>
+              <h3 id="topic-lesson-title">Lezione / Lesson</h3>
+              <span class="lesson-progress" id="topic-lesson-progress">1/10</span>
+            </div>
+            <div class="lesson-content" id="topic-lesson-content">
+              <!-- Dynamic lesson content with technical enrichments -->
+            </div>
+          </div>
+
+          <!-- Topic Practice Container -->
+          <div class="topic-practice-container hidden" id="topic-practice-container">
+            <div class="practice-header">
+              <button class="btn btn-secondary" onclick="topicPracticeManager.closePractice()">
+                ← Indietro / Back
+              </button>
+              <div class="practice-meta">
+                <span class="practice-timer" id="topic-practice-timer">0s</span>
+                <span class="practice-streak" id="topic-practice-streak"></span>
+                <span class="practice-xp" id="topic-practice-xp">0 XP</span>
+              </div>
+              <span class="practice-progress" id="topic-practice-progress">1/10</span>
+            </div>
+            <div class="practice-progress-bar">
+              <div
+                class="practice-progress-fill"
+                id="topic-practice-progress-fill"
+                style="width: 10%"
+              ></div>
+            </div>
+            <div class="practice-content" id="topic-practice-content">
+              <!-- Dynamic practice content -->
+            </div>
+          </div>
+        </section>
+
+        <!-- PROGRESS SECTION -->
+        <section id="progress" class="section">
+          <header class="section-header">
+            <h2>I Tuoi Progressi / Your Progress</h2>
+            <p class="section-subtitle">Guarda quanto hai imparato / See how much you've learned</p>
+          </header>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-icon"></span>
+              <span class="stat-value" id="total-words">0</span>
+              <span class="stat-label">Parole Imparate / Words Learned</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon"></span>
+              <span class="stat-value" id="songs-completed">0</span>
+              <span class="stat-label">Canzoni / Songs</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon"></span>
+              <span class="stat-value" id="streak-days">0</span>
+              <span class="stat-label">Giorni di Fila / Day Streak</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon"></span>
+              <span class="stat-value" id="total-time">0m</span>
+              <span class="stat-label">Tempo di Studio / Study Time</span>
+            </div>
+          </div>
+
+          <div class="progress-section">
+            <h3>Livello Attuale / Current Level</h3>
+            <div class="level-progress-display">
+              <div class="current-level-info">
+                <span class="level-badge large">Livello 0</span>
+                <span class="level-name">Principiante / Beginner</span>
+              </div>
+              <div class="level-progress-bar">
+                <div class="level-progress-fill" id="level-progress" style="width: 10%"></div>
+              </div>
+              <span class="level-percent" id="level-percent">10%</span>
+            </div>
+          </div>
+
+          <div class="recent-activity">
+            <h3>Attività Recenti / Recent Activity</h3>
+            <ul class="activity-list" id="activity-list">
+              <li class="activity-item">
+                <span class="activity-icon"></span>
+                <span class="activity-text"
+                  >Inizia a imparare per vedere le attività! / Start learning to see
+                  activities!</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="importmap">
+      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+    </script>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
