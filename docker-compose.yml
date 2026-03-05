@@ -5,26 +5,182 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      # Mount source code for live development updates
+      # Montaggio del codice sorgente per aggiornamenti in tempo reale durante lo sviluppo
       - ./:/usr/share/nginx/html
-      # Exclude node_modules and .git from volume mount
+      # Esclusione di node_modules e .git dal montaggio dei volumi
       - /usr/share/nginx/html/node_modules
       - /usr/share/nginx/html/.git
 
-    # Security: Drop unnecessary capabilities
+    # Sicurezza: Rimozione di tutte le capability Linux non necessarie
     cap_drop:
       - ALL
 
-    # Security: Read-only root filesystem (optional, requires strict path volume mapping for temp dirs)
+    # Sicurezza: Filesystem root in sola lettura (opzionale, richiede mappatura precisa dei volumi per le directory temporanee)
     # read_only: true
-    # (Commented out for now to ensure dev volume mounting works smoothly,
-    #  will enable in Production Stage)
+    # (Commentato per ora per garantire il corretto funzionamento del montaggio dei volumi in sviluppo,
+    #  verra' abilitato nella fase di Produzione)
 
     restart: unless-stopped
     networks:
       - knowledge-aio-net
-    # Healthcheck is defined in Dockerfile, but can be overridden here if needed
+    # Il controllo di salute (healthcheck) e' definito nel Dockerfile, ma puo' essere sovrascritto qui se necessario
 
 networks:
   knowledge-aio-net:
     driver: bridge
+
+
+# ======================================================================================
+# SPIEGAZIONE TECNICA ESAUSTIVA — DOCKER-COMPOSE.YML
+# ======================================================================================
+#
+# COS'E' DOCKER COMPOSE?
+# -------------------------
+# Docker Compose e' uno strumento che permette di definire e gestire applicazioni
+# multi-contenitore utilizzando un singolo file YAML (docker-compose.yml).
+# Invece di avviare ogni contenitore manualmente con lunghi comandi "docker run",
+# Docker Compose permette di descrivere l'intera infrastruttura in modo dichiarativo
+# e avviarla con un singolo comando: "docker compose up".
+#
+# COS'E' YAML?
+# ---------------
+# YAML (YAML Ain't Markup Language) e' un formato di serializzazione dati leggibile
+# dall'uomo, basato sull'indentazione. E' molto usato per file di configurazione.
+# Regole fondamentali:
+#   - L'indentazione DEVE usare spazi (mai tabulazioni)
+#   - Le chiavi sono seguite da due punti e uno spazio (chiave: valore)
+#   - Le liste usano il trattino (- elemento)
+#
+# SEZIONE "services:"
+# ---------------------
+# Definisce i contenitori (servizi) che compongono l'applicazione. Ogni servizio
+# e' un contenitore Docker con la propria configurazione.
+#
+# knowledge-aio:
+#   - E' il nome logico del nostro servizio (scelto da noi).
+#   - "AIO" sta per "All-In-One": un unico contenitore che serve tutta l'applicazione.
+#
+#   build: .
+#     - Indica a Docker Compose di costruire l'immagine dal Dockerfile nella directory
+#       corrente ("."). Equivale a eseguire "docker build ." manualmente.
+#
+#   container_name: Renan-english-app
+#     - Assegna un nome fisso al contenitore invece del nome auto-generato da Docker.
+#     - Utile per identificare facilmente il contenitore con "docker ps".
+#
+#   ports: - '8080:8080'
+#     - Mappa la porta 8080 del computer host alla porta 8080 del contenitore.
+#     - Formato: 'PORTA_HOST:PORTA_CONTENITORE'
+#     - Questo permette di accedere all'applicazione dal browser digitando
+#       http://localhost:8080
+#     - Senza questa mappatura, il contenitore sarebbe isolato e irraggiungibile
+#       dall'esterno.
+#
+#   volumes:
+#     - I volumi sono il meccanismo principale per condividere dati tra il computer
+#       host e il contenitore Docker.
+#
+#     - ./:/usr/share/nginx/html
+#       → BIND MOUNT: Collega la directory corrente del progetto (sul computer host)
+#         alla cartella web di Nginx (nel contenitore).
+#       → Ogni modifica ai file sorgente sul computer host si riflette immediatamente
+#         nel contenitore, senza dover ricostruire l'immagine.
+#       → Fondamentale per lo sviluppo: permette il "live reload".
+#
+#     - /usr/share/nginx/html/node_modules
+#       → VOLUME ANONIMO: Crea un volume separato per node_modules DENTRO il contenitore.
+#       → Impedisce che la cartella node_modules dell'host sovrascriva quella del
+#         contenitore (e viceversa). Questo e' importante perche' node_modules puo'
+#         contenere moduli compilati specifici per l'architettura (Linux vs macOS).
+#
+#     - /usr/share/nginx/html/.git
+#       → Stesso principio: isola la cartella .git per evitare conflitti e
+#         ridurre il peso del volume montato.
+#
+#   cap_drop: - ALL
+#     - CAPABILITY LINUX: Il kernel Linux suddivide i privilegi di root in "capability"
+#       individuali (circa 40). Invece di dare tutti i privilegi o nessuno, si possono
+#       concedere solo quelli necessari.
+#     - "cap_drop: ALL" rimuove TUTTE le capability dal contenitore.
+#     - Questo significa che anche se qualcuno ottenesse accesso al contenitore,
+#       non potrebbe: montare filesystem, cambiare il proprietario dei file,
+#       modificare le interfacce di rete, caricare moduli del kernel, ecc.
+#     - E' una delle misure di sicurezza piu' efficaci per i contenitori Docker.
+#     - In produzione, si aggiungerebbero solo le capability strettamente necessarie
+#       con "cap_add".
+#
+#   read_only: true (commentato)
+#     - Rende il filesystem del contenitore interamente in sola lettura.
+#     - Impedisce la scrittura su qualsiasi file all'interno del contenitore.
+#     - Protegge da attacchi che tentano di modificare file di configurazione
+#       o iniettare codice malevolo nel filesystem.
+#     - Attualmente commentato perche' in fase di sviluppo i volumi montati
+#       richiedono permessi di scrittura per il live reload.
+#
+#   restart: unless-stopped
+#     - Politica di riavvio automatico del contenitore:
+#       → "no": non riavvia mai (impostazione predefinita)
+#       → "always": riavvia sempre, anche dopo un reboot del sistema
+#       → "unless-stopped": riavvia sempre TRANNE se fermato manualmente dall'utente
+#       → "on-failure": riavvia solo se il contenitore esce con un codice di errore
+#     - "unless-stopped" e' ideale per lo sviluppo: il contenitore si riavvia
+#       automaticamente dopo un crash, ma resta fermo se lo fermiamo con "docker stop".
+#
+#   networks: - knowledge-aio-net
+#     - Collega il servizio alla rete Docker personalizzata "knowledge-aio-net".
+#     - Vedi la sezione "networks" sotto per i dettagli.
+#
+# SEZIONE "networks:"
+# ----------------------
+# Definisce le reti Docker personalizzate utilizzate dai servizi.
+#
+# knowledge-aio-net:
+#   driver: bridge
+#     - "bridge" e' il driver di rete predefinito di Docker.
+#     - Crea una rete virtuale isolata in cui i contenitori possono comunicare
+#       tra di loro usando i nomi dei servizi come hostname.
+#     - I contenitori su reti diverse NON possono comunicare tra loro (isolamento).
+#     - Tipi di driver disponibili:
+#       → "bridge": rete locale isolata (default, ideale per la maggior parte dei casi)
+#       → "host": il contenitore condivide la rete dell'host (nessun isolamento)
+#       → "overlay": rete distribuita su piu' macchine (per Docker Swarm/cluster)
+#       → "none": nessuna connettivita' di rete
+#
+# COMANDI PRINCIPALI DI DOCKER COMPOSE
+# ----------------------------------------
+# docker compose up          → Avvia tutti i servizi definiti nel file
+# docker compose up -d       → Avvia in background (modalita' "detached")
+# docker compose up --build  → Ricostruisce le immagini prima di avviare
+# docker compose down        → Ferma e rimuove tutti i contenitori e le reti
+# docker compose ps          → Mostra lo stato dei servizi in esecuzione
+# docker compose logs        → Mostra i log di tutti i servizi
+# docker compose logs -f     → Mostra i log in tempo reale (follow)
+# docker compose exec <svc> sh → Apre una shell interattiva dentro un contenitore
+#
+# CONCETTI CHIAVE PER STUDENTI
+# ------------------------------
+# 1. INFRASTRUTTURA COME CODICE (IaC): docker-compose.yml trasforma l'infrastruttura
+#    in codice versionabile con Git. Chiunque nel team puo' avviare lo stesso
+#    ambiente identico con un solo comando. Addio "funziona sul mio computer"!
+#
+# 2. ISOLAMENTO: Ogni contenitore e' isolato dagli altri e dal sistema host.
+#    Ha il proprio filesystem, i propri processi, la propria rete. Se un contenitore
+#    viene compromesso, l'attaccante e' "intrappolato" al suo interno.
+#
+# 3. RIPRODUCIBILITA': Lo stesso docker-compose.yml produce lo stesso ambiente
+#    su qualsiasi macchina (Linux, macOS, Windows con WSL). Questo elimina i
+#    problemi di configurazione e garantisce coerenza tra sviluppo e produzione.
+#
+# 4. PRINCIPIO DEL MINIMO PRIVILEGIO: cap_drop: ALL segue questo principio
+#    fondamentale della sicurezza informatica. Non diamo mai piu' permessi di
+#    quelli strettamente necessari. E' come dare a un dipendente solo le chiavi
+#    delle stanze di cui ha bisogno, non il mazzo completo dell'edificio.
+#
+# 5. BIND MOUNT vs VOLUME:
+#    - Bind mount (./:/path): collega una cartella specifica dell'host al contenitore.
+#      Ideale per lo sviluppo (modifiche in tempo reale).
+#    - Volume Docker (docker volume create): gestito interamente da Docker, piu'
+#      performante e portabile. Ideale per la produzione e per dati persistenti
+#      (database, log).
+#
+# ======================================================================================
