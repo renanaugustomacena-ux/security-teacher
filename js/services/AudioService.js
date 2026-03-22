@@ -60,7 +60,7 @@ class AudioService {
 
     const actualStartOffset = Math.max(0, Math.min(startOffset, this.buffer.duration));
     this.source.start(0, actualStartOffset);
-    this.startTime = this.audioContext.currentTime - actualStartOffset / this.currentPlaybackRate;
+    this.startTime = this.audioContext.currentTime;
     this.isPlaying = true;
     this.pauseOffset = actualStartOffset;
 

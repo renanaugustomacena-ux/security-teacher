@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-const CACHE_NAME = 'kaio-v2';
+const CACHE_NAME = 'kaio-v3';
 
 const STATIC_ASSETS = [
   './',

@@ -147,9 +147,22 @@
   padding: 0;
 }
 
+img,
+video,
+svg,
+canvas,
+iframe,
+embed,
+object {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -158,6 +171,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
+  overflow-x: hidden;
   transition:
     background-color var(--transition-normal),
     color var(--transition-normal);
@@ -188,7 +202,8 @@ body {
   z-index: var(--z-sidebar);
   transition:
     background-color var(--transition-normal),
-    border-color var(--transition-normal);
+    border-color var(--transition-normal),
+    transform var(--transition-normal);
 }
 
 .logo {
@@ -359,6 +374,7 @@ body {
   max-width: 1200px;
   background: transparent;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .section {
@@ -579,7 +595,7 @@ h3 {
 /* ---------- HOME SECTION ---------- */
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: var(--space-lg);
 }
 
@@ -700,7 +716,7 @@ h3 {
 /* ---------- LEARN SECTION ---------- */
 .levels-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
   gap: var(--space-lg);
 }
 
@@ -772,7 +788,7 @@ h3 {
 
 .lesson-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   gap: var(--space-md);
 }
 
@@ -841,7 +857,7 @@ h3 {
 
 .songs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: var(--space-lg);
 }
 
@@ -1012,7 +1028,7 @@ h3 {
    ═══════════════════════════════════════════════ */
 .lyrics-scroll-container {
   position: relative;
-  height: 480px;
+  height: min(480px, 60vh);
   overflow: hidden;
   background: var(--bg-tertiary);
   border-radius: var(--radius-xl);
@@ -1145,7 +1161,7 @@ h3 {
 .vocab-list,
 .phonetics-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
   gap: var(--space-md);
 }
 
@@ -1238,11 +1254,49 @@ h3 {
 .karaoke-nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   gap: var(--space-lg);
 }
 
 .karaoke-nav .btn {
   flex: 1;
+}
+
+/* Sync Offset Controls */
+.sync-offset-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex: 0 0 auto;
+  font-size: 0.8rem;
+}
+
+.sync-offset-controls span {
+  min-width: 6.5em;
+  text-align: center;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.btn-sync {
+  padding: var(--space-xs) var(--space-sm) !important;
+  font-size: 0.75rem !important;
+  min-width: auto !important;
+  flex: 0 0 auto !important;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.btn-sync:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 /* Step Completion */
@@ -1276,7 +1330,7 @@ h3 {
 /* ---------- PRACTICE SECTION ---------- */
 .practice-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
   gap: var(--space-lg);
 }
 
@@ -1585,10 +1639,60 @@ h3 {
   margin-bottom: var(--space-xl);
 }
 
-/* ---------- Responsive Design ---------- */
+/* ==========================================================================
+   MOBILE MENU BUTTON
+   ========================================================================== */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: calc(var(--z-sidebar) + 10);
+  width: 44px;
+  height: 44px;
+  padding: 10px 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN -- COMPREHENSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* ---------- 1024px: Tablets / small laptops ---------- */
 @media (max-width: 1024px) {
   .lyrics-scroll-container {
-    height: 360px;
+    height: min(360px, 55vh);
   }
 
   .lyrics-scroll-viewport {
@@ -1598,50 +1702,309 @@ h3 {
   .lyrics-display {
     grid-template-columns: 1fr;
   }
-
-  .home-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
+/* ---------- 768px: Primary mobile breakpoint (sidebar collapses) ---------- */
 @media (max-width: 768px) {
+  /* Show mobile menu button */
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  /* Sidebar: off-screen by default */
   .sidebar {
     position: fixed;
-    left: -100%;
-    transition: left var(--transition-normal);
+    left: 0;
+    top: 0;
+    width: min(280px, 85vw);
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    z-index: var(--z-sidebar);
+    background: rgba(10, 18, 35, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .sidebar.open {
-    left: 0;
+    transform: translateX(0);
   }
 
+  /* Sidebar overlay */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: calc(var(--z-sidebar) - 1);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+
+  .sidebar.open ~ .sidebar-overlay {
+    display: block;
+  }
+
+  /* Main content: full width */
   .main-content {
     margin-left: 0;
-    padding: var(--space-lg);
+    padding: var(--space-md);
+    padding-top: calc(44px + var(--space-md) * 2);
+    max-width: 100%;
   }
 
+  /* Section headers */
+  .section-header h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  /* Grid layouts: stack on mobile */
   .levels-grid,
   .songs-grid,
   .practice-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Karaoke */
   .karaoke-header {
     flex-direction: column;
     text-align: center;
+  }
+
+  .karaoke-modes {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .karaoke-nav {
     flex-direction: column;
   }
 
+  .lyrics-scroll-container {
+    height: min(320px, 50vh);
+  }
+
+  .lyrics-scroll-viewport {
+    padding: 120px var(--space-md) 180px;
+  }
+
+  /* Speed control: stack on narrow screens */
+  .speed-control {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .speed-control label {
+    text-align: center;
+  }
+
+  /* Stats */
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Progress */
   .level-progress-display {
     flex-direction: column;
     text-align: center;
+  }
+
+  /* Practice header */
+  .practice-header {
+    flex-wrap: wrap;
+  }
+
+  /* Lesson header */
+  .lesson-header {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  /* Achievement toast: ensure on-screen */
+  .achievement-toast {
+    width: calc(100vw - var(--space-md) * 2);
+    max-width: 340px;
+    right: -400px;
+  }
+
+  .achievement-toast.visible {
+    right: var(--space-md);
+  }
+
+  /* Completion actions stack */
+  .completion-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .completion-actions .btn {
+    width: 100%;
+  }
+
+  /* Lyrics display (step-by-step) */
+  .lyrics-display {
+    grid-template-columns: 1fr;
+  }
+
+  /* Options grid */
+  .options-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  /* Upload zone */
+  .upload-zone {
+    padding: var(--space-xl);
+  }
+
+  .upload-zone h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Btn group wrap */
+  .btn-group {
+    flex-wrap: wrap;
+  }
+
+  .btn-mode {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  /* New record toast */
+  .new-record-toast {
+    right: 1rem;
+    left: 1rem;
+    bottom: 1rem;
+    max-width: none;
+  }
+}
+
+/* ---------- 480px: Small phones ---------- */
+@media (max-width: 480px) {
+  .main-content {
+    padding: var(--space-sm);
+    padding-top: calc(44px + var(--space-sm) * 2);
+  }
+
+  .section-header h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  /* Cards: reduce padding */
+  .home-card,
+  .level-card,
+  .practice-card,
+  .song-card,
+  .topic-card,
+  .topic-level-card,
+  .topic-lesson-card,
+  .karaoke-container,
+  .lesson-container,
+  .practice-container,
+  .badge-card {
+    padding: var(--space-md);
+  }
+
+  /* Buttons: smaller on phones */
+  .btn {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
+  }
+
+  /* Stats grid: single column */
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  /* Mini stats wrap */
+  .mini-stats {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .mini-stat-value {
+    font-size: 1.5rem;
+  }
+
+  /* Score number */
+  .score-number {
+    font-size: 2.2rem;
+  }
+
+  /* Translate card */
+  .translate-input-wrap {
+    flex-direction: column;
+  }
+
+  .translate-direction {
+    flex-direction: column;
+  }
+
+  .translate-direction .btn-mode {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Karaoke nav buttons */
+  .karaoke-nav .btn {
+    font-size: var(--font-size-sm);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  /* Lesson nav buttons */
+  .lesson-nav-buttons {
+    flex-direction: column;
+  }
+
+  /* Summary stats */
+  .summary-stats {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  /* Completion breakdown */
+  .completion-breakdown {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  /* Badge gallery: single column */
+  .badge-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  /* Chat bubble on tiny screens */
+  .chat-bubble {
+    max-width: 92%;
+  }
+
+  /* Logo sizing in sidebar */
+  .logo-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-accent {
+    font-size: 2rem;
+  }
+
+  .logo-title {
+    font-size: 1.1rem;
   }
 }
 
@@ -1978,7 +2341,7 @@ h3 {
 
 .songs-catalog {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: var(--space-md);
 }
 
@@ -2125,7 +2488,7 @@ h3 {
 /* Topics Hub Grid */
 .topics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: var(--space-lg);
 }
 
@@ -2230,7 +2593,7 @@ h3 {
 /* Topic Levels Grid */
 .topic-levels-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
   gap: var(--space-lg);
 }
 
@@ -2297,7 +2660,7 @@ h3 {
 /* Topic Lessons Grid */
 .topic-lessons-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
   gap: var(--space-lg);
   margin-bottom: var(--space-xl);
 }
@@ -3757,35 +4120,11 @@ h3 {
   animation: progressGrow 0.6s ease-out;
 }
 
-/* --- Mobile Sidebar Overlay --- */
-.sidebar-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: var(--z-overlay);
-}
-
-.sidebar.open ~ .sidebar-overlay {
-  display: block;
-}
-
 /* --- Minimum Touch Targets (WCAG) --- */
 .btn,
 .nav-item,
-button {
+button:not(.tts-btn):not(.mobile-menu-btn) {
   min-height: 44px;
-}
-
-/* --- Responsive: Small Mobile --- */
-@media (max-width: 375px) {
-  .section-header h2 {
-    font-size: var(--font-size-3xl);
-  }
-
-  .main-content {
-    padding: var(--space-lg);
-  }
 }
 
 /* --- Splash Screen --- */
@@ -3851,7 +4190,7 @@ button {
 
 .mode-selector-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   gap: var(--space-lg);
 }
 
@@ -4267,7 +4606,7 @@ button {
 /* ---------- Badge Gallery Grid ---------- */
 .badge-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
   gap: var(--space-lg);
 }
 
@@ -4408,11 +4747,6 @@ button {
 
   .badge-category-tabs {
     justify-content: center;
-  }
-
-  .achievement-toast {
-    width: calc(100vw - var(--space-xl) * 2);
-    max-width: 340px;
   }
 }
 
@@ -5350,7 +5684,7 @@ button {
 
 .personal-bests-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   gap: var(--space-md);
 }
 
@@ -5485,7 +5819,7 @@ button {
 
 .alltime-stats {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(min(140px, 100%), 1fr));
   gap: var(--space-md);
 }
 
@@ -5523,7 +5857,7 @@ button {
 
 .comparison-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   gap: var(--space-md);
 }
 
@@ -5721,7 +6055,7 @@ button {
 /* ---------- Topic Selector Grid ---------- */
 .conversation-topics {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
   gap: var(--space-lg);
 }
 
@@ -5851,7 +6185,7 @@ button {
 
 /* ---------- Chat Bubbles ---------- */
 .chat-bubble {
-  max-width: 80%;
+  max-width: min(80%, 400px);
   animation: fadeInUp 0.3s ease-out;
 }
 
@@ -6114,7 +6448,7 @@ button {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   gap: var(--space-xs);
 }
 
@@ -6134,7 +6468,7 @@ button {
 /* ---------- Conversation Responsive ---------- */
 @media (max-width: 768px) {
   .conversation-topics {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   }
 
   .chat-container {
@@ -6144,7 +6478,7 @@ button {
   }
 
   .chat-bubble {
-    max-width: 90%;
+    max-width: min(90%, 400px);
   }
 
   .chat-header {

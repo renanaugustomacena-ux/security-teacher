@@ -20,10 +20,13 @@ export class MusicManager {
 
     this.playbackMode = 'realtime';
     this.syncedLyrics = [];
-    this.syncRequestId = null;
+    this.syncIntervalId = null;
     this.currentAudioFile = null;
     this.currentLineIndex = -1;
     this.isPreloadedSong = false;
+
+    // Sync offset (seconds) — user-adjustable timing correction
+    this.syncOffset = 0;
 
     // Scroll display state
     this.lyricsLineElements = [];
@@ -40,9 +43,9 @@ export class MusicManager {
     audioService.onPlaybackEnd = () => {
       const playBtn = document.getElementById('play-pause-btn');
       if (playBtn) playBtn.textContent = '▶ Riprendi / Play';
-      if (this.syncRequestId) {
-        cancelAnimationFrame(this.syncRequestId);
-        this.syncRequestId = null;
+      if (this.syncIntervalId) {
+        clearInterval(this.syncIntervalId);
+        this.syncIntervalId = null;
       }
     };
   }
@@ -346,10 +349,13 @@ export class MusicManager {
     if (!this.syncedLyrics || this.syncedLyrics.length === 0) return;
     if (this.lyricsLineElements.length === 0) return;
 
+    // Apply user-adjustable sync offset
+    const adjustedTime = time + this.syncOffset;
+
     // Find current index from timestamp
     let index = -1;
     for (let i = 0; i < this.syncedLyrics.length; i++) {
-      if (time >= this.syncedLyrics[i].time) {
+      if (adjustedTime >= this.syncedLyrics[i].time) {
         index = i;
       } else {
         break;
@@ -407,9 +413,9 @@ export class MusicManager {
   async togglePlayback() {
     if (audioService.isPlaying) {
       audioService.pause();
-      if (this.syncRequestId) {
-        cancelAnimationFrame(this.syncRequestId);
-        this.syncRequestId = null;
+      if (this.syncIntervalId) {
+        clearInterval(this.syncIntervalId);
+        this.syncIntervalId = null;
       }
     } else {
       await this.startPlayback();
@@ -421,24 +427,38 @@ export class MusicManager {
 
   stopPlayback() {
     audioService.stop();
-    if (this.syncRequestId) {
-      cancelAnimationFrame(this.syncRequestId);
-      this.syncRequestId = null;
+    if (this.syncIntervalId) {
+      clearInterval(this.syncIntervalId);
+      this.syncIntervalId = null;
     }
   }
 
   startSyncLoop() {
-    if (this.syncRequestId) cancelAnimationFrame(this.syncRequestId);
-    const loop = () => {
+    if (this.syncIntervalId) clearInterval(this.syncIntervalId);
+    this.syncIntervalId = setInterval(() => {
       if (!audioService.isPlaying) {
-        this.syncRequestId = null;
+        clearInterval(this.syncIntervalId);
+        this.syncIntervalId = null;
         return;
       }
       const currentTime = audioService.getCurrentTime();
       this.updateSyncedLyrics(currentTime);
-      this.syncRequestId = requestAnimationFrame(loop);
-    };
-    this.syncRequestId = requestAnimationFrame(loop);
+    }, 100);
+  }
+
+  adjustSync(delta) {
+    this.syncOffset += delta;
+    // Round to avoid floating point drift
+    this.syncOffset = Math.round(this.syncOffset * 10) / 10;
+    const display = document.getElementById('sync-offset-display');
+    if (display)
+      display.textContent = `Sync: ${this.syncOffset >= 0 ? '+' : ''}${this.syncOffset.toFixed(1)}s`;
+    // Force an immediate re-evaluation so the user sees the change
+    if (audioService.isPlaying) {
+      this.currentLineIndex = -1;
+      const currentTime = audioService.getCurrentTime();
+      this.updateSyncedLyrics(currentTime);
+    }
   }
 
   // ═══════════════════════════════════════════
@@ -465,6 +485,11 @@ export class MusicManager {
         karaokeNav.innerHTML = `
           <button class="btn btn-primary" id="play-pause-btn">${isPlaying ? 'Pausa / Pause' : 'Riprendi / Play'}</button>
           <button class="btn btn-secondary" onclick="restartSong()">Reset</button>
+          <div class="sync-offset-controls">
+            <button class="btn btn-sync" onclick="musicManager.adjustSync(-0.5)">-0.5s</button>
+            <span id="sync-offset-display">Sync: ${this.syncOffset >= 0 ? '+' : ''}${this.syncOffset.toFixed(1)}s</span>
+            <button class="btn btn-sync" onclick="musicManager.adjustSync(0.5)">+0.5s</button>
+          </div>
         `;
         const playBtn = document.getElementById('play-pause-btn');
         if (playBtn) playBtn.addEventListener('click', () => this.togglePlayback());
@@ -686,5 +711,6 @@ export class MusicManager {
     window.restartSong = () => this.restartSong();
     window.closeSong = () => this.closeSong();
     window.practiceFromSong = () => this.practiceFromSong();
+    window.adjustSync = (delta) => this.adjustSync(delta);
   }
 }

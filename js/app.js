@@ -281,6 +281,23 @@ class App {
   // -- Event Listeners (uses delegation where possible) --
 
   _setupEventListeners() {
+    // Mobile sidebar toggle
+    const sidebar = document.querySelector('.sidebar');
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    const closeSidebar = () => {
+      sidebar?.classList.remove('open');
+      menuBtn?.classList.remove('active');
+    };
+
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = sidebar?.classList.toggle('open');
+      menuBtn.classList.toggle('active', isOpen);
+    });
+
+    overlay?.addEventListener('click', closeSidebar);
+
     // Navigation - delegate from the nav container
     const navMenu = document.querySelector('.nav-menu');
     navMenu?.addEventListener('click', (e) => {
@@ -297,6 +314,9 @@ class App {
 
       document.querySelectorAll('.section').forEach((el) => el.classList.remove('active'));
       document.getElementById(section)?.classList.add('active');
+
+      // Close sidebar on mobile after navigation
+      closeSidebar();
 
       if (section === 'home') this._renderHome();
       if (section === 'progress') this._renderStreakCalendar();
