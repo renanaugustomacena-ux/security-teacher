@@ -5,7 +5,7 @@
 class StorageService {
   constructor() {
     this.dbName = 'FlowLearnDB';
-    this.dbVersion = 1;
+    this.dbVersion = 2;
     this.db = null;
     this.directoryHandle = null;
   }
@@ -27,20 +27,37 @@ class StorageService {
 
       request.onupgradeneeded = (event) => {
         const db = event.target.result;
+        const oldVersion = event.oldVersion;
 
-        // Settings Store
-        if (!db.objectStoreNames.contains('settings')) {
-          db.createObjectStore('settings', { keyPath: 'key' });
+        // Version 1 stores
+        if (oldVersion < 1) {
+          // Settings Store
+          if (!db.objectStoreNames.contains('settings')) {
+            db.createObjectStore('settings', { keyPath: 'key' });
+          }
+
+          // Progress Store
+          if (!db.objectStoreNames.contains('progress')) {
+            db.createObjectStore('progress', { keyPath: 'userId' });
+          }
+
+          // File Handles Store (for persistent permissions)
+          if (!db.objectStoreNames.contains('handles')) {
+            db.createObjectStore('handles', { keyPath: 'id' });
+          }
         }
 
-        // Progress Store
-        if (!db.objectStoreNames.contains('progress')) {
-          db.createObjectStore('progress', { keyPath: 'userId' });
-        }
+        // Version 2 stores
+        if (oldVersion < 2) {
+          // SRS (Spaced Repetition) Store
+          if (!db.objectStoreNames.contains('srs')) {
+            db.createObjectStore('srs', { keyPath: 'wordKey' });
+          }
 
-        // File Handles Store (for persistent permissions)
-        if (!db.objectStoreNames.contains('handles')) {
-          db.createObjectStore('handles', { keyPath: 'id' });
+          // Chat History Store (for future Feature 8)
+          if (!db.objectStoreNames.contains('chat_history')) {
+            db.createObjectStore('chat_history', { keyPath: 'sessionId' });
+          }
         }
       };
     });
@@ -116,6 +133,30 @@ class StorageService {
       const request = store.get(key);
 
       request.onsuccess = (e) => resolve(e.target.result);
+      request.onerror = (e) => reject(e.target.error);
+    });
+  }
+
+  async loadAll(storeName) {
+    if (!this.db) await this.init();
+    return new Promise((resolve, reject) => {
+      const transaction = this.db.transaction([storeName], 'readonly');
+      const store = transaction.objectStore(storeName);
+      const request = store.getAll();
+
+      request.onsuccess = (e) => resolve(e.target.result || []);
+      request.onerror = (e) => reject(e.target.error);
+    });
+  }
+
+  async delete(storeName, key) {
+    if (!this.db) await this.init();
+    return new Promise((resolve, reject) => {
+      const transaction = this.db.transaction([storeName], 'readwrite');
+      const store = transaction.objectStore(storeName);
+      const request = store.delete(key);
+
+      request.onsuccess = () => resolve();
       request.onerror = (e) => reject(e.target.error);
     });
   }

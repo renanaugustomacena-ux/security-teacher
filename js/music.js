@@ -10,6 +10,7 @@
 import { audioService } from './services/AudioService.js';
 import { lyricsService } from './services/LyricsService.js';
 import { songsDatabase, getSongById } from './songs.js';
+import { ttsService } from './services/TTSService.js';
 
 export class MusicManager {
   constructor(progressManager) {
@@ -129,7 +130,13 @@ export class MusicManager {
       progressFill.style.width = `${((this.currentStepIndex + 1) / totalSteps) * 100}%`;
     }
 
-    document.getElementById('lyrics-english').textContent = step.english;
+    const lyricsEnEl = document.getElementById('lyrics-english');
+    if (lyricsEnEl) {
+      lyricsEnEl.textContent = step.english;
+      if (ttsService.isSupported && step.english) {
+        lyricsEnEl.appendChild(ttsService.createSpeakerButton(step.english));
+      }
+    }
     document.getElementById('lyrics-italian').textContent = step.italian;
 
     const vocabContainer = document.getElementById('step-vocabulary');
@@ -138,7 +145,7 @@ export class MusicManager {
         .map(
           (v) => `
         <div class="vocab-item">
-          <div class="vocab-word">${v.word || ''}</div>
+          <div class="vocab-word">${v.word || ''} ${ttsService.isSupported && v.word ? ttsService.speakerButtonHTML(v.word) : ''}</div>
           <div class="vocab-pronunciation">${v.pronunciation || ''}</div>
           <div class="vocab-translation">${v.translation || ''}</div>
           <div class="vocab-example">${v.example || ''}</div>
@@ -146,6 +153,7 @@ export class MusicManager {
       `
         )
         .join('');
+      ttsService.attachTTSListeners(vocabContainer);
     }
 
     const phoneticsContainer = document.getElementById('step-phonetics');
@@ -567,6 +575,29 @@ export class MusicManager {
 
   completeSong() {
     this.progressManager.completeSong(this.currentSong?.title || 'Unknown');
+
+    // Ingest vocabulary from song steps into SRS
+    if (window.srsManager && this.currentSong?.steps) {
+      const words = [];
+      for (const step of this.currentSong.steps) {
+        if (step.vocabulary?.length) {
+          for (const v of step.vocabulary) {
+            if (v.word) {
+              words.push({
+                english: v.word,
+                italian: v.translation || '',
+                pronunciation: v.pronunciation || '',
+                example: v.example || '',
+              });
+            }
+          }
+        }
+      }
+      if (words.length) {
+        const source = `song-${this.currentSong.id || this.currentSong.title}`;
+        window.srsManager.addWords(words, source);
+      }
+    }
 
     const completionEl = document.getElementById('step-completion');
     if (!completionEl) return;

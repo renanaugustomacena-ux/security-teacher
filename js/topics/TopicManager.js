@@ -12,6 +12,7 @@
  */
 
 import { topicsRegistry, getTopicMeta } from './registry.js';
+import { ttsService } from '../services/TTSService.js';
 
 export class TopicManager {
   constructor(progressManager) {
@@ -296,10 +297,12 @@ export class TopicManager {
       `;
     }
 
+    const ttsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(item.english) : '';
+
     container.innerHTML = `
       <div class="lesson-item-card topic-item-card">
         <div class="item-pair">
-          <div class="item-english">${this.escapeHtml(item.english)}</div>
+          <div class="item-english">${this.escapeHtml(item.english)} ${ttsBtn}</div>
           <div class="item-separator"></div>
           <div class="item-italian">${this.escapeHtml(item.italian)}</div>
         </div>
@@ -314,6 +317,8 @@ export class TopicManager {
         <button class="btn btn-primary" onclick="topicManager.nextItem()">${this.currentItemIndex === total - 1 ? 'Completa / Complete' : 'Prossimo / Next \u2192'}</button>
       </div>
     `;
+
+    ttsService.attachTTSListeners(container);
   }
 
   prevItem() {
@@ -338,6 +343,23 @@ export class TopicManager {
       this.currentLevel,
       this.currentLesson.id
     );
+
+    // Track daily goals
+    this.progressManager.incrementDailyLessons();
+
+    // Ingest vocabulary into SRS
+    if (window.srsManager && this.currentLesson?.items) {
+      const words = this.currentLesson.items
+        .filter((item) => item.english && item.italian)
+        .map((item) => ({
+          english: item.english,
+          italian: item.italian,
+          pronunciation: item.pronunciation || '',
+          example: item.example || '',
+        }));
+      const source = `topic-${this.currentTopicId}-${this.currentLevel}-${this.currentLesson.id}`;
+      window.srsManager.addWords(words, source);
+    }
 
     const container = document.getElementById('topic-lesson-content');
     if (!container) return;

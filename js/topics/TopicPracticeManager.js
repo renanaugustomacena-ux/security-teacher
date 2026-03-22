@@ -19,6 +19,8 @@
  * 11. scenario     - Fill blank in a situational dialogue
  */
 
+import { ttsService } from '../services/TTSService.js';
+
 const ENCOURAGING_CORRECT = [
   'Perfetto! / Perfect!',
   'Ottimo! / Great!',
@@ -451,12 +453,13 @@ export class TopicPracticeManager {
       case 'listening':
       case 'matching': {
         const options = this.generateOptions(q.italian);
+        const ttsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(q.english) : '';
         html = `
           <div class="exercise-card">
             <div class="exercise-instruction">
               ${this.currentMode === 'listening' ? 'Ascolta e scegli:' : 'Qual \u00E8 la traduzione di:'}
             </div>
-            <div class="exercise-target">${this.escapeHtml(q.english)}</div>
+            <div class="exercise-target">${this.escapeHtml(q.english)} ${ttsBtn}</div>
             ${q.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(q.pronunciation)}</div>` : ''}
             <div class="options-grid">
               ${options
@@ -475,11 +478,12 @@ export class TopicPracticeManager {
         break;
       }
 
-      case 'writing':
+      case 'writing': {
+        const writingTtsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(q.english) : '';
         html = `
           <div class="exercise-card">
             <div class="exercise-instruction">Scrivi la traduzione in italiano:</div>
-            <div class="exercise-target">${this.escapeHtml(q.english)}</div>
+            <div class="exercise-target">${this.escapeHtml(q.english)} ${writingTtsBtn}</div>
             ${q.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(q.pronunciation)}</div>` : ''}
             <input type="text" id="topic-writing-input" class="practice-input" placeholder="Scrivi qui..." autofocus>
             <button class="btn btn-primary" style="margin-top: 1rem;"
@@ -489,6 +493,7 @@ export class TopicPracticeManager {
           </div>
         `;
         break;
+      }
 
       case 'fillblank': {
         const sentence = q.example;
@@ -579,11 +584,12 @@ export class TopicPracticeManager {
       case 'context': {
         const correctContext = q.context || 'general';
         const contextOptions = this.generateContextOptions(correctContext);
+        const contextTtsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(q.english) : '';
 
         html = `
           <div class="exercise-card">
             <div class="exercise-instruction">In quale contesto si usa questo termine?</div>
-            <div class="exercise-target">${this.escapeHtml(q.english)}</div>
+            <div class="exercise-target">${this.escapeHtml(q.english)} ${contextTtsBtn}</div>
             ${q.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(q.pronunciation)}</div>` : ''}
             <div class="options-grid">
               ${contextOptions
@@ -654,12 +660,15 @@ export class TopicPracticeManager {
         const scenario =
           TECH_SCENARIO_TEMPLATES[this.currentQuestionIndex % TECH_SCENARIO_TEMPLATES.length];
         const options = this.generateScenarioOptions(targetWord);
+        const scenarioTtsBtn = ttsService.isSupported
+          ? ttsService.speakerButtonHTML(englishPhrase)
+          : '';
 
         html = `
           <div class="exercise-card">
             <div class="exercise-instruction">Scenario:</div>
             <div class="exercise-scenario">${this.escapeHtml(scenario)}</div>
-            <div class="exercise-target">${this.escapeHtml(blankedPhrase)}</div>
+            <div class="exercise-target">${this.escapeHtml(blankedPhrase)} ${scenarioTtsBtn}</div>
             <p class="translation-hint">${this.escapeHtml(italianHint)}</p>
             <div class="options-grid">
               ${options
@@ -703,6 +712,15 @@ export class TopicPracticeManager {
     }
 
     container.innerHTML = html;
+    ttsService.attachTTSListeners(container);
+
+    // Auto-play TTS for listening mode
+    if (this.currentMode === 'listening' && ttsService.isSupported) {
+      const currentQ = this.questions[this.currentQuestionIndex];
+      if (currentQ && currentQ.english) {
+        ttsService.speak(currentQ.english);
+      }
+    }
 
     // Focus input and bind Enter key
     const input = document.getElementById('topic-writing-input');
@@ -1275,6 +1293,9 @@ export class TopicPracticeManager {
   }
 
   completePractice() {
+    // Track practice session completion for achievements
+    this.progressManager?.recordPracticeSession?.(this.score, this.questions.length);
+
     const container = document.getElementById('topic-practice-content');
     if (!container) return;
 

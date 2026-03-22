@@ -19,6 +19,14 @@ import { LearnManager } from './LearnManager.js';
 import { PracticeManager } from './PracticeManager.js';
 import { TopicManager } from './topics/TopicManager.js';
 import { TopicPracticeManager } from './topics/TopicPracticeManager.js';
+import { DailyGoalsManager } from './DailyGoalsManager.js';
+import { AchievementManager } from './AchievementManager.js';
+import { PronunciationManager } from './PronunciationManager.js';
+import { SRSManager } from './SRSManager.js';
+import { StreakCalendarManager } from './StreakCalendarManager.js';
+import { LeaderboardManager } from './LeaderboardManager.js';
+import { VideoManager } from './VideoManager.js';
+import { ConversationManager } from './ConversationManager.js';
 import { MorphBackground } from './MorphBackground.js';
 import { CursorParticles } from './CursorParticles.js';
 
@@ -38,6 +46,22 @@ class App {
     this.topicManager = null;
     /** @type {TopicPracticeManager | null} */
     this.topicPracticeManager = null;
+    /** @type {DailyGoalsManager | null} */
+    this.dailyGoalsManager = null;
+    /** @type {AchievementManager | null} */
+    this.achievementManager = null;
+    /** @type {PronunciationManager | null} */
+    this.pronunciationManager = null;
+    /** @type {SRSManager | null} */
+    this.srsManager = null;
+    /** @type {StreakCalendarManager | null} */
+    this.streakCalendarManager = null;
+    /** @type {LeaderboardManager | null} */
+    this.leaderboardManager = null;
+    /** @type {VideoManager | null} */
+    this.videoManager = null;
+    /** @type {ConversationManager | null} */
+    this.conversationManager = null;
     /** @type {MorphBackground | null} */
     this.morphBackground = null;
     /** @type {CursorParticles | null} */
@@ -80,8 +104,24 @@ class App {
       this.practiceManager = new PracticeManager(this.progressManager);
       this.topicManager = new TopicManager(this.progressManager);
       this.topicPracticeManager = new TopicPracticeManager(this.progressManager);
+      this.dailyGoalsManager = new DailyGoalsManager(this.progressManager);
+      this.achievementManager = new AchievementManager(this.progressManager);
+      this.pronunciationManager = new PronunciationManager(this.progressManager);
+      this.srsManager = new SRSManager(this.progressManager, storageService);
+      this.streakCalendarManager = new StreakCalendarManager(this.progressManager);
+      this.leaderboardManager = new LeaderboardManager(this.progressManager);
+      this.videoManager = new VideoManager(this.progressManager);
+      this.conversationManager = new ConversationManager(this.progressManager);
       this.topicManager.init();
       this.topicPracticeManager.init();
+      this.dailyGoalsManager.init();
+      this.achievementManager.init();
+      this.pronunciationManager.init();
+      this.streakCalendarManager.init();
+      this.leaderboardManager.init();
+      this.videoManager.init();
+      this.conversationManager.init();
+      await this.srsManager.init();
     } catch (err) {
       console.error('Manager initialization failed:', err);
     }
@@ -96,6 +136,7 @@ class App {
     // 6. Initial Render
     this._render();
     this._renderHome();
+    this._renderStreakCalendar();
 
     // 7. Visual Effects (non-critical - fail silently)
     this._initVisualEffects();
@@ -194,11 +235,20 @@ class App {
     window.startPractice = (mode) => this.practiceManager?.startPractice(mode);
     window.closePractice = () => this.practiceManager?.closePractice();
 
+    window.startPronunciation = () => this.pronunciationManager?.startSession();
+
     window.musicManager = this.musicManager;
     window.learnManager = this.learnManager;
     window.practiceManager = this.practiceManager;
+    window.pronunciationManager = this.pronunciationManager;
     window.topicManager = this.topicManager;
     window.topicPracticeManager = this.topicPracticeManager;
+    window.srsManager = this.srsManager;
+    window.leaderboardManager = this.leaderboardManager;
+    window.videoManager = this.videoManager;
+    window.conversationManager = this.conversationManager;
+    window.startConversation = (id) => this.conversationManager?.startConversation(id);
+    window.startSRSReview = () => this.srsManager?.renderReviewSession();
   }
 
   // -- Event Listeners (uses delegation where possible) --
@@ -222,7 +272,12 @@ class App {
       document.getElementById(section)?.classList.add('active');
 
       if (section === 'home') this._renderHome();
+      if (section === 'progress') this._renderStreakCalendar();
       if (section === 'topics') this.topicManager?.renderTopicsHub();
+      if (section === 'badges') this._renderBadges();
+      if (section === 'leaderboard') this._renderLeaderboard();
+      if (section === 'conversation') this.conversationManager?.renderTopicSelector();
+      if (section === 'video') this.videoManager?.renderVideoGrid();
     });
 
     // Home action cards - delegate from home section
@@ -258,6 +313,8 @@ class App {
     this._setText('home-words-learned', data.wordsLearned);
     this._setText('home-songs-practiced', data.songsCompleted);
     this._setText('home-streak', data.streak?.current ?? 0);
+
+    this.dailyGoalsManager?.renderGoalsWidget();
 
     this._initTranslationBox();
   }
@@ -296,6 +353,26 @@ class App {
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') doTranslate();
     });
+  }
+
+  // -- Streak Calendar Rendering --
+
+  _renderStreakCalendar() {
+    this.streakCalendarManager?.renderCalendar('streak-calendar-container');
+    this.streakCalendarManager?.renderStreakInfo('streak-info-container');
+  }
+
+  // -- Badges Page Rendering --
+
+  _renderBadges() {
+    this.achievementManager?.checkAll();
+    this.achievementManager?.renderBadgeGallery();
+  }
+
+  // -- Leaderboard Page Rendering --
+
+  _renderLeaderboard() {
+    this.leaderboardManager?.renderLeaderboard();
   }
 
   // -- DOM Helpers --

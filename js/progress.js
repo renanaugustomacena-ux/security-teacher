@@ -11,6 +11,7 @@
 
 import { getLessonsByLevel } from './lessons.js';
 import { storageService } from './services/StorageService.js';
+import { getToday, getDaysBetween } from './utils/DateUtils.js';
 
 export class ProgressManager {
   constructor() {
@@ -82,6 +83,55 @@ export class ProgressManager {
         weekTotal: 0,
         lastResetDate: null,
       },
+      practiceSessionsCompleted: 0,
+      perfectScoreAchieved: false,
+      pronunciationStats: {
+        totalAttempts: 0,
+        avgScore: 0,
+        sessionsCompleted: 0,
+      },
+      videoProgress: {
+        completedClips: {},
+        totalClipsWatched: 0,
+      },
+      conversationStats: {
+        sessionsCompleted: 0,
+        messagesExchanged: 0,
+        correctionsReceived: 0,
+      },
+      achievements: { unlocked: {} },
+      leaderboard: {
+        personalBests: {
+          bestDailyXP: { value: 0, date: '' },
+          bestStreak: { value: 0, date: '' },
+          mostWordsInDay: { value: 0, date: '' },
+          bestPracticeScore: { value: 0, date: '' },
+          fastestPractice: { value: Infinity, date: '' },
+          mostStudyTime: { value: 0, date: '' },
+        },
+        weeklySnapshots: [],
+        lastWeeklySnapshot: '',
+      },
+      streakCalendar: {
+        studyDays: {},
+        freezes: { available: 1, usedThisWeek: [], lastRefill: '' },
+        bestStreak: 0,
+      },
+      dailyGoals: {
+        date: '',
+        goals: {
+          lessonsTarget: 2,
+          lessonsCompleted: 0,
+          practiceTarget: 3,
+          practiceCompleted: 0,
+          wordsTarget: 10,
+          wordsLearned: 0,
+          timeTarget: 15,
+          timeSpent: 0,
+        },
+        challengeOfTheDay: null,
+        completed: false,
+      },
     };
   }
 
@@ -98,6 +148,98 @@ export class ProgressManager {
     } catch (e) {
       console.error('Error saving progress:', e);
     }
+
+    // Trigger achievement check after every save
+    this._triggerAchievementCheck();
+  }
+
+  /**
+   * Trigger achievement check via the app-level manager
+   */
+  _triggerAchievementCheck() {
+    try {
+      window.app?.achievementManager?.checkAll();
+    } catch {
+      // Achievement check is non-critical
+    }
+  }
+
+  /**
+   * Check if a badge is unlocked
+   */
+  isBadgeUnlocked(badgeId) {
+    return !!this.data?.achievements?.unlocked?.[badgeId];
+  }
+
+  /**
+   * Record a completed practice session and check for perfect score
+   */
+  recordPracticeSession(score, total) {
+    if (!this.data) return;
+
+    // Ensure field exists (migration support)
+    if (typeof this.data.practiceSessionsCompleted !== 'number') {
+      this.data.practiceSessionsCompleted = 0;
+    }
+
+    this.data.practiceSessionsCompleted++;
+
+    // Check for perfect score (10/10)
+    if (score === total && total >= 10) {
+      this.data.perfectScoreAchieved = true;
+    }
+
+    this.saveProgress();
+  }
+
+  /**
+   * Update pronunciation practice stats
+   * @param {number} score - Session average score (0-100)
+   */
+  updatePronunciationStats(score) {
+    if (!this.data) return;
+
+    // Ensure structure exists (migration support)
+    if (!this.data.pronunciationStats) {
+      this.data.pronunciationStats = {
+        totalAttempts: 0,
+        avgScore: 0,
+        sessionsCompleted: 0,
+      };
+    }
+
+    const stats = this.data.pronunciationStats;
+    const prevTotal = stats.avgScore * stats.sessionsCompleted;
+    stats.sessionsCompleted++;
+    stats.totalAttempts++;
+    stats.avgScore = Math.round((prevTotal + score) / stats.sessionsCompleted);
+
+    this.saveProgress();
+  }
+
+  /**
+   * Update conversation practice stats
+   * @param {number} messages - Number of user messages exchanged
+   * @param {number} corrections - Number of grammar corrections received
+   */
+  updateConversationStats(messages, corrections) {
+    if (!this.data) return;
+
+    // Ensure structure exists (migration support)
+    if (!this.data.conversationStats) {
+      this.data.conversationStats = {
+        sessionsCompleted: 0,
+        messagesExchanged: 0,
+        correctionsReceived: 0,
+      };
+    }
+
+    const stats = this.data.conversationStats;
+    stats.sessionsCompleted++;
+    stats.messagesExchanged += messages;
+    stats.correctionsReceived += corrections;
+
+    this.saveProgress();
   }
 
   /**
@@ -126,6 +268,27 @@ export class ProgressManager {
   completeSong(songTitle) {
     this.incrementSongCount();
     this.addActivity('music', `Completata canzone: ${songTitle}`);
+  }
+
+  /**
+   * Mark a video clip as completed
+   */
+  completeVideoClip(videoId) {
+    if (!this.data) return;
+
+    // Ensure structure exists (migration support)
+    if (!this.data.videoProgress) {
+      this.data.videoProgress = { completedClips: {}, totalClipsWatched: 0 };
+    }
+
+    if (!this.data.videoProgress.completedClips[videoId]) {
+      this.data.videoProgress.completedClips[videoId] = true;
+    }
+    this.data.videoProgress.totalClipsWatched++;
+    this.addActivity('video', `Video completato: ${videoId}`);
+    this.recordStudyActivity(2, 1);
+    this.addXP(15);
+    this.saveProgress();
   }
 
   /**
@@ -204,7 +367,24 @@ export class ProgressManager {
   }
 
   /**
-   * Update study streak
+   * Ensure streakCalendar structure exists (migration support)
+   */
+  _ensureStreakCalendar() {
+    if (!this.data.streakCalendar) {
+      this.data.streakCalendar = {
+        studyDays: {},
+        freezes: { available: 1, usedThisWeek: [], lastRefill: '' },
+        bestStreak: 0,
+      };
+    }
+    const sc = this.data.streakCalendar;
+    if (!sc.studyDays) sc.studyDays = {};
+    if (!sc.freezes) sc.freezes = { available: 1, usedThisWeek: [], lastRefill: '' };
+    if (typeof sc.bestStreak !== 'number') sc.bestStreak = 0;
+  }
+
+  /**
+   * Update study streak with freeze support
    */
   updateStreak() {
     if (!this.data) return;
@@ -216,6 +396,8 @@ export class ProgressManager {
       this.data.todayTimeMinutes = 0;
       this.data.lastActiveDate = today;
     }
+
+    this._ensureStreakCalendar();
 
     if (!lastDate) {
       this.data.streak.current = 1;
@@ -230,11 +412,79 @@ export class ProgressManager {
         this.data.streak.current++;
         this.data.streak.lastStudyDate = today;
       } else {
-        // Streak broken
-        this.data.streak.current = 1;
-        this.data.streak.lastStudyDate = today;
+        // Check if exactly 1 day was missed and freeze is available
+        const todayISO = getToday();
+        const lastDateObj = new Date(lastDate);
+        const lastDateISO = `${lastDateObj.getFullYear()}-${String(lastDateObj.getMonth() + 1).padStart(2, '0')}-${String(lastDateObj.getDate()).padStart(2, '0')}`;
+        const gap = getDaysBetween(todayISO, lastDateISO);
+
+        if (gap === 2 && this._tryUseFreeze(todayISO, lastDateISO)) {
+          // Freeze consumed: keep the streak alive
+          this.data.streak.current++;
+          this.data.streak.lastStudyDate = today;
+        } else {
+          // Streak broken
+          this.data.streak.current = 1;
+          this.data.streak.lastStudyDate = today;
+        }
       }
     }
+
+    // Update best streak
+    if (this.data.streak.current > this.data.streakCalendar.bestStreak) {
+      this.data.streakCalendar.bestStreak = this.data.streak.current;
+    }
+
+    this.saveProgress();
+  }
+
+  /**
+   * Try to use a streak freeze for the missed day.
+   * @param {string} todayISO - Today's date in YYYY-MM-DD format
+   * @param {string} lastDateISO - Last study date in YYYY-MM-DD format
+   * @returns {boolean} true if freeze was consumed
+   */
+  _tryUseFreeze(todayISO, lastDateISO) {
+    const sc = this.data.streakCalendar;
+
+    if (sc.freezes.available <= 0) return false;
+
+    // Calculate the missed date (the day between last study and today)
+    const lastDate = new Date(lastDateISO + 'T00:00:00');
+    const missedDate = new Date(lastDate);
+    missedDate.setDate(missedDate.getDate() + 1);
+    const missedDateStr = `${missedDate.getFullYear()}-${String(missedDate.getMonth() + 1).padStart(2, '0')}-${String(missedDate.getDate()).padStart(2, '0')}`;
+
+    sc.freezes.available--;
+    sc.freezes.usedThisWeek.push(missedDateStr);
+
+    // Mark the frozen day in studyDays
+    if (!sc.studyDays[missedDateStr]) {
+      sc.studyDays[missedDateStr] = { minutes: 0, activities: 0 };
+    }
+    sc.studyDays[missedDateStr].frozen = true;
+
+    return true;
+  }
+
+  /**
+   * Record today's study activity in streakCalendar.studyDays
+   * @param {number} minutes - Minutes to add
+   * @param {number} activities - Activities count to add
+   */
+  recordStudyActivity(minutes = 1, activities = 0) {
+    if (!this.data) return;
+    this._ensureStreakCalendar();
+
+    const today = getToday();
+    const sc = this.data.streakCalendar;
+
+    if (!sc.studyDays[today]) {
+      sc.studyDays[today] = { minutes: 0, activities: 0 };
+    }
+
+    sc.studyDays[today].minutes += minutes;
+    sc.studyDays[today].activities += activities;
 
     this.saveProgress();
   }
@@ -273,6 +523,7 @@ export class ProgressManager {
       if (!this.data || document.hidden) return;
       this.data.todayTimeMinutes++;
       this.data.totalTimeMinutes++;
+      this.recordStudyActivity(1, 0);
       this.saveProgress();
       this.renderTimeSpent();
     }, 60000);
@@ -394,6 +645,7 @@ export class ProgressManager {
       practice: '',
       level: '',
       streak: '',
+      video: '',
     };
     return icons[type] || '';
   }
@@ -419,6 +671,30 @@ export class ProgressManager {
     localStorage.removeItem(this.storageKey);
     this.data = await this.loadProgress(); // Reload default
     this.renderProgress();
+  }
+
+  // ─── LEADERBOARD METHODS ─────────────────────────
+
+  /**
+   * Trigger leaderboard personal bests update via the app-level manager
+   */
+  updateLeaderboardBests() {
+    try {
+      window.app?.leaderboardManager?.updatePersonalBests();
+    } catch {
+      // Leaderboard update is non-critical
+    }
+  }
+
+  /**
+   * Trigger weekly stats snapshot via the app-level leaderboard manager
+   */
+  snapshotWeeklyStats() {
+    try {
+      window.app?.leaderboardManager?.snapshotWeeklyStats();
+    } catch {
+      // Weekly snapshot is non-critical
+    }
   }
 
   // ─── XP METHODS ────────────────────────────────
@@ -606,5 +882,85 @@ export class ProgressManager {
     tp.practiceStats.totalQuestions += totalQuestions;
     tp.practiceStats.correctAnswers += correctAnswers;
     this.saveProgress();
+  }
+
+  // ─── DAILY GOALS METHODS ──────────────────────────
+
+  /**
+   * Ensure dailyGoals structure exists (migration support)
+   */
+  ensureDailyGoals() {
+    if (!this.data.dailyGoals) {
+      this.data.dailyGoals = {
+        date: '',
+        goals: {
+          lessonsTarget: 2,
+          lessonsCompleted: 0,
+          practiceTarget: 3,
+          practiceCompleted: 0,
+          wordsTarget: 10,
+          wordsLearned: 0,
+          timeTarget: 15,
+          timeSpent: 0,
+        },
+        challengeOfTheDay: null,
+        completed: false,
+      };
+    }
+  }
+
+  /**
+   * Increment daily lessons completed
+   */
+  incrementDailyLessons() {
+    if (!this.data) return;
+    this.ensureDailyGoals();
+    this.data.dailyGoals.goals.lessonsCompleted++;
+    this.saveProgress();
+    // Notify DailyGoalsManager if available
+    if (window.app && window.app.dailyGoalsManager) {
+      window.app.dailyGoalsManager.incrementLessons();
+    }
+  }
+
+  /**
+   * Increment daily practice sessions completed
+   */
+  incrementDailyPractice() {
+    if (!this.data) return;
+    this.ensureDailyGoals();
+    this.data.dailyGoals.goals.practiceCompleted++;
+    this.saveProgress();
+    if (window.app && window.app.dailyGoalsManager) {
+      window.app.dailyGoalsManager.incrementPractice();
+    }
+  }
+
+  /**
+   * Increment daily words learned
+   * @param {number} n - Number of words
+   */
+  incrementDailyWords(n = 1) {
+    if (!this.data) return;
+    this.ensureDailyGoals();
+    this.data.dailyGoals.goals.wordsLearned += n;
+    this.saveProgress();
+    if (window.app && window.app.dailyGoalsManager) {
+      window.app.dailyGoalsManager.incrementWords(n);
+    }
+  }
+
+  /**
+   * Add daily study time
+   * @param {number} minutes
+   */
+  addDailyTime(minutes) {
+    if (!this.data) return;
+    this.ensureDailyGoals();
+    this.data.dailyGoals.goals.timeSpent += minutes;
+    this.saveProgress();
+    if (window.app && window.app.dailyGoalsManager) {
+      window.app.dailyGoalsManager.updateTime(this.data.dailyGoals.goals.timeSpent);
+    }
   }
 }

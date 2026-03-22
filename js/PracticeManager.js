@@ -16,6 +16,7 @@
 
 import { lessonsDatabase } from './lessons.js';
 import { songsDatabase } from './songs.js';
+import { ttsService } from './services/TTSService.js';
 
 const ENCOURAGING_CORRECT = [
   'Perfetto! / Perfect!',
@@ -422,12 +423,13 @@ export class PracticeManager {
     if (this.currentMode === 'listening' || this.currentMode === 'matching') {
       const options = this.generateOptions(question.italian);
       correctAnswer = question.italian;
+      const ttsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(question.english) : '';
       html = `
                 <div class="exercise-card">
                     <div class="exercise-instruction">
                         ${this.currentMode === 'listening' ? 'Ascolta e scegli:' : 'Qual \u00E8 la traduzione di:'}
                     </div>
-                    <div class="exercise-target">${this.escapeHtml(question.english)}</div>
+                    <div class="exercise-target">${this.escapeHtml(question.english)} ${ttsBtn}</div>
                     ${question.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(question.pronunciation)}</div>` : ''}
                     <div class="options-grid">
                         ${options
@@ -444,6 +446,12 @@ export class PracticeManager {
             `;
 
       container.innerHTML = html;
+      ttsService.attachTTSListeners(container);
+
+      // Auto-play TTS for listening mode
+      if (this.currentMode === 'listening' && ttsService.isSupported) {
+        ttsService.speak(question.english);
+      }
 
       options.forEach((opt, idx) => {
         const btn = container.querySelector(`[data-option-idx="${idx}"]`);
@@ -453,16 +461,18 @@ export class PracticeManager {
       });
     } else if (this.currentMode === 'writing') {
       correctAnswer = question.italian;
+      const ttsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(question.english) : '';
       html = `
                 <div class="exercise-card">
                     <div class="exercise-instruction">Scrivi la traduzione in italiano:</div>
-                    <div class="exercise-target">${this.escapeHtml(question.english)}</div>
+                    <div class="exercise-target">${this.escapeHtml(question.english)} ${ttsBtn}</div>
                     ${question.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(question.pronunciation)}</div>` : ''}
                     <input type="text" id="writing-input" class="practice-input" placeholder="Scrivi qui..." autofocus>
                     <button class="btn btn-primary submit-btn" style="margin-top: 1rem;">Invia / Submit</button>
                 </div>
             `;
       container.innerHTML = html;
+      ttsService.attachTTSListeners(container);
 
       container
         .querySelector('.submit-btn')
@@ -573,11 +583,12 @@ export class PracticeManager {
       const options = this.generateOptions(targetWord);
       correctAnswer = targetWord;
 
+      const ttsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(englishPhrase) : '';
       html = `
                 <div class="exercise-card">
                     <div class="exercise-instruction">Scenario:</div>
                     <div class="exercise-scenario">${this.escapeHtml(scenario)}</div>
-                    <div class="exercise-target">${this.escapeHtml(blankedPhrase)}</div>
+                    <div class="exercise-target">${this.escapeHtml(blankedPhrase)} ${ttsBtn}</div>
                     <p class="translation-hint">${this.escapeHtml(italianHint)}</p>
                     <div class="options-grid">
                         ${options
@@ -594,6 +605,7 @@ export class PracticeManager {
             `;
 
       container.innerHTML = html;
+      ttsService.attachTTSListeners(container);
 
       options.forEach((opt, idx) => {
         const btn = container.querySelector(`[data-option-idx="${idx}"]`);
@@ -1038,6 +1050,29 @@ export class PracticeManager {
   }
 
   completePractice() {
+    // Track daily goals
+    this.progressManager.incrementDailyPractice();
+
+    // Track practice session completion for achievements
+    this.progressManager.recordPracticeSession(this.score, this.questions.length);
+
+    // Update leaderboard: practice score and fastest practice time
+    const practicePercent =
+      this.questions.length > 0 ? Math.round((this.score / this.questions.length) * 100) : 0;
+    const totalTime = this.totalResponseTime;
+    try {
+      const lbm = window.app?.leaderboardManager;
+      if (lbm) {
+        lbm.checkNewRecord('bestPracticeScore', practicePercent);
+        if (this.questions.length >= 10 && totalTime > 0) {
+          lbm.checkNewRecord('fastestPractice', totalTime);
+        }
+        lbm.updatePersonalBests();
+      }
+    } catch {
+      // Leaderboard update is non-critical
+    }
+
     const container = document.getElementById('practice-content');
     if (!container) return;
 

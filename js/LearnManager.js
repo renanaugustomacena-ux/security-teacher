@@ -7,6 +7,7 @@
  */
 
 import { getLessonsByLevel, getLesson } from './lessons.js';
+import { ttsService } from './services/TTSService.js';
 
 export class LearnManager {
   constructor(progressManager) {
@@ -92,11 +93,12 @@ export class LearnManager {
       `${this.currentItemIndex + 1}/${totalItems}`;
 
     let html = '';
+    const ttsBtn = ttsService.isSupported ? ttsService.speakerButtonHTML(item.english || '') : '';
     if (item.english) {
       html = `
                 <div class="lesson-item-card">
                     <div class="item-pair">
-                        <div class="item-english">${item.english}</div>
+                        <div class="item-english">${item.english} ${ttsBtn}</div>
                         <div class="item-separator"></div>
                         <div class="item-italian">${item.italian}</div>
                     </div>
@@ -114,6 +116,8 @@ export class LearnManager {
                 <button class="btn btn-primary" onclick="learnManager.nextItem()">${this.currentItemIndex === totalItems - 1 ? 'Completa / Complete' : 'Prossimo / Next →'}</button>
             </div>
         `;
+
+    ttsService.attachTTSListeners(container);
   }
 
   prevItem() {
@@ -135,6 +139,23 @@ export class LearnManager {
   completeLesson() {
     // Mark as completed in progress manager
     this.progressManager.completelesson(this.currentLevel, this.currentLesson.id);
+
+    // Track daily goals
+    this.progressManager.incrementDailyLessons();
+
+    // Ingest vocabulary into SRS
+    if (window.srsManager && this.currentLesson?.items) {
+      const words = this.currentLesson.items
+        .filter((item) => item.english && item.italian)
+        .map((item) => ({
+          english: item.english,
+          italian: item.italian,
+          pronunciation: item.pronunciation || '',
+          example: item.example || '',
+        }));
+      const source = `lesson-${this.currentLevel}-${this.currentLesson.id}`;
+      window.srsManager.addWords(words, source);
+    }
 
     // Launch celebration particles
     this.spawnParticles();

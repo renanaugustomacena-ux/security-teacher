@@ -8,6 +8,11 @@
       content="Impara l'inglese con la musica hip-hop - Learn English with hip-hop music"
     />
     <title>Knowledge AIO - Impara l'Inglese con la Musica</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#e67e22" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
     <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
@@ -274,6 +279,79 @@
             </svg>
             <span>Progressi / Progress</span>
           </button>
+          <button class="nav-item" data-section="conversation">
+            <svg
+              class="nav-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+              <path d="M8 9h8" />
+              <path d="M8 13h5" />
+            </svg>
+            <span>Conversazione / Chat</span>
+          </button>
+          <button class="nav-item" data-section="badges">
+            <svg
+              class="nav-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="8" r="7" />
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+            </svg>
+            <span>Badge / Badges</span>
+          </button>
+          <button class="nav-item" data-section="leaderboard">
+            <svg
+              class="nav-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9H4.5a2.5 2.5 0 010-5C7 4 7 7 7 7" />
+              <path d="M18 9h1.5a2.5 2.5 0 000-5C17 4 17 7 17 7" />
+              <path d="M4 22h16" />
+              <path d="M10 22V2h4v20" />
+              <path d="M6 22V10h4" />
+              <path d="M14 22V10h4v12" />
+            </svg>
+            <span>Classifica / Leaderboard</span>
+          </button>
+          <button class="nav-item" data-section="video">
+            <svg
+              class="nav-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon points="23 7 16 12 23 17 23 7" />
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+            </svg>
+            <span>Video / Video</span>
+          </button>
         </nav>
 
         <!-- Matrix theme is permanent - no toggle needed -->
@@ -365,6 +443,9 @@
               </div>
               <div class="translate-result" id="translate-result"></div>
             </div>
+
+            <!-- Daily Goals Widget -->
+            <div id="daily-goals-widget" class="home-card"></div>
           </div>
         </section>
 
@@ -684,6 +765,59 @@
               <h3>Scenario / Dialogue</h3>
               <p>Completa dialoghi situazionali / Complete situational dialogues</p>
             </div>
+
+            <div
+              class="practice-card"
+              id="practice-card-pronunciation"
+              onclick="startPronunciation()"
+            >
+              <div class="practice-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" />
+                  <path d="M19 10v2a7 7 0 01-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="23" />
+                  <line x1="8" y1="23" x2="16" y2="23" />
+                </svg>
+              </div>
+              <h3>Pronuncia / Pronunciation</h3>
+              <p>Pratica la pronuncia / Practice your pronunciation</p>
+            </div>
+
+            <div class="practice-card srs-review-card" onclick="startSRSReview()">
+              <div class="practice-icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"
+                  />
+                  <line x1="9" y1="21" x2="15" y2="21" />
+                  <path d="M10 17v4" />
+                  <path d="M14 17v4" />
+                </svg>
+              </div>
+              <h3>Revisione / Review</h3>
+              <p>
+                Ripassa le parole con la ripetizione spaziata / Review words using spaced repetition
+              </p>
+              <span class="srs-due-badge hidden" id="srs-due-badge">0</span>
+            </div>
           </div>
 
           <!-- Practice Container -->
@@ -799,6 +933,9 @@
             </div>
           </div>
 
+          <div id="streak-info-container"></div>
+          <div id="streak-calendar-container"></div>
+
           <div class="progress-section">
             <h3>Livello Attuale / Current Level</h3>
             <div class="level-progress-display">
@@ -826,11 +963,62 @@
             </ul>
           </div>
         </section>
+
+        <!-- CONVERSATION SECTION -->
+        <section id="conversation" class="section">
+          <div id="conversation-content">
+            <!-- Rendered by ConversationManager.renderTopicSelector() -->
+          </div>
+        </section>
+
+        <!-- BADGES SECTION -->
+        <section id="badges" class="section">
+          <header class="section-header">
+            <h2>Badge / Badges</h2>
+            <p class="section-subtitle">
+              I tuoi traguardi e risultati / Your milestones and achievements
+            </p>
+          </header>
+          <div id="badges-content">
+            <!-- Rendered by AchievementManager.renderBadgeGallery() -->
+          </div>
+        </section>
+
+        <!-- LEADERBOARD SECTION -->
+        <section id="leaderboard" class="section">
+          <header class="section-header">
+            <h2>Classifica / Leaderboard</h2>
+            <p class="section-subtitle">
+              I tuoi record personali e statistiche / Your personal records and statistics
+            </p>
+          </header>
+          <div id="leaderboard-content">
+            <!-- Rendered by LeaderboardManager.renderLeaderboard() -->
+          </div>
+        </section>
+
+        <!-- VIDEO SECTION -->
+        <section id="video" class="section">
+          <header class="section-header">
+            <h2>Video / Video</h2>
+            <p class="section-subtitle">
+              Impara l'inglese con video clip reali / Learn English with real video clips
+            </p>
+          </header>
+          <div id="video-content">
+            <!-- Rendered by VideoManager.renderVideoGrid() -->
+          </div>
+        </section>
       </main>
     </div>
 
     <script type="importmap">
       { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+    </script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js').catch(function () {});
+      }
     </script>
     <script type="module" src="js/app.js"></script>
   </body>

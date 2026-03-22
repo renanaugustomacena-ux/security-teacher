@@ -1,0 +1,22 @@
+{
+  "name": "Knowledge AIO - Learn English",
+  "short_name": "Knowledge AIO",
+  "description": "Learn English through music, practice, and technical topics",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#050a14",
+  "theme_color": "#e67e22",
+  "orientation": "any",
+  "categories": ["education"],
+  "lang": "en",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
