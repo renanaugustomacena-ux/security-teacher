@@ -231,6 +231,74 @@ export const achievementDefinitions = [
     secret: false,
   },
 
+  // ─── TOPIC MASTERY & BOSS ───────────────────
+  {
+    id: 'topic_master',
+    title: 'Topic Master',
+    titleIt: 'Maestro dei Topic',
+    description: 'Earn 3 stars on all lessons in a topic',
+    descriptionIt: 'Ottieni 3 stelle in tutte le lezioni di un topic',
+    icon: '\ud83c\udf93',
+    category: 'learning',
+    condition: (d) => {
+      const tp = d.topicProgress;
+      if (!tp) return false;
+      for (const id of Object.keys(tp)) {
+        const stars = tp[id].lessonStars;
+        if (!stars) continue;
+        const values = Object.values(stars);
+        if (values.length >= 4 && values.every((v) => v === 3)) return true;
+      }
+      return false;
+    },
+    secret: false,
+  },
+  {
+    id: 'boss_slayer',
+    title: 'Boss Slayer',
+    titleIt: 'Uccisore di Boss',
+    description: 'Defeat 5 boss challenges',
+    descriptionIt: 'Sconfiggi 5 sfide boss',
+    icon: '\ud83d\udc51',
+    category: 'practice',
+    condition: (d) => {
+      const tp = d.topicProgress;
+      if (!tp) return false;
+      let count = 0;
+      for (const id of Object.keys(tp)) {
+        const results = tp[id].bossResults;
+        if (!results) continue;
+        for (const lvl of Object.keys(results)) {
+          if (results[lvl].completed === true) count++;
+        }
+      }
+      return count >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'terminal_wizard',
+    title: 'Terminal Wizard',
+    titleIt: 'Mago del Terminale',
+    description: 'Complete 10 terminal exercises',
+    descriptionIt: 'Completa 10 esercizi terminale',
+    icon: '\ud83d\udda5\ufe0f',
+    category: 'practice',
+    condition: (d) => (d.terminalExercisesCompleted || 0) >= 10,
+    secret: false,
+  },
+  {
+    id: 'chain_master',
+    title: 'Chain Master',
+    titleIt: 'Maestro della Catena',
+    description: 'Achieve a chain streak of 5',
+    descriptionIt: 'Raggiungi una serie a catena di 5',
+    icon: '\u26d3\ufe0f',
+    category: 'practice',
+    condition: (d) => (d.bestChainStreak || 0) >= 5,
+    secret: false,
+  },
+
   // ─── SECRET ──────────────────────────────────
   {
     id: 'night_owl',
@@ -252,6 +320,29 @@ export const achievementDefinitions = [
     icon: '\ud83d\udc26',
     category: 'special',
     condition: (d) => d._earlyBirdTriggered === true,
+    secret: true,
+  },
+
+  {
+    id: 'perfect_boss',
+    title: 'Perfect Boss',
+    titleIt: 'Boss Perfetto',
+    description: 'Score 100% on a boss challenge',
+    descriptionIt: 'Ottieni il 100% in una sfida boss',
+    icon: '\ud83d\udc8e',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress;
+      if (!tp) return false;
+      for (const id of Object.keys(tp)) {
+        const results = tp[id].bossResults;
+        if (!results) continue;
+        for (const lvl of Object.keys(results)) {
+          if (results[lvl].score >= 100) return true;
+        }
+      }
+      return false;
+    },
     secret: true,
   },
 

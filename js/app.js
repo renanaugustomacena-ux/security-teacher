@@ -19,16 +19,17 @@ import { LearnManager } from './LearnManager.js';
 import { PracticeManager } from './PracticeManager.js';
 import { TopicManager } from './topics/TopicManager.js';
 import { TopicPracticeManager } from './topics/TopicPracticeManager.js';
+import { TopicBossChallenge } from './topics/TopicBossChallenge.js';
 import { DailyGoalsManager } from './DailyGoalsManager.js';
 import { AchievementManager } from './AchievementManager.js';
 import { PronunciationManager } from './PronunciationManager.js';
 import { SRSManager } from './SRSManager.js';
 import { StreakCalendarManager } from './StreakCalendarManager.js';
 import { LeaderboardManager } from './LeaderboardManager.js';
-import { VideoManager } from './VideoManager.js';
 import { ConversationManager } from './ConversationManager.js';
 import { MorphBackground } from './MorphBackground.js';
 import { CursorParticles } from './CursorParticles.js';
+import { techTalkScenarios } from './topics/data/techtalk-scenarios.js';
 
 class App {
   constructor() {
@@ -46,6 +47,8 @@ class App {
     this.topicManager = null;
     /** @type {TopicPracticeManager | null} */
     this.topicPracticeManager = null;
+    /** @type {TopicBossChallenge | null} */
+    this.topicBossChallenge = null;
     /** @type {DailyGoalsManager | null} */
     this.dailyGoalsManager = null;
     /** @type {AchievementManager | null} */
@@ -58,8 +61,6 @@ class App {
     this.streakCalendarManager = null;
     /** @type {LeaderboardManager | null} */
     this.leaderboardManager = null;
-    /** @type {VideoManager | null} */
-    this.videoManager = null;
     /** @type {ConversationManager | null} */
     this.conversationManager = null;
     /** @type {MorphBackground | null} */
@@ -97,6 +98,32 @@ class App {
       console.error('ProgressManager failed:', err);
     }
 
+    // 2b. Tech Talk Scenarios (flatten keyed object into flat array with topicId)
+    try {
+      window.techTalkScenarios = Object.entries(techTalkScenarios).flatMap(([topicId, scenarios]) =>
+        scenarios.map((s) => ({
+          ...s,
+          topicId,
+          name: s.title,
+          turns: s.turns.map((t) => ({
+            aiMessage: t.ai,
+            expectedKeywords: t.expectedKeywords,
+            hintText: t.hint,
+            nextResponses: Object.fromEntries(
+              t.expectedKeywords.map((kw) => [kw, t.onKeywordFound.replace('{found}', kw)])
+            ),
+            missingResponse: t.onKeywordMissing.replace(
+              '{expected}',
+              t.expectedKeywords.join(', ')
+            ),
+          })),
+        }))
+      );
+    } catch (err) {
+      console.error('TechTalk scenarios load failed:', err);
+      window.techTalkScenarios = [];
+    }
+
     // 3. Feature Managers
     try {
       this.musicManager = new MusicManager(this.progressManager);
@@ -104,22 +131,22 @@ class App {
       this.practiceManager = new PracticeManager(this.progressManager);
       this.topicManager = new TopicManager(this.progressManager);
       this.topicPracticeManager = new TopicPracticeManager(this.progressManager);
+      this.topicBossChallenge = new TopicBossChallenge(this.progressManager);
       this.dailyGoalsManager = new DailyGoalsManager(this.progressManager);
       this.achievementManager = new AchievementManager(this.progressManager);
       this.pronunciationManager = new PronunciationManager(this.progressManager);
       this.srsManager = new SRSManager(this.progressManager, storageService);
       this.streakCalendarManager = new StreakCalendarManager(this.progressManager);
       this.leaderboardManager = new LeaderboardManager(this.progressManager);
-      this.videoManager = new VideoManager(this.progressManager);
       this.conversationManager = new ConversationManager(this.progressManager);
       this.topicManager.init();
       this.topicPracticeManager.init();
+      this.topicBossChallenge.init();
       this.dailyGoalsManager.init();
       this.achievementManager.init();
       this.pronunciationManager.init();
       this.streakCalendarManager.init();
       this.leaderboardManager.init();
-      this.videoManager.init();
       this.conversationManager.init();
       await this.srsManager.init();
     } catch (err) {
@@ -243,9 +270,9 @@ class App {
     window.pronunciationManager = this.pronunciationManager;
     window.topicManager = this.topicManager;
     window.topicPracticeManager = this.topicPracticeManager;
+    window.topicBossChallenge = this.topicBossChallenge;
     window.srsManager = this.srsManager;
     window.leaderboardManager = this.leaderboardManager;
-    window.videoManager = this.videoManager;
     window.conversationManager = this.conversationManager;
     window.startConversation = (id) => this.conversationManager?.startConversation(id);
     window.startSRSReview = () => this.srsManager?.renderReviewSession();
@@ -277,7 +304,6 @@ class App {
       if (section === 'badges') this._renderBadges();
       if (section === 'leaderboard') this._renderLeaderboard();
       if (section === 'conversation') this.conversationManager?.renderTopicSelector();
-      if (section === 'video') this.videoManager?.renderVideoGrid();
     });
 
     // Home action cards - delegate from home section

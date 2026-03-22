@@ -24,9 +24,7 @@ const STATIC_ASSETS = [
   './js/songs.js',
   './js/SRSManager.js',
   './js/StreakCalendarManager.js',
-  './js/VideoManager.js',
   './js/data/achievements.js',
-  './js/data/videos.js',
   './js/services/AIService.js',
   './js/services/AudioService.js',
   './js/services/LyricsService.js',
@@ -35,12 +33,14 @@ const STATIC_ASSETS = [
   './js/store/index.js',
   './js/utils/DateUtils.js',
   './js/topics/TopicManager.js',
+  './js/topics/TopicBossChallenge.js',
   './js/topics/TopicPracticeManager.js',
   './js/topics/registry.js',
   './js/topics/data/cybersecurity.js',
   './js/topics/data/linux.js',
   './js/topics/data/python.js',
   './js/topics/data/software-dev.js',
+  './js/topics/data/techtalk-scenarios.js',
 ];
 
 const EXTERNAL_API_HOSTS = ['lrclib.net', 'mymemory.translated.net'];

@@ -85,14 +85,12 @@ export class ProgressManager {
       },
       practiceSessionsCompleted: 0,
       perfectScoreAchieved: false,
+      terminalExercisesCompleted: 0,
+      bestChainStreak: 0,
       pronunciationStats: {
         totalAttempts: 0,
         avgScore: 0,
         sessionsCompleted: 0,
-      },
-      videoProgress: {
-        completedClips: {},
-        totalClipsWatched: 0,
       },
       conversationStats: {
         sessionsCompleted: 0,
@@ -268,27 +266,6 @@ export class ProgressManager {
   completeSong(songTitle) {
     this.incrementSongCount();
     this.addActivity('music', `Completata canzone: ${songTitle}`);
-  }
-
-  /**
-   * Mark a video clip as completed
-   */
-  completeVideoClip(videoId) {
-    if (!this.data) return;
-
-    // Ensure structure exists (migration support)
-    if (!this.data.videoProgress) {
-      this.data.videoProgress = { completedClips: {}, totalClipsWatched: 0 };
-    }
-
-    if (!this.data.videoProgress.completedClips[videoId]) {
-      this.data.videoProgress.completedClips[videoId] = true;
-    }
-    this.data.videoProgress.totalClipsWatched++;
-    this.addActivity('video', `Video completato: ${videoId}`);
-    this.recordStudyActivity(2, 1);
-    this.addXP(15);
-    this.saveProgress();
   }
 
   /**
@@ -645,7 +622,6 @@ export class ProgressManager {
       practice: '',
       level: '',
       streak: '',
-      video: '',
     };
     return icons[type] || '';
   }
@@ -769,8 +745,14 @@ export class ProgressManager {
         wordsLearned: 0,
         lastActiveLevel: 0,
         practiceStats: { totalQuestions: 0, correctAnswers: 0 },
+        lessonStars: {},
+        bossResults: {},
       };
     }
+    // Migration: ensure lessonStars and bossResults exist for older data
+    const tp = this.data.topicProgress[topicId];
+    if (!tp.lessonStars) tp.lessonStars = {};
+    if (!tp.bossResults) tp.bossResults = {};
     return this.data.topicProgress[topicId];
   }
 
@@ -882,6 +864,97 @@ export class ProgressManager {
     tp.practiceStats.totalQuestions += totalQuestions;
     tp.practiceStats.correctAnswers += correctAnswers;
     this.saveProgress();
+  }
+
+  // ─── TOPIC LESSON STARS METHODS ──────────────────
+
+  /**
+   * Update stars for a specific topic lesson (0-3)
+   * Only saves if the new score is higher than the existing one.
+   */
+  updateTopicLessonStars(topicId, level, lessonId, stars) {
+    const tp = this.ensureTopicProgress(topicId);
+    const key = `${level}-${lessonId}`;
+    const current = tp.lessonStars[key] || 0;
+    if (stars > current) {
+      tp.lessonStars[key] = Math.min(3, Math.max(0, stars));
+      this.saveProgress();
+    }
+  }
+
+  /**
+   * Get stars for a specific topic lesson (returns 0-3)
+   */
+  getTopicLessonStars(topicId, level, lessonId) {
+    const tp = this.data.topicProgress?.[topicId];
+    if (!tp || !tp.lessonStars) return 0;
+    const key = `${level}-${lessonId}`;
+    return tp.lessonStars[key] || 0;
+  }
+
+  /**
+   * Get aggregated stars for all lessons in a topic level (average, rounded)
+   */
+  getTopicLevelStars(topicId, level) {
+    const tp = this.data.topicProgress?.[topicId];
+    if (!tp || !tp.lessonStars) return 0;
+
+    const prefix = `${level}-`;
+    const entries = Object.entries(tp.lessonStars).filter(([key]) => key.startsWith(prefix));
+
+    if (entries.length === 0) return 0;
+
+    const total = entries.reduce((sum, [, stars]) => sum + stars, 0);
+    return Math.round(total / entries.length);
+  }
+
+  // ─── TOPIC BOSS METHODS ────────────────────────────
+
+  /**
+   * Record boss challenge completion
+   * @param {string} topicId
+   * @param {number} level
+   * @param {number} score - Percentage score (0-100)
+   * @param {number} stars - Star rating (0-3)
+   */
+  completeTopicBoss(topicId, level, score, stars) {
+    if (!this.data) return;
+    const tp = this.ensureTopicProgress(topicId);
+    if (!tp.bossResults) tp.bossResults = {};
+    tp.bossResults[level] = {
+      completed: score >= 70,
+      score,
+      stars,
+      date: new Date().toISOString(),
+    };
+    this.saveProgress();
+  }
+
+  /**
+   * Increment terminal exercises completed counter
+   */
+  incrementTerminalExercises() {
+    if (!this.data) return;
+    if (typeof this.data.terminalExercisesCompleted !== 'number') {
+      this.data.terminalExercisesCompleted = 0;
+    }
+    this.data.terminalExercisesCompleted++;
+    this.saveProgress();
+  }
+
+  /**
+   * Update the best chain streak if the new value is higher
+   * @param {number} streak - The chain streak achieved
+   */
+  updateBestChainStreak(streak) {
+    if (!this.data) return;
+    if (typeof this.data.bestChainStreak !== 'number') {
+      this.data.bestChainStreak = 0;
+    }
+    if (streak > this.data.bestChainStreak) {
+      this.data.bestChainStreak = streak;
+      this.saveProgress();
+    }
   }
 
   // ─── DAILY GOALS METHODS ──────────────────────────
