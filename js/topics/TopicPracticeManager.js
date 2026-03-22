@@ -52,25 +52,117 @@ const STREAK_BONUSES = [
 
 // Function words to skip in fill-in-the-blank
 const ENGLISH_FUNCTION_WORDS = new Set([
-  'the', 'a', 'an', 'is', 'am', 'are', 'was', 'were',
-  'be', 'been', 'being', 'to', 'of', 'in', 'on', 'at',
-  'for', 'with', 'by', 'from', 'and', 'or', 'but', 'not',
-  'it', 'its', 'he', 'she', 'we', 'they', 'i', 'you',
-  'my', 'your', 'his', 'her', 'our', 'their',
-  'this', 'that', 'these', 'those',
-  'do', 'does', 'did', 'has', 'have', 'had',
-  'will', 'would', 'can', 'could', 'should',
+  'the',
+  'a',
+  'an',
+  'is',
+  'am',
+  'are',
+  'was',
+  'were',
+  'be',
+  'been',
+  'being',
+  'to',
+  'of',
+  'in',
+  'on',
+  'at',
+  'for',
+  'with',
+  'by',
+  'from',
+  'and',
+  'or',
+  'but',
+  'not',
+  'it',
+  'its',
+  'he',
+  'she',
+  'we',
+  'they',
+  'i',
+  'you',
+  'my',
+  'your',
+  'his',
+  'her',
+  'our',
+  'their',
+  'this',
+  'that',
+  'these',
+  'those',
+  'do',
+  'does',
+  'did',
+  'has',
+  'have',
+  'had',
+  'will',
+  'would',
+  'can',
+  'could',
+  'should',
 ]);
 
 const ITALIAN_FUNCTION_WORDS = new Set([
-  'il', 'lo', 'la', 'i', 'gli', 'le', 'un', 'uno', 'una',
-  'di', 'a', 'da', 'in', 'con', 'su', 'per', 'tra', 'fra',
-  'e', 'o', 'ma', 'che', 'se', 'non', 'anche',
-  'del', 'dello', 'della', 'dei', 'degli', 'delle',
-  'al', 'allo', 'alla', 'ai', 'agli', 'alle',
-  'dal', 'dallo', 'dalla', 'dai', 'dagli', 'dalle',
-  'nel', 'nello', 'nella', 'nei', 'negli', 'nelle',
-  'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle',
+  'il',
+  'lo',
+  'la',
+  'i',
+  'gli',
+  'le',
+  'un',
+  'uno',
+  'una',
+  'di',
+  'a',
+  'da',
+  'in',
+  'con',
+  'su',
+  'per',
+  'tra',
+  'fra',
+  'e',
+  'o',
+  'ma',
+  'che',
+  'se',
+  'non',
+  'anche',
+  'del',
+  'dello',
+  'della',
+  'dei',
+  'degli',
+  'delle',
+  'al',
+  'allo',
+  'alla',
+  'ai',
+  'agli',
+  'alle',
+  'dal',
+  'dallo',
+  'dalla',
+  'dai',
+  'dagli',
+  'dalle',
+  'nel',
+  'nello',
+  'nella',
+  'nei',
+  'negli',
+  'nelle',
+  'sul',
+  'sullo',
+  'sulla',
+  'sui',
+  'sugli',
+  'sulle',
 ]);
 
 // Expanded tech scenario templates
@@ -309,7 +401,10 @@ export class TopicPracticeManager {
   }
 
   normalize(str) {
-    return str.toLowerCase().replace(/[.,?!;:'"()]/g, '').trim();
+    return str
+      .toLowerCase()
+      .replace(/[.,?!;:'"()]/g, '')
+      .trim();
   }
 
   normalizeWithAccents(str) {
@@ -328,9 +423,7 @@ export class TopicPracticeManager {
    * Format a context key into a human-readable label.
    */
   formatContextLabel(contextKey) {
-    return contextKey
-      .replace(/[-_]/g, ' ')
-      .replace(/\b\w/g, (c) => c.toUpperCase());
+    return contextKey.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   }
 
   // ─── RENDERING ─────────────────────────────────
@@ -511,11 +604,18 @@ export class TopicPracticeManager {
 
       case 'comprehension': {
         const allWithExamples = this.fullPool.filter((item) => item.example);
-        const paragraphSentences = this.buildComprehensionParagraph(allWithExamples, this.currentQuestionIndex);
+        const paragraphSentences = this.buildComprehensionParagraph(
+          allWithExamples,
+          this.currentQuestionIndex
+        );
         const paragraph = paragraphSentences.join('. ') + '.';
         const correctStatement = (q.example || '').split(' = ')[0];
 
-        const wrongOptions = this.generateComprehensionDistractors(correctStatement, paragraphSentences, allWithExamples);
+        const wrongOptions = this.generateComprehensionDistractors(
+          correctStatement,
+          paragraphSentences,
+          allWithExamples
+        );
         const allOptions = this.shuffleArray([correctStatement, ...wrongOptions]);
 
         html = `
@@ -551,7 +651,8 @@ export class TopicPracticeManager {
           '_____'
         );
 
-        const scenario = TECH_SCENARIO_TEMPLATES[this.currentQuestionIndex % TECH_SCENARIO_TEMPLATES.length];
+        const scenario =
+          TECH_SCENARIO_TEMPLATES[this.currentQuestionIndex % TECH_SCENARIO_TEMPLATES.length];
         const options = this.generateScenarioOptions(targetWord);
 
         html = `
@@ -638,8 +739,9 @@ export class TopicPracticeManager {
 
     // Phase 1: Same context items
     const currentCtx = currentQ.context || 'general';
-    const sameCtxItems = (this.contextIndex.get(currentCtx) || [])
-      .filter((it) => isPlausible(it[field]));
+    const sameCtxItems = (this.contextIndex.get(currentCtx) || []).filter((it) =>
+      isPlausible(it[field])
+    );
     const shuffledCtx = this.shuffleArray(sameCtxItems);
     for (const item of shuffledCtx) {
       if (distractors.size >= 3) break;
@@ -648,8 +750,12 @@ export class TopicPracticeManager {
 
     // Phase 2: Same difficulty items
     if (distractors.size < 3 && currentQ.difficulty) {
-      const sameDiff = this.fullPool
-        .filter((it) => it.difficulty === currentQ.difficulty && it.context !== currentCtx && isPlausible(it[field]));
+      const sameDiff = this.fullPool.filter(
+        (it) =>
+          it.difficulty === currentQ.difficulty &&
+          it.context !== currentCtx &&
+          isPlausible(it[field])
+      );
       const shuffledDiff = this.shuffleArray(sameDiff);
       for (const item of shuffledDiff) {
         if (distractors.size >= 3) break;
@@ -704,8 +810,9 @@ export class TopicPracticeManager {
 
     // Prefer same context
     const currentCtx = currentQ.context || 'general';
-    const sameCtx = (this.contextIndex.get(currentCtx) || [])
-      .filter((it) => isPlausible(it.english));
+    const sameCtx = (this.contextIndex.get(currentCtx) || []).filter((it) =>
+      isPlausible(it.english)
+    );
     for (const item of this.shuffleArray(sameCtx)) {
       if (distractors.size >= 3) break;
       distractors.add(item.english);
@@ -743,7 +850,11 @@ export class TopicPracticeManager {
     for (let r = 1; sentences.length < targetCount && r < this.questions.length; r++) {
       for (const offset of [-r, r]) {
         const idx = currentIdx + offset;
-        if (idx >= 0 && idx < this.questions.length && !used.has((this.questions[idx]?.english || '').toLowerCase())) {
+        if (
+          idx >= 0 &&
+          idx < this.questions.length &&
+          !used.has((this.questions[idx]?.english || '').toLowerCase())
+        ) {
           const item = this.questions[idx];
           if (item && item.example) {
             const sent = item.example.split(' = ')[0];
@@ -758,8 +869,9 @@ export class TopicPracticeManager {
     }
 
     if (sentences.length < targetCount) {
-      const extras = this.shuffleArray(allWithExamples)
-        .filter((item) => !used.has((item.english || '').toLowerCase()) && item.example);
+      const extras = this.shuffleArray(allWithExamples).filter(
+        (item) => !used.has((item.english || '').toLowerCase()) && item.example
+      );
       for (const item of extras) {
         if (sentences.length >= targetCount) break;
         const sent = item.example.split(' = ')[0];
@@ -956,11 +1068,7 @@ export class TopicPracticeManager {
     if (!input) return;
 
     const normalizeCode = (s) =>
-      s.toLowerCase()
-        .replace(/\s+/g, ' ')
-        .replace(/;+$/g, '')
-        .replace(/["']/g, "'")
-        .trim();
+      s.toLowerCase().replace(/\s+/g, ' ').replace(/;+$/g, '').replace(/["']/g, "'").trim();
 
     const sortFlags = (cmd) => {
       return cmd.replace(/-([a-zA-Z]+)/g, (match, flags) => {
@@ -1101,9 +1209,12 @@ export class TopicPracticeManager {
     const container = document.getElementById('topic-practice-content');
     if (!container) return;
 
-    const wordsHtml = positions.map((p) =>
-      `<span class="word-chip ${p.correct ? 'word-correct' : 'word-incorrect'}">${this.escapeHtml(p.word || '___')}</span>`
-    ).join(' ');
+    const wordsHtml = positions
+      .map(
+        (p) =>
+          `<span class="word-chip ${p.correct ? 'word-correct' : 'word-incorrect'}">${this.escapeHtml(p.word || '___')}</span>`
+      )
+      .join(' ');
 
     container.innerHTML = `
       <div class="feedback-card feedback-partial">

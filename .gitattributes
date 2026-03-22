@@ -1,0 +1,26 @@
+# Normalize line endings to LF on commit, checkout as native OS format
+* text=auto
+
+# Force LF for web/source files
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.conf text eol=lf
+*.sh text eol=lf
+Dockerfile text eol=lf
+
+# Binary files - don't touch
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.mp3 binary
+*.mp4 binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary

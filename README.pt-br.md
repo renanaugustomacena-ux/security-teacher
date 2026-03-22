@@ -51,20 +51,20 @@ Todos os dados do usuario permanecem no dispositivo via IndexedDB — sem contas
 
 ### Modos de aprendizado
 
-| Modo | Descricao |
-|------|-----------|
-| **Karaoke** | Modos passo a passo e em tempo real com transcricao fonetica, analise de vocabulario e letras sincronizadas |
-| **Licoes estruturadas** | 4 niveis (0-3): Sobrevivencia, Vida cotidiana, Gramatica intermediaria, Ingles avancado C1 |
-| **7 modos de pratica** | Audicao, Escrita, Correspondencia, Preencher lacunas, Reconstrucao de frases, Compreensao, Cenarios |
-| **Topicos tecnicos** | 4 dominios (Ciberseguranca, Python, Linux, Desenvolvimento de Software), 12 niveis cada, 11 tipos de exercicio incluindo desafios de codigo |
-| **Palavra do dia** | Rotacao deterministica diaria de vocabulario, extraida de todas as fontes |
+| Modo                    | Descricao                                                                                                                                   |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Karaoke**             | Modos passo a passo e em tempo real com transcricao fonetica, analise de vocabulario e letras sincronizadas                                 |
+| **Licoes estruturadas** | 4 niveis (0-3): Sobrevivencia, Vida cotidiana, Gramatica intermediaria, Ingles avancado C1                                                  |
+| **7 modos de pratica**  | Audicao, Escrita, Correspondencia, Preencher lacunas, Reconstrucao de frases, Compreensao, Cenarios                                         |
+| **Topicos tecnicos**    | 4 dominios (Ciberseguranca, Python, Linux, Desenvolvimento de Software), 12 niveis cada, 11 tipos de exercicio incluindo desafios de codigo |
+| **Palavra do dia**      | Rotacao deterministica diaria de vocabulario, extraida de todas as fontes                                                                   |
 
 ### Experiencia visual
 
-| Efeito | Descricao |
-|--------|-----------|
-| **Tela de splash** | Logo animado de luxo com revelacao suave na inicializacao |
-| **Chuva Matrix 3D** | Fundo morphing Three.js com deformacao que segue o cursor e refracao |
+| Efeito                   | Descricao                                                                                                                                      |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Tela de splash**       | Logo animado de luxo com revelacao suave na inicializacao                                                                                      |
+| **Chuva Matrix 3D**      | Fundo morphing Three.js com deformacao que segue o cursor e refracao                                                                           |
 | **Particulas no cursor** | Rastro de particulas ambientais com efeito de brilho, desativado automaticamente em dispositivos touch e com preferencia de movimento reduzido |
 
 ### Acompanhamento de progresso
@@ -88,10 +88,10 @@ Todos os dados do usuario permanecem no dispositivo via IndexedDB — sem contas
 
 ### Pre-requisitos
 
-| Ferramenta         | Versao minima   | Comando de verificacao   |
-|--------------------|-----------------|--------------------------|
-| **Docker**         | 20.10+          | `docker --version`       |
-| **Docker Compose** | v2+             | `docker compose version` |
+| Ferramenta         | Versao minima | Comando de verificacao   |
+| ------------------ | ------------- | ------------------------ |
+| **Docker**         | 20.10+        | `docker --version`       |
+| **Docker Compose** | v2+           | `docker compose version` |
 
 ### 1. Clone o repositorio
 
@@ -234,21 +234,21 @@ Navegador
 
 ## Stack tecnologico
 
-| Camada | Tecnologia |
-|--------|-----------|
-| **Linguagem** | Vanilla JavaScript (modulos ES6+) |
-| **Efeitos 3D** | Three.js + shaders WebGL personalizados |
-| **Audio** | Web Audio API |
-| **Sincronizacao de letras** | API LRCLIB |
-| **Traducao** | API MyMemory Translation |
-| **Persistencia** | IndexedDB (via StorageService) |
-| **Estilos** | CSS3 com custom properties |
-| **Fontes** | Raleway, Inter, JetBrains Mono (Google Fonts) |
-| **Container** | Nginx 1.25 em Alpine Linux |
-| **Deploy estatico** | Netlify |
-| **Testes** | Vitest |
-| **Linting** | ESLint (base Airbnb) + Prettier |
-| **Git Hooks** | Husky + commitlint (Conventional Commits) |
+| Camada                      | Tecnologia                                    |
+| --------------------------- | --------------------------------------------- |
+| **Linguagem**               | Vanilla JavaScript (modulos ES6+)             |
+| **Efeitos 3D**              | Three.js + shaders WebGL personalizados       |
+| **Audio**                   | Web Audio API                                 |
+| **Sincronizacao de letras** | API LRCLIB                                    |
+| **Traducao**                | API MyMemory Translation                      |
+| **Persistencia**            | IndexedDB (via StorageService)                |
+| **Estilos**                 | CSS3 com custom properties                    |
+| **Fontes**                  | Raleway, Inter, JetBrains Mono (Google Fonts) |
+| **Container**               | Nginx 1.25 em Alpine Linux                    |
+| **Deploy estatico**         | Netlify                                       |
+| **Testes**                  | Vitest                                        |
+| **Linting**                 | ESLint (base Airbnb) + Prettier               |
+| **Git Hooks**               | Husky + commitlint (Conventional Commits)     |
 
 ---
 
@@ -256,16 +256,16 @@ Navegador
 
 ### Hardening do container Docker
 
-| Controle | Implementacao |
-|----------|---------------|
-| **Execucao nao-root** | nginx roda como UID 101, todas as capabilities removidas via `cap_drop: ALL` |
-| **Headers CSP** | Allowlist rigorosa para scripts, estilos, conexoes, fontes e midia |
-| **X-Frame-Options** | `DENY` — previne clickjacking |
-| **X-Content-Type-Options** | `nosniff` — previne sniffing de tipo MIME |
-| **X-XSS-Protection** | Ativado com `mode=block` |
-| **Referrer-Policy** | `strict-origin-when-cross-origin` |
-| **Healthcheck** | Endpoint de healthcheck Docker integrado |
-| **Imagem minima** | Base Alpine Linux, sem pacotes desnecessarios |
+| Controle                   | Implementacao                                                                |
+| -------------------------- | ---------------------------------------------------------------------------- |
+| **Execucao nao-root**      | nginx roda como UID 101, todas as capabilities removidas via `cap_drop: ALL` |
+| **Headers CSP**            | Allowlist rigorosa para scripts, estilos, conexoes, fontes e midia           |
+| **X-Frame-Options**        | `DENY` — previne clickjacking                                                |
+| **X-Content-Type-Options** | `nosniff` — previne sniffing de tipo MIME                                    |
+| **X-XSS-Protection**       | Ativado com `mode=block`                                                     |
+| **Referrer-Policy**        | `strict-origin-when-cross-origin`                                            |
+| **Healthcheck**            | Endpoint de healthcheck Docker integrado                                     |
+| **Imagem minima**          | Base Alpine Linux, sem pacotes desnecessarios                                |
 
 ### Deploy no Netlify
 
@@ -323,15 +323,15 @@ knowledge-aio/
 
 Os commits seguem as **Conventional Commits** (aplicadas por Husky + commitlint):
 
-| Prefixo    | Uso                                  |
-|------------|--------------------------------------|
-| `feat:`    | Nova funcionalidade                  |
-| `fix:`     | Correcao de bug                      |
-| `docs:`    | Apenas documentacao                  |
-| `style:`   | Formatacao (Prettier)                |
-| `refactor:`| Reestruturacao de codigo             |
-| `test:`    | Adicao ou atualizacao de testes      |
-| `chore:`   | Ferramentas, dependencias, config    |
+| Prefixo     | Uso                               |
+| ----------- | --------------------------------- |
+| `feat:`     | Nova funcionalidade               |
+| `fix:`      | Correcao de bug                   |
+| `docs:`     | Apenas documentacao               |
+| `style:`    | Formatacao (Prettier)             |
+| `refactor:` | Reestruturacao de codigo          |
+| `test:`     | Adicao ou atualizacao de testes   |
+| `chore:`    | Ferramentas, dependencias, config |
 
 1. Faca um fork do repositorio
 2. Crie um branch para a funcionalidade (`git checkout -b feat/minha-funcionalidade`)

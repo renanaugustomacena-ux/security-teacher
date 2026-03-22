@@ -51,20 +51,20 @@ All user data stays on-device via IndexedDB — no accounts, no server-side data
 
 ### Learning Modes
 
-| Mode | Description |
-|------|-------------|
-| **Karaoke Learning** | Step-by-step and real-time modes with phonetic transcription, vocabulary breakdown, and synchronized lyrics |
-| **Structured Lessons** | 4 levels (0-3) covering Survival, Daily Life, Intermediate Grammar, and C1 Advanced English |
-| **7 Practice Modes** | Listening, Writing, Matching, Fill-in-the-blank, Sentence reconstruction, Comprehension, Scenario |
-| **Technical Topics** | 4 domains (Cybersecurity, Python, Linux, Software Dev), 12 levels each, 11 exercise types including code challenges |
-| **Word of the Day** | Deterministic daily vocabulary rotation drawn from all sources |
+| Mode                   | Description                                                                                                         |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Karaoke Learning**   | Step-by-step and real-time modes with phonetic transcription, vocabulary breakdown, and synchronized lyrics         |
+| **Structured Lessons** | 4 levels (0-3) covering Survival, Daily Life, Intermediate Grammar, and C1 Advanced English                         |
+| **7 Practice Modes**   | Listening, Writing, Matching, Fill-in-the-blank, Sentence reconstruction, Comprehension, Scenario                   |
+| **Technical Topics**   | 4 domains (Cybersecurity, Python, Linux, Software Dev), 12 levels each, 11 exercise types including code challenges |
+| **Word of the Day**    | Deterministic daily vocabulary rotation drawn from all sources                                                      |
 
 ### Visual Experience
 
-| Effect | Description |
-|--------|-------------|
-| **Splash Screen** | Animated luxury logo reveal on startup |
-| **3D Matrix Rain** | Three.js morphing background with cursor-following deformation and refraction |
+| Effect               | Description                                                                                         |
+| -------------------- | --------------------------------------------------------------------------------------------------- |
+| **Splash Screen**    | Animated luxury logo reveal on startup                                                              |
+| **3D Matrix Rain**   | Three.js morphing background with cursor-following deformation and refraction                       |
 | **Cursor Particles** | Ambient particle trail with ring glow, auto-disabled on touch devices and reduced-motion preference |
 
 ### Progress Tracking
@@ -89,7 +89,7 @@ All user data stays on-device via IndexedDB — no accounts, no server-side data
 ### Prerequisites
 
 | Tool               | Minimum Version | Check command            |
-|--------------------|-----------------|--------------------------|
+| ------------------ | --------------- | ------------------------ |
 | **Docker**         | 20.10+          | `docker --version`       |
 | **Docker Compose** | v2+             | `docker compose version` |
 
@@ -234,21 +234,21 @@ Browser
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| **Language** | Vanilla JavaScript (ES6+ modules) |
-| **3D Effects** | Three.js + custom WebGL shaders |
-| **Audio** | Web Audio API |
-| **Lyrics Sync** | LRCLIB API |
-| **Translation** | MyMemory Translation API |
-| **Persistence** | IndexedDB (via StorageService) |
-| **Styling** | CSS3 with custom properties |
-| **Fonts** | Raleway, Inter, JetBrains Mono (Google Fonts) |
-| **Container** | Nginx 1.25 on Alpine Linux |
-| **Static Deploy** | Netlify |
-| **Testing** | Vitest |
-| **Linting** | ESLint (Airbnb base) + Prettier |
-| **Git Hooks** | Husky + commitlint (Conventional Commits) |
+| Layer             | Technology                                    |
+| ----------------- | --------------------------------------------- |
+| **Language**      | Vanilla JavaScript (ES6+ modules)             |
+| **3D Effects**    | Three.js + custom WebGL shaders               |
+| **Audio**         | Web Audio API                                 |
+| **Lyrics Sync**   | LRCLIB API                                    |
+| **Translation**   | MyMemory Translation API                      |
+| **Persistence**   | IndexedDB (via StorageService)                |
+| **Styling**       | CSS3 with custom properties                   |
+| **Fonts**         | Raleway, Inter, JetBrains Mono (Google Fonts) |
+| **Container**     | Nginx 1.25 on Alpine Linux                    |
+| **Static Deploy** | Netlify                                       |
+| **Testing**       | Vitest                                        |
+| **Linting**       | ESLint (Airbnb base) + Prettier               |
+| **Git Hooks**     | Husky + commitlint (Conventional Commits)     |
 
 ---
 
@@ -256,16 +256,16 @@ Browser
 
 ### Docker container hardening
 
-| Control | Implementation |
-|---------|---------------|
-| **Non-root execution** | nginx runs as UID 101, all capabilities dropped via `cap_drop: ALL` |
-| **CSP headers** | Strict allowlist for script, style, connect, font, and media sources |
-| **X-Frame-Options** | `DENY` — prevents clickjacking |
-| **X-Content-Type-Options** | `nosniff` — prevents MIME-type sniffing |
-| **X-XSS-Protection** | Enabled with `mode=block` |
-| **Referrer-Policy** | `strict-origin-when-cross-origin` |
-| **Healthcheck** | Built-in Docker healthcheck endpoint |
-| **Minimal image** | Alpine Linux base, no unnecessary packages |
+| Control                    | Implementation                                                       |
+| -------------------------- | -------------------------------------------------------------------- |
+| **Non-root execution**     | nginx runs as UID 101, all capabilities dropped via `cap_drop: ALL`  |
+| **CSP headers**            | Strict allowlist for script, style, connect, font, and media sources |
+| **X-Frame-Options**        | `DENY` — prevents clickjacking                                       |
+| **X-Content-Type-Options** | `nosniff` — prevents MIME-type sniffing                              |
+| **X-XSS-Protection**       | Enabled with `mode=block`                                            |
+| **Referrer-Policy**        | `strict-origin-when-cross-origin`                                    |
+| **Healthcheck**            | Built-in Docker healthcheck endpoint                                 |
+| **Minimal image**          | Alpine Linux base, no unnecessary packages                           |
 
 ### Netlify deployment
 
@@ -323,15 +323,15 @@ knowledge-aio/
 
 Commits follow **Conventional Commits** (enforced by Husky + commitlint):
 
-| Prefix     | Usage                        |
-|------------|------------------------------|
-| `feat:`    | New feature                  |
-| `fix:`     | Bug fix                      |
-| `docs:`    | Documentation only           |
-| `style:`   | Formatting (Prettier)        |
-| `refactor:`| Code restructuring           |
-| `test:`    | Adding or updating tests     |
-| `chore:`   | Tooling, dependencies, config|
+| Prefix      | Usage                         |
+| ----------- | ----------------------------- |
+| `feat:`     | New feature                   |
+| `fix:`      | Bug fix                       |
+| `docs:`     | Documentation only            |
+| `style:`    | Formatting (Prettier)         |
+| `refactor:` | Code restructuring            |
+| `test:`     | Adding or updating tests      |
+| `chore:`    | Tooling, dependencies, config |
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feat/my-feature`)

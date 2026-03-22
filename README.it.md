@@ -51,20 +51,20 @@ Tutti i dati dell'utente restano sul dispositivo tramite IndexedDB — nessun ac
 
 ### Modalita di apprendimento
 
-| Modalita | Descrizione |
-|----------|-------------|
-| **Karaoke** | Modalita passo-passo e in tempo reale con trascrizione fonetica, analisi del vocabolario e testi sincronizzati |
-| **Lezioni strutturate** | 4 livelli (0-3): Sopravvivenza, Vita quotidiana, Grammatica intermedia, Inglese avanzato C1 |
-| **7 modalita di pratica** | Ascolto, Scrittura, Abbinamento, Riempi gli spazi, Ricostruzione di frasi, Comprensione, Scenari |
-| **Argomenti tecnici** | 4 domini (Cybersecurity, Python, Linux, Sviluppo Software), 12 livelli ciascuno, 11 tipi di esercizio incluse sfide di codice |
-| **Parola del giorno** | Rotazione deterministica giornaliera del vocabolario, attinta da tutte le fonti |
+| Modalita                  | Descrizione                                                                                                                   |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Karaoke**               | Modalita passo-passo e in tempo reale con trascrizione fonetica, analisi del vocabolario e testi sincronizzati                |
+| **Lezioni strutturate**   | 4 livelli (0-3): Sopravvivenza, Vita quotidiana, Grammatica intermedia, Inglese avanzato C1                                   |
+| **7 modalita di pratica** | Ascolto, Scrittura, Abbinamento, Riempi gli spazi, Ricostruzione di frasi, Comprensione, Scenari                              |
+| **Argomenti tecnici**     | 4 domini (Cybersecurity, Python, Linux, Sviluppo Software), 12 livelli ciascuno, 11 tipi di esercizio incluse sfide di codice |
+| **Parola del giorno**     | Rotazione deterministica giornaliera del vocabolario, attinta da tutte le fonti                                               |
 
 ### Esperienza visiva
 
-| Effetto | Descrizione |
-|---------|-------------|
-| **Splash screen** | Logo animato di lusso con rivelazione fluida all'avvio |
-| **Pioggia Matrix 3D** | Sfondo morphing Three.js con deformazione che segue il cursore e rifrazione |
+| Effetto                   | Descrizione                                                                                                                             |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Splash screen**         | Logo animato di lusso con rivelazione fluida all'avvio                                                                                  |
+| **Pioggia Matrix 3D**     | Sfondo morphing Three.js con deformazione che segue il cursore e rifrazione                                                             |
 | **Particelle al cursore** | Scia di particelle ambientali con effetto alone, disattivata automaticamente su dispositivi touch e con preferenza di movimento ridotto |
 
 ### Tracciamento dei progressi
@@ -89,7 +89,7 @@ Tutti i dati dell'utente restano sul dispositivo tramite IndexedDB — nessun ac
 ### Prerequisiti
 
 | Strumento          | Versione minima | Comando di verifica      |
-|--------------------|-----------------|--------------------------|
+| ------------------ | --------------- | ------------------------ |
 | **Docker**         | 20.10+          | `docker --version`       |
 | **Docker Compose** | v2+             | `docker compose version` |
 
@@ -234,21 +234,21 @@ Browser
 
 ## Stack tecnologico
 
-| Livello | Tecnologia |
-|---------|-----------|
-| **Linguaggio** | Vanilla JavaScript (moduli ES6+) |
-| **Effetti 3D** | Three.js + shader WebGL personalizzati |
-| **Audio** | Web Audio API |
-| **Sincronizzazione testi** | API LRCLIB |
-| **Traduzione** | API MyMemory Translation |
-| **Persistenza** | IndexedDB (tramite StorageService) |
-| **Stile** | CSS3 con custom properties |
-| **Font** | Raleway, Inter, JetBrains Mono (Google Fonts) |
-| **Container** | Nginx 1.25 su Alpine Linux |
-| **Deploy statico** | Netlify |
-| **Testing** | Vitest |
-| **Linting** | ESLint (base Airbnb) + Prettier |
-| **Git Hooks** | Husky + commitlint (Conventional Commits) |
+| Livello                    | Tecnologia                                    |
+| -------------------------- | --------------------------------------------- |
+| **Linguaggio**             | Vanilla JavaScript (moduli ES6+)              |
+| **Effetti 3D**             | Three.js + shader WebGL personalizzati        |
+| **Audio**                  | Web Audio API                                 |
+| **Sincronizzazione testi** | API LRCLIB                                    |
+| **Traduzione**             | API MyMemory Translation                      |
+| **Persistenza**            | IndexedDB (tramite StorageService)            |
+| **Stile**                  | CSS3 con custom properties                    |
+| **Font**                   | Raleway, Inter, JetBrains Mono (Google Fonts) |
+| **Container**              | Nginx 1.25 su Alpine Linux                    |
+| **Deploy statico**         | Netlify                                       |
+| **Testing**                | Vitest                                        |
+| **Linting**                | ESLint (base Airbnb) + Prettier               |
+| **Git Hooks**              | Husky + commitlint (Conventional Commits)     |
 
 ---
 
@@ -256,16 +256,16 @@ Browser
 
 ### Hardening del container Docker
 
-| Controllo | Implementazione |
-|-----------|----------------|
-| **Esecuzione non-root** | nginx gira come UID 101, tutte le capability rimosse tramite `cap_drop: ALL` |
-| **Header CSP** | Allowlist rigorosa per script, stili, connessioni, font e media |
-| **X-Frame-Options** | `DENY` — previene il clickjacking |
-| **X-Content-Type-Options** | `nosniff` — previene lo sniffing del tipo MIME |
-| **X-XSS-Protection** | Abilitato con `mode=block` |
-| **Referrer-Policy** | `strict-origin-when-cross-origin` |
-| **Healthcheck** | Endpoint di healthcheck Docker integrato |
-| **Immagine minimale** | Base Alpine Linux, nessun pacchetto non necessario |
+| Controllo                  | Implementazione                                                              |
+| -------------------------- | ---------------------------------------------------------------------------- |
+| **Esecuzione non-root**    | nginx gira come UID 101, tutte le capability rimosse tramite `cap_drop: ALL` |
+| **Header CSP**             | Allowlist rigorosa per script, stili, connessioni, font e media              |
+| **X-Frame-Options**        | `DENY` — previene il clickjacking                                            |
+| **X-Content-Type-Options** | `nosniff` — previene lo sniffing del tipo MIME                               |
+| **X-XSS-Protection**       | Abilitato con `mode=block`                                                   |
+| **Referrer-Policy**        | `strict-origin-when-cross-origin`                                            |
+| **Healthcheck**            | Endpoint di healthcheck Docker integrato                                     |
+| **Immagine minimale**      | Base Alpine Linux, nessun pacchetto non necessario                           |
 
 ### Deploy su Netlify
 
@@ -323,15 +323,15 @@ knowledge-aio/
 
 I commit seguono le **Conventional Commits** (applicate da Husky + commitlint):
 
-| Prefisso   | Utilizzo                       |
-|------------|--------------------------------|
-| `feat:`    | Nuova funzionalita             |
-| `fix:`     | Correzione di bug              |
-| `docs:`    | Solo documentazione            |
-| `style:`   | Formattazione (Prettier)       |
-| `refactor:`| Ristrutturazione del codice    |
-| `test:`    | Aggiunta o aggiornamento test  |
-| `chore:`   | Strumenti, dipendenze, config  |
+| Prefisso    | Utilizzo                      |
+| ----------- | ----------------------------- |
+| `feat:`     | Nuova funzionalita            |
+| `fix:`      | Correzione di bug             |
+| `docs:`     | Solo documentazione           |
+| `style:`    | Formattazione (Prettier)      |
+| `refactor:` | Ristrutturazione del codice   |
+| `test:`     | Aggiunta o aggiornamento test |
+| `chore:`    | Strumenti, dipendenze, config |
 
 1. Fai un fork del repository
 2. Crea un branch per la funzionalita (`git checkout -b feat/mia-funzionalita`)

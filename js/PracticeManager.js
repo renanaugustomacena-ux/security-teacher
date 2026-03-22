@@ -51,25 +51,117 @@ const STREAK_BONUSES = [
 
 // Function words to skip in fill-in-the-blank
 const ENGLISH_FUNCTION_WORDS = new Set([
-  'the', 'a', 'an', 'is', 'am', 'are', 'was', 'were',
-  'be', 'been', 'being', 'to', 'of', 'in', 'on', 'at',
-  'for', 'with', 'by', 'from', 'and', 'or', 'but', 'not',
-  'it', 'its', 'he', 'she', 'we', 'they', 'i', 'you',
-  'my', 'your', 'his', 'her', 'our', 'their',
-  'this', 'that', 'these', 'those',
-  'do', 'does', 'did', 'has', 'have', 'had',
-  'will', 'would', 'can', 'could', 'should',
+  'the',
+  'a',
+  'an',
+  'is',
+  'am',
+  'are',
+  'was',
+  'were',
+  'be',
+  'been',
+  'being',
+  'to',
+  'of',
+  'in',
+  'on',
+  'at',
+  'for',
+  'with',
+  'by',
+  'from',
+  'and',
+  'or',
+  'but',
+  'not',
+  'it',
+  'its',
+  'he',
+  'she',
+  'we',
+  'they',
+  'i',
+  'you',
+  'my',
+  'your',
+  'his',
+  'her',
+  'our',
+  'their',
+  'this',
+  'that',
+  'these',
+  'those',
+  'do',
+  'does',
+  'did',
+  'has',
+  'have',
+  'had',
+  'will',
+  'would',
+  'can',
+  'could',
+  'should',
 ]);
 
 const ITALIAN_FUNCTION_WORDS = new Set([
-  'il', 'lo', 'la', 'i', 'gli', 'le', 'un', 'uno', 'una',
-  'di', 'a', 'da', 'in', 'con', 'su', 'per', 'tra', 'fra',
-  'e', 'o', 'ma', 'che', 'se', 'non', 'anche',
-  'del', 'dello', 'della', 'dei', 'degli', 'delle',
-  'al', 'allo', 'alla', 'ai', 'agli', 'alle',
-  'dal', 'dallo', 'dalla', 'dai', 'dagli', 'dalle',
-  'nel', 'nello', 'nella', 'nei', 'negli', 'nelle',
-  'sul', 'sullo', 'sulla', 'sui', 'sugli', 'sulle',
+  'il',
+  'lo',
+  'la',
+  'i',
+  'gli',
+  'le',
+  'un',
+  'uno',
+  'una',
+  'di',
+  'a',
+  'da',
+  'in',
+  'con',
+  'su',
+  'per',
+  'tra',
+  'fra',
+  'e',
+  'o',
+  'ma',
+  'che',
+  'se',
+  'non',
+  'anche',
+  'del',
+  'dello',
+  'della',
+  'dei',
+  'degli',
+  'delle',
+  'al',
+  'allo',
+  'alla',
+  'ai',
+  'agli',
+  'alle',
+  'dal',
+  'dallo',
+  'dalla',
+  'dai',
+  'dagli',
+  'dalle',
+  'nel',
+  'nello',
+  'nella',
+  'nei',
+  'negli',
+  'nelle',
+  'sul',
+  'sullo',
+  'sulla',
+  'sui',
+  'sugli',
+  'sulle',
 ]);
 
 // Expanded scenario templates
@@ -310,7 +402,10 @@ export class PracticeManager {
    * Basic normalization without accent stripping
    */
   normalize(str) {
-    return str.toLowerCase().replace(/[.,?!;:'"()]/g, '').trim();
+    return str
+      .toLowerCase()
+      .replace(/[.,?!;:'"()]/g, '')
+      .trim();
   }
 
   renderQuestion() {
@@ -420,11 +515,18 @@ export class PracticeManager {
     } else if (this.currentMode === 'comprehension') {
       // Build a longer paragraph from the full pool
       const allWithExamples = this.fullPool.filter((q) => q.example);
-      const paragraphSentences = this.buildComprehensionParagraph(allWithExamples, this.currentQuestionIndex);
+      const paragraphSentences = this.buildComprehensionParagraph(
+        allWithExamples,
+        this.currentQuestionIndex
+      );
       const paragraph = paragraphSentences.join('. ') + '.';
       const correctStatement = (question.example || '').split(' = ')[0];
 
-      const wrongOptions = this.generateComprehensionDistractors(correctStatement, paragraphSentences, allWithExamples);
+      const wrongOptions = this.generateComprehensionDistractors(
+        correctStatement,
+        paragraphSentences,
+        allWithExamples
+      );
       const allOptions = this.shuffleArray([correctStatement, ...wrongOptions]);
       correctAnswer = correctStatement;
 
@@ -535,8 +637,9 @@ export class PracticeManager {
 
     // Phase 1: Same lesson items
     if (currentQ._lessonId) {
-      const sameLesson = this.fullPool
-        .filter((it) => it._lessonId === currentQ._lessonId && isPlausible(it[field]));
+      const sameLesson = this.fullPool.filter(
+        (it) => it._lessonId === currentQ._lessonId && isPlausible(it[field])
+      );
       const shuffled = this.shuffleArray(sameLesson);
       for (const item of shuffled) {
         if (distractors.size >= 3) break;
@@ -546,8 +649,12 @@ export class PracticeManager {
 
     // Phase 2: Same level items
     if (distractors.size < 3 && currentQ._level) {
-      const sameLevel = this.fullPool
-        .filter((it) => it._level === currentQ._level && it._lessonId !== currentQ._lessonId && isPlausible(it[field]));
+      const sameLevel = this.fullPool.filter(
+        (it) =>
+          it._level === currentQ._level &&
+          it._lessonId !== currentQ._lessonId &&
+          isPlausible(it[field])
+      );
       const shuffled = this.shuffleArray(sameLevel);
       for (const item of shuffled) {
         if (distractors.size >= 3) break;
@@ -590,7 +697,11 @@ export class PracticeManager {
     for (let r = 1; sentences.length < targetCount && r < this.questions.length; r++) {
       for (const offset of [-r, r]) {
         const idx = currentIdx + offset;
-        if (idx >= 0 && idx < this.questions.length && !used.has((this.questions[idx]?.english || '').toLowerCase())) {
+        if (
+          idx >= 0 &&
+          idx < this.questions.length &&
+          !used.has((this.questions[idx]?.english || '').toLowerCase())
+        ) {
           const q = this.questions[idx];
           if (q && q.example) {
             const sent = q.example.split(' = ')[0];
@@ -606,8 +717,9 @@ export class PracticeManager {
 
     // If still need more, draw from full pool
     if (sentences.length < targetCount) {
-      const extras = this.shuffleArray(allWithExamples)
-        .filter((q) => !used.has((q.english || '').toLowerCase()) && q.example);
+      const extras = this.shuffleArray(allWithExamples).filter(
+        (q) => !used.has((q.english || '').toLowerCase()) && q.example
+      );
       for (const q of extras) {
         if (sentences.length >= targetCount) break;
         const sent = q.example.split(' = ')[0];
@@ -808,9 +920,12 @@ export class PracticeManager {
     const container = document.getElementById('practice-content');
     if (!container) return;
 
-    const wordsHtml = positions.map((p) =>
-      `<span class="word-chip ${p.correct ? 'word-correct' : 'word-incorrect'}">${this.escapeHtml(p.word || '___')}</span>`
-    ).join(' ');
+    const wordsHtml = positions
+      .map(
+        (p) =>
+          `<span class="word-chip ${p.correct ? 'word-correct' : 'word-incorrect'}">${this.escapeHtml(p.word || '___')}</span>`
+      )
+      .join(' ');
 
     container.innerHTML = `
       <div class="feedback-card feedback-partial">
