@@ -9,6 +9,7 @@ const STATIC_ASSETS = [
   './icons/icon-192.png',
   './icons/icon-512.png',
   './js/app.js',
+  './js/sw-register.js',
   './js/AchievementManager.js',
   './js/ConversationManager.js',
   './js/CursorParticles.js',
