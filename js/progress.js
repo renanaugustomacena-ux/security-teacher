@@ -35,20 +35,21 @@ export class ProgressManager {
    */
   async loadProgress() {
     try {
-      // Attempt to load from new StorageService first (if implemented there)
-      // For now, we stick to localStorage via the Service wrapper if available,
-      // or direct localStorage if Service assumes DB.
-      // Since StorageService implements generic DB load, we try that.
-
       const saved = await storageService.load('progress', 'user_default');
       if (saved) {
-        return saved;
+        return this._sanitizeLoadedProgress(saved);
       }
 
       // Fallback to localStorage for migration
       const localSaved = localStorage.getItem(this.storageKey);
       if (localSaved) {
-        return JSON.parse(localSaved);
+        try {
+          const parsed = JSON.parse(localSaved);
+          return this._sanitizeLoadedProgress(parsed);
+        } catch (parseErr) {
+          console.warn('Corrupt localStorage progress blob, discarding:', parseErr);
+          localStorage.removeItem(this.storageKey);
+        }
       }
     } catch (e) {
       console.error('Error loading progress:', e);
@@ -131,6 +132,54 @@ export class ProgressManager {
         completed: false,
       },
     };
+  }
+
+  _clampNumber(value, min, max, fallback = 0) {
+    if (typeof value !== 'number' || !Number.isFinite(value)) return fallback;
+    if (value < min) return min;
+    if (value > max) return max;
+    return value;
+  }
+
+  /**
+   * Defensive sanitizer applied to any progress blob read from IDB or
+   * localStorage. Clamps the handful of numeric fields that feed into
+   * achievements, streaks and the leaderboard so that a corrupted or
+   * tampered blob cannot propagate absurd values through the UI.
+   * Non-numeric fields pass through unchanged.
+   */
+  _sanitizeLoadedProgress(data) {
+    if (!data || typeof data !== 'object') return data;
+    const safe = { ...data };
+
+    safe.wordsLearned = this._clampNumber(safe.wordsLearned, 0, 1_000_000);
+    safe.songsCompleted = this._clampNumber(safe.songsCompleted, 0, 100_000);
+    safe.lessonsCompleted = this._clampNumber(safe.lessonsCompleted, 0, 100_000);
+    safe.currentLevel = this._clampNumber(safe.currentLevel, 0, 99);
+    safe.levelProgress = this._clampNumber(safe.levelProgress, 0, 1000);
+    safe.totalTimeMinutes = this._clampNumber(safe.totalTimeMinutes, 0, 10_000_000);
+    safe.todayTimeMinutes = this._clampNumber(safe.todayTimeMinutes, 0, 1440);
+    safe.practiceSessionsCompleted = this._clampNumber(safe.practiceSessionsCompleted, 0, 1_000_000);
+    safe.terminalExercisesCompleted = this._clampNumber(safe.terminalExercisesCompleted, 0, 1_000_000);
+    safe.bestChainStreak = this._clampNumber(safe.bestChainStreak, 0, 100_000);
+
+    if (safe.xp && typeof safe.xp === 'object') {
+      safe.xp = {
+        ...safe.xp,
+        total: this._clampNumber(safe.xp.total, 0, 100_000_000),
+        today: this._clampNumber(safe.xp.today, 0, 100_000),
+        weekTotal: this._clampNumber(safe.xp.weekTotal, 0, 700_000),
+      };
+    }
+
+    if (safe.streak && typeof safe.streak === 'object') {
+      safe.streak = {
+        ...safe.streak,
+        current: this._clampNumber(safe.streak.current, 0, 3650),
+      };
+    }
+
+    return safe;
   }
 
   /**
