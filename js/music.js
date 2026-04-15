@@ -249,31 +249,44 @@ export class MusicManager {
       } else if (lrcData && lrcData.plainLyrics) {
         if (placeholder) placeholder.textContent = lrcData.plainLyrics;
       } else if (placeholder) {
-        placeholder.innerHTML = `
-            <div>
-              <p>Testi non trovati / Lyrics not found</p>
-              <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.7;">
-                File: "${title}"<br>
-                Prova a rinominare il file come "Artista - Titolo" /
-                Try renaming the file as "Artist - Title"
-              </p>
-            </div>
-          `;
+        this._renderPlaceholderMessage(placeholder, {
+          primary: 'Testi non trovati / Lyrics not found',
+          detail: `File: "${title}"`,
+          hint: 'Prova a rinominare il file come "Artista - Titolo" / Try renaming the file as "Artist - Title"',
+        });
       }
     } catch (err) {
       console.error('Lyrics fetch failed:', err);
       if (placeholder) {
-        placeholder.innerHTML = `
-          <div>
-            <p>Errore nel caricamento testi / Error loading lyrics</p>
-            <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.7;">
-              ${err.message || 'Network error'}<br>
-              Controlla la connessione / Check your connection
-            </p>
-          </div>
-        `;
+        this._renderPlaceholderMessage(placeholder, {
+          primary: 'Errore nel caricamento testi / Error loading lyrics',
+          detail: err && err.message ? String(err.message) : 'Network error',
+          hint: 'Controlla la connessione / Check your connection',
+        });
       }
     }
+  }
+
+  _renderPlaceholderMessage(placeholder, { primary, detail, hint }) {
+    placeholder.textContent = '';
+    const wrapper = document.createElement('div');
+
+    const primaryEl = document.createElement('p');
+    primaryEl.textContent = primary;
+    wrapper.appendChild(primaryEl);
+
+    const detailEl = document.createElement('p');
+    detailEl.style.fontSize = '0.85rem';
+    detailEl.style.marginTop = '0.5rem';
+    detailEl.style.opacity = '0.7';
+    detailEl.textContent = detail;
+    if (hint) {
+      detailEl.appendChild(document.createElement('br'));
+      detailEl.appendChild(document.createTextNode(hint));
+    }
+    wrapper.appendChild(detailEl);
+
+    placeholder.appendChild(wrapper);
   }
 
   // ═══════════════════════════════════════════
