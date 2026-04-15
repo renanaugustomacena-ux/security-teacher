@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-const CACHE_NAME = 'kaio-v3';
+const CACHE_NAME = 'kaio-v4';
 
 const STATIC_ASSETS = [
   './',
@@ -88,11 +88,12 @@ function cacheFirstStrategy(request) {
   });
 }
 
-// Network-first: try network, fall back to cache
+// Network-first for local assets (HTML, etc): try network, fall back to cache.
+// The network response is cached so future offline loads still work.
 function networkFirstStrategy(request) {
   return fetch(request)
     .then((response) => {
-      if (response && response.status === 200) {
+      if (response && response.status === 200 && response.type !== 'opaque') {
         const clone = response.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
       }
@@ -101,21 +102,31 @@ function networkFirstStrategy(request) {
     .catch(() => caches.match(request));
 }
 
+// Network-only for external APIs: never cache responses. Avoids a single
+// compromised response becoming a persistent client-side XSS vector via
+// cache poisoning. Offline users simply see a normal fetch failure.
+function networkOnlyPassthrough(request) {
+  return fetch(request);
+}
+
 // Fetch: strategy depends on request type
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // Navigation requests: return index.html (SPA support)
+  // Navigation requests: network-first so security updates reach users.
+  // Fall back to cached index.html when offline.
   if (event.request.mode === 'navigate') {
     event.respondWith(
-      caches.match('./index.html').then((cached) => cached || fetch(event.request))
+      fetch(event.request).catch(() =>
+        caches.match('./index.html').then((cached) => cached || Response.error())
+      )
     );
     return;
   }
 
-  // External API requests: network-first with cache fallback
+  // External API requests: network-only, never cache.
   if (EXTERNAL_API_HOSTS.some((host) => url.hostname.includes(host))) {
-    event.respondWith(networkFirstStrategy(event.request));
+    event.respondWith(networkOnlyPassthrough(event.request));
     return;
   }
 
