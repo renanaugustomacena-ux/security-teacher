@@ -270,7 +270,9 @@ class LyricsService {
         throw new Error(`Translation API returned ${response.status}`);
       }
       const data = await response.json();
-      const translated = data.responseData?.translatedText || '';
+      const raw = data?.responseData?.translatedText;
+      const translated =
+        typeof raw === 'string' && raw.length > 0 && raw.length <= 10000 ? raw : '';
 
       this._translationCache.set(cacheKey, translated || '...');
       return translated || '...';
@@ -303,15 +305,30 @@ class LyricsService {
   // ═══════════════════════════════════════════
 
   parseLrc(lrc) {
-    if (!lrc) return [];
-    const lines = lrc.split('\n');
+    if (!lrc || typeof lrc !== 'string') return [];
+    // Upper bounds defend against malicious or truncated inputs causing
+    // CPU exhaustion during timestamp scanning.
+    const MAX_LRC_BYTES = 1_000_000;
+    const MAX_LINES = 10_000;
+    const MAX_LINE_LEN = 10_000;
+    const MAX_TIMESTAMPS_PER_LINE = 64;
+
+    if (lrc.length > MAX_LRC_BYTES) {
+      console.warn('parseLrc: input exceeds size limit, truncating');
+      lrc = lrc.slice(0, MAX_LRC_BYTES);
+    }
+
+    const lines = lrc.split('\n').slice(0, MAX_LINES);
     const lyrics = [];
     const timestampRegex = /\[(\d{1,3}):(\d{2})(?:\.(\d{1,3}))?\]/g;
 
     lines.forEach((line) => {
+      if (line.length > MAX_LINE_LEN) return;
       const timestamps = [];
       let match;
+      let count = 0;
       while ((match = timestampRegex.exec(line)) !== null) {
+        if (++count > MAX_TIMESTAMPS_PER_LINE) break;
         const minutes = parseInt(match[1], 10);
         const seconds = parseInt(match[2], 10);
         const millisecondsRaw = match[3] || '0';
@@ -319,6 +336,7 @@ class LyricsService {
         const time = minutes * 60 + seconds + milliseconds / 1000;
         timestamps.push(time);
       }
+      timestampRegex.lastIndex = 0;
       const text = line.replace(/\[[^\]]+\]/g, '').trim();
       if (text && timestamps.length > 0) {
         timestamps.forEach((time) => lyrics.push({ time, text }));
