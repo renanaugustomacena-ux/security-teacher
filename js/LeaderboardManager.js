@@ -112,6 +112,26 @@ export class LeaderboardManager {
     const pb = this.progressManager.data.leaderboard.personalBests;
     if (!pb[category]) return false;
 
+    // Reject non-finite or out-of-bounds values. These limits are generous
+    // but block obvious forgery (e.g. 9e9 XP) from propagating into the
+    // persisted leaderboard. Local-first apps cannot stop a determined
+    // console-tamperer, but casual drive-by scripts and stale data bugs
+    // should not survive this check.
+    const SANE_LIMITS = {
+      bestDailyXP: 100_000,
+      bestStreak: 3650,
+      mostWordsInDay: 10_000,
+      mostStudyTime: 1440,
+      bestPracticeScore: 100,
+      fastestPractice: 86_400,
+    };
+    const limit = SANE_LIMITS[category];
+    if (typeof value !== 'number' || !Number.isFinite(value) || value < 0) return false;
+    if (limit != null && value > limit) {
+      console.warn(`LeaderboardManager: rejecting out-of-bounds ${category}=${value}`);
+      return false;
+    }
+
     const today = getToday();
     let isNewRecord = false;
 
