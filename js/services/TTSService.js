@@ -164,8 +164,19 @@ class TTSService {
    * @returns {string} HTML string for the button
    */
   speakerButtonHTML(text, lang = 'en-US') {
-    const escapedText = text.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-    return `<button class="tts-btn" type="button" title="Ascolta / Listen" data-tts-text="${escapedText}" data-tts-lang="${lang}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>`;
+    const escapedText = this._escapeAttr(text);
+    const escapedLang = this._escapeAttr(lang);
+    return `<button class="tts-btn" type="button" title="Ascolta / Listen" data-tts-text="${escapedText}" data-tts-lang="${escapedLang}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>`;
+  }
+
+  _escapeAttr(value) {
+    if (value == null) return '';
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
   }
 
   /**
