@@ -1,5 +1,19 @@
 /* eslint-disable no-restricted-globals */
-const CACHE_NAME = 'kaio-v4';
+/**
+ * Service Worker — Adamantium variant.
+ *
+ * Key hardening vs. prior revision:
+ *   - No unconditional self.skipWaiting() on install. Waiting SW only takes
+ *     over when a controlled tab explicitly posts { type: 'SW_SKIP_WAITING' }.
+ *     This stops a rogue / bad SW update from silently replacing all open
+ *     tabs — even if the attacker briefly controls the origin.
+ *   - CDN caching removed. Post phase-1.2 there are no cross-origin JS/CSS
+ *     dependencies; only same-origin /vendor/*, /js/*, /css/* get cached.
+ *     This eliminates the cross-origin cache-poisoning surface entirely.
+ *   - fetch handler integrity gate: cross-origin responses never enter cache,
+ *     opaque responses are passed through but never persisted.
+ */
+const CACHE_NAME = 'kaio-v5';
 
 const STATIC_ASSETS = [
   './',
@@ -20,6 +34,7 @@ const STATIC_ASSETS = [
   './js/MorphBackground.js',
   './js/music.js',
   './js/PracticeManager.js',
+  './js/ProfileManager.js',
   './js/progress.js',
   './js/PronunciationManager.js',
   './js/songs.js',
@@ -28,11 +43,13 @@ const STATIC_ASSETS = [
   './js/data/achievements.js',
   './js/services/AIService.js',
   './js/services/AudioService.js',
+  './js/services/AuthService.js',
   './js/services/LyricsService.js',
   './js/services/StorageService.js',
   './js/services/TTSService.js',
   './js/store/index.js',
   './js/utils/DateUtils.js',
+  './js/utils/SanitizeHtml.js',
   './js/topics/TopicManager.js',
   './js/topics/TopicBossChallenge.js',
   './js/topics/TopicPracticeManager.js',
@@ -42,23 +59,21 @@ const STATIC_ASSETS = [
   './js/topics/data/python.js',
   './js/topics/data/software-dev.js',
   './js/topics/data/techtalk-scenarios.js',
+  './vendor/three-0.170.0.module.js',
+  './vendor/fonts/fonts.css',
 ];
 
 const EXTERNAL_API_HOSTS = ['lrclib.net', 'mymemory.translated.net'];
 
-const CDN_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com', 'cdn.jsdelivr.net'];
-
-// Install: pre-cache static assets
+// Install: pre-cache static assets. NO skipWaiting — the new SW stays in
+// "waiting" state until the user opts in via the update toast.
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches
-      .open(CACHE_NAME)
-      .then((cache) => cache.addAll(STATIC_ASSETS))
-      .then(() => self.skipWaiting())
-  );
+  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(STATIC_ASSETS)));
 });
 
-// Activate: clean up old caches
+// Activate: drop old cache versions and claim clients. clients.claim() is
+// safe here because activation only happens after the waiting SW was
+// explicitly promoted via SW_SKIP_WAITING.
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
@@ -70,15 +85,25 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Cache-first: try cache, fall back to network and cache the response
-function cacheFirstStrategy(request) {
+// Controlled update handshake. Tab-side sw-register.js posts this message
+// when the user clicks the "Nuova versione disponibile" toast.
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SW_SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
+function cacheFirstSameOrigin(request) {
   return caches.match(request).then((cached) => {
-    if (cached) {
-      return cached;
-    }
+    if (cached) return cached;
     return fetch(request)
       .then((response) => {
-        if (!response || response.status !== 200 || response.type === 'opaque') {
+        if (
+          !response ||
+          response.status !== 200 ||
+          response.type === 'opaque' ||
+          response.type === 'error'
+        ) {
           return response;
         }
         const clone = response.clone();
@@ -89,33 +114,11 @@ function cacheFirstStrategy(request) {
   });
 }
 
-// Network-first for local assets (HTML, etc): try network, fall back to cache.
-// The network response is cached so future offline loads still work.
-function networkFirstStrategy(request) {
-  return fetch(request)
-    .then((response) => {
-      if (response && response.status === 200 && response.type !== 'opaque') {
-        const clone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-      }
-      return response;
-    })
-    .catch(() => caches.match(request));
-}
-
-// Network-only for external APIs: never cache responses. Avoids a single
-// compromised response becoming a persistent client-side XSS vector via
-// cache poisoning. Offline users simply see a normal fetch failure.
-function networkOnlyPassthrough(request) {
-  return fetch(request);
-}
-
-// Fetch: strategy depends on request type
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // Navigation requests: network-first so security updates reach users.
-  // Fall back to cached index.html when offline.
+  // Navigation: network-first so security updates reach users. Offline
+  // falls back to cached index.html.
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request).catch(() =>
@@ -125,24 +128,19 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // External API requests: network-only, never cache.
+  // External APIs: network-only, never cache. Prevents a single malicious
+  // response from becoming a persistent client-side attack vector.
   if (EXTERNAL_API_HOSTS.some((host) => url.hostname.includes(host))) {
-    event.respondWith(networkOnlyPassthrough(event.request));
+    event.respondWith(fetch(event.request));
     return;
   }
 
-  // CDN resources: cache-first
-  if (CDN_HOSTS.some((host) => url.hostname.includes(host))) {
-    event.respondWith(cacheFirstStrategy(event.request));
-    return;
-  }
-
-  // Same-origin requests: cache-first
+  // Same-origin: cache-first.
   if (url.origin === self.location.origin) {
-    event.respondWith(cacheFirstStrategy(event.request));
+    event.respondWith(cacheFirstSameOrigin(event.request));
     return;
   }
 
-  // All other requests: network only
+  // Anything else cross-origin: plain network, no caching.
   event.respondWith(fetch(event.request));
 });

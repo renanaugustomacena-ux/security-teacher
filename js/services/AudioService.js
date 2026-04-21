@@ -106,9 +106,19 @@ class AudioService {
   stop() {
     if (this.source) {
       try {
+        this.source.onended = null;
         this.source.stop();
+      } catch (err) {
+        // InvalidStateError when stop() is called on a source that never started.
+        if (err?.name !== 'InvalidStateError') {
+          console.warn('[audio] source.stop failed:', err);
+        }
+      }
+      try {
         this.source.disconnect();
-      } catch (e) {}
+      } catch (err) {
+        console.warn('[audio] source.disconnect failed:', err);
+      }
       this.source = null;
     }
     this.isPlaying = false;

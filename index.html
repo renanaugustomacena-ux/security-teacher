@@ -8,16 +8,48 @@
       content="Impara l'inglese con la musica hip-hop - Learn English with hip-hop music"
     />
     <title>Knowledge AIO - Impara l'Inglese con la Musica</title>
+    <!--
+      Trusted Types default policy. Activated by the CSP
+      require-trusted-types-for 'script' directive. String-based script
+      creation (eval, Function(), setTimeout('...', n)) throws. Script URLs
+      are restricted to same-origin + accounts.google.com. innerHTML is
+      accepted pass-through because all template sinks in this codebase
+      either escape user input at the boundary (SanitizeHtml.js) or render
+      hardcoded / bundled HTML. Loaded before any other script so the policy
+      is in force for the whole page.
+    -->
+    <script>
+      if (window.trustedTypes && window.trustedTypes.createPolicy) {
+        window.trustedTypes.createPolicy('default', {
+          createHTML: (s) => (typeof s === 'string' ? s : ''),
+          createScript: () => {
+            throw new Error('TrustedTypes: inline string script creation is blocked');
+          },
+          createScriptURL: (input) => {
+            const url = new URL(input, location.href);
+            const allowed = [location.origin, 'https://accounts.google.com'];
+            if (!allowed.includes(url.origin)) {
+              throw new Error('TrustedTypes: script URL blocked: ' + input);
+            }
+            return input;
+          },
+        });
+      }
+    </script>
+    <!--
+      Google Identity Services Client ID (public, safe to ship client-side).
+      Set this at build/deploy time (e.g. via env substitution) or replace the
+      placeholder below. Empty value disables Google sign-in gracefully.
+    -->
+    <meta name="google-client-id" content="" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#e67e22" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="apple-touch-icon" href="icons/icon-192.png" />
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="/vendor/fonts/fonts.css" />
   </head>
 
   <body>
@@ -340,6 +372,23 @@
             </svg>
             <span>Classifica / Leaderboard</span>
           </button>
+          <button class="nav-item" data-section="profile">
+            <svg
+              class="nav-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Profilo / Profile</span>
+          </button>
         </nav>
 
         <!-- Matrix theme is permanent - no toggle needed -->
@@ -534,25 +583,35 @@
             </p>
           </header>
 
-          <!-- Song Selection -->
+          <!-- Song Selection (manual upload only) -->
           <div class="song-selection" id="song-selection">
-            <!-- Pre-loaded Song Catalog -->
-            <div class="songs-grid" id="songs-grid">
-              <!-- Rendered by MusicManager.renderSongCatalog() -->
-            </div>
-
-            <!-- Local File Upload -->
             <div class="upload-cta-container">
               <div class="upload-zone" id="karaoke-drop-zone">
                 <span class="upload-icon"></span>
-                <h3>Carica la tua Musica / Upload Your Music</h3>
+                <h3>Karaoke Manuale / Manual Karaoke</h3>
                 <p>
-                  Scegli un file audio dal tuo dispositivo / Choose an audio file from your device
+                  Carica un file MP3 e, se vuoi, un file .lrc con i testi sincronizzati.<br />
+                  Upload an MP3 file and, if you have one, a .lrc lyrics file.
                 </p>
-                <button type="button" id="main-upload-btn" class="btn btn-primary">
-                  Seleziona File / Select File
-                </button>
-                <input type="file" id="main-audio-input" accept="audio/*" class="hidden" />
+                <div class="upload-buttons">
+                  <button type="button" id="main-upload-btn" class="btn btn-primary">
+                    MP3 / Audio
+                  </button>
+                  <input type="file" id="main-audio-input" accept="audio/*,.mp3,.wav,.ogg,.flac,.m4a" class="hidden" />
+                  <button type="button" id="main-lrc-btn" class="btn btn-secondary">
+                    .lrc (opzionale / optional)
+                  </button>
+                  <input type="file" id="main-lrc-input" accept=".lrc,text/plain" class="hidden" />
+                </div>
+                <ul class="upload-tips">
+                  <li>
+                    Nomina il file come <code>Artista - Titolo.mp3</code> per trovare automaticamente i testi su LRCLIB.
+                  </li>
+                  <li>
+                    Se LRCLIB non trova i testi, carica un file <code>.lrc</code> scaricato da un sito di testi sincronizzati.
+                  </li>
+                  <li>Puoi anche trascinare i file sopra questa area / You can also drop files here.</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -561,7 +620,7 @@
           <div class="karaoke-container hidden" id="karaoke-container">
             <div class="karaoke-header">
               <button class="btn btn-secondary back-btn" onclick="closeSong()">
-                ← Torna alle Canzoni / Back to Songs
+                ← Chiudi / Close
               </button>
               <div class="song-info">
                 <h3 id="karaoke-song-title">Song Title</h3>
@@ -569,32 +628,17 @@
               </div>
               <div class="header-actions">
                 <button id="upload-audio-btn" class="btn btn-secondary">
-                  Carica Audio / Upload Audio
+                  Nuovo MP3 / New MP3
                 </button>
-                <input type="file" id="karaoke-audio-input" accept="audio/*" class="hidden" />
+                <input type="file" id="karaoke-audio-input" accept="audio/*,.mp3,.wav,.ogg,.flac,.m4a" class="hidden" />
+                <button id="upload-lrc-btn" class="btn btn-secondary">
+                  Nuovo .lrc / New .lrc
+                </button>
+                <input type="file" id="karaoke-lrc-input" accept=".lrc,text/plain" class="hidden" />
               </div>
             </div>
 
-            <!-- Mode Selection -->
-            <div class="karaoke-modes">
-              <label class="mode-label">Modalità / Mode:</label>
-              <div class="btn-group" id="karaoke-mode-toggle">
-                <button class="btn btn-mode active" data-mode="step">Step-by-Step</button>
-                <button class="btn btn-mode" data-mode="realtime">Real-time (Non-stop)</button>
-              </div>
-            </div>
-
-            <!-- Step Controls -->
-            <div class="step-controls">
-              <span class="step-label"
-                >Step <span id="current-step">1</span> di / of <span id="total-steps">5</span></span
-              >
-              <div class="step-progress">
-                <div class="step-progress-fill" id="step-progress-fill" style="width: 20%"></div>
-              </div>
-            </div>
-
-            <!-- Scrolling block for realtime -->
+            <!-- Scrolling synced lyrics -->
             <div class="lyrics-scroll-container" id="lyrics-scroll-container">
               <div class="lyrics-scroll-viewport" id="lyrics-scroll-viewport">
                 <div class="lyrics-scroll-placeholder" id="lyrics-scroll-placeholder">
@@ -603,74 +647,22 @@
               </div>
             </div>
 
-            <!-- Display legacy for step-by-step (hidden by default in realtime) -->
-            <div class="lyrics-display lyrics-display-step hidden" id="lyrics-display-step">
-              <div class="lyrics-original">
-                <span class="lang-label">EN</span>
-                <p class="lyrics-text" id="lyrics-english">Loading...</p>
-              </div>
-              <div class="lyrics-translation">
-                <span class="lang-label">IT</span>
-                <p class="lyrics-text" id="lyrics-italian">Caricamento...</p>
-              </div>
-            </div>
-
-            <!-- Vocabulary Section -->
-            <div class="lyrics-vocabulary">
-              <h4>Parole Chiave / Key Words</h4>
-              <div class="vocab-list" id="step-vocabulary">
-                <!-- Dynamic vocabulary -->
-              </div>
-            </div>
-
-            <!-- Phonetics Section -->
-            <div class="lyrics-phonetics">
-              <h4>Come Pronunciare / How to Pronounce</h4>
-              <div class="phonetics-list" id="step-phonetics">
-                <!-- Dynamic phonetics -->
-              </div>
-            </div>
-
             <!-- Speed Control -->
             <div class="speed-control">
               <label>Velocità / Speed:</label>
-              <input type="range" id="speed-slider" min="0.5" max="1" step="0.1" value="0.7" />
-              <span id="speed-value">0.7x</span>
+              <input type="range" id="speed-slider" min="0.5" max="1.25" step="0.05" value="1" />
+              <span id="speed-value">1.0x</span>
               <div class="speed-labels">
                 <span>Lento / Slow</span>
                 <span>Normale / Normal</span>
               </div>
             </div>
 
-            <!-- Navigation -->
-            <div class="karaoke-nav">
-              <button class="btn btn-secondary" id="prev-step" onclick="prevStep()">
-                ← Step Precedente / Previous Step
-              </button>
-              <button class="btn btn-primary" id="next-step" onclick="nextStep()">
-                Step Successivo / Next Step →
-              </button>
-            </div>
+            <!-- Navigation (populated by MusicManager._renderRealtimeControls) -->
+            <div class="karaoke-nav"></div>
 
-            <!-- Completion -->
-            <div class="step-completion hidden" id="step-completion">
-              <div class="completion-content">
-                <span class="completion-icon"></span>
-                <h3>Canzone Completata! / Song Completed!</h3>
-                <p>
-                  Hai finito tutti gli step di questa canzone. / You finished all steps of this
-                  song.
-                </p>
-                <div class="completion-actions">
-                  <button class="btn btn-secondary" onclick="restartSong()">
-                    Ricomincia / Restart
-                  </button>
-                  <button class="btn btn-primary" onclick="closeSong()">
-                    Scegli Altra Canzone / Choose Another Song
-                  </button>
-                </div>
-              </div>
-            </div>
+            <!-- Completion (populated by MusicManager._onSongEnded) -->
+            <div class="step-completion hidden" id="step-completion"></div>
           </div>
         </section>
 
@@ -987,11 +979,25 @@
             <!-- Rendered by LeaderboardManager.renderLeaderboard() -->
           </div>
         </section>
+
+        <!-- PROFILE SECTION -->
+        <section id="profile" class="section">
+          <header class="section-header">
+            <h2>Profilo / Profile</h2>
+            <p class="section-subtitle">
+              Gestisci il tuo account e guarda le statistiche personali / Manage your account and
+              see your personal stats
+            </p>
+          </header>
+          <div id="profile-content">
+            <!-- Rendered by ProfileManager.render() -->
+          </div>
+        </section>
       </main>
     </div>
 
     <script type="importmap">
-      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+      { "imports": { "three": "/vendor/three-0.170.0.module.js" } }
     </script>
     <script src="js/sw-register.js"></script>
     <script type="module" src="js/app.js"></script>

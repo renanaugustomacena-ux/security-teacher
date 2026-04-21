@@ -1,237 +1,200 @@
 /**
- * MUSIC/KARAOKE MODULE
- * ====================
+ * MUSIC / KARAOKE MODULE — manual-upload only
+ * ===========================================
  *
- * Handles both pre-loaded songs (from songsDatabase) and uploaded audio.
- * Pre-loaded songs use step-by-step mode with vocabulary and phonetics.
- * Uploaded songs use real-time sync with LRCLIB lyrics + scrolling block display.
+ * User uploads an .mp3 (required) and optionally a .lrc lyrics file.
+ * If no .lrc is given we try to auto-discover synced lyrics on LRCLIB.
+ * English + Italian translations render in a scrolling block synced
+ * to playback via a requestAnimationFrame driver.
  */
 
 import { audioService } from './services/AudioService.js';
 import { lyricsService } from './services/LyricsService.js';
-import { songsDatabase, getSongById } from './songs.js';
-import { ttsService } from './services/TTSService.js';
+import { storageService } from './services/StorageService.js';
+import { stripBidi } from './utils/SanitizeHtml.js';
+
+const OFFSET_STORE_KEY = 'karaoke_offsets';
+const OFFSET_SETTINGS_KEY = 'settings';
+
+// Upload guards — defend against memory-exhaustion DoS + malformed-file crashes.
+const MAX_AUDIO_BYTES = 100 * 1024 * 1024; // 100 MB — covers a ~60 min FLAC.
+const MAX_LRC_BYTES = 2 * 1024 * 1024; // 2 MB — well beyond any real .lrc.
+const AUDIO_EXT_RE = /\.(mp3|wav|ogg|flac|m4a|aac|opus)$/i;
+const LRC_EXT_RE = /\.(lrc|txt)$/i;
+
+function safeTitleFromFilename(name) {
+  return stripBidi(String(name || '').replace(/\.[^/.]+$/, '')).slice(0, 256);
+}
 
 export class MusicManager {
   constructor(progressManager) {
-    this.currentSong = null;
     this.progressManager = progressManager;
-    this.currentStepIndex = 0;
 
-    this.playbackMode = 'realtime';
-    this.syncedLyrics = [];
-    this.syncIntervalId = null;
+    this.currentSong = null;
     this.currentAudioFile = null;
-    this.currentLineIndex = -1;
-    this.isPreloadedSong = false;
-
-    // Sync offset (seconds) — user-adjustable timing correction
-    this.syncOffset = 0;
-
-    // Scroll display state
+    this.syncedLyrics = [];
     this.lyricsLineElements = [];
     this.translationCache = {};
+    this.currentLineIndex = -1;
+
+    this.syncOffset = 0;
+    this._rafId = null;
+    this._pendingLrc = null;
+    this._currentOffsetKey = null;
+    this._offsetCache = null;
+    this._completed = false;
 
     this.init();
   }
 
   init() {
-    this.bindEvents();
-    this.renderSongCatalog();
     window.musicManager = this;
+    this.bindEvents();
 
     audioService.onPlaybackEnd = () => {
-      const playBtn = document.getElementById('play-pause-btn');
-      if (playBtn) playBtn.textContent = '▶ Riprendi / Play';
-      if (this.syncIntervalId) {
-        clearInterval(this.syncIntervalId);
-        this.syncIntervalId = null;
-      }
+      this.stopSyncLoop();
+      this._updatePlayButton(false);
+      this._onSongEnded();
     };
   }
 
   // ═══════════════════════════════════════════
-  // SONG CATALOG
-  // ═══════════════════════════════════════════
-
-  renderSongCatalog() {
-    const grid = document.getElementById('songs-grid');
-    if (!grid) return;
-
-    const difficultyLabels = {
-      easy: { label: 'Facile / Easy', color: 'var(--success, #10b981)' },
-      medium: { label: 'Media / Medium', color: 'var(--warning, #f59e0b)' },
-      hard: { label: 'Difficile / Hard', color: 'var(--danger, #ef4444)' },
-    };
-
-    grid.innerHTML = `
-      <h3 class="catalog-title">Canzoni Disponibili / Available Songs</h3>
-      <div class="songs-catalog">
-        ${songsDatabase
-          .map((song) => {
-            const diff = difficultyLabels[song.difficulty] || difficultyLabels.easy;
-            return `
-            <div class="song-card" onclick="musicManager.selectPreloadedSong('${song.id}')">
-              <div class="song-card-emoji">${song.coverEmoji}</div>
-              <div class="song-card-info">
-                <h4>${song.title}</h4>
-                <p class="song-card-artist">${song.artist}</p>
-                <span class="song-card-difficulty" style="background: ${diff.color};">${diff.label}</span>
-              </div>
-              <div class="song-card-steps">${song.steps.length} steps</div>
-            </div>
-          `;
-          })
-          .join('')}
-      </div>
-    `;
-
-    grid.classList.remove('hidden');
-  }
-
-  // ═══════════════════════════════════════════
-  // PRE-LOADED SONGS (Step-by-step)
-  // ═══════════════════════════════════════════
-
-  selectPreloadedSong(songId) {
-    const song = getSongById(songId);
-    if (!song) return;
-
-    this.currentSong = song;
-    this.currentStepIndex = 0;
-    this.isPreloadedSong = true;
-    this.currentAudioFile = null;
-    this.syncedLyrics = [];
-
-    document.getElementById('song-selection').classList.add('hidden');
-    document.getElementById('karaoke-container').classList.remove('hidden');
-    document.getElementById('step-completion').classList.add('hidden');
-
-    document.getElementById('karaoke-song-title').textContent = song.title;
-    document.getElementById('karaoke-artist').textContent = song.artist;
-
-    // Hide scroll container, show step display
-    document.getElementById('lyrics-scroll-container')?.classList.add('hidden');
-    document.getElementById('lyrics-display-step')?.classList.remove('hidden');
-
-    this.setPlaybackMode('step');
-    document.getElementById('total-steps').textContent = song.steps.length;
-    this.renderStep();
-  }
-
-  renderStep() {
-    if (!this.currentSong || !this.isPreloadedSong) return;
-
-    const step = this.currentSong.steps[this.currentStepIndex];
-    if (!step) return;
-
-    const totalSteps = this.currentSong.steps.length;
-
-    document.getElementById('current-step').textContent = this.currentStepIndex + 1;
-    const progressFill = document.getElementById('step-progress-fill');
-    if (progressFill) {
-      progressFill.style.width = `${((this.currentStepIndex + 1) / totalSteps) * 100}%`;
-    }
-
-    const lyricsEnEl = document.getElementById('lyrics-english');
-    if (lyricsEnEl) {
-      lyricsEnEl.textContent = step.english;
-      if (ttsService.isSupported && step.english) {
-        lyricsEnEl.appendChild(ttsService.createSpeakerButton(step.english));
-      }
-    }
-    document.getElementById('lyrics-italian').textContent = step.italian;
-
-    const vocabContainer = document.getElementById('step-vocabulary');
-    if (vocabContainer && step.vocabulary?.length) {
-      vocabContainer.innerHTML = step.vocabulary
-        .map(
-          (v) => `
-        <div class="vocab-item">
-          <div class="vocab-word">${v.word || ''} ${ttsService.isSupported && v.word ? ttsService.speakerButtonHTML(v.word) : ''}</div>
-          <div class="vocab-pronunciation">${v.pronunciation || ''}</div>
-          <div class="vocab-translation">${v.translation || ''}</div>
-          <div class="vocab-example">${v.example || ''}</div>
-        </div>
-      `
-        )
-        .join('');
-      ttsService.attachTTSListeners(vocabContainer);
-    }
-
-    const phoneticsContainer = document.getElementById('step-phonetics');
-    if (phoneticsContainer && step.phonetics?.length) {
-      phoneticsContainer.innerHTML = step.phonetics
-        .map(
-          (p) => `
-        <div class="phonetic-item">
-          <span class="phonetic-text">"${p.text || ''}"</span>
-          <span class="phonetic-howto">→ ${p.howTo || ''}</span>
-          <span class="phonetic-tip">${p.tip || ''}</span>
-        </div>
-      `
-        )
-        .join('');
-    }
-
-    document.querySelector('.step-controls')?.classList.remove('hidden');
-  }
-
-  // ═══════════════════════════════════════════
-  // UPLOADED SONGS (Real-time scroll)
+  // UPLOAD HANDLERS
   // ═══════════════════════════════════════════
 
   async handleAudioUpload(event) {
-    const file = event.target.files[0];
+    const file = event.target?.files?.[0];
+    // Reset input so re-uploading same file triggers change event again
+    if (event.target) event.target.value = '';
     if (!file) return;
 
+    await this._loadAudioFile(file);
+  }
+
+  async _loadAudioFile(file) {
+    // Reject oversized files before they hit decodeAudioData. A 500MB
+    // buffer through WebAudio can trigger tab OOM on low-end devices.
+    if (file.size > MAX_AUDIO_BYTES) {
+      this._renderPlaceholder({
+        primary: 'File troppo grande / File too large',
+        detail: `${Math.round(file.size / 1048576)} MB > 100 MB`,
+      });
+      return;
+    }
+    // MIME + extension allowlist. Either signal must vouch for the file —
+    // some browsers leave file.type empty for drag-drop, so we fall back
+    // to extension. Anything else is ignored.
+    const typeLooksAudio = typeof file.type === 'string' && file.type.startsWith('audio/');
+    const extLooksAudio = AUDIO_EXT_RE.test(file.name);
+    if (!typeLooksAudio && !extLooksAudio) {
+      this._renderPlaceholder({
+        primary: 'Formato non supportato / Unsupported format',
+        detail: file.type || file.name,
+      });
+      return;
+    }
+
     this.stopPlayback();
-    audioService.pauseOffset = 0;
     this.syncedLyrics = [];
-    this.currentAudioFile = file;
-    this.currentLineIndex = -1;
-    this.isPreloadedSong = false;
     this.lyricsLineElements = [];
     this.translationCache = {};
+    this.currentLineIndex = -1;
+    this.currentAudioFile = file;
+    this._completed = false;
 
-    const title = file.name.replace(/\.[^/.]+$/, '');
-    this.currentSong = { title, artist: 'Upload Locale', steps: [] };
+    const title = safeTitleFromFilename(file.name);
+    this.currentSong = { title, artist: 'Upload Locale' };
 
-    this.updateUIForNewSong();
+    this._showPlayer();
+    this._renderRealtimeControls();
 
     try {
       const buffer = await audioService.loadAudio(file);
-      this.setPlaybackMode('realtime');
-      this.fetchLyricsForUploadedSong(title, buffer.duration);
+      const duration = buffer?.duration || 0;
+      this._currentOffsetKey = this._makeOffsetKey(file, duration);
+      this.syncOffset = await this._loadPersistedOffset(this._currentOffsetKey);
+      this._updateOffsetDisplay();
+
+      if (this._pendingLrc) {
+        this._applyLrcText(this._pendingLrc);
+        this._pendingLrc = null;
+      } else {
+        this.fetchLyricsForUploadedSong(title, duration);
+      }
     } catch (err) {
-      console.error('Failed to load/play uploaded audio:', err);
+      console.error('[karaoke] audio load failed:', err);
+      this._renderPlaceholder({
+        primary: 'Impossibile decodificare il file / Could not decode file',
+        detail: file.name,
+        hint: 'Assicurati che sia un file audio valido (MP3, WAV, OGG) / Make sure it is a valid audio file',
+      });
     }
   }
 
-  updateUIForNewSong() {
-    document.getElementById('song-selection').classList.add('hidden');
-    document.getElementById('karaoke-container').classList.remove('hidden');
-    document.getElementById('step-completion').classList.add('hidden');
-    document.getElementById('karaoke-song-title').textContent = this.currentSong.title;
-    document.getElementById('karaoke-artist').textContent = this.currentSong.artist;
+  async handleLrcUpload(event) {
+    const file = event.target?.files?.[0];
+    if (event.target) event.target.value = '';
+    if (!file) return;
 
-    // Show scroll container, hide step display
-    document.getElementById('lyrics-scroll-container')?.classList.remove('hidden');
-    document.getElementById('lyrics-display-step')?.classList.add('hidden');
-
-    // Reset scroll viewport
-    const viewport = document.getElementById('lyrics-scroll-viewport');
-    if (viewport) {
-      const placeholder = document.getElementById('lyrics-scroll-placeholder');
-      if (placeholder) placeholder.textContent = 'Sincronizzazione... / Syncing...';
-      viewport.style.transform = 'translateY(0)';
+    if (file.size > MAX_LRC_BYTES) {
+      this._renderPlaceholder({
+        primary: 'File .lrc troppo grande / .lrc file too large',
+        detail: `${Math.round(file.size / 1024)} KB > 2 MB`,
+      });
+      return;
+    }
+    if (!LRC_EXT_RE.test(file.name)) {
+      this._renderPlaceholder({
+        primary: 'Estensione non valida / Invalid extension',
+        detail: file.name,
+      });
+      return;
     }
 
-    const phoneticsContainer = document.getElementById('step-phonetics');
-    if (phoneticsContainer) phoneticsContainer.innerHTML = '...';
-
-    this.setPlaybackMode('realtime');
+    try {
+      // Strict UTF-8 decode. fatal:true throws on malformed sequences so
+      // an attacker can't smuggle bidi overrides or NULL bytes via a
+      // truncated multi-byte sequence the tolerant decoder would salvage.
+      const bytes = new Uint8Array(await file.arrayBuffer());
+      const text = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+      if (!this.currentAudioFile) {
+        this._pendingLrc = text;
+        const placeholder = document.getElementById('lyrics-scroll-placeholder');
+        if (placeholder) {
+          this._renderPlaceholder({
+            primary: '.lrc caricato / .lrc loaded',
+            detail: stripBidi(file.name),
+            hint: 'Ora carica il tuo MP3 / Now upload your MP3',
+          });
+        }
+        return;
+      }
+      this._applyLrcText(text);
+    } catch (err) {
+      console.error('[karaoke] lrc read failed:', err);
+      this._renderPlaceholder({
+        primary: 'Errore lettura .lrc / Error reading .lrc',
+        detail: err?.message || 'unknown error',
+      });
+    }
   }
+
+  _applyLrcText(lrcText) {
+    const parsed = lyricsService.parseLrc(lrcText);
+    if (!parsed.length) {
+      this._renderPlaceholder({
+        primary: 'File .lrc non valido / Invalid .lrc file',
+        detail: 'Nessun timestamp riconosciuto / No timestamps recognized',
+      });
+      return;
+    }
+    this.syncedLyrics = parsed;
+    this.renderLyricsBlock();
+  }
+
+  // ═══════════════════════════════════════════
+  // LRCLIB LYRIC FETCH
+  // ═══════════════════════════════════════════
 
   async fetchLyricsForUploadedSong(title, duration) {
     const placeholder = document.getElementById('lyrics-scroll-placeholder');
@@ -239,54 +202,39 @@ export class MusicManager {
 
     try {
       const lrcData = await lyricsService.findLyrics('', title, duration);
-      if (lrcData && lrcData.syncedLyrics) {
+      if (lrcData?.syncedLyrics) {
         this.syncedLyrics = lyricsService.parseLrc(lrcData.syncedLyrics);
         if (lrcData.artistName && lrcData.trackName) {
-          document.getElementById('karaoke-song-title').textContent = lrcData.trackName;
-          document.getElementById('karaoke-artist').textContent = lrcData.artistName;
+          const titleEl = document.getElementById('karaoke-song-title');
+          const artistEl = document.getElementById('karaoke-artist');
+          if (titleEl) titleEl.textContent = lrcData.trackName;
+          if (artistEl) artistEl.textContent = lrcData.artistName;
         }
         this.renderLyricsBlock();
-      } else if (lrcData && lrcData.plainLyrics) {
-        if (placeholder) placeholder.textContent = lrcData.plainLyrics;
-      } else if (placeholder) {
-        this._renderPlaceholderMessage(placeholder, {
+      } else if (lrcData?.plainLyrics) {
+        this._renderPlaceholder({
+          primary: 'Solo testi non sincronizzati / Unsynced lyrics only',
+          detail: 'LRCLIB non ha timestamp per questo brano / LRCLIB has no timings for this track',
+          hint: 'Carica un file .lrc per la sincronizzazione / Upload a .lrc file for sync',
+        });
+      } else {
+        this._renderPlaceholder({
           primary: 'Testi non trovati / Lyrics not found',
           detail: `File: "${title}"`,
-          hint: 'Prova a rinominare il file come "Artista - Titolo" / Try renaming the file as "Artist - Title"',
+          hint: 'Rinomina il file come "Artista - Titolo.mp3" oppure carica un .lrc / Rename file as "Artist - Title.mp3" or upload a .lrc',
         });
       }
     } catch (err) {
-      console.error('Lyrics fetch failed:', err);
-      if (placeholder) {
-        this._renderPlaceholderMessage(placeholder, {
-          primary: 'Errore nel caricamento testi / Error loading lyrics',
-          detail: err && err.message ? String(err.message) : 'Network error',
-          hint: 'Controlla la connessione / Check your connection',
-        });
-      }
+      console.error('[karaoke] lyrics fetch failed:', err);
+      const isTimeout = err?.name === 'AbortError';
+      this._renderPlaceholder({
+        primary: isTimeout
+          ? 'LRCLIB timeout — riprova / LRCLIB timeout — try again'
+          : 'Errore nel caricamento testi / Error loading lyrics',
+        detail: err?.message || 'network error',
+        hint: 'Controlla connessione o carica un .lrc / Check connection or upload a .lrc',
+      });
     }
-  }
-
-  _renderPlaceholderMessage(placeholder, { primary, detail, hint }) {
-    placeholder.textContent = '';
-    const wrapper = document.createElement('div');
-
-    const primaryEl = document.createElement('p');
-    primaryEl.textContent = primary;
-    wrapper.appendChild(primaryEl);
-
-    const detailEl = document.createElement('p');
-    detailEl.style.fontSize = '0.85rem';
-    detailEl.style.marginTop = '0.5rem';
-    detailEl.style.opacity = '0.7';
-    detailEl.textContent = detail;
-    if (hint) {
-      detailEl.appendChild(document.createElement('br'));
-      detailEl.appendChild(document.createTextNode(hint));
-    }
-    wrapper.appendChild(detailEl);
-
-    placeholder.appendChild(wrapper);
   }
 
   // ═══════════════════════════════════════════
@@ -297,14 +245,14 @@ export class MusicManager {
     const viewport = document.getElementById('lyrics-scroll-viewport');
     if (!viewport || this.syncedLyrics.length === 0) return;
 
-    // Clear viewport and build all lines
-    viewport.innerHTML = '';
+    viewport.textContent = '';
     this.lyricsLineElements = [];
 
     this.syncedLyrics.forEach((line, index) => {
       const div = document.createElement('div');
       div.className = 'lyrics-line upcoming';
-      div.dataset.index = index;
+      div.dataset.index = String(index);
+      div.addEventListener('click', () => this._onLineClick(index));
 
       const enP = document.createElement('p');
       enP.className = 'lyrics-line-en';
@@ -321,16 +269,15 @@ export class MusicManager {
       this.lyricsLineElements.push({ el: div, enP, itP });
     });
 
-    // Pre-translate initial batch (first 8 lines)
     this.preTranslateBatch(0, 8);
   }
 
   async preTranslateBatch(start, end) {
     const clampedEnd = Math.min(end, this.syncedLyrics.length);
     for (let i = start; i < clampedEnd; i++) {
-      if (this.translationCache[i] !== undefined) continue; // already started or done
+      if (this.translationCache[i] !== undefined) continue;
 
-      this.translationCache[i] = null; // mark as in-flight
+      this.translationCache[i] = null;
       const text = this.syncedLyrics[i]?.text;
       if (!text || !text.trim()) {
         this.translationCache[i] = '';
@@ -341,70 +288,69 @@ export class MusicManager {
         .translate(text)
         .then((translation) => {
           this.translationCache[i] = translation || '';
-          if (this.lyricsLineElements[i]?.itP) {
-            this.lyricsLineElements[i].itP.textContent = translation || '';
-          }
+          const row = this.lyricsLineElements[i];
+          if (row?.itP) row.itP.textContent = translation || '';
         })
         .catch(() => {
           this.translationCache[i] = '...';
-          if (this.lyricsLineElements[i]?.itP) {
-            this.lyricsLineElements[i].itP.textContent = '...';
-          }
+          const row = this.lyricsLineElements[i];
+          if (row?.itP) row.itP.textContent = '...';
         });
     }
   }
 
   // ═══════════════════════════════════════════
-  // SYNC LOOP & LYRICS UPDATE
+  // SYNC DRIVER (rAF) + binary-search active line
   // ═══════════════════════════════════════════
 
   updateSyncedLyrics(time) {
-    if (!this.syncedLyrics || this.syncedLyrics.length === 0) return;
-    if (this.lyricsLineElements.length === 0) return;
+    if (!this.syncedLyrics.length || !this.lyricsLineElements.length) return;
 
-    // Apply user-adjustable sync offset
     const adjustedTime = time + this.syncOffset;
-
-    // Find current index from timestamp
-    let index = -1;
-    for (let i = 0; i < this.syncedLyrics.length; i++) {
-      if (adjustedTime >= this.syncedLyrics[i].time) {
-        index = i;
-      } else {
-        break;
-      }
-    }
+    const index = this._findLineIndex(adjustedTime);
 
     if (index === -1 || index === this.currentLineIndex) return;
     this.currentLineIndex = index;
 
-    // Update CSS classes on all elements
     for (let i = 0; i < this.lyricsLineElements.length; i++) {
       const { el } = this.lyricsLineElements[i];
       el.classList.remove('active', 'past', 'upcoming');
-      if (i < index) {
-        el.classList.add('past');
-      } else if (i === index) {
-        el.classList.add('active');
-      } else {
-        el.classList.add('upcoming');
-      }
+      if (i < index) el.classList.add('past');
+      else if (i === index) el.classList.add('active');
+      else el.classList.add('upcoming');
     }
 
-    // Scroll viewport to center the active line
     const activeEl = this.lyricsLineElements[index].el;
     const container = document.getElementById('lyrics-scroll-container');
     const viewport = document.getElementById('lyrics-scroll-viewport');
     if (container && viewport && activeEl) {
-      const containerHeight = container.clientHeight;
-      const lineTop = activeEl.offsetTop;
-      const lineHeight = activeEl.offsetHeight;
-      const targetY = -(lineTop - containerHeight / 2 + lineHeight / 2);
+      const targetY = -(
+        activeEl.offsetTop -
+        container.clientHeight / 2 +
+        activeEl.offsetHeight / 2
+      );
       viewport.style.transform = `translateY(${targetY}px)`;
     }
 
-    // Lookahead: pre-translate next 5 lines
     this.preTranslateBatch(index + 1, index + 6);
+  }
+
+  _findLineIndex(time) {
+    const arr = this.syncedLyrics;
+    if (time < arr[0].time) return -1;
+    let lo = 0;
+    let hi = arr.length - 1;
+    let answer = -1;
+    while (lo <= hi) {
+      const mid = (lo + hi) >> 1;
+      if (arr[mid].time <= time) {
+        answer = mid;
+        lo = mid + 1;
+      } else {
+        hi = mid - 1;
+      }
+    }
+    return answer;
   }
 
   // ═══════════════════════════════════════════
@@ -416,114 +362,88 @@ export class MusicManager {
     try {
       audioService.play(audioService.pauseOffset);
       this.startSyncLoop();
-      const playBtn = document.getElementById('play-pause-btn');
-      if (playBtn) playBtn.textContent = '⏸ Pausa / Pause';
+      this._updatePlayButton(true);
     } catch (err) {
-      console.error('Start playback failed:', err);
+      console.error('[karaoke] start playback failed:', err);
     }
   }
 
   async togglePlayback() {
     if (audioService.isPlaying) {
       audioService.pause();
-      if (this.syncIntervalId) {
-        clearInterval(this.syncIntervalId);
-        this.syncIntervalId = null;
-      }
+      this.stopSyncLoop();
+      this._updatePlayButton(false);
     } else {
       await this.startPlayback();
     }
-    const playBtn = document.getElementById('play-pause-btn');
-    if (playBtn)
-      playBtn.textContent = audioService.isPlaying ? '⏸ Pausa / Pause' : '▶ Riprendi / Play';
   }
 
   stopPlayback() {
     audioService.stop();
-    if (this.syncIntervalId) {
-      clearInterval(this.syncIntervalId);
-      this.syncIntervalId = null;
-    }
+    this.stopSyncLoop();
+    this._updatePlayButton(false);
   }
 
   startSyncLoop() {
-    if (this.syncIntervalId) clearInterval(this.syncIntervalId);
-    this.syncIntervalId = setInterval(() => {
+    this.stopSyncLoop();
+    const tick = () => {
       if (!audioService.isPlaying) {
-        clearInterval(this.syncIntervalId);
-        this.syncIntervalId = null;
+        this._rafId = null;
         return;
       }
-      const currentTime = audioService.getCurrentTime();
-      this.updateSyncedLyrics(currentTime);
-    }, 100);
+      this.updateSyncedLyrics(audioService.getCurrentTime());
+      this._rafId = requestAnimationFrame(tick);
+    };
+    this._rafId = requestAnimationFrame(tick);
   }
+
+  stopSyncLoop() {
+    if (this._rafId != null) {
+      cancelAnimationFrame(this._rafId);
+      this._rafId = null;
+    }
+  }
+
+  // ═══════════════════════════════════════════
+  // SYNC OFFSET UI
+  // ═══════════════════════════════════════════
 
   adjustSync(delta) {
-    this.syncOffset += delta;
-    // Round to avoid floating point drift
-    this.syncOffset = Math.round(this.syncOffset * 10) / 10;
-    const display = document.getElementById('sync-offset-display');
-    if (display)
-      display.textContent = `Sync: ${this.syncOffset >= 0 ? '+' : ''}${this.syncOffset.toFixed(1)}s`;
-    // Force an immediate re-evaluation so the user sees the change
+    this.syncOffset = Math.round((this.syncOffset + delta) * 100) / 100;
+    this._applySyncChange();
+  }
+
+  resetSync() {
+    this.syncOffset = 0;
+    this._applySyncChange();
+  }
+
+  _onLineClick(index) {
+    // Auto-calibrate: align clicked line with CURRENT audio time.
+    if (!audioService.isPlaying || !this.syncedLyrics[index]) {
+      this.jumpToLine(index);
+      return;
+    }
+    const currentTime = audioService.getCurrentTime();
+    const targetTime = this.syncedLyrics[index].time;
+    this.syncOffset = Math.round((targetTime - currentTime) * 100) / 100;
+    this._applySyncChange();
+  }
+
+  _applySyncChange() {
+    this._updateOffsetDisplay();
     if (audioService.isPlaying) {
       this.currentLineIndex = -1;
-      const currentTime = audioService.getCurrentTime();
-      this.updateSyncedLyrics(currentTime);
+      this.updateSyncedLyrics(audioService.getCurrentTime());
     }
+    this._savePersistedOffset(this._currentOffsetKey, this.syncOffset);
   }
 
-  // ═══════════════════════════════════════════
-  // MODE SWITCHING
-  // ═══════════════════════════════════════════
-
-  setPlaybackMode(mode) {
-    this.playbackMode = mode;
-    document.querySelectorAll('.btn-mode').forEach((btn) => {
-      btn.classList.toggle('active', btn.dataset.mode === mode);
-    });
-
-    const stepControls = document.querySelector('.step-controls');
-    const karaokeNav = document.querySelector('.karaoke-nav');
-    const scrollContainer = document.getElementById('lyrics-scroll-container');
-    const stepDisplay = document.getElementById('lyrics-display-step');
-
-    if (mode === 'realtime') {
-      if (stepControls) stepControls.classList.add('hidden');
-      if (scrollContainer) scrollContainer.classList.remove('hidden');
-      if (stepDisplay) stepDisplay.classList.add('hidden');
-      if (karaokeNav) {
-        const { isPlaying } = audioService;
-        karaokeNav.innerHTML = `
-          <button class="btn btn-primary" id="play-pause-btn">${isPlaying ? 'Pausa / Pause' : 'Riprendi / Play'}</button>
-          <button class="btn btn-secondary" onclick="restartSong()">Reset</button>
-          <div class="sync-offset-controls">
-            <button class="btn btn-sync" onclick="musicManager.adjustSync(-0.5)">-0.5s</button>
-            <span id="sync-offset-display">Sync: ${this.syncOffset >= 0 ? '+' : ''}${this.syncOffset.toFixed(1)}s</span>
-            <button class="btn btn-sync" onclick="musicManager.adjustSync(0.5)">+0.5s</button>
-          </div>
-        `;
-        const playBtn = document.getElementById('play-pause-btn');
-        if (playBtn) playBtn.addEventListener('click', () => this.togglePlayback());
-      }
-    } else {
-      this.stopPlayback();
-      if (stepControls) stepControls.classList.remove('hidden');
-      if (scrollContainer) scrollContainer.classList.add('hidden');
-      if (stepDisplay) stepDisplay.classList.remove('hidden');
-      this.restoreStepNav();
-    }
-  }
-
-  restoreStepNav() {
-    const karaokeNav = document.querySelector('.karaoke-nav');
-    if (karaokeNav) {
-      karaokeNav.innerHTML = `
-        <button class="btn btn-secondary" onclick="prevStep()">← Step Precedente / Previous Step</button>
-        <button class="btn btn-primary" onclick="nextStep()">Step Successivo / Next Step →</button>
-      `;
-    }
+  _updateOffsetDisplay() {
+    const display = document.getElementById('sync-offset-display');
+    if (!display) return;
+    const sign = this.syncOffset >= 0 ? '+' : '';
+    display.textContent = `Sync: ${sign}${this.syncOffset.toFixed(2)}s`;
   }
 
   // ═══════════════════════════════════════════
@@ -531,72 +451,39 @@ export class MusicManager {
   // ═══════════════════════════════════════════
 
   restartSong() {
-    if (this.isPreloadedSong) {
-      this.currentStepIndex = 0;
-      document.getElementById('step-completion').classList.add('hidden');
-      this.renderStep();
-    } else {
-      this.currentLineIndex = -1;
-      audioService.pauseOffset = 0;
-      this.stopPlayback();
+    this.currentLineIndex = -1;
+    audioService.pauseOffset = 0;
+    this.stopPlayback();
 
-      // Reset scroll position
-      const viewport = document.getElementById('lyrics-scroll-viewport');
-      if (viewport) viewport.style.transform = 'translateY(0)';
-
-      // Reset line states
-      for (const { el } of this.lyricsLineElements) {
-        el.classList.remove('active', 'past');
-        el.classList.add('upcoming');
-      }
-
-      if (this.currentAudioFile) this.startPlayback();
+    const viewport = document.getElementById('lyrics-scroll-viewport');
+    if (viewport) viewport.style.transform = 'translateY(0)';
+    for (const { el } of this.lyricsLineElements) {
+      el.classList.remove('active', 'past');
+      el.classList.add('upcoming');
     }
+
+    this._completed = false;
+    this._hideCompletion();
+    if (this.currentAudioFile) this.startPlayback();
   }
 
   closeSong() {
     this.stopPlayback();
     this.currentSong = null;
-    this.syncedLyrics = [];
     this.currentAudioFile = null;
-    this.isPreloadedSong = false;
+    this.syncedLyrics = [];
     this.lyricsLineElements = [];
     this.translationCache = {};
     this.currentLineIndex = -1;
-    document.getElementById('karaoke-container').classList.add('hidden');
-    document.getElementById('song-selection').classList.remove('hidden');
-  }
+    this.syncOffset = 0;
+    this._currentOffsetKey = null;
+    this._completed = false;
 
-  prevStep() {
-    if (this.isPreloadedSong) {
-      if (this.currentStepIndex > 0) {
-        this.currentStepIndex--;
-        this.renderStep();
-      }
-    } else if (this.syncedLyrics.length > 0) {
-      const nextIndex = Math.max(0, this.currentLineIndex - 1);
-      this.jumpToLine(nextIndex);
-    } else {
-      const currentTime = audioService.getCurrentTime();
-      audioService.play(Math.max(0, currentTime - 10));
-    }
-  }
-
-  nextStep() {
-    if (this.isPreloadedSong) {
-      if (this.currentStepIndex < this.currentSong.steps.length - 1) {
-        this.currentStepIndex++;
-        this.renderStep();
-      } else {
-        this.completeSong();
-      }
-    } else if (this.syncedLyrics.length > 0) {
-      const nextIndex = Math.min(this.syncedLyrics.length - 1, this.currentLineIndex + 1);
-      this.jumpToLine(nextIndex);
-    } else {
-      const currentTime = audioService.getCurrentTime();
-      audioService.play(currentTime + 10);
-    }
+    const container = document.getElementById('karaoke-container');
+    const selection = document.getElementById('song-selection');
+    if (container) container.classList.add('hidden');
+    if (selection) selection.classList.remove('hidden');
+    this._hideCompletion();
   }
 
   jumpToLine(index) {
@@ -605,83 +492,251 @@ export class MusicManager {
     this.stopPlayback();
     audioService.play(this.syncedLyrics[index].time);
     this.startSyncLoop();
+    this._updatePlayButton(true);
+  }
+
+  prevLine() {
+    if (!this.syncedLyrics.length) {
+      const t = audioService.getCurrentTime();
+      audioService.play(Math.max(0, t - 10));
+      return;
+    }
+    this.jumpToLine(Math.max(0, (this.currentLineIndex === -1 ? 1 : this.currentLineIndex) - 1));
+  }
+
+  nextLine() {
+    if (!this.syncedLyrics.length) {
+      const t = audioService.getCurrentTime();
+      audioService.play(t + 10);
+      return;
+    }
+    this.jumpToLine(Math.min(this.syncedLyrics.length - 1, this.currentLineIndex + 1));
   }
 
   // ═══════════════════════════════════════════
-  // COMPLETION
+  // UI HELPERS
   // ═══════════════════════════════════════════
 
-  completeSong() {
-    this.progressManager.completeSong(this.currentSong?.title || 'Unknown');
+  _showPlayer() {
+    const selection = document.getElementById('song-selection');
+    const container = document.getElementById('karaoke-container');
+    if (selection) selection.classList.add('hidden');
+    if (container) container.classList.remove('hidden');
+    this._hideCompletion();
 
-    // Ingest vocabulary from song steps into SRS
-    if (window.srsManager && this.currentSong?.steps) {
-      const words = [];
-      for (const step of this.currentSong.steps) {
-        if (step.vocabulary?.length) {
-          for (const v of step.vocabulary) {
-            if (v.word) {
-              words.push({
-                english: v.word,
-                italian: v.translation || '',
-                pronunciation: v.pronunciation || '',
-                example: v.example || '',
-              });
-            }
-          }
-        }
+    const titleEl = document.getElementById('karaoke-song-title');
+    const artistEl = document.getElementById('karaoke-artist');
+    if (titleEl) titleEl.textContent = this.currentSong?.title || '';
+    if (artistEl) artistEl.textContent = this.currentSong?.artist || '';
+
+    const scrollContainer = document.getElementById('lyrics-scroll-container');
+    if (scrollContainer) scrollContainer.classList.remove('hidden');
+
+    const viewport = document.getElementById('lyrics-scroll-viewport');
+    if (viewport) {
+      viewport.textContent = '';
+      viewport.style.transform = 'translateY(0)';
+      const placeholder = document.createElement('div');
+      placeholder.className = 'lyrics-scroll-placeholder';
+      placeholder.id = 'lyrics-scroll-placeholder';
+      placeholder.textContent = 'Sincronizzazione... / Syncing...';
+      viewport.appendChild(placeholder);
+    }
+  }
+
+  _renderRealtimeControls() {
+    const nav = document.querySelector('.karaoke-nav');
+    if (!nav) return;
+    nav.textContent = '';
+
+    const playBtn = document.createElement('button');
+    playBtn.className = 'btn btn-primary';
+    playBtn.id = 'play-pause-btn';
+    playBtn.textContent = 'Riprendi / Play';
+    playBtn.addEventListener('click', () => this.togglePlayback());
+    nav.appendChild(playBtn);
+
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'btn btn-secondary';
+    prevBtn.textContent = '⏮ Linea / Line';
+    prevBtn.addEventListener('click', () => this.prevLine());
+    nav.appendChild(prevBtn);
+
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'btn btn-secondary';
+    nextBtn.textContent = 'Linea / Line ⏭';
+    nextBtn.addEventListener('click', () => this.nextLine());
+    nav.appendChild(nextBtn);
+
+    const resetBtn = document.createElement('button');
+    resetBtn.className = 'btn btn-secondary';
+    resetBtn.textContent = '↻ Reset';
+    resetBtn.addEventListener('click', () => this.restartSong());
+    nav.appendChild(resetBtn);
+
+    const syncGroup = document.createElement('div');
+    syncGroup.className = 'sync-offset-controls';
+    const offsets = [
+      { label: '-1s', delta: -1 },
+      { label: '-0.5s', delta: -0.5 },
+      { label: '-0.1s', delta: -0.1 },
+    ];
+    const positives = [
+      { label: '+0.1s', delta: 0.1 },
+      { label: '+0.5s', delta: 0.5 },
+      { label: '+1s', delta: 1 },
+    ];
+    for (const { label, delta } of offsets) {
+      const btn = document.createElement('button');
+      btn.className = 'btn btn-sync';
+      btn.textContent = label;
+      btn.addEventListener('click', () => this.adjustSync(delta));
+      syncGroup.appendChild(btn);
+    }
+    const display = document.createElement('span');
+    display.id = 'sync-offset-display';
+    display.textContent = 'Sync: +0.00s';
+    syncGroup.appendChild(display);
+    for (const { label, delta } of positives) {
+      const btn = document.createElement('button');
+      btn.className = 'btn btn-sync';
+      btn.textContent = label;
+      btn.addEventListener('click', () => this.adjustSync(delta));
+      syncGroup.appendChild(btn);
+    }
+    const resetSync = document.createElement('button');
+    resetSync.className = 'btn btn-sync';
+    resetSync.textContent = 'Reset sync';
+    resetSync.addEventListener('click', () => this.resetSync());
+    syncGroup.appendChild(resetSync);
+
+    nav.appendChild(syncGroup);
+    this._updateOffsetDisplay();
+  }
+
+  _updatePlayButton(isPlaying) {
+    const btn = document.getElementById('play-pause-btn');
+    if (!btn) return;
+    btn.textContent = isPlaying ? '⏸ Pausa / Pause' : '▶ Riprendi / Play';
+  }
+
+  _renderPlaceholder({ primary, detail, hint }) {
+    const viewport = document.getElementById('lyrics-scroll-viewport');
+    if (!viewport) return;
+    viewport.textContent = '';
+    const wrapper = document.createElement('div');
+    wrapper.className = 'lyrics-scroll-placeholder';
+    wrapper.id = 'lyrics-scroll-placeholder';
+
+    const p1 = document.createElement('p');
+    p1.textContent = primary;
+    wrapper.appendChild(p1);
+
+    if (detail) {
+      const p2 = document.createElement('p');
+      p2.style.fontSize = '0.85rem';
+      p2.style.marginTop = '0.5rem';
+      p2.style.opacity = '0.7';
+      p2.textContent = detail;
+      if (hint) {
+        p2.appendChild(document.createElement('br'));
+        p2.appendChild(document.createTextNode(hint));
       }
-      if (words.length) {
-        const source = `song-${this.currentSong.id || this.currentSong.title}`;
-        window.srsManager.addWords(words, source);
-      }
+      wrapper.appendChild(p2);
+    }
+    viewport.appendChild(wrapper);
+  }
+
+  _hideCompletion() {
+    const el = document.getElementById('step-completion');
+    if (el) el.classList.add('hidden');
+  }
+
+  _onSongEnded() {
+    if (this._completed || !this.currentSong) return;
+    this._completed = true;
+    try {
+      this.progressManager?.completeSong?.(this.currentSong.title || 'Upload');
+    } catch (err) {
+      console.warn('[karaoke] progress update failed:', err);
     }
 
-    const completionEl = document.getElementById('step-completion');
-    if (!completionEl) return;
+    const el = document.getElementById('step-completion');
+    if (!el) return;
+    el.classList.remove('hidden');
+    el.textContent = '';
+    const content = document.createElement('div');
+    content.className = 'completion-content';
 
-    const songId = this.currentSong?.id || '';
+    const h3 = document.createElement('h3');
+    h3.textContent = 'Canzone Completata! / Song Completed!';
+    content.appendChild(h3);
 
-    completionEl.innerHTML = `
-      <div class="completion-content">
-        <span class="completion-icon"></span>
-        <h3>Canzone Completata! / Song Completed!</h3>
-        <p>Hai finito tutti gli step di questa canzone. / You finished all steps of this song.</p>
-        <div class="completion-actions">
-          <button class="btn btn-secondary" onclick="restartSong()">
-            Ricomincia / Restart
-          </button>
-          ${
-            songId
-              ? `
-            <button class="btn btn-primary" onclick="practiceFromSong()">
-              Pratica le Parole / Practice Words
-            </button>
-          `
-              : ''
-          }
-          <button class="btn btn-secondary" onclick="closeSong()">
-            Altra Canzone / Another Song
-          </button>
-        </div>
-      </div>
-    `;
+    const p = document.createElement('p');
+    p.textContent =
+      'Hai ascoltato la canzone fino alla fine. / You finished listening to the song.';
+    content.appendChild(p);
 
-    completionEl.classList.remove('hidden');
+    const actions = document.createElement('div');
+    actions.className = 'completion-actions';
+
+    const restart = document.createElement('button');
+    restart.className = 'btn btn-secondary';
+    restart.textContent = 'Ricomincia / Restart';
+    restart.addEventListener('click', () => this.restartSong());
+    actions.appendChild(restart);
+
+    const close = document.createElement('button');
+    close.className = 'btn btn-primary';
+    close.textContent = 'Altra Canzone / Another Song';
+    close.addEventListener('click', () => this.closeSong());
+    actions.appendChild(close);
+
+    content.appendChild(actions);
+    el.appendChild(content);
   }
 
-  practiceFromSong() {
-    const songId = this.currentSong?.id;
-    if (!songId) return;
+  // ═══════════════════════════════════════════
+  // PER-SONG OFFSET PERSISTENCE (IndexedDB settings store)
+  // ═══════════════════════════════════════════
 
-    this.closeSong();
-    document.querySelector('.nav-item[data-section="practice"]')?.click();
+  _makeOffsetKey(file, duration) {
+    const size = file?.size ?? 0;
+    const name = file?.name ?? 'unknown';
+    const dur = Number.isFinite(duration) ? Math.round(duration) : 0;
+    return `${name}|${size}|${dur}`;
+  }
 
-    setTimeout(() => {
-      if (window.practiceManager) {
-        window.practiceManager.startPractice('listening', songId);
+  async _loadPersistedOffset(key) {
+    if (!key) return 0;
+    try {
+      if (!this._offsetCache) {
+        const stored = await storageService.load(OFFSET_SETTINGS_KEY, OFFSET_STORE_KEY);
+        this._offsetCache = stored?.offsets ?? {};
       }
-    }, 100);
+      const v = this._offsetCache[key];
+      return typeof v === 'number' && Number.isFinite(v) ? v : 0;
+    } catch (err) {
+      console.warn('[karaoke] offset load failed:', err);
+      return 0;
+    }
+  }
+
+  async _savePersistedOffset(key, offset) {
+    if (!key) return;
+    try {
+      if (!this._offsetCache) {
+        const stored = await storageService.load(OFFSET_SETTINGS_KEY, OFFSET_STORE_KEY);
+        this._offsetCache = stored?.offsets ?? {};
+      }
+      this._offsetCache[key] = offset;
+      await storageService.save(OFFSET_SETTINGS_KEY, {
+        key: OFFSET_STORE_KEY,
+        offsets: this._offsetCache,
+      });
+    } catch (err) {
+      console.warn('[karaoke] offset save failed:', err);
+    }
   }
 
   // ═══════════════════════════════════════════
@@ -689,24 +744,41 @@ export class MusicManager {
   // ═══════════════════════════════════════════
 
   bindEvents() {
-    document.querySelectorAll('.btn-mode').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        this.setPlaybackMode(e.target.dataset.mode);
+    const bindUploadPair = (btnId, inputId, handler) => {
+      const btn = document.getElementById(btnId);
+      const input = document.getElementById(inputId);
+      if (btn && input) {
+        btn.addEventListener('click', () => input.click());
+        input.addEventListener('change', (e) => handler(e));
+      }
+    };
+
+    bindUploadPair('main-upload-btn', 'main-audio-input', (e) => this.handleAudioUpload(e));
+    bindUploadPair('upload-audio-btn', 'karaoke-audio-input', (e) => this.handleAudioUpload(e));
+    bindUploadPair('main-lrc-btn', 'main-lrc-input', (e) => this.handleLrcUpload(e));
+    bindUploadPair('upload-lrc-btn', 'karaoke-lrc-input', (e) => this.handleLrcUpload(e));
+
+    const drop = document.getElementById('karaoke-drop-zone');
+    if (drop) {
+      drop.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        drop.classList.add('drag-over');
       });
-    });
-
-    const mainUploadBtn = document.getElementById('main-upload-btn');
-    const mainFileInput = document.getElementById('main-audio-input');
-    if (mainUploadBtn && mainFileInput) {
-      mainUploadBtn.addEventListener('click', () => mainFileInput.click());
-      mainFileInput.addEventListener('change', (e) => this.handleAudioUpload(e));
-    }
-
-    const headerUploadBtn = document.getElementById('upload-audio-btn');
-    const headerFileInput = document.getElementById('karaoke-audio-input');
-    if (headerUploadBtn && headerFileInput) {
-      headerUploadBtn.addEventListener('click', () => headerFileInput.click());
-      headerFileInput.addEventListener('change', (e) => this.handleAudioUpload(e));
+      drop.addEventListener('dragleave', () => drop.classList.remove('drag-over'));
+      drop.addEventListener('drop', (e) => {
+        e.preventDefault();
+        drop.classList.remove('drag-over');
+        for (const file of e.dataTransfer?.files || []) {
+          if (file.name.toLowerCase().endsWith('.lrc')) {
+            this._applyLrcTextFromFile(file);
+          } else if (
+            file.type.startsWith('audio/') ||
+            /\.(mp3|wav|ogg|flac|m4a)$/i.test(file.name)
+          ) {
+            this._loadAudioFile(file);
+          }
+        }
+      });
     }
 
     const speedSlider = document.getElementById('speed-slider');
@@ -714,16 +786,35 @@ export class MusicManager {
     if (speedSlider && speedValue) {
       speedSlider.addEventListener('input', () => {
         const rate = parseFloat(speedSlider.value);
+        if (!Number.isFinite(rate)) return;
         speedValue.textContent = `${rate.toFixed(1)}x`;
         audioService.setPlaybackRate(rate);
       });
     }
 
-    window.prevStep = () => this.prevStep();
-    window.nextStep = () => this.nextStep();
     window.restartSong = () => this.restartSong();
     window.closeSong = () => this.closeSong();
-    window.practiceFromSong = () => this.practiceFromSong();
-    window.adjustSync = (delta) => this.adjustSync(delta);
+  }
+
+  async _applyLrcTextFromFile(file) {
+    if (file.size > MAX_LRC_BYTES) {
+      console.warn('[karaoke] dropped oversized .lrc drop:', file.size);
+      return;
+    }
+    if (!LRC_EXT_RE.test(file.name)) {
+      console.warn('[karaoke] dropped non-lrc extension:', file.name);
+      return;
+    }
+    try {
+      const bytes = new Uint8Array(await file.arrayBuffer());
+      const text = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+      if (!this.currentAudioFile) {
+        this._pendingLrc = text;
+      } else {
+        this._applyLrcText(text);
+      }
+    } catch (err) {
+      console.error('[karaoke] lrc read failed:', err);
+    }
   }
 }

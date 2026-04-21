@@ -12,6 +12,13 @@
 import { getLessonsByLevel } from './lessons.js';
 import { storageService } from './services/StorageService.js';
 import { getToday, getDaysBetween } from './utils/DateUtils.js';
+import { sanitizePlainObject } from './utils/SanitizeHtml.js';
+
+// localStorage marker key — only tracks "there was a save" so legacy recovery
+// code can still detect a prior session. The full blob no longer lives in
+// localStorage (DOM-readable, XSS-exploitable surface).
+const LS_MARKER_KEY = 'flowlearn_progress_marker';
+const LEGACY_LS_BLOB_KEY = 'flowlearn_progress';
 
 export class ProgressManager {
   constructor() {
@@ -31,24 +38,73 @@ export class ProgressManager {
   }
 
   /**
+   * Re-read the progress blob for the currently active userId. Used when
+   * AuthService signals a user change.
+   */
+  async reload() {
+    this.data = await this.loadProgress();
+    this.updateStreak();
+    this.renderProgress();
+    this._triggerAchievementCheck();
+  }
+
+  /**
+   * Aggregated stats view used by the Profile tab.
+   */
+  getStats() {
+    const d = this.data || {};
+    return {
+      level: d.currentLevel || 0,
+      xpTotal: d.xp?.total || 0,
+      xpToday: d.xp?.today || 0,
+      streakCurrent: d.streak?.current || 0,
+      streakBest: d.streakCalendar?.bestStreak || 0,
+      wordsLearned: d.wordsLearned || 0,
+      lessonsCompleted: d.lessonsCompleted || 0,
+      songsCompleted: d.songsCompleted || 0,
+      practiceSessions: d.practiceSessionsCompleted || 0,
+      totalTimeMinutes: d.totalTimeMinutes || 0,
+      todayTimeMinutes: d.todayTimeMinutes || 0,
+      achievementsUnlocked: Object.keys(d.achievements?.unlocked || {}).length,
+    };
+  }
+
+  /**
    * Load progress from StorageService (IndexedDB/LocalStorage)
    */
   async loadProgress() {
+    const activeUserId = storageService.getUserId();
     try {
-      const saved = await storageService.load('progress', 'user_default');
+      const saved = await storageService.load('progress', activeUserId);
       if (saved) {
         return this._sanitizeLoadedProgress(saved);
       }
 
-      // Fallback to localStorage for migration
-      const localSaved = localStorage.getItem(this.storageKey);
-      if (localSaved) {
+      // First sign-in migration: seed this user from the legacy
+      // 'user_default' blob if it exists and the new user has no record.
+      if (activeUserId !== 'user_default') {
+        const legacy = await storageService.load('progress', 'user_default');
+        if (legacy) {
+          const sanitized = this._sanitizeLoadedProgress(legacy);
+          sanitized.userId = activeUserId;
+          await storageService.save('progress', sanitized);
+          return sanitized;
+        }
+      }
+
+      // One-time migration from the legacy full-blob localStorage mirror.
+      // After migration the blob is erased so a future XSS cannot read it.
+      const legacyBlob = localStorage.getItem(LEGACY_LS_BLOB_KEY);
+      if (legacyBlob) {
         try {
-          const parsed = JSON.parse(localSaved);
-          return this._sanitizeLoadedProgress(parsed);
+          const parsed = JSON.parse(legacyBlob);
+          const sanitized = this._sanitizeLoadedProgress(parsed);
+          localStorage.removeItem(LEGACY_LS_BLOB_KEY);
+          await storageService.save('progress', { ...sanitized, userId: activeUserId });
+          return sanitized;
         } catch (parseErr) {
-          console.warn('Corrupt localStorage progress blob, discarding:', parseErr);
-          localStorage.removeItem(this.storageKey);
+          console.warn('Corrupt legacy localStorage progress blob, discarding:', parseErr);
+          localStorage.removeItem(LEGACY_LS_BLOB_KEY);
         }
       }
     } catch (e) {
@@ -57,7 +113,7 @@ export class ProgressManager {
 
     // Default progress structure
     return {
-      userId: 'user_default', // Key for IndexedDB
+      userId: activeUserId, // Key for IndexedDB (may be Google `sub` or 'user_default')
       wordsLearned: 0,
       songsCompleted: 0,
       lessonsCompleted: 0,
@@ -150,7 +206,28 @@ export class ProgressManager {
    */
   _sanitizeLoadedProgress(data) {
     if (!data || typeof data !== 'object') return data;
-    const safe = { ...data };
+    // First pass: drop __proto__ / constructor / prototype keys, rebuild
+    // with null prototype, bidi-strip every string, collapse non-finite
+    // numbers to 0. Defends against a tampered blob causing prototype
+    // pollution or carrying bidi-smuggled UI text.
+    const purified = sanitizePlainObject(data, { maxDepth: 12 });
+    const safe = { ...purified };
+
+    // Cap unbounded arrays before numeric clamping so an oversized tampered
+    // blob cannot survive as a memory-pressure vector.
+    if (Array.isArray(safe.activities) && safe.activities.length > 50) {
+      safe.activities = safe.activities.slice(0, 50);
+    }
+    if (Array.isArray(safe.unlockedLevels) && safe.unlockedLevels.length > 100) {
+      safe.unlockedLevels = safe.unlockedLevels.slice(0, 100);
+    }
+    if (
+      safe.leaderboard &&
+      Array.isArray(safe.leaderboard.weeklySnapshots) &&
+      safe.leaderboard.weeklySnapshots.length > 520
+    ) {
+      safe.leaderboard.weeklySnapshots = safe.leaderboard.weeklySnapshots.slice(-520);
+    }
 
     safe.wordsLearned = this._clampNumber(safe.wordsLearned, 0, 1_000_000);
     safe.songsCompleted = this._clampNumber(safe.songsCompleted, 0, 100_000);
@@ -159,8 +236,16 @@ export class ProgressManager {
     safe.levelProgress = this._clampNumber(safe.levelProgress, 0, 1000);
     safe.totalTimeMinutes = this._clampNumber(safe.totalTimeMinutes, 0, 10_000_000);
     safe.todayTimeMinutes = this._clampNumber(safe.todayTimeMinutes, 0, 1440);
-    safe.practiceSessionsCompleted = this._clampNumber(safe.practiceSessionsCompleted, 0, 1_000_000);
-    safe.terminalExercisesCompleted = this._clampNumber(safe.terminalExercisesCompleted, 0, 1_000_000);
+    safe.practiceSessionsCompleted = this._clampNumber(
+      safe.practiceSessionsCompleted,
+      0,
+      1_000_000
+    );
+    safe.terminalExercisesCompleted = this._clampNumber(
+      safe.terminalExercisesCompleted,
+      0,
+      1_000_000
+    );
     safe.bestChainStreak = this._clampNumber(safe.bestChainStreak, 0, 100_000);
 
     if (safe.xp && typeof safe.xp === 'object') {
@@ -188,10 +273,20 @@ export class ProgressManager {
   async saveProgress() {
     try {
       if (!this.data) return;
-      // Save to IndexedDB via Service
       await storageService.save('progress', this.data);
-      // Backup to localStorage
-      localStorage.setItem(this.storageKey, JSON.stringify(this.data));
+      // Marker-only: no full blob in localStorage. localStorage is DOM-readable
+      // (any XSS reads it), so keeping 5MB of progress + leaderboard + streak
+      // data there was an unnecessary exfiltration target. IDB remains the
+      // source of truth; the marker just lets recovery code detect that a
+      // prior session existed.
+      try {
+        localStorage.setItem(
+          LS_MARKER_KEY,
+          JSON.stringify({ lastSaved: Date.now(), userId: this.data.userId })
+        );
+      } catch {
+        // localStorage full / disabled — not fatal.
+      }
     } catch (e) {
       console.error('Error saving progress:', e);
     }
@@ -320,7 +415,7 @@ export class ProgressManager {
   /**
    * Mark a lesson as completed
    */
-  completelesson(level, lessonId) {
+  completeLesson(level, lessonId) {
     const key = `${level}-${lessonId}`;
     if (!this.data.completedLessons) {
       this.data.completedLessons = {};
@@ -693,8 +788,9 @@ export class ProgressManager {
    * Reset progress (for testing)
    */
   async resetProgress() {
-    localStorage.removeItem(this.storageKey);
-    this.data = await this.loadProgress(); // Reload default
+    localStorage.removeItem(LS_MARKER_KEY);
+    localStorage.removeItem(LEGACY_LS_BLOB_KEY);
+    this.data = await this.loadProgress();
     this.renderProgress();
   }
 

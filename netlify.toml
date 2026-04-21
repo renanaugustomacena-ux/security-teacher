@@ -1,18 +1,39 @@
 [build]
   publish = "."
+  command = "npm ci && npm test"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Per-request CSP nonce generation. Edge function rewrites every <script>/<style>
+# tag in the HTML response to carry nonce="..." and emits a matching CSP header
+# with 'strict-dynamic'. Dropping 'unsafe-inline' closes the last trivial XSS
+# sink in the stack. Non-HTML responses bypass the fn untouched.
+[[edge_functions]]
+  function = "csp"
+  path = "/*"
+
+[[edge_functions]]
+  function = "csp-report"
+  path = "/csp-report"
 
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
+    # Transport + framing
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Permissions-Policy = "geolocation=(), camera=(), microphone=(self), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), fullscreen=(self)"
-    Cross-Origin-Opener-Policy = "same-origin"
+    X-Frame-Options = "DENY"
+    X-Permitted-Cross-Domain-Policies = "none"
+    Referrer-Policy = "no-referrer"
+    # Cross-origin isolation. 'same-origin-allow-popups' keeps GIS sign-in popup
+    # flow working while still severing window.opener cross-origin references.
+    # COEP is intentionally omitted — it breaks the GIS iframe + Google avatars.
+    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
     Cross-Origin-Resource-Policy = "same-origin"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://lrclib.net https://api.mymemory.translated.net; img-src 'self' blob: data:; media-src 'self' blob: data:; font-src 'self' data: https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+    Origin-Agent-Cluster = "?1"
+    # Disable every browser API the app does not use, plus FLoC / Topics.
+    Permissions-Policy = "camera=(), microphone=(self), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), fullscreen=(self), interest-cohort=(), browsing-topics=()"
 
 [[headers]]
   for = "/sw.js"
@@ -23,6 +44,11 @@
   for = "/manifest.json"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/.well-known/security.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
 
 [[redirects]]
   from = "/*"

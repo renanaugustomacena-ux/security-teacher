@@ -8,6 +8,36 @@ class StorageService {
     this.dbVersion = 2;
     this.db = null;
     this.directoryHandle = null;
+    this.userId = 'user_default';
+    this._userChangeListeners = new Set();
+  }
+
+  /**
+   * Set the active user namespace. Triggers subscribers so that progress and
+   * related managers can reload the user-scoped blob.
+   * @param {string | null | undefined} userId
+   */
+  setUserId(userId) {
+    const next = userId ? String(userId) : 'user_default';
+    if (next === this.userId) return;
+    this.userId = next;
+    for (const l of this._userChangeListeners) {
+      try {
+        l(this.userId);
+      } catch (err) {
+        console.warn('[storage] userChange listener errored:', err);
+      }
+    }
+  }
+
+  getUserId() {
+    return this.userId;
+  }
+
+  onUserChange(listener) {
+    if (typeof listener !== 'function') return () => {};
+    this._userChangeListeners.add(listener);
+    return () => this._userChangeListeners.delete(listener);
   }
 
   async init() {

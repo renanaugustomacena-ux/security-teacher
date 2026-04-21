@@ -4,30 +4,41 @@ services:
     container_name: Renan-english-app
     ports:
       - '8080:8080'
-    volumes:
-      # Montaggio del codice sorgente per aggiornamenti in tempo reale durante lo sviluppo
-      - ./:/usr/share/nginx/html
-      # Esclusione di node_modules e .git dal montaggio dei volumi
-      - /usr/share/nginx/html/node_modules
-      - /usr/share/nginx/html/.git
 
-    # Sicurezza: Rimozione di tutte le capability Linux non necessarie
+    # Sicurezza: rimozione di tutte le capability Linux non necessarie.
+    # Nginx non-root su porta >1024 non richiede CAP_NET_BIND_SERVICE.
     cap_drop:
       - ALL
 
-    # Sicurezza: Filesystem root in sola lettura (opzionale, richiede mappatura precisa dei volumi per le directory temporanee)
-    # read_only: true
-    # (Commentato per ora per garantire il corretto funzionamento del montaggio dei volumi in sviluppo,
-    #  verra' abilitato nella fase di Produzione)
+    # Sicurezza: impedisce escalation di privilegi via setuid/setgid/file-capabilities.
+    security_opt:
+      - no-new-privileges:true
+
+    # Sicurezza: filesystem root in sola lettura. I file statici del sito
+    # sono gia' stati copiati nell'immagine dal Dockerfile (COPY . /usr/share/nginx/html),
+    # quindi non serve alcun bind mount a runtime.
+    read_only: true
+
+    # Directory che nginx deve poter scrivere — montate come tmpfs (RAM):
+    #   /var/cache/nginx  → cache proxy e body temp files
+    #   /var/run          → nginx.pid
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+
+    # Limiti di risorse: bloccano DoS per esaurimento memoria/PID/CPU.
+    mem_limit: 128m
+    pids_limit: 64
+    cpus: 0.5
 
     restart: unless-stopped
     networks:
       - knowledge-aio-net
-    # Il controllo di salute (healthcheck) e' definito nel Dockerfile, ma puo' essere sovrascritto qui se necessario
 
 networks:
   knowledge-aio-net:
     driver: bridge
+    internal: false
 
 # ======================================================================================
 # SPIEGAZIONE TECNICA ESAUSTIVA — DOCKER-COMPOSE.YML
