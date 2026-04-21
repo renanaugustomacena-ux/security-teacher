@@ -1,8 +1,12 @@
 # ==========================================
 # Fase 1: Immagine Base e Sicurezza
 # ==========================================
-# Versione specifica fissata per garantire stabilita' (Alpine 1.25)
-FROM nginx:1.25.3-alpine AS base
+# Base pinnata per digest SHA-256 (non solo tag) — il tag mutable
+# "1.25.3-alpine" potrebbe essere riassegnato a un'immagine diversa in
+# futuro. Il digest e' crittograficamente immutabile: se l'immagine cambia,
+# la build fallisce invece di tirare silenziosamente contenuti nuovi.
+# Risolto da: docker pull nginx:1.25.3-alpine && docker inspect ... (2026-04-22)
+FROM nginx@sha256:f2802c2a9d09c7aa3ace27445dfc5656ff24355da28e7b958074a0111e3fc076 AS base
 
 # Installazione di curl per i controlli di salute (healthcheck)
 RUN apk add --no-cache curl

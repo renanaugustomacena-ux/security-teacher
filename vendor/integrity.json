@@ -1,0 +1,8 @@
+{
+  "description": "sha256 hashes of vendored assets, as they exist on disk in this repo. Consumed by netlify/functions/integrity-check.mts (weekly cron) to detect drift between the deployed artifact and the repo pin. Regenerate after any vendor/ update via `sha256sum vendor/<file>` and commit the updated value here.",
+  "generated": "2026-04-22",
+  "assets": {
+    "/vendor/three-0.170.0.module.js": "fd330f2a15d1549ca23c0ca3c5c942207d013bd4278c7a2fd00b46a4786d948d",
+    "/vendor/fonts/fonts.css": "89fbb6a9087f28d67143b389aaf5d4c90c2fc8377f46bcc864bcfe0bc7bd0b19"
+  }
+}

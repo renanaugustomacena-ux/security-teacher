@@ -2,12 +2,65 @@
  * Lyrics Service
  * Handles fetching synced lyrics, translations, and phonetics.
  * Multi-strategy search with robust filename parsing.
+ *
+ * Hardening: treat LRCLIB + MyMemory as untrusted third parties. Every
+ * user-visible string pulled from their JSON is bidi-stripped + length-capped.
+ * Response shapes are validated before use so a compromised CDN cannot
+ * coerce consumers with wrong types.
  */
+import { stripBidi } from '../utils/SanitizeHtml.js';
+
+const LRCLIB_FETCH_TIMEOUT_MS = 10_000;
+
+// Hard caps for strings coming off the wire. Picked to be larger than any
+// realistic real-world value so a malicious response can't exhaust memory
+// or smuggle an attack payload past downstream renderers.
+const MAX_LYRICS_LEN = 100_000; // plainLyrics / syncedLyrics
+const MAX_TITLE_LEN = 512; // trackName / artistName
+const MAX_TRANSLATION_LEN = 12_000; // MyMemory translatedText
+
+function sanitizeLyricText(value, max) {
+  if (typeof value !== 'string') return '';
+  const stripped = stripBidi(value).replace(/\0/g, '');
+  return stripped.length > max ? stripped.slice(0, max) : stripped;
+}
+
+function sanitizeLrclibResult(raw) {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null;
+  const out = Object.create(null);
+  if (raw.plainLyrics != null) {
+    out.plainLyrics = sanitizeLyricText(raw.plainLyrics, MAX_LYRICS_LEN);
+  }
+  if (raw.syncedLyrics != null) {
+    out.syncedLyrics = sanitizeLyricText(raw.syncedLyrics, MAX_LYRICS_LEN);
+  }
+  if (raw.trackName != null) {
+    out.trackName = sanitizeLyricText(raw.trackName, MAX_TITLE_LEN);
+  }
+  if (raw.artistName != null) {
+    out.artistName = sanitizeLyricText(raw.artistName, MAX_TITLE_LEN);
+  }
+  if (typeof raw.duration === 'number' && Number.isFinite(raw.duration)) {
+    out.duration = raw.duration;
+  }
+  return out;
+}
+
 class LyricsService {
   constructor() {
     this.baseUrl = 'https://lrclib.net/api';
     this.translationUrl = 'https://api.mymemory.translated.net/get';
     this._translationCache = new Map();
+  }
+
+  async _fetchWithTimeout(url, { timeoutMs = LRCLIB_FETCH_TIMEOUT_MS } = {}) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      return await fetch(url, { signal: controller.signal });
+    } finally {
+      clearTimeout(timer);
+    }
   }
 
   // ═══════════════════════════════════════════
@@ -124,11 +177,12 @@ class LyricsService {
       }
       url.searchParams.append('track_name', track);
       if (duration) url.searchParams.append('duration', Math.round(duration));
-      const response = await fetch(url.toString());
+      const response = await this._fetchWithTimeout(url.toString());
       if (!response.ok) return null;
       const data = await response.json();
-      return data;
-    } catch {
+      return sanitizeLrclibResult(data);
+    } catch (err) {
+      if (err?.name === 'AbortError') throw err;
       return null;
     }
   }
@@ -137,19 +191,38 @@ class LyricsService {
     try {
       const url = new URL(`${this.baseUrl}/search`);
       url.searchParams.append('q', query);
-      const response = await fetch(url.toString());
+      const response = await this._fetchWithTimeout(url.toString());
       if (!response.ok) return null;
       const results = await response.json();
-      if (!results || results.length === 0) return null;
+      if (!Array.isArray(results) || results.length === 0) return null;
+
+      const sanitized = results
+        .slice(0, 50)
+        .map((r) => sanitizeLrclibResult(r))
+        .filter(Boolean);
+      if (sanitized.length === 0) return null;
 
       if (requireSynced) {
-        const synced = results.find((r) => r.syncedLyrics);
+        const synced = sanitized.find((r) => r.syncedLyrics);
         return synced || null;
       }
-      return results[0];
-    } catch {
+      return sanitized[0];
+    } catch (err) {
+      if (err?.name === 'AbortError') throw err;
       return null;
     }
+  }
+
+  _normalizeTitleVariants(cleanTrack) {
+    const variants = new Set();
+    const stripParen = cleanTrack.replace(/\s+-\s+(feat|ft|with|prod).*$/i, '').trim();
+    if (stripParen && stripParen !== cleanTrack) variants.add(stripParen);
+    const dropQualifiers = cleanTrack
+      .replace(/\b(feat|ft|with|prod)\b.*$/i, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (dropQualifiers && dropQualifiers !== cleanTrack) variants.add(dropQualifiers);
+    return [...variants];
   }
 
   // ═══════════════════════════════════════════
@@ -190,14 +263,23 @@ class LyricsService {
         if (result?.syncedLyrics) return result;
       }
 
-      // Strategy 5: progressively simplified title
+      // Strategy 5: normalized title variants (strip feat./ft./with qualifiers)
+      for (const variant of this._normalizeTitleVariants(cleanTrack)) {
+        result = await this._trySearchEndpoint(
+          cleanArtist && cleanArtist !== 'Unknown Artist' ? `${cleanArtist} ${variant}` : variant,
+          true
+        );
+        if (result?.syncedLyrics) return result;
+      }
+
+      // Strategy 6: progressively simplified title
       const titleVariants = this.simplifyTitle(cleanTrack);
       for (let i = 1; i < titleVariants.length; i++) {
         result = await this._trySearchEndpoint(titleVariants[i], true);
         if (result?.syncedLyrics) return result;
       }
 
-      // Strategy 6: retry all without requiring synced lyrics
+      // Strategy 7: retry without requiring synced lyrics
       result = await this._tryGetEndpoint(cleanArtist, cleanTrack, duration);
       if (result?.plainLyrics) return result;
 
@@ -209,6 +291,7 @@ class LyricsService {
 
       return null;
     } catch (err) {
+      if (err?.name === 'AbortError') throw err;
       console.error('LyricsService Error:', err);
       return null;
     }
@@ -265,14 +348,19 @@ class LyricsService {
       url.searchParams.append('q', text);
       url.searchParams.append('langpair', langPair);
 
-      const response = await fetch(url.toString());
+      const response = await this._fetchWithTimeout(url.toString(), { timeoutMs: 8000 });
       if (!response.ok) {
         throw new Error(`Translation API returned ${response.status}`);
       }
       const data = await response.json();
+      if (!data || typeof data !== 'object' || Array.isArray(data)) {
+        throw new Error('MyMemory: non-object response');
+      }
       const raw = data?.responseData?.translatedText;
       const translated =
-        typeof raw === 'string' && raw.length > 0 && raw.length <= 10000 ? raw : '';
+        typeof raw === 'string' && raw.length > 0
+          ? sanitizeLyricText(raw, MAX_TRANSLATION_LEN)
+          : '';
 
       this._translationCache.set(cacheKey, translated || '...');
       return translated || '...';
@@ -318,12 +406,14 @@ class LyricsService {
       lrc = lrc.slice(0, MAX_LRC_BYTES);
     }
 
+    const MAX_PARSED_LINES = 2000;
     const lines = lrc.split('\n').slice(0, MAX_LINES);
     const lyrics = [];
     const timestampRegex = /\[(\d{1,3}):(\d{2})(?:\.(\d{1,3}))?\]/g;
 
-    lines.forEach((line) => {
-      if (line.length > MAX_LINE_LEN) return;
+    for (const line of lines) {
+      if (lyrics.length >= MAX_PARSED_LINES) break;
+      if (line.length > MAX_LINE_LEN) continue;
       const timestamps = [];
       let match;
       let count = 0;
@@ -337,11 +427,14 @@ class LyricsService {
         timestamps.push(time);
       }
       timestampRegex.lastIndex = 0;
-      const text = line.replace(/\[[^\]]+\]/g, '').trim();
-      if (text && timestamps.length > 0) {
-        timestamps.forEach((time) => lyrics.push({ time, text }));
+      const stripped = stripBidi(line.replace(/\[[^\]]+\]/g, '')).trim();
+      if (stripped && timestamps.length > 0) {
+        for (const time of timestamps) {
+          if (lyrics.length >= MAX_PARSED_LINES) break;
+          lyrics.push({ time, text: stripped });
+        }
       }
-    });
+    }
     return lyrics.sort((a, b) => a.time - b.time);
   }
 }

@@ -138,7 +138,7 @@ export class LearnManager {
 
   completeLesson() {
     // Mark as completed in progress manager
-    this.progressManager.completelesson(this.currentLevel, this.currentLesson.id);
+    this.progressManager.completeLesson(this.currentLevel, this.currentLesson.id);
 
     // Track daily goals
     this.progressManager.incrementDailyLessons();

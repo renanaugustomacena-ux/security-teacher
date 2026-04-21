@@ -30,6 +30,8 @@ import { ConversationManager } from './ConversationManager.js';
 import { MorphBackground } from './MorphBackground.js';
 import { CursorParticles } from './CursorParticles.js';
 import { techTalkScenarios } from './topics/data/techtalk-scenarios.js';
+import { authService } from './services/AuthService.js';
+import { ProfileManager } from './ProfileManager.js';
 
 class App {
   constructor() {
@@ -90,6 +92,16 @@ class App {
       console.error('StorageService failed:', err);
     }
 
+    // 1b. Auth (runs before ProgressManager so loadProgress picks the right namespace)
+    try {
+      const cachedUser = await authService.init();
+      if (cachedUser?.sub) {
+        storageService.setUserId(cachedUser.sub);
+      }
+    } catch (err) {
+      console.warn('AuthService init failed:', err);
+    }
+
     // 2. Progress (must come before managers that depend on it)
     try {
       this.progressManager = new ProgressManager();
@@ -97,6 +109,21 @@ class App {
     } catch (err) {
       console.error('ProgressManager failed:', err);
     }
+
+    // 2a. React to sign-in / sign-out after the first load
+    authService.onChange(async (user) => {
+      storageService.setUserId(user?.sub || 'user_default');
+      try {
+        await this.progressManager?.reload();
+      } catch (err) {
+        console.warn('[auth] progress reload failed:', err);
+      }
+      try {
+        this.profileManager?.render();
+      } catch (err) {
+        console.warn('[auth] profile render failed:', err);
+      }
+    });
 
     // 2b. Tech Talk Scenarios (flatten keyed object into flat array with topicId)
     try {
@@ -139,6 +166,7 @@ class App {
       this.streakCalendarManager = new StreakCalendarManager(this.progressManager);
       this.leaderboardManager = new LeaderboardManager(this.progressManager);
       this.conversationManager = new ConversationManager(this.progressManager);
+      this.profileManager = new ProfileManager(this.progressManager);
       this.topicManager.init();
       this.topicPracticeManager.init();
       this.topicBossChallenge.init();
@@ -148,6 +176,7 @@ class App {
       this.streakCalendarManager.init();
       this.leaderboardManager.init();
       this.conversationManager.init();
+      this.profileManager.init();
       await this.srsManager.init();
     } catch (err) {
       console.error('Manager initialization failed:', err);
