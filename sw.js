@@ -13,7 +13,7 @@
  *   - fetch handler integrity gate: cross-origin responses never enter cache,
  *     opaque responses are passed through but never persisted.
  */
-const CACHE_NAME = 'kaio-v5';
+const CACHE_NAME = 'kaio-v6';
 
 const STATIC_ASSETS = [
   './',
@@ -58,6 +58,19 @@ const STATIC_ASSETS = [
   './js/topics/data/linux.js',
   './js/topics/data/python.js',
   './js/topics/data/software-dev.js',
+  './js/topics/data/ai-engineering.js',
+  './js/topics/data/ethical-hacking.js',
+  './js/topics/data/docker-k8s.js',
+  './js/topics/data/system-monitoring.js',
+  './js/topics/data/devsecops.js',
+  './js/topics/data/c-programming.js',
+  './js/topics/data/cpp.js',
+  './js/topics/data/nodejs.js',
+  './js/topics/data/rust.js',
+  './js/topics/data/cloud-computing.js',
+  './js/topics/data/networking.js',
+  './js/topics/data/databases.js',
+  './js/topics/data/git-vcs.js',
   './js/topics/data/techtalk-scenarios.js',
   './vendor/three-0.170.0.module.js',
   './vendor/fonts/fonts.css',

@@ -230,6 +230,201 @@ export const achievementDefinitions = [
     },
     secret: false,
   },
+  {
+    id: 'ai_architect',
+    title: 'AI Architect',
+    titleIt: 'Architetto IA',
+    description: 'Complete 5 AI Engineering lessons',
+    descriptionIt: 'Completa 5 lezioni di AI Engineering',
+    icon: '\ud83e\udd16',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.['ai-engineering'];
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'white_hat',
+    title: 'White Hat',
+    titleIt: 'Cappello Bianco',
+    description: 'Complete 5 Ethical Hacking lessons',
+    descriptionIt: 'Completa 5 lezioni di Hacking Etico',
+    icon: '\ud83d\udd13',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.['ethical-hacking'];
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'container_captain',
+    title: 'Container Captain',
+    titleIt: 'Capitano dei Container',
+    description: 'Complete 5 Docker & K8s lessons',
+    descriptionIt: 'Completa 5 lezioni di Docker e Kubernetes',
+    icon: '\ud83d\udc33',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.['docker-k8s'];
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'watchful_eye',
+    title: 'Watchful Eye',
+    titleIt: 'Occhio Vigile',
+    description: 'Complete 5 System Monitoring lessons',
+    descriptionIt: 'Completa 5 lezioni di Monitoraggio Sistemi',
+    icon: '\ud83d\udcca',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.['system-monitoring'];
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'security_pipeliner',
+    title: 'Security Pipeliner',
+    titleIt: 'Securizzatore di Pipeline',
+    description: 'Complete 5 DevSecOps lessons',
+    descriptionIt: 'Completa 5 lezioni di DevSecOps',
+    icon: '\ud83d\udd12',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.devsecops;
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'pointer_pro',
+    title: 'Pointer Pro',
+    titleIt: 'Maestro dei Puntatori',
+    description: 'Complete 5 C Programming lessons',
+    descriptionIt: 'Completa 5 lezioni di Programmazione C',
+    icon: '\u2699\ufe0f',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.['c-programming'];
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'cpp_ninja',
+    title: 'C++ Ninja',
+    titleIt: 'Ninja del C++',
+    description: 'Complete 5 C++ Programming lessons',
+    descriptionIt: 'Completa 5 lezioni di Programmazione C++',
+    icon: '\u2795',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.cpp;
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'node_navigator',
+    title: 'Node Navigator',
+    titleIt: 'Navigatore Node',
+    description: 'Complete 5 Node.js lessons',
+    descriptionIt: 'Completa 5 lezioni di Node.js',
+    icon: '\ud83d\udfe2',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.nodejs;
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'rustacean',
+    title: 'Rustacean',
+    titleIt: 'Rustaceo',
+    description: 'Complete 5 Rust Programming lessons',
+    descriptionIt: 'Completa 5 lezioni di Programmazione Rust',
+    icon: '\ud83e\udd80',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.rust;
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'cloud_surfer',
+    title: 'Cloud Surfer',
+    titleIt: 'Surfista del Cloud',
+    description: 'Complete 5 Cloud Computing lessons',
+    descriptionIt: 'Completa 5 lezioni di Cloud Computing',
+    icon: '\u2601\ufe0f',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.['cloud-computing'];
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'network_engineer',
+    title: 'Network Engineer',
+    titleIt: 'Ingegnere di Rete',
+    description: 'Complete 5 Networking lessons',
+    descriptionIt: 'Completa 5 lezioni di Networking',
+    icon: '\ud83c\udf10',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.networking;
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'data_guardian',
+    title: 'Data Guardian',
+    titleIt: 'Guardiano dei Dati',
+    description: 'Complete 5 Database lessons',
+    descriptionIt: 'Completa 5 lezioni di Database',
+    icon: '\ud83d\uddc4\ufe0f',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.databases;
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
+  {
+    id: 'git_wizard',
+    title: 'Git Wizard',
+    titleIt: 'Mago di Git',
+    description: 'Complete 5 Git & Version Control lessons',
+    descriptionIt: 'Completa 5 lezioni di Git e Controllo Versione',
+    icon: '\ud83d\udd00',
+    category: 'special',
+    condition: (d) => {
+      const tp = d.topicProgress?.['git-vcs'];
+      if (!tp) return false;
+      return Object.keys(tp.completedLessons || {}).length >= 5;
+    },
+    secret: false,
+  },
 
   // ─── TOPIC MASTERY & BOSS ───────────────────
   {
