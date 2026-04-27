@@ -17,6 +17,18 @@
 import { lessonsDatabase } from './lessons.js';
 import { songsDatabase } from './songs.js';
 import { ttsService } from './services/TTSService.js';
+import { sfxService } from './services/SfxService.js';
+import { practiceHUD } from './PracticeHUD.js';
+import { nearMiss } from './utils/StringDistance.js';
+
+// Feedback cadence — collapse the answer→next gap on correct, give
+// reading time on incorrect. Aligns with .feedback-progress-fill CSS.
+const FEEDBACK_DWELL = {
+  correct: 400,
+  incorrect: 2200,
+  partial: 1800,
+  nearMiss: 1800,
+};
 
 const ENCOURAGING_CORRECT = [
   'Perfetto! / Perfect!',
@@ -235,6 +247,7 @@ export class PracticeManager {
     this.consecutiveCorrect = 0;
     this.maxStreak = 0;
     this.totalResponseTime = 0;
+    practiceHUD.reset();
 
     if (this.questions.length === 0) {
       this.showNotification(
@@ -850,7 +863,8 @@ export class PracticeManager {
   }
 
   /**
-   * Check writing answer with accent tolerance
+   * Check writing answer with accent tolerance + near-miss forgiveness.
+   * Order of checks: exact > accent-only > near-miss (typo) > miss.
    */
   checkWritingAnswer(correct) {
     const input = document.getElementById('writing-input');
@@ -871,7 +885,67 @@ export class PracticeManager {
       return;
     }
 
+    if (nearMiss(userValue, correct).partial) {
+      this.handleNearMiss(userValue, correct);
+      return;
+    }
+
     this.handleResult(false, correct);
+  }
+
+  /**
+   * Near-miss path: typo within Levenshtein threshold. Awards 50% XP, breaks
+   * the streak (so users don't farm typos), shows a softer feedback card
+   * with diff-highlight of the user's input vs the correct answer.
+   */
+  handleNearMiss(userValue, correctAnswer) {
+    this.clearTimer();
+    const responseTime = this.getResponseTimeSeconds();
+    this.totalResponseTime += responseTime;
+
+    const xpEarned = Math.round(this.calculateXP(responseTime) * 0.5);
+    this.sessionXP += xpEarned;
+    this.progressManager.addXP(xpEarned);
+    this.consecutiveCorrect = 0;
+
+    this.updateStreakDisplay();
+    this.updateXPDisplay();
+
+    sfxService.nearMiss();
+    practiceHUD.onAnswerResult({ correct: false, streak: 0 });
+
+    const container = document.getElementById('practice-content');
+    if (!container) return;
+
+    const diffHtml = this.renderNearMissDiff(userValue, correctAnswer);
+    container.innerHTML = `
+      <div class="feedback-card feedback-near-miss">
+        <div class="feedback-message">Quasi! Hai sbagliato di poco / Just a typo away</div>
+        ${xpEarned > 0 ? `<div class="feedback-xp">+${xpEarned} XP (parziale)</div>` : ''}
+        <div class="near-miss-diff">${diffHtml}</div>
+        <div class="feedback-answer">La risposta era: <strong>${this.escapeHtml(correctAnswer)}</strong></div>
+        <div class="feedback-progress-bar"><div class="feedback-progress-fill"></div></div>
+      </div>
+    `;
+
+    if (xpEarned > 0) this.showFloatingXP(xpEarned);
+    setTimeout(() => this.nextQuestion(), FEEDBACK_DWELL.nearMiss);
+  }
+
+  renderNearMissDiff(userValue, correctAnswer) {
+    const u = String(userValue || '');
+    const e = String(correctAnswer || '');
+    const max = Math.max(u.length, e.length);
+    let html = '';
+    for (let i = 0; i < max; i += 1) {
+      const ch = u[i] ?? '';
+      const expected = e[i] ?? '';
+      const match = ch !== '' && ch.toLowerCase() === expected.toLowerCase();
+      const display = ch || '·';
+      const cls = match ? 'char-match' : 'char-miss';
+      html += `<span class="${cls}">${this.escapeHtml(display)}</span>`;
+    }
+    return html;
   }
 
   /**
@@ -950,7 +1024,7 @@ export class PracticeManager {
     `;
 
     if (xpEarned > 0) this.showFloatingXP(xpEarned);
-    setTimeout(() => this.nextQuestion(), 2500);
+    setTimeout(() => this.nextQuestion(), FEEDBACK_DWELL.partial);
   }
 
   handleResult(isCorrect, correct, accentHint = false) {
@@ -975,7 +1049,32 @@ export class PracticeManager {
 
     this.updateStreakDisplay();
     this.updateXPDisplay();
+
+    if (isCorrect) {
+      sfxService.correct();
+      this._hapticTap(12);
+    } else {
+      sfxService.incorrect();
+    }
+    practiceHUD.onAnswerResult({ correct: isCorrect, streak: this.consecutiveCorrect });
+
     this.showFeedback(isCorrect, correct, xpEarned, accentHint);
+  }
+
+  _hapticTap(ms) {
+    if (typeof navigator === 'undefined' || typeof navigator.vibrate !== 'function') return;
+    if (typeof window !== 'undefined' && typeof window.matchMedia === 'function') {
+      try {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      } catch (e) {
+        // ignore
+      }
+    }
+    try {
+      navigator.vibrate(ms);
+    } catch (e) {
+      // older browsers throw on non-numeric or restricted contexts
+    }
   }
 
   /**
@@ -1012,9 +1111,10 @@ export class PracticeManager {
       this.showFloatingXP(xpEarned);
     }
 
+    const dwell = isCorrect ? FEEDBACK_DWELL.correct : FEEDBACK_DWELL.incorrect;
     setTimeout(() => {
       this.nextQuestion();
-    }, 1500);
+    }, dwell);
   }
 
   /**
