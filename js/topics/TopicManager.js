@@ -726,6 +726,13 @@ export class TopicManager {
         icon: '\u26D3\uFE0F',
         enabled: hasEnglishItalian,
       },
+      {
+        id: 'velocita',
+        name: "Velocita' / Speed Run",
+        desc: '60-90s a tutta velocita / 60-90s rapid-fire',
+        icon: '\u26A1',
+        enabled: hasEnglishItalian,
+      },
     ];
 
     const container = document.getElementById('topic-lesson-content');
