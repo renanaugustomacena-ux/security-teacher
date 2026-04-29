@@ -1,6 +1,6 @@
 # DOCTRINE.md — Knowledge AIO Engineering Doctrine
 
-> **Version:** 1.1.0 — 2026-04-29
+> **Version:** 1.1.1 — 2026-04-29
 > **Status:** Ratified, in force.
 > **Scope:** All code, configuration, deployment artifacts, and operational
 > procedures within this repository.
@@ -10,6 +10,12 @@
 > added — a static gate requiring every `js/services/*.js` module to have a
 > matching `tests/<kebab-name>.test.js`. The amendments were ratified after
 > commit 07ab41e brought every service into compliance.
+
+> **v1.1.1 patch** (clarification per §21.1): Appendix A's stated total
+> ("154" in v1.0.0, "155" in v1.1.0) was a mis-sum of the per-section counts.
+> The per-section counts themselves were always correct. Recounted total is
+> 157. No rule was added or removed by this patch — it only fixes the
+> arithmetic.
 
 This doctrine is a precise, technical, and enforceable specification of how
 Knowledge AIO is built, secured, deployed, and maintained. Every rule herein
@@ -324,7 +330,7 @@ an amendment commit that updates this file in the same PR.
 | §19 Code Style & Repository Hygiene        | 8       |
 | §20 Threat Model & Incident Response       | 6       |
 | §21 Doctrine Governance                    | 4       |
-| **Total**                                  | **155** |
+| **Total**                                  | **157** |
 
 ## Appendix B — Quick-Reference Index
 
