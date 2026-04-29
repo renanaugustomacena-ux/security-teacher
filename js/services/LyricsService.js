@@ -46,7 +46,7 @@ function sanitizeLrclibResult(raw) {
   return out;
 }
 
-class LyricsService {
+export class LyricsService {
   constructor() {
     this.baseUrl = 'https://lrclib.net/api';
     this.translationUrl = 'https://api.mymemory.translated.net/get';
