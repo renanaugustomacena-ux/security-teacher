@@ -9,7 +9,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "ignorePatterns": ["ideanew/"],
+  "ignorePatterns": ["ideanew/", "vendor/", "_site/", "node_modules/", ".github/"],
   "rules": {
     "prettier/prettier": "error",
     "no-console": "warn",
@@ -30,7 +30,9 @@
     "prefer-destructuring": "off",
     "no-empty": ["error", { "allowEmptyCatch": true }],
     "no-await-in-loop": "off",
-    "no-cond-assign": "off"
+    "no-cond-assign": "off",
+    "no-template-curly-in-string": "off",
+    "no-useless-escape": "warn"
   },
   "plugins": ["prettier"]
 }

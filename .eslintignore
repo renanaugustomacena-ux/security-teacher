@@ -1,0 +1,13 @@
+# Vendored third-party (Doctrine §6.1) — pinned by sha256, lint regressions
+# would be upstream's problem and we do not modify these files locally.
+vendor/
+
+# Build artefacts.
+_site/
+node_modules/
+
+# Pages workflow deploy stage.
+.github/
+
+# Removed — old playground.
+ideanew/

@@ -93,7 +93,8 @@ export const topicsRegistry = [
     titleIt: 'DevSecOps',
     icon: '\u{1F512}',
     description: 'Learn English DevSecOps and security automation terminology',
-    descriptionIt: "Impara la terminologia inglese del DevSecOps e dell'automazione della sicurezza",
+    descriptionIt:
+      "Impara la terminologia inglese del DevSecOps e dell'automazione della sicurezza",
     levelCount: 24,
     color: '#059669',
   },

@@ -15,11 +15,11 @@ export default {
     // ════════════════════════════════════════════════
     0: {
       name: 'Fondamenti IA / AI Foundations',
-      description: 'Le basi dell\'intelligenza artificiale',
+      description: "Le basi dell'intelligenza artificiale",
       lessons: [
         {
           id: 'ai_foundations_1',
-          title: 'AI Basics / Le Basi dell\'IA',
+          title: "AI Basics / Le Basi dell'IA",
           description: 'Concetti fondamentali di intelligenza artificiale',
           items: [
             {
@@ -27,7 +27,8 @@ export default {
               italian: 'Intelligenza Artificiale',
               pronunciation: '/ˌɑːrtɪˈfɪʃəl ɪnˈtelɪdʒəns/',
               phonetic: 'ar-ti-FI-scial in-TEL-li-gens',
-              example: 'Artificial intelligence simulates human cognitive functions. = L\'intelligenza artificiale simula le funzioni cognitive umane.',
+              example:
+                "Artificial intelligence simulates human cognitive functions. = L'intelligenza artificiale simula le funzioni cognitive umane.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Spesso abbreviato AI in inglese, IA in italiano.',
@@ -37,7 +38,8 @@ export default {
               italian: 'Apprendimento Automatico',
               pronunciation: '/məˈʃiːn ˈlɜːrnɪŋ/',
               phonetic: 'ma-SCIIN LER-ning',
-              example: 'Machine learning allows computers to learn from data. = L\'apprendimento automatico permette ai computer di imparare dai dati.',
+              example:
+                "Machine learning allows computers to learn from data. = L'apprendimento automatico permette ai computer di imparare dai dati.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Abbreviato ML. In italiano si usa anche "Machine Learning" senza tradurre.',
@@ -47,7 +49,8 @@ export default {
               italian: 'Apprendimento profondo',
               pronunciation: '/diːp ˈlɜːrnɪŋ/',
               phonetic: 'DIIP LER-ning',
-              example: 'Deep learning uses neural networks with many layers. = L\'apprendimento profondo usa reti neurali con molti strati.',
+              example:
+                "Deep learning uses neural networks with many layers. = L'apprendimento profondo usa reti neurali con molti strati.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Sotto-campo del machine learning basato su reti neurali profonde.',
@@ -57,7 +60,8 @@ export default {
               italian: 'Insieme di dati',
               pronunciation: '/ˈdeɪtəset/',
               phonetic: 'DEI-ta-set',
-              example: 'A good dataset is the foundation of any AI model. = Un buon insieme di dati è la base di ogni modello di IA.',
+              example:
+                'A good dataset is the foundation of any AI model. = Un buon insieme di dati è la base di ogni modello di IA.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'dataset = pd.read_csv("data.csv")',
@@ -68,7 +72,8 @@ export default {
               italian: 'Modello',
               pronunciation: '/ˈmɒdəl/',
               phonetic: 'MO-del',
-              example: 'The model learns patterns from training data. = Il modello impara pattern dai dati di addestramento.',
+              example:
+                'The model learns patterns from training data. = Il modello impara pattern dai dati di addestramento.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'model = LinearRegression()',
@@ -78,7 +83,8 @@ export default {
               italian: 'Addestramento',
               pronunciation: '/ˈtreɪnɪŋ/',
               phonetic: 'TREI-ning',
-              example: 'Training the model takes several hours on GPU. = L\'addestramento del modello richiede diverse ore su GPU.',
+              example:
+                "Training the model takes several hours on GPU. = L'addestramento del modello richiede diverse ore su GPU.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'model.fit(X_train, y_train)',
@@ -89,7 +95,8 @@ export default {
               italian: 'Inferenza',
               pronunciation: '/ˈɪnfərəns/',
               phonetic: 'IN-fe-rens',
-              example: 'Inference is when the model makes predictions on new data. = L\'inferenza è quando il modello fa previsioni su dati nuovi.',
+              example:
+                "Inference is when the model makes predictions on new data. = L'inferenza è quando il modello fa previsioni su dati nuovi.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'predictions = model.predict(X_new)',
@@ -99,7 +106,8 @@ export default {
               italian: 'Algoritmo',
               pronunciation: '/ˈælɡərɪðəm/',
               phonetic: 'AL-go-ri-dem',
-              example: 'The algorithm decides how the model learns. = L\'algoritmo decide come il modello impara.',
+              example:
+                "The algorithm decides how the model learns. = L'algoritmo decide come il modello impara.",
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -108,7 +116,8 @@ export default {
               italian: 'Predizione',
               pronunciation: '/prɪˈdɪkʃən/',
               phonetic: 'pri-DIK-scen',
-              example: 'The model produces a prediction for each input. = Il modello produce una predizione per ogni input.',
+              example:
+                'The model produces a prediction for each input. = Il modello produce una predizione per ogni input.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'y_pred = model.predict(X_test)',
@@ -118,7 +127,8 @@ export default {
               italian: 'Scienza dei dati',
               pronunciation: '/ˈdeɪtə ˈsaɪəns/',
               phonetic: 'DEI-ta SAI-ens',
-              example: 'Data science combines statistics, programming, and domain knowledge. = La scienza dei dati combina statistica, programmazione e conoscenza di dominio.',
+              example:
+                'Data science combines statistics, programming, and domain knowledge. = La scienza dei dati combina statistica, programmazione e conoscenza di dominio.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Campo più ampio che include anche analisi, visualizzazione e business intelligence.',
@@ -135,17 +145,19 @@ export default {
               italian: 'IA ristretta',
               pronunciation: '/ˈnæroʊ eɪ aɪ/',
               phonetic: 'NA-rou EI-AI',
-              example: 'Narrow AI excels at one specific task. = L\'IA ristretta eccelle in un compito specifico.',
+              example:
+                "Narrow AI excels at one specific task. = L'IA ristretta eccelle in un compito specifico.",
               context: 'foundations',
               difficulty: 'beginner',
-              note: 'Detta anche Weak AI. Tutta l\'IA attuale è di questo tipo.',
+              note: "Detta anche Weak AI. Tutta l'IA attuale è di questo tipo.",
             },
             {
               english: 'General AI',
               italian: 'IA generale',
               pronunciation: '/ˈdʒenərəl eɪ aɪ/',
               phonetic: 'GE-ne-ral EI-AI',
-              example: 'General AI would match human intelligence across all domains. = L\'IA generale eguaglierebbe l\'intelligenza umana in tutti i domini.',
+              example:
+                "General AI would match human intelligence across all domains. = L'IA generale eguaglierebbe l'intelligenza umana in tutti i domini.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Abbreviato AGI. Ancora un obiettivo teorico.',
@@ -155,7 +167,8 @@ export default {
               italian: 'Apprendimento supervisionato',
               pronunciation: '/ˈsuːpərvaɪzd ˈlɜːrnɪŋ/',
               phonetic: 'SU-per-vaizd LER-ning',
-              example: 'Supervised learning uses labeled examples. = L\'apprendimento supervisionato usa esempi etichettati.',
+              example:
+                "Supervised learning uses labeled examples. = L'apprendimento supervisionato usa esempi etichettati.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Il modello impara da coppie input-output corrette.',
@@ -165,7 +178,8 @@ export default {
               italian: 'Apprendimento non supervisionato',
               pronunciation: '/ˌʌnsuːpərˈvaɪzd ˈlɜːrnɪŋ/',
               phonetic: 'an-su-per-VAIZD LER-ning',
-              example: 'Unsupervised learning finds patterns without labels. = L\'apprendimento non supervisionato trova pattern senza etichette.',
+              example:
+                "Unsupervised learning finds patterns without labels. = L'apprendimento non supervisionato trova pattern senza etichette.",
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -174,7 +188,8 @@ export default {
               italian: 'Apprendimento per rinforzo',
               pronunciation: '/ˌriːɪnˈfɔːrsmənt ˈlɜːrnɪŋ/',
               phonetic: 'rii-in-FORS-ment LER-ning',
-              example: 'Reinforcement learning trains agents through rewards. = L\'apprendimento per rinforzo addestra agenti tramite ricompense.',
+              example:
+                "Reinforcement learning trains agents through rewards. = L'apprendimento per rinforzo addestra agenti tramite ricompense.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Abbreviato RL. Usato per giochi e robotica.',
@@ -184,7 +199,8 @@ export default {
               italian: 'IA generativa',
               pronunciation: '/ˈdʒenərətɪv eɪ aɪ/',
               phonetic: 'GE-ne-ra-tiv EI-AI',
-              example: 'Generative AI creates new content like images and text. = L\'IA generativa crea nuovi contenuti come immagini e testo.',
+              example:
+                "Generative AI creates new content like images and text. = L'IA generativa crea nuovi contenuti come immagini e testo.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Include modelli come ChatGPT, DALL-E, Stable Diffusion.',
@@ -194,7 +210,8 @@ export default {
               italian: 'Modello discriminativo',
               pronunciation: '/dɪˈskrɪmɪnətɪv ˈmɒdəl/',
               phonetic: 'di-SKRI-mi-na-tiv MO-del',
-              example: 'A discriminative model classifies inputs into categories. = Un modello discriminativo classifica input in categorie.',
+              example:
+                'A discriminative model classifies inputs into categories. = Un modello discriminativo classifica input in categorie.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Opposto del generativo: distingue invece di creare.',
@@ -204,7 +221,8 @@ export default {
               italian: 'IA simbolica',
               pronunciation: '/sɪmˈbɒlɪk eɪ aɪ/',
               phonetic: 'sim-BO-lik EI-AI',
-              example: 'Symbolic AI uses rules and logic, not statistics. = L\'IA simbolica usa regole e logica, non statistica.',
+              example:
+                "Symbolic AI uses rules and logic, not statistics. = L'IA simbolica usa regole e logica, non statistica.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Approccio classico, dominante prima del deep learning.',
@@ -214,7 +232,8 @@ export default {
               italian: 'Sistema esperto',
               pronunciation: '/ˈekspɜːrt ˈsɪstəm/',
               phonetic: 'EK-spert SIS-tem',
-              example: 'An expert system encodes knowledge from human specialists. = Un sistema esperto codifica conoscenza da specialisti umani.',
+              example:
+                'An expert system encodes knowledge from human specialists. = Un sistema esperto codifica conoscenza da specialisti umani.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Esempio classico di IA simbolica degli anni 80.',
@@ -224,7 +243,8 @@ export default {
               italian: 'Modello fondazionale',
               pronunciation: '/faʊnˈdeɪʃən ˈmɒdəl/',
               phonetic: 'faun-DEI-scen MO-del',
-              example: 'A foundation model is pre-trained on massive data. = Un modello fondazionale è pre-addestrato su enormi quantità di dati.',
+              example:
+                'A foundation model is pre-trained on massive data. = Un modello fondazionale è pre-addestrato su enormi quantità di dati.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Termine moderno per modelli come GPT, Claude, Gemini.',
@@ -241,7 +261,8 @@ export default {
               italian: 'Definizione del problema',
               pronunciation: '/ˈprɒbləm ˌdefɪˈnɪʃən/',
               phonetic: 'PROB-lem de-fi-NI-scen',
-              example: 'Problem definition is the first step of any AI project. = La definizione del problema è il primo passo di ogni progetto di IA.',
+              example:
+                'Problem definition is the first step of any AI project. = La definizione del problema è il primo passo di ogni progetto di IA.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -250,7 +271,8 @@ export default {
               italian: 'Raccolta dati',
               pronunciation: '/ˈdeɪtə kəˈlekʃən/',
               phonetic: 'DEI-ta ko-LEK-scen',
-              example: 'Data collection determines the quality of the model. = La raccolta dati determina la qualità del modello.',
+              example:
+                'Data collection determines the quality of the model. = La raccolta dati determina la qualità del modello.',
               context: 'foundations',
               difficulty: 'beginner',
               note: '"Garbage in, garbage out": dati scadenti producono modelli scadenti.',
@@ -260,7 +282,8 @@ export default {
               italian: 'Analisi esplorativa dei dati',
               pronunciation: '/ɪkˈsplɔːrətɔːri ˈdeɪtə əˈnæləsɪs/',
               phonetic: 'ek-SPLO-ra-to-ri DEI-ta a-NA-le-sis',
-              example: 'Exploratory data analysis reveals patterns and outliers. = L\'analisi esplorativa dei dati rivela pattern e valori anomali.',
+              example:
+                "Exploratory data analysis reveals patterns and outliers. = L'analisi esplorativa dei dati rivela pattern e valori anomali.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'df.describe()',
@@ -271,7 +294,8 @@ export default {
               italian: 'Selezione del modello',
               pronunciation: '/ˈmɒdəl sɪˈlekʃən/',
               phonetic: 'MO-del si-LEK-scen',
-              example: 'Model selection compares different algorithms. = La selezione del modello confronta diversi algoritmi.',
+              example:
+                'Model selection compares different algorithms. = La selezione del modello confronta diversi algoritmi.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -280,7 +304,8 @@ export default {
               italian: 'Insieme di addestramento',
               pronunciation: '/ˈtreɪnɪŋ set/',
               phonetic: 'TREI-ning SET',
-              example: 'The training set teaches the model. = L\'insieme di addestramento insegna al modello.',
+              example:
+                "The training set teaches the model. = L'insieme di addestramento insegna al modello.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'X_train, X_test = train_test_split(X)',
@@ -291,17 +316,19 @@ export default {
               italian: 'Insieme di test',
               pronunciation: '/test set/',
               phonetic: 'TEST SET',
-              example: 'The test set evaluates final model performance. = L\'insieme di test valuta le prestazioni finali del modello.',
+              example:
+                "The test set evaluates final model performance. = L'insieme di test valuta le prestazioni finali del modello.",
               context: 'foundations',
               difficulty: 'beginner',
-              note: 'Mai usato durante l\'addestramento, solo alla fine.',
+              note: "Mai usato durante l'addestramento, solo alla fine.",
             },
             {
               english: 'Validation Set',
               italian: 'Insieme di validazione',
               pronunciation: '/ˌvælɪˈdeɪʃən set/',
               phonetic: 'va-li-DEI-scen SET',
-              example: 'The validation set tunes hyperparameters. = L\'insieme di validazione regola gli iperparametri.',
+              example:
+                "The validation set tunes hyperparameters. = L'insieme di validazione regola gli iperparametri.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Diverso dal test set: serve per scegliere il modello migliore.',
@@ -311,7 +338,8 @@ export default {
               italian: 'Distribuzione',
               pronunciation: '/dɪˈplɔɪmənt/',
               phonetic: 'di-PLOI-ment',
-              example: 'Deployment puts the model into production. = La distribuzione mette il modello in produzione.',
+              example:
+                'Deployment puts the model into production. = La distribuzione mette il modello in produzione.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'In gergo italiano si usa anche "deploy" o "messa in produzione".',
@@ -321,7 +349,8 @@ export default {
               italian: 'Monitoraggio',
               pronunciation: '/ˈmɒnɪtərɪŋ/',
               phonetic: 'MO-ni-to-ring',
-              example: 'Monitoring detects when the model degrades. = Il monitoraggio rileva quando il modello peggiora.',
+              example:
+                'Monitoring detects when the model degrades. = Il monitoraggio rileva quando il modello peggiora.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -330,7 +359,8 @@ export default {
               italian: 'Iterazione',
               pronunciation: '/ˌɪtəˈreɪʃən/',
               phonetic: 'i-te-REI-scen',
-              example: 'AI development is an iterative process. = Lo sviluppo di IA è un processo iterativo.',
+              example:
+                'AI development is an iterative process. = Lo sviluppo di IA è un processo iterativo.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Raro che il primo modello sia il migliore.',
@@ -347,7 +377,8 @@ export default {
               italian: 'Sistema di raccomandazione',
               pronunciation: '/ˌrekəmenˈdeɪʃən ˈsɪstəm/',
               phonetic: 're-ko-men-DEI-scen SIS-tem',
-              example: 'Netflix uses a recommendation system to suggest movies. = Netflix usa un sistema di raccomandazione per suggerire film.',
+              example:
+                'Netflix uses a recommendation system to suggest movies. = Netflix usa un sistema di raccomandazione per suggerire film.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -356,7 +387,8 @@ export default {
               italian: 'Assistente conversazionale',
               pronunciation: '/ˈtʃætbɒt/',
               phonetic: 'CIAT-bot',
-              example: 'Modern chatbots use large language models. = I chatbot moderni usano grandi modelli linguistici.',
+              example:
+                'Modern chatbots use large language models. = I chatbot moderni usano grandi modelli linguistici.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Termine spesso lasciato in inglese.',
@@ -366,7 +398,8 @@ export default {
               italian: 'Riconoscimento vocale',
               pronunciation: '/spiːtʃ ˌrekəɡˈnɪʃən/',
               phonetic: 'SPIICI re-kog-NI-scen',
-              example: 'Speech recognition converts audio to text. = Il riconoscimento vocale converte audio in testo.',
+              example:
+                'Speech recognition converts audio to text. = Il riconoscimento vocale converte audio in testo.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Esempi: Siri, Alexa, dettatura del telefono.',
@@ -376,7 +409,8 @@ export default {
               italian: 'Riconoscimento immagini',
               pronunciation: '/ˈɪmɪdʒ ˌrekəɡˈnɪʃən/',
               phonetic: 'I-migi re-kog-NI-scen',
-              example: 'Image recognition identifies objects in photos. = Il riconoscimento immagini identifica oggetti nelle foto.',
+              example:
+                'Image recognition identifies objects in photos. = Il riconoscimento immagini identifica oggetti nelle foto.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -385,7 +419,8 @@ export default {
               italian: 'Auto a guida autonoma',
               pronunciation: '/self ˈdraɪvɪŋ kɑːr/',
               phonetic: 'SELF DRAI-ving KAR',
-              example: 'Self-driving cars combine vision, sensors and AI. = Le auto a guida autonoma combinano visione, sensori e IA.',
+              example:
+                'Self-driving cars combine vision, sensors and AI. = Le auto a guida autonoma combinano visione, sensori e IA.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -394,7 +429,8 @@ export default {
               italian: 'Rilevamento frodi',
               pronunciation: '/frɔːd dɪˈtekʃən/',
               phonetic: 'FROD di-TEK-scen',
-              example: 'Banks use fraud detection to spot suspicious transactions. = Le banche usano il rilevamento frodi per individuare transazioni sospette.',
+              example:
+                'Banks use fraud detection to spot suspicious transactions. = Le banche usano il rilevamento frodi per individuare transazioni sospette.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -403,7 +439,8 @@ export default {
               italian: 'Analisi del sentiment',
               pronunciation: '/ˈsentɪmənt əˈnæləsɪs/',
               phonetic: 'SEN-ti-ment a-NA-le-sis',
-              example: 'Sentiment analysis classifies reviews as positive or negative. = L\'analisi del sentiment classifica recensioni come positive o negative.',
+              example:
+                "Sentiment analysis classifies reviews as positive or negative. = L'analisi del sentiment classifica recensioni come positive o negative.",
               context: 'foundations',
               difficulty: 'beginner',
               note: '"Sentiment" si lascia in inglese; "analisi del sentimento" suona innaturale.',
@@ -413,7 +450,8 @@ export default {
               italian: 'Analisi predittiva',
               pronunciation: '/prɪˈdɪktɪv ænəˈlɪtɪks/',
               phonetic: 'pri-DIK-tiv a-na-LI-tiks',
-              example: 'Predictive analytics forecasts future trends. = L\'analisi predittiva prevede tendenze future.',
+              example:
+                "Predictive analytics forecasts future trends. = L'analisi predittiva prevede tendenze future.",
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -422,7 +460,8 @@ export default {
               italian: 'Rilevamento anomalie',
               pronunciation: '/əˈnɒməli dɪˈtekʃən/',
               phonetic: 'a-NO-ma-li di-TEK-scen',
-              example: 'Anomaly detection finds unusual patterns in data. = Il rilevamento anomalie trova pattern insoliti nei dati.',
+              example:
+                'Anomaly detection finds unusual patterns in data. = Il rilevamento anomalie trova pattern insoliti nei dati.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Usato per cybersecurity, monitoraggio industriale, fraud detection.',
@@ -432,7 +471,8 @@ export default {
               italian: 'Assistente personale',
               pronunciation: '/ˈpɜːrsənəl əˈsɪstənt/',
               phonetic: 'PER-so-nal a-SIS-tant',
-              example: 'AI personal assistants answer questions and book meetings. = Gli assistenti personali IA rispondono a domande e prenotano riunioni.',
+              example:
+                'AI personal assistants answer questions and book meetings. = Gli assistenti personali IA rispondono a domande e prenotano riunioni.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -457,7 +497,8 @@ export default {
               italian: 'Caratteristica',
               pronunciation: '/ˈfiːtʃər/',
               phonetic: 'FII-cer',
-              example: 'A feature is an input variable used by the model. = Una caratteristica è una variabile di input usata dal modello.',
+              example:
+                'A feature is an input variable used by the model. = Una caratteristica è una variabile di input usata dal modello.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'X = df[["age", "income", "city"]]',
@@ -468,7 +509,8 @@ export default {
               italian: 'Etichetta',
               pronunciation: '/ˈleɪbəl/',
               phonetic: 'LEI-bel',
-              example: 'The label is the target value the model predicts. = L\'etichetta è il valore obiettivo che il modello predice.',
+              example:
+                "The label is the target value the model predicts. = L'etichetta è il valore obiettivo che il modello predice.",
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'y = df["target"]',
@@ -479,7 +521,7 @@ export default {
               italian: 'Dati numerici',
               pronunciation: '/njuːˈmerɪkəl ˈdeɪtə/',
               phonetic: 'niu-ME-ri-kal DEI-ta',
-              example: 'Age and price are numerical data. = L\'età e il prezzo sono dati numerici.',
+              example: "Age and price are numerical data. = L'età e il prezzo sono dati numerici.",
               context: 'data-engineering',
               difficulty: 'beginner',
             },
@@ -488,17 +530,19 @@ export default {
               italian: 'Dati categorici',
               pronunciation: '/ˌkætəˈɡɒrɪkəl ˈdeɪtə/',
               phonetic: 'ka-te-GO-ri-kal DEI-ta',
-              example: 'Color and country are categorical data. = Il colore e il paese sono dati categorici.',
+              example:
+                'Color and country are categorical data. = Il colore e il paese sono dati categorici.',
               context: 'data-engineering',
               difficulty: 'beginner',
-              note: 'Devono essere convertiti in numeri prima dell\'addestramento.',
+              note: "Devono essere convertiti in numeri prima dell'addestramento.",
             },
             {
               english: 'Ordinal Data',
               italian: 'Dati ordinali',
               pronunciation: '/ˈɔːrdɪnəl ˈdeɪtə/',
               phonetic: 'OR-di-nal DEI-ta',
-              example: 'Education level is ordinal data with a natural order. = Il livello di istruzione è un dato ordinale con un ordine naturale.',
+              example:
+                'Education level is ordinal data with a natural order. = Il livello di istruzione è un dato ordinale con un ordine naturale.',
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Esempi: small/medium/large, low/high.',
@@ -508,7 +552,8 @@ export default {
               italian: 'Variabile continua',
               pronunciation: '/kənˈtɪnjuəs ˈveəriəbl/',
               phonetic: 'kon-TI-niu-os VER-ia-bol',
-              example: 'Temperature is a continuous variable. = La temperatura è una variabile continua.',
+              example:
+                'Temperature is a continuous variable. = La temperatura è una variabile continua.',
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Può assumere infiniti valori in un intervallo.',
@@ -518,7 +563,8 @@ export default {
               italian: 'Variabile discreta',
               pronunciation: '/dɪˈskriːt ˈveəriəbl/',
               phonetic: 'di-SKRIIT VER-ia-bol',
-              example: 'The number of children is a discrete variable. = Il numero di figli è una variabile discreta.',
+              example:
+                'The number of children is a discrete variable. = Il numero di figli è una variabile discreta.',
               context: 'data-engineering',
               difficulty: 'beginner',
             },
@@ -527,7 +573,8 @@ export default {
               italian: 'Serie temporale',
               pronunciation: '/taɪm ˈsɪriːz/',
               phonetic: 'TAIM SI-riz',
-              example: 'Stock prices are a time series. = I prezzi delle azioni sono una serie temporale.',
+              example:
+                'Stock prices are a time series. = I prezzi delle azioni sono una serie temporale.',
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Richiede tecniche speciali: ARIMA, Prophet, RNN.',
@@ -537,7 +584,8 @@ export default {
               italian: 'Dati strutturati',
               pronunciation: '/ˈstrʌktʃərd ˈdeɪtə/',
               phonetic: 'STRAK-cerd DEI-ta',
-              example: 'Spreadsheets contain structured data. = I fogli di calcolo contengono dati strutturati.',
+              example:
+                'Spreadsheets contain structured data. = I fogli di calcolo contengono dati strutturati.',
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Tipicamente in tabelle con righe e colonne.',
@@ -547,10 +595,11 @@ export default {
               italian: 'Dati non strutturati',
               pronunciation: '/ˌʌnˈstrʌktʃərd ˈdeɪtə/',
               phonetic: 'an-STRAK-cerd DEI-ta',
-              example: 'Text, images, and audio are unstructured data. = Testo, immagini e audio sono dati non strutturati.',
+              example:
+                'Text, images, and audio are unstructured data. = Testo, immagini e audio sono dati non strutturati.',
               context: 'data-engineering',
               difficulty: 'beginner',
-              note: 'Rappresentano l\'80% circa dei dati aziendali.',
+              note: "Rappresentano l'80% circa dei dati aziendali.",
             },
           ],
         },
@@ -564,7 +613,8 @@ export default {
               italian: 'Pulizia dei dati',
               pronunciation: '/ˈdeɪtə ˈkliːnɪŋ/',
               phonetic: 'DEI-ta KLII-ning',
-              example: 'Data cleaning takes 80 percent of project time. = La pulizia dei dati richiede l\'80 percento del tempo di progetto.',
+              example:
+                "Data cleaning takes 80 percent of project time. = La pulizia dei dati richiede l'80 percento del tempo di progetto.",
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Realtà spesso sottostimata dai principianti.',
@@ -574,7 +624,8 @@ export default {
               italian: 'Dati mancanti',
               pronunciation: '/ˈmɪsɪŋ ˈdeɪtə/',
               phonetic: 'MI-sing DEI-ta',
-              example: 'Missing data must be handled before training. = I dati mancanti devono essere gestiti prima dell\'addestramento.',
+              example:
+                "Missing data must be handled before training. = I dati mancanti devono essere gestiti prima dell'addestramento.",
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'df.isnull().sum()',
@@ -584,7 +635,8 @@ export default {
               italian: 'Imputazione',
               pronunciation: '/ˌɪmpjʊˈteɪʃən/',
               phonetic: 'im-piu-TEI-scen',
-              example: 'Imputation fills missing values with estimates. = L\'imputazione riempie valori mancanti con stime.',
+              example:
+                "Imputation fills missing values with estimates. = L'imputazione riempie valori mancanti con stime.",
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'df.fillna(df.mean())',
@@ -594,7 +646,8 @@ export default {
               italian: 'Valore anomalo',
               pronunciation: '/ˈaʊtlaɪər/',
               phonetic: 'AUT-laier',
-              example: 'An outlier is a value far from the others. = Un valore anomalo è un valore lontano dagli altri.',
+              example:
+                'An outlier is a value far from the others. = Un valore anomalo è un valore lontano dagli altri.',
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Possono essere errori o casi rari ma reali: indagare prima di rimuovere.',
@@ -604,7 +657,8 @@ export default {
               italian: 'Duplicato',
               pronunciation: '/ˈdjuːplɪkət/',
               phonetic: 'DIU-pli-kat',
-              example: 'Duplicate rows can bias the model. = Le righe duplicate possono distorcere il modello.',
+              example:
+                'Duplicate rows can bias the model. = Le righe duplicate possono distorcere il modello.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'df.drop_duplicates()',
@@ -614,7 +668,8 @@ export default {
               italian: 'Rumore',
               pronunciation: '/nɔɪz/',
               phonetic: 'NOIZ',
-              example: 'Sensor data often contains noise. = I dati dei sensori contengono spesso rumore.',
+              example:
+                'Sensor data often contains noise. = I dati dei sensori contengono spesso rumore.',
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Variazioni casuali che il modello non dovrebbe imparare.',
@@ -624,7 +679,8 @@ export default {
               italian: 'Dati incoerenti',
               pronunciation: '/ˌɪnkənˈsɪstənt ˈdeɪtə/',
               phonetic: 'in-kon-SIS-tent DEI-ta',
-              example: 'Inconsistent data uses different formats for the same value. = I dati incoerenti usano formati diversi per lo stesso valore.',
+              example:
+                'Inconsistent data uses different formats for the same value. = I dati incoerenti usano formati diversi per lo stesso valore.',
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Esempio: "USA", "U.S.A.", "United States".',
@@ -634,7 +690,8 @@ export default {
               italian: 'Validazione dei dati',
               pronunciation: '/ˈdeɪtə ˌvælɪˈdeɪʃən/',
               phonetic: 'DEI-ta va-li-DEI-scen',
-              example: 'Data validation checks for invalid values. = La validazione dei dati controlla valori non validi.',
+              example:
+                'Data validation checks for invalid values. = La validazione dei dati controlla valori non validi.',
               context: 'data-engineering',
               difficulty: 'beginner',
             },
@@ -643,7 +700,8 @@ export default {
               italian: 'Profilazione dei dati',
               pronunciation: '/ˈdeɪtə ˈproʊfaɪlɪŋ/',
               phonetic: 'DEI-ta PRO-fai-ling',
-              example: 'Data profiling summarizes statistics for each column. = La profilazione dei dati riassume statistiche per ogni colonna.',
+              example:
+                'Data profiling summarizes statistics for each column. = La profilazione dei dati riassume statistiche per ogni colonna.',
               context: 'data-engineering',
               difficulty: 'beginner',
               tool: 'pandas-profiling, ydata-profiling',
@@ -653,7 +711,8 @@ export default {
               italian: 'Trasformazione dei dati',
               pronunciation: '/ˈdeɪtə ˌtrænsfərˈmeɪʃən/',
               phonetic: 'DEI-ta trans-for-MEI-scen',
-              example: 'Data transformation prepares data for the model. = La trasformazione dei dati prepara i dati per il modello.',
+              example:
+                'Data transformation prepares data for the model. = La trasformazione dei dati prepara i dati per il modello.',
               context: 'data-engineering',
               difficulty: 'beginner',
             },
@@ -669,7 +728,8 @@ export default {
               italian: 'Normalizzazione',
               pronunciation: '/ˌnɔːrməlaɪˈzeɪʃən/',
               phonetic: 'nor-ma-lai-ZEI-scen',
-              example: 'Normalization rescales values to a 0 to 1 range. = La normalizzazione riscala i valori in un intervallo da 0 a 1.',
+              example:
+                'Normalization rescales values to a 0 to 1 range. = La normalizzazione riscala i valori in un intervallo da 0 a 1.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'from sklearn.preprocessing import MinMaxScaler',
@@ -679,7 +739,8 @@ export default {
               italian: 'Standardizzazione',
               pronunciation: '/ˌstændərdaɪˈzeɪʃən/',
               phonetic: 'stan-dar-dai-ZEI-scen',
-              example: 'Standardization gives features zero mean and unit variance. = La standardizzazione dà alle feature media zero e varianza unitaria.',
+              example:
+                'Standardization gives features zero mean and unit variance. = La standardizzazione dà alle feature media zero e varianza unitaria.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'StandardScaler().fit_transform(X)',
@@ -690,7 +751,8 @@ export default {
               italian: 'Scalatura Min-Max',
               pronunciation: '/mɪn mæks ˈskeɪlɪŋ/',
               phonetic: 'MIN MAKS SKEI-ling',
-              example: 'Min-max scaling maps values into a fixed range. = La scalatura min-max mappa i valori in un intervallo fisso.',
+              example:
+                'Min-max scaling maps values into a fixed range. = La scalatura min-max mappa i valori in un intervallo fisso.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: '(x - x.min()) / (x.max() - x.min())',
@@ -700,7 +762,8 @@ export default {
               italian: 'Punteggio Z',
               pronunciation: '/ziː skɔːr/',
               phonetic: 'ZII-skor',
-              example: 'The z-score measures how many standard deviations a value is from the mean. = Il punteggio Z misura quante deviazioni standard un valore dista dalla media.',
+              example:
+                'The z-score measures how many standard deviations a value is from the mean. = Il punteggio Z misura quante deviazioni standard un valore dista dalla media.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: '(x - mean) / std',
@@ -710,7 +773,8 @@ export default {
               italian: 'Scalatura robusta',
               pronunciation: '/roʊˈbʌst ˈskeɪlɪŋ/',
               phonetic: 'ro-BAST SKEI-ling',
-              example: 'Robust scaling uses median and IQR to handle outliers. = La scalatura robusta usa mediana e IQR per gestire valori anomali.',
+              example:
+                'Robust scaling uses median and IQR to handle outliers. = La scalatura robusta usa mediana e IQR per gestire valori anomali.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'RobustScaler().fit_transform(X)',
@@ -720,7 +784,8 @@ export default {
               italian: 'Trasformazione logaritmica',
               pronunciation: '/lɒɡ ˌtrænsfərˈmeɪʃən/',
               phonetic: 'LOG trans-for-MEI-scen',
-              example: 'Log transformation reduces skewness in data. = La trasformazione logaritmica riduce l\'asimmetria nei dati.',
+              example:
+                "Log transformation reduces skewness in data. = La trasformazione logaritmica riduce l'asimmetria nei dati.",
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'np.log1p(X)',
@@ -731,7 +796,8 @@ export default {
               italian: 'Trasformazione di potenza',
               pronunciation: '/ˈpaʊər ˌtrænsfərˈmeɪʃən/',
               phonetic: 'PAUER trans-for-MEI-scen',
-              example: 'Power transformation makes data more Gaussian. = La trasformazione di potenza rende i dati più gaussiani.',
+              example:
+                'Power transformation makes data more Gaussian. = La trasformazione di potenza rende i dati più gaussiani.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'PowerTransformer().fit_transform(X)',
@@ -741,7 +807,8 @@ export default {
               italian: 'Trasformazione Box-Cox',
               pronunciation: '/bɒks kɒks ˌtrænsfərˈmeɪʃən/',
               phonetic: 'BOKS-KOKS trans-for-MEI-scen',
-              example: 'Box-Cox transformation requires positive data. = La trasformazione Box-Cox richiede dati positivi.',
+              example:
+                'Box-Cox transformation requires positive data. = La trasformazione Box-Cox richiede dati positivi.',
               context: 'data-engineering',
               difficulty: 'beginner',
             },
@@ -750,7 +817,7 @@ export default {
               italian: 'Media',
               pronunciation: '/miːn/',
               phonetic: 'MIIN',
-              example: 'The mean of the dataset is 42. = La media dell\'insieme di dati è 42.',
+              example: "The mean of the dataset is 42. = La media dell'insieme di dati è 42.",
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'np.mean(X)',
@@ -760,7 +827,8 @@ export default {
               italian: 'Deviazione standard',
               pronunciation: '/ˈstændərd ˌdiːviˈeɪʃən/',
               phonetic: 'STAN-dard di-vi-EI-scen',
-              example: 'Standard deviation measures data spread. = La deviazione standard misura la dispersione dei dati.',
+              example:
+                'Standard deviation measures data spread. = La deviazione standard misura la dispersione dei dati.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'np.std(X)',
@@ -778,7 +846,8 @@ export default {
               italian: 'Codifica one-hot',
               pronunciation: '/wʌn hɒt ɪnˈkoʊdɪŋ/',
               phonetic: 'UAN-HOT in-KOU-ding',
-              example: 'One-hot encoding creates binary columns for categories. = La codifica one-hot crea colonne binarie per le categorie.',
+              example:
+                'One-hot encoding creates binary columns for categories. = La codifica one-hot crea colonne binarie per le categorie.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'pd.get_dummies(df["color"])',
@@ -789,7 +858,8 @@ export default {
               italian: 'Codifica etichette',
               pronunciation: '/ˈleɪbəl ɪnˈkoʊdɪŋ/',
               phonetic: 'LEI-bel in-KOU-ding',
-              example: 'Label encoding assigns a number to each category. = La codifica etichette assegna un numero a ogni categoria.',
+              example:
+                'Label encoding assigns a number to each category. = La codifica etichette assegna un numero a ogni categoria.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'LabelEncoder().fit_transform(y)',
@@ -800,7 +870,8 @@ export default {
               italian: 'Codifica ordinale',
               pronunciation: '/ˈɔːrdɪnəl ɪnˈkoʊdɪŋ/',
               phonetic: 'OR-di-nal in-KOU-ding',
-              example: 'Ordinal encoding preserves natural ranking. = La codifica ordinale preserva la classifica naturale.',
+              example:
+                'Ordinal encoding preserves natural ranking. = La codifica ordinale preserva la classifica naturale.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'OrdinalEncoder().fit_transform(X)',
@@ -810,7 +881,8 @@ export default {
               italian: 'Codifica con target',
               pronunciation: '/ˈtɑːrɡɪt ɪnˈkoʊdɪŋ/',
               phonetic: 'TAR-ghet in-KOU-ding',
-              example: 'Target encoding replaces categories with target mean. = La codifica con target sostituisce categorie con la media del target.',
+              example:
+                'Target encoding replaces categories with target mean. = La codifica con target sostituisce categorie con la media del target.',
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Detta anche mean encoding. Rischia data leakage se non fatta con cura.',
@@ -820,7 +892,8 @@ export default {
               italian: 'Suddivisione train-test',
               pronunciation: '/treɪn test splɪt/',
               phonetic: 'TREIN-TEST SPLIT',
-              example: 'Train-test split separates data for evaluation. = La suddivisione train-test separa i dati per la valutazione.',
+              example:
+                'Train-test split separates data for evaluation. = La suddivisione train-test separa i dati per la valutazione.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'train_test_split(X, y, test_size=0.2)',
@@ -830,7 +903,8 @@ export default {
               italian: 'Campionamento stratificato',
               pronunciation: '/ˈstrætɪfaɪd ˈsæmplɪŋ/',
               phonetic: 'STRA-ti-faid SAM-pling',
-              example: 'Stratified sampling preserves class proportions. = Il campionamento stratificato preserva le proporzioni delle classi.',
+              example:
+                'Stratified sampling preserves class proportions. = Il campionamento stratificato preserva le proporzioni delle classi.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'train_test_split(X, y, stratify=y)',
@@ -841,7 +915,8 @@ export default {
               italian: 'Convalida incrociata',
               pronunciation: '/krɒs ˌvælɪˈdeɪʃən/',
               phonetic: 'KROS va-li-DEI-scen',
-              example: 'Cross-validation gives a more robust performance estimate. = La convalida incrociata dà una stima delle prestazioni più robusta.',
+              example:
+                'Cross-validation gives a more robust performance estimate. = La convalida incrociata dà una stima delle prestazioni più robusta.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'cross_val_score(model, X, y, cv=5)',
@@ -851,7 +926,8 @@ export default {
               italian: 'K-fold',
               pronunciation: '/keɪ foʊld/',
               phonetic: 'KEI-FOLD',
-              example: 'K-fold splits data into k subsets for cross-validation. = K-fold divide i dati in k sottoinsiemi per convalida incrociata.',
+              example:
+                'K-fold splits data into k subsets for cross-validation. = K-fold divide i dati in k sottoinsiemi per convalida incrociata.',
               context: 'data-engineering',
               difficulty: 'beginner',
               code: 'KFold(n_splits=5)',
@@ -862,7 +938,8 @@ export default {
               italian: 'Fuga di dati',
               pronunciation: '/ˈdeɪtə ˈliːkɪdʒ/',
               phonetic: 'DEI-ta LII-kigi',
-              example: 'Data leakage happens when test info contaminates training. = La fuga di dati avviene quando informazioni di test contaminano l\'addestramento.',
+              example:
+                "Data leakage happens when test info contaminates training. = La fuga di dati avviene quando informazioni di test contaminano l'addestramento.",
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Errore comune e insidioso che gonfia i risultati.',
@@ -872,7 +949,8 @@ export default {
               italian: 'Sbilanciamento delle classi',
               pronunciation: '/klæs ɪmˈbæləns/',
               phonetic: 'KLAS im-BA-lans',
-              example: 'Class imbalance hurts minority class performance. = Lo sbilanciamento delle classi penalizza le prestazioni della classe minoritaria.',
+              example:
+                'Class imbalance hurts minority class performance. = Lo sbilanciamento delle classi penalizza le prestazioni della classe minoritaria.',
               context: 'data-engineering',
               difficulty: 'beginner',
               note: 'Problema in fraud detection, malattie rare, ecc.',
@@ -898,7 +976,8 @@ export default {
               italian: 'Classificazione',
               pronunciation: '/ˌklæsɪfɪˈkeɪʃən/',
               phonetic: 'kla-si-fi-KEI-scen',
-              example: 'Classification predicts discrete categories. = La classificazione predice categorie discrete.',
+              example:
+                'Classification predicts discrete categories. = La classificazione predice categorie discrete.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'model.predict(X_test)',
@@ -908,7 +987,8 @@ export default {
               italian: 'Classificazione binaria',
               pronunciation: '/ˈbaɪnəri ˌklæsɪfɪˈkeɪʃən/',
               phonetic: 'BAI-na-ri kla-si-fi-KEI-scen',
-              example: 'Spam detection is a binary classification problem. = Il rilevamento spam è un problema di classificazione binaria.',
+              example:
+                'Spam detection is a binary classification problem. = Il rilevamento spam è un problema di classificazione binaria.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Solo due classi possibili: 0 o 1, spam o non spam.',
@@ -918,7 +998,8 @@ export default {
               italian: 'Classificazione multiclasse',
               pronunciation: '/ˌmʌltiklæs ˌklæsɪfɪˈkeɪʃən/',
               phonetic: 'MAL-ti-klas kla-si-fi-KEI-scen',
-              example: 'Image recognition is multiclass classification. = Il riconoscimento immagini è classificazione multiclasse.',
+              example:
+                'Image recognition is multiclass classification. = Il riconoscimento immagini è classificazione multiclasse.',
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -927,7 +1008,8 @@ export default {
               italian: 'Regressione logistica',
               pronunciation: '/ləˈdʒɪstɪk rɪˈɡreʃən/',
               phonetic: 'lo-GIS-tik ri-GRE-scen',
-              example: 'Logistic regression outputs class probabilities. = La regressione logistica produce probabilità di classe.',
+              example:
+                'Logistic regression outputs class probabilities. = La regressione logistica produce probabilità di classe.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'LogisticRegression().fit(X, y)',
@@ -938,7 +1020,8 @@ export default {
               italian: 'Albero decisionale',
               pronunciation: '/dɪˈsɪʒən triː/',
               phonetic: 'di-SI-gen TRII',
-              example: 'A decision tree makes predictions through if-else rules. = Un albero decisionale fa previsioni tramite regole if-else.',
+              example:
+                'A decision tree makes predictions through if-else rules. = Un albero decisionale fa previsioni tramite regole if-else.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'DecisionTreeClassifier().fit(X, y)',
@@ -949,7 +1032,8 @@ export default {
               italian: 'Foresta casuale',
               pronunciation: '/ˈrændəm ˈfɒrɪst/',
               phonetic: 'RAN-dom FO-rest',
-              example: 'Random forest combines many decision trees. = La foresta casuale combina molti alberi decisionali.',
+              example:
+                'Random forest combines many decision trees. = La foresta casuale combina molti alberi decisionali.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'RandomForestClassifier(n_estimators=100)',
@@ -960,7 +1044,8 @@ export default {
               italian: 'Macchina a vettori di supporto',
               pronunciation: '/səˈpɔːrt ˈvektər məˈʃiːn/',
               phonetic: 'sap-PORT VEK-ter ma-SCIIN',
-              example: 'SVM finds the best separating hyperplane. = SVM trova il miglior iperpiano separatore.',
+              example:
+                'SVM finds the best separating hyperplane. = SVM trova il miglior iperpiano separatore.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'SVC(kernel="rbf")',
@@ -971,7 +1056,8 @@ export default {
               italian: 'K vicini più prossimi',
               pronunciation: '/keɪ ˈnɪrəst ˈneɪbərz/',
               phonetic: 'KEI NIR-est NEI-bers',
-              example: 'K-nearest neighbors classifies based on closest examples. = K vicini più prossimi classifica in base agli esempi più vicini.',
+              example:
+                'K-nearest neighbors classifies based on closest examples. = K vicini più prossimi classifica in base agli esempi più vicini.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'KNeighborsClassifier(n_neighbors=5)',
@@ -982,7 +1068,8 @@ export default {
               italian: 'Naive Bayes',
               pronunciation: '/naɪˈiːv beɪz/',
               phonetic: 'NA-iv BEIZ',
-              example: 'Naive Bayes assumes feature independence. = Naive Bayes assume indipendenza tra le feature.',
+              example:
+                'Naive Bayes assumes feature independence. = Naive Bayes assume indipendenza tra le feature.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'GaussianNB().fit(X, y)',
@@ -993,7 +1080,8 @@ export default {
               italian: 'Soglia di probabilità',
               pronunciation: '/ˌprɒbəˈbɪləti ˈθreʃhoʊld/',
               phonetic: 'pro-ba-BI-li-ti TRES-hold',
-              example: 'Lower the probability threshold to catch more positives. = Abbassa la soglia di probabilità per intercettare più positivi.',
+              example:
+                'Lower the probability threshold to catch more positives. = Abbassa la soglia di probabilità per intercettare più positivi.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Default 0.5 ma spesso va regolato.',
@@ -1010,7 +1098,8 @@ export default {
               italian: 'Regressione',
               pronunciation: '/rɪˈɡreʃən/',
               phonetic: 'ri-GRE-scen',
-              example: 'Regression predicts continuous values. = La regressione predice valori continui.',
+              example:
+                'Regression predicts continuous values. = La regressione predice valori continui.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Esempi: prezzo casa, temperatura, vendite future.',
@@ -1020,7 +1109,8 @@ export default {
               italian: 'Regressione lineare',
               pronunciation: '/ˈlɪniər rɪˈɡreʃən/',
               phonetic: 'LI-nier ri-GRE-scen',
-              example: 'Linear regression fits a straight line through the data. = La regressione lineare adatta una retta ai dati.',
+              example:
+                'Linear regression fits a straight line through the data. = La regressione lineare adatta una retta ai dati.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'LinearRegression().fit(X, y)',
@@ -1030,7 +1120,8 @@ export default {
               italian: 'Regressione polinomiale',
               pronunciation: '/ˌpɒlɪˈnoʊmiəl rɪˈɡreʃən/',
               phonetic: 'po-li-NOU-mial ri-GRE-scen',
-              example: 'Polynomial regression fits curves to data. = La regressione polinomiale adatta curve ai dati.',
+              example:
+                'Polynomial regression fits curves to data. = La regressione polinomiale adatta curve ai dati.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'PolynomialFeatures(degree=2)',
@@ -1040,7 +1131,8 @@ export default {
               italian: 'Regressione multipla',
               pronunciation: '/ˈmʌltɪpəl rɪˈɡreʃən/',
               phonetic: 'MAL-ti-pol ri-GRE-scen',
-              example: 'Multiple regression uses several input variables. = La regressione multipla usa diverse variabili di input.',
+              example:
+                'Multiple regression uses several input variables. = La regressione multipla usa diverse variabili di input.',
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1049,7 +1141,8 @@ export default {
               italian: 'Regressione Ridge',
               pronunciation: '/rɪdʒ rɪˈɡreʃən/',
               phonetic: 'RIGI ri-GRE-scen',
-              example: 'Ridge regression adds L2 regularization. = La regressione Ridge aggiunge regolarizzazione L2.',
+              example:
+                'Ridge regression adds L2 regularization. = La regressione Ridge aggiunge regolarizzazione L2.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'Ridge(alpha=1.0).fit(X, y)',
@@ -1060,7 +1153,8 @@ export default {
               italian: 'Regressione Lasso',
               pronunciation: '/ˈlæsoʊ rɪˈɡreʃən/',
               phonetic: 'LAS-so ri-GRE-scen',
-              example: 'Lasso regression performs automatic feature selection. = La regressione Lasso esegue selezione automatica delle feature.',
+              example:
+                'Lasso regression performs automatic feature selection. = La regressione Lasso esegue selezione automatica delle feature.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'Lasso(alpha=0.1).fit(X, y)',
@@ -1071,7 +1165,8 @@ export default {
               italian: 'Coefficiente',
               pronunciation: '/ˌkoʊɪˈfɪʃənt/',
               phonetic: 'ko-i-FI-scent',
-              example: 'Each coefficient represents a feature importance. = Ogni coefficiente rappresenta l\'importanza di una feature.',
+              example:
+                "Each coefficient represents a feature importance. = Ogni coefficiente rappresenta l'importanza di una feature.",
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'model.coef_',
@@ -1081,7 +1176,8 @@ export default {
               italian: 'Intercetta',
               pronunciation: '/ˈɪntərsept/',
               phonetic: 'IN-ter-sept',
-              example: 'The intercept is the value when all features are zero. = L\'intercetta è il valore quando tutte le feature sono zero.',
+              example:
+                "The intercept is the value when all features are zero. = L'intercetta è il valore quando tutte le feature sono zero.",
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'model.intercept_',
@@ -1091,7 +1187,8 @@ export default {
               italian: 'Residuo',
               pronunciation: '/rɪˈzɪdʒuəl/',
               phonetic: 'ri-ZI-giu-al',
-              example: 'A residual is the difference between actual and predicted. = Un residuo è la differenza tra valore reale e previsto.',
+              example:
+                'A residual is the difference between actual and predicted. = Un residuo è la differenza tra valore reale e previsto.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'residuals = y_true - y_pred',
@@ -1101,7 +1198,8 @@ export default {
               italian: 'R quadrato',
               pronunciation: '/ɑːr ˈskweərd/',
               phonetic: 'AR-SKUERD',
-              example: 'R-squared measures how well the model fits the data. = R quadrato misura quanto bene il modello si adatta ai dati.',
+              example:
+                'R-squared measures how well the model fits the data. = R quadrato misura quanto bene il modello si adatta ai dati.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'model.score(X_test, y_test)',
@@ -1119,7 +1217,8 @@ export default {
               italian: 'Sovra-adattamento',
               pronunciation: '/ˌoʊvərˈfɪtɪŋ/',
               phonetic: 'OU-ver-FIT-ting',
-              example: 'Overfitting means the model memorizes the training data. = Il sovra-adattamento significa che il modello memorizza i dati di addestramento.',
+              example:
+                'Overfitting means the model memorizes the training data. = Il sovra-adattamento significa che il modello memorizza i dati di addestramento.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Termine spesso lasciato in inglese: "il modello fa overfitting".',
@@ -1129,7 +1228,8 @@ export default {
               italian: 'Sotto-adattamento',
               pronunciation: '/ˌʌndərˈfɪtɪŋ/',
               phonetic: 'AN-der-FIT-ting',
-              example: 'Underfitting happens when the model is too simple. = Il sotto-adattamento avviene quando il modello è troppo semplice.',
+              example:
+                'Underfitting happens when the model is too simple. = Il sotto-adattamento avviene quando il modello è troppo semplice.',
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1138,7 +1238,8 @@ export default {
               italian: 'Bias / Distorsione',
               pronunciation: '/ˈbaɪəs/',
               phonetic: 'BAI-as',
-              example: 'High bias indicates an underfit model. = Bias elevato indica un modello sotto-adattato.',
+              example:
+                'High bias indicates an underfit model. = Bias elevato indica un modello sotto-adattato.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'In ML "bias" ha due sensi: errore sistematico o termine di intercetta.',
@@ -1148,7 +1249,8 @@ export default {
               italian: 'Varianza',
               pronunciation: '/ˈveəriəns/',
               phonetic: 'VER-ians',
-              example: 'High variance means the model is too sensitive to noise. = Varianza elevata significa che il modello è troppo sensibile al rumore.',
+              example:
+                'High variance means the model is too sensitive to noise. = Varianza elevata significa che il modello è troppo sensibile al rumore.',
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1157,27 +1259,30 @@ export default {
               italian: 'Compromesso bias-varianza',
               pronunciation: '/ˈbaɪəs ˈveəriəns ˈtreɪdɔːf/',
               phonetic: 'BAI-as VER-ians TREID-of',
-              example: 'The bias-variance tradeoff balances simplicity and complexity. = Il compromesso bias-varianza bilancia semplicità e complessità.',
+              example:
+                'The bias-variance tradeoff balances simplicity and complexity. = Il compromesso bias-varianza bilancia semplicità e complessità.',
               context: 'machine-learning',
               difficulty: 'beginner',
-              note: 'Concetto fondamentale: ridurre uno spesso aumenta l\'altro.',
+              note: "Concetto fondamentale: ridurre uno spesso aumenta l'altro.",
             },
             {
               english: 'Generalization',
               italian: 'Generalizzazione',
               pronunciation: '/ˌdʒenərələˈzeɪʃən/',
               phonetic: 'ge-ne-ra-li-ZEI-scen',
-              example: 'Good generalization means the model performs well on new data. = Una buona generalizzazione significa che il modello funziona bene su nuovi dati.',
+              example:
+                'Good generalization means the model performs well on new data. = Una buona generalizzazione significa che il modello funziona bene su nuovi dati.',
               context: 'machine-learning',
               difficulty: 'beginner',
-              note: 'Vero obiettivo del ML, non l\'accuratezza sul training set.',
+              note: "Vero obiettivo del ML, non l'accuratezza sul training set.",
             },
             {
               english: 'Regularization',
               italian: 'Regolarizzazione',
               pronunciation: '/ˌreɡjələrɪˈzeɪʃən/',
               phonetic: 'reg-iu-la-ri-ZEI-scen',
-              example: 'Regularization penalizes complex models. = La regolarizzazione penalizza modelli complessi.',
+              example:
+                'Regularization penalizes complex models. = La regolarizzazione penalizza modelli complessi.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Tecniche comuni: L1 (Lasso), L2 (Ridge), dropout.',
@@ -1187,17 +1292,19 @@ export default {
               italian: 'Arresto anticipato',
               pronunciation: '/ˈɜːrli ˈstɒpɪŋ/',
               phonetic: 'ER-li STOP-ping',
-              example: 'Early stopping halts training when validation loss rises. = L\'arresto anticipato ferma l\'addestramento quando la loss di validazione sale.',
+              example:
+                "Early stopping halts training when validation loss rises. = L'arresto anticipato ferma l'addestramento quando la loss di validazione sale.",
               context: 'machine-learning',
               difficulty: 'beginner',
-              note: 'Tecnica semplice ed efficace contro l\'overfitting.',
+              note: "Tecnica semplice ed efficace contro l'overfitting.",
             },
             {
               english: 'Learning Curve',
               italian: 'Curva di apprendimento',
               pronunciation: '/ˈlɜːrnɪŋ kɜːrv/',
               phonetic: 'LER-ning KERV',
-              example: 'A learning curve shows training and validation error over time. = Una curva di apprendimento mostra l\'errore di training e validation nel tempo.',
+              example:
+                "A learning curve shows training and validation error over time. = Una curva di apprendimento mostra l'errore di training e validation nel tempo.",
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'plot_learning_curve(model, X, y)',
@@ -1207,7 +1314,8 @@ export default {
               italian: 'Capacità',
               pronunciation: '/kəˈpæsəti/',
               phonetic: 'ka-PA-si-ti',
-              example: 'A model with low capacity cannot learn complex patterns. = Un modello con bassa capacità non può imparare pattern complessi.',
+              example:
+                'A model with low capacity cannot learn complex patterns. = Un modello con bassa capacità non può imparare pattern complessi.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Misura quanto un modello può apprendere; legata a parametri e architettura.',
@@ -1224,7 +1332,8 @@ export default {
               italian: 'Ensemble',
               pronunciation: '/ˈɒnsɒmbəl/',
               phonetic: 'ON-som-bol',
-              example: 'An ensemble combines predictions from multiple models. = Un ensemble combina predizioni da più modelli.',
+              example:
+                'An ensemble combines predictions from multiple models. = Un ensemble combina predizioni da più modelli.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Termine francese spesso usato in inglese e italiano senza traduzione.',
@@ -1234,7 +1343,8 @@ export default {
               italian: 'Bagging',
               pronunciation: '/ˈbæɡɪŋ/',
               phonetic: 'BAG-ging',
-              example: 'Bagging trains models on bootstrap samples. = Il bagging addestra modelli su campioni bootstrap.',
+              example:
+                'Bagging trains models on bootstrap samples. = Il bagging addestra modelli su campioni bootstrap.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'BaggingClassifier(estimator=tree, n_estimators=10)',
@@ -1245,7 +1355,8 @@ export default {
               italian: 'Boosting',
               pronunciation: '/ˈbuːstɪŋ/',
               phonetic: 'BUS-ting',
-              example: 'Boosting trains models sequentially to correct errors. = Il boosting addestra modelli in sequenza per correggere errori.',
+              example:
+                'Boosting trains models sequentially to correct errors. = Il boosting addestra modelli in sequenza per correggere errori.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Esempi famosi: AdaBoost, XGBoost, LightGBM.',
@@ -1255,7 +1366,8 @@ export default {
               italian: 'Gradient boosting',
               pronunciation: '/ˈɡreɪdiənt ˈbuːstɪŋ/',
               phonetic: 'GREI-di-ent BUS-ting',
-              example: 'Gradient boosting often wins ML competitions. = Il gradient boosting vince spesso le competizioni ML.',
+              example:
+                'Gradient boosting often wins ML competitions. = Il gradient boosting vince spesso le competizioni ML.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'GradientBoostingClassifier()',
@@ -1265,7 +1377,8 @@ export default {
               italian: 'XGBoost',
               pronunciation: '/ˌeks ˈdʒiː buːst/',
               phonetic: 'EKS-GI-BUST',
-              example: 'XGBoost is a fast and powerful gradient boosting library. = XGBoost è una libreria di gradient boosting veloce e potente.',
+              example:
+                'XGBoost is a fast and powerful gradient boosting library. = XGBoost è una libreria di gradient boosting veloce e potente.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'import xgboost as xgb',
@@ -1277,7 +1390,8 @@ export default {
               italian: 'Stacking',
               pronunciation: '/ˈstækɪŋ/',
               phonetic: 'STAK-king',
-              example: 'Stacking uses a meta-model to combine base models. = Lo stacking usa un meta-modello per combinare modelli base.',
+              example:
+                'Stacking uses a meta-model to combine base models. = Lo stacking usa un meta-modello per combinare modelli base.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'StackingClassifier(estimators=base, final_estimator=meta)',
@@ -1287,7 +1401,8 @@ export default {
               italian: 'Votazione',
               pronunciation: '/ˈvoʊtɪŋ/',
               phonetic: 'VO-ting',
-              example: 'Voting combines predictions by majority or average. = La votazione combina predizioni per maggioranza o media.',
+              example:
+                'Voting combines predictions by majority or average. = La votazione combina predizioni per maggioranza o media.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'VotingClassifier(estimators=[...], voting="hard")',
@@ -1297,7 +1412,8 @@ export default {
               italian: 'Classificatore debole',
               pronunciation: '/wiːk ˈlɜːrnər/',
               phonetic: 'UIK LER-ner',
-              example: 'A weak learner performs slightly better than random. = Un classificatore debole va leggermente meglio del caso.',
+              example:
+                'A weak learner performs slightly better than random. = Un classificatore debole va leggermente meglio del caso.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Mattoncino base del boosting.',
@@ -1307,7 +1423,8 @@ export default {
               italian: 'Classificatore forte',
               pronunciation: '/strɒŋ ˈlɜːrnər/',
               phonetic: 'STRONG LER-ner',
-              example: 'Boosting builds a strong learner from many weak ones. = Il boosting costruisce un classificatore forte da molti deboli.',
+              example:
+                'Boosting builds a strong learner from many weak ones. = Il boosting costruisce un classificatore forte da molti deboli.',
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1316,7 +1433,8 @@ export default {
               italian: 'Bootstrap',
               pronunciation: '/ˈbuːtstræp/',
               phonetic: 'BUT-strap',
-              example: 'Bootstrap creates samples by drawing with replacement. = Il bootstrap crea campioni con estrazione con reinserimento.',
+              example:
+                'Bootstrap creates samples by drawing with replacement. = Il bootstrap crea campioni con estrazione con reinserimento.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Tecnica di campionamento alla base del bagging.',
@@ -1342,7 +1460,8 @@ export default {
               italian: 'Raggruppamento',
               pronunciation: '/ˈklʌstərɪŋ/',
               phonetic: 'KLAS-te-ring',
-              example: 'Clustering groups similar data points together. = Il raggruppamento mette insieme punti dati simili.',
+              example:
+                'Clustering groups similar data points together. = Il raggruppamento mette insieme punti dati simili.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Termine spesso lasciato in inglese.',
@@ -1352,7 +1471,8 @@ export default {
               italian: 'K-means',
               pronunciation: '/keɪ miːnz/',
               phonetic: 'KEI-MIINZ',
-              example: 'K-means partitions data into k clusters. = K-means partiziona i dati in k cluster.',
+              example:
+                'K-means partitions data into k clusters. = K-means partiziona i dati in k cluster.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'KMeans(n_clusters=3).fit(X)',
@@ -1363,7 +1483,8 @@ export default {
               italian: 'Centroide',
               pronunciation: '/ˈsentrɔɪd/',
               phonetic: 'SEN-troid',
-              example: 'A centroid is the center of a cluster. = Un centroide è il centro di un cluster.',
+              example:
+                'A centroid is the center of a cluster. = Un centroide è il centro di un cluster.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'kmeans.cluster_centers_',
@@ -1373,7 +1494,8 @@ export default {
               italian: 'Clustering gerarchico',
               pronunciation: '/ˌhaɪəˈrɑːrkɪkəl ˈklʌstərɪŋ/',
               phonetic: 'haie-RAR-ki-kal KLAS-te-ring',
-              example: 'Hierarchical clustering builds a tree of clusters. = Il clustering gerarchico costruisce un albero di cluster.',
+              example:
+                'Hierarchical clustering builds a tree of clusters. = Il clustering gerarchico costruisce un albero di cluster.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'AgglomerativeClustering(n_clusters=3)',
@@ -1383,7 +1505,8 @@ export default {
               italian: 'Dendrogramma',
               pronunciation: '/ˈdendrəɡræm/',
               phonetic: 'DEN-dro-gram',
-              example: 'A dendrogram visualizes hierarchical clustering. = Un dendrogramma visualizza il clustering gerarchico.',
+              example:
+                'A dendrogram visualizes hierarchical clustering. = Un dendrogramma visualizza il clustering gerarchico.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'from scipy.cluster.hierarchy import dendrogram',
@@ -1393,7 +1516,8 @@ export default {
               italian: 'DBSCAN',
               pronunciation: '/ˌdiː biː ˈskæn/',
               phonetic: 'DI-BI-SKAN',
-              example: 'DBSCAN finds clusters of arbitrary shape. = DBSCAN trova cluster di forma arbitraria.',
+              example:
+                'DBSCAN finds clusters of arbitrary shape. = DBSCAN trova cluster di forma arbitraria.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'DBSCAN(eps=0.3, min_samples=10)',
@@ -1404,7 +1528,8 @@ export default {
               italian: 'Punteggio silhouette',
               pronunciation: '/ˌsɪluˈet skɔːr/',
               phonetic: 'si-lu-ET SKOR',
-              example: 'The silhouette score measures cluster quality. = Il punteggio silhouette misura la qualità dei cluster.',
+              example:
+                'The silhouette score measures cluster quality. = Il punteggio silhouette misura la qualità dei cluster.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'silhouette_score(X, labels)',
@@ -1415,7 +1540,8 @@ export default {
               italian: 'Metodo del gomito',
               pronunciation: '/ˈelboʊ ˈmeθəd/',
               phonetic: 'EL-bou ME-tod',
-              example: 'The elbow method helps choose the number of clusters. = Il metodo del gomito aiuta a scegliere il numero di cluster.',
+              example:
+                'The elbow method helps choose the number of clusters. = Il metodo del gomito aiuta a scegliere il numero di cluster.',
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1424,7 +1550,8 @@ export default {
               italian: 'Metrica di distanza',
               pronunciation: '/ˈdɪstəns ˈmetrɪk/',
               phonetic: 'DIS-tans ME-trik',
-              example: 'Euclidean is the most common distance metric. = Euclidea è la metrica di distanza più comune.',
+              example:
+                'Euclidean is the most common distance metric. = Euclidea è la metrica di distanza più comune.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Altre metriche: Manhattan, coseno, Mahalanobis.',
@@ -1434,7 +1561,8 @@ export default {
               italian: 'Cluster',
               pronunciation: '/ˈklʌstər/',
               phonetic: 'KLAS-ter',
-              example: 'Each cluster contains similar examples. = Ogni cluster contiene esempi simili.',
+              example:
+                'Each cluster contains similar examples. = Ogni cluster contiene esempi simili.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'In italiano si usa anche "gruppo" o "raggruppamento".',
@@ -1444,14 +1572,15 @@ export default {
         {
           id: 'ai_unsupervised_2',
           title: 'Dimensionality Reduction / Riduzione di Dimensionalità',
-          description: 'Ridurre il numero di feature mantenendo l\'informazione',
+          description: "Ridurre il numero di feature mantenendo l'informazione",
           items: [
             {
               english: 'Dimensionality Reduction',
               italian: 'Riduzione di dimensionalità',
               pronunciation: '/dɪˌmenʃəˈnæləti rɪˈdʌkʃən/',
               phonetic: 'di-men-scio-NA-li-ti ri-DAK-scen',
-              example: 'Dimensionality reduction simplifies high-dimensional data. = La riduzione di dimensionalità semplifica dati ad alta dimensionalità.',
+              example:
+                'Dimensionality reduction simplifies high-dimensional data. = La riduzione di dimensionalità semplifica dati ad alta dimensionalità.',
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1460,7 +1589,8 @@ export default {
               italian: 'PCA / Analisi delle componenti principali',
               pronunciation: '/piː siː eɪ/',
               phonetic: 'PI-SI-EI',
-              example: 'PCA projects data onto fewer dimensions. = PCA proietta i dati su meno dimensioni.',
+              example:
+                'PCA projects data onto fewer dimensions. = PCA proietta i dati su meno dimensioni.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'PCA(n_components=2).fit_transform(X)',
@@ -1471,7 +1601,8 @@ export default {
               italian: 'Componente principale',
               pronunciation: '/ˈprɪnsəpəl kəmˈpoʊnənt/',
               phonetic: 'PRIN-si-pal kom-PO-nent',
-              example: 'The first principal component captures most variance. = La prima componente principale cattura la maggior parte della varianza.',
+              example:
+                'The first principal component captures most variance. = La prima componente principale cattura la maggior parte della varianza.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'pca.components_',
@@ -1481,7 +1612,8 @@ export default {
               italian: 'Varianza spiegata',
               pronunciation: '/ɪkˈspleɪnd ˈveəriəns/',
               phonetic: 'ek-SPLEIND VER-ians',
-              example: 'Explained variance shows how much information each component captures. = La varianza spiegata mostra quanta informazione cattura ogni componente.',
+              example:
+                'Explained variance shows how much information each component captures. = La varianza spiegata mostra quanta informazione cattura ogni componente.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'pca.explained_variance_ratio_',
@@ -1491,7 +1623,8 @@ export default {
               italian: 't-SNE',
               pronunciation: '/tiː es en iː/',
               phonetic: 'TI-ES-EN-I',
-              example: 't-SNE creates 2D visualizations of high-dim data. = t-SNE crea visualizzazioni 2D di dati ad alta dimensionalità.',
+              example:
+                't-SNE creates 2D visualizations of high-dim data. = t-SNE crea visualizzazioni 2D di dati ad alta dimensionalità.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'TSNE(n_components=2).fit_transform(X)',
@@ -1502,7 +1635,8 @@ export default {
               italian: 'UMAP',
               pronunciation: '/ˈjuːmæp/',
               phonetic: 'IU-MAP',
-              example: 'UMAP is faster than t-SNE for large datasets. = UMAP è più veloce di t-SNE per dataset grandi.',
+              example:
+                'UMAP is faster than t-SNE for large datasets. = UMAP è più veloce di t-SNE per dataset grandi.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'umap.UMAP().fit_transform(X)',
@@ -1513,7 +1647,8 @@ export default {
               italian: 'Maledizione della dimensionalità',
               pronunciation: '/kɜːrs əv dɪˌmenʃəˈnæləti/',
               phonetic: 'KERS av di-men-scio-NA-li-ti',
-              example: 'The curse of dimensionality makes models perform worse with too many features. = La maledizione della dimensionalità peggiora i modelli con troppe feature.',
+              example:
+                'The curse of dimensionality makes models perform worse with too many features. = La maledizione della dimensionalità peggiora i modelli con troppe feature.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'In molte dimensioni i punti diventano tutti "lontani" tra loro.',
@@ -1523,7 +1658,8 @@ export default {
               italian: 'Riduzione delle feature',
               pronunciation: '/ˈfiːtʃər rɪˈdʌkʃən/',
               phonetic: 'FII-cer ri-DAK-scen',
-              example: 'Feature reduction speeds up training. = La riduzione delle feature accelera l\'addestramento.',
+              example:
+                "Feature reduction speeds up training. = La riduzione delle feature accelera l'addestramento.",
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1532,7 +1668,8 @@ export default {
               italian: 'Variabile latente',
               pronunciation: '/ˈleɪtənt ˈveəriəbl/',
               phonetic: 'LEI-tent VER-ia-bol',
-              example: 'A latent variable is hidden but explains observed data. = Una variabile latente è nascosta ma spiega i dati osservati.',
+              example:
+                'A latent variable is hidden but explains observed data. = Una variabile latente è nascosta ma spiega i dati osservati.',
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1541,7 +1678,8 @@ export default {
               italian: 'Apprendimento di varietà',
               pronunciation: '/ˈmænɪfoʊld ˈlɜːrnɪŋ/',
               phonetic: 'MA-ni-fold LER-ning',
-              example: 'Manifold learning assumes data lies on a lower-dim surface. = L\'apprendimento di varietà assume che i dati giacciano su una superficie a dimensione inferiore.',
+              example:
+                "Manifold learning assumes data lies on a lower-dim surface. = L'apprendimento di varietà assume che i dati giacciano su una superficie a dimensione inferiore.",
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Termine matematico di topologia applicato al ML.',
@@ -1558,7 +1696,8 @@ export default {
               italian: 'Regola di associazione',
               pronunciation: '/əˌsoʊsiˈeɪʃən ruːl/',
               phonetic: 'a-so-si-EI-scen RUL',
-              example: 'An association rule shows that buying X often leads to buying Y. = Una regola di associazione mostra che comprare X porta spesso a comprare Y.',
+              example:
+                'An association rule shows that buying X often leads to buying Y. = Una regola di associazione mostra che comprare X porta spesso a comprare Y.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Famoso esempio: pannolini e birra al supermercato.',
@@ -1568,7 +1707,8 @@ export default {
               italian: 'Algoritmo Apriori',
               pronunciation: '/ˌeɪpriˈɔːri ˈælɡərɪðəm/',
               phonetic: 'EI-pri-O-ri AL-go-ri-dem',
-              example: 'The Apriori algorithm finds frequent itemsets. = L\'algoritmo Apriori trova insiemi frequenti.',
+              example:
+                "The Apriori algorithm finds frequent itemsets. = L'algoritmo Apriori trova insiemi frequenti.",
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Classico per market basket analysis.',
@@ -1578,7 +1718,8 @@ export default {
               italian: 'Insieme frequente',
               pronunciation: '/ˈfriːkwənt ˈaɪtəmset/',
               phonetic: 'FRII-kuent AI-tem-set',
-              example: 'A frequent itemset appears together in many transactions. = Un insieme frequente appare insieme in molte transazioni.',
+              example:
+                'A frequent itemset appears together in many transactions. = Un insieme frequente appare insieme in molte transazioni.',
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1587,7 +1728,8 @@ export default {
               italian: 'Supporto',
               pronunciation: '/səˈpɔːrt/',
               phonetic: 'sap-PORT',
-              example: 'Support measures how often items appear together. = Il supporto misura quanto spesso item appaiono insieme.',
+              example:
+                'Support measures how often items appear together. = Il supporto misura quanto spesso item appaiono insieme.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'support = freq(X) / total',
@@ -1597,7 +1739,8 @@ export default {
               italian: 'Confidenza',
               pronunciation: '/ˈkɒnfɪdəns/',
               phonetic: 'KON-fi-dens',
-              example: 'Confidence is the probability of Y given X. = La confidenza è la probabilità di Y dato X.',
+              example:
+                'Confidence is the probability of Y given X. = La confidenza è la probabilità di Y dato X.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'confidence = P(Y | X)',
@@ -1607,7 +1750,8 @@ export default {
               italian: 'Lift',
               pronunciation: '/lɪft/',
               phonetic: 'LIFT',
-              example: 'Lift greater than 1 means the rule is meaningful. = Lift maggiore di 1 significa che la regola è significativa.',
+              example:
+                'Lift greater than 1 means the rule is meaningful. = Lift maggiore di 1 significa che la regola è significativa.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Termine spesso lasciato in inglese.',
@@ -1617,7 +1761,8 @@ export default {
               italian: 'Analisi del carrello',
               pronunciation: '/ˈmɑːrkɪt ˈbæskɪt əˈnæləsɪs/',
               phonetic: 'MAR-ket BAS-ket a-NA-le-sis',
-              example: 'Market basket analysis helps optimize store layout. = L\'analisi del carrello aiuta a ottimizzare il layout del negozio.',
+              example:
+                "Market basket analysis helps optimize store layout. = L'analisi del carrello aiuta a ottimizzare il layout del negozio.",
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1626,7 +1771,8 @@ export default {
               italian: 'Anomalia',
               pronunciation: '/əˈnɒməli/',
               phonetic: 'a-NO-ma-li',
-              example: 'An anomaly is a data point that differs significantly from others. = Un\'anomalia è un punto dati che differisce molto dagli altri.',
+              example:
+                "An anomaly is a data point that differs significantly from others. = Un'anomalia è un punto dati che differisce molto dagli altri.",
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1635,7 +1781,8 @@ export default {
               italian: 'Foresta di isolamento',
               pronunciation: '/ˌaɪsəˈleɪʃən ˈfɒrɪst/',
               phonetic: 'ai-so-LEI-scen FO-rest',
-              example: 'Isolation forest detects anomalies efficiently. = La foresta di isolamento rileva anomalie efficientemente.',
+              example:
+                'Isolation forest detects anomalies efficiently. = La foresta di isolamento rileva anomalie efficientemente.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'IsolationForest(contamination=0.1)',
@@ -1645,7 +1792,8 @@ export default {
               italian: 'SVM a una classe',
               pronunciation: '/wʌn klæs ˌes viː ˈem/',
               phonetic: 'UAN-KLAS-ES-VI-EM',
-              example: 'One-class SVM learns the boundary of normal data. = SVM a una classe impara il confine dei dati normali.',
+              example:
+                'One-class SVM learns the boundary of normal data. = SVM a una classe impara il confine dei dati normali.',
               context: 'machine-learning',
               difficulty: 'beginner',
               code: 'OneClassSVM(nu=0.05)',
@@ -1662,7 +1810,8 @@ export default {
               italian: 'Apprendimento auto-supervisionato',
               pronunciation: '/self ˈsuːpərvaɪzd ˈlɜːrnɪŋ/',
               phonetic: 'SELF SU-per-vaizd LER-ning',
-              example: 'Self-supervised learning generates labels from data itself. = L\'apprendimento auto-supervisionato genera etichette dai dati stessi.',
+              example:
+                "Self-supervised learning generates labels from data itself. = L'apprendimento auto-supervisionato genera etichette dai dati stessi.",
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Alla base di GPT, BERT e altri modelli moderni.',
@@ -1672,7 +1821,8 @@ export default {
               italian: 'Apprendimento semi-supervisionato',
               pronunciation: '/ˌsemi ˈsuːpərvaɪzd ˈlɜːrnɪŋ/',
               phonetic: 'SE-mi SU-per-vaizd LER-ning',
-              example: 'Semi-supervised learning uses few labels and many unlabeled examples. = L\'apprendimento semi-supervisionato usa poche etichette e molti esempi non etichettati.',
+              example:
+                "Semi-supervised learning uses few labels and many unlabeled examples. = L'apprendimento semi-supervisionato usa poche etichette e molti esempi non etichettati.",
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1681,7 +1831,8 @@ export default {
               italian: 'Compito di pretesto',
               pronunciation: '/ˈpriːtekst tæsk/',
               phonetic: 'PRII-tekst TASK',
-              example: 'A pretext task generates supervision signal automatically. = Un compito di pretesto genera segnale di supervisione automaticamente.',
+              example:
+                'A pretext task generates supervision signal automatically. = Un compito di pretesto genera segnale di supervisione automaticamente.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Esempio: predire la prossima parola in una frase.',
@@ -1691,7 +1842,8 @@ export default {
               italian: 'Pseudo-etichettatura',
               pronunciation: '/ˈsuːdoʊ ˈleɪbəlɪŋ/',
               phonetic: 'SU-dou LEI-be-ling',
-              example: 'Pseudo-labeling assigns predicted labels to unlabeled data. = La pseudo-etichettatura assegna etichette predette a dati non etichettati.',
+              example:
+                'Pseudo-labeling assigns predicted labels to unlabeled data. = La pseudo-etichettatura assegna etichette predette a dati non etichettati.',
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1700,7 +1852,8 @@ export default {
               italian: 'Apprendimento contrastivo',
               pronunciation: '/kənˈtræstɪv ˈlɜːrnɪŋ/',
               phonetic: 'kon-TRAS-tiv LER-ning',
-              example: 'Contrastive learning pulls similar examples together. = L\'apprendimento contrastivo avvicina esempi simili.',
+              example:
+                "Contrastive learning pulls similar examples together. = L'apprendimento contrastivo avvicina esempi simili.",
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Esempi: SimCLR, CLIP.',
@@ -1710,7 +1863,8 @@ export default {
               italian: 'Modello linguistico mascherato',
               pronunciation: '/mæskt ˈlæŋɡwɪdʒ ˈmɒdəl/',
               phonetic: 'MASKD LAN-guigi MO-del',
-              example: 'BERT is a masked language model. = BERT è un modello linguistico mascherato.',
+              example:
+                'BERT is a masked language model. = BERT è un modello linguistico mascherato.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'MLM: il modello impara prevedendo parole nascoste.',
@@ -1720,7 +1874,8 @@ export default {
               italian: 'Autoencoder',
               pronunciation: '/ˌɔːtoʊɪnˈkoʊdər/',
               phonetic: 'au-tou-en-KOU-der',
-              example: 'An autoencoder learns to reconstruct its input. = Un autoencoder impara a ricostruire il suo input.',
+              example:
+                'An autoencoder learns to reconstruct its input. = Un autoencoder impara a ricostruire il suo input.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Termine sempre lasciato in inglese.',
@@ -1730,17 +1885,19 @@ export default {
               italian: 'Collo di bottiglia',
               pronunciation: '/ˈbɒtəlnek/',
               phonetic: 'BO-tol-nek',
-              example: 'The bottleneck layer compresses the representation. = Lo strato di collo di bottiglia comprime la rappresentazione.',
+              example:
+                'The bottleneck layer compresses the representation. = Lo strato di collo di bottiglia comprime la rappresentazione.',
               context: 'machine-learning',
               difficulty: 'beginner',
-              note: 'Punto centrale dell\'autoencoder.',
+              note: "Punto centrale dell'autoencoder.",
             },
             {
               english: 'Representation Learning',
               italian: 'Apprendimento di rappresentazioni',
               pronunciation: '/ˌreprɪzenˈteɪʃən ˈlɜːrnɪŋ/',
               phonetic: 'rep-pre-zen-TEI-scen LER-ning',
-              example: 'Representation learning builds useful features automatically. = L\'apprendimento di rappresentazioni costruisce feature utili automaticamente.',
+              example:
+                "Representation learning builds useful features automatically. = L'apprendimento di rappresentazioni costruisce feature utili automaticamente.",
               context: 'machine-learning',
               difficulty: 'beginner',
             },
@@ -1749,7 +1906,8 @@ export default {
               italian: 'Pre-addestramento',
               pronunciation: '/priːˈtreɪnɪŋ/',
               phonetic: 'PRI-trei-ning',
-              example: 'Pretraining on large data improves downstream tasks. = Il pre-addestramento su grandi dati migliora compiti a valle.',
+              example:
+                'Pretraining on large data improves downstream tasks. = Il pre-addestramento su grandi dati migliora compiti a valle.',
               context: 'machine-learning',
               difficulty: 'beginner',
               note: 'Strategia chiave dei moderni LLM.',
@@ -1775,7 +1933,8 @@ export default {
               italian: 'Neurone',
               pronunciation: '/ˈnjʊərɒn/',
               phonetic: 'NIU-ron',
-              example: 'An artificial neuron computes a weighted sum. = Un neurone artificiale calcola una somma pesata.',
+              example:
+                'An artificial neuron computes a weighted sum. = Un neurone artificiale calcola una somma pesata.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detto anche unit, ispirato al neurone biologico.',
@@ -1785,7 +1944,8 @@ export default {
               italian: 'Percettrone',
               pronunciation: '/pərˈseptrɒn/',
               phonetic: 'per-SEP-tron',
-              example: 'The perceptron is the simplest neural network. = Il percettrone è la rete neurale più semplice.',
+              example:
+                'The perceptron is the simplest neural network. = Il percettrone è la rete neurale più semplice.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Inventato nel 1957 da Frank Rosenblatt.',
@@ -1795,7 +1955,8 @@ export default {
               italian: 'Strato',
               pronunciation: '/ˈleɪər/',
               phonetic: 'LEI-er',
-              example: 'A neural network has input, hidden and output layers. = Una rete neurale ha strati di input, nascosti e di output.',
+              example:
+                'A neural network has input, hidden and output layers. = Una rete neurale ha strati di input, nascosti e di output.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Dense(units=64)',
@@ -1805,7 +1966,8 @@ export default {
               italian: 'Strato nascosto',
               pronunciation: '/ˈhɪdən ˈleɪər/',
               phonetic: 'HI-den LEI-er',
-              example: 'Hidden layers learn intermediate features. = Gli strati nascosti imparano feature intermedie.',
+              example:
+                'Hidden layers learn intermediate features. = Gli strati nascosti imparano feature intermedie.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: '"Nascosti" perché non visibili all\'utente.',
@@ -1815,7 +1977,8 @@ export default {
               italian: 'Strato di input',
               pronunciation: '/ˈɪnpʊt ˈleɪər/',
               phonetic: 'IN-put LEI-er',
-              example: 'The input layer receives the raw features. = Lo strato di input riceve le feature grezze.',
+              example:
+                'The input layer receives the raw features. = Lo strato di input riceve le feature grezze.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Input(shape=(784,))',
@@ -1825,7 +1988,8 @@ export default {
               italian: 'Strato di output',
               pronunciation: '/ˈaʊtpʊt ˈleɪər/',
               phonetic: 'AUT-put LEI-er',
-              example: 'The output layer produces the final prediction. = Lo strato di output produce la predizione finale.',
+              example:
+                'The output layer produces the final prediction. = Lo strato di output produce la predizione finale.',
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -1834,7 +1998,8 @@ export default {
               italian: 'Peso',
               pronunciation: '/weɪt/',
               phonetic: 'UEIT',
-              example: 'Each connection has a weight learned during training. = Ogni connessione ha un peso appreso durante l\'addestramento.',
+              example:
+                "Each connection has a weight learned during training. = Ogni connessione ha un peso appreso durante l'addestramento.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'model.weights',
@@ -1844,7 +2009,8 @@ export default {
               italian: 'Termine di bias',
               pronunciation: '/ˈbaɪəs tɜːrm/',
               phonetic: 'BAI-as TERM',
-              example: 'The bias term shifts the activation function. = Il termine di bias trasla la funzione di attivazione.',
+              example:
+                'The bias term shifts the activation function. = Il termine di bias trasla la funzione di attivazione.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Diverso dal "bias" come errore sistematico.',
@@ -1854,7 +2020,8 @@ export default {
               italian: 'Completamente connesso',
               pronunciation: '/ˈfʊli kəˈnektɪd/',
               phonetic: 'FUL-li ko-NEK-ted',
-              example: 'A fully connected layer connects every input to every output. = Uno strato completamente connesso collega ogni input a ogni output.',
+              example:
+                'A fully connected layer connects every input to every output. = Uno strato completamente connesso collega ogni input a ogni output.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detto anche dense layer.',
@@ -1867,7 +2034,7 @@ export default {
               example: 'A feedforward network has no cycles. = Una rete feedforward non ha cicli.',
               context: 'deep-learning',
               difficulty: 'intermediate',
-              note: 'L\'informazione scorre solo in avanti.',
+              note: "L'informazione scorre solo in avanti.",
             },
           ],
         },
@@ -1881,7 +2048,8 @@ export default {
               italian: 'Funzione di attivazione',
               pronunciation: '/ˌæktɪˈveɪʃən ˈfʌŋkʃən/',
               phonetic: 'ak-ti-VEI-scen FANK-scen',
-              example: 'The activation function adds non-linearity. = La funzione di attivazione aggiunge non-linearità.',
+              example:
+                'The activation function adds non-linearity. = La funzione di attivazione aggiunge non-linearità.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Dense(64, activation="relu")',
@@ -1891,7 +2059,8 @@ export default {
               italian: 'Sigmoide',
               pronunciation: '/ˈsɪɡmɔɪd/',
               phonetic: 'SIG-moid',
-              example: 'Sigmoid squashes values between 0 and 1. = La sigmoide schiaccia i valori tra 0 e 1.',
+              example:
+                'Sigmoid squashes values between 0 and 1. = La sigmoide schiaccia i valori tra 0 e 1.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: '1 / (1 + np.exp(-x))',
@@ -1902,7 +2071,8 @@ export default {
               italian: 'Tangente iperbolica',
               pronunciation: '/tæn eɪtʃ/',
               phonetic: 'TAN-EICI',
-              example: 'Tanh outputs values between minus one and one. = La tangente iperbolica produce valori tra meno uno e uno.',
+              example:
+                'Tanh outputs values between minus one and one. = La tangente iperbolica produce valori tra meno uno e uno.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'np.tanh(x)',
@@ -1912,7 +2082,8 @@ export default {
               italian: 'ReLU',
               pronunciation: '/ˈreluː/',
               phonetic: 'RE-lu',
-              example: 'ReLU outputs zero for negative inputs. = ReLU produce zero per input negativi.',
+              example:
+                'ReLU outputs zero for negative inputs. = ReLU produce zero per input negativi.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'max(0, x)',
@@ -1934,7 +2105,8 @@ export default {
               italian: 'Softmax',
               pronunciation: '/ˈsɒftmæks/',
               phonetic: 'SOFT-maks',
-              example: 'Softmax converts logits to probabilities. = Softmax converte logit in probabilità.',
+              example:
+                'Softmax converts logits to probabilities. = Softmax converte logit in probabilità.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Dense(10, activation="softmax")',
@@ -1945,7 +2117,8 @@ export default {
               italian: 'GELU',
               pronunciation: '/ˈdʒeluː/',
               phonetic: 'GE-lu',
-              example: 'GELU is used in transformer models. = GELU è usata nei modelli transformer.',
+              example:
+                'GELU is used in transformer models. = GELU è usata nei modelli transformer.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Gaussian Error Linear Unit. Usata in BERT, GPT.',
@@ -1955,7 +2128,8 @@ export default {
               italian: 'Swish',
               pronunciation: '/swɪʃ/',
               phonetic: 'SUISH',
-              example: 'Swish often outperforms ReLU on deep models. = Swish spesso supera ReLU su modelli profondi.',
+              example:
+                'Swish often outperforms ReLU on deep models. = Swish spesso supera ReLU su modelli profondi.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'x * sigmoid(x)',
@@ -1965,7 +2139,8 @@ export default {
               italian: 'Logit',
               pronunciation: '/ˈloʊdʒɪt/',
               phonetic: 'LO-git',
-              example: 'Logits are raw outputs before softmax. = I logit sono output grezzi prima di softmax.',
+              example:
+                'Logits are raw outputs before softmax. = I logit sono output grezzi prima di softmax.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Termine sempre lasciato in inglese.',
@@ -1975,7 +2150,8 @@ export default {
               italian: 'Non-linearità',
               pronunciation: '/ˌnɒn ˌlɪniˈærəti/',
               phonetic: 'NON li-ne-A-ri-ti',
-              example: 'Non-linearity allows networks to learn complex patterns. = La non-linearità permette alle reti di imparare pattern complessi.',
+              example:
+                'Non-linearity allows networks to learn complex patterns. = La non-linearità permette alle reti di imparare pattern complessi.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Senza di essa, una rete profonda equivale a uno strato lineare.',
@@ -1992,7 +2168,8 @@ export default {
               italian: 'Retropropagazione',
               pronunciation: '/ˌbækprɒpəˈɡeɪʃən/',
               phonetic: 'BAK-pro-pa-GEI-scen',
-              example: 'Backpropagation computes gradients via chain rule. = La retropropagazione calcola gradienti tramite la regola della catena.',
+              example:
+                'Backpropagation computes gradients via chain rule. = La retropropagazione calcola gradienti tramite la regola della catena.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Algoritmo che ha reso possibile il deep learning moderno.',
@@ -2002,17 +2179,19 @@ export default {
               italian: 'Passaggio in avanti',
               pronunciation: '/ˈfɔːrwərd pæs/',
               phonetic: 'FOR-uerd PAS',
-              example: 'The forward pass computes predictions. = Il passaggio in avanti calcola le predizioni.',
+              example:
+                'The forward pass computes predictions. = Il passaggio in avanti calcola le predizioni.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'output = model(input)',
             },
             {
               english: 'Backward Pass',
-              italian: 'Passaggio all\'indietro',
+              italian: "Passaggio all'indietro",
               pronunciation: '/ˈbækwərd pæs/',
               phonetic: 'BAK-uerd PAS',
-              example: 'The backward pass computes gradients. = Il passaggio all\'indietro calcola i gradienti.',
+              example:
+                "The backward pass computes gradients. = Il passaggio all'indietro calcola i gradienti.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'loss.backward()',
@@ -2022,7 +2201,8 @@ export default {
               italian: 'Gradiente',
               pronunciation: '/ˈɡreɪdiənt/',
               phonetic: 'GREI-di-ent',
-              example: 'The gradient indicates the direction of steepest ascent. = Il gradiente indica la direzione di massima salita.',
+              example:
+                'The gradient indicates the direction of steepest ascent. = Il gradiente indica la direzione di massima salita.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'In ML si scende lungo il gradiente (gradient descent).',
@@ -2032,7 +2212,8 @@ export default {
               italian: 'Regola della catena',
               pronunciation: '/tʃeɪn ruːl/',
               phonetic: 'CIEIN RUL',
-              example: 'The chain rule lets us compute composite derivatives. = La regola della catena permette di calcolare derivate di funzioni composte.',
+              example:
+                'The chain rule lets us compute composite derivatives. = La regola della catena permette di calcolare derivate di funzioni composte.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Concetto base del calcolo applicato alle reti neurali.',
@@ -2042,7 +2223,8 @@ export default {
               italian: 'Gradiente che svanisce',
               pronunciation: '/ˈvænɪʃɪŋ ˈɡreɪdiənt/',
               phonetic: 'VA-ni-scing GREI-di-ent',
-              example: 'Vanishing gradient prevents deep networks from learning. = Il gradiente che svanisce impedisce alle reti profonde di imparare.',
+              example:
+                'Vanishing gradient prevents deep networks from learning. = Il gradiente che svanisce impedisce alle reti profonde di imparare.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Problema storico risolto da ReLU, ResNet e batch norm.',
@@ -2052,7 +2234,8 @@ export default {
               italian: 'Gradiente che esplode',
               pronunciation: '/ɪkˈsploʊdɪŋ ˈɡreɪdiənt/',
               phonetic: 'ek-SPLOU-ding GREI-di-ent',
-              example: 'Exploding gradient causes unstable training. = Il gradiente che esplode causa addestramento instabile.',
+              example:
+                'Exploding gradient causes unstable training. = Il gradiente che esplode causa addestramento instabile.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Si mitiga con gradient clipping.',
@@ -2062,7 +2245,8 @@ export default {
               italian: 'Clipping del gradiente',
               pronunciation: '/ˈɡreɪdiənt ˈklɪpɪŋ/',
               phonetic: 'GREI-di-ent KLIP-ping',
-              example: 'Gradient clipping prevents exploding gradients. = Il clipping del gradiente previene gradienti esplosivi.',
+              example:
+                'Gradient clipping prevents exploding gradients. = Il clipping del gradiente previene gradienti esplosivi.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'torch.nn.utils.clip_grad_norm_(params, 1.0)',
@@ -2072,7 +2256,8 @@ export default {
               italian: 'Differenziazione automatica',
               pronunciation: '/ˌɔːtəˈmætɪk ˌdɪfəˌrenʃiˈeɪʃən/',
               phonetic: 'au-to-MA-tik dif-fe-ren-zi-EI-scen',
-              example: 'Frameworks use automatic differentiation to compute gradients. = I framework usano differenziazione automatica per calcolare gradienti.',
+              example:
+                'Frameworks use automatic differentiation to compute gradients. = I framework usano differenziazione automatica per calcolare gradienti.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detta anche autograd. Cuore di PyTorch e TensorFlow.',
@@ -2082,7 +2267,8 @@ export default {
               italian: 'Grafo computazionale',
               pronunciation: '/ˌkɒmpjʊˈteɪʃənəl ɡræf/',
               phonetic: 'kom-piu-TEI-scio-nal GRAF',
-              example: 'A computational graph tracks operations for autograd. = Un grafo computazionale traccia operazioni per autograd.',
+              example:
+                'A computational graph tracks operations for autograd. = Un grafo computazionale traccia operazioni per autograd.',
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -2098,7 +2284,8 @@ export default {
               italian: 'Inizializzazione',
               pronunciation: '/ɪˌnɪʃəlaɪˈzeɪʃən/',
               phonetic: 'i-ni-scia-lai-ZEI-scen',
-              example: 'Good weight initialization speeds up training. = Una buona inizializzazione dei pesi accelera l\'addestramento.',
+              example:
+                "Good weight initialization speeds up training. = Una buona inizializzazione dei pesi accelera l'addestramento.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'kernel_initializer="he_normal"',
@@ -2108,7 +2295,8 @@ export default {
               italian: 'Inizializzazione Xavier',
               pronunciation: '/ˈzeɪviər ɪˌnɪʃəlaɪˈzeɪʃən/',
               phonetic: 'ZEI-vier i-ni-scia-lai-ZEI-scen',
-              example: 'Xavier initialization works well with sigmoid and tanh. = L\'inizializzazione Xavier funziona bene con sigmoide e tanh.',
+              example:
+                "Xavier initialization works well with sigmoid and tanh. = L'inizializzazione Xavier funziona bene con sigmoide e tanh.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detta anche Glorot initialization.',
@@ -2118,7 +2306,8 @@ export default {
               italian: 'Inizializzazione He',
               pronunciation: '/hiː ɪˌnɪʃəlaɪˈzeɪʃən/',
               phonetic: 'HI i-ni-scia-lai-ZEI-scen',
-              example: 'He initialization works well with ReLU. = L\'inizializzazione He funziona bene con ReLU.',
+              example:
+                "He initialization works well with ReLU. = L'inizializzazione He funziona bene con ReLU.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Dal cognome di Kaiming He, il ricercatore.',
@@ -2128,7 +2317,8 @@ export default {
               italian: 'Mini-batch',
               pronunciation: '/ˈmɪni bætʃ/',
               phonetic: 'MI-ni BACI',
-              example: 'Mini-batches balance speed and stability. = I mini-batch bilanciano velocità e stabilità.',
+              example:
+                'Mini-batches balance speed and stability. = I mini-batch bilanciano velocità e stabilità.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'batch_size=32',
@@ -2138,7 +2328,8 @@ export default {
               italian: 'Discesa stocastica del gradiente',
               pronunciation: '/stəˈkæstɪk ˈɡreɪdiənt dɪˈsent/',
               phonetic: 'sto-KAS-tik GREI-di-ent di-SENT',
-              example: 'SGD updates weights using one example at a time. = SGD aggiorna i pesi usando un esempio alla volta.',
+              example:
+                'SGD updates weights using one example at a time. = SGD aggiorna i pesi usando un esempio alla volta.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'optimizer = SGD(lr=0.01)',
@@ -2149,7 +2340,8 @@ export default {
               italian: 'Ottimizzatore Adam',
               pronunciation: '/ˈædəm ˈɒptɪmaɪzər/',
               phonetic: 'A-dam OP-ti-mai-zer',
-              example: 'Adam adapts learning rate per parameter. = Adam adatta il learning rate per ogni parametro.',
+              example:
+                'Adam adapts learning rate per parameter. = Adam adatta il learning rate per ogni parametro.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'optimizer = Adam(lr=0.001)',
@@ -2160,7 +2352,8 @@ export default {
               italian: 'Momento',
               pronunciation: '/moʊˈmentəm/',
               phonetic: 'mou-MEN-tum',
-              example: 'Momentum accelerates training in consistent directions. = Il momento accelera l\'addestramento in direzioni coerenti.',
+              example:
+                "Momentum accelerates training in consistent directions. = Il momento accelera l'addestramento in direzioni coerenti.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'SGD(lr=0.01, momentum=0.9)',
@@ -2170,7 +2363,8 @@ export default {
               italian: 'Decadimento dei pesi',
               pronunciation: '/weɪt dɪˈkeɪ/',
               phonetic: 'UEIT di-KEI',
-              example: 'Weight decay prevents overfitting. = Il decadimento dei pesi previene l\'overfitting.',
+              example:
+                "Weight decay prevents overfitting. = Il decadimento dei pesi previene l'overfitting.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Equivale alla regolarizzazione L2.',
@@ -2180,7 +2374,8 @@ export default {
               italian: 'Approssimazione universale',
               pronunciation: '/ˌjuːnɪˈvɜːrsəl əˌprɒksɪˈmeɪʃən/',
               phonetic: 'iu-ni-VER-sal a-prok-si-MEI-scen',
-              example: 'The universal approximation theorem motivates neural networks. = Il teorema di approssimazione universale motiva le reti neurali.',
+              example:
+                'The universal approximation theorem motivates neural networks. = Il teorema di approssimazione universale motiva le reti neurali.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Una rete con uno strato nascosto può approssimare qualsiasi funzione continua.',
@@ -2190,7 +2385,8 @@ export default {
               italian: 'Percettrone multistrato',
               pronunciation: '/ˌmʌltileɪər pərˈseptrɒn/',
               phonetic: 'MAL-ti-leier per-SEP-tron',
-              example: 'A multilayer perceptron has multiple dense layers. = Un percettrone multistrato ha più strati densi.',
+              example:
+                'A multilayer perceptron has multiple dense layers. = Un percettrone multistrato ha più strati densi.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'MLPClassifier(hidden_layer_sizes=(64, 32))',
@@ -2217,7 +2413,8 @@ export default {
               italian: 'Rete neurale convoluzionale',
               pronunciation: '/ˌkɒnvəˈluːʃənəl ˈnjʊərəl ˈnetwɜːrk/',
               phonetic: 'kon-vo-LU-scio-nal NIU-ral NET-uerk',
-              example: 'A convolutional neural network excels at image tasks. = Una rete neurale convoluzionale eccelle nei compiti su immagini.',
+              example:
+                'A convolutional neural network excels at image tasks. = Una rete neurale convoluzionale eccelle nei compiti su immagini.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Abbreviata CNN o ConvNet.',
@@ -2227,7 +2424,8 @@ export default {
               italian: 'Convoluzione',
               pronunciation: '/ˌkɒnvəˈluːʃən/',
               phonetic: 'kon-vo-LU-scen',
-              example: 'Convolution slides a filter over the input. = La convoluzione fa scorrere un filtro sull\'input.',
+              example:
+                "Convolution slides a filter over the input. = La convoluzione fa scorrere un filtro sull'input.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Conv2D(32, (3, 3))',
@@ -2237,7 +2435,8 @@ export default {
               italian: 'Filtro',
               pronunciation: '/ˈfɪltər/',
               phonetic: 'FIL-ter',
-              example: 'A filter detects specific patterns like edges. = Un filtro rileva pattern specifici come i bordi.',
+              example:
+                'A filter detects specific patterns like edges. = Un filtro rileva pattern specifici come i bordi.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detto anche kernel.',
@@ -2257,7 +2456,8 @@ export default {
               italian: 'Passo',
               pronunciation: '/straɪd/',
               phonetic: 'STRAID',
-              example: 'Stride controls how far the filter moves. = Lo stride controlla quanto si muove il filtro.',
+              example:
+                'Stride controls how far the filter moves. = Lo stride controlla quanto si muove il filtro.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Conv2D(32, (3, 3), strides=2)',
@@ -2267,7 +2467,8 @@ export default {
               italian: 'Padding',
               pronunciation: '/ˈpædɪŋ/',
               phonetic: 'PAD-ding',
-              example: 'Padding preserves spatial dimensions. = Il padding preserva le dimensioni spaziali.',
+              example:
+                'Padding preserves spatial dimensions. = Il padding preserva le dimensioni spaziali.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Conv2D(32, (3, 3), padding="same")',
@@ -2277,7 +2478,8 @@ export default {
               italian: 'Pooling',
               pronunciation: '/ˈpuːlɪŋ/',
               phonetic: 'PU-ling',
-              example: 'Pooling reduces spatial dimensions. = Il pooling riduce le dimensioni spaziali.',
+              example:
+                'Pooling reduces spatial dimensions. = Il pooling riduce le dimensioni spaziali.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'MaxPooling2D((2, 2))',
@@ -2287,7 +2489,8 @@ export default {
               italian: 'Max pooling',
               pronunciation: '/mæks ˈpuːlɪŋ/',
               phonetic: 'MAKS PU-ling',
-              example: 'Max pooling keeps the strongest signal in each window. = Il max pooling mantiene il segnale più forte in ogni finestra.',
+              example:
+                'Max pooling keeps the strongest signal in each window. = Il max pooling mantiene il segnale più forte in ogni finestra.',
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -2296,7 +2499,8 @@ export default {
               italian: 'Mappa di feature',
               pronunciation: '/ˈfiːtʃər mæp/',
               phonetic: 'FII-cer MAP',
-              example: 'A feature map is the output of a convolution layer. = Una mappa di feature è l\'output di uno strato convolutivo.',
+              example:
+                "A feature map is the output of a convolution layer. = Una mappa di feature è l'output di uno strato convolutivo.",
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -2305,7 +2509,8 @@ export default {
               italian: 'Campo recettivo',
               pronunciation: '/rɪˈseptɪv fiːld/',
               phonetic: 'ri-SEP-tiv FIID',
-              example: 'The receptive field is the input area a neuron sees. = Il campo recettivo è l\'area di input che un neurone vede.',
+              example:
+                "The receptive field is the input area a neuron sees. = Il campo recettivo è l'area di input che un neurone vede.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Cresce con la profondità della rete.',
@@ -2322,7 +2527,8 @@ export default {
               italian: 'Rete neurale ricorrente',
               pronunciation: '/rɪˈkɜːrənt ˈnjʊərəl ˈnetwɜːrk/',
               phonetic: 'ri-KER-rent NIU-ral NET-uerk',
-              example: 'A recurrent neural network processes sequences. = Una rete neurale ricorrente elabora sequenze.',
+              example:
+                'A recurrent neural network processes sequences. = Una rete neurale ricorrente elabora sequenze.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Abbreviata RNN.',
@@ -2332,7 +2538,8 @@ export default {
               italian: 'LSTM',
               pronunciation: '/el es tiː em/',
               phonetic: 'EL-ES-TI-EM',
-              example: 'LSTM handles long-term dependencies in sequences. = LSTM gestisce dipendenze a lungo termine nelle sequenze.',
+              example:
+                'LSTM handles long-term dependencies in sequences. = LSTM gestisce dipendenze a lungo termine nelle sequenze.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'LSTM(128)',
@@ -2343,7 +2550,8 @@ export default {
               italian: 'GRU',
               pronunciation: '/dʒiː ɑːr juː/',
               phonetic: 'GI-AR-IU',
-              example: 'GRU is simpler than LSTM but often as effective. = GRU è più semplice di LSTM ma spesso ugualmente efficace.',
+              example:
+                'GRU is simpler than LSTM but often as effective. = GRU è più semplice di LSTM ma spesso ugualmente efficace.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'GRU(64)',
@@ -2354,7 +2562,8 @@ export default {
               italian: 'Stato nascosto',
               pronunciation: '/ˈhɪdən steɪt/',
               phonetic: 'HI-den STEIT',
-              example: 'The hidden state carries information across time steps. = Lo stato nascosto trasporta informazioni tra passi temporali.',
+              example:
+                'The hidden state carries information across time steps. = Lo stato nascosto trasporta informazioni tra passi temporali.',
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -2363,7 +2572,8 @@ export default {
               italian: 'Stato della cella',
               pronunciation: '/sel steɪt/',
               phonetic: 'SEL STEIT',
-              example: 'The cell state is the long-term memory of LSTM. = Lo stato della cella è la memoria a lungo termine di LSTM.',
+              example:
+                'The cell state is the long-term memory of LSTM. = Lo stato della cella è la memoria a lungo termine di LSTM.',
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -2372,7 +2582,8 @@ export default {
               italian: 'Gate di dimenticanza',
               pronunciation: '/fərˈɡet ɡeɪt/',
               phonetic: 'for-GHET GHEIT',
-              example: 'The forget gate decides what to remove from memory. = Il gate di dimenticanza decide cosa rimuovere dalla memoria.',
+              example:
+                'The forget gate decides what to remove from memory. = Il gate di dimenticanza decide cosa rimuovere dalla memoria.',
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -2381,7 +2592,8 @@ export default {
               italian: 'Sequenza-a-sequenza',
               pronunciation: '/ˈsiːkwəns tuː ˈsiːkwəns/',
               phonetic: 'SI-kuens TU SI-kuens',
-              example: 'Sequence-to-sequence models translate languages. = I modelli sequenza-a-sequenza traducono lingue.',
+              example:
+                'Sequence-to-sequence models translate languages. = I modelli sequenza-a-sequenza traducono lingue.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Abbreviato Seq2Seq.',
@@ -2391,7 +2603,8 @@ export default {
               italian: 'Bidirezionale',
               pronunciation: '/ˌbaɪdəˈrekʃənəl/',
               phonetic: 'bai-di-REK-scio-nal',
-              example: 'A bidirectional RNN reads sequences forward and backward. = Una RNN bidirezionale legge sequenze in avanti e indietro.',
+              example:
+                'A bidirectional RNN reads sequences forward and backward. = Una RNN bidirezionale legge sequenze in avanti e indietro.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Bidirectional(LSTM(64))',
@@ -2401,7 +2614,8 @@ export default {
               italian: 'Passo temporale',
               pronunciation: '/taɪm step/',
               phonetic: 'TAIM STEP',
-              example: 'Each time step processes one element of the sequence. = Ogni passo temporale elabora un elemento della sequenza.',
+              example:
+                'Each time step processes one element of the sequence. = Ogni passo temporale elabora un elemento della sequenza.',
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -2410,7 +2624,8 @@ export default {
               italian: 'Backprop troncata',
               pronunciation: '/ˈtrʌŋkeɪtɪd ˈbækprɒp/',
               phonetic: 'TRAN-kei-ted BAK-prop',
-              example: 'Truncated backprop limits the gradient flow length. = La backprop troncata limita la lunghezza del flusso del gradiente.',
+              example:
+                'Truncated backprop limits the gradient flow length. = La backprop troncata limita la lunghezza del flusso del gradiente.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Tecnica per addestrare RNN su sequenze lunghe.',
@@ -2427,7 +2642,8 @@ export default {
               italian: 'Dropout',
               pronunciation: '/ˈdrɒpaʊt/',
               phonetic: 'DROP-aut',
-              example: 'Dropout randomly disables neurons during training. = Dropout disabilita casualmente neuroni durante l\'addestramento.',
+              example:
+                "Dropout randomly disables neurons during training. = Dropout disabilita casualmente neuroni durante l'addestramento.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'Dropout(rate=0.5)',
@@ -2438,7 +2654,8 @@ export default {
               italian: 'Normalizzazione batch',
               pronunciation: '/bætʃ ˌnɔːrməlaɪˈzeɪʃən/',
               phonetic: 'BACI nor-ma-lai-ZEI-scen',
-              example: 'Batch normalization stabilizes and speeds up training. = La normalizzazione batch stabilizza e velocizza l\'addestramento.',
+              example:
+                "Batch normalization stabilizes and speeds up training. = La normalizzazione batch stabilizza e velocizza l'addestramento.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'BatchNormalization()',
@@ -2449,7 +2666,8 @@ export default {
               italian: 'Normalizzazione di strato',
               pronunciation: '/ˈleɪər ˌnɔːrməlaɪˈzeɪʃən/',
               phonetic: 'LEI-er nor-ma-lai-ZEI-scen',
-              example: 'Layer normalization works well in transformers. = La normalizzazione di strato funziona bene nei transformer.',
+              example:
+                'Layer normalization works well in transformers. = La normalizzazione di strato funziona bene nei transformer.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'LayerNormalization()',
@@ -2459,7 +2677,8 @@ export default {
               italian: 'Regolarizzazione L1',
               pronunciation: '/el wʌn ˌreɡjələrɪˈzeɪʃən/',
               phonetic: 'EL-UAN reg-iu-la-ri-ZEI-scen',
-              example: 'L1 regularization promotes sparsity. = La regolarizzazione L1 promuove la sparsità.',
+              example:
+                'L1 regularization promotes sparsity. = La regolarizzazione L1 promuove la sparsità.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'kernel_regularizer=l1(0.01)',
@@ -2469,7 +2688,8 @@ export default {
               italian: 'Regolarizzazione L2',
               pronunciation: '/el tuː ˌreɡjələrɪˈzeɪʃən/',
               phonetic: 'EL-TU reg-iu-la-ri-ZEI-scen',
-              example: 'L2 regularization keeps weights small. = La regolarizzazione L2 mantiene piccoli i pesi.',
+              example:
+                'L2 regularization keeps weights small. = La regolarizzazione L2 mantiene piccoli i pesi.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'kernel_regularizer=l2(0.001)',
@@ -2479,7 +2699,8 @@ export default {
               italian: 'Aumento dei dati',
               pronunciation: '/ˈdeɪtə ˌɔːɡmenˈteɪʃən/',
               phonetic: 'DEI-ta og-men-TEI-scen',
-              example: 'Data augmentation creates new training examples. = L\'aumento dei dati crea nuovi esempi di addestramento.',
+              example:
+                "Data augmentation creates new training examples. = L'aumento dei dati crea nuovi esempi di addestramento.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'ImageDataGenerator(rotation_range=20)',
@@ -2489,7 +2710,8 @@ export default {
               italian: 'Smussamento etichette',
               pronunciation: '/ˈleɪbəl ˈsmuːðɪŋ/',
               phonetic: 'LEI-bel SMU-ding',
-              example: 'Label smoothing prevents overconfident predictions. = Lo smussamento etichette previene predizioni troppo sicure.',
+              example:
+                'Label smoothing prevents overconfident predictions. = Lo smussamento etichette previene predizioni troppo sicure.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               code: 'CategoricalCrossentropy(label_smoothing=0.1)',
@@ -2499,7 +2721,8 @@ export default {
               italian: 'Profondità stocastica',
               pronunciation: '/stəˈkæstɪk depθ/',
               phonetic: 'sto-KAS-tik DEPT',
-              example: 'Stochastic depth randomly skips layers during training. = La profondità stocastica salta casualmente strati durante l\'addestramento.',
+              example:
+                "Stochastic depth randomly skips layers during training. = La profondità stocastica salta casualmente strati durante l'addestramento.",
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -2508,7 +2731,8 @@ export default {
               italian: 'Mixup',
               pronunciation: '/ˈmɪksʌp/',
               phonetic: 'MIK-sap',
-              example: 'Mixup interpolates between training examples. = Mixup interpola tra esempi di addestramento.',
+              example:
+                'Mixup interpolates between training examples. = Mixup interpola tra esempi di addestramento.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Tecnica di data augmentation moderna.',
@@ -2518,7 +2742,8 @@ export default {
               italian: 'Cutout',
               pronunciation: '/ˈkʌtaʊt/',
               phonetic: 'KAT-aut',
-              example: 'Cutout removes random patches from images. = Cutout rimuove patch casuali dalle immagini.',
+              example:
+                'Cutout removes random patches from images. = Cutout rimuove patch casuali dalle immagini.',
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -2534,7 +2759,8 @@ export default {
               italian: 'ResNet',
               pronunciation: '/ˈreznet/',
               phonetic: 'REZ-net',
-              example: 'ResNet uses skip connections to enable very deep networks. = ResNet usa skip connection per abilitare reti molto profonde.',
+              example:
+                'ResNet uses skip connections to enable very deep networks. = ResNet usa skip connection per abilitare reti molto profonde.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Residual Network. Sblocca reti con centinaia di strati.',
@@ -2544,7 +2770,8 @@ export default {
               italian: 'Connessione di salto',
               pronunciation: '/skɪp kəˈnekʃən/',
               phonetic: 'SKIP ko-NEK-scen',
-              example: 'A skip connection bypasses one or more layers. = Una connessione di salto aggira uno o più strati.',
+              example:
+                'A skip connection bypasses one or more layers. = Una connessione di salto aggira uno o più strati.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detta anche residual connection.',
@@ -2554,7 +2781,8 @@ export default {
               italian: 'VGG',
               pronunciation: '/viː dʒiː dʒiː/',
               phonetic: 'VI-GI-GI',
-              example: 'VGG popularized stacking 3x3 convolutions. = VGG ha reso popolare l\'impilamento di convoluzioni 3x3.',
+              example:
+                "VGG popularized stacking 3x3 convolutions. = VGG ha reso popolare l'impilamento di convoluzioni 3x3.",
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Da Visual Geometry Group di Oxford.',
@@ -2564,7 +2792,8 @@ export default {
               italian: 'Inception',
               pronunciation: '/ɪnˈsepʃən/',
               phonetic: 'in-SEP-scen',
-              example: 'Inception modules use multiple filter sizes in parallel. = I moduli Inception usano più dimensioni di filtro in parallelo.',
+              example:
+                'Inception modules use multiple filter sizes in parallel. = I moduli Inception usano più dimensioni di filtro in parallelo.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Detto anche GoogLeNet.',
@@ -2574,7 +2803,8 @@ export default {
               italian: 'EfficientNet',
               pronunciation: '/ɪˈfɪʃənt net/',
               phonetic: 'i-FI-scent NET',
-              example: 'EfficientNet scales depth, width and resolution together. = EfficientNet scala insieme profondità, larghezza e risoluzione.',
+              example:
+                'EfficientNet scales depth, width and resolution together. = EfficientNet scala insieme profondità, larghezza e risoluzione.',
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -2583,7 +2813,8 @@ export default {
               italian: 'DenseNet',
               pronunciation: '/dens net/',
               phonetic: 'DENS NET',
-              example: 'DenseNet connects every layer to every other layer. = DenseNet connette ogni strato a ogni altro strato.',
+              example:
+                'DenseNet connects every layer to every other layer. = DenseNet connette ogni strato a ogni altro strato.',
               context: 'deep-learning',
               difficulty: 'intermediate',
             },
@@ -2592,7 +2823,8 @@ export default {
               italian: 'MobileNet',
               pronunciation: '/ˈmoʊbaɪl net/',
               phonetic: 'MO-bail NET',
-              example: 'MobileNet is designed for mobile devices. = MobileNet è progettata per dispositivi mobili.',
+              example:
+                'MobileNet is designed for mobile devices. = MobileNet è progettata per dispositivi mobili.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Usa depthwise separable convolutions.',
@@ -2602,7 +2834,8 @@ export default {
               italian: 'Vision Transformer',
               pronunciation: '/ˈvɪʒən trænsˈfɔːrmər/',
               phonetic: 'VI-gen trans-FOR-mer',
-              example: 'A Vision Transformer treats images as sequences of patches. = Un Vision Transformer tratta le immagini come sequenze di patch.',
+              example:
+                'A Vision Transformer treats images as sequences of patches. = Un Vision Transformer tratta le immagini come sequenze di patch.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Abbreviato ViT.',
@@ -2612,7 +2845,8 @@ export default {
               italian: 'Rete capsulare',
               pronunciation: '/ˈkæpsjuːl ˈnetwɜːrk/',
               phonetic: 'KAP-siul NET-uerk',
-              example: 'Capsule networks model hierarchical relationships. = Le reti capsulari modellano relazioni gerarchiche.',
+              example:
+                'Capsule networks model hierarchical relationships. = Le reti capsulari modellano relazioni gerarchiche.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Idea di Geoffrey Hinton, meno usata in pratica.',
@@ -2622,7 +2856,8 @@ export default {
               italian: 'Squeeze-and-excitation',
               pronunciation: '/skwiːz ænd ˌeksɪˈteɪʃən/',
               phonetic: 'SKUIZ-end-ek-si-TEI-scen',
-              example: 'Squeeze-and-excitation blocks reweight feature channels. = I blocchi squeeze-and-excitation ripesano i canali delle feature.',
+              example:
+                'Squeeze-and-excitation blocks reweight feature channels. = I blocchi squeeze-and-excitation ripesano i canali delle feature.',
               context: 'deep-learning',
               difficulty: 'intermediate',
               note: 'Abbreviato SE-block.',
@@ -2648,7 +2883,8 @@ export default {
               italian: 'Tokenizzazione',
               pronunciation: '/ˌtoʊkənaɪˈzeɪʃən/',
               phonetic: 'tou-ken-ai-ZEI-scen',
-              example: 'Tokenization splits text into smaller units. = La tokenizzazione divide il testo in unità più piccole.',
+              example:
+                'Tokenization splits text into smaller units. = La tokenizzazione divide il testo in unità più piccole.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'tokenizer.tokenize("Hello world")',
@@ -2658,7 +2894,8 @@ export default {
               italian: 'Token',
               pronunciation: '/ˈtoʊkən/',
               phonetic: 'TOU-ken',
-              example: 'A token is the basic unit of text processing. = Un token è l\'unità base dell\'elaborazione del testo.',
+              example:
+                "A token is the basic unit of text processing. = Un token è l'unità base dell'elaborazione del testo.",
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Termine sempre lasciato in inglese.',
@@ -2668,7 +2905,8 @@ export default {
               italian: 'Tokenizzazione di sottoparole',
               pronunciation: '/ˈsʌbwɜːrd ˌtoʊkənaɪˈzeɪʃən/',
               phonetic: 'SAB-uerd tou-ken-ai-ZEI-scen',
-              example: 'Subword tokenization handles rare words better. = La tokenizzazione di sottoparole gestisce meglio parole rare.',
+              example:
+                'Subword tokenization handles rare words better. = La tokenizzazione di sottoparole gestisce meglio parole rare.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Esempi: BPE, WordPiece, SentencePiece.',
@@ -2678,7 +2916,8 @@ export default {
               italian: 'Codifica byte-pair',
               pronunciation: '/baɪt peər ɪnˈkoʊdɪŋ/',
               phonetic: 'BAIT-PEAR in-KOU-ding',
-              example: 'Byte-pair encoding is used by GPT models. = La codifica byte-pair è usata dai modelli GPT.',
+              example:
+                'Byte-pair encoding is used by GPT models. = La codifica byte-pair è usata dai modelli GPT.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Abbreviato BPE.',
@@ -2688,7 +2927,8 @@ export default {
               italian: 'Vocabolario',
               pronunciation: '/voʊˈkæbjəleri/',
               phonetic: 'vou-KAB-iu-le-ri',
-              example: 'A larger vocabulary captures more nuance. = Un vocabolario più grande cattura più sfumature.',
+              example:
+                'A larger vocabulary captures more nuance. = Un vocabolario più grande cattura più sfumature.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'len(tokenizer.vocab)',
@@ -2698,7 +2938,8 @@ export default {
               italian: 'Parola vuota',
               pronunciation: '/stɒp wɜːrd/',
               phonetic: 'STOP UERD',
-              example: 'Stop words like "the" carry little meaning. = Le parole vuote come "the" portano poco significato.',
+              example:
+                'Stop words like "the" carry little meaning. = Le parole vuote come "the" portano poco significato.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Spesso rimosse nei modelli classici, mantenute nei transformer.',
@@ -2708,7 +2949,8 @@ export default {
               italian: 'Stemming',
               pronunciation: '/ˈstemɪŋ/',
               phonetic: 'STEM-ming',
-              example: 'Stemming reduces words to their root form. = Lo stemming riduce le parole alla loro radice.',
+              example:
+                'Stemming reduces words to their root form. = Lo stemming riduce le parole alla loro radice.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'PorterStemmer().stem("running")',
@@ -2718,7 +2960,8 @@ export default {
               italian: 'Lemmatizzazione',
               pronunciation: '/ˌlemətaɪˈzeɪʃən/',
               phonetic: 'lem-ma-tai-ZEI-scen',
-              example: 'Lemmatization returns the dictionary form of a word. = La lemmatizzazione restituisce la forma da dizionario di una parola.',
+              example:
+                'Lemmatization returns the dictionary form of a word. = La lemmatizzazione restituisce la forma da dizionario di una parola.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'lemmatizer.lemmatize("running")',
@@ -2729,7 +2972,8 @@ export default {
               italian: 'Sacco di parole',
               pronunciation: '/bæɡ əv wɜːrdz/',
               phonetic: 'BAG-OF-UERDZ',
-              example: 'Bag of words ignores word order. = Il sacco di parole ignora l\'ordine delle parole.',
+              example:
+                "Bag of words ignores word order. = Il sacco di parole ignora l'ordine delle parole.",
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'CountVectorizer().fit_transform(corpus)',
@@ -2740,7 +2984,8 @@ export default {
               italian: 'TF-IDF',
               pronunciation: '/tiː ef aɪ diː ef/',
               phonetic: 'TI-EF-AI-DI-EF',
-              example: 'TF-IDF weighs words by their rarity. = TF-IDF pesa le parole per la loro rarità.',
+              example:
+                'TF-IDF weighs words by their rarity. = TF-IDF pesa le parole per la loro rarità.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'TfidfVectorizer().fit_transform(corpus)',
@@ -2758,7 +3003,8 @@ export default {
               italian: 'Embedding',
               pronunciation: '/ɪmˈbedɪŋ/',
               phonetic: 'em-BED-ding',
-              example: 'An embedding is a dense vector representing meaning. = Un embedding è un vettore denso che rappresenta il significato.',
+              example:
+                'An embedding is a dense vector representing meaning. = Un embedding è un vettore denso che rappresenta il significato.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'Embedding(vocab_size, 128)',
@@ -2769,7 +3015,8 @@ export default {
               italian: 'Word2Vec',
               pronunciation: '/wɜːrd tuː vek/',
               phonetic: 'UERD-TU-VEK',
-              example: 'Word2Vec learns word embeddings from context. = Word2Vec impara embedding di parole dal contesto.',
+              example:
+                'Word2Vec learns word embeddings from context. = Word2Vec impara embedding di parole dal contesto.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'Word2Vec(sentences, vector_size=100)',
@@ -2779,7 +3026,8 @@ export default {
               italian: 'GloVe',
               pronunciation: '/ɡloʊv/',
               phonetic: 'GLOUV',
-              example: 'GloVe combines global statistics with local context. = GloVe combina statistiche globali con contesto locale.',
+              example:
+                'GloVe combines global statistics with local context. = GloVe combina statistiche globali con contesto locale.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Global Vectors for Word Representation. Da Stanford.',
@@ -2789,7 +3037,8 @@ export default {
               italian: 'FastText',
               pronunciation: '/fæst tekst/',
               phonetic: 'FAST-TEKST',
-              example: 'FastText handles out-of-vocabulary words via subwords. = FastText gestisce parole fuori vocabolario tramite sottoparole.',
+              example:
+                'FastText handles out-of-vocabulary words via subwords. = FastText gestisce parole fuori vocabolario tramite sottoparole.',
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'fasttext',
@@ -2799,7 +3048,8 @@ export default {
               italian: 'CBOW',
               pronunciation: '/siː baʊ/',
               phonetic: 'SI-BOU',
-              example: 'CBOW predicts a word from its context. = CBOW predice una parola dal suo contesto.',
+              example:
+                'CBOW predicts a word from its context. = CBOW predice una parola dal suo contesto.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Continuous Bag-of-Words.',
@@ -2809,7 +3059,8 @@ export default {
               italian: 'Skip-gram',
               pronunciation: '/skɪp ɡræm/',
               phonetic: 'SKIP-GRAM',
-              example: 'Skip-gram predicts context from a center word. = Skip-gram predice il contesto da una parola centrale.',
+              example:
+                'Skip-gram predicts context from a center word. = Skip-gram predice il contesto da una parola centrale.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -2818,7 +3069,8 @@ export default {
               italian: 'Similarità del coseno',
               pronunciation: '/ˈkoʊsaɪn ˌsɪmɪˈlærəti/',
               phonetic: 'KO-sain si-mi-LA-ri-ti',
-              example: 'Cosine similarity measures angle between embeddings. = La similarità del coseno misura l\'angolo tra embedding.',
+              example:
+                "Cosine similarity measures angle between embeddings. = La similarità del coseno misura l'angolo tra embedding.",
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'cosine_similarity(v1, v2)',
@@ -2828,7 +3080,8 @@ export default {
               italian: 'Spazio vettoriale',
               pronunciation: '/ˈvektər speɪs/',
               phonetic: 'VEK-ter SPEIS',
-              example: 'Embeddings live in a high-dimensional vector space. = Gli embedding vivono in uno spazio vettoriale ad alta dimensionalità.',
+              example:
+                'Embeddings live in a high-dimensional vector space. = Gli embedding vivono in uno spazio vettoriale ad alta dimensionalità.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -2837,7 +3090,8 @@ export default {
               italian: 'Embedding di frase',
               pronunciation: '/ˈsentəns ɪmˈbedɪŋ/',
               phonetic: 'SEN-tens em-BED-ding',
-              example: 'A sentence embedding represents an entire sentence. = Un embedding di frase rappresenta un\'intera frase.',
+              example:
+                "A sentence embedding represents an entire sentence. = Un embedding di frase rappresenta un'intera frase.",
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'sentence-transformers',
@@ -2847,7 +3101,8 @@ export default {
               italian: 'Embedding contestuale',
               pronunciation: '/kənˈtekstʃuəl ɪmˈbedɪŋ/',
               phonetic: 'kon-TEK-stiu-al em-BED-ding',
-              example: 'Contextual embeddings change with sentence context. = Gli embedding contestuali cambiano col contesto della frase.',
+              example:
+                'Contextual embeddings change with sentence context. = Gli embedding contestuali cambiano col contesto della frase.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Esempio: BERT, ELMo. Diverso da Word2Vec che è statico.',
@@ -2864,7 +3119,8 @@ export default {
               italian: 'Modello di sequenza',
               pronunciation: '/ˈsiːkwəns ˈmɒdəl/',
               phonetic: 'SI-kuens MO-del',
-              example: 'A sequence model processes ordered input. = Un modello di sequenza elabora input ordinato.',
+              example:
+                'A sequence model processes ordered input. = Un modello di sequenza elabora input ordinato.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -2873,7 +3129,8 @@ export default {
               italian: 'Modello linguistico',
               pronunciation: '/ˈlæŋɡwɪdʒ ˈmɒdəl/',
               phonetic: 'LAN-guigi MO-del',
-              example: 'A language model predicts the next word. = Un modello linguistico predice la prossima parola.',
+              example:
+                'A language model predicts the next word. = Un modello linguistico predice la prossima parola.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -2882,7 +3139,8 @@ export default {
               italian: 'N-gramma',
               pronunciation: '/en ɡræm/',
               phonetic: 'EN-GRAM',
-              example: 'A trigram is a sequence of three words. = Un trigramma è una sequenza di tre parole.',
+              example:
+                'A trigram is a sequence of three words. = Un trigramma è una sequenza di tre parole.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Modello classico precedente alle reti neurali.',
@@ -2892,7 +3150,8 @@ export default {
               italian: 'Encoder',
               pronunciation: '/ɪnˈkoʊdər/',
               phonetic: 'en-KOU-der',
-              example: 'The encoder transforms input into a fixed representation. = L\'encoder trasforma l\'input in una rappresentazione fissa.',
+              example:
+                "The encoder transforms input into a fixed representation. = L'encoder trasforma l'input in una rappresentazione fissa.",
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Termine sempre in inglese in italiano tecnico.',
@@ -2902,7 +3161,8 @@ export default {
               italian: 'Decoder',
               pronunciation: '/diːˈkoʊdər/',
               phonetic: 'di-KOU-der',
-              example: 'The decoder generates output from the encoder representation. = Il decoder genera output dalla rappresentazione dell\'encoder.',
+              example:
+                "The decoder generates output from the encoder representation. = Il decoder genera output dalla rappresentazione dell'encoder.",
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -2911,7 +3171,8 @@ export default {
               italian: 'Beam search',
               pronunciation: '/biːm sɜːrtʃ/',
               phonetic: 'BIM-SERCI',
-              example: 'Beam search finds high-probability sequences. = Beam search trova sequenze ad alta probabilità.',
+              example:
+                'Beam search finds high-probability sequences. = Beam search trova sequenze ad alta probabilità.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'model.generate(input_ids, num_beams=5)',
@@ -2921,7 +3182,8 @@ export default {
               italian: 'Decodifica greedy',
               pronunciation: '/ˈɡriːdi diːˈkoʊdɪŋ/',
               phonetic: 'GRI-di di-KOU-ding',
-              example: 'Greedy decoding picks the most likely token at each step. = La decodifica greedy sceglie il token più probabile a ogni passo.',
+              example:
+                'Greedy decoding picks the most likely token at each step. = La decodifica greedy sceglie il token più probabile a ogni passo.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -2930,7 +3192,8 @@ export default {
               italian: 'Punteggio BLEU',
               pronunciation: '/bluː skɔːr/',
               phonetic: 'BLU-SKOR',
-              example: 'BLEU score evaluates machine translation quality. = Il punteggio BLEU valuta la qualità della traduzione automatica.',
+              example:
+                'BLEU score evaluates machine translation quality. = Il punteggio BLEU valuta la qualità della traduzione automatica.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Bilingual Evaluation Understudy.',
@@ -2940,7 +3203,8 @@ export default {
               italian: 'Punteggio ROUGE',
               pronunciation: '/ruːʒ skɔːr/',
               phonetic: 'RUSH-SKOR',
-              example: 'ROUGE evaluates text summarization. = ROUGE valuta la sintesi automatica del testo.',
+              example:
+                'ROUGE evaluates text summarization. = ROUGE valuta la sintesi automatica del testo.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -2949,7 +3213,8 @@ export default {
               italian: 'Perplessità',
               pronunciation: '/pərˈpleksəti/',
               phonetic: 'per-PLEK-si-ti',
-              example: 'Lower perplexity means better language model. = Perplessità più bassa significa un miglior modello linguistico.',
+              example:
+                'Lower perplexity means better language model. = Perplessità più bassa significa un miglior modello linguistico.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'perplexity = exp(loss)',
@@ -2958,7 +3223,7 @@ export default {
         },
         {
           id: 'ai_nlp_4',
-          title: 'Attention Basics / Basi dell\'Attenzione',
+          title: "Attention Basics / Basi dell'Attenzione",
           description: 'Il meccanismo di attenzione',
           items: [
             {
@@ -2966,17 +3231,19 @@ export default {
               italian: 'Attenzione',
               pronunciation: '/əˈtenʃən/',
               phonetic: 'a-TEN-scen',
-              example: 'Attention lets the model focus on relevant inputs. = L\'attenzione permette al modello di concentrarsi su input rilevanti.',
+              example:
+                "Attention lets the model focus on relevant inputs. = L'attenzione permette al modello di concentrarsi su input rilevanti.",
               context: 'nlp',
               difficulty: 'intermediate',
-              note: 'Concetto rivoluzionario per l\'NLP moderno.',
+              note: "Concetto rivoluzionario per l'NLP moderno.",
             },
             {
               english: 'Attention Score',
               italian: 'Punteggio di attenzione',
               pronunciation: '/əˈtenʃən skɔːr/',
               phonetic: 'a-TEN-scen SKOR',
-              example: 'Attention scores indicate input importance. = I punteggi di attenzione indicano l\'importanza degli input.',
+              example:
+                "Attention scores indicate input importance. = I punteggi di attenzione indicano l'importanza degli input.",
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -2994,7 +3261,8 @@ export default {
               italian: 'Query',
               pronunciation: '/ˈkwɪri/',
               phonetic: 'KUI-ri',
-              example: 'The query asks what to look for in attention. = La query chiede cosa cercare nell\'attenzione.',
+              example:
+                "The query asks what to look for in attention. = La query chiede cosa cercare nell'attenzione.",
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'In attention: Query, Key, Value sono i tre tensor.',
@@ -3004,7 +3272,8 @@ export default {
               italian: 'Chiave',
               pronunciation: '/kiː/',
               phonetic: 'KI',
-              example: 'Keys are matched against the query. = Le chiavi sono confrontate con la query.',
+              example:
+                'Keys are matched against the query. = Le chiavi sono confrontate con la query.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -3013,7 +3282,8 @@ export default {
               italian: 'Valore',
               pronunciation: '/ˈvæljuː/',
               phonetic: 'VAL-iu',
-              example: 'Values are aggregated based on attention weights. = I valori sono aggregati in base ai pesi di attenzione.',
+              example:
+                'Values are aggregated based on attention weights. = I valori sono aggregati in base ai pesi di attenzione.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -3022,7 +3292,8 @@ export default {
               italian: 'Attenzione soft',
               pronunciation: '/sɒft əˈtenʃən/',
               phonetic: 'SOFT a-TEN-scen',
-              example: 'Soft attention assigns continuous weights. = L\'attenzione soft assegna pesi continui.',
+              example:
+                "Soft attention assigns continuous weights. = L'attenzione soft assegna pesi continui.",
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -3031,7 +3302,8 @@ export default {
               italian: 'Attenzione hard',
               pronunciation: '/hɑːrd əˈtenʃən/',
               phonetic: 'HARD a-TEN-scen',
-              example: 'Hard attention selects discrete tokens. = L\'attenzione hard seleziona token discreti.',
+              example:
+                "Hard attention selects discrete tokens. = L'attenzione hard seleziona token discreti.",
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -3040,7 +3312,8 @@ export default {
               italian: 'Prodotto scalare scalato',
               pronunciation: '/skeɪld dɒt ˈprɒdʌkt/',
               phonetic: 'SKEILD-DOT PRO-dakt',
-              example: 'Scaled dot-product attention powers transformers. = Il prodotto scalare scalato alimenta i transformer.',
+              example:
+                'Scaled dot-product attention powers transformers. = Il prodotto scalare scalato alimenta i transformer.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Formula: softmax(QK^T / sqrt(d)) V.',
@@ -3050,7 +3323,8 @@ export default {
               italian: 'Mappa di attenzione',
               pronunciation: '/əˈtenʃən mæp/',
               phonetic: 'a-TEN-scen MAP',
-              example: 'An attention map visualizes attention patterns. = Una mappa di attenzione visualizza i pattern di attenzione.',
+              example:
+                'An attention map visualizes attention patterns. = Una mappa di attenzione visualizza i pattern di attenzione.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Utile per interpretabilità.',
@@ -3076,7 +3350,8 @@ export default {
               italian: 'Transformer (architettura di rete)',
               pronunciation: '/trænsˈfɔːrmər/',
               phonetic: 'trans-FOR-mer',
-              example: 'The Transformer revolutionized NLP in 2017. = Il Transformer ha rivoluzionato l\'NLP nel 2017.',
+              example:
+                "The Transformer revolutionized NLP in 2017. = Il Transformer ha rivoluzionato l'NLP nel 2017.",
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Architettura di "Attention Is All You Need".',
@@ -3086,7 +3361,8 @@ export default {
               italian: 'Auto-attenzione',
               pronunciation: '/self əˈtenʃən/',
               phonetic: 'SELF-a-TEN-scen',
-              example: 'Self-attention relates each token to all others. = L\'auto-attenzione relaziona ogni token a tutti gli altri.',
+              example:
+                "Self-attention relates each token to all others. = L'auto-attenzione relaziona ogni token a tutti gli altri.",
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Cuore del transformer.',
@@ -3096,7 +3372,8 @@ export default {
               italian: 'Attenzione multi-testa',
               pronunciation: '/ˌmʌlti hed əˈtenʃən/',
               phonetic: 'MAL-ti-HED a-TEN-scen',
-              example: 'Multi-head attention captures different relationships. = L\'attenzione multi-testa cattura diverse relazioni.',
+              example:
+                "Multi-head attention captures different relationships. = L'attenzione multi-testa cattura diverse relazioni.",
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'MultiHeadAttention(num_heads=8)',
@@ -3106,7 +3383,8 @@ export default {
               italian: 'Codifica posizionale',
               pronunciation: '/pəˈzɪʃənəl ɪnˈkoʊdɪŋ/',
               phonetic: 'po-SI-scio-nal in-KOU-ding',
-              example: 'Positional encoding gives the model word order info. = La codifica posizionale dà al modello info sull\'ordine delle parole.',
+              example:
+                "Positional encoding gives the model word order info. = La codifica posizionale dà al modello info sull'ordine delle parole.",
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Necessaria perché self-attention è permutation-invariant.',
@@ -3116,7 +3394,8 @@ export default {
               italian: 'Encoder-decoder',
               pronunciation: '/ɪnˈkoʊdər diːˈkoʊdər/',
               phonetic: 'en-KOU-der di-KOU-der',
-              example: 'Encoder-decoder models translate languages. = I modelli encoder-decoder traducono lingue.',
+              example:
+                'Encoder-decoder models translate languages. = I modelli encoder-decoder traducono lingue.',
               context: 'architectures',
               difficulty: 'intermediate',
             },
@@ -3125,7 +3404,8 @@ export default {
               italian: 'Connessione residua',
               pronunciation: '/rɪˈzɪdʒuəl kəˈnekʃən/',
               phonetic: 'ri-ZI-giu-al ko-NEK-scen',
-              example: 'Residual connections help gradient flow. = Le connessioni residue aiutano il flusso del gradiente.',
+              example:
+                'Residual connections help gradient flow. = Le connessioni residue aiutano il flusso del gradiente.',
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'x = x + sublayer(x)',
@@ -3135,7 +3415,8 @@ export default {
               italian: 'Rete feed-forward',
               pronunciation: '/fiːd ˈfɔːrwərd ˈnetwɜːrk/',
               phonetic: 'FID-FOR-uerd NET-uerk',
-              example: 'Each transformer block has a feed-forward network. = Ogni blocco transformer ha una rete feed-forward.',
+              example:
+                'Each transformer block has a feed-forward network. = Ogni blocco transformer ha una rete feed-forward.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Abbreviata FFN. Tipicamente con espansione 4x.',
@@ -3145,7 +3426,8 @@ export default {
               italian: 'Maschera causale',
               pronunciation: '/ˈkɔːzəl mæsk/',
               phonetic: 'KO-zal MASK',
-              example: 'A causal mask prevents looking at future tokens. = Una maschera causale impedisce di guardare token futuri.',
+              example:
+                'A causal mask prevents looking at future tokens. = Una maschera causale impedisce di guardare token futuri.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Essenziale per modelli generativi come GPT.',
@@ -3155,7 +3437,8 @@ export default {
               italian: 'Attenzione incrociata',
               pronunciation: '/krɒs əˈtenʃən/',
               phonetic: 'KROS a-TEN-scen',
-              example: 'Cross-attention connects encoder and decoder. = L\'attenzione incrociata collega encoder e decoder.',
+              example:
+                "Cross-attention connects encoder and decoder. = L'attenzione incrociata collega encoder e decoder.",
               context: 'architectures',
               difficulty: 'intermediate',
             },
@@ -3164,7 +3447,8 @@ export default {
               italian: 'Blocco transformer',
               pronunciation: '/trænsˈfɔːrmər blɒk/',
               phonetic: 'trans-FOR-mer BLOK',
-              example: 'A transformer block has attention plus FFN. = Un blocco transformer ha attenzione più FFN.',
+              example:
+                'A transformer block has attention plus FFN. = Un blocco transformer ha attenzione più FFN.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Si impila per fare modelli più profondi.',
@@ -3181,7 +3465,8 @@ export default {
               italian: 'BERT',
               pronunciation: '/bɜːrt/',
               phonetic: 'BERT',
-              example: 'BERT understands text bidirectionally. = BERT comprende il testo bidirezionalmente.',
+              example:
+                'BERT understands text bidirectionally. = BERT comprende il testo bidirezionalmente.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Bidirectional Encoder Representations from Transformers.',
@@ -3191,7 +3476,8 @@ export default {
               italian: 'Token CLS',
               pronunciation: '/siː el es ˈtoʊkən/',
               phonetic: 'SI-EL-ES TOU-ken',
-              example: 'The CLS token represents the entire sequence. = Il token CLS rappresenta l\'intera sequenza.',
+              example:
+                "The CLS token represents the entire sequence. = Il token CLS rappresenta l'intera sequenza.",
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Usato per classificazione in BERT.',
@@ -3201,7 +3487,8 @@ export default {
               italian: 'Token SEP',
               pronunciation: '/sep ˈtoʊkən/',
               phonetic: 'SEP TOU-ken',
-              example: 'The SEP token separates sentences in BERT. = Il token SEP separa frasi in BERT.',
+              example:
+                'The SEP token separates sentences in BERT. = Il token SEP separa frasi in BERT.',
               context: 'architectures',
               difficulty: 'intermediate',
             },
@@ -3210,7 +3497,8 @@ export default {
               italian: 'Modellazione linguistica mascherata',
               pronunciation: '/mæskt ˈlæŋɡwɪdʒ ˈmɒdəlɪŋ/',
               phonetic: 'MASKD LAN-guigi MO-de-ling',
-              example: 'BERT trains via masked language modeling. = BERT si addestra tramite modellazione linguistica mascherata.',
+              example:
+                'BERT trains via masked language modeling. = BERT si addestra tramite modellazione linguistica mascherata.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Abbreviato MLM.',
@@ -3220,7 +3508,8 @@ export default {
               italian: 'Predizione frase successiva',
               pronunciation: '/nekst ˈsentəns prɪˈdɪkʃən/',
               phonetic: 'NEKST SEN-tens pri-DIK-scen',
-              example: 'Next sentence prediction was used in original BERT. = La predizione frase successiva era usata nel BERT originale.',
+              example:
+                'Next sentence prediction was used in original BERT. = La predizione frase successiva era usata nel BERT originale.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Abbreviata NSP.',
@@ -3230,7 +3519,8 @@ export default {
               italian: 'RoBERTa',
               pronunciation: '/roʊˈbɜːrtə/',
               phonetic: 'ro-BER-ta',
-              example: 'RoBERTa improves BERT with better training. = RoBERTa migliora BERT con un addestramento migliore.',
+              example:
+                'RoBERTa improves BERT with better training. = RoBERTa migliora BERT con un addestramento migliore.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Robustly Optimized BERT.',
@@ -3240,7 +3530,8 @@ export default {
               italian: 'DistilBERT',
               pronunciation: '/ˈdɪstɪl bɜːrt/',
               phonetic: 'DIS-til-BERT',
-              example: 'DistilBERT is a smaller faster BERT. = DistilBERT è un BERT più piccolo e veloce.',
+              example:
+                'DistilBERT is a smaller faster BERT. = DistilBERT è un BERT più piccolo e veloce.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Ottenuto via distillazione di conoscenza.',
@@ -3250,7 +3541,8 @@ export default {
               italian: 'ALBERT',
               pronunciation: '/ˈælbərt/',
               phonetic: 'AL-bert',
-              example: 'ALBERT shares parameters across layers. = ALBERT condivide parametri tra strati.',
+              example:
+                'ALBERT shares parameters across layers. = ALBERT condivide parametri tra strati.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'A Lite BERT.',
@@ -3270,7 +3562,8 @@ export default {
               italian: 'Modello pre-addestrato',
               pronunciation: '/priː treɪnd ˈmɒdəl/',
               phonetic: 'PRI-TREIND MO-del',
-              example: 'A pre-trained model saves training time. = Un modello pre-addestrato risparmia tempo di addestramento.',
+              example:
+                'A pre-trained model saves training time. = Un modello pre-addestrato risparmia tempo di addestramento.',
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'AutoModel.from_pretrained("bert-base")',
@@ -3287,7 +3580,8 @@ export default {
               italian: 'GPT',
               pronunciation: '/dʒiː piː tiː/',
               phonetic: 'GI-PI-TI',
-              example: 'GPT generates text by predicting next tokens. = GPT genera testo predicendo i token successivi.',
+              example:
+                'GPT generates text by predicting next tokens. = GPT genera testo predicendo i token successivi.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Generative Pre-trained Transformer.',
@@ -3297,7 +3591,8 @@ export default {
               italian: 'Autoregressivo',
               pronunciation: '/ˌɔːtoʊrɪˈɡresɪv/',
               phonetic: 'au-tou-ri-GRES-siv',
-              example: 'Autoregressive models predict one token at a time. = I modelli autoregressivi predicono un token alla volta.',
+              example:
+                'Autoregressive models predict one token at a time. = I modelli autoregressivi predicono un token alla volta.',
               context: 'architectures',
               difficulty: 'intermediate',
             },
@@ -3306,7 +3601,7 @@ export default {
               italian: 'Solo decoder',
               pronunciation: '/diːˈkoʊdər ˈoʊnli/',
               phonetic: 'di-KOU-der OUN-li',
-              example: 'GPT is a decoder-only architecture. = GPT è un\'architettura solo decoder.',
+              example: "GPT is a decoder-only architecture. = GPT è un'architettura solo decoder.",
               context: 'architectures',
               difficulty: 'intermediate',
             },
@@ -3315,7 +3610,8 @@ export default {
               italian: 'Grande modello linguistico',
               pronunciation: '/lɑːrdʒ ˈlæŋɡwɪdʒ ˈmɒdəl/',
               phonetic: 'LARGI LAN-guigi MO-del',
-              example: 'A large language model has billions of parameters. = Un grande modello linguistico ha miliardi di parametri.',
+              example:
+                'A large language model has billions of parameters. = Un grande modello linguistico ha miliardi di parametri.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Abbreviato LLM. Spesso lasciato in inglese.',
@@ -3325,7 +3621,8 @@ export default {
               italian: 'Finestra di contesto',
               pronunciation: '/ˈkɒntekst ˈwɪndoʊ/',
               phonetic: 'KON-tekst UIN-dou',
-              example: 'A larger context window allows longer documents. = Una finestra di contesto più grande permette documenti più lunghi.',
+              example:
+                'A larger context window allows longer documents. = Una finestra di contesto più grande permette documenti più lunghi.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Detta anche context length. Misurata in token.',
@@ -3335,7 +3632,8 @@ export default {
               italian: 'Generazione',
               pronunciation: '/ˌdʒenəˈreɪʃən/',
               phonetic: 'gen-ne-REI-scen',
-              example: 'Text generation uses sampling strategies. = La generazione di testo usa strategie di campionamento.',
+              example:
+                'Text generation uses sampling strategies. = La generazione di testo usa strategie di campionamento.',
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'model.generate(input_ids, max_length=100)',
@@ -3345,7 +3643,8 @@ export default {
               italian: 'Campionamento top-K',
               pronunciation: '/tɒp keɪ ˈsæmplɪŋ/',
               phonetic: 'TOP-KEI SAM-pling',
-              example: 'Top-K sampling picks from the K most likely tokens. = Il campionamento top-K sceglie tra i K token più probabili.',
+              example:
+                'Top-K sampling picks from the K most likely tokens. = Il campionamento top-K sceglie tra i K token più probabili.',
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'model.generate(top_k=50)',
@@ -3355,7 +3654,8 @@ export default {
               italian: 'Campionamento top-P',
               pronunciation: '/tɒp piː ˈsæmplɪŋ/',
               phonetic: 'TOP-PI SAM-pling',
-              example: 'Top-P sampling uses cumulative probability. = Il campionamento top-P usa probabilità cumulativa.',
+              example:
+                'Top-P sampling uses cumulative probability. = Il campionamento top-P usa probabilità cumulativa.',
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'model.generate(top_p=0.9)',
@@ -3366,7 +3666,8 @@ export default {
               italian: 'Apprendimento nel contesto',
               pronunciation: '/ɪn ˈkɒntekst ˈlɜːrnɪŋ/',
               phonetic: 'IN-KON-tekst LER-ning',
-              example: 'In-context learning needs no parameter updates. = L\'apprendimento nel contesto non richiede aggiornamenti dei parametri.',
+              example:
+                "In-context learning needs no parameter updates. = L'apprendimento nel contesto non richiede aggiornamenti dei parametri.",
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Capacità emergente degli LLM grandi.',
@@ -3376,7 +3677,8 @@ export default {
               italian: 'Prompt',
               pronunciation: '/prɒmpt/',
               phonetic: 'PROMPT',
-              example: 'A good prompt is critical for LLM performance. = Un buon prompt è cruciale per le prestazioni di un LLM.',
+              example:
+                'A good prompt is critical for LLM performance. = Un buon prompt è cruciale per le prestazioni di un LLM.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Termine sempre lasciato in inglese.',
@@ -3393,7 +3695,8 @@ export default {
               italian: 'Fine-tuning',
               pronunciation: '/faɪn ˈtjuːnɪŋ/',
               phonetic: 'FAIN-TIU-ning',
-              example: 'Fine-tuning adapts a model to a specific task. = Il fine-tuning adatta un modello a un compito specifico.',
+              example:
+                'Fine-tuning adapts a model to a specific task. = Il fine-tuning adatta un modello a un compito specifico.',
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'trainer.train()',
@@ -3404,7 +3707,8 @@ export default {
               italian: 'Apprendimento per trasferimento',
               pronunciation: '/ˈtrænsfər ˈlɜːrnɪŋ/',
               phonetic: 'TRANS-fer LER-ning',
-              example: 'Transfer learning reuses knowledge from one task to another. = L\'apprendimento per trasferimento riusa conoscenza da un compito a un altro.',
+              example:
+                "Transfer learning reuses knowledge from one task to another. = L'apprendimento per trasferimento riusa conoscenza da un compito a un altro.",
               context: 'architectures',
               difficulty: 'intermediate',
             },
@@ -3413,7 +3717,8 @@ export default {
               italian: 'LoRA',
               pronunciation: '/ˈlɔːrə/',
               phonetic: 'LO-ra',
-              example: 'LoRA fine-tunes only small adapter matrices. = LoRA fa fine-tuning solo di piccole matrici adattatore.',
+              example:
+                'LoRA fine-tunes only small adapter matrices. = LoRA fa fine-tuning solo di piccole matrici adattatore.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Low-Rank Adaptation.',
@@ -3423,7 +3728,8 @@ export default {
               italian: 'PEFT',
               pronunciation: '/peft/',
               phonetic: 'PEFT',
-              example: 'PEFT trains only a fraction of parameters. = PEFT addestra solo una frazione dei parametri.',
+              example:
+                'PEFT trains only a fraction of parameters. = PEFT addestra solo una frazione dei parametri.',
               context: 'architectures',
               difficulty: 'intermediate',
               tool: 'peft',
@@ -3434,7 +3740,8 @@ export default {
               italian: 'Adattatore',
               pronunciation: '/əˈdæptər/',
               phonetic: 'a-DAP-ter',
-              example: 'Adapters add small trainable modules to a frozen model. = Gli adattatori aggiungono piccoli moduli addestrabili a un modello congelato.',
+              example:
+                'Adapters add small trainable modules to a frozen model. = Gli adattatori aggiungono piccoli moduli addestrabili a un modello congelato.',
               context: 'architectures',
               difficulty: 'intermediate',
             },
@@ -3443,7 +3750,8 @@ export default {
               italian: 'Strato congelato',
               pronunciation: '/ˈfroʊzən ˈleɪər/',
               phonetic: 'FROU-zen LEI-er',
-              example: 'Frozen layers are not updated during training. = Gli strati congelati non vengono aggiornati durante l\'addestramento.',
+              example:
+                "Frozen layers are not updated during training. = Gli strati congelati non vengono aggiornati durante l'addestramento.",
               context: 'architectures',
               difficulty: 'intermediate',
               code: 'layer.trainable = False',
@@ -3453,7 +3761,8 @@ export default {
               italian: 'Tuning per istruzioni',
               pronunciation: '/ɪnˈstrʌkʃən ˈtjuːnɪŋ/',
               phonetic: 'in-STRAK-scen TIU-ning',
-              example: 'Instruction tuning teaches models to follow commands. = Il tuning per istruzioni insegna ai modelli a seguire comandi.',
+              example:
+                'Instruction tuning teaches models to follow commands. = Il tuning per istruzioni insegna ai modelli a seguire comandi.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Esempio: trasformare GPT base in ChatGPT.',
@@ -3463,7 +3772,8 @@ export default {
               italian: 'RLHF',
               pronunciation: '/ɑːr el eɪtʃ ef/',
               phonetic: 'AR-EL-EICI-EF',
-              example: 'RLHF aligns models with human preferences. = RLHF allinea i modelli con preferenze umane.',
+              example:
+                'RLHF aligns models with human preferences. = RLHF allinea i modelli con preferenze umane.',
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Reinforcement Learning from Human Feedback.',
@@ -3473,7 +3783,8 @@ export default {
               italian: 'DPO',
               pronunciation: '/diː piː oʊ/',
               phonetic: 'DI-PI-O',
-              example: 'DPO is a simpler alternative to RLHF. = DPO è un\'alternativa più semplice a RLHF.',
+              example:
+                "DPO is a simpler alternative to RLHF. = DPO è un'alternativa più semplice a RLHF.",
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Direct Preference Optimization.',
@@ -3483,7 +3794,8 @@ export default {
               italian: 'Oblio catastrofico',
               pronunciation: '/ˌkætəˈstrɒfɪk fərˈɡetɪŋ/',
               phonetic: 'ka-ta-STRO-fik for-GHET-ting',
-              example: 'Catastrophic forgetting wipes out prior knowledge. = L\'oblio catastrofico cancella la conoscenza precedente.',
+              example:
+                "Catastrophic forgetting wipes out prior knowledge. = L'oblio catastrofico cancella la conoscenza precedente.",
               context: 'architectures',
               difficulty: 'intermediate',
               note: 'Rischio durante fine-tuning aggressivo.',
@@ -3509,7 +3821,8 @@ export default {
               italian: 'Classificazione di immagini',
               pronunciation: '/ˈɪmɪdʒ ˌklæsɪfɪˈkeɪʃən/',
               phonetic: 'I-migi kla-si-fi-KEI-scen',
-              example: 'Image classification labels the entire image. = La classificazione di immagini etichetta l\'intera immagine.',
+              example:
+                "Image classification labels the entire image. = La classificazione di immagini etichetta l'intera immagine.",
               context: 'computer-vision',
               difficulty: 'intermediate',
               code: 'model.predict(image)',
@@ -3519,7 +3832,8 @@ export default {
               italian: 'ImageNet',
               pronunciation: '/ˈɪmɪdʒ net/',
               phonetic: 'I-migi-NET',
-              example: 'ImageNet contains millions of labeled images. = ImageNet contiene milioni di immagini etichettate.',
+              example:
+                'ImageNet contains millions of labeled images. = ImageNet contiene milioni di immagini etichettate.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Dataset di riferimento con 1000 classi.',
@@ -3529,7 +3843,8 @@ export default {
               italian: 'Accuratezza top-1',
               pronunciation: '/tɒp wʌn ˈækjərəsi/',
               phonetic: 'TOP-UAN ak-KIU-ra-si',
-              example: 'Top-1 accuracy considers only the top prediction. = L\'accuratezza top-1 considera solo la predizione principale.',
+              example:
+                "Top-1 accuracy considers only the top prediction. = L'accuratezza top-1 considera solo la predizione principale.",
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3538,7 +3853,8 @@ export default {
               italian: 'Accuratezza top-5',
               pronunciation: '/tɒp faɪv ˈækjərəsi/',
               phonetic: 'TOP-FAIV ak-KIU-ra-si',
-              example: 'Top-5 accuracy is true if the label is in the top 5. = L\'accuratezza top-5 è vera se l\'etichetta è nelle prime 5.',
+              example:
+                "Top-5 accuracy is true if the label is in the top 5. = L'accuratezza top-5 è vera se l'etichetta è nelle prime 5.",
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Standard storico per ImageNet.',
@@ -3548,7 +3864,8 @@ export default {
               italian: 'Pixel',
               pronunciation: '/ˈpɪksəl/',
               phonetic: 'PIK-sel',
-              example: 'A pixel is the smallest unit of an image. = Un pixel è l\'unità più piccola di un\'immagine.',
+              example:
+                "A pixel is the smallest unit of an image. = Un pixel è l'unità più piccola di un'immagine.",
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3557,7 +3874,8 @@ export default {
               italian: 'RGB',
               pronunciation: '/ɑːr dʒiː biː/',
               phonetic: 'AR-GI-BI',
-              example: 'RGB images have three color channels. = Le immagini RGB hanno tre canali di colore.',
+              example:
+                'RGB images have three color channels. = Le immagini RGB hanno tre canali di colore.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Red Green Blue.',
@@ -3567,7 +3885,8 @@ export default {
               italian: 'Scala di grigi',
               pronunciation: '/ˈɡreɪskeɪl/',
               phonetic: 'GREI-skeil',
-              example: 'Grayscale images have one channel. = Le immagini in scala di grigi hanno un canale.',
+              example:
+                'Grayscale images have one channel. = Le immagini in scala di grigi hanno un canale.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3576,7 +3895,8 @@ export default {
               italian: 'Risoluzione',
               pronunciation: '/ˌrezəˈluːʃən/',
               phonetic: 're-zo-LU-scen',
-              example: 'Higher resolution means more pixels. = Maggiore risoluzione significa più pixel.',
+              example:
+                'Higher resolution means more pixels. = Maggiore risoluzione significa più pixel.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3585,7 +3905,8 @@ export default {
               italian: 'Tensore immagine',
               pronunciation: '/ˈɪmɪdʒ ˈtensər/',
               phonetic: 'I-migi TEN-ser',
-              example: 'An image tensor has shape height by width by channels. = Un tensore immagine ha forma altezza per larghezza per canali.',
+              example:
+                'An image tensor has shape height by width by channels. = Un tensore immagine ha forma altezza per larghezza per canali.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               code: 'image.shape  # (224, 224, 3)',
@@ -3595,7 +3916,8 @@ export default {
               italian: 'Canale',
               pronunciation: '/ˈtʃænəl/',
               phonetic: 'CIA-nel',
-              example: 'Each channel encodes color information. = Ogni canale codifica informazione di colore.',
+              example:
+                'Each channel encodes color information. = Ogni canale codifica informazione di colore.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3611,7 +3933,8 @@ export default {
               italian: 'Rilevamento oggetti',
               pronunciation: '/ˈɒbdʒekt dɪˈtekʃən/',
               phonetic: 'OB-gekt di-TEK-scen',
-              example: 'Object detection finds and labels objects in images. = Il rilevamento oggetti trova ed etichetta oggetti nelle immagini.',
+              example:
+                'Object detection finds and labels objects in images. = Il rilevamento oggetti trova ed etichetta oggetti nelle immagini.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3620,7 +3943,8 @@ export default {
               italian: 'Riquadro di delimitazione',
               pronunciation: '/ˈbaʊndɪŋ bɒks/',
               phonetic: 'BAUN-ding BOKS',
-              example: 'A bounding box marks the object location. = Un riquadro di delimitazione segna la posizione dell\'oggetto.',
+              example:
+                "A bounding box marks the object location. = Un riquadro di delimitazione segna la posizione dell'oggetto.",
               context: 'computer-vision',
               difficulty: 'intermediate',
               code: 'bbox = [x_min, y_min, x_max, y_max]',
@@ -3641,7 +3965,8 @@ export default {
               italian: 'Faster R-CNN',
               pronunciation: '/ˈfɑːstər ɑːr siː en en/',
               phonetic: 'FAS-ter AR-SI-EN-EN',
-              example: 'Faster R-CNN is a two-stage detector. = Faster R-CNN è un detector a due stadi.',
+              example:
+                'Faster R-CNN is a two-stage detector. = Faster R-CNN è un detector a due stadi.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3650,7 +3975,8 @@ export default {
               italian: 'Box di ancoraggio',
               pronunciation: '/ˈæŋkər bɒks/',
               phonetic: 'AN-ker BOKS',
-              example: 'Anchor boxes are predefined shapes for object proposals. = I box di ancoraggio sono forme predefinite per proposte di oggetti.',
+              example:
+                'Anchor boxes are predefined shapes for object proposals. = I box di ancoraggio sono forme predefinite per proposte di oggetti.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3659,7 +3985,8 @@ export default {
               italian: 'IoU',
               pronunciation: '/aɪ oʊ juː/',
               phonetic: 'AI-O-IU',
-              example: 'IoU measures bounding box overlap. = IoU misura la sovrapposizione di riquadri.',
+              example:
+                'IoU measures bounding box overlap. = IoU misura la sovrapposizione di riquadri.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Intersection over Union.',
@@ -3679,7 +4006,8 @@ export default {
               italian: 'Punteggio di confidenza',
               pronunciation: '/ˈkɒnfɪdəns skɔːr/',
               phonetic: 'KON-fi-dens SKOR',
-              example: 'A confidence score expresses detection certainty. = Un punteggio di confidenza esprime la certezza del rilevamento.',
+              example:
+                'A confidence score expresses detection certainty. = Un punteggio di confidenza esprime la certezza del rilevamento.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3688,7 +4016,8 @@ export default {
               italian: 'Precisione media media',
               pronunciation: '/miːn ˈævərɪdʒ prɪˈsɪʒən/',
               phonetic: 'MIIN AV-ri-gi pri-SI-gen',
-              example: 'mAP is the standard detection metric. = mAP è la metrica standard per il rilevamento.',
+              example:
+                'mAP is the standard detection metric. = mAP è la metrica standard per il rilevamento.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Abbreviata mAP.',
@@ -3698,7 +4027,8 @@ export default {
               italian: 'Proposta di regione',
               pronunciation: '/ˈriːdʒən prəˈpoʊzəl/',
               phonetic: 'RI-gen pro-POU-zal',
-              example: 'Region proposals suggest candidate object locations. = Le proposte di regione suggeriscono posizioni candidate di oggetti.',
+              example:
+                'Region proposals suggest candidate object locations. = Le proposte di regione suggeriscono posizioni candidate di oggetti.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3714,7 +4044,8 @@ export default {
               italian: 'Segmentazione',
               pronunciation: '/ˌseɡmenˈteɪʃən/',
               phonetic: 'seg-men-TEI-scen',
-              example: 'Segmentation labels each pixel of an image. = La segmentazione etichetta ogni pixel di un\'immagine.',
+              example:
+                "Segmentation labels each pixel of an image. = La segmentazione etichetta ogni pixel di un'immagine.",
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3723,7 +4054,8 @@ export default {
               italian: 'Segmentazione semantica',
               pronunciation: '/sɪˈmæntɪk ˌseɡmenˈteɪʃən/',
               phonetic: 'si-MAN-tik seg-men-TEI-scen',
-              example: 'Semantic segmentation assigns a class to each pixel. = La segmentazione semantica assegna una classe a ogni pixel.',
+              example:
+                'Semantic segmentation assigns a class to each pixel. = La segmentazione semantica assegna una classe a ogni pixel.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3732,7 +4064,8 @@ export default {
               italian: 'Segmentazione di istanze',
               pronunciation: '/ˈɪnstəns ˌseɡmenˈteɪʃən/',
               phonetic: 'IN-stans seg-men-TEI-scen',
-              example: 'Instance segmentation distinguishes individual objects. = La segmentazione di istanze distingue oggetti individuali.',
+              example:
+                'Instance segmentation distinguishes individual objects. = La segmentazione di istanze distingue oggetti individuali.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Esempio: due cani diversi separati come istanze diverse.',
@@ -3742,7 +4075,8 @@ export default {
               italian: 'Segmentazione panottica',
               pronunciation: '/pænˈɒptɪk ˌseɡmenˈteɪʃən/',
               phonetic: 'pan-OP-tik seg-men-TEI-scen',
-              example: 'Panoptic segmentation combines semantic and instance. = La segmentazione panottica combina semantica e di istanze.',
+              example:
+                'Panoptic segmentation combines semantic and instance. = La segmentazione panottica combina semantica e di istanze.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3751,7 +4085,8 @@ export default {
               italian: 'U-Net',
               pronunciation: '/juː net/',
               phonetic: 'IU-NET',
-              example: 'U-Net is popular for medical image segmentation. = U-Net è popolare per la segmentazione di immagini mediche.',
+              example:
+                'U-Net is popular for medical image segmentation. = U-Net è popolare per la segmentazione di immagini mediche.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Architettura a forma di U.',
@@ -3761,7 +4096,8 @@ export default {
               italian: 'Mask R-CNN',
               pronunciation: '/mæsk ɑːr siː en en/',
               phonetic: 'MASK AR-SI-EN-EN',
-              example: 'Mask R-CNN extends Faster R-CNN with segmentation. = Mask R-CNN estende Faster R-CNN con segmentazione.',
+              example:
+                'Mask R-CNN extends Faster R-CNN with segmentation. = Mask R-CNN estende Faster R-CNN con segmentazione.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3770,7 +4106,8 @@ export default {
               italian: 'Maschera',
               pronunciation: '/mæsk/',
               phonetic: 'MASK',
-              example: 'A binary mask marks pixels belonging to an object. = Una maschera binaria segna i pixel di un oggetto.',
+              example:
+                'A binary mask marks pixels belonging to an object. = Una maschera binaria segna i pixel di un oggetto.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3779,7 +4116,8 @@ export default {
               italian: 'Architettura encoder-decoder',
               pronunciation: '/ɪnˈkoʊdər diːˈkoʊdər ˈɑːrkɪtektʃər/',
               phonetic: 'en-KOU-der di-KOU-der AR-ki-tek-cer',
-              example: 'Segmentation often uses encoder-decoder architectures. = La segmentazione usa spesso architetture encoder-decoder.',
+              example:
+                'Segmentation often uses encoder-decoder architectures. = La segmentazione usa spesso architetture encoder-decoder.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3788,7 +4126,8 @@ export default {
               italian: 'Coefficiente di Dice',
               pronunciation: '/daɪs ˌkoʊɪˈfɪʃənt/',
               phonetic: 'DAIS ko-i-FI-scent',
-              example: 'The Dice coefficient measures segmentation overlap. = Il coefficiente di Dice misura la sovrapposizione di segmentazione.',
+              example:
+                'The Dice coefficient measures segmentation overlap. = Il coefficiente di Dice misura la sovrapposizione di segmentazione.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Simile a F1, va da 0 a 1.',
@@ -3798,7 +4137,8 @@ export default {
               italian: 'SAM',
               pronunciation: '/sæm/',
               phonetic: 'SAM',
-              example: 'SAM segments anything with a single click. = SAM segmenta qualsiasi cosa con un singolo click.',
+              example:
+                'SAM segments anything with a single click. = SAM segmenta qualsiasi cosa con un singolo click.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               tool: 'segment-anything',
@@ -3816,7 +4156,8 @@ export default {
               italian: 'Riconoscimento facciale',
               pronunciation: '/feɪs ˌrekəɡˈnɪʃən/',
               phonetic: 'FEIS re-kog-NI-scen',
-              example: 'Face recognition identifies who is in a photo. = Il riconoscimento facciale identifica chi è in una foto.',
+              example:
+                'Face recognition identifies who is in a photo. = Il riconoscimento facciale identifica chi è in una foto.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3825,7 +4166,8 @@ export default {
               italian: 'Stima della posa',
               pronunciation: '/poʊz ˌestɪˈmeɪʃən/',
               phonetic: 'POUZ es-ti-MEI-scen',
-              example: 'Pose estimation finds keypoints on the body. = La stima della posa trova punti chiave sul corpo.',
+              example:
+                'Pose estimation finds keypoints on the body. = La stima della posa trova punti chiave sul corpo.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               tool: 'OpenPose, MediaPipe',
@@ -3835,7 +4177,8 @@ export default {
               italian: 'Flusso ottico',
               pronunciation: '/ˈɒptɪkəl floʊ/',
               phonetic: 'OP-ti-kal FLOU',
-              example: 'Optical flow tracks pixel motion between frames. = Il flusso ottico traccia il movimento dei pixel tra frame.',
+              example:
+                'Optical flow tracks pixel motion between frames. = Il flusso ottico traccia il movimento dei pixel tra frame.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3844,7 +4187,8 @@ export default {
               italian: 'OCR',
               pronunciation: '/oʊ siː ɑːr/',
               phonetic: 'O-SI-AR',
-              example: 'OCR converts images of text into actual text. = OCR converte immagini di testo in testo reale.',
+              example:
+                'OCR converts images of text into actual text. = OCR converte immagini di testo in testo reale.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               tool: 'Tesseract, EasyOCR',
@@ -3855,7 +4199,8 @@ export default {
               italian: 'Generazione di didascalie',
               pronunciation: '/ˈɪmɪdʒ ˈkæpʃənɪŋ/',
               phonetic: 'I-migi KAP-scio-ning',
-              example: 'Image captioning describes a photo in words. = La generazione di didascalie descrive una foto a parole.',
+              example:
+                'Image captioning describes a photo in words. = La generazione di didascalie descrive una foto a parole.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3864,7 +4209,8 @@ export default {
               italian: 'Risposta a domande visive',
               pronunciation: '/ˈvɪʒuəl ˈkwestʃən ˈænsərɪŋ/',
               phonetic: 'VI-giu-al KUES-cen AN-se-ring',
-              example: 'VQA answers questions about images. = VQA risponde a domande sulle immagini.',
+              example:
+                'VQA answers questions about images. = VQA risponde a domande sulle immagini.',
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Abbreviato VQA. Compito multimodale.',
@@ -3874,7 +4220,8 @@ export default {
               italian: 'Stima della profondità',
               pronunciation: '/depθ ˌestɪˈmeɪʃən/',
               phonetic: 'DEPT es-ti-MEI-scen',
-              example: 'Depth estimation predicts distance for each pixel. = La stima della profondità predice la distanza per ogni pixel.',
+              example:
+                'Depth estimation predicts distance for each pixel. = La stima della profondità predice la distanza per ogni pixel.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3883,7 +4230,8 @@ export default {
               italian: 'Super-risoluzione',
               pronunciation: '/ˈsuːpər ˌrezəˈluːʃən/',
               phonetic: 'SU-per re-zo-LU-scen',
-              example: 'Super-resolution upscales low-resolution images. = La super-risoluzione aumenta la risoluzione di immagini a bassa qualità.',
+              example:
+                'Super-resolution upscales low-resolution images. = La super-risoluzione aumenta la risoluzione di immagini a bassa qualità.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3892,7 +4240,8 @@ export default {
               italian: 'Riempimento immagini',
               pronunciation: '/ˈɪmɪdʒ ˈɪnpeɪntɪŋ/',
               phonetic: 'I-migi IN-pein-ting',
-              example: 'Inpainting fills missing parts of an image. = Il riempimento immagini riempie parti mancanti di un\'immagine.',
+              example:
+                "Inpainting fills missing parts of an image. = Il riempimento immagini riempie parti mancanti di un'immagine.",
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -3901,7 +4250,8 @@ export default {
               italian: 'Trasferimento di stile',
               pronunciation: '/staɪl ˈtrænsfər/',
               phonetic: 'STAIL TRANS-fer',
-              example: 'Style transfer applies one image style to another. = Il trasferimento di stile applica lo stile di un\'immagine a un\'altra.',
+              example:
+                "Style transfer applies one image style to another. = Il trasferimento di stile applica lo stile di un'immagine a un'altra.",
               context: 'computer-vision',
               difficulty: 'intermediate',
               note: 'Esempio: foto resa come dipinto di Van Gogh.',
@@ -3915,7 +4265,7 @@ export default {
     // ════════════════════════════════════════════════
     9: {
       name: 'Prompt Engineering / Ingegneria dei Prompt',
-      description: 'L\'arte di scrivere prompt efficaci per LLM',
+      description: "L'arte di scrivere prompt efficaci per LLM",
       lessons: [
         {
           id: 'ai_prompt_1',
@@ -3927,7 +4277,8 @@ export default {
               italian: 'Ingegneria dei prompt',
               pronunciation: '/prɒmpt ˌendʒɪˈnɪrɪŋ/',
               phonetic: 'PROMPT en-gi-NI-ring',
-              example: 'Prompt engineering designs effective inputs for LLMs. = L\'ingegneria dei prompt progetta input efficaci per gli LLM.',
+              example:
+                "Prompt engineering designs effective inputs for LLMs. = L'ingegneria dei prompt progetta input efficaci per gli LLM.",
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -3936,7 +4287,8 @@ export default {
               italian: 'Prompt di sistema',
               pronunciation: '/ˈsɪstəm prɒmpt/',
               phonetic: 'SIS-tem PROMPT',
-              example: 'A system prompt sets the assistant\'s behavior. = Un prompt di sistema imposta il comportamento dell\'assistente.',
+              example:
+                "A system prompt sets the assistant's behavior. = Un prompt di sistema imposta il comportamento dell'assistente.",
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'messages = [{"role": "system", "content": "..."}]',
@@ -3946,7 +4298,8 @@ export default {
               italian: 'Prompt utente',
               pronunciation: '/ˈjuːzər prɒmpt/',
               phonetic: 'IU-zer PROMPT',
-              example: 'The user prompt contains the actual question. = Il prompt utente contiene la domanda effettiva.',
+              example:
+                'The user prompt contains the actual question. = Il prompt utente contiene la domanda effettiva.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -3955,7 +4308,8 @@ export default {
               italian: 'Istruzione',
               pronunciation: '/ɪnˈstrʌkʃən/',
               phonetic: 'in-STRAK-scen',
-              example: 'Clear instructions improve LLM output. = Istruzioni chiare migliorano l\'output dell\'LLM.',
+              example:
+                "Clear instructions improve LLM output. = Istruzioni chiare migliorano l'output dell'LLM.",
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -3964,7 +4318,8 @@ export default {
               italian: 'Contesto',
               pronunciation: '/ˈkɒntekst/',
               phonetic: 'KON-tekst',
-              example: 'Provide context to ground the model\'s answer. = Fornisci contesto per ancorare la risposta del modello.',
+              example:
+                "Provide context to ground the model's answer. = Fornisci contesto per ancorare la risposta del modello.",
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -3973,7 +4328,8 @@ export default {
               italian: 'Prompting di ruolo',
               pronunciation: '/roʊl ˈprɒmptɪŋ/',
               phonetic: 'ROUL PROMP-ting',
-              example: 'Role prompting tells the model to act as an expert. = Il prompting di ruolo dice al modello di agire come esperto.',
+              example:
+                'Role prompting tells the model to act as an expert. = Il prompting di ruolo dice al modello di agire come esperto.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Esempio: "You are a senior Python developer".',
@@ -3983,7 +4339,8 @@ export default {
               italian: 'Delimitatore',
               pronunciation: '/dɪˈlɪmɪtər/',
               phonetic: 'di-LI-mi-ter',
-              example: 'Use delimiters like triple backticks to separate input. = Usa delimitatori come triple backtick per separare l\'input.',
+              example:
+                "Use delimiters like triple backticks to separate input. = Usa delimitatori come triple backtick per separare l'input.",
               context: 'nlp',
               difficulty: 'intermediate',
               code: '```text```',
@@ -3993,7 +4350,8 @@ export default {
               italian: 'Formato di output',
               pronunciation: '/ˈaʊtpʊt ˈfɔːrmæt/',
               phonetic: 'AUT-put FOR-mat',
-              example: 'Specify the output format like JSON or table. = Specifica il formato di output come JSON o tabella.',
+              example:
+                'Specify the output format like JSON or table. = Specifica il formato di output come JSON o tabella.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4002,7 +4360,8 @@ export default {
               italian: 'Vincolo',
               pronunciation: '/kənˈstreɪnt/',
               phonetic: 'kon-STREINT',
-              example: 'Add constraints like maximum length. = Aggiungi vincoli come lunghezza massima.',
+              example:
+                'Add constraints like maximum length. = Aggiungi vincoli come lunghezza massima.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4011,7 +4370,8 @@ export default {
               italian: 'Template di prompt',
               pronunciation: '/prɒmpt ˈtempleɪt/',
               phonetic: 'PROMPT TEM-pleit',
-              example: 'A prompt template uses placeholders for variables. = Un template di prompt usa segnaposto per variabili.',
+              example:
+                'A prompt template uses placeholders for variables. = Un template di prompt usa segnaposto per variabili.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'PromptTemplate(template="Answer: {question}")',
@@ -4028,7 +4388,8 @@ export default {
               italian: 'Zero-shot',
               pronunciation: '/ˈzɪroʊ ʃɒt/',
               phonetic: 'ZIR-O-SCIOT',
-              example: 'Zero-shot uses no examples in the prompt. = Zero-shot non usa esempi nel prompt.',
+              example:
+                'Zero-shot uses no examples in the prompt. = Zero-shot non usa esempi nel prompt.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Termine sempre lasciato in inglese.',
@@ -4038,7 +4399,8 @@ export default {
               italian: 'Few-shot',
               pronunciation: '/fjuː ʃɒt/',
               phonetic: 'FIU-SCIOT',
-              example: 'Few-shot includes a handful of examples. = Few-shot include una manciata di esempi.',
+              example:
+                'Few-shot includes a handful of examples. = Few-shot include una manciata di esempi.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Tipicamente da 1 a 5 esempi.',
@@ -4048,7 +4410,8 @@ export default {
               italian: 'One-shot',
               pronunciation: '/wʌn ʃɒt/',
               phonetic: 'UAN-SCIOT',
-              example: 'One-shot provides a single example. = One-shot fornisce un singolo esempio.',
+              example:
+                'One-shot provides a single example. = One-shot fornisce un singolo esempio.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4057,7 +4420,8 @@ export default {
               italian: 'Catena di ragionamento',
               pronunciation: '/tʃeɪn əv θɔːt/',
               phonetic: 'CIEIN-OF-TOT',
-              example: 'Chain-of-thought asks the model to reason step by step. = La catena di ragionamento chiede al modello di ragionare passo passo.',
+              example:
+                'Chain-of-thought asks the model to reason step by step. = La catena di ragionamento chiede al modello di ragionare passo passo.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Abbreviata CoT. Trigger: "Let\'s think step by step".',
@@ -4067,7 +4431,8 @@ export default {
               italian: 'Auto-coerenza',
               pronunciation: '/self kənˈsɪstənsi/',
               phonetic: 'SELF kon-SIS-ten-si',
-              example: 'Self-consistency samples multiple reasoning chains. = L\'auto-coerenza campiona più catene di ragionamento.',
+              example:
+                "Self-consistency samples multiple reasoning chains. = L'auto-coerenza campiona più catene di ragionamento.",
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4076,7 +4441,8 @@ export default {
               italian: 'Albero di pensieri',
               pronunciation: '/triː əv θɔːts/',
               phonetic: 'TRI-of-TOTS',
-              example: 'Tree of thoughts explores multiple reasoning paths. = L\'albero di pensieri esplora più percorsi di ragionamento.',
+              example:
+                "Tree of thoughts explores multiple reasoning paths. = L'albero di pensieri esplora più percorsi di ragionamento.",
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Abbreviato ToT.',
@@ -4086,7 +4452,8 @@ export default {
               italian: 'ReAct',
               pronunciation: '/ˈriːækt/',
               phonetic: 'RI-akt',
-              example: 'ReAct combines reasoning with tool actions. = ReAct combina ragionamento con azioni di strumenti.',
+              example:
+                'ReAct combines reasoning with tool actions. = ReAct combina ragionamento con azioni di strumenti.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Reasoning + Acting.',
@@ -4096,7 +4463,8 @@ export default {
               italian: 'Auto-rifinitura',
               pronunciation: '/self rɪˈfaɪn/',
               phonetic: 'SELF ri-FAIN',
-              example: 'Self-refine iteratively improves the answer. = L\'auto-rifinitura migliora iterativamente la risposta.',
+              example:
+                "Self-refine iteratively improves the answer. = L'auto-rifinitura migliora iterativamente la risposta.",
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4105,7 +4473,8 @@ export default {
               italian: 'Concatenazione di prompt',
               pronunciation: '/prɒmpt ˈtʃeɪnɪŋ/',
               phonetic: 'PROMPT CIEI-ning',
-              example: 'Prompt chaining splits tasks across calls. = La concatenazione di prompt divide compiti tra chiamate.',
+              example:
+                'Prompt chaining splits tasks across calls. = La concatenazione di prompt divide compiti tra chiamate.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4114,7 +4483,8 @@ export default {
               italian: 'Meta-prompt',
               pronunciation: '/ˈmetə prɒmpt/',
               phonetic: 'ME-ta PROMPT',
-              example: 'A meta-prompt asks the model to write a prompt. = Un meta-prompt chiede al modello di scrivere un prompt.',
+              example:
+                'A meta-prompt asks the model to write a prompt. = Un meta-prompt chiede al modello di scrivere un prompt.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4130,7 +4500,8 @@ export default {
               italian: 'RAG',
               pronunciation: '/ræɡ/',
               phonetic: 'RAG',
-              example: 'RAG augments LLMs with external knowledge. = RAG arricchisce gli LLM con conoscenza esterna.',
+              example:
+                'RAG augments LLMs with external knowledge. = RAG arricchisce gli LLM con conoscenza esterna.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Retrieval-Augmented Generation.',
@@ -4140,7 +4511,8 @@ export default {
               italian: 'Database vettoriale',
               pronunciation: '/ˈvektər ˈdeɪtəbeɪs/',
               phonetic: 'VEK-ter DEI-ta-beis',
-              example: 'A vector database stores embeddings for similarity search. = Un database vettoriale memorizza embedding per ricerca di similarità.',
+              example:
+                'A vector database stores embeddings for similarity search. = Un database vettoriale memorizza embedding per ricerca di similarità.',
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'Pinecone, Weaviate, Qdrant, Chroma',
@@ -4150,7 +4522,8 @@ export default {
               italian: 'Ricerca semantica',
               pronunciation: '/sɪˈmæntɪk sɜːrtʃ/',
               phonetic: 'si-MAN-tik SERCI',
-              example: 'Semantic search finds meaning, not just keywords. = La ricerca semantica trova il significato, non solo parole chiave.',
+              example:
+                'Semantic search finds meaning, not just keywords. = La ricerca semantica trova il significato, non solo parole chiave.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4159,7 +4532,8 @@ export default {
               italian: 'Suddivisione in chunk',
               pronunciation: '/ˈtʃʌŋkɪŋ/',
               phonetic: 'CIAN-king',
-              example: 'Chunking splits documents into manageable pieces. = La suddivisione in chunk divide documenti in pezzi gestibili.',
+              example:
+                'Chunking splits documents into manageable pieces. = La suddivisione in chunk divide documenti in pezzi gestibili.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Cruciale per RAG: chunk troppo grandi o piccoli degradano i risultati.',
@@ -4169,7 +4543,8 @@ export default {
               italian: 'Recupero',
               pronunciation: '/rɪˈtriːvəl/',
               phonetic: 'ri-TRI-val',
-              example: 'Retrieval finds the most relevant documents. = Il recupero trova i documenti più rilevanti.',
+              example:
+                'Retrieval finds the most relevant documents. = Il recupero trova i documenti più rilevanti.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4178,7 +4553,8 @@ export default {
               italian: 'Ricerca ibrida',
               pronunciation: '/ˈhaɪbrɪd sɜːrtʃ/',
               phonetic: 'HAI-brid SERCI',
-              example: 'Hybrid search combines keyword and semantic search. = La ricerca ibrida combina ricerca per parole chiave e semantica.',
+              example:
+                'Hybrid search combines keyword and semantic search. = La ricerca ibrida combina ricerca per parole chiave e semantica.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4187,7 +4563,8 @@ export default {
               italian: 'Riordinamento',
               pronunciation: '/riːˈræŋkɪŋ/',
               phonetic: 'ri-RAN-king',
-              example: 'Reranking improves retrieval quality. = Il riordinamento migliora la qualità del recupero.',
+              example:
+                'Reranking improves retrieval quality. = Il riordinamento migliora la qualità del recupero.',
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'cohere-rerank',
@@ -4197,7 +4574,8 @@ export default {
               italian: 'Modello di embedding',
               pronunciation: '/ɪmˈbedɪŋ ˈmɒdəl/',
               phonetic: 'em-BED-ding MO-del',
-              example: 'An embedding model converts text into vectors. = Un modello di embedding converte testo in vettori.',
+              example:
+                'An embedding model converts text into vectors. = Un modello di embedding converte testo in vettori.',
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'text-embedding-3-small',
@@ -4207,7 +4585,8 @@ export default {
               italian: 'Base di conoscenza',
               pronunciation: '/ˈnɒlɪdʒ beɪs/',
               phonetic: 'NO-ligi BEIS',
-              example: 'The knowledge base feeds RAG systems. = La base di conoscenza alimenta i sistemi RAG.',
+              example:
+                'The knowledge base feeds RAG systems. = La base di conoscenza alimenta i sistemi RAG.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4216,7 +4595,8 @@ export default {
               italian: 'Citazione',
               pronunciation: '/saɪˈteɪʃən/',
               phonetic: 'sai-TEI-scen',
-              example: 'RAG outputs include citations to sources. = Gli output RAG includono citazioni alle fonti.',
+              example:
+                'RAG outputs include citations to sources. = Gli output RAG includono citazioni alle fonti.',
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Aumenta affidabilità e tracciabilità delle risposte.',
@@ -4226,14 +4606,15 @@ export default {
         {
           id: 'ai_prompt_4',
           title: 'Generation Control / Controllo della Generazione',
-          description: 'Parametri per controllare l\'output',
+          description: "Parametri per controllare l'output",
           items: [
             {
               english: 'Temperature',
               italian: 'Temperatura',
               pronunciation: '/ˈtemprətʃər/',
               phonetic: 'TEM-pra-cer',
-              example: 'Higher temperature produces more random output. = Temperatura più alta produce output più casuale.',
+              example:
+                'Higher temperature produces more random output. = Temperatura più alta produce output più casuale.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'model.generate(temperature=0.7)',
@@ -4244,7 +4625,8 @@ export default {
               italian: 'Token massimi',
               pronunciation: '/mæks ˈtoʊkənz/',
               phonetic: 'MAKS TOU-kens',
-              example: 'Set max tokens to limit response length. = Imposta token massimi per limitare la lunghezza della risposta.',
+              example:
+                'Set max tokens to limit response length. = Imposta token massimi per limitare la lunghezza della risposta.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'max_tokens=500',
@@ -4254,7 +4636,8 @@ export default {
               italian: 'Sequenza di stop',
               pronunciation: '/stɒp ˈsiːkwəns/',
               phonetic: 'STOP SI-kuens',
-              example: 'A stop sequence ends the generation. = Una sequenza di stop termina la generazione.',
+              example:
+                'A stop sequence ends the generation. = Una sequenza di stop termina la generazione.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'stop=["\\n\\n", "User:"]',
@@ -4264,7 +4647,8 @@ export default {
               italian: 'Penalità di frequenza',
               pronunciation: '/ˈfriːkwənsi ˈpenəlti/',
               phonetic: 'FRI-kuen-si PE-nal-ti',
-              example: 'Frequency penalty reduces token repetition. = La penalità di frequenza riduce la ripetizione di token.',
+              example:
+                'Frequency penalty reduces token repetition. = La penalità di frequenza riduce la ripetizione di token.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'frequency_penalty=0.5',
@@ -4274,7 +4658,8 @@ export default {
               italian: 'Penalità di presenza',
               pronunciation: '/ˈprezəns ˈpenəlti/',
               phonetic: 'PRE-zens PE-nal-ti',
-              example: 'Presence penalty promotes new topics. = La penalità di presenza promuove nuovi argomenti.',
+              example:
+                'Presence penalty promotes new topics. = La penalità di presenza promuove nuovi argomenti.',
               context: 'nlp',
               difficulty: 'intermediate',
             },
@@ -4283,7 +4668,8 @@ export default {
               italian: 'Streaming',
               pronunciation: '/ˈstriːmɪŋ/',
               phonetic: 'STRI-ming',
-              example: 'Streaming sends tokens as they are generated. = Lo streaming invia i token mentre vengono generati.',
+              example:
+                'Streaming sends tokens as they are generated. = Lo streaming invia i token mentre vengono generati.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'response = client.completions.create(stream=True)',
@@ -4293,7 +4679,8 @@ export default {
               italian: 'Allucinazione',
               pronunciation: '/həˌluːsɪˈneɪʃən/',
               phonetic: 'a-lu-si-NEI-scen',
-              example: 'A hallucination is a confidently wrong answer. = Un\'allucinazione è una risposta sicura ma sbagliata.',
+              example:
+                "A hallucination is a confidently wrong answer. = Un'allucinazione è una risposta sicura ma sbagliata.",
               context: 'nlp',
               difficulty: 'intermediate',
               note: 'Problema comune degli LLM. RAG aiuta a mitigarlo.',
@@ -4303,7 +4690,8 @@ export default {
               italian: 'Chiamata di funzione',
               pronunciation: '/ˈfʌŋkʃən ˈkɔːlɪŋ/',
               phonetic: 'FANK-scen KO-ling',
-              example: 'Function calling lets LLMs invoke external tools. = La chiamata di funzione permette agli LLM di invocare strumenti esterni.',
+              example:
+                'Function calling lets LLMs invoke external tools. = La chiamata di funzione permette agli LLM di invocare strumenti esterni.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'tools=[{"type": "function", "function": {...}}]',
@@ -4313,7 +4701,8 @@ export default {
               italian: 'Modalità JSON',
               pronunciation: '/dʒeɪsɒn moʊd/',
               phonetic: 'GEI-son MOUD',
-              example: 'JSON mode forces valid JSON output. = La modalità JSON forza output JSON valido.',
+              example:
+                'JSON mode forces valid JSON output. = La modalità JSON forza output JSON valido.',
               context: 'nlp',
               difficulty: 'intermediate',
               code: 'response_format={"type": "json_object"}',
@@ -4323,7 +4712,8 @@ export default {
               italian: 'Guardrail',
               pronunciation: '/ˈɡɑːrdreɪlz/',
               phonetic: 'GARD-reilz',
-              example: 'Guardrails prevent unsafe LLM outputs. = I guardrail prevengono output non sicuri degli LLM.',
+              example:
+                'Guardrails prevent unsafe LLM outputs. = I guardrail prevengono output non sicuri degli LLM.',
               context: 'nlp',
               difficulty: 'intermediate',
               tool: 'guardrails-ai, NeMo Guardrails',
@@ -4337,19 +4727,20 @@ export default {
     // ════════════════════════════════════════════════
     10: {
       name: 'Addestramento Modelli / Model Training',
-      description: 'Aspetti pratici dell\'addestramento',
+      description: "Aspetti pratici dell'addestramento",
       lessons: [
         {
           id: 'ai_training_1',
           title: 'Hyperparameters / Iperparametri',
-          description: 'Parametri da impostare prima dell\'addestramento',
+          description: "Parametri da impostare prima dell'addestramento",
           items: [
             {
               english: 'Hyperparameter',
               italian: 'Iperparametro',
               pronunciation: '/ˈhaɪpərpəˈræmɪtər/',
               phonetic: 'HAI-per-pa-RA-me-ter',
-              example: 'A hyperparameter is set before training. = Un iperparametro è impostato prima dell\'addestramento.',
+              example:
+                "A hyperparameter is set before training. = Un iperparametro è impostato prima dell'addestramento.",
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Diverso dai parametri appresi (pesi).',
@@ -4359,7 +4750,8 @@ export default {
               italian: 'Tasso di apprendimento',
               pronunciation: '/ˈlɜːrnɪŋ reɪt/',
               phonetic: 'LER-ning REIT',
-              example: 'The learning rate is the most important hyperparameter. = Il tasso di apprendimento è l\'iperparametro più importante.',
+              example:
+                "The learning rate is the most important hyperparameter. = Il tasso di apprendimento è l'iperparametro più importante.",
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'optimizer = Adam(lr=0.001)',
@@ -4370,7 +4762,8 @@ export default {
               italian: 'Dimensione del batch',
               pronunciation: '/bætʃ saɪz/',
               phonetic: 'BACI SAIZ',
-              example: 'A larger batch size needs more memory. = Una dimensione del batch più grande richiede più memoria.',
+              example:
+                'A larger batch size needs more memory. = Una dimensione del batch più grande richiede più memoria.',
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'model.fit(batch_size=64)',
@@ -4380,7 +4773,8 @@ export default {
               italian: 'Epoca',
               pronunciation: '/ˈiːpɒk/',
               phonetic: 'I-pok',
-              example: 'One epoch is one full pass over the dataset. = Un\'epoca è un passaggio completo sul dataset.',
+              example:
+                "One epoch is one full pass over the dataset. = Un'epoca è un passaggio completo sul dataset.",
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'model.fit(epochs=10)',
@@ -4400,7 +4794,8 @@ export default {
               italian: 'Tuning degli iperparametri',
               pronunciation: '/ˈhaɪpərpəˈræmɪtər ˈtjuːnɪŋ/',
               phonetic: 'HAI-per-pa-RA-me-ter TIU-ning',
-              example: 'Hyperparameter tuning finds the best settings. = Il tuning degli iperparametri trova le migliori impostazioni.',
+              example:
+                'Hyperparameter tuning finds the best settings. = Il tuning degli iperparametri trova le migliori impostazioni.',
               context: 'model-training',
               difficulty: 'intermediate',
               tool: 'Optuna, Ray Tune',
@@ -4410,7 +4805,8 @@ export default {
               italian: 'Ricerca a griglia',
               pronunciation: '/ɡrɪd sɜːrtʃ/',
               phonetic: 'GRID-SERCI',
-              example: 'Grid search tries all parameter combinations. = La ricerca a griglia prova tutte le combinazioni di parametri.',
+              example:
+                'Grid search tries all parameter combinations. = La ricerca a griglia prova tutte le combinazioni di parametri.',
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'GridSearchCV(model, param_grid)',
@@ -4420,7 +4816,8 @@ export default {
               italian: 'Ricerca casuale',
               pronunciation: '/ˈrændəm sɜːrtʃ/',
               phonetic: 'RAN-dom SERCI',
-              example: 'Random search often beats grid search. = La ricerca casuale spesso batte la ricerca a griglia.',
+              example:
+                'Random search often beats grid search. = La ricerca casuale spesso batte la ricerca a griglia.',
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'RandomizedSearchCV(model, param_dist)',
@@ -4430,7 +4827,8 @@ export default {
               italian: 'Ottimizzazione bayesiana',
               pronunciation: '/beɪˈziːən ˌɒptɪmaɪˈzeɪʃən/',
               phonetic: 'bei-ZI-an op-ti-mai-ZEI-scen',
-              example: 'Bayesian optimization uses past trials to choose next ones. = L\'ottimizzazione bayesiana usa prove passate per scegliere quelle nuove.',
+              example:
+                "Bayesian optimization uses past trials to choose next ones. = L'ottimizzazione bayesiana usa prove passate per scegliere quelle nuove.",
               context: 'model-training',
               difficulty: 'intermediate',
               tool: 'Optuna, Hyperopt',
@@ -4440,7 +4838,8 @@ export default {
               italian: 'Pianificazione',
               pronunciation: '/ˈskedʒuːl/',
               phonetic: 'SKE-giul',
-              example: 'A learning rate schedule decays it over time. = Una pianificazione del learning rate lo decresce nel tempo.',
+              example:
+                'A learning rate schedule decays it over time. = Una pianificazione del learning rate lo decresce nel tempo.',
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'ReduceLROnPlateau(patience=3)',
@@ -4450,14 +4849,15 @@ export default {
         {
           id: 'ai_training_2',
           title: 'Loss Functions / Funzioni di Perdita',
-          description: 'Misurare l\'errore del modello',
+          description: "Misurare l'errore del modello",
           items: [
             {
               english: 'Loss Function',
               italian: 'Funzione di perdita',
               pronunciation: '/lɒs ˈfʌŋkʃən/',
               phonetic: 'LOS FANK-scen',
-              example: 'The loss function quantifies prediction error. = La funzione di perdita quantifica l\'errore di predizione.',
+              example:
+                "The loss function quantifies prediction error. = La funzione di perdita quantifica l'errore di predizione.",
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Detta anche cost function o objective function.',
@@ -4467,7 +4867,8 @@ export default {
               italian: 'Loss di entropia incrociata',
               pronunciation: '/krɒs ˈentrəpi lɒs/',
               phonetic: 'KROS EN-tro-pi LOS',
-              example: 'Cross-entropy loss is standard for classification. = La loss di entropia incrociata è standard per classificazione.',
+              example:
+                'Cross-entropy loss is standard for classification. = La loss di entropia incrociata è standard per classificazione.',
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'loss = CrossEntropyLoss()',
@@ -4477,7 +4878,8 @@ export default {
               italian: 'Errore quadratico medio',
               pronunciation: '/miːn skweərd ˈerər/',
               phonetic: 'MIIN SKUERD ER-rer',
-              example: 'MSE penalizes large errors quadratically. = MSE penalizza grandi errori in modo quadratico.',
+              example:
+                'MSE penalizes large errors quadratically. = MSE penalizza grandi errori in modo quadratico.',
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'loss = nn.MSELoss()',
@@ -4488,7 +4890,8 @@ export default {
               italian: 'Errore assoluto medio',
               pronunciation: '/miːn ˈæbsəluːt ˈerər/',
               phonetic: 'MIIN AB-so-lut ER-rer',
-              example: 'MAE is more robust to outliers than MSE. = MAE è più robusta di MSE agli outlier.',
+              example:
+                'MAE is more robust to outliers than MSE. = MAE è più robusta di MSE agli outlier.',
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'loss = nn.L1Loss()',
@@ -4507,7 +4910,8 @@ export default {
               italian: 'Focal loss',
               pronunciation: '/ˈfoʊkəl lɒs/',
               phonetic: 'FO-kal LOS',
-              example: 'Focal loss focuses on hard examples. = Focal loss si concentra sugli esempi difficili.',
+              example:
+                'Focal loss focuses on hard examples. = Focal loss si concentra sugli esempi difficili.',
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Utile per dataset sbilanciati.',
@@ -4517,7 +4921,8 @@ export default {
               italian: 'Triplet loss',
               pronunciation: '/ˈtrɪplət lɒs/',
               phonetic: 'TRI-plet LOS',
-              example: 'Triplet loss pushes similar items together. = Triplet loss avvicina elementi simili.',
+              example:
+                'Triplet loss pushes similar items together. = Triplet loss avvicina elementi simili.',
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Usata per face recognition e metric learning.',
@@ -4527,7 +4932,8 @@ export default {
               italian: 'Divergenza KL',
               pronunciation: '/keɪ el dɪˈvɜːrdʒəns/',
               phonetic: 'KEI-EL di-VER-gens',
-              example: 'KL divergence measures distance between distributions. = La divergenza KL misura la distanza tra distribuzioni.',
+              example:
+                'KL divergence measures distance between distributions. = La divergenza KL misura la distanza tra distribuzioni.',
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Kullback-Leibler divergence.',
@@ -4537,7 +4943,8 @@ export default {
               italian: 'Curva di loss',
               pronunciation: '/lɒs kɜːrv/',
               phonetic: 'LOS KERV',
-              example: 'The loss curve should decrease over epochs. = La curva di loss dovrebbe diminuire nelle epoche.',
+              example:
+                'The loss curve should decrease over epochs. = La curva di loss dovrebbe diminuire nelle epoche.',
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'plt.plot(history.history["loss"])',
@@ -4547,7 +4954,8 @@ export default {
               italian: 'Loss personalizzata',
               pronunciation: '/ˈkʌstəm lɒs/',
               phonetic: 'KAS-tom LOS',
-              example: 'Sometimes you need a custom loss for your task. = A volte serve una loss personalizzata per il tuo compito.',
+              example:
+                'Sometimes you need a custom loss for your task. = A volte serve una loss personalizzata per il tuo compito.',
               context: 'model-training',
               difficulty: 'intermediate',
             },
@@ -4563,17 +4971,19 @@ export default {
               italian: 'Discesa del gradiente',
               pronunciation: '/ˈɡreɪdiənt dɪˈsent/',
               phonetic: 'GREI-di-ent di-SENT',
-              example: 'Gradient descent minimizes the loss function. = La discesa del gradiente minimizza la funzione di perdita.',
+              example:
+                'Gradient descent minimizes the loss function. = La discesa del gradiente minimizza la funzione di perdita.',
               context: 'model-training',
               difficulty: 'intermediate',
-              note: 'Algoritmo base dell\'ottimizzazione ML.',
+              note: "Algoritmo base dell'ottimizzazione ML.",
             },
             {
               english: 'Optimizer',
               italian: 'Ottimizzatore',
               pronunciation: '/ˈɒptɪmaɪzər/',
               phonetic: 'OP-ti-mai-zer',
-              example: 'The optimizer updates weights using gradients. = L\'ottimizzatore aggiorna i pesi usando i gradienti.',
+              example:
+                "The optimizer updates weights using gradients. = L'ottimizzatore aggiorna i pesi usando i gradienti.",
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'model.compile(optimizer="adam")',
@@ -4583,7 +4993,8 @@ export default {
               italian: 'AdamW',
               pronunciation: '/ˈædəm dʌbəl juː/',
               phonetic: 'A-dam-DAB-bol-IU',
-              example: 'AdamW decouples weight decay from gradient updates. = AdamW disaccoppia il weight decay dagli aggiornamenti del gradiente.',
+              example:
+                'AdamW decouples weight decay from gradient updates. = AdamW disaccoppia il weight decay dagli aggiornamenti del gradiente.',
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'AdamW(model.parameters(), lr=1e-4)',
@@ -4594,7 +5005,8 @@ export default {
               italian: 'RMSProp',
               pronunciation: '/ɑːr em es prɒp/',
               phonetic: 'AR-EM-ES-PROP',
-              example: 'RMSProp adapts learning rate per parameter. = RMSProp adatta il learning rate per parametro.',
+              example:
+                'RMSProp adapts learning rate per parameter. = RMSProp adatta il learning rate per parametro.',
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'optimizer = RMSprop(lr=0.001)',
@@ -4604,7 +5016,8 @@ export default {
               italian: 'Momento di Nesterov',
               pronunciation: '/ˈnestərɒv moʊˈmentəm/',
               phonetic: 'NES-te-rov mou-MEN-tum',
-              example: 'Nesterov momentum looks ahead before updating. = Il momento di Nesterov guarda avanti prima di aggiornare.',
+              example:
+                'Nesterov momentum looks ahead before updating. = Il momento di Nesterov guarda avanti prima di aggiornare.',
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'SGD(momentum=0.9, nesterov=True)',
@@ -4614,7 +5027,8 @@ export default {
               italian: 'Warmup del learning rate',
               pronunciation: '/ˈlɜːrnɪŋ reɪt ˈwɔːrmʌp/',
               phonetic: 'LER-ning REIT UORM-ap',
-              example: 'Warmup gradually increases the learning rate. = Il warmup aumenta gradualmente il learning rate.',
+              example:
+                'Warmup gradually increases the learning rate. = Il warmup aumenta gradualmente il learning rate.',
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Standard per addestrare transformer da zero.',
@@ -4624,7 +5038,8 @@ export default {
               italian: 'Annealing coseno',
               pronunciation: '/ˈkoʊsaɪn əˈniːlɪŋ/',
               phonetic: 'KO-sain a-NI-ling',
-              example: 'Cosine annealing decays the learning rate smoothly. = L\'annealing coseno decade il learning rate dolcemente.',
+              example:
+                "Cosine annealing decays the learning rate smoothly. = L'annealing coseno decade il learning rate dolcemente.",
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'CosineAnnealingLR(optimizer, T_max=10)',
@@ -4634,7 +5049,8 @@ export default {
               italian: 'Punto di sella',
               pronunciation: '/ˈsædəl pɔɪnt/',
               phonetic: 'SAD-del POINT',
-              example: 'Optimizers can get stuck at a saddle point. = Gli ottimizzatori possono restare bloccati in un punto di sella.',
+              example:
+                'Optimizers can get stuck at a saddle point. = Gli ottimizzatori possono restare bloccati in un punto di sella.',
               context: 'model-training',
               difficulty: 'intermediate',
             },
@@ -4643,7 +5059,8 @@ export default {
               italian: 'Minimo locale',
               pronunciation: '/ˈloʊkəl ˈmɪnɪməm/',
               phonetic: 'LO-kal MI-ni-mum',
-              example: 'Local minima trap basic optimizers. = I minimi locali intrappolano ottimizzatori basici.',
+              example:
+                'Local minima trap basic optimizers. = I minimi locali intrappolano ottimizzatori basici.',
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Meno problematici nelle reti neurali profonde.',
@@ -4653,7 +5070,8 @@ export default {
               italian: 'Convergenza',
               pronunciation: '/kənˈvɜːrdʒəns/',
               phonetic: 'kon-VER-gens',
-              example: 'Training stops when the loss converges. = L\'addestramento si ferma quando la loss converge.',
+              example:
+                "Training stops when the loss converges. = L'addestramento si ferma quando la loss converge.",
               context: 'model-training',
               difficulty: 'intermediate',
             },
@@ -4662,14 +5080,15 @@ export default {
         {
           id: 'ai_training_4',
           title: 'Hardware & Scale / Hardware e Scala',
-          description: 'Risorse computazionali per l\'addestramento',
+          description: "Risorse computazionali per l'addestramento",
           items: [
             {
               english: 'GPU',
               italian: 'GPU',
               pronunciation: '/dʒiː piː juː/',
               phonetic: 'GI-PI-IU',
-              example: 'A GPU accelerates matrix operations. = Una GPU accelera operazioni matriciali.',
+              example:
+                'A GPU accelerates matrix operations. = Una GPU accelera operazioni matriciali.',
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Graphics Processing Unit. Cuore del deep learning moderno.',
@@ -4679,7 +5098,7 @@ export default {
               italian: 'TPU',
               pronunciation: '/tiː piː juː/',
               phonetic: 'TI-PI-IU',
-              example: 'A TPU is Google\'s ASIC for ML. = Una TPU è l\'ASIC di Google per il ML.',
+              example: "A TPU is Google's ASIC for ML. = Una TPU è l'ASIC di Google per il ML.",
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Tensor Processing Unit.',
@@ -4689,7 +5108,8 @@ export default {
               italian: 'CUDA',
               pronunciation: '/ˈkuːdə/',
               phonetic: 'KU-da',
-              example: 'CUDA enables GPU programming for ML. = CUDA abilita programmazione GPU per ML.',
+              example:
+                'CUDA enables GPU programming for ML. = CUDA abilita programmazione GPU per ML.',
               context: 'model-training',
               difficulty: 'intermediate',
               tool: 'NVIDIA CUDA Toolkit',
@@ -4699,7 +5119,8 @@ export default {
               italian: 'Precisione mista',
               pronunciation: '/mɪkst prɪˈsɪʒən/',
               phonetic: 'MIKST pri-SI-gen',
-              example: 'Mixed precision uses fp16 to speed up training. = La precisione mista usa fp16 per velocizzare l\'addestramento.',
+              example:
+                "Mixed precision uses fp16 to speed up training. = La precisione mista usa fp16 per velocizzare l'addestramento.",
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'with torch.cuda.amp.autocast():',
@@ -4709,7 +5130,8 @@ export default {
               italian: 'Addestramento distribuito',
               pronunciation: '/dɪˈstrɪbjʊtɪd ˈtreɪnɪŋ/',
               phonetic: 'di-STRI-biu-ted TREI-ning',
-              example: 'Distributed training scales across multiple GPUs. = L\'addestramento distribuito scala su più GPU.',
+              example:
+                "Distributed training scales across multiple GPUs. = L'addestramento distribuito scala su più GPU.",
               context: 'model-training',
               difficulty: 'intermediate',
               tool: 'DeepSpeed, FairScale, FSDP',
@@ -4719,7 +5141,8 @@ export default {
               italian: 'Parallelismo dei dati',
               pronunciation: '/ˈdeɪtə ˈpærəlelɪzəm/',
               phonetic: 'DEI-ta pa-ra-LEL-li-zem',
-              example: 'Data parallelism splits batches across GPUs. = Il parallelismo dei dati divide i batch tra le GPU.',
+              example:
+                'Data parallelism splits batches across GPUs. = Il parallelismo dei dati divide i batch tra le GPU.',
               context: 'model-training',
               difficulty: 'intermediate',
             },
@@ -4728,7 +5151,8 @@ export default {
               italian: 'Parallelismo del modello',
               pronunciation: '/ˈmɒdəl ˈpærəlelɪzəm/',
               phonetic: 'MO-del pa-ra-LEL-li-zem',
-              example: 'Model parallelism splits the model across devices. = Il parallelismo del modello divide il modello tra dispositivi.',
+              example:
+                'Model parallelism splits the model across devices. = Il parallelismo del modello divide il modello tra dispositivi.',
               context: 'model-training',
               difficulty: 'intermediate',
               note: 'Necessario per modelli troppo grandi per una sola GPU.',
@@ -4738,7 +5162,8 @@ export default {
               italian: 'Accumulazione del gradiente',
               pronunciation: '/ˈɡreɪdiənt əˌkjuːmjəˈleɪʃən/',
               phonetic: 'GREI-di-ent a-kiu-mu-LEI-scen',
-              example: 'Gradient accumulation simulates larger batches. = L\'accumulazione del gradiente simula batch più grandi.',
+              example:
+                "Gradient accumulation simulates larger batches. = L'accumulazione del gradiente simula batch più grandi.",
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'gradient_accumulation_steps=4',
@@ -4748,7 +5173,8 @@ export default {
               italian: 'Checkpointing',
               pronunciation: '/ˈtʃekpɔɪntɪŋ/',
               phonetic: 'CIEK-poin-ting',
-              example: 'Checkpointing saves model state during training. = Il checkpointing salva lo stato del modello durante l\'addestramento.',
+              example:
+                "Checkpointing saves model state during training. = Il checkpointing salva lo stato del modello durante l'addestramento.",
               context: 'model-training',
               difficulty: 'intermediate',
               code: 'torch.save(model.state_dict(), "ckpt.pt")',
@@ -4758,7 +5184,8 @@ export default {
               italian: 'Checkpointing del gradiente',
               pronunciation: '/ˈɡreɪdiənt ˈtʃekpɔɪntɪŋ/',
               phonetic: 'GREI-di-ent CIEK-poin-ting',
-              example: 'Gradient checkpointing saves memory at compute cost. = Il checkpointing del gradiente risparmia memoria al costo di calcolo.',
+              example:
+                'Gradient checkpointing saves memory at compute cost. = Il checkpointing del gradiente risparmia memoria al costo di calcolo.',
               context: 'model-training',
               difficulty: 'intermediate',
             },
@@ -4783,7 +5210,8 @@ export default {
               italian: 'Accuratezza',
               pronunciation: '/ˈækjərəsi/',
               phonetic: 'A-kiu-ra-si',
-              example: 'Accuracy is the fraction of correct predictions. = L\'accuratezza è la frazione di predizioni corrette.',
+              example:
+                "Accuracy is the fraction of correct predictions. = L'accuratezza è la frazione di predizioni corrette.",
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'accuracy_score(y_true, y_pred)',
@@ -4794,7 +5222,8 @@ export default {
               italian: 'Precisione',
               pronunciation: '/prɪˈsɪʒən/',
               phonetic: 'pri-SI-gen',
-              example: 'Precision answers: of those predicted positive, how many actually are? = La precisione risponde: di quelli predetti positivi, quanti lo sono davvero?',
+              example:
+                'Precision answers: of those predicted positive, how many actually are? = La precisione risponde: di quelli predetti positivi, quanti lo sono davvero?',
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'precision_score(y_true, y_pred)',
@@ -4804,7 +5233,8 @@ export default {
               italian: 'Richiamo',
               pronunciation: '/rɪˈkɔːl/',
               phonetic: 'ri-KOL',
-              example: 'Recall answers: of actual positives, how many were found? = Il richiamo risponde: dei positivi reali, quanti sono stati trovati?',
+              example:
+                'Recall answers: of actual positives, how many were found? = Il richiamo risponde: dei positivi reali, quanti sono stati trovati?',
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'recall_score(y_true, y_pred)',
@@ -4815,7 +5245,8 @@ export default {
               italian: 'Punteggio F1',
               pronunciation: '/ef wʌn skɔːr/',
               phonetic: 'EF-UAN-SKOR',
-              example: 'F1 score balances precision and recall. = Il punteggio F1 bilancia precisione e richiamo.',
+              example:
+                'F1 score balances precision and recall. = Il punteggio F1 bilancia precisione e richiamo.',
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'f1_score(y_true, y_pred)',
@@ -4826,7 +5257,8 @@ export default {
               italian: 'Matrice di confusione',
               pronunciation: '/kənˈfjuːʒən ˈmeɪtrɪks/',
               phonetic: 'kon-FIU-gen MEI-triks',
-              example: 'A confusion matrix shows all prediction outcomes. = Una matrice di confusione mostra tutti gli esiti delle predizioni.',
+              example:
+                'A confusion matrix shows all prediction outcomes. = Una matrice di confusione mostra tutti gli esiti delle predizioni.',
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'confusion_matrix(y_true, y_pred)',
@@ -4836,7 +5268,8 @@ export default {
               italian: 'Vero positivo',
               pronunciation: '/truː ˈpɒzətɪv/',
               phonetic: 'TRU PO-ze-tiv',
-              example: 'A true positive is correctly predicted positive. = Un vero positivo è un positivo predetto correttamente.',
+              example:
+                'A true positive is correctly predicted positive. = Un vero positivo è un positivo predetto correttamente.',
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Abbreviato TP.',
@@ -4846,7 +5279,8 @@ export default {
               italian: 'Falso positivo',
               pronunciation: '/fɔːls ˈpɒzətɪv/',
               phonetic: 'FOLS PO-ze-tiv',
-              example: 'A false positive is a wrongly predicted positive. = Un falso positivo è un positivo predetto sbagliato.',
+              example:
+                'A false positive is a wrongly predicted positive. = Un falso positivo è un positivo predetto sbagliato.',
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Abbreviato FP. Detto anche errore di tipo I.',
@@ -4856,7 +5290,8 @@ export default {
               italian: 'Falso negativo',
               pronunciation: '/fɔːls ˈneɡətɪv/',
               phonetic: 'FOLS NE-ge-tiv',
-              example: 'False negatives are missed positives. = I falsi negativi sono positivi mancati.',
+              example:
+                'False negatives are missed positives. = I falsi negativi sono positivi mancati.',
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Abbreviato FN. Spesso più costoso del FP in medicina.',
@@ -4866,7 +5301,8 @@ export default {
               italian: 'Specificità',
               pronunciation: '/ˌspesəˈfɪsəti/',
               phonetic: 'spe-si-FI-si-ti',
-              example: 'Specificity is the true negative rate. = La specificità è il tasso di veri negativi.',
+              example:
+                'Specificity is the true negative rate. = La specificità è il tasso di veri negativi.',
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -4875,7 +5311,8 @@ export default {
               italian: 'Accuratezza bilanciata',
               pronunciation: '/ˈbælənst ˈækjərəsi/',
               phonetic: 'BA-lanst A-kiu-ra-si',
-              example: 'Balanced accuracy handles class imbalance. = L\'accuratezza bilanciata gestisce lo sbilanciamento delle classi.',
+              example:
+                "Balanced accuracy handles class imbalance. = L'accuratezza bilanciata gestisce lo sbilanciamento delle classi.",
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'balanced_accuracy_score(y_true, y_pred)',
@@ -4892,7 +5329,8 @@ export default {
               italian: 'Curva ROC',
               pronunciation: '/roʊk kɜːrv/',
               phonetic: 'ROK KERV',
-              example: 'The ROC curve plots true positive vs false positive rate. = La curva ROC traccia tasso di veri positivi contro falsi positivi.',
+              example:
+                'The ROC curve plots true positive vs false positive rate. = La curva ROC traccia tasso di veri positivi contro falsi positivi.',
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Receiver Operating Characteristic.',
@@ -4902,7 +5340,8 @@ export default {
               italian: 'AUC',
               pronunciation: '/eɪ juː siː/',
               phonetic: 'EI-IU-SI',
-              example: 'AUC summarizes the ROC curve in one number. = AUC riassume la curva ROC in un numero.',
+              example:
+                'AUC summarizes the ROC curve in one number. = AUC riassume la curva ROC in un numero.',
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'roc_auc_score(y_true, y_score)',
@@ -4913,7 +5352,8 @@ export default {
               italian: 'Curva precision-recall',
               pronunciation: '/prɪˈsɪʒən rɪˈkɔːl kɜːrv/',
               phonetic: 'pri-SI-gen ri-KOL KERV',
-              example: 'Precision-recall curves work better on imbalanced data. = Le curve precision-recall funzionano meglio con dati sbilanciati.',
+              example:
+                'Precision-recall curves work better on imbalanced data. = Le curve precision-recall funzionano meglio con dati sbilanciati.',
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -4922,7 +5362,8 @@ export default {
               italian: 'Precisione media',
               pronunciation: '/ˈævərɪdʒ prɪˈsɪʒən/',
               phonetic: 'A-ve-rigi pri-SI-gen',
-              example: 'Average precision summarizes the PR curve. = La precisione media riassume la curva PR.',
+              example:
+                'Average precision summarizes the PR curve. = La precisione media riassume la curva PR.',
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'average_precision_score(y_true, y_score)',
@@ -4932,7 +5373,8 @@ export default {
               italian: 'Tuning della soglia',
               pronunciation: '/ˈθreʃhoʊld ˈtjuːnɪŋ/',
               phonetic: 'TRES-hold TIU-ning',
-              example: 'Threshold tuning trades precision for recall. = Il tuning della soglia scambia precisione con richiamo.',
+              example:
+                'Threshold tuning trades precision for recall. = Il tuning della soglia scambia precisione con richiamo.',
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -4941,7 +5383,8 @@ export default {
               italian: 'Calibrazione',
               pronunciation: '/ˌkælɪˈbreɪʃən/',
               phonetic: 'ka-li-BREI-scen',
-              example: 'Calibration aligns predicted probabilities with reality. = La calibrazione allinea le probabilità predette con la realtà.',
+              example:
+                'Calibration aligns predicted probabilities with reality. = La calibrazione allinea le probabilità predette con la realtà.',
               context: 'evaluation',
               difficulty: 'intermediate',
               tool: 'CalibratedClassifierCV',
@@ -4951,7 +5394,8 @@ export default {
               italian: 'Punteggio Brier',
               pronunciation: '/ˈbrɪər skɔːr/',
               phonetic: 'BRI-er SKOR',
-              example: 'Brier score measures probabilistic accuracy. = Il punteggio Brier misura l\'accuratezza probabilistica.',
+              example:
+                "Brier score measures probabilistic accuracy. = Il punteggio Brier misura l'accuratezza probabilistica.",
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -4960,7 +5404,8 @@ export default {
               italian: 'Kappa di Cohen',
               pronunciation: '/ˈkoʊən ˈkæpə/',
               phonetic: 'KO-en KAP-pa',
-              example: 'Cohen kappa accounts for chance agreement. = Il kappa di Cohen tiene conto dell\'accordo casuale.',
+              example:
+                "Cohen kappa accounts for chance agreement. = Il kappa di Cohen tiene conto dell'accordo casuale.",
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'cohen_kappa_score(y_true, y_pred)',
@@ -4970,7 +5415,8 @@ export default {
               italian: 'Correlazione di Matthews',
               pronunciation: '/ˈmæθjuːz ˌkɒrəˈleɪʃən/',
               phonetic: 'MA-tius kor-re-LEI-scen',
-              example: 'MCC is reliable on imbalanced classes. = MCC è affidabile su classi sbilanciate.',
+              example:
+                'MCC is reliable on imbalanced classes. = MCC è affidabile su classi sbilanciate.',
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'matthews_corrcoef(y_true, y_pred)',
@@ -4981,7 +5427,8 @@ export default {
               italian: 'Log loss',
               pronunciation: '/lɒɡ lɒs/',
               phonetic: 'LOG LOS',
-              example: 'Log loss penalizes confident wrong predictions. = Log loss penalizza predizioni sbagliate ma sicure.',
+              example:
+                'Log loss penalizes confident wrong predictions. = Log loss penalizza predizioni sbagliate ma sicure.',
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'log_loss(y_true, y_proba)',
@@ -5009,7 +5456,8 @@ export default {
               italian: 'MAPE',
               pronunciation: '/ˈmæp/',
               phonetic: 'MAP',
-              example: 'MAPE expresses error as a percentage. = MAPE esprime l\'errore come percentuale.',
+              example:
+                "MAPE expresses error as a percentage. = MAPE esprime l'errore come percentuale.",
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'mean_absolute_percentage_error(y_true, y_pred)',
@@ -5020,7 +5468,8 @@ export default {
               italian: 'R quadrato',
               pronunciation: '/ɑːr ˈskweərd/',
               phonetic: 'AR-SKUERD',
-              example: 'R-squared measures variance explained. = R quadrato misura la varianza spiegata.',
+              example:
+                'R-squared measures variance explained. = R quadrato misura la varianza spiegata.',
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'r2_score(y_true, y_pred)',
@@ -5030,7 +5479,8 @@ export default {
               italian: 'R quadrato corretto',
               pronunciation: '/əˈdʒʌstɪd ɑːr ˈskweərd/',
               phonetic: 'a-GIAS-ted AR-SKUERD',
-              example: 'Adjusted R-squared penalizes extra features. = L\'R quadrato corretto penalizza feature in eccesso.',
+              example:
+                "Adjusted R-squared penalizes extra features. = L'R quadrato corretto penalizza feature in eccesso.",
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -5039,7 +5489,8 @@ export default {
               italian: 'Errore assoluto mediano',
               pronunciation: '/ˈmiːdiən ˈæbsəluːt ˈerər/',
               phonetic: 'MI-dian AB-so-lut ER-rer',
-              example: 'Median absolute error is robust to outliers. = L\'errore assoluto mediano è robusto agli outlier.',
+              example:
+                "Median absolute error is robust to outliers. = L'errore assoluto mediano è robusto agli outlier.",
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'median_absolute_error(y_true, y_pred)',
@@ -5049,7 +5500,8 @@ export default {
               italian: 'Varianza spiegata',
               pronunciation: '/ɪkˈspleɪnd ˈveəriəns/',
               phonetic: 'ek-SPLEIND VER-ians',
-              example: 'Explained variance score shows variance captured. = Il punteggio di varianza spiegata mostra la varianza catturata.',
+              example:
+                'Explained variance score shows variance captured. = Il punteggio di varianza spiegata mostra la varianza catturata.',
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -5058,7 +5510,8 @@ export default {
               italian: 'Grafico dei residui',
               pronunciation: '/rɪˈzɪdʒuəl plɒt/',
               phonetic: 'ri-ZI-giu-al PLOT',
-              example: 'A residual plot reveals model bias patterns. = Un grafico dei residui rivela pattern di bias del modello.',
+              example:
+                'A residual plot reveals model bias patterns. = Un grafico dei residui rivela pattern di bias del modello.',
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -5067,7 +5520,8 @@ export default {
               italian: 'Q-Q plot',
               pronunciation: '/kjuː kjuː plɒt/',
               phonetic: 'KIU-KIU-PLOT',
-              example: 'A Q-Q plot checks if residuals are normal. = Un Q-Q plot verifica se i residui sono normali.',
+              example:
+                'A Q-Q plot checks if residuals are normal. = Un Q-Q plot verifica se i residui sono normali.',
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -5076,7 +5530,8 @@ export default {
               italian: 'Eteroschedasticità',
               pronunciation: '/ˌhetəroʊˌskedəˈstɪsəti/',
               phonetic: 'e-te-ro-ske-das-TI-si-ti',
-              example: 'Heteroscedasticity violates regression assumptions. = L\'eteroschedasticità viola le assunzioni della regressione.',
+              example:
+                "Heteroscedasticity violates regression assumptions. = L'eteroschedasticità viola le assunzioni della regressione.",
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Variabilità non costante dei residui.',
@@ -5086,7 +5541,8 @@ export default {
               italian: 'Bias di previsione',
               pronunciation: '/ˈfɔːrkæst ˈbaɪəs/',
               phonetic: 'FOR-kast BAI-as',
-              example: 'Forecast bias indicates systematic over or under prediction. = Il bias di previsione indica sotto o sovra-stima sistematica.',
+              example:
+                'Forecast bias indicates systematic over or under prediction. = Il bias di previsione indica sotto o sovra-stima sistematica.',
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -5102,7 +5558,8 @@ export default {
               italian: 'Holdout',
               pronunciation: '/ˈhoʊldaʊt/',
               phonetic: 'HOLD-aut',
-              example: 'Holdout reserves part of the data for testing. = Holdout riserva parte dei dati per il test.',
+              example:
+                'Holdout reserves part of the data for testing. = Holdout riserva parte dei dati per il test.',
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -5111,7 +5568,8 @@ export default {
               italian: 'K-fold stratificato',
               pronunciation: '/ˈstrætɪfaɪd keɪ foʊld/',
               phonetic: 'STRA-ti-faid KEI-FOLD',
-              example: 'Stratified k-fold preserves class ratios. = Il k-fold stratificato preserva le proporzioni delle classi.',
+              example:
+                'Stratified k-fold preserves class ratios. = Il k-fold stratificato preserva le proporzioni delle classi.',
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'StratifiedKFold(n_splits=5)',
@@ -5121,7 +5579,8 @@ export default {
               italian: 'Lascia uno fuori',
               pronunciation: '/liːv wʌn aʊt/',
               phonetic: 'LIV-UAN-AUT',
-              example: 'Leave-one-out tests on a single example at a time. = Lascia uno fuori testa su un singolo esempio alla volta.',
+              example:
+                'Leave-one-out tests on a single example at a time. = Lascia uno fuori testa su un singolo esempio alla volta.',
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'LeaveOneOut()',
@@ -5132,7 +5591,8 @@ export default {
               italian: 'Split serie temporali',
               pronunciation: '/taɪm ˈsɪriːz splɪt/',
               phonetic: 'TAIM SI-riz SPLIT',
-              example: 'Time series split respects temporal order. = Lo split per serie temporali rispetta l\'ordine temporale.',
+              example:
+                "Time series split respects temporal order. = Lo split per serie temporali rispetta l'ordine temporale.",
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'TimeSeriesSplit(n_splits=5)',
@@ -5143,7 +5603,8 @@ export default {
               italian: 'Convalida incrociata annidata',
               pronunciation: '/ˈnestɪd krɒs ˌvælɪˈdeɪʃən/',
               phonetic: 'NES-ted KROS va-li-DEI-scen',
-              example: 'Nested CV avoids hyperparameter leakage. = La CV annidata evita leak degli iperparametri.',
+              example:
+                'Nested CV avoids hyperparameter leakage. = La CV annidata evita leak degli iperparametri.',
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -5152,7 +5613,8 @@ export default {
               italian: 'K-fold per gruppi',
               pronunciation: '/ɡruːp keɪ foʊld/',
               phonetic: 'GRUP KEI-FOLD',
-              example: 'Group k-fold keeps group members in the same fold. = Il k-fold per gruppi tiene i membri di un gruppo nello stesso fold.',
+              example:
+                'Group k-fold keeps group members in the same fold. = Il k-fold per gruppi tiene i membri di un gruppo nello stesso fold.',
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Esempio: pazienti diversi non devono mischiarsi tra train e test.',
@@ -5162,7 +5624,8 @@ export default {
               italian: 'Studio di ablazione',
               pronunciation: '/əˈbleɪʃən ˈstʌdi/',
               phonetic: 'a-BLEI-scen STA-di',
-              example: 'An ablation study removes components to test their impact. = Uno studio di ablazione rimuove componenti per testarne l\'impatto.',
+              example:
+                "An ablation study removes components to test their impact. = Uno studio di ablazione rimuove componenti per testarne l'impatto.",
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -5171,7 +5634,8 @@ export default {
               italian: 'Significatività statistica',
               pronunciation: '/stəˈtɪstɪkəl sɪɡˈnɪfɪkəns/',
               phonetic: 'sta-TIS-ti-kal sig-ni-fi-KANS',
-              example: 'Compute statistical significance to compare models. = Calcola la significatività statistica per confrontare modelli.',
+              example:
+                'Compute statistical significance to compare models. = Calcola la significatività statistica per confrontare modelli.',
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -5180,7 +5644,8 @@ export default {
               italian: 'Test di McNemar',
               pronunciation: '/məkˈniːmɑːr test/',
               phonetic: 'mek-NIM-ar TEST',
-              example: 'McNemar test compares two classifiers. = Il test di McNemar confronta due classificatori.',
+              example:
+                'McNemar test compares two classifiers. = Il test di McNemar confronta due classificatori.',
               context: 'evaluation',
               difficulty: 'intermediate',
             },
@@ -5189,7 +5654,8 @@ export default {
               italian: 'Test harness',
               pronunciation: '/test ˈhɑːrnɪs/',
               phonetic: 'TEST HAR-nis',
-              example: 'A reliable test harness saves debugging time. = Un test harness affidabile risparmia tempo di debug.',
+              example:
+                'A reliable test harness saves debugging time. = Un test harness affidabile risparmia tempo di debug.',
               context: 'evaluation',
               difficulty: 'intermediate',
               note: 'Termine spesso lasciato in inglese.',
@@ -5215,7 +5681,8 @@ export default {
               italian: 'TensorFlow',
               pronunciation: '/ˈtensərfloʊ/',
               phonetic: 'TEN-ser-flou',
-              example: 'TensorFlow is Google\'s ML framework. = TensorFlow è il framework ML di Google.',
+              example:
+                "TensorFlow is Google's ML framework. = TensorFlow è il framework ML di Google.",
               context: 'tools',
               difficulty: 'intermediate',
               code: 'import tensorflow as tf',
@@ -5226,7 +5693,8 @@ export default {
               italian: 'Keras',
               pronunciation: '/ˈkerəs/',
               phonetic: 'KE-ras',
-              example: 'Keras is the high-level API of TensorFlow. = Keras è l\'API ad alto livello di TensorFlow.',
+              example:
+                "Keras is the high-level API of TensorFlow. = Keras è l'API ad alto livello di TensorFlow.",
               context: 'tools',
               difficulty: 'intermediate',
               code: 'from tensorflow import keras',
@@ -5237,7 +5705,8 @@ export default {
               italian: 'Modello sequenziale',
               pronunciation: '/sɪˈkwenʃəl ˈmɒdəl/',
               phonetic: 'si-KUEN-scial MO-del',
-              example: 'A Sequential model stacks layers linearly. = Un modello sequenziale impila strati linearmente.',
+              example:
+                'A Sequential model stacks layers linearly. = Un modello sequenziale impila strati linearmente.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'model = keras.Sequential([Dense(64), Dense(10)])',
@@ -5247,7 +5716,8 @@ export default {
               italian: 'API funzionale',
               pronunciation: '/ˈfʌŋkʃənəl eɪ piː aɪ/',
               phonetic: 'FANK-scio-nal EI-PI-AI',
-              example: 'The Functional API supports complex topologies. = L\'API funzionale supporta topologie complesse.',
+              example:
+                "The Functional API supports complex topologies. = L'API funzionale supporta topologie complesse.",
               context: 'tools',
               difficulty: 'intermediate',
               code: 'inputs = Input(...); x = Dense(64)(inputs)',
@@ -5257,7 +5727,8 @@ export default {
               italian: 'Tensore',
               pronunciation: '/ˈtensər/',
               phonetic: 'TEN-ser',
-              example: 'A tensor is a multi-dimensional array. = Un tensore è un array multidimensionale.',
+              example:
+                'A tensor is a multi-dimensional array. = Un tensore è un array multidimensionale.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'tf.constant([[1, 2], [3, 4]])',
@@ -5267,7 +5738,8 @@ export default {
               italian: 'Esecuzione eager',
               pronunciation: '/ˈiːɡər ˌeksɪˈkjuːʃən/',
               phonetic: 'I-ger ek-se-KIU-scen',
-              example: 'Eager execution runs operations immediately. = L\'esecuzione eager esegue operazioni immediatamente.',
+              example:
+                "Eager execution runs operations immediately. = L'esecuzione eager esegue operazioni immediatamente.",
               context: 'tools',
               difficulty: 'intermediate',
               note: 'Default in TensorFlow 2.x.',
@@ -5277,7 +5749,8 @@ export default {
               italian: 'Modalità grafo',
               pronunciation: '/ɡræf moʊd/',
               phonetic: 'GRAF MOUD',
-              example: 'Graph mode optimizes computation. = La modalità grafo ottimizza il calcolo.',
+              example:
+                'Graph mode optimizes computation. = La modalità grafo ottimizza il calcolo.',
               context: 'tools',
               difficulty: 'intermediate',
               code: '@tf.function',
@@ -5287,7 +5760,8 @@ export default {
               italian: 'Callback',
               pronunciation: '/ˈkɔːlbæk/',
               phonetic: 'KOL-bak',
-              example: 'A callback runs custom code during training. = Un callback esegue codice personalizzato durante l\'addestramento.',
+              example:
+                "A callback runs custom code during training. = Un callback esegue codice personalizzato durante l'addestramento.",
               context: 'tools',
               difficulty: 'intermediate',
               code: 'EarlyStopping(patience=3)',
@@ -5297,7 +5771,8 @@ export default {
               italian: 'TensorBoard',
               pronunciation: '/ˈtensərbɔːrd/',
               phonetic: 'TEN-ser-bord',
-              example: 'TensorBoard visualizes training metrics. = TensorBoard visualizza le metriche di addestramento.',
+              example:
+                'TensorBoard visualizes training metrics. = TensorBoard visualizza le metriche di addestramento.',
               context: 'tools',
               difficulty: 'intermediate',
               tool: 'TensorBoard',
@@ -5308,7 +5783,8 @@ export default {
               italian: 'tf.data',
               pronunciation: '/tiː ef ˈdeɪtə/',
               phonetic: 'TI-EF DEI-ta',
-              example: 'tf.data builds efficient input pipelines. = tf.data costruisce pipeline di input efficienti.',
+              example:
+                'tf.data builds efficient input pipelines. = tf.data costruisce pipeline di input efficienti.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'tf.data.Dataset.from_tensor_slices(X)',
@@ -5336,7 +5812,8 @@ export default {
               italian: 'nn.Module',
               pronunciation: '/en en ˈmɒdjuːl/',
               phonetic: 'EN-EN MO-giul',
-              example: 'Custom models inherit from nn.Module. = I modelli personalizzati ereditano da nn.Module.',
+              example:
+                'Custom models inherit from nn.Module. = I modelli personalizzati ereditano da nn.Module.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'class Net(nn.Module):',
@@ -5346,7 +5823,8 @@ export default {
               italian: 'Autograd',
               pronunciation: '/ˈɔːtoʊɡræd/',
               phonetic: 'AU-tou-grad',
-              example: 'Autograd computes gradients automatically. = Autograd calcola gradienti automaticamente.',
+              example:
+                'Autograd computes gradients automatically. = Autograd calcola gradienti automaticamente.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'loss.backward()',
@@ -5356,7 +5834,8 @@ export default {
               italian: 'DataLoader',
               pronunciation: '/ˈdeɪtə ˈloʊdər/',
               phonetic: 'DEI-ta LOU-der',
-              example: 'DataLoader batches and shuffles data. = DataLoader raggruppa e mescola i dati.',
+              example:
+                'DataLoader batches and shuffles data. = DataLoader raggruppa e mescola i dati.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'DataLoader(dataset, batch_size=32, shuffle=True)',
@@ -5366,7 +5845,8 @@ export default {
               italian: 'Dataset',
               pronunciation: '/ˈdeɪtəset/',
               phonetic: 'DEI-ta-set',
-              example: 'A Dataset class wraps your data. = Una classe Dataset incapsula i tuoi dati.',
+              example:
+                'A Dataset class wraps your data. = Una classe Dataset incapsula i tuoi dati.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'class MyData(Dataset):',
@@ -5376,14 +5856,15 @@ export default {
               italian: 'Tensor (PyTorch)',
               pronunciation: '/ˈtensər/',
               phonetic: 'TEN-ser',
-              example: 'PyTorch tensors run on CPU or GPU. = I tensor di PyTorch girano su CPU o GPU.',
+              example:
+                'PyTorch tensors run on CPU or GPU. = I tensor di PyTorch girano su CPU o GPU.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'x = torch.randn(2, 3).cuda()',
             },
             {
               english: 'Optimizer Step',
-              italian: 'Step dell\'ottimizzatore',
+              italian: "Step dell'ottimizzatore",
               pronunciation: '/ˈɒptɪmaɪzər step/',
               phonetic: 'OP-ti-mai-zer STEP',
               example: 'Call optimizer step after backward. = Chiama optimizer step dopo backward.',
@@ -5396,7 +5877,8 @@ export default {
               italian: 'PyTorch Lightning',
               pronunciation: '/paɪˈtɔːrtʃ ˈlaɪtnɪŋ/',
               phonetic: 'PAI-torci LAIT-ning',
-              example: 'PyTorch Lightning removes boilerplate. = PyTorch Lightning elimina codice ripetitivo.',
+              example:
+                'PyTorch Lightning removes boilerplate. = PyTorch Lightning elimina codice ripetitivo.',
               context: 'tools',
               difficulty: 'intermediate',
               tool: 'pytorch-lightning',
@@ -5406,7 +5888,8 @@ export default {
               italian: 'TorchScript',
               pronunciation: '/ˈtɔːrtʃskrɪpt/',
               phonetic: 'TORCI-skript',
-              example: 'TorchScript exports models for production. = TorchScript esporta modelli per la produzione.',
+              example:
+                'TorchScript exports models for production. = TorchScript esporta modelli per la produzione.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'torch.jit.script(model)',
@@ -5416,7 +5899,8 @@ export default {
               italian: 'torch.compile',
               pronunciation: '/ˈtɔːrtʃ kəmˈpaɪl/',
               phonetic: 'TORCI kom-PAIL',
-              example: 'torch.compile speeds up models in PyTorch 2. = torch.compile velocizza i modelli in PyTorch 2.',
+              example:
+                'torch.compile speeds up models in PyTorch 2. = torch.compile velocizza i modelli in PyTorch 2.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'model = torch.compile(model)',
@@ -5433,7 +5917,8 @@ export default {
               italian: 'scikit-learn',
               pronunciation: '/ˈsaɪkɪt lɜːrn/',
               phonetic: 'SAI-kit-LERN',
-              example: 'scikit-learn is the standard ML library in Python. = scikit-learn è la libreria standard di ML in Python.',
+              example:
+                'scikit-learn is the standard ML library in Python. = scikit-learn è la libreria standard di ML in Python.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'from sklearn import datasets',
@@ -5444,7 +5929,8 @@ export default {
               italian: 'Pipeline',
               pronunciation: '/ˈpaɪplaɪn/',
               phonetic: 'PAIP-lain',
-              example: 'A pipeline chains preprocessing and model. = Una pipeline concatena preprocessing e modello.',
+              example:
+                'A pipeline chains preprocessing and model. = Una pipeline concatena preprocessing e modello.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'Pipeline([("scaler", StandardScaler()), ("model", SVC())])',
@@ -5454,7 +5940,8 @@ export default {
               italian: 'Estimatore',
               pronunciation: '/ˈestɪmeɪtər/',
               phonetic: 'ES-ti-mei-ter',
-              example: 'Every scikit-learn estimator has fit and predict. = Ogni estimatore scikit-learn ha fit e predict.',
+              example:
+                'Every scikit-learn estimator has fit and predict. = Ogni estimatore scikit-learn ha fit e predict.',
               context: 'tools',
               difficulty: 'intermediate',
             },
@@ -5463,7 +5950,8 @@ export default {
               italian: 'Transformer (sklearn)',
               pronunciation: '/trænsˈfɔːrmər/',
               phonetic: 'trans-FOR-mer',
-              example: 'A Transformer has fit_transform method. = Un Transformer ha il metodo fit_transform.',
+              example:
+                'A Transformer has fit_transform method. = Un Transformer ha il metodo fit_transform.',
               context: 'tools',
               difficulty: 'intermediate',
               note: 'Diverso dal Transformer di Vaswani.',
@@ -5483,7 +5971,8 @@ export default {
               italian: 'predict',
               pronunciation: '/prɪˈdɪkt/',
               phonetic: 'pri-DIKT',
-              example: 'Use predict to generate predictions. = Usa predict per generare predizioni.',
+              example:
+                'Use predict to generate predictions. = Usa predict per generare predizioni.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'y_pred = model.predict(X_test)',
@@ -5493,7 +5982,8 @@ export default {
               italian: 'predict_proba',
               pronunciation: '/prɪˈdɪkt ˈproʊbə/',
               phonetic: 'pri-DIKT PRO-ba',
-              example: 'predict_proba returns class probabilities. = predict_proba restituisce probabilità di classe.',
+              example:
+                'predict_proba returns class probabilities. = predict_proba restituisce probabilità di classe.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'probs = model.predict_proba(X_test)',
@@ -5503,7 +5993,8 @@ export default {
               italian: 'NumPy',
               pronunciation: '/ˈnʌmpaɪ/',
               phonetic: 'NAM-pai',
-              example: 'NumPy provides fast array operations. = NumPy fornisce operazioni veloci su array.',
+              example:
+                'NumPy provides fast array operations. = NumPy fornisce operazioni veloci su array.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'import numpy as np',
@@ -5514,7 +6005,8 @@ export default {
               italian: 'pandas',
               pronunciation: '/ˈpændəz/',
               phonetic: 'PAN-das',
-              example: 'pandas handles tabular data in Python. = pandas gestisce dati tabulari in Python.',
+              example:
+                'pandas handles tabular data in Python. = pandas gestisce dati tabulari in Python.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'import pandas as pd',
@@ -5525,7 +6017,8 @@ export default {
               italian: 'JAX',
               pronunciation: '/dʒæks/',
               phonetic: 'GIAKS',
-              example: 'JAX combines NumPy with autograd and JIT. = JAX combina NumPy con autograd e JIT.',
+              example:
+                'JAX combines NumPy with autograd and JIT. = JAX combina NumPy con autograd e JIT.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'import jax.numpy as jnp',
@@ -5536,14 +6029,15 @@ export default {
         {
           id: 'ai_frameworks_4',
           title: 'Hugging Face & LLM Tools / Hugging Face e Strumenti LLM',
-          description: 'L\'ecosistema dei modelli pre-addestrati',
+          description: "L'ecosistema dei modelli pre-addestrati",
           items: [
             {
               english: 'Hugging Face',
               italian: 'Hugging Face',
               pronunciation: '/ˈhʌɡɪŋ feɪs/',
               phonetic: 'HAG-ghin-FEIS',
-              example: 'Hugging Face hosts thousands of models. = Hugging Face ospita migliaia di modelli.',
+              example:
+                'Hugging Face hosts thousands of models. = Hugging Face ospita migliaia di modelli.',
               context: 'tools',
               difficulty: 'intermediate',
               tool: 'Hugging Face Hub',
@@ -5553,7 +6047,8 @@ export default {
               italian: 'Libreria Transformers',
               pronunciation: '/trænsˈfɔːrmərz ˈlaɪbrəri/',
               phonetic: 'trans-FOR-merz LAI-bre-ri',
-              example: 'The transformers library standardizes LLM access. = La libreria transformers standardizza l\'accesso agli LLM.',
+              example:
+                "The transformers library standardizes LLM access. = La libreria transformers standardizza l'accesso agli LLM.",
               context: 'tools',
               difficulty: 'intermediate',
               code: 'from transformers import AutoModel',
@@ -5564,7 +6059,8 @@ export default {
               italian: 'AutoModel',
               pronunciation: '/ˈɔːtoʊ ˈmɒdəl/',
               phonetic: 'AU-tou MO-del',
-              example: 'AutoModel loads any pretrained model. = AutoModel carica qualsiasi modello pre-addestrato.',
+              example:
+                'AutoModel loads any pretrained model. = AutoModel carica qualsiasi modello pre-addestrato.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'AutoModel.from_pretrained("bert-base-uncased")',
@@ -5574,7 +6070,8 @@ export default {
               italian: 'Tokenizer',
               pronunciation: '/ˈtoʊkənaɪzər/',
               phonetic: 'TOU-ke-nai-zer',
-              example: 'A tokenizer prepares text for the model. = Un tokenizer prepara il testo per il modello.',
+              example:
+                'A tokenizer prepares text for the model. = Un tokenizer prepara il testo per il modello.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'AutoTokenizer.from_pretrained("gpt2")',
@@ -5584,7 +6081,8 @@ export default {
               italian: 'Pipeline (HF)',
               pronunciation: '/ˈpaɪplaɪn/',
               phonetic: 'PAIP-lain',
-              example: 'pipeline simplifies common NLP tasks. = pipeline semplifica compiti NLP comuni.',
+              example:
+                'pipeline simplifies common NLP tasks. = pipeline semplifica compiti NLP comuni.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'pipeline("sentiment-analysis")(text)',
@@ -5594,7 +6092,8 @@ export default {
               italian: 'Libreria datasets',
               pronunciation: '/ˈdeɪtəsets ˈlaɪbrəri/',
               phonetic: 'DEI-ta-sets LAI-bre-ri',
-              example: 'The datasets library handles large datasets efficiently. = La libreria datasets gestisce grandi dataset efficientemente.',
+              example:
+                'The datasets library handles large datasets efficiently. = La libreria datasets gestisce grandi dataset efficientemente.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'from datasets import load_dataset',
@@ -5605,7 +6104,8 @@ export default {
               italian: 'Model hub',
               pronunciation: '/ˈmɒdəl hʌb/',
               phonetic: 'MO-del HAB',
-              example: 'The model hub stores shared models. = Il model hub memorizza modelli condivisi.',
+              example:
+                'The model hub stores shared models. = Il model hub memorizza modelli condivisi.',
               context: 'tools',
               difficulty: 'intermediate',
             },
@@ -5614,7 +6114,8 @@ export default {
               italian: 'Trainer',
               pronunciation: '/ˈtreɪnər/',
               phonetic: 'TREI-ner',
-              example: 'Trainer simplifies fine-tuning workflows. = Trainer semplifica i workflow di fine-tuning.',
+              example:
+                'Trainer simplifies fine-tuning workflows. = Trainer semplifica i workflow di fine-tuning.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'trainer = Trainer(model, args, train_dataset)',
@@ -5634,7 +6135,8 @@ export default {
               italian: 'Accelerate',
               pronunciation: '/əkˈseləreɪt/',
               phonetic: 'ak-SE-le-reit',
-              example: 'Accelerate runs PyTorch on any hardware. = Accelerate esegue PyTorch su qualsiasi hardware.',
+              example:
+                'Accelerate runs PyTorch on any hardware. = Accelerate esegue PyTorch su qualsiasi hardware.',
               context: 'tools',
               difficulty: 'intermediate',
               tool: 'accelerate',
@@ -5660,7 +6162,8 @@ export default {
               italian: 'Selezione delle feature',
               pronunciation: '/ˈfiːtʃər sɪˈlekʃən/',
               phonetic: 'FII-cer si-LEK-scen',
-              example: 'Feature selection reduces dimensionality. = La selezione delle feature riduce la dimensionalità.',
+              example:
+                'Feature selection reduces dimensionality. = La selezione delle feature riduce la dimensionalità.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -5669,7 +6172,8 @@ export default {
               italian: 'Metodo filtro',
               pronunciation: '/ˈfɪltər ˈmeθəd/',
               phonetic: 'FIL-ter ME-tod',
-              example: 'Filter methods rank features by statistics. = I metodi filtro ordinano le feature per statistiche.',
+              example:
+                'Filter methods rank features by statistics. = I metodi filtro ordinano le feature per statistiche.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'SelectKBest(score_func=f_classif, k=10)',
@@ -5679,7 +6183,8 @@ export default {
               italian: 'Metodo wrapper',
               pronunciation: '/ˈræpər ˈmeθəd/',
               phonetic: 'RAP-per ME-tod',
-              example: 'Wrapper methods use the model itself for selection. = I metodi wrapper usano il modello stesso per la selezione.',
+              example:
+                'Wrapper methods use the model itself for selection. = I metodi wrapper usano il modello stesso per la selezione.',
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Esempio: Recursive Feature Elimination.',
@@ -5689,7 +6194,8 @@ export default {
               italian: 'Metodo embedded',
               pronunciation: '/ɪmˈbedɪd ˈmeθəd/',
               phonetic: 'em-BED-ded ME-tod',
-              example: 'Embedded methods select features during training. = I metodi embedded selezionano feature durante l\'addestramento.',
+              example:
+                "Embedded methods select features during training. = I metodi embedded selezionano feature durante l'addestramento.",
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Esempio: Lasso, alberi.',
@@ -5699,7 +6205,8 @@ export default {
               italian: 'Eliminazione ricorsiva delle feature',
               pronunciation: '/rɪˈkɜːrsɪv ˈfiːtʃər ɪˌlɪmɪˈneɪʃən/',
               phonetic: 'ri-KER-siv FII-cer e-li-mi-NEI-scen',
-              example: 'RFE removes weakest features iteratively. = RFE rimuove iterativamente le feature più deboli.',
+              example:
+                'RFE removes weakest features iteratively. = RFE rimuove iterativamente le feature più deboli.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'RFE(estimator, n_features_to_select=10)',
@@ -5710,7 +6217,8 @@ export default {
               italian: 'Informazione mutua',
               pronunciation: '/ˈmjuːtʃuəl ˌɪnfərˈmeɪʃən/',
               phonetic: 'MIU-ciu-al in-for-MEI-scen',
-              example: 'Mutual information measures non-linear dependence. = L\'informazione mutua misura dipendenza non lineare.',
+              example:
+                "Mutual information measures non-linear dependence. = L'informazione mutua misura dipendenza non lineare.",
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'mutual_info_classif(X, y)',
@@ -5720,7 +6228,8 @@ export default {
               italian: 'Test chi quadro',
               pronunciation: '/kaɪ skweərd test/',
               phonetic: 'KAI-SKUERD-TEST',
-              example: 'Chi-squared test selects categorical features. = Il test chi quadro seleziona feature categoriche.',
+              example:
+                'Chi-squared test selects categorical features. = Il test chi quadro seleziona feature categoriche.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'chi2(X, y)',
@@ -5730,7 +6239,8 @@ export default {
               italian: 'Importanza delle feature',
               pronunciation: '/ˈfiːtʃər ɪmˈpɔːrtəns/',
               phonetic: 'FII-cer im-POR-tans',
-              example: 'Feature importance ranks predictive variables. = L\'importanza delle feature ordina le variabili predittive.',
+              example:
+                "Feature importance ranks predictive variables. = L'importanza delle feature ordina le variabili predittive.",
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'model.feature_importances_',
@@ -5740,7 +6250,8 @@ export default {
               italian: 'Importanza per permutazione',
               pronunciation: '/ˌpɜːrmjʊˈteɪʃən ɪmˈpɔːrtəns/',
               phonetic: 'per-mu-TEI-scen im-POR-tans',
-              example: 'Permutation importance shuffles features to test impact. = L\'importanza per permutazione mescola feature per testarne l\'impatto.',
+              example:
+                "Permutation importance shuffles features to test impact. = L'importanza per permutazione mescola feature per testarne l'impatto.",
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'permutation_importance(model, X, y)',
@@ -5750,7 +6261,8 @@ export default {
               italian: 'Soglia di varianza',
               pronunciation: '/ˈveəriəns ˈθreʃhoʊld/',
               phonetic: 'VER-ians TRES-hold',
-              example: 'Variance threshold removes constant features. = La soglia di varianza rimuove feature costanti.',
+              example:
+                'Variance threshold removes constant features. = La soglia di varianza rimuove feature costanti.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'VarianceThreshold(threshold=0.0)',
@@ -5767,7 +6279,8 @@ export default {
               italian: 'Estrazione di feature',
               pronunciation: '/ˈfiːtʃər ɪkˈstrækʃən/',
               phonetic: 'FII-cer ek-STRAK-scen',
-              example: 'Feature extraction creates new informative features. = L\'estrazione di feature crea nuove feature informative.',
+              example:
+                "Feature extraction creates new informative features. = L'estrazione di feature crea nuove feature informative.",
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -5776,7 +6289,8 @@ export default {
               italian: 'Feature polinomiali',
               pronunciation: '/ˌpɒlɪˈnoʊmiəl ˈfiːtʃərz/',
               phonetic: 'po-li-NOU-mial FII-cers',
-              example: 'Polynomial features add interactions like x times y. = Le feature polinomiali aggiungono interazioni come x per y.',
+              example:
+                'Polynomial features add interactions like x times y. = Le feature polinomiali aggiungono interazioni come x per y.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'PolynomialFeatures(degree=2, interaction_only=True)',
@@ -5786,7 +6300,8 @@ export default {
               italian: 'Binning',
               pronunciation: '/ˈbɪnɪŋ/',
               phonetic: 'BIN-ning',
-              example: 'Binning groups continuous values into bins. = Il binning raggruppa valori continui in bin.',
+              example:
+                'Binning groups continuous values into bins. = Il binning raggruppa valori continui in bin.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'KBinsDiscretizer(n_bins=5)',
@@ -5796,7 +6311,8 @@ export default {
               italian: 'Discretizzazione',
               pronunciation: '/dɪˌskriːtəˈzeɪʃən/',
               phonetic: 'di-skri-ti-ZEI-scen',
-              example: 'Discretization converts continuous to categorical. = La discretizzazione converte continuo in categorico.',
+              example:
+                'Discretization converts continuous to categorical. = La discretizzazione converte continuo in categorico.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -5805,7 +6321,8 @@ export default {
               italian: 'Incrocio di feature',
               pronunciation: '/ˈfiːtʃər ˈkrɒsɪŋ/',
               phonetic: 'FII-cer KROS-sing',
-              example: 'Feature crossing combines two features into one. = L\'incrocio di feature combina due feature in una.',
+              example:
+                "Feature crossing combines two features into one. = L'incrocio di feature combina due feature in una.",
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Esempio: latitudine x longitudine.',
@@ -5815,7 +6332,8 @@ export default {
               italian: 'Feature di data',
               pronunciation: '/deɪt ˈfiːtʃərz/',
               phonetic: 'DEIT FII-cers',
-              example: 'Extract day of week and month as features. = Estrai giorno della settimana e mese come feature.',
+              example:
+                'Extract day of week and month as features. = Estrai giorno della settimana e mese come feature.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df["weekday"] = df["date"].dt.weekday',
@@ -5825,7 +6343,8 @@ export default {
               italian: 'Codifica ciclica',
               pronunciation: '/ˈsɪklɪk ɪnˈkoʊdɪŋ/',
               phonetic: 'SIK-lik in-KOU-ding',
-              example: 'Cyclic encoding handles hours and months as cycles. = La codifica ciclica gestisce ore e mesi come cicli.',
+              example:
+                'Cyclic encoding handles hours and months as cycles. = La codifica ciclica gestisce ore e mesi come cicli.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'sin_hour = np.sin(2*np.pi*hour/24)',
@@ -5835,7 +6354,8 @@ export default {
               italian: 'Aggregazione',
               pronunciation: '/ˌæɡrɪˈɡeɪʃən/',
               phonetic: 'a-gre-GEI-scen',
-              example: 'Aggregate features by user or category. = Aggrega feature per utente o categoria.',
+              example:
+                'Aggregate features by user or category. = Aggrega feature per utente o categoria.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df.groupby("user").agg({"price": "mean"})',
@@ -5845,7 +6365,8 @@ export default {
               italian: 'Feature di lag',
               pronunciation: '/læɡ ˈfiːtʃər/',
               phonetic: 'LAG FII-cer',
-              example: 'A lag feature uses past values as predictors. = Una feature di lag usa valori passati come predittori.',
+              example:
+                'A lag feature uses past values as predictors. = Una feature di lag usa valori passati come predittori.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df["lag1"] = df["value"].shift(1)',
@@ -5856,7 +6377,8 @@ export default {
               italian: 'Finestra mobile',
               pronunciation: '/ˈroʊlɪŋ ˈwɪndoʊ/',
               phonetic: 'RO-ling UIN-dou',
-              example: 'A rolling window computes moving statistics. = Una finestra mobile calcola statistiche scorrevoli.',
+              example:
+                'A rolling window computes moving statistics. = Una finestra mobile calcola statistiche scorrevoli.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df["rolling_mean"] = df["value"].rolling(7).mean()',
@@ -5873,7 +6395,8 @@ export default {
               italian: 'Codifica per frequenza',
               pronunciation: '/ˈfriːkwənsi ɪnˈkoʊdɪŋ/',
               phonetic: 'FRI-kuen-si in-KOU-ding',
-              example: 'Frequency encoding replaces categories with their counts. = La codifica per frequenza sostituisce categorie con i loro conteggi.',
+              example:
+                'Frequency encoding replaces categories with their counts. = La codifica per frequenza sostituisce categorie con i loro conteggi.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df["cat_freq"] = df["cat"].map(df["cat"].value_counts())',
@@ -5883,7 +6406,8 @@ export default {
               italian: 'Codifica hash',
               pronunciation: '/hæʃ ɪnˈkoʊdɪŋ/',
               phonetic: 'HASH in-KOU-ding',
-              example: 'Hash encoding handles many categories with fixed memory. = La codifica hash gestisce molte categorie con memoria fissa.',
+              example:
+                'Hash encoding handles many categories with fixed memory. = La codifica hash gestisce molte categorie con memoria fissa.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'category_encoders.HashingEncoder',
@@ -5893,7 +6417,8 @@ export default {
               italian: 'Codifica binaria',
               pronunciation: '/ˈbaɪnəri ɪnˈkoʊdɪŋ/',
               phonetic: 'BAI-na-ri in-KOU-ding',
-              example: 'Binary encoding represents categories as binary digits. = La codifica binaria rappresenta categorie come cifre binarie.',
+              example:
+                'Binary encoding represents categories as binary digits. = La codifica binaria rappresenta categorie come cifre binarie.',
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Compromesso tra one-hot e label.',
@@ -5903,7 +6428,8 @@ export default {
               italian: 'Codifica leave-one-out',
               pronunciation: '/liːv wʌn aʊt ɪnˈkoʊdɪŋ/',
               phonetic: 'LIV-UAN-AUT in-KOU-ding',
-              example: 'Leave-one-out encoding avoids target leakage. = La codifica leave-one-out evita target leakage.',
+              example:
+                'Leave-one-out encoding avoids target leakage. = La codifica leave-one-out evita target leakage.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'category_encoders.LeaveOneOutEncoder',
@@ -5913,7 +6439,8 @@ export default {
               italian: 'CatBoost encoder',
               pronunciation: '/kæt buːst ɪnˈkoʊdər/',
               phonetic: 'KAT-BUST in-KOU-der',
-              example: 'CatBoost encoder handles categories smartly. = CatBoost encoder gestisce categorie in modo intelligente.',
+              example:
+                'CatBoost encoder handles categories smartly. = CatBoost encoder gestisce categorie in modo intelligente.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -5922,7 +6449,8 @@ export default {
               italian: 'Codifica WOE',
               pronunciation: '/dʌbəl juː oʊ iː ɪnˈkoʊdɪŋ/',
               phonetic: 'DAB-bol-IU-O-I in-KOU-ding',
-              example: 'WOE encoding is popular in credit scoring. = La codifica WOE è popolare nel credit scoring.',
+              example:
+                'WOE encoding is popular in credit scoring. = La codifica WOE è popolare nel credit scoring.',
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Weight of Evidence.',
@@ -5932,7 +6460,8 @@ export default {
               italian: 'Encoder James-Stein',
               pronunciation: '/dʒeɪmz staɪn ɪnˈkoʊdər/',
               phonetic: 'GEIMS-STAIN in-KOU-der',
-              example: 'James-Stein encoder shrinks toward the global mean. = L\'encoder James-Stein riduce verso la media globale.',
+              example:
+                "James-Stein encoder shrinks toward the global mean. = L'encoder James-Stein riduce verso la media globale.",
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -5941,7 +6470,8 @@ export default {
               italian: 'Strato di embedding',
               pronunciation: '/ɪmˈbedɪŋ ˈleɪər/',
               phonetic: 'em-BED-ding LEI-er',
-              example: 'An embedding layer learns dense category vectors. = Uno strato di embedding impara vettori densi delle categorie.',
+              example:
+                'An embedding layer learns dense category vectors. = Uno strato di embedding impara vettori densi delle categorie.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'Embedding(input_dim=1000, output_dim=32)',
@@ -5951,7 +6481,8 @@ export default {
               italian: 'Raggruppamento categorie rare',
               pronunciation: '/reər ˈkætəɡəri ˈɡruːpɪŋ/',
               phonetic: 'RER ka-TE-go-ri GRU-ping',
-              example: 'Group rare categories into "other" to reduce noise. = Raggruppa categorie rare in "altro" per ridurre rumore.',
+              example:
+                'Group rare categories into "other" to reduce noise. = Raggruppa categorie rare in "altro" per ridurre rumore.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -5960,7 +6491,8 @@ export default {
               italian: 'Alta cardinalità',
               pronunciation: '/haɪ ˌkɑːrdəˈnæləti/',
               phonetic: 'HAI kar-di-NA-li-ti',
-              example: 'High cardinality features have many unique values. = Le feature ad alta cardinalità hanno molti valori unici.',
+              example:
+                'High cardinality features have many unique values. = Le feature ad alta cardinalità hanno molti valori unici.',
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Esempio: ID utente con milioni di valori.',
@@ -5977,7 +6509,8 @@ export default {
               italian: 'Conoscenza di dominio',
               pronunciation: '/doʊˈmeɪn ˈnɒlɪdʒ/',
               phonetic: 'do-MEIN NO-ligi',
-              example: 'Domain knowledge guides feature design. = La conoscenza di dominio guida la progettazione delle feature.',
+              example:
+                'Domain knowledge guides feature design. = La conoscenza di dominio guida la progettazione delle feature.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -5986,7 +6519,8 @@ export default {
               italian: 'Creazione di feature',
               pronunciation: '/ˈfiːtʃər ˈkræftɪŋ/',
               phonetic: 'FII-cer KRAF-ting',
-              example: 'Feature crafting builds expert-driven features. = La creazione di feature costruisce feature guidate da esperti.',
+              example:
+                'Feature crafting builds expert-driven features. = La creazione di feature costruisce feature guidate da esperti.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -5995,7 +6529,8 @@ export default {
               italian: 'Feature di rapporto',
               pronunciation: '/ˈreɪʃoʊ ˈfiːtʃər/',
               phonetic: 'REI-scio FII-cer',
-              example: 'A ratio feature divides one variable by another. = Una feature di rapporto divide una variabile per un\'altra.',
+              example:
+                "A ratio feature divides one variable by another. = Una feature di rapporto divide una variabile per un'altra.",
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df["price_per_sqm"] = df["price"] / df["sqm"]',
@@ -6005,7 +6540,8 @@ export default {
               italian: 'Feature di differenza',
               pronunciation: '/ˈdɪfərəns ˈfiːtʃər/',
               phonetic: 'DIF-fe-rens FII-cer',
-              example: 'Difference features capture changes over time. = Le feature di differenza catturano cambiamenti nel tempo.',
+              example:
+                'Difference features capture changes over time. = Le feature di differenza catturano cambiamenti nel tempo.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df["delta"] = df["t1"] - df["t0"]',
@@ -6015,7 +6551,8 @@ export default {
               italian: 'Feature geospaziale',
               pronunciation: '/ˌdʒiːoʊˈspeɪʃəl ˈfiːtʃər/',
               phonetic: 'gi-o-SPEI-scial FII-cer',
-              example: 'Geospatial features include distance to landmarks. = Le feature geospaziali includono distanza da punti di riferimento.',
+              example:
+                'Geospatial features include distance to landmarks. = Le feature geospaziali includono distanza da punti di riferimento.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -6024,7 +6561,8 @@ export default {
               italian: 'Feature testuali',
               pronunciation: '/tekst ˈfiːtʃərz/',
               phonetic: 'TEKST FII-cers',
-              example: 'Text features include length, word count, sentiment. = Le feature testuali includono lunghezza, conteggio parole, sentiment.',
+              example:
+                'Text features include length, word count, sentiment. = Le feature testuali includono lunghezza, conteggio parole, sentiment.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -6033,7 +6571,8 @@ export default {
               italian: 'Feature immagine',
               pronunciation: '/ˈɪmɪdʒ ˈfiːtʃərz/',
               phonetic: 'I-migi FII-cers',
-              example: 'Image features can be extracted via pretrained CNNs. = Le feature immagine possono essere estratte tramite CNN pre-addestrate.',
+              example:
+                'Image features can be extracted via pretrained CNNs. = Le feature immagine possono essere estratte tramite CNN pre-addestrate.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'features = resnet50(img)',
@@ -6043,7 +6582,8 @@ export default {
               italian: 'Feature statistica',
               pronunciation: '/stəˈtɪstɪkəl ˈfiːtʃər/',
               phonetic: 'sta-TIS-ti-kal FII-cer',
-              example: 'Statistical features summarize distributions. = Le feature statistiche riassumono distribuzioni.',
+              example:
+                'Statistical features summarize distributions. = Le feature statistiche riassumono distribuzioni.',
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Esempi: media, varianza, percentili.',
@@ -6053,7 +6593,8 @@ export default {
               italian: 'Termine di interazione',
               pronunciation: '/ˌɪntərˈækʃən tɜːrm/',
               phonetic: 'in-ter-AK-scen TERM',
-              example: 'Interaction terms capture combined effects. = I termini di interazione catturano effetti combinati.',
+              example:
+                'Interaction terms capture combined effects. = I termini di interazione catturano effetti combinati.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -6062,7 +6603,8 @@ export default {
               italian: 'Feature engineering automatico',
               pronunciation: '/ˈɔːtoʊ ˈfiːtʃər ˌendʒɪˈnɪrɪŋ/',
               phonetic: 'AU-tou FII-cer en-gi-NI-ring',
-              example: 'Auto feature engineering generates many features automatically. = Il feature engineering automatico genera molte feature automaticamente.',
+              example:
+                'Auto feature engineering generates many features automatically. = Il feature engineering automatico genera molte feature automaticamente.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Featuretools, tsfresh',
@@ -6088,7 +6630,8 @@ export default {
               italian: 'GAN',
               pronunciation: '/ɡæn/',
               phonetic: 'GAN',
-              example: 'A GAN consists of generator and discriminator. = Una GAN è composta da generatore e discriminatore.',
+              example:
+                'A GAN consists of generator and discriminator. = Una GAN è composta da generatore e discriminatore.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Generative Adversarial Network.',
@@ -6107,7 +6650,8 @@ export default {
               italian: 'Discriminatore',
               pronunciation: '/dɪˈskrɪmɪneɪtər/',
               phonetic: 'di-SKRI-mi-nei-ter',
-              example: 'The discriminator distinguishes real from fake. = Il discriminatore distingue il vero dal falso.',
+              example:
+                'The discriminator distinguishes real from fake. = Il discriminatore distingue il vero dal falso.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6116,7 +6660,8 @@ export default {
               italian: 'Addestramento avversario',
               pronunciation: '/ˌædvərˈseəriəl ˈtreɪnɪŋ/',
               phonetic: 'ad-ver-SE-rial TREI-ning',
-              example: 'Adversarial training has competing networks. = L\'addestramento avversario ha reti concorrenti.',
+              example:
+                "Adversarial training has competing networks. = L'addestramento avversario ha reti concorrenti.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6125,7 +6670,8 @@ export default {
               italian: 'Collasso di modalità',
               pronunciation: '/moʊd kəˈlæps/',
               phonetic: 'MOUD ko-LAPS',
-              example: 'Mode collapse makes the GAN produce limited variety. = Il collasso di modalità fa produrre alla GAN poca varietà.',
+              example:
+                'Mode collapse makes the GAN produce limited variety. = Il collasso di modalità fa produrre alla GAN poca varietà.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Problema classico delle GAN.',
@@ -6135,7 +6681,8 @@ export default {
               italian: 'StyleGAN',
               pronunciation: '/staɪl ɡæn/',
               phonetic: 'STAIL-GAN',
-              example: 'StyleGAN generates photorealistic faces. = StyleGAN genera volti fotorealistici.',
+              example:
+                'StyleGAN generates photorealistic faces. = StyleGAN genera volti fotorealistici.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6144,7 +6691,8 @@ export default {
               italian: 'CycleGAN',
               pronunciation: '/ˈsaɪkəl ɡæn/',
               phonetic: 'SAI-kel-GAN',
-              example: 'CycleGAN translates between unpaired image domains. = CycleGAN traduce tra domini di immagini non accoppiati.',
+              example:
+                'CycleGAN translates between unpaired image domains. = CycleGAN traduce tra domini di immagini non accoppiati.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6153,7 +6701,8 @@ export default {
               italian: 'GAN condizionale',
               pronunciation: '/kənˈdɪʃənəl ɡæn/',
               phonetic: 'kon-DI-scio-nal GAN',
-              example: 'Conditional GAN generates samples for a given class. = Una GAN condizionale genera campioni per una classe data.',
+              example:
+                'Conditional GAN generates samples for a given class. = Una GAN condizionale genera campioni per una classe data.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Abbreviata cGAN.',
@@ -6163,7 +6712,8 @@ export default {
               italian: 'GAN di Wasserstein',
               pronunciation: '/ˈvɑːsərʃtaɪn ɡæn/',
               phonetic: 'VAS-ser-stain GAN',
-              example: 'Wasserstein GAN uses earth mover distance for stability. = La GAN di Wasserstein usa la distanza earth mover per stabilità.',
+              example:
+                'Wasserstein GAN uses earth mover distance for stability. = La GAN di Wasserstein usa la distanza earth mover per stabilità.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6172,7 +6722,8 @@ export default {
               italian: 'Inception score',
               pronunciation: '/ɪnˈsepʃən skɔːr/',
               phonetic: 'in-SEP-scen SKOR',
-              example: 'Inception score evaluates GAN sample quality. = Inception score valuta la qualità dei campioni GAN.',
+              example:
+                'Inception score evaluates GAN sample quality. = Inception score valuta la qualità dei campioni GAN.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6188,7 +6739,8 @@ export default {
               italian: 'VAE',
               pronunciation: '/viː eɪ iː/',
               phonetic: 'VI-EI-I',
-              example: 'A VAE learns a probabilistic latent space. = Un VAE impara uno spazio latente probabilistico.',
+              example:
+                'A VAE learns a probabilistic latent space. = Un VAE impara uno spazio latente probabilistico.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Variational Autoencoder.',
@@ -6198,7 +6750,8 @@ export default {
               italian: 'Spazio latente',
               pronunciation: '/ˈleɪtənt speɪs/',
               phonetic: 'LEI-tent SPEIS',
-              example: 'The latent space encodes compressed representations. = Lo spazio latente codifica rappresentazioni compresse.',
+              example:
+                'The latent space encodes compressed representations. = Lo spazio latente codifica rappresentazioni compresse.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6207,7 +6760,8 @@ export default {
               italian: 'Rete encoder',
               pronunciation: '/ɪnˈkoʊdər ˈnetwɜːrk/',
               phonetic: 'en-KOU-der NET-uerk',
-              example: 'The encoder maps input to a latent distribution. = L\'encoder mappa l\'input in una distribuzione latente.',
+              example:
+                "The encoder maps input to a latent distribution. = L'encoder mappa l'input in una distribuzione latente.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6216,7 +6770,8 @@ export default {
               italian: 'Trucco di riparametrizzazione',
               pronunciation: '/ˌriːpəˌræmɪtəraɪˈzeɪʃən trɪk/',
               phonetic: 'ri-pa-ra-me-tra-ai-ZEI-scen TRIK',
-              example: 'The reparameterization trick enables gradient flow. = Il trucco di riparametrizzazione abilita il flusso del gradiente.',
+              example:
+                'The reparameterization trick enables gradient flow. = Il trucco di riparametrizzazione abilita il flusso del gradiente.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Z = mu + sigma * epsilon.',
@@ -6226,7 +6781,8 @@ export default {
               italian: 'Loss di divergenza KL',
               pronunciation: '/keɪ el dɪˈvɜːrdʒəns lɒs/',
               phonetic: 'KEI-EL di-VER-gens LOS',
-              example: 'KL divergence regularizes the latent space. = La divergenza KL regolarizza lo spazio latente.',
+              example:
+                'KL divergence regularizes the latent space. = La divergenza KL regolarizza lo spazio latente.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6235,7 +6791,8 @@ export default {
               italian: 'Loss di ricostruzione',
               pronunciation: '/ˌriːkənˈstrʌkʃən lɒs/',
               phonetic: 'ri-kon-STRAK-scen LOS',
-              example: 'Reconstruction loss measures input reconstruction quality. = La loss di ricostruzione misura la qualità di ricostruzione dell\'input.',
+              example:
+                "Reconstruction loss measures input reconstruction quality. = La loss di ricostruzione misura la qualità di ricostruzione dell'input.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6244,7 +6801,8 @@ export default {
               italian: 'Interpolazione latente',
               pronunciation: '/ˈleɪtənt ɪnˌtɜːrpəˈleɪʃən/',
               phonetic: 'LEI-tent in-ter-po-LEI-scen',
-              example: 'Latent interpolation morphs between samples. = L\'interpolazione latente trasforma tra campioni.',
+              example:
+                "Latent interpolation morphs between samples. = L'interpolazione latente trasforma tra campioni.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6253,7 +6811,8 @@ export default {
               italian: 'Beta-VAE',
               pronunciation: '/ˈbeɪtə viː eɪ iː/',
               phonetic: 'BE-ta VI-EI-I',
-              example: 'Beta-VAE encourages disentangled representations. = Beta-VAE incoraggia rappresentazioni disentangled.',
+              example:
+                'Beta-VAE encourages disentangled representations. = Beta-VAE incoraggia rappresentazioni disentangled.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6262,7 +6821,8 @@ export default {
               italian: 'Disentanglement',
               pronunciation: '/dɪˌsɛnˈtæŋɡəlmənt/',
               phonetic: 'di-sen-TAN-gel-ment',
-              example: 'Disentanglement separates independent factors. = Il disentanglement separa fattori indipendenti.',
+              example:
+                'Disentanglement separates independent factors. = Il disentanglement separa fattori indipendenti.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Termine sempre lasciato in inglese.',
@@ -6272,7 +6832,8 @@ export default {
               italian: 'Normalizing flow',
               pronunciation: '/ˈnɔːrməlaɪzɪŋ floʊ/',
               phonetic: 'NOR-ma-lai-zing FLOU',
-              example: 'Normalizing flows learn invertible transformations. = I normalizing flow imparano trasformazioni invertibili.',
+              example:
+                'Normalizing flows learn invertible transformations. = I normalizing flow imparano trasformazioni invertibili.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6288,17 +6849,19 @@ export default {
               italian: 'Modello a diffusione',
               pronunciation: '/dɪˈfjuːʒən ˈmɒdəl/',
               phonetic: 'di-FIU-gen MO-del',
-              example: 'A diffusion model generates by reversing noise. = Un modello a diffusione genera invertendo il rumore.',
+              example:
+                'A diffusion model generates by reversing noise. = Un modello a diffusione genera invertendo il rumore.',
               context: 'architectures',
               difficulty: 'advanced',
-              note: 'Stato dell\'arte per generazione di immagini.',
+              note: "Stato dell'arte per generazione di immagini.",
             },
             {
               english: 'Forward Process',
               italian: 'Processo in avanti',
               pronunciation: '/ˈfɔːrwərd ˈprɒses/',
               phonetic: 'FOR-uerd PRO-ses',
-              example: 'The forward process gradually adds noise. = Il processo in avanti aggiunge rumore gradualmente.',
+              example:
+                'The forward process gradually adds noise. = Il processo in avanti aggiunge rumore gradualmente.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6307,7 +6870,8 @@ export default {
               italian: 'Processo inverso',
               pronunciation: '/rɪˈvɜːrs ˈprɒses/',
               phonetic: 'ri-VERS PRO-ses',
-              example: 'The reverse process learns to denoise. = Il processo inverso impara a denoise.',
+              example:
+                'The reverse process learns to denoise. = Il processo inverso impara a denoise.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6316,7 +6880,8 @@ export default {
               italian: 'Stable Diffusion',
               pronunciation: '/ˈsteɪbəl dɪˈfjuːʒən/',
               phonetic: 'STEI-bel di-FIU-gen',
-              example: 'Stable Diffusion is an open-source text-to-image model. = Stable Diffusion è un modello text-to-image open source.',
+              example:
+                'Stable Diffusion is an open-source text-to-image model. = Stable Diffusion è un modello text-to-image open source.',
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'diffusers',
@@ -6326,7 +6891,8 @@ export default {
               italian: 'DALL-E',
               pronunciation: '/ˈdɑːli/',
               phonetic: 'DAL-li',
-              example: 'DALL-E generates images from text prompts. = DALL-E genera immagini da prompt testuali.',
+              example:
+                'DALL-E generates images from text prompts. = DALL-E genera immagini da prompt testuali.',
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'OpenAI DALL-E',
@@ -6336,7 +6902,8 @@ export default {
               italian: 'Midjourney',
               pronunciation: '/mɪdˈdʒɜːrni/',
               phonetic: 'mid-GIER-ni',
-              example: 'Midjourney is an AI art tool on Discord. = Midjourney è uno strumento di arte IA su Discord.',
+              example:
+                'Midjourney is an AI art tool on Discord. = Midjourney è uno strumento di arte IA su Discord.',
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'Midjourney',
@@ -6355,7 +6922,8 @@ export default {
               italian: 'Passi di campionamento',
               pronunciation: '/ˈsæmplɪŋ steps/',
               phonetic: 'SAM-pling STEPS',
-              example: 'More sampling steps mean higher quality. = Più passi di campionamento significano qualità più alta.',
+              example:
+                'More sampling steps mean higher quality. = Più passi di campionamento significano qualità più alta.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Tipicamente 20-50 passi.',
@@ -6365,7 +6933,8 @@ export default {
               italian: 'Guidance senza classificatore',
               pronunciation: '/ˈklæsɪfaɪər friː ˈɡaɪdəns/',
               phonetic: 'KLA-si-fai-er FRI GAI-dans',
-              example: 'Classifier-free guidance improves prompt adherence. = La guidance senza classificatore migliora l\'aderenza al prompt.',
+              example:
+                "Classifier-free guidance improves prompt adherence. = La guidance senza classificatore migliora l'aderenza al prompt.",
               context: 'architectures',
               difficulty: 'advanced',
               code: 'guidance_scale=7.5',
@@ -6375,7 +6944,8 @@ export default {
               italian: 'ControlNet',
               pronunciation: '/kənˈtroʊl net/',
               phonetic: 'kon-TROL-NET',
-              example: 'ControlNet adds structural control to diffusion. = ControlNet aggiunge controllo strutturale alla diffusione.',
+              example:
+                'ControlNet adds structural control to diffusion. = ControlNet aggiunge controllo strutturale alla diffusione.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6383,15 +6953,16 @@ export default {
         },
         {
           id: 'ai_generative_4',
-          title: 'Generative Use Cases / Casi d\'Uso Generativi',
-          description: 'Applicazioni dell\'IA generativa',
+          title: "Generative Use Cases / Casi d'Uso Generativi",
+          description: "Applicazioni dell'IA generativa",
           items: [
             {
               english: 'Text Generation',
               italian: 'Generazione di testo',
               pronunciation: '/tekst ˌdʒenəˈreɪʃən/',
               phonetic: 'TEKST gen-ne-REI-scen',
-              example: 'Text generation produces coherent paragraphs. = La generazione di testo produce paragrafi coerenti.',
+              example:
+                'Text generation produces coherent paragraphs. = La generazione di testo produce paragrafi coerenti.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6400,7 +6971,8 @@ export default {
               italian: 'Generazione di immagini',
               pronunciation: '/ˈɪmɪdʒ ˌdʒenəˈreɪʃən/',
               phonetic: 'I-migi gen-ne-REI-scen',
-              example: 'Image generation creates pictures from descriptions. = La generazione di immagini crea immagini da descrizioni.',
+              example:
+                'Image generation creates pictures from descriptions. = La generazione di immagini crea immagini da descrizioni.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6409,7 +6981,8 @@ export default {
               italian: 'Testo-a-immagine',
               pronunciation: '/tekst tuː ˈɪmɪdʒ/',
               phonetic: 'TEKST-TU-I-migi',
-              example: 'Text-to-image converts prompts into pictures. = Testo-a-immagine converte prompt in immagini.',
+              example:
+                'Text-to-image converts prompts into pictures. = Testo-a-immagine converte prompt in immagini.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6418,7 +6991,8 @@ export default {
               italian: 'Immagine-a-immagine',
               pronunciation: '/ˈɪmɪdʒ tuː ˈɪmɪdʒ/',
               phonetic: 'I-migi-TU-I-migi',
-              example: 'Image-to-image transforms an existing picture. = Immagine-a-immagine trasforma una foto esistente.',
+              example:
+                'Image-to-image transforms an existing picture. = Immagine-a-immagine trasforma una foto esistente.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6427,7 +7001,8 @@ export default {
               italian: 'Generazione audio',
               pronunciation: '/ˈɔːdioʊ ˌdʒenəˈreɪʃən/',
               phonetic: 'AU-dio gen-ne-REI-scen',
-              example: 'Audio generation creates music or speech. = La generazione audio crea musica o voce.',
+              example:
+                'Audio generation creates music or speech. = La generazione audio crea musica o voce.',
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'MusicLM, AudioLDM',
@@ -6437,7 +7012,8 @@ export default {
               italian: 'Generazione video',
               pronunciation: '/ˈvɪdioʊ ˌdʒenəˈreɪʃən/',
               phonetic: 'VI-di-o gen-ne-REI-scen',
-              example: 'Video generation creates animations from prompts. = La generazione video crea animazioni da prompt.',
+              example:
+                'Video generation creates animations from prompts. = La generazione video crea animazioni da prompt.',
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'Sora, Runway',
@@ -6447,7 +7023,8 @@ export default {
               italian: 'Generazione di codice',
               pronunciation: '/koʊd ˌdʒenəˈreɪʃən/',
               phonetic: 'KOUD gen-ne-REI-scen',
-              example: 'Code generation tools accelerate developers. = Gli strumenti di generazione di codice accelerano gli sviluppatori.',
+              example:
+                'Code generation tools accelerate developers. = Gli strumenti di generazione di codice accelerano gli sviluppatori.',
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'GitHub Copilot, Codeium',
@@ -6457,7 +7034,8 @@ export default {
               italian: 'Dati sintetici',
               pronunciation: '/sɪnˈθetɪk ˈdeɪtə/',
               phonetic: 'sin-TE-tik DEI-ta',
-              example: 'Synthetic data augments training datasets. = I dati sintetici arricchiscono dataset di addestramento.',
+              example:
+                'Synthetic data augments training datasets. = I dati sintetici arricchiscono dataset di addestramento.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Utile quando i dati reali sono scarsi o sensibili.',
@@ -6467,7 +7045,8 @@ export default {
               italian: 'Deepfake',
               pronunciation: '/ˈdiːpfeɪk/',
               phonetic: 'DIP-feik',
-              example: 'Deepfakes are AI-generated fake media. = I deepfake sono media falsi generati dall\'IA.',
+              example:
+                "Deepfakes are AI-generated fake media. = I deepfake sono media falsi generati dall'IA.",
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Solleva problemi etici importanti.',
@@ -6477,7 +7056,8 @@ export default {
               italian: 'Watermarking',
               pronunciation: '/ˈwɔːtərˌmɑːrkɪŋ/',
               phonetic: 'UO-ter-MAR-king',
-              example: 'Watermarking signals AI-generated content. = Il watermarking segnala contenuti generati dall\'IA.',
+              example:
+                "Watermarking signals AI-generated content. = Il watermarking segnala contenuti generati dall'IA.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -6502,7 +7082,8 @@ export default {
               italian: 'MLOps',
               pronunciation: '/em el ɒps/',
               phonetic: 'EM-EL-OPS',
-              example: 'MLOps applies DevOps principles to ML. = MLOps applica i principi DevOps al ML.',
+              example:
+                'MLOps applies DevOps principles to ML. = MLOps applica i principi DevOps al ML.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6511,7 +7092,8 @@ export default {
               italian: 'Tracciamento esperimenti',
               pronunciation: '/ɪkˈsperɪmənt ˈtrækɪŋ/',
               phonetic: 'ek-SPE-ri-ment TRA-king',
-              example: 'Experiment tracking logs every run. = Il tracciamento esperimenti registra ogni esecuzione.',
+              example:
+                'Experiment tracking logs every run. = Il tracciamento esperimenti registra ogni esecuzione.',
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'MLflow, W&B, Neptune',
@@ -6521,7 +7103,8 @@ export default {
               italian: 'MLflow',
               pronunciation: '/em el floʊ/',
               phonetic: 'EM-EL-FLOU',
-              example: 'MLflow is an open-source MLOps platform. = MLflow è una piattaforma MLOps open source.',
+              example:
+                'MLflow is an open-source MLOps platform. = MLflow è una piattaforma MLOps open source.',
               context: 'mlops',
               difficulty: 'advanced',
               code: 'mlflow.log_metric("accuracy", 0.95)',
@@ -6532,7 +7115,8 @@ export default {
               italian: 'Weights and Biases',
               pronunciation: '/weɪts ænd ˈbaɪəsɪz/',
               phonetic: 'UEITS-end-BAI-as-iz',
-              example: 'Weights and Biases tracks ML experiments. = Weights and Biases traccia esperimenti ML.',
+              example:
+                'Weights and Biases tracks ML experiments. = Weights and Biases traccia esperimenti ML.',
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'wandb',
@@ -6543,7 +7127,8 @@ export default {
               italian: 'Run',
               pronunciation: '/rʌn/',
               phonetic: 'RAN',
-              example: 'Each run is one training execution. = Ogni run è un\'esecuzione di addestramento.',
+              example:
+                "Each run is one training execution. = Ogni run è un'esecuzione di addestramento.",
               context: 'mlops',
               difficulty: 'advanced',
               code: 'with mlflow.start_run():',
@@ -6553,7 +7138,8 @@ export default {
               italian: 'Artefatto',
               pronunciation: '/ˈɑːrtɪfækt/',
               phonetic: 'AR-ti-fakt',
-              example: 'An artifact is any output saved during a run. = Un artefatto è qualsiasi output salvato durante un run.',
+              example:
+                'An artifact is any output saved during a run. = Un artefatto è qualsiasi output salvato durante un run.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6562,7 +7148,8 @@ export default {
               italian: 'Registrazione metriche',
               pronunciation: '/ˈmetrɪk ˈlɒɡɪŋ/',
               phonetic: 'ME-trik LOG-ging',
-              example: 'Metric logging tracks loss and accuracy. = La registrazione metriche traccia loss e accuratezza.',
+              example:
+                'Metric logging tracks loss and accuracy. = La registrazione metriche traccia loss e accuratezza.',
               context: 'mlops',
               difficulty: 'advanced',
               code: 'wandb.log({"loss": loss, "acc": acc})',
@@ -6572,7 +7159,8 @@ export default {
               italian: 'Registrazione iperparametri',
               pronunciation: '/ˈhaɪpərpəˈræmɪtər ˈlɒɡɪŋ/',
               phonetic: 'HAI-per-pa-RA-me-ter LOG-ging',
-              example: 'Hyperparameter logging records all settings. = La registrazione iperparametri registra tutte le impostazioni.',
+              example:
+                'Hyperparameter logging records all settings. = La registrazione iperparametri registra tutte le impostazioni.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6581,7 +7169,8 @@ export default {
               italian: 'Riproducibilità',
               pronunciation: '/ˌriːprəˌdjuːsəˈbɪləti/',
               phonetic: 'ri-pro-du-si-BI-li-ti',
-              example: 'Reproducibility means others can recreate your results. = La riproducibilità significa che altri possono ricreare i tuoi risultati.',
+              example:
+                'Reproducibility means others can recreate your results. = La riproducibilità significa che altri possono ricreare i tuoi risultati.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Salva seed, versioni di librerie, codice e dati.',
@@ -6591,7 +7180,8 @@ export default {
               italian: 'Sweep',
               pronunciation: '/swiːp/',
               phonetic: 'SUIP',
-              example: 'A sweep automates hyperparameter search. = Uno sweep automatizza la ricerca di iperparametri.',
+              example:
+                'A sweep automates hyperparameter search. = Uno sweep automatizza la ricerca di iperparametri.',
               context: 'mlops',
               difficulty: 'advanced',
               code: 'wandb.agent(sweep_id, train_func)',
@@ -6608,7 +7198,8 @@ export default {
               italian: 'Registro dei modelli',
               pronunciation: '/ˈmɒdəl ˈredʒɪstri/',
               phonetic: 'MO-del RE-gi-stri',
-              example: 'A model registry stores production-ready models. = Un registro dei modelli memorizza modelli pronti per la produzione.',
+              example:
+                'A model registry stores production-ready models. = Un registro dei modelli memorizza modelli pronti per la produzione.',
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'MLflow Registry, Sagemaker Registry',
@@ -6618,7 +7209,8 @@ export default {
               italian: 'Versione del modello',
               pronunciation: '/ˈmɒdəl ˈvɜːrʒən/',
               phonetic: 'MO-del VER-gen',
-              example: 'Each model version has a unique ID. = Ogni versione del modello ha un ID univoco.',
+              example:
+                'Each model version has a unique ID. = Ogni versione del modello ha un ID univoco.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6627,7 +7219,8 @@ export default {
               italian: 'Stadio del modello',
               pronunciation: '/ˈmɒdəl steɪdʒ/',
               phonetic: 'MO-del STEIGI',
-              example: 'Move models through staging and production stages. = Sposta i modelli tra stadi di staging e produzione.',
+              example:
+                'Move models through staging and production stages. = Sposta i modelli tra stadi di staging e produzione.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Stadi tipici: None, Staging, Production, Archived.',
@@ -6637,7 +7230,8 @@ export default {
               italian: 'Lineage del modello',
               pronunciation: '/ˈmɒdəl ˈlɪniɪdʒ/',
               phonetic: 'MO-del LI-ni-igi',
-              example: 'Model lineage tracks how a model was built. = Il lineage del modello traccia come è stato costruito.',
+              example:
+                'Model lineage tracks how a model was built. = Il lineage del modello traccia come è stato costruito.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Include dati, codice, iperparametri.',
@@ -6647,7 +7241,8 @@ export default {
               italian: 'Model card',
               pronunciation: '/ˈmɒdəl kɑːrd/',
               phonetic: 'MO-del KARD',
-              example: 'A model card documents model details. = Una model card documenta i dettagli del modello.',
+              example:
+                'A model card documents model details. = Una model card documenta i dettagli del modello.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Standard introdotto da Google AI.',
@@ -6657,7 +7252,8 @@ export default {
               italian: 'Versionamento',
               pronunciation: '/ˈvɜːrʒənɪŋ/',
               phonetic: 'VER-gio-ning',
-              example: 'Versioning applies to data, code, and models. = Il versionamento si applica a dati, codice e modelli.',
+              example:
+                'Versioning applies to data, code, and models. = Il versionamento si applica a dati, codice e modelli.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6688,7 +7284,8 @@ export default {
               italian: 'Promozione del modello',
               pronunciation: '/ˈmɒdəl prəˈmoʊʃən/',
               phonetic: 'MO-del pro-MOU-scen',
-              example: 'Model promotion moves a model to production. = La promozione del modello porta un modello in produzione.',
+              example:
+                'Model promotion moves a model to production. = La promozione del modello porta un modello in produzione.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6697,7 +7294,8 @@ export default {
               italian: 'Workflow di approvazione',
               pronunciation: '/əˈpruːvəl ˈwɜːrkfloʊ/',
               phonetic: 'a-PRU-val UERK-flou',
-              example: 'Approval workflows gate production deployments. = I workflow di approvazione controllano i deployment in produzione.',
+              example:
+                'Approval workflows gate production deployments. = I workflow di approvazione controllano i deployment in produzione.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6713,7 +7311,8 @@ export default {
               italian: 'Pipeline ML',
               pronunciation: '/em el ˈpaɪplaɪn/',
               phonetic: 'EM-EL PAIP-lain',
-              example: 'An ML pipeline automates training steps. = Una pipeline ML automatizza i passi di addestramento.',
+              example:
+                'An ML pipeline automates training steps. = Una pipeline ML automatizza i passi di addestramento.',
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'Kubeflow, Airflow, Prefect',
@@ -6723,7 +7322,8 @@ export default {
               italian: 'Orchestrazione',
               pronunciation: '/ˌɔːrkəˈstreɪʃən/',
               phonetic: 'or-ke-STREI-scen',
-              example: 'Orchestration schedules pipeline tasks. = L\'orchestrazione pianifica i task della pipeline.',
+              example:
+                "Orchestration schedules pipeline tasks. = L'orchestrazione pianifica i task della pipeline.",
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6742,7 +7342,8 @@ export default {
               italian: 'DAG',
               pronunciation: '/dæɡ/',
               phonetic: 'DAG',
-              example: 'A DAG represents tasks and their dependencies. = Un DAG rappresenta task e loro dipendenze.',
+              example:
+                'A DAG represents tasks and their dependencies. = Un DAG rappresenta task e loro dipendenze.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Directed Acyclic Graph.',
@@ -6752,7 +7353,8 @@ export default {
               italian: 'Kubeflow',
               pronunciation: '/ˈkuːbəfloʊ/',
               phonetic: 'KU-be-flou',
-              example: 'Kubeflow runs ML pipelines on Kubernetes. = Kubeflow esegue pipeline ML su Kubernetes.',
+              example:
+                'Kubeflow runs ML pipelines on Kubernetes. = Kubeflow esegue pipeline ML su Kubernetes.',
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'Kubeflow Pipelines',
@@ -6762,7 +7364,8 @@ export default {
               italian: 'Componente di pipeline',
               pronunciation: '/ˈpaɪplaɪn kəmˈpoʊnənt/',
               phonetic: 'PAIP-lain kom-PO-nent',
-              example: 'Each pipeline component does one task. = Ogni componente di pipeline svolge un compito.',
+              example:
+                'Each pipeline component does one task. = Ogni componente di pipeline svolge un compito.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6771,7 +7374,8 @@ export default {
               italian: 'Addestramento continuo',
               pronunciation: '/kənˈtɪnjuəs ˈtreɪnɪŋ/',
               phonetic: 'kon-TI-niu-os TREI-ning',
-              example: 'Continuous training retrains on new data automatically. = L\'addestramento continuo riaddestra automaticamente su nuovi dati.',
+              example:
+                "Continuous training retrains on new data automatically. = L'addestramento continuo riaddestra automaticamente su nuovi dati.",
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Abbreviato CT.',
@@ -6781,7 +7385,8 @@ export default {
               italian: 'CI/CD per ML',
               pronunciation: '/siː aɪ siː diː fər em el/',
               phonetic: 'SI-AI-SI-DI for EM-EL',
-              example: 'CI/CD for ML automates testing and deployment. = CI/CD per ML automatizza test e deployment.',
+              example:
+                'CI/CD for ML automates testing and deployment. = CI/CD per ML automatizza test e deployment.',
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'GitHub Actions, GitLab CI',
@@ -6791,7 +7396,8 @@ export default {
               italian: 'Trigger',
               pronunciation: '/ˈtrɪɡər/',
               phonetic: 'TRI-ger',
-              example: 'A trigger starts the pipeline on data arrival. = Un trigger avvia la pipeline all\'arrivo dei dati.',
+              example:
+                "A trigger starts the pipeline on data arrival. = Un trigger avvia la pipeline all'arrivo dei dati.",
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6800,7 +7406,8 @@ export default {
               italian: 'Step di pipeline',
               pronunciation: '/ˈpaɪplaɪn step/',
               phonetic: 'PAIP-lain STEP',
-              example: 'Each pipeline step has clear inputs and outputs. = Ogni step di pipeline ha input e output chiari.',
+              example:
+                'Each pipeline step has clear inputs and outputs. = Ogni step di pipeline ha input e output chiari.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6816,7 +7423,8 @@ export default {
               italian: 'Monitoraggio del modello',
               pronunciation: '/ˈmɒdəl ˈmɒnɪtərɪŋ/',
               phonetic: 'MO-del MO-ni-to-ring',
-              example: 'Model monitoring detects performance issues. = Il monitoraggio del modello rileva problemi di prestazioni.',
+              example:
+                'Model monitoring detects performance issues. = Il monitoraggio del modello rileva problemi di prestazioni.',
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'Evidently, Whylogs',
@@ -6826,7 +7434,8 @@ export default {
               italian: 'Deriva dei dati',
               pronunciation: '/ˈdeɪtə drɪft/',
               phonetic: 'DEI-ta DRIFT',
-              example: 'Data drift happens when input distributions change. = La deriva dei dati avviene quando le distribuzioni di input cambiano.',
+              example:
+                'Data drift happens when input distributions change. = La deriva dei dati avviene quando le distribuzioni di input cambiano.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Detta anche covariate shift.',
@@ -6836,7 +7445,8 @@ export default {
               italian: 'Deriva del concetto',
               pronunciation: '/ˈkɒnsept drɪft/',
               phonetic: 'KON-sept DRIFT',
-              example: 'Concept drift occurs when relationships change. = La deriva del concetto avviene quando le relazioni cambiano.',
+              example:
+                'Concept drift occurs when relationships change. = La deriva del concetto avviene quando le relazioni cambiano.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6845,7 +7455,8 @@ export default {
               italian: 'Decadimento delle prestazioni',
               pronunciation: '/pərˈfɔːrməns dɪˈkeɪ/',
               phonetic: 'per-FOR-mans di-KEI',
-              example: 'Performance decay signals model degradation. = Il decadimento delle prestazioni segnala il degrado del modello.',
+              example:
+                'Performance decay signals model degradation. = Il decadimento delle prestazioni segnala il degrado del modello.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6854,7 +7465,8 @@ export default {
               italian: 'Indice di stabilità della popolazione',
               pronunciation: '/ˌpɒpjʊˈleɪʃən stəˈbɪləti ˈɪndeks/',
               phonetic: 'po-piu-LEI-scen sta-BI-li-ti IN-deks',
-              example: 'PSI quantifies distribution change. = PSI quantifica il cambiamento di distribuzione.',
+              example:
+                'PSI quantifies distribution change. = PSI quantifica il cambiamento di distribuzione.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Abbreviato PSI. Standard nel credit risk.',
@@ -6864,7 +7476,8 @@ export default {
               italian: 'Rilevamento deriva',
               pronunciation: '/drɪft dɪˈtekʃən/',
               phonetic: 'DRIFT di-TEK-scen',
-              example: 'Drift detection uses statistical tests. = Il rilevamento deriva usa test statistici.',
+              example:
+                'Drift detection uses statistical tests. = Il rilevamento deriva usa test statistici.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6873,7 +7486,8 @@ export default {
               italian: 'Monitoraggio outlier',
               pronunciation: '/ˈaʊtlaɪər ˈmɒnɪtərɪŋ/',
               phonetic: 'AUT-laier MO-ni-to-ring',
-              example: 'Outlier monitoring flags unusual inputs. = Il monitoraggio outlier segnala input insoliti.',
+              example:
+                'Outlier monitoring flags unusual inputs. = Il monitoraggio outlier segnala input insoliti.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6882,7 +7496,8 @@ export default {
               italian: 'Allertamento',
               pronunciation: '/əˈlɜːrtɪŋ/',
               phonetic: 'a-LER-ting',
-              example: 'Alerting notifies the team of issues. = L\'allertamento notifica al team i problemi.',
+              example:
+                "Alerting notifies the team of issues. = L'allertamento notifica al team i problemi.",
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'PagerDuty, Slack',
@@ -6892,7 +7507,8 @@ export default {
               italian: 'SLA',
               pronunciation: '/es el eɪ/',
               phonetic: 'ES-EL-EI',
-              example: 'An SLA defines acceptable model latency. = Un SLA definisce la latenza accettabile del modello.',
+              example:
+                'An SLA defines acceptable model latency. = Un SLA definisce la latenza accettabile del modello.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Service Level Agreement.',
@@ -6902,7 +7518,8 @@ export default {
               italian: 'Trigger di riaddestramento',
               pronunciation: '/ˌriːˈtreɪnɪŋ ˈtrɪɡər/',
               phonetic: 'ri-TREI-ning TRI-ger',
-              example: 'A retraining trigger fires on drift detection. = Un trigger di riaddestramento si attiva al rilevamento di deriva.',
+              example:
+                'A retraining trigger fires on drift detection. = Un trigger di riaddestramento si attiva al rilevamento di deriva.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -6927,7 +7544,8 @@ export default {
               italian: 'Servizio del modello',
               pronunciation: '/ˈmɒdəl ˈsɜːrvɪŋ/',
               phonetic: 'MO-del SER-ving',
-              example: 'Model serving exposes models via APIs. = Il servizio del modello espone i modelli tramite API.',
+              example:
+                'Model serving exposes models via APIs. = Il servizio del modello espone i modelli tramite API.',
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'TorchServe, TensorFlow Serving',
@@ -6937,7 +7555,8 @@ export default {
               italian: 'Server di inferenza',
               pronunciation: '/ˈɪnfərəns ˈsɜːrvər/',
               phonetic: 'IN-fe-rens SER-ver',
-              example: 'An inference server hosts the model. = Un server di inferenza ospita il modello.',
+              example:
+                'An inference server hosts the model. = Un server di inferenza ospita il modello.',
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'Triton Inference Server',
@@ -6957,7 +7576,8 @@ export default {
               italian: 'gRPC',
               pronunciation: '/dʒiː ɑːr piː siː/',
               phonetic: 'GI-AR-PI-SI',
-              example: 'gRPC offers high-performance model serving. = gRPC offre serving del modello ad alte prestazioni.',
+              example:
+                'gRPC offers high-performance model serving. = gRPC offre serving del modello ad alte prestazioni.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -6966,7 +7586,8 @@ export default {
               italian: 'Latenza',
               pronunciation: '/ˈleɪtənsi/',
               phonetic: 'LEI-ten-si',
-              example: 'Low latency is critical for real-time apps. = La bassa latenza è cruciale per app in tempo reale.',
+              example:
+                'Low latency is critical for real-time apps. = La bassa latenza è cruciale per app in tempo reale.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -6975,7 +7596,8 @@ export default {
               italian: 'Throughput',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'TRU-put',
-              example: 'Throughput measures requests per second. = Il throughput misura richieste per secondo.',
+              example:
+                'Throughput measures requests per second. = Il throughput misura richieste per secondo.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -6984,7 +7606,8 @@ export default {
               italian: 'Inferenza batch',
               pronunciation: '/bætʃ ˈɪnfərəns/',
               phonetic: 'BACI IN-fe-rens',
-              example: 'Batch inference processes many examples at once. = L\'inferenza batch elabora molti esempi insieme.',
+              example:
+                "Batch inference processes many examples at once. = L'inferenza batch elabora molti esempi insieme.",
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -6993,7 +7616,8 @@ export default {
               italian: 'Inferenza online',
               pronunciation: '/ˈɒnlaɪn ˈɪnfərəns/',
               phonetic: 'ON-lain IN-fe-rens',
-              example: 'Online inference serves real-time requests. = L\'inferenza online serve richieste in tempo reale.',
+              example:
+                "Online inference serves real-time requests. = L'inferenza online serve richieste in tempo reale.",
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7002,7 +7626,8 @@ export default {
               italian: 'Avvio a freddo',
               pronunciation: '/koʊld stɑːrt/',
               phonetic: 'KOULD-START',
-              example: 'Cold start is the first slow inference. = L\'avvio a freddo è la prima inferenza lenta.',
+              example:
+                "Cold start is the first slow inference. = L'avvio a freddo è la prima inferenza lenta.",
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7011,7 +7636,8 @@ export default {
               italian: 'Test A/B',
               pronunciation: '/eɪ biː ˈtestɪŋ/',
               phonetic: 'EI-BI TES-ting',
-              example: 'A/B testing compares two model versions. = Il test A/B confronta due versioni di modello.',
+              example:
+                'A/B testing compares two model versions. = Il test A/B confronta due versioni di modello.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7027,7 +7653,8 @@ export default {
               italian: 'Quantizzazione',
               pronunciation: '/ˌkwɒntɪˈzeɪʃən/',
               phonetic: 'kuan-ti-ZEI-scen',
-              example: 'Quantization reduces precision to save memory. = La quantizzazione riduce la precisione per risparmiare memoria.',
+              example:
+                'Quantization reduces precision to save memory. = La quantizzazione riduce la precisione per risparmiare memoria.',
               context: 'deployment',
               difficulty: 'advanced',
               code: 'quantize_dynamic(model, dtype=torch.qint8)',
@@ -7037,7 +7664,8 @@ export default {
               italian: 'Pruning',
               pronunciation: '/ˈpruːnɪŋ/',
               phonetic: 'PRU-ning',
-              example: 'Pruning removes unnecessary weights. = Il pruning rimuove pesi non necessari.',
+              example:
+                'Pruning removes unnecessary weights. = Il pruning rimuove pesi non necessari.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7046,7 +7674,8 @@ export default {
               italian: 'Distillazione di conoscenza',
               pronunciation: '/ˈnɒlɪdʒ ˌdɪstɪˈleɪʃən/',
               phonetic: 'NO-ligi dis-ti-LEI-scen',
-              example: 'Knowledge distillation trains a small model from a large one. = La distillazione di conoscenza addestra un modello piccolo da uno grande.',
+              example:
+                'Knowledge distillation trains a small model from a large one. = La distillazione di conoscenza addestra un modello piccolo da uno grande.',
               context: 'deployment',
               difficulty: 'advanced',
               note: 'Detto teacher-student framework.',
@@ -7056,7 +7685,8 @@ export default {
               italian: 'ONNX',
               pronunciation: '/ˈɒnɪks/',
               phonetic: 'O-niks',
-              example: 'ONNX is an open format for ML models. = ONNX è un formato aperto per modelli ML.',
+              example:
+                'ONNX is an open format for ML models. = ONNX è un formato aperto per modelli ML.',
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'onnx',
@@ -7067,7 +7697,8 @@ export default {
               italian: 'TensorRT',
               pronunciation: '/ˈtensər ɑːr tiː/',
               phonetic: 'TEN-ser-AR-TI',
-              example: 'TensorRT optimizes models for NVIDIA GPUs. = TensorRT ottimizza modelli per GPU NVIDIA.',
+              example:
+                'TensorRT optimizes models for NVIDIA GPUs. = TensorRT ottimizza modelli per GPU NVIDIA.',
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'NVIDIA TensorRT',
@@ -7077,7 +7708,8 @@ export default {
               italian: 'OpenVINO',
               pronunciation: '/ˌoʊpən ˈviːnoʊ/',
               phonetic: 'O-pen-VI-no',
-              example: 'OpenVINO optimizes models for Intel hardware. = OpenVINO ottimizza modelli per hardware Intel.',
+              example:
+                'OpenVINO optimizes models for Intel hardware. = OpenVINO ottimizza modelli per hardware Intel.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7086,7 +7718,8 @@ export default {
               italian: 'Compressione del modello',
               pronunciation: '/ˈmɒdəl kəmˈpreʃən/',
               phonetic: 'MO-del kom-PRE-scen',
-              example: 'Model compression makes inference faster. = La compressione del modello rende l\'inferenza più veloce.',
+              example:
+                "Model compression makes inference faster. = La compressione del modello rende l'inferenza più veloce.",
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7095,7 +7728,8 @@ export default {
               italian: 'INT8',
               pronunciation: '/ɪnt eɪt/',
               phonetic: 'INT-EIT',
-              example: 'INT8 quantization uses 8-bit integers. = La quantizzazione INT8 usa interi a 8 bit.',
+              example:
+                'INT8 quantization uses 8-bit integers. = La quantizzazione INT8 usa interi a 8 bit.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7114,7 +7748,8 @@ export default {
               italian: 'Deployment su edge',
               pronunciation: '/edʒ dɪˈplɔɪmənt/',
               phonetic: 'EGI di-PLOI-ment',
-              example: 'Edge deployment runs models on devices. = Il deployment su edge esegue modelli sui dispositivi.',
+              example:
+                'Edge deployment runs models on devices. = Il deployment su edge esegue modelli sui dispositivi.',
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'TensorFlow Lite, Core ML',
@@ -7131,7 +7766,8 @@ export default {
               italian: 'Containerizzazione',
               pronunciation: '/kənˌteɪnəraɪˈzeɪʃən/',
               phonetic: 'kon-tei-ne-rai-ZEI-scen',
-              example: 'Containerization packages model and dependencies. = La containerizzazione impacchetta modello e dipendenze.',
+              example:
+                'Containerization packages model and dependencies. = La containerizzazione impacchetta modello e dipendenze.',
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'Docker',
@@ -7141,7 +7777,8 @@ export default {
               italian: 'Dockerfile',
               pronunciation: '/ˈdɒkərfaɪl/',
               phonetic: 'DOK-ker-fail',
-              example: 'A Dockerfile defines how to build the image. = Un Dockerfile definisce come costruire l\'immagine.',
+              example:
+                "A Dockerfile defines how to build the image. = Un Dockerfile definisce come costruire l'immagine.",
               context: 'deployment',
               difficulty: 'advanced',
               code: 'FROM pytorch/pytorch',
@@ -7151,7 +7788,8 @@ export default {
               italian: 'Kubernetes',
               pronunciation: '/ˌkuːbərˈnetɪs/',
               phonetic: 'ku-ber-NE-tis',
-              example: 'Kubernetes orchestrates containerized models. = Kubernetes orchestra modelli containerizzati.',
+              example:
+                'Kubernetes orchestrates containerized models. = Kubernetes orchestra modelli containerizzati.',
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'kubectl',
@@ -7162,7 +7800,8 @@ export default {
               italian: 'Scalabilità automatica',
               pronunciation: '/ˈɔːtoʊ ˈskeɪlɪŋ/',
               phonetic: 'AU-to SKEI-ling',
-              example: 'Auto-scaling adds replicas under load. = La scalabilità automatica aggiunge repliche sotto carico.',
+              example:
+                'Auto-scaling adds replicas under load. = La scalabilità automatica aggiunge repliche sotto carico.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7171,7 +7810,8 @@ export default {
               italian: 'Bilanciatore di carico',
               pronunciation: '/loʊd ˈbælənsər/',
               phonetic: 'LOUD BA-lan-ser',
-              example: 'A load balancer distributes requests. = Un bilanciatore di carico distribuisce le richieste.',
+              example:
+                'A load balancer distributes requests. = Un bilanciatore di carico distribuisce le richieste.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7180,7 +7820,8 @@ export default {
               italian: 'SageMaker',
               pronunciation: '/ˈseɪdʒˌmeɪkər/',
               phonetic: 'SEIGI-mei-ker',
-              example: 'SageMaker is AWS managed ML service. = SageMaker è il servizio ML gestito di AWS.',
+              example:
+                'SageMaker is AWS managed ML service. = SageMaker è il servizio ML gestito di AWS.',
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'AWS SageMaker',
@@ -7190,7 +7831,8 @@ export default {
               italian: 'Vertex AI',
               pronunciation: '/ˈvɜːrteks eɪ aɪ/',
               phonetic: 'VER-teks EI-AI',
-              example: 'Vertex AI is Google Cloud\'s ML platform. = Vertex AI è la piattaforma ML di Google Cloud.',
+              example:
+                "Vertex AI is Google Cloud's ML platform. = Vertex AI è la piattaforma ML di Google Cloud.",
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'Google Vertex AI',
@@ -7200,7 +7842,8 @@ export default {
               italian: 'Azure ML',
               pronunciation: '/ˈæʒər em el/',
               phonetic: 'A-zur EM-EL',
-              example: 'Azure ML is Microsoft\'s cloud ML platform. = Azure ML è la piattaforma ML cloud di Microsoft.',
+              example:
+                "Azure ML is Microsoft's cloud ML platform. = Azure ML è la piattaforma ML cloud di Microsoft.",
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'Azure Machine Learning',
@@ -7210,7 +7853,8 @@ export default {
               italian: 'Serverless',
               pronunciation: '/ˈsɜːrvərləs/',
               phonetic: 'SER-ver-les',
-              example: 'Serverless deployment scales to zero when idle. = Il deployment serverless scala a zero quando inattivo.',
+              example:
+                'Serverless deployment scales to zero when idle. = Il deployment serverless scala a zero quando inattivo.',
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'AWS Lambda, Cloud Run',
@@ -7220,7 +7864,8 @@ export default {
               italian: 'Deployment canary',
               pronunciation: '/kəˈnɛri dɪˈplɔɪmənt/',
               phonetic: 'ka-NE-ri di-PLOI-ment',
-              example: 'Canary deployment routes a fraction to the new model. = Il deployment canary instrada una frazione al nuovo modello.',
+              example:
+                'Canary deployment routes a fraction to the new model. = Il deployment canary instrada una frazione al nuovo modello.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7236,7 +7881,8 @@ export default {
               italian: 'Health check',
               pronunciation: '/helθ tʃek/',
               phonetic: 'HELT-CIEK',
-              example: 'Health checks verify the service is alive. = Gli health check verificano che il servizio sia attivo.',
+              example:
+                'Health checks verify the service is alive. = Gli health check verificano che il servizio sia attivo.',
               context: 'deployment',
               difficulty: 'advanced',
               code: '@app.get("/health")',
@@ -7246,7 +7892,8 @@ export default {
               italian: 'Aggiornamento progressivo',
               pronunciation: '/ˈroʊlɪŋ ˈʌpdeɪt/',
               phonetic: 'RO-ling AP-deit',
-              example: 'Rolling updates replace pods gradually. = Gli aggiornamenti progressivi sostituiscono pod gradualmente.',
+              example:
+                'Rolling updates replace pods gradually. = Gli aggiornamenti progressivi sostituiscono pod gradualmente.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7255,7 +7902,8 @@ export default {
               italian: 'Deployment blue-green',
               pronunciation: '/bluː ɡriːn dɪˈplɔɪmənt/',
               phonetic: 'BLU-GRIN di-PLOI-ment',
-              example: 'Blue-green deployment swaps two environments. = Il deployment blue-green scambia due ambienti.',
+              example:
+                'Blue-green deployment swaps two environments. = Il deployment blue-green scambia due ambienti.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7264,7 +7912,8 @@ export default {
               italian: 'Shadow deployment',
               pronunciation: '/ˈʃædoʊ dɪˈplɔɪmənt/',
               phonetic: 'SCIA-dou di-PLOI-ment',
-              example: 'Shadow deployment runs new model alongside without serving traffic. = Lo shadow deployment esegue il nuovo modello in parallelo senza servire traffico.',
+              example:
+                'Shadow deployment runs new model alongside without serving traffic. = Lo shadow deployment esegue il nuovo modello in parallelo senza servire traffico.',
               context: 'deployment',
               difficulty: 'advanced',
             },
@@ -7292,7 +7941,8 @@ export default {
               italian: 'Logging',
               pronunciation: '/ˈlɒɡɪŋ/',
               phonetic: 'LOG-ging',
-              example: 'Structured logging aids debugging. = Il logging strutturato aiuta nel debug.',
+              example:
+                'Structured logging aids debugging. = Il logging strutturato aiuta nel debug.',
               context: 'deployment',
               difficulty: 'advanced',
               code: 'logger.info("prediction made", extra={...})',
@@ -7302,7 +7952,8 @@ export default {
               italian: 'Osservabilità',
               pronunciation: '/əbˌzɜːrvəˈbɪləti/',
               phonetic: 'ob-zer-va-BI-li-ti',
-              example: 'Observability combines logs, metrics, and traces. = L\'osservabilità combina log, metriche e tracce.',
+              example:
+                "Observability combines logs, metrics, and traces. = L'osservabilità combina log, metriche e tracce.",
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'OpenTelemetry, Datadog',
@@ -7312,7 +7963,8 @@ export default {
               italian: 'Feature store',
               pronunciation: '/ˈfiːtʃər stɔːr/',
               phonetic: 'FII-cer STOR',
-              example: 'A feature store serves features at inference time. = Un feature store fornisce feature al momento dell\'inferenza.',
+              example:
+                "A feature store serves features at inference time. = Un feature store fornisce feature al momento dell'inferenza.",
               context: 'deployment',
               difficulty: 'advanced',
               tool: 'Feast, Tecton',
@@ -7322,7 +7974,8 @@ export default {
               italian: 'Rollback',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROL-bak',
-              example: 'Rollback reverts to a previous version on failure. = Il rollback torna a una versione precedente in caso di fallimento.',
+              example:
+                'Rollback reverts to a previous version on failure. = Il rollback torna a una versione precedente in caso di fallimento.',
               context: 'deployment',
               difficulty: 'advanced',
               command: 'kubectl rollout undo deployment/my-model',
@@ -7336,7 +7989,7 @@ export default {
     // ════════════════════════════════════════════════
     17: {
       name: 'IA Responsabile / Responsible AI',
-      description: 'Etica, equità e trasparenza nell\'IA',
+      description: "Etica, equità e trasparenza nell'IA",
       lessons: [
         {
           id: 'ai_responsible_1',
@@ -7348,7 +8001,8 @@ export default {
               italian: 'Bias algoritmico',
               pronunciation: '/ˌælɡəˈrɪðmɪk ˈbaɪəs/',
               phonetic: 'al-go-RI-dem-ik BAI-as',
-              example: 'Algorithmic bias affects model fairness. = Il bias algoritmico influisce sull\'equità del modello.',
+              example:
+                "Algorithmic bias affects model fairness. = Il bias algoritmico influisce sull'equità del modello.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7357,7 +8011,8 @@ export default {
               italian: 'Equità',
               pronunciation: '/ˈfeərnəs/',
               phonetic: 'FER-nes',
-              example: 'Fairness ensures equal treatment across groups. = L\'equità garantisce trattamento uguale tra gruppi.',
+              example:
+                "Fairness ensures equal treatment across groups. = L'equità garantisce trattamento uguale tra gruppi.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7366,7 +8021,8 @@ export default {
               italian: 'Parità demografica',
               pronunciation: '/ˌdeməˈɡræfɪk ˈpærəti/',
               phonetic: 'de-mo-GRA-fik PA-ri-ti',
-              example: 'Demographic parity equalizes positive rates. = La parità demografica equipara i tassi di positivi.',
+              example:
+                'Demographic parity equalizes positive rates. = La parità demografica equipara i tassi di positivi.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7375,7 +8031,8 @@ export default {
               italian: 'Pari opportunità',
               pronunciation: '/ˈiːkwəl ˌɒpərˈtjuːnəti/',
               phonetic: 'I-kual o-por-TIU-ni-ti',
-              example: 'Equal opportunity equalizes true positive rates. = Le pari opportunità equiparano i tassi di veri positivi.',
+              example:
+                'Equal opportunity equalizes true positive rates. = Le pari opportunità equiparano i tassi di veri positivi.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7384,7 +8041,8 @@ export default {
               italian: 'Impatto disparato',
               pronunciation: '/ˈdɪspərət ˈɪmpækt/',
               phonetic: 'DIS-pa-rat IM-pakt',
-              example: 'Disparate impact harms protected groups. = L\'impatto disparato danneggia gruppi protetti.',
+              example:
+                "Disparate impact harms protected groups. = L'impatto disparato danneggia gruppi protetti.",
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Concetto legale di discriminazione indiretta.',
@@ -7394,7 +8052,8 @@ export default {
               italian: 'Attributo protetto',
               pronunciation: '/prəˈtektɪd ˈætrɪbjuːt/',
               phonetic: 'pro-TEK-ted A-tri-biut',
-              example: 'Race and gender are common protected attributes. = Razza e genere sono attributi protetti comuni.',
+              example:
+                'Race and gender are common protected attributes. = Razza e genere sono attributi protetti comuni.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7403,7 +8062,8 @@ export default {
               italian: 'Bias di campionamento',
               pronunciation: '/ˈsæmplɪŋ ˈbaɪəs/',
               phonetic: 'SAM-pling BAI-as',
-              example: 'Sampling bias occurs when training data is unrepresentative. = Il bias di campionamento avviene quando i dati di training non sono rappresentativi.',
+              example:
+                'Sampling bias occurs when training data is unrepresentative. = Il bias di campionamento avviene quando i dati di training non sono rappresentativi.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7412,7 +8072,8 @@ export default {
               italian: 'Bias di selezione',
               pronunciation: '/sɪˈlekʃən ˈbaɪəs/',
               phonetic: 'si-LEK-scen BAI-as',
-              example: 'Selection bias distorts conclusions. = Il bias di selezione distorce le conclusioni.',
+              example:
+                'Selection bias distorts conclusions. = Il bias di selezione distorce le conclusioni.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7421,7 +8082,8 @@ export default {
               italian: 'Mitigazione del bias',
               pronunciation: '/ˈbaɪəs ˌmɪtɪˈɡeɪʃən/',
               phonetic: 'BAI-as mi-ti-GEI-scen',
-              example: 'Bias mitigation reduces unfair outcomes. = La mitigazione del bias riduce esiti ingiusti.',
+              example:
+                'Bias mitigation reduces unfair outcomes. = La mitigazione del bias riduce esiti ingiusti.',
               context: 'ethics',
               difficulty: 'advanced',
               tool: 'Fairlearn, AIF360',
@@ -7431,7 +8093,8 @@ export default {
               italian: 'Ripesatura',
               pronunciation: '/riːˈweɪtɪŋ/',
               phonetic: 'ri-UEI-ting',
-              example: 'Reweighting balances training examples. = La ripesatura bilancia gli esempi di training.',
+              example:
+                'Reweighting balances training examples. = La ripesatura bilancia gli esempi di training.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7447,7 +8110,8 @@ export default {
               italian: 'Spiegabilità',
               pronunciation: '/ɪkˌspleɪnəˈbɪləti/',
               phonetic: 'ek-splei-na-BI-li-ti',
-              example: 'Explainability reveals why a model decides. = La spiegabilità rivela perché un modello decide.',
+              example:
+                'Explainability reveals why a model decides. = La spiegabilità rivela perché un modello decide.',
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Spesso lasciato in inglese: "explainability".',
@@ -7457,7 +8121,8 @@ export default {
               italian: 'Interpretabilità',
               pronunciation: '/ɪnˌtɜːrprətəˈbɪləti/',
               phonetic: 'in-ter-pre-ta-BI-li-ti',
-              example: 'Interpretability is built into simple models. = L\'interpretabilità è intrinseca nei modelli semplici.',
+              example:
+                "Interpretability is built into simple models. = L'interpretabilità è intrinseca nei modelli semplici.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7466,7 +8131,8 @@ export default {
               italian: 'SHAP',
               pronunciation: '/ʃæp/',
               phonetic: 'SCIAP',
-              example: 'SHAP explains individual predictions. = SHAP spiega predizioni individuali.',
+              example:
+                'SHAP explains individual predictions. = SHAP spiega predizioni individuali.',
               context: 'ethics',
               difficulty: 'advanced',
               code: 'shap.TreeExplainer(model)',
@@ -7489,7 +8155,8 @@ export default {
               italian: 'Controfattuale',
               pronunciation: '/ˌkaʊntərˈfæktʃuəl/',
               phonetic: 'kaun-ter-FAK-ciu-al',
-              example: 'A counterfactual shows minimal changes for different outcomes. = Un controfattuale mostra cambiamenti minimi per esiti diversi.',
+              example:
+                'A counterfactual shows minimal changes for different outcomes. = Un controfattuale mostra cambiamenti minimi per esiti diversi.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7498,7 +8165,8 @@ export default {
               italian: 'Attribuzione di feature',
               pronunciation: '/ˈfiːtʃər ˌætrɪˈbjuːʃən/',
               phonetic: 'FII-cer a-tri-BIU-scen',
-              example: 'Feature attribution scores individual contributions. = L\'attribuzione di feature valuta contributi individuali.',
+              example:
+                "Feature attribution scores individual contributions. = L'attribuzione di feature valuta contributi individuali.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7507,7 +8175,8 @@ export default {
               italian: 'Mappa di salienza',
               pronunciation: '/ˈseɪliənsi mæp/',
               phonetic: 'SEI-lien-si MAP',
-              example: 'Saliency maps highlight important pixels. = Le mappe di salienza evidenziano pixel importanti.',
+              example:
+                'Saliency maps highlight important pixels. = Le mappe di salienza evidenziano pixel importanti.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7516,7 +8185,8 @@ export default {
               italian: 'Grad-CAM',
               pronunciation: '/ɡræd kæm/',
               phonetic: 'GRAD-KAM',
-              example: 'Grad-CAM visualizes CNN attention. = Grad-CAM visualizza l\'attenzione delle CNN.',
+              example:
+                "Grad-CAM visualizes CNN attention. = Grad-CAM visualizza l'attenzione delle CNN.",
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Gradient-weighted Class Activation Mapping.',
@@ -7526,7 +8196,8 @@ export default {
               italian: 'Modello black box',
               pronunciation: '/blæk bɒks ˈmɒdəl/',
               phonetic: 'BLAK-BOKS MO-del',
-              example: 'Deep neural networks are black box models. = Le reti neurali profonde sono modelli black box.',
+              example:
+                'Deep neural networks are black box models. = Le reti neurali profonde sono modelli black box.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7535,7 +8206,8 @@ export default {
               italian: 'Modello white box',
               pronunciation: '/waɪt bɒks ˈmɒdəl/',
               phonetic: 'UAIT-BOKS MO-del',
-              example: 'Linear regression is a white box model. = La regressione lineare è un modello white box.',
+              example:
+                'Linear regression is a white box model. = La regressione lineare è un modello white box.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7543,15 +8215,16 @@ export default {
         },
         {
           id: 'ai_responsible_3',
-          title: 'AI Ethics / Etica dell\'IA',
+          title: "AI Ethics / Etica dell'IA",
           description: 'Considerazioni etiche fondamentali',
           items: [
             {
               english: 'AI Ethics',
-              italian: 'Etica dell\'IA',
+              italian: "Etica dell'IA",
               pronunciation: '/eɪ aɪ ˈeθɪks/',
               phonetic: 'EI-AI E-tiks',
-              example: 'AI ethics addresses moral implications. = L\'etica dell\'IA affronta implicazioni morali.',
+              example:
+                "AI ethics addresses moral implications. = L'etica dell'IA affronta implicazioni morali.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7560,7 +8233,8 @@ export default {
               italian: 'Privacy',
               pronunciation: '/ˈpraɪvəsi/',
               phonetic: 'PRAI-va-si',
-              example: 'Privacy must be considered in data collection. = La privacy va considerata nella raccolta dati.',
+              example:
+                'Privacy must be considered in data collection. = La privacy va considerata nella raccolta dati.',
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Termine ormai italianizzato.',
@@ -7570,7 +8244,8 @@ export default {
               italian: 'Privacy differenziale',
               pronunciation: '/ˌdɪfəˈrenʃəl ˈpraɪvəsi/',
               phonetic: 'di-fe-REN-scial PRAI-va-si',
-              example: 'Differential privacy adds noise to protect individuals. = La privacy differenziale aggiunge rumore per proteggere gli individui.',
+              example:
+                'Differential privacy adds noise to protect individuals. = La privacy differenziale aggiunge rumore per proteggere gli individui.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7579,7 +8254,8 @@ export default {
               italian: 'Apprendimento federato',
               pronunciation: '/ˈfedəreɪtɪd ˈlɜːrnɪŋ/',
               phonetic: 'FE-de-rei-ted LER-ning',
-              example: 'Federated learning trains across decentralized devices. = L\'apprendimento federato addestra su dispositivi decentralizzati.',
+              example:
+                "Federated learning trains across decentralized devices. = L'apprendimento federato addestra su dispositivi decentralizzati.",
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Dati restano sui dispositivi.',
@@ -7589,7 +8265,8 @@ export default {
               italian: 'GDPR',
               pronunciation: '/dʒiː diː piː ɑːr/',
               phonetic: 'GI-DI-PI-AR',
-              example: 'GDPR governs EU data protection. = GDPR regola la protezione dati nella UE.',
+              example:
+                'GDPR governs EU data protection. = GDPR regola la protezione dati nella UE.',
               context: 'ethics',
               difficulty: 'advanced',
               note: 'General Data Protection Regulation.',
@@ -7599,17 +8276,18 @@ export default {
               italian: 'AI Act',
               pronunciation: '/eɪ aɪ ækt/',
               phonetic: 'EI-AI-AKT',
-              example: 'The AI Act regulates AI in the EU. = L\'AI Act regola l\'IA nella UE.',
+              example: "The AI Act regulates AI in the EU. = L'AI Act regola l'IA nella UE.",
               context: 'ethics',
               difficulty: 'advanced',
-              note: 'Regolamento europeo per l\'IA.',
+              note: "Regolamento europeo per l'IA.",
             },
             {
               english: 'Transparency',
               italian: 'Trasparenza',
               pronunciation: '/trænsˈpærənsi/',
               phonetic: 'trans-PA-ren-si',
-              example: 'Transparency builds trust with users. = La trasparenza costruisce fiducia con gli utenti.',
+              example:
+                'Transparency builds trust with users. = La trasparenza costruisce fiducia con gli utenti.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7618,7 +8296,8 @@ export default {
               italian: 'Responsabilità',
               pronunciation: '/əˌkaʊntəˈbɪləti/',
               phonetic: 'a-kaun-ta-BI-li-ti',
-              example: 'Accountability assigns responsibility for outcomes. = La responsabilità assegna l\'imputabilità per gli esiti.',
+              example:
+                "Accountability assigns responsibility for outcomes. = La responsabilità assegna l'imputabilità per gli esiti.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7627,17 +8306,19 @@ export default {
               italian: 'Umano nel ciclo',
               pronunciation: '/ˈhjuːmən ɪn ðə luːp/',
               phonetic: 'HIU-man IN-DE-LUP',
-              example: 'Human-in-the-loop adds expert review. = L\'umano nel ciclo aggiunge revisione esperta.',
+              example:
+                "Human-in-the-loop adds expert review. = L'umano nel ciclo aggiunge revisione esperta.",
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Abbreviato HITL.',
             },
             {
               english: 'AI Safety',
-              italian: 'Sicurezza dell\'IA',
+              italian: "Sicurezza dell'IA",
               pronunciation: '/eɪ aɪ ˈseɪfti/',
               phonetic: 'EI-AI SEIF-ti',
-              example: 'AI safety prevents unintended harms. = La sicurezza dell\'IA previene danni non intenzionali.',
+              example:
+                "AI safety prevents unintended harms. = La sicurezza dell'IA previene danni non intenzionali.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7653,7 +8334,8 @@ export default {
               italian: 'Audit del modello',
               pronunciation: '/ˈmɒdəl ˈɔːdɪt/',
               phonetic: 'MO-del O-dit',
-              example: 'A model audit checks compliance and quality. = Un audit del modello controlla compliance e qualità.',
+              example:
+                'A model audit checks compliance and quality. = Un audit del modello controlla compliance e qualità.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7662,7 +8344,8 @@ export default {
               italian: 'Valutazione del rischio',
               pronunciation: '/rɪsk əˈsesmənt/',
               phonetic: 'RISK a-SES-ment',
-              example: 'Risk assessment categorizes AI use cases. = La valutazione del rischio categorizza casi d\'uso IA.',
+              example:
+                "Risk assessment categorizes AI use cases. = La valutazione del rischio categorizza casi d'uso IA.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7671,17 +8354,19 @@ export default {
               italian: 'Sistema ad alto rischio',
               pronunciation: '/haɪ rɪsk ˈsɪstəm/',
               phonetic: 'HAI-RISK SIS-tem',
-              example: 'High-risk systems face strict regulation. = I sistemi ad alto rischio affrontano regolamentazione stretta.',
+              example:
+                'High-risk systems face strict regulation. = I sistemi ad alto rischio affrontano regolamentazione stretta.',
               context: 'ethics',
               difficulty: 'advanced',
-              note: 'Categoria nell\'AI Act europeo.',
+              note: "Categoria nell'AI Act europeo.",
             },
             {
               english: 'Compliance',
               italian: 'Conformità',
               pronunciation: '/kəmˈplaɪəns/',
               phonetic: 'kom-PLAI-ans',
-              example: 'Compliance verifies adherence to regulations. = La conformità verifica l\'aderenza alle regolamentazioni.',
+              example:
+                "Compliance verifies adherence to regulations. = La conformità verifica l'aderenza alle regolamentazioni.",
               context: 'ethics',
               difficulty: 'advanced',
               note: 'In gergo IT spesso "compliance" senza tradurre.',
@@ -7691,7 +8376,8 @@ export default {
               italian: 'Documentazione del modello',
               pronunciation: '/ˈmɒdəl ˌdɒkjʊmenˈteɪʃən/',
               phonetic: 'MO-del do-kiu-men-TEI-scen',
-              example: 'Thorough documentation supports auditing. = Una documentazione approfondita supporta l\'audit.',
+              example:
+                "Thorough documentation supports auditing. = Una documentazione approfondita supporta l'audit.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7700,7 +8386,8 @@ export default {
               italian: 'Schede per dataset',
               pronunciation: '/ˈdeɪtəʃiːts fər ˈdeɪtəsets/',
               phonetic: 'DEI-ta-scits for DEI-ta-sets',
-              example: 'Datasheets describe dataset provenance. = Le schede descrivono la provenienza del dataset.',
+              example:
+                'Datasheets describe dataset provenance. = Le schede descrivono la provenienza del dataset.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7709,7 +8396,8 @@ export default {
               italian: 'Diritto alla spiegazione',
               pronunciation: '/raɪt tuː ˌekspləˈneɪʃən/',
               phonetic: 'RAIT-TU ek-spla-NEI-scen',
-              example: 'GDPR grants a right to explanation. = GDPR concede un diritto alla spiegazione.',
+              example:
+                'GDPR grants a right to explanation. = GDPR concede un diritto alla spiegazione.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7718,7 +8406,8 @@ export default {
               italian: 'Sostenibilità',
               pronunciation: '/səˌsteɪnəˈbɪləti/',
               phonetic: 'sas-tei-na-BI-li-ti',
-              example: 'AI sustainability includes carbon footprint. = La sostenibilità dell\'IA include l\'impronta di carbonio.',
+              example:
+                "AI sustainability includes carbon footprint. = La sostenibilità dell'IA include l'impronta di carbonio.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7727,7 +8416,8 @@ export default {
               italian: 'Impronta di carbonio',
               pronunciation: '/ˈkɑːrbən ˈfʊtprɪnt/',
               phonetic: 'KAR-bon FUT-print',
-              example: 'Training large models has a carbon footprint. = Addestrare grandi modelli ha un\'impronta di carbonio.',
+              example:
+                "Training large models has a carbon footprint. = Addestrare grandi modelli ha un'impronta di carbonio.",
               context: 'ethics',
               difficulty: 'advanced',
               tool: 'CodeCarbon',
@@ -7737,7 +8427,8 @@ export default {
               italian: 'Divulgazione responsabile',
               pronunciation: '/rɪˈspɒnsəbəl dɪsˈkloʊʒər/',
               phonetic: 'ri-SPON-sa-bel dis-KLO-zer',
-              example: 'Responsible disclosure protects users from new risks. = La divulgazione responsabile protegge utenti da nuovi rischi.',
+              example:
+                'Responsible disclosure protects users from new risks. = La divulgazione responsabile protegge utenti da nuovi rischi.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -7762,7 +8453,8 @@ export default {
               italian: 'Agente',
               pronunciation: '/ˈeɪdʒənt/',
               phonetic: 'EI-gent',
-              example: 'The agent acts to maximize reward. = L\'agente agisce per massimizzare la ricompensa.',
+              example:
+                "The agent acts to maximize reward. = L'agente agisce per massimizzare la ricompensa.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7771,7 +8463,8 @@ export default {
               italian: 'Ambiente',
               pronunciation: '/ɪnˈvaɪrənmənt/',
               phonetic: 'in-VAI-ron-ment',
-              example: 'The environment provides observations and rewards. = L\'ambiente fornisce osservazioni e ricompense.',
+              example:
+                "The environment provides observations and rewards. = L'ambiente fornisce osservazioni e ricompense.",
               context: 'machine-learning',
               difficulty: 'advanced',
               tool: 'Gymnasium, OpenAI Gym',
@@ -7781,7 +8474,8 @@ export default {
               italian: 'Stato',
               pronunciation: '/steɪt/',
               phonetic: 'STEIT',
-              example: 'The state describes the current situation. = Lo stato descrive la situazione corrente.',
+              example:
+                'The state describes the current situation. = Lo stato descrive la situazione corrente.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7790,7 +8484,8 @@ export default {
               italian: 'Azione',
               pronunciation: '/ˈækʃən/',
               phonetic: 'AK-scen',
-              example: 'The agent chooses an action at each step. = L\'agente sceglie un\'azione a ogni passo.',
+              example:
+                "The agent chooses an action at each step. = L'agente sceglie un'azione a ogni passo.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7799,7 +8494,8 @@ export default {
               italian: 'Ricompensa',
               pronunciation: '/rɪˈwɔːrd/',
               phonetic: 'ri-UORD',
-              example: 'The reward signals action quality. = La ricompensa segnala la qualità dell\'azione.',
+              example:
+                "The reward signals action quality. = La ricompensa segnala la qualità dell'azione.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7818,7 +8514,8 @@ export default {
               italian: 'Funzione di valore',
               pronunciation: '/ˈvæljuː ˈfʌŋkʃən/',
               phonetic: 'VAL-iu FANK-scen',
-              example: 'The value function estimates future reward. = La funzione di valore stima la ricompensa futura.',
+              example:
+                'The value function estimates future reward. = La funzione di valore stima la ricompensa futura.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7827,7 +8524,8 @@ export default {
               italian: 'Processo decisionale di Markov',
               pronunciation: '/ˈmɑːrkɒf dɪˈsɪʒən ˈprɒses/',
               phonetic: 'MAR-kof di-SI-gen PRO-ses',
-              example: 'A Markov decision process formalizes RL. = Un processo decisionale di Markov formalizza il RL.',
+              example:
+                'A Markov decision process formalizes RL. = Un processo decisionale di Markov formalizza il RL.',
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Abbreviato MDP.',
@@ -7837,7 +8535,8 @@ export default {
               italian: 'Fattore di sconto',
               pronunciation: '/ˈdɪskaʊnt ˈfæktər/',
               phonetic: 'DIS-kaunt FAK-ter',
-              example: 'The discount factor weighs future rewards. = Il fattore di sconto pesa le ricompense future.',
+              example:
+                'The discount factor weighs future rewards. = Il fattore di sconto pesa le ricompense future.',
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Tipicamente gamma tra 0.9 e 0.99.',
@@ -7847,7 +8546,8 @@ export default {
               italian: 'Episodio',
               pronunciation: '/ˈepɪsoʊd/',
               phonetic: 'E-pi-soud',
-              example: 'An episode is one complete trajectory. = Un episodio è una traiettoria completa.',
+              example:
+                'An episode is one complete trajectory. = Un episodio è una traiettoria completa.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7863,7 +8563,8 @@ export default {
               italian: 'Q-learning',
               pronunciation: '/kjuː ˈlɜːrnɪŋ/',
               phonetic: 'KIU LER-ning',
-              example: 'Q-learning estimates action-value functions. = Q-learning stima funzioni valore-azione.',
+              example:
+                'Q-learning estimates action-value functions. = Q-learning stima funzioni valore-azione.',
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Algoritmo classico off-policy.',
@@ -7873,7 +8574,8 @@ export default {
               italian: 'Valore Q',
               pronunciation: '/kjuː ˈvæljuː/',
               phonetic: 'KIU-VAL-iu',
-              example: 'Q-value gives expected return for action in state. = Il valore Q dà il ritorno atteso per un\'azione in uno stato.',
+              example:
+                "Q-value gives expected return for action in state. = Il valore Q dà il ritorno atteso per un'azione in uno stato.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7882,7 +8584,8 @@ export default {
               italian: 'Equazione di Bellman',
               pronunciation: '/ˈbelmən ɪˈkweɪʒən/',
               phonetic: 'BEL-man e-KUEI-gen',
-              example: 'The Bellman equation defines value recursively. = L\'equazione di Bellman definisce il valore ricorsivamente.',
+              example:
+                "The Bellman equation defines value recursively. = L'equazione di Bellman definisce il valore ricorsivamente.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7891,17 +8594,19 @@ export default {
               italian: 'Deep Q-Network',
               pronunciation: '/diːp kjuː ˈnetwɜːrk/',
               phonetic: 'DIP-KIU NET-uerk',
-              example: 'DQN approximates Q-values with a neural network. = DQN approssima i valori Q con una rete neurale.',
+              example:
+                'DQN approximates Q-values with a neural network. = DQN approssima i valori Q con una rete neurale.',
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Abbreviato DQN. Battette giochi Atari.',
             },
             {
               english: 'Experience Replay',
-              italian: 'Replay dell\'esperienza',
+              italian: "Replay dell'esperienza",
               pronunciation: '/ɪkˈspɪriəns ˈriːpleɪ/',
               phonetic: 'ek-SPI-rians RI-plei',
-              example: 'Experience replay reuses past transitions. = Il replay dell\'esperienza riusa transizioni passate.',
+              example:
+                "Experience replay reuses past transitions. = Il replay dell'esperienza riusa transizioni passate.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7910,7 +8615,8 @@ export default {
               italian: 'Rete target',
               pronunciation: '/ˈtɑːrɡɪt ˈnetwɜːrk/',
               phonetic: 'TAR-ghet NET-uerk',
-              example: 'The target network stabilizes DQN training. = La rete target stabilizza l\'addestramento DQN.',
+              example:
+                "The target network stabilizes DQN training. = La rete target stabilizza l'addestramento DQN.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7919,7 +8625,8 @@ export default {
               italian: 'Epsilon-greedy',
               pronunciation: '/ˈepsɪlɒn ˈɡriːdi/',
               phonetic: 'EP-si-lon GRI-di',
-              example: 'Epsilon-greedy balances exploration and exploitation. = Epsilon-greedy bilancia esplorazione e sfruttamento.',
+              example:
+                'Epsilon-greedy balances exploration and exploitation. = Epsilon-greedy bilancia esplorazione e sfruttamento.',
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Esplora con probabilità epsilon.',
@@ -7929,7 +8636,8 @@ export default {
               italian: 'Esplorazione',
               pronunciation: '/ˌekspləˈreɪʃən/',
               phonetic: 'eks-plo-REI-scen',
-              example: 'Exploration tries new actions to learn. = L\'esplorazione prova nuove azioni per imparare.',
+              example:
+                "Exploration tries new actions to learn. = L'esplorazione prova nuove azioni per imparare.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7938,7 +8646,8 @@ export default {
               italian: 'Sfruttamento',
               pronunciation: '/ˌeksplɔɪˈteɪʃən/',
               phonetic: 'eks-ploi-TEI-scen',
-              example: 'Exploitation uses current best knowledge. = Lo sfruttamento usa la migliore conoscenza attuale.',
+              example:
+                'Exploitation uses current best knowledge. = Lo sfruttamento usa la migliore conoscenza attuale.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7963,7 +8672,8 @@ export default {
               italian: 'Gradiente di policy',
               pronunciation: '/ˈpɒləsi ˈɡreɪdiənt/',
               phonetic: 'PO-le-si GREI-di-ent',
-              example: 'Policy gradient methods optimize policies directly. = I metodi a gradiente di policy ottimizzano le policy direttamente.',
+              example:
+                'Policy gradient methods optimize policies directly. = I metodi a gradiente di policy ottimizzano le policy direttamente.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7972,7 +8682,8 @@ export default {
               italian: 'REINFORCE',
               pronunciation: '/riːɪnˈfɔːrs/',
               phonetic: 'ri-in-FORS',
-              example: 'REINFORCE is the simplest policy gradient. = REINFORCE è il gradiente di policy più semplice.',
+              example:
+                'REINFORCE is the simplest policy gradient. = REINFORCE è il gradiente di policy più semplice.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7981,7 +8692,8 @@ export default {
               italian: 'Actor-critic',
               pronunciation: '/ˈæktər ˈkrɪtɪk/',
               phonetic: 'AK-ter KRI-tik',
-              example: 'Actor-critic combines policy and value methods. = Actor-critic combina metodi a policy e a valore.',
+              example:
+                'Actor-critic combines policy and value methods. = Actor-critic combina metodi a policy e a valore.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7990,7 +8702,8 @@ export default {
               italian: 'Vantaggio',
               pronunciation: '/ədˈvæntɪdʒ/',
               phonetic: 'ad-VAN-tigi',
-              example: 'Advantage is action value minus state value. = Il vantaggio è valore azione meno valore stato.',
+              example:
+                'Advantage is action value minus state value. = Il vantaggio è valore azione meno valore stato.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -7999,7 +8712,8 @@ export default {
               italian: 'PPO',
               pronunciation: '/piː piː oʊ/',
               phonetic: 'PI-PI-O',
-              example: 'PPO is a stable policy gradient method. = PPO è un metodo a gradiente di policy stabile.',
+              example:
+                'PPO is a stable policy gradient method. = PPO è un metodo a gradiente di policy stabile.',
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Proximal Policy Optimization.',
@@ -8009,7 +8723,8 @@ export default {
               italian: 'TRPO',
               pronunciation: '/tiː ɑːr piː oʊ/',
               phonetic: 'TI-AR-PI-O',
-              example: 'TRPO uses trust regions for stability. = TRPO usa regioni di fiducia per stabilità.',
+              example:
+                'TRPO uses trust regions for stability. = TRPO usa regioni di fiducia per stabilità.',
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Trust Region Policy Optimization.',
@@ -8019,7 +8734,8 @@ export default {
               italian: 'A3C',
               pronunciation: '/eɪ θriː siː/',
               phonetic: 'EI-TRI-SI',
-              example: 'A3C trains in parallel asynchronously. = A3C addestra in parallelo asincrono.',
+              example:
+                'A3C trains in parallel asynchronously. = A3C addestra in parallelo asincrono.',
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Asynchronous Advantage Actor-Critic.',
@@ -8029,7 +8745,8 @@ export default {
               italian: 'Bonus di entropia',
               pronunciation: '/ˈentrəpi ˈboʊnəs/',
               phonetic: 'EN-tro-pi BO-nus',
-              example: 'Entropy bonus encourages exploration. = Il bonus di entropia incoraggia l\'esplorazione.',
+              example:
+                "Entropy bonus encourages exploration. = Il bonus di entropia incoraggia l'esplorazione.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -8038,7 +8755,8 @@ export default {
               italian: 'Traiettoria',
               pronunciation: '/trəˈdʒektəri/',
               phonetic: 'tra-GEK-to-ri',
-              example: 'A trajectory is a sequence of state-action-reward. = Una traiettoria è una sequenza stato-azione-ricompensa.',
+              example:
+                'A trajectory is a sequence of state-action-reward. = Una traiettoria è una sequenza stato-azione-ricompensa.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -8047,7 +8765,8 @@ export default {
               italian: 'Stable Baselines',
               pronunciation: '/ˈsteɪbəl ˈbeɪslaɪnz/',
               phonetic: 'STEI-bel BEIS-lainz',
-              example: 'Stable Baselines provides RL implementations. = Stable Baselines fornisce implementazioni RL.',
+              example:
+                'Stable Baselines provides RL implementations. = Stable Baselines fornisce implementazioni RL.',
               context: 'machine-learning',
               difficulty: 'advanced',
               tool: 'stable-baselines3',
@@ -8064,7 +8783,8 @@ export default {
               italian: 'RL multi-agente',
               pronunciation: '/ˈmʌltiˌeɪdʒənt ɑːr el/',
               phonetic: 'MAL-ti-EI-gent AR-EL',
-              example: 'Multi-agent RL trains multiple agents together. = RL multi-agente addestra più agenti insieme.',
+              example:
+                'Multi-agent RL trains multiple agents together. = RL multi-agente addestra più agenti insieme.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -8073,7 +8793,8 @@ export default {
               italian: 'Self-play',
               pronunciation: '/self pleɪ/',
               phonetic: 'SELF-PLEI',
-              example: 'Self-play trained AlphaGo to superhuman level. = Il self-play ha addestrato AlphaGo a un livello sovrumano.',
+              example:
+                'Self-play trained AlphaGo to superhuman level. = Il self-play ha addestrato AlphaGo a un livello sovrumano.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -8082,7 +8803,8 @@ export default {
               italian: 'AlphaGo',
               pronunciation: '/ˈælfə ɡoʊ/',
               phonetic: 'AL-fa-GOU',
-              example: 'AlphaGo beat the world champion at Go. = AlphaGo ha battuto il campione mondiale di Go.',
+              example:
+                'AlphaGo beat the world champion at Go. = AlphaGo ha battuto il campione mondiale di Go.',
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Pietra miliare del 2016.',
@@ -8092,7 +8814,8 @@ export default {
               italian: 'Ricerca Monte Carlo ad albero',
               pronunciation: '/ˈmɒnti ˈkɑːrloʊ triː sɜːrtʃ/',
               phonetic: 'MON-ti KAR-lou TRI-SERCI',
-              example: 'MCTS plans by sampling possible futures. = MCTS pianifica campionando futuri possibili.',
+              example:
+                'MCTS plans by sampling possible futures. = MCTS pianifica campionando futuri possibili.',
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Abbreviata MCTS.',
@@ -8102,7 +8825,8 @@ export default {
               italian: 'Apprendimento per imitazione',
               pronunciation: '/ˌɪmɪˈteɪʃən ˈlɜːrnɪŋ/',
               phonetic: 'i-mi-TEI-scen LER-ning',
-              example: 'Imitation learning copies expert behavior. = L\'apprendimento per imitazione copia il comportamento dell\'esperto.',
+              example:
+                "Imitation learning copies expert behavior. = L'apprendimento per imitazione copia il comportamento dell'esperto.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -8111,7 +8835,8 @@ export default {
               italian: 'RL inverso',
               pronunciation: '/ˈɪnvɜːrs ɑːr el/',
               phonetic: 'IN-vers AR-EL',
-              example: 'Inverse RL infers rewards from demonstrations. = Il RL inverso inferisce ricompense da dimostrazioni.',
+              example:
+                'Inverse RL infers rewards from demonstrations. = Il RL inverso inferisce ricompense da dimostrazioni.',
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Abbreviato IRL.',
@@ -8121,7 +8846,8 @@ export default {
               italian: 'Modellazione ricompensa',
               pronunciation: '/rɪˈwɔːrd ˈʃeɪpɪŋ/',
               phonetic: 'ri-UORD SCEI-ping',
-              example: 'Reward shaping guides learning with auxiliary rewards. = La modellazione ricompensa guida l\'apprendimento con ricompense ausiliarie.',
+              example:
+                "Reward shaping guides learning with auxiliary rewards. = La modellazione ricompensa guida l'apprendimento con ricompense ausiliarie.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -8130,7 +8856,8 @@ export default {
               italian: 'Sim-to-real',
               pronunciation: '/sɪm tuː riːəl/',
               phonetic: 'SIM-TU-RI-al',
-              example: 'Sim-to-real transfers from simulation to reality. = Sim-to-real trasferisce dalla simulazione alla realtà.',
+              example:
+                'Sim-to-real transfers from simulation to reality. = Sim-to-real trasferisce dalla simulazione alla realtà.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -8139,7 +8866,8 @@ export default {
               italian: 'Guidato dalla curiosità',
               pronunciation: '/ˌkjʊriˈɒsəti ˈdrɪvən/',
               phonetic: 'kiu-ri-OS-si-ti DRI-ven',
-              example: 'Curiosity-driven agents explore by intrinsic reward. = Gli agenti guidati dalla curiosità esplorano tramite ricompensa intrinseca.',
+              example:
+                'Curiosity-driven agents explore by intrinsic reward. = Gli agenti guidati dalla curiosità esplorano tramite ricompensa intrinseca.',
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -8148,7 +8876,8 @@ export default {
               italian: 'RL basato su modello',
               pronunciation: '/ˈmɒdəl beɪst ɑːr el/',
               phonetic: 'MO-del-BEIST AR-EL',
-              example: 'Model-based RL learns environment dynamics. = Il RL basato su modello impara le dinamiche dell\'ambiente.',
+              example:
+                "Model-based RL learns environment dynamics. = Il RL basato su modello impara le dinamiche dell'ambiente.",
               context: 'machine-learning',
               difficulty: 'advanced',
             },
@@ -8161,7 +8890,7 @@ export default {
     // ════════════════════════════════════════════════
     19: {
       name: 'Architetture Avanzate / Advanced Architectures',
-      description: 'Architetture all\'avanguardia',
+      description: "Architetture all'avanguardia",
       lessons: [
         {
           id: 'ai_advanced_1',
@@ -8173,7 +8902,8 @@ export default {
               italian: 'Miscela di esperti',
               pronunciation: '/ˈmɪkstʃər əv ˈekspɜːrts/',
               phonetic: 'MIK-scer-OF-EK-sperts',
-              example: 'Mixture of experts routes input to specialized sub-networks. = La miscela di esperti instrada input verso sotto-reti specializzate.',
+              example:
+                'Mixture of experts routes input to specialized sub-networks. = La miscela di esperti instrada input verso sotto-reti specializzate.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Abbreviata MoE.',
@@ -8183,7 +8913,8 @@ export default {
               italian: 'Router',
               pronunciation: '/ˈruːtər/',
               phonetic: 'RU-ter',
-              example: 'The router decides which experts to use. = Il router decide quali esperti usare.',
+              example:
+                'The router decides which experts to use. = Il router decide quali esperti usare.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8192,7 +8923,8 @@ export default {
               italian: 'Attivazione sparsa',
               pronunciation: '/spɑːrs ˌæktɪˈveɪʃən/',
               phonetic: 'SPARS ak-ti-VEI-scen',
-              example: 'Sparse activation uses few parameters per input. = L\'attivazione sparsa usa pochi parametri per input.',
+              example:
+                "Sparse activation uses few parameters per input. = L'attivazione sparsa usa pochi parametri per input.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8201,7 +8933,8 @@ export default {
               italian: 'Esperto',
               pronunciation: '/ˈekspɜːrt/',
               phonetic: 'EK-spert',
-              example: 'Each expert is a feed-forward sub-network. = Ogni esperto è una sotto-rete feed-forward.',
+              example:
+                'Each expert is a feed-forward sub-network. = Ogni esperto è una sotto-rete feed-forward.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8210,7 +8943,8 @@ export default {
               italian: 'Routing top-K',
               pronunciation: '/tɒp keɪ ˈruːtɪŋ/',
               phonetic: 'TOP-KEI RU-ting',
-              example: 'Top-K routing selects best K experts. = Il routing top-K seleziona i migliori K esperti.',
+              example:
+                'Top-K routing selects best K experts. = Il routing top-K seleziona i migliori K esperti.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8219,7 +8953,8 @@ export default {
               italian: 'Switch Transformer',
               pronunciation: '/swɪtʃ trænsˈfɔːrmər/',
               phonetic: 'SUICI trans-FOR-mer',
-              example: 'Switch Transformer scales to trillions of parameters. = Switch Transformer scala a miliardi di parametri.',
+              example:
+                'Switch Transformer scales to trillions of parameters. = Switch Transformer scala a miliardi di parametri.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8228,7 +8963,8 @@ export default {
               italian: 'Mixtral',
               pronunciation: '/mɪksˈtræl/',
               phonetic: 'MIKS-tral',
-              example: 'Mixtral is a popular open-source MoE model. = Mixtral è un popolare modello MoE open source.',
+              example:
+                'Mixtral is a popular open-source MoE model. = Mixtral è un popolare modello MoE open source.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Da Mistral AI.',
@@ -8238,7 +8974,8 @@ export default {
               italian: 'Bilanciamento del carico',
               pronunciation: '/loʊd ˈbælənsɪŋ/',
               phonetic: 'LOUD BA-lan-sing',
-              example: 'Load balancing prevents expert collapse. = Il bilanciamento del carico previene il collasso degli esperti.',
+              example:
+                'Load balancing prevents expert collapse. = Il bilanciamento del carico previene il collasso degli esperti.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8247,7 +8984,8 @@ export default {
               italian: 'Parametri attivi',
               pronunciation: '/ˈæktɪv pəˈræmɪtərz/',
               phonetic: 'AK-tiv pa-RA-me-ters',
-              example: 'MoE uses only a fraction of parameters per token. = MoE usa solo una frazione dei parametri per token.',
+              example:
+                'MoE uses only a fraction of parameters per token. = MoE usa solo una frazione dei parametri per token.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8256,7 +8994,8 @@ export default {
               italian: 'Calcolo condizionale',
               pronunciation: '/kənˈdɪʃənəl ˌkɒmpjʊˈteɪʃən/',
               phonetic: 'kon-DI-scio-nal kom-piu-TEI-scen',
-              example: 'Conditional computation activates parts of the network. = Il calcolo condizionale attiva parti della rete.',
+              example:
+                'Conditional computation activates parts of the network. = Il calcolo condizionale attiva parti della rete.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8272,7 +9011,8 @@ export default {
               italian: 'Contesto lungo',
               pronunciation: '/lɒŋ ˈkɒntekst/',
               phonetic: 'LONG KON-tekst',
-              example: 'Long context lets LLMs read entire books. = Il contesto lungo permette agli LLM di leggere interi libri.',
+              example:
+                'Long context lets LLMs read entire books. = Il contesto lungo permette agli LLM di leggere interi libri.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8281,7 +9021,8 @@ export default {
               italian: 'Flash attention',
               pronunciation: '/flæʃ əˈtenʃən/',
               phonetic: 'FLASH a-TEN-scen',
-              example: 'Flash attention is memory-efficient and fast. = Flash attention è efficiente in memoria e veloce.',
+              example:
+                'Flash attention is memory-efficient and fast. = Flash attention è efficiente in memoria e veloce.',
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'flash-attn',
@@ -8291,7 +9032,8 @@ export default {
               italian: 'Attenzione sparsa',
               pronunciation: '/spɑːrs əˈtenʃən/',
               phonetic: 'SPARS a-TEN-scen',
-              example: 'Sparse attention skips many token pairs. = L\'attenzione sparsa salta molte coppie di token.',
+              example:
+                "Sparse attention skips many token pairs. = L'attenzione sparsa salta molte coppie di token.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8300,7 +9042,8 @@ export default {
               italian: 'Attenzione a finestra mobile',
               pronunciation: '/ˈslaɪdɪŋ ˈwɪndoʊ əˈtenʃən/',
               phonetic: 'SLAI-ding UIN-dou a-TEN-scen',
-              example: 'Sliding window limits attention to nearby tokens. = La finestra mobile limita l\'attenzione a token vicini.',
+              example:
+                "Sliding window limits attention to nearby tokens. = La finestra mobile limita l'attenzione a token vicini.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8309,7 +9052,8 @@ export default {
               italian: 'RoPE',
               pronunciation: '/roʊp/',
               phonetic: 'ROUP',
-              example: 'RoPE encodes positions via rotations. = RoPE codifica posizioni tramite rotazioni.',
+              example:
+                'RoPE encodes positions via rotations. = RoPE codifica posizioni tramite rotazioni.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Rotary Position Embedding.',
@@ -8319,7 +9063,8 @@ export default {
               italian: 'ALiBi',
               pronunciation: '/əˈlɪbi/',
               phonetic: 'a-LI-bi',
-              example: 'ALiBi extrapolates to longer contexts. = ALiBi estrapola a contesti più lunghi.',
+              example:
+                'ALiBi extrapolates to longer contexts. = ALiBi estrapola a contesti più lunghi.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Attention with Linear Biases.',
@@ -8329,7 +9074,8 @@ export default {
               italian: 'Attenzione lineare',
               pronunciation: '/ˈlɪniər əˈtenʃən/',
               phonetic: 'LI-nier a-TEN-scen',
-              example: 'Linear attention reduces quadratic cost. = L\'attenzione lineare riduce il costo quadratico.',
+              example:
+                "Linear attention reduces quadratic cost. = L'attenzione lineare riduce il costo quadratico.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8338,7 +9084,8 @@ export default {
               italian: 'Mamba',
               pronunciation: '/ˈmæmbə/',
               phonetic: 'MAM-ba',
-              example: 'Mamba is a state-space model rivaling transformers. = Mamba è un modello state-space che rivaleggia con i transformer.',
+              example:
+                'Mamba is a state-space model rivaling transformers. = Mamba è un modello state-space che rivaleggia con i transformer.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8347,7 +9094,8 @@ export default {
               italian: 'Modello state-space',
               pronunciation: '/steɪt speɪs ˈmɒdəl/',
               phonetic: 'STEIT SPEIS MO-del',
-              example: 'State space models scale linearly with sequence length. = I modelli state-space scalano linearmente con la lunghezza della sequenza.',
+              example:
+                'State space models scale linearly with sequence length. = I modelli state-space scalano linearmente con la lunghezza della sequenza.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Abbreviato SSM.',
@@ -8357,7 +9105,8 @@ export default {
               italian: 'Cache KV',
               pronunciation: '/keɪ viː kæʃ/',
               phonetic: 'KEI-VI KASH',
-              example: 'KV cache speeds up token generation. = La cache KV velocizza la generazione di token.',
+              example:
+                'KV cache speeds up token generation. = La cache KV velocizza la generazione di token.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Memorizza Key-Value per evitare ricalcolo.',
@@ -8374,7 +9123,8 @@ export default {
               italian: 'Multimodale',
               pronunciation: '/ˌmʌltiˈmoʊdəl/',
               phonetic: 'MAL-ti-MO-dal',
-              example: 'Multimodal models combine text, image, and audio. = I modelli multimodali combinano testo, immagine e audio.',
+              example:
+                'Multimodal models combine text, image, and audio. = I modelli multimodali combinano testo, immagine e audio.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8383,7 +9133,8 @@ export default {
               italian: 'CLIP',
               pronunciation: '/klɪp/',
               phonetic: 'KLIP',
-              example: 'CLIP aligns image and text in a shared space. = CLIP allinea immagine e testo in uno spazio condiviso.',
+              example:
+                'CLIP aligns image and text in a shared space. = CLIP allinea immagine e testo in uno spazio condiviso.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Contrastive Language-Image Pretraining.',
@@ -8393,7 +9144,8 @@ export default {
               italian: 'GPT-4V',
               pronunciation: '/dʒiː piː tiː fɔːr viː/',
               phonetic: 'GI-PI-TI-FOR-VI',
-              example: 'GPT-4V analyzes images alongside text. = GPT-4V analizza immagini accanto a testo.',
+              example:
+                'GPT-4V analyzes images alongside text. = GPT-4V analizza immagini accanto a testo.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8402,7 +9154,8 @@ export default {
               italian: 'Gemini',
               pronunciation: '/ˈdʒemɪni/',
               phonetic: 'GE-mi-ni',
-              example: 'Gemini is Google\'s multimodal model. = Gemini è il modello multimodale di Google.',
+              example:
+                "Gemini is Google's multimodal model. = Gemini è il modello multimodale di Google.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8411,7 +9164,8 @@ export default {
               italian: 'Fusione di modalità',
               pronunciation: '/moʊˈdæləti ˈfjuːʒən/',
               phonetic: 'mo-DA-li-ti FIU-gen',
-              example: 'Modality fusion combines features from each input. = La fusione di modalità combina feature da ogni input.',
+              example:
+                'Modality fusion combines features from each input. = La fusione di modalità combina feature da ogni input.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8420,7 +9174,8 @@ export default {
               italian: 'Attenzione cross-modale',
               pronunciation: '/krɒs ˈmoʊdəl əˈtenʃən/',
               phonetic: 'KROS MO-dal a-TEN-scen',
-              example: 'Cross-modal attention links text and vision tokens. = L\'attenzione cross-modale collega token di testo e visione.',
+              example:
+                "Cross-modal attention links text and vision tokens. = L'attenzione cross-modale collega token di testo e visione.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8429,7 +9184,8 @@ export default {
               italian: 'Modello audio-linguaggio',
               pronunciation: '/ˈɔːdioʊ ˈlæŋɡwɪdʒ ˈmɒdəl/',
               phonetic: 'AU-dio LAN-guigi MO-del',
-              example: 'Audio-language models understand speech. = I modelli audio-linguaggio comprendono il parlato.',
+              example:
+                'Audio-language models understand speech. = I modelli audio-linguaggio comprendono il parlato.',
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'Whisper, AudioPaLM',
@@ -8439,7 +9195,8 @@ export default {
               italian: 'Modello video-linguaggio',
               pronunciation: '/ˈvɪdioʊ ˈlæŋɡwɪdʒ ˈmɒdəl/',
               phonetic: 'VI-di-o LAN-guigi MO-del',
-              example: 'Video-language models reason over video. = I modelli video-linguaggio ragionano sui video.',
+              example:
+                'Video-language models reason over video. = I modelli video-linguaggio ragionano sui video.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8448,7 +9205,8 @@ export default {
               italian: 'IA incarnata',
               pronunciation: '/ɪmˈbɒdid eɪ aɪ/',
               phonetic: 'em-BO-did EI-AI',
-              example: 'Embodied AI controls robots in the physical world. = L\'IA incarnata controlla robot nel mondo fisico.',
+              example:
+                "Embodied AI controls robots in the physical world. = L'IA incarnata controlla robot nel mondo fisico.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8457,7 +9215,8 @@ export default {
               italian: 'Modello visione-linguaggio',
               pronunciation: '/ˈvɪʒən ˈlæŋɡwɪdʒ ˈmɒdəl/',
               phonetic: 'VI-gen LAN-guigi MO-del',
-              example: 'A vision-language model captions images. = Un modello visione-linguaggio descrive immagini.',
+              example:
+                'A vision-language model captions images. = Un modello visione-linguaggio descrive immagini.',
               context: 'architectures',
               difficulty: 'advanced',
               note: 'Abbreviato VLM.',
@@ -8474,7 +9233,8 @@ export default {
               italian: 'IA ad agenti',
               pronunciation: '/əˈdʒentɪk eɪ aɪ/',
               phonetic: 'a-GEN-tik EI-AI',
-              example: 'Agentic AI systems plan and act autonomously. = I sistemi di IA ad agenti pianificano e agiscono autonomamente.',
+              example:
+                'Agentic AI systems plan and act autonomously. = I sistemi di IA ad agenti pianificano e agiscono autonomamente.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8483,7 +9243,8 @@ export default {
               italian: 'Uso di strumenti',
               pronunciation: '/tuːl juːz/',
               phonetic: 'TUL IUZ',
-              example: 'LLM tool use invokes external functions. = L\'uso di strumenti da parte degli LLM invoca funzioni esterne.',
+              example:
+                "LLM tool use invokes external functions. = L'uso di strumenti da parte degli LLM invoca funzioni esterne.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8492,7 +9253,8 @@ export default {
               italian: 'Pianificazione',
               pronunciation: '/ˈplænɪŋ/',
               phonetic: 'PLAN-ning',
-              example: 'Planning breaks goals into subtasks. = La pianificazione divide obiettivi in sotto-compiti.',
+              example:
+                'Planning breaks goals into subtasks. = La pianificazione divide obiettivi in sotto-compiti.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8501,7 +9263,8 @@ export default {
               italian: 'Memoria',
               pronunciation: '/ˈmeməri/',
               phonetic: 'ME-mo-ri',
-              example: 'Agent memory persists across interactions. = La memoria dell\'agente persiste tra interazioni.',
+              example:
+                "Agent memory persists across interactions. = La memoria dell'agente persiste tra interazioni.",
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8510,7 +9273,8 @@ export default {
               italian: 'LangChain',
               pronunciation: '/ˈlæŋtʃeɪn/',
               phonetic: 'LANG-cein',
-              example: 'LangChain orchestrates LLM applications. = LangChain orchestra applicazioni LLM.',
+              example:
+                'LangChain orchestrates LLM applications. = LangChain orchestra applicazioni LLM.',
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'langchain',
@@ -8520,7 +9284,8 @@ export default {
               italian: 'LlamaIndex',
               pronunciation: '/ˈlɑːmə ˈɪndeks/',
               phonetic: 'LA-ma IN-deks',
-              example: 'LlamaIndex builds data-aware LLM apps. = LlamaIndex costruisce app LLM consapevoli dei dati.',
+              example:
+                'LlamaIndex builds data-aware LLM apps. = LlamaIndex costruisce app LLM consapevoli dei dati.',
               context: 'architectures',
               difficulty: 'advanced',
               tool: 'llama-index',
@@ -8530,7 +9295,8 @@ export default {
               italian: 'Chiamata di strumenti',
               pronunciation: '/tuːl ˈkɔːlɪŋ/',
               phonetic: 'TUL KO-ling',
-              example: 'Tool calling lets agents query APIs. = La chiamata di strumenti permette agli agenti di interrogare API.',
+              example:
+                'Tool calling lets agents query APIs. = La chiamata di strumenti permette agli agenti di interrogare API.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8539,7 +9305,8 @@ export default {
               italian: 'AutoGPT',
               pronunciation: '/ˈɔːtoʊ dʒiː piː tiː/',
               phonetic: 'AU-tou-GI-PI-TI',
-              example: 'AutoGPT was an early autonomous agent demo. = AutoGPT è stato un primo demo di agente autonomo.',
+              example:
+                'AutoGPT was an early autonomous agent demo. = AutoGPT è stato un primo demo di agente autonomo.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8548,7 +9315,8 @@ export default {
               italian: 'Auto-miglioramento',
               pronunciation: '/self ɪmˈpruːvmənt/',
               phonetic: 'SELF im-PRUV-ment',
-              example: 'Self-improvement loops critique and refine outputs. = I cicli di auto-miglioramento criticano e rifiniscono output.',
+              example:
+                'Self-improvement loops critique and refine outputs. = I cicli di auto-miglioramento criticano e rifiniscono output.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8557,7 +9325,8 @@ export default {
               italian: 'Workflow di agenti',
               pronunciation: '/ˈeɪdʒənt ˈwɜːrkfloʊ/',
               phonetic: 'EI-gent UERK-flou',
-              example: 'Agent workflows define task pipelines. = I workflow di agenti definiscono pipeline di task.',
+              example:
+                'Agent workflows define task pipelines. = I workflow di agenti definiscono pipeline di task.',
               context: 'architectures',
               difficulty: 'advanced',
             },
@@ -8582,7 +9351,8 @@ export default {
               italian: 'Pipeline di dati',
               pronunciation: '/ˈdeɪtə ˈpaɪplaɪn/',
               phonetic: 'DEI-ta PAIP-lain',
-              example: 'A data pipeline moves data through stages. = Una pipeline di dati muove i dati attraverso stadi.',
+              example:
+                'A data pipeline moves data through stages. = Una pipeline di dati muove i dati attraverso stadi.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -8591,7 +9361,8 @@ export default {
               italian: 'ETL',
               pronunciation: '/iː tiː el/',
               phonetic: 'I-TI-EL',
-              example: 'ETL extracts, transforms, and loads data. = ETL estrae, trasforma e carica dati.',
+              example:
+                'ETL extracts, transforms, and loads data. = ETL estrae, trasforma e carica dati.',
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Extract Transform Load.',
@@ -8601,7 +9372,8 @@ export default {
               italian: 'ELT',
               pronunciation: '/iː el tiː/',
               phonetic: 'I-EL-TI',
-              example: 'ELT loads first then transforms in the warehouse. = ELT carica prima e poi trasforma nel warehouse.',
+              example:
+                'ELT loads first then transforms in the warehouse. = ELT carica prima e poi trasforma nel warehouse.',
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Variante moderna di ETL.',
@@ -8611,7 +9383,8 @@ export default {
               italian: 'Elaborazione di flussi',
               pronunciation: '/striːm ˈprɒsesɪŋ/',
               phonetic: 'STRIM PRO-se-sing',
-              example: 'Stream processing handles real-time data. = L\'elaborazione di flussi gestisce dati in tempo reale.',
+              example:
+                "Stream processing handles real-time data. = L'elaborazione di flussi gestisce dati in tempo reale.",
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Apache Kafka, Flink',
@@ -8621,7 +9394,8 @@ export default {
               italian: 'Elaborazione batch',
               pronunciation: '/bætʃ ˈprɒsesɪŋ/',
               phonetic: 'BACI PRO-se-sing',
-              example: 'Batch processing handles large volumes periodically. = L\'elaborazione batch gestisce grandi volumi periodicamente.',
+              example:
+                "Batch processing handles large volumes periodically. = L'elaborazione batch gestisce grandi volumi periodicamente.",
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -8630,7 +9404,8 @@ export default {
               italian: 'Apache Spark',
               pronunciation: '/əˈpætʃi spɑːrk/',
               phonetic: 'a-PA-ci SPARK',
-              example: 'Apache Spark processes big data in memory. = Apache Spark elabora big data in memoria.',
+              example:
+                'Apache Spark processes big data in memory. = Apache Spark elabora big data in memoria.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'PySpark',
@@ -8650,7 +9425,8 @@ export default {
               italian: 'Apache Beam',
               pronunciation: '/əˈpætʃi biːm/',
               phonetic: 'a-PA-ci BIM',
-              example: 'Apache Beam unifies batch and stream processing. = Apache Beam unifica elaborazione batch e di flussi.',
+              example:
+                'Apache Beam unifies batch and stream processing. = Apache Beam unifica elaborazione batch e di flussi.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Apache Beam',
@@ -8660,7 +9436,8 @@ export default {
               italian: 'Versionamento dei dati',
               pronunciation: '/ˈdeɪtə ˈvɜːrʒənɪŋ/',
               phonetic: 'DEI-ta VER-gio-ning',
-              example: 'Data versioning tracks dataset changes. = Il versionamento dei dati traccia i cambiamenti del dataset.',
+              example:
+                'Data versioning tracks dataset changes. = Il versionamento dei dati traccia i cambiamenti del dataset.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'DVC, lakeFS',
@@ -8670,7 +9447,8 @@ export default {
               italian: 'Lineage dei dati',
               pronunciation: '/ˈdeɪtə ˈlɪniɪdʒ/',
               phonetic: 'DEI-ta LI-ni-igi',
-              example: 'Data lineage shows how data flows through systems. = Il lineage dei dati mostra come i dati fluiscono nei sistemi.',
+              example:
+                'Data lineage shows how data flows through systems. = Il lineage dei dati mostra come i dati fluiscono nei sistemi.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -8686,7 +9464,8 @@ export default {
               italian: 'Data lake',
               pronunciation: '/ˈdeɪtə leɪk/',
               phonetic: 'DEI-ta LEIK',
-              example: 'A data lake stores raw data in any format. = Un data lake memorizza dati grezzi in qualsiasi formato.',
+              example:
+                'A data lake stores raw data in any format. = Un data lake memorizza dati grezzi in qualsiasi formato.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'AWS S3, Azure Data Lake',
@@ -8696,7 +9475,8 @@ export default {
               italian: 'Data warehouse',
               pronunciation: '/ˈdeɪtə ˈweərhaʊs/',
               phonetic: 'DEI-ta UER-haus',
-              example: 'A data warehouse stores structured analytical data. = Un data warehouse memorizza dati analitici strutturati.',
+              example:
+                'A data warehouse stores structured analytical data. = Un data warehouse memorizza dati analitici strutturati.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Snowflake, BigQuery, Redshift',
@@ -8706,7 +9486,8 @@ export default {
               italian: 'Data lakehouse',
               pronunciation: '/ˈdeɪtə ˈleɪkhaʊs/',
               phonetic: 'DEI-ta LEIK-haus',
-              example: 'A data lakehouse combines lake and warehouse benefits. = Un data lakehouse combina i benefici di lake e warehouse.',
+              example:
+                'A data lakehouse combines lake and warehouse benefits. = Un data lakehouse combina i benefici di lake e warehouse.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Databricks',
@@ -8716,7 +9497,8 @@ export default {
               italian: 'Parquet',
               pronunciation: '/pɑːrˈkeɪ/',
               phonetic: 'par-KEI',
-              example: 'Parquet is a columnar storage format. = Parquet è un formato di archiviazione colonnare.',
+              example:
+                'Parquet is a columnar storage format. = Parquet è un formato di archiviazione colonnare.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: 'df.to_parquet("data.parquet")',
@@ -8726,7 +9508,8 @@ export default {
               italian: 'Delta Lake',
               pronunciation: '/ˈdeltə leɪk/',
               phonetic: 'DEL-ta LEIK',
-              example: 'Delta Lake adds ACID transactions to data lakes. = Delta Lake aggiunge transazioni ACID ai data lake.',
+              example:
+                'Delta Lake adds ACID transactions to data lakes. = Delta Lake aggiunge transazioni ACID ai data lake.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Delta Lake',
@@ -8736,7 +9519,8 @@ export default {
               italian: 'Apache Iceberg',
               pronunciation: '/əˈpætʃi ˈaɪsbɜːrɡ/',
               phonetic: 'a-PA-ci AIS-berg',
-              example: 'Apache Iceberg is a table format for huge datasets. = Apache Iceberg è un formato tabella per dataset enormi.',
+              example:
+                'Apache Iceberg is a table format for huge datasets. = Apache Iceberg è un formato tabella per dataset enormi.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Apache Iceberg',
@@ -8746,7 +9530,8 @@ export default {
               italian: 'Archiviazione a oggetti',
               pronunciation: '/ˈɒbdʒekt ˈstɔːrɪdʒ/',
               phonetic: 'OB-gekt STO-rigi',
-              example: 'Object storage is cheap and scalable. = L\'archiviazione a oggetti è economica e scalabile.',
+              example:
+                "Object storage is cheap and scalable. = L'archiviazione a oggetti è economica e scalabile.",
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'S3, GCS, Azure Blob',
@@ -8756,7 +9541,8 @@ export default {
               italian: 'NoSQL',
               pronunciation: '/ˌnoʊ ˈsiːkwəl/',
               phonetic: 'NO-SI-kuel',
-              example: 'NoSQL stores handle unstructured data. = Gli store NoSQL gestiscono dati non strutturati.',
+              example:
+                'NoSQL stores handle unstructured data. = Gli store NoSQL gestiscono dati non strutturati.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'MongoDB, Cassandra',
@@ -8766,7 +9552,8 @@ export default {
               italian: 'Database serie temporali',
               pronunciation: '/taɪm ˈsɪriːz ˈdeɪtəbeɪs/',
               phonetic: 'TAIM SI-riz DEI-ta-beis',
-              example: 'Time series databases optimize temporal queries. = I database serie temporali ottimizzano query temporali.',
+              example:
+                'Time series databases optimize temporal queries. = I database serie temporali ottimizzano query temporali.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'InfluxDB, TimescaleDB',
@@ -8776,7 +9563,8 @@ export default {
               italian: 'Database vettoriale',
               pronunciation: '/ˈvektər ˈdeɪtəbeɪs/',
               phonetic: 'VEK-ter DEI-ta-beis',
-              example: 'A vector database supports similarity search. = Un database vettoriale supporta ricerca di similarità.',
+              example:
+                'A vector database supports similarity search. = Un database vettoriale supporta ricerca di similarità.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Pinecone, Qdrant, Milvus',
@@ -8793,7 +9581,8 @@ export default {
               italian: 'Feature store',
               pronunciation: '/ˈfiːtʃər stɔːr/',
               phonetic: 'FII-cer STOR',
-              example: 'A feature store unifies features for training and serving. = Un feature store unifica feature per training e serving.',
+              example:
+                'A feature store unifies features for training and serving. = Un feature store unifica feature per training e serving.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Feast, Tecton',
@@ -8803,7 +9592,8 @@ export default {
               italian: 'Feature online',
               pronunciation: '/ˈɒnlaɪn ˈfiːtʃərz/',
               phonetic: 'ON-lain FII-cers',
-              example: 'Online features serve real-time predictions. = Le feature online servono predizioni in tempo reale.',
+              example:
+                'Online features serve real-time predictions. = Le feature online servono predizioni in tempo reale.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -8812,7 +9602,8 @@ export default {
               italian: 'Feature offline',
               pronunciation: '/ˈɒflaɪn ˈfiːtʃərz/',
               phonetic: 'OF-lain FII-cers',
-              example: 'Offline features power batch training. = Le feature offline alimentano il training batch.',
+              example:
+                'Offline features power batch training. = Le feature offline alimentano il training batch.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -8821,7 +9612,8 @@ export default {
               italian: 'Gruppo di feature',
               pronunciation: '/ˈfiːtʃər ɡruːp/',
               phonetic: 'FII-cer GRUP',
-              example: 'Feature groups bundle related features. = I gruppi di feature raggruppano feature correlate.',
+              example:
+                'Feature groups bundle related features. = I gruppi di feature raggruppano feature correlate.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -8830,7 +9622,8 @@ export default {
               italian: 'Point-in-time',
               pronunciation: '/pɔɪnt ɪn taɪm/',
               phonetic: 'POINT-IN-TAIM',
-              example: 'Point-in-time joins prevent data leakage. = I join point-in-time prevengono data leakage.',
+              example:
+                'Point-in-time joins prevent data leakage. = I join point-in-time prevengono data leakage.',
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Cruciale per features storiche corrette.',
@@ -8840,7 +9633,8 @@ export default {
               italian: 'Backfill di feature',
               pronunciation: '/ˈfiːtʃər ˈbækfɪl/',
               phonetic: 'FII-cer BAK-fil',
-              example: 'Feature backfill computes historical values. = Il backfill di feature calcola valori storici.',
+              example:
+                'Feature backfill computes historical values. = Il backfill di feature calcola valori storici.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -8849,7 +9643,8 @@ export default {
               italian: 'Servizio feature',
               pronunciation: '/ˈfiːtʃər ˈsɜːrvɪŋ/',
               phonetic: 'FII-cer SER-ving',
-              example: 'Feature serving fetches features at low latency. = Il servizio feature recupera feature a bassa latenza.',
+              example:
+                'Feature serving fetches features at low latency. = Il servizio feature recupera feature a bassa latenza.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -8858,7 +9653,8 @@ export default {
               italian: 'Riuso di feature',
               pronunciation: '/ˈfiːtʃər riːˈjuːz/',
               phonetic: 'FII-cer ri-IUZ',
-              example: 'Feature reuse avoids duplicate computation. = Il riuso di feature evita calcoli duplicati.',
+              example:
+                'Feature reuse avoids duplicate computation. = Il riuso di feature evita calcoli duplicati.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -8867,7 +9663,8 @@ export default {
               italian: 'Scoperta di feature',
               pronunciation: '/ˈfiːtʃər dɪˈskʌvəri/',
               phonetic: 'FII-cer dis-KA-ve-ri',
-              example: 'Feature discovery helps teams share features. = La scoperta di feature aiuta i team a condividere feature.',
+              example:
+                'Feature discovery helps teams share features. = La scoperta di feature aiuta i team a condividere feature.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -8876,7 +9673,8 @@ export default {
               italian: 'Time travel',
               pronunciation: '/taɪm ˈtrævəl/',
               phonetic: 'TAIM TRA-vel',
-              example: 'Time travel queries historical data versions. = Il time travel interroga versioni storiche dei dati.',
+              example:
+                'Time travel queries historical data versions. = Il time travel interroga versioni storiche dei dati.',
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Funzione di Delta Lake e simili.',
@@ -8893,7 +9691,8 @@ export default {
               italian: 'Hadoop',
               pronunciation: '/ˈhædʊp/',
               phonetic: 'HA-dup',
-              example: 'Hadoop pioneered distributed data processing. = Hadoop ha aperto la strada all\'elaborazione distribuita.',
+              example:
+                "Hadoop pioneered distributed data processing. = Hadoop ha aperto la strada all'elaborazione distribuita.",
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Apache Hadoop',
@@ -8903,7 +9702,8 @@ export default {
               italian: 'HDFS',
               pronunciation: '/eɪtʃ diː ef es/',
               phonetic: 'EICI-DI-EF-ES',
-              example: 'HDFS is the Hadoop distributed file system. = HDFS è il file system distribuito di Hadoop.',
+              example:
+                'HDFS is the Hadoop distributed file system. = HDFS è il file system distribuito di Hadoop.',
               context: 'data-engineering',
               difficulty: 'advanced',
               note: 'Hadoop Distributed File System.',
@@ -8913,7 +9713,8 @@ export default {
               italian: 'MapReduce',
               pronunciation: '/mæp rɪˈdjuːs/',
               phonetic: 'MAP-ri-DIUS',
-              example: 'MapReduce splits work across cluster nodes. = MapReduce divide il lavoro su nodi del cluster.',
+              example:
+                'MapReduce splits work across cluster nodes. = MapReduce divide il lavoro su nodi del cluster.',
               context: 'data-engineering',
               difficulty: 'advanced',
             },
@@ -8922,7 +9723,8 @@ export default {
               italian: 'Kafka',
               pronunciation: '/ˈkæfkə/',
               phonetic: 'KAF-ka',
-              example: 'Kafka streams events between systems. = Kafka trasmette eventi tra sistemi.',
+              example:
+                'Kafka streams events between systems. = Kafka trasmette eventi tra sistemi.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Apache Kafka',
@@ -8932,7 +9734,8 @@ export default {
               italian: 'Flink',
               pronunciation: '/flɪŋk/',
               phonetic: 'FLINK',
-              example: 'Flink processes streaming data with low latency. = Flink elabora dati streaming a bassa latenza.',
+              example:
+                'Flink processes streaming data with low latency. = Flink elabora dati streaming a bassa latenza.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Apache Flink',
@@ -8942,7 +9745,8 @@ export default {
               italian: 'DAG di Airflow',
               pronunciation: '/ˈeərfloʊ dæɡ/',
               phonetic: 'ER-flou DAG',
-              example: 'An Airflow DAG schedules data pipeline tasks. = Un DAG di Airflow pianifica task di pipeline dati.',
+              example:
+                'An Airflow DAG schedules data pipeline tasks. = Un DAG di Airflow pianifica task di pipeline dati.',
               context: 'data-engineering',
               difficulty: 'advanced',
               code: '@dag(schedule="@daily")',
@@ -8952,7 +9756,8 @@ export default {
               italian: 'dbt',
               pronunciation: '/diː biː tiː/',
               phonetic: 'DI-BI-TI',
-              example: 'dbt transforms data in the warehouse with SQL. = dbt trasforma dati nel warehouse con SQL.',
+              example:
+                'dbt transforms data in the warehouse with SQL. = dbt trasforma dati nel warehouse con SQL.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'dbt',
@@ -8963,7 +9768,8 @@ export default {
               italian: 'Snowflake',
               pronunciation: '/ˈsnoʊfleɪk/',
               phonetic: 'SNOU-fleik',
-              example: 'Snowflake is a cloud data warehouse. = Snowflake è un data warehouse cloud.',
+              example:
+                'Snowflake is a cloud data warehouse. = Snowflake è un data warehouse cloud.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Snowflake',
@@ -8973,7 +9779,8 @@ export default {
               italian: 'BigQuery',
               pronunciation: '/bɪɡ ˈkwɪri/',
               phonetic: 'BIG-KUI-ri',
-              example: 'BigQuery is Google\'s serverless data warehouse. = BigQuery è il data warehouse serverless di Google.',
+              example:
+                "BigQuery is Google's serverless data warehouse. = BigQuery è il data warehouse serverless di Google.",
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Google BigQuery',
@@ -8983,7 +9790,8 @@ export default {
               italian: 'Databricks',
               pronunciation: '/ˈdeɪtəbrɪks/',
               phonetic: 'DEI-ta-briks',
-              example: 'Databricks unifies data and AI workloads. = Databricks unifica carichi di dati e IA.',
+              example:
+                'Databricks unifies data and AI workloads. = Databricks unifica carichi di dati e IA.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Databricks',
@@ -9009,7 +9817,8 @@ export default {
               italian: 'Attacco avversario',
               pronunciation: '/ˌædvərˈseəriəl əˈtæk/',
               phonetic: 'ad-ver-SE-rial a-TAK',
-              example: 'Adversarial attacks fool ML models. = Gli attacchi avversari ingannano modelli ML.',
+              example:
+                'Adversarial attacks fool ML models. = Gli attacchi avversari ingannano modelli ML.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9018,7 +9827,8 @@ export default {
               italian: 'Esempio avversario',
               pronunciation: '/ˌædvərˈseəriəl ɪɡˈzɑːmpəl/',
               phonetic: 'ad-ver-SE-rial ig-ZAM-pel',
-              example: 'An adversarial example has imperceptible perturbations. = Un esempio avversario ha perturbazioni impercettibili.',
+              example:
+                'An adversarial example has imperceptible perturbations. = Un esempio avversario ha perturbazioni impercettibili.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9037,7 +9847,8 @@ export default {
               italian: 'Attacco PGD',
               pronunciation: '/piː dʒiː diː əˈtæk/',
               phonetic: 'PI-GI-DI a-TAK',
-              example: 'PGD is an iterative adversarial attack. = PGD è un attacco avversario iterativo.',
+              example:
+                'PGD is an iterative adversarial attack. = PGD è un attacco avversario iterativo.',
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Projected Gradient Descent.',
@@ -9047,7 +9858,8 @@ export default {
               italian: 'Addestramento avversario',
               pronunciation: '/ˌædvərˈseəriəl ˈtreɪnɪŋ/',
               phonetic: 'ad-ver-SE-rial TREI-ning',
-              example: 'Adversarial training builds robust models. = L\'addestramento avversario costruisce modelli robusti.',
+              example:
+                "Adversarial training builds robust models. = L'addestramento avversario costruisce modelli robusti.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9056,7 +9868,8 @@ export default {
               italian: 'Robustezza',
               pronunciation: '/roʊˈbʌstnəs/',
               phonetic: 'ro-BAST-nes',
-              example: 'Robustness measures resistance to attacks. = La robustezza misura la resistenza agli attacchi.',
+              example:
+                'Robustness measures resistance to attacks. = La robustezza misura la resistenza agli attacchi.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9065,7 +9878,8 @@ export default {
               italian: 'Attacco mirato',
               pronunciation: '/ˈtɑːrɡɪtɪd əˈtæk/',
               phonetic: 'TAR-ge-ted a-TAK',
-              example: 'A targeted attack forces a specific wrong class. = Un attacco mirato forza una classe sbagliata specifica.',
+              example:
+                'A targeted attack forces a specific wrong class. = Un attacco mirato forza una classe sbagliata specifica.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9074,7 +9888,8 @@ export default {
               italian: 'Attacco black-box',
               pronunciation: '/blæk bɒks əˈtæk/',
               phonetic: 'BLAK-BOKS a-TAK',
-              example: 'Black-box attacks need only model outputs. = Gli attacchi black-box richiedono solo output del modello.',
+              example:
+                'Black-box attacks need only model outputs. = Gli attacchi black-box richiedono solo output del modello.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9083,7 +9898,8 @@ export default {
               italian: 'Attacco white-box',
               pronunciation: '/waɪt bɒks əˈtæk/',
               phonetic: 'UAIT-BOKS a-TAK',
-              example: 'White-box attacks know the model\'s internals. = Gli attacchi white-box conoscono gli interni del modello.',
+              example:
+                "White-box attacks know the model's internals. = Gli attacchi white-box conoscono gli interni del modello.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9092,7 +9908,8 @@ export default {
               italian: 'Perturbazione',
               pronunciation: '/ˌpɜːrtərˈbeɪʃən/',
               phonetic: 'per-tur-BEI-scen',
-              example: 'A perturbation is a small change to input. = Una perturbazione è un piccolo cambiamento all\'input.',
+              example:
+                "A perturbation is a small change to input. = Una perturbazione è un piccolo cambiamento all'input.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9108,7 +9925,8 @@ export default {
               italian: 'Avvelenamento dei dati',
               pronunciation: '/ˈdeɪtə ˈpɔɪzənɪŋ/',
               phonetic: 'DEI-ta POI-zo-ning',
-              example: 'Data poisoning corrupts training data. = L\'avvelenamento dei dati corrompe i dati di training.',
+              example:
+                "Data poisoning corrupts training data. = L'avvelenamento dei dati corrompe i dati di training.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9117,7 +9935,8 @@ export default {
               italian: 'Attacco backdoor',
               pronunciation: '/ˈbækdɔːr əˈtæk/',
               phonetic: 'BAK-dor a-TAK',
-              example: 'A backdoor attack hides triggers in the model. = Un attacco backdoor nasconde trigger nel modello.',
+              example:
+                'A backdoor attack hides triggers in the model. = Un attacco backdoor nasconde trigger nel modello.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9126,7 +9945,8 @@ export default {
               italian: 'Pattern trigger',
               pronunciation: '/ˈtrɪɡər ˈpætərn/',
               phonetic: 'TRI-ger PAT-tern',
-              example: 'A trigger pattern activates the backdoor. = Un pattern trigger attiva la backdoor.',
+              example:
+                'A trigger pattern activates the backdoor. = Un pattern trigger attiva la backdoor.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9135,7 +9955,8 @@ export default {
               italian: 'Inversione etichette',
               pronunciation: '/ˈleɪbəl ˈflɪpɪŋ/',
               phonetic: 'LEI-bel FLIP-ping',
-              example: 'Label flipping corrupts training labels. = L\'inversione etichette corrompe le etichette di training.',
+              example:
+                "Label flipping corrupts training labels. = L'inversione etichette corrompe le etichette di training.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9144,7 +9965,8 @@ export default {
               italian: 'Attacco clean-label',
               pronunciation: '/kliːn ˈleɪbəl əˈtæk/',
               phonetic: 'KLIN LEI-bel a-TAK',
-              example: 'Clean-label attacks keep correct labels but poison features. = Gli attacchi clean-label mantengono etichette corrette ma avvelenano feature.',
+              example:
+                'Clean-label attacks keep correct labels but poison features. = Gli attacchi clean-label mantengono etichette corrette ma avvelenano feature.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9153,7 +9975,8 @@ export default {
               italian: 'Sanificazione dei dati',
               pronunciation: '/ˈdeɪtə ˌsænɪtaɪˈzeɪʃən/',
               phonetic: 'DEI-ta sa-ni-tai-ZEI-scen',
-              example: 'Data sanitization removes poisoned samples. = La sanificazione dei dati rimuove campioni avvelenati.',
+              example:
+                'Data sanitization removes poisoned samples. = La sanificazione dei dati rimuove campioni avvelenati.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9162,7 +9985,8 @@ export default {
               italian: 'Difesa basata su anomalie',
               pronunciation: '/əˈnɒməli beɪst dɪˈfens/',
               phonetic: 'a-NO-ma-li-BEIST di-FENS',
-              example: 'Anomaly-based defense flags strange examples. = La difesa basata su anomalie segnala esempi strani.',
+              example:
+                'Anomaly-based defense flags strange examples. = La difesa basata su anomalie segnala esempi strani.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9171,7 +9995,8 @@ export default {
               italian: 'Rete Trojan',
               pronunciation: '/ˈtroʊdʒən ˈnetwɜːrk/',
               phonetic: 'TRO-gen NET-uerk',
-              example: 'A Trojan network appears normal but contains hidden behavior. = Una rete Trojan appare normale ma contiene comportamento nascosto.',
+              example:
+                'A Trojan network appears normal but contains hidden behavior. = Una rete Trojan appare normale ma contiene comportamento nascosto.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9180,7 +10005,8 @@ export default {
               italian: 'Attacco alla supply chain',
               pronunciation: '/səˈplaɪ tʃeɪn əˈtæk/',
               phonetic: 'sap-PLAI-CIEIN a-TAK',
-              example: 'Supply chain attacks compromise upstream models. = Gli attacchi alla supply chain compromettono modelli a monte.',
+              example:
+                'Supply chain attacks compromise upstream models. = Gli attacchi alla supply chain compromettono modelli a monte.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9189,7 +10015,8 @@ export default {
               italian: 'Aggregazione robusta',
               pronunciation: '/roʊˈbʌst ˌæɡrɪˈɡeɪʃən/',
               phonetic: 'ro-BAST a-gre-GEI-scen',
-              example: 'Robust aggregation defends federated learning. = L\'aggregazione robusta difende il federated learning.',
+              example:
+                "Robust aggregation defends federated learning. = L'aggregazione robusta difende il federated learning.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9205,7 +10032,8 @@ export default {
               italian: 'Iniezione di prompt',
               pronunciation: '/prɒmpt ɪnˈdʒekʃən/',
               phonetic: 'PROMPT in-GEK-scen',
-              example: 'Prompt injection overrides system instructions. = L\'iniezione di prompt sovrascrive istruzioni di sistema.',
+              example:
+                "Prompt injection overrides system instructions. = L'iniezione di prompt sovrascrive istruzioni di sistema.",
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Attacco principale agli LLM.',
@@ -9215,7 +10043,8 @@ export default {
               italian: 'Jailbreak',
               pronunciation: '/ˈdʒeɪlbreɪk/',
               phonetic: 'GEIL-breik',
-              example: 'A jailbreak bypasses safety guardrails. = Un jailbreak aggira i guardrail di sicurezza.',
+              example:
+                'A jailbreak bypasses safety guardrails. = Un jailbreak aggira i guardrail di sicurezza.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9224,7 +10053,8 @@ export default {
               italian: 'Iniezione indiretta di prompt',
               pronunciation: '/ˌɪndəˈrekt prɒmpt ɪnˈdʒekʃən/',
               phonetic: 'in-di-REKT PROMPT in-GEK-scen',
-              example: 'Indirect injection hides commands in retrieved content. = L\'iniezione indiretta nasconde comandi in contenuto recuperato.',
+              example:
+                "Indirect injection hides commands in retrieved content. = L'iniezione indiretta nasconde comandi in contenuto recuperato.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9233,7 +10063,8 @@ export default {
               italian: 'Esfiltrazione di dati',
               pronunciation: '/ˈdeɪtə ˌeksfɪlˈtreɪʃən/',
               phonetic: 'DEI-ta ex-fil-TREI-scen',
-              example: 'Data exfiltration leaks sensitive info via the model. = L\'esfiltrazione di dati fa fuoriuscire info sensibili tramite il modello.',
+              example:
+                "Data exfiltration leaks sensitive info via the model. = L'esfiltrazione di dati fa fuoriuscire info sensibili tramite il modello.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9242,7 +10073,8 @@ export default {
               italian: 'Estrazione del modello',
               pronunciation: '/ˈmɒdəl ɪkˈstrækʃən/',
               phonetic: 'MO-del ek-STRAK-scen',
-              example: 'Model extraction copies a model via queries. = L\'estrazione del modello copia un modello tramite query.',
+              example:
+                "Model extraction copies a model via queries. = L'estrazione del modello copia un modello tramite query.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9251,7 +10083,8 @@ export default {
               italian: 'Inferenza di appartenenza',
               pronunciation: '/ˈmembərʃɪp ˈɪnfərəns/',
               phonetic: 'MEM-ber-scip IN-fe-rens',
-              example: 'Membership inference reveals training data. = L\'inferenza di appartenenza rivela dati di training.',
+              example:
+                "Membership inference reveals training data. = L'inferenza di appartenenza rivela dati di training.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9260,17 +10093,19 @@ export default {
               italian: 'Fuga di dati personali',
               pronunciation: '/piː aɪ aɪ ˈliːkɪdʒ/',
               phonetic: 'PI-AI-AI LII-kigi',
-              example: 'PII leakage exposes private information. = La fuga di dati personali espone informazioni private.',
+              example:
+                'PII leakage exposes private information. = La fuga di dati personali espone informazioni private.',
               context: 'ethics',
               difficulty: 'advanced',
               note: 'PII = Personally Identifiable Information.',
             },
             {
               english: 'Output Filtering',
-              italian: 'Filtraggio dell\'output',
+              italian: "Filtraggio dell'output",
               pronunciation: '/ˈaʊtpʊt ˈfɪltərɪŋ/',
               phonetic: 'AUT-put FIL-te-ring',
-              example: 'Output filtering blocks unsafe responses. = Il filtraggio dell\'output blocca risposte non sicure.',
+              example:
+                "Output filtering blocks unsafe responses. = Il filtraggio dell'output blocca risposte non sicure.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9279,7 +10114,8 @@ export default {
               italian: 'Red teaming',
               pronunciation: '/red ˈtiːmɪŋ/',
               phonetic: 'RED TI-ming',
-              example: 'Red teaming probes models for weaknesses. = Il red teaming sonda i modelli per debolezze.',
+              example:
+                'Red teaming probes models for weaknesses. = Il red teaming sonda i modelli per debolezze.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9288,7 +10124,8 @@ export default {
               italian: 'OWASP LLM Top 10',
               pronunciation: '/ˈoʊwæsp el el em tɒp ten/',
               phonetic: 'OU-uasp EL-EL-EM TOP-TEN',
-              example: 'OWASP LLM Top 10 lists the main LLM risks. = OWASP LLM Top 10 elenca i principali rischi LLM.',
+              example:
+                'OWASP LLM Top 10 lists the main LLM risks. = OWASP LLM Top 10 elenca i principali rischi LLM.',
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Standard di riferimento per la sicurezza LLM.',
@@ -9305,7 +10142,8 @@ export default {
               italian: 'Distillazione difensiva',
               pronunciation: '/dɪˈfensɪv ˌdɪstɪˈleɪʃən/',
               phonetic: 'di-FEN-siv dis-ti-LEI-scen',
-              example: 'Defensive distillation softens decision boundaries. = La distillazione difensiva ammorbidisce confini decisionali.',
+              example:
+                'Defensive distillation softens decision boundaries. = La distillazione difensiva ammorbidisce confini decisionali.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9314,7 +10152,8 @@ export default {
               italian: 'Sanificazione input',
               pronunciation: '/ˈɪnpʊt ˌsænɪtaɪˈzeɪʃən/',
               phonetic: 'IN-put sa-ni-tai-ZEI-scen',
-              example: 'Input sanitization removes adversarial perturbations. = La sanificazione input rimuove perturbazioni avversarie.',
+              example:
+                'Input sanitization removes adversarial perturbations. = La sanificazione input rimuove perturbazioni avversarie.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9323,7 +10162,8 @@ export default {
               italian: 'Robustezza certificata',
               pronunciation: '/ˈsɜːrtɪfaɪd roʊˈbʌstnəs/',
               phonetic: 'SER-ti-faid ro-BAST-nes',
-              example: 'Certified robustness guarantees defense bounds. = La robustezza certificata garantisce limiti di difesa.',
+              example:
+                'Certified robustness guarantees defense bounds. = La robustezza certificata garantisce limiti di difesa.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9332,7 +10172,8 @@ export default {
               italian: 'Smoothing casuale',
               pronunciation: '/ˈrændəmaɪzd ˈsmuːðɪŋ/',
               phonetic: 'RAN-do-maizd SMU-ding',
-              example: 'Randomized smoothing adds noise to inputs. = Lo smoothing casuale aggiunge rumore agli input.',
+              example:
+                'Randomized smoothing adds noise to inputs. = Lo smoothing casuale aggiunge rumore agli input.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9341,7 +10182,8 @@ export default {
               italian: 'Watermark',
               pronunciation: '/ˈwɔːtərmɑːrk/',
               phonetic: 'UO-ter-mark',
-              example: 'A watermark protects model intellectual property. = Un watermark protegge la proprietà intellettuale del modello.',
+              example:
+                'A watermark protects model intellectual property. = Un watermark protegge la proprietà intellettuale del modello.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9350,7 +10192,8 @@ export default {
               italian: 'Controllo degli accessi',
               pronunciation: '/ˈækses kənˈtroʊl/',
               phonetic: 'AK-ses kon-TROL',
-              example: 'Access control limits who can query the model. = Il controllo degli accessi limita chi può interrogare il modello.',
+              example:
+                'Access control limits who can query the model. = Il controllo degli accessi limita chi può interrogare il modello.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9359,7 +10202,8 @@ export default {
               italian: 'Enclave sicura',
               pronunciation: '/sɪˈkjʊr ˈenkleɪv/',
               phonetic: 'si-KIUR EN-kleiv',
-              example: 'Secure enclaves run models in trusted hardware. = Le enclave sicure eseguono modelli in hardware fidato.',
+              example:
+                'Secure enclaves run models in trusted hardware. = Le enclave sicure eseguono modelli in hardware fidato.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9368,7 +10212,8 @@ export default {
               italian: 'Crittografia omomorfa',
               pronunciation: '/ˌhoʊməˈmɔːrfɪk ɪnˈkrɪpʃən/',
               phonetic: 'o-mo-MOR-fik in-KRIP-scen',
-              example: 'Homomorphic encryption computes on encrypted data. = La crittografia omomorfa calcola su dati crittografati.',
+              example:
+                'Homomorphic encryption computes on encrypted data. = La crittografia omomorfa calcola su dati crittografati.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9377,7 +10222,8 @@ export default {
               italian: 'ML rispettoso della privacy',
               pronunciation: '/ˈpraɪvəsi prɪˈzɜːrvɪŋ em el/',
               phonetic: 'PRAI-va-si pri-ZER-ving EM-EL',
-              example: 'Privacy-preserving ML trains without revealing data. = Il ML rispettoso della privacy addestra senza rivelare dati.',
+              example:
+                'Privacy-preserving ML trains without revealing data. = Il ML rispettoso della privacy addestra senza rivelare dati.',
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9386,7 +10232,8 @@ export default {
               italian: 'Modello di minaccia',
               pronunciation: '/θret ˈmɒdəl/',
               phonetic: 'TRET MO-del',
-              example: 'A threat model defines attacker capabilities. = Un modello di minaccia definisce le capacità dell\'attaccante.',
+              example:
+                "A threat model defines attacker capabilities. = Un modello di minaccia definisce le capacità dell'attaccante.",
               context: 'ethics',
               difficulty: 'advanced',
             },
@@ -9411,7 +10258,8 @@ export default {
               italian: 'Articolo',
               pronunciation: '/ˈpeɪpər/',
               phonetic: 'PEI-per',
-              example: 'A paper presents new research findings. = Un articolo presenta nuove scoperte di ricerca.',
+              example:
+                'A paper presents new research findings. = Un articolo presenta nuove scoperte di ricerca.',
               context: 'research',
               difficulty: 'advanced',
               note: '"Paper" è spesso lasciato in inglese in italiano accademico.',
@@ -9421,7 +10269,8 @@ export default {
               italian: 'Preprint',
               pronunciation: '/ˈpriːprɪnt/',
               phonetic: 'PRI-print',
-              example: 'A preprint is shared before peer review. = Un preprint è condiviso prima della peer review.',
+              example:
+                'A preprint is shared before peer review. = Un preprint è condiviso prima della peer review.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9430,7 +10279,8 @@ export default {
               italian: 'arXiv',
               pronunciation: '/ˈɑːrkaɪv/',
               phonetic: 'AR-kaiv',
-              example: 'arXiv hosts preprints in math and CS. = arXiv ospita preprint in matematica e informatica.',
+              example:
+                'arXiv hosts preprints in math and CS. = arXiv ospita preprint in matematica e informatica.',
               context: 'research',
               difficulty: 'advanced',
               tool: 'arxiv.org',
@@ -9440,7 +10290,8 @@ export default {
               italian: 'Revisione paritaria',
               pronunciation: '/pɪər rɪˈvjuː/',
               phonetic: 'PIR ri-VIU',
-              example: 'Peer review evaluates paper quality. = La revisione paritaria valuta la qualità dell\'articolo.',
+              example:
+                "Peer review evaluates paper quality. = La revisione paritaria valuta la qualità dell'articolo.",
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9449,7 +10300,8 @@ export default {
               italian: 'Conferenza',
               pronunciation: '/ˈkɒnfərəns/',
               phonetic: 'KON-fe-rens',
-              example: 'NeurIPS is a top AI conference. = NeurIPS è una delle migliori conferenze di IA.',
+              example:
+                'NeurIPS is a top AI conference. = NeurIPS è una delle migliori conferenze di IA.',
               context: 'research',
               difficulty: 'advanced',
               note: 'Esempi: NeurIPS, ICML, ICLR, ACL, CVPR.',
@@ -9459,7 +10311,8 @@ export default {
               italian: 'Workshop',
               pronunciation: '/ˈwɜːrkʃɒp/',
               phonetic: 'UERK-sciop',
-              example: 'A workshop focuses on a niche topic. = Un workshop si concentra su un argomento di nicchia.',
+              example:
+                'A workshop focuses on a niche topic. = Un workshop si concentra su un argomento di nicchia.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9468,7 +10321,8 @@ export default {
               italian: 'Citazione',
               pronunciation: '/saɪˈteɪʃən/',
               phonetic: 'sai-TEI-scen',
-              example: 'Citations link to prior work. = Le citazioni collegano a lavori precedenti.',
+              example:
+                'Citations link to prior work. = Le citazioni collegano a lavori precedenti.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9477,7 +10331,8 @@ export default {
               italian: 'Crisi di riproducibilità',
               pronunciation: '/ˌriːprəˌdjuːsəˈbɪləti ˈkraɪsɪs/',
               phonetic: 'ri-pro-du-si-BI-li-ti KRAI-sis',
-              example: 'The reproducibility crisis affects ML papers. = La crisi di riproducibilità affligge i paper di ML.',
+              example:
+                'The reproducibility crisis affects ML papers. = La crisi di riproducibilità affligge i paper di ML.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9486,7 +10341,8 @@ export default {
               italian: 'Open source',
               pronunciation: '/ˈoʊpən sɔːrs/',
               phonetic: 'O-pen SORS',
-              example: 'Many AI labs publish open source code. = Molti laboratori IA pubblicano codice open source.',
+              example:
+                'Many AI labs publish open source code. = Molti laboratori IA pubblicano codice open source.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9495,7 +10351,8 @@ export default {
               italian: 'Revisione della letteratura',
               pronunciation: '/ˈlɪtərətʃər rɪˈvjuː/',
               phonetic: 'LI-te-ra-cer ri-VIU',
-              example: 'A literature review surveys existing work. = Una revisione della letteratura esamina il lavoro esistente.',
+              example:
+                'A literature review surveys existing work. = Una revisione della letteratura esamina il lavoro esistente.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9511,7 +10368,8 @@ export default {
               italian: 'Benchmark',
               pronunciation: '/ˈbentʃmɑːrk/',
               phonetic: 'BENCI-mark',
-              example: 'A benchmark standardizes model comparison. = Un benchmark standardizza il confronto tra modelli.',
+              example:
+                'A benchmark standardizes model comparison. = Un benchmark standardizza il confronto tra modelli.',
               context: 'research',
               difficulty: 'advanced',
               note: 'Termine sempre lasciato in inglese.',
@@ -9521,7 +10379,8 @@ export default {
               italian: 'SOTA',
               pronunciation: '/ˈsoʊtə/',
               phonetic: 'SO-ta',
-              example: 'SOTA results push the field forward. = I risultati SOTA fanno progredire il campo.',
+              example:
+                'SOTA results push the field forward. = I risultati SOTA fanno progredire il campo.',
               context: 'research',
               difficulty: 'advanced',
               note: 'State Of The Art.',
@@ -9531,7 +10390,8 @@ export default {
               italian: 'GLUE',
               pronunciation: '/ɡluː/',
               phonetic: 'GLU',
-              example: 'GLUE benchmarks NLP understanding. = GLUE è un benchmark per la comprensione NLP.',
+              example:
+                'GLUE benchmarks NLP understanding. = GLUE è un benchmark per la comprensione NLP.',
               context: 'research',
               difficulty: 'advanced',
               note: 'General Language Understanding Evaluation.',
@@ -9560,7 +10420,8 @@ export default {
               italian: 'HumanEval',
               pronunciation: '/ˈhjuːmən ɪˈvæl/',
               phonetic: 'HIU-man i-VAL',
-              example: 'HumanEval evaluates code generation. = HumanEval valuta la generazione di codice.',
+              example:
+                'HumanEval evaluates code generation. = HumanEval valuta la generazione di codice.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9569,7 +10430,8 @@ export default {
               italian: 'COCO',
               pronunciation: '/ˈkoʊkoʊ/',
               phonetic: 'KOU-kou',
-              example: 'COCO is a standard object detection dataset. = COCO è un dataset standard per object detection.',
+              example:
+                'COCO is a standard object detection dataset. = COCO è un dataset standard per object detection.',
               context: 'research',
               difficulty: 'advanced',
               note: 'Common Objects in Context.',
@@ -9579,7 +10441,8 @@ export default {
               italian: 'Classifica',
               pronunciation: '/ˈliːdərbɔːrd/',
               phonetic: 'LI-der-bord',
-              example: 'A leaderboard ranks model submissions. = Una classifica ordina le sottomissioni dei modelli.',
+              example:
+                'A leaderboard ranks model submissions. = Una classifica ordina le sottomissioni dei modelli.',
               context: 'research',
               difficulty: 'advanced',
               note: 'Termine spesso lasciato in inglese.',
@@ -9589,7 +10452,8 @@ export default {
               italian: 'Test riservato',
               pronunciation: '/held aʊt test/',
               phonetic: 'HELD-AUT TEST',
-              example: 'A held-out test prevents benchmark overfitting. = Un test riservato previene overfitting al benchmark.',
+              example:
+                'A held-out test prevents benchmark overfitting. = Un test riservato previene overfitting al benchmark.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9598,7 +10462,8 @@ export default {
               italian: 'Contaminazione del test',
               pronunciation: '/test kənˌtæmɪˈneɪʃən/',
               phonetic: 'TEST kon-ta-mi-NEI-scen',
-              example: 'Test contamination invalidates benchmark scores. = La contaminazione del test invalida i punteggi del benchmark.',
+              example:
+                'Test contamination invalidates benchmark scores. = La contaminazione del test invalida i punteggi del benchmark.',
               context: 'research',
               difficulty: 'advanced',
               note: 'Problema crescente con LLM addestrati su dati web.',
@@ -9615,7 +10480,7 @@ export default {
               italian: 'Ipotesi',
               pronunciation: '/haɪˈpɒθəsɪs/',
               phonetic: 'hai-PO-te-sis',
-              example: 'A hypothesis guides the experiment. = Un\'ipotesi guida l\'esperimento.',
+              example: "A hypothesis guides the experiment. = Un'ipotesi guida l'esperimento.",
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9624,7 +10489,8 @@ export default {
               italian: 'Studio di ablazione',
               pronunciation: '/əˈbleɪʃən ˈstʌdi/',
               phonetic: 'a-BLEI-scen STA-di',
-              example: 'An ablation study isolates component contributions. = Uno studio di ablazione isola i contributi dei componenti.',
+              example:
+                'An ablation study isolates component contributions. = Uno studio di ablazione isola i contributi dei componenti.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9633,7 +10499,8 @@ export default {
               italian: 'Baseline',
               pronunciation: '/ˈbeɪslaɪn/',
               phonetic: 'BEIS-lain',
-              example: 'Always compare against a strong baseline. = Confronta sempre con una baseline solida.',
+              example:
+                'Always compare against a strong baseline. = Confronta sempre con una baseline solida.',
               context: 'research',
               difficulty: 'advanced',
               note: 'Termine sempre lasciato in inglese.',
@@ -9643,7 +10510,8 @@ export default {
               italian: 'Gruppo di controllo',
               pronunciation: '/kənˈtroʊl ɡruːp/',
               phonetic: 'kon-TROL GRUP',
-              example: 'A control group has no intervention. = Un gruppo di controllo non ha intervento.',
+              example:
+                'A control group has no intervention. = Un gruppo di controllo non ha intervento.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9652,7 +10520,8 @@ export default {
               italian: 'Seed casuale',
               pronunciation: '/ˈrændəm siːd/',
               phonetic: 'RAN-dom SID',
-              example: 'Set the random seed for reproducibility. = Imposta il seed casuale per riproducibilità.',
+              example:
+                'Set the random seed for reproducibility. = Imposta il seed casuale per riproducibilità.',
               context: 'research',
               difficulty: 'advanced',
               code: 'torch.manual_seed(42)',
@@ -9662,7 +10531,8 @@ export default {
               italian: 'Intervallo di confidenza',
               pronunciation: '/ˈkɒnfɪdəns ˈɪntərvəl/',
               phonetic: 'KON-fi-dens IN-ter-val',
-              example: 'Report confidence intervals, not just averages. = Riporta intervalli di confidenza, non solo medie.',
+              example:
+                'Report confidence intervals, not just averages. = Riporta intervalli di confidenza, non solo medie.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9671,16 +10541,18 @@ export default {
               italian: 'Esecuzioni multiple',
               pronunciation: '/ˈmʌltɪpəl rʌnz/',
               phonetic: 'MAL-ti-pol RANS',
-              example: 'Multiple runs show result variance. = Esecuzioni multiple mostrano la varianza dei risultati.',
+              example:
+                'Multiple runs show result variance. = Esecuzioni multiple mostrano la varianza dei risultati.',
               context: 'research',
               difficulty: 'advanced',
             },
             {
               english: 'Effect Size',
-              italian: 'Dimensione dell\'effetto',
+              italian: "Dimensione dell'effetto",
               pronunciation: '/ɪˈfekt saɪz/',
               phonetic: 'i-FEKT SAIZ',
-              example: 'Effect size matters more than p-value. = La dimensione dell\'effetto conta più del p-value.',
+              example:
+                "Effect size matters more than p-value. = La dimensione dell'effetto conta più del p-value.",
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9689,7 +10561,8 @@ export default {
               italian: 'Selezione mirata',
               pronunciation: '/ˈtʃeri ˈpɪkɪŋ/',
               phonetic: 'CIER-ri PIK-king',
-              example: 'Cherry-picking results misleads readers. = La selezione mirata di risultati inganna i lettori.',
+              example:
+                'Cherry-picking results misleads readers. = La selezione mirata di risultati inganna i lettori.',
               context: 'research',
               difficulty: 'advanced',
               note: 'Pratica scientificamente scorretta.',
@@ -9699,7 +10572,8 @@ export default {
               italian: 'Replicazione',
               pronunciation: '/ˌreplɪˈkeɪʃən/',
               phonetic: 're-pli-KEI-scen',
-              example: 'Replication confirms or refutes results. = La replicazione conferma o confuta i risultati.',
+              example:
+                'Replication confirms or refutes results. = La replicazione conferma o confuta i risultati.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9715,7 +10589,8 @@ export default {
               italian: 'Leggi di scala',
               pronunciation: '/ˈskeɪlɪŋ lɔːz/',
               phonetic: 'SKEI-ling LOZ',
-              example: 'Scaling laws predict gains from more compute. = Le leggi di scala predicono guadagni da più calcolo.',
+              example:
+                'Scaling laws predict gains from more compute. = Le leggi di scala predicono guadagni da più calcolo.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9724,7 +10599,8 @@ export default {
               italian: 'Capacità emergenti',
               pronunciation: '/ɪˈmɜːrdʒənt əˈbɪlətiz/',
               phonetic: 'i-MER-gent a-BI-li-tiz',
-              example: 'Emergent abilities appear at scale. = Le capacità emergenti appaiono su larga scala.',
+              example:
+                'Emergent abilities appear at scale. = Le capacità emergenti appaiono su larga scala.',
               context: 'research',
               difficulty: 'advanced',
               note: 'Concetto controverso del 2022-2023.',
@@ -9734,7 +10610,8 @@ export default {
               italian: 'Allineamento',
               pronunciation: '/əˈlaɪnmənt/',
               phonetic: 'a-LAIN-ment',
-              example: 'Alignment makes AI follow human intent. = L\'allineamento fa seguire all\'IA l\'intento umano.',
+              example:
+                "Alignment makes AI follow human intent. = L'allineamento fa seguire all'IA l'intento umano.",
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9743,17 +10620,19 @@ export default {
               italian: 'IA costituzionale',
               pronunciation: '/ˌkɒnstɪˈtjuːʃənəl eɪ aɪ/',
               phonetic: 'kon-sti-TIU-scio-nal EI-AI',
-              example: 'Constitutional AI uses principles for self-supervision. = L\'IA costituzionale usa principi per auto-supervisione.',
+              example:
+                "Constitutional AI uses principles for self-supervision. = L'IA costituzionale usa principi per auto-supervisione.",
               context: 'research',
               difficulty: 'advanced',
               note: 'Approccio sviluppato da Anthropic.',
             },
             {
               english: 'Interpretability Research',
-              italian: 'Ricerca sull\'interpretabilità',
+              italian: "Ricerca sull'interpretabilità",
               pronunciation: '/ɪnˌtɜːrprətəˈbɪləti rɪˈsɜːrtʃ/',
               phonetic: 'in-ter-pre-ta-BI-li-ti ri-SERCI',
-              example: 'Interpretability research opens the black box. = La ricerca sull\'interpretabilità apre la scatola nera.',
+              example:
+                "Interpretability research opens the black box. = La ricerca sull'interpretabilità apre la scatola nera.",
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9762,7 +10641,8 @@ export default {
               italian: 'Interpretabilità meccanicistica',
               pronunciation: '/ˌmekəˈnɪstɪk ɪnˌtɜːrprətəˈbɪləti/',
               phonetic: 'me-ka-NIS-tik in-ter-pre-ta-BI-li-ti',
-              example: 'Mechanistic interpretability reverse-engineers networks. = L\'interpretabilità meccanicistica inverte l\'ingegneria delle reti.',
+              example:
+                "Mechanistic interpretability reverse-engineers networks. = L'interpretabilità meccanicistica inverte l'ingegneria delle reti.",
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9771,7 +10651,8 @@ export default {
               italian: 'Autoencoder sparsi',
               pronunciation: '/spɑːrs ˌɔːtoʊɪnˈkoʊdərz/',
               phonetic: 'SPARS au-tou-en-KOU-ders',
-              example: 'Sparse autoencoders extract features from LLMs. = Gli autoencoder sparsi estraggono feature dagli LLM.',
+              example:
+                'Sparse autoencoders extract features from LLMs. = Gli autoencoder sparsi estraggono feature dagli LLM.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9780,7 +10661,8 @@ export default {
               italian: 'AGI',
               pronunciation: '/eɪ dʒiː aɪ/',
               phonetic: 'EI-GI-AI',
-              example: 'AGI is a long-term research goal. = AGI è un obiettivo di ricerca a lungo termine.',
+              example:
+                'AGI is a long-term research goal. = AGI è un obiettivo di ricerca a lungo termine.',
               context: 'research',
               difficulty: 'advanced',
               note: 'Artificial General Intelligence.',
@@ -9790,7 +10672,8 @@ export default {
               italian: 'Neuro-simbolico',
               pronunciation: '/ˈnjʊəroʊ sɪmˈbɒlɪk/',
               phonetic: 'NIU-ro sim-BO-lik',
-              example: 'Neuro-symbolic AI combines learning and reasoning. = L\'IA neuro-simbolica combina apprendimento e ragionamento.',
+              example:
+                "Neuro-symbolic AI combines learning and reasoning. = L'IA neuro-simbolica combina apprendimento e ragionamento.",
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9799,7 +10682,8 @@ export default {
               italian: 'Modello del mondo',
               pronunciation: '/wɜːrld ˈmɒdəl/',
               phonetic: 'UERLD MO-del',
-              example: 'World models simulate environment dynamics. = I modelli del mondo simulano dinamiche ambientali.',
+              example:
+                'World models simulate environment dynamics. = I modelli del mondo simulano dinamiche ambientali.',
               context: 'research',
               difficulty: 'advanced',
             },
@@ -9812,19 +10696,20 @@ export default {
     // ════════════════════════════════════════════════
     23: {
       name: 'IA Professionale / Professional AI',
-      description: 'Carriera e competenze dell\'ML engineer',
+      description: "Carriera e competenze dell'ML engineer",
       lessons: [
         {
           id: 'ai_pro_1',
           title: 'ML Engineer Career / Carriera ML Engineer',
-          description: 'Ruoli professionali nell\'IA',
+          description: "Ruoli professionali nell'IA",
           items: [
             {
               english: 'ML Engineer',
               italian: 'ML engineer',
               pronunciation: '/em el ˌendʒɪˈnɪr/',
               phonetic: 'EM-EL en-gi-NIR',
-              example: 'An ML engineer builds production systems. = Un ML engineer costruisce sistemi di produzione.',
+              example:
+                'An ML engineer builds production systems. = Un ML engineer costruisce sistemi di produzione.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -9833,7 +10718,8 @@ export default {
               italian: 'Data scientist',
               pronunciation: '/ˈdeɪtə ˈsaɪəntɪst/',
               phonetic: 'DEI-ta SAI-en-tist',
-              example: 'A data scientist explores data and prototypes models. = Un data scientist esplora dati e prototipa modelli.',
+              example:
+                'A data scientist explores data and prototypes models. = Un data scientist esplora dati e prototipa modelli.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -9842,7 +10728,8 @@ export default {
               italian: 'Research scientist',
               pronunciation: '/rɪˈsɜːrtʃ ˈsaɪəntɪst/',
               phonetic: 'ri-SERCI SAI-en-tist',
-              example: 'A research scientist publishes papers and pushes SOTA. = Un research scientist pubblica paper e spinge il SOTA.',
+              example:
+                'A research scientist publishes papers and pushes SOTA. = Un research scientist pubblica paper e spinge il SOTA.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -9851,7 +10738,8 @@ export default {
               italian: 'Data engineer',
               pronunciation: '/ˈdeɪtə ˌendʒɪˈnɪr/',
               phonetic: 'DEI-ta en-gi-NIR',
-              example: 'A data engineer builds data pipelines. = Un data engineer costruisce pipeline di dati.',
+              example:
+                'A data engineer builds data pipelines. = Un data engineer costruisce pipeline di dati.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -9860,7 +10748,8 @@ export default {
               italian: 'MLOps engineer',
               pronunciation: '/em el ɒps ˌendʒɪˈnɪr/',
               phonetic: 'EM-EL-OPS en-gi-NIR',
-              example: 'An MLOps engineer automates ML workflows. = Un MLOps engineer automatizza workflow ML.',
+              example:
+                'An MLOps engineer automates ML workflows. = Un MLOps engineer automatizza workflow ML.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -9869,7 +10758,8 @@ export default {
               italian: 'AI product manager',
               pronunciation: '/eɪ aɪ ˈprɒdʌkt ˈmænɪdʒər/',
               phonetic: 'EI-AI PRO-dakt MA-ni-ger',
-              example: 'An AI product manager shapes ML product strategy. = Un AI product manager modella la strategia di prodotto ML.',
+              example:
+                'An AI product manager shapes ML product strategy. = Un AI product manager modella la strategia di prodotto ML.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -9878,7 +10768,8 @@ export default {
               italian: 'Prompt engineer',
               pronunciation: '/prɒmpt ˌendʒɪˈnɪr/',
               phonetic: 'PROMPT en-gi-NIR',
-              example: 'A prompt engineer designs LLM workflows. = Un prompt engineer progetta workflow LLM.',
+              example:
+                'A prompt engineer designs LLM workflows. = Un prompt engineer progetta workflow LLM.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Ruolo emerso intorno al 2023.',
@@ -9888,7 +10779,8 @@ export default {
               italian: 'Esperto di etica IA',
               pronunciation: '/eɪ aɪ ˈeθɪsɪst/',
               phonetic: 'EI-AI E-ti-sist',
-              example: 'An AI ethicist reviews policy and risk. = Un esperto di etica IA esamina policy e rischio.',
+              example:
+                'An AI ethicist reviews policy and risk. = Un esperto di etica IA esamina policy e rischio.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -9897,7 +10789,8 @@ export default {
               italian: 'Architetto di soluzioni',
               pronunciation: '/səˈluːʃən ˈɑːrkɪtekt/',
               phonetic: 'so-LU-scen AR-ki-tekt',
-              example: 'A solution architect designs end-to-end systems. = Un architetto di soluzioni progetta sistemi end-to-end.',
+              example:
+                'A solution architect designs end-to-end systems. = Un architetto di soluzioni progetta sistemi end-to-end.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -9906,7 +10799,8 @@ export default {
               italian: 'Tech lead',
               pronunciation: '/tek liːd/',
               phonetic: 'TEK-LID',
-              example: 'A tech lead drives technical decisions for the team. = Un tech lead guida le decisioni tecniche del team.',
+              example:
+                'A tech lead drives technical decisions for the team. = Un tech lead guida le decisioni tecniche del team.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -9922,7 +10816,8 @@ export default {
               italian: 'Stakeholder',
               pronunciation: '/ˈsteɪkhoʊldər/',
               phonetic: 'STEIK-hol-der',
-              example: 'Align with stakeholders before training. = Allineati con gli stakeholder prima dell\'addestramento.',
+              example:
+                "Align with stakeholders before training. = Allineati con gli stakeholder prima dell'addestramento.",
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Termine sempre lasciato in inglese.',
@@ -9932,7 +10827,8 @@ export default {
               italian: 'Metrica di business',
               pronunciation: '/ˈbɪznəs ˈmetrɪk/',
               phonetic: 'BIZ-nes ME-trik',
-              example: 'Translate ML metrics into business metrics. = Traduci le metriche ML in metriche di business.',
+              example:
+                'Translate ML metrics into business metrics. = Traduci le metriche ML in metriche di business.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Esempio: revenue lift, churn reduction.',
@@ -9952,7 +10848,8 @@ export default {
               italian: 'ROI',
               pronunciation: '/ɑːr oʊ aɪ/',
               phonetic: 'AR-O-AI',
-              example: 'Compute ROI to justify ML investment. = Calcola il ROI per giustificare l\'investimento ML.',
+              example:
+                "Compute ROI to justify ML investment. = Calcola il ROI per giustificare l'investimento ML.",
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Return On Investment.',
@@ -9962,7 +10859,8 @@ export default {
               italian: 'Sintesi esecutiva',
               pronunciation: '/ɪɡˈzekjətɪv ˈsʌməri/',
               phonetic: 'eg-ZE-kiu-tiv SAM-ma-ri',
-              example: 'Lead with an executive summary, not technical details. = Inizia con una sintesi esecutiva, non dettagli tecnici.',
+              example:
+                'Lead with an executive summary, not technical details. = Inizia con una sintesi esecutiva, non dettagli tecnici.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -9971,7 +10869,8 @@ export default {
               italian: 'Dashboard',
               pronunciation: '/ˈdæʃbɔːrd/',
               phonetic: 'DASH-bord',
-              example: 'A dashboard tracks model and business metrics. = Una dashboard traccia metriche di modello e business.',
+              example:
+                'A dashboard tracks model and business metrics. = Una dashboard traccia metriche di modello e business.',
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'Streamlit, Tableau, Looker',
@@ -9981,7 +10880,8 @@ export default {
               italian: 'Storytelling',
               pronunciation: '/ˈstɔːritelɪŋ/',
               phonetic: 'STO-ri-tel-ling',
-              example: 'Storytelling makes data findings memorable. = Lo storytelling rende le scoperte sui dati memorabili.',
+              example:
+                'Storytelling makes data findings memorable. = Lo storytelling rende le scoperte sui dati memorabili.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -9990,7 +10890,8 @@ export default {
               italian: 'Visualizzazione',
               pronunciation: '/ˌvɪʒuəlaɪˈzeɪʃən/',
               phonetic: 'vi-giu-a-lai-ZEI-scen',
-              example: 'A clear visualization beats a table of numbers. = Una visualizzazione chiara batte una tabella di numeri.',
+              example:
+                'A clear visualization beats a table of numbers. = Una visualizzazione chiara batte una tabella di numeri.',
               context: 'mlops',
               difficulty: 'advanced',
               tool: 'matplotlib, seaborn, plotly',
@@ -10000,7 +10901,8 @@ export default {
               italian: 'Scrittura tecnica',
               pronunciation: '/ˈteknɪkəl ˈraɪtɪŋ/',
               phonetic: 'TEK-ni-kal RAI-ting',
-              example: 'Technical writing documents your work. = La scrittura tecnica documenta il tuo lavoro.',
+              example:
+                'Technical writing documents your work. = La scrittura tecnica documenta il tuo lavoro.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10009,7 +10911,8 @@ export default {
               italian: 'RFC',
               pronunciation: '/ɑːr ef siː/',
               phonetic: 'AR-EF-SI',
-              example: 'Write an RFC to propose a major change. = Scrivi una RFC per proporre un cambiamento importante.',
+              example:
+                'Write an RFC to propose a major change. = Scrivi una RFC per proporre un cambiamento importante.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Request For Comments.',
@@ -10026,7 +10929,8 @@ export default {
               italian: 'Maturità MLOps',
               pronunciation: '/em el ɒps məˈtjʊrəti/',
               phonetic: 'EM-EL-OPS ma-TIU-ri-ti',
-              example: 'MLOps maturity ranges from manual to fully automated. = La maturità MLOps va da manuale a completamente automatizzata.',
+              example:
+                'MLOps maturity ranges from manual to fully automated. = La maturità MLOps va da manuale a completamente automatizzata.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10035,7 +10939,8 @@ export default {
               italian: 'Addestramento manuale',
               pronunciation: '/ˈmænjuəl ˈtreɪnɪŋ/',
               phonetic: 'MA-niu-al TREI-ning',
-              example: 'Manual training is level zero MLOps. = L\'addestramento manuale è MLOps livello zero.',
+              example:
+                "Manual training is level zero MLOps. = L'addestramento manuale è MLOps livello zero.",
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10044,7 +10949,8 @@ export default {
               italian: 'Pipeline automatizzata',
               pronunciation: '/ˈɔːtəmeɪtɪd ˈpaɪplaɪn/',
               phonetic: 'AU-to-mei-ted PAIP-lain',
-              example: 'Automated pipelines retrain on new data. = Le pipeline automatizzate riaddestrano su dati nuovi.',
+              example:
+                'Automated pipelines retrain on new data. = Le pipeline automatizzate riaddestrano su dati nuovi.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10053,7 +10959,8 @@ export default {
               italian: 'CI/CD',
               pronunciation: '/siː aɪ siː diː/',
               phonetic: 'SI-AI-SI-DI',
-              example: 'CI/CD automates testing and deployment. = CI/CD automatizza test e deployment.',
+              example:
+                'CI/CD automates testing and deployment. = CI/CD automatizza test e deployment.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Continuous Integration / Continuous Delivery.',
@@ -10063,7 +10970,8 @@ export default {
               italian: 'Monitoraggio continuo',
               pronunciation: '/kənˈtɪnjuəs ˈmɒnɪtərɪŋ/',
               phonetic: 'kon-TI-niu-os MO-ni-to-ring',
-              example: 'Continuous monitoring detects drift quickly. = Il monitoraggio continuo rileva la deriva rapidamente.',
+              example:
+                'Continuous monitoring detects drift quickly. = Il monitoraggio continuo rileva la deriva rapidamente.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10072,7 +10980,8 @@ export default {
               italian: 'Piattaforma self-service',
               pronunciation: '/self ˈsɜːrvɪs ˈplætfɔːrm/',
               phonetic: 'SELF SER-vis PLAT-form',
-              example: 'A self-service platform empowers data scientists. = Una piattaforma self-service abilita i data scientist.',
+              example:
+                'A self-service platform empowers data scientists. = Una piattaforma self-service abilita i data scientist.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10081,7 +10990,8 @@ export default {
               italian: 'Standardizzazione',
               pronunciation: '/ˌstændərdaɪˈzeɪʃən/',
               phonetic: 'stan-dar-dai-ZEI-scen',
-              example: 'Standardization scales ML across teams. = La standardizzazione scala l\'ML tra team.',
+              example:
+                "Standardization scales ML across teams. = La standardizzazione scala l'ML tra team.",
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10090,7 +11000,8 @@ export default {
               italian: 'Cookbook',
               pronunciation: '/ˈkʊkbʊk/',
               phonetic: 'KUK-buk',
-              example: 'A cookbook documents reusable patterns. = Un cookbook documenta pattern riutilizzabili.',
+              example:
+                'A cookbook documents reusable patterns. = Un cookbook documenta pattern riutilizzabili.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10099,7 +11010,8 @@ export default {
               italian: 'Tooling interno',
               pronunciation: '/ɪnˈtɜːrnəl ˈtuːlɪŋ/',
               phonetic: 'in-TER-nal TU-ling',
-              example: 'Internal tooling speeds up the team. = Il tooling interno velocizza il team.',
+              example:
+                'Internal tooling speeds up the team. = Il tooling interno velocizza il team.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10108,7 +11020,8 @@ export default {
               italian: 'Buone pratiche',
               pronunciation: '/best ˈpræktɪsɪz/',
               phonetic: 'BEST PRAK-ti-sis',
-              example: 'Best practices reduce common pitfalls. = Le buone pratiche riducono i tranelli comuni.',
+              example:
+                'Best practices reduce common pitfalls. = Le buone pratiche riducono i tranelli comuni.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10117,14 +11030,15 @@ export default {
         {
           id: 'ai_pro_4',
           title: 'Governance & Strategy / Governance e Strategia',
-          description: 'Aspetti strategici dell\'IA',
+          description: "Aspetti strategici dell'IA",
           items: [
             {
               english: 'AI Strategy',
               italian: 'Strategia IA',
               pronunciation: '/eɪ aɪ ˈstrætədʒi/',
               phonetic: 'EI-AI STRA-te-gi',
-              example: 'AI strategy aligns initiatives with business goals. = La strategia IA allinea iniziative con obiettivi di business.',
+              example:
+                'AI strategy aligns initiatives with business goals. = La strategia IA allinea iniziative con obiettivi di business.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10133,7 +11047,8 @@ export default {
               italian: 'Governance del modello',
               pronunciation: '/ˈmɒdəl ˈɡʌvərnəns/',
               phonetic: 'MO-del GA-ver-nans',
-              example: 'Model governance enforces standards. = La governance del modello impone standard.',
+              example:
+                'Model governance enforces standards. = La governance del modello impone standard.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10142,7 +11057,8 @@ export default {
               italian: 'Centro di eccellenza',
               pronunciation: '/ˈsentər əv ˈeksələns/',
               phonetic: 'SEN-ter-OF EK-se-lens',
-              example: 'A center of excellence shares ML expertise. = Un centro di eccellenza condivide expertise ML.',
+              example:
+                'A center of excellence shares ML expertise. = Un centro di eccellenza condivide expertise ML.',
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Abbreviato CoE.',
@@ -10152,7 +11068,8 @@ export default {
               italian: 'Costruire o comprare',
               pronunciation: '/bɪld vɜːrsəs baɪ/',
               phonetic: 'BILD VER-sus BAI',
-              example: 'Build vs buy is a key strategic decision. = Costruire o comprare è una decisione strategica chiave.',
+              example:
+                'Build vs buy is a key strategic decision. = Costruire o comprare è una decisione strategica chiave.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10161,7 +11078,8 @@ export default {
               italian: 'Gestione fornitori',
               pronunciation: '/ˈvendər ˈmænɪdʒmənt/',
               phonetic: 'VEN-der MA-ni-gi-ment',
-              example: 'Vendor management evaluates AI providers. = La gestione fornitori valuta provider IA.',
+              example:
+                'Vendor management evaluates AI providers. = La gestione fornitori valuta provider IA.',
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10170,7 +11088,8 @@ export default {
               italian: 'Ottimizzazione dei costi',
               pronunciation: '/kɒst ˌɒptɪmaɪˈzeɪʃən/',
               phonetic: 'KOST op-ti-mai-ZEI-scen',
-              example: 'Cost optimization keeps ML projects sustainable. = L\'ottimizzazione dei costi mantiene i progetti ML sostenibili.',
+              example:
+                "Cost optimization keeps ML projects sustainable. = L'ottimizzazione dei costi mantiene i progetti ML sostenibili.",
               context: 'mlops',
               difficulty: 'advanced',
               note: 'Inferenza LLM può costare milioni.',
@@ -10180,7 +11099,8 @@ export default {
               italian: 'Acquisizione di talenti',
               pronunciation: '/ˈtælənt ˌækwɪˈzɪʃən/',
               phonetic: 'TA-lent a-kui-ZI-scen',
-              example: 'Talent acquisition is critical for ML teams. = L\'acquisizione di talenti è cruciale per team ML.',
+              example:
+                "Talent acquisition is critical for ML teams. = L'acquisizione di talenti è cruciale per team ML.",
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10189,7 +11109,8 @@ export default {
               italian: 'Apprendimento continuo',
               pronunciation: '/kənˈtɪnjuəs ˈlɜːrnɪŋ/',
               phonetic: 'kon-TI-niu-os LER-ning',
-              example: 'Continuous learning keeps you relevant in AI. = L\'apprendimento continuo ti tiene rilevante nell\'IA.',
+              example:
+                "Continuous learning keeps you relevant in AI. = L'apprendimento continuo ti tiene rilevante nell'IA.",
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10198,7 +11119,8 @@ export default {
               italian: 'Innovazione',
               pronunciation: '/ˌɪnəˈveɪʃən/',
               phonetic: 'in-no-VEI-scen',
-              example: 'Innovation balances risk and opportunity. = L\'innovazione bilancia rischio e opportunità.',
+              example:
+                "Innovation balances risk and opportunity. = L'innovazione bilancia rischio e opportunità.",
               context: 'mlops',
               difficulty: 'advanced',
             },
@@ -10207,10 +11129,11 @@ export default {
               italian: 'Progettare per il futuro',
               pronunciation: '/ˈfjuːtʃər ˈpruːfɪŋ/',
               phonetic: 'FIU-cer PRU-fing',
-              example: 'Future-proofing ML systems handles model swaps. = Progettare per il futuro permette di sostituire modelli.',
+              example:
+                'Future-proofing ML systems handles model swaps. = Progettare per il futuro permette di sostituire modelli.',
               context: 'mlops',
               difficulty: 'advanced',
-              note: 'Esempio: astrarre la chiamata LLM dietro un\'interfaccia.',
+              note: "Esempio: astrarre la chiamata LLM dietro un'interfaccia.",
             },
           ],
         },

@@ -1,0 +1,102 @@
+# Scheduled integrity check.
+# Doctrine §7.3, §18.5, §20.4.
+#
+# Replaces the Netlify scheduled function `netlify/functions/integrity-check.mts`.
+# Runs every Monday at 12:00 UTC and on manual dispatch. For each vendored
+# asset pinned in vendor/integrity.json:
+#   1. Fetches the deployed URL on GitHub Pages.
+#   2. Computes its sha256.
+#   3. Compares to the pin.
+# Also asserts the deployed HTML still contains the required <meta> CSP and
+# the X-Frame-Options + referrer meta tags. On any drift, opens (or updates)
+# a `security:integrity` GitHub issue tagged P1.
+name: Integrity Check
+
+on:
+  schedule:
+    - cron: '0 12 * * 1' # Mondays 12:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  DEPLOY_BASE: https://renanaugustomacena-ux.github.io/security-teacher
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Run integrity probe
+        id: probe
+        run: |
+          set -e
+          node scripts/integrity-probe.mjs "${DEPLOY_BASE}" > integrity-report.json
+          echo "report<<EOF" >> "$GITHUB_OUTPUT"
+          cat integrity-report.json >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          ok="$(node -e "console.log(JSON.parse(require('fs').readFileSync('integrity-report.json','utf8')).ok)")"
+          if [ "$ok" != "true" ]; then
+            echo "drift=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open / update integrity-drift issue
+        if: steps.probe.outputs.drift == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('integrity-report.json', 'utf8'));
+            const title = '[security:integrity] DRIFT detected on production deploy';
+            const body = [
+              '> Doctrine §7.3 / §18.5 — automated check.',
+              '',
+              '**Base:** ' + report.base,
+              '**Timestamp:** ' + report.at,
+              '',
+              '### Asset hashes',
+              '```',
+              ...report.assets.map(a =>
+                `${a.ok ? 'OK ' : 'X  '} ${a.asset}  status=${a.status} expected=${a.expected.slice(0,12)}… actual=${(a.actual||'').slice(0,12)}…`
+              ),
+              '```',
+              '',
+              '### Required headers / meta tags',
+              '```',
+              ...report.headers.map(h => `${h.present ? 'OK ' : 'X  '} ${h.header}`),
+              '```',
+              '',
+              'This issue is auto-opened / refreshed by `.github/workflows/integrity.yml`.',
+            ].join('\n');
+
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'security:integrity',
+              state: 'open',
+            });
+            if (existing.data.length === 0) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['security', 'security:integrity', 'P1'],
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.data[0].number,
+                body,
+              });
+            }

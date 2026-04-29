@@ -1,13 +1,16 @@
 /**
  * Service worker bootstrap.
  *
- * - Scope pinned to '/'.
+ * - Registration URL and scope are page-relative ('sw.js' / './') so the
+ *   bundle works under any base path. On GitHub Pages project hosting
+ *   (e.g. /security-teacher/) the scope is the project root; on a custom
+ *   apex domain it is '/'. (Doctrine §2.1, §5.1)
  * - updateViaCache:'none' forces the browser to bypass HTTP cache when
  *   checking for a new sw.js, so a security patch isn't blocked by a
  *   30-day CDN TTL.
  * - When an update is detected, a DOM toast asks the user to reload.
  *   The new SW stays in "waiting" state until the user confirms —
- *   a rogue update cannot silently replace the running SW.
+ *   a rogue update cannot silently replace the running SW. (Doctrine §5.2)
  */
 (function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
@@ -75,7 +78,7 @@
   }
 
   navigator.serviceWorker
-    .register('/sw.js', { scope: '/', updateViaCache: 'none' })
+    .register('sw.js', { scope: './', updateViaCache: 'none' })
     .then((registration) => {
       console.info('[SW] registered ok');
 
