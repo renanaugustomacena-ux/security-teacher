@@ -187,6 +187,29 @@ describe('Doctrine §5.6 — SW STATIC_ASSETS coverage', () => {
   });
 });
 
+describe('Doctrine §17.9 — Service test coverage (v1.1.0 amendment)', () => {
+  function toKebab(s) {
+    return s
+      .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
+      .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+      .toLowerCase();
+  }
+
+  it('every js/services/*.js has a matching tests/<kebab>.test.js', () => {
+    const services = readdirSync(resolve(REPO, 'js/services')).filter((f) => f.endsWith('.js'));
+    const tests = new Set(
+      readdirSync(resolve(REPO, 'tests')).filter((f) => f.endsWith('.test.js'))
+    );
+    const missing = [];
+    for (const file of services) {
+      const base = file.replace(/\.js$/, '');
+      const expected = `${toKebab(base)}.test.js`;
+      if (!tests.has(expected)) missing.push(`${file} → ${expected}`);
+    }
+    expect(missing).toEqual([]);
+  });
+});
+
 describe('Doctrine §6.1 — Vendor allowlist', () => {
   it('vendor/ contains only the pinned three.js, fonts.css, and woff2 files', () => {
     const vendor = resolve(REPO, 'vendor');
