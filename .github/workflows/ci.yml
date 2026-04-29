@@ -1,0 +1,84 @@
+# Per-PR CI gates.
+# Doctrine §17 (Testing & Quality Gates), §18.1, §18.2.
+#
+# Runs on:
+#   - every PR against master
+#   - every push to master (parity with deploy)
+#   - manual dispatch
+#
+# All gates must pass before a deploy can ship.
+name: CI
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: npm ci
+        run: npm ci
+
+      - name: Lint (eslint airbnb-base + prettier)
+        run: npm run lint
+
+      - name: Vitest
+        run: npm test
+
+      - name: npm audit (high+)
+        run: npm audit --audit-level=high
+
+      - name: CSP hash check (§17.6)
+        run: npm run csp:check
+
+      - name: Doctrine static gates (§3.4, §3.7, §3.8, §3.9, §3.10, §5.6, §6.1, §17.6)
+        run: npm run doctrine:check
+
+      - name: Forbid absolute /<path> URLs in source (§2.1)
+        run: |
+          set -e
+          # Accept everything that's a real URL (http://, https://, //) or a
+          # regex literal (/.../). Reject ['"]/foo/... or "(/foo/" patterns
+          # that would target a server root.
+          violations="$(grep -rEn "['\"\(]/[a-zA-Z][a-zA-Z0-9_/-]*\.(js|css|html|json|png|svg|woff|woff2|mp3|jpg)" \
+            index.html 404.html sw.js js css manifest.json 2>/dev/null \
+            | grep -vE "(://)" \
+            || true)"
+          if [ -n "$violations" ]; then
+            echo "::error::Absolute /<path> URLs found (Doctrine §2.1)"
+            echo "$violations"
+            exit 1
+          fi
+
+      - name: Vendor integrity self-check (§7)
+        run: |
+          set -e
+          three_actual="$(sha256sum vendor/three-0.170.0.module.js | cut -d' ' -f1)"
+          three_pin="$(node -e "console.log(JSON.parse(require('fs').readFileSync('vendor/integrity.json','utf8')).assets['/vendor/three-0.170.0.module.js'])")"
+          fonts_actual="$(sha256sum vendor/fonts/fonts.css | cut -d' ' -f1)"
+          fonts_pin="$(node -e "console.log(JSON.parse(require('fs').readFileSync('vendor/integrity.json','utf8')).assets['/vendor/fonts/fonts.css'])")"
+          if [ "$three_actual" != "$three_pin" ]; then
+            echo "::error::three.js sha256 drift: file=$three_actual pin=$three_pin"
+            exit 1
+          fi
+          if [ "$fonts_actual" != "$fonts_pin" ]; then
+            echo "::error::fonts.css sha256 drift: file=$fonts_actual pin=$fonts_pin"
+            exit 1
+          fi
+          echo "vendor pins match repo files."

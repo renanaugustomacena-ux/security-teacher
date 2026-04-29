@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/licenca-MIT-blue.svg" alt="Licenca" />
   <img src="https://img.shields.io/badge/docker-pronto-green.svg" alt="Docker" />
-  <img src="https://img.shields.io/badge/deploy-Netlify-00C7B7.svg" alt="Netlify" />
+  <img src="https://img.shields.io/badge/deploy-GitHub%20Pages-181717.svg?logo=github" alt="GitHub Pages" />
   <img src="https://img.shields.io/badge/JS-Vanilla%20ES6+-F7DF1E.svg" alt="Vanilla JS" />
   <img src="https://img.shields.io/badge/3D-Three.js-000000.svg" alt="Three.js" />
   <img src="https://img.shields.io/badge/testes-Vitest-6E9F18.svg" alt="Vitest" />
@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://english-app-renan.netlify.app/"><strong>Experimente agora</strong></a>
+  <a href="https://renanaugustomacena-ux.github.io/security-teacher/"><strong>Experimente agora</strong></a>
 </p>
 
 <p align="center">

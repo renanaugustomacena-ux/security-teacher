@@ -8,6 +8,10 @@
     "test:watch": "vitest",
     "lint": "eslint .",
     "format": "prettier --write .",
+    "csp:check": "node scripts/compute-csp.mjs --check",
+    "csp:patch": "node scripts/compute-csp.mjs --patch",
+    "csp:print": "node scripts/compute-csp.mjs --print",
+    "doctrine:check": "node scripts/check-doctrine.mjs",
     "prepare": "husky install"
   },
   "keywords": [],

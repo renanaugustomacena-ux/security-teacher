@@ -1,0 +1,13 @@
+# Prettier MUST NOT touch vendored third-party assets — their hashes are
+# pinned in vendor/integrity.json (Doctrine §6.1, §7.2). A prettier rewrite
+# would silently break the integrity gate.
+vendor/
+
+# Build artefacts (never committed but local working copies appear here).
+_site/
+
+# Dependency directories.
+node_modules/
+
+# Lockfiles must remain in their npm-canonical formatting.
+package-lock.json

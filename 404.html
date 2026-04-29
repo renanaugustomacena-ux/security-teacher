@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      404.html — GitHub Pages SPA fallback (Doctrine §2.6).
+      When Pages cannot find a deep link under our base path it serves this
+      file. The inline script encodes the original URL into a ?p=/... query
+      and redirects to the app's index.html, which decodes it back via the
+      mirror script in index.html and replaces the history entry. Net effect:
+      deep links survive hard refresh on GH Pages without a server.
+      CSP is identical to index.html (same directive set, recomputed hashes).
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'sha256-Met0FLFVqROiq/jDyYtlhInoFysISzTul6sZrG/Vad0=' 'sha256-LAVnyM+nnYUXVKmPo70yPXlvAtf8h6t3qW/DXk3VqQE=' 'sha256-3+t/C0/mVNeyj1HHcoWQz/l47Lc7k+L1yvMwJ17y3C4=' 'sha256-wpvRoaKeKXsDCS5rzL0Ht4+Id11mPmA2leR9nskamWg=' https://accounts.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://lh3.googleusercontent.com https://*.googleusercontent.com; media-src 'self' blob: data:; font-src 'self'; connect-src 'self' https://lrclib.net https://api.mymemory.translated.net https://accounts.google.com https://oauth2.googleapis.com; frame-src https://accounts.google.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types default"
+    />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Knowledge AIO — Reindirizzamento / Redirecting…</title>
+    <script>
+      (function (l) {
+        // pathSegmentsToKeep counts the path components that belong to the
+        // app's base path. For project pages at /security-teacher/ that's 1.
+        // For a custom apex domain (where the app sits at the root), set to 0.
+        // The detection is automatic: if the first path segment is the repo
+        // name, keep one segment; otherwise keep none.
+        var REPO = 'security-teacher';
+        var firstSeg = l.pathname.split('/')[1] || '';
+        var pathSegmentsToKeep = firstSeg === REPO ? 1 : 0;
+        var basePath = l.pathname
+          .split('/')
+          .slice(0, 1 + pathSegmentsToKeep)
+          .join('/');
+        var rest = l.pathname.slice(basePath.length);
+        var encoded =
+          rest.replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '');
+        var target =
+          l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          basePath +
+          '/?p=/' +
+          encoded +
+          l.hash;
+        l.replace(target);
+      })(window.location);
+    </script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #050a14;
+        color: #d4a574;
+        font-family: 'Inter', system-ui, sans-serif;
+        height: 100%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      p {
+        font-size: 14px;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Reindirizzamento… / Redirecting…</p>
+  </body>
+</html>

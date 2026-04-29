@@ -92,8 +92,7 @@
   pointer-events: none;
   filter: hue-rotate(var(--streak-tint-deg, 0deg))
     saturate(calc(1 + var(--streak-tint-strength, 0)));
-  transition:
-    filter 600ms ease-out;
+  transition: filter 600ms ease-out;
 }
 
 /* ---------- Cursor Particles Canvas ---------- */

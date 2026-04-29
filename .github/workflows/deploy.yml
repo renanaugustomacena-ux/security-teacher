@@ -1,0 +1,113 @@
+# Deploy Knowledge AIO to GitHub Pages.
+# Doctrine §2.2, §2.3, §2.4, §2.5, §18.2, §18.3, §18.4.
+#
+# Triggers:
+#   - push to master
+#   - manual dispatch
+#
+# Pipeline:
+#   1. Checkout, setup Node from .nvmrc.
+#   2. `npm ci` then `npm test` (gate).
+#   3. `npm run csp:check` and `npm run doctrine:check` (gate).
+#   4. Stage a deploy directory that excludes dev tooling, docs, and the
+#      Docker/Netlify alternative-deploy artefacts.
+#   5. Upload + deploy via the official Pages actions.
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Slow deploy must not be cancelled by a faster one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dev tooling
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Verify CSP hash drift
+        run: npm run csp:check
+
+      - name: Verify doctrine static gates
+        run: npm run doctrine:check
+
+      - name: Stage publishable artifact
+        run: |
+          set -euxo pipefail
+          mkdir -p _site
+          # Copy everything, then strip dev-only and alternative-deploy paths.
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='node_modules/' \
+            --exclude='tests/' \
+            --exclude='scripts/' \
+            --exclude='.husky/' \
+            --exclude='.vscode/' \
+            --exclude='.claude/' \
+            --exclude='netlify/' \
+            --exclude='netlify.toml' \
+            --exclude='_redirects' \
+            --exclude='Dockerfile' \
+            --exclude='docker-compose.yml' \
+            --exclude='.dockerignore' \
+            --exclude='nginx.conf' \
+            --exclude='commitlint.config.cjs' \
+            --exclude='.eslintrc.json' \
+            --exclude='.prettierrc' \
+            --exclude='.gitattributes' \
+            --exclude='.gitignore' \
+            --exclude='.npmrc' \
+            --exclude='.nvmrc' \
+            --exclude='package.json' \
+            --exclude='package-lock.json' \
+            --exclude='DOCTRINE.md' \
+            --exclude='SECURITY.md' \
+            --exclude='README*.md' \
+            --exclude='_site/' \
+            ./ _site/
+          # Sanity: ensure index.html, 404.html, sw.js, .nojekyll all present.
+          test -f _site/index.html
+          test -f _site/404.html
+          test -f _site/sw.js
+          test -f _site/.nojekyll
+          test -f _site/manifest.json
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
