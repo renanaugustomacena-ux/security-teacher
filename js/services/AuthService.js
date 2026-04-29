@@ -21,7 +21,7 @@ const MAX_SESSION_AGE_MS = 24 * 60 * 60 * 1000;
 // Clock-skew grace window for iat / nbf / exp (seconds).
 const CLOCK_SKEW_S = 300;
 
-class AuthService {
+export class AuthService {
   constructor() {
     this.user = null;
     this.clientId = null;
