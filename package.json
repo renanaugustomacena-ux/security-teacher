@@ -6,7 +6,7 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 0",
     "format": "prettier --write .",
     "csp:check": "node scripts/compute-csp.mjs --check",
     "csp:patch": "node scripts/compute-csp.mjs --patch",

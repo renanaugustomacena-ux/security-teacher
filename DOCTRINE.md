@@ -1,9 +1,15 @@
 # DOCTRINE.md — Knowledge AIO Engineering Doctrine
 
-> **Version:** 1.0.0 — 2026-04-29
+> **Version:** 1.1.0 — 2026-04-29
 > **Status:** Ratified, in force.
 > **Scope:** All code, configuration, deployment artifacts, and operational
 > procedures within this repository.
+
+> **v1.1.0 amendments** (post-execution against v1.0.0): §17.3 strengthened
+> from "warnings must trend down" to "warnings must be zero on master"; §17.9
+> added — a static gate requiring every `js/services/*.js` module to have a
+> matching `tests/<kebab-name>.test.js`. The amendments were ratified after
+> commit 07ab41e brought every service into compliance.
 
 This doctrine is a precise, technical, and enforceable specification of how
 Knowledge AIO is built, secured, deployed, and maintained. Every rule herein
@@ -236,12 +242,13 @@ an amendment commit that updates this file in the same PR.
 | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 17.1 | The Vitest suite under `tests/` must pass on every PR. Adding a new manager or service requires at least one test (happy path) before merge.                                                               |
 | 17.2 | A regression test is required for every fix commit (`fix:` prefix). The PR description must link the test that would have caught the bug.                                                                  |
-| 17.3 | Lint (`npm run lint`) must pass with zero errors. Warnings are tolerated but must trend down PR-over-PR.                                                                                                   |
+| 17.3 | (v1.1.0 amendment) Lint (`npm run lint`) must pass with **zero errors and zero warnings**. The 0-warning baseline was established 2026-04-29 (commit 27f8a62). The `lint` script in `package.json` invokes `eslint . --max-warnings 0`, so a new warning aborts the build. The `.eslintrc.json` `no-console` rule allows `error / warn / info` only — `console.log` and `console.debug` are forbidden in committed code (see §11.3). |
 | 17.4 | `npm audit --audit-level=high` must pass. A high/critical finding fails the build.                                                                                                                         |
 | 17.5 | The CI workflow asserts no use of `eval`, `new Function(`, `setTimeout('`, `setInterval('`, or `document.write` outside `tests/` and `node_modules/`. A grep failure aborts the build.                     |
 | 17.6 | The CI workflow asserts the `<meta http-equiv="Content-Security-Policy">` tag is present in `index.html` and `404.html` and includes every directive listed in §3.4. A missing directive aborts the build. |
 | 17.7 | The CI workflow asserts `nginx.conf`'s `Content-Security-Policy` line and the `<meta>` CSP have the same directive set (whitespace and order may differ). Drift aborts the build.                          |
 | 17.8 | The CI workflow asserts every file under `js/` (excluding tests) is either listed in `sw.js#STATIC_ASSETS` or is a topic data file under `js/topics/data/`. Orphaned new modules abort the build.          |
+| 17.9 | (v1.1.0 amendment) Every committed file under `js/services/*.js` must have a matching test file at `tests/<kebab-case>.test.js` — for example, `AuthService.js` requires `tests/auth-service.test.js`. The `npm run doctrine:check` gate enforces this. The rule operationalises §17.1 across the legacy service surface; it does not yet apply to managers under `js/`, which are tracked separately. |
 
 ## §18. CI / CD / Release
 
@@ -312,12 +319,12 @@ an amendment commit that updates this file in the same PR.
 | §14 Aesthetic & UX                         | 8       |
 | §15 Accessibility & Reduced Motion         | 6       |
 | §16 PWA & Offline Behaviour                | 6       |
-| §17 Testing & Quality Gates (CI per-PR)    | 8       |
+| §17 Testing & Quality Gates (CI per-PR)    | 9       |
 | §18 CI / CD / Release                      | 8       |
 | §19 Code Style & Repository Hygiene        | 8       |
 | §20 Threat Model & Incident Response       | 6       |
 | §21 Doctrine Governance                    | 4       |
-| **Total**                                  | **154** |
+| **Total**                                  | **155** |
 
 ## Appendix B — Quick-Reference Index
 

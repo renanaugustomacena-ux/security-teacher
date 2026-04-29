@@ -13,6 +13,8 @@
  *          sw.js STATIC_ASSETS or is a topic data file
  *   §6.1   no third-party JS in vendor/ besides the pinned three.js and fonts
  *   §17.6  meta CSP present in both index.html and 404.html
+ *   §17.9  every js/services/*.js has a matching tests/<kebab>.test.js
+ *          (added 2026-04-29 in doctrine v1.1.0)
  *
  * Exit code: 0 on success, 1 on any failure (with summary).
  *
@@ -204,11 +206,50 @@ async function checkVendorTree() {
   }
 }
 
+// Convert PascalCase / CamelCase identifier to kebab-case.
+// Handles consecutive capitals (e.g. "AIService" → "ai-service",
+// "TTSService" → "tts-service", "AuthService" → "auth-service").
+function toKebab(s) {
+  return s
+    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .toLowerCase();
+}
+
+async function checkServiceTestCoverage() {
+  const servicesDir = resolve(REPO, 'js/services');
+  const testsDir = resolve(REPO, 'tests');
+  let serviceFiles = [];
+  try {
+    serviceFiles = (await readdir(servicesDir)).filter((f) => f.endsWith('.js'));
+  } catch {
+    return;
+  }
+  let testFiles = new Set();
+  try {
+    testFiles = new Set((await readdir(testsDir)).filter((f) => f.endsWith('.test.js')));
+  } catch {
+    fail('§17.9', 'tests/ directory missing — service test coverage gate cannot run');
+    return;
+  }
+  for (const file of serviceFiles) {
+    const base = file.replace(/\.js$/, '');
+    const expected = `${toKebab(base)}.test.js`;
+    if (!testFiles.has(expected)) {
+      fail(
+        '§17.9',
+        `js/services/${file} has no matching tests/${expected} (doctrine v1.1.0)`
+      );
+    }
+  }
+}
+
 await checkMetaCsp();
 await checkCspAlignment();
 await checkForbiddenPatterns();
 await checkSwStaticAssets();
 await checkVendorTree();
+await checkServiceTestCoverage();
 
 if (failures.length === 0) {
   info('OK — all doctrine static gates pass.');
