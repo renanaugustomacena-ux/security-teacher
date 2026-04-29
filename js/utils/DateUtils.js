@@ -25,8 +25,8 @@ export function getToday() {
  * @returns {boolean}
  */
 export function isSameDay(date1, date2) {
-  const d1 = typeof date1 === 'string' ? new Date(date1 + 'T00:00:00') : new Date(date1);
-  const d2 = typeof date2 === 'string' ? new Date(date2 + 'T00:00:00') : new Date(date2);
+  const d1 = typeof date1 === 'string' ? new Date(`${date1}T00:00:00`) : new Date(date1);
+  const d2 = typeof date2 === 'string' ? new Date(`${date2}T00:00:00`) : new Date(date2);
   return (
     d1.getFullYear() === d2.getFullYear() &&
     d1.getMonth() === d2.getMonth() &&
@@ -41,8 +41,8 @@ export function isSameDay(date1, date2) {
  * @returns {number}
  */
 export function getDaysBetween(date1, date2) {
-  const d1 = typeof date1 === 'string' ? new Date(date1 + 'T00:00:00') : new Date(date1);
-  const d2 = typeof date2 === 'string' ? new Date(date2 + 'T00:00:00') : new Date(date2);
+  const d1 = typeof date1 === 'string' ? new Date(`${date1}T00:00:00`) : new Date(date1);
+  const d2 = typeof date2 === 'string' ? new Date(`${date2}T00:00:00`) : new Date(date2);
   const diffMs = Math.abs(d1.getTime() - d2.getTime());
   return Math.round(diffMs / (1000 * 60 * 60 * 24));
 }
@@ -53,7 +53,7 @@ export function getDaysBetween(date1, date2) {
  * @returns {Date}
  */
 export function getWeekStart(date) {
-  const d = typeof date === 'string' ? new Date(date + 'T00:00:00') : new Date(date);
+  const d = typeof date === 'string' ? new Date(`${date}T00:00:00`) : new Date(date);
   const day = d.getDay();
   // getDay() returns 0 for Sunday, 1 for Monday, etc.
   // We want Monday as start of week

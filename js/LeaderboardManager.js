@@ -79,7 +79,6 @@ export class LeaderboardManager {
     this._ensureData();
 
     const data = this.progressManager.data;
-    const today = getToday();
 
     // Best daily XP
     data.xp = data.xp || { total: 0, today: 0, weekTotal: 0, lastResetDate: null };
@@ -586,7 +585,7 @@ export class LeaderboardManager {
   _formatDate(dateStr) {
     if (!dateStr) return '---';
     try {
-      const d = new Date(dateStr + 'T00:00:00');
+      const d = new Date(`${dateStr}T00:00:00`);
       return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' });
     } catch {
       return dateStr;
@@ -599,7 +598,7 @@ export class LeaderboardManager {
   _formatWeekLabel(dateStr) {
     if (!dateStr) return '---';
     try {
-      const d = new Date(dateStr + 'T00:00:00');
+      const d = new Date(`${dateStr}T00:00:00`);
       return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short' });
     } catch {
       return dateStr;

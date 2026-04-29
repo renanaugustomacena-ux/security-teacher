@@ -75,12 +75,12 @@ export class DailyGoalsManager {
     this.renderGoalsWidget();
   }
 
-  incrementWords(n = 1) {
+  incrementWords() {
     this._checkCompletion();
     this.renderGoalsWidget();
   }
 
-  updateTime(minutes) {
+  updateTime() {
     this._checkCompletion();
     this.renderGoalsWidget();
   }

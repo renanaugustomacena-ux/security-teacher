@@ -5307,7 +5307,7 @@ export default {
               pronunciation: '/ˈstætɪk ˈlaɪftaɪm/',
               phonetic: 'STA-tik LAIF-taim',
               example:
-                "'static means valid for the program's entire lifetime. = 'static significa valido per l\'intera durata del programma.",
+                "'static means valid for the program's entire lifetime. = 'static significa valido per l'intera durata del programma.",
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: 'let s: &\'static str = "hello";',

@@ -12,7 +12,7 @@
   "ignorePatterns": ["ideanew/", "vendor/", "_site/", "node_modules/", ".github/"],
   "rules": {
     "prettier/prettier": "error",
-    "no-console": "warn",
+    "no-console": ["warn", { "allow": ["error", "warn", "info"] }],
     "no-unused-vars": "warn",
     "import/prefer-default-export": "off",
     "class-methods-use-this": "off",

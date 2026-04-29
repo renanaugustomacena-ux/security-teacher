@@ -10836,7 +10836,7 @@ export default {
                 'Deprecate old versions of your package. = Deprecazione vecchie versioni del pacchetto.',
               context: 'foundations',
               difficulty: 'advanced',
-              command: 'npm deprecate pkg@1.x \"use 2.x\"',
+              command: 'npm deprecate pkg@1.x "use 2.x"',
             },
           ],
         },

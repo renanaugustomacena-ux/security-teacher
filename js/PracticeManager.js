@@ -542,7 +542,7 @@ export class PracticeManager {
         allWithExamples,
         this.currentQuestionIndex
       );
-      const paragraph = paragraphSentences.join('. ') + '.';
+      const paragraph = `${paragraphSentences.join('. ')}.`;
       const correctStatement = (question.example || '').split(' = ')[0];
 
       const wrongOptions = this.generateComprehensionDistractors(
