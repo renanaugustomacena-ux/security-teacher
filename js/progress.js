@@ -571,7 +571,7 @@ export class ProgressManager {
     if (sc.freezes.available <= 0) return false;
 
     // Calculate the missed date (the day between last study and today)
-    const lastDate = new Date(lastDateISO + 'T00:00:00');
+    const lastDate = new Date(`${lastDateISO}T00:00:00`);
     const missedDate = new Date(lastDate);
     missedDate.setDate(missedDate.getDate() + 1);
     const missedDateStr = `${missedDate.getFullYear()}-${String(missedDate.getMonth() + 1).padStart(2, '0')}-${String(missedDate.getDate()).padStart(2, '0')}`;

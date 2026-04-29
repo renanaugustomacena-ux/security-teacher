@@ -51,7 +51,7 @@ class StorageService {
 
       request.onsuccess = (event) => {
         this.db = event.target.result;
-        console.log('IndexedDB opened successfully');
+        console.info('IndexedDB opened successfully');
         resolve(this.db);
       };
 

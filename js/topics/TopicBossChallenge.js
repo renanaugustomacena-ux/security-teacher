@@ -647,7 +647,7 @@ export class TopicBossChallenge {
     const normalizeCmd = (s) => s.toLowerCase().replace(/\s+/g, ' ').trim();
     const sortFlags = (cmd) => {
       return cmd.replace(/-([a-zA-Z]+)/g, (match, flags) => {
-        return '-' + flags.split('').sort().join('');
+        return `-${flags.split('').sort().join('')}`;
       });
     };
 
@@ -738,7 +738,6 @@ export class TopicBossChallenge {
     const score = Math.round((this.correctCount / this.totalQuestions) * 100);
     const defeated = score >= 70;
     const stars = score >= 90 ? 3 : score >= 70 ? 2 : score >= 50 ? 1 : 0;
-    const timeUsed = BOSS_TIME_LIMIT - this.timeRemaining;
     const timeRemainingDisplay = this.formatTime(Math.max(0, this.timeRemaining));
 
     // XP calculation: 50 base + (score * 0.5) bonus

@@ -661,7 +661,7 @@ export class TopicPracticeManager {
     const questions = [];
     const shuffledContexts = this.shuffleArray(validContexts);
 
-    for (const [ctx, items] of shuffledContexts) {
+    for (const [, items] of shuffledContexts) {
       if (questions.length >= 3) break;
       const selected = this.shuffleArray(items).slice(0, 5);
       if (selected.length < 5) continue;
@@ -981,7 +981,7 @@ export class TopicPracticeManager {
           allWithExamples,
           this.currentQuestionIndex
         );
-        const paragraph = paragraphSentences.join('. ') + '.';
+        const paragraph = `${paragraphSentences.join('. ')}.`;
         const correctStatement = (q.example || '').split(' = ')[0];
 
         const wrongOptions = this.generateComprehensionDistractors(
@@ -1483,7 +1483,7 @@ export class TopicPracticeManager {
     const normalizeCmd = (s) => s.toLowerCase().replace(/\s+/g, ' ').trim();
     const sortFlags = (cmd) => {
       return cmd.replace(/-([a-zA-Z]+)/g, (match, flags) => {
-        return '-' + flags.split('').sort().join('');
+        return `-${flags.split('').sort().join('')}`;
       });
     };
 
@@ -1529,7 +1529,7 @@ export class TopicPracticeManager {
 
     const sortFlags = (cmd) => {
       return cmd.replace(/-([a-zA-Z]+)/g, (match, flags) => {
-        return '-' + flags.split('').sort().join('');
+        return `-${flags.split('').sort().join('')}`;
       });
     };
 
@@ -1917,7 +1917,7 @@ export class TopicPracticeManager {
 
     const normalizeCmd = (s) => s.toLowerCase().replace(/\s+/g, ' ').trim();
     const sortFlags = (cmd) =>
-      cmd.replace(/-([a-zA-Z]+)/g, (match, flags) => '-' + flags.split('').sort().join(''));
+      cmd.replace(/-([a-zA-Z]+)/g, (match, flags) => `-${flags.split('').sort().join('')}`);
 
     const userNorm = normalizeCmd(userInput);
     const expectedNorm = normalizeCmd(step.expectedCommand);
@@ -2453,7 +2453,7 @@ export class TopicPracticeManager {
 
     const normalizeCmd = (s) => s.toLowerCase().replace(/\s+/g, ' ').trim();
     const sortFlags = (cmd) =>
-      cmd.replace(/-([a-zA-Z]+)/g, (match, flags) => '-' + flags.split('').sort().join(''));
+      cmd.replace(/-([a-zA-Z]+)/g, (match, flags) => `-${flags.split('').sort().join('')}`);
 
     const userInput = normalizeCmd(input.value);
     const expected = normalizeCmd(correct);

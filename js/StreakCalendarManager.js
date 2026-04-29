@@ -9,7 +9,7 @@
  * - Shows current streak, best streak, and freeze status
  */
 
-import { getToday, isSameDay, getDaysBetween, getWeekStart } from './utils/DateUtils.js';
+import { getToday, getWeekStart } from './utils/DateUtils.js';
 
 export class StreakCalendarManager {
   constructor(progressManager) {
@@ -143,7 +143,7 @@ export class StreakCalendarManager {
 
     // Calculate 26 weeks of data
     const totalWeeks = 26;
-    const todayDate = new Date(today + 'T00:00:00');
+    const todayDate = new Date(`${today}T00:00:00`);
     const todayDay = todayDate.getDay(); // 0=Sun, 1=Mon...
     // Convert to Mon-based: Mon=0 ... Sun=6
     const todayMondayBased = todayDay === 0 ? 6 : todayDay - 1;

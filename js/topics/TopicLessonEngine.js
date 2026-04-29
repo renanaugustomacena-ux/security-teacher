@@ -498,7 +498,6 @@ export class TopicLessonEngine {
   renderIntro(lesson, topicId) {
     if (!this.container) return;
 
-    const meta = getTopicMeta(topicId);
     const totalItems = lesson.items.length;
     const estimatedMinutes = Math.max(2, this.contextGroups.length * 2);
     const topicIntros = CONTEXT_INTROS[topicId] || {};
