@@ -1478,7 +1478,7 @@ const SCENARIOS = [
   },
 ];
 
-class AIService {
+export class AIService {
   constructor() {
     this.scenarios = SCENARIOS;
   }

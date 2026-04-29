@@ -2,7 +2,7 @@
  * Audio Service
  * Handles Web Audio API context, analysis, and playback
  */
-class AudioService {
+export class AudioService {
   constructor() {
     this.audioContext = null;
     this.source = null;

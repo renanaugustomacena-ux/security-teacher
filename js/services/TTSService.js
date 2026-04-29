@@ -7,7 +7,7 @@
  * speaker button creation, and graceful degradation.
  */
 
-class TTSService {
+export class TTSService {
   constructor() {
     this._synth = window.speechSynthesis || null;
     this._voices = [];
