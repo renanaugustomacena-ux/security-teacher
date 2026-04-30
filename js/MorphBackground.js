@@ -123,6 +123,14 @@ export class MorphBackground {
     this.drops = [];
     this.columns = 0;
 
+    // Doctrine §11.6 / §15.4 — respect prefers-reduced-motion. When set, the
+    // matrix rain and WebGL refraction loop are skipped (one static frame is
+    // rendered, kept on screen until the user toggles the preference).
+    this._reducedMotion = Boolean(
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches
+    );
+
     // Bound handlers (for cleanup)
     this._onMouseMove = this._handleMouseMove.bind(this);
     this._onTouchMove = this._handleTouchMove.bind(this);
@@ -377,8 +385,13 @@ export class MorphBackground {
       }
     };
 
-    // Run at ~30 FPS for smooth rain
-    this.rainInterval = setInterval(draw, 33);
+    // Always render one frame so the canvas is not blank.
+    draw();
+
+    // Live ~30 FPS rain — skipped under prefers-reduced-motion (§11.6 / §15.4).
+    if (!this._reducedMotion) {
+      this.rainInterval = setInterval(draw, 33);
+    }
   }
 
   /* ---------------------------------------------------------------- */
@@ -481,7 +494,10 @@ export class MorphBackground {
 
   animate() {
     const loop = () => {
-      this.animId = requestAnimationFrame(loop);
+      // Under prefers-reduced-motion, render exactly one frame and stop.
+      if (!this._reducedMotion) {
+        this.animId = requestAnimationFrame(loop);
+      }
 
       const lerp = this.cfg.lerpFactor;
 
