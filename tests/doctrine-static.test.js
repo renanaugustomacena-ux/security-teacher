@@ -275,6 +275,31 @@ describe('Doctrine §17.10 / §22 — Native Packaging gates (v1.2.0 amendment)'
   });
 });
 
+describe('docker-compose — tmpfs ownership when read_only:true', () => {
+  // Regression for the alternative-deploy bug fixed in commit "fix(docker):
+  // tmpfs ownership for nginx under read_only:true". Without explicit uid/
+  // gid/mode on the tmpfs mounts, the directories inherit root:root mode
+  // 0755 — and because the container runs as the unprivileged `nginx` user
+  // (UID 101 in alpine), `nginx` cannot mkdir client_temp inside, so the
+  // container fails to start with a "Permission denied" emerg.
+  it('every tmpfs mount declares uid=, gid=, and mode= when read_only:true', () => {
+    const compose = readRepo('docker-compose.yml');
+    if (!/^\s*read_only:\s*true/m.test(compose)) return;
+    const tmpfsBlock = compose.match(/^\s*tmpfs:\s*\n((?:\s{6,}-\s+[^\n]+\n?)+)/m);
+    expect(tmpfsBlock, 'tmpfs: block expected when read_only:true').toBeTruthy();
+    const entries = tmpfsBlock[1]
+      .split('\n')
+      .map((l) => l.trim())
+      .filter((l) => l.startsWith('-'));
+    expect(entries.length, 'at least one tmpfs entry').toBeGreaterThan(0);
+    for (const entry of entries) {
+      expect(entry, `tmpfs entry needs uid=N: ${entry}`).toMatch(/uid=\d+/);
+      expect(entry, `tmpfs entry needs gid=N: ${entry}`).toMatch(/gid=\d+/);
+      expect(entry, `tmpfs entry needs mode=NNNN: ${entry}`).toMatch(/mode=\d{3,4}/);
+    }
+  });
+});
+
 describe('Doctrine §6.1 — Vendor allowlist', () => {
   it('vendor/ contains only the pinned three.js, fonts.css, and woff2 files', () => {
     const vendor = resolve(REPO, 'vendor');
