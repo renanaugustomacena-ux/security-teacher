@@ -210,6 +210,71 @@ describe('Doctrine §17.9 — Service test coverage (v1.1.0 amendment)', () => {
   });
 });
 
+describe('Doctrine §17.10 / §22 — Native Packaging gates (v1.2.0 amendment)', () => {
+  // These checks are dormant until capacitor.config.json exists at repo root.
+  // Once Phase C lands, they enforce §22.2, §22.8, §22.13.
+  function existsAtRoot(name) {
+    try {
+      readFileSync(resolve(REPO, name));
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  it('§22.2 — capacitor.config.json declares the required shape (when present)', () => {
+    if (!existsAtRoot('capacitor.config.json')) return;
+    const cfg = JSON.parse(readRepo('capacitor.config.json'));
+    expect(cfg.appId).toBe('com.knowledgeaio.app');
+    expect(cfg.appName).toBe('Knowledge AIO');
+    expect(cfg.webDir).toBe('www');
+    expect(cfg.server?.hostname).toBe('localhost');
+    expect(cfg.server?.androidScheme).toBe('https');
+  });
+
+  it('§22.15 — scripts/cap-prepare.mjs exists when capacitor.config.json exists', () => {
+    if (!existsAtRoot('capacitor.config.json')) return;
+    expect(existsAtRoot('scripts/cap-prepare.mjs')).toBe(true);
+    const prep = readRepo('scripts/cap-prepare.mjs');
+    expect(prep, 'cap-prepare.mjs must reference STATIC_ASSETS').toMatch(/STATIC_ASSETS/);
+  });
+
+  it('§22.8 — no keystore-shaped artifact is tracked in the repo', () => {
+    const forbidden = /\.(keystore|jks|p12|pfx)$|release-keystore|signing-key/i;
+    const violations = [];
+    function* walkRepo(dir) {
+      for (const entry of readdirSync(dir, { withFileTypes: true })) {
+        if (entry.name === 'node_modules' || entry.name === '.git') continue;
+        if (entry.name === '.gradle' || entry.name === 'build') continue;
+        const full = join(dir, entry.name);
+        if (entry.isDirectory()) yield* walkRepo(full);
+        else yield full;
+      }
+    }
+    for (const file of walkRepo(REPO)) {
+      const rel = relative(REPO, file).replace(/\\/g, '/');
+      if (forbidden.test(rel)) violations.push(rel);
+    }
+    expect(violations).toEqual([]);
+  });
+
+  it('§22.13 — .gitignore covers Android build outputs (when capacitor.config.json exists)', () => {
+    if (!existsAtRoot('capacitor.config.json')) return;
+    const gi = readRepo('.gitignore')
+      .split(/\r?\n/)
+      .map((l) => l.trim());
+    for (const line of [
+      'android/build/',
+      'android/app/build/',
+      'android/.gradle/',
+      'android/local.properties',
+      'www/',
+    ]) {
+      expect(gi, `.gitignore must contain '${line}'`).toContain(line);
+    }
+  });
+});
+
 describe('Doctrine §6.1 — Vendor allowlist', () => {
   it('vendor/ contains only the pinned three.js, fonts.css, and woff2 files', () => {
     const vendor = resolve(REPO, 'vendor');
