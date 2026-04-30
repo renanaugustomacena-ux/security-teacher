@@ -16,10 +16,29 @@ android {
             ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    // Doctrine §22.8 — signing materials are read from environment variables
+    // populated by .github/workflows/apk.yml from GitHub Encrypted Secrets.
+    // No keystore file ever lives in the tracked repo. When KEYSTORE_PATH is
+    // unset (e.g. on a developer machine without a configured keystore) the
+    // release config is empty and the resulting APK is unsigned — useful for
+    // local smoke testing but rejected for distribution.
+    signingConfigs {
+        release {
+            if (System.getenv("KEYSTORE_PATH")) {
+                storeFile file(System.getenv("KEYSTORE_PATH"))
+                storePassword System.getenv("KEYSTORE_PASSWORD")
+                keyAlias System.getenv("KEY_ALIAS")
+                keyPassword System.getenv("KEY_PASSWORD")
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (System.getenv("KEYSTORE_PATH")) {
+                signingConfig signingConfigs.release
+            }
         }
     }
 }
