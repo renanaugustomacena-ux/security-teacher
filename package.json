@@ -12,6 +12,8 @@
     "csp:patch": "node scripts/compute-csp.mjs --patch",
     "csp:print": "node scripts/compute-csp.mjs --print",
     "doctrine:check": "node scripts/check-doctrine.mjs",
+    "apk:prepare": "node scripts/cap-prepare.mjs",
+    "apk:sync": "npm run apk:prepare && cap sync android",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -22,6 +24,9 @@
     "node": ">=20"
   },
   "devDependencies": {
+    "@capacitor/android": "7.6.2",
+    "@capacitor/cli": "7.6.2",
+    "@capacitor/core": "7.6.2",
     "@commitlint/cli": "^20.4.1",
     "@commitlint/config-conventional": "^20.4.1",
     "eslint": "^8.57.1",

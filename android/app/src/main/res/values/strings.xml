@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Knowledge AIO</string>
+    <string name="title_activity_main">Knowledge AIO</string>
+    <string name="package_name">com.knowledgeaio.app</string>
+    <string name="custom_url_scheme">com.knowledgeaio.app</string>
+</resources>

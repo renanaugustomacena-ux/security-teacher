@@ -119,3 +119,26 @@ Thumbs.db
 
 # Claude AI session data
 .claude/
+
+# Local Docker overrides (per-developer, not committed)
+docker-compose.override.yml
+
+# Android signing artifacts — Doctrine §22.8 forbids these in the tree.
+# The keystore lives ONLY in GitHub Encrypted Secrets at deploy time.
+*.keystore
+*.jks
+*.p12
+*.pfx
+release-keystore.*
+signing-key*
+
+# Capacitor / Android build outputs — Doctrine §22.13.
+android/build/
+android/app/build/
+android/.gradle/
+android/local.properties
+android/app/release/
+android/captured-ims-config.json
+
+# Capacitor web bundle — populated by scripts/cap-prepare.mjs (Doctrine §22.15).
+www/

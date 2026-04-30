@@ -14,6 +14,10 @@
  */
 (function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
+  // Doctrine §5.9 / §22.4 — assets are local-bundled inside Capacitor's
+  // WebView, so the SW provides no benefit and would only add a cache-
+  // poisoning vector with no force-purge runbook on an installed APK.
+  if (typeof window !== 'undefined' && window.Capacitor) return;
 
   function showUpdateToast(onAccept) {
     // Idempotent — skip if toast already visible.
