@@ -1,21 +1,34 @@
 # DOCTRINE.md — Knowledge AIO Engineering Doctrine
 
-> **Version:** 1.1.1 — 2026-04-29
+> **Version:** 1.2.0 — 2026-04-30
 > **Status:** Ratified, in force.
 > **Scope:** All code, configuration, deployment artifacts, and operational
 > procedures within this repository.
 
-> **v1.1.0 amendments** (post-execution against v1.0.0): §17.3 strengthened
-> from "warnings must trend down" to "warnings must be zero on master"; §17.9
-> added — a static gate requiring every `js/services/*.js` module to have a
-> matching `tests/<kebab-name>.test.js`. The amendments were ratified after
-> commit 07ab41e brought every service into compliance.
+> **v1.2.0 amendments** (2026-04-30, ratified before execution): added §22
+> Native Packaging — governs the Android APK distribution generated via
+> **Capacitor 7.x** (chosen over 8.x because 8 hard-requires Node ≥ 22
+> while §6.6 pins `engines.node >= 20`) with the Capawesome Google Sign-In
+> plugin (Credential Manager API). Cross-reference rules added/amended in
+> §0.4, §1.1, §5.9, §8.1, §13.1, §16.1, §17.10, §18.1, §20.2. New CI gates
+> extend `scripts/check-doctrine.mjs` (capacitor.config.json shape, no
+> keystore in tracked tree, `.gitignore` covers `android/build` outputs)
+> and `tests/doctrine-static.test.js`. Per §18.7 this commit ships rules +
+> gates only; the Capacitor scaffold (capacitor.config.json, the prepare
+> script per §22.15, the android/ skeleton, the §5.9 SW-register guard)
+> lands in a follow-up `feat(apk):` commit.
 
 > **v1.1.1 patch** (clarification per §21.1): Appendix A's stated total
 > ("154" in v1.0.0, "155" in v1.1.0) was a mis-sum of the per-section counts.
 > The per-section counts themselves were always correct. Recounted total is
 > 157. No rule was added or removed by this patch — it only fixes the
 > arithmetic.
+
+> **v1.1.0 amendments** (post-execution against v1.0.0): §17.3 strengthened
+> from "warnings must trend down" to "warnings must be zero on master"; §17.9
+> added — a static gate requiring every `js/services/*.js` module to have a
+> matching `tests/<kebab-name>.test.js`. The amendments were ratified after
+> commit 07ab41e brought every service into compliance.
 
 This doctrine is a precise, technical, and enforceable specification of how
 Knowledge AIO is built, secured, deployed, and maintained. Every rule herein
@@ -42,14 +55,14 @@ an amendment commit that updates this file in the same PR.
 | 0.1 | The application is a bilingual English-from-Italian language-learning Progressive Web App. There is exactly one product domain; do not bolt on unrelated features (analytics SaaS, cross-tenant accounts, AI generation services, etc.).                                                                      |
 | 0.2 | The user-facing language pair is fixed: Italian primary surface, English target. A third language requires an amendment commit and a translation pass over `index.html`, every README, and every user-visible string.                                                                                         |
 | 0.3 | The aesthetic register is **cyber-instrument / trading-terminal HUD**: thin lines, sub-pixel glows, ascending micro-tones, restrained motion, gold-on-graphite palette. Never Duolingo-playful. No confetti, no mascots, no klaxons, no "Great job!" stickers.                                                |
-| 0.4 | The primary deployment target is **GitHub Pages**, served from the `master` branch via the official GitHub Actions Pages workflow. Netlify and self-hosted Docker/nginx are demoted to optional alternative deployments and must continue to work but are not the source of truth for security configuration. |
+| 0.4 | The primary deployment target is **GitHub Pages**, served from the `master` branch via the official GitHub Actions Pages workflow. Netlify, self-hosted Docker/nginx, and the Android APK (governed by §22) are demoted to optional alternative deployments and must continue to work but are not the source of truth for security configuration. |
 | 0.5 | The canonical public origin is `https://renanaugustomacena-ux.github.io/security-teacher/`. The base path `/security-teacher/` must be assumable by every URL the app emits. Apex/custom domains, if added, must update this rule via an amendment commit.                                                    |
 
 ## §1. Architecture & Module Boundaries
 
 | #    | Rule                                                                                                                                                                                                                                                                                                    |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.1  | The codebase is **vanilla ES6+ modules**. No bundler, no transpiler, no framework, no build step on the critical path. A future build step is permitted only if it is verifiably reproducible from `package-lock.json` and yields a byte-for-byte identical artifact across two runs on the same input. |
+| 1.1  | The codebase is **vanilla ES6+ modules**. No bundler, no transpiler, no framework, no build step on the **GitHub Pages critical path**. The Capacitor APK build (§22.11) is the single sanctioned exception: it operates on a snapshot of the same web tree and produces an Android-only artifact that does not reach the GH Pages deploy. Any further build step is permitted only if it is verifiably reproducible from `package-lock.json` and yields a byte-for-byte identical artifact across two runs on the same input. |
 | 1.2  | Every JavaScript module under `js/` must be `type="module"` ES module syntax. CommonJS is permitted only in dev tooling configs (e.g. `commitlint.config.cjs`).                                                                                                                                         |
 | 1.3  | I/O concerns must be encapsulated in a service under `js/services/`. UI managers (`*Manager.js`) consume services; they do not perform `fetch`, IndexedDB, Web Audio, or `localStorage` directly.                                                                                                       |
 | 1.4  | Topic data files in `js/topics/data/*.js` must be **pure static exports**. They must not import managers, services, or the store. They must not run any code at module top-level beyond the `export default` literal.                                                                                   |
@@ -115,6 +128,7 @@ an amendment commit that updates this file in the same PR.
 | 5.6 | `STATIC_ASSETS` must list every same-origin file required for offline boot. Adding a file under `js/`, `css/`, `vendor/`, or `icons/` requires updating this list. CI in §17 asserts no orphaned new module under `js/` is missing from the list.              |
 | 5.7 | The service worker must not import anything from outside its file. No `importScripts(…)`, no dynamic `import()` inside the SW.                                                                                                                                 |
 | 5.8 | A "force purge" runbook block (see SECURITY.md Runbook 2) must remain documented. It is the only sanctioned way to recover from a poisoned cache.                                                                                                              |
+| 5.9 | (v1.2.0 amendment) Service Worker registration must be **skipped** when `window.Capacitor` is defined. In a native WebView the assets are local-bundled (§22.3), the SW provides no benefit, and its absence eliminates a cache-poisoning vector that has no force-purge runbook on an installed APK. The `js/sw-register.js` module is the single chokepoint that performs this check. |
 
 ## §6. Vendored Assets & Supply Chain
 
@@ -141,7 +155,7 @@ an amendment commit that updates this file in the same PR.
 
 | #   | Rule                                                                                                                                                                                                                                                           |
 | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 8.1 | The only identity provider is Google Identity Services. The OAuth Client ID is a public value injected at build/deploy time into the `<meta name="google-client-id">` tag. An empty value disables sign-in gracefully — the app must keep working anonymously. |
+| 8.1 | (v1.2.0 amendment) The identity provider is Google. On the **web** (PWA) the runtime adapter is **Google Identity Services** loaded from `accounts.google.com`. On **Android** (APK) the runtime adapter is the **Capawesome Capacitor Google Sign-In plugin** using the Credential Manager API (see §22.6). Both adapters produce a Google ID token whose `aud` claim is the **Web** OAuth Client ID — Capawesome explicitly requires the Web Client ID on all platforms. `AuthService.js` runs the same §8.2 validation pipeline regardless of source. The Web Client ID is the only Client ID in app code; it is a public value injected via `<meta name="google-client-id">`. An empty value disables sign-in gracefully — the app must keep working anonymously. |
 | 8.2 | Client-side JWT validation must check, at minimum: `iss === "https://accounts.google.com"`, `aud === <our client id>`, `iat ≤ now + 60s`, `exp > now`, `nbf ≤ now + 60s` (when present). A 24-hour session cap is enforced regardless of `exp`.                |
 | 8.3 | We do not run server-side JWKS verification because there is no server. We rely on the GIS popup's TLS-pinned token issuance. Treat the validated identity as "low-trust": never use it as the sole gate for any client-stored secret.                         |
 | 8.4 | Sign-in must never block the rest of the app. If GIS fails to load (CSP block, network error, Client ID empty), the sign-in section degrades to a hidden state and the app continues anonymously.                                                              |
@@ -200,7 +214,7 @@ an amendment commit that updates this file in the same PR.
 
 | #    | Rule                                                                                                                                                                                             |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 13.1 | Initial bundle (HTML + same-origin JS + same-origin CSS, uncompressed) must stay under **500 KB**. Topic data files are excluded (lazy-loaded). The CI gate in §17 fails the build above 500 KB. |
+| 13.1 | Initial bundle (HTML + same-origin JS + same-origin CSS, uncompressed) must stay under **500 KB** for the web deploy. Topic data files are excluded (lazy-loaded). The CI gate in §17 fails the build above 500 KB. The Android APK has a separate budget — see §22.12. |
 | 13.2 | A single topic data file must stay under **300 KB** uncompressed. Splitting beyond this is an architecture change.                                                                               |
 | 13.3 | The matrix-rain WebGL effect must run at ≥ 30 fps on a Pixel 4a-class device. If a new effect drops it below this, the new effect must auto-degrade or gate on a profile toggle.                 |
 | 13.4 | Every animation timer (`requestAnimationFrame`, `setInterval`) must pause when `document.visibilityState === 'hidden'`. Wake them on `visibilitychange`.                                         |
@@ -235,7 +249,7 @@ an amendment commit that updates this file in the same PR.
 
 | #    | Rule                                                                                                                                                                                                |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 16.1 | The app must boot and render the home, learn, practice, topics, progress, and profile sections fully offline after the first visit.                                                                 |
+| 16.1 | The web app must boot and render the home, learn, practice, topics, progress, and profile sections fully offline after the first visit. The Android APK is offline-by-default for these surfaces by construction (assets are bundled into the package — see §22).                                                                 |
 | 16.2 | The matrix-rain effect must degrade to a static gradient when offline if `vendor/three-*.module.js` is not in cache for any reason.                                                                 |
 | 16.3 | Music search via LRCLIB and translation via MyMemory require network. They must show a clear "online required" state when offline, never a stuck spinner.                                           |
 | 16.4 | The PWA install prompt must be self-dismissable and must not auto-fire. Show it from a single explicit user action ("Install").                                                                     |
@@ -255,12 +269,13 @@ an amendment commit that updates this file in the same PR.
 | 17.7 | The CI workflow asserts `nginx.conf`'s `Content-Security-Policy` line and the `<meta>` CSP have the same directive set (whitespace and order may differ). Drift aborts the build.                          |
 | 17.8 | The CI workflow asserts every file under `js/` (excluding tests) is either listed in `sw.js#STATIC_ASSETS` or is a topic data file under `js/topics/data/`. Orphaned new modules abort the build.          |
 | 17.9 | (v1.1.0 amendment) Every committed file under `js/services/*.js` must have a matching test file at `tests/<kebab-case>.test.js` — for example, `AuthService.js` requires `tests/auth-service.test.js`. The `npm run doctrine:check` gate enforces this. The rule operationalises §17.1 across the legacy service surface; it does not yet apply to managers under `js/`, which are tracked separately. |
+| 17.10 | (v1.2.0 amendment) APK build gates: when `capacitor.config.json` exists at repo root, `npm run doctrine:check` asserts (a) it declares the §22.2 fields (`appId`, `appName`, `webDir`, `server.hostname`, `server.androidScheme`); (b) no keystore artifact (`*.keystore`, `*.jks`, `*release-keystore*`) is tracked in the repo (§22.8); (c) `.gitignore` excludes the §22.13 build outputs. When `capacitor.config.json` is absent, these checks are skipped — they are dormant until Phase C lands. The signed APK must additionally pass the §22.12 size budget; that check runs in `.github/workflows/apk.yml` after the Gradle build. |
 
 ## §18. CI / CD / Release
 
 | #    | Rule                                                                                                                                                                                                                                                   |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 18.1 | Three GitHub Actions workflows are mandatory: `ci.yml` (per-PR gates), `deploy.yml` (push-to-master deploy), `integrity.yml` (weekly cron + manual dispatch).                                                                                          |
+| 18.1 | Four GitHub Actions workflows are mandatory: `ci.yml` (per-PR gates), `deploy.yml` (push-to-master deploy), `integrity.yml` (weekly cron + manual dispatch), and `apk.yml` (manual-dispatch APK build — see §22.9). The latter is dormant in the repo skeleton until Phase E lands; once present, `apk.yml` is the only sanctioned path that produces a signed APK release artifact. |
 | 18.2 | Workflows pin their action versions to a specific tag (e.g. `actions/checkout@v4`). They must not float on `@main`.                                                                                                                                    |
 | 18.3 | The deploy workflow uses the GitHub-provided `GITHUB_TOKEN` with `pages: write` and `id-token: write` permissions. No PATs.                                                                                                                            |
 | 18.4 | Concurrency: the deploy workflow uses `concurrency: group: pages, cancel-in-progress: false` so a slower deploy is never aborted by a faster one mid-publish.                                                                                          |
@@ -287,7 +302,7 @@ an amendment commit that updates this file in the same PR.
 | #    | Rule                                                                                                                                                                                                                                                |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 20.1 | The threat model is recorded in `SECURITY.md` and assumes: no backend, public OAuth Client ID, untrusted user-supplied LRC/MP3, untrusted external-API responses (LRCLIB, MyMemory).                                                                |
-| 20.2 | Adding any of: a backend, cross-device sync, a new third-party SDK, a second deployed origin, or any relaxation of CSP/Trusted Types triggers a **mandatory** threat-model revisit. The PR description must include a "Threat-model delta" section. |
+| 20.2 | Adding any of: a backend, cross-device sync, a new third-party SDK, a second deployed origin, **a new Capacitor plugin or a Capacitor major-version upgrade (§22)**, or any relaxation of CSP/Trusted Types triggers a **mandatory** threat-model revisit. The PR description must include a "Threat-model delta" section. |
 | 20.3 | Vulnerability reports go to the contact in `.well-known/security.txt`. Expected response: ≤ 7 days. Disclosure window: 90 days from first contact, or on patch ship — whichever is sooner.                                                          |
 | 20.4 | Incident severity: P0 = active exploit / data exfil. P1 = vendor-asset drift, leaked secret, CSP fail-open. P2 = high-severity dep audit. P3 = degraded-but-recoverable. Each tier has a runbook in `SECURITY.md`.                                  |
 | 20.5 | Recovery from a poisoned SW is the §5.8 / SECURITY.md Runbook 2 force-purge procedure. Practice it dry-run at least once per year.                                                                                                                  |
@@ -302,6 +317,26 @@ an amendment commit that updates this file in the same PR.
 | 21.3 | The doctrine is **read into context at the start of every coding session by the AI collaborator** (Claude). The first action of any session that proposes a change must be to identify which rule(s) the change touches. |
 | 21.4 | A rule that has been violated and survived deserves a footnote, not a silent rewrite. Document the exception, then either fix the codebase or amend the rule.                                                            |
 
+## §22. Native Packaging (Android APK) — v1.2.0
+
+| #     | Rule                                                                                                                                                                                                                                                                                                                                                            |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 22.1  | The repository ships an additional alternative deployment as an **Android APK** generated via **Capacitor 7.x**. The PWA on GitHub Pages remains the source of truth (§0.4); the APK packages a snapshot of the same web bundle for offline native installation. iOS, Mac Catalyst, Electron, and other Capacitor targets are **out of scope** under this doctrine. |
+| 22.2  | The Capacitor config (`capacitor.config.json` at repo root) must declare: `appId: "com.knowledgeaio.app"`, `appName: "Knowledge AIO"`, `webDir: "www"`, and `server: { hostname: "localhost", androidScheme: "https" }`. The `https://localhost` runtime origin maps `'self'` in the §3.4 CSP to the WebView host so every CSP directive applies unchanged. The `www/` directory is a build artifact populated by §22.15's prepare script — it is gitignored, never committed, never edited by hand. |
+| 22.3  | The APK ships every static asset listed in `sw.js#STATIC_ASSETS` plus `index.html`, copied into `www/` by §22.15's prepare script. It excludes `sw.js`, `404.html`, the `?p=…` SPA-redirect logic, and every dev-only file already excluded by §2.4. The CI gate in §17.10 asserts `www/`'s contents (when populated) match this contract.                       |
+| 22.4  | Service Worker registration must be skipped when running inside Capacitor (see §5.9). In a native WebView the assets are local-bundled, the SW provides no offline benefit, and its absence eliminates a cache-poisoning vector that has no force-purge runbook on an installed APK.                                                                            |
+| 22.5  | The Android package ID is **`com.knowledgeaio.app`**. Renaming it is a doctrine amendment and forces every existing installed user to reinstall — Android treats package-ID changes as new apps.                                                                                                                                                                |
+| 22.6  | Native Google Sign-In on Android uses the **[Capawesome Google Sign-In plugin](https://capawesome.io/plugins/google-sign-in/)** (Credential Manager API). The plugin returns a Google ID token with the same JWT shape as web GIS; `AuthService.js` runs the §8.2 validation pipeline regardless of source. Switching to a different plugin is an amendment.    |
+| 22.7  | Two OAuth Client IDs belong to the same Google Cloud project, with **distinct roles**: the **Web** client (`<meta name="google-client-id">`) is the JWT `aud` for sign-ins from BOTH platforms — Capawesome's plugin docs require the Web Client ID on Android too. The **Android** client (created in Google Cloud Console, package = `com.knowledgeaio.app`, fingerprint = the keystore SHA-1 from §22.8) is a binding registration that authorizes the APK to invoke Google Sign-In; it never appears in the JWT and is never read by app code. Rotating the Android Client ID requires no app-code change (see Runbook 7). |
+| 22.8  | The Android signing keystore is the **single most sensitive secret** in this project. It MUST live ONLY in GitHub Encrypted Secrets (`KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`, `KEY_ALIAS`, `KEY_PASSWORD`). The keystore file MUST NOT be committed to the repo, even encrypted. Loss of the keystore means a new app identity — every installed user must reinstall (P0 incident per §20.4). |
+| 22.9  | The APK build runs in `.github/workflows/apk.yml` on **manual dispatch only**. Per-commit APK builds are forbidden — they would consume signing-key budget unnecessarily and produce confusing release artifacts. The workflow must use the `actions/checkout@v4`, `actions/setup-node@v4` (`node-version-file: .nvmrc`), and `actions/setup-java@v4` action versions, all pinned to a tag. |
+| 22.10 | APK distribution is **GitHub Releases artifact only** under this doctrine. Publishing to the Google Play Store requires a doctrine amendment + threat-model revisit (§20.2): Play Store telemetry, store reviews, in-app updates, and account linkage materially change the trust surface.                                                                      |
+| 22.11 | The Capacitor build (`npx cap sync` + `gradle assembleRelease`) introduces a build step. This step is permitted by §1.1's reproducibility carve-out under three conditions: (a) `package-lock.json` pins the Capacitor version exactly; (b) `org.gradle.caching=true` and Android Gradle Plugin reproducible-builds flags are set; (c) the signing pass happens out-of-process and is excluded from byte-for-byte reproducibility (signatures are timestamp-bearing by design). |
+| 22.12 | The signed release APK must stay under **30 MB** uncompressed. The CI gate in `apk.yml` fails the build above 30 MB. The current largest contributors are bundled topic data (~1.5 MB combined) and the vendored Three.js module (~700 KB); any new vendored asset must consider its APK delta in the PR description.                                          |
+| 22.13 | The `android/` skeleton (Capacitor-generated Gradle project) and `capacitor.config.json` are committed. The directories `android/build/`, `android/app/build/`, `android/.gradle/`, `android/app/release/`, `android/local.properties`, and `www/` are gitignored. The CI gate in §17.10 asserts these `.gitignore` entries are present once `capacitor.config.json` exists. |
+| 22.14 | The threat-model delta for native packaging is recorded in `SECURITY.md` under "Native APK". Adding a new Capacitor plugin, upgrading Capacitor across a major version, or changing `capacitor.config.json` security-relevant fields (`appId`, `server.*`) triggers a §20.2 revisit. The keystore-rotation runbook (Runbook 6) and Android-Client-ID-rotation runbook (Runbook 7) must remain documented. |
+| 22.15 | A `scripts/cap-prepare.mjs` Node script is the **only sanctioned way** to populate `www/` before `npx cap sync`. It must: (a) wipe and recreate `www/`; (b) copy every file listed in `sw.js#STATIC_ASSETS` plus `index.html` into `www/`; (c) NEVER copy `sw.js`, `404.html`, `tests/`, `node_modules/`, `scripts/`, `DOCTRINE.md`, `SECURITY.md`, `nginx.conf`, `Dockerfile`, `docker-compose*.yml`, `.github/`, `package*.json`, `capacitor.config.json`, `android/`, or any keystore-shaped file. Adding a new top-level static asset to the bundle requires updating both `sw.js#STATIC_ASSETS` (§5.6) and verifying the prepare script picks it up. The `npm run apk:prepare` script invokes it; `npm run apk:sync` chains prepare + `cap sync android`. |
+
 ---
 
 ## Appendix A — Rule Count
@@ -313,7 +348,7 @@ an amendment commit that updates this file in the same PR.
 | §2 Deployment: GitHub Pages as Primary     | 10      |
 | §3 Content-Security-Policy & Trusted Types | 10      |
 | §4 Input/Output Sanitization               | 8       |
-| §5 Service Worker                          | 8       |
+| §5 Service Worker                          | 9       |
 | §6 Vendored Assets & Supply Chain          | 8       |
 | §7 Vendored-Asset Verification Procedure   | 3       |
 | §8 Authentication & Identity               | 6       |
@@ -325,12 +360,13 @@ an amendment commit that updates this file in the same PR.
 | §14 Aesthetic & UX                         | 8       |
 | §15 Accessibility & Reduced Motion         | 6       |
 | §16 PWA & Offline Behaviour                | 6       |
-| §17 Testing & Quality Gates (CI per-PR)    | 9       |
+| §17 Testing & Quality Gates (CI per-PR)    | 10      |
 | §18 CI / CD / Release                      | 8       |
 | §19 Code Style & Repository Hygiene        | 8       |
 | §20 Threat Model & Incident Response       | 6       |
 | §21 Doctrine Governance                    | 4       |
-| **Total**                                  | **157** |
+| §22 Native Packaging (Android APK)         | 15      |
+| **Total**                                  | **174** |
 
 ## Appendix B — Quick-Reference Index
 
@@ -339,8 +375,12 @@ an amendment commit that updates this file in the same PR.
 - **Adding an external origin:** §10.1 → CSP `connect-src` → §3.4 → doctrine amendment.
 - **Adding a new module under `js/`:** §1.3 + §1.5 + register in `sw.js#STATIC_ASSETS` (§5.6) + add a test (§17.1).
 - **Force-purge a poisoned SW:** SECURITY.md Runbook 2.
-- **Rotating Google Client ID:** SECURITY.md Runbook 1.
-- **Deployment URL:** `https://renanaugustomacena-ux.github.io/security-teacher/` (§0.5).
+- **Rotating Google Client ID (web):** SECURITY.md Runbook 1.
+- **Generating / rotating the Android signing keystore:** SECURITY.md Runbook 6 (§22.8).
+- **Rotating Android OAuth Client ID:** SECURITY.md Runbook 7 (§22.7).
+- **Adding a Capacitor plugin:** §22.6 + §20.2 threat-model revisit + npm audit.
+- **APK build:** manual dispatch via Actions → "APK Build" (§22.9).
+- **Deployment URL (web):** `https://renanaugustomacena-ux.github.io/security-teacher/` (§0.5).
 - **Local dev:** `docker compose up --build -d` → `http://localhost:8080` (§2.10).
 
 ## Appendix C — Glossary
@@ -354,3 +394,7 @@ an amendment commit that updates this file in the same PR.
 | **Local-first**      | All user data lives on the user's device; no server is required for any core flow.                                                  |
 | **Cyber-instrument** | The aesthetic register: trading-terminal HUD, restrained motion, gold-on-graphite. (See §0.3, §14.)                                 |
 | **Adamantium pass**  | Commit `f19a549` — the security hardening pass that established CSP+Trusted Types+supply-chain pinning as load-bearing constraints. |
+| **Capacitor**        | The cross-platform native runtime that wraps the web bundle in an Android WebView. Used in this project for APK packaging only — iOS/Mac/Electron targets are out of scope. (See §22.) |
+| **APK**              | Android Package — the signed binary distributed via GitHub Releases (§22.10) for native installation.                               |
+| **Credential Manager** | Android's modern Sign-In API used by the Capawesome Capacitor plugin to obtain a Google ID token natively (§22.6).                |
+| **GIS**              | Google Identity Services — the web SDK loaded from `accounts.google.com` (§8.1, web adapter only).                                  |

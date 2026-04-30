@@ -15,6 +15,11 @@
  *   §17.6  meta CSP present in both index.html and 404.html
  *   §17.9  every js/services/*.js has a matching tests/<kebab>.test.js
  *          (added 2026-04-29 in doctrine v1.1.0)
+ *   §17.10 when capacitor.config.json exists, validate §22.2 shape, assert
+ *          no keystore artifacts in tracked tree (§22.8), assert
+ *          .gitignore covers §22.13 build outputs (incl. www/), and assert
+ *          scripts/cap-prepare.mjs exists per §22.15. Dormant when the
+ *          file is absent. (Added 2026-04-30 in doctrine v1.2.0.)
  *
  * Exit code: 0 on success, 1 on any failure (with summary).
  *
@@ -244,12 +249,111 @@ async function checkServiceTestCoverage() {
   }
 }
 
+// §17.10 — APK build gates (dormant until capacitor.config.json exists).
+async function checkCapacitorConfig() {
+  const path = resolve(REPO, 'capacitor.config.json');
+  let raw;
+  try {
+    raw = await readFile(path, 'utf8');
+  } catch {
+    return; // dormant — Phase C has not landed yet
+  }
+  let cfg;
+  try {
+    cfg = JSON.parse(raw);
+  } catch (err) {
+    fail('§22.2', `capacitor.config.json is not valid JSON: ${err.message}`);
+    return;
+  }
+  if (cfg.appId !== 'com.knowledgeaio.app') {
+    fail('§22.2', `capacitor.config.json appId must be 'com.knowledgeaio.app' (got '${cfg.appId}')`);
+  }
+  if (cfg.appName !== 'Knowledge AIO') {
+    fail('§22.2', `capacitor.config.json appName must be 'Knowledge AIO' (got '${cfg.appName}')`);
+  }
+  if (cfg.webDir !== 'www') {
+    fail('§22.2', `capacitor.config.json webDir must be 'www' (got '${cfg.webDir}')`);
+  }
+  if (!cfg.server || cfg.server.hostname !== 'localhost') {
+    fail('§22.2', `capacitor.config.json server.hostname must be 'localhost'`);
+  }
+  if (!cfg.server || cfg.server.androidScheme !== 'https') {
+    fail('§22.2', `capacitor.config.json server.androidScheme must be 'https'`);
+  }
+
+  // §22.13 — .gitignore must cover Android build outputs once Capacitor exists.
+  let gi;
+  try {
+    gi = await readFile(resolve(REPO, '.gitignore'), 'utf8');
+  } catch {
+    fail('§22.13', '.gitignore missing — required once capacitor.config.json exists');
+    gi = '';
+  }
+  const required = [
+    'android/build/',
+    'android/app/build/',
+    'android/.gradle/',
+    'android/local.properties',
+    'www/',
+  ];
+  for (const line of required) {
+    if (!gi.split(/\r?\n/).some((l) => l.trim() === line)) {
+      fail('§22.13', `.gitignore missing required entry: '${line}'`);
+    }
+  }
+
+  // §22.15 — the prepare script must exist alongside capacitor.config.json.
+  try {
+    const prep = await readFile(resolve(REPO, 'scripts/cap-prepare.mjs'), 'utf8');
+    if (!/STATIC_ASSETS/.test(prep)) {
+      fail(
+        '§22.15',
+        'scripts/cap-prepare.mjs exists but does not reference STATIC_ASSETS — must drive www/ from sw.js#STATIC_ASSETS'
+      );
+    }
+  } catch {
+    fail(
+      '§22.15',
+      'scripts/cap-prepare.mjs is required when capacitor.config.json exists (the only sanctioned way to populate www/)'
+    );
+  }
+}
+
+// §22.8 — keystore artifacts must never enter the tracked tree.
+async function checkNoKeystoreInRepo() {
+  const forbidden = /\.(keystore|jks|p12|pfx)$|release-keystore|signing-key/i;
+  // Walk the entire repo *except* node_modules, .git, and android/.gradle.
+  async function* walkRepo(dir) {
+    let entries;
+    try {
+      entries = await readdir(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const entry of entries) {
+      if (entry.name === 'node_modules' || entry.name === '.git') continue;
+      if (entry.name === '.gradle' || entry.name === 'build') continue; // dev-only
+      const full = join(dir, entry.name);
+      if (entry.isDirectory()) yield* walkRepo(full);
+      else yield full;
+    }
+  }
+  for await (const file of walkRepo(REPO)) {
+    const rel = relative(REPO, file).replace(/\\/g, '/');
+    if (forbidden.test(rel)) {
+      fail('§22.8', `forbidden keystore-shaped artifact in tracked tree: '${rel}'`);
+    }
+  }
+}
+
 await checkMetaCsp();
 await checkCspAlignment();
 await checkForbiddenPatterns();
 await checkSwStaticAssets();
 await checkVendorTree();
 await checkServiceTestCoverage();
+await checkCapacitorConfig();
+await checkNoKeystoreInRepo();
 
 if (failures.length === 0) {
   info('OK — all doctrine static gates pass.');
