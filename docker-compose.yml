@@ -22,9 +22,14 @@ services:
     # Directory che nginx deve poter scrivere — montate come tmpfs (RAM):
     #   /var/cache/nginx  → cache proxy e body temp files
     #   /var/run          → nginx.pid
+    # I tmpfs mount di default appartengono a root con mode 0755, quindi nginx
+    # (UID 101 nell'immagine alpine) non puo' scriverci. Specifichiamo
+    # uid/gid/mode in modo che le directory siano di proprieta' dell'utente
+    # nginx — fix per il fallimento "mkdir() ... Permission denied" che
+    # impediva l'avvio del container in combinazione con read_only:true.
     tmpfs:
-      - /var/cache/nginx
-      - /var/run
+      - /var/cache/nginx:uid=101,gid=101,mode=1700
+      - /var/run:uid=101,gid=101,mode=1700
 
     # Limiti di risorse: bloccano DoS per esaurimento memoria/PID/CPU.
     mem_limit: 128m
