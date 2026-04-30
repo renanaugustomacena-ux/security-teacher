@@ -241,10 +241,7 @@ async function checkServiceTestCoverage() {
     const base = file.replace(/\.js$/, '');
     const expected = `${toKebab(base)}.test.js`;
     if (!testFiles.has(expected)) {
-      fail(
-        '§17.9',
-        `js/services/${file} has no matching tests/${expected} (doctrine v1.1.0)`
-      );
+      fail('§17.9', `js/services/${file} has no matching tests/${expected} (doctrine v1.1.0)`);
     }
   }
 }
@@ -266,7 +263,10 @@ async function checkCapacitorConfig() {
     return;
   }
   if (cfg.appId !== 'com.knowledgeaio.app') {
-    fail('§22.2', `capacitor.config.json appId must be 'com.knowledgeaio.app' (got '${cfg.appId}')`);
+    fail(
+      '§22.2',
+      `capacitor.config.json appId must be 'com.knowledgeaio.app' (got '${cfg.appId}')`
+    );
   }
   if (cfg.appName !== 'Knowledge AIO') {
     fail('§22.2', `capacitor.config.json appName must be 'Knowledge AIO' (got '${cfg.appName}')`);
