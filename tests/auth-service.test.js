@@ -244,3 +244,104 @@ describe('AuthService — session cap (§8.2 — 24h regardless of exp)', () => 
     expect(svc.isSignedIn()).toBe(true);
   });
 });
+
+describe('AuthService — Capacitor (Android) adapter (§22.6 / §22.7)', () => {
+  let svc;
+  let plugin;
+
+  beforeEach(() => {
+    storageService.__reset();
+    vi.clearAllMocks();
+    svc = new AuthService();
+    plugin = {
+      initialize: vi.fn(async () => {}),
+      signIn: vi.fn(),
+      signOut: vi.fn(async () => {}),
+    };
+    globalThis.window = { Capacitor: { Plugins: { GoogleSignIn: plugin } } };
+    globalThis.document = {
+      querySelector: () => ({ content: CLIENT_ID }),
+    };
+  });
+
+  afterEach(() => {
+    delete globalThis.window;
+    delete globalThis.document;
+  });
+
+  it('detects Capacitor at runtime and skips GIS initialization', async () => {
+    await svc.init();
+    expect(svc.clientId).toBe(CLIENT_ID);
+    expect(plugin.initialize).toHaveBeenCalledWith({ clientId: CLIENT_ID });
+    expect(svc._gisInitialized).toBe(false);
+    expect(svc._capacitorInitialized).toBe(true);
+  });
+
+  it('signIn() feeds the plugin idToken into the §8.2 validation pipeline', async () => {
+    await svc.init();
+    plugin.signIn.mockResolvedValueOnce({ idToken: makeJwt(makeValidPayload()) });
+    await svc._capacitorSignIn();
+    expect(svc.isSignedIn()).toBe(true);
+    expect(svc.user.sub).toBe('1234567890');
+  });
+
+  it('an idToken with bad aud is rejected on the Capacitor branch (§22.7)', async () => {
+    await svc.init();
+    plugin.signIn.mockResolvedValueOnce({
+      idToken: makeJwt(makeValidPayload({ aud: 'someone-else.apps.googleusercontent.com' })),
+    });
+    await svc._capacitorSignIn();
+    expect(svc.isSignedIn()).toBe(false);
+  });
+
+  it('signOut() routes to plugin.signOut and clears local state', async () => {
+    await svc.init();
+    plugin.signIn.mockResolvedValueOnce({ idToken: makeJwt(makeValidPayload()) });
+    await svc._capacitorSignIn();
+    expect(svc.isSignedIn()).toBe(true);
+
+    await svc.signOut();
+    expect(plugin.signOut).toHaveBeenCalled();
+    expect(svc.isSignedIn()).toBe(false);
+  });
+
+  it('prompt() is a no-op on Capacitor (Credential Manager has no silent equivalent)', async () => {
+    await svc.init();
+    svc.prompt(); // must not throw, must not call plugin.signIn
+    expect(plugin.signIn).not.toHaveBeenCalled();
+  });
+
+  it('renderButton() emits a native HTML button that wires to _capacitorSignIn', async () => {
+    await svc.init();
+    const calls = [];
+    const container = {
+      innerHTML: '',
+      appendChild: (node) => calls.push(node),
+    };
+    // Stub document.createElement for the button construction.
+    globalThis.document.createElement = (tag) => {
+      const el = {
+        tag,
+        type: '',
+        className: '',
+        textContent: '',
+        listeners: {},
+        addEventListener: function add(ev, fn) {
+          this.listeners[ev] = fn;
+        },
+      };
+      return el;
+    };
+    svc.renderButton(container);
+    expect(calls).toHaveLength(1);
+    const btn = calls[0];
+    expect(btn.tag).toBe('button');
+    expect(btn.className).toBe('auth-google-button-native');
+    expect(typeof btn.listeners.click).toBe('function');
+
+    // Clicking the button should drive the same plugin.signIn path.
+    plugin.signIn.mockResolvedValueOnce({ idToken: makeJwt(makeValidPayload()) });
+    await btn.listeners.click();
+    expect(plugin.signIn).toHaveBeenCalled();
+  });
+});
