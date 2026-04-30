@@ -11,3 +11,12 @@ node_modules/
 
 # Lockfiles must remain in their npm-canonical formatting.
 package-lock.json
+
+# Doctrine + security artefacts must NOT be auto-formatted. Prettier's
+# markdown formatter mangles blockquotes that contain `>=N` — the `>` is
+# misparsed as nested-blockquote syntax — and silently corrupts the
+# Banner amendments. We keep these hand-formatted (Doctrine §19.1
+# footnote: rule is "Prettier formats source files"; doctrine + runbook
+# files are spec, not source). Re-evaluate if Prettier ships a fix.
+DOCTRINE.md
+SECURITY.md
