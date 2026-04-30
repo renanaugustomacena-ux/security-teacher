@@ -1,0 +1,12 @@
+{
+  "appId": "com.knowledgeaio.app",
+  "appName": "Knowledge AIO",
+  "webDir": "www",
+  "server": {
+    "hostname": "localhost",
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}
