@@ -1,10 +1,21 @@
 /**
- * AuthService — Google Identity Services (client-only)
+ * AuthService — Google sign-in (client-only)
  *
- * Decodes the ID token client-side for display purposes (sub, email, name, picture).
- * Signature is NOT verified — the `sub` value is used as a local namespace key only.
- * Do NOT treat the decoded claims as a security boundary; any backend calls must
- * forward the raw ID token and verify it server-side per RFC 7519.
+ * Two adapters, same JWT validation pipeline (Doctrine §8.1 / §22.6):
+ *   - Web (PWA): Google Identity Services loaded from accounts.google.com.
+ *   - Android (APK): Capawesome Google Sign-In plugin via Credential Manager.
+ *     Selected at runtime by checking `window.Capacitor`.
+ *
+ * Both adapters return a Google ID token whose `aud` claim is the WEB Client
+ * ID (Capawesome explicitly requires the Web Client ID on all platforms,
+ * Doctrine §22.7). The Android Client ID is a Cloud Console binding only —
+ * never read by app code, never appears in the JWT.
+ *
+ * Decodes the ID token client-side for display purposes (sub, email, name,
+ * picture). Signature is NOT verified — the `sub` value is used as a local
+ * namespace key only. Do NOT treat the decoded claims as a security
+ * boundary; any backend calls must forward the raw ID token and verify it
+ * server-side per RFC 7519.
  */
 import { storageService } from './StorageService.js';
 import { stripBidi, sanitizeUrl } from '../utils/SanitizeHtml.js';
@@ -28,6 +39,18 @@ export class AuthService {
     this._ready = false;
     this._listeners = new Set();
     this._gisInitialized = false;
+    this._capacitorInitialized = false;
+  }
+
+  // §22.4 / §22.6 — true iff running inside Capacitor (Android APK).
+  _isCapacitor() {
+    return typeof window !== 'undefined' && Boolean(window.Capacitor);
+  }
+
+  // The Capawesome plugin is registered by Capacitor's runtime BEFORE app
+  // scripts execute (no bundler import needed; we read it off the global).
+  _getCapacitorPlugin() {
+    return this._isCapacitor() ? window.Capacitor?.Plugins?.GoogleSignIn || null : null;
   }
 
   /**
@@ -65,13 +88,49 @@ export class AuthService {
     this._ready = true;
     this._emit();
 
-    if (this.clientId && this._gisAvailable()) {
+    if (!this.clientId) return this.user;
+
+    if (this._isCapacitor()) {
+      // Native: Capawesome plugin via Credential Manager (Doctrine §22.6).
+      // §22.7: the plugin requires the Web Client ID even on Android; the
+      // Android Client ID is a Cloud Console binding (package + SHA-1) and
+      // is NEVER passed at runtime.
+      this._initializeCapacitor();
+    } else if (this._gisAvailable()) {
       this._initializeGis();
-    } else if (this.clientId) {
+    } else {
       this._waitForGis().then(() => this._initializeGis());
     }
 
     return this.user;
+  }
+
+  async _initializeCapacitor() {
+    if (this._capacitorInitialized) return;
+    const plugin = this._getCapacitorPlugin();
+    if (!plugin || !this.clientId) return;
+    try {
+      await plugin.initialize({ clientId: this.clientId });
+      this._capacitorInitialized = true;
+    } catch (err) {
+      console.warn('[auth] Capacitor plugin initialize failed:', err);
+    }
+  }
+
+  // Trigger native sign-in (Android). The returned ID token feeds the same
+  // §8.2 validation pipeline as the web GIS credential.
+  async _capacitorSignIn() {
+    const plugin = this._getCapacitorPlugin();
+    if (!plugin) return;
+    if (!this._capacitorInitialized) await this._initializeCapacitor();
+    try {
+      const result = await plugin.signIn();
+      if (result?.idToken) {
+        await this._onCredential({ credential: result.idToken });
+      }
+    } catch (err) {
+      console.warn('[auth] Capacitor signIn failed:', err);
+    }
   }
 
   _gisAvailable() {
@@ -108,6 +167,10 @@ export class AuthService {
   /** Render the Google Sign-In button into a container element. */
   renderButton(container) {
     if (!container) return;
+    if (this._isCapacitor()) {
+      this._renderCapacitorButton(container);
+      return;
+    }
     if (!this._gisAvailable() || !this._gisInitialized) {
       this._initializeGis();
     }
@@ -130,8 +193,21 @@ export class AuthService {
     }
   }
 
-  /** Trigger the One Tap prompt (optional — safe no-op if unavailable). */
+  // Native button — Capacitor (Android). Click invokes Credential Manager.
+  // Styled minimally; the consumer's stylesheet can target `.auth-google-button-native`.
+  _renderCapacitorButton(container) {
+    container.innerHTML = '';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'auth-google-button-native';
+    btn.textContent = 'Accedi con Google';
+    btn.addEventListener('click', () => this._capacitorSignIn());
+    container.appendChild(btn);
+  }
+
+  /** Trigger the One Tap prompt (web only — silent no-op on Capacitor). */
   prompt() {
+    if (this._isCapacitor()) return; // Credential Manager has no silent equivalent
     if (!this._gisAvailable() || !this._gisInitialized) return;
     try {
       window.google.accounts.id.prompt();
@@ -142,11 +218,14 @@ export class AuthService {
 
   async signOut() {
     try {
-      if (this._gisAvailable()) {
+      if (this._isCapacitor()) {
+        const plugin = this._getCapacitorPlugin();
+        if (plugin) await plugin.signOut();
+      } else if (this._gisAvailable()) {
         window.google.accounts.id.disableAutoSelect();
       }
     } catch (err) {
-      console.warn('[auth] disableAutoSelect failed:', err);
+      console.warn('[auth] sign-out adapter failed:', err);
     }
     this.user = null;
     try {
