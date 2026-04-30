@@ -1,19 +1,29 @@
 # DOCTRINE.md — Knowledge AIO Engineering Doctrine
 
-> **Version:** 1.2.0 — 2026-04-30
+> **Version:** 1.3.0 — 2026-04-30
 > **Status:** Ratified, in force.
 > **Scope:** All code, configuration, deployment artifacts, and operational
 > procedures within this repository.
 
+> **v1.3.0 amendments** (2026-04-30): bumped §22.1 from "Capacitor 7.x" to
+> **Capacitor 8.x** and §6.6 from `engines.node >= 20` to `engines.node
+> >= 22`. The `.nvmrc` is updated to `22` in lockstep. Reason: every
+> maintained Google Sign-In plugin for Capacitor (Capawesome, Cap-go) now
+> requires Capacitor ≥ 8, which itself requires Node ≥ 22. The remaining
+> Capacitor 7 / Capacitor 6 plugins (Codetrix-Studio) are abandoned and
+> not eligible under §6.4 / §22.6. Bumping forward keeps the auth surface
+> on a maintained code path. Local-development impact: `nvm install 22 &&
+> nvm alias default 22 && npm ci`. CI impact: deploy.yml already reads
+> `node-version-file: .nvmrc`, so the bump propagates automatically.
+
 > **v1.2.0 amendments** (2026-04-30, ratified before execution): added §22
 > Native Packaging — governs the Android APK distribution generated via
-> **Capacitor 7.x** (chosen over 8.x because 8 hard-requires Node ≥ 22
-> while §6.6 pins `engines.node >= 20`) with the Capawesome Google Sign-In
-> plugin (Credential Manager API). Cross-reference rules added/amended in
-> §0.4, §1.1, §5.9, §8.1, §13.1, §16.1, §17.10, §18.1, §20.2. New CI gates
-> extend `scripts/check-doctrine.mjs` (capacitor.config.json shape, no
-> keystore in tracked tree, `.gitignore` covers `android/build` outputs)
-> and `tests/doctrine-static.test.js`. Per §18.7 this commit ships rules +
+> Capacitor with the Capawesome Google Sign-In plugin (Credential Manager
+> API). Cross-reference rules added/amended in §0.4, §1.1, §5.9, §8.1,
+> §13.1, §16.1, §17.10, §18.1, §20.2. New CI gates extend
+> `scripts/check-doctrine.mjs` (capacitor.config.json shape, no keystore
+> in tracked tree, `.gitignore` covers `android/build` outputs) and
+> `tests/doctrine-static.test.js`. Per §18.7 this commit ships rules +
 > gates only; the Capacitor scaffold (capacitor.config.json, the prepare
 > script per §22.15, the android/ skeleton, the §5.9 SW-register guard)
 > lands in a follow-up `feat(apk):` commit.
@@ -139,7 +149,7 @@ an amendment commit that updates this file in the same PR.
 | 6.3 | Fonts are self-hosted under `vendor/fonts/`. Cross-origin font fetches (Google Fonts, CDN font services) are forbidden — they would require relaxing `font-src` and `connect-src`.                                                                                        |
 | 6.4 | The dev-only `npm` dependency tree must pass `npm audit --audit-level=high` (configured via `.npmrc`). A high or critical finding fails the CI build.                                                                                                                     |
 | 6.5 | `npm ci` is the canonical installation command. `npm install` is permitted only for adding/updating a dependency, and the resulting `package-lock.json` change must be committed alongside.                                                                               |
-| 6.6 | `package.json` must keep `"type": "module"`, `"engines": { "node": ">=20" }`, and pin all devDependencies (no `^`/`~` ranges in production-relevant tooling). The `save-exact=true` `.npmrc` flag enforces this for new additions.                                        |
+| 6.6 | (v1.3.0 amendment) `package.json` must keep `"type": "module"`, `"engines": { "node": ">=22" }`, and pin all devDependencies (no `^`/`~` ranges in production-relevant tooling). The `save-exact=true` `.npmrc` flag enforces this for new additions. The `.nvmrc` file at repo root must read `22` and is the source of truth for `actions/setup-node@v4` (`node-version-file: .nvmrc`). |
 | 6.7 | The Husky hooks under `.husky/` must remain local-only scripts. They must not be skippable (`--no-verify` is not authorized) and they must run `npm run lint` and `npm run format` before allowing a commit.                                                              |
 | 6.8 | The Docker base image is pinned by digest, not by tag (see `Dockerfile`). Updating the base image requires re-pinning the digest.                                                                                                                                         |
 
@@ -321,7 +331,7 @@ an amendment commit that updates this file in the same PR.
 
 | #     | Rule                                                                                                                                                                                                                                                                                                                                                            |
 | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 22.1  | The repository ships an additional alternative deployment as an **Android APK** generated via **Capacitor 7.x**. The PWA on GitHub Pages remains the source of truth (§0.4); the APK packages a snapshot of the same web bundle for offline native installation. iOS, Mac Catalyst, Electron, and other Capacitor targets are **out of scope** under this doctrine. |
+| 22.1  | (v1.3.0 amendment) The repository ships an additional alternative deployment as an **Android APK** generated via **Capacitor 8.x**. The PWA on GitHub Pages remains the source of truth (§0.4); the APK packages a snapshot of the same web bundle for offline native installation. iOS, Mac Catalyst, Electron, and other Capacitor targets are **out of scope** under this doctrine. |
 | 22.2  | The Capacitor config (`capacitor.config.json` at repo root) must declare: `appId: "com.knowledgeaio.app"`, `appName: "Knowledge AIO"`, `webDir: "www"`, and `server: { hostname: "localhost", androidScheme: "https" }`. The `https://localhost` runtime origin maps `'self'` in the §3.4 CSP to the WebView host so every CSP directive applies unchanged. The `www/` directory is a build artifact populated by §22.15's prepare script — it is gitignored, never committed, never edited by hand. |
 | 22.3  | The APK ships every static asset listed in `sw.js#STATIC_ASSETS` plus `index.html`, copied into `www/` by §22.15's prepare script. It excludes `sw.js`, `404.html`, the `?p=…` SPA-redirect logic, and every dev-only file already excluded by §2.4. The CI gate in §17.10 asserts `www/`'s contents (when populated) match this contract.                       |
 | 22.4  | Service Worker registration must be skipped when running inside Capacitor (see §5.9). In a native WebView the assets are local-bundled, the SW provides no offline benefit, and its absence eliminates a cache-poisoning vector that has no force-purge runbook on an installed APK.                                                                            |
