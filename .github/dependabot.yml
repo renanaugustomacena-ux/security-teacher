@@ -1,0 +1,31 @@
+# Dependabot scheduled dependency updates.
+# See SECURITY.md and project_security_audit memory.
+# Note: this file schedules version-bump PRs. CVE-patch PRs require the
+# separate "Dependabot security updates" toggle in repo Settings → Security.
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '06:00'
+      timezone: 'Europe/Rome'
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'chore(deps)'
+    labels:
+      - 'dependencies'
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '06:00'
+      timezone: 'Europe/Rome'
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: 'chore(actions)'
+    labels:
+      - 'dependencies'
+      - 'github-actions'
