@@ -28,6 +28,8 @@ import { sfxService } from '../services/SfxService.js';
 import { practiceHUD } from '../PracticeHUD.js';
 import { nearMiss } from '../utils/StringDistance.js';
 import { TopicVelocita } from './TopicVelocita.js';
+import { delegate } from '../utils/EventDispatch.js';
+import { escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
 
 // Feedback cadence — collapse the answer→next gap on correct, give
 // reading time on incorrect. Aligns with .feedback-progress-fill CSS.
@@ -304,6 +306,28 @@ export class TopicPracticeManager {
 
   init() {
     window.topicPracticeManager = this;
+    this._bindDelegation();
+  }
+
+  // Doctrine §11.7: data-action delegation — replaces inline onclicks
+  // that the v1.4.0 CSP rejects.
+  _bindDelegation() {
+    const map = {
+      'topicPractice.checkAnswer': (ds, _e, el) => this.checkAnswer(el, ds.opt, ds.correct),
+      'topicPractice.checkWriting': (ds) => this.checkWritingAnswer(ds.correct),
+      'topicPractice.checkSentence': (ds) => this.checkSentenceAnswer(ds.correct),
+      'topicPractice.checkCommand': (ds) => this.checkCommandAnswer(ds.correct),
+      'topicPractice.checkCodeChallenge': (ds) => this.checkCodeChallenge(ds.correct),
+      'topicPractice.showCodelabHint': () => this.showCodelabHint(),
+      'topicPractice.checkCodelab': () => this.checkCodelabAnswer(),
+      'topicPractice.showTechTalkHint': () => this.showTechTalkHint(),
+      'topicPractice.handleTechTalk': () => this.handleTechTalkMessage(),
+      'topicPractice.checkChain': (ds) => this.checkChainAnswer(ds.opt, ds.correct),
+      'topicPractice.checkChainTyping': (ds) => this.checkChainTypingAnswer(ds.correct),
+      'topicPractice.checkChainCommand': (ds) => this.checkChainCommandAnswer(ds.correct),
+    };
+    const container = document.getElementById('topic-practice-content');
+    if (container) delegate(container, map);
   }
 
   /**
@@ -833,7 +857,7 @@ export class TopicPracticeManager {
                 .map(
                   (opt) => `
                 <button class="btn btn-secondary option-btn"
-                  onclick="topicPracticeManager.checkAnswer(this, '${this.escapeAttr(opt)}', '${this.escapeAttr(q.italian)}')">
+                  data-action="topicPractice.checkAnswer" data-opt="${escapeForAttr(opt)}" data-correct="${escapeForAttr(q.italian)}">
                   ${this.escapeHtml(opt)}
                 </button>
               `
@@ -854,7 +878,7 @@ export class TopicPracticeManager {
             ${q.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(q.pronunciation)}</div>` : ''}
             <input type="text" id="topic-writing-input" class="practice-input" placeholder="Scrivi qui..." autofocus>
             <button class="btn btn-primary" style="margin-top: 1rem;"
-              onclick="topicPracticeManager.checkWritingAnswer('${this.escapeAttr(q.italian)}')">
+              data-action="topicPractice.checkWriting" data-correct="${escapeForAttr(q.italian)}">
               Invia / Submit
             </button>
           </div>
@@ -878,7 +902,7 @@ export class TopicPracticeManager {
             <p class="translation-hint">Traduzione: ${this.escapeHtml(parts[1] || '')}</p>
             <input type="text" id="topic-writing-input" class="practice-input" placeholder="Parola mancante..." autofocus>
             <button class="btn btn-primary" style="margin-top: 1rem;"
-              onclick="topicPracticeManager.checkWritingAnswer('${this.escapeAttr(missingWord)}')">
+              data-action="topicPractice.checkWriting" data-correct="${escapeForAttr(missingWord)}">
               Invia / Submit
             </button>
           </div>
@@ -899,7 +923,7 @@ export class TopicPracticeManager {
             </div>
             <input type="text" id="topic-writing-input" class="practice-input" placeholder="Scrivi la frase completa..." autofocus>
             <button class="btn btn-primary" style="margin-top: 1rem;"
-              onclick="topicPracticeManager.checkSentenceAnswer('${this.escapeAttr(sentence)}')">
+              data-action="topicPractice.checkSentence" data-correct="${escapeForAttr(sentence)}">
               Invia / Submit
             </button>
           </div>
@@ -915,7 +939,7 @@ export class TopicPracticeManager {
             <p class="translation-hint">${this.escapeHtml(q.english)}</p>
             <input type="text" id="topic-writing-input" class="practice-input practice-input-mono" placeholder="$ " autofocus>
             <button class="btn btn-primary" style="margin-top: 1rem;"
-              onclick="topicPracticeManager.checkCommandAnswer('${this.escapeAttr(q.command)}')">
+              data-action="topicPractice.checkCommand" data-correct="${escapeForAttr(q.command)}">
               Invia / Submit
             </button>
           </div>
@@ -936,7 +960,7 @@ export class TopicPracticeManager {
                 .map(
                   (opt) => `
                 <button class="btn btn-secondary option-btn"
-                  onclick="topicPracticeManager.checkAnswer(this, '${this.escapeAttr(opt)}', '${this.escapeAttr(q.english)}')">
+                  data-action="topicPractice.checkAnswer" data-opt="${escapeForAttr(opt)}" data-correct="${escapeForAttr(q.english)}">
                   ${this.escapeHtml(opt)}
                 </button>
               `
@@ -963,7 +987,7 @@ export class TopicPracticeManager {
                 .map(
                   (ctx) => `
                 <button class="btn btn-secondary option-btn"
-                  onclick="topicPracticeManager.checkAnswer(this, '${this.escapeAttr(ctx)}', '${this.escapeAttr(correctContext)}')">
+                  data-action="topicPractice.checkAnswer" data-opt="${escapeForAttr(ctx)}" data-correct="${escapeForAttr(correctContext)}">
                   ${this.escapeHtml(this.formatContextLabel(ctx))}
                 </button>
               `
@@ -1001,7 +1025,7 @@ export class TopicPracticeManager {
                 .map(
                   (opt) => `
                 <button class="btn btn-secondary option-btn"
-                  onclick="topicPracticeManager.checkAnswer(this, '${this.escapeAttr(opt)}', '${this.escapeAttr(correctStatement)}')">
+                  data-action="topicPractice.checkAnswer" data-opt="${escapeForAttr(opt)}" data-correct="${escapeForAttr(correctStatement)}">
                   ${this.escapeHtml(opt)}
                 </button>
               `
@@ -1042,7 +1066,7 @@ export class TopicPracticeManager {
                 .map(
                   (opt) => `
                 <button class="btn btn-secondary option-btn"
-                  onclick="topicPracticeManager.checkAnswer(this, '${this.escapeAttr(opt)}', '${this.escapeAttr(targetWord)}')">
+                  data-action="topicPractice.checkAnswer" data-opt="${escapeForAttr(opt)}" data-correct="${escapeForAttr(targetWord)}">
                   ${this.escapeHtml(opt)}
                 </button>
               `
@@ -1066,7 +1090,7 @@ export class TopicPracticeManager {
             ${note ? `<p class="translation-hint">${this.escapeHtml(note)}</p>` : ''}
             <input type="text" id="topic-writing-input" class="practice-input practice-input-mono" placeholder="Scrivi il codice/comando..." autofocus>
             <button class="btn btn-primary" style="margin-top: 1rem;"
-              onclick="topicPracticeManager.checkCodeChallenge('${this.escapeAttr(correctCode)}')">
+              data-action="topicPractice.checkCodeChallenge" data-correct="${escapeForAttr(correctCode)}">
               Invia / Submit
             </button>
           </div>
@@ -2014,10 +2038,10 @@ export class TopicPracticeManager {
         <div class="codelab-description">${this.escapeHtml(descriptionText)}</div>
         <pre class="codelab-code">${linesHtml}</pre>
         <div class="codelab-actions">
-          <button class="btn btn-hint" onclick="topicPracticeManager.showCodelabHint()">
+          <button class="btn btn-hint" data-action="topicPractice.showCodelabHint">
             Suggerimento / Hint
           </button>
-          <button class="btn btn-primary" onclick="topicPracticeManager.checkCodelabAnswer()">
+          <button class="btn btn-primary" data-action="topicPractice.checkCodelab">
             Invia / Submit
           </button>
         </div>
@@ -2185,7 +2209,7 @@ export class TopicPracticeManager {
           currentTurn && currentTurn.hintText
             ? `
           <div class="techtalk-hint-bar">
-            <button class="btn btn-hint" onclick="topicPracticeManager.showTechTalkHint()">
+            <button class="btn btn-hint" data-action="topicPractice.showTechTalkHint">
               Suggerimento / Hint
             </button>
             <span class="techtalk-hint-text" id="techtalk-hint" style="display:none">
@@ -2197,7 +2221,7 @@ export class TopicPracticeManager {
         }
         <div class="chat-input-area">
           <input type="text" class="chat-input" id="techtalk-input" placeholder="Type your response in English..." autofocus>
-          <button class="btn btn-primary" onclick="topicPracticeManager.handleTechTalkMessage()">
+          <button class="btn btn-primary" data-action="topicPractice.handleTechTalk">
             Send
           </button>
         </div>
@@ -2374,7 +2398,7 @@ export class TopicPracticeManager {
               .map(
                 (opt) => `
               <button class="btn btn-secondary option-btn"
-                onclick="topicPracticeManager.checkChainAnswer('${this.escapeAttr(opt)}', '${this.escapeAttr(item.italian)}')">
+                data-action="topicPractice.checkChain" data-opt="${escapeForAttr(opt)}" data-correct="${escapeForAttr(item.italian)}">
                 ${this.escapeHtml(opt)}
               </button>
             `
@@ -2390,7 +2414,7 @@ export class TopicPracticeManager {
           <div class="exercise-target">${this.escapeHtml(item.italian)}</div>
           <input type="text" id="chain-typing-input" class="practice-input" placeholder="Type the English term..." autofocus>
           <button class="btn btn-primary" style="margin-top: 1rem;"
-            onclick="topicPracticeManager.checkChainTypingAnswer('${this.escapeAttr(item.english)}')">
+            data-action="topicPractice.checkChainTyping" data-correct="${escapeForAttr(item.english)}">
             Invia / Submit
           </button>
         `;
@@ -2402,7 +2426,7 @@ export class TopicPracticeManager {
           <div class="exercise-target">${this.escapeHtml(item.italian || item.english)}</div>
           <input type="text" id="chain-typing-input" class="practice-input practice-input-mono" placeholder="$ " autofocus>
           <button class="btn btn-primary" style="margin-top: 1rem;"
-            onclick="topicPracticeManager.checkChainCommandAnswer('${this.escapeAttr(item.command)}')">
+            data-action="topicPractice.checkChainCommand" data-correct="${escapeForAttr(item.command)}">
             Invia / Submit
           </button>
         `;

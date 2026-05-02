@@ -12,6 +12,7 @@
 
 import { ttsService } from '../services/TTSService.js';
 import { getTopicMeta } from './registry.js';
+import { registerAction } from '../utils/EventDispatch.js';
 
 // ─── CONTEXT INTRO MAPS ──────────────────────────
 
@@ -467,6 +468,17 @@ export class TopicLessonEngine {
     this.groupStars = [];
     this.totalCorrect = 0;
     this.container = null;
+    // Doctrine §11.7: register lessonEngine.* actions on the body-level
+    // dispatcher. Latest-instance wins, which matches the previous
+    // window._topicLessonEngine pattern.
+    registerAction('lessonEngine.advanceToGroup', (ds) => this.advanceToGroup(Number(ds.group)));
+    registerAction('lessonEngine.advanceToQuickCheck', (ds) =>
+      this.advanceToQuickCheck(Number(ds.group))
+    );
+    registerAction('lessonEngine.checkAnswer', (ds) =>
+      this.handleQuickCheckAnswer(Number(ds.q), Number(ds.i))
+    );
+    registerAction('lessonEngine.playAudio', (ds) => this.playQuickCheckAudio(Number(ds.q)));
   }
 
   /**
@@ -547,7 +559,7 @@ export class TopicLessonEngine {
 
           <p class="lesson-intro-text">${this.escapeHtml(introText)}</p>
 
-          <button class="btn lesson-start-btn" onclick="window._topicLessonEngine.advanceToGroup(0)">
+          <button class="btn lesson-start-btn" data-action="lessonEngine.advanceToGroup" data-group="0">
             Inizia / Start Learning
           </button>
         </div>
@@ -645,7 +657,7 @@ export class TopicLessonEngine {
             ${itemCardsHtml}
           </div>
           <div class="context-group-actions">
-            <button class="btn lesson-start-btn" onclick="window._topicLessonEngine.advanceToQuickCheck(${groupIndex})">
+            <button class="btn lesson-start-btn" data-action="lessonEngine.advanceToQuickCheck" data-group="${groupIndex}">
               Continua / Continue
             </button>
           </div>
@@ -709,7 +721,7 @@ export class TopicLessonEngine {
               .map(
                 (opt, i) => `
               <button class="quick-check-option" data-index="${i}" data-correct="${opt === question.correct ? 'true' : 'false'}"
-                      onclick="window._topicLessonEngine.handleQuickCheckAnswer(${qIndex}, ${i})">
+                      data-action="lessonEngine.checkAnswer" data-q="${qIndex}" data-i="${i}">
                 ${this.escapeHtml(opt)}
               </button>
             `
@@ -728,7 +740,7 @@ export class TopicLessonEngine {
           </div>
           <div class="quick-check-question">
             Ascolta e scegli la parola pronunciata:
-            <button class="btn btn-secondary quick-check-listen-btn" onclick="window._topicLessonEngine.playQuickCheckAudio(${qIndex})">
+            <button class="btn btn-secondary quick-check-listen-btn" data-action="lessonEngine.playAudio" data-q="${qIndex}">
               Ascolta / Listen
             </button>
           </div>
@@ -737,7 +749,7 @@ export class TopicLessonEngine {
               .map(
                 (opt, i) => `
               <button class="quick-check-option" data-index="${i}" data-correct="${opt === question.correct ? 'true' : 'false'}"
-                      onclick="window._topicLessonEngine.handleQuickCheckAnswer(${qIndex}, ${i})">
+                      data-action="lessonEngine.checkAnswer" data-q="${qIndex}" data-i="${i}">
                 ${this.escapeHtml(opt)}
               </button>
             `
@@ -964,10 +976,10 @@ export class TopicLessonEngine {
           ${reviewHtml}
 
           <div class="summary-actions">
-            <button class="btn btn-secondary" onclick="topicManager.openLevel('${topicId}', ${levelNum})">
+            <button class="btn btn-secondary" data-action="topic.openLevel" data-topic-id="${topicId}" data-level="${levelNum}">
               Torna al Livello / Back to Level
             </button>
-            <button class="btn lesson-start-btn" onclick="topicManager.showModeSelector('${topicId}', ${levelNum})">
+            <button class="btn lesson-start-btn" data-action="topic.modeSelect" data-topic-id="${topicId}" data-level="${levelNum}">
               Pratica Ora / Practice Now
             </button>
           </div>

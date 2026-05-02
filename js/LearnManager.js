@@ -8,6 +8,7 @@
 
 import { getLessonsByLevel, getLesson } from './lessons.js';
 import { ttsService } from './services/TTSService.js';
+import { registerAction } from './utils/EventDispatch.js';
 
 export class LearnManager {
   constructor(progressManager) {
@@ -20,7 +21,11 @@ export class LearnManager {
   }
 
   init() {
-    // Initial setup if needed
+    // Doctrine §11.7: register data-action handlers (replaces inline
+    // onclicks rejected by the v1.4.0 CSP).
+    registerAction('learn.prev', () => this.prevItem());
+    registerAction('learn.next', () => this.nextItem());
+    registerAction('learn.close', () => this.closeLessonView());
   }
 
   /**
@@ -54,7 +59,7 @@ export class LearnManager {
                 <div style="font-size: 3rem; margin-bottom: 1rem;"></div>
                 <h3>Completa il Livello ${level - 1} prima!</h3>
                 <p>Complete Level ${level - 1} first!</p>
-                <button class="btn btn-secondary" style="margin-top: 1.5rem;" onclick="learnManager.closeLessonView()">
+                <button class="btn btn-secondary" style="margin-top: 1.5rem;" data-action="learn.close">
                     ← Indietro / Back
                 </button>
             </div>
@@ -112,8 +117,8 @@ export class LearnManager {
     container.innerHTML = `
             ${html}
             <div class="lesson-nav-buttons">
-                <button class="btn btn-secondary" onclick="learnManager.prevItem()" ${this.currentItemIndex === 0 ? 'disabled' : ''}>← Prec. / Prev</button>
-                <button class="btn btn-primary" onclick="learnManager.nextItem()">${this.currentItemIndex === totalItems - 1 ? 'Completa / Complete' : 'Prossimo / Next →'}</button>
+                <button class="btn btn-secondary" data-action="learn.prev" ${this.currentItemIndex === 0 ? 'disabled' : ''}>← Prec. / Prev</button>
+                <button class="btn btn-primary" data-action="learn.next">${this.currentItemIndex === totalItems - 1 ? 'Completa / Complete' : 'Prossimo / Next →'}</button>
             </div>
         `;
 
