@@ -7934,3 +7934,105 @@ button:not(.tts-btn):not(.mobile-menu-btn) {
   text-decoration: underline wavy rgba(255, 150, 80, 0.6);
   text-underline-offset: 3px;
 }
+
+/* ─── Login Wall (Doctrine §8.4.1) ────────────────────────────────────────
+ * Full-screen sign-in gate. When body.login-wall-active is set, every
+ * other top-level child of body is hidden — the wall is the only thing
+ * visible until authService.isSignedIn() flips true.
+ */
+body.login-wall-active > *:not(.login-wall):not(#matrix-morph) {
+  display: none !important;
+}
+
+.login-wall {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(8, 10, 14, 0.92);
+  backdrop-filter: blur(8px);
+  animation: login-wall-fade 240ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-wall {
+    animation: none;
+  }
+}
+
+@keyframes login-wall-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.login-wall-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 2.5rem 2rem;
+  background: rgba(18, 22, 30, 0.96);
+  border: 1px solid rgba(0, 255, 65, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.login-wall-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-primary, #00ff41);
+  letter-spacing: 0.01em;
+}
+
+.login-wall-title-en {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.login-wall-subtitle {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.login-wall-subtitle-en {
+  margin: 0 0 1.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
+  font-style: italic;
+}
+
+.login-wall-button {
+  display: flex;
+  justify-content: center;
+  min-height: 44px;
+  margin: 0.5rem auto 0;
+}
+
+.login-wall-fallback {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 180, 100, 0.85);
+  font-size: 0.85rem;
+}
+
+.login-wall-fallback p {
+  margin: 0 0 0.75rem;
+}
+
+.login-wall-retry {
+  width: auto;
+}
