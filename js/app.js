@@ -33,6 +33,7 @@ import { techTalkScenarios } from './topics/data/techtalk-scenarios.js';
 import { authService } from './services/AuthService.js';
 import { ProfileManager } from './ProfileManager.js';
 import { bindGlobalDispatch, registerAction } from './utils/EventDispatch.js';
+import { renderLoginWall, dismissLoginWall } from './views/login-wall.js';
 
 class App {
   constructor() {
@@ -193,8 +194,20 @@ class App {
 
     // 6. Initial Render
     this._render();
-    this._renderHome();
-    this._renderStreakCalendar();
+
+    // Doctrine §8.4.1: gate everything behind the login wall when signed-out.
+    // Visual effects (morphBackground, cursor particles) still run — they
+    // are passive and provide ambient feedback during the sign-in flow.
+    if (!authService.isSignedIn()) {
+      renderLoginWall(document.body, () => {
+        dismissLoginWall();
+        this._renderHome();
+        this._renderStreakCalendar();
+      });
+    } else {
+      this._renderHome();
+      this._renderStreakCalendar();
+    }
 
     // 7. Visual Effects (non-critical - fail silently)
     this._initVisualEffects();

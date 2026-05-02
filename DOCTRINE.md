@@ -1,9 +1,29 @@
 # DOCTRINE.md — Knowledge AIO Engineering Doctrine
 
-> **Version:** 1.4.0 — 2026-05-01
+> **Version:** 1.5.0 — 2026-05-02
 > **Status:** Ratified, in force.
 > **Scope:** All code, configuration, deployment artifacts, and operational
 > procedures within this repository.
+
+> **v1.5.0 amendments** (2026-05-02, ratified concurrent with implementation
+> per §21.4 — the rule and the artefact ship together because the bug it
+> closes was discovered in production by the maintainer): §8.4 inverted.
+> Where the prior rule said *"sign-in must never block the rest of the app…
+> the app continues anonymously"*, the new rule mandates a hard login wall:
+> on boot, if `authService.isSignedIn() === false`, the app **MUST** render
+> a full-screen sign-in gate (`js/views/login-wall.js`) and **MUST NOT**
+> mount the topbar, sidebar, or any section. The dashboard never renders to
+> an unauthenticated session, online or offline. Reason: the GH Pages
+> deployment is a public URL, and shipping unauthenticated UI to anyone who
+> clicks the link conflicts with the intent of the §8 identity layer (the
+> maintainer's words: *"first thing they gotta do is login otherwise not
+> even the logo they will get to see"*). AAA scope for v1.0.0 is
+> **authentication only** — anyone with a Google account can sign in;
+> allowlist authorisation is intentionally deferred. New artefacts:
+> `js/views/login-wall.js`, `body.login-wall-active` rules in
+> `css/style.css`, the gate in `js/app.js` step 6. Service-worker behaviour
+> is unchanged: cached JS still runs `authService.init()` on cold load, so
+> offline visits hit the wall too unless a session exists in IndexedDB.
 
 > **v1.4.0 amendments** (2026-05-01, post-execution per §21.4 footnote
 > rule): §3.4 relaxed to allow Google Identity Services to function. Two
@@ -190,7 +210,7 @@ an amendment commit that updates this file in the same PR.
 | 8.1 | (v1.2.0 amendment) The identity provider is Google. On the **web** (PWA) the runtime adapter is **Google Identity Services** loaded from `accounts.google.com`. On **Android** (APK) the runtime adapter is the **Capawesome Capacitor Google Sign-In plugin** using the Credential Manager API (see §22.6). Both adapters produce a Google ID token whose `aud` claim is the **Web** OAuth Client ID — Capawesome explicitly requires the Web Client ID on all platforms. `AuthService.js` runs the same §8.2 validation pipeline regardless of source. The Web Client ID is the only Client ID in app code; it is a public value injected via `<meta name="google-client-id">`. An empty value disables sign-in gracefully — the app must keep working anonymously. |
 | 8.2 | Client-side JWT validation must check, at minimum: `iss === "https://accounts.google.com"`, `aud === <our client id>`, `iat ≤ now + 60s`, `exp > now`, `nbf ≤ now + 60s` (when present). A 24-hour session cap is enforced regardless of `exp`.                |
 | 8.3 | We do not run server-side JWKS verification because there is no server. We rely on the GIS popup's TLS-pinned token issuance. Treat the validated identity as "low-trust": never use it as the sole gate for any client-stored secret.                         |
-| 8.4 | Sign-in must never block the rest of the app. If GIS fails to load (CSP block, network error, Client ID empty), the sign-in section degrades to a hidden state and the app continues anonymously.                                                              |
+| 8.4 | (v1.5.0 amendment — was: "sign-in must never block the rest of the app … continues anonymously") On boot, if `authService.isSignedIn() === false`, the app MUST render a full-screen login wall (`js/views/login-wall.js`) and MUST NOT mount the topbar, sidebar, or any section. The wall shows only the platform-appropriate sign-in button (GIS web / Capawesome native via `authService.renderButton()`), bilingual IT/EN copy, and a retry control if the auth provider fails to initialise within 5 seconds. The dashboard MUST NEVER render to an unauthenticated session, online or offline. AAA scope for v1.0.0 is authentication only; allowlist authorisation is deferred (future §8.7). |
 | 8.5 | The signed-in identity must not be sent to any third-party endpoint. The `connect-src` allowlist intentionally excludes ad/analytics origins.                                                                                                                  |
 | 8.6 | Rotating the Google Client ID is the only sanctioned way to forcibly re-auth every user (see SECURITY.md Runbook 1).                                                                                                                                           |
 

@@ -54,6 +54,7 @@ const STATIC_ASSETS = [
   './js/utils/DateUtils.js',
   './js/utils/EventDispatch.js',
   './js/utils/SanitizeHtml.js',
+  './js/views/login-wall.js',
   './js/utils/StringDistance.js',
   './js/topics/TopicManager.js',
   './js/topics/TopicBossChallenge.js',
