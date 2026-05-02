@@ -15,12 +15,24 @@
 
 <p align="center">
   <a href="https://renanaugustomacena-ux.github.io/security-teacher/"><strong>Provalo subito</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/renanaugustomacena-ux/security-teacher/releases/latest/download/knowledge-aio-latest.apk"><strong>Scarica APK ↓</strong></a>
 </p>
 
 <p align="center">
   <a href="README.md">English</a> &middot;
   <a href="README.pt-br.md">Portugues Brasileiro</a>
 </p>
+
+---
+
+### Installa su Android
+
+1. Dal telefono, tocca **[Scarica APK](https://github.com/renanaugustomacena-ux/security-teacher/releases/latest/download/knowledge-aio-latest.apk)**.
+2. Se richiesto, autorizza il browser o il file manager a **Installare app sconosciute** (Android lo richiede per i pacchetti scaricati al di fuori del Play Store).
+3. Tocca l'APK scaricato e conferma l'installazione. Apri *Knowledge AIO* ed effettua l'accesso con Google.
+
+L'APK viene compilato e firmato da GitHub Actions (`apk.yml`) sui dispatch con tag; la keystore vive solo negli encrypted secrets. La Doctrine §22 governa la pipeline di build e firma.
 
 ---
 

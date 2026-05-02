@@ -34,7 +34,7 @@ on:
         default: ''
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-apk:
@@ -85,7 +85,12 @@ jobs:
             exit 1
           fi
           mkdir -p "$RUNNER_TEMP/keystore"
-          echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/keystore/release.keystore"
+          # Strip whitespace before decoding — secrets re-uploaded with a
+          # default `base64` (line-wrapped at 76 cols) would otherwise fail
+          # with `base64: invalid input`. See run 25238316365 for the
+          # reference incident; the tolerant decode lets future re-uploads
+          # of KEYSTORE_BASE64 work whether or not `base64 -w0` was used.
+          printf '%s' "$KEYSTORE_BASE64" | tr -d '\n\r ' | base64 -d > "$RUNNER_TEMP/keystore/release.keystore"
           chmod 600 "$RUNNER_TEMP/keystore/release.keystore"
           echo "KEYSTORE_PATH=$RUNNER_TEMP/keystore/release.keystore" >> "$GITHUB_ENV"
 
@@ -122,6 +127,29 @@ jobs:
           name: knowledge-aio-${{ github.sha }}${{ github.event.inputs.release_tag && format('-{0}', github.event.inputs.release_tag) || '' }}
           path: android/app/build/outputs/apk/release/app-release.apk
           retention-days: 30
+
+      - name: Stage release assets (tagged dispatch only)
+        if: ${{ github.event.inputs.release_tag != '' }}
+        run: |
+          set -euo pipefail
+          SRC="android/app/build/outputs/apk/release/app-release.apk"
+          mkdir -p "$RUNNER_TEMP/release"
+          TAG="${{ github.event.inputs.release_tag }}"
+          cp "$SRC" "$RUNNER_TEMP/release/knowledge-aio-${TAG}.apk"
+          cp "$SRC" "$RUNNER_TEMP/release/knowledge-aio-latest.apk"
+          ls -la "$RUNNER_TEMP/release/"
+
+      - name: Publish to GitHub Release (tagged dispatch only)
+        if: ${{ github.event.inputs.release_tag != '' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.release_tag }}
+          name: Knowledge AIO ${{ github.event.inputs.release_tag }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          files: |
+            ${{ runner.temp }}/release/knowledge-aio-${{ github.event.inputs.release_tag }}.apk
+            ${{ runner.temp }}/release/knowledge-aio-latest.apk
 
       - name: Wipe keystore from runner
         if: always()
