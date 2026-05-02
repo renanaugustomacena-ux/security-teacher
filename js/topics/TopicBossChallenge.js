@@ -10,6 +10,8 @@
  */
 
 import { ttsService } from '../services/TTSService.js';
+import { registerAction } from '../utils/EventDispatch.js';
+import { escapeAttr as escapeForAttr } from '../utils/SanitizeHtml.js';
 
 const BOSS_TOTAL_QUESTIONS = 15;
 const BOSS_TIME_LIMIT = 300; // 5 minutes in seconds
@@ -158,7 +160,11 @@ export class TopicBossChallenge {
   }
 
   init() {
-    // Reserved for future initialization
+    // Doctrine §11.7: register data-action handlers via the body-level
+    // dispatcher (replaces inline onclicks rejected by the v1.4.0 CSP).
+    registerAction('boss.checkOption', (ds) => this.checkOptionAnswer(ds.opt, ds.correct));
+    registerAction('boss.checkWriting', (ds) => this.checkWritingAnswer(ds.correct));
+    registerAction('boss.checkCommand', (ds) => this.checkCommandAnswer(ds.correct));
   }
 
   // ─── DATA LOADING ──────────────────────────────
@@ -454,7 +460,7 @@ export class TopicBossChallenge {
                 .map(
                   (opt) => `
                 <button class="btn btn-secondary option-btn"
-                  onclick="topicBossChallenge.checkOptionAnswer('${this.escapeAttr(opt)}', '${this.escapeAttr(q.italian)}')">
+                  data-action="boss.checkOption" data-opt="${escapeForAttr(opt)}" data-correct="${escapeForAttr(q.italian)}">
                   ${this.escapeHtml(opt)}
                 </button>
               `
@@ -474,7 +480,7 @@ export class TopicBossChallenge {
             ${q.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(q.pronunciation)}</div>` : ''}
             <input type="text" id="boss-writing-input" class="practice-input" placeholder="Scrivi qui..." autofocus>
             <button class="btn btn-primary boss-submit-btn" style="margin-top: 1rem;"
-              onclick="topicBossChallenge.checkWritingAnswer('${this.escapeAttr(q.italian)}')">
+              data-action="boss.checkWriting" data-correct="${escapeForAttr(q.italian)}">
               Invia / Submit
             </button>
           </div>
@@ -497,7 +503,7 @@ export class TopicBossChallenge {
             <p class="translation-hint">Traduzione: ${this.escapeHtml(parts[1] || '')}</p>
             <input type="text" id="boss-writing-input" class="practice-input" placeholder="Parola mancante..." autofocus>
             <button class="btn btn-primary boss-submit-btn" style="margin-top: 1rem;"
-              onclick="topicBossChallenge.checkWritingAnswer('${this.escapeAttr(missingWord)}')">
+              data-action="boss.checkWriting" data-correct="${escapeForAttr(missingWord)}">
               Invia / Submit
             </button>
           </div>
@@ -519,7 +525,7 @@ export class TopicBossChallenge {
                 .map(
                   (ctx) => `
                 <button class="btn btn-secondary option-btn"
-                  onclick="topicBossChallenge.checkOptionAnswer('${this.escapeAttr(ctx)}', '${this.escapeAttr(correctContext)}')">
+                  data-action="boss.checkOption" data-opt="${escapeForAttr(ctx)}" data-correct="${escapeForAttr(correctContext)}">
                   ${this.escapeHtml(this.formatContextLabel(ctx))}
                 </button>
               `
@@ -538,7 +544,7 @@ export class TopicBossChallenge {
             <p class="translation-hint">${this.escapeHtml(q.english)}</p>
             <input type="text" id="boss-writing-input" class="practice-input practice-input-mono" placeholder="$ " autofocus>
             <button class="btn btn-primary boss-submit-btn" style="margin-top: 1rem;"
-              onclick="topicBossChallenge.checkCommandAnswer('${this.escapeAttr(q.command)}')">
+              data-action="boss.checkCommand" data-correct="${escapeForAttr(q.command)}">
               Invia / Submit
             </button>
           </div>

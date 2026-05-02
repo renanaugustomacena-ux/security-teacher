@@ -32,6 +32,7 @@ import { CursorParticles } from './CursorParticles.js';
 import { techTalkScenarios } from './topics/data/techtalk-scenarios.js';
 import { authService } from './services/AuthService.js';
 import { ProfileManager } from './ProfileManager.js';
+import { bindGlobalDispatch, registerAction } from './utils/EventDispatch.js';
 
 class App {
   constructor() {
@@ -188,6 +189,7 @@ class App {
     // 5. DOM
     this._setupEventListeners();
     this._bindLegacyGlobals();
+    this._bindDataActions();
 
     // 6. Initial Render
     this._render();
@@ -281,6 +283,24 @@ class App {
 
     document.removeEventListener('visibilitychange', this._onVisibilityChange);
     window.removeEventListener('beforeunload', this._onBeforeUnload);
+  }
+
+  // -- Data-Action Dispatcher (Doctrine §11.7) --
+  // Body-level delegated click handler. Replaces inline onclick attributes
+  // that the v1.4.0 CSP `require-trusted-types-for 'script'` directive
+  // silently rejects. Each manager registers its own actions; this method
+  // wires the legacy globals previously triggered from index.html.
+  _bindDataActions() {
+    registerAction('lesson.start', (ds) => window.startLesson?.(Number(ds.level)));
+    registerAction('lesson.close', () => window.closeLessonView?.());
+    registerAction('song.close', () => window.closeSong?.());
+    registerAction('practice.start', (ds) => window.startPractice?.(ds.mode));
+    registerAction('practice.startPronunciation', () => window.startPronunciation?.());
+    registerAction('practice.startSrsReview', () => window.startSRSReview?.());
+    registerAction('practice.close', () => window.closePractice?.());
+    registerAction('topic.backToDetail', () => this.topicManager?.backToDetail());
+    registerAction('topicPractice.close', () => this.topicPracticeManager?.closePractice());
+    bindGlobalDispatch();
   }
 
   // -- Legacy Globals (for inline onclick handlers in index.html) --

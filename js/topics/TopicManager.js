@@ -14,6 +14,7 @@
 import { topicsRegistry, getTopicMeta } from './registry.js';
 import { ttsService } from '../services/TTSService.js';
 import { TopicLessonEngine } from './TopicLessonEngine.js';
+import { delegate } from '../utils/EventDispatch.js';
 
 export class TopicManager {
   constructor(progressManager) {
@@ -27,7 +28,33 @@ export class TopicManager {
   }
 
   init() {
+    this._bindDelegation();
     this.renderTopicsHub();
+  }
+
+  // ─── EVENT DELEGATION (Doctrine §11.7) ─────────
+  // Replaces inline onclick attributes that the v1.4.0 CSP rejects.
+  _bindDelegation() {
+    const map = {
+      'topic.open': (ds) => this.openTopic(ds.topicId),
+      'topic.backToHub': () => this.backToHub(),
+      'topic.continue': (ds) => this.continueLearning(ds.topicId),
+      'topic.toggleLevel': (ds) => this.toggleLevelExpansion(ds.topicId, Number(ds.level)),
+      'topic.showLocked': (ds) => this.showLocked(Number(ds.level)),
+      'topic.boss': (ds) => this.startBossChallenge(ds.topicId, Number(ds.level)),
+      'topic.practice': (ds) => this.practiceLevel(ds.topicId, Number(ds.level)),
+      'topic.openLesson': (ds) => this.openLesson(ds.topicId, Number(ds.level), ds.lessonId),
+      'topic.openLevel': (ds) => this.openLevel(ds.topicId, Number(ds.level)),
+      'topic.prevItem': () => this.prevItem(),
+      'topic.nextItem': () => this.nextItem(),
+      'topic.modeSelect': (ds) => this.showModeSelector(ds.topicId, Number(ds.level)),
+      'topic.startMode': (ds) => this.startModeFromSelector(ds.mode, ds.topicId, Number(ds.level)),
+    };
+    const ids = ['topics-hub', 'topic-detail', 'topic-lesson-content'];
+    for (const id of ids) {
+      const el = document.getElementById(id);
+      if (el) delegate(el, map);
+    }
   }
 
   // ─── DATA LOADING ──────────────────────────────
@@ -136,7 +163,7 @@ export class TopicManager {
                 ? `<span class="topic-card-stars">\u2605 ${starInfo.earned}</span>`
                 : '';
             return `
-            <div class="topic-card" style="--topic-color: ${topic.color}" onclick="topicManager.openTopic('${topic.id}')">
+            <div class="topic-card" style="--topic-color: ${topic.color}" data-action="topic.open" data-topic-id="${topic.id}">
               <div class="topic-card-icon">${topic.icon}</div>
               <h3 class="topic-card-title">${topic.title}</h3>
               <p class="topic-card-title-it">${topic.titleIt}</p>
@@ -208,7 +235,7 @@ export class TopicManager {
     const learnedWords = stats ? stats.wordsLearned || 0 : 0;
 
     detail.innerHTML = `
-      <button class="btn btn-secondary topic-back-btn" onclick="topicManager.backToHub()">
+      <button class="btn btn-secondary topic-back-btn" data-action="topic.backToHub">
         \u2190 Indietro / Back
       </button>
 
@@ -230,7 +257,7 @@ export class TopicManager {
             <text x="18" y="20" text-anchor="middle" class="progress-ring-text">${percent}%</text>
           </svg>
         </div>
-        <button class="btn btn-primary" onclick="topicManager.continueLearning('${meta.id}')">
+        <button class="btn btn-primary" data-action="topic.continue" data-topic-id="${meta.id}">
           Continua / Continue \u2192
         </button>
       </div>
@@ -260,7 +287,8 @@ export class TopicManager {
 
             return `
             <div class="level-node ${stateClass}" data-level="${lvlNum}"
-                 onclick="${isUnlocked ? `topicManager.toggleLevelExpansion('${meta.id}', ${lvlNum})` : `topicManager.showLocked(${lvlNum})`}">
+                 data-action="${isUnlocked ? 'topic.toggleLevel' : 'topic.showLocked'}"
+                 data-topic-id="${meta.id}">
               ${!isFirst ? '<div class="level-node-connector"></div>' : ''}
               <div class="level-node-circle">${lvlNum}</div>
               <div class="level-node-info">
@@ -327,7 +355,10 @@ export class TopicManager {
             const stars = this.getLessonStars(topicId, levelNum, lesson.id);
             return `
             <div class="lesson-card-mini ${isCompleted ? 'completed' : ''}"
-                 onclick="event.stopPropagation(); topicManager.openLesson('${topicId}', ${levelNum}, '${lesson.id}')">
+                 data-action="topic.openLesson"
+                 data-topic-id="${topicId}"
+                 data-level="${levelNum}"
+                 data-lesson-id="${lesson.id}">
               <div class="lesson-card-mini-num">${idx + 1}</div>
               <div class="lesson-card-mini-info">
                 <div class="lesson-card-mini-title">${lesson.title}</div>
@@ -341,13 +372,13 @@ export class TopicManager {
         ${
           allLessonsComplete
             ? `
-          <button class="boss-btn" onclick="event.stopPropagation(); topicManager.startBossChallenge('${topicId}', ${levelNum})">
+          <button class="boss-btn" data-action="topic.boss" data-topic-id="${topicId}" data-level="${levelNum}">
             \u{1F451} Sfida Boss / Boss Challenge
           </button>
         `
             : ''
         }
-        <button class="btn btn-primary level-practice-btn" onclick="event.stopPropagation(); topicManager.practiceLevel('${topicId}', ${levelNum})">
+        <button class="btn btn-primary level-practice-btn" data-action="topic.practice" data-topic-id="${topicId}" data-level="${levelNum}">
           \u270D\uFE0F Pratica Livello / Practice Level
         </button>
       </div>
@@ -519,8 +550,8 @@ export class TopicManager {
         ${enrichmentHtml}
       </div>
       <div class="lesson-nav-buttons">
-        <button class="btn btn-secondary" onclick="topicManager.prevItem()" ${this.currentItemIndex === 0 ? 'disabled' : ''}>\u2190 Prec. / Prev</button>
-        <button class="btn btn-primary" onclick="topicManager.nextItem()">${this.currentItemIndex === total - 1 ? 'Completa / Complete' : 'Prossimo / Next \u2192'}</button>
+        <button class="btn btn-secondary" data-action="topic.prevItem" ${this.currentItemIndex === 0 ? 'disabled' : ''}>\u2190 Prec. / Prev</button>
+        <button class="btn btn-primary" data-action="topic.nextItem">${this.currentItemIndex === total - 1 ? 'Completa / Complete' : 'Prossimo / Next \u2192'}</button>
       </div>
     `;
 
@@ -581,10 +612,10 @@ export class TopicManager {
         <p class="completion-detail">${this.escapeHtml(this.currentLesson.title)}</p>
         <p class="completion-words">+${wordCount} termini tecnici imparati / technical terms learned</p>
         <div class="completion-actions">
-          <button class="btn btn-secondary" onclick="topicManager.openLevel('${topicId}', ${levelNum})">
+          <button class="btn btn-secondary" data-action="topic.openLevel" data-topic-id="${topicId}" data-level="${levelNum}">
             \u2190 Torna al Livello / Back to Level
           </button>
-          <button class="btn btn-primary" onclick="topicManager.showModeSelector('${topicId}', ${levelNum})">
+          <button class="btn btn-primary" data-action="topic.modeSelect" data-topic-id="${topicId}" data-level="${levelNum}">
             \u270D\uFE0F Pratica Ora / Practice Now
           </button>
         </div>
@@ -752,7 +783,7 @@ export class TopicManager {
               (mode, idx) => `
             <div class="mode-card ${mode.enabled ? '' : 'mode-disabled'}"
                  style="animation-delay: ${idx * 60}ms"
-                 ${mode.enabled ? `onclick="topicManager.startModeFromSelector('${mode.id}', '${topicId}', ${levelNum})"` : ''}>
+                 ${mode.enabled ? `data-action="topic.startMode" data-mode="${mode.id}" data-topic-id="${topicId}" data-level="${levelNum}"` : ''}>
               <div class="mode-card-icon">${mode.icon}</div>
               <div class="mode-card-name">${mode.name}</div>
               <div class="mode-card-desc">${mode.desc}</div>

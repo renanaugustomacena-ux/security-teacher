@@ -14,6 +14,7 @@
 import { lessonsDatabase } from './lessons.js';
 import { songsDatabase } from './songs.js';
 import { ttsService } from './services/TTSService.js';
+import { registerAction } from './utils/EventDispatch.js';
 
 export class PronunciationManager {
   constructor(progressManager) {
@@ -25,6 +26,11 @@ export class PronunciationManager {
     this.currentPhraseIndex = 0;
     this.sessionScores = [];
     this.isRecording = false;
+  }
+
+  _bindDataActions() {
+    registerAction('pronunciation.start', () => this.startSession());
+    registerAction('pronunciation.close', () => this.closeSession());
   }
 
   /**
@@ -41,6 +47,7 @@ export class PronunciationManager {
     }
 
     window.pronunciationManager = this;
+    this._bindDataActions();
   }
 
   /**
@@ -166,7 +173,7 @@ export class PronunciationManager {
 
     container.innerHTML = `
       <div class="practice-header">
-        <button class="btn btn-secondary" onclick="pronunciationManager.closeSession()">← Indietro / Back</button>
+        <button class="btn btn-secondary" data-action="pronunciation.close">← Indietro / Back</button>
         <span class="practice-progress">${num}/${total}</span>
       </div>
       <div class="practice-progress-bar">
@@ -441,8 +448,8 @@ export class PronunciationManager {
           </div>
         </div>
         <div class="summary-actions">
-          <button class="btn btn-primary" onclick="pronunciationManager.startSession()">Riprova / Try Again</button>
-          <button class="btn btn-secondary" onclick="pronunciationManager.closeSession()">Chiudi / Close</button>
+          <button class="btn btn-primary" data-action="pronunciation.start">Riprova / Try Again</button>
+          <button class="btn btn-secondary" data-action="pronunciation.close">Chiudi / Close</button>
         </div>
       </div>
     `;

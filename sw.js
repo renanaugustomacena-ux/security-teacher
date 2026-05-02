@@ -52,6 +52,7 @@ const STATIC_ASSETS = [
   './js/services/TTSService.js',
   './js/store/index.js',
   './js/utils/DateUtils.js',
+  './js/utils/EventDispatch.js',
   './js/utils/SanitizeHtml.js',
   './js/utils/StringDistance.js',
   './js/topics/TopicManager.js',
