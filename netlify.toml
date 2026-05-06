@@ -1,0 +1,59 @@
+# Netlify alternative deployment (Doctrine §0.4, §2.10).
+#
+# GitHub Pages is the primary deploy (§0.4). This file keeps Netlify functional
+# as a secondary target, in lockstep with nginx.conf and the index.html /
+# 404.html <meta> CSP (§3.7). Any change to security headers MUST update all
+# three: nginx.conf, the meta tags, and this file.
+#
+# Build: mirrors .github/workflows/deploy.yml — same test + CSP + doctrine
+# gates that gate the GH Pages deploy. No bundler / no transpiler (§1.1).
+
+[build]
+  publish = "."
+  command = "npm ci && npm test && npm run csp:check && npm run doctrine:check"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Transport + framing
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-Permitted-Cross-Domain-Policies = "none"
+    Referrer-Policy = "no-referrer"
+    # Cross-origin isolation. 'same-origin-allow-popups' keeps the GIS sign-in
+    # popup flow working while still severing window.opener cross-origin
+    # references. COEP is intentionally omitted — it breaks the GIS iframe and
+    # Google avatar loads.
+    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
+    Cross-Origin-Resource-Policy = "same-origin"
+    Origin-Agent-Cluster = "?1"
+    # Lock down browser APIs the app does not use, plus FLoC / Topics opt-out.
+    Permissions-Policy = "camera=(), microphone=(self), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), fullscreen=(self), interest-cohort=(), browsing-topics=()"
+    # CSP — byte-equivalent (modulo whitespace) to nginx.conf and the
+    # index.html / 404.html <meta http-equiv> tags. The script-src hashes are
+    # auto-managed by `scripts/compute-csp.mjs`; run `npm run csp:patch` after
+    # editing any inline <script>, then update this string in lockstep.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-Met0FLFVqROiq/jDyYtlhInoFysISzTul6sZrG/Vad0=' 'sha256-LAVnyM+nnYUXVKmPo70yPXlvAtf8h6t3qW/DXk3VqQE=' 'sha256-3+t/C0/mVNeyj1HHcoWQz/l47Lc7k+L1yvMwJ17y3C4=' 'sha256-wpvRoaKeKXsDCS5rzL0Ht4+Id11mPmA2leR9nskamWg=' https://accounts.google.com; style-src 'self' 'unsafe-inline' https://accounts.google.com; img-src 'self' blob: data: https://lh3.googleusercontent.com https://*.googleusercontent.com; media-src 'self' blob: data:; font-src 'self'; connect-src 'self' https://lrclib.net https://api.mymemory.translated.net https://accounts.google.com https://oauth2.googleapis.com; frame-src https://accounts.google.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types default goog#html"
+
+# Service worker and PWA manifest must never be cached, otherwise security
+# patches and SW updates cannot reach installed users.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# SPA fallback — every unknown path returns index.html with 200 so the
+# client-side router (and the §2.6/§2.7 path-restoration shim) can resolve it.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
