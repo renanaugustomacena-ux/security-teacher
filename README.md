@@ -31,7 +31,7 @@
 
 1. On your phone, tap **[Download APK](https://github.com/renanaugustomacena-ux/security-teacher/releases/latest/download/knowledge-aio-latest.apk)**.
 2. When prompted, allow your browser or file manager to **Install unknown apps** (Android requires this for sideloaded packages).
-3. Tap the downloaded `.apk` and confirm install. Open *Knowledge AIO* and sign in with Google.
+3. Tap the downloaded `.apk` and confirm install. Open _Knowledge AIO_ and sign in with Google.
 
 The APK is built and signed by GitHub Actions (`apk.yml`) on tagged dispatches; the keystore lives only in encrypted secrets. Doctrine §22 governs the build and signing pipeline.
 

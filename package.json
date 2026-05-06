@@ -12,6 +12,7 @@
     "csp:patch": "node scripts/compute-csp.mjs --patch",
     "csp:print": "node scripts/compute-csp.mjs --print",
     "doctrine:check": "node scripts/check-doctrine.mjs",
+    "audit:translations": "node scripts/audit-identity-translations.mjs",
     "apk:prepare": "node scripts/cap-prepare.mjs",
     "apk:sync": "npm run apk:prepare && cap sync android",
     "prepare": "husky install"
