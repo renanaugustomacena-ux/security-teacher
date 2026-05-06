@@ -424,9 +424,9 @@ export class TopicBossChallenge {
 
     ttsService.attachTTSListeners(container);
 
-    // Auto-play TTS for listening mode
+    // Auto-play TTS for listening mode (gated by user preference)
     if (q._bossType === 'listening' && ttsService.isSupported && q.english) {
-      ttsService.speak(q.english);
+      ttsService.speakAuto(q.english);
     }
 
     // Focus input and bind Enter key

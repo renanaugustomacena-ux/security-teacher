@@ -114,4 +114,35 @@ describe('TTSService', () => {
     expect(svc._escapeAttr(null)).toBe('');
     expect(svc._escapeAttr(undefined)).toBe('');
   });
+
+  it('isAutoPlayEnabled defaults to true', () => {
+    const svc = new TTSService();
+    expect(svc.isAutoPlayEnabled).toBe(true);
+  });
+
+  it('setAutoPlayEnabled flips the gate and coerces to boolean', () => {
+    const svc = new TTSService();
+    svc.setAutoPlayEnabled(false);
+    expect(svc.isAutoPlayEnabled).toBe(false);
+    svc.setAutoPlayEnabled(1);
+    expect(svc.isAutoPlayEnabled).toBe(true);
+    svc.setAutoPlayEnabled(0);
+    expect(svc.isAutoPlayEnabled).toBe(false);
+  });
+
+  it('speakAuto() invokes the synth when auto-play is enabled', () => {
+    const svc = new TTSService();
+    svc.speakAuto('hello');
+    expect(window.speechSynthesis.speak).toHaveBeenCalled();
+  });
+
+  it('speakAuto() is a no-op when auto-play is disabled, but speak() still works', () => {
+    const svc = new TTSService();
+    svc.setAutoPlayEnabled(false);
+    svc.speakAuto('hello');
+    expect(window.speechSynthesis.speak).not.toHaveBeenCalled();
+    // Manual click-to-speak path bypasses the gate by design.
+    svc.speak('hello');
+    expect(window.speechSynthesis.speak).toHaveBeenCalled();
+  });
 });

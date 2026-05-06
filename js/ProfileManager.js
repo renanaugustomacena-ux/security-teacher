@@ -4,6 +4,8 @@
  * and a compact 30-day study-time bar pulled from StreakCalendarManager.
  */
 import { authService } from './services/AuthService.js';
+import { storageService } from './services/StorageService.js';
+import { ttsService } from './services/TTSService.js';
 import { escapeHtml, escapeAttr, sanitizeUrl } from './utils/SanitizeHtml.js';
 
 const PROFILE_CONTAINER_ID = 'profile-content';
@@ -36,11 +38,32 @@ export class ProfileManager {
     this._onDocClick = (e) => {
       const target = e.target;
       if (!(target instanceof HTMLElement)) return;
+      const settingsBtn = target.closest?.('#settings-tts-autoplay');
+      if (settingsBtn instanceof HTMLElement) {
+        this.handleTtsAutoPlayToggle(settingsBtn);
+        return;
+      }
       if (target.id === 'profile-signout-btn') {
         this.handleSignOut();
       }
     };
     document.addEventListener('click', this._onDocClick);
+  }
+
+  async handleTtsAutoPlayToggle(btn) {
+    const next = !ttsService.isAutoPlayEnabled;
+    ttsService.setAutoPlayEnabled(next);
+    btn.dataset.state = next ? 'on' : 'off';
+    btn.textContent = next ? 'ON' : 'OFF';
+    btn.setAttribute('aria-pressed', String(next));
+    try {
+      const existing = (await storageService.load('settings', 'preferences')) || {
+        key: 'preferences',
+      };
+      await storageService.save('settings', { ...existing, key: 'preferences', ttsAutoPlay: next });
+    } catch (err) {
+      console.warn('[prefs] save failed:', err);
+    }
   }
 
   destroy() {
@@ -130,6 +153,36 @@ export class ProfileManager {
       <div class="profile-card">
         <h3>Ultimi 30 giorni</h3>
         <div id="profile-study-bar" class="profile-study-bar"></div>
+      </div>
+
+      ${this._renderSettingsCard()}
+    `;
+  }
+
+  _renderSettingsCard() {
+    const ttsOn = ttsService.isAutoPlayEnabled;
+    const stateAttr = ttsOn ? 'on' : 'off';
+    const stateLabel = ttsOn ? 'ON' : 'OFF';
+    return `
+      <div class="profile-card profile-settings">
+        <h3>Impostazioni / Settings</h3>
+        <div class="settings-row">
+          <div class="settings-row-label">
+            <span class="settings-row-title">🔊 Audio automatico / Auto voice-over</span>
+            <span class="settings-row-help">
+              Riproduce la pronuncia all'apertura degli esercizi di ascolto.
+              I pulsanti 🔊 manuali funzionano sempre.<br/>
+              Plays pronunciation on listening-exercise load. Manual 🔊 buttons always work.
+            </span>
+          </div>
+          <button
+            id="settings-tts-autoplay"
+            class="btn btn-mode settings-toggle"
+            data-state="${escapeAttr(stateAttr)}"
+            aria-pressed="${ttsOn ? 'true' : 'false'}"
+            type="button"
+          >${stateLabel}</button>
+        </div>
       </div>
     `;
   }

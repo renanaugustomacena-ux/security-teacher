@@ -7547,6 +7547,51 @@ button:not(.tts-btn):not(.mobile-menu-btn) {
   opacity: 0.75;
 }
 
+.profile-settings .settings-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.profile-settings .settings-row-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1 1 240px;
+  min-width: 0;
+}
+
+.profile-settings .settings-row-title {
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.profile-settings .settings-row-help {
+  color: #9ba3ad;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.settings-toggle {
+  min-width: 64px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.settings-toggle[data-state='on'] {
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.settings-toggle[data-state='off'] {
+  background: rgba(255, 255, 255, 0.05);
+  color: #9ba3ad;
+}
+
 /* ---------- Practice HUD: streak sweep, counter pulse, near-miss ribbon ---------- */
 #practice-content,
 #topic-practice-content {

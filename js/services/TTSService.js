@@ -13,6 +13,7 @@ export class TTSService {
     this._voices = [];
     this._rate = 0.85;
     this._currentUtterance = null;
+    this._autoPlayEnabled = true;
 
     if (this._synth) {
       this._loadVoices();
@@ -26,6 +27,30 @@ export class TTSService {
    */
   get isSupported() {
     return !!this._synth;
+  }
+
+  /**
+   * Whether voice-over should fire automatically on listening exercises.
+   * Defaults to true; toggled by the user via the Profile → Settings card
+   * and persisted in IndexedDB. Manual speaker buttons are NOT gated by
+   * this flag — only the auto-play call sites that go through speakAuto().
+   */
+  get isAutoPlayEnabled() {
+    return this._autoPlayEnabled;
+  }
+
+  setAutoPlayEnabled(enabled) {
+    this._autoPlayEnabled = !!enabled;
+  }
+
+  /**
+   * Auto-play TTS — gated by the user's auto-play preference. Use this at
+   * call sites that fire automatically on exercise load (listening modes).
+   * Manual click-to-speak should keep using speak() directly.
+   */
+  speakAuto(text, lang = 'en-US') {
+    if (!this._autoPlayEnabled) return;
+    this.speak(text, lang);
   }
 
   /**

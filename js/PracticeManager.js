@@ -461,9 +461,9 @@ export class PracticeManager {
       container.innerHTML = html;
       ttsService.attachTTSListeners(container);
 
-      // Auto-play TTS for listening mode
+      // Auto-play TTS for listening mode (gated by user preference)
       if (this.currentMode === 'listening' && ttsService.isSupported) {
-        ttsService.speak(question.english);
+        ttsService.speakAuto(question.english);
       }
 
       options.forEach((opt, idx) => {

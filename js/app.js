@@ -31,6 +31,7 @@ import { MorphBackground } from './MorphBackground.js';
 import { CursorParticles } from './CursorParticles.js';
 import { techTalkScenarios } from './topics/data/techtalk-scenarios.js';
 import { authService } from './services/AuthService.js';
+import { ttsService } from './services/TTSService.js';
 import { ProfileManager } from './ProfileManager.js';
 import { bindGlobalDispatch, registerAction } from './utils/EventDispatch.js';
 import { renderLoginWall, dismissLoginWall } from './views/login-wall.js';
@@ -92,6 +93,18 @@ class App {
       await storageService.init();
     } catch (err) {
       console.error('StorageService failed:', err);
+    }
+
+    // 1a. Hydrate device-local preferences (TTS auto-play, etc.). Runs before
+    // any manager that might trigger auto-play so the gate is correct on the
+    // first listening exercise of the session.
+    try {
+      const prefs = await storageService.load('settings', 'preferences');
+      if (prefs && prefs.ttsAutoPlay === false) {
+        ttsService.setAutoPlayEnabled(false);
+      }
+    } catch (err) {
+      console.warn('[prefs] hydrate failed:', err);
     }
 
     // 1b. Auth (runs before ProgressManager so loadProgress picks the right namespace)

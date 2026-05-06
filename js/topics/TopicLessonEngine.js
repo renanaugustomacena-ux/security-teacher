@@ -778,7 +778,7 @@ export class TopicLessonEngine {
   playQuickCheckAudio(qIndex) {
     const question = this._currentQuestions[qIndex];
     if (question && question.audioTerm) {
-      ttsService.speak(question.audioTerm);
+      ttsService.speakAuto(question.audioTerm);
     }
   }
 

@@ -1125,11 +1125,11 @@ export class TopicPracticeManager {
     container.innerHTML = html;
     ttsService.attachTTSListeners(container);
 
-    // Auto-play TTS for listening mode
+    // Auto-play TTS for listening mode (gated by user preference)
     if (this.currentMode === 'listening' && ttsService.isSupported) {
       const currentQ = this.questions[this.currentQuestionIndex];
       if (currentQ && currentQ.english) {
-        ttsService.speak(currentQ.english);
+        ttsService.speakAuto(currentQ.english);
       }
     }
 
