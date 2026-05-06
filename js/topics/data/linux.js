@@ -53,7 +53,7 @@ export default {
             },
             {
               english: 'Prompt',
-              italian: 'Prompt',
+              italian: 'prompt / riga di richiesta comandi',
               pronunciation: '/prɒmpt/',
               phonetic: 'PROMPT',
               example: 'The prompt waits for your input.',
@@ -63,7 +63,7 @@ export default {
             },
             {
               english: 'Console',
-              italian: 'Console',
+              italian: 'consolle / terminale di sistema',
               pronunciation: '/ˈkɒnsoʊl/',
               phonetic: 'KON-soul',
               example: 'Switch to a virtual console with Ctrl+Alt+F1.',
@@ -72,7 +72,7 @@ export default {
             },
             {
               english: 'Bash',
-              italian: 'Bash',
+              italian: 'Bash (shell GNU/Bourne Again)',
               pronunciation: '/bæʃ/',
               phonetic: 'BASC',
               example: 'Bash scripts automate repetitive tasks.',
@@ -259,7 +259,7 @@ export default {
             },
             {
               english: 'Sudo',
-              italian: 'Sudo',
+              italian: 'sudo / esegui come superutente',
               pronunciation: '/ˈsuːduː/',
               phonetic: 'SUU-duu',
               example: 'Use sudo to run commands with administrative privileges.',
@@ -347,7 +347,7 @@ export default {
             },
             {
               english: 'Flag',
-              italian: 'Flag',
+              italian: 'flag / opzione del comando',
               pronunciation: '/flæɡ/',
               phonetic: 'FLAG',
               example: 'Flags usually start with a hyphen (-).',
@@ -837,7 +837,7 @@ export default {
             },
             {
               english: 'Nano',
-              italian: 'Nano',
+              italian: 'Nano (editor di testo)',
               pronunciation: '/ˈnænoʊ/',
               phonetic: 'NA-nou',
               example: 'Nano is a simple text editor for beginners.',
@@ -1007,7 +1007,7 @@ export default {
             },
             {
               english: 'Awk',
-              italian: 'Awk',
+              italian: 'Awk (linguaggio elaborazione testo)',
               pronunciation: '/ɔːk/',
               phonetic: 'OK',
               example: 'awk is powerful for text processing and scanning.',
@@ -1156,7 +1156,7 @@ export default {
             },
             {
               english: 'Zip',
-              italian: 'Zip',
+              italian: 'Zip (formato archivio compresso)',
               pronunciation: '/zɪp/',
               phonetic: 'ZIP',
               example: 'zip is a common compression format.',
@@ -1174,7 +1174,7 @@ export default {
             },
             {
               english: 'Gzip',
-              italian: 'Gzip',
+              italian: 'Gzip (compressore GNU)',
               pronunciation: '/ˈdʒiːzɪp/',
               phonetic: 'GII-zip',
               example: 'gzip provides fast compression.',
@@ -1573,7 +1573,7 @@ export default {
             },
             {
               english: 'Finger',
-              italian: 'Finger',
+              italian: 'finger (info utente di rete)',
               pronunciation: '/ˈfɪnɡər/',
               phonetic: 'FING-gher',
               example: 'finger displays user information (legacy).',
@@ -1653,7 +1653,7 @@ export default {
             },
             {
               english: 'Gateway',
-              italian: 'Gateway',
+              italian: 'gateway / instradatore di rete',
               pronunciation: '/ˈɡeɪtweɪ/',
               phonetic: 'GEIT-uei',
               example: 'The gateway connects your LAN to the internet.',
@@ -1707,7 +1707,7 @@ export default {
             },
             {
               english: 'Firewall',
-              italian: 'Firewall',
+              italian: 'firewall / barriera di rete',
               pronunciation: '/ˈfaɪərwɔːl/',
               phonetic: 'FAIER-uol',
               example: 'The firewall blocks unauthorized access.',
@@ -1795,7 +1795,7 @@ export default {
             },
             {
               english: 'Localhost',
-              italian: 'Localhost',
+              italian: 'localhost / indirizzo locale',
               pronunciation: '/ˈloʊkəlhoʊst/',
               phonetic: 'LOU-kal-houst',
               example: 'Localhost refers to this computer (127.0.0.1).',
@@ -1856,7 +1856,7 @@ export default {
             },
             {
               english: 'Passphrase',
-              italian: 'Passphrase',
+              italian: 'passphrase / frase segreta',
               pronunciation: '/ˈpæsfreɪz/',
               phonetic: 'PAS-freiz',
               example: 'Protect your key with a passphrase.',
@@ -1892,7 +1892,7 @@ export default {
             },
             {
               english: 'Host',
-              italian: 'Host',
+              italian: 'host / macchina di rete',
               pronunciation: '/hoʊst/',
               phonetic: 'HOUST',
               example: 'Specify the remote host address.',
@@ -1901,7 +1901,7 @@ export default {
             },
             {
               english: 'Tunnel',
-              italian: 'Tunnel',
+              italian: 'tunnel / canale cifrato',
               pronunciation: '/ˈtʌnl/',
               phonetic: 'TA-nel',
               example: 'Create an SSH tunnel for security.',
@@ -1917,7 +1917,7 @@ export default {
           items: [
             {
               english: 'Ping',
-              italian: 'Ping',
+              italian: 'ping / verifica raggiungibilità',
               pronunciation: '/pɪŋ/',
               phonetic: 'PING',
               example: 'Ping Google to check internet access.',
@@ -1989,7 +1989,7 @@ export default {
             },
             {
               english: 'Timeout',
-              italian: 'Timeout',
+              italian: 'timeout / tempo scaduto',
               pronunciation: '/ˈtaɪmaʊt/',
               phonetic: 'TAIM-aut',
               example: 'Request timed out.',
@@ -1998,7 +1998,7 @@ export default {
             },
             {
               english: 'Socket',
-              italian: 'Socket',
+              italian: 'socket / punto di connessione',
               pronunciation: '/ˈsɒkɪt/',
               phonetic: 'SO-kit',
               example: 'ss command inspects sockets.',
@@ -2106,7 +2106,7 @@ export default {
             },
             {
               english: 'Zombie',
-              italian: 'Zombie',
+              italian: 'processo zombie / non chiuso',
               pronunciation: '/ˈzɒmbi/',
               phonetic: 'ZOM-bi',
               example: 'A zombie process is dead but listed.',
@@ -2203,7 +2203,7 @@ export default {
             },
             {
               english: 'Log',
-              italian: 'Log',
+              italian: 'log / registro eventi',
               pronunciation: '/lɒɡ/',
               phonetic: 'LOG',
               example: 'journalctl shows service logs.',
@@ -2228,7 +2228,7 @@ export default {
             },
             {
               english: 'Cron',
-              italian: 'Cron',
+              italian: 'cron (pianificatore di processi)',
               pronunciation: '/krɒn/',
               phonetic: 'KRON',
               example: 'Cron executes tasks at specific times.',
@@ -2468,7 +2468,7 @@ export default {
             },
             {
               english: 'USB',
-              italian: 'USB',
+              italian: 'USB (Universal Serial Bus)',
               pronunciation: '/ˌjuːesˈbiː/',
               phonetic: 'iu-es-BII',
               example: 'lsusb lists USB devices.',
@@ -2477,7 +2477,7 @@ export default {
             },
             {
               english: 'Hardware',
-              italian: 'Hardware',
+              italian: 'hardware / componenti fisici',
               pronunciation: '/ˈhɑːrdweər/',
               phonetic: 'HARD-uer',
               example: 'lshw lists hardware configuration.',
@@ -2556,7 +2556,7 @@ export default {
             },
             {
               english: 'Volume',
-              italian: 'Volume',
+              italian: 'volume / unità di archiviazione',
               pronunciation: '/ˈvɒljuːm/',
               phonetic: 'VOL-ium',
               example: 'Logical Volume Manager (LVM).',
@@ -2601,7 +2601,7 @@ export default {
             },
             {
               english: 'Inode',
-              italian: 'Inode',
+              italian: 'inode / nodo indice del filesystem',
               pronunciation: '/ˈaɪnoʊd/',
               phonetic: 'AI-noud',
               example: 'Running out of inodes prevents file creation.',
@@ -2636,7 +2636,7 @@ export default {
             },
             {
               english: 'Zero',
-              italian: 'Zero',
+              italian: '/dev/zero (sorgente di byte zero)',
               pronunciation: '/ˈzɪəroʊ/',
               phonetic: 'ZIE-rou',
               example: '/dev/zero produces zero bytes.',
@@ -2663,7 +2663,7 @@ export default {
             },
             {
               english: 'Driver',
-              italian: 'Driver',
+              italian: 'driver / pilota di periferica',
               pronunciation: '/ˈdraɪvər/',
               phonetic: 'DRAI-ver',
               example: 'Drivers override hardware differences.',
@@ -2690,7 +2690,7 @@ export default {
             },
             {
               english: 'Input',
-              italian: 'Input',
+              italian: 'dispositivo di input',
               pronunciation: '/ˈɪnpʊt/',
               phonetic: 'IN-put',
               example: '/dev/input captures mouse/keyboard.',
@@ -2715,7 +2715,7 @@ export default {
           items: [
             {
               english: 'Kernel',
-              italian: 'Kernel',
+              italian: 'kernel / nucleo del sistema',
               pronunciation: '/ˈkɜːrnl/',
               phonetic: 'KER-nel',
               example: 'The kernel is the core of the OS.',
@@ -2760,7 +2760,7 @@ export default {
             },
             {
               english: 'Log',
-              italian: 'Log',
+              italian: 'log / registro eventi',
               pronunciation: '/lɒɡ/',
               phonetic: 'LOG',
               example: 'dmesg shows kernel logs.',
@@ -2831,7 +2831,7 @@ export default {
             },
             {
               english: 'Script',
-              italian: 'Script',
+              italian: 'script / file di comandi',
               pronunciation: '/skrɪpt/',
               phonetic: 'SKRIPT',
               example: 'Make the script executable with +x.',
@@ -2849,7 +2849,7 @@ export default {
             },
             {
               english: 'Echo',
-              italian: 'Echo',
+              italian: 'echo / stampa messaggio',
               pronunciation: '/ˈekoʊ/',
               phonetic: 'E-kou',
               example: 'echo displays variable content.',
@@ -2937,7 +2937,7 @@ export default {
             },
             {
               english: 'PATH',
-              italian: 'PATH',
+              italian: 'PATH / percorso di ricerca comandi',
               pronunciation: '/pæθ/',
               phonetic: 'PATH',
               example: 'PATH lists directories with executables.',
@@ -2982,7 +2982,7 @@ export default {
             },
             {
               english: 'Alias',
-              italian: 'Alias',
+              italian: 'alias / scorciatoia di comando',
               pronunciation: '/ˈeɪliəs/',
               phonetic: 'EI-li-as',
               example: "alias ll='ls -l'.",
@@ -3265,7 +3265,7 @@ export default {
             },
             {
               english: 'Escape',
-              italian: 'Escape',
+              italian: 'carattere di escape / di fuga',
               pronunciation: '/ɪˈskeɪp/',
               phonetic: 'i-SKEIP',
               example: 'Use backslash to escape special characters.',
@@ -3292,7 +3292,7 @@ export default {
             },
             {
               english: 'Grep',
-              italian: 'Grep',
+              italian: 'grep / cerca per pattern',
               pronunciation: '/ɡrep/',
               phonetic: 'GREP',
               example: 'grep uses regex to search files.',
@@ -3326,7 +3326,7 @@ export default {
             },
             {
               english: 'ASCII',
-              italian: 'ASCII',
+              italian: 'ASCII (codifica caratteri base)',
               pronunciation: '/ˈæski/',
               phonetic: 'AS-ki',
               example: 'ASCII supports English characters.',
@@ -3335,7 +3335,7 @@ export default {
             },
             {
               english: 'UTF-8',
-              italian: 'UTF-8',
+              italian: 'UTF-8 (codifica universale Unicode)',
               pronunciation: '/juː tiː ef eɪt/',
               phonetic: 'iu-tii-ef-eit',
               example: 'UTF-8 supports all languages.',
@@ -3362,7 +3362,7 @@ export default {
             },
             {
               english: 'Base64',
-              italian: 'Base64',
+              italian: 'Base64 (codifica binario in testo)',
               pronunciation: '/beɪs sɪksti fɔːr/',
               phonetic: 'beis-sik-sti-for',
               example: 'Base64 encodes binary data as text.',
@@ -3441,7 +3441,7 @@ export default {
             },
             {
               english: 'Xargs',
-              italian: 'Xargs',
+              italian: 'xargs / passa argomenti da stdin',
               pronunciation: '/eks ɑːrɡs/',
               phonetic: 'eks-args',
               example: 'xargs builds commands from input.',
@@ -3520,7 +3520,7 @@ export default {
             },
             {
               english: 'Syslog',
-              italian: 'Syslog',
+              italian: 'syslog / log di sistema',
               pronunciation: '/ˈsɪslɒɡ/',
               phonetic: 'SIS-log',
               example: 'Syslog is the standard logging protocol.',
@@ -3556,7 +3556,7 @@ export default {
             },
             {
               english: 'Kernel',
-              italian: 'Kernel',
+              italian: 'kernel / nucleo del sistema',
               pronunciation: '/ˈkɜːrnl/',
               phonetic: 'KER-nel',
               example: '/var/log/kern.log contains kernel messages.',
@@ -3574,7 +3574,7 @@ export default {
             },
             {
               english: 'Debug',
-              italian: 'Debug',
+              italian: 'debug / messaggi di diagnostica',
               pronunciation: '/diːˈbʌɡ/',
               phonetic: 'dii-BAG',
               example: 'Enable debug logging for more detail.',
@@ -3583,7 +3583,7 @@ export default {
             },
             {
               english: 'Audit',
-              italian: 'Audit',
+              italian: 'audit / registro di controllo',
               pronunciation: '/ˈɔːdɪt/',
               phonetic: 'O-dit',
               example: 'Audit logs track security events.',
@@ -3618,7 +3618,7 @@ export default {
           items: [
             {
               english: 'Firewall',
-              italian: 'Firewall',
+              italian: 'firewall / barriera di rete',
               pronunciation: '/ˈfaɪərwɔːl/',
               phonetic: 'FAIER-uol',
               example: 'Configure the firewall to block traffic.',
@@ -3742,7 +3742,7 @@ export default {
             },
             {
               english: 'Hash',
-              italian: 'Hash',
+              italian: 'hash / impronta digitale',
               pronunciation: '/hæʃ/',
               phonetic: 'HASC',
               example: 'A hash verifies data integrity.',
@@ -3875,7 +3875,7 @@ export default {
             },
             {
               english: 'Audit',
-              italian: 'Audit',
+              italian: 'audit / registro di controllo',
               pronunciation: '/ˈɔːdɪt/',
               phonetic: 'O-dit',
               example: 'Audit user actions.',
@@ -3918,7 +3918,7 @@ export default {
             },
             {
               english: 'Logwatch',
-              italian: 'Logwatch',
+              italian: 'Logwatch (analizzatore di log)',
               pronunciation: '/lɒɡ wɒtʃ/',
               phonetic: 'LOG uoc',
               example: 'Analyze logs with Logwatch.',
@@ -3936,7 +3936,7 @@ export default {
             },
             {
               english: 'Fail2Ban',
-              italian: 'Fail2Ban',
+              italian: 'Fail2Ban (blocco automatico IP)',
               pronunciation: '/feɪl tuː bæn/',
               phonetic: 'feil-tu-ban',
               example: 'Fail2Ban blocks brute force attacks.',
@@ -3981,7 +3981,7 @@ export default {
             },
             {
               english: 'Forensics',
-              italian: 'Forensics',
+              italian: 'forense / analisi post-incidente',
               pronunciation: '/fəˈrensɪks/',
               phonetic: 'fo-REN-siks',
               example: 'Digital forensics analyzes hacks.',
@@ -4246,7 +4246,7 @@ export default {
             },
             {
               english: 'Proxy',
-              italian: 'Proxy',
+              italian: 'proxy / intermediario di rete',
               pronunciation: '/ˈproksi/',
               phonetic: 'PROK-si',
               example: 'Nginx is a reverse proxy.',
@@ -4282,7 +4282,7 @@ export default {
             },
             {
               english: 'Virtual Host',
-              italian: 'Virtual Host',
+              italian: 'host virtuale / sito multiplo',
               pronunciation: '/ˈvɜːrtʃuəl hoʊst/',
               phonetic: 'VER-ciu-al houst',
               example: 'Host multiple sites on one server.',
@@ -4291,7 +4291,7 @@ export default {
             },
             {
               english: 'SSL/TLS',
-              italian: 'SSL/TLS',
+              italian: 'SSL/TLS (crittografia in transito)',
               pronunciation: '/ˌesˌesˈel/',
               phonetic: 'es-es-el',
               example: 'Enable SSL for HTTPS.',
@@ -4307,7 +4307,7 @@ export default {
           items: [
             {
               english: 'Database',
-              italian: 'Database',
+              italian: 'base di dati / database',
               pronunciation: '/ˈdeɪtəbeɪs/',
               phonetic: 'DEI-ta-beis',
               example: 'Store data in a database.',
@@ -4343,7 +4343,7 @@ export default {
             },
             {
               english: 'Client',
-              italian: 'Client',
+              italian: 'client / programma richiedente',
               pronunciation: '/ˈklaɪənt/',
               phonetic: 'KLAI-ent',
               example: 'Connect with the mysql client.',
@@ -4352,7 +4352,7 @@ export default {
             },
             {
               english: 'Server',
-              italian: 'Server',
+              italian: 'server / programma fornitore',
               pronunciation: '/ˈsɜːrvər/',
               phonetic: 'SER-ver',
               example: 'Start the database server.',
@@ -4414,7 +4414,7 @@ export default {
           items: [
             {
               english: 'Container',
-              italian: 'Container',
+              italian: 'container / contenitore isolato',
               pronunciation: '/kənˈteɪnər/',
               phonetic: 'kon-TEI-ner',
               example: 'Containers package apps with dependencies.',
@@ -4432,7 +4432,7 @@ export default {
             },
             {
               english: 'Docker',
-              italian: 'Docker',
+              italian: 'Docker (piattaforma container)',
               pronunciation: '/ˈdɒkər/',
               phonetic: 'DO-ker',
               example: 'Docker runs containers.',
@@ -4441,7 +4441,7 @@ export default {
             },
             {
               english: 'Volume',
-              italian: 'Volume',
+              italian: 'volume / unità di archiviazione',
               pronunciation: '/ˈvɒljuːm/',
               phonetic: 'VOL-ium',
               example: 'Persist data in a volume.',
@@ -4477,7 +4477,7 @@ export default {
             },
             {
               english: 'Namespace',
-              italian: 'Namespace',
+              italian: 'namespace / spazio dei nomi',
               pronunciation: '/ˈneɪmspeɪs/',
               phonetic: 'NEIM-speis',
               example: 'Namespaces isolate resources.',
@@ -4520,7 +4520,7 @@ export default {
             },
             {
               english: 'Hypervisor',
-              italian: 'Hypervisor',
+              italian: 'hypervisor / supervisore di VM',
               pronunciation: '/ˈhaɪpərvfaɪzər/',
               phonetic: 'HAI-per-vai-zer',
               example: 'KVM is a Linux hypervisor.',
@@ -4547,7 +4547,7 @@ export default {
             },
             {
               english: 'Snapshot',
-              italian: 'Snapshot',
+              italian: 'snapshot / istantanea di stato',
               pronunciation: '/ˈsnæpʃɒt/',
               phonetic: 'SNAP-sciot',
               example: 'Revert VM to a previous snapshot.',
@@ -4565,7 +4565,7 @@ export default {
             },
             {
               english: 'Provisioning',
-              italian: 'Provisioning',
+              italian: 'provisioning / fornitura risorse',
               pronunciation: '/prəˈvɪʒənɪŋ/',
               phonetic: 'pro-VI-scio-ning',
               example: 'Automate VM provisioning.',
@@ -4583,7 +4583,7 @@ export default {
             },
             {
               english: 'Passthrough',
-              italian: 'Passthrough',
+              italian: 'passthrough / accesso diretto hardware',
               pronunciation: '/ˈpæθruː/',
               phonetic: 'PATH-ruu',
               example: 'PCI passthrough gives VM direct hardware access.',
@@ -4608,7 +4608,7 @@ export default {
           items: [
             {
               english: 'Benchmark',
-              italian: 'Benchmark',
+              italian: 'benchmark / test prestazionale',
               pronunciation: '/ˈbentʃmɑːrk/',
               phonetic: 'BENC-mark',
               example: 'Run a benchmark to test speed.',
@@ -4671,7 +4671,7 @@ export default {
             },
             {
               english: 'Cache',
-              italian: 'Cache',
+              italian: 'cache / memoria intermedia',
               pronunciation: '/kæʃ/',
               phonetic: 'KASC',
               example: 'Clear the cache.',
@@ -4723,7 +4723,7 @@ export default {
             },
             {
               english: 'Scheduler',
-              italian: 'Scheduler',
+              italian: 'scheduler / pianificatore di processi',
               pronunciation: '/ˈʃedjuːlər/',
               phonetic: 'SCE-diu-ler',
               example: 'CFS is the Linux process scheduler.',
@@ -4750,7 +4750,7 @@ export default {
             },
             {
               english: 'Driver',
-              italian: 'Driver',
+              italian: 'driver / pilota di periferica',
               pronunciation: '/ˈdraɪvər/',
               phonetic: 'DRAI-ver',
               example: 'Write a device driver.',
@@ -4759,7 +4759,7 @@ export default {
             },
             {
               english: 'Patch',
-              italian: 'Patch',
+              italian: 'patch / correzione del codice',
               pronunciation: '/pætʃ/',
               phonetic: 'PAC',
               example: 'Apply a kernel patch.',
@@ -4768,7 +4768,7 @@ export default {
             },
             {
               english: 'Mainline',
-              italian: 'Mainline',
+              italian: 'mainline / ramo principale del kernel',
               pronunciation: '/ˈmeɪnlaɪn/',
               phonetic: 'MEIN-lain',
               example: 'The mainline kernel tree.',
