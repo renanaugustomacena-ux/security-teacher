@@ -471,6 +471,14 @@ export class TopicPracticeManager {
       return;
     }
 
+    // Translation modes (listening/matching/writing) and scenario render the
+    // English target alongside the Italian translation as the answer. When
+    // english === italian the prompt and the correct option are the SAME
+    // string — the answer is given for free. Filter those items out at
+    // pool-build time so the user never sees a degenerate question.
+    const isDistinctTranslation = (item) =>
+      item.english && item.italian && item.english.toLowerCase() !== item.italian.toLowerCase();
+
     if (mode === 'fillblank' || mode === 'sentence') {
       pool = pool.filter((item) => item.example);
     } else if (mode === 'command') {
@@ -482,9 +490,9 @@ export class TopicPracticeManager {
     } else if (mode === 'comprehension') {
       pool = pool.filter((item) => item.example);
     } else if (mode === 'scenario') {
-      pool = pool.filter((item) => item.example && item.english && item.italian);
+      pool = pool.filter((item) => item.example && isDistinctTranslation(item));
     } else {
-      pool = pool.filter((item) => item.english && item.italian);
+      pool = pool.filter(isDistinctTranslation);
     }
 
     this.questions = this.shuffleArray(pool).slice(0, 10);
