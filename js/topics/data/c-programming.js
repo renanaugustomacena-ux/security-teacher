@@ -580,7 +580,7 @@ export default {
             },
             {
               english: 'Byte',
-              italian: 'Byte',
+              italian: 'byte / unità da 8 bit',
               pronunciation: '/baɪt/',
               phonetic: 'BAIT',
               example: 'A char is always one byte in C. = Un char è sempre un byte in C.',
@@ -590,7 +590,7 @@ export default {
             },
             {
               english: 'Bit',
-              italian: 'Bit',
+              italian: 'bit / cifra binaria 0 o 1',
               pronunciation: '/bɪt/',
               phonetic: 'BIT',
               example:
@@ -652,7 +652,7 @@ export default {
             },
             {
               english: 'ASCII',
-              italian: 'ASCII',
+              italian: 'ASCII (codifica caratteri base)',
               pronunciation: '/ˈæski/',
               phonetic: 'AS-ki',
               example: 'The ASCII code for A is 65. = Il codice ASCII per A è 65.',
@@ -918,7 +918,7 @@ export default {
             },
             {
               english: 'volatile',
-              italian: 'Volatile',
+              italian: 'volatile / parola chiave (valore mutabile esterno)',
               pronunciation: '/ˈvɒlətaɪl/',
               phonetic: 'VO-la-tail',
               example:
@@ -2731,7 +2731,7 @@ export default {
             },
             {
               english: 'Aliasing',
-              italian: 'Aliasing',
+              italian: 'aliasing / due puntatori sullo stesso indirizzo',
               pronunciation: '/ˈeɪliəsɪŋ/',
               phonetic: 'EI-lia-sing',
               example:
@@ -4397,7 +4397,7 @@ export default {
             },
             {
               english: 'Stack vs Heap',
-              italian: 'Stack vs Heap',
+              italian: 'stack vs heap / pila vs memoria dinamica',
               pronunciation: '/stæk vɜːrsəs hiːp/',
               phonetic: 'STAK VER-ses HIIP',
               example:
@@ -5248,7 +5248,7 @@ export default {
             },
             {
               english: 'Macro',
-              italian: 'Macro',
+              italian: 'macro / sostituzione testuale del preprocessore',
               pronunciation: '/ˈmækroʊ/',
               phonetic: 'MA-krou',
               example:
@@ -7202,7 +7202,7 @@ export default {
             },
             {
               english: 'Pivot',
-              italian: 'Pivot',
+              italian: 'pivot / elemento perno in un algoritmo',
               pronunciation: '/ˈpɪvət/',
               phonetic: 'PI-vot',
               example:
@@ -7324,7 +7324,7 @@ export default {
             },
             {
               english: 'Backtracking',
-              italian: 'Backtracking',
+              italian: 'backtracking / ricerca con ritorno indietro',
               pronunciation: '/ˈbæktrækɪŋ/',
               phonetic: 'BAK-tra-king',
               example:
@@ -7344,7 +7344,7 @@ export default {
             },
             {
               english: 'Stack Overflow',
-              italian: 'Stack overflow',
+              italian: 'stack overflow / esaurimento dello stack',
               pronunciation: '/stæk ˈoʊvərfloʊ/',
               phonetic: 'STAK O-ver-flou',
               example:
@@ -7362,7 +7362,7 @@ export default {
           items: [
             {
               english: 'Big O',
-              italian: 'Big O',
+              italian: 'Big O / notazione di complessità asintotica',
               pronunciation: '/bɪɡ oʊ/',
               phonetic: 'BIG O',
               example:
@@ -7607,7 +7607,7 @@ export default {
             },
             {
               english: 'Clang',
-              italian: 'Clang',
+              italian: 'Clang (compilatore C/C++ basato su LLVM)',
               pronunciation: '/klæŋ/',
               phonetic: 'KLANG',
               example: 'Clang offers excellent diagnostics. = Clang offre diagnostica eccellente.',
@@ -7713,7 +7713,7 @@ export default {
           items: [
             {
               english: 'Make',
-              italian: 'Make',
+              italian: 'make / strumento di build',
               pronunciation: '/meɪk/',
               phonetic: 'MEIK',
               example:
@@ -7725,7 +7725,7 @@ export default {
             },
             {
               english: 'Makefile',
-              italian: 'Makefile',
+              italian: 'Makefile / ricetta di compilazione',
               pronunciation: '/ˈmeɪkfaɪl/',
               phonetic: 'MEIK-fail',
               example:
@@ -7828,7 +7828,7 @@ export default {
           items: [
             {
               english: 'Linker',
-              italian: 'Linker',
+              italian: 'linker / collegatore di oggetti compilati',
               pronunciation: '/ˈlɪŋkər/',
               phonetic: 'LIN-ker',
               example:
@@ -7944,7 +7944,7 @@ export default {
           items: [
             {
               english: 'CMake',
-              italian: 'CMake',
+              italian: 'CMake (generatore di build cross-platform)',
               pronunciation: '/ˈsiː meɪk/',
               phonetic: 'SI-MEIK',
               example:
@@ -7956,7 +7956,7 @@ export default {
             },
             {
               english: 'CMakeLists.txt',
-              italian: 'CMakeLists.txt',
+              italian: 'CMakeLists.txt (file di configurazione CMake)',
               pronunciation: '/ˈsiː meɪk lɪsts/',
               phonetic: 'SI-MEIK-LISTS',
               example:
@@ -7967,7 +7967,7 @@ export default {
             },
             {
               english: 'Ninja',
-              italian: 'Ninja',
+              italian: 'Ninja (build system veloce)',
               pronunciation: '/ˈnɪndʒə/',
               phonetic: 'NIN-gia',
               example: 'Ninja is a fast build tool. = Ninja è uno strumento di build veloce.',
@@ -7978,7 +7978,7 @@ export default {
             },
             {
               english: 'autoconf',
-              italian: 'autoconf',
+              italian: 'autoconf / generatore di script configure',
               pronunciation: '/ˈɔːtoʊkɒnf/',
               phonetic: 'AU-to-konf',
               example: 'autoconf generates configure scripts. = autoconf genera script configure.',
@@ -8021,7 +8021,7 @@ export default {
             },
             {
               english: 'pkg-config',
-              italian: 'pkg-config',
+              italian: 'pkg-config / utility metadati di libreria',
               pronunciation: '/pækɪdʒ kənˈfɪɡ/',
               phonetic: 'PA-keg kon-FIG',
               example:
@@ -8136,7 +8136,7 @@ export default {
             },
             {
               english: 'Watchpoint',
-              italian: 'Watchpoint',
+              italian: 'watchpoint / breakpoint su variabile',
               pronunciation: '/ˈwɒtʃpɔɪnt/',
               phonetic: 'UOC-point',
               example:
@@ -8168,7 +8168,7 @@ export default {
             },
             {
               english: 'Frame',
-              italian: 'Frame',
+              italian: 'frame / record di chiamata sullo stack',
               pronunciation: '/freɪm/',
               phonetic: 'FREIM',
               example:
@@ -8197,7 +8197,7 @@ export default {
             },
             {
               english: 'Core Dump',
-              italian: 'Core dump',
+              italian: 'core dump / dump di memoria al crash',
               pronunciation: '/kɔːr dʌmp/',
               phonetic: 'KOR DAMP',
               example:
@@ -8219,7 +8219,7 @@ export default {
             },
             {
               english: 'Buffer Overflow',
-              italian: 'Buffer overflow',
+              italian: 'buffer overflow / scrittura oltre i limiti del buffer',
               pronunciation: '/ˈbʌfər ˈoʊvərfloʊ/',
               phonetic: 'BA-fer O-ver-flou',
               example:
@@ -8296,7 +8296,7 @@ export default {
           items: [
             {
               english: 'Valgrind',
-              italian: 'Valgrind',
+              italian: 'Valgrind (strumento analisi memoria)',
               pronunciation: '/ˈvælɡrɪnd/',
               phonetic: 'VAL-grind',
               example:
@@ -8355,7 +8355,7 @@ export default {
             },
             {
               english: 'Memcheck',
-              italian: 'Memcheck',
+              italian: 'Memcheck (modulo Valgrind per errori di memoria)',
               pronunciation: '/ˈmemtʃek/',
               phonetic: 'MEM-cek',
               example:
@@ -8472,7 +8472,7 @@ export default {
             },
             {
               english: 'Heisenbug',
-              italian: 'Heisenbug',
+              italian: 'heisenbug / bug che sparisce quando lo si osserva',
               pronunciation: '/ˈhaɪzənbʌɡ/',
               phonetic: 'HAI-zen-bag',
               example:
@@ -8483,7 +8483,7 @@ export default {
             },
             {
               english: 'Race Condition',
-              italian: 'Race condition',
+              italian: 'race condition / corsa critica tra thread',
               pronunciation: '/reɪs kənˈdɪʃən/',
               phonetic: 'REIS kon-DI-scion',
               example:
@@ -8780,7 +8780,7 @@ export default {
             },
             {
               english: 'Pipe',
-              italian: 'Pipe',
+              italian: 'pipe / canale di comunicazione tra processi',
               pronunciation: '/paɪp/',
               phonetic: 'PAIP',
               example:
@@ -9178,7 +9178,7 @@ export default {
             },
             {
               english: 'Spinlock',
-              italian: 'Spinlock',
+              italian: 'spinlock / lock con attesa attiva',
               pronunciation: '/ˈspɪnlɒk/',
               phonetic: 'SPIN-lok',
               example:
@@ -9302,7 +9302,7 @@ export default {
             },
             {
               english: 'Latch',
-              italian: 'Latch',
+              italian: 'latch / barriera di sincronizzazione monouso',
               pronunciation: '/lætʃ/',
               phonetic: 'LAC',
               example:
@@ -9362,7 +9362,7 @@ export default {
             },
             {
               english: 'Data Race',
-              italian: 'Data race',
+              italian: 'data race / accesso concorrente non sincronizzato',
               pronunciation: '/ˈdeɪtə reɪs/',
               phonetic: 'DEI-ta REIS',
               example:
@@ -9383,7 +9383,7 @@ export default {
             },
             {
               english: 'Livelock',
-              italian: 'Livelock',
+              italian: 'livelock / blocco attivo (processi che si rincorrono)',
               pronunciation: '/ˈlaɪvlɒk/',
               phonetic: 'LAIV-lok',
               example:
@@ -9448,7 +9448,7 @@ export default {
             },
             {
               english: 'volatile',
-              italian: 'Volatile',
+              italian: 'volatile / parola chiave (valore mutabile esterno)',
               pronunciation: '/ˈvɒlətaɪl/',
               phonetic: 'VO-la-tail',
               example:
@@ -9476,7 +9476,7 @@ export default {
           items: [
             {
               english: 'Socket',
-              italian: 'Socket',
+              italian: 'socket / punto di connessione di rete',
               pronunciation: '/ˈsɒkɪt/',
               phonetic: 'SO-ket',
               example:
@@ -9929,7 +9929,7 @@ export default {
           items: [
             {
               english: 'Buffer Overflow',
-              italian: 'Buffer overflow',
+              italian: 'buffer overflow / scrittura oltre i limiti del buffer',
               pronunciation: '/ˈbʌfər ˈoʊvərfloʊ/',
               phonetic: 'BA-fer O-ver-flou',
               example:
@@ -10005,7 +10005,7 @@ export default {
             },
             {
               english: 'Fortify Source',
-              italian: 'Fortify Source',
+              italian: 'Fortify Source / protezioni a tempo di compilazione',
               pronunciation: '/ˈfɔːrtɪfaɪ/',
               phonetic: 'FOR-ti-fai',
               example:
@@ -10187,7 +10187,7 @@ export default {
             },
             {
               english: 'Heap Spray',
-              italian: 'Heap spray',
+              italian: 'heap spray / saturazione del heap con payload',
               pronunciation: '/hiːp spreɪ/',
               phonetic: 'HIIP SPREI',
               example:
@@ -10207,7 +10207,7 @@ export default {
             },
             {
               english: 'Shellcode',
-              italian: 'Shellcode',
+              italian: 'shellcode / codice macchina di payload',
               pronunciation: '/ˈʃelkoʊd/',
               phonetic: 'SCEL-koud',
               example:
@@ -10354,7 +10354,7 @@ export default {
             },
             {
               english: 'Capability',
-              italian: 'Capability',
+              italian: 'capability / privilegio fine del kernel',
               pronunciation: '/ˌkeɪpəˈbɪləti/',
               phonetic: 'kei-pa-BI-li-ti',
               example:
@@ -10390,7 +10390,7 @@ export default {
           items: [
             {
               english: 'Bare Metal',
-              italian: 'Bare metal',
+              italian: 'bare metal / programmazione senza sistema operativo',
               pronunciation: '/beər ˈmetl/',
               phonetic: 'BER ME-tal',
               example:
@@ -10401,7 +10401,7 @@ export default {
             },
             {
               english: 'Firmware',
-              italian: 'Firmware',
+              italian: 'firmware / software fissato nel dispositivo',
               pronunciation: '/ˈfɜːrmweər/',
               phonetic: 'FERM-uer',
               example:
@@ -10422,7 +10422,7 @@ export default {
             },
             {
               english: 'MCU',
-              italian: 'MCU',
+              italian: 'MCU (microcontrollore)',
               pronunciation: '/em siː juː/',
               phonetic: 'EM-CI-IU',
               example: 'MCU stands for microcontroller unit. = MCU sta per unità microcontrollore.',
@@ -10441,7 +10441,7 @@ export default {
             },
             {
               english: 'RAM',
-              italian: 'RAM',
+              italian: 'RAM (memoria ad accesso casuale)',
               pronunciation: '/ræm/',
               phonetic: 'RAM',
               example:
@@ -10473,7 +10473,7 @@ export default {
             },
             {
               english: 'Bootloader',
-              italian: 'Bootloader',
+              italian: 'bootloader / programma di avvio',
               pronunciation: '/ˈbuːtloʊdər/',
               phonetic: 'BUUT-lou-der',
               example:
@@ -10511,7 +10511,7 @@ export default {
             },
             {
               english: 'volatile',
-              italian: 'Volatile',
+              italian: 'volatile / parola chiave (valore mutabile esterno)',
               pronunciation: '/ˈvɒlətaɪl/',
               phonetic: 'VO-la-tail',
               example:
@@ -10533,7 +10533,7 @@ export default {
             },
             {
               english: 'GPIO',
-              italian: 'GPIO',
+              italian: 'GPIO (pin generici di input/output)',
               pronunciation: '/dʒiː piː aɪ oʊ/',
               phonetic: 'GI-PI-AI-O',
               example:
@@ -10615,7 +10615,7 @@ export default {
           items: [
             {
               english: 'Interrupt',
-              italian: 'Interrupt',
+              italian: 'interrupt / interruzione hardware',
               pronunciation: '/ˌɪntəˈrʌpt/',
               phonetic: 'in-ter-RAPT',
               example:
@@ -10698,7 +10698,7 @@ export default {
             },
             {
               english: 'Polling',
-              italian: 'Polling',
+              italian: 'polling / interrogazione ciclica',
               pronunciation: '/ˈpoʊlɪŋ/',
               phonetic: 'POU-ling',
               example:
@@ -10758,7 +10758,7 @@ export default {
             },
             {
               english: 'Task',
-              italian: 'Task',
+              italian: 'task / unità di lavoro pianificabile',
               pronunciation: '/tæsk/',
               phonetic: 'TASK',
               example: 'An RTOS schedules multiple tasks. = Un RTOS schedula più task.',
@@ -10768,7 +10768,7 @@ export default {
             },
             {
               english: 'Scheduler',
-              italian: 'Scheduler',
+              italian: 'scheduler / pianificatore di processi',
               pronunciation: '/ˈʃedjuːlər/',
               phonetic: 'SKE-giu-ler',
               example:
@@ -10778,7 +10778,7 @@ export default {
             },
             {
               english: 'Watchdog',
-              italian: 'Watchdog',
+              italian: 'watchdog / timer di sorveglianza',
               pronunciation: '/ˈwɒtʃdɒɡ/',
               phonetic: 'UOC-dog',
               example:
@@ -10808,7 +10808,7 @@ export default {
             },
             {
               english: 'I2C',
-              italian: 'I2C',
+              italian: 'I2C (bus seriale a due fili)',
               pronunciation: '/aɪ tuː siː/',
               phonetic: 'AI-TU-CI',
               example: 'I2C is a two-wire serial bus. = I2C è un bus seriale a due fili.',
@@ -10817,7 +10817,7 @@ export default {
             },
             {
               english: 'SPI',
-              italian: 'SPI',
+              italian: 'SPI (bus seriale sincrono)',
               pronunciation: '/es piː aɪ/',
               phonetic: 'ES-PI-AI',
               example:
@@ -10855,7 +10855,7 @@ export default {
             },
             {
               english: 'ANSI C',
-              italian: 'ANSI C',
+              italian: 'ANSI C / standard C originale',
               pronunciation: '/ˈænsi siː/',
               phonetic: 'AN-si CI',
               example: 'ANSI C was standardized in 1989. = ANSI C è stato standardizzato nel 1989.',
@@ -10865,7 +10865,7 @@ export default {
             },
             {
               english: 'C99',
-              italian: 'C99',
+              italian: 'C99 (standard C del 1999)',
               pronunciation: '/siː ˈnaɪnti naɪn/',
               phonetic: 'CI nain-TI-NAIN',
               example:
@@ -10875,7 +10875,7 @@ export default {
             },
             {
               english: 'C11',
-              italian: 'C11',
+              italian: 'C11 (standard C del 2011)',
               pronunciation: '/siː ɪˈlevn/',
               phonetic: 'CI i-LE-ven',
               example:
@@ -10885,7 +10885,7 @@ export default {
             },
             {
               english: 'C17',
-              italian: 'C17',
+              italian: 'C17 (standard C del 2017)',
               pronunciation: '/siː ˌsevənˈtiːn/',
               phonetic: 'CI se-ven-TIIN',
               example: 'C17 is a bug-fix release of C11. = C17 è una release di bug-fix di C11.',
@@ -10894,7 +10894,7 @@ export default {
             },
             {
               english: 'C23',
-              italian: 'C23',
+              italian: 'C23 (standard C del 2023)',
               pronunciation: '/siː ˌtwentiˈθriː/',
               phonetic: 'CI tuen-ti-TRII',
               example:
@@ -10904,7 +10904,7 @@ export default {
             },
             {
               english: 'POSIX',
-              italian: 'POSIX',
+              italian: 'POSIX (standard interfaccia sistemi Unix)',
               pronunciation: '/ˈpɒzɪks/',
               phonetic: 'PO-ziks',
               example:
@@ -10924,7 +10924,7 @@ export default {
             },
             {
               english: 'Endianness',
-              italian: 'Endianness',
+              italian: 'endianness / ordine dei byte in memoria',
               pronunciation: '/ˈendiənnəs/',
               phonetic: 'EN-dian-ness',
               example:
@@ -10962,7 +10962,7 @@ export default {
             },
             {
               english: 'cppcheck',
-              italian: 'cppcheck',
+              italian: 'cppcheck (analizzatore statico C/C++)',
               pronunciation: '/siː piː piːtʃek/',
               phonetic: 'CI-PI-PI-cek',
               example: 'cppcheck catches common C/C++ bugs. = cppcheck trova bug comuni in C/C++.',
@@ -10973,7 +10973,7 @@ export default {
             },
             {
               english: 'clang-tidy',
-              italian: 'clang-tidy',
+              italian: 'clang-tidy (linter LLVM per C/C++)',
               pronunciation: '/klæŋ ˈtaɪdi/',
               phonetic: 'KLANG TAI-di',
               example:
@@ -10985,7 +10985,7 @@ export default {
             },
             {
               english: 'clang-format',
-              italian: 'clang-format',
+              italian: 'clang-format (formattatore di codice)',
               pronunciation: '/klæŋ ˈfɔːrmæt/',
               phonetic: 'KLANG FOR-mat',
               example:
@@ -10997,7 +10997,7 @@ export default {
             },
             {
               english: 'Coverity',
-              italian: 'Coverity',
+              italian: 'Coverity (analizzatore statico commerciale)',
               pronunciation: '/kəˈverəti/',
               phonetic: 'kov-VE-ri-ti',
               example:
@@ -11008,7 +11008,7 @@ export default {
             },
             {
               english: 'splint',
-              italian: 'splint',
+              italian: 'splint (linter per C)',
               pronunciation: '/splɪnt/',
               phonetic: 'SPLINT',
               example:
@@ -11019,7 +11019,7 @@ export default {
             },
             {
               english: 'Lint',
-              italian: 'Lint',
+              italian: 'lint / analisi statica del codice',
               pronunciation: '/lɪnt/',
               phonetic: 'LINT',
               example:
@@ -11050,7 +11050,7 @@ export default {
             },
             {
               english: 'Fuzzing',
-              italian: 'Fuzzing',
+              italian: 'fuzzing / test con input casuali',
               pronunciation: '/ˈfʌzɪŋ/',
               phonetic: 'FA-zing',
               example:
@@ -11078,7 +11078,7 @@ export default {
             },
             {
               english: 'Refactoring',
-              italian: 'Refactoring',
+              italian: 'refactoring / ristrutturazione del codice',
               pronunciation: '/riːˈfæktərɪŋ/',
               phonetic: 'ri-FAK-to-ring',
               example:
@@ -11140,7 +11140,7 @@ export default {
             },
             {
               english: 'Snake Case',
-              italian: 'Snake case',
+              italian: 'snake_case / convenzione con underscore',
               pronunciation: '/sneɪk keɪs/',
               phonetic: 'SNEIK KEIS',
               example:
@@ -11201,7 +11201,7 @@ export default {
             },
             {
               english: 'Mock',
-              italian: 'Mock',
+              italian: 'mock / oggetto fittizio per i test',
               pronunciation: '/mɒk/',
               phonetic: 'MOK',
               example:

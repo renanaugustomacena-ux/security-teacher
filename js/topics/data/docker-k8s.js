@@ -68,7 +68,7 @@ export default {
             },
             {
               english: 'Hypervisor',
-              italian: 'Hypervisor',
+              italian: 'hypervisor / supervisore di VM',
               pronunciation: '/ˈhaɪpərvaɪzər/',
               phonetic: 'HAI-per-vai-zer',
               example:
@@ -279,7 +279,7 @@ export default {
             },
             {
               english: 'runc',
-              italian: 'runc',
+              italian: 'runc / runtime container OCI di basso livello',
               pronunciation: '/rʌn siː/',
               phonetic: 'RAN-SI',
               example: 'runc is the OCI reference runtime. = runc è il runtime di riferimento OCI.',
@@ -290,7 +290,7 @@ export default {
             },
             {
               english: 'containerd',
-              italian: 'containerd',
+              italian: 'containerd (runtime container CNCF)',
               pronunciation: '/kənˈteɪnərˌdiː/',
               phonetic: 'con-TEI-ner-DI',
               example:
@@ -302,7 +302,7 @@ export default {
             },
             {
               english: 'CRI-O',
-              italian: 'CRI-O',
+              italian: 'CRI-O (runtime container Kubernetes-only)',
               pronunciation: '/siː ɑːr aɪ oʊ/',
               phonetic: 'sii-ar-ai-OU',
               example:
@@ -363,7 +363,7 @@ export default {
           items: [
             {
               english: 'Docker',
-              italian: 'Docker',
+              italian: 'Docker (piattaforma container)',
               pronunciation: '/ˈdɒkər/',
               phonetic: 'DO-ker',
               example:
@@ -374,7 +374,7 @@ export default {
             },
             {
               english: 'Podman',
-              italian: 'Podman',
+              italian: 'Podman (alternativa daemonless a Docker)',
               pronunciation: '/ˈpɒdmən/',
               phonetic: 'POD-man',
               example:
@@ -386,7 +386,7 @@ export default {
             },
             {
               english: 'Buildah',
-              italian: 'Buildah',
+              italian: 'Buildah / costruisce immagini OCI senza daemon',
               pronunciation: '/ˈbɪldə/',
               phonetic: 'BIL-da',
               example:
@@ -397,7 +397,7 @@ export default {
             },
             {
               english: 'Skopeo',
-              italian: 'Skopeo',
+              italian: 'Skopeo / strumento copia immagini tra registry',
               pronunciation: '/skəˈpeɪoʊ/',
               phonetic: 'sko-PEI-ou',
               example:
@@ -421,7 +421,7 @@ export default {
             },
             {
               english: 'rkt',
-              italian: 'rkt',
+              italian: 'rkt / runtime container CoreOS (deprecato)',
               pronunciation: '/ˈrɒkɪt/',
               phonetic: 'RO-kit',
               example: "rkt was an alternative to Docker. = rkt era un'alternativa a Docker.",
@@ -432,7 +432,7 @@ export default {
             },
             {
               english: 'Kata Containers',
-              italian: 'Kata Containers',
+              italian: 'Kata Containers / container con isolamento VM',
               pronunciation: '/ˈkɑːtə kənˈteɪnərz/',
               phonetic: 'KA-ta con-TEI-ners',
               example:
@@ -443,7 +443,7 @@ export default {
             },
             {
               english: 'gVisor',
-              italian: 'gVisor',
+              italian: 'gVisor / sandbox container Google',
               pronunciation: '/ˈdʒiː vaɪzər/',
               phonetic: 'gi-VAI-zor',
               example:
@@ -968,7 +968,7 @@ export default {
           items: [
             {
               english: 'Dockerfile',
-              italian: 'Dockerfile',
+              italian: 'Dockerfile / ricetta di immagine container',
               pronunciation: '/ˈdɒkər faɪl/',
               phonetic: 'DO-ker FAIL',
               example:
@@ -1169,7 +1169,7 @@ export default {
             },
             {
               english: 'BuildKit',
-              italian: 'BuildKit',
+              italian: 'BuildKit / motore di build Docker moderno',
               pronunciation: '/bɪld kɪt/',
               phonetic: 'BILD-kit',
               example:
@@ -1220,7 +1220,7 @@ export default {
             },
             {
               english: 'Distroless',
-              italian: 'Distroless',
+              italian: 'Distroless / immagini senza shell e package manager',
               pronunciation: '/ˈdɪstroʊlɛs/',
               phonetic: 'DI-strou-les',
               example:
@@ -1297,7 +1297,7 @@ export default {
             },
             {
               english: 'Volume',
-              italian: 'Volume',
+              italian: 'volume / archiviazione persistente per container',
               pronunciation: '/ˈvɒljuːm/',
               phonetic: 'VOL-ium',
               example: 'VOLUME defines a mount point. = VOLUME definisce un punto di montaggio.',
@@ -1347,7 +1347,7 @@ export default {
             },
             {
               english: 'Digest',
-              italian: 'Digest',
+              italian: 'digest / hash univoco di immagine',
               pronunciation: '/ˈdaɪdʒest/',
               phonetic: 'DAI-gest',
               example:
@@ -1547,7 +1547,7 @@ export default {
           items: [
             {
               english: 'ENTRYPOINT',
-              italian: 'ENTRYPOINT',
+              italian: "ENTRYPOINT / processo principale dell'immagine",
               pronunciation: '/ˈentriˌpɔɪnt/',
               phonetic: 'EN-tri-point',
               example: "ENTRYPOINT defines the executable. = ENTRYPOINT definisce l'eseguibile.",
@@ -1602,7 +1602,7 @@ export default {
             },
             {
               english: 'PID 1',
-              italian: 'PID 1',
+              italian: 'PID 1 / primo processo del container',
               pronunciation: '/piː aɪ diː wʌn/',
               phonetic: 'pi-ai-di UAN',
               example:
@@ -1822,7 +1822,7 @@ export default {
             },
             {
               english: 'Linting',
-              italian: 'Linting',
+              italian: 'linting / analisi statica del codice',
               pronunciation: '/ˈlɪntɪŋ/',
               phonetic: 'LIN-ting',
               example:
@@ -1947,7 +1947,7 @@ export default {
             },
             {
               english: 'Macvlan',
-              italian: 'Macvlan',
+              italian: 'macvlan / driver di rete a MAC dedicato',
               pronunciation: '/mæk viː læn/',
               phonetic: 'MAK-vi-lan',
               example:
@@ -1958,7 +1958,7 @@ export default {
             },
             {
               english: 'IPvlan',
-              italian: 'IPvlan',
+              italian: 'IPvlan / driver di rete a IP dedicato',
               pronunciation: '/aɪ piː viː læn/',
               phonetic: 'AI-pi-vi-lan',
               example:
@@ -2081,7 +2081,7 @@ export default {
             },
             {
               english: 'iptables',
-              italian: 'iptables',
+              italian: 'iptables / firewall Linux classico',
               pronunciation: '/aɪ piː ˈteɪblz/',
               phonetic: 'ai-pi-TEI-blz',
               example:
@@ -2224,7 +2224,7 @@ export default {
             },
             {
               english: 'Gateway',
-              italian: 'Gateway',
+              italian: 'gateway / instradatore di rete',
               pronunciation: '/ˈɡeɪtweɪ/',
               phonetic: 'GHEIT-uei',
               example: 'Set a gateway for the network. = Imposta un gateway per la rete.',
@@ -2241,7 +2241,7 @@ export default {
           items: [
             {
               english: 'Service Discovery',
-              italian: 'Service discovery',
+              italian: 'service discovery / scoperta di servizi',
               pronunciation: '/ˈsɜːrvɪs dɪˈskʌvəri/',
               phonetic: 'SER-vis di-SKA-veri',
               example:
@@ -2271,7 +2271,7 @@ export default {
             },
             {
               english: 'Link (legacy)',
-              italian: 'Link (legacy)',
+              italian: 'link (legacy) / collegamento Docker storico',
               pronunciation: '/lɪŋk/',
               phonetic: 'LINK',
               example: 'Container links are deprecated. = I link tra container sono deprecati.',
@@ -2282,7 +2282,7 @@ export default {
             },
             {
               english: 'DNS Round Robin',
-              italian: 'DNS round robin',
+              italian: 'DNS round robin / bilanciamento via record DNS',
               pronunciation: '/raʊnd ˈrɒbɪn/',
               phonetic: 'RAUND RO-bin',
               example:
@@ -2372,7 +2372,7 @@ export default {
             },
             {
               english: 'Bind Mount',
-              italian: 'Bind mount',
+              italian: 'bind mount / montaggio diretto di percorso host',
               pronunciation: '/baɪnd maʊnt/',
               phonetic: 'BAIND MAUNT',
               example:
@@ -2734,7 +2734,7 @@ export default {
             },
             {
               english: 'CIFS/SMB',
-              italian: 'CIFS/SMB',
+              italian: 'CIFS/SMB / protocollo condivisione file Windows',
               pronunciation: '/siː aɪ ef es es em biː/',
               phonetic: 'si-ai-ef-es es-em-BI',
               example: 'Use CIFS for Windows shares. = Usa CIFS per condivisioni Windows.',
@@ -2774,7 +2774,7 @@ export default {
             },
             {
               english: 'GlusterFS',
-              italian: 'GlusterFS',
+              italian: 'GlusterFS / filesystem distribuito',
               pronunciation: '/ˈɡlʌstər ef es/',
               phonetic: 'GLAS-ter ef-ES',
               example:
@@ -2785,7 +2785,7 @@ export default {
             },
             {
               english: 'Ceph',
-              italian: 'Ceph',
+              italian: 'Ceph / storage distribuito a oggetti/blocchi/file',
               pronunciation: '/sef/',
               phonetic: 'SEF',
               example: 'Ceph is a scalable object store. = Ceph è uno store di oggetti scalabile.',
@@ -2820,7 +2820,7 @@ export default {
           items: [
             {
               english: 'Docker Compose',
-              italian: 'Docker Compose',
+              italian: 'Docker Compose / orchestratore multi-container',
               pronunciation: '/ˈdɒkər kəmˈpoʊz/',
               phonetic: 'DO-ker com-POUZ',
               example:
@@ -2905,7 +2905,7 @@ export default {
             },
             {
               english: 'YAML',
-              italian: 'YAML',
+              italian: 'YAML / formato di configurazione leggibile',
               pronunciation: '/ˈjæml/',
               phonetic: 'IA-ml',
               example: 'Compose uses YAML configuration. = Compose usa configurazione YAML.',
@@ -3107,7 +3107,7 @@ export default {
             },
             {
               english: 'Bridge in Compose',
-              italian: 'Bridge in Compose',
+              italian: 'bridge in Compose / rete bridge in Compose',
               pronunciation: '/brɪdʒ/',
               phonetic: 'BRIG',
               example:
@@ -3117,7 +3117,7 @@ export default {
             },
             {
               english: 'IPv6',
-              italian: 'IPv6',
+              italian: 'IPv6 / Internet Protocol versione 6',
               pronunciation: '/aɪ piː viː sɪks/',
               phonetic: 'ai-pi-vi-SIKS',
               example: 'Enable IPv6 on Compose networks. = Abilita IPv6 sulle reti Compose.',
@@ -3275,7 +3275,7 @@ export default {
           items: [
             {
               english: 'Healthcheck',
-              italian: 'Healthcheck',
+              italian: 'healthcheck / controllo di salute',
               pronunciation: '/ˈhelθtʃek/',
               phonetic: 'HELT-cek',
               example:
@@ -3339,7 +3339,7 @@ export default {
             },
             {
               english: 'timeout',
-              italian: 'Timeout',
+              italian: 'timeout / tempo limite',
               pronunciation: '/ˈtaɪmaʊt/',
               phonetic: 'TAIM-aut',
               example: 'Maximum time for a healthcheck. = Tempo massimo per un healthcheck.',
@@ -3359,7 +3359,7 @@ export default {
             },
             {
               english: 'service_started',
-              italian: 'service_started',
+              italian: 'service_started / dipendenza condizionale Compose',
               pronunciation: '/ˈsɜːrvɪs ˈstɑːrtɪd/',
               phonetic: 'SER-vis STAR-tid',
               example:
@@ -3481,7 +3481,7 @@ export default {
             },
             {
               english: 'ulimits',
-              italian: 'ulimits',
+              italian: 'ulimits / limiti di risorsa di processo',
               pronunciation: '/juː ˈlɪmɪts/',
               phonetic: 'IU-LI-mits',
               example: 'Set kernel limits per service. = Imposta limiti kernel per servizio.',
@@ -3509,7 +3509,7 @@ export default {
             },
             {
               english: 'Config',
-              italian: 'Config',
+              italian: 'config / file di configurazione',
               pronunciation: '/kənˈfɪɡ/',
               phonetic: 'con-FIG',
               example:
@@ -3670,7 +3670,7 @@ export default {
             },
             {
               english: 'Rollback',
-              italian: 'Rollback',
+              italian: 'rollback / ritorno a versione precedente',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROUL-bak',
               example:
@@ -3729,7 +3729,7 @@ export default {
           items: [
             {
               english: 'Docker Hub',
-              italian: 'Docker Hub',
+              italian: 'Docker Hub / registry pubblico Docker',
               pronunciation: '/ˈdɒkər hʌb/',
               phonetic: 'DO-ker HAB',
               example:
@@ -3740,7 +3740,7 @@ export default {
             },
             {
               english: 'Registry',
-              italian: 'Registry',
+              italian: 'registry / registro di immagini container',
               pronunciation: '/ˈredʒɪstri/',
               phonetic: 'RE-gi-stri',
               example:
@@ -3781,7 +3781,7 @@ export default {
             },
             {
               english: 'GitHub Container Registry',
-              italian: 'GitHub Container Registry',
+              italian: 'GHCR / registry container GitHub',
               pronunciation: '/ˈɡɪthʌb/',
               phonetic: 'GIT-hab',
               example:
@@ -3793,7 +3793,7 @@ export default {
             },
             {
               english: 'AWS ECR',
-              italian: 'AWS ECR',
+              italian: 'AWS ECR / Elastic Container Registry',
               pronunciation: '/eɪ dʌbəljuː es iː siː ɑːr/',
               phonetic: 'ei-dabl-iu-es i-si-AR',
               example:
@@ -3804,7 +3804,7 @@ export default {
             },
             {
               english: 'Google GCR',
-              italian: 'Google GCR',
+              italian: 'Google GCR / Google Container Registry',
               pronunciation: '/dʒiː siː ɑːr/',
               phonetic: 'gi-si-AR',
               example:
@@ -3815,7 +3815,7 @@ export default {
             },
             {
               english: 'Harbor',
-              italian: 'Harbor',
+              italian: 'Harbor (registry open source CNCF)',
               pronunciation: '/ˈhɑːrbər/',
               phonetic: 'HAR-bor',
               example:
@@ -3827,7 +3827,7 @@ export default {
             },
             {
               english: 'Quay',
-              italian: 'Quay',
+              italian: 'Quay (registry Red Hat)',
               pronunciation: '/kiː/',
               phonetic: 'KII',
               example:
@@ -3898,7 +3898,7 @@ export default {
             },
             {
               english: 'Buildx',
-              italian: 'Buildx',
+              italian: 'Buildx / plugin Docker per build multi-piattaforma',
               pronunciation: '/bɪld eks/',
               phonetic: 'BILD-EKS',
               example:
@@ -3969,7 +3969,7 @@ export default {
             },
             {
               english: 'Cosign',
-              italian: 'Cosign',
+              italian: 'Cosign (firma di immagini container)',
               pronunciation: '/koʊ saɪn/',
               phonetic: 'KO-sain',
               example:
@@ -3981,7 +3981,7 @@ export default {
             },
             {
               english: 'Sigstore',
-              italian: 'Sigstore',
+              italian: 'Sigstore / firma open source di artefatti',
               pronunciation: '/sɪɡ stɔːr/',
               phonetic: 'SIG-stor',
               example:
@@ -3992,7 +3992,7 @@ export default {
             },
             {
               english: 'Notary',
-              italian: 'Notary',
+              italian: 'Notary / firma artefatti Docker',
               pronunciation: '/ˈnoʊtəri/',
               phonetic: 'NO-tari',
               example:
@@ -4085,7 +4085,7 @@ export default {
             },
             {
               english: 'GitHub Actions',
-              italian: 'GitHub Actions',
+              italian: 'GitHub Actions (automazione CI/CD GitHub)',
               pronunciation: '/ˈækʃənz/',
               phonetic: 'AK-scions',
               example:
@@ -4097,7 +4097,7 @@ export default {
             },
             {
               english: 'GitLab CI',
-              italian: 'GitLab CI',
+              italian: 'GitLab CI (sistema CI di GitLab)',
               pronunciation: '/ˈɡɪtlæb siː aɪ/',
               phonetic: 'GIT-lab si-AI',
               example:
@@ -4129,7 +4129,7 @@ export default {
             },
             {
               english: 'Kaniko',
-              italian: 'Kaniko',
+              italian: 'Kaniko / build immagini in Kubernetes senza daemon',
               pronunciation: '/kəˈniːkoʊ/',
               phonetic: 'ka-NI-ko',
               example:
@@ -4161,7 +4161,7 @@ export default {
             },
             {
               english: 'Smoke Test',
-              italian: 'Smoke test',
+              italian: 'smoke test / test rapido di funzionamento',
               pronunciation: '/smoʊk test/',
               phonetic: 'SMOUK TEST',
               example:
@@ -4310,7 +4310,7 @@ export default {
           items: [
             {
               english: 'Seccomp',
-              italian: 'Seccomp',
+              italian: 'seccomp / filtro syscall Linux',
               pronunciation: '/ˈsekkɒmp/',
               phonetic: 'SEK-komp',
               example:
@@ -4332,7 +4332,7 @@ export default {
             },
             {
               english: 'AppArmor',
-              italian: 'AppArmor',
+              italian: 'AppArmor (LSM Linux a profili)',
               pronunciation: '/æp ɑːrmər/',
               phonetic: 'AP-AR-mor',
               example:
@@ -4344,7 +4344,7 @@ export default {
             },
             {
               english: 'SELinux',
-              italian: 'SELinux',
+              italian: 'SELinux / Security-Enhanced Linux',
               pronunciation: '/sel ˈlɪnʊks/',
               phonetic: 'SEL-LI-nuks',
               example:
@@ -4434,7 +4434,7 @@ export default {
             },
             {
               english: 'Trivy',
-              italian: 'Trivy',
+              italian: 'Trivy (scanner di vulnerabilità)',
               pronunciation: '/ˈtrɪvi/',
               phonetic: 'TRI-vi',
               example:
@@ -4446,7 +4446,7 @@ export default {
             },
             {
               english: 'Snyk',
-              italian: 'Snyk',
+              italian: 'Snyk (piattaforma sicurezza dipendenze)',
               pronunciation: '/snɪk/',
               phonetic: 'SNIK',
               example:
@@ -4458,7 +4458,7 @@ export default {
             },
             {
               english: 'Grype',
-              italian: 'Grype',
+              italian: 'Grype (scanner di vulnerabilità immagini)',
               pronunciation: '/ɡraɪp/',
               phonetic: 'GRAIP',
               example:
@@ -4541,7 +4541,7 @@ export default {
           items: [
             {
               english: 'Falco',
-              italian: 'Falco',
+              italian: 'Falco (rilevatore eventi runtime cloud-native)',
               pronunciation: '/ˈfɑːlkoʊ/',
               phonetic: 'FAL-ko',
               example:
@@ -4623,7 +4623,7 @@ export default {
             },
             {
               english: 'eBPF',
-              italian: 'eBPF',
+              italian: 'eBPF / extended Berkeley Packet Filter',
               pronunciation: '/iː biː piː ef/',
               phonetic: 'i-bi-pi-EF',
               example:
@@ -4634,7 +4634,7 @@ export default {
             },
             {
               english: 'Tetragon',
-              italian: 'Tetragon',
+              italian: 'Tetragon / observability di sicurezza eBPF',
               pronunciation: '/ˈtetrəɡɒn/',
               phonetic: 'TE-tra-gon',
               example:
@@ -4661,7 +4661,7 @@ export default {
           items: [
             {
               english: 'Kubernetes',
-              italian: 'Kubernetes',
+              italian: 'Kubernetes (orchestratore container)',
               pronunciation: '/ˌkuːbərˈnetiːz/',
               phonetic: 'kiu-ber-NE-tis',
               example:
@@ -4673,7 +4673,7 @@ export default {
             },
             {
               english: 'K8s',
-              italian: 'K8s',
+              italian: 'K8s / abbreviazione di Kubernetes',
               pronunciation: '/keɪ eɪts/',
               phonetic: 'kei-EITS',
               example: "K8s is short for Kubernetes. = K8s è l'abbreviazione di Kubernetes.",
@@ -4682,7 +4682,7 @@ export default {
             },
             {
               english: 'Cluster',
-              italian: 'Cluster',
+              italian: 'cluster / gruppo di nodi',
               pronunciation: '/ˈklʌstər/',
               phonetic: 'KLAS-ter',
               example:
@@ -4772,7 +4772,7 @@ export default {
           items: [
             {
               english: 'kube-apiserver',
-              italian: 'kube-apiserver',
+              italian: 'kube-apiserver / API server di Kubernetes',
               pronunciation: '/kjuːb eɪ piː ˈsɜːrvər/',
               phonetic: 'kiub-ei-pi-SER-ver',
               example: "kube-apiserver exposes the K8s API. = kube-apiserver espone l'API di K8s.",
@@ -4782,7 +4782,7 @@ export default {
             },
             {
               english: 'etcd',
-              italian: 'etcd',
+              italian: 'etcd / database chiave-valore distribuito di K8s',
               pronunciation: '/ˈetˌsiː diː/',
               phonetic: 'ET-si-DI',
               example: 'etcd is the K8s key-value store. = etcd è il key-value store di K8s.',
@@ -4793,7 +4793,7 @@ export default {
             },
             {
               english: 'kube-scheduler',
-              italian: 'kube-scheduler',
+              italian: 'kube-scheduler / pianificatore di pod',
               pronunciation: '/ˈskedjuːlər/',
               phonetic: 'SKE-diu-ler',
               example: 'The scheduler assigns pods to nodes. = Lo scheduler assegna i pod ai nodi.',
@@ -4802,7 +4802,7 @@ export default {
             },
             {
               english: 'kube-controller-manager',
-              italian: 'kube-controller-manager',
+              italian: 'kube-controller-manager / controller K8s',
               pronunciation: '/kənˈtroʊlər/',
               phonetic: 'con-TROU-ler',
               example:
@@ -4812,7 +4812,7 @@ export default {
             },
             {
               english: 'cloud-controller-manager',
-              italian: 'cloud-controller-manager',
+              italian: 'cloud-controller-manager / controller cloud-specifici',
               pronunciation: '/klaʊd/',
               phonetic: 'KLAUD',
               example:
@@ -4832,7 +4832,7 @@ export default {
             },
             {
               english: 'API Server',
-              italian: 'API server',
+              italian: 'API server / componente di accesso al cluster',
               pronunciation: '/eɪ piː aɪ ˈsɜːrvər/',
               phonetic: 'ei-pi-AI SER-ver',
               example:
@@ -4853,7 +4853,7 @@ export default {
             },
             {
               english: 'Quorum',
-              italian: 'Quorum',
+              italian: 'quorum / soglia minima di nodi',
               pronunciation: '/ˈkwɔːrəm/',
               phonetic: 'KUO-rum',
               example:
@@ -4881,7 +4881,7 @@ export default {
           items: [
             {
               english: 'kubelet',
-              italian: 'kubelet',
+              italian: 'kubelet / agente sui nodi di lavoro',
               pronunciation: '/ˈkjuːblet/',
               phonetic: 'KIU-blet',
               example:
@@ -4892,7 +4892,7 @@ export default {
             },
             {
               english: 'kube-proxy',
-              italian: 'kube-proxy',
+              italian: 'kube-proxy / proxy di rete su ogni nodo',
               pronunciation: '/ˈprɒksi/',
               phonetic: 'PROK-si',
               example:
@@ -4902,7 +4902,7 @@ export default {
             },
             {
               english: 'Container Runtime',
-              italian: 'Container runtime',
+              italian: 'container runtime / motore di esecuzione container',
               pronunciation: '/kənˈteɪnər ˈrʌntaɪm/',
               phonetic: 'con-TEI-ner RAN-taim',
               example:
@@ -4923,7 +4923,7 @@ export default {
             },
             {
               english: 'Pod',
-              italian: 'Pod',
+              italian: 'pod / unità minima di deployment K8s',
               pronunciation: '/pɒd/',
               phonetic: 'POD',
               example:
@@ -4993,7 +4993,7 @@ export default {
           items: [
             {
               english: 'kubectl',
-              italian: 'kubectl',
+              italian: 'kubectl / CLI Kubernetes',
               pronunciation: '/ˈkjuːb kʌtl/',
               phonetic: 'kiub-KA-tl',
               example: 'kubectl is the K8s CLI tool. = kubectl è il tool CLI di K8s.',
@@ -5067,7 +5067,7 @@ export default {
             },
             {
               english: 'kubeconfig',
-              italian: 'kubeconfig',
+              italian: 'kubeconfig / file di configurazione kubectl',
               pronunciation: '/ˈkjuːb kənˈfɪɡ/',
               phonetic: 'KIUB-con-FIG',
               example:
@@ -5089,7 +5089,7 @@ export default {
             },
             {
               english: 'Namespace',
-              italian: 'Namespace',
+              italian: 'namespace / spazio dei nomi K8s',
               pronunciation: '/ˈneɪmspeɪs/',
               phonetic: 'NEIM-speis',
               example:
@@ -5116,7 +5116,7 @@ export default {
           items: [
             {
               english: 'Pod',
-              italian: 'Pod',
+              italian: 'pod / unità minima di deployment K8s',
               pronunciation: '/pɒd/',
               phonetic: 'POD',
               example:
@@ -5167,7 +5167,7 @@ export default {
             },
             {
               english: 'CrashLoopBackOff',
-              italian: 'CrashLoopBackOff',
+              italian: 'CrashLoopBackOff / pod che si riavvia in loop',
               pronunciation: '/kræʃ luːp bæk ɒf/',
               phonetic: 'KRASC-LUP-BAK-OF',
               example:
@@ -5178,7 +5178,7 @@ export default {
             },
             {
               english: 'ImagePullBackOff',
-              italian: 'ImagePullBackOff',
+              italian: 'ImagePullBackOff / pull immagine fallita',
               pronunciation: '/ˈɪmɪdʒ pʊl/',
               phonetic: 'I-migg-PUL',
               example:
@@ -5227,7 +5227,7 @@ export default {
           items: [
             {
               english: 'Init Container',
-              italian: 'Init container',
+              italian: 'init container / container di inizializzazione',
               pronunciation: '/ɪˈnɪt/',
               phonetic: 'i-NIT',
               example:
@@ -5238,7 +5238,7 @@ export default {
             },
             {
               english: 'Sidecar',
-              italian: 'Sidecar',
+              italian: 'sidecar / contenitore affiancato',
               pronunciation: '/ˈsaɪdkɑːr/',
               phonetic: 'SAID-kar',
               example:
@@ -5249,7 +5249,7 @@ export default {
             },
             {
               english: 'Ambassador',
-              italian: 'Ambassador',
+              italian: 'ambassador / sidecar proxy verso esterno',
               pronunciation: '/æmˈbæsədər/',
               phonetic: 'am-BA-sa-dor',
               example:
@@ -5260,7 +5260,7 @@ export default {
             },
             {
               english: 'Adapter',
-              italian: 'Adapter',
+              italian: 'adapter / sidecar di adattamento',
               pronunciation: '/əˈdæptər/',
               phonetic: 'a-DAP-ter',
               example:
@@ -5380,7 +5380,7 @@ export default {
             },
             {
               english: 'OOMKilled',
-              italian: 'OOMKilled',
+              italian: 'OOMKilled / ucciso per memoria esaurita',
               pronunciation: '/oʊ oʊ em kɪld/',
               phonetic: 'OU-OU-EM KILD',
               example:
@@ -5412,7 +5412,7 @@ export default {
             },
             {
               english: 'Guaranteed',
-              italian: 'Guaranteed',
+              italian: 'Guaranteed / classe QoS con risorse riservate',
               pronunciation: '/ˌɡærənˈtiːd/',
               phonetic: 'ga-ran-TIID',
               example:
@@ -5422,7 +5422,7 @@ export default {
             },
             {
               english: 'Burstable',
-              italian: 'Burstable',
+              italian: 'Burstable / classe QoS con risorse burstable',
               pronunciation: '/ˈbɜːrstəbl/',
               phonetic: 'BER-sta-bol',
               example:
@@ -5432,7 +5432,7 @@ export default {
             },
             {
               english: 'BestEffort',
-              italian: 'BestEffort',
+              italian: 'BestEffort / classe QoS senza garanzie',
               pronunciation: '/best ˈefərt/',
               phonetic: 'BEST E-fort',
               example: 'BestEffort: no requests or limits. = BestEffort: nessuna request o limit.',
@@ -5449,7 +5449,7 @@ export default {
           items: [
             {
               english: 'Liveness Probe',
-              italian: 'Liveness probe',
+              italian: 'liveness probe / controllo che il pod sia vivo',
               pronunciation: '/ˈlaɪvnəs/',
               phonetic: 'LAIV-nes',
               example:
@@ -5461,7 +5461,7 @@ export default {
             },
             {
               english: 'Readiness Probe',
-              italian: 'Readiness probe',
+              italian: 'readiness probe / controllo che il pod sia pronto',
               pronunciation: '/ˈredinəs/',
               phonetic: 'RE-di-nes',
               example:
@@ -5473,7 +5473,7 @@ export default {
             },
             {
               english: 'Startup Probe',
-              italian: 'Startup probe',
+              italian: "startup probe / controllo all'avvio del pod",
               pronunciation: '/ˈstɑːrtʌp/',
               phonetic: 'START-ap',
               example:
@@ -5574,7 +5574,7 @@ export default {
           items: [
             {
               english: 'Deployment',
-              italian: 'Deployment',
+              italian: 'Deployment / gestore di pod replicati',
               pronunciation: '/dɪˈplɔɪmənt/',
               phonetic: 'di-PLOI-ment',
               example:
@@ -5585,7 +5585,7 @@ export default {
             },
             {
               english: 'ReplicaSet',
-              italian: 'ReplicaSet',
+              italian: 'ReplicaSet / mantiene N repliche identiche',
               pronunciation: '/ˈreplɪkə set/',
               phonetic: 'RE-pli-ka SET',
               example:
@@ -5607,7 +5607,7 @@ export default {
             },
             {
               english: 'Rolling Update',
-              italian: 'Rolling update',
+              italian: 'rolling update / aggiornamento progressivo',
               pronunciation: '/ˈroʊlɪŋ ʌpˈdeɪt/',
               phonetic: 'ROU-ling ap-DEIT',
               example:
@@ -5630,7 +5630,7 @@ export default {
             },
             {
               english: 'maxSurge',
-              italian: 'maxSurge',
+              italian: "maxSurge / pod extra durante l'aggiornamento",
               pronunciation: '/mæks sɜːrdʒ/',
               phonetic: 'MAKS-SERG',
               example:
@@ -5640,7 +5640,7 @@ export default {
             },
             {
               english: 'maxUnavailable',
-              italian: 'maxUnavailable',
+              italian: "maxUnavailable / pod fuori servizio durante l'aggiornamento",
               pronunciation: '/ʌnəˈveɪləbl/',
               phonetic: 'an-a-VEI-la-bol',
               example:
@@ -5650,7 +5650,7 @@ export default {
             },
             {
               english: 'Rollout',
-              italian: 'Rollout',
+              italian: 'rollout / processo di aggiornamento',
               pronunciation: '/ˈroʊlaʊt/',
               phonetic: 'ROUL-aut',
               example:
@@ -5661,7 +5661,7 @@ export default {
             },
             {
               english: 'Rollback',
-              italian: 'Rollback',
+              italian: 'rollback / ritorno a versione precedente',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROUL-bak',
               example:
@@ -5690,7 +5690,7 @@ export default {
           items: [
             {
               english: 'StatefulSet',
-              italian: 'StatefulSet',
+              italian: 'StatefulSet / pod stateful con identità stabile',
               pronunciation: '/ˈsteɪtfʊl set/',
               phonetic: 'STEIT-ful SET',
               example:
@@ -5784,7 +5784,7 @@ export default {
             },
             {
               english: 'serviceName',
-              italian: 'serviceName',
+              italian: 'serviceName / servizio headless di StatefulSet',
               pronunciation: '/ˈsɜːrvɪs neɪm/',
               phonetic: 'SER-vis NEIM',
               example:
@@ -5802,7 +5802,7 @@ export default {
           items: [
             {
               english: 'DaemonSet',
-              italian: 'DaemonSet',
+              italian: 'DaemonSet / un pod per ogni nodo',
               pronunciation: '/ˈdiːmən set/',
               phonetic: 'DI-mon SET',
               example:
@@ -5833,7 +5833,7 @@ export default {
             },
             {
               english: 'Fluentd',
-              italian: 'Fluentd',
+              italian: 'Fluentd (raccoglitore log unificato)',
               pronunciation: '/ˈfluːentd/',
               phonetic: 'FLU-entd',
               example: 'Fluentd ships logs from each node. = Fluentd invia log da ogni nodo.',
@@ -5843,7 +5843,7 @@ export default {
             },
             {
               english: 'node-exporter',
-              italian: 'node-exporter',
+              italian: 'node-exporter / esportatore metriche host Prometheus',
               pronunciation: '/ɪkˈspɔːrtər/',
               phonetic: 'ek-SPOR-ter',
               example:
@@ -5885,7 +5885,7 @@ export default {
             },
             {
               english: 'hostNetwork',
-              italian: 'hostNetwork',
+              italian: 'hostNetwork / pod che condivide la rete del nodo',
               pronunciation: '/hoʊst ˈnetwɜːrk/',
               phonetic: 'HOUST NET-uerk',
               example: 'DaemonSets often use hostNetwork. = I DaemonSet spesso usano hostNetwork.',
@@ -5913,7 +5913,7 @@ export default {
           items: [
             {
               english: 'Job',
-              italian: 'Job',
+              italian: 'Job / esecuzione una tantum',
               pronunciation: '/dʒɒb/',
               phonetic: 'GIOB',
               example: 'A Job runs one-shot tasks. = Un Job esegue task one-shot.',
@@ -5923,7 +5923,7 @@ export default {
             },
             {
               english: 'CronJob',
-              italian: 'CronJob',
+              italian: 'CronJob / Job pianificato cron',
               pronunciation: '/krɒn dʒɒb/',
               phonetic: 'KRON-GIOB',
               example: 'A CronJob runs jobs on a schedule. = Un CronJob esegue job su schedule.',
@@ -6034,7 +6034,7 @@ export default {
           items: [
             {
               english: 'Service',
-              italian: 'Service',
+              italian: 'Service / servizio di rete K8s',
               pronunciation: '/ˈsɜːrvɪs/',
               phonetic: 'SER-vis',
               example:
@@ -6045,7 +6045,7 @@ export default {
             },
             {
               english: 'ClusterIP',
-              italian: 'ClusterIP',
+              italian: 'ClusterIP / servizio interno al cluster',
               pronunciation: '/ˈklʌstər aɪ piː/',
               phonetic: 'KLAS-ter ai-PI',
               example:
@@ -6057,7 +6057,7 @@ export default {
             },
             {
               english: 'NodePort',
-              italian: 'NodePort',
+              italian: 'NodePort / servizio esposto su porta del nodo',
               pronunciation: '/noʊd pɔːrt/',
               phonetic: 'NOUD-PORT',
               example:
@@ -6068,7 +6068,7 @@ export default {
             },
             {
               english: 'LoadBalancer',
-              italian: 'LoadBalancer',
+              italian: 'LoadBalancer / servizio dietro bilanciatore cloud',
               pronunciation: '/loʊd ˈbælənsər/',
               phonetic: 'LOUD BA-lan-ser',
               example:
@@ -6080,7 +6080,7 @@ export default {
             },
             {
               english: 'ExternalName',
-              italian: 'ExternalName',
+              italian: 'ExternalName / alias DNS verso esterno',
               pronunciation: '/ɪkˈstɜːrnl neɪm/',
               phonetic: 'ek-STER-nl NEIM',
               example: 'ExternalName maps to a DNS CNAME. = ExternalName mappa a un CNAME DNS.',
@@ -6123,7 +6123,7 @@ export default {
             },
             {
               english: 'EndpointSlice',
-              italian: 'EndpointSlice',
+              italian: 'EndpointSlice / partizionamento endpoint K8s',
               pronunciation: '/slaɪs/',
               phonetic: 'SLAIS',
               example:
@@ -6152,7 +6152,7 @@ export default {
           items: [
             {
               english: 'Ingress',
-              italian: 'Ingress',
+              italian: 'Ingress / regola di esposizione HTTP K8s',
               pronunciation: '/ˈɪnɡres/',
               phonetic: 'IN-gres',
               example:
@@ -6185,7 +6185,7 @@ export default {
             },
             {
               english: 'Traefik',
-              italian: 'Traefik',
+              italian: 'Traefik (Ingress controller dinamico)',
               pronunciation: '/ˈtræfɪk/',
               phonetic: 'TRA-fik',
               example:
@@ -6196,7 +6196,7 @@ export default {
             },
             {
               english: 'IngressClass',
-              italian: 'IngressClass',
+              italian: 'IngressClass / classe di Ingress controller',
               pronunciation: '/klæs/',
               phonetic: 'KLAS',
               example:
@@ -6237,7 +6237,7 @@ export default {
             },
             {
               english: 'cert-manager',
-              italian: 'cert-manager',
+              italian: 'cert-manager / gestore certificati K8s',
               pronunciation: '/sɜːrt ˈmænɪdʒər/',
               phonetic: 'SERT MA-ni-gier',
               example:
@@ -6266,7 +6266,7 @@ export default {
           items: [
             {
               english: 'Service Mesh',
-              italian: 'Service mesh',
+              italian: 'service mesh / rete di servizi gestita',
               pronunciation: '/ˈsɜːrvɪs meʃ/',
               phonetic: 'SER-vis MESC',
               example:
@@ -6276,7 +6276,7 @@ export default {
             },
             {
               english: 'Istio',
-              italian: 'Istio',
+              italian: 'Istio (service mesh open source)',
               pronunciation: '/ˈɪstioʊ/',
               phonetic: 'I-stio',
               example: 'Istio is a popular service mesh. = Istio è una service mesh popolare.',
@@ -6286,7 +6286,7 @@ export default {
             },
             {
               english: 'Linkerd',
-              italian: 'Linkerd',
+              italian: 'Linkerd (service mesh ultra-leggero)',
               pronunciation: '/ˈlɪŋkərdiː/',
               phonetic: 'LIN-ker-DI',
               example:
@@ -6297,7 +6297,7 @@ export default {
             },
             {
               english: 'Envoy',
-              italian: 'Envoy',
+              italian: 'Envoy / proxy L7 di service mesh',
               pronunciation: '/ˈenvɔɪ/',
               phonetic: 'EN-voi',
               example: 'Envoy is a high-performance proxy. = Envoy è un proxy ad alte prestazioni.',
@@ -6348,7 +6348,7 @@ export default {
             },
             {
               english: 'Blue/Green',
-              italian: 'Blue/Green',
+              italian: 'blue/green / deployment a due colori',
               pronunciation: '/bluː ɡriːn/',
               phonetic: 'BLU-GRIIN',
               example:
@@ -6358,7 +6358,7 @@ export default {
             },
             {
               english: 'Circuit Breaker',
-              italian: 'Circuit breaker',
+              italian: 'circuit breaker / interruttore di circuito',
               pronunciation: '/ˈsɜːrkɪt ˈbreɪkər/',
               phonetic: 'SER-kit BREI-ker',
               example:
@@ -6375,7 +6375,7 @@ export default {
           items: [
             {
               english: 'Gateway API',
-              italian: 'Gateway API',
+              italian: 'Gateway API / API K8s per gestione gateway',
               pronunciation: '/ˈɡeɪtweɪ/',
               phonetic: 'GHEIT-uei',
               example:
@@ -6386,7 +6386,7 @@ export default {
             },
             {
               english: 'GatewayClass',
-              italian: 'GatewayClass',
+              italian: 'GatewayClass / classe di Gateway',
               pronunciation: '/ˈɡeɪtweɪ klæs/',
               phonetic: 'GHEIT-uei KLAS',
               example: 'GatewayClass defines a controller. = GatewayClass definisce un controller.',
@@ -6395,7 +6395,7 @@ export default {
             },
             {
               english: 'HTTPRoute',
-              italian: 'HTTPRoute',
+              italian: 'HTTPRoute / regola di routing HTTP',
               pronunciation: '/eɪtʃ tiː tiː piː ruːt/',
               phonetic: 'eich-ti-ti-pi RUT',
               example:
@@ -6406,7 +6406,7 @@ export default {
             },
             {
               english: 'TCPRoute',
-              italian: 'TCPRoute',
+              italian: 'TCPRoute / regola di routing TCP',
               pronunciation: '/tiː siː piː/',
               phonetic: 'ti-si-PI',
               example: 'TCPRoute handles raw TCP traffic. = TCPRoute gestisce traffico TCP grezzo.',
@@ -6415,7 +6415,7 @@ export default {
             },
             {
               english: 'TLSRoute',
-              italian: 'TLSRoute',
+              italian: 'TLSRoute / regola di routing TLS',
               pronunciation: '/tiː el es/',
               phonetic: 'ti-el-ES',
               example: 'TLSRoute routes by SNI. = TLSRoute instrada per SNI.',
@@ -6424,7 +6424,7 @@ export default {
             },
             {
               english: 'Listener',
-              italian: 'Listener',
+              italian: 'listener / porta in ascolto del Gateway',
               pronunciation: '/ˈlɪsənər/',
               phonetic: 'LI-se-ner',
               example:
@@ -6434,7 +6434,7 @@ export default {
             },
             {
               english: 'BackendRef',
-              italian: 'BackendRef',
+              italian: 'backendRef / riferimento al backend',
               pronunciation: '/ˈbækend ref/',
               phonetic: 'BAK-end REF',
               example: 'BackendRefs target Services. = I BackendRef puntano ai Service.',
@@ -6491,7 +6491,7 @@ export default {
           items: [
             {
               english: 'ConfigMap',
-              italian: 'ConfigMap',
+              italian: 'ConfigMap / oggetto di configurazione K8s',
               pronunciation: '/kənˈfɪɡ mæp/',
               phonetic: 'con-FIG-MAP',
               example:
@@ -6543,7 +6543,7 @@ export default {
             },
             {
               english: 'envFrom',
-              italian: 'envFrom',
+              italian: 'envFrom / inietta tutte le coppie chiave-valore',
               pronunciation: '/env frɒm/',
               phonetic: 'ENV FROM',
               example:
@@ -6554,7 +6554,7 @@ export default {
             },
             {
               english: 'configMapRef',
-              italian: 'configMapRef',
+              italian: 'configMapRef / riferimento a ConfigMap',
               pronunciation: '/ref/',
               phonetic: 'REF',
               example: 'Reference a ConfigMap by name. = Riferimento a un ConfigMap per nome.',
@@ -6573,7 +6573,7 @@ export default {
             },
             {
               english: 'Hot Reload',
-              italian: 'Hot reload',
+              italian: 'hot reload / ricarica a caldo',
               pronunciation: '/hɒt rɪˈloʊd/',
               phonetic: 'HOT ri-LOUD',
               example:
@@ -6602,7 +6602,7 @@ export default {
           items: [
             {
               english: 'Secret',
-              italian: 'Secret',
+              italian: 'Secret / oggetto contenente segreti K8s',
               pronunciation: '/ˈsiːkrət/',
               phonetic: 'SI-kret',
               example: 'Secrets store sensitive data. = I Secret memorizzano dati sensibili.',
@@ -6653,7 +6653,7 @@ export default {
             },
             {
               english: 'imagePullSecrets',
-              italian: 'imagePullSecrets',
+              italian: 'imagePullSecrets / segreti per pull immagini private',
               pronunciation: '/ˈɪmɪdʒ pʊl ˈsiːkrəts/',
               phonetic: 'I-migg PUL SI-krets',
               example:
@@ -6675,7 +6675,7 @@ export default {
             },
             {
               english: 'External Secrets Operator',
-              italian: 'External Secrets Operator',
+              italian: 'External Secrets Operator / sincronizzatore segreti K8s',
               pronunciation: '/ɪkˈstɜːrnl/',
               phonetic: 'ek-STER-nl',
               example:
@@ -6686,7 +6686,7 @@ export default {
             },
             {
               english: 'SealedSecret',
-              italian: 'SealedSecret',
+              italian: 'SealedSecret / segreto cifrato per Git',
               pronunciation: '/siːld/',
               phonetic: 'SIILD',
               example:
@@ -6697,7 +6697,7 @@ export default {
             },
             {
               english: 'SOPS',
-              italian: 'SOPS',
+              italian: 'SOPS / cifratura di file Mozilla',
               pronunciation: '/sɒps/',
               phonetic: 'SOPS',
               example: 'SOPS encrypts YAML files in git. = SOPS cifra file YAML in git.',
@@ -6725,7 +6725,7 @@ export default {
             },
             {
               english: 'valueFrom',
-              italian: 'valueFrom',
+              italian: 'valueFrom / origine del valore env',
               pronunciation: '/ˈvæljuː frɒm/',
               phonetic: 'VAL-iu FROM',
               example:
@@ -6736,7 +6736,7 @@ export default {
             },
             {
               english: 'configMapKeyRef',
-              italian: 'configMapKeyRef',
+              italian: 'configMapKeyRef / chiave specifica di ConfigMap',
               pronunciation: '/kiː ref/',
               phonetic: 'KII-REF',
               example:
@@ -6746,7 +6746,7 @@ export default {
             },
             {
               english: 'secretKeyRef',
-              italian: 'secretKeyRef',
+              italian: 'secretKeyRef / chiave specifica di Secret',
               pronunciation: '/ˈsiːkrət kiː/',
               phonetic: 'SI-kret KII',
               example: 'Get a value from a Secret key. = Ottieni un valore da una chiave Secret.',
@@ -6756,7 +6756,7 @@ export default {
             },
             {
               english: 'fieldRef',
-              italian: 'fieldRef',
+              italian: 'fieldRef / riferimento a campo del pod',
               pronunciation: '/fiːld ref/',
               phonetic: 'FIILD-REF',
               example: 'fieldRef gets pod fields. = fieldRef ottiene campi del pod.',
@@ -6766,7 +6766,7 @@ export default {
             },
             {
               english: 'resourceFieldRef',
-              italian: 'resourceFieldRef',
+              italian: 'resourceFieldRef / riferimento a campo risorsa',
               pronunciation: '/rɪˈsɔːrs/',
               phonetic: 'ri-SORS',
               example: 'Get container resource info. = Ottieni info risorse del container.',
@@ -6823,7 +6823,7 @@ export default {
           items: [
             {
               english: 'Downward API',
-              italian: 'Downward API',
+              italian: 'Downward API / espone metadata pod come env',
               pronunciation: '/ˈdaʊnwərd/',
               phonetic: 'DAUN-uerd',
               example: 'Downward API exposes pod metadata. = Downward API espone metadati del pod.',
@@ -6832,7 +6832,7 @@ export default {
             },
             {
               english: 'metadata.labels',
-              italian: 'metadata.labels',
+              italian: "metadata.labels / etichette dell'oggetto K8s",
               pronunciation: '/ˈleɪblz/',
               phonetic: 'LEI-bolz',
               example: 'Expose all labels as files. = Espone tutte le label come file.',
@@ -6842,7 +6842,7 @@ export default {
             },
             {
               english: 'metadata.annotations',
-              italian: 'metadata.annotations',
+              italian: "metadata.annotations / annotazioni dell'oggetto K8s",
               pronunciation: '/ˌænəˈteɪʃənz/',
               phonetic: 'a-no-TEI-scions',
               example:
@@ -6852,7 +6852,7 @@ export default {
             },
             {
               english: 'spec.serviceAccountName',
-              italian: 'spec.serviceAccountName',
+              italian: 'spec.serviceAccountName / SA usato dal pod',
               pronunciation: '/ˈsɜːrvɪs əˈkaʊnt/',
               phonetic: 'SER-vis a-KAUNT',
               example: 'Inject ServiceAccount name. = Inietta il nome del ServiceAccount.',
@@ -6902,7 +6902,7 @@ export default {
             },
             {
               english: 'subPath',
-              italian: 'subPath',
+              italian: 'subPath / sottopercorso del volume',
               pronunciation: '/sʌb pæθ/',
               phonetic: 'SAB-PAT',
               example:
@@ -6913,7 +6913,7 @@ export default {
             },
             {
               english: 'defaultMode',
-              italian: 'defaultMode',
+              italian: 'defaultMode / permessi di default file montati',
               pronunciation: '/dɪˈfɔːlt moʊd/',
               phonetic: 'di-FOLT MOUD',
               example:
@@ -6940,7 +6940,7 @@ export default {
           items: [
             {
               english: 'PersistentVolume',
-              italian: 'PersistentVolume',
+              italian: 'PersistentVolume / volume persistente del cluster',
               pronunciation: '/pərˈsɪstənt ˈvɒljuːm/',
               phonetic: 'per-SI-stent VOL-ium',
               example:
@@ -7048,7 +7048,7 @@ export default {
           items: [
             {
               english: 'PersistentVolumeClaim',
-              italian: 'PersistentVolumeClaim',
+              italian: 'PersistentVolumeClaim / richiesta di PV',
               pronunciation: '/kleɪm/',
               phonetic: 'KLEIM',
               example:
@@ -7060,7 +7060,7 @@ export default {
             },
             {
               english: 'PVC',
-              italian: 'PVC',
+              italian: 'PVC / Persistent Volume Claim',
               pronunciation: '/piː viː siː/',
               phonetic: 'pi-vi-SI',
               example:
@@ -7112,7 +7112,7 @@ export default {
             },
             {
               english: 'WaitForFirstConsumer',
-              italian: 'WaitForFirstConsumer',
+              italian: 'WaitForFirstConsumer / aspetta prima di provisionare',
               pronunciation: '/weɪt fɔːr/',
               phonetic: 'UEIT-FOR',
               example:
@@ -7162,7 +7162,7 @@ export default {
           items: [
             {
               english: 'StorageClass',
-              italian: 'StorageClass',
+              italian: 'StorageClass / classe di storage dinamico',
               pronunciation: '/ˈstɔːrɪdʒ klæs/',
               phonetic: 'STO-rig KLAS',
               example:
@@ -7173,7 +7173,7 @@ export default {
             },
             {
               english: 'Provisioner',
-              italian: 'Provisioner',
+              italian: 'provisioner / fornitore di volumi',
               pronunciation: '/prəˈvɪʒənər/',
               phonetic: 'pro-VI-scio-ner',
               example:
@@ -7204,7 +7204,7 @@ export default {
             },
             {
               english: 'AWS EBS',
-              italian: 'AWS EBS',
+              italian: 'AWS EBS / Elastic Block Store',
               pronunciation: '/iː biː es/',
               phonetic: 'i-bi-ES',
               example: 'AWS EBS provides block storage. = AWS EBS fornisce storage a blocchi.',
@@ -7224,7 +7224,7 @@ export default {
             },
             {
               english: 'Azure Disk',
-              italian: 'Azure Disk',
+              italian: 'Azure Disk / disco Azure',
               pronunciation: '/ˈæʒər dɪsk/',
               phonetic: 'A-zer DISK',
               example: 'Azure Disk for Azure clusters. = Azure Disk per cluster Azure.',
@@ -7255,7 +7255,7 @@ export default {
             },
             {
               english: 'reclaimPolicy',
-              italian: 'reclaimPolicy',
+              italian: 'reclaimPolicy / politica di riutilizzo PV',
               pronunciation: '/rɪˈkleɪm/',
               phonetic: 'ri-KLEIM',
               example:
@@ -7304,7 +7304,7 @@ export default {
             },
             {
               english: 'VolumeSnapshotClass',
-              italian: 'VolumeSnapshotClass',
+              italian: 'VolumeSnapshotClass / classe per snapshot volumi',
               pronunciation: '/snæpʃɒt klæs/',
               phonetic: 'SNAP-sciot KLAS',
               example:
@@ -7345,7 +7345,7 @@ export default {
             },
             {
               english: 'hostPath',
-              italian: 'hostPath',
+              italian: 'hostPath / percorso del nodo come volume',
               pronunciation: '/hoʊst pæθ/',
               phonetic: 'HOUST-PAT',
               example: 'hostPath mounts a node directory. = hostPath monta una directory del nodo.',
@@ -7355,7 +7355,7 @@ export default {
             },
             {
               english: 'emptyDir',
-              italian: 'emptyDir',
+              italian: 'emptyDir / volume effimero',
               pronunciation: '/ˈempti dɪr/',
               phonetic: 'EM-pti DIR',
               example:
@@ -7403,7 +7403,7 @@ export default {
             },
             {
               english: 'Calico',
-              italian: 'Calico',
+              italian: 'Calico (CNI Kubernetes con NetworkPolicy)',
               pronunciation: '/kəˈliːkoʊ/',
               phonetic: 'ka-LI-ko',
               example:
@@ -7414,7 +7414,7 @@ export default {
             },
             {
               english: 'Cilium',
-              italian: 'Cilium',
+              italian: 'Cilium (CNI eBPF Kubernetes)',
               pronunciation: '/ˈsɪliəm/',
               phonetic: 'SI-li-um',
               example: 'Cilium uses eBPF for networking. = Cilium usa eBPF per il networking.',
@@ -7424,7 +7424,7 @@ export default {
             },
             {
               english: 'Flannel',
-              italian: 'Flannel',
+              italian: 'Flannel (CNI Kubernetes semplice)',
               pronunciation: '/ˈflænəl/',
               phonetic: 'FLA-nel',
               example:
@@ -7435,7 +7435,7 @@ export default {
             },
             {
               english: 'Weave Net',
-              italian: 'Weave Net',
+              italian: 'Weave Net (CNI Kubernetes)',
               pronunciation: '/wiːv net/',
               phonetic: 'UIIV-NET',
               example: 'Weave Net offers a meshed overlay. = Weave Net offre un overlay a maglia.',
@@ -7466,7 +7466,7 @@ export default {
             },
             {
               english: 'BGP',
-              italian: 'BGP',
+              italian: 'BGP / Border Gateway Protocol',
               pronunciation: '/biː dʒiː piː/',
               phonetic: 'bi-gi-PI',
               example: 'Calico can use BGP for routing. = Calico può usare BGP per il routing.',
@@ -7476,7 +7476,7 @@ export default {
             },
             {
               english: 'IP-in-IP',
-              italian: 'IP-in-IP',
+              italian: 'IP-in-IP / incapsulamento IP in IP',
               pronunciation: '/aɪ piː ɪn aɪ piː/',
               phonetic: 'ai-pi IN ai-PI',
               example: 'IP-in-IP encapsulates packets. = IP-in-IP incapsula i pacchetti.',
@@ -7485,7 +7485,7 @@ export default {
             },
             {
               english: 'VXLAN',
-              italian: 'VXLAN',
+              italian: 'VXLAN / Virtual eXtensible LAN',
               pronunciation: '/viː eks lan/',
               phonetic: 'vi-eks-LAN',
               example: 'VXLAN tunnels packets between nodes. = VXLAN tunnel pacchetti tra nodi.',
@@ -7501,7 +7501,7 @@ export default {
           items: [
             {
               english: 'NetworkPolicy',
-              italian: 'NetworkPolicy',
+              italian: 'NetworkPolicy / policy di rete K8s',
               pronunciation: '/ˈnetwɜːrk ˈpɒləsi/',
               phonetic: 'NET-uerk PO-li-si',
               example:
@@ -7534,7 +7534,7 @@ export default {
             },
             {
               english: 'podSelector',
-              italian: 'podSelector',
+              italian: 'podSelector / selettore di pod nella policy',
               pronunciation: '/səˈlektər/',
               phonetic: 'se-LEK-tor',
               example: 'podSelector targets specific pods. = podSelector mira a pod specifici.',
@@ -7544,7 +7544,7 @@ export default {
             },
             {
               english: 'namespaceSelector',
-              italian: 'namespaceSelector',
+              italian: 'namespaceSelector / selettore di namespace',
               pronunciation: '/ˈneɪmspeɪs/',
               phonetic: 'NEIM-speis',
               example:
@@ -7554,7 +7554,7 @@ export default {
             },
             {
               english: 'ipBlock',
-              italian: 'ipBlock',
+              italian: 'ipBlock / blocco IP nella policy',
               pronunciation: '/aɪ piː blɒk/',
               phonetic: 'ai-pi-BLOK',
               example: 'ipBlock restricts CIDR ranges. = ipBlock limita range CIDR.',
@@ -7564,7 +7564,7 @@ export default {
             },
             {
               english: 'Default Deny',
-              italian: 'Default deny',
+              italian: 'default deny / nega di default',
               pronunciation: '/dɪˈfɔːlt dɪˈnaɪ/',
               phonetic: 'di-FOLT di-NAI',
               example:
@@ -7575,7 +7575,7 @@ export default {
             },
             {
               english: 'Allow List',
-              italian: 'Allow list',
+              italian: 'allow list / lista di permessi',
               pronunciation: '/əˈlaʊ lɪst/',
               phonetic: 'a-LAU LIST',
               example:
@@ -7613,7 +7613,7 @@ export default {
           items: [
             {
               english: 'CoreDNS',
-              italian: 'CoreDNS',
+              italian: 'CoreDNS / DNS cluster di Kubernetes',
               pronunciation: '/kɔːr diː en es/',
               phonetic: 'KOR di-en-ES',
               example: 'CoreDNS provides cluster DNS. = CoreDNS fornisce il DNS del cluster.',
@@ -7654,7 +7654,7 @@ export default {
             },
             {
               english: 'dnsPolicy',
-              italian: 'dnsPolicy',
+              italian: 'dnsPolicy / policy DNS del pod',
               pronunciation: '/ˈpɒləsi/',
               phonetic: 'PO-li-si',
               example:
@@ -7665,7 +7665,7 @@ export default {
             },
             {
               english: 'Corefile',
-              italian: 'Corefile',
+              italian: 'Corefile / configurazione di CoreDNS',
               pronunciation: '/kɔːr faɪl/',
               phonetic: 'KOR-FAIL',
               example: 'Corefile configures CoreDNS. = Corefile configura CoreDNS.',
@@ -7684,7 +7684,7 @@ export default {
             },
             {
               english: 'Stub Domain',
-              italian: 'Stub domain',
+              italian: 'stub domain / dominio inoltrato',
               pronunciation: '/stʌb/',
               phonetic: 'STAB',
               example:
@@ -7704,7 +7704,7 @@ export default {
             },
             {
               english: 'NodeLocal DNSCache',
-              italian: 'NodeLocal DNSCache',
+              italian: 'NodeLocal DNSCache / cache DNS sul nodo',
               pronunciation: '/noʊd ˈloʊkl/',
               phonetic: 'NOUD LO-kl',
               example:
@@ -7722,7 +7722,7 @@ export default {
           items: [
             {
               english: 'kube-proxy',
-              italian: 'kube-proxy',
+              italian: 'kube-proxy / proxy di rete su ogni nodo',
               pronunciation: '/ˈprɒksi/',
               phonetic: 'PROK-si',
               example:
@@ -7774,7 +7774,7 @@ export default {
             },
             {
               english: 'externalTrafficPolicy',
-              italian: 'externalTrafficPolicy',
+              italian: 'externalTrafficPolicy / policy traffico esterno',
               pronunciation: '/ɪkˈstɜːrnl ˈtræfɪk/',
               phonetic: 'ek-STER-nl TRA-fik',
               example:
@@ -7785,7 +7785,7 @@ export default {
             },
             {
               english: 'internalTrafficPolicy',
-              italian: 'internalTrafficPolicy',
+              italian: 'internalTrafficPolicy / policy traffico interno',
               pronunciation: '/ɪnˈtɜːrnl/',
               phonetic: 'in-TER-nl',
               example:
@@ -7795,7 +7795,7 @@ export default {
             },
             {
               english: 'topology Aware',
-              italian: 'Topology aware',
+              italian: 'topology-aware / consapevole della topologia',
               pronunciation: '/təˈpɒlədʒi/',
               phonetic: 'to-PO-lo-gi',
               example:
@@ -7815,7 +7815,7 @@ export default {
             },
             {
               english: 'Source NAT',
-              italian: 'Source NAT',
+              italian: 'source NAT / traduzione indirizzo sorgente',
               pronunciation: '/sɔːrs næt/',
               phonetic: 'SORS-NAT',
               example: 'kube-proxy may apply SNAT. = kube-proxy può applicare SNAT.',
@@ -7841,7 +7841,7 @@ export default {
           items: [
             {
               english: 'Helm',
-              italian: 'Helm',
+              italian: 'Helm / package manager per Kubernetes',
               pronunciation: '/helm/',
               phonetic: 'HELM',
               example: 'Helm is the K8s package manager. = Helm è il package manager di K8s.',
@@ -7851,7 +7851,7 @@ export default {
             },
             {
               english: 'Chart',
-              italian: 'Chart',
+              italian: 'chart / pacchetto Helm',
               pronunciation: '/tʃɑːrt/',
               phonetic: 'CIART',
               example: 'A chart is a Helm package. = Un chart è un pacchetto Helm.',
@@ -7861,7 +7861,7 @@ export default {
             },
             {
               english: 'Release',
-              italian: 'Release',
+              italian: 'release / istanza installata di un chart',
               pronunciation: '/rɪˈliːs/',
               phonetic: 'ri-LIIS',
               example:
@@ -7871,7 +7871,7 @@ export default {
             },
             {
               english: 'Repository',
-              italian: 'Repository',
+              italian: 'repository / archivio di chart',
               pronunciation: '/rɪˈpɒzɪtɔːri/',
               phonetic: 'ri-PO-zi-tori',
               example: 'A Helm repository hosts charts. = Un repository Helm ospita chart.',
@@ -7950,7 +7950,7 @@ export default {
           items: [
             {
               english: 'Chart.yaml',
-              italian: 'Chart.yaml',
+              italian: 'Chart.yaml / metadati del chart',
               pronunciation: '/tʃɑːrt jæml/',
               phonetic: 'CIART IA-ml',
               example:
@@ -7961,7 +7961,7 @@ export default {
             },
             {
               english: 'values.yaml',
-              italian: 'values.yaml',
+              italian: 'values.yaml / valori di default del chart',
               pronunciation: '/ˈvæljuːz jæml/',
               phonetic: 'VAL-iuz IA-ml',
               example:
@@ -8001,7 +8001,7 @@ export default {
             },
             {
               english: '_helpers.tpl',
-              italian: '_helpers.tpl',
+              italian: '_helpers.tpl / template helper Helm',
               pronunciation: '/ˈhelpərz/',
               phonetic: 'HEL-perz',
               example:
@@ -8031,7 +8031,7 @@ export default {
             },
             {
               english: 'appVersion',
-              italian: 'appVersion',
+              italian: "appVersion / versione dell'applicazione",
               pronunciation: '/æp/',
               phonetic: 'AP',
               example:
@@ -8110,7 +8110,7 @@ export default {
             },
             {
               english: 'if/else',
-              italian: 'if/else',
+              italian: 'if/else / costrutti condizionali nei template',
               pronunciation: '/ɪf els/',
               phonetic: 'IF-ELS',
               example: 'Conditionals in templates. = Condizionali nei template.',
@@ -8167,7 +8167,7 @@ export default {
           items: [
             {
               english: 'Hook',
-              italian: 'Hook',
+              italian: 'hook / aggancio del ciclo di vita Helm',
               pronunciation: '/hʊk/',
               phonetic: 'HUK',
               example:
@@ -8227,7 +8227,7 @@ export default {
             },
             {
               english: 'Sub-chart',
-              italian: 'Sub-chart',
+              italian: 'sub-chart / chart annidato',
               pronunciation: '/sʌb tʃɑːrt/',
               phonetic: 'SAB-CIART',
               example:
@@ -8293,7 +8293,7 @@ export default {
             },
             {
               english: 'Role',
-              italian: 'Role',
+              italian: 'Role / ruolo di namespace',
               pronunciation: '/roʊl/',
               phonetic: 'ROUL',
               example:
@@ -8304,7 +8304,7 @@ export default {
             },
             {
               english: 'ClusterRole',
-              italian: 'ClusterRole',
+              italian: 'ClusterRole / ruolo a livello cluster K8s',
               pronunciation: '/ˈklʌstər roʊl/',
               phonetic: 'KLAS-ter ROUL',
               example:
@@ -8314,7 +8314,7 @@ export default {
             },
             {
               english: 'RoleBinding',
-              italian: 'RoleBinding',
+              italian: 'RoleBinding / aggancio ruolo a soggetto K8s',
               pronunciation: '/ˈbaɪndɪŋ/',
               phonetic: 'BAIN-ding',
               example:
@@ -8325,7 +8325,7 @@ export default {
             },
             {
               english: 'ClusterRoleBinding',
-              italian: 'ClusterRoleBinding',
+              italian: 'ClusterRoleBinding / aggancio cluster-wide',
               pronunciation: '/ˈklʌstər/',
               phonetic: 'KLAS-ter',
               example:
@@ -8355,7 +8355,7 @@ export default {
             },
             {
               english: 'apiGroups',
-              italian: 'apiGroups',
+              italian: 'apiGroups / gruppi API nei ruoli',
               pronunciation: '/ɡruːps/',
               phonetic: 'GRUPS',
               example: 'apiGroups specifies API groups. = apiGroups specifica i gruppi API.',
@@ -8393,7 +8393,7 @@ export default {
           items: [
             {
               english: 'ServiceAccount',
-              italian: 'ServiceAccount',
+              italian: 'ServiceAccount / account di servizio K8s',
               pronunciation: '/ˈsɜːrvɪs əˈkaʊnt/',
               phonetic: 'SER-vis a-KAUNT',
               example:
@@ -8424,7 +8424,7 @@ export default {
             },
             {
               english: 'automountServiceAccountToken',
-              italian: 'automountServiceAccountToken',
+              italian: 'automountServiceAccountToken / monta token SA',
               pronunciation: '/ˌɔːtoʊˈmaʊnt/',
               phonetic: 'au-tou-MAUNT',
               example:
@@ -8445,7 +8445,7 @@ export default {
             },
             {
               english: 'Workload Identity',
-              italian: 'Workload identity',
+              italian: 'workload identity / identità GCP per carichi',
               pronunciation: '/aɪˈdentəti/',
               phonetic: 'ai-DEN-te-ti',
               example:
@@ -8465,7 +8465,7 @@ export default {
             },
             {
               english: 'Audience',
-              italian: 'Audience',
+              italian: 'audience / destinatario del token',
               pronunciation: '/ˈɔːdiəns/',
               phonetic: 'O-di-ens',
               example:
@@ -8502,7 +8502,7 @@ export default {
           items: [
             {
               english: 'PodSecurityPolicy',
-              italian: 'PodSecurityPolicy',
+              italian: 'PodSecurityPolicy / vecchia policy di sicurezza pod',
               pronunciation: '/ˈpɒləsi/',
               phonetic: 'PO-li-si',
               example:
@@ -8513,7 +8513,7 @@ export default {
             },
             {
               english: 'Pod Security Standards',
-              italian: 'Pod Security Standards',
+              italian: 'Pod Security Standards / standard sicurezza pod',
               pronunciation: '/ˈstændərdz/',
               phonetic: 'STAN-derdz',
               example: 'PSS define security profiles. = PSS definiscono profili di sicurezza.',
@@ -8552,7 +8552,7 @@ export default {
             },
             {
               english: 'securityContext',
-              italian: 'securityContext',
+              italian: 'securityContext / contesto di sicurezza',
               pronunciation: '/sɪˈkjʊrɪti ˈkɒntekst/',
               phonetic: 'si-KIU-ri-ti KON-tekst',
               example:
@@ -8563,7 +8563,7 @@ export default {
             },
             {
               english: 'runAsNonRoot',
-              italian: 'runAsNonRoot',
+              italian: 'runAsNonRoot / esegui non come root',
               pronunciation: '/nɒn ruːt/',
               phonetic: 'NON-RUT',
               example:
@@ -8573,7 +8573,7 @@ export default {
             },
             {
               english: 'runAsUser',
-              italian: 'runAsUser',
+              italian: 'runAsUser / UID di esecuzione',
               pronunciation: '/ˈjuːzər/',
               phonetic: 'IU-zer',
               example: "runAsUser sets the container UID. = runAsUser imposta l'UID del container.",
@@ -8583,7 +8583,7 @@ export default {
             },
             {
               english: 'fsGroup',
-              italian: 'fsGroup',
+              italian: 'fsGroup / GID dei volumi',
               pronunciation: '/ef es ɡruːp/',
               phonetic: 'ef-es GRUP',
               example:
@@ -8594,7 +8594,7 @@ export default {
             },
             {
               english: 'seccompProfile',
-              italian: 'seccompProfile',
+              italian: 'seccompProfile / profilo seccomp',
               pronunciation: '/ˈsekkɒmp/',
               phonetic: 'SEK-komp',
               example:
@@ -8622,7 +8622,7 @@ export default {
             },
             {
               english: 'Gatekeeper',
-              italian: 'Gatekeeper',
+              italian: 'OPA Gatekeeper / OPA per Kubernetes',
               pronunciation: '/ˈɡeɪtkiːpər/',
               phonetic: 'GHEIT-ki-per',
               example: 'Gatekeeper integrates OPA into K8s. = Gatekeeper integra OPA in K8s.',
@@ -8632,7 +8632,7 @@ export default {
             },
             {
               english: 'Rego',
-              italian: 'Rego',
+              italian: 'Rego / linguaggio policy di OPA',
               pronunciation: '/ˈreɪɡoʊ/',
               phonetic: 'REI-go',
               example: 'Rego is the OPA policy language. = Rego è il linguaggio di policy OPA.',
@@ -8642,7 +8642,7 @@ export default {
             },
             {
               english: 'ConstraintTemplate',
-              italian: 'ConstraintTemplate',
+              italian: 'ConstraintTemplate / template di policy Gatekeeper',
               pronunciation: '/kənˈstreɪnt/',
               phonetic: 'con-STREINT',
               example:
@@ -8652,7 +8652,7 @@ export default {
             },
             {
               english: 'Constraint',
-              italian: 'Constraint',
+              italian: 'Constraint / istanza di policy Gatekeeper',
               pronunciation: '/kənˈstreɪnt/',
               phonetic: 'con-STREINT',
               example:
@@ -8692,7 +8692,7 @@ export default {
             },
             {
               english: 'Kyverno',
-              italian: 'Kyverno',
+              italian: 'Kyverno (policy engine Kubernetes)',
               pronunciation: '/kaɪˈvɜːrnoʊ/',
               phonetic: 'kai-VER-no',
               example:
@@ -8751,7 +8751,7 @@ export default {
             },
             {
               english: 'minReplicas',
-              italian: 'minReplicas',
+              italian: 'minReplicas / repliche minime HPA',
               pronunciation: '/mɪn/',
               phonetic: 'MIN',
               example:
@@ -8762,7 +8762,7 @@ export default {
             },
             {
               english: 'maxReplicas',
-              italian: 'maxReplicas',
+              italian: 'maxReplicas / repliche massime HPA',
               pronunciation: '/mæks/',
               phonetic: 'MAKS',
               example:
@@ -8825,7 +8825,7 @@ export default {
             },
             {
               english: 'metrics-server',
-              italian: 'metrics-server',
+              italian: 'metrics-server / metriche delle risorse K8s',
               pronunciation: '/ˈsɜːrvər/',
               phonetic: 'SER-ver',
               example: 'metrics-server is required for HPA. = metrics-server è necessario per HPA.',
@@ -8875,7 +8875,7 @@ export default {
             },
             {
               english: 'Cluster Autoscaler',
-              italian: 'Cluster Autoscaler',
+              italian: 'Cluster Autoscaler / scaler dei nodi',
               pronunciation: '/ˈɔːtoʊskeɪlər/',
               phonetic: 'O-tou-skei-ler',
               example:
@@ -8896,7 +8896,7 @@ export default {
             },
             {
               english: 'Karpenter',
-              italian: 'Karpenter',
+              italian: 'Karpenter / autoscaler nodi AWS-native',
               pronunciation: '/ˈkɑːrpəntər/',
               phonetic: 'KAR-pen-ter',
               example:
@@ -8938,7 +8938,7 @@ export default {
             },
             {
               english: 'Right-Sizing',
-              italian: 'Right-sizing',
+              italian: 'right-sizing / dimensionamento corretto risorse',
               pronunciation: '/raɪt saɪzɪŋ/',
               phonetic: 'RAIT-SAI-zing',
               example:
@@ -8955,7 +8955,7 @@ export default {
           items: [
             {
               english: 'PodDisruptionBudget',
-              italian: 'PodDisruptionBudget',
+              italian: 'PodDisruptionBudget / budget di interruzione pod',
               pronunciation: '/dɪsˈrʌpʃən ˈbʌdʒɪt/',
               phonetic: 'dis-RAP-scion BA-git',
               example: 'PDB limits voluntary disruptions. = PDB limita le interruzioni volontarie.',
@@ -8974,7 +8974,7 @@ export default {
             },
             {
               english: 'minAvailable',
-              italian: 'minAvailable',
+              italian: 'minAvailable / pod minimi disponibili',
               pronunciation: '/mɪn əˈveɪləbl/',
               phonetic: 'MIN a-VEI-la-bol',
               example: 'minAvailable defines minimum pods. = minAvailable definisce i pod minimi.',
@@ -8984,7 +8984,7 @@ export default {
             },
             {
               english: 'maxUnavailable',
-              italian: 'maxUnavailable',
+              italian: "maxUnavailable / pod fuori servizio durante l'aggiornamento",
               pronunciation: '/ʌnəˈveɪləbl/',
               phonetic: 'an-a-VEI-la-bol',
               example:
@@ -9015,7 +9015,7 @@ export default {
             },
             {
               english: 'Eviction',
-              italian: 'Eviction',
+              italian: 'eviction / sfratto del pod',
               pronunciation: '/ɪˈvɪkʃən/',
               phonetic: 'i-VIK-scion',
               example:
@@ -9062,7 +9062,7 @@ export default {
           items: [
             {
               english: 'KEDA',
-              italian: 'KEDA',
+              italian: 'KEDA / Kubernetes Event-Driven Autoscaling',
               pronunciation: '/ˈkiːdə/',
               phonetic: 'KI-da',
               example: 'KEDA is event-driven autoscaling. = KEDA è autoscaling guidato da eventi.',
@@ -9072,7 +9072,7 @@ export default {
             },
             {
               english: 'ScaledObject',
-              italian: 'ScaledObject',
+              italian: 'ScaledObject / oggetto KEDA scalabile',
               pronunciation: '/skeɪld/',
               phonetic: 'SKEILD',
               example:
@@ -9083,7 +9083,7 @@ export default {
             },
             {
               english: 'Scaler',
-              italian: 'Scaler',
+              italian: 'scaler / fornitore di metriche KEDA',
               pronunciation: '/ˈskeɪlər/',
               phonetic: 'SKEI-ler',
               example:
@@ -9094,7 +9094,7 @@ export default {
             },
             {
               english: 'Trigger',
-              italian: 'Trigger',
+              italian: 'trigger / evento scatenante',
               pronunciation: '/ˈtrɪɡər/',
               phonetic: 'TRI-gher',
               example: 'Triggers define when to scale. = I trigger definiscono quando scalare.',
@@ -9134,7 +9134,7 @@ export default {
             },
             {
               english: 'Cooldown',
-              italian: 'Cooldown',
+              italian: 'cooldown / tempo di raffreddamento',
               pronunciation: '/ˈkuːldaʊn/',
               phonetic: 'KUL-daun',
               example: 'KEDA cooldown prevents flapping. = Il cooldown KEDA previene oscillazioni.',
@@ -9144,7 +9144,7 @@ export default {
             },
             {
               english: 'TriggerAuthentication',
-              italian: 'TriggerAuthentication',
+              italian: 'TriggerAuthentication / autenticazione del trigger KEDA',
               pronunciation: '/ɔːˌθentɪˈkeɪʃən/',
               phonetic: 'au-ten-ti-KEI-scen',
               example:
@@ -9154,7 +9154,7 @@ export default {
             },
             {
               english: 'ScaledJob',
-              italian: 'ScaledJob',
+              italian: 'ScaledJob / Job autoscalato KEDA',
               pronunciation: '/dʒɒb/',
               phonetic: 'GIOB',
               example: 'ScaledJob scales batch Jobs. = ScaledJob scala Job batch.',
@@ -9180,7 +9180,7 @@ export default {
           items: [
             {
               english: 'Metrics Server',
-              italian: 'Metrics Server',
+              italian: 'metrics-server / metriche delle risorse K8s',
               pronunciation: '/ˈmetrɪks/',
               phonetic: 'ME-triks',
               example:
@@ -9192,7 +9192,7 @@ export default {
             },
             {
               english: 'kubectl top',
-              italian: 'kubectl top',
+              italian: 'kubectl top / mostra utilizzo risorse',
               pronunciation: '/tɒp/',
               phonetic: 'TOP',
               example:
@@ -9203,7 +9203,7 @@ export default {
             },
             {
               english: 'Prometheus',
-              italian: 'Prometheus',
+              italian: 'Prometheus (sistema monitoring time-series)',
               pronunciation: '/prəˈmiːθiəs/',
               phonetic: 'pro-MI-ti-us',
               example: 'Prometheus scrapes metrics. = Prometheus raccoglie metriche.',
@@ -9213,7 +9213,7 @@ export default {
             },
             {
               english: 'PromQL',
-              italian: 'PromQL',
+              italian: 'PromQL / linguaggio query Prometheus',
               pronunciation: '/prɒm kjuː el/',
               phonetic: 'PROM-kiu-EL',
               example:
@@ -9224,7 +9224,7 @@ export default {
             },
             {
               english: 'ServiceMonitor',
-              italian: 'ServiceMonitor',
+              italian: 'ServiceMonitor / CRD scraping servizi',
               pronunciation: '/ˈmɒnɪtər/',
               phonetic: 'MO-ni-tor',
               example:
@@ -9235,7 +9235,7 @@ export default {
             },
             {
               english: 'PodMonitor',
-              italian: 'PodMonitor',
+              italian: 'PodMonitor / CRD scraping pod',
               pronunciation: '/pɒd/',
               phonetic: 'POD',
               example: 'PodMonitor scrapes pods directly. = PodMonitor scrappa i pod direttamente.',
@@ -9244,7 +9244,7 @@ export default {
             },
             {
               english: 'Exporter',
-              italian: 'Exporter',
+              italian: 'exporter / esportatore di metriche',
               pronunciation: '/ɪkˈspɔːrtər/',
               phonetic: 'ek-SPOR-ter',
               example:
@@ -9255,7 +9255,7 @@ export default {
             },
             {
               english: 'kube-state-metrics',
-              italian: 'kube-state-metrics',
+              italian: 'kube-state-metrics / metriche di stato K8s',
               pronunciation: '/steɪt/',
               phonetic: 'STEIT',
               example:
@@ -9314,7 +9314,7 @@ export default {
             },
             {
               english: 'Health Check',
-              italian: 'Health check',
+              italian: 'health check / controllo di salute',
               pronunciation: '/helθ tʃek/',
               phonetic: 'HELT CEK',
               example:
@@ -9324,7 +9324,7 @@ export default {
             },
             {
               english: 'Golden Signals',
-              italian: 'Golden signals',
+              italian: 'golden signals / latenza, traffico, errori, saturazione',
               pronunciation: '/ˈɡoʊldən ˈsɪɡnəlz/',
               phonetic: 'GOL-den SIG-nalz',
               example:
@@ -9354,7 +9354,7 @@ export default {
             },
             {
               english: 'Error Budget',
-              italian: 'Error budget',
+              italian: 'error budget / budget degli errori SLO',
               pronunciation: '/ˈerər ˈbʌdʒɪt/',
               phonetic: 'E-ror BA-git',
               example:
@@ -9364,7 +9364,7 @@ export default {
             },
             {
               english: 'Uptime',
-              italian: 'Uptime',
+              italian: 'uptime / tempo di funzionamento',
               pronunciation: '/ˈʌptaɪm/',
               phonetic: 'AP-taim',
               example:
@@ -9384,7 +9384,7 @@ export default {
             },
             {
               english: 'Throughput',
-              italian: 'Throughput',
+              italian: 'throughput / volume di operazioni al secondo',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'TRU-put',
               example: 'Throughput is requests per second. = Throughput sono richieste al secondo.',
@@ -9421,7 +9421,7 @@ export default {
             },
             {
               english: 'Loki',
-              italian: 'Loki',
+              italian: 'Loki (sistema di log Grafana)',
               pronunciation: '/ˈloʊki/',
               phonetic: 'LO-ki',
               example: 'Loki is a log aggregation system. = Loki è un sistema di aggregazione log.',
@@ -9432,7 +9432,7 @@ export default {
             },
             {
               english: 'Promtail',
-              italian: 'Promtail',
+              italian: 'Promtail / agente Loki di raccolta log',
               pronunciation: '/prɒmteɪl/',
               phonetic: 'PROM-teil',
               example: 'Promtail ships logs to Loki. = Promtail invia log a Loki.',
@@ -9442,7 +9442,7 @@ export default {
             },
             {
               english: 'Stdout/Stderr',
-              italian: 'Stdout/Stderr',
+              italian: 'stdout/stderr / output e errori standard',
               pronunciation: '/es tiː diː aʊt/',
               phonetic: 'es-ti-di-AUT',
               example:
@@ -9518,7 +9518,7 @@ export default {
             },
             {
               english: 'Jaeger',
-              italian: 'Jaeger',
+              italian: 'Jaeger (piattaforma di tracing distribuito)',
               pronunciation: '/ˈjeɪɡər/',
               phonetic: 'IEI-gher',
               example:
@@ -9529,7 +9529,7 @@ export default {
             },
             {
               english: 'OpenTelemetry',
-              italian: 'OpenTelemetry',
+              italian: 'OpenTelemetry / framework observability standard',
               pronunciation: '/ˈoʊpən təˈlemətri/',
               phonetic: 'OU-pen te-LE-me-tri',
               example:
@@ -9541,7 +9541,7 @@ export default {
             },
             {
               english: 'Span',
-              italian: 'Span',
+              italian: 'span / unità di lavoro tracciata',
               pronunciation: '/spæn/',
               phonetic: 'SPAN',
               example:
@@ -9551,7 +9551,7 @@ export default {
             },
             {
               english: 'Trace ID',
-              italian: 'Trace ID',
+              italian: 'trace ID / identificatore della trace',
               pronunciation: '/treɪs aɪ diː/',
               phonetic: 'TREIS ai-DI',
               example:
@@ -9561,7 +9561,7 @@ export default {
             },
             {
               english: 'Sampling',
-              italian: 'Sampling',
+              italian: 'sampling / campionamento delle trace',
               pronunciation: '/ˈsæmplɪŋ/',
               phonetic: 'SAM-pling',
               example: 'Sample traces to reduce volume. = Campiona le trace per ridurre il volume.',
@@ -9591,7 +9591,7 @@ export default {
             },
             {
               english: 'Tempo',
-              italian: 'Tempo',
+              italian: 'Tempo (backend di tracing Grafana)',
               pronunciation: '/ˈtempoʊ/',
               phonetic: 'TEM-po',
               example:
@@ -9602,7 +9602,7 @@ export default {
             },
             {
               english: 'Grafana',
-              italian: 'Grafana',
+              italian: 'Grafana (piattaforma di dashboard)',
               pronunciation: '/ɡrəˈfɑːnə/',
               phonetic: 'gra-FA-na',
               example:
@@ -9629,7 +9629,7 @@ export default {
           items: [
             {
               english: 'GitOps',
-              italian: 'GitOps',
+              italian: 'GitOps / Git come fonte di verità per il deploy',
               pronunciation: '/ɡɪt ɒps/',
               phonetic: 'GIT-OPS',
               example: 'GitOps uses Git as source of truth. = GitOps usa Git come fonte di verità.',
@@ -9733,7 +9733,7 @@ export default {
           items: [
             {
               english: 'ArgoCD',
-              italian: 'ArgoCD',
+              italian: 'Argo CD (motore GitOps Kubernetes)',
               pronunciation: '/ˈɑːrɡoʊ siː diː/',
               phonetic: 'AR-go si-DI',
               example: 'ArgoCD is a popular GitOps tool. = ArgoCD è un popolare tool GitOps.',
@@ -9743,7 +9743,7 @@ export default {
             },
             {
               english: 'Application',
-              italian: 'Application',
+              italian: 'Application / risorsa Argo CD',
               pronunciation: '/ˌæplɪˈkeɪʃən/',
               phonetic: 'a-pli-KEI-scen',
               example: 'Application is the ArgoCD CRD. = Application è la CRD di ArgoCD.',
@@ -9774,7 +9774,7 @@ export default {
             },
             {
               english: 'Sync',
-              italian: 'Sync',
+              italian: 'sync / sincronizzazione Argo CD',
               pronunciation: '/sɪŋk/',
               phonetic: 'SINK',
               example:
@@ -9785,7 +9785,7 @@ export default {
             },
             {
               english: 'Auto Sync',
-              italian: 'Auto sync',
+              italian: 'auto sync / sincronizzazione automatica',
               pronunciation: '/ˈɔːtoʊ sɪŋk/',
               phonetic: 'O-tou SINK',
               example:
@@ -9796,7 +9796,7 @@ export default {
             },
             {
               english: 'Self Heal',
-              italian: 'Self heal',
+              italian: 'self heal / auto-correzione',
               pronunciation: '/self hiːl/',
               phonetic: 'SELF-HIIL',
               example:
@@ -9816,7 +9816,7 @@ export default {
             },
             {
               english: 'Sync Wave',
-              italian: 'Sync wave',
+              italian: 'sync wave / ondata di sincronizzazione',
               pronunciation: '/weɪv/',
               phonetic: 'UEIV',
               example:
@@ -9827,7 +9827,7 @@ export default {
             },
             {
               english: 'AppProject',
-              italian: 'AppProject',
+              italian: 'AppProject / progetto di Argo CD',
               pronunciation: '/æp ˈprɒdʒekt/',
               phonetic: 'AP PRO-gekt',
               example: 'AppProject groups Applications. = AppProject raggruppa Application.',
@@ -9843,7 +9843,7 @@ export default {
           items: [
             {
               english: 'FluxCD',
-              italian: 'FluxCD',
+              italian: 'Flux CD (motore GitOps Kubernetes)',
               pronunciation: '/flʌks siː diː/',
               phonetic: 'FLAKS si-DI',
               example: 'FluxCD is a GitOps toolkit. = FluxCD è un toolkit GitOps.',
@@ -9853,7 +9853,7 @@ export default {
             },
             {
               english: 'GitRepository',
-              italian: 'GitRepository',
+              italian: 'GitRepository / sorgente Git in Flux',
               pronunciation: '/ɡɪt rɪˈpɒzɪtɔːri/',
               phonetic: 'GIT ri-PO-zi-tori',
               example:
@@ -9864,7 +9864,7 @@ export default {
             },
             {
               english: 'Kustomization',
-              italian: 'Kustomization',
+              italian: 'Kustomization / risorsa Flux Kustomize',
               pronunciation: '/ˌkʌstəmaɪˈzeɪʃən/',
               phonetic: 'kas-to-mai-ZEI-scen',
               example:
@@ -9875,7 +9875,7 @@ export default {
             },
             {
               english: 'HelmRelease',
-              italian: 'HelmRelease',
+              italian: 'HelmRelease / release Helm gestita da Flux',
               pronunciation: '/helm rɪˈliːs/',
               phonetic: 'HELM ri-LIIS',
               example:
@@ -9895,7 +9895,7 @@ export default {
             },
             {
               english: 'Source Controller',
-              italian: 'Source controller',
+              italian: 'Source Controller / controller delle fonti Flux',
               pronunciation: '/sɔːrs/',
               phonetic: 'SORS',
               example: 'Source controller fetches manifests. = Source controller scarica manifest.',
@@ -9904,7 +9904,7 @@ export default {
             },
             {
               english: 'Notification Controller',
-              italian: 'Notification controller',
+              italian: 'Notification Controller / notifiche Flux',
               pronunciation: '/ˌnoʊtɪfɪˈkeɪʃən/',
               phonetic: 'no-ti-fi-KEI-scen',
               example:
@@ -9914,7 +9914,7 @@ export default {
             },
             {
               english: 'Flagger',
-              italian: 'Flagger',
+              italian: 'Flagger / progressive delivery Kubernetes',
               pronunciation: '/ˈflæɡər/',
               phonetic: 'FLA-gher',
               example:
@@ -9925,7 +9925,7 @@ export default {
             },
             {
               english: 'Image Reflector',
-              italian: 'Image reflector',
+              italian: 'Image Reflector / scanner immagini Flux',
               pronunciation: '/rɪˈflektər/',
               phonetic: 'ri-FLEK-tor',
               example:
@@ -9951,7 +9951,7 @@ export default {
           items: [
             {
               english: 'Progressive Delivery',
-              italian: 'Progressive delivery',
+              italian: 'progressive delivery / rilascio progressivo',
               pronunciation: '/prəˈɡresɪv/',
               phonetic: 'pro-GRE-siv',
               example:
@@ -9961,7 +9961,7 @@ export default {
             },
             {
               english: 'Canary Release',
-              italian: 'Canary release',
+              italian: 'canary release / rilascio canary',
               pronunciation: '/ˈkænəri/',
               phonetic: 'KA-na-ri',
               example:
@@ -9980,7 +9980,7 @@ export default {
             },
             {
               english: 'Feature Flag',
-              italian: 'Feature flag',
+              italian: 'feature flag / interruttore funzionalità',
               pronunciation: '/ˈfiːtʃər flæɡ/',
               phonetic: 'FII-cer FLAG',
               example:
@@ -9990,7 +9990,7 @@ export default {
             },
             {
               english: 'A/B Testing',
-              italian: 'A/B testing',
+              italian: 'A/B testing / test su due varianti',
               pronunciation: '/eɪ biː/',
               phonetic: 'EI-BI',
               example: 'A/B testing compares two versions. = A/B testing confronta due versioni.',
@@ -9999,7 +9999,7 @@ export default {
             },
             {
               english: 'Argo Rollouts',
-              italian: 'Argo Rollouts',
+              italian: 'Argo Rollouts / progressive delivery Argo',
               pronunciation: '/ˈroʊlaʊts/',
               phonetic: 'ROUL-auts',
               example:
@@ -10010,7 +10010,7 @@ export default {
             },
             {
               english: 'Analysis Run',
-              italian: 'Analysis run',
+              italian: 'AnalysisRun / esecuzione analisi Argo Rollouts',
               pronunciation: '/əˈnælɪsɪs/',
               phonetic: 'a-NA-li-sis',
               example:
@@ -10127,7 +10127,7 @@ export default {
             },
             {
               english: 'Finalizer',
-              italian: 'Finalizer',
+              italian: 'finalizer / hook di rimozione risorsa',
               pronunciation: '/ˈfaɪnəlaɪzər/',
               phonetic: 'FAI-na-lai-zer',
               example:
@@ -10177,7 +10177,7 @@ export default {
           items: [
             {
               english: 'Operator',
-              italian: 'Operator',
+              italian: 'Operator / pattern di estensione K8s',
               pronunciation: '/ˈɒpəreɪtər/',
               phonetic: 'O-pe-rei-tor',
               example:
@@ -10227,7 +10227,7 @@ export default {
             },
             {
               english: 'Watch',
-              italian: 'Watch',
+              italian: 'watch / osservazione di eventi K8s',
               pronunciation: '/wɒtʃ/',
               phonetic: 'UOC',
               example:
@@ -10237,7 +10237,7 @@ export default {
             },
             {
               english: 'Informer',
-              italian: 'Informer',
+              italian: 'informer / cache+watch K8s',
               pronunciation: '/ɪnˈfɔːrmər/',
               phonetic: 'in-FOR-mer',
               example:
@@ -10284,7 +10284,7 @@ export default {
           items: [
             {
               english: 'Operator SDK',
-              italian: 'Operator SDK',
+              italian: 'Operator SDK / SDK Red Hat per Operator',
               pronunciation: '/es diː keɪ/',
               phonetic: 'es-di-KEI',
               example: 'Operator SDK builds operators. = Operator SDK costruisce operator.',
@@ -10295,7 +10295,7 @@ export default {
             },
             {
               english: 'Kubebuilder',
-              italian: 'Kubebuilder',
+              italian: 'Kubebuilder / SDK ufficiale per Operator',
               pronunciation: '/ˈkjuːb bɪldər/',
               phonetic: 'KIUB BIL-der',
               example:
@@ -10307,7 +10307,7 @@ export default {
             },
             {
               english: 'controller-runtime',
-              italian: 'controller-runtime',
+              italian: 'controller-runtime / libreria di base Operator',
               pronunciation: '/kənˈtroʊlər/',
               phonetic: 'con-TROU-ler',
               example:
@@ -10346,7 +10346,7 @@ export default {
             },
             {
               english: 'Reconciler',
-              italian: 'Reconciler',
+              italian: 'reconciler / loop di riconciliazione',
               pronunciation: '/ˈrekənsaɪlər/',
               phonetic: 'RE-con-sai-ler',
               example:
@@ -10357,7 +10357,7 @@ export default {
             },
             {
               english: 'Bundle',
-              italian: 'Bundle',
+              italian: 'bundle / pacchetto Operator',
               pronunciation: '/ˈbʌndl/',
               phonetic: 'BAN-dl',
               example:
@@ -10367,7 +10367,7 @@ export default {
             },
             {
               english: 'OperatorHub',
-              italian: 'OperatorHub',
+              italian: 'OperatorHub / catalogo Operator',
               pronunciation: '/hʌb/',
               phonetic: 'HAB',
               example:
@@ -10396,7 +10396,7 @@ export default {
           items: [
             {
               english: 'Prometheus Operator',
-              italian: 'Prometheus Operator',
+              italian: 'Prometheus Operator / operator K8s per Prometheus',
               pronunciation: '/prəˈmiːθiəs/',
               phonetic: 'pro-MI-ti-us',
               example:
@@ -10449,7 +10449,7 @@ export default {
             },
             {
               english: 'Velero',
-              italian: 'Velero',
+              italian: 'Velero / backup e ripristino di Kubernetes',
               pronunciation: '/vəˈleroʊ/',
               phonetic: 've-LE-ro',
               example: 'Velero backs up K8s clusters. = Velero esegue backup di cluster K8s.',
@@ -10459,7 +10459,7 @@ export default {
             },
             {
               english: 'External DNS',
-              italian: 'External DNS',
+              italian: 'External DNS / sincronizza DNS con Service/Ingress',
               pronunciation: '/ɪkˈstɜːrnl diː en es/',
               phonetic: 'ek-STER-nl di-en-ES',
               example:
@@ -10470,7 +10470,7 @@ export default {
             },
             {
               english: 'MetalLB',
-              italian: 'MetalLB',
+              italian: 'MetalLB / LoadBalancer bare-metal',
               pronunciation: '/ˈmetl el biː/',
               phonetic: 'ME-tl el-BI',
               example:
@@ -10481,7 +10481,7 @@ export default {
             },
             {
               english: 'Crossplane',
-              italian: 'Crossplane',
+              italian: 'Crossplane / control plane multi-cloud',
               pronunciation: '/krɒs pleɪn/',
               phonetic: 'KROS-PLEIN',
               example:
@@ -10492,7 +10492,7 @@ export default {
             },
             {
               english: 'Knative',
-              italian: 'Knative',
+              italian: 'Knative / piattaforma serverless K8s',
               pronunciation: '/keɪˈneɪtɪv/',
               phonetic: 'kei-NEI-tiv',
               example: 'Knative provides serverless on K8s. = Knative fornisce serverless su K8s.',
@@ -10601,7 +10601,7 @@ export default {
             },
             {
               english: 'kubectl-debug',
-              italian: 'kubectl-debug',
+              italian: 'kubectl-debug / sessione debug nei pod',
               pronunciation: '/dɪˈbʌɡ/',
               phonetic: 'di-BAG',
               example:
@@ -10651,7 +10651,7 @@ export default {
             },
             {
               english: 'Multi-AZ',
-              italian: 'Multi-AZ',
+              italian: 'multi-AZ / replica su più zone di disponibilità',
               pronunciation: '/ˌmʌlti eɪ ziː/',
               phonetic: 'MAL-ti ei-ZI',
               example:
@@ -10662,7 +10662,7 @@ export default {
             },
             {
               english: 'Topology Spread',
-              italian: 'Topology spread',
+              italian: 'topology spread / distribuzione su topologia',
               pronunciation: '/təˈpɒlədʒi spred/',
               phonetic: 'to-PO-lo-gi SPRED',
               example:
@@ -10694,7 +10694,7 @@ export default {
             },
             {
               english: 'Taint',
-              italian: 'Taint',
+              italian: 'taint / etichetta che respinge pod K8s',
               pronunciation: '/teɪnt/',
               phonetic: 'TEINT',
               example: 'Taint a node to repel pods. = Aggiungi un taint per respingere i pod.',
@@ -10725,7 +10725,7 @@ export default {
             },
             {
               english: 'Bootstrap',
-              italian: 'Bootstrap',
+              italian: 'bootstrap / fase di avvio iniziale',
               pronunciation: '/ˈbuːtstræp/',
               phonetic: 'BUT-strap',
               example: 'Bootstrap a cluster with kubeadm. = Avvia un cluster con kubeadm.',
@@ -10742,7 +10742,7 @@ export default {
           items: [
             {
               english: 'Disaster Recovery',
-              italian: 'Disaster recovery',
+              italian: 'disaster recovery / ripristino dopo disastro',
               pronunciation: '/dɪˈzæstər rɪˈkʌvəri/',
               phonetic: 'di-ZA-ster ri-KA-ve-ri',
               example:
@@ -10813,7 +10813,7 @@ export default {
             },
             {
               english: 'Failover',
-              italian: 'Failover',
+              italian: 'failover / commutazione automatica di guasto',
               pronunciation: '/ˈfeɪloʊvər/',
               phonetic: 'FEI-lou-ver',
               example:
@@ -10823,7 +10823,7 @@ export default {
             },
             {
               english: 'Active-Passive',
-              italian: 'Active-passive',
+              italian: "attivo-passivo / un nodo lavora, l'altro attende",
               pronunciation: '/ˈæktɪv ˈpæsɪv/',
               phonetic: 'AK-tiv PA-siv',
               example:
@@ -10833,7 +10833,7 @@ export default {
             },
             {
               english: 'Active-Active',
-              italian: 'Active-active',
+              italian: 'attivo-attivo / più nodi servono in parallelo',
               pronunciation: '/ˈæktɪv/',
               phonetic: 'AK-tiv',
               example:
@@ -10850,7 +10850,7 @@ export default {
           items: [
             {
               english: 'Multi-Cluster',
-              italian: 'Multi-cluster',
+              italian: 'multi-cluster / più cluster federati',
               pronunciation: '/ˌmʌlti ˈklʌstər/',
               phonetic: 'MAL-ti KLAS-ter',
               example:
@@ -10860,7 +10860,7 @@ export default {
             },
             {
               english: 'Cluster API',
-              italian: 'Cluster API',
+              italian: 'Cluster API / progetto upstream gestione cluster',
               pronunciation: '/eɪ piː aɪ/',
               phonetic: 'ei-pi-AI',
               example:
@@ -10871,7 +10871,7 @@ export default {
             },
             {
               english: 'KubeFed',
-              italian: 'KubeFed',
+              italian: 'KubeFed / federazione di cluster Kubernetes',
               pronunciation: '/ˈkjuːb fed/',
               phonetic: 'KIUB-FED',
               example: 'KubeFed federates multiple clusters. = KubeFed federa più cluster.',
@@ -10881,7 +10881,7 @@ export default {
             },
             {
               english: 'FinOps',
-              italian: 'FinOps',
+              italian: 'FinOps / operazioni finanziarie cloud',
               pronunciation: '/fɪn ɒps/',
               phonetic: 'FIN-OPS',
               example:
@@ -10901,7 +10901,7 @@ export default {
             },
             {
               english: 'Kubecost',
-              italian: 'Kubecost',
+              italian: 'Kubecost / monitoraggio costi K8s',
               pronunciation: '/ˈkjuːb kɒst/',
               phonetic: 'KIUB-KOST',
               example:
@@ -10912,7 +10912,7 @@ export default {
             },
             {
               english: 'OpenCost',
-              italian: 'OpenCost',
+              italian: 'OpenCost / costi K8s open source CNCF',
               pronunciation: '/ˈoʊpən kɒst/',
               phonetic: 'OU-pen KOST',
               example:
@@ -10923,7 +10923,7 @@ export default {
             },
             {
               english: 'Resource Quota',
-              italian: 'Resource quota',
+              italian: 'ResourceQuota / quota risorse di namespace',
               pronunciation: '/ˈkwoʊtə/',
               phonetic: 'KUO-ta',
               example:
@@ -10934,7 +10934,7 @@ export default {
             },
             {
               english: 'LimitRange',
-              italian: 'LimitRange',
+              italian: 'LimitRange / limiti per oggetto K8s',
               pronunciation: '/ˈlɪmɪt reɪndʒ/',
               phonetic: 'LI-mit REING',
               example:

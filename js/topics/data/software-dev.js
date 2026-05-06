@@ -42,7 +42,7 @@ export default {
             },
             {
               english: 'Software',
-              italian: 'Software',
+              italian: 'software / programma applicativo',
               pronunciation: '/\u02C8s\u0252ftwe\u0259r/',
               phonetic: 'SOFT-uer',
               example:
@@ -174,7 +174,7 @@ export default {
             },
             {
               english: 'Debugger',
-              italian: 'Debugger',
+              italian: 'debugger / strumento di analisi del codice',
               pronunciation: '/\u02CCdi\u02D0\u02C8b\u028C\u0261\u0259r/',
               phonetic: 'dii-BA-gher',
               example:
@@ -917,7 +917,7 @@ export default {
             },
             {
               english: 'JavaScript',
-              italian: 'JavaScript',
+              italian: 'JavaScript (linguaggio di programmazione web)',
               pronunciation: '/\u02C8d\u0292\u0251\u02D0v\u0259skr\u026Apt/',
               phonetic: 'GIA-va-skript',
               example:
@@ -1427,7 +1427,7 @@ export default {
           items: [
             {
               english: 'Schema',
-              italian: 'Schema',
+              italian: 'schema / struttura dei dati',
               pronunciation: '/\u02C8ski\u02D0m\u0259/',
               phonetic: 'SKII-ma',
               example:
@@ -1817,7 +1817,7 @@ export default {
             },
             {
               english: 'Client-Server',
-              italian: 'Client-Server',
+              italian: 'client-server / architettura richiedente-fornitore',
               pronunciation: '/\u02C8kla\u026A\u0259nt \u02C8s\u025C\u02D0rv\u0259r/',
               phonetic: 'CLAI-ent SER-ver',
               example:
@@ -1966,7 +1966,7 @@ export default {
             },
             {
               english: 'Micro-Frontend',
-              italian: 'Micro-Frontend',
+              italian: 'micro-frontend / frontend modulare a piccoli pezzi',
               pronunciation: '/\u02CCma\u026Akro\u028A \u02C8fr\u028Cntend/',
               phonetic: 'MAI-cro FRONT-end',
               example:
@@ -2667,7 +2667,7 @@ export default {
           items: [
             {
               english: 'DevOps',
-              italian: 'DevOps',
+              italian: 'DevOps (cultura sviluppo + operazioni)',
               pronunciation: '/\u02C8dev\u0252ps/',
               phonetic: 'DEV-ops',
               example:
@@ -2918,7 +2918,7 @@ export default {
             },
             {
               english: 'Docker',
-              italian: 'Docker',
+              italian: 'Docker (piattaforma container)',
               pronunciation: '/\u02C8d\u0252k\u0259r/',
               phonetic: 'DO-ker',
               example:
@@ -4136,7 +4136,7 @@ export default {
           items: [
             {
               english: 'Scrum',
-              italian: 'Scrum',
+              italian: 'Scrum (framework agile)',
               pronunciation: '/skr\u028Cm/',
               phonetic: 'SCRAM',
               example:
@@ -4168,7 +4168,7 @@ export default {
             },
             {
               english: 'Scrum Master',
-              italian: 'Scrum Master',
+              italian: 'Scrum Master / facilitatore Scrum',
               pronunciation: '/skr\u028Cm \u02C8m\u0251\u02D0st\u0259r/',
               phonetic: 'SCRAM MAS-ter',
               example:
@@ -4246,7 +4246,7 @@ export default {
           items: [
             {
               english: 'Kanban',
-              italian: 'Kanban',
+              italian: 'Kanban (metodologia visiva a flussi)',
               pronunciation: '/\u02C8k\u00E6nb\u00E6n/',
               phonetic: 'KAN-ban',
               example:
@@ -4387,7 +4387,7 @@ export default {
             },
             {
               english: 'Planning Poker',
-              italian: 'Planning Poker',
+              italian: 'Planning Poker / stima a carte del team',
               pronunciation: '/\u02C8pl\u00E6n\u026A\u014B \u02C8po\u028Ak\u0259r/',
               phonetic: 'PLE-ning POU-ker',
               example:

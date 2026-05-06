@@ -1765,7 +1765,7 @@ export default {
             },
             {
               english: 'Currying',
-              italian: 'Currying',
+              italian: 'currying / trasformazione in funzioni a un argomento',
               pronunciation: '/\u02C8k\u028Cri\u026A\u014B/',
               phonetic: 'CAR-ri-ing',
               example:
@@ -2023,7 +2023,7 @@ export default {
             },
             {
               english: 'Mixin',
-              italian: 'Mixin',
+              italian: 'mixin / classe di funzionalità riusabile',
               pronunciation: '/\u02C8m\u026Aks\u026An/',
               phonetic: 'MIX-in',
               example:
@@ -4223,7 +4223,7 @@ export default {
             },
             {
               english: 'Coroutine',
-              italian: 'Coroutine',
+              italian: 'coroutine / funzione sospendibile',
               pronunciation: '/\u02CCko\u028Ar\u028A\u02C8ti\u02D0n/',
               phonetic: 'co-RUU-tiin',
               example:
@@ -4333,7 +4333,7 @@ export default {
             },
             {
               english: 'Multiprocessing',
-              italian: 'Multiprocessing',
+              italian: 'multiprocessing / esecuzione su più processi',
               pronunciation: '/\u02CCm\u028Clti\u02C8pr\u0252ses\u026A\u014B/',
               phonetic: 'MAL-ti-pro-ces-sing',
               example: 'Multiprocessing bypasses the GIL. = Il multiprocessing aggira il GIL.',
@@ -4483,7 +4483,7 @@ export default {
             },
             {
               english: 'Livelock',
-              italian: 'Livelock',
+              italian: 'livelock / blocco attivo (processi che si rincorrono)',
               pronunciation: '/\u02C8la\u026Avl\u0252k/',
               phonetic: 'LAIV-lock',
               example:
@@ -4691,7 +4691,7 @@ export default {
             },
             {
               english: 'MagicMock',
-              italian: 'MagicMock',
+              italian: 'MagicMock (oggetto fittizio configurabile)',
               pronunciation: '/\u02C8m\u00E6d\u0292\u026Ak m\u0252k/',
               phonetic: 'MA-gic MOCK',
               example:
@@ -4722,7 +4722,7 @@ export default {
             },
             {
               english: 'Monkeypatch (Fixture)',
-              italian: 'Monkeypatch (Fixture)',
+              italian: 'monkeypatch / sostituzione runtime (fixture pytest)',
               pronunciation: '/\u02C8m\u028C\u014Bki p\u00E6t\u0283/',
               phonetic: 'MAN-ki PACC',
               example:
@@ -4922,7 +4922,7 @@ export default {
             },
             {
               english: 'Cython',
-              italian: 'Cython',
+              italian: 'Cython (compilatore Python → C)',
               pronunciation: '/\u02C8sa\u026A\u03B8\u0259n/',
               phonetic: 'SAI-thon',
               example:
@@ -5005,7 +5005,7 @@ export default {
             },
             {
               english: 'Django',
-              italian: 'Django',
+              italian: 'Django (framework web Python)',
               pronunciation: '/\u02C8d\u0292\u00E6\u014B\u0261o\u028A/',
               phonetic: 'GIAN-gou',
               example:
@@ -5016,7 +5016,7 @@ export default {
             },
             {
               english: 'Flask',
-              italian: 'Flask',
+              italian: 'Flask (micro-framework web Python)',
               pronunciation: '/fl\u00E6sk/',
               phonetic: 'FLASK',
               example:
@@ -5027,7 +5027,7 @@ export default {
             },
             {
               english: 'FastAPI',
-              italian: 'FastAPI',
+              italian: 'FastAPI (framework web async ad alte prestazioni)',
               pronunciation: '/\u02CCf\u0251\u02D0st e\u026A pi\u02D0 \u02C8a\u026A/',
               phonetic: 'FAST-ei-pi-ai',
               example:
@@ -5158,7 +5158,7 @@ export default {
             },
             {
               english: 'Jupyter Notebook',
-              italian: 'Jupyter Notebook',
+              italian: 'Jupyter Notebook (quaderno interattivo)',
               pronunciation: '/\u02C8d\u0292u\u02D0p\u026At\u0259r \u02C8no\u028Atb\u028Ak/',
               phonetic: 'GIU-pi-ter NOUT-buk',
               example:

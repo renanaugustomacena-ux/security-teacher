@@ -45,7 +45,7 @@ export default {
             },
             {
               english: 'Host',
-              italian: 'Host',
+              italian: 'host / macchina di rete',
               pronunciation: '/hoʊst/',
               phonetic: 'HOUST',
               example:
@@ -56,7 +56,7 @@ export default {
             },
             {
               english: 'Client',
-              italian: 'Client',
+              italian: 'client / programma richiedente',
               pronunciation: '/ˈklaɪənt/',
               phonetic: 'KLAI-ent',
               example:
@@ -66,7 +66,7 @@ export default {
             },
             {
               english: 'Server',
-              italian: 'Server',
+              italian: 'server / programma fornitore',
               pronunciation: '/ˈsɜːrvər/',
               phonetic: 'SER-ver',
               example:
@@ -87,7 +87,7 @@ export default {
             },
             {
               english: 'Internet',
-              italian: 'Internet',
+              italian: 'Internet / rete mondiale',
               pronunciation: '/ˈɪntərnet/',
               phonetic: 'IN-ter-net',
               example:
@@ -98,7 +98,7 @@ export default {
             },
             {
               english: 'Intranet',
-              italian: 'Intranet',
+              italian: 'intranet / rete privata aziendale',
               pronunciation: '/ˈɪntrənet/',
               phonetic: 'IN-tra-net',
               example:
@@ -365,7 +365,7 @@ export default {
           items: [
             {
               english: 'Router',
-              italian: 'Router',
+              italian: 'router / instradatore di pacchetti',
               pronunciation: '/ˈruːtər/',
               phonetic: 'RU-ter',
               example:
@@ -387,7 +387,7 @@ export default {
             },
             {
               english: 'Hub',
-              italian: 'Hub',
+              italian: 'hub / concentratore Ethernet',
               pronunciation: '/hʌb/',
               phonetic: 'HAB',
               example:
@@ -398,7 +398,7 @@ export default {
             },
             {
               english: 'Modem',
-              italian: 'Modem',
+              italian: 'modem / modulatore-demodulatore',
               pronunciation: '/ˈmoʊdəm/',
               phonetic: 'MO-dem',
               example:
@@ -463,7 +463,7 @@ export default {
             },
             {
               english: 'RJ45',
-              italian: 'RJ45',
+              italian: 'RJ45 / connettore Ethernet',
               pronunciation: '/ˌɑːr dʒeɪ ˌfɔːrti ˈfaɪv/',
               phonetic: 'AR-GEI for-ti FAIV',
               example:
@@ -572,7 +572,7 @@ export default {
             },
             {
               english: 'Bit',
-              italian: 'Bit',
+              italian: 'bit / cifra binaria 0 o 1',
               pronunciation: '/bɪt/',
               phonetic: 'BIT',
               example:
@@ -983,7 +983,7 @@ export default {
             },
             {
               english: 'Socket',
-              italian: 'Socket',
+              italian: 'socket / punto di connessione di rete',
               pronunciation: '/ˈsɒkɪt/',
               phonetic: 'SO-ket',
               example:
@@ -1072,7 +1072,7 @@ export default {
             },
             {
               english: 'SYN-ACK',
-              italian: 'SYN-ACK',
+              italian: 'SYN-ACK / secondo passo handshake TCP',
               pronunciation: '/sɪn æk/',
               phonetic: 'SIN-AK',
               example: 'The server replies with SYN-ACK. = Il server risponde con SYN-ACK.',
@@ -1326,7 +1326,7 @@ export default {
             },
             {
               english: 'Streaming',
-              italian: 'Streaming',
+              italian: 'streaming / flusso continuo di dati',
               pronunciation: '/ˈstriːmɪŋ/',
               phonetic: 'STRI-ming',
               example:
@@ -1337,7 +1337,7 @@ export default {
             },
             {
               english: 'QUIC',
-              italian: 'QUIC',
+              italian: 'QUIC / trasporto UDP cifrato moderno',
               pronunciation: '/kwɪk/',
               phonetic: 'KUIK',
               example:
@@ -1397,7 +1397,7 @@ export default {
             },
             {
               english: 'IPv4',
-              italian: 'IPv4',
+              italian: 'IPv4 / Internet Protocol versione 4',
               pronunciation: '/ˌaɪ piː viː fɔːr/',
               phonetic: 'AI-PI-VI-FOR',
               example: 'IPv4 addresses are 32 bits long. = Gli indirizzi IPv4 sono lunghi 32 bit.',
@@ -1447,7 +1447,7 @@ export default {
             },
             {
               english: 'Loopback',
-              italian: 'Loopback',
+              italian: 'loopback / interfaccia di ritorno locale',
               pronunciation: '/ˈluːpbæk/',
               phonetic: 'LUP-bak',
               example: "127.0.0.1 is the loopback address. = 127.0.0.1 è l'indirizzo di loopback.",
@@ -1457,7 +1457,7 @@ export default {
             },
             {
               english: 'Localhost',
-              italian: 'Localhost',
+              italian: 'localhost / indirizzo locale 127.0.0.1',
               pronunciation: '/ˈloʊkəlhoʊst/',
               phonetic: 'LO-kal-houst',
               example:
@@ -1570,7 +1570,7 @@ export default {
             },
             {
               english: 'Supernetting',
-              italian: 'Supernetting',
+              italian: 'supernetting / aggregazione di subnet',
               pronunciation: '/ˈsuːpərˌnetɪŋ/',
               phonetic: 'SU-per-net-ing',
               example:
@@ -1609,7 +1609,7 @@ export default {
           items: [
             {
               english: 'IPv6',
-              italian: 'IPv6',
+              italian: 'IPv6 / Internet Protocol versione 6',
               pronunciation: '/ˌaɪ piː viː sɪks/',
               phonetic: 'AI-PI-VI-SIKS',
               example:
@@ -1649,7 +1649,7 @@ export default {
             },
             {
               english: 'EUI-64',
-              italian: 'EUI-64',
+              italian: 'EUI-64 / formato di indirizzo MAC esteso',
               pronunciation: '/ˌiː juː aɪ ˈsɪksti fɔːr/',
               phonetic: 'I-IU-AI SIKS-ti FOR',
               example:
@@ -1670,7 +1670,7 @@ export default {
             },
             {
               english: 'Dual Stack',
-              italian: 'Dual stack',
+              italian: 'dual stack / IPv4 e IPv6 contemporanei',
               pronunciation: '/ˈduːəl stæk/',
               phonetic: 'DU-al STAK',
               example:
@@ -1680,7 +1680,7 @@ export default {
             },
             {
               english: 'Tunneling',
-              italian: 'Tunneling',
+              italian: 'tunneling / incapsulamento di un protocollo',
               pronunciation: '/ˈtʌnəlɪŋ/',
               phonetic: 'TA-ne-ling',
               example:
@@ -1702,7 +1702,7 @@ export default {
             },
             {
               english: 'Anycast',
-              italian: 'Anycast',
+              italian: 'anycast / un IP, molti nodi, il più vicino risponde',
               pronunciation: '/ˈeniːkæst/',
               phonetic: 'E-ni-kast',
               example:
@@ -1741,7 +1741,7 @@ export default {
             },
             {
               english: 'DHCP Discover',
-              italian: 'DHCP Discover',
+              italian: 'DHCP Discover / messaggio iniziale del client DHCP',
               pronunciation: '/ˌdiː eɪtʃ siː piː dɪsˈkʌvər/',
               phonetic: 'DI-EICH-SI-PI di-SKA-ver',
               example:
@@ -1783,7 +1783,7 @@ export default {
             },
             {
               english: 'Unicast',
-              italian: 'Unicast',
+              italian: 'unicast / uno-a-uno',
               pronunciation: '/ˈjuːnɪkæst/',
               phonetic: 'IU-ni-kast',
               example:
@@ -1793,7 +1793,7 @@ export default {
             },
             {
               english: 'Multicast',
-              italian: 'Multicast',
+              italian: 'multicast / uno-a-molti selettivo',
               pronunciation: '/ˈmʌltɪkæst/',
               phonetic: 'MAL-ti-kast',
               example:
@@ -1804,7 +1804,7 @@ export default {
             },
             {
               english: 'Broadcast',
-              italian: 'Broadcast',
+              italian: 'broadcast / uno-a-tutti',
               pronunciation: '/ˈbrɔːdkæst/',
               phonetic: 'BROD-kast',
               example:
@@ -1886,7 +1886,7 @@ export default {
             },
             {
               english: 'EtherType',
-              italian: 'EtherType',
+              italian: 'EtherType / tipo di payload Ethernet',
               pronunciation: '/ˈiːθərtaɪp/',
               phonetic: 'I-ther-taip',
               example:
@@ -1906,7 +1906,7 @@ export default {
             },
             {
               english: 'Jumbo Frame',
-              italian: 'Jumbo frame',
+              italian: 'jumbo frame / frame Ethernet > 1500 byte',
               pronunciation: '/ˈdʒʌmboʊ freɪm/',
               phonetic: 'GIAM-bo FREIM',
               example:
@@ -1937,7 +1937,7 @@ export default {
             },
             {
               english: 'CSMA/CD',
-              italian: 'CSMA/CD',
+              italian: 'CSMA/CD / accesso al mezzo Ethernet legacy',
               pronunciation: '/ˌsiː es em eɪ siː ˈdiː/',
               phonetic: 'SI-ES-EM-EI SI-DI',
               example:
@@ -1955,7 +1955,7 @@ export default {
           items: [
             {
               english: 'Switch',
-              italian: 'Switch',
+              italian: 'switch / commutatore di rete L2',
               pronunciation: '/swɪtʃ/',
               phonetic: 'SUITCH',
               example:
@@ -1997,7 +1997,7 @@ export default {
             },
             {
               english: 'Flooding',
-              italian: 'Flooding',
+              italian: 'flooding / inoltro su tutte le porte',
               pronunciation: '/ˈflʌdɪŋ/',
               phonetic: 'FLA-ding',
               example:
@@ -2007,7 +2007,7 @@ export default {
             },
             {
               english: 'Cut-Through Switching',
-              italian: 'Cut-through switching',
+              italian: 'cut-through switching / inoltro a metà frame',
               pronunciation: '/kʌt θruː/',
               phonetic: 'KAT-THRU',
               example:
@@ -2017,7 +2017,7 @@ export default {
             },
             {
               english: 'Store-and-Forward',
-              italian: 'Store-and-forward',
+              italian: 'store-and-forward / memorizza poi inoltra',
               pronunciation: '/stɔːr ænd ˈfɔːrwərd/',
               phonetic: 'STOR-AND-FOR-uard',
               example:
@@ -2088,7 +2088,7 @@ export default {
             },
             {
               english: '802.1Q',
-              italian: '802.1Q',
+              italian: '802.1Q / tag VLAN',
               pronunciation: '/eɪt oʊ tuː dɒt wʌn kjuː/',
               phonetic: 'EIT-O-TU dot UAN-KIU',
               example:
@@ -2189,7 +2189,7 @@ export default {
             },
             {
               english: 'BPDU',
-              italian: 'BPDU',
+              italian: 'BPDU / messaggio Spanning Tree',
               pronunciation: '/ˌbiː piː diː ˈjuː/',
               phonetic: 'BI-PI-DI-IU',
               example:
@@ -2220,7 +2220,7 @@ export default {
             },
             {
               english: 'BPDU Guard',
-              italian: 'BPDU Guard',
+              italian: 'BPDU Guard / protezione contro BPDU non autorizzati',
               pronunciation: '/ˌbiː piː diː juː ɡɑːrd/',
               phonetic: 'BI-PI-DI-IU GARD',
               example:
@@ -2263,7 +2263,7 @@ export default {
             },
             {
               english: 'ARP Spoofing',
-              italian: 'ARP spoofing',
+              italian: 'ARP spoofing / falsificazione di tabelle ARP',
               pronunciation: '/ɑːrp ˈspuːfɪŋ/',
               phonetic: 'ARP SPU-fing',
               example:
@@ -2302,7 +2302,7 @@ export default {
           items: [
             {
               english: 'Router',
-              italian: 'Router',
+              italian: 'router / instradatore di pacchetti',
               pronunciation: '/ˈruːtər/',
               phonetic: 'RU-ter',
               example: 'Routers connect different networks. = I router connettono reti diverse.',
@@ -2544,7 +2544,7 @@ export default {
             },
             {
               english: 'Distance Vector',
-              italian: 'Distance vector',
+              italian: 'distance vector / routing per distanza',
               pronunciation: '/ˈdɪstəns ˈvektər/',
               phonetic: 'DIS-tans VEK-tor',
               example:
@@ -2554,7 +2554,7 @@ export default {
             },
             {
               english: 'Link State',
-              italian: 'Link state',
+              italian: 'link state / routing per stato dei collegamenti',
               pronunciation: '/lɪŋk steɪt/',
               phonetic: 'LINK STEIT',
               example:
@@ -2575,7 +2575,7 @@ export default {
             },
             {
               english: 'EIGRP',
-              italian: 'EIGRP',
+              italian: 'EIGRP / protocollo routing Cisco ibrido',
               pronunciation: '/ˌiː aɪ dʒiː ɑːr ˈpiː/',
               phonetic: 'I-AI-GI-AR-PI',
               example:
@@ -2617,7 +2617,7 @@ export default {
             },
             {
               english: 'Split Horizon',
-              italian: 'Split horizon',
+              italian: 'split horizon / non rinviare verso la sorgente',
               pronunciation: '/splɪt həˈraɪzn/',
               phonetic: 'SPLIT ho-RAI-zon',
               example:
@@ -2699,7 +2699,7 @@ export default {
             },
             {
               english: 'Router ID',
-              italian: 'Router ID',
+              italian: 'router ID / identificativo del router',
               pronunciation: '/ˈruːtər aɪ diː/',
               phonetic: 'RU-ter AI-DI',
               example:
@@ -2806,7 +2806,7 @@ export default {
             },
             {
               english: 'Root Server',
-              italian: 'Root server',
+              italian: 'root server / server radice DNS',
               pronunciation: '/ruːt ˈsɜːrvər/',
               phonetic: 'RUUT SER-ver',
               example:
@@ -2827,7 +2827,7 @@ export default {
             },
             {
               english: 'Resolver',
-              italian: 'Resolver',
+              italian: 'resolver / risolutore DNS',
               pronunciation: '/rɪˈzɒlvər/',
               phonetic: 'ri-SOL-ver',
               example:
@@ -3037,7 +3037,7 @@ export default {
             },
             {
               english: 'Glue Record',
-              italian: 'Glue record',
+              italian: 'glue record / record DNS di colla',
               pronunciation: '/ɡluː ˈrekɔːrd/',
               phonetic: 'GLU RE-kord',
               example:
@@ -3057,7 +3057,7 @@ export default {
             },
             {
               english: 'Round Robin DNS',
-              italian: 'Round robin DNS',
+              italian: 'round robin DNS / più IP a turno per host',
               pronunciation: '/raʊnd ˈrɒbɪn/',
               phonetic: 'RAUND RO-bin',
               example:
@@ -3095,7 +3095,7 @@ export default {
           items: [
             {
               english: 'DNSSEC',
-              italian: 'DNSSEC',
+              italian: 'DNSSEC / firma crittografica delle risposte DNS',
               pronunciation: '/ˌdiː en es ˈsek/',
               phonetic: 'DI-EN-ES-SEK',
               example:
@@ -3137,7 +3137,7 @@ export default {
             },
             {
               english: 'DNS Hijacking',
-              italian: 'DNS hijacking',
+              italian: 'DNS hijacking / dirottamento delle risoluzioni',
               pronunciation: '/ˈhaɪdʒækɪŋ/',
               phonetic: 'HAI-gia-king',
               example:
@@ -3147,7 +3147,7 @@ export default {
             },
             {
               english: 'NXDOMAIN',
-              italian: 'NXDOMAIN',
+              italian: 'NXDOMAIN / risposta DNS dominio inesistente',
               pronunciation: '/ˌen eks doʊˈmeɪn/',
               phonetic: 'EN-EKS do-MEIN',
               example:
@@ -3226,7 +3226,7 @@ export default {
             },
             {
               english: 'HTTP/1.1',
-              italian: 'HTTP/1.1',
+              italian: 'HTTP/1.1 / versione classica di HTTP',
               pronunciation: '/ˌeɪtʃ tiː tiː piː wʌn pɔɪnt wʌn/',
               phonetic: 'EICH-TI-TI-PI UAN-POINT-UAN',
               example:
@@ -3237,7 +3237,7 @@ export default {
             },
             {
               english: 'HTTP/2',
-              italian: 'HTTP/2',
+              italian: 'HTTP/2 / HTTP multiplexato binario',
               pronunciation: '/ˌeɪtʃ tiː tiː piː tuː/',
               phonetic: 'EICH-TI-TI-PI TU',
               example:
@@ -3248,7 +3248,7 @@ export default {
             },
             {
               english: 'HTTP/3',
-              italian: 'HTTP/3',
+              italian: 'HTTP/3 / HTTP su QUIC',
               pronunciation: '/ˌeɪtʃ tiː tiː piː θriː/',
               phonetic: 'EICH-TI-TI-PI THRI',
               example: 'HTTP/3 runs over QUIC instead of TCP. = HTTP/3 gira su QUIC invece di TCP.',
@@ -3279,7 +3279,7 @@ export default {
             },
             {
               english: 'Pipelining',
-              italian: 'Pipelining',
+              italian: 'pipelining / richieste multiple senza attendere risposta',
               pronunciation: '/ˈpaɪpˌlaɪnɪŋ/',
               phonetic: 'PAIP-lai-ning',
               example:
@@ -3300,7 +3300,7 @@ export default {
             },
             {
               english: 'Server Push',
-              italian: 'Server push',
+              italian: 'server push / invio non richiesto dal server',
               pronunciation: '/ˈsɜːrvər pʊʃ/',
               phonetic: 'SER-ver PUSH',
               example:
@@ -3311,7 +3311,7 @@ export default {
             },
             {
               english: 'Head-of-Line Blocking',
-              italian: 'Head-of-Line blocking',
+              italian: 'head-of-line blocking / blocco in testa di coda',
               pronunciation: '/hed ʌv laɪn/',
               phonetic: 'HED-ov-LAIN',
               example:
@@ -3370,7 +3370,7 @@ export default {
             },
             {
               english: 'GET',
-              italian: 'GET',
+              italian: 'GET / metodo HTTP di lettura',
               pronunciation: '/ɡet/',
               phonetic: 'GHET',
               example:
@@ -3380,7 +3380,7 @@ export default {
             },
             {
               english: 'POST',
-              italian: 'POST',
+              italian: 'POST / metodo HTTP di creazione',
               pronunciation: '/poʊst/',
               phonetic: 'POUST',
               example:
@@ -3400,7 +3400,7 @@ export default {
             },
             {
               english: '404 Not Found',
-              italian: '404 Not Found',
+              italian: '404 Not Found / risorsa inesistente',
               pronunciation: '/fɔːr oʊ fɔːr/',
               phonetic: 'FOR-O-FOR',
               example:
@@ -3419,7 +3419,7 @@ export default {
             },
             {
               english: 'User Agent',
-              italian: 'User agent',
+              italian: 'User-Agent / identificativo del client',
               pronunciation: '/ˈjuːzər ˈeɪdʒənt/',
               phonetic: 'IU-zer EI-gent',
               example:
@@ -3509,7 +3509,7 @@ export default {
             },
             {
               english: 'TLS 1.3',
-              italian: 'TLS 1.3',
+              italian: 'TLS 1.3 / cifratura di trasporto moderna',
               pronunciation: '/ˌtiː el es wʌn pɔɪnt θriː/',
               phonetic: 'TI-EL-ES UAN-POINT-THRI',
               example: 'TLS 1.3 is faster and more secure. = TLS 1.3 è più veloce e sicuro.',
@@ -3547,7 +3547,7 @@ export default {
           items: [
             {
               english: 'Cookie',
-              italian: 'Cookie',
+              italian: 'cookie / dati persistenti del browser',
               pronunciation: '/ˈkʊki/',
               phonetic: 'KU-ki',
               example:
@@ -3587,7 +3587,7 @@ export default {
             },
             {
               english: 'WebSocket',
-              italian: 'WebSocket',
+              italian: 'WebSocket / canale full-duplex su HTTP',
               pronunciation: '/web ˈsɒkɪt/',
               phonetic: 'UEB-SO-ket',
               example:
@@ -3598,7 +3598,7 @@ export default {
             },
             {
               english: 'REST',
-              italian: 'REST',
+              italian: 'REST / stile architetturale per API HTTP',
               pronunciation: '/rest/',
               phonetic: 'REST',
               example:
@@ -3609,7 +3609,7 @@ export default {
             },
             {
               english: 'JSON',
-              italian: 'JSON',
+              italian: 'JSON (formato dati testuale)',
               pronunciation: '/ˈdʒeɪsən/',
               phonetic: 'GEI-son',
               example:
@@ -3619,7 +3619,7 @@ export default {
             },
             {
               english: 'URI',
-              italian: 'URI',
+              italian: 'URI / Uniform Resource Identifier',
               pronunciation: '/ˌjuː ɑːr ˈaɪ/',
               phonetic: 'IU-AR-AI',
               example: 'A URI identifies a resource. = Un URI identifica una risorsa.',
@@ -3629,7 +3629,7 @@ export default {
             },
             {
               english: 'URL',
-              italian: 'URL',
+              italian: 'URL / Uniform Resource Locator',
               pronunciation: '/ˌjuː ɑːr ˈel/',
               phonetic: 'IU-AR-EL',
               example: 'A URL is a URI with a location. = Un URL è un URI con una posizione.',
@@ -3638,7 +3638,7 @@ export default {
             },
             {
               english: 'Redirect',
-              italian: 'Redirect',
+              italian: 'redirect / reindirizzamento HTTP',
               pronunciation: '/rɪˈdaɪrekt/',
               phonetic: 'ri-DAI-rekt',
               example: 'A 301 redirect is permanent. = Un redirect 301 è permanente.',
@@ -3663,7 +3663,7 @@ export default {
           items: [
             {
               english: 'Wi-Fi',
-              italian: 'Wi-Fi',
+              italian: 'Wi-Fi / rete senza fili IEEE 802.11',
               pronunciation: '/ˈwaɪfaɪ/',
               phonetic: 'UAI-FAI',
               example:
@@ -3685,7 +3685,7 @@ export default {
             },
             {
               english: 'BSSID',
-              italian: 'BSSID',
+              italian: "BSSID / MAC dell'access point",
               pronunciation: '/ˌbiː es es aɪ ˈdiː/',
               phonetic: 'BI-ES-ES-AI-DI',
               example:
@@ -3696,7 +3696,7 @@ export default {
             },
             {
               english: 'Access Point',
-              italian: 'Access point',
+              italian: 'access point / punto di accesso Wi-Fi',
               pronunciation: '/ˈækses pɔɪnt/',
               phonetic: 'AK-ses POINT',
               example:
@@ -3740,7 +3740,7 @@ export default {
             },
             {
               english: 'Beacon',
-              italian: 'Beacon',
+              italian: 'beacon / annuncio periodico Wi-Fi',
               pronunciation: '/ˈbiːkən/',
               phonetic: 'BI-kon',
               example:
@@ -3778,7 +3778,7 @@ export default {
           items: [
             {
               english: '802.11',
-              italian: '802.11',
+              italian: '802.11 / standard IEEE Wi-Fi',
               pronunciation: '/eɪt oʊ tuː dɒt ɪˈlevən/',
               phonetic: 'EIT-O-TU dot i-LE-ven',
               example:
@@ -3809,7 +3809,7 @@ export default {
             },
             {
               english: 'Wi-Fi 6E',
-              italian: 'Wi-Fi 6E',
+              italian: 'Wi-Fi 6E / Wi-Fi 6 con banda 6 GHz',
               pronunciation: '/ˈwaɪfaɪ sɪks ˈiː/',
               phonetic: 'UAI-FAI SIKS-I',
               example: 'Wi-Fi 6E adds the 6 GHz band. = Wi-Fi 6E aggiunge la banda a 6 GHz.',
@@ -3818,7 +3818,7 @@ export default {
             },
             {
               english: 'Wi-Fi 7',
-              italian: 'Wi-Fi 7',
+              italian: 'Wi-Fi 7 / standard Wi-Fi più recente',
               pronunciation: '/ˈwaɪfaɪ ˈsevən/',
               phonetic: 'UAI-FAI SE-ven',
               example: 'Wi-Fi 7 supports 320 MHz channels. = Wi-Fi 7 supporta canali da 320 MHz.',
@@ -3828,7 +3828,7 @@ export default {
             },
             {
               english: 'MIMO',
-              italian: 'MIMO',
+              italian: 'MIMO / multiple input multiple output',
               pronunciation: '/ˈmaɪmoʊ/',
               phonetic: 'MAI-mo',
               example:
@@ -3839,7 +3839,7 @@ export default {
             },
             {
               english: 'MU-MIMO',
-              italian: 'MU-MIMO',
+              italian: 'MU-MIMO / MIMO multi-utente',
               pronunciation: '/em juː ˈmaɪmoʊ/',
               phonetic: 'EM-IU MAI-mo',
               example:
@@ -3850,7 +3850,7 @@ export default {
             },
             {
               english: 'OFDMA',
-              italian: 'OFDMA',
+              italian: 'OFDMA / accesso multiplo a divisione di frequenza',
               pronunciation: '/ˌoʊ ef diː em ˈeɪ/',
               phonetic: 'O-EF-DI-EM-EI',
               example: 'OFDMA splits channels among users. = OFDMA divide i canali tra utenti.',
@@ -3860,7 +3860,7 @@ export default {
             },
             {
               english: 'Beamforming',
-              italian: 'Beamforming',
+              italian: 'beamforming / direzionamento del segnale',
               pronunciation: '/ˈbiːmfɔːrmɪŋ/',
               phonetic: 'BIM-for-ming',
               example:
@@ -3870,7 +3870,7 @@ export default {
             },
             {
               english: 'Channel Bonding',
-              italian: 'Channel bonding',
+              italian: 'channel bonding / unione di canali Wi-Fi',
               pronunciation: '/ˈtʃænl ˈbɒndɪŋ/',
               phonetic: 'CIA-nel BON-ding',
               example:
@@ -3898,7 +3898,7 @@ export default {
             },
             {
               english: 'WPA',
-              italian: 'WPA',
+              italian: 'WPA / protezione Wi-Fi originale',
               pronunciation: '/ˌdʌbljuː piː ˈeɪ/',
               phonetic: 'DABOL-IU-PI-EI',
               example: 'WPA replaced the broken WEP. = WPA ha sostituito il vulnerabile WEP.',
@@ -3907,7 +3907,7 @@ export default {
             },
             {
               english: 'WPA2',
-              italian: 'WPA2',
+              italian: 'WPA2 (protocollo Wi-Fi sicuro)',
               pronunciation: '/ˌdʌbljuː piː eɪ tuː/',
               phonetic: 'DABOL-IU-PI-EI-TU',
               example: 'WPA2 uses AES encryption. = WPA2 usa cifratura AES.',
@@ -3917,7 +3917,7 @@ export default {
             },
             {
               english: 'WPA3',
-              italian: 'WPA3',
+              italian: 'WPA3 (protocollo Wi-Fi più recente)',
               pronunciation: '/ˌdʌbljuː piː eɪ θriː/',
               phonetic: 'DABOL-IU-PI-EI-THRI',
               example:
@@ -3971,7 +3971,7 @@ export default {
             },
             {
               english: 'Captive Portal',
-              italian: 'Captive portal',
+              italian: 'captive portal / pagina di login Wi-Fi pubblico',
               pronunciation: '/ˈkæptɪv ˈpɔːrtl/',
               phonetic: 'KAP-tiv POR-tol',
               example:
@@ -3999,7 +3999,7 @@ export default {
           items: [
             {
               english: 'Roaming',
-              italian: 'Roaming',
+              italian: 'roaming / passaggio tra access point',
               pronunciation: '/ˈroʊmɪŋ/',
               phonetic: 'RO-ming',
               example:
@@ -4050,7 +4050,7 @@ export default {
             },
             {
               english: 'Band Steering',
-              italian: 'Band steering',
+              italian: 'band steering / spinge i client su 5 GHz/6 GHz',
               pronunciation: '/bænd ˈstɪərɪŋ/',
               phonetic: 'BAND STIIR-ing',
               example:
@@ -4071,7 +4071,7 @@ export default {
             },
             {
               english: 'CAPWAP',
-              italian: 'CAPWAP',
+              italian: 'CAPWAP / protocollo gestione AP centralizzato',
               pronunciation: '/ˈkæpwæp/',
               phonetic: 'KAP-uap',
               example:
@@ -4118,7 +4118,7 @@ export default {
           items: [
             {
               english: 'Firewall',
-              italian: 'Firewall',
+              italian: 'firewall / barriera di rete',
               pronunciation: '/ˈfaɪərwɔːl/',
               phonetic: 'FAI-er-uol',
               example:
@@ -4231,7 +4231,7 @@ export default {
           items: [
             {
               english: 'Packet Filter',
-              italian: 'Packet filter',
+              italian: 'packet filter / filtro di pacchetti',
               pronunciation: '/ˈpækɪt ˈfɪltər/',
               phonetic: 'PAK-ket FIL-ter',
               example:
@@ -4454,7 +4454,7 @@ export default {
           items: [
             {
               english: 'iptables',
-              italian: 'iptables',
+              italian: 'iptables / firewall Linux classico',
               pronunciation: '/aɪ piː ˈteɪblz/',
               phonetic: 'AI-PI TEI-bols',
               example:
@@ -4465,7 +4465,7 @@ export default {
             },
             {
               english: 'nftables',
-              italian: 'nftables',
+              italian: 'nftables / firewall Linux moderno',
               pronunciation: '/en ef ˈteɪblz/',
               phonetic: 'EN-EF TEI-bols',
               example:
@@ -4488,7 +4488,7 @@ export default {
             },
             {
               english: 'firewalld',
-              italian: 'firewalld',
+              italian: 'firewalld / gestore firewall RHEL/Fedora',
               pronunciation: '/ˈfaɪərwɔːl diː/',
               phonetic: 'FAI-er-uol-D',
               example: 'firewalld uses zones for policy. = firewalld usa zone per le policy.',
@@ -4519,7 +4519,7 @@ export default {
             },
             {
               english: 'Match',
-              italian: 'Match',
+              italian: 'match / regola di abbinamento',
               pronunciation: '/mætʃ/',
               phonetic: 'MACH',
               example:
@@ -4529,7 +4529,7 @@ export default {
             },
             {
               english: 'Target',
-              italian: 'Target',
+              italian: 'target / azione del firewall',
               pronunciation: '/ˈtɑːrɡət/',
               phonetic: 'TAR-ghet',
               example:
@@ -4647,7 +4647,7 @@ export default {
             },
             {
               english: 'Overhead',
-              italian: 'Overhead',
+              italian: 'overhead / sovraccarico',
               pronunciation: '/ˈoʊvərhed/',
               phonetic: 'O-ver-hed',
               example:
@@ -4669,7 +4669,7 @@ export default {
             },
             {
               english: 'Kill Switch',
-              italian: 'Kill switch',
+              italian: 'kill switch / interruttore di emergenza VPN',
               pronunciation: '/kɪl swɪtʃ/',
               phonetic: 'KIL SUITCH',
               example:
@@ -4686,7 +4686,7 @@ export default {
           items: [
             {
               english: 'IPsec',
-              italian: 'IPsec',
+              italian: 'IPsec / suite di protocolli VPN',
               pronunciation: '/ˈaɪ piː sek/',
               phonetic: 'AI-PI-SEK',
               example:
@@ -4707,7 +4707,7 @@ export default {
             },
             {
               english: 'IKEv2',
-              italian: 'IKEv2',
+              italian: 'IKEv2 / Internet Key Exchange v2',
               pronunciation: '/aɪk viː tuː/',
               phonetic: 'AIK-VI-TU',
               example: 'IKEv2 is faster and more reliable. = IKEv2 è più veloce e affidabile.',
@@ -4794,7 +4794,7 @@ export default {
           items: [
             {
               english: 'WireGuard',
-              italian: 'WireGuard',
+              italian: 'WireGuard / VPN moderna minimalista',
               pronunciation: '/ˈwaɪərɡɑːrd/',
               phonetic: 'UAI-er-gard',
               example:
@@ -4806,7 +4806,7 @@ export default {
             },
             {
               english: 'OpenVPN',
-              italian: 'OpenVPN',
+              italian: 'OpenVPN / VPN open source classica',
               pronunciation: '/ˌoʊpən viː piː ˈen/',
               phonetic: 'OU-pen VI-PI-EN',
               example:
@@ -4817,7 +4817,7 @@ export default {
             },
             {
               english: 'SSL VPN',
-              italian: 'SSL VPN',
+              italian: 'SSL VPN / VPN su TLS',
               pronunciation: '/ˌes es el viː piː ˈen/',
               phonetic: 'ES-ES-EL VI-PI-EN',
               example:
@@ -4847,7 +4847,7 @@ export default {
             },
             {
               english: 'Split Tunneling',
-              italian: 'Split tunneling',
+              italian: 'split tunneling / solo certo traffico va in VPN',
               pronunciation: '/splɪt ˈtʌnəlɪŋ/',
               phonetic: 'SPLIT TA-ne-ling',
               example:
@@ -4857,7 +4857,7 @@ export default {
             },
             {
               english: 'Full Tunnel',
-              italian: 'Full tunnel',
+              italian: 'full tunnel / tutto il traffico via VPN',
               pronunciation: '/fʊl ˈtʌnl/',
               phonetic: 'FUL TA-nel',
               example:
@@ -4889,7 +4889,7 @@ export default {
             },
             {
               english: 'AllowedIPs',
-              italian: 'AllowedIPs',
+              italian: 'AllowedIPs / IP consentiti su WireGuard',
               pronunciation: '/əˈlaʊd aɪ piːz/',
               phonetic: 'a-LAUD AI-PIZ',
               example:
@@ -4925,7 +4925,7 @@ export default {
             },
             {
               english: 'NAT Traversal',
-              italian: 'NAT traversal',
+              italian: 'NAT traversal / attraversamento di NAT',
               pronunciation: '/næt ˈtrævərsəl/',
               phonetic: 'NAT TRA-ver-sal',
               example:
@@ -4946,7 +4946,7 @@ export default {
             },
             {
               english: 'Perfect Forward Secrecy',
-              italian: 'Perfect Forward Secrecy',
+              italian: 'PFS / segretezza in avanti',
               pronunciation: '/ˈpɜːrfɪkt ˈfɔːrwərd ˈsiːkrəsi/',
               phonetic: 'PER-fikt FOR-uard SI-kre-si',
               example:
@@ -4987,7 +4987,7 @@ export default {
             },
             {
               english: 'DMVPN',
-              italian: 'DMVPN',
+              italian: 'DMVPN / VPN multipoint dinamica Cisco',
               pronunciation: '/diː em viː piː ˈen/',
               phonetic: 'DI-EM-VI-PI-EN',
               example:
@@ -4998,7 +4998,7 @@ export default {
             },
             {
               english: 'Tailscale',
-              italian: 'Tailscale',
+              italian: 'Tailscale (mesh VPN basata su WireGuard)',
               pronunciation: '/ˈteɪlskeɪl/',
               phonetic: 'TEIL-skeil',
               example:
@@ -5067,7 +5067,7 @@ export default {
             },
             {
               english: 'NAT Overload',
-              italian: 'NAT overload',
+              italian: 'NAT overload / PAT, traduzione con porte',
               pronunciation: '/ˌoʊvərˈloʊd/',
               phonetic: 'O-ver-loud',
               example:
@@ -5139,7 +5139,7 @@ export default {
           items: [
             {
               english: 'Proxy',
-              italian: 'Proxy',
+              italian: 'proxy / intermediario di rete',
               pronunciation: '/ˈprɒksi/',
               phonetic: 'PROK-si',
               example:
@@ -5149,7 +5149,7 @@ export default {
             },
             {
               english: 'Forward Proxy',
-              italian: 'Forward proxy',
+              italian: 'forward proxy / proxy in uscita',
               pronunciation: '/ˈfɔːrwərd ˈprɒksi/',
               phonetic: 'FOR-uard PROK-si',
               example:
@@ -5160,7 +5160,7 @@ export default {
             },
             {
               english: 'Reverse Proxy',
-              italian: 'Reverse proxy',
+              italian: 'reverse proxy / proxy in ingresso',
               pronunciation: '/rɪˈvɜːrs/',
               phonetic: 'ri-VERS',
               example:
@@ -5224,7 +5224,7 @@ export default {
             },
             {
               english: 'Web Filter',
-              italian: 'Web filter',
+              italian: 'web filter / filtro contenuti web',
               pronunciation: '/web ˈfɪltər/',
               phonetic: 'UEB FIL-ter',
               example:
@@ -5263,7 +5263,7 @@ export default {
             },
             {
               english: 'Round Robin',
-              italian: 'Round robin',
+              italian: 'round robin / a turno',
               pronunciation: '/raʊnd ˈrɒbɪn/',
               phonetic: 'RAUND RO-bin',
               example:
@@ -5334,7 +5334,7 @@ export default {
             },
             {
               english: 'Backend',
-              italian: 'Backend',
+              italian: 'backend / sistema retrostante',
               pronunciation: '/ˈbækend/',
               phonetic: 'BAK-end',
               example:
@@ -5344,7 +5344,7 @@ export default {
             },
             {
               english: 'Frontend',
-              italian: 'Frontend',
+              italian: 'frontend / interfaccia utente',
               pronunciation: '/ˈfrʌntend/',
               phonetic: 'FRANT-end',
               example:
@@ -5371,7 +5371,7 @@ export default {
             },
             {
               english: 'UPnP',
-              italian: 'UPnP',
+              italian: 'UPnP / Universal Plug and Play',
               pronunciation: '/juː piː en piː/',
               phonetic: 'IU-PI-EN-PI',
               example:
@@ -5382,7 +5382,7 @@ export default {
             },
             {
               english: 'NAT-PMP',
-              italian: 'NAT-PMP',
+              italian: 'NAT-PMP / NAT Port Mapping Protocol',
               pronunciation: '/næt piː em piː/',
               phonetic: 'NAT-PI-EM-PI',
               example:
@@ -5425,7 +5425,7 @@ export default {
             },
             {
               english: 'Hole Punching',
-              italian: 'Hole punching',
+              italian: 'hole punching / apertura di pertugio NAT',
               pronunciation: '/hoʊl ˈpʌntʃɪŋ/',
               phonetic: 'HOUL PAN-cing',
               example:
@@ -5435,7 +5435,7 @@ export default {
             },
             {
               english: 'STUN',
-              italian: 'STUN',
+              italian: "STUN / scoperta dell'indirizzo pubblico",
               pronunciation: '/stʌn/',
               phonetic: 'STAN',
               example:
@@ -5446,7 +5446,7 @@ export default {
             },
             {
               english: 'TURN',
-              italian: 'TURN',
+              italian: 'TURN / relay di traffico per NAT',
               pronunciation: '/tɜːrn/',
               phonetic: 'TERN',
               example:
@@ -5457,7 +5457,7 @@ export default {
             },
             {
               english: 'ICE',
-              italian: 'ICE',
+              italian: 'ICE / Interactive Connectivity Establishment',
               pronunciation: '/aɪs/',
               phonetic: 'AIS',
               example:
@@ -5494,7 +5494,7 @@ export default {
             },
             {
               english: 'POP3',
-              italian: 'POP3',
+              italian: 'POP3 / protocollo di scarico email',
               pronunciation: '/piː oʊ piː θriː/',
               phonetic: 'PI-O-PI-THRI',
               example:
@@ -5505,7 +5505,7 @@ export default {
             },
             {
               english: 'IMAP',
-              italian: 'IMAP',
+              italian: 'IMAP / protocollo email lato server',
               pronunciation: '/ˈaɪmæp/',
               phonetic: 'AI-MAP',
               example:
@@ -5544,7 +5544,7 @@ export default {
             },
             {
               english: 'DKIM',
-              italian: 'DKIM',
+              italian: 'DKIM / firma email del dominio',
               pronunciation: '/ˈdiːkɪm/',
               phonetic: 'DI-KIM',
               example:
@@ -5555,7 +5555,7 @@ export default {
             },
             {
               english: 'DMARC',
-              italian: 'DMARC',
+              italian: 'DMARC / policy anti-spoofing email',
               pronunciation: '/ˈdiːmɑːrk/',
               phonetic: 'DI-MARK',
               example: 'DMARC builds on SPF and DKIM. = DMARC si basa su SPF e DKIM.',
@@ -5565,7 +5565,7 @@ export default {
             },
             {
               english: 'STARTTLS',
-              italian: 'STARTTLS',
+              italian: 'STARTTLS / aggiornamento connessione a TLS',
               pronunciation: '/stɑːrt tiː el es/',
               phonetic: 'START-TI-EL-ES',
               example:
@@ -5593,7 +5593,7 @@ export default {
           items: [
             {
               english: 'FTP',
-              italian: 'FTP',
+              italian: 'FTP / File Transfer Protocol',
               pronunciation: '/ˌef tiː ˈpiː/',
               phonetic: 'EF-TI-PI',
               example:
@@ -5623,7 +5623,7 @@ export default {
             },
             {
               english: 'SCP',
-              italian: 'SCP',
+              italian: 'SCP / Secure Copy Protocol',
               pronunciation: '/ˌes siː ˈpiː/',
               phonetic: 'ES-SI-PI',
               example: 'SCP securely copies files over SSH. = SCP copia in sicurezza file via SSH.',
@@ -5665,7 +5665,7 @@ export default {
             },
             {
               english: 'Rsync',
-              italian: 'Rsync',
+              italian: 'rsync / sincronizzazione file efficiente',
               pronunciation: '/ɑːrˈsɪŋk/',
               phonetic: 'AR-SINK',
               example:
@@ -5676,7 +5676,7 @@ export default {
             },
             {
               english: 'WebDAV',
-              italian: 'WebDAV',
+              italian: 'WebDAV / estensione HTTP per filesystem',
               pronunciation: '/web dæv/',
               phonetic: 'UEB-DAV',
               example:
@@ -5715,7 +5715,7 @@ export default {
             },
             {
               english: 'Telnet',
-              italian: 'Telnet',
+              italian: 'Telnet / accesso remoto in chiaro (legacy)',
               pronunciation: '/ˈtelnet/',
               phonetic: 'TEL-net',
               example: 'Telnet is unencrypted and obsolete. = Telnet non è cifrato ed è obsoleto.',
@@ -5767,7 +5767,7 @@ export default {
             },
             {
               english: 'Known Hosts',
-              italian: 'Known hosts',
+              italian: 'known_hosts / chiavi host SSH conosciute',
               pronunciation: '/noʊn hoʊsts/',
               phonetic: 'NOUN HOUSTS',
               example:
@@ -5800,7 +5800,7 @@ export default {
             },
             {
               english: 'Mosh',
-              italian: 'Mosh',
+              italian: 'Mosh / shell mobile resistente alla disconnessione',
               pronunciation: '/mɒʃ/',
               phonetic: 'MOSH',
               example:
@@ -5839,7 +5839,7 @@ export default {
             },
             {
               english: 'OID',
-              italian: 'OID',
+              italian: 'OID / identificatore SNMP',
               pronunciation: '/oʊ aɪ ˈdiː/',
               phonetic: 'O-AI-DI',
               example:
@@ -5862,7 +5862,7 @@ export default {
             },
             {
               english: 'Stratum',
-              italian: 'Stratum',
+              italian: 'stratum / livello gerarchico NTP',
               pronunciation: '/ˈstrætəm/',
               phonetic: 'STRA-tum',
               example:
@@ -5883,7 +5883,7 @@ export default {
             },
             {
               english: 'Active Directory',
-              italian: 'Active Directory',
+              italian: 'Active Directory (servizio identità Microsoft)',
               pronunciation: '/ˈæktɪv dəˈrektri/',
               phonetic: 'AK-tiv di-REK-tri',
               example:
@@ -5893,7 +5893,7 @@ export default {
             },
             {
               english: 'Syslog',
-              italian: 'Syslog',
+              italian: 'syslog / log di sistema',
               pronunciation: '/ˈsɪslɒɡ/',
               phonetic: 'SIS-log',
               example: 'Syslog standardizes log messages. = Syslog standardizza i messaggi di log.',
@@ -5903,7 +5903,7 @@ export default {
             },
             {
               english: 'RADIUS',
-              italian: 'RADIUS',
+              italian: 'RADIUS / AAA su rete',
               pronunciation: '/ˈreɪdiəs/',
               phonetic: 'REI-dius',
               example: 'RADIUS authenticates network users. = RADIUS autentica utenti di rete.',
@@ -5913,7 +5913,7 @@ export default {
             },
             {
               english: 'TACACS+',
-              italian: 'TACACS+',
+              italian: 'TACACS+ / AAA Cisco',
               pronunciation: '/ˈtækæks plʌs/',
               phonetic: 'TA-kaks PLAS',
               example: "TACACS+ is Cisco's AAA protocol. = TACACS+ è il protocollo AAA di Cisco.",
@@ -5939,7 +5939,7 @@ export default {
           items: [
             {
               english: 'ping',
-              italian: 'ping',
+              italian: 'ping / verifica raggiungibilità',
               pronunciation: '/pɪŋ/',
               phonetic: 'PING',
               example: 'ping tests basic reachability. = ping testa la raggiungibilità di base.',
@@ -5950,7 +5950,7 @@ export default {
             },
             {
               english: 'traceroute',
-              italian: 'traceroute',
+              italian: 'traceroute / traccia il percorso dei pacchetti',
               pronunciation: '/ˈtreɪsruːt/',
               phonetic: 'TREIS-rut',
               example:
@@ -5962,7 +5962,7 @@ export default {
             },
             {
               english: 'mtr',
-              italian: 'mtr',
+              italian: 'mtr / traceroute + ping continuo',
               pronunciation: '/em tiː ɑːr/',
               phonetic: 'EM-TI-AR',
               example: 'mtr combines ping and traceroute. = mtr combina ping e traceroute.',
@@ -5973,7 +5973,7 @@ export default {
             },
             {
               english: 'hostname',
-              italian: 'hostname',
+              italian: "hostname / nome dell'host",
               pronunciation: '/ˈhoʊstneɪm/',
               phonetic: 'HOUST-neim',
               example: 'hostname shows the system name. = hostname mostra il nome del sistema.',
@@ -5983,7 +5983,7 @@ export default {
             },
             {
               english: 'nslookup',
-              italian: 'nslookup',
+              italian: 'nslookup / query DNS interattiva',
               pronunciation: '/en es ˈlʊkʌp/',
               phonetic: 'EN-ES LUK-ap',
               example: 'nslookup queries DNS records. = nslookup interroga record DNS.',
@@ -5993,7 +5993,7 @@ export default {
             },
             {
               english: 'dig',
-              italian: 'dig',
+              italian: 'dig / query DNS avanzata',
               pronunciation: '/dɪɡ/',
               phonetic: 'DIG',
               example: 'dig is more powerful than nslookup. = dig è più potente di nslookup.',
@@ -6004,7 +6004,7 @@ export default {
             },
             {
               english: 'host',
-              italian: 'host',
+              italian: 'host / lookup DNS semplice',
               pronunciation: '/hoʊst/',
               phonetic: 'HOUST',
               example: 'host is a simple DNS lookup tool. = host è un semplice tool di lookup DNS.',
@@ -6014,7 +6014,7 @@ export default {
             },
             {
               english: 'whois',
-              italian: 'whois',
+              italian: 'whois / informazioni di registrazione di dominio',
               pronunciation: '/huː ɪz/',
               phonetic: 'HU-IZ',
               example:
@@ -6025,7 +6025,7 @@ export default {
             },
             {
               english: 'arp',
-              italian: 'arp',
+              italian: 'arp / tabella IP→MAC',
               pronunciation: '/ɑːrp/',
               phonetic: 'ARP',
               example: 'arp shows the ARP cache. = arp mostra la cache ARP.',
@@ -6035,7 +6035,7 @@ export default {
             },
             {
               english: 'ifconfig',
-              italian: 'ifconfig',
+              italian: 'ifconfig / configura interfaccia (legacy)',
               pronunciation: '/aɪ ef ˈkɒnfɪɡ/',
               phonetic: 'AI-EF KON-fig',
               example:
@@ -6054,7 +6054,7 @@ export default {
           items: [
             {
               english: 'ip',
-              italian: 'ip',
+              italian: 'ip / utility moderna di rete Linux',
               pronunciation: '/aɪ piː/',
               phonetic: 'AI-PI',
               example:
@@ -6066,7 +6066,7 @@ export default {
             },
             {
               english: 'ss',
-              italian: 'ss',
+              italian: 'ss / mostra socket aperti',
               pronunciation: '/es es/',
               phonetic: 'ES-ES',
               example:
@@ -6078,7 +6078,7 @@ export default {
             },
             {
               english: 'netstat',
-              italian: 'netstat',
+              italian: 'netstat / statistiche di rete (legacy)',
               pronunciation: '/ˈnetstæt/',
               phonetic: 'NET-stat',
               example:
@@ -6090,7 +6090,7 @@ export default {
             },
             {
               english: 'nmcli',
-              italian: 'nmcli',
+              italian: 'nmcli / CLI di NetworkManager',
               pronunciation: '/en em siː el aɪ/',
               phonetic: 'EN-EM-SI-EL-AI',
               example: 'nmcli controls NetworkManager. = nmcli controlla NetworkManager.',
@@ -6100,7 +6100,7 @@ export default {
             },
             {
               english: 'NetworkManager',
-              italian: 'NetworkManager',
+              italian: 'NetworkManager / gestore di rete Linux desktop',
               pronunciation: '/ˈnetwɜːrk ˈmænɪdʒər/',
               phonetic: 'NET-uerk MA-ni-ger',
               example:
@@ -6111,7 +6111,7 @@ export default {
             },
             {
               english: 'systemd-networkd',
-              italian: 'systemd-networkd',
+              italian: 'systemd-networkd / gestore rete di systemd',
               pronunciation: '/ˈsɪstəmdiː ˈnetwɜːrkdiː/',
               phonetic: 'SI-stem-di NET-uerk-di',
               example:
@@ -6122,7 +6122,7 @@ export default {
             },
             {
               english: 'iperf3',
-              italian: 'iperf3',
+              italian: 'iperf3 / misuratore di banda',
               pronunciation: '/aɪ pɜːrf θriː/',
               phonetic: 'AI-PERF-THRI',
               example: 'iperf3 measures network throughput. = iperf3 misura il throughput di rete.',
@@ -6132,7 +6132,7 @@ export default {
             },
             {
               english: 'ethtool',
-              italian: 'ethtool',
+              italian: 'ethtool / configurazione scheda Ethernet',
               pronunciation: '/ˈiːθtuːl/',
               phonetic: 'ITH-tul',
               example:
@@ -6143,7 +6143,7 @@ export default {
             },
             {
               english: 'iw',
-              italian: 'iw',
+              italian: 'iw / configurazione Wi-Fi moderna',
               pronunciation: '/aɪ ˈdʌbljuː/',
               phonetic: 'AI-DABOL-IU',
               example:
@@ -6154,7 +6154,7 @@ export default {
             },
             {
               english: 'route',
-              italian: 'route',
+              italian: 'route / mostra/modifica routing (legacy)',
               pronunciation: '/ruːt/',
               phonetic: 'RUUT',
               example: 'route shows the routing table. = route mostra la tabella di routing.',
@@ -6172,7 +6172,7 @@ export default {
           items: [
             {
               english: 'tcpdump',
-              italian: 'tcpdump',
+              italian: 'tcpdump / sniffer di rete CLI',
               pronunciation: '/tiː siː piː dʌmp/',
               phonetic: 'TI-SI-PI DAMP',
               example:
@@ -6183,7 +6183,7 @@ export default {
             },
             {
               english: 'Wireshark',
-              italian: 'Wireshark',
+              italian: 'Wireshark (analizzatore di protocollo grafico)',
               pronunciation: '/ˈwaɪərʃɑːrk/',
               phonetic: 'UAI-er-shark',
               example:
@@ -6194,7 +6194,7 @@ export default {
             },
             {
               english: 'tshark',
-              italian: 'tshark',
+              italian: 'tshark / Wireshark da CLI',
               pronunciation: '/tiː ʃɑːrk/',
               phonetic: 'TI-SHARK',
               example:
@@ -6205,7 +6205,7 @@ export default {
             },
             {
               english: 'pcap',
-              italian: 'pcap',
+              italian: 'pcap / formato di cattura pacchetti',
               pronunciation: '/piː kæp/',
               phonetic: 'PI-KAP',
               example:
@@ -6268,7 +6268,7 @@ export default {
             },
             {
               english: 'Tap',
-              italian: 'Tap',
+              italian: 'TAP / interfaccia di intercettazione',
               pronunciation: '/tæp/',
               phonetic: 'TAP',
               example:
@@ -6285,7 +6285,7 @@ export default {
           items: [
             {
               english: 'nmap',
-              italian: 'nmap',
+              italian: 'nmap / scanner di rete',
               pronunciation: '/en mæp/',
               phonetic: 'EN-MAP',
               example: 'nmap discovers hosts and open ports. = nmap scopre host e porte aperte.',
@@ -6318,7 +6318,7 @@ export default {
             },
             {
               english: 'masscan',
-              italian: 'masscan',
+              italian: 'masscan / scanner di rete ad alta velocità',
               pronunciation: '/mæs skæn/',
               phonetic: 'MAS-SKAN',
               example:
@@ -6329,7 +6329,7 @@ export default {
             },
             {
               english: 'fping',
-              italian: 'fping',
+              italian: 'fping / ping di multipli host',
               pronunciation: '/ef pɪŋ/',
               phonetic: 'EF-PING',
               example: 'fping pings many hosts in parallel. = fping pinga molti host in parallelo.',
@@ -6361,7 +6361,7 @@ export default {
             },
             {
               english: 'Banner Grabbing',
-              italian: 'Banner grabbing',
+              italian: 'banner grabbing / rilevazione del banner di servizio',
               pronunciation: '/ˈbænər ˈɡræbɪŋ/',
               phonetic: 'BA-ner GRA-bing',
               example:
@@ -6381,7 +6381,7 @@ export default {
             },
             {
               english: 'Zenmap',
-              italian: 'Zenmap',
+              italian: 'Zenmap / GUI di nmap',
               pronunciation: '/zen mæp/',
               phonetic: 'ZEN-MAP',
               example: 'Zenmap is the GUI for nmap. = Zenmap è la GUI per nmap.',
@@ -6438,7 +6438,7 @@ export default {
             },
             {
               english: 'Jitter',
-              italian: 'Jitter',
+              italian: "jitter / variazione casuale dell'intervallo",
               pronunciation: '/ˈdʒɪtər/',
               phonetic: 'GI-ter',
               example:
@@ -6468,7 +6468,7 @@ export default {
             },
             {
               english: 'Brownout',
-              italian: 'Brownout',
+              italian: 'brownout / degrado parziale del servizio',
               pronunciation: '/ˈbraʊnaʊt/',
               phonetic: 'BRAUN-aut',
               example:
@@ -6478,7 +6478,7 @@ export default {
             },
             {
               english: 'Flapping',
-              italian: 'Flapping',
+              italian: 'flapping / oscillazione di stato',
               pronunciation: '/ˈflæpɪŋ/',
               phonetic: 'FLA-ping',
               example:
@@ -6488,7 +6488,7 @@ export default {
             },
             {
               english: 'Microburst',
-              italian: 'Microburst',
+              italian: 'microburst / picco di traffico breve',
               pronunciation: '/ˈmaɪkroʊbɜːrst/',
               phonetic: 'MAI-kro-berst',
               example:
@@ -6515,7 +6515,7 @@ export default {
           items: [
             {
               english: 'MTU',
-              italian: 'MTU',
+              italian: 'MTU / Maximum Transmission Unit',
               pronunciation: '/em tiː juː/',
               phonetic: 'EM-TI-IU',
               example:
@@ -6526,7 +6526,7 @@ export default {
             },
             {
               english: 'Path MTU Discovery',
-              italian: 'Path MTU Discovery',
+              italian: 'Path MTU Discovery / scoperta MTU del percorso',
               pronunciation: '/pæθ em tiː juː/',
               phonetic: 'PATH EM-TI-IU',
               example:
@@ -6546,7 +6546,7 @@ export default {
             },
             {
               english: 'MSS Clamping',
-              italian: 'MSS clamping',
+              italian: 'MSS clamping / limitazione MSS TCP',
               pronunciation: '/em es es ˈklæmpɪŋ/',
               phonetic: 'EM-ES-ES KLAM-ping',
               example:
@@ -6557,7 +6557,7 @@ export default {
             },
             {
               english: "Don't Fragment",
-              italian: "Don't Fragment",
+              italian: "Don't Fragment / flag IP di non frammentazione",
               pronunciation: '/doʊnt ˈfræɡmənt/',
               phonetic: 'DOUNT FRAG-ment',
               example:
@@ -6664,7 +6664,7 @@ export default {
             },
             {
               english: 'Bufferbloat',
-              italian: 'Bufferbloat',
+              italian: 'bufferbloat / latenza da buffer eccessivo',
               pronunciation: '/ˈbʌfərbloʊt/',
               phonetic: 'BA-fer-blout',
               example:
@@ -6685,7 +6685,7 @@ export default {
             },
             {
               english: 'TCP Slow Start',
-              italian: 'TCP slow start',
+              italian: 'TCP slow start / fase iniziale di congestione TCP',
               pronunciation: '/sloʊ stɑːrt/',
               phonetic: 'SLOU-START',
               example:
@@ -6705,7 +6705,7 @@ export default {
             },
             {
               english: 'BBR',
-              italian: 'BBR',
+              italian: 'BBR / algoritmo di congestione Google',
               pronunciation: '/biː biː ɑːr/',
               phonetic: 'BI-BI-AR',
               example:
@@ -6733,7 +6733,7 @@ export default {
           items: [
             {
               english: 'Bottom-Up',
-              italian: 'Bottom-up',
+              italian: "bottom-up / approccio dal basso verso l'alto",
               pronunciation: '/ˈbɒtəm ʌp/',
               phonetic: 'BO-tom AP',
               example:
@@ -6743,7 +6743,7 @@ export default {
             },
             {
               english: 'Top-Down',
-              italian: 'Top-down',
+              italian: "top-down / approccio dall'alto verso il basso",
               pronunciation: '/tɒp daʊn/',
               phonetic: 'TOP-DAUN',
               example: "Top-down starts from the application. = Top-down parte dall'applicazione.",
@@ -6762,7 +6762,7 @@ export default {
             },
             {
               english: 'Baseline',
-              italian: 'Baseline',
+              italian: 'baseline / valore di riferimento',
               pronunciation: '/ˈbeɪslaɪn/',
               phonetic: 'BEIS-lain',
               example:
@@ -6792,7 +6792,7 @@ export default {
             },
             {
               english: 'Postmortem',
-              italian: 'Postmortem',
+              italian: 'postmortem / analisi post-incidente',
               pronunciation: '/poʊstˈmɔːrtəm/',
               phonetic: 'POUST-mor-tem',
               example:
@@ -6858,7 +6858,7 @@ export default {
             },
             {
               english: 'Traffic Shaping',
-              italian: 'Traffic shaping',
+              italian: 'traffic shaping / modellatura del traffico',
               pronunciation: '/ˈtræfɪk ˈʃeɪpɪŋ/',
               phonetic: 'TRA-fik SHEI-ping',
               example: 'Traffic shaping smooths bursts. = Il traffic shaping spiana i burst.',
@@ -6868,7 +6868,7 @@ export default {
             },
             {
               english: 'Traffic Policing',
-              italian: 'Traffic policing',
+              italian: 'traffic policing / limitazione del traffico',
               pronunciation: '/pəˈliːsɪŋ/',
               phonetic: 'po-LI-sing',
               example:
@@ -6897,7 +6897,7 @@ export default {
             },
             {
               english: 'CBWFQ',
-              italian: 'CBWFQ',
+              italian: 'CBWFQ / Class-Based Weighted Fair Queueing',
               pronunciation: '/siː biː dʌbljuː ef kjuː/',
               phonetic: 'SI-BI-DABOL-IU-EF-KIU',
               example:
@@ -6918,7 +6918,7 @@ export default {
             },
             {
               english: 'Best-Effort',
-              italian: 'Best-effort',
+              italian: 'best-effort / migliore sforzo, senza garanzie',
               pronunciation: '/best ˈefərt/',
               phonetic: 'BEST E-fort',
               example:
@@ -7035,7 +7035,7 @@ export default {
             },
             {
               english: 'Default Forwarding',
-              italian: 'Default Forwarding',
+              italian: 'default forwarding / inoltro predefinito',
               pronunciation: '/dɪˈfɔːlt ˈfɔːrwərdɪŋ/',
               phonetic: 'di-FOLT FOR-uar-ding',
               example: 'DSCP 0 is default forwarding. = DSCP 0 è il default forwarding.',
@@ -7044,7 +7044,7 @@ export default {
             },
             {
               english: 'Class Selector',
-              italian: 'Class selector',
+              italian: 'class selector / selettore di classe DSCP',
               pronunciation: '/klæs sɪˈlektər/',
               phonetic: 'KLAS si-LEK-ter',
               example:
@@ -7102,7 +7102,7 @@ export default {
             },
             {
               english: 'Token Bucket',
-              italian: 'Token bucket',
+              italian: 'token bucket / algoritmo a secchio di gettoni',
               pronunciation: '/ˈtoʊkən ˈbʌkɪt/',
               phonetic: 'TOU-ken BA-ket',
               example:
@@ -7112,7 +7112,7 @@ export default {
             },
             {
               english: 'Leaky Bucket',
-              italian: 'Leaky bucket',
+              italian: 'leaky bucket / algoritmo a secchio bucato',
               pronunciation: '/ˈliːki ˈbʌkɪt/',
               phonetic: 'LI-ki BA-ket',
               example:
@@ -7188,7 +7188,7 @@ export default {
             },
             {
               english: 'pfifo_fast',
-              italian: 'pfifo_fast',
+              italian: 'pfifo_fast / coda predefinita di Linux',
               pronunciation: '/piː ˈfaɪfoʊ fæst/',
               phonetic: 'PI-FAI-fou FAST',
               example:
@@ -7198,7 +7198,7 @@ export default {
             },
             {
               english: 'fq_codel',
-              italian: 'fq_codel',
+              italian: 'fq_codel / coda fair contro bufferbloat',
               pronunciation: '/ef kjuː ˈkoʊdl/',
               phonetic: 'EF-KIU KO-del',
               example:
@@ -7208,7 +7208,7 @@ export default {
             },
             {
               english: 'CAKE',
-              italian: 'CAKE',
+              italian: 'CAKE / qdisc anti-bufferbloat moderna',
               pronunciation: '/keɪk/',
               phonetic: 'KEIK',
               example:
@@ -7229,7 +7229,7 @@ export default {
             },
             {
               english: 'iptables Mark',
-              italian: 'iptables MARK',
+              italian: 'iptables MARK / contrassegna pacchetti',
               pronunciation: '/aɪ piː ˈteɪblz mɑːrk/',
               phonetic: 'AI-PI TEI-bols MARK',
               example:
@@ -7338,7 +7338,7 @@ export default {
             },
             {
               english: 'AS Path',
-              italian: 'AS path',
+              italian: 'AS path / sequenza di sistemi autonomi BGP',
               pronunciation: '/eɪ es pæθ/',
               phonetic: 'EI-ES PATH',
               example:
@@ -7359,7 +7359,7 @@ export default {
             },
             {
               english: 'Route Reflector',
-              italian: 'Route reflector',
+              italian: 'route reflector / riflettore di rotte BGP',
               pronunciation: '/ruːt rɪˈflektər/',
               phonetic: 'RUUT ri-FLEK-ter',
               example:
@@ -7500,7 +7500,7 @@ export default {
           items: [
             {
               english: 'EIGRP',
-              italian: 'EIGRP',
+              italian: 'EIGRP / protocollo routing Cisco ibrido',
               pronunciation: '/iː aɪ dʒiː ɑːr piː/',
               phonetic: 'I-AI-GI-AR-PI',
               example:
@@ -7511,7 +7511,7 @@ export default {
             },
             {
               english: 'DUAL',
-              italian: 'DUAL',
+              italian: 'DUAL / Diffusing Update Algorithm di EIGRP',
               pronunciation: '/ˈduːəl/',
               phonetic: 'DU-al',
               example:
@@ -7542,7 +7542,7 @@ export default {
             },
             {
               english: 'IS-IS',
-              italian: 'IS-IS',
+              italian: 'IS-IS / Intermediate System to Intermediate System',
               pronunciation: '/aɪ es aɪ es/',
               phonetic: 'AI-ES-AI-ES',
               example:
@@ -7553,7 +7553,7 @@ export default {
             },
             {
               english: 'NSSA',
-              italian: 'NSSA',
+              italian: 'NSSA / Not So Stubby Area in OSPF',
               pronunciation: '/en es es eɪ/',
               phonetic: 'EN-ES-ES-EI',
               example:
@@ -7564,7 +7564,7 @@ export default {
             },
             {
               english: 'Totally Stubby',
-              italian: 'Totally stubby',
+              italian: 'totally stubby / area OSPF molto ridotta',
               pronunciation: '/ˈtoʊtəli ˈstʌbi/',
               phonetic: 'TO-tali STA-bi',
               example:
@@ -7595,7 +7595,7 @@ export default {
             },
             {
               english: 'Route Map',
-              italian: 'Route map',
+              italian: 'route map / mappa di routing avanzato',
               pronunciation: '/ruːt mæp/',
               phonetic: 'RUUT MAP',
               example:
@@ -7691,7 +7691,7 @@ export default {
             },
             {
               english: 'L3VPN',
-              italian: 'L3VPN',
+              italian: 'L3VPN / VPN a livello 3 MPLS',
               pronunciation: '/el θriː viː piː en/',
               phonetic: 'EL-THRI-VI-PI-EN',
               example:
@@ -7701,7 +7701,7 @@ export default {
             },
             {
               english: 'Segment Routing',
-              italian: 'Segment routing',
+              italian: 'segment routing / routing a segmenti',
               pronunciation: '/ˈseɡmənt ˈruːtɪŋ/',
               phonetic: 'SEG-ment RU-ting',
               example:
@@ -7738,7 +7738,7 @@ export default {
             },
             {
               english: 'Control Plane',
-              italian: 'Control plane',
+              italian: 'control plane / piano di controllo',
               pronunciation: '/kənˈtroʊl pleɪn/',
               phonetic: 'kon-TROUL PLEIN',
               example:
@@ -7748,7 +7748,7 @@ export default {
             },
             {
               english: 'Data Plane',
-              italian: 'Data plane',
+              italian: 'data plane / piano dati',
               pronunciation: '/ˈdeɪtə pleɪn/',
               phonetic: 'DEI-ta PLEIN',
               example:
@@ -7758,7 +7758,7 @@ export default {
             },
             {
               english: 'Management Plane',
-              italian: 'Management plane',
+              italian: 'management plane / piano di gestione',
               pronunciation: '/ˈmænɪdʒmənt pleɪn/',
               phonetic: 'MA-nich-ment PLEIN',
               example:
@@ -7800,7 +7800,7 @@ export default {
             },
             {
               english: 'OpenFlow',
-              italian: 'OpenFlow',
+              italian: 'OpenFlow / protocollo SDN classico',
               pronunciation: '/ˈoʊpən floʊ/',
               phonetic: 'OU-pen FLOU',
               example:
@@ -7877,7 +7877,7 @@ export default {
             },
             {
               english: 'VXLAN',
-              italian: 'VXLAN',
+              italian: 'VXLAN / Virtual eXtensible LAN',
               pronunciation: '/viː eks læn/',
               phonetic: 'VI-EKS-LAN',
               example:
@@ -7917,7 +7917,7 @@ export default {
             },
             {
               english: 'Geneve',
-              italian: 'Geneve',
+              italian: 'Geneve / incapsulamento moderno alternativo a VXLAN',
               pronunciation: '/ˈdʒeneɪv/',
               phonetic: 'GE-neiv',
               example:
@@ -7928,7 +7928,7 @@ export default {
             },
             {
               english: 'EVPN',
-              italian: 'EVPN',
+              italian: 'EVPN / Ethernet VPN BGP',
               pronunciation: '/iː viː piː en/',
               phonetic: 'I-VI-PI-EN',
               example:
@@ -7946,7 +7946,7 @@ export default {
           items: [
             {
               english: 'P4',
-              italian: 'P4',
+              italian: 'P4 / linguaggio programmazione del data plane',
               pronunciation: '/piː fɔːr/',
               phonetic: 'PI-FOR',
               example:
@@ -7977,7 +7977,7 @@ export default {
             },
             {
               english: 'Parser',
-              italian: 'Parser',
+              italian: 'parser / analizzatore di pacchetti',
               pronunciation: '/ˈpɑːrsər/',
               phonetic: 'PAR-ser',
               example:
@@ -7987,7 +7987,7 @@ export default {
             },
             {
               english: 'eBPF',
-              italian: 'eBPF',
+              italian: 'eBPF / extended Berkeley Packet Filter',
               pronunciation: '/iː biː piː ef/',
               phonetic: 'I-BI-PI-EF',
               example:
@@ -8008,7 +8008,7 @@ export default {
             },
             {
               english: 'DPDK',
-              italian: 'DPDK',
+              italian: 'DPDK / Data Plane Development Kit',
               pronunciation: '/diː piː diː keɪ/',
               phonetic: 'DI-PI-DI-KEI',
               example:
@@ -8019,7 +8019,7 @@ export default {
             },
             {
               english: 'SmartNIC',
-              italian: 'SmartNIC',
+              italian: 'SmartNIC / scheda di rete con CPU programmabile',
               pronunciation: '/smɑːrt nɪk/',
               phonetic: 'SMART NIK',
               example:
@@ -8029,7 +8029,7 @@ export default {
             },
             {
               english: 'Network OS',
-              italian: 'Network OS',
+              italian: 'network OS / sistema operativo di rete',
               pronunciation: '/ˈnetwɜːrk oʊ es/',
               phonetic: 'NET-uerk O-ES',
               example:
@@ -8076,7 +8076,7 @@ export default {
             },
             {
               english: 'Closed-Loop',
-              italian: 'Closed-loop',
+              italian: 'closed-loop / automazione ad anello chiuso',
               pronunciation: '/kloʊzd luːp/',
               phonetic: 'KLOUZD LUUP',
               example:
@@ -8097,7 +8097,7 @@ export default {
             },
             {
               english: 'Cisco DNA Center',
-              italian: 'Cisco DNA Center',
+              italian: 'Cisco DNA Center (gestione di rete intent-based)',
               pronunciation: '/ˈsɪskoʊ diː en eɪ/',
               phonetic: 'SI-skou DI-EN-EI',
               example:
@@ -8118,7 +8118,7 @@ export default {
             },
             {
               english: 'NSX',
-              italian: 'NSX',
+              italian: 'VMware NSX (rete software-defined)',
               pronunciation: '/en es eks/',
               phonetic: 'EN-ES-EKS',
               example:
@@ -8139,7 +8139,7 @@ export default {
             },
             {
               english: 'Service Mesh',
-              italian: 'Service mesh',
+              italian: 'service mesh / rete di servizi gestita',
               pronunciation: '/ˈsɜːrvɪs meʃ/',
               phonetic: 'SER-vis MESH',
               example:
@@ -8150,7 +8150,7 @@ export default {
             },
             {
               english: 'eBGP Unnumbered',
-              italian: 'eBGP Unnumbered',
+              italian: 'eBGP Unnumbered / eBGP senza IP punto-a-punto',
               pronunciation: '/iː biː dʒiː piː ʌnˈnʌmbərd/',
               phonetic: 'I-BI-GI-PI an-NAM-berd',
               example:
@@ -8197,7 +8197,7 @@ export default {
             },
             {
               english: 'Snort',
-              italian: 'Snort',
+              italian: 'Snort (IDS/IPS open source)',
               pronunciation: '/snɔːrt/',
               phonetic: 'SNORT',
               example: 'Snort is a popular open-source IDS. = Snort è un popolare IDS open-source.',
@@ -8207,7 +8207,7 @@ export default {
             },
             {
               english: 'Suricata',
-              italian: 'Suricata',
+              italian: 'Suricata (IDS/IPS multi-thread open source)',
               pronunciation: '/sʊrɪˈkɑːtə/',
               phonetic: 'su-ri-KA-ta',
               example:
@@ -8305,7 +8305,7 @@ export default {
             },
             {
               english: 'Honeypot',
-              italian: 'Honeypot',
+              italian: 'honeypot / esca per attaccanti',
               pronunciation: '/ˈhʌnipɒt/',
               phonetic: 'HA-ni-pot',
               example: 'A honeypot lures attackers. = Un honeypot attira gli aggressori.',
@@ -8315,7 +8315,7 @@ export default {
             },
             {
               english: 'Honeynet',
-              italian: 'Honeynet',
+              italian: 'honeynet / rete di honeypot',
               pronunciation: '/ˈhʌninet/',
               phonetic: 'HA-ni-net',
               example:
@@ -8325,7 +8325,7 @@ export default {
             },
             {
               english: 'Tarpit',
-              italian: 'Tarpit',
+              italian: 'tarpit / trappola che rallenta gli attaccanti',
               pronunciation: '/ˈtɑːrpɪt/',
               phonetic: 'TAR-pit',
               example:
@@ -8335,7 +8335,7 @@ export default {
             },
             {
               english: 'Threat Intelligence',
-              italian: 'Threat intelligence',
+              italian: 'threat intelligence / intelligence sulle minacce',
               pronunciation: '/θret ɪnˈtelɪdʒəns/',
               phonetic: 'THRET in-TE-li-gens',
               example:
@@ -8356,7 +8356,7 @@ export default {
             },
             {
               english: 'SIEM',
-              italian: 'SIEM',
+              italian: 'SIEM / Security Information and Event Management',
               pronunciation: '/siːm/',
               phonetic: 'SIIM',
               example:
@@ -8367,7 +8367,7 @@ export default {
             },
             {
               english: 'SOAR',
-              italian: 'SOAR',
+              italian: 'SOAR / Security Orchestration Automation Response',
               pronunciation: '/sɔːr/',
               phonetic: 'SOR',
               example:
@@ -8378,7 +8378,7 @@ export default {
             },
             {
               english: 'Threat Hunting',
-              italian: 'Threat hunting',
+              italian: 'threat hunting / caccia proattiva alle minacce',
               pronunciation: '/θret ˈhʌntɪŋ/',
               phonetic: 'THRET HAN-ting',
               example:
@@ -8395,7 +8395,7 @@ export default {
           items: [
             {
               english: 'Zero Trust',
-              italian: 'Zero Trust',
+              italian: 'zero trust / nessuna fiducia di default',
               pronunciation: '/ˈzɪəroʊ trʌst/',
               phonetic: 'ZI-ro TRAST',
               example:
@@ -8437,7 +8437,7 @@ export default {
             },
             {
               english: '802.1X',
-              italian: '802.1X',
+              italian: '802.1X / autenticazione port-based',
               pronunciation: '/eɪt oʊ tuː dɒt eks/',
               phonetic: 'EIT-O-TU dot EKS',
               example: "802.1X authenticates port access. = 802.1X autentica l'accesso alla porta.",
@@ -8456,7 +8456,7 @@ export default {
             },
             {
               english: 'SASE',
-              italian: 'SASE',
+              italian: 'SASE / Secure Access Service Edge',
               pronunciation: '/ˈsæsi/',
               phonetic: 'SA-si',
               example:
@@ -8467,7 +8467,7 @@ export default {
             },
             {
               english: 'ZTNA',
-              italian: 'ZTNA',
+              italian: 'ZTNA / Zero Trust Network Access',
               pronunciation: '/zed tiː en eɪ/',
               phonetic: 'ZED-TI-EN-EI',
               example:
@@ -8516,7 +8516,7 @@ export default {
             },
             {
               english: 'SYN Flood',
-              italian: 'SYN flood',
+              italian: 'SYN flood / inondazione di pacchetti SYN',
               pronunciation: '/sɪn flʌd/',
               phonetic: 'SIN-FLAD',
               example:
@@ -8537,7 +8537,7 @@ export default {
             },
             {
               english: 'Spoofing',
-              italian: 'Spoofing',
+              italian: 'spoofing / impersonificazione',
               pronunciation: '/ˈspuːfɪŋ/',
               phonetic: 'SPU-fing',
               example:
@@ -8547,7 +8547,7 @@ export default {
             },
             {
               english: 'Sniffing',
-              italian: 'Sniffing',
+              italian: 'sniffing / intercettazione di rete',
               pronunciation: '/ˈsnɪfɪŋ/',
               phonetic: 'SNI-fing',
               example:
@@ -8577,7 +8577,7 @@ export default {
             },
             {
               english: 'DNS Spoofing',
-              italian: 'DNS spoofing',
+              italian: 'DNS spoofing / falsificazione delle risposte DNS',
               pronunciation: '/diː en es/',
               phonetic: 'DI-EN-ES',
               example:
@@ -8587,7 +8587,7 @@ export default {
             },
             {
               english: 'Botnet',
-              italian: 'Botnet',
+              italian: 'botnet / rete di bot infetti',
               pronunciation: '/ˈbɒtnet/',
               phonetic: 'BOT-net',
               example:
@@ -8632,7 +8632,7 @@ export default {
             },
             {
               english: 'VNet',
-              italian: 'VNet',
+              italian: 'VNet / Virtual Network Azure',
               pronunciation: '/viː net/',
               phonetic: 'VI-NET',
               example:
@@ -8662,7 +8662,7 @@ export default {
             },
             {
               english: 'Internet Gateway',
-              italian: 'Internet Gateway',
+              italian: 'Internet Gateway / gateway Internet di VPC',
               pronunciation: '/ˈɪntərnet ˈɡeɪtweɪ/',
               phonetic: 'IN-ter-net GHEIT-uei',
               example: 'IGW connects VPC to the Internet. = IGW connette la VPC a Internet.',
@@ -8682,7 +8682,7 @@ export default {
             },
             {
               english: 'Security Group',
-              italian: 'Security Group',
+              italian: 'Security Group / gruppo di sicurezza cloud',
               pronunciation: '/sɪˈkjʊərəti ɡruːp/',
               phonetic: 'si-KIU-re-ti GRUP',
               example:
@@ -8729,7 +8729,7 @@ export default {
           items: [
             {
               english: 'VPC Peering',
-              italian: 'VPC peering',
+              italian: 'VPC peering / collegamento tra VPC',
               pronunciation: '/viː piː siː ˈpɪərɪŋ/',
               phonetic: 'VI-PI-SI PIIR-ing',
               example:
@@ -8740,7 +8740,7 @@ export default {
             },
             {
               english: 'Transit Gateway',
-              italian: 'Transit Gateway',
+              italian: 'Transit Gateway / hub VPN/VPC AWS',
               pronunciation: '/ˈtrænzɪt ˈɡeɪtweɪ/',
               phonetic: 'TRAN-zit GHEIT-uei',
               example:
@@ -8750,7 +8750,7 @@ export default {
             },
             {
               english: 'VPC Endpoint',
-              italian: 'VPC endpoint',
+              italian: 'VPC endpoint / endpoint privato verso servizi AWS',
               pronunciation: '/ˈendpɔɪnt/',
               phonetic: 'END-point',
               example:
@@ -8760,7 +8760,7 @@ export default {
             },
             {
               english: 'PrivateLink',
-              italian: 'PrivateLink',
+              italian: 'AWS PrivateLink / collegamento privato a servizi AWS',
               pronunciation: '/ˈpraɪvət lɪŋk/',
               phonetic: 'PRAI-vet LINK',
               example:
@@ -8770,7 +8770,7 @@ export default {
             },
             {
               english: 'Direct Connect',
-              italian: 'Direct Connect',
+              italian: 'AWS Direct Connect / circuito dedicato verso AWS',
               pronunciation: '/dəˈrekt kəˈnekt/',
               phonetic: 'di-REKT ko-NEKT',
               example:
@@ -8780,7 +8780,7 @@ export default {
             },
             {
               english: 'ExpressRoute',
-              italian: 'ExpressRoute',
+              italian: 'Azure ExpressRoute / circuito dedicato verso Azure',
               pronunciation: '/ɪkˈspres ruːt/',
               phonetic: 'iks-PRES RUUT',
               example:
@@ -8790,7 +8790,7 @@ export default {
             },
             {
               english: 'Cloud Interconnect',
-              italian: 'Cloud Interconnect',
+              italian: 'Google Cloud Interconnect / circuito dedicato GCP',
               pronunciation: '/ˌɪntərkəˈnekt/',
               phonetic: 'in-ter-ko-NEKT',
               example:
@@ -8810,7 +8810,7 @@ export default {
             },
             {
               english: 'Multi-Cloud',
-              italian: 'Multi-cloud',
+              italian: 'multi-cloud / uso di più provider cloud',
               pronunciation: '/ˈmʌlti klaʊd/',
               phonetic: 'MAL-ti KLAUD',
               example: 'Multi-cloud uses multiple providers. = Multi-cloud usa più provider.',
@@ -8885,7 +8885,7 @@ export default {
             },
             {
               english: 'Listener',
-              italian: 'Listener',
+              italian: 'listener / porta in ascolto',
               pronunciation: '/ˈlɪsənər/',
               phonetic: 'LI-se-ner',
               example:
@@ -8915,7 +8915,7 @@ export default {
             },
             {
               english: 'CloudFront',
-              italian: 'CloudFront',
+              italian: 'AWS CloudFront / CDN AWS',
               pronunciation: '/klaʊd frʌnt/',
               phonetic: 'KLAUD-FRANT',
               example: 'CloudFront is the AWS CDN. = CloudFront è la CDN AWS.',
@@ -8942,7 +8942,7 @@ export default {
           items: [
             {
               english: 'Route 53',
-              italian: 'Route 53',
+              italian: 'Route 53 / DNS gestito AWS',
               pronunciation: '/ruːt ˈfɪfti θriː/',
               phonetic: 'RUUT FIF-ti THRI',
               example: 'Route 53 is the AWS DNS service. = Route 53 è il servizio DNS AWS.',
@@ -8952,7 +8952,7 @@ export default {
             },
             {
               english: 'Cloud DNS',
-              italian: 'Cloud DNS',
+              italian: 'Cloud DNS / DNS gestito Google Cloud',
               pronunciation: '/klaʊd diː en es/',
               phonetic: 'KLAUD-DI-EN-ES',
               example:
@@ -9032,7 +9032,7 @@ export default {
             },
             {
               english: 'Traffic Director',
-              italian: 'Traffic Director',
+              italian: 'Traffic Director / service mesh gestito Google',
               pronunciation: '/ˈtræfɪk dəˈrektər/',
               phonetic: 'TRA-fik di-REK-ter',
               example:
@@ -9058,7 +9058,7 @@ export default {
           items: [
             {
               english: 'Ansible',
-              italian: 'Ansible',
+              italian: 'Ansible (strumento automazione configurazione)',
               pronunciation: '/ˈænsɪbəl/',
               phonetic: 'AN-si-bol',
               example:
@@ -9069,7 +9069,7 @@ export default {
             },
             {
               english: 'Playbook',
-              italian: 'Playbook',
+              italian: 'playbook / piano di automazione Ansible',
               pronunciation: '/ˈpleɪbʊk/',
               phonetic: 'PLEI-buk',
               example:
@@ -9100,7 +9100,7 @@ export default {
             },
             {
               english: 'Salt',
-              italian: 'Salt',
+              italian: 'SaltStack / gestione configurazione',
               pronunciation: '/sɔːlt/',
               phonetic: 'SOLT',
               example: 'SaltStack scales to many devices. = SaltStack scala a molti dispositivi.',
@@ -9110,7 +9110,7 @@ export default {
             },
             {
               english: 'Puppet',
-              italian: 'Puppet',
+              italian: 'Puppet / gestione configurazione dichiarativa',
               pronunciation: '/ˈpʌpɪt/',
               phonetic: 'PA-pet',
               example:
@@ -9121,7 +9121,7 @@ export default {
             },
             {
               english: 'Terraform',
-              italian: 'Terraform',
+              italian: 'Terraform (IaC HashiCorp)',
               pronunciation: '/ˈterəfɔːrm/',
               phonetic: 'TE-ra-form',
               example:
@@ -9170,7 +9170,7 @@ export default {
           items: [
             {
               english: 'NETCONF',
-              italian: 'NETCONF',
+              italian: 'NETCONF / protocollo di configurazione di rete',
               pronunciation: '/net kɒnf/',
               phonetic: 'NET-KONF',
               example:
@@ -9181,7 +9181,7 @@ export default {
             },
             {
               english: 'RESTCONF',
-              italian: 'RESTCONF',
+              italian: 'RESTCONF / NETCONF su REST',
               pronunciation: '/rest kɒnf/',
               phonetic: 'REST-KONF',
               example: 'RESTCONF exposes NETCONF over HTTP. = RESTCONF espone NETCONF su HTTP.',
@@ -9190,7 +9190,7 @@ export default {
             },
             {
               english: 'YANG',
-              italian: 'YANG',
+              italian: 'YANG / linguaggio di modellazione dati di rete',
               pronunciation: '/jæŋ/',
               phonetic: 'IANG',
               example:
@@ -9201,7 +9201,7 @@ export default {
             },
             {
               english: 'gNMI',
-              italian: 'gNMI',
+              italian: 'gNMI / gRPC Network Management Interface',
               pronunciation: '/dʒiː en em aɪ/',
               phonetic: 'GI-EN-EM-AI',
               example:
@@ -9212,7 +9212,7 @@ export default {
             },
             {
               english: 'gRPC',
-              italian: 'gRPC',
+              italian: 'gRPC (RPC ad alte prestazioni Google)',
               pronunciation: '/dʒiː ɑːr piː siː/',
               phonetic: 'GI-AR-PI-SI',
               example: 'gRPC provides efficient binary RPC. = gRPC fornisce RPC binari efficienti.',
@@ -9221,7 +9221,7 @@ export default {
             },
             {
               english: 'OpenConfig',
-              italian: 'OpenConfig',
+              italian: 'OpenConfig / modelli YANG vendor-neutrali',
               pronunciation: '/ˈoʊpən kɒnfɪɡ/',
               phonetic: 'OU-pen KON-fig',
               example:
@@ -9242,7 +9242,7 @@ export default {
             },
             {
               english: 'JSON-RPC',
-              italian: 'JSON-RPC',
+              italian: 'JSON-RPC / RPC su JSON',
               pronunciation: '/ˈdʒeɪsən ɑːr piː siː/',
               phonetic: 'GEI-son AR-PI-SI',
               example:
@@ -9252,7 +9252,7 @@ export default {
             },
             {
               english: 'CLI Scraping',
-              italian: 'CLI scraping',
+              italian: "CLI scraping / parsing dell'output CLI",
               pronunciation: '/siː el aɪ ˈskreɪpɪŋ/',
               phonetic: 'SI-EL-AI SKREI-ping',
               example:
@@ -9279,7 +9279,7 @@ export default {
           items: [
             {
               english: 'Netmiko',
-              italian: 'Netmiko',
+              italian: 'Netmiko / SSH per dispositivi di rete',
               pronunciation: '/net ˈmiːkoʊ/',
               phonetic: 'NET-MI-ko',
               example:
@@ -9290,7 +9290,7 @@ export default {
             },
             {
               english: 'NAPALM',
-              italian: 'NAPALM',
+              italian: 'NAPALM / abstraction multi-vendor di rete',
               pronunciation: '/ˈneɪpɑːm/',
               phonetic: 'NEI-palm',
               example:
@@ -9301,7 +9301,7 @@ export default {
             },
             {
               english: 'Nornir',
-              italian: 'Nornir',
+              italian: 'Nornir / framework Python di automazione di rete',
               pronunciation: '/ˈnɔːrnɪr/',
               phonetic: 'NOR-nir',
               example:
@@ -9311,7 +9311,7 @@ export default {
             },
             {
               english: 'Paramiko',
-              italian: 'Paramiko',
+              italian: 'Paramiko / libreria SSH Python',
               pronunciation: '/pəˈræmɪkoʊ/',
               phonetic: 'pa-RA-mi-ko',
               example: 'Paramiko provides SSH in Python. = Paramiko fornisce SSH in Python.',
@@ -9320,7 +9320,7 @@ export default {
             },
             {
               english: 'pyATS',
-              italian: 'pyATS',
+              italian: 'pyATS / framework test di Cisco',
               pronunciation: '/paɪ eɪ tiː es/',
               phonetic: 'PAI-EI-TI-ES',
               example:
@@ -9330,7 +9330,7 @@ export default {
             },
             {
               english: 'TextFSM',
-              italian: 'TextFSM',
+              italian: 'TextFSM / parsing strutturato di output testuale',
               pronunciation: '/tekst ef es em/',
               phonetic: 'TEKST-EF-ES-EM',
               example:
@@ -9340,7 +9340,7 @@ export default {
             },
             {
               english: 'Genie',
-              italian: 'Genie',
+              italian: 'Genie / parsing/automation Cisco',
               pronunciation: '/ˈdʒiːni/',
               phonetic: 'GI-ni',
               example:
@@ -9350,7 +9350,7 @@ export default {
             },
             {
               english: 'Jinja2',
-              italian: 'Jinja2',
+              italian: 'Jinja2 / template engine Python',
               pronunciation: '/ˈdʒɪndʒə tuː/',
               phonetic: 'GIN-gia TU',
               example:
@@ -9360,7 +9360,7 @@ export default {
             },
             {
               english: 'NetBox',
-              italian: 'NetBox',
+              italian: 'NetBox / inventario di rete (DCIM/IPAM)',
               pronunciation: '/net bɒks/',
               phonetic: 'NET-BOKS',
               example:
@@ -9371,7 +9371,7 @@ export default {
             },
             {
               english: 'Scrapli',
-              italian: 'Scrapli',
+              italian: 'Scrapli / SSH ad alte prestazioni per rete',
               pronunciation: '/ˈskræpli/',
               phonetic: 'SKRA-pli',
               example:
@@ -9388,7 +9388,7 @@ export default {
           items: [
             {
               english: 'NetDevOps',
-              italian: 'NetDevOps',
+              italian: 'NetDevOps / DevOps applicato alla rete',
               pronunciation: '/net ˈdevɒps/',
               phonetic: 'NET-DEV-ops',
               example:
@@ -9449,7 +9449,7 @@ export default {
             },
             {
               english: 'Batfish',
-              italian: 'Batfish',
+              italian: 'Batfish / analisi formale di configurazioni di rete',
               pronunciation: '/ˈbætfɪʃ/',
               phonetic: 'BAT-fish',
               example:
@@ -9470,7 +9470,7 @@ export default {
             },
             {
               english: 'Rollback',
-              italian: 'Rollback',
+              italian: 'rollback / ritorno a versione precedente',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROUL-bak',
               example:
@@ -9480,7 +9480,7 @@ export default {
             },
             {
               english: 'GitOps',
-              italian: 'GitOps',
+              italian: 'GitOps / Git come fonte di verità',
               pronunciation: '/ɡɪt ɒps/',
               phonetic: 'GHIT-OPS',
               example:
@@ -9506,7 +9506,7 @@ export default {
           items: [
             {
               english: 'NetFlow',
-              italian: 'NetFlow',
+              italian: 'NetFlow / protocollo Cisco di flussi di rete',
               pronunciation: '/net floʊ/',
               phonetic: 'NET-FLOU',
               example:
@@ -9517,7 +9517,7 @@ export default {
             },
             {
               english: 'sFlow',
-              italian: 'sFlow',
+              italian: 'sFlow / campionamento del traffico',
               pronunciation: '/es floʊ/',
               phonetic: 'ES-FLOU',
               example:
@@ -9528,7 +9528,7 @@ export default {
             },
             {
               english: 'IPFIX',
-              italian: 'IPFIX',
+              italian: 'IPFIX / standard NetFlow IETF',
               pronunciation: '/aɪ piː fɪks/',
               phonetic: 'AI-PI-FIKS',
               example:
@@ -9640,7 +9640,7 @@ export default {
             },
             {
               english: 'SNMP Walk',
-              italian: 'SNMP walk',
+              italian: 'SNMP walk / interrogazione ad albero',
               pronunciation: '/wɔːk/',
               phonetic: 'UOK',
               example: "snmpwalk traverses the OID tree. = snmpwalk attraversa l'albero OID.",
@@ -9650,7 +9650,7 @@ export default {
             },
             {
               english: 'Community String',
-              italian: 'Community string',
+              italian: 'community string / password SNMP v1/v2c',
               pronunciation: '/kəˈmjuːnəti strɪŋ/',
               phonetic: 'ko-MIU-ne-ti STRING',
               example:
@@ -9661,7 +9661,7 @@ export default {
             },
             {
               english: 'SNMPv3',
-              italian: 'SNMPv3',
+              italian: 'SNMPv3 / SNMP con autenticazione e cifratura',
               pronunciation: '/ˌes en em piː θriː/',
               phonetic: 'ES-EN-EM-PI-THRI',
               example:
@@ -9738,7 +9738,7 @@ export default {
             },
             {
               english: 'Zabbix',
-              italian: 'Zabbix',
+              italian: 'Zabbix (sistema monitoring open source)',
               pronunciation: '/ˈzæbɪks/',
               phonetic: 'ZA-biks',
               example:
@@ -9749,7 +9749,7 @@ export default {
             },
             {
               english: 'PRTG',
-              italian: 'PRTG',
+              italian: 'PRTG (sistema monitoring Paessler)',
               pronunciation: '/piː ɑːr tiː dʒiː/',
               phonetic: 'PI-AR-TI-GI',
               example:
@@ -9759,7 +9759,7 @@ export default {
             },
             {
               english: 'Nagios',
-              italian: 'Nagios',
+              italian: 'Nagios (sistema monitoring storico)',
               pronunciation: '/ˈnæɡioʊs/',
               phonetic: 'NA-gios',
               example:
@@ -9770,7 +9770,7 @@ export default {
             },
             {
               english: 'LibreNMS',
-              italian: 'LibreNMS',
+              italian: 'LibreNMS (monitoring di rete open source)',
               pronunciation: '/ˈliːbrə en em es/',
               phonetic: 'LI-bre EN-EM-ES',
               example:
@@ -9781,7 +9781,7 @@ export default {
             },
             {
               english: 'Grafana',
-              italian: 'Grafana',
+              italian: 'Grafana (piattaforma di dashboard)',
               pronunciation: '/ɡrəˈfɑːnə/',
               phonetic: 'gra-FA-na',
               example:
@@ -9792,7 +9792,7 @@ export default {
             },
             {
               english: 'Prometheus',
-              italian: 'Prometheus',
+              italian: 'Prometheus (sistema monitoring time-series)',
               pronunciation: '/prəˈmiːθiəs/',
               phonetic: 'pro-ME-tius',
               example:
@@ -9803,7 +9803,7 @@ export default {
             },
             {
               english: 'SmokePing',
-              italian: 'SmokePing',
+              italian: 'SmokePing / monitor di latenza',
               pronunciation: '/smoʊk pɪŋ/',
               phonetic: 'SMOUK-PING',
               example:
@@ -9813,7 +9813,7 @@ export default {
             },
             {
               english: 'Cacti',
-              italian: 'Cacti',
+              italian: 'Cacti / monitoring storico via SNMP',
               pronunciation: '/ˈkæktaɪ/',
               phonetic: 'KAK-tai',
               example: 'Cacti graphs RRD-based metrics. = Cacti grafica metriche basate su RRD.',
@@ -9822,7 +9822,7 @@ export default {
             },
             {
               english: 'ntopng',
-              italian: 'ntopng',
+              italian: 'ntopng / monitor di traffico ad alta velocità',
               pronunciation: '/en tɒp en dʒiː/',
               phonetic: 'EN-TOP-EN-GI',
               example:
@@ -9861,7 +9861,7 @@ export default {
             },
             {
               english: 'ELK Stack',
-              italian: 'ELK Stack',
+              italian: 'ELK Stack / Elasticsearch + Logstash + Kibana',
               pronunciation: '/elk stæk/',
               phonetic: 'ELK STAK',
               example:
@@ -9882,7 +9882,7 @@ export default {
             },
             {
               english: 'Facility',
-              italian: 'Facility',
+              italian: 'facility / categoria di log syslog',
               pronunciation: '/fəˈsɪlɪti/',
               phonetic: 'fa-SI-li-ti',
               example:
@@ -9902,7 +9902,7 @@ export default {
             },
             {
               english: 'Alertmanager',
-              italian: 'Alertmanager',
+              italian: 'Alertmanager / dispatcher allarmi Prometheus',
               pronunciation: '/əˈlɜːrt ˈmænɪdʒər/',
               phonetic: 'a-LERT MA-ni-ger',
               example:
@@ -9922,7 +9922,7 @@ export default {
             },
             {
               english: 'PagerDuty',
-              italian: 'PagerDuty',
+              italian: 'PagerDuty (piattaforma on-call)',
               pronunciation: '/ˈpeɪdʒər ˈdjuːti/',
               phonetic: 'PEI-ger DIU-ti',
               example:
@@ -9933,7 +9933,7 @@ export default {
             },
             {
               english: 'Runbook',
-              italian: 'Runbook',
+              italian: 'runbook / procedura operativa',
               pronunciation: '/ˈrʌnbʊk/',
               phonetic: 'RAN-buk',
               example:
@@ -10000,7 +10000,7 @@ export default {
             },
             {
               english: 'Spine-Leaf',
-              italian: 'Spine-leaf',
+              italian: 'spine-leaf / architettura di datacenter moderna',
               pronunciation: '/spaɪn liːf/',
               phonetic: 'SPAIN LIF',
               example:
@@ -10010,7 +10010,7 @@ export default {
             },
             {
               english: 'Spine',
-              italian: 'Spine',
+              italian: 'spine / strato superiore della topologia',
               pronunciation: '/spaɪn/',
               phonetic: 'SPAIN',
               example:
@@ -10020,7 +10020,7 @@ export default {
             },
             {
               english: 'Leaf',
-              italian: 'Leaf',
+              italian: 'leaf / strato inferiore (top-of-rack)',
               pronunciation: '/liːf/',
               phonetic: 'LIF',
               example: 'Leaf switches connect to servers. = Gli switch leaf connettono ai server.',
@@ -10040,7 +10040,7 @@ export default {
             },
             {
               english: 'Hub-and-Spoke',
-              italian: 'Hub-and-spoke',
+              italian: 'hub-and-spoke / topologia a stella',
               pronunciation: '/hʌb ænd spoʊk/',
               phonetic: 'HAB-AND-SPOUK',
               example:
@@ -10088,7 +10088,7 @@ export default {
             },
             {
               english: 'Failover',
-              italian: 'Failover',
+              italian: 'failover / commutazione automatica di guasto',
               pronunciation: '/ˈfeɪloʊvər/',
               phonetic: 'FEIL-ou-ver',
               example:
@@ -10098,7 +10098,7 @@ export default {
             },
             {
               english: 'HSRP',
-              italian: 'HSRP',
+              italian: 'HSRP / Hot Standby Router Protocol Cisco',
               pronunciation: '/eɪtʃ es ɑːr piː/',
               phonetic: 'EICH-ES-AR-PI',
               example: 'HSRP provides router redundancy. = HSRP fornisce ridondanza router.',
@@ -10108,7 +10108,7 @@ export default {
             },
             {
               english: 'VRRP',
-              italian: 'VRRP',
+              italian: 'VRRP / Virtual Router Redundancy Protocol',
               pronunciation: '/viː ɑːr ɑːr piː/',
               phonetic: 'VI-AR-AR-PI',
               example:
@@ -10119,7 +10119,7 @@ export default {
             },
             {
               english: 'GLBP',
-              italian: 'GLBP',
+              italian: 'GLBP / Gateway Load Balancing Protocol Cisco',
               pronunciation: '/dʒiː el biː piː/',
               phonetic: 'GI-EL-BI-PI',
               example:
@@ -10130,7 +10130,7 @@ export default {
             },
             {
               english: 'Active-Passive',
-              italian: 'Active-passive',
+              italian: "attivo-passivo / un nodo lavora, l'altro attende",
               pronunciation: '/ˈæktɪv ˈpæsɪv/',
               phonetic: 'AK-tiv PA-siv',
               example:
@@ -10140,7 +10140,7 @@ export default {
             },
             {
               english: 'Active-Active',
-              italian: 'Active-active',
+              italian: 'attivo-attivo / più nodi servono in parallelo',
               pronunciation: '/ˈæktɪv ˈæktɪv/',
               phonetic: 'AK-tiv AK-tiv',
               example:
@@ -10150,7 +10150,7 @@ export default {
             },
             {
               english: 'Stack',
-              italian: 'Stack',
+              italian: 'stack / pila di switch logicamente unico',
               pronunciation: '/stæk/',
               phonetic: 'STAK',
               example:
@@ -10186,7 +10186,7 @@ export default {
             },
             {
               english: 'Top of Rack',
-              italian: 'Top of Rack',
+              italian: 'top of rack / switch in cima al rack',
               pronunciation: '/tɒp ʌv ræk/',
               phonetic: 'TOP-ov-RAK',
               example:
@@ -10197,7 +10197,7 @@ export default {
             },
             {
               english: 'End of Row',
-              italian: 'End of Row',
+              italian: 'end of row / switch a fine corsia',
               pronunciation: '/end ʌv roʊ/',
               phonetic: 'END-ov-ROU',
               example:
@@ -10207,7 +10207,7 @@ export default {
             },
             {
               english: 'Fat Tree',
-              italian: 'Fat tree',
+              italian: 'fat tree / topologia con banda crescente',
               pronunciation: '/fæt triː/',
               phonetic: 'FAT TRI',
               example:
@@ -10217,7 +10217,7 @@ export default {
             },
             {
               english: 'Oversubscription',
-              italian: 'Oversubscription',
+              italian: 'oversubscription / overbooking di banda',
               pronunciation: '/ˌoʊvərsəbˈskrɪpʃən/',
               phonetic: 'O-ver-sab-SKRIP-scion',
               example:
@@ -10227,7 +10227,7 @@ export default {
             },
             {
               english: 'Fabric',
-              italian: 'Fabric',
+              italian: 'fabric / tessuto di switch',
               pronunciation: '/ˈfæbrɪk/',
               phonetic: 'FA-brik',
               example:
@@ -10237,7 +10237,7 @@ export default {
             },
             {
               english: 'Pod',
-              italian: 'Pod',
+              italian: 'pod / blocco di datacenter',
               pronunciation: '/pɒd/',
               phonetic: 'POD',
               example:
@@ -10247,7 +10247,7 @@ export default {
             },
             {
               english: 'Super Spine',
-              italian: 'Super spine',
+              italian: 'super spine / spina di livello superiore',
               pronunciation: '/ˈsuːpər spaɪn/',
               phonetic: 'SU-per SPAIN',
               example: 'Super spines connect multiple pods. = I super spine connettono più pod.',
@@ -10256,7 +10256,7 @@ export default {
             },
             {
               english: 'Border Leaf',
-              italian: 'Border leaf',
+              italian: "border leaf / leaf verso l'esterno",
               pronunciation: '/ˈbɔːrdər liːf/',
               phonetic: 'BOR-der LIF',
               example: 'Border leaves connect to the WAN. = I border leaf connettono alla WAN.',
@@ -10265,7 +10265,7 @@ export default {
             },
             {
               english: 'Service Leaf',
-              italian: 'Service leaf',
+              italian: 'service leaf / leaf per servizi condivisi',
               pronunciation: '/ˈsɜːrvɪs liːf/',
               phonetic: 'SER-vis LIF',
               example:
@@ -10302,7 +10302,7 @@ export default {
             },
             {
               english: 'Greenfield',
-              italian: 'Greenfield',
+              italian: 'greenfield / progetto da zero',
               pronunciation: '/ˈɡriːnfiːld/',
               phonetic: 'GRIN-fild',
               example:
@@ -10312,7 +10312,7 @@ export default {
             },
             {
               english: 'Brownfield',
-              italian: 'Brownfield',
+              italian: 'brownfield / progetto su sistemi esistenti',
               pronunciation: '/ˈbraʊnfiːld/',
               phonetic: 'BRAUN-fild',
               example:
@@ -10399,7 +10399,7 @@ export default {
           items: [
             {
               english: 'CCNA',
-              italian: 'CCNA',
+              italian: 'CCNA (certificazione Cisco di base)',
               pronunciation: '/siː siː en eɪ/',
               phonetic: 'SI-SI-EN-EI',
               example:
@@ -10410,7 +10410,7 @@ export default {
             },
             {
               english: 'CCNP',
-              italian: 'CCNP',
+              italian: 'CCNP (certificazione Cisco professional)',
               pronunciation: '/siː siː en piː/',
               phonetic: 'SI-SI-EN-PI',
               example:
@@ -10420,7 +10420,7 @@ export default {
             },
             {
               english: 'CCIE',
-              italian: 'CCIE',
+              italian: 'CCIE (certificazione Cisco expert)',
               pronunciation: '/siː siː aɪ iː/',
               phonetic: 'SI-SI-AI-I',
               example:
@@ -10431,7 +10431,7 @@ export default {
             },
             {
               english: 'CompTIA Network+',
-              italian: 'CompTIA Network+',
+              italian: 'CompTIA Network+ (certificazione di base)',
               pronunciation: '/kɒmpˈtiːə/',
               phonetic: 'kom-TI-a NET-uerk plas',
               example: 'Network+ is vendor-neutral. = Network+ è vendor-neutral.',
@@ -10440,7 +10440,7 @@ export default {
             },
             {
               english: 'JNCIA',
-              italian: 'JNCIA',
+              italian: 'JNCIA (certificazione Juniper di base)',
               pronunciation: '/dʒiː en siː aɪ eɪ/',
               phonetic: 'GI-EN-SI-AI-EI',
               example:
@@ -10461,7 +10461,7 @@ export default {
             },
             {
               english: 'AWS Advanced Networking',
-              italian: 'AWS Advanced Networking',
+              italian: 'AWS Advanced Networking (certificazione AWS rete)',
               pronunciation: '/eɪ dʌbljuː es/',
               phonetic: 'EI-DABOL-IU-ES',
               example:
@@ -10471,7 +10471,7 @@ export default {
             },
             {
               english: 'PCNSE',
-              italian: 'PCNSE',
+              italian: 'PCNSE (certificazione Palo Alto)',
               pronunciation: '/piː siː en es iː/',
               phonetic: 'PI-SI-EN-ES-I',
               example:
@@ -10482,7 +10482,7 @@ export default {
             },
             {
               english: 'Fortinet NSE',
-              italian: 'Fortinet NSE',
+              italian: 'Fortinet NSE (certificazione Fortinet)',
               pronunciation: '/ˈfɔːrtɪnet/',
               phonetic: 'FOR-ti-net',
               example:
@@ -10509,7 +10509,7 @@ export default {
           items: [
             {
               english: 'Network Engineer',
-              italian: 'Network engineer',
+              italian: 'network engineer / ingegnere di rete',
               pronunciation: '/ˌendʒɪˈnɪər/',
               phonetic: 'en-gi-NIIR',
               example:
@@ -10519,7 +10519,7 @@ export default {
             },
             {
               english: 'Network Architect',
-              italian: 'Network architect',
+              italian: 'network architect / architetto di rete',
               pronunciation: '/ˈɑːrkɪtekt/',
               phonetic: 'AR-ki-tekt',
               example:
@@ -10580,7 +10580,7 @@ export default {
             },
             {
               english: 'Site Reliability Engineer',
-              italian: 'Site Reliability Engineer',
+              italian: 'SRE / ingegnere affidabilità del sito',
               pronunciation: '/saɪt rɪˌlaɪəˈbɪlɪti/',
               phonetic: 'SAIT ri-lai-a-BI-li-ti',
               example:
@@ -10709,7 +10709,7 @@ export default {
             },
             {
               english: 'Disaster Recovery',
-              italian: 'Disaster recovery',
+              italian: 'disaster recovery / ripristino dopo disastro',
               pronunciation: '/dɪˈzɑːstər/',
               phonetic: 'di-ZA-ster',
               example:
@@ -10736,7 +10736,7 @@ export default {
             },
             {
               english: 'IETF',
-              italian: 'IETF',
+              italian: 'IETF / Internet Engineering Task Force',
               pronunciation: '/aɪ iː tiː ef/',
               phonetic: 'AI-I-TI-EF',
               example: 'IETF develops Internet standards. = IETF sviluppa standard Internet.',
@@ -10756,7 +10756,7 @@ export default {
             },
             {
               english: 'NANOG',
-              italian: 'NANOG',
+              italian: 'NANOG / North American Network Operators Group',
               pronunciation: '/ˈneɪnɒɡ/',
               phonetic: 'NEI-nog',
               example:
@@ -10766,7 +10766,7 @@ export default {
             },
             {
               english: 'RIPE',
-              italian: 'RIPE',
+              italian: 'RIPE / registro IP regionale Europa',
               pronunciation: '/raɪp/',
               phonetic: 'RAIP',
               example:
@@ -10777,7 +10777,7 @@ export default {
             },
             {
               english: 'Home Lab',
-              italian: 'Home lab',
+              italian: 'home lab / laboratorio casalingo',
               pronunciation: '/hoʊm læb/',
               phonetic: 'HOUM LAB',
               example: "A home lab speeds up learning. = Un home lab velocizza l'apprendimento.",
@@ -10797,7 +10797,7 @@ export default {
             },
             {
               english: 'Mentoring',
-              italian: 'Mentoring',
+              italian: 'mentoring / mentorato',
               pronunciation: '/ˈmentɔːrɪŋ/',
               phonetic: 'MEN-to-ring',
               example:
@@ -10807,7 +10807,7 @@ export default {
             },
             {
               english: 'Soft Skills',
-              italian: 'Soft skills',
+              italian: 'soft skills / competenze trasversali',
               pronunciation: '/sɒft skɪlz/',
               phonetic: 'SOFT-SKILS',
               example:

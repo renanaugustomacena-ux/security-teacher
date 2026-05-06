@@ -35,7 +35,7 @@ export default {
             },
             {
               english: 'Repository',
-              italian: 'Repository',
+              italian: 'repository / archivio del codice',
               pronunciation: '/rɪˈpɒzɪtɔːri/',
               phonetic: 'ri-PO-zi-tori',
               example:
@@ -213,7 +213,7 @@ export default {
             },
             {
               english: 'Hash',
-              italian: 'Hash',
+              italian: 'hash / impronta digitale',
               pronunciation: '/hæʃ/',
               phonetic: 'HASCI',
               example:
@@ -322,7 +322,7 @@ export default {
             },
             {
               english: 'Git Bash',
-              italian: 'Git Bash',
+              italian: 'Git Bash / shell Git per Windows',
               pronunciation: '/ɡɪt bæʃ/',
               phonetic: 'GIT BASCI',
               example:
@@ -398,7 +398,7 @@ export default {
             },
             {
               english: 'Backup',
-              italian: 'Backup',
+              italian: 'backup / copia di sicurezza',
               pronunciation: '/ˈbækʌp/',
               phonetic: 'BAK-ap',
               example: 'A remote repo acts as a backup. = Un repo remoto fa da backup.',
@@ -418,7 +418,7 @@ export default {
             },
             {
               english: 'Open Source',
-              italian: 'Open source',
+              italian: 'open source / codice sorgente aperto',
               pronunciation: '/ˈoʊpən sɔːrs/',
               phonetic: 'O-pen SORS',
               example: 'Git itself is open source software. = Git stesso è software open source.',
@@ -428,7 +428,7 @@ export default {
             },
             {
               english: 'Linus Torvalds',
-              italian: 'Linus Torvalds',
+              italian: 'Linus Torvalds (creatore di Git e Linux)',
               pronunciation: '/ˈlaɪnəs ˈtɔːrvɔːldz/',
               phonetic: 'LAI-nus TOR-volds',
               example:
@@ -450,7 +450,7 @@ export default {
             },
             {
               english: 'Subversion (SVN)',
-              italian: 'Subversion (SVN)',
+              italian: 'Subversion (SVN) / sistema di controllo versione centralizzato',
               pronunciation: '/ˈsʌbvɜːrʒən/',
               phonetic: 'SAB-ver-scion',
               example:
@@ -462,7 +462,7 @@ export default {
             },
             {
               english: 'Mercurial',
-              italian: 'Mercurial',
+              italian: 'Mercurial (sistema controllo versione distribuito alternativo)',
               pronunciation: '/mɜːrˈkjʊəriəl/',
               phonetic: 'mer-CIU-rial',
               example:
@@ -738,7 +738,7 @@ export default {
             },
             {
               english: 'Patch',
-              italian: 'Patch',
+              italian: 'patch / correzione del codice',
               pronunciation: '/pætʃ/',
               phonetic: 'PACI',
               example:
@@ -839,7 +839,7 @@ export default {
             },
             {
               english: 'Pattern',
-              italian: 'Pattern',
+              italian: 'pattern / schema',
               pronunciation: '/ˈpætərn/',
               phonetic: 'PA-tern',
               example:
@@ -851,7 +851,7 @@ export default {
             },
             {
               english: 'Glob',
-              italian: 'Glob',
+              italian: 'glob / espressione di matching file',
               pronunciation: '/ɡlɒb/',
               phonetic: 'GLOB',
               example:
@@ -923,7 +923,7 @@ export default {
             },
             {
               english: 'README',
-              italian: 'README',
+              italian: 'README / file di descrizione del progetto',
               pronunciation: '/ˌriːdˈmiː/',
               phonetic: 'RID-mi',
               example:
@@ -1183,7 +1183,7 @@ export default {
             },
             {
               english: 'Tilde (~)',
-              italian: 'Tilde (~)',
+              italian: 'tilde (~) / antenato relativo del commit',
               pronunciation: '/ˈtɪldə/',
               phonetic: 'TIL-de',
               example: 'HEAD~1 means the parent of HEAD. = HEAD~1 indica il genitore di HEAD.',
@@ -1194,7 +1194,7 @@ export default {
             },
             {
               english: 'Caret (^)',
-              italian: 'Caret (^)',
+              italian: 'caret (^) / genitore del commit',
               pronunciation: '/ˈkærət/',
               phonetic: 'KA-ret',
               example:
@@ -2131,7 +2131,7 @@ export default {
             },
             {
               english: 'Mirror',
-              italian: 'Mirror',
+              italian: 'mirror / copia speculare del repository',
               pronunciation: '/ˈmɪrər/',
               phonetic: 'MI-rer',
               example:
@@ -2449,7 +2449,7 @@ export default {
           items: [
             {
               english: 'Pull Request',
-              italian: 'Pull request',
+              italian: 'pull request / richiesta di integrazione',
               pronunciation: '/pʊl rɪˈkwest/',
               phonetic: 'PUL ri-KUEST',
               example:
@@ -2461,7 +2461,7 @@ export default {
             },
             {
               english: 'Merge Request',
-              italian: 'Merge request',
+              italian: 'merge request / richiesta di fusione (GitLab)',
               pronunciation: '/mɜːrdʒ rɪˈkwest/',
               phonetic: 'MERG ri-KUEST',
               example: 'GitLab calls them merge requests. = Su GitLab si chiamano merge request.',
@@ -2676,7 +2676,7 @@ export default {
           items: [
             {
               english: 'Fork',
-              italian: 'Fork',
+              italian: 'fork / biforcazione del repository',
               pronunciation: '/fɔːrk/',
               phonetic: 'FORK',
               example:
@@ -2688,7 +2688,7 @@ export default {
             },
             {
               english: 'Upstream',
-              italian: 'Upstream',
+              italian: 'upstream / repository sorgente originario',
               pronunciation: '/ˈʌpstriːm/',
               phonetic: 'AP-strim',
               example:
@@ -2720,7 +2720,7 @@ export default {
             },
             {
               english: 'Open Source',
-              italian: 'Open source',
+              italian: 'open source / codice sorgente aperto',
               pronunciation: '/ˈoʊpən sɔːrs/',
               phonetic: 'O-pen SORS',
               example:
@@ -2789,7 +2789,7 @@ export default {
           items: [
             {
               english: 'Issue',
-              italian: 'Issue',
+              italian: 'issue / segnalazione o richiesta',
               pronunciation: '/ˈɪʃuː/',
               phonetic: 'I-sciu',
               example: 'Open an issue to report a bug. = Apri una issue per segnalare un bug.',
@@ -2830,7 +2830,7 @@ export default {
             },
             {
               english: 'Milestone',
-              italian: 'Milestone',
+              italian: 'milestone / traguardo del progetto',
               pronunciation: '/ˈmaɪlstoʊn/',
               phonetic: 'MAIL-ston',
               example:
@@ -2871,7 +2871,7 @@ export default {
             },
             {
               english: 'GitHub',
-              italian: 'GitHub',
+              italian: 'GitHub (piattaforma di hosting Git)',
               pronunciation: '/ɡɪtˌhʌb/',
               phonetic: 'GIT-HAB',
               example:
@@ -2910,7 +2910,7 @@ export default {
           items: [
             {
               english: 'Git Flow',
-              italian: 'Git Flow',
+              italian: 'Git Flow (modello di branching strutturato)',
               pronunciation: '/ɡɪt floʊ/',
               phonetic: 'GIT FLO',
               example:
@@ -3026,7 +3026,7 @@ export default {
           items: [
             {
               english: 'GitHub Flow',
-              italian: 'GitHub Flow',
+              italian: 'GitHub Flow (modello branching leggero)',
               pronunciation: '/ɡɪtˌhʌb floʊ/',
               phonetic: 'GIT-HAB FLO',
               example:
@@ -3143,7 +3143,7 @@ export default {
             },
             {
               english: 'Trunk',
-              italian: 'Trunk',
+              italian: 'trunk / ramo principale di sviluppo',
               pronunciation: '/trʌŋk/',
               phonetic: 'TRANK',
               example:
@@ -3175,7 +3175,7 @@ export default {
             },
             {
               english: 'Feature Flag',
-              italian: 'Feature flag',
+              italian: 'feature flag / interruttore funzionalità',
               pronunciation: '/ˈfiːtʃər flæɡ/',
               phonetic: 'FI-cer FLAG',
               example:
@@ -3229,7 +3229,7 @@ export default {
             },
             {
               english: 'Build Cop',
-              italian: 'Build cop',
+              italian: 'build cop / responsabile del build verde',
               pronunciation: '/bɪld kɒp/',
               phonetic: 'BILD KOP',
               example:
@@ -3363,7 +3363,7 @@ export default {
           items: [
             {
               english: 'Rebase',
-              italian: 'Rebase',
+              italian: 'rebase / ricostruzione su nuova base',
               pronunciation: '/ˈriːbeɪs/',
               phonetic: 'RI-beis',
               example:
@@ -3559,7 +3559,7 @@ export default {
             },
             {
               english: 'autosquash',
-              italian: 'autosquash',
+              italian: 'autosquash / compattazione automatica fixup',
               pronunciation: '/ˈɔːtoʊskwɒʃ/',
               phonetic: 'AU-to-skuosc',
               example:
@@ -3610,7 +3610,7 @@ export default {
             },
             {
               english: 'Rebase vs Merge',
-              italian: 'Rebase vs merge',
+              italian: 'rebase vs merge / scelta integrazione storia',
               pronunciation: '/ˈriːbeɪs vɜːrsəs mɜːrdʒ/',
               phonetic: 'RI-beis VER-sus MERG',
               example:
@@ -3767,7 +3767,7 @@ export default {
             },
             {
               english: 'label',
-              italian: 'label',
+              italian: 'label / etichetta',
               pronunciation: '/ˈleɪbl/',
               phonetic: 'LEI-bol',
               example:
@@ -4029,7 +4029,7 @@ export default {
             },
             {
               english: 'ORIG_HEAD',
-              italian: 'ORIG_HEAD',
+              italian: 'ORIG_HEAD / riferimento HEAD precedente',
               pronunciation: '/ˈɔːrɪɡ hed/',
               phonetic: 'O-rig HED',
               example:
@@ -4070,7 +4070,7 @@ export default {
             },
             {
               english: 'restore --staged',
-              italian: 'Restore --staged',
+              italian: 'git restore --staged / rimuove file dallo staging',
               pronunciation: '/rɪˈstɔːr steɪdʒd/',
               phonetic: 'ri-STOR STEIGD',
               example:
@@ -4104,7 +4104,7 @@ export default {
             },
             {
               english: 'Clean Dry Run',
-              italian: 'Clean dry run',
+              italian: 'clean dry run / prova senza eliminare',
               pronunciation: '/kliːn draɪ rʌn/',
               phonetic: 'KLIN DRAI RAN',
               example:
@@ -4414,7 +4414,7 @@ export default {
           items: [
             {
               english: 'cherry-pick',
-              italian: 'Cherry-pick',
+              italian: 'cherry-pick / preleva un commit specifico',
               pronunciation: '/ˈtʃeri pɪk/',
               phonetic: 'CIE-ri PIK',
               example:
@@ -4469,7 +4469,7 @@ export default {
             },
             {
               english: 'Backport',
-              italian: 'Backport',
+              italian: 'backport / portare fix su versione precedente',
               pronunciation: '/ˈbækpɔːrt/',
               phonetic: 'BAK-port',
               example:
@@ -4481,7 +4481,7 @@ export default {
             },
             {
               english: 'Forwardport',
-              italian: 'Forwardport',
+              italian: 'forwardport / portare fix su versione futura',
               pronunciation: '/ˈfɔːrwərdpɔːrt/',
               phonetic: 'FOR-uard-port',
               example:
@@ -4529,7 +4529,7 @@ export default {
           items: [
             {
               english: 'reflog',
-              italian: 'Reflog',
+              italian: 'reflog / log dei movimenti di HEAD',
               pronunciation: '/ˈreflɒɡ/',
               phonetic: 'REF-log',
               example:
@@ -4602,7 +4602,7 @@ export default {
             },
             {
               english: 'Garbage Collection',
-              italian: 'Garbage collection',
+              italian: 'garbage collection / pulizia oggetti orfani',
               pronunciation: '/ˈɡɑːrbɪdʒ kəˈlekʃən/',
               phonetic: 'GAR-big ko-LEK-scion',
               example:
@@ -4654,7 +4654,7 @@ export default {
             },
             {
               english: 'bisect start',
-              italian: 'Bisect start',
+              italian: 'bisect start / avvia ricerca binaria del bug',
               pronunciation: '/baɪˈsekt stɑːrt/',
               phonetic: 'bai-SEKT START',
               example: 'bisect start begins the search. = bisect start inizia la ricerca.',
@@ -4685,7 +4685,7 @@ export default {
             },
             {
               english: 'bisect reset',
-              italian: 'Bisect reset',
+              italian: 'bisect reset / termina la sessione bisect',
               pronunciation: '/baɪˈsekt ˈriːset/',
               phonetic: 'bai-SEKT RI-set',
               example: 'reset returns to the original branch. = reset torna al ramo originale.',
@@ -4727,7 +4727,7 @@ export default {
             },
             {
               english: 'bisect skip',
-              italian: 'Bisect skip',
+              italian: 'bisect skip / salta commit non testabile',
               pronunciation: '/baɪˈsekt skɪp/',
               phonetic: 'bai-SEKT SKIP',
               example:
@@ -4738,7 +4738,7 @@ export default {
             },
             {
               english: 'bisect log',
-              italian: 'Bisect log',
+              italian: 'bisect log / storico delle decisioni bisect',
               pronunciation: '/baɪˈsekt lɒɡ/',
               phonetic: 'bai-SEKT LOG',
               example:
@@ -4891,7 +4891,7 @@ export default {
             },
             {
               english: 'SemVer',
-              italian: 'SemVer',
+              italian: 'SemVer (versionamento semantico MAJOR.MINOR.PATCH)',
               pronunciation: '/ˈsemvɜːr/',
               phonetic: 'SEM-ver',
               example: "SemVer is the abbreviation. = SemVer è l'abbreviazione.",
@@ -4931,7 +4931,7 @@ export default {
             },
             {
               english: 'Pre-release',
-              italian: 'Pre-release',
+              italian: 'pre-release / versione anteprima',
               pronunciation: '/priː rɪˈliːs/',
               phonetic: 'PRI-ri-LIIS',
               example:
@@ -4942,7 +4942,7 @@ export default {
             },
             {
               english: 'Release Candidate',
-              italian: 'Release candidate',
+              italian: 'release candidate / candidato al rilascio',
               pronunciation: '/rɪˈliːs ˈkændɪdət/',
               phonetic: 'ri-LIIS KAN-di-deit',
               example: 'rc1 is the first release candidate. = rc1 è la prima release candidate.',
@@ -4963,7 +4963,7 @@ export default {
             },
             {
               english: 'Breaking Change',
-              italian: 'Breaking change',
+              italian: 'breaking change / modifica incompatibile',
               pronunciation: '/ˈbreɪkɪŋ tʃeɪndʒ/',
               phonetic: 'BREI-king CIENG',
               example:
@@ -4974,7 +4974,7 @@ export default {
             },
             {
               english: 'Conventional Commits',
-              italian: 'Conventional Commits',
+              italian: 'Conventional Commits (convenzione messaggi commit)',
               pronunciation: '/kənˈvenʃənəl kəˈmɪts/',
               phonetic: 'kon-VEN-scio-nol KO-mits',
               example:
@@ -5140,7 +5140,7 @@ export default {
             },
             {
               english: 'Changelog',
-              italian: 'Changelog',
+              italian: 'changelog / registro delle modifiche',
               pronunciation: '/ˈtʃeɪndʒlɒɡ/',
               phonetic: 'CIENG-log',
               example:
@@ -5205,7 +5205,7 @@ export default {
             },
             {
               english: 'Semantic Release',
-              italian: 'Semantic Release',
+              italian: 'semantic-release / rilascio automatizzato',
               pronunciation: '/sɪˈmæntɪk rɪˈliːs/',
               phonetic: 'se-MAN-tik ri-LIIS',
               example:
@@ -5245,7 +5245,7 @@ export default {
             },
             {
               english: 'GPG',
-              italian: 'GPG',
+              italian: 'GPG (firma e cifratura)',
               pronunciation: '/dʒiː piː dʒiː/',
               phonetic: 'GI-PI-GI',
               example:
@@ -5406,7 +5406,7 @@ export default {
             },
             {
               english: 'Husky',
-              italian: 'Husky',
+              italian: 'Husky (gestore hook Git)',
               pronunciation: '/ˈhʌski/',
               phonetic: 'HA-ski',
               example:
@@ -5419,7 +5419,7 @@ export default {
             },
             {
               english: 'lint-staged',
-              italian: 'lint-staged',
+              italian: 'lint-staged / linta solo i file in stage',
               pronunciation: '/lɪnt steɪdʒd/',
               phonetic: 'LINT-steigd',
               example:
@@ -5472,7 +5472,7 @@ export default {
           items: [
             {
               english: 'Linter',
-              italian: 'Linter',
+              italian: 'linter / analizzatore statico',
               pronunciation: '/ˈlɪntər/',
               phonetic: 'LIN-ter',
               example: 'A linter catches style and bugs. = Un linter rileva stile e bug.',
@@ -5493,7 +5493,7 @@ export default {
             },
             {
               english: 'ESLint',
-              italian: 'ESLint',
+              italian: 'ESLint (linter JavaScript)',
               pronunciation: '/iː es lɪnt/',
               phonetic: 'I-ES-LINT',
               example:
@@ -5505,7 +5505,7 @@ export default {
             },
             {
               english: 'Prettier',
-              italian: 'Prettier',
+              italian: 'Prettier (formattatore di codice)',
               pronunciation: '/ˈprɪtiər/',
               phonetic: 'PRI-tier',
               example:
@@ -5517,7 +5517,7 @@ export default {
             },
             {
               english: 'EditorConfig',
-              italian: 'EditorConfig',
+              italian: 'EditorConfig (config editor cross-IDE)',
               pronunciation: '/ˈedɪtər kənˈfɪɡ/',
               phonetic: 'E-di-tor kon-FIG',
               example:
@@ -5570,7 +5570,7 @@ export default {
             },
             {
               english: 'Quality Gate',
-              italian: 'Quality gate',
+              italian: 'quality gate / soglia di qualità minima',
               pronunciation: '/ˈkwɒlɪti ɡeɪt/',
               phonetic: 'KUO-li-ti GEIT',
               example:
@@ -5653,7 +5653,7 @@ export default {
             },
             {
               english: 'Scope',
-              italian: 'Scope',
+              italian: 'scope / ambito del commit',
               pronunciation: '/skoʊp/',
               phonetic: 'SCOUP',
               example: "Scope narrows the area changed. = Lo scope restringe l'area modificata.",
@@ -5674,7 +5674,7 @@ export default {
             },
             {
               english: 'commitlint',
-              italian: 'commitlint',
+              italian: 'commitlint (linter messaggi commit)',
               pronunciation: '/kəˈmɪt lɪnt/',
               phonetic: 'KO-mit LINT',
               example:
@@ -5686,7 +5686,7 @@ export default {
             },
             {
               english: 'Co-authored-by',
-              italian: 'Co-authored-by',
+              italian: 'Co-authored-by / co-autore nel commit',
               pronunciation: '/koʊ ˈɔːθərd baɪ/',
               phonetic: 'KOU O-tord BAI',
               example:
@@ -5836,7 +5836,7 @@ export default {
           items: [
             {
               english: 'Alias',
-              italian: 'Alias',
+              italian: 'alias / scorciatoia di comando',
               pronunciation: '/ˈeɪliəs/',
               phonetic: 'EI-li-as',
               example:
@@ -6021,7 +6021,7 @@ export default {
             },
             {
               english: 'Insteadof',
-              italian: 'Insteadof',
+              italian: 'insteadof / riscrittura URL Git',
               pronunciation: '/ɪnˈstedɒv/',
               phonetic: 'in-STED-ov',
               example:
@@ -6042,7 +6042,7 @@ export default {
             },
             {
               english: 'rerere',
-              italian: 'rerere',
+              italian: 'rerere / riuso registrato delle risoluzioni',
               pronunciation: '/ˈriːriːriː/',
               phonetic: 'RI-ri-ri',
               example:
@@ -6124,7 +6124,7 @@ export default {
             },
             {
               english: 'export-ignore',
-              italian: 'Export-ignore',
+              italian: "export-ignore / escludi dall'archive",
               pronunciation: '/ɪkˈspɔːrt ɪɡˈnɔːr/',
               phonetic: 'eks-PORT ig-NOR',
               example:
@@ -6377,7 +6377,7 @@ export default {
             },
             {
               english: 'Vendoring',
-              italian: 'Vendoring',
+              italian: 'vendoring / inclusione delle dipendenze',
               pronunciation: '/ˈvendərɪŋ/',
               phonetic: 'VEN-de-ring',
               example:
@@ -6388,7 +6388,7 @@ export default {
             },
             {
               english: 'Submodule vs Subtree',
-              italian: 'Submodule vs Subtree',
+              italian: 'submodule vs subtree / due modi di includere repo',
               pronunciation: '/ˈsʌbmɒdjuːl vɜːrsəs ˈsʌbtriː/',
               phonetic: 'SAB-mo-giul VER-sus SAB-tri',
               example:
@@ -6426,7 +6426,7 @@ export default {
             },
             {
               english: 'Tracking Branch',
-              italian: 'Tracking branch',
+              italian: 'tracking branch / ramo che traccia il remoto',
               pronunciation: '/ˈtrækɪŋ brɑːntʃ/',
               phonetic: 'TRA-king BRANC',
               example: 'Submodules can track a branch. = I submodule possono tracciare un branch.',
@@ -6530,7 +6530,7 @@ export default {
           items: [
             {
               english: 'Multirepo',
-              italian: 'Multirepo',
+              italian: 'multirepo / più repository indipendenti',
               pronunciation: '/ˈmʌltiˌriːpoʊ/',
               phonetic: 'MUL-ti-RI-po',
               example:
@@ -6580,7 +6580,7 @@ export default {
             },
             {
               english: 'Lockfile',
-              italian: 'Lockfile',
+              italian: 'lockfile / file di blocco delle versioni',
               pronunciation: '/ˈlɒkfaɪl/',
               phonetic: 'LOK-fail',
               example:
@@ -6623,7 +6623,7 @@ export default {
             },
             {
               english: 'Polyrepo',
-              italian: 'Polyrepo',
+              italian: 'polyrepo / repository multipli',
               pronunciation: '/ˈpɒliˌriːpoʊ/',
               phonetic: 'PO-li-RI-po',
               example:
@@ -6649,7 +6649,7 @@ export default {
           items: [
             {
               english: 'Git LFS',
-              italian: 'Git LFS',
+              italian: 'Git LFS (gestione file di grandi dimensioni)',
               pronunciation: '/ɡɪt el ef es/',
               phonetic: 'GIT EL-EF-ES',
               example:
@@ -6917,7 +6917,7 @@ export default {
             },
             {
               english: 'LFS in CI',
-              italian: 'LFS in CI',
+              italian: 'LFS in CI / Git LFS nelle pipeline',
               pronunciation: '/el ef es ɪn siː aɪ/',
               phonetic: 'LFS-in-CI',
               example: 'CI must have LFS installed. = La CI deve avere LFS installato.',
@@ -6947,7 +6947,7 @@ export default {
             },
             {
               english: 'git-annex',
-              italian: 'git-annex',
+              italian: 'git-annex / gestione file grandi alternativa',
               pronunciation: '/ɡɪt ˈæneks/',
               phonetic: 'GIT-A-neks',
               example:
@@ -7106,7 +7106,7 @@ export default {
           items: [
             {
               english: 'Object Store',
-              italian: 'Object store',
+              italian: 'object store / archivio oggetti Git',
               pronunciation: '/ˈɒbdʒɪkt stɔːr/',
               phonetic: 'OB-gekt STOR',
               example:
@@ -7118,7 +7118,7 @@ export default {
             },
             {
               english: 'Blob',
-              italian: 'Blob',
+              italian: 'blob / oggetto contenuto file in Git',
               pronunciation: '/blɒb/',
               phonetic: 'BLOB',
               example: 'A blob stores file content. = Un blob memorizza il contenuto di un file.',
@@ -7162,7 +7162,7 @@ export default {
             },
             {
               english: 'SHA-1',
-              italian: 'SHA-1',
+              italian: 'SHA-1 (algoritmo di hash usato storicamente)',
               pronunciation: '/ʃɑː wʌn/',
               phonetic: 'SCIA-UAN',
               example:
@@ -7174,7 +7174,7 @@ export default {
             },
             {
               english: 'SHA-256',
-              italian: 'SHA-256',
+              italian: 'SHA-256 (algoritmo di hash più sicuro)',
               pronunciation: '/ʃɑː tuː fɪfti sɪks/',
               phonetic: 'SCIA-258',
               example: 'Git supports SHA-256 repos. = Git supporta repo SHA-256.',
@@ -7184,7 +7184,7 @@ export default {
             },
             {
               english: 'cat-file',
-              italian: 'cat-file',
+              italian: 'git cat-file / ispezione oggetti Git',
               pronunciation: '/kæt faɪl/',
               phonetic: 'KAT-FAIL',
               example: 'cat-file inspects any object. = cat-file ispeziona qualsiasi oggetto.',
@@ -7194,7 +7194,7 @@ export default {
             },
             {
               english: 'hash-object',
-              italian: 'hash-object',
+              italian: 'git hash-object / calcola hash di file',
               pronunciation: '/hæʃ ˈɒbdʒɪkt/',
               phonetic: 'HASC-OB-gekt',
               example: 'hash-object computes a blob SHA. = hash-object calcola lo SHA di un blob.',
@@ -7296,7 +7296,7 @@ export default {
             },
             {
               english: 'show-ref',
-              italian: 'show-ref',
+              italian: 'git show-ref / elenca riferimenti',
               pronunciation: '/ʃoʊ ref/',
               phonetic: 'SCIO-REF',
               example: 'show-ref lists all refs and SHAs. = show-ref elenca tutti i ref e gli SHA.',
@@ -7306,7 +7306,7 @@ export default {
             },
             {
               english: 'update-ref',
-              italian: 'update-ref',
+              italian: 'git update-ref / aggiorna riferimento',
               pronunciation: '/ʌpˈdeɪt ref/',
               phonetic: 'ap-DEIT-REF',
               example:
@@ -7336,7 +7336,7 @@ export default {
           items: [
             {
               english: 'Packfile',
-              italian: 'Packfile',
+              italian: 'packfile / archivio compresso di oggetti Git',
               pronunciation: '/ˈpækfaɪl/',
               phonetic: 'PAK-fail',
               example: 'A packfile compresses many objects. = Un packfile comprime molti oggetti.',
@@ -7377,7 +7377,7 @@ export default {
             },
             {
               english: 'repack',
-              italian: 'Repack',
+              italian: 'git repack / ricompatta gli oggetti',
               pronunciation: '/ˌriːˈpæk/',
               phonetic: 'RI-pak',
               example: 'repack consolidates pack files. = repack consolida i file pack.',
@@ -7419,7 +7419,7 @@ export default {
             },
             {
               english: 'Commit Graph',
-              italian: 'Commit graph',
+              italian: 'commit graph / cache del grafo dei commit',
               pronunciation: '/kəˈmɪt ɡræf/',
               phonetic: 'KO-mit GRAF',
               example:
@@ -7480,7 +7480,7 @@ export default {
             },
             {
               english: 'upload-pack',
-              italian: 'upload-pack',
+              italian: 'upload-pack / lato server di fetch',
               pronunciation: '/ˈʌploʊd pæk/',
               phonetic: 'AP-loud-PAK',
               example: 'upload-pack serves fetch and clone. = upload-pack serve fetch e clone.',
@@ -7490,7 +7490,7 @@ export default {
             },
             {
               english: 'receive-pack',
-              italian: 'receive-pack',
+              italian: 'receive-pack / lato server di push',
               pronunciation: '/rɪˈsiːv pæk/',
               phonetic: 'ri-SIV-PAK',
               example:
@@ -7500,7 +7500,7 @@ export default {
             },
             {
               english: 'fetch-pack',
-              italian: 'fetch-pack',
+              italian: 'fetch-pack / lato client di fetch',
               pronunciation: '/fetʃ pæk/',
               phonetic: 'FEC-PAK',
               example: 'fetch-pack runs on the client. = fetch-pack gira sul client.',
@@ -7509,7 +7509,7 @@ export default {
             },
             {
               english: 'send-pack',
-              italian: 'send-pack',
+              italian: 'send-pack / lato client di push',
               pronunciation: '/send pæk/',
               phonetic: 'SEND-PAK',
               example: 'send-pack pushes from the client. = send-pack pusha dal client.',
@@ -7564,7 +7564,7 @@ export default {
           items: [
             {
               english: 'GitHub Actions',
-              italian: 'GitHub Actions',
+              italian: 'GitHub Actions (automazione CI/CD GitHub)',
               pronunciation: '/ˈɡɪthʌb ˈækʃənz/',
               phonetic: 'GIT-hab AK-scions',
               example: 'GitHub Actions automates CI/CD. = GitHub Actions automatizza CI/CD.',
@@ -7575,7 +7575,7 @@ export default {
             },
             {
               english: 'Workflow',
-              italian: 'Workflow',
+              italian: 'workflow / flusso di automazione',
               pronunciation: '/ˈwɜːrkfloʊ/',
               phonetic: 'UERK-flou',
               example:
@@ -7586,7 +7586,7 @@ export default {
             },
             {
               english: 'Trigger',
-              italian: 'Trigger',
+              italian: 'trigger / evento scatenante',
               pronunciation: '/ˈtrɪɡər/',
               phonetic: 'TRI-ger',
               example: 'A trigger fires the workflow. = Un trigger fa partire il workflow.',
@@ -7596,7 +7596,7 @@ export default {
             },
             {
               english: 'Job',
-              italian: 'Job',
+              italian: 'job / processo del workflow',
               pronunciation: '/dʒɒb/',
               phonetic: 'GIOB',
               example:
@@ -7607,7 +7607,7 @@ export default {
             },
             {
               english: 'Step',
-              italian: 'Step',
+              italian: 'step / passo del job',
               pronunciation: '/step/',
               phonetic: 'STEP',
               example:
@@ -7618,7 +7618,7 @@ export default {
             },
             {
               english: 'Runner',
-              italian: 'Runner',
+              italian: 'runner / esecutore del workflow',
               pronunciation: '/ˈrʌnər/',
               phonetic: 'RA-ner',
               example: 'A runner executes the workflow. = Un runner esegue il workflow.',
@@ -7629,7 +7629,7 @@ export default {
             },
             {
               english: 'Action',
-              italian: 'Action',
+              italian: 'action / unità riusabile in GitHub Actions',
               pronunciation: '/ˈækʃən/',
               phonetic: 'AK-scion',
               example:
@@ -7662,7 +7662,7 @@ export default {
             },
             {
               english: 'Secret',
-              italian: 'Secret',
+              italian: 'secret / valore riservato',
               pronunciation: '/ˈsiːkrɪt/',
               phonetic: 'SI-krit',
               example:
@@ -7680,7 +7680,7 @@ export default {
           items: [
             {
               english: 'GitLab CI',
-              italian: 'GitLab CI',
+              italian: 'GitLab CI (sistema CI di GitLab)',
               pronunciation: '/ˈɡɪtlæb siː aɪ/',
               phonetic: 'GIT-lab CI',
               example: 'GitLab CI uses .gitlab-ci.yml. = GitLab CI usa .gitlab-ci.yml.',
@@ -7691,7 +7691,7 @@ export default {
             },
             {
               english: 'Pipeline',
-              italian: 'Pipeline',
+              italian: 'pipeline / sequenza di stadi CI/CD',
               pronunciation: '/ˈpaɪplaɪn/',
               phonetic: 'PAIP-lain',
               example: 'A pipeline runs on every commit. = Una pipeline gira a ogni commit.',
@@ -7710,7 +7710,7 @@ export default {
             },
             {
               english: 'GitLab Runner',
-              italian: 'GitLab Runner',
+              italian: 'GitLab Runner / esecutore GitLab CI',
               pronunciation: '/ˈɡɪtlæb ˈrʌnər/',
               phonetic: 'GIT-lab RA-ner',
               example:
@@ -7731,7 +7731,7 @@ export default {
             },
             {
               english: 'Cache',
-              italian: 'Cache',
+              italian: 'cache / memoria intermedia',
               pronunciation: '/kæʃ/',
               phonetic: 'CASC',
               example:
@@ -7742,7 +7742,7 @@ export default {
             },
             {
               english: 'Environment',
-              italian: 'Environment',
+              italian: 'environment / ambiente di deploy',
               pronunciation: '/ɪnˈvaɪrənmənt/',
               phonetic: 'in-VAI-ron-ment',
               example: 'Environments track deployments. = Gli environment tracciano i deployment.',
@@ -7763,7 +7763,7 @@ export default {
             },
             {
               english: 'Include',
-              italian: 'Include',
+              italian: 'include / inclusione di config esterna',
               pronunciation: '/ɪnˈkluːd/',
               phonetic: 'in-KLUUD',
               example:
@@ -7774,7 +7774,7 @@ export default {
             },
             {
               english: 'Auto DevOps',
-              italian: 'Auto DevOps',
+              italian: 'Auto DevOps / pipeline preconfigurata GitLab',
               pronunciation: '/ˈɔːtoʊ ˈdevɒps/',
               phonetic: 'AU-to DEV-ops',
               example:
@@ -7792,7 +7792,7 @@ export default {
           items: [
             {
               english: 'Webhook',
-              italian: 'Webhook',
+              italian: 'webhook / chiamata HTTP automatica',
               pronunciation: '/ˈwebhʊk/',
               phonetic: 'UEB-huk',
               example: 'Webhooks notify external services. = I webhook notificano servizi esterni.',
@@ -7833,7 +7833,7 @@ export default {
             },
             {
               english: 'Schedule',
-              italian: 'Schedule',
+              italian: 'schedule / pianificazione cron',
               pronunciation: '/ˈskedʒuːl/',
               phonetic: 'SKE-giul',
               example: 'Schedule triggers run on cron. = Schedule attiva su cron.',
@@ -7854,7 +7854,7 @@ export default {
             },
             {
               english: 'repository_dispatch',
-              italian: 'repository_dispatch',
+              italian: 'repository_dispatch / trigger custom GitHub',
               pronunciation: '/rɪˈpɒzɪtɔːri dɪˈspætʃ/',
               phonetic: 'ri-PO-zi-tori di-SPACI',
               example:
@@ -7865,7 +7865,7 @@ export default {
             },
             {
               english: 'Status Check',
-              italian: 'Status check',
+              italian: 'status check / esito controllo CI',
               pronunciation: '/ˈsteɪtəs tʃek/',
               phonetic: 'STEI-tas CEK',
               example: 'Status checks gate PR merges. = Gli status check controllano i merge PR.',
@@ -7874,7 +7874,7 @@ export default {
             },
             {
               english: 'Deploy Hook',
-              italian: 'Deploy hook',
+              italian: 'deploy hook / aggancio di deploy',
               pronunciation: '/dɪˈplɔɪ hʊk/',
               phonetic: 'di-PLOI HUK',
               example:
@@ -7884,7 +7884,7 @@ export default {
             },
             {
               english: 'Payload',
-              italian: 'Payload',
+              italian: 'payload / corpo del messaggio',
               pronunciation: '/ˈpeɪloʊd/',
               phonetic: 'PEI-loud',
               example:
@@ -7902,7 +7902,7 @@ export default {
           items: [
             {
               english: 'GitOps',
-              italian: 'GitOps',
+              italian: 'GitOps / Git come fonte di verità per il deploy',
               pronunciation: '/ɡɪt ɒps/',
               phonetic: 'GIT-OPS',
               example:
@@ -7914,7 +7914,7 @@ export default {
             },
             {
               english: 'Continuous Deployment',
-              italian: 'Continuous deployment',
+              italian: 'continuous deployment / rilascio continuo automatico',
               pronunciation: '/kənˈtɪnjuəs dɪˈplɔɪmənt/',
               phonetic: 'kon-TI-nius di-PLOI-ment',
               example: 'CD deploys every passing build. = CD deploya ogni build che passa.',
@@ -7943,7 +7943,7 @@ export default {
             },
             {
               english: 'Rollback',
-              italian: 'Rollback',
+              italian: 'rollback / ritorno a versione precedente',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROL-bak',
               example:
@@ -7986,7 +7986,7 @@ export default {
             },
             {
               english: 'ArgoCD',
-              italian: 'ArgoCD',
+              italian: 'Argo CD (motore GitOps Kubernetes)',
               pronunciation: '/ˈɑːrɡoʊ siː diː/',
               phonetic: 'AR-go-CD',
               example: 'ArgoCD syncs Kubernetes from Git. = ArgoCD sincronizza Kubernetes da Git.',
@@ -7997,7 +7997,7 @@ export default {
             },
             {
               english: 'Flux',
-              italian: 'Flux',
+              italian: 'Flux (motore GitOps Kubernetes)',
               pronunciation: '/flʌks/',
               phonetic: 'FLAKS',
               example: 'Flux is another GitOps controller. = Flux è un altro controller GitOps.',
@@ -8023,7 +8023,7 @@ export default {
           items: [
             {
               english: 'Monorepo',
-              italian: 'Monorepo',
+              italian: 'monorepo / repository unificato di progetti',
               pronunciation: '/ˈmɒnoʊˌriːpoʊ/',
               phonetic: 'MO-no-RI-po',
               example:
@@ -8034,7 +8034,7 @@ export default {
             },
             {
               english: 'Workspace',
-              italian: 'Workspace',
+              italian: 'workspace / area di lavoro multi-pacchetto',
               pronunciation: '/ˈwɜːrkspeɪs/',
               phonetic: 'UERK-speis',
               example:
@@ -8090,7 +8090,7 @@ export default {
             },
             {
               english: 'Lerna',
-              italian: 'Lerna',
+              italian: 'Lerna (gestore monorepo JavaScript)',
               pronunciation: '/ˈlɜːrnə/',
               phonetic: 'LER-na',
               example: 'Lerna manages JavaScript monorepos. = Lerna gestisce monorepo JavaScript.',
@@ -8112,7 +8112,7 @@ export default {
             },
             {
               english: 'Hoisting',
-              italian: 'Hoisting',
+              italian: 'hoisting / risalita delle dipendenze comuni',
               pronunciation: '/ˈhɔɪstɪŋ/',
               phonetic: 'HOI-sting',
               example: "Hoisting deduplicates dependencies. = L'hoisting deduplica le dipendenze.",
@@ -8138,7 +8138,7 @@ export default {
           items: [
             {
               english: 'Nx',
-              italian: 'Nx',
+              italian: 'Nx (build system monorepo)',
               pronunciation: '/en eks/',
               phonetic: 'EN-EKS',
               example:
@@ -8150,7 +8150,7 @@ export default {
             },
             {
               english: 'Turborepo',
-              italian: 'Turborepo',
+              italian: 'Turborepo (build system monorepo veloce)',
               pronunciation: '/ˈtɜːrboʊˌriːpoʊ/',
               phonetic: 'TUR-bo-RI-po',
               example:
@@ -8195,7 +8195,7 @@ export default {
             },
             {
               english: 'Bazel',
-              italian: 'Bazel',
+              italian: 'Bazel (build system Google ermetico)',
               pronunciation: '/ˈbeɪzəl/',
               phonetic: 'BEI-zel',
               example:
@@ -8206,7 +8206,7 @@ export default {
             },
             {
               english: 'Buck',
-              italian: 'Buck',
+              italian: 'Buck (build system Meta)',
               pronunciation: '/bʌk/',
               phonetic: 'BAK',
               example: "Buck is Meta's build system. = Buck è il build system di Meta.",
@@ -8216,7 +8216,7 @@ export default {
             },
             {
               english: 'Pants',
-              italian: 'Pants',
+              italian: 'Pants (build system per monorepo Python/Go/JS)',
               pronunciation: '/pænts/',
               phonetic: 'PANTS',
               example:
@@ -8256,7 +8256,7 @@ export default {
           items: [
             {
               english: 'Sparse Checkout',
-              italian: 'Sparse checkout',
+              italian: 'sparse checkout / checkout parziale',
               pronunciation: '/spɑːrs ˈtʃekaʊt/',
               phonetic: 'SPARS CEK-aut',
               example:
@@ -8279,7 +8279,7 @@ export default {
             },
             {
               english: 'sparse-checkout set',
-              italian: 'sparse-checkout set',
+              italian: 'git sparse-checkout set / definisce il sotto-albero',
               pronunciation: '/spɑːrs ˈtʃekaʊt set/',
               phonetic: 'SPARS CEK-aut SET',
               example:
@@ -8342,7 +8342,7 @@ export default {
             },
             {
               english: 'Scalar',
-              italian: 'Scalar',
+              italian: 'Scalar / strumento Microsoft per repo enormi',
               pronunciation: '/ˈskeɪlər/',
               phonetic: 'SKEI-lar',
               example: 'Scalar optimizes large repositories. = Scalar ottimizza repository grandi.',
@@ -8354,7 +8354,7 @@ export default {
             },
             {
               english: 'VFS for Git',
-              italian: 'VFS for Git',
+              italian: 'VFS for Git (filesystem virtuale per Git)',
               pronunciation: '/viː ef es fɔːr ɡɪt/',
               phonetic: 'V-F-S-for-GIT',
               example: 'VFS virtualizes monorepo files. = VFS virtualizza i file del monorepo.',
@@ -8372,7 +8372,7 @@ export default {
           items: [
             {
               english: 'Code Owner',
-              italian: 'Code owner',
+              italian: 'code owner / responsabile di porzione di codice',
               pronunciation: '/koʊd ˈoʊnər/',
               phonetic: 'KOUD OU-ner',
               example: 'CODEOWNERS auto-assigns reviewers. = CODEOWNERS auto-assegna reviewer.',
@@ -8403,7 +8403,7 @@ export default {
             },
             {
               english: 'Changesets',
-              italian: 'Changesets',
+              italian: 'Changesets / strumento gestione versioning monorepo',
               pronunciation: '/ˈtʃeɪndʒsets/',
               phonetic: 'CIENG-sets',
               example:
@@ -8415,7 +8415,7 @@ export default {
             },
             {
               english: 'Release Please',
-              italian: 'Release Please',
+              italian: 'Release Please / automazione release Google',
               pronunciation: '/rɪˈliːs pliːz/',
               phonetic: 'ri-LIIS PLIIZ',
               example:
@@ -8457,7 +8457,7 @@ export default {
             },
             {
               english: 'Trunk-based Development',
-              italian: 'Trunk-based development',
+              italian: 'trunk-based development / sviluppo sul ramo unico',
               pronunciation: '/trʌŋk beɪst dɪˈveləpmənt/',
               phonetic: 'TRANK-BEIST di-VE-lop-ment',
               example:
@@ -8523,7 +8523,7 @@ export default {
             },
             {
               english: 'Lost and Found',
-              italian: 'Lost and found',
+              italian: 'lost-and-found / commit orfani recuperabili',
               pronunciation: '/lɒst ænd faʊnd/',
               phonetic: 'LOST and FAUND',
               example: 'fsck --lost-found rescues orphans. = fsck --lost-found salva orfani.',
@@ -8644,7 +8644,7 @@ export default {
             },
             {
               english: 'Force-with-lease',
-              italian: 'Force-with-lease',
+              italian: 'force-with-lease / push forzato sicuro',
               pronunciation: '/fɔːrs wɪð liːs/',
               phonetic: 'FORS-uid-LIIS',
               example:
@@ -8759,7 +8759,7 @@ export default {
             },
             {
               english: 'Bundle',
-              italian: 'Bundle',
+              italian: 'bundle / archivio Git portatile',
               pronunciation: '/ˈbʌndl/',
               phonetic: 'BAN-dol',
               example:
@@ -8828,7 +8828,7 @@ export default {
           items: [
             {
               english: 'Detached HEAD',
-              italian: 'Detached HEAD',
+              italian: 'detached HEAD / HEAD scollegato dal ramo',
               pronunciation: '/dɪˈtætʃt hed/',
               phonetic: 'di-TACT HED',
               example:
@@ -8951,7 +8951,7 @@ export default {
           items: [
             {
               english: 'Worktree',
-              italian: 'Worktree',
+              italian: 'worktree / albero di lavoro multiplo',
               pronunciation: '/ˈwɜːrktriː/',
               phonetic: 'UERK-tri',
               example:
@@ -9024,7 +9024,7 @@ export default {
             },
             {
               english: 'Worktree per PR',
-              italian: 'Worktree per PR',
+              italian: 'worktree per PR / un albero per ogni PR',
               pronunciation: '/ˈwɜːrktriː pɜːr piː ɑːr/',
               phonetic: 'UERK-tri-per-PR',
               example:
@@ -9035,7 +9035,7 @@ export default {
             },
             {
               english: 'lock Worktree',
-              italian: 'Lock worktree',
+              italian: 'git worktree lock / blocca un worktree',
               pronunciation: '/lɒk ˈwɜːrktriː/',
               phonetic: 'LOK UERK-tri',
               example:
@@ -9074,7 +9074,7 @@ export default {
             },
             {
               english: 'git filter-repo',
-              italian: 'git filter-repo',
+              italian: 'git filter-repo / riscrittura di storia',
               pronunciation: '/ɡɪt ˈfɪltər ˈriːpoʊ/',
               phonetic: 'GIT FIL-ter RI-po',
               example:
@@ -9289,7 +9289,7 @@ export default {
           items: [
             {
               english: 'GIT_TRACE',
-              italian: 'GIT_TRACE',
+              italian: 'GIT_TRACE / variabile di tracciamento Git',
               pronunciation: '/ɡɪt treɪs/',
               phonetic: 'GIT-TREIS',
               example: 'GIT_TRACE debugs git operations. = GIT_TRACE debugga le operazioni git.',
@@ -9319,7 +9319,7 @@ export default {
             },
             {
               english: 'gitfast',
-              italian: 'gitfast',
+              italian: 'gitfast / wrapper Perl per accelerare Git',
               pronunciation: '/ɡɪt fæst/',
               phonetic: 'GIT-FAST',
               example:
@@ -9330,7 +9330,7 @@ export default {
             },
             {
               english: 'GitLens',
-              italian: 'GitLens',
+              italian: 'GitLens (estensione VS Code per Git)',
               pronunciation: '/ˈɡɪtlenz/',
               phonetic: 'GIT-lens',
               example: 'GitLens enhances VS Code with Git. = GitLens potenzia VS Code con Git.',
@@ -9340,7 +9340,7 @@ export default {
             },
             {
               english: 'lazygit',
-              italian: 'lazygit',
+              italian: 'lazygit (TUI Git)',
               pronunciation: '/ˈleɪzi ɡɪt/',
               phonetic: 'LEI-zi-GIT',
               example:
@@ -9351,7 +9351,7 @@ export default {
             },
             {
               english: 'GitKraken',
-              italian: 'GitKraken',
+              italian: 'GitKraken (client Git grafico)',
               pronunciation: '/ɡɪt ˈkreɪkən/',
               phonetic: 'GIT-KREI-ken',
               example: "GitKraken is a Git GUI app. = GitKraken è un'app GUI per Git.",
@@ -9361,7 +9361,7 @@ export default {
             },
             {
               english: 'tig',
-              italian: 'tig',
+              italian: 'tig (TUI navigatore Git)',
               pronunciation: '/tɪɡ/',
               phonetic: 'TIG',
               example: 'tig is a text-mode browser for Git. = tig è un browser text-mode per Git.',
@@ -9371,7 +9371,7 @@ export default {
             },
             {
               english: 'git-imerge',
-              italian: 'git-imerge',
+              italian: 'git-imerge / merge incrementale',
               pronunciation: '/ɡɪt aɪˈmɜːrdʒ/',
               phonetic: 'GIT-AI-merg',
               example: 'imerge does incremental merges. = imerge fa merge incrementali.',
@@ -9381,7 +9381,7 @@ export default {
             },
             {
               english: 'difftastic',
-              italian: 'difftastic',
+              italian: 'difftastic (diff strutturato)',
               pronunciation: '/dɪfˈtæstɪk/',
               phonetic: 'dif-TA-stik',
               example: 'difftastic is a syntax-aware diff. = difftastic è un diff syntax-aware.',
@@ -9408,7 +9408,7 @@ export default {
           items: [
             {
               english: 'Credential Helper',
-              italian: 'Credential helper',
+              italian: 'credential helper / gestore credenziali Git',
               pronunciation: '/krəˈdenʃəl ˈhelpər/',
               phonetic: 'kre-DEN-scial HEL-per',
               example:
@@ -9442,7 +9442,7 @@ export default {
             },
             {
               english: 'macOS Keychain',
-              italian: 'macOS Keychain',
+              italian: 'portachiavi macOS / archivio credenziali sicuro',
               pronunciation: '/mæk oʊ es ˈkiːtʃeɪn/',
               phonetic: 'MAK-OS KI-cein',
               example: 'osxkeychain helper uses Keychain. = osxkeychain helper usa Keychain.',
@@ -9463,7 +9463,7 @@ export default {
             },
             {
               english: 'libsecret',
-              italian: 'libsecret',
+              italian: 'libsecret / archivio credenziali Linux',
               pronunciation: '/lɪbˈsiːkrət/',
               phonetic: 'lib-SI-kret',
               example:
@@ -9474,7 +9474,7 @@ export default {
             },
             {
               english: 'Personal Access Token',
-              italian: 'Personal Access Token',
+              italian: 'personal access token / token di accesso personale',
               pronunciation: '/ˈpɜːrsənəl ˈækses ˈtoʊkən/',
               phonetic: 'PER-so-nal AK-ses TO-ken',
               example:
@@ -9536,7 +9536,7 @@ export default {
             },
             {
               english: 'ed25519',
-              italian: 'Ed25519',
+              italian: 'ed25519 (algoritmo chiave SSH moderno)',
               pronunciation: '/iː diː tuː faɪv faɪv ˈnaɪnˌtiːn/',
               phonetic: 'ED-25519',
               example: 'ed25519 is modern and fast. = ed25519 è moderno e veloce.',
@@ -9567,7 +9567,7 @@ export default {
             },
             {
               english: 'ssh-agent',
-              italian: 'ssh-agent',
+              italian: 'ssh-agent / agente di chiavi SSH',
               pronunciation: '/es es eɪtʃ ˈeɪdʒənt/',
               phonetic: 'SSH-EI-gent',
               example: 'ssh-agent caches passphrases. = ssh-agent cacha le passphrase.',
@@ -9577,7 +9577,7 @@ export default {
             },
             {
               english: 'authorized_keys',
-              italian: 'authorized_keys',
+              italian: 'authorized_keys / file delle chiavi autorizzate',
               pronunciation: '/ˈɔːθəraɪzd kiːz/',
               phonetic: 'O-to-raizd KIIS',
               example:
@@ -9588,7 +9588,7 @@ export default {
             },
             {
               english: 'Deploy Key',
-              italian: 'Deploy key',
+              italian: 'deploy key / chiave dedicata al deploy',
               pronunciation: '/dɪˈplɔɪ kiː/',
               phonetic: 'di-PLOI KII',
               example:
@@ -9611,7 +9611,7 @@ export default {
             },
             {
               english: 'Passphrase',
-              italian: 'Passphrase',
+              italian: 'passphrase / frase segreta',
               pronunciation: '/ˈpɑːsfreɪz/',
               phonetic: 'PAS-freiz',
               example:
@@ -9638,7 +9638,7 @@ export default {
           items: [
             {
               english: 'Secret Scanning',
-              italian: 'Secret scanning',
+              italian: 'secret scanning / scansione segreti nel codice',
               pronunciation: '/ˈsiːkrɪt ˈskænɪŋ/',
               phonetic: 'SI-krit SKAN-ing',
               example:
@@ -9649,7 +9649,7 @@ export default {
             },
             {
               english: 'gitleaks',
-              italian: 'gitleaks',
+              italian: 'gitleaks (scanner segreti git)',
               pronunciation: '/ˈɡɪtliːks/',
               phonetic: 'GIT-LIKS',
               example:
@@ -9661,7 +9661,7 @@ export default {
             },
             {
               english: 'truffleHog',
-              italian: 'truffleHog',
+              italian: 'truffleHog (scanner segreti git)',
               pronunciation: '/ˈtrʌflhɒɡ/',
               phonetic: 'TRA-fol-hog',
               example:
@@ -9673,7 +9673,7 @@ export default {
             },
             {
               english: 'detect-secrets',
-              italian: 'detect-secrets',
+              italian: 'detect-secrets (scanner segreti Yelp)',
               pronunciation: '/dɪˈtekt ˈsiːkrɪts/',
               phonetic: 'di-TEKT SI-krits',
               example: 'detect-secrets baselines and audits. = detect-secrets fa baseline e audit.',
@@ -9684,7 +9684,7 @@ export default {
             },
             {
               english: 'Push Protection',
-              italian: 'Push protection',
+              italian: 'push protection / blocco push con segreti',
               pronunciation: '/pʊʃ prəˈtekʃən/',
               phonetic: 'PUSC pro-TEK-scion',
               example:
@@ -9737,7 +9737,7 @@ export default {
             },
             {
               english: 'Sealed Secrets',
-              italian: 'Sealed Secrets',
+              italian: 'sealed secrets / segreti cifrati per Git',
               pronunciation: '/siːld ˈsiːkrɪts/',
               phonetic: 'SIILD SI-krits',
               example: 'Sealed Secrets encrypts for GitOps. = Sealed Secrets cifra per GitOps.',
@@ -9831,7 +9831,7 @@ export default {
             },
             {
               english: 'Dependabot',
-              italian: 'Dependabot',
+              italian: 'Dependabot (aggiornamento automatico dipendenze)',
               pronunciation: '/dɪˈpendəbɒt/',
               phonetic: 'di-PEN-da-bot',
               example:
@@ -9869,7 +9869,7 @@ export default {
           items: [
             {
               english: 'GitHub',
-              italian: 'GitHub',
+              italian: 'GitHub (piattaforma di hosting Git)',
               pronunciation: '/ˈɡɪthʌb/',
               phonetic: 'GIT-hab',
               example: 'GitHub is the largest Git host. = GitHub è il più grande host Git.',
@@ -9901,7 +9901,7 @@ export default {
             },
             {
               english: 'GitHub Discussions',
-              italian: 'GitHub Discussions',
+              italian: 'GitHub Discussions / forum per repository',
               pronunciation: '/ˈɡɪthʌb dɪˈskʌʃənz/',
               phonetic: 'GIT-hab dis-KAS-scions',
               example: 'Discussions host Q&A and ideas. = Discussions ospita Q&A e idee.',
@@ -9911,7 +9911,7 @@ export default {
             },
             {
               english: 'GitHub Projects',
-              italian: 'GitHub Projects',
+              italian: 'GitHub Projects / pannelli di gestione lavoro',
               pronunciation: '/ˈɡɪthʌb ˈprɒdʒekts/',
               phonetic: 'GIT-hab PRO-gekts',
               example: 'Projects board manages tasks. = La board Projects gestisce task.',
@@ -9921,7 +9921,7 @@ export default {
             },
             {
               english: 'GitHub Codespaces',
-              italian: 'GitHub Codespaces',
+              italian: 'GitHub Codespaces (ambienti dev cloud)',
               pronunciation: '/ˈɡɪthʌb ˈkoʊdspeɪsɪz/',
               phonetic: 'GIT-hab KOUD-speis',
               example:
@@ -9932,7 +9932,7 @@ export default {
             },
             {
               english: 'GitHub Pages',
-              italian: 'GitHub Pages',
+              italian: 'GitHub Pages (hosting siti statici)',
               pronunciation: '/ˈɡɪthʌb peɪdʒɪz/',
               phonetic: 'GIT-hab PEI-gis',
               example: 'Pages hosts static sites. = Pages ospita siti statici.',
@@ -9942,7 +9942,7 @@ export default {
             },
             {
               english: 'GitHub Copilot',
-              italian: 'GitHub Copilot',
+              italian: 'GitHub Copilot (assistente AI di codice)',
               pronunciation: '/ˈɡɪthʌb ˈkoʊpaɪlət/',
               phonetic: 'GIT-hab KOU-pai-lot',
               example: 'Copilot is AI pair programming. = Copilot è pair programming AI.',
@@ -9952,7 +9952,7 @@ export default {
             },
             {
               english: 'GitHub Sponsors',
-              italian: 'GitHub Sponsors',
+              italian: 'GitHub Sponsors / programma di finanziamento',
               pronunciation: '/ˈɡɪthʌb ˈspɒnsərz/',
               phonetic: 'GIT-hab SPON-sors',
               example: 'Sponsors funds open source. = Sponsors finanzia open source.',
@@ -9962,7 +9962,7 @@ export default {
             },
             {
               english: 'GitHub Enterprise',
-              italian: 'GitHub Enterprise',
+              italian: 'GitHub Enterprise (versione self-hosted)',
               pronunciation: '/ˈɡɪthʌb ˈentərpraɪz/',
               phonetic: 'GIT-hab EN-ter-praiz',
               example: 'Enterprise is on-premise GitHub. = Enterprise è GitHub on-premise.',
@@ -9979,7 +9979,7 @@ export default {
           items: [
             {
               english: 'GitLab',
-              italian: 'GitLab',
+              italian: 'GitLab (piattaforma DevOps integrata)',
               pronunciation: '/ˈɡɪtlæb/',
               phonetic: 'GIT-lab',
               example:
@@ -10040,7 +10040,7 @@ export default {
             },
             {
               english: 'Container Registry',
-              italian: 'Container registry',
+              italian: 'container registry / registro immagini container',
               pronunciation: '/kənˈteɪnər ˈredʒɪstri/',
               phonetic: 'kon-TEI-ner RE-gi-stri',
               example:
@@ -10061,7 +10061,7 @@ export default {
             },
             {
               english: 'GitLab Duo',
-              italian: 'GitLab Duo',
+              italian: 'GitLab Duo (assistente AI di GitLab)',
               pronunciation: '/ˈɡɪtlæb ˈduːoʊ/',
               phonetic: 'GIT-lab DU-o',
               example: "Duo is GitLab's AI assistant. = Duo è l'assistente AI di GitLab.",
@@ -10071,7 +10071,7 @@ export default {
             },
             {
               english: 'Self-managed',
-              italian: 'Self-managed',
+              italian: 'self-managed / installazione gestita in proprio',
               pronunciation: '/self ˈmænɪdʒd/',
               phonetic: 'SELF MA-nigd',
               example: 'Self-managed runs on your infra. = Self-managed gira sulla tua infra.',
@@ -10087,7 +10087,7 @@ export default {
           items: [
             {
               english: 'Bitbucket',
-              italian: 'Bitbucket',
+              italian: 'Bitbucket (piattaforma Atlassian Git)',
               pronunciation: '/ˈbɪtbʌkɪt/',
               phonetic: 'BIT-ba-kit',
               example: 'Bitbucket is by Atlassian. = Bitbucket è di Atlassian.',
@@ -10098,7 +10098,7 @@ export default {
             },
             {
               english: 'Bitbucket Pipelines',
-              italian: 'Bitbucket Pipelines',
+              italian: 'Bitbucket Pipelines (CI di Bitbucket)',
               pronunciation: '/ˈbɪtbʌkɪt ˈpaɪplaɪnz/',
               phonetic: 'BIT-ba-kit PAIP-lains',
               example: 'Pipelines is Bitbucket CI. = Pipelines è la CI di Bitbucket.',
@@ -10108,7 +10108,7 @@ export default {
             },
             {
               english: 'Gitea',
-              italian: 'Gitea',
+              italian: 'Gitea (forge Git self-hosted leggero)',
               pronunciation: '/ˈɡɪtiə/',
               phonetic: 'GHI-te-a',
               example:
@@ -10120,7 +10120,7 @@ export default {
             },
             {
               english: 'Forgejo',
-              italian: 'Forgejo',
+              italian: 'Forgejo (fork community-driven di Gitea)',
               pronunciation: '/fɔːrˈdʒeɪoʊ/',
               phonetic: 'for-GE-io',
               example:
@@ -10132,7 +10132,7 @@ export default {
             },
             {
               english: 'Codeberg',
-              italian: 'Codeberg',
+              italian: 'Codeberg (forge Git no-profit)',
               pronunciation: '/ˈkoʊdbɜːrɡ/',
               phonetic: 'KOUD-berg',
               example: "Codeberg is a Forgejo instance. = Codeberg è un'istanza Forgejo.",
@@ -10142,7 +10142,7 @@ export default {
             },
             {
               english: 'sourcehut',
-              italian: 'sourcehut',
+              italian: 'sourcehut (forge Git minimalista)',
               pronunciation: '/sɔːrs hʌt/',
               phonetic: 'SORS-HAT',
               example:
@@ -10153,7 +10153,7 @@ export default {
             },
             {
               english: 'Azure DevOps',
-              italian: 'Azure DevOps',
+              italian: 'Azure DevOps (suite DevOps Microsoft)',
               pronunciation: '/ˈæʒər ˈdevɒps/',
               phonetic: 'AZUR DEV-ops',
               example: 'Azure DevOps hosts Git repos too. = Azure DevOps ospita anche repo Git.',
@@ -10163,7 +10163,7 @@ export default {
             },
             {
               english: 'AWS CodeCommit',
-              italian: 'AWS CodeCommit',
+              italian: 'AWS CodeCommit (hosting Git AWS)',
               pronunciation: '/eɪ dʌbəljuː es koʊd kəˈmɪt/',
               phonetic: 'A-W-S KOUD-ko-MIT',
               example: "CodeCommit is AWS's Git host. = CodeCommit è l'host Git di AWS.",
@@ -10183,7 +10183,7 @@ export default {
             },
             {
               english: 'Self-hosting',
-              italian: 'Self-hosting',
+              italian: 'self-hosting / hosting in proprio',
               pronunciation: '/self ˈhoʊstɪŋ/',
               phonetic: 'SELF HOU-sting',
               example: 'Self-hosting gives full control. = Self-hosting dà controllo completo.',
@@ -10247,7 +10247,7 @@ export default {
             },
             {
               english: 'Mirroring',
-              italian: 'Mirroring',
+              italian: 'mirroring / replica del repository',
               pronunciation: '/ˈmɪrərɪŋ/',
               phonetic: 'MIR-ro-ring',
               example: 'Mirror repos across platforms. = Replica repo tra piattaforme.',
@@ -10257,7 +10257,7 @@ export default {
             },
             {
               english: 'Vendor Lock-in',
-              italian: 'Vendor lock-in',
+              italian: 'vendor lock-in / blocco da fornitore',
               pronunciation: '/ˈvendər lɒk ɪn/',
               phonetic: 'VEN-der LOK-IN',
               example:
@@ -10277,7 +10277,7 @@ export default {
             },
             {
               english: 'Compliance',
-              italian: 'Compliance',
+              italian: 'compliance / conformità normativa',
               pronunciation: '/kəmˈplaɪəns/',
               phonetic: 'kom-PLAI-ens',
               example: 'Self-hosted helps with compliance. = Self-hosted aiuta la compliance.',
@@ -10419,7 +10419,7 @@ export default {
           items: [
             {
               english: 'Dependabot',
-              italian: 'Dependabot',
+              italian: 'Dependabot (aggiornamento automatico dipendenze)',
               pronunciation: '/dɪˈpendəbɒt/',
               phonetic: 'di-PEN-da-bot',
               example:
@@ -10431,7 +10431,7 @@ export default {
             },
             {
               english: 'Renovate',
-              italian: 'Renovate',
+              italian: 'Renovate (aggiornamento dipendenze configurabile)',
               pronunciation: '/ˈrenəveɪt/',
               phonetic: 'RE-no-veit',
               example:
@@ -10455,7 +10455,7 @@ export default {
             },
             {
               english: 'Mergify',
-              italian: 'Mergify',
+              italian: 'Mergify (automazione merge PR)',
               pronunciation: '/ˈmɜːrdʒɪfaɪ/',
               phonetic: 'MER-gi-fai',
               example:
@@ -10466,7 +10466,7 @@ export default {
             },
             {
               english: 'Stale Bot',
-              italian: 'Stale bot',
+              italian: 'Stale Bot / bot che chiude issue inattive',
               pronunciation: '/steɪl bɒt/',
               phonetic: 'STEIL BOT',
               example: 'Stale closes inactive issues. = Stale chiude issue inattive.',
@@ -10477,7 +10477,7 @@ export default {
             },
             {
               english: 'Probot',
-              italian: 'Probot',
+              italian: 'Probot (framework bot GitHub)',
               pronunciation: '/ˈproʊbɒt/',
               phonetic: 'PRO-bot',
               example:
@@ -10488,7 +10488,7 @@ export default {
             },
             {
               english: 'CodeQL',
-              italian: 'CodeQL',
+              italian: 'CodeQL (analisi statica semantica)',
               pronunciation: '/koʊd kjuː el/',
               phonetic: 'KOUD-Q-L',
               example: 'CodeQL scans for vulnerabilities. = CodeQL scansiona vulnerabilità.',
@@ -10519,7 +10519,7 @@ export default {
             },
             {
               english: 'GitHub App',
-              italian: 'GitHub App',
+              italian: 'GitHub App / applicazione integrata GitHub',
               pronunciation: '/ˈɡɪthʌb æp/',
               phonetic: 'GIT-hab AP',
               example:
@@ -10557,7 +10557,7 @@ export default {
             },
             {
               english: 'Octokit',
-              italian: 'Octokit',
+              italian: 'Octokit (SDK GitHub ufficiale)',
               pronunciation: '/ˈɒktoʊkɪt/',
               phonetic: 'OK-to-kit',
               example: "Octokit is the official GitHub SDK. = Octokit è l'SDK ufficiale GitHub.",
@@ -10567,7 +10567,7 @@ export default {
             },
             {
               english: 'PyGithub',
-              italian: 'PyGithub',
+              italian: 'PyGithub (SDK GitHub per Python)',
               pronunciation: '/paɪ ˈɡɪthʌb/',
               phonetic: 'PAI-GIT-hab',
               example: 'PyGithub is the Python wrapper. = PyGithub è il wrapper Python.',
@@ -10597,7 +10597,7 @@ export default {
             },
             {
               english: 'Release Drafter',
-              italian: 'Release drafter',
+              italian: 'Release Drafter / bozza automatica delle release',
               pronunciation: '/rɪˈliːs ˈdrɑːftər/',
               phonetic: 'ri-LIIS DRAF-ter',
               example:
@@ -10731,7 +10731,7 @@ export default {
             },
             {
               english: 'Auto-rebase',
-              italian: 'Auto-rebase',
+              italian: 'auto-rebase / rebase automatico',
               pronunciation: '/ˈɔːtoʊ ˈriːbeɪs/',
               phonetic: 'AU-to RI-beis',
               example: 'Auto-rebase keeps PRs up to date. = Auto-rebase mantiene PR aggiornate.',
@@ -10777,7 +10777,7 @@ export default {
             },
             {
               english: 'Monorepo vs Polyrepo',
-              italian: 'Monorepo vs Polyrepo',
+              italian: 'monorepo vs polyrepo / unico repo o multipli',
               pronunciation: '/ˈmɒnoʊˌriːpoʊ vɜːrsəs ˈpɒliˌriːpoʊ/',
               phonetic: 'MO-no VS PO-li-RI-po',
               example:
@@ -10936,7 +10936,7 @@ export default {
             },
             {
               english: 'Maintainer',
-              italian: 'Maintainer',
+              italian: 'maintainer / manutentore del progetto',
               pronunciation: '/meɪnˈteɪnər/',
               phonetic: 'mein-TEI-ner',
               example: 'Maintainers steward the project. = I maintainer guidano il progetto.',
@@ -10968,7 +10968,7 @@ export default {
             },
             {
               english: 'Roadmap',
-              italian: 'Roadmap',
+              italian: 'roadmap / piano evolutivo',
               pronunciation: '/ˈroʊdmæp/',
               phonetic: 'ROUD-map',
               example:
@@ -10986,7 +10986,7 @@ export default {
           items: [
             {
               english: 'README',
-              italian: 'README',
+              italian: 'README / file di descrizione del progetto',
               pronunciation: '/ˌriːdˈmiː/',
               phonetic: 'RID-MI',
               example:
@@ -11008,7 +11008,7 @@ export default {
             },
             {
               english: 'Devcontainer',
-              italian: 'Devcontainer',
+              italian: 'devcontainer / container di sviluppo riproducibile',
               pronunciation: '/dev kənˈteɪnər/',
               phonetic: 'DEV-kon-TEI-ner',
               example:
@@ -11030,7 +11030,7 @@ export default {
             },
             {
               english: 'Good First Issue',
-              italian: 'Good first issue',
+              italian: 'good first issue / issue adatta a principianti',
               pronunciation: '/ɡʊd fɜːrst ˈɪʃuː/',
               phonetic: 'GUD-FERST I-sciu',
               example: 'Tag entry-level issues for newcomers. = Tagga issue entry-level per nuovi.',
@@ -11040,7 +11040,7 @@ export default {
             },
             {
               english: 'Mentorship',
-              italian: 'Mentorship',
+              italian: 'mentorship / mentorato',
               pronunciation: '/ˈmentɔːrʃɪp/',
               phonetic: 'MEN-tor-scip',
               example:
@@ -11061,7 +11061,7 @@ export default {
             },
             {
               english: 'Style Guide',
-              italian: 'Style guide',
+              italian: 'style guide / guida di stile',
               pronunciation: '/staɪl ɡaɪd/',
               phonetic: 'STAIL GAID',
               example: 'Style guides enforce consistency. = Le style guide impongono consistenza.',
@@ -11179,7 +11179,7 @@ export default {
             },
             {
               english: 'Tech Talk',
-              italian: 'Tech talk',
+              italian: 'tech talk / presentazione tecnica',
               pronunciation: '/tek tɔːk/',
               phonetic: 'TEK TOK',
               example: 'Give talks about Git workflows. = Tieni talk sui workflow Git.',

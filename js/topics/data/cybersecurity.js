@@ -348,7 +348,7 @@ export default {
             },
             {
               english: 'Antivirus',
-              italian: 'Antivirus',
+              italian: 'antivirus / software anti-malware',
               pronunciation: '/\u02CC\u00E6nti\u02C8va\u026Ar\u0259s/',
               phonetic: 'anti-VAI-res',
               example:
@@ -558,7 +558,7 @@ export default {
             },
             {
               english: 'Rootkit',
-              italian: 'Rootkit',
+              italian: 'rootkit / malware nascosto a livello kernel',
               pronunciation: '/\u02C8ru\u02D0tk\u026At/',
               phonetic: 'RUUT-kit',
               example:
@@ -1183,7 +1183,7 @@ export default {
           items: [
             {
               english: 'Antivirus',
-              italian: 'Antivirus',
+              italian: 'antivirus / software anti-malware',
               pronunciation: '/\u02CC\u00E6nti\u02C8va\u026Ar\u0259s/',
               phonetic: 'an-ti-VAI-res',
               example:
@@ -2560,7 +2560,7 @@ export default {
             },
             {
               english: 'Credential Stuffing',
-              italian: 'Credential Stuffing',
+              italian: 'credential stuffing / riutilizzo automatizzato di credenziali rubate',
               pronunciation: '/kr\u026A\u02C8den\u0283l \u02C8st\u028Cf\u026A\u014B/',
               phonetic: 'cre-DEN-scial STAF-fing',
               example:
@@ -3264,7 +3264,7 @@ export default {
             },
             {
               english: 'AppArmor',
-              italian: 'AppArmor',
+              italian: 'AppArmor (modulo sicurezza Linux a profili)',
               pronunciation: '/\u00E6p \u02C8\u0251\u02D0rm\u0259r/',
               phonetic: 'AP-ar-mer',
               example:
@@ -3504,7 +3504,7 @@ export default {
             },
             {
               english: 'Anti-Forensics',
-              italian: 'Anti-Forensics',
+              italian: 'anti-forensics / tecniche per ostacolare le indagini',
               pronunciation: '/\u02CC\u00E6nta\u026A f\u0259\u02C8rens\u026Aks/',
               phonetic: 'AN-ti fo-REN-siks',
               example:
@@ -3842,7 +3842,7 @@ export default {
             },
             {
               english: 'Multi-Cloud',
-              italian: 'Multi-Cloud',
+              italian: 'multi-cloud / uso di più provider cloud',
               pronunciation: '/\u02C8m\u028Clti kla\u028Ad/',
               phonetic: 'MAL-ti CLAUD',
               example:
@@ -4283,7 +4283,7 @@ export default {
             },
             {
               english: 'Bluejacking',
-              italian: 'Bluejacking',
+              italian: 'bluejacking / invio di messaggi non richiesti via Bluetooth',
               pronunciation: '/\u02C8blu\u02D0d\u0292\u00E6k\u026A\u014B/',
               phonetic: 'BLUU-giak-ing',
               example:
@@ -4293,7 +4293,7 @@ export default {
             },
             {
               english: 'Bluesnarfing',
-              italian: 'Bluesnarfing',
+              italian: 'bluesnarfing / furto di dati via Bluetooth',
               pronunciation: '/\u02C8blu\u02D0sn\u0251\u02D0rf\u026A\u014B/',
               phonetic: 'BLUU-snarf-ing',
               example:
@@ -4432,7 +4432,7 @@ export default {
           items: [
             {
               english: 'Certificate Pinning',
-              italian: 'Certificate Pinning',
+              italian: 'certificate pinning / aggancio del certificato atteso',
               pronunciation: '/s\u0259r\u02C8t\u026Af\u026Ak\u0259t \u02C8p\u026An\u026A\u014B/',
               phonetic: 'ser-TI-fi-ket PIN-ning',
               example:
@@ -4485,7 +4485,7 @@ export default {
             },
             {
               english: 'Tapjacking',
-              italian: 'Tapjacking',
+              italian: 'tapjacking / clickjacking su touchscreen',
               pronunciation: '/\u02C8t\u00E6pd\u0292\u00E6k\u026A\u014B/',
               phonetic: 'TAP-giak-ing',
               example:
@@ -4826,7 +4826,7 @@ export default {
             },
             {
               english: 'Debugger',
-              italian: 'Debugger',
+              italian: 'debugger / strumento di analisi del codice',
               pronunciation: '/\u02CCdi\u02D0\u02C8b\u028C\u0261\u0259r/',
               phonetic: 'dii-BA-gher',
               example:
@@ -5062,7 +5062,7 @@ export default {
             },
             {
               english: 'Post-Exploitation',
-              italian: 'Post-Exploitation',
+              italian: 'post-exploitation / attività dopo la compromissione',
               pronunciation: '/po\u028Ast \u02CCekspl\u0254\u026A\u02C8te\u026A\u0283\u0259n/',
               phonetic: 'POUST eks-ploi-TEI-scion',
               example:
@@ -5072,7 +5072,7 @@ export default {
             },
             {
               english: 'Shellcode',
-              italian: 'Shellcode',
+              italian: 'shellcode / codice macchina iniettato per ottenere shell',
               pronunciation: '/\u02C8\u0283elko\u028Ad/',
               phonetic: 'SCEL-koud',
               example:

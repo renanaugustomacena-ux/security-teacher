@@ -72,7 +72,7 @@ export default {
             },
             {
               english: 'Schema',
-              italian: 'Schema',
+              italian: 'schema / struttura dei dati',
               pronunciation: '/ˈskiːmə/',
               phonetic: 'SKII-ma',
               example:
@@ -84,7 +84,7 @@ export default {
             },
             {
               english: 'Record',
-              italian: 'Record',
+              italian: 'record / riga di dati',
               pronunciation: '/ˈrekɔːrd/',
               phonetic: 'RE-cord',
               example:
@@ -204,7 +204,7 @@ export default {
             },
             {
               english: 'PostgreSQL',
-              italian: 'PostgreSQL',
+              italian: 'PostgreSQL (database relazionale open source)',
               pronunciation: '/ˈpoʊstɡrɛs ˌkjuː ˈel/',
               phonetic: 'POST-gres-KIU-EL',
               example: 'PostgreSQL has advanced features. = PostgreSQL ha funzionalità avanzate.',
@@ -216,7 +216,7 @@ export default {
             },
             {
               english: 'MySQL',
-              italian: 'MySQL',
+              italian: 'MySQL (database relazionale open source)',
               pronunciation: '/ˌmaɪ ˌes kjuː ˈel/',
               phonetic: 'MAI-ES-KIU-EL',
               example:
@@ -228,7 +228,7 @@ export default {
             },
             {
               english: 'SQLite',
-              italian: 'SQLite',
+              italian: 'SQLite (database embedded a file singolo)',
               pronunciation: '/ˌes kjuː el ˈlaɪt/',
               phonetic: 'ES-KIU-EL-LAIT',
               example:
@@ -251,7 +251,7 @@ export default {
             },
             {
               english: 'Server',
-              italian: 'Server',
+              italian: 'server / programma fornitore',
               pronunciation: '/ˈsɜːrvər/',
               phonetic: 'SER-ver',
               example:
@@ -429,7 +429,7 @@ export default {
             },
             {
               english: 'File System',
-              italian: 'File system',
+              italian: 'filesystem / sistema dei file',
               pronunciation: '/faɪl ˈsɪstəm/',
               phonetic: 'FAIL SIS-tem',
               example:
@@ -592,7 +592,7 @@ export default {
             },
             {
               english: 'IN',
-              italian: 'IN',
+              italian: 'IN / operatore SQL appartenenza a insieme',
               pronunciation: '/ɪn/',
               phonetic: 'IN',
               example: 'IN matches a list of values. = IN corrisponde a una lista di valori.',
@@ -1291,7 +1291,7 @@ export default {
             },
             {
               english: 'Alias',
-              italian: 'Alias',
+              italian: 'alias / nome alternativo',
               pronunciation: '/ˈeɪliəs/',
               phonetic: 'EI-lias',
               example: 'Use AS to create an alias. = Usa AS per creare un alias.',
@@ -1670,7 +1670,7 @@ export default {
             },
             {
               english: 'UUID',
-              italian: 'UUID',
+              italian: 'UUID (identificatore universalmente unico)',
               pronunciation: '/ˌjuː juː aɪ ˈdiː/',
               phonetic: 'IU-IU-AI-DI',
               example:
@@ -1776,7 +1776,7 @@ export default {
             },
             {
               english: 'JSON',
-              italian: 'JSON',
+              italian: 'JSON (formato dati testuale)',
               pronunciation: '/ˈdʒeɪsən/',
               phonetic: 'GIEI-son',
               example: 'JSON stores semi-structured data. = JSON memorizza dati semi-strutturati.',
@@ -1827,7 +1827,7 @@ export default {
             },
             {
               english: 'snake_case',
-              italian: 'snake_case',
+              italian: 'snake_case / convenzione con underscore',
               pronunciation: '/sneɪk keɪs/',
               phonetic: 'SNEIK-KEIS',
               example:
@@ -2376,7 +2376,7 @@ export default {
             },
             {
               english: 'OLTP vs OLAP',
-              italian: 'OLTP vs OLAP',
+              italian: 'OLTP vs OLAP / transazionale vs analitico',
               pronunciation: '/ˌoʊ el tiː piː/',
               phonetic: 'O-EL-TI-PI vs O-EL-EI-PI',
               example: 'OLTP normalizes, OLAP denormalizes. = OLTP normalizza, OLAP denormalizza.',
@@ -2842,7 +2842,7 @@ export default {
             },
             {
               english: 'Heap',
-              italian: 'Heap',
+              italian: 'heap / tabella senza ordine fisico',
               pronunciation: '/hiːp/',
               phonetic: 'HIIP',
               example: 'In PostgreSQL tables are heaps. = In PostgreSQL le tabelle sono heap.',
@@ -2947,7 +2947,7 @@ export default {
             },
             {
               english: 'Auto-commit',
-              italian: 'Auto-commit',
+              italian: 'auto-commit / commit automatico per ogni statement',
               pronunciation: '/ˈɔːtoʊ kəˈmɪt/',
               phonetic: 'O-to co-MIT',
               example:
@@ -3008,7 +3008,7 @@ export default {
           items: [
             {
               english: 'ACID',
-              italian: 'ACID',
+              italian: 'ACID (Atomicità, Coerenza, Isolamento, Durabilità)',
               pronunciation: '/ˈæsɪd/',
               phonetic: 'A-sid',
               example:
@@ -3102,7 +3102,7 @@ export default {
             },
             {
               english: 'Checkpoint',
-              italian: 'Checkpoint',
+              italian: 'checkpoint / punto di salvataggio del WAL',
               pronunciation: '/ˈtʃekpɔɪnt/',
               phonetic: 'CEK-point',
               example:
@@ -3132,7 +3132,7 @@ export default {
             },
             {
               english: 'Read Uncommitted',
-              italian: 'Read Uncommitted',
+              italian: 'read uncommitted / livello isolamento più basso',
               pronunciation: '/riːd ʌnkəˈmɪtɪd/',
               phonetic: 'RIID an-co-MI-tid',
               example:
@@ -3143,7 +3143,7 @@ export default {
             },
             {
               english: 'Read Committed',
-              italian: 'Read Committed',
+              italian: 'read committed / livello isolamento di default',
               pronunciation: '/riːd kəˈmɪtɪd/',
               phonetic: 'RIID co-MI-tid',
               example:
@@ -3154,7 +3154,7 @@ export default {
             },
             {
               english: 'Repeatable Read',
-              italian: 'Repeatable Read',
+              italian: 'repeatable read / letture ripetibili',
               pronunciation: '/rɪˈpiːtəbl riːd/',
               phonetic: 'ri-PI-ta-bol RIID',
               example:
@@ -3165,7 +3165,7 @@ export default {
             },
             {
               english: 'Serializable',
-              italian: 'Serializable',
+              italian: 'serializable / livello isolamento massimo',
               pronunciation: '/ˈsɪəriəlaɪzəbl/',
               phonetic: 'SI-ria-lai-za-bol',
               example:
@@ -3309,7 +3309,7 @@ export default {
             },
             {
               english: 'MVCC',
-              italian: 'MVCC',
+              italian: 'MVCC (controllo concorrenza multi-versione)',
               pronunciation: '/em viː siː ˈsiː/',
               phonetic: 'EM-VI-SI-SI',
               example:
@@ -3447,7 +3447,7 @@ export default {
             },
             {
               english: 'LATERAL JOIN',
-              italian: 'LATERAL JOIN',
+              italian: 'LATERAL JOIN / join correlato laterale',
               pronunciation: '/ˈlætərəl dʒɔɪn/',
               phonetic: 'LA-te-ral GIOIN',
               example:
@@ -3729,7 +3729,7 @@ export default {
             },
             {
               english: 'Trigger',
-              italian: 'Trigger',
+              italian: 'trigger / procedura attivata da evento',
               pronunciation: '/ˈtrɪɡər/',
               phonetic: 'TRI-gher',
               example:
@@ -3762,7 +3762,7 @@ export default {
             },
             {
               english: 'PL/pgSQL',
-              italian: 'PL/pgSQL',
+              italian: 'PL/pgSQL (linguaggio procedurale PostgreSQL)',
               pronunciation: '/piː el piː dʒiː ˌes kjuː ˈel/',
               phonetic: 'PI-EL-PI-GI-ES-KIU-EL',
               example:
@@ -3774,7 +3774,7 @@ export default {
             },
             {
               english: 'PL/SQL',
-              italian: 'PL/SQL',
+              italian: 'PL/SQL (linguaggio procedurale Oracle)',
               pronunciation: '/piː el ˌes kjuː ˈel/',
               phonetic: 'PI-EL-ES-KIU-EL',
               example:
@@ -3911,7 +3911,7 @@ export default {
             },
             {
               english: 'NewSQL',
-              italian: 'NewSQL',
+              italian: 'NewSQL / nuovi RDBMS scalabili',
               pronunciation: '/njuː ˌes kjuː ˈel/',
               phonetic: 'NIU-ES-KIU-EL',
               example:
@@ -3994,7 +3994,7 @@ export default {
             },
             {
               english: 'BASE',
-              italian: 'BASE',
+              italian: 'BASE (Basicamente Disponibile, Stato morbido, Eventualmente coerente)',
               pronunciation: '/beɪs/',
               phonetic: 'BEIS',
               example:
@@ -4036,7 +4036,7 @@ export default {
             },
             {
               english: 'PACELC',
-              italian: 'PACELC',
+              italian: 'PACELC / estensione del teorema CAP',
               pronunciation: '/ˈpeɪsəlk/',
               phonetic: 'PEI-selk',
               example:
@@ -4047,7 +4047,7 @@ export default {
             },
             {
               english: 'Quorum',
-              italian: 'Quorum',
+              italian: 'quorum / soglia minima di nodi',
               pronunciation: '/ˈkwɔːrəm/',
               phonetic: 'KUO-rum',
               example:
@@ -4087,7 +4087,7 @@ export default {
             },
             {
               english: 'BSON',
-              italian: 'BSON',
+              italian: 'BSON (Binary JSON di MongoDB)',
               pronunciation: '/ˈbiː sɒn/',
               phonetic: 'BI-SON',
               example: 'MongoDB uses BSON internally. = MongoDB usa BSON internamente.',
@@ -4222,7 +4222,7 @@ export default {
             },
             {
               english: 'CRDT',
-              italian: 'CRDT',
+              italian: 'CRDT (tipi dati replicati a convergenza)',
               pronunciation: '/siː ɑːr diː ˈtiː/',
               phonetic: 'SI-AR-DI-TI',
               example:
@@ -4256,7 +4256,7 @@ export default {
             },
             {
               english: 'Hinted Handoff',
-              italian: 'Hinted handoff',
+              italian: 'hinted handoff / consegna ritardata in caso di nodo offline',
               pronunciation: '/ˈhɪntɪd ˈhændɒf/',
               phonetic: 'HIN-tid HAND-of',
               example:
@@ -4304,7 +4304,7 @@ export default {
           items: [
             {
               english: 'MongoDB',
-              italian: 'MongoDB',
+              italian: 'MongoDB (database documentale NoSQL)',
               pronunciation: '/ˈmɒŋɡoʊ diː biː/',
               phonetic: 'MON-go-DI-BI',
               example:
@@ -4341,7 +4341,7 @@ export default {
             },
             {
               english: 'ObjectId',
-              italian: 'ObjectId',
+              italian: 'ObjectId / identificatore documento MongoDB',
               pronunciation: '/ˈɒbdʒekt aɪ diː/',
               phonetic: 'OB-gekt AI-DI',
               example: 'ObjectId is the default _id type. = ObjectId è il tipo _id di default.',
@@ -4365,7 +4365,7 @@ export default {
             },
             {
               english: 'findOne',
-              italian: 'findOne',
+              italian: 'findOne / trova un singolo documento',
               pronunciation: '/faɪnd wʌn/',
               phonetic: 'FAIND-UAN',
               example: 'findOne returns the first match. = findOne restituisce il primo match.',
@@ -4376,7 +4376,7 @@ export default {
             },
             {
               english: 'insertOne',
-              italian: 'insertOne',
+              italian: 'insertOne / inserisce un documento',
               pronunciation: '/ɪnˈsɜːrt wʌn/',
               phonetic: 'in-SERT-UAN',
               example: 'insertOne adds one document. = insertOne aggiunge un documento.',
@@ -4387,7 +4387,7 @@ export default {
             },
             {
               english: 'insertMany',
-              italian: 'insertMany',
+              italian: 'insertMany / inserisce documenti multipli',
               pronunciation: '/ɪnˈsɜːrt ˈmeni/',
               phonetic: 'in-SERT-ME-ni',
               example:
@@ -4399,7 +4399,7 @@ export default {
             },
             {
               english: 'updateOne',
-              italian: 'updateOne',
+              italian: 'updateOne / aggiorna un documento',
               pronunciation: '/ʌpˈdeɪt wʌn/',
               phonetic: 'ap-DEIT-UAN',
               example:
@@ -4411,7 +4411,7 @@ export default {
             },
             {
               english: 'deleteOne',
-              italian: 'deleteOne',
+              italian: 'deleteOne / elimina un documento',
               pronunciation: '/dɪˈliːt wʌn/',
               phonetic: 'di-LIIT-UAN',
               example:
@@ -4452,7 +4452,7 @@ export default {
             },
             {
               english: '$in',
-              italian: '$in',
+              italian: '$in / operatore appartenenza Mongo',
               pronunciation: '/ˈdɒlər ɪn/',
               phonetic: 'DO-lar IN',
               example:
@@ -4672,7 +4672,7 @@ export default {
           items: [
             {
               english: 'Replica Set',
-              italian: 'Replica set',
+              italian: 'replica set / gruppo di nodi replicati',
               pronunciation: '/ˈreplɪkə set/',
               phonetic: 'RE-pli-ka SET',
               example:
@@ -4738,7 +4738,7 @@ export default {
             },
             {
               english: 'Sharding',
-              italian: 'Sharding',
+              italian: 'sharding / partizionamento orizzontale',
               pronunciation: '/ˈʃɑːrdɪŋ/',
               phonetic: 'SCIAR-ding',
               example:
@@ -4799,7 +4799,7 @@ export default {
           items: [
             {
               english: 'Redis',
-              italian: 'Redis',
+              italian: 'Redis (database in memoria chiave-valore)',
               pronunciation: '/ˈredɪs/',
               phonetic: 'RE-dis',
               example: 'Redis is an in-memory data store. = Redis è uno store dati in memoria.',
@@ -5079,7 +5079,7 @@ export default {
             },
             {
               english: 'Cache',
-              italian: 'Cache',
+              italian: 'cache / memoria intermedia',
               pronunciation: '/kæʃ/',
               phonetic: 'KASH',
               example: 'Use Redis as a cache layer. = Usa Redis come livello di cache.',
@@ -5089,7 +5089,7 @@ export default {
             },
             {
               english: 'Cache Hit',
-              italian: 'Cache hit',
+              italian: 'cache hit / dato trovato in cache',
               pronunciation: '/kæʃ hɪt/',
               phonetic: 'KASH-HIT',
               example:
@@ -5099,7 +5099,7 @@ export default {
             },
             {
               english: 'Cache Miss',
-              italian: 'Cache miss',
+              italian: 'cache miss / dato assente in cache',
               pronunciation: '/kæʃ mɪs/',
               phonetic: 'KASH-MIS',
               example:
@@ -5119,7 +5119,7 @@ export default {
             },
             {
               english: 'Cache-Aside',
-              italian: 'Cache-aside',
+              italian: 'cache-aside / pattern di cache a fianco',
               pronunciation: '/kæʃ əˈsaɪd/',
               phonetic: 'KASH-a-SAID',
               example:
@@ -5129,7 +5129,7 @@ export default {
             },
             {
               english: 'Write-Through',
-              italian: 'Write-through',
+              italian: 'write-through / scrittura sincrona in cache e DB',
               pronunciation: '/raɪt θruː/',
               phonetic: 'RAIT-THRU',
               example:
@@ -5157,7 +5157,7 @@ export default {
           items: [
             {
               english: 'Pub/Sub',
-              italian: 'Pub/Sub',
+              italian: 'pub/sub / pubblicazione e sottoscrizione',
               pronunciation: '/pʌb sʌb/',
               phonetic: 'PAB-SAB',
               example:
@@ -5352,7 +5352,7 @@ export default {
             },
             {
               english: 'Hash Join',
-              italian: 'Hash join',
+              italian: 'hash join / join basato su hash',
               pronunciation: '/hæʃ dʒɔɪn/',
               phonetic: 'HASH-GIOIN',
               example:
@@ -5363,7 +5363,7 @@ export default {
             },
             {
               english: 'Merge Join',
-              italian: 'Merge join',
+              italian: 'merge join / join per fusione ordinata',
               pronunciation: '/mɜːrdʒ dʒɔɪn/',
               phonetic: 'MERG-GIOIN',
               example:
@@ -5433,7 +5433,7 @@ export default {
             },
             {
               english: 'Query Planner',
-              italian: 'Query planner',
+              italian: 'query planner / pianificatore di query',
               pronunciation: '/ˈkwɪəri ˈplænər/',
               phonetic: 'KUI-ri PLAN-ner',
               example:
@@ -5536,7 +5536,7 @@ export default {
             },
             {
               english: 'pg_stat_statements',
-              italian: 'pg_stat_statements',
+              italian: 'pg_stat_statements / vista delle query più costose',
               pronunciation: '/piː dʒiː stæt ˈsteɪtmənts/',
               phonetic: 'PI-GI-STAT-STEIT-ments',
               example:
@@ -5601,7 +5601,7 @@ export default {
             },
             {
               english: 'Sargable',
-              italian: 'Sargable',
+              italian: "sargable / query ottimizzabile dall'indice",
               pronunciation: '/ˈsɑːrɡəbl/',
               phonetic: 'SAR-ga-bol',
               example:
@@ -5631,7 +5631,7 @@ export default {
           items: [
             {
               english: 'Performance',
-              italian: 'Performance',
+              italian: 'performance / prestazioni',
               pronunciation: '/pərˈfɔːrməns/',
               phonetic: 'per-FOR-mans',
               example:
@@ -5651,7 +5651,7 @@ export default {
             },
             {
               english: 'Throughput',
-              italian: 'Throughput',
+              italian: 'throughput / volume di operazioni al secondo',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'THRU-put',
               example:
@@ -5683,7 +5683,7 @@ export default {
             },
             {
               english: 'Connection Pooling',
-              italian: 'Connection pooling',
+              italian: 'connection pooling / pool di connessioni',
               pronunciation: '/kəˈnekʃən ˈpuːlɪŋ/',
               phonetic: 'co-NEK-scion PU-ling',
               example:
@@ -5703,7 +5703,7 @@ export default {
             },
             {
               english: 'Buffer Pool',
-              italian: 'Buffer pool',
+              italian: 'buffer pool / pool di pagine in memoria',
               pronunciation: '/ˈbʌfər puːl/',
               phonetic: 'BA-fer PUL',
               example:
@@ -5751,7 +5751,7 @@ export default {
           items: [
             {
               english: 'Backup',
-              italian: 'Backup',
+              italian: 'backup / copia di sicurezza',
               pronunciation: '/ˈbækʌp/',
               phonetic: 'BAK-ap',
               example: 'Take regular backups of your data. = Esegui backup regolari dei tuoi dati.',
@@ -5780,7 +5780,7 @@ export default {
             },
             {
               english: 'pg_dump',
-              italian: 'pg_dump',
+              italian: 'pg_dump (utility di backup PostgreSQL)',
               pronunciation: '/piː dʒiː dʌmp/',
               phonetic: 'PI-GI-DAMP',
               example: 'pg_dump exports a database. = pg_dump esporta un database.',
@@ -5791,7 +5791,7 @@ export default {
             },
             {
               english: 'mysqldump',
-              italian: 'mysqldump',
+              italian: 'mysqldump (utility di backup MySQL)',
               pronunciation: '/ˌmaɪ ˌes kjuː el dʌmp/',
               phonetic: 'MAI-ES-KIU-EL-DAMP',
               example: 'mysqldump exports MySQL databases. = mysqldump esporta database MySQL.',
@@ -5871,7 +5871,7 @@ export default {
             },
             {
               english: 'pg_restore',
-              italian: 'pg_restore',
+              italian: 'pg_restore (utility di ripristino PostgreSQL)',
               pronunciation: '/piː dʒiː rɪˈstɔːr/',
               phonetic: 'PI-GI-ri-STOR',
               example: 'pg_restore restores from a dump. = pg_restore ripristina da un dump.',
@@ -5895,7 +5895,7 @@ export default {
             },
             {
               english: 'Disaster Recovery',
-              italian: 'Disaster recovery',
+              italian: 'disaster recovery / ripristino dopo disastro',
               pronunciation: '/dɪˈzɑːstər rɪˈkʌvəri/',
               phonetic: 'di-ZAS-ter ri-KA-ve-ri',
               example: 'Plan for disaster recovery. = Pianifica il disaster recovery.',
@@ -5937,7 +5937,7 @@ export default {
             },
             {
               english: 'Standby',
-              italian: 'Standby',
+              italian: 'standby / nodo di riserva',
               pronunciation: '/ˈstændbaɪ/',
               phonetic: 'STAND-bai',
               example: 'A standby database can take over. = Un database standby può subentrare.',
@@ -6047,7 +6047,7 @@ export default {
             },
             {
               english: 'Superuser',
-              italian: 'Superuser',
+              italian: 'superuser / utente con tutti i privilegi',
               pronunciation: '/ˈsuːpərjuːzər/',
               phonetic: 'SU-per-iu-zer',
               example:
@@ -6069,7 +6069,7 @@ export default {
             },
             {
               english: 'pg_hba.conf',
-              italian: 'pg_hba.conf',
+              italian: 'pg_hba.conf (file di policy autenticazione PostgreSQL)',
               pronunciation: '/piː dʒiː eɪtʃ biː ˈeɪ kɒnf/',
               phonetic: 'PI-GI-EICH-BI-EI-KONF',
               example:
@@ -6177,7 +6177,7 @@ export default {
             },
             {
               english: 'Dashboard',
-              italian: 'Dashboard',
+              italian: 'dashboard / cruscotto di monitoraggio',
               pronunciation: '/ˈdæʃbɔːrd/',
               phonetic: 'DASH-bord',
               example: 'A dashboard visualizes metrics. = Una dashboard visualizza metriche.',
@@ -6223,7 +6223,7 @@ export default {
             },
             {
               english: 'Master-Slave',
-              italian: 'Master-slave',
+              italian: 'master-slave / primario-secondario (replica)',
               pronunciation: '/ˈmɑːstər sleɪv/',
               phonetic: 'MAS-ter SLEIV',
               example: 'Master-slave is the legacy term. = Master-slave è il termine tradizionale.',
@@ -6369,7 +6369,7 @@ export default {
             },
             {
               english: 'Switchover',
-              italian: 'Switchover',
+              italian: 'switchover / cambio pianificato di primario',
               pronunciation: '/ˈswɪtʃoʊvər/',
               phonetic: 'SUIC-o-ver',
               example: 'Switchover is a planned failover. = Switchover è un failover pianificato.',
@@ -6378,7 +6378,7 @@ export default {
             },
             {
               english: 'Split Brain',
-              italian: 'Split brain',
+              italian: 'split brain / cluster diviso in due primari',
               pronunciation: '/splɪt breɪn/',
               phonetic: 'SPLIT-BREIN',
               example:
@@ -6408,7 +6408,7 @@ export default {
             },
             {
               english: 'Quorum',
-              italian: 'Quorum',
+              italian: 'quorum / soglia minima di nodi',
               pronunciation: '/ˈkwɔːrəm/',
               phonetic: 'KUO-rum',
               example: 'A quorum prevents split brain. = Un quorum previene split brain.',
@@ -6445,7 +6445,7 @@ export default {
             },
             {
               english: 'Hot Standby',
-              italian: 'Hot standby',
+              italian: 'hot standby / replica leggibile',
               pronunciation: '/hɒt ˈstændbaɪ/',
               phonetic: 'HOT-STAND-bai',
               example:
@@ -6456,7 +6456,7 @@ export default {
             },
             {
               english: 'Warm Standby',
-              italian: 'Warm standby',
+              italian: 'warm standby / replica non leggibile',
               pronunciation: '/wɔːrm ˈstændbaɪ/',
               phonetic: 'UORM-STAND-bai',
               example:
@@ -6466,7 +6466,7 @@ export default {
             },
             {
               english: 'Cold Standby',
-              italian: 'Cold standby',
+              italian: 'cold standby / replica spenta',
               pronunciation: '/koʊld ˈstændbaɪ/',
               phonetic: 'KOLD-STAND-bai',
               example: 'A cold standby requires startup. = Un cold standby richiede avvio.',
@@ -6516,7 +6516,7 @@ export default {
             },
             {
               english: 'Multi-Master',
-              italian: 'Multi-master',
+              italian: 'multi-master / scrittura su più nodi',
               pronunciation: '/ˌmʌlti ˈmɑːstər/',
               phonetic: 'MAL-ti MAS-ter',
               example:
@@ -6527,7 +6527,7 @@ export default {
             },
             {
               english: 'Galera Cluster',
-              italian: 'Galera Cluster',
+              italian: 'Galera Cluster (cluster MySQL multi-master)',
               pronunciation: '/ɡəˈlerə ˈklʌstər/',
               phonetic: 'ga-LE-ra KLAS-ter',
               example:
@@ -6545,7 +6545,7 @@ export default {
           items: [
             {
               english: 'Patroni',
-              italian: 'Patroni',
+              italian: 'Patroni (gestore HA per PostgreSQL)',
               pronunciation: '/pəˈtroʊni/',
               phonetic: 'pa-TRO-ni',
               example: 'Patroni manages PostgreSQL HA. = Patroni gestisce HA di PostgreSQL.',
@@ -6556,7 +6556,7 @@ export default {
             },
             {
               english: 'pg_basebackup',
-              italian: 'pg_basebackup',
+              italian: 'pg_basebackup / backup fisico PostgreSQL',
               pronunciation: '/piː dʒiː ˈbeɪsˌbækʌp/',
               phonetic: 'PI-GI-BEIS-bak-ap',
               example: 'pg_basebackup creates a base backup. = pg_basebackup crea un backup base.',
@@ -6567,7 +6567,7 @@ export default {
             },
             {
               english: 'PgBouncer',
-              italian: 'PgBouncer',
+              italian: 'PgBouncer (connection pooler PostgreSQL)',
               pronunciation: '/piː dʒiː ˈbaʊnsər/',
               phonetic: 'PI-GI-BAUN-ser',
               example:
@@ -6578,7 +6578,7 @@ export default {
             },
             {
               english: 'Orchestrator',
-              italian: 'Orchestrator',
+              italian: 'Orchestrator (HA manager MySQL)',
               pronunciation: '/ˈɔːrkɪstreɪtər/',
               phonetic: 'OR-kes-trei-ter',
               example:
@@ -6589,7 +6589,7 @@ export default {
             },
             {
               english: 'MaxScale',
-              italian: 'MaxScale',
+              italian: 'MaxScale (proxy MariaDB)',
               pronunciation: '/mæks skeɪl/',
               phonetic: 'MAKS-SKEIL',
               example: 'MaxScale is a MariaDB proxy. = MaxScale è un proxy per MariaDB.',
@@ -6599,7 +6599,7 @@ export default {
             },
             {
               english: 'Vitess',
-              italian: 'Vitess',
+              italian: 'Vitess (sharding MySQL per scala)',
               pronunciation: '/ˈvaɪtes/',
               phonetic: 'VAI-tes',
               example: 'Vitess scales MySQL horizontally. = Vitess scala MySQL orizzontalmente.',
@@ -6610,7 +6610,7 @@ export default {
             },
             {
               english: 'Citus',
-              italian: 'Citus',
+              italian: 'Citus (estensione PostgreSQL distribuita)',
               pronunciation: '/ˈsaɪtəs/',
               phonetic: 'SAI-tus',
               example:
@@ -6621,7 +6621,7 @@ export default {
             },
             {
               english: 'pglogical',
-              italian: 'pglogical',
+              italian: 'pglogical (replica logica PostgreSQL)',
               pronunciation: '/piː dʒiː ˈlɒdʒɪkl/',
               phonetic: 'PI-GI-LO-gi-kal',
               example:
@@ -6632,7 +6632,7 @@ export default {
             },
             {
               english: 'Slony',
-              italian: 'Slony',
+              italian: 'Slony (replica master-slave PostgreSQL)',
               pronunciation: '/ˈsloʊni/',
               phonetic: 'SLO-ni',
               example:
@@ -6643,7 +6643,7 @@ export default {
             },
             {
               english: 'Repmgr',
-              italian: 'Repmgr',
+              italian: 'repmgr (failover manager PostgreSQL)',
               pronunciation: '/rep ˈmænɪdʒər/',
               phonetic: 'REP-MA-ni-ger',
               example:
@@ -6670,7 +6670,7 @@ export default {
           items: [
             {
               english: 'Sharding',
-              italian: 'Sharding',
+              italian: 'sharding / partizionamento orizzontale',
               pronunciation: '/ˈʃɑːrdɪŋ/',
               phonetic: 'SCIAR-ding',
               example:
@@ -6814,7 +6814,7 @@ export default {
             },
             {
               english: 'Resharding',
-              italian: 'Resharding',
+              italian: 'resharding / ridistribuzione degli shard',
               pronunciation: '/riːˈʃɑːrdɪŋ/',
               phonetic: 'ri-SCIAR-ding',
               example: 'Resharding redistributes data. = Il resharding ridistribuisce i dati.',
@@ -6865,7 +6865,7 @@ export default {
             },
             {
               english: 'Scatter-Gather',
-              italian: 'Scatter-gather',
+              italian: 'scatter-gather / disperdi e raccogli risultati',
               pronunciation: '/ˈskætər ˈɡæðər/',
               phonetic: 'SKA-ter GA-der',
               example: 'Scatter-gather queries every shard. = Scatter-gather interroga ogni shard.',
@@ -6874,7 +6874,7 @@ export default {
             },
             {
               english: 'Hotspot',
-              italian: 'Hotspot',
+              italian: 'hotspot / punto di sovraccarico',
               pronunciation: '/ˈhɒtspɒt/',
               phonetic: 'HOT-spot',
               example:
@@ -6936,7 +6936,7 @@ export default {
             },
             {
               english: 'Partition Pruning',
-              italian: 'Partition pruning',
+              italian: 'partition pruning / esclusione partizioni inutili',
               pronunciation: '/pɑːrˈtɪʃən ˈpruːnɪŋ/',
               phonetic: 'par-TI-scion PRU-ning',
               example:
@@ -7019,7 +7019,7 @@ export default {
             },
             {
               english: 'CockroachDB',
-              italian: 'CockroachDB',
+              italian: 'CockroachDB (database SQL distribuito)',
               pronunciation: '/ˈkɒkroʊtʃ diː biː/',
               phonetic: 'KO-kroch DI-BI',
               example:
@@ -7030,7 +7030,7 @@ export default {
             },
             {
               english: 'YugabyteDB',
-              italian: 'YugabyteDB',
+              italian: 'YugabyteDB (database SQL distribuito)',
               pronunciation: '/juːˈɡæbaɪt diː biː/',
               phonetic: 'iu-GA-bait DI-BI',
               example:
@@ -7041,7 +7041,7 @@ export default {
             },
             {
               english: 'Spanner',
-              italian: 'Spanner',
+              italian: 'Cloud Spanner (database globale Google)',
               pronunciation: '/ˈspænər/',
               phonetic: 'SPAN-ner',
               example: 'Google Spanner provides global SQL. = Google Spanner fornisce SQL globale.',
@@ -7061,7 +7061,7 @@ export default {
             },
             {
               english: 'Paxos',
-              italian: 'Paxos',
+              italian: 'Paxos (algoritmo di consenso)',
               pronunciation: '/ˈpæksɒs/',
               phonetic: 'PAK-sos',
               example:
@@ -7071,7 +7071,7 @@ export default {
             },
             {
               english: 'TrueTime',
-              italian: 'TrueTime',
+              italian: 'TrueTime / API tempo distribuito Google',
               pronunciation: '/truː taɪm/',
               phonetic: 'TRU-TAIM',
               example:
@@ -7128,7 +7128,7 @@ export default {
           items: [
             {
               english: 'JSONB',
-              italian: 'JSONB',
+              italian: 'JSONB / JSON binario PostgreSQL',
               pronunciation: '/ˈdʒeɪsən biː/',
               phonetic: 'GIEI-son-BI',
               example:
@@ -7151,7 +7151,7 @@ export default {
             },
             {
               english: 'HSTORE',
-              italian: 'HSTORE',
+              italian: 'HSTORE / mappa chiave-valore PostgreSQL',
               pronunciation: '/ˈeɪtʃ stɔːr/',
               phonetic: 'EICH-STOR',
               example: 'HSTORE stores key-value pairs. = HSTORE memorizza coppie chiave-valore.',
@@ -7173,7 +7173,7 @@ export default {
             },
             {
               english: 'PostGIS',
-              italian: 'PostGIS',
+              italian: 'PostGIS (estensione geospaziale PostgreSQL)',
               pronunciation: '/poʊst dʒɪs/',
               phonetic: 'POST-GIS',
               example:
@@ -7196,7 +7196,7 @@ export default {
             },
             {
               english: 'Foreign Data Wrapper',
-              italian: 'Foreign Data Wrapper',
+              italian: 'foreign data wrapper / wrapper di dati esterni',
               pronunciation: '/ˈfɒrən ˈdeɪtə ˈræpər/',
               phonetic: 'FO-rin DEI-ta RA-per',
               example:
@@ -7208,7 +7208,7 @@ export default {
             },
             {
               english: 'Listen/Notify',
-              italian: 'Listen/Notify',
+              italian: 'LISTEN/NOTIFY / pub-sub PostgreSQL',
               pronunciation: '/ˈlɪsən ˈnoʊtɪfaɪ/',
               phonetic: 'LIS-en NO-ti-fai',
               example: 'LISTEN/NOTIFY enables pub/sub. = LISTEN/NOTIFY abilita pub/sub.',
@@ -7230,7 +7230,7 @@ export default {
             },
             {
               english: 'Tablespace',
-              italian: 'Tablespace',
+              italian: 'tablespace / spazio fisico tabelle',
               pronunciation: '/ˈteɪblspeɪs/',
               phonetic: 'TEI-bol-speis',
               example:
@@ -7249,7 +7249,7 @@ export default {
           items: [
             {
               english: 'InnoDB',
-              italian: 'InnoDB',
+              italian: 'InnoDB (motore di archiviazione transazionale MySQL)',
               pronunciation: '/ˈɪnoʊ diː biː/',
               phonetic: 'IN-no-DI-BI',
               example: 'InnoDB is the default MySQL engine. = InnoDB è il motore MySQL di default.',
@@ -7260,7 +7260,7 @@ export default {
             },
             {
               english: 'MyISAM',
-              italian: 'MyISAM',
+              italian: 'MyISAM (motore archiviazione MySQL legacy)',
               pronunciation: '/ˌmaɪ ˌaɪˈsæm/',
               phonetic: 'MAI-AI-SAM',
               example: 'MyISAM is the legacy MySQL engine. = MyISAM è il vecchio motore MySQL.',
@@ -7282,7 +7282,7 @@ export default {
             },
             {
               english: 'MariaDB',
-              italian: 'MariaDB',
+              italian: 'MariaDB (fork community di MySQL)',
               pronunciation: '/məˈriːə diː biː/',
               phonetic: 'ma-RI-a-DI-BI',
               example:
@@ -7293,7 +7293,7 @@ export default {
             },
             {
               english: 'Binary Log',
-              italian: 'Binary log',
+              italian: 'binary log / log binario delle modifiche',
               pronunciation: '/ˈbaɪnəri lɔːɡ/',
               phonetic: 'BAI-na-ri LOG',
               example:
@@ -7306,7 +7306,7 @@ export default {
             },
             {
               english: 'GTID',
-              italian: 'GTID',
+              italian: 'GTID (Global Transaction ID)',
               pronunciation: '/dʒiː tiː aɪ ˈdiː/',
               phonetic: 'GI-TI-AI-DI',
               example: 'GTIDs simplify failover. = I GTID semplificano il failover.',
@@ -7318,7 +7318,7 @@ export default {
             },
             {
               english: 'Group Replication',
-              italian: 'Group replication',
+              italian: 'Group Replication / replica di gruppo MySQL',
               pronunciation: '/ɡruːp ˌreplɪˈkeɪʃən/',
               phonetic: 'GRUP re-pli-KEI-scion',
               example:
@@ -7329,7 +7329,7 @@ export default {
             },
             {
               english: 'Performance Schema',
-              italian: 'Performance Schema',
+              italian: 'Performance Schema / schema metriche MySQL',
               pronunciation: '/pərˈfɔːrməns ˈskiːmə/',
               phonetic: 'per-FOR-mans SKII-ma',
               example:
@@ -7340,7 +7340,7 @@ export default {
             },
             {
               english: 'Information Schema',
-              italian: 'Information Schema',
+              italian: 'INFORMATION_SCHEMA / vista metadati standard SQL',
               pronunciation: '/ˌɪnfərˈmeɪʃən ˈskiːmə/',
               phonetic: 'in-for-MEI-scion SKII-ma',
               example: 'INFORMATION_SCHEMA holds metadata. = INFORMATION_SCHEMA contiene metadati.',
@@ -7351,7 +7351,7 @@ export default {
             },
             {
               english: 'mysqlbinlog',
-              italian: 'mysqlbinlog',
+              italian: 'mysqlbinlog / utility di lettura binlog',
               pronunciation: '/ˌmaɪ ˌes kjuː el ˈbaɪnlɒɡ/',
               phonetic: 'MAI-ES-KIU-EL-BAIN-log',
               example: 'mysqlbinlog reads binary logs. = mysqlbinlog legge i binary log.',
@@ -7369,7 +7369,7 @@ export default {
           items: [
             {
               english: 'Oracle Database',
-              italian: 'Oracle Database',
+              italian: 'Oracle Database (RDBMS commerciale)',
               pronunciation: '/ˈɒrəkl ˈdeɪtəbeɪs/',
               phonetic: 'O-ra-kol DEI-ta-beis',
               example: 'Oracle is enterprise-grade RDBMS. = Oracle è un RDBMS enterprise.',
@@ -7380,7 +7380,7 @@ export default {
             },
             {
               english: 'SQL Server',
-              italian: 'SQL Server',
+              italian: 'SQL Server (RDBMS Microsoft)',
               pronunciation: '/ˌes kjuː ˈel ˈsɜːrvər/',
               phonetic: 'ES-KIU-EL SER-ver',
               example: "SQL Server is Microsoft's RDBMS. = SQL Server è il RDBMS di Microsoft.",
@@ -7390,7 +7390,7 @@ export default {
             },
             {
               english: 'T-SQL',
-              italian: 'T-SQL',
+              italian: 'T-SQL / Transact-SQL (dialetto Microsoft)',
               pronunciation: '/tiː ˌes kjuː ˈel/',
               phonetic: 'TI-ES-KIU-EL',
               example: 'T-SQL is the SQL Server dialect. = T-SQL è il dialetto SQL Server.',
@@ -7401,7 +7401,7 @@ export default {
             },
             {
               english: 'sqlcmd',
-              italian: 'sqlcmd',
+              italian: 'sqlcmd (CLI SQL Server)',
               pronunciation: '/ˌes kjuː el siː em ˈdiː/',
               phonetic: 'ES-KIU-EL-SI-EM-DI',
               example: 'sqlcmd is the SQL Server CLI. = sqlcmd è il CLI di SQL Server.',
@@ -7444,7 +7444,7 @@ export default {
             },
             {
               english: 'Always On',
-              italian: 'Always On',
+              italian: 'Always On / alta disponibilità SQL Server',
               pronunciation: '/ˈɔːlweɪz ɒn/',
               phonetic: 'OL-ueiz ON',
               example: 'Always On provides SQL Server HA. = Always On fornisce HA per SQL Server.',
@@ -7466,7 +7466,7 @@ export default {
             },
             {
               english: 'Data Guard',
-              italian: 'Data Guard',
+              italian: 'Data Guard / disaster recovery Oracle',
               pronunciation: '/ˈdeɪtə ɡɑːrd/',
               phonetic: 'DEI-ta GARD',
               example: 'Data Guard provides Oracle DR. = Data Guard fornisce DR per Oracle.',
@@ -7483,7 +7483,7 @@ export default {
           items: [
             {
               english: 'ANSI SQL',
-              italian: 'ANSI SQL',
+              italian: 'ANSI SQL / standard SQL',
               pronunciation: '/ˈænsi ˌes kjuː ˈel/',
               phonetic: 'AN-si-ES-KIU-EL',
               example: 'ANSI SQL is the standard. = ANSI SQL è lo standard.',
@@ -7493,7 +7493,7 @@ export default {
             },
             {
               english: 'SQL:2016',
-              italian: 'SQL:2016',
+              italian: 'SQL:2016 / standard SQL del 2016',
               pronunciation: '/ˌes kjuː ˈel tuː ˈθaʊzənd ˈsɪkstiːn/',
               phonetic: 'ES-KIU-EL-2016',
               example: 'SQL:2016 added JSON features. = SQL:2016 ha aggiunto funzionalità JSON.',
@@ -7521,7 +7521,7 @@ export default {
             },
             {
               english: 'Vendor Lock-in',
-              italian: 'Vendor lock-in',
+              italian: 'vendor lock-in / blocco da fornitore',
               pronunciation: '/ˈvendər lɒk ɪn/',
               phonetic: 'VEN-dor LOK-IN',
               example:
@@ -7531,7 +7531,7 @@ export default {
             },
             {
               english: 'OLTP',
-              italian: 'OLTP',
+              italian: 'OLTP / elaborazione transazionale online',
               pronunciation: '/ˌoʊ el tiː ˈpiː/',
               phonetic: 'O-EL-TI-PI',
               example:
@@ -7542,7 +7542,7 @@ export default {
             },
             {
               english: 'OLAP',
-              italian: 'OLAP',
+              italian: 'OLAP / elaborazione analitica online',
               pronunciation: '/ˌoʊ el ˈæp/',
               phonetic: 'O-LAP',
               example: 'OLAP handles analytical queries. = OLAP gestisce query analitiche.',
@@ -7552,7 +7552,7 @@ export default {
             },
             {
               english: 'HTAP',
-              italian: 'HTAP',
+              italian: 'HTAP / elaborazione ibrida transazionale e analitica',
               pronunciation: '/ˌeɪtʃ tiː eɪ ˈpiː/',
               phonetic: 'EICH-TI-EI-PI',
               example: 'HTAP combines OLTP and OLAP. = HTAP combina OLTP e OLAP.',
@@ -7825,7 +7825,7 @@ export default {
           items: [
             {
               english: 'Data Warehouse',
-              italian: 'Data warehouse',
+              italian: 'data warehouse / magazzino dati analitico',
               pronunciation: '/ˈdeɪtə ˈwerhaʊs/',
               phonetic: 'DEI-ta UER-haus',
               example:
@@ -7836,7 +7836,7 @@ export default {
             },
             {
               english: 'Data Mart',
-              italian: 'Data mart',
+              italian: 'data mart / sottoinsieme tematico del DWH',
               pronunciation: '/ˈdeɪtə mɑːrt/',
               phonetic: 'DEI-ta MART',
               example:
@@ -7847,7 +7847,7 @@ export default {
             },
             {
               english: 'Data Lake',
-              italian: 'Data lake',
+              italian: 'data lake / lago dati grezzi',
               pronunciation: '/ˈdeɪtə leɪk/',
               phonetic: 'DEI-ta LEIK',
               example: 'A data lake stores raw data. = Un data lake memorizza dati grezzi.',
@@ -7857,7 +7857,7 @@ export default {
             },
             {
               english: 'Data Lakehouse',
-              italian: 'Data lakehouse',
+              italian: 'data lakehouse / ibrido lake + warehouse',
               pronunciation: '/ˈdeɪtə leɪkhaʊs/',
               phonetic: 'DEI-ta LEIK-haus',
               example:
@@ -7890,7 +7890,7 @@ export default {
             },
             {
               english: 'Data Vault',
-              italian: 'Data Vault',
+              italian: 'data vault / metodologia modellazione DWH',
               pronunciation: '/ˈdeɪtə vɔːlt/',
               phonetic: 'DEI-ta VOLT',
               example:
@@ -8012,7 +8012,7 @@ export default {
             },
             {
               english: 'Closure Table',
-              italian: 'Closure table',
+              italian: 'closure table / tabella di chiusura per gerarchie',
               pronunciation: '/ˈkloʊʒər ˈteɪbl/',
               phonetic: 'KLO-jer TEI-bol',
               example:
@@ -8059,7 +8059,7 @@ export default {
           items: [
             {
               english: 'SQL Injection',
-              italian: 'SQL Injection',
+              italian: 'SQL injection / iniezione di codice SQL',
               pronunciation: '/ˌes kjuː el ɪnˈdʒekʃən/',
               phonetic: 'ES-KIU-EL in-GEK-scion',
               example: 'SQL injection attacks via input. = SQL injection attacca tramite input.',
@@ -8082,7 +8082,7 @@ export default {
             },
             {
               english: 'Prepared Statement',
-              italian: 'Prepared statement',
+              italian: 'prepared statement / istruzione preparata',
               pronunciation: '/prɪˈpeərd ˈsteɪtmənt/',
               phonetic: 'pri-PERD STEIT-ment',
               example:
@@ -8123,7 +8123,7 @@ export default {
             },
             {
               english: 'Allowlist',
-              italian: 'Allowlist',
+              italian: 'allowlist / lista bianca di consentiti',
               pronunciation: '/əˈlaʊlɪst/',
               phonetic: 'a-LAU-list',
               example: "Use an allowlist for table names. = Usa un'allowlist per nomi di tabella.",
@@ -8133,7 +8133,7 @@ export default {
             },
             {
               english: 'Blind SQL Injection',
-              italian: 'Blind SQL Injection',
+              italian: 'blind SQL injection / iniezione SQL alla cieca',
               pronunciation: '/blaɪnd ˌes kjuː el ɪnˈdʒekʃən/',
               phonetic: 'BLAIND ES-KIU-EL in-GEK-scion',
               example:
@@ -8154,7 +8154,7 @@ export default {
             },
             {
               english: 'sqlmap',
-              italian: 'sqlmap',
+              italian: 'sqlmap / strumento automatico di SQL injection',
               pronunciation: '/ˌes kjuː el mæp/',
               phonetic: 'ES-KIU-EL-MAP',
               example:
@@ -8216,7 +8216,7 @@ export default {
             },
             {
               english: 'pgcrypto',
-              italian: 'pgcrypto',
+              italian: 'pgcrypto / estensione crittografica PostgreSQL',
               pronunciation: '/piː dʒiː ˈkrɪptoʊ/',
               phonetic: 'PI-GI-KRIP-to',
               example:
@@ -8228,7 +8228,7 @@ export default {
             },
             {
               english: 'Hashing',
-              italian: 'Hashing',
+              italian: "hashing / calcolo dell'impronta digitale",
               pronunciation: '/ˈhæʃɪŋ/',
               phonetic: 'HA-shing',
               example:
@@ -8290,7 +8290,7 @@ export default {
           items: [
             {
               english: 'Auditing',
-              italian: 'Auditing',
+              italian: 'auditing / registrazione delle azioni',
               pronunciation: '/ˈɔːdɪtɪŋ/',
               phonetic: 'O-di-ting',
               example:
@@ -8310,7 +8310,7 @@ export default {
             },
             {
               english: 'pgaudit',
-              italian: 'pgaudit',
+              italian: 'pgaudit / estensione di audit PostgreSQL',
               pronunciation: '/piː dʒiː ˈɔːdɪt/',
               phonetic: 'PI-GI-O-dit',
               example:
@@ -8331,7 +8331,7 @@ export default {
             },
             {
               english: 'GDPR',
-              italian: 'GDPR',
+              italian: 'GDPR (Regolamento UE protezione dati)',
               pronunciation: '/ˌdʒiː diː piː ˈɑːr/',
               phonetic: 'GI-DI-PI-AR',
               example: 'GDPR mandates data protection. = Il GDPR impone la protezione dei dati.',
@@ -8442,7 +8442,7 @@ export default {
             },
             {
               english: 'Privilege Escalation',
-              italian: 'Privilege escalation',
+              italian: 'privilege escalation / scalata di privilegi',
               pronunciation: '/ˈprɪvəlɪdʒ ˌeskəˈleɪʃən/',
               phonetic: 'PRI-ve-lig es-ka-LEI-scion',
               example:
@@ -8452,7 +8452,7 @@ export default {
             },
             {
               english: 'SECURITY DEFINER',
-              italian: 'SECURITY DEFINER',
+              italian: 'SECURITY DEFINER / funzione che gira come il creatore',
               pronunciation: '/sɪˈkjʊərɪti dɪˈfaɪnər/',
               phonetic: 'si-KIU-ri-ti di-FAI-ner',
               example:
@@ -8536,7 +8536,7 @@ export default {
             },
             {
               english: 'Aurora',
-              italian: 'Aurora',
+              italian: 'Aurora (database AWS compatibile MySQL/Postgres)',
               pronunciation: '/əˈrɔːrə/',
               phonetic: 'a-RO-ra',
               example: "Aurora is AWS's cloud-native DB. = Aurora è il DB cloud-native di AWS.",
@@ -8547,7 +8547,7 @@ export default {
             },
             {
               english: 'DynamoDB',
-              italian: 'DynamoDB',
+              italian: 'DynamoDB (database NoSQL chiave-valore AWS)',
               pronunciation: '/daɪˈnæmoʊ diː biː/',
               phonetic: 'dai-NA-mo-DI-BI',
               example:
@@ -8558,7 +8558,7 @@ export default {
             },
             {
               english: 'Redshift',
-              italian: 'Redshift',
+              italian: 'Redshift (data warehouse AWS)',
               pronunciation: '/ˈredʃɪft/',
               phonetic: 'RED-scift',
               example: "Redshift is AWS's data warehouse. = Redshift è il data warehouse di AWS.",
@@ -8568,7 +8568,7 @@ export default {
             },
             {
               english: 'ElastiCache',
-              italian: 'ElastiCache',
+              italian: 'ElastiCache (cache gestita AWS)',
               pronunciation: '/ɪˈlæstɪ kæʃ/',
               phonetic: 'e-LAS-ti-KASH',
               example:
@@ -8579,7 +8579,7 @@ export default {
             },
             {
               english: 'Aurora Serverless',
-              italian: 'Aurora Serverless',
+              italian: 'Aurora Serverless (Aurora a scaling automatico)',
               pronunciation: '/əˈrɔːrə ˈsɜːrvərles/',
               phonetic: 'a-RO-ra SER-ver-les',
               example:
@@ -8600,7 +8600,7 @@ export default {
             },
             {
               english: 'Multi-AZ',
-              italian: 'Multi-AZ',
+              italian: 'multi-AZ / replica su più zone di disponibilità',
               pronunciation: '/ˈmʌlti eɪ zed/',
               phonetic: 'MAL-ti EI-ZED',
               example:
@@ -8621,7 +8621,7 @@ export default {
             },
             {
               english: 'Global Tables',
-              italian: 'Global Tables',
+              italian: 'Global Tables / tabelle DynamoDB multi-regione',
               pronunciation: '/ˈɡloʊbl ˈteɪblz/',
               phonetic: 'GLO-bal TEI-bolz',
               example:
@@ -8639,7 +8639,7 @@ export default {
           items: [
             {
               english: 'Azure SQL Database',
-              italian: 'Azure SQL Database',
+              italian: 'Azure SQL Database (RDBMS gestito Azure)',
               pronunciation: '/ˈæʒər ˌes kjuː ˈel/',
               phonetic: 'A-jer-ES-KIU-EL',
               example: 'Azure SQL is managed SQL Server. = Azure SQL è SQL Server gestito.',
@@ -8649,7 +8649,7 @@ export default {
             },
             {
               english: 'Cosmos DB',
-              italian: 'Cosmos DB',
+              italian: 'Cosmos DB (database multi-modello Azure)',
               pronunciation: '/ˈkɒzmɒs diː biː/',
               phonetic: 'KOZ-mos-DI-BI',
               example:
@@ -8661,7 +8661,7 @@ export default {
             },
             {
               english: 'Cloud Spanner',
-              italian: 'Cloud Spanner',
+              italian: 'Cloud Spanner (database SQL globale Google)',
               pronunciation: '/klaʊd ˈspænər/',
               phonetic: 'KLAUD SPAN-ner',
               example:
@@ -8672,7 +8672,7 @@ export default {
             },
             {
               english: 'Cloud SQL',
-              italian: 'Cloud SQL',
+              italian: 'Cloud SQL (RDBMS gestito Google)',
               pronunciation: '/klaʊd ˌes kjuː ˈel/',
               phonetic: 'KLAUD-ES-KIU-EL',
               example:
@@ -8683,7 +8683,7 @@ export default {
             },
             {
               english: 'BigQuery',
-              italian: 'BigQuery',
+              italian: 'BigQuery (data warehouse Google)',
               pronunciation: '/bɪɡ ˈkwɪəri/',
               phonetic: 'BIG-KUI-ri',
               example:
@@ -8694,7 +8694,7 @@ export default {
             },
             {
               english: 'Bigtable',
-              italian: 'Bigtable',
+              italian: 'Bigtable (database wide-column Google)',
               pronunciation: '/bɪɡˈteɪbl/',
               phonetic: 'BIG-TEI-bol',
               example:
@@ -8705,7 +8705,7 @@ export default {
             },
             {
               english: 'Firestore',
-              italian: 'Firestore',
+              italian: 'Firestore (database documentale serverless Google)',
               pronunciation: '/ˈfaɪərstɔːr/',
               phonetic: 'FAI-er-STOR',
               example:
@@ -8716,7 +8716,7 @@ export default {
             },
             {
               english: 'Memorystore',
-              italian: 'Memorystore',
+              italian: 'Memorystore (Redis/Memcached gestito Google)',
               pronunciation: '/ˈmeməri stɔːr/',
               phonetic: 'ME-mo-ri-STOR',
               example: 'Memorystore is managed Redis on GCP. = Memorystore è Redis gestito su GCP.',
@@ -8726,7 +8726,7 @@ export default {
             },
             {
               english: 'Azure Database for PostgreSQL',
-              italian: 'Azure Database for PostgreSQL',
+              italian: 'Azure Database for PostgreSQL (servizio Azure)',
               pronunciation: '/ˈæʒər ˈdeɪtəbeɪs/',
               phonetic: 'A-jer DEI-ta-beis',
               example: 'Azure offers managed PostgreSQL. = Azure offre PostgreSQL gestito.',
@@ -8736,7 +8736,7 @@ export default {
             },
             {
               english: 'Hyperscale',
-              italian: 'Hyperscale',
+              italian: 'Hyperscale / variante Azure ad alta scalabilità',
               pronunciation: '/ˈhaɪpərˌskeɪl/',
               phonetic: 'HAI-per-SKEIL',
               example: 'Azure Hyperscale uses Citus. = Azure Hyperscale usa Citus.',
@@ -8774,7 +8774,7 @@ export default {
             },
             {
               english: 'Cold Start',
-              italian: 'Cold start',
+              italian: 'cold start / partenza a freddo',
               pronunciation: '/koʊld stɑːrt/',
               phonetic: 'KOLD-START',
               example:
@@ -8784,7 +8784,7 @@ export default {
             },
             {
               english: 'Neon',
-              italian: 'Neon',
+              italian: 'Neon (PostgreSQL serverless cloud)',
               pronunciation: '/ˈniːɒn/',
               phonetic: 'NI-on',
               example: 'Neon is serverless PostgreSQL. = Neon è PostgreSQL serverless.',
@@ -8794,7 +8794,7 @@ export default {
             },
             {
               english: 'PlanetScale',
-              italian: 'PlanetScale',
+              italian: 'PlanetScale (MySQL serverless basato su Vitess)',
               pronunciation: '/ˈplænɪt skeɪl/',
               phonetic: 'PLA-net-SKEIL',
               example: 'PlanetScale is serverless MySQL. = PlanetScale è MySQL serverless.',
@@ -8846,7 +8846,7 @@ export default {
             },
             {
               english: 'On-Demand',
-              italian: 'On-demand',
+              italian: 'on-demand / pagamento a richiesta',
               pronunciation: '/ɒn dɪˈmænd/',
               phonetic: 'ON-di-MAND',
               example:
@@ -8872,7 +8872,7 @@ export default {
             },
             {
               english: 'Snapshot',
-              italian: 'Snapshot',
+              italian: 'snapshot / istantanea di stato',
               pronunciation: '/ˈsnæpʃɒt/',
               phonetic: 'SNAP-scot',
               example: 'Take snapshots before changes. = Fai snapshot prima dei cambiamenti.',
@@ -8953,7 +8953,7 @@ export default {
             },
             {
               english: 'Performance Insights',
-              italian: 'Performance Insights',
+              italian: 'Performance Insights / strumento monitoring AWS',
               pronunciation: '/pərˈfɔːrməns ˈɪnsaɪts/',
               phonetic: 'per-FOR-mans IN-saits',
               example: 'Performance Insights monitors RDS. = Performance Insights monitora RDS.',
@@ -9022,7 +9022,7 @@ export default {
             },
             {
               english: 'Property Graph',
-              italian: 'Property graph',
+              italian: 'property graph / grafo con proprietà',
               pronunciation: '/ˈprɒpərti ɡræf/',
               phonetic: 'PRO-per-ti GRAF',
               example:
@@ -9032,7 +9032,7 @@ export default {
             },
             {
               english: 'RDF',
-              italian: 'RDF',
+              italian: 'RDF (modello di grafo a triple)',
               pronunciation: '/ɑːr diː ˈef/',
               phonetic: 'AR-DI-EF',
               example: 'RDF represents graphs as triples. = RDF rappresenta grafi come triple.',
@@ -9090,7 +9090,7 @@ export default {
           items: [
             {
               english: 'Cypher',
-              italian: 'Cypher',
+              italian: 'Cypher (linguaggio query Neo4j)',
               pronunciation: '/ˈsaɪfər/',
               phonetic: 'SAI-fer',
               example:
@@ -9146,7 +9146,7 @@ export default {
             },
             {
               english: 'Pattern',
-              italian: 'Pattern',
+              italian: 'pattern / schema',
               pronunciation: '/ˈpætərn/',
               phonetic: 'PA-tern',
               example:
@@ -9191,7 +9191,7 @@ export default {
             },
             {
               english: 'APOC',
-              italian: 'APOC',
+              italian: 'APOC (libreria di procedure Neo4j)',
               pronunciation: '/ˈeɪ pɒk/',
               phonetic: 'EI-POK',
               example: 'APOC adds Neo4j procedures. = APOC aggiunge procedure Neo4j.',
@@ -9209,7 +9209,7 @@ export default {
           items: [
             {
               english: 'PageRank',
-              italian: 'PageRank',
+              italian: 'PageRank (algoritmo Google di ranking)',
               pronunciation: '/ˈpeɪdʒræŋk/',
               phonetic: 'PEIG-rank',
               example:
@@ -9261,7 +9261,7 @@ export default {
             },
             {
               english: 'Dijkstra',
-              italian: 'Dijkstra',
+              italian: 'Dijkstra (algoritmo cammini minimi)',
               pronunciation: '/ˈdaɪkstrə/',
               phonetic: 'DAIKS-tra',
               example:
@@ -9300,7 +9300,7 @@ export default {
             },
             {
               english: 'Knowledge Graph',
-              italian: 'Knowledge graph',
+              italian: 'knowledge graph / grafo della conoscenza',
               pronunciation: '/ˈnɒlɪdʒ ɡræf/',
               phonetic: 'NO-lig GRAF',
               example: 'Knowledge graphs connect facts. = I knowledge graph connettono fatti.',
@@ -9317,7 +9317,7 @@ export default {
           items: [
             {
               english: 'Neo4j',
-              italian: 'Neo4j',
+              italian: 'Neo4j (database a grafo)',
               pronunciation: '/ˈniːoʊ fɔːr ˈdʒeɪ/',
               phonetic: 'NIO-FOR-GEI',
               example: 'Neo4j is the leading graph DB. = Neo4j è il principale DB a grafo.',
@@ -9328,7 +9328,7 @@ export default {
             },
             {
               english: 'ArangoDB',
-              italian: 'ArangoDB',
+              italian: 'ArangoDB (database multi-modello)',
               pronunciation: '/əˈræŋɡoʊ diː biː/',
               phonetic: 'a-RAN-go-DI-BI',
               example: 'ArangoDB is multi-model with graphs. = ArangoDB è multi-modello con grafi.',
@@ -9338,7 +9338,7 @@ export default {
             },
             {
               english: 'JanusGraph',
-              italian: 'JanusGraph',
+              italian: 'JanusGraph (database a grafo distribuito)',
               pronunciation: '/ˈdʒeɪnəs ɡræf/',
               phonetic: 'GIEI-nus GRAF',
               example:
@@ -9349,7 +9349,7 @@ export default {
             },
             {
               english: 'Amazon Neptune',
-              italian: 'Amazon Neptune',
+              italian: 'Amazon Neptune (database a grafo AWS)',
               pronunciation: '/ˈæməzən ˈneptjuːn/',
               phonetic: 'A-ma-zon NEP-tiun',
               example:
@@ -9360,7 +9360,7 @@ export default {
             },
             {
               english: 'Gremlin',
-              italian: 'Gremlin',
+              italian: 'Gremlin (linguaggio query grafi)',
               pronunciation: '/ˈɡremlɪn/',
               phonetic: 'GREM-lin',
               example:
@@ -9372,7 +9372,7 @@ export default {
             },
             {
               english: 'TinkerPop',
-              italian: 'TinkerPop',
+              italian: 'TinkerPop (framework grafi Apache)',
               pronunciation: '/ˈtɪŋkərpɒp/',
               phonetic: 'TIN-ker-pop',
               example:
@@ -9383,7 +9383,7 @@ export default {
             },
             {
               english: 'SPARQL',
-              italian: 'SPARQL',
+              italian: 'SPARQL (linguaggio query RDF)',
               pronunciation: '/ˈspɑːrkl/',
               phonetic: 'SPAR-kol',
               example: 'SPARQL queries RDF graphs. = SPARQL interroga grafi RDF.',
@@ -9461,7 +9461,7 @@ export default {
             },
             {
               english: 'Data Point',
-              italian: 'Data point',
+              italian: 'data point / singolo punto dati',
               pronunciation: '/ˈdeɪtə pɔɪnt/',
               phonetic: 'DEI-ta POINT',
               example:
@@ -9563,7 +9563,7 @@ export default {
             },
             {
               english: 'Downsampling',
-              italian: 'Downsampling',
+              italian: 'downsampling / riduzione della frequenza dei dati',
               pronunciation: '/daʊnˈsæmplɪŋ/',
               phonetic: 'DAUN-sam-pling',
               example:
@@ -9609,7 +9609,7 @@ export default {
             },
             {
               english: 'Hypertable',
-              italian: 'Hypertable',
+              italian: 'hypertable / tabella temporale TimescaleDB',
               pronunciation: '/ˈhaɪpərˌteɪbl/',
               phonetic: 'HAI-per-TEI-bol',
               example: 'TimescaleDB uses hypertables. = TimescaleDB usa hypertable.',
@@ -9621,7 +9621,7 @@ export default {
             },
             {
               english: 'Chunk',
-              italian: 'Chunk',
+              italian: 'chunk / blocco di dati',
               pronunciation: '/tʃʌŋk/',
               phonetic: 'CIANK',
               example: 'Hypertables split into chunks. = Le hypertable si dividono in chunk.',
@@ -9668,7 +9668,7 @@ export default {
           items: [
             {
               english: 'InfluxDB',
-              italian: 'InfluxDB',
+              italian: 'InfluxDB (database time-series)',
               pronunciation: '/ˈɪnflʌks diː biː/',
               phonetic: 'IN-flaks-DI-BI',
               example: 'InfluxDB is a popular TSDB. = InfluxDB è un TSDB popolare.',
@@ -9679,7 +9679,7 @@ export default {
             },
             {
               english: 'InfluxQL',
-              italian: 'InfluxQL',
+              italian: 'InfluxQL / linguaggio query InfluxDB',
               pronunciation: '/ˈɪnflʌks kjuː el/',
               phonetic: 'IN-flaks-KIU-EL',
               example:
@@ -9691,7 +9691,7 @@ export default {
             },
             {
               english: 'Flux',
-              italian: 'Flux',
+              italian: 'Flux (linguaggio query InfluxDB)',
               pronunciation: '/flʌks/',
               phonetic: 'FLAKS',
               example:
@@ -9702,7 +9702,7 @@ export default {
             },
             {
               english: 'TimescaleDB',
-              italian: 'TimescaleDB',
+              italian: 'TimescaleDB (estensione time-series PostgreSQL)',
               pronunciation: '/ˈtaɪmskeɪl diː biː/',
               phonetic: 'TAIM-skeil-DI-BI',
               example:
@@ -9714,7 +9714,7 @@ export default {
             },
             {
               english: 'Prometheus',
-              italian: 'Prometheus',
+              italian: 'Prometheus (sistema monitoring time-series)',
               pronunciation: '/prəˈmiːθiəs/',
               phonetic: 'pro-MI-tius',
               example: 'Prometheus is a TSDB for metrics. = Prometheus è un TSDB per metriche.',
@@ -9725,7 +9725,7 @@ export default {
             },
             {
               english: 'PromQL',
-              italian: 'PromQL',
+              italian: 'PromQL (linguaggio query Prometheus)',
               pronunciation: '/prɒm kjuː ˈel/',
               phonetic: 'PROM-KIU-EL',
               example: 'PromQL queries Prometheus. = PromQL interroga Prometheus.',
@@ -9736,7 +9736,7 @@ export default {
             },
             {
               english: 'Graphite',
-              italian: 'Graphite',
+              italian: 'Graphite (sistema monitoring time-series)',
               pronunciation: '/ˈɡræfaɪt/',
               phonetic: 'GRA-fait',
               example: 'Graphite is a classic TSDB. = Graphite è un TSDB classico.',
@@ -9746,7 +9746,7 @@ export default {
             },
             {
               english: 'OpenTSDB',
-              italian: 'OpenTSDB',
+              italian: 'OpenTSDB (database time-series su HBase)',
               pronunciation: '/ˈoʊpən tiː es diː biː/',
               phonetic: 'O-pen-TI-ES-DI-BI',
               example: 'OpenTSDB runs on HBase. = OpenTSDB gira su HBase.',
@@ -9756,7 +9756,7 @@ export default {
             },
             {
               english: 'VictoriaMetrics',
-              italian: 'VictoriaMetrics',
+              italian: 'VictoriaMetrics (TSDB Prometheus-compatibile)',
               pronunciation: '/vɪkˈtɔːriə ˈmetrɪks/',
               phonetic: 'vik-TO-ria ME-triks',
               example:
@@ -9767,7 +9767,7 @@ export default {
             },
             {
               english: 'QuestDB',
-              italian: 'QuestDB',
+              italian: 'QuestDB (TSDB ad alte prestazioni)',
               pronunciation: '/kwest diː biː/',
               phonetic: 'KUEST-DI-BI',
               example:
@@ -9844,7 +9844,7 @@ export default {
             },
             {
               english: 'Summary',
-              italian: 'Summary',
+              italian: 'summary / riepilogo statistico',
               pronunciation: '/ˈsʌməri/',
               phonetic: 'SA-ma-ri',
               example: 'Summaries calculate quantiles. = I summary calcolano quantili.',
@@ -9854,7 +9854,7 @@ export default {
             },
             {
               english: 'Alerting',
-              italian: 'Alerting',
+              italian: 'alerting / sistema di avvisi',
               pronunciation: '/əˈlɜːrtɪŋ/',
               phonetic: 'a-LER-ting',
               example:
@@ -9865,7 +9865,7 @@ export default {
             },
             {
               english: 'Grafana',
-              italian: 'Grafana',
+              italian: 'Grafana (piattaforma di dashboard)',
               pronunciation: '/ɡrəˈfɑːnə/',
               phonetic: 'gra-FA-na',
               example: 'Grafana visualizes time series. = Grafana visualizza serie temporali.',
@@ -9902,7 +9902,7 @@ export default {
           items: [
             {
               english: 'ETL',
-              italian: 'ETL',
+              italian: 'ETL (estrazione, trasformazione, caricamento)',
               pronunciation: '/iː tiː ˈel/',
               phonetic: 'I-TI-EL',
               example: 'ETL: Extract, Transform, Load. = ETL: Estrai, Trasforma, Carica.',
@@ -9912,7 +9912,7 @@ export default {
             },
             {
               english: 'ELT',
-              italian: 'ELT',
+              italian: 'ELT (estrai, carica, trasforma)',
               pronunciation: '/iː el ˈtiː/',
               phonetic: 'I-EL-TI',
               example: 'ELT loads then transforms in DW. = ELT carica e poi trasforma nel DW.',
@@ -9987,7 +9987,7 @@ export default {
             },
             {
               english: 'Backfill',
-              italian: 'Backfill',
+              italian: 'backfill / riempimento di dati storici',
               pronunciation: '/ˈbækfɪl/',
               phonetic: 'BAK-fil',
               example: 'Backfill processes historical data. = Il backfill elabora dati storici.',
@@ -10013,7 +10013,7 @@ export default {
             },
             {
               english: 'Debezium',
-              italian: 'Debezium',
+              italian: 'Debezium (CDC open source)',
               pronunciation: '/dɪˈbiːziəm/',
               phonetic: 'di-BI-zium',
               example:
@@ -10024,7 +10024,7 @@ export default {
             },
             {
               english: 'Kafka',
-              italian: 'Kafka',
+              italian: 'Apache Kafka (broker di messaggi distribuito)',
               pronunciation: '/ˈkæfkə/',
               phonetic: 'KAF-ka',
               example: 'Kafka is a streaming platform. = Kafka è una piattaforma di streaming.',
@@ -10034,7 +10034,7 @@ export default {
             },
             {
               english: 'Topic',
-              italian: 'Topic',
+              italian: 'topic / canale tematico di messaggi',
               pronunciation: '/ˈtɒpɪk/',
               phonetic: 'TO-pik',
               example: 'Kafka topics organize messages. = I topic Kafka organizzano i messaggi.',
@@ -10074,7 +10074,7 @@ export default {
             },
             {
               english: 'Stream Processing',
-              italian: 'Stream processing',
+              italian: 'stream processing / elaborazione in streaming',
               pronunciation: '/striːm ˈproʊsesɪŋ/',
               phonetic: 'STRIIM PRO-ses-sing',
               example:
@@ -10085,7 +10085,7 @@ export default {
             },
             {
               english: 'Apache Flink',
-              italian: 'Apache Flink',
+              italian: 'Apache Flink (motore stream processing)',
               pronunciation: '/əˈpætʃi flɪŋk/',
               phonetic: 'a-PA-ci FLINK',
               example:
@@ -10096,7 +10096,7 @@ export default {
             },
             {
               english: 'Exactly Once',
-              italian: 'Exactly once',
+              italian: 'exactly-once / consegna esatta una volta',
               pronunciation: '/ɪɡˈzæktli wʌns/',
               phonetic: 'eg-ZAKT-li UANS',
               example:
@@ -10113,7 +10113,7 @@ export default {
           items: [
             {
               english: 'Apache Airflow',
-              italian: 'Apache Airflow',
+              italian: 'Apache Airflow (orchestratore workflow)',
               pronunciation: '/əˈpætʃi ˈeərfloʊ/',
               phonetic: 'a-PA-ci ER-flou',
               example: 'Airflow orchestrates data pipelines. = Airflow orchestra pipeline dati.',
@@ -10146,7 +10146,7 @@ export default {
             },
             {
               english: 'Task',
-              italian: 'Task',
+              italian: 'task / unità di lavoro',
               pronunciation: '/tæsk/',
               phonetic: 'TASK',
               example: "A task is a unit of work. = Un task è un'unità di lavoro.",
@@ -10167,7 +10167,7 @@ export default {
             },
             {
               english: 'Dagster',
-              italian: 'Dagster',
+              italian: 'Dagster (orchestratore moderno per dati)',
               pronunciation: '/ˈdæɡstər/',
               phonetic: 'DAG-ster',
               example: 'Dagster is a modern orchestrator. = Dagster è un orchestratore moderno.',
@@ -10177,7 +10177,7 @@ export default {
             },
             {
               english: 'Prefect',
-              italian: 'Prefect',
+              italian: 'Prefect (orchestratore di workflow Python)',
               pronunciation: '/ˈpriːfekt/',
               phonetic: 'PRI-fekt',
               example: 'Prefect is a Python orchestrator. = Prefect è un orchestratore Python.',
@@ -10225,7 +10225,7 @@ export default {
           items: [
             {
               english: 'dbt',
-              italian: 'dbt',
+              italian: 'dbt (data build tool, trasformazioni SQL)',
               pronunciation: '/ˌdiː biː ˈtiː/',
               phonetic: 'DI-BI-TI',
               example:
@@ -10248,7 +10248,7 @@ export default {
             },
             {
               english: 'Seed',
-              italian: 'Seed',
+              italian: 'seed / dato iniziale',
               pronunciation: '/siːd/',
               phonetic: 'SIID',
               example: 'Seeds load CSVs into the warehouse. = I seed caricano CSV nel warehouse.',
@@ -10258,7 +10258,7 @@ export default {
             },
             {
               english: 'Test',
-              italian: 'Test',
+              italian: 'test / verifica automatica',
               pronunciation: '/test/',
               phonetic: 'TEST',
               example:
@@ -10270,7 +10270,7 @@ export default {
             },
             {
               english: 'Schema Drift',
-              italian: 'Schema drift',
+              italian: 'schema drift / deriva dello schema',
               pronunciation: '/ˈskiːmə drɪft/',
               phonetic: 'SKII-ma DRIFT',
               example: 'Schema drift breaks pipelines. = Lo schema drift rompe le pipeline.',
@@ -10300,7 +10300,7 @@ export default {
             },
             {
               english: 'Great Expectations',
-              italian: 'Great Expectations',
+              italian: 'Great Expectations (qualità dati Python)',
               pronunciation: '/ɡreɪt ˌekspekˈteɪʃənz/',
               phonetic: 'GREIT eks-pek-TEI-scionz',
               example: 'Great Expectations validates data. = Great Expectations valida i dati.',
@@ -10320,7 +10320,7 @@ export default {
             },
             {
               english: 'Apache Spark',
-              italian: 'Apache Spark',
+              italian: 'Apache Spark (motore di calcolo distribuito)',
               pronunciation: '/əˈpætʃi spɑːrk/',
               phonetic: 'a-PA-ci SPARK',
               example:
@@ -10347,7 +10347,7 @@ export default {
           items: [
             {
               english: 'Locking',
-              italian: 'Locking',
+              italian: 'locking / blocchi sui dati',
               pronunciation: '/ˈlɒkɪŋ/',
               phonetic: 'LO-king',
               example:
@@ -10357,7 +10357,7 @@ export default {
             },
             {
               english: 'SELECT FOR UPDATE',
-              italian: 'SELECT FOR UPDATE',
+              italian: 'SELECT FOR UPDATE / lock di scrittura',
               pronunciation: '/sɪˈlekt fɔːr ʌpˈdeɪt/',
               phonetic: 'si-LEKT FOR ap-DEIT',
               example:
@@ -10368,7 +10368,7 @@ export default {
             },
             {
               english: 'SELECT FOR SHARE',
-              italian: 'SELECT FOR SHARE',
+              italian: 'SELECT FOR SHARE / lock di lettura condiviso',
               pronunciation: '/sɪˈlekt fɔːr ʃeər/',
               phonetic: 'si-LEKT FOR SCER',
               example:
@@ -10390,7 +10390,7 @@ export default {
             },
             {
               english: 'SKIP LOCKED',
-              italian: 'SKIP LOCKED',
+              italian: 'SKIP LOCKED / salta righe bloccate',
               pronunciation: '/skɪp lɒkt/',
               phonetic: 'SKIP-LOKT',
               example: 'SKIP LOCKED ignores locked rows. = SKIP LOCKED ignora righe bloccate.',
@@ -10547,7 +10547,7 @@ export default {
             },
             {
               english: 'Write Skew',
-              italian: 'Write skew',
+              italian: 'write skew / anomalia di scrittura',
               pronunciation: '/raɪt skjuː/',
               phonetic: 'RAIT-SKIU',
               example:
@@ -10574,7 +10574,7 @@ export default {
           items: [
             {
               english: 'MVCC',
-              italian: 'MVCC',
+              italian: 'MVCC (controllo concorrenza multi-versione)',
               pronunciation: '/em viː siː ˈsiː/',
               phonetic: 'EM-VI-SI-SI',
               example: 'MVCC keeps multiple row versions. = MVCC mantiene più versioni di riga.',
@@ -10626,7 +10626,7 @@ export default {
             },
             {
               english: 'Snapshot',
-              italian: 'Snapshot',
+              italian: 'snapshot / istantanea di stato',
               pronunciation: '/ˈsnæpʃɒt/',
               phonetic: 'SNAP-scot',
               example:
@@ -10666,7 +10666,7 @@ export default {
             },
             {
               english: 'HOT Update',
-              italian: 'HOT Update',
+              italian: 'HOT update (Heap-Only Tuple update PostgreSQL)',
               pronunciation: '/hɒt ʌpˈdeɪt/',
               phonetic: 'HOT-ap-DEIT',
               example: 'HOT updates avoid index updates. = HOT update evitano update di indice.',
@@ -10715,7 +10715,7 @@ export default {
             },
             {
               english: 'Compare-and-Set',
-              italian: 'Compare-and-set',
+              italian: 'compare-and-set / operazione atomica di confronto',
               pronunciation: '/kəmˈpeər ænd set/',
               phonetic: 'kom-PER-AND-SET',
               example:
@@ -10856,7 +10856,7 @@ export default {
             },
             {
               english: 'Data Engineer',
-              italian: 'Data engineer',
+              italian: 'data engineer / ingegnere dei dati',
               pronunciation: '/ˈdeɪtə ˌendʒɪˈnɪər/',
               phonetic: 'DEI-ta en-gi-NIR',
               example: 'Data engineers build pipelines. = I data engineer costruiscono pipeline.',
@@ -10865,7 +10865,7 @@ export default {
             },
             {
               english: 'Data Architect',
-              italian: 'Data architect',
+              italian: 'data architect / architetto dei dati',
               pronunciation: '/ˈdeɪtə ˈɑːrkɪtekt/',
               phonetic: 'DEI-ta AR-ki-tekt',
               example:
@@ -10884,7 +10884,7 @@ export default {
             },
             {
               english: 'Postmortem',
-              italian: 'Postmortem',
+              italian: 'postmortem / analisi post-incidente',
               pronunciation: '/poʊstˈmɔːrtəm/',
               phonetic: 'post-MOR-tem',
               example: 'Write postmortems for outages. = Scrivi postmortem per i disservizi.',
@@ -10894,7 +10894,7 @@ export default {
             },
             {
               english: 'Runbook',
-              italian: 'Runbook',
+              italian: 'runbook / procedura operativa',
               pronunciation: '/ˈrʌnbʊk/',
               phonetic: 'RAN-buk',
               example:
@@ -10982,7 +10982,7 @@ export default {
             },
             {
               english: 'Provisioning',
-              italian: 'Provisioning',
+              italian: 'provisioning / fornitura risorse',
               pronunciation: '/prəˈvɪʒənɪŋ/',
               phonetic: 'pro-VI-jio-ning',
               example:
@@ -11003,7 +11003,7 @@ export default {
             },
             {
               english: 'Benchmark',
-              italian: 'Benchmark',
+              italian: 'benchmark / test prestazionale',
               pronunciation: '/ˈbentʃmɑːrk/',
               phonetic: 'BENC-mark',
               example: 'Benchmark before going live. = Esegui benchmark prima del go-live.',
@@ -11071,7 +11071,7 @@ export default {
             },
             {
               english: 'Flyway',
-              italian: 'Flyway',
+              italian: 'Flyway (gestore migration SQL)',
               pronunciation: '/ˈflaɪweɪ/',
               phonetic: 'FLAI-uei',
               example: 'Flyway versions schema migrations. = Flyway versiona migrazioni di schema.',
@@ -11081,7 +11081,7 @@ export default {
             },
             {
               english: 'Liquibase',
-              italian: 'Liquibase',
+              italian: 'Liquibase (gestore migration SQL)',
               pronunciation: '/ˈlɪkwɪbeɪs/',
               phonetic: 'LI-kui-beis',
               example:
@@ -11130,7 +11130,7 @@ export default {
           items: [
             {
               english: 'VACUUM',
-              italian: 'VACUUM',
+              italian: 'VACUUM / pulizia righe morte PostgreSQL',
               pronunciation: '/ˈvækjuːm/',
               phonetic: 'VAK-ium',
               example: 'VACUUM reclaims dead tuple space. = VACUUM recupera spazio di tuple morte.',
@@ -11141,7 +11141,7 @@ export default {
             },
             {
               english: 'Autovacuum',
-              italian: 'Autovacuum',
+              italian: 'autovacuum / VACUUM automatico',
               pronunciation: '/ˈɔːtoʊ ˈvækjuːm/',
               phonetic: 'O-to VAK-ium',
               example: 'Autovacuum runs automatically. = Autovacuum gira automaticamente.',
@@ -11151,7 +11151,7 @@ export default {
             },
             {
               english: 'VACUUM FULL',
-              italian: 'VACUUM FULL',
+              italian: 'VACUUM FULL / VACUUM con riscrittura tabella',
               pronunciation: '/ˈvækjuːm fʊl/',
               phonetic: 'VAK-ium FUL',
               example: 'VACUUM FULL rewrites the table. = VACUUM FULL riscrive la tabella.',
@@ -11173,7 +11173,7 @@ export default {
             },
             {
               english: 'Patch',
-              italian: 'Patch',
+              italian: 'patch / correzione del codice',
               pronunciation: '/pætʃ/',
               phonetic: 'PAC',
               example: 'Apply security patches promptly. = Applica patch di sicurezza prontamente.',
@@ -11204,7 +11204,7 @@ export default {
             },
             {
               english: 'pg_upgrade',
-              italian: 'pg_upgrade',
+              italian: 'pg_upgrade / upgrade in-place PostgreSQL',
               pronunciation: '/piː dʒiː ˈʌpɡreɪd/',
               phonetic: 'PI-GI-AP-greid',
               example:

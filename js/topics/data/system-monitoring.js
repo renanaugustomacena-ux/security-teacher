@@ -354,7 +354,7 @@ export default {
             },
             {
               english: 'Endpoint',
-              italian: 'Endpoint',
+              italian: 'endpoint / punto terminale di un servizio',
               pronunciation: '/ˈendpɔɪnt/',
               phonetic: 'END-point',
               example:
@@ -675,7 +675,7 @@ export default {
             },
             {
               english: 'Inode',
-              italian: 'Inode',
+              italian: 'inode / nodo indice del filesystem',
               pronunciation: '/ˈaɪnoʊd/',
               phonetic: 'AI-nod',
               example:
@@ -697,7 +697,7 @@ export default {
             },
             {
               english: 'Filesystem',
-              italian: 'Filesystem',
+              italian: 'filesystem / sistema dei file',
               pronunciation: '/ˈfaɪlˌsɪstəm/',
               phonetic: 'FAIL-sis-tem',
               example:
@@ -768,7 +768,7 @@ export default {
             },
             {
               english: 'Jitter',
-              italian: 'Jitter',
+              italian: "jitter / variazione casuale dell'intervallo",
               pronunciation: '/ˈdʒɪtər/',
               phonetic: 'JI-ter',
               example:
@@ -821,7 +821,7 @@ export default {
             },
             {
               english: 'Socket',
-              italian: 'Socket',
+              italian: 'socket / punto di connessione di rete',
               pronunciation: '/ˈsɒkɪt/',
               phonetic: 'SO-ket',
               example:
@@ -871,7 +871,7 @@ export default {
             },
             {
               english: 'Percentile',
-              italian: 'Percentile',
+              italian: 'percentile / valore di soglia statistica',
               pronunciation: '/pərˈsentaɪl/',
               phonetic: 'per-SEN-tail',
               example:
@@ -924,7 +924,7 @@ export default {
             },
             {
               english: 'Throughput',
-              italian: 'Throughput',
+              italian: 'throughput / volume di operazioni al secondo',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'TRU-put',
               example:
@@ -972,7 +972,7 @@ export default {
             },
             {
               english: 'Debug',
-              italian: 'Debug',
+              italian: 'debug / messaggi di diagnostica',
               pronunciation: '/diːˈbʌɡ/',
               phonetic: 'di-BAG',
               example:
@@ -1148,7 +1148,7 @@ export default {
             },
             {
               english: 'Schema',
-              italian: 'Schema',
+              italian: 'schema / struttura dei dati',
               pronunciation: '/ˈskiːmə/',
               phonetic: 'SKI-ma',
               example:
@@ -1158,7 +1158,7 @@ export default {
             },
             {
               english: 'Logger',
-              italian: 'Logger',
+              italian: 'logger / oggetto di logging',
               pronunciation: '/ˈlɒɡər/',
               phonetic: 'LO-gher',
               example:
@@ -1169,7 +1169,7 @@ export default {
             },
             {
               english: 'Handler',
-              italian: 'Handler',
+              italian: 'handler / gestore di evento o log',
               pronunciation: '/ˈhændlər/',
               phonetic: 'HAN-dler',
               example:
@@ -1198,7 +1198,7 @@ export default {
             },
             {
               english: 'Logrotate',
-              italian: 'Logrotate',
+              italian: 'logrotate / rotazione automatica dei log',
               pronunciation: '/lɒɡˈroʊteɪt/',
               phonetic: 'LOG-ro-teit',
               example: 'Logrotate runs daily via cron. = Logrotate gira giornalmente tramite cron.',
@@ -1240,7 +1240,7 @@ export default {
             },
             {
               english: 'Syslog',
-              italian: 'Syslog',
+              italian: 'syslog / log di sistema',
               pronunciation: '/ˈsɪslɒɡ/',
               phonetic: 'SIS-log',
               example:
@@ -1252,7 +1252,7 @@ export default {
             },
             {
               english: 'Journald',
-              italian: 'Journald',
+              italian: 'journald / journal di systemd',
               pronunciation: '/ˈdʒɜːrnəld/',
               phonetic: 'JER-nald',
               example:
@@ -1325,7 +1325,7 @@ export default {
             },
             {
               english: 'Parsing',
-              italian: 'Parsing',
+              italian: 'parsing / analisi sintattica',
               pronunciation: '/ˈpɑːrsɪŋ/',
               phonetic: 'PAR-sing',
               example:
@@ -1336,7 +1336,7 @@ export default {
             },
             {
               english: 'Grep',
-              italian: 'Grep',
+              italian: 'grep / cerca per pattern',
               pronunciation: '/ɡrep/',
               phonetic: 'GREP',
               example:
@@ -1347,7 +1347,7 @@ export default {
             },
             {
               english: 'Tail',
-              italian: 'Tail',
+              italian: 'tail / mostra coda del file',
               pronunciation: '/teɪl/',
               phonetic: 'TEIL',
               example:
@@ -1358,7 +1358,7 @@ export default {
             },
             {
               english: 'Awk',
-              italian: 'Awk',
+              italian: 'awk / linguaggio elaborazione testo',
               pronunciation: '/ɔːk/',
               phonetic: 'OK',
               example:
@@ -1438,7 +1438,7 @@ export default {
             },
             {
               english: 'Elasticsearch',
-              italian: 'Elasticsearch',
+              italian: 'Elasticsearch (motore di ricerca distribuito)',
               pronunciation: '/ɪˈlæstɪkˌsɜːrtʃ/',
               phonetic: 'i-LAS-tik-serch',
               example:
@@ -1450,7 +1450,7 @@ export default {
             },
             {
               english: 'Logstash',
-              italian: 'Logstash',
+              italian: 'Logstash (pipeline di ingestione log)',
               pronunciation: '/ˈlɒɡstæʃ/',
               phonetic: 'LOG-stash',
               example: 'Logstash parses and ships logs. = Logstash parsifica e invia i log.',
@@ -1461,7 +1461,7 @@ export default {
             },
             {
               english: 'Kibana',
-              italian: 'Kibana',
+              italian: 'Kibana (interfaccia visualizzazione Elasticsearch)',
               pronunciation: '/kɪˈbɑːnə/',
               phonetic: 'ki-BA-na',
               example:
@@ -1472,7 +1472,7 @@ export default {
             },
             {
               english: 'Beats',
-              italian: 'Beats',
+              italian: 'Beats / agent leggeri Elastic',
               pronunciation: '/biːts/',
               phonetic: 'BITS',
               example: 'Beats are lightweight log shippers. = I Beats sono shipper di log leggeri.',
@@ -1482,7 +1482,7 @@ export default {
             },
             {
               english: 'Filebeat',
-              italian: 'Filebeat',
+              italian: 'Filebeat / agent invio log Elastic',
               pronunciation: '/ˈfaɪlbiːt/',
               phonetic: 'FAIL-bit',
               example:
@@ -1505,7 +1505,7 @@ export default {
             },
             {
               english: 'Shard',
-              italian: 'Shard',
+              italian: 'shard / frammento di indice',
               pronunciation: '/ʃɑːrd/',
               phonetic: 'SHARD',
               example:
@@ -1516,7 +1516,7 @@ export default {
             },
             {
               english: 'Pipeline',
-              italian: 'Pipeline',
+              italian: 'pipeline / sequenza di stadi',
               pronunciation: '/ˈpaɪplaɪn/',
               phonetic: 'PAIP-lain',
               example:
@@ -1545,7 +1545,7 @@ export default {
           items: [
             {
               english: 'Loki',
-              italian: 'Loki',
+              italian: 'Loki (sistema di log Grafana)',
               pronunciation: '/ˈloʊki/',
               phonetic: 'LO-ki',
               example:
@@ -1557,7 +1557,7 @@ export default {
             },
             {
               english: 'LogQL',
-              italian: 'LogQL',
+              italian: 'LogQL / linguaggio query Loki',
               pronunciation: '/lɒɡ kjuː el/',
               phonetic: 'LOG-KIU-EL',
               example:
@@ -1569,7 +1569,7 @@ export default {
             },
             {
               english: 'Promtail',
-              italian: 'Promtail',
+              italian: 'Promtail / agente Loki di raccolta log',
               pronunciation: '/ˈprɒmteɪl/',
               phonetic: 'PROM-teil',
               example: 'Promtail ships node logs to Loki. = Promtail invia i log dei nodi a Loki.',
@@ -1591,7 +1591,7 @@ export default {
             },
             {
               english: 'Stream',
-              italian: 'Stream',
+              italian: 'stream / flusso di dati',
               pronunciation: '/striːm/',
               phonetic: 'STRIM',
               example:
@@ -1602,7 +1602,7 @@ export default {
             },
             {
               english: 'Chunk',
-              italian: 'Chunk',
+              italian: 'chunk / blocco di dati',
               pronunciation: '/tʃʌŋk/',
               phonetic: 'CIANK',
               example:
@@ -1634,7 +1634,7 @@ export default {
             },
             {
               english: 'Tenant',
-              italian: 'Tenant',
+              italian: 'tenant / inquilino multi-tenant',
               pronunciation: '/ˈtenənt/',
               phonetic: 'TE-nant',
               example:
@@ -1664,7 +1664,7 @@ export default {
           items: [
             {
               english: 'Fluentd',
-              italian: 'Fluentd',
+              italian: 'Fluentd (raccoglitore log unificato)',
               pronunciation: '/ˈfluːəntdiː/',
               phonetic: 'FLU-ent-DI',
               example: 'Fluentd unifies log collection. = Fluentd unifica la raccolta dei log.',
@@ -1675,7 +1675,7 @@ export default {
             },
             {
               english: 'Fluent Bit',
-              italian: 'Fluent Bit',
+              italian: 'Fluent Bit (raccoglitore log leggero)',
               pronunciation: '/ˈfluːənt bɪt/',
               phonetic: 'FLU-ent BIT',
               example:
@@ -1698,7 +1698,7 @@ export default {
             },
             {
               english: 'Match',
-              italian: 'Match',
+              italian: 'match / regola di abbinamento',
               pronunciation: '/mætʃ/',
               phonetic: 'MACH',
               example:
@@ -1720,7 +1720,7 @@ export default {
             },
             {
               english: 'Buffer',
-              italian: 'Buffer',
+              italian: 'buffer / area di memoria temporanea',
               pronunciation: '/ˈbʌfər/',
               phonetic: 'BA-fer',
               example:
@@ -1731,7 +1731,7 @@ export default {
             },
             {
               english: 'Tag',
-              italian: 'Tag',
+              italian: 'tag / etichetta',
               pronunciation: '/tæɡ/',
               phonetic: 'TAG',
               example:
@@ -1742,7 +1742,7 @@ export default {
             },
             {
               english: 'Plugin',
-              italian: 'Plugin',
+              italian: 'plugin / estensione modulare',
               pronunciation: '/ˈplʌɡɪn/',
               phonetic: 'PLA-ghin',
               example:
@@ -1753,7 +1753,7 @@ export default {
             },
             {
               english: 'Output',
-              italian: 'Output',
+              italian: 'output / destinazione di uscita',
               pronunciation: '/ˈaʊtpʊt/',
               phonetic: 'AUT-put',
               example: "The output sends logs to S3 or Kafka. = L'output invia i log a S3 o Kafka.",
@@ -1780,7 +1780,7 @@ export default {
           items: [
             {
               english: 'CloudWatch Logs',
-              italian: 'CloudWatch Logs',
+              italian: 'CloudWatch Logs (servizio log AWS)',
               pronunciation: '/klaʊdwɒtʃ lɒɡz/',
               phonetic: 'KLAUD-uoch LOGZ',
               example:
@@ -1814,7 +1814,7 @@ export default {
             },
             {
               english: 'Logs Insights',
-              italian: 'Logs Insights',
+              italian: 'Logs Insights (query log AWS)',
               pronunciation: '/lɒɡz ˈɪnsaɪts/',
               phonetic: 'LOGZ IN-saits',
               example:
@@ -1826,7 +1826,7 @@ export default {
             },
             {
               english: 'Stackdriver',
-              italian: 'Stackdriver',
+              italian: 'Stackdriver / vecchio nome di Google Cloud Operations',
               pronunciation: '/ˈstækˌdraɪvər/',
               phonetic: 'STAK-drai-ver',
               example:
@@ -1838,7 +1838,7 @@ export default {
             },
             {
               english: 'Cloud Logging',
-              italian: 'Cloud Logging',
+              italian: 'Cloud Logging (servizio log Google)',
               pronunciation: '/klaʊd ˈlɒɡɪŋ/',
               phonetic: 'KLAUD LOG-ing',
               example:
@@ -1850,7 +1850,7 @@ export default {
             },
             {
               english: 'Azure Monitor Logs',
-              italian: 'Azure Monitor Logs',
+              italian: 'Azure Monitor Logs (servizio log Azure)',
               pronunciation: '/ˈæʒər ˈmɒnɪtər lɒɡz/',
               phonetic: 'A-jur MON-i-tor LOGZ',
               example:
@@ -1861,7 +1861,7 @@ export default {
             },
             {
               english: 'Datadog Logs',
-              italian: 'Datadog Logs',
+              italian: 'Datadog Logs (servizio log Datadog)',
               pronunciation: '/ˈdætədɒɡ lɒɡz/',
               phonetic: 'DA-ta-dog LOGZ',
               example:
@@ -1872,7 +1872,7 @@ export default {
             },
             {
               english: 'Splunk',
-              italian: 'Splunk',
+              italian: 'Splunk (piattaforma SIEM e log)',
               pronunciation: '/splʌŋk/',
               phonetic: 'SPLANK',
               example:
@@ -2149,7 +2149,7 @@ export default {
             },
             {
               english: 'SMS',
-              italian: 'SMS',
+              italian: 'SMS / messaggio di testo',
               pronunciation: '/es em es/',
               phonetic: 'ES-EM-ES',
               example:
@@ -2191,7 +2191,7 @@ export default {
             },
             {
               english: 'Microsoft Teams',
-              italian: 'Microsoft Teams',
+              italian: 'Microsoft Teams / piattaforma collaborazione Microsoft',
               pronunciation: '/ˈmaɪkrəˌsɒft tiːmz/',
               phonetic: 'MAI-kro-soft TIMZ',
               example:
@@ -2202,7 +2202,7 @@ export default {
             },
             {
               english: 'Webhook',
-              italian: 'Webhook',
+              italian: 'webhook / chiamata HTTP automatica',
               pronunciation: '/ˈwebhʊk/',
               phonetic: 'UEB-huk',
               example:
@@ -2369,7 +2369,7 @@ export default {
           items: [
             {
               english: 'Prometheus',
-              italian: 'Prometheus',
+              italian: 'Prometheus (sistema monitoring time-series)',
               pronunciation: '/prəˈmiːθiəs/',
               phonetic: 'PRO-met-eus',
               example:
@@ -2392,7 +2392,7 @@ export default {
             },
             {
               english: 'Scraping',
-              italian: 'Scraping',
+              italian: 'scraping / raccolta periodica di metriche',
               pronunciation: '/ˈskreɪpɪŋ/',
               phonetic: 'SKREI-ping',
               example:
@@ -2403,7 +2403,7 @@ export default {
             },
             {
               english: 'Target',
-              italian: 'Target',
+              italian: 'target / endpoint da monitorare',
               pronunciation: '/ˈtɑːrɡət/',
               phonetic: 'TAR-ghet',
               example:
@@ -2414,7 +2414,7 @@ export default {
             },
             {
               english: 'Job',
-              italian: 'Job',
+              italian: 'job / gruppo di target Prometheus',
               pronunciation: '/dʒɒb/',
               phonetic: 'JOB',
               example: 'A job groups similar targets. = Un job raggruppa target simili.',
@@ -2424,7 +2424,7 @@ export default {
             },
             {
               english: 'Service Discovery',
-              italian: 'Service discovery',
+              italian: 'service discovery / scoperta servizi',
               pronunciation: '/ˈsɜːrvɪs dɪˈskʌvəri/',
               phonetic: 'SER-vis dis-KO-ve-ri',
               example:
@@ -2446,7 +2446,7 @@ export default {
             },
             {
               english: 'Push Gateway',
-              italian: 'Push Gateway',
+              italian: 'Push Gateway / gateway per push di metriche',
               pronunciation: '/pʊʃ ˈɡeɪtˌweɪ/',
               phonetic: 'PUSH GHEIT-uei',
               example:
@@ -2459,7 +2459,7 @@ export default {
             },
             {
               english: 'TSDB',
-              italian: 'TSDB',
+              italian: 'TSDB / database time-series',
               pronunciation: '/tiː es diː biː/',
               phonetic: 'TI-ES-DI-BI',
               example:
@@ -2498,7 +2498,7 @@ export default {
             },
             {
               english: 'Node Exporter',
-              italian: 'Node Exporter',
+              italian: 'Node Exporter / esportatore metriche host',
               pronunciation: '/noʊd ɪkˈspɔːrtər/',
               phonetic: 'NOUD eks-POR-ter',
               example:
@@ -2510,7 +2510,7 @@ export default {
             },
             {
               english: 'cAdvisor',
-              italian: 'cAdvisor',
+              italian: 'cAdvisor / esportatore metriche container',
               pronunciation: '/siː ˈædvaɪzər/',
               phonetic: 'SI-AD-vai-zer',
               example:
@@ -2521,7 +2521,7 @@ export default {
             },
             {
               english: 'Blackbox Exporter',
-              italian: 'Blackbox exporter',
+              italian: 'Blackbox Exporter / probe HTTP/TCP/DNS',
               pronunciation: '/ˈblækbɒks ɪkˈspɔːrtər/',
               phonetic: 'BLAK-boks eks-POR-ter',
               example: "Blackbox probes URLs from outside. = Blackbox interroga URL dall'esterno.",
@@ -2648,7 +2648,7 @@ export default {
             },
             {
               english: 'Bucket',
-              italian: 'Bucket',
+              italian: 'bucket / secchio per istogramma',
               pronunciation: '/ˈbʌkɪt/',
               phonetic: 'BA-ket',
               example:
@@ -2659,7 +2659,7 @@ export default {
             },
             {
               english: 'Quantile',
-              italian: 'Quantile',
+              italian: 'quantile / soglia di distribuzione',
               pronunciation: '/ˈkwɒntaɪl/',
               phonetic: 'KUAN-tail',
               example:
@@ -2670,7 +2670,7 @@ export default {
             },
             {
               english: 'Label',
-              italian: 'Label',
+              italian: 'label / etichetta di metrica',
               pronunciation: '/ˈleɪbəl/',
               phonetic: 'LEI-bol',
               example:
@@ -2818,7 +2818,7 @@ export default {
             },
             {
               english: 'Promtool',
-              italian: 'Promtool',
+              italian: 'promtool / utility CLI Prometheus',
               pronunciation: '/ˈprɒmtuːl/',
               phonetic: 'PROM-tul',
               example:
@@ -2846,7 +2846,7 @@ export default {
           items: [
             {
               english: 'PromQL',
-              italian: 'PromQL',
+              italian: 'PromQL / linguaggio query Prometheus',
               pronunciation: '/prɒm kjuː el/',
               phonetic: 'PROM-KIU-EL',
               example:
@@ -2934,7 +2934,7 @@ export default {
             },
             {
               english: 'Offset',
-              italian: 'Offset',
+              italian: 'offset / spostamento temporale',
               pronunciation: '/ˈɒfset/',
               phonetic: 'OF-set',
               example: 'Offset shifts the query in time. = Offset sposta la query nel tempo.',
@@ -2962,7 +2962,7 @@ export default {
           items: [
             {
               english: 'rate()',
-              italian: 'rate()',
+              italian: 'rate() / tasso medio per secondo',
               pronunciation: '/reɪt/',
               phonetic: 'REIT',
               example:
@@ -2974,7 +2974,7 @@ export default {
             },
             {
               english: 'irate()',
-              italian: 'irate()',
+              italian: 'irate() / tasso istantaneo',
               pronunciation: '/aɪ reɪt/',
               phonetic: 'AI-REIT',
               example:
@@ -2985,7 +2985,7 @@ export default {
             },
             {
               english: 'increase()',
-              italian: 'increase()',
+              italian: 'increase() / incremento totale',
               pronunciation: '/ɪnˈkriːs/',
               phonetic: 'in-KRIS',
               example:
@@ -2996,7 +2996,7 @@ export default {
             },
             {
               english: 'sum()',
-              italian: 'sum()',
+              italian: 'sum() / aggregazione somma',
               pronunciation: '/sʌm/',
               phonetic: 'SAM',
               example: 'sum() aggregates across series. = sum() aggrega tra serie diverse.',
@@ -3006,7 +3006,7 @@ export default {
             },
             {
               english: 'avg()',
-              italian: 'avg()',
+              italian: 'avg() / aggregazione media',
               pronunciation: '/ˈævərɪdʒ/',
               phonetic: 'AV-rij',
               example: 'avg() computes the mean across series. = avg() calcola la media tra serie.',
@@ -3016,7 +3016,7 @@ export default {
             },
             {
               english: 'max()',
-              italian: 'max()',
+              italian: 'max() / aggregazione massimo',
               pronunciation: '/mæks/',
               phonetic: 'MAKS',
               example: 'max() returns the highest value. = max() restituisce il valore più alto.',
@@ -3026,7 +3026,7 @@ export default {
             },
             {
               english: 'min()',
-              italian: 'min()',
+              italian: 'min() / aggregazione minimo',
               pronunciation: '/mɪn/',
               phonetic: 'MIN',
               example: 'min() returns the lowest value. = min() restituisce il valore più basso.',
@@ -3036,7 +3036,7 @@ export default {
             },
             {
               english: 'count()',
-              italian: 'count()',
+              italian: 'count() / conteggio',
               pronunciation: '/kaʊnt/',
               phonetic: 'KAUNT',
               example:
@@ -3047,7 +3047,7 @@ export default {
             },
             {
               english: 'topk()',
-              italian: 'topk()',
+              italian: 'topk() / primi K valori',
               pronunciation: '/tɒp keɪ/',
               phonetic: 'TOP-KEI',
               example:
@@ -3058,7 +3058,7 @@ export default {
             },
             {
               english: 'histogram_quantile()',
-              italian: 'histogram_quantile()',
+              italian: 'histogram_quantile() / quantile da istogramma',
               pronunciation: '/ˈhɪstəɡræm ˈkwɒntaɪl/',
               phonetic: 'IS-to-gram KUAN-tail',
               example:
@@ -3128,7 +3128,7 @@ export default {
             },
             {
               english: 'group_left',
-              italian: 'group_left',
+              italian: 'group_left / abbinamento many-to-one a sinistra',
               pronunciation: '/ɡruːp left/',
               phonetic: 'GRUP-LEFT',
               example: 'group_left joins many-to-one. = group_left unisce molti-a-uno.',
@@ -3138,7 +3138,7 @@ export default {
             },
             {
               english: 'group_right',
-              italian: 'group_right',
+              italian: 'group_right / abbinamento many-to-one a destra',
               pronunciation: '/ɡruːp raɪt/',
               phonetic: 'GRUP-RAIT',
               example:
@@ -3261,7 +3261,7 @@ export default {
             },
             {
               english: 'Apdex',
-              italian: 'Apdex',
+              italian: 'Apdex / indice di soddisfazione utente',
               pronunciation: '/ˈæpdeks/',
               phonetic: 'AP-deks',
               example:
@@ -3311,7 +3311,7 @@ export default {
           items: [
             {
               english: 'Grafana',
-              italian: 'Grafana',
+              italian: 'Grafana (piattaforma di dashboard)',
               pronunciation: '/ɡrəˈfɑːnə/',
               phonetic: 'GRA-fa-na',
               example:
@@ -3322,7 +3322,7 @@ export default {
             },
             {
               english: 'Dashboard',
-              italian: 'Dashboard',
+              italian: 'dashboard / cruscotto di monitoraggio',
               pronunciation: '/ˈdæʃbɔːrd/',
               phonetic: 'DASH-bord',
               example: 'A dashboard contains many panels. = Una dashboard contiene molti panel.',
@@ -3383,7 +3383,7 @@ export default {
             },
             {
               english: 'Tag',
-              italian: 'Tag',
+              italian: 'tag / etichetta',
               pronunciation: '/tæɡ/',
               phonetic: 'TAG',
               example: 'Tag dashboards for easy search. = Tagga le dashboard per ricerca facile.',
@@ -3439,7 +3439,7 @@ export default {
             },
             {
               english: 'Gauge',
-              italian: 'Gauge',
+              italian: 'gauge / metrica scalare istantanea',
               pronunciation: '/ɡeɪdʒ/',
               phonetic: 'GHEIJ',
               example:
@@ -3669,7 +3669,7 @@ export default {
             },
             {
               english: 'Override',
-              italian: 'Override',
+              italian: 'override / sovrascrittura di valore',
               pronunciation: '/ˌoʊvərˈraɪd/',
               phonetic: 'o-ver-RAID',
               example:
@@ -3689,7 +3689,7 @@ export default {
             },
             {
               english: 'Tooltip',
-              italian: 'Tooltip',
+              italian: 'tooltip / suggerimento al passaggio del mouse',
               pronunciation: '/ˈtuːltɪp/',
               phonetic: 'TUL-tip',
               example:
@@ -3969,7 +3969,7 @@ export default {
           items: [
             {
               english: 'Provisioning',
-              italian: 'Provisioning',
+              italian: 'provisioning / fornitura risorse',
               pronunciation: '/prəˈvɪʒənɪŋ/',
               phonetic: 'pro-VI-jio-ning',
               example:
@@ -3991,7 +3991,7 @@ export default {
             },
             {
               english: 'Provider',
-              italian: 'Provider',
+              italian: 'provider / fornitore di servizi',
               pronunciation: '/prəˈvaɪdər/',
               phonetic: 'pro-VAI-der',
               example:
@@ -4079,7 +4079,7 @@ export default {
           items: [
             {
               english: 'Plugin',
-              italian: 'Plugin',
+              italian: 'plugin / estensione modulare',
               pronunciation: '/ˈplʌɡɪn/',
               phonetic: 'PLA-ghin',
               example:
@@ -4218,7 +4218,7 @@ export default {
             },
             {
               english: 'Span',
-              italian: 'Span',
+              italian: 'span / unità di lavoro tracciata',
               pronunciation: '/spæn/',
               phonetic: 'SPAN',
               example:
@@ -4288,7 +4288,7 @@ export default {
             },
             {
               english: 'Tag',
-              italian: 'Tag',
+              italian: 'tag / etichetta',
               pronunciation: '/tæɡ/',
               phonetic: 'TAG',
               example: 'Tags add metadata to spans. = I tag aggiungono metadati agli span.',
@@ -4305,7 +4305,7 @@ export default {
           items: [
             {
               english: 'Jaeger',
-              italian: 'Jaeger',
+              italian: 'Jaeger (piattaforma di tracing distribuito)',
               pronunciation: '/ˈjeɪɡər/',
               phonetic: 'IEI-gher',
               example: 'Jaeger was created by Uber. = Jaeger è stato creato da Uber.',
@@ -4315,7 +4315,7 @@ export default {
             },
             {
               english: 'Agent',
-              italian: 'Agent',
+              italian: 'agent / agente locale',
               pronunciation: '/ˈeɪdʒənt/',
               phonetic: 'EI-jent',
               example:
@@ -4326,7 +4326,7 @@ export default {
             },
             {
               english: 'Collector',
-              italian: 'Collector',
+              italian: 'collector / raccoglitore centrale',
               pronunciation: '/kəˈlektər/',
               phonetic: 'kol-LEK-ter',
               example:
@@ -4416,7 +4416,7 @@ export default {
           items: [
             {
               english: 'Zipkin',
-              italian: 'Zipkin',
+              italian: 'Zipkin (piattaforma di tracing distribuito)',
               pronunciation: '/ˈzɪpkɪn/',
               phonetic: 'ZIP-kin',
               example: 'Zipkin was created by Twitter. = Zipkin è stato creato da Twitter.',
@@ -4437,7 +4437,7 @@ export default {
             },
             {
               english: 'Tempo',
-              italian: 'Tempo',
+              italian: 'Tempo (backend di tracing Grafana)',
               pronunciation: '/ˈtempoʊ/',
               phonetic: 'TEM-po',
               example:
@@ -4449,7 +4449,7 @@ export default {
             },
             {
               english: 'TraceQL',
-              italian: 'TraceQL',
+              italian: 'TraceQL / linguaggio query trace',
               pronunciation: '/treɪs kjuː el/',
               phonetic: 'TREIS-KIU-EL',
               example: 'TraceQL queries traces in Tempo. = TraceQL interroga le tracce in Tempo.',
@@ -4481,7 +4481,7 @@ export default {
             },
             {
               english: 'Honeycomb',
-              italian: 'Honeycomb',
+              italian: 'Honeycomb (piattaforma observability)',
               pronunciation: '/ˈhʌnikoʊm/',
               phonetic: 'HA-ni-kom',
               example:
@@ -4492,7 +4492,7 @@ export default {
             },
             {
               english: 'Lightstep',
-              italian: 'Lightstep',
+              italian: 'Lightstep (piattaforma observability)',
               pronunciation: '/ˈlaɪtˌstep/',
               phonetic: 'LAIT-step',
               example:
@@ -4513,7 +4513,7 @@ export default {
             },
             {
               english: 'Object Storage',
-              italian: 'Object storage',
+              italian: 'object storage / archiviazione a oggetti',
               pronunciation: '/ˈɒbdʒɪkt ˈstɔːrɪdʒ/',
               phonetic: 'OB-jekt STO-rij',
               example:
@@ -4651,7 +4651,7 @@ export default {
           items: [
             {
               english: 'APM',
-              italian: 'APM',
+              italian: 'APM / Application Performance Monitoring',
               pronunciation: '/eɪ piː em/',
               phonetic: 'EI-PI-EM',
               example:
@@ -4683,7 +4683,7 @@ export default {
             },
             {
               english: 'Throughput',
-              italian: 'Throughput',
+              italian: 'throughput / volume di operazioni al secondo',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'TRU-put',
               example:
@@ -4715,7 +4715,7 @@ export default {
             },
             {
               english: 'Stack Trace',
-              italian: 'Stack trace',
+              italian: 'stack trace / traccia di pila',
               pronunciation: '/stæk treɪs/',
               phonetic: 'STAK TREIS',
               example:
@@ -4765,7 +4765,7 @@ export default {
           items: [
             {
               english: 'New Relic',
-              italian: 'New Relic',
+              italian: 'New Relic (piattaforma APM)',
               pronunciation: '/njuː ˈrelɪk/',
               phonetic: 'NIU RE-lik',
               example:
@@ -4776,7 +4776,7 @@ export default {
             },
             {
               english: 'NRQL',
-              italian: 'NRQL',
+              italian: 'NRQL / linguaggio query New Relic',
               pronunciation: '/en ɑːr kjuː el/',
               phonetic: 'EN-AR-KIU-EL',
               example:
@@ -4797,7 +4797,7 @@ export default {
             },
             {
               english: 'Agent',
-              italian: 'Agent',
+              italian: 'agent / agente locale',
               pronunciation: '/ˈeɪdʒənt/',
               phonetic: 'EI-jent',
               example: "The APM agent instruments the runtime. = L'agent APM strumenta il runtime.",
@@ -4877,7 +4877,7 @@ export default {
           items: [
             {
               english: 'Datadog',
-              italian: 'Datadog',
+              italian: 'Datadog (piattaforma observability)',
               pronunciation: '/ˈdætədɒɡ/',
               phonetic: 'DA-ta-dog',
               example:
@@ -4911,7 +4911,7 @@ export default {
             },
             {
               english: 'DogStatsD',
-              italian: 'DogStatsD',
+              italian: 'DogStatsD / agente metriche Datadog',
               pronunciation: '/dɒɡˈstætsdiː/',
               phonetic: 'DOG-stats-DI',
               example: 'DogStatsD extends StatsD with tags. = DogStatsD estende StatsD con i tag.',
@@ -4921,7 +4921,7 @@ export default {
             },
             {
               english: 'Monitor',
-              italian: 'Monitor',
+              italian: 'monitor / regola di allerta Datadog',
               pronunciation: '/ˈmɒnɪtər/',
               phonetic: 'MON-i-ter',
               example:
@@ -4931,7 +4931,7 @@ export default {
             },
             {
               english: 'Synthetics',
-              italian: 'Synthetics',
+              italian: 'synthetics / test sintetici',
               pronunciation: '/sɪnˈθetɪks/',
               phonetic: 'sin-TE-tiks',
               example:
@@ -4952,7 +4952,7 @@ export default {
             },
             {
               english: 'Watchdog',
-              italian: 'Watchdog',
+              italian: 'Watchdog / rilevatore anomalie Datadog',
               pronunciation: '/ˈwɒtʃdɒɡ/',
               phonetic: 'UOCH-dog',
               example:
@@ -4963,7 +4963,7 @@ export default {
             },
             {
               english: 'Notebook',
-              italian: 'Notebook',
+              italian: 'notebook / quaderno di analisi',
               pronunciation: '/ˈnoʊtbʊk/',
               phonetic: 'NOUT-buk',
               example:
@@ -5113,7 +5113,7 @@ export default {
           items: [
             {
               english: 'Node Exporter',
-              italian: 'Node Exporter',
+              italian: 'Node Exporter / esportatore metriche host',
               pronunciation: '/noʊd ɪkˈspɔːrtər/',
               phonetic: 'NOUD eks-POR-ter',
               example:
@@ -5136,7 +5136,7 @@ export default {
             },
             {
               english: 'Textfile Collector',
-              italian: 'Textfile collector',
+              italian: 'textfile collector / esportatore via file di testo',
               pronunciation: '/ˈtekstfaɪl kəˈlektər/',
               phonetic: 'TEKST-fail kol-LEK-ter',
               example:
@@ -5147,7 +5147,7 @@ export default {
             },
             {
               english: 'cAdvisor',
-              italian: 'cAdvisor',
+              italian: 'cAdvisor / esportatore metriche container',
               pronunciation: '/siː ˈædvaɪzər/',
               phonetic: 'SI-AD-vai-zer',
               example:
@@ -5158,7 +5158,7 @@ export default {
             },
             {
               english: 'Process Exporter',
-              italian: 'Process exporter',
+              italian: 'process exporter / esportatore metriche di processo',
               pronunciation: '/ˈprɒses ɪkˈspɔːrtər/',
               phonetic: 'PRO-ses eks-POR-ter',
               example:
@@ -5191,7 +5191,7 @@ export default {
             },
             {
               english: 'IPMI',
-              italian: 'IPMI',
+              italian: 'IPMI / interfaccia di gestione hardware',
               pronunciation: '/aɪ piː em aɪ/',
               phonetic: 'AI-PI-EM-AI',
               example: 'IPMI exposes baseboard sensors. = IPMI espone i sensori della baseboard.',
@@ -5201,7 +5201,7 @@ export default {
             },
             {
               english: 'NUMA',
-              italian: 'NUMA',
+              italian: 'NUMA / accesso non uniforme alla memoria',
               pronunciation: '/ˈnuːmə/',
               phonetic: 'NU-ma',
               example:
@@ -5229,7 +5229,7 @@ export default {
           items: [
             {
               english: 'SNMP',
-              italian: 'SNMP',
+              italian: 'SNMP / protocollo gestione di rete',
               pronunciation: '/es en em piː/',
               phonetic: 'ES-EN-EM-PI',
               example:
@@ -5240,7 +5240,7 @@ export default {
             },
             {
               english: 'SNMP Exporter',
-              italian: 'SNMP Exporter',
+              italian: 'SNMP Exporter / esportatore SNMP per Prometheus',
               pronunciation: '/es en em piː ɪkˈspɔːrtər/',
               phonetic: 'ES-EN-EM-PI eks-POR-ter',
               example:
@@ -5251,7 +5251,7 @@ export default {
             },
             {
               english: 'MIB',
-              italian: 'MIB',
+              italian: 'MIB / Management Information Base',
               pronunciation: '/em aɪ biː/',
               phonetic: 'EM-AI-BI',
               example:
@@ -5262,7 +5262,7 @@ export default {
             },
             {
               english: 'OID',
-              italian: 'OID',
+              italian: 'OID / identificatore SNMP',
               pronunciation: '/oʊ aɪ diː/',
               phonetic: 'O-AI-DI',
               example:
@@ -5273,7 +5273,7 @@ export default {
             },
             {
               english: 'NetFlow',
-              italian: 'NetFlow',
+              italian: 'NetFlow / protocollo Cisco di flussi di rete',
               pronunciation: '/ˈnetfloʊ/',
               phonetic: 'NET-flou',
               example:
@@ -5284,7 +5284,7 @@ export default {
             },
             {
               english: 'Telegraf',
-              italian: 'Telegraf',
+              italian: 'Telegraf (agente di metriche InfluxData)',
               pronunciation: '/ˈteləɡræf/',
               phonetic: 'TE-le-graf',
               example:
@@ -5357,7 +5357,7 @@ export default {
             },
             {
               english: 'cgroup',
-              italian: 'cgroup',
+              italian: 'cgroup / gruppo di controllo Linux',
               pronunciation: '/siː ɡruːp/',
               phonetic: 'SI-GRUP',
               example:
@@ -5379,7 +5379,7 @@ export default {
             },
             {
               english: 'OOM Kill',
-              italian: 'OOM kill',
+              italian: 'OOM kill / uccisione per memoria esaurita',
               pronunciation: '/oʊ oʊ em kɪl/',
               phonetic: 'O-O-EM KIL',
               example:
@@ -5390,7 +5390,7 @@ export default {
             },
             {
               english: 'CrashLoopBackOff',
-              italian: 'CrashLoopBackOff',
+              italian: 'CrashLoopBackOff / pod che si riavvia in loop',
               pronunciation: '/kræʃ luːp bæk ɒf/',
               phonetic: 'KRASH-LUP-BAK-OF',
               example:
@@ -5496,7 +5496,7 @@ export default {
             },
             {
               english: 'Buffer Pool',
-              italian: 'Buffer pool',
+              italian: 'buffer pool / pool di pagine in memoria',
               pronunciation: '/ˈbʌfər puːl/',
               phonetic: 'BA-fer PUL',
               example:
@@ -5517,7 +5517,7 @@ export default {
             },
             {
               english: 'Deadlock',
-              italian: 'Deadlock',
+              italian: 'deadlock / stallo da lock circolari',
               pronunciation: '/ˈdedlɒk/',
               phonetic: 'DED-lok',
               example:
@@ -5548,7 +5548,7 @@ export default {
             },
             {
               english: 'pgBouncer',
-              italian: 'pgBouncer',
+              italian: 'PgBouncer (connection pooler PostgreSQL)',
               pronunciation: '/piː dʒiː ˈbaʊnsər/',
               phonetic: 'PI-JI BAUN-ser',
               example:
@@ -5586,7 +5586,7 @@ export default {
           items: [
             {
               english: 'CloudWatch',
-              italian: 'CloudWatch',
+              italian: 'CloudWatch (monitoring AWS)',
               pronunciation: '/klaʊdwɒtʃ/',
               phonetic: 'KLAUD-uoch',
               example:
@@ -5641,7 +5641,7 @@ export default {
             },
             {
               english: 'X-Ray',
-              italian: 'X-Ray',
+              italian: 'AWS X-Ray (tracing distribuito AWS)',
               pronunciation: '/eks reɪ/',
               phonetic: 'EKS-REI',
               example:
@@ -5652,7 +5652,7 @@ export default {
             },
             {
               english: 'Container Insights',
-              italian: 'Container Insights',
+              italian: 'Container Insights / monitoring container AWS',
               pronunciation: '/kənˈteɪnər ˈɪnsaɪts/',
               phonetic: 'kon-TEI-ner IN-saits',
               example:
@@ -5663,7 +5663,7 @@ export default {
             },
             {
               english: 'Lambda Insights',
-              italian: 'Lambda Insights',
+              italian: 'Lambda Insights / monitoring Lambda AWS',
               pronunciation: '/ˈlæmdə ˈɪnsaɪts/',
               phonetic: 'LAM-da IN-saits',
               example:
@@ -5673,7 +5673,7 @@ export default {
             },
             {
               english: 'Cost Explorer',
-              italian: 'Cost Explorer',
+              italian: 'Cost Explorer / strumento costi AWS',
               pronunciation: '/kɒst ɪkˈsplɔːrər/',
               phonetic: 'KOST eks-PLO-rer',
               example: 'Cost Explorer charts AWS spending. = Cost Explorer grafica la spesa AWS.',
@@ -5683,7 +5683,7 @@ export default {
             },
             {
               english: 'Trusted Advisor',
-              italian: 'Trusted Advisor',
+              italian: 'Trusted Advisor / consigli AWS',
               pronunciation: '/ˈtrʌstɪd ədˈvaɪzər/',
               phonetic: 'TRAS-tid ad-VAI-zer',
               example:
@@ -5701,7 +5701,7 @@ export default {
           items: [
             {
               english: 'Azure Monitor',
-              italian: 'Azure Monitor',
+              italian: 'Azure Monitor (monitoring Azure)',
               pronunciation: '/ˈæʒər ˈmɒnɪtər/',
               phonetic: 'A-jur MON-i-ter',
               example:
@@ -5735,7 +5735,7 @@ export default {
             },
             {
               english: 'Application Insights',
-              italian: 'Application Insights',
+              italian: 'Application Insights / APM Azure',
               pronunciation: '/ˌæplɪˈkeɪʃən ˈɪnsaɪts/',
               phonetic: 'ap-pli-KEI-scion IN-saits',
               example:
@@ -5767,7 +5767,7 @@ export default {
             },
             {
               english: 'Workbook',
-              italian: 'Workbook',
+              italian: 'workbook / report interattivo Azure',
               pronunciation: '/ˈwɜːrkbʊk/',
               phonetic: 'UORK-buk',
               example:
@@ -5777,7 +5777,7 @@ export default {
             },
             {
               english: 'Service Health',
-              italian: 'Service Health',
+              italian: 'Service Health / stato dei servizi cloud',
               pronunciation: '/ˈsɜːrvɪs helθ/',
               phonetic: 'SER-vis HELTH',
               example:
@@ -5787,7 +5787,7 @@ export default {
             },
             {
               english: 'Resource Health',
-              italian: 'Resource Health',
+              italian: 'Resource Health / stato risorse Azure',
               pronunciation: '/rɪˈsɔːrs helθ/',
               phonetic: 'ri-SORS HELTH',
               example:
@@ -5797,7 +5797,7 @@ export default {
             },
             {
               english: 'Activity Log',
-              italian: 'Activity log',
+              italian: 'Activity Log / log delle azioni Azure',
               pronunciation: '/ækˈtɪvɪti lɒɡ/',
               phonetic: 'ak-TI-vi-ti LOG',
               example:
@@ -5814,7 +5814,7 @@ export default {
           items: [
             {
               english: 'Cloud Monitoring',
-              italian: 'Cloud Monitoring',
+              italian: 'Cloud Monitoring (monitoring Google Cloud)',
               pronunciation: '/klaʊd ˈmɒnɪtərɪŋ/',
               phonetic: 'KLAUD MON-i-to-ring',
               example:
@@ -5825,7 +5825,7 @@ export default {
             },
             {
               english: 'Cloud Logging',
-              italian: 'Cloud Logging',
+              italian: 'Cloud Logging (servizio log Google)',
               pronunciation: '/klaʊd ˈlɒɡɪŋ/',
               phonetic: 'KLAUD LOG-ing',
               example:
@@ -5836,7 +5836,7 @@ export default {
             },
             {
               english: 'Cloud Trace',
-              italian: 'Cloud Trace',
+              italian: 'Cloud Trace (tracing Google Cloud)',
               pronunciation: '/klaʊd treɪs/',
               phonetic: 'KLAUD TREIS',
               example:
@@ -5847,7 +5847,7 @@ export default {
             },
             {
               english: 'Cloud Profiler',
-              italian: 'Cloud Profiler',
+              italian: 'Cloud Profiler (profiling Google Cloud)',
               pronunciation: '/klaʊd ˈproʊfaɪlər/',
               phonetic: 'KLAUD PRO-fai-ler',
               example:
@@ -5868,7 +5868,7 @@ export default {
             },
             {
               english: 'Workload Identity',
-              italian: 'Workload Identity',
+              italian: 'workload identity / identità GCP per carichi',
               pronunciation: '/ˈwɜːrkloʊd aɪˈdentɪti/',
               phonetic: 'UORK-loud ai-DEN-ti-ti',
               example:
@@ -5879,7 +5879,7 @@ export default {
             },
             {
               english: 'Log Sink',
-              italian: 'Log sink',
+              italian: 'log sink / destinazione di esportazione log',
               pronunciation: '/lɒɡ sɪŋk/',
               phonetic: 'LOG SINK',
               example:
@@ -6000,7 +6000,7 @@ export default {
             },
             {
               english: 'Quota',
-              italian: 'Quota',
+              italian: 'quota / limite di utilizzo',
               pronunciation: '/ˈkwoʊtə/',
               phonetic: 'KUO-ta',
               example:
@@ -6020,7 +6020,7 @@ export default {
             },
             {
               english: 'Multi-Cloud',
-              italian: 'Multi-cloud',
+              italian: 'multi-cloud / uso di più provider cloud',
               pronunciation: '/ˈmʌlti klaʊd/',
               phonetic: 'MAL-ti KLAUD',
               example:
@@ -6047,7 +6047,7 @@ export default {
           items: [
             {
               english: 'Site Reliability Engineering',
-              italian: 'Site Reliability Engineering',
+              italian: 'SRE / Site Reliability Engineering',
               pronunciation: '/saɪt rɪˌlaɪəˈbɪlɪti ˌendʒɪˈnɪərɪŋ/',
               phonetic: 'SAIT ri-lai-a-BI-li-ti en-ji-NI-ring',
               example:
@@ -6158,7 +6158,7 @@ export default {
           items: [
             {
               english: 'Postmortem',
-              italian: 'Postmortem',
+              italian: 'postmortem / analisi post-incidente',
               pronunciation: '/ˈpoʊstmɔːrtəm/',
               phonetic: 'POST-mor-tem',
               example:
@@ -6297,7 +6297,7 @@ export default {
             },
             {
               english: 'Baseline',
-              italian: 'Baseline',
+              italian: 'baseline / valore di riferimento',
               pronunciation: '/ˈbeɪslaɪn/',
               phonetic: 'BEIS-lain',
               example:
@@ -6328,7 +6328,7 @@ export default {
             },
             {
               english: 'Stress Test',
-              italian: 'Stress test',
+              italian: 'stress test / test sotto carico estremo',
               pronunciation: '/stres test/',
               phonetic: 'STRES TEST',
               example:
@@ -6338,7 +6338,7 @@ export default {
             },
             {
               english: 'Soak Test',
-              italian: 'Soak test',
+              italian: 'soak test / test di lunga durata',
               pronunciation: '/soʊk test/',
               phonetic: 'SOUK TEST',
               example:
@@ -6358,7 +6358,7 @@ export default {
             },
             {
               english: 'Auto-Scaling',
-              italian: 'Auto-scaling',
+              italian: 'auto-scaling / scalabilità automatica',
               pronunciation: '/ˈɔːtoʊ ˈskeɪlɪŋ/',
               phonetic: 'O-to SKEI-ling',
               example:
@@ -6376,7 +6376,7 @@ export default {
           items: [
             {
               english: 'Chaos Engineering',
-              italian: 'Chaos engineering',
+              italian: 'chaos engineering / ingegneria del caos',
               pronunciation: '/ˈkeɪɒs ˌendʒɪˈnɪərɪŋ/',
               phonetic: 'KEI-os en-ji-NI-ring',
               example:
@@ -6387,7 +6387,7 @@ export default {
             },
             {
               english: 'Game Day',
-              italian: 'Game day',
+              italian: 'game day / esercitazione di disastri',
               pronunciation: '/ɡeɪm deɪ/',
               phonetic: 'GHEIM DEI',
               example:
@@ -6397,7 +6397,7 @@ export default {
             },
             {
               english: 'Disaster Recovery',
-              italian: 'Disaster recovery',
+              italian: 'disaster recovery / ripristino dopo disastro',
               pronunciation: '/dɪˈzɑːstər rɪˈkʌvəri/',
               phonetic: 'di-ZAS-ter ri-KO-ve-ri',
               example:
@@ -6407,7 +6407,7 @@ export default {
             },
             {
               english: 'RPO',
-              italian: 'RPO',
+              italian: 'RPO / Recovery Point Objective',
               pronunciation: '/ɑːr piː oʊ/',
               phonetic: 'AR-PI-O',
               example:
@@ -6418,7 +6418,7 @@ export default {
             },
             {
               english: 'RTO',
-              italian: 'RTO',
+              italian: 'RTO / Recovery Time Objective',
               pronunciation: '/ɑːr tiː oʊ/',
               phonetic: 'AR-TI-O',
               example:
@@ -6429,7 +6429,7 @@ export default {
             },
             {
               english: 'Failover',
-              italian: 'Failover',
+              italian: 'failover / commutazione automatica di guasto',
               pronunciation: '/ˈfeɪloʊvər/',
               phonetic: 'FEIL-o-ver',
               example:
@@ -6460,7 +6460,7 @@ export default {
             },
             {
               english: 'Feature Flag',
-              italian: 'Feature flag',
+              italian: 'feature flag / interruttore funzionalità',
               pronunciation: '/ˈfiːtʃər flæɡ/',
               phonetic: 'FI-cer FLAG',
               example:
@@ -6471,7 +6471,7 @@ export default {
             },
             {
               english: 'Rollback',
-              italian: 'Rollback',
+              italian: 'rollback / ritorno a versione precedente',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROL-bak',
               example:
@@ -6559,7 +6559,7 @@ export default {
             },
             {
               english: 'Bridge Call',
-              italian: 'Bridge call',
+              italian: 'bridge call / chiamata ponte tra team',
               pronunciation: '/brɪdʒ kɔːl/',
               phonetic: 'BRIJ KOL',
               example:
@@ -6616,7 +6616,7 @@ export default {
             },
             {
               english: 'SEV1',
-              italian: 'SEV1',
+              italian: 'SEV1 / incidente di gravità 1',
               pronunciation: '/sev wʌn/',
               phonetic: 'SEV-UAN',
               example:
@@ -6626,7 +6626,7 @@ export default {
             },
             {
               english: 'SEV2',
-              italian: 'SEV2',
+              italian: 'SEV2 / incidente di gravità 2',
               pronunciation: '/sev tuː/',
               phonetic: 'SEV-TU',
               example:
@@ -6636,7 +6636,7 @@ export default {
             },
             {
               english: 'SEV3',
-              italian: 'SEV3',
+              italian: 'SEV3 / incidente di gravità 3',
               pronunciation: '/sev θriː/',
               phonetic: 'SEV-TRI',
               example: 'SEV3 is partial degradation. = SEV3 è degrado parziale.',
@@ -6645,7 +6645,7 @@ export default {
             },
             {
               english: 'SEV4',
-              italian: 'SEV4',
+              italian: 'SEV4 / incidente di gravità 4',
               pronunciation: '/sev fɔːr/',
               phonetic: 'SEV-FOR',
               example: 'SEV4 covers minor cosmetic issues. = SEV4 copre problemi cosmetici minori.',
@@ -6654,7 +6654,7 @@ export default {
             },
             {
               english: 'Escalation',
-              italian: 'Escalation',
+              italian: 'escalation / inoltro al livello superiore',
               pronunciation: '/ˌeskəˈleɪʃən/',
               phonetic: 'es-ca-LEI-scion',
               example:
@@ -6774,7 +6774,7 @@ export default {
             },
             {
               english: 'Hotfix',
-              italian: 'Hotfix',
+              italian: 'hotfix / patch urgente in produzione',
               pronunciation: '/ˈhɒtfɪks/',
               phonetic: 'HOT-fiks',
               example:
@@ -6784,7 +6784,7 @@ export default {
             },
             {
               english: 'Rollback',
-              italian: 'Rollback',
+              italian: 'rollback / ritorno a versione precedente',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROL-bak',
               example:
@@ -6821,7 +6821,7 @@ export default {
           items: [
             {
               english: 'Runbook',
-              italian: 'Runbook',
+              italian: 'runbook / procedura operativa',
               pronunciation: '/ˈrʌnbʊk/',
               phonetic: 'RAN-buk',
               example:
@@ -6831,7 +6831,7 @@ export default {
             },
             {
               english: 'Playbook',
-              italian: 'Playbook',
+              italian: 'playbook / piano di risposta',
               pronunciation: '/ˈpleɪbʊk/',
               phonetic: 'PLEI-buk',
               example:
@@ -6882,7 +6882,7 @@ export default {
             },
             {
               english: 'Wiki',
-              italian: 'Wiki',
+              italian: 'wiki / base di conoscenza',
               pronunciation: '/ˈwɪki/',
               phonetic: 'UI-ki',
               example:
@@ -6938,7 +6938,7 @@ export default {
           items: [
             {
               english: 'PagerDuty',
-              italian: 'PagerDuty',
+              italian: 'PagerDuty (piattaforma on-call)',
               pronunciation: '/ˈpeɪdʒər ˈdjuːti/',
               phonetic: 'PEI-jer DIU-ti',
               example:
@@ -6960,7 +6960,7 @@ export default {
             },
             {
               english: 'Schedule',
-              italian: 'Schedule',
+              italian: 'schedule / calendario di reperibilità',
               pronunciation: '/ˈʃedjuːl/',
               phonetic: 'SHE-jul',
               example:
@@ -6970,7 +6970,7 @@ export default {
             },
             {
               english: 'Layer',
-              italian: 'Layer',
+              italian: 'layer / livello di escalation',
               pronunciation: '/ˈleɪər/',
               phonetic: 'LEI-er',
               example:
@@ -6980,7 +6980,7 @@ export default {
             },
             {
               english: 'Event Rule',
-              italian: 'Event rule',
+              italian: 'event rule / regola sugli eventi',
               pronunciation: '/ɪˈvent ruːl/',
               phonetic: 'i-VENT RUL',
               example:
@@ -7011,7 +7011,7 @@ export default {
             },
             {
               english: 'Stakeholder',
-              italian: 'Stakeholder',
+              italian: 'stakeholder / parte interessata',
               pronunciation: '/ˈsteɪkˌhoʊldər/',
               phonetic: 'STEIK-hol-der',
               example:
@@ -7050,7 +7050,7 @@ export default {
           items: [
             {
               english: 'OpsGenie',
-              italian: 'OpsGenie',
+              italian: 'OpsGenie (piattaforma on-call Atlassian)',
               pronunciation: '/ɒps ˈdʒiːni/',
               phonetic: 'OPS-JI-ni',
               example:
@@ -7061,7 +7061,7 @@ export default {
             },
             {
               english: 'Squadcast',
-              italian: 'Squadcast',
+              italian: 'Squadcast (piattaforma on-call)',
               pronunciation: '/ˈskwɒdkæst/',
               phonetic: 'SKUOD-kast',
               example:
@@ -7072,7 +7072,7 @@ export default {
             },
             {
               english: 'Splunk On-Call',
-              italian: 'Splunk On-Call',
+              italian: 'Splunk On-Call (ex-VictorOps)',
               pronunciation: '/splʌŋk ɒn kɔːl/',
               phonetic: 'SPLANK ON-KOL',
               example:
@@ -7083,7 +7083,7 @@ export default {
             },
             {
               english: 'Better Uptime',
-              italian: 'Better Uptime',
+              italian: 'Better Uptime (piattaforma uptime + on-call)',
               pronunciation: '/ˈbetər ˈʌptaɪm/',
               phonetic: 'BE-ter AP-taim',
               example:
@@ -7094,7 +7094,7 @@ export default {
             },
             {
               english: 'Grafana OnCall',
-              italian: 'Grafana OnCall',
+              italian: 'Grafana OnCall (gestione on-call open source)',
               pronunciation: '/ɡrəˈfɑːnə ɒn kɔːl/',
               phonetic: 'GRA-fa-na ON-KOL',
               example:
@@ -7105,7 +7105,7 @@ export default {
             },
             {
               english: 'Alertmanager',
-              italian: 'Alertmanager',
+              italian: 'Alertmanager / dispatcher allarmi Prometheus',
               pronunciation: '/əˈlɜːrt ˈmænɪdʒər/',
               phonetic: 'a-LERT MA-ni-jer',
               example:
@@ -7240,7 +7240,7 @@ export default {
             },
             {
               english: 'Cluster',
-              italian: 'Cluster',
+              italian: 'cluster / gruppo di nodi',
               pronunciation: '/ˈklʌstər/',
               phonetic: 'KLAS-ter',
               example:
@@ -7307,7 +7307,7 @@ export default {
             },
             {
               english: 'Burnout',
-              italian: 'Burnout',
+              italian: 'burnout / esaurimento da stress lavoro',
               pronunciation: '/ˈbɜːrnaʊt/',
               phonetic: 'BERN-aut',
               example:
@@ -7393,7 +7393,7 @@ export default {
           items: [
             {
               english: 'OpenTelemetry',
-              italian: 'OpenTelemetry',
+              italian: 'OpenTelemetry / framework observability standard',
               pronunciation: '/ˈoʊpən təˈlemətri/',
               phonetic: 'O-pen te-LE-me-tri',
               example:
@@ -7405,7 +7405,7 @@ export default {
             },
             {
               english: 'OTel',
-              italian: 'OTel',
+              italian: 'OTel / abbreviazione di OpenTelemetry',
               pronunciation: '/oʊtel/',
               phonetic: 'O-tel',
               example:
@@ -7415,7 +7415,7 @@ export default {
             },
             {
               english: 'SDK',
-              italian: 'SDK',
+              italian: 'SDK / kit di sviluppo software',
               pronunciation: '/es diː keɪ/',
               phonetic: 'ES-DI-KEI',
               example:
@@ -7426,7 +7426,7 @@ export default {
             },
             {
               english: 'API',
-              italian: 'API',
+              italian: 'API / interfaccia di programmazione',
               pronunciation: '/eɪ piː aɪ/',
               phonetic: 'EI-PI-AI',
               example:
@@ -7436,7 +7436,7 @@ export default {
             },
             {
               english: 'Collector',
-              italian: 'Collector',
+              italian: 'collector / raccoglitore centrale',
               pronunciation: '/kəˈlektər/',
               phonetic: 'kol-LEK-ter',
               example:
@@ -7447,7 +7447,7 @@ export default {
             },
             {
               english: 'OTLP',
-              italian: 'OTLP',
+              italian: 'OTLP / protocollo OpenTelemetry',
               pronunciation: '/oʊ tiː el piː/',
               phonetic: 'O-TI-EL-PI',
               example:
@@ -7458,7 +7458,7 @@ export default {
             },
             {
               english: 'Receiver',
-              italian: 'Receiver',
+              italian: 'receiver / ricevitore OTel',
               pronunciation: '/rɪˈsiːvər/',
               phonetic: 'ri-SI-ver',
               example:
@@ -7469,7 +7469,7 @@ export default {
             },
             {
               english: 'Processor',
-              italian: 'Processor',
+              italian: 'processor / processatore OTel',
               pronunciation: '/ˈproʊsesər/',
               phonetic: 'PRO-se-ser',
               example:
@@ -7480,7 +7480,7 @@ export default {
             },
             {
               english: 'Exporter',
-              italian: 'Exporter',
+              italian: 'exporter / esportatore OTel',
               pronunciation: '/ɪkˈspɔːrtər/',
               phonetic: 'eks-POR-ter',
               example:
@@ -7491,7 +7491,7 @@ export default {
             },
             {
               english: 'Pipeline',
-              italian: 'Pipeline',
+              italian: 'pipeline / sequenza di stadi',
               pronunciation: '/ˈpaɪplaɪn/',
               phonetic: 'PAIP-lain',
               example:
@@ -7531,7 +7531,7 @@ export default {
             },
             {
               english: 'Tracer',
-              italian: 'Tracer',
+              italian: 'tracer / produttore di trace',
               pronunciation: '/ˈtreɪsər/',
               phonetic: 'TREI-ser',
               example:
@@ -7542,7 +7542,7 @@ export default {
             },
             {
               english: 'Meter',
-              italian: 'Meter',
+              italian: 'meter / produttore di metriche',
               pronunciation: '/ˈmiːtər/',
               phonetic: 'MI-ter',
               example: 'A meter creates and records metrics. = Un meter crea e registra metriche.',
@@ -7574,7 +7574,7 @@ export default {
             },
             {
               english: 'Resource',
-              italian: 'Resource',
+              italian: 'resource / risorsa identificativa',
               pronunciation: '/ˈriːsɔːrs/',
               phonetic: 'RI-sors',
               example:
@@ -7596,7 +7596,7 @@ export default {
             },
             {
               english: 'Baggage',
-              italian: 'Baggage',
+              italian: 'baggage / dati propagati nel contesto',
               pronunciation: '/ˈbæɡɪdʒ/',
               phonetic: 'BA-ghij',
               example:
@@ -7623,7 +7623,7 @@ export default {
           items: [
             {
               english: 'Traceparent',
-              italian: 'Traceparent',
+              italian: 'traceparent / header W3C di propagazione',
               pronunciation: '/ˈtreɪspeərənt/',
               phonetic: 'TREIS-pe-rent',
               example:
@@ -7634,7 +7634,7 @@ export default {
             },
             {
               english: 'Tracestate',
-              italian: 'Tracestate',
+              italian: 'tracestate / header W3C di stato',
               pronunciation: '/ˈtreɪssteɪt/',
               phonetic: 'TREIS-steit',
               example:
@@ -7654,7 +7654,7 @@ export default {
             },
             {
               english: 'Propagator',
-              italian: 'Propagator',
+              italian: 'propagator / propagatore di contesto',
               pronunciation: '/ˈprɒpəˌɡeɪtər/',
               phonetic: 'PRO-pa-ghei-ter',
               example:
@@ -7735,7 +7735,7 @@ export default {
           items: [
             {
               english: 'Sidecar',
-              italian: 'Sidecar',
+              italian: 'sidecar / contenitore affiancato',
               pronunciation: '/ˈsaɪdˌkɑːr/',
               phonetic: 'SAID-kar',
               example:
@@ -7765,7 +7765,7 @@ export default {
             },
             {
               english: 'DaemonSet',
-              italian: 'DaemonSet',
+              italian: 'DaemonSet / pod per ogni nodo Kubernetes',
               pronunciation: '/ˈdiːmənset/',
               phonetic: 'DI-mon-set',
               example: 'Run the Collector as a DaemonSet. = Esegui il Collector come DaemonSet.',
@@ -7775,7 +7775,7 @@ export default {
             },
             {
               english: 'Tail Sampling',
-              italian: 'Tail sampling',
+              italian: 'tail sampling / campionamento a fine trace',
               pronunciation: '/teɪl ˈsɑːmplɪŋ/',
               phonetic: 'TEIL SAM-pling',
               example:
@@ -7786,7 +7786,7 @@ export default {
             },
             {
               english: 'Head Sampling',
-              italian: 'Head sampling',
+              italian: 'head sampling / campionamento a inizio trace',
               pronunciation: '/hed ˈsɑːmplɪŋ/',
               phonetic: 'HED SAM-pling',
               example:
@@ -7807,7 +7807,7 @@ export default {
             },
             {
               english: 'Batch Processor',
-              italian: 'Batch processor',
+              italian: 'batch processor / processatore a lotti',
               pronunciation: '/bætʃ ˈproʊsesər/',
               phonetic: 'BACH PRO-se-ser',
               example:
@@ -7817,7 +7817,7 @@ export default {
             },
             {
               english: 'Confmap',
-              italian: 'Confmap',
+              italian: 'confmap / configurazione OTel',
               pronunciation: '/ˈkɒnfmæp/',
               phonetic: 'KONF-map',
               example:
@@ -7854,7 +7854,7 @@ export default {
           items: [
             {
               english: 'kube-state-metrics',
-              italian: 'kube-state-metrics',
+              italian: 'kube-state-metrics / metriche di stato K8s',
               pronunciation: '/kjuːb steɪt ˈmetrɪks/',
               phonetic: 'KIUB-STEIT ME-triks',
               example:
@@ -7908,7 +7908,7 @@ export default {
             },
             {
               english: 'CronJob',
-              italian: 'CronJob',
+              italian: 'CronJob / job pianificato Kubernetes',
               pronunciation: '/krɒn dʒɒb/',
               phonetic: 'KRON-JOB',
               example:
@@ -7919,7 +7919,7 @@ export default {
             },
             {
               english: 'PVC',
-              italian: 'PVC',
+              italian: 'PVC / Persistent Volume Claim',
               pronunciation: '/piː viː siː/',
               phonetic: 'PI-VI-SI',
               example:
@@ -7970,7 +7970,7 @@ export default {
           items: [
             {
               english: 'Prometheus Operator',
-              italian: 'Prometheus Operator',
+              italian: 'Prometheus Operator / operator K8s per Prometheus',
               pronunciation: '/prəˈmiːθiəs ˈɒpəreɪtər/',
               phonetic: 'PRO-met-eus o-pe-REI-ter',
               example:
@@ -7981,7 +7981,7 @@ export default {
             },
             {
               english: 'kube-prometheus-stack',
-              italian: 'kube-prometheus-stack',
+              italian: 'kube-prometheus-stack / chart Prometheus completo',
               pronunciation: '/kjuːb prəˈmiːθiəs stæk/',
               phonetic: 'KIUB PRO-met-eus STAK',
               example:
@@ -7992,7 +7992,7 @@ export default {
             },
             {
               english: 'ServiceMonitor',
-              italian: 'ServiceMonitor',
+              italian: 'ServiceMonitor / CRD scraping servizi',
               pronunciation: '/ˈsɜːrvɪs ˈmɒnɪtər/',
               phonetic: 'SER-vis MON-i-ter',
               example:
@@ -8003,7 +8003,7 @@ export default {
             },
             {
               english: 'PodMonitor',
-              italian: 'PodMonitor',
+              italian: 'PodMonitor / CRD scraping pod',
               pronunciation: '/pɒd ˈmɒnɪtər/',
               phonetic: 'POD MON-i-ter',
               example:
@@ -8014,7 +8014,7 @@ export default {
             },
             {
               english: 'PrometheusRule',
-              italian: 'PrometheusRule',
+              italian: 'PrometheusRule / CRD per regole Prometheus',
               pronunciation: '/prəˈmiːθiəs ruːl/',
               phonetic: 'PRO-met-eus RUL',
               example:
@@ -8025,7 +8025,7 @@ export default {
             },
             {
               english: 'AlertmanagerConfig',
-              italian: 'AlertmanagerConfig',
+              italian: 'AlertmanagerConfig / CRD config Alertmanager',
               pronunciation: '/əˈlɜːrt ˈmænɪdʒər kənˈfɪɡ/',
               phonetic: 'a-LERT MA-ni-jer kon-FIG',
               example:
@@ -8035,7 +8035,7 @@ export default {
             },
             {
               english: 'CRD',
-              italian: 'CRD',
+              italian: 'CRD / Custom Resource Definition',
               pronunciation: '/siː ɑːr diː/',
               phonetic: 'SI-AR-DI',
               example: "CRDs extend the Kubernetes API. = I CRD estendono l'API Kubernetes.",
@@ -8065,7 +8065,7 @@ export default {
             },
             {
               english: 'Helm Chart',
-              italian: 'Helm chart',
+              italian: 'Helm chart / pacchetto Helm',
               pronunciation: '/helm tʃɑːrt/',
               phonetic: 'HELM CIART',
               example:
@@ -8117,7 +8117,7 @@ export default {
             },
             {
               english: 'Log Driver',
-              italian: 'Log driver',
+              italian: 'log driver / driver di logging Docker',
               pronunciation: '/lɒɡ ˈdraɪvər/',
               phonetic: 'LOG DRAI-ver',
               example:
@@ -8138,7 +8138,7 @@ export default {
             },
             {
               english: 'Audit Log',
-              italian: 'Audit log',
+              italian: 'audit log / registro di audit',
               pronunciation: '/ˈɔːdɪt lɒɡ/',
               phonetic: 'O-dit LOG',
               example:
@@ -8160,7 +8160,7 @@ export default {
             },
             {
               english: 'Stern',
-              italian: 'Stern',
+              italian: 'stern / utility multi-pod log Kubernetes',
               pronunciation: '/stɜːrn/',
               phonetic: 'STERN',
               example:
@@ -8199,7 +8199,7 @@ export default {
           items: [
             {
               english: 'Service Mesh',
-              italian: 'Service mesh',
+              italian: 'service mesh / rete di servizi gestita',
               pronunciation: '/ˈsɜːrvɪs meʃ/',
               phonetic: 'SER-vis MESH',
               example:
@@ -8210,7 +8210,7 @@ export default {
             },
             {
               english: 'Istio',
-              italian: 'Istio',
+              italian: 'Istio (service mesh open source)',
               pronunciation: '/ˈɪstioʊ/',
               phonetic: 'IS-tio',
               example:
@@ -8221,7 +8221,7 @@ export default {
             },
             {
               english: 'Linkerd',
-              italian: 'Linkerd',
+              italian: 'Linkerd (service mesh ultra-leggero)',
               pronunciation: '/ˈlɪŋkərd/',
               phonetic: 'LINK-erd',
               example: 'Linkerd is the lightweight CNCF mesh. = Linkerd è il mesh CNCF leggero.',
@@ -8231,7 +8231,7 @@ export default {
             },
             {
               english: 'Envoy Proxy',
-              italian: 'Envoy proxy',
+              italian: 'Envoy / proxy L7 di service mesh',
               pronunciation: '/ˈenvɔɪ ˈprɒksi/',
               phonetic: 'EN-voi PROK-si',
               example: 'Envoy is the data plane in Istio. = Envoy è il data plane in Istio.',
@@ -8360,7 +8360,7 @@ export default {
             },
             {
               english: 'Prophet',
-              italian: 'Prophet',
+              italian: 'Prophet (libreria forecasting Meta)',
               pronunciation: '/ˈprɒfɪt/',
               phonetic: 'PRO-fit',
               example:
@@ -8371,7 +8371,7 @@ export default {
             },
             {
               english: 'ARIMA',
-              italian: 'ARIMA',
+              italian: 'ARIMA (modello forecasting statistico)',
               pronunciation: '/əˈriːmə/',
               phonetic: 'a-RI-ma',
               example:
@@ -8381,7 +8381,7 @@ export default {
             },
             {
               english: 'Holt-Winters',
-              italian: 'Holt-Winters',
+              italian: 'Holt-Winters / smoothing esponenziale stagionale',
               pronunciation: '/hoʊlt ˈwɪntərz/',
               phonetic: 'HOLT UIN-terz',
               example: 'PromQL has a holt_winters function. = PromQL ha una funzione holt_winters.',
@@ -8517,7 +8517,7 @@ export default {
             },
             {
               english: 'Right-Sizing',
-              italian: 'Right-sizing',
+              italian: 'right-sizing / dimensionamento corretto risorse',
               pronunciation: '/raɪt ˈsaɪzɪŋ/',
               phonetic: 'RAIT SAI-zing',
               example:
@@ -8534,7 +8534,7 @@ export default {
           items: [
             {
               english: 'FinOps',
-              italian: 'FinOps',
+              italian: 'FinOps / operazioni finanziarie cloud',
               pronunciation: '/ˈfɪnɒps/',
               phonetic: 'FIN-OPS',
               example:
@@ -8585,7 +8585,7 @@ export default {
             },
             {
               english: 'Savings Plan',
-              italian: 'Savings plan',
+              italian: 'savings plan / piano di risparmio cloud',
               pronunciation: '/ˈseɪvɪŋz plæn/',
               phonetic: 'SEI-vinz PLAN',
               example:
@@ -8596,7 +8596,7 @@ export default {
             },
             {
               english: 'Showback',
-              italian: 'Showback',
+              italian: 'showback / mostra costi senza addebito',
               pronunciation: '/ˈʃoʊbæk/',
               phonetic: 'SHO-bak',
               example:
@@ -8606,7 +8606,7 @@ export default {
             },
             {
               english: 'Chargeback',
-              italian: 'Chargeback',
+              italian: 'chargeback / addebito interno costi',
               pronunciation: '/ˈtʃɑːrdʒbæk/',
               phonetic: 'CIARJ-bak',
               example:
@@ -8653,7 +8653,7 @@ export default {
             },
             {
               english: 'Benchmark',
-              italian: 'Benchmark',
+              italian: 'benchmark / test prestazionale',
               pronunciation: '/ˈbentʃmɑːrk/',
               phonetic: 'BENCH-mark',
               example:
@@ -8674,7 +8674,7 @@ export default {
             },
             {
               english: 'Flame Graph',
-              italian: 'Flame graph',
+              italian: 'flame graph / grafico a fiamma',
               pronunciation: '/fleɪm ɡræf/',
               phonetic: 'FLEIM GRAF',
               example:
@@ -8685,7 +8685,7 @@ export default {
             },
             {
               english: 'Hot Spot',
-              italian: 'Hot spot',
+              italian: 'hot spot / punto caldo del codice',
               pronunciation: '/hɒt spɒt/',
               phonetic: 'HOT-SPOT',
               example: "A hot spot is a slow code area. = Un hot spot è un'area di codice lenta.",
@@ -8703,7 +8703,7 @@ export default {
             },
             {
               english: 'Garbage Collection',
-              italian: 'Garbage collection',
+              italian: 'garbage collection / raccolta della spazzatura',
               pronunciation: '/ˈɡɑːrbɪdʒ kəˈlekʃən/',
               phonetic: 'GAR-bij ko-LEK-scion',
               example:
@@ -8761,7 +8761,7 @@ export default {
           items: [
             {
               english: 'SIEM',
-              italian: 'SIEM',
+              italian: 'SIEM / Security Information and Event Management',
               pronunciation: '/siːm/',
               phonetic: 'SIM',
               example:
@@ -8772,7 +8772,7 @@ export default {
             },
             {
               english: 'Splunk',
-              italian: 'Splunk',
+              italian: 'Splunk (piattaforma SIEM e log)',
               pronunciation: '/splʌŋk/',
               phonetic: 'SPLANK',
               example: 'Splunk is a market-leading SIEM. = Splunk è un SIEM leader di mercato.',
@@ -8782,7 +8782,7 @@ export default {
             },
             {
               english: 'Sentinel',
-              italian: 'Sentinel',
+              italian: 'Microsoft Sentinel (SIEM cloud-native Azure)',
               pronunciation: '/ˈsentɪnəl/',
               phonetic: 'SEN-ti-nel',
               example:
@@ -8793,7 +8793,7 @@ export default {
             },
             {
               english: 'QRadar',
-              italian: 'QRadar',
+              italian: 'IBM QRadar (SIEM enterprise)',
               pronunciation: '/ˈkjuː ˌreɪdɑːr/',
               phonetic: 'KIU REI-dar',
               example: "QRadar is IBM's SIEM platform. = QRadar è la piattaforma SIEM di IBM.",
@@ -8803,7 +8803,7 @@ export default {
             },
             {
               english: 'Wazuh',
-              italian: 'Wazuh',
+              italian: 'Wazuh (SIEM open source)',
               pronunciation: '/ˈwɑːzuː/',
               phonetic: 'UAZ-u',
               example: 'Wazuh is the open-source SIEM. = Wazuh è il SIEM open-source.',
@@ -8854,7 +8854,7 @@ export default {
             },
             {
               english: 'Threat Intelligence',
-              italian: 'Threat intelligence',
+              italian: 'threat intelligence / intelligence sulle minacce',
               pronunciation: '/θret ɪnˈtelɪdʒəns/',
               phonetic: 'TRET in-TEL-li-jens',
               example:
@@ -8871,7 +8871,7 @@ export default {
           items: [
             {
               english: 'Audit Log',
-              italian: 'Audit log',
+              italian: 'audit log / registro di audit',
               pronunciation: '/ˈɔːdɪt lɒɡ/',
               phonetic: 'O-dit LOG',
               example:
@@ -8892,7 +8892,7 @@ export default {
             },
             {
               english: 'CloudTrail',
-              italian: 'CloudTrail',
+              italian: 'AWS CloudTrail / log degli API AWS',
               pronunciation: '/klaʊdtreɪl/',
               phonetic: 'KLAUD-treil',
               example:
@@ -8913,7 +8913,7 @@ export default {
             },
             {
               english: 'PCI DSS',
-              italian: 'PCI DSS',
+              italian: 'PCI DSS (standard sicurezza dati pagamenti)',
               pronunciation: '/piː siː aɪ diː es es/',
               phonetic: 'PI-SI-AI DI-ES-ES',
               example:
@@ -8923,7 +8923,7 @@ export default {
             },
             {
               english: 'GDPR',
-              italian: 'GDPR',
+              italian: 'GDPR (Regolamento UE protezione dati)',
               pronunciation: '/dʒiː diː piː ɑːr/',
               phonetic: 'JI-DI-PI-AR',
               example:
@@ -8934,7 +8934,7 @@ export default {
             },
             {
               english: 'SOC 2',
-              italian: 'SOC 2',
+              italian: 'SOC 2 (standard di audit servizi cloud)',
               pronunciation: '/sɒk tuː/',
               phonetic: 'SOK TU',
               example:
@@ -8954,7 +8954,7 @@ export default {
             },
             {
               english: 'Forwarder',
-              italian: 'Forwarder',
+              italian: 'forwarder / inoltratore di log',
               pronunciation: '/ˈfɔːrwərdər/',
               phonetic: 'FOR-uar-der',
               example:
@@ -9043,7 +9043,7 @@ export default {
             },
             {
               english: 'PII',
-              italian: 'PII',
+              italian: 'PII / dati personali identificativi',
               pronunciation: '/piː aɪ aɪ/',
               phonetic: 'PI-AI-AI',
               example:
@@ -9075,7 +9075,7 @@ export default {
             },
             {
               english: 'DLP',
-              italian: 'DLP',
+              italian: 'DLP / Data Loss Prevention',
               pronunciation: '/diː el piː/',
               phonetic: 'DI-EL-PI',
               example:
@@ -9154,7 +9154,7 @@ export default {
             },
             {
               english: 'TTP',
-              italian: 'TTP',
+              italian: 'TTP / Tactics, Techniques, Procedures',
               pronunciation: '/tiː tiː piː/',
               phonetic: 'TI-TI-PI',
               example:
@@ -9165,7 +9165,7 @@ export default {
             },
             {
               english: 'MITRE ATT&CK',
-              italian: 'MITRE ATT&CK',
+              italian: 'MITRE ATT&CK / framework di tattiche di attacco',
               pronunciation: '/ˈmaɪtər əˈtæk/',
               phonetic: 'MAI-ter a-TAK',
               example:
@@ -9176,7 +9176,7 @@ export default {
             },
             {
               english: 'EDR',
-              italian: 'EDR',
+              italian: 'EDR / Endpoint Detection and Response',
               pronunciation: '/iː diː ɑːr/',
               phonetic: 'I-DI-AR',
               example:
@@ -9213,7 +9213,7 @@ export default {
           items: [
             {
               english: 'AIOps',
-              italian: 'AIOps',
+              italian: 'AIOps / IT operations potenziate da AI',
               pronunciation: '/ˈeɪɒps/',
               phonetic: 'AI-OPS',
               example:
@@ -9331,7 +9331,7 @@ export default {
             },
             {
               english: 'LSTM',
-              italian: 'LSTM',
+              italian: 'LSTM / rete ricorrente a memoria lunga',
               pronunciation: '/el es tiː em/',
               phonetic: 'EL-ES-TI-EM',
               example:
@@ -9342,7 +9342,7 @@ export default {
             },
             {
               english: 'Isolation Forest',
-              italian: 'Isolation forest',
+              italian: 'Isolation Forest / algoritmo anomaly detection',
               pronunciation: '/ˌaɪsəˈleɪʃən ˈfɒrɪst/',
               phonetic: 'ai-zo-LEI-scion FO-rest',
               example:
@@ -9352,7 +9352,7 @@ export default {
             },
             {
               english: 'Z-Score',
-              italian: 'Z-score',
+              italian: 'Z-score / punteggio standardizzato',
               pronunciation: '/ziː skɔːr/',
               phonetic: 'ZED-SKOR',
               example: 'A z-score above 3 flags outliers. = Uno z-score sopra 3 segnala outlier.',
@@ -9362,7 +9362,7 @@ export default {
             },
             {
               english: 'EWMA',
-              italian: 'EWMA',
+              italian: 'EWMA / media mobile esponenziale ponderata',
               pronunciation: '/iː ˈdʌbəlju em eɪ/',
               phonetic: 'I-DA-bol-iu-EM-EI',
               example:
@@ -9373,7 +9373,7 @@ export default {
             },
             {
               english: 'Clustering',
-              italian: 'Clustering',
+              italian: 'clustering / raggruppamento di dati simili',
               pronunciation: '/ˈklʌstərɪŋ/',
               phonetic: 'KLAS-te-ring',
               example:
@@ -9383,7 +9383,7 @@ export default {
             },
             {
               english: 'Feature Engineering',
-              italian: 'Feature engineering',
+              italian: 'feature engineering / costruzione di feature',
               pronunciation: '/ˈfiːtʃər ˌendʒɪˈnɪərɪŋ/',
               phonetic: 'FI-cer en-ji-NI-ring',
               example:
@@ -9430,7 +9430,7 @@ export default {
           items: [
             {
               english: 'Dynatrace',
-              italian: 'Dynatrace',
+              italian: 'Dynatrace (piattaforma APM AI-driven)',
               pronunciation: '/ˈdaɪnəˌtreɪs/',
               phonetic: 'DAI-na-treis',
               example: 'Dynatrace Davis is the AI engine. = Dynatrace Davis è il motore AI.',
@@ -9440,7 +9440,7 @@ export default {
             },
             {
               english: 'AppDynamics',
-              italian: 'AppDynamics',
+              italian: 'AppDynamics (piattaforma APM Cisco)',
               pronunciation: '/æp daɪˈnæmɪks/',
               phonetic: 'AP dai-NA-miks',
               example:
@@ -9451,7 +9451,7 @@ export default {
             },
             {
               english: 'Moogsoft',
-              italian: 'Moogsoft',
+              italian: 'Moogsoft (AIOps per gestione incidenti)',
               pronunciation: '/ˈmuːɡsɒft/',
               phonetic: 'MUG-soft',
               example: "Moogsoft pioneered AIOps. = Moogsoft ha aperto la strada all'AIOps.",
@@ -9461,7 +9461,7 @@ export default {
             },
             {
               english: 'BigPanda',
-              italian: 'BigPanda',
+              italian: 'BigPanda (AIOps per correlazione allarmi)',
               pronunciation: '/bɪɡ ˈpændə/',
               phonetic: 'BIG-PAN-da',
               example:
@@ -9472,7 +9472,7 @@ export default {
             },
             {
               english: 'Datadog Watchdog',
-              italian: 'Datadog Watchdog',
+              italian: 'Datadog Watchdog / rilevatore anomalie automatico',
               pronunciation: '/ˈdætədɒɡ ˈwɒtʃdɒɡ/',
               phonetic: 'DA-ta-dog UOCH-dog',
               example:
@@ -9550,7 +9550,7 @@ export default {
             },
             {
               english: 'LLM',
-              italian: 'LLM',
+              italian: 'LLM / Large Language Model',
               pronunciation: '/el el em/',
               phonetic: 'EL-EL-EM',
               example:
@@ -9561,7 +9561,7 @@ export default {
             },
             {
               english: 'Copilot',
-              italian: 'Copilot',
+              italian: 'Copilot / assistente AI',
               pronunciation: '/ˈkoʊpaɪlət/',
               phonetic: 'KO-pai-lot',
               example: 'A copilot suggests PromQL queries. = Un copilot suggerisce query PromQL.',
@@ -9611,7 +9611,7 @@ export default {
             },
             {
               english: 'Prompt Engineering',
-              italian: 'Prompt engineering',
+              italian: 'prompt engineering / progettazione di prompt',
               pronunciation: '/prɒmpt ˌendʒɪˈnɪərɪŋ/',
               phonetic: 'PROMPT en-ji-NI-ring',
               example:
@@ -9621,7 +9621,7 @@ export default {
             },
             {
               english: 'RAG',
-              italian: 'RAG',
+              italian: 'RAG / Retrieval-Augmented Generation',
               pronunciation: '/ræɡ/',
               phonetic: 'RAG',
               example:
@@ -9678,7 +9678,7 @@ export default {
             },
             {
               english: 'StackStorm',
-              italian: 'StackStorm',
+              italian: 'StackStorm (piattaforma di automazione eventi)',
               pronunciation: '/stæk stɔːrm/',
               phonetic: 'STAK-storm',
               example:
@@ -9689,7 +9689,7 @@ export default {
             },
             {
               english: 'Rundeck',
-              italian: 'Rundeck',
+              italian: 'Rundeck (orchestrazione runbook)',
               pronunciation: '/ˈrʌndek/',
               phonetic: 'RAN-dek',
               example:
@@ -9700,7 +9700,7 @@ export default {
             },
             {
               english: 'Ansible',
-              italian: 'Ansible',
+              italian: 'Ansible (strumento automazione configurazione)',
               pronunciation: '/ˈænsɪbəl/',
               phonetic: 'AN-si-bol',
               example: 'Ansible runs remediation playbooks. = Ansible esegue playbook di rimedio.',
@@ -9740,7 +9740,7 @@ export default {
             },
             {
               english: 'Circuit Breaker',
-              italian: 'Circuit breaker',
+              italian: 'circuit breaker / interruttore di circuito',
               pronunciation: '/ˈsɜːrkɪt ˈbreɪkər/',
               phonetic: 'SER-kit BREI-ker',
               example:
@@ -9767,7 +9767,7 @@ export default {
           items: [
             {
               english: 'ChatOps',
-              italian: 'ChatOps',
+              italian: 'ChatOps / operazioni dal canale chat',
               pronunciation: '/tʃæt ɒps/',
               phonetic: 'CIAT-OPS',
               example:
@@ -9799,7 +9799,7 @@ export default {
             },
             {
               english: 'Hubot',
-              italian: 'Hubot',
+              italian: 'Hubot (bot ChatOps GitHub)',
               pronunciation: '/ˈhjuːbɒt/',
               phonetic: 'HIU-bot',
               example:
@@ -9810,7 +9810,7 @@ export default {
             },
             {
               english: 'Errbot',
-              italian: 'Errbot',
+              italian: 'Errbot (bot ChatOps Python)',
               pronunciation: '/ˈɜːrbɒt/',
               phonetic: 'ER-bot',
               example: 'Errbot is the Python ChatOps engine. = Errbot è il motore ChatOps Python.',
@@ -9943,7 +9943,7 @@ export default {
             },
             {
               english: 'Watchdog',
-              italian: 'Watchdog',
+              italian: 'Watchdog / rilevatore anomalie Datadog',
               pronunciation: '/ˈwɒtʃdɒɡ/',
               phonetic: 'UOCH-dog',
               example:
@@ -9991,7 +9991,7 @@ export default {
           items: [
             {
               english: 'GitOps',
-              italian: 'GitOps',
+              italian: 'GitOps / Git come fonte di verità per il deploy',
               pronunciation: '/ɡɪt ɒps/',
               phonetic: 'GIT-OPS',
               example:
@@ -10002,7 +10002,7 @@ export default {
             },
             {
               english: 'Argo CD',
-              italian: 'Argo CD',
+              italian: 'Argo CD (motore GitOps Kubernetes)',
               pronunciation: '/ˈɑːrɡoʊ siː diː/',
               phonetic: 'AR-go SI-DI',
               example:
@@ -10013,7 +10013,7 @@ export default {
             },
             {
               english: 'Flux',
-              italian: 'Flux',
+              italian: 'Flux (motore GitOps Kubernetes)',
               pronunciation: '/flʌks/',
               phonetic: 'FLAKS',
               example:
@@ -10112,7 +10112,7 @@ export default {
           items: [
             {
               english: 'Terraform',
-              italian: 'Terraform',
+              italian: 'Terraform (IaC HashiCorp)',
               pronunciation: '/ˈterəfɔːrm/',
               phonetic: 'TE-ra-form',
               example:
@@ -10123,7 +10123,7 @@ export default {
             },
             {
               english: 'Provider',
-              italian: 'Provider',
+              italian: 'provider / fornitore di servizi',
               pronunciation: '/prəˈvaɪdər/',
               phonetic: 'pro-VAI-der',
               example:
@@ -10167,7 +10167,7 @@ export default {
             },
             {
               english: 'Plan',
-              italian: 'Plan',
+              italian: 'plan / pianifica modifiche IaC',
               pronunciation: '/plæn/',
               phonetic: 'PLAN',
               example:
@@ -10178,7 +10178,7 @@ export default {
             },
             {
               english: 'Apply',
-              italian: 'Apply',
+              italian: 'apply / applica modifiche IaC',
               pronunciation: '/əˈplaɪ/',
               phonetic: 'a-PLAI',
               example: 'terraform apply enacts the plan. = terraform apply applica il plan.',
@@ -10199,7 +10199,7 @@ export default {
             },
             {
               english: 'Drift',
-              italian: 'Drift',
+              italian: 'drift / scostamento dallo stato dichiarato',
               pronunciation: '/drɪft/',
               phonetic: 'DRIFT',
               example:
@@ -10209,7 +10209,7 @@ export default {
             },
             {
               english: 'Workspace',
-              italian: 'Workspace',
+              italian: 'workspace / area di lavoro',
               pronunciation: '/ˈwɜːrkspeɪs/',
               phonetic: 'UORK-speis',
               example:
@@ -10227,7 +10227,7 @@ export default {
           items: [
             {
               english: 'Jsonnet',
-              italian: 'Jsonnet',
+              italian: 'Jsonnet (linguaggio template JSON)',
               pronunciation: '/ˈdʒeɪsɒnet/',
               phonetic: 'JEI-so-net',
               example:
@@ -10239,7 +10239,7 @@ export default {
             },
             {
               english: 'Grafonnet',
-              italian: 'Grafonnet',
+              italian: 'Grafonnet / libreria Jsonnet per Grafana',
               pronunciation: '/ɡrəˈfɒnet/',
               phonetic: 'gra-FO-net',
               example:
@@ -10259,7 +10259,7 @@ export default {
             },
             {
               english: 'Mixin',
-              italian: 'Mixin',
+              italian: 'mixin / pacchetto monitoring riusabile',
               pronunciation: '/ˈmɪksɪn/',
               phonetic: 'MIK-sin',
               example:
@@ -10270,7 +10270,7 @@ export default {
             },
             {
               english: 'Tanka',
-              italian: 'Tanka',
+              italian: 'Tanka (gestore Kubernetes con Jsonnet)',
               pronunciation: '/ˈtɑːŋkə/',
               phonetic: 'TAN-ka',
               example:
@@ -10291,7 +10291,7 @@ export default {
             },
             {
               english: 'Templating',
-              italian: 'Templating',
+              italian: 'templating / sistema di template',
               pronunciation: '/ˈtempleɪtɪŋ/',
               phonetic: 'TEM-plei-ting',
               example:
@@ -10358,7 +10358,7 @@ export default {
             },
             {
               english: 'Linting',
-              italian: 'Linting',
+              italian: 'linting / analisi statica del codice',
               pronunciation: '/ˈlɪntɪŋ/',
               phonetic: 'LIN-ting',
               example:
@@ -10447,7 +10447,7 @@ export default {
           items: [
             {
               english: 'Sloth',
-              italian: 'Sloth',
+              italian: 'Sloth / generatore di SLO Prometheus',
               pronunciation: '/sloʊθ/',
               phonetic: 'SLOTH',
               example:
@@ -10458,7 +10458,7 @@ export default {
             },
             {
               english: 'OpenSLO',
-              italian: 'OpenSLO',
+              italian: 'OpenSLO / standard aperto per SLO',
               pronunciation: '/ˈoʊpən es el oʊ/',
               phonetic: 'O-pen ES-EL-O',
               example:
@@ -10500,7 +10500,7 @@ export default {
             },
             {
               english: 'Pyrra',
-              italian: 'Pyrra',
+              italian: 'Pyrra / strumento gestione SLO',
               pronunciation: '/ˈpɪrə/',
               phonetic: 'PI-ra',
               example: 'Pyrra is an SLO controller for K8s. = Pyrra è un controller SLO per K8s.',
@@ -10510,7 +10510,7 @@ export default {
             },
             {
               english: 'Nobl9',
-              italian: 'Nobl9',
+              italian: 'Nobl9 (piattaforma SLO commerciale)',
               pronunciation: '/ˈnoʊbəl naɪn/',
               phonetic: 'NO-bol NAIN',
               example:
@@ -10609,7 +10609,7 @@ export default {
             },
             {
               english: 'Follow the Sun',
-              italian: 'Follow the sun',
+              italian: 'follow-the-sun / on-call distribuito sui fusi',
               pronunciation: '/ˈfɒloʊ ðə sʌn/',
               phonetic: 'FOL-lou da SAN',
               example:
@@ -10629,7 +10629,7 @@ export default {
             },
             {
               english: 'Ramp-Up',
-              italian: 'Ramp-up',
+              italian: 'ramp-up / fase di onboarding e crescita',
               pronunciation: '/ræmp ʌp/',
               phonetic: 'RAMP-AP',
               example:
@@ -10834,7 +10834,7 @@ export default {
             },
             {
               english: 'Tech Lead',
-              italian: 'Tech lead',
+              italian: 'tech lead / responsabile tecnico',
               pronunciation: '/tek liːd/',
               phonetic: 'TEK-LID',
               example:
