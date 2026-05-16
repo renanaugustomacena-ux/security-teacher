@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-- **Contact:** ciupsciups@libero.it (also published in [`.well-known/security.txt`](./.well-known/security.txt)).
+- **Contact:** renanaugustomacena@gmail.com (also published in [`.well-known/security.txt`](./.well-known/security.txt)).
 - **Preferred languages:** Italian, English.
 - **Expected response:** within 7 days.
 - **Disclosure window:** 90 days from first contact, or on patch ship — whichever is sooner.

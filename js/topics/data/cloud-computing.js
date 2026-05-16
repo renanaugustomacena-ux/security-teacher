@@ -35,11 +35,11 @@ export default {
             },
             {
               english: 'Cloud Computing',
-              italian: 'cloud computing / elaborazione su risorse in cloud',
+              italian: 'Elaborazione su risorse in cloud (cloud computing)',
               pronunciation: '/klaʊd kəmˈpjuːtɪŋ/',
               phonetic: 'KLA-ud com-PIU-ting',
               example:
-                'Cloud computing offers on-demand resources. = Il cloud computing offre risorse on-demand.',
+                'Many companies have migrated to cloud computing to reduce infrastructure costs. = Molte aziende sono migrate al cloud computing per ridurre i costi infrastrutturali.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -49,7 +49,7 @@ export default {
               pronunciation: '/ɒn ˈpremɪsɪz/',
               phonetic: 'ON PRE-mi-siz',
               example:
-                'On-premises servers are located in your office. = I server on-premise sono nel tuo ufficio.',
+                'Banks often keep sensitive data on on-premises servers for compliance reasons. = Le banche spesso mantengono dati sensibili su server on-premises per motivi di conformità.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Spesso abbreviato "on-prem". Significa server fisici dentro la propria infrastruttura.',
@@ -59,7 +59,8 @@ export default {
               italian: 'Fornitore',
               pronunciation: '/prəˈvaɪdər/',
               phonetic: 'pro-VAI-der',
-              example: 'AWS is a major cloud provider. = AWS è un grande fornitore cloud.',
+              example:
+                'Before choosing a cloud provider, compare pricing tiers and regional availability. = Prima di scegliere un fornitore cloud, confronta i piani tariffari e la disponibilità regionale.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'AWS, Azure, GCP',
@@ -70,7 +71,7 @@ export default {
               pronunciation: '/ˈtenənt/',
               phonetic: 'TE-nent',
               example:
-                'A multi-tenant system serves many customers. = Un sistema multi-tenant serve molti clienti.',
+                "In a multi-tenant architecture, each tenant shares the same infrastructure while keeping data isolated. = In un'architettura multi-tenant, ogni inquilino condivide la stessa infrastruttura mantenendo i dati isolati.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Letteralmente "inquilino". In cloud, un cliente che condivide risorse con altri.',
@@ -91,7 +92,7 @@ export default {
               pronunciation: '/ˌskeɪləˈbɪlɪti/',
               phonetic: 'skei-la-BI-li-ti',
               example:
-                "Scalability lets your app grow with demand. = La scalabilità permette all'app di crescere con la domanda.",
+                "Designing for scalability from the start prevents costly rewrites when traffic surges. = Progettare per la scalabilità fin dall'inizio previene riscritture costose quando il traffico aumenta.",
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -101,7 +102,7 @@ export default {
               pronunciation: '/ˌelæˈstɪsɪti/',
               phonetic: 'e-las-TI-si-ti',
               example:
-                "Elasticity adjusts capacity automatically. = L'elasticità regola la capacità automaticamente.",
+                "During Black Friday sales, elasticity lets e-commerce platforms handle ten times the normal traffic. = Durante i saldi del Black Friday, l'elasticità permette alle piattaforme e-commerce di gestire dieci volte il traffico normale.",
               context: 'foundations',
               difficulty: 'beginner',
               note: "Diversa dalla scalabilità: elasticità è la capacità di scalare ANCHE all'ingiù.",
@@ -112,7 +113,7 @@ export default {
               pronunciation: '/ɒn dɪˈmænd/',
               phonetic: 'ON di-MAND',
               example:
-                'Cloud offers on-demand computing power. = Il cloud offre potenza di calcolo a richiesta.',
+                'Developers spin up on-demand instances only when running batch jobs, saving costs overnight. = Gli sviluppatori avviano istanze on-demand solo per i job batch, risparmiando costi di notte.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -139,7 +140,7 @@ export default {
               pronunciation: '/aɪ æz/',
               phonetic: 'AI-as',
               example:
-                'IaaS provides virtual machines and storage. = IaaS fornisce macchine virtuali e archiviazione.',
+                'Our team migrated from physical servers to IaaS, cutting provisioning time from weeks to minutes. = Il nostro team è migrato da server fisici a IaaS, riducendo i tempi di provisioning da settimane a minuti.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'EC2, Azure VMs, Compute Engine',
@@ -174,7 +175,7 @@ export default {
               pronunciation: '/fæz/',
               phonetic: 'FAS',
               example:
-                'FaaS runs your code only when needed. = FaaS esegue il tuo codice solo quando serve.',
+                'We use FaaS to process uploaded images, paying only for the milliseconds each function runs. = Usiamo FaaS per elaborare le immagini caricate, pagando solo i millisecondi di esecuzione di ogni funzione.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'AWS Lambda, Azure Functions, Cloud Functions',
@@ -186,7 +187,7 @@ export default {
               pronunciation: '/ˈsɜːrvərles/',
               phonetic: 'SER-ver-les',
               example:
-                'Serverless removes server management overhead. = Il serverless elimina la gestione dei server.',
+                'By going serverless, the startup eliminated all patching and scaling work from the ops team. = Adottando il serverless, la startup ha eliminato tutto il lavoro di patching e scaling dal team operativo.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Falso amico: i server esistono ancora! Solo che non li gestisci tu.',
@@ -203,7 +204,7 @@ export default {
             },
             {
               english: 'Self-Service',
-              italian: 'Self-service (auto-servizio)',
+              italian: 'Auto-servizio (self-service)',
               pronunciation: '/self ˈsɜːrvɪs/',
               phonetic: 'SELF SER-vis',
               example:
@@ -228,7 +229,7 @@ export default {
               pronunciation: '/peɪ æz juː ɡoʊ/',
               phonetic: 'PEI as iu GOU',
               example:
-                "Pay-as-you-go pricing scales with usage. = Il prezzo pay-as-you-go scala con l'utilizzo.",
+                'With pay-as-you-go billing, the team only spent twelve dollars during the testing phase. = Con la fatturazione pay-as-you-go, il team ha speso solo dodici dollari durante la fase di test.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -283,11 +284,11 @@ export default {
             },
             {
               english: 'Multi-Cloud',
-              italian: 'multi-cloud / uso di più provider cloud',
+              italian: 'Uso di più provider cloud (multi-cloud)',
               pronunciation: '/ˈmʌlti klaʊd/',
               phonetic: 'MUL-ti KLA-ud',
               example:
-                'A multi-cloud strategy uses several providers. = Una strategia multi-cloud usa più fornitori.',
+                "To avoid vendor lock-in, the company adopted a multi-cloud strategy spanning AWS and Azure. = Per evitare il vendor lock-in, l'azienda ha adottato una strategia multi-cloud su AWS e Azure.",
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -319,38 +320,39 @@ export default {
               pronunciation: '/klaʊd maɪˈɡreɪʃən/',
               phonetic: 'KLA-ud mai-GREI-scen',
               example:
-                'Cloud migration moves apps from on-prem to cloud. = La migrazione cloud sposta le app da on-prem al cloud.',
+                'The CTO approved a two-year cloud migration roadmap starting with non-critical workloads. = Il CTO ha approvato una roadmap di migrazione al cloud biennale partendo dai carichi di lavoro non critici.',
               context: 'foundations',
               difficulty: 'beginner',
             },
             {
               english: 'Cloud-Native',
-              italian: 'cloud-native / progettato per il cloud',
+              italian: 'Progettato per il cloud (cloud-native)',
               pronunciation: '/klaʊd ˈneɪtɪv/',
               phonetic: 'KLA-ud NEI-tiv',
               example:
-                'Cloud-native apps are built for the cloud. = Le app cloud-native sono costruite per il cloud.',
+                "Rewriting the monolith as a cloud-native microservices architecture cut deployment time by 80%. = Riscrivere il monolite come architettura cloud-native a microservizi ha ridotto i tempi di deploy dell'80%.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Apps progettate da zero per il cloud, non solo "spostate".',
             },
             {
               english: 'Hyperscaler',
-              italian: 'hyperscaler / mega-provider cloud globale',
+              italian: 'Mega-provider cloud globale (hyperscaler)',
               pronunciation: '/ˈhaɪpəskeɪlər/',
               phonetic: 'HAI-per-skei-ler',
-              example: 'AWS, Azure, and GCP are hyperscalers. = AWS, Azure e GCP sono hyperscaler.',
+              example:
+                'Only a hyperscaler can offer data centers in thirty or more regions worldwide. = Solo un hyperscaler può offrire datacenter in trenta o più regioni nel mondo.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'I tre grandi fornitori cloud globali con datacenter ovunque.',
             },
             {
               english: 'Edge Computing',
-              italian: "edge computing / elaborazione vicino all'utente",
+              italian: "Elaborazione vicino all'utente (edge computing)",
               pronunciation: '/edʒ kəmˈpjuːtɪŋ/',
               phonetic: 'EDG com-PIU-ting',
               example:
-                "Edge computing processes data near the source. = L'edge computing elabora i dati vicino alla sorgente.",
+                "Self-driving cars rely on edge computing to make split-second decisions without cloud round-trips. = Le auto a guida autonoma si affidano all'edge computing per decisioni istantanee senza viaggi verso il cloud.",
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -366,7 +368,8 @@ export default {
               italian: 'Regione',
               pronunciation: '/ˈriːdʒən/',
               phonetic: 'RII-gen',
-              example: 'AWS has regions in many countries. = AWS ha regioni in molti paesi.',
+              example:
+                "We deployed the application in the eu-south-1 region to keep latency low for Italian users. = Abbiamo distribuito l'applicazione nella regione eu-south-1 per mantenere bassa la latenza per gli utenti italiani.",
               context: 'foundations',
               difficulty: 'beginner',
               command: 'aws ec2 describe-regions',
@@ -378,14 +381,14 @@ export default {
               pronunciation: '/əˌveɪləˈbɪlɪti zoʊn/',
               phonetic: 'a-vei-la-BI-li-ti ZOUN',
               example:
-                'Each region has multiple availability zones. = Ogni regione ha più zone di disponibilità.',
+                "Spreading instances across three availability zones ensures the app survives a single datacenter failure. = Distribuire le istanze su tre zone di disponibilità garantisce che l'app sopravviva al guasto di un singolo datacenter.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Spesso abbreviato "AZ". Datacenter fisicamente separati ma vicini.',
             },
             {
               english: 'Data Center',
-              italian: 'Datacenter (centro dati)',
+              italian: 'Centro dati (datacenter)',
               pronunciation: '/ˈdeɪtə ˈsentər/',
               phonetic: 'DEI-ta SEN-ter',
               example:
@@ -420,7 +423,7 @@ export default {
               pronunciation: '/ˈdʒiːoʊ replɪˈkeɪʃən/',
               phonetic: 'GII-o re-pli-KEI-scen',
               example:
-                'Geo-replication copies data to other regions. = La geo-replicazione copia i dati in altre regioni.',
+                'Enabling geo-replication across EU regions ensures business continuity if one datacenter goes offline. = Abilitare la geo-replicazione tra regioni UE garantisce la continuità operativa se un datacenter va offline.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -437,11 +440,11 @@ export default {
             },
             {
               english: 'Failover',
-              italian: 'failover / commutazione automatica di guasto',
+              italian: 'Commutazione automatica di guasto (failover)',
               pronunciation: '/ˈfeɪloʊvər/',
               phonetic: 'FEIL-ou-ver',
               example:
-                'Failover switches to a backup region on failure. = Il failover passa a una regione di backup in caso di guasto.',
+                'When the primary database crashed, automatic failover routed traffic to the standby replica in seconds. = Quando il database primario è andato in crash, il failover automatico ha instradato il traffico alla replica standby in pochi secondi.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -510,7 +513,8 @@ export default {
               italian: 'EC2 (Elastic Compute Cloud)',
               pronunciation: '/iː siː tuː/',
               phonetic: 'I-SI-TUU',
-              example: 'EC2 is the AWS compute service. = EC2 è il servizio di calcolo AWS.',
+              example:
+                'The deployment pipeline spins up a fresh EC2 instance for each integration test run. = La pipeline di deploy avvia una nuova istanza EC2 per ogni esecuzione dei test di integrazione.',
               context: 'compute',
               difficulty: 'beginner',
               tool: 'AWS EC2',
@@ -518,22 +522,22 @@ export default {
             },
             {
               english: 'Hypervisor',
-              italian: 'hypervisor / supervisore di VM',
+              italian: 'Supervisore di VM (hypervisor)',
               pronunciation: '/ˈhaɪpərvaɪzər/',
               phonetic: 'HAI-per-vai-zer',
               example:
-                "The hypervisor runs multiple VMs on one host. = L'hypervisor esegue più VM su un host.",
+                'AWS replaced Xen with its own Nitro hypervisor to improve VM performance by up to 20%. = AWS ha sostituito Xen con il proprio hypervisor Nitro per migliorare le prestazioni delle VM fino al 20%.',
               context: 'compute',
               difficulty: 'beginner',
               tool: 'KVM, Xen, Hyper-V',
             },
             {
               english: 'Host',
-              italian: 'host / macchina ospitante',
+              italian: 'Macchina ospitante (host)',
               pronunciation: '/hoʊst/',
               phonetic: 'OST',
               example:
-                "The physical host runs the hypervisor. = L'host fisico esegue l'hypervisor.",
+                'A single physical host can run dozens of virtual machines sharing its CPU and memory. = Un singolo host fisico può eseguire decine di macchine virtuali condividendo CPU e memoria.',
               context: 'compute',
               difficulty: 'beginner',
             },
@@ -549,7 +553,7 @@ export default {
             },
             {
               english: 'Snapshot',
-              italian: 'Snapshot (istantanea)',
+              italian: 'Istantanea (snapshot)',
               pronunciation: '/ˈsnæpʃɒt/',
               phonetic: 'SNAP-sciot',
               example:
@@ -560,7 +564,7 @@ export default {
             },
             {
               english: 'Provisioning',
-              italian: 'Provisioning (preparazione)',
+              italian: 'Preparazione delle risorse (provisioning)',
               pronunciation: '/prəˈvɪʒənɪŋ/',
               phonetic: 'pro-VI-gio-ning',
               example:
@@ -582,11 +586,11 @@ export default {
             },
             {
               english: 'Compute Engine',
-              italian: 'Compute Engine / VM Google Cloud',
+              italian: 'VM Google Cloud (Compute Engine)',
               pronunciation: '/kəmˈpjuːt ˈendʒɪn/',
               phonetic: 'com-PIUT EN-gin',
               example:
-                "Compute Engine is GCP's VM service. = Compute Engine è il servizio VM di GCP.",
+                'The analytics team runs daily Spark jobs on preemptible Compute Engine instances to save 60% on costs. = Il team di analytics esegue job Spark giornalieri su istanze preemptible di Compute Engine per risparmiare il 60% sui costi.',
               context: 'compute',
               difficulty: 'beginner',
               tool: 'GCP Compute Engine',
@@ -627,7 +631,8 @@ export default {
               italian: 'vCPU (CPU virtuale)',
               pronunciation: '/viː siː piː juː/',
               phonetic: 'VII-SI-PI-IU',
-              example: 'A t3.medium has 2 vCPUs. = Una t3.medium ha 2 vCPU.',
+              example:
+                "For CPU-intensive tasks, pick an instance with at least 8 vCPUs to avoid bottlenecks. = Per task CPU-intensive, scegli un'istanza con almeno 8 vCPU per evitare colli di bottiglia.",
               context: 'compute',
               difficulty: 'beginner',
               note: 'Si pronuncia "vii-si-pi-iu". 1 vCPU = 1 thread (con hyperthreading).',
@@ -648,7 +653,7 @@ export default {
               pronunciation: '/spɒt ˈɪnstəns/',
               phonetic: 'SPOT IN-stans',
               example:
-                'Spot instances cost up to 90% less. = Le istanze spot costano fino al 90% in meno.',
+                'The data team runs overnight batch jobs on spot instances, saving up to 90% compared to on-demand pricing. = Il team dati esegue job batch notturni su istanze spot, risparmiando fino al 90% rispetto al prezzo on-demand.',
               context: 'compute',
               difficulty: 'beginner',
               command: 'aws ec2 request-spot-instances',
@@ -669,7 +674,8 @@ export default {
               italian: 'Istanza burstable',
               pronunciation: '/ˈbɜːrstəbl/',
               phonetic: 'BERS-ta-bol',
-              example: 'T-series are burstable instances. = Le serie T sono istanze burstable.',
+              example:
+                "For a low-traffic staging environment, a burstable instance like t3.micro keeps costs under five dollars a month. = Per un ambiente di staging a basso traffico, un'istanza burstable come t3.micro mantiene i costi sotto i cinque dollari al mese.",
               context: 'compute',
               difficulty: 'beginner',
               note: 'Possono superare la baseline per brevi periodi consumando "credits".',
@@ -680,7 +686,7 @@ export default {
               pronunciation: '/dʒiː piː juː ˈɪnstəns/',
               phonetic: 'GI-PI-IU IN-stans',
               example:
-                'GPU instances accelerate machine learning. = Le istanze GPU accelerano il machine learning.',
+                'Training the recommendation model on GPU instances reduced training time from three days to four hours. = Addestrare il modello di raccomandazione su istanze GPU ha ridotto il tempo di training da tre giorni a quattro ore.',
               context: 'compute',
               difficulty: 'beginner',
               note: 'In AWS: famiglie p3, p4, g4. Costose ma necessarie per ML.',
@@ -719,7 +725,7 @@ export default {
               pronunciation: '/ˈɔːtoʊ ˈskeɪlɪŋ/',
               phonetic: 'O-to SKEI-ling',
               example:
-                "Auto scaling adjusts capacity based on demand. = L'auto-scaling adatta la capacità in base alla domanda.",
+                "Thanks to auto scaling, our web servers grew from two to twelve instances during the product launch. = Grazie all'auto-scaling, i nostri web server sono passati da due a dodici istanze durante il lancio del prodotto.",
               context: 'compute',
               difficulty: 'beginner',
               tool: 'AWS Auto Scaling, Azure VM Scale Sets',
@@ -737,22 +743,22 @@ export default {
             },
             {
               english: 'Scale Up',
-              italian: 'Scale up (verticale)',
+              italian: 'Scalabilità verticale (scale up)',
               pronunciation: '/skeɪl ʌp/',
               phonetic: 'SKEIL AP',
               example:
-                "Scale up means using a bigger instance. = Scale up significa usare un'istanza più grande.",
+                "When the database hit memory limits, the team chose to scale up to an r5.2xlarge instance. = Quando il database ha raggiunto i limiti di memoria, il team ha scelto di fare scale up a un'istanza r5.2xlarge.",
               context: 'compute',
               difficulty: 'beginner',
               note: 'Scaling verticale: stessa macchina, più potente.',
             },
             {
               english: 'Scale Out',
-              italian: 'Scale out (orizzontale)',
+              italian: 'Scalabilità orizzontale (scale out)',
               pronunciation: '/skeɪl aʊt/',
               phonetic: 'SKEIL AUT',
               example:
-                'Scale out adds more instances to handle load. = Scale out aggiunge più istanze per gestire il carico.',
+                'During the viral marketing campaign, the platform had to scale out from four to forty instances. = Durante la campagna di marketing virale, la piattaforma ha dovuto fare scale out da quattro a quaranta istanze.',
               context: 'compute',
               difficulty: 'beginner',
               note: 'Scaling orizzontale: più macchine identiche.',
@@ -769,11 +775,11 @@ export default {
             },
             {
               english: 'Target Tracking',
-              italian: 'target tracking / scaling su valore target',
+              italian: 'Scaling su valore target (target tracking)',
               pronunciation: '/ˈtɑːrɡɪt ˈtrækɪŋ/',
               phonetic: 'TAR-ghet TRA-king',
               example:
-                'Target tracking keeps CPU at 50%. = Il target tracking mantiene la CPU al 50%.',
+                "We configured target tracking to maintain average CPU utilization at 50% across all instances. = Abbiamo configurato il target tracking per mantenere l'utilizzo medio della CPU al 50% su tutte le istanze.",
               context: 'compute',
               difficulty: 'beginner',
             },
@@ -809,11 +815,11 @@ export default {
             },
             {
               english: 'Health Check',
-              italian: 'Health check (controllo salute)',
+              italian: 'Controllo di integrità (health check)',
               pronunciation: '/helθ tʃek/',
               phonetic: 'ELT CEK',
               example:
-                'Health checks remove unhealthy instances. = Gli health check rimuovono istanze non sane.',
+                "When a health check fails three times in a row, the auto scaler terminates the instance and launches a replacement. = Quando un health check fallisce tre volte consecutive, l'auto scaler termina l'istanza e ne avvia una sostitutiva.",
               context: 'compute',
               difficulty: 'beginner',
             },
@@ -837,17 +843,18 @@ export default {
             },
             {
               english: 'Application Load Balancer',
-              italian: 'Application Load Balancer / bilanciatore L7 AWS',
+              italian: 'Bilanciatore L7 AWS (Application Load Balancer)',
               pronunciation: '/ˌæplɪˈkeɪʃən loʊd ˈbælənsər/',
               phonetic: 'a-pli-KEI-scen LOUD BA-lan-ser',
-              example: 'An ALB routes by URL path. = Un ALB instrada per percorso URL.',
+              example:
+                "The Application Load Balancer routes /api requests to the backend and /static to the CDN. = L'Application Load Balancer instrada le richieste /api al backend e /static alla CDN.",
               context: 'compute',
               difficulty: 'beginner',
               note: 'Abbreviato "ALB". Lavora a livello 7 (HTTP/HTTPS).',
             },
             {
               english: 'Network Load Balancer',
-              italian: 'Network Load Balancer / bilanciatore L4 AWS',
+              italian: 'Bilanciatore L4 AWS (Network Load Balancer)',
               pronunciation: '/ˈnetwɜːrk loʊd ˈbælənsər/',
               phonetic: 'NET-werk LOUD BA-lan-ser',
               example:
@@ -858,11 +865,11 @@ export default {
             },
             {
               english: 'Round Robin',
-              italian: 'round robin / a turno',
+              italian: 'Distribuzione a turno (round robin)',
               pronunciation: '/raʊnd ˈrɒbɪn/',
               phonetic: 'RAUND RO-bin',
               example:
-                'Round robin sends requests in turn. = Il round robin invia richieste a turno.',
+                "The simplest load balancing approach is round robin, which distributes requests evenly across all healthy servers. = L'approccio più semplice di bilanciamento è il round robin, che distribuisce le richieste equamente tra tutti i server sani.",
               context: 'compute',
               difficulty: 'beginner',
             },
@@ -888,7 +895,7 @@ export default {
             },
             {
               english: 'Listener',
-              italian: 'Listener (ascoltatore)',
+              italian: 'Ascoltatore (listener)',
               pronunciation: '/ˈlɪsənər/',
               phonetic: 'LI-se-ner',
               example:
@@ -898,11 +905,11 @@ export default {
             },
             {
               english: 'Backend Pool',
-              italian: 'backend pool / gruppo di backend',
+              italian: 'Gruppo di backend (backend pool)',
               pronunciation: '/ˈbækend puːl/',
               phonetic: 'BAK-end PUUL',
               example:
-                'The backend pool contains target VMs. = Il backend pool contiene le VM target.',
+                'After adding the new VM to the backend pool, traffic started flowing to it within seconds. = Dopo aver aggiunto la nuova VM al backend pool, il traffico ha iniziato a fluire verso di essa in pochi secondi.',
               context: 'compute',
               difficulty: 'beginner',
               tool: 'Azure Load Balancer',
@@ -913,7 +920,7 @@ export default {
               pronunciation: '/krɒs zoʊn/',
               phonetic: 'KROS ZOUN',
               example:
-                'Cross-zone balancing spreads traffic evenly. = Il bilanciamento cross-zona distribuisce il traffico in modo uniforme.',
+                'Enabling cross-zone load balancing ensures that instances in less-populated zones still receive their fair share of traffic. = Abilitare il bilanciamento cross-zona garantisce che le istanze in zone meno popolate ricevano comunque la loro quota di traffico.',
               context: 'compute',
               difficulty: 'beginner',
             },
@@ -950,7 +957,7 @@ export default {
               pronunciation: '/ˈɒbdʒekt ˈstɔːrɪdʒ/',
               phonetic: 'OB-gekt STO-rig',
               example:
-                "Object storage scales to petabytes. = L'archiviazione a oggetti scala a petabyte.",
+                "Netflix stores billions of video segments in object storage for global streaming delivery. = Netflix archivia miliardi di segmenti video nell'archiviazione a oggetti per la distribuzione globale dello streaming.",
               context: 'storage',
               difficulty: 'beginner',
               tool: 'S3, Blob Storage, Cloud Storage',
@@ -960,7 +967,8 @@ export default {
               italian: 'S3 (Simple Storage Service)',
               pronunciation: '/es θriː/',
               phonetic: 'ES-TRII',
-              example: 'Store files in an S3 bucket. = Memorizza file in un bucket S3.',
+              example:
+                "The mobile app uploads user photos directly to S3 using pre-signed URLs. = L'app mobile carica le foto degli utenti direttamente su S3 usando URL pre-firmati.",
               context: 'storage',
               difficulty: 'beginner',
               command: 'aws s3 ls',
@@ -969,7 +977,7 @@ export default {
             },
             {
               english: 'Bucket',
-              italian: 'Bucket (secchio)',
+              italian: 'Contenitore di oggetti (bucket)',
               pronunciation: '/ˈbʌkɪt/',
               phonetic: 'BA-kit',
               example:
@@ -1004,7 +1012,8 @@ export default {
               italian: 'Blob (Binary Large Object)',
               pronunciation: '/blɒb/',
               phonetic: 'BLOB',
-              example: 'Azure stores files as blobs. = Azure memorizza i file come blob.',
+              example:
+                'The backup pipeline writes nightly database dumps as blobs in Azure Blob Storage. = La pipeline di backup scrive i dump notturni del database come blob in Azure Blob Storage.',
               context: 'storage',
               difficulty: 'beginner',
               tool: 'Azure Blob Storage',
@@ -1016,7 +1025,7 @@ export default {
               pronunciation: '/ˈmetədeɪtə/',
               phonetic: 'ME-ta-dei-ta',
               example:
-                "Object metadata includes content type. = I metadati dell'oggetto includono il tipo di contenuto.",
+                'Setting the correct metadata on each uploaded object ensures browsers render images instead of downloading them. = Impostare i metadati corretti su ogni oggetto caricato garantisce che i browser visualizzino le immagini anziché scaricarle.',
               context: 'storage',
               difficulty: 'beginner',
             },
@@ -1047,7 +1056,8 @@ export default {
               italian: 'Accesso pubblico',
               pronunciation: '/ˈpʌblɪk ˈækses/',
               phonetic: 'PA-blik AK-ses',
-              example: "Block public access by default. = Blocca l'accesso pubblico di default.",
+              example:
+                'A misconfigured bucket with public access exposed millions of customer records in the 2019 breach. = Un bucket mal configurato con accesso pubblico ha esposto milioni di record dei clienti nella violazione del 2019.',
               context: 'storage',
               difficulty: 'beginner',
               note: 'Bucket pubblici sono spesso fonte di data leak. Disattivare di default!',
@@ -1065,7 +1075,7 @@ export default {
               pronunciation: '/blɒk ˈstɔːrɪdʒ/',
               phonetic: 'BLOK STO-rig',
               example:
-                "Block storage attaches to a single VM. = L'archiviazione a blocchi si collega a una singola VM.",
+                "Unlike object storage, block storage attaches directly to a single VM and behaves like a physical hard drive. = A differenza dell'archiviazione a oggetti, quella a blocchi si collega direttamente a una singola VM e si comporta come un disco fisico.",
               context: 'storage',
               difficulty: 'beginner',
               tool: 'EBS, Azure Disk, Persistent Disk',
@@ -1084,7 +1094,7 @@ export default {
             },
             {
               english: 'Volume',
-              italian: 'volume / unità di archiviazione',
+              italian: 'Unità di archiviazione (volume)',
               pronunciation: '/ˈvɒljuːm/',
               phonetic: 'VOL-ium',
               example:
@@ -1099,18 +1109,18 @@ export default {
               pronunciation: '/aɪ ɒps/',
               phonetic: 'AI-OPS',
               example:
-                'High IOPS volumes suit databases. = I volumi ad alti IOPS sono adatti ai database.',
+                'The production database requires a volume with at least 10,000 IOPS to handle peak transaction loads. = Il database di produzione richiede un volume con almeno 10.000 IOPS per gestire i picchi di transazioni.',
               context: 'storage',
               difficulty: 'beginner',
               note: 'Si pronuncia "AI-OPS". Sta per "Input/Output Operations Per Second".',
             },
             {
               english: 'Throughput',
-              italian: 'Throughput (capacità)',
+              italian: 'Velocità di trasferimento (throughput)',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'TRUU-put',
               example:
-                'Storage throughput is measured in MB/s. = Il throughput dello storage si misura in MB/s.',
+                'Video editing workflows need high throughput storage, often exceeding 500 MB/s for smooth playback. = I flussi di lavoro di video editing necessitano di storage ad alto throughput, spesso superiore a 500 MB/s per una riproduzione fluida.',
               context: 'storage',
               difficulty: 'beginner',
             },
@@ -1186,18 +1196,18 @@ export default {
             },
             {
               english: 'Hot Tier',
-              italian: 'Tier hot (caldo)',
+              italian: 'Livello di accesso frequente (hot tier)',
               pronunciation: '/hɒt tɪər/',
               phonetic: 'OT TIER',
               example:
-                'Hot tier is for frequently accessed data. = Il tier hot è per dati a cui si accede spesso.',
+                'User profile images belong in the hot tier because they are loaded every time someone visits a page. = Le immagini dei profili utente vanno nel tier hot perché vengono caricate ogni volta che qualcuno visita una pagina.',
               context: 'storage',
               difficulty: 'beginner',
               note: 'In AWS: S3 Standard. In Azure: Hot tier.',
             },
             {
               english: 'Cool Tier',
-              italian: 'Tier cool (freddo)',
+              italian: 'Livello di accesso infrequente (cool tier)',
               pronunciation: '/kuːl tɪər/',
               phonetic: 'KUUL TIER',
               example:
@@ -1208,22 +1218,22 @@ export default {
             },
             {
               english: 'Archive Tier',
-              italian: 'Tier archive (archivio)',
+              italian: 'Livello di archiviazione (archive tier)',
               pronunciation: '/ˈɑːrkaɪv tɪər/',
               phonetic: 'AR-kaiv TIER',
               example:
-                'Archive tier is for long-term backups. = Il tier archive è per backup a lungo termine.',
+                "Compliance regulations require keeping audit logs for seven years, making the archive tier the most cost-effective option. = Le normative di conformità richiedono la conservazione dei log di audit per sette anni, rendendo il livello archive l'opzione più conveniente.",
               context: 'storage',
               difficulty: 'beginner',
               tool: 'S3 Glacier, Azure Archive',
             },
             {
               english: 'Glacier',
-              italian: 'Glacier (ghiacciaio)',
+              italian: 'Archiviazione glaciale AWS (Glacier)',
               pronunciation: '/ˈɡleɪsiər/',
               phonetic: 'GLEI-sier',
               example:
-                'Glacier stores data for cents per GB. = Glacier archivia i dati a centesimi per GB.',
+                'The legal team archives old contracts to Glacier, paying less than a cent per GB per month. = Il team legale archivia i vecchi contratti su Glacier, pagando meno di un centesimo per GB al mese.',
               context: 'storage',
               difficulty: 'beginner',
               tool: 'AWS S3 Glacier',
@@ -1256,13 +1266,13 @@ export default {
               pronunciation: '/koʊld ˈstɔːrɪdʒ/',
               phonetic: 'KOULD STO-rig',
               example:
-                'Cold storage is cheaper but slower. = Lo storage freddo è più economico ma più lento.',
+                'Regulatory archives sit in cold storage where retrieval takes hours but monthly costs are minimal. = Gli archivi regolamentari risiedono nello storage freddo dove il recupero richiede ore ma i costi mensili sono minimi.',
               context: 'storage',
               difficulty: 'beginner',
             },
             {
               english: 'Tiering',
-              italian: 'Tiering (gerarchia)',
+              italian: 'Gestione automatica dei livelli (tiering)',
               pronunciation: '/ˈtɪərɪŋ/',
               phonetic: 'TIE-ring',
               example:
@@ -1291,7 +1301,7 @@ export default {
           items: [
             {
               english: 'Backup',
-              italian: 'backup / copia di sicurezza',
+              italian: 'Copia di sicurezza (backup)',
               pronunciation: '/ˈbækʌp/',
               phonetic: 'BA-kap',
               example:
@@ -1364,7 +1374,7 @@ export default {
             },
             {
               english: 'Vault',
-              italian: 'Vault (caveau)',
+              italian: 'Caveau digitale (vault)',
               pronunciation: '/vɔːlt/',
               phonetic: 'VOLT',
               example:
@@ -1386,11 +1396,11 @@ export default {
             },
             {
               english: 'Object Lock',
-              italian: 'Object Lock / blocco di immutabilità S3',
+              italian: 'Blocco di immutabilità S3 (Object Lock)',
               pronunciation: '/ˈɒbdʒekt lɒk/',
               phonetic: 'OB-gekt LOK',
               example:
-                'Object lock prevents deletion for compliance. = Object lock previene la cancellazione per conformità.',
+                'After a ransomware scare, the team enabled Object Lock to make sure no one could delete or overwrite critical backups. = Dopo un allarme ransomware, il team ha abilitato Object Lock per assicurarsi che nessuno potesse eliminare o sovrascrivere i backup critici.',
               context: 'storage',
               difficulty: 'beginner',
               note: 'WORM (Write Once Read Many). Protezione contro ransomware.',
@@ -1416,7 +1426,8 @@ export default {
               italian: 'VPC (Virtual Private Cloud)',
               pronunciation: '/viː piː siː/',
               phonetic: 'VI-PI-SI',
-              example: 'A VPC isolates your cloud resources. = Un VPC isola le tue risorse cloud.',
+              example:
+                'Each environment, dev, staging, and production, runs inside its own VPC for network isolation. = Ogni ambiente, dev, staging e produzione, gira nel proprio VPC per isolamento di rete.',
               context: 'networking',
               difficulty: 'beginner',
               tool: 'AWS VPC',
@@ -1439,7 +1450,8 @@ export default {
               italian: 'Sottorete',
               pronunciation: '/ˈsʌbnet/',
               phonetic: 'SAB-net',
-              example: 'Divide your VPC into subnets. = Dividi il tuo VPC in sottoreti.',
+              example:
+                'We split the VPC into four subnets: two public for load balancers and two private for databases. = Abbiamo diviso il VPC in quattro sottoreti: due pubbliche per i bilanciatori e due private per i database.',
               context: 'networking',
               difficulty: 'beginner',
               note: 'In italiano spesso si dice "subnet" non tradotto.',
@@ -1460,7 +1472,8 @@ export default {
               italian: 'Subnet privata',
               pronunciation: '/ˈpraɪvət ˈsʌbnet/',
               phonetic: 'PRAI-vet SAB-net',
-              example: 'Databases live in private subnets. = I database stanno in subnet private.',
+              example:
+                'Placing the PostgreSQL cluster in a private subnet ensures it cannot be reached directly from the internet. = Posizionare il cluster PostgreSQL in una subnet privata garantisce che non sia raggiungibile direttamente da internet.',
               context: 'networking',
               difficulty: 'beginner',
             },
@@ -1486,18 +1499,18 @@ export default {
             },
             {
               english: 'Internet Gateway',
-              italian: 'Internet Gateway / gateway Internet di VPC',
+              italian: 'Gateway Internet di VPC (Internet Gateway)',
               pronunciation: '/ˈɪntərnet ˈɡeɪtweɪ/',
               phonetic: 'IN-ter-net GHEIT-uei',
               example:
-                'An internet gateway connects VPC to the internet. = Un internet gateway connette il VPC a internet.',
+                'Without an internet gateway attached, instances in the public subnet cannot send or receive traffic from the web. = Senza un internet gateway collegato, le istanze nella subnet pubblica non possono inviare o ricevere traffico dal web.',
               context: 'networking',
               difficulty: 'beginner',
               note: 'Abbreviato "IGW". Necessario per traffico in/out internet.',
             },
             {
               english: 'NAT Gateway',
-              italian: 'NAT Gateway / gateway NAT gestito',
+              italian: 'Gateway NAT gestito (NAT Gateway)',
               pronunciation: '/næt ˈɡeɪtweɪ/',
               phonetic: 'NAT GHEIT-uei',
               example:
@@ -1508,7 +1521,7 @@ export default {
             },
             {
               english: 'Egress',
-              italian: 'Egress (uscita)',
+              italian: 'Traffico in uscita (egress)',
               pronunciation: '/ˈiːɡres/',
               phonetic: 'I-gres',
               example:
@@ -1526,11 +1539,11 @@ export default {
           items: [
             {
               english: 'Security Group',
-              italian: 'Security Group / gruppo di sicurezza cloud',
+              italian: 'Gruppo di sicurezza cloud (Security Group)',
               pronunciation: '/sɪˈkjʊərɪti ɡruːp/',
               phonetic: 'si-KIU-ri-ti GRUUP',
               example:
-                'Security groups act as virtual firewalls. = I security group fungono da firewall virtuali.',
+                'The security group for the web servers only allows inbound traffic on ports 80 and 443. = Il security group per i web server permette solo traffico in ingresso sulle porte 80 e 443.',
               context: 'networking',
               difficulty: 'beginner',
               command: 'aws ec2 create-security-group',
@@ -1538,7 +1551,7 @@ export default {
             },
             {
               english: 'Network ACL',
-              italian: 'Network ACL / lista di controllo accessi di rete',
+              italian: 'Lista di controllo accessi di rete (Network ACL)',
               pronunciation: '/ˈnetwɜːrk eɪ siː el/',
               phonetic: 'NET-werk EI-SI-EL',
               example:
@@ -1569,7 +1582,7 @@ export default {
             },
             {
               english: 'Firewall',
-              italian: 'firewall / barriera di rete',
+              italian: 'Barriera di rete (firewall)',
               pronunciation: '/ˈfaɪərwɔːl/',
               phonetic: 'FAIER-uol',
               example:
@@ -1602,19 +1615,21 @@ export default {
             },
             {
               english: 'Stateful',
-              italian: 'stateful / con stato',
+              italian: 'Con stato (stateful)',
               pronunciation: '/ˈsteɪtfʊl/',
               phonetic: 'STEIT-ful',
-              example: 'Security groups are stateful. = I security group sono stateful.',
+              example:
+                'Because security groups are stateful, allowing inbound port 443 automatically permits the return traffic. = Poiché i security group sono stateful, permettere la porta 443 in ingresso autorizza automaticamente il traffico di ritorno.',
               context: 'networking',
               difficulty: 'beginner',
             },
             {
               english: 'Stateless',
-              italian: 'stateless / senza stato',
+              italian: 'Senza stato (stateless)',
               pronunciation: '/ˈsteɪtləs/',
               phonetic: 'STEIT-les',
-              example: 'NACLs are stateless. = Le NACL sono stateless.',
+              example:
+                'Since NACLs are stateless, you must write both an inbound and an outbound rule for each allowed flow. = Poiché le NACL sono stateless, bisogna scrivere sia una regola inbound che outbound per ogni flusso consentito.',
               context: 'networking',
               difficulty: 'beginner',
             },
@@ -1648,10 +1663,11 @@ export default {
             },
             {
               english: 'Route 53',
-              italian: 'Route 53 / DNS gestito AWS',
+              italian: 'DNS gestito AWS (Route 53)',
               pronunciation: '/ruːt ˈfɪfti θriː/',
               phonetic: 'RUUT FIF-ti TRII',
-              example: 'Route 53 is the AWS DNS service. = Route 53 è il servizio DNS AWS.',
+              example:
+                'We migrated our domain records to Route 53 to enable latency-based routing across three regions. = Abbiamo migrato i record del dominio su Route 53 per abilitare il routing basato sulla latenza su tre regioni.',
               context: 'networking',
               difficulty: 'beginner',
               tool: 'AWS Route 53',
@@ -1659,7 +1675,7 @@ export default {
             },
             {
               english: 'Hosted Zone',
-              italian: 'hosted zone / zona DNS gestita',
+              italian: 'Zona DNS gestita (hosted zone)',
               pronunciation: '/ˈhoʊstɪd zoʊn/',
               phonetic: 'OS-tid ZOUN',
               example:
@@ -1724,7 +1740,7 @@ export default {
               pronunciation: '/ˈfeɪloʊvər ˈruːtɪŋ/',
               phonetic: 'FEIL-ou-ver RU-ting',
               example:
-                'Failover routing switches to a backup. = Il routing failover passa a un backup.',
+                'With failover routing, if the primary region goes down, DNS automatically resolves to the disaster recovery site. = Con il routing failover, se la regione primaria va giù, il DNS risolve automaticamente al sito di disaster recovery.',
               context: 'networking',
               difficulty: 'beginner',
             },
@@ -1758,11 +1774,11 @@ export default {
             },
             {
               english: 'Direct Connect',
-              italian: 'AWS Direct Connect / circuito dedicato verso AWS',
+              italian: 'Circuito dedicato verso AWS (Direct Connect)',
               pronunciation: '/dɪˈrekt kəˈnekt/',
               phonetic: 'di-REKT co-NEKT',
               example:
-                'Direct Connect provides dedicated bandwidth. = Direct Connect fornisce banda dedicata.',
+                'The bank set up a 10Gbps Direct Connect link to move terabytes of trading data to AWS without touching the public internet. = La banca ha configurato un collegamento Direct Connect da 10Gbps per spostare terabyte di dati di trading su AWS senza passare per internet pubblico.',
               context: 'networking',
               difficulty: 'beginner',
               tool: 'AWS Direct Connect',
@@ -1770,7 +1786,7 @@ export default {
             },
             {
               english: 'ExpressRoute',
-              italian: 'Azure ExpressRoute / circuito dedicato verso Azure',
+              italian: 'Circuito dedicato verso Azure (ExpressRoute)',
               pronunciation: '/ɪkˈspres ruːt/',
               phonetic: 'eks-PRES RUUT',
               example:
@@ -1781,37 +1797,39 @@ export default {
             },
             {
               english: 'VPC Peering',
-              italian: 'VPC peering / collegamento tra VPC',
+              italian: 'Collegamento tra VPC (VPC peering)',
               pronunciation: '/viː piː siː ˈpɪərɪŋ/',
               phonetic: 'VI-PI-SI PI-ring',
-              example: 'VPC peering connects two VPCs. = Il VPC peering connette due VPC.',
+              example:
+                'The shared-services VPC connects to every team VPC via VPC peering so everyone can reach the monitoring stack. = Il VPC dei servizi condivisi si connette a ogni VPC di team tramite VPC peering così tutti possono raggiungere lo stack di monitoraggio.',
               context: 'networking',
               difficulty: 'beginner',
               command: 'aws ec2 create-vpc-peering-connection',
             },
             {
               english: 'Transit Gateway',
-              italian: 'Transit Gateway / hub VPN/VPC AWS',
+              italian: 'Hub VPN/VPC AWS (Transit Gateway)',
               pronunciation: '/ˈtrænzɪt ˈɡeɪtweɪ/',
               phonetic: 'TRAN-zit GHEIT-uei',
               example:
-                'Transit gateway hubs many VPCs. = Il transit gateway fa da hub per molti VPC.',
+                'Instead of peering every VPC individually, we routed all traffic through a single transit gateway. = Invece di fare peering individuale per ogni VPC, abbiamo instradato tutto il traffico attraverso un singolo transit gateway.',
               context: 'networking',
               difficulty: 'beginner',
               tool: 'AWS Transit Gateway',
             },
             {
               english: 'Site-to-Site',
-              italian: 'site-to-site / VPN sito a sito',
+              italian: 'VPN sito a sito (site-to-site)',
               pronunciation: '/saɪt tə saɪt/',
               phonetic: 'SAIT-tu-SAIT',
-              example: 'Set up a site-to-site VPN. = Imposta una VPN site-to-site.',
+              example:
+                "The Milan office connects to the AWS VPC through a site-to-site VPN tunnel encrypted with IPSec. = L'ufficio di Milano si collega al VPC AWS tramite un tunnel VPN site-to-site cifrato con IPSec.",
               context: 'networking',
               difficulty: 'beginner',
             },
             {
               english: 'Customer Gateway',
-              italian: 'Customer Gateway / gateway lato cliente',
+              italian: 'Gateway lato cliente (Customer Gateway)',
               pronunciation: '/ˈkʌstəmər ˈɡeɪtweɪ/',
               phonetic: 'KAS-to-mer GHEIT-uei',
               example:
@@ -1831,22 +1849,22 @@ export default {
             },
             {
               english: 'Endpoint',
-              italian: 'endpoint / punto terminale di un servizio',
+              italian: 'Punto terminale di un servizio (endpoint)',
               pronunciation: '/ˈendpɔɪnt/',
               phonetic: 'END-point',
               example:
-                'A VPC endpoint connects to S3 privately. = Un VPC endpoint si connette a S3 privatamente.',
+                'Using a VPC endpoint for S3 keeps data traffic off the public internet and avoids NAT Gateway costs. = Usare un VPC endpoint per S3 mantiene il traffico dati fuori da internet pubblico ed evita i costi del NAT Gateway.',
               context: 'networking',
               difficulty: 'beginner',
               tool: 'VPC Endpoint, PrivateLink',
             },
             {
               english: 'PrivateLink',
-              italian: 'AWS PrivateLink / collegamento privato a servizi AWS',
+              italian: 'Collegamento privato a servizi AWS (PrivateLink)',
               pronunciation: '/ˈpraɪvət lɪŋk/',
               phonetic: 'PRAI-vet LINK',
               example:
-                'PrivateLink exposes services privately. = PrivateLink espone servizi privatamente.',
+                'Third-party SaaS vendors expose their APIs through PrivateLink so enterprise clients never route traffic over the internet. = I vendor SaaS di terze parti espongono le loro API tramite PrivateLink così i clienti enterprise non instradano mai il traffico su internet.',
               context: 'networking',
               difficulty: 'beginner',
               tool: 'AWS PrivateLink, Azure Private Link',
@@ -1915,7 +1933,7 @@ export default {
             },
             {
               english: 'Service Account',
-              italian: 'service account / account di servizio',
+              italian: 'Account di servizio (service account)',
               pronunciation: '/ˈsɜːrvɪs əˈkaʊnt/',
               phonetic: 'SER-vis a-KAUNT',
               example:
@@ -1926,7 +1944,7 @@ export default {
             },
             {
               english: 'Principal',
-              italian: 'Principal (entità)',
+              italian: 'Entità richiedente (principal)',
               pronunciation: '/ˈprɪnsɪpəl/',
               phonetic: 'PRIN-si-pal',
               example:
@@ -1989,7 +2007,7 @@ export default {
           items: [
             {
               english: 'Policy',
-              italian: 'Policy (politica)',
+              italian: 'Regola di autorizzazione (policy)',
               pronunciation: '/ˈpɒlɪsi/',
               phonetic: 'PO-li-si',
               example:
@@ -2013,7 +2031,8 @@ export default {
               italian: 'Azione',
               pronunciation: '/ˈækʃən/',
               phonetic: 'AK-scen',
-              example: "s3:PutObject is an action. = s3:PutObject è un'azione.",
+              example:
+                'Each IAM statement specifies which action the principal can perform, such as s3:PutObject for uploading files. = Ogni statement IAM specifica quale azione il principal può eseguire, come s3:PutObject per caricare file.',
               context: 'iam',
               difficulty: 'intermediate',
             },
@@ -2029,7 +2048,7 @@ export default {
             },
             {
               english: 'Statement',
-              italian: 'Statement (dichiarazione)',
+              italian: 'Dichiarazione (statement)',
               pronunciation: '/ˈsteɪtmənt/',
               phonetic: 'STEIT-ment',
               example:
@@ -2042,7 +2061,8 @@ export default {
               italian: 'Effetto',
               pronunciation: '/ɪˈfekt/',
               phonetic: 'i-FEKT',
-              example: "The Effect can be Allow or Deny. = L'Effect può essere Allow o Deny.",
+              example:
+                "Setting the Effect to Deny in a policy always overrides any Allow statement for the same action. = Impostare l'Effect su Deny in una policy sovrascrive sempre qualsiasi dichiarazione Allow per la stessa azione.",
               context: 'iam',
               difficulty: 'intermediate',
             },
@@ -2103,7 +2123,7 @@ export default {
               pronunciation: '/liːst ˈprɪvəlɪdʒ/',
               phonetic: 'LIIST PRI-vi-lig',
               example:
-                "Least privilege grants only what's needed. = Il privilegio minimo concede solo il necessario.",
+                'Following the principle of least privilege, the Lambda function only has permission to read from one specific DynamoDB table. = Seguendo il principio del privilegio minimo, la funzione Lambda ha solo il permesso di leggere da una specifica tabella DynamoDB.',
               context: 'iam',
               difficulty: 'intermediate',
               note: 'Principio fondamentale: meno permessi = meno rischio.',
@@ -2121,7 +2141,7 @@ export default {
             },
             {
               english: 'Service Control Policy',
-              italian: 'Service Control Policy / policy organizzativa AWS',
+              italian: 'Policy organizzativa AWS (Service Control Policy)',
               pronunciation: '/ˈsɜːrvɪs kənˈtroʊl/',
               phonetic: 'SER-vis con-TROUL',
               example:
@@ -2145,7 +2165,8 @@ export default {
               italian: 'Accesso cross-account',
               pronunciation: '/krɒs əˈkaʊnt/',
               phonetic: 'KROS a-KAUNT',
-              example: 'Use roles for cross-account access. = Usa ruoli per accessi cross-account.',
+              example:
+                "The CI/CD pipeline uses cross-account access to deploy artifacts from the dev account into the production account. = La pipeline CI/CD usa l'accesso cross-account per distribuire gli artefatti dall'account dev nell'account di produzione.",
               context: 'iam',
               difficulty: 'intermediate',
             },
@@ -2186,14 +2207,15 @@ export default {
               italian: 'STS (Security Token Service)',
               pronunciation: '/es tiː es/',
               phonetic: 'ES-TI-ES',
-              example: 'STS issues short-lived tokens. = STS emette token a breve durata.',
+              example:
+                "When a user assumes a role, STS issues temporary credentials that expire after one hour by default. = Quando un utente assume un ruolo, STS emette credenziali temporanee che scadono dopo un'ora per impostazione predefinita.",
               context: 'iam',
               difficulty: 'intermediate',
               tool: 'AWS STS',
             },
             {
               english: 'Token',
-              italian: "token / credenziale d'accesso",
+              italian: "Credenziale d'accesso temporanea (token)",
               pronunciation: '/ˈtoʊkən/',
               phonetic: 'TOU-ken',
               example:
@@ -2253,20 +2275,21 @@ export default {
             },
             {
               english: 'OAuth',
-              italian: 'OAuth / protocollo di autorizzazione delegata',
+              italian: 'Protocollo di autorizzazione delegata (OAuth)',
               pronunciation: '/oʊ ɔːθ/',
               phonetic: 'O-OT',
               example:
-                'OAuth 2.0 powers most modern logins. = OAuth 2.0 alimenta la maggior parte dei login moderni.',
+                'When you click "Sign in with Google", the app uses OAuth 2.0 to get permission without seeing your password. = Quando clicchi "Accedi con Google", l\'app usa OAuth 2.0 per ottenere il permesso senza vedere la tua password.',
               context: 'iam',
               difficulty: 'intermediate',
             },
             {
               english: 'SAML',
-              italian: 'SAML / standard di federazione SSO',
+              italian: 'Standard di federazione SSO (SAML)',
               pronunciation: '/ˈsæml/',
               phonetic: 'SAM-el',
-              example: 'SAML is common in enterprise SSO. = SAML è comune nel SSO aziendale.',
+              example:
+                'Corporate employees authenticate via SAML so they can access AWS Console using their Active Directory credentials. = I dipendenti aziendali si autenticano via SAML per accedere alla console AWS con le proprie credenziali Active Directory.',
               context: 'iam',
               difficulty: 'intermediate',
               note: '"Security Assertion Markup Language". Standard XML per autenticazione enterprise.',
@@ -2276,7 +2299,8 @@ export default {
               italian: 'OIDC (OpenID Connect)',
               pronunciation: '/oʊ aɪ diː siː/',
               phonetic: 'O-AI-DI-SI',
-              example: 'OIDC builds on top of OAuth 2.0. = OIDC si basa su OAuth 2.0.',
+              example:
+                'GitHub Actions uses OIDC federation to assume AWS roles without storing long-lived secrets. = GitHub Actions usa la federazione OIDC per assumere ruoli AWS senza memorizzare segreti a lungo termine.',
               context: 'iam',
               difficulty: 'intermediate',
             },
@@ -2296,7 +2320,8 @@ export default {
               italian: 'Token hardware',
               pronunciation: '/ˈhɑːrdweər ˈtoʊkən/',
               phonetic: 'ARD-uer TOU-ken',
-              example: 'YubiKey is a hardware token. = YubiKey è un token hardware.',
+              example:
+                'The security team requires a hardware token like YubiKey for all privileged admin accounts. = Il team di sicurezza richiede un token hardware come YubiKey per tutti gli account admin privilegiati.',
               context: 'iam',
               difficulty: 'intermediate',
               tool: 'YubiKey, FIDO2',
@@ -2330,7 +2355,7 @@ export default {
           items: [
             {
               english: 'Lambda',
-              italian: 'AWS Lambda / funzioni serverless AWS',
+              italian: 'Funzioni serverless AWS (Lambda)',
               pronunciation: '/ˈlæmdə/',
               phonetic: 'LAM-bda',
               example:
@@ -2353,7 +2378,7 @@ export default {
             },
             {
               english: 'Handler',
-              italian: 'Handler (gestore)',
+              italian: 'Gestore di funzione (handler)',
               pronunciation: '/ˈhændlər/',
               phonetic: 'AND-ler',
               example:
@@ -2384,7 +2409,7 @@ export default {
             },
             {
               english: 'Trigger',
-              italian: 'Trigger (innesco)',
+              italian: 'Innesco (trigger)',
               pronunciation: '/ˈtrɪɡər/',
               phonetic: 'TRI-gher',
               example:
@@ -2394,7 +2419,7 @@ export default {
             },
             {
               english: 'Cold Start',
-              italian: 'Cold start (avvio a freddo)',
+              italian: 'Avvio a freddo (cold start)',
               pronunciation: '/koʊld stɑːrt/',
               phonetic: 'KOULD START',
               example:
@@ -2405,7 +2430,7 @@ export default {
             },
             {
               english: 'Warm Start',
-              italian: 'Warm start (avvio a caldo)',
+              italian: 'Avvio a caldo (warm start)',
               pronunciation: '/wɔːrm stɑːrt/',
               phonetic: 'UORM START',
               example:
@@ -2426,7 +2451,7 @@ export default {
             },
             {
               english: 'Runtime',
-              italian: 'runtime / ambiente di esecuzione',
+              italian: 'Ambiente di esecuzione (runtime)',
               pronunciation: '/ˈrʌntaɪm/',
               phonetic: 'RAN-taim',
               example:
@@ -2443,11 +2468,11 @@ export default {
           items: [
             {
               english: 'API Gateway',
-              italian: 'API Gateway / gateway delle API',
+              italian: 'Gateway delle API (API Gateway)',
               pronunciation: '/eɪ piː aɪ ˈɡeɪtweɪ/',
               phonetic: 'EI-PI-AI GHEIT-uei',
               example:
-                'API Gateway exposes Lambda over HTTP. = API Gateway espone Lambda via HTTP.',
+                "The mobile app calls the REST API through API Gateway, which routes each request to the correct Lambda function. = L'app mobile chiama l'API REST tramite API Gateway, che instrada ogni richiesta alla funzione Lambda corretta.",
               context: 'serverless',
               difficulty: 'intermediate',
               tool: 'AWS API Gateway, Azure API Management',
@@ -2464,7 +2489,7 @@ export default {
             },
             {
               english: 'HTTP API',
-              italian: 'HTTP API / variante leggera di API Gateway',
+              italian: 'Variante leggera di API Gateway (HTTP API)',
               pronunciation: '/eɪtʃ tiː tiː piː/',
               phonetic: 'EICI-TI-TI-PI',
               example:
@@ -2475,11 +2500,11 @@ export default {
             },
             {
               english: 'Endpoint',
-              italian: 'endpoint / punto terminale di un servizio',
+              italian: 'Punto terminale di un servizio (endpoint)',
               pronunciation: '/ˈendpɔɪnt/',
               phonetic: 'END-point',
               example:
-                "The endpoint /users returns a list. = L'endpoint /users restituisce una lista.",
+                "The frontend fetches user data from the /users endpoint, which returns paginated JSON responses. = Il frontend recupera i dati utente dall'endpoint /users, che restituisce risposte JSON paginate.",
               context: 'serverless',
               difficulty: 'intermediate',
             },
@@ -2508,13 +2533,14 @@ export default {
               italian: 'Integrazione',
               pronunciation: '/ˌɪntɪˈɡreɪʃən/',
               phonetic: 'in-ti-GREI-scen',
-              example: 'API Gateway integrates with Lambda. = API Gateway si integra con Lambda.',
+              example:
+                "The proxy integration forwards the full HTTP request to the Lambda function without any mapping templates. = L'integrazione proxy inoltra l'intera richiesta HTTP alla funzione Lambda senza template di mappatura.",
               context: 'serverless',
               difficulty: 'intermediate',
             },
             {
               english: 'Authorizer',
-              italian: 'authorizer / funzione di autorizzazione',
+              italian: 'Funzione di autorizzazione (authorizer)',
               pronunciation: '/ˈɔːθəraɪzər/',
               phonetic: 'O-to-rai-zer',
               example:
@@ -2525,16 +2551,17 @@ export default {
             },
             {
               english: 'Throttling',
-              italian: 'Throttling (limitazione)',
+              italian: 'Limitazione delle richieste (throttling)',
               pronunciation: '/ˈθrɒtlɪŋ/',
               phonetic: 'TROT-ling',
-              example: 'Throttling protects against abuse. = Il throttling protegge dagli abusi.',
+              example:
+                "Setting throttling to 100 requests per second on the API prevents a single client from overwhelming the backend. = Impostare il throttling a 100 richieste al secondo sull'API impedisce a un singolo client di sovraccaricare il backend.",
               context: 'serverless',
               difficulty: 'intermediate',
             },
             {
               english: 'Stage',
-              italian: 'Stage (ambiente)',
+              italian: 'Ambiente di deploy (stage)',
               pronunciation: '/steɪdʒ/',
               phonetic: 'STEIG',
               example:
@@ -2551,11 +2578,11 @@ export default {
           items: [
             {
               english: 'Event-Driven',
-              italian: 'Event-driven (guidato da eventi)',
+              italian: 'Guidato da eventi (event-driven)',
               pronunciation: '/ɪˈvent ˈdrɪvən/',
               phonetic: 'i-VENT DRI-ven',
               example:
-                "Event-driven architecture decouples services. = L'architettura event-driven disaccoppia i servizi.",
+                "The e-commerce platform uses an event-driven architecture where placing an order triggers payment, inventory, and notification services independently. = La piattaforma e-commerce usa un'architettura event-driven dove effettuare un ordine attiva indipendentemente i servizi di pagamento, inventario e notifica.",
               context: 'serverless',
               difficulty: 'intermediate',
             },
@@ -2571,29 +2598,29 @@ export default {
             },
             {
               english: 'Event Bus',
-              italian: 'event bus / bus degli eventi',
+              italian: 'Bus degli eventi (event bus)',
               pronunciation: '/ɪˈvent bʌs/',
               phonetic: 'i-VENT BAS',
               example:
-                'EventBridge provides a managed event bus. = EventBridge fornisce un event bus gestito.',
+                'All microservices publish domain events to a central event bus, which routes them to interested consumers. = Tutti i microservizi pubblicano eventi di dominio su un event bus centrale, che li instrada ai consumatori interessati.',
               context: 'serverless',
               difficulty: 'intermediate',
               tool: 'AWS EventBridge',
             },
             {
               english: 'Pattern Matching',
-              italian: 'pattern matching / abbinamento per schemi',
+              italian: 'Abbinamento per schemi (pattern matching)',
               pronunciation: '/ˈpætərn ˈmætʃɪŋ/',
               phonetic: 'PA-tern MA-cing',
               example:
-                'EventBridge filters events by pattern. = EventBridge filtra eventi per pattern.',
+                'Using pattern matching, EventBridge only forwards S3 "Object Created" events to the thumbnail generator Lambda. = Usando il pattern matching, EventBridge inoltra solo gli eventi S3 "Object Created" alla Lambda di generazione thumbnail.',
               context: 'serverless',
               difficulty: 'intermediate',
               code: '{"source": ["aws.s3"], "detail-type": ["Object Created"]}',
             },
             {
               english: 'Webhook',
-              italian: 'webhook / chiamata HTTP automatica',
+              italian: 'Chiamata HTTP automatica (webhook)',
               pronunciation: '/ˈwebhʊk/',
               phonetic: 'UEB-uk',
               example:
@@ -2623,7 +2650,7 @@ export default {
             },
             {
               english: 'Retry',
-              italian: 'Retry (ritentativo)',
+              italian: 'Ritentativo (retry)',
               pronunciation: '/ˌriːˈtraɪ/',
               phonetic: 'RI-trai',
               example:
@@ -2644,7 +2671,7 @@ export default {
             },
             {
               english: 'Fan-out',
-              italian: 'fan-out / diffusione a molti consumatori',
+              italian: 'Diffusione a molti consumatori (fan-out)',
               pronunciation: '/fæn aʊt/',
               phonetic: 'FAN-AUT',
               example:
@@ -2662,7 +2689,7 @@ export default {
           items: [
             {
               english: 'Step Functions',
-              italian: 'AWS Step Functions / orchestratore serverless',
+              italian: 'Orchestratore serverless (Step Functions)',
               pronunciation: '/step ˈfʌŋkʃənz/',
               phonetic: 'STEP FANK-scenz',
               example:
@@ -2683,10 +2710,11 @@ export default {
             },
             {
               english: 'Workflow',
-              italian: 'Workflow (flusso di lavoro)',
+              italian: 'Flusso di lavoro (workflow)',
               pronunciation: '/ˈwɜːrkfloʊ/',
               phonetic: 'UERK-flou',
-              example: 'A workflow chains multiple Lambdas. = Un workflow concatena più Lambda.',
+              example:
+                "The order processing workflow validates payment, reserves inventory, and sends a confirmation email through three chained Lambdas. = Il workflow di elaborazione ordini valida il pagamento, riserva l'inventario e invia un'email di conferma attraverso tre Lambda concatenate.",
               context: 'serverless',
               difficulty: 'intermediate',
             },
@@ -2695,7 +2723,8 @@ export default {
               italian: 'Stato task',
               pronunciation: '/tæsk steɪt/',
               phonetic: 'TASK STEIT',
-              example: 'A task state invokes a Lambda. = Uno stato task invoca una Lambda.',
+              example:
+                'In the order workflow, the first task state invokes a Lambda that checks the customer credit score. = Nel workflow degli ordini, il primo task state invoca una Lambda che controlla il punteggio di credito del cliente.',
               context: 'serverless',
               difficulty: 'intermediate',
             },
@@ -2752,7 +2781,7 @@ export default {
             },
             {
               english: 'Saga',
-              italian: 'saga / pattern di transazione distribuita',
+              italian: 'Pattern di transazione distribuita (saga)',
               pronunciation: '/ˈsɑːɡə/',
               phonetic: 'SA-ga',
               example:
@@ -2791,11 +2820,11 @@ export default {
             },
             {
               english: 'Aurora',
-              italian: 'Aurora (database AWS compatibile MySQL/Postgres)',
+              italian: 'Database AWS compatibile MySQL/Postgres (Aurora)',
               pronunciation: '/əˈrɔːrə/',
               phonetic: 'a-RO-ra',
               example:
-                "Aurora is AWS's cloud-native MySQL. = Aurora è il MySQL cloud-native di AWS.",
+                'Migrating from self-managed MySQL to Aurora reduced database administration time by 70% and improved read throughput. = Migrare da MySQL autogestito ad Aurora ha ridotto il tempo di amministrazione del database del 70% e migliorato il throughput in lettura.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'AWS Aurora',
@@ -2834,11 +2863,11 @@ export default {
             },
             {
               english: 'Multi-AZ',
-              italian: 'multi-AZ / replica su più zone di disponibilità',
+              italian: 'Replica su più zone di disponibilità (multi-AZ)',
               pronunciation: '/ˈmʌlti eɪ zed/',
               phonetic: 'MUL-ti EI-ZED',
               example:
-                'Multi-AZ provides automatic failover. = Multi-AZ fornisce failover automatico.',
+                'Enabling multi-AZ on the production database guarantees automatic failover with less than 60 seconds of downtime. = Abilitare multi-AZ sul database di produzione garantisce failover automatico con meno di 60 secondi di downtime.',
               context: 'database',
               difficulty: 'intermediate',
               note: 'Pronuncia AmE: "EI-ZI". Replica sincrona in altra zona.',
@@ -2894,11 +2923,11 @@ export default {
           items: [
             {
               english: 'DynamoDB',
-              italian: 'DynamoDB (database NoSQL chiave-valore AWS)',
+              italian: 'Database NoSQL chiave-valore AWS (DynamoDB)',
               pronunciation: '/daɪˈnæmoʊ diː biː/',
               phonetic: 'dai-NA-mo DI-BI',
               example:
-                'DynamoDB is a NoSQL key-value store. = DynamoDB è un key-value store NoSQL.',
+                'The session store runs on DynamoDB because it handles millions of reads per second with single-digit millisecond latency. = Lo store di sessioni gira su DynamoDB perché gestisce milioni di letture al secondo con latenza inferiore ai dieci millisecondi.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'AWS DynamoDB',
@@ -2906,22 +2935,22 @@ export default {
             },
             {
               english: 'Cosmos DB',
-              italian: 'Cosmos DB (database multi-modello Azure)',
+              italian: 'Database multi-modello Azure (Cosmos DB)',
               pronunciation: '/ˈkɒzmɒs diː biː/',
               phonetic: 'KOZ-mos DI-BI',
               example:
-                "Cosmos DB is Azure's globally distributed NoSQL. = Cosmos DB è il NoSQL distribuito globalmente di Azure.",
+                'The IoT platform stores telemetry data in Cosmos DB, replicating across five regions for sub-10ms reads worldwide. = La piattaforma IoT memorizza i dati di telemetria in Cosmos DB, replicando su cinque regioni per letture sotto i 10ms in tutto il mondo.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'Azure Cosmos DB',
             },
             {
               english: 'Firestore',
-              italian: 'Firestore (database documentale serverless Google)',
+              italian: 'Database documentale serverless Google (Firestore)',
               pronunciation: '/ˈfaɪərstɔːr/',
               phonetic: 'FAIER-stor',
               example:
-                "Firestore is GCP's document database. = Firestore è il database documentale di GCP.",
+                "The chat app syncs messages in real time using Firestore listeners that push updates to all connected clients. = L'app di chat sincronizza i messaggi in tempo reale usando listener Firestore che inviano aggiornamenti a tutti i client connessi.",
               context: 'database',
               difficulty: 'intermediate',
               tool: 'GCP Firestore',
@@ -2949,7 +2978,7 @@ export default {
             },
             {
               english: 'Item',
-              italian: 'Item (elemento)',
+              italian: 'Elemento (item)',
               pronunciation: '/ˈaɪtəm/',
               phonetic: 'AI-tem',
               example: 'Each DynamoDB item has up to 400KB. = Ogni item DynamoDB ha fino a 400KB.',
@@ -2990,7 +3019,7 @@ export default {
             },
             {
               english: 'Eventually Consistent',
-              italian: 'eventually consistent / coerenza eventuale',
+              italian: 'Coerenza eventuale (eventually consistent)',
               pronunciation: '/ɪˈventʃʊəli kənˈsɪstənt/',
               phonetic: 'i-VEN-ciu-a-li con-SIS-tent',
               example:
@@ -3008,38 +3037,39 @@ export default {
           items: [
             {
               english: 'ElastiCache',
-              italian: 'ElastiCache (cache gestita AWS)',
+              italian: 'Cache gestita AWS (ElastiCache)',
               pronunciation: '/ɪˈlæstɪkæʃ/',
               phonetic: 'e-LAS-ti-kasc',
-              example: 'ElastiCache offers managed Redis. = ElastiCache offre Redis gestito.',
+              example:
+                'Moving the session store to ElastiCache reduced database load by 40% and cut response times in half. = Spostare lo store di sessioni su ElastiCache ha ridotto il carico sul database del 40% e dimezzato i tempi di risposta.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'AWS ElastiCache',
             },
             {
               english: 'Redis',
-              italian: 'Redis (database in memoria chiave-valore)',
+              italian: 'Database in memoria chiave-valore (Redis)',
               pronunciation: '/ˈredɪs/',
               phonetic: 'RE-dis',
               example:
-                'Redis is an in-memory key-value store. = Redis è un key-value store in memoria.',
+                'The leaderboard updates in real time thanks to Redis sorted sets, handling thousands of score changes per second. = La classifica si aggiorna in tempo reale grazie ai sorted set di Redis, gestendo migliaia di cambiamenti di punteggio al secondo.',
               context: 'database',
               difficulty: 'intermediate',
               command: 'redis-cli ping',
             },
             {
               english: 'Memcached',
-              italian: 'Memcached (cache in memoria)',
+              italian: 'Cache in memoria distribuita (Memcached)',
               pronunciation: '/ˈmemkæʃt/',
               phonetic: 'MEM-kasct',
               example:
-                'Memcached is a simple in-memory cache. = Memcached è una semplice cache in memoria.',
+                'For simple key-value caching without persistence needs, Memcached outperforms Redis on multi-threaded workloads. = Per caching chiave-valore semplice senza necessità di persistenza, Memcached supera Redis su carichi multi-thread.',
               context: 'database',
               difficulty: 'intermediate',
             },
             {
               english: 'Cache Hit',
-              italian: 'cache hit / dato trovato in cache',
+              italian: 'Dato trovato in cache (cache hit)',
               pronunciation: '/kæʃ hɪt/',
               phonetic: 'KASC IT',
               example:
@@ -3049,10 +3079,11 @@ export default {
             },
             {
               english: 'Cache Miss',
-              italian: 'cache miss / dato assente in cache',
+              italian: 'Dato assente in cache (cache miss)',
               pronunciation: '/kæʃ mɪs/',
               phonetic: 'KASC MIS',
-              example: 'A cache miss falls through to the DB. = Un cache miss ricade sul DB.',
+              example:
+                "On a cache miss, the application queries the database and stores the result in Redis for subsequent requests. = In caso di cache miss, l'applicazione interroga il database e salva il risultato in Redis per le richieste successive.",
               context: 'database',
               difficulty: 'intermediate',
             },
@@ -3068,7 +3099,7 @@ export default {
             },
             {
               english: 'Eviction',
-              italian: 'Eviction (espulsione)',
+              italian: 'Espulsione dalla cache (eviction)',
               pronunciation: '/ɪˈvɪkʃən/',
               phonetic: 'i-VIK-scen',
               example:
@@ -3089,7 +3120,7 @@ export default {
             },
             {
               english: 'Write-Through',
-              italian: 'write-through / scrittura sincrona in cache e DB',
+              italian: 'Scrittura sincrona in cache e DB (write-through)',
               pronunciation: '/raɪt θruː/',
               phonetic: 'RAIT-TRUU',
               example:
@@ -3141,17 +3172,19 @@ export default {
               italian: 'Database documentale',
               pronunciation: '/ˈdɒkjʊmənt ˈdeɪtəbeɪs/',
               phonetic: 'DO-kiu-ment DEI-ta-beis',
-              example: 'DocumentDB is MongoDB-compatible. = DocumentDB è compatibile con MongoDB.',
+              example:
+                'The team chose a document database for the product catalog because each item has a different set of attributes. = Il team ha scelto un database documentale per il catalogo prodotti perché ogni articolo ha un set diverso di attributi.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'AWS DocumentDB, MongoDB Atlas',
             },
             {
               english: 'Wide-Column Store',
-              italian: 'wide-column store / database a colonne larghe',
+              italian: 'Database a colonne larghe (wide-column store)',
               pronunciation: '/waɪd ˈkɒləm stɔːr/',
               phonetic: 'UAID KO-lom STOR',
-              example: 'Cassandra is a wide-column store. = Cassandra è un wide-column store.',
+              example:
+                'Netflix uses Cassandra, a wide-column store, to handle billions of writes per day across its global streaming platform. = Netflix usa Cassandra, un database a colonne larghe, per gestire miliardi di scritture al giorno sulla sua piattaforma di streaming globale.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'AWS Keyspaces, Cassandra',
@@ -3172,7 +3205,8 @@ export default {
               italian: 'Database ledger',
               pronunciation: '/ˈledʒər/',
               phonetic: 'LE-ger',
-              example: 'QLDB is an immutable ledger. = QLDB è un ledger immutabile.',
+              example:
+                'The supply chain system uses a ledger database to create an auditable, tamper-proof record of every transaction. = Il sistema della supply chain usa un database ledger per creare un registro verificabile e a prova di manomissione di ogni transazione.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'AWS QLDB',
@@ -3184,7 +3218,7 @@ export default {
               pronunciation: '/ˈvektər/',
               phonetic: 'VEK-ter',
               example:
-                'Vector DBs power semantic search. = I DB vettoriali alimentano la ricerca semantica.',
+                'The AI chatbot stores document embeddings in a vector database to find the most relevant context for each user question. = Il chatbot AI memorizza gli embedding dei documenti in un database vettoriale per trovare il contesto più rilevante per ogni domanda utente.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'Pinecone, Weaviate, pgvector',
@@ -3207,7 +3241,7 @@ export default {
               pronunciation: '/oʊ el tiː piː/',
               phonetic: 'O-EL-TI-PI',
               example:
-                'OLTP databases handle transactions. = I database OLTP gestiscono transazioni.',
+                "The e-commerce checkout runs on an OLTP database optimized for thousands of small, fast transactions per second. = Il checkout dell'e-commerce gira su un database OLTP ottimizzato per migliaia di transazioni piccole e rapide al secondo.",
               context: 'database',
               difficulty: 'intermediate',
               note: '"Online Transaction Processing". Es: e-commerce, banking.',
@@ -3218,7 +3252,7 @@ export default {
               pronunciation: '/oʊ læp/',
               phonetic: 'O-LAP',
               example:
-                'OLAP databases run analytical queries. = I database OLAP eseguono query analitiche.',
+                'The business intelligence team runs complex OLAP queries across billions of rows to generate weekly sales reports. = Il team di business intelligence esegue query OLAP complesse su miliardi di righe per generare report di vendita settimanali.',
               context: 'database',
               difficulty: 'intermediate',
               note: '"Online Analytical Processing". Es: data warehouse.',
@@ -3241,7 +3275,7 @@ export default {
           items: [
             {
               english: 'Container',
-              italian: 'container / contenitore isolato',
+              italian: 'Contenitore isolato (container)',
               pronunciation: '/kənˈteɪnər/',
               phonetic: 'con-TEI-ner',
               example:
@@ -3263,7 +3297,7 @@ export default {
             },
             {
               english: 'Dockerfile',
-              italian: 'Dockerfile / ricetta di immagine container',
+              italian: 'Ricetta di immagine container (Dockerfile)',
               pronunciation: '/ˈdɒkərfaɪl/',
               phonetic: 'DO-ker-fail',
               example:
@@ -3274,7 +3308,7 @@ export default {
             },
             {
               english: 'Layer',
-              italian: 'Layer (strato)',
+              italian: 'Strato (layer)',
               pronunciation: '/ˈleɪər/',
               phonetic: 'LEI-er',
               example:
@@ -3326,7 +3360,7 @@ export default {
             },
             {
               english: 'Sidecar',
-              italian: 'sidecar / contenitore affiancato',
+              italian: 'Contenitore affiancato (sidecar)',
               pronunciation: '/ˈsaɪdkɑːr/',
               phonetic: 'SAID-car',
               example:
@@ -3337,7 +3371,7 @@ export default {
             },
             {
               english: 'Init Container',
-              italian: 'init container / container di inizializzazione',
+              italian: 'Container di inizializzazione (init container)',
               pronunciation: '/ɪˈnɪt kənˈteɪnər/',
               phonetic: 'i-NIT con-TEI-ner',
               example:
@@ -3398,7 +3432,7 @@ export default {
             },
             {
               english: 'Push',
-              italian: 'Push (caricamento)',
+              italian: 'Caricamento di immagine (push)',
               pronunciation: '/pʊʃ/',
               phonetic: 'PUSC',
               example: "Push the image to your registry. = Pusha l'immagine sul tuo registry.",
@@ -3408,7 +3442,7 @@ export default {
             },
             {
               english: 'Pull',
-              italian: 'Pull (scaricamento)',
+              italian: 'Scaricamento di immagine (pull)',
               pronunciation: '/pʊl/',
               phonetic: 'PUL',
               example:
@@ -3441,7 +3475,7 @@ export default {
             },
             {
               english: 'Repository',
-              italian: 'repository / archivio',
+              italian: 'Archivio di immagini (repository)',
               pronunciation: '/rɪˈpɒzɪtəri/',
               phonetic: 'ri-PO-zi-to-ri',
               example:
@@ -3478,7 +3512,7 @@ export default {
             },
             {
               english: 'Task Definition',
-              italian: 'task definition / definizione di task ECS',
+              italian: 'Definizione di task ECS (task definition)',
               pronunciation: '/tæsk ˌdefɪˈnɪʃən/',
               phonetic: 'TASK de-fi-NI-scen',
               example:
@@ -3489,7 +3523,7 @@ export default {
             },
             {
               english: 'Task',
-              italian: 'Task (compito)',
+              italian: 'Compito in esecuzione (task)',
               pronunciation: '/tæsk/',
               phonetic: 'TASK',
               example:
@@ -3509,7 +3543,7 @@ export default {
             },
             {
               english: 'Cluster',
-              italian: 'cluster / gruppo di nodi',
+              italian: 'Gruppo di nodi (cluster)',
               pronunciation: '/ˈklʌstər/',
               phonetic: 'KLAS-ter',
               example:
@@ -3519,7 +3553,7 @@ export default {
             },
             {
               english: 'Fargate',
-              italian: 'Fargate / esecuzione container serverless AWS',
+              italian: 'Esecuzione container serverless AWS (Fargate)',
               pronunciation: '/ˈfɑːrɡeɪt/',
               phonetic: 'FAR-gheit',
               example:
@@ -3551,7 +3585,7 @@ export default {
             },
             {
               english: 'Container Insights',
-              italian: 'Container Insights / monitoring container AWS',
+              italian: 'Monitoring container AWS (Container Insights)',
               pronunciation: '/kənˈteɪnər ˈɪnsaɪts/',
               phonetic: 'con-TEI-ner IN-saits',
               example:
@@ -3562,7 +3596,7 @@ export default {
             },
             {
               english: 'Capacity Provider',
-              italian: 'capacity provider / fornitore di capacità ECS',
+              italian: 'Fornitore di capacità ECS (capacity provider)',
               pronunciation: '/kəˈpæsɪti prəˈvaɪdər/',
               phonetic: 'ca-PA-si-ti pro-VAI-der',
               example:
@@ -3625,7 +3659,7 @@ export default {
             },
             {
               english: 'Pod',
-              italian: 'pod / unità minima di deployment K8s',
+              italian: 'Unità minima di deployment K8s (pod)',
               pronunciation: '/pɒd/',
               phonetic: 'POD',
               example:
@@ -3655,7 +3689,7 @@ export default {
             },
             {
               english: 'Control Plane',
-              italian: 'Control plane (piano di controllo)',
+              italian: 'Piano di controllo (control plane)',
               pronunciation: '/kənˈtroʊl pleɪn/',
               phonetic: 'con-TROUL PLEIN',
               example:
@@ -3676,7 +3710,7 @@ export default {
             },
             {
               english: 'Karpenter',
-              italian: 'Karpenter / autoscaler nodi AWS-native',
+              italian: 'Autoscaler nodi AWS-native (Karpenter)',
               pronunciation: '/ˈkɑːrpəntər/',
               phonetic: 'KAR-pen-ter',
               example: 'Karpenter auto-provisions EKS nodes. = Karpenter auto-provisiona nodi EKS.',
@@ -3734,11 +3768,11 @@ export default {
             },
             {
               english: 'Provisioning',
-              italian: 'provisioning / fornitura risorse',
+              italian: 'Fornitura risorse (provisioning)',
               pronunciation: '/prəˈvɪʒənɪŋ/',
               phonetic: 'pro-VI-gio-ning',
               example:
-                'IaC tools handle provisioning automatically. = Gli strumenti IaC gestiscono il provisioning automaticamente.',
+                'IaC tools handle provisioning automatically, creating VPCs, instances, and databases from a single config file. = Gli strumenti IaC gestiscono il provisioning automaticamente, creando VPC, istanze e database da un singolo file di configurazione.',
               context: 'iac',
               difficulty: 'intermediate',
             },
@@ -3766,7 +3800,7 @@ export default {
             },
             {
               english: 'Drift',
-              italian: 'Drift (deriva)',
+              italian: 'Deriva della configurazione (drift)',
               pronunciation: '/drɪft/',
               phonetic: 'DRIFT',
               example:
@@ -3778,7 +3812,7 @@ export default {
             },
             {
               english: 'Pet vs Cattle',
-              italian: 'pet vs cattle / animali domestici vs bestiame (server)',
+              italian: 'Animali domestici vs bestiame (pet vs cattle)',
               pronunciation: '/pet vɜːrsəs ˈkætl/',
               phonetic: 'PET ver-sus KA-tol',
               example:
@@ -3799,7 +3833,7 @@ export default {
             },
             {
               english: 'GitOps',
-              italian: 'GitOps / Git come fonte di verità per il deploy',
+              italian: 'Git come fonte di verità per il deploy (GitOps)',
               pronunciation: '/ɡɪt ɒps/',
               phonetic: 'GIT-OPS',
               example:
@@ -3817,7 +3851,7 @@ export default {
           items: [
             {
               english: 'Terraform',
-              italian: 'Terraform (IaC HashiCorp)',
+              italian: 'Strumento IaC HashiCorp (Terraform)',
               pronunciation: '/ˈterəfɔːrm/',
               phonetic: 'TE-ra-form',
               example:
@@ -3829,7 +3863,7 @@ export default {
             },
             {
               english: 'OpenTofu',
-              italian: 'OpenTofu / fork open source di Terraform',
+              italian: 'Fork open source di Terraform (OpenTofu)',
               pronunciation: '/ˈoʊpən ˈtoʊfuː/',
               phonetic: 'OU-pen TO-fu',
               example:
@@ -3851,7 +3885,7 @@ export default {
             },
             {
               english: 'Provider',
-              italian: 'provider / fornitore Terraform',
+              italian: 'Fornitore Terraform (provider)',
               pronunciation: '/prəˈvaɪdər/',
               phonetic: 'pro-VAI-der',
               example:
@@ -3872,7 +3906,7 @@ export default {
             },
             {
               english: 'Data Source',
-              italian: 'data source / risorsa di sola lettura',
+              italian: 'Risorsa di sola lettura (data source)',
               pronunciation: '/ˈdeɪtə sɔːrs/',
               phonetic: 'DEI-ta SORS',
               example:
@@ -3894,7 +3928,7 @@ export default {
             },
             {
               english: 'Output',
-              italian: 'output / valore esposto',
+              italian: 'Valore esposto (output)',
               pronunciation: '/ˈaʊtpʊt/',
               phonetic: 'AUT-put',
               example:
@@ -3916,7 +3950,7 @@ export default {
             },
             {
               english: 'Workspace',
-              italian: 'workspace / area di lavoro',
+              italian: 'Area di lavoro (workspace)',
               pronunciation: '/ˈwɜːrkspeɪs/',
               phonetic: 'UERK-speis',
               example:
@@ -3966,7 +4000,7 @@ export default {
             },
             {
               english: 'Plan',
-              italian: 'Plan (piano)',
+              italian: 'Piano di esecuzione (plan)',
               pronunciation: '/plæn/',
               phonetic: 'PLAN',
               example: 'Run terraform plan before apply. = Esegui terraform plan prima di apply.',
@@ -3976,7 +4010,7 @@ export default {
             },
             {
               english: 'Apply',
-              italian: 'Apply (applica)',
+              italian: 'Applicazione delle modifiche (apply)',
               pronunciation: '/əˈplaɪ/',
               phonetic: 'a-PLAI',
               example:
@@ -3987,7 +4021,7 @@ export default {
             },
             {
               english: 'Destroy',
-              italian: 'Destroy (distruggi)',
+              italian: 'Distruzione risorse (destroy)',
               pronunciation: '/dɪˈstrɔɪ/',
               phonetic: 'di-STROI',
               example:
@@ -3999,7 +4033,7 @@ export default {
             },
             {
               english: 'Refresh',
-              italian: 'Refresh (aggiorna)',
+              italian: 'Aggiornamento dello stato (refresh)',
               pronunciation: '/rɪˈfreʃ/',
               phonetic: 'ri-FRESC',
               example:
@@ -4010,7 +4044,7 @@ export default {
             },
             {
               english: 'Import',
-              italian: 'Import (importa)',
+              italian: 'Importazione risorse esistenti (import)',
               pronunciation: '/ˈɪmpɔːrt/',
               phonetic: 'IM-port',
               example:
@@ -4032,7 +4066,7 @@ export default {
             },
             {
               english: 'Tainting',
-              italian: 'Tainting (marcatura)',
+              italian: 'Marcatura per ricreazione (tainting)',
               pronunciation: '/ˈteɪntɪŋ/',
               phonetic: 'TEIN-ting',
               example:
@@ -4050,7 +4084,7 @@ export default {
           items: [
             {
               english: 'CloudFormation',
-              italian: 'CloudFormation (IaC AWS)',
+              italian: 'IaC nativo AWS (CloudFormation)',
               pronunciation: '/klaʊdfɔːrˈmeɪʃən/',
               phonetic: 'KLA-ud-for-MEI-scen',
               example:
@@ -4062,7 +4096,7 @@ export default {
             },
             {
               english: 'Stack',
-              italian: 'stack / pila di risorse cloud',
+              italian: 'Pila di risorse cloud (stack)',
               pronunciation: '/stæk/',
               phonetic: 'STAK',
               example:
@@ -4073,7 +4107,7 @@ export default {
             },
             {
               english: 'Stack Set',
-              italian: 'StackSet / stack su più account/regioni',
+              italian: 'Stack su più account/regioni (StackSet)',
               pronunciation: '/stæk set/',
               phonetic: 'STAK-SET',
               example:
@@ -4083,7 +4117,7 @@ export default {
             },
             {
               english: 'Template',
-              italian: 'template / modello di configurazione',
+              italian: 'Modello di configurazione (template)',
               pronunciation: '/ˈtempleɪt/',
               phonetic: 'TEM-pleit',
               example:
@@ -4093,7 +4127,7 @@ export default {
             },
             {
               english: 'Change Set',
-              italian: 'change set / anteprima delle modifiche',
+              italian: 'Anteprima delle modifiche (change set)',
               pronunciation: '/tʃeɪndʒ set/',
               phonetic: 'CEING-SET',
               example:
@@ -4104,7 +4138,7 @@ export default {
             },
             {
               english: 'Pulumi',
-              italian: 'Pulumi (IaC con linguaggi general-purpose)',
+              italian: 'IaC con linguaggi general-purpose (Pulumi)',
               pronunciation: '/puːˈluːmi/',
               phonetic: 'pu-LU-mi',
               example:
@@ -4128,7 +4162,7 @@ export default {
             },
             {
               english: 'Bicep',
-              italian: 'Bicep (DSL IaC per Azure)',
+              italian: 'DSL IaC per Azure (Bicep)',
               pronunciation: '/ˈbaɪsep/',
               phonetic: 'BAI-sep',
               example:
@@ -4151,7 +4185,7 @@ export default {
             },
             {
               english: 'Crossplane',
-              italian: 'Crossplane / control plane multi-cloud',
+              italian: 'Control plane multi-cloud (Crossplane)',
               pronunciation: '/krɒs pleɪn/',
               phonetic: 'KROS PLEIN',
               example:
@@ -4178,7 +4212,7 @@ export default {
           items: [
             {
               english: 'Pay-as-you-go',
-              italian: 'pay-as-you-go / pagamento a consumo',
+              italian: 'Pagamento a consumo (pay-as-you-go)',
               pronunciation: '/peɪ æz juː ɡoʊ/',
               phonetic: 'PEI-AS-IU-GOU',
               example:
@@ -4210,7 +4244,7 @@ export default {
             },
             {
               english: 'Savings Plan',
-              italian: 'savings plan / piano di risparmio cloud',
+              italian: 'Piano di risparmio cloud (savings plan)',
               pronunciation: '/ˈseɪvɪŋz plæn/',
               phonetic: 'SEI-vingz PLAN',
               example:
@@ -4233,7 +4267,7 @@ export default {
             },
             {
               english: 'Spot Fleet',
-              italian: 'Spot Fleet / flotta di istanze spot AWS',
+              italian: 'Flotta di istanze spot AWS (Spot Fleet)',
               pronunciation: '/spɒt fliːt/',
               phonetic: 'SPOT-FLIIT',
               example:
@@ -4253,7 +4287,7 @@ export default {
             },
             {
               english: 'Free Tier',
-              italian: 'Free tier (livello gratuito)',
+              italian: 'Livello gratuito (free tier)',
               pronunciation: '/friː tɪər/',
               phonetic: 'FRII TIER',
               example:
@@ -4293,7 +4327,7 @@ export default {
           items: [
             {
               english: 'Cost Explorer',
-              italian: 'Cost Explorer / strumento costi AWS',
+              italian: 'Strumento costi AWS (Cost Explorer)',
               pronunciation: '/kɒst ɪkˈsplɔːrər/',
               phonetic: 'KOST eks-PLO-rer',
               example:
@@ -4314,7 +4348,7 @@ export default {
             },
             {
               english: 'Budget',
-              italian: 'budget / soglia di spesa',
+              italian: 'Soglia di spesa (budget)',
               pronunciation: '/ˈbʌdʒɪt/',
               phonetic: 'BA-git',
               example: 'Set a monthly budget alert. = Imposta un avviso di budget mensile.',
@@ -4336,7 +4370,7 @@ export default {
             },
             {
               english: 'Showback',
-              italian: 'showback / mostra costi senza addebito',
+              italian: 'Visibilità costi senza addebito (showback)',
               pronunciation: '/ˈʃoʊbæk/',
               phonetic: 'SCIO-bak',
               example:
@@ -4346,7 +4380,7 @@ export default {
             },
             {
               english: 'Chargeback',
-              italian: 'chargeback / addebito interno costi',
+              italian: 'Addebito interno costi (chargeback)',
               pronunciation: '/ˈtʃɑːrdʒbæk/',
               phonetic: 'CIARG-bak',
               example:
@@ -4367,7 +4401,7 @@ export default {
             },
             {
               english: 'Trusted Advisor',
-              italian: 'Trusted Advisor / consigli AWS',
+              italian: 'Consigli di ottimizzazione AWS (Trusted Advisor)',
               pronunciation: '/ˈtrʌstɪd ədˈvaɪzər/',
               phonetic: 'TRA-stid ad-VAI-zer',
               example:
@@ -4406,7 +4440,7 @@ export default {
           items: [
             {
               english: 'Rightsizing',
-              italian: 'rightsizing / dimensionamento corretto',
+              italian: 'Dimensionamento corretto (rightsizing)',
               pronunciation: '/ˈraɪtsaɪzɪŋ/',
               phonetic: 'RAIT-sai-zing',
               example:
@@ -4436,7 +4470,7 @@ export default {
             },
             {
               english: 'Auto-Stop',
-              italian: 'auto-stop / spegnimento automatico',
+              italian: 'Spegnimento automatico (auto-stop)',
               pronunciation: '/ˈɔːtoʊ stɒp/',
               phonetic: 'O-to STOP',
               example: 'Auto-stop dev VMs at night. = Auto-ferma le VM di dev di notte.',
@@ -4466,7 +4500,7 @@ export default {
             },
             {
               english: 'Compute Optimizer',
-              italian: 'Compute Optimizer / consigli di ottimizzazione AWS',
+              italian: 'Consigli di ottimizzazione risorse AWS (Compute Optimizer)',
               pronunciation: '/kəmˈpjuːt ˈɒptɪmaɪzər/',
               phonetic: 'com-PIUT OP-ti-mai-zer',
               example:
@@ -4514,7 +4548,7 @@ export default {
           items: [
             {
               english: 'FinOps',
-              italian: 'FinOps / operazioni finanziarie cloud',
+              italian: 'Operazioni finanziarie cloud (FinOps)',
               pronunciation: '/fɪn ɒps/',
               phonetic: 'FIN-OPS',
               example:
@@ -4535,7 +4569,7 @@ export default {
             },
             {
               english: 'Unit Economics',
-              italian: 'unit economics / costi e ricavi per unità',
+              italian: 'Costi e ricavi per unità (unit economics)',
               pronunciation: '/ˈjuːnɪt ˌekəˈnɒmɪks/',
               phonetic: 'IU-nit e-co-NO-miks',
               example:
@@ -4663,7 +4697,7 @@ export default {
             },
             {
               english: 'Namespace',
-              italian: 'namespace / spazio dei nomi',
+              italian: 'Spazio dei nomi (namespace)',
               pronunciation: '/ˈneɪmspeɪs/',
               phonetic: 'NEIM-speis',
               example: 'AWS/EC2 is a metric namespace. = AWS/EC2 è un namespace di metriche.',
@@ -4721,7 +4755,7 @@ export default {
             },
             {
               english: 'Embedded Metric Format',
-              italian: 'EMF / Embedded Metric Format CloudWatch',
+              italian: 'Formato metriche embedded CloudWatch (EMF)',
               pronunciation: '/ɪmˈbedɪd ˈmetrɪk/',
               phonetic: 'em-BE-did ME-trik',
               example:
@@ -4739,7 +4773,7 @@ export default {
           items: [
             {
               english: 'Log Group',
-              italian: 'log group / gruppo di log CloudWatch',
+              italian: 'Gruppo di log CloudWatch (log group)',
               pronunciation: '/lɒɡ ɡruːp/',
               phonetic: 'LOG GRUUP',
               example: 'Each Lambda has its own log group. = Ogni Lambda ha il proprio log group.',
@@ -4749,7 +4783,7 @@ export default {
             },
             {
               english: 'Log Stream',
-              italian: 'log stream / flusso di log CloudWatch',
+              italian: 'Flusso di log CloudWatch (log stream)',
               pronunciation: '/lɒɡ striːm/',
               phonetic: 'LOG STRIIM',
               example:
@@ -4770,7 +4804,7 @@ export default {
             },
             {
               english: 'Logs Insights',
-              italian: 'CloudWatch Logs Insights / query log AWS',
+              italian: 'Query log AWS (CloudWatch Logs Insights)',
               pronunciation: '/lɒɡz ˈɪnsaɪts/',
               phonetic: 'LOGZ IN-saits',
               example:
@@ -4933,7 +4967,7 @@ export default {
             },
             {
               english: 'Runbook',
-              italian: 'runbook / procedura operativa',
+              italian: 'Procedura operativa (runbook)',
               pronunciation: '/ˈrʌnbʊk/',
               phonetic: 'RAN-buk',
               example: 'Each alert links to a runbook. = Ogni alert linka a un runbook.',
@@ -4943,7 +4977,7 @@ export default {
             },
             {
               english: 'Escalation',
-              italian: 'escalation / inoltro al livello superiore',
+              italian: 'Inoltro al livello superiore (escalation)',
               pronunciation: '/ˌeskəˈleɪʃən/',
               phonetic: 'es-ka-LEI-scen',
               example:
@@ -5001,7 +5035,7 @@ export default {
             },
             {
               english: 'Span',
-              italian: 'span / unità di lavoro tracciata',
+              italian: 'Unità di lavoro tracciata (span)',
               pronunciation: '/spæn/',
               phonetic: 'SPAN',
               example:
@@ -5011,7 +5045,7 @@ export default {
             },
             {
               english: 'OpenTelemetry',
-              italian: 'OpenTelemetry / framework observability standard',
+              italian: 'Framework di observability standard (OpenTelemetry)',
               pronunciation: '/ˈoʊpən təˈlemətri/',
               phonetic: 'OU-pen te-LE-me-tri',
               example:
@@ -5145,7 +5179,7 @@ export default {
             },
             {
               english: 'Data Key',
-              italian: 'data key / chiave dati cifrata KMS',
+              italian: 'Chiave dati cifrata KMS (data key)',
               pronunciation: '/ˈdeɪtə kiː/',
               phonetic: 'DEI-ta KII',
               example:
@@ -5270,7 +5304,7 @@ export default {
             },
             {
               english: 'External Secrets',
-              italian: 'External Secrets / sincronizzatore segreti K8s',
+              italian: 'Sincronizzatore segreti K8s (External Secrets)',
               pronunciation: '/ɪkˈstɜːrnəl ˈsiːkrəts/',
               phonetic: 'eks-TER-nal SI-krets',
               example:
@@ -5281,7 +5315,7 @@ export default {
             },
             {
               english: 'Sealed Secret',
-              italian: 'sealed secret / segreto cifrato per Git',
+              italian: 'Segreto cifrato per Git (sealed secret)',
               pronunciation: '/siːld ˈsiːkrət/',
               phonetic: 'SIILD SI-kret',
               example:
@@ -5292,7 +5326,7 @@ export default {
             },
             {
               english: 'SOPS',
-              italian: 'SOPS / cifratura di file Mozilla',
+              italian: 'Cifratura di file Mozilla (SOPS)',
               pronunciation: '/sɒps/',
               phonetic: 'SOPS',
               example: 'Mozilla SOPS encrypts YAML files. = Mozilla SOPS cifra file YAML.',
@@ -5350,7 +5384,7 @@ export default {
             },
             {
               english: 'GuardDuty',
-              italian: 'AWS GuardDuty / rilevatore minacce AWS',
+              italian: 'Rilevatore minacce AWS (GuardDuty)',
               pronunciation: '/ɡɑːrd ˈdjuːti/',
               phonetic: 'GARD DIU-ti',
               example: 'GuardDuty detects threats in AWS. = GuardDuty rileva minacce in AWS.',
@@ -5370,7 +5404,7 @@ export default {
             },
             {
               english: 'Macie',
-              italian: 'AWS Macie / scoperta dati sensibili',
+              italian: 'Scoperta dati sensibili (Macie)',
               pronunciation: '/ˈmeɪsi/',
               phonetic: 'MEI-si',
               example: 'Macie discovers PII in S3 buckets. = Macie scopre PII nei bucket S3.',
@@ -5381,7 +5415,7 @@ export default {
             },
             {
               english: 'Inspector',
-              italian: 'AWS Inspector / scanner di vulnerabilità',
+              italian: 'Scanner di vulnerabilità (Inspector)',
               pronunciation: '/ɪnˈspektər/',
               phonetic: 'in-SPEK-ter',
               example:
@@ -5392,7 +5426,7 @@ export default {
             },
             {
               english: 'CloudTrail',
-              italian: 'AWS CloudTrail / log degli API AWS',
+              italian: 'Log delle API AWS (CloudTrail)',
               pronunciation: '/klaʊd treɪl/',
               phonetic: 'KLA-ud TREIL',
               example:
@@ -5404,7 +5438,7 @@ export default {
             },
             {
               english: 'Config',
-              italian: 'AWS Config / valuta conformità delle risorse',
+              italian: 'Valutatore conformità delle risorse (AWS Config)',
               pronunciation: '/ˈkɒnfɪɡ/',
               phonetic: 'KON-fig',
               example:
@@ -5452,7 +5486,7 @@ export default {
             },
             {
               english: 'Audit Trail',
-              italian: 'audit trail / registro di audit',
+              italian: 'Registro di audit (audit trail)',
               pronunciation: '/ˈɔːdɪt treɪl/',
               phonetic: 'O-dit TREIL',
               example: 'Maintain a complete audit trail. = Mantieni un audit trail completo.',
@@ -5471,7 +5505,7 @@ export default {
             },
             {
               english: 'Penetration Test',
-              italian: 'penetration test / test di penetrazione',
+              italian: 'Test di penetrazione (penetration test)',
               pronunciation: '/ˌpenɪˈtreɪʃən test/',
               phonetic: 'pe-ne-TREI-scen TEST',
               example:
@@ -5502,7 +5536,7 @@ export default {
             },
             {
               english: 'Zero Trust',
-              italian: 'zero trust / nessuna fiducia di default',
+              italian: 'Nessuna fiducia di default (zero trust)',
               pronunciation: '/ˈzɪəroʊ trʌst/',
               phonetic: 'ZI-ro TRAST',
               example: 'Zero trust verifies every request. = Zero trust verifica ogni richiesta.',
@@ -5697,7 +5731,7 @@ export default {
             },
             {
               english: 'Uptime',
-              italian: 'uptime / tempo di funzionamento',
+              italian: 'Tempo di funzionamento (uptime)',
               pronunciation: '/ˈʌptaɪm/',
               phonetic: 'AP-taim',
               example:
@@ -5707,7 +5741,7 @@ export default {
             },
             {
               english: 'Downtime',
-              italian: 'downtime / tempo di fuori servizio',
+              italian: 'Tempo di fuori servizio (downtime)',
               pronunciation: '/ˈdaʊntaɪm/',
               phonetic: 'DAUN-taim',
               example:
@@ -5727,7 +5761,7 @@ export default {
             },
             {
               english: 'Single Point of Failure',
-              italian: 'SPOF / singolo punto di guasto',
+              italian: 'Singolo punto di guasto (SPOF)',
               pronunciation: '/ˈsɪŋɡl pɔɪnt əv ˈfeɪljər/',
               phonetic: 'SIN-gol POINT av FEI-lier',
               example: 'Eliminate single points of failure. = Elimina i single point of failure.',
@@ -5737,7 +5771,7 @@ export default {
             },
             {
               english: 'Active-Active',
-              italian: 'attivo-attivo / più nodi servono in parallelo',
+              italian: 'Più nodi servono in parallelo (attivo-attivo)',
               pronunciation: '/ˈæktɪv ˈæktɪv/',
               phonetic: 'AK-tiv AK-tiv',
               example:
@@ -5754,7 +5788,7 @@ export default {
           items: [
             {
               english: 'Disaster Recovery',
-              italian: 'disaster recovery / ripristino dopo disastro',
+              italian: 'Ripristino dopo disastro (disaster recovery)',
               pronunciation: '/dɪˈzɑːstər rɪˈkʌvəri/',
               phonetic: 'di-ZAS-ter ri-KA-ve-ri',
               example:
@@ -5798,7 +5832,7 @@ export default {
             },
             {
               english: 'Backup and Restore',
-              italian: 'backup and restore / strategia DR base',
+              italian: 'Strategia DR base (backup and restore)',
               pronunciation: '/ˈbækʌp ænd rɪˈstɔːr/',
               phonetic: 'BA-kap and ri-STOR',
               example:
@@ -5809,7 +5843,7 @@ export default {
             },
             {
               english: 'Pilot Light',
-              italian: 'pilot light / DR a fiamma pilota',
+              italian: 'DR a fiamma pilota (pilot light)',
               pronunciation: '/ˈpaɪlət laɪt/',
               phonetic: 'PAI-let LAIT',
               example:
@@ -5820,7 +5854,7 @@ export default {
             },
             {
               english: 'Warm Standby',
-              italian: 'warm standby / replica calda non leggibile',
+              italian: "Replica calda pronta all'uso (warm standby)",
               pronunciation: '/wɔːrm ˈstændbaɪ/',
               phonetic: 'UORM STAND-bai',
               example:
@@ -5830,7 +5864,7 @@ export default {
             },
             {
               english: 'Multi-Site',
-              italian: 'multi-site / DR attivo-attivo multi-sito',
+              italian: 'DR attivo-attivo multi-sito (multi-site)',
               pronunciation: '/ˈmʌlti saɪt/',
               phonetic: 'MUL-ti SAIT',
               example:
@@ -5887,7 +5921,7 @@ export default {
             },
             {
               english: 'Twelve-Factor App',
-              italian: 'Twelve-Factor App / metodologia 12 fattori',
+              italian: 'Metodologia 12 fattori (Twelve-Factor App)',
               pronunciation: '/twelv ˈfæktər/',
               phonetic: 'TUELV FAK-ter',
               example:
@@ -5898,21 +5932,21 @@ export default {
             },
             {
               english: 'Stateless',
-              italian: 'stateless / senza stato',
+              italian: 'Senza stato (stateless)',
               pronunciation: '/ˈsteɪtləs/',
               phonetic: 'STEIT-les',
               example:
-                'Stateless apps scale horizontally easily. = Le app stateless scalano orizzontalmente facilmente.',
+                "Designing each microservice as stateless allows the orchestrator to spin up new replicas instantly during traffic spikes. = Progettare ogni microservizio come stateless permette all'orchestratore di avviare nuove repliche istantaneamente durante i picchi di traffico.",
               context: 'architecture',
               difficulty: 'intermediate',
             },
             {
               english: 'Stateful',
-              italian: 'stateful / con stato',
+              italian: 'Con stato (stateful)',
               pronunciation: '/ˈsteɪtfʊl/',
               phonetic: 'STEIT-ful',
               example:
-                'Stateful workloads need careful scaling. = I workload stateful richiedono scaling attento.',
+                'Databases and message queues are stateful workloads that require persistent storage and careful failover strategies. = I database e le code di messaggi sono workload stateful che richiedono storage persistente e strategie di failover attente.',
               context: 'architecture',
               difficulty: 'intermediate',
             },
@@ -5938,7 +5972,7 @@ export default {
             },
             {
               english: 'Circuit Breaker',
-              italian: 'circuit breaker / interruttore di circuito',
+              italian: 'Interruttore di circuito (circuit breaker)',
               pronunciation: '/ˈsɜːrkɪt ˈbreɪkər/',
               phonetic: 'SER-kit BREI-ker',
               example:
@@ -5957,7 +5991,7 @@ export default {
             },
             {
               english: 'Backpressure',
-              italian: 'backpressure / contropressione',
+              italian: 'Contropressione (backpressure)',
               pronunciation: '/ˈbækpreʃər/',
               phonetic: 'BAK-pre-scer',
               example:
@@ -6028,7 +6062,7 @@ export default {
             },
             {
               english: 'Visibility Timeout',
-              italian: 'visibility timeout / timeout di visibilità SQS',
+              italian: 'Timeout di visibilità SQS (visibility timeout)',
               pronunciation: '/ˌvɪzəˈbɪlɪti ˈtaɪmaʊt/',
               phonetic: 'vi-za-BI-li-ti TAIM-aut',
               example:
@@ -6039,7 +6073,7 @@ export default {
             },
             {
               english: 'Dead-Letter Queue',
-              italian: 'dead-letter queue / coda dei messaggi falliti',
+              italian: 'Coda dei messaggi falliti (dead-letter queue)',
               pronunciation: '/ded ˈletər kjuː/',
               phonetic: 'DED LE-ter KIU',
               example:
@@ -6050,7 +6084,7 @@ export default {
             },
             {
               english: 'Long Polling',
-              italian: 'long polling / polling esteso',
+              italian: 'Polling esteso (long polling)',
               pronunciation: '/lɒŋ ˈpoʊlɪŋ/',
               phonetic: 'LONG POU-ling',
               example:
@@ -6080,7 +6114,7 @@ export default {
             },
             {
               english: 'Throughput',
-              italian: 'throughput / volume di operazioni al secondo',
+              italian: 'Volume di operazioni al secondo (throughput)',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'TRUU-put',
               example:
@@ -6097,7 +6131,7 @@ export default {
           items: [
             {
               english: 'Pub/Sub',
-              italian: 'pub/sub / pubblicazione e sottoscrizione',
+              italian: 'Pubblicazione e sottoscrizione (pub/sub)',
               pronunciation: '/pʌb sʌb/',
               phonetic: 'PAB-SAB',
               example:
@@ -6120,7 +6154,7 @@ export default {
             },
             {
               english: 'Topic',
-              italian: 'topic / canale tematico di messaggi',
+              italian: 'Canale tematico di messaggi (topic)',
               pronunciation: '/ˈtɒpɪk/',
               phonetic: 'TO-pik',
               example:
@@ -6140,7 +6174,7 @@ export default {
             },
             {
               english: 'Publisher',
-              italian: 'publisher / produttore di messaggi',
+              italian: 'Produttore di messaggi (publisher)',
               pronunciation: '/ˈpʌblɪʃər/',
               phonetic: 'PA-bli-scer',
               example:
@@ -6150,7 +6184,7 @@ export default {
             },
             {
               english: 'Subscriber',
-              italian: 'subscriber / consumatore di messaggi',
+              italian: 'Consumatore di messaggi (subscriber)',
               pronunciation: '/səbˈskraɪbər/',
               phonetic: 'sab-SKRAI-ber',
               example:
@@ -6189,7 +6223,7 @@ export default {
             },
             {
               english: 'Mobile Push',
-              italian: 'mobile push / notifiche push',
+              italian: 'Notifiche push mobile (mobile push)',
               pronunciation: '/ˈmoʊbaɪl pʊʃ/',
               phonetic: 'MO-bail PUSC',
               example:
@@ -6207,7 +6241,7 @@ export default {
           items: [
             {
               english: 'EventBridge',
-              italian: 'AWS EventBridge / bus eventi serverless',
+              italian: 'Bus eventi serverless (EventBridge)',
               pronunciation: '/ɪˈvent brɪdʒ/',
               phonetic: 'i-VENT BRIG',
               example:
@@ -6218,7 +6252,7 @@ export default {
             },
             {
               english: 'Event Bus',
-              italian: 'event bus / bus degli eventi',
+              italian: 'Bus degli eventi (event bus)',
               pronunciation: '/ɪˈvent bʌs/',
               phonetic: 'i-VENT BAS',
               example:
@@ -6247,7 +6281,7 @@ export default {
             },
             {
               english: 'Schema Registry',
-              italian: 'schema registry / registro degli schemi',
+              italian: 'Registro degli schemi (schema registry)',
               pronunciation: '/ˈskiːmə ˈredʒɪstri/',
               phonetic: 'SKII-ma RE-gis-tri',
               example:
@@ -6266,7 +6300,7 @@ export default {
             },
             {
               english: 'Replay',
-              italian: 'replay / riproduzione degli eventi',
+              italian: 'Riproduzione degli eventi (replay)',
               pronunciation: '/ˌriːˈpleɪ/',
               phonetic: 'RI-plei',
               example:
@@ -6325,7 +6359,7 @@ export default {
             },
             {
               english: 'Stream',
-              italian: 'stream / flusso di dati',
+              italian: 'Flusso di dati (stream)',
               pronunciation: '/striːm/',
               phonetic: 'STRIIM',
               example:
@@ -6335,7 +6369,7 @@ export default {
             },
             {
               english: 'Shard',
-              italian: 'shard / frammento del flusso',
+              italian: 'Frammento del flusso dati (shard)',
               pronunciation: '/ʃɑːrd/',
               phonetic: 'SCIARD',
               example:
@@ -6345,7 +6379,7 @@ export default {
             },
             {
               english: 'Producer',
-              italian: 'producer / produttore di messaggi',
+              italian: 'Produttore di dati (producer)',
               pronunciation: '/prəˈdjuːsər/',
               phonetic: 'pro-DIU-ser',
               example:
@@ -6355,7 +6389,7 @@ export default {
             },
             {
               english: 'Consumer',
-              italian: 'consumer / consumatore di messaggi',
+              italian: 'Consumatore di dati (consumer)',
               pronunciation: '/kənˈsjuːmər/',
               phonetic: 'con-SIU-mer',
               example:
@@ -6386,7 +6420,7 @@ export default {
             },
             {
               english: 'Firehose',
-              italian: 'Kinesis Firehose / consegna a destinazioni',
+              italian: 'Consegna dati a destinazioni (Kinesis Firehose)',
               pronunciation: '/ˈfaɪərhoʊz/',
               phonetic: 'FAIER-ouz',
               example: 'Firehose delivers streams to S3. = Firehose consegna stream a S3.',
@@ -6407,7 +6441,7 @@ export default {
             },
             {
               english: 'Checkpoint',
-              italian: 'checkpoint / punto di salvataggio',
+              italian: 'Punto di salvataggio (checkpoint)',
               pronunciation: '/ˈtʃekpɔɪnt/',
               phonetic: 'CEK-point',
               example:
@@ -6444,7 +6478,7 @@ export default {
             },
             {
               english: 'CloudFront',
-              italian: 'AWS CloudFront / CDN AWS',
+              italian: 'CDN AWS (CloudFront)',
               pronunciation: '/klaʊd frʌnt/',
               phonetic: 'KLA-ud FRANT',
               example:
@@ -6466,7 +6500,7 @@ export default {
             },
             {
               english: 'Edge Location',
-              italian: 'edge location / nodo perimetrale CDN',
+              italian: 'Nodo perimetrale CDN (edge location)',
               pronunciation: '/edʒ loʊˈkeɪʃən/',
               phonetic: 'EDG lo-KEI-scen',
               example:
@@ -6498,7 +6532,7 @@ export default {
             },
             {
               english: 'Cache Behavior',
-              italian: 'cache behavior / regole di cache CDN',
+              italian: 'Regole di cache CDN (cache behavior)',
               pronunciation: '/kæʃ bɪˈheɪvjər/',
               phonetic: 'KASC bi-EI-vier',
               example:
@@ -6519,7 +6553,7 @@ export default {
             },
             {
               english: 'Cache TTL',
-              italian: 'cache TTL / tempo di vita in cache',
+              italian: 'Tempo di vita in cache (cache TTL)',
               pronunciation: '/kæʃ tiː tiː el/',
               phonetic: 'KASC TI-TI-EL',
               example:
@@ -6547,7 +6581,7 @@ export default {
           items: [
             {
               english: 'Lambda@Edge',
-              italian: 'Lambda@Edge / Lambda al perimetro CloudFront',
+              italian: 'Lambda al perimetro CloudFront (Lambda@Edge)',
               pronunciation: '/ˈlæmdə æt edʒ/',
               phonetic: 'LAM-bda at EDG',
               example:
@@ -6558,7 +6592,7 @@ export default {
             },
             {
               english: 'CloudFront Functions',
-              italian: 'CloudFront Functions / funzioni leggere CDN',
+              italian: 'Funzioni leggere CDN (CloudFront Functions)',
               pronunciation: '/klaʊd frʌnt ˈfʌŋkʃənz/',
               phonetic: 'KLA-ud FRANT FANK-scenz',
               example:
@@ -6581,7 +6615,7 @@ export default {
             },
             {
               english: 'Cloudflare Workers',
-              italian: 'Cloudflare Workers / serverless al perimetro',
+              italian: 'Serverless al perimetro (Cloudflare Workers)',
               pronunciation: '/ˈklaʊdfleər ˈwɜːrkərz/',
               phonetic: 'KLA-ud-fler UER-kerz',
               example:
@@ -6592,7 +6626,7 @@ export default {
             },
             {
               english: 'Viewer Request',
-              italian: 'viewer request / richiesta dal viewer CloudFront',
+              italian: 'Richiesta dal viewer CloudFront (viewer request)',
               pronunciation: '/ˈvjuːər rɪˈkwest/',
               phonetic: 'VIU-er ri-KUEST',
               example:
@@ -6632,7 +6666,7 @@ export default {
             },
             {
               english: 'Geofencing',
-              italian: 'geofencing / restrizione geografica',
+              italian: 'Restrizione geografica (geofencing)',
               pronunciation: '/ˈdʒiːoʊfensɪŋ/',
               phonetic: 'GII-o-fen-sing',
               example:
@@ -6669,7 +6703,7 @@ export default {
             },
             {
               english: 'Cache-Control',
-              italian: 'Cache-Control / header HTTP di caching',
+              italian: 'Header HTTP di caching (Cache-Control)',
               pronunciation: '/kæʃ kənˈtroʊl/',
               phonetic: 'KASC con-TROUL',
               example:
@@ -6680,7 +6714,7 @@ export default {
             },
             {
               english: 'ETag',
-              italian: 'ETag / identificatore di versione di risorsa',
+              italian: 'Identificatore di versione di risorsa (ETag)',
               pronunciation: '/iː tæɡ/',
               phonetic: 'I-TAG',
               example:
@@ -6690,7 +6724,7 @@ export default {
             },
             {
               english: 'Stale-While-Revalidate',
-              italian: 'stale-while-revalidate / serve stale durante revalidate',
+              italian: 'Serve contenuto scaduto durante la rivalidazione (stale-while-revalidate)',
               pronunciation: '/steɪl waɪl riˈvælɪdeɪt/',
               phonetic: 'STEIL UAIL ri-VA-li-deit',
               example:
@@ -6711,7 +6745,7 @@ export default {
             },
             {
               english: 'Origin Shield',
-              italian: 'Origin Shield / strato di cache aggiuntivo',
+              italian: 'Strato di cache aggiuntivo (Origin Shield)',
               pronunciation: '/ˈɒrɪdʒɪn ʃiːld/',
               phonetic: 'O-ri-gin SCIIID',
               example:
@@ -6742,7 +6776,7 @@ export default {
             },
             {
               english: 'Bypass Cache',
-              italian: 'bypass cache / aggira la cache',
+              italian: 'Aggiramento della cache (bypass cache)',
               pronunciation: '/baɪˈpɑːs kæʃ/',
               phonetic: 'BAI-pas KASC',
               example:
@@ -6769,7 +6803,7 @@ export default {
           items: [
             {
               english: 'Anycast',
-              italian: 'anycast / un IP, molti nodi, il più vicino risponde',
+              italian: 'Un IP, molti nodi, il più vicino risponde (anycast)',
               pronunciation: '/ˈeniːkæst/',
               phonetic: 'E-ni-cast',
               example:
@@ -6780,7 +6814,7 @@ export default {
             },
             {
               english: 'Global Accelerator',
-              italian: 'AWS Global Accelerator / anycast gestito',
+              italian: 'Anycast gestito (AWS Global Accelerator)',
               pronunciation: '/ˈɡloʊbəl əkˈseləreɪtər/',
               phonetic: 'GLO-bal ak-SE-le-rei-ter',
               example:
@@ -6791,7 +6825,7 @@ export default {
             },
             {
               english: 'Front Door',
-              italian: 'Azure Front Door / CDN + WAF Azure',
+              italian: 'CDN + WAF Azure (Azure Front Door)',
               pronunciation: '/frʌnt dɔːr/',
               phonetic: 'FRANT DOR',
               example:
@@ -6802,7 +6836,7 @@ export default {
             },
             {
               english: 'Cloud Armor',
-              italian: 'Cloud Armor / WAF Google Cloud',
+              italian: 'WAF Google Cloud (Cloud Armor)',
               pronunciation: '/klaʊd ˈɑːrmər/',
               phonetic: 'KLA-ud AR-mer',
               example:
@@ -6843,7 +6877,7 @@ export default {
             },
             {
               english: 'HTTP/3',
-              italian: 'HTTP/3 / HTTP su QUIC',
+              italian: 'HTTP su QUIC (HTTP/3)',
               pronunciation: '/eɪtʃ tiː tiː piː θriː/',
               phonetic: 'EICI-TI-TI-PI TRII',
               example:
@@ -6853,7 +6887,7 @@ export default {
             },
             {
               english: 'QUIC',
-              italian: 'QUIC / trasporto UDP cifrato moderno',
+              italian: 'Trasporto UDP cifrato moderno (QUIC)',
               pronunciation: '/kwɪk/',
               phonetic: 'KUIK',
               example:
@@ -6900,7 +6934,7 @@ export default {
             },
             {
               english: 'Rehosting',
-              italian: 'rehosting / lift-and-shift di workload',
+              italian: 'Lift-and-shift di workload (rehosting)',
               pronunciation: '/riːˈhoʊstɪŋ/',
               phonetic: 'RI-os-ting',
               example:
@@ -6910,7 +6944,7 @@ export default {
             },
             {
               english: 'Re-platform',
-              italian: 're-platform / migra cambiando la piattaforma',
+              italian: 'Migra cambiando la piattaforma (re-platform)',
               pronunciation: '/riː ˈplætfɔːrm/',
               phonetic: 'RI-plat-form',
               example:
@@ -6921,7 +6955,7 @@ export default {
             },
             {
               english: 'Re-architect',
-              italian: 're-architect / riarchitetta in cloud-native',
+              italian: 'Riarchitettare in cloud-native (re-architect)',
               pronunciation: '/riː ˈɑːrkɪtekt/',
               phonetic: 'RI-AR-ki-tekt',
               example:
@@ -6932,7 +6966,7 @@ export default {
             },
             {
               english: 'Refactor',
-              italian: 'refactor / ristrutturazione del codice',
+              italian: 'Ristrutturazione del codice (refactor)',
               pronunciation: '/riːˈfæktər/',
               phonetic: 'RI-FAK-ter',
               example: 'Refactor for cloud-native benefits. = Refactor per benefici cloud-native.',
@@ -6941,7 +6975,7 @@ export default {
             },
             {
               english: 'Repurchase',
-              italian: 'repurchase / sostituisce con SaaS',
+              italian: 'Sostituzione con SaaS (repurchase)',
               pronunciation: '/riːˈpɜːrtʃəs/',
               phonetic: 'RI-PER-cias',
               example:
@@ -7000,7 +7034,7 @@ export default {
           items: [
             {
               english: 'Migration Hub',
-              italian: 'AWS Migration Hub / hub centralizzato di migrazione',
+              italian: 'Hub centralizzato di migrazione (AWS Migration Hub)',
               pronunciation: '/maɪˈɡreɪʃən hʌb/',
               phonetic: 'mai-GREI-scen AB',
               example:
@@ -7022,7 +7056,7 @@ export default {
             },
             {
               english: 'Azure Migrate',
-              italian: 'Azure Migrate / strumenti di migrazione Azure',
+              italian: 'Strumenti di migrazione Azure (Azure Migrate)',
               pronunciation: '/ˈæʒər maɪˈɡreɪt/',
               phonetic: 'A-ger mai-GREIT',
               example:
@@ -7054,7 +7088,7 @@ export default {
             },
             {
               english: 'Schema Conversion Tool',
-              italian: 'AWS SCT / Schema Conversion Tool',
+              italian: 'Strumento conversione schemi (AWS SCT)',
               pronunciation: '/ˈskiːmə kənˈvɜːrʒən/',
               phonetic: 'SKII-ma con-VER-gen',
               example:
@@ -7065,7 +7099,7 @@ export default {
             },
             {
               english: 'Snowball',
-              italian: 'AWS Snowball / dispositivo trasferimento dati',
+              italian: 'Dispositivo trasferimento dati (AWS Snowball)',
               pronunciation: '/ˈsnoʊbɔːl/',
               phonetic: 'SNOU-bol',
               example:
@@ -7077,7 +7111,7 @@ export default {
             },
             {
               english: 'DataSync',
-              italian: 'AWS DataSync / sincronizzazione dati',
+              italian: 'Sincronizzazione dati (AWS DataSync)',
               pronunciation: '/ˈdeɪtə sɪŋk/',
               phonetic: 'DEI-ta SINK',
               example:
@@ -7088,7 +7122,7 @@ export default {
             },
             {
               english: 'Storage Gateway',
-              italian: 'AWS Storage Gateway / gateway storage on-prem',
+              italian: 'Gateway storage on-prem (AWS Storage Gateway)',
               pronunciation: '/ˈstɔːrɪdʒ ˈɡeɪtweɪ/',
               phonetic: 'STO-rig GHEIT-uei',
               example:
@@ -7099,7 +7133,7 @@ export default {
             },
             {
               english: 'CloudEndure',
-              italian: 'AWS CloudEndure / migrazione live verso AWS',
+              italian: 'Migrazione live verso AWS (CloudEndure)',
               pronunciation: '/klaʊd ɪnˈdjʊər/',
               phonetic: 'KLA-ud en-DIUR',
               example:
@@ -7117,7 +7151,7 @@ export default {
           items: [
             {
               english: 'Discovery',
-              italian: 'AWS Application Discovery Service / inventario on-prem',
+              italian: 'Inventario on-prem (AWS Application Discovery Service)',
               pronunciation: '/dɪˈskʌvəri/',
               phonetic: 'di-SKA-ve-ri',
               example:
@@ -7168,7 +7202,7 @@ export default {
             },
             {
               english: 'Cutover',
-              italian: 'cutover / passaggio definitivo',
+              italian: 'Passaggio definitivo (cutover)',
               pronunciation: '/ˈkʌtoʊvər/',
               phonetic: 'KAT-ou-ver',
               example:
@@ -7236,7 +7270,7 @@ export default {
             },
             {
               english: 'Strangler Fig',
-              italian: 'strangler fig / pattern di sostituzione progressiva',
+              italian: 'Pattern di sostituzione progressiva (strangler fig)',
               pronunciation: '/ˈstræŋɡlər fɪɡ/',
               phonetic: 'STRAN-gler FIG',
               example:
@@ -7267,7 +7301,7 @@ export default {
             },
             {
               english: 'Replatforming',
-              italian: 'replatforming / migrazione cambiando piattaforma',
+              italian: 'Migrazione cambiando piattaforma (replatforming)',
               pronunciation: '/riːˈplætfɔːrmɪŋ/',
               phonetic: 'RI-plat-for-ming',
               example: 'Replatforming swaps OS or DB. = Il replatforming sostituisce OS o DB.',
@@ -7286,7 +7320,7 @@ export default {
             },
             {
               english: 'Greenfield',
-              italian: 'greenfield / progetto da zero',
+              italian: 'Progetto da zero (greenfield)',
               pronunciation: '/ˈɡriːnfiːld/',
               phonetic: 'GRIIN-fild',
               example:
@@ -7296,7 +7330,7 @@ export default {
             },
             {
               english: 'Brownfield',
-              italian: 'brownfield / progetto su sistemi esistenti',
+              italian: 'Progetto su sistemi esistenti (brownfield)',
               pronunciation: '/ˈbraʊnfiːld/',
               phonetic: 'BRAUN-fild',
               example:
@@ -7316,7 +7350,7 @@ export default {
             },
             {
               english: 'Cloud Center of Excellence',
-              italian: 'Cloud CoE / centro di eccellenza cloud',
+              italian: 'Centro di eccellenza cloud (Cloud CoE)',
               pronunciation: '/klaʊd ˈsentər əv ˈeksələns/',
               phonetic: 'KLA-ud SEN-ter av EK-se-lens',
               example:
@@ -7343,7 +7377,7 @@ export default {
           items: [
             {
               english: 'Multi-Cloud',
-              italian: 'multi-cloud / uso di più provider cloud',
+              italian: 'Uso di più provider cloud (multi-cloud)',
               pronunciation: '/ˈmʌlti klaʊd/',
               phonetic: 'MUL-ti KLA-ud',
               example:
@@ -7364,7 +7398,7 @@ export default {
             },
             {
               english: 'Cloud-Agnostic',
-              italian: 'cloud-agnostic / indipendente dal provider',
+              italian: 'Indipendente dal provider (cloud-agnostic)',
               pronunciation: '/klaʊd æɡˈnɒstɪk/',
               phonetic: 'KLA-ud ag-NOS-tik',
               example:
@@ -7384,7 +7418,7 @@ export default {
             },
             {
               english: 'Crossplane',
-              italian: 'Crossplane / control plane multi-cloud',
+              italian: 'Control plane multi-cloud (Crossplane)',
               pronunciation: '/krɒs pleɪn/',
               phonetic: 'KROS PLEIN',
               example:
@@ -7395,7 +7429,7 @@ export default {
             },
             {
               english: 'Anthos',
-              italian: 'Google Anthos / gestione multi-cloud Google',
+              italian: 'Gestione multi-cloud Google (Anthos)',
               pronunciation: '/ˈænθoʊs/',
               phonetic: 'AN-tos',
               example:
@@ -7416,7 +7450,7 @@ export default {
             },
             {
               english: 'AWS Outposts',
-              italian: 'AWS Outposts / hardware AWS on-prem',
+              italian: 'Hardware AWS on-prem (AWS Outposts)',
               pronunciation: '/ˈaʊtpoʊsts/',
               phonetic: 'AUT-pousts',
               example:
@@ -7427,7 +7461,7 @@ export default {
             },
             {
               english: 'Azure Arc',
-              italian: 'Azure Arc / estende Azure on-prem',
+              italian: 'Estende Azure on-prem (Azure Arc)',
               pronunciation: '/ˈæʒər ɑːrk/',
               phonetic: 'A-ger ARK',
               example:
@@ -7465,7 +7499,7 @@ export default {
             },
             {
               english: 'Open Source',
-              italian: 'open source / codice sorgente aperto',
+              italian: 'Codice sorgente aperto (open source)',
               pronunciation: '/ˈoʊpən sɔːrs/',
               phonetic: 'OU-pen SORS',
               example:
@@ -7496,7 +7530,7 @@ export default {
             },
             {
               english: 'MinIO',
-              italian: 'MinIO / object storage S3-compatibile',
+              italian: 'Object storage S3-compatibile (MinIO)',
               pronunciation: '/ˈmɪnioʊ/',
               phonetic: 'MIN-IO',
               example:
@@ -7507,7 +7541,7 @@ export default {
             },
             {
               english: 'Knative',
-              italian: 'Knative / piattaforma serverless K8s',
+              italian: 'Piattaforma serverless K8s (Knative)',
               pronunciation: '/keɪˈneɪtɪv/',
               phonetic: 'KEI-NEI-tiv',
               example:
@@ -7518,7 +7552,7 @@ export default {
             },
             {
               english: 'Serverless Framework',
-              italian: 'Serverless Framework / framework deploy serverless',
+              italian: 'Framework deploy serverless (Serverless Framework)',
               pronunciation: '/ˈsɜːrvərles ˈfreɪmwɜːrk/',
               phonetic: 'SER-ver-les FREIM-uerk',
               example:
@@ -7529,7 +7563,7 @@ export default {
             },
             {
               english: 'Pulumi Multi-Cloud',
-              italian: 'Pulumi multi-cloud / IaC multi-cloud',
+              italian: 'IaC multi-cloud (Pulumi multi-cloud)',
               pronunciation: '/puːˈluːmi/',
               phonetic: 'pu-LU-mi',
               example:
@@ -7550,7 +7584,7 @@ export default {
             },
             {
               english: 'Cloud Bursting',
-              italian: 'cloud bursting / sfondamento dal data center al cloud',
+              italian: 'Sfondamento dal data center al cloud (cloud bursting)',
               pronunciation: '/klaʊd ˈbɜːrstɪŋ/',
               phonetic: 'KLA-ud BERS-ting',
               example:
@@ -7567,7 +7601,7 @@ export default {
           items: [
             {
               english: 'Terraform Multi-Cloud',
-              italian: 'Terraform multi-cloud / IaC su più cloud',
+              italian: 'IaC su più cloud (Terraform multi-cloud)',
               pronunciation: '/ˈterəfɔːrm/',
               phonetic: 'TE-ra-form',
               example:
@@ -7599,7 +7633,7 @@ export default {
             },
             {
               english: 'Service Mesh',
-              italian: 'service mesh / rete di servizi gestita',
+              italian: 'Rete di servizi gestita (service mesh)',
               pronunciation: '/ˈsɜːrvɪs meʃ/',
               phonetic: 'SER-vis MESC',
               example:
@@ -7610,7 +7644,7 @@ export default {
             },
             {
               english: 'Multi-Cluster',
-              italian: 'multi-cluster / più cluster federati',
+              italian: 'Più cluster federati (multi-cluster)',
               pronunciation: '/ˈmʌlti ˈklʌstər/',
               phonetic: 'MUL-ti KLAS-ter',
               example:
@@ -7661,7 +7695,7 @@ export default {
             },
             {
               english: 'Cluster API',
-              italian: 'Cluster API / progetto upstream gestione cluster',
+              italian: 'Progetto upstream gestione cluster (Cluster API)',
               pronunciation: '/ˈklʌstər eɪ piː aɪ/',
               phonetic: 'KLAS-ter EI-PI-AI',
               example:
@@ -7796,7 +7830,7 @@ export default {
           items: [
             {
               english: 'CodePipeline',
-              italian: 'AWS CodePipeline / pipeline CI/CD AWS',
+              italian: 'Pipeline CI/CD AWS (CodePipeline)',
               pronunciation: '/koʊd ˈpaɪplaɪn/',
               phonetic: 'KOUD PAIP-lain',
               example: 'CodePipeline orchestrates AWS CI/CD. = CodePipeline orchestra CI/CD AWS.',
@@ -7806,7 +7840,7 @@ export default {
             },
             {
               english: 'CodeBuild',
-              italian: 'AWS CodeBuild / build CI AWS',
+              italian: 'Build CI AWS (CodeBuild)',
               pronunciation: '/koʊd bɪld/',
               phonetic: 'KOUD BILD',
               example:
@@ -7817,7 +7851,7 @@ export default {
             },
             {
               english: 'CodeDeploy',
-              italian: 'AWS CodeDeploy / deploy AWS',
+              italian: 'Deploy automatico AWS (CodeDeploy)',
               pronunciation: '/koʊd dɪˈplɔɪ/',
               phonetic: 'KOUD di-PLOI',
               example:
@@ -7838,7 +7872,7 @@ export default {
             },
             {
               english: 'CodeArtifact',
-              italian: 'AWS CodeArtifact / repository di artefatti AWS',
+              italian: 'Repository di artefatti AWS (CodeArtifact)',
               pronunciation: '/koʊd ˈɑːrtɪfækt/',
               phonetic: 'KOUD AR-ti-fact',
               example:
@@ -7849,7 +7883,7 @@ export default {
             },
             {
               english: 'CodeStar',
-              italian: 'AWS CodeStar / dashboard CI/CD AWS',
+              italian: 'Dashboard CI/CD AWS (CodeStar)',
               pronunciation: '/koʊd stɑːr/',
               phonetic: 'KOUD STAR',
               example:
@@ -7870,7 +7904,7 @@ export default {
             },
             {
               english: 'buildspec.yml',
-              italian: 'buildspec.yml / file di build CodeBuild',
+              italian: 'File di build CodeBuild (buildspec.yml)',
               pronunciation: '/bɪld spek/',
               phonetic: 'BILD-SPEK',
               example:
@@ -7919,7 +7953,7 @@ export default {
             },
             {
               english: 'Azure Pipelines',
-              italian: 'Azure Pipelines / CI/CD Azure',
+              italian: 'CI/CD Azure (Azure Pipelines)',
               pronunciation: '/ˈæʒər ˈpaɪplaɪnz/',
               phonetic: 'A-ger PAIP-lainz',
               example:
@@ -7930,7 +7964,7 @@ export default {
             },
             {
               english: 'Azure Repos',
-              italian: 'Azure Repos / hosting Git Azure',
+              italian: 'Hosting Git Azure (Azure Repos)',
               pronunciation: '/ˈæʒər ˈriːpoʊz/',
               phonetic: 'A-ger RI-pouz',
               example: 'Azure Repos hosts Git repositories. = Azure Repos ospita repository Git.',
@@ -7940,7 +7974,7 @@ export default {
             },
             {
               english: 'Azure Boards',
-              italian: 'Azure Boards / project management Azure',
+              italian: 'Project management Azure (Azure Boards)',
               pronunciation: '/ˈæʒər bɔːrdz/',
               phonetic: 'A-ger BORDZ',
               example: 'Azure Boards tracks work items. = Azure Boards traccia work item.',
@@ -7950,7 +7984,7 @@ export default {
             },
             {
               english: 'Azure Artifacts',
-              italian: 'Azure Artifacts / repository di artefatti Azure',
+              italian: 'Repository di artefatti Azure (Azure Artifacts)',
               pronunciation: '/ˈæʒər ˈɑːrtɪfækts/',
               phonetic: 'A-ger AR-ti-fakts',
               example:
@@ -8019,7 +8053,7 @@ export default {
           items: [
             {
               english: 'Cloud Build',
-              italian: 'Google Cloud Build / CI/CD Google',
+              italian: 'CI/CD Google (Cloud Build)',
               pronunciation: '/klaʊd bɪld/',
               phonetic: 'KLA-ud BILD',
               example:
@@ -8030,7 +8064,7 @@ export default {
             },
             {
               english: 'Cloud Source Repositories',
-              italian: 'Cloud Source Repositories / hosting Git Google',
+              italian: 'Hosting Git Google (Cloud Source Repositories)',
               pronunciation: '/klaʊd sɔːrs/',
               phonetic: 'KLA-ud SORS',
               example:
@@ -8041,7 +8075,7 @@ export default {
             },
             {
               english: 'Artifact Registry',
-              italian: 'Artifact Registry / repo artefatti Google',
+              italian: 'Repository artefatti Google (Artifact Registry)',
               pronunciation: '/ˈɑːrtɪfækt ˈredʒɪstri/',
               phonetic: 'AR-ti-fact RE-gis-tri',
               example:
@@ -8052,7 +8086,7 @@ export default {
             },
             {
               english: 'Cloud Deploy',
-              italian: 'Cloud Deploy / continuous delivery Google',
+              italian: 'Continuous delivery Google (Cloud Deploy)',
               pronunciation: '/klaʊd dɪˈplɔɪ/',
               phonetic: 'KLA-ud di-PLOI',
               example:
@@ -8063,7 +8097,7 @@ export default {
             },
             {
               english: 'cloudbuild.yaml',
-              italian: 'cloudbuild.yaml / file di build Cloud Build',
+              italian: 'File di build Cloud Build (cloudbuild.yaml)',
               pronunciation: '/klaʊd bɪld/',
               phonetic: 'KLA-ud BILD',
               example:
@@ -8164,7 +8198,7 @@ export default {
             },
             {
               english: 'Feature Flag',
-              italian: 'feature flag / interruttore funzionalità',
+              italian: 'Interruttore funzionalità (feature flag)',
               pronunciation: '/ˈfiːtʃər flæɡ/',
               phonetic: 'FII-cer FLAG',
               example:
@@ -8175,7 +8209,7 @@ export default {
             },
             {
               english: 'A/B Testing',
-              italian: 'A/B testing / test su due varianti',
+              italian: 'Test su due varianti (A/B testing)',
               pronunciation: '/eɪ biː ˈtestɪŋ/',
               phonetic: 'EI-BI TES-ting',
               example:
@@ -8195,7 +8229,7 @@ export default {
             },
             {
               english: 'Rollback',
-              italian: 'rollback / ritorno a versione precedente',
+              italian: 'Ritorno a versione precedente (rollback)',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROUL-bak',
               example:
@@ -8215,7 +8249,7 @@ export default {
             },
             {
               english: 'Traffic Shifting',
-              italian: 'traffic shifting / spostamento progressivo del traffico',
+              italian: 'Spostamento progressivo del traffico (traffic shifting)',
               pronunciation: '/ˈtræfɪk ˈʃɪftɪŋ/',
               phonetic: 'TRA-fic SCIF-ting',
               example:
@@ -8251,7 +8285,7 @@ export default {
           items: [
             {
               english: 'Data Warehouse',
-              italian: 'data warehouse / magazzino dati analitico',
+              italian: 'Magazzino dati analitico (data warehouse)',
               pronunciation: '/ˈdeɪtə ˈweərhaʊs/',
               phonetic: 'DEI-ta UE-er-aus',
               example:
@@ -8295,7 +8329,7 @@ export default {
             },
             {
               english: 'Synapse Analytics',
-              italian: 'Azure Synapse Analytics / data warehouse Azure',
+              italian: 'Data warehouse Azure (Synapse Analytics)',
               pronunciation: '/ˈsaɪnæps/',
               phonetic: 'SAI-naps',
               example:
@@ -8317,7 +8351,7 @@ export default {
             },
             {
               english: 'Slot',
-              italian: 'slot / unità di calcolo BigQuery',
+              italian: 'Unità di calcolo BigQuery (slot)',
               pronunciation: '/slɒt/',
               phonetic: 'SLOT',
               example:
@@ -8347,7 +8381,7 @@ export default {
             },
             {
               english: 'Time Travel',
-              italian: 'time travel / interrogazione storica',
+              italian: 'Interrogazione storica (time travel)',
               pronunciation: '/taɪm ˈtrævl/',
               phonetic: 'TAIM TRA-vel',
               example:
@@ -8364,7 +8398,7 @@ export default {
           items: [
             {
               english: 'Data Lake',
-              italian: 'data lake / lago dati grezzi',
+              italian: 'Lago dati grezzi (data lake)',
               pronunciation: '/ˈdeɪtə leɪk/',
               phonetic: 'DEI-ta LEIK',
               example:
@@ -8374,7 +8408,7 @@ export default {
             },
             {
               english: 'Lake Formation',
-              italian: 'AWS Lake Formation / governance dei data lake',
+              italian: 'Governance dei data lake (AWS Lake Formation)',
               pronunciation: '/leɪk fɔːrˈmeɪʃən/',
               phonetic: 'LEIK for-MEI-scen',
               example:
@@ -8385,7 +8419,7 @@ export default {
             },
             {
               english: 'Parquet',
-              italian: 'Parquet / formato colonnare comune',
+              italian: 'Formato colonnare comune (Parquet)',
               pronunciation: '/pɑːrˈkeɪ/',
               phonetic: 'par-KEI',
               example: 'Parquet is a columnar file format. = Parquet è un formato file columnar.',
@@ -8395,7 +8429,7 @@ export default {
             },
             {
               english: 'Avro',
-              italian: 'Avro / formato di serializzazione di riga',
+              italian: 'Formato di serializzazione di riga (Avro)',
               pronunciation: '/ˈævroʊ/',
               phonetic: 'A-vro',
               example:
@@ -8405,7 +8439,7 @@ export default {
             },
             {
               english: 'ORC',
-              italian: 'ORC / Optimized Row Columnar',
+              italian: 'Formato colonnare ottimizzato per riga (ORC)',
               pronunciation: '/ɔːrk/',
               phonetic: 'ORK',
               example:
@@ -8415,7 +8449,7 @@ export default {
             },
             {
               english: 'Delta Lake',
-              italian: 'Delta Lake / storage transazionale Databricks',
+              italian: 'Storage transazionale Databricks (Delta Lake)',
               pronunciation: '/ˈdeltə leɪk/',
               phonetic: 'DEL-ta LEIK',
               example:
@@ -8426,7 +8460,7 @@ export default {
             },
             {
               english: 'Iceberg',
-              italian: 'Apache Iceberg / table format moderno',
+              italian: 'Formato tabella moderno (Apache Iceberg)',
               pronunciation: '/ˈaɪsbɜːrɡ/',
               phonetic: 'AIS-berg',
               example:
@@ -8437,7 +8471,7 @@ export default {
             },
             {
               english: 'Hudi',
-              italian: 'Apache Hudi / table format streaming',
+              italian: 'Formato tabella per streaming (Apache Hudi)',
               pronunciation: '/ˈhʊdi/',
               phonetic: 'U-di',
               example:
@@ -8448,7 +8482,7 @@ export default {
             },
             {
               english: 'Athena',
-              italian: 'AWS Athena / query SQL su S3',
+              italian: 'Query SQL su S3 (AWS Athena)',
               pronunciation: '/əˈθiːnə/',
               phonetic: 'a-TII-na',
               example: 'Athena queries S3 data with SQL. = Athena interroga dati S3 con SQL.',
@@ -8458,7 +8492,7 @@ export default {
             },
             {
               english: 'Lakehouse',
-              italian: 'lakehouse / ibrido lake + warehouse',
+              italian: 'Ibrido lake + warehouse (lakehouse)',
               pronunciation: '/ˈleɪkhaʊs/',
               phonetic: 'LEIK-aus',
               example:
@@ -8508,7 +8542,7 @@ export default {
             },
             {
               english: 'Glue Crawler',
-              italian: 'AWS Glue Crawler / scoperta schema dati',
+              italian: 'Scoperta schema dati (AWS Glue Crawler)',
               pronunciation: '/ɡluː ˈkrɔːlər/',
               phonetic: 'GLU KRO-ler',
               example:
@@ -8518,7 +8552,7 @@ export default {
             },
             {
               english: 'Data Catalog',
-              italian: 'data catalog / catalogo metadati',
+              italian: 'Catalogo metadati (data catalog)',
               pronunciation: '/ˈdeɪtə ˈkætəlɒɡ/',
               phonetic: 'DEI-ta KA-ta-log',
               example: 'The data catalog stores metadata. = Il data catalog memorizza metadati.',
@@ -8527,7 +8561,7 @@ export default {
             },
             {
               english: 'Dataflow',
-              italian: 'Google Dataflow / esecutore Apache Beam',
+              italian: 'Esecutore Apache Beam (Google Dataflow)',
               pronunciation: '/ˈdeɪtəfloʊ/',
               phonetic: 'DEI-ta-flou',
               example: 'Dataflow runs Apache Beam on GCP. = Dataflow esegue Apache Beam su GCP.',
@@ -8557,7 +8591,7 @@ export default {
             },
             {
               english: 'Dataproc',
-              italian: 'Google Dataproc / Hadoop/Spark gestito',
+              italian: 'Hadoop/Spark gestito (Google Dataproc)',
               pronunciation: '/ˈdeɪtəprɒk/',
               phonetic: 'DEI-ta-prok',
               example: "Dataproc is GCP's managed Spark. = Dataproc è lo Spark gestito di GCP.",
@@ -8595,7 +8629,7 @@ export default {
             },
             {
               english: 'Change Data Capture',
-              italian: 'CDC / Change Data Capture',
+              italian: 'Acquisizione delle modifiche ai dati (CDC)',
               pronunciation: '/tʃeɪndʒ ˈdeɪtə ˈkæptʃər/',
               phonetic: 'CEING DEI-ta KAP-cer',
               example:
@@ -8606,7 +8640,7 @@ export default {
             },
             {
               english: 'Event Sourcing',
-              italian: 'event sourcing / archivio degli eventi',
+              italian: 'Archivio degli eventi (event sourcing)',
               pronunciation: '/ɪˈvent ˈsɔːrsɪŋ/',
               phonetic: 'i-VENT SOR-sing',
               example:
@@ -8646,7 +8680,7 @@ export default {
             },
             {
               english: 'Exactly-Once',
-              italian: 'exactly-once / consegna esatta una volta',
+              italian: 'Consegna esatta una volta (exactly-once)',
               pronunciation: '/ɪɡˈzæktli wʌns/',
               phonetic: 'eg-ZAKT-li UANS',
               example:
@@ -8656,7 +8690,7 @@ export default {
             },
             {
               english: 'At-Least-Once',
-              italian: 'at-least-once / consegna almeno una volta',
+              italian: 'Consegna almeno una volta (at-least-once)',
               pronunciation: '/æt liːst wʌns/',
               phonetic: 'AT-LIIST-UANS',
               example:
@@ -8722,7 +8756,7 @@ export default {
             },
             {
               english: 'Studio',
-              italian: 'SageMaker Studio / IDE web per ML',
+              italian: 'IDE web per ML (SageMaker Studio)',
               pronunciation: '/ˈstjuːdioʊ/',
               phonetic: 'STIU-dio',
               example: "SageMaker Studio is the ML IDE. = SageMaker Studio è l'IDE per ML.",
@@ -8742,7 +8776,7 @@ export default {
             },
             {
               english: 'Endpoint',
-              italian: 'endpoint / punto terminale di un servizio',
+              italian: 'Punto terminale di un servizio (endpoint)',
               pronunciation: '/ˈendpɔɪnt/',
               phonetic: 'END-point',
               example:
@@ -8752,7 +8786,7 @@ export default {
             },
             {
               english: 'Model Registry',
-              italian: 'model registry / registro dei modelli',
+              italian: 'Registro dei modelli (model registry)',
               pronunciation: '/ˈmɒdl ˈredʒɪstri/',
               phonetic: 'MO-del RE-gis-tri',
               example:
@@ -8762,7 +8796,7 @@ export default {
             },
             {
               english: 'Feature Store',
-              italian: 'feature store / archivio feature condivise',
+              italian: 'Archivio feature condivise (feature store)',
               pronunciation: '/ˈfiːtʃər stɔːr/',
               phonetic: 'FII-cer STOR',
               example: 'A feature store reuses ML features. = Un feature store riusa feature ML.',
@@ -8781,7 +8815,7 @@ export default {
             },
             {
               english: 'AutoPilot',
-              italian: 'SageMaker AutoPilot / AutoML AWS',
+              italian: 'AutoML AWS (SageMaker AutoPilot)',
               pronunciation: '/ˈɔːtoʊpaɪlət/',
               phonetic: 'O-to-pai-let',
               example:
@@ -8820,7 +8854,7 @@ export default {
             },
             {
               english: 'AutoML',
-              italian: 'AutoML / machine learning automatizzato',
+              italian: 'Machine learning automatizzato (AutoML)',
               pronunciation: '/ˈɔːtoʊ em el/',
               phonetic: 'O-to EM-EL',
               example:
@@ -8831,7 +8865,7 @@ export default {
             },
             {
               english: 'Pipelines',
-              italian: 'pipelines / pipeline ML',
+              italian: 'Pipeline ML (pipelines)',
               pronunciation: '/ˈpaɪplaɪnz/',
               phonetic: 'PAIP-lainz',
               example:
@@ -8841,7 +8875,7 @@ export default {
             },
             {
               english: 'Workbench',
-              italian: 'Vertex Workbench / notebook gestiti',
+              italian: 'Notebook gestiti (Vertex Workbench)',
               pronunciation: '/ˈwɜːrkbentʃ/',
               phonetic: 'UERK-bench',
               example:
@@ -8851,7 +8885,7 @@ export default {
             },
             {
               english: 'Model Garden',
-              italian: 'Model Garden / catalogo modelli Vertex',
+              italian: 'Catalogo modelli Vertex (Model Garden)',
               pronunciation: '/ˈmɒdl ˈɡɑːrdn/',
               phonetic: 'MO-del GAR-den',
               example:
@@ -8861,7 +8895,7 @@ export default {
             },
             {
               english: 'Vertex Pipelines',
-              italian: 'Vertex Pipelines / pipeline ML gestite',
+              italian: 'Pipeline ML gestite (Vertex Pipelines)',
               pronunciation: '/ˈvɜːrteks ˈpaɪplaɪnz/',
               phonetic: 'VER-teks PAIP-lainz',
               example:
@@ -8871,7 +8905,7 @@ export default {
             },
             {
               english: 'Vertex Endpoints',
-              italian: 'Vertex Endpoints / endpoint di inference',
+              italian: 'Endpoint di inference (Vertex Endpoints)',
               pronunciation: '/ˈvɜːrteks ˈendpɔɪnts/',
               phonetic: 'VER-teks END-points',
               example: 'Deploy models to Vertex Endpoints. = Deploy modelli su Vertex Endpoints.',
@@ -8890,7 +8924,7 @@ export default {
             },
             {
               english: 'Feature Engineering',
-              italian: 'feature engineering / costruzione di feature',
+              italian: 'Costruzione di feature (feature engineering)',
               pronunciation: '/ˈfiːtʃər ˌendʒɪˈnɪərɪŋ/',
               phonetic: 'FII-cer en-gi-NIE-ring',
               example:
@@ -8900,7 +8934,7 @@ export default {
             },
             {
               english: 'Vertex AI Search',
-              italian: 'Vertex AI Search / ricerca semantica Google',
+              italian: 'Ricerca semantica Google (Vertex AI Search)',
               pronunciation: '/ˈvɜːrteks eɪ aɪ sɜːrtʃ/',
               phonetic: 'VER-teks EI-AI SERC',
               example:
@@ -8917,7 +8951,7 @@ export default {
           items: [
             {
               english: 'Bedrock',
-              italian: 'AWS Bedrock / LLM gestiti AWS',
+              italian: 'LLM gestiti AWS (AWS Bedrock)',
               pronunciation: '/ˈbedrɒk/',
               phonetic: 'BED-rok',
               example:
@@ -8928,7 +8962,7 @@ export default {
             },
             {
               english: 'Foundation Model',
-              italian: 'foundation model / modello base',
+              italian: 'Modello base (foundation model)',
               pronunciation: '/faʊnˈdeɪʃən ˈmɒdl/',
               phonetic: 'faun-DEI-scen MO-del',
               example:
@@ -8939,7 +8973,7 @@ export default {
             },
             {
               english: 'Azure OpenAI',
-              italian: 'Azure OpenAI Service / LLM OpenAI su Azure',
+              italian: 'LLM OpenAI su Azure (Azure OpenAI Service)',
               pronunciation: '/ˈæʒər ˈoʊpən eɪ aɪ/',
               phonetic: 'A-ger OU-pen EI-AI',
               example:
@@ -8970,7 +9004,7 @@ export default {
             },
             {
               english: 'Fine-Tuning',
-              italian: 'fine-tuning / addestramento mirato',
+              italian: 'Addestramento mirato (fine-tuning)',
               pronunciation: '/faɪn ˈtjuːnɪŋ/',
               phonetic: 'FAIN TIU-ning',
               example:
@@ -8990,7 +9024,7 @@ export default {
             },
             {
               english: 'Knowledge Base',
-              italian: 'knowledge base / base di conoscenza',
+              italian: 'Base di conoscenza (knowledge base)',
               pronunciation: '/ˈnɒlɪdʒ beɪs/',
               phonetic: 'NO-lig BEIS',
               example: 'Bedrock Knowledge Bases power RAG. = Bedrock Knowledge Bases alimenta RAG.',
@@ -9010,7 +9044,7 @@ export default {
             },
             {
               english: 'Embedding',
-              italian: 'embedding / rappresentazione vettoriale',
+              italian: 'Rappresentazione vettoriale (embedding)',
               pronunciation: '/ɪmˈbedɪŋ/',
               phonetic: 'em-BE-ding',
               example:
@@ -9027,7 +9061,7 @@ export default {
           items: [
             {
               english: 'MLOps',
-              italian: 'MLOps / DevOps per ML',
+              italian: 'DevOps per ML (MLOps)',
               pronunciation: '/em el ɒps/',
               phonetic: 'EM-EL-OPS',
               example: 'MLOps applies DevOps to ML. = MLOps applica DevOps al ML.',
@@ -9036,7 +9070,7 @@ export default {
             },
             {
               english: 'Model Drift',
-              italian: 'model drift / deriva del modello',
+              italian: 'Deriva del modello (model drift)',
               pronunciation: '/ˈmɒdl drɪft/',
               phonetic: 'MO-del DRIFT',
               example:
@@ -9155,7 +9189,7 @@ export default {
             },
             {
               english: 'Bounded Context',
-              italian: 'bounded context / contesto delimitato (DDD)',
+              italian: 'Contesto delimitato (bounded context, DDD)',
               pronunciation: '/ˈbaʊndɪd ˈkɒntekst/',
               phonetic: 'BAUN-did KON-tekst',
               example:
@@ -9176,7 +9210,7 @@ export default {
             },
             {
               english: 'Backend for Frontend',
-              italian: 'BFF / Backend For Frontend',
+              italian: 'Backend per frontend (BFF)',
               pronunciation: '/ˈbækend fɔːr ˈfrʌntend/',
               phonetic: 'BAK-end for FRANT-end',
               example: 'BFF tailors APIs per client type. = BFF adatta le API per tipo di client.',
@@ -9186,7 +9220,7 @@ export default {
             },
             {
               english: 'Service Discovery',
-              italian: 'service discovery / scoperta di servizi',
+              italian: 'Scoperta di servizi (service discovery)',
               pronunciation: '/ˈsɜːrvɪs dɪˈskʌvəri/',
               phonetic: 'SER-vis di-SKA-ve-ri',
               example:
@@ -9197,7 +9231,7 @@ export default {
             },
             {
               english: 'Service Mesh',
-              italian: 'service mesh / rete di servizi gestita',
+              italian: 'Rete di servizi gestita (service mesh)',
               pronunciation: '/ˈsɜːrvɪs meʃ/',
               phonetic: 'SER-vis MESC',
               example:
@@ -9239,7 +9273,7 @@ export default {
             },
             {
               english: 'Shared Nothing',
-              italian: 'shared nothing / architettura senza condivisione',
+              italian: 'Architettura senza condivisione (shared nothing)',
               pronunciation: '/ʃeərd ˈnʌθɪŋ/',
               phonetic: 'SCERD NA-ting',
               example:
@@ -9267,7 +9301,7 @@ export default {
             },
             {
               english: 'Event Sourcing',
-              italian: 'event sourcing / archivio degli eventi',
+              italian: 'Archivio degli eventi (event sourcing)',
               pronunciation: '/ɪˈvent ˈsɔːrsɪŋ/',
               phonetic: 'i-VENT SOR-sing',
               example:
@@ -9329,7 +9363,7 @@ export default {
             },
             {
               english: 'Event Replay',
-              italian: 'event replay / riproduzione degli eventi',
+              italian: 'Riproduzione degli eventi (event replay)',
               pronunciation: '/ɪˈvent ˌriːˈpleɪ/',
               phonetic: 'i-VENT RI-plei',
               example:
@@ -9366,7 +9400,7 @@ export default {
           items: [
             {
               english: 'Circuit Breaker',
-              italian: 'circuit breaker / interruttore di circuito',
+              italian: 'Interruttore di circuito (circuit breaker)',
               pronunciation: '/ˈsɜːrkɪt ˈbreɪkər/',
               phonetic: 'SER-kit BREI-ker',
               example:
@@ -9377,7 +9411,7 @@ export default {
             },
             {
               english: 'Bulkhead',
-              italian: 'bulkhead / pattern compartimenti stagni',
+              italian: 'Pattern compartimenti stagni (bulkhead)',
               pronunciation: '/ˈbʌlkhed/',
               phonetic: 'BULK-ed',
               example:
@@ -9408,7 +9442,7 @@ export default {
             },
             {
               english: 'Jitter',
-              italian: 'jitter / variazione casuale',
+              italian: 'variazione casuale (Jitter)',
               pronunciation: '/ˈdʒɪtər/',
               phonetic: 'GI-ter',
               example:
@@ -9419,7 +9453,7 @@ export default {
             },
             {
               english: 'Thundering Herd',
-              italian: 'thundering herd / mandria tonante',
+              italian: 'mandria tonante (Thundering Herd)',
               pronunciation: '/ˈθʌndərɪŋ hɜːrd/',
               phonetic: 'TAN-de-ring ERD',
               example:
@@ -9429,7 +9463,7 @@ export default {
             },
             {
               english: 'Timeout',
-              italian: 'timeout / tempo limite',
+              italian: 'tempo limite (Timeout)',
               pronunciation: '/ˈtaɪmaʊt/',
               phonetic: 'TAIM-aut',
               example:
@@ -9449,7 +9483,7 @@ export default {
             },
             {
               english: 'Fallback',
-              italian: 'fallback / piano di ripiego',
+              italian: 'piano di ripiego (Fallback)',
               pronunciation: '/ˈfɔːlbæk/',
               phonetic: 'FOL-bak',
               example:
@@ -9459,7 +9493,7 @@ export default {
             },
             {
               english: 'Chaos Engineering',
-              italian: 'chaos engineering / ingegneria del caos',
+              italian: 'ingegneria del caos (Chaos Engineering)',
               pronunciation: '/ˈkeɪɒs ˌendʒɪˈnɪərɪŋ/',
               phonetic: 'KEI-os en-gi-NIE-ring',
               example:
@@ -9498,7 +9532,7 @@ export default {
             },
             {
               english: 'Shuffle Sharding',
-              italian: 'shuffle sharding / partizionamento mescolato',
+              italian: 'partizionamento mescolato (Shuffle Sharding)',
               pronunciation: '/ˈʃʌfl ˈʃɑːrdɪŋ/',
               phonetic: 'SCIA-fol SCIAR-ding',
               example:
@@ -9568,7 +9602,7 @@ export default {
             },
             {
               english: 'Resilience Engineering',
-              italian: 'resilience engineering / ingegneria della resilienza',
+              italian: 'ingegneria della resilienza (Resilience Engineering)',
               pronunciation: '/rɪˈzɪliəns/',
               phonetic: 'ri-ZI-lians',
               example:
@@ -9648,7 +9682,7 @@ export default {
             },
             {
               english: 'FedRAMP',
-              italian: 'FedRAMP / programma autorizzazione cloud federale USA',
+              italian: 'programma autorizzazione cloud federale USA (FedRAMP)',
               pronunciation: '/fed ræmp/',
               phonetic: 'FED-RAMP',
               example:
@@ -9668,7 +9702,7 @@ export default {
             },
             {
               english: 'NIS2',
-              italian: 'NIS2 / direttiva UE cybersecurity',
+              italian: 'direttiva UE cybersecurity (NIS2)',
               pronunciation: '/en aɪ es tuː/',
               phonetic: 'EN-AI-ES-TUU',
               example:
@@ -9817,7 +9851,7 @@ export default {
           items: [
             {
               english: 'Audit',
-              italian: 'audit / verifica di conformità',
+              italian: 'verifica di conformità (Audit)',
               pronunciation: '/ˈɔːdɪt/',
               phonetic: 'O-dit',
               example:
@@ -9827,7 +9861,7 @@ export default {
             },
             {
               english: 'Auditor',
-              italian: 'auditor / revisore',
+              italian: 'revisore (Auditor)',
               pronunciation: '/ˈɔːdɪtər/',
               phonetic: 'O-di-ter',
               example:
@@ -9837,7 +9871,7 @@ export default {
             },
             {
               english: 'Governance',
-              italian: 'governance / governo delle risorse cloud',
+              italian: 'governo delle risorse cloud (Governance)',
               pronunciation: '/ˈɡʌvərnəns/',
               phonetic: 'GA-ver-nans',
               example:
@@ -9847,7 +9881,7 @@ export default {
             },
             {
               english: 'AWS Organizations',
-              italian: 'AWS Organizations / gestione multi-account AWS',
+              italian: 'gestione multi-account AWS (AWS Organizations)',
               pronunciation: '/ˌɔːrɡənaɪˈzeɪʃənz/',
               phonetic: 'or-ga-nai-ZEI-scenz',
               example:
@@ -9869,7 +9903,7 @@ export default {
             },
             {
               english: 'Landing Zone',
-              italian: 'landing zone / ambiente cloud iniziale',
+              italian: 'ambiente cloud iniziale (Landing Zone)',
               pronunciation: '/ˈlændɪŋ zoʊn/',
               phonetic: 'LAN-ding ZOUN',
               example:
@@ -9879,7 +9913,7 @@ export default {
             },
             {
               english: 'Guardrail',
-              italian: 'guardrail / regola di protezione',
+              italian: 'regola di protezione (Guardrail)',
               pronunciation: '/ˈɡɑːrdreɪl/',
               phonetic: 'GARD-reil',
               example:
@@ -9889,7 +9923,7 @@ export default {
             },
             {
               english: 'Policy as Code',
-              italian: 'policy as code / policy in codice versionato',
+              italian: 'policy in codice versionato (Policy as Code)',
               pronunciation: '/ˈpɒlɪsi æz koʊd/',
               phonetic: 'PO-li-si as KOUD',
               example: 'OPA enables policy as code. = OPA abilita policy as code.',
@@ -10010,7 +10044,7 @@ export default {
             },
             {
               english: 'Privacy by Design',
-              italian: 'privacy by design / privacy nella progettazione',
+              italian: 'privacy nella progettazione (Privacy by Design)',
               pronunciation: '/ˈprɪvəsi baɪ dɪˈzaɪn/',
               phonetic: 'PRI-va-si bai di-ZAIN',
               example:
@@ -10279,7 +10313,7 @@ export default {
             },
             {
               english: 'Compute Savings Plan',
-              italian: 'Compute Savings Plan / piano risparmio compute',
+              italian: 'piano risparmio compute (Compute Savings Plan)',
               pronunciation: '/kəmˈpjuːt ˈseɪvɪŋz plæn/',
               phonetic: 'com-PIUT SEI-vingz PLAN',
               example:
@@ -10290,7 +10324,7 @@ export default {
             },
             {
               english: 'EC2 Instance Savings Plan',
-              italian: 'EC2 Instance Savings Plan / piano risparmio EC2',
+              italian: 'piano risparmio EC2 (EC2 Instance Savings Plan)',
               pronunciation: '/iː siː tuː ˈɪnstəns/',
               phonetic: 'I-SI-TUU IN-stans',
               example: 'EC2 ISP locks to a family. = Il ISP EC2 vincola a una famiglia.',
@@ -10446,7 +10480,7 @@ export default {
             },
             {
               english: 'CapEx vs OpEx',
-              italian: 'CapEx vs OpEx / spesa capitale vs spesa operativa',
+              italian: 'spesa capitale vs spesa operativa (CapEx vs OpEx)',
               pronunciation: '/kæp eks ˈvɜːrsəs ɒp eks/',
               phonetic: 'KAP-EKS VER-sus OP-EKS',
               example: 'Cloud shifts CapEx to OpEx. = Il cloud sposta da CapEx a OpEx.',
@@ -10564,7 +10598,7 @@ export default {
             },
             {
               english: 'AWS Skill Builder',
-              italian: 'AWS Skill Builder / piattaforma di formazione AWS',
+              italian: 'piattaforma di formazione AWS (AWS Skill Builder)',
               pronunciation: '/skɪl ˈbɪldər/',
               phonetic: 'SKIL BIL-der',
               example:
@@ -10677,7 +10711,7 @@ export default {
             },
             {
               english: 'HashiCorp Certified',
-              italian: 'HashiCorp Certified / certificazioni Terraform/Vault',
+              italian: 'certificazioni Terraform/Vault (HashiCorp Certified)',
               pronunciation: '/ˈhæʃikɔːrp/',
               phonetic: 'HA-sci-corp',
               example:
@@ -10695,7 +10729,7 @@ export default {
           items: [
             {
               english: 'Cloud Architect',
-              italian: 'cloud architect / architetto cloud',
+              italian: 'architetto cloud (Cloud Architect)',
               pronunciation: '/klaʊd ˈɑːrkɪtekt/',
               phonetic: 'KLA-ud AR-ki-tekt',
               example:
@@ -10705,7 +10739,7 @@ export default {
             },
             {
               english: 'Solutions Architect',
-              italian: 'solutions architect / architetto di soluzioni',
+              italian: 'architetto di soluzioni (Solutions Architect)',
               pronunciation: '/səˈluːʃənz/',
               phonetic: 'so-LIU-scenz',
               example:
@@ -10715,7 +10749,7 @@ export default {
             },
             {
               english: 'DevOps Engineer',
-              italian: 'DevOps engineer / ingegnere DevOps',
+              italian: 'ingegnere DevOps (DevOps Engineer)',
               pronunciation: '/ˈdevɒps ˌendʒɪˈnɪər/',
               phonetic: 'DE-vops en-gi-NIE-er',
               example:
@@ -10736,7 +10770,7 @@ export default {
             },
             {
               english: 'Cloud Engineer',
-              italian: 'cloud engineer / ingegnere cloud',
+              italian: 'ingegnere cloud (Cloud Engineer)',
               pronunciation: '/klaʊd/',
               phonetic: 'KLA-ud',
               example:
@@ -10746,7 +10780,7 @@ export default {
             },
             {
               english: 'Platform Engineer',
-              italian: 'platform engineer / ingegnere di piattaforma',
+              italian: 'ingegnere di piattaforma (Platform Engineer)',
               pronunciation: '/ˈplætfɔːrm/',
               phonetic: 'PLAT-form',
               example:
@@ -10757,7 +10791,7 @@ export default {
             },
             {
               english: 'Cloud Security Engineer',
-              italian: 'cloud security engineer / ingegnere sicurezza cloud',
+              italian: 'ingegnere sicurezza cloud (Cloud Security Engineer)',
               pronunciation: '/sɪˈkjʊərɪti/',
               phonetic: 'si-KIU-ri-ti',
               example:
@@ -10767,7 +10801,7 @@ export default {
             },
             {
               english: 'FinOps Engineer',
-              italian: 'FinOps engineer / ingegnere FinOps',
+              italian: 'ingegnere FinOps (FinOps Engineer)',
               pronunciation: '/fɪn ɒps/',
               phonetic: 'FIN-OPS',
               example:
@@ -10777,7 +10811,7 @@ export default {
             },
             {
               english: 'Cloud Developer',
-              italian: 'cloud developer / sviluppatore cloud',
+              italian: 'sviluppatore cloud (Cloud Developer)',
               pronunciation: '/klaʊd dɪˈveləpər/',
               phonetic: 'KLA-ud di-VE-lo-per',
               example:
@@ -10787,7 +10821,7 @@ export default {
             },
             {
               english: 'Cloud Consultant',
-              italian: 'cloud consultant / consulente cloud',
+              italian: 'consulente cloud (Cloud Consultant)',
               pronunciation: '/kənˈsʌltənt/',
               phonetic: 'con-SAL-tant',
               example:
@@ -10866,7 +10900,7 @@ export default {
             },
             {
               english: 'KubeCon',
-              italian: 'KubeCon / conferenza Kubernetes',
+              italian: 'conferenza Kubernetes (KubeCon)',
               pronunciation: '/kjuːb kɒn/',
               phonetic: 'KIUB-KON',
               example:
@@ -10876,7 +10910,7 @@ export default {
             },
             {
               english: 'Community',
-              italian: 'community / comunità tecnica',
+              italian: 'comunità tecnica (Community)',
               pronunciation: '/kəˈmjuːnəti/',
               phonetic: 'co-MIU-ne-ti',
               example:
@@ -10887,7 +10921,7 @@ export default {
             },
             {
               english: 'Mentor',
-              italian: 'mentor / mentore',
+              italian: 'mentore (Mentor)',
               pronunciation: '/ˈmentɔːr/',
               phonetic: 'MEN-tor',
               example:

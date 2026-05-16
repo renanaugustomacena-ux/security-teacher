@@ -28,7 +28,7 @@ export default {
               pronunciation: '/ˈnetwɜːrk/',
               phonetic: 'NET-uerk',
               example:
-                'A network connects multiple devices together. = Una rete collega più dispositivi insieme.',
+                "The office network went down during a firmware update on the core switch. = La rete dell'ufficio è caduta durante un aggiornamento firmware sullo switch principale.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'In italiano si dice "rete" sia per Internet che per la rete locale.',
@@ -39,70 +39,70 @@ export default {
               pronunciation: '/noʊd/',
               phonetic: 'NOUD',
               example:
-                'Each device on a network is called a node. = Ogni dispositivo su una rete è chiamato nodo.',
+                'Every printer, laptop, and server counts as a separate node on the corporate LAN. = Ogni stampante, portatile e server conta come un nodo separato sulla LAN aziendale.',
               context: 'foundations',
               difficulty: 'beginner',
             },
             {
               english: 'Host',
-              italian: 'host / macchina di rete',
+              italian: 'macchina di rete (host)',
               pronunciation: '/hoʊst/',
               phonetic: 'HOUST',
               example:
-                'A host is a computer connected to a network. = Un host è un computer connesso a una rete.',
+                'When troubleshooting, ping each host on the subnet to find which machine is unreachable. = Durante il troubleshooting, esegui il ping di ogni host nella sottorete per trovare quale macchina non è raggiungibile.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'In italiano si usa il termine inglese "host" senza tradurlo.',
             },
             {
               english: 'Client',
-              italian: 'client / programma richiedente',
+              italian: 'programma richiedente (client)',
               pronunciation: '/ˈklaɪənt/',
               phonetic: 'KLAI-ent',
               example:
-                'The client requests data from the server. = Il client richiede dati al server.',
+                'Your web browser acts as a client when it sends an HTTP request to fetch a page. = Il tuo browser web funge da client quando invia una richiesta HTTP per recuperare una pagina.',
               context: 'foundations',
               difficulty: 'beginner',
             },
             {
               english: 'Server',
-              italian: 'server / programma fornitore',
+              italian: 'programma fornitore (server)',
               pronunciation: '/ˈsɜːrvər/',
               phonetic: 'SER-ver',
               example:
-                'The server responds to client requests. = Il server risponde alle richieste del client.',
+                "An Apache instance on port 80 functions as a web server for thousands of concurrent users. = Un'istanza Apache sulla porta 80 funziona come server web per migliaia di utenti simultanei.",
               context: 'foundations',
               difficulty: 'beginner',
             },
             {
               english: 'Peer',
-              italian: 'Pari / Peer',
+              italian: 'pari (peer)',
               pronunciation: '/pɪər/',
               phonetic: 'PIIR',
               example:
-                'In peer-to-peer networks, all nodes are equal. = Nelle reti peer-to-peer tutti i nodi sono uguali.',
+                'In a BitTorrent swarm, each peer both uploads and downloads file chunks simultaneously. = In uno sciame BitTorrent, ogni peer carica e scarica blocchi di file simultaneamente.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Spesso lasciato non tradotto: "rete peer-to-peer" o "rete P2P".',
             },
             {
               english: 'Internet',
-              italian: 'Internet / rete mondiale',
+              italian: 'rete mondiale (Internet)',
               pronunciation: '/ˈɪntərnet/',
               phonetic: 'IN-ter-net',
               example:
-                'The Internet is a global network of networks. = Internet è una rete globale di reti.',
+                "Submarine fiber cables carry the bulk of Internet traffic between continents across the ocean floor. = I cavi in fibra sottomarini trasportano la maggior parte del traffico Internet tra i continenti sul fondo dell'oceano.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Internet si scrive con la I maiuscola perché si riferisce alla rete globale unica.',
             },
             {
               english: 'Intranet',
-              italian: 'intranet / rete privata aziendale',
+              italian: 'rete privata aziendale (intranet)',
               pronunciation: '/ˈɪntrənet/',
               phonetic: 'IN-tra-net',
               example:
-                "The company intranet is only accessible internally. = L'intranet aziendale è accessibile solo internamente.",
+                "Employees access the HR portal through the company intranet without exposing it to the public web. = I dipendenti accedono al portale HR attraverso l'intranet aziendale senza esporlo al web pubblico.",
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -112,7 +112,7 @@ export default {
               pronunciation: '/ˈpækɪt/',
               phonetic: 'PAK-ket',
               example:
-                'Data is divided into packets before transmission. = I dati sono divisi in pacchetti prima della trasmissione.',
+                'A single YouTube stream is broken into thousands of packets that are reassembled by the receiver. = Un singolo stream YouTube viene suddiviso in migliaia di pacchetti che vengono riassemblati dal ricevitore.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Il "pacchetto" è l\'unità base di dati che viaggia in rete.',
@@ -123,7 +123,7 @@ export default {
               pronunciation: '/ˈproʊtəkɒl/',
               phonetic: 'PRO-to-kol',
               example:
-                'A protocol defines rules for communication. = Un protocollo definisce le regole per la comunicazione.',
+                'Without an agreed protocol like TCP, two machines would have no common rules for data exchange. = Senza un protocollo concordato come TCP, due macchine non avrebbero regole comuni per lo scambio di dati.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -140,7 +140,7 @@ export default {
               pronunciation: '/læn/',
               phonetic: 'LAN',
               example:
-                'A LAN connects devices in a small area. = Una LAN connette dispositivi in una piccola area.',
+                'All workstations on the third floor share a single LAN connected through a 48-port switch. = Tutte le postazioni al terzo piano condividono una singola LAN connessa tramite uno switch a 48 porte.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Local Area Network. Tipicamente casa, ufficio o edificio.',
@@ -151,7 +151,7 @@ export default {
               pronunciation: '/wæn/',
               phonetic: 'UAN',
               example:
-                'A WAN spans large geographical distances. = Una WAN copre grandi distanze geografiche.',
+                "The company links its Milan and Rome offices over a dedicated WAN circuit leased from the ISP. = L'azienda collega le sedi di Milano e Roma tramite un circuito WAN dedicato affittato dall'ISP.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Wide Area Network. Internet è la WAN più grande del mondo.',
@@ -162,7 +162,7 @@ export default {
               pronunciation: '/mæn/',
               phonetic: 'MAN',
               example:
-                'A MAN covers a city or metropolitan area. = Una MAN copre una città o area metropolitana.',
+                'The city deployed a fiber-ring MAN to connect libraries, schools, and municipal buildings. = Il comune ha realizzato una MAN ad anello in fibra per collegare biblioteche, scuole e edifici municipali.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Metropolitan Area Network.',
@@ -173,7 +173,7 @@ export default {
               pronunciation: '/pæn/',
               phonetic: 'PAN',
               example:
-                'Bluetooth creates a PAN between devices. = Bluetooth crea una PAN tra dispositivi.',
+                'Your smartphone, smartwatch, and earbuds form a PAN via Bluetooth within a few meters. = Il tuo smartphone, smartwatch e auricolari formano una PAN via Bluetooth entro pochi metri.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Personal Area Network. Esempio: Bluetooth.',
@@ -183,7 +183,8 @@ export default {
               italian: 'Rete locale wireless (WLAN)',
               pronunciation: '/ˌdʌbljuː læn/',
               phonetic: 'DABOL-iu LAN',
-              example: 'Wi-Fi networks are WLANs. = Le reti Wi-Fi sono WLAN.',
+              example:
+                "The hotel deploys a WLAN across all floors so guests can connect without Ethernet cables. = L'hotel installa una WLAN su tutti i piani cosicché gli ospiti possano connettersi senza cavi Ethernet.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Wireless Local Area Network.',
@@ -194,7 +195,7 @@ export default {
               pronunciation: '/ˌviː piː ˈen/',
               phonetic: 'VI-PI-EN',
               example:
-                'A VPN encrypts traffic over the Internet. = Una VPN cifra il traffico su Internet.',
+                'Remote workers connect through a VPN tunnel that encrypts all traffic over the public Internet. = I lavoratori remoti si connettono attraverso un tunnel VPN che cifra tutto il traffico sulla rete Internet pubblica.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Virtual Private Network.',
@@ -205,7 +206,7 @@ export default {
               pronunciation: '/sæn/',
               phonetic: 'SAN',
               example:
-                'A SAN provides block-level storage access. = Una SAN fornisce accesso di archiviazione a blocchi.',
+                'The data center uses a dedicated SAN so database servers access shared storage over Fibre Channel. = Il data center usa una SAN dedicata affinché i server database accedano allo storage condiviso tramite Fibre Channel.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Storage Area Network. Usata nei data center.',
@@ -216,7 +217,7 @@ export default {
               pronunciation: '/ˈbækboʊn/',
               phonetic: 'BAK-boun',
               example:
-                'The Internet backbone carries massive amounts of data. = La dorsale Internet trasporta enormi quantità di dati.',
+                'Tier-1 ISPs maintain the Internet backbone that interconnects regional networks worldwide. = Gli ISP Tier-1 gestiscono la dorsale Internet che interconnette le reti regionali a livello mondiale.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -226,7 +227,7 @@ export default {
               pronunciation: '/ˈsʌbnet/',
               phonetic: 'SAB-net',
               example:
-                'A subnet divides a larger network into segments. = Una sottorete divide una rete più grande in segmenti.',
+                'Splitting 10.0.0.0/16 into /24 subnets gives each department its own broadcast domain. = Suddividere 10.0.0.0/16 in sottoreti /24 dà a ogni reparto il proprio dominio di broadcast.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -236,7 +237,7 @@ export default {
               pronunciation: '/ˈseɡmənt/',
               phonetic: 'SEG-ment',
               example:
-                'Network segments improve performance and security. = I segmenti di rete migliorano prestazioni e sicurezza.',
+                'Large files sent over TCP are divided into segments of MSS size, each with its own sequence number. = I file grandi inviati via TCP sono divisi in segmenti di dimensione MSS, ciascuno con il proprio numero di sequenza.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -253,7 +254,7 @@ export default {
               pronunciation: '/təˈpɒlədʒi/',
               phonetic: 'to-PO-lo-gi',
               example:
-                'Network topology describes how nodes are arranged. = La topologia di rete descrive come sono disposti i nodi.',
+                "Before adding switches, the engineer mapped the existing network topology to avoid loops. = Prima di aggiungere switch, l'ingegnere ha mappato la topologia di rete esistente per evitare loop.",
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -263,7 +264,7 @@ export default {
               pronunciation: '/stɑːr təˈpɒlədʒi/',
               phonetic: 'STAR to-PO-lo-gi',
               example:
-                'In a star topology, all nodes connect to a central hub. = In una topologia a stella tutti i nodi si connettono a un hub centrale.',
+                'Most offices use a star topology where every desk port connects back to a central switch. = La maggior parte degli uffici usa una topologia a stella dove ogni presa si collega a uno switch centrale.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -273,7 +274,7 @@ export default {
               pronunciation: '/meʃ təˈpɒlədʒi/',
               phonetic: 'MESH to-PO-lo-gi',
               example:
-                'Mesh topology connects every node to every other. = La topologia a maglia connette ogni nodo a tutti gli altri.',
+                'Data centers adopt a partial mesh topology so critical switches have redundant paths. = I data center adottano una topologia a maglia parziale affinché gli switch critici abbiano percorsi ridondanti.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Molto resiliente ma costosa: serve N(N-1)/2 link.',
@@ -284,7 +285,7 @@ export default {
               pronunciation: '/bʌs təˈpɒlədʒi/',
               phonetic: 'BAS to-PO-lo-gi',
               example:
-                'Bus topology uses a single shared cable. = La topologia a bus usa un unico cavo condiviso.',
+                'Early 10BASE2 Ethernet used a bus topology where one coaxial cable daisy-chained every workstation. = Le prime reti 10BASE2 usavano una topologia a bus dove un cavo coassiale collegava a catena ogni postazione.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Antiquata: usata nelle vecchie reti Ethernet 10BASE2.',
@@ -295,7 +296,7 @@ export default {
               pronunciation: '/rɪŋ təˈpɒlədʒi/',
               phonetic: 'RING to-PO-lo-gi',
               example:
-                'Token Ring used a ring topology. = Token Ring usava una topologia ad anello.',
+                'IBM Token Ring passed a token around a ring topology, and only the holder could transmit. = IBM Token Ring passava un token lungo una topologia ad anello, e solo chi lo possedeva poteva trasmettere.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -305,7 +306,7 @@ export default {
               pronunciation: '/ˈbændwɪdθ/',
               phonetic: 'BAND-uidth',
               example:
-                'Higher bandwidth allows more data per second. = Maggiore larghezza di banda permette più dati al secondo.',
+                "Upgrading the uplink to 10 Gbps doubled the available bandwidth for the entire floor. = Aggiornare l'uplink a 10 Gbps ha raddoppiato la larghezza di banda disponibile per l'intero piano.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Misurata in bit/s, Mbps, Gbps.',
@@ -316,7 +317,7 @@ export default {
               pronunciation: '/ˈleɪtənsi/',
               phonetic: 'LEI-ten-si',
               example:
-                'Low latency is critical for online gaming. = Una bassa latenza è critica per il gaming online.',
+                'A transatlantic ping shows roughly 80 ms of latency due to the distance light travels in fiber. = Un ping transatlantico mostra circa 80 ms di latenza a causa della distanza che la luce percorre nella fibra.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'ping 8.8.8.8',
@@ -324,11 +325,11 @@ export default {
             },
             {
               english: 'Throughput',
-              italian: 'Throughput / Volume di trasmissione',
+              italian: 'volume di trasmissione effettivo (throughput)',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'TRU-put',
               example:
-                'Throughput measures actual data transferred. = Il throughput misura i dati realmente trasferiti.',
+                'Even on a 1 Gbps link, actual throughput may drop to 600 Mbps due to overhead and congestion. = Anche su un collegamento a 1 Gbps, il throughput effettivo può scendere a 600 Mbps a causa di overhead e congestione.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'iperf3',
@@ -336,11 +337,11 @@ export default {
             },
             {
               english: 'Jitter',
-              italian: 'Jitter / Variazione di latenza',
+              italian: 'variazione di latenza (jitter)',
               pronunciation: '/ˈdʒɪtər/',
               phonetic: 'GI-ter',
               example:
-                'High jitter degrades VoIP call quality. = Un jitter elevato degrada la qualità delle chiamate VoIP.',
+                'VoIP calls sound choppy when jitter exceeds 30 ms because audio packets arrive at irregular intervals. = Le chiamate VoIP risultano frammentate quando il jitter supera 30 ms perché i pacchetti audio arrivano a intervalli irregolari.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Variazione del ritardo tra pacchetti consecutivi.',
@@ -351,7 +352,7 @@ export default {
               pronunciation: '/ˈpækɪt lɒs/',
               phonetic: 'PAK-ket LOS',
               example:
-                "Packet loss reduces network reliability. = La perdita di pacchetti riduce l'affidabilità della rete.",
+                "Even 1% packet loss forces constant TCP retransmissions, cutting effective throughput dramatically. = Anche l'1% di perdita di pacchetti forza continue ritrasmissioni TCP, riducendo drasticamente il throughput effettivo.",
               context: 'foundations',
               difficulty: 'beginner',
               command: 'ping -c 100 example.com',
@@ -365,44 +366,44 @@ export default {
           items: [
             {
               english: 'Router',
-              italian: 'router / instradatore di pacchetti',
+              italian: 'instradatore (router)',
               pronunciation: '/ˈruːtər/',
               phonetic: 'RU-ter',
               example:
-                'A router forwards packets between networks. = Un router inoltra pacchetti tra reti.',
+                "The edge router examines each packet's destination IP to decide which next hop to forward it to. = Il router di bordo esamina l'IP di destinazione di ogni pacchetto per decidere a quale prossimo salto inoltrarlo.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'In italiano si usa il termine inglese "router". Pronunciato "RAU-ter" in UK, "RU-ter" in US.',
             },
             {
               english: 'Switch',
-              italian: 'Switch / Commutatore',
+              italian: 'commutatore (switch)',
               pronunciation: '/swɪtʃ/',
               phonetic: 'SUITCH',
               example:
-                'A switch connects devices on the same LAN. = Uno switch connette dispositivi sulla stessa LAN.',
+                'Unlike a hub, a switch learns which MAC sits behind each port and forwards frames only there. = A differenza di un hub, uno switch apprende quale MAC si trova dietro ogni porta e inoltra i frame solo lì.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Lavora a Layer 2. In italiano si usa quasi sempre "switch".',
             },
             {
               english: 'Hub',
-              italian: 'hub / concentratore Ethernet',
+              italian: 'concentratore (hub)',
               pronunciation: '/hʌb/',
               phonetic: 'HAB',
               example:
-                'A hub broadcasts data to all ports. = Un hub trasmette i dati a tutte le porte.',
+                'Because a hub copies every frame to all ports, plugging a sniffer into any port captured all traffic. = Poiché un hub copia ogni frame su tutte le porte, collegare uno sniffer a qualsiasi porta catturava tutto il traffico.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Tecnologia obsoleta: oggi si usano gli switch.',
             },
             {
               english: 'Modem',
-              italian: 'modem / modulatore-demodulatore',
+              italian: 'modulatore-demodulatore (modem)',
               pronunciation: '/ˈmoʊdəm/',
               phonetic: 'MO-dem',
               example:
-                'A modem connects your home to the ISP. = Un modem connette la tua casa al provider Internet.',
+                "The DSL modem converts digital data into analog signals that travel over the telephone line to the ISP. = Il modem DSL converte i dati digitali in segnali analogici che viaggiano sulla linea telefonica verso l'ISP.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Acronimo di MOdulator-DEModulator.',
@@ -413,7 +414,7 @@ export default {
               pronunciation: '/ˈækses pɔɪnt/',
               phonetic: 'AK-ses POINT',
               example:
-                'A Wi-Fi access point provides wireless coverage. = Un punto di accesso Wi-Fi fornisce copertura wireless.',
+                'The IT team mounted a new access point in the conference room to eliminate Wi-Fi dead spots. = Il team IT ha installato un nuovo access point nella sala riunioni per eliminare le zone morte del Wi-Fi.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Spesso abbreviato AP.',
@@ -424,17 +425,18 @@ export default {
               pronunciation: '/ˈnetwɜːrk kɑːrd/',
               phonetic: 'NET-uerk KARD',
               example:
-                'The network card connects the computer to the LAN. = La scheda di rete connette il computer alla LAN.',
+                'After replacing the faulty network card, the server reconnected at full gigabit speed. = Dopo aver sostituito la scheda di rete difettosa, il server si è riconnesso a velocità gigabit piena.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Anche detta NIC (Network Interface Card).',
             },
             {
               english: 'NIC',
-              italian: 'NIC / Scheda di interfaccia di rete',
+              italian: 'scheda di interfaccia di rete (NIC)',
               pronunciation: '/nɪk/',
               phonetic: 'NIK',
-              example: 'Each NIC has a unique MAC address. = Ogni NIC ha un indirizzo MAC unico.',
+              example:
+                'Modern servers often have dual NIC ports for redundancy so a single cable failure causes no downtime. = I server moderni hanno spesso porte NIC doppie per ridondanza così un singolo guasto al cavo non causa downtime.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'ip link show',
@@ -446,7 +448,7 @@ export default {
               pronunciation: '/ˈkeɪbl/',
               phonetic: 'KEI-bol',
               example:
-                'Ethernet cables come in different categories. = I cavi Ethernet esistono in diverse categorie.',
+                'Cat6 cable supports 10 Gbps over short runs, while Cat5e maxes out at 1 Gbps. = Il cavo Cat6 supporta 10 Gbps su brevi tratte, mentre il Cat5e arriva al massimo a 1 Gbps.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -456,18 +458,18 @@ export default {
               pronunciation: '/ˈfaɪbər ˈɒptɪk/',
               phonetic: 'FAI-ber OP-tik',
               example:
-                'Fiber optic cables transmit light signals. = I cavi in fibra ottica trasmettono segnali luminosi.',
+                'The campus backbone uses single-mode fiber optic to span 2 km between buildings without signal loss. = La dorsale del campus usa fibra ottica monomodale per coprire 2 km tra gli edifici senza perdita di segnale.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'In Italia: "fibra" o "FTTH" (Fiber To The Home).',
             },
             {
               english: 'RJ45',
-              italian: 'RJ45 / connettore Ethernet',
+              italian: 'connettore Ethernet (RJ45)',
               pronunciation: '/ˌɑːr dʒeɪ ˌfɔːrti ˈfaɪv/',
               phonetic: 'AR-GEI for-ti FAIV',
               example:
-                'Ethernet cables use RJ45 connectors. = I cavi Ethernet usano connettori RJ45.',
+                'A badly crimped RJ45 connector causes intermittent link drops that are notoriously hard to diagnose. = Un connettore RJ45 crimpato male causa cadute di collegamento intermittenti notoriamente difficili da diagnosticare.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Il connettore standard per Ethernet su rame.',
@@ -493,7 +495,8 @@ export default {
               italian: 'Modello OSI',
               pronunciation: '/ˌoʊ es ˈaɪ/',
               phonetic: 'O-ES-AI',
-              example: 'The OSI model has seven layers. = Il modello OSI ha sette livelli.',
+              example:
+                'Engineers reference the OSI model to pinpoint whether a connectivity issue lives at Layer 1, 2, or 3. = Gli ingegneri consultano il modello OSI per individuare se un problema di connettività risiede al Livello 1, 2 o 3.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Open Systems Interconnection. Modello concettuale di riferimento.',
@@ -504,7 +507,7 @@ export default {
               pronunciation: '/ˈfɪzɪkəl ˈleɪər/',
               phonetic: 'FI-zi-kal LEI-er',
               example:
-                'The physical layer transmits raw bits. = Il livello fisico trasmette bit grezzi.',
+                'A broken patch cable is a physical layer problem that no amount of software configuration can fix. = Un cavo patch rotto è un problema del livello fisico che nessuna configurazione software può risolvere.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Layer 1. Cavi, segnali elettrici, fibra.',
@@ -515,7 +518,7 @@ export default {
               pronunciation: '/ˈdeɪtə lɪŋk/',
               phonetic: 'DEI-ta LINK',
               example:
-                'The data link layer handles frames and MAC addresses. = Il livello di collegamento gestisce frame e indirizzi MAC.',
+                'Switches use data link layer MAC addresses to forward frames within a single broadcast domain. = Gli switch usano indirizzi MAC del livello di collegamento dati per inoltrare frame in un singolo dominio di broadcast.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Layer 2. Esempio: Ethernet.',
@@ -526,7 +529,7 @@ export default {
               pronunciation: '/ˈnetwɜːrk ˈleɪər/',
               phonetic: 'NET-uerk LEI-er',
               example:
-                'The network layer routes packets via IP. = Il livello di rete instrada i pacchetti tramite IP.',
+                "Routers make forwarding decisions at the network layer by inspecting the destination IP in each packet. = I router prendono decisioni di inoltro al livello di rete esaminando l'IP di destinazione in ogni pacchetto.",
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Layer 3. Esempio: IP, ICMP.',
@@ -537,7 +540,7 @@ export default {
               pronunciation: '/ˈleɪər wʌn/',
               phonetic: 'LEI-er UAN',
               example:
-                'Layer 1 issues are physical, like a broken cable. = I problemi di Livello 1 sono fisici, come un cavo rotto.',
+                'When a link LED stays off, the technician suspects a Layer 1 fault like a severed cable. = Quando il LED del collegamento resta spento, il tecnico sospetta un guasto di Livello 1 come un cavo tranciato.',
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -546,7 +549,8 @@ export default {
               italian: 'Livello 2',
               pronunciation: '/ˈleɪər tuː/',
               phonetic: 'LEI-er TU',
-              example: 'Switches operate at Layer 2. = Gli switch operano al Livello 2.',
+              example:
+                "MAC flooding attacks target Layer 2 by overwhelming the switch's address table until it fails open. = Gli attacchi MAC flooding prendono di mira il Livello 2 sovraccaricando la tabella indirizzi dello switch.",
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -555,28 +559,29 @@ export default {
               italian: 'Livello 3',
               pronunciation: '/ˈleɪər θriː/',
               phonetic: 'LEI-er THRI',
-              example: 'Routers operate at Layer 3. = I router operano al Livello 3.',
+              example:
+                'Adding a VLAN requires a Layer 3 device or SVI to route traffic between segments. = Aggiungere una VLAN richiede un dispositivo di Livello 3 o una SVI per instradare il traffico tra i segmenti.',
               context: 'osi-model',
               difficulty: 'beginner',
             },
             {
               english: 'Frame',
-              italian: 'Trama / Frame',
+              italian: 'trama (frame)',
               pronunciation: '/freɪm/',
               phonetic: 'FREIM',
               example:
-                'Ethernet frames carry MAC addresses. = I frame Ethernet contengono indirizzi MAC.',
+                'Wireshark captures raw Ethernet frames so you can inspect MAC headers, VLAN tags, and the payload. = Wireshark cattura frame Ethernet grezzi così puoi ispezionare header MAC, tag VLAN e il payload.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'PDU (Protocol Data Unit) del Layer 2.',
             },
             {
               english: 'Bit',
-              italian: 'bit / cifra binaria 0 o 1',
+              italian: 'cifra binaria (bit)',
               pronunciation: '/bɪt/',
               phonetic: 'BIT',
               example:
-                'Layer 1 transmits bits over the medium. = Il Livello 1 trasmette bit sul mezzo.',
+                'At the physical layer, each bit is encoded as a voltage change, light pulse, or radio modulation. = Al livello fisico, ogni bit è codificato come un cambio di tensione, impulso luminoso o modulazione radio.',
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -586,7 +591,7 @@ export default {
               pronunciation: '/ˈmiːdiəm/',
               phonetic: 'MI-dium',
               example:
-                'Copper, fiber and air are common transmission media. = Rame, fibra e aria sono mezzi di trasmissione comuni.',
+                'The choice of transmission medium — copper, fiber, or wireless — depends on distance, cost, and bandwidth. = La scelta del mezzo trasmissivo — rame, fibra o wireless — dipende da distanza, costo e banda.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Plurale: media.',
@@ -604,7 +609,7 @@ export default {
               pronunciation: '/ˈtrænspɔːrt ˈleɪər/',
               phonetic: 'TRAN-sport LEI-er',
               example:
-                'The transport layer ensures reliable delivery. = Il livello di trasporto garantisce la consegna affidabile.',
+                'By assigning unique port numbers, the transport layer multiplexes traffic from many apps onto one IP. = Assegnando numeri di porta univoci, il livello di trasporto multiplexa il traffico di molte app su un IP.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Layer 4. Esempi: TCP, UDP.',
@@ -615,7 +620,7 @@ export default {
               pronunciation: '/ˈseʃən ˈleɪər/',
               phonetic: 'SES-scion LEI-er',
               example:
-                'The session layer manages dialogues between hosts. = Il livello di sessione gestisce i dialoghi tra host.',
+                'RPC and NetBIOS rely on session layer functions to maintain dialogues between distributed processes. = RPC e NetBIOS si basano sulle funzioni del livello di sessione per mantenere dialoghi tra processi distribuiti.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Layer 5.',
@@ -626,7 +631,7 @@ export default {
               pronunciation: '/ˌprezənˈteɪʃən/',
               phonetic: 'pre-zen-TEI-scion',
               example:
-                'The presentation layer handles data encoding. = Il livello di presentazione gestisce la codifica dati.',
+                'TLS encryption and JPEG compression are presentation layer functions that transform data before delivery. = La crittografia TLS e la compressione JPEG sono funzioni del livello di presentazione che trasformano i dati.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Layer 6. Cifratura, compressione, formattazione.',
@@ -637,7 +642,7 @@ export default {
               pronunciation: '/ˌæplɪˈkeɪʃən/',
               phonetic: 'a-pli-KEI-scion',
               example:
-                'HTTP and DNS work at the application layer. = HTTP e DNS lavorano al livello applicativo.',
+                'When you type a URL, your browser uses application layer protocols like HTTP and DNS to fetch the page. = Quando digiti un URL, il browser usa protocolli del livello applicativo come HTTP e DNS per recuperare la pagina.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: "Layer 7. Il più vicino all'utente.",
@@ -648,7 +653,7 @@ export default {
               pronunciation: '/ˈleɪər fɔːr/',
               phonetic: 'LEI-er FOR',
               example:
-                'Layer 4 load balancers route by port and protocol. = I bilanciatori Layer 4 instradano per porta e protocollo.',
+                'Without inspecting HTTP content, a Layer 4 load balancer distributes connections purely by IP and TCP port. = Senza ispezionare il contenuto HTTP, un bilanciatore Layer 4 distribuisce le connessioni puramente per IP e porta TCP.',
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -658,7 +663,7 @@ export default {
               pronunciation: '/ˈleɪər ˈsevən/',
               phonetic: 'LEI-er SE-ven',
               example:
-                'Layer 7 firewalls inspect application content. = I firewall di Layer 7 ispezionano il contenuto applicativo.',
+                "By reading the HTTP path inside the payload, a Layer 7 firewall can block specific API endpoints. = Leggendo il percorso HTTP all'interno del payload, un firewall Layer 7 può bloccare endpoint API specifici.",
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -667,7 +672,8 @@ export default {
               italian: 'Segmento',
               pronunciation: '/ˈseɡmənt/',
               phonetic: 'SEG-ment',
-              example: 'TCP breaks data into segments. = TCP suddivide i dati in segmenti.',
+              example:
+                'Large files sent over TCP are divided into segments of MSS size, each with its own sequence number. = I file grandi inviati via TCP sono divisi in segmenti di dimensione MSS, ciascuno con il proprio numero di sequenza.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'PDU del Layer 4 in TCP.',
@@ -678,7 +684,7 @@ export default {
               pronunciation: '/ˈdeɪtəɡræm/',
               phonetic: 'DEI-ta-gram',
               example:
-                'UDP sends datagrams without acknowledgement. = UDP invia datagrammi senza riscontro.',
+                'DNS queries are typically sent as UDP datagrams because the exchange fits in a single packet. = Le query DNS vengono tipicamente inviate come datagrammi UDP perché lo scambio sta in un singolo pacchetto.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'PDU di UDP a Layer 4.',
@@ -689,18 +695,18 @@ export default {
               pronunciation: '/ˈmesɪdʒ/',
               phonetic: 'MES-sich',
               example:
-                'HTTP messages have headers and a body. = I messaggi HTTP hanno intestazioni e un corpo.',
+                'An HTTP request message includes a method, URL, headers, and optionally a JSON body. = Un messaggio di richiesta HTTP include un metodo, URL, header e opzionalmente un corpo JSON.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'PDU tipica del Layer 7.',
             },
             {
               english: 'Stack',
-              italian: 'Stack / Pila',
+              italian: 'pila protocollare (stack)',
               pronunciation: '/stæk/',
               phonetic: 'STAK',
               example:
-                'The protocol stack handles data step by step. = La pila di protocolli gestisce i dati passo per passo.',
+                'The TCP/IP stack on Linux lives in the kernel, handling everything from framing to socket delivery. = Lo stack TCP/IP su Linux risiede nel kernel, gestendo tutto dal framing alla consegna ai socket.',
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -717,7 +723,7 @@ export default {
               pronunciation: '/ɪnˌkæpsjʊˈleɪʃən/',
               phonetic: 'in-kap-su-LEI-scion',
               example:
-                "Encapsulation wraps data with protocol headers. = L'incapsulamento avvolge i dati con intestazioni di protocollo.",
+                'As data moves down the stack, each layer adds its own header through encapsulation. = Mentre i dati scendono nello stack, ogni livello aggiunge il proprio header tramite incapsulamento.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Ogni livello aggiunge il proprio header.',
@@ -728,7 +734,7 @@ export default {
               pronunciation: '/diːˌkæpsjʊˈleɪʃən/',
               phonetic: 'di-kap-su-LEI-scion',
               example:
-                'Decapsulation removes headers as data goes up. = Il decapsulamento rimuove le intestazioni mentre i dati salgono.',
+                'The receiver strips headers layer by layer through decapsulation until the application data is recovered. = Il ricevitore rimuove gli header livello per livello tramite decapsulamento fino a recuperare i dati applicativi.',
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -738,17 +744,17 @@ export default {
               pronunciation: '/ˈhedər/',
               phonetic: 'HED-er',
               example:
-                "The IP header contains source and destination addresses. = L'header IP contiene indirizzi sorgente e destinazione.",
+                "The IP header contains TTL, source, and destination address fields that routers use for forwarding. = L'intestazione IP contiene i campi TTL, indirizzo sorgente e destinazione che i router usano per l'inoltro.",
               context: 'osi-model',
               difficulty: 'beginner',
             },
             {
               english: 'Payload',
-              italian: 'Payload / Carico utile',
+              italian: 'carico utile (payload)',
               pronunciation: '/ˈpeɪloʊd/',
               phonetic: 'PEI-loud',
               example:
-                'The payload is the actual data being transmitted. = Il payload sono i dati effettivamente trasmessi.',
+                "Deep packet inspection examines the payload inside each packet to detect malware signatures. = L'ispezione approfondita esamina il payload all'interno di ogni pacchetto per rilevare firme malware.",
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -757,18 +763,19 @@ export default {
               italian: 'Unità dati di protocollo (PDU)',
               pronunciation: '/ˌpiː diː ˈjuː/',
               phonetic: 'PI-DI-IU',
-              example: 'Each layer has its own PDU. = Ogni livello ha la propria PDU.',
+              example:
+                'Each OSI layer has its own PDU name: bits, frames, packets, and segments from Layer 1 to 4. = Ogni livello OSI ha il proprio nome di PDU: bit, frame, pacchetti e segmenti dal Livello 1 al 4.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Protocol Data Unit.',
             },
             {
               english: 'Trailer',
-              italian: 'Trailer / Coda',
+              italian: 'coda del frame (trailer)',
               pronunciation: '/ˈtreɪlər/',
               phonetic: 'TREI-ler',
               example:
-                'The Ethernet frame trailer contains a CRC. = Il trailer del frame Ethernet contiene un CRC.',
+                'The Ethernet trailer contains a CRC checksum to verify the frame was not corrupted in transit. = Il trailer Ethernet contiene un checksum CRC per verificare che il frame non sia stato corrotto in transito.',
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -777,7 +784,8 @@ export default {
               italian: 'Sequenza di controllo frame',
               pronunciation: '/freɪm tʃek ˈsiːkwəns/',
               phonetic: 'FREIM CEK SI-kuens',
-              example: 'The FCS detects corrupted frames. = La FCS rileva frame corrotti.',
+              example:
+                'If the computed CRC does not match the frame check sequence, the switch silently drops the frame. = Se il CRC calcolato non corrisponde alla sequenza di controllo del frame, lo switch scarta silenziosamente il frame.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'FCS = CRC32 calcolato sul frame.',
@@ -788,17 +796,17 @@ export default {
               pronunciation: '/ˌdiːˈmʌltɪpleksɪŋ/',
               phonetic: 'di-MAL-ti-plek-sing',
               example:
-                'Port numbers help demultiplex traffic. = I numeri di porta aiutano a demultiplare il traffico.',
+                "The OS performs demultiplexing by reading the destination port to route each segment to the right app. = Il sistema operativo esegue la demultiplazione leggendo la porta destinazione per instradare ogni segmento all'app giusta.",
               context: 'osi-model',
               difficulty: 'beginner',
             },
             {
               english: 'MTU',
-              italian: 'MTU / Dimensione massima trasmissione',
+              italian: 'unità di trasmissione massima (MTU)',
               pronunciation: '/ˌem tiː ˈjuː/',
               phonetic: 'EM-TI-IU',
               example:
-                'Standard Ethernet MTU is 1500 bytes. = La MTU standard di Ethernet è 1500 byte.',
+                'Setting an MTU of 1500 bytes means any IP packet larger than that must be fragmented or dropped. = Impostare una MTU di 1500 byte significa che qualsiasi pacchetto IP più grande deve essere frammentato o scartato.',
               context: 'osi-model',
               difficulty: 'beginner',
               command: 'ip link show eth0',
@@ -810,7 +818,7 @@ export default {
               pronunciation: '/ˌfræɡmenˈteɪʃən/',
               phonetic: 'frag-men-TEI-scion',
               example:
-                'IP fragments large packets to fit the MTU. = IP frammenta i pacchetti grandi per stare nella MTU.',
+                'Sending a 4000-byte packet over a 1500-byte MTU link triggers IP fragmentation into three pieces. = Inviare un pacchetto di 4000 byte su un collegamento con MTU di 1500 byte attiva la frammentazione IP in tre pezzi.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'In IPv6 la frammentazione la fa solo il mittente.',
@@ -824,10 +832,11 @@ export default {
           items: [
             {
               english: 'TCP/IP Model',
-              italian: 'Modello TCP/IP',
+              italian: 'modello TCP/IP',
               pronunciation: '/ˌtiː siː piː aɪ ˈpiː/',
               phonetic: 'TI-SI-PI AI-PI',
-              example: 'The TCP/IP model has four layers. = Il modello TCP/IP ha quattro livelli.',
+              example:
+                'Unlike the seven-layer OSI model, the TCP/IP model uses only four layers and maps directly to real protocols. = A differenza del modello OSI a sette livelli, il modello TCP/IP usa solo quattro livelli e mappa su protocolli reali.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: "Più pratico dell'OSI: è quello realmente usato in Internet.",
@@ -838,7 +847,7 @@ export default {
               pronunciation: '/lɪŋk ˈleɪər/',
               phonetic: 'LINK LEI-er',
               example:
-                'In TCP/IP, the link layer combines OSI 1 and 2. = In TCP/IP il link layer unisce OSI 1 e 2.',
+                'Unlike the OSI model, the TCP/IP link layer combines Layers 1 and 2, handling both physical signals and frame addressing. = A differenza del modello OSI, il link layer TCP/IP combina i Livelli 1 e 2, gestendo sia segnali fisici che indirizzamento frame.',
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -847,7 +856,8 @@ export default {
               italian: 'Livello Internet',
               pronunciation: '/ˈɪntərnet ˈleɪər/',
               phonetic: 'IN-ter-net LEI-er',
-              example: 'IP runs at the Internet layer. = IP gira sul livello Internet.',
+              example:
+                "IP routing and ICMP error reporting are core Internet layer responsibilities in the TCP/IP stack. = L'instradamento IP e la segnalazione errori ICMP sono responsabilità centrali del livello Internet nello stack TCP/IP.",
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -857,7 +867,7 @@ export default {
               pronunciation: '/nɪˈmɒnɪk/',
               phonetic: 'ni-MO-nik',
               example:
-                '"Please Do Not Throw Sausage Pizza Away" is an OSI mnemonic. = "Please Do Not Throw Sausage Pizza Away" è un mnemonico OSI.',
+                'Students use the mnemonic "Please Do Not Throw Sausage Pizza Away" to memorize the seven OSI layers. = Gli studenti usano il mnemonico "Please Do Not Throw Sausage Pizza Away" per memorizzare i sette livelli OSI.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Aiuta a ricordare i 7 livelli: P D N T S P A.',
@@ -868,7 +878,7 @@ export default {
               pronunciation: '/ˈleɪər ˌɪndɪˈpendəns/',
               phonetic: 'LEI-er in-di-PEN-dens',
               example:
-                "Layer independence allows protocols to evolve separately. = L'indipendenza tra livelli permette ai protocolli di evolvere separatamente.",
+                "Thanks to layer independence, you can swap Wi-Fi for Ethernet without changing your application code. = Grazie all'indipendenza dei livelli, puoi sostituire il Wi-Fi con Ethernet senza modificare il codice applicativo.",
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -878,7 +888,7 @@ export default {
               pronunciation: '/æbˈstrækʃən/',
               phonetic: 'ab-STRAK-scion',
               example:
-                'OSI provides abstraction over hardware details. = OSI fornisce astrazione sui dettagli hardware.',
+                "Network abstraction lets developers write socket code without caring how packets physically travel. = L'astrazione di rete permette agli sviluppatori di scrivere codice socket senza preoccuparsi di come viaggiano fisicamente i pacchetti.",
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -888,7 +898,7 @@ export default {
               pronunciation: '/ˈsɜːrvɪs ˈprɪmɪtɪv/',
               phonetic: 'SER-vis PRI-mi-tiv',
               example:
-                'Service primitives define inter-layer requests. = Le primitive di servizio definiscono richieste tra livelli.',
+                'CONNECT.request is a service primitive the transport layer exposes to open a new connection. = CONNECT.request è una primitiva di servizio che il livello di trasporto espone per aprire una nuova connessione.',
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -898,7 +908,7 @@ export default {
               pronunciation: '/sæp/',
               phonetic: 'SAP',
               example:
-                'A SAP identifies the upper-layer protocol. = Un SAP identifica il protocollo superiore.',
+                'A TCP port number acts as a SAP identifying which application should receive incoming segments. = Un numero di porta TCP funge da SAP che identifica quale applicazione deve ricevere i segmenti in arrivo.',
               context: 'osi-model',
               difficulty: 'beginner',
               note: 'Service Access Point.',
@@ -909,17 +919,17 @@ export default {
               pronunciation: '/pɪər ˈleɪər/',
               phonetic: 'PIIR LEI-er',
               example:
-                'Peer layers communicate logically. = I livelli peer comunicano logicamente.',
+                'Two routers exchanging OSPF hellos communicate at the same peer layer across different physical links. = Due router che scambiano hello OSPF comunicano allo stesso livello paritario attraverso diversi collegamenti fisici.',
               context: 'osi-model',
               difficulty: 'beginner',
             },
             {
               english: 'Reference Model',
-              italian: 'Modello di riferimento',
+              italian: 'modello di riferimento',
               pronunciation: '/ˈrefərəns ˈmɒdl/',
               phonetic: 'RE-fe-rens MO-del',
               example:
-                "OSI is a reference model, not an implementation. = OSI è un modello di riferimento, non un'implementazione.",
+                "The OSI reference model was designed for teaching, not as a blueprint for implementation. = Il modello di riferimento OSI è stato progettato per l'insegnamento, non come schema implementativo.",
               context: 'osi-model',
               difficulty: 'beginner',
             },
@@ -941,64 +951,66 @@ export default {
           items: [
             {
               english: 'TCP',
-              italian: 'TCP / Protocollo di controllo trasmissione',
+              italian: 'protocollo di controllo trasmissione (TCP)',
               pronunciation: '/ˌtiː siː ˈpiː/',
               phonetic: 'TI-SI-PI',
               example:
-                'TCP guarantees reliable, in-order delivery. = TCP garantisce consegna affidabile e in ordine.',
+                'Web browsers rely on TCP to guarantee every byte of an HTML page arrives intact and in order. = I browser web si affidano a TCP per garantire che ogni byte di una pagina HTML arrivi integro e in ordine.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Transmission Control Protocol. Connection-oriented.',
             },
             {
               english: 'UDP',
-              italian: 'UDP / Protocollo datagrammi utente',
+              italian: 'protocollo datagrammi utente (UDP)',
               pronunciation: '/ˌjuː diː ˈpiː/',
               phonetic: 'IU-DI-PI',
               example:
-                'UDP is fast but does not guarantee delivery. = UDP è veloce ma non garantisce la consegna.',
+                'Online games prefer UDP because dropping one position update beats waiting for a retransmission. = I giochi online preferiscono UDP perché perdere un aggiornamento di posizione è meglio che attendere una ritrasmissione.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'User Datagram Protocol. Connectionless.',
             },
             {
               english: 'IP',
-              italian: 'IP / Protocollo Internet',
+              italian: 'protocollo Internet (IP)',
               pronunciation: '/ˌaɪ ˈpiː/',
               phonetic: 'AI-PI',
-              example: 'IP routes packets across networks. = IP instrada i pacchetti tra le reti.',
+              example:
+                'Every device on the Internet needs a unique IP address so routers know where to forward packets. = Ogni dispositivo su Internet necessita di un indirizzo IP univoco affinché i router sappiano dove inoltrare i pacchetti.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Internet Protocol. Best-effort, non affidabile.',
             },
             {
               english: 'Port',
-              italian: 'Porta',
+              italian: 'porta',
               pronunciation: '/pɔːrt/',
               phonetic: 'PORT',
-              example: 'HTTPS uses port 443 by default. = HTTPS usa la porta 443 di default.',
+              example:
+                'A web server listens on port 443 for HTTPS while SSH runs on port 22, both on the same machine. = Un server web è in ascolto sulla porta 443 per HTTPS mentre SSH gira sulla porta 22, entrambi sulla stessa macchina.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Numero da 0 a 65535 che identifica un processo.',
             },
             {
               english: 'Socket',
-              italian: 'socket / punto di connessione di rete',
+              italian: 'canale di comunicazione (socket)',
               pronunciation: '/ˈsɒkɪt/',
               phonetic: 'SO-ket',
               example:
-                'A socket is identified by IP and port. = Un socket è identificato da IP e porta.',
+                'Each endpoint of a TCP connection opens a socket identified by the IP address, protocol, and port number. = Ogni endpoint di una connessione TCP apre un socket identificato da indirizzo IP, protocollo e numero di porta.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               code: 'socket(AF_INET, SOCK_STREAM, 0);',
             },
             {
               english: 'Connection',
-              italian: 'Connessione',
+              italian: 'connessione',
               pronunciation: '/kəˈnekʃən/',
               phonetic: 'ko-NEK-scion',
               example:
-                'TCP establishes a connection before sending data. = TCP stabilisce una connessione prima di inviare i dati.',
+                'Each TCP connection maintains sequence numbers, windows, and timers to track the data flow. = Ogni connessione TCP mantiene numeri di sequenza, finestre e timer per tracciare il flusso dati.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
@@ -1008,7 +1020,7 @@ export default {
               pronunciation: '/kəˈnekʃənləs/',
               phonetic: 'ko-NEK-scion-les',
               example:
-                'UDP is connectionless and stateless. = UDP è senza connessione e senza stato.',
+                'Since UDP is connectionless, the sender fires datagrams without establishing a session first. = Poiché UDP è senza connessione, il mittente invia datagrammi senza prima stabilire una sessione.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
@@ -1018,26 +1030,27 @@ export default {
               pronunciation: '/rɪˈlaɪəbl dɪˈlɪvəri/',
               phonetic: 'ri-LAI-a-bol di-LI-ve-ri',
               example:
-                'TCP retransmits lost packets for reliable delivery. = TCP ritrasmette pacchetti persi per consegna affidabile.',
+                'TCP achieves reliable delivery through acknowledgements, retransmissions, and checksums on every segment. = TCP ottiene la consegna affidabile tramite riscontri, ritrasmissioni e checksum su ogni segmento.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
             {
               english: 'Stream',
-              italian: 'Stream / Flusso',
+              italian: 'flusso di byte (stream)',
               pronunciation: '/striːm/',
               phonetic: 'STRIM',
               example:
-                "TCP provides a byte stream abstraction. = TCP fornisce un'astrazione di flusso di byte.",
+                'Applications see a TCP connection as a continuous byte stream, unaware of segmentation on the wire. = Le applicazioni vedono una connessione TCP come un flusso di byte continuo, ignare della segmentazione sul cavo.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
             {
               english: 'Stateful',
-              italian: 'Stateful / Con stato',
+              italian: 'con stato (stateful)',
               pronunciation: '/ˈsteɪtfʊl/',
               phonetic: 'STEIT-ful',
-              example: 'TCP is a stateful protocol. = TCP è un protocollo con stato.',
+              example:
+                'Because it is stateful, the firewall tracks every TCP session and auto-allows return traffic for established flows. = Poiché è stateful, il firewall traccia ogni sessione TCP e consente automaticamente il traffico di ritorno per i flussi stabiliti.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
@@ -1054,59 +1067,61 @@ export default {
               pronunciation: '/θriː weɪ ˈhændʃeɪk/',
               phonetic: 'THRI-UEI HAND-scheik',
               example:
-                'TCP uses a three-way handshake to start. = TCP usa un handshake a tre vie per iniziare.',
+                'Before data flows, TCP performs a three-way handshake — SYN, SYN-ACK, ACK — to synchronize sequences. = Prima che fluiscano dati, TCP esegue un handshake a tre vie — SYN, SYN-ACK, ACK — per sincronizzare le sequenze.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Sequenza: SYN, SYN-ACK, ACK.',
             },
             {
               english: 'SYN',
-              italian: 'SYN / Sincronizza',
+              italian: 'SYN (synchronize)',
               pronunciation: '/sɪn/',
               phonetic: 'SIN',
               example:
-                'The client sends SYN to start a connection. = Il client invia SYN per avviare una connessione.',
+                "Opening a TCP connection starts with sending a SYN packet carrying an initial sequence number. = L'apertura di una connessione TCP inizia con l'invio di un pacchetto SYN che porta un numero di sequenza iniziale.",
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: "Synchronize. Primo passo dell'handshake.",
             },
             {
               english: 'SYN-ACK',
-              italian: 'SYN-ACK / secondo passo handshake TCP',
+              italian: 'SYN-ACK',
               pronunciation: '/sɪn æk/',
               phonetic: 'SIN-AK',
-              example: 'The server replies with SYN-ACK. = Il server risponde con SYN-ACK.',
+              example:
+                'After receiving a SYN, the server replies with a SYN-ACK acknowledging the client and proposing its own sequence. = Dopo aver ricevuto un SYN, il server risponde con un SYN-ACK confermando il client e proponendo la propria sequenza.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
             {
               english: 'ACK',
-              italian: 'ACK / Riscontro',
+              italian: 'ACK (acknowledgement)',
               pronunciation: '/æk/',
               phonetic: 'AK',
-              example: 'ACK acknowledges received data. = ACK conferma i dati ricevuti.',
+              example:
+                'Every TCP data segment processed by the receiver triggers an ACK confirming successful delivery. = Ogni segmento dati TCP elaborato dal ricevitore attiva un ACK che conferma la consegna riuscita.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Acknowledgement.',
             },
             {
               english: 'FIN',
-              italian: 'FIN / Fine connessione',
+              italian: 'FIN (finish)',
               pronunciation: '/fɪn/',
               phonetic: 'FIN',
               example:
-                'FIN signals the end of a connection. = FIN segnala la fine di una connessione.',
+                'When the browser finishes downloading, it sends a FIN to gracefully close the TCP connection. = Quando il browser finisce di scaricare, invia un FIN per chiudere la connessione TCP in modo ordinato.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Chiusura graceful TCP.',
             },
             {
               english: 'RST',
-              italian: 'RST / Reset',
+              italian: 'RST (reset)',
               pronunciation: '/riˈset/',
               phonetic: 'RI-SET',
               example:
-                'RST aborts the connection immediately. = RST interrompe la connessione immediatamente.',
+                "Connecting to a closed port triggers an immediate RST from the kernel, aborting the handshake. = Connettersi a una porta chiusa attiva un RST immediato dal kernel, interrompendo l'handshake.",
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Reset. Chiusura forzata.',
@@ -1117,7 +1132,7 @@ export default {
               pronunciation: '/ˈsiːkwəns ˈnʌmbər/',
               phonetic: 'SI-kuens NAM-ber',
               example:
-                'Sequence numbers ensure correct ordering. = I numeri di sequenza garantiscono il corretto ordinamento.',
+                'TCP stamps each segment with a sequence number so the receiver can reorder out-of-order arrivals. = TCP marca ogni segmento con un numero di sequenza così il ricevitore può riordinare gli arrivi fuori ordine.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
@@ -1127,7 +1142,7 @@ export default {
               pronunciation: '/əkˈnɒlɪdʒmənt/',
               phonetic: 'ak-NOL-ich-ment',
               example:
-                'The ACK number tells the sender what was received. = Il numero ACK comunica al mittente cosa è stato ricevuto.',
+                'In every ACK segment, the acknowledgement number indicates which byte the receiver expects next. = In ogni segmento ACK, il numero di riscontro indica quale byte il ricevitore si aspetta successivamente.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
@@ -1137,18 +1152,18 @@ export default {
               pronunciation: '/ˈwɪndoʊ saɪz/',
               phonetic: 'UIN-dou SAIZ',
               example:
-                'The window size controls flow rate. = La dimensione della finestra controlla la velocità di flusso.',
+                'A small TCP window size throttles throughput because the sender must wait for ACKs more often. = Una dimensione della finestra TCP piccola limita il throughput perché il mittente deve attendere gli ACK più spesso.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Sliding window per il controllo di flusso.',
             },
             {
               english: 'PSH',
-              italian: 'PSH / Push',
+              italian: 'PSH (push)',
               pronunciation: '/pʊʃ/',
               phonetic: 'PUSH',
               example:
-                'PSH tells the receiver to deliver immediately. = PSH dice al ricevente di consegnare immediatamente.',
+                "Setting the PSH flag tells the receiving stack to deliver data to the application immediately. = Impostare il flag PSH dice allo stack ricevente di consegnare i dati all'applicazione immediatamente.",
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
@@ -1161,98 +1176,105 @@ export default {
           items: [
             {
               english: 'Well-Known Port',
-              italian: 'Porta nota',
+              italian: 'porta nota (well-known port)',
               pronunciation: '/wel noʊn pɔːrt/',
               phonetic: 'UEL-NOUN PORT',
-              example: 'Well-known ports range from 0 to 1023. = Le porte note vanno da 0 a 1023.',
+              example:
+                'Ports 0-1023 are well-known ports reserved by IANA for standard services like HTTP and SSH. = Le porte 0-1023 sono porte note riservate da IANA per servizi standard come HTTP e SSH.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Riservate dalla IANA per servizi standard.',
             },
             {
               english: 'Ephemeral Port',
-              italian: 'Porta effimera',
+              italian: 'porta effimera',
               pronunciation: '/ɪˈfemərəl/',
               phonetic: 'i-FE-me-ral',
               example:
-                'Clients use ephemeral ports for outgoing connections. = I client usano porte effimere per connessioni in uscita.',
+                'The OS picks a random ephemeral port above 49152 for the client side of each outbound connection. = Il sistema operativo sceglie una porta effimera casuale sopra 49152 per il lato client di ogni connessione in uscita.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Tipicamente da 49152 a 65535.',
             },
             {
               english: 'Port 80',
-              italian: 'Porta 80',
+              italian: 'porta 80',
               pronunciation: '/pɔːrt ˈeɪti/',
               phonetic: 'PORT EI-ti',
-              example: "Port 80 is HTTP's default port. = La porta 80 è quella di default di HTTP.",
+              example:
+                'Legacy sites still serve unencrypted HTTP on port 80 before redirecting to HTTPS on 443. = I siti legacy servono ancora HTTP non cifrato sulla porta 80 prima di reindirizzare a HTTPS sulla 443.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
             {
               english: 'Port 443',
-              italian: 'Porta 443',
+              italian: 'porta 443',
               pronunciation: '/pɔːrt fɔːr fɔːr θriː/',
               phonetic: 'PORT FOR-FOR-THRI',
-              example: 'Port 443 is used for HTTPS. = La porta 443 è usata per HTTPS.',
+              example:
+                'All modern HTTPS traffic flows through port 443, where TLS-encrypted connections terminate. = Tutto il traffico HTTPS moderno passa attraverso la porta 443, dove terminano le connessioni cifrate con TLS.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
             {
               english: 'Port 22',
-              italian: 'Porta 22',
+              italian: 'porta 22',
               pronunciation: '/pɔːrt ˈtwenti tuː/',
               phonetic: 'PORT TUEN-ti TU',
-              example: 'SSH listens on port 22. = SSH ascolta sulla porta 22.',
+              example:
+                "Administrators use port 22 to reach servers via SSH for secure remote shell access. = Gli amministratori usano la porta 22 per raggiungere i server via SSH per l'accesso remoto sicuro alla shell.",
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
             {
               english: 'Port 53',
-              italian: 'Porta 53',
+              italian: 'porta 53',
               pronunciation: '/pɔːrt ˈfɪfti θriː/',
               phonetic: 'PORT FIF-ti THRI',
-              example: 'DNS queries go to port 53. = Le query DNS vanno alla porta 53.',
+              example:
+                'Every DNS query your browser makes goes to a resolver listening on port 53, usually over UDP. = Ogni query DNS del tuo browser va a un resolver in ascolto sulla porta 53, solitamente su UDP.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
             {
               english: 'Port 25',
-              italian: 'Porta 25',
+              italian: 'porta 25',
               pronunciation: '/pɔːrt ˈtwenti faɪv/',
               phonetic: 'PORT TUEN-ti FAIV',
-              example: 'SMTP traditionally uses port 25. = SMTP usa tradizionalmente la porta 25.',
+              example:
+                'Mail servers relay email on port 25 via SMTP, though ISPs often block it to reduce spam. = I server di posta inoltrano email sulla porta 25 via SMTP, anche se gli ISP spesso la bloccano per ridurre lo spam.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
             {
               english: 'Listening Port',
-              italian: 'Porta in ascolto',
+              italian: 'porta in ascolto',
               pronunciation: '/ˈlɪsənɪŋ pɔːrt/',
               phonetic: 'LI-se-ning PORT',
-              example: 'Check listening ports with ss. = Controlla le porte in ascolto con ss.',
+              example:
+                'Running "ss -tlnp" shows every listening port on the system and which process owns it. = Eseguire "ss -tlnp" mostra ogni porta in ascolto sul sistema e quale processo la possiede.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               command: 'ss -tuln',
             },
             {
               english: 'Open Port',
-              italian: 'Porta aperta',
+              italian: 'porta aperta',
               pronunciation: '/ˈoʊpən pɔːrt/',
               phonetic: 'OU-pen PORT',
               example:
-                'Open ports accept incoming connections. = Le porte aperte accettano connessioni in ingresso.',
+                'An nmap scan finding an open port means a service is accepting connections and potentially exposed. = Una scansione nmap che trova una porta aperta significa che un servizio accetta connessioni ed è potenzialmente esposto.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               tool: 'nmap',
             },
             {
               english: 'Closed Port',
-              italian: 'Porta chiusa',
+              italian: 'porta chiusa',
               pronunciation: '/kloʊzd pɔːrt/',
               phonetic: 'KLOUZD PORT',
               example:
-                'Closed ports reject connections with RST. = Le porte chiuse rifiutano connessioni con RST.',
+                "Receiving RST from a closed port confirms the host is reachable but no service is listening there. = Ricevere RST da una porta chiusa conferma che l'host è raggiungibile ma nessun servizio è in ascolto.",
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
@@ -1265,31 +1287,31 @@ export default {
           items: [
             {
               english: 'Reliability',
-              italian: 'Affidabilità',
+              italian: 'affidabilità',
               pronunciation: '/rɪˌlaɪəˈbɪləti/',
               phonetic: 'ri-lai-a-BI-li-ti',
               example:
-                'TCP provides reliability through retransmission. = TCP fornisce affidabilità tramite ritrasmissione.',
+                'TCP provides end-to-end reliability by retransmitting lost segments until the receiver confirms them. = TCP fornisce affidabilità end-to-end ritrasmettendo i segmenti persi finché il ricevitore non li conferma.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
             {
               english: 'Retransmission',
-              italian: 'Ritrasmissione',
+              italian: 'ritrasmissione',
               pronunciation: '/ˌriːtrænzˈmɪʃən/',
               phonetic: 'ri-tranz-MIS-scion',
               example:
-                'TCP retransmits unacknowledged segments. = TCP ritrasmette i segmenti non riscontrati.',
+                'If no ACK arrives within the timeout, TCP triggers automatic retransmission of the unacknowledged data. = Se non arriva alcun ACK entro il timeout, TCP attiva la ritrasmissione automatica dei dati non confermati.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
             {
               english: 'Flow Control',
-              italian: 'Controllo di flusso',
+              italian: 'controllo di flusso',
               pronunciation: '/floʊ kənˈtroʊl/',
               phonetic: 'FLOU kon-TROUL',
               example:
-                'Flow control prevents overwhelming the receiver. = Il controllo di flusso impedisce di sovraccaricare il ricevente.',
+                "TCP flow control uses the receiver's window to prevent a fast sender from overwhelming a slow receiver. = Il controllo di flusso TCP usa la finestra del ricevitore per impedire che un mittente veloce sovraccarichi un ricevitore lento.",
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
@@ -1299,18 +1321,18 @@ export default {
               pronunciation: '/kənˈdʒestʃən/',
               phonetic: 'kon-GES-cion',
               example:
-                'TCP congestion control adapts to network conditions. = Il controllo di congestione TCP si adatta alle condizioni di rete.',
+                "When routers drop packets, TCP's congestion control halves the sending rate to let the network recover. = Quando i router scartano pacchetti, il controllo della congestione TCP dimezza la velocità di invio per far riprendere la rete.",
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Algoritmi: Cubic, BBR, Reno.',
             },
             {
               english: 'Best-Effort',
-              italian: 'Best-effort / Massimo sforzo',
+              italian: 'massimo sforzo (best-effort)',
               pronunciation: '/best ˈefərt/',
               phonetic: 'BEST E-fort',
               example:
-                'IP delivery is best-effort, not guaranteed. = La consegna IP è best-effort, non garantita.',
+                'As a best-effort protocol, IP tries to deliver every packet but guarantees neither arrival nor order. = Come protocollo best-effort, IP prova a consegnare ogni pacchetto ma non garantisce né arrivo né ordine.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
@@ -1320,28 +1342,28 @@ export default {
               pronunciation: '/ˈriːl taɪm/',
               phonetic: 'RIIL TAIM',
               example:
-                'Real-time apps prefer UDP for low latency. = Le app real-time preferiscono UDP per bassa latenza.',
+                'Video conferencing needs real-time delivery, using RTP over UDP rather than waiting for TCP retransmissions. = La videoconferenza necessita di consegna in tempo reale, usando RTP su UDP anziché attendere le ritrasmissioni TCP.',
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
             {
               english: 'Streaming',
-              italian: 'streaming / flusso continuo di dati',
+              italian: 'trasmissione continua (streaming)',
               pronunciation: '/ˈstriːmɪŋ/',
               phonetic: 'STRI-ming',
               example:
-                'Video streaming often uses UDP-based protocols. = Lo streaming video usa spesso protocolli basati su UDP.',
+                'Netflix uses adaptive bitrate streaming that adjusts video quality based on available bandwidth. = Netflix usa lo streaming a bitrate adattivo che regola la qualità video in base alla banda disponibile.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Esempi: SRT, RTP, QUIC.',
             },
             {
               english: 'QUIC',
-              italian: 'QUIC / trasporto UDP cifrato moderno',
+              italian: 'QUIC',
               pronunciation: '/kwɪk/',
               phonetic: 'KUIK',
               example:
-                'QUIC runs over UDP and powers HTTP/3. = QUIC gira su UDP e alimenta HTTP/3.',
+                'Built by Google, QUIC combines TLS and transport in a single handshake, halving connection setup time. = Creato da Google, QUIC combina TLS e trasporto in un singolo handshake, dimezzando il tempo di setup.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               note: 'Sviluppato da Google. Standard IETF dal 2021.',
@@ -1352,7 +1374,7 @@ export default {
               pronunciation: '/hæf ˈoʊpən/',
               phonetic: 'HAF OU-pen',
               example:
-                'A half-open connection has one side closed. = Una connessione semi-aperta ha un lato chiuso.',
+                "A SYN flood fills the server's backlog with thousands of half-open connections, exhausting memory. = Un SYN flood riempie il backlog del server con migliaia di connessioni semiaperte, esaurendo la memoria.",
               context: 'tcp-ip',
               difficulty: 'beginner',
             },
@@ -1362,7 +1384,7 @@ export default {
               pronunciation: '/taɪm weɪt/',
               phonetic: 'TAIM-UEIT',
               example:
-                'TIME_WAIT prevents stale data interference. = TIME_WAIT previene interferenze da dati vecchi.',
+                'After closing a TCP session, the socket enters TIME_WAIT for 2 minutes to catch lingering packets. = Dopo aver chiuso una sessione TCP, il socket entra in TIME_WAIT per 2 minuti per catturare pacchetti residui.',
               context: 'tcp-ip',
               difficulty: 'beginner',
               command: 'ss -tan state time-wait',
@@ -1386,7 +1408,7 @@ export default {
           items: [
             {
               english: 'IP Address',
-              italian: 'Indirizzo IP',
+              italian: 'indirizzo IP',
               pronunciation: '/ˌaɪ piː əˈdres/',
               phonetic: 'AI-PI a-DRES',
               example:
@@ -1397,10 +1419,11 @@ export default {
             },
             {
               english: 'IPv4',
-              italian: 'IPv4 / Internet Protocol versione 4',
+              italian: 'IPv4',
               pronunciation: '/ˌaɪ piː viː fɔːr/',
               phonetic: 'AI-PI-VI-FOR',
-              example: 'IPv4 addresses are 32 bits long. = Gli indirizzi IPv4 sono lunghi 32 bit.',
+              example:
+                'In networking, IPv4 addresses are 32 bits long. = Gli indirizzi IPv4 sono lunghi 32 bit.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Esempio: 192.168.1.1. Ne esistono ~4 miliardi.',
@@ -1410,7 +1433,8 @@ export default {
               italian: 'Ottetto',
               pronunciation: '/ˈɒktet/',
               phonetic: 'OK-tet',
-              example: 'An IPv4 address has four octets. = Un indirizzo IPv4 ha quattro ottetti.',
+              example:
+                "Each octet in the address 192.168.1.10 represents 8 bits of the 32-bit IPv4 space. = Ogni ottetto nell'indirizzo 192.168.1.10 rappresenta 8 bit dello spazio IPv4 a 32 bit.",
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Ogni ottetto è 8 bit (0-255).',
@@ -1421,7 +1445,7 @@ export default {
               pronunciation: '/ˈdɒtɪd ˈdesɪml/',
               phonetic: 'DO-tid DE-si-mol',
               example:
-                'IPv4 uses dotted decimal notation. = IPv4 usa la notazione decimale puntata.',
+                'System administrators read the dotted decimal notation 10.0.0.1 more easily than its binary equivalent. = Gli amministratori di sistema leggono la notazione decimale puntata 10.0.0.1 più facilmente del suo equivalente binario.',
               context: 'addressing',
               difficulty: 'beginner',
             },
@@ -1431,7 +1455,7 @@ export default {
               pronunciation: '/ˈpʌblɪk aɪ piː/',
               phonetic: 'PA-blik AI-PI',
               example:
-                'Public IPs are routable on the Internet. = Gli IP pubblici sono instradabili su Internet.',
+                'Only addresses in the public IP range can be routed across the Internet by backbone routers. = Solo gli indirizzi nel range IP pubblico possono essere instradati attraverso Internet dai router backbone.',
               context: 'addressing',
               difficulty: 'beginner',
             },
@@ -1440,39 +1464,41 @@ export default {
               italian: 'IP privato',
               pronunciation: '/ˈpraɪvət aɪ piː/',
               phonetic: 'PRAI-vet AI-PI',
-              example: 'Private IPs are used inside LANs. = Gli IP privati si usano dentro le LAN.',
+              example:
+                'Office workstations typically receive private IPs like 10.0.1.x from the internal DHCP server. = Le postazioni in ufficio ricevono tipicamente IP privati come 10.0.1.x dal server DHCP interno.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Range: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16.',
             },
             {
               english: 'Loopback',
-              italian: 'loopback / interfaccia di ritorno locale',
+              italian: 'indirizzo di loopback',
               pronunciation: '/ˈluːpbæk/',
               phonetic: 'LUP-bak',
-              example: "127.0.0.1 is the loopback address. = 127.0.0.1 è l'indirizzo di loopback.",
+              example:
+                "Developers use the loopback address 127.0.0.1 to test services locally before deploying to production. = Gli sviluppatori usano l'indirizzo di loopback 127.0.0.1 per testare i servizi localmente prima del deploy in produzione.",
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Spesso chiamato "localhost".',
             },
             {
               english: 'Localhost',
-              italian: 'localhost / indirizzo locale 127.0.0.1',
+              italian: 'localhost',
               pronunciation: '/ˈloʊkəlhoʊst/',
               phonetic: 'LO-kal-houst',
               example:
-                'Localhost refers to your own machine. = Localhost si riferisce alla tua stessa macchina.',
+                'In networking, Localhost refers to your own machine. = Localhost si riferisce alla tua stessa macchina.',
               context: 'addressing',
               difficulty: 'beginner',
               command: 'ping localhost',
             },
             {
               english: 'APIPA',
-              italian: 'APIPA / Auto-assegnazione IP',
+              italian: 'indirizzamento automatico (APIPA)',
               pronunciation: '/əˈpiːpə/',
               phonetic: 'a-PI-pa',
               example:
-                'APIPA assigns 169.254.x.x when DHCP fails. = APIPA assegna 169.254.x.x quando DHCP fallisce.',
+                'In networking, APIPA assigns 169.254.x.x when DHCP fails. = APIPA assegna 169.254.x.x quando DHCP fallisce.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Automatic Private IP Addressing.',
@@ -1483,7 +1509,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt ˈɡeɪtweɪ/',
               phonetic: 'di-FOLT GHEIT-uei',
               example:
-                'The default gateway routes traffic out of the LAN. = Il gateway predefinito instrada il traffico fuori dalla LAN.',
+                'In the forwarding pipeline, the Default Gateway routes traffic out of the LAN. = Il gateway predefinito instrada il traffico fuori dalla LAN.',
               context: 'addressing',
               difficulty: 'beginner',
               command: 'ip route show default',
@@ -1497,7 +1523,7 @@ export default {
           items: [
             {
               english: 'Subnet Mask',
-              italian: 'Maschera di sottorete',
+              italian: 'maschera di sottorete',
               pronunciation: '/ˈsʌbnet mæsk/',
               phonetic: 'SAB-net MASK',
               example:
@@ -1508,17 +1534,18 @@ export default {
             },
             {
               english: 'CIDR',
-              italian: 'CIDR / Notazione classless',
+              italian: 'notazione CIDR',
               pronunciation: '/ˈsaɪdər/',
               phonetic: 'SAI-der',
-              example: '192.168.1.0/24 uses CIDR notation. = 192.168.1.0/24 usa la notazione CIDR.',
+              example:
+                'When the firewall rule specifies 10.0.0.0/8 in CIDR notation, it matches over 16 million addresses in that block. = Quando la regola del firewall specifica 10.0.0.0/8 in notazione CIDR, corrisponde a oltre 16 milioni di indirizzi in quel blocco.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Classless Inter-Domain Routing. Sostituisce le classi A/B/C.',
             },
             {
               english: 'Prefix Length',
-              italian: 'Lunghezza del prefisso',
+              italian: 'lunghezza del prefisso',
               pronunciation: '/ˈpriːfɪks leŋθ/',
               phonetic: 'PRI-fiks LENGTH',
               example:
@@ -1528,7 +1555,7 @@ export default {
             },
             {
               english: 'Network Address',
-              italian: 'Indirizzo di rete',
+              italian: 'indirizzo di rete',
               pronunciation: '/ˈnetwɜːrk əˈdres/',
               phonetic: 'NET-uerk a-DRES',
               example: "192.168.1.0 is the network address. = 192.168.1.0 è l'indirizzo di rete.",
@@ -1538,7 +1565,7 @@ export default {
             },
             {
               english: 'Broadcast Address',
-              italian: 'Indirizzo di broadcast',
+              italian: 'indirizzo di broadcast',
               pronunciation: '/ˈbrɔːdkæst/',
               phonetic: 'BROD-kast',
               example:
@@ -1549,7 +1576,7 @@ export default {
             },
             {
               english: 'Host Bits',
-              italian: 'Bit host',
+              italian: "bit dell'host",
               pronunciation: '/hoʊst bɪts/',
               phonetic: 'HOUST BITS',
               example:
@@ -1559,39 +1586,39 @@ export default {
             },
             {
               english: 'VLSM',
-              italian: 'VLSM / Maschera di lunghezza variabile',
+              italian: 'maschera a lunghezza variabile (VLSM)',
               pronunciation: '/ˌviː el es ˈem/',
               phonetic: 'VI-EL-ES-EM',
               example:
-                'VLSM allows efficient address allocation. = VLSM permette allocazione efficiente degli indirizzi.',
+                'For better performance, VLSM allows efficient address allocation. = VLSM permette allocazione efficiente degli indirizzi.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Variable-Length Subnet Mask.',
             },
             {
               english: 'Supernetting',
-              italian: 'supernetting / aggregazione di subnet',
+              italian: 'supernetting',
               pronunciation: '/ˈsuːpərˌnetɪŋ/',
               phonetic: 'SU-per-net-ing',
               example:
-                'Supernetting combines smaller networks. = Il supernetting combina reti più piccole.',
+                'In networking, Supernetting combines smaller networks. = Il supernetting combina reti più piccole.',
               context: 'addressing',
               difficulty: 'beginner',
             },
             {
               english: 'Subnet Calculator',
-              italian: 'Calcolatore di sottoreti',
+              italian: 'calcolatore di sottoreti',
               pronunciation: '/ˈsʌbnet ˈkælkjuleɪtər/',
               phonetic: 'SAB-net KAL-kiu-lei-ter',
               example:
-                'A subnet calculator helps plan IP ranges. = Un calcolatore di sottoreti aiuta a pianificare intervalli IP.',
+                'During operations, Subnet Calculator helps plan IP ranges. = Un calcolatore di sottoreti aiuta a pianificare intervalli IP.',
               context: 'addressing',
               difficulty: 'beginner',
               tool: 'ipcalc, sipcalc',
             },
             {
               english: 'Address Class',
-              italian: 'Classe di indirizzo',
+              italian: 'classe di indirizzi',
               pronunciation: '/əˈdres klæs/',
               phonetic: 'a-DRES KLAS',
               example:
@@ -1609,27 +1636,28 @@ export default {
           items: [
             {
               english: 'IPv6',
-              italian: 'IPv6 / Internet Protocol versione 6',
+              italian: 'IPv6',
               pronunciation: '/ˌaɪ piː viː sɪks/',
               phonetic: 'AI-PI-VI-SIKS',
               example:
-                'IPv6 addresses are 128 bits long. = Gli indirizzi IPv6 sono lunghi 128 bit.',
+                'In networking, IPv6 addresses are 128 bits long. = Gli indirizzi IPv6 sono lunghi 128 bit.',
               context: 'addressing',
               difficulty: 'beginner',
               note: '~340 undecilioni di indirizzi disponibili.',
             },
             {
               english: 'Hexadecimal',
-              italian: 'Esadecimale',
+              italian: 'esadecimale',
               pronunciation: '/ˌheksəˈdesɪml/',
               phonetic: 'ek-sa-DE-si-mal',
-              example: 'IPv6 uses hexadecimal notation. = IPv6 usa la notazione esadecimale.',
+              example:
+                "The IPv6 address 2001:0db8::1 uses hexadecimal notation to represent 128 bits in a compact form. = L'indirizzo IPv6 2001:0db8::1 usa la notazione esadecimale per rappresentare 128 bit in forma compatta.",
               context: 'addressing',
               difficulty: 'beginner',
             },
             {
               english: 'Link-Local Address',
-              italian: 'Indirizzo link-local',
+              italian: 'indirizzo link-local',
               pronunciation: '/lɪŋk ˈloʊkəl/',
               phonetic: 'LINK LO-kal',
               example:
@@ -1643,44 +1671,44 @@ export default {
               pronunciation: '/ˈɡloʊbəl ˈjuːnɪkæst/',
               phonetic: 'GLOU-bal IU-ni-kast',
               example:
-                'Global unicast addresses are routable. = Gli indirizzi unicast globali sono instradabili.',
+                'In networking, Global Unicast addresses are routable. = Gli indirizzi unicast globali sono instradabili.',
               context: 'addressing',
               difficulty: 'beginner',
             },
             {
               english: 'EUI-64',
-              italian: 'EUI-64 / formato di indirizzo MAC esteso',
+              italian: 'EUI-64',
               pronunciation: '/ˌiː juː aɪ ˈsɪksti fɔːr/',
               phonetic: 'I-IU-AI SIKS-ti FOR',
               example:
-                'EUI-64 derives the host part from MAC. = EUI-64 deriva la parte host dal MAC.',
+                'In networking, EUI-64 derives the host part from MAC. = EUI-64 deriva la parte host dal MAC.',
               context: 'addressing',
               difficulty: 'beginner',
             },
             {
               english: 'SLAAC',
-              italian: 'SLAAC / Auto-configurazione',
+              italian: 'autoconfigurazione stateless (SLAAC)',
               pronunciation: '/slæk/',
               phonetic: 'SLAK',
               example:
-                'SLAAC lets hosts auto-configure IPv6 addresses. = SLAAC permette agli host di auto-configurare indirizzi IPv6.',
+                'For flexibility, SLAAC lets hosts auto-configure IPv6 addresses. = SLAAC permette agli host di auto-configurare indirizzi IPv6.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Stateless Address Auto-Configuration.',
             },
             {
               english: 'Dual Stack',
-              italian: 'dual stack / IPv4 e IPv6 contemporanei',
+              italian: 'doppio stack (dual stack)',
               pronunciation: '/ˈduːəl stæk/',
               phonetic: 'DU-al STAK',
               example:
-                'Dual stack supports both IPv4 and IPv6. = Dual stack supporta sia IPv4 che IPv6.',
+                'In networking, Dual Stack supports both IPv4 and IPv6. = Dual stack supporta sia IPv4 che IPv6.',
               context: 'addressing',
               difficulty: 'beginner',
             },
             {
               english: 'Tunneling',
-              italian: 'tunneling / incapsulamento di un protocollo',
+              italian: 'tunneling',
               pronunciation: '/ˈtʌnəlɪŋ/',
               phonetic: 'TA-ne-ling',
               example:
@@ -1695,18 +1723,18 @@ export default {
               pronunciation: '/ˈzɪəroʊ kəmˈpreʃən/',
               phonetic: 'ZI-ro kom-PRES-scion',
               example:
-                'Zero compression shortens IPv6 addresses. = La compressione zeri abbrevia gli indirizzi IPv6.',
+                'In networking, Zero Compression shortens IPv6 addresses. = La compressione zeri abbrevia gli indirizzi IPv6.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Esempio: 2001:0db8::1 invece di 2001:0db8:0000:0000:0000:0000:0000:0001.',
             },
             {
               english: 'Anycast',
-              italian: 'anycast / un IP, molti nodi, il più vicino risponde',
+              italian: 'anycast',
               pronunciation: '/ˈeniːkæst/',
               phonetic: 'E-ni-kast',
               example:
-                'Anycast routes to the nearest of many hosts. = Anycast instrada al più vicino tra molti host.',
+                'In the forwarding pipeline, Anycast routes to the nearest of many hosts. = Anycast instrada al più vicino tra molti host.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Usato dai DNS root server.',
@@ -1720,11 +1748,11 @@ export default {
           items: [
             {
               english: 'DHCP',
-              italian: 'DHCP / Configurazione dinamica host',
+              italian: 'protocollo di configurazione host dinamica (DHCP)',
               pronunciation: '/ˌdiː eɪtʃ siː ˈpiː/',
               phonetic: 'DI-EICH-SI-PI',
               example:
-                'DHCP automatically assigns IP addresses. = DHCP assegna automaticamente gli indirizzi IP.',
+                'In networking, DHCP automatically assigns IP addresses. = DHCP assegna automaticamente gli indirizzi IP.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Dynamic Host Configuration Protocol.',
@@ -1735,28 +1763,28 @@ export default {
               pronunciation: '/ˌdiː eɪtʃ siː piː liːs/',
               phonetic: 'DI-EICH-SI-PI LIIS',
               example:
-                'DHCP lease times control IP renewal. = I tempi di lease DHCP controllano il rinnovo IP.',
+                'In networking, DHCP Lease times control IP renewal. = I tempi di lease DHCP controllano il rinnovo IP.',
               context: 'addressing',
               difficulty: 'beginner',
             },
             {
               english: 'DHCP Discover',
-              italian: 'DHCP Discover / messaggio iniziale del client DHCP',
+              italian: 'DHCP Discover',
               pronunciation: '/ˌdiː eɪtʃ siː piː dɪsˈkʌvər/',
               phonetic: 'DI-EICH-SI-PI di-SKA-ver',
               example:
-                'A client broadcasts DHCP Discover. = Un client trasmette DHCP Discover in broadcast.',
+                'When a laptop joins the network for the first time, it broadcasts a DHCP Discover message to locate an available server. = Quando un portatile si connette alla rete per la prima volta, trasmette un messaggio DHCP Discover in broadcast per trovare un server disponibile.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Sequenza DORA: Discover, Offer, Request, Ack.',
             },
             {
               english: 'DHCP Server',
-              italian: 'Server DHCP',
+              italian: 'server DHCP',
               pronunciation: '/ˌdiː eɪtʃ siː piː ˈsɜːrvər/',
               phonetic: 'DI-EICH-SI-PI SER-ver',
               example:
-                'The DHCP server assigns addresses from a pool. = Il server DHCP assegna indirizzi da un pool.',
+                'In networking, the DHCP Server assigns addresses from a pool. = Il server DHCP assegna indirizzi da un pool.',
               context: 'addressing',
               difficulty: 'beginner',
               tool: 'isc-dhcp-server, dnsmasq',
@@ -1783,43 +1811,43 @@ export default {
             },
             {
               english: 'Unicast',
-              italian: 'unicast / uno-a-uno',
+              italian: 'unicast',
               pronunciation: '/ˈjuːnɪkæst/',
               phonetic: 'IU-ni-kast',
               example:
-                'Unicast traffic targets a single host. = Il traffico unicast ha come destinazione un singolo host.',
+                'In networking, Unicast traffic targets a single host. = Il traffico unicast ha come destinazione un singolo host.',
               context: 'addressing',
               difficulty: 'beginner',
             },
             {
               english: 'Multicast',
-              italian: 'multicast / uno-a-molti selettivo',
+              italian: 'multicast',
               pronunciation: '/ˈmʌltɪkæst/',
               phonetic: 'MAL-ti-kast',
               example:
-                'Multicast sends to a group of hosts. = Multicast invia a un gruppo di host.',
+                'During communication, Multicast sends to a group of hosts. = Multicast invia a un gruppo di host.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Range IPv4: 224.0.0.0/4.',
             },
             {
               english: 'Broadcast',
-              italian: 'broadcast / uno-a-tutti',
+              italian: 'broadcast',
               pronunciation: '/ˈbrɔːdkæst/',
               phonetic: 'BROD-kast',
               example:
-                'Broadcast reaches all hosts on a LAN. = Il broadcast raggiunge tutti gli host di una LAN.',
+                'In networking, Broadcast reaches all hosts on a LAN. = Il broadcast raggiunge tutti gli host di una LAN.',
               context: 'addressing',
               difficulty: 'beginner',
               note: 'Non esiste in IPv6: sostituito da multicast.',
             },
             {
               english: 'TTL',
-              italian: 'TTL / Time To Live',
+              italian: 'tempo di vita (TTL)',
               pronunciation: '/ˌtiː tiː ˈel/',
               phonetic: 'TI-TI-EL',
               example:
-                'TTL prevents packets from looping forever. = TTL impedisce ai pacchetti di girare in loop infinito.',
+                'As a security measure, TTL prevents packets from looping forever. = TTL impedisce ai pacchetti di girare in loop infinito.',
               context: 'addressing',
               difficulty: 'beginner',
               command: 'ping -t 64 example.com',
@@ -1843,7 +1871,7 @@ export default {
           items: [
             {
               english: 'MAC Address',
-              italian: 'Indirizzo MAC',
+              italian: 'indirizzo MAC',
               pronunciation: '/mæk əˈdres/',
               phonetic: 'MAK a-DRES',
               example:
@@ -1855,7 +1883,7 @@ export default {
             },
             {
               english: 'OUI',
-              italian: 'OUI / Identificatore costruttore',
+              italian: 'identificativo del produttore (OUI)',
               pronunciation: '/ˌoʊ juː ˈaɪ/',
               phonetic: 'O-IU-AI',
               example:
@@ -1866,58 +1894,59 @@ export default {
             },
             {
               english: 'Ethernet Frame',
-              italian: 'Frame Ethernet',
+              italian: 'frame Ethernet',
               pronunciation: '/ˈiːθərnet freɪm/',
               phonetic: 'I-ther-net FREIM',
               example:
-                'An Ethernet frame contains source and destination MAC. = Un frame Ethernet contiene MAC sorgente e destinazione.',
+                'In networking, an Ethernet Frame contains source and destination MAC. = Un frame Ethernet contiene MAC sorgente e destinazione.',
               context: 'switching',
               difficulty: 'intermediate',
             },
             {
               english: 'Preamble',
-              italian: 'Preambolo',
+              italian: 'preambolo',
               pronunciation: '/ˈpriːæmbl/',
               phonetic: 'PRI-am-bol',
               example:
-                'The preamble synchronizes receiver and sender. = Il preambolo sincronizza ricevente e mittente.',
+                'In networking, the Preamble synchronizes receiver and sender. = Il preambolo sincronizza ricevente e mittente.',
               context: 'switching',
               difficulty: 'intermediate',
             },
             {
               english: 'EtherType',
-              italian: 'EtherType / tipo di payload Ethernet',
+              italian: 'tipo Ethernet (EtherType)',
               pronunciation: '/ˈiːθərtaɪp/',
               phonetic: 'I-ther-taip',
               example:
-                'EtherType 0x0800 indicates IPv4 payload. = EtherType 0x0800 indica payload IPv4.',
+                'In networking, EtherType 0x0800 indicates IPv4 payload. = EtherType 0x0800 indica payload IPv4.',
               context: 'switching',
               difficulty: 'intermediate',
             },
             {
               english: 'CRC',
-              italian: 'CRC / Controllo a ridondanza ciclica',
+              italian: 'codice di ridondanza ciclica (CRC)',
               pronunciation: '/ˌsiː ɑːr ˈsiː/',
               phonetic: 'SI-AR-SI',
-              example: 'The CRC detects frame corruption. = Il CRC rileva la corruzione del frame.',
+              example:
+                'When scanning traffic, CRC detects frame corruption. = Il CRC rileva la corruzione del frame.',
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Cyclic Redundancy Check.',
             },
             {
               english: 'Jumbo Frame',
-              italian: 'jumbo frame / frame Ethernet > 1500 byte',
+              italian: 'frame jumbo',
               pronunciation: '/ˈdʒʌmboʊ freɪm/',
               phonetic: 'GIAM-bo FREIM',
               example:
-                'Jumbo frames carry up to 9000 bytes. = I jumbo frame trasportano fino a 9000 byte.',
+                'Storage area networks often enable jumbo frames to reduce CPU overhead when transferring large database backups. = Le reti di storage spesso abilitano i jumbo frame per ridurre il carico CPU quando si trasferiscono backup di database di grandi dimensioni.',
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Utili nei data center per ridurre overhead.',
             },
             {
               english: 'Collision Domain',
-              italian: 'Dominio di collisione',
+              italian: 'dominio di collisione',
               pronunciation: '/kəˈlɪʒən doʊˈmeɪn/',
               phonetic: 'ko-LI-gion do-MEIN',
               example:
@@ -1927,7 +1956,7 @@ export default {
             },
             {
               english: 'Broadcast Domain',
-              italian: 'Dominio di broadcast',
+              italian: 'dominio di broadcast',
               pronunciation: '/ˈbrɔːdkæst doʊˈmeɪn/',
               phonetic: 'BROD-kast do-MEIN',
               example:
@@ -1937,11 +1966,11 @@ export default {
             },
             {
               english: 'CSMA/CD',
-              italian: 'CSMA/CD / accesso al mezzo Ethernet legacy',
+              italian: 'accesso al mezzo Ethernet legacy (CSMA/CD)',
               pronunciation: '/ˌsiː es em eɪ siː ˈdiː/',
               phonetic: 'SI-ES-EM-EI SI-DI',
               example:
-                'CSMA/CD handled collisions in shared Ethernet. = CSMA/CD gestiva le collisioni in Ethernet condiviso.',
+                'In networking, CSMA/CD handled collisions in shared Ethernet. = CSMA/CD gestiva le collisioni in Ethernet condiviso.',
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Carrier Sense Multiple Access / Collision Detection.',
@@ -1955,21 +1984,21 @@ export default {
           items: [
             {
               english: 'Switch',
-              italian: 'switch / commutatore di rete L2',
+              italian: 'commutatore di rete (switch)',
               pronunciation: '/swɪtʃ/',
               phonetic: 'SUITCH',
               example:
-                'Switches forward frames based on MAC. = Gli switch inoltrano frame basandosi sul MAC.',
+                'Unlike a hub, a switch learns which MAC sits behind each port and forwards frames only there. = A differenza di un hub, uno switch apprende quale MAC si trova dietro ogni porta e inoltra i frame solo lì.',
               context: 'switching',
               difficulty: 'intermediate',
             },
             {
               english: 'MAC Table',
-              italian: 'Tabella MAC',
+              italian: 'tabella MAC',
               pronunciation: '/mæk ˈteɪbl/',
               phonetic: 'MAK TEI-bol',
               example:
-                'The MAC table maps MAC to switch port. = La tabella MAC mappa MAC a porta switch.',
+                'In DNS resolution, the MAC Table maps MAC to switch port. = La tabella MAC mappa MAC a porta switch.',
               context: 'switching',
               difficulty: 'intermediate',
               command: 'show mac address-table',
@@ -1980,7 +2009,7 @@ export default {
               pronunciation: '/kæm ˈteɪbl/',
               phonetic: 'KAM TEI-bol',
               example:
-                'CAM table is another name for the MAC table. = Tabella CAM è un altro nome per la tabella MAC.',
+                'By definition, CAM Table is another name for the MAC table. = Tabella CAM è un altro nome per la tabella MAC.',
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Content-Addressable Memory.',
@@ -1997,7 +2026,7 @@ export default {
             },
             {
               english: 'Flooding',
-              italian: 'flooding / inoltro su tutte le porte',
+              italian: 'inondazione (flooding)',
               pronunciation: '/ˈflʌdɪŋ/',
               phonetic: 'FLA-ding',
               example:
@@ -2007,7 +2036,7 @@ export default {
             },
             {
               english: 'Cut-Through Switching',
-              italian: 'cut-through switching / inoltro a metà frame',
+              italian: 'commutazione cut-through',
               pronunciation: '/kʌt θruː/',
               phonetic: 'KAT-THRU',
               example:
@@ -2017,11 +2046,11 @@ export default {
             },
             {
               english: 'Store-and-Forward',
-              italian: 'store-and-forward / memorizza poi inoltra',
+              italian: 'store-and-forward',
               pronunciation: '/stɔːr ænd ˈfɔːrwərd/',
               phonetic: 'STOR-AND-FOR-uard',
               example:
-                'Store-and-forward checks the CRC before sending. = Store-and-forward verifica il CRC prima di inviare.',
+                'In networking, Store-and-Forward checks the CRC before sending. = Store-and-forward verifica il CRC prima di inviare.',
               context: 'switching',
               difficulty: 'intermediate',
             },
@@ -2031,18 +2060,18 @@ export default {
               pronunciation: '/pɔːrt sɪˈkjʊərəti/',
               phonetic: 'PORT si-KIU-re-ti',
               example:
-                'Port security limits MACs per port. = La port security limita i MAC per porta.',
+                'In networking, Port Security limits MACs per port. = La port security limita i MAC per porta.',
               context: 'switching',
               difficulty: 'intermediate',
               code: 'switchport port-security maximum 2',
             },
             {
               english: 'PoE',
-              italian: 'PoE / Power over Ethernet',
+              italian: 'alimentazione su Ethernet (PoE)',
               pronunciation: '/ˌpiː oʊ ˈiː/',
               phonetic: 'PI-O-I',
               example:
-                'PoE delivers power through the Ethernet cable. = PoE eroga corrente attraverso il cavo Ethernet.',
+                'In networking, PoE delivers power through the Ethernet cable. = PoE eroga corrente attraverso il cavo Ethernet.',
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Utile per IP phones, AP Wi-Fi, telecamere.',
@@ -2053,7 +2082,7 @@ export default {
               pronunciation: '/ˈɔːtoʊ nɪˌɡoʊʃiˈeɪʃən/',
               phonetic: 'OTO ne-go-si-EI-scion',
               example:
-                "Auto-negotiation selects speed and duplex. = L'auto-negoziazione seleziona velocità e duplex.",
+                "In networking, Auto-Negotiation selects speed and duplex. = L'auto-negoziazione seleziona velocità e duplex.",
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Comune fonte di problemi di velocità half/full duplex.',
@@ -2067,11 +2096,11 @@ export default {
           items: [
             {
               english: 'VLAN',
-              italian: 'VLAN / Rete locale virtuale',
+              italian: 'rete locale virtuale (VLAN)',
               pronunciation: '/ˈviːlæn/',
               phonetic: 'VI-LAN',
               example:
-                'VLANs separate traffic on the same switch. = Le VLAN separano il traffico sullo stesso switch.',
+                'To isolate guest Wi-Fi from corporate traffic, the switch assigns each group to a separate VLAN on the same physical hardware. = Per isolare il Wi-Fi ospiti dal traffico aziendale, lo switch assegna ogni gruppo a una VLAN separata sullo stesso hardware fisico.',
               context: 'switching',
               difficulty: 'intermediate',
               code: 'switchport access vlan 10',
@@ -2082,27 +2111,29 @@ export default {
               italian: 'ID VLAN',
               pronunciation: '/ˈviːlæn aɪ diː/',
               phonetic: 'VI-LAN AI-DI',
-              example: 'VLAN IDs range from 1 to 4094. = Gli ID VLAN vanno da 1 a 4094.',
+              example:
+                'The network team assigns VLAN IDs from the valid range of 1 to 4094, reserving VLAN 100 for management traffic. = Il team di rete assegna ID VLAN dal range valido da 1 a 4094, riservando la VLAN 100 al traffico di gestione.',
               context: 'switching',
               difficulty: 'intermediate',
             },
             {
               english: '802.1Q',
-              italian: '802.1Q / tag VLAN',
+              italian: 'tag VLAN (802.1Q)',
               pronunciation: '/eɪt oʊ tuː dɒt wʌn kjuː/',
               phonetic: 'EIT-O-TU dot UAN-KIU',
               example:
-                '802.1Q adds a VLAN tag to Ethernet frames. = 802.1Q aggiunge un tag VLAN ai frame Ethernet.',
+                'In networking, 802.1Q adds a VLAN tag to Ethernet frames. = 802.1Q aggiunge un tag VLAN ai frame Ethernet.',
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Standard IEEE per VLAN tagging.',
             },
             {
               english: 'Trunk Port',
-              italian: 'Porta trunk',
+              italian: 'porta trunk',
               pronunciation: '/trʌŋk pɔːrt/',
               phonetic: 'TRANK PORT',
-              example: 'A trunk port carries multiple VLANs. = Una porta trunk trasporta più VLAN.',
+              example:
+                'In networking, a Trunk Port carries multiple VLANs. = Una porta trunk trasporta più VLAN.',
               context: 'switching',
               difficulty: 'intermediate',
               code: 'switchport mode trunk',
@@ -2113,7 +2144,7 @@ export default {
               pronunciation: '/ˈækses pɔːrt/',
               phonetic: 'AK-ses PORT',
               example:
-                'Access ports belong to a single VLAN. = Le porte access appartengono a una sola VLAN.',
+                "Each workstation plugs into an access port that carries traffic for exactly one VLAN, preventing exposure to other segments. = Ogni postazione si collega a una porta access che trasporta traffico per esattamente una VLAN, prevenendo l'esposizione ad altri segmenti.",
               context: 'switching',
               difficulty: 'intermediate',
               code: 'switchport mode access',
@@ -2124,7 +2155,7 @@ export default {
               pronunciation: '/ˈneɪtɪv ˈviːlæn/',
               phonetic: 'NEI-tiv VI-LAN',
               example:
-                'The native VLAN carries untagged traffic on a trunk. = La VLAN nativa trasporta traffico senza tag su un trunk.',
+                'In networking, the Native VLAN carries untagged traffic on a trunk. = La VLAN nativa trasporta traffico senza tag su un trunk.',
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Default 1, ma è buona pratica cambiarla.',
@@ -2135,17 +2166,17 @@ export default {
               pronunciation: '/ˈviːlæn ˈtæɡɪŋ/',
               phonetic: 'VI-LAN TA-ghing',
               example:
-                'VLAN tagging adds 4 bytes to the frame. = Il tagging VLAN aggiunge 4 byte al frame.',
+                'In networking, VLAN Tagging adds 4 bytes to the frame. = Il tagging VLAN aggiunge 4 byte al frame.',
               context: 'switching',
               difficulty: 'intermediate',
             },
             {
               english: 'Inter-VLAN Routing',
-              italian: 'Routing inter-VLAN',
+              italian: 'routing inter-VLAN',
               pronunciation: '/ˈɪntər ˈviːlæn/',
               phonetic: 'IN-ter VI-LAN',
               example:
-                'Inter-VLAN routing requires a Layer 3 device. = Il routing inter-VLAN richiede un dispositivo Layer 3.',
+                'In networking, Inter-VLAN Routing requires a Layer 3 device. = Il routing inter-VLAN richiede un dispositivo Layer 3.',
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Fatto da router o switch L3.',
@@ -2156,7 +2187,7 @@ export default {
               pronunciation: '/vɔɪs ˈviːlæn/',
               phonetic: 'VOIS VI-LAN',
               example:
-                'A voice VLAN isolates VoIP traffic. = Una VLAN voce isola il traffico VoIP.',
+                'In networking, a Voice VLAN isolates VoIP traffic. = Una VLAN voce isola il traffico VoIP.',
               context: 'switching',
               difficulty: 'intermediate',
             },
@@ -2166,7 +2197,7 @@ export default {
               pronunciation: '/ˈpraɪvət ˈviːlæn/',
               phonetic: 'PRAI-vet VI-LAN',
               example:
-                'Private VLANs isolate hosts within the same VLAN. = Le VLAN private isolano host dentro la stessa VLAN.',
+                'In a shared hosting environment, private VLANs prevent co-located servers from communicating directly with each other. = In un ambiente di hosting condiviso, le VLAN private impediscono ai server co-locati di comunicare direttamente tra loro.',
               context: 'switching',
               difficulty: 'intermediate',
             },
@@ -2179,17 +2210,18 @@ export default {
           items: [
             {
               english: 'STP',
-              italian: 'STP / Spanning Tree Protocol',
+              italian: 'protocollo spanning tree (STP)',
               pronunciation: '/ˌes tiː ˈpiː/',
               phonetic: 'ES-TI-PI',
-              example: 'STP prevents Layer 2 loops. = STP previene loop di Layer 2.',
+              example:
+                'As a security measure, STP prevents Layer 2 loops. = STP previene loop di Layer 2.',
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Spanning Tree Protocol. IEEE 802.1D.',
             },
             {
               english: 'BPDU',
-              italian: 'BPDU / messaggio Spanning Tree',
+              italian: 'unità dati protocollo bridge (BPDU)',
               pronunciation: '/ˌbiː piː diː ˈjuː/',
               phonetic: 'BI-PI-DI-IU',
               example:
@@ -2204,49 +2236,50 @@ export default {
               pronunciation: '/ruːt brɪdʒ/',
               phonetic: 'RUUT BRICH',
               example:
-                'The root bridge is the STP reference point. = Il bridge radice è il punto di riferimento STP.',
+                'By definition, the Root Bridge is the STP reference point. = Il bridge radice è il punto di riferimento STP.',
               context: 'switching',
               difficulty: 'intermediate',
             },
             {
               english: 'RSTP',
-              italian: 'RSTP / Rapid STP',
+              italian: 'Rapid Spanning Tree Protocol (RSTP)',
               pronunciation: '/ˌɑːr es tiː ˈpiː/',
               phonetic: 'AR-ES-TI-PI',
-              example: 'RSTP converges faster than STP. = RSTP converge più rapidamente di STP.',
+              example:
+                'In networking, RSTP converges faster than STP. = RSTP converge più rapidamente di STP.',
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Rapid Spanning Tree Protocol. IEEE 802.1w.',
             },
             {
               english: 'BPDU Guard',
-              italian: 'BPDU Guard / protezione contro BPDU non autorizzati',
+              italian: 'guardia BPDU (BPDU Guard)',
               pronunciation: '/ˌbiː piː diː juː ɡɑːrd/',
               phonetic: 'BI-PI-DI-IU GARD',
               example:
-                'BPDU Guard disables ports receiving BPDUs. = BPDU Guard disabilita porte che ricevono BPDU.',
+                'In networking, BPDU Guard disables ports receiving BPDUs. = BPDU Guard disabilita porte che ricevono BPDU.',
               context: 'switching',
               difficulty: 'intermediate',
               code: 'spanning-tree bpduguard enable',
             },
             {
               english: 'ARP',
-              italian: 'ARP / Address Resolution Protocol',
+              italian: 'protocollo di risoluzione indirizzi (ARP)',
               pronunciation: '/ɑːrp/',
               phonetic: 'ARP',
               example:
-                'ARP resolves IP addresses to MAC addresses. = ARP risolve indirizzi IP in indirizzi MAC.',
+                'In networking, ARP resolves IP addresses to MAC addresses. = ARP risolve indirizzi IP in indirizzi MAC.',
               context: 'switching',
               difficulty: 'intermediate',
               command: 'arp -a',
             },
             {
               english: 'ARP Cache',
-              italian: 'Cache ARP',
+              italian: 'cache ARP',
               pronunciation: '/ɑːrp kæʃ/',
               phonetic: 'ARP KASH',
               example:
-                'The ARP cache stores recent MAC mappings. = La cache ARP memorizza i mapping MAC recenti.',
+                'For efficiency, the ARP Cache stores recent MAC mappings. = La cache ARP memorizza i mapping MAC recenti.',
               context: 'switching',
               difficulty: 'intermediate',
               command: 'ip neigh show',
@@ -2257,17 +2290,17 @@ export default {
               pronunciation: '/ɡrəˈtjuːɪtəs ɑːrp/',
               phonetic: 'gra-TIU-i-tos ARP',
               example:
-                "Gratuitous ARP announces a host's MAC. = L'ARP gratuito annuncia il MAC di un host.",
+                "In networking, Gratuitous ARP announces a host's MAC. = L'ARP gratuito annuncia il MAC di un host.",
               context: 'switching',
               difficulty: 'intermediate',
             },
             {
               english: 'ARP Spoofing',
-              italian: 'ARP spoofing / falsificazione di tabelle ARP',
+              italian: 'spoofing ARP',
               pronunciation: '/ɑːrp ˈspuːfɪŋ/',
               phonetic: 'ARP SPU-fing',
               example:
-                "ARP spoofing enables man-in-the-middle attacks. = L'ARP spoofing permette attacchi man-in-the-middle.",
+                "For network flexibility, ARP Spoofing enables man-in-the-middle attacks. = L'ARP spoofing permette attacchi man-in-the-middle.",
               context: 'switching',
               difficulty: 'intermediate',
               tool: 'arpspoof, ettercap',
@@ -2275,11 +2308,11 @@ export default {
             },
             {
               english: 'EtherChannel',
-              italian: 'EtherChannel / LAG',
+              italian: 'EtherChannel',
               pronunciation: '/ˈiːθərˌtʃænl/',
               phonetic: 'I-ther-cia-nel',
               example:
-                'EtherChannel bundles multiple links into one. = EtherChannel raggruppa più link in uno solo.',
+                'In networking, EtherChannel bundles multiple links into one. = EtherChannel raggruppa più link in uno solo.',
               context: 'switching',
               difficulty: 'intermediate',
               note: 'Standard: LACP (IEEE 802.3ad).',
@@ -2302,48 +2335,49 @@ export default {
           items: [
             {
               english: 'Router',
-              italian: 'router / instradatore di pacchetti',
+              italian: 'instradatore (router)',
               pronunciation: '/ˈruːtər/',
               phonetic: 'RU-ter',
-              example: 'Routers connect different networks. = I router connettono reti diverse.',
+              example:
+                "The edge router examines each packet's destination IP to decide which next hop to forward it to. = Il router di bordo esamina l'IP di destinazione di ogni pacchetto per decidere a quale prossimo salto inoltrarlo.",
               context: 'routing',
               difficulty: 'intermediate',
               note: 'Lavora a Layer 3.',
             },
             {
               english: 'Routing',
-              italian: 'Routing / Instradamento',
+              italian: 'instradamento (routing)',
               pronunciation: '/ˈruːtɪŋ/',
               phonetic: 'RU-ting',
               example:
-                'Routing decides the path packets take. = Il routing decide il percorso che fanno i pacchetti.',
+                'In networking, Routing decides the path packets take. = Il routing decide il percorso che fanno i pacchetti.',
               context: 'routing',
               difficulty: 'intermediate',
             },
             {
               english: 'Routing Table',
-              italian: 'Tabella di routing',
+              italian: 'tabella di instradamento',
               pronunciation: '/ˈruːtɪŋ ˈteɪbl/',
               phonetic: 'RU-ting TEI-bol',
               example:
-                'The routing table lists known networks. = La tabella di routing elenca le reti conosciute.',
+                'For reference, the Routing Table lists known networks. = La tabella di routing elenca le reti conosciute.',
               context: 'routing',
               difficulty: 'intermediate',
               command: 'ip route show',
             },
             {
               english: 'Next Hop',
-              italian: 'Next hop / Salto successivo',
+              italian: 'prossimo salto (next hop)',
               pronunciation: '/nekst hɒp/',
               phonetic: 'NEKST HOP',
               example:
-                'The next hop is the router to forward to. = Il next hop è il router a cui inoltrare.',
+                'By definition, the Next Hop is the router to forward to. = Il next hop è il router a cui inoltrare.',
               context: 'routing',
               difficulty: 'intermediate',
             },
             {
               english: 'Hop',
-              italian: 'Hop / Salto',
+              italian: 'salto (hop)',
               pronunciation: '/hɒp/',
               phonetic: 'HOP',
               example:
@@ -2354,17 +2388,17 @@ export default {
             },
             {
               english: 'Route Metric',
-              italian: 'Metrica di rotta',
+              italian: 'metrica di instradamento',
               pronunciation: '/ruːt ˈmetrɪk/',
               phonetic: 'RUUT ME-trik',
               example:
-                'Lower metric routes are preferred. = Le rotte con metrica più bassa sono preferite.',
+                'When two paths reach the same destination, the router selects the route metric with the lower value to optimize throughput. = Quando due percorsi raggiungono la stessa destinazione, il router seleziona la metrica di rotta con il valore più basso per ottimizzare il throughput.',
               context: 'routing',
               difficulty: 'intermediate',
             },
             {
               english: 'Administrative Distance',
-              italian: 'Distanza amministrativa',
+              italian: 'distanza amministrativa',
               pronunciation: '/ədˌmɪnəˈstreɪtɪv/',
               phonetic: 'ad-mi-ni-STREI-tiv',
               example:
@@ -2375,7 +2409,7 @@ export default {
             },
             {
               english: 'Convergence',
-              italian: 'Convergenza',
+              italian: 'convergenza',
               pronunciation: '/kənˈvɜːrdʒəns/',
               phonetic: 'kon-VER-gens',
               example:
@@ -2385,10 +2419,11 @@ export default {
             },
             {
               english: 'Default Route',
-              italian: 'Rotta predefinita',
+              italian: 'rotta predefinita',
               pronunciation: '/dɪˈfɔːlt ruːt/',
               phonetic: 'di-FOLT RUUT',
-              example: 'The default route is 0.0.0.0/0. = La rotta predefinita è 0.0.0.0/0.',
+              example:
+                'By definition, the Default Route is 0.0.0.0/0. = La rotta predefinita è 0.0.0.0/0.',
               context: 'routing',
               difficulty: 'intermediate',
               command: 'ip route add default via 192.168.1.1',
@@ -2399,7 +2434,7 @@ export default {
               pronunciation: '/ˈlɒŋɡɪst ˈpriːfɪks/',
               phonetic: 'LON-gest PRI-fiks',
               example:
-                'Routers use longest prefix match. = I router usano il match del prefisso più lungo.',
+                'Given entries for 10.0.0.0/8 and 10.1.0.0/16, the router applies longest prefix match and forwards traffic to the /16 route. = Date le voci per 10.0.0.0/8 e 10.1.0.0/16, il router applica il longest prefix match e inoltra il traffico alla rotta /16.',
               context: 'routing',
               difficulty: 'intermediate',
               note: 'La rotta più specifica vince.',
@@ -2413,11 +2448,11 @@ export default {
           items: [
             {
               english: 'Static Route',
-              italian: 'Rotta statica',
+              italian: 'rotta statica',
               pronunciation: '/ˈstætɪk ruːt/',
               phonetic: 'STA-tik RUUT',
               example:
-                'Static routes are manually configured. = Le rotte statiche sono configurate manualmente.',
+                "For a small branch office with a single WAN link, the administrator manually configures a static route pointing all traffic to the ISP gateway. = Per una piccola filiale con un singolo link WAN, l'amministratore configura manualmente una rotta statica puntando tutto il traffico al gateway ISP.",
               context: 'routing',
               difficulty: 'intermediate',
               code: 'ip route 10.0.0.0 255.0.0.0 192.168.1.254',
@@ -2428,36 +2463,38 @@ export default {
               pronunciation: '/ˈfloʊtɪŋ ˈstætɪk/',
               phonetic: 'FLO-ting STA-tik',
               example:
-                'A floating static route is a backup. = Una rotta statica galleggiante è un backup.',
+                'By definition, a Floating Static Route is a backup. = Una rotta statica galleggiante è un backup.',
               context: 'routing',
               difficulty: 'intermediate',
               note: 'Ha AD più alta della rotta primaria.',
             },
             {
               english: 'Stub Network',
-              italian: 'Rete stub',
+              italian: 'rete stub',
               pronunciation: '/stʌb ˈnetwɜːrk/',
               phonetic: 'STAB NET-uerk',
               example:
-                'A stub network has only one connection. = Una rete stub ha una sola connessione.',
+                'By design, a Stub Network has only one connection. = Una rete stub ha una sola connessione.',
               context: 'routing',
               difficulty: 'intermediate',
             },
             {
               english: 'Routed Protocol',
-              italian: 'Protocollo instradato',
+              italian: 'protocollo instradato',
               pronunciation: '/ˈruːtɪd ˈproʊtəkɒl/',
               phonetic: 'RU-tid PRO-to-kol',
-              example: 'IP is a routed protocol. = IP è un protocollo instradato.',
+              example:
+                'As a routed protocol, IP packets carry source and destination addresses that routers examine at every hop. = Come protocollo instradato, i pacchetti IP portano indirizzi sorgente e destinazione che i router esaminano ad ogni hop.',
               context: 'routing',
               difficulty: 'intermediate',
             },
             {
               english: 'Routing Protocol',
-              italian: 'Protocollo di routing',
+              italian: 'protocollo di instradamento',
               pronunciation: '/ˈruːtɪŋ ˈproʊtəkɒl/',
               phonetic: 'RU-ting PRO-to-kol',
-              example: 'OSPF is a routing protocol. = OSPF è un protocollo di routing.',
+              example:
+                'Network engineers deploy OSPF as their primary routing protocol because it converges quickly after topology changes. = Gli ingegneri di rete implementano OSPF come protocollo di routing primario perché converge rapidamente dopo cambiamenti di topologia.',
               context: 'routing',
               difficulty: 'intermediate',
               note: 'Diverso da "routed protocol": questo distribuisce informazioni di rotta.',
@@ -2468,7 +2505,7 @@ export default {
               pronunciation: '/dəˈrektli kəˈnektɪd/',
               phonetic: 'di-REKT-li ko-NEK-tid',
               example:
-                'Directly connected routes have AD 0. = Le rotte connesse direttamente hanno AD 0.',
+                'In the forwarding pipeline, Directly Connected routes have AD 0. = Le rotte connesse direttamente hanno AD 0.',
               context: 'routing',
               difficulty: 'intermediate',
             },
@@ -2478,7 +2515,7 @@ export default {
               pronunciation: '/rɪˈkɜːrsɪv ˈlʊkʌp/',
               phonetic: 'ri-KER-siv LUK-ap',
               example:
-                'Recursive lookup resolves the next hop. = Il lookup ricorsivo risolve il next hop.',
+                'In networking, Recursive Lookup resolves the next hop. = Il lookup ricorsivo risolve il next hop.',
               context: 'routing',
               difficulty: 'intermediate',
             },
@@ -2488,7 +2525,7 @@ export default {
               pronunciation: '/blæk hoʊl ruːt/',
               phonetic: 'BLAK-HOUL RUUT',
               example:
-                'A black hole route silently drops packets. = Una rotta black hole scarta silenziosamente i pacchetti.',
+                'In networking, a Black Hole Route silently drops packets. = Una rotta black hole scarta silenziosamente i pacchetti.',
               context: 'routing',
               difficulty: 'intermediate',
               code: 'ip route add blackhole 1.2.3.0/24',
@@ -2510,7 +2547,7 @@ export default {
               pronunciation: '/ˌaɪ siː em piː rɪˈdaɪrekt/',
               phonetic: 'AI-SI-EM-PI ri-DAI-rekt',
               example:
-                'ICMP redirects suggest a better next hop. = I redirect ICMP suggeriscono un next hop migliore.',
+                "When a router detects that a packet should take a shorter path, it sends an ICMP redirect to inform the source host of a better next hop. = Quando un router rileva che un pacchetto dovrebbe prendere un percorso piu corto, invia un ICMP redirect per informare l'host sorgente di un next hop migliore.",
               context: 'routing',
               difficulty: 'intermediate',
             },
@@ -2527,59 +2564,59 @@ export default {
               pronunciation: '/daɪˈnæmɪk ˈruːtɪŋ/',
               phonetic: 'dai-NA-mik RU-ting',
               example:
-                'Dynamic routing adapts to network changes. = Il routing dinamico si adatta ai cambiamenti di rete.',
+                'In networking, Dynamic Routing adapts to network changes. = Il routing dinamico si adatta ai cambiamenti di rete.',
               context: 'routing',
               difficulty: 'intermediate',
             },
             {
               english: 'RIP',
-              italian: 'RIP / Routing Information Protocol',
+              italian: 'RIP (Routing Information Protocol)',
               pronunciation: '/rɪp/',
               phonetic: 'RIP',
               example:
-                'RIP uses hop count as its metric. = RIP usa il conteggio di hop come metrica.',
+                'Under the hood, RIP uses hop count as its metric. = RIP usa il conteggio di hop come metrica.',
               context: 'routing',
               difficulty: 'intermediate',
               note: 'Vecchio protocollo distance-vector. Limite: 15 hop.',
             },
             {
               english: 'Distance Vector',
-              italian: 'distance vector / routing per distanza',
+              italian: 'vettore di distanza (distance vector)',
               pronunciation: '/ˈdɪstəns ˈvektər/',
               phonetic: 'DIS-tans VEK-tor',
               example:
-                'Distance vector protocols share routing tables. = I protocolli distance vector condividono tabelle di routing.',
+                'In networking, Distance Vector protocols share routing tables. = I protocolli distance vector condividono tabelle di routing.',
               context: 'routing',
               difficulty: 'intermediate',
             },
             {
               english: 'Link State',
-              italian: 'link state / routing per stato dei collegamenti',
+              italian: 'stato del collegamento (link state)',
               pronunciation: '/lɪŋk steɪt/',
               phonetic: 'LINK STEIT',
               example:
-                'Link state protocols build a network map. = I protocolli link state costruiscono una mappa della rete.',
+                'In networking, Link State protocols build a network map. = I protocolli link state costruiscono una mappa della rete.',
               context: 'routing',
               difficulty: 'intermediate',
               note: 'Esempi: OSPF, IS-IS.',
             },
             {
               english: 'OSPF',
-              italian: 'OSPF / Open Shortest Path First',
+              italian: 'OSPF (Open Shortest Path First)',
               pronunciation: '/ˌoʊ es piː ˈef/',
               phonetic: 'O-ES-PI-EF',
               example:
-                'OSPF uses Dijkstra to find best paths. = OSPF usa Dijkstra per trovare i percorsi migliori.',
+                'Under the hood, OSPF uses Dijkstra to find best paths. = OSPF usa Dijkstra per trovare i percorsi migliori.',
               context: 'routing',
               difficulty: 'intermediate',
             },
             {
               english: 'EIGRP',
-              italian: 'EIGRP / protocollo routing Cisco ibrido',
+              italian: 'EIGRP',
               pronunciation: '/ˌiː aɪ dʒiː ɑːr ˈpiː/',
               phonetic: 'I-AI-GI-AR-PI',
               example:
-                "EIGRP is Cisco's hybrid routing protocol. = EIGRP è il protocollo di routing ibrido Cisco.",
+                "By definition, EIGRP is Cisco's hybrid routing protocol. = EIGRP è il protocollo di routing ibrido Cisco.",
               context: 'routing',
               difficulty: 'intermediate',
               note: 'Enhanced Interior Gateway Routing Protocol.',
@@ -2607,7 +2644,7 @@ export default {
             },
             {
               english: 'Route Advertisement',
-              italian: 'Annuncio di rotta',
+              italian: 'annuncio di rotta',
               pronunciation: '/ruːt ədˈvɜːrtaɪzmənt/',
               phonetic: 'RUUT ad-VER-taiz-ment',
               example:
@@ -2617,11 +2654,11 @@ export default {
             },
             {
               english: 'Split Horizon',
-              italian: 'split horizon / non rinviare verso la sorgente',
+              italian: 'orizzonte diviso (split horizon)',
               pronunciation: '/splɪt həˈraɪzn/',
               phonetic: 'SPLIT ho-RAI-zon',
               example:
-                'Split horizon prevents routing loops. = Lo split horizon previene loop di routing.',
+                'As a security measure, Split Horizon prevents routing loops. = Lo split horizon previene loop di routing.',
               context: 'routing',
               difficulty: 'intermediate',
               note: "Non annunciare una rotta dall'interfaccia da cui l'hai imparata.",
@@ -2635,32 +2672,32 @@ export default {
           items: [
             {
               english: 'Layer 3 Switch',
-              italian: 'Switch Layer 3',
+              italian: 'switch Layer 3',
               pronunciation: '/ˈleɪər θriː swɪtʃ/',
               phonetic: 'LEI-er THRI SUITCH',
               example:
-                'A Layer 3 switch combines switching and routing. = Uno switch Layer 3 combina switching e routing.',
+                'In networking, a Layer 3 Switch combines switching and routing. = Uno switch Layer 3 combina switching e routing.',
               context: 'routing',
               difficulty: 'intermediate',
             },
             {
               english: 'SVI',
-              italian: 'SVI / Switch Virtual Interface',
+              italian: 'interfaccia virtuale dello switch (SVI)',
               pronunciation: '/ˌes viː ˈaɪ/',
               phonetic: 'ES-VI-AI',
               example:
-                "An SVI is a virtual L3 interface for a VLAN. = Una SVI è un'interfaccia L3 virtuale per una VLAN.",
+                "By definition, an SVI is a virtual L3 interface for a VLAN. = Una SVI è un'interfaccia L3 virtuale per una VLAN.",
               context: 'routing',
               difficulty: 'intermediate',
               code: 'interface vlan 10\\n ip address 10.0.0.1 255.255.255.0',
             },
             {
               english: 'Routing Loop',
-              italian: 'Loop di routing',
+              italian: 'loop di instradamento',
               pronunciation: '/ˈruːtɪŋ luːp/',
               phonetic: 'RU-ting LUUP',
               example:
-                'Routing loops cause packets to circle endlessly. = I loop di routing fanno girare i pacchetti senza fine.',
+                'Without split-horizon or route poisoning, a misconfigured network can develop a routing loop that causes packets to bounce between routers until TTL expires. = Senza split-horizon o route poisoning, una rete mal configurata puo sviluppare un loop di routing che fa rimbalzare i pacchetti tra i router fino alla scadenza del TTL.',
               context: 'routing',
               difficulty: 'intermediate',
               note: 'TTL impedisce loop infiniti.',
@@ -2677,11 +2714,11 @@ export default {
             },
             {
               english: 'VRF',
-              italian: 'VRF / Virtual Routing and Forwarding',
+              italian: 'instradamento virtuale (VRF)',
               pronunciation: '/ˌviː ɑːr ˈef/',
               phonetic: 'VI-AR-EF',
               example:
-                'VRF creates separate routing tables. = VRF crea tabelle di routing separate.',
+                'In practice, VRF creates separate routing tables. = VRF crea tabelle di routing separate.',
               context: 'routing',
               difficulty: 'intermediate',
               note: 'Permette overlapping IP su stesso router.',
@@ -2692,14 +2729,14 @@ export default {
               pronunciation: '/ˈluːpbæk/',
               phonetic: 'LUP-bak',
               example:
-                'Loopback interfaces are always up. = Le interfacce loopback sono sempre attive.',
+                "Engineers assign the router ID on a loopback interface because it remains always up regardless of physical link failures. = Gli ingegneri assegnano il router ID su un'interfaccia loopback perché rimane sempre attiva indipendentemente dai guasti dei link fisici.",
               context: 'routing',
               difficulty: 'intermediate',
               code: 'interface loopback 0\\n ip address 1.1.1.1 255.255.255.255',
             },
             {
               english: 'Router ID',
-              italian: 'router ID / identificativo del router',
+              italian: 'ID del router',
               pronunciation: '/ˈruːtər aɪ diː/',
               phonetic: 'RU-ter AI-DI',
               example:
@@ -2709,7 +2746,7 @@ export default {
             },
             {
               english: 'Redistribution',
-              italian: 'Ridistribuzione',
+              italian: 'ridistribuzione',
               pronunciation: '/ˌriːdɪstrɪˈbjuːʃən/',
               phonetic: 'ri-di-stri-BIU-scion',
               example:
@@ -2720,7 +2757,7 @@ export default {
             },
             {
               english: 'Summarization',
-              italian: 'Sommarizzazione',
+              italian: 'riassunto delle rotte (summarization)',
               pronunciation: '/ˌsʌmərɪˈzeɪʃən/',
               phonetic: 'sa-me-rai-ZEI-scion',
               example:
@@ -2730,7 +2767,7 @@ export default {
             },
             {
               english: 'Bidirectional Forwarding Detection',
-              italian: 'BFD',
+              italian: 'rilevamento di inoltro bidirezionale (BFD)',
               pronunciation: '/ˌbaɪdaɪˈrekʃənl/',
               phonetic: 'bai-dai-REK-scio-nal',
               example:
@@ -2757,56 +2794,60 @@ export default {
           items: [
             {
               english: 'DNS',
-              italian: 'DNS / Sistema dei nomi a dominio',
+              italian: 'sistema dei nomi di dominio (DNS)',
               pronunciation: '/ˌdiː en ˈes/',
               phonetic: 'DI-EN-ES',
               example:
-                'DNS translates names to IP addresses. = DNS traduce i nomi in indirizzi IP.',
+                'In networking, DNS translates names to IP addresses. = DNS traduce i nomi in indirizzi IP.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Domain Name System. La "rubrica telefonica" di Internet.',
             },
             {
               english: 'Domain',
-              italian: 'Dominio',
+              italian: 'dominio',
               pronunciation: '/dəˈmeɪn/',
               phonetic: 'do-MEIN',
-              example: 'example.com is a domain name. = example.com è un nome di dominio.',
+              example:
+                'Before reaching the web server, the browser must resolve the domain name example.com to its corresponding IP address. = Prima di raggiungere il web server, il browser deve risolvere il nome di dominio example.com nel suo indirizzo IP corrispondente.',
               context: 'dns',
               difficulty: 'intermediate',
             },
             {
               english: 'Subdomain',
-              italian: 'Sottodominio',
+              italian: 'sottodominio',
               pronunciation: '/ˈsʌbdoʊmeɪn/',
               phonetic: 'SAB-do-mein',
-              example: 'mail.example.com is a subdomain. = mail.example.com è un sottodominio.',
+              example:
+                'The mail team hosts their servers under the subdomain mail.example.com, which resolves to a different IP than the main site. = Il team mail ospita i propri server sotto il sottodominio mail.example.com, che risolve a un IP diverso dal sito principale.',
               context: 'dns',
               difficulty: 'intermediate',
             },
             {
               english: 'TLD',
-              italian: 'TLD / Dominio di primo livello',
+              italian: 'dominio di primo livello (TLD)',
               pronunciation: '/ˌtiː el ˈdiː/',
               phonetic: 'TI-EL-DI',
-              example: '.com and .org are common TLDs. = .com e .org sono TLD comuni.',
+              example:
+                'Registrars assign domain names under TLDs like .com for commercial sites and .org for non-profit organizations. = I registrar assegnano nomi di dominio sotto TLD come .com per siti commerciali e .org per organizzazioni non-profit.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Top-Level Domain.',
             },
             {
               english: 'FQDN',
-              italian: 'FQDN / Nome dominio completo',
+              italian: 'nome di dominio completo (FQDN)',
               pronunciation: '/ˌef kjuː diː ˈen/',
               phonetic: 'EF-KIU-DI-EN',
-              example: 'www.example.com. is an FQDN. = www.example.com. è un FQDN.',
+              example:
+                "The trailing dot in the FQDN www.example.com. explicitly marks the root of the DNS hierarchy. = Il punto finale nell'FQDN www.example.com. segna esplicitamente la radice della gerarchia DNS.",
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Fully Qualified Domain Name. Termina con punto.',
             },
             {
               english: 'Root Server',
-              italian: 'root server / server radice DNS',
+              italian: 'server radice (root server)',
               pronunciation: '/ruːt ˈsɜːrvər/',
               phonetic: 'RUUT SER-ver',
               example:
@@ -2817,17 +2858,17 @@ export default {
             },
             {
               english: 'Authoritative Server',
-              italian: 'Server autoritativo',
+              italian: 'server autorevole',
               pronunciation: '/əˈθɒrɪteɪtɪv/',
               phonetic: 'a-THO-ri-tei-tiv',
               example:
-                'The authoritative server has the official records. = Il server autoritativo ha i record ufficiali.',
+                'By design, the Authoritative Server has the official records. = Il server autoritativo ha i record ufficiali.',
               context: 'dns',
               difficulty: 'intermediate',
             },
             {
               english: 'Resolver',
-              italian: 'resolver / risolutore DNS',
+              italian: 'risolutore (resolver)',
               pronunciation: '/rɪˈzɒlvər/',
               phonetic: 'ri-SOL-ver',
               example:
@@ -2838,17 +2879,17 @@ export default {
             },
             {
               english: 'Recursive Query',
-              italian: 'Query ricorsiva',
+              italian: 'query ricorsiva',
               pronunciation: '/rɪˈkɜːrsɪv ˈkwɪəri/',
               phonetic: 'ri-KER-siv KUI-ri',
               example:
-                'A recursive query gets the final answer. = Una query ricorsiva ottiene la risposta finale.',
+                'In networking, a Recursive Query gets the final answer. = Una query ricorsiva ottiene la risposta finale.',
               context: 'dns',
               difficulty: 'intermediate',
             },
             {
               english: 'Iterative Query',
-              italian: 'Query iterativa',
+              italian: 'query iterativa',
               pronunciation: '/ˈɪtərətɪv ˈkwɪəri/',
               phonetic: 'I-te-ra-tiv KUI-ri',
               example:
@@ -2865,22 +2906,22 @@ export default {
           items: [
             {
               english: 'A Record',
-              italian: 'Record A',
+              italian: 'record A',
               pronunciation: '/eɪ ˈrekɔːrd/',
               phonetic: 'EI RE-kord',
               example:
-                'An A record maps a name to an IPv4 address. = Un record A mappa un nome a un indirizzo IPv4.',
+                'In DNS resolution, an A Record maps a name to an IPv4 address. = Un record A mappa un nome a un indirizzo IPv4.',
               context: 'dns',
               difficulty: 'intermediate',
               command: 'dig example.com A',
             },
             {
               english: 'AAAA Record',
-              italian: 'Record AAAA',
+              italian: 'record AAAA',
               pronunciation: '/ˈkwɒdrəpl eɪ/',
               phonetic: 'KUOD-ru-pol EI',
               example:
-                'AAAA records map names to IPv6 addresses. = I record AAAA mappano nomi a indirizzi IPv6.',
+                "When a dual-stack client queries DNS for an IPv6 address, the resolver returns the AAAA record mapping the hostname to its 128-bit address. = Quando un client dual-stack interroga il DNS per un indirizzo IPv6, il resolver restituisce il record AAAA che mappa l'hostname al suo indirizzo a 128 bit.",
               context: 'dns',
               difficulty: 'intermediate',
               command: 'dig example.com AAAA',
@@ -2888,21 +2929,22 @@ export default {
             },
             {
               english: 'CNAME',
-              italian: 'CNAME / Nome canonico',
+              italian: 'nome canonico (CNAME)',
               pronunciation: '/ˈsiːneɪm/',
               phonetic: 'SI-NEIM',
-              example: 'A CNAME aliases one name to another. = Un CNAME aliasa un nome a un altro.',
+              example:
+                'In networking, a CNAME aliases one name to another. = Un CNAME aliasa un nome a un altro.',
               context: 'dns',
               difficulty: 'intermediate',
               command: 'dig www.example.com CNAME',
             },
             {
               english: 'MX Record',
-              italian: 'Record MX',
+              italian: 'record MX',
               pronunciation: '/em eks/',
               phonetic: 'EM-EKS',
               example:
-                'MX records identify mail servers. = I record MX identificano i server di posta.',
+                "When sending email to user@company.com, the MTA queries MX records to discover which mail servers accept messages for that domain. = Quando invia email a user@company.com, l'MTA interroga i record MX per scoprire quali server di posta accettano messaggi per quel dominio.",
               context: 'dns',
               difficulty: 'intermediate',
               command: 'dig example.com MX',
@@ -2910,66 +2952,66 @@ export default {
             },
             {
               english: 'TXT Record',
-              italian: 'Record TXT',
+              italian: 'record TXT',
               pronunciation: '/tekst/',
               phonetic: 'TEKST',
               example:
-                'TXT records hold arbitrary text data. = I record TXT contengono dati testuali arbitrari.',
+                "Email security relies on SPF and DKIM policies stored as TXT records that receivers check to validate message authenticity. = La sicurezza email si basa su policy SPF e DKIM memorizzate come record TXT che i riceventi controllano per validare l'autenticita dei messaggi.",
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Usati per SPF, DKIM, DMARC, verifiche.',
             },
             {
               english: 'NS Record',
-              italian: 'Record NS',
+              italian: 'record NS',
               pronunciation: '/en es/',
               phonetic: 'EN-ES',
               example:
-                'NS records list authoritative nameservers. = I record NS elencano i nameserver autoritativi.',
+                'During domain delegation, the parent zone publishes NS records that point resolvers to the authoritative nameservers for the child zone. = Durante la delega del dominio, la zona padre pubblica record NS che indirizzano i resolver ai nameserver autoritativi per la zona figlia.',
               context: 'dns',
               difficulty: 'intermediate',
               command: 'dig example.com NS',
             },
             {
               english: 'PTR Record',
-              italian: 'Record PTR',
+              italian: 'record PTR',
               pronunciation: '/piː tiː ɑːr/',
               phonetic: 'PI-TI-AR',
               example:
-                'PTR records enable reverse DNS lookups. = I record PTR abilitano lookup DNS inversi.',
+                'Mail servers often reject messages from senders whose IP address lacks a valid PTR record for reverse DNS verification. = I server di posta spesso rifiutano messaggi da mittenti il cui indirizzo IP manca di un record PTR valido per la verifica DNS inversa.',
               context: 'dns',
               difficulty: 'intermediate',
               command: 'dig -x 8.8.8.8',
             },
             {
               english: 'SOA Record',
-              italian: 'Record SOA',
+              italian: 'record SOA',
               pronunciation: '/es oʊ eɪ/',
               phonetic: 'ES-O-EI',
               example:
-                'The SOA record defines zone parameters. = Il record SOA definisce i parametri di zona.',
+                'To standardize communication, the SOA Record defines zone parameters. = Il record SOA definisce i parametri di zona.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Start Of Authority.',
             },
             {
               english: 'SRV Record',
-              italian: 'Record SRV',
+              italian: 'record SRV',
               pronunciation: '/es ɑːr viː/',
               phonetic: 'ES-AR-VI',
               example:
-                'SRV records map services to hosts and ports. = I record SRV mappano servizi a host e porte.',
+                'Active Directory clients discover domain controllers by querying SRV records that specify the hostname and port for LDAP services. = I client Active Directory scoprono i domain controller interrogando record SRV che specificano hostname e porta per i servizi LDAP.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Usati da SIP, XMPP, LDAP.',
             },
             {
               english: 'CAA Record',
-              italian: 'Record CAA',
+              italian: 'record CAA',
               pronunciation: '/siː eɪ eɪ/',
               phonetic: 'SI-EI-EI',
               example:
-                'CAA records authorize certificate issuers. = I record CAA autorizzano gli emettitori di certificati.',
+                "To prevent unauthorized certificate issuance, the domain owner publishes a CAA record specifying which Certificate Authorities may issue certificates. = Per prevenire l'emissione non autorizzata di certificati, il proprietario del dominio pubblica un record CAA specificando quali Certificate Authority possono emettere certificati.",
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Certificate Authority Authorization.',
@@ -2983,7 +3025,7 @@ export default {
           items: [
             {
               english: 'DNS Cache',
-              italian: 'Cache DNS',
+              italian: 'cache DNS',
               pronunciation: '/ˌdiː en es kæʃ/',
               phonetic: 'DI-EN-ES KASH',
               example:
@@ -2994,7 +3036,7 @@ export default {
             },
             {
               english: 'TTL',
-              italian: 'TTL DNS',
+              italian: 'TTL (tempo di vita)',
               pronunciation: '/ˌtiː tiː ˈel/',
               phonetic: 'TI-TI-EL',
               example:
@@ -3005,7 +3047,7 @@ export default {
             },
             {
               english: 'Zone',
-              italian: 'Zona',
+              italian: 'zona DNS',
               pronunciation: '/zoʊn/',
               phonetic: 'ZOUN',
               example:
@@ -3015,33 +3057,33 @@ export default {
             },
             {
               english: 'Zone File',
-              italian: 'File di zona',
+              italian: 'file di zona',
               pronunciation: '/zoʊn faɪl/',
               phonetic: 'ZOUN FAIL',
               example:
-                'A zone file lists records for a domain. = Un file di zona elenca i record di un dominio.',
+                'For reference, a Zone File lists records for a domain. = Un file di zona elenca i record di un dominio.',
               context: 'dns',
               difficulty: 'intermediate',
               tool: 'BIND, NSD',
             },
             {
               english: 'Zone Transfer',
-              italian: 'Trasferimento di zona',
+              italian: 'trasferimento di zona',
               pronunciation: '/zoʊn ˈtrænsfər/',
               phonetic: 'ZOUN TRANS-fer',
               example:
-                'Zone transfers replicate DNS data to slaves. = I trasferimenti di zona replicano i dati DNS agli slave.',
+                'For redundancy, the secondary DNS server performs a zone transfer every hour to replicate all resource records from the primary master. = Per ridondanza, il server DNS secondario esegue un trasferimento di zona ogni ora per replicare tutti i record di risorsa dal master primario.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'AXFR (full) e IXFR (incremental).',
             },
             {
               english: 'Glue Record',
-              italian: 'glue record / record DNS di colla',
+              italian: 'record glue',
               pronunciation: '/ɡluː ˈrekɔːrd/',
               phonetic: 'GLU RE-kord',
               example:
-                'Glue records solve circular dependencies. = I glue record risolvono dipendenze circolari.',
+                "When a nameserver's hostname lives inside the zone it serves, the parent zone must include a glue record to break the circular dependency. = Quando l'hostname di un nameserver si trova dentro la zona che serve, la zona padre deve includere un glue record per spezzare la dipendenza circolare.",
               context: 'dns',
               difficulty: 'intermediate',
             },
@@ -3050,18 +3092,19 @@ export default {
               italian: 'DNS inverso',
               pronunciation: '/rɪˈvɜːrs/',
               phonetic: 'ri-VERS',
-              example: 'Reverse DNS maps IPs back to names. = Il DNS inverso mappa IP a nomi.',
+              example:
+                'In DNS resolution, Reverse DNS maps IPs back to names. = Il DNS inverso mappa IP a nomi.',
               context: 'dns',
               difficulty: 'intermediate',
               command: 'host 8.8.8.8',
             },
             {
               english: 'Round Robin DNS',
-              italian: 'round robin DNS / più IP a turno per host',
+              italian: 'DNS round robin',
               pronunciation: '/raʊnd ˈrɒbɪn/',
               phonetic: 'RAUND RO-bin',
               example:
-                'Round robin DNS rotates through IP addresses. = Round robin DNS ruota tra gli indirizzi IP.',
+                'In networking, Round Robin DNS rotates through IP addresses. = Round robin DNS ruota tra gli indirizzi IP.',
               context: 'dns',
               difficulty: 'intermediate',
             },
@@ -3071,18 +3114,18 @@ export default {
               pronunciation: '/ˈeniːkæst/',
               phonetic: 'E-ni-kast',
               example:
-                'Anycast DNS routes to the nearest server. = Il DNS anycast instrada al server più vicino.',
+                'In the forwarding pipeline, Anycast DNS routes to the nearest server. = Il DNS anycast instrada al server più vicino.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Usato da Cloudflare 1.1.1.1, Google 8.8.8.8.',
             },
             {
               english: 'Negative Caching',
-              italian: 'Caching negativo',
+              italian: 'cache negativa',
               pronunciation: '/ˈneɡətɪv/',
               phonetic: 'NE-ga-tiv',
               example:
-                'Negative caching stores NXDOMAIN responses. = Il caching negativo memorizza risposte NXDOMAIN.',
+                'For efficiency, Negative Caching stores NXDOMAIN responses. = Il caching negativo memorizza risposte NXDOMAIN.',
               context: 'dns',
               difficulty: 'intermediate',
             },
@@ -3095,38 +3138,39 @@ export default {
           items: [
             {
               english: 'DNSSEC',
-              italian: 'DNSSEC / firma crittografica delle risposte DNS',
+              italian: 'DNSSEC',
               pronunciation: '/ˌdiː en es ˈsek/',
               phonetic: 'DI-EN-ES-SEK',
               example:
-                'DNSSEC adds cryptographic signatures to DNS. = DNSSEC aggiunge firme crittografiche al DNS.',
+                'In networking, DNSSEC adds cryptographic signatures to DNS. = DNSSEC aggiunge firme crittografiche al DNS.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'DNS Security Extensions. Previene cache poisoning.',
             },
             {
               english: 'DoT',
-              italian: 'DoT / DNS over TLS',
+              italian: 'DNS over TLS (DoT)',
               pronunciation: '/ˌdiː oʊ ˈtiː/',
               phonetic: 'DI-O-TI',
               example:
-                'DoT encrypts DNS queries on port 853. = DoT cifra le query DNS sulla porta 853.',
+                'For confidentiality, DoT encrypts DNS queries on port 853. = DoT cifra le query DNS sulla porta 853.',
               context: 'dns',
               difficulty: 'intermediate',
             },
             {
               english: 'DoH',
-              italian: 'DoH / DNS over HTTPS',
+              italian: 'DNS over HTTPS (DoH)',
               pronunciation: '/ˌdiː oʊ ˈeɪtʃ/',
               phonetic: 'DI-O-EICH',
-              example: 'DoH tunnels DNS through HTTPS. = DoH incanala il DNS attraverso HTTPS.',
+              example:
+                'In networking, DoH tunnels DNS through HTTPS. = DoH incanala il DNS attraverso HTTPS.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Usato da Firefox, Chrome.',
             },
             {
               english: 'DNS Cache Poisoning',
-              italian: 'Avvelenamento cache DNS',
+              italian: 'avvelenamento della cache DNS',
               pronunciation: '/ˈpɔɪzənɪŋ/',
               phonetic: 'POI-ze-ning',
               example:
@@ -3137,63 +3181,65 @@ export default {
             },
             {
               english: 'DNS Hijacking',
-              italian: 'DNS hijacking / dirottamento delle risoluzioni',
+              italian: 'dirottamento DNS (DNS hijacking)',
               pronunciation: '/ˈhaɪdʒækɪŋ/',
               phonetic: 'HAI-gia-king',
               example:
-                'DNS hijacking redirects users to malicious sites. = Il DNS hijacking reindirizza utenti a siti malevoli.',
+                'In networking, DNS Hijacking redirects users to malicious sites. = Il DNS hijacking reindirizza utenti a siti malevoli.',
               context: 'dns',
               difficulty: 'intermediate',
             },
             {
               english: 'NXDOMAIN',
-              italian: 'NXDOMAIN / risposta DNS dominio inesistente',
+              italian: 'NXDOMAIN',
               pronunciation: '/ˌen eks doʊˈmeɪn/',
               phonetic: 'EN-EKS do-MEIN',
               example:
-                'NXDOMAIN means the name does not exist. = NXDOMAIN significa che il nome non esiste.',
+                'In networking, NXDOMAIN means the name does not exist. = NXDOMAIN significa che il nome non esiste.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Non-eXistent Domain.',
             },
             {
               english: 'Wildcard Record',
-              italian: 'Record wildcard',
+              italian: 'record wildcard',
               pronunciation: '/ˈwaɪldkɑːrd/',
               phonetic: 'UAILD-kard',
               example:
-                'A wildcard record matches any subdomain. = Un record wildcard corrisponde a qualsiasi sottodominio.',
+                'In networking, a Wildcard Record matches any subdomain. = Un record wildcard corrisponde a qualsiasi sottodominio.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Esempio: *.example.com.',
             },
             {
               english: 'Split-Horizon DNS',
-              italian: 'DNS split-horizon',
+              italian: 'DNS a orizzonte diviso (split-horizon)',
               pronunciation: '/splɪt həˈraɪzn/',
               phonetic: 'SPLIT ho-RAI-zon',
               example:
-                'Split-horizon DNS gives different answers per network. = Il DNS split-horizon dà risposte diverse per rete.',
+                'In networking, Split-Horizon DNS gives different answers per network. = Il DNS split-horizon dà risposte diverse per rete.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Anche detto split-brain DNS.',
             },
             {
               english: 'DNS Tunneling',
-              italian: 'Tunneling DNS',
+              italian: 'tunneling DNS',
               pronunciation: '/ˈtʌnəlɪŋ/',
               phonetic: 'TA-ne-ling',
-              example: 'DNS tunneling can exfiltrate data. = Il DNS tunneling può esfiltrare dati.',
+              example:
+                'When properly configured, DNS Tunneling can exfiltrate data. = Il DNS tunneling può esfiltrare dati.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Tecnica di covert channel usata in attacchi.',
             },
             {
               english: 'EDNS',
-              italian: 'EDNS / Extension Mechanisms for DNS',
+              italian: 'DNS esteso (EDNS)',
               pronunciation: '/ˌiː ˈdiː en es/',
               phonetic: 'I-DI-EN-ES',
-              example: 'EDNS allows larger DNS messages. = EDNS permette messaggi DNS più grandi.',
+              example:
+                'For better performance, EDNS allows larger DNS messages. = EDNS permette messaggi DNS più grandi.',
               context: 'dns',
               difficulty: 'intermediate',
               note: 'Necessario per DNSSEC.',
@@ -3216,70 +3262,72 @@ export default {
           items: [
             {
               english: 'HTTP',
-              italian: 'HTTP / Protocollo trasferimento ipertesto',
+              italian: 'protocollo di trasferimento ipertestuale (HTTP)',
               pronunciation: '/ˌeɪtʃ tiː tiː ˈpiː/',
               phonetic: 'EICH-TI-TI-PI',
-              example: 'HTTP is the foundation of the Web. = HTTP è il fondamento del Web.',
+              example:
+                'By definition, HTTP is the foundation of the Web. = HTTP è il fondamento del Web.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'HyperText Transfer Protocol.',
             },
             {
               english: 'HTTP/1.1',
-              italian: 'HTTP/1.1 / versione classica di HTTP',
+              italian: 'HTTP/1.1',
               pronunciation: '/ˌeɪtʃ tiː tiː piː wʌn pɔɪnt wʌn/',
               phonetic: 'EICH-TI-TI-PI UAN-POINT-UAN',
               example:
-                'HTTP/1.1 introduced persistent connections. = HTTP/1.1 ha introdotto connessioni persistenti.',
+                'In networking, HTTP/1.1 introduced persistent connections. = HTTP/1.1 ha introdotto connessioni persistenti.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'RFC 2616, oggi RFC 7230-7235.',
             },
             {
               english: 'HTTP/2',
-              italian: 'HTTP/2 / HTTP multiplexato binario',
+              italian: 'HTTP/2',
               pronunciation: '/ˌeɪtʃ tiː tiː piː tuː/',
               phonetic: 'EICH-TI-TI-PI TU',
               example:
-                'HTTP/2 multiplexes requests over one TCP connection. = HTTP/2 multiplexa richieste su una connessione TCP.',
+                'In networking, HTTP/2 multiplexes requests over one TCP connection. = HTTP/2 multiplexa richieste su una connessione TCP.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Basato su SPDY di Google.',
             },
             {
               english: 'HTTP/3',
-              italian: 'HTTP/3 / HTTP su QUIC',
+              italian: 'HTTP/3',
               pronunciation: '/ˌeɪtʃ tiː tiː piː θriː/',
               phonetic: 'EICH-TI-TI-PI THRI',
-              example: 'HTTP/3 runs over QUIC instead of TCP. = HTTP/3 gira su QUIC invece di TCP.',
+              example:
+                'In production environments, HTTP/3 runs over QUIC instead of TCP. = HTTP/3 gira su QUIC invece di TCP.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Standardizzato nel 2022.',
             },
             {
               english: 'HTTPS',
-              italian: 'HTTPS / HTTP sicuro',
+              italian: 'HTTP sicuro (HTTPS)',
               pronunciation: '/ˌeɪtʃ tiː tiː piː ˈes/',
               phonetic: 'EICH-TI-TI-PI-ES',
               example:
-                'HTTPS encrypts HTTP traffic with TLS. = HTTPS cifra il traffico HTTP con TLS.',
+                'For confidentiality, HTTPS encrypts HTTP traffic with TLS. = HTTPS cifra il traffico HTTP con TLS.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'Persistent Connection',
-              italian: 'Connessione persistente',
+              italian: 'connessione persistente',
               pronunciation: '/pərˈsɪstənt/',
               phonetic: 'per-SIS-tent',
               example:
-                'Persistent connections reuse TCP for multiple requests. = Le connessioni persistenti riusano TCP per più richieste.',
+                'Modern browsers keep a persistent connection open so that multiple HTTP requests share the same TCP socket, reducing latency significantly. = I browser moderni mantengono una connessione persistente aperta cosi che piu richieste HTTP condividano lo stesso socket TCP, riducendo significativamente la latenza.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Anche detto Keep-Alive.',
             },
             {
               english: 'Pipelining',
-              italian: 'pipelining / richieste multiple senza attendere risposta',
+              italian: 'pipelining',
               pronunciation: '/ˈpaɪpˌlaɪnɪŋ/',
               phonetic: 'PAIP-lai-ning',
               example:
@@ -3290,7 +3338,7 @@ export default {
             },
             {
               english: 'Multiplexing',
-              italian: 'Multiplazione',
+              italian: 'multiplazione',
               pronunciation: '/ˈmʌltɪpleksɪŋ/',
               phonetic: 'MAL-ti-plek-sing',
               example:
@@ -3300,7 +3348,7 @@ export default {
             },
             {
               english: 'Server Push',
-              italian: 'server push / invio non richiesto dal server',
+              italian: 'push del server (server push)',
               pronunciation: '/ˈsɜːrvər pʊʃ/',
               phonetic: 'SER-ver PUSH',
               example:
@@ -3311,7 +3359,7 @@ export default {
             },
             {
               english: 'Head-of-Line Blocking',
-              italian: 'head-of-line blocking / blocco in testa di coda',
+              italian: 'blocco head-of-line',
               pronunciation: '/hed ʌv laɪn/',
               phonetic: 'HED-ov-LAIN',
               example:
@@ -3328,7 +3376,7 @@ export default {
           items: [
             {
               english: 'Request',
-              italian: 'Richiesta',
+              italian: 'richiesta',
               pronunciation: '/rɪˈkwest/',
               phonetic: 'ri-KUEST',
               example:
@@ -3339,7 +3387,7 @@ export default {
             },
             {
               english: 'Response',
-              italian: 'Risposta',
+              italian: 'risposta',
               pronunciation: '/rɪˈspɒns/',
               phonetic: 'ri-SPONS',
               example:
@@ -3349,7 +3397,7 @@ export default {
             },
             {
               english: 'HTTP Header',
-              italian: 'Header HTTP',
+              italian: 'header HTTP',
               pronunciation: '/ˈhedər/',
               phonetic: 'HED-er',
               example:
@@ -3360,7 +3408,7 @@ export default {
             },
             {
               english: 'Request Method',
-              italian: 'Metodo di richiesta',
+              italian: 'metodo di richiesta',
               pronunciation: '/rɪˈkwest ˈmeθəd/',
               phonetic: 'ri-KUEST ME-thod',
               example:
@@ -3370,37 +3418,38 @@ export default {
             },
             {
               english: 'GET',
-              italian: 'GET / metodo HTTP di lettura',
+              italian: 'GET',
               pronunciation: '/ɡet/',
               phonetic: 'GHET',
               example:
-                'GET requests should not modify state. = Le richieste GET non dovrebbero modificare stato.',
+                'In networking, GET requests should not modify state. = Le richieste GET non dovrebbero modificare stato.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'POST',
-              italian: 'POST / metodo HTTP di creazione',
+              italian: 'POST',
               pronunciation: '/poʊst/',
               phonetic: 'POUST',
               example:
-                'POST sends data in the request body. = POST invia dati nel corpo della richiesta.',
+                'During communication, POST sends data in the request body. = POST invia dati nel corpo della richiesta.',
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'curl -X POST -d "x=1" https://api.example.com',
             },
             {
               english: 'Status Code',
-              italian: 'Codice di stato',
+              italian: 'codice di stato',
               pronunciation: '/ˈsteɪtəs koʊd/',
               phonetic: 'STEI-tus KOUD',
-              example: '200 OK indicates success. = 200 OK indica successo.',
+              example:
+                "After the API processes the POST request successfully, the server returns status code 200 OK along with the response payload. = Dopo che l'API elabora la richiesta POST con successo, il server restituisce il codice di stato 200 OK insieme al payload di risposta.",
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: '404 Not Found',
-              italian: '404 Not Found / risorsa inesistente',
+              italian: '404 Non trovato',
               pronunciation: '/fɔːr oʊ fɔːr/',
               phonetic: 'FOR-O-FOR',
               example:
@@ -3419,7 +3468,7 @@ export default {
             },
             {
               english: 'User Agent',
-              italian: 'User-Agent / identificativo del client',
+              italian: 'agente utente (user agent)',
               pronunciation: '/ˈjuːzər ˈeɪdʒənt/',
               phonetic: 'IU-zer EI-gent',
               example:
@@ -3436,38 +3485,39 @@ export default {
           items: [
             {
               english: 'TLS',
-              italian: 'TLS / Transport Layer Security',
+              italian: 'Transport Layer Security (TLS)',
               pronunciation: '/ˌtiː el ˈes/',
               phonetic: 'TI-EL-ES',
               example:
-                'TLS provides encryption and authentication. = TLS fornisce cifratura e autenticazione.',
+                'For network operations, TLS provides encryption and authentication. = TLS fornisce cifratura e autenticazione.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Successore di SSL.',
             },
             {
               english: 'SSL',
-              italian: 'SSL / Secure Sockets Layer',
+              italian: 'Secure Sockets Layer (SSL)',
               pronunciation: '/ˌes es ˈel/',
               phonetic: 'ES-ES-EL',
-              example: 'SSL is the predecessor of TLS. = SSL è il predecessore di TLS.',
+              example:
+                'By definition, SSL is the predecessor of TLS. = SSL è il predecessore di TLS.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Tutte le versioni di SSL sono ora insicure.',
             },
             {
               english: 'TLS Handshake',
-              italian: 'Handshake TLS',
+              italian: 'handshake TLS',
               pronunciation: '/ˌtiː el es ˈhændʃeɪk/',
               phonetic: 'TI-EL-ES HAND-scheik',
               example:
-                "The TLS handshake negotiates encryption. = L'handshake TLS negozia la cifratura.",
+                "In networking, the TLS Handshake negotiates encryption. = L'handshake TLS negozia la cifratura.",
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'Certificate',
-              italian: 'Certificato',
+              italian: 'certificato digitale',
               pronunciation: '/sərˈtɪfɪkət/',
               phonetic: 'ser-TI-fi-ket',
               example:
@@ -3478,62 +3528,65 @@ export default {
             },
             {
               english: 'Certificate Authority',
-              italian: 'Autorità di certificazione',
+              italian: 'autorità di certificazione (CA)',
               pronunciation: '/əˈθɒrɪti/',
               phonetic: 'a-THO-ri-ti',
-              example: 'A CA signs trusted certificates. = Una CA firma certificati fidati.',
+              example:
+                'Before issuing a TLS certificate, the Certificate Authority validates domain ownership through DNS or HTTP challenge verification. = Prima di emettere un certificato TLS, la Certificate Authority valida la proprieta del dominio tramite verifica DNS o HTTP.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: "Esempi: Let's Encrypt, DigiCert.",
             },
             {
               english: 'Cipher Suite',
-              italian: 'Suite crittografica',
+              italian: 'suite crittografica (cipher suite)',
               pronunciation: '/ˈsaɪfər swiːt/',
               phonetic: 'SAI-fer SUIT',
               example:
-                'The cipher suite combines algorithms. = La suite crittografica combina algoritmi.',
+                'In networking, the Cipher Suite combines algorithms. = La suite crittografica combina algoritmi.',
               context: 'protocols',
               difficulty: 'intermediate',
               code: 'TLS_AES_256_GCM_SHA384',
             },
             {
               english: 'SNI',
-              italian: 'SNI / Server Name Indication',
+              italian: 'indicazione nome server (SNI)',
               pronunciation: '/ˌes en ˈaɪ/',
               phonetic: 'ES-EN-AI',
               example:
-                'SNI lets multiple sites share an IP. = SNI permette a più siti di condividere un IP.',
+                'For flexibility, SNI lets multiple sites share an IP. = SNI permette a più siti di condividere un IP.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'TLS 1.3',
-              italian: 'TLS 1.3 / cifratura di trasporto moderna',
+              italian: 'TLS 1.3',
               pronunciation: '/ˌtiː el es wʌn pɔɪnt θriː/',
               phonetic: 'TI-EL-ES UAN-POINT-THRI',
-              example: 'TLS 1.3 is faster and more secure. = TLS 1.3 è più veloce e sicuro.',
+              example:
+                'By definition, TLS 1.3 is faster and more secure. = TLS 1.3 è più veloce e sicuro.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Standard dal 2018, RFC 8446.',
             },
             {
               english: 'Mutual TLS',
-              italian: 'TLS mutuo',
+              italian: 'TLS reciproco (mTLS)',
               pronunciation: '/ˈmjuːtʃuəl/',
               phonetic: 'MIU-ciu-al',
-              example: 'mTLS authenticates both sides. = mTLS autentica entrambi i lati.',
+              example:
+                "In a zero-trust microservices architecture, mutual TLS (mTLS) requires both the client and server to present valid certificates. = In un'architettura microservizi zero-trust, il mutual TLS (mTLS) richiede che sia il client che il server presentino certificati validi.",
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Comune in zero trust e service mesh.',
             },
             {
               english: 'OCSP',
-              italian: 'OCSP / Verifica revoche online',
+              italian: 'protocollo di stato dei certificati online (OCSP)',
               pronunciation: '/ˌoʊ siː es ˈpiː/',
               phonetic: 'O-SI-ES-PI',
               example:
-                'OCSP checks if a certificate is revoked. = OCSP verifica se un certificato è revocato.',
+                'In networking, OCSP checks if a certificate is revoked. = OCSP verifica se un certificato è revocato.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Online Certificate Status Protocol.',
@@ -3547,101 +3600,104 @@ export default {
           items: [
             {
               english: 'Cookie',
-              italian: 'cookie / dati persistenti del browser',
+              italian: 'cookie',
               pronunciation: '/ˈkʊki/',
               phonetic: 'KU-ki',
               example:
-                'Cookies maintain session state. = I cookie mantengono lo stato di sessione.',
+                'After login, the server issues a session cookie so the browser can maintain session state across subsequent HTTP requests. = Dopo il login, il server emette un cookie di sessione cosi che il browser possa mantenere lo stato di sessione nelle richieste HTTP successive.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'Session',
-              italian: 'Sessione',
+              italian: 'sessione',
               pronunciation: '/ˈseʃən/',
               phonetic: 'SES-scion',
               example:
-                "A session tracks the user across requests. = Una sessione traccia l'utente tra richieste.",
+                "For accountability, a Session tracks the user across requests. = Una sessione traccia l'utente tra richieste.",
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'CORS',
-              italian: 'CORS / Cross-Origin Resource Sharing',
+              italian: 'condivisione risorse tra origini (CORS)',
               pronunciation: '/kɔːrz/',
               phonetic: 'KORZ',
               example:
-                'CORS allows controlled cross-origin requests. = CORS permette richieste cross-origin controllate.',
+                'For better performance, CORS allows controlled cross-origin requests. = CORS permette richieste cross-origin controllate.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'Same-Origin Policy',
-              italian: 'Policy stessa origine',
+              italian: 'politica della stessa origine',
               pronunciation: '/seɪm ˈɒrɪdʒɪn/',
               phonetic: 'SEIM O-ri-gin',
               example:
-                'The same-origin policy isolates websites. = La policy stessa origine isola i siti web.',
+                'In networking, the Same-Origin Policy isolates websites. = La policy stessa origine isola i siti web.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'WebSocket',
-              italian: 'WebSocket / canale full-duplex su HTTP',
+              italian: 'WebSocket',
               pronunciation: '/web ˈsɒkɪt/',
               phonetic: 'UEB-SO-ket',
               example:
-                'WebSockets enable bidirectional communication. = I WebSocket permettono comunicazione bidirezionale.',
+                'Real-time chat applications rely on WebSocket connections to push messages from the server to the client without polling. = Le applicazioni di chat in tempo reale si affidano a connessioni WebSocket per inviare messaggi dal server al client senza polling.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Inizia con HTTP upgrade.',
             },
             {
               english: 'REST',
-              italian: 'REST / stile architetturale per API HTTP',
+              italian: 'REST',
               pronunciation: '/rest/',
               phonetic: 'REST',
               example:
-                'REST APIs follow HTTP conventions. = Le API REST seguono le convenzioni HTTP.',
+                'In networking, REST APIs follow HTTP conventions. = Le API REST seguono le convenzioni HTTP.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Representational State Transfer.',
             },
             {
               english: 'JSON',
-              italian: 'JSON (formato dati testuale)',
+              italian: 'JSON',
               pronunciation: '/ˈdʒeɪsən/',
               phonetic: 'GEI-son',
               example:
-                'JSON is the common format for REST APIs. = JSON è il formato comune per le API REST.',
+                'By definition, JSON is the common format for REST APIs. = JSON è il formato comune per le API REST.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'URI',
-              italian: 'URI / Uniform Resource Identifier',
+              italian: 'identificatore di risorsa uniforme (URI)',
               pronunciation: '/ˌjuː ɑːr ˈaɪ/',
               phonetic: 'IU-AR-AI',
-              example: 'A URI identifies a resource. = Un URI identifica una risorsa.',
+              example:
+                'During analysis, a URI identifies a resource. = Un URI identifica una risorsa.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Uniform Resource Identifier.',
             },
             {
               english: 'URL',
-              italian: 'URL / Uniform Resource Locator',
+              italian: 'localizzatore di risorsa uniforme (URL)',
               pronunciation: '/ˌjuː ɑːr ˈel/',
               phonetic: 'IU-AR-EL',
-              example: 'A URL is a URI with a location. = Un URL è un URI con una posizione.',
+              example:
+                'By definition, a URL is a URI with a location. = Un URL è un URI con una posizione.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'Redirect',
-              italian: 'redirect / reindirizzamento HTTP',
+              italian: 'reindirizzamento (redirect)',
               pronunciation: '/rɪˈdaɪrekt/',
               phonetic: 'ri-DAI-rekt',
-              example: 'A 301 redirect is permanent. = Un redirect 301 è permanente.',
+              example:
+                'When migrating from HTTP to HTTPS, administrators configure a 301 redirect so browsers and search engines update their cached URLs permanently. = Durante la migrazione da HTTP a HTTPS, gli amministratori configurano un redirect 301 cosi che browser e motori di ricerca aggiornino permanentemente gli URL in cache.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
@@ -3663,51 +3719,51 @@ export default {
           items: [
             {
               english: 'Wi-Fi',
-              italian: 'Wi-Fi / rete senza fili IEEE 802.11',
+              italian: 'Wi-Fi',
               pronunciation: '/ˈwaɪfaɪ/',
               phonetic: 'UAI-FAI',
               example:
-                'Wi-Fi connects devices wirelessly. = Wi-Fi connette dispositivi senza fili.',
+                'In the network topology, Wi-Fi connects devices wirelessly. = Wi-Fi connette dispositivi senza fili.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Trademark della Wi-Fi Alliance per IEEE 802.11.',
             },
             {
               english: 'SSID',
-              italian: 'SSID / Identificatore di rete',
+              italian: 'identificatore della rete (SSID)',
               pronunciation: '/ˌes es aɪ ˈdiː/',
               phonetic: 'ES-ES-AI-DI',
               example:
-                "The SSID is the name of a wireless network. = L'SSID è il nome di una rete wireless.",
+                "By definition, the SSID is the name of a wireless network. = L'SSID è il nome di una rete wireless.",
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Service Set Identifier. Massimo 32 caratteri.',
             },
             {
               english: 'BSSID',
-              italian: "BSSID / MAC dell'access point",
+              italian: "MAC dell'access point (BSSID)",
               pronunciation: '/ˌbiː es es aɪ ˈdiː/',
               phonetic: 'BI-ES-ES-AI-DI',
               example:
-                "The BSSID is the MAC of the access point. = Il BSSID è il MAC dell'access point.",
+                "By definition, the BSSID is the MAC of the access point. = Il BSSID è il MAC dell'access point.",
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Basic SSID.',
             },
             {
               english: 'Access Point',
-              italian: 'access point / punto di accesso Wi-Fi',
+              italian: 'punto di accesso (access point)',
               pronunciation: '/ˈækses pɔɪnt/',
               phonetic: 'AK-ses POINT',
               example:
-                'Access points provide wireless coverage. = Gli access point forniscono copertura wireless.',
+                'The IT team mounted a new access point in the conference room to eliminate Wi-Fi dead spots. = Il team IT ha installato un nuovo access point nella sala riunioni per eliminare le zone morte del Wi-Fi.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Spesso abbreviato AP.',
             },
             {
               english: 'Channel',
-              italian: 'Canale',
+              italian: 'canale',
               pronunciation: '/ˈtʃænl/',
               phonetic: 'CIA-nel',
               example:
@@ -3718,7 +3774,7 @@ export default {
             },
             {
               english: 'Frequency',
-              italian: 'Frequenza',
+              italian: 'frequenza',
               pronunciation: '/ˈfriːkwənsi/',
               phonetic: 'FRI-kuen-si',
               example:
@@ -3728,11 +3784,11 @@ export default {
             },
             {
               english: 'Signal Strength',
-              italian: 'Potenza del segnale',
+              italian: 'potenza del segnale',
               pronunciation: '/ˈsɪɡnəl streŋkθ/',
               phonetic: 'SIG-nal STRENKTH',
               example:
-                'Signal strength is measured in dBm. = La potenza del segnale è misurata in dBm.',
+                'By definition, Signal Strength is measured in dBm. = La potenza del segnale è misurata in dBm.',
               context: 'wireless',
               difficulty: 'intermediate',
               command: 'iwconfig',
@@ -3740,7 +3796,7 @@ export default {
             },
             {
               english: 'Beacon',
-              italian: 'beacon / annuncio periodico Wi-Fi',
+              italian: 'annuncio periodico (beacon)',
               pronunciation: '/ˈbiːkən/',
               phonetic: 'BI-kon',
               example:
@@ -3751,7 +3807,7 @@ export default {
             },
             {
               english: 'Probe Request',
-              italian: 'Richiesta probe',
+              italian: 'richiesta probe',
               pronunciation: '/proʊb rɪˈkwest/',
               phonetic: 'PROUB ri-KUEST',
               example:
@@ -3761,7 +3817,7 @@ export default {
             },
             {
               english: 'Association',
-              italian: 'Associazione',
+              italian: 'associazione',
               pronunciation: '/əˌsoʊsiˈeɪʃən/',
               phonetic: 'as-so-ci-EI-scion',
               example:
@@ -3778,7 +3834,7 @@ export default {
           items: [
             {
               english: '802.11',
-              italian: '802.11 / standard IEEE Wi-Fi',
+              italian: '802.11',
               pronunciation: '/eɪt oʊ tuː dɒt ɪˈlevən/',
               phonetic: 'EIT-O-TU dot i-LE-ven',
               example:
@@ -3788,93 +3844,97 @@ export default {
             },
             {
               english: '802.11ac',
-              italian: '802.11ac / Wi-Fi 5',
+              italian: '802.11ac (Wi-Fi 5)',
               pronunciation: '/eɪ siː/',
               phonetic: 'EI-SI',
               example:
-                '802.11ac introduced gigabit Wi-Fi. = 802.11ac ha introdotto il Wi-Fi a gigabit.',
+                'In networking, 802.11ac introduced gigabit Wi-Fi. = 802.11ac ha introdotto il Wi-Fi a gigabit.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Solo 5 GHz.',
             },
             {
               english: '802.11ax',
-              italian: '802.11ax / Wi-Fi 6',
+              italian: '802.11ax (Wi-Fi 6)',
               pronunciation: '/eɪ eks/',
               phonetic: 'EI-EKS',
-              example: '802.11ax is also called Wi-Fi 6. = 802.11ax è anche chiamato Wi-Fi 6.',
+              example:
+                'By definition, 802.11ax is also called Wi-Fi 6. = 802.11ax è anche chiamato Wi-Fi 6.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Migliora densità e efficienza con OFDMA.',
             },
             {
               english: 'Wi-Fi 6E',
-              italian: 'Wi-Fi 6E / Wi-Fi 6 con banda 6 GHz',
+              italian: 'Wi-Fi 6E',
               pronunciation: '/ˈwaɪfaɪ sɪks ˈiː/',
               phonetic: 'UAI-FAI SIKS-I',
-              example: 'Wi-Fi 6E adds the 6 GHz band. = Wi-Fi 6E aggiunge la banda a 6 GHz.',
+              example:
+                'In networking, Wi-Fi 6E adds the 6 GHz band. = Wi-Fi 6E aggiunge la banda a 6 GHz.',
               context: 'wireless',
               difficulty: 'intermediate',
             },
             {
               english: 'Wi-Fi 7',
-              italian: 'Wi-Fi 7 / standard Wi-Fi più recente',
+              italian: 'Wi-Fi 7',
               pronunciation: '/ˈwaɪfaɪ ˈsevən/',
               phonetic: 'UAI-FAI SE-ven',
-              example: 'Wi-Fi 7 supports 320 MHz channels. = Wi-Fi 7 supporta canali da 320 MHz.',
+              example:
+                'In networking, Wi-Fi 7 supports 320 MHz channels. = Wi-Fi 7 supporta canali da 320 MHz.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Standard 802.11be.',
             },
             {
               english: 'MIMO',
-              italian: 'MIMO / multiple input multiple output',
+              italian: 'MIMO',
               pronunciation: '/ˈmaɪmoʊ/',
               phonetic: 'MAI-mo',
               example:
-                'MIMO uses multiple antennas to boost throughput. = MIMO usa più antenne per aumentare il throughput.',
+                'Under the hood, MIMO uses multiple antennas to boost throughput. = MIMO usa più antenne per aumentare il throughput.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Multiple-Input Multiple-Output.',
             },
             {
               english: 'MU-MIMO',
-              italian: 'MU-MIMO / MIMO multi-utente',
+              italian: 'MU-MIMO',
               pronunciation: '/em juː ˈmaɪmoʊ/',
               phonetic: 'EM-IU MAI-mo',
               example:
-                'MU-MIMO serves multiple clients simultaneously. = MU-MIMO serve più client simultaneamente.',
+                'In networking, MU-MIMO serves multiple clients simultaneously. = MU-MIMO serve più client simultaneamente.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Multi-User MIMO.',
             },
             {
               english: 'OFDMA',
-              italian: 'OFDMA / accesso multiplo a divisione di frequenza',
+              italian: 'OFDMA',
               pronunciation: '/ˌoʊ ef diː em ˈeɪ/',
               phonetic: 'O-EF-DI-EM-EI',
-              example: 'OFDMA splits channels among users. = OFDMA divide i canali tra utenti.',
+              example:
+                'In networking, OFDMA splits channels among users. = OFDMA divide i canali tra utenti.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Orthogonal Frequency-Division Multiple Access.',
             },
             {
               english: 'Beamforming',
-              italian: 'beamforming / direzionamento del segnale',
+              italian: 'direzionamento del segnale (beamforming)',
               pronunciation: '/ˈbiːmfɔːrmɪŋ/',
               phonetic: 'BIM-for-ming',
               example:
-                'Beamforming directs the Wi-Fi signal to clients. = Il beamforming dirige il segnale Wi-Fi ai client.',
+                'In networking, Beamforming directs the Wi-Fi signal to clients. = Il beamforming dirige il segnale Wi-Fi ai client.',
               context: 'wireless',
               difficulty: 'intermediate',
             },
             {
               english: 'Channel Bonding',
-              italian: 'channel bonding / unione di canali Wi-Fi',
+              italian: 'unione di canali (channel bonding)',
               pronunciation: '/ˈtʃænl ˈbɒndɪŋ/',
               phonetic: 'CIA-nel BON-ding',
               example:
-                'Channel bonding combines channels for higher speed. = Il channel bonding combina canali per maggiore velocità.',
+                'In networking, Channel Bonding combines channels for higher speed. = Il channel bonding combina canali per maggiore velocità.',
               context: 'wireless',
               difficulty: 'intermediate',
             },
@@ -3887,91 +3947,93 @@ export default {
           items: [
             {
               english: 'WEP',
-              italian: 'WEP / Wired Equivalent Privacy',
+              italian: 'WEP',
               pronunciation: '/wep/',
               phonetic: 'UEP',
               example:
-                'WEP is broken and should never be used. = WEP è compromesso e non dovrebbe mai essere usato.',
+                'By definition, WEP is broken and should never be used. = WEP è compromesso e non dovrebbe mai essere usato.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Crackabile in pochi minuti.',
             },
             {
               english: 'WPA',
-              italian: 'WPA / protezione Wi-Fi originale',
+              italian: 'WPA',
               pronunciation: '/ˌdʌbljuː piː ˈeɪ/',
               phonetic: 'DABOL-IU-PI-EI',
-              example: 'WPA replaced the broken WEP. = WPA ha sostituito il vulnerabile WEP.',
+              example:
+                'In networking, WPA replaced the broken WEP. = WPA ha sostituito il vulnerabile WEP.',
               context: 'wireless',
               difficulty: 'intermediate',
             },
             {
               english: 'WPA2',
-              italian: 'WPA2 (protocollo Wi-Fi sicuro)',
+              italian: 'WPA2',
               pronunciation: '/ˌdʌbljuː piː eɪ tuː/',
               phonetic: 'DABOL-IU-PI-EI-TU',
-              example: 'WPA2 uses AES encryption. = WPA2 usa cifratura AES.',
+              example: 'Under the hood, WPA2 uses AES encryption. = WPA2 usa cifratura AES.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Standard dal 2004. Vulnerabile a KRACK.',
             },
             {
               english: 'WPA3',
-              italian: 'WPA3 (protocollo Wi-Fi più recente)',
+              italian: 'WPA3',
               pronunciation: '/ˌdʌbljuː piː eɪ θriː/',
               phonetic: 'DABOL-IU-PI-EI-THRI',
               example:
-                'WPA3 uses SAE for stronger key exchange. = WPA3 usa SAE per uno scambio di chiavi più forte.',
+                'Under the hood, WPA3 uses SAE for stronger key exchange. = WPA3 usa SAE per uno scambio di chiavi più forte.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Resistente ad attacchi offline su password.',
             },
             {
               english: 'Pre-Shared Key',
-              italian: 'Chiave pre-condivisa',
+              italian: 'chiave pre-condivisa (PSK)',
               pronunciation: '/priː ʃeərd kiː/',
               phonetic: 'PRI-SHEERD KII',
-              example: 'PSK is the home Wi-Fi password. = PSK è la password Wi-Fi domestica.',
+              example:
+                'Home routers use a Pre-Shared Key (PSK) that every device must enter to authenticate and join the wireless network. = I router domestici usano una Pre-Shared Key (PSK) che ogni dispositivo deve inserire per autenticarsi e unirsi alla rete wireless.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Anche detto WPA-Personal.',
             },
             {
               english: 'Enterprise Mode',
-              italian: 'Modalità enterprise',
+              italian: 'modalità enterprise',
               pronunciation: '/ˈentərpraɪz/',
               phonetic: 'EN-ter-praiz',
               example:
-                'Enterprise mode authenticates via RADIUS. = La modalità enterprise autentica via RADIUS.',
+                'For security, Enterprise Mode authenticates via RADIUS. = La modalità enterprise autentica via RADIUS.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'WPA-Enterprise. Usa 802.1X.',
             },
             {
               english: 'EAP',
-              italian: 'EAP / Protocollo di autenticazione estensibile',
+              italian: 'protocollo di autenticazione estensibile (EAP)',
               pronunciation: '/iː eɪ piː/',
               phonetic: 'I-EI-PI',
               example:
-                'EAP frames authentication exchanges. = EAP incornicia gli scambi di autenticazione.',
+                'In networking, EAP frames authentication exchanges. = EAP incornicia gli scambi di autenticazione.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Extensible Authentication Protocol.',
             },
             {
               english: 'SAE',
-              italian: 'SAE / Simultaneous Authentication of Equals',
+              italian: 'SAE',
               pronunciation: '/es eɪ ˈiː/',
               phonetic: 'ES-EI-I',
               example:
-                'SAE prevents offline dictionary attacks. = SAE previene attacchi a dizionario offline.',
+                'As a security measure, SAE prevents offline dictionary attacks. = SAE previene attacchi a dizionario offline.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Anche detto Dragonfly.',
             },
             {
               english: 'Captive Portal',
-              italian: 'captive portal / pagina di login Wi-Fi pubblico',
+              italian: 'portale di accesso (captive portal)',
               pronunciation: '/ˈkæptɪv ˈpɔːrtl/',
               phonetic: 'KAP-tiv POR-tol',
               example:
@@ -3981,11 +4043,11 @@ export default {
             },
             {
               english: 'Rogue AP',
-              italian: 'AP malevolo',
+              italian: 'AP malevolo (rogue AP)',
               pronunciation: '/roʊɡ eɪ piː/',
               phonetic: 'ROUG EI-PI',
               example:
-                'A rogue AP can intercept traffic. = Un AP malevolo può intercettare il traffico.',
+                'When properly configured, a Rogue AP can intercept traffic. = Un AP malevolo può intercettare il traffico.',
               context: 'wireless',
               difficulty: 'intermediate',
               tool: 'airodump-ng',
@@ -3999,11 +4061,11 @@ export default {
           items: [
             {
               english: 'Roaming',
-              italian: 'roaming / passaggio tra access point',
+              italian: 'roaming',
               pronunciation: '/ˈroʊmɪŋ/',
               phonetic: 'RO-ming',
               example:
-                'Roaming switches between APs seamlessly. = Il roaming passa tra AP senza interruzioni.',
+                'In networking, Roaming switches between APs seamlessly. = Il roaming passa tra AP senza interruzioni.',
               context: 'wireless',
               difficulty: 'intermediate',
             },
@@ -4013,54 +4075,54 @@ export default {
               pronunciation: '/meʃ ˈwaɪfaɪ/',
               phonetic: 'MESH UAI-FAI',
               example:
-                'Mesh Wi-Fi extends coverage seamlessly. = Il Wi-Fi mesh estende la copertura senza interruzioni.',
+                'In networking, Mesh Wi-Fi extends coverage seamlessly. = Il Wi-Fi mesh estende la copertura senza interruzioni.',
               context: 'wireless',
               difficulty: 'intermediate',
             },
             {
               english: 'Site Survey',
-              italian: 'Site survey / Rilievo sito',
+              italian: 'rilievo del sito (site survey)',
               pronunciation: '/saɪt ˈsɜːrveɪ/',
               phonetic: 'SAIT SER-vei',
               example:
-                'A site survey maps Wi-Fi coverage. = Un site survey mappa la copertura Wi-Fi.',
+                'In DNS resolution, a Site Survey maps Wi-Fi coverage. = Un site survey mappa la copertura Wi-Fi.',
               context: 'wireless',
               difficulty: 'intermediate',
               tool: 'NetSpot, Ekahau',
             },
             {
               english: 'Heat Map',
-              italian: 'Mappa di calore',
+              italian: 'mappa di calore (heat map)',
               pronunciation: '/hiːt mæp/',
               phonetic: 'HIT MAP',
               example:
-                'A heat map visualizes signal strength. = Una mappa di calore visualizza la potenza del segnale.',
+                'In networking, a Heat Map visualizes signal strength. = Una mappa di calore visualizza la potenza del segnale.',
               context: 'wireless',
               difficulty: 'intermediate',
             },
             {
               english: 'Co-Channel Interference',
-              italian: 'Interferenza co-canale',
+              italian: 'interferenza co-canale',
               pronunciation: '/koʊ ˈtʃænl/',
               phonetic: 'KO CIA-nel',
               example:
-                "Co-channel interference degrades performance. = L'interferenza co-canale degrada le prestazioni.",
+                "In networking, Co-Channel Interference degrades performance. = L'interferenza co-canale degrada le prestazioni.",
               context: 'wireless',
               difficulty: 'intermediate',
             },
             {
               english: 'Band Steering',
-              italian: 'band steering / spinge i client su 5 GHz/6 GHz',
+              italian: 'band steering',
               pronunciation: '/bænd ˈstɪərɪŋ/',
               phonetic: 'BAND STIIR-ing',
               example:
-                'Band steering pushes clients to 5 GHz. = Il band steering spinge i client verso i 5 GHz.',
+                'In networking, Band Steering pushes clients to 5 GHz. = Il band steering spinge i client verso i 5 GHz.',
               context: 'wireless',
               difficulty: 'intermediate',
             },
             {
               english: 'Wireless Controller',
-              italian: 'Controller wireless',
+              italian: 'controller wireless',
               pronunciation: '/ˈwaɪərləs/',
               phonetic: 'UAI-er-les',
               example:
@@ -4071,21 +4133,22 @@ export default {
             },
             {
               english: 'CAPWAP',
-              italian: 'CAPWAP / protocollo gestione AP centralizzato',
+              italian: 'CAPWAP',
               pronunciation: '/ˈkæpwæp/',
               phonetic: 'KAP-uap',
               example:
-                'CAPWAP tunnels traffic to the controller. = CAPWAP incanala il traffico al controller.',
+                'In networking, CAPWAP tunnels traffic to the controller. = CAPWAP incanala il traffico al controller.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Control And Provisioning of Wireless Access Points.',
             },
             {
               english: 'Wireless Bridge',
-              italian: 'Bridge wireless',
+              italian: 'bridge wireless',
               pronunciation: '/ˈwaɪərləs brɪdʒ/',
               phonetic: 'UAI-er-les BRICH',
-              example: 'A wireless bridge links two LANs. = Un bridge wireless collega due LAN.',
+              example:
+                'In networking, a Wireless Bridge links two LANs. = Un bridge wireless collega due LAN.',
               context: 'wireless',
               difficulty: 'intermediate',
             },
@@ -4095,7 +4158,7 @@ export default {
               pronunciation: '/ˈhɪdn/',
               phonetic: 'HI-den',
               example:
-                'A hidden SSID does not appear in scans. = Un SSID nascosto non appare nelle scansioni.',
+                'In networking, a Hidden SSID does not appear in scans. = Un SSID nascosto non appare nelle scansioni.',
               context: 'wireless',
               difficulty: 'intermediate',
               note: 'Sicurezza by obscurity: scoperto facilmente.',
@@ -4118,61 +4181,61 @@ export default {
           items: [
             {
               english: 'Firewall',
-              italian: 'firewall / barriera di rete',
+              italian: 'barriera di rete (firewall)',
               pronunciation: '/ˈfaɪərwɔːl/',
               phonetic: 'FAI-er-uol',
               example:
-                'A firewall filters network traffic. = Un firewall filtra il traffico di rete.',
+                'For traffic control, a Firewall filters network traffic. = Un firewall filtra il traffico di rete.',
               context: 'firewalls',
               difficulty: 'intermediate',
               note: 'Lett. "muro tagliafuoco".',
             },
             {
               english: 'Firewall Rule',
-              italian: 'Regola firewall',
+              italian: 'regola firewall',
               pronunciation: '/ˈfaɪərwɔːl ruːl/',
               phonetic: 'FAI-er-uol RUUL',
               example:
-                'Firewall rules permit or deny traffic. = Le regole firewall permettono o negano il traffico.',
+                'The security team writes each firewall rule to explicitly permit or deny traffic based on source, destination, port, and protocol. = Il team di sicurezza scrive ogni regola firewall per permettere o negare esplicitamente il traffico basandosi su sorgente, destinazione, porta e protocollo.',
               context: 'firewalls',
               difficulty: 'intermediate',
               command: 'iptables -L -n',
             },
             {
               english: 'Allow',
-              italian: 'Permetti',
+              italian: 'permetti (allow)',
               pronunciation: '/əˈlaʊ/',
               phonetic: 'a-LAU',
               example:
-                'Allow rules permit matching traffic. = Le regole allow permettono il traffico corrispondente.',
+                'In networking, Allow rules permit matching traffic. = Le regole allow permettono il traffico corrispondente.',
               context: 'firewalls',
               difficulty: 'intermediate',
             },
             {
               english: 'Deny',
-              italian: 'Nega',
+              italian: 'nega (deny)',
               pronunciation: '/dɪˈnaɪ/',
               phonetic: 'di-NAI',
               example:
-                'Deny rules block traffic silently. = Le regole deny bloccano il traffico silenziosamente.',
+                'In networking, Deny rules block traffic silently. = Le regole deny bloccano il traffico silenziosamente.',
               context: 'firewalls',
               difficulty: 'intermediate',
               note: 'In iptables: DROP.',
             },
             {
               english: 'Reject',
-              italian: 'Rifiuta',
+              italian: 'rifiuta (reject)',
               pronunciation: '/rɪˈdʒekt/',
               phonetic: 'ri-GIEKT',
               example:
-                'Reject sends an ICMP unreachable message. = Reject invia un messaggio ICMP unreachable.',
+                'During communication, Reject sends an ICMP unreachable message. = Reject invia un messaggio ICMP unreachable.',
               context: 'firewalls',
               difficulty: 'intermediate',
               note: 'Diverso da DROP: il client viene avvisato.',
             },
             {
               english: 'Default Policy',
-              italian: 'Policy predefinita',
+              italian: 'policy predefinita',
               pronunciation: '/dɪˈfɔːlt ˈpɒləsi/',
               phonetic: 'di-FOLT PO-li-si',
               example:
@@ -4183,7 +4246,7 @@ export default {
             },
             {
               english: 'Implicit Deny',
-              italian: 'Deny implicito',
+              italian: 'deny implicito',
               pronunciation: '/ɪmˈplɪsɪt/',
               phonetic: 'im-PLI-sit',
               example:
@@ -4193,21 +4256,21 @@ export default {
             },
             {
               english: 'Ingress',
-              italian: 'In ingresso',
+              italian: 'in ingresso (ingress)',
               pronunciation: '/ˈɪnɡres/',
               phonetic: 'IN-gres',
               example:
-                'Ingress filtering blocks incoming malicious traffic. = Il filtraggio in ingresso blocca traffico malevolo.',
+                'In networking, Ingress filtering blocks incoming malicious traffic. = Il filtraggio in ingresso blocca traffico malevolo.',
               context: 'firewalls',
               difficulty: 'intermediate',
             },
             {
               english: 'Egress',
-              italian: 'In uscita',
+              italian: 'in uscita (egress)',
               pronunciation: '/ˈiːɡres/',
               phonetic: 'I-gres',
               example:
-                'Egress filtering controls outbound traffic. = Il filtraggio in uscita controlla il traffico outbound.',
+                'In networking, Egress filtering controls outbound traffic. = Il filtraggio in uscita controlla il traffico outbound.',
               context: 'firewalls',
               difficulty: 'intermediate',
             },
@@ -4231,32 +4294,32 @@ export default {
           items: [
             {
               english: 'Packet Filter',
-              italian: 'packet filter / filtro di pacchetti',
+              italian: 'filtro a pacchetto',
               pronunciation: '/ˈpækɪt ˈfɪltər/',
               phonetic: 'PAK-ket FIL-ter',
               example:
-                'Packet filters inspect headers only. = I packet filter ispezionano solo gli header.',
+                'Operating at Layer 3 and 4, a packet filter inspects only IP headers and port numbers without examining the actual payload data. = Operando a Layer 3 e 4, un packet filter ispeziona solo gli header IP e i numeri di porta senza esaminare i dati payload effettivi.',
               context: 'firewalls',
               difficulty: 'intermediate',
             },
             {
               english: 'Stateful Firewall',
-              italian: 'Firewall stateful',
+              italian: 'firewall stateful',
               pronunciation: '/ˈsteɪtfʊl/',
               phonetic: 'STEIT-ful',
               example:
-                'Stateful firewalls track connection state. = I firewall stateful tracciano lo stato della connessione.',
+                'By maintaining a connection table, a stateful firewall automatically allows return traffic for established sessions without extra rules. = Mantenendo una tabella di connessione, un firewall stateful permette automaticamente il traffico di ritorno per sessioni stabilite senza regole aggiuntive.',
               context: 'firewalls',
               difficulty: 'intermediate',
               code: 'iptables -A INPUT -m state --state ESTABLISHED -j ACCEPT',
             },
             {
               english: 'Stateless Firewall',
-              italian: 'Firewall stateless',
+              italian: 'firewall stateless',
               pronunciation: '/ˈsteɪtləs/',
               phonetic: 'STEIT-les',
               example:
-                'Stateless firewalls treat each packet independently. = I firewall stateless trattano ogni pacchetto indipendentemente.',
+                'Without a connection table, a stateless firewall evaluates every single packet against its ruleset with no memory of previous traffic. = Senza una tabella di connessione, un firewall stateless valuta ogni singolo pacchetto contro il suo set di regole senza memoria del traffico precedente.',
               context: 'firewalls',
               difficulty: 'intermediate',
             },
@@ -4266,7 +4329,7 @@ export default {
               pronunciation: '/kəˈnekʃən ˈteɪbl/',
               phonetic: 'ko-NEK-scion TEI-bol',
               example:
-                'The connection table tracks active flows. = La tabella delle connessioni traccia i flussi attivi.',
+                'For accountability, the Connection Table tracks active flows. = La tabella delle connessioni traccia i flussi attivi.',
               context: 'firewalls',
               difficulty: 'intermediate',
               command: 'conntrack -L',
@@ -4277,28 +4340,28 @@ export default {
               pronunciation: '/ˌæplɪˈkeɪʃən/',
               phonetic: 'a-pli-KEI-scion',
               example:
-                'Application firewalls inspect Layer 7 content. = I firewall applicativi ispezionano contenuto Layer 7.',
+                'To block SQL injection attempts, the application firewall inspects HTTP request bodies at Layer 7 before forwarding them to the web server. = Per bloccare tentativi di SQL injection, il firewall applicativo ispeziona i body delle richieste HTTP a Layer 7 prima di inoltrarli al web server.',
               context: 'firewalls',
               difficulty: 'intermediate',
             },
             {
               english: 'WAF',
-              italian: 'WAF / Web Application Firewall',
+              italian: 'WAF',
               pronunciation: '/wæf/',
               phonetic: 'UAF',
               example:
-                'A WAF protects web apps from attacks. = Un WAF protegge le app web dagli attacchi.',
+                'In networking, a WAF protects web apps from attacks. = Un WAF protegge le app web dagli attacchi.',
               context: 'firewalls',
               difficulty: 'intermediate',
               tool: 'ModSecurity, Cloudflare WAF',
             },
             {
               english: 'NGFW',
-              italian: 'NGFW / Firewall di nuova generazione',
+              italian: 'firewall di nuova generazione (NGFW)',
               pronunciation: '/ˌen dʒiː ef ˈdʌbljuː/',
               phonetic: 'EN-GI-EF-DABOL-IU',
               example:
-                'NGFW combines firewall with IPS and DPI. = NGFW combina firewall con IPS e DPI.',
+                'In networking, NGFW combines firewall with IPS and DPI. = NGFW combina firewall con IPS e DPI.',
               context: 'firewalls',
               difficulty: 'intermediate',
               note: 'Next-Generation Firewall.',
@@ -4309,7 +4372,7 @@ export default {
               pronunciation: '/ˈprɒksi/',
               phonetic: 'PROK-si',
               example:
-                'A proxy firewall terminates connections. = Un firewall proxy termina le connessioni.',
+                'In networking, a Proxy Firewall terminates connections. = Un firewall proxy termina le connessioni.',
               context: 'firewalls',
               difficulty: 'intermediate',
             },
@@ -4319,18 +4382,18 @@ export default {
               pronunciation: '/hoʊst beɪst/',
               phonetic: 'HOUST BEIST',
               example:
-                'A host-based firewall runs on the device. = Un firewall basato su host gira sul dispositivo.',
+                'In production environments, Host-Based Firewall runs on the device. = Un firewall basato su host gira sul dispositivo.',
               context: 'firewalls',
               difficulty: 'intermediate',
               tool: 'ufw, firewalld, Windows Defender',
             },
             {
               english: 'Network Firewall',
-              italian: 'Firewall di rete',
+              italian: 'firewall di rete',
               pronunciation: '/ˈnetwɜːrk/',
               phonetic: 'NET-uerk',
               example:
-                'Network firewalls protect entire networks. = I firewall di rete proteggono intere reti.',
+                'Deployed at the perimeter, the network firewall inspects all ingress and egress traffic to protect every device on the internal LAN. = Posizionato al perimetro, il firewall di rete ispeziona tutto il traffico in ingresso e uscita per proteggere ogni dispositivo sulla LAN interna.',
               context: 'firewalls',
               difficulty: 'intermediate',
             },
@@ -4343,10 +4406,11 @@ export default {
           items: [
             {
               english: 'ACL',
-              italian: 'ACL / Lista controllo accessi',
+              italian: 'lista di controllo accessi (ACL)',
               pronunciation: '/ˌeɪ siː ˈel/',
               phonetic: 'EI-SI-EL',
-              example: 'ACLs filter traffic on routers. = Le ACL filtrano il traffico sui router.',
+              example:
+                'The border router applies ACLs on its external interface to filter inbound traffic and block known malicious IP ranges. = Il router di bordo applica ACL sulla sua interfaccia esterna per filtrare il traffico in ingresso e bloccare range IP malevoli noti.',
               context: 'firewalls',
               difficulty: 'intermediate',
               note: 'Access Control List.',
@@ -4357,7 +4421,7 @@ export default {
               pronunciation: '/ˈstændərd/',
               phonetic: 'STAN-dard',
               example:
-                'Standard ACLs filter by source IP only. = Le ACL standard filtrano solo per IP sorgente.',
+                "Because a standard ACL can only examine the source IP address, it should be placed as close to the destination as possible. = Poiche una ACL standard puo esaminare solo l'indirizzo IP sorgente, dovrebbe essere posizionata il piu vicino possibile alla destinazione.",
               context: 'firewalls',
               difficulty: 'intermediate',
               code: 'access-list 10 permit 192.168.1.0 0.0.0.255',
@@ -4368,7 +4432,7 @@ export default {
               pronunciation: '/ɪkˈstendɪd/',
               phonetic: 'iks-TEN-did',
               example:
-                'Extended ACLs filter on multiple criteria. = Le ACL estese filtrano su più criteri.',
+                'Unlike their standard counterparts, extended ACLs can match on source IP, destination IP, protocol type, and port number simultaneously. = A differenza delle loro controparti standard, le ACL estese possono filtrare su IP sorgente, IP destinazione, tipo di protocollo e numero di porta simultaneamente.',
               context: 'firewalls',
               difficulty: 'intermediate',
               code: 'access-list 100 permit tcp any any eq 80',
@@ -4379,7 +4443,7 @@ export default {
               pronunciation: '/neɪmd/',
               phonetic: 'NEIMD',
               example:
-                'Named ACLs are easier to maintain. = Le ACL con nome sono più facili da mantenere.',
+                'Instead of referencing numbered lists, engineers use named ACLs like BLOCK_GUEST_TRAFFIC for self-documenting firewall rules. = Invece di riferirsi a liste numerate, gli ingegneri usano ACL con nome come BLOCK_GUEST_TRAFFIC per regole firewall auto-documentanti.',
               context: 'firewalls',
               difficulty: 'intermediate',
               code: 'ip access-list extended WEB_TRAFFIC',
@@ -4397,7 +4461,7 @@ export default {
             },
             {
               english: 'Rule Order',
-              italian: 'Ordine delle regole',
+              italian: 'ordine delle regole',
               pronunciation: '/ruːl ˈɔːrdər/',
               phonetic: 'RUUL OR-der',
               example:
@@ -4411,7 +4475,7 @@ export default {
               pronunciation: '/ˈɪnbaʊnd/',
               phonetic: 'IN-baund',
               example:
-                "Inbound ACLs filter packets entering the interface. = Le ACL in ingresso filtrano pacchetti che entrano nell'interfaccia.",
+                'Traffic from the Internet hits the inbound ACL before the router even consults the routing table, saving processing time on denied packets. = Il traffico da Internet colpisce la ACL in ingresso prima che il router consulti la tabella di routing, risparmiando tempo di elaborazione sui pacchetti negati.',
               context: 'firewalls',
               difficulty: 'intermediate',
             },
@@ -4421,7 +4485,7 @@ export default {
               pronunciation: '/ˈaʊtbaʊnd/',
               phonetic: 'AUT-baund',
               example:
-                "Outbound ACLs filter packets leaving the interface. = Le ACL in uscita filtrano pacchetti che escono dall'interfaccia.",
+                "Applying an outbound ACL on the WAN interface ensures that only approved traffic leaves the corporate network toward the Internet. = Applicare una ACL in uscita sull'interfaccia WAN assicura che solo traffico approvato lasci la rete aziendale verso Internet.",
               context: 'firewalls',
               difficulty: 'intermediate',
             },
@@ -4431,7 +4495,7 @@ export default {
               pronunciation: '/rɪˈfleksɪv/',
               phonetic: 'ri-FLEK-siv',
               example:
-                'Reflexive ACLs allow return traffic dynamically. = Le ACL riflessive permettono traffico di ritorno dinamicamente.',
+                'When an internal host initiates a connection, a reflexive ACL automatically creates a temporary permit entry for the return traffic. = Quando un host interno avvia una connessione, una ACL riflessiva crea automaticamente una voce di permesso temporanea per il traffico di ritorno.',
               context: 'firewalls',
               difficulty: 'intermediate',
             },
@@ -4441,7 +4505,7 @@ export default {
               pronunciation: '/taɪm beɪst/',
               phonetic: 'TAIM-BEIST',
               example:
-                'Time-based ACLs activate on a schedule. = Le ACL temporali si attivano secondo schedule.',
+                "The administrator configures a time-based ACL that blocks social media access during business hours but allows it after 6 PM. = L'amministratore configura una ACL temporale che blocca l'accesso ai social media durante l'orario lavorativo ma lo permette dopo le 18.",
               context: 'firewalls',
               difficulty: 'intermediate',
             },
@@ -4454,33 +4518,33 @@ export default {
           items: [
             {
               english: 'iptables',
-              italian: 'iptables / firewall Linux classico',
+              italian: 'iptables',
               pronunciation: '/aɪ piː ˈteɪblz/',
               phonetic: 'AI-PI TEI-bols',
               example:
-                'iptables is the classic Linux firewall tool. = iptables è lo storico tool firewall Linux.',
+                'By definition, iptables is the classic Linux firewall tool. = iptables è lo storico tool firewall Linux.',
               context: 'firewalls',
               difficulty: 'intermediate',
               command: 'iptables -A INPUT -p tcp --dport 22 -j ACCEPT',
             },
             {
               english: 'nftables',
-              italian: 'nftables / firewall Linux moderno',
+              italian: 'nftables',
               pronunciation: '/en ef ˈteɪblz/',
               phonetic: 'EN-EF TEI-bols',
               example:
-                'nftables replaces iptables on modern Linux. = nftables sostituisce iptables su Linux moderno.',
+                'In networking, nftables replaces iptables on modern Linux. = nftables sostituisce iptables su Linux moderno.',
               context: 'firewalls',
               difficulty: 'intermediate',
               command: 'nft list ruleset',
             },
             {
               english: 'ufw',
-              italian: 'ufw / Firewall semplice',
+              italian: 'ufw',
               pronunciation: '/juː ef ˈdʌbljuː/',
               phonetic: 'IU-EF-DABOL-IU',
               example:
-                'UFW simplifies firewall management. = UFW semplifica la gestione del firewall.',
+                'In networking, ufw simplifies firewall management. = UFW semplifica la gestione del firewall.',
               context: 'firewalls',
               difficulty: 'intermediate',
               command: 'ufw allow 22/tcp',
@@ -4488,10 +4552,11 @@ export default {
             },
             {
               english: 'firewalld',
-              italian: 'firewalld / gestore firewall RHEL/Fedora',
+              italian: 'firewalld',
               pronunciation: '/ˈfaɪərwɔːl diː/',
               phonetic: 'FAI-er-uol-D',
-              example: 'firewalld uses zones for policy. = firewalld usa zone per le policy.',
+              example:
+                'Under the hood, firewalld uses zones for policy. = firewalld usa zone per le policy.',
               context: 'firewalls',
               difficulty: 'intermediate',
               command: 'firewall-cmd --list-all',
@@ -4519,7 +4584,7 @@ export default {
             },
             {
               english: 'Match',
-              italian: 'match / regola di abbinamento',
+              italian: 'condizione di corrispondenza (match)',
               pronunciation: '/mætʃ/',
               phonetic: 'MACH',
               example:
@@ -4529,7 +4594,7 @@ export default {
             },
             {
               english: 'Target',
-              italian: 'target / azione del firewall',
+              italian: 'azione da eseguire (target)',
               pronunciation: '/ˈtɑːrɡət/',
               phonetic: 'TAR-ghet',
               example:
@@ -4554,7 +4619,7 @@ export default {
               pronunciation: '/reɪt ˈlɪmɪtɪŋ/',
               phonetic: 'REIT LI-mi-ting',
               example:
-                'Rate limiting prevents brute-force attacks. = La limitazione di frequenza previene attacchi brute-force.',
+                'As a security measure, Rate Limiting prevents brute-force attacks. = La limitazione di frequenza previene attacchi brute-force.',
               context: 'firewalls',
               difficulty: 'intermediate',
               code: 'iptables -A INPUT -p tcp --dport 22 -m limit --limit 3/min -j ACCEPT',
@@ -4581,13 +4646,13 @@ export default {
               pronunciation: '/ˌviː piː en ˈtʌnl/',
               phonetic: 'VI-PI-EN TA-nel',
               example:
-                'A VPN tunnel encrypts traffic end to end. = Un tunnel VPN cifra il traffico da estremo a estremo.',
+                'For confidentiality, VPN Tunnel encrypts traffic end to end. = Un tunnel VPN cifra il traffico da estremo a estremo.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
             {
               english: 'Tunneling Protocol',
-              italian: 'Protocollo di tunneling',
+              italian: 'protocollo di tunneling',
               pronunciation: '/ˈtʌnəlɪŋ/',
               phonetic: 'TA-ne-ling',
               example:
@@ -4597,7 +4662,7 @@ export default {
             },
             {
               english: 'Encryption',
-              italian: 'Cifratura',
+              italian: 'cifratura (encryption)',
               pronunciation: '/ɪnˈkrɪpʃən/',
               phonetic: 'in-KRIP-scion',
               example:
@@ -4607,7 +4672,7 @@ export default {
             },
             {
               english: 'Authentication',
-              italian: 'Autenticazione',
+              italian: 'autenticazione',
               pronunciation: '/ɔːˌθentɪˈkeɪʃən/',
               phonetic: 'o-then-ti-KEI-scion',
               example:
@@ -4621,7 +4686,7 @@ export default {
               pronunciation: '/priː ʃeərd/',
               phonetic: 'PRI-SHEERD',
               example:
-                'PSKs are simple but less scalable. = I PSK sono semplici ma meno scalabili.',
+                "A site-to-site VPN using a pre-shared secret works fine for two offices, but certificate-based auth scales better across dozens of branches. = Una VPN site-to-site che usa un pre-shared secret funziona bene per due uffici, ma l'autenticazione basata su certificati scala meglio su decine di sedi.",
               context: 'vpn',
               difficulty: 'intermediate',
             },
@@ -4631,7 +4696,7 @@ export default {
               pronunciation: '/ˈkɒnsənˌtreɪtər/',
               phonetic: 'KON-sen-trei-ter',
               example:
-                'A VPN concentrator handles many remote users. = Un concentratore VPN gestisce molti utenti remoti.',
+                'At its layer, a VPN Concentrator handles many remote users. = Un concentratore VPN gestisce molti utenti remoti.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
@@ -4641,13 +4706,13 @@ export default {
               pronunciation: '/ɪnˌkæpsjʊˈleɪʃən/',
               phonetic: 'in-kap-su-LEI-scion',
               example:
-                'VPNs encapsulate original packets. = Le VPN incapsulano i pacchetti originali.',
+                'As data moves down the stack, each layer adds its own header through encapsulation. = Mentre i dati scendono nello stack, ogni livello aggiunge il proprio header tramite incapsulamento.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
             {
               english: 'Overhead',
-              italian: 'overhead / sovraccarico',
+              italian: 'sovraccarico (overhead)',
               pronunciation: '/ˈoʊvərhed/',
               phonetic: 'O-ver-hed',
               example:
@@ -4658,7 +4723,7 @@ export default {
             },
             {
               english: 'MTU Issue',
-              italian: 'Problema MTU',
+              italian: 'problema MTU',
               pronunciation: '/em tiː juː/',
               phonetic: 'EM-TI-IU',
               example:
@@ -4669,11 +4734,11 @@ export default {
             },
             {
               english: 'Kill Switch',
-              italian: 'kill switch / interruttore di emergenza VPN',
+              italian: 'interruttore di sicurezza (kill switch)',
               pronunciation: '/kɪl swɪtʃ/',
               phonetic: 'KIL SUITCH',
               example:
-                'A kill switch blocks traffic if VPN drops. = Un kill switch blocca il traffico se la VPN cade.',
+                'In networking, a Kill Switch blocks traffic if VPN drops. = Un kill switch blocca il traffico se la VPN cade.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
@@ -4686,51 +4751,52 @@ export default {
           items: [
             {
               english: 'IPsec',
-              italian: 'IPsec / suite di protocolli VPN',
+              italian: 'IPsec',
               pronunciation: '/ˈaɪ piː sek/',
               phonetic: 'AI-PI-SEK',
               example:
-                'IPsec secures IP traffic at Layer 3. = IPsec protegge il traffico IP a Layer 3.',
+                'In networking, IPsec secures IP traffic at Layer 3. = IPsec protegge il traffico IP a Layer 3.',
               context: 'vpn',
               difficulty: 'intermediate',
               note: 'Internet Protocol Security.',
             },
             {
               english: 'IKE',
-              italian: 'IKE / Internet Key Exchange',
+              italian: 'IKE',
               pronunciation: '/ˈaɪk/',
               phonetic: 'AIK',
               example:
-                'IKE negotiates IPsec security associations. = IKE negozia le associazioni di sicurezza IPsec.',
+                'In networking, IKE negotiates IPsec security associations. = IKE negozia le associazioni di sicurezza IPsec.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
             {
               english: 'IKEv2',
-              italian: 'IKEv2 / Internet Key Exchange v2',
+              italian: 'IKEv2',
               pronunciation: '/aɪk viː tuː/',
               phonetic: 'AIK-VI-TU',
-              example: 'IKEv2 is faster and more reliable. = IKEv2 è più veloce e affidabile.',
+              example:
+                'By definition, IKEv2 is faster and more reliable. = IKEv2 è più veloce e affidabile.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
             {
               english: 'ESP',
-              italian: 'ESP / Encapsulating Security Payload',
+              italian: 'ESP',
               pronunciation: '/ˌiː es ˈpiː/',
               phonetic: 'I-ES-PI',
               example:
-                'ESP provides confidentiality and integrity. = ESP fornisce riservatezza e integrità.',
+                'For network operations, ESP provides confidentiality and integrity. = ESP fornisce riservatezza e integrità.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
             {
               english: 'AH',
-              italian: 'AH / Authentication Header',
+              italian: 'AH',
               pronunciation: '/eɪ ˈeɪtʃ/',
               phonetic: 'EI-EICH',
               example:
-                'AH provides integrity but no confidentiality. = AH fornisce integrità ma non riservatezza.',
+                'For network operations, AH provides integrity but no confidentiality. = AH fornisce integrità ma non riservatezza.',
               context: 'vpn',
               difficulty: 'intermediate',
               note: 'Raramente usato: tipicamente si preferisce ESP.',
@@ -4741,7 +4807,7 @@ export default {
               pronunciation: '/ˈtʌnl moʊd/',
               phonetic: 'TA-nel MOUD',
               example:
-                "Tunnel mode encapsulates the entire packet. = La modalità tunnel incapsula l'intero pacchetto.",
+                "In networking, Tunnel Mode encapsulates the entire packet. = La modalità tunnel incapsula l'intero pacchetto.",
               context: 'vpn',
               difficulty: 'intermediate',
               note: 'Usato in site-to-site VPN.',
@@ -4752,13 +4818,13 @@ export default {
               pronunciation: '/ˈtrænspɔːrt/',
               phonetic: 'TRAN-sport',
               example:
-                'Transport mode protects only the payload. = La modalità trasporto protegge solo il payload.',
+                'In networking, Transport Mode protects only the payload. = La modalità trasporto protegge solo il payload.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
             {
               english: 'Security Association',
-              italian: 'Associazione di sicurezza',
+              italian: 'associazione di sicurezza (SA)',
               pronunciation: '/sɪˈkjʊərəti/',
               phonetic: 'si-KIU-re-ti',
               example:
@@ -4781,7 +4847,8 @@ export default {
               italian: 'Fase 2',
               pronunciation: '/feɪz tuː/',
               phonetic: 'FEIZ-TU',
-              example: 'IKE Phase 2 sets up the IPsec SAs. = IKE Fase 2 configura le SA IPsec.',
+              example:
+                "After identity verification in Phase 1, IKE Phase 2 negotiates the IPsec security associations that protect the actual data traffic. = Dopo la verifica dell'identita nella Fase 1, IKE Fase 2 negozia le security association IPsec che proteggono il traffico dati effettivo.",
               context: 'vpn',
               difficulty: 'intermediate',
             },
@@ -4794,11 +4861,11 @@ export default {
           items: [
             {
               english: 'WireGuard',
-              italian: 'WireGuard / VPN moderna minimalista',
+              italian: 'WireGuard',
               pronunciation: '/ˈwaɪərɡɑːrd/',
               phonetic: 'UAI-er-gard',
               example:
-                'WireGuard is fast, modern and lean. = WireGuard è veloce, moderno e leggero.',
+                'By definition, WireGuard is fast, modern and lean. = WireGuard è veloce, moderno e leggero.',
               context: 'vpn',
               difficulty: 'intermediate',
               command: 'wg show',
@@ -4806,22 +4873,22 @@ export default {
             },
             {
               english: 'OpenVPN',
-              italian: 'OpenVPN / VPN open source classica',
+              italian: 'OpenVPN',
               pronunciation: '/ˌoʊpən viː piː ˈen/',
               phonetic: 'OU-pen VI-PI-EN',
               example:
-                'OpenVPN is widely supported and flexible. = OpenVPN è ampiamente supportato e flessibile.',
+                'By definition, OpenVPN is widely supported and flexible. = OpenVPN è ampiamente supportato e flessibile.',
               context: 'vpn',
               difficulty: 'intermediate',
               note: 'Usa OpenSSL. Porta default UDP/1194.',
             },
             {
               english: 'SSL VPN',
-              italian: 'SSL VPN / VPN su TLS',
+              italian: 'VPN SSL',
               pronunciation: '/ˌes es el viː piː ˈen/',
               phonetic: 'ES-ES-EL VI-PI-EN',
               example:
-                'SSL VPNs use TLS, no special client needed. = Le SSL VPN usano TLS, senza client speciale.',
+                'Remote workers access internal applications through an SSL VPN portal directly from their browser without installing dedicated client software. = I lavoratori remoti accedono alle applicazioni interne tramite un portale SSL VPN direttamente dal browser senza installare software client dedicato.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
@@ -4831,7 +4898,7 @@ export default {
               pronunciation: '/saɪt tuː saɪt/',
               phonetic: 'SAIT-tu-SAIT',
               example:
-                'Site-to-site VPNs link two offices. = Le VPN site-to-site collegano due uffici.',
+                'To connect the Milan headquarters with the Rome branch, the IT team establishes a site-to-site VPN between the two office firewalls. = Per connettere la sede di Milano con la filiale di Roma, il team IT stabilisce una VPN site-to-site tra i due firewall degli uffici.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
@@ -4841,33 +4908,33 @@ export default {
               pronunciation: '/rɪˈmoʊt ˈækses/',
               phonetic: 'ri-MOUT AK-ses',
               example:
-                'Remote access VPNs serve individual users. = Le VPN ad accesso remoto servono utenti individuali.',
+                'Employees working from home connect through a remote access VPN to securely reach internal file shares and intranet applications. = I dipendenti che lavorano da casa si connettono tramite una VPN ad accesso remoto per raggiungere in sicurezza condivisioni file e applicazioni intranet interne.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
             {
               english: 'Split Tunneling',
-              italian: 'split tunneling / solo certo traffico va in VPN',
+              italian: 'tunneling selettivo (split tunneling)',
               pronunciation: '/splɪt ˈtʌnəlɪŋ/',
               phonetic: 'SPLIT TA-ne-ling',
               example:
-                'Split tunneling routes only some traffic via VPN. = Lo split tunneling instrada solo parte del traffico via VPN.',
+                'In the forwarding pipeline, Split Tunneling routes only some traffic via VPN. = Lo split tunneling instrada solo parte del traffico via VPN.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
             {
               english: 'Full Tunnel',
-              italian: 'full tunnel / tutto il traffico via VPN',
+              italian: 'tunnel completo (full tunnel)',
               pronunciation: '/fʊl ˈtʌnl/',
               phonetic: 'FUL TA-nel',
               example:
-                'Full tunnel sends all traffic through VPN. = Full tunnel invia tutto il traffico attraverso la VPN.',
+                'During communication, Full Tunnel sends all traffic through VPN. = Full tunnel invia tutto il traffico attraverso la VPN.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
             {
               english: 'Peer Configuration',
-              italian: 'Configurazione peer',
+              italian: 'configurazione peer',
               pronunciation: '/pɪər/',
               phonetic: 'PIIR',
               example:
@@ -4878,7 +4945,7 @@ export default {
             },
             {
               english: 'Public Key',
-              italian: 'Chiave pubblica',
+              italian: 'chiave pubblica',
               pronunciation: '/ˈpʌblɪk kiː/',
               phonetic: 'PA-blik KII',
               example:
@@ -4889,11 +4956,11 @@ export default {
             },
             {
               english: 'AllowedIPs',
-              italian: 'AllowedIPs / IP consentiti su WireGuard',
+              italian: 'IP consentiti (AllowedIPs)',
               pronunciation: '/əˈlaʊd aɪ piːz/',
               phonetic: 'a-LAUD AI-PIZ',
               example:
-                'AllowedIPs defines which traffic uses the tunnel. = AllowedIPs definisce quale traffico usa il tunnel.',
+                'To standardize communication, AllowedIPs defines which traffic uses the tunnel. = AllowedIPs definisce quale traffico usa il tunnel.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
@@ -4909,7 +4976,8 @@ export default {
               italian: 'Rilevamento peer morto',
               pronunciation: '/ded pɪər dɪˈtekʃən/',
               phonetic: 'DED PIIR di-TEK-scion',
-              example: 'DPD detects unreachable VPN peers. = DPD rileva peer VPN irraggiungibili.',
+              example:
+                "When the remote office router goes offline, Dead Peer Detection notices the silence and tears down the stale VPN tunnel automatically. = Quando il router dell'ufficio remoto va offline, il Dead Peer Detection nota il silenzio e abbatte automaticamente il tunnel VPN obsoleto.",
               context: 'vpn',
               difficulty: 'intermediate',
             },
@@ -4925,7 +4993,7 @@ export default {
             },
             {
               english: 'NAT Traversal',
-              italian: 'NAT traversal / attraversamento di NAT',
+              italian: 'attraversamento NAT (NAT traversal)',
               pronunciation: '/næt ˈtrævərsəl/',
               phonetic: 'NAT TRA-ver-sal',
               example:
@@ -4940,13 +5008,13 @@ export default {
               pronunciation: '/ˈaɪk ˈlaɪftaɪm/',
               phonetic: 'AIK LAIF-taim',
               example:
-                'IKE lifetime defines how long the SA lasts. = La durata IKE definisce quanto dura la SA.',
+                'To standardize communication, IKE Lifetime defines how long the SA lasts. = La durata IKE definisce quanto dura la SA.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
             {
               english: 'Perfect Forward Secrecy',
-              italian: 'PFS / segretezza in avanti',
+              italian: 'segretezza futura (PFS)',
               pronunciation: '/ˈpɜːrfɪkt ˈfɔːrwərd ˈsiːkrəsi/',
               phonetic: 'PER-fikt FOR-uard SI-kre-si',
               example:
@@ -4961,48 +5029,50 @@ export default {
               pronunciation: '/dʒiː ɑːr iː ˈtʌnl/',
               phonetic: 'GI-AR-I TA-nel',
               example:
-                'GRE tunnels carry any Layer 3 protocol. = I tunnel GRE trasportano qualsiasi protocollo Layer 3.',
+                'When the network needs to transport multicast routing updates across the Internet, engineers encapsulate them inside a GRE tunnel between the two sites. = Quando la rete deve trasportare aggiornamenti di routing multicast attraverso Internet, gli ingegneri li incapsulano dentro un tunnel GRE tra i due siti.',
               context: 'vpn',
               difficulty: 'intermediate',
               note: 'Generic Routing Encapsulation. Non cifrato di base.',
             },
             {
               english: 'L2TP',
-              italian: 'L2TP / Layer 2 Tunneling Protocol',
+              italian: 'L2TP',
               pronunciation: '/el tuː tiː piː/',
               phonetic: 'EL-TU-TI-PI',
-              example: 'L2TP often combines with IPsec. = L2TP è spesso combinato con IPsec.',
+              example:
+                'In networking, L2TP often combines with IPsec. = L2TP è spesso combinato con IPsec.',
               context: 'vpn',
               difficulty: 'intermediate',
             },
             {
               english: 'PPTP',
-              italian: 'PPTP / Point-to-Point Tunneling',
+              italian: 'PPTP',
               pronunciation: '/piː piː tiː piː/',
               phonetic: 'PI-PI-TI-PI',
-              example: 'PPTP is obsolete and insecure. = PPTP è obsoleto e insicuro.',
+              example:
+                'By definition, PPTP is obsolete and insecure. = PPTP è obsoleto e insicuro.',
               context: 'vpn',
               difficulty: 'intermediate',
               note: 'Da non usare in produzione.',
             },
             {
               english: 'DMVPN',
-              italian: 'DMVPN / VPN multipoint dinamica Cisco',
+              italian: 'DMVPN',
               pronunciation: '/diː em viː piː ˈen/',
               phonetic: 'DI-EM-VI-PI-EN',
               example:
-                'DMVPN scales site-to-site VPNs dynamically. = DMVPN scala dinamicamente VPN site-to-site.',
+                'In large deployments, DMVPN scales site-to-site VPNs dynamically. = DMVPN scala dinamicamente VPN site-to-site.',
               context: 'vpn',
               difficulty: 'intermediate',
               note: 'Dynamic Multipoint VPN. Tecnologia Cisco.',
             },
             {
               english: 'Tailscale',
-              italian: 'Tailscale (mesh VPN basata su WireGuard)',
+              italian: 'Tailscale',
               pronunciation: '/ˈteɪlskeɪl/',
               phonetic: 'TEIL-skeil',
               example:
-                'Tailscale builds zero-config WireGuard mesh. = Tailscale costruisce una mesh WireGuard zero-config.',
+                'In networking, Tailscale builds zero-config WireGuard mesh. = Tailscale costruisce una mesh WireGuard zero-config.',
               context: 'vpn',
               difficulty: 'intermediate',
               tool: 'tailscale',
@@ -5025,22 +5095,22 @@ export default {
           items: [
             {
               english: 'NAT',
-              italian: 'NAT / Traduzione indirizzi di rete',
+              italian: 'traduzione indirizzi di rete (NAT)',
               pronunciation: '/næt/',
               phonetic: 'NAT',
               example:
-                'NAT lets many hosts share one public IP. = NAT permette a molti host di condividere un IP pubblico.',
+                'For flexibility, NAT lets many hosts share one public IP. = NAT permette a molti host di condividere un IP pubblico.',
               context: 'services',
               difficulty: 'intermediate',
               note: 'Network Address Translation.',
             },
             {
               english: 'PAT',
-              italian: 'PAT / Port Address Translation',
+              italian: 'traduzione indirizzi con porte (PAT)',
               pronunciation: '/pæt/',
               phonetic: 'PAT',
               example:
-                'PAT distinguishes flows by source port. = PAT distingue i flussi per porta sorgente.',
+                'In networking, PAT distinguishes flows by source port. = PAT distingue i flussi per porta sorgente.',
               context: 'services',
               difficulty: 'intermediate',
               note: 'Anche detto NAT overload.',
@@ -5051,7 +5121,7 @@ export default {
               pronunciation: '/ˈstætɪk næt/',
               phonetic: 'STA-tik NAT',
               example:
-                'Static NAT maps one private to one public IP. = Il NAT statico mappa un IP privato a uno pubblico.',
+                'In DNS resolution, Static NAT maps one private to one public IP. = Il NAT statico mappa un IP privato a uno pubblico.',
               context: 'services',
               difficulty: 'intermediate',
             },
@@ -5061,60 +5131,60 @@ export default {
               pronunciation: '/daɪˈnæmɪk næt/',
               phonetic: 'dai-NA-mik NAT',
               example:
-                'Dynamic NAT picks IPs from a pool. = Il NAT dinamico sceglie IP da un pool.',
+                'In networking, Dynamic NAT picks IPs from a pool. = Il NAT dinamico sceglie IP da un pool.',
               context: 'services',
               difficulty: 'intermediate',
             },
             {
               english: 'NAT Overload',
-              italian: 'NAT overload / PAT, traduzione con porte',
+              italian: 'NAT overload',
               pronunciation: '/ˌoʊvərˈloʊd/',
               phonetic: 'O-ver-loud',
               example:
-                'NAT overload is the most common form. = Il NAT overload è la forma più comune.',
+                'By definition, NAT Overload is the most common form. = Il NAT overload è la forma più comune.',
               context: 'services',
               difficulty: 'intermediate',
             },
             {
               english: 'Source NAT',
-              italian: 'NAT sorgente',
+              italian: 'NAT sorgente (SNAT)',
               pronunciation: '/sɔːrs næt/',
               phonetic: 'SORS NAT',
               example:
-                'Source NAT rewrites source addresses. = Il NAT sorgente riscrive indirizzi sorgente.',
+                'In networking, Source NAT rewrites source addresses. = Il NAT sorgente riscrive indirizzi sorgente.',
               context: 'services',
               difficulty: 'intermediate',
               code: 'iptables -t nat -A POSTROUTING -j MASQUERADE',
             },
             {
               english: 'Destination NAT',
-              italian: 'NAT destinazione',
+              italian: 'NAT destinazione (DNAT)',
               pronunciation: '/ˌdestɪˈneɪʃən/',
               phonetic: 'des-ti-NEI-scion',
               example:
-                'Destination NAT redirects incoming traffic. = Il NAT destinazione reindirizza il traffico in ingresso.',
+                'In networking, Destination NAT redirects incoming traffic. = Il NAT destinazione reindirizza il traffico in ingresso.',
               context: 'services',
               difficulty: 'intermediate',
               code: 'iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 10.0.0.2',
             },
             {
               english: 'NAT Table',
-              italian: 'Tabella NAT',
+              italian: 'tabella NAT',
               pronunciation: '/næt ˈteɪbl/',
               phonetic: 'NAT TEI-bol',
               example:
-                'The NAT table tracks active translations. = La tabella NAT traccia le traduzioni attive.',
+                'For accountability, the NAT Table tracks active translations. = La tabella NAT traccia le traduzioni attive.',
               context: 'services',
               difficulty: 'intermediate',
               command: 'conntrack -L',
             },
             {
               english: 'CGNAT',
-              italian: 'CGNAT / Carrier-Grade NAT',
+              italian: 'CGNAT',
               pronunciation: '/siː dʒiː næt/',
               phonetic: 'SI-GI-NAT',
               example:
-                'CGNAT is used by ISPs to share IPv4. = CGNAT è usato dagli ISP per condividere IPv4.',
+                'By definition, CGNAT is used by ISPs to share IPv4. = CGNAT è usato dagli ISP per condividere IPv4.',
               context: 'services',
               difficulty: 'intermediate',
               note: 'Range condiviso: 100.64.0.0/10.',
@@ -5125,7 +5195,7 @@ export default {
               pronunciation: '/ˈheərpɪn/',
               phonetic: 'HEER-pin',
               example:
-                "Hairpin NAT lets internal hosts use the public IP. = Il NAT hairpin permette agli host interni di usare l'IP pubblico.",
+                "For flexibility, Hairpin NAT lets internal hosts use the public IP. = Il NAT hairpin permette agli host interni di usare l'IP pubblico.",
               context: 'services',
               difficulty: 'intermediate',
               note: 'Anche detto NAT loopback.',
@@ -5139,17 +5209,17 @@ export default {
           items: [
             {
               english: 'Proxy',
-              italian: 'proxy / intermediario di rete',
+              italian: 'intermediario di rete (proxy)',
               pronunciation: '/ˈprɒksi/',
               phonetic: 'PROK-si',
               example:
-                'A proxy intermediates between client and server. = Un proxy intermedia tra client e server.',
+                'In networking, a Proxy intermediates between client and server. = Un proxy intermedia tra client e server.',
               context: 'services',
               difficulty: 'intermediate',
             },
             {
               english: 'Forward Proxy',
-              italian: 'forward proxy / proxy in uscita',
+              italian: 'proxy in uscita (forward proxy)',
               pronunciation: '/ˈfɔːrwərd ˈprɒksi/',
               phonetic: 'FOR-uard PROK-si',
               example:
@@ -5160,7 +5230,7 @@ export default {
             },
             {
               english: 'Reverse Proxy',
-              italian: 'reverse proxy / proxy in ingresso',
+              italian: 'proxy in ingresso (reverse proxy)',
               pronunciation: '/rɪˈvɜːrs/',
               phonetic: 'ri-VERS',
               example:
@@ -5171,7 +5241,7 @@ export default {
             },
             {
               english: 'Transparent Proxy',
-              italian: 'Proxy trasparente',
+              italian: 'proxy trasparente',
               pronunciation: '/trænsˈpærənt/',
               phonetic: 'tran-SPA-rent',
               example:
@@ -5181,7 +5251,7 @@ export default {
             },
             {
               english: 'SOCKS Proxy',
-              italian: 'Proxy SOCKS',
+              italian: 'proxy SOCKS',
               pronunciation: '/sɒks/',
               phonetic: 'SOKS',
               example:
@@ -5192,11 +5262,11 @@ export default {
             },
             {
               english: 'HTTP Proxy',
-              italian: 'Proxy HTTP',
+              italian: 'proxy HTTP',
               pronunciation: '/eɪtʃ tiː tiː piː/',
               phonetic: 'EICH-TI-TI-PI',
               example:
-                'HTTP proxies handle web traffic. = I proxy HTTP gestiscono il traffico web.',
+                'Corporate networks route all employee browsing through an HTTP proxy that enforces content filtering and caches frequent downloads. = Le reti aziendali instradano tutta la navigazione dei dipendenti attraverso un proxy HTTP che applica filtri sui contenuti e memorizza in cache i download frequenti.',
               context: 'services',
               difficulty: 'intermediate',
               command: 'curl -x http://proxy:3128 https://example.com',
@@ -5224,11 +5294,11 @@ export default {
             },
             {
               english: 'Web Filter',
-              italian: 'web filter / filtro contenuti web',
+              italian: 'filtro web',
               pronunciation: '/web ˈfɪltər/',
               phonetic: 'UEB FIL-ter',
               example:
-                'Web filters block unwanted categories. = I web filter bloccano categorie indesiderate.',
+                "The corporate proxy applies a web filter policy that blocks gambling and malware categories while allowing business-related browsing. = Il proxy aziendale applica una policy web filter che blocca le categorie gioco d'azzardo e malware permettendo la navigazione business.",
               context: 'services',
               difficulty: 'intermediate',
             },
@@ -5256,18 +5326,18 @@ export default {
               pronunciation: '/loʊd ˈbælənsər/',
               phonetic: 'LOUD BA-lan-ser',
               example:
-                'A load balancer distributes traffic across servers. = Un bilanciatore di carico distribuisce il traffico tra server.',
+                'In networking, a Load Balancer distributes traffic across servers. = Un bilanciatore di carico distribuisce il traffico tra server.',
               context: 'services',
               difficulty: 'intermediate',
               tool: 'HAProxy, Nginx, AWS ELB',
             },
             {
               english: 'Round Robin',
-              italian: 'round robin / a turno',
+              italian: 'distribuzione ciclica (round robin)',
               pronunciation: '/raʊnd ˈrɒbɪn/',
               phonetic: 'RAUND RO-bin',
               example:
-                'Round robin sends requests in rotation. = Round robin invia richieste a rotazione.',
+                'During communication, Round Robin sends requests in rotation. = Round robin invia richieste a rotazione.',
               context: 'services',
               difficulty: 'intermediate',
             },
@@ -5277,7 +5347,7 @@ export default {
               pronunciation: '/liːst kəˈnekʃənz/',
               phonetic: 'LIST ko-NEK-scions',
               example:
-                'Least connections favors less busy servers. = Connessioni minime favorisce server meno occupati.',
+                'In networking, Least Connections favors less busy servers. = Connessioni minime favorisce server meno occupati.',
               context: 'services',
               difficulty: 'intermediate',
             },
@@ -5287,17 +5357,17 @@ export default {
               pronunciation: '/ˈweɪtɪd/',
               phonetic: 'UEI-tid',
               example:
-                'Weighted round robin assigns server capacity. = Il round robin pesato assegna capacità ai server.',
+                'In networking, Weighted Round Robin assigns server capacity. = Il round robin pesato assegna capacità ai server.',
               context: 'services',
               difficulty: 'intermediate',
             },
             {
               english: 'Health Check',
-              italian: 'Controllo stato',
+              italian: 'controllo stato (health check)',
               pronunciation: '/helθ tʃek/',
               phonetic: 'HELTH CEK',
               example:
-                'Health checks remove unhealthy backends. = I controlli di stato rimuovono backend non sani.',
+                'Every 10 seconds the load balancer sends a health check to each backend, automatically removing any server that fails to respond within the timeout. = Ogni 10 secondi il bilanciatore invia un health check a ogni backend, rimuovendo automaticamente qualsiasi server che non risponde entro il timeout.',
               context: 'services',
               difficulty: 'intermediate',
             },
@@ -5307,14 +5377,14 @@ export default {
               pronunciation: '/ˈstɪki ˈseʃən/',
               phonetic: 'STI-ki SES-scion',
               example:
-                'Sticky sessions pin a client to one backend. = Le sessioni sticky legano un client a un backend.',
+                'For applications that store data in local memory, the load balancer uses a sticky session cookie to route every request from the same user to the same backend server. = Per applicazioni che memorizzano dati in memoria locale, il bilanciatore usa un cookie di sessione sticky per instradare ogni richiesta dello stesso utente allo stesso server backend.',
               context: 'services',
               difficulty: 'intermediate',
               note: 'Anche dette session affinity.',
             },
             {
               english: 'Layer 4 Load Balancer',
-              italian: 'Bilanciatore Layer 4',
+              italian: 'bilanciatore Layer 4',
               pronunciation: '/ˈleɪər fɔːr/',
               phonetic: 'LEI-er FOR',
               example:
@@ -5324,7 +5394,7 @@ export default {
             },
             {
               english: 'Layer 7 Load Balancer',
-              italian: 'Bilanciatore Layer 7',
+              italian: 'bilanciatore Layer 7',
               pronunciation: '/ˈleɪər ˈsevən/',
               phonetic: 'LEI-er SE-ven',
               example:
@@ -5334,21 +5404,21 @@ export default {
             },
             {
               english: 'Backend',
-              italian: 'backend / sistema retrostante',
+              italian: 'pool di server (backend)',
               pronunciation: '/ˈbækend/',
               phonetic: 'BAK-end',
               example:
-                'Backends are the servers behind the load balancer. = I backend sono i server dietro il bilanciatore.',
+                'The load balancer distributes incoming requests across a pool of backend servers, removing unhealthy instances from rotation automatically. = Il bilanciatore di carico distribuisce le richieste in arrivo tra un pool di server backend, rimuovendo automaticamente le istanze non sane dalla rotazione.',
               context: 'services',
               difficulty: 'intermediate',
             },
             {
               english: 'Frontend',
-              italian: 'frontend / interfaccia utente',
+              italian: 'punto di ingresso (frontend)',
               pronunciation: '/ˈfrʌntend/',
               phonetic: 'FRANT-end',
               example:
-                'Frontends accept incoming connections. = I frontend accettano connessioni in ingresso.',
+                'Client requests first reach the frontend listener, which terminates TLS and forwards the decrypted traffic to backend pools. = Le richieste dei client raggiungono prima il listener frontend, che termina TLS e inoltra il traffico decrittato ai pool backend.',
               context: 'services',
               difficulty: 'intermediate',
             },
@@ -5365,28 +5435,28 @@ export default {
               pronunciation: '/pɔːrt ˈfɔːrwərdɪŋ/',
               phonetic: 'PORT FOR-uar-ding',
               example:
-                "Port forwarding exposes internal services. = L'inoltro porta espone servizi interni.",
+                "In networking, Port Forwarding exposes internal services. = L'inoltro porta espone servizi interni.",
               context: 'services',
               difficulty: 'intermediate',
             },
             {
               english: 'UPnP',
-              italian: 'UPnP / Universal Plug and Play',
+              italian: 'UPnP',
               pronunciation: '/juː piː en piː/',
               phonetic: 'IU-PI-EN-PI',
               example:
-                'UPnP automatically opens router ports. = UPnP apre automaticamente le porte del router.',
+                'In networking, UPnP automatically opens router ports. = UPnP apre automaticamente le porte del router.',
               context: 'services',
               difficulty: 'intermediate',
               note: 'Universal Plug and Play. Spesso disabilitato per sicurezza.',
             },
             {
               english: 'NAT-PMP',
-              italian: 'NAT-PMP / NAT Port Mapping Protocol',
+              italian: 'NAT-PMP',
               pronunciation: '/næt piː em piː/',
               phonetic: 'NAT-PI-EM-PI',
               example:
-                "NAT-PMP is the Apple alternative to UPnP. = NAT-PMP è l'alternativa Apple a UPnP.",
+                "By definition, NAT-PMP is the Apple alternative to UPnP. = NAT-PMP è l'alternativa Apple a UPnP.",
               context: 'services',
               difficulty: 'intermediate',
             },
@@ -5414,54 +5484,54 @@ export default {
             },
             {
               english: 'DMZ',
-              italian: 'DMZ / Zona demilitarizzata',
+              italian: 'zona demilitarizzata (DMZ)',
               pronunciation: '/diː em ˈzed/',
               phonetic: 'DI-EM-ZED',
               example:
-                'DMZ exposes one host to all external traffic. = DMZ espone un host a tutto il traffico esterno.',
+                'In networking, DMZ exposes one host to all external traffic. = DMZ espone un host a tutto il traffico esterno.',
               context: 'services',
               difficulty: 'intermediate',
               note: 'Sui router consumer è una funzione comoda ma rischiosa.',
             },
             {
               english: 'Hole Punching',
-              italian: 'hole punching / apertura di pertugio NAT',
+              italian: 'perforazione NAT (hole punching)',
               pronunciation: '/hoʊl ˈpʌntʃɪŋ/',
               phonetic: 'HOUL PAN-cing',
               example:
-                "Hole punching enables P2P through NAT. = L'hole punching abilita P2P attraverso NAT.",
+                "For network flexibility, Hole Punching enables P2P through NAT. = L'hole punching abilita P2P attraverso NAT.",
               context: 'services',
               difficulty: 'intermediate',
             },
             {
               english: 'STUN',
-              italian: "STUN / scoperta dell'indirizzo pubblico",
+              italian: 'STUN',
               pronunciation: '/stʌn/',
               phonetic: 'STAN',
               example:
-                "STUN discovers a host's public address. = STUN scopre l'indirizzo pubblico di un host.",
+                "In networking, STUN discovers a host's public address. = STUN scopre l'indirizzo pubblico di un host.",
               context: 'services',
               difficulty: 'intermediate',
               note: 'Session Traversal Utilities for NAT.',
             },
             {
               english: 'TURN',
-              italian: 'TURN / relay di traffico per NAT',
+              italian: 'TURN',
               pronunciation: '/tɜːrn/',
               phonetic: 'TERN',
               example:
-                'TURN relays traffic when STUN fails. = TURN rilancia il traffico quando STUN fallisce.',
+                'In networking, TURN relays traffic when STUN fails. = TURN rilancia il traffico quando STUN fallisce.',
               context: 'services',
               difficulty: 'intermediate',
               note: 'Traversal Using Relays around NAT.',
             },
             {
               english: 'ICE',
-              italian: 'ICE / Interactive Connectivity Establishment',
+              italian: 'ICE',
               pronunciation: '/aɪs/',
               phonetic: 'AIS',
               example:
-                'ICE combines STUN and TURN for NAT traversal. = ICE combina STUN e TURN per NAT traversal.',
+                'In networking, ICE combines STUN and TURN for NAT traversal. = ICE combina STUN e TURN per NAT traversal.',
               context: 'services',
               difficulty: 'intermediate',
               note: 'Interactive Connectivity Establishment. Usato da WebRTC.',
@@ -5484,92 +5554,97 @@ export default {
           items: [
             {
               english: 'SMTP',
-              italian: 'SMTP / Protocollo trasferimento posta',
+              italian: 'protocollo invio posta (SMTP)',
               pronunciation: '/ˌes em tiː ˈpiː/',
               phonetic: 'ES-EM-TI-PI',
-              example: 'SMTP sends email between servers. = SMTP invia email tra server.',
+              example:
+                'During communication, SMTP sends email between servers. = SMTP invia email tra server.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Simple Mail Transfer Protocol. Porta 25, 587, 465.',
             },
             {
               english: 'POP3',
-              italian: 'POP3 / protocollo di scarico email',
+              italian: 'POP3',
               pronunciation: '/piː oʊ piː θriː/',
               phonetic: 'PI-O-PI-THRI',
               example:
-                'POP3 downloads and removes email from server. = POP3 scarica e rimuove email dal server.',
+                'In networking, POP3 downloads and removes email from server. = POP3 scarica e rimuove email dal server.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Post Office Protocol. Porta 110, 995 con TLS.',
             },
             {
               english: 'IMAP',
-              italian: 'IMAP / protocollo email lato server',
+              italian: 'IMAP',
               pronunciation: '/ˈaɪmæp/',
               phonetic: 'AI-MAP',
               example:
-                'IMAP keeps email synchronized across devices. = IMAP mantiene le email sincronizzate tra dispositivi.',
+                'In networking, IMAP keeps email synchronized across devices. = IMAP mantiene le email sincronizzate tra dispositivi.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Internet Message Access Protocol. Porta 143, 993 con TLS.',
             },
             {
               english: 'MTA',
-              italian: 'MTA / Mail Transfer Agent',
+              italian: 'agente di trasferimento posta (MTA)',
               pronunciation: '/em tiː ˈeɪ/',
               phonetic: 'EM-TI-EI',
-              example: 'Postfix and Exim are MTAs. = Postfix ed Exim sono MTA.',
+              example:
+                "When you send an email, your Mail Transfer Agent (such as Postfix or Exim) relays it across the Internet to the recipient's mail server. = Quando invii un'email, il tuo Mail Transfer Agent (come Postfix o Exim) la inoltra attraverso Internet al server di posta del destinatario.",
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'MUA',
-              italian: 'MUA / Mail User Agent',
+              italian: 'client di posta (MUA)',
               pronunciation: '/em juː ˈeɪ/',
               phonetic: 'EM-IU-EI',
-              example: 'Thunderbird is a MUA. = Thunderbird è un MUA.',
+              example:
+                'End users compose and read messages in a Mail User Agent like Thunderbird, which connects to the server via IMAP or POP3. = Gli utenti finali compongono e leggono messaggi in un Mail User Agent come Thunderbird, che si connette al server via IMAP o POP3.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'SPF',
-              italian: 'SPF / Sender Policy Framework',
+              italian: 'SPF',
               pronunciation: '/es piː ˈef/',
               phonetic: 'ES-PI-EF',
-              example: 'SPF prevents email spoofing. = SPF previene lo spoofing email.',
+              example:
+                'As a security measure, SPF prevents email spoofing. = SPF previene lo spoofing email.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Pubblicato come record TXT.',
             },
             {
               english: 'DKIM',
-              italian: 'DKIM / firma email del dominio',
+              italian: 'DKIM',
               pronunciation: '/ˈdiːkɪm/',
               phonetic: 'DI-KIM',
               example:
-                'DKIM signs outgoing email cryptographically. = DKIM firma le email in uscita crittograficamente.',
+                'In networking, DKIM signs outgoing email cryptographically. = DKIM firma le email in uscita crittograficamente.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'DomainKeys Identified Mail.',
             },
             {
               english: 'DMARC',
-              italian: 'DMARC / policy anti-spoofing email',
+              italian: 'DMARC',
               pronunciation: '/ˈdiːmɑːrk/',
               phonetic: 'DI-MARK',
-              example: 'DMARC builds on SPF and DKIM. = DMARC si basa su SPF e DKIM.',
+              example:
+                'In networking, DMARC builds on SPF and DKIM. = DMARC si basa su SPF e DKIM.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Domain-based Message Authentication.',
             },
             {
               english: 'STARTTLS',
-              italian: 'STARTTLS / aggiornamento connessione a TLS',
+              italian: 'STARTTLS',
               pronunciation: '/stɑːrt tiː el es/',
               phonetic: 'START-TI-EL-ES',
               example:
-                'STARTTLS upgrades plaintext to TLS. = STARTTLS aggiorna il plaintext a TLS.',
+                'In networking, STARTTLS upgrades plaintext to TLS. = STARTTLS aggiorna il plaintext a TLS.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
@@ -5593,51 +5668,53 @@ export default {
           items: [
             {
               english: 'FTP',
-              italian: 'FTP / File Transfer Protocol',
+              italian: 'protocollo trasferimento file (FTP)',
               pronunciation: '/ˌef tiː ˈpiː/',
               phonetic: 'EF-TI-PI',
               example:
-                'FTP is an old file transfer protocol. = FTP è un vecchio protocollo trasferimento file.',
+                'By definition, FTP is an old file transfer protocol. = FTP è un vecchio protocollo trasferimento file.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'File Transfer Protocol. Insicuro: usa SFTP/FTPS.',
             },
             {
               english: 'FTPS',
-              italian: 'FTPS / FTP sicuro',
+              italian: 'FTPS',
               pronunciation: '/ˌef tiː piː ˈes/',
               phonetic: 'EF-TI-PI-ES',
-              example: 'FTPS adds TLS to FTP. = FTPS aggiunge TLS a FTP.',
+              example: 'In networking, FTPS adds TLS to FTP. = FTPS aggiunge TLS a FTP.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'SFTP',
-              italian: 'SFTP / SSH File Transfer Protocol',
+              italian: 'SFTP',
               pronunciation: '/ˌes ef tiː ˈpiː/',
               phonetic: 'ES-EF-TI-PI',
-              example: 'SFTP runs over SSH on port 22. = SFTP gira su SSH alla porta 22.',
+              example:
+                'In production environments, SFTP runs over SSH on port 22. = SFTP gira su SSH alla porta 22.',
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'sftp user@server',
             },
             {
               english: 'SCP',
-              italian: 'SCP / Secure Copy Protocol',
+              italian: 'SCP',
               pronunciation: '/ˌes siː ˈpiː/',
               phonetic: 'ES-SI-PI',
-              example: 'SCP securely copies files over SSH. = SCP copia in sicurezza file via SSH.',
+              example:
+                'In networking, SCP securely copies files over SSH. = SCP copia in sicurezza file via SSH.',
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'scp file.txt user@server:/tmp/',
             },
             {
               english: 'TFTP',
-              italian: 'TFTP / Trivial FTP',
+              italian: 'TFTP',
               pronunciation: '/tiː ef tiː piː/',
               phonetic: 'TI-EF-TI-PI',
               example:
-                'TFTP is used for booting devices. = TFTP è usato per il boot di dispositivi.',
+                'By definition, TFTP is used for booting devices. = TFTP è usato per il boot di dispositivi.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'UDP/69. Senza autenticazione.',
@@ -5665,32 +5742,32 @@ export default {
             },
             {
               english: 'Rsync',
-              italian: 'rsync / sincronizzazione file efficiente',
+              italian: 'rsync',
               pronunciation: '/ɑːrˈsɪŋk/',
               phonetic: 'AR-SINK',
               example:
-                'Rsync efficiently syncs files via delta transfer. = Rsync sincronizza efficientemente con trasferimento delta.',
+                'In networking, Rsync efficiently syncs files via delta transfer. = Rsync sincronizza efficientemente con trasferimento delta.',
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'rsync -avz src/ user@host:/dst/',
             },
             {
               english: 'WebDAV',
-              italian: 'WebDAV / estensione HTTP per filesystem',
+              italian: 'WebDAV',
               pronunciation: '/web dæv/',
               phonetic: 'UEB-DAV',
               example:
-                'WebDAV extends HTTP for file sharing. = WebDAV estende HTTP per la condivisione file.',
+                'In networking, WebDAV extends HTTP for file sharing. = WebDAV estende HTTP per la condivisione file.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'SMB',
-              italian: 'SMB / Server Message Block',
+              italian: 'SMB',
               pronunciation: '/ˌes em ˈbiː/',
               phonetic: 'ES-EM-BI',
               example:
-                'SMB is the Windows file-sharing protocol. = SMB è il protocollo Windows di condivisione file.',
+                'By definition, SMB is the Windows file-sharing protocol. = SMB è il protocollo Windows di condivisione file.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Linux: usa Samba.',
@@ -5704,10 +5781,11 @@ export default {
           items: [
             {
               english: 'SSH',
-              italian: 'SSH / Secure Shell',
+              italian: 'Secure Shell (SSH)',
               pronunciation: '/ˌes es ˈeɪtʃ/',
               phonetic: 'ES-ES-EICH',
-              example: 'SSH provides encrypted shell access. = SSH fornisce accesso shell cifrato.',
+              example:
+                'For network operations, SSH provides encrypted shell access. = SSH fornisce accesso shell cifrato.',
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'ssh user@server',
@@ -5715,49 +5793,51 @@ export default {
             },
             {
               english: 'Telnet',
-              italian: 'Telnet / accesso remoto in chiaro (legacy)',
+              italian: 'telnet',
               pronunciation: '/ˈtelnet/',
               phonetic: 'TEL-net',
-              example: 'Telnet is unencrypted and obsolete. = Telnet non è cifrato ed è obsoleto.',
+              example:
+                'By definition, Telnet is unencrypted and obsolete. = Telnet non è cifrato ed è obsoleto.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Da non usare per amministrazione: tutto in chiaro.',
             },
             {
               english: 'RDP',
-              italian: 'RDP / Remote Desktop Protocol',
+              italian: 'RDP',
               pronunciation: '/ɑːr diː ˈpiː/',
               phonetic: 'AR-DI-PI',
               example:
-                'RDP provides Windows remote desktop. = RDP fornisce desktop remoto Windows.',
+                'For network operations, RDP provides Windows remote desktop. = RDP fornisce desktop remoto Windows.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Porta 3389.',
             },
             {
               english: 'VNC',
-              italian: 'VNC / Virtual Network Computing',
+              italian: 'VNC',
               pronunciation: '/viː en siː/',
               phonetic: 'VI-EN-SI',
-              example: 'VNC shares graphical desktops. = VNC condivide desktop grafici.',
+              example:
+                'In networking, VNC shares graphical desktops. = VNC condivide desktop grafici.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Porta 5900.',
             },
             {
               english: 'SSH Key',
-              italian: 'Chiave SSH',
+              italian: 'chiave SSH',
               pronunciation: '/es es eɪtʃ kiː/',
               phonetic: 'ES-ES-EICH KII',
               example:
-                'SSH keys replace passwords for login. = Le chiavi SSH sostituiscono le password per il login.',
+                "To harden server access, the security policy requires SSH key authentication and disables password-based login entirely in sshd_config. = Per rafforzare l'accesso ai server, la policy di sicurezza richiede autenticazione con chiave SSH e disabilita completamente il login con password in sshd_config.",
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'ssh-keygen -t ed25519',
             },
             {
               english: 'Public Key Authentication',
-              italian: 'Autenticazione a chiave pubblica',
+              italian: 'autenticazione a chiave pubblica',
               pronunciation: '/ˈpʌblɪk kiː/',
               phonetic: 'PA-blik KII',
               example:
@@ -5767,7 +5847,7 @@ export default {
             },
             {
               english: 'Known Hosts',
-              italian: 'known_hosts / chiavi host SSH conosciute',
+              italian: 'host conosciuti (known hosts)',
               pronunciation: '/noʊn hoʊsts/',
               phonetic: 'NOUN HOUSTS',
               example:
@@ -5789,22 +5869,22 @@ export default {
             },
             {
               english: 'Jump Host',
-              italian: 'Jump host / Bastione',
+              italian: 'host di salto (jump host)',
               pronunciation: '/dʒʌmp hoʊst/',
               phonetic: 'GIAMP HOUST',
               example:
-                "A jump host gates access to internal servers. = Un jump host controlla l'accesso a server interni.",
+                "In networking, a Jump Host gates access to internal servers. = Un jump host controlla l'accesso a server interni.",
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'ssh -J jump@bastion user@internal',
             },
             {
               english: 'Mosh',
-              italian: 'Mosh / shell mobile resistente alla disconnessione',
+              italian: 'Mosh',
               pronunciation: '/mɒʃ/',
               phonetic: 'MOSH',
               example:
-                'Mosh handles unstable connections better than SSH. = Mosh gestisce meglio di SSH connessioni instabili.',
+                'At its layer, Mosh handles unstable connections better than SSH. = Mosh gestisce meglio di SSH connessioni instabili.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Mobile shell.',
@@ -5818,10 +5898,11 @@ export default {
           items: [
             {
               english: 'SNMP',
-              italian: 'SNMP / Simple Network Management Protocol',
+              italian: 'SNMP',
               pronunciation: '/ˌes en em ˈpiː/',
               phonetic: 'ES-EN-EM-PI',
-              example: 'SNMP monitors network devices. = SNMP monitora i dispositivi di rete.',
+              example:
+                'For visibility, SNMP monitors network devices. = SNMP monitora i dispositivi di rete.',
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'snmpwalk -v 2c -c public 192.168.1.1',
@@ -5829,17 +5910,17 @@ export default {
             },
             {
               english: 'MIB',
-              italian: 'MIB / Management Information Base',
+              italian: 'MIB',
               pronunciation: '/em aɪ ˈbiː/',
               phonetic: 'EM-AI-BI',
               example:
-                'MIBs define SNMP-accessible variables. = I MIB definiscono variabili accessibili via SNMP.',
+                "Network management stations consult the MIB tree to discover which interface counters and system metrics a device exposes via SNMP. = Le stazioni di gestione di rete consultano l'albero MIB per scoprire quali contatori di interfaccia e metriche di sistema un dispositivo espone via SNMP.",
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'OID',
-              italian: 'OID / identificatore SNMP',
+              italian: 'OID',
               pronunciation: '/oʊ aɪ ˈdiː/',
               phonetic: 'O-AI-DI',
               example:
@@ -5850,11 +5931,11 @@ export default {
             },
             {
               english: 'NTP',
-              italian: 'NTP / Network Time Protocol',
+              italian: 'NTP',
               pronunciation: '/ˌen tiː ˈpiː/',
               phonetic: 'EN-TI-PI',
               example:
-                'NTP synchronizes clocks over the network. = NTP sincronizza gli orologi sulla rete.',
+                'In networking, NTP synchronizes clocks over the network. = NTP sincronizza gli orologi sulla rete.',
               context: 'protocols',
               difficulty: 'intermediate',
               command: 'timedatectl status',
@@ -5862,7 +5943,7 @@ export default {
             },
             {
               english: 'Stratum',
-              italian: 'stratum / livello gerarchico NTP',
+              italian: 'livello NTP (stratum)',
               pronunciation: '/ˈstrætəm/',
               phonetic: 'STRA-tum',
               example:
@@ -5873,10 +5954,11 @@ export default {
             },
             {
               english: 'LDAP',
-              italian: 'LDAP / Lightweight Directory Access Protocol',
+              italian: 'LDAP',
               pronunciation: '/ˈeldæp/',
               phonetic: 'EL-DAP',
-              example: 'LDAP queries directory services. = LDAP interroga servizi di directory.',
+              example:
+                'In networking, LDAP queries directory services. = LDAP interroga servizi di directory.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Porta 389, 636 con TLS.',
@@ -5887,36 +5969,39 @@ export default {
               pronunciation: '/ˈæktɪv dəˈrektri/',
               phonetic: 'AK-tiv di-REK-tri',
               example:
-                'Active Directory uses LDAP and Kerberos. = Active Directory usa LDAP e Kerberos.',
+                'Under the hood, Active Directory uses LDAP and Kerberos. = Active Directory usa LDAP e Kerberos.',
               context: 'protocols',
               difficulty: 'intermediate',
             },
             {
               english: 'Syslog',
-              italian: 'syslog / log di sistema',
+              italian: 'syslog',
               pronunciation: '/ˈsɪslɒɡ/',
               phonetic: 'SIS-log',
-              example: 'Syslog standardizes log messages. = Syslog standardizza i messaggi di log.',
+              example:
+                'In networking, Syslog standardizes log messages. = Syslog standardizza i messaggi di log.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Porta UDP 514.',
             },
             {
               english: 'RADIUS',
-              italian: 'RADIUS / AAA su rete',
+              italian: 'RADIUS',
               pronunciation: '/ˈreɪdiəs/',
               phonetic: 'REI-dius',
-              example: 'RADIUS authenticates network users. = RADIUS autentica utenti di rete.',
+              example:
+                'For security, RADIUS authenticates network users. = RADIUS autentica utenti di rete.',
               context: 'protocols',
               difficulty: 'intermediate',
               note: 'Remote Authentication Dial-In User Service.',
             },
             {
               english: 'TACACS+',
-              italian: 'TACACS+ / AAA Cisco',
+              italian: 'TACACS+',
               pronunciation: '/ˈtækæks plʌs/',
               phonetic: 'TA-kaks PLAS',
-              example: "TACACS+ is Cisco's AAA protocol. = TACACS+ è il protocollo AAA di Cisco.",
+              example:
+                "By definition, TACACS+ is Cisco's AAA protocol. = TACACS+ è il protocollo AAA di Cisco.",
               context: 'protocols',
               difficulty: 'intermediate',
               note: "Cifra l'intero pacchetto, a differenza di RADIUS.",
@@ -5939,10 +6024,11 @@ export default {
           items: [
             {
               english: 'ping',
-              italian: 'ping / verifica raggiungibilità',
+              italian: 'ping',
               pronunciation: '/pɪŋ/',
               phonetic: 'PING',
-              example: 'ping tests basic reachability. = ping testa la raggiungibilità di base.',
+              example:
+                'In networking, ping tests basic reachability. = ping testa la raggiungibilità di base.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'ping -c 4 8.8.8.8',
@@ -5950,11 +6036,11 @@ export default {
             },
             {
               english: 'traceroute',
-              italian: 'traceroute / traccia il percorso dei pacchetti',
+              italian: 'traceroute',
               pronunciation: '/ˈtreɪsruːt/',
               phonetic: 'TREIS-rut',
               example:
-                'traceroute shows the path packets take. = traceroute mostra il percorso dei pacchetti.',
+                'In networking, traceroute shows the path packets take. = traceroute mostra il percorso dei pacchetti.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'traceroute google.com',
@@ -5962,10 +6048,11 @@ export default {
             },
             {
               english: 'mtr',
-              italian: 'mtr / traceroute + ping continuo',
+              italian: 'mtr',
               pronunciation: '/em tiː ɑːr/',
               phonetic: 'EM-TI-AR',
-              example: 'mtr combines ping and traceroute. = mtr combina ping e traceroute.',
+              example:
+                'In networking, mtr combines ping and traceroute. = mtr combina ping e traceroute.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'mtr google.com',
@@ -5973,30 +6060,33 @@ export default {
             },
             {
               english: 'hostname',
-              italian: "hostname / nome dell'host",
+              italian: 'hostname',
               pronunciation: '/ˈhoʊstneɪm/',
               phonetic: 'HOUST-neim',
-              example: 'hostname shows the system name. = hostname mostra il nome del sistema.',
+              example:
+                'In networking, hostname shows the system name. = hostname mostra il nome del sistema.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'hostname -f',
             },
             {
               english: 'nslookup',
-              italian: 'nslookup / query DNS interattiva',
+              italian: 'nslookup',
               pronunciation: '/en es ˈlʊkʌp/',
               phonetic: 'EN-ES LUK-ap',
-              example: 'nslookup queries DNS records. = nslookup interroga record DNS.',
+              example:
+                'In networking, nslookup queries DNS records. = nslookup interroga record DNS.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'nslookup example.com',
             },
             {
               english: 'dig',
-              italian: 'dig / query DNS avanzata',
+              italian: 'dig',
               pronunciation: '/dɪɡ/',
               phonetic: 'DIG',
-              example: 'dig is more powerful than nslookup. = dig è più potente di nslookup.',
+              example:
+                'By definition, dig is more powerful than nslookup. = dig è più potente di nslookup.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'dig +trace example.com',
@@ -6004,42 +6094,43 @@ export default {
             },
             {
               english: 'host',
-              italian: 'host / lookup DNS semplice',
+              italian: 'host',
               pronunciation: '/hoʊst/',
               phonetic: 'HOUST',
-              example: 'host is a simple DNS lookup tool. = host è un semplice tool di lookup DNS.',
+              example:
+                'By definition, host is a simple DNS lookup tool. = host è un semplice tool di lookup DNS.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'host example.com',
             },
             {
               english: 'whois',
-              italian: 'whois / informazioni di registrazione di dominio',
+              italian: 'whois',
               pronunciation: '/huː ɪz/',
               phonetic: 'HU-IZ',
               example:
-                'whois queries domain registration data. = whois interroga dati di registrazione di dominio.',
+                'In networking, whois queries domain registration data. = whois interroga dati di registrazione di dominio.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'whois example.com',
             },
             {
               english: 'arp',
-              italian: 'arp / tabella IP→MAC',
+              italian: 'arp',
               pronunciation: '/ɑːrp/',
               phonetic: 'ARP',
-              example: 'arp shows the ARP cache. = arp mostra la cache ARP.',
+              example: 'In networking, arp shows the ARP cache. = arp mostra la cache ARP.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'arp -n',
             },
             {
               english: 'ifconfig',
-              italian: 'ifconfig / configura interfaccia (legacy)',
+              italian: 'ifconfig',
               pronunciation: '/aɪ ef ˈkɒnfɪɡ/',
               phonetic: 'AI-EF KON-fig',
               example:
-                'ifconfig shows interface configuration. = ifconfig mostra la configurazione delle interfacce.',
+                'In networking, ifconfig shows interface configuration. = ifconfig mostra la configurazione delle interfacce.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'ifconfig -a',
@@ -6054,11 +6145,11 @@ export default {
           items: [
             {
               english: 'ip',
-              italian: 'ip / utility moderna di rete Linux',
+              italian: 'ip',
               pronunciation: '/aɪ piː/',
               phonetic: 'AI-PI',
               example:
-                'The ip command replaces ifconfig and route. = Il comando ip sostituisce ifconfig e route.',
+                'In networking, the ip command replaces ifconfig and route. = Il comando ip sostituisce ifconfig e route.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'ip addr show',
@@ -6066,11 +6157,11 @@ export default {
             },
             {
               english: 'ss',
-              italian: 'ss / mostra socket aperti',
+              italian: 'ss',
               pronunciation: '/es es/',
               phonetic: 'ES-ES',
               example:
-                'ss replaces netstat with better performance. = ss sostituisce netstat con prestazioni migliori.',
+                'In networking, ss replaces netstat with better performance. = ss sostituisce netstat con prestazioni migliori.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'ss -tulnp',
@@ -6078,11 +6169,11 @@ export default {
             },
             {
               english: 'netstat',
-              italian: 'netstat / statistiche di rete (legacy)',
+              italian: 'netstat',
               pronunciation: '/ˈnetstæt/',
               phonetic: 'NET-stat',
               example:
-                'netstat shows network connections. = netstat mostra le connessioni di rete.',
+                'In networking, netstat shows network connections. = netstat mostra le connessioni di rete.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'netstat -tulnp',
@@ -6090,74 +6181,77 @@ export default {
             },
             {
               english: 'nmcli',
-              italian: 'nmcli / CLI di NetworkManager',
+              italian: 'nmcli',
               pronunciation: '/en em siː el aɪ/',
               phonetic: 'EN-EM-SI-EL-AI',
-              example: 'nmcli controls NetworkManager. = nmcli controlla NetworkManager.',
+              example:
+                'In networking, nmcli controls NetworkManager. = nmcli controlla NetworkManager.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'nmcli connection show',
             },
             {
               english: 'NetworkManager',
-              italian: 'NetworkManager / gestore di rete Linux desktop',
+              italian: 'NetworkManager',
               pronunciation: '/ˈnetwɜːrk ˈmænɪdʒər/',
               phonetic: 'NET-uerk MA-ni-ger',
               example:
-                'NetworkManager handles desktop networking. = NetworkManager gestisce la rete desktop.',
+                'At its layer, NetworkManager handles desktop networking. = NetworkManager gestisce la rete desktop.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'NetworkManager',
             },
             {
               english: 'systemd-networkd',
-              italian: 'systemd-networkd / gestore rete di systemd',
+              italian: 'systemd-networkd',
               pronunciation: '/ˈsɪstəmdiː ˈnetwɜːrkdiː/',
               phonetic: 'SI-stem-di NET-uerk-di',
               example:
-                'systemd-networkd configures networking on servers. = systemd-networkd configura la rete sui server.',
+                'In networking, systemd-networkd configures networking on servers. = systemd-networkd configura la rete sui server.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'systemd-networkd',
             },
             {
               english: 'iperf3',
-              italian: 'iperf3 / misuratore di banda',
+              italian: 'iperf3',
               pronunciation: '/aɪ pɜːrf θriː/',
               phonetic: 'AI-PERF-THRI',
-              example: 'iperf3 measures network throughput. = iperf3 misura il throughput di rete.',
+              example:
+                'In networking, iperf3 measures network throughput. = iperf3 misura il throughput di rete.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'iperf3 -c server.example.com',
             },
             {
               english: 'ethtool',
-              italian: 'ethtool / configurazione scheda Ethernet',
+              italian: 'ethtool',
               pronunciation: '/ˈiːθtuːl/',
               phonetic: 'ITH-tul',
               example:
-                'ethtool inspects NIC settings. = ethtool ispeziona le impostazioni della NIC.',
+                'In networking, ethtool inspects NIC settings. = ethtool ispeziona le impostazioni della NIC.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'ethtool eth0',
             },
             {
               english: 'iw',
-              italian: 'iw / configurazione Wi-Fi moderna',
+              italian: 'iw',
               pronunciation: '/aɪ ˈdʌbljuː/',
               phonetic: 'AI-DABOL-IU',
               example:
-                'iw configures wireless devices on Linux. = iw configura dispositivi wireless su Linux.',
+                'In networking, iw configures wireless devices on Linux. = iw configura dispositivi wireless su Linux.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'iw dev wlan0 link',
             },
             {
               english: 'route',
-              italian: 'route / mostra/modifica routing (legacy)',
+              italian: 'route',
               pronunciation: '/ruːt/',
               phonetic: 'RUUT',
-              example: 'route shows the routing table. = route mostra la tabella di routing.',
+              example:
+                'In networking, route shows the routing table. = route mostra la tabella di routing.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'route -n',
@@ -6172,11 +6266,11 @@ export default {
           items: [
             {
               english: 'tcpdump',
-              italian: 'tcpdump / sniffer di rete CLI',
+              italian: 'tcpdump',
               pronunciation: '/tiː siː piː dʌmp/',
               phonetic: 'TI-SI-PI DAMP',
               example:
-                'tcpdump captures and displays packets. = tcpdump cattura e visualizza pacchetti.',
+                'In networking, tcpdump captures and displays packets. = tcpdump cattura e visualizza pacchetti.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'tcpdump -i eth0 -n port 80',
@@ -6187,56 +6281,57 @@ export default {
               pronunciation: '/ˈwaɪərʃɑːrk/',
               phonetic: 'UAI-er-shark',
               example:
-                'Wireshark provides graphical packet analysis. = Wireshark fornisce analisi grafica dei pacchetti.',
+                'For network operations, Wireshark provides graphical packet analysis. = Wireshark fornisce analisi grafica dei pacchetti.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Wireshark',
             },
             {
               english: 'tshark',
-              italian: 'tshark / Wireshark da CLI',
+              italian: 'tshark',
               pronunciation: '/tiː ʃɑːrk/',
               phonetic: 'TI-SHARK',
               example:
-                'tshark is the CLI version of Wireshark. = tshark è la versione CLI di Wireshark.',
+                'By definition, tshark is the CLI version of Wireshark. = tshark è la versione CLI di Wireshark.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'tshark -i eth0',
             },
             {
               english: 'pcap',
-              italian: 'pcap / formato di cattura pacchetti',
+              italian: 'pcap',
               pronunciation: '/piː kæp/',
               phonetic: 'PI-KAP',
               example:
-                'pcap is the standard packet capture format. = pcap è il formato standard di cattura pacchetti.',
+                'By definition, pcap is the standard packet capture format. = pcap è il formato standard di cattura pacchetti.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'tcpdump -w capture.pcap',
             },
             {
               english: 'BPF',
-              italian: 'BPF / Berkeley Packet Filter',
+              italian: 'BPF',
               pronunciation: '/biː piː ef/',
               phonetic: 'BI-PI-EF',
-              example: 'BPF filters packets in the kernel. = BPF filtra i pacchetti nel kernel.',
+              example:
+                'For traffic control, BPF filters packets in the kernel. = BPF filtra i pacchetti nel kernel.',
               context: 'tools',
               difficulty: 'advanced',
               code: 'host 1.2.3.4 and port 443',
             },
             {
               english: 'Capture Filter',
-              italian: 'Filtro di cattura',
+              italian: 'filtro di cattura',
               pronunciation: '/ˈkæptʃər ˈfɪltər/',
               phonetic: 'KAP-cer FIL-ter',
               example:
-                'Capture filters limit what is recorded. = I filtri di cattura limitano cosa viene registrato.',
+                "Before starting a packet trace on a busy server, the analyst sets a capture filter for port 443 to avoid filling the disk with irrelevant traffic. = Prima di avviare un packet trace su un server trafficato, l'analista imposta un filtro di cattura per la porta 443 per evitare di riempire il disco con traffico irrilevante.",
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Display Filter',
-              italian: 'Filtro di visualizzazione',
+              italian: 'filtro di visualizzazione',
               pronunciation: '/dɪˈspleɪ ˈfɪltər/',
               phonetic: 'di-SPLEI FIL-ter',
               example:
@@ -6251,7 +6346,7 @@ export default {
               pronunciation: '/prəˈmɪskjuəs/',
               phonetic: 'pro-MIS-kius',
               example:
-                'Promiscuous mode captures all packets on the wire. = La modalità promiscua cattura tutti i pacchetti sul filo.',
+                'In networking, Promiscuous Mode captures all packets on the wire. = La modalità promiscua cattura tutti i pacchetti sul filo.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6261,14 +6356,14 @@ export default {
               pronunciation: '/spæn pɔːrt/',
               phonetic: 'SPAN PORT',
               example:
-                'SPAN ports mirror traffic to a sniffer. = Le porte SPAN mirrorano il traffico a un sniffer.',
+                "The switch administrator configures a SPAN port to mirror all traffic from the server VLAN to the IDS appliance for deep packet inspection. = L'amministratore dello switch configura una porta SPAN per mirrorare tutto il traffico dalla VLAN server all'appliance IDS per deep packet inspection.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'Switched Port Analyzer.',
             },
             {
               english: 'Tap',
-              italian: 'TAP / interfaccia di intercettazione',
+              italian: 'tap di rete',
               pronunciation: '/tæp/',
               phonetic: 'TAP',
               example:
@@ -6285,10 +6380,11 @@ export default {
           items: [
             {
               english: 'nmap',
-              italian: 'nmap / scanner di rete',
+              italian: 'nmap',
               pronunciation: '/en mæp/',
               phonetic: 'EN-MAP',
-              example: 'nmap discovers hosts and open ports. = nmap scopre host e porte aperte.',
+              example:
+                'In networking, nmap discovers hosts and open ports. = nmap scopre host e porte aperte.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'nmap -sV -p 1-1000 192.168.1.0/24',
@@ -6300,7 +6396,7 @@ export default {
               pronunciation: '/pɔːrt skæn/',
               phonetic: 'PORT SKAN',
               example:
-                'Port scans find listening services. = Le scansioni porte trovano servizi in ascolto.',
+                'During the reconnaissance phase, the penetration tester runs a port scan against the target range to map every listening service and its version. = Durante la fase di ricognizione, il penetration tester esegue una scansione porte contro il range target per mappare ogni servizio in ascolto e la sua versione.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6310,7 +6406,7 @@ export default {
               pronunciation: '/sɪn skæn/',
               phonetic: 'SIN SKAN',
               example:
-                'SYN scans are stealthy and fast. = Le scansioni SYN sono stealthy e veloci.',
+                "Penetration testers prefer SYN scans because they never complete the TCP handshake, making them harder for basic firewalls to log. = I penetration tester preferiscono le scansioni SYN perche non completano mai l'handshake TCP, rendendole piu difficili da loggare per i firewall di base.",
               context: 'tools',
               difficulty: 'advanced',
               command: 'nmap -sS target',
@@ -6318,21 +6414,22 @@ export default {
             },
             {
               english: 'masscan',
-              italian: 'masscan / scanner di rete ad alta velocità',
+              italian: 'masscan',
               pronunciation: '/mæs skæn/',
               phonetic: 'MAS-SKAN',
               example:
-                'masscan can scan the entire Internet quickly. = masscan può scansionare tutto Internet rapidamente.',
+                'When properly configured, masscan can scan the entire Internet quickly. = masscan può scansionare tutto Internet rapidamente.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'masscan',
             },
             {
               english: 'fping',
-              italian: 'fping / ping di multipli host',
+              italian: 'fping',
               pronunciation: '/ef pɪŋ/',
               phonetic: 'EF-PING',
-              example: 'fping pings many hosts in parallel. = fping pinga molti host in parallelo.',
+              example:
+                'In networking, fping pings many hosts in parallel. = fping pinga molti host in parallelo.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'fping -g 192.168.1.0/24',
@@ -6343,14 +6440,14 @@ export default {
               pronunciation: '/ˈsɜːrvɪs dɪˈtekʃən/',
               phonetic: 'SER-vis di-TEK-scion',
               example:
-                'Service detection identifies software versions. = Il rilevamento servizio identifica versioni software.',
+                'During analysis, Service Detection identifies software versions. = Il rilevamento servizio identifica versioni software.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'nmap -sV target',
             },
             {
               english: 'OS Detection',
-              italian: 'Rilevamento OS',
+              italian: 'rilevamento sistema operativo',
               pronunciation: '/oʊ es/',
               phonetic: 'O-ES',
               example:
@@ -6361,30 +6458,31 @@ export default {
             },
             {
               english: 'Banner Grabbing',
-              italian: 'banner grabbing / rilevazione del banner di servizio',
+              italian: 'cattura banner (banner grabbing)',
               pronunciation: '/ˈbænər ˈɡræbɪŋ/',
               phonetic: 'BA-ner GRA-bing',
               example:
-                'Banner grabbing reads service identification strings. = Il banner grabbing legge stringhe di identificazione servizio.',
+                'In networking, Banner Grabbing reads service identification strings. = Il banner grabbing legge stringhe di identificazione servizio.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'NSE',
-              italian: 'NSE / Nmap Scripting Engine',
+              italian: 'NSE',
               pronunciation: '/en es ˈiː/',
               phonetic: 'EN-ES-I',
-              example: 'NSE extends nmap with Lua scripts. = NSE estende nmap con script Lua.',
+              example:
+                'In networking, NSE extends nmap with Lua scripts. = NSE estende nmap con script Lua.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'nmap --script vuln target',
             },
             {
               english: 'Zenmap',
-              italian: 'Zenmap / GUI di nmap',
+              italian: 'Zenmap',
               pronunciation: '/zen mæp/',
               phonetic: 'ZEN-MAP',
-              example: 'Zenmap is the GUI for nmap. = Zenmap è la GUI per nmap.',
+              example: 'By definition, Zenmap is the GUI for nmap. = Zenmap è la GUI per nmap.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Zenmap',
@@ -6407,11 +6505,11 @@ export default {
           items: [
             {
               english: 'Connectivity Issue',
-              italian: 'Problema di connettività',
+              italian: 'problema di connettività',
               pronunciation: '/ˌkɒnekˈtɪvɪti/',
               phonetic: 'kon-nek-TI-vi-ti',
               example:
-                'Connectivity issues can be Layer 1 to 7. = I problemi di connettività possono andare da Layer 1 a 7.',
+                'When diagnosing a connectivity issue, the technician starts at Layer 1 checking cables and works up to Layer 7 examining application logs. = Quando si diagnostica un problema di connettivita, il tecnico inizia da Layer 1 controllando i cavi e sale fino a Layer 7 esaminando i log applicativi.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -6421,7 +6519,7 @@ export default {
               pronunciation: '/ˈpækɪt lɒs/',
               phonetic: 'PAK-ket LOS',
               example:
-                'Excessive packet loss degrades performance. = Una perdita eccessiva di pacchetti degrada le prestazioni.',
+                "Even 1% packet loss forces constant TCP retransmissions, cutting effective throughput dramatically. = Anche l'1% di perdita di pacchetti forza continue ritrasmissioni TCP, riducendo drasticamente il throughput effettivo.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'mtr -r -c 100 google.com',
@@ -6432,27 +6530,27 @@ export default {
               pronunciation: '/haɪ ˈleɪtənsi/',
               phonetic: 'HAI LEI-ten-si',
               example:
-                'High latency hurts interactive applications. = Una latenza alta danneggia applicazioni interattive.',
+                'In networking, High Latency hurts interactive applications. = Una latenza alta danneggia applicazioni interattive.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Jitter',
-              italian: "jitter / variazione casuale dell'intervallo",
+              italian: 'jitter',
               pronunciation: '/ˈdʒɪtər/',
               phonetic: 'GI-ter',
               example:
-                'Jitter problems hurt VoIP quality. = I problemi di jitter danneggiano la qualità VoIP.',
+                'VoIP calls sound choppy when jitter exceeds 30 ms because audio packets arrive at irregular intervals. = Le chiamate VoIP risultano frammentate quando il jitter supera 30 ms perché i pacchetti audio arrivano a intervalli irregolari.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Asymmetric Routing',
-              italian: 'Routing asimmetrico',
+              italian: 'routing asimmetrico',
               pronunciation: '/ˌeɪsɪˈmetrɪk/',
               phonetic: 'ei-si-ME-trik',
               example:
-                'Asymmetric routing breaks stateful firewalls. = Il routing asimmetrico rompe firewall stateful.',
+                'In networking, Asymmetric Routing breaks stateful firewalls. = Il routing asimmetrico rompe firewall stateful.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -6462,37 +6560,37 @@ export default {
               pronunciation: '/blæk hoʊl/',
               phonetic: 'BLAK-HOUL',
               example:
-                'A black hole silently drops packets. = Un buco nero scarta silenziosamente i pacchetti.',
+                'In networking, a Black Hole silently drops packets. = Un buco nero scarta silenziosamente i pacchetti.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Brownout',
-              italian: 'brownout / degrado parziale del servizio',
+              italian: 'degradazione del servizio (brownout)',
               pronunciation: '/ˈbraʊnaʊt/',
               phonetic: 'BRAUN-aut',
               example:
-                'A brownout is partial degradation. = Un brownout è una degradazione parziale.',
+                'By definition, a Brownout is partial degradation. = Un brownout è una degradazione parziale.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Flapping',
-              italian: 'flapping / oscillazione di stato',
+              italian: 'oscillazione del link (flapping)',
               pronunciation: '/ˈflæpɪŋ/',
               phonetic: 'FLA-ping',
               example:
-                'A flapping link goes up and down repeatedly. = Un link flapping va su e giù ripetutamente.',
+                'In networking, a Flapping link goes up and down repeatedly. = Un link flapping va su e giù ripetutamente.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Microburst',
-              italian: 'microburst / picco di traffico breve',
+              italian: 'picco di traffico (microburst)',
               pronunciation: '/ˈmaɪkroʊbɜːrst/',
               phonetic: 'MAI-kro-berst',
               example:
-                'Microbursts cause brief congestion peaks. = I microburst causano brevi picchi di congestione.',
+                'Even on a lightly loaded link, a sudden microburst of traffic can overflow the switch buffer and cause packet drops within milliseconds. = Anche su un link poco caricato, un microburst improvviso di traffico puo far traboccare il buffer dello switch e causare perdita di pacchetti in millisecondi.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -6502,7 +6600,7 @@ export default {
               pronunciation: '/ˈduːpleks ˈmɪsmætʃ/',
               phonetic: 'DU-pleks MIS-mach',
               example:
-                'Duplex mismatch causes collisions and slowness. = Un mismatch duplex causa collisioni e lentezza.',
+                'In networking, Duplex Mismatch causes collisions and slowness. = Un mismatch duplex causa collisioni e lentezza.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -6515,18 +6613,18 @@ export default {
           items: [
             {
               english: 'MTU',
-              italian: 'MTU / Maximum Transmission Unit',
+              italian: 'unità di trasmissione massima (MTU)',
               pronunciation: '/em tiː juː/',
               phonetic: 'EM-TI-IU',
               example:
-                'MTU mismatches cause silent failures. = I mismatch MTU causano fallimenti silenziosi.',
+                'Setting an MTU of 1500 bytes means any IP packet larger than that must be fragmented or dropped. = Impostare una MTU di 1500 byte significa che qualsiasi pacchetto IP più grande deve essere frammentato o scartato.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'ip link set dev eth0 mtu 1500',
             },
             {
               english: 'Path MTU Discovery',
-              italian: 'Path MTU Discovery / scoperta MTU del percorso',
+              italian: 'scoperta MTU del percorso (PMTUD)',
               pronunciation: '/pæθ em tiː juː/',
               phonetic: 'PATH EM-TI-IU',
               example:
@@ -6537,27 +6635,28 @@ export default {
             },
             {
               english: 'MSS',
-              italian: 'MSS / Maximum Segment Size',
+              italian: 'dimensione massima del segmento (MSS)',
               pronunciation: '/em es es/',
               phonetic: 'EM-ES-ES',
-              example: 'MSS is MTU minus IP and TCP headers. = MSS è MTU meno header IP e TCP.',
+              example:
+                'By definition, MSS is MTU minus IP and TCP headers. = MSS è MTU meno header IP e TCP.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'MSS Clamping',
-              italian: 'MSS clamping / limitazione MSS TCP',
+              italian: 'MSS clamping',
               pronunciation: '/em es es ˈklæmpɪŋ/',
               phonetic: 'EM-ES-ES KLAM-ping',
               example:
-                'MSS clamping forces a smaller TCP MSS. = Il MSS clamping forza un MSS TCP più piccolo.',
+                'In networking, MSS Clamping forces a smaller TCP MSS. = Il MSS clamping forza un MSS TCP più piccolo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               code: 'iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu',
             },
             {
               english: "Don't Fragment",
-              italian: "Don't Fragment / flag IP di non frammentazione",
+              italian: "flag Don't Fragment (DF)",
               pronunciation: '/doʊnt ˈfræɡmənt/',
               phonetic: 'DOUNT FRAG-ment',
               example:
@@ -6568,17 +6667,17 @@ export default {
             },
             {
               english: 'IP Fragmentation',
-              italian: 'Frammentazione IP',
+              italian: 'frammentazione IP',
               pronunciation: '/ˌfræɡmenˈteɪʃən/',
               phonetic: 'frag-men-TEI-scion',
               example:
-                'IP fragmentation hurts performance. = La frammentazione IP danneggia le prestazioni.',
+                'In networking, IP Fragmentation hurts performance. = La frammentazione IP danneggia le prestazioni.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Reassembly',
-              italian: 'Riassemblaggio',
+              italian: 'riassemblaggio',
               pronunciation: '/ˌriːəˈsembli/',
               phonetic: 'ri-as-SEM-bli',
               example:
@@ -6591,7 +6690,8 @@ export default {
               italian: 'Overhead di tunnel',
               pronunciation: '/ˈtʌnl/',
               phonetic: 'TA-nel',
-              example: 'Tunnels reduce the effective MTU. = I tunnel riducono la MTU effettiva.',
+              example:
+                "Adding GRE or IPsec encapsulation headers creates tunnel overhead that reduces the effective MTU below the standard 1500 bytes. = L'aggiunta di header di incapsulamento GRE o IPsec crea overhead del tunnel che riduce la MTU effettiva sotto i 1500 byte standard.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Esempi: GRE 24B, IPsec 50-100B.',
@@ -6608,11 +6708,11 @@ export default {
             },
             {
               english: 'PMTUD Black Hole',
-              italian: 'Buco nero PMTUD',
+              italian: 'buco nero PMTUD',
               pronunciation: '/piː em tiː juː diː/',
               phonetic: 'PI-EM-TI-IU-DI',
               example:
-                'A PMTUD black hole occurs when ICMP is blocked. = Un buco nero PMTUD avviene quando ICMP è bloccato.',
+                'In networking, a PMTUD Black Hole occurs when ICMP is blocked. = Un buco nero PMTUD avviene quando ICMP è bloccato.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -6625,57 +6725,58 @@ export default {
           items: [
             {
               english: 'RTT',
-              italian: 'RTT / Tempo di andata e ritorno',
+              italian: 'tempo di andata e ritorno (RTT)',
               pronunciation: '/ɑːr tiː tiː/',
               phonetic: 'AR-TI-TI',
-              example: 'RTT is the round-trip time. = RTT è il tempo di andata e ritorno.',
+              example:
+                'By definition, RTT is the round-trip time. = RTT è il tempo di andata e ritorno.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Propagation Delay',
-              italian: 'Ritardo di propagazione',
+              italian: 'ritardo di propagazione',
               pronunciation: '/ˌprɒpəˈɡeɪʃən/',
               phonetic: 'pro-pa-GHEI-scion',
               example:
-                'Propagation delay is bound by the speed of light. = Il ritardo di propagazione è limitato dalla velocità della luce.',
+                'By definition, Propagation Delay is bound by the speed of light. = Il ritardo di propagazione è limitato dalla velocità della luce.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Serialization Delay',
-              italian: 'Ritardo di serializzazione',
+              italian: 'ritardo di serializzazione',
               pronunciation: '/ˌsɪərɪəlaɪˈzeɪʃən/',
               phonetic: 'si-ria-li-ZEI-scion',
               example:
-                'Serialization delay depends on link speed. = Il ritardo di serializzazione dipende dalla velocità del link.',
+                'In networking, Serialization Delay depends on link speed. = Il ritardo di serializzazione dipende dalla velocità del link.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Queuing Delay',
-              italian: 'Ritardo di coda',
+              italian: 'ritardo di coda',
               pronunciation: '/ˈkjuːɪŋ/',
               phonetic: 'KIU-ing',
               example:
-                'Queuing delay grows with congestion. = Il ritardo di coda cresce con la congestione.',
+                'In networking, Queuing Delay grows with congestion. = Il ritardo di coda cresce con la congestione.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Bufferbloat',
-              italian: 'bufferbloat / latenza da buffer eccessivo',
+              italian: 'bufferbloat',
               pronunciation: '/ˈbʌfərbloʊt/',
               phonetic: 'BA-fer-blout',
               example:
-                'Bufferbloat causes excessive latency under load. = Il bufferbloat causa latenza eccessiva sotto carico.',
+                'In networking, Bufferbloat causes excessive latency under load. = Il bufferbloat causa latenza eccessiva sotto carico.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Mitigato da CoDel, fq_codel, CAKE.',
             },
             {
               english: 'Bandwidth-Delay Product',
-              italian: 'Prodotto banda-ritardo',
+              italian: 'prodotto banda-ritardo (BDP)',
               pronunciation: '/ˈbændwɪdθ dɪˈleɪ/',
               phonetic: 'BAND-uidth di-LEI',
               example:
@@ -6685,17 +6786,17 @@ export default {
             },
             {
               english: 'TCP Slow Start',
-              italian: 'TCP slow start / fase iniziale di congestione TCP',
+              italian: 'partenza lenta TCP (slow start)',
               pronunciation: '/sloʊ stɑːrt/',
               phonetic: 'SLOU-START',
               example:
-                'TCP slow start ramps up the window. = TCP slow start aumenta gradualmente la finestra.',
+                'In networking, TCP Slow Start ramps up the window. = TCP slow start aumenta gradualmente la finestra.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Congestion Window',
-              italian: 'Finestra di congestione',
+              italian: 'finestra di congestione (cwnd)',
               pronunciation: '/kənˈdʒestʃən/',
               phonetic: 'kon-GES-cion',
               example:
@@ -6705,22 +6806,22 @@ export default {
             },
             {
               english: 'BBR',
-              italian: 'BBR / algoritmo di congestione Google',
+              italian: 'BBR',
               pronunciation: '/biː biː ɑːr/',
               phonetic: 'BI-BI-AR',
               example:
-                'BBR is a modern TCP congestion algorithm. = BBR è un algoritmo TCP di congestione moderno.',
+                'By definition, BBR is a modern TCP congestion algorithm. = BBR è un algoritmo TCP di congestione moderno.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Bottleneck Bandwidth and RTT. Sviluppato da Google.',
             },
             {
               english: 'Latency Spike',
-              italian: 'Picco di latenza',
+              italian: 'picco di latenza',
               pronunciation: '/ˈleɪtənsi spaɪk/',
               phonetic: 'LEI-ten-si SPAIK',
               example:
-                'Latency spikes indicate transient issues. = I picchi di latenza indicano problemi transitori.',
+                'The monitoring dashboard flagged repeated latency spikes every hour, which the team traced to a scheduled backup job saturating the WAN link. = La dashboard di monitoraggio ha segnalato ripetuti picchi di latenza ogni ora, che il team ha ricondotto a un job di backup schedulato che saturava il link WAN.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -6733,20 +6834,21 @@ export default {
           items: [
             {
               english: 'Bottom-Up',
-              italian: "bottom-up / approccio dal basso verso l'alto",
+              italian: 'approccio dal basso (bottom-up)',
               pronunciation: '/ˈbɒtəm ʌp/',
               phonetic: 'BO-tom AP',
               example:
-                'Bottom-up troubleshooting starts at Layer 1. = Il troubleshooting bottom-up parte dal Layer 1.',
+                'In networking, Bottom-Up troubleshooting starts at Layer 1. = Il troubleshooting bottom-up parte dal Layer 1.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Top-Down',
-              italian: "top-down / approccio dall'alto verso il basso",
+              italian: "approccio dall'alto (top-down)",
               pronunciation: '/tɒp daʊn/',
               phonetic: 'TOP-DAUN',
-              example: "Top-down starts from the application. = Top-down parte dall'applicazione.",
+              example:
+                "In networking, Top-Down starts from the application. = Top-down parte dall'applicazione.",
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -6756,17 +6858,17 @@ export default {
               pronunciation: '/dɪˈvaɪd ænd ˈkɒŋkər/',
               phonetic: 'di-VAID and KON-ker',
               example:
-                'Divide and conquer narrows down the issue. = Divide et impera restringe il problema.',
+                'In networking, Divide and Conquer narrows down the issue. = Divide et impera restringe il problema.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Baseline',
-              italian: 'baseline / valore di riferimento',
+              italian: 'riferimento prestazioni (baseline)',
               pronunciation: '/ˈbeɪslaɪn/',
               phonetic: 'BEIS-lain',
               example:
-                'A baseline shows normal performance. = Una baseline mostra le prestazioni normali.',
+                'In networking, a Baseline shows normal performance. = Una baseline mostra le prestazioni normali.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -6782,27 +6884,27 @@ export default {
             },
             {
               english: 'RCA',
-              italian: 'RCA / Root Cause Analysis',
+              italian: 'analisi causa principale (RCA)',
               pronunciation: '/ɑːr siː ˈeɪ/',
               phonetic: 'AR-SI-EI',
               example:
-                'RCA documents what caused the outage. = RCA documenta cosa ha causato il disservizio.',
+                'In networking, RCA documents what caused the outage. = RCA documenta cosa ha causato il disservizio.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Postmortem',
-              italian: 'postmortem / analisi post-incidente',
+              italian: 'analisi post-incidente (postmortem)',
               pronunciation: '/poʊstˈmɔːrtəm/',
               phonetic: 'POUST-mor-tem',
               example:
-                'A postmortem is a blameless review. = Un postmortem è una review senza colpe.',
+                'By definition, a Postmortem is a blameless review. = Un postmortem è una review senza colpe.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Hypothesis',
-              italian: 'Ipotesi',
+              italian: 'ipotesi',
               pronunciation: '/haɪˈpɒθəsɪs/',
               phonetic: 'hai-PO-the-sis',
               example:
@@ -6812,11 +6914,11 @@ export default {
             },
             {
               english: 'Observability',
-              italian: 'Osservabilità',
+              italian: 'osservabilità',
               pronunciation: '/əbˌzɜːrvəˈbɪlɪti/',
               phonetic: 'ob-zer-va-BI-li-ti',
               example:
-                'Observability tools speed up troubleshooting. = I tool di osservabilità velocizzano il troubleshooting.',
+                'In networking, Observability tools speed up troubleshooting. = I tool di osservabilità velocizzano il troubleshooting.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -6826,7 +6928,7 @@ export default {
               pronunciation: '/tʃeɪndʒ kənˈtroʊl/',
               phonetic: 'CEINGE kon-TROUL',
               example:
-                'Change control reduces outages. = Il controllo dei cambiamenti riduce i disservizi.',
+                'By optimizing traffic, Change Control reduces outages. = Il controllo dei cambiamenti riduce i disservizi.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -6848,27 +6950,29 @@ export default {
           items: [
             {
               english: 'QoS',
-              italian: 'QoS / Qualità del servizio',
+              italian: 'qualità del servizio (QoS)',
               pronunciation: '/kjuː oʊ es/',
               phonetic: 'KIU-O-ES',
-              example: 'QoS prioritizes critical traffic. = QoS dà priorità al traffico critico.',
+              example:
+                'In networking, QoS prioritizes critical traffic. = QoS dà priorità al traffico critico.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Quality of Service.',
             },
             {
               english: 'Traffic Shaping',
-              italian: 'traffic shaping / modellatura del traffico',
+              italian: 'modellamento del traffico (traffic shaping)',
               pronunciation: '/ˈtræfɪk ˈʃeɪpɪŋ/',
               phonetic: 'TRA-fik SHEI-ping',
-              example: 'Traffic shaping smooths bursts. = Il traffic shaping spiana i burst.',
+              example:
+                'In networking, Traffic Shaping smooths bursts. = Il traffic shaping spiana i burst.',
               context: 'services',
               difficulty: 'advanced',
               command: 'tc qdisc add dev eth0 root tbf rate 1mbit burst 32kbit latency 400ms',
             },
             {
               english: 'Traffic Policing',
-              italian: 'traffic policing / limitazione del traffico',
+              italian: 'controllo della banda (traffic policing)',
               pronunciation: '/pəˈliːsɪŋ/',
               phonetic: 'po-LI-sing',
               example:
@@ -6882,7 +6986,7 @@ export default {
               pronunciation: '/praɪˈɒrɪti ˈkjuːɪŋ/',
               phonetic: 'prai-O-ri-ti KIU-ing',
               example:
-                'Priority queuing always serves high priority first. = La coda prioritaria serve sempre la priorità alta per prima.',
+                'In networking, Priority Queuing always serves high priority first. = La coda prioritaria serve sempre la priorità alta per prima.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -6891,17 +6995,18 @@ export default {
               italian: 'Coda weighted fair',
               pronunciation: '/ˈweɪtɪd feər/',
               phonetic: 'UEI-tid FEER',
-              example: 'WFQ allocates bandwidth by weight. = WFQ alloca banda per peso.',
+              example:
+                'In a congested link, Weighted Fair Queuing allocates proportional bandwidth to each traffic class based on its assigned weight value. = In un collegamento congestionato, il Weighted Fair Queuing alloca banda proporzionale a ogni classe di traffico basandosi sul valore di peso assegnato.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'CBWFQ',
-              italian: 'CBWFQ / Class-Based Weighted Fair Queueing',
+              italian: 'CBWFQ',
               pronunciation: '/siː biː dʌbljuː ef kjuː/',
               phonetic: 'SI-BI-DABOL-IU-EF-KIU',
               example:
-                'CBWFQ provides bandwidth guarantees per class. = CBWFQ garantisce banda per classe.',
+                'For network operations, CBWFQ provides bandwidth guarantees per class. = CBWFQ garantisce banda per classe.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Class-Based Weighted Fair Queuing.',
@@ -6912,27 +7017,27 @@ export default {
               pronunciation: '/ˌrezərˈveɪʃən/',
               phonetic: 'rez-er-VEI-scion',
               example:
-                'Bandwidth reservation guarantees minimum speed. = La prenotazione di banda garantisce velocità minima.',
+                'In networking, Bandwidth Reservation guarantees minimum speed. = La prenotazione di banda garantisce velocità minima.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Best-Effort',
-              italian: 'best-effort / migliore sforzo, senza garanzie',
+              italian: 'traffico best-effort',
               pronunciation: '/best ˈefərt/',
               phonetic: 'BEST E-fort',
               example:
-                'Best-effort traffic gets no guarantees. = Il traffico best-effort non ha garanzie.',
+                'As a best-effort protocol, IP tries to deliver every packet but guarantees neither arrival nor order. = Come protocollo best-effort, IP prova a consegnare ogni pacchetto ma non garantisce né arrivo né ordine.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Voice Traffic',
-              italian: 'Traffico voce',
+              italian: 'traffico voce',
               pronunciation: '/vɔɪs ˈtræfɪk/',
               phonetic: 'VOIS TRA-fik',
               example:
-                'Voice traffic needs low latency and jitter. = Il traffico voce necessita di bassa latenza e jitter.',
+                'In networking, Voice Traffic needs low latency and jitter. = Il traffico voce necessita di bassa latenza e jitter.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -6942,7 +7047,7 @@ export default {
               pronunciation: '/bɜːrst ˈtɒlərəns/',
               phonetic: 'BERST TO-le-rans',
               example:
-                'Burst tolerance allows brief over-rate. = La tolleranza ai burst permette breve sovra-rate.',
+                'For better performance, Burst Tolerance allows brief over-rate. = La tolleranza ai burst permette breve sovra-rate.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -6955,61 +7060,63 @@ export default {
           items: [
             {
               english: 'DSCP',
-              italian: 'DSCP / Differentiated Services Code Point',
+              italian: 'DSCP',
               pronunciation: '/diː es siː piː/',
               phonetic: 'DI-ES-SI-PI',
-              example: 'DSCP marks IP packets for QoS. = DSCP marca pacchetti IP per QoS.',
+              example:
+                'In networking, DSCP marks IP packets for QoS. = DSCP marca pacchetti IP per QoS.',
               context: 'services',
               difficulty: 'advanced',
               note: "6 bit nell'header IP.",
             },
             {
               english: 'ToS',
-              italian: 'ToS / Type of Service',
+              italian: 'ToS',
               pronunciation: '/tiː oʊ es/',
               phonetic: 'TI-O-ES',
               example:
-                'ToS is the older field replaced by DSCP. = ToS è il vecchio campo sostituito da DSCP.',
+                'By definition, ToS is the older field replaced by DSCP. = ToS è il vecchio campo sostituito da DSCP.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'EF',
-              italian: 'EF / Expedited Forwarding',
+              italian: 'EF (Expedited Forwarding)',
               pronunciation: '/iː ef/',
               phonetic: 'I-EF',
-              example: 'EF is used for voice traffic. = EF è usato per il traffico voce.',
+              example:
+                'By definition, EF is used for voice traffic. = EF è usato per il traffico voce.',
               context: 'services',
               difficulty: 'advanced',
               note: 'DSCP 46.',
             },
             {
               english: 'AF',
-              italian: 'AF / Assured Forwarding',
+              italian: 'AF (Assured Forwarding)',
               pronunciation: '/eɪ ef/',
               phonetic: 'EI-EF',
               example:
-                'AF classes have drop precedence levels. = Le classi AF hanno livelli di drop precedence.',
+                'In networking, AF classes have drop precedence levels. = Le classi AF hanno livelli di drop precedence.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'CoS',
-              italian: 'CoS / Class of Service',
+              italian: 'CoS',
               pronunciation: '/siː oʊ es/',
               phonetic: 'SI-O-ES',
-              example: 'CoS marks Layer 2 frames. = CoS marca frame Layer 2.',
+              example: 'In networking, CoS marks Layer 2 frames. = CoS marca frame Layer 2.',
               context: 'services',
               difficulty: 'advanced',
               note: '3 bit nel tag VLAN 802.1p.',
             },
             {
               english: 'Marking',
-              italian: 'Marcatura',
+              italian: 'marcatura (marking)',
               pronunciation: '/ˈmɑːrkɪŋ/',
               phonetic: 'MAR-king',
               example:
-                'Marking sets QoS values on packets. = La marcatura imposta valori QoS sui pacchetti.',
+                'In networking, Marking sets QoS values on packets. = La marcatura imposta valori QoS sui pacchetti.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -7019,7 +7126,7 @@ export default {
               pronunciation: '/trʌst ˈbaʊndri/',
               phonetic: 'TRAST BAUN-dri',
               example:
-                'Trust boundary marks where QoS markings begin. = Il confine di fiducia segna dove iniziano le marcature QoS.',
+                'In networking, Trust Boundary marks where QoS markings begin. = Il confine di fiducia segna dove iniziano le marcature QoS.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -7035,20 +7142,21 @@ export default {
             },
             {
               english: 'Default Forwarding',
-              italian: 'default forwarding / inoltro predefinito',
+              italian: 'inoltro predefinito (DF)',
               pronunciation: '/dɪˈfɔːlt ˈfɔːrwərdɪŋ/',
               phonetic: 'di-FOLT FOR-uar-ding',
-              example: 'DSCP 0 is default forwarding. = DSCP 0 è il default forwarding.',
+              example:
+                'Packets without any QoS marking receive DSCP 0 (default forwarding), meaning they get best-effort treatment from all routers in the path. = I pacchetti senza marcatura QoS ricevono DSCP 0 (default forwarding), il che significa che ricevono trattamento best-effort da tutti i router nel percorso.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Class Selector',
-              italian: 'class selector / selettore di classe DSCP',
+              italian: 'selettore di classe',
               pronunciation: '/klæs sɪˈlektər/',
               phonetic: 'KLAS si-LEK-ter',
               example:
-                'Class selector codepoints map to legacy IP precedence. = I codepoint Class Selector mappano la legacy IP precedence.',
+                'In networking, Class Selector codepoints map to legacy IP precedence. = I codepoint Class Selector mappano la legacy IP precedence.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -7061,31 +7169,32 @@ export default {
           items: [
             {
               english: 'RSVP',
-              italian: 'RSVP / Resource Reservation Protocol',
+              italian: 'RSVP',
               pronunciation: '/ɑːr es viː piː/',
               phonetic: 'AR-ES-VI-PI',
               example:
-                'RSVP reserves resources along the path. = RSVP prenota risorse lungo il percorso.',
+                'In networking, RSVP reserves resources along the path. = RSVP prenota risorse lungo il percorso.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'IntServ',
-              italian: 'IntServ / Integrated Services',
+              italian: 'IntServ',
               pronunciation: '/ɪnt sɜːrv/',
               phonetic: 'INT-SERV',
               example:
-                'IntServ provides per-flow guarantees. = IntServ fornisce garanzie per-flusso.',
+                'For network operations, IntServ provides per-flow guarantees. = IntServ fornisce garanzie per-flusso.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Non scala bene.',
             },
             {
               english: 'DiffServ',
-              italian: 'DiffServ / Differentiated Services',
+              italian: 'DiffServ',
               pronunciation: '/dɪf sɜːrv/',
               phonetic: 'DIF-SERV',
-              example: 'DiffServ uses class-based QoS. = DiffServ usa QoS basata su classi.',
+              example:
+                'Under the hood, DiffServ uses class-based QoS. = DiffServ usa QoS basata su classi.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Modello attuale per QoS.',
@@ -7096,45 +7205,47 @@ export default {
               pronunciation: '/ədˈmɪʃən/',
               phonetic: 'ad-MIS-scion',
               example:
-                'Admission control rejects requests beyond capacity. = Il controllo di ammissione rifiuta richieste oltre capacità.',
+                'In networking, Admission Control rejects requests beyond capacity. = Il controllo di ammissione rifiuta richieste oltre capacità.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Token Bucket',
-              italian: 'token bucket / algoritmo a secchio di gettoni',
+              italian: 'token bucket',
               pronunciation: '/ˈtoʊkən ˈbʌkɪt/',
               phonetic: 'TOU-ken BA-ket',
               example:
-                'Token bucket regulates traffic rate. = Il token bucket regola la rate del traffico.',
+                'In networking, Token Bucket regulates traffic rate. = Il token bucket regola la rate del traffico.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Leaky Bucket',
-              italian: 'leaky bucket / algoritmo a secchio bucato',
+              italian: 'leaky bucket',
               pronunciation: '/ˈliːki ˈbʌkɪt/',
               phonetic: 'LI-ki BA-ket',
               example:
-                'Leaky bucket smooths bursty traffic. = Il leaky bucket spiana traffico bursty.',
+                'In networking, Leaky Bucket smooths bursty traffic. = Il leaky bucket spiana traffico bursty.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'CIR',
-              italian: 'CIR / Committed Information Rate',
+              italian: 'CIR',
               pronunciation: '/siː aɪ ɑːr/',
               phonetic: 'SI-AI-AR',
-              example: 'CIR is the guaranteed throughput. = CIR è il throughput garantito.',
+              example:
+                'By definition, CIR is the guaranteed throughput. = CIR è il throughput garantito.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'PIR',
-              italian: 'PIR / Peak Information Rate',
+              italian: 'PIR',
               pronunciation: '/piː aɪ ɑːr/',
               phonetic: 'PI-AI-AR',
-              example: 'PIR is the maximum allowed rate. = PIR è la rate massima permessa.',
+              example:
+                'By definition, PIR is the maximum allowed rate. = PIR è la rate massima permessa.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -7150,11 +7261,11 @@ export default {
             },
             {
               english: 'WRED',
-              italian: 'WRED / Weighted Random Early Detection',
+              italian: 'WRED',
               pronunciation: '/dʌbljuː red/',
               phonetic: 'DABOL-IU-RED',
               example:
-                'WRED drops packets early to avoid TCP global sync. = WRED scarta pacchetti in anticipo per evitare global sync TCP.',
+                'In networking, WRED drops packets early to avoid TCP global sync. = WRED scarta pacchetti in anticipo per evitare global sync TCP.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -7167,73 +7278,73 @@ export default {
           items: [
             {
               english: 'tc',
-              italian: 'tc / Traffic Control',
+              italian: 'tc',
               pronunciation: '/tiː siː/',
               phonetic: 'TI-SI',
               example:
-                'tc configures Linux traffic control. = tc configura il traffic control Linux.',
+                'In networking, tc configures Linux traffic control. = tc configura il traffic control Linux.',
               context: 'services',
               difficulty: 'advanced',
               command: 'tc qdisc show dev eth0',
             },
             {
               english: 'qdisc',
-              italian: 'qdisc / Queueing Discipline',
+              italian: 'qdisc',
               pronunciation: '/kjuː dɪsk/',
               phonetic: 'KIU-DISK',
               example:
-                'qdiscs are Linux queueing disciplines. = Le qdisc sono discipline di accodamento Linux.',
+                'Linux kernel traffic control relies on qdisc modules to shape, schedule, and prioritize packets on each network interface. = Il controllo del traffico del kernel Linux si affida ai moduli qdisc per modellare, schedulare e dare priorita ai pacchetti su ogni interfaccia di rete.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'pfifo_fast',
-              italian: 'pfifo_fast / coda predefinita di Linux',
+              italian: 'pfifo_fast',
               pronunciation: '/piː ˈfaɪfoʊ fæst/',
               phonetic: 'PI-FAI-fou FAST',
               example:
-                'pfifo_fast is the legacy default qdisc. = pfifo_fast è la vecchia qdisc di default.',
+                'By definition, pfifo_fast is the legacy default qdisc. = pfifo_fast è la vecchia qdisc di default.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'fq_codel',
-              italian: 'fq_codel / coda fair contro bufferbloat',
+              italian: 'fq_codel',
               pronunciation: '/ef kjuː ˈkoʊdl/',
               phonetic: 'EF-KIU KO-del',
               example:
-                'fq_codel reduces bufferbloat by default. = fq_codel riduce il bufferbloat di default.',
+                'By optimizing traffic, fq_codel reduces bufferbloat by default. = fq_codel riduce il bufferbloat di default.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'CAKE',
-              italian: 'CAKE / qdisc anti-bufferbloat moderna',
+              italian: 'CAKE',
               pronunciation: '/keɪk/',
               phonetic: 'KEIK',
               example:
-                'CAKE is an integrated home QoS solution. = CAKE è una soluzione QoS integrata per casa.',
+                'By definition, CAKE is an integrated home QoS solution. = CAKE è una soluzione QoS integrata per casa.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Common Applications Kept Enhanced.',
             },
             {
               english: 'HTB',
-              italian: 'HTB / Hierarchical Token Bucket',
+              italian: 'HTB',
               pronunciation: '/eɪtʃ tiː biː/',
               phonetic: 'EICH-TI-BI',
               example:
-                'HTB enables hierarchical bandwidth control. = HTB abilita controllo gerarchico della banda.',
+                'For network flexibility, HTB enables hierarchical bandwidth control. = HTB abilita controllo gerarchico della banda.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'iptables Mark',
-              italian: 'iptables MARK / contrassegna pacchetti',
+              italian: 'marcatura iptables',
               pronunciation: '/aɪ piː ˈteɪblz mɑːrk/',
               phonetic: 'AI-PI TEI-bols MARK',
               example:
-                'iptables MARK tags packets for tc. = iptables MARK etichetta pacchetti per tc.',
+                'In networking, iptables Mark tags packets for tc. = iptables MARK etichetta pacchetti per tc.',
               context: 'services',
               difficulty: 'advanced',
               code: 'iptables -t mangle -A POSTROUTING -p tcp --dport 22 -j MARK --set-mark 1',
@@ -7255,7 +7366,7 @@ export default {
               pronunciation: '/ˈfɪltər/',
               phonetic: 'FIL-ter',
               example:
-                'Filters classify packets into classes. = I filtri classificano pacchetti in classi.',
+                'Inside the Linux tc framework, a filter matches packets by IP address or port and assigns them to the appropriate QoS class. = Dentro il framework tc di Linux, un filtro associa i pacchetti per indirizzo IP o porta e li assegna alla classe QoS appropriata.',
               context: 'services',
               difficulty: 'advanced',
               command: 'tc filter show dev eth0',
@@ -7265,7 +7376,8 @@ export default {
               italian: 'QoS eBPF',
               pronunciation: '/iː biː piː ef/',
               phonetic: 'I-BI-PI-EF',
-              example: 'eBPF enables programmable QoS. = eBPF abilita QoS programmabile.',
+              example:
+                'Platform engineers attach eBPF programs to network interfaces to implement custom QoS policies without modifying the kernel source code. = I platform engineer collegano programmi eBPF alle interfacce di rete per implementare policy QoS personalizzate senza modificare il codice sorgente del kernel.',
               context: 'services',
               difficulty: 'advanced',
               tool: 'bpftool',
@@ -7288,11 +7400,11 @@ export default {
           items: [
             {
               english: 'BGP',
-              italian: 'BGP / Border Gateway Protocol',
+              italian: 'BGP',
               pronunciation: '/biː dʒiː piː/',
               phonetic: 'BI-GI-PI',
               example:
-                'BGP is the Internet routing protocol. = BGP è il protocollo di routing di Internet.',
+                'By definition, BGP is the Internet routing protocol. = BGP è il protocollo di routing di Internet.',
               context: 'routing',
               difficulty: 'advanced',
               note: 'Versione attuale: BGP-4.',
@@ -7310,39 +7422,42 @@ export default {
             },
             {
               english: 'AS Number',
-              italian: 'Numero AS',
+              italian: 'numero AS (ASN)',
               pronunciation: '/eɪ es ˈnʌmbər/',
               phonetic: 'EI-ES NAM-ber',
-              example: 'AS numbers are assigned by RIRs. = I numeri AS sono assegnati dai RIR.',
+              example:
+                "Before peering on the public Internet, an organization must obtain an AS number assigned by a Regional Internet Registry such as RIPE or ARIN. = Prima del peering su Internet pubblica, un'organizzazione deve ottenere un numero AS assegnato da un Regional Internet Registry come RIPE o ARIN.",
               context: 'routing',
               difficulty: 'advanced',
               note: '32-bit ASN dal 2007.',
             },
             {
               english: 'eBGP',
-              italian: 'eBGP / External BGP',
+              italian: 'eBGP',
               pronunciation: '/iː biː dʒiː piː/',
               phonetic: 'I-BI-GI-PI',
-              example: 'eBGP runs between different ASes. = eBGP gira tra AS diversi.',
+              example:
+                'In production environments, eBGP runs between different ASes. = eBGP gira tra AS diversi.',
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'iBGP',
-              italian: 'iBGP / Internal BGP',
+              italian: 'iBGP',
               pronunciation: '/aɪ biː dʒiː piː/',
               phonetic: 'AI-BI-GI-PI',
-              example: 'iBGP runs inside the same AS. = iBGP gira dentro lo stesso AS.',
+              example:
+                'In production environments, iBGP runs inside the same AS. = iBGP gira dentro lo stesso AS.',
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'AS Path',
-              italian: 'AS path / sequenza di sistemi autonomi BGP',
+              italian: 'percorso AS (AS path)',
               pronunciation: '/eɪ es pæθ/',
               phonetic: 'EI-ES PATH',
               example:
-                'AS path lists ASes a route traversed. = AS path elenca gli AS attraversati da una rotta.',
+                'For reference, AS Path lists ASes a route traversed. = AS path elenca gli AS attraversati da una rotta.',
               context: 'routing',
               difficulty: 'advanced',
               note: 'Usato per rilevare loop e per scelta path.',
@@ -7353,17 +7468,17 @@ export default {
               pronunciation: '/biː dʒiː piː pɪər/',
               phonetic: 'BI-GI-PI PIIR',
               example:
-                'BGP peers establish a TCP session on port 179. = I peer BGP stabiliscono una sessione TCP sulla porta 179.',
+                "Before exchanging routing tables, two BGP peers must successfully establish a TCP session on port 179 and complete the OPEN message handshake. = Prima di scambiare tabelle di routing, due peer BGP devono stabilire con successo una sessione TCP sulla porta 179 e completare l'handshake del messaggio OPEN.",
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'Route Reflector',
-              italian: 'route reflector / riflettore di rotte BGP',
+              italian: 'riflettore di rotte (route reflector)',
               pronunciation: '/ruːt rɪˈflektər/',
               phonetic: 'RUUT ri-FLEK-ter',
               example:
-                'Route reflectors avoid full-mesh iBGP. = I route reflector evitano full-mesh iBGP.',
+                'In a large ISP backbone, deploying a route reflector eliminates the need for a full-mesh iBGP topology among hundreds of routers. = Nel backbone di un grande ISP, implementare un route reflector elimina la necessita di una topologia iBGP full-mesh tra centinaia di router.',
               context: 'routing',
               difficulty: 'advanced',
             },
@@ -7373,7 +7488,7 @@ export default {
               pronunciation: '/kəˈmjuːnəti/',
               phonetic: 'ko-MIU-ne-ti',
               example:
-                'Communities tag routes for policy. = Le community taggano rotte per policy.',
+                'Network operators attach BGP community values to routes so upstream providers can apply agreed-upon policies like local-preference or no-export. = Gli operatori di rete allegano valori di community BGP alle rotte cosi che i provider a monte possano applicare policy concordate come local-preference o no-export.',
               context: 'routing',
               difficulty: 'advanced',
             },
@@ -7397,30 +7512,31 @@ export default {
           items: [
             {
               english: 'OSPF',
-              italian: 'OSPF / Open Shortest Path First',
+              italian: 'OSPF',
               pronunciation: '/oʊ es piː ef/',
               phonetic: 'O-ES-PI-EF',
-              example: 'OSPF is a link-state IGP. = OSPF è un IGP link-state.',
+              example: 'By definition, OSPF is a link-state IGP. = OSPF è un IGP link-state.',
               context: 'routing',
               difficulty: 'advanced',
               note: 'OSPFv2 per IPv4, OSPFv3 per IPv6.',
             },
             {
               english: 'LSA',
-              italian: 'LSA / Link State Advertisement',
+              italian: 'LSA',
               pronunciation: '/el es eɪ/',
               phonetic: 'EL-ES-EI',
-              example: 'LSAs describe network topology. = Le LSA descrivono la topologia di rete.',
+              example:
+                'Every OSPF router floods Link-State Advertisements to its neighbors so each device builds an identical map of the network topology. = Ogni router OSPF inonda Link-State Advertisement ai suoi vicini cosi che ogni dispositivo costruisca una mappa identica della topologia di rete.',
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'LSDB',
-              italian: 'LSDB / Link State Database',
+              italian: 'LSDB',
               pronunciation: '/el es diː biː/',
               phonetic: 'EL-ES-DI-BI',
               example:
-                'The LSDB stores all known LSAs. = La LSDB memorizza tutte le LSA conosciute.',
+                'For efficiency, the LSDB stores all known LSAs. = La LSDB memorizza tutte le LSA conosciute.',
               context: 'routing',
               difficulty: 'advanced',
             },
@@ -7430,7 +7546,7 @@ export default {
               pronunciation: '/ˈeəriə/',
               phonetic: 'E-ria',
               example:
-                'OSPF areas reduce LSA flooding. = Le aree OSPF riducono il flooding di LSA.',
+                "By segmenting a large campus network into multiple OSPF areas, engineers reduce LSA flooding and keep each router's link-state database manageable. = Segmentando una grande rete campus in piu aree OSPF, gli ingegneri riducono il flooding di LSA e mantengono gestibile il database link-state di ogni router.",
               context: 'routing',
               difficulty: 'advanced',
               note: 'Area 0 = backbone.',
@@ -7440,45 +7556,48 @@ export default {
               italian: 'Area backbone',
               pronunciation: '/ˈbækboʊn/',
               phonetic: 'BAK-boun',
-              example: "OSPF requires a backbone area 0. = OSPF richiede un'area backbone 0.",
+              example:
+                "All inter-area traffic in an OSPF deployment must transit through the backbone area 0, which connects every other area in the network. = Tutto il traffico inter-area in un deployment OSPF deve transitare attraverso l'area backbone 0, che connette ogni altra area nella rete.",
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'ABR',
-              italian: 'ABR / Area Border Router',
+              italian: 'ABR',
               pronunciation: '/eɪ biː ɑːr/',
               phonetic: 'EI-BI-AR',
-              example: 'ABRs connect OSPF areas. = Gli ABR connettono aree OSPF.',
+              example:
+                "An Area Border Router sits between the backbone and a non-backbone area, summarizing routes and reducing the routing table size for both sides. = Un Area Border Router si trova tra il backbone e un'area non-backbone, riassumendo le rotte e riducendo la dimensione della tabella di routing per entrambi i lati.",
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'ASBR',
-              italian: 'ASBR / AS Boundary Router',
+              italian: 'ASBR',
               pronunciation: '/eɪ es biː ɑːr/',
               phonetic: 'EI-ES-BI-AR',
               example:
-                'ASBRs connect OSPF to other protocols. = Gli ASBR connettono OSPF ad altri protocolli.',
+                'At the network boundary, an Autonomous System Boundary Router redistributes external BGP routes into the internal OSPF domain. = Al confine della rete, un Autonomous System Boundary Router ridistribuisce le rotte BGP esterne nel dominio OSPF interno.',
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'DR',
-              italian: 'DR / Designated Router',
+              italian: 'router designato (DR)',
               pronunciation: '/diː ɑːr/',
               phonetic: 'DI-AR',
               example:
-                'The DR coordinates OSPF on multi-access networks. = Il DR coordina OSPF su reti multi-access.',
+                'In networking, the DR coordinates OSPF on multi-access networks. = Il DR coordina OSPF su reti multi-access.',
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'BDR',
-              italian: 'BDR / Backup DR',
+              italian: 'router designato di backup (BDR)',
               pronunciation: '/biː diː ɑːr/',
               phonetic: 'BI-DI-AR',
-              example: 'BDR takes over if DR fails. = Il BDR subentra se il DR fallisce.',
+              example:
+                'In networking, BDR takes over if DR fails. = Il BDR subentra se il DR fallisce.',
               context: 'routing',
               difficulty: 'advanced',
             },
@@ -7487,7 +7606,8 @@ export default {
               italian: 'Area stub',
               pronunciation: '/stʌb ˈeəriə/',
               phonetic: 'STAB E-ria',
-              example: 'Stub areas reject external LSAs. = Le aree stub rifiutano LSA esterne.',
+              example:
+                'Configuring a remote branch as an OSPF stub area blocks external LSAs, replacing them with a single default route to save memory on smaller routers. = Configurare una sede remota come area stub OSPF blocca le LSA esterne, sostituendole con una singola rotta di default per risparmiare memoria sui router piu piccoli.',
               context: 'routing',
               difficulty: 'advanced',
             },
@@ -7500,18 +7620,18 @@ export default {
           items: [
             {
               english: 'EIGRP',
-              italian: 'EIGRP / protocollo routing Cisco ibrido',
+              italian: 'EIGRP',
               pronunciation: '/iː aɪ dʒiː ɑːr piː/',
               phonetic: 'I-AI-GI-AR-PI',
               example:
-                'EIGRP combines distance vector and link state. = EIGRP combina distance vector e link state.',
+                'In networking, EIGRP combines distance vector and link state. = EIGRP combina distance vector e link state.',
               context: 'routing',
               difficulty: 'advanced',
               note: 'Cisco-proprietary, ma RFC 7868 dal 2016.',
             },
             {
               english: 'DUAL',
-              italian: 'DUAL / Diffusing Update Algorithm di EIGRP',
+              italian: 'DUAL',
               pronunciation: '/ˈduːəl/',
               phonetic: 'DU-al',
               example:
@@ -7526,7 +7646,7 @@ export default {
               pronunciation: '/səkˈsesər/',
               phonetic: 'sak-SES-ser',
               example:
-                'EIGRP successor is the best path. = Il successore EIGRP è il miglior percorso.',
+                'When EIGRP calculates its topology table, it selects the successor route as the best path based on the lowest feasible distance metric. = Quando EIGRP calcola la sua tabella di topologia, seleziona la rotta successore come miglior percorso basandosi sulla metrica di distanza fattibile piu bassa.',
               context: 'routing',
               difficulty: 'advanced',
             },
@@ -7536,39 +7656,39 @@ export default {
               pronunciation: '/ˈfiːzəbl/',
               phonetic: 'FI-ze-bol',
               example:
-                'A feasible successor is a backup path. = Un successore fattibile è un percorso di backup.',
+                'By definition, a Feasible Successor is a backup path. = Un successore fattibile è un percorso di backup.',
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'IS-IS',
-              italian: 'IS-IS / Intermediate System to Intermediate System',
+              italian: 'IS-IS',
               pronunciation: '/aɪ es aɪ es/',
               phonetic: 'AI-ES-AI-ES',
               example:
-                'IS-IS is widely used in service provider networks. = IS-IS è ampiamente usato nelle reti dei service provider.',
+                'By definition, IS-IS is widely used in service provider networks. = IS-IS è ampiamente usato nelle reti dei service provider.',
               context: 'routing',
               difficulty: 'advanced',
               note: 'Intermediate System to Intermediate System.',
             },
             {
               english: 'NSSA',
-              italian: 'NSSA / Not So Stubby Area in OSPF',
+              italian: 'NSSA',
               pronunciation: '/en es es eɪ/',
               phonetic: 'EN-ES-ES-EI',
               example:
-                'NSSA areas allow limited externals. = Le aree NSSA permettono externals limitati.',
+                'In networking, NSSA areas allow limited externals. = Le aree NSSA permettono externals limitati.',
               context: 'routing',
               difficulty: 'advanced',
               note: 'Not-So-Stubby Area.',
             },
             {
               english: 'Totally Stubby',
-              italian: 'totally stubby / area OSPF molto ridotta',
+              italian: 'area totalmente stub',
               pronunciation: '/ˈtoʊtəli ˈstʌbi/',
               phonetic: 'TO-tali STA-bi',
               example:
-                'Totally stubby areas only have a default route. = Le aree totally stubby hanno solo una rotta predefinita.',
+                'In networking, Totally Stubby areas only have a default route. = Le aree totally stubby hanno solo una rotta predefinita.',
               context: 'routing',
               difficulty: 'advanced',
               note: 'Estensione Cisco.',
@@ -7579,7 +7699,7 @@ export default {
               pronunciation: '/ˈvɜːrtʃuəl lɪŋk/',
               phonetic: 'VER-ciu-al LINK',
               example:
-                'Virtual links connect non-backbone areas. = I link virtuali connettono aree non-backbone.',
+                "When a new OSPF area cannot physically connect to area 0, the engineer creates a virtual link through a transit area to maintain backbone continuity. = Quando una nuova area OSPF non puo connettersi fisicamente all'area 0, l'ingegnere crea un link virtuale attraverso un'area di transito per mantenere la continuita del backbone.",
               context: 'routing',
               difficulty: 'advanced',
             },
@@ -7589,17 +7709,17 @@ export default {
               pronunciation: '/ˈmʌlti ˈeəriə/',
               phonetic: 'MAL-ti E-ria',
               example:
-                'Multi-area OSPF scales large networks. = OSPF multi-area scala reti grandi.',
+                'In large deployments, Multi-Area OSPF scales large networks. = OSPF multi-area scala reti grandi.',
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'Route Map',
-              italian: 'route map / mappa di routing avanzato',
+              italian: 'mappa di rotta (route map)',
               pronunciation: '/ruːt mæp/',
               phonetic: 'RUUT MAP',
               example:
-                'Route maps filter and modify routes. = Le route map filtrano e modificano rotte.',
+                "During BGP redistribution, the engineer applies a route map to set the local preference and filter out private address ranges before advertising routes. = Durante la ridistribuzione BGP, l'ingegnere applica una route map per impostare la local preference e filtrare i range di indirizzi privati prima di pubblicare le rotte.",
               context: 'routing',
               difficulty: 'advanced',
             },
@@ -7612,11 +7732,11 @@ export default {
           items: [
             {
               english: 'MPLS',
-              italian: 'MPLS / Multi-Protocol Label Switching',
+              italian: 'MPLS',
               pronunciation: '/em piː el es/',
               phonetic: 'EM-PI-EL-ES',
               example:
-                'MPLS forwards by labels instead of IP. = MPLS inoltra per etichette invece che per IP.',
+                'In the data path, MPLS forwards by labels instead of IP. = MPLS inoltra per etichette invece che per IP.',
               context: 'routing',
               difficulty: 'advanced',
             },
@@ -7625,37 +7745,38 @@ export default {
               italian: 'Etichetta',
               pronunciation: '/ˈleɪbl/',
               phonetic: 'LEI-bol',
-              example: 'MPLS labels are 20 bits long. = Le etichette MPLS sono lunghe 20 bit.',
+              example:
+                'The 20-bit MPLS label field allows over one million unique label values, giving service providers plenty of space for traffic engineering paths. = Il campo etichetta MPLS a 20 bit consente oltre un milione di valori etichetta unici, dando ai service provider ampio spazio per percorsi di traffic engineering.',
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'LSP',
-              italian: 'LSP / Label Switched Path',
+              italian: 'percorso a etichetta (LSP)',
               pronunciation: '/el es piː/',
               phonetic: 'EL-ES-PI',
               example:
-                'An LSP is the path through MPLS network. = Un LSP è il percorso attraverso una rete MPLS.',
+                'By definition, an LSP is the path through MPLS network. = Un LSP è il percorso attraverso una rete MPLS.',
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'LSR',
-              italian: 'LSR / Label Switch Router',
+              italian: 'router a etichetta (LSR)',
               pronunciation: '/el es ɑːr/',
               phonetic: 'EL-ES-AR',
               example:
-                'LSRs forward MPLS-labeled packets. = Gli LSR inoltrano pacchetti con etichette MPLS.',
+                "Inside the provider backbone, Label Switching Routers examine only the MPLS label header to forward packets, bypassing the slower IP lookup process. = Dentro il backbone del provider, i Label Switching Router esaminano solo l'header dell'etichetta MPLS per inoltrare i pacchetti, bypassando il processo di lookup IP piu lento.",
               context: 'routing',
               difficulty: 'advanced',
             },
             {
               english: 'LDP',
-              italian: 'LDP / Label Distribution Protocol',
+              italian: 'LDP',
               pronunciation: '/el diː piː/',
               phonetic: 'EL-DI-PI',
               example:
-                'LDP distributes MPLS labels between LSRs. = LDP distribuisce etichette MPLS tra LSR.',
+                'In networking, LDP distributes MPLS labels between LSRs. = LDP distribuisce etichette MPLS tra LSR.',
               context: 'routing',
               difficulty: 'advanced',
             },
@@ -7665,7 +7786,7 @@ export default {
               pronunciation: '/piː iː ˈruːtər/',
               phonetic: 'PI-I RU-ter',
               example:
-                'PE routers connect customer to MPLS. = I router PE connettono il cliente a MPLS.',
+                'At each customer site, the Provider Edge router receives IP traffic from the CE and encapsulates it with MPLS labels for transport across the provider core. = In ogni sito cliente, il router Provider Edge riceve traffico IP dal CE e lo incapsula con etichette MPLS per il trasporto attraverso il core del provider.',
               context: 'routing',
               difficulty: 'advanced',
               note: 'Provider Edge.',
@@ -7675,7 +7796,8 @@ export default {
               italian: 'Router P',
               pronunciation: '/piː ˈruːtər/',
               phonetic: 'PI RU-ter',
-              example: 'P routers form the MPLS core. = I router P formano il core MPLS.',
+              example:
+                'Provider (P) routers in the MPLS core only perform label switching and never see customer IP headers, simplifying their forwarding tables. = I router Provider (P) nel core MPLS eseguono solo label switching e non vedono mai gli header IP del cliente, semplificando le loro tabelle di inoltro.',
               context: 'routing',
               difficulty: 'advanced',
             },
@@ -7684,14 +7806,15 @@ export default {
               italian: 'Router CE',
               pronunciation: '/siː iː ˈruːtər/',
               phonetic: 'SI-I RU-ter',
-              example: 'CE routers belong to the customer. = I router CE appartengono al cliente.',
+              example:
+                "The Customer Edge router at each branch office peers with the provider's PE router to exchange routes for the L3VPN service. = Il router Customer Edge in ogni filiale fa peering con il router PE del provider per scambiare rotte per il servizio L3VPN.",
               context: 'routing',
               difficulty: 'advanced',
               note: 'Customer Edge.',
             },
             {
               english: 'L3VPN',
-              italian: 'L3VPN / VPN a livello 3 MPLS',
+              italian: 'VPN Layer 3 (L3VPN)',
               pronunciation: '/el θriː viː piː en/',
               phonetic: 'EL-THRI-VI-PI-EN',
               example:
@@ -7701,11 +7824,11 @@ export default {
             },
             {
               english: 'Segment Routing',
-              italian: 'segment routing / routing a segmenti',
+              italian: 'instradamento a segmenti (Segment Routing)',
               pronunciation: '/ˈseɡmənt ˈruːtɪŋ/',
               phonetic: 'SEG-ment RU-ting',
               example:
-                'Segment routing simplifies traffic engineering. = Il segment routing semplifica il traffic engineering.',
+                'In networking, Segment Routing simplifies traffic engineering. = Il segment routing semplifica il traffic engineering.',
               context: 'routing',
               difficulty: 'advanced',
               note: 'SR-MPLS o SRv6.',
@@ -7728,51 +7851,51 @@ export default {
           items: [
             {
               english: 'SDN',
-              italian: 'SDN / Software-Defined Networking',
+              italian: 'reti definite via software (SDN)',
               pronunciation: '/es diː en/',
               phonetic: 'ES-DI-EN',
               example:
-                'SDN separates control and data planes. = SDN separa control plane e data plane.',
+                'In networking, SDN separates control and data planes. = SDN separa control plane e data plane.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Control Plane',
-              italian: 'control plane / piano di controllo',
+              italian: 'piano di controllo',
               pronunciation: '/kənˈtroʊl pleɪn/',
               phonetic: 'kon-TROUL PLEIN',
               example:
-                'The control plane decides where packets go. = Il control plane decide dove vanno i pacchetti.',
+                'In networking, the Control Plane decides where packets go. = Il control plane decide dove vanno i pacchetti.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Data Plane',
-              italian: 'data plane / piano dati',
+              italian: 'piano dati',
               pronunciation: '/ˈdeɪtə pleɪn/',
               phonetic: 'DEI-ta PLEIN',
               example:
-                'The data plane forwards packets at high speed. = Il data plane inoltra pacchetti ad alta velocità.',
+                'In the data path, the Data Plane forwards packets at high speed. = Il data plane inoltra pacchetti ad alta velocità.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Management Plane',
-              italian: 'management plane / piano di gestione',
+              italian: 'piano di gestione',
               pronunciation: '/ˈmænɪdʒmənt pleɪn/',
               phonetic: 'MA-nich-ment PLEIN',
               example:
-                'The management plane handles configuration. = Il management plane gestisce la configurazione.',
+                'At its layer, the Management Plane handles configuration. = Il management plane gestisce la configurazione.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'SDN Controller',
-              italian: 'Controller SDN',
+              italian: 'controller SDN',
               pronunciation: '/kənˈtroʊlər/',
               phonetic: 'kon-TROU-ler',
               example:
-                'The SDN controller programs the data plane. = Il controller SDN programma il data plane.',
+                'In networking, the SDN Controller programs the data plane. = Il controller SDN programma il data plane.',
               context: 'services',
               difficulty: 'advanced',
               tool: 'OpenDaylight, ONOS',
@@ -7783,7 +7906,7 @@ export default {
               pronunciation: '/ˈnɔːrθbaʊnd/',
               phonetic: 'NORTH-baund',
               example:
-                'Northbound APIs let apps talk to the controller. = Le API northbound permettono alle app di parlare al controller.',
+                'Custom network automation scripts communicate with the SDN controller through its northbound API to provision new tenant networks on demand. = Script personalizzati di automazione di rete comunicano con il controller SDN attraverso la sua API northbound per provisionare nuove reti tenant su richiesta.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -7793,18 +7916,18 @@ export default {
               pronunciation: '/ˈsaʊθbaʊnd/',
               phonetic: 'SAUTH-baund',
               example:
-                'Southbound APIs program switches. = Le API southbound programmano gli switch.',
+                "The SDN controller uses southbound APIs like OpenFlow to push forwarding rules directly into the switch hardware at line rate. = Il controller SDN usa API southbound come OpenFlow per spingere regole di inoltro direttamente nell'hardware dello switch a velocita di linea.",
               context: 'services',
               difficulty: 'advanced',
               note: 'Esempio: OpenFlow.',
             },
             {
               english: 'OpenFlow',
-              italian: 'OpenFlow / protocollo SDN classico',
+              italian: 'OpenFlow',
               pronunciation: '/ˈoʊpən floʊ/',
               phonetic: 'OU-pen FLOU',
               example:
-                'OpenFlow is a southbound SDN protocol. = OpenFlow è un protocollo SDN southbound.',
+                'By definition, OpenFlow is a southbound SDN protocol. = OpenFlow è un protocollo SDN southbound.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -7820,7 +7943,7 @@ export default {
             },
             {
               english: 'Programmability',
-              italian: 'Programmabilità',
+              italian: 'programmabilità',
               pronunciation: '/ˌproʊɡræməˈbɪləti/',
               phonetic: 'pro-gra-ma-BI-li-ti',
               example:
@@ -7837,37 +7960,37 @@ export default {
           items: [
             {
               english: 'NFV',
-              italian: 'NFV / Network Function Virtualization',
+              italian: 'virtualizzazione funzioni di rete (NFV)',
               pronunciation: '/en ef viː/',
               phonetic: 'EN-EF-VI',
               example:
-                'NFV runs network functions on standard servers. = NFV fa girare funzioni di rete su server standard.',
+                'In production environments, NFV runs network functions on standard servers. = NFV fa girare funzioni di rete su server standard.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'VNF',
-              italian: 'VNF / Virtual Network Function',
+              italian: 'funzione di rete virtuale (VNF)',
               pronunciation: '/viː en ef/',
               phonetic: 'VI-EN-EF',
               example:
-                'A VNF is a virtualized firewall or router. = Una VNF è un firewall o router virtualizzato.',
+                'By definition, a VNF is a virtualized firewall or router. = Una VNF è un firewall o router virtualizzato.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Overlay Network',
-              italian: 'Rete overlay',
+              italian: 'rete overlay',
               pronunciation: '/ˈoʊvərleɪ/',
               phonetic: 'O-ver-lei',
               example:
-                'Overlay networks run on top of physical networks. = Le reti overlay girano sopra reti fisiche.',
+                'Multi-tenant data centers use an overlay network built with VXLAN to provide each customer with isolated Layer 2 segments over shared physical infrastructure. = I data center multi-tenant usano una rete overlay costruita con VXLAN per fornire a ogni cliente segmenti Layer 2 isolati su infrastruttura fisica condivisa.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Underlay Network',
-              italian: 'Rete underlay',
+              italian: 'rete underlay',
               pronunciation: '/ˈʌndərleɪ/',
               phonetic: 'AN-der-lei',
               example:
@@ -7877,62 +8000,64 @@ export default {
             },
             {
               english: 'VXLAN',
-              italian: 'VXLAN / Virtual eXtensible LAN',
+              italian: 'VXLAN',
               pronunciation: '/viː eks læn/',
               phonetic: 'VI-EKS-LAN',
               example:
-                'VXLAN extends Layer 2 over Layer 3. = VXLAN estende il Layer 2 sul Layer 3.',
+                'In networking, VXLAN extends Layer 2 over Layer 3. = VXLAN estende il Layer 2 sul Layer 3.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Virtual Extensible LAN. Porta UDP 4789.',
             },
             {
               english: 'VNI',
-              italian: 'VNI / VXLAN Network Identifier',
+              italian: 'VNI',
               pronunciation: '/viː en aɪ/',
               phonetic: 'VI-EN-AI',
-              example: 'VNI identifies a VXLAN segment. = VNI identifica un segmento VXLAN.',
+              example:
+                'During analysis, VNI identifies a VXLAN segment. = VNI identifica un segmento VXLAN.',
               context: 'services',
               difficulty: 'advanced',
               note: '24 bit: 16 milioni di segmenti.',
             },
             {
               english: 'VTEP',
-              italian: 'VTEP / VXLAN Tunnel Endpoint',
+              italian: 'VTEP',
               pronunciation: '/viː tep/',
               phonetic: 'VI-TEP',
               example:
-                'VTEPs encapsulate and decapsulate VXLAN. = I VTEP incapsulano e decapsulano VXLAN.',
+                'At each end of the overlay tunnel, a VXLAN Tunnel Endpoint wraps and unwraps Layer 2 frames inside UDP packets for transport across the Layer 3 fabric. = A ogni estremita del tunnel overlay, un VXLAN Tunnel Endpoint incapsula e decapsula frame Layer 2 dentro pacchetti UDP per il trasporto attraverso il fabric Layer 3.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'GRE',
-              italian: 'GRE / Generic Routing Encapsulation',
+              italian: 'GRE',
               pronunciation: '/dʒiː ɑːr iː/',
               phonetic: 'GI-AR-I',
-              example: 'GRE encapsulates many protocols. = GRE incapsula molti protocolli.',
+              example:
+                'In networking, GRE encapsulates many protocols. = GRE incapsula molti protocolli.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Geneve',
-              italian: 'Geneve / incapsulamento moderno alternativo a VXLAN',
+              italian: 'Geneve',
               pronunciation: '/ˈdʒeneɪv/',
               phonetic: 'GE-neiv',
               example:
-                'Geneve is a flexible tunneling protocol. = Geneve è un protocollo di tunneling flessibile.',
+                'By definition, Geneve is a flexible tunneling protocol. = Geneve è un protocollo di tunneling flessibile.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Generic Network Virtualization Encapsulation.',
             },
             {
               english: 'EVPN',
-              italian: 'EVPN / Ethernet VPN BGP',
+              italian: 'EVPN',
               pronunciation: '/iː viː piː en/',
               phonetic: 'I-VI-PI-EN',
               example:
-                'EVPN is the modern data center control plane. = EVPN è il control plane moderno per data center.',
+                'By definition, EVPN is the modern data center control plane. = EVPN è il control plane moderno per data center.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Ethernet VPN. Estensione di BGP.',
@@ -7946,11 +8071,11 @@ export default {
           items: [
             {
               english: 'P4',
-              italian: 'P4 / linguaggio programmazione del data plane',
+              italian: 'P4',
               pronunciation: '/piː fɔːr/',
               phonetic: 'PI-FOR',
               example:
-                'P4 programs the data plane behavior. = P4 programma il comportamento del data plane.',
+                'In networking, P4 programs the data plane behavior. = P4 programma il comportamento del data plane.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Programming Protocol-independent Packet Processors.',
@@ -7971,65 +8096,66 @@ export default {
               italian: 'Pipeline match-action',
               pronunciation: '/mætʃ ˈækʃən/',
               phonetic: 'MACH AK-scion',
-              example: 'P4 uses a match-action pipeline. = P4 usa una pipeline match-action.',
+              example:
+                'Engineers write P4 programs that define a match-action pipeline, specifying exactly which header fields to match and what actions to apply on each packet. = Gli ingegneri scrivono programmi P4 che definiscono una pipeline match-action, specificando esattamente quali campi header confrontare e quali azioni applicare su ogni pacchetto.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Parser',
-              italian: 'parser / analizzatore di pacchetti',
+              italian: 'parser',
               pronunciation: '/ˈpɑːrsər/',
               phonetic: 'PAR-ser',
               example:
-                'P4 parsers extract header fields. = I parser P4 estraggono campi degli header.',
+                "During packet ingress, the P4 parser walks the protocol headers in order, extracting fields like source IP and VLAN tag for the match-action tables. = Durante l'ingresso del pacchetto, il parser P4 attraversa gli header di protocollo in ordine, estraendo campi come IP sorgente e VLAN tag per le tabelle match-action.",
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'eBPF',
-              italian: 'eBPF / extended Berkeley Packet Filter',
+              italian: 'eBPF',
               pronunciation: '/iː biː piː ef/',
               phonetic: 'I-BI-PI-EF',
               example:
-                'eBPF runs sandboxed programs in the kernel. = eBPF esegue programmi sandbox nel kernel.',
+                'In production environments, eBPF runs sandboxed programs in the kernel. = eBPF esegue programmi sandbox nel kernel.',
               context: 'services',
               difficulty: 'advanced',
               tool: 'bpftool, bcc',
             },
             {
               english: 'XDP',
-              italian: 'XDP / eXpress Data Path',
+              italian: 'XDP',
               pronunciation: '/eks diː piː/',
               phonetic: 'EKS-DI-PI',
               example:
-                'XDP processes packets at the driver level. = XDP processa pacchetti a livello driver.',
+                'In networking, XDP processes packets at the driver level. = XDP processa pacchetti a livello driver.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'DPDK',
-              italian: 'DPDK / Data Plane Development Kit',
+              italian: 'DPDK',
               pronunciation: '/diː piː diː keɪ/',
               phonetic: 'DI-PI-DI-KEI',
               example:
-                'DPDK bypasses the kernel for high speed. = DPDK bypassa il kernel per alta velocità.',
+                'In networking, DPDK bypasses the kernel for high speed. = DPDK bypassa il kernel per alta velocità.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Data Plane Development Kit.',
             },
             {
               english: 'SmartNIC',
-              italian: 'SmartNIC / scheda di rete con CPU programmabile',
+              italian: 'SmartNIC',
               pronunciation: '/smɑːrt nɪk/',
               phonetic: 'SMART NIK',
               example:
-                'SmartNICs offload network functions. = Le SmartNIC offloadano funzioni di rete.',
+                "By running encryption and load balancing directly on a SmartNIC, the server CPU is freed to handle application workloads instead of network processing. = Eseguendo crittografia e bilanciamento del carico direttamente su una SmartNIC, la CPU del server e libera di gestire i carichi applicativi invece dell'elaborazione di rete.",
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Network OS',
-              italian: 'network OS / sistema operativo di rete',
+              italian: 'sistema operativo di rete (NOS)',
               pronunciation: '/ˈnetwɜːrk oʊ es/',
               phonetic: 'NET-uerk O-ES',
               example:
@@ -8070,23 +8196,23 @@ export default {
               pronunciation: '/ˌɔːtəˈmeɪʃən/',
               phonetic: 'o-to-MEI-scion',
               example:
-                "Network automation reduces human errors. = L'automazione di rete riduce errori umani.",
+                "By optimizing traffic, Network Automation reduces human errors. = L'automazione di rete riduce errori umani.",
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Closed-Loop',
-              italian: 'closed-loop / automazione ad anello chiuso',
+              italian: 'ciclo chiuso (closed-loop)',
               pronunciation: '/kloʊzd luːp/',
               phonetic: 'KLOUZD LUUP',
               example:
-                'Closed-loop systems verify and remediate automatically. = I sistemi closed-loop verificano e rimedianno automaticamente.',
+                'In networking, Closed-Loop systems verify and remediate automatically. = I sistemi closed-loop verificano e rimedianno automaticamente.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Telemetry',
-              italian: 'Telemetria',
+              italian: 'telemetria',
               pronunciation: '/təˈlemətri/',
               phonetic: 'te-LE-me-tri',
               example:
@@ -8101,18 +8227,18 @@ export default {
               pronunciation: '/ˈsɪskoʊ diː en eɪ/',
               phonetic: 'SI-skou DI-EN-EI',
               example:
-                'Cisco DNA Center automates campus networks. = Cisco DNA Center automatizza reti campus.',
+                'In modern infrastructure, Cisco DNA Center automates campus networks. = Cisco DNA Center automatizza reti campus.',
               context: 'services',
               difficulty: 'advanced',
               tool: 'Cisco DNA Center',
             },
             {
               english: 'ACI',
-              italian: 'ACI / Application Centric Infrastructure',
+              italian: 'ACI',
               pronunciation: '/eɪ siː aɪ/',
               phonetic: 'EI-SI-AI',
               example:
-                "ACI is Cisco's data center SDN solution. = ACI è la soluzione SDN data center di Cisco.",
+                "By definition, ACI is Cisco's data center SDN solution. = ACI è la soluzione SDN data center di Cisco.",
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8128,18 +8254,18 @@ export default {
             },
             {
               english: 'OVS',
-              italian: 'OVS / Open vSwitch',
+              italian: 'Open vSwitch (OVS)',
               pronunciation: '/oʊ viː es/',
               phonetic: 'O-VI-ES',
               example:
-                'OVS is a software switch for virtualized environments. = OVS è uno switch software per ambienti virtualizzati.',
+                'By definition, OVS is a software switch for virtualized environments. = OVS è uno switch software per ambienti virtualizzati.',
               context: 'services',
               difficulty: 'advanced',
               tool: 'Open vSwitch',
             },
             {
               english: 'Service Mesh',
-              italian: 'service mesh / rete di servizi gestita',
+              italian: 'rete di microservizi (service mesh)',
               pronunciation: '/ˈsɜːrvɪs meʃ/',
               phonetic: 'SER-vis MESH',
               example:
@@ -8150,7 +8276,7 @@ export default {
             },
             {
               english: 'eBGP Unnumbered',
-              italian: 'eBGP Unnumbered / eBGP senza IP punto-a-punto',
+              italian: 'eBGP unnumbered',
               pronunciation: '/iː biː dʒiː piː ʌnˈnʌmbərd/',
               phonetic: 'I-BI-GI-PI an-NAM-berd',
               example:
@@ -8177,20 +8303,22 @@ export default {
           items: [
             {
               english: 'IDS',
-              italian: 'IDS / Sistema di rilevamento intrusioni',
+              italian: 'sistema di rilevamento intrusioni (IDS)',
               pronunciation: '/aɪ diː es/',
               phonetic: 'AI-DI-ES',
-              example: 'IDS detects suspicious activity. = IDS rileva attività sospetta.',
+              example:
+                'When scanning traffic, IDS detects suspicious activity. = IDS rileva attività sospetta.',
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Intrusion Detection System. Solo monitoraggio.',
             },
             {
               english: 'IPS',
-              italian: 'IPS / Sistema di prevenzione intrusioni',
+              italian: 'sistema di prevenzione intrusioni (IPS)',
               pronunciation: '/aɪ piː es/',
               phonetic: 'AI-PI-ES',
-              example: 'IPS blocks attacks in real time. = IPS blocca attacchi in tempo reale.',
+              example:
+                'In networking, IPS blocks attacks in real time. = IPS blocca attacchi in tempo reale.',
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Intrusion Prevention System. Inline.',
@@ -8200,7 +8328,8 @@ export default {
               italian: 'Snort (IDS/IPS open source)',
               pronunciation: '/snɔːrt/',
               phonetic: 'SNORT',
-              example: 'Snort is a popular open-source IDS. = Snort è un popolare IDS open-source.',
+              example:
+                'By definition, Snort is a popular open-source IDS. = Snort è un popolare IDS open-source.',
               context: 'firewalls',
               difficulty: 'advanced',
               tool: 'Snort',
@@ -8211,7 +8340,7 @@ export default {
               pronunciation: '/sʊrɪˈkɑːtə/',
               phonetic: 'su-ri-KA-ta',
               example:
-                'Suricata is a multi-threaded IDS/IPS. = Suricata è un IDS/IPS multi-thread.',
+                'By definition, Suricata is a multi-threaded IDS/IPS. = Suricata è un IDS/IPS multi-thread.',
               context: 'firewalls',
               difficulty: 'advanced',
               tool: 'Suricata',
@@ -8228,37 +8357,37 @@ export default {
             },
             {
               english: 'Anomaly Detection',
-              italian: 'Rilevamento anomalie',
+              italian: 'rilevamento anomalie',
               pronunciation: '/əˈnɒməli/',
               phonetic: 'a-NO-ma-li',
               example:
-                'Anomaly detection finds unusual behavior. = Il rilevamento anomalie trova comportamenti insoliti.',
+                'In networking, Anomaly Detection finds unusual behavior. = Il rilevamento anomalie trova comportamenti insoliti.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'False Positive',
-              italian: 'Falso positivo',
+              italian: 'falso positivo',
               pronunciation: '/fɔːls ˈpɒzɪtɪv/',
               phonetic: 'FOLS PO-zi-tiv',
               example:
-                'False positives waste analyst time. = I falsi positivi sprecano tempo agli analisti.',
+                'After tuning the SIEM rules, the security team reduced false positive alerts by 70%, freeing analysts to focus on genuine threats. = Dopo aver sintonizzato le regole SIEM, il team di sicurezza ha ridotto gli alert di falsi positivi del 70%, liberando gli analisti per concentrarsi su minacce genuine.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'False Negative',
-              italian: 'Falso negativo',
+              italian: 'falso negativo',
               pronunciation: '/ˈneɡətɪv/',
               phonetic: 'NE-ga-tiv',
               example:
-                'False negatives miss real attacks. = I falsi negativi mancano attacchi reali.',
+                'A poorly tuned IDS signature that produces false negatives will miss real attacks, leaving the network exposed to active threats. = Una firma IDS mal configurata che produce falsi negativi manchera attacchi reali, lasciando la rete esposta a minacce attive.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'Inline Mode',
-              italian: 'Modalità inline',
+              italian: 'modalità inline',
               pronunciation: '/ˌɪnˈlaɪn/',
               phonetic: 'in-LAIN',
               example:
@@ -8271,7 +8400,8 @@ export default {
               italian: 'Fuori banda',
               pronunciation: '/aʊt ʌv bænd/',
               phonetic: 'AUT-ov-BAND',
-              example: 'Out-of-band IDS uses a SPAN port. = Un IDS fuori banda usa una porta SPAN.',
+              example:
+                'In networking, Out-of-Band IDS uses a SPAN port. = Un IDS fuori banda usa una porta SPAN.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
@@ -8284,11 +8414,11 @@ export default {
           items: [
             {
               english: 'DMZ',
-              italian: 'DMZ / Zona demilitarizzata',
+              italian: 'zona demilitarizzata (DMZ)',
               pronunciation: '/diː em ˈzed/',
               phonetic: 'DI-EM-ZED',
               example:
-                'A DMZ isolates public-facing servers. = Una DMZ isola server esposti pubblicamente.',
+                'In networking, a DMZ isolates public-facing servers. = Una DMZ isola server esposti pubblicamente.',
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Tipicamente tra due firewall.',
@@ -8299,90 +8429,91 @@ export default {
               pronunciation: '/ˈbæstiən hoʊst/',
               phonetic: 'BA-stien HOUST',
               example:
-                "A bastion host gates remote access. = Un host bastione controlla l'accesso remoto.",
+                "In networking, a Bastion Host gates remote access. = Un host bastione controlla l'accesso remoto.",
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'Honeypot',
-              italian: 'honeypot / esca per attaccanti',
+              italian: 'honeypot',
               pronunciation: '/ˈhʌnipɒt/',
               phonetic: 'HA-ni-pot',
-              example: 'A honeypot lures attackers. = Un honeypot attira gli aggressori.',
+              example:
+                'In networking, a Honeypot lures attackers. = Un honeypot attira gli aggressori.',
               context: 'firewalls',
               difficulty: 'advanced',
               tool: 'Cowrie, Dionaea',
             },
             {
               english: 'Honeynet',
-              italian: 'honeynet / rete di honeypot',
+              italian: 'honeynet',
               pronunciation: '/ˈhʌninet/',
               phonetic: 'HA-ni-net',
               example:
-                'A honeynet is a network of honeypots. = Una honeynet è una rete di honeypot.',
+                'By definition, a Honeynet is a network of honeypots. = Una honeynet è una rete di honeypot.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'Tarpit',
-              italian: 'tarpit / trappola che rallenta gli attaccanti',
+              italian: 'tarpit',
               pronunciation: '/ˈtɑːrpɪt/',
               phonetic: 'TAR-pit',
               example:
-                'Tarpits slow down scanners and worms. = I tarpit rallentano scanner e worm.',
+                "As a deception technique, the defensive tarpit accepts TCP connections but responds extremely slowly, wasting the attacker's time and resources. = Come tecnica di inganno, il tarpit difensivo accetta connessioni TCP ma risponde estremamente lentamente, sprecando tempo e risorse dell'attaccante.",
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'Threat Intelligence',
-              italian: 'threat intelligence / intelligence sulle minacce',
+              italian: 'intelligence sulle minacce (threat intelligence)',
               pronunciation: '/θret ɪnˈtelɪdʒəns/',
               phonetic: 'THRET in-TE-li-gens',
               example:
-                'Threat intelligence feeds enrich detection. = I feed di threat intelligence arricchiscono la detection.',
+                'In networking, Threat Intelligence feeds enrich detection. = I feed di threat intelligence arricchiscono la detection.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'IoC',
-              italian: 'IoC / Indicatore di compromissione',
+              italian: 'indicatore di compromissione (IoC)',
               pronunciation: '/aɪ oʊ siː/',
               phonetic: 'AI-O-SI',
               example:
-                'IoCs include hashes, IPs and domains. = Gli IoC includono hash, IP e domini.',
+                'Threat intelligence feeds distribute Indicators of Compromise such as file hashes, malicious IPs, and suspicious domains to security teams worldwide. = I feed di threat intelligence distribuiscono Indicatori di Compromissione come hash di file, IP malevoli e domini sospetti ai team di sicurezza nel mondo.',
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Indicator of Compromise.',
             },
             {
               english: 'SIEM',
-              italian: 'SIEM / Security Information and Event Management',
+              italian: 'SIEM',
               pronunciation: '/siːm/',
               phonetic: 'SIIM',
               example:
-                'SIEM correlates events from many sources. = Il SIEM correla eventi da molte fonti.',
+                'In networking, SIEM correlates events from many sources. = Il SIEM correla eventi da molte fonti.',
               context: 'firewalls',
               difficulty: 'advanced',
               tool: 'Splunk, Elastic SIEM',
             },
             {
               english: 'SOAR',
-              italian: 'SOAR / Security Orchestration Automation Response',
+              italian: 'SOAR',
               pronunciation: '/sɔːr/',
               phonetic: 'SOR',
               example:
-                'SOAR automates response playbooks. = SOAR automatizza i playbook di risposta.',
+                'In modern infrastructure, SOAR automates response playbooks. = SOAR automatizza i playbook di risposta.',
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Security Orchestration, Automation and Response.',
             },
             {
               english: 'Threat Hunting',
-              italian: 'threat hunting / caccia proattiva alle minacce',
+              italian: 'caccia alle minacce (threat hunting)',
               pronunciation: '/θret ˈhʌntɪŋ/',
               phonetic: 'THRET HAN-ting',
               example:
-                'Threat hunting actively looks for hidden threats. = Il threat hunting cerca attivamente minacce nascoste.',
+                'In networking, Threat Hunting actively looks for hidden threats. = Il threat hunting cerca attivamente minacce nascoste.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
@@ -8395,22 +8526,22 @@ export default {
           items: [
             {
               english: 'Zero Trust',
-              italian: 'zero trust / nessuna fiducia di default',
+              italian: 'zero trust',
               pronunciation: '/ˈzɪəroʊ trʌst/',
               phonetic: 'ZI-ro TRAST',
               example:
-                'Zero Trust assumes no implicit trust. = Zero Trust non assume fiducia implicita.',
+                'In networking, Zero Trust assumes no implicit trust. = Zero Trust non assume fiducia implicita.',
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Mantra: "never trust, always verify".',
             },
             {
               english: 'Microsegmentation',
-              italian: 'Microsegmentazione',
+              italian: 'microsegmentazione',
               pronunciation: '/ˌmaɪkroʊseɡmenˈteɪʃən/',
               phonetic: 'mai-kro-seg-men-TEI-scion',
               example:
-                'Microsegmentation isolates workloads. = La microsegmentazione isola workload.',
+                'In networking, Microsegmentation isolates workloads. = La microsegmentazione isola workload.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
@@ -8419,28 +8550,30 @@ export default {
               italian: 'Provider di identità',
               pronunciation: '/aɪˈdentɪti/',
               phonetic: 'ai-DEN-ti-ti',
-              example: "IdPs centralize authentication. = Gli IdP centralizzano l'autenticazione.",
+              example:
+                "By connecting all SaaS applications to a single Identity Provider, the security team enforces consistent MFA policies across the entire organization. = Collegando tutte le applicazioni SaaS a un singolo Identity Provider, il team di sicurezza applica policy MFA coerenti in tutta l'organizzazione.",
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Esempi: Okta, Azure AD.',
             },
             {
               english: 'NAC',
-              italian: 'NAC / Controllo accesso alla rete',
+              italian: 'controllo accesso alla rete (NAC)',
               pronunciation: '/næk/',
               phonetic: 'NAK',
               example:
-                'NAC enforces device compliance before connection. = Il NAC impone la compliance dei dispositivi prima della connessione.',
+                'In networking, NAC enforces device compliance before connection. = Il NAC impone la compliance dei dispositivi prima della connessione.',
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Network Access Control.',
             },
             {
               english: '802.1X',
-              italian: '802.1X / autenticazione port-based',
+              italian: 'autenticazione port-based (802.1X)',
               pronunciation: '/eɪt oʊ tuː dɒt eks/',
               phonetic: 'EIT-O-TU dot EKS',
-              example: "802.1X authenticates port access. = 802.1X autentica l'accesso alla porta.",
+              example:
+                "For security, 802.1X authenticates port access. = 802.1X autentica l'accesso alla porta.",
               context: 'firewalls',
               difficulty: 'advanced',
             },
@@ -8450,28 +8583,28 @@ export default {
               pronunciation: '/ˈpɒstʃər/',
               phonetic: 'POS-cer',
               example:
-                'Posture assessment checks endpoint health. = La valutazione posture controlla la salute degli endpoint.',
+                'In networking, Posture Assessment checks endpoint health. = La valutazione posture controlla la salute degli endpoint.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'SASE',
-              italian: 'SASE / Secure Access Service Edge',
+              italian: 'SASE',
               pronunciation: '/ˈsæsi/',
               phonetic: 'SA-si',
               example:
-                'SASE merges networking and security in the cloud. = SASE fonde rete e sicurezza nel cloud.',
+                'In networking, SASE merges networking and security in the cloud. = SASE fonde rete e sicurezza nel cloud.',
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Secure Access Service Edge.',
             },
             {
               english: 'ZTNA',
-              italian: 'ZTNA / Zero Trust Network Access',
+              italian: 'ZTNA',
               pronunciation: '/zed tiː en eɪ/',
               phonetic: 'ZED-TI-EN-EI',
               example:
-                'ZTNA replaces VPN with per-app access. = ZTNA sostituisce la VPN con accesso per-app.',
+                'In networking, ZTNA replaces VPN with per-app access. = ZTNA sostituisce la VPN con accesso per-app.',
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Zero Trust Network Access.',
@@ -8482,7 +8615,7 @@ export default {
               pronunciation: '/ɪnˈsɜːrʃən/',
               phonetic: 'in-SER-scion',
               example:
-                "Service insertion routes traffic through security functions. = L'inserimento servizio instrada il traffico attraverso funzioni di sicurezza.",
+                "In the forwarding pipeline, Service Insertion routes traffic through security functions. = L'inserimento servizio instrada il traffico attraverso funzioni di sicurezza.",
               context: 'firewalls',
               difficulty: 'advanced',
             },
@@ -8492,7 +8625,7 @@ export default {
               pronunciation: '/iːst west/',
               phonetic: 'IIST-UEST',
               example:
-                'East-west traffic flows between servers. = Il traffico est-ovest scorre tra server.',
+                'In networking, East-West Traffic flows between servers. = Il traffico est-ovest scorre tra server.',
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Lateral movement avviene qui.',
@@ -8506,21 +8639,21 @@ export default {
           items: [
             {
               english: 'DDoS',
-              italian: 'DDoS / Negazione servizio distribuita',
+              italian: 'DDoS',
               pronunciation: '/diː dɒs/',
               phonetic: 'DI-DOS',
               example:
-                'DDoS attacks overwhelm services. = Gli attacchi DDoS sovraccaricano i servizi.',
+                'In networking, DDoS attacks overwhelm services. = Gli attacchi DDoS sovraccaricano i servizi.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'SYN Flood',
-              italian: 'SYN flood / inondazione di pacchetti SYN',
+              italian: 'SYN flood',
               pronunciation: '/sɪn flʌd/',
               phonetic: 'SIN-FLAD',
               example:
-                'SYN floods exhaust connection tables. = I SYN flood esauriscono le tabelle di connessione.',
+                'To mitigate a SYN flood attack, the firewall enables SYN cookies so it can handle millions of half-open connections without exhausting its connection table. = Per mitigare un attacco SYN flood, il firewall abilita i SYN cookie cosi da poter gestire milioni di connessioni semi-aperte senza esaurire la tabella di connessione.',
               context: 'firewalls',
               difficulty: 'advanced',
               note: 'Mitigato da SYN cookies.',
@@ -8537,7 +8670,7 @@ export default {
             },
             {
               english: 'Spoofing',
-              italian: 'spoofing / impersonificazione',
+              italian: 'spoofing',
               pronunciation: '/ˈspuːfɪŋ/',
               phonetic: 'SPU-fing',
               example:
@@ -8547,21 +8680,21 @@ export default {
             },
             {
               english: 'Sniffing',
-              italian: 'sniffing / intercettazione di rete',
+              italian: 'sniffing',
               pronunciation: '/ˈsnɪfɪŋ/',
               phonetic: 'SNI-fing',
               example:
-                'Sniffing captures network traffic passively. = Lo sniffing cattura il traffico di rete passivamente.',
+                'In networking, Sniffing captures network traffic passively. = Lo sniffing cattura il traffico di rete passivamente.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'MITM',
-              italian: 'MITM / Man-in-the-Middle',
+              italian: 'attacco man-in-the-middle (MITM)',
               pronunciation: '/em aɪ tiː em/',
               phonetic: 'EM-AI-TI-EM',
               example:
-                'MITM attacks intercept traffic between parties. = Gli attacchi MITM intercettano il traffico tra le parti.',
+                'In networking, MITM attacks intercept traffic between parties. = Gli attacchi MITM intercettano il traffico tra le parti.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
@@ -8571,36 +8704,37 @@ export default {
               pronunciation: '/ˈseʃən/',
               phonetic: 'SES-scion',
               example:
-                "Session hijacking steals active sessions. = L'hijacking di sessione ruba sessioni attive.",
+                "In networking, Session Hijacking steals active sessions. = L'hijacking di sessione ruba sessioni attive.",
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'DNS Spoofing',
-              italian: 'DNS spoofing / falsificazione delle risposte DNS',
+              italian: 'spoofing DNS',
               pronunciation: '/diː en es/',
               phonetic: 'DI-EN-ES',
               example:
-                'DNS spoofing redirects to fake sites. = Il DNS spoofing reindirizza a siti falsi.',
+                'In networking, DNS Spoofing redirects to fake sites. = Il DNS spoofing reindirizza a siti falsi.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'Botnet',
-              italian: 'botnet / rete di bot infetti',
+              italian: 'botnet',
               pronunciation: '/ˈbɒtnet/',
               phonetic: 'BOT-net',
               example:
-                'Botnets power large DDoS campaigns. = Le botnet alimentano grandi campagne DDoS.',
+                'When a threat actor activates a botnet of thousands of compromised IoT devices, the resulting DDoS flood can overwhelm even well-protected targets. = Quando un threat actor attiva una botnet di migliaia di dispositivi IoT compromessi, il flood DDoS risultante puo sopraffare anche obiettivi ben protetti.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
             {
               english: 'C2',
-              italian: 'C2 / Command and Control',
+              italian: 'comando e controllo (C2)',
               pronunciation: '/siː tuː/',
               phonetic: 'SI-TU',
-              example: 'C2 channels control malware. = I canali C2 controllano il malware.',
+              example:
+                'In networking, C2 channels control malware. = I canali C2 controllano il malware.',
               context: 'firewalls',
               difficulty: 'advanced',
             },
@@ -8622,17 +8756,18 @@ export default {
           items: [
             {
               english: 'VPC',
-              italian: 'VPC / Virtual Private Cloud',
+              italian: 'VPC',
               pronunciation: '/viː piː siː/',
               phonetic: 'VI-PI-SI',
-              example: 'A VPC isolates resources in the cloud. = Una VPC isola risorse nel cloud.',
+              example:
+                'In networking, a VPC isolates resources in the cloud. = Una VPC isola risorse nel cloud.',
               context: 'services',
               difficulty: 'advanced',
               note: 'AWS, GCP. Azure: VNet.',
             },
             {
               english: 'VNet',
-              italian: 'VNet / Virtual Network Azure',
+              italian: 'VNet',
               pronunciation: '/viː net/',
               phonetic: 'VI-NET',
               example:
@@ -8642,30 +8777,31 @@ export default {
             },
             {
               english: 'Public Subnet',
-              italian: 'Sottorete pubblica',
+              italian: 'sottorete pubblica',
               pronunciation: '/ˈpʌblɪk ˈsʌbnet/',
               phonetic: 'PA-blik SAB-net',
               example:
-                'Public subnets have direct Internet access. = Le sottoreti pubbliche hanno accesso diretto a Internet.',
+                "Web servers that need to be reachable from outside are placed in a public subnet with a route to the Internet Gateway. = I web server che devono essere raggiungibili dall'esterno vengono collocati in una sottorete pubblica con una rotta verso l'Internet Gateway.",
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Private Subnet',
-              italian: 'Sottorete privata',
+              italian: 'sottorete privata',
               pronunciation: '/ˈpraɪvət/',
               phonetic: 'PRAI-vet',
               example:
-                'Private subnets only have outbound via NAT. = Le sottoreti private hanno solo uscita via NAT.',
+                'Database instances in a private subnet can download patches through the NAT Gateway but remain unreachable from the public Internet. = Le istanze database in una sottorete privata possono scaricare patch attraverso il NAT Gateway ma restano irraggiungibili da Internet pubblica.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Internet Gateway',
-              italian: 'Internet Gateway / gateway Internet di VPC',
+              italian: 'gateway Internet (IGW)',
               pronunciation: '/ˈɪntərnet ˈɡeɪtweɪ/',
               phonetic: 'IN-ter-net GHEIT-uei',
-              example: 'IGW connects VPC to the Internet. = IGW connette la VPC a Internet.',
+              example:
+                'Without an Internet Gateway attached to the VPC, none of the public-subnet EC2 instances can receive inbound traffic from external users. = Senza un Internet Gateway collegato alla VPC, nessuna delle istanze EC2 nella subnet pubblica puo ricevere traffico in ingresso da utenti esterni.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8675,28 +8811,28 @@ export default {
               pronunciation: '/næt/',
               phonetic: 'NAT',
               example:
-                'NAT Gateway lets private subnets reach Internet. = Il NAT Gateway permette alle sottoreti private di raggiungere Internet.',
+                'For flexibility, NAT Gateway lets private subnets reach Internet. = Il NAT Gateway permette alle sottoreti private di raggiungere Internet.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Costoso: $0.045/h + traffic.',
             },
             {
               english: 'Security Group',
-              italian: 'Security Group / gruppo di sicurezza cloud',
+              italian: 'security group',
               pronunciation: '/sɪˈkjʊərəti ɡruːp/',
               phonetic: 'si-KIU-re-ti GRUP',
               example:
-                'Security groups are stateful instance firewalls. = I security group sono firewall stateful per istanza.',
+                'Because AWS security groups are stateful, allowing inbound HTTPS on port 443 automatically permits the corresponding outbound response traffic. = Poiche i security group AWS sono stateful, permettere HTTPS in ingresso sulla porta 443 permette automaticamente il traffico di risposta in uscita corrispondente.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'NACL',
-              italian: 'NACL / Network ACL',
+              italian: 'NACL',
               pronunciation: '/nækəl/',
               phonetic: 'NA-kol',
               example:
-                'NACLs are stateless subnet firewalls. = Le NACL sono firewall stateless di sottorete.',
+                'In AWS, a Network ACL applies stateless rules at the subnet boundary, so you must explicitly allow both inbound and outbound traffic for each flow. = In AWS, una Network ACL applica regole stateless al confine della sottorete, quindi devi esplicitamente permettere sia il traffico in ingresso che in uscita per ogni flusso.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8729,68 +8865,68 @@ export default {
           items: [
             {
               english: 'VPC Peering',
-              italian: 'VPC peering / collegamento tra VPC',
+              italian: 'peering VPC',
               pronunciation: '/viː piː siː ˈpɪərɪŋ/',
               phonetic: 'VI-PI-SI PIIR-ing',
               example:
-                'VPC peering links two VPCs privately. = Il VPC peering collega due VPC privatamente.',
+                'In networking, VPC Peering links two VPCs privately. = Il VPC peering collega due VPC privatamente.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Non transitivo.',
             },
             {
               english: 'Transit Gateway',
-              italian: 'Transit Gateway / hub VPN/VPC AWS',
+              italian: 'transit gateway',
               pronunciation: '/ˈtrænzɪt ˈɡeɪtweɪ/',
               phonetic: 'TRAN-zit GHEIT-uei',
               example:
-                'Transit Gateway connects many VPCs in a hub. = Transit Gateway connette molte VPC in un hub.',
+                'In the network topology, Transit Gateway connects many VPCs in a hub. = Transit Gateway connette molte VPC in un hub.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'VPC Endpoint',
-              italian: 'VPC endpoint / endpoint privato verso servizi AWS',
+              italian: 'endpoint VPC',
               pronunciation: '/ˈendpɔɪnt/',
               phonetic: 'END-point',
               example:
-                'VPC endpoints provide private access to AWS services. = I VPC endpoint forniscono accesso privato a servizi AWS.',
+                'To keep S3 traffic off the public Internet, the team creates a VPC endpoint that provides a private, direct path from the VPC to the storage service. = Per mantenere il traffico S3 fuori da Internet pubblica, il team crea un VPC endpoint che fornisce un percorso privato e diretto dalla VPC al servizio di storage.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'PrivateLink',
-              italian: 'AWS PrivateLink / collegamento privato a servizi AWS',
+              italian: 'PrivateLink',
               pronunciation: '/ˈpraɪvət lɪŋk/',
               phonetic: 'PRAI-vet LINK',
               example:
-                'PrivateLink exposes services privately. = PrivateLink espone servizi privatamente.',
+                'In networking, PrivateLink exposes services privately. = PrivateLink espone servizi privatamente.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Direct Connect',
-              italian: 'AWS Direct Connect / circuito dedicato verso AWS',
+              italian: 'Direct Connect',
               pronunciation: '/dəˈrekt kəˈnekt/',
               phonetic: 'di-REKT ko-NEKT',
               example:
-                'Direct Connect provides dedicated AWS links. = Direct Connect fornisce link dedicati ad AWS.',
+                'For network operations, Direct Connect provides dedicated AWS links. = Direct Connect fornisce link dedicati ad AWS.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'ExpressRoute',
-              italian: 'Azure ExpressRoute / circuito dedicato verso Azure',
+              italian: 'ExpressRoute',
               pronunciation: '/ɪkˈspres ruːt/',
               phonetic: 'iks-PRES RUUT',
               example:
-                "ExpressRoute is the Azure equivalent. = ExpressRoute è l'equivalente Azure.",
+                "By definition, ExpressRoute is the Azure equivalent. = ExpressRoute è l'equivalente Azure.",
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Cloud Interconnect',
-              italian: 'Google Cloud Interconnect / circuito dedicato GCP',
+              italian: 'Cloud Interconnect',
               pronunciation: '/ˌɪntərkəˈnekt/',
               phonetic: 'in-ter-ko-NEKT',
               example:
@@ -8804,16 +8940,17 @@ export default {
               pronunciation: '/ˈhaɪbrɪd/',
               phonetic: 'HAI-brid',
               example:
-                'Hybrid cloud spans on-prem and cloud. = Il cloud ibrido si estende tra on-prem e cloud.',
+                'In networking, Hybrid Cloud spans on-prem and cloud. = Il cloud ibrido si estende tra on-prem e cloud.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Multi-Cloud',
-              italian: 'multi-cloud / uso di più provider cloud',
+              italian: 'multi-cloud',
               pronunciation: '/ˈmʌlti klaʊd/',
               phonetic: 'MAL-ti KLAUD',
-              example: 'Multi-cloud uses multiple providers. = Multi-cloud usa più provider.',
+              example:
+                'Under the hood, Multi-Cloud uses multiple providers. = Multi-cloud usa più provider.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8823,7 +8960,7 @@ export default {
               pronunciation: '/saɪt tuː klaʊd/',
               phonetic: 'SAIT-tu-KLAUD',
               example:
-                'Site-to-cloud VPNs connect on-prem to VPC. = Le VPN site-to-cloud connettono on-prem a VPC.',
+                "The hybrid architecture uses a site-to-cloud VPN between the on-premises data center and the AWS VPC for secure database replication. = L'architettura ibrida usa una VPN site-to-cloud tra il data center on-premises e la VPC AWS per la replica sicura del database.",
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8836,7 +8973,7 @@ export default {
           items: [
             {
               english: 'ELB',
-              italian: 'ELB / Elastic Load Balancer',
+              italian: 'ELB',
               pronunciation: '/iː el biː/',
               phonetic: 'I-EL-BI',
               example:
@@ -8846,20 +8983,20 @@ export default {
             },
             {
               english: 'ALB',
-              italian: 'ALB / Application Load Balancer',
+              italian: 'ALB',
               pronunciation: '/eɪ el biː/',
               phonetic: 'EI-EL-BI',
-              example: 'ALB operates at Layer 7. = ALB opera al Layer 7.',
+              example: 'In the network stack, ALB operates at Layer 7. = ALB opera al Layer 7.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'NLB',
-              italian: 'NLB / Network Load Balancer',
+              italian: 'NLB',
               pronunciation: '/en el biː/',
               phonetic: 'EN-EL-BI',
               example:
-                'NLB operates at Layer 4 with high performance. = NLB opera al Layer 4 con alte prestazioni.',
+                'In the network stack, NLB operates at Layer 4 with high performance. = NLB opera al Layer 4 con alte prestazioni.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8869,7 +9006,7 @@ export default {
               pronunciation: '/klaʊd loʊd ˈbælənsər/',
               phonetic: 'KLAUD LOUD BA-lan-ser',
               example:
-                'Cloud LBs scale automatically. = I bilanciatori cloud scalano automaticamente.',
+                'During a traffic spike, the cloud load balancer scales automatically by provisioning additional nodes behind the scenes without any manual intervention. = Durante un picco di traffico, il bilanciatore di carico cloud scala automaticamente provisionando nodi aggiuntivi dietro le quinte senza alcun intervento manuale.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8879,17 +9016,17 @@ export default {
               pronunciation: '/ˈtɑːrɡət ɡruːp/',
               phonetic: 'TAR-ghet GRUP',
               example:
-                'Target groups define backend instances. = I gruppi target definiscono le istanze backend.',
+                "The Application Load Balancer forwards requests to a target group containing three healthy EC2 instances running the API microservice. = L'Application Load Balancer inoltra le richieste a un target group contenente tre istanze EC2 sane che eseguono il microservizio API.",
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Listener',
-              italian: 'listener / porta in ascolto',
+              italian: 'listener',
               pronunciation: '/ˈlɪsənər/',
               phonetic: 'LI-se-ner',
               example:
-                'Listeners accept connections on a port. = I listener accettano connessioni su una porta.',
+                "The Application Load Balancer creates a listener on port 443 that accepts incoming HTTPS connections and routes them to registered target groups. = L'Application Load Balancer crea un listener sulla porta 443 che accetta connessioni HTTPS in ingresso e le instrada ai target group registrati.",
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8899,7 +9036,7 @@ export default {
               pronunciation: '/krɒs zoʊn/',
               phonetic: 'KROS-ZOUN',
               example:
-                'Cross-zone load balancing spreads traffic across AZs. = Il bilanciamento cross-zone distribuisce traffico tra AZ.',
+                'In networking, Cross-Zone Load Balancing spreads traffic across AZs. = Il bilanciamento cross-zone distribuisce traffico tra AZ.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8909,26 +9046,26 @@ export default {
               pronunciation: '/ˈɡloʊbəl/',
               phonetic: 'GLOU-bal',
               example:
-                'Global load balancers route by geography. = I bilanciatori globali instradano per geografia.',
+                'To minimize latency for users worldwide, the DNS-based global load balancer routes each request to the nearest regional data center. = Per minimizzare la latenza per gli utenti nel mondo, il bilanciatore globale basato su DNS instrada ogni richiesta al data center regionale piu vicino.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'CloudFront',
-              italian: 'AWS CloudFront / CDN AWS',
+              italian: 'CloudFront',
               pronunciation: '/klaʊd frʌnt/',
               phonetic: 'KLAUD-FRANT',
-              example: 'CloudFront is the AWS CDN. = CloudFront è la CDN AWS.',
+              example: 'By definition, CloudFront is the AWS CDN. = CloudFront è la CDN AWS.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'CDN',
-              italian: 'CDN / Rete distribuzione contenuti',
+              italian: 'rete di distribuzione contenuti (CDN)',
               pronunciation: '/siː diː en/',
               phonetic: 'SI-DI-EN',
               example:
-                'CDNs cache content at edge locations. = Le CDN memorizzano contenuto nelle edge location.',
+                'By serving static assets from the nearest CDN edge location, the website reduces latency for users on different continents by hundreds of milliseconds. = Servendo asset statici dalla edge location CDN piu vicina, il sito web riduce la latenza per gli utenti su diversi continenti di centinaia di millisecondi.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Esempi: Cloudflare, Akamai, Fastly.',
@@ -8942,17 +9079,18 @@ export default {
           items: [
             {
               english: 'Route 53',
-              italian: 'Route 53 / DNS gestito AWS',
+              italian: 'Route 53',
               pronunciation: '/ruːt ˈfɪfti θriː/',
               phonetic: 'RUUT FIF-ti THRI',
-              example: 'Route 53 is the AWS DNS service. = Route 53 è il servizio DNS AWS.',
+              example:
+                'By definition, Route 53 is the AWS DNS service. = Route 53 è il servizio DNS AWS.',
               context: 'services',
               difficulty: 'advanced',
               note: 'Anche fa health checks e routing.',
             },
             {
               english: 'Cloud DNS',
-              italian: 'Cloud DNS / DNS gestito Google Cloud',
+              italian: 'DNS cloud',
               pronunciation: '/klaʊd diː en es/',
               phonetic: 'KLAUD-DI-EN-ES',
               example:
@@ -8966,7 +9104,7 @@ export default {
               pronunciation: '/ˈleɪtənsi/',
               phonetic: 'LEI-ten-si',
               example:
-                'Latency-based routing picks the fastest region. = Il routing basato su latenza sceglie la regione più veloce.',
+                'In networking, Latency-Based Routing picks the fastest region. = Il routing basato su latenza sceglie la regione più veloce.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8976,7 +9114,7 @@ export default {
               pronunciation: '/dʒiːoʊloʊˈkeɪʃən/',
               phonetic: 'gi-o-lo-KEI-scion',
               example:
-                'Geolocation routing sends users to local servers. = Il routing per geolocalizzazione manda utenti a server locali.',
+                'During communication, Geolocation Routing sends users to local servers. = Il routing per geolocalizzazione manda utenti a server locali.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8986,7 +9124,7 @@ export default {
               pronunciation: '/ˈfeɪloʊvər/',
               phonetic: 'FEIL-ou-ver',
               example:
-                'Failover routing uses backup endpoints. = Il routing failover usa endpoint di backup.',
+                'Under the hood, Failover Routing uses backup endpoints. = Il routing failover usa endpoint di backup.',
               context: 'services',
               difficulty: 'advanced',
             },
@@ -8996,23 +9134,23 @@ export default {
               pronunciation: '/ˈhoʊstɪd zoʊn/',
               phonetic: 'HOU-stid ZOUN',
               example:
-                'Hosted zones contain DNS records. = Le zone ospitate contengono record DNS.',
+                'After creating a hosted zone for example.com in Route 53, engineers add A, CNAME, and MX records to direct traffic to the right services. = Dopo aver creato una zona ospitata per example.com in Route 53, gli ingegneri aggiungono record A, CNAME e MX per dirigere il traffico ai servizi giusti.',
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Private Hosted Zone',
-              italian: 'Zona ospitata privata',
+              italian: 'zona ospitata privata',
               pronunciation: '/ˈpraɪvət/',
               phonetic: 'PRAI-vet',
               example:
-                'Private hosted zones serve only inside the VPC. = Le zone private servono solo dentro la VPC.',
+                "Internal microservices use a private hosted zone so that names like api.internal.corp resolve only from within the VPC, not from the public Internet. = I microservizi interni usano una zona ospitata privata cosi che nomi come api.internal.corp risolvano solo dall'interno della VPC, non da Internet pubblica.",
               context: 'services',
               difficulty: 'advanced',
             },
             {
               english: 'Alias Record',
-              italian: 'Record alias',
+              italian: 'record alias',
               pronunciation: '/ˈeɪliəs/',
               phonetic: 'EI-lias',
               example:
@@ -9032,7 +9170,7 @@ export default {
             },
             {
               english: 'Traffic Director',
-              italian: 'Traffic Director / service mesh gestito Google',
+              italian: 'Traffic Director',
               pronunciation: '/ˈtræfɪk dəˈrektər/',
               phonetic: 'TRA-fik di-REK-ter',
               example:
@@ -9058,29 +9196,29 @@ export default {
           items: [
             {
               english: 'Ansible',
-              italian: 'Ansible (strumento automazione configurazione)',
+              italian: 'Ansible',
               pronunciation: '/ˈænsɪbəl/',
               phonetic: 'AN-si-bol',
               example:
-                'Ansible automates network configuration agentless. = Ansible automatizza la configurazione di rete senza agent.',
+                'In modern infrastructure, Ansible automates network configuration agentless. = Ansible automatizza la configurazione di rete senza agent.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Ansible',
             },
             {
               english: 'Playbook',
-              italian: 'playbook / piano di automazione Ansible',
+              italian: 'playbook Ansible',
               pronunciation: '/ˈpleɪbʊk/',
               phonetic: 'PLEI-buk',
               example:
-                'A playbook defines automation tasks. = Un playbook definisce task di automazione.',
+                'To standardize communication, a Playbook defines automation tasks. = Un playbook definisce task di automazione.',
               context: 'tools',
               difficulty: 'advanced',
               code: '- name: Configure interface\\n  cisco.ios.ios_interface:\\n    name: GigabitEthernet1\\n    enabled: true',
             },
             {
               english: 'Inventory',
-              italian: 'Inventario',
+              italian: 'inventario (inventory)',
               pronunciation: '/ˈɪnvəntɔːri/',
               phonetic: 'IN-ven-to-ri',
               example:
@@ -9090,7 +9228,7 @@ export default {
             },
             {
               english: 'Module',
-              italian: 'Modulo',
+              italian: 'modulo',
               pronunciation: '/ˈmɒdjuːl/',
               phonetic: 'MO-diul',
               example:
@@ -9100,59 +9238,60 @@ export default {
             },
             {
               english: 'Salt',
-              italian: 'SaltStack / gestione configurazione',
+              italian: 'SaltStack',
               pronunciation: '/sɔːlt/',
               phonetic: 'SOLT',
-              example: 'SaltStack scales to many devices. = SaltStack scala a molti dispositivi.',
+              example:
+                'Using its high-speed ZeroMQ message bus, Salt can push configuration changes to thousands of network devices within seconds. = Usando il suo bus messaggi ZeroMQ ad alta velocita, Salt puo inviare modifiche di configurazione a migliaia di dispositivi di rete in pochi secondi.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'SaltStack',
             },
             {
               english: 'Puppet',
-              italian: 'Puppet / gestione configurazione dichiarativa',
+              italian: 'Puppet',
               pronunciation: '/ˈpʌpɪt/',
               phonetic: 'PA-pet',
               example:
-                'Puppet uses declarative configuration. = Puppet usa configurazione dichiarativa.',
+                'Under the hood, Puppet uses declarative configuration. = Puppet usa configurazione dichiarativa.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Puppet',
             },
             {
               english: 'Terraform',
-              italian: 'Terraform (IaC HashiCorp)',
+              italian: 'Terraform',
               pronunciation: '/ˈterəfɔːrm/',
               phonetic: 'TE-ra-form',
               example:
-                'Terraform provisions cloud network resources. = Terraform provisiona risorse di rete cloud.',
+                'In networking, Terraform provisions cloud network resources. = Terraform provisiona risorse di rete cloud.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Terraform',
             },
             {
               english: 'Idempotent',
-              italian: 'Idempotente',
+              italian: 'idempotente',
               pronunciation: '/ˌaɪdemˈpoʊtnt/',
               phonetic: 'ai-dem-PO-tent',
               example:
-                'Idempotent tasks can run multiple times safely. = I task idempotenti possono girare più volte in sicurezza.',
+                'In networking, Idempotent tasks can run multiple times safely. = I task idempotenti possono girare più volte in sicurezza.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Configuration Drift',
-              italian: 'Drift di configurazione',
+              italian: 'drift di configurazione',
               pronunciation: '/drɪft/',
               phonetic: 'DRIFT',
               example:
-                'Configuration drift is unintended changes over time. = Il drift di configurazione sono cambiamenti involontari nel tempo.',
+                'By definition, Configuration Drift is unintended changes over time. = Il drift di configurazione sono cambiamenti involontari nel tempo.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Source of Truth',
-              italian: 'Sorgente di verità',
+              italian: 'sorgente di verità (source of truth)',
               pronunciation: '/sɔːrs ʌv truːθ/',
               phonetic: 'SORS ov TRUTH',
               example:
@@ -9170,42 +9309,43 @@ export default {
           items: [
             {
               english: 'NETCONF',
-              italian: 'NETCONF / protocollo di configurazione di rete',
+              italian: 'NETCONF',
               pronunciation: '/net kɒnf/',
               phonetic: 'NET-KONF',
               example:
-                'NETCONF is an XML-based config protocol. = NETCONF è un protocollo di configurazione basato su XML.',
+                'By definition, NETCONF is an XML-based config protocol. = NETCONF è un protocollo di configurazione basato su XML.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'RFC 6241. Porta 830.',
             },
             {
               english: 'RESTCONF',
-              italian: 'RESTCONF / NETCONF su REST',
+              italian: 'RESTCONF',
               pronunciation: '/rest kɒnf/',
               phonetic: 'REST-KONF',
-              example: 'RESTCONF exposes NETCONF over HTTP. = RESTCONF espone NETCONF su HTTP.',
+              example:
+                'In networking, RESTCONF exposes NETCONF over HTTP. = RESTCONF espone NETCONF su HTTP.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'YANG',
-              italian: 'YANG / linguaggio di modellazione dati di rete',
+              italian: 'YANG',
               pronunciation: '/jæŋ/',
               phonetic: 'IANG',
               example:
-                'YANG models network configuration. = YANG modella la configurazione di rete.',
+                'In networking, YANG models network configuration. = YANG modella la configurazione di rete.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Yet Another Next Generation. RFC 7950.',
             },
             {
               english: 'gNMI',
-              italian: 'gNMI / gRPC Network Management Interface',
+              italian: 'gNMI',
               pronunciation: '/dʒiː en em aɪ/',
               phonetic: 'GI-EN-EM-AI',
               example:
-                'gNMI uses gRPC for streaming telemetry. = gNMI usa gRPC per streaming telemetry.',
+                'Under the hood, gNMI uses gRPC for streaming telemetry. = gNMI usa gRPC per streaming telemetry.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'gRPC Network Management Interface.',
@@ -9215,17 +9355,18 @@ export default {
               italian: 'gRPC (RPC ad alte prestazioni Google)',
               pronunciation: '/dʒiː ɑːr piː siː/',
               phonetic: 'GI-AR-PI-SI',
-              example: 'gRPC provides efficient binary RPC. = gRPC fornisce RPC binari efficienti.',
+              example:
+                'For network operations, gRPC provides efficient binary RPC. = gRPC fornisce RPC binari efficienti.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'OpenConfig',
-              italian: 'OpenConfig / modelli YANG vendor-neutrali',
+              italian: 'OpenConfig',
               pronunciation: '/ˈoʊpən kɒnfɪɡ/',
               phonetic: 'OU-pen KON-fig',
               example:
-                'OpenConfig provides vendor-neutral YANG models. = OpenConfig fornisce modelli YANG vendor-neutral.',
+                'For network operations, OpenConfig provides vendor-neutral YANG models. = OpenConfig fornisce modelli YANG vendor-neutral.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9235,14 +9376,14 @@ export default {
               pronunciation: '/rest eɪ piː aɪ/',
               phonetic: 'REST-EI-PI-AI',
               example:
-                'Modern devices expose REST APIs. = I dispositivi moderni espongono API REST.',
+                "Instead of screen-scraping CLI output, automation scripts call the REST API endpoints that modern switches and firewalls expose natively. = Invece di fare screen-scraping dell'output CLI, gli script di automazione chiamano gli endpoint REST API che switch e firewall moderni espongono nativamente.",
               context: 'tools',
               difficulty: 'advanced',
               command: 'curl -X GET https://device/api/v1/interfaces',
             },
             {
               english: 'JSON-RPC',
-              italian: 'JSON-RPC / RPC su JSON',
+              italian: 'JSON-RPC',
               pronunciation: '/ˈdʒeɪsən ɑːr piː siː/',
               phonetic: 'GEI-son AR-PI-SI',
               example:
@@ -9252,11 +9393,11 @@ export default {
             },
             {
               english: 'CLI Scraping',
-              italian: "CLI scraping / parsing dell'output CLI",
+              italian: 'scraping CLI',
               pronunciation: '/siː el aɪ ˈskreɪpɪŋ/',
               phonetic: 'SI-EL-AI SKREI-ping',
               example:
-                'CLI scraping is fragile but still common. = Il CLI scraping è fragile ma ancora comune.',
+                'By definition, CLI Scraping is fragile but still common. = Il CLI scraping è fragile ma ancora comune.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9266,7 +9407,7 @@ export default {
               pronunciation: '/ˈstriːmɪŋ təˈlemətri/',
               phonetic: 'STRI-ming te-LE-me-tri',
               example:
-                'Streaming telemetry replaces SNMP polling. = La telemetria streaming sostituisce il polling SNMP.',
+                'In networking, Streaming Telemetry replaces SNMP polling. = La telemetria streaming sostituisce il polling SNMP.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9279,68 +9420,69 @@ export default {
           items: [
             {
               english: 'Netmiko',
-              italian: 'Netmiko / SSH per dispositivi di rete',
+              italian: 'Netmiko',
               pronunciation: '/net ˈmiːkoʊ/',
               phonetic: 'NET-MI-ko',
               example:
-                'Netmiko simplifies SSH to network devices. = Netmiko semplifica SSH verso dispositivi di rete.',
+                'In networking, Netmiko simplifies SSH to network devices. = Netmiko semplifica SSH verso dispositivi di rete.',
               context: 'tools',
               difficulty: 'advanced',
               code: 'from netmiko import ConnectHandler',
             },
             {
               english: 'NAPALM',
-              italian: 'NAPALM / abstraction multi-vendor di rete',
+              italian: 'NAPALM',
               pronunciation: '/ˈneɪpɑːm/',
               phonetic: 'NEI-palm',
               example:
-                "NAPALM offers a multi-vendor abstraction. = NAPALM offre un'astrazione multi-vendor.",
+                "In networking, NAPALM offers a multi-vendor abstraction. = NAPALM offre un'astrazione multi-vendor.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'Network Automation and Programmability Abstraction Layer with Multivendor support.',
             },
             {
               english: 'Nornir',
-              italian: 'Nornir / framework Python di automazione di rete',
+              italian: 'Nornir',
               pronunciation: '/ˈnɔːrnɪr/',
               phonetic: 'NOR-nir',
               example:
-                'Nornir is a Python automation framework. = Nornir è un framework di automazione Python.',
+                'By definition, Nornir is a Python automation framework. = Nornir è un framework di automazione Python.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Paramiko',
-              italian: 'Paramiko / libreria SSH Python',
+              italian: 'Paramiko',
               pronunciation: '/pəˈræmɪkoʊ/',
               phonetic: 'pa-RA-mi-ko',
-              example: 'Paramiko provides SSH in Python. = Paramiko fornisce SSH in Python.',
+              example:
+                'For network operations, Paramiko provides SSH in Python. = Paramiko fornisce SSH in Python.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'pyATS',
-              italian: 'pyATS / framework test di Cisco',
+              italian: 'pyATS',
               pronunciation: '/paɪ eɪ tiː es/',
               phonetic: 'PAI-EI-TI-ES',
               example:
-                "pyATS is Cisco's testing framework. = pyATS è il framework di testing Cisco.",
+                "By definition, pyATS is Cisco's testing framework. = pyATS è il framework di testing Cisco.",
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'TextFSM',
-              italian: 'TextFSM / parsing strutturato di output testuale',
+              italian: 'TextFSM',
               pronunciation: '/tekst ef es em/',
               phonetic: 'TEKST-EF-ES-EM',
               example:
-                "TextFSM parses CLI output into structured data. = TextFSM analizza l'output CLI in dati strutturati.",
+                "In networking, TextFSM parses CLI output into structured data. = TextFSM analizza l'output CLI in dati strutturati.",
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Genie',
-              italian: 'Genie / parsing/automation Cisco',
+              italian: 'Genie',
               pronunciation: '/ˈdʒiːni/',
               phonetic: 'GI-ni',
               example:
@@ -9350,32 +9492,32 @@ export default {
             },
             {
               english: 'Jinja2',
-              italian: 'Jinja2 / template engine Python',
+              italian: 'Jinja2',
               pronunciation: '/ˈdʒɪndʒə tuː/',
               phonetic: 'GIN-gia TU',
               example:
-                'Jinja2 templates generate device configs. = I template Jinja2 generano configurazioni dispositivi.',
+                'In networking, Jinja2 templates generate device configs. = I template Jinja2 generano configurazioni dispositivi.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'NetBox',
-              italian: 'NetBox / inventario di rete (DCIM/IPAM)',
+              italian: 'NetBox',
               pronunciation: '/net bɒks/',
               phonetic: 'NET-BOKS',
               example:
-                'NetBox is a popular IPAM and DCIM tool. = NetBox è un popolare tool di IPAM e DCIM.',
+                'By definition, NetBox is a popular IPAM and DCIM tool. = NetBox è un popolare tool di IPAM e DCIM.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'NetBox',
             },
             {
               english: 'Scrapli',
-              italian: 'Scrapli / SSH ad alte prestazioni per rete',
+              italian: 'Scrapli',
               pronunciation: '/ˈskræpli/',
               phonetic: 'SKRA-pli',
               example:
-                'Scrapli is a fast modern netmiko alternative. = Scrapli è una moderna alternativa veloce a netmiko.',
+                'By definition, Scrapli is a fast modern netmiko alternative. = Scrapli è una moderna alternativa veloce a netmiko.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9388,11 +9530,11 @@ export default {
           items: [
             {
               english: 'NetDevOps',
-              italian: 'NetDevOps / DevOps applicato alla rete',
+              italian: 'NetDevOps',
               pronunciation: '/net ˈdevɒps/',
               phonetic: 'NET-DEV-ops',
               example:
-                'NetDevOps applies DevOps to networking. = NetDevOps applica DevOps al networking.',
+                'In networking, NetDevOps applies DevOps to networking. = NetDevOps applica DevOps al networking.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9412,7 +9554,7 @@ export default {
               pronunciation: '/siː aɪ siː diː/',
               phonetic: 'SI-AI-SI-DI',
               example:
-                'CI/CD pipelines test network changes. = Le pipeline CI/CD testano i cambiamenti di rete.',
+                'Before merging a router configuration change, the CI/CD pipeline runs automated syntax checks and topology simulations to catch errors early. = Prima di fare merge di un cambiamento di configurazione del router, la pipeline CI/CD esegue controlli automatici di sintassi e simulazioni di topologia per cogliere errori in anticipo.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9422,7 +9564,7 @@ export default {
               pronunciation: '/priː tʃeɪndʒ test/',
               phonetic: 'PRI-CEINGE TEST',
               example:
-                'Pre-change tests catch errors before production. = I test pre-change colgono errori prima di produzione.',
+                'Running automated pre-change tests against a lab environment catches misconfigurations before they can impact production traffic. = Eseguire test pre-change automatizzati contro un ambiente lab coglie le misconfigurazioni prima che possano impattare il traffico di produzione.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9432,7 +9574,7 @@ export default {
               pronunciation: '/poʊst tʃeɪndʒ/',
               phonetic: 'POUST-CEINGE',
               example:
-                'Post-change tests verify the deployment. = I test post-change verificano il deploy.',
+                'After applying the new firewall rules, automated post-change tests confirm that all critical services remain reachable and latency stays within SLA. = Dopo aver applicato le nuove regole firewall, i test post-change automatizzati confermano che tutti i servizi critici restano raggiungibili e la latenza rimane entro lo SLA.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9449,28 +9591,28 @@ export default {
             },
             {
               english: 'Batfish',
-              italian: 'Batfish / analisi formale di configurazioni di rete',
+              italian: 'Batfish',
               pronunciation: '/ˈbætfɪʃ/',
               phonetic: 'BAT-fish',
               example:
-                'Batfish analyzes configs offline. = Batfish analizza le configurazioni offline.',
+                'In networking, Batfish analyzes configs offline. = Batfish analizza le configurazioni offline.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Batfish',
             },
             {
               english: 'Network Validation',
-              italian: 'Validazione di rete',
+              italian: 'validazione di rete',
               pronunciation: '/ˌvælɪˈdeɪʃən/',
               phonetic: 'va-li-DEI-scion',
               example:
-                'Network validation prevents misconfigurations. = La validazione di rete previene errori di configurazione.',
+                'As a security measure, Network Validation prevents misconfigurations. = La validazione di rete previene errori di configurazione.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Rollback',
-              italian: 'rollback / ritorno a versione precedente',
+              italian: 'ripristino (rollback)',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROUL-bak',
               example:
@@ -9480,11 +9622,11 @@ export default {
             },
             {
               english: 'GitOps',
-              italian: 'GitOps / Git come fonte di verità',
+              italian: 'GitOps',
               pronunciation: '/ɡɪt ɒps/',
               phonetic: 'GHIT-OPS',
               example:
-                'GitOps drives changes from Git commits. = GitOps guida i cambiamenti dai commit Git.',
+                'In networking, GitOps drives changes from Git commits. = GitOps guida i cambiamenti dai commit Git.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9506,33 +9648,33 @@ export default {
           items: [
             {
               english: 'NetFlow',
-              italian: 'NetFlow / protocollo Cisco di flussi di rete',
+              italian: 'NetFlow',
               pronunciation: '/net floʊ/',
               phonetic: 'NET-FLOU',
               example:
-                'NetFlow records traffic flow data. = NetFlow registra dati di flusso del traffico.',
+                'In networking, NetFlow records traffic flow data. = NetFlow registra dati di flusso del traffico.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Sviluppato da Cisco. Ora Flexible NetFlow.',
             },
             {
               english: 'sFlow',
-              italian: 'sFlow / campionamento del traffico',
+              italian: 'sFlow',
               pronunciation: '/es floʊ/',
               phonetic: 'ES-FLOU',
               example:
-                'sFlow samples packets for monitoring. = sFlow campiona pacchetti per il monitoring.',
+                'In networking, sFlow samples packets for monitoring. = sFlow campiona pacchetti per il monitoring.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Sampled Flow.',
             },
             {
               english: 'IPFIX',
-              italian: 'IPFIX / standard NetFlow IETF',
+              italian: 'IPFIX',
               pronunciation: '/aɪ piː fɪks/',
               phonetic: 'AI-PI-FIKS',
               example:
-                'IPFIX is the standardized successor of NetFlow. = IPFIX è il successore standard di NetFlow.',
+                'By definition, IPFIX is the standardized successor of NetFlow. = IPFIX è il successore standard di NetFlow.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'IP Flow Information Export. RFC 7011.',
@@ -9543,7 +9685,7 @@ export default {
               pronunciation: '/floʊ ˈrekɔːrd/',
               phonetic: 'FLOU RE-kord',
               example:
-                'A flow record summarizes a conversation. = Un record di flusso riassume una conversazione.',
+                'In networking, a Flow Record summarizes a conversation. = Un record di flusso riassume una conversazione.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9553,7 +9695,7 @@ export default {
               pronunciation: '/ɪkˈspɔːrtər/',
               phonetic: 'iks-POR-ter',
               example:
-                'Flow exporters generate flow records. = Gli esportatori flussi generano record di flusso.',
+                "Each router runs a flow exporter that summarizes traffic into five-tuple records and sends them to the central collector for analysis. = Ogni router esegue un flow exporter che sintetizza il traffico in record a cinque tuple e li invia al collector centrale per l'analisi.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9563,7 +9705,7 @@ export default {
               pronunciation: '/kəˈlektər/',
               phonetic: 'ko-LEK-ter',
               example:
-                'Flow collectors store flow records. = I collector flussi memorizzano record di flusso.',
+                'The centralized flow collector ingests millions of records per minute, enabling the NOC to query historical traffic patterns for capacity planning. = Il flow collector centralizzato acquisisce milioni di record al minuto, consentendo al NOC di interrogare i pattern di traffico storici per il capacity planning.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'nfdump, ntopng',
@@ -9574,7 +9716,7 @@ export default {
               pronunciation: '/ˈsæmplɪŋ reɪt/',
               phonetic: 'SAM-pling REIT',
               example:
-                'Sampling rate trades accuracy for performance. = La frequenza di campionamento scambia accuratezza per prestazioni.',
+                'In networking, Sampling Rate trades accuracy for performance. = La frequenza di campionamento scambia accuratezza per prestazioni.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Esempio: 1:1000 = un pacchetto ogni 1000.',
@@ -9585,7 +9727,7 @@ export default {
               pronunciation: '/floʊ kæʃ/',
               phonetic: 'FLOU KASH',
               example:
-                'Flow cache stores active flows on the device. = La cache flussi memorizza flussi attivi sul dispositivo.',
+                'For efficiency, Flow Cache stores active flows on the device. = La cache flussi memorizza flussi attivi sul dispositivo.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9595,7 +9737,7 @@ export default {
               pronunciation: '/tɒp ˈtɔːkərz/',
               phonetic: 'TOP TO-kers',
               example:
-                'Top talkers identify heavy bandwidth users. = I top talker identificano utenti con uso pesante di banda.',
+                'In networking, Top Talkers identify heavy bandwidth users. = I top talker identificano utenti con uso pesante di banda.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9605,7 +9747,7 @@ export default {
               pronunciation: '/ˌæplɪˈkeɪʃən/',
               phonetic: 'a-pli-KEI-scion',
               example:
-                'Application visibility shows what apps consume bandwidth. = La visibilità applicativa mostra quali app consumano banda.',
+                'In networking, Application Visibility shows what apps consume bandwidth. = La visibilità applicativa mostra quali app consumano banda.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9622,7 +9764,7 @@ export default {
               pronunciation: '/ˈpoʊlɪŋ/',
               phonetic: 'POU-ling',
               example:
-                'SNMP polling queries device counters. = Il polling SNMP interroga contatori dispositivi.',
+                'In networking, SNMP Polling queries device counters. = Il polling SNMP interroga contatori dispositivi.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'snmpget -v 2c -c public 192.168.1.1 sysUpTime.0',
@@ -9633,24 +9775,25 @@ export default {
               pronunciation: '/snmp træp/',
               phonetic: 'ES-EN-EM-PI TRAP',
               example:
-                'SNMP traps notify of events asynchronously. = Le trap SNMP notificano eventi in modo asincrono.',
+                "When a switch interface goes down, it immediately sends an SNMP trap to the management station without waiting for the next polling cycle. = Quando un'interfaccia dello switch va giu, invia immediatamente una trap SNMP alla stazione di gestione senza attendere il prossimo ciclo di polling.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'Inviate dal device al manager.',
             },
             {
               english: 'SNMP Walk',
-              italian: 'SNMP walk / interrogazione ad albero',
+              italian: 'SNMP walk',
               pronunciation: '/wɔːk/',
               phonetic: 'UOK',
-              example: "snmpwalk traverses the OID tree. = snmpwalk attraversa l'albero OID.",
+              example:
+                "Running snmpwalk against a switch traverses the entire OID tree, revealing interface counters, CPU load, and temperature sensor readings. = Eseguendo snmpwalk su uno switch si attraversa l'intero albero OID, rivelando contatori di interfaccia, carico CPU e letture dei sensori di temperatura.",
               context: 'tools',
               difficulty: 'advanced',
               command: 'snmpwalk -v 2c -c public 192.168.1.1 1.3.6.1.2.1',
             },
             {
               english: 'Community String',
-              italian: 'community string / password SNMP v1/v2c',
+              italian: 'stringa community SNMP',
               pronunciation: '/kəˈmjuːnəti strɪŋ/',
               phonetic: 'ko-MIU-ne-ti STRING',
               example:
@@ -9661,11 +9804,11 @@ export default {
             },
             {
               english: 'SNMPv3',
-              italian: 'SNMPv3 / SNMP con autenticazione e cifratura',
+              italian: 'SNMPv3',
               pronunciation: '/ˌes en em piː θriː/',
               phonetic: 'ES-EN-EM-PI-THRI',
               example:
-                'SNMPv3 adds authentication and encryption. = SNMPv3 aggiunge autenticazione e cifratura.',
+                'In networking, SNMPv3 adds authentication and encryption. = SNMPv3 aggiunge autenticazione e cifratura.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9681,11 +9824,11 @@ export default {
             },
             {
               english: 'Gauge',
-              italian: 'Gauge / Misuratore',
+              italian: 'misura istantanea (gauge)',
               pronunciation: '/ɡeɪdʒ/',
               phonetic: 'GHEIGE',
               example:
-                'A gauge measures current value (CPU, RAM). = Un gauge misura il valore corrente (CPU, RAM).',
+                'In networking, a Gauge measures current value (CPU, RAM). = Un gauge misura il valore corrente (CPU, RAM).',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9695,7 +9838,7 @@ export default {
               pronunciation: '/ˈθreʃhoʊld/',
               phonetic: 'THRESH-hould',
               example:
-                'Thresholds trigger alerts on metric values. = Le soglie scatenano alert sui valori metrici.',
+                "When CPU utilization crosses the 90% threshold for five consecutive minutes, the monitoring system triggers an alert and pages the on-call engineer. = Quando l'utilizzo CPU supera la soglia del 90% per cinque minuti consecutivi, il sistema di monitoraggio genera un alert e avvisa l'ingegnere reperibile.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9715,7 +9858,7 @@ export default {
               pronunciation: '/ˌjuːtəlaɪˈzeɪʃən/',
               phonetic: 'iu-ti-lai-ZEI-scion',
               example:
-                "Bandwidth utilization is calculated from counters. = L'utilizzo di banda è calcolato dai contatori.",
+                "By definition, Bandwidth Utilization is calculated from counters. = L'utilizzo di banda è calcolato dai contatori.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9728,11 +9871,11 @@ export default {
           items: [
             {
               english: 'NPM',
-              italian: 'NPM / Network Performance Monitoring',
+              italian: 'monitoraggio prestazioni di rete (NPM)',
               pronunciation: '/en piː em/',
               phonetic: 'EN-PI-EM',
               example:
-                'NPM tools monitor network health. = I tool NPM monitorano la salute della rete.',
+                'In networking, NPM tools monitor network health. = I tool NPM monitorano la salute della rete.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9742,7 +9885,7 @@ export default {
               pronunciation: '/ˈzæbɪks/',
               phonetic: 'ZA-biks',
               example:
-                'Zabbix is an open-source monitoring tool. = Zabbix è un tool di monitoring open-source.',
+                'By definition, Zabbix is an open-source monitoring tool. = Zabbix è un tool di monitoring open-source.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Zabbix',
@@ -9753,7 +9896,7 @@ export default {
               pronunciation: '/piː ɑːr tiː dʒiː/',
               phonetic: 'PI-AR-TI-GI',
               example:
-                'PRTG is a popular Windows monitoring solution. = PRTG è una popolare soluzione di monitoring Windows.',
+                'By definition, PRTG is a popular Windows monitoring solution. = PRTG è una popolare soluzione di monitoring Windows.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9763,7 +9906,7 @@ export default {
               pronunciation: '/ˈnæɡioʊs/',
               phonetic: 'NA-gios',
               example:
-                'Nagios pioneered network monitoring. = Nagios ha aperto la strada al network monitoring.',
+                'In networking, Nagios pioneered network monitoring. = Nagios ha aperto la strada al network monitoring.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Nagios',
@@ -9774,7 +9917,7 @@ export default {
               pronunciation: '/ˈliːbrə en em es/',
               phonetic: 'LI-bre EN-EM-ES',
               example:
-                'LibreNMS auto-discovers network devices. = LibreNMS auto-scopre i dispositivi di rete.',
+                'In networking, LibreNMS auto-discovers network devices. = LibreNMS auto-scopre i dispositivi di rete.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'LibreNMS',
@@ -9785,7 +9928,7 @@ export default {
               pronunciation: '/ɡrəˈfɑːnə/',
               phonetic: 'gra-FA-na',
               example:
-                'Grafana visualizes network metrics. = Grafana visualizza le metriche di rete.',
+                'In networking, Grafana visualizes network metrics. = Grafana visualizza le metriche di rete.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Grafana',
@@ -9796,37 +9939,38 @@ export default {
               pronunciation: '/prəˈmiːθiəs/',
               phonetic: 'pro-ME-tius',
               example:
-                'Prometheus collects time-series metrics. = Prometheus raccoglie metriche time-series.',
+                'In networking, Prometheus collects time-series metrics. = Prometheus raccoglie metriche time-series.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Prometheus',
             },
             {
               english: 'SmokePing',
-              italian: 'SmokePing / monitor di latenza',
+              italian: 'SmokePing',
               pronunciation: '/smoʊk pɪŋ/',
               phonetic: 'SMOUK-PING',
               example:
-                'SmokePing visualizes latency over time. = SmokePing visualizza la latenza nel tempo.',
+                'In networking, SmokePing visualizes latency over time. = SmokePing visualizza la latenza nel tempo.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Cacti',
-              italian: 'Cacti / monitoring storico via SNMP',
+              italian: 'Cacti',
               pronunciation: '/ˈkæktaɪ/',
               phonetic: 'KAK-tai',
-              example: 'Cacti graphs RRD-based metrics. = Cacti grafica metriche basate su RRD.',
+              example:
+                'In networking, Cacti graphs RRD-based metrics. = Cacti grafica metriche basate su RRD.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'ntopng',
-              italian: 'ntopng / monitor di traffico ad alta velocità',
+              italian: 'ntopng',
               pronunciation: '/en tɒp en dʒiː/',
               phonetic: 'EN-TOP-EN-GI',
               example:
-                'ntopng provides deep traffic analysis. = ntopng fornisce analisi profonda del traffico.',
+                'For network operations, ntopng provides deep traffic analysis. = ntopng fornisce analisi profonda del traffico.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'ntopng',
@@ -9844,7 +9988,7 @@ export default {
               pronunciation: '/ˈsɪslɒɡ/',
               phonetic: 'SIS-log',
               example:
-                'A syslog server centralizes device logs. = Un server syslog centralizza i log dei dispositivi.',
+                'In networking, a Syslog Server centralizes device logs. = Un server syslog centralizza i log dei dispositivi.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'rsyslog, syslog-ng',
@@ -9855,17 +9999,17 @@ export default {
               pronunciation: '/ˌæɡrɪˈɡeɪʃən/',
               phonetic: 'ag-ri-GHEI-scion',
               example:
-                "Log aggregation collects logs centrally. = L'aggregazione log raccoglie log centralmente.",
+                "In networking, Log Aggregation collects logs centrally. = L'aggregazione log raccoglie log centralmente.",
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'ELK Stack',
-              italian: 'ELK Stack / Elasticsearch + Logstash + Kibana',
+              italian: 'stack ELK',
               pronunciation: '/elk stæk/',
               phonetic: 'ELK STAK',
               example:
-                'ELK = Elasticsearch, Logstash, Kibana. = ELK = Elasticsearch, Logstash, Kibana.',
+                "The ELK Stack combines Elasticsearch for indexing, Logstash for log ingestion, and Kibana for dashboards to give network teams full observability. = Lo stack ELK combina Elasticsearch per l'indicizzazione, Logstash per l'ingestione dei log e Kibana per le dashboard, dando ai team di rete piena osservabilita.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9882,11 +10026,11 @@ export default {
             },
             {
               english: 'Facility',
-              italian: 'facility / categoria di log syslog',
+              italian: 'facility syslog',
               pronunciation: '/fəˈsɪlɪti/',
               phonetic: 'fa-SI-li-ti',
               example:
-                'Facility identifies the log source. = La facility identifica la sorgente del log.',
+                'During analysis, Facility identifies the log source. = La facility identifica la sorgente del log.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9896,17 +10040,17 @@ export default {
               pronunciation: '/əˈlɜːrt/',
               phonetic: 'a-LERT',
               example:
-                'Alerts notify operators of issues. = Gli avvisi notificano gli operatori di problemi.',
+                "When link utilization exceeds 85%, the monitoring system fires an alert that notifies the on-call network operator via PagerDuty. = Quando l'utilizzo del link supera l'85%, il sistema di monitoraggio genera un avviso che notifica l'operatore di rete reperibile tramite PagerDuty.",
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Alertmanager',
-              italian: 'Alertmanager / dispatcher allarmi Prometheus',
+              italian: 'Alertmanager',
               pronunciation: '/əˈlɜːrt ˈmænɪdʒər/',
               phonetic: 'a-LERT MA-ni-ger',
               example:
-                'Alertmanager routes Prometheus alerts. = Alertmanager instrada gli alert di Prometheus.',
+                'In the forwarding pipeline, Alertmanager routes Prometheus alerts. = Alertmanager instrada gli alert di Prometheus.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9916,7 +10060,7 @@ export default {
               pronunciation: '/ɒn kɔːl/',
               phonetic: 'ON-KOL',
               example:
-                'On-call engineers respond to incidents. = Gli ingegneri reperibili rispondono agli incidenti.',
+                'In networking, On-Call engineers respond to incidents. = Gli ingegneri reperibili rispondono agli incidenti.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9926,18 +10070,18 @@ export default {
               pronunciation: '/ˈpeɪdʒər ˈdjuːti/',
               phonetic: 'PEI-ger DIU-ti',
               example:
-                "PagerDuty handles alert escalation. = PagerDuty gestisce l'escalation degli alert.",
+                "At its layer, PagerDuty handles alert escalation. = PagerDuty gestisce l'escalation degli alert.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'PagerDuty',
             },
             {
               english: 'Runbook',
-              italian: 'runbook / procedura operativa',
+              italian: 'procedura operativa (runbook)',
               pronunciation: '/ˈrʌnbʊk/',
               phonetic: 'RAN-buk',
               example:
-                'Runbooks document incident response steps. = I runbook documentano i passi di risposta agli incidenti.',
+                "During a production outage, the on-call engineer follows the runbook step by step to diagnose the root cause and restore service within the SLA. = Durante un'interruzione in produzione, l'ingegnere reperibile segue il runbook passo per passo per diagnosticare la causa radice e ripristinare il servizio entro lo SLA.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -9959,11 +10103,11 @@ export default {
           items: [
             {
               english: 'Three-Tier',
-              italian: 'Three-tier / Tre livelli',
+              italian: 'architettura a tre livelli',
               pronunciation: '/θriː tɪər/',
               phonetic: 'THRI-TIIR',
               example:
-                'Three-tier has core, distribution, access. = Il three-tier ha core, distribuzione, accesso.',
+                'By design, Three-Tier has core, distribution, access. = Il three-tier ha core, distribuzione, accesso.',
               context: 'design',
               difficulty: 'advanced',
               note: 'Architettura classica Cisco.',
@@ -9974,7 +10118,7 @@ export default {
               pronunciation: '/kɔːr ˈleɪər/',
               phonetic: 'KOR LEI-er',
               example:
-                'The core layer provides high-speed backbone. = Il livello core fornisce dorsale ad alta velocità.',
+                'For network operations, Core Layer provides high-speed backbone. = Il livello core fornisce dorsale ad alta velocità.',
               context: 'design',
               difficulty: 'advanced',
             },
@@ -9984,7 +10128,7 @@ export default {
               pronunciation: '/ˌdɪstrɪˈbjuːʃən/',
               phonetic: 'di-stri-BIU-scion',
               example:
-                'Distribution layer aggregates access switches. = Il livello distribuzione aggrega gli switch di accesso.',
+                'In networking, Distribution Layer aggregates access switches. = Il livello distribuzione aggrega gli switch di accesso.',
               context: 'design',
               difficulty: 'advanced',
             },
@@ -9994,36 +10138,37 @@ export default {
               pronunciation: '/ˈækses/',
               phonetic: 'AK-ses',
               example:
-                'The access layer connects end devices. = Il livello accesso connette dispositivi finali.',
+                'In the network topology, Access Layer connects end devices. = Il livello accesso connette dispositivi finali.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Spine-Leaf',
-              italian: 'spine-leaf / architettura di datacenter moderna',
+              italian: 'architettura spine-leaf',
               pronunciation: '/spaɪn liːf/',
               phonetic: 'SPAIN LIF',
               example:
-                'Spine-leaf is the modern data center fabric. = Spine-leaf è il fabric moderno per data center.',
+                'By definition, Spine-Leaf is the modern data center fabric. = Spine-leaf è il fabric moderno per data center.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Spine',
-              italian: 'spine / strato superiore della topologia',
+              italian: 'spine',
               pronunciation: '/spaɪn/',
               phonetic: 'SPAIN',
               example:
-                'Spine switches form the high-speed backbone. = Gli switch spine formano la dorsale ad alta velocità.',
+                'In networking, Spine switches form the high-speed backbone. = Gli switch spine formano la dorsale ad alta velocità.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Leaf',
-              italian: 'leaf / strato inferiore (top-of-rack)',
+              italian: 'leaf',
               pronunciation: '/liːf/',
               phonetic: 'LIF',
-              example: 'Leaf switches connect to servers. = Gli switch leaf connettono ai server.',
+              example:
+                'In networking, Leaf switches connect to servers. = Gli switch leaf connettono ai server.',
               context: 'design',
               difficulty: 'advanced',
             },
@@ -10033,18 +10178,18 @@ export default {
               pronunciation: '/kəˈlæpst/',
               phonetic: 'ko-LAPST',
               example:
-                'Collapsed core merges distribution and core. = Il core collassato unisce distribuzione e core.',
+                'In networking, Collapsed Core merges distribution and core. = Il core collassato unisce distribuzione e core.',
               context: 'design',
               difficulty: 'advanced',
               note: 'Comune nelle reti più piccole.',
             },
             {
               english: 'Hub-and-Spoke',
-              italian: 'hub-and-spoke / topologia a stella',
+              italian: 'topologia hub-and-spoke',
               pronunciation: '/hʌb ænd spoʊk/',
               phonetic: 'HAB-AND-SPOUK',
               example:
-                'Hub-and-spoke connects branches via central HQ. = Hub-and-spoke connette filiali via HQ centrale.',
+                'In the network topology, Hub-and-Spoke connects branches via central HQ. = Hub-and-spoke connette filiali via HQ centrale.',
               context: 'design',
               difficulty: 'advanced',
             },
@@ -10054,7 +10199,7 @@ export default {
               pronunciation: '/fʊl meʃ/',
               phonetic: 'FUL-MESH',
               example:
-                'Full mesh connects every node to every other. = La mesh piena connette ogni nodo a tutti gli altri.',
+                'In the network topology, Full Mesh connects every node to every other. = La mesh piena connette ogni nodo a tutti gli altri.',
               context: 'design',
               difficulty: 'advanced',
             },
@@ -10067,7 +10212,7 @@ export default {
           items: [
             {
               english: 'High Availability',
-              italian: 'Alta disponibilità',
+              italian: 'alta disponibilità (HA)',
               pronunciation: '/əˌveɪləˈbɪlɪti/',
               phonetic: 'a-vei-la-BI-li-ti',
               example:
@@ -10078,17 +10223,17 @@ export default {
             },
             {
               english: 'Redundancy',
-              italian: 'Ridondanza',
+              italian: 'ridondanza',
               pronunciation: '/rɪˈdʌndənsi/',
               phonetic: 'ri-DAN-den-si',
               example:
-                'Redundancy duplicates critical components. = La ridondanza duplica componenti critici.',
+                'In networking, Redundancy duplicates critical components. = La ridondanza duplica componenti critici.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Failover',
-              italian: 'failover / commutazione automatica di guasto',
+              italian: 'commutazione di guasto (failover)',
               pronunciation: '/ˈfeɪloʊvər/',
               phonetic: 'FEIL-ou-ver',
               example:
@@ -10098,72 +10243,74 @@ export default {
             },
             {
               english: 'HSRP',
-              italian: 'HSRP / Hot Standby Router Protocol Cisco',
+              italian: 'HSRP',
               pronunciation: '/eɪtʃ es ɑːr piː/',
               phonetic: 'EICH-ES-AR-PI',
-              example: 'HSRP provides router redundancy. = HSRP fornisce ridondanza router.',
+              example:
+                'For network operations, HSRP provides router redundancy. = HSRP fornisce ridondanza router.',
               context: 'design',
               difficulty: 'advanced',
               note: 'Hot Standby Router Protocol. Cisco.',
             },
             {
               english: 'VRRP',
-              italian: 'VRRP / Virtual Router Redundancy Protocol',
+              italian: 'VRRP',
               pronunciation: '/viː ɑːr ɑːr piː/',
               phonetic: 'VI-AR-AR-PI',
               example:
-                'VRRP is the standardized version of HSRP. = VRRP è la versione standard di HSRP.',
+                'By definition, VRRP is the standardized version of HSRP. = VRRP è la versione standard di HSRP.',
               context: 'design',
               difficulty: 'advanced',
               note: 'Virtual Router Redundancy Protocol.',
             },
             {
               english: 'GLBP',
-              italian: 'GLBP / Gateway Load Balancing Protocol Cisco',
+              italian: 'GLBP',
               pronunciation: '/dʒiː el biː piː/',
               phonetic: 'GI-EL-BI-PI',
               example:
-                'GLBP balances traffic across active routers. = GLBP bilancia il traffico tra router attivi.',
+                'In networking, GLBP balances traffic across active routers. = GLBP bilancia il traffico tra router attivi.',
               context: 'design',
               difficulty: 'advanced',
               note: 'Gateway Load Balancing Protocol.',
             },
             {
               english: 'Active-Passive',
-              italian: "attivo-passivo / un nodo lavora, l'altro attende",
+              italian: 'attivo-passivo',
               pronunciation: '/ˈæktɪv ˈpæsɪv/',
               phonetic: 'AK-tiv PA-siv',
               example:
-                'Active-passive uses one node at a time. = Active-passive usa un nodo alla volta.',
+                'Under the hood, Active-Passive uses one node at a time. = Active-passive usa un nodo alla volta.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Active-Active',
-              italian: 'attivo-attivo / più nodi servono in parallelo',
+              italian: 'attivo-attivo',
               pronunciation: '/ˈæktɪv ˈæktɪv/',
               phonetic: 'AK-tiv AK-tiv',
               example:
-                'Active-active uses all nodes simultaneously. = Active-active usa tutti i nodi simultaneamente.',
+                'Under the hood, Active-Active uses all nodes simultaneously. = Active-active usa tutti i nodi simultaneamente.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Stack',
-              italian: 'stack / pila di switch logicamente unico',
+              italian: 'pila di switch (stack)',
               pronunciation: '/stæk/',
               phonetic: 'STAK',
               example:
-                'Switch stacks act as one logical device. = Gli stack di switch agiscono come un singolo dispositivo logico.',
+                'The TCP/IP stack on Linux lives in the kernel, handling everything from framing to socket delivery. = Lo stack TCP/IP su Linux risiede nel kernel, gestendo tutto dal framing alla consegna ai socket.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'VSS',
-              italian: 'VSS / Virtual Switching System',
+              italian: 'VSS',
               pronunciation: '/viː es es/',
               phonetic: 'VI-ES-ES',
-              example: 'VSS combines two switches into one. = VSS combina due switch in uno solo.',
+              example:
+                'In networking, VSS combines two switches into one. = VSS combina due switch in uno solo.',
               context: 'design',
               difficulty: 'advanced',
             },
@@ -10176,17 +10323,17 @@ export default {
           items: [
             {
               english: 'DCN',
-              italian: 'DCN / Data Center Network',
+              italian: 'rete del data center (DCN)',
               pronunciation: '/diː siː en/',
               phonetic: 'DI-SI-EN',
               example:
-                'DCN designs handle east-west traffic. = I design DCN gestiscono traffico est-ovest.',
+                'In networking, DCN designs handle east-west traffic. = I design DCN gestiscono traffico est-ovest.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Top of Rack',
-              italian: 'top of rack / switch in cima al rack',
+              italian: 'switch top-of-rack (ToR)',
               pronunciation: '/tɒp ʌv ræk/',
               phonetic: 'TOP-ov-RAK',
               example:
@@ -10197,7 +10344,7 @@ export default {
             },
             {
               english: 'End of Row',
-              italian: 'end of row / switch a fine corsia',
+              italian: 'switch end-of-row (EoR)',
               pronunciation: '/end ʌv roʊ/',
               phonetic: 'END-ov-ROU',
               example:
@@ -10207,65 +10354,67 @@ export default {
             },
             {
               english: 'Fat Tree',
-              italian: 'fat tree / topologia con banda crescente',
+              italian: 'topologia fat tree',
               pronunciation: '/fæt triː/',
               phonetic: 'FAT TRI',
               example:
-                'Fat tree is a non-blocking topology. = Fat tree è una topologia non-blocking.',
+                'By definition, Fat Tree is a non-blocking topology. = Fat tree è una topologia non-blocking.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Oversubscription',
-              italian: 'oversubscription / overbooking di banda',
+              italian: 'oversubscription',
               pronunciation: '/ˌoʊvərsəbˈskrɪpʃən/',
               phonetic: 'O-ver-sab-SKRIP-scion',
               example:
-                "Oversubscription ratio measures uplink contention. = Il rapporto di oversubscription misura la contesa sull'uplink.",
+                "In networking, Oversubscription ratio measures uplink contention. = Il rapporto di oversubscription misura la contesa sull'uplink.",
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Fabric',
-              italian: 'fabric / tessuto di switch',
+              italian: 'fabric di rete',
               pronunciation: '/ˈfæbrɪk/',
               phonetic: 'FA-brik',
               example:
-                "A fabric is the data center network underlay. = Un fabric è l'underlay di rete del data center.",
+                "By definition, a Fabric is the data center network underlay. = Un fabric è l'underlay di rete del data center.",
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Pod',
-              italian: 'pod / blocco di datacenter',
+              italian: 'pod',
               pronunciation: '/pɒd/',
               phonetic: 'POD',
               example:
-                "A pod is a self-contained unit of leaves. = Un pod è un'unità autosufficiente di leaf.",
+                "By definition, a Pod is a self-contained unit of leaves. = Un pod è un'unità autosufficiente di leaf.",
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Super Spine',
-              italian: 'super spine / spina di livello superiore',
+              italian: 'super spine',
               pronunciation: '/ˈsuːpər spaɪn/',
               phonetic: 'SU-per SPAIN',
-              example: 'Super spines connect multiple pods. = I super spine connettono più pod.',
+              example:
+                'In a multi-pod data center fabric, the super spine layer provides high-bandwidth interconnection between independent spine-leaf pods. = In un fabric data center multi-pod, il layer super spine fornisce interconnessione ad alta banda tra pod spine-leaf indipendenti.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Border Leaf',
-              italian: "border leaf / leaf verso l'esterno",
+              italian: 'border leaf',
               pronunciation: '/ˈbɔːrdər liːf/',
               phonetic: 'BOR-der LIF',
-              example: 'Border leaves connect to the WAN. = I border leaf connettono alla WAN.',
+              example:
+                'In a spine-leaf fabric, the border leaf switches connect to the WAN edge routers, serving as the gateway between the data center and external networks. = In un fabric spine-leaf, gli switch border leaf connettono ai router WAN edge, fungendo da gateway tra il data center e le reti esterne.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Service Leaf',
-              italian: 'service leaf / leaf per servizi condivisi',
+              italian: 'service leaf',
               pronunciation: '/ˈsɜːrvɪs liːf/',
               phonetic: 'SER-vis LIF',
               example:
@@ -10282,7 +10431,7 @@ export default {
           items: [
             {
               english: 'Network Segmentation',
-              italian: 'Segmentazione di rete',
+              italian: 'segmentazione di rete',
               pronunciation: '/ˌseɡmenˈteɪʃən/',
               phonetic: 'seg-men-TEI-scion',
               example:
@@ -10296,88 +10445,89 @@ export default {
               pronunciation: '/kəˈpæsəti/',
               phonetic: 'ka-PA-se-ti',
               example:
-                'Capacity planning ensures bandwidth meets demand. = La pianificazione capacità assicura che la banda incontri la domanda.',
+                'To guarantee data integrity, Capacity Planning ensures bandwidth meets demand. = La pianificazione capacità assicura che la banda incontri la domanda.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Greenfield',
-              italian: 'greenfield / progetto da zero',
+              italian: 'progetto da zero (greenfield)',
               pronunciation: '/ˈɡriːnfiːld/',
               phonetic: 'GRIN-fild',
               example:
-                'A greenfield design starts from scratch. = Un design greenfield inizia da zero.',
+                'In networking, a Greenfield design starts from scratch. = Un design greenfield inizia da zero.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Brownfield',
-              italian: 'brownfield / progetto su sistemi esistenti',
+              italian: 'progetto su infrastruttura esistente (brownfield)',
               pronunciation: '/ˈbraʊnfiːld/',
               phonetic: 'BRAUN-fild',
               example:
-                'Brownfield designs work with existing infrastructure. = I design brownfield lavorano con infrastruttura esistente.',
+                'In networking, Brownfield designs work with existing infrastructure. = I design brownfield lavorano con infrastruttura esistente.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'Migration Plan',
-              italian: 'Piano di migrazione',
+              italian: 'piano di migrazione',
               pronunciation: '/maɪˈɡreɪʃən/',
               phonetic: 'mai-GREI-scion',
               example:
-                'A migration plan minimizes downtime. = Un piano di migrazione minimizza i disservizi.',
+                'In networking, a Migration Plan minimizes downtime. = Un piano di migrazione minimizza i disservizi.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'IPAM',
-              italian: 'IPAM / Gestione indirizzi IP',
+              italian: 'gestione indirizzi IP (IPAM)',
               pronunciation: '/ˈaɪpæm/',
               phonetic: 'AI-PAM',
               example:
-                'IPAM tracks IP address allocations. = IPAM traccia le allocazioni di indirizzi IP.',
+                'For accountability, IPAM tracks IP address allocations. = IPAM traccia le allocazioni di indirizzi IP.',
               context: 'design',
               difficulty: 'advanced',
               note: 'IP Address Management.',
             },
             {
               english: 'Network Diagram',
-              italian: 'Diagramma di rete',
+              italian: 'diagramma di rete',
               pronunciation: '/ˈdaɪəɡræm/',
               phonetic: 'DAI-a-gram',
               example:
-                'Network diagrams document the topology. = I diagrammi di rete documentano la topologia.',
+                'Before any maintenance window, the team reviews the network diagram to identify which links and devices will be affected by the change. = Prima di qualsiasi finestra di manutenzione, il team rivede il diagramma di rete per identificare quali link e dispositivi saranno interessati dal cambiamento.',
               context: 'design',
               difficulty: 'advanced',
               tool: 'draw.io, Visio',
             },
             {
               english: 'SLA',
-              italian: 'SLA / Service Level Agreement',
+              italian: 'accordo sul livello di servizio (SLA)',
               pronunciation: '/es el eɪ/',
               phonetic: 'ES-EL-EI',
               example:
-                'The SLA defines uptime guarantees. = Lo SLA definisce le garanzie di uptime.',
+                'To standardize communication, the SLA defines uptime guarantees. = Lo SLA definisce le garanzie di uptime.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'RPO',
-              italian: 'RPO / Recovery Point Objective',
+              italian: 'RPO',
               pronunciation: '/ɑːr piː oʊ/',
               phonetic: 'AR-PI-O',
               example:
-                'RPO defines acceptable data loss. = RPO definisce la perdita dati accettabile.',
+                'To standardize communication, RPO defines acceptable data loss. = RPO definisce la perdita dati accettabile.',
               context: 'design',
               difficulty: 'advanced',
             },
             {
               english: 'RTO',
-              italian: 'RTO / Recovery Time Objective',
+              italian: 'RTO',
               pronunciation: '/ɑːr tiː oʊ/',
               phonetic: 'AR-TI-O',
-              example: 'RTO defines acceptable downtime. = RTO definisce il downtime accettabile.',
+              example:
+                'To standardize communication, RTO defines acceptable downtime. = RTO definisce il downtime accettabile.',
               context: 'design',
               difficulty: 'advanced',
             },
@@ -10403,7 +10553,7 @@ export default {
               pronunciation: '/siː siː en eɪ/',
               phonetic: 'SI-SI-EN-EI',
               example:
-                'CCNA is the foundational Cisco certification. = CCNA è la certificazione Cisco di base.',
+                'By definition, CCNA is the foundational Cisco certification. = CCNA è la certificazione Cisco di base.',
               context: 'foundations',
               difficulty: 'advanced',
               note: 'Cisco Certified Network Associate.',
@@ -10414,7 +10564,7 @@ export default {
               pronunciation: '/siː siː en piː/',
               phonetic: 'SI-SI-EN-PI',
               example:
-                'CCNP is the professional Cisco level. = CCNP è il livello professionale Cisco.',
+                'By definition, CCNP is the professional Cisco level. = CCNP è il livello professionale Cisco.',
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -10424,7 +10574,7 @@ export default {
               pronunciation: '/siː siː aɪ iː/',
               phonetic: 'SI-SI-AI-I',
               example:
-                'CCIE is the expert-level Cisco certification. = CCIE è la certificazione Cisco di livello expert.',
+                'By definition, CCIE is the expert-level Cisco certification. = CCIE è la certificazione Cisco di livello expert.',
               context: 'foundations',
               difficulty: 'advanced',
               note: 'Esame di laboratorio di 8 ore.',
@@ -10434,7 +10584,8 @@ export default {
               italian: 'CompTIA Network+ (certificazione di base)',
               pronunciation: '/kɒmpˈtiːə/',
               phonetic: 'kom-TI-a NET-uerk plas',
-              example: 'Network+ is vendor-neutral. = Network+ è vendor-neutral.',
+              example:
+                "Because CompTIA Network+ is vendor-neutral, it covers foundational concepts from subnetting to troubleshooting without focusing on any single manufacturer's equipment. = Poiche CompTIA Network+ e vendor-neutral, copre concetti fondamentali dal subnetting al troubleshooting senza focalizzarsi sull'equipaggiamento di un singolo produttore.",
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -10444,18 +10595,18 @@ export default {
               pronunciation: '/dʒiː en siː aɪ eɪ/',
               phonetic: 'GI-EN-SI-AI-EI',
               example:
-                "JNCIA is the entry Juniper certification. = JNCIA è la certificazione Juniper d'ingresso.",
+                "By definition, JNCIA is the entry Juniper certification. = JNCIA è la certificazione Juniper d'ingresso.",
               context: 'foundations',
               difficulty: 'advanced',
               note: 'Juniper Networks Certified Internet Associate.',
             },
             {
               english: 'Aruba Certification',
-              italian: 'Certificazione Aruba',
+              italian: 'certificazione Aruba',
               pronunciation: '/əˈruːbə/',
               phonetic: 'a-RU-ba',
               example:
-                'Aruba certifications cover wireless and SD-WAN. = Le certificazioni Aruba coprono wireless e SD-WAN.',
+                'Professionals seeking expertise in enterprise wireless and SD-WAN deployments often pursue an Aruba certification to validate their HPE networking skills. = I professionisti che cercano competenze in deployment wireless e SD-WAN enterprise spesso perseguono una certificazione Aruba per validare le proprie competenze di networking HPE.',
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -10475,7 +10626,7 @@ export default {
               pronunciation: '/piː siː en es iː/',
               phonetic: 'PI-SI-EN-ES-I',
               example:
-                'PCNSE is the Palo Alto firewall certification. = PCNSE è la certificazione Palo Alto firewall.',
+                'By definition, PCNSE is the Palo Alto firewall certification. = PCNSE è la certificazione Palo Alto firewall.',
               context: 'foundations',
               difficulty: 'advanced',
               note: 'Palo Alto Networks Certified Network Security Engineer.',
@@ -10486,13 +10637,13 @@ export default {
               pronunciation: '/ˈfɔːrtɪnet/',
               phonetic: 'FOR-ti-net',
               example:
-                'Fortinet NSE certifies FortiGate skills. = Fortinet NSE certifica competenze FortiGate.',
+                'In networking, Fortinet NSE certifies FortiGate skills. = Fortinet NSE certifica competenze FortiGate.',
               context: 'foundations',
               difficulty: 'advanced',
             },
             {
               english: 'Wireshark Certification',
-              italian: 'Certificazione Wireshark',
+              italian: 'certificazione Wireshark',
               pronunciation: '/ˈwaɪərʃɑːrk/',
               phonetic: 'UAI-er-shark',
               example:
@@ -10509,21 +10660,21 @@ export default {
           items: [
             {
               english: 'Network Engineer',
-              italian: 'network engineer / ingegnere di rete',
+              italian: 'ingegnere di rete',
               pronunciation: '/ˌendʒɪˈnɪər/',
               phonetic: 'en-gi-NIIR',
               example:
-                'Network engineers design and operate networks. = I network engineer progettano e gestiscono reti.',
+                "A typical day for a network engineer includes reviewing monitoring dashboards, troubleshooting outages, and planning capacity upgrades for the campus infrastructure. = Una giornata tipica per un network engineer include la revisione delle dashboard di monitoraggio, la risoluzione di guasti e la pianificazione di upgrade di capacita per l'infrastruttura campus.",
               context: 'foundations',
               difficulty: 'advanced',
             },
             {
               english: 'Network Architect',
-              italian: 'network architect / architetto di rete',
+              italian: 'architetto di rete',
               pronunciation: '/ˈɑːrkɪtekt/',
               phonetic: 'AR-ki-tekt',
               example:
-                'Network architects design large-scale networks. = I network architect progettano reti su larga scala.',
+                "When the company expands to three new regions, the network architect designs the WAN topology, selects providers, and defines the IP addressing plan. = Quando l'azienda si espande in tre nuove regioni, il network architect progetta la topologia WAN, seleziona i provider e definisce il piano di indirizzamento IP.",
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -10533,14 +10684,14 @@ export default {
               pronunciation: '/nɒk ˌendʒɪˈnɪər/',
               phonetic: 'NOK en-gi-NIIR',
               example:
-                'NOC engineers monitor networks 24/7. = Gli ingegneri NOC monitorano le reti 24/7.',
+                "Working in rotating shifts, a NOC engineer watches real-time dashboards and responds to alerts to keep the service provider's network available around the clock. = Lavorando in turni a rotazione, un ingegnere NOC osserva dashboard in tempo reale e risponde agli alert per mantenere la rete del service provider disponibile 24/7.",
               context: 'foundations',
               difficulty: 'advanced',
               note: 'Network Operations Center.',
             },
             {
               english: 'Network Administrator',
-              italian: 'Amministratore di rete',
+              italian: 'amministratore di rete',
               pronunciation: '/ədˈmɪnəstreɪtər/',
               phonetic: 'ad-MI-ni-strei-ter',
               example:
@@ -10554,7 +10705,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti/',
               phonetic: 'si-KIU-re-ti',
               example:
-                "Network security engineers harden infrastructure. = Gli ingegneri sicurezza di rete fortificano l'infrastruttura.",
+                "After a vulnerability scan reveals open management ports, the network security engineer hardens the infrastructure by restricting access to a dedicated management VLAN. = Dopo che una scansione di vulnerabilita rivela porte di gestione aperte, l'ingegnere di sicurezza di rete fortifica l'infrastruttura limitando l'accesso a una VLAN di gestione dedicata.",
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -10564,7 +10715,7 @@ export default {
               pronunciation: '/ˈwaɪərləs/',
               phonetic: 'UAI-er-les',
               example:
-                'Wireless engineers design Wi-Fi deployments. = Gli ingegneri wireless progettano deployment Wi-Fi.',
+                "Before installing access points in a new office floor, the wireless engineer performs a site survey to optimize channel assignments and minimize interference. = Prima di installare access point in un nuovo piano ufficio, l'ingegnere wireless esegue un site survey per ottimizzare le assegnazioni dei canali e minimizzare le interferenze.",
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -10574,13 +10725,13 @@ export default {
               pronunciation: '/klaʊd/',
               phonetic: 'KLAUD',
               example:
-                'Cloud network engineers design VPCs and connectivity. = Gli ingegneri rete cloud progettano VPC e connettività.',
+                "The cloud network engineer designs the VPC architecture with proper CIDR blocks, transit gateways, and peering connections to support the multi-account strategy. = L'ingegnere di rete cloud progetta l'architettura VPC con blocchi CIDR appropriati, transit gateway e connessioni peering per supportare la strategia multi-account.",
               context: 'foundations',
               difficulty: 'advanced',
             },
             {
               english: 'Site Reliability Engineer',
-              italian: 'SRE / ingegnere affidabilità del sito',
+              italian: 'ingegnere affidabilità del sito (SRE)',
               pronunciation: '/saɪt rɪˌlaɪəˈbɪlɪti/',
               phonetic: 'SAIT ri-lai-a-BI-li-ti',
               example:
@@ -10595,7 +10746,7 @@ export default {
               pronunciation: '/ˌɔːtəˈmeɪʃən/',
               phonetic: 'o-to-MEI-scion',
               example:
-                "Network automation engineers code infrastructure. = Gli ingegneri automazione rete codificano l'infrastruttura.",
+                "Using Python and Ansible, the network automation engineer writes playbooks that provision switches, apply security baselines, and validate compliance across 200 sites. = Usando Python e Ansible, l'ingegnere di automazione di rete scrive playbook che provisionano switch, applicano baseline di sicurezza e validano la compliance su 200 siti.",
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -10605,7 +10756,7 @@ export default {
               pronunciation: '/priː seɪlz/',
               phonetic: 'PRI-SEILS',
               example:
-                'Pre-sales engineers design solutions for customers. = Gli ingegneri pre-sales progettano soluzioni per clienti.',
+                "Working alongside the sales team, the pre-sales engineer designs a technical network solution tailored to the customer's latency and bandwidth requirements. = Lavorando insieme al team commerciale, l'ingegnere pre-sales progetta una soluzione di rete tecnica su misura per i requisiti di latenza e banda del cliente.",
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -10618,7 +10769,7 @@ export default {
           items: [
             {
               english: 'Documentation',
-              italian: 'Documentazione',
+              italian: 'documentazione',
               pronunciation: '/ˌdɒkjumenˈteɪʃən/',
               phonetic: 'do-kiu-men-TEI-scion',
               example:
@@ -10642,7 +10793,7 @@ export default {
               pronunciation: '/ˈmeɪntənəns/',
               phonetic: 'MEIN-te-nens',
               example:
-                "Maintenance windows minimize user impact. = Le finestre di manutenzione minimizzano l'impatto sugli utenti.",
+                "Critical firmware upgrades are scheduled during the Sunday maintenance window to minimize user impact while the redundant links handle failover. = Gli aggiornamenti firmware critici sono schedulati durante la finestra di manutenzione della domenica per minimizzare l'impatto sugli utenti mentre i link ridondanti gestiscono il failover.",
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -10683,7 +10834,7 @@ export default {
               pronunciation: '/dɪˈfens ɪn depθ/',
               phonetic: 'di-FENS in DEPTH',
               example:
-                'Defense in depth uses multiple security layers. = La difesa in profondità usa più livelli di sicurezza.',
+                'Under the hood, Defense in Depth uses multiple security layers. = La difesa in profondità usa più livelli di sicurezza.',
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -10703,17 +10854,17 @@ export default {
               pronunciation: '/pætʃ ˈmænɪdʒmənt/',
               phonetic: 'PACH MA-nich-ment',
               example:
-                'Patch management closes known vulnerabilities. = La gestione patch chiude vulnerabilità note.',
+                'In networking, Patch Management closes known vulnerabilities. = La gestione patch chiude vulnerabilità note.',
               context: 'foundations',
               difficulty: 'advanced',
             },
             {
               english: 'Disaster Recovery',
-              italian: 'disaster recovery / ripristino dopo disastro',
+              italian: 'ripristino dopo disastro (DR)',
               pronunciation: '/dɪˈzɑːstər/',
               phonetic: 'di-ZA-ster',
               example:
-                'Disaster recovery plans handle major outages. = I piani disaster recovery gestiscono grandi disservizi.',
+                'In networking, Disaster Recovery plans handle major outages. = I piani disaster recovery gestiscono grandi disservizi.',
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -10730,64 +10881,66 @@ export default {
               pronunciation: '/kəˈmjuːnəti/',
               phonetic: 'ko-MIU-ne-ti',
               example:
-                'The networking community shares knowledge generously. = La comunità networking condivide conoscenza generosamente.',
+                'In networking, the Networking Community shares knowledge generously. = La comunità networking condivide conoscenza generosamente.',
               context: 'foundations',
               difficulty: 'advanced',
             },
             {
               english: 'IETF',
-              italian: 'IETF / Internet Engineering Task Force',
+              italian: 'IETF',
               pronunciation: '/aɪ iː tiː ef/',
               phonetic: 'AI-I-TI-EF',
-              example: 'IETF develops Internet standards. = IETF sviluppa standard Internet.',
+              example:
+                'In networking, IETF develops Internet standards. = IETF sviluppa standard Internet.',
               context: 'foundations',
               difficulty: 'advanced',
               note: 'Internet Engineering Task Force.',
             },
             {
               english: 'RFC',
-              italian: 'RFC / Request for Comments',
+              italian: 'RFC',
               pronunciation: '/ɑːr ef siː/',
               phonetic: 'AR-EF-SI',
               example:
-                "RFCs are the IETF's standard documents. = Le RFC sono i documenti standard dell'IETF.",
+                'Before implementing a new protocol feature, engineers consult the relevant RFC to ensure their code complies with the IETF specification. = Prima di implementare una nuova funzionalita di protocollo, gli ingegneri consultano la RFC pertinente per assicurarsi che il codice sia conforme alla specifica IETF.',
               context: 'foundations',
               difficulty: 'advanced',
             },
             {
               english: 'NANOG',
-              italian: 'NANOG / North American Network Operators Group',
+              italian: 'NANOG',
               pronunciation: '/ˈneɪnɒɡ/',
               phonetic: 'NEI-nog',
               example:
-                'NANOG is the North American operators group. = NANOG è il gruppo operatori nordamericani.',
+                'By definition, NANOG is the North American operators group. = NANOG è il gruppo operatori nordamericani.',
               context: 'foundations',
               difficulty: 'advanced',
             },
             {
               english: 'RIPE',
-              italian: 'RIPE / registro IP regionale Europa',
+              italian: 'RIPE',
               pronunciation: '/raɪp/',
               phonetic: 'RAIP',
               example:
-                'RIPE is the European Internet community. = RIPE è la comunità Internet europea.',
+                'By definition, RIPE is the European Internet community. = RIPE è la comunità Internet europea.',
               context: 'foundations',
               difficulty: 'advanced',
               note: 'Réseaux IP Européens.',
             },
             {
               english: 'Home Lab',
-              italian: 'home lab / laboratorio casalingo',
+              italian: 'laboratorio casalingo (home lab)',
               pronunciation: '/hoʊm læb/',
               phonetic: 'HOUM LAB',
-              example: "A home lab speeds up learning. = Un home lab velocizza l'apprendimento.",
+              example:
+                "In networking, a Home Lab speeds up learning. = Un home lab velocizza l'apprendimento.",
               context: 'foundations',
               difficulty: 'advanced',
               tool: 'EVE-NG, GNS3, Containerlab',
             },
             {
               english: 'Continuous Learning',
-              italian: 'Apprendimento continuo',
+              italian: 'apprendimento continuo',
               pronunciation: '/kənˈtɪnjuəs/',
               phonetic: 'kon-TI-nius',
               example:
@@ -10797,21 +10950,21 @@ export default {
             },
             {
               english: 'Mentoring',
-              italian: 'mentoring / mentorato',
+              italian: 'mentorato (mentoring)',
               pronunciation: '/ˈmentɔːrɪŋ/',
               phonetic: 'MEN-to-ring',
               example:
-                'Mentoring helps grow the next generation. = Il mentoring aiuta a far crescere la prossima generazione.',
+                'During operations, Mentoring helps grow the next generation. = Il mentoring aiuta a far crescere la prossima generazione.',
               context: 'foundations',
               difficulty: 'advanced',
             },
             {
               english: 'Soft Skills',
-              italian: 'soft skills / competenze trasversali',
+              italian: 'competenze trasversali (soft skills)',
               pronunciation: '/sɒft skɪlz/',
               phonetic: 'SOFT-SKILS',
               example:
-                'Soft skills matter as much as technical ones. = Le soft skill contano quanto quelle tecniche.',
+                'In networking, Soft Skills matter as much as technical ones. = Le soft skill contano quanto quelle tecniche.',
               context: 'foundations',
               difficulty: 'advanced',
             },

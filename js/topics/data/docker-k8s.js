@@ -28,7 +28,7 @@ export default {
               pronunciation: '/kənˈteɪnər/',
               phonetic: 'con-TEI-ner',
               example:
-                "A container packages an application with its dependencies. = Un container racchiude un'applicazione con le sue dipendenze.",
+                "We ship each microservice as its own container so updates don't affect other services. = Distribuiamo ogni microservizio come un proprio container così gli aggiornamenti non impattano gli altri servizi.",
               context: 'containers',
               difficulty: 'beginner',
               note: 'Il termine "container" viene mantenuto in inglese anche in italiano.',
@@ -39,7 +39,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ/',
               phonetic: 'I-migg',
               example:
-                "A container image is a read-only template. = Un'immagine container è un template di sola lettura.",
+                "Every build in our CI pipeline produces a tagged image that gets pushed to the registry. = Ogni build nella nostra pipeline CI produce un'immagine taggata che viene inviata al registry.",
               context: 'containers',
               difficulty: 'beginner',
               command: 'docker images',
@@ -50,7 +50,7 @@ export default {
               pronunciation: '/kənˌteɪnəraɪˈzeɪʃən/',
               phonetic: 'con-tei-ne-rai-ZEI-scen',
               example:
-                "Containerization isolates applications from each other. = La containerizzazione isola le applicazioni l'una dall'altra.",
+                "Our team adopted containerization to eliminate 'works on my machine' issues across dev and prod. = Il nostro team ha adottato la containerizzazione per eliminare i problemi 'funziona sulla mia macchina' tra dev e prod.",
               context: 'containers',
               difficulty: 'beginner',
               note: 'Più leggera della virtualizzazione tradizionale.',
@@ -61,18 +61,18 @@ export default {
               pronunciation: '/ˌvɜːrtʃʊəlaɪˈzeɪʃən/',
               phonetic: 'ver-ciu-a-lai-ZEI-scen',
               example:
-                'Virtualization runs multiple operating systems on one host. = La virtualizzazione esegue più sistemi operativi su un host.',
+                'Before containers, we relied on virtualization to separate workloads on the same hardware. = Prima dei container, ci affidavamo alla virtualizzazione per separare i carichi di lavoro sullo stesso hardware.',
               context: 'containers',
               difficulty: 'beginner',
               note: "Le VM hanno un proprio kernel, i container condividono quello dell'host.",
             },
             {
               english: 'Hypervisor',
-              italian: 'hypervisor / supervisore di VM',
+              italian: 'Supervisore di macchine virtuali (hypervisor)',
               pronunciation: '/ˈhaɪpərvaɪzər/',
               phonetic: 'HAI-per-vai-zer',
               example:
-                'A hypervisor manages virtual machines. = Un hypervisor gestisce le macchine virtuali.',
+                "VMware ESXi is a Type 1 hypervisor that runs directly on bare metal hardware. = VMware ESXi è un hypervisor di Tipo 1 che funziona direttamente sull'hardware bare metal.",
               context: 'containers',
               difficulty: 'beginner',
               note: 'Esempi: VMware ESXi, KVM, Hyper-V.',
@@ -83,7 +83,7 @@ export default {
               pronunciation: '/ˌaɪsəˈleɪʃən/',
               phonetic: 'ai-so-LEI-scen',
               example:
-                'Containers provide process isolation. = I container forniscono isolamento dei processi.',
+                'Good process isolation prevents a crashed container from taking down other services on the same host. = Un buon isolamento dei processi impedisce che un container crashato trascini giù altri servizi sullo stesso host.',
               context: 'containers',
               difficulty: 'beginner',
             },
@@ -93,7 +93,7 @@ export default {
               pronunciation: '/ˈneɪmspeɪs/',
               phonetic: 'NEIM-speis',
               example:
-                'Linux namespaces isolate container resources. = I namespace di Linux isolano le risorse dei container.',
+                "Each container gets its own PID namespace, so process IDs inside don't conflict with the host. = Ogni container ottiene il proprio namespace PID, quindi gli ID di processo interni non confliggono con l'host.",
               context: 'containers',
               difficulty: 'beginner',
               note: 'Tipi: PID, network, mount, user, IPC, UTS.',
@@ -104,7 +104,7 @@ export default {
               pronunciation: '/kənˈtroʊl ɡruːp/',
               phonetic: 'con-TROUL GRUP',
               example:
-                'Control groups limit container resources. = I gruppi di controllo limitano le risorse dei container.',
+                "We set a control group memory limit of 512 MB so that a runaway process cannot consume all host RAM. = Abbiamo impostato un limite di memoria del gruppo di controllo di 512 MB così che un processo impazzito non possa consumare tutta la RAM dell'host.",
               context: 'containers',
               difficulty: 'beginner',
               note: 'Abbreviato cgroups in Linux.',
@@ -115,7 +115,7 @@ export default {
               pronunciation: '/ˈlaɪtweɪt/',
               phonetic: 'LAIT-ueit',
               example:
-                'Containers are lightweight compared to VMs. = I container sono leggeri rispetto alle VM.',
+                'Because containers are lightweight, we can run dozens of them on a single server that would only support a few VMs. = Poiché i container sono leggeri, possiamo eseguirne decine su un singolo server che supporterebbe solo poche VM.',
               context: 'containers',
               difficulty: 'beginner',
             },
@@ -125,7 +125,7 @@ export default {
               pronunciation: '/ˌpɔːrtəˈbɪləti/',
               phonetic: 'por-ta-BI-li-ti',
               example:
-                'Containers ensure portability across environments. = I container garantiscono portabilità tra ambienti.',
+                'The portability of containers means the same image runs identically on a laptop, in CI, and in production. = La portabilità dei container significa che la stessa immagine funziona in modo identico su un laptop, nella CI e in produzione.',
               context: 'containers',
               difficulty: 'beginner',
               note: '"Build once, run anywhere" è il motto.',
@@ -143,7 +143,7 @@ export default {
               pronunciation: '/ˈvɜːrtʃuəl məˈʃiːn/',
               phonetic: 'VER-ciu-al ma-SCIIN',
               example:
-                'A virtual machine emulates a complete computer. = Una macchina virtuale emula un computer completo.',
+                'We still run the legacy payment system inside a virtual machine because it needs Windows Server. = Manteniamo il vecchio sistema di pagamenti dentro una macchina virtuale perché necessita di Windows Server.',
               context: 'containers',
               difficulty: 'beginner',
               note: 'Abbreviato VM. Più pesante di un container.',
@@ -154,7 +154,7 @@ export default {
               pronunciation: '/ɡest oʊ es/',
               phonetic: 'GHEST OU-ES',
               example:
-                'Each VM runs its own guest OS. = Ogni VM esegue il proprio sistema operativo guest.',
+                'Running a full guest OS per VM means higher memory consumption and longer startup times. = Eseguire un intero sistema operativo guest per VM significa un maggiore consumo di memoria e tempi di avvio più lunghi.',
               context: 'containers',
               difficulty: 'beginner',
             },
@@ -164,7 +164,7 @@ export default {
               pronunciation: '/hoʊst oʊ es/',
               phonetic: 'HOUST OU-ES',
               example:
-                'Containers share the host OS kernel. = I container condividono il kernel del sistema host.',
+                'When you patch the host OS kernel, every container on that machine benefits immediately. = Quando aggiorni il kernel del sistema operativo host, ogni container su quella macchina ne beneficia immediatamente.',
               context: 'containers',
               difficulty: 'beginner',
             },
@@ -174,17 +174,18 @@ export default {
               pronunciation: '/ˈkɜːrnl/',
               phonetic: 'KER-nl',
               example:
-                'Linux containers require a Linux kernel. = I container Linux richiedono un kernel Linux.',
+                'On macOS, Docker Desktop runs a hidden Linux kernel inside a lightweight VM to host containers. = Su macOS, Docker Desktop esegue un kernel Linux nascosto dentro una VM leggera per ospitare i container.',
               context: 'containers',
               difficulty: 'beginner',
               note: 'Su macOS e Windows si usa una VM Linux nascosta.',
             },
             {
               english: 'Overhead',
-              italian: 'Overhead (costo aggiuntivo)',
+              italian: 'Costo aggiuntivo (overhead)',
               pronunciation: '/ˈoʊvərhed/',
               phonetic: 'OU-ver-hed',
-              example: 'Containers have low overhead. = I container hanno basso overhead.',
+              example:
+                "Containers introduce minimal CPU overhead because they share the host kernel instead of emulating hardware. = I container introducono un overhead di CPU minimo perché condividono il kernel dell'host invece di emulare l'hardware.",
               context: 'containers',
               difficulty: 'beginner',
             },
@@ -194,7 +195,7 @@ export default {
               pronunciation: '/buːt taɪm/',
               phonetic: 'BUUT TAIM',
               example:
-                'Containers have a fast boot time. = I container hanno un tempo di avvio rapido.',
+                "A container's boot time is typically under a second, making rapid auto-scaling practical. = Il tempo di avvio di un container è generalmente inferiore a un secondo, rendendo pratico lo scaling automatico rapido.",
               context: 'containers',
               difficulty: 'beginner',
               note: 'I container partono in millisecondi, le VM in minuti.',
@@ -205,7 +206,7 @@ export default {
               pronunciation: '/ˈriːsɔːrs ˈjuːsɪdʒ/',
               phonetic: 'RII-sors IU-sigg',
               example:
-                'Containers use less resources than VMs. = I container usano meno risorse rispetto alle VM.',
+                "Monitoring resource usage per container helps us right-size limits and avoid OOM kills. = Monitorare l'uso delle risorse per container ci aiuta a dimensionare correttamente i limiti ed evitare OOM kill.",
               context: 'containers',
               difficulty: 'beginner',
             },
@@ -215,17 +216,17 @@ export default {
               pronunciation: '/ˈdensəti/',
               phonetic: 'DEN-si-ti',
               example:
-                'You can run more containers per host than VMs. = Si possono eseguire più container per host rispetto alle VM.',
+                'Higher container density per node lets us serve more tenants without adding hardware. = Una maggiore densità di container per nodo ci permette di servire più tenant senza aggiungere hardware.',
               context: 'containers',
               difficulty: 'beginner',
             },
             {
               english: 'Bare Metal',
-              italian: 'Bare metal (hardware nudo)',
+              italian: 'Hardware dedicato senza virtualizzazione (bare metal)',
               pronunciation: '/ber ˈmetl/',
               phonetic: 'BER ME-tl',
               example:
-                'Bare metal servers run without virtualization. = I server bare metal funzionano senza virtualizzazione.',
+                'For latency-critical workloads, we deploy containers directly on bare metal instead of inside a VM. = Per carichi di lavoro critici in termini di latenza, distribuiamo i container direttamente su bare metal invece che dentro una VM.',
               context: 'containers',
               difficulty: 'beginner',
             },
@@ -235,7 +236,7 @@ export default {
               pronunciation: '/ˈwɜːrkloʊd/',
               phonetic: 'UERK-loud',
               example:
-                'Containers package workloads efficiently. = I container impacchettano i carichi di lavoro in modo efficiente.',
+                'We split the monolith into separate workloads so each can be scaled and deployed independently. = Abbiamo suddiviso il monolite in carichi di lavoro separati così ciascuno può essere scalato e distribuito indipendentemente.',
               context: 'containers',
               difficulty: 'beginner',
             },
@@ -248,11 +249,11 @@ export default {
           items: [
             {
               english: 'OCI',
-              italian: 'OCI / Open Container Initiative',
+              italian: 'Iniziativa Open Container (OCI)',
               pronunciation: '/oʊ siː aɪ/',
               phonetic: 'ou-sii-AI',
               example:
-                "OCI defines container industry standards. = OCI definisce gli standard dell'industria dei container.",
+                'Using OCI-compliant images guarantees they work with any compatible runtime, not just Docker. = Usare immagini conformi OCI garantisce che funzionino con qualsiasi runtime compatibile, non solo Docker.',
               context: 'containers',
               difficulty: 'beginner',
               note: 'Open Container Initiative.',
@@ -263,7 +264,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ ˌspesɪfɪˈkeɪʃən/',
               phonetic: 'I-migg spe-si-fi-KEI-scen',
               example:
-                'The OCI image specification defines image format. = La specifica delle immagini OCI definisce il formato.',
+                "Following the OCI image specification ensures your images are portable between Docker, Podman, and other tools. = Seguire la specifica dell'immagine OCI assicura che le tue immagini siano portabili tra Docker, Podman e altri strumenti.",
               context: 'containers',
               difficulty: 'beginner',
             },
@@ -273,16 +274,17 @@ export default {
               pronunciation: '/ˈrʌntaɪm ˌspesɪfɪˈkeɪʃən/',
               phonetic: 'RAN-taim spe-si-fi-KEI-scen',
               example:
-                'The runtime specification defines how containers run. = La specifica del runtime definisce come i container vengono eseguiti.',
+                "The OCI runtime specification describes the configuration, execution environment, and lifecycle of a container. = La specifica del runtime OCI descrive la configurazione, l'ambiente di esecuzione e il ciclo di vita di un container.",
               context: 'containers',
               difficulty: 'beginner',
             },
             {
               english: 'runc',
-              italian: 'runc / runtime container OCI di basso livello',
+              italian: 'Runtime container OCI di basso livello (runc)',
               pronunciation: '/rʌn siː/',
               phonetic: 'RAN-SI',
-              example: 'runc is the OCI reference runtime. = runc è il runtime di riferimento OCI.',
+              example:
+                'When Docker starts a container, it ultimately delegates to runc to set up namespaces and cgroups. = Quando Docker avvia un container, alla fine delega a runc la configurazione di namespace e cgroup.',
               context: 'containers',
               difficulty: 'beginner',
               tool: 'runc',
@@ -290,11 +292,11 @@ export default {
             },
             {
               english: 'containerd',
-              italian: 'containerd (runtime container CNCF)',
+              italian: 'Runtime container ad alto livello della CNCF (containerd)',
               pronunciation: '/kənˈteɪnərˌdiː/',
               phonetic: 'con-TEI-ner-DI',
               example:
-                'containerd is a high-level container runtime. = containerd è un runtime di container ad alto livello.',
+                'Kubernetes uses containerd as its default runtime to pull images, manage storage, and supervise running containers. = Kubernetes usa containerd come runtime predefinito per scaricare immagini, gestire lo storage e supervisionare i container in esecuzione.',
               context: 'containers',
               difficulty: 'beginner',
               tool: 'containerd',
@@ -302,11 +304,11 @@ export default {
             },
             {
               english: 'CRI-O',
-              italian: 'CRI-O (runtime container Kubernetes-only)',
+              italian: 'Runtime container esclusivo per Kubernetes (CRI-O)',
               pronunciation: '/siː ɑːr aɪ oʊ/',
               phonetic: 'sii-ar-ai-OU',
               example:
-                'CRI-O is a lightweight runtime for Kubernetes. = CRI-O è un runtime leggero per Kubernetes.',
+                'OpenShift clusters use CRI-O instead of containerd because it is purpose-built for the Kubernetes CRI. = I cluster OpenShift usano CRI-O al posto di containerd perché è progettato appositamente per la CRI di Kubernetes.',
               context: 'containers',
               difficulty: 'beginner',
               tool: 'CRI-O',
@@ -318,7 +320,7 @@ export default {
               pronunciation: '/kənˈteɪnər ˈrʌntaɪm/',
               phonetic: 'con-TEI-ner RAN-taim',
               example:
-                'A container runtime executes containers. = Un runtime di container esegue i container.',
+                'Choosing the right container runtime depends on whether you need Docker compatibility or a minimal Kubernetes-only solution. = Scegliere il giusto runtime del container dipende dal fatto che serva compatibilità con Docker o una soluzione minimale solo per Kubernetes.',
               context: 'containers',
               difficulty: 'beginner',
             },
@@ -328,7 +330,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ ˈmænɪfest/',
               phonetic: 'I-migg MA-ni-fest',
               example:
-                "The image manifest lists all layers. = Il manifesto dell'immagine elenca tutti i layer.",
+                "You can inspect the image manifest with 'docker manifest inspect' to see which layers and digests compose the image. = Puoi ispezionare il manifesto dell'immagine con 'docker manifest inspect' per vedere quali layer e digest compongono l'immagine.",
               context: 'containers',
               difficulty: 'beginner',
               code: '{"schemaVersion": 2, "mediaType": "...", "layers": [...]}',
@@ -339,7 +341,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ ˈɪndeks/',
               phonetic: 'I-migg IN-deks',
               example:
-                "An image index supports multi-architecture images. = Un indice dell'immagine supporta immagini multi-architettura.",
+                "Publishing an image index lets Docker automatically pull the correct build for amd64 or arm64 hosts. = Pubblicare un indice dell'immagine permette a Docker di scaricare automaticamente la build corretta per host amd64 o arm64.",
               context: 'containers',
               difficulty: 'beginner',
               note: 'Permette immagini per amd64, arm64, ecc.',
@@ -350,7 +352,7 @@ export default {
               pronunciation: '/kəmˈplaɪəns/',
               phonetic: 'com-PLAI-ans',
               example:
-                "OCI compliance ensures interoperability. = La conformità OCI garantisce l'interoperabilità.",
+                'Before adopting a new container tool, verify its OCI compliance so images remain portable across your stack. = Prima di adottare un nuovo strumento per container, verifica la sua conformità OCI così le immagini restano portabili nel tuo stack.',
               context: 'containers',
               difficulty: 'beginner',
             },
@@ -363,22 +365,22 @@ export default {
           items: [
             {
               english: 'Docker',
-              italian: 'Docker (piattaforma container)',
+              italian: 'Piattaforma di containerizzazione (Docker)',
               pronunciation: '/ˈdɒkər/',
               phonetic: 'DO-ker',
               example:
-                'Docker is the most popular container platform. = Docker è la piattaforma di container più popolare.',
+                'Most developers start with Docker locally before deploying to Kubernetes in production. = La maggior parte degli sviluppatori inizia con Docker in locale prima di distribuire su Kubernetes in produzione.',
               context: 'containers',
               difficulty: 'beginner',
               tool: 'Docker',
             },
             {
               english: 'Podman',
-              italian: 'Podman (alternativa daemonless a Docker)',
+              italian: 'Alternativa senza daemon a Docker (Podman)',
               pronunciation: '/ˈpɒdmən/',
               phonetic: 'POD-man',
               example:
-                'Podman is a daemonless container engine. = Podman è un motore di container senza daemon.',
+                'Security teams often prefer Podman because it runs containers as a regular user without a root daemon. = I team di sicurezza spesso preferiscono Podman perché esegue container come utente normale senza un daemon root.',
               context: 'containers',
               difficulty: 'beginner',
               tool: 'Podman',
@@ -386,22 +388,22 @@ export default {
             },
             {
               english: 'Buildah',
-              italian: 'Buildah / costruisce immagini OCI senza daemon',
+              italian: 'Costruttore di immagini OCI senza daemon (Buildah)',
               pronunciation: '/ˈbɪldə/',
               phonetic: 'BIL-da',
               example:
-                'Buildah builds OCI images without a daemon. = Buildah costruisce immagini OCI senza un daemon.',
+                'In our CI pipeline we use Buildah to create images without needing a Docker socket. = Nella nostra pipeline CI usiamo Buildah per creare immagini senza bisogno di un socket Docker.',
               context: 'containers',
               difficulty: 'beginner',
               tool: 'Buildah',
             },
             {
               english: 'Skopeo',
-              italian: 'Skopeo / strumento copia immagini tra registry',
+              italian: 'Strumento per copiare immagini tra registry (Skopeo)',
               pronunciation: '/skəˈpeɪoʊ/',
               phonetic: 'sko-PEI-ou',
               example:
-                'Skopeo copies container images between registries. = Skopeo copia immagini container tra registry.',
+                'We use Skopeo to mirror production images from Docker Hub to our private registry without pulling them locally. = Usiamo Skopeo per replicare le immagini di produzione da Docker Hub al nostro registry privato senza scaricarle localmente.',
               context: 'containers',
               difficulty: 'beginner',
               tool: 'Skopeo',
@@ -409,11 +411,11 @@ export default {
             },
             {
               english: 'LXC',
-              italian: 'LXC / Linux Container',
+              italian: 'Container Linux a livello di sistema (LXC)',
               pronunciation: '/el eks siː/',
               phonetic: 'el-eks-SI',
               example:
-                'LXC provides system-level Linux containers. = LXC fornisce container Linux a livello di sistema.',
+                'Unlike Docker app containers, LXC gives you a full init system, behaving more like a lightweight VM. = A differenza dei container applicativi Docker, LXC offre un sistema init completo, comportandosi più come una VM leggera.',
               context: 'containers',
               difficulty: 'beginner',
               tool: 'LXC',
@@ -421,10 +423,11 @@ export default {
             },
             {
               english: 'rkt',
-              italian: 'rkt / runtime container CoreOS (deprecato)',
+              italian: 'Runtime container CoreOS deprecato (rkt)',
               pronunciation: '/ˈrɒkɪt/',
               phonetic: 'RO-kit',
-              example: "rkt was an alternative to Docker. = rkt era un'alternativa a Docker.",
+              example:
+                "The rkt project pushed security-first container design, but lost adoption after CoreOS was acquired by Red Hat. = Il progetto rkt ha promosso un design dei container incentrato sulla sicurezza, ma ha perso adozione dopo l'acquisizione di CoreOS da parte di Red Hat.",
               context: 'containers',
               difficulty: 'beginner',
               tool: 'rkt',
@@ -432,22 +435,22 @@ export default {
             },
             {
               english: 'Kata Containers',
-              italian: 'Kata Containers / container con isolamento VM',
+              italian: 'Container con isolamento a livello VM (Kata Containers)',
               pronunciation: '/ˈkɑːtə kənˈteɪnərz/',
               phonetic: 'KA-ta con-TEI-ners',
               example:
-                'Kata Containers add VM-level isolation. = Kata Containers aggiungono isolamento a livello VM.',
+                'For multi-tenant clusters, Kata Containers run each pod in a micro-VM to prevent kernel-level escapes. = Per cluster multi-tenant, Kata Containers esegue ogni pod in una micro-VM per prevenire escape a livello kernel.',
               context: 'containers',
               difficulty: 'beginner',
               tool: 'Kata Containers',
             },
             {
               english: 'gVisor',
-              italian: 'gVisor / sandbox container Google',
+              italian: 'Sandbox per container di Google (gVisor)',
               pronunciation: '/ˈdʒiː vaɪzər/',
               phonetic: 'gi-VAI-zor',
               example:
-                'gVisor sandboxes containers with a user-space kernel. = gVisor isola i container con un kernel in user-space.',
+                'GKE Sandbox uses gVisor to intercept system calls, adding an extra security layer without needing a full VM. = GKE Sandbox usa gVisor per intercettare le chiamate di sistema, aggiungendo un livello di sicurezza extra senza bisogno di una VM completa.',
               context: 'containers',
               difficulty: 'beginner',
               tool: 'gVisor',
@@ -459,17 +462,17 @@ export default {
               pronunciation: '/kənˈteɪnər ˈendʒɪn/',
               phonetic: 'con-TEI-ner EN-gin',
               example:
-                'A container engine manages container lifecycle. = Un motore di container gestisce il ciclo di vita.',
+                'The container engine handles pulling images, creating containers, and cleaning up stopped ones. = Il motore di container si occupa di scaricare immagini, creare container e ripulire quelli fermati.',
               context: 'containers',
               difficulty: 'beginner',
             },
             {
               english: 'CNCF',
-              italian: 'CNCF / Cloud Native Computing Foundation',
+              italian: 'Fondazione per il Cloud Native Computing (CNCF)',
               pronunciation: '/siː en siː ef/',
               phonetic: 'si-en-si-EF',
               example:
-                'The CNCF hosts many container projects. = La CNCF ospita molti progetti di container.',
+                'Kubernetes, Prometheus, and Envoy are all CNCF graduated projects with proven production readiness. = Kubernetes, Prometheus ed Envoy sono tutti progetti graduati CNCF con comprovata maturità per la produzione.',
               context: 'containers',
               difficulty: 'beginner',
               note: 'Cloud Native Computing Foundation.',
@@ -496,7 +499,7 @@ export default {
               pronunciation: '/ˈdɒkər rʌn/',
               phonetic: 'DO-ker RAN',
               example:
-                'Use docker run to start a new container. = Usa docker run per avviare un nuovo container.',
+                'To spin up a quick test database, just type docker run -d -p 5432:5432 postgres. = Per avviare un database di test veloce, basta digitare docker run -d -p 5432:5432 postgres.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run nginx',
@@ -507,7 +510,7 @@ export default {
               pronunciation: '/dɪˈtætʃt moʊd/',
               phonetic: 'di-TACT MOUD',
               example:
-                'The -d flag runs containers in detached mode. = Il flag -d esegue i container in modalità detached.',
+                'Production services should run in detached mode so they keep going after you close the terminal. = I servizi di produzione dovrebbero girare in modalità detached così continuano a funzionare dopo che chiudi il terminale.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run -d nginx',
@@ -517,7 +520,8 @@ export default {
               italian: 'Modalità interattiva',
               pronunciation: '/ˌɪntərˈæktɪv moʊd/',
               phonetic: 'in-ter-AK-tiv MOUD',
-              example: 'Use -it for interactive containers. = Usa -it per container interattivi.',
+              example:
+                'Start a shell in interactive mode with docker run -it ubuntu bash to debug package issues. = Avvia una shell in modalità interattiva con docker run -it ubuntu bash per debuggare problemi di pacchetti.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run -it ubuntu bash',
@@ -528,7 +532,8 @@ export default {
               italian: 'Nome del container',
               pronunciation: '/kənˈteɪnər neɪm/',
               phonetic: 'con-TEI-ner NEIM',
-              example: 'Assign a name with --name flag. = Assegna un nome con il flag --name.',
+              example:
+                'Always give your container a descriptive container name like --name api-gateway so you can reference it easily. = Dai sempre al tuo container un nome descrittivo come --name api-gateway così puoi riferirtici facilmente.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run --name myapp nginx',
@@ -539,7 +544,7 @@ export default {
               pronunciation: '/pɔːrt ˈmæpɪŋ/',
               phonetic: 'PORT MA-ping',
               example:
-                "Map host port to container port. = Mappa la porta dell'host alla porta del container.",
+                "The port mapping -p 8080:80 lets you reach the container's Nginx on localhost:8080. = La mappatura porta -p 8080:80 ti permette di raggiungere l'Nginx del container su localhost:8080.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run -p 8080:80 nginx',
@@ -550,7 +555,8 @@ export default {
               italian: "Variabile d'ambiente",
               pronunciation: '/ɪnˈvaɪrənmənt ˈveəriəbl/',
               phonetic: 'in-VAI-ron-ment VER-ia-bol',
-              example: "Pass environment variables with -e. = Passa variabili d'ambiente con -e.",
+              example:
+                "You can inject the database URL as an environment variable at runtime with -e DATABASE_URL=postgres://... = Puoi iniettare l'URL del database come variabile d'ambiente al runtime con -e DATABASE_URL=postgres://...",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run -e DB_HOST=localhost myapp',
@@ -561,7 +567,7 @@ export default {
               pronunciation: '/riːˈstɑːrt ˈpɒləsi/',
               phonetic: 'ri-START PO-li-si',
               example:
-                'Set a restart policy with --restart. = Imposta una politica di riavvio con --restart.',
+                'Setting the restart policy to unless-stopped keeps your service running even after an unexpected crash. = Impostare la politica di riavvio su unless-stopped mantiene il tuo servizio in esecuzione anche dopo un crash inaspettato.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run --restart unless-stopped nginx',
@@ -573,7 +579,7 @@ export default {
               pronunciation: '/ˈɔːtoʊ rɪˈmuːv/',
               phonetic: 'AU-tou ri-MUV',
               example:
-                "The --rm flag removes the container on exit. = Il flag --rm rimuove il container all'uscita.",
+                "Use auto-remove with --rm for one-off tasks like database migrations so stopped containers don't pile up. = Usa la rimozione automatica con --rm per operazioni singole come migrazioni database così i container fermati non si accumulano.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run --rm alpine echo hello',
@@ -584,7 +590,8 @@ export default {
               italian: 'Limiti delle risorse',
               pronunciation: '/ˈriːsɔːrs ˈlɪmɪts/',
               phonetic: 'RII-sors LI-mits',
-              example: 'Limit memory and CPU with flags. = Limita memoria e CPU con flag.',
+              example:
+                "We set resource limits of 512 MB and 1.5 CPUs to prevent the container from starving other services on the host. = Impostiamo limiti delle risorse di 512 MB e 1,5 CPU per impedire al container di affamare altri servizi sull'host.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker run -m 512m --cpus 1.5 nginx',
@@ -595,7 +602,7 @@ export default {
               pronunciation: '/ˈbækɡraʊnd ˈproʊses/',
               phonetic: 'BAK-graund PRO-ses',
               example:
-                'Detached containers run as background processes. = I container detached girano come processi in background.',
+                'The web server runs as a background process, so you can use the same terminal for other tasks. = Il server web gira come processo in background, così puoi usare lo stesso terminale per altre attività.',
               context: 'docker-cli',
               difficulty: 'beginner',
             },
@@ -612,7 +619,7 @@ export default {
               pronunciation: '/ˈdɒkər piː es/',
               phonetic: 'DO-ker pi-ES',
               example:
-                'docker ps lists running containers. = docker ps elenca i container in esecuzione.',
+                'After deploying, run docker ps to verify all expected services are up and healthy. = Dopo il deploy, esegui docker ps per verificare che tutti i servizi previsti siano attivi e funzionanti.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker ps',
@@ -623,7 +630,7 @@ export default {
               pronunciation: '/ˈdɒkər piː es eɪ/',
               phonetic: 'DO-ker pi-es-EI',
               example:
-                'docker ps -a shows all containers including stopped ones. = docker ps -a mostra tutti i container, anche fermi.',
+                "If a container crashed, run docker ps -a to find its exit code and creation time. = Se un container è crashato, esegui docker ps -a per trovare il suo codice di uscita e l'ora di creazione.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker ps -a',
@@ -634,7 +641,7 @@ export default {
               pronunciation: '/ˈdɒkər stɒp/',
               phonetic: 'DO-ker STOP',
               example:
-                'docker stop sends SIGTERM to the container. = docker stop invia SIGTERM al container.',
+                "Always prefer docker stop over kill to give the application time to flush data and close connections. = Preferisci sempre docker stop rispetto a kill per dare all'applicazione il tempo di scrivere i dati e chiudere le connessioni.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker stop myapp',
@@ -645,7 +652,7 @@ export default {
               pronunciation: '/ˈdɒkər kɪl/',
               phonetic: 'DO-ker KIL',
               example:
-                'docker kill sends SIGKILL immediately. = docker kill invia SIGKILL immediatamente.',
+                'If docker stop hangs for more than 10 seconds, use docker kill to force an immediate shutdown. = Se docker stop rimane bloccato per più di 10 secondi, usa docker kill per forzare uno spegnimento immediato.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker kill myapp',
@@ -657,7 +664,7 @@ export default {
               pronunciation: '/ˈdɒkər ɑːr em/',
               phonetic: 'DO-ker AR-EM',
               example:
-                'docker rm deletes a stopped container. = docker rm elimina un container fermato.',
+                'Clean up old test containers with docker rm to free disk space used by their writable layers. = Ripulisci i vecchi container di test con docker rm per liberare spazio disco usato dai loro layer scrivibili.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker rm myapp',
@@ -668,7 +675,7 @@ export default {
               pronunciation: '/fɔːrs rɪˈmuːv/',
               phonetic: 'FORS ri-MUV',
               example:
-                'Use -f to force remove a running container. = Usa -f per forzare la rimozione di un container in esecuzione.',
+                'During development you can force remove a stuck container, but avoid it in production to prevent data loss. = In fase di sviluppo puoi forzare la rimozione di un container bloccato, ma evitalo in produzione per prevenire perdita di dati.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker rm -f myapp',
@@ -679,7 +686,7 @@ export default {
               pronunciation: '/ˈdɒkər stɑːrt/',
               phonetic: 'DO-ker START',
               example:
-                'docker start runs a stopped container. = docker start avvia un container fermato.',
+                "After a host reboot, you may need to run docker start on containers that lack an automatic restart policy. = Dopo un riavvio dell'host, potresti dover eseguire docker start sui container che non hanno una politica di riavvio automatico.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker start myapp',
@@ -690,7 +697,7 @@ export default {
               pronunciation: '/ˈdɒkər riːˈstɑːrt/',
               phonetic: 'DO-ker ri-START',
               example:
-                'docker restart stops and restarts a container. = docker restart ferma e riavvia un container.',
+                "When the app is leaking memory, a quick docker restart can restore normal operation until you deploy a fix. = Quando l'app ha un memory leak, un rapido docker restart può ripristinare il funzionamento normale finché non distribuisci una correzione.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker restart myapp',
@@ -701,7 +708,7 @@ export default {
               pronunciation: '/ˈdɒkər pɔːz/',
               phonetic: 'DO-ker POOZ',
               example:
-                'docker pause suspends container processes. = docker pause sospende i processi del container.',
+                'You can use docker pause to freeze a container while taking a consistent filesystem snapshot. = Puoi usare docker pause per congelare un container mentre scatti uno snapshot consistente del filesystem.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker pause myapp',
@@ -713,7 +720,7 @@ export default {
               pronunciation: '/ˈdɒkər riːˈneɪm/',
               phonetic: 'DO-ker ri-NEIM',
               example:
-                'docker rename changes a container name. = docker rename cambia il nome di un container.',
+                'We used docker rename to change the container name from temp-db to production-db before switching traffic. = Abbiamo usato docker rename per cambiare il nome del container da temp-db a production-db prima di commutare il traffico.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker rename old new',
@@ -730,7 +737,8 @@ export default {
               italian: 'Scarica immagine',
               pronunciation: '/ˈdɒkər pʊl/',
               phonetic: 'DO-ker PUL',
-              example: "docker pull downloads an image. = docker pull scarica un'immagine.",
+              example:
+                'Before running containers offline, use docker pull to download the required images while you still have network access. = Prima di eseguire container offline, usa docker pull per scaricare le immagini necessarie mentre hai ancora accesso alla rete.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker pull nginx:1.25',
@@ -741,7 +749,7 @@ export default {
               pronunciation: '/ˈdɒkər pʊʃ/',
               phonetic: 'DO-ker PUSC',
               example:
-                "docker push uploads an image to a registry. = docker push carica un'immagine in un registry.",
+                'After the CI build succeeds, we run docker push to publish the new image to our private registry. = Dopo che la build CI ha successo, eseguiamo docker push per pubblicare la nuova immagine nel nostro registry privato.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker push myuser/myapp:1.0',
@@ -752,7 +760,7 @@ export default {
               pronunciation: '/ˈdɒkər ˈɪmɪdʒɪz/',
               phonetic: 'DO-ker I-mi-giz',
               example:
-                'docker images lists local images. = docker images elenca le immagini locali.',
+                'Run docker images periodically and prune unused ones to reclaim disk space on build servers. = Esegui docker images periodicamente e rimuovi quelle inutilizzate per recuperare spazio disco sui server di build.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker images',
@@ -762,7 +770,8 @@ export default {
               italian: 'Rimuovi immagine',
               pronunciation: '/ˈdɒkər ɑːr em aɪ/',
               phonetic: 'DO-ker ar-em-AI',
-              example: "docker rmi removes a local image. = docker rmi rimuove un'immagine locale.",
+              example:
+                'Use docker rmi to remove old image versions and free up gigabytes of disk space on your dev machine. = Usa docker rmi per rimuovere le vecchie versioni delle immagini e liberare gigabyte di spazio disco sulla tua macchina di sviluppo.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker rmi nginx:1.25',
@@ -773,7 +782,7 @@ export default {
               pronunciation: '/ˈdɒkər tæɡ/',
               phonetic: 'DO-ker TAG',
               example:
-                "docker tag creates a new image alias. = docker tag crea un nuovo alias per un'immagine.",
+                "Before pushing to the registry, use docker tag to label the image with the git commit hash for traceability. = Prima di caricare sul registry, usa docker tag per etichettare l'immagine con l'hash del commit git per la tracciabilità.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker tag myapp:latest myapp:1.0',
@@ -783,7 +792,8 @@ export default {
               italian: 'Scarica tutti i tag',
               pronunciation: '/pʊl ɔːl tæɡz/',
               phonetic: 'PUL OL TAGS',
-              example: 'Pull all tags for a repository. = Scarica tutti i tag di un repository.',
+              example:
+                'Use docker pull --all-tags only in CI caching scenarios; it can download dozens of GB for popular images. = Usa docker pull --all-tags solo per scenari di caching nella CI; può scaricare decine di GB per immagini popolari.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker pull --all-tags nginx',
@@ -794,7 +804,7 @@ export default {
               pronunciation: '/ˈdɒkər seɪv/',
               phonetic: 'DO-ker SEIV',
               example:
-                "docker save exports an image to a tarball. = docker save esporta un'immagine in un tarball.",
+                'To transfer images to an air-gapped server, first run docker save to create a tar archive you can copy over USB. = Per trasferire immagini su un server air-gapped, prima esegui docker save per creare un archivio tar che puoi copiare via USB.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker save -o nginx.tar nginx:latest',
@@ -805,7 +815,7 @@ export default {
               pronunciation: '/ˈdɒkər loʊd/',
               phonetic: 'DO-ker LOUD',
               example:
-                "docker load imports an image from a tarball. = docker load importa un'immagine da un tarball.",
+                "On the air-gapped server, run docker load -i nginx.tar to import the image without internet access. = Sul server air-gapped, esegui docker load -i nginx.tar per importare l'immagine senza accesso a internet.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker load -i nginx.tar',
@@ -816,7 +826,7 @@ export default {
               pronunciation: '/ˈplætfɔːrm/',
               phonetic: 'PLAT-form',
               example:
-                'Specify the platform for multi-arch images. = Specifica la piattaforma per immagini multi-arch.',
+                "On an M1 Mac, use docker pull --platform linux/amd64 to get the x86 image when the arm64 variant is missing. = Su un Mac M1, usa docker pull --platform linux/amd64 per ottenere l'immagine x86 quando la variante arm64 non è disponibile.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker pull --platform linux/arm64 nginx',
@@ -826,7 +836,8 @@ export default {
               italian: 'ID immagine',
               pronunciation: '/ˈɪmɪdʒ aɪ diː/',
               phonetic: 'I-migg ai-DI',
-              example: 'Each image has a unique image ID. = Ogni immagine ha un image ID univoco.',
+              example:
+                'Two images can share the same tag but never the same image ID, since it is a content-addressed SHA256 hash. = Due immagini possono condividere lo stesso tag ma mai lo stesso ID immagine, poiché è un hash SHA256 indirizzato al contenuto.',
               context: 'docker-cli',
               difficulty: 'beginner',
               note: 'È un hash SHA256 abbreviato.',
@@ -844,7 +855,7 @@ export default {
               pronunciation: '/ˈdɒkər lɒɡz/',
               phonetic: 'DO-ker LOGZ',
               example:
-                "docker logs shows container output. = docker logs mostra l'output del container.",
+                "When the API returns 500 errors, check docker logs to find stack traces and error messages from the application. = Quando l'API restituisce errori 500, controlla docker logs per trovare stack trace e messaggi di errore dall'applicazione.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker logs myapp',
@@ -855,7 +866,7 @@ export default {
               pronunciation: '/lɒɡz ef/',
               phonetic: 'LOGZ EF',
               example:
-                'Use -f to follow logs in real time. = Usa -f per seguire i log in tempo reale.',
+                'Run docker logs -f during a deployment to watch for startup errors as they happen. = Esegui docker logs -f durante un deployment per osservare gli errori di avvio nel momento in cui si verificano.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker logs -f myapp',
@@ -867,7 +878,7 @@ export default {
               pronunciation: '/ˈdɒkər ekˈzek/',
               phonetic: 'DO-ker ek-ZEK',
               example:
-                'docker exec runs a command in a running container. = docker exec esegue un comando in un container attivo.',
+                'Use docker exec -it myapp bash to open a shell inside the running container and debug configuration issues. = Usa docker exec -it myapp bash per aprire una shell dentro il container in esecuzione e debuggare problemi di configurazione.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker exec -it myapp bash',
@@ -878,7 +889,7 @@ export default {
               pronunciation: '/ˈdɒkər ɪnˈspekt/',
               phonetic: 'DO-ker in-SPEKT',
               example:
-                'docker inspect returns detailed container info. = docker inspect restituisce informazioni dettagliate.',
+                "Use docker inspect with a Go template to extract just the container IP: docker inspect -f '{{.NetworkSettings.IPAddress}}'. = Usa docker inspect con un template Go per estrarre solo l'IP del container: docker inspect -f '{{.NetworkSettings.IPAddress}}'.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker inspect myapp',
@@ -890,7 +901,7 @@ export default {
               pronunciation: '/ˈdɒkər stæts/',
               phonetic: 'DO-ker STATS',
               example:
-                "docker stats shows live resource usage. = docker stats mostra l'uso delle risorse in tempo reale.",
+                'Keep docker stats open on a second monitor to catch memory leaks before the container gets OOM-killed. = Tieni docker stats aperto su un secondo monitor per individuare memory leak prima che il container venga terminato per OOM.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker stats',
@@ -901,7 +912,7 @@ export default {
               pronunciation: '/ˈdɒkər tɒp/',
               phonetic: 'DO-ker TOP',
               example:
-                'docker top lists processes in a container. = docker top elenca i processi in un container.',
+                "Run docker top to verify the app is not spawning unexpected child processes that waste resources. = Esegui docker top per verificare che l'app non stia generando processi figlio inattesi che sprecano risorse.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker top myapp',
@@ -912,7 +923,7 @@ export default {
               pronunciation: '/ˈdɒkər pɔːrt/',
               phonetic: 'DO-ker PORT',
               example:
-                'docker port shows port mappings. = docker port mostra le mappature delle porte.',
+                'If you forgot which host port was mapped, run docker port to quickly look up the binding. = Se hai dimenticato quale porta host è stata mappata, esegui docker port per cercare rapidamente il binding.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker port myapp',
@@ -923,7 +934,7 @@ export default {
               pronunciation: '/ˈdɒkər siː piː/',
               phonetic: 'DO-ker si-PI',
               example:
-                'docker cp copies files between host and container. = docker cp copia file tra host e container.',
+                "Use docker cp to pull a heap dump out of a running container for offline analysis. = Usa docker cp per estrarre un heap dump da un container in esecuzione per l'analisi offline.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker cp file.txt myapp:/app/',
@@ -934,7 +945,7 @@ export default {
               pronunciation: '/ˈdɒkər dɪf/',
               phonetic: 'DO-ker DIF',
               example:
-                'docker diff shows filesystem changes. = docker diff mostra i cambiamenti del filesystem.',
+                "After reproducing a bug, run docker diff to see which files the process modified compared to the original image. = Dopo aver riprodotto un bug, esegui docker diff per vedere quali file il processo ha modificato rispetto all'immagine originale.",
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker diff myapp',
@@ -945,7 +956,7 @@ export default {
               pronunciation: '/ˈdɒkər ɪˈvents/',
               phonetic: 'DO-ker i-VENTS',
               example:
-                'docker events streams real-time events. = docker events trasmette eventi in tempo reale.',
+                'Pipe docker events into a monitoring tool to get alerts whenever a container dies or an OOM kill occurs. = Invia docker events in uno strumento di monitoraggio per ricevere avvisi ogni volta che un container muore o si verifica un OOM kill.',
               context: 'docker-cli',
               difficulty: 'beginner',
               command: 'docker events',
@@ -968,11 +979,11 @@ export default {
           items: [
             {
               english: 'Dockerfile',
-              italian: 'Dockerfile / ricetta di immagine container',
+              italian: "Ricetta per costruire un'immagine container (Dockerfile)",
               pronunciation: '/ˈdɒkər faɪl/',
               phonetic: 'DO-ker FAIL',
               example:
-                "A Dockerfile defines how to build an image. = Un Dockerfile definisce come costruire un'immagine.",
+                'Keep your Dockerfile under version control so every team member builds the exact same image. = Tieni il tuo Dockerfile sotto controllo di versione così ogni membro del team costruisce esattamente la stessa immagine.',
               context: 'dockerfile',
               difficulty: 'beginner',
               note: 'Il file ha esattamente questo nome, senza estensione.',
@@ -982,7 +993,8 @@ export default {
               italian: 'Direttiva FROM (immagine base)',
               pronunciation: '/frɒm/',
               phonetic: 'FROM',
-              example: "FROM specifies the base image. = FROM specifica l'immagine base.",
+              example:
+                'Always pin a specific version in your FROM line, like FROM node:20-alpine, to avoid surprise breaking changes. = Specifica sempre una versione precisa nella riga FROM, come FROM node:20-alpine, per evitare cambiamenti inattesi.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'FROM ubuntu:22.04',
@@ -993,7 +1005,8 @@ export default {
               italian: 'Istruzione RUN',
               pronunciation: '/rʌn/',
               phonetic: 'RAN',
-              example: 'RUN executes commands during build. = RUN esegue comandi durante la build.',
+              example:
+                'Chain multiple commands in a single RUN step to keep the image layer count low: RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*. = Concatena più comandi in un singolo passo RUN per mantenere basso il numero di layer: RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'RUN apt-get update && apt-get install -y curl',
@@ -1003,7 +1016,8 @@ export default {
               italian: 'Istruzione COPY',
               pronunciation: '/ˈkɒpi/',
               phonetic: 'KO-pi',
-              example: "COPY copies files into the image. = COPY copia file nell'immagine.",
+              example:
+                'Place the COPY for your source code late in the Dockerfile so dependency-install layers stay cached. = Posiziona il COPY del codice sorgente tardi nel Dockerfile così i layer di installazione dipendenze restano in cache.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'COPY src/ /app/src/',
@@ -1014,7 +1028,7 @@ export default {
               pronunciation: '/æd/',
               phonetic: 'AD',
               example:
-                'ADD copies files and supports URLs and tar extraction. = ADD copia file e supporta URL ed estrazione di tar.',
+                "Prefer COPY over ADD unless you specifically need ADD's auto-extraction of tar archives into the image. = Preferisci COPY rispetto ad ADD a meno che tu non abbia specificamente bisogno dell'auto-estrazione di archivi tar di ADD nell'immagine.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ADD https://example.com/file.tar.gz /tmp/',
@@ -1026,7 +1040,7 @@ export default {
               pronunciation: '/ˈwɜːrk dɪr/',
               phonetic: 'UERK-dir',
               example:
-                'WORKDIR sets the working directory. = WORKDIR imposta la directory di lavoro.',
+                'Set WORKDIR /app early in the Dockerfile so all subsequent RUN and COPY instructions reference that directory. = Imposta WORKDIR /app presto nel Dockerfile così tutte le istruzioni RUN e COPY successive fanno riferimento a quella directory.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'WORKDIR /app',
@@ -1037,7 +1051,7 @@ export default {
               pronunciation: '/ɪkˈspoʊz/',
               phonetic: 'ek-SPOUZ',
               example:
-                'EXPOSE documents the listening port. = EXPOSE documenta la porta in ascolto.',
+                "Adding EXPOSE 3000 in the Dockerfile tells other developers which port the app listens on, but you still need -p to publish it. = Aggiungere EXPOSE 3000 nel Dockerfile indica agli altri sviluppatori su quale porta l'app è in ascolto, ma serve comunque -p per pubblicarla.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'EXPOSE 8080',
@@ -1048,7 +1062,8 @@ export default {
               italian: 'Istruzione CMD',
               pronunciation: '/siː em diː/',
               phonetic: 'si-em-DI',
-              example: 'CMD specifies the default command. = CMD specifica il comando di default.',
+              example:
+                'Use the exec form CMD ["node", "server.js"] instead of the shell form to ensure signals like SIGTERM reach your process. = Usa la forma exec CMD ["node", "server.js"] invece della forma shell per assicurarti che segnali come SIGTERM raggiungano il tuo processo.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'CMD ["nginx", "-g", "daemon off;"]',
@@ -1058,7 +1073,8 @@ export default {
               italian: 'Istruzione LABEL',
               pronunciation: '/ˈleɪbl/',
               phonetic: 'LEI-bol',
-              example: "LABEL adds metadata to the image. = LABEL aggiunge metadati all'immagine.",
+              example:
+                'Add a LABEL with the git commit SHA so you can trace any running container back to its source code. = Aggiungi una LABEL con lo SHA del commit git così puoi tracciare qualsiasi container in esecuzione fino al suo codice sorgente.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'LABEL maintainer="dev@example.com"',
@@ -1069,7 +1085,7 @@ export default {
               pronunciation: '/ˈdɒkər bɪld/',
               phonetic: 'DO-ker BILD',
               example:
-                "docker build creates an image from a Dockerfile. = docker build crea un'immagine da un Dockerfile.",
+                "Run docker build -t myapp:1.0 . from the project root to build and tag the image in one step. = Esegui docker build -t myapp:1.0 . dalla root del progetto per costruire e taggare l'immagine in un solo passaggio.",
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker build -t myapp:1.0 .',
@@ -1087,7 +1103,7 @@ export default {
               pronunciation: '/bɪld ˈkɒntekst/',
               phonetic: 'BILD KON-tekst',
               example:
-                'The build context is the directory sent to the daemon. = Il contesto di build è la directory inviata al daemon.',
+                'A large build context slows down every build because all files are sent to the Docker daemon first. = Un contesto di build grande rallenta ogni build perché tutti i file vengono prima inviati al daemon Docker.',
               context: 'dockerfile',
               difficulty: 'beginner',
               note: 'Il "." finale di docker build indica il contesto.',
@@ -1098,7 +1114,7 @@ export default {
               pronunciation: '/ˈdɒkər ɪɡˈnɔːr/',
               phonetic: 'DO-ker ig-NOR',
               example:
-                'A .dockerignore excludes files from the context. = Un .dockerignore esclude file dal contesto.',
+                'Adding node_modules and .git to your .dockerignore can shrink the build context from gigabytes to megabytes. = Aggiungere node_modules e .git al tuo .dockerignore può ridurre il contesto di build da gigabyte a megabyte.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'node_modules\n.git\n*.log',
@@ -1109,7 +1125,7 @@ export default {
               pronunciation: '/ˈleɪər/',
               phonetic: 'LEI-er',
               example:
-                'Each Dockerfile instruction creates a layer. = Ogni istruzione Dockerfile crea un layer.',
+                "Combine related RUN steps into a single layer to avoid storing intermediate files that inflate image size. = Combina step RUN correlati in un singolo layer per evitare di memorizzare file intermedi che gonfiano la dimensione dell'immagine.",
               context: 'dockerfile',
               difficulty: 'beginner',
               note: 'I layer sono cached per accelerare le build.',
@@ -1119,7 +1135,8 @@ export default {
               italian: 'Cache dei layer',
               pronunciation: '/ˈleɪər kæʃ/',
               phonetic: 'LEI-er CASC',
-              example: 'Layer cache speeds up rebuilds. = La cache dei layer velocizza le ribuild.',
+              example:
+                'Ordering Dockerfile instructions from least to most frequently changed maximizes layer cache hits. = Ordinare le istruzioni del Dockerfile dalla meno alla più frequentemente modificata massimizza gli hit della cache dei layer.',
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1129,7 +1146,7 @@ export default {
               pronunciation: '/kæʃ ɪnˌvælɪˈdeɪʃən/',
               phonetic: 'CASC in-va-li-DEI-scen',
               example:
-                'A change invalidates the cache for following layers. = Una modifica invalida la cache dei layer successivi.',
+                "If you change package.json, cache invalidation forces a full npm install even when source code is unchanged. = Se modifichi package.json, l'invalidazione della cache forza un npm install completo anche quando il codice sorgente è invariato.",
               context: 'dockerfile',
               difficulty: 'beginner',
               note: 'Mettere COPY sorgente alla fine per non invalidare RUN install.',
@@ -1140,7 +1157,7 @@ export default {
               pronunciation: '/bɪld ˈɑːrɡjumənt/',
               phonetic: 'BILD AR-ghiu-ment',
               example:
-                'ARG defines a build-time variable. = ARG definisce una variabile a tempo di build.',
+                'Pass a build argument like --build-arg NODE_VERSION=20 so the same Dockerfile supports multiple Node versions. = Passa un argomento di build come --build-arg NODE_VERSION=20 così lo stesso Dockerfile supporta più versioni di Node.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ARG VERSION=1.0',
@@ -1151,7 +1168,8 @@ export default {
               italian: "Tag dell'immagine",
               pronunciation: '/ˈɪmɪdʒ tæɡ/',
               phonetic: 'I-migg TAG',
-              example: "Tag the image with -t flag. = Tagga l'immagine con il flag -t.",
+              example:
+                "Use semantic image tags like v2.1.0 instead of just 'latest' so rollbacks target a precise version. = Usa tag di immagine semantici come v2.1.0 invece del solo 'latest' così i rollback puntano a una versione precisa.",
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker build -t myorg/myapp:1.0 .',
@@ -1162,18 +1180,18 @@ export default {
               pronunciation: '/bɪld kæʃ/',
               phonetic: 'BILD CASC',
               example:
-                'Disable build cache with --no-cache. = Disabilita la cache di build con --no-cache.',
+                'Use --no-cache to force a clean build cache rebuild when you suspect a stale apt package index. = Usa --no-cache per forzare una ricostruzione pulita della cache di build quando sospetti un indice di pacchetti apt obsoleto.',
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker build --no-cache -t myapp .',
             },
             {
               english: 'BuildKit',
-              italian: 'BuildKit / motore di build Docker moderno',
+              italian: 'Motore di build Docker moderno (BuildKit)',
               pronunciation: '/bɪld kɪt/',
               phonetic: 'BILD-kit',
               example:
-                'BuildKit is the modern Docker build engine. = BuildKit è il moderno motore di build Docker.',
+                "Enable BuildKit with DOCKER_BUILDKIT=1 for parallel stage execution and better cache management. = Abilita BuildKit con DOCKER_BUILDKIT=1 per l'esecuzione parallela degli stage e una migliore gestione della cache.",
               context: 'dockerfile',
               difficulty: 'beginner',
               tool: 'BuildKit',
@@ -1184,7 +1202,8 @@ export default {
               italian: 'Compatta layer',
               pronunciation: '/skwɒʃ/',
               phonetic: 'SKUOSC',
-              example: 'Squash combines layers into one. = Squash combina i layer in uno solo.',
+              example:
+                'You can squash all layers to hide intermediate build artifacts, but you lose the caching benefit of shared layers. = Puoi compattare tutti i layer per nascondere gli artefatti di build intermedi, ma perdi il vantaggio di caching dei layer condivisi.',
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker build --squash -t myapp .',
@@ -1202,7 +1221,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ saɪz/',
               phonetic: 'I-migg SAIZ',
               example:
-                'Small image size means faster deployment. = Una dimensione ridotta significa deployment più rapido.',
+                "Reducing the image size from 1 GB to 150 MB cut our deployment rollout time by over 60%. = Ridurre la dimensione dell'immagine da 1 GB a 150 MB ha tagliato il tempo di rollout del deploy di oltre il 60%.",
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1212,7 +1231,7 @@ export default {
               pronunciation: '/ˈælpaɪn/',
               phonetic: 'AL-pain',
               example:
-                'Alpine is a tiny Linux distribution for containers. = Alpine è una distribuzione Linux piccolissima per container.',
+                'Switching FROM node:20 to FROM node:20-alpine reduced our image from 900 MB to 180 MB. = Passare da FROM node:20 a FROM node:20-alpine ha ridotto la nostra immagine da 900 MB a 180 MB.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'FROM alpine:3.19',
@@ -1220,11 +1239,11 @@ export default {
             },
             {
               english: 'Distroless',
-              italian: 'Distroless / immagini senza shell e package manager',
+              italian: 'Immagini senza shell né package manager (distroless)',
               pronunciation: '/ˈdɪstroʊlɛs/',
               phonetic: 'DI-strou-les',
               example:
-                'Distroless images contain only your app and runtime. = Le immagini distroless contengono solo app e runtime.',
+                "Using distroless images eliminates shell access, so an attacker who breaches the container has no tools to work with. = Usare immagini distroless elimina l'accesso alla shell, così un attaccante che viola il container non ha strumenti a disposizione.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'FROM gcr.io/distroless/static',
@@ -1235,7 +1254,8 @@ export default {
               italian: 'Combina istruzioni RUN',
               pronunciation: '/kəmˈbaɪn rʌn/',
               phonetic: 'com-BAIN RAN',
-              example: 'Combine RUN to reduce layers. = Combina RUN per ridurre i layer.',
+              example:
+                'Always combine RUN steps that install and clean up packages in the same layer, otherwise deleted files still exist in earlier layers. = Combina sempre i passaggi RUN che installano e puliscono pacchetti nello stesso layer, altrimenti i file eliminati esistono ancora nei layer precedenti.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*',
@@ -1246,7 +1266,7 @@ export default {
               pronunciation: '/æpt kliːn/',
               phonetic: 'APT KLIIN',
               example:
-                'Clean apt cache to reduce image size. = Pulisci la cache apt per ridurre la dimensione.',
+                "Adding rm -rf /var/lib/apt/lists/* after apt clean can save over 30 MB in a Debian-based image. = Aggiungere rm -rf /var/lib/apt/lists/* dopo apt clean può risparmiare oltre 30 MB in un'immagine basata su Debian.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'RUN apt-get clean && rm -rf /var/lib/apt/lists/*',
@@ -1257,18 +1277,18 @@ export default {
               pronunciation: '/ˈɪmɪdʒ ˈleɪərz/',
               phonetic: 'I-migg LEI-erz',
               example:
-                'View image layers with docker history. = Visualizza i layer con docker history.',
+                "Run docker history myapp:1.0 to identify which image layers consume the most disk space. = Esegui docker history myapp:1.0 per identificare quali layer dell'immagine consumano più spazio disco.",
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker history myapp:1.0',
             },
             {
               english: 'Dive',
-              italian: 'Dive (analizza layer)',
+              italian: 'Strumento di analisi dei layer di immagine (Dive)',
               pronunciation: '/daɪv/',
               phonetic: 'DAIV',
               example:
-                "Use Dive to analyze image layers. = Usa Dive per analizzare i layer dell'immagine.",
+                'The Dive tool shows wasted space in each layer and gives your image an efficiency score. = Lo strumento Dive mostra lo spazio sprecato in ogni layer e assegna alla tua immagine un punteggio di efficienza.',
               context: 'dockerfile',
               difficulty: 'beginner',
               tool: 'Dive',
@@ -1279,7 +1299,7 @@ export default {
               pronunciation: '/ˈɔːrdər ˈmætərz/',
               phonetic: 'OR-der MA-ters',
               example:
-                'Put rarely-changed layers first. = Metti i layer che cambiano raramente per primi.',
+                "Instruction order matters: COPY package.json before COPY src/ so npm install is cached when only source code changes. = L'ordine delle istruzioni conta: fai COPY package.json prima di COPY src/ così npm install resta in cache quando cambia solo il codice sorgente.",
               context: 'dockerfile',
               difficulty: 'beginner',
               note: 'Massimizza il riuso della cache.',
@@ -1290,17 +1310,18 @@ export default {
               pronunciation: '/slɪm ˈɪmɪdʒ/',
               phonetic: 'SLIM I-migg',
               example:
-                'A slim image variant has minimal packages. = Una variante slim ha pacchetti minimi.',
+                "The slim image of Python drops docs and dev tools, shrinking from 900 MB to around 150 MB. = L'immagine slim di Python elimina documentazione e strumenti di sviluppo, riducendosi da 900 MB a circa 150 MB.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'FROM debian:bookworm-slim',
             },
             {
               english: 'Volume',
-              italian: 'volume / archiviazione persistente per container',
+              italian: 'Archiviazione persistente per container (volume)',
               pronunciation: '/ˈvɒljuːm/',
               phonetic: 'VOL-ium',
-              example: 'VOLUME defines a mount point. = VOLUME definisce un punto di montaggio.',
+              example:
+                'Declare a volume for /var/lib/postgresql/data so database files survive container restarts. = Dichiara un volume per /var/lib/postgresql/data così i file del database sopravvivono ai riavvii del container.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'VOLUME /data',
@@ -1318,7 +1339,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ rɪˈpɒzɪtɔːri/',
               phonetic: 'I-migg ri-PO-zi-tori',
               example:
-                "An image repository stores image versions. = Un repository di immagini contiene le versioni di un'immagine.",
+                'Each microservice has its own image repository in our private registry, organized by team name. = Ogni microservizio ha il proprio repository di immagini nel nostro registry privato, organizzato per nome del team.',
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1328,7 +1349,7 @@ export default {
               pronunciation: '/ˈleɪtɪst tæɡ/',
               phonetic: 'LEI-test TAG',
               example:
-                'The latest tag points to the most recent build. = Il tag latest punta alla build più recente.',
+                'Avoid using the latest tag in production because it can silently change to a breaking version. = Evita di usare il tag latest in produzione perché può cambiare silenziosamente a una versione con breaking changes.',
               context: 'dockerfile',
               difficulty: 'beginner',
               note: 'Evita di usarlo in produzione: è ambiguo.',
@@ -1339,7 +1360,7 @@ export default {
               pronunciation: '/sɪˈmæntɪk ˈvɜːrʃənɪŋ/',
               phonetic: 'si-MAN-tik VER-scio-ning',
               example:
-                'Use semantic versioning for image tags. = Usa il versionamento semantico per i tag.',
+                'With semantic versioning, bumping the major tag from v1 to v2 signals breaking API changes to consumers. = Con il versionamento semantico, incrementare il tag major da v1 a v2 segnala breaking changes delle API ai consumatori.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'docker tag myapp:1.2.3',
@@ -1347,11 +1368,11 @@ export default {
             },
             {
               english: 'Digest',
-              italian: 'digest / hash univoco di immagine',
+              italian: "Hash univoco dell'immagine (digest)",
               pronunciation: '/ˈdaɪdʒest/',
               phonetic: 'DAI-gest',
               example:
-                'Pull by digest for immutability. = Scarica per digest per garantire immutabilità.',
+                "Reference an image by its SHA256 digest in production to guarantee the exact same binary is deployed every time. = Riferisci un'immagine tramite il suo digest SHA256 in produzione per garantire che lo stesso identico binario venga distribuito ogni volta.",
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker pull nginx@sha256:abc123...',
@@ -1363,7 +1384,7 @@ export default {
               pronunciation: '/ˈpɪnɪŋ/',
               phonetic: 'PI-ning',
               example:
-                'Pin image versions for reproducibility. = Fissa le versioni delle immagini per la riproducibilità.',
+                'Version pinning in your Dockerfile, like FROM python:3.12.1-slim, ensures builds are reproducible months later. = Il pinning della versione nel tuo Dockerfile, come FROM python:3.12.1-slim, assicura che le build siano riproducibili anche mesi dopo.',
               context: 'dockerfile',
               difficulty: 'beginner',
               note: 'Evita rotture inattese in deploy.',
@@ -1374,7 +1395,7 @@ export default {
               pronunciation: '/bɪld taɪm/',
               phonetic: 'BILD TAIM',
               example:
-                'Optimize Dockerfile to reduce build time. = Ottimizza il Dockerfile per ridurre il tempo di build.',
+                'Parallelizing independent stages with BuildKit cut our build time from 8 minutes to under 3. = Parallelizzare stage indipendenti con BuildKit ha ridotto il nostro tempo di build da 8 minuti a meno di 3.',
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1384,7 +1405,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ pʊʃ/',
               phonetic: 'I-migg PUSC',
               example:
-                "Push the image after a successful build. = Esegui il push dell'immagine dopo una build riuscita.",
+                "Our CI pipeline performs an image push to the registry only after all tests pass and vulnerability scans are clean. = La nostra pipeline CI esegue un push dell'immagine al registry solo dopo che tutti i test passano e le scansioni di vulnerabilità sono pulite.",
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker push registry.example.com/myapp:1.0',
@@ -1394,7 +1415,8 @@ export default {
               italian: 'Annotazione immagine',
               pronunciation: '/ˌænəˈteɪʃən/',
               phonetic: 'a-no-TEI-scen',
-              example: 'OCI annotations add metadata. = Le annotazioni OCI aggiungono metadati.',
+              example:
+                "Add an image annotation with the source repository URL so users can trace any image back to its code. = Aggiungi un'annotazione all'immagine con l'URL del repository sorgente così gli utenti possono risalire da qualsiasi immagine al suo codice.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'LABEL org.opencontainers.image.source="https://github.com/me/repo"',
@@ -1405,7 +1427,7 @@ export default {
               pronunciation: '/ˌriːprəˈdjuːsəbl bɪld/',
               phonetic: 'ri-pro-DIU-si-bol BILD',
               example:
-                'A reproducible build always produces the same image. = Una build riproducibile produce sempre la stessa immagine.',
+                "Pinning package versions and using BuildKit's source-date-epoch helps achieve a fully reproducible build. = Il pinning delle versioni dei pacchetti e l'uso di source-date-epoch di BuildKit aiuta a ottenere una build completamente riproducibile.",
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1415,7 +1437,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ ɪnˈspekt/',
               phonetic: 'I-migg in-SPEKT',
               example:
-                "Inspect image metadata and configuration. = Ispeziona metadati e configurazione di un'immagine.",
+                "Run image inspect to check which environment variables, ports, and entrypoint are baked into the image. = Esegui image inspect per controllare quali variabili d'ambiente, porte ed entrypoint sono incorporate nell'immagine.",
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker image inspect nginx:latest',
@@ -1442,7 +1464,7 @@ export default {
               pronunciation: '/ˈmʌlti steɪdʒ bɪld/',
               phonetic: 'MAL-ti STEIG BILD',
               example:
-                'Multi-stage builds produce smaller images. = Le build multi-stage producono immagini più piccole.',
+                "With a multi-stage build, you compile in a full SDK image but ship only the binary in a tiny Alpine image. = Con una build multi-stage, compili in un'immagine SDK completa ma distribuisci solo il binario in una piccola immagine Alpine.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'FROM golang:1.21 AS builder\nRUN go build\nFROM alpine\nCOPY --from=builder /app /app',
@@ -1452,7 +1474,8 @@ export default {
               italian: 'Stadio AS',
               pronunciation: '/eɪ es steɪdʒ/',
               phonetic: 'EI-ES STEIG',
-              example: 'Name a stage with AS. = Nomina uno stage con AS.',
+              example:
+                'Naming a stage with FROM node:20 AS build lets you reference it later with COPY --from=build. = Nominare uno stage con FROM node:20 AS build ti permette di riferirtici dopo con COPY --from=build.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'FROM node:20 AS build',
@@ -1462,7 +1485,8 @@ export default {
               italian: 'COPY da uno stadio',
               pronunciation: '/ˈkɒpi frɒm/',
               phonetic: 'KO-pi FROM',
-              example: 'Copy artifacts between stages. = Copia gli artefatti tra gli stadi.',
+              example:
+                'Use COPY --from=build /app/dist /usr/share/nginx/html to grab only the compiled frontend from the build stage. = Usa COPY --from=build /app/dist /usr/share/nginx/html per prendere solo il frontend compilato dallo stage di build.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'COPY --from=build /app/dist /usr/share/nginx/html',
@@ -1473,7 +1497,7 @@ export default {
               pronunciation: '/bɪld steɪdʒ/',
               phonetic: 'BILD STEIG',
               example:
-                "The build stage compiles the application. = Lo stadio di build compila l'applicazione.",
+                "In the build stage, install all dev dependencies and run tests before compiling the final artifact. = Nello stadio di build, installa tutte le dipendenze di sviluppo ed esegui i test prima di compilare l'artefatto finale.",
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1483,7 +1507,7 @@ export default {
               pronunciation: '/ˈrʌntaɪm steɪdʒ/',
               phonetic: 'RAN-taim STEIG',
               example:
-                'The runtime stage contains only what is needed to run. = Lo stadio di runtime contiene solo il necessario per eseguire.',
+                'The runtime stage should use a minimal base like Alpine or distroless, containing only the compiled binary and config. = Lo stadio di runtime dovrebbe usare una base minimale come Alpine o distroless, contenendo solo il binario compilato e la configurazione.',
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1493,7 +1517,7 @@ export default {
               pronunciation: '/bɪld ˈtɑːrɡɪt/',
               phonetic: 'BILD TAR-ghet',
               example:
-                'Build a specific stage with --target. = Costruisci uno stadio specifico con --target.',
+                "During development, use docker build --target dev to get an image with debugging tools that the production target omits. = In fase di sviluppo, usa docker build --target dev per ottenere un'immagine con strumenti di debug che il target di produzione omette.",
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker build --target build -t myapp:dev .',
@@ -1504,7 +1528,7 @@ export default {
               pronunciation: '/krɒs steɪdʒ/',
               phonetic: 'KROS-STEIG',
               example:
-                'Copy files from any previous stage. = Copia file da qualsiasi stadio precedente.',
+                "A cross-stage copy lets you grab just the compiled Go binary without carrying over the entire Go SDK. = Una copia tra stadi ti permette di prendere solo il binario Go compilato senza portare dietro l'intero SDK di Go.",
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1514,7 +1538,7 @@ export default {
               pronunciation: '/ˈfaɪnl steɪdʒ/',
               phonetic: 'FAI-nl STEIG',
               example:
-                "The final stage produces the published image. = Lo stadio finale produce l'immagine pubblicata.",
+                "Only the final stage layers end up in the published image, so everything else is discarded automatically. = Solo i layer dello stadio finale finiscono nell'immagine pubblicata, quindi tutto il resto viene scartato automaticamente.",
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1524,7 +1548,7 @@ export default {
               pronunciation: '/steɪdʒ kæʃ/',
               phonetic: 'STEIG CASC',
               example:
-                'BuildKit caches each stage independently. = BuildKit memorizza in cache ogni stage in modo indipendente.',
+                'Because BuildKit caches each stage independently, changing source code does not invalidate the dependency-install stage. = Poiché BuildKit memorizza in cache ogni stage indipendentemente, modificare il codice sorgente non invalida lo stage di installazione dipendenze.',
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1534,7 +1558,7 @@ export default {
               pronunciation: '/ˈbɪldər ˈpætərn/',
               phonetic: 'BIL-der PA-tern',
               example:
-                'The builder pattern separates build and runtime. = Il pattern builder separa build e runtime.',
+                'Before multi-stage builds existed, the builder pattern used two Dockerfiles and a shell script to copy artifacts between them. = Prima che esistessero le build multi-stage, il pattern builder usava due Dockerfile e uno script shell per copiare artefatti tra di essi.',
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1547,10 +1571,11 @@ export default {
           items: [
             {
               english: 'ENTRYPOINT',
-              italian: "ENTRYPOINT / processo principale dell'immagine",
+              italian: "Processo principale dell'immagine (ENTRYPOINT)",
               pronunciation: '/ˈentriˌpɔɪnt/',
               phonetic: 'EN-tri-point',
-              example: "ENTRYPOINT defines the executable. = ENTRYPOINT definisce l'eseguibile.",
+              example:
+                'Set ENTRYPOINT to your app binary so the container always behaves as a single-purpose executable. = Imposta ENTRYPOINT al binario della tua app così il container si comporta sempre come un eseguibile a scopo singolo.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ENTRYPOINT ["/app/server"]',
@@ -1561,7 +1586,7 @@ export default {
               pronunciation: '/siː em diː æz ɑːrɡz/',
               phonetic: 'si-em-DI az ARGS',
               example:
-                'CMD provides default args to ENTRYPOINT. = CMD fornisce argomenti di default a ENTRYPOINT.',
+                'Pairing ENTRYPOINT ["nginx"] with CMD ["-g", "daemon off;"] lets users override the flags while keeping nginx as the binary. = Abbinare ENTRYPOINT ["nginx"] con CMD ["-g", "daemon off;"] permette agli utenti di sovrascrivere i flag mantenendo nginx come binario.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ENTRYPOINT ["nginx"]\nCMD ["-g", "daemon off;"]',
@@ -1571,7 +1596,8 @@ export default {
               italian: 'Forma exec',
               pronunciation: '/ekˈzek fɔːrm/',
               phonetic: 'ek-ZEK FORM',
-              example: 'The exec form uses JSON arrays. = La forma exec usa array JSON.',
+              example:
+                'Always prefer the exec form CMD ["node", "app.js"] over CMD node app.js to avoid running under /bin/sh. = Preferisci sempre la forma exec CMD ["node", "app.js"] rispetto a CMD node app.js per evitare di eseguire sotto /bin/sh.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'CMD ["echo", "hello"]',
@@ -1583,7 +1609,7 @@ export default {
               pronunciation: '/ʃel fɔːrm/',
               phonetic: 'SCEL FORM',
               example:
-                'The shell form runs in /bin/sh -c. = La forma shell viene eseguita in /bin/sh -c.',
+                'The shell form is useful when you need variable expansion, like CMD echo $APP_VERSION, but it masks SIGTERM. = La forma shell è utile quando serve espansione di variabili, come CMD echo $APP_VERSION, ma maschera SIGTERM.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'CMD echo hello',
@@ -1595,29 +1621,29 @@ export default {
               pronunciation: '/ˈsɪɡnəl ˈhændlɪŋ/',
               phonetic: 'SIG-nal HAN-dling',
               example:
-                'Use exec form for proper signal handling. = Usa la forma exec per una corretta gestione dei segnali.',
+                "Without proper signal handling, docker stop waits the full timeout before force-killing your app, causing slow shutdowns. = Senza una corretta gestione dei segnali, docker stop attende l'intero timeout prima di terminare forzatamente la tua app, causando spegnimenti lenti.",
               context: 'dockerfile',
               difficulty: 'beginner',
               note: 'Importante per SIGTERM durante docker stop.',
             },
             {
               english: 'PID 1',
-              italian: 'PID 1 / primo processo del container',
+              italian: 'Primo processo del container (PID 1)',
               pronunciation: '/piː aɪ diː wʌn/',
               phonetic: 'pi-ai-di UAN',
               example:
-                'The container main process runs as PID 1. = Il processo principale del container gira come PID 1.',
+                'If your app is not designed to run as PID 1, zombie child processes will accumulate because nobody reaps them. = Se la tua app non è progettata per girare come PID 1, i processi figlio zombie si accumuleranno perché nessuno li raccoglie.',
               context: 'dockerfile',
               difficulty: 'beginner',
               note: 'PID 1 deve gestire i segnali e i figli zombie.',
             },
             {
               english: 'tini',
-              italian: 'tini (init minimale)',
+              italian: 'Init minimale per container (tini)',
               pronunciation: '/ˈtiːni/',
               phonetic: 'TI-ni',
               example:
-                'tini provides a minimal init for containers. = tini fornisce un init minimale per container.',
+                'Adding --init to docker run wraps your app with tini, which properly reaps zombie processes and forwards signals. = Aggiungere --init a docker run avvolge la tua app con tini, che raccoglie correttamente i processi zombie e inoltra i segnali.',
               context: 'dockerfile',
               difficulty: 'beginner',
               tool: 'tini',
@@ -1628,7 +1654,8 @@ export default {
               italian: 'Sovrascrivi CMD',
               pronunciation: '/ˌoʊvərˈraɪd siː em diː/',
               phonetic: 'ou-ver-RAID si-em-DI',
-              example: 'CMD can be overridden at runtime. = CMD può essere sovrascritto a runtime.',
+              example:
+                'You can override CMD at runtime: docker run myapp /bin/sh runs a shell instead of the default command. = Puoi sovrascrivere CMD a runtime: docker run myapp /bin/sh esegue una shell invece del comando predefinito.',
               context: 'dockerfile',
               difficulty: 'beginner',
               command: 'docker run myapp custom-arg',
@@ -1639,7 +1666,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt kəˈmænd/',
               phonetic: 'di-FOLT co-MAND',
               example:
-                "CMD specifies the default command for the image. = CMD specifica il comando di default per l'immagine.",
+                'Set a sensible default command like CMD ["npm", "start"] so users can run the container without extra arguments. = Imposta un comando di default sensato come CMD ["npm", "start"] così gli utenti possono eseguire il container senza argomenti aggiuntivi.',
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1649,7 +1676,7 @@ export default {
               pronunciation: '/ˈræpər skrɪpt/',
               phonetic: 'RA-per SKRIPT',
               example:
-                'Use a wrapper script as ENTRYPOINT for setup. = Usa uno script wrapper come ENTRYPOINT per il setup.',
+                "A wrapper script can run database migrations and then exec into the main app, keeping proper PID 1 signal handling. = Uno script wrapper può eseguire le migrazioni del database e poi fare exec nell'app principale, mantenendo la corretta gestione dei segnali PID 1.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ENTRYPOINT ["/entrypoint.sh"]',
@@ -1667,7 +1694,7 @@ export default {
               pronunciation: '/ɑːrɡ/',
               phonetic: 'ARG',
               example:
-                'ARG defines a build-time variable. = ARG definisce una variabile a tempo di build.',
+                "Use ARG to parameterize the base image version: ARG NODE_VERSION=20, then FROM node:${NODE_VERSION}. = Usa ARG per parametrizzare la versione dell'immagine base: ARG NODE_VERSION=20, poi FROM node:${NODE_VERSION}.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ARG NODE_VERSION=20',
@@ -1678,7 +1705,7 @@ export default {
               pronunciation: '/iː en viː/',
               phonetic: 'i-en-VI',
               example:
-                "ENV sets a runtime environment variable. = ENV imposta una variabile d'ambiente runtime.",
+                "Setting ENV NODE_ENV=production in your Dockerfile ensures npm skips dev dependencies at install time. = Impostare ENV NODE_ENV=production nel tuo Dockerfile assicura che npm salti le dipendenze di sviluppo durante l'installazione.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ENV NODE_ENV=production',
@@ -1689,7 +1716,7 @@ export default {
               pronunciation: '/ɑːrɡ ˈvɜːrsəs iː en viː/',
               phonetic: 'ARG VER-sus i-en-VI',
               example:
-                'ARG is build-time, ENV is runtime. = ARG è a tempo di build, ENV è a runtime.',
+                'Use ARG vs ENV wisely: ARG vanishes after the build, while ENV persists inside every running container. = Usa ARG vs ENV con saggezza: ARG scompare dopo la build, mentre ENV persiste dentro ogni container in esecuzione.',
               context: 'dockerfile',
               difficulty: 'beginner',
               note: 'ARG sparisce a runtime, ENV persiste nel container.',
@@ -1700,7 +1727,7 @@ export default {
               pronunciation: '/ˈjuːzər/',
               phonetic: 'IU-zer',
               example:
-                "USER sets the user for subsequent instructions. = USER imposta l'utente per le istruzioni successive.",
+                "Add USER appuser after installing packages but before COPY to ensure your app files are owned by a non-root user. = Aggiungi USER appuser dopo l'installazione dei pacchetti ma prima di COPY per assicurarti che i file della tua app siano di proprietà di un utente non-root.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'USER appuser',
@@ -1712,7 +1739,7 @@ export default {
               pronunciation: '/nɒn ruːt ˈjuːzər/',
               phonetic: 'NON-RUT IU-zer',
               example:
-                'Run containers as a non-root user for security. = Esegui i container come utente non-root per sicurezza.',
+                'Creating a dedicated non-root user with a fixed UID like 1000 prevents permission conflicts on mounted volumes. = Creare un utente non-root dedicato con un UID fisso come 1000 previene conflitti di permessi sui volumi montati.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'RUN useradd -u 1000 appuser\nUSER appuser',
@@ -1723,7 +1750,7 @@ export default {
               pronunciation: '/ˈwɜːrk dɪr/',
               phonetic: 'UERK-dir',
               example:
-                'WORKDIR creates and sets the working directory. = WORKDIR crea e imposta la directory di lavoro.',
+                'Using WORKDIR /app is cleaner than RUN mkdir /app && cd /app because it persists across instructions. = Usare WORKDIR /app è più pulito di RUN mkdir /app && cd /app perché persiste tra le istruzioni.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'WORKDIR /app',
@@ -1733,7 +1760,8 @@ export default {
               italian: 'Direttiva SHELL',
               pronunciation: '/ʃel/',
               phonetic: 'SCEL',
-              example: 'SHELL changes the default shell. = SHELL cambia la shell di default.',
+              example:
+                'On Windows containers, use SHELL ["powershell", "-Command"] to run PowerShell instead of cmd.exe. = Nei container Windows, usa SHELL ["powershell", "-Command"] per eseguire PowerShell invece di cmd.exe.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'SHELL ["/bin/bash", "-c"]',
@@ -1744,7 +1772,7 @@ export default {
               pronunciation: '/stɒp ˈsɪɡnəl/',
               phonetic: 'STOP-SIG-nal',
               example:
-                'STOPSIGNAL sets the signal for docker stop. = STOPSIGNAL imposta il segnale per docker stop.',
+                'Set STOPSIGNAL SIGINT for Nginx so it performs a graceful shutdown instead of waiting for the SIGTERM timeout. = Imposta STOPSIGNAL SIGINT per Nginx così effettua uno spegnimento ordinato invece di attendere il timeout SIGTERM.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'STOPSIGNAL SIGINT',
@@ -1755,7 +1783,7 @@ export default {
               pronunciation: '/ɒn bɪld/',
               phonetic: 'ON-BILD',
               example:
-                'ONBUILD triggers when used as a base image. = ONBUILD si attiva quando usata come immagine base.',
+                "The ONBUILD instruction in a company base image can automatically COPY and install dependencies for every team's project. = L'istruzione ONBUILD in un'immagine base aziendale può automaticamente fare COPY e installare le dipendenze per ogni progetto del team.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ONBUILD COPY . /app',
@@ -1766,7 +1794,8 @@ export default {
               italian: 'ARG predefinito',
               pronunciation: '/dɪˈfɔːlt ɑːrɡ/',
               phonetic: 'di-FOLT ARG',
-              example: 'Provide default values for ARG. = Fornisci valori di default per ARG.',
+              example:
+                'A default ARG like ARG VERSION=1.0 lets you build without passing --build-arg, but still override when needed. = Un ARG predefinito come ARG VERSION=1.0 ti permette di costruire senza passare --build-arg, ma comunque sovrascriverlo quando serve.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'ARG VERSION=1.0',
@@ -1784,7 +1813,7 @@ export default {
               pronunciation: '/ˈhelθtʃek/',
               phonetic: 'HELT-cek',
               example:
-                'HEALTHCHECK declares a health probe. = HEALTHCHECK dichiara un probe di salute.',
+                'Adding a HEALTHCHECK lets Docker automatically restart containers that fail their health probe. = Aggiungere un HEALTHCHECK permette a Docker di riavviare automaticamente i container che falliscono il loro probe di salute.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'HEALTHCHECK CMD curl -f http://localhost/ || exit 1',
@@ -1795,7 +1824,7 @@ export default {
               pronunciation: '/helθ ˈsteɪtəs/',
               phonetic: 'HELT STEI-tus',
               example:
-                'Container health status: healthy or unhealthy. = Lo stato di salute: healthy o unhealthy.',
+                'Check the health status with docker inspect to determine if a container is healthy, unhealthy, or starting. = Controlla lo stato di salute con docker inspect per determinare se un container è healthy, unhealthy o in fase di avvio.',
               context: 'dockerfile',
               difficulty: 'beginner',
               command: "docker inspect --format '{{.State.Health.Status}}' myapp",
@@ -1805,7 +1834,8 @@ export default {
               italian: 'Intervallo del probe',
               pronunciation: '/proʊb ˈɪntərvəl/',
               phonetic: 'PROUB IN-ter-val',
-              example: "Set the interval between probes. = Imposta l'intervallo tra i probe.",
+              example:
+                "Set the probe interval to 30s so health checks don't overwhelm the application with too-frequent requests. = Imposta l'intervallo del probe a 30s così i controlli di salute non sovraccaricano l'applicazione con richieste troppo frequenti.",
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'HEALTHCHECK --interval=30s --timeout=3s CMD curl -f http://localhost/',
@@ -1816,17 +1846,17 @@ export default {
               pronunciation: '/best ˈpræktɪs/',
               phonetic: 'BEST PRAK-tis',
               example:
-                'Follow Dockerfile best practices. = Segui le best practice per i Dockerfile.',
+                'Following the best practice of using multi-stage builds and non-root users makes your images smaller and more secure. = Seguire la best practice di usare build multi-stage e utenti non-root rende le tue immagini più piccole e sicure.',
               context: 'dockerfile',
               difficulty: 'beginner',
             },
             {
               english: 'Linting',
-              italian: 'linting / analisi statica del codice',
+              italian: 'Analisi statica del codice (linting)',
               pronunciation: '/ˈlɪntɪŋ/',
               phonetic: 'LIN-ting',
               example:
-                'Lint Dockerfiles with hadolint. = Esegui il linting dei Dockerfile con hadolint.',
+                "Run hadolint in CI to catch linting issues like missing version pinning or running as root before the image is built. = Esegui hadolint nella CI per individuare problemi di linting come il mancato pinning delle versioni o l'esecuzione come root prima che l'immagine venga costruita.",
               context: 'dockerfile',
               difficulty: 'beginner',
               tool: 'hadolint',
@@ -1837,7 +1867,8 @@ export default {
               italian: 'Privilegi minimi',
               pronunciation: '/ˈmɪnɪməl ˈprɪvəlɪdʒɪz/',
               phonetic: 'MI-ni-mal PRI-ve-lig',
-              example: 'Run with minimal privileges. = Esegui con privilegi minimi.',
+              example:
+                'Applying minimal privileges means dropping all Linux capabilities and only adding back the ones your app truly needs. = Applicare i privilegi minimi significa rimuovere tutte le capability Linux e riaggingere solo quelle di cui la tua app ha veramente bisogno.',
               context: 'dockerfile',
               difficulty: 'beginner',
               note: 'Principio del least privilege.',
@@ -1848,7 +1879,7 @@ export default {
               pronunciation: '/pɪnd ˈvɜːrʒənz/',
               phonetic: 'PIND VER-scions',
               example:
-                'Pin package versions for reproducibility. = Fissa le versioni dei pacchetti per la riproducibilità.',
+                'Without pinned versions, apt-get install curl might install different versions on different days, breaking reproducibility. = Senza versioni fissate, apt-get install curl potrebbe installare versioni diverse in giorni diversi, rompendo la riproducibilità.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'RUN apt-get install -y curl=7.88.1-10',
@@ -1859,7 +1890,7 @@ export default {
               pronunciation: '/ˌriːprəˌdjuːsəˈbɪləti/',
               phonetic: 'ri-pro-diu-si-BI-li-ti',
               example:
-                'Reproducibility ensures the same build output. = La riproducibilità garantisce lo stesso risultato di build.',
+                'Achieving full reproducibility requires pinning base images by digest and locking all dependency versions. = Raggiungere la piena riproducibilità richiede il pinning delle immagini base per digest e il blocco di tutte le versioni delle dipendenze.',
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1869,7 +1900,7 @@ export default {
               pronunciation: '/ˈhɑːrdənɪŋ/',
               phonetic: 'HAR-de-ning',
               example:
-                "Image hardening reduces attack surface. = L'hardening delle immagini riduce la superficie di attacco.",
+                "Steps for image hardening include removing shells, using read-only filesystems, and scanning for CVEs with Trivy. = I passaggi per l'hardening delle immagini includono la rimozione delle shell, l'uso di filesystem read-only e la scansione per CVE con Trivy.",
               context: 'dockerfile',
               difficulty: 'beginner',
             },
@@ -1879,7 +1910,7 @@ export default {
               pronunciation: '/ˈoʊnərʃɪp/',
               phonetic: 'OU-ner-scip',
               example:
-                'COPY --chown sets file ownership. = COPY --chown imposta la proprietà dei file.',
+                'Use COPY --chown=appuser:appuser . /app to set file ownership in a single layer instead of a separate RUN chown. = Usa COPY --chown=appuser:appuser . /app per impostare la proprietà dei file in un singolo layer invece di un RUN chown separato.',
               context: 'dockerfile',
               difficulty: 'beginner',
               code: 'COPY --chown=appuser:appuser . /app',
@@ -1906,7 +1937,7 @@ export default {
               pronunciation: '/brɪdʒ ˈnetwɜːrk/',
               phonetic: 'BRIG NET-uerk',
               example:
-                'Bridge is the default network driver. = Bridge è il driver di rete di default.',
+                'Containers on the same bridge network can reach each other by name without publishing any ports. = I container sulla stessa rete bridge possono raggiungersi per nome senza pubblicare alcuna porta.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network create --driver bridge mynet',
@@ -1918,7 +1949,7 @@ export default {
               pronunciation: '/hoʊst ˈnetwɜːrk/',
               phonetic: 'HOUST NET-uerk',
               example:
-                "Host networking shares the host network stack. = La rete host condivide lo stack di rete dell'host.",
+                "Use the host network for latency-sensitive apps that need to avoid the overhead of Docker's network bridge. = Usa la rete host per app sensibili alla latenza che devono evitare l'overhead del bridge di rete Docker.",
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run --network host nginx',
@@ -1930,7 +1961,7 @@ export default {
               pronunciation: '/ˈoʊvərleɪ ˈnetwɜːrk/',
               phonetic: 'OU-ver-lei NET-uerk',
               example:
-                'Overlay networks span multiple Docker hosts. = Le reti overlay coprono più host Docker.',
+                'In a Swarm cluster, services on the same overlay network communicate securely across different physical nodes. = In un cluster Swarm, i servizi sulla stessa rete overlay comunicano in sicurezza tra diversi nodi fisici.',
               context: 'networking',
               difficulty: 'intermediate',
               note: 'Usata in Swarm e Kubernetes.',
@@ -1940,29 +1971,30 @@ export default {
               italian: 'Rete none',
               pronunciation: '/nʌn/',
               phonetic: 'NAN',
-              example: 'The none driver disables networking. = Il driver none disabilita la rete.',
+              example:
+                'Run sensitive batch jobs with the none network to ensure they cannot make any outbound connections. = Esegui job batch sensibili con la rete none per assicurarti che non possano effettuare connessioni in uscita.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run --network none alpine',
             },
             {
               english: 'Macvlan',
-              italian: 'macvlan / driver di rete a MAC dedicato',
+              italian: 'Driver di rete a MAC dedicato (macvlan)',
               pronunciation: '/mæk viː læn/',
               phonetic: 'MAK-vi-lan',
               example:
-                'Macvlan assigns a MAC address to each container. = Macvlan assegna un indirizzo MAC a ogni container.',
+                'With macvlan, each container appears as a physical device on the LAN and can be reached by external clients directly. = Con macvlan, ogni container appare come un dispositivo fisico sulla LAN e può essere raggiunto direttamente dai client esterni.',
               context: 'networking',
               difficulty: 'intermediate',
               note: 'Il container appare come dispositivo fisico in rete.',
             },
             {
               english: 'IPvlan',
-              italian: 'IPvlan / driver di rete a IP dedicato',
+              italian: 'Driver di rete a IP dedicato (IPvlan)',
               pronunciation: '/aɪ piː viː læn/',
               phonetic: 'AI-pi-vi-lan',
               example:
-                'IPvlan provides Layer 2 or Layer 3 routing. = IPvlan fornisce routing di Livello 2 o 3.',
+                'Choose IPvlan in L3 mode when you need containers to participate in your existing IP routing infrastructure. = Scegli IPvlan in modalità L3 quando hai bisogno che i container partecipino alla tua infrastruttura di routing IP esistente.',
               context: 'networking',
               difficulty: 'intermediate',
             },
@@ -1972,7 +2004,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt brɪdʒ/',
               phonetic: 'di-FOLT BRIG',
               example:
-                'The default bridge is named bridge. = Il bridge di default si chiama bridge.',
+                'Avoid the default bridge for multi-container apps because it lacks automatic DNS resolution between containers. = Evita il bridge di default per app multi-container perché manca la risoluzione DNS automatica tra container.',
               context: 'networking',
               difficulty: 'intermediate',
               note: 'Non offre service discovery automatico.',
@@ -1983,7 +2015,7 @@ export default {
               pronunciation: '/ˈjuːzər dɪˈfaɪnd/',
               phonetic: 'IU-zer di-FAIND',
               example:
-                "User-defined bridges enable container DNS. = I bridge definiti dall'utente abilitano il DNS tra container.",
+                "Create a user-defined bridge so your api container can reach the db container by hostname instead of IP. = Crea un bridge definito dall'utente così il tuo container api può raggiungere il container db tramite hostname invece che IP.",
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network create app-network',
@@ -1994,7 +2026,7 @@ export default {
               pronunciation: '/ˈnetwɜːrk ˈdraɪvər/',
               phonetic: 'NET-uerk DRAI-ver',
               example:
-                "Choose the right network driver for your use case. = Scegli il driver di rete giusto per il tuo caso d'uso.",
+                "Each network driver has different trade-offs: bridge for isolation, host for performance, overlay for multi-host. = Ogni driver di rete ha compromessi diversi: bridge per l'isolamento, host per le prestazioni, overlay per multi-host.",
               context: 'networking',
               difficulty: 'intermediate',
             },
@@ -2004,7 +2036,7 @@ export default {
               pronunciation: '/ˈnetwɜːrk ˈplʌɡɪn/',
               phonetic: 'NET-uerk PLA-ghin',
               example:
-                'Third-party network plugins extend Docker. = Plugin di rete di terze parti estendono Docker.',
+                'Calico and Weave are popular network plugins that add advanced features like network policies and encryption. = Calico e Weave sono plugin di rete popolari che aggiungono funzionalità avanzate come policy di rete e crittografia.',
               context: 'networking',
               difficulty: 'intermediate',
             },
@@ -2020,7 +2052,8 @@ export default {
               italian: 'Pubblica porta',
               pronunciation: '/ˈpʌblɪʃ pɔːrt/',
               phonetic: 'PA-blisc PORT',
-              example: 'Publish ports with -p flag. = Pubblica porte con il flag -p.',
+              example:
+                "To publish a port, map 8080 on the host to 80 in the container with docker run -p 8080:80 nginx. = Per pubblicare una porta, mappa 8080 sull'host alla 80 nel container con docker run -p 8080:80 nginx.",
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run -p 8080:80 nginx',
@@ -2031,7 +2064,7 @@ export default {
               pronunciation: '/ˈrændəm pɔːrt/',
               phonetic: 'RAN-dom PORT',
               example:
-                'Use -P to map all ports randomly. = Usa -P per mappare tutte le porte casualmente.',
+                "Using -P assigns a random port on the host, which is useful for running multiple instances of the same image. = Usare -P assegna una porta casuale sull'host, utile per eseguire più istanze della stessa immagine.",
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run -P nginx',
@@ -2042,7 +2075,7 @@ export default {
               pronunciation: '/baɪnd tuː ˈɪntərfeɪs/',
               phonetic: 'BAIND TU IN-ter-feis',
               example:
-                "Bind to a specific interface for security. = Bind su un'interfaccia specifica per sicurezza.",
+                "Always bind to interface 127.0.0.1 for services that should only be reachable locally, like admin panels. = Fai sempre il bind sull'interfaccia 127.0.0.1 per servizi che devono essere raggiungibili solo localmente, come i pannelli admin.",
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run -p 127.0.0.1:8080:80 nginx',
@@ -2053,7 +2086,8 @@ export default {
               italian: 'Porta UDP',
               pronunciation: '/juː diː piː pɔːrt/',
               phonetic: 'iu-di-PI PORT',
-              example: 'Specify UDP with /udp suffix. = Specifica UDP con il suffisso /udp.',
+              example:
+                'For a DNS server container, you need to expose the UDP port with -p 53:53/udp since DNS uses UDP by default. = Per un container server DNS, devi esporre la porta UDP con -p 53:53/udp poiché il DNS usa UDP per default.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run -p 53:53/udp dns-server',
@@ -2064,28 +2098,28 @@ export default {
               pronunciation: '/pɔːrt reɪndʒ/',
               phonetic: 'PORT REING',
               example:
-                'Map a range of ports at once. = Mappa un intervallo di porte in una sola volta.',
+                'Map a port range like -p 8000-8010:8000-8010 for applications that dynamically allocate multiple listener ports. = Mappa un intervallo di porte come -p 8000-8010:8000-8010 per applicazioni che allocano dinamicamente più porte di ascolto.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run -p 8000-8010:8000-8010 myapp',
             },
             {
               english: 'NAT',
-              italian: 'NAT / Network Address Translation',
+              italian: 'Traduzione degli indirizzi di rete (NAT)',
               pronunciation: '/næt/',
               phonetic: 'NAT',
               example:
-                'Docker uses NAT for port mapping. = Docker usa NAT per la mappatura delle porte.',
+                'Docker automatically sets up NAT rules so inbound traffic on host port 8080 is forwarded to the container on port 80. = Docker configura automaticamente regole NAT così il traffico in ingresso sulla porta host 8080 viene inoltrato al container sulla porta 80.',
               context: 'networking',
               difficulty: 'intermediate',
             },
             {
               english: 'iptables',
-              italian: 'iptables / firewall Linux classico',
+              italian: 'Firewall Linux classico (iptables)',
               pronunciation: '/aɪ piː ˈteɪblz/',
               phonetic: 'ai-pi-TEI-blz',
               example:
-                'Docker manipulates iptables for networking. = Docker manipola iptables per il networking.',
+                'Be careful with custom iptables rules because Docker manages its own chains and may overwrite yours on restart. = Fai attenzione con le regole iptables personalizzate perché Docker gestisce le proprie catene e potrebbe sovrascrivere le tue al riavvio.',
               context: 'networking',
               difficulty: 'intermediate',
               tool: 'iptables',
@@ -2096,7 +2130,7 @@ export default {
               pronunciation: '/ˈloʊkəlhoʊst/',
               phonetic: 'LO-kal-houst',
               example:
-                'Bind only to localhost for development. = Bind solo su localhost per lo sviluppo.',
+                'Restrict your development database to localhost binding with -p 127.0.0.1:5432:5432 to prevent other machines from accessing it. = Limita il tuo database di sviluppo al binding su localhost con -p 127.0.0.1:5432:5432 per impedire ad altre macchine di accedervi.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run -p 127.0.0.1:5432:5432 postgres',
@@ -2107,7 +2141,7 @@ export default {
               pronunciation: '/hoʊst pɔːrt/',
               phonetic: 'HOUST PORT',
               example:
-                "Host port is the port exposed on the host. = La host port è la porta esposta sull'host.",
+                'In -p 8080:80, the host port 8080 is what external clients connect to, and it maps to port 80 inside the container. = In -p 8080:80, la porta host 8080 è quella a cui si collegano i client esterni, e viene mappata alla porta 80 dentro il container.',
               context: 'networking',
               difficulty: 'intermediate',
             },
@@ -2117,7 +2151,7 @@ export default {
               pronunciation: '/kənˈteɪnər pɔːrt/',
               phonetic: 'con-TEI-ner PORT',
               example:
-                "Container port is the port inside the container. = La container port è la porta all'interno del container.",
+                'The container port should match what your application actually listens on; for Nginx that is typically port 80. = La porta del container deve corrispondere a quella su cui la tua applicazione è effettivamente in ascolto; per Nginx è tipicamente la porta 80.',
               context: 'networking',
               difficulty: 'intermediate',
             },
@@ -2133,7 +2167,8 @@ export default {
               italian: 'Crea rete',
               pronunciation: '/kriːˈeɪt/',
               phonetic: 'kri-EIT',
-              example: 'Create a custom network. = Crea una rete personalizzata.',
+              example:
+                "Run docker network create app-network to isolate your application containers from unrelated services on the host. = Esegui docker network create app-network per isolare i container della tua applicazione da servizi non correlati sull'host.",
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network create app-network',
@@ -2143,7 +2178,8 @@ export default {
               italian: 'Lista reti',
               pronunciation: '/el es/',
               phonetic: 'el-ES',
-              example: 'List all networks. = Elenca tutte le reti.',
+              example:
+                'Run docker network ls to see all configured networks and identify orphaned ones you can clean up. = Esegui docker network ls per vedere tutte le reti configurate e identificare quelle orfane da ripulire.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network ls',
@@ -2153,7 +2189,8 @@ export default {
               italian: 'Ispeziona rete',
               pronunciation: '/ɪnˈspekt/',
               phonetic: 'in-SPEKT',
-              example: 'Inspect a network for details. = Ispeziona una rete per i dettagli.',
+              example:
+                'Use docker network inspect to see which containers are connected and what IP addresses they received. = Usa docker network inspect per vedere quali container sono connessi e quali indirizzi IP hanno ricevuto.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network inspect app-network',
@@ -2163,7 +2200,8 @@ export default {
               italian: 'Connetti container a rete',
               pronunciation: '/kəˈnekt/',
               phonetic: 'co-NEKT',
-              example: 'Connect a container to a network. = Connetti un container a una rete.',
+              example:
+                'Use docker network connect to attach a running monitoring container to the app-network without restarting it. = Usa docker network connect per collegare un container di monitoraggio in esecuzione alla app-network senza riavviarlo.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network connect app-network myapp',
@@ -2174,7 +2212,7 @@ export default {
               pronunciation: '/ˌdɪskəˈnekt/',
               phonetic: 'dis-co-NEKT',
               example:
-                'Disconnect a container from a network. = Disconnetti un container da una rete.',
+                'Use docker network disconnect to isolate a compromised container from the network during an incident. = Usa docker network disconnect per isolare un container compromesso dalla rete durante un incidente.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network disconnect app-network myapp',
@@ -2185,7 +2223,7 @@ export default {
               pronunciation: '/ɪmˈbedɪd diː en es/',
               phonetic: 'em-BE-did di-en-ES',
               example:
-                'Custom networks include embedded DNS. = Le reti personalizzate includono un DNS integrato.',
+                'The embedded DNS in custom networks lets your app container reach the database simply by using "db" as the hostname. = Il DNS integrato nelle reti personalizzate permette al tuo container app di raggiungere il database semplicemente usando "db" come hostname.',
               context: 'networking',
               difficulty: 'intermediate',
               note: 'I container possono usare i nomi tra di loro come hostname.',
@@ -2196,7 +2234,7 @@ export default {
               pronunciation: '/kənˈteɪnər diː en es/',
               phonetic: 'con-TEI-ner di-en-ES',
               example:
-                'Containers can resolve each other by name. = I container possono risolversi tra loro per nome.',
+                'Configure your app to connect to postgres://db:5432 and let container DNS handle the address resolution automatically. = Configura la tua app per connettersi a postgres://db:5432 e lascia che il DNS dei container gestisca la risoluzione degli indirizzi automaticamente.',
               context: 'networking',
               difficulty: 'intermediate',
               note: 'Solo nelle reti user-defined, non nella default bridge.',
@@ -2207,7 +2245,7 @@ export default {
               pronunciation: '/ˈnetwɜːrk ˈeɪliəs/',
               phonetic: 'NET-uerk EI-li-as',
               example:
-                'Set network aliases for service discovery. = Imposta alias di rete per il service discovery.',
+                'Give multiple database replicas the same network alias "db" so the client load-balances across them automatically. = Assegna a più repliche del database lo stesso alias di rete "db" così il client bilancia il carico tra di esse automaticamente.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run --network-alias db postgres',
@@ -2217,17 +2255,19 @@ export default {
               italian: 'Sottorete',
               pronunciation: '/ˈsʌbnet/',
               phonetic: 'SAB-net',
-              example: 'Specify a subnet for the network. = Specifica una sottorete per la rete.',
+              example:
+                "Define a specific subnet like 192.168.1.0/24 to avoid IP conflicts with your office VPN or other Docker networks. = Definisci una sottorete specifica come 192.168.1.0/24 per evitare conflitti IP con la VPN dell'ufficio o altre reti Docker.",
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network create --subnet=192.168.1.0/24 mynet',
             },
             {
               english: 'Gateway',
-              italian: 'gateway / instradatore di rete',
+              italian: 'Instradatore di rete (gateway)',
               pronunciation: '/ˈɡeɪtweɪ/',
               phonetic: 'GHEIT-uei',
-              example: 'Set a gateway for the network. = Imposta un gateway per la rete.',
+              example:
+                'Set a custom gateway so containers on the network route traffic through your corporate proxy. = Imposta un gateway personalizzato così i container sulla rete instradano il traffico attraverso il proxy aziendale.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network create --gateway=192.168.1.1 mynet',
@@ -2241,11 +2281,11 @@ export default {
           items: [
             {
               english: 'Service Discovery',
-              italian: 'service discovery / scoperta di servizi',
+              italian: 'Scoperta automatica dei servizi (service discovery)',
               pronunciation: '/ˈsɜːrvɪs dɪˈskʌvəri/',
               phonetic: 'SER-vis di-SKA-veri',
               example:
-                'Service discovery finds services dynamically. = Il service discovery trova i servizi dinamicamente.',
+                'With service discovery, your app finds the database by name rather than a hard-coded IP that might change. = Con il service discovery, la tua app trova il database per nome anziché con un IP hard-coded che potrebbe cambiare.',
               context: 'networking',
               difficulty: 'intermediate',
             },
@@ -2254,7 +2294,8 @@ export default {
               italian: 'IP del container',
               pronunciation: '/aɪ piː/',
               phonetic: 'AI-PI',
-              example: 'Each container has a unique IP. = Ogni container ha un IP univoco.',
+              example:
+                'Never hard-code a container IP in your config because it changes every time the container restarts. = Non inserire mai un IP del container nel tuo config perché cambia ogni volta che il container si riavvia.',
               context: 'networking',
               difficulty: 'intermediate',
               command: "docker inspect -f '{{.NetworkSettings.IPAddress}}' myapp",
@@ -2264,17 +2305,19 @@ export default {
               italian: 'Hostname (nome host)',
               pronunciation: '/ˈhoʊstneɪm/',
               phonetic: 'HOUST-neim',
-              example: "Set the container hostname. = Imposta l'hostname del container.",
+              example:
+                'Use --hostname to set a meaningful name that appears in logs and makes debugging easier. = Usa --hostname per impostare un nome significativo che appare nei log e rende il debugging più facile.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run --hostname myapp nginx',
             },
             {
               english: 'Link (legacy)',
-              italian: 'link (legacy) / collegamento Docker storico',
+              italian: 'Collegamento Docker storico deprecato (link)',
               pronunciation: '/lɪŋk/',
               phonetic: 'LINK',
-              example: 'Container links are deprecated. = I link tra container sono deprecati.',
+              example:
+                'Replace legacy --link flags with user-defined networks, which provide proper DNS and do not break on container restart. = Sostituisci i flag --link legacy con reti user-defined, che forniscono DNS corretto e non si rompono al riavvio del container.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run --link db:db myapp',
@@ -2282,11 +2325,11 @@ export default {
             },
             {
               english: 'DNS Round Robin',
-              italian: 'DNS round robin / bilanciamento via record DNS',
+              italian: 'Bilanciamento del carico tramite record DNS (DNS round robin)',
               pronunciation: '/raʊnd ˈrɒbɪn/',
               phonetic: 'RAUND RO-bin',
               example:
-                'DNS round robin distributes load. = DNS round robin distribuisce il carico.',
+                'Using DNS round robin with network aliases, Docker returns different container IPs for each lookup to spread the load. = Usando il DNS round robin con alias di rete, Docker restituisce IP di container diversi per ogni lookup per distribuire il carico.',
               context: 'networking',
               difficulty: 'intermediate',
             },
@@ -2296,7 +2339,7 @@ export default {
               pronunciation: '/ˈsɜːrvɪs neɪm/',
               phonetic: 'SER-vis NEIM',
               example:
-                'Connect via service name in Compose. = Connettiti tramite il nome del servizio in Compose.',
+                'In Docker Compose, use the service name like "redis" as hostname in your connection string: redis://redis:6379. = In Docker Compose, usa il nome del servizio come "redis" come hostname nella tua stringa di connessione: redis://redis:6379.',
               context: 'networking',
               difficulty: 'intermediate',
               code: 'postgresql://db:5432',
@@ -2308,7 +2351,7 @@ export default {
               pronunciation: '/ɪnˈtɜːrnl ˈnetwɜːrk/',
               phonetic: 'in-TER-nl NET-uerk',
               example:
-                'Internal networks have no external access. = Le reti interne non hanno accesso esterno.',
+                "Put your database on an internal network so it can only be reached by the app containers, not from the outside. = Metti il tuo database su una rete interna così può essere raggiunto solo dai container dell'app, non dall'esterno.",
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker network create --internal backend',
@@ -2319,7 +2362,7 @@ export default {
               pronunciation: '/ˌrezəˈluːʃən/',
               phonetic: 're-zo-LU-scen',
               example:
-                'Containers use DNS resolution for service discovery. = I container usano la risoluzione DNS per il service discovery.',
+                'If DNS resolution fails between containers, make sure both are on the same user-defined network, not the default bridge. = Se la risoluzione DNS fallisce tra container, assicurati che entrambi siano sulla stessa rete user-defined, non sul bridge di default.',
               context: 'networking',
               difficulty: 'intermediate',
             },
@@ -2328,7 +2371,8 @@ export default {
               italian: 'DNS personalizzato',
               pronunciation: '/ˈkʌstəm/',
               phonetic: 'KA-stom',
-              example: 'Set custom DNS servers with --dns. = Imposta DNS personalizzati con --dns.',
+              example:
+                'Set --dns 8.8.8.8 on containers that need to resolve external domains when your corporate DNS is unreliable. = Imposta --dns 8.8.8.8 sui container che devono risolvere domini esterni quando il DNS aziendale è inaffidabile.',
               context: 'networking',
               difficulty: 'intermediate',
               command: 'docker run --dns 8.8.8.8 nginx',
@@ -2339,7 +2383,7 @@ export default {
               pronunciation: '/kənˈteɪnər tuː kənˈteɪnər/',
               phonetic: 'con-TEI-ner TU con-TEI-ner',
               example:
-                'Container-to-container communication is secure. = La comunicazione tra container è sicura.',
+                "On a user-defined bridge, container-to-container traffic stays on the host and never leaves the network interface. = Su un bridge user-defined, il traffico container-to-container resta sull'host e non lascia mai l'interfaccia di rete.",
               context: 'networking',
               difficulty: 'intermediate',
             },
@@ -2365,18 +2409,18 @@ export default {
               pronunciation: '/neɪmd ˈvɒljuːm/',
               phonetic: 'NEIMD VOL-ium',
               example:
-                'A named volume is managed by Docker. = Un volume con nome è gestito da Docker.',
+                'Use a named volume for your PostgreSQL data so it survives container recreation: -v pgdata:/var/lib/postgresql/data. = Usa un volume con nome per i dati PostgreSQL così sopravvivono alla ricreazione del container: -v pgdata:/var/lib/postgresql/data.',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume create mydata',
             },
             {
               english: 'Bind Mount',
-              italian: 'bind mount / montaggio diretto di percorso host',
+              italian: 'Montaggio diretto di un percorso host (bind mount)',
               pronunciation: '/baɪnd maʊnt/',
               phonetic: 'BAIND MAUNT',
               example:
-                "A bind mount maps a host path. = Un bind mount mappa un percorso dell'host.",
+                "During development, a bind mount of your source code folder lets you edit files on the host and see changes instantly in the container. = In fase di sviluppo, un bind mount della cartella del codice sorgente ti permette di modificare file sull'host e vedere le modifiche istantaneamente nel container.",
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v /host/path:/container/path nginx',
@@ -2386,7 +2430,8 @@ export default {
               italian: 'Mount tmpfs',
               pronunciation: '/tiː em piː ef es/',
               phonetic: 'ti-em-pi-ef-ES',
-              example: 'tmpfs stores data in memory only. = tmpfs memorizza dati solo in memoria.',
+              example:
+                'Use a tmpfs mount for sensitive temp files like session tokens that should never be written to disk. = Usa un mount tmpfs per file temporanei sensibili come token di sessione che non dovrebbero mai essere scritti su disco.',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run --tmpfs /tmp:rw,size=100m nginx',
@@ -2398,7 +2443,7 @@ export default {
               pronunciation: '/dəˈtæ pərˈsɪstəns/',
               phonetic: 'DA-ta per-SI-stens',
               example:
-                'Volumes provide data persistence. = I volumi forniscono persistenza dei dati.',
+                'Without a volume, all data persistence is lost when you remove the container, including uploaded files and database records. = Senza un volume, tutta la persistenza dei dati si perde quando rimuovi il container, inclusi file caricati e record del database.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
@@ -2408,7 +2453,7 @@ export default {
               pronunciation: '/ˈsteɪtfʊl/',
               phonetic: 'STEIT-ful',
               example:
-                'Databases run as stateful containers. = I database girano come container stateful.',
+                'Running PostgreSQL as a stateful container requires careful volume management to avoid losing data during upgrades. = Eseguire PostgreSQL come container stateful richiede una gestione attenta dei volumi per evitare la perdita di dati durante gli aggiornamenti.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
@@ -2418,7 +2463,7 @@ export default {
               pronunciation: '/ˈsteɪtlɪs/',
               phonetic: 'STEIT-lis',
               example:
-                'Stateless containers do not retain data. = I container stateless non conservano dati.',
+                'Design your API servers as stateless containers so they can be freely scaled up or replaced without migration concerns. = Progetta i tuoi server API come container stateless così possono essere liberamente scalati o sostituiti senza preoccupazioni di migrazione.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
@@ -2428,7 +2473,7 @@ export default {
               pronunciation: '/əˈnɒnɪməs/',
               phonetic: 'a-NO-ni-mus',
               example:
-                'Anonymous volumes have auto-generated names. = I volumi anonimi hanno nomi auto-generati.',
+                'Avoid anonymous volumes in production because their auto-generated names make them difficult to track and back up. = Evita i volumi anonimi in produzione perché i loro nomi auto-generati li rendono difficili da tracciare e sottoporre a backup.',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v /data nginx',
@@ -2439,7 +2484,7 @@ export default {
               pronunciation: '/maʊnt pɔɪnt/',
               phonetic: 'MAUNT POINT',
               example:
-                'The mount point is where the volume is attached. = Il punto di mount è dove il volume è attaccato.',
+                'The mount point /var/lib/mysql inside the MySQL container is where all database files are stored. = Il punto di mount /var/lib/mysql dentro il container MySQL è dove tutti i file del database vengono memorizzati.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
@@ -2449,7 +2494,7 @@ export default {
               pronunciation: '/red ˈoʊnli/',
               phonetic: 'RED ON-li',
               example:
-                'Mount volumes as read-only with :ro. = Monta i volumi in sola lettura con :ro.',
+                "Mount configuration files as read-only with :ro so the application cannot accidentally modify its own config. = Monta i file di configurazione in sola lettura con :ro così l'applicazione non può modificare accidentalmente la propria configurazione.",
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v config:/app/config:ro nginx',
@@ -2459,7 +2504,8 @@ export default {
               italian: 'Ciclo di vita del volume',
               pronunciation: '/ˈlaɪfsaɪkl/',
               phonetic: 'LAIF-sai-kl',
-              example: 'Volumes outlive containers. = I volumi sopravvivono ai container.',
+              example:
+                'Understanding the volume lifecycle is critical: even after docker rm, the data persists until you explicitly run docker volume rm. = Comprendere il ciclo di vita del volume è fondamentale: anche dopo docker rm, i dati persistono finché non esegui esplicitamente docker volume rm.',
               context: 'volumes',
               difficulty: 'intermediate',
               note: 'Vanno rimossi esplicitamente con docker volume rm.',
@@ -2476,7 +2522,8 @@ export default {
               italian: 'Crea volume',
               pronunciation: '/kriːˈeɪt/',
               phonetic: 'kri-EIT',
-              example: 'Create a named volume. = Crea un volume con nome.',
+              example:
+                'Run docker volume create db-data before starting your database container so the volume is ready. = Esegui docker volume create db-data prima di avviare il tuo container database così il volume è pronto.',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume create db-data',
@@ -2486,7 +2533,8 @@ export default {
               italian: 'Lista volumi',
               pronunciation: '/el es/',
               phonetic: 'el-ES',
-              example: 'List all volumes. = Elenca tutti i volumi.',
+              example:
+                'Run docker volume ls periodically to identify orphaned volumes that waste disk space after removing containers. = Esegui docker volume ls periodicamente per identificare volumi orfani che sprecano spazio disco dopo la rimozione dei container.',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume ls',
@@ -2496,7 +2544,8 @@ export default {
               italian: 'Ispeziona volume',
               pronunciation: '/ɪnˈspekt/',
               phonetic: 'in-SPEKT',
-              example: 'Get volume details. = Ottieni dettagli del volume.',
+              example:
+                "Use docker volume inspect db-data to find the actual path on the host where the volume data is stored. = Usa docker volume inspect db-data per trovare il percorso effettivo sull'host dove i dati del volume sono memorizzati.",
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume inspect db-data',
@@ -2506,7 +2555,8 @@ export default {
               italian: 'Rimuovi volume',
               pronunciation: '/ɑːr em/',
               phonetic: 'AR-EM',
-              example: 'Remove a volume. = Rimuovi un volume.',
+              example:
+                'You can only use docker volume rm on volumes not currently attached to any container, so stop dependent containers first. = Puoi usare docker volume rm solo su volumi non attualmente collegati a nessun container, quindi ferma prima i container dipendenti.',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume rm db-data',
@@ -2516,7 +2566,8 @@ export default {
               italian: 'Pulisci volumi inutilizzati',
               pronunciation: '/pruːn/',
               phonetic: 'PRUUN',
-              example: 'Remove unused volumes. = Rimuovi volumi inutilizzati.',
+              example:
+                'Use docker volume prune with caution in production since it permanently deletes all volumes not attached to a running container. = Usa docker volume prune con cautela in produzione poiché elimina permanentemente tutti i volumi non collegati a un container in esecuzione.',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume prune',
@@ -2528,7 +2579,7 @@ export default {
               pronunciation: '/maʊnt flæɡ/',
               phonetic: 'MAUNT FLAG',
               example:
-                '--mount uses verbose key=value syntax. = --mount usa una sintassi verbose chiave=valore.',
+                'The --mount flag is more explicit than -v: --mount type=volume,source=mydata,target=/data makes the mount type clear. = Il flag --mount è più esplicito di -v: --mount type=volume,source=mydata,target=/data rende chiaro il tipo di mount.',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run --mount type=volume,source=mydata,target=/data nginx',
@@ -2538,7 +2589,8 @@ export default {
               italian: 'Flag -v',
               pronunciation: '/viː flæɡ/',
               phonetic: 'VI FLAG',
-              example: '-v is the short volume syntax. = -v è la sintassi breve per i volumi.',
+              example:
+                'The -v flag is quicker to type: docker run -v mydata:/data nginx, but the --mount flag is recommended for clarity. = Il flag -v è più veloce da digitare: docker run -v mydata:/data nginx, ma il flag --mount è raccomandato per chiarezza.',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v mydata:/data nginx',
@@ -2549,7 +2601,7 @@ export default {
               pronunciation: '/ˈbækʌp/',
               phonetic: 'BAK-ap',
               example:
-                'Backup volume data with tar. = Esegui il backup dei dati del volume con tar.',
+                "Automate nightly volume backup by running a temporary Alpine container that tars the data to a host directory. = Automatizza il backup notturno del volume eseguendo un container Alpine temporaneo che archivia i dati in una directory dell'host.",
               context: 'volumes',
               difficulty: 'intermediate',
               command:
@@ -2560,7 +2612,8 @@ export default {
               italian: 'Ripristino volume',
               pronunciation: '/rɪˈstɔːr/',
               phonetic: 'ri-STOR',
-              example: 'Restore volume from a tar backup. = Ripristina un volume da un backup tar.',
+              example:
+                'To restore a volume, create a fresh one and extract the tar backup into it using a temporary Alpine container. = Per ripristinare un volume, creane uno nuovo ed estrai il backup tar al suo interno usando un container Alpine temporaneo.',
               context: 'volumes',
               difficulty: 'intermediate',
               command:
@@ -2572,7 +2625,7 @@ export default {
               pronunciation: '/ˈleɪbl/',
               phonetic: 'LEI-bol',
               example:
-                'Add labels to volumes for organization. = Aggiungi etichette ai volumi per organizzazione.',
+                "Adding a volume label like --label env=prod helps you filter and manage volumes across multiple environments. = Aggiungere un'etichetta al volume come --label env=prod ti aiuta a filtrare e gestire i volumi su più ambienti.",
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume create --label env=prod mydata',
@@ -2590,7 +2643,7 @@ export default {
               pronunciation: '/sɔːrs pæθ/',
               phonetic: 'SORS PAT',
               example:
-                'Source path is the host directory. = Il percorso sorgente è la directory host.',
+                'Always use an absolute source path like /home/user/project to avoid confusion about which directory Docker will mount. = Usa sempre un percorso sorgente assoluto come /home/user/project per evitare confusione su quale directory Docker monterà.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
@@ -2600,7 +2653,7 @@ export default {
               pronunciation: '/ˈtɑːrɡɪt pæθ/',
               phonetic: 'TAR-ghet PAT',
               example:
-                'Target path is the path inside the container. = Il percorso destinazione è il percorso nel container.',
+                'Set the target path to match the WORKDIR in your Dockerfile, like /app, so the code ends up in the right place. = Imposta il percorso destinazione in modo che corrisponda al WORKDIR nel tuo Dockerfile, come /app, così il codice finisce nel posto giusto.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
@@ -2610,7 +2663,7 @@ export default {
               pronunciation: '/hɒt rɪˈloʊd/',
               phonetic: 'HOT ri-LOUD',
               example:
-                "Bind mounts enable hot reload during development. = I bind mount abilitano l'hot reload in sviluppo.",
+                "With hot reload enabled, saving a file on your laptop instantly triggers a rebuild inside the container. = Con l'hot reload abilitato, salvare un file sul tuo laptop attiva istantaneamente un rebuild dentro il container.",
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v $(pwd):/app -p 3000:3000 myapp',
@@ -2621,7 +2674,7 @@ export default {
               pronunciation: '/ˈwɜːrkɪŋ daɪˈrektəri/',
               phonetic: 'UER-king dai-REK-tori',
               example:
-                'Mount the working directory for development. = Monta la directory di lavoro per lo sviluppo.',
+                'Mount your current working directory with -v $(pwd):/app so the container always reflects your latest code changes. = Monta la tua directory di lavoro corrente con -v $(pwd):/app così il container riflette sempre le tue ultime modifiche al codice.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
@@ -2631,7 +2684,7 @@ export default {
               pronunciation: '/sel ˈlɪnʊks/',
               phonetic: 'sel-LI-nuks',
               example:
-                'Use :z or :Z for SELinux relabeling. = Usa :z o :Z per il relabeling SELinux.',
+                'On RHEL systems with SELinux enforcing, add the :Z SELinux label to your bind mount or the container will get "Permission denied". = Su sistemi RHEL con SELinux in enforcing, aggiungi l\'etichetta SELinux :Z al tuo bind mount o il container riceverà "Permission denied".',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v /data:/data:Z nginx',
@@ -2643,7 +2696,7 @@ export default {
               pronunciation: '/ˌprɒpəˈɡeɪʃən/',
               phonetic: 'pro-pa-GEI-scen',
               example:
-                'Mount propagation controls how mounts are shared. = La propagazione controlla come i mount vengono condivisi.',
+                "Setting mount propagation to rshared lets the container see USB drives mounted on the host after the container started. = Impostare la propagazione di mount su rshared permette al container di vedere drive USB montati sull'host dopo l'avvio del container.",
               context: 'volumes',
               difficulty: 'intermediate',
               note: 'Valori: rprivate, rshared, rslave.',
@@ -2654,7 +2707,7 @@ export default {
               pronunciation: '/red raɪt/',
               phonetic: 'RED-RAIT',
               example:
-                'Read-write is the default mount mode. = Lettura-scrittura è la modalità di default.',
+                "A read-write mount is the default, but explicitly adding :rw makes the intent clear for other team members. = Un mount lettura-scrittura è il default, ma aggiungere esplicitamente :rw rende chiara l'intenzione per gli altri membri del team.",
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker run -v /data:/data:rw nginx',
@@ -2665,7 +2718,7 @@ export default {
               pronunciation: '/ˌrezəˈluːʃən/',
               phonetic: 're-zo-LU-scen',
               example:
-                'Use absolute paths for bind mounts. = Usa percorsi assoluti per i bind mount.',
+                'Docker requires absolute path resolution for bind mounts; using relative paths silently creates a named volume instead. = Docker richiede una risoluzione del percorso assoluta per i bind mount; usare percorsi relativi crea silenziosamente un volume con nome.',
               context: 'volumes',
               difficulty: 'intermediate',
               note: 'I percorsi relativi non sono permessi.',
@@ -2676,7 +2729,7 @@ export default {
               pronunciation: '/pərˈmɪʃənz/',
               phonetic: 'per-MI-scions',
               example:
-                'File permissions can cause issues with bind mounts. = I permessi possono creare problemi con i bind mount.',
+                'Mismatched file permissions between host UID and container UID cause "Permission denied" errors on bind-mounted directories. = Permessi dei file non corrispondenti tra UID dell\'host e UID del container causano errori "Permission denied" sulle directory bind-mounted.',
               context: 'volumes',
               difficulty: 'intermediate',
               note: "Attenzione al UID dell'utente nel container.",
@@ -2687,7 +2740,7 @@ export default {
               pronunciation: '/dev ˈvɜːrsəs prɒd/',
               phonetic: 'DEV VER-sus PROD',
               example:
-                'Use bind mounts in dev, named volumes in prod. = Usa bind mount in dev, volumi con nome in prod.',
+                'The dev vs prod rule of thumb: bind mounts for live code editing in development, named volumes for reliable data storage in production. = La regola pratica dev vs prod: bind mount per modifica codice live in sviluppo, volumi con nome per storage dati affidabile in produzione.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
@@ -2704,7 +2757,7 @@ export default {
               pronunciation: '/ˈvɒljuːm ˈdraɪvər/',
               phonetic: 'VOL-ium DRAI-ver',
               example:
-                'Volume drivers enable remote storage. = I driver dei volumi abilitano lo storage remoto.',
+                'Use a volume driver like REX-Ray to store container data on AWS EBS, enabling data portability between hosts. = Usa un driver del volume come REX-Ray per memorizzare i dati del container su AWS EBS, abilitando la portabilità dei dati tra host.',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker volume create --driver nfs mydata',
@@ -2715,7 +2768,7 @@ export default {
               pronunciation: '/ˈloʊkl ˈdraɪvər/',
               phonetic: 'LO-kl DRAI-ver',
               example:
-                "The local driver stores data on the host. = Il driver local memorizza i dati sull'host.",
+                'The local driver is fine for single-host setups, but when containers move between nodes you need a distributed volume driver. = Il driver local va bene per configurazioni a singolo host, ma quando i container si spostano tra nodi serve un driver del volume distribuito.',
               context: 'volumes',
               difficulty: 'intermediate',
               note: 'È il driver di default.',
@@ -2726,7 +2779,7 @@ export default {
               pronunciation: '/en ef es/',
               phonetic: 'en-ef-ES',
               example:
-                'Mount NFS shares as Docker volumes. = Monta condivisioni NFS come volumi Docker.',
+                'Configure an NFS driver volume so multiple containers on different hosts can share the same file system for static assets. = Configura un volume con driver NFS così più container su host diversi possono condividere lo stesso file system per asset statici.',
               context: 'volumes',
               difficulty: 'intermediate',
               command:
@@ -2734,10 +2787,11 @@ export default {
             },
             {
               english: 'CIFS/SMB',
-              italian: 'CIFS/SMB / protocollo condivisione file Windows',
+              italian: 'Protocollo di condivisione file Windows (CIFS/SMB)',
               pronunciation: '/siː aɪ ef es es em biː/',
               phonetic: 'si-ai-ef-es es-em-BI',
-              example: 'Use CIFS for Windows shares. = Usa CIFS per condivisioni Windows.',
+              example:
+                'In mixed Linux/Windows environments, mount a CIFS/SMB share as a Docker volume to access files from a Windows file server. = In ambienti misti Linux/Windows, monta una condivisione CIFS/SMB come volume Docker per accedere ai file da un file server Windows.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
@@ -2747,7 +2801,7 @@ export default {
               pronunciation: '/klaʊd ˈstɔːrɪdʒ/',
               phonetic: 'KLAUD STO-rig',
               example:
-                'Cloud storage drivers integrate with AWS or Azure. = I driver cloud si integrano con AWS o Azure.',
+                'Using a cloud storage driver like REX-Ray EBS lets Kubernetes pods persist data to durable AWS block storage. = Usare un driver cloud storage come REX-Ray EBS permette ai pod Kubernetes di persistere i dati su storage a blocchi AWS durevole.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
@@ -2757,7 +2811,7 @@ export default {
               pronunciation: '/ˈplʌɡɪn/',
               phonetic: 'PLA-ghin',
               example:
-                'Install third-party volume plugins. = Installa plugin di volume di terze parti.',
+                'Install a volume plugin like rexray/ebs to dynamically provision AWS EBS volumes for your Docker containers. = Installa un plugin di volume come rexray/ebs per provisionare dinamicamente volumi AWS EBS per i tuoi container Docker.',
               context: 'volumes',
               difficulty: 'intermediate',
               command: 'docker plugin install rexray/ebs',
@@ -2768,27 +2822,28 @@ export default {
               pronunciation: '/dɪˈstrɪbjʊtɪd/',
               phonetic: 'di-STRI-biu-tid',
               example:
-                'Distributed storage works across multiple hosts. = Lo storage distribuito funziona su più host.',
+                'With distributed storage, your database volume follows the container even when Swarm reschedules it to another node. = Con lo storage distribuito, il volume del tuo database segue il container anche quando Swarm lo rischedula su un altro nodo.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
             {
               english: 'GlusterFS',
-              italian: 'GlusterFS / filesystem distribuito',
+              italian: 'Filesystem distribuito (GlusterFS)',
               pronunciation: '/ˈɡlʌstər ef es/',
               phonetic: 'GLAS-ter ef-ES',
               example:
-                'GlusterFS provides distributed storage. = GlusterFS fornisce storage distribuito.',
+                'Some teams use GlusterFS to replicate data across three nodes, so a single disk failure does not cause downtime. = Alcuni team usano GlusterFS per replicare i dati su tre nodi, così un singolo guasto disco non causa downtime.',
               context: 'volumes',
               difficulty: 'intermediate',
               tool: 'GlusterFS',
             },
             {
               english: 'Ceph',
-              italian: 'Ceph / storage distribuito a oggetti/blocchi/file',
+              italian: 'Storage distribuito a oggetti, blocchi e file (Ceph)',
               pronunciation: '/sef/',
               phonetic: 'SEF',
-              example: 'Ceph is a scalable object store. = Ceph è uno store di oggetti scalabile.',
+              example:
+                'Many Kubernetes clusters use Ceph via Rook to provide dynamic persistent volumes with built-in replication. = Molti cluster Kubernetes usano Ceph tramite Rook per fornire volumi persistenti dinamici con replica integrata.',
               context: 'volumes',
               difficulty: 'intermediate',
               tool: 'Ceph',
@@ -2798,7 +2853,8 @@ export default {
               italian: 'Backend di storage',
               pronunciation: '/ˈstɔːrɪdʒ ˈbækend/',
               phonetic: 'STO-rig BAK-end',
-              example: 'Choose the right storage backend. = Scegli il backend di storage giusto.',
+              example:
+                'Evaluate your storage backend based on IOPS needs, replication, and cost: local SSD for speed, NFS for sharing, cloud block for durability. = Valuta il tuo backend di storage in base alle esigenze di IOPS, replica e costo: SSD locale per velocità, NFS per condivisione, block cloud per durabilità.',
               context: 'volumes',
               difficulty: 'intermediate',
             },
@@ -2820,11 +2876,11 @@ export default {
           items: [
             {
               english: 'Docker Compose',
-              italian: 'Docker Compose / orchestratore multi-container',
+              italian: 'Orchestratore multi-container (Docker Compose)',
               pronunciation: '/ˈdɒkər kəmˈpoʊz/',
               phonetic: 'DO-ker com-POUZ',
               example:
-                'Docker Compose orchestrates multi-container apps. = Docker Compose orchestra app multi-container.',
+                "With Docker Compose, you define your entire stack (API, database, cache) in one YAML file and start everything with a single command. = Con Docker Compose, definisci l'intero stack (API, database, cache) in un file YAML e avvii tutto con un singolo comando.",
               context: 'compose',
               difficulty: 'intermediate',
               tool: 'Docker Compose',
@@ -2835,7 +2891,7 @@ export default {
               pronunciation: '/kəmˈpoʊz/',
               phonetic: 'com-POUZ',
               example:
-                'The compose.yaml file defines services. = Il file compose.yaml definisce i servizi.',
+                'Keep your compose.yaml under version control so every developer gets the same local environment. = Tieni il tuo compose.yaml sotto controllo di versione così ogni sviluppatore ottiene lo stesso ambiente locale.',
               context: 'compose',
               difficulty: 'intermediate',
               note: 'Il vecchio nome docker-compose.yml è ancora supportato.',
@@ -2846,7 +2902,7 @@ export default {
               pronunciation: '/ˈsɜːrvɪs/',
               phonetic: 'SER-vis',
               example:
-                'Each service is a containerized component. = Ogni servizio è un componente containerizzato.',
+                'Define a service for each component: web for Nginx, api for your backend, and db for PostgreSQL. = Definisci un servizio per ogni componente: web per Nginx, api per il tuo backend e db per PostgreSQL.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'services:\n  web:\n    image: nginx',
@@ -2857,7 +2913,7 @@ export default {
               pronunciation: '/ʌp/',
               phonetic: 'AP',
               example:
-                'Start all services with docker compose up. = Avvia tutti i servizi con docker compose up.',
+                'Run docker compose up -d to start all services in the background and then check their status with docker compose ps. = Esegui docker compose up -d per avviare tutti i servizi in background e poi controlla il loro stato con docker compose ps.',
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose up -d',
@@ -2867,7 +2923,8 @@ export default {
               italian: 'Ferma stack',
               pronunciation: '/daʊn/',
               phonetic: 'DAUN',
-              example: 'Stop and remove services with down. = Ferma e rimuove i servizi con down.',
+              example:
+                'Add --volumes to docker compose down to also delete named volumes and start fresh on the next run. = Aggiungi --volumes a docker compose down per eliminare anche i volumi con nome e ricominciare da zero al prossimo avvio.',
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose down',
@@ -2877,7 +2934,8 @@ export default {
               italian: 'Log dei servizi',
               pronunciation: '/lɒɡz/',
               phonetic: 'LOGZ',
-              example: 'View logs from all services. = Visualizza i log di tutti i servizi.',
+              example:
+                'Use docker compose logs -f web to follow only the web service logs without noise from the database. = Usa docker compose logs -f web per seguire solo i log del servizio web senza rumore dal database.',
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose logs -f',
@@ -2887,7 +2945,8 @@ export default {
               italian: 'Lista servizi',
               pronunciation: '/piː es/',
               phonetic: 'pi-ES',
-              example: 'List running services. = Elenca i servizi attivi.',
+              example:
+                'Run docker compose ps after deployment to verify all services show a healthy status. = Esegui docker compose ps dopo il deployment per verificare che tutti i servizi mostrino uno stato sano.',
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose ps',
@@ -2898,17 +2957,18 @@ export default {
               pronunciation: '/ˈprɒdʒekt neɪm/',
               phonetic: 'PRO-gekt NEIM',
               example:
-                'The project name namespaces resources. = Il nome del progetto fa da namespace per le risorse.',
+                'Use -p to set a unique project name when running multiple stacks on the same host to prevent resource name collisions. = Usa -p per impostare un nome progetto univoco quando esegui più stack sullo stesso host per prevenire collisioni di nomi risorse.',
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose -p myapp up',
             },
             {
               english: 'YAML',
-              italian: 'YAML / formato di configurazione leggibile',
+              italian: 'Formato di configurazione leggibile (YAML)',
               pronunciation: '/ˈjæml/',
               phonetic: 'IA-ml',
-              example: 'Compose uses YAML configuration. = Compose usa configurazione YAML.',
+              example:
+                "A single misplaced indent in your YAML file can break the entire Compose configuration because indentation defines structure. = Un singolo rientro fuori posto nel tuo file YAML può rompere l'intera configurazione Compose perché l'indentazione definisce la struttura.",
               context: 'compose',
               difficulty: 'intermediate',
               note: "YAML Ain't Markup Language: indentazione importante.",
@@ -2919,7 +2979,7 @@ export default {
               pronunciation: '/ˈvɜːrʒən/',
               phonetic: 'VER-scion',
               example:
-                'Modern Compose does not need a version field. = Compose moderno non richiede il campo version.',
+                'Remove the compose file version field from new projects since Docker Compose V2 automatically uses the latest schema. = Rimuovi il campo versione del file compose dai nuovi progetti poiché Docker Compose V2 usa automaticamente lo schema più recente.',
               context: 'compose',
               difficulty: 'intermediate',
               note: 'Le versioni 2.x e 3.x sono unificate dallo schema attuale.',
@@ -2936,7 +2996,8 @@ export default {
               italian: 'Campo image',
               pronunciation: '/ˈɪmɪdʒ/',
               phonetic: 'I-migg',
-              example: "Specify the image for a service. = Specifica l'immagine per un servizio.",
+              example:
+                "Always pin the image tag in Compose like postgres:16 instead of just postgres to avoid unexpected upgrades. = Fissa sempre il tag dell'immagine in Compose come postgres:16 invece del solo postgres per evitare aggiornamenti inattesi.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'services:\n  db:\n    image: postgres:16',
@@ -2947,7 +3008,7 @@ export default {
               pronunciation: '/bɪld/',
               phonetic: 'BILD',
               example:
-                "Build an image from a local Dockerfile. = Costruisci un'immagine da un Dockerfile locale.",
+                'Set the build context and Dockerfile path so Compose can build your custom image before starting the service. = Imposta il contesto di build e il percorso del Dockerfile così Compose può costruire la tua immagine personalizzata prima di avviare il servizio.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'services:\n  web:\n    build:\n      context: .\n      dockerfile: Dockerfile',
@@ -2958,7 +3019,7 @@ export default {
               pronunciation: '/dɪˈpendz ɒn/',
               phonetic: 'di-PENDS-ON',
               example:
-                "depends_on controls startup order. = depends_on controlla l'ordine di avvio.",
+                'Use depends_on with a condition like service_healthy so your app waits until the database is actually ready, not just started. = Usa depends_on con una condizione come service_healthy così la tua app aspetta finché il database è effettivamente pronto, non solo avviato.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'web:\n  depends_on:\n    - db',
@@ -2969,7 +3030,7 @@ export default {
               pronunciation: '/ɪnˈvaɪrənmənt/',
               phonetic: 'in-VAI-ron-ment',
               example:
-                "Set environment variables for a service. = Imposta variabili d'ambiente per un servizio.",
+                "Define the DATABASE_URL in the environment section so each service receives the correct connection string at startup. = Definisci il DATABASE_URL nella sezione environment così ogni servizio riceve la stringa di connessione corretta all'avvio.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'environment:\n  - DATABASE_URL=postgres://db',
@@ -2979,7 +3040,8 @@ export default {
               italian: 'File di env',
               pronunciation: '/env faɪl/',
               phonetic: 'ENV-FAIL',
-              example: "Load env vars from a file. = Carica variabili d'ambiente da un file.",
+              example:
+                'Keep secrets out of version control by loading them from an env_file that is listed in .gitignore. = Tieni i segreti fuori dal controllo di versione caricandoli da un env_file inserito nel .gitignore.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'env_file:\n  - .env.production',
@@ -2989,7 +3051,8 @@ export default {
               italian: 'Campo ports',
               pronunciation: '/pɔːrts/',
               phonetic: 'PORTS',
-              example: 'Expose ports in compose. = Esponi porte in compose.',
+              example:
+                'Map ports as strings like "8080:80" in the ports section to avoid YAML parsing issues with numbers. = Mappa le porte come stringhe come "8080:80" nella sezione ports per evitare problemi di parsing YAML con i numeri.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'ports:\n  - "8080:80"',
@@ -2999,7 +3062,8 @@ export default {
               italian: 'Campo volumes',
               pronunciation: '/ˈvɒljuːmz/',
               phonetic: 'VOL-iumz',
-              example: 'Mount volumes for a service. = Monta volumi per un servizio.',
+              example:
+                'Declare a named volumes entry at the top level and reference it in the service to persist database data across restarts. = Dichiara una voce volumes con nome al livello principale e riferiscila nel servizio per persistere i dati del database tra i riavvii.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'volumes:\n  - db-data:/var/lib/postgresql/data',
@@ -3009,7 +3073,8 @@ export default {
               italian: 'Campo networks',
               pronunciation: '/ˈnetwɜːrks/',
               phonetic: 'NET-uerks',
-              example: 'Attach service to a network. = Collega un servizio a una rete.',
+              example:
+                "Attach the API and database services to a backend networks entry, but only the API and proxy to the frontend network. = Collega i servizi API e database a una voce networks backend, ma solo l'API e il proxy alla rete frontend.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'networks:\n  - backend',
@@ -3019,7 +3084,7 @@ export default {
               italian: 'Campo command',
               pronunciation: '/kəˈmænd/',
               phonetic: 'co-MAND',
-              example: 'Override the default command. = Sovrascrivi il comando di default.',
+              example: `Override the image's default CMD in Compose to run migrations before the app starts: command: ["npm", "run", "migrate-and-start"]. = Sovrascrivi il CMD predefinito dell'immagine in Compose per eseguire le migrazioni prima dell'avvio dell'app: command: ["npm", "run", "migrate-and-start"].`,
               context: 'compose',
               difficulty: 'intermediate',
               code: 'command: ["npm", "start"]',
@@ -3030,7 +3095,7 @@ export default {
               pronunciation: '/riːˈstɑːrt/',
               phonetic: 'ri-START',
               example:
-                'Set restart policy in compose. = Imposta la politica di riavvio in compose.',
+                "Set restart: unless-stopped for production services so they survive host reboots but can still be manually stopped. = Imposta restart: unless-stopped per i servizi di produzione così sopravvivono ai riavvii dell'host ma possono ancora essere fermati manualmente.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'restart: unless-stopped',
@@ -3048,7 +3113,7 @@ export default {
               pronunciation: '/tɒp ˈlevl/',
               phonetic: 'TOP LE-vl',
               example:
-                'Define networks at the top level. = Definisci le reti al livello principale.',
+                'Declare top-level networks like frontend and backend to control which services can communicate with each other. = Dichiara reti top-level come frontend e backend per controllare quali servizi possono comunicare tra loro.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'networks:\n  backend:\n    driver: bridge',
@@ -3059,7 +3124,7 @@ export default {
               pronunciation: '/ˈvɒljuːmz/',
               phonetic: 'VOL-iumz',
               example:
-                'Define volumes at the top level. = Definisci i volumi al livello principale.',
+                'Declare top-level volumes so Docker manages them independently from container lifecycles and they persist after docker compose down. = Dichiara volumi top-level così Docker li gestisce indipendentemente dal ciclo di vita dei container e persistono dopo docker compose down.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'volumes:\n  db-data:\n    driver: local',
@@ -3069,7 +3134,8 @@ export default {
               italian: 'Rete esterna',
               pronunciation: '/ɪkˈstɜːrnl/',
               phonetic: 'ek-STER-nl',
-              example: 'Use a pre-existing external network. = Usa una rete esterna preesistente.',
+              example:
+                'Mark a network as external when multiple Compose stacks need to share the same Docker network for inter-project communication. = Segna una rete come esterna quando più stack Compose devono condividere la stessa rete Docker per comunicazione tra progetti.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'networks:\n  shared:\n    external: true',
@@ -3079,7 +3145,8 @@ export default {
               italian: 'Volume esterno',
               pronunciation: '/ɪkˈstɜːrnl/',
               phonetic: 'ek-STER-nl',
-              example: 'Reference a pre-existing volume. = Riferimento a un volume preesistente.',
+              example:
+                'Use an external volume when the data was created by another project and you need to share it without duplication. = Usa un volume esterno quando i dati sono stati creati da un altro progetto e devi condividerli senza duplicazione.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'volumes:\n  shared-data:\n    external: true',
@@ -3089,7 +3156,8 @@ export default {
               italian: 'Alias di rete',
               pronunciation: '/ˈeɪliəs/',
               phonetic: 'EI-li-as',
-              example: "Set aliases inside a network. = Imposta alias all'interno di una rete.",
+              example:
+                'Give a service a network alias so other containers can reach it by a simpler or more descriptive name. = Dai a un servizio un alias di rete così gli altri container possono raggiungerlo con un nome più semplice o descrittivo.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'networks:\n  backend:\n    aliases:\n      - db',
@@ -3100,27 +3168,28 @@ export default {
               pronunciation: '/dɪˈfɔːlt/',
               phonetic: 'di-FOLT',
               example:
-                'Compose creates a default network per project. = Compose crea una rete di default per progetto.',
+                'Even without defining networks, Compose creates a default network so all services in the same file can discover each other by name. = Anche senza definire reti, Compose crea una rete di default così tutti i servizi nello stesso file possono scoprirsi a vicenda per nome.',
               context: 'compose',
               difficulty: 'intermediate',
               note: 'I servizi nello stesso compose si vedono via DNS.',
             },
             {
               english: 'Bridge in Compose',
-              italian: 'bridge in Compose / rete bridge in Compose',
+              italian: 'Rete bridge in Compose',
               pronunciation: '/brɪdʒ/',
               phonetic: 'BRIG',
               example:
-                'Use bridge driver for isolated networks. = Usa il driver bridge per reti isolate.',
+                'The bridge in Compose provides isolation: services on the backend network cannot reach services only on the frontend network. = Il bridge in Compose fornisce isolamento: i servizi sulla rete backend non possono raggiungere i servizi presenti solo sulla rete frontend.',
               context: 'compose',
               difficulty: 'intermediate',
             },
             {
               english: 'IPv6',
-              italian: 'IPv6 / Internet Protocol versione 6',
+              italian: 'Protocollo Internet versione 6 (IPv6)',
               pronunciation: '/aɪ piː viː sɪks/',
               phonetic: 'ai-pi-vi-SIKS',
-              example: 'Enable IPv6 on Compose networks. = Abilita IPv6 sulle reti Compose.',
+              example:
+                'Enable IPv6 in Compose if your infrastructure requires dual-stack networking for both v4 and v6 clients. = Abilita IPv6 in Compose se la tua infrastruttura richiede networking dual-stack per client sia v4 che v6.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'networks:\n  backend:\n    enable_ipv6: true',
@@ -3130,7 +3199,8 @@ export default {
               italian: 'Configurazione subnet',
               pronunciation: '/ˈsʌbnet/',
               phonetic: 'SAB-net',
-              example: 'Define a subnet for a network. = Definisci una subnet per una rete.',
+              example:
+                "Specify a custom subnet configuration in Compose IPAM to avoid conflicts with your company VPN IP ranges. = Specifica una configurazione subnet personalizzata nell'IPAM di Compose per evitare conflitti con gli intervalli IP della VPN aziendale.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'networks:\n  backend:\n    ipam:\n      config:\n        - subnet: 172.20.0.0/16',
@@ -3141,7 +3211,7 @@ export default {
               pronunciation: '/maʊnt pæθ/',
               phonetic: 'MAUNT-PAT',
               example:
-                'Specify mount path inside the container. = Specifica il percorso di mount nel container.',
+                "Match the volume mount path to the application's data directory, like /var/lib/postgresql/data for PostgreSQL. = Fai corrispondere il percorso di mount del volume alla directory dati dell'applicazione, come /var/lib/postgresql/data per PostgreSQL.",
               context: 'compose',
               difficulty: 'intermediate',
             },
@@ -3158,7 +3228,7 @@ export default {
               pronunciation: '/ˈproʊfaɪl/',
               phonetic: 'PRO-fail',
               example:
-                'Profiles enable optional services. = I profili abilitano servizi opzionali.',
+                'Add a profile named "dev" to services like debuggers and mail catchers that should only run during development. = Aggiungi un profilo chiamato "dev" a servizi come debugger e mail catcher che dovrebbero girare solo durante lo sviluppo.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'services:\n  debug:\n    profiles: ["dev"]',
@@ -3168,7 +3238,8 @@ export default {
               italian: 'Flag --profile',
               pronunciation: '/ˈproʊfaɪl/',
               phonetic: 'PRO-fail',
-              example: 'Activate a profile with --profile. = Attiva un profilo con --profile.',
+              example:
+                'Run docker compose --profile dev up to start all services including the dev-only tools like pgAdmin. = Esegui docker compose --profile dev up per avviare tutti i servizi inclusi gli strumenti solo per dev come pgAdmin.',
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose --profile dev up',
@@ -3179,7 +3250,7 @@ export default {
               pronunciation: '/ˌoʊvərˈraɪd/',
               phonetic: 'ou-ver-RAID',
               example:
-                'docker-compose.override.yaml extends base config. = docker-compose.override.yaml estende la config base.',
+                'Put dev-only bind mounts and debug ports in the override file so the base compose.yaml stays clean for production. = Metti bind mount e porte di debug solo per dev nel file di override così il compose.yaml base resta pulito per la produzione.',
               context: 'compose',
               difficulty: 'intermediate',
               note: 'Caricato automaticamente accanto al file principale.',
@@ -3189,7 +3260,8 @@ export default {
               italian: 'Flag -f',
               pronunciation: '/ef flæɡ/',
               phonetic: 'EF FLAG',
-              example: 'Specify multiple files with -f. = Specifica più file con -f.',
+              example:
+                "Combine base and production configs with docker compose -f base.yaml -f prod.yaml up to layer environment-specific settings. = Combina configurazioni base e produzione con docker compose -f base.yaml -f prod.yaml up per sovrapporre impostazioni specifiche dell'ambiente.",
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose -f base.yaml -f prod.yaml up',
@@ -3199,7 +3271,8 @@ export default {
               italian: 'Campo di estensione',
               pronunciation: '/ɪkˈstenʃən/',
               phonetic: 'ek-STEN-scion',
-              example: 'x- fields are reusable extension fields. = I campi x- sono riutilizzabili.',
+              example:
+                'Define shared settings like logging config in an extension field with x-defaults and reference it with YAML anchors across services. = Definisci impostazioni condivise come la configurazione di logging in un campo di estensione con x-defaults e riferiscilo con ancore YAML tra i servizi.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'x-defaults: &defaults\n  restart: always',
@@ -3209,7 +3282,8 @@ export default {
               italian: 'Ancora YAML',
               pronunciation: '/ˈæŋkər/',
               phonetic: 'AN-kor',
-              example: 'YAML anchors enable DRY config. = Le ancore YAML permettono config DRY.',
+              example:
+                "Use a YAML anchor to define restart and logging once, then merge it into every service with the <<: *base syntax. = Usa un'ancora YAML per definire restart e logging una volta, poi uniscila a ogni servizio con la sintassi <<: *base.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'x-base: &base\n  restart: always\nweb:\n  <<: *base',
@@ -3220,7 +3294,7 @@ export default {
               pronunciation: '/ɪnˌtɜːrpəˈleɪʃən/',
               phonetic: 'in-ter-po-LEI-scen',
               example:
-                'Use ${VAR} for variable substitution. = Usa ${VAR} per la sostituzione di variabili.',
+                "Use variable interpolation like image: nginx:${TAG:-latest} so CI can inject the version at deploy time. = Usa l'interpolazione di variabili come image: nginx:${TAG:-latest} così la CI può iniettare la versione al momento del deploy.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'image: nginx:${TAG:-latest}',
@@ -3230,7 +3304,8 @@ export default {
               italian: 'File .env',
               pronunciation: '/dɒt env/',
               phonetic: 'DOT-ENV',
-              example: 'Compose loads variables from .env. = Compose carica variabili da .env.',
+              example:
+                'Place TAG=1.2.3 in your .env file and Compose will automatically substitute it into ${TAG} references in compose.yaml. = Metti TAG=1.2.3 nel tuo file .env e Compose lo sostituirà automaticamente nei riferimenti ${TAG} nel compose.yaml.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'TAG=1.2.3\nDB_PASSWORD=secret',
@@ -3241,7 +3316,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt ˈvæljuː/',
               phonetic: 'di-FOLT VAL-iu',
               example:
-                'Provide a default value with :- syntax. = Fornisci un valore di default con la sintassi :-.',
+                "Using ${PORT:-8080} sets a default value of 8080 when PORT is not defined in the environment or .env file. = Usare ${PORT:-8080} imposta un valore di default di 8080 quando PORT non è definito nell'ambiente o nel file .env.",
               context: 'compose',
               difficulty: 'intermediate',
               code: '${PORT:-8080}',
@@ -3252,7 +3327,7 @@ export default {
               pronunciation: '/kənˈvɜːrt/',
               phonetic: 'con-VERT',
               example:
-                'Render the merged config with config. = Renderizza la config risultante con config.',
+                'Run docker compose config to see the fully merged and interpolated YAML, which helps debug variable substitution issues. = Esegui docker compose config per vedere lo YAML completamente unito e interpolato, che aiuta a debuggare problemi di sostituzione variabili.',
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose config',
@@ -3275,11 +3350,11 @@ export default {
           items: [
             {
               english: 'Healthcheck',
-              italian: 'healthcheck / controllo di salute',
+              italian: 'Controllo di salute del servizio (healthcheck)',
               pronunciation: '/ˈhelθtʃek/',
               phonetic: 'HELT-cek',
               example:
-                'Define a healthcheck for a service. = Definisci un healthcheck per un servizio.',
+                "Add a healthcheck that curls the /health endpoint so Compose knows when the service is truly ready. = Aggiungi un healthcheck che fa curl sull'endpoint /health così Compose sa quando il servizio è veramente pronto.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'healthcheck:\n  test: ["CMD", "curl", "-f", "http://localhost"]\n  interval: 30s',
@@ -3290,7 +3365,7 @@ export default {
               pronunciation: '/ˈsteɪtəs/',
               phonetic: 'STEI-tus',
               example:
-                'Compose tracks container health status. = Compose traccia lo stato di salute dei container.',
+                'Check the health status column in docker compose ps to quickly identify which services are failing their checks. = Controlla la colonna dello stato di salute in docker compose ps per identificare rapidamente quali servizi stanno fallendo i loro controlli.',
               context: 'compose',
               difficulty: 'intermediate',
             },
@@ -3299,7 +3374,8 @@ export default {
               italian: 'Dipendenza condizionata',
               pronunciation: '/kənˈdɪʃən/',
               phonetic: 'con-DI-scion',
-              example: 'Wait for a healthy dependency. = Aspetta una dipendenza in salute.',
+              example:
+                'Use depends_on with condition: service_healthy so the API container starts only after PostgreSQL passes its pg_isready check. = Usa depends_on con condition: service_healthy così il container API si avvia solo dopo che PostgreSQL passa il suo controllo pg_isready.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'depends_on:\n  db:\n    condition: service_healthy',
@@ -3310,7 +3386,7 @@ export default {
               pronunciation: '/test/',
               phonetic: 'TEST',
               example:
-                'The test command checks service health. = Il comando di test verifica la salute.',
+                'Use CMD-SHELL for complex healthcheck tests like pg_isready -U postgres that need shell interpretation. = Usa CMD-SHELL per test healthcheck complessi come pg_isready -U postgres che necessitano interpretazione shell.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'test: ["CMD-SHELL", "pg_isready -U postgres"]',
@@ -3321,7 +3397,7 @@ export default {
               pronunciation: '/stɑːrt ˈpɪəriəd/',
               phonetic: 'START PI-riod',
               example:
-                'start_period gives time before checks start. = start_period dà tempo prima dei controlli.',
+                "Set start_period to 40s for databases that need time to initialize, preventing false unhealthy states during startup. = Imposta start_period a 40s per i database che necessitano tempo per inizializzarsi, prevenendo falsi stati unhealthy durante l'avvio.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'healthcheck:\n  start_period: 40s',
@@ -3332,17 +3408,18 @@ export default {
               pronunciation: '/ˈriːtraɪz/',
               phonetic: 'RI-traiz',
               example:
-                'Number of retries before unhealthy. = Numero di tentativi prima di unhealthy.',
+                'Setting retries to 3 means a service must fail three consecutive health checks before being marked unhealthy. = Impostare retries a 3 significa che un servizio deve fallire tre controlli di salute consecutivi prima di essere marcato come unhealthy.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'healthcheck:\n  retries: 3',
             },
             {
               english: 'timeout',
-              italian: 'timeout / tempo limite',
+              italian: 'Tempo limite (timeout)',
               pronunciation: '/ˈtaɪmaʊt/',
               phonetic: 'TAIM-aut',
-              example: 'Maximum time for a healthcheck. = Tempo massimo per un healthcheck.',
+              example:
+                'Set the healthcheck timeout to 10s so a slow database query does not cause a false unhealthy detection. = Imposta il timeout del healthcheck a 10s così una query database lenta non causa un falso rilevamento di unhealthy.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'healthcheck:\n  timeout: 10s',
@@ -3352,18 +3429,19 @@ export default {
               italian: 'Intervallo',
               pronunciation: '/ˈɪntərvəl/',
               phonetic: 'IN-ter-val',
-              example: 'Time between health checks. = Tempo tra i controlli.',
+              example:
+                'A 30-second interval between health checks balances responsiveness with not overloading the service with probe requests. = Un intervallo di 30 secondi tra i controlli di salute bilancia la reattività con il non sovraccaricare il servizio con richieste di probe.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'healthcheck:\n  interval: 30s',
             },
             {
               english: 'service_started',
-              italian: 'service_started / dipendenza condizionale Compose',
+              italian: 'Condizione di dipendenza predefinita in Compose (service_started)',
               pronunciation: '/ˈsɜːrvɪs ˈstɑːrtɪd/',
               phonetic: 'SER-vis STAR-tid',
               example:
-                'Default condition: wait until container starts. = Condizione di default: aspetta che il container parta.',
+                "The service_started condition only waits for the container process to begin, not for the app to be ready to serve traffic. = La condizione service_started aspetta solo che il processo del container inizi, non che l'app sia pronta a servire traffico.",
               context: 'compose',
               difficulty: 'intermediate',
               note: "Non garantisce che l'app sia pronta.",
@@ -3374,7 +3452,7 @@ export default {
               pronunciation: '/kəmˈpliːtɪd/',
               phonetic: 'com-PLI-tid',
               example:
-                'Wait for a one-shot init service to complete. = Aspetta che un servizio init one-shot termini.',
+                "Use service_completed_successfully for a migration container that must finish before the main app starts. = Usa service_completed_successfully per un container di migrazione che deve terminare prima che l'app principale si avvii.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'depends_on:\n  init:\n    condition: service_completed_successfully',
@@ -3392,7 +3470,7 @@ export default {
               pronunciation: '/dɪˈplɔɪ rɪˈsɔːrsɪz/',
               phonetic: 'di-PLOI ri-SOR-siz',
               example:
-                'deploy.resources sets CPU and memory limits. = deploy.resources imposta limiti CPU e memoria.',
+                "Always define deploy.resources limits in production to prevent a single service from consuming all host memory. = Definisci sempre limiti deploy.resources in produzione per impedire a un singolo servizio di consumare tutta la memoria dell'host.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  resources:\n    limits:\n      cpus: "0.5"\n      memory: 512M',
@@ -3402,7 +3480,8 @@ export default {
               italian: 'Limite CPU',
               pronunciation: '/siː piː juː/',
               phonetic: 'si-pi-IU',
-              example: "Limit CPU usage to 0.5 cores. = Limita l'uso CPU a 0.5 core.",
+              example:
+                'Setting a CPU limit of 0.5 ensures a misbehaving service cannot starve other containers of processing time. = Impostare un limite CPU di 0,5 assicura che un servizio malfunzionante non possa privare altri container del tempo di elaborazione.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'cpus: "0.5"',
@@ -3412,7 +3491,8 @@ export default {
               italian: 'Limite memoria',
               pronunciation: '/ˈmeməri ˈlɪmɪt/',
               phonetic: 'ME-mo-ri LI-mit',
-              example: 'Limit memory to 512 MB. = Limita la memoria a 512 MB.',
+              example:
+                "Set the memory limit based on your app's actual usage plus a buffer; too tight causes OOM kills, too loose wastes resources. = Imposta il limite memoria in base all'uso effettivo della tua app più un margine; troppo stretto causa OOM kill, troppo largo spreca risorse.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'memory: 512M',
@@ -3422,7 +3502,8 @@ export default {
               italian: 'Riserve',
               pronunciation: '/ˌrezərˈveɪʃənz/',
               phonetic: 're-zer-VEI-scions',
-              example: 'Reserve guaranteed resources. = Riserva risorse garantite.',
+              example:
+                'Set reservations to guarantee a minimum of 256 MB and 0.25 CPU so the service always has baseline resources available. = Imposta le riserve per garantire un minimo di 256 MB e 0,25 CPU così il servizio ha sempre risorse di base disponibili.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'reservations:\n  cpus: "0.25"\n  memory: 256M',
@@ -3433,7 +3514,7 @@ export default {
               pronunciation: '/oʊ oʊ em ˈkɪlər/',
               phonetic: 'OU-OU-EM KI-ler',
               example:
-                'OOM killer terminates over-limit containers. = Il killer OOM termina i container fuori limite.',
+                'When the OOM killer terminates your container, check docker inspect for OOMKilled: true and consider raising the memory limit. = Quando il OOM killer termina il tuo container, controlla docker inspect per OOMKilled: true e considera di alzare il limite di memoria.',
               context: 'compose',
               difficulty: 'intermediate',
               note: 'Out Of Memory: il kernel uccide i processi.',
@@ -3443,7 +3524,8 @@ export default {
               italian: 'mem_limit legacy',
               pronunciation: '/mem ˈlɪmɪt/',
               phonetic: 'MEM-LI-mit',
-              example: 'Legacy memory limit field. = Campo legacy per limite di memoria.',
+              example:
+                'Migrate from mem_limit to deploy.resources.limits.memory for compatibility with Compose V2 and Swarm mode. = Migra da mem_limit a deploy.resources.limits.memory per compatibilità con Compose V2 e modalità Swarm.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'mem_limit: 512m',
@@ -3454,7 +3536,8 @@ export default {
               italian: 'Quote CPU',
               pronunciation: '/siː piː juː ʃerz/',
               phonetic: 'si-pi-iu SCERZ',
-              example: 'cpu_shares is a relative weight. = cpu_shares è un peso relativo.',
+              example:
+                'Unlike hard limits, cpu_shares only matter when CPU is contested: a service with 2048 shares gets double the CPU of one with 1024. = A differenza dei limiti rigidi, cpu_shares contano solo quando la CPU è contesa: un servizio con 2048 share ottiene il doppio della CPU di uno con 1024.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'cpu_shares: 1024',
@@ -3464,7 +3547,8 @@ export default {
               italian: 'Limite PID',
               pronunciation: '/piː aɪ diː es/',
               phonetic: 'pi-ai-di-ES',
-              example: 'Limit number of processes. = Limita il numero di processi.',
+              example:
+                "Setting pids_limit to 100 prevents a fork bomb inside the container from crashing the entire host. = Impostare pids_limit a 100 impedisce a una fork bomb dentro il container di crashare l'intero host.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'pids_limit: 100',
@@ -3474,17 +3558,19 @@ export default {
               italian: 'Dimensione shm',
               pronunciation: '/es eɪtʃ em saɪz/',
               phonetic: 'es-eich-em SAIZ',
-              example: 'Set shared memory size. = Imposta la dimensione della memoria condivisa.',
+              example:
+                'Increase shm_size to 256 MB for PostgreSQL or other databases that use shared memory for inter-process communication. = Aumenta shm_size a 256 MB per PostgreSQL o altri database che usano memoria condivisa per la comunicazione tra processi.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'shm_size: 256m',
             },
             {
               english: 'ulimits',
-              italian: 'ulimits / limiti di risorsa di processo',
+              italian: 'Limiti di risorsa del kernel per processo (ulimits)',
               pronunciation: '/juː ˈlɪmɪts/',
               phonetic: 'IU-LI-mits',
-              example: 'Set kernel limits per service. = Imposta limiti kernel per servizio.',
+              example:
+                'Raise ulimits for nofile to 4096 on services like Nginx that need to handle many concurrent connections. = Alza gli ulimits per nofile a 4096 su servizi come Nginx che devono gestire molte connessioni concorrenti.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'ulimits:\n  nofile:\n    soft: 1024\n    hard: 4096',
@@ -3502,18 +3588,18 @@ export default {
               pronunciation: '/ˈsiːkrət/',
               phonetic: 'SI-kret',
               example:
-                'Secrets are sensitive values like passwords. = I secret sono valori sensibili come password.',
+                "Store database passwords as a secret in a local file rather than embedding them in the compose.yaml or environment variables. = Memorizza le password del database come secret in un file locale piuttosto che incorporarle nel compose.yaml o nelle variabili d'ambiente.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'secrets:\n  db_password:\n    file: ./db_password.txt',
             },
             {
               english: 'Config',
-              italian: 'config / file di configurazione',
+              italian: 'File di configurazione non sensibile (config)',
               pronunciation: '/kənˈfɪɡ/',
               phonetic: 'con-FIG',
               example:
-                'Configs hold non-sensitive configuration. = I config contengono configurazione non sensibile.',
+                "Mount Nginx config files as a Compose config so they are read-only and managed separately from the image. = Monta i file di configurazione Nginx come config Compose così sono in sola lettura e gestiti separatamente dall'immagine.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'configs:\n  app_config:\n    file: ./config.yaml',
@@ -3523,7 +3609,8 @@ export default {
               italian: 'Secret esterno',
               pronunciation: '/ɪkˈstɜːrnl/',
               phonetic: 'ek-STER-nl',
-              example: 'Reference an external secret. = Riferimento a un secret esterno.',
+              example:
+                'Mark a secret as external when it is pre-created by your infrastructure tooling outside of Compose. = Segna un secret come esterno quando è pre-creato dal tuo tooling di infrastruttura al di fuori di Compose.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'secrets:\n  db_password:\n    external: true',
@@ -3533,7 +3620,8 @@ export default {
               italian: 'Monta secret',
               pronunciation: '/maʊnt/',
               phonetic: 'MAUNT',
-              example: 'Mount a secret in a service. = Monta un secret in un servizio.',
+              example:
+                "After mounting, your application reads the secret from /run/secrets/db_password instead of an environment variable. = Dopo il montaggio, la tua applicazione legge il secret da /run/secrets/db_password invece di una variabile d'ambiente.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'services:\n  app:\n    secrets:\n      - db_password',
@@ -3545,7 +3633,7 @@ export default {
               pronunciation: '/ˈtɑːrɡɪt/',
               phonetic: 'TAR-ghet',
               example:
-                'Customize the secret mount path. = Personalizza il path di mount del secret.',
+                "Set a custom secret target path like /etc/ssl/private/cert.key when the app expects credentials at a specific location. = Imposta un percorso target del secret personalizzato come /etc/ssl/private/cert.key quando l'app si aspetta le credenziali in una posizione specifica.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'secrets:\n  - source: db_password\n    target: /etc/db_pass',
@@ -3556,7 +3644,7 @@ export default {
               pronunciation: '/vɔːlt/',
               phonetic: 'VOLT',
               example:
-                'Integrate with HashiCorp Vault for secrets. = Integra con HashiCorp Vault per i secret.',
+                'For enterprise environments, integrate Vault to dynamically generate short-lived database credentials for each container. = Per ambienti enterprise, integra Vault per generare dinamicamente credenziali database a breve durata per ogni container.',
               context: 'compose',
               difficulty: 'intermediate',
               tool: 'HashiCorp Vault',
@@ -3567,7 +3655,7 @@ export default {
               pronunciation: '/ˈsensətɪv/',
               phonetic: 'SEN-se-tiv',
               example:
-                'Never commit sensitive data to git. = Non committare mai dati sensibili in git.',
+                'Add *.secret and .env.production to .gitignore to prevent sensitive data from being accidentally committed. = Aggiungi *.secret e .env.production al .gitignore per prevenire che dati sensibili vengano committati accidentalmente.',
               context: 'compose',
               difficulty: 'intermediate',
             },
@@ -3577,7 +3665,7 @@ export default {
               pronunciation: '/ɪnˈkrɪptɪd/',
               phonetic: 'en-KRIP-tid',
               example:
-                'Secrets should be encrypted at rest. = I secret dovrebbero essere cifrati a riposo.',
+                'In Swarm mode, secrets are encrypted at rest on manager nodes and only decrypted inside the container that needs them. = In modalità Swarm, i secret sono cifrati a riposo sui nodi manager e decifrati solo dentro il container che ne ha bisogno.',
               context: 'compose',
               difficulty: 'intermediate',
             },
@@ -3586,7 +3674,8 @@ export default {
               italian: 'Rotazione dei secret',
               pronunciation: '/roʊˈteɪʃən/',
               phonetic: 'ro-TEI-scion',
-              example: 'Rotate secrets regularly. = Ruota i secret regolarmente.',
+              example:
+                'Implement secret rotation every 90 days to limit the exposure window if credentials are compromised. = Implementa la rotazione dei secret ogni 90 giorni per limitare la finestra di esposizione se le credenziali vengono compromesse.',
               context: 'compose',
               difficulty: 'intermediate',
             },
@@ -3595,7 +3684,8 @@ export default {
               italian: 'Secret in sola lettura',
               pronunciation: '/red ˈoʊnli/',
               phonetic: 'RED ON-li',
-              example: 'Secrets are mounted as read-only. = I secret sono montati in sola lettura.',
+              example:
+                "Because secrets are mounted as read-only, the application process cannot accidentally overwrite or corrupt the credential file. = Poiché i secret sono montati in sola lettura, il processo dell'applicazione non può sovrascrivere o corrompere accidentalmente il file delle credenziali.",
               context: 'compose',
               difficulty: 'intermediate',
             },
@@ -3611,7 +3701,8 @@ export default {
               italian: 'Scaling di un servizio',
               pronunciation: '/skeɪl/',
               phonetic: 'SKEIL',
-              example: 'Scale a service to N replicas. = Scala un servizio a N repliche.',
+              example:
+                'Use docker compose up --scale web=3 to run three instances of the web service behind a round-robin DNS. = Usa docker compose up --scale web=3 per eseguire tre istanze del servizio web dietro un DNS round-robin.',
               context: 'compose',
               difficulty: 'intermediate',
               command: 'docker compose up --scale web=3',
@@ -3622,7 +3713,7 @@ export default {
               pronunciation: '/ˈreplɪkəz/',
               phonetic: 'RE-pli-kas',
               example:
-                'replicas controls how many instances to run. = replicas controlla quante istanze eseguire.',
+                'Set replicas: 3 in the deploy section so the service always maintains three running instances. = Imposta replicas: 3 nella sezione deploy così il servizio mantiene sempre tre istanze in esecuzione.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  replicas: 3',
@@ -3633,7 +3724,7 @@ export default {
               pronunciation: '/loʊd ˌdɪstrɪˈbjuːʃən/',
               phonetic: 'LOUD di-stri-BIU-scen',
               example:
-                'Multiple replicas distribute load. = Più repliche distribuiscono il carico.',
+                'Running multiple replicas behind a reverse proxy ensures even load distribution and eliminates single points of failure. = Eseguire più repliche dietro un reverse proxy assicura una distribuzione del carico uniforme ed elimina punti singoli di fallimento.',
               context: 'compose',
               difficulty: 'intermediate',
             },
@@ -3643,7 +3734,7 @@ export default {
               pronunciation: '/ˈsteɪtlɪs/',
               phonetic: 'STEIT-lis',
               example:
-                'Only stateless services scale horizontally. = Solo i servizi stateless scalano orizzontalmente.',
+                "Store sessions in Redis rather than in memory so each stateless service replica can handle any user's request. = Memorizza le sessioni in Redis piuttosto che in memoria così ogni replica del servizio stateless può gestire la richiesta di qualsiasi utente.",
               context: 'compose',
               difficulty: 'intermediate',
             },
@@ -3653,7 +3744,7 @@ export default {
               pronunciation: '/ˈstɪki ˈseʃənz/',
               phonetic: 'STI-ki SE-scions',
               example:
-                'Sticky sessions route a user to the same instance. = Le sessioni sticky instradano un utente alla stessa istanza.',
+                'Avoid sticky sessions if possible because they concentrate load; use shared state storage like Redis instead. = Evita le sessioni sticky se possibile perché concentrano il carico; usa storage di stato condiviso come Redis.',
               context: 'compose',
               difficulty: 'intermediate',
             },
@@ -3663,18 +3754,18 @@ export default {
               pronunciation: '/ʌpˈdeɪt kənˈfɪɡ/',
               phonetic: 'ap-DEIT con-FIG',
               example:
-                'Configure rolling update behavior. = Configura il comportamento del rolling update.',
+                'Setting parallelism: 2 and delay: 10s in the update config rolls out changes two replicas at a time with a pause between batches. = Impostare parallelism: 2 e delay: 10s nella configurazione di update distribuisce le modifiche due repliche alla volta con una pausa tra i batch.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  update_config:\n    parallelism: 2\n    delay: 10s',
             },
             {
               english: 'Rollback',
-              italian: 'rollback / ritorno a versione precedente',
+              italian: 'Ritorno alla versione precedente (rollback)',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROUL-bak',
               example:
-                'Define rollback config in deploy. = Definisci la config di rollback in deploy.',
+                'Configure automatic rollback so Swarm reverts to the previous version if health checks fail after an update. = Configura il rollback automatico così Swarm torna alla versione precedente se i controlli di salute falliscono dopo un aggiornamento.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  rollback_config:\n    parallelism: 1',
@@ -3685,7 +3776,7 @@ export default {
               pronunciation: '/kənˈdɪʃən/',
               phonetic: 'con-DI-scion',
               example:
-                'Configure restart conditions in deploy. = Configura le condizioni di riavvio in deploy.',
+                "Setting the restart condition to on-failure prevents Compose from endlessly restarting a service that exits cleanly with code 0. = Impostare la condizione di riavvio su on-failure impedisce a Compose di riavviare all'infinito un servizio che esce correttamente con codice 0.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  restart_policy:\n    condition: on-failure',
@@ -3696,7 +3787,7 @@ export default {
               pronunciation: '/ˈpleɪsmənt/',
               phonetic: 'PLEIS-ment',
               example:
-                'Constraint placement in Swarm mode. = Vincoli di posizionamento in modalità Swarm.',
+                'Use placement constraints to ensure GPU-intensive services run only on worker nodes that have GPUs attached. = Usa vincoli di posizionamento per assicurarti che servizi intensivi in GPU girino solo su nodi worker che hanno GPU collegate.',
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  placement:\n    constraints:\n      - node.role == worker',
@@ -3706,7 +3797,8 @@ export default {
               italian: 'Modalità (replicated/global)',
               pronunciation: '/moʊd/',
               phonetic: 'MOUD',
-              example: 'global runs one replica per node. = global esegue una replica per nodo.',
+              example:
+                "Use global mode for monitoring agents like Prometheus node-exporter that need exactly one instance on every cluster node. = Usa la modalità global per agenti di monitoraggio come Prometheus node-exporter che necessitano esattamente un'istanza su ogni nodo del cluster.",
               context: 'compose',
               difficulty: 'intermediate',
               code: 'deploy:\n  mode: global',
@@ -3729,22 +3821,22 @@ export default {
           items: [
             {
               english: 'Docker Hub',
-              italian: 'Docker Hub / registry pubblico Docker',
+              italian: 'Registry pubblico ufficiale Docker (Docker Hub)',
               pronunciation: '/ˈdɒkər hʌb/',
               phonetic: 'DO-ker HAB',
               example:
-                'Docker Hub is the official Docker registry. = Docker Hub è il registry ufficiale di Docker.',
+                'Most open-source projects publish their official images to Docker Hub, which is the first place developers check. = La maggior parte dei progetti open-source pubblica le proprie immagini ufficiali su Docker Hub, che è il primo posto dove gli sviluppatori cercano.',
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'Docker Hub',
             },
             {
               english: 'Registry',
-              italian: 'registry / registro di immagini container',
+              italian: 'Registro di immagini container (registry)',
               pronunciation: '/ˈredʒɪstri/',
               phonetic: 'RE-gi-stri',
               example:
-                'A registry stores container images. = Un registry contiene immagini container.',
+                'Your CI pipeline pushes images to a private registry, and production nodes pull from the same registry during deployment. = La tua pipeline CI carica immagini su un registry privato, e i nodi di produzione scaricano dallo stesso registry durante il deployment.',
               context: 'registry',
               difficulty: 'intermediate',
             },
@@ -3754,7 +3846,7 @@ export default {
               pronunciation: '/ˈpraɪvət ˈredʒɪstri/',
               phonetic: 'PRAI-vet RE-gi-stri',
               example:
-                'A private registry hosts internal images. = Un registry privato ospita immagini interne.',
+                'Set up a private registry on your infrastructure to keep proprietary application images off public servers. = Configura un registry privato sulla tua infrastruttura per tenere le immagini delle applicazioni proprietarie fuori dai server pubblici.',
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker run -d -p 5000:5000 registry:2',
@@ -3764,7 +3856,8 @@ export default {
               italian: 'Login al registry',
               pronunciation: '/ˈlɒɡɪn/',
               phonetic: 'LO-ghin',
-              example: 'Login to a registry before pushing. = Accedi al registry prima del push.',
+              example:
+                'Run docker login with a personal access token instead of a password for better security and CI automation. = Esegui docker login con un token di accesso personale invece di una password per maggiore sicurezza e automazione CI.',
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker login registry.example.com',
@@ -3774,18 +3867,19 @@ export default {
               italian: 'Logout dal registry',
               pronunciation: '/ˈlɒɡaʊt/',
               phonetic: 'LO-gaut',
-              example: 'Logout from a registry. = Esci da un registry.',
+              example:
+                'Always run docker logout on shared CI runners to prevent the next job from reusing your credentials. = Esegui sempre docker logout sui runner CI condivisi per impedire al job successivo di riutilizzare le tue credenziali.',
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker logout registry.example.com',
             },
             {
               english: 'GitHub Container Registry',
-              italian: 'GHCR / registry container GitHub',
+              italian: 'Registry container di GitHub (GHCR)',
               pronunciation: '/ˈɡɪthʌb/',
               phonetic: 'GIT-hab',
               example:
-                'GitHub Container Registry hosts images on ghcr.io. = GitHub Container Registry ospita immagini su ghcr.io.',
+                'Publish your open-source project images to GitHub Container Registry so they live alongside the source code. = Pubblica le immagini del tuo progetto open-source su GitHub Container Registry così vivono accanto al codice sorgente.',
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'GHCR',
@@ -3793,22 +3887,22 @@ export default {
             },
             {
               english: 'AWS ECR',
-              italian: 'AWS ECR / Elastic Container Registry',
+              italian: 'Registry container elastico di AWS (AWS ECR)',
               pronunciation: '/eɪ dʌbəljuː es iː siː ɑːr/',
               phonetic: 'ei-dabl-iu-es i-si-AR',
               example:
-                'AWS ECR is the AWS container registry. = AWS ECR è il registry container di AWS.',
+                'Our CI pipeline pushes images to ECR, which integrates natively with ECS and EKS for seamless deployments. = La nostra pipeline CI pusha le immagini su ECR, che si integra nativamente con ECS ed EKS per deploy senza interruzioni.',
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'AWS ECR',
             },
             {
               english: 'Google GCR',
-              italian: 'Google GCR / Google Container Registry',
+              italian: 'Registry container di Google (Google GCR)',
               pronunciation: '/dʒiː siː ɑːr/',
               phonetic: 'gi-si-AR',
               example:
-                'Google Container Registry hosts images on gcr.io. = Google Container Registry ospita immagini su gcr.io.',
+                'Teams migrating to Artifact Registry gain vulnerability scanning and multi-format support beyond what GCR offered. = I team che migrano ad Artifact Registry ottengono scansione vulnerabilità e supporto multi-formato oltre a ciò che offriva GCR.',
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'GCR',
@@ -3819,7 +3913,7 @@ export default {
               pronunciation: '/ˈhɑːrbər/',
               phonetic: 'HAR-bor',
               example:
-                'Harbor is an open source private registry. = Harbor è un registry privato open source.',
+                'We deployed Harbor on-premise so our images stay within the corporate network while still getting vulnerability scanning and replication. = Abbiamo deployato Harbor on-premise così le nostre immagini restano nella rete aziendale pur avendo scansione vulnerabilità e replica.',
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'Harbor',
@@ -3831,7 +3925,7 @@ export default {
               pronunciation: '/kiː/',
               phonetic: 'KII',
               example:
-                'Quay is a Red Hat container registry. = Quay è un registry container di Red Hat.',
+                'OpenShift clusters pull images from Quay by default, benefiting from automated security scanning and geo-replication. = I cluster OpenShift pullano immagini da Quay di default, beneficiando di scansione di sicurezza automatica e geo-replica.',
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'Quay',
@@ -3848,7 +3942,8 @@ export default {
               italian: 'Tag con versione',
               pronunciation: '/ˈvɜːrʒənd tæɡ/',
               phonetic: 'VER-scind TAG',
-              example: 'Use versioned tags in production. = Usa tag con versione in produzione.',
+              example:
+                'Pinning images to versioned tags like nginx:1.25.3 prevents unexpected breakage when upstream publishes updates. = Pinnare le immagini a tag con versione come nginx:1.25.3 previene rotture inattese quando upstream pubblica aggiornamenti.',
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker tag myapp myorg/myapp:1.2.3',
@@ -3859,7 +3954,7 @@ export default {
               pronunciation: '/ɡɪt es eɪtʃ eɪ/',
               phonetic: 'GIT-es-eich-EI',
               example:
-                'Tag images with the git commit SHA. = Tagga le immagini con lo SHA del commit git.',
+                'Tagging each image with the git SHA lets you trace any running container back to the exact source code that produced it. = Taggare ogni immagine con lo SHA git permette di risalire da qualsiasi container in esecuzione al codice sorgente esatto che lo ha prodotto.',
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker build -t myapp:$(git rev-parse --short HEAD) .',
@@ -3870,7 +3965,7 @@ export default {
               pronunciation: '/bræntʃ tæɡ/',
               phonetic: 'BRENC TAG',
               example:
-                'Tag images per branch for previews. = Tagga le immagini per branch per le preview.',
+                'Each feature branch gets its own tagged image so reviewers can spin up a preview environment before merging. = Ogni feature branch ottiene la propria immagine taggata così i revisori possono avviare un ambiente di preview prima del merge.',
               context: 'registry',
               difficulty: 'intermediate',
               code: 'docker build -t myapp:feature-login .',
@@ -3881,7 +3976,7 @@ export default {
               pronunciation: '/ˈmeɪdʒər/',
               phonetic: 'MEI-gor',
               example:
-                "A major tag like v1 floats to latest 1.x. = Un tag major come v1 fluttua all'ultimo 1.x.",
+                "Library maintainers publish a floating v2 tag that always points to the latest 2.x release for consumers who want automatic patch updates. = I manutentori di librerie pubblicano un tag flottante v2 che punta sempre all'ultima release 2.x per i consumatori che vogliono aggiornamenti patch automatici.",
               context: 'registry',
               difficulty: 'intermediate',
             },
@@ -3891,18 +3986,18 @@ export default {
               pronunciation: '/ˌmʌlti ˈɑːrkɪtektʃər/',
               phonetic: 'MAL-ti AR-ki-tec-cer',
               example:
-                'Multi-arch images support amd64 and arm64. = Le immagini multi-arch supportano amd64 e arm64.',
+                'Publishing multi-architecture images lets the same tag run on Intel servers, Apple Silicon Macs, and ARM-based cloud instances without any change. = Pubblicare immagini multi-architettura permette allo stesso tag di girare su server Intel, Mac Apple Silicon e istanze cloud basate su ARM senza alcuna modifica.',
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker buildx build --platform linux/amd64,linux/arm64 -t myapp .',
             },
             {
               english: 'Buildx',
-              italian: 'Buildx / plugin Docker per build multi-piattaforma',
+              italian: 'Plugin Docker per build multi-piattaforma (Buildx)',
               pronunciation: '/bɪld eks/',
               phonetic: 'BILD-EKS',
               example:
-                'Buildx enables multi-platform builds. = Buildx abilita build multi-piattaforma.',
+                "With Buildx and QEMU emulation, a single CI job can produce images for linux/amd64 and linux/arm64 in one build. = Con Buildx e l'emulazione QEMU, un singolo job CI può produrre immagini per linux/amd64 e linux/arm64 in una sola build.",
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'Docker Buildx',
@@ -3914,7 +4009,7 @@ export default {
               pronunciation: '/ˈmænɪfest lɪst/',
               phonetic: 'MA-ni-fest LIST',
               example:
-                'A manifest list groups images by platform. = Una lista manifesto raggruppa immagini per piattaforma.',
+                "When you pull a multi-arch image, Docker resolves the manifest list to find the variant matching your CPU architecture automatically. = Quando pulli un'immagine multi-arch, Docker risolve la lista manifesto per trovare automaticamente la variante corrispondente alla tua architettura CPU.",
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker manifest create myapp:1.0 myapp:1.0-amd64 myapp:1.0-arm64',
@@ -3925,7 +4020,7 @@ export default {
               pronunciation: '/ɪˈmjuːtəbl/',
               phonetic: 'i-MIU-ta-bol',
               example:
-                'Immutable tags prevent accidental overwrites. = I tag immutabili prevengono sovrascritture accidentali.',
+                'Enabling immutable tags on ECR ensures that once v1.4.2 is pushed, nobody can overwrite it with different content, guaranteeing reproducible deployments. = Abilitare i tag immutabili su ECR assicura che una volta pushato v1.4.2, nessuno possa sovrascriverlo con contenuto diverso, garantendo deploy riproducibili.',
               context: 'registry',
               difficulty: 'intermediate',
               note: 'Configurabile sui registry come Harbor o ECR.',
@@ -3935,7 +4030,8 @@ export default {
               italian: 'Tag mutabile',
               pronunciation: '/ˈmjuːtəbl/',
               phonetic: 'MIU-ta-bol',
-              example: 'Latest is a mutable tag. = Latest è un tag mutabile.',
+              example:
+                'The latest tag is mutable, so pulling it today and tomorrow can yield completely different images if someone pushed an update in between. = Il tag latest è mutabile, quindi pullarlo oggi e domani può dare immagini completamente diverse se qualcuno ha pushato un aggiornamento nel frattempo.',
               context: 'registry',
               difficulty: 'intermediate',
             },
@@ -3945,7 +4041,7 @@ export default {
               pronunciation: '/prəˈmoʊʃən/',
               phonetic: 'pro-MOU-scen',
               example:
-                'Promote images from staging to production. = Promuovi immagini da staging a produzione.',
+                "After passing all tests in staging, the exact same image digest is re-tagged and promoted to the production registry without rebuilding. = Dopo aver superato tutti i test in staging, lo stesso digest dell'immagine viene ri-taggato e promosso al registry di produzione senza ricostruire.",
               context: 'registry',
               difficulty: 'intermediate',
               note: 'Re-tagging invece di rebuild garantisce immutabilità.',
@@ -3963,7 +4059,7 @@ export default {
               pronunciation: '/ˈsaɪnɪŋ/',
               phonetic: 'SAI-ning',
               example:
-                "Sign images to verify their origin. = Firma le immagini per verificarne l'origine.",
+                'Our admission controller rejects any image that lacks a valid cryptographic signature, ensuring only verified builds reach production. = Il nostro admission controller rifiuta qualsiasi immagine priva di firma crittografica valida, assicurando che solo build verificate raggiungano la produzione.',
               context: 'registry',
               difficulty: 'intermediate',
             },
@@ -3973,7 +4069,7 @@ export default {
               pronunciation: '/koʊ saɪn/',
               phonetic: 'KO-sain',
               example:
-                'Cosign signs container images and SBOMs. = Cosign firma immagini container e SBOM.',
+                "After each CI build, Cosign signs the image using a keyless workflow tied to the OIDC identity of the build pipeline. = Dopo ogni build CI, Cosign firma l'immagine usando un workflow keyless legato all'identità OIDC della pipeline di build.",
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'Cosign',
@@ -3981,22 +4077,22 @@ export default {
             },
             {
               english: 'Sigstore',
-              italian: 'Sigstore / firma open source di artefatti',
+              italian: 'Infrastruttura di firma open source per artefatti (Sigstore)',
               pronunciation: '/sɪɡ stɔːr/',
               phonetic: 'SIG-stor',
               example:
-                "Sigstore is an open signing infrastructure. = Sigstore è un'infrastruttura di firma open.",
+                "Sigstore's transparency log, Rekor, provides a tamper-proof record of every signature, so you can audit who signed what and when. = Il log di trasparenza di Sigstore, Rekor, fornisce un registro a prova di manomissione di ogni firma, così puoi verificare chi ha firmato cosa e quando.",
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'Sigstore',
             },
             {
               english: 'Notary',
-              italian: 'Notary / firma artefatti Docker',
+              italian: 'Servizio di firma artefatti Docker (Notary)',
               pronunciation: '/ˈnoʊtəri/',
               phonetic: 'NO-tari',
               example:
-                'Notary provides image trust for Docker. = Notary fornisce trust delle immagini per Docker.',
+                'Notary v2 uses OCI-native signatures stored alongside images in the registry, eliminating the need for a separate trust server. = Notary v2 usa firme native OCI memorizzate insieme alle immagini nel registry, eliminando la necessità di un server di trust separato.',
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'Notary',
@@ -4007,7 +4103,7 @@ export default {
               pronunciation: '/ˈkɒntent trʌst/',
               phonetic: 'KON-tent TRAST',
               example:
-                'Enable Docker Content Trust for verified pulls. = Abilita Docker Content Trust per pull verificati.',
+                'Setting DOCKER_CONTENT_TRUST=1 makes the Docker CLI refuse to pull or run any image that has not been signed by a trusted publisher. = Impostare DOCKER_CONTENT_TRUST=1 fa sì che il CLI Docker rifiuti di pullare o eseguire qualsiasi immagine non firmata da un publisher fidato.',
               context: 'registry',
               difficulty: 'intermediate',
               command: 'export DOCKER_CONTENT_TRUST=1',
@@ -4018,7 +4114,7 @@ export default {
               pronunciation: '/es biː oʊ em/',
               phonetic: 'es-bi-ou-EM',
               example:
-                'An SBOM lists all software components. = Un SBOM elenca tutti i componenti software.',
+                'Generating an SBOM for every release lets the security team quickly check if any deployed image contains a library affected by a new CVE. = Generare un SBOM per ogni release permette al team di sicurezza di verificare rapidamente se qualche immagine deployata contiene una libreria affetta da una nuova CVE.',
               context: 'registry',
               difficulty: 'intermediate',
               command: 'syft myimage:1.0 -o spdx-json > sbom.json',
@@ -4029,7 +4125,7 @@ export default {
               pronunciation: '/ˈprɒvənəns/',
               phonetic: 'PRO-ve-nans',
               example:
-                "Provenance proves how an image was built. = La provenance prova come è stata costruita l'immagine.",
+                "SLSA provenance attestations record which source repo, commit, and build system produced the image, enabling full supply chain verification. = Le attestazioni di provenance SLSA registrano quale repo sorgente, commit e sistema di build ha prodotto l'immagine, abilitando la verifica completa della supply chain.",
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'SLSA',
@@ -4040,7 +4136,7 @@ export default {
               pronunciation: '/ˈsɪɡnətʃər/',
               phonetic: 'SIG-na-cer',
               example:
-                'Verify image signatures before deploy. = Verifica le firme delle immagini prima del deploy.',
+                'The Kubernetes admission webhook runs cosign verify against every image and blocks the pod if the signature does not match the trusted key. = Il webhook di ammissione Kubernetes esegue cosign verify su ogni immagine e blocca il pod se la firma non corrisponde alla chiave fidata.',
               context: 'registry',
               difficulty: 'intermediate',
               command: 'cosign verify --key cosign.pub myimage:1.0',
@@ -4051,7 +4147,7 @@ export default {
               pronunciation: '/ˈpʌblɪk kiː/',
               phonetic: 'PA-blik KII',
               example:
-                'Distribute the public key for verification. = Distribuisci la chiave pubblica per la verifica.',
+                "The signing public key is stored in a ConfigMap so every cluster can independently verify image signatures at admission time. = La chiave pubblica di firma è memorizzata in un ConfigMap così ogni cluster può verificare indipendentemente le firme delle immagini al momento dell'ammissione.",
               context: 'registry',
               difficulty: 'intermediate',
             },
@@ -4061,7 +4157,7 @@ export default {
               pronunciation: '/ˈkiːlɪs/',
               phonetic: 'KII-lis',
               example:
-                'Cosign supports keyless signing via OIDC. = Cosign supporta la firma senza chiave via OIDC.',
+                'With keyless signing, the CI runner proves its identity through the OIDC provider and receives a short-lived certificate, removing the need to manage long-lived signing keys. = Con la firma senza chiave, il runner CI dimostra la propria identità tramite il provider OIDC e riceve un certificato a breve durata, eliminando la necessità di gestire chiavi di firma a lunga durata.',
               context: 'registry',
               difficulty: 'intermediate',
               note: 'Usa identità ephemeral da identity provider.',
@@ -4075,21 +4171,21 @@ export default {
           items: [
             {
               english: 'CI/CD',
-              italian: 'CI/CD (integrazione e deploy continui)',
+              italian: 'Integrazione e distribuzione continua (CI/CD)',
               pronunciation: '/siː aɪ siː diː/',
               phonetic: 'si-ai-si-DI',
               example:
-                'CI/CD pipelines build and deploy images. = Le pipeline CI/CD costruiscono e fanno deploy delle immagini.',
+                "Every merge to main triggers the CI/CD pipeline, which builds, scans, signs, and deploys the container image to staging within minutes. = Ogni merge su main attiva la pipeline CI/CD, che costruisce, scansiona, firma e deploya l'immagine container in staging in pochi minuti.",
               context: 'registry',
               difficulty: 'intermediate',
             },
             {
               english: 'GitHub Actions',
-              italian: 'GitHub Actions (automazione CI/CD GitHub)',
+              italian: 'Automazione CI/CD di GitHub (GitHub Actions)',
               pronunciation: '/ˈækʃənz/',
               phonetic: 'AK-scions',
               example:
-                'GitHub Actions can build Docker images. = GitHub Actions può costruire immagini Docker.',
+                "The docker/build-push-action in GitHub Actions caches layers with GitHub's built-in cache backend, cutting build times by over 60%. = La docker/build-push-action in GitHub Actions mette in cache i layer con il backend cache integrato di GitHub, riducendo i tempi di build di oltre il 60%.",
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'GitHub Actions',
@@ -4097,11 +4193,11 @@ export default {
             },
             {
               english: 'GitLab CI',
-              italian: 'GitLab CI (sistema CI di GitLab)',
+              italian: 'Sistema CI di GitLab (GitLab CI)',
               pronunciation: '/ˈɡɪtlæb siː aɪ/',
               phonetic: 'GIT-lab si-AI',
               example:
-                'GitLab CI integrates Docker natively. = GitLab CI integra Docker nativamente.',
+                'GitLab CI runners mount the Docker socket or use Kaniko to build images, then push them directly to the built-in GitLab Container Registry. = I runner GitLab CI montano il socket Docker o usano Kaniko per costruire immagini, poi le pushano direttamente al GitLab Container Registry integrato.',
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'GitLab CI',
@@ -4112,7 +4208,7 @@ export default {
               pronunciation: '/bɪld ˈpaɪplaɪn/',
               phonetic: 'BILD PAIP-lain',
               example:
-                'A build pipeline automates image builds. = Una pipeline di build automatizza la build delle immagini.',
+                "Our build pipeline runs lint, unit tests, builds the image, scans for vulnerabilities, and pushes to the registry, all triggered by a single git push. = La nostra pipeline di build esegue lint, test unitari, costruisce l'immagine, scansiona per vulnerabilità e pusha al registry, tutto attivato da un singolo git push.",
               context: 'registry',
               difficulty: 'intermediate',
             },
@@ -4122,18 +4218,18 @@ export default {
               pronunciation: '/ɪn/',
               phonetic: 'IN',
               example:
-                'Docker-in-Docker (DinD) runs Docker inside a container. = Docker-in-Docker (DinD) esegue Docker dentro un container.',
+                "Running Docker-in-Docker on CI requires the --privileged flag, which weakens isolation; many teams switch to Kaniko or bind-mount the host socket instead. = Eseguire Docker-in-Docker su CI richiede il flag --privileged, che indebolisce l'isolamento; molti team passano a Kaniko o montano il socket dell'host al suo posto.",
               context: 'registry',
               difficulty: 'intermediate',
               note: 'Spesso evitato per problemi di sicurezza, si preferisce kaniko.',
             },
             {
               english: 'Kaniko',
-              italian: 'Kaniko / build immagini in Kubernetes senza daemon',
+              italian: 'Builder di immagini container senza daemon (Kaniko)',
               pronunciation: '/kəˈniːkoʊ/',
               phonetic: 'ka-NI-ko',
               example:
-                'Kaniko builds images without the Docker daemon. = Kaniko costruisce immagini senza il daemon Docker.',
+                "Kaniko runs as an unprivileged pod inside Kubernetes, reading the Dockerfile and pushing the resulting image to the registry without needing a Docker daemon. = Kaniko gira come pod non privilegiato dentro Kubernetes, leggendo il Dockerfile e pushando l'immagine risultante al registry senza bisogno di un daemon Docker.",
               context: 'registry',
               difficulty: 'intermediate',
               tool: 'Kaniko',
@@ -4144,7 +4240,7 @@ export default {
               pronunciation: '/kæʃ/',
               phonetic: 'CASC',
               example:
-                'Pipeline caching speeds up image builds. = La cache di pipeline velocizza le build.',
+                "Storing Docker layer caches in the CI provider's object storage lets subsequent builds skip unchanged layers, cutting build time from 8 minutes to under 2. = Memorizzare le cache dei layer Docker nell'object storage del provider CI permette alle build successive di saltare i layer invariati, riducendo il tempo di build da 8 minuti a meno di 2.",
               context: 'registry',
               difficulty: 'intermediate',
               command: 'docker buildx build --cache-from type=gha --cache-to type=gha .',
@@ -4155,17 +4251,17 @@ export default {
               pronunciation: '/prəˈmoʊʃən/',
               phonetic: 'pro-MOU-scen',
               example:
-                'Promote tested images across environments. = Promuovi immagini testate tra ambienti.',
+                "The pipeline re-tags the staging image with the production label and copies it to the prod registry, ensuring the exact same binary runs in production. = La pipeline ri-tagga l'immagine di staging con il label di produzione e la copia al registry prod, assicurando che lo stesso identico binario giri in produzione.",
               context: 'registry',
               difficulty: 'intermediate',
             },
             {
               english: 'Smoke Test',
-              italian: 'smoke test / test rapido di funzionamento',
+              italian: 'Test rapido di funzionamento (smoke test)',
               pronunciation: '/smoʊk test/',
               phonetic: 'SMOUK TEST',
               example:
-                'Run smoke tests on built images. = Esegui smoke test sulle immagini costruite.',
+                "After building the image, the pipeline spins up a container and hits the /health endpoint to verify the application starts correctly before pushing to the registry. = Dopo aver costruito l'immagine, la pipeline avvia un container e chiama l'endpoint /health per verificare che l'applicazione parta correttamente prima di pushare al registry.",
               context: 'registry',
               difficulty: 'intermediate',
             },
@@ -4174,7 +4270,8 @@ export default {
               italian: 'Artefatto',
               pronunciation: '/ˈɑːrtɪfækt/',
               phonetic: 'AR-ti-fakt',
-              example: "A built image is a CI artifact. = Un'immagine costruita è un artefatto CI.",
+              example:
+                "The CI pipeline produces several artifacts: the container image, an SBOM, a provenance attestation, and a test report, all stored alongside the build record. = La pipeline CI produce diversi artefatti: l'immagine container, un SBOM, un'attestazione di provenance e un report dei test, tutti memorizzati insieme al record di build.",
               context: 'registry',
               difficulty: 'intermediate',
             },
@@ -4200,7 +4297,7 @@ export default {
               pronunciation: '/ˈruːtlɪs/',
               phonetic: 'RUT-lis',
               example:
-                'Rootless mode runs Docker without root. = La modalità rootless esegue Docker senza root.',
+                "Running the Docker daemon in rootless mode means that even if an attacker escapes the container, they land as an unprivileged user on the host. = Eseguire il daemon Docker in modalità rootless significa che anche se un attaccante evade dal container, atterra come utente non privilegiato sull'host.",
               context: 'security',
               difficulty: 'intermediate',
               command: 'dockerd-rootless.sh',
@@ -4211,7 +4308,7 @@ export default {
               pronunciation: '/ˈprɪvəlɪdʒd/',
               phonetic: 'PRI-ve-ligd',
               example:
-                "Privileged containers have full host access. = I container privilegiati hanno accesso completo all'host.",
+                "A privileged container can load kernel modules and access all host devices, so security teams flag any Deployment using --privileged for immediate review. = Un container privilegiato può caricare moduli del kernel e accedere a tutti i dispositivi dell'host, quindi i team di sicurezza segnalano ogni Deployment che usa --privileged per revisione immediata.",
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --privileged ubuntu',
@@ -4223,7 +4320,7 @@ export default {
               pronunciation: '/kæp æd/',
               phonetic: 'KAP-AD',
               example:
-                'Add a specific Linux capability. = Aggiungi una capability Linux specifica.',
+                "Instead of running privileged, add only the NET_ADMIN capability so the container can configure network interfaces without gaining full host access. = Invece di eseguire privilegiato, aggiungi solo la capability NET_ADMIN così il container può configurare interfacce di rete senza ottenere accesso completo all'host.",
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --cap-add NET_ADMIN nginx',
@@ -4233,7 +4330,8 @@ export default {
               italian: 'Rimuovi capability',
               pronunciation: '/kæp drɒp/',
               phonetic: 'KAP-DROP',
-              example: 'Drop unneeded capabilities. = Rimuovi capability non necessarie.',
+              example:
+                'Dropping ALL capabilities and adding back only NET_BIND_SERVICE lets the web server bind to port 80 while blocking every other privileged operation. = Droppare TUTTE le capability e riaggiunggere solo NET_BIND_SERVICE permette al web server di fare bind alla porta 80 bloccando ogni altra operazione privilegiata.',
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --cap-drop ALL --cap-add NET_BIND_SERVICE nginx',
@@ -4244,7 +4342,7 @@ export default {
               pronunciation: '/ˌkeɪpəˈbɪlətiz/',
               phonetic: 'kei-pa-BI-li-tiz',
               example:
-                'Linux capabilities split root privileges. = Le capability Linux suddividono i privilegi di root.',
+                'Rather than granting full root access, Linux capabilities break privileges into granular units like CHOWN, NET_ADMIN, and SYS_PTRACE that can be assigned individually. = Piuttosto che concedere accesso root completo, le capability Linux suddividono i privilegi in unità granulari come CHOWN, NET_ADMIN e SYS_PTRACE assegnabili individualmente.',
               context: 'security',
               difficulty: 'intermediate',
               note: 'Esempi: CHOWN, NET_ADMIN, SYS_ADMIN.',
@@ -4255,7 +4353,7 @@ export default {
               pronunciation: '/noʊ njuː ˈprɪvəlɪdʒɪz/',
               phonetic: 'NOU NIU PRI-ve-li-giz',
               example:
-                "Prevent privilege escalation with --security-opt. = Previeni l'escalation con --security-opt.",
+                'Setting no-new-privileges prevents a process inside the container from gaining additional privileges through setuid binaries or capability inheritance. = Impostare no-new-privileges impedisce a un processo dentro il container di acquisire privilegi aggiuntivi tramite binari setuid o ereditarietà delle capability.',
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --security-opt no-new-privileges nginx',
@@ -4266,7 +4364,7 @@ export default {
               pronunciation: '/ˈjuːzər ˈneɪmspeɪs/',
               phonetic: 'IU-zer NEIM-speis',
               example:
-                "User namespaces remap UIDs for isolation. = I namespace utente rimappano gli UID per l'isolamento.",
+                "With user namespaces enabled, the root user inside the container maps to an unprivileged UID on the host, so a breakout still lands without any real permissions. = Con i namespace utente abilitati, l'utente root dentro il container mappa a un UID non privilegiato sull'host, quindi un'evasione atterra comunque senza permessi reali.",
               context: 'security',
               difficulty: 'intermediate',
               note: "Container UID 0 è mappato a UID non-root sull'host.",
@@ -4277,7 +4375,7 @@ export default {
               pronunciation: '/juː aɪ diː riːˈmæpɪŋ/',
               phonetic: 'iu-ai-DI ri-MA-ping',
               example:
-                'UID remapping increases security. = La rimappatura UID aumenta la sicurezza.',
+                "Configuring the Docker daemon with userns-remap shifts container UIDs into a high range on the host, preventing them from accessing host files owned by real users. = Configurare il daemon Docker con userns-remap sposta gli UID del container in un range alto sull'host, impedendo l'accesso a file dell'host di proprietà di utenti reali.",
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4286,7 +4384,8 @@ export default {
               italian: 'Filesystem in sola lettura',
               pronunciation: '/red ˈoʊnli/',
               phonetic: 'RED ON-li',
-              example: 'Run with --read-only filesystem. = Esegui con filesystem --read-only.',
+              example:
+                'Mounting the container filesystem as read-only prevents malware from writing persistence mechanisms; temporary data goes to an explicit tmpfs mount. = Montare il filesystem del container in sola lettura impedisce al malware di scrivere meccanismi di persistenza; i dati temporanei vanno su un mount tmpfs esplicito.',
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --read-only nginx',
@@ -4297,7 +4396,7 @@ export default {
               pronunciation: '/liːst ˈprɪvəlɪdʒ/',
               phonetic: 'LIIST PRI-ve-lig',
               example:
-                'Apply the least privilege principle. = Applica il principio del privilegio minimo.',
+                'Applying least privilege means dropping all capabilities, running as non-root, mounting the filesystem read-only, and enabling no-new-privileges all at once. = Applicare il privilegio minimo significa droppare tutte le capability, eseguire come non-root, montare il filesystem in sola lettura e abilitare no-new-privileges tutto insieme.',
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4310,11 +4409,11 @@ export default {
           items: [
             {
               english: 'Seccomp',
-              italian: 'seccomp / filtro syscall Linux',
+              italian: 'Filtro syscall Linux (seccomp)',
               pronunciation: '/ˈsekkɒmp/',
               phonetic: 'SEK-komp',
               example:
-                'Seccomp filters allowed system calls. = Seccomp filtra le syscall consentite.',
+                "Docker's default seccomp profile blocks around 44 dangerous syscalls including ptrace and reboot, significantly reducing the kernel attack surface. = Il profilo seccomp di default di Docker blocca circa 44 syscall pericolose incluse ptrace e reboot, riducendo significativamente la superficie d'attacco del kernel.",
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --security-opt seccomp=profile.json nginx',
@@ -4325,18 +4424,18 @@ export default {
               pronunciation: '/ˈproʊfaɪl/',
               phonetic: 'PRO-fail',
               example:
-                'Custom seccomp profiles restrict syscalls. = Profili seccomp personalizzati limitano le syscall.',
+                "We generated a custom seccomp profile by tracing the application's actual syscall usage, then blocking everything else to create a tight allowlist. = Abbiamo generato un profilo seccomp personalizzato tracciando l'uso effettivo delle syscall dell'applicazione, poi bloccando tutto il resto per creare una allowlist stretta.",
               context: 'security',
               difficulty: 'intermediate',
               note: 'Docker include un profilo di default ragionevole.',
             },
             {
               english: 'AppArmor',
-              italian: 'AppArmor (LSM Linux a profili)',
+              italian: 'Modulo di sicurezza Linux a profili (AppArmor)',
               pronunciation: '/æp ɑːrmər/',
               phonetic: 'AP-AR-mor',
               example:
-                'AppArmor enforces security policies. = AppArmor applica politiche di sicurezza.',
+                "The AppArmor profile for our container restricts file access to /app and /tmp only, preventing the process from reading sensitive host paths even if other isolation layers fail. = Il profilo AppArmor per il nostro container limita l'accesso ai file solo a /app e /tmp, impedendo al processo di leggere path sensibili dell'host anche se altri livelli di isolamento falliscono.",
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --security-opt apparmor=docker-default nginx',
@@ -4344,22 +4443,22 @@ export default {
             },
             {
               english: 'SELinux',
-              italian: 'SELinux / Security-Enhanced Linux',
+              italian: 'Linux con sicurezza avanzata (SELinux)',
               pronunciation: '/sel ˈlɪnʊks/',
               phonetic: 'SEL-LI-nuks',
               example:
-                'SELinux provides mandatory access control. = SELinux fornisce controllo accessi obbligatorio.',
+                "On RHEL-based hosts, SELinux labels container processes so they cannot access host files even if an attacker gets root inside the container. = Su host basati su RHEL, SELinux etichetta i processi container così non possono accedere a file dell'host anche se un attaccante ottiene root dentro il container.",
               context: 'security',
               difficulty: 'intermediate',
               tool: 'SELinux',
             },
             {
               english: 'MAC',
-              italian: 'MAC / Mandatory Access Control',
+              italian: 'Controllo di accesso obbligatorio (MAC)',
               pronunciation: '/mæk/',
               phonetic: 'MAK',
               example:
-                'MAC restricts what processes can do. = MAC limita ciò che i processi possono fare.',
+                'Unlike discretionary access control, mandatory access control policies are enforced by the kernel and cannot be overridden by the process owner, adding a critical defense layer to containers. = A differenza del controllo di accesso discrezionale, le politiche di controllo di accesso obbligatorio sono applicate dal kernel e non possono essere sovrascritte dal proprietario del processo, aggiungendo un livello di difesa critico ai container.',
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4369,7 +4468,7 @@ export default {
               pronunciation: '/ˈsɪskɔːl/',
               phonetic: 'SIS-kol',
               example:
-                'A syscall is a request to the kernel. = Una syscall è una richiesta al kernel.',
+                "Every container operation, from opening a file to creating a network socket, ultimately becomes a syscall that seccomp profiles can intercept and block. = Ogni operazione del container, dall'apertura di un file alla creazione di un socket di rete, diventa in definitiva una syscall che i profili seccomp possono intercettare e bloccare.",
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4379,7 +4478,7 @@ export default {
               pronunciation: '/ʌnkənˈfaɪnd/',
               phonetic: 'an-con-FAIND',
               example:
-                'unconfined disables a security profile. = unconfined disabilita un profilo di sicurezza.',
+                "Running a container with seccomp=unconfined during debugging lets you trace which syscalls the app actually needs, but it must never be used in production. = Eseguire un container con seccomp=unconfined durante il debug permette di tracciare quali syscall l'app necessita realmente, ma non deve mai essere usato in produzione.",
               context: 'security',
               difficulty: 'intermediate',
               command: 'docker run --security-opt seccomp=unconfined nginx',
@@ -4391,7 +4490,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt/',
               phonetic: 'di-FOLT',
               example:
-                'Docker uses a default seccomp profile. = Docker usa un profilo seccomp di default.',
+                "Docker's default seccomp profile is a good starting point that blocks dangerous syscalls like reboot, mount, and kexec while allowing the vast majority of normal application operations. = Il profilo seccomp di default di Docker è un buon punto di partenza che blocca syscall pericolose come reboot, mount e kexec permettendo la grande maggioranza delle operazioni normali dell'applicazione.",
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4401,7 +4500,7 @@ export default {
               pronunciation: '/ˈwaɪtlɪst/',
               phonetic: 'UAIT-list',
               example:
-                'A whitelist allows only specific syscalls. = Una whitelist permette solo syscall specifiche.',
+                'Building a seccomp allowlist that only permits the 50 syscalls your application actually uses blocks hundreds of others that attackers could exploit. = Costruire una allowlist seccomp che permette solo le 50 syscall effettivamente usate dalla tua applicazione blocca centinaia di altre che gli attaccanti potrebbero sfruttare.',
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4411,7 +4510,7 @@ export default {
               pronunciation: '/ˈkɜːrnl ˈhɑːrdənɪŋ/',
               phonetic: 'KER-nl HAR-de-ning',
               example:
-                "Kernel hardening reduces attack surface. = L'hardening del kernel riduce la superficie d'attacco.",
+                'Combining seccomp, AppArmor, user namespaces, and read-only root filesystem creates a layered kernel hardening strategy where each layer compensates if another is bypassed. = Combinare seccomp, AppArmor, namespace utente e filesystem root in sola lettura crea una strategia di hardening del kernel a strati dove ogni livello compensa se un altro viene bypassato.',
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4428,7 +4527,7 @@ export default {
               pronunciation: '/ˈskænɪŋ/',
               phonetic: 'SKA-ning',
               example:
-                'Scan images for vulnerabilities. = Scansiona le immagini per vulnerabilità.',
+                'The CI pipeline automatically scans every built image for known CVEs and blocks the push if any critical vulnerability is found. = La pipeline CI scansiona automaticamente ogni immagine costruita per CVE note e blocca il push se viene trovata qualsiasi vulnerabilità critica.',
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4438,7 +4537,7 @@ export default {
               pronunciation: '/ˈtrɪvi/',
               phonetic: 'TRI-vi',
               example:
-                'Trivy is a popular vulnerability scanner. = Trivy è uno scanner di vulnerabilità popolare.',
+                "Running trivy image before each deployment catches OS package and language library vulnerabilities, outputting results in SARIF format for GitHub Security integration. = Eseguire trivy image prima di ogni deployment cattura vulnerabilità di pacchetti OS e librerie di linguaggio, producendo risultati in formato SARIF per l'integrazione con GitHub Security.",
               context: 'security',
               difficulty: 'intermediate',
               tool: 'Trivy',
@@ -4450,7 +4549,7 @@ export default {
               pronunciation: '/snɪk/',
               phonetic: 'SNIK',
               example:
-                'Snyk detects vulnerabilities in containers. = Snyk rileva vulnerabilità nei container.',
+                'Snyk monitors our deployed container images continuously and opens a pull request with the fix when a new vulnerability is disclosed for any included package. = Snyk monitora le nostre immagini container deployate continuamente e apre una pull request con la fix quando viene resa pubblica una nuova vulnerabilità per qualsiasi pacchetto incluso.',
               context: 'security',
               difficulty: 'intermediate',
               tool: 'Snyk',
@@ -4462,7 +4561,7 @@ export default {
               pronunciation: '/ɡraɪp/',
               phonetic: 'GRAIP',
               example:
-                'Grype is an open source scanner from Anchore. = Grype è uno scanner open source di Anchore.',
+                "Grype pairs with Syft for SBOM generation: Syft creates the software inventory and Grype matches it against vulnerability databases for fast offline scanning. = Grype si accoppia con Syft per la generazione SBOM: Syft crea l'inventario software e Grype lo confronta con i database di vulnerabilità per scansioni offline veloci.",
               context: 'security',
               difficulty: 'intermediate',
               tool: 'Grype',
@@ -4470,11 +4569,11 @@ export default {
             },
             {
               english: 'CVE',
-              italian: 'CVE / Common Vulnerabilities and Exposures',
+              italian: 'Vulnerabilità ed esposizioni comuni (CVE)',
               pronunciation: '/siː viː iː/',
               phonetic: 'si-vi-I',
               example:
-                'A CVE identifies a specific vulnerability. = Un CVE identifica una vulnerabilità specifica.',
+                'When CVE-2024-3094 hit the xz library, teams scanned all container images to check which ones bundled the affected version and prioritized patching accordingly. = Quando CVE-2024-3094 ha colpito la libreria xz, i team hanno scansionato tutte le immagini container per verificare quali includevano la versione affetta e dare priorità al patching di conseguenza.',
               context: 'security',
               difficulty: 'intermediate',
               note: 'Formato: CVE-2024-12345.',
@@ -4485,7 +4584,7 @@ export default {
               pronunciation: '/səˈverəti/',
               phonetic: 'se-VE-re-ti',
               example:
-                'Filter scan results by severity. = Filtra i risultati di scansione per gravità.',
+                'Our policy gates deployments on HIGH and CRITICAL severity findings while allowing LOW and MEDIUM to be tracked as tech debt. = La nostra policy blocca i deployment su findings di severità HIGH e CRITICAL permettendo che LOW e MEDIUM vengano tracciati come debito tecnico.',
               context: 'security',
               difficulty: 'intermediate',
               command: 'trivy image --severity HIGH,CRITICAL myapp',
@@ -4496,7 +4595,7 @@ export default {
               pronunciation: '/ˌvʌlnərəˈbɪlətiz/',
               phonetic: 'val-ne-ra-BI-li-tiz',
               example:
-                'Many vulnerabilities come from base images. = Molte vulnerabilità vengono dalle immagini base.',
+                "Switching from ubuntu:22.04 to the distroless base image reduced our vulnerability count from 127 to 3, since most CVEs came from unused OS packages. = Passare da ubuntu:22.04 all'immagine base distroless ha ridotto il nostro conteggio di vulnerabilità da 127 a 3, poiché la maggior parte delle CVE veniva da pacchetti OS inutilizzati.",
               context: 'security',
               difficulty: 'intermediate',
               note: 'Aggiornare base image regolarmente.',
@@ -4507,7 +4606,7 @@ export default {
               pronunciation: '/pætʃ/',
               phonetic: 'PAC',
               example:
-                'Patch management keeps images secure. = La gestione patch mantiene le immagini sicure.',
+                'Our automated patch management pipeline rebuilds all images weekly against updated base images, ensuring security fixes reach production within days of release. = La nostra pipeline di gestione patch automatizzata ricostruisce tutte le immagini settimanalmente contro immagini base aggiornate, assicurando che le fix di sicurezza raggiungano la produzione entro giorni dal rilascio.',
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4517,7 +4616,7 @@ export default {
               pronunciation: '/ˈdætəbeɪs/',
               phonetic: 'DA-ta-beis',
               example:
-                'Scanners use a vulnerability database. = Gli scanner usano un database di vulnerabilità.',
+                'Trivy downloads its vulnerability database from NVD and distribution-specific advisories, so keeping it updated daily ensures newly disclosed CVEs are caught immediately. = Trivy scarica il suo database di vulnerabilità da NVD e advisory specifici delle distribuzioni, quindi mantenerlo aggiornato quotidianamente assicura che le CVE appena rese pubbliche vengano catturate immediatamente.',
               context: 'security',
               difficulty: 'intermediate',
               note: 'Aggiornata da fonti come NVD e CISA.',
@@ -4528,7 +4627,7 @@ export default {
               pronunciation: '/fɔːls ˈpɒzətɪv/',
               phonetic: 'FOLS PO-ze-tiv',
               example:
-                'Some scan results are false positives. = Alcuni risultati di scansione sono falsi positivi.',
+                "After triaging the scan output, we added a .trivyignore file for the three confirmed false positives to prevent them from blocking future pipelines. = Dopo aver triagato l'output della scansione, abbiamo aggiunto un file .trivyignore per i tre falsi positivi confermati per impedire che blocchino le pipeline future.",
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4545,7 +4644,7 @@ export default {
               pronunciation: '/ˈfɑːlkoʊ/',
               phonetic: 'FAL-ko',
               example:
-                'Falco detects suspicious container behavior. = Falco rileva comportamenti sospetti nei container.',
+                'Falco fired an alert when a container spawned an interactive shell at 3 AM, which turned out to be an attacker who had exploited a vulnerable dependency. = Falco ha lanciato un alert quando un container ha avviato una shell interattiva alle 3 di notte, che si è rivelata essere un attaccante che aveva sfruttato una dipendenza vulnerabile.',
               context: 'security',
               difficulty: 'intermediate',
               tool: 'Falco',
@@ -4556,7 +4655,7 @@ export default {
               pronunciation: '/θret dɪˈtekʃən/',
               phonetic: 'TRET di-TEK-scen',
               example:
-                'Runtime threat detection alerts on attacks. = Il rilevamento minacce a runtime allerta su attacchi.',
+                "Runtime threat detection spotted a cryptocurrency miner within seconds of it starting, triggering an automatic pod termination and incident ticket. = Il rilevamento minacce a runtime ha individuato un miner di criptovalute entro secondi dal suo avvio, attivando una terminazione automatica del pod e un ticket d'incidente.",
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4566,7 +4665,7 @@ export default {
               pronunciation: '/əˈnɒməli/',
               phonetic: 'a-NO-ma-li',
               example:
-                'Anomaly detection finds unusual behavior. = Il rilevamento anomalie trova comportamenti inusuali.',
+                'The anomaly detection system flagged a container making outbound DNS queries to domains it had never contacted before, revealing a data exfiltration attempt. = Il sistema di rilevamento anomalie ha segnalato un container che faceva query DNS in uscita verso domini mai contattati prima, rivelando un tentativo di esfiltrazione dati.',
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4576,7 +4675,7 @@ export default {
               pronunciation: '/ˈɔːdɪt/',
               phonetic: 'O-dit',
               example:
-                'Audit logs track container actions. = I log di audit tracciano le azioni dei container.',
+                "Kubernetes audit logs recorded which user created the privileged pod, giving the forensics team the exact timestamp and identity needed for the investigation. = I log di audit di Kubernetes hanno registrato quale utente ha creato il pod privilegiato, fornendo al team di forensics il timestamp esatto e l'identità necessaria per l'indagine.",
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4586,7 +4685,7 @@ export default {
               pronunciation: '/ɪˈskeɪp/',
               phonetic: 'i-SKEIP',
               example:
-                "A container escape breaks out of isolation. = Un container escape esce dall'isolamento.",
+                'The CVE-2019-5736 container escape exploited a flaw in runc to overwrite the host binary, which is why keeping the container runtime patched is critical. = La container escape CVE-2019-5736 sfruttava un difetto in runc per sovrascrivere il binario host, motivo per cui mantenere il runtime container aggiornato è fondamentale.',
               context: 'security',
               difficulty: 'intermediate',
               note: 'Vulnerabilità storica: CVE-2019-5736.',
@@ -4597,7 +4696,7 @@ export default {
               pronunciation: '/səˈplaɪ tʃeɪn/',
               phonetic: 'sa-PLAI CEIN',
               example:
-                'Supply chain attacks target the build pipeline. = Gli attacchi supply chain prendono di mira la pipeline.',
+                "A compromised upstream image in Docker Hub injected a backdoor into thousands of downstream projects, highlighting why verifying image provenance and signatures is essential. = Un'immagine upstream compromessa su Docker Hub ha iniettato una backdoor in migliaia di progetti downstream, evidenziando perché verificare provenienza e firme delle immagini è essenziale.",
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4607,7 +4706,7 @@ export default {
               pronunciation: '/ˈprɒvənəns/',
               phonetic: 'PRO-ve-nans',
               example:
-                "Verify image provenance with attestations. = Verifica la provenienza dell'immagine con attestazioni.",
+                "SLSA attestations let our admission controller verify that an image was built by our trusted CI system from our source repo, rejecting anything built elsewhere. = Le attestazioni SLSA permettono al nostro admission controller di verificare che un'immagine sia stata costruita dal nostro sistema CI fidato dal nostro repo sorgente, rifiutando qualsiasi cosa costruita altrove.",
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -4617,28 +4716,28 @@ export default {
               pronunciation: '/ədˈmɪʃən/',
               phonetic: 'ad-MI-scion',
               example:
-                'Admission controllers validate deployments. = I controller di ammissione validano i deploy.',
+                'Our OPA Gatekeeper admission controller enforces policies like no-privileged-containers and must-have-resource-limits, rejecting any manifest that violates them. = Il nostro admission controller OPA Gatekeeper applica policy come no-privileged-containers e must-have-resource-limits, rifiutando qualsiasi manifesto che le viola.',
               context: 'security',
               difficulty: 'intermediate',
             },
             {
               english: 'eBPF',
-              italian: 'eBPF / extended Berkeley Packet Filter',
+              italian: 'Filtro di pacchetti esteso di Berkeley (eBPF)',
               pronunciation: '/iː biː piː ef/',
               phonetic: 'i-bi-pi-EF',
               example:
-                'eBPF enables efficient kernel-level monitoring. = eBPF abilita monitoring efficiente a livello kernel.',
+                'eBPF programs run sandboxed inside the kernel, giving security tools like Falco and Cilium deep visibility into syscalls and network traffic without any application code changes. = I programmi eBPF girano sandboxed dentro il kernel, dando a strumenti di sicurezza come Falco e Cilium visibilità profonda su syscall e traffico di rete senza modifiche al codice applicativo.',
               context: 'security',
               difficulty: 'intermediate',
               tool: 'eBPF',
             },
             {
               english: 'Tetragon',
-              italian: 'Tetragon / observability di sicurezza eBPF',
+              italian: 'Observability di sicurezza basata su eBPF (Tetragon)',
               pronunciation: '/ˈtetrəɡɒn/',
               phonetic: 'TE-tra-gon',
               example:
-                'Tetragon uses eBPF for runtime security. = Tetragon usa eBPF per sicurezza runtime.',
+                "Tetragon traces process execution, file access, and network connections at the kernel level using eBPF, providing real-time enforcement of security policies without sidecar containers. = Tetragon traccia l'esecuzione dei processi, l'accesso ai file e le connessioni di rete a livello kernel usando eBPF, fornendo enforcement in tempo reale delle policy di sicurezza senza container sidecar.",
               context: 'security',
               difficulty: 'intermediate',
               tool: 'Tetragon',
@@ -4665,7 +4764,7 @@ export default {
               pronunciation: '/ˌkuːbərˈnetiːz/',
               phonetic: 'kiu-ber-NE-tis',
               example:
-                'Kubernetes orchestrates containers at scale. = Kubernetes orchestra container su larga scala.',
+                'When our traffic spiked during Black Friday, Kubernetes automatically scaled our microservices from 5 to 50 replicas and balanced traffic across them. = Quando il nostro traffico è esploso durante il Black Friday, Kubernetes ha scalato automaticamente i nostri microservizi da 5 a 50 repliche e bilanciato il traffico tra di esse.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               tool: 'Kubernetes',
@@ -4673,20 +4772,21 @@ export default {
             },
             {
               english: 'K8s',
-              italian: 'K8s / abbreviazione di Kubernetes',
+              italian: 'Abbreviazione di Kubernetes (K8s)',
               pronunciation: '/keɪ eɪts/',
               phonetic: 'kei-EITS',
-              example: "K8s is short for Kubernetes. = K8s è l'abbreviazione di Kubernetes.",
+              example:
+                "The numeronym K8s follows the same pattern as i18n for internationalization: the first letter, last letter, and a digit for the count of letters in between. = Il numeronimo K8s segue lo stesso schema di i18n per internationalization: la prima lettera, l'ultima, e una cifra per il conteggio delle lettere intermedie.",
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
             {
               english: 'Cluster',
-              italian: 'cluster / gruppo di nodi',
+              italian: 'Gruppo di nodi (cluster)',
               pronunciation: '/ˈklʌstər/',
               phonetic: 'KLAS-ter',
               example:
-                'A K8s cluster runs containerized workloads. = Un cluster K8s esegue carichi di lavoro containerizzati.',
+                "Our production cluster spans three availability zones with 20 worker nodes, ensuring the application stays up even if an entire data center goes offline. = Il nostro cluster di produzione si estende su tre zone di disponibilità con 20 nodi worker, assicurando che l'applicazione resti attiva anche se un intero data center va offline.",
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
@@ -4695,7 +4795,8 @@ export default {
               italian: 'Nodo',
               pronunciation: '/noʊd/',
               phonetic: 'NOUD',
-              example: 'A node is a machine in the cluster. = Un nodo è una macchina nel cluster.',
+              example:
+                "Each node in our cluster runs kubelet, kube-proxy, and containerd, providing the foundation for scheduling and running pods. = Ogni nodo nel nostro cluster esegue kubelet, kube-proxy e containerd, fornendo la base per la schedulazione e l'esecuzione dei pod.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl get nodes',
@@ -4706,7 +4807,7 @@ export default {
               pronunciation: '/kənˈtroʊl pleɪn/',
               phonetic: 'con-TROUL PLEIN',
               example:
-                'The control plane manages the cluster. = Il control plane gestisce il cluster.',
+                'The control plane components, including the API server, scheduler, and controller manager, make all the decisions about where pods run and how the cluster self-heals. = I componenti del control plane, inclusi API server, scheduler e controller manager, prendono tutte le decisioni su dove girano i pod e come il cluster si auto-ripara.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               note: 'Anche detto "master" nelle versioni precedenti.',
@@ -4717,7 +4818,7 @@ export default {
               pronunciation: '/ˈwɜːrkər/',
               phonetic: 'UER-ker',
               example:
-                'Worker nodes run application pods. = I nodi worker eseguono i pod applicativi.',
+                "We added two more worker nodes to the cluster when CPU utilization consistently exceeded 80%, giving the scheduler more room to place new pods. = Abbiamo aggiunto due nodi worker al cluster quando l'utilizzo CPU superava costantemente l'80%, dando allo scheduler più spazio per posizionare nuovi pod.",
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
@@ -4727,7 +4828,7 @@ export default {
               pronunciation: '/ˈmɑːstər/',
               phonetic: 'MA-ster',
               example:
-                'Master nodes host the control plane. = I nodi master ospitano il control plane.',
+                "In a highly available setup, three control plane nodes each run their own instance of the API server and etcd, with traffic load-balanced among them. = In una configurazione ad alta disponibilità, tre nodi control plane eseguono ciascuno la propria istanza dell'API server ed etcd, con traffico bilanciato tra di essi.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               note: 'Terminologia legacy: oggi si dice "control plane node".',
@@ -4738,7 +4839,7 @@ export default {
               pronunciation: '/ˌɔːrkɪˈstreɪʃən/',
               phonetic: 'or-ke-STREI-scen',
               example:
-                'Kubernetes provides container orchestration. = Kubernetes fornisce orchestrazione di container.',
+                "Container orchestration handles scheduling, scaling, load balancing, and self-healing across hundreds of nodes, freeing teams from manual deployment tasks. = L'orchestrazione di container gestisce schedulazione, scaling, bilanciamento del carico e auto-riparazione su centinaia di nodi, liberando i team da task di deployment manuali.",
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
@@ -4748,7 +4849,7 @@ export default {
               pronunciation: '/dɪˈklærətɪv/',
               phonetic: 'di-KLA-ra-tiv',
               example:
-                'Kubernetes uses declarative configuration. = Kubernetes usa configurazione dichiarativa.',
+                'With declarative configuration, you define that you want 3 replicas of your web server and Kubernetes continuously ensures that exactly 3 are running, restarting any that fail. = Con la configurazione dichiarativa, definisci che vuoi 3 repliche del tuo web server e Kubernetes assicura continuamente che esattamente 3 siano in esecuzione, riavviando quelle che falliscono.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               note: 'Si descrive lo stato desiderato, non i passi.',
@@ -4759,7 +4860,7 @@ export default {
               pronunciation: '/dɪˈzaɪərd steɪt/',
               phonetic: 'di-ZAI-erd STEIT',
               example:
-                'K8s reconciles toward the desired state. = K8s riconcilia verso lo stato desiderato.',
+                'You declare the desired state in a YAML manifest and Kubernetes controllers continuously work to make the actual cluster state match it, even recovering from failures automatically. = Dichiari lo stato desiderato in un manifesto YAML e i controller Kubernetes lavorano continuamente per far corrispondere lo stato reale del cluster, anche recuperando automaticamente dai guasti.',
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
@@ -4772,20 +4873,22 @@ export default {
           items: [
             {
               english: 'kube-apiserver',
-              italian: 'kube-apiserver / API server di Kubernetes',
+              italian: 'API server di Kubernetes (kube-apiserver)',
               pronunciation: '/kjuːb eɪ piː ˈsɜːrvər/',
               phonetic: 'kiub-ei-pi-SER-ver',
-              example: "kube-apiserver exposes the K8s API. = kube-apiserver espone l'API di K8s.",
+              example:
+                "Every kubectl command, every controller, and every kubelet communicates through the API server, making it the central hub for all cluster operations. = Ogni comando kubectl, ogni controller e ogni kubelet comunica attraverso l'API server, rendendolo l'hub centrale per tutte le operazioni del cluster.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               note: 'Tutti i componenti comunicano via API server.',
             },
             {
               english: 'etcd',
-              italian: 'etcd / database chiave-valore distribuito di K8s',
+              italian: 'Database chiave-valore distribuito di K8s (etcd)',
               pronunciation: '/ˈetˌsiː diː/',
               phonetic: 'ET-si-DI',
-              example: 'etcd is the K8s key-value store. = etcd è il key-value store di K8s.',
+              example:
+                'All cluster state, including deployments, secrets, and config maps, is persisted in etcd, which is why regular backups of etcd are critical for disaster recovery. = Tutto lo stato del cluster, inclusi deployment, secret e config map, è persistito in etcd, motivo per cui backup regolari di etcd sono critici per il disaster recovery.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               tool: 'etcd',
@@ -4793,30 +4896,31 @@ export default {
             },
             {
               english: 'kube-scheduler',
-              italian: 'kube-scheduler / pianificatore di pod',
+              italian: 'Pianificatore di pod di Kubernetes (kube-scheduler)',
               pronunciation: '/ˈskedjuːlər/',
               phonetic: 'SKE-diu-ler',
-              example: 'The scheduler assigns pods to nodes. = Lo scheduler assegna i pod ai nodi.',
+              example:
+                'The scheduler evaluates resource requests, node affinity rules, and taints before placing a pod on the node that best fits its requirements. = Lo scheduler valuta richieste di risorse, regole di affinità dei nodi e taint prima di posizionare un pod sul nodo che meglio soddisfa i suoi requisiti.',
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
             {
               english: 'kube-controller-manager',
-              italian: 'kube-controller-manager / controller K8s',
+              italian: 'Gestore dei controller K8s (kube-controller-manager)',
               pronunciation: '/kənˈtroʊlər/',
               phonetic: 'con-TROU-ler',
               example:
-                'Controller manager runs control loops. = Controller manager esegue i loop di controllo.',
+                'The controller manager runs dozens of controllers like ReplicaSet, Job, and Node, each watching for drift between desired and actual state and taking corrective action. = Il controller manager esegue decine di controller come ReplicaSet, Job e Node, ognuno che controlla la deriva tra stato desiderato e reale e prende azioni correttive.',
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
             {
               english: 'cloud-controller-manager',
-              italian: 'cloud-controller-manager / controller cloud-specifici',
+              italian: 'Gestore controller specifici per il cloud (cloud-controller-manager)',
               pronunciation: '/klaʊd/',
               phonetic: 'KLAUD',
               example:
-                'Cloud controller integrates with cloud providers. = Cloud controller si integra con i provider cloud.',
+                'The cloud controller manager handles provider-specific logic like provisioning load balancers on AWS ELB or creating persistent disks on GCP when Kubernetes resources request them. = Il cloud controller manager gestisce logica specifica del provider come il provisioning di load balancer su AWS ELB o la creazione di dischi persistenti su GCP quando le risorse Kubernetes li richiedono.',
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
@@ -4826,17 +4930,17 @@ export default {
               pronunciation: '/ˈrekənsaɪl/',
               phonetic: 'RE-con-sail',
               example:
-                'Reconcile loops align actual state with desired. = I loop di riconciliazione allineano lo stato reale con il desiderato.',
+                'When a node crashes and takes down two pods, the reconcile loop detects the mismatch between desired replicas and running replicas, then schedules replacements on healthy nodes. = Quando un nodo crasha e porta giù due pod, il loop di riconciliazione rileva la discrepanza tra repliche desiderate e in esecuzione, poi schedula sostituti su nodi sani.',
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
             {
               english: 'API Server',
-              italian: 'API server / componente di accesso al cluster',
+              italian: 'Componente di accesso al cluster (API server)',
               pronunciation: '/eɪ piː aɪ ˈsɜːrvər/',
               phonetic: 'ei-pi-AI SER-ver',
               example:
-                "The API server is the cluster gateway. = L'API server è il gateway del cluster.",
+                "All requests to the cluster pass through the API server, which handles authentication, authorization via RBAC, admission control, and persists changes to etcd. = Tutte le richieste al cluster passano attraverso l'API server, che gestisce autenticazione, autorizzazione via RBAC, controllo di ammissione e persiste le modifiche su etcd.",
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
@@ -4846,18 +4950,18 @@ export default {
               pronunciation: '/haɪ əˌveɪləˈbɪlɪti/',
               phonetic: 'HAI a-vei-la-BI-li-ti',
               example:
-                'HA control planes have multiple master nodes. = I control plane HA hanno più nodi master.',
+                "Running three control plane nodes across different availability zones ensures the cluster keeps functioning even if one zone has an outage. = Eseguire tre nodi control plane in zone di disponibilità diverse assicura che il cluster continui a funzionare anche se una zona ha un'interruzione.'",
               context: 'kubernetes',
               difficulty: 'intermediate',
               note: 'Tipicamente 3 nodi master in produzione.',
             },
             {
               english: 'Quorum',
-              italian: 'quorum / soglia minima di nodi',
+              italian: 'Soglia minima di consenso (quorum)',
               pronunciation: '/ˈkwɔːrəm/',
               phonetic: 'KUO-rum',
               example:
-                'etcd needs a quorum for consistency. = etcd richiede un quorum per la consistenza.',
+                "With a 3-node etcd cluster, a quorum requires at least 2 nodes to agree, so losing one node still allows writes while losing two stops the cluster. = Con un cluster etcd a 3 nodi, il quorum richiede che almeno 2 nodi siano d'accordo, quindi perdere un nodo permette ancora le scritture mentre perderne due ferma il cluster.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               note: 'Minimo 3 nodi etcd, sempre numero dispari.',
@@ -4868,7 +4972,7 @@ export default {
               pronunciation: '/ˈliːdər ɪˈlekʃən/',
               phonetic: 'LI-der i-LEK-scen',
               example:
-                "Controllers use leader election for HA. = I controller usano l'elezione del leader per HA.",
+                "In a multi-master setup, only one controller manager instance is active at a time; the others wait as standby and take over instantly if the leader fails. = In un setup multi-master, solo un'istanza del controller manager è attiva alla volta; le altre attendono in standby e subentrano istantaneamente se il leader fallisce.",
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
@@ -4881,53 +4985,53 @@ export default {
           items: [
             {
               english: 'kubelet',
-              italian: 'kubelet / agente sui nodi di lavoro',
+              italian: 'Agente sui nodi di lavoro (kubelet)',
               pronunciation: '/ˈkjuːblet/',
               phonetic: 'KIU-blet',
               example:
-                'kubelet runs on every node and manages pods. = kubelet gira su ogni nodo e gestisce i pod.',
+                "The kubelet watches the API server for pod assignments, pulls the required container images, starts the containers, and reports health status back to the control plane. = Il kubelet controlla l'API server per le assegnazioni di pod, scarica le immagini container richieste, avvia i container e riporta lo stato di salute al control plane.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               note: "Comunica con l'API server e con il container runtime.",
             },
             {
               english: 'kube-proxy',
-              italian: 'kube-proxy / proxy di rete su ogni nodo',
+              italian: 'Proxy di rete su ogni nodo (kube-proxy)',
               pronunciation: '/ˈprɒksi/',
               phonetic: 'PROK-si',
               example:
-                'kube-proxy implements service networking. = kube-proxy implementa il networking dei service.',
+                'kube-proxy programs iptables or IPVS rules on each node so that when a pod sends traffic to a Service ClusterIP, the packet is routed to one of the healthy backend pods. = kube-proxy programma regole iptables o IPVS su ogni nodo così che quando un pod invia traffico a un ClusterIP di Service, il pacchetto viene instradato a uno dei pod backend sani.',
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
             {
               english: 'Container Runtime',
-              italian: 'container runtime / motore di esecuzione container',
+              italian: 'Motore di esecuzione container (container runtime)',
               pronunciation: '/kənˈteɪnər ˈrʌntaɪm/',
               phonetic: 'con-TEI-ner RAN-taim',
               example:
-                'The container runtime runs containers. = Il container runtime esegue i container.',
+                "Since Kubernetes 1.24 removed dockershim, clusters use containerd or CRI-O as the container runtime, both communicating with kubelet through the standard CRI interface. = Dalla versione 1.24 di Kubernetes che ha rimosso dockershim, i cluster usano containerd o CRI-O come container runtime, entrambi comunicando con kubelet attraverso l'interfaccia standard CRI.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               note: 'containerd, CRI-O o Docker engine.',
             },
             {
               english: 'CRI',
-              italian: 'CRI / Container Runtime Interface',
+              italian: 'Interfaccia per container runtime (CRI)',
               pronunciation: '/siː ɑːr aɪ/',
               phonetic: 'si-ar-AI',
               example:
-                "CRI is the K8s container runtime API. = CRI è l'API K8s per il container runtime.",
+                "The CRI standard allows Kubernetes to work with any container runtime that implements the interface, so you can switch from containerd to CRI-O without changing any workload manifests. = Lo standard CRI permette a Kubernetes di lavorare con qualsiasi container runtime che implementa l'interfaccia, così puoi passare da containerd a CRI-O senza modificare alcun manifesto dei workload.",
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
             {
               english: 'Pod',
-              italian: 'pod / unità minima di deployment K8s',
+              italian: 'Unità minima di deployment K8s (pod)',
               pronunciation: '/pɒd/',
               phonetic: 'POD',
               example:
-                'A pod is the smallest deployable unit. = Un pod è la più piccola unità deployabile.',
+                'A pod wraps one or more containers that share the same network namespace and storage volumes, like a sidecar proxy alongside your application container. = Un pod racchiude uno o più container che condividono lo stesso namespace di rete e volumi di storage, come un proxy sidecar accanto al tuo container applicativo.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl get pods',
@@ -4937,7 +5041,8 @@ export default {
               italian: 'Stato del nodo',
               pronunciation: '/ˈsteɪtəs/',
               phonetic: 'STEI-tus',
-              example: 'Node status: Ready or NotReady. = Stato del nodo: Ready o NotReady.',
+              example:
+                'When a node reports NotReady for more than five minutes, the controller manager marks its pods for rescheduling onto healthy nodes. = Quando un nodo riporta NotReady per più di cinque minuti, il controller manager segna i suoi pod per la rischedulazione su nodi sani.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl describe node my-node',
@@ -4948,7 +5053,7 @@ export default {
               pronunciation: '/noʊd pɔːrt/',
               phonetic: 'NOUD-PORT',
               example:
-                'Default NodePort range is 30000-32767. = Il range NodePort di default è 30000-32767.',
+                "Services exposed as NodePort allocate a port from the 30000-32767 range on every node, so external traffic can reach the service through any node IP at that port. = I Service esposti come NodePort allocano una porta dal range 30000-32767 su ogni nodo, così il traffico esterno può raggiungere il servizio tramite l'IP di qualsiasi nodo su quella porta.",
               context: 'kubernetes',
               difficulty: 'intermediate',
             },
@@ -4958,7 +5063,7 @@ export default {
               pronunciation: '/ˈkɔːrdən/',
               phonetic: 'KOR-don',
               example:
-                'Cordon a node to mark it unschedulable. = Marca un nodo come non schedulabile (cordon).',
+                'Before performing maintenance, cordon the node so the scheduler stops placing new pods on it while existing pods continue running undisturbed. = Prima di effettuare manutenzione, marca il nodo come non schedulabile così lo scheduler smette di posizionare nuovi pod su di esso mentre i pod esistenti continuano a girare indisturbati.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl cordon my-node',
@@ -4968,7 +5073,8 @@ export default {
               italian: 'Drena nodo',
               pronunciation: '/dreɪn/',
               phonetic: 'DREIN',
-              example: 'Drain a node to evict its pods. = Drena un nodo per evacuarne i pod.',
+              example:
+                'Draining the node gracefully evicts all pods, respecting PodDisruptionBudgets, so applications maintain their minimum replica count during kernel upgrades. = Drenare il nodo evacua gentilmente tutti i pod, rispettando i PodDisruptionBudget, così le applicazioni mantengono il conteggio minimo di repliche durante gli upgrade del kernel.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl drain my-node --ignore-daemonsets',
@@ -4979,7 +5085,7 @@ export default {
               pronunciation: '/ʌnˈkɔːrdən/',
               phonetic: 'an-KOR-don',
               example:
-                'Uncordon to allow scheduling again. = Riabilita lo scheduling con uncordon.',
+                "After the kernel upgrade completes, uncordon the node so the scheduler can place new pods on it again, gradually rebalancing the cluster workload. = Dopo il completamento dell'upgrade del kernel, riabilita il nodo così lo scheduler può posizionare nuovi pod su di esso, ribilanciando gradualmente il carico del cluster.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl uncordon my-node',
@@ -4993,10 +5099,11 @@ export default {
           items: [
             {
               english: 'kubectl',
-              italian: 'kubectl / CLI Kubernetes',
+              italian: 'Interfaccia a riga di comando di Kubernetes (kubectl)',
               pronunciation: '/ˈkjuːb kʌtl/',
               phonetic: 'kiub-KA-tl',
-              example: 'kubectl is the K8s CLI tool. = kubectl è il tool CLI di K8s.',
+              example:
+                'With kubectl, operators can deploy applications, inspect cluster resources, view logs, and execute commands inside running containers, all from the terminal. = Con kubectl, gli operatori possono deployare applicazioni, ispezionare risorse del cluster, visualizzare log ed eseguire comandi dentro container in esecuzione, tutto dal terminale.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               tool: 'kubectl',
@@ -5007,7 +5114,8 @@ export default {
               italian: 'Comando kubectl get',
               pronunciation: '/ɡet/',
               phonetic: 'GHET',
-              example: 'kubectl get lists resources. = kubectl get elenca le risorse.',
+              example:
+                "Running kubectl get pods -A shows all pods across every namespace, with their status, restart count, and age, giving you a quick health overview of the entire cluster. = Eseguire kubectl get pods -A mostra tutti i pod in ogni namespace, con il loro stato, conteggio di restart ed età, dandoti una panoramica rapida della salute dell'intero cluster.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl get pods -A',
@@ -5018,7 +5126,7 @@ export default {
               pronunciation: '/dɪˈskraɪb/',
               phonetic: 'di-SKRAIB',
               example:
-                'kubectl describe shows detailed info. = kubectl describe mostra info dettagliate.',
+                'When a pod is stuck in Pending, kubectl describe shows the Events section where you can see if the scheduler failed due to insufficient CPU, missing PVCs, or node affinity mismatches. = Quando un pod è bloccato in Pending, kubectl describe mostra la sezione Events dove puoi vedere se lo scheduler ha fallito per CPU insufficiente, PVC mancanti o mismatch di affinità dei nodi.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl describe pod my-pod',
@@ -5029,7 +5137,7 @@ export default {
               pronunciation: '/əˈplaɪ/',
               phonetic: 'a-PLAI',
               example:
-                'kubectl apply applies a manifest declaratively. = kubectl apply applica un manifesto dichiarativamente.',
+                "Teams commit their YAML manifests to Git and run kubectl apply -f to deploy, enabling GitOps workflows where the repo is the single source of truth. = I team committano i loro manifesti YAML su Git ed eseguono kubectl apply -f per deployare, abilitando workflow GitOps dove il repo è l'unica fonte di verità.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl apply -f deployment.yaml',
@@ -5039,7 +5147,8 @@ export default {
               italian: 'Elimina risorsa',
               pronunciation: '/dɪˈliːt/',
               phonetic: 'di-LIIT',
-              example: 'Delete a resource by name or file. = Elimina una risorsa per nome o file.',
+              example:
+                'Use kubectl delete -f to remove all resources defined in a manifest, or kubectl delete pod my-pod --grace-period=0 to force-terminate a stuck pod immediately. = Usa kubectl delete -f per rimuovere tutte le risorse definite in un manifesto, o kubectl delete pod my-pod --grace-period=0 per terminare forzatamente un pod bloccato immediatamente.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl delete pod my-pod',
@@ -5049,7 +5158,8 @@ export default {
               italian: 'Log dei pod',
               pronunciation: '/lɒɡz/',
               phonetic: 'LOGZ',
-              example: 'kubectl logs streams pod logs. = kubectl logs trasmette i log dei pod.',
+              example:
+                "Adding the -f flag to kubectl logs streams output in real time, which is invaluable for debugging startup failures or watching request patterns during a deployment. = Aggiungere il flag -f a kubectl logs trasmette l'output in tempo reale, indispensabile per debuggare fallimenti di avvio o osservare pattern di richieste durante un deployment.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl logs -f my-pod',
@@ -5060,18 +5170,18 @@ export default {
               pronunciation: '/ekˈzek/',
               phonetic: 'ek-ZEK',
               example:
-                'kubectl exec runs a command inside a pod. = kubectl exec esegue un comando in un pod.',
+                "During an incident, the SRE used kubectl exec -it to open a shell inside the failing pod and ran tcpdump to capture network traffic for analysis. = Durante un incidente, l'SRE ha usato kubectl exec -it per aprire una shell dentro il pod in errore ed ha eseguito tcpdump per catturare traffico di rete per l'analisi.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl exec -it my-pod -- bash',
             },
             {
               english: 'kubeconfig',
-              italian: 'kubeconfig / file di configurazione kubectl',
+              italian: 'File di configurazione kubectl (kubeconfig)',
               pronunciation: '/ˈkjuːb kənˈfɪɡ/',
               phonetic: 'KIUB-con-FIG',
               example:
-                'kubeconfig stores cluster credentials. = kubeconfig memorizza credenziali del cluster.',
+                'The kubeconfig file in ~/.kube/config stores cluster endpoints, certificates, and user tokens, allowing kubectl to authenticate with multiple clusters. = Il file kubeconfig in ~/.kube/config memorizza endpoint dei cluster, certificati e token utente, permettendo a kubectl di autenticarsi con più cluster.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               note: 'Tipicamente in ~/.kube/config.',
@@ -5082,18 +5192,18 @@ export default {
               pronunciation: '/ˈkɒntekst/',
               phonetic: 'KON-tekst',
               example:
-                'Switch context to manage another cluster. = Cambia contesto per gestire un altro cluster.',
+                'Switching contexts with kubectl config use-context prod instantly points all subsequent commands at the production cluster, so always double-check before applying changes. = Cambiare contesto con kubectl config use-context prod punta istantaneamente tutti i comandi successivi al cluster di produzione, quindi verifica sempre prima di applicare modifiche.',
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl config use-context prod',
             },
             {
               english: 'Namespace',
-              italian: 'namespace / spazio dei nomi K8s',
+              italian: 'Spazio dei nomi K8s (namespace)',
               pronunciation: '/ˈneɪmspeɪs/',
               phonetic: 'NEIM-speis',
               example:
-                'Namespaces partition resources logically. = I namespace partizionano le risorse logicamente.',
+                "Creating separate namespaces for dev, staging, and production allows applying different RBAC rules and resource quotas to each environment within the same cluster. = Creare namespace separati per dev, staging e produzione permette di applicare regole RBAC e quote di risorse diverse a ogni ambiente all'interno dello stesso cluster.",
               context: 'kubernetes',
               difficulty: 'intermediate',
               command: 'kubectl get pods -n kube-system',
@@ -5116,11 +5226,11 @@ export default {
           items: [
             {
               english: 'Pod',
-              italian: 'pod / unità minima di deployment K8s',
+              italian: 'Unità minima di deployment K8s (pod)',
               pronunciation: '/pɒd/',
               phonetic: 'POD',
               example:
-                'A pod groups one or more containers. = Un pod raggruppa uno o più container.',
+                'Our API pod runs the main application container alongside a log-shipper sidecar, both sharing the same network interface and mounted volumes. = Il nostro pod API esegue il container applicativo principale accanto a un sidecar log-shipper, entrambi condividendo la stessa interfaccia di rete e i volumi montati.',
               context: 'pods',
               difficulty: 'intermediate',
               code: 'apiVersion: v1\nkind: Pod\nmetadata:\n  name: nginx\nspec:\n  containers:\n  - name: nginx\n    image: nginx',
@@ -5131,7 +5241,7 @@ export default {
               pronunciation: '/spek/',
               phonetic: 'SPEK',
               example:
-                'spec defines the pod desired state. = spec definisce lo stato desiderato del pod.',
+                "The pod spec declares which containers to run, their resource requests and limits, environment variables, volume mounts, and health check probes. = La spec del pod dichiara quali container eseguire, le loro richieste e limiti di risorse, variabili d'ambiente, mount dei volumi e probe di health check.",
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5141,7 +5251,7 @@ export default {
               pronunciation: '/feɪz/',
               phonetic: 'FEIZ',
               example:
-                'Pod phases: Pending, Running, Succeeded, Failed. = Fasi del pod: Pending, Running, Succeeded, Failed.',
+                'A pod transitions from Pending while waiting for scheduling, to Running once containers start, and finally to Succeeded or Failed when all containers exit. = Un pod transisce da Pending mentre attende la schedulazione, a Running una volta avviati i container, e infine a Succeeded o Failed quando tutti i container terminano.',
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5151,7 +5261,7 @@ export default {
               pronunciation: '/ˈpendɪŋ/',
               phonetic: 'PEN-ding',
               example:
-                'Pending means scheduled but not started. = Pending significa schedulato ma non avviato.',
+                'A pod stuck in Pending usually means the scheduler cannot find a node with enough CPU or memory, or a required PersistentVolumeClaim has not been bound yet. = Un pod bloccato in Pending di solito significa che lo scheduler non riesce a trovare un nodo con CPU o memoria sufficiente, o un PersistentVolumeClaim richiesto non è stato ancora associato.',
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5161,28 +5271,28 @@ export default {
               pronunciation: '/ˈrʌnɪŋ/',
               phonetic: 'RA-ning',
               example:
-                'Running means at least one container is running. = Running significa che almeno un container è in esecuzione.',
+                'Even though a pod shows Running, its readiness probe might still be failing, meaning the Service will not send traffic to it until the probe passes. = Anche se un pod mostra Running, la sua readiness probe potrebbe ancora fallire, il che significa che il Service non invierà traffico finché la probe non passa.',
               context: 'pods',
               difficulty: 'intermediate',
             },
             {
               english: 'CrashLoopBackOff',
-              italian: 'CrashLoopBackOff / pod che si riavvia in loop',
+              italian: 'Riavvio ciclico del pod (CrashLoopBackOff)',
               pronunciation: '/kræʃ luːp bæk ɒf/',
               phonetic: 'KRASC-LUP-BAK-OF',
               example:
-                'CrashLoopBackOff means a container keeps crashing. = CrashLoopBackOff significa che un container va sempre in crash.',
+                "The pod entered CrashLoopBackOff because the application was trying to connect to a database that did not exist yet, and K8s kept restarting it with increasing backoff delays. = Il pod è entrato in CrashLoopBackOff perché l'applicazione tentava di connettersi a un database che non esisteva ancora, e K8s continuava a riavviarlo con ritardi di backoff crescenti.",
               context: 'pods',
               difficulty: 'intermediate',
               note: "K8s aspetta sempre più tempo tra un restart e l'altro.",
             },
             {
               english: 'ImagePullBackOff',
-              italian: 'ImagePullBackOff / pull immagine fallita',
+              italian: "Fallimento nel download dell'immagine (ImagePullBackOff)",
               pronunciation: '/ˈɪmɪdʒ pʊl/',
               phonetic: 'I-migg-PUL',
               example:
-                "ImagePullBackOff means image cannot be pulled. = ImagePullBackOff significa che l'immagine non può essere scaricata.",
+                "The deployment failed with ImagePullBackOff because the imagePullSecret was missing, so the node could not authenticate to the private registry. = Il deployment è fallito con ImagePullBackOff perché l'imagePullSecret mancava, quindi il nodo non poteva autenticarsi al registry privato.",
               context: 'pods',
               difficulty: 'intermediate',
               note: 'Spesso causato da credenziali registry mancanti.',
@@ -5193,7 +5303,7 @@ export default {
               pronunciation: '/ˈtɜːrmɪneɪtɪŋ/',
               phonetic: 'TER-mi-nei-ting',
               example:
-                'Terminating pods are being deleted. = I pod in terminazione vengono eliminati.',
+                'When a pod enters Terminating state, K8s sends SIGTERM to the containers and waits for the terminationGracePeriodSeconds before force-killing with SIGKILL. = Quando un pod entra nello stato Terminating, K8s invia SIGTERM ai container e attende il terminationGracePeriodSeconds prima di terminare forzatamente con SIGKILL.',
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5203,7 +5313,7 @@ export default {
               pronunciation: '/aɪ piː/',
               phonetic: 'AI-PI',
               example:
-                'Each pod gets its own IP address. = Ogni pod ottiene il proprio indirizzo IP.',
+                'Every pod receives a unique cluster-internal IP address, so containers in different pods communicate directly without port mapping or NAT. = Ogni pod riceve un indirizzo IP unico interno al cluster, così i container in pod diversi comunicano direttamente senza port mapping o NAT.',
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5213,7 +5323,7 @@ export default {
               pronunciation: '/ˈnetwɜːrk/',
               phonetic: 'NET-uerk',
               example:
-                'Pod network is flat across the cluster. = La pod network è piatta in tutto il cluster.',
+                'The flat pod network, implemented by CNI plugins like Calico or Cilium, ensures any pod can reach any other pod by IP address regardless of which node it runs on. = La rete pod piatta, implementata da plugin CNI come Calico o Cilium, assicura che qualsiasi pod possa raggiungere qualsiasi altro pod tramite indirizzo IP indipendentemente dal nodo su cui gira.',
               context: 'pods',
               difficulty: 'intermediate',
               note: 'Tutti i pod possono comunicare tra loro senza NAT.',
@@ -5227,44 +5337,44 @@ export default {
           items: [
             {
               english: 'Init Container',
-              italian: 'init container / container di inizializzazione',
+              italian: 'Container di inizializzazione (init container)',
               pronunciation: '/ɪˈnɪt/',
               phonetic: 'i-NIT',
               example:
-                'Init containers run before app containers. = Gli init container girano prima dei container applicativi.',
+                "An init container waits for the database to be ready before the application container starts, preventing connection errors during startup. = Un init container attende che il database sia pronto prima che il container applicativo parta, prevenendo errori di connessione durante l'avvio.",
               context: 'pods',
               difficulty: 'intermediate',
               code: 'spec:\n  initContainers:\n  - name: setup\n    image: busybox\n    command: ["sh","-c","echo init"]',
             },
             {
               english: 'Sidecar',
-              italian: 'sidecar / contenitore affiancato',
+              italian: 'Container affiancato (sidecar)',
               pronunciation: '/ˈsaɪdkɑːr/',
               phonetic: 'SAID-kar',
               example:
-                'A sidecar container helps the main container. = Un container sidecar aiuta il container principale.',
+                'The Envoy sidecar proxy intercepts all inbound and outbound traffic from the application container, handling mTLS, retries, and observability transparently. = Il proxy sidecar Envoy intercetta tutto il traffico in entrata e uscita dal container applicativo, gestendo mTLS, retry e observability in modo trasparente.',
               context: 'pods',
               difficulty: 'intermediate',
               note: "Esempio: log shipper accanto all'app.",
             },
             {
               english: 'Ambassador',
-              italian: 'ambassador / sidecar proxy verso esterno',
+              italian: "Sidecar proxy verso l'esterno (ambassador)",
               pronunciation: '/æmˈbæsədər/',
               phonetic: 'am-BA-sa-dor',
               example:
-                'An ambassador proxies for the main container. = Un ambassador fa da proxy per il container principale.',
+                'The ambassador container handles connection pooling and retry logic for the database, keeping the main application container simple and focused on business logic. = Il container ambassador gestisce connection pooling e logica di retry per il database, mantenendo il container applicativo principale semplice e focalizzato sulla logica di business.',
               context: 'pods',
               difficulty: 'intermediate',
               note: 'Pattern di sidecar per esposizione di servizi.',
             },
             {
               english: 'Adapter',
-              italian: 'adapter / sidecar di adattamento',
+              italian: 'Sidecar di adattamento (adapter)',
               pronunciation: '/əˈdæptər/',
               phonetic: 'a-DAP-ter',
               example:
-                "An adapter normalizes output for monitoring. = Un adapter normalizza l'output per il monitoring.",
+                "An adapter sidecar reads the application's custom log format, transforms it into structured JSON, and writes it to stdout so the log aggregator can parse it uniformly. = Un sidecar adapter legge il formato log personalizzato dell'applicazione, lo trasforma in JSON strutturato e lo scrive su stdout così l'aggregatore di log può analizzarlo uniformemente.",
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5274,7 +5384,7 @@ export default {
               pronunciation: '/ˌmʌlti kənˈteɪnər/',
               phonetic: 'MAL-ti con-TEI-ner',
               example:
-                'Multi-container pods share network and volumes. = I pod multi-container condividono rete e volumi.',
+                "A multi-container pod might run the application, an Envoy proxy sidecar, and a log-shipping adapter, all sharing the same loopback interface and emptyDir volume. = Un pod multi-container potrebbe eseguire l'applicazione, un sidecar proxy Envoy e un adapter per la spedizione log, tutti condividendo la stessa interfaccia loopback e volume emptyDir.",
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5284,7 +5394,7 @@ export default {
               pronunciation: '/ʃerd ˈvɒljuːm/',
               phonetic: 'SCERD VOL-ium',
               example:
-                'Containers in a pod share volumes. = I container in un pod condividono i volumi.',
+                "The init container downloads configuration files into a shared emptyDir volume, and the application container reads them at startup, decoupling config retrieval from the app. = L'init container scarica file di configurazione in un volume emptyDir condiviso, e il container applicativo li legge all'avvio, disaccoppiando il recupero della configurazione dall'app.",
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5294,7 +5404,7 @@ export default {
               pronunciation: '/ˈloʊkəlhoʊst/',
               phonetic: 'LO-kal-houst',
               example:
-                'Containers in a pod talk via localhost. = I container in un pod comunicano via localhost.',
+                "Since all containers in a pod share the same network namespace, the Envoy sidecar listens on localhost:15001 and the application connects to it without crossing any network boundary. = Poiché tutti i container in un pod condividono lo stesso namespace di rete, il sidecar Envoy ascolta su localhost:15001 e l'applicazione si connette senza attraversare alcun confine di rete.",
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5304,7 +5414,7 @@ export default {
               pronunciation: '/ˌriːˈstɑːrtəbl/',
               phonetic: 'ri-STAR-ta-bl',
               example:
-                'K8s 1.28+ supports native sidecar init containers. = K8s 1.28+ supporta sidecar nativi come init container.',
+                'With the native sidecar feature in K8s 1.28+, init containers with restartPolicy: Always run alongside the main container, solving the problem of sidecars that need to outlive init phases. = Con la funzionalità sidecar nativa in K8s 1.28+, gli init container con restartPolicy: Always girano accanto al container principale, risolvendo il problema dei sidecar che devono sopravvivere alle fasi di init.',
               context: 'pods',
               difficulty: 'intermediate',
               code: 'restartPolicy: Always',
@@ -5315,7 +5425,7 @@ export default {
               pronunciation: '/ˈɔːrdər/',
               phonetic: 'OR-der',
               example:
-                'Init containers run sequentially. = Gli init container girano sequenzialmente.',
+                "Three init containers run one after another: the first clones the config repo, the second runs database migrations, and the third warms the cache before the app starts. = Tre init container girano uno dopo l'altro: il primo clona il repo di configurazione, il secondo esegue le migrazioni del database e il terzo scalda la cache prima che l'app parta.",
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5325,7 +5435,7 @@ export default {
               pronunciation: '/priː stɒp hʊk/',
               phonetic: 'PRI-STOP-HUK',
               example:
-                'Pre-stop hooks run before container termination. = Gli hook pre-stop girano prima della terminazione.',
+                "The pre-stop hook sleeps for 10 seconds, giving the load balancer time to drain existing connections before the container actually shuts down. = L'hook pre-stop attende 10 secondi, dando al load balancer il tempo di drenare le connessioni esistenti prima che il container si spenga effettivamente.",
               context: 'pods',
               difficulty: 'intermediate',
               code: 'lifecycle:\n  preStop:\n    exec:\n      command: ["sh","-c","sleep 10"]',
@@ -5343,7 +5453,7 @@ export default {
               pronunciation: '/ˈriːsɔːrs rɪˈkwest/',
               phonetic: 'RII-sors ri-KUEST',
               example:
-                'Resource requests guarantee minimum resources. = Le request garantiscono risorse minime.',
+                'Setting requests to 100m CPU and 128Mi memory tells the scheduler the pod needs at least that much, ensuring it lands on a node with enough capacity. = Impostare le request a 100m CPU e 128Mi di memoria dice allo scheduler che il pod necessita almeno di tanto, assicurando che atterri su un nodo con capacità sufficiente.',
               context: 'pods',
               difficulty: 'intermediate',
               code: 'resources:\n  requests:\n    cpu: 100m\n    memory: 128Mi',
@@ -5353,7 +5463,8 @@ export default {
               italian: 'Limite risorse',
               pronunciation: '/ˈlɪmɪt/',
               phonetic: 'LI-mit',
-              example: "Resource limits cap maximum usage. = I limit limitano l'uso massimo.",
+              example:
+                'Setting a memory limit of 512Mi means the kernel OOM-kills the container if it exceeds that threshold, preventing a memory leak from affecting other pods on the same node. = Impostare un limite di memoria di 512Mi significa che il kernel OOM-killa il container se supera quella soglia, impedendo a un memory leak di influenzare altri pod sullo stesso nodo.',
               context: 'pods',
               difficulty: 'intermediate',
               code: 'resources:\n  limits:\n    cpu: 500m\n    memory: 512Mi',
@@ -5363,7 +5474,8 @@ export default {
               italian: 'Millicore CPU',
               pronunciation: '/ˈmɪli kɔːr/',
               phonetic: 'MI-li-kor',
-              example: '100m means 0.1 CPU cores. = 100m significa 0.1 core CPU.',
+              example:
+                'A container requesting 250m gets a quarter of a CPU core, which is sufficient for a lightweight API server handling moderate traffic. = Un container che richiede 250m ottiene un quarto di core CPU, sufficiente per un API server leggero che gestisce traffico moderato.',
               context: 'pods',
               difficulty: 'intermediate',
               note: '1000m = 1 core.',
@@ -5373,18 +5485,19 @@ export default {
               italian: 'Memoria Mi (mebibyte)',
               pronunciation: '/em aɪ/',
               phonetic: 'EM-AI',
-              example: '128Mi is 128 mebibytes. = 128Mi sono 128 mebibyte.',
+              example:
+                'Always use binary units like Mi and Gi in Kubernetes manifests, since 128Mi (134 MB) differs from 128M (128 MB) and mismatches can cause unexpected OOM kills. = Usa sempre unità binarie come Mi e Gi nei manifesti Kubernetes, poiché 128Mi (134 MB) differisce da 128M (128 MB) e discrepanze possono causare OOM kill inattesi.',
               context: 'pods',
               difficulty: 'intermediate',
               note: 'Mi (binario) vs M (decimale): preferire Mi.',
             },
             {
               english: 'OOMKilled',
-              italian: 'OOMKilled / ucciso per memoria esaurita',
+              italian: 'Terminato per memoria esaurita (OOMKilled)',
               pronunciation: '/oʊ oʊ em kɪld/',
               phonetic: 'OU-OU-EM KILD',
               example:
-                'OOMKilled means the container exceeded memory. = OOMKilled significa che il container ha superato la memoria.',
+                "The Java application kept getting OOMKilled because the JVM heap was set to 512Mi but the container limit was also 512Mi, leaving no room for native memory overhead. = L'applicazione Java continuava a essere OOMKilled perché l'heap JVM era impostato a 512Mi ma il limite del container era anch'esso 512Mi, senza lasciare spazio per l'overhead di memoria nativa.",
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5394,7 +5507,7 @@ export default {
               pronunciation: '/ˈθrɒtlɪŋ/',
               phonetic: 'TROT-ling',
               example:
-                'CPU throttling slows containers at limit. = Il throttling CPU rallenta i container al limite.',
+                'Unlike memory, exceeding CPU limits does not kill the container; instead, the kernel throttles it, causing increased latency that shows up as slower response times in monitoring dashboards. = A differenza della memoria, superare i limiti CPU non uccide il container; invece, il kernel lo rallenta, causando latenza aumentata che si manifesta come tempi di risposta più lenti nelle dashboard di monitoring.',
               context: 'pods',
               difficulty: 'intermediate',
               note: 'A differenza della memoria, K8s non uccide ma rallenta.',
@@ -5405,37 +5518,38 @@ export default {
               pronunciation: '/kjuː oʊ es/',
               phonetic: 'kiu-ou-ES',
               example:
-                'QoS classes: Guaranteed, Burstable, BestEffort. = Classi QoS: Guaranteed, Burstable, BestEffort.',
+                'Kubernetes assigns a QoS class to each pod based on its resource configuration, and under memory pressure it evicts BestEffort pods first, then Burstable, keeping Guaranteed pods running longest. = Kubernetes assegna una classe QoS a ogni pod in base alla sua configurazione risorse, e sotto pressione di memoria evicia prima i pod BestEffort, poi Burstable, mantenendo i pod Guaranteed in esecuzione più a lungo.',
               context: 'pods',
               difficulty: 'intermediate',
               note: 'Quality of Service.',
             },
             {
               english: 'Guaranteed',
-              italian: 'Guaranteed / classe QoS con risorse riservate',
+              italian: 'Classe QoS con risorse riservate (Guaranteed)',
               pronunciation: '/ˌɡærənˈtiːd/',
               phonetic: 'ga-ran-TIID',
               example:
-                'Guaranteed: requests = limits for all containers. = Guaranteed: requests = limits per tutti i container.',
+                "Setting requests equal to limits for both CPU and memory gives the pod Guaranteed QoS, making it the last to be evicted when the node is under pressure. = Impostare le request uguali ai limit sia per CPU che per memoria dà al pod QoS Guaranteed, rendendolo l'ultimo a essere eviciato quando il nodo è sotto pressione.",
               context: 'pods',
               difficulty: 'intermediate',
             },
             {
               english: 'Burstable',
-              italian: 'Burstable / classe QoS con risorse burstable',
+              italian: 'Classe QoS con risorse espandibili (Burstable)',
               pronunciation: '/ˈbɜːrstəbl/',
               phonetic: 'BER-sta-bol',
               example:
-                'Burstable: requests set but not equal to limits. = Burstable: requests definite ma non uguali ai limits.',
+                'A Burstable pod requesting 100m CPU with a limit of 500m can burst above its baseline during traffic spikes but risks throttling if the node is under contention. = Un pod Burstable che richiede 100m CPU con un limite di 500m può superare la sua baseline durante picchi di traffico ma rischia throttling se il nodo è in contesa.',
               context: 'pods',
               difficulty: 'intermediate',
             },
             {
               english: 'BestEffort',
-              italian: 'BestEffort / classe QoS senza garanzie',
+              italian: 'Classe QoS senza garanzie (BestEffort)',
               pronunciation: '/best ˈefərt/',
               phonetic: 'BEST E-fort',
-              example: 'BestEffort: no requests or limits. = BestEffort: nessuna request o limit.',
+              example:
+                'Pods without any resource requests or limits get BestEffort QoS and are the first to be evicted when the node runs low on memory, making them suitable only for non-critical batch jobs. = I pod senza alcuna request o limit di risorse ottengono QoS BestEffort e sono i primi a essere eviciati quando il nodo esaurisce la memoria, rendendoli adatti solo per job batch non critici.',
               context: 'pods',
               difficulty: 'intermediate',
               note: 'Primi a essere uccisi sotto pressione.',
@@ -5449,11 +5563,11 @@ export default {
           items: [
             {
               english: 'Liveness Probe',
-              italian: 'liveness probe / controllo che il pod sia vivo',
+              italian: 'Controllo che il container sia vivo (liveness probe)',
               pronunciation: '/ˈlaɪvnəs/',
               phonetic: 'LAIV-nes',
               example:
-                'Liveness probe checks if a container is alive. = La liveness probe verifica se un container è vivo.',
+                "The liveness probe hits /healthz every 10 seconds; if the application hangs due to a deadlock, the probe fails and Kubernetes restarts the container automatically. = La liveness probe chiama /healthz ogni 10 secondi; se l'applicazione si blocca per un deadlock, la probe fallisce e Kubernetes riavvia il container automaticamente.",
               context: 'pods',
               difficulty: 'intermediate',
               code: 'livenessProbe:\n  httpGet:\n    path: /healthz\n    port: 8080',
@@ -5461,11 +5575,11 @@ export default {
             },
             {
               english: 'Readiness Probe',
-              italian: 'readiness probe / controllo che il pod sia pronto',
+              italian: 'Controllo che il container sia pronto (readiness probe)',
               pronunciation: '/ˈredinəs/',
               phonetic: 'RE-di-nes',
               example:
-                'Readiness probe checks if a container is ready. = La readiness probe verifica se un container è pronto.',
+                "The readiness probe prevents traffic from reaching a pod until its database connection pool is initialized and the cache is warmed, avoiding errors during startup. = La readiness probe impedisce al traffico di raggiungere un pod finché il suo pool di connessioni al database è inizializzato e la cache è scaldata, evitando errori durante l'avvio.",
               context: 'pods',
               difficulty: 'intermediate',
               code: 'readinessProbe:\n  httpGet:\n    path: /ready\n    port: 8080',
@@ -5473,11 +5587,11 @@ export default {
             },
             {
               english: 'Startup Probe',
-              italian: "startup probe / controllo all'avvio del pod",
+              italian: "Controllo all'avvio del container (startup probe)",
               pronunciation: '/ˈstɑːrtʌp/',
               phonetic: 'START-ap',
               example:
-                'Startup probe handles slow-starting containers. = La startup probe gestisce container lenti ad avviarsi.',
+                "The startup probe with 30 retries at 10-second intervals gives a legacy Java application up to 5 minutes to boot, without risking premature restarts from the liveness probe. = La startup probe con 30 tentativi a intervalli di 10 secondi dà a un'applicazione Java legacy fino a 5 minuti per avviarsi, senza rischiare riavvii prematuri dalla liveness probe.",
               context: 'pods',
               difficulty: 'intermediate',
               code: 'startupProbe:\n  httpGet:\n    path: /startup\n    port: 8080\n  failureThreshold: 30',
@@ -5488,7 +5602,7 @@ export default {
               pronunciation: '/eɪtʃ tiː tiː piː/',
               phonetic: 'eich-ti-ti-PI',
               example:
-                'HTTP probes do an HTTP GET request. = Le probe HTTP fanno una richiesta HTTP GET.',
+                'The HTTP probe sends a GET to /ready on port 8080, and any 2xx response code means the container is healthy and ready for traffic. = La probe HTTP invia un GET a /ready sulla porta 8080, e qualsiasi codice risposta 2xx significa che il container è sano e pronto per il traffico.',
               context: 'pods',
               difficulty: 'intermediate',
             },
@@ -5498,7 +5612,7 @@ export default {
               pronunciation: '/tiː siː piː/',
               phonetic: 'ti-si-PI',
               example:
-                'TCP probes attempt a TCP connection. = Le probe TCP tentano una connessione TCP.',
+                'For the PostgreSQL container, a TCP probe on port 5432 confirms the database is accepting connections without needing to implement a custom health endpoint. = Per il container PostgreSQL, una probe TCP sulla porta 5432 conferma che il database accetta connessioni senza bisogno di implementare un endpoint di health personalizzato.',
               context: 'pods',
               difficulty: 'intermediate',
               code: 'livenessProbe:\n  tcpSocket:\n    port: 5432',
@@ -5509,7 +5623,7 @@ export default {
               pronunciation: '/ekˈzek/',
               phonetic: 'ek-ZEK',
               example:
-                'Exec probes run a command in the container. = Le probe exec eseguono un comando nel container.',
+                'The exec probe runs pg_isready inside the PostgreSQL container to verify the database is not only listening on the port but actually ready to accept queries. = La probe exec esegue pg_isready dentro il container PostgreSQL per verificare che il database non solo sia in ascolto sulla porta ma sia effettivamente pronto ad accettare query.',
               context: 'pods',
               difficulty: 'intermediate',
               code: 'livenessProbe:\n  exec:\n    command: ["cat","/tmp/healthy"]',
@@ -5520,7 +5634,7 @@ export default {
               pronunciation: '/dʒiː ɑːr piː siː/',
               phonetic: 'gi-ar-pi-SI',
               example:
-                'gRPC probes use the gRPC health check protocol. = Le probe gRPC usano il protocollo di health check gRPC.',
+                'Microservices using gRPC can implement the standard health checking protocol so Kubernetes probes them natively without needing an HTTP adapter endpoint. = I microservizi che usano gRPC possono implementare il protocollo standard di health checking così Kubernetes li sonda nativamente senza bisogno di un endpoint adattatore HTTP.',
               context: 'pods',
               difficulty: 'intermediate',
               code: 'livenessProbe:\n  grpc:\n    port: 9000',
@@ -5530,7 +5644,8 @@ export default {
               italian: 'Ritardo iniziale',
               pronunciation: '/ɪˈnɪʃəl dɪˈleɪ/',
               phonetic: 'i-NI-scial di-LEI',
-              example: 'Wait before starting probes. = Aspetta prima di iniziare le probe.',
+              example:
+                "Setting initialDelaySeconds to 30 gives the application time to load its configuration and warm up before the liveness probe starts checking, preventing premature restarts. = Impostare initialDelaySeconds a 30 dà all'applicazione il tempo di caricare la configurazione e scaldarsi prima che la liveness probe inizi a controllare, prevenendo riavvii prematuri.",
               context: 'pods',
               difficulty: 'intermediate',
               code: 'initialDelaySeconds: 30',
@@ -5541,7 +5656,7 @@ export default {
               pronunciation: '/ˈfeɪljər ˈθreʃhoʊld/',
               phonetic: 'FEI-lior TRESC-hold',
               example:
-                "Number of failures before action. = Numero di fallimenti prima dell'azione.",
+                'With failureThreshold set to 3, the container must fail three consecutive probe checks before Kubernetes restarts it, tolerating brief transient hiccups. = Con failureThreshold impostato a 3, il container deve fallire tre controlli probe consecutivi prima che Kubernetes lo riavvii, tollerando brevi singhiozzi transitori.',
               context: 'pods',
               difficulty: 'intermediate',
               code: 'failureThreshold: 3',
@@ -5551,7 +5666,8 @@ export default {
               italian: 'Periodo (secondi)',
               pronunciation: '/ˈpɪəriəd/',
               phonetic: 'PI-riod',
-              example: 'How often to perform the probe. = Ogni quanto eseguire la probe.',
+              example:
+                'A periodSeconds of 10 checks the container every 10 seconds, balancing between quick failure detection and avoiding excessive overhead on the kubelet. = Un periodSeconds di 10 controlla il container ogni 10 secondi, bilanciando tra rilevamento rapido dei guasti e evitare overhead eccessivo sul kubelet.',
               context: 'pods',
               difficulty: 'intermediate',
               code: 'periodSeconds: 10',
@@ -5574,22 +5690,22 @@ export default {
           items: [
             {
               english: 'Deployment',
-              italian: 'Deployment / gestore di pod replicati',
+              italian: 'Gestore di pod replicati (Deployment)',
               pronunciation: '/dɪˈplɔɪmənt/',
               phonetic: 'di-PLOI-ment',
               example:
-                'A Deployment manages stateless applications. = Un Deployment gestisce applicazioni stateless.',
+                "The Deployment resource manages our API pods, automatically replacing any that fail and supporting rolling updates when we push a new image version. = La risorsa Deployment gestisce i nostri pod API, sostituendo automaticamente quelli che falliscono e supportando rolling update quando pushiamo una nuova versione dell'immagine.",
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: nginx',
             },
             {
               english: 'ReplicaSet',
-              italian: 'ReplicaSet / mantiene N repliche identiche',
+              italian: 'Mantiene N repliche identiche di pod (ReplicaSet)',
               pronunciation: '/ˈreplɪkə set/',
               phonetic: 'RE-pli-ka SET',
               example:
-                'A ReplicaSet maintains pod replicas. = Un ReplicaSet mantiene le repliche dei pod.',
+                "When a Deployment creates or updates pods, it actually creates a new ReplicaSet that gradually scales up while the old one scales down during a rolling update. = Quando un Deployment crea o aggiorna pod, in realtà crea un nuovo ReplicaSet che scala gradualmente verso l'alto mentre il vecchio scala verso il basso durante un rolling update.",
               context: 'deployments',
               difficulty: 'intermediate',
               note: 'Generato automaticamente dal Deployment.',
@@ -5600,18 +5716,18 @@ export default {
               pronunciation: '/ˈreplɪkəz/',
               phonetic: 'RE-pli-kas',
               example:
-                'spec.replicas defines the number of pods. = spec.replicas definisce il numero di pod.',
+                'Setting replicas to 3 ensures three identical pods run at all times; if one crashes, the ReplicaSet immediately spins up a replacement. = Impostare replicas a 3 assicura che tre pod identici girino in ogni momento; se uno crasha, il ReplicaSet avvia immediatamente un sostituto.',
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  replicas: 3',
             },
             {
               english: 'Rolling Update',
-              italian: 'rolling update / aggiornamento progressivo',
+              italian: 'Aggiornamento progressivo (rolling update)',
               pronunciation: '/ˈroʊlɪŋ ʌpˈdeɪt/',
               phonetic: 'ROU-ling ap-DEIT',
               example:
-                'Rolling updates replace pods gradually. = I rolling update sostituiscono i pod gradualmente.',
+                "During a rolling update, Kubernetes creates new pods with the updated image one by one and terminates old pods only after the new ones pass their readiness probes. = Durante un rolling update, Kubernetes crea nuovi pod con l'immagine aggiornata uno alla volta e termina i vecchi pod solo dopo che i nuovi passano le readiness probe.",
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'strategy:\n  type: RollingUpdate\n  rollingUpdate:\n    maxSurge: 25%\n    maxUnavailable: 25%',
@@ -5622,7 +5738,7 @@ export default {
               pronunciation: '/riːkriˈeɪt/',
               phonetic: 'ri-kri-EIT',
               example:
-                'Recreate kills old pods before new ones. = Recreate uccide i vecchi pod prima dei nuovi.',
+                'The Recreate strategy is used when two versions cannot run simultaneously, such as when they lock the same database schema during migration. = La strategia Recreate viene usata quando due versioni non possono girare simultaneamente, come quando bloccano lo stesso schema database durante la migrazione.',
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'strategy:\n  type: Recreate',
@@ -5630,42 +5746,42 @@ export default {
             },
             {
               english: 'maxSurge',
-              italian: "maxSurge / pod extra durante l'aggiornamento",
+              italian: "Pod extra consentiti durante l'aggiornamento (maxSurge)",
               pronunciation: '/mæks sɜːrdʒ/',
               phonetic: 'MAKS-SERG',
               example:
-                "maxSurge controls extra pods during update. = maxSurge controlla i pod extra durante l'update.",
+                'Setting maxSurge to 25% allows the Deployment to create 25% more pods than desired during an update, speeding up rollouts by running old and new pods simultaneously. = Impostare maxSurge al 25% permette al Deployment di creare il 25% di pod in più del desiderato durante un update, velocizzando i rollout eseguendo vecchi e nuovi pod simultaneamente.',
               context: 'deployments',
               difficulty: 'intermediate',
             },
             {
               english: 'maxUnavailable',
-              italian: "maxUnavailable / pod fuori servizio durante l'aggiornamento",
+              italian: "Pod fuori servizio consentiti durante l'aggiornamento (maxUnavailable)",
               pronunciation: '/ʌnəˈveɪləbl/',
               phonetic: 'an-a-VEI-la-bol',
               example:
-                'maxUnavailable controls allowed downtime. = maxUnavailable controlla il downtime consentito.',
+                'Setting maxUnavailable to 0 ensures that no pod is terminated until its replacement is ready, providing zero-downtime deployments at the cost of requiring extra capacity. = Impostare maxUnavailable a 0 assicura che nessun pod sia terminato finché il sostituto è pronto, fornendo deploy a zero downtime al costo di richiedere capacità extra.',
               context: 'deployments',
               difficulty: 'intermediate',
             },
             {
               english: 'Rollout',
-              italian: 'rollout / processo di aggiornamento',
+              italian: 'Processo di aggiornamento (rollout)',
               pronunciation: '/ˈroʊlaʊt/',
               phonetic: 'ROUL-aut',
               example:
-                'Trigger a rollout to apply changes. = Avvia un rollout per applicare modifiche.',
+                "Running kubectl rollout status shows real-time progress of the update, reporting how many pods have been updated, available, and total. = Eseguire kubectl rollout status mostra il progresso in tempo reale dell'aggiornamento, riportando quanti pod sono stati aggiornati, disponibili e totali.",
               context: 'deployments',
               difficulty: 'intermediate',
               command: 'kubectl rollout status deployment/nginx',
             },
             {
               english: 'Rollback',
-              italian: 'rollback / ritorno a versione precedente',
+              italian: 'Ritorno a versione precedente (rollback)',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROUL-bak',
               example:
-                'Roll back to a previous revision. = Esegui rollback a una revisione precedente.',
+                'When the new version caused 500 errors, we ran kubectl rollout undo and Kubernetes instantly switched traffic back to the previous stable ReplicaSet. = Quando la nuova versione causava errori 500, abbiamo eseguito kubectl rollout undo e Kubernetes ha immediatamente riportato il traffico al ReplicaSet stabile precedente.',
               context: 'deployments',
               difficulty: 'intermediate',
               command: 'kubectl rollout undo deployment/nginx',
@@ -5676,7 +5792,7 @@ export default {
               pronunciation: '/rɪˈvɪʒən/',
               phonetic: 'ri-VI-scion',
               example:
-                'View deployment revision history. = Visualizza lo storico delle revisioni del deployment.',
+                'Kubernetes keeps a configurable number of old ReplicaSets so you can roll back to any previous revision using kubectl rollout undo --to-revision=3. = Kubernetes mantiene un numero configurabile di vecchi ReplicaSet così puoi fare rollback a qualsiasi revisione precedente usando kubectl rollout undo --to-revision=3.',
               context: 'deployments',
               difficulty: 'intermediate',
               command: 'kubectl rollout history deployment/nginx',
@@ -5690,11 +5806,11 @@ export default {
           items: [
             {
               english: 'StatefulSet',
-              italian: 'StatefulSet / pod stateful con identità stabile',
+              italian: 'Pod stateful con identità stabile (StatefulSet)',
               pronunciation: '/ˈsteɪtfʊl set/',
               phonetic: 'STEIT-ful SET',
               example:
-                'StatefulSets manage stateful applications. = Gli StatefulSet gestiscono applicazioni stateful.',
+                'Our PostgreSQL cluster runs as a StatefulSet so each replica keeps its own persistent volume and DNS name across restarts and rescheduling. = Il nostro cluster PostgreSQL gira come StatefulSet così ogni replica mantiene il proprio volume persistente e nome DNS attraverso riavvii e rischedulazione.',
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'apiVersion: apps/v1\nkind: StatefulSet\nmetadata:\n  name: postgres',
@@ -5705,7 +5821,7 @@ export default {
               pronunciation: '/ˈsteɪbl aɪˈdentəti/',
               phonetic: 'STEI-bol ai-DEN-te-ti',
               example:
-                'StatefulSet pods have stable identities. = I pod StatefulSet hanno identità stabili.',
+                "Each StatefulSet pod gets a predictable hostname like postgres-0, postgres-1, allowing the application to configure replication based on its ordinal position. = Ogni pod StatefulSet ottiene un hostname prevedibile come postgres-0, postgres-1, permettendo all'applicazione di configurare la replica in base alla sua posizione ordinale.",
               context: 'deployments',
               difficulty: 'intermediate',
               note: 'Nomi ordinali: pod-0, pod-1, pod-2.',
@@ -5716,7 +5832,7 @@ export default {
               pronunciation: '/ˈɔːrdɪnl/',
               phonetic: 'OR-di-nl',
               example:
-                "Ordinal index identifies each StatefulSet pod. = L'indice ordinale identifica ogni pod StatefulSet.",
+                "In a 3-node Kafka cluster, ordinal indexes 0, 1, 2 determine each broker's ID and data directory, ensuring consistent identity even after pod restarts. = In un cluster Kafka a 3 nodi, gli indici ordinali 0, 1, 2 determinano l'ID di ogni broker e la directory dati, assicurando identità consistente anche dopo riavvii dei pod.",
               context: 'deployments',
               difficulty: 'intermediate',
             },
@@ -5726,7 +5842,7 @@ export default {
               pronunciation: '/ˈsteɪbl ˈstɔːrɪdʒ/',
               phonetic: 'STEI-bol STO-rig',
               example:
-                'StatefulSets provide stable persistent storage. = Gli StatefulSet forniscono storage persistente stabile.',
+                'When a StatefulSet pod is rescheduled to a different node, it reattaches to its original PersistentVolume, preserving all database data without any manual intervention. = Quando un pod StatefulSet viene rischedulato su un nodo diverso, si riattacca al suo PersistentVolume originale, preservando tutti i dati del database senza alcun intervento manuale.',
               context: 'deployments',
               difficulty: 'intermediate',
             },
@@ -5736,7 +5852,7 @@ export default {
               pronunciation: '/ˈhedlɪs/',
               phonetic: 'HED-lis',
               example:
-                'StatefulSets need a headless service. = Gli StatefulSet richiedono un service headless.',
+                'A headless Service with clusterIP: None creates DNS records for each individual pod, like postgres-0.postgres.default.svc, so clients can connect to specific replicas. = Un Service headless con clusterIP: None crea record DNS per ogni singolo pod, come postgres-0.postgres.default.svc, così i client possono connettersi a repliche specifiche.',
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  clusterIP: None',
@@ -5746,7 +5862,8 @@ export default {
               italian: 'Template di volumeClaim',
               pronunciation: '/ˈvɒljuːm kleɪm/',
               phonetic: 'VOL-ium KLEIM',
-              example: 'Generate PVCs per StatefulSet pod. = Genera PVC per ogni pod StatefulSet.',
+              example:
+                'The volumeClaimTemplates section automatically provisions a dedicated 50Gi PersistentVolumeClaim for each new pod, so scaling from 3 to 5 replicas creates two additional volumes. = La sezione volumeClaimTemplates provisiona automaticamente un PersistentVolumeClaim dedicato da 50Gi per ogni nuovo pod, così scalare da 3 a 5 repliche crea due volumi aggiuntivi.',
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'volumeClaimTemplates:\n  - metadata:\n      name: data\n    spec:\n      accessModes: ["ReadWriteOnce"]',
@@ -5757,7 +5874,7 @@ export default {
               pronunciation: '/ˈɔːrdərd/',
               phonetic: 'OR-derd',
               example:
-                'StatefulSet pods are deployed in order. = I pod StatefulSet vengono deployati in ordine.',
+                "During a ZooKeeper bootstrap, ordered deployment starts pod-0 first, waits for it to become ready, then pod-1, ensuring leader election completes before followers join. = Durante il bootstrap di ZooKeeper, il deployment ordinato avvia prima pod-0, attende che diventi pronto, poi pod-1, assicurando che l'elezione del leader sia completata prima che i follower si uniscano.",
               context: 'deployments',
               difficulty: 'intermediate',
             },
@@ -5767,7 +5884,7 @@ export default {
               pronunciation: '/ˈpɒləsi/',
               phonetic: 'PO-li-si',
               example:
-                'OrderedReady or Parallel pod management. = Gestione pod OrderedReady o Parallel.',
+                'Setting podManagementPolicy to Parallel starts all StatefulSet pods simultaneously, which is useful for applications like Elasticsearch that handle their own cluster discovery. = Impostare podManagementPolicy a Parallel avvia tutti i pod StatefulSet simultaneamente, utile per applicazioni come Elasticsearch che gestiscono il proprio cluster discovery.',
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'podManagementPolicy: Parallel',
@@ -5778,17 +5895,17 @@ export default {
               pronunciation: '/juːs keɪsɪz/',
               phonetic: 'IUS KEI-siz',
               example:
-                'Databases, message queues, distributed stores. = Database, code di messaggi, store distribuiti.',
+                "PostgreSQL, Redis Cluster, Kafka, and Elasticsearch all benefit from StatefulSets because they need stable network identities and persistent volumes to maintain cluster membership. = PostgreSQL, Redis Cluster, Kafka ed Elasticsearch beneficiano tutti degli StatefulSet perché necessitano di identità di rete stabili e volumi persistenti per mantenere l'appartenenza al cluster.",
               context: 'deployments',
               difficulty: 'intermediate',
             },
             {
               english: 'serviceName',
-              italian: 'serviceName / servizio headless di StatefulSet',
+              italian: 'Nome del servizio headless di StatefulSet (serviceName)',
               pronunciation: '/ˈsɜːrvɪs neɪm/',
               phonetic: 'SER-vis NEIM',
               example:
-                'Reference the headless service name. = Riferimento al nome del service headless.',
+                'The serviceName field links the StatefulSet to its headless Service, enabling DNS resolution like pod-0.my-service.namespace.svc.cluster.local for direct pod-to-pod communication. = Il campo serviceName collega lo StatefulSet al suo Service headless, abilitando la risoluzione DNS come pod-0.my-service.namespace.svc.cluster.local per la comunicazione diretta tra pod.',
               context: 'deployments',
               difficulty: 'intermediate',
               code: 'spec:\n  serviceName: postgres',
@@ -5802,7 +5919,7 @@ export default {
           items: [
             {
               english: 'DaemonSet',
-              italian: 'DaemonSet / un pod per ogni nodo',
+              italian: 'un pod per ogni nodo (DaemonSet)',
               pronunciation: '/ˈdiːmən set/',
               phonetic: 'DI-mon SET',
               example:
@@ -5843,7 +5960,7 @@ export default {
             },
             {
               english: 'node-exporter',
-              italian: 'node-exporter / esportatore metriche host Prometheus',
+              italian: 'esportatore metriche host Prometheus (node-exporter)',
               pronunciation: '/ɪkˈspɔːrtər/',
               phonetic: 'ek-SPOR-ter',
               example:
@@ -5885,7 +6002,7 @@ export default {
             },
             {
               english: 'hostNetwork',
-              italian: 'hostNetwork / pod che condivide la rete del nodo',
+              italian: 'pod che condivide la rete del nodo (hostNetwork)',
               pronunciation: '/hoʊst ˈnetwɜːrk/',
               phonetic: 'HOUST NET-uerk',
               example: 'DaemonSets often use hostNetwork. = I DaemonSet spesso usano hostNetwork.',
@@ -5913,7 +6030,7 @@ export default {
           items: [
             {
               english: 'Job',
-              italian: 'Job / esecuzione una tantum',
+              italian: 'esecuzione una tantum (Job)',
               pronunciation: '/dʒɒb/',
               phonetic: 'GIOB',
               example: 'A Job runs one-shot tasks. = Un Job esegue task one-shot.',
@@ -5923,7 +6040,7 @@ export default {
             },
             {
               english: 'CronJob',
-              italian: 'CronJob / Job pianificato cron',
+              italian: 'Job pianificato cron (CronJob)',
               pronunciation: '/krɒn dʒɒb/',
               phonetic: 'KRON-GIOB',
               example: 'A CronJob runs jobs on a schedule. = Un CronJob esegue job su schedule.',
@@ -6034,7 +6151,7 @@ export default {
           items: [
             {
               english: 'Service',
-              italian: 'Service / servizio di rete K8s',
+              italian: 'servizio di rete K8s (Service)',
               pronunciation: '/ˈsɜːrvɪs/',
               phonetic: 'SER-vis',
               example:
@@ -6045,7 +6162,7 @@ export default {
             },
             {
               english: 'ClusterIP',
-              italian: 'ClusterIP / servizio interno al cluster',
+              italian: 'servizio interno al cluster (ClusterIP)',
               pronunciation: '/ˈklʌstər aɪ piː/',
               phonetic: 'KLAS-ter ai-PI',
               example:
@@ -6057,7 +6174,7 @@ export default {
             },
             {
               english: 'NodePort',
-              italian: 'NodePort / servizio esposto su porta del nodo',
+              italian: 'servizio esposto su porta del nodo (NodePort)',
               pronunciation: '/noʊd pɔːrt/',
               phonetic: 'NOUD-PORT',
               example:
@@ -6068,7 +6185,7 @@ export default {
             },
             {
               english: 'LoadBalancer',
-              italian: 'LoadBalancer / servizio dietro bilanciatore cloud',
+              italian: 'servizio dietro bilanciatore cloud (LoadBalancer)',
               pronunciation: '/loʊd ˈbælənsər/',
               phonetic: 'LOUD BA-lan-ser',
               example:
@@ -6080,7 +6197,7 @@ export default {
             },
             {
               english: 'ExternalName',
-              italian: 'ExternalName / alias DNS verso esterno',
+              italian: 'alias DNS verso esterno (ExternalName)',
               pronunciation: '/ɪkˈstɜːrnl neɪm/',
               phonetic: 'ek-STER-nl NEIM',
               example: 'ExternalName maps to a DNS CNAME. = ExternalName mappa a un CNAME DNS.',
@@ -6123,7 +6240,7 @@ export default {
             },
             {
               english: 'EndpointSlice',
-              italian: 'EndpointSlice / partizionamento endpoint K8s',
+              italian: 'partizionamento endpoint K8s (EndpointSlice)',
               pronunciation: '/slaɪs/',
               phonetic: 'SLAIS',
               example:
@@ -6152,7 +6269,7 @@ export default {
           items: [
             {
               english: 'Ingress',
-              italian: 'Ingress / regola di esposizione HTTP K8s',
+              italian: 'regola di esposizione HTTP K8s (Ingress)',
               pronunciation: '/ˈɪnɡres/',
               phonetic: 'IN-gres',
               example:
@@ -6196,7 +6313,7 @@ export default {
             },
             {
               english: 'IngressClass',
-              italian: 'IngressClass / classe di Ingress controller',
+              italian: 'classe di Ingress controller (IngressClass)',
               pronunciation: '/klæs/',
               phonetic: 'KLAS',
               example:
@@ -6237,7 +6354,7 @@ export default {
             },
             {
               english: 'cert-manager',
-              italian: 'cert-manager / gestore certificati K8s',
+              italian: 'gestore certificati K8s (cert-manager)',
               pronunciation: '/sɜːrt ˈmænɪdʒər/',
               phonetic: 'SERT MA-ni-gier',
               example:
@@ -6266,7 +6383,7 @@ export default {
           items: [
             {
               english: 'Service Mesh',
-              italian: 'service mesh / rete di servizi gestita',
+              italian: 'rete di servizi gestita (Service Mesh)',
               pronunciation: '/ˈsɜːrvɪs meʃ/',
               phonetic: 'SER-vis MESC',
               example:
@@ -6297,7 +6414,7 @@ export default {
             },
             {
               english: 'Envoy',
-              italian: 'Envoy / proxy L7 di service mesh',
+              italian: 'proxy L7 di service mesh (Envoy)',
               pronunciation: '/ˈenvɔɪ/',
               phonetic: 'EN-voi',
               example: 'Envoy is a high-performance proxy. = Envoy è un proxy ad alte prestazioni.',
@@ -6318,7 +6435,7 @@ export default {
             },
             {
               english: 'mTLS',
-              italian: 'mTLS / TLS mutuo',
+              italian: 'TLS mutuo (mTLS)',
               pronunciation: '/em tiː el es/',
               phonetic: 'em-ti-el-ES',
               example: 'mTLS provides mutual authentication. = mTLS fornisce autenticazione mutua.',
@@ -6348,7 +6465,7 @@ export default {
             },
             {
               english: 'Blue/Green',
-              italian: 'blue/green / deployment a due colori',
+              italian: 'deployment a due colori (Blue/Green)',
               pronunciation: '/bluː ɡriːn/',
               phonetic: 'BLU-GRIIN',
               example:
@@ -6358,7 +6475,7 @@ export default {
             },
             {
               english: 'Circuit Breaker',
-              italian: 'circuit breaker / interruttore di circuito',
+              italian: 'interruttore di circuito (Circuit Breaker)',
               pronunciation: '/ˈsɜːrkɪt ˈbreɪkər/',
               phonetic: 'SER-kit BREI-ker',
               example:
@@ -6375,7 +6492,7 @@ export default {
           items: [
             {
               english: 'Gateway API',
-              italian: 'Gateway API / API K8s per gestione gateway',
+              italian: 'API K8s per gestione gateway (Gateway API)',
               pronunciation: '/ˈɡeɪtweɪ/',
               phonetic: 'GHEIT-uei',
               example:
@@ -6386,7 +6503,7 @@ export default {
             },
             {
               english: 'GatewayClass',
-              italian: 'GatewayClass / classe di Gateway',
+              italian: 'classe di Gateway (GatewayClass)',
               pronunciation: '/ˈɡeɪtweɪ klæs/',
               phonetic: 'GHEIT-uei KLAS',
               example: 'GatewayClass defines a controller. = GatewayClass definisce un controller.',
@@ -6395,7 +6512,7 @@ export default {
             },
             {
               english: 'HTTPRoute',
-              italian: 'HTTPRoute / regola di routing HTTP',
+              italian: 'regola di routing HTTP (HTTPRoute)',
               pronunciation: '/eɪtʃ tiː tiː piː ruːt/',
               phonetic: 'eich-ti-ti-pi RUT',
               example:
@@ -6406,7 +6523,7 @@ export default {
             },
             {
               english: 'TCPRoute',
-              italian: 'TCPRoute / regola di routing TCP',
+              italian: 'regola di routing TCP (TCPRoute)',
               pronunciation: '/tiː siː piː/',
               phonetic: 'ti-si-PI',
               example: 'TCPRoute handles raw TCP traffic. = TCPRoute gestisce traffico TCP grezzo.',
@@ -6415,7 +6532,7 @@ export default {
             },
             {
               english: 'TLSRoute',
-              italian: 'TLSRoute / regola di routing TLS',
+              italian: 'regola di routing TLS (TLSRoute)',
               pronunciation: '/tiː el es/',
               phonetic: 'ti-el-ES',
               example: 'TLSRoute routes by SNI. = TLSRoute instrada per SNI.',
@@ -6424,7 +6541,7 @@ export default {
             },
             {
               english: 'Listener',
-              italian: 'listener / porta in ascolto del Gateway',
+              italian: 'porta in ascolto del Gateway (Listener)',
               pronunciation: '/ˈlɪsənər/',
               phonetic: 'LI-se-ner',
               example:
@@ -6434,7 +6551,7 @@ export default {
             },
             {
               english: 'BackendRef',
-              italian: 'backendRef / riferimento al backend',
+              italian: 'riferimento al backend (BackendRef)',
               pronunciation: '/ˈbækend ref/',
               phonetic: 'BAK-end REF',
               example: 'BackendRefs target Services. = I BackendRef puntano ai Service.',
@@ -6491,7 +6608,7 @@ export default {
           items: [
             {
               english: 'ConfigMap',
-              italian: 'ConfigMap / oggetto di configurazione K8s',
+              italian: 'oggetto di configurazione K8s (ConfigMap)',
               pronunciation: '/kənˈfɪɡ mæp/',
               phonetic: 'con-FIG-MAP',
               example:
@@ -6543,7 +6660,7 @@ export default {
             },
             {
               english: 'envFrom',
-              italian: 'envFrom / inietta tutte le coppie chiave-valore',
+              italian: 'inietta tutte le coppie chiave-valore (envFrom)',
               pronunciation: '/env frɒm/',
               phonetic: 'ENV FROM',
               example:
@@ -6554,7 +6671,7 @@ export default {
             },
             {
               english: 'configMapRef',
-              italian: 'configMapRef / riferimento a ConfigMap',
+              italian: 'riferimento a ConfigMap (configMapRef)',
               pronunciation: '/ref/',
               phonetic: 'REF',
               example: 'Reference a ConfigMap by name. = Riferimento a un ConfigMap per nome.',
@@ -6573,7 +6690,7 @@ export default {
             },
             {
               english: 'Hot Reload',
-              italian: 'hot reload / ricarica a caldo',
+              italian: 'ricarica a caldo (Hot Reload)',
               pronunciation: '/hɒt rɪˈloʊd/',
               phonetic: 'HOT ri-LOUD',
               example:
@@ -6602,7 +6719,7 @@ export default {
           items: [
             {
               english: 'Secret',
-              italian: 'Secret / oggetto contenente segreti K8s',
+              italian: 'oggetto contenente segreti K8s (Secret)',
               pronunciation: '/ˈsiːkrət/',
               phonetic: 'SI-kret',
               example: 'Secrets store sensitive data. = I Secret memorizzano dati sensibili.',
@@ -6653,7 +6770,7 @@ export default {
             },
             {
               english: 'imagePullSecrets',
-              italian: 'imagePullSecrets / segreti per pull immagini private',
+              italian: 'segreti per pull immagini private (imagePullSecrets)',
               pronunciation: '/ˈɪmɪdʒ pʊl ˈsiːkrəts/',
               phonetic: 'I-migg PUL SI-krets',
               example:
@@ -6675,7 +6792,7 @@ export default {
             },
             {
               english: 'External Secrets Operator',
-              italian: 'External Secrets Operator / sincronizzatore segreti K8s',
+              italian: 'sincronizzatore segreti K8s (External Secrets Operator)',
               pronunciation: '/ɪkˈstɜːrnl/',
               phonetic: 'ek-STER-nl',
               example:
@@ -6686,7 +6803,7 @@ export default {
             },
             {
               english: 'SealedSecret',
-              italian: 'SealedSecret / segreto cifrato per Git',
+              italian: 'segreto cifrato per Git (SealedSecret)',
               pronunciation: '/siːld/',
               phonetic: 'SIILD',
               example:
@@ -6697,7 +6814,7 @@ export default {
             },
             {
               english: 'SOPS',
-              italian: 'SOPS / cifratura di file Mozilla',
+              italian: 'cifratura di file Mozilla (SOPS)',
               pronunciation: '/sɒps/',
               phonetic: 'SOPS',
               example: 'SOPS encrypts YAML files in git. = SOPS cifra file YAML in git.',
@@ -6725,7 +6842,7 @@ export default {
             },
             {
               english: 'valueFrom',
-              italian: 'valueFrom / origine del valore env',
+              italian: 'origine del valore env (valueFrom)',
               pronunciation: '/ˈvæljuː frɒm/',
               phonetic: 'VAL-iu FROM',
               example:
@@ -6736,7 +6853,7 @@ export default {
             },
             {
               english: 'configMapKeyRef',
-              italian: 'configMapKeyRef / chiave specifica di ConfigMap',
+              italian: 'chiave specifica di ConfigMap (configMapKeyRef)',
               pronunciation: '/kiː ref/',
               phonetic: 'KII-REF',
               example:
@@ -6746,7 +6863,7 @@ export default {
             },
             {
               english: 'secretKeyRef',
-              italian: 'secretKeyRef / chiave specifica di Secret',
+              italian: 'chiave specifica di Secret (secretKeyRef)',
               pronunciation: '/ˈsiːkrət kiː/',
               phonetic: 'SI-kret KII',
               example: 'Get a value from a Secret key. = Ottieni un valore da una chiave Secret.',
@@ -6756,7 +6873,7 @@ export default {
             },
             {
               english: 'fieldRef',
-              italian: 'fieldRef / riferimento a campo del pod',
+              italian: 'riferimento a campo del pod (fieldRef)',
               pronunciation: '/fiːld ref/',
               phonetic: 'FIILD-REF',
               example: 'fieldRef gets pod fields. = fieldRef ottiene campi del pod.',
@@ -6766,7 +6883,7 @@ export default {
             },
             {
               english: 'resourceFieldRef',
-              italian: 'resourceFieldRef / riferimento a campo risorsa',
+              italian: 'riferimento a campo risorsa (resourceFieldRef)',
               pronunciation: '/rɪˈsɔːrs/',
               phonetic: 'ri-SORS',
               example: 'Get container resource info. = Ottieni info risorse del container.',
@@ -6823,7 +6940,7 @@ export default {
           items: [
             {
               english: 'Downward API',
-              italian: 'Downward API / espone metadata pod come env',
+              italian: 'espone metadata pod come env (Downward API)',
               pronunciation: '/ˈdaʊnwərd/',
               phonetic: 'DAUN-uerd',
               example: 'Downward API exposes pod metadata. = Downward API espone metadati del pod.',
@@ -6852,7 +6969,7 @@ export default {
             },
             {
               english: 'spec.serviceAccountName',
-              italian: 'spec.serviceAccountName / SA usato dal pod',
+              italian: 'SA usato dal pod (spec.serviceAccountName)',
               pronunciation: '/ˈsɜːrvɪs əˈkaʊnt/',
               phonetic: 'SER-vis a-KAUNT',
               example: 'Inject ServiceAccount name. = Inietta il nome del ServiceAccount.',
@@ -6902,7 +7019,7 @@ export default {
             },
             {
               english: 'subPath',
-              italian: 'subPath / sottopercorso del volume',
+              italian: 'sottopercorso del volume (subPath)',
               pronunciation: '/sʌb pæθ/',
               phonetic: 'SAB-PAT',
               example:
@@ -6913,7 +7030,7 @@ export default {
             },
             {
               english: 'defaultMode',
-              italian: 'defaultMode / permessi di default file montati',
+              italian: 'permessi di default file montati (defaultMode)',
               pronunciation: '/dɪˈfɔːlt moʊd/',
               phonetic: 'di-FOLT MOUD',
               example:
@@ -6940,7 +7057,7 @@ export default {
           items: [
             {
               english: 'PersistentVolume',
-              italian: 'PersistentVolume / volume persistente del cluster',
+              italian: 'volume persistente del cluster (PersistentVolume)',
               pronunciation: '/pərˈsɪstənt ˈvɒljuːm/',
               phonetic: 'per-SI-stent VOL-ium',
               example:
@@ -6952,7 +7069,7 @@ export default {
             },
             {
               english: 'PV',
-              italian: 'PV / PersistentVolume',
+              italian: 'PersistentVolume (PV)',
               pronunciation: '/piː viː/',
               phonetic: 'pi-VI',
               example:
@@ -7048,7 +7165,7 @@ export default {
           items: [
             {
               english: 'PersistentVolumeClaim',
-              italian: 'PersistentVolumeClaim / richiesta di PV',
+              italian: 'richiesta di PV (PersistentVolumeClaim)',
               pronunciation: '/kleɪm/',
               phonetic: 'KLEIM',
               example:
@@ -7060,7 +7177,7 @@ export default {
             },
             {
               english: 'PVC',
-              italian: 'PVC / Persistent Volume Claim',
+              italian: 'Persistent Volume Claim (PVC)',
               pronunciation: '/piː viː siː/',
               phonetic: 'pi-vi-SI',
               example:
@@ -7112,7 +7229,7 @@ export default {
             },
             {
               english: 'WaitForFirstConsumer',
-              italian: 'WaitForFirstConsumer / aspetta prima di provisionare',
+              italian: 'aspetta prima di provisionare (WaitForFirstConsumer)',
               pronunciation: '/weɪt fɔːr/',
               phonetic: 'UEIT-FOR',
               example:
@@ -7162,7 +7279,7 @@ export default {
           items: [
             {
               english: 'StorageClass',
-              italian: 'StorageClass / classe di storage dinamico',
+              italian: 'classe di storage dinamico (StorageClass)',
               pronunciation: '/ˈstɔːrɪdʒ klæs/',
               phonetic: 'STO-rig KLAS',
               example:
@@ -7173,7 +7290,7 @@ export default {
             },
             {
               english: 'Provisioner',
-              italian: 'provisioner / fornitore di volumi',
+              italian: 'fornitore di volumi (Provisioner)',
               pronunciation: '/prəˈvɪʒənər/',
               phonetic: 'pro-VI-scio-ner',
               example:
@@ -7204,7 +7321,7 @@ export default {
             },
             {
               english: 'AWS EBS',
-              italian: 'AWS EBS / Elastic Block Store',
+              italian: 'Elastic Block Store (AWS EBS)',
               pronunciation: '/iː biː es/',
               phonetic: 'i-bi-ES',
               example: 'AWS EBS provides block storage. = AWS EBS fornisce storage a blocchi.',
@@ -7224,7 +7341,7 @@ export default {
             },
             {
               english: 'Azure Disk',
-              italian: 'Azure Disk / disco Azure',
+              italian: 'disco Azure (Azure Disk)',
               pronunciation: '/ˈæʒər dɪsk/',
               phonetic: 'A-zer DISK',
               example: 'Azure Disk for Azure clusters. = Azure Disk per cluster Azure.',
@@ -7255,7 +7372,7 @@ export default {
             },
             {
               english: 'reclaimPolicy',
-              italian: 'reclaimPolicy / politica di riutilizzo PV',
+              italian: 'politica di riutilizzo PV (reclaimPolicy)',
               pronunciation: '/rɪˈkleɪm/',
               phonetic: 'ri-KLEIM',
               example:
@@ -7273,7 +7390,7 @@ export default {
           items: [
             {
               english: 'CSI',
-              italian: 'CSI / Container Storage Interface',
+              italian: 'Container Storage Interface (CSI)',
               pronunciation: '/siː es aɪ/',
               phonetic: 'si-es-AI',
               example:
@@ -7304,7 +7421,7 @@ export default {
             },
             {
               english: 'VolumeSnapshotClass',
-              italian: 'VolumeSnapshotClass / classe per snapshot volumi',
+              italian: 'classe per snapshot volumi (VolumeSnapshotClass)',
               pronunciation: '/snæpʃɒt klæs/',
               phonetic: 'SNAP-sciot KLAS',
               example:
@@ -7345,7 +7462,7 @@ export default {
             },
             {
               english: 'hostPath',
-              italian: 'hostPath / percorso del nodo come volume',
+              italian: 'percorso del nodo come volume (hostPath)',
               pronunciation: '/hoʊst pæθ/',
               phonetic: 'HOUST-PAT',
               example: 'hostPath mounts a node directory. = hostPath monta una directory del nodo.',
@@ -7355,7 +7472,7 @@ export default {
             },
             {
               english: 'emptyDir',
-              italian: 'emptyDir / volume effimero',
+              italian: 'volume effimero (emptyDir)',
               pronunciation: '/ˈempti dɪr/',
               phonetic: 'EM-pti DIR',
               example:
@@ -7393,7 +7510,7 @@ export default {
           items: [
             {
               english: 'CNI',
-              italian: 'CNI / Container Network Interface',
+              italian: 'Container Network Interface (CNI)',
               pronunciation: '/siː en aɪ/',
               phonetic: 'si-en-AI',
               example:
@@ -7466,7 +7583,7 @@ export default {
             },
             {
               english: 'BGP',
-              italian: 'BGP / Border Gateway Protocol',
+              italian: 'Border Gateway Protocol (BGP)',
               pronunciation: '/biː dʒiː piː/',
               phonetic: 'bi-gi-PI',
               example: 'Calico can use BGP for routing. = Calico può usare BGP per il routing.',
@@ -7476,7 +7593,7 @@ export default {
             },
             {
               english: 'IP-in-IP',
-              italian: 'IP-in-IP / incapsulamento IP in IP',
+              italian: 'incapsulamento IP in IP (IP-in-IP)',
               pronunciation: '/aɪ piː ɪn aɪ piː/',
               phonetic: 'ai-pi IN ai-PI',
               example: 'IP-in-IP encapsulates packets. = IP-in-IP incapsula i pacchetti.',
@@ -7485,7 +7602,7 @@ export default {
             },
             {
               english: 'VXLAN',
-              italian: 'VXLAN / Virtual eXtensible LAN',
+              italian: 'Virtual eXtensible LAN (VXLAN)',
               pronunciation: '/viː eks lan/',
               phonetic: 'vi-eks-LAN',
               example: 'VXLAN tunnels packets between nodes. = VXLAN tunnel pacchetti tra nodi.',
@@ -7501,7 +7618,7 @@ export default {
           items: [
             {
               english: 'NetworkPolicy',
-              italian: 'NetworkPolicy / policy di rete K8s',
+              italian: 'policy di rete K8s (NetworkPolicy)',
               pronunciation: '/ˈnetwɜːrk ˈpɒləsi/',
               phonetic: 'NET-uerk PO-li-si',
               example:
@@ -7534,7 +7651,7 @@ export default {
             },
             {
               english: 'podSelector',
-              italian: 'podSelector / selettore di pod nella policy',
+              italian: 'selettore di pod nella policy (podSelector)',
               pronunciation: '/səˈlektər/',
               phonetic: 'se-LEK-tor',
               example: 'podSelector targets specific pods. = podSelector mira a pod specifici.',
@@ -7544,7 +7661,7 @@ export default {
             },
             {
               english: 'namespaceSelector',
-              italian: 'namespaceSelector / selettore di namespace',
+              italian: 'selettore di namespace (namespaceSelector)',
               pronunciation: '/ˈneɪmspeɪs/',
               phonetic: 'NEIM-speis',
               example:
@@ -7554,7 +7671,7 @@ export default {
             },
             {
               english: 'ipBlock',
-              italian: 'ipBlock / blocco IP nella policy',
+              italian: 'blocco IP nella policy (ipBlock)',
               pronunciation: '/aɪ piː blɒk/',
               phonetic: 'ai-pi-BLOK',
               example: 'ipBlock restricts CIDR ranges. = ipBlock limita range CIDR.',
@@ -7564,7 +7681,7 @@ export default {
             },
             {
               english: 'Default Deny',
-              italian: 'default deny / nega di default',
+              italian: 'nega di default (Default Deny)',
               pronunciation: '/dɪˈfɔːlt dɪˈnaɪ/',
               phonetic: 'di-FOLT di-NAI',
               example:
@@ -7575,7 +7692,7 @@ export default {
             },
             {
               english: 'Allow List',
-              italian: 'allow list / lista di permessi',
+              italian: 'lista di permessi (Allow List)',
               pronunciation: '/əˈlaʊ lɪst/',
               phonetic: 'a-LAU LIST',
               example:
@@ -7613,7 +7730,7 @@ export default {
           items: [
             {
               english: 'CoreDNS',
-              italian: 'CoreDNS / DNS cluster di Kubernetes',
+              italian: 'DNS cluster di Kubernetes (CoreDNS)',
               pronunciation: '/kɔːr diː en es/',
               phonetic: 'KOR di-en-ES',
               example: 'CoreDNS provides cluster DNS. = CoreDNS fornisce il DNS del cluster.',
@@ -7633,7 +7750,7 @@ export default {
             },
             {
               english: 'FQDN',
-              italian: 'FQDN / Nome qualificato',
+              italian: 'Nome qualificato (FQDN)',
               pronunciation: '/ef kjuː diː en/',
               phonetic: 'ef-kiu-di-EN',
               example:
@@ -7654,7 +7771,7 @@ export default {
             },
             {
               english: 'dnsPolicy',
-              italian: 'dnsPolicy / policy DNS del pod',
+              italian: 'policy DNS del pod (dnsPolicy)',
               pronunciation: '/ˈpɒləsi/',
               phonetic: 'PO-li-si',
               example:
@@ -7665,7 +7782,7 @@ export default {
             },
             {
               english: 'Corefile',
-              italian: 'Corefile / configurazione di CoreDNS',
+              italian: 'configurazione di CoreDNS (Corefile)',
               pronunciation: '/kɔːr faɪl/',
               phonetic: 'KOR-FAIL',
               example: 'Corefile configures CoreDNS. = Corefile configura CoreDNS.',
@@ -7684,7 +7801,7 @@ export default {
             },
             {
               english: 'Stub Domain',
-              italian: 'stub domain / dominio inoltrato',
+              italian: 'dominio inoltrato (Stub Domain)',
               pronunciation: '/stʌb/',
               phonetic: 'STAB',
               example:
@@ -7704,7 +7821,7 @@ export default {
             },
             {
               english: 'NodeLocal DNSCache',
-              italian: 'NodeLocal DNSCache / cache DNS sul nodo',
+              italian: 'cache DNS sul nodo (NodeLocal DNSCache)',
               pronunciation: '/noʊd ˈloʊkl/',
               phonetic: 'NOUD LO-kl',
               example:
@@ -7722,7 +7839,7 @@ export default {
           items: [
             {
               english: 'kube-proxy',
-              italian: 'kube-proxy / proxy di rete su ogni nodo',
+              italian: 'proxy di rete su ogni nodo (kube-proxy)',
               pronunciation: '/ˈprɒksi/',
               phonetic: 'PROK-si',
               example:
@@ -7774,7 +7891,7 @@ export default {
             },
             {
               english: 'externalTrafficPolicy',
-              italian: 'externalTrafficPolicy / policy traffico esterno',
+              italian: 'policy traffico esterno (externalTrafficPolicy)',
               pronunciation: '/ɪkˈstɜːrnl ˈtræfɪk/',
               phonetic: 'ek-STER-nl TRA-fik',
               example:
@@ -7785,7 +7902,7 @@ export default {
             },
             {
               english: 'internalTrafficPolicy',
-              italian: 'internalTrafficPolicy / policy traffico interno',
+              italian: 'policy traffico interno (internalTrafficPolicy)',
               pronunciation: '/ɪnˈtɜːrnl/',
               phonetic: 'in-TER-nl',
               example:
@@ -7815,7 +7932,7 @@ export default {
             },
             {
               english: 'Source NAT',
-              italian: 'source NAT / traduzione indirizzo sorgente',
+              italian: 'traduzione indirizzo sorgente (Source NAT)',
               pronunciation: '/sɔːrs næt/',
               phonetic: 'SORS-NAT',
               example: 'kube-proxy may apply SNAT. = kube-proxy può applicare SNAT.',
@@ -7841,7 +7958,7 @@ export default {
           items: [
             {
               english: 'Helm',
-              italian: 'Helm / package manager per Kubernetes',
+              italian: 'package manager per Kubernetes (Helm)',
               pronunciation: '/helm/',
               phonetic: 'HELM',
               example: 'Helm is the K8s package manager. = Helm è il package manager di K8s.',
@@ -7851,7 +7968,7 @@ export default {
             },
             {
               english: 'Chart',
-              italian: 'chart / pacchetto Helm',
+              italian: 'pacchetto Helm (Chart)',
               pronunciation: '/tʃɑːrt/',
               phonetic: 'CIART',
               example: 'A chart is a Helm package. = Un chart è un pacchetto Helm.',
@@ -7861,7 +7978,7 @@ export default {
             },
             {
               english: 'Release',
-              italian: 'release / istanza installata di un chart',
+              italian: 'istanza installata di un chart (Release)',
               pronunciation: '/rɪˈliːs/',
               phonetic: 'ri-LIIS',
               example:
@@ -7871,7 +7988,7 @@ export default {
             },
             {
               english: 'Repository',
-              italian: 'repository / archivio di chart',
+              italian: 'archivio di chart (Repository)',
               pronunciation: '/rɪˈpɒzɪtɔːri/',
               phonetic: 'ri-PO-zi-tori',
               example: 'A Helm repository hosts charts. = Un repository Helm ospita chart.',
@@ -7950,7 +8067,7 @@ export default {
           items: [
             {
               english: 'Chart.yaml',
-              italian: 'Chart.yaml / metadati del chart',
+              italian: 'metadati del chart (Chart.yaml)',
               pronunciation: '/tʃɑːrt jæml/',
               phonetic: 'CIART IA-ml',
               example:
@@ -7961,7 +8078,7 @@ export default {
             },
             {
               english: 'values.yaml',
-              italian: 'values.yaml / valori di default del chart',
+              italian: 'valori di default del chart (values.yaml)',
               pronunciation: '/ˈvæljuːz jæml/',
               phonetic: 'VAL-iuz IA-ml',
               example:
@@ -8001,7 +8118,7 @@ export default {
             },
             {
               english: '_helpers.tpl',
-              italian: '_helpers.tpl / template helper Helm',
+              italian: 'template helper Helm (_helpers.tpl)',
               pronunciation: '/ˈhelpərz/',
               phonetic: 'HEL-perz',
               example:
@@ -8110,7 +8227,7 @@ export default {
             },
             {
               english: 'if/else',
-              italian: 'if/else / costrutti condizionali nei template',
+              italian: 'costrutti condizionali nei template (if/else)',
               pronunciation: '/ɪf els/',
               phonetic: 'IF-ELS',
               example: 'Conditionals in templates. = Condizionali nei template.',
@@ -8167,7 +8284,7 @@ export default {
           items: [
             {
               english: 'Hook',
-              italian: 'hook / aggancio del ciclo di vita Helm',
+              italian: 'aggancio del ciclo di vita Helm (Hook)',
               pronunciation: '/hʊk/',
               phonetic: 'HUK',
               example:
@@ -8227,7 +8344,7 @@ export default {
             },
             {
               english: 'Sub-chart',
-              italian: 'sub-chart / chart annidato',
+              italian: 'chart annidato (Sub-chart)',
               pronunciation: '/sʌb tʃɑːrt/',
               phonetic: 'SAB-CIART',
               example:
@@ -8284,7 +8401,7 @@ export default {
           items: [
             {
               english: 'RBAC',
-              italian: 'RBAC / Role-Based Access Control',
+              italian: 'Role-Based Access Control (RBAC)',
               pronunciation: '/ɑːr biː eɪ siː/',
               phonetic: 'ar-bi-ei-SI',
               example: 'RBAC controls who can do what. = RBAC controlla chi può fare cosa.',
@@ -8293,7 +8410,7 @@ export default {
             },
             {
               english: 'Role',
-              italian: 'Role / ruolo di namespace',
+              italian: 'ruolo di namespace (Role)',
               pronunciation: '/roʊl/',
               phonetic: 'ROUL',
               example:
@@ -8304,7 +8421,7 @@ export default {
             },
             {
               english: 'ClusterRole',
-              italian: 'ClusterRole / ruolo a livello cluster K8s',
+              italian: 'ruolo a livello cluster K8s (ClusterRole)',
               pronunciation: '/ˈklʌstər roʊl/',
               phonetic: 'KLAS-ter ROUL',
               example:
@@ -8314,7 +8431,7 @@ export default {
             },
             {
               english: 'RoleBinding',
-              italian: 'RoleBinding / aggancio ruolo a soggetto K8s',
+              italian: 'aggancio ruolo a soggetto K8s (RoleBinding)',
               pronunciation: '/ˈbaɪndɪŋ/',
               phonetic: 'BAIN-ding',
               example:
@@ -8325,7 +8442,7 @@ export default {
             },
             {
               english: 'ClusterRoleBinding',
-              italian: 'ClusterRoleBinding / aggancio cluster-wide',
+              italian: 'aggancio cluster-wide (ClusterRoleBinding)',
               pronunciation: '/ˈklʌstər/',
               phonetic: 'KLAS-ter',
               example:
@@ -8355,7 +8472,7 @@ export default {
             },
             {
               english: 'apiGroups',
-              italian: 'apiGroups / gruppi API nei ruoli',
+              italian: 'gruppi API nei ruoli (apiGroups)',
               pronunciation: '/ɡruːps/',
               phonetic: 'GRUPS',
               example: 'apiGroups specifies API groups. = apiGroups specifica i gruppi API.',
@@ -8393,7 +8510,7 @@ export default {
           items: [
             {
               english: 'ServiceAccount',
-              italian: 'ServiceAccount / account di servizio K8s',
+              italian: 'account di servizio K8s (ServiceAccount)',
               pronunciation: '/ˈsɜːrvɪs əˈkaʊnt/',
               phonetic: 'SER-vis a-KAUNT',
               example:
@@ -8424,7 +8541,7 @@ export default {
             },
             {
               english: 'automountServiceAccountToken',
-              italian: 'automountServiceAccountToken / monta token SA',
+              italian: 'monta token SA (automountServiceAccountToken)',
               pronunciation: '/ˌɔːtoʊˈmaʊnt/',
               phonetic: 'au-tou-MAUNT',
               example:
@@ -8435,7 +8552,7 @@ export default {
             },
             {
               english: 'IRSA',
-              italian: 'IRSA / IAM Roles for Service Accounts',
+              italian: 'IAM Roles for Service Accounts (IRSA)',
               pronunciation: '/aɪ ɑːr es eɪ/',
               phonetic: 'ai-ar-es-EI',
               example: 'IRSA maps SAs to AWS IAM roles. = IRSA mappa SA a ruoli IAM AWS.',
@@ -8445,7 +8562,7 @@ export default {
             },
             {
               english: 'Workload Identity',
-              italian: 'workload identity / identità GCP per carichi',
+              italian: 'identità GCP per carichi (Workload Identity)',
               pronunciation: '/aɪˈdentəti/',
               phonetic: 'ai-DEN-te-ti',
               example:
@@ -8456,7 +8573,7 @@ export default {
             },
             {
               english: 'OIDC',
-              italian: 'OIDC / OpenID Connect',
+              italian: 'OpenID Connect (OIDC)',
               pronunciation: '/oʊ aɪ diː siː/',
               phonetic: 'ou-ai-di-SI',
               example: 'K8s exposes an OIDC issuer. = K8s espone un issuer OIDC.',
@@ -8465,7 +8582,7 @@ export default {
             },
             {
               english: 'Audience',
-              italian: 'audience / destinatario del token',
+              italian: 'destinatario del token (Audience)',
               pronunciation: '/ˈɔːdiəns/',
               phonetic: 'O-di-ens',
               example:
@@ -8502,7 +8619,7 @@ export default {
           items: [
             {
               english: 'PodSecurityPolicy',
-              italian: 'PodSecurityPolicy / vecchia policy di sicurezza pod',
+              italian: 'vecchia policy di sicurezza pod (PodSecurityPolicy)',
               pronunciation: '/ˈpɒləsi/',
               phonetic: 'PO-li-si',
               example:
@@ -8513,7 +8630,7 @@ export default {
             },
             {
               english: 'Pod Security Standards',
-              italian: 'Pod Security Standards / standard sicurezza pod',
+              italian: 'standard sicurezza pod (Pod Security Standards)',
               pronunciation: '/ˈstændərdz/',
               phonetic: 'STAN-derdz',
               example: 'PSS define security profiles. = PSS definiscono profili di sicurezza.',
@@ -8552,7 +8669,7 @@ export default {
             },
             {
               english: 'securityContext',
-              italian: 'securityContext / contesto di sicurezza',
+              italian: 'contesto di sicurezza (securityContext)',
               pronunciation: '/sɪˈkjʊrɪti ˈkɒntekst/',
               phonetic: 'si-KIU-ri-ti KON-tekst',
               example:
@@ -8563,7 +8680,7 @@ export default {
             },
             {
               english: 'runAsNonRoot',
-              italian: 'runAsNonRoot / esegui non come root',
+              italian: 'esegui non come root (runAsNonRoot)',
               pronunciation: '/nɒn ruːt/',
               phonetic: 'NON-RUT',
               example:
@@ -8573,7 +8690,7 @@ export default {
             },
             {
               english: 'runAsUser',
-              italian: 'runAsUser / UID di esecuzione',
+              italian: 'UID di esecuzione (runAsUser)',
               pronunciation: '/ˈjuːzər/',
               phonetic: 'IU-zer',
               example: "runAsUser sets the container UID. = runAsUser imposta l'UID del container.",
@@ -8583,7 +8700,7 @@ export default {
             },
             {
               english: 'fsGroup',
-              italian: 'fsGroup / GID dei volumi',
+              italian: 'GID dei volumi (fsGroup)',
               pronunciation: '/ef es ɡruːp/',
               phonetic: 'ef-es GRUP',
               example:
@@ -8594,7 +8711,7 @@ export default {
             },
             {
               english: 'seccompProfile',
-              italian: 'seccompProfile / profilo seccomp',
+              italian: 'profilo seccomp (seccompProfile)',
               pronunciation: '/ˈsekkɒmp/',
               phonetic: 'SEK-komp',
               example:
@@ -8612,7 +8729,7 @@ export default {
           items: [
             {
               english: 'OPA',
-              italian: 'OPA / Open Policy Agent',
+              italian: 'Open Policy Agent (OPA)',
               pronunciation: '/oʊ piː eɪ/',
               phonetic: 'ou-pi-EI',
               example: 'OPA is a general policy engine. = OPA è un motore di policy generico.',
@@ -8632,7 +8749,7 @@ export default {
             },
             {
               english: 'Rego',
-              italian: 'Rego / linguaggio policy di OPA',
+              italian: 'linguaggio policy di OPA (Rego)',
               pronunciation: '/ˈreɪɡoʊ/',
               phonetic: 'REI-go',
               example: 'Rego is the OPA policy language. = Rego è il linguaggio di policy OPA.',
@@ -8642,7 +8759,7 @@ export default {
             },
             {
               english: 'ConstraintTemplate',
-              italian: 'ConstraintTemplate / template di policy Gatekeeper',
+              italian: 'template di policy Gatekeeper (ConstraintTemplate)',
               pronunciation: '/kənˈstreɪnt/',
               phonetic: 'con-STREINT',
               example:
@@ -8652,7 +8769,7 @@ export default {
             },
             {
               english: 'Constraint',
-              italian: 'Constraint / istanza di policy Gatekeeper',
+              italian: 'istanza di policy Gatekeeper (Constraint)',
               pronunciation: '/kənˈstreɪnt/',
               phonetic: 'con-STREINT',
               example:
@@ -8731,7 +8848,7 @@ export default {
           items: [
             {
               english: 'HPA',
-              italian: 'HPA / Horizontal Pod Autoscaler',
+              italian: 'Horizontal Pod Autoscaler (HPA)',
               pronunciation: '/eɪtʃ piː eɪ/',
               phonetic: 'eich-pi-EI',
               example: 'HPA scales pods based on metrics. = HPA scala i pod in base a metriche.',
@@ -8751,7 +8868,7 @@ export default {
             },
             {
               english: 'minReplicas',
-              italian: 'minReplicas / repliche minime HPA',
+              italian: 'repliche minime HPA (minReplicas)',
               pronunciation: '/mɪn/',
               phonetic: 'MIN',
               example:
@@ -8762,7 +8879,7 @@ export default {
             },
             {
               english: 'maxReplicas',
-              italian: 'maxReplicas / repliche massime HPA',
+              italian: 'repliche massime HPA (maxReplicas)',
               pronunciation: '/mæks/',
               phonetic: 'MAKS',
               example:
@@ -8825,7 +8942,7 @@ export default {
             },
             {
               english: 'metrics-server',
-              italian: 'metrics-server / metriche delle risorse K8s',
+              italian: 'metriche delle risorse K8s (metrics-server)',
               pronunciation: '/ˈsɜːrvər/',
               phonetic: 'SER-ver',
               example: 'metrics-server is required for HPA. = metrics-server è necessario per HPA.',
@@ -8842,7 +8959,7 @@ export default {
           items: [
             {
               english: 'VPA',
-              italian: 'VPA / Vertical Pod Autoscaler',
+              italian: 'Vertical Pod Autoscaler (VPA)',
               pronunciation: '/viː piː eɪ/',
               phonetic: 'vi-pi-EI',
               example:
@@ -8875,7 +8992,7 @@ export default {
             },
             {
               english: 'Cluster Autoscaler',
-              italian: 'Cluster Autoscaler / scaler dei nodi',
+              italian: 'scaler dei nodi (Cluster Autoscaler)',
               pronunciation: '/ˈɔːtoʊskeɪlər/',
               phonetic: 'O-tou-skei-ler',
               example:
@@ -8896,7 +9013,7 @@ export default {
             },
             {
               english: 'Karpenter',
-              italian: 'Karpenter / autoscaler nodi AWS-native',
+              italian: 'autoscaler nodi AWS-native (Karpenter)',
               pronunciation: '/ˈkɑːrpəntər/',
               phonetic: 'KAR-pen-ter',
               example:
@@ -8938,7 +9055,7 @@ export default {
             },
             {
               english: 'Right-Sizing',
-              italian: 'right-sizing / dimensionamento corretto risorse',
+              italian: 'dimensionamento corretto risorse (Right-Sizing)',
               pronunciation: '/raɪt saɪzɪŋ/',
               phonetic: 'RAIT-SAI-zing',
               example:
@@ -8955,7 +9072,7 @@ export default {
           items: [
             {
               english: 'PodDisruptionBudget',
-              italian: 'PodDisruptionBudget / budget di interruzione pod',
+              italian: 'budget di interruzione pod (PodDisruptionBudget)',
               pronunciation: '/dɪsˈrʌpʃən ˈbʌdʒɪt/',
               phonetic: 'dis-RAP-scion BA-git',
               example: 'PDB limits voluntary disruptions. = PDB limita le interruzioni volontarie.',
@@ -8965,7 +9082,7 @@ export default {
             },
             {
               english: 'PDB',
-              italian: 'PDB / PodDisruptionBudget',
+              italian: 'PodDisruptionBudget (PDB)',
               pronunciation: '/piː diː biː/',
               phonetic: 'pi-di-BI',
               example: 'PDB protects against drains. = PDB protegge dai drain.',
@@ -8974,7 +9091,7 @@ export default {
             },
             {
               english: 'minAvailable',
-              italian: 'minAvailable / pod minimi disponibili',
+              italian: 'pod minimi disponibili (minAvailable)',
               pronunciation: '/mɪn əˈveɪləbl/',
               phonetic: 'MIN a-VEI-la-bol',
               example: 'minAvailable defines minimum pods. = minAvailable definisce i pod minimi.',
@@ -9015,7 +9132,7 @@ export default {
             },
             {
               english: 'Eviction',
-              italian: 'eviction / sfratto del pod',
+              italian: 'sfratto del pod (Eviction)',
               pronunciation: '/ɪˈvɪkʃən/',
               phonetic: 'i-VIK-scion',
               example:
@@ -9062,7 +9179,7 @@ export default {
           items: [
             {
               english: 'KEDA',
-              italian: 'KEDA / Kubernetes Event-Driven Autoscaling',
+              italian: 'Kubernetes Event-Driven Autoscaling (KEDA)',
               pronunciation: '/ˈkiːdə/',
               phonetic: 'KI-da',
               example: 'KEDA is event-driven autoscaling. = KEDA è autoscaling guidato da eventi.',
@@ -9072,7 +9189,7 @@ export default {
             },
             {
               english: 'ScaledObject',
-              italian: 'ScaledObject / oggetto KEDA scalabile',
+              italian: 'oggetto KEDA scalabile (ScaledObject)',
               pronunciation: '/skeɪld/',
               phonetic: 'SKEILD',
               example:
@@ -9083,7 +9200,7 @@ export default {
             },
             {
               english: 'Scaler',
-              italian: 'scaler / fornitore di metriche KEDA',
+              italian: 'fornitore di metriche KEDA (Scaler)',
               pronunciation: '/ˈskeɪlər/',
               phonetic: 'SKEI-ler',
               example:
@@ -9094,7 +9211,7 @@ export default {
             },
             {
               english: 'Trigger',
-              italian: 'trigger / evento scatenante',
+              italian: 'evento scatenante (Trigger)',
               pronunciation: '/ˈtrɪɡər/',
               phonetic: 'TRI-gher',
               example: 'Triggers define when to scale. = I trigger definiscono quando scalare.',
@@ -9134,7 +9251,7 @@ export default {
             },
             {
               english: 'Cooldown',
-              italian: 'cooldown / tempo di raffreddamento',
+              italian: 'tempo di raffreddamento (Cooldown)',
               pronunciation: '/ˈkuːldaʊn/',
               phonetic: 'KUL-daun',
               example: 'KEDA cooldown prevents flapping. = Il cooldown KEDA previene oscillazioni.',
@@ -9144,7 +9261,7 @@ export default {
             },
             {
               english: 'TriggerAuthentication',
-              italian: 'TriggerAuthentication / autenticazione del trigger KEDA',
+              italian: 'autenticazione del trigger KEDA (TriggerAuthentication)',
               pronunciation: '/ɔːˌθentɪˈkeɪʃən/',
               phonetic: 'au-ten-ti-KEI-scen',
               example:
@@ -9154,7 +9271,7 @@ export default {
             },
             {
               english: 'ScaledJob',
-              italian: 'ScaledJob / Job autoscalato KEDA',
+              italian: 'Job autoscalato KEDA (ScaledJob)',
               pronunciation: '/dʒɒb/',
               phonetic: 'GIOB',
               example: 'ScaledJob scales batch Jobs. = ScaledJob scala Job batch.',
@@ -9192,7 +9309,7 @@ export default {
             },
             {
               english: 'kubectl top',
-              italian: 'kubectl top / mostra utilizzo risorse',
+              italian: 'mostra utilizzo risorse (kubectl top)',
               pronunciation: '/tɒp/',
               phonetic: 'TOP',
               example:
@@ -9213,7 +9330,7 @@ export default {
             },
             {
               english: 'PromQL',
-              italian: 'PromQL / linguaggio query Prometheus',
+              italian: 'linguaggio query Prometheus (PromQL)',
               pronunciation: '/prɒm kjuː el/',
               phonetic: 'PROM-kiu-EL',
               example:
@@ -9224,7 +9341,7 @@ export default {
             },
             {
               english: 'ServiceMonitor',
-              italian: 'ServiceMonitor / CRD scraping servizi',
+              italian: 'CRD scraping servizi (ServiceMonitor)',
               pronunciation: '/ˈmɒnɪtər/',
               phonetic: 'MO-ni-tor',
               example:
@@ -9235,7 +9352,7 @@ export default {
             },
             {
               english: 'PodMonitor',
-              italian: 'PodMonitor / CRD scraping pod',
+              italian: 'CRD scraping pod (PodMonitor)',
               pronunciation: '/pɒd/',
               phonetic: 'POD',
               example: 'PodMonitor scrapes pods directly. = PodMonitor scrappa i pod direttamente.',
@@ -9244,7 +9361,7 @@ export default {
             },
             {
               english: 'Exporter',
-              italian: 'exporter / esportatore di metriche',
+              italian: 'esportatore di metriche (Exporter)',
               pronunciation: '/ɪkˈspɔːrtər/',
               phonetic: 'ek-SPOR-ter',
               example:
@@ -9255,7 +9372,7 @@ export default {
             },
             {
               english: 'kube-state-metrics',
-              italian: 'kube-state-metrics / metriche di stato K8s',
+              italian: 'metriche di stato K8s (kube-state-metrics)',
               pronunciation: '/steɪt/',
               phonetic: 'STEIT',
               example:
@@ -9314,7 +9431,7 @@ export default {
             },
             {
               english: 'Health Check',
-              italian: 'health check / controllo di salute',
+              italian: 'controllo di salute (Health Check)',
               pronunciation: '/helθ tʃek/',
               phonetic: 'HELT CEK',
               example:
@@ -9324,7 +9441,7 @@ export default {
             },
             {
               english: 'Golden Signals',
-              italian: 'golden signals / latenza, traffico, errori, saturazione',
+              italian: 'latenza, traffico, errori, saturazione (Golden Signals)',
               pronunciation: '/ˈɡoʊldən ˈsɪɡnəlz/',
               phonetic: 'GOL-den SIG-nalz',
               example:
@@ -9335,7 +9452,7 @@ export default {
             },
             {
               english: 'SLO',
-              italian: 'SLO / Service Level Objective',
+              italian: 'Service Level Objective (SLO)',
               pronunciation: '/es el oʊ/',
               phonetic: 'es-el-OU',
               example:
@@ -9345,7 +9462,7 @@ export default {
             },
             {
               english: 'SLI',
-              italian: 'SLI / Service Level Indicator',
+              italian: 'Service Level Indicator (SLI)',
               pronunciation: '/es el aɪ/',
               phonetic: 'es-el-AI',
               example: 'SLIs measure aspects of service. = Gli SLI misurano aspetti del service.',
@@ -9354,7 +9471,7 @@ export default {
             },
             {
               english: 'Error Budget',
-              italian: 'error budget / budget degli errori SLO',
+              italian: 'budget degli errori SLO (Error Budget)',
               pronunciation: '/ˈerər ˈbʌdʒɪt/',
               phonetic: 'E-ror BA-git',
               example:
@@ -9364,7 +9481,7 @@ export default {
             },
             {
               english: 'Uptime',
-              italian: 'uptime / tempo di funzionamento',
+              italian: 'tempo di funzionamento (Uptime)',
               pronunciation: '/ˈʌptaɪm/',
               phonetic: 'AP-taim',
               example:
@@ -9384,7 +9501,7 @@ export default {
             },
             {
               english: 'Throughput',
-              italian: 'throughput / volume di operazioni al secondo',
+              italian: 'volume di operazioni al secondo (Throughput)',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'TRU-put',
               example: 'Throughput is requests per second. = Throughput sono richieste al secondo.',
@@ -9432,7 +9549,7 @@ export default {
             },
             {
               english: 'Promtail',
-              italian: 'Promtail / agente Loki di raccolta log',
+              italian: 'agente Loki di raccolta log (Promtail)',
               pronunciation: '/prɒmteɪl/',
               phonetic: 'PROM-teil',
               example: 'Promtail ships logs to Loki. = Promtail invia log a Loki.',
@@ -9442,7 +9559,7 @@ export default {
             },
             {
               english: 'Stdout/Stderr',
-              italian: 'stdout/stderr / output e errori standard',
+              italian: 'output e errori standard (Stdout/Stderr)',
               pronunciation: '/es tiː diː aʊt/',
               phonetic: 'es-ti-di-AUT',
               example:
@@ -9529,7 +9646,7 @@ export default {
             },
             {
               english: 'OpenTelemetry',
-              italian: 'OpenTelemetry / framework observability standard',
+              italian: 'framework observability standard (OpenTelemetry)',
               pronunciation: '/ˈoʊpən təˈlemətri/',
               phonetic: 'OU-pen te-LE-me-tri',
               example:
@@ -9541,7 +9658,7 @@ export default {
             },
             {
               english: 'Span',
-              italian: 'span / unità di lavoro tracciata',
+              italian: 'unità di lavoro tracciata (Span)',
               pronunciation: '/spæn/',
               phonetic: 'SPAN',
               example:
@@ -9551,7 +9668,7 @@ export default {
             },
             {
               english: 'Trace ID',
-              italian: 'trace ID / identificatore della trace',
+              italian: 'identificatore della trace (Trace ID)',
               pronunciation: '/treɪs aɪ diː/',
               phonetic: 'TREIS ai-DI',
               example:
@@ -9561,7 +9678,7 @@ export default {
             },
             {
               english: 'Sampling',
-              italian: 'sampling / campionamento delle trace',
+              italian: 'campionamento delle trace (Sampling)',
               pronunciation: '/ˈsæmplɪŋ/',
               phonetic: 'SAM-pling',
               example: 'Sample traces to reduce volume. = Campiona le trace per ridurre il volume.',
@@ -9581,7 +9698,7 @@ export default {
             },
             {
               english: 'OTLP',
-              italian: 'OTLP / OpenTelemetry Protocol',
+              italian: 'OpenTelemetry Protocol (OTLP)',
               pronunciation: '/oʊ tiː el piː/',
               phonetic: 'ou-ti-el-PI',
               example:
@@ -9629,7 +9746,7 @@ export default {
           items: [
             {
               english: 'GitOps',
-              italian: 'GitOps / Git come fonte di verità per il deploy',
+              italian: 'Git come fonte di verità per il deploy (GitOps)',
               pronunciation: '/ɡɪt ɒps/',
               phonetic: 'GIT-OPS',
               example: 'GitOps uses Git as source of truth. = GitOps usa Git come fonte di verità.',
@@ -9743,7 +9860,7 @@ export default {
             },
             {
               english: 'Application',
-              italian: 'Application / risorsa Argo CD',
+              italian: 'risorsa Argo CD (Application)',
               pronunciation: '/ˌæplɪˈkeɪʃən/',
               phonetic: 'a-pli-KEI-scen',
               example: 'Application is the ArgoCD CRD. = Application è la CRD di ArgoCD.',
@@ -9774,7 +9891,7 @@ export default {
             },
             {
               english: 'Sync',
-              italian: 'sync / sincronizzazione Argo CD',
+              italian: 'sincronizzazione Argo CD (Sync)',
               pronunciation: '/sɪŋk/',
               phonetic: 'SINK',
               example:
@@ -9785,7 +9902,7 @@ export default {
             },
             {
               english: 'Auto Sync',
-              italian: 'auto sync / sincronizzazione automatica',
+              italian: 'sincronizzazione automatica (Auto Sync)',
               pronunciation: '/ˈɔːtoʊ sɪŋk/',
               phonetic: 'O-tou SINK',
               example:
@@ -9796,7 +9913,7 @@ export default {
             },
             {
               english: 'Self Heal',
-              italian: 'self heal / auto-correzione',
+              italian: 'auto-correzione (Self Heal)',
               pronunciation: '/self hiːl/',
               phonetic: 'SELF-HIIL',
               example:
@@ -9816,7 +9933,7 @@ export default {
             },
             {
               english: 'Sync Wave',
-              italian: 'sync wave / ondata di sincronizzazione',
+              italian: 'ondata di sincronizzazione (Sync Wave)',
               pronunciation: '/weɪv/',
               phonetic: 'UEIV',
               example:
@@ -9827,7 +9944,7 @@ export default {
             },
             {
               english: 'AppProject',
-              italian: 'AppProject / progetto di Argo CD',
+              italian: 'progetto di Argo CD (AppProject)',
               pronunciation: '/æp ˈprɒdʒekt/',
               phonetic: 'AP PRO-gekt',
               example: 'AppProject groups Applications. = AppProject raggruppa Application.',
@@ -9853,7 +9970,7 @@ export default {
             },
             {
               english: 'GitRepository',
-              italian: 'GitRepository / sorgente Git in Flux',
+              italian: 'sorgente Git in Flux (GitRepository)',
               pronunciation: '/ɡɪt rɪˈpɒzɪtɔːri/',
               phonetic: 'GIT ri-PO-zi-tori',
               example:
@@ -9864,7 +9981,7 @@ export default {
             },
             {
               english: 'Kustomization',
-              italian: 'Kustomization / risorsa Flux Kustomize',
+              italian: 'risorsa Flux Kustomize (Kustomization)',
               pronunciation: '/ˌkʌstəmaɪˈzeɪʃən/',
               phonetic: 'kas-to-mai-ZEI-scen',
               example:
@@ -9875,7 +9992,7 @@ export default {
             },
             {
               english: 'HelmRelease',
-              italian: 'HelmRelease / release Helm gestita da Flux',
+              italian: 'release Helm gestita da Flux (HelmRelease)',
               pronunciation: '/helm rɪˈliːs/',
               phonetic: 'HELM ri-LIIS',
               example:
@@ -9895,7 +10012,7 @@ export default {
             },
             {
               english: 'Source Controller',
-              italian: 'Source Controller / controller delle fonti Flux',
+              italian: 'controller delle fonti Flux (Source Controller)',
               pronunciation: '/sɔːrs/',
               phonetic: 'SORS',
               example: 'Source controller fetches manifests. = Source controller scarica manifest.',
@@ -9904,7 +10021,7 @@ export default {
             },
             {
               english: 'Notification Controller',
-              italian: 'Notification Controller / notifiche Flux',
+              italian: 'notifiche Flux (Notification Controller)',
               pronunciation: '/ˌnoʊtɪfɪˈkeɪʃən/',
               phonetic: 'no-ti-fi-KEI-scen',
               example:
@@ -9914,7 +10031,7 @@ export default {
             },
             {
               english: 'Flagger',
-              italian: 'Flagger / progressive delivery Kubernetes',
+              italian: 'progressive delivery Kubernetes (Flagger)',
               pronunciation: '/ˈflæɡər/',
               phonetic: 'FLA-gher',
               example:
@@ -9925,7 +10042,7 @@ export default {
             },
             {
               english: 'Image Reflector',
-              italian: 'Image Reflector / scanner immagini Flux',
+              italian: 'scanner immagini Flux (Image Reflector)',
               pronunciation: '/rɪˈflektər/',
               phonetic: 'ri-FLEK-tor',
               example:
@@ -9951,7 +10068,7 @@ export default {
           items: [
             {
               english: 'Progressive Delivery',
-              italian: 'progressive delivery / rilascio progressivo',
+              italian: 'rilascio progressivo (Progressive Delivery)',
               pronunciation: '/prəˈɡresɪv/',
               phonetic: 'pro-GRE-siv',
               example:
@@ -9961,7 +10078,7 @@ export default {
             },
             {
               english: 'Canary Release',
-              italian: 'canary release / rilascio canary',
+              italian: 'rilascio canary (Canary Release)',
               pronunciation: '/ˈkænəri/',
               phonetic: 'KA-na-ri',
               example:
@@ -9980,7 +10097,7 @@ export default {
             },
             {
               english: 'Feature Flag',
-              italian: 'feature flag / interruttore funzionalità',
+              italian: 'interruttore funzionalità (Feature Flag)',
               pronunciation: '/ˈfiːtʃər flæɡ/',
               phonetic: 'FII-cer FLAG',
               example:
@@ -9990,7 +10107,7 @@ export default {
             },
             {
               english: 'A/B Testing',
-              italian: 'A/B testing / test su due varianti',
+              italian: 'test su due varianti (A/B Testing)',
               pronunciation: '/eɪ biː/',
               phonetic: 'EI-BI',
               example: 'A/B testing compares two versions. = A/B testing confronta due versioni.',
@@ -9999,7 +10116,7 @@ export default {
             },
             {
               english: 'Argo Rollouts',
-              italian: 'Argo Rollouts / progressive delivery Argo',
+              italian: 'progressive delivery Argo (Argo Rollouts)',
               pronunciation: '/ˈroʊlaʊts/',
               phonetic: 'ROUL-auts',
               example:
@@ -10066,7 +10183,7 @@ export default {
           items: [
             {
               english: 'CRD',
-              italian: 'CRD / Custom Resource Definition',
+              italian: 'Custom Resource Definition (CRD)',
               pronunciation: '/siː ɑːr diː/',
               phonetic: 'si-ar-DI',
               example: "CRDs extend the K8s API. = Le CRD estendono l'API K8s.",
@@ -10127,7 +10244,7 @@ export default {
             },
             {
               english: 'Finalizer',
-              italian: 'finalizer / hook di rimozione risorsa',
+              italian: 'hook di rimozione risorsa (Finalizer)',
               pronunciation: '/ˈfaɪnəlaɪzər/',
               phonetic: 'FAI-na-lai-zer',
               example:
@@ -10177,7 +10294,7 @@ export default {
           items: [
             {
               english: 'Operator',
-              italian: 'Operator / pattern di estensione K8s',
+              italian: 'pattern di estensione K8s (Operator)',
               pronunciation: '/ˈɒpəreɪtər/',
               phonetic: 'O-pe-rei-tor',
               example:
@@ -10227,7 +10344,7 @@ export default {
             },
             {
               english: 'Watch',
-              italian: 'watch / osservazione di eventi K8s',
+              italian: 'osservazione di eventi K8s (Watch)',
               pronunciation: '/wɒtʃ/',
               phonetic: 'UOC',
               example:
@@ -10237,7 +10354,7 @@ export default {
             },
             {
               english: 'Informer',
-              italian: 'informer / cache+watch K8s',
+              italian: 'cache+watch K8s (Informer)',
               pronunciation: '/ɪnˈfɔːrmər/',
               phonetic: 'in-FOR-mer',
               example:
@@ -10284,7 +10401,7 @@ export default {
           items: [
             {
               english: 'Operator SDK',
-              italian: 'Operator SDK / SDK Red Hat per Operator',
+              italian: 'SDK Red Hat per Operator (Operator SDK)',
               pronunciation: '/es diː keɪ/',
               phonetic: 'es-di-KEI',
               example: 'Operator SDK builds operators. = Operator SDK costruisce operator.',
@@ -10295,7 +10412,7 @@ export default {
             },
             {
               english: 'Kubebuilder',
-              italian: 'Kubebuilder / SDK ufficiale per Operator',
+              italian: 'SDK ufficiale per Operator (Kubebuilder)',
               pronunciation: '/ˈkjuːb bɪldər/',
               phonetic: 'KIUB BIL-der',
               example:
@@ -10307,7 +10424,7 @@ export default {
             },
             {
               english: 'controller-runtime',
-              italian: 'controller-runtime / libreria di base Operator',
+              italian: 'libreria di base Operator (controller-runtime)',
               pronunciation: '/kənˈtroʊlər/',
               phonetic: 'con-TROU-ler',
               example:
@@ -10346,7 +10463,7 @@ export default {
             },
             {
               english: 'Reconciler',
-              italian: 'reconciler / loop di riconciliazione',
+              italian: 'loop di riconciliazione (Reconciler)',
               pronunciation: '/ˈrekənsaɪlər/',
               phonetic: 'RE-con-sai-ler',
               example:
@@ -10357,7 +10474,7 @@ export default {
             },
             {
               english: 'Bundle',
-              italian: 'bundle / pacchetto Operator',
+              italian: 'pacchetto Operator (Bundle)',
               pronunciation: '/ˈbʌndl/',
               phonetic: 'BAN-dl',
               example:
@@ -10367,7 +10484,7 @@ export default {
             },
             {
               english: 'OperatorHub',
-              italian: 'OperatorHub / catalogo Operator',
+              italian: 'catalogo Operator (OperatorHub)',
               pronunciation: '/hʌb/',
               phonetic: 'HAB',
               example:
@@ -10378,7 +10495,7 @@ export default {
             },
             {
               english: 'OLM',
-              italian: 'OLM / Operator Lifecycle Manager',
+              italian: 'Operator Lifecycle Manager (OLM)',
               pronunciation: '/oʊ el em/',
               phonetic: 'ou-el-EM',
               example:
@@ -10396,7 +10513,7 @@ export default {
           items: [
             {
               english: 'Prometheus Operator',
-              italian: 'Prometheus Operator / operator K8s per Prometheus',
+              italian: 'operator K8s per Prometheus (Prometheus Operator)',
               pronunciation: '/prəˈmiːθiəs/',
               phonetic: 'pro-MI-ti-us',
               example:
@@ -10449,7 +10566,7 @@ export default {
             },
             {
               english: 'Velero',
-              italian: 'Velero / backup e ripristino di Kubernetes',
+              italian: 'backup e ripristino di Kubernetes (Velero)',
               pronunciation: '/vəˈleroʊ/',
               phonetic: 've-LE-ro',
               example: 'Velero backs up K8s clusters. = Velero esegue backup di cluster K8s.',
@@ -10459,7 +10576,7 @@ export default {
             },
             {
               english: 'External DNS',
-              italian: 'External DNS / sincronizza DNS con Service/Ingress',
+              italian: 'sincronizza DNS con Service/Ingress (External DNS)',
               pronunciation: '/ɪkˈstɜːrnl diː en es/',
               phonetic: 'ek-STER-nl di-en-ES',
               example:
@@ -10470,7 +10587,7 @@ export default {
             },
             {
               english: 'MetalLB',
-              italian: 'MetalLB / LoadBalancer bare-metal',
+              italian: 'LoadBalancer bare-metal (MetalLB)',
               pronunciation: '/ˈmetl el biː/',
               phonetic: 'ME-tl el-BI',
               example:
@@ -10481,7 +10598,7 @@ export default {
             },
             {
               english: 'Crossplane',
-              italian: 'Crossplane / control plane multi-cloud',
+              italian: 'control plane multi-cloud (Crossplane)',
               pronunciation: '/krɒs pleɪn/',
               phonetic: 'KROS-PLEIN',
               example:
@@ -10492,7 +10609,7 @@ export default {
             },
             {
               english: 'Knative',
-              italian: 'Knative / piattaforma serverless K8s',
+              italian: 'piattaforma serverless K8s (Knative)',
               pronunciation: '/keɪˈneɪtɪv/',
               phonetic: 'kei-NEI-tiv',
               example: 'Knative provides serverless on K8s. = Knative fornisce serverless su K8s.',
@@ -10518,7 +10635,7 @@ export default {
           items: [
             {
               english: 'CKA',
-              italian: 'CKA / Certified Kubernetes Administrator',
+              italian: 'Certified Kubernetes Administrator (CKA)',
               pronunciation: '/siː keɪ eɪ/',
               phonetic: 'si-kei-EI',
               example: 'CKA validates K8s admin skills. = CKA valida le competenze admin K8s.',
@@ -10528,7 +10645,7 @@ export default {
             },
             {
               english: 'CKAD',
-              italian: 'CKAD / Certified Kubernetes Application Developer',
+              italian: 'Certified Kubernetes Application Developer (CKAD)',
               pronunciation: '/siː keɪ eɪ diː/',
               phonetic: 'si-kei-ei-DI',
               example:
@@ -10539,7 +10656,7 @@ export default {
             },
             {
               english: 'CKS',
-              italian: 'CKS / Certified Kubernetes Security Specialist',
+              italian: 'Certified Kubernetes Security Specialist (CKS)',
               pronunciation: '/siː keɪ es/',
               phonetic: 'si-kei-ES',
               example: 'CKS covers K8s security. = CKS copre la sicurezza K8s.',
@@ -10601,7 +10718,7 @@ export default {
             },
             {
               english: 'kubectl-debug',
-              italian: 'kubectl-debug / sessione debug nei pod',
+              italian: 'sessione debug nei pod (kubectl-debug)',
               pronunciation: '/dɪˈbʌɡ/',
               phonetic: 'di-BAG',
               example:
@@ -10651,7 +10768,7 @@ export default {
             },
             {
               english: 'Multi-AZ',
-              italian: 'multi-AZ / replica su più zone di disponibilità',
+              italian: 'replica su più zone di disponibilità (Multi-AZ)',
               pronunciation: '/ˌmʌlti eɪ ziː/',
               phonetic: 'MAL-ti ei-ZI',
               example:
@@ -10662,7 +10779,7 @@ export default {
             },
             {
               english: 'Topology Spread',
-              italian: 'topology spread / distribuzione su topologia',
+              italian: 'distribuzione su topologia (Topology Spread)',
               pronunciation: '/təˈpɒlədʒi spred/',
               phonetic: 'to-PO-lo-gi SPRED',
               example:
@@ -10694,7 +10811,7 @@ export default {
             },
             {
               english: 'Taint',
-              italian: 'taint / etichetta che respinge pod K8s',
+              italian: 'etichetta che respinge pod K8s (Taint)',
               pronunciation: '/teɪnt/',
               phonetic: 'TEINT',
               example: 'Taint a node to repel pods. = Aggiungi un taint per respingere i pod.',
@@ -10725,7 +10842,7 @@ export default {
             },
             {
               english: 'Bootstrap',
-              italian: 'bootstrap / fase di avvio iniziale',
+              italian: 'fase di avvio iniziale (Bootstrap)',
               pronunciation: '/ˈbuːtstræp/',
               phonetic: 'BUT-strap',
               example: 'Bootstrap a cluster with kubeadm. = Avvia un cluster con kubeadm.',
@@ -10742,7 +10859,7 @@ export default {
           items: [
             {
               english: 'Disaster Recovery',
-              italian: 'disaster recovery / ripristino dopo disastro',
+              italian: 'ripristino dopo disastro (Disaster Recovery)',
               pronunciation: '/dɪˈzæstər rɪˈkʌvəri/',
               phonetic: 'di-ZA-ster ri-KA-ve-ri',
               example:
@@ -10753,7 +10870,7 @@ export default {
             },
             {
               english: 'RTO',
-              italian: 'RTO / Recovery Time Objective',
+              italian: 'Recovery Time Objective (RTO)',
               pronunciation: '/ɑːr tiː oʊ/',
               phonetic: 'ar-ti-OU',
               example: 'RTO defines acceptable downtime. = RTO definisce il downtime accettabile.',
@@ -10762,7 +10879,7 @@ export default {
             },
             {
               english: 'RPO',
-              italian: 'RPO / Recovery Point Objective',
+              italian: 'Recovery Point Objective (RPO)',
               pronunciation: '/ɑːr piː oʊ/',
               phonetic: 'ar-pi-OU',
               example:
@@ -10813,7 +10930,7 @@ export default {
             },
             {
               english: 'Failover',
-              italian: 'failover / commutazione automatica di guasto',
+              italian: 'commutazione automatica di guasto (Failover)',
               pronunciation: '/ˈfeɪloʊvər/',
               phonetic: 'FEI-lou-ver',
               example:
@@ -10850,7 +10967,7 @@ export default {
           items: [
             {
               english: 'Multi-Cluster',
-              italian: 'multi-cluster / più cluster federati',
+              italian: 'più cluster federati (Multi-Cluster)',
               pronunciation: '/ˌmʌlti ˈklʌstər/',
               phonetic: 'MAL-ti KLAS-ter',
               example:
@@ -10860,7 +10977,7 @@ export default {
             },
             {
               english: 'Cluster API',
-              italian: 'Cluster API / progetto upstream gestione cluster',
+              italian: 'progetto upstream gestione cluster (Cluster API)',
               pronunciation: '/eɪ piː aɪ/',
               phonetic: 'ei-pi-AI',
               example:
@@ -10871,7 +10988,7 @@ export default {
             },
             {
               english: 'KubeFed',
-              italian: 'KubeFed / federazione di cluster Kubernetes',
+              italian: 'federazione di cluster Kubernetes (KubeFed)',
               pronunciation: '/ˈkjuːb fed/',
               phonetic: 'KIUB-FED',
               example: 'KubeFed federates multiple clusters. = KubeFed federa più cluster.',
@@ -10881,7 +10998,7 @@ export default {
             },
             {
               english: 'FinOps',
-              italian: 'FinOps / operazioni finanziarie cloud',
+              italian: 'operazioni finanziarie cloud (FinOps)',
               pronunciation: '/fɪn ɒps/',
               phonetic: 'FIN-OPS',
               example:
@@ -10901,7 +11018,7 @@ export default {
             },
             {
               english: 'Kubecost',
-              italian: 'Kubecost / monitoraggio costi K8s',
+              italian: 'monitoraggio costi K8s (Kubecost)',
               pronunciation: '/ˈkjuːb kɒst/',
               phonetic: 'KIUB-KOST',
               example:
@@ -10912,7 +11029,7 @@ export default {
             },
             {
               english: 'OpenCost',
-              italian: 'OpenCost / costi K8s open source CNCF',
+              italian: 'costi K8s open source CNCF (OpenCost)',
               pronunciation: '/ˈoʊpən kɒst/',
               phonetic: 'OU-pen KOST',
               example:
@@ -10934,7 +11051,7 @@ export default {
             },
             {
               english: 'LimitRange',
-              italian: 'LimitRange / limiti per oggetto K8s',
+              italian: 'limiti per oggetto K8s (LimitRange)',
               pronunciation: '/ˈlɪmɪt reɪndʒ/',
               phonetic: 'LI-mit REING',
               example:

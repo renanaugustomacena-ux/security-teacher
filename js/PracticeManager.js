@@ -442,8 +442,12 @@ export class PracticeManager {
                     <div class="exercise-instruction">
                         ${this.currentMode === 'listening' ? 'Ascolta e scegli:' : 'Qual \u00E8 la traduzione di:'}
                     </div>
-                    <div class="exercise-target">${this.escapeHtml(question.english)} ${ttsBtn}</div>
-                    ${question.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(question.pronunciation)}</div>` : ''}
+                    ${
+                      this.currentMode === 'listening'
+                        ? `<div class="exercise-target">${ttsBtn}</div>`
+                        : `<div class="exercise-target">${this.escapeHtml(question.english)} ${ttsBtn}</div>
+                    ${question.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(question.pronunciation)}</div>` : ''}`
+                    }
                     <div class="options-grid">
                         ${options
                           .map(
@@ -504,7 +508,6 @@ export class PracticeManager {
                 <div class="exercise-card">
                     <div class="exercise-instruction">Completa la frase:</div>
                     <div class="exercise-target">${this.escapeHtml(displaySentence)}</div>
-                    <p class="translation-hint">Traduzione: ${this.escapeHtml(parts[1] || '')}</p>
                     <input type="text" id="writing-input" class="practice-input" placeholder="Parola mancante..." autofocus>
                     <button class="btn btn-primary submit-btn" style="margin-top: 1rem;">Invia / Submit</button>
                 </div>
@@ -522,7 +525,6 @@ export class PracticeManager {
       html = `
                 <div class="exercise-card">
                     <div class="exercise-instruction">Ricostruisci la frase (Inglese):</div>
-                    <div class="exercise-target italic">${this.escapeHtml((question.example || question.usage).split(' = ')[1] || '')}</div>
                     <div class="scrambled-words">
                         ${words.map((w) => `<span class="word-chip">${this.escapeHtml(w)}</span>`).join(' ')}
                     </div>
@@ -557,7 +559,7 @@ export class PracticeManager {
                 <div class="exercise-card">
                     <div class="exercise-instruction">Leggi il paragrafo e scegli l'affermazione corretta:</div>
                     <div class="exercise-paragraph">${this.escapeHtml(paragraph)}</div>
-                    <div class="exercise-comprehension-question">Quale frase appare nel testo?</div>
+                    <div class="exercise-comprehension-question">Quale affermazione è vera in base al testo? / Which statement is true?</div>
                     <div class="options-grid">
                         ${allOptions
                           .map(
@@ -583,7 +585,6 @@ export class PracticeManager {
     } else if (this.currentMode === 'scenario') {
       const exampleParts = (question.example || '').split(' = ');
       const englishPhrase = exampleParts[0] || '';
-      const italianHint = exampleParts[1] || question.italian;
 
       const targetWord = question.english;
       const blankedPhrase = englishPhrase.replace(
@@ -602,7 +603,6 @@ export class PracticeManager {
                     <div class="exercise-instruction">Scenario:</div>
                     <div class="exercise-scenario">${this.escapeHtml(scenario)}</div>
                     <div class="exercise-target">${this.escapeHtml(blankedPhrase)} ${ttsBtn}</div>
-                    <p class="translation-hint">${this.escapeHtml(italianHint)}</p>
                     <div class="options-grid">
                         ${options
                           .map(

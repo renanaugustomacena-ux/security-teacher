@@ -1,0 +1,384 @@
+topicId,level,lesson,english,italian,issueType
+"c-programming",0,"c_foundations_1","Variable","Variabile",near-identical-translation
+"c-programming",0,"c_foundations_1","Function","Funzione",trivial-example
+"c-programming",0,"c_foundations_1","scanf","Scansione formattata",trivial-example
+"c-programming",0,"c_foundations_2","Comment","Commento",near-identical-translation
+"c-programming",0,"c_foundations_2","Single-Line Comment","Commento su riga singola",tautological-example
+"c-programming",0,"c_foundations_3","Compilation","Compilazione",near-identical-translation
+"c-programming",0,"c_foundations_3","Preprocessor","Preprocessore",near-identical-translation
+"c-programming",0,"c_foundations_4","Definition","Definizione",near-identical-translation
+"c-programming",0,"c_foundations_4","Assignment","Assegnamento",trivial-example
+"c-programming",0,"c_foundations_4","Constant","Costante",near-identical-translation
+"c-programming",0,"c_foundations_4","Block","Blocco",near-identical-translation
+"c-programming",1,"c_types_2","Boolean","Booleano",near-identical-translation
+"c-programming",1,"c_types_2","Implicit Conversion","Conversione implicita",tautological-example
+"c-programming",1,"c_types_2","Precision","Precisione",near-identical-translation
+"c-programming",1,"c_types_3","Type Modifier","Modificatore di tipo",tautological-example
+"c-programming",1,"c_types_3","Enumeration","Enumerazione",near-identical-translation
+"c-programming",1,"c_types_3","Literal","Letterale",trivial-example
+"c-programming",1,"c_types_3","Octal","Ottale",near-identical-translation
+"c-programming",1,"c_types_4","Type Qualifier","Qualificatore di tipo",trivial-example
+"c-programming",1,"c_types_4","const","Costante",trivial-example
+"c-programming",1,"c_types_4","Storage Class","Classe di memorizzazione",tautological-example
+"c-programming",1,"c_types_4","static","Statico",near-identical-translation
+"c-programming",1,"c_types_4","extern","Esterno",near-identical-translation
+"c-programming",2,"c_control_1","Arithmetic Operator","Operatore aritmetico",tautological-example
+"c-programming",2,"c_control_1","Increment","Incremento",near-identical-translation
+"c-programming",2,"c_control_1","Decrement","Decremento",near-identical-translation
+"c-programming",2,"c_control_1","Comparison Operator","Operatore di confronto",tautological-example
+"c-programming",2,"c_control_1","Equality Operator","Operatore di uguaglianza",trivial-example
+"c-programming",2,"c_control_1","Logical Operator","Operatore logico",tautological-example
+"c-programming",2,"c_control_1","Negation","Negazione",near-identical-translation
+"c-programming",2,"c_control_2","Break Statement","Istruzione break",trivial-example
+"c-programming",2,"c_control_2","Fall-Through","Caduta nel caso successivo",tautological-example
+"c-programming",2,"c_control_3","Do-While Loop","Ciclo do-while",trivial-example
+"c-programming",2,"c_control_3","Iteration","Iterazione",near-identical-translation
+"c-programming",2,"c_control_3","Continue Statement","Istruzione continue",trivial-example
+"c-programming",2,"c_control_4","Bit Shift","Scorrimento di bit",tautological-example
+"c-programming",2,"c_control_4","Bit Shift","Scorrimento di bit",trivial-example
+"c-programming",2,"c_control_4","Complement","Complemento",near-identical-translation
+"c-programming",2,"c_control_4","Complement","Complemento",trivial-example
+"c-programming",2,"c_control_4","Compound Assignment","Assegnamento composto",tautological-example
+"c-programming",3,"c_functions_1","Parameter","Parametro",near-identical-translation
+"c-programming",3,"c_functions_1","Argument","Argomento",near-identical-translation
+"c-programming",3,"c_functions_3","Block Scope","Ambito di blocco",tautological-example
+"c-programming",3,"c_functions_3","Internal Linkage","Collegamento interno",trivial-example
+"c-programming",4,"c_arrays_1","Array Declaration","Dichiarazione di array",tautological-example
+"c-programming",4,"c_arrays_1","Element","Elemento",near-identical-translation
+"c-programming",4,"c_arrays_1","Zero-Indexed","Indicizzato da zero",trivial-example
+"c-programming",4,"c_arrays_2","Row","Riga",trivial-example
+"c-programming",4,"c_arrays_2","Matrix","Matrice",near-identical-translation
+"c-programming",4,"c_arrays_2","Row-Major Order","Ordine per righe",trivial-example
+"c-programming",4,"c_arrays_2","Array of Strings","Array di stringhe",trivial-example
+"c-programming",4,"c_arrays_2","Variable-Length Array","Array a lunghezza variabile",trivial-example
+"c-programming",4,"c_arrays_3","Array Copy","Copia dell'array",trivial-example
+"c-programming",4,"c_arrays_4","String","Stringa",near-identical-translation
+"c-programming",5,"c_pointers_1","NULL Pointer","Puntatore NULL",trivial-example
+"c-programming",5,"c_pointers_2","Subscript Notation","Notazione a indice",tautological-example
+"c-programming",5,"c_pointers_3","Pointer Casting","Cast di puntatore",tautological-example
+"c-programming",5,"c_pointers_3","Pointer Assignment","Assegnamento di puntatore",tautological-example
+"c-programming",5,"c_pointers_4","Comparison Function","Funzione di confronto",trivial-example
+"c-programming",6,"c_advptr_2","Trampoline","Trampolino",near-identical-translation
+"c-programming",7,"c_strings_1","String Duplication","Duplicazione di stringa",trivial-example
+"c-programming",7,"c_strings_2","String Concatenation","Concatenazione di stringhe",tautological-example
+"c-programming",7,"c_strings_2","String Reversal","Inversione di stringa",tautological-example
+"c-programming",7,"c_strings_2","String Comparison","Confronto di stringhe",trivial-example
+"c-programming",7,"c_strings_2","Wide Character","Carattere largo",tautological-example
+"c-programming",7,"c_strings_2","Multibyte String","Stringa multibyte",trivial-example
+"c-programming",7,"c_strings_3","String Length","Lunghezza della stringa",tautological-example
+"c-programming",7,"c_strings_4","Buffer Overflow Attack","Attacco di overflow del buffer",tautological-example
+"c-programming",7,"c_strings_4","Null-Terminated String","Stringa terminata da null",trivial-example
+"c-programming",7,"c_strings_4","String Truncation","Troncamento di stringa",tautological-example
+"c-programming",8,"c_structs_1","Structure","Struttura",near-identical-translation
+"c-programming",8,"c_structs_1","Struct Initialization","Inizializzazione di struct",trivial-example
+"c-programming",8,"c_structs_1","Struct Size","Dimensione della struct",tautological-example
+"c-programming",8,"c_structs_1","Struct Size","Dimensione della struct",trivial-example
+"c-programming",8,"c_structs_2","Union","Unione",near-identical-translation
+"c-programming",8,"c_structs_2","Enumeration","Enumerazione",near-identical-translation
+"c-programming",8,"c_structs_2","Enum Value","Valore dell'enum",trivial-example
+"c-programming",8,"c_structs_2","Bitfield","Campo di bit",tautological-example
+"c-programming",8,"c_structs_2","Anonymous Structure","Struttura anonima",trivial-example
+"c-programming",8,"c_structs_3","Constructor Pattern","Pattern costruttore",trivial-example
+"c-programming",8,"c_structs_3","Destructor Pattern","Pattern distruttore",trivial-example
+"c-programming",8,"c_structs_3","Struct Composition","Composizione di struct",tautological-example
+"c-programming",8,"c_structs_4","Aggregate Type","Tipo aggregato",trivial-example
+"c-programming",8,"c_structs_4","Data Alignment","Allineamento dei dati",tautological-example
+"c-programming",8,"c_structs_4","Offset","Scostamento (offset)",tautological-example
+"c-programming",9,"c_memory_1","Dynamic Memory Allocation","Allocazione dinamica della memoria",tautological-example
+"c-programming",9,"c_memory_1","Heap Fragmentation","Frammentazione dello heap",tautological-example
+"c-programming",9,"c_memory_1","Allocation Failure","Fallimento dell'allocazione",trivial-example
+"c-programming",9,"c_memory_2","Resource Acquisition","Acquisizione di risorse",tautological-example
+"c-programming",9,"c_memory_2","Reference Counting","Conteggio dei riferimenti",tautological-example
+"c-programming",9,"c_memory_2","Memory-Mapped File","File mappato in memoria",tautological-example
+"c-programming",9,"c_memory_2","Virtual Memory","Memoria virtuale",tautological-example
+"c-programming",9,"c_memory_3","Memory Corruption","Corruzione della memoria",tautological-example
+"c-programming",9,"c_memory_3","Memory Sanitizer","Sanitizzatore di memoria",tautological-example
+"c-programming",9,"c_memory_3","Leak Sanitizer","Sanitizzatore di perdite",tautological-example
+"c-programming",9,"c_memory_4","Capacity","Capacità",near-identical-translation
+"c-programming",9,"c_memory_4","Memory Debugging","Debug della memoria",tautological-example
+"c-programming",10,"c_io_1","End of File","Fine del file",trivial-example
+"c-programming",10,"c_io_3","Line Reading","Lettura per righe",trivial-example
+"c-programming",10,"c_io_4","Append Mode","Modalità aggiunta",tautological-example
+"c-programming",10,"c_io_4","Random Access","Accesso casuale",tautological-example
+"c-programming",10,"c_io_4","File Size","Dimensione del file",trivial-example
+"c-programming",10,"c_io_4","stdin","Input standard",trivial-example
+"c-programming",10,"c_io_4","stderr","Errore standard",trivial-example
+"c-programming",11,"c_preproc_1","Function-like Macro","Macro simile a funzione",trivial-example
+"c-programming",11,"c_preproc_2","Stringification","Stringificazione",near-identical-translation
+"c-programming",11,"c_preproc_3","Source File","File sorgente",tautological-example
+"c-programming",11,"c_preproc_3","Forward Declaration","Dichiarazione anticipata",tautological-example
+"c-programming",11,"c_preproc_3","Internal Header","Header interno",tautological-example
+"c-programming",11,"c_preproc_3","Precompiled Header","Header precompilato",tautological-example
+"c-programming",11,"c_preproc_3","Separate Compilation","Compilazione separata",tautological-example
+"c-programming",11,"c_preproc_3","Modularity","Modularità",near-identical-translation
+"c-programming",11,"c_preproc_4","Release Build","Build di rilascio",trivial-example
+"c-programming",11,"c_preproc_4","Feature Toggle","Interruttore di funzionalità",tautological-example
+"c-programming",11,"c_preproc_4","Assert","Asserzione",tautological-example
+"c-programming",11,"c_preproc_4","Static Assert","Asserzione statica",tautological-example
+"c-programming",12,"c_stdlib_3","sin","Seno",near-identical-translation
+"c-programming",13,"c_errors_2","Precondition","Precondizione",near-identical-translation
+"c-programming",13,"c_errors_2","Postcondition","Postcondizione",near-identical-translation
+"c-programming",13,"c_errors_2","Invariant","Invariante",near-identical-translation
+"c-programming",13,"c_errors_2","Defensive Programming","Programmazione difensiva",tautological-example
+"c-programming",13,"c_errors_3","Guard Clause","Clausola di guardia",tautological-example
+"c-programming",13,"c_errors_3","Resource Leak","Perdita di risorsa",trivial-example
+"c-programming",13,"c_errors_3","Use-After-Free","Uso dopo liberazione",tautological-example
+"c-programming",13,"c_errors_3","Error Propagation","Propagazione errori",tautological-example
+"c-programming",13,"c_errors_4","Signal","Segnale",near-identical-translation
+"c-programming",14,"c_datastruct_1","Node","Nodo",near-identical-translation
+"c-programming",14,"c_datastruct_1","Tail Pointer","Puntatore alla coda",trivial-example
+"c-programming",14,"c_datastruct_1","Sentinel Node","Nodo sentinella",trivial-example
+"c-programming",14,"c_datastruct_3","Root","Radice",trivial-example
+"c-programming",14,"c_datastruct_3","Leaf","Foglia",trivial-example
+"c-programming",14,"c_datastruct_3","In-order Traversal","Visita in-ordine",tautological-example
+"c-programming",14,"c_datastruct_3","Pre-order Traversal","Visita pre-ordine",trivial-example
+"c-programming",14,"c_datastruct_3","Post-order Traversal","Visita post-ordine",trivial-example
+"c-programming",14,"c_datastruct_4","Collision","Collisione",near-identical-translation
+"c-programming",14,"c_datastruct_4","Open Addressing","Indirizzamento aperto",tautological-example
+"c-programming",14,"c_datastruct_4","Graph","Grafo",near-identical-translation
+"c-programming",14,"c_datastruct_4","Edge","Arco",trivial-example
+"c-programming",15,"c_algos_1","Comparator","Comparatore",near-identical-translation
+"c-programming",15,"c_algos_1","Comparator","Comparatore",trivial-example
+"c-programming",15,"c_algos_2","Base Case","Caso base",trivial-example
+"c-programming",15,"c_algos_2","Tail Recursion","Ricorsione di coda",tautological-example
+"c-programming",15,"c_algos_2","Brute Force","Forza bruta",tautological-example
+"c-programming",15,"c_algos_3","Linear Time","Tempo lineare",tautological-example
+"c-programming",15,"c_algos_3","Logarithmic Time","Tempo logaritmico",trivial-example
+"c-programming",15,"c_algos_3","Worst Case","Caso peggiore",trivial-example
+"c-programming",15,"c_algos_4","Sliding Window","Finestra scorrevole",tautological-example
+"c-programming",15,"c_algos_4","Optimal Substructure","Sottostruttura ottima",tautological-example
+"c-programming",15,"c_algos_4","Optimal Substructure","Sottostruttura ottima",trivial-example
+"c-programming",15,"c_algos_4","Heuristic","Euristica",near-identical-translation
+"c-programming",16,"c_build_1","-Wall","Tutti i warning",trivial-example
+"c-programming",16,"c_build_1","-O0","Nessuna ottimizzazione",trivial-example
+"c-programming",16,"c_build_1","Compilation Unit","Unità di compilazione",trivial-example
+"c-programming",16,"c_build_2","Prerequisite","Prerequisito",tautological-example
+"c-programming",16,"c_build_2","Prerequisite","Prerequisito",near-identical-translation
+"c-programming",16,"c_build_2","Phony Target","Target fittizio",trivial-example
+"c-programming",16,"c_build_2","Clean Target","Target di pulizia",trivial-example
+"c-programming",16,"c_build_3","Dynamic Linking","Collegamento dinamico",tautological-example
+"c-programming",16,"c_build_3","Symbol","Simbolo",tautological-example
+"c-programming",16,"c_build_3","Symbol","Simbolo",near-identical-translation
+"c-programming",16,"c_build_3","Undefined Reference","Riferimento non definito",tautological-example
+"c-programming",16,"c_build_3","-l flag","Flag libreria",trivial-example
+"c-programming",17,"c_debug_1","Continue","Continua",near-identical-translation
+"c-programming",17,"c_debug_1","Print","Stampa valore",tautological-example
+"c-programming",17,"c_debug_1","Print","Stampa valore",trivial-example
+"c-programming",17,"c_debug_2","Heap Corruption","Corruzione dello heap",tautological-example
+"c-programming",17,"c_debug_3","UndefinedBehaviorSanitizer","Sanitizer comportamento indefinito",trivial-example
+"c-programming",17,"c_debug_3","Definitely Lost","Definitivamente perso",tautological-example
+"c-programming",17,"c_debug_3","Still Reachable","Ancora raggiungibile",tautological-example
+"c-programming",17,"c_debug_4","Printf Debugging","Debug con printf",tautological-example
+"c-programming",17,"c_debug_4","Minimal Reproducer","Riproduttore minimo",trivial-example
+"c-programming",17,"c_debug_4","Heisenbug","Bug che sparisce quando lo si osserva (heisenbug)",trivial-example
+"c-programming",17,"c_debug_4","Rubber Duck Debugging","Debug con paperella",tautological-example
+"c-programming",18,"c_systems_2","Process","Processo",near-identical-translation
+"c-programming",18,"c_systems_2","PID","ID processo",trivial-example
+"c-programming",18,"c_systems_2","Orphan Process","Processo orfano",trivial-example
+"c-programming",18,"c_systems_2","Daemon","Demone",near-identical-translation
+"c-programming",18,"c_systems_3","POSIX Shared Memory","Memoria condivisa POSIX",trivial-example
+"c-programming",18,"c_systems_4","Signal Mask","Maschera di segnali",trivial-example
+"c-programming",18,"c_systems_4","Async-Signal-Safe","Sicuro per segnali asincroni",redundant-note
+"c-programming",19,"c_concurrency_1","Worker Thread","Thread lavoratore",tautological-example
+"c-programming",19,"c_concurrency_1","Worker Thread","Thread lavoratore",trivial-example
+"c-programming",19,"c_concurrency_1","Main Thread","Thread principale",trivial-example
+"c-programming",19,"c_concurrency_2","Unlock","Sblocco",trivial-example
+"c-programming",19,"c_concurrency_2","Trylock","Tentativo di lock",tautological-example
+"c-programming",19,"c_concurrency_2","Priority Inversion","Inversione di priorità",tautological-example
+"c-programming",19,"c_concurrency_3","pthread_cond_wait","Attesa su condizione",trivial-example
+"c-programming",19,"c_concurrency_3","pthread_cond_signal","Segnalazione condizione",trivial-example
+"c-programming",19,"c_concurrency_3","Barrier","Barriera",near-identical-translation
+"c-programming",19,"c_concurrency_3","Happens-Before","Relazione happens-before",tautological-example
+"c-programming",19,"c_concurrency_4","Data Race","Accesso concorrente non sincronizzato (data race)",trivial-example
+"c-programming",19,"c_concurrency_4","Atomic","Atomico",near-identical-translation
+"c-programming",19,"c_concurrency_4","Compare-and-Swap","Compara e scambia",trivial-example
+"c-programming",19,"c_concurrency_4","False Sharing","Condivisione falsa",tautological-example
+"c-programming",20,"c_sockets_1","sockaddr","Struttura indirizzo socket",tautological-example
+"c-programming",20,"c_sockets_1","sockaddr","Struttura indirizzo socket",trivial-example
+"c-programming",20,"c_sockets_1","Port","Porta",near-identical-translation
+"c-programming",20,"c_sockets_1","Byte Order","Ordine dei byte",tautological-example
+"c-programming",20,"c_sockets_2","Backlog","Coda di accettazione",trivial-example
+"c-programming",20,"c_sockets_2","Three-Way Handshake","Handshake a tre vie",trivial-example
+"c-programming",20,"c_sockets_3","DNS Lookup","Risoluzione DNS",trivial-example
+"c-programming",20,"c_sockets_4","Event Loop","Loop di eventi",trivial-example
+"c-programming",20,"c_sockets_4","Edge-Triggered","A fronte di salita",tautological-example
+"c-programming",20,"c_sockets_4","Level-Triggered","A livello",tautological-example
+"c-programming",21,"c_security_1","Off-by-One","Errore di uno",tautological-example
+"c-programming",21,"c_security_1","Off-by-One","Errore di uno",trivial-example
+"c-programming",21,"c_security_1","NX Bit","Bit no-execute",tautological-example
+"c-programming",21,"c_security_1","NX Bit","Bit no-execute",trivial-example
+"c-programming",21,"c_security_1","Safe Functions","Funzioni sicure",trivial-example
+"c-programming",21,"c_security_2","Integer Overflow","Overflow di interi",tautological-example
+"c-programming",21,"c_security_2","Path Traversal","Attraversamento di percorso",tautological-example
+"c-programming",21,"c_security_2","Tainted Input","Input contaminato",trivial-example
+"c-programming",21,"c_security_2","Sanitization","Sanificazione",trivial-example
+"c-programming",21,"c_security_2","Validation","Validazione",near-identical-translation
+"c-programming",21,"c_security_2","Validation","Validazione",trivial-example
+"c-programming",21,"c_security_3","Use-After-Free","Uso dopo free",tautological-example
+"c-programming",21,"c_security_3","Information Leak","Fuga di informazioni",trivial-example
+"c-programming",21,"c_security_3","Heap Spray","Saturazione del heap con payload (heap spray)",tautological-example
+"c-programming",21,"c_security_4","Side Channel","Canale laterale",tautological-example
+"c-programming",21,"c_security_4","Privilege Drop","Riduzione privilegi",trivial-example
+"c-programming",21,"c_security_4","Seccomp","Filtro di syscall",tautological-example
+"c-programming",21,"c_security_4","Seccomp","Filtro di syscall",trivial-example
+"c-programming",22,"c_embedded_1","Microcontroller","Microcontrollore",near-identical-translation
+"c-programming",22,"c_embedded_2","Register","Registro",near-identical-translation
+"c-programming",22,"c_embedded_2","Bit Mask","Maschera di bit",trivial-example
+"c-programming",22,"c_embedded_2","Bit Shift","Scorrimento di bit",tautological-example
+"c-programming",22,"c_embedded_2","Bit Shift","Scorrimento di bit",trivial-example
+"c-programming",22,"c_embedded_2","Set Bit","Settare bit",trivial-example
+"c-programming",22,"c_embedded_2","Toggle Bit","Invertire bit",trivial-example
+"c-programming",22,"c_embedded_3","Vector Table","Tabella dei vettori",trivial-example
+"c-programming",22,"c_embedded_3","Enable Interrupts","Abilitare interrupt",trivial-example
+"c-programming",22,"c_embedded_3","Disable Interrupts","Disabilitare interrupt",tautological-example
+"c-programming",22,"c_embedded_3","Priority","Priorità",near-identical-translation
+"c-programming",22,"c_embedded_4","Real-Time","Tempo reale",tautological-example
+"c-programming",22,"c_embedded_4","Hard Real-Time","Tempo reale stretto",tautological-example
+"c-programming",22,"c_embedded_4","Hard Real-Time","Tempo reale stretto",trivial-example
+"c-programming",22,"c_embedded_4","Task","Unità di lavoro pianificabile (task)",trivial-example
+"c-programming",22,"c_embedded_4","Power Management","Gestione energetica",tautological-example
+"c-programming",22,"c_embedded_4","Sleep Mode","Modalità sleep",tautological-example
+"c-programming",22,"c_embedded_4","Sleep Mode","Modalità sleep",trivial-example
+"c-programming",23,"c_pro_1","Portability","Portabilità",near-identical-translation
+"c-programming",23,"c_pro_2","False Positive","Falso positivo",near-identical-translation
+"c-programming",0,"c_foundations_1","variable","",duplicate-across-lessons
+"c-programming",16,"c_build_2","variable","",duplicate-across-lessons
+"c-programming",0,"c_foundations_1","header file","",duplicate-across-lessons
+"c-programming",11,"c_preproc_3","header file","",duplicate-across-lessons
+"c-programming",0,"c_foundations_3","linking","",duplicate-across-lessons
+"c-programming",16,"c_build_3","linking","",duplicate-across-lessons
+"c-programming",0,"c_foundations_3","object file","",duplicate-across-lessons
+"c-programming",16,"c_build_3","object file","",duplicate-across-lessons
+"c-programming",1,"c_types_3","enumeration","",duplicate-across-lessons
+"c-programming",8,"c_structs_2","enumeration","",duplicate-across-lessons
+"c-programming",1,"c_types_4","volatile","",duplicate-across-lessons
+"c-programming",19,"c_concurrency_4","volatile","",duplicate-across-lessons
+"c-programming",22,"c_embedded_2","volatile","",duplicate-across-lessons
+"c-programming",2,"c_control_4","bit shift","",duplicate-across-lessons
+"c-programming",22,"c_embedded_2","bit shift","",duplicate-across-lessons
+"c-programming",3,"c_functions_2","recursion","",duplicate-across-lessons
+"c-programming",15,"c_algos_2","recursion","",duplicate-across-lessons
+"c-programming",3,"c_functions_2","base case","",duplicate-across-lessons
+"c-programming",15,"c_algos_2","base case","",duplicate-across-lessons
+"c-programming",3,"c_functions_2","stack overflow","",duplicate-across-lessons
+"c-programming",9,"c_memory_3","stack overflow","",duplicate-across-lessons
+"c-programming",15,"c_algos_2","stack overflow","",duplicate-across-lessons
+"c-programming",21,"c_security_1","stack overflow","",duplicate-across-lessons
+"c-programming",3,"c_functions_2","forward declaration","",duplicate-across-lessons
+"c-programming",11,"c_preproc_3","forward declaration","",duplicate-across-lessons
+"c-programming",3,"c_functions_4","atoi","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_1","atoi","",duplicate-across-lessons
+"c-programming",3,"c_functions_4","exit","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_1","exit","",duplicate-across-lessons
+"c-programming",3,"c_functions_4","rand","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_4","rand","",duplicate-across-lessons
+"c-programming",3,"c_functions_4","srand","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_4","srand","",duplicate-across-lessons
+"c-programming",4,"c_arrays_3","traversal","",duplicate-across-lessons
+"c-programming",14,"c_datastruct_1","traversal","",duplicate-across-lessons
+"c-programming",4,"c_arrays_3","linear search","",duplicate-across-lessons
+"c-programming",15,"c_algos_2","linear search","",duplicate-across-lessons
+"c-programming",4,"c_arrays_3","bubble sort","",duplicate-across-lessons
+"c-programming",15,"c_algos_1","bubble sort","",duplicate-across-lessons
+"c-programming",4,"c_arrays_4","strlen","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_2","strlen","",duplicate-across-lessons
+"c-programming",4,"c_arrays_4","strcpy","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_2","strcpy","",duplicate-across-lessons
+"c-programming",4,"c_arrays_4","strcmp","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_2","strcmp","",duplicate-across-lessons
+"c-programming",4,"c_arrays_4","strcat","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_2","strcat","",duplicate-across-lessons
+"c-programming",4,"c_arrays_4","buffer overflow","",duplicate-across-lessons
+"c-programming",17,"c_debug_2","buffer overflow","",duplicate-across-lessons
+"c-programming",21,"c_security_1","buffer overflow","",duplicate-across-lessons
+"c-programming",5,"c_pointers_1","dangling pointer","",duplicate-across-lessons
+"c-programming",17,"c_debug_2","dangling pointer","",duplicate-across-lessons
+"c-programming",5,"c_pointers_1","wild pointer","",duplicate-across-lessons
+"c-programming",17,"c_debug_2","wild pointer","",duplicate-across-lessons
+"c-programming",5,"c_pointers_3","pointer to pointer","",duplicate-across-lessons
+"c-programming",6,"c_advptr_1","pointer to pointer","",duplicate-across-lessons
+"c-programming",5,"c_pointers_3","dynamic array","",duplicate-across-lessons
+"c-programming",9,"c_memory_4","dynamic array","",duplicate-across-lessons
+"c-programming",5,"c_pointers_3","null check","",duplicate-across-lessons
+"c-programming",13,"c_errors_2","null check","",duplicate-across-lessons
+"c-programming",5,"c_pointers_4","qsort","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_1","qsort","",duplicate-across-lessons
+"c-programming",5,"c_pointers_4","void pointer","",duplicate-across-lessons
+"c-programming",6,"c_advptr_3","void pointer","",duplicate-across-lessons
+"c-programming",6,"c_advptr_2","signal handler","",duplicate-across-lessons
+"c-programming",13,"c_errors_4","signal handler","",duplicate-across-lessons
+"c-programming",6,"c_advptr_2","bsearch","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_1","bsearch","",duplicate-across-lessons
+"c-programming",6,"c_advptr_2","atexit","",duplicate-across-lessons
+"c-programming",13,"c_errors_4","atexit","",duplicate-across-lessons
+"c-programming",6,"c_advptr_3","memcpy","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_2","memcpy","",duplicate-across-lessons
+"c-programming",6,"c_advptr_3","memset","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_2","memset","",duplicate-across-lessons
+"c-programming",6,"c_advptr_3","memcmp","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_2","memcmp","",duplicate-across-lessons
+"c-programming",6,"c_advptr_4","use after free","",duplicate-across-lessons
+"c-programming",9,"c_memory_3","use after free","",duplicate-across-lessons
+"c-programming",6,"c_advptr_4","double free","",duplicate-across-lessons
+"c-programming",9,"c_memory_3","double free","",duplicate-across-lessons
+"c-programming",13,"c_errors_3","double free","",duplicate-across-lessons
+"c-programming",21,"c_security_3","double free","",duplicate-across-lessons
+"c-programming",6,"c_advptr_4","memory leak","",duplicate-across-lessons
+"c-programming",9,"c_memory_1","memory leak","",duplicate-across-lessons
+"c-programming",17,"c_debug_2","memory leak","",duplicate-across-lessons
+"c-programming",6,"c_advptr_4","endianness","",duplicate-across-lessons
+"c-programming",23,"c_pro_1","endianness","",duplicate-across-lessons
+"c-programming",7,"c_strings_1","strncpy","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_2","strncpy","",duplicate-across-lessons
+"c-programming",7,"c_strings_1","strchr","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_2","strchr","",duplicate-across-lessons
+"c-programming",7,"c_strings_1","strstr","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_2","strstr","",duplicate-across-lessons
+"c-programming",7,"c_strings_1","strtol","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_1","strtol","",duplicate-across-lessons
+"c-programming",7,"c_strings_3","format string","",duplicate-across-lessons
+"c-programming",21,"c_security_2","format string","",duplicate-across-lessons
+"c-programming",7,"c_strings_4","bounds checking","",duplicate-across-lessons
+"c-programming",21,"c_security_1","bounds checking","",duplicate-across-lessons
+"c-programming",7,"c_strings_4","fgets","",duplicate-across-lessons
+"c-programming",10,"c_io_1","fgets","",duplicate-across-lessons
+"c-programming",8,"c_structs_3","bit manipulation","",duplicate-across-lessons
+"c-programming",22,"c_embedded_2","bit manipulation","",duplicate-across-lessons
+"c-programming",9,"c_memory_1","malloc","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_1","malloc","",duplicate-across-lessons
+"c-programming",9,"c_memory_1","free","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_1","free","",duplicate-across-lessons
+"c-programming",9,"c_memory_1","calloc","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_1","calloc","",duplicate-across-lessons
+"c-programming",9,"c_memory_1","realloc","",duplicate-across-lessons
+"c-programming",12,"c_stdlib_1","realloc","",duplicate-across-lessons
+"c-programming",9,"c_memory_1","heap","",duplicate-across-lessons
+"c-programming",14,"c_datastruct_3","heap","",duplicate-across-lessons
+"c-programming",9,"c_memory_2","cleanup function","",duplicate-across-lessons
+"c-programming",13,"c_errors_3","cleanup function","",duplicate-across-lessons
+"c-programming",9,"c_memory_3","heap corruption","",duplicate-across-lessons
+"c-programming",17,"c_debug_2","heap corruption","",duplicate-across-lessons
+"c-programming",9,"c_memory_3","valgrind","",duplicate-across-lessons
+"c-programming",17,"c_debug_3","valgrind","",duplicate-across-lessons
+"c-programming",9,"c_memory_3","heap overflow","",duplicate-across-lessons
+"c-programming",21,"c_security_1","heap overflow","",duplicate-across-lessons
+"c-programming",9,"c_memory_4","linked list","",duplicate-across-lessons
+"c-programming",14,"c_datastruct_1","linked list","",duplicate-across-lessons
+"c-programming",10,"c_io_3","file descriptor","",duplicate-across-lessons
+"c-programming",18,"c_systems_1","file descriptor","",duplicate-across-lessons
+"c-programming",10,"c_io_3","pipe","",duplicate-across-lessons
+"c-programming",18,"c_systems_3","pipe","",duplicate-across-lessons
+"c-programming",11,"c_preproc_1","header guard","",duplicate-across-lessons
+"c-programming",23,"c_pro_3","header guard","",duplicate-across-lessons
+"c-programming",11,"c_preproc_4","assert","",duplicate-across-lessons
+"c-programming",13,"c_errors_2","assert","",duplicate-across-lessons
+"c-programming",13,"c_errors_3","use-after-free","",duplicate-across-lessons
+"c-programming",21,"c_security_3","use-after-free","",duplicate-across-lessons
+"c-programming",15,"c_algos_3","constant time","",duplicate-across-lessons
+"c-programming",21,"c_security_4","constant time","",duplicate-across-lessons
+"c-programming",16,"c_build_3","-l flag","",duplicate-in-lesson
+"c-programming",16,"c_build_3","-l flag","",duplicate-in-lesson
+"c-programming",16,"c_build_4","continuous integration","",duplicate-across-lessons
+"c-programming",23,"c_pro_4","continuous integration","",duplicate-across-lessons
+"c-programming",17,"c_debug_4","race condition","",duplicate-across-lessons
+"c-programming",19,"c_concurrency_4","race condition","",duplicate-across-lessons

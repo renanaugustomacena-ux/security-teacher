@@ -24,7 +24,7 @@ export default {
           items: [
             {
               english: 'Database',
-              italian: 'Database / Base di dati',
+              italian: 'Base di dati (Database)',
               pronunciation: '/ˈdeɪtəbeɪs/',
               phonetic: 'DEI-ta-beis',
               example:
@@ -52,7 +52,7 @@ export default {
               pronunciation: '/roʊ/',
               phonetic: 'ROU',
               example:
-                'Each row represents a single record. = Ogni riga rappresenta un singolo record.',
+                'The orders table has over two million rows spanning five years of sales. = La tabella ordini ha oltre due milioni di righe che coprono cinque anni di vendite.',
               context: 'foundations',
               difficulty: 'beginner',
               code: "INSERT INTO users VALUES (1, 'Marco');",
@@ -72,7 +72,7 @@ export default {
             },
             {
               english: 'Schema',
-              italian: 'schema / struttura dei dati',
+              italian: 'struttura dei dati (Schema)',
               pronunciation: '/ˈskiːmə/',
               phonetic: 'SKII-ma',
               example:
@@ -84,7 +84,7 @@ export default {
             },
             {
               english: 'Record',
-              italian: 'record / riga di dati',
+              italian: 'riga di dati (Record)',
               pronunciation: '/ˈrekɔːrd/',
               phonetic: 'RE-cord',
               example:
@@ -98,7 +98,8 @@ export default {
               italian: 'Campo',
               pronunciation: '/fiːld/',
               phonetic: 'FIILD',
-              example: 'The email field must be unique. = Il campo email deve essere univoco.',
+              example:
+                'The billing address field was missing for 12% of imported customer records. = Il campo indirizzo di fatturazione mancava nel 12% dei record clienti importati.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'email VARCHAR(255) UNIQUE',
@@ -110,7 +111,7 @@ export default {
               pronunciation: '/ˈdeɪtə taɪp/',
               phonetic: 'DEI-ta TAIP',
               example:
-                'INT and VARCHAR are common data types. = INT e VARCHAR sono tipi di dato comuni.',
+                'Choosing the right data type like DECIMAL for prices prevents rounding errors in financial reports. = Scegliere il tipo di dato giusto come DECIMAL per i prezzi previene errori di arrotondamento nei report finanziari.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'age INT, name VARCHAR(50)',
@@ -122,7 +123,7 @@ export default {
               pronunciation: '/ˈkwɪəri/',
               phonetic: 'KUI-ri',
               example:
-                'Run the query to retrieve users. = Esegui la query per recuperare gli utenti.',
+                'The support team runs a query every morning to find unresolved tickets older than 48 hours. = Il team di supporto esegue una query ogni mattina per trovare i ticket irrisolti da più di 48 ore.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'SELECT * FROM users;',
@@ -134,7 +135,7 @@ export default {
               pronunciation: '/rɪˈzʌlt set/',
               phonetic: 'ri-ZALT SET',
               example:
-                'The query returned an empty result set. = La query ha restituito un insieme di risultati vuoto.',
+                "The dashboard iterates over the result set to build a chart of monthly revenue trends. = La dashboard itera sull'insieme dei risultati per costruire un grafico dei trend di fatturato mensile.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'SELECT name FROM users; -- returns rows',
@@ -152,7 +153,7 @@ export default {
               pronunciation: '/ˌdiː biː em ˈes/',
               phonetic: 'DI-BI-EM-ES',
               example:
-                "A DBMS manages access to the database. = Un DBMS gestisce l'accesso al database.",
+                "Companies choose a DBMS like PostgreSQL or MySQL to manage concurrent access and enforce data integrity. = Le aziende scelgono un DBMS come PostgreSQL o MySQL per gestire l'accesso concorrente e garantire l'integrità dei dati.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Database Management System. Si pronuncia lettera per lettera in inglese.',
@@ -162,7 +163,8 @@ export default {
               italian: 'Sistema di gestione database relazionale',
               pronunciation: '/ɑːr ˌdiː biː em ˈes/',
               phonetic: 'AR-DI-BI-EM-ES',
-              example: 'PostgreSQL is a popular RDBMS. = PostgreSQL è un RDBMS popolare.',
+              example:
+                'The team chose PostgreSQL as their RDBMS because it handles complex joins efficiently. = Il team ha scelto PostgreSQL come RDBMS perché gestisce le join complesse in modo efficiente.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'PostgreSQL, MySQL, Oracle',
@@ -181,11 +183,11 @@ export default {
             },
             {
               english: 'SQL',
-              italian: 'SQL / Linguaggio strutturato',
+              italian: 'Linguaggio di query strutturato (SQL)',
               pronunciation: '/ˌes kjuː ˈel/ or /ˈsiːkwəl/',
               phonetic: 'ES-KIU-EL o SI-kuel',
               example:
-                'SQL is the standard query language. = SQL è il linguaggio di query standard.',
+                'Analysts write SQL queries to extract sales trends from millions of rows. = Gli analisti scrivono query SQL per estrarre trend di vendita da milioni di righe.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'SELECT * FROM users;',
@@ -193,10 +195,11 @@ export default {
             },
             {
               english: 'NoSQL',
-              italian: 'NoSQL / Non relazionale',
+              italian: 'Database non relazionale (NoSQL)',
               pronunciation: '/noʊ ˈes kjuː el/',
               phonetic: 'NO-ES-KIU-EL',
-              example: 'MongoDB is a NoSQL database. = MongoDB è un database NoSQL.',
+              example:
+                'The IoT platform stores sensor readings in a NoSQL database to handle variable schemas. = La piattaforma IoT memorizza le letture dei sensori in un database NoSQL per gestire schemi variabili.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'MongoDB, Redis, Cassandra',
@@ -204,10 +207,11 @@ export default {
             },
             {
               english: 'PostgreSQL',
-              italian: 'PostgreSQL (database relazionale open source)',
+              italian: 'Database relazionale open source (PostgreSQL)',
               pronunciation: '/ˈpoʊstɡrɛs ˌkjuː ˈel/',
               phonetic: 'POST-gres-KIU-EL',
-              example: 'PostgreSQL has advanced features. = PostgreSQL ha funzionalità avanzate.',
+              example:
+                'Our analytics pipeline leverages PostgreSQL window functions for real-time ranking. = La nostra pipeline analitica sfrutta le window function di PostgreSQL per il ranking in tempo reale.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'psql -U postgres',
@@ -216,11 +220,11 @@ export default {
             },
             {
               english: 'MySQL',
-              italian: 'MySQL (database relazionale open source)',
+              italian: 'Database relazionale open source (MySQL)',
               pronunciation: '/ˌmaɪ ˌes kjuː ˈel/',
               phonetic: 'MAI-ES-KIU-EL',
               example:
-                'MySQL powers many web applications. = MySQL alimenta molte applicazioni web.',
+                'WordPress and many e-commerce platforms rely on MySQL for their backend storage. = WordPress e molte piattaforme e-commerce si affidano a MySQL per il loro storage backend.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'mysql -u root -p',
@@ -228,11 +232,11 @@ export default {
             },
             {
               english: 'SQLite',
-              italian: 'SQLite (database embedded a file singolo)',
+              italian: 'Database embedded a file singolo (SQLite)',
               pronunciation: '/ˌes kjuː el ˈlaɪt/',
               phonetic: 'ES-KIU-EL-LAIT',
               example:
-                'SQLite stores the database in a single file. = SQLite memorizza il database in un singolo file.',
+                'Mobile apps often embed SQLite to cache user preferences and offline data locally. = Le app mobile spesso integrano SQLite per salvare le preferenze utente e i dati offline in locale.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'sqlite3 mydb.db',
@@ -244,18 +248,19 @@ export default {
               italian: 'Connessione',
               pronunciation: '/kəˈnekʃən/',
               phonetic: 'co-NEK-scen',
-              example: 'Open a connection to the database. = Apri una connessione al database.',
+              example:
+                "The application pool reuses a persistent connection to avoid the overhead of reconnecting on every request. = Il pool dell'applicazione riutilizza una connessione persistente per evitare il sovraccarico di riconnettersi a ogni richiesta.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'psql -h localhost -d mydb',
             },
             {
               english: 'Server',
-              italian: 'server / programma fornitore',
+              italian: 'Programma fornitore di servizi (server)',
               pronunciation: '/ˈsɜːrvər/',
               phonetic: 'SER-ver',
               example:
-                'The database server runs on port 5432. = Il server del database gira sulla porta 5432.',
+                'Production teams deploy the database server on a dedicated host listening on port 5432 behind a firewall. = I team di produzione distribuiscono il server del database su un host dedicato in ascolto sulla porta 5432 dietro un firewall.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'pg_ctl start',
@@ -274,7 +279,7 @@ export default {
               pronunciation: '/ˈpraɪməri kiː/',
               phonetic: 'PRAI-ma-ri KII',
               example:
-                'Each table needs a primary key. = Ogni tabella ha bisogno di una chiave primaria.',
+                "Without a primary key, the ORM cannot track which row to update during a save operation. = Senza una chiave primaria, l'ORM non può tracciare quale riga aggiornare durante un'operazione di salvataggio.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'id INT PRIMARY KEY',
@@ -285,7 +290,8 @@ export default {
               italian: 'Chiave esterna',
               pronunciation: '/ˈfɒrən kiː/',
               phonetic: 'FO-rin KII',
-              example: 'A foreign key links two tables. = Una chiave esterna collega due tabelle.',
+              example:
+                'Adding a foreign key from orders to customers prevents orphaned order records. = Aggiungere una chiave esterna da ordini a clienti previene record di ordini orfani.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'user_id INT REFERENCES users(id)',
@@ -297,7 +303,7 @@ export default {
               pronunciation: '/juːˈniːk kənˈstreɪnt/',
               phonetic: 'iu-NIIK con-STREINT',
               example:
-                "Add a unique constraint on email. = Aggiungi un vincolo di unicità sull'email.",
+                'The registration form rejects duplicates because the email column has a unique constraint. = Il modulo di registrazione rifiuta i duplicati perché la colonna email ha un vincolo di unicità.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'email VARCHAR(255) UNIQUE',
@@ -307,7 +313,8 @@ export default {
               italian: 'Non nullo',
               pronunciation: '/nɒt nʌl/',
               phonetic: 'NOT NAL',
-              example: 'The name column is NOT NULL. = La colonna nome è NOT NULL.',
+              example:
+                'Marking the username column as NOT NULL ensures every account has an identifier. = Contrassegnare la colonna username come NOT NULL garantisce che ogni account abbia un identificativo.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'name VARCHAR(50) NOT NULL',
@@ -318,7 +325,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt ˈvæljuː/',
               phonetic: 'di-FOLT VAL-iu',
               example:
-                'Set a default value for created_at. = Imposta un valore predefinito per created_at.',
+                'The status column uses a default value of "pending" so new orders are triaged automatically. = La colonna stato usa un valore predefinito di "pending" così i nuovi ordini vengono smistati automaticamente.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'created_at TIMESTAMP DEFAULT NOW()',
@@ -329,7 +336,7 @@ export default {
               pronunciation: '/ˈɔːtoʊ ˈɪnkrəmənt/',
               phonetic: 'O-to IN-kre-ment',
               example:
-                'IDs auto-increment with each new row. = Gli ID si incrementano automaticamente con ogni nuova riga.',
+                "The user_id column uses auto increment so the database assigns the next available number on each insert. = La colonna user_id usa l'incremento automatico così il database assegna il prossimo numero disponibile a ogni inserimento.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'id INT AUTO_INCREMENT PRIMARY KEY',
@@ -342,7 +349,7 @@ export default {
               pronunciation: '/ˈsɪəriəl/',
               phonetic: 'SI-rial',
               example:
-                'SERIAL creates an auto-incrementing integer. = SERIAL crea un intero che si incrementa automaticamente.',
+                'In PostgreSQL, defining the id column as SERIAL lets the database generate unique identifiers automatically. = In PostgreSQL, definire la colonna id come SERIAL permette al database di generare identificativi univoci automaticamente.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'id SERIAL PRIMARY KEY',
@@ -353,17 +360,19 @@ export default {
               italian: 'Vincolo CHECK',
               pronunciation: '/tʃek kənˈstreɪnt/',
               phonetic: 'CEK con-STREINT',
-              example: 'A CHECK constraint validates values. = Un vincolo CHECK valida i valori.',
+              example:
+                'The team added a CHECK constraint on the age column to reject values below zero. = Il team ha aggiunto un vincolo CHECK sulla colonna età per rifiutare valori sotto zero.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'age INT CHECK (age >= 0)',
             },
             {
               english: 'NULL',
-              italian: 'NULL / Valore nullo',
+              italian: 'Valore nullo (NULL)',
               pronunciation: '/nʌl/',
               phonetic: 'NAL',
-              example: 'NULL represents missing data. = NULL rappresenta un dato mancante.',
+              example:
+                'When a customer skips the phone field, the database stores NULL to indicate the value is unknown. = Quando un cliente salta il campo telefono, il database memorizza NULL per indicare che il valore è sconosciuto.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'WHERE phone IS NULL',
@@ -375,7 +384,7 @@ export default {
               pronunciation: '/kəmˈpɒzɪt kiː/',
               phonetic: 'com-PO-zit KII',
               example:
-                'Use a composite key for join tables. = Usa una chiave composta per le tabelle di join.',
+                'The enrollment table uses a composite key of student_id and course_id to prevent duplicate registrations. = La tabella iscrizioni usa una chiave composta di student_id e course_id per prevenire registrazioni duplicate.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'PRIMARY KEY (user_id, role_id)',
@@ -393,7 +402,7 @@ export default {
               pronunciation: '/pərˈsɪstəns/',
               phonetic: 'per-SIS-tens',
               example:
-                'Databases provide data persistence. = I database forniscono persistenza dei dati.',
+                'Thanks to persistence, the shopping cart data survives even if the server restarts overnight. = Grazie alla persistenza, i dati del carrello sopravvivono anche se il server si riavvia durante la notte.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'I dati sopravvivono al riavvio del programma.',
@@ -403,7 +412,8 @@ export default {
               italian: 'Archiviazione',
               pronunciation: '/ˈstɔːrɪdʒ/',
               phonetic: 'STO-rich',
-              example: 'The database uses disk storage. = Il database usa archiviazione su disco.',
+              example:
+                'Moving old invoices to cold storage reduced the primary database size by 60%. = Spostare le vecchie fatture nello storage a freddo ha ridotto la dimensione del database principale del 60%.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -412,7 +422,8 @@ export default {
               italian: 'Disco',
               pronunciation: '/dɪsk/',
               phonetic: 'DISK',
-              example: 'Data is written to disk. = I dati sono scritti su disco.',
+              example:
+                'Upgrading from spinning disk to NVMe SSD cut average query latency from 12ms to 2ms. = Passare da disco rotante a NVMe SSD ha ridotto la latenza media delle query da 12ms a 2ms.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -421,7 +432,8 @@ export default {
               italian: 'In memoria',
               pronunciation: '/ɪn ˈmeməri/',
               phonetic: 'IN ME-mo-ri',
-              example: 'Redis is an in-memory database. = Redis è un database in memoria.',
+              example:
+                'Session tokens are cached in an in-memory store like Redis for sub-millisecond lookups. = I token di sessione sono memorizzati in uno store in-memory come Redis per ricerche sotto il millisecondo.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'Redis',
@@ -433,7 +445,7 @@ export default {
               pronunciation: '/faɪl ˈsɪstəm/',
               phonetic: 'FAIL SIS-tem',
               example:
-                'SQLite stores data on the file system. = SQLite memorizza i dati sul file system.',
+                'The backup script copies the database files to a remote file system every night at midnight. = Lo script di backup copia i file del database su un file system remoto ogni notte a mezzanotte.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -442,7 +454,8 @@ export default {
               italian: 'Dati',
               pronunciation: '/ˈdeɪtə/ or /ˈdætə/',
               phonetic: 'DEI-ta o DA-ta',
-              example: 'The data is stored securely. = I dati sono memorizzati in modo sicuro.',
+              example:
+                "The analytics team exports raw data from the warehouse into CSV files for offline analysis. = Il team analitico esporta i dati grezzi dal warehouse in file CSV per l'analisi offline.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'In inglese "data" è plurale (latino), ma spesso si tratta come singolare.',
@@ -452,25 +465,26 @@ export default {
               italian: 'Metadati',
               pronunciation: '/ˈmetədeɪtə/',
               phonetic: 'ME-ta-DEI-ta',
-              example: 'Metadata describes the data. = I metadati descrivono i dati.',
+              example:
+                'The DBA queries metadata from information_schema to track table sizes and column types. = Il DBA interroga i metadati da information_schema per monitorare dimensioni delle tabelle e tipi di colonna.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'SELECT * FROM information_schema.tables;',
             },
             {
               english: 'Catalog',
-              italian: 'Catalogo',
+              italian: 'Catalogo di sistema (dizionario dei metadati del database)',
               pronunciation: '/ˈkætəlɒɡ/',
               phonetic: 'KA-ta-log',
               example:
-                'The system catalog stores metadata. = Il catalogo di sistema memorizza i metadati.',
+                'Migration tools read the system catalog to discover existing tables before applying changes. = Gli strumenti di migrazione leggono il catalogo di sistema per scoprire le tabelle esistenti prima di applicare le modifiche.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'PostgreSQL',
             },
             {
               english: 'Tablespace',
-              italian: 'Tablespace / Spazio tabella',
+              italian: 'Spazio tabella (Tablespace)',
               pronunciation: '/ˈteɪblspeɪs/',
               phonetic: 'TEI-bol-speis',
               example:
@@ -486,7 +500,7 @@ export default {
               pronunciation: '/ˈdeɪtəbeɪs ˈɪnstəns/',
               phonetic: 'DEI-ta-beis IN-stans',
               example:
-                'Run multiple instances on the same server. = Esegui più istanze sullo stesso server.',
+                'The staging and production database instances run on separate ports to avoid conflicts. = Le istanze del database di staging e produzione girano su porte separate per evitare conflitti.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -508,10 +522,11 @@ export default {
           items: [
             {
               english: 'SELECT',
-              italian: 'SELECT / Seleziona',
+              italian: 'Seleziona (SELECT)',
               pronunciation: '/sɪˈlekt/',
               phonetic: 'si-LEKT',
-              example: 'SELECT retrieves data from a table. = SELECT recupera dati da una tabella.',
+              example:
+                'The dashboard runs a SELECT on the orders table every five minutes to refresh revenue totals. = La dashboard esegue una SELECT sulla tabella ordini ogni cinque minuti per aggiornare i totali di fatturato.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT name FROM users;',
@@ -519,10 +534,11 @@ export default {
             },
             {
               english: 'FROM',
-              italian: 'FROM / Da',
+              italian: 'Da (FROM)',
               pronunciation: '/frəm/',
               phonetic: 'FROM',
-              example: 'FROM specifies the source table. = FROM specifica la tabella sorgente.',
+              example:
+                'The report pulls customer names FROM the accounts table and joins them with recent purchases. = Il report estrae i nomi dei clienti FROM la tabella account e li unisce agli acquisti recenti.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM users;',
@@ -533,7 +549,7 @@ export default {
               pronunciation: '/ˈæstərɪsk/',
               phonetic: 'AS-te-risk',
               example:
-                "The asterisk selects all columns. = L'asterisco seleziona tutte le colonne.",
+                "Using an asterisk in production queries can expose sensitive columns and slow down large tables. = Usare l'asterisco nelle query di produzione può esporre colonne sensibili e rallentare tabelle grandi.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM users;',
@@ -541,10 +557,11 @@ export default {
             },
             {
               english: 'WHERE',
-              italian: 'WHERE / Dove',
+              italian: 'Dove (WHERE)',
               pronunciation: '/weər/',
               phonetic: 'UER',
-              example: 'WHERE filters rows by condition. = WHERE filtra le righe per condizione.',
+              example:
+                'Adding a WHERE clause on the order date reduced the scanned rows from ten million to just three thousand. = Aggiungere una clausola WHERE sulla data ordine ha ridotto le righe scansionate da dieci milioni a solo tremila.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM users WHERE active = true;',
@@ -554,7 +571,8 @@ export default {
               italian: 'Operatore di uguaglianza',
               pronunciation: '/ɪˈkwɒlɪti ˈɒpəreɪtər/',
               phonetic: 'i-KUO-li-ti O-pe-rei-ter',
-              example: 'Use = to compare values. = Usa = per confrontare valori.',
+              example:
+                "The login check uses the equality operator to match the hashed password against the stored value. = Il controllo login usa l'operatore di uguaglianza per confrontare la password hashata con il valore memorizzato.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'WHERE age = 30',
@@ -562,50 +580,55 @@ export default {
             },
             {
               english: 'AND',
-              italian: 'AND / E',
+              italian: 'E (AND)',
               pronunciation: '/ænd/',
               phonetic: 'AND',
-              example: 'AND combines two conditions. = AND combina due condizioni.',
+              example:
+                "The fraud filter selects transactions where the amount exceeds 5000 AND the country differs from the cardholder's. = Il filtro antifrode seleziona transazioni dove l'importo supera 5000 AND il paese differisce da quello del titolare.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'WHERE age > 18 AND active = true',
             },
             {
               english: 'OR',
-              italian: 'OR / Oppure',
+              italian: 'Oppure (OR)',
               pronunciation: '/ɔːr/',
               phonetic: 'OR',
-              example: 'OR matches either condition. = OR corrisponde a una delle condizioni.',
+              example:
+                'The search returns products where the category is "electronics" OR the price is below ten euros. = La ricerca restituisce prodotti dove la categoria è "elettronica" OR il prezzo è sotto i dieci euro.',
               context: 'sql',
               difficulty: 'beginner',
               code: "WHERE city = 'Roma' OR city = 'Milano'",
             },
             {
               english: 'NOT',
-              italian: 'NOT / Non',
+              italian: 'Non (NOT)',
               pronunciation: '/nɒt/',
               phonetic: 'NOT',
-              example: 'NOT negates a condition. = NOT nega una condizione.',
+              example:
+                'The cleanup job removes accounts that are NOT verified and were created more than 90 days ago. = Il job di pulizia rimuove gli account che NOT sono verificati e sono stati creati più di 90 giorni fa.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'WHERE NOT deleted',
             },
             {
               english: 'IN',
-              italian: 'IN / operatore SQL appartenenza a insieme',
+              italian: 'Operatore SQL di appartenenza a insieme (IN)',
               pronunciation: '/ɪn/',
               phonetic: 'IN',
-              example: 'IN matches a list of values. = IN corrisponde a una lista di valori.',
+              example:
+                'The notification service fetches users whose preferred language is IN the list of supported locales. = Il servizio notifiche recupera gli utenti la cui lingua preferita è IN nella lista delle lingue supportate.',
               context: 'sql',
               difficulty: 'beginner',
               code: "WHERE country IN ('IT', 'FR', 'DE')",
             },
             {
               english: 'BETWEEN',
-              italian: 'BETWEEN / Tra',
+              italian: 'Tra (BETWEEN)',
               pronunciation: '/bɪˈtwiːn/',
               phonetic: 'bi-TUIIN',
-              example: 'BETWEEN matches a range. = BETWEEN corrisponde a un intervallo.',
+              example:
+                'The payroll query selects employees whose salary falls BETWEEN 30000 and 60000 euros. = La query paghe seleziona i dipendenti il cui stipendio è BETWEEN 30000 e 60000 euro.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'WHERE age BETWEEN 18 AND 65',
@@ -620,32 +643,33 @@ export default {
           items: [
             {
               english: 'INSERT',
-              italian: 'INSERT / Inserisci',
+              italian: 'Inserisci (INSERT)',
               pronunciation: '/ɪnˈsɜːrt/',
               phonetic: 'in-SERT',
               example:
-                'INSERT adds new rows to a table. = INSERT aggiunge nuove righe a una tabella.',
+                "The registration endpoint runs an INSERT to save each new user's profile into the accounts table. = L'endpoint di registrazione esegue un INSERT per salvare il profilo di ogni nuovo utente nella tabella account.",
               context: 'sql',
               difficulty: 'beginner',
               code: "INSERT INTO users (name, age) VALUES ('Marco', 30);",
             },
             {
               english: 'INTO',
-              italian: 'INTO / In',
+              italian: 'In (INTO)',
               pronunciation: '/ˈɪntə/',
               phonetic: 'IN-tu',
               example:
-                'INTO specifies the target table. = INTO specifica la tabella di destinazione.',
+                "The ETL pipeline loads cleaned records INTO the warehouse's fact table every hour. = La pipeline ETL carica i record puliti INTO la tabella dei fatti del warehouse ogni ora.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'INSERT INTO users VALUES (...);',
             },
             {
               english: 'VALUES',
-              italian: 'VALUES / Valori',
+              italian: 'Valori (VALUES)',
               pronunciation: '/ˈvæljuːz/',
               phonetic: 'VAL-iuz',
-              example: 'VALUES provides the data to insert. = VALUES fornisce i dati da inserire.',
+              example:
+                'Batch inserts pass multiple rows in a single VALUES clause to reduce round trips to the server. = Gli inserimenti batch passano più righe in una singola clausola VALUES per ridurre i round trip verso il server.',
               context: 'sql',
               difficulty: 'beginner',
               code: "VALUES (1, 'Anna'), (2, 'Luca');",
@@ -653,10 +677,11 @@ export default {
             },
             {
               english: 'UPDATE',
-              italian: 'UPDATE / Aggiorna',
+              italian: 'Aggiorna (UPDATE)',
               pronunciation: '/ʌpˈdeɪt/',
               phonetic: 'ap-DEIT',
-              example: 'UPDATE modifies existing rows. = UPDATE modifica righe esistenti.',
+              example:
+                'After the price review, the manager runs an UPDATE to adjust all discounted products at once. = Dopo la revisione prezzi, il manager esegue un UPDATE per aggiornare tutti i prodotti scontati in una volta.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'UPDATE users SET active = false WHERE id = 5;',
@@ -664,20 +689,22 @@ export default {
             },
             {
               english: 'SET',
-              italian: 'SET / Imposta',
+              italian: 'Imposta (SET)',
               pronunciation: '/set/',
               phonetic: 'SET',
-              example: 'SET assigns new values. = SET assegna nuovi valori.',
+              example:
+                'The migration script uses SET to change the status column from "active" to "archived" for old records. = Lo script di migrazione usa SET per cambiare la colonna stato da "attivo" ad "archiviato" per i vecchi record.',
               context: 'sql',
               difficulty: 'beginner',
               code: "SET name = 'Mario', age = 31",
             },
             {
               english: 'DELETE',
-              italian: 'DELETE / Cancella',
+              italian: 'Cancella (DELETE)',
               pronunciation: '/dɪˈliːt/',
               phonetic: 'di-LIIT',
-              example: 'DELETE removes rows from a table. = DELETE rimuove righe da una tabella.',
+              example:
+                "The GDPR compliance job runs a DELETE on personal data for users who requested account removal. = Il job di conformità GDPR esegue una DELETE sui dati personali degli utenti che hanno richiesto la cancellazione dell'account.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'DELETE FROM users WHERE id = 5;',
@@ -685,11 +712,11 @@ export default {
             },
             {
               english: 'TRUNCATE',
-              italian: 'TRUNCATE / Svuota',
+              italian: 'Svuota (TRUNCATE)',
               pronunciation: '/trʌŋˈkeɪt/',
               phonetic: 'tran-KEIT',
               example:
-                'TRUNCATE empties a table quickly. = TRUNCATE svuota una tabella velocemente.',
+                'Before reloading test data, the CI pipeline runs TRUNCATE on all staging tables to start fresh. = Prima di ricaricare i dati di test, la pipeline CI esegue TRUNCATE su tutte le tabelle di staging per ripartire da zero.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'TRUNCATE TABLE logs;',
@@ -697,11 +724,11 @@ export default {
             },
             {
               english: 'RETURNING',
-              italian: 'RETURNING / Restituisce',
+              italian: 'Restituisce (RETURNING)',
               pronunciation: '/rɪˈtɜːrnɪŋ/',
               phonetic: 'ri-TER-ning',
               example:
-                'RETURNING returns the inserted row. = RETURNING restituisce la riga inserita.',
+                "The API uses RETURNING to get the auto-generated id right after inserting a new order. = L'API usa RETURNING per ottenere l'id generato automaticamente subito dopo aver inserito un nuovo ordine.",
               context: 'sql',
               difficulty: 'beginner',
               code: "INSERT INTO users (name) VALUES ('Eva') RETURNING id;",
@@ -709,11 +736,11 @@ export default {
             },
             {
               english: 'UPSERT',
-              italian: 'UPSERT / Inserisci o aggiorna',
+              italian: 'Inserisci o aggiorna (UPSERT)',
               pronunciation: '/ʌpˈsɜːrt/',
               phonetic: 'ap-SERT',
               example:
-                'UPSERT inserts or updates if exists. = UPSERT inserisce o aggiorna se esiste.',
+                'The sync process uses an UPSERT to create new product records or refresh prices if they already exist. = Il processo di sincronizzazione usa un UPSERT per creare nuovi record prodotto o aggiornare i prezzi se esistono già.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'INSERT INTO users ... ON CONFLICT (id) DO UPDATE SET ...;',
@@ -725,7 +752,7 @@ export default {
               pronunciation: '/ɒn ˈkɒnflɪkt/',
               phonetic: 'ON KON-flikt',
               example:
-                'ON CONFLICT handles duplicate keys. = ON CONFLICT gestisce le chiavi duplicate.',
+                'The import script specifies ON CONFLICT on the email column to skip rows that already exist. = Lo script di importazione specifica ON CONFLICT sulla colonna email per saltare le righe che esistono già.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'ON CONFLICT (email) DO NOTHING',
@@ -740,20 +767,22 @@ export default {
           items: [
             {
               english: 'DISTINCT',
-              italian: 'DISTINCT / Distinti',
+              italian: 'Distinti (DISTINCT)',
               pronunciation: '/dɪˈstɪŋkt/',
               phonetic: 'di-STINKT',
-              example: 'DISTINCT removes duplicate rows. = DISTINCT rimuove le righe duplicate.',
+              example:
+                'The marketing report uses DISTINCT to count unique visitors from the access log table. = Il report marketing usa DISTINCT per contare i visitatori unici dalla tabella dei log di accesso.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT DISTINCT country FROM users;',
             },
             {
               english: 'LIMIT',
-              italian: 'LIMIT / Limita',
+              italian: 'Limita (LIMIT)',
               pronunciation: '/ˈlɪmɪt/',
               phonetic: 'LI-mit',
-              example: 'LIMIT restricts the number of rows. = LIMIT restringe il numero di righe.',
+              example:
+                "The mobile app fetches only the first 20 notifications using a LIMIT clause to save bandwidth. = L'app mobile recupera solo le prime 20 notifiche usando una clausola LIMIT per risparmiare banda.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM users LIMIT 10;',
@@ -761,10 +790,11 @@ export default {
             },
             {
               english: 'OFFSET',
-              italian: 'OFFSET / Scostamento',
+              italian: 'Scostamento (OFFSET)',
               pronunciation: '/ˈɒfset/',
               phonetic: 'OF-set',
-              example: 'OFFSET skips a number of rows. = OFFSET salta un numero di righe.',
+              example:
+                'Page three of results is loaded by setting an OFFSET of 40 and a LIMIT of 20. = La terza pagina di risultati viene caricata impostando un OFFSET di 40 e un LIMIT di 20.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM users LIMIT 10 OFFSET 20;',
@@ -776,28 +806,29 @@ export default {
               pronunciation: '/ˌpædʒɪˈneɪʃən/',
               phonetic: 'pa-gi-NEI-scen',
               example:
-                'Use LIMIT and OFFSET for pagination. = Usa LIMIT e OFFSET per la paginazione.',
+                'Cursor-based pagination outperforms OFFSET pagination on tables with millions of rows. = La paginazione basata su cursore supera la paginazione con OFFSET su tabelle con milioni di righe.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'LIMIT 20 OFFSET 40 -- page 3',
             },
             {
               english: 'COUNT',
-              italian: 'COUNT / Conta',
+              italian: 'Conta (COUNT)',
               pronunciation: '/kaʊnt/',
               phonetic: 'KAUNT',
-              example: 'COUNT returns the number of rows. = COUNT restituisce il numero di righe.',
+              example:
+                'The admin panel displays a COUNT of pending support tickets refreshed every minute. = Il pannello admin mostra un COUNT dei ticket di supporto in attesa aggiornato ogni minuto.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT COUNT(*) FROM users;',
             },
             {
               english: 'LIKE',
-              italian: 'LIKE / Simile',
+              italian: 'Simile a (LIKE)',
               pronunciation: '/laɪk/',
               phonetic: 'LAIK',
               example:
-                'LIKE matches patterns with wildcards. = LIKE corrisponde a pattern con wildcard.',
+                "The autocomplete feature uses LIKE with a trailing wildcard to suggest city names as the user types. = La funzione di autocompletamento usa LIKE con un wildcard finale per suggerire nomi di città mentre l'utente digita.",
               context: 'sql',
               difficulty: 'beginner',
               code: "WHERE name LIKE 'M%'",
@@ -809,18 +840,18 @@ export default {
               pronunciation: '/ˈwaɪldkɑːrd/',
               phonetic: 'UAILD-kard',
               example:
-                'The percent sign is a wildcard. = Il simbolo percentuale è un carattere jolly.',
+                'Using the percent wildcard after a search term matches any suffix, such as finding all Gmail addresses. = Usare il carattere jolly percentuale dopo un termine di ricerca corrisponde a qualsiasi suffisso, come trovare tutti gli indirizzi Gmail.',
               context: 'sql',
               difficulty: 'beginner',
               code: "WHERE email LIKE '%@gmail.com'",
             },
             {
               english: 'ILIKE',
-              italian: 'ILIKE / LIKE insensibile al caso',
+              italian: 'LIKE insensibile alle maiuscole (ILIKE)',
               pronunciation: '/aɪ laɪk/',
               phonetic: 'AI-LAIK',
               example:
-                'ILIKE matches case-insensitively. = ILIKE corrisponde senza distinzione tra maiuscole e minuscole.',
+                'The search bar uses ILIKE so users can type "marco" or "Marco" and get the same results. = La barra di ricerca usa ILIKE così gli utenti possono digitare "marco" o "Marco" e ottenere gli stessi risultati.',
               context: 'sql',
               difficulty: 'beginner',
               code: "WHERE name ILIKE '%marco%'",
@@ -828,10 +859,11 @@ export default {
             },
             {
               english: 'IS NULL',
-              italian: 'IS NULL / È nullo',
+              italian: 'È nullo (IS NULL)',
               pronunciation: '/ɪz nʌl/',
               phonetic: 'IZ NAL',
-              example: 'IS NULL checks for missing values. = IS NULL verifica valori mancanti.',
+              example:
+                "The data quality report flags rows where the shipping address IS NULL before processing orders. = Il report qualità dati segnala le righe dove l'indirizzo di spedizione IS NULL prima di elaborare gli ordini.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'WHERE phone IS NULL',
@@ -839,11 +871,11 @@ export default {
             },
             {
               english: 'COALESCE',
-              italian: 'COALESCE / Primo non nullo',
+              italian: 'Primo non nullo (COALESCE)',
               pronunciation: '/ˌkoʊəˈles/',
               phonetic: 'co-a-LES',
               example:
-                'COALESCE returns the first non-NULL value. = COALESCE restituisce il primo valore non NULL.',
+                "The display name falls back to the email via COALESCE when the user hasn't set a nickname. = Il nome visualizzato ricade sull'email tramite COALESCE quando l'utente non ha impostato un nickname.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT COALESCE(nickname, name) FROM users;',
@@ -857,74 +889,77 @@ export default {
           items: [
             {
               english: 'CONCAT',
-              italian: 'CONCAT / Concatena',
+              italian: 'Concatena (CONCAT)',
               pronunciation: '/kənˈkæt/',
               phonetic: 'kon-KAT',
-              example: 'CONCAT joins strings together. = CONCAT unisce stringhe insieme.',
+              example:
+                'The invoice view uses CONCAT to merge first and last name into a single "full_name" column. = La vista fattura usa CONCAT per unire nome e cognome in una singola colonna "nome_completo".',
               context: 'sql',
               difficulty: 'beginner',
               code: "SELECT CONCAT(first_name, ' ', last_name) FROM users;",
             },
             {
               english: 'UPPER',
-              italian: 'UPPER / Maiuscolo',
+              italian: 'Maiuscolo (UPPER)',
               pronunciation: '/ˈʌpər/',
               phonetic: 'AP-er',
-              example: 'UPPER converts to uppercase. = UPPER converte in maiuscolo.',
+              example:
+                "The export formats country codes with UPPER so they match the ISO standard in uppercase. = L'export formatta i codici paese con UPPER in modo che corrispondano allo standard ISO in maiuscolo.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT UPPER(name) FROM users;',
             },
             {
               english: 'LOWER',
-              italian: 'LOWER / Minuscolo',
+              italian: 'Minuscolo (LOWER)',
               pronunciation: '/ˈloʊər/',
               phonetic: 'LO-uer',
-              example: 'LOWER converts to lowercase. = LOWER converte in minuscolo.',
+              example:
+                "Email uniqueness checks apply LOWER to both the stored value and the input to prevent case-sensitive duplicates. = I controlli di unicità email applicano LOWER sia al valore memorizzato che all'input per prevenire duplicati legati alle maiuscole.",
               context: 'sql',
               difficulty: 'beginner',
               code: "WHERE LOWER(email) = 'foo@bar.com'",
             },
             {
               english: 'LENGTH',
-              italian: 'LENGTH / Lunghezza',
+              italian: 'Lunghezza (LENGTH)',
               pronunciation: '/leŋθ/',
               phonetic: 'LENGTH',
               example:
-                'LENGTH returns string length. = LENGTH restituisce la lunghezza della stringa.',
+                "The validation query rejects passwords where LENGTH is less than 8 characters before hashing. = La query di validazione rifiuta le password dove LENGTH è inferiore a 8 caratteri prima dell'hashing.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT LENGTH(name) FROM users;',
             },
             {
               english: 'SUBSTRING',
-              italian: 'SUBSTRING / Sottostringa',
+              italian: 'Sottostringa (SUBSTRING)',
               pronunciation: '/ˈsʌbstrɪŋ/',
               phonetic: 'SAB-string',
               example:
-                'SUBSTRING extracts part of a string. = SUBSTRING estrae parte di una stringa.',
+                "The anonymization script replaces personal names with a SUBSTRING of the hash for audit trails. = Lo script di anonimizzazione sostituisce i nomi personali con una SUBSTRING dell'hash per gli audit trail.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT SUBSTRING(name, 1, 3) FROM users;',
             },
             {
               english: 'TRIM',
-              italian: 'TRIM / Rimuovi spazi',
+              italian: 'Rimuovi spazi (TRIM)',
               pronunciation: '/trɪm/',
               phonetic: 'TRIM',
               example:
-                'TRIM removes leading and trailing spaces. = TRIM rimuove gli spazi iniziali e finali.',
+                'The import pipeline applies TRIM to all text fields to remove accidental whitespace from CSV uploads. = La pipeline di importazione applica TRIM a tutti i campi testo per rimuovere spazi accidentali dai caricamenti CSV.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT TRIM(name) FROM users;',
             },
             {
               english: 'NOW',
-              italian: 'NOW / Adesso',
+              italian: 'Adesso (NOW)',
               pronunciation: '/naʊ/',
               phonetic: 'NAU',
               example:
-                'NOW returns the current timestamp. = NOW restituisce il timestamp corrente.',
+                "The created_at column defaults to NOW so every new row is automatically timestamped on insert. = La colonna created_at usa come default NOW così ogni nuova riga viene automaticamente marcata con il timestamp all'inserimento.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT NOW();',
@@ -936,17 +971,18 @@ export default {
               pronunciation: '/ˈkʌrənt deɪt/',
               phonetic: 'KA-rent DEIT',
               example:
-                "CURRENT_DATE returns today's date. = CURRENT_DATE restituisce la data odierna.",
+                "The scheduler selects tasks where the due date equals CURRENT_DATE to build today's work queue. = Lo scheduler seleziona i task dove la data di scadenza è uguale a CURRENT_DATE per costruire la coda di lavoro odierna.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT CURRENT_DATE;',
             },
             {
               english: 'EXTRACT',
-              italian: 'EXTRACT / Estrai',
+              italian: 'Estrai (EXTRACT)',
               pronunciation: '/ɪkˈstrækt/',
               phonetic: 'ek-STRAKT',
-              example: 'EXTRACT pulls a part from a date. = EXTRACT estrae una parte da una data.',
+              example:
+                "The revenue report groups sales by month using EXTRACT on the order timestamp. = Il report fatturato raggruppa le vendite per mese usando EXTRACT sul timestamp dell'ordine.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT EXTRACT(YEAR FROM created_at);',
@@ -957,7 +993,7 @@ export default {
               pronunciation: '/deɪt trʌŋk/',
               phonetic: 'DEIT-TRANK',
               example:
-                "DATE_TRUNC truncates a date to a unit. = DATE_TRUNC tronca una data a un'unità.",
+                'The monthly dashboard uses DATE_TRUNC to round all timestamps to the first of each month for grouping. = La dashboard mensile usa DATE_TRUNC per arrotondare tutti i timestamp al primo di ogni mese per il raggruppamento.',
               context: 'sql',
               difficulty: 'beginner',
               code: "SELECT DATE_TRUNC('month', created_at);",
@@ -981,22 +1017,22 @@ export default {
           items: [
             {
               english: 'JOIN',
-              italian: 'JOIN / Unione',
+              italian: 'Unione (JOIN)',
               pronunciation: '/dʒɔɪn/',
               phonetic: 'GIOIN',
               example:
-                'JOIN combines rows from multiple tables. = JOIN combina righe da più tabelle.',
+                'The order summary page uses a JOIN between orders and products to display item names alongside quantities. = La pagina riepilogo ordini usa una JOIN tra ordini e prodotti per mostrare i nomi degli articoli accanto alle quantità.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM orders JOIN users ON orders.user_id = users.id;',
             },
             {
               english: 'INNER JOIN',
-              italian: 'INNER JOIN / Giunzione interna',
+              italian: 'Giunzione interna (INNER JOIN)',
               pronunciation: '/ˈɪnər dʒɔɪn/',
               phonetic: 'IN-er GIOIN',
               example:
-                'INNER JOIN keeps only matching rows. = INNER JOIN mantiene solo le righe corrispondenti.',
+                'Using an INNER JOIN between customers and invoices excludes customers who have never made a purchase. = Usare una INNER JOIN tra clienti e fatture esclude i clienti che non hanno mai effettuato un acquisto.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT u.name, o.total FROM users u INNER JOIN orders o ON u.id = o.user_id;',
@@ -1004,11 +1040,11 @@ export default {
             },
             {
               english: 'LEFT JOIN',
-              italian: 'LEFT JOIN / Giunzione sinistra',
+              italian: 'Giunzione sinistra (LEFT JOIN)',
               pronunciation: '/left dʒɔɪn/',
               phonetic: 'LEFT GIOIN',
               example:
-                'LEFT JOIN keeps all rows from the left table. = LEFT JOIN mantiene tutte le righe della tabella di sinistra.',
+                'A LEFT JOIN from users to orders reveals which customers have never placed an order. = Una LEFT JOIN da utenti a ordini rivela quali clienti non hanno mai effettuato un ordine.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM users u LEFT JOIN orders o ON u.id = o.user_id;',
@@ -1016,11 +1052,11 @@ export default {
             },
             {
               english: 'RIGHT JOIN',
-              italian: 'RIGHT JOIN / Giunzione destra',
+              italian: 'Giunzione destra (RIGHT JOIN)',
               pronunciation: '/raɪt dʒɔɪn/',
               phonetic: 'RAIT GIOIN',
               example:
-                'RIGHT JOIN keeps all rows from the right table. = RIGHT JOIN mantiene tutte le righe della tabella di destra.',
+                'Some legacy reports use a RIGHT JOIN, but most teams rewrite them as LEFT JOINs for readability. = Alcuni report legacy usano una RIGHT JOIN, ma la maggior parte dei team li riscrive come LEFT JOIN per leggibilità.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM orders o RIGHT JOIN users u ON o.user_id = u.id;',
@@ -1028,11 +1064,11 @@ export default {
             },
             {
               english: 'FULL OUTER JOIN',
-              italian: 'FULL OUTER JOIN / Giunzione esterna completa',
+              italian: 'Giunzione esterna completa (FULL OUTER JOIN)',
               pronunciation: '/fʊl ˈaʊtər dʒɔɪn/',
               phonetic: 'FUL AU-ter GIOIN',
               example:
-                'FULL OUTER JOIN keeps all rows from both tables. = FULL OUTER JOIN mantiene tutte le righe di entrambe le tabelle.',
+                'The reconciliation script uses a FULL OUTER JOIN to spot records that exist in the warehouse but not in the source. = Lo script di riconciliazione usa una FULL OUTER JOIN per individuare record presenti nel warehouse ma non nella sorgente.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM a FULL OUTER JOIN b ON a.id = b.a_id;',
@@ -1040,11 +1076,11 @@ export default {
             },
             {
               english: 'CROSS JOIN',
-              italian: 'CROSS JOIN / Prodotto cartesiano',
+              italian: 'Prodotto cartesiano (CROSS JOIN)',
               pronunciation: '/krɒs dʒɔɪn/',
               phonetic: 'KROS GIOIN',
               example:
-                'CROSS JOIN produces a Cartesian product. = CROSS JOIN produce un prodotto cartesiano.',
+                'A CROSS JOIN between sizes and colors generates every possible T-shirt variant for the catalog. = Una CROSS JOIN tra taglie e colori genera ogni possibile variante di maglietta per il catalogo.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM colors CROSS JOIN sizes;',
@@ -1052,32 +1088,33 @@ export default {
             },
             {
               english: 'SELF JOIN',
-              italian: 'SELF JOIN / Auto-giunzione',
+              italian: 'Auto-giunzione (SELF JOIN)',
               pronunciation: '/self dʒɔɪn/',
               phonetic: 'SELF GIOIN',
               example:
-                'A SELF JOIN joins a table with itself. = Un SELF JOIN unisce una tabella con sé stessa.',
+                'An org-chart report uses a SELF JOIN on the employees table to pair each person with their direct manager. = Un report organigramma usa un SELF JOIN sulla tabella dipendenti per accoppiare ogni persona con il proprio responsabile diretto.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT e.name, m.name FROM employees e JOIN employees m ON e.manager_id = m.id;',
             },
             {
               english: 'ON',
-              italian: 'ON / Su',
+              italian: 'Su (ON)',
               pronunciation: '/ɒn/',
               phonetic: 'ON',
-              example: 'ON specifies the join condition. = ON specifica la condizione di JOIN.',
+              example:
+                "The ON clause matches the customer_id in orders with the id in customers to link the two tables. = La clausola ON abbina il customer_id negli ordini con l'id nei clienti per collegare le due tabelle.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'JOIN orders ON users.id = orders.user_id',
             },
             {
               english: 'USING',
-              italian: 'USING / Usando',
+              italian: 'Usando (USING)',
               pronunciation: '/ˈjuːzɪŋ/',
               phonetic: 'IU-zing',
               example:
-                'USING simplifies the join when columns share a name. = USING semplifica il join quando le colonne hanno lo stesso nome.',
+                'Developers replace the verbose ON clause with USING when both tables share a column called department_id. = Gli sviluppatori sostituiscono la clausola ON prolissa con USING quando entrambe le tabelle condividono una colonna chiamata department_id.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM a JOIN b USING (id);',
@@ -1088,7 +1125,7 @@ export default {
               pronunciation: '/kɑːrˈtiːʒən ˈprɒdʌkt/',
               phonetic: 'kar-TI-gian PRO-dakt',
               example:
-                'Avoid accidental Cartesian products. = Evita prodotti cartesiani accidentali.',
+                'A missing ON clause accidentally created a Cartesian product that returned 50 million rows instead of 5000. = Una clausola ON mancante ha creato accidentalmente un prodotto cartesiano che ha restituito 50 milioni di righe invece di 5000.',
               context: 'sql',
               difficulty: 'beginner',
               code: '-- Missing ON clause produces a Cartesian product',
@@ -1103,21 +1140,22 @@ export default {
           items: [
             {
               english: 'GROUP BY',
-              italian: 'GROUP BY / Raggruppa per',
+              italian: 'Raggruppa per (GROUP BY)',
               pronunciation: '/ɡruːp baɪ/',
               phonetic: 'GRUP BAI',
-              example: 'GROUP BY aggregates rows. = GROUP BY aggrega le righe.',
+              example:
+                'The sales dashboard uses GROUP BY to show total revenue per region for the current quarter. = La dashboard vendite usa GROUP BY per mostrare il fatturato totale per regione nel trimestre corrente.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT country, COUNT(*) FROM users GROUP BY country;',
             },
             {
               english: 'HAVING',
-              italian: 'HAVING / Avente',
+              italian: 'Avente (HAVING)',
               pronunciation: '/ˈhævɪŋ/',
               phonetic: 'HE-ving',
               example:
-                "HAVING filters groups after aggregation. = HAVING filtra i gruppi dopo l'aggregazione.",
+                'The report shows only countries HAVING more than 1000 registered users to focus on key markets. = Il report mostra solo i paesi HAVING più di 1000 utenti registrati per concentrarsi sui mercati chiave.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'GROUP BY country HAVING COUNT(*) > 100',
@@ -1129,47 +1167,51 @@ export default {
               pronunciation: '/ˈæɡrɪɡət ˈfʌŋkʃən/',
               phonetic: 'A-gri-gat FANK-scen',
               example:
-                'COUNT and SUM are aggregate functions. = COUNT e SUM sono funzioni di aggregazione.',
+                'The financial dashboard relies on aggregate functions like SUM and AVG to summarize quarterly performance. = La dashboard finanziaria si basa su funzioni di aggregazione come SUM e AVG per sintetizzare le performance trimestrali.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT AVG(price) FROM products;',
             },
             {
               english: 'SUM',
-              italian: 'SUM / Somma',
+              italian: 'Somma (SUM)',
               pronunciation: '/sʌm/',
               phonetic: 'SAM',
-              example: 'SUM totals numeric values. = SUM somma valori numerici.',
+              example:
+                "The checkout page calculates the cart total by running SUM on the line_item prices. = La pagina checkout calcola il totale del carrello eseguendo SUM sui prezzi delle righe d'ordine.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT SUM(amount) FROM orders;',
             },
             {
               english: 'AVG',
-              italian: 'AVG / Media',
+              italian: 'Media (AVG)',
               pronunciation: '/ˈævərɪdʒ/',
               phonetic: 'AV-ridg',
-              example: 'AVG calculates the average. = AVG calcola la media.',
+              example:
+                "The HR report computes AVG salary per department to identify pay gaps across the organization. = Il report HR calcola la media AVG degli stipendi per reparto per identificare divari retributivi nell'organizzazione.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT AVG(price) FROM products;',
             },
             {
               english: 'MIN',
-              italian: 'MIN / Minimo',
+              italian: 'Minimo (MIN)',
               pronunciation: '/mɪn/',
               phonetic: 'MIN',
-              example: 'MIN returns the smallest value. = MIN restituisce il valore minimo.',
+              example:
+                "The pricing engine uses MIN to find the cheapest supplier for each part in the inventory. = Il motore prezzi usa MIN per trovare il fornitore più economico per ogni pezzo nell'inventario.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT MIN(price) FROM products;',
             },
             {
               english: 'MAX',
-              italian: 'MAX / Massimo',
+              italian: 'Massimo (MAX)',
               pronunciation: '/mæks/',
               phonetic: 'MAKS',
-              example: 'MAX returns the largest value. = MAX restituisce il valore massimo.',
+              example:
+                "The leaderboard query uses MAX to display each player's all-time highest score. = La query della classifica usa MAX per visualizzare il punteggio più alto di sempre di ogni giocatore.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT MAX(price) FROM products;',
@@ -1187,22 +1229,22 @@ export default {
             },
             {
               english: 'ROLLUP',
-              italian: 'ROLLUP / Subtotali',
+              italian: 'Subtotali (ROLLUP)',
               pronunciation: '/ˈroʊlʌp/',
               phonetic: 'ROL-ap',
               example:
-                'ROLLUP adds subtotals to grouped results. = ROLLUP aggiunge subtotali ai risultati raggruppati.',
+                'The quarterly report uses ROLLUP to append subtotals for each region and a grand total at the bottom. = Il report trimestrale usa ROLLUP per aggiungere subtotali per ogni regione e un totale generale in fondo.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'GROUP BY ROLLUP(year, month)',
             },
             {
               english: 'CUBE',
-              italian: 'CUBE / Cubo OLAP',
+              italian: 'Cubo OLAP (CUBE)',
               pronunciation: '/kjuːb/',
               phonetic: 'KIUB',
               example:
-                'CUBE generates all subtotals combinations. = CUBE genera tutte le combinazioni di subtotali.',
+                "The analyst uses CUBE on country and product to see totals for every possible dimension combination. = L'analista usa CUBE su paese e prodotto per vedere i totali per ogni possibile combinazione di dimensioni.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'GROUP BY CUBE(country, product)',
@@ -1216,20 +1258,22 @@ export default {
           items: [
             {
               english: 'ORDER BY',
-              italian: 'ORDER BY / Ordina per',
+              italian: 'Ordina per (ORDER BY)',
               pronunciation: '/ˈɔːrdər baɪ/',
               phonetic: 'OR-der BAI',
-              example: 'ORDER BY sorts the result rows. = ORDER BY ordina le righe del risultato.',
+              example:
+                'The product listing page uses ORDER BY price to show the cheapest items first. = La pagina catalogo prodotti usa ORDER BY prezzo per mostrare prima gli articoli più economici.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM users ORDER BY created_at DESC;',
             },
             {
               english: 'ASC',
-              italian: 'ASC / Crescente',
+              italian: 'Crescente (ASC)',
               pronunciation: '/əˈsendɪŋ/',
               phonetic: 'a-SEN-ding',
-              example: 'ASC sorts in ascending order. = ASC ordina in modo crescente.',
+              example:
+                "Sorting students alphabetically in ASC order makes it easy to find a name in the roster. = Ordinare gli studenti alfabeticamente in ordine ASC rende facile trovare un nome nell'elenco.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'ORDER BY name ASC',
@@ -1237,20 +1281,22 @@ export default {
             },
             {
               english: 'DESC',
-              italian: 'DESC / Decrescente',
+              italian: 'Decrescente (DESC)',
               pronunciation: '/dɪˈsendɪŋ/',
               phonetic: 'di-SEN-ding',
-              example: 'DESC sorts in descending order. = DESC ordina in modo decrescente.',
+              example:
+                'The "newest first" feed sorts posts by creation date in DESC order to surface recent content. = Il feed "più recenti prima" ordina i post per data di creazione in ordine DESC per mostrare i contenuti recenti.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'ORDER BY created_at DESC',
             },
             {
               english: 'UNION',
-              italian: 'UNION / Unione',
+              italian: 'Unione di risultati (UNION)',
               pronunciation: '/ˈjuːniən/',
               phonetic: 'IU-nion',
-              example: 'UNION combines two queries. = UNION combina due query.',
+              example:
+                'The search combines local and international results with a UNION so users see both in a single list. = La ricerca combina risultati locali e internazionali con una UNION così gli utenti vedono entrambi in una lista unica.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT name FROM users UNION SELECT name FROM customers;',
@@ -1258,10 +1304,11 @@ export default {
             },
             {
               english: 'UNION ALL',
-              italian: 'UNION ALL / Unione totale',
+              italian: 'Unione totale (UNION ALL)',
               pronunciation: '/ˈjuːniən ɔːl/',
               phonetic: 'IU-nion OL',
-              example: 'UNION ALL keeps duplicate rows. = UNION ALL mantiene le righe duplicate.',
+              example:
+                "The log aggregator uses UNION ALL instead of UNION to preserve every event including duplicates. = L'aggregatore di log usa UNION ALL invece di UNION per preservare ogni evento inclusi i duplicati.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT * FROM a UNION ALL SELECT * FROM b;',
@@ -1269,21 +1316,22 @@ export default {
             },
             {
               english: 'INTERSECT',
-              italian: 'INTERSECT / Intersezione',
+              italian: 'Intersezione (INTERSECT)',
               pronunciation: '/ˌɪntərˈsekt/',
               phonetic: 'in-ter-SEKT',
-              example: 'INTERSECT returns common rows. = INTERSECT restituisce le righe in comune.',
+              example:
+                'The promo engine uses INTERSECT to find customers who appear in both the loyalty and newsletter lists. = Il motore promozioni usa INTERSECT per trovare clienti presenti sia nella lista fedeltà che nella newsletter.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT id FROM a INTERSECT SELECT id FROM b;',
             },
             {
               english: 'EXCEPT',
-              italian: 'EXCEPT / Differenza',
+              italian: 'Differenza (EXCEPT)',
               pronunciation: '/ɪkˈsept/',
               phonetic: 'ek-SEPT',
               example:
-                'EXCEPT returns rows in A but not in B. = EXCEPT restituisce righe in A ma non in B.',
+                "The churn report uses EXCEPT to list users who were active last month but haven't logged in this month. = Il report churn usa EXCEPT per elencare gli utenti attivi il mese scorso che non hanno effettuato l'accesso questo mese.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT id FROM users EXCEPT SELECT user_id FROM orders;',
@@ -1291,10 +1339,11 @@ export default {
             },
             {
               english: 'Alias',
-              italian: 'alias / nome alternativo',
+              italian: 'nome alternativo (Alias)',
               pronunciation: '/ˈeɪliəs/',
               phonetic: 'EI-lias',
-              example: 'Use AS to create an alias. = Usa AS per creare un alias.',
+              example:
+                'The report gives the SUM column an alias called "total_revenue" for readability. = Il report assegna alla colonna SUM un alias chiamato "total_revenue" per leggibilità.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT u.name AS user_name FROM users u;',
@@ -1302,10 +1351,11 @@ export default {
             },
             {
               english: 'AS',
-              italian: 'AS / Come',
+              italian: 'Come (AS)',
               pronunciation: '/æz/',
               phonetic: 'AZ',
-              example: 'AS renames a column or table. = AS rinomina una colonna o tabella.',
+              example:
+                'Renaming a computed column AS "profit_margin" makes the output immediately understandable to stakeholders. = Rinominare una colonna calcolata AS "profit_margin" rende l\'output immediatamente comprensibile agli stakeholder.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT total AS amount FROM orders;',
@@ -1316,7 +1366,7 @@ export default {
               pronunciation: '/nʌlz fɜːrst/',
               phonetic: 'NALZ FERST',
               example:
-                "NULLS FIRST puts NULLs at the beginning. = NULLS FIRST mette i NULL all'inizio.",
+                'Sorting tasks by priority with NULLS FIRST surfaces unassigned items that still need attention. = Ordinare i task per priorità con NULLS FIRST evidenzia gli elementi non assegnati che richiedono ancora attenzione.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'ORDER BY priority DESC NULLS LAST',
@@ -1331,61 +1381,66 @@ export default {
           items: [
             {
               english: 'CASE',
-              italian: 'CASE / Caso',
+              italian: 'Caso (CASE)',
               pronunciation: '/keɪs/',
               phonetic: 'KEIS',
-              example: 'CASE provides conditional logic. = CASE fornisce logica condizionale.',
+              example:
+                "The invoice query uses a CASE expression to label orders above 500 euros as premium for reporting. = La query fatture usa un'espressione CASE per etichettare gli ordini sopra i 500 euro come premium per i report.",
               context: 'sql',
               difficulty: 'beginner',
               code: "CASE WHEN age >= 18 THEN 'adult' ELSE 'minor' END",
             },
             {
               english: 'WHEN',
-              italian: 'WHEN / Quando',
+              italian: 'Quando (WHEN)',
               pronunciation: '/wen/',
               phonetic: 'UEN',
-              example: 'WHEN tests a condition. = WHEN verifica una condizione.',
+              example:
+                "Each WHEN clause tests a different shipping region to apply the correct tax rate. = Ogni clausola WHEN verifica una regione di spedizione diversa per applicare l'aliquota fiscale corretta.",
               context: 'sql',
               difficulty: 'beginner',
               code: "WHEN status = 'active' THEN 1",
             },
             {
               english: 'THEN',
-              italian: 'THEN / Allora',
+              italian: 'Allora (THEN)',
               pronunciation: '/ðen/',
               phonetic: 'DEN',
-              example: 'THEN provides the result. = THEN fornisce il risultato.',
+              example:
+                "Inside the CASE, the THEN keyword returns the discount percentage that matches the customer tier. = All'interno del CASE, la keyword THEN restituisce la percentuale di sconto corrispondente al livello cliente.",
               context: 'sql',
               difficulty: 'beginner',
               code: "WHEN x > 0 THEN 'positive'",
             },
             {
               english: 'ELSE',
-              italian: 'ELSE / Altrimenti',
+              italian: 'Altrimenti (ELSE)',
               pronunciation: '/els/',
               phonetic: 'ELS',
-              example: 'ELSE handles the fallback case. = ELSE gestisce il caso di default.',
+              example:
+                'If no WHEN condition matches, the ELSE branch labels the transaction as "unclassified" in the report. = Se nessuna condizione WHEN corrisponde, il ramo ELSE etichetta la transazione come "non classificata" nel report.',
               context: 'sql',
               difficulty: 'beginner',
               code: "ELSE 'unknown' END",
             },
             {
               english: 'END',
-              italian: 'END / Fine',
+              italian: 'Fine (END)',
               pronunciation: '/end/',
               phonetic: 'END',
-              example: "END closes the CASE expression. = END chiude l'espressione CASE.",
+              example:
+                "Forgetting the END keyword after a CASE expression causes a syntax error that can be hard to spot. = Dimenticare la keyword END dopo un'espressione CASE causa un errore di sintassi difficile da individuare.",
               context: 'sql',
               difficulty: 'beginner',
               code: 'CASE ... END AS status',
             },
             {
               english: 'NULLIF',
-              italian: 'NULLIF / Null se uguale',
+              italian: 'Null se uguale (NULLIF)',
               pronunciation: '/ˈnʌlɪf/',
               phonetic: 'NAL-if',
               example:
-                'NULLIF returns NULL if values are equal. = NULLIF restituisce NULL se i valori sono uguali.',
+                'Wrapping the denominator in NULLIF prevents division-by-zero errors in the conversion rate formula. = Avvolgere il denominatore in NULLIF previene errori di divisione per zero nella formula del tasso di conversione.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT NULLIF(value, 0) FROM data;',
@@ -1393,32 +1448,33 @@ export default {
             },
             {
               english: 'GREATEST',
-              italian: 'GREATEST / Il più grande',
+              italian: 'Il più grande (GREATEST)',
               pronunciation: '/ˈɡreɪtəst/',
               phonetic: 'GREI-test',
               example:
-                'GREATEST returns the largest value. = GREATEST restituisce il valore più grande.',
+                'The shipping calculator picks the GREATEST of weight-based and volume-based cost to charge the correct rate. = Il calcolatore spedizioni sceglie il GREATEST tra costo per peso e costo per volume per addebitare la tariffa corretta.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT GREATEST(a, b, c) FROM data;',
             },
             {
               english: 'LEAST',
-              italian: 'LEAST / Il più piccolo',
+              italian: 'Il più piccolo (LEAST)',
               pronunciation: '/liːst/',
               phonetic: 'LIIST',
               example:
-                'LEAST returns the smallest value. = LEAST restituisce il valore più piccolo.',
+                'The discount engine caps the rebate at LEAST between the calculated discount and the maximum allowed. = Il motore sconti limita il rimborso al LEAST tra lo sconto calcolato e il massimo consentito.',
               context: 'sql',
               difficulty: 'beginner',
               code: 'SELECT LEAST(a, b, c) FROM data;',
             },
             {
               english: 'CAST',
-              italian: 'CAST / Conversione',
+              italian: 'Conversione di tipo (CAST)',
               pronunciation: '/kæst/',
               phonetic: 'KAST',
-              example: 'CAST converts data types. = CAST converte tipi di dato.',
+              example:
+                'The API response builder uses CAST to convert numeric IDs to strings for JSON serialization. = Il builder della risposta API usa CAST per convertire gli ID numerici in stringhe per la serializzazione JSON.',
               context: 'sql',
               difficulty: 'beginner',
               code: "SELECT CAST('123' AS INTEGER);",
@@ -1429,7 +1485,7 @@ export default {
               pronunciation: '/taɪp ˈkæstɪŋ/',
               phonetic: 'TAIP KAS-ting',
               example:
-                'Use :: for type casting in PostgreSQL. = Usa :: per la conversione di tipo in PostgreSQL.',
+                'The report query performs type casting on the price column from TEXT to NUMERIC before computing totals. = La query del report esegue una conversione di tipo sulla colonna prezzo da TEXT a NUMERIC prima di calcolare i totali.',
               context: 'sql',
               difficulty: 'beginner',
               code: "SELECT '123'::INTEGER;",
@@ -1456,7 +1512,8 @@ export default {
               italian: 'Entità',
               pronunciation: '/ˈentɪti/',
               phonetic: 'EN-ti-ti',
-              example: "A user is an entity in the system. = Un utente è un'entità nel sistema.",
+              example:
+                "In the ER diagram, each customer, order, and product is modeled as a separate entity with its own attributes. = Nel diagramma ER, ogni cliente, ordine e prodotto è modellato come un'entità separata con i propri attributi.",
               context: 'design',
               difficulty: 'beginner',
               note: "Un'entità è qualcosa di significativo nel dominio: persona, ordine, prodotto.",
@@ -1466,7 +1523,8 @@ export default {
               italian: 'Relazione',
               pronunciation: '/rɪˈleɪʃənʃɪp/',
               phonetic: 'ri-LEI-scion-scip',
-              example: 'A relationship connects two entities. = Una relazione connette due entità.',
+              example:
+                'The ER diagram shows a one-to-many relationship between customers and their orders. = Il diagramma ER mostra una relazione uno-a-molti tra i clienti e i loro ordini.',
               context: 'design',
               difficulty: 'beginner',
               note: '"Relationship" si traduce in "relazione". Da non confondere con "relation" della teoria relazionale = "tabella".',
@@ -1476,7 +1534,8 @@ export default {
               italian: 'Diagramma ER',
               pronunciation: '/ˌiː ɑːr ˈdiː/',
               phonetic: 'I-AR-DI',
-              example: 'Draw an ERD before writing SQL. = Disegna un ERD prima di scrivere SQL.',
+              example:
+                "The architect sketched an ERD to visualize how customers, orders, and products relate before writing any code. = L'architetto ha disegnato un ERD per visualizzare come clienti, ordini e prodotti si relazionano prima di scrivere codice.",
               context: 'design',
               difficulty: 'beginner',
               tool: 'dbdiagram.io, draw.io',
@@ -1488,7 +1547,7 @@ export default {
               pronunciation: '/ˌkɑːrdɪˈnælɪti/',
               phonetic: 'kar-di-NA-li-ti',
               example:
-                'Cardinality describes how many entities relate. = La cardinalità descrive quante entità sono in relazione.',
+                'The designer annotated each line in the ERD with its cardinality to clarify one-to-many versus many-to-many links. = Il progettista ha annotato ogni linea nel diagramma ER con la sua cardinalità per chiarire i collegamenti uno-a-molti rispetto a molti-a-molti.',
               context: 'design',
               difficulty: 'beginner',
               note: 'Tipi: 1:1, 1:N, N:M.',
@@ -1555,7 +1614,8 @@ export default {
               italian: 'Identificatore',
               pronunciation: '/aɪˈdentɪfaɪər/',
               phonetic: 'ai-DEN-ti-fai-er',
-              example: "The ID is a unique identifier. = L'ID è un identificatore univoco.",
+              example:
+                'Each order receives a UUID as its unique identifier to avoid collisions across distributed systems. = Ogni ordine riceve un UUID come identificatore univoco per evitare collisioni nei sistemi distribuiti.',
               context: 'design',
               difficulty: 'beginner',
               code: 'id UUID PRIMARY KEY',
@@ -1573,7 +1633,7 @@ export default {
               pronunciation: '/kənˈstreɪnt/',
               phonetic: 'con-STREINT',
               example:
-                "Constraints enforce data integrity. = I vincoli garantiscono l'integrità dei dati.",
+                'The DBA added a NOT NULL constraint on the email column to prevent incomplete user registrations. = Il DBA ha aggiunto un vincolo NOT NULL sulla colonna email per impedire registrazioni utente incomplete.',
               context: 'design',
               difficulty: 'beginner',
               code: 'ALTER TABLE users ADD CONSTRAINT email_unique UNIQUE (email);',
@@ -1591,11 +1651,11 @@ export default {
             },
             {
               english: 'CASCADE',
-              italian: 'CASCADE / A cascata',
+              italian: 'A cascata (CASCADE)',
               pronunciation: '/kæˈskeɪd/',
               phonetic: 'kas-KEID',
               example:
-                'ON DELETE CASCADE deletes related rows. = ON DELETE CASCADE cancella le righe correlate.',
+                'Removing a user automatically triggers CASCADE to delete all their related orders and reviews. = Rimuovere un utente attiva automaticamente CASCADE per cancellare tutti i suoi ordini e recensioni correlati.',
               context: 'design',
               difficulty: 'beginner',
               code: 'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE',
@@ -1603,32 +1663,33 @@ export default {
             },
             {
               english: 'ON DELETE',
-              italian: 'ON DELETE / Su cancellazione',
+              italian: 'Su cancellazione (ON DELETE)',
               pronunciation: '/ɒn dɪˈliːt/',
               phonetic: 'ON di-LIIT',
               example:
-                'ON DELETE specifies what happens on delete. = ON DELETE specifica cosa succede in caso di cancellazione.',
+                'The foreign key clause uses ON DELETE SET NULL so that removing a department leaves employees with a null reference instead of deleting them. = La clausola di chiave esterna usa ON DELETE SET NULL in modo che rimuovere un dipartimento lasci i dipendenti con un riferimento nullo invece di cancellarli.',
               context: 'design',
               difficulty: 'beginner',
               code: 'ON DELETE SET NULL',
             },
             {
               english: 'ON UPDATE',
-              italian: 'ON UPDATE / Su aggiornamento',
+              italian: 'Su aggiornamento (ON UPDATE)',
               pronunciation: '/ɒn ʌpˈdeɪt/',
               phonetic: 'ON ap-DEIT',
               example:
-                'ON UPDATE CASCADE updates related rows. = ON UPDATE CASCADE aggiorna le righe correlate.',
+                'When the HR team changes an employee ID, ON UPDATE CASCADE automatically propagates the new value to all referencing tables. = Quando il team HR modifica un ID dipendente, ON UPDATE CASCADE propaga automaticamente il nuovo valore a tutte le tabelle di riferimento.',
               context: 'design',
               difficulty: 'beginner',
               code: 'ON UPDATE CASCADE',
             },
             {
               english: 'RESTRICT',
-              italian: 'RESTRICT / Restringi',
+              italian: 'Restringi (RESTRICT)',
               pronunciation: '/rɪˈstrɪkt/',
               phonetic: 'ri-STRIKT',
-              example: "RESTRICT prevents the operation. = RESTRICT impedisce l'operazione.",
+              example:
+                "Trying to delete a customer who has active orders fails because RESTRICT blocks the operation. = Tentare di cancellare un cliente con ordini attivi fallisce perché RESTRICT blocca l'operazione.",
               context: 'design',
               difficulty: 'beginner',
               code: 'ON DELETE RESTRICT',
@@ -1639,7 +1700,7 @@ export default {
               pronunciation: '/doʊˈmeɪn kənˈstreɪnt/',
               phonetic: 'do-MEIN con-STREINT',
               example:
-                'Domain constraints limit valid values. = I vincoli di dominio limitano i valori validi.',
+                'The schema uses a domain constraint to ensure the status column only accepts active, inactive, or suspended. = Lo schema usa un vincolo di dominio per assicurare che la colonna stato accetti solo attivo, inattivo o sospeso.',
               context: 'design',
               difficulty: 'beginner',
               code: "CHECK (status IN ('active', 'inactive'))",
@@ -1650,7 +1711,7 @@ export default {
               pronunciation: '/ˈsʌrəɡət kiː/',
               phonetic: 'SAR-ro-gat KII',
               example:
-                'A surrogate key has no business meaning. = Una chiave surrogata non ha significato di business.',
+                'The orders table uses an auto-incrementing integer as a surrogate key because no natural combination of columns guarantees uniqueness. = La tabella ordini usa un intero auto-incrementante come chiave surrogata perché nessuna combinazione naturale di colonne garantisce unicità.',
               context: 'design',
               difficulty: 'beginner',
               code: 'id SERIAL PRIMARY KEY',
@@ -1662,7 +1723,7 @@ export default {
               pronunciation: '/ˈnætʃərəl kiː/',
               phonetic: 'NA-ciu-ral KII',
               example:
-                'A natural key uses real-world data. = Una chiave naturale usa dati del mondo reale.',
+                'The countries table uses the ISO 3166 code as a natural key because each country already has a globally unique identifier. = La tabella paesi usa il codice ISO 3166 come chiave naturale perché ogni paese ha già un identificatore globalmente unico.',
               context: 'design',
               difficulty: 'beginner',
               code: 'PRIMARY KEY (email)',
@@ -1670,11 +1731,11 @@ export default {
             },
             {
               english: 'UUID',
-              italian: 'UUID (identificatore universalmente unico)',
+              italian: 'Identificatore universalmente unico (UUID)',
               pronunciation: '/ˌjuː juː aɪ ˈdiː/',
               phonetic: 'IU-IU-AI-DI',
               example:
-                'Use UUIDs as distributed primary keys. = Usa gli UUID come chiavi primarie distribuite.',
+                'Microservices generate a UUID on the client side so that each service can create records without coordinating with a central sequence. = I microservizi generano un UUID lato client in modo che ogni servizio possa creare record senza coordinarsi con una sequenza centrale.',
               context: 'design',
               difficulty: 'beginner',
               code: 'id UUID DEFAULT gen_random_uuid() PRIMARY KEY',
@@ -1690,10 +1751,11 @@ export default {
           items: [
             {
               english: 'INTEGER',
-              italian: 'INTEGER / Intero',
+              italian: 'Intero (INTEGER)',
               pronunciation: '/ˈɪntɪdʒər/',
               phonetic: 'IN-te-ger',
-              example: 'INTEGER stores whole numbers. = INTEGER memorizza numeri interi.',
+              example:
+                'The age column is defined as INTEGER because it only needs to hold whole numbers up to a few hundred. = La colonna età è definita come INTEGER perché deve contenere solo numeri interi fino a poche centinaia.',
               context: 'design',
               difficulty: 'beginner',
               code: 'age INTEGER',
@@ -1701,10 +1763,11 @@ export default {
             },
             {
               english: 'BIGINT',
-              italian: 'BIGINT / Intero grande',
+              italian: 'Intero grande (BIGINT)',
               pronunciation: '/ˈbɪɡ ɪnt/',
               phonetic: 'BIG-INT',
-              example: 'Use BIGINT for very large numbers. = Usa BIGINT per numeri molto grandi.',
+              example:
+                "Social media platforms use BIGINT for post IDs because they generate billions of entries per year. = Le piattaforme social usano BIGINT per gli ID dei post perché generano miliardi di voci all'anno.",
               context: 'design',
               difficulty: 'beginner',
               code: 'population BIGINT',
@@ -1712,11 +1775,11 @@ export default {
             },
             {
               english: 'VARCHAR',
-              italian: 'VARCHAR / Stringa variabile',
+              italian: 'Stringa variabile (VARCHAR)',
               pronunciation: '/ˈvɑːrtʃɑːr/',
               phonetic: 'VAR-ciar',
               example:
-                'VARCHAR stores variable-length strings. = VARCHAR memorizza stringhe a lunghezza variabile.',
+                'Defining the username column as VARCHAR(50) limits usernames to 50 characters while saving storage. = Definire la colonna username come VARCHAR(50) limita i nomi utente a 50 caratteri risparmiando spazio.',
               context: 'design',
               difficulty: 'beginner',
               code: 'name VARCHAR(100)',
@@ -1724,10 +1787,11 @@ export default {
             },
             {
               english: 'TEXT',
-              italian: 'TEXT / Testo',
+              italian: 'Testo illimitato (TEXT)',
               pronunciation: '/tekst/',
               phonetic: 'TEKST',
-              example: 'TEXT stores unlimited string data. = TEXT memorizza stringhe senza limite.',
+              example:
+                'Blog post content uses the TEXT type because articles can range from a few lines to thousands of words. = Il contenuto degli articoli del blog usa il tipo TEXT perché gli articoli possono variare da poche righe a migliaia di parole.',
               context: 'design',
               difficulty: 'beginner',
               code: 'description TEXT',
@@ -1735,40 +1799,44 @@ export default {
             },
             {
               english: 'BOOLEAN',
-              italian: 'BOOLEAN / Booleano',
+              italian: 'Booleano (BOOLEAN)',
               pronunciation: '/ˈbuːliən/',
               phonetic: 'BU-lian',
-              example: 'BOOLEAN stores true or false. = BOOLEAN memorizza vero o falso.',
+              example:
+                'The is_verified BOOLEAN column flags whether a user has confirmed their email address. = La colonna BOOLEAN is_verified indica se un utente ha confermato il proprio indirizzo email.',
               context: 'design',
               difficulty: 'beginner',
               code: 'is_active BOOLEAN DEFAULT TRUE',
             },
             {
               english: 'DATE',
-              italian: 'DATE / Data',
+              italian: 'Data (DATE)',
               pronunciation: '/deɪt/',
               phonetic: 'DEIT',
-              example: 'DATE stores year, month, and day. = DATE memorizza anno, mese e giorno.',
+              example:
+                "The birth_date column uses DATE because we only need the calendar day, not the exact time. = La colonna birth_date usa DATE perché ci serve solo il giorno di calendario, non l'ora esatta.",
               context: 'design',
               difficulty: 'beginner',
               code: 'birth_date DATE',
             },
             {
               english: 'TIMESTAMP',
-              italian: 'TIMESTAMP / Marca temporale',
+              italian: 'Marca temporale (TIMESTAMP)',
               pronunciation: '/ˈtaɪmstæmp/',
               phonetic: 'TAIM-stamp',
-              example: 'TIMESTAMP stores date and time. = TIMESTAMP memorizza data e ora.',
+              example:
+                "Audit logs record the exact TIMESTAMP of each action down to the microsecond for forensic analysis. = I log di audit registrano il TIMESTAMP esatto di ogni azione fino al microsecondo per l'analisi forense.",
               context: 'design',
               difficulty: 'beginner',
               code: 'created_at TIMESTAMP DEFAULT NOW()',
             },
             {
               english: 'DECIMAL',
-              italian: 'DECIMAL / Decimale',
+              italian: 'Decimale (DECIMAL)',
               pronunciation: '/ˈdesɪməl/',
               phonetic: 'DE-si-mal',
-              example: 'Use DECIMAL for monetary values. = Usa DECIMAL per valori monetari.',
+              example:
+                'The accounting system stores prices as DECIMAL(10,2) to guarantee exact cents without floating-point drift. = Il sistema contabile memorizza i prezzi come DECIMAL(10,2) per garantire centesimi esatti senza derive in virgola mobile.',
               context: 'design',
               difficulty: 'beginner',
               code: 'price DECIMAL(10, 2)',
@@ -1776,10 +1844,11 @@ export default {
             },
             {
               english: 'JSON',
-              italian: 'JSON (formato dati testuale)',
+              italian: 'Formato dati testuale (JSON)',
               pronunciation: '/ˈdʒeɪsən/',
               phonetic: 'GIEI-son',
-              example: 'JSON stores semi-structured data. = JSON memorizza dati semi-strutturati.',
+              example:
+                'Product metadata varies by category, so the team stores custom attributes in a JSON column. = I metadati dei prodotti variano per categoria, quindi il team memorizza gli attributi personalizzati in una colonna JSON.',
               context: 'design',
               difficulty: 'beginner',
               code: 'metadata JSONB',
@@ -1788,10 +1857,11 @@ export default {
             },
             {
               english: 'ENUM',
-              italian: 'ENUM / Enumerato',
+              italian: 'Enumerato (ENUM)',
               pronunciation: '/ˈiːnʌm/',
               phonetic: 'I-nam',
-              example: 'ENUM restricts values to a list. = ENUM restringe i valori a una lista.',
+              example:
+                'Defining the order status as an ENUM of "pending", "shipped", and "delivered" prevents typos. = Definire lo stato ordine come ENUM di "pending", "shipped" e "delivered" previene errori di battitura.',
               context: 'design',
               difficulty: 'beginner',
               code: "CREATE TYPE status AS ENUM ('active', 'inactive');",
@@ -1820,14 +1890,14 @@ export default {
               pronunciation: '/ˈneɪmɪŋ kənˈvenʃən/',
               phonetic: 'NEI-ming con-VEN-scion',
               example:
-                'Follow a consistent naming convention. = Segui una convenzione di denominazione consistente.',
+                'The team adopted a strict naming convention where every foreign key column ends with _id and every timestamp ends with _at. = Il team ha adottato una convenzione di denominazione rigida dove ogni colonna di chiave esterna finisce con _id e ogni timestamp con _at.',
               context: 'design',
               difficulty: 'beginner',
               note: 'snake_case è standard in SQL: user_id, not userId.',
             },
             {
               english: 'snake_case',
-              italian: 'snake_case / convenzione con underscore',
+              italian: 'Convenzione con underscore (snake_case)',
               pronunciation: '/sneɪk keɪs/',
               phonetic: 'SNEIK-KEIS',
               example:
@@ -1841,7 +1911,8 @@ export default {
               italian: 'Denominazione al plurale',
               pronunciation: '/ˈplʊərəl ˈneɪmɪŋ/',
               phonetic: 'PLU-ral NEI-ming',
-              example: 'Use plural names for tables. = Usa nomi al plurale per le tabelle.',
+              example:
+                'The team convention names tables in plural like "users" and "orders" so queries read naturally. = La convenzione del team usa nomi di tabelle al plurale come "users" e "orders" così le query risultano naturali.',
               context: 'design',
               difficulty: 'beginner',
               code: 'CREATE TABLE users (...); -- not "user"',
@@ -1865,7 +1936,7 @@ export default {
               pronunciation: '/ˈɔːdɪt ˈkɒləmz/',
               phonetic: 'O-dit KO-lomz',
               example:
-                'Add audit columns to track changes. = Aggiungi colonne di audit per tracciare le modifiche.',
+                'Every table in the system includes audit columns like created_at, updated_at, and modified_by for compliance tracking. = Ogni tabella nel sistema include colonne di audit come created_at, updated_at e modified_by per il tracciamento della conformità.',
               context: 'design',
               difficulty: 'beginner',
               code: 'created_at TIMESTAMP, updated_at TIMESTAMP, created_by INT',
@@ -1887,7 +1958,7 @@ export default {
               pronunciation: '/ʌpˈdeɪtɪd æt/',
               phonetic: 'ap-DEI-tid AT',
               example:
-                "updated_at records the last update time. = updated_at registra l'ora dell'ultimo aggiornamento.",
+                'A trigger automatically refreshes the updated_at timestamp whenever any column in the row changes. = Un trigger aggiorna automaticamente il timestamp updated_at ogni volta che una colonna nella riga cambia.',
               context: 'design',
               difficulty: 'beginner',
               code: 'updated_at TIMESTAMP DEFAULT NOW()',
@@ -1898,7 +1969,7 @@ export default {
               pronunciation: '/ˈlʊkʌp ˈteɪbl/',
               phonetic: 'LU-kap TEI-bol',
               example:
-                'A lookup table stores reference values. = Una tabella di lookup memorizza valori di riferimento.',
+                'Instead of storing country names as free text, the schema references a lookup table with standardized ISO codes and labels. = Invece di memorizzare i nomi dei paesi come testo libero, lo schema fa riferimento a una tabella di lookup con codici ISO e etichette standardizzati.',
               context: 'design',
               difficulty: 'beginner',
               code: 'CREATE TABLE countries (code CHAR(2) PRIMARY KEY, name VARCHAR(100));',
@@ -1937,7 +2008,7 @@ export default {
               pronunciation: '/ˌnɔːrməlaɪˈzeɪʃən/',
               phonetic: 'nor-ma-lai-ZEI-scion',
               example:
-                'Normalization reduces data redundancy. = La normalizzazione riduce la ridondanza dei dati.',
+                'The DBA applied normalization to split the monolithic orders table into customers, products, and line items, eliminating repeated data. = Il DBA ha applicato la normalizzazione per dividere la tabella ordini monolitica in clienti, prodotti e righe ordine, eliminando i dati ripetuti.',
               context: 'normalization',
               difficulty: 'intermediate',
               note: 'Processo per organizzare dati ed eliminare ridondanza.',
@@ -1959,7 +2030,8 @@ export default {
               italian: 'Seconda forma normale',
               pronunciation: '/ˈsekənd ˈnɔːrməl fɔːrm/',
               phonetic: 'SE-kond NOR-mal FORM',
-              example: '2NF removes partial dependencies. = 2NF rimuove le dipendenze parziali.',
+              example:
+                'Splitting the order_items table so that product_name depends only on product_id satisfies second normal form. = Separare la tabella order_items in modo che product_name dipenda solo da product_id soddisfa la seconda forma normale.',
               context: 'normalization',
               difficulty: 'intermediate',
               note: "2NF: ogni attributo non-chiave dipende dall'INTERA chiave primaria.",
@@ -1970,7 +2042,7 @@ export default {
               pronunciation: '/θɜːrd ˈnɔːrməl fɔːrm/',
               phonetic: 'THERD NOR-mal FORM',
               example:
-                '3NF removes transitive dependencies. = 3NF rimuove le dipendenze transitive.',
+                'Moving the city_name column into a separate cities table referenced by zip_code achieves third normal form. = Spostare la colonna city_name in una tabella cities separata referenziata da zip_code raggiunge la terza forma normale.',
               context: 'normalization',
               difficulty: 'intermediate',
               note: '3NF: ogni attributo non-chiave dipende SOLO dalla chiave primaria.',
@@ -1981,7 +2053,7 @@ export default {
               pronunciation: '/ˌbiː siː en ˈef/',
               phonetic: 'BI-SI-EN-EF',
               example:
-                'BCNF is a stricter version of 3NF. = BCNF è una versione più stretta di 3NF.',
+                'The scheduling table required restructuring into BCNF because a non-candidate-key column was determining another attribute. = La tabella schedulazione ha richiesto una ristrutturazione in BCNF perché una colonna non-chiave candidata stava determinando un altro attributo.',
               context: 'normalization',
               difficulty: 'intermediate',
               note: 'Boyce-Codd Normal Form. Ogni determinante deve essere una chiave candidata.',
@@ -2001,7 +2073,8 @@ export default {
               italian: 'Quinta forma normale',
               pronunciation: '/fɪfθ ˈnɔːrməl fɔːrm/',
               phonetic: 'FIFTH NOR-mal FORM',
-              example: '5NF handles join dependencies. = 5NF gestisce le dipendenze di JOIN.',
+              example:
+                'Achieving fifth normal form required decomposing the suppliers-parts-projects table into three binary relationships that can be losslessly rejoined. = Raggiungere la quinta forma normale ha richiesto la decomposizione della tabella fornitori-parti-progetti in tre relazioni binarie ricomponibili senza perdita.',
               context: 'normalization',
               difficulty: 'intermediate',
               note: 'Raramente necessario in pratica.',
@@ -2012,7 +2085,7 @@ export default {
               pronunciation: '/əˈtɒmɪk ˈvæljuː/',
               phonetic: 'a-TO-mik VAL-iu',
               example:
-                'Each cell must contain an atomic value. = Ogni cella deve contenere un valore atomico.',
+                'Storing multiple phone numbers in one cell violates 1NF because each cell must contain a single atomic value. = Memorizzare più numeri di telefono in una cella viola la 1NF perché ogni cella deve contenere un singolo valore atomico.',
               context: 'normalization',
               difficulty: 'intermediate',
               note: 'Es. nome completo va spezzato in first_name e last_name.',
@@ -2022,7 +2095,8 @@ export default {
               italian: 'Gruppo ripetuto',
               pronunciation: '/rɪˈpiːtɪŋ ɡruːp/',
               phonetic: 'ri-PI-ting GRUP',
-              example: 'Repeating groups violate 1NF. = I gruppi ripetuti violano 1NF.',
+              example:
+                'Columns like phone1, phone2, and phone3 are a repeating group that should be moved to a separate phone_numbers table. = Colonne come phone1, phone2 e phone3 sono un gruppo ripetuto che dovrebbe essere spostato in una tabella phone_numbers separata.',
               context: 'normalization',
               difficulty: 'intermediate',
               code: '-- Bad: phone1, phone2, phone3',
@@ -2033,7 +2107,7 @@ export default {
               pronunciation: '/ˌdiːkɒmpəˈzɪʃən/',
               phonetic: 'di-com-po-ZI-scion',
               example:
-                'Decompose tables to reduce redundancy. = Decomponi le tabelle per ridurre la ridondanza.',
+                "The architect performed a lossless decomposition of the large flat table into three normalized tables joined by foreign keys. = L'architetto ha eseguito una decomposizione senza perdita della grande tabella piatta in tre tabelle normalizzate unite da chiavi esterne.",
               context: 'normalization',
               difficulty: 'intermediate',
               note: 'Spezzare una tabella in più tabelle relazionate.',
@@ -2073,7 +2147,8 @@ export default {
               italian: 'Dipendenza transitiva',
               pronunciation: '/ˈtrænzɪtɪv dɪˈpendənsi/',
               phonetic: 'TRAN-zi-tiv di-PEN-den-si',
-              example: 'A transitive dependency: A → B → C. = Dipendenza transitiva: A → B → C.',
+              example:
+                'Storing zip_code and city in the customers table creates a transitive dependency because city depends on zip_code, not on the primary key. = Memorizzare zip_code e city nella tabella clienti crea una dipendenza transitiva perché city dipende da zip_code, non dalla chiave primaria.',
               context: 'normalization',
               difficulty: 'intermediate',
               note: 'Es. user_id → city_id → country. Violazione di 3NF.',
@@ -2084,14 +2159,14 @@ export default {
               pronunciation: '/ˈmʌlti ˈvæljuːd dɪˈpendənsi/',
               phonetic: 'MAL-ti VAL-iud di-PEN-den-si',
               example:
-                'Multi-valued dependencies require 4NF. = Le dipendenze multi-valore richiedono 4NF.',
+                'An employee who has multiple skills and multiple hobbies creates a multi-valued dependency that must be resolved to reach 4NF. = Un dipendente che ha multiple competenze e multipli hobby crea una dipendenza multi-valore che deve essere risolta per raggiungere la 4NF.',
               context: 'normalization',
               difficulty: 'intermediate',
               code: 'A →→ B',
             },
             {
               english: 'Determinant',
-              italian: 'Determinante',
+              italian: 'Determinante (attributo che determina un altro attributo)',
               pronunciation: '/dɪˈtɜːrmɪnənt/',
               phonetic: 'di-TER-mi-nant',
               example:
@@ -2178,7 +2253,7 @@ export default {
               pronunciation: '/ɪnˈsɜːrt əˈnɒməli/',
               phonetic: 'in-SERT a-NO-ma-li',
               example:
-                "An insert anomaly prevents adding partial data. = Un'anomalia di inserimento impedisce di aggiungere dati parziali.",
+                'You cannot add a new department unless at least one employee belongs to it, which is a classic insert anomaly. = Non puoi aggiungere un nuovo dipartimento a meno che almeno un dipendente ne faccia parte, il che è una classica anomalia di inserimento.',
               context: 'normalization',
               difficulty: 'intermediate',
             },
@@ -2199,7 +2274,7 @@ export default {
               pronunciation: '/dɪˈliːt əˈnɒməli/',
               phonetic: 'di-LIIT a-NO-ma-li',
               example:
-                "A delete anomaly causes loss of data. = Un'anomalia di cancellazione causa perdita di dati.",
+                "Removing the last student enrolled in a course accidentally erases the course itself, which is a delete anomaly. = Rimuovere l'ultimo studente iscritto a un corso cancella accidentalmente il corso stesso, il che è un'anomalia di cancellazione.",
               context: 'normalization',
               difficulty: 'intermediate',
               note: 'Cancellando una riga si perdono dati indipendenti.',
@@ -2210,7 +2285,7 @@ export default {
               pronunciation: '/rɪˈdʌndənsi/',
               phonetic: 'ri-DAN-dan-si',
               example:
-                'Normalization reduces redundancy. = La normalizzazione riduce la ridondanza.',
+                "Storing the customer address in every order row creates massive redundancy that wastes storage and invites update anomalies. = Memorizzare l'indirizzo del cliente in ogni riga ordine crea un'enorme ridondanza che spreca spazio e invita anomalie di aggiornamento.",
               context: 'normalization',
               difficulty: 'intermediate',
               note: 'Stesso dato ripetuto in più righe.',
@@ -2220,7 +2295,8 @@ export default {
               italian: 'Incoerenza dei dati',
               pronunciation: '/ˈdeɪtə ˌɪnkənˈsɪstənsi/',
               phonetic: 'DEI-ta in-con-SIS-ten-si',
-              example: 'Redundancy leads to inconsistency. = La ridondanza porta a incoerenza.',
+              example:
+                'After updating the phone number in one row but not the other fifty copies, the team discovered severe data inconsistency across reports. = Dopo aver aggiornato il numero di telefono in una riga ma non nelle altre cinquanta copie, il team ha scoperto una grave incoerenza dei dati nei report.',
               context: 'normalization',
               difficulty: 'intermediate',
             },
@@ -2280,7 +2356,7 @@ export default {
               pronunciation: '/diːˌnɔːrməlaɪˈzeɪʃən/',
               phonetic: 'di-nor-ma-lai-ZEI-scion',
               example:
-                'Denormalization improves read performance. = La denormalizzazione migliora le performance in lettura.',
+                'The analytics team applied denormalization by embedding customer names directly in the orders table, cutting join overhead by 60%. = Il team di analytics ha applicato la denormalizzazione incorporando i nomi dei clienti direttamente nella tabella ordini, riducendo il sovraccarico dei join del 60%.',
               context: 'normalization',
               difficulty: 'intermediate',
               note: 'Aggiungere ridondanza intenzionalmente per velocità.',
@@ -2303,7 +2379,7 @@ export default {
               pronunciation: '/riːd pərˈfɔːrməns/',
               phonetic: 'RIID per-FOR-mans',
               example:
-                'Denormalize to improve read performance. = Denormalizza per migliorare le performance in lettura.',
+                'Dashboard queries that previously joined five tables now hit a single denormalized table, slashing read performance latency from 800ms to 50ms. = Le query della dashboard che prima facevano join su cinque tabelle ora interrogano una singola tabella denormalizzata, abbattendo la latenza in lettura da 800ms a 50ms.',
               context: 'normalization',
               difficulty: 'intermediate',
             },
@@ -2313,7 +2389,7 @@ export default {
               pronunciation: '/raɪt pərˈfɔːrməns/',
               phonetic: 'RAIT per-FOR-mans',
               example:
-                'Normalization helps write performance. = La normalizzazione aiuta le performance in scrittura.',
+                'Keeping the schema normalized means each update touches a single row, which greatly improves write performance under high concurrency. = Mantenere lo schema normalizzato significa che ogni aggiornamento tocca una singola riga, migliorando notevolmente le performance in scrittura sotto alta concorrenza.',
               context: 'normalization',
               difficulty: 'intermediate',
             },
@@ -2323,7 +2399,7 @@ export default {
               pronunciation: '/priː ˌæɡrɪˈɡeɪʃən/',
               phonetic: 'PRI a-gri-GEI-scion',
               example:
-                'Pre-aggregation speeds up reports. = La pre-aggregazione velocizza i report.',
+                'A nightly job computes pre-aggregation of daily sales totals so the morning dashboard loads in under one second. = Un job notturno calcola la pre-aggregazione dei totali vendite giornalieri in modo che la dashboard mattutina si carichi in meno di un secondo.',
               context: 'normalization',
               difficulty: 'intermediate',
               code: 'CREATE TABLE daily_sales AS SELECT date, SUM(amount) FROM sales GROUP BY date;',
@@ -2334,7 +2410,7 @@ export default {
               pronunciation: '/kəmˈpjuːtɪd ˈkɒləm/',
               phonetic: 'kom-PIU-tid KO-lom',
               example:
-                'A computed column derives its value. = Una colonna calcolata deriva il suo valore.',
+                'The line_total computed column automatically multiplies price by quantity, ensuring the derived value is always consistent. = La colonna calcolata line_total moltiplica automaticamente prezzo per quantità, assicurando che il valore derivato sia sempre coerente.',
               context: 'normalization',
               difficulty: 'intermediate',
               code: 'total DECIMAL GENERATED ALWAYS AS (price * quantity) STORED',
@@ -2369,17 +2445,18 @@ export default {
               pronunciation: '/stɑːr ˈskiːmə/',
               phonetic: 'STAR SKII-ma',
               example:
-                'Data warehouses often use star schemas. = I data warehouse usano spesso schemi a stella.',
+                'The retail data warehouse arranges sales facts in a central star schema surrounded by product, customer, store, and date dimensions. = Il data warehouse retail organizza i fatti di vendita in uno schema a stella centrale circondato dalle dimensioni prodotto, cliente, negozio e data.',
               context: 'normalization',
               difficulty: 'intermediate',
               note: 'Tabella centrale (fatti) circondata da tabelle dimensione.',
             },
             {
               english: 'OLTP vs OLAP',
-              italian: 'OLTP vs OLAP / transazionale vs analitico',
+              italian: 'Transazionale vs analitico (OLTP vs OLAP)',
               pronunciation: '/ˌoʊ el tiː piː/',
               phonetic: 'O-EL-TI-PI vs O-EL-EI-PI',
-              example: 'OLTP normalizes, OLAP denormalizes. = OLTP normalizza, OLAP denormalizza.',
+              example:
+                'The e-commerce platform runs OLTP vs OLAP on separate databases: the transactional store is fully normalized while the analytics warehouse uses star schemas. = La piattaforma e-commerce esegue OLTP vs OLAP su database separati: lo store transazionale è completamente normalizzato mentre il warehouse analitico usa schemi a stella.',
               context: 'normalization',
               difficulty: 'intermediate',
               note: 'Online Transaction Processing vs Online Analytical Processing.',
@@ -2405,7 +2482,8 @@ export default {
               italian: 'Indice',
               pronunciation: '/ˈɪndeks/',
               phonetic: 'IN-deks',
-              example: 'An index speeds up queries. = Un indice velocizza le query.',
+              example:
+                'Adding an index on the email column reduced the login query time from 200ms to under 1ms on a table with ten million rows. = Aggiungere un indice sulla colonna email ha ridotto il tempo della query di login da 200ms a meno di 1ms su una tabella con dieci milioni di righe.',
               context: 'indexing',
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx_users_email ON users(email);',
@@ -2417,7 +2495,7 @@ export default {
               pronunciation: '/kriˈeɪt ˈɪndeks/',
               phonetic: 'kri-EIT IN-deks',
               example:
-                'CREATE INDEX adds an index to a column. = CREATE INDEX aggiunge un indice a una colonna.',
+                'The DBA ran CREATE INDEX CONCURRENTLY to build an index on the orders table without locking production writes. = Il DBA ha eseguito CREATE INDEX CONCURRENTLY per costruire un indice sulla tabella ordini senza bloccare le scritture in produzione.',
               context: 'indexing',
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx_orders_user_id ON orders(user_id);',
@@ -2427,7 +2505,8 @@ export default {
               italian: 'Elimina indice',
               pronunciation: '/drɒp ˈɪndeks/',
               phonetic: 'DROP IN-deks',
-              example: 'DROP INDEX removes an index. = DROP INDEX rimuove un indice.',
+              example:
+                'After discovering an unused index consuming 2 GB of disk, the team ran DROP INDEX to reclaim the storage. = Dopo aver scoperto un indice inutilizzato che consumava 2 GB di disco, il team ha eseguito DROP INDEX per recuperare lo spazio.',
               context: 'indexing',
               difficulty: 'intermediate',
               code: 'DROP INDEX idx_orders_user_id;',
@@ -2729,7 +2808,7 @@ export default {
             },
             {
               english: 'CONCURRENTLY',
-              italian: 'CONCURRENTLY / In modo concorrente',
+              italian: 'In modo concorrente (CONCURRENTLY)',
               pronunciation: '/kənˈkɜːrəntli/',
               phonetic: 'kon-KA-rent-li',
               example:
@@ -2842,7 +2921,7 @@ export default {
             },
             {
               english: 'Heap',
-              italian: 'heap / tabella senza ordine fisico',
+              italian: 'tabella senza ordine fisico (Heap)',
               pronunciation: '/hiːp/',
               phonetic: 'HIIP',
               example: 'In PostgreSQL tables are heaps. = In PostgreSQL le tabelle sono heap.',
@@ -2852,7 +2931,7 @@ export default {
             },
             {
               english: 'IOT',
-              italian: 'IOT / Tabella organizzata a indice',
+              italian: 'Tabella organizzata a indice (IOT)',
               pronunciation: '/ˌaɪ oʊ ˈtiː/',
               phonetic: 'AI-O-TI',
               example:
@@ -2903,7 +2982,7 @@ export default {
             },
             {
               english: 'BEGIN',
-              italian: 'BEGIN / Inizio',
+              italian: 'Inizio (BEGIN)',
               pronunciation: '/bɪˈɡɪn/',
               phonetic: 'bi-GIN',
               example: 'BEGIN starts a transaction. = BEGIN inizia una transazione.',
@@ -2914,7 +2993,7 @@ export default {
             },
             {
               english: 'COMMIT',
-              italian: 'COMMIT / Conferma',
+              italian: 'Conferma (COMMIT)',
               pronunciation: '/kəˈmɪt/',
               phonetic: 'co-MIT',
               example:
@@ -2926,7 +3005,7 @@ export default {
             },
             {
               english: 'ROLLBACK',
-              italian: 'ROLLBACK / Annulla',
+              italian: 'Annulla (ROLLBACK)',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROL-bak',
               example: 'ROLLBACK undoes the changes. = ROLLBACK annulla i cambiamenti.',
@@ -2936,7 +3015,7 @@ export default {
             },
             {
               english: 'SAVEPOINT',
-              italian: 'SAVEPOINT / Punto di salvataggio',
+              italian: 'Punto di salvataggio (SAVEPOINT)',
               pronunciation: '/ˈseɪvpɔɪnt/',
               phonetic: 'SEIV-point',
               example:
@@ -2947,7 +3026,7 @@ export default {
             },
             {
               english: 'Auto-commit',
-              italian: 'auto-commit / commit automatico per ogni statement',
+              italian: 'commit automatico per ogni statement (Auto-commit)',
               pronunciation: '/ˈɔːtoʊ kəˈmɪt/',
               phonetic: 'O-to co-MIT',
               example:
@@ -3008,7 +3087,7 @@ export default {
           items: [
             {
               english: 'ACID',
-              italian: 'ACID (Atomicità, Coerenza, Isolamento, Durabilità)',
+              italian: 'Atomicità, Coerenza, Isolamento, Durabilità (ACID)',
               pronunciation: '/ˈæsɪd/',
               phonetic: 'A-sid',
               example:
@@ -3061,7 +3140,7 @@ export default {
             },
             {
               english: 'WAL',
-              italian: 'WAL / Write-Ahead Log',
+              italian: 'Write-Ahead Log (WAL)',
               pronunciation: '/wɔːl/',
               phonetic: 'UOL',
               example: 'WAL ensures durability. = WAL garantisce la durabilità.',
@@ -3102,7 +3181,7 @@ export default {
             },
             {
               english: 'Checkpoint',
-              italian: 'checkpoint / punto di salvataggio del WAL',
+              italian: 'punto di salvataggio del WAL (Checkpoint)',
               pronunciation: '/ˈtʃekpɔɪnt/',
               phonetic: 'CEK-point',
               example:
@@ -3132,7 +3211,7 @@ export default {
             },
             {
               english: 'Read Uncommitted',
-              italian: 'read uncommitted / livello isolamento più basso',
+              italian: 'livello isolamento più basso (Read Uncommitted)',
               pronunciation: '/riːd ʌnkəˈmɪtɪd/',
               phonetic: 'RIID an-co-MI-tid',
               example:
@@ -3143,7 +3222,7 @@ export default {
             },
             {
               english: 'Read Committed',
-              italian: 'read committed / livello isolamento di default',
+              italian: 'livello isolamento di default (Read Committed)',
               pronunciation: '/riːd kəˈmɪtɪd/',
               phonetic: 'RIID co-MI-tid',
               example:
@@ -3154,7 +3233,7 @@ export default {
             },
             {
               english: 'Repeatable Read',
-              italian: 'repeatable read / letture ripetibili',
+              italian: 'letture ripetibili (Repeatable Read)',
               pronunciation: '/rɪˈpiːtəbl riːd/',
               phonetic: 'ri-PI-ta-bol RIID',
               example:
@@ -3165,7 +3244,7 @@ export default {
             },
             {
               english: 'Serializable',
-              italian: 'serializable / livello isolamento massimo',
+              italian: 'livello isolamento massimo (Serializable)',
               pronunciation: '/ˈsɪəriəlaɪzəbl/',
               phonetic: 'SI-ria-lai-za-bol',
               example:
@@ -3244,7 +3323,7 @@ export default {
             },
             {
               english: 'Lock',
-              italian: 'Lock / Blocco',
+              italian: 'Blocco (Lock)',
               pronunciation: '/lɒk/',
               phonetic: 'LOK',
               example:
@@ -3298,7 +3377,7 @@ export default {
             },
             {
               english: 'Deadlock',
-              italian: 'Deadlock / Stallo',
+              italian: 'Stallo (Deadlock)',
               pronunciation: '/ˈdedlɒk/',
               phonetic: 'DED-lok',
               example:
@@ -3309,7 +3388,7 @@ export default {
             },
             {
               english: 'MVCC',
-              italian: 'MVCC (controllo concorrenza multi-versione)',
+              italian: 'Controllo concorrenza multi-versione (MVCC)',
               pronunciation: '/em viː siː ˈsiː/',
               phonetic: 'EM-VI-SI-SI',
               example:
@@ -3381,11 +3460,11 @@ export default {
             },
             {
               english: 'EXISTS',
-              italian: 'EXISTS / Esiste',
+              italian: 'Esiste (EXISTS)',
               pronunciation: '/ɪɡˈzɪsts/',
               phonetic: 'eg-ZISTS',
               example:
-                'EXISTS tests for the presence of rows. = EXISTS verifica la presenza di righe.',
+                'The query uses EXISTS to check whether the customer has at least one active subscription. = La query usa EXISTS per verificare se il cliente ha almeno un abbonamento attivo.',
               context: 'sql',
               difficulty: 'intermediate',
               code: 'WHERE EXISTS (SELECT 1 FROM orders WHERE user_id = users.id)',
@@ -3393,7 +3472,7 @@ export default {
             },
             {
               english: 'NOT EXISTS',
-              italian: 'NOT EXISTS / Non esiste',
+              italian: 'Non esiste (NOT EXISTS)',
               pronunciation: '/nɒt ɪɡˈzɪsts/',
               phonetic: 'NOT eg-ZISTS',
               example:
@@ -3427,7 +3506,7 @@ export default {
             },
             {
               english: 'ANY',
-              italian: 'ANY / Qualsiasi',
+              italian: 'Qualsiasi (ANY)',
               pronunciation: '/ˈeni/',
               phonetic: 'E-ni',
               example: 'ANY matches at least one value. = ANY corrisponde ad almeno un valore.',
@@ -3437,7 +3516,7 @@ export default {
             },
             {
               english: 'ALL',
-              italian: 'ALL / Tutti',
+              italian: 'Tutti (ALL)',
               pronunciation: '/ɔːl/',
               phonetic: 'OL',
               example: 'ALL must match every value. = ALL deve corrispondere a ogni valore.',
@@ -3447,7 +3526,7 @@ export default {
             },
             {
               english: 'LATERAL JOIN',
-              italian: 'LATERAL JOIN / join correlato laterale',
+              italian: 'Join correlato laterale (LATERAL JOIN)',
               pronunciation: '/ˈlætərəl dʒɔɪn/',
               phonetic: 'LA-te-ral GIOIN',
               example:
@@ -3476,7 +3555,7 @@ export default {
           items: [
             {
               english: 'CTE',
-              italian: 'CTE / Espressione di tabella comune',
+              italian: 'Espressione di tabella comune (CTE)',
               pronunciation: '/ˌsiː tiː ˈiː/',
               phonetic: 'SI-TI-I',
               example:
@@ -3488,7 +3567,7 @@ export default {
             },
             {
               english: 'WITH',
-              italian: 'WITH / Con',
+              italian: 'Con (WITH)',
               pronunciation: '/wɪð/',
               phonetic: 'UID',
               example: 'WITH defines a CTE. = WITH definisce un CTE.',
@@ -3603,7 +3682,7 @@ export default {
             },
             {
               english: 'OVER',
-              italian: 'OVER / Su',
+              italian: 'Su (OVER)',
               pronunciation: '/ˈoʊvər/',
               phonetic: 'O-ver',
               example: 'OVER defines the window. = OVER definisce la finestra.',
@@ -3636,7 +3715,7 @@ export default {
             },
             {
               english: 'RANK',
-              italian: 'RANK / Classifica',
+              italian: 'Classifica (RANK)',
               pronunciation: '/ræŋk/',
               phonetic: 'RANK',
               example:
@@ -3660,7 +3739,7 @@ export default {
             },
             {
               english: 'LAG',
-              italian: 'LAG / Riga precedente',
+              italian: 'Riga precedente (LAG)',
               pronunciation: '/læɡ/',
               phonetic: 'LAG',
               example: 'LAG accesses the previous row. = LAG accede alla riga precedente.',
@@ -3670,7 +3749,7 @@ export default {
             },
             {
               english: 'LEAD',
-              italian: 'LEAD / Riga successiva',
+              italian: 'Riga successiva (LEAD)',
               pronunciation: '/liːd/',
               phonetic: 'LIID',
               example: 'LEAD accesses the next row. = LEAD accede alla riga successiva.',
@@ -3680,7 +3759,7 @@ export default {
             },
             {
               english: 'NTILE',
-              italian: 'NTILE / Suddivisione',
+              italian: 'Suddivisione (NTILE)',
               pronunciation: '/ˈen taɪl/',
               phonetic: 'EN-TAIL',
               example: 'NTILE divides rows into N buckets. = NTILE divide le righe in N gruppi.',
@@ -3729,7 +3808,7 @@ export default {
             },
             {
               english: 'Trigger',
-              italian: 'trigger / procedura attivata da evento',
+              italian: 'procedura attivata da evento (Trigger)',
               pronunciation: '/ˈtrɪɡər/',
               phonetic: 'TRI-gher',
               example:
@@ -3762,7 +3841,7 @@ export default {
             },
             {
               english: 'PL/pgSQL',
-              italian: 'PL/pgSQL (linguaggio procedurale PostgreSQL)',
+              italian: 'Linguaggio procedurale PostgreSQL (PL/pgSQL)',
               pronunciation: '/piː el piː dʒiː ˌes kjuː ˈel/',
               phonetic: 'PI-EL-PI-GI-ES-KIU-EL',
               example:
@@ -3774,7 +3853,7 @@ export default {
             },
             {
               english: 'PL/SQL',
-              italian: 'PL/SQL (linguaggio procedurale Oracle)',
+              italian: 'Linguaggio procedurale Oracle (PL/SQL)',
               pronunciation: '/piː el ˌes kjuː ˈel/',
               phonetic: 'PI-EL-ES-KIU-EL',
               example:
@@ -3795,7 +3874,7 @@ export default {
             },
             {
               english: 'EXEC',
-              italian: 'EXEC / Esegui',
+              italian: 'Esegui (EXEC)',
               pronunciation: '/ɪɡˈzek/',
               phonetic: 'eg-ZEK',
               example: 'EXEC runs a stored procedure. = EXEC esegue una procedura memorizzata.',
@@ -3805,7 +3884,7 @@ export default {
             },
             {
               english: 'CALL',
-              italian: 'CALL / Chiama',
+              italian: 'Chiama (CALL)',
               pronunciation: '/kɔːl/',
               phonetic: 'KOL',
               example: 'CALL invokes a procedure. = CALL invoca una procedura.',
@@ -3851,7 +3930,7 @@ export default {
               context: 'nosql',
               difficulty: 'intermediate',
               tool: 'Redis, DynamoDB',
-              code: 'SET user:1 \'{"name":"Marco"}\'',
+              code: `SET user:1 '{"name":"Marco"}'`,
             },
             {
               english: 'Column-Family Store',
@@ -3911,7 +3990,7 @@ export default {
             },
             {
               english: 'NewSQL',
-              italian: 'NewSQL / nuovi RDBMS scalabili',
+              italian: 'Nuovi RDBMS scalabili (NewSQL)',
               pronunciation: '/njuː ˌes kjuː ˈel/',
               phonetic: 'NIU-ES-KIU-EL',
               example:
@@ -3994,7 +4073,7 @@ export default {
             },
             {
               english: 'BASE',
-              italian: 'BASE (Basicamente Disponibile, Stato morbido, Eventualmente coerente)',
+              italian: 'Basicamente disponibile, Stato morbido, Eventualmente coerente (BASE)',
               pronunciation: '/beɪs/',
               phonetic: 'BEIS',
               example:
@@ -4036,7 +4115,7 @@ export default {
             },
             {
               english: 'PACELC',
-              italian: 'PACELC / estensione del teorema CAP',
+              italian: 'Estensione del teorema CAP (PACELC)',
               pronunciation: '/ˈpeɪsəlk/',
               phonetic: 'PEI-selk',
               example:
@@ -4047,7 +4126,7 @@ export default {
             },
             {
               english: 'Quorum',
-              italian: 'quorum / soglia minima di nodi',
+              italian: 'soglia minima di nodi (Quorum)',
               pronunciation: '/ˈkwɔːrəm/',
               phonetic: 'KUO-rum',
               example:
@@ -4087,7 +4166,7 @@ export default {
             },
             {
               english: 'BSON',
-              italian: 'BSON (Binary JSON di MongoDB)',
+              italian: 'Binary JSON di MongoDB (BSON)',
               pronunciation: '/ˈbiː sɒn/',
               phonetic: 'BI-SON',
               example: 'MongoDB uses BSON internally. = MongoDB usa BSON internamente.',
@@ -4222,7 +4301,7 @@ export default {
             },
             {
               english: 'CRDT',
-              italian: 'CRDT (tipi dati replicati a convergenza)',
+              italian: 'Tipi dati replicati a convergenza (CRDT)',
               pronunciation: '/siː ɑːr diː ˈtiː/',
               phonetic: 'SI-AR-DI-TI',
               example:
@@ -4256,7 +4335,7 @@ export default {
             },
             {
               english: 'Hinted Handoff',
-              italian: 'hinted handoff / consegna ritardata in caso di nodo offline',
+              italian: 'consegna ritardata in caso di nodo offline (Hinted Handoff)',
               pronunciation: '/ˈhɪntɪd ˈhændɒf/',
               phonetic: 'HIN-tid HAND-of',
               example:
@@ -4304,7 +4383,7 @@ export default {
           items: [
             {
               english: 'MongoDB',
-              italian: 'MongoDB (database documentale NoSQL)',
+              italian: 'Database documentale NoSQL (MongoDB)',
               pronunciation: '/ˈmɒŋɡoʊ diː biː/',
               phonetic: 'MON-go-DI-BI',
               example:
@@ -4330,7 +4409,7 @@ export default {
             },
             {
               english: 'Document',
-              italian: 'Documento',
+              italian: 'Documento (record JSON in un database documentale)',
               pronunciation: '/ˈdɒkjumənt/',
               phonetic: 'DO-kiu-ment',
               example: 'A document is a JSON-like record. = Un documento è un record tipo JSON.',
@@ -4341,7 +4420,7 @@ export default {
             },
             {
               english: 'ObjectId',
-              italian: 'ObjectId / identificatore documento MongoDB',
+              italian: 'Identificatore documento MongoDB (ObjectId)',
               pronunciation: '/ˈɒbdʒekt aɪ diː/',
               phonetic: 'OB-gekt AI-DI',
               example: 'ObjectId is the default _id type. = ObjectId è il tipo _id di default.',
@@ -4353,7 +4432,7 @@ export default {
             },
             {
               english: 'find',
-              italian: 'find / Trova',
+              italian: 'Trova (find)',
               pronunciation: '/faɪnd/',
               phonetic: 'FAIND',
               example:
@@ -4365,7 +4444,7 @@ export default {
             },
             {
               english: 'findOne',
-              italian: 'findOne / trova un singolo documento',
+              italian: 'Trova un singolo documento (findOne)',
               pronunciation: '/faɪnd wʌn/',
               phonetic: 'FAIND-UAN',
               example: 'findOne returns the first match. = findOne restituisce il primo match.',
@@ -4376,7 +4455,7 @@ export default {
             },
             {
               english: 'insertOne',
-              italian: 'insertOne / inserisce un documento',
+              italian: 'Inserisce un documento (insertOne)',
               pronunciation: '/ɪnˈsɜːrt wʌn/',
               phonetic: 'in-SERT-UAN',
               example: 'insertOne adds one document. = insertOne aggiunge un documento.',
@@ -4387,7 +4466,7 @@ export default {
             },
             {
               english: 'insertMany',
-              italian: 'insertMany / inserisce documenti multipli',
+              italian: 'Inserisce documenti multipli (insertMany)',
               pronunciation: '/ɪnˈsɜːrt ˈmeni/',
               phonetic: 'in-SERT-ME-ni',
               example:
@@ -4399,7 +4478,7 @@ export default {
             },
             {
               english: 'updateOne',
-              italian: 'updateOne / aggiorna un documento',
+              italian: 'Aggiorna un documento (updateOne)',
               pronunciation: '/ʌpˈdeɪt wʌn/',
               phonetic: 'ap-DEIT-UAN',
               example:
@@ -4411,7 +4490,7 @@ export default {
             },
             {
               english: 'deleteOne',
-              italian: 'deleteOne / elimina un documento',
+              italian: 'Elimina un documento (deleteOne)',
               pronunciation: '/dɪˈliːt wʌn/',
               phonetic: 'di-LIIT-UAN',
               example:
@@ -4430,7 +4509,7 @@ export default {
           items: [
             {
               english: '$gt',
-              italian: '$gt / Maggiore di',
+              italian: 'Maggiore di ($gt)',
               pronunciation: '/ˈdɒlər dʒiː tiː/',
               phonetic: 'DO-lar GI-TI',
               example: '$gt matches values greater than. = $gt corrisponde a valori maggiori di.',
@@ -4441,7 +4520,7 @@ export default {
             },
             {
               english: '$lt',
-              italian: '$lt / Minore di',
+              italian: 'Minore di ($lt)',
               pronunciation: '/ˈdɒlər el tiː/',
               phonetic: 'DO-lar EL-TI',
               example: '$lt matches values less than. = $lt corrisponde a valori minori di.',
@@ -4452,7 +4531,7 @@ export default {
             },
             {
               english: '$in',
-              italian: '$in / operatore appartenenza Mongo',
+              italian: 'Operatore appartenenza Mongo ($in)',
               pronunciation: '/ˈdɒlər ɪn/',
               phonetic: 'DO-lar IN',
               example:
@@ -4464,7 +4543,7 @@ export default {
             },
             {
               english: '$nin',
-              italian: '$nin / Non in',
+              italian: 'Non in ($nin)',
               pronunciation: '/ˈdɒlər en ɪn/',
               phonetic: 'DO-lar EN-IN',
               example:
@@ -4476,7 +4555,7 @@ export default {
             },
             {
               english: '$set',
-              italian: '$set / Imposta',
+              italian: 'Imposta ($set)',
               pronunciation: '/ˈdɒlər set/',
               phonetic: 'DO-lar SET',
               example: '$set updates fields. = $set aggiorna campi.',
@@ -4487,7 +4566,7 @@ export default {
             },
             {
               english: '$unset',
-              italian: '$unset / Rimuovi',
+              italian: 'Rimuovi ($unset)',
               pronunciation: '/ˈdɒlər ʌnˈset/',
               phonetic: 'DO-lar an-SET',
               example: '$unset removes a field. = $unset rimuove un campo.',
@@ -4498,7 +4577,7 @@ export default {
             },
             {
               english: '$inc',
-              italian: '$inc / Incrementa',
+              italian: 'Incrementa ($inc)',
               pronunciation: '/ˈdɒlər ɪŋk/',
               phonetic: 'DO-lar INK',
               example: '$inc increments a number. = $inc incrementa un numero.',
@@ -4509,7 +4588,7 @@ export default {
             },
             {
               english: '$push',
-              italian: '$push / Aggiungi a array',
+              italian: 'Aggiungi a array ($push)',
               pronunciation: '/ˈdɒlər pʊʃ/',
               phonetic: 'DO-lar PUSH',
               example:
@@ -4521,7 +4600,7 @@ export default {
             },
             {
               english: '$pull',
-              italian: '$pull / Rimuovi da array',
+              italian: 'Rimuovi da array ($pull)',
               pronunciation: '/ˈdɒlər pʊl/',
               phonetic: 'DO-lar PUL',
               example:
@@ -4533,7 +4612,7 @@ export default {
             },
             {
               english: '$exists',
-              italian: '$exists / Esiste',
+              italian: 'Esiste ($exists)',
               pronunciation: '/ˈdɒlər ɪɡˈzɪsts/',
               phonetic: 'DO-lar eg-ZISTS',
               example:
@@ -4564,7 +4643,7 @@ export default {
             },
             {
               english: '$match',
-              italian: '$match / Filtra',
+              italian: 'Filtra ($match)',
               pronunciation: '/ˈdɒlər mætʃ/',
               phonetic: 'DO-lar MAC',
               example: '$match filters documents. = $match filtra documenti.',
@@ -4575,7 +4654,7 @@ export default {
             },
             {
               english: '$group',
-              italian: '$group / Raggruppa',
+              italian: 'Raggruppa ($group)',
               pronunciation: '/ˈdɒlər ɡruːp/',
               phonetic: 'DO-lar GRUP',
               example: '$group groups documents. = $group raggruppa documenti.',
@@ -4586,7 +4665,7 @@ export default {
             },
             {
               english: '$project',
-              italian: '$project / Proietta',
+              italian: 'Proietta ($project)',
               pronunciation: '/ˈdɒlər prəˈdʒekt/',
               phonetic: 'DO-lar pro-GEKT',
               example:
@@ -4598,7 +4677,7 @@ export default {
             },
             {
               english: '$sort',
-              italian: '$sort / Ordina',
+              italian: 'Ordina ($sort)',
               pronunciation: '/ˈdɒlər sɔːrt/',
               phonetic: 'DO-lar SORT',
               example: '$sort orders the documents. = $sort ordina i documenti.',
@@ -4609,7 +4688,7 @@ export default {
             },
             {
               english: '$lookup',
-              italian: '$lookup / JOIN',
+              italian: 'JOIN tra collezioni ($lookup)',
               pronunciation: '/ˈdɒlər ˈlʊkʌp/',
               phonetic: 'DO-lar LU-kap',
               example: '$lookup performs left outer joins. = $lookup esegue left outer join.',
@@ -4620,7 +4699,7 @@ export default {
             },
             {
               english: '$unwind',
-              italian: '$unwind / Srotola',
+              italian: 'Srotola ($unwind)',
               pronunciation: '/ˈdɒlər ʌnˈwaɪnd/',
               phonetic: 'DO-lar an-UAIND',
               example: '$unwind deconstructs an array. = $unwind decostruisce un array.',
@@ -4631,7 +4710,7 @@ export default {
             },
             {
               english: '$limit',
-              italian: '$limit / Limita',
+              italian: 'Limita ($limit)',
               pronunciation: '/ˈdɒlər ˈlɪmɪt/',
               phonetic: 'DO-lar LI-mit',
               example:
@@ -4653,7 +4732,7 @@ export default {
             },
             {
               english: '$facet',
-              italian: '$facet / Faceta',
+              italian: 'Faceta ($facet)',
               pronunciation: '/ˈdɒlər ˈfæsɪt/',
               phonetic: 'DO-lar FA-sit',
               example:
@@ -4672,7 +4751,7 @@ export default {
           items: [
             {
               english: 'Replica Set',
-              italian: 'replica set / gruppo di nodi replicati',
+              italian: 'gruppo di nodi replicati (Replica Set)',
               pronunciation: '/ˈreplɪkə set/',
               phonetic: 'RE-pli-ka SET',
               example:
@@ -4728,7 +4807,7 @@ export default {
             },
             {
               english: 'Oplog',
-              italian: 'Oplog / Log delle operazioni',
+              italian: 'Log delle operazioni (Oplog)',
               pronunciation: '/ˈɒplɒɡ/',
               phonetic: 'OP-log',
               example: "The oplog records all changes. = L'oplog registra tutte le modifiche.",
@@ -4738,7 +4817,7 @@ export default {
             },
             {
               english: 'Sharding',
-              italian: 'sharding / partizionamento orizzontale',
+              italian: 'partizionamento orizzontale (Sharding)',
               pronunciation: '/ˈʃɑːrdɪŋ/',
               phonetic: 'SCIAR-ding',
               example:
@@ -4761,7 +4840,7 @@ export default {
             },
             {
               english: 'Mongos',
-              italian: 'Mongos / Router',
+              italian: 'Router (Mongos)',
               pronunciation: '/ˈmɒŋɡoʊs/',
               phonetic: 'MON-gos',
               example: 'Mongos routes queries to shards. = Mongos instrada le query agli shard.',
@@ -4799,7 +4878,7 @@ export default {
           items: [
             {
               english: 'Redis',
-              italian: 'Redis (database in memoria chiave-valore)',
+              italian: 'Database in memoria chiave-valore (Redis)',
               pronunciation: '/ˈredɪs/',
               phonetic: 'RE-dis',
               example: 'Redis is an in-memory data store. = Redis è uno store dati in memoria.',
@@ -4811,7 +4890,7 @@ export default {
             },
             {
               english: 'GET',
-              italian: 'GET / Ottieni',
+              italian: 'Ottieni (GET)',
               pronunciation: '/ɡet/',
               phonetic: 'GET',
               example: 'GET retrieves a value by key. = GET recupera un valore per chiave.',
@@ -4822,10 +4901,11 @@ export default {
             },
             {
               english: 'SET',
-              italian: 'SET / Imposta',
+              italian: 'Imposta (SET)',
               pronunciation: '/set/',
               phonetic: 'SET',
-              example: 'SET stores a value. = SET memorizza un valore.',
+              example:
+                'The session middleware uses SET to store the user token in Redis with a 30-minute expiry. = Il middleware di sessione usa SET per memorizzare il token utente in Redis con una scadenza di 30 minuti.',
               context: 'nosql',
               difficulty: 'intermediate',
               code: 'SET user:1 "Marco"',
@@ -4833,7 +4913,7 @@ export default {
             },
             {
               english: 'DEL',
-              italian: 'DEL / Cancella',
+              italian: 'Cancella (DEL)',
               pronunciation: '/del/',
               phonetic: 'DEL',
               example: 'DEL removes a key. = DEL rimuove una chiave.',
@@ -4844,10 +4924,11 @@ export default {
             },
             {
               english: 'EXISTS',
-              italian: 'EXISTS / Esiste',
+              italian: 'Esiste (EXISTS)',
               pronunciation: '/ɪɡˈzɪsts/',
               phonetic: 'eg-ZISTS',
-              example: 'EXISTS checks if a key exists. = EXISTS verifica se esiste una chiave.',
+              example:
+                "Before setting a cache value, the app checks with EXISTS whether the key is already present. = Prima di impostare un valore cache, l'app verifica con EXISTS se la chiave è già presente.",
               context: 'nosql',
               difficulty: 'intermediate',
               code: 'EXISTS user:1',
@@ -4855,7 +4936,7 @@ export default {
             },
             {
               english: 'KEYS',
-              italian: 'KEYS / Chiavi',
+              italian: 'Chiavi (KEYS)',
               pronunciation: '/kiːz/',
               phonetic: 'KIIZ',
               example: 'KEYS lists matching keys. = KEYS elenca le chiavi corrispondenti.',
@@ -4867,7 +4948,7 @@ export default {
             },
             {
               english: 'SCAN',
-              italian: 'SCAN / Scansiona',
+              italian: 'Scansiona (SCAN)',
               pronunciation: '/skæn/',
               phonetic: 'SKAN',
               example:
@@ -4879,7 +4960,7 @@ export default {
             },
             {
               english: 'INCR',
-              italian: 'INCR / Incrementa',
+              italian: 'Incrementa (INCR)',
               pronunciation: '/ɪŋˈkriːmənt/',
               phonetic: 'in-KRI-ment',
               example:
@@ -4891,7 +4972,7 @@ export default {
             },
             {
               english: 'DECR',
-              italian: 'DECR / Decrementa',
+              italian: 'Decrementa (DECR)',
               pronunciation: '/dɪˈkriːmənt/',
               phonetic: 'di-KRI-ment',
               example: 'DECR decrements a number. = DECR decrementa un numero.',
@@ -4902,7 +4983,7 @@ export default {
             },
             {
               english: 'FLUSHDB',
-              italian: 'FLUSHDB / Svuota DB',
+              italian: 'Svuota DB (FLUSHDB)',
               pronunciation: '/flʌʃ diː biː/',
               phonetic: 'FLASH-DI-BI',
               example:
@@ -4934,7 +5015,7 @@ export default {
             },
             {
               english: 'LPUSH',
-              italian: 'LPUSH / Push a sinistra',
+              italian: 'Push a sinistra (LPUSH)',
               pronunciation: '/el pʊʃ/',
               phonetic: 'EL-PUSH',
               example:
@@ -4946,7 +5027,7 @@ export default {
             },
             {
               english: 'RPUSH',
-              italian: 'RPUSH / Push a destra',
+              italian: 'Push a destra (RPUSH)',
               pronunciation: '/ɑːr pʊʃ/',
               phonetic: 'AR-PUSH',
               example:
@@ -4958,7 +5039,7 @@ export default {
             },
             {
               english: 'LPOP',
-              italian: 'LPOP / Pop a sinistra',
+              italian: 'Pop a sinistra (LPOP)',
               pronunciation: '/el pɒp/',
               phonetic: 'EL-POP',
               example: 'LPOP removes from the left. = LPOP rimuove dalla sinistra.',
@@ -4980,7 +5061,7 @@ export default {
             },
             {
               english: 'SADD',
-              italian: 'SADD / Aggiungi a set',
+              italian: 'Aggiungi a set (SADD)',
               pronunciation: '/es æd/',
               phonetic: 'ES-AD',
               example: 'SADD adds to a set. = SADD aggiunge a un set.',
@@ -5003,7 +5084,7 @@ export default {
             },
             {
               english: 'HGET',
-              italian: 'HGET / Ottieni campo hash',
+              italian: 'Ottieni campo hash (HGET)',
               pronunciation: '/eɪtʃ ɡet/',
               phonetic: 'EICH-GET',
               example: 'HGET reads a hash field. = HGET legge un campo hash.',
@@ -5025,7 +5106,7 @@ export default {
             },
             {
               english: 'ZADD',
-              italian: 'ZADD / Aggiungi a sorted set',
+              italian: 'Aggiungi a sorted set (ZADD)',
               pronunciation: '/zed æd/',
               phonetic: 'ZED-AD',
               example:
@@ -5044,7 +5125,7 @@ export default {
           items: [
             {
               english: 'TTL',
-              italian: 'TTL / Tempo di vita',
+              italian: 'Tempo di vita (TTL)',
               pronunciation: '/tiː tiː ˈel/',
               phonetic: 'TI-TI-EL',
               example:
@@ -5057,7 +5138,7 @@ export default {
             },
             {
               english: 'EXPIRE',
-              italian: 'EXPIRE / Scadi',
+              italian: 'Scadi (EXPIRE)',
               pronunciation: '/ɪkˈspaɪər/',
               phonetic: 'eks-PAIR',
               example: 'EXPIRE sets a TTL on a key. = EXPIRE imposta un TTL su una chiave.',
@@ -5068,7 +5149,7 @@ export default {
             },
             {
               english: 'PERSIST',
-              italian: 'PERSIST / Rendi persistente',
+              italian: 'Rendi persistente (PERSIST)',
               pronunciation: '/pərˈsɪst/',
               phonetic: 'per-SIST',
               example: 'PERSIST removes the TTL. = PERSIST rimuove il TTL.',
@@ -5079,7 +5160,7 @@ export default {
             },
             {
               english: 'Cache',
-              italian: 'cache / memoria intermedia',
+              italian: 'memoria intermedia (Cache)',
               pronunciation: '/kæʃ/',
               phonetic: 'KASH',
               example: 'Use Redis as a cache layer. = Usa Redis come livello di cache.',
@@ -5089,7 +5170,7 @@ export default {
             },
             {
               english: 'Cache Hit',
-              italian: 'cache hit / dato trovato in cache',
+              italian: 'dato trovato in cache (Cache Hit)',
               pronunciation: '/kæʃ hɪt/',
               phonetic: 'KASH-HIT',
               example:
@@ -5099,7 +5180,7 @@ export default {
             },
             {
               english: 'Cache Miss',
-              italian: 'cache miss / dato assente in cache',
+              italian: 'dato assente in cache (Cache Miss)',
               pronunciation: '/kæʃ mɪs/',
               phonetic: 'KASH-MIS',
               example:
@@ -5119,7 +5200,7 @@ export default {
             },
             {
               english: 'Cache-Aside',
-              italian: 'cache-aside / pattern di cache a fianco',
+              italian: 'pattern di cache a fianco (Cache-Aside)',
               pronunciation: '/kæʃ əˈsaɪd/',
               phonetic: 'KASH-a-SAID',
               example:
@@ -5129,7 +5210,7 @@ export default {
             },
             {
               english: 'Write-Through',
-              italian: 'write-through / scrittura sincrona in cache e DB',
+              italian: 'scrittura sincrona in cache e DB (Write-Through)',
               pronunciation: '/raɪt θruː/',
               phonetic: 'RAIT-THRU',
               example:
@@ -5157,7 +5238,7 @@ export default {
           items: [
             {
               english: 'Pub/Sub',
-              italian: 'pub/sub / pubblicazione e sottoscrizione',
+              italian: 'pubblicazione e sottoscrizione (Pub/Sub)',
               pronunciation: '/pʌb sʌb/',
               phonetic: 'PAB-SAB',
               example:
@@ -5169,7 +5250,7 @@ export default {
             },
             {
               english: 'PUBLISH',
-              italian: 'PUBLISH / Pubblica',
+              italian: 'Pubblica (PUBLISH)',
               pronunciation: '/ˈpʌblɪʃ/',
               phonetic: 'PA-blish',
               example:
@@ -5181,7 +5262,7 @@ export default {
             },
             {
               english: 'SUBSCRIBE',
-              italian: 'SUBSCRIBE / Iscriviti',
+              italian: 'Iscriviti (SUBSCRIBE)',
               pronunciation: '/səbˈskraɪb/',
               phonetic: 'sab-SKRAIB',
               example: 'SUBSCRIBE listens to channels. = SUBSCRIBE ascolta canali.',
@@ -5215,7 +5296,7 @@ export default {
             },
             {
               english: 'XADD',
-              italian: 'XADD / Aggiungi a stream',
+              italian: 'Aggiungi a stream (XADD)',
               pronunciation: '/eks æd/',
               phonetic: 'EKS-AD',
               example: 'XADD appends an entry to a stream. = XADD aggiunge una entry a uno stream.',
@@ -5226,7 +5307,7 @@ export default {
             },
             {
               english: 'XREAD',
-              italian: 'XREAD / Leggi stream',
+              italian: 'Leggi stream (XREAD)',
               pronunciation: '/eks riːd/',
               phonetic: 'EKS-RIID',
               example: 'XREAD reads from streams. = XREAD legge da stream.',
@@ -5259,7 +5340,7 @@ export default {
             },
             {
               english: 'AOF',
-              italian: 'AOF / Append Only File',
+              italian: 'Append Only File (AOF)',
               pronunciation: '/eɪ oʊ ef/',
               phonetic: 'EI-OU-EF',
               example:
@@ -5287,7 +5368,7 @@ export default {
           items: [
             {
               english: 'EXPLAIN',
-              italian: 'EXPLAIN / Spiega',
+              italian: 'Spiega (EXPLAIN)',
               pronunciation: '/ɪkˈspleɪn/',
               phonetic: 'eks-PLEIN',
               example: 'EXPLAIN shows the execution plan. = EXPLAIN mostra il piano di esecuzione.',
@@ -5307,7 +5388,7 @@ export default {
             },
             {
               english: 'EXPLAIN ANALYZE',
-              italian: 'EXPLAIN ANALYZE / Spiega e analizza',
+              italian: 'Spiega e analizza (EXPLAIN ANALYZE)',
               pronunciation: '/ɪkˈspleɪn ˈænəlaɪz/',
               phonetic: 'eks-PLEIN A-na-laiz',
               example:
@@ -5320,7 +5401,7 @@ export default {
             },
             {
               english: 'Cost',
-              italian: 'Costo',
+              italian: 'Costo stimato di esecuzione della query',
               pronunciation: '/kɒst/',
               phonetic: 'KOST',
               example: 'The cost estimates query effort. = Il costo stima lo sforzo della query.',
@@ -5352,7 +5433,7 @@ export default {
             },
             {
               english: 'Hash Join',
-              italian: 'hash join / join basato su hash',
+              italian: 'join basato su hash (Hash Join)',
               pronunciation: '/hæʃ dʒɔɪn/',
               phonetic: 'HASH-GIOIN',
               example:
@@ -5363,7 +5444,7 @@ export default {
             },
             {
               english: 'Merge Join',
-              italian: 'merge join / join per fusione ordinata',
+              italian: 'join per fusione ordinata (Merge Join)',
               pronunciation: '/mɜːrdʒ dʒɔɪn/',
               phonetic: 'MERG-GIOIN',
               example:
@@ -5412,7 +5493,7 @@ export default {
             },
             {
               english: 'ANALYZE',
-              italian: 'ANALYZE / Analizza',
+              italian: 'Analizza (ANALYZE)',
               pronunciation: '/ˈænəlaɪz/',
               phonetic: 'A-na-laiz',
               example: 'ANALYZE updates statistics. = ANALYZE aggiorna le statistiche.',
@@ -5433,7 +5514,7 @@ export default {
             },
             {
               english: 'Query Planner',
-              italian: 'query planner / pianificatore di query',
+              italian: 'pianificatore di query (Query Planner)',
               pronunciation: '/ˈkwɪəri ˈplænər/',
               phonetic: 'KUI-ri PLAN-ner',
               example:
@@ -5536,7 +5617,7 @@ export default {
             },
             {
               english: 'pg_stat_statements',
-              italian: 'pg_stat_statements / vista delle query più costose',
+              italian: 'Vista delle query più costose (pg_stat_statements)',
               pronunciation: '/piː dʒiː stæt ˈsteɪtmənts/',
               phonetic: 'PI-GI-STAT-STEIT-ments',
               example:
@@ -5559,7 +5640,7 @@ export default {
             },
             {
               english: 'Eager Loading',
-              italian: 'Eager loading / Caricamento ansioso',
+              italian: 'Caricamento ansioso (Eager Loading)',
               pronunciation: '/ˈiːɡər ˈloʊdɪŋ/',
               phonetic: 'I-gher LOU-ding',
               example:
@@ -5571,7 +5652,7 @@ export default {
             },
             {
               english: 'Lazy Loading',
-              italian: 'Lazy loading / Caricamento pigro',
+              italian: 'Caricamento pigro (Lazy Loading)',
               pronunciation: '/ˈleɪzi ˈloʊdɪŋ/',
               phonetic: 'LEI-zi LOU-ding',
               example: 'Lazy loading defers fetching. = Il lazy loading rimanda il fetching.',
@@ -5631,7 +5712,7 @@ export default {
           items: [
             {
               english: 'Performance',
-              italian: 'performance / prestazioni',
+              italian: 'prestazioni (Performance)',
               pronunciation: '/pərˈfɔːrməns/',
               phonetic: 'per-FOR-mans',
               example:
@@ -5651,7 +5732,7 @@ export default {
             },
             {
               english: 'Throughput',
-              italian: 'throughput / volume di operazioni al secondo',
+              italian: 'volume di operazioni al secondo (Throughput)',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'THRU-put',
               example:
@@ -5662,7 +5743,7 @@ export default {
             },
             {
               english: 'IOPS',
-              italian: 'IOPS / Operazioni I/O al secondo',
+              italian: 'Operazioni I/O al secondo (IOPS)',
               pronunciation: '/ˈaɪ ɒps/',
               phonetic: 'AI-OPS',
               example: 'SSDs offer high IOPS. = Gli SSD offrono alti IOPS.',
@@ -5683,7 +5764,7 @@ export default {
             },
             {
               english: 'Connection Pooling',
-              italian: 'connection pooling / pool di connessioni',
+              italian: 'pool di connessioni (Connection Pooling)',
               pronunciation: '/kəˈnekʃən ˈpuːlɪŋ/',
               phonetic: 'co-NEK-scion PU-ling',
               example:
@@ -5703,7 +5784,7 @@ export default {
             },
             {
               english: 'Buffer Pool',
-              italian: 'buffer pool / pool di pagine in memoria',
+              italian: 'pool di pagine in memoria (Buffer Pool)',
               pronunciation: '/ˈbʌfər puːl/',
               phonetic: 'BA-fer PUL',
               example:
@@ -5751,7 +5832,7 @@ export default {
           items: [
             {
               english: 'Backup',
-              italian: 'backup / copia di sicurezza',
+              italian: 'copia di sicurezza (Backup)',
               pronunciation: '/ˈbækʌp/',
               phonetic: 'BAK-ap',
               example: 'Take regular backups of your data. = Esegui backup regolari dei tuoi dati.',
@@ -5780,7 +5861,7 @@ export default {
             },
             {
               english: 'pg_dump',
-              italian: 'pg_dump (utility di backup PostgreSQL)',
+              italian: 'Utility di backup PostgreSQL (pg_dump)',
               pronunciation: '/piː dʒiː dʌmp/',
               phonetic: 'PI-GI-DAMP',
               example: 'pg_dump exports a database. = pg_dump esporta un database.',
@@ -5791,7 +5872,7 @@ export default {
             },
             {
               english: 'mysqldump',
-              italian: 'mysqldump (utility di backup MySQL)',
+              italian: 'Utility di backup MySQL (mysqldump)',
               pronunciation: '/ˌmaɪ ˌes kjuː el dʌmp/',
               phonetic: 'MAI-ES-KIU-EL-DAMP',
               example: 'mysqldump exports MySQL databases. = mysqldump esporta database MySQL.',
@@ -5861,7 +5942,7 @@ export default {
           items: [
             {
               english: 'Restore',
-              italian: 'Restore / Ripristino',
+              italian: 'Ripristino (Restore)',
               pronunciation: '/rɪˈstɔːr/',
               phonetic: 'ri-STOR',
               example: 'Restore the database from backup. = Ripristina il database dal backup.',
@@ -5871,7 +5952,7 @@ export default {
             },
             {
               english: 'pg_restore',
-              italian: 'pg_restore (utility di ripristino PostgreSQL)',
+              italian: 'Utility di ripristino PostgreSQL (pg_restore)',
               pronunciation: '/piː dʒiː rɪˈstɔːr/',
               phonetic: 'PI-GI-ri-STOR',
               example: 'pg_restore restores from a dump. = pg_restore ripristina da un dump.',
@@ -5895,7 +5976,7 @@ export default {
             },
             {
               english: 'Disaster Recovery',
-              italian: 'disaster recovery / ripristino dopo disastro',
+              italian: 'ripristino dopo disastro (Disaster Recovery)',
               pronunciation: '/dɪˈzɑːstər rɪˈkʌvəri/',
               phonetic: 'di-ZAS-ter ri-KA-ve-ri',
               example: 'Plan for disaster recovery. = Pianifica il disaster recovery.',
@@ -5905,7 +5986,7 @@ export default {
             },
             {
               english: 'RTO',
-              italian: 'RTO / Tempo di ripristino',
+              italian: 'Tempo di ripristino (RTO)',
               pronunciation: '/ɑːr tiː ˈoʊ/',
               phonetic: 'AR-TI-O',
               example: 'RTO defines acceptable downtime. = RTO definisce il downtime accettabile.',
@@ -5915,7 +5996,7 @@ export default {
             },
             {
               english: 'RPO',
-              italian: 'RPO / Punto di ripristino',
+              italian: 'Punto di ripristino (RPO)',
               pronunciation: '/ɑːr piː ˈoʊ/',
               phonetic: 'AR-PI-O',
               example:
@@ -5937,7 +6018,7 @@ export default {
             },
             {
               english: 'Standby',
-              italian: 'standby / nodo di riserva',
+              italian: 'nodo di riserva (Standby)',
               pronunciation: '/ˈstændbaɪ/',
               phonetic: 'STAND-bai',
               example: 'A standby database can take over. = Un database standby può subentrare.',
@@ -6006,7 +6087,7 @@ export default {
             },
             {
               english: 'GRANT',
-              italian: 'GRANT / Concedi',
+              italian: 'Concedi (GRANT)',
               pronunciation: '/ɡrænt/',
               phonetic: 'GRANT',
               example: 'GRANT gives permissions to users. = GRANT dà permessi agli utenti.',
@@ -6016,7 +6097,7 @@ export default {
             },
             {
               english: 'REVOKE',
-              italian: 'REVOKE / Revoca',
+              italian: 'Revoca (REVOKE)',
               pronunciation: '/rɪˈvoʊk/',
               phonetic: 'ri-VOUK',
               example: 'REVOKE removes permissions. = REVOKE rimuove permessi.',
@@ -6047,7 +6128,7 @@ export default {
             },
             {
               english: 'Superuser',
-              italian: 'superuser / utente con tutti i privilegi',
+              italian: 'utente con tutti i privilegi (Superuser)',
               pronunciation: '/ˈsuːpərjuːzər/',
               phonetic: 'SU-per-iu-zer',
               example:
@@ -6069,7 +6150,7 @@ export default {
             },
             {
               english: 'pg_hba.conf',
-              italian: 'pg_hba.conf (file di policy autenticazione PostgreSQL)',
+              italian: 'File di policy autenticazione PostgreSQL (pg_hba.conf)',
               pronunciation: '/piː dʒiː eɪtʃ biː ˈeɪ kɒnf/',
               phonetic: 'PI-GI-EICH-BI-EI-KONF',
               example:
@@ -6099,7 +6180,7 @@ export default {
             },
             {
               english: 'Metric',
-              italian: 'Metrica',
+              italian: 'Metrica di monitoraggio (indicatore misurabile)',
               pronunciation: '/ˈmetrɪk/',
               phonetic: 'ME-trik',
               example: 'Track key database metrics. = Traccia metriche chiave del database.',
@@ -6166,7 +6247,7 @@ export default {
             },
             {
               english: 'Alert',
-              italian: 'Alert / Avviso',
+              italian: 'Avviso (Alert)',
               pronunciation: '/əˈlɜːrt/',
               phonetic: 'a-LERT',
               example:
@@ -6177,7 +6258,7 @@ export default {
             },
             {
               english: 'Dashboard',
-              italian: 'dashboard / cruscotto di monitoraggio',
+              italian: 'cruscotto di monitoraggio (Dashboard)',
               pronunciation: '/ˈdæʃbɔːrd/',
               phonetic: 'DASH-bord',
               example: 'A dashboard visualizes metrics. = Una dashboard visualizza metriche.',
@@ -6223,7 +6304,7 @@ export default {
             },
             {
               english: 'Master-Slave',
-              italian: 'master-slave / primario-secondario (replica)',
+              italian: 'primario-secondario (replica) (Master-Slave)',
               pronunciation: '/ˈmɑːstər sleɪv/',
               phonetic: 'MAS-ter SLEIV',
               example: 'Master-slave is the legacy term. = Master-slave è il termine tradizionale.',
@@ -6338,7 +6419,7 @@ export default {
             },
             {
               english: 'Failover',
-              italian: 'Failover / Subentro',
+              italian: 'Subentro (Failover)',
               pronunciation: '/ˈfeɪloʊvər/',
               phonetic: 'FEI-lo-ver',
               example:
@@ -6369,7 +6450,7 @@ export default {
             },
             {
               english: 'Switchover',
-              italian: 'switchover / cambio pianificato di primario',
+              italian: 'cambio pianificato di primario (Switchover)',
               pronunciation: '/ˈswɪtʃoʊvər/',
               phonetic: 'SUIC-o-ver',
               example: 'Switchover is a planned failover. = Switchover è un failover pianificato.',
@@ -6378,7 +6459,7 @@ export default {
             },
             {
               english: 'Split Brain',
-              italian: 'split brain / cluster diviso in due primari',
+              italian: 'cluster diviso in due primari (Split Brain)',
               pronunciation: '/splɪt breɪn/',
               phonetic: 'SPLIT-BREIN',
               example:
@@ -6389,7 +6470,7 @@ export default {
             },
             {
               english: 'Fencing',
-              italian: 'Fencing / Recinzione',
+              italian: 'Recinzione (Fencing)',
               pronunciation: '/ˈfensɪŋ/',
               phonetic: 'FEN-sing',
               example: 'Fencing isolates a failed node. = Il fencing isola un nodo fallito.',
@@ -6398,7 +6479,7 @@ export default {
             },
             {
               english: 'Heartbeat',
-              italian: 'Heartbeat / Battito',
+              italian: 'Battito (Heartbeat)',
               pronunciation: '/ˈhɑːrtbiːt/',
               phonetic: 'HART-bit',
               example:
@@ -6408,7 +6489,7 @@ export default {
             },
             {
               english: 'Quorum',
-              italian: 'quorum / soglia minima di nodi',
+              italian: 'soglia minima di nodi (Quorum)',
               pronunciation: '/ˈkwɔːrəm/',
               phonetic: 'KUO-rum',
               example: 'A quorum prevents split brain. = Un quorum previene split brain.',
@@ -6418,7 +6499,7 @@ export default {
             },
             {
               english: 'VIP',
-              italian: 'VIP / IP virtuale',
+              italian: 'IP virtuale (VIP)',
               pronunciation: '/ˌviː aɪ ˈpiː/',
               phonetic: 'VI-AI-PI',
               example: 'A VIP migrates with the primary. = Un VIP migra con il primario.',
@@ -6445,7 +6526,7 @@ export default {
             },
             {
               english: 'Hot Standby',
-              italian: 'hot standby / replica leggibile',
+              italian: 'replica leggibile (Hot Standby)',
               pronunciation: '/hɒt ˈstændbaɪ/',
               phonetic: 'HOT-STAND-bai',
               example:
@@ -6456,7 +6537,7 @@ export default {
             },
             {
               english: 'Warm Standby',
-              italian: 'warm standby / replica non leggibile',
+              italian: 'replica non leggibile (Warm Standby)',
               pronunciation: '/wɔːrm ˈstændbaɪ/',
               phonetic: 'UORM-STAND-bai',
               example:
@@ -6466,7 +6547,7 @@ export default {
             },
             {
               english: 'Cold Standby',
-              italian: 'cold standby / replica spenta',
+              italian: 'replica spenta (Cold Standby)',
               pronunciation: '/koʊld ˈstændbaɪ/',
               phonetic: 'KOLD-STAND-bai',
               example: 'A cold standby requires startup. = Un cold standby richiede avvio.',
@@ -6516,7 +6597,7 @@ export default {
             },
             {
               english: 'Multi-Master',
-              italian: 'multi-master / scrittura su più nodi',
+              italian: 'scrittura su più nodi (Multi-Master)',
               pronunciation: '/ˌmʌlti ˈmɑːstər/',
               phonetic: 'MAL-ti MAS-ter',
               example:
@@ -6527,7 +6608,7 @@ export default {
             },
             {
               english: 'Galera Cluster',
-              italian: 'Galera Cluster (cluster MySQL multi-master)',
+              italian: 'Cluster MySQL multi-master (Galera Cluster)',
               pronunciation: '/ɡəˈlerə ˈklʌstər/',
               phonetic: 'ga-LE-ra KLAS-ter',
               example:
@@ -6545,7 +6626,7 @@ export default {
           items: [
             {
               english: 'Patroni',
-              italian: 'Patroni (gestore HA per PostgreSQL)',
+              italian: 'Gestore HA per PostgreSQL (Patroni)',
               pronunciation: '/pəˈtroʊni/',
               phonetic: 'pa-TRO-ni',
               example: 'Patroni manages PostgreSQL HA. = Patroni gestisce HA di PostgreSQL.',
@@ -6556,7 +6637,7 @@ export default {
             },
             {
               english: 'pg_basebackup',
-              italian: 'pg_basebackup / backup fisico PostgreSQL',
+              italian: 'Backup fisico PostgreSQL (pg_basebackup)',
               pronunciation: '/piː dʒiː ˈbeɪsˌbækʌp/',
               phonetic: 'PI-GI-BEIS-bak-ap',
               example: 'pg_basebackup creates a base backup. = pg_basebackup crea un backup base.',
@@ -6567,7 +6648,7 @@ export default {
             },
             {
               english: 'PgBouncer',
-              italian: 'PgBouncer (connection pooler PostgreSQL)',
+              italian: 'Connection pooler PostgreSQL (PgBouncer)',
               pronunciation: '/piː dʒiː ˈbaʊnsər/',
               phonetic: 'PI-GI-BAUN-ser',
               example:
@@ -6578,7 +6659,7 @@ export default {
             },
             {
               english: 'Orchestrator',
-              italian: 'Orchestrator (HA manager MySQL)',
+              italian: 'HA manager MySQL (Orchestrator)',
               pronunciation: '/ˈɔːrkɪstreɪtər/',
               phonetic: 'OR-kes-trei-ter',
               example:
@@ -6589,7 +6670,7 @@ export default {
             },
             {
               english: 'MaxScale',
-              italian: 'MaxScale (proxy MariaDB)',
+              italian: 'Proxy MariaDB (MaxScale)',
               pronunciation: '/mæks skeɪl/',
               phonetic: 'MAKS-SKEIL',
               example: 'MaxScale is a MariaDB proxy. = MaxScale è un proxy per MariaDB.',
@@ -6599,7 +6680,7 @@ export default {
             },
             {
               english: 'Vitess',
-              italian: 'Vitess (sharding MySQL per scala)',
+              italian: 'Sharding MySQL per scala (Vitess)',
               pronunciation: '/ˈvaɪtes/',
               phonetic: 'VAI-tes',
               example: 'Vitess scales MySQL horizontally. = Vitess scala MySQL orizzontalmente.',
@@ -6610,7 +6691,7 @@ export default {
             },
             {
               english: 'Citus',
-              italian: 'Citus (estensione PostgreSQL distribuita)',
+              italian: 'Estensione PostgreSQL distribuita (Citus)',
               pronunciation: '/ˈsaɪtəs/',
               phonetic: 'SAI-tus',
               example:
@@ -6621,7 +6702,7 @@ export default {
             },
             {
               english: 'pglogical',
-              italian: 'pglogical (replica logica PostgreSQL)',
+              italian: 'Replica logica PostgreSQL (pglogical)',
               pronunciation: '/piː dʒiː ˈlɒdʒɪkl/',
               phonetic: 'PI-GI-LO-gi-kal',
               example:
@@ -6632,7 +6713,7 @@ export default {
             },
             {
               english: 'Slony',
-              italian: 'Slony (replica master-slave PostgreSQL)',
+              italian: 'Replica master-slave PostgreSQL (Slony)',
               pronunciation: '/ˈsloʊni/',
               phonetic: 'SLO-ni',
               example:
@@ -6670,7 +6751,7 @@ export default {
           items: [
             {
               english: 'Sharding',
-              italian: 'sharding / partizionamento orizzontale',
+              italian: 'partizionamento orizzontale (Sharding)',
               pronunciation: '/ˈʃɑːrdɪŋ/',
               phonetic: 'SCIAR-ding',
               example:
@@ -6681,7 +6762,7 @@ export default {
             },
             {
               english: 'Shard',
-              italian: 'Shard / Frammento',
+              italian: 'Frammento (Shard)',
               pronunciation: '/ʃɑːrd/',
               phonetic: 'SCIARD',
               example:
@@ -6814,7 +6895,7 @@ export default {
             },
             {
               english: 'Resharding',
-              italian: 'resharding / ridistribuzione degli shard',
+              italian: 'ridistribuzione degli shard (Resharding)',
               pronunciation: '/riːˈʃɑːrdɪŋ/',
               phonetic: 'ri-SCIAR-ding',
               example: 'Resharding redistributes data. = Il resharding ridistribuisce i dati.',
@@ -6865,7 +6946,7 @@ export default {
             },
             {
               english: 'Scatter-Gather',
-              italian: 'scatter-gather / disperdi e raccogli risultati',
+              italian: 'disperdi e raccogli risultati (Scatter-Gather)',
               pronunciation: '/ˈskætər ˈɡæðər/',
               phonetic: 'SKA-ter GA-der',
               example: 'Scatter-gather queries every shard. = Scatter-gather interroga ogni shard.',
@@ -6874,7 +6955,7 @@ export default {
             },
             {
               english: 'Hotspot',
-              italian: 'hotspot / punto di sovraccarico',
+              italian: 'punto di sovraccarico (Hotspot)',
               pronunciation: '/ˈhɒtspɒt/',
               phonetic: 'HOT-spot',
               example:
@@ -6936,7 +7017,7 @@ export default {
             },
             {
               english: 'Partition Pruning',
-              italian: 'partition pruning / esclusione partizioni inutili',
+              italian: 'esclusione partizioni inutili (Partition Pruning)',
               pronunciation: '/pɑːrˈtɪʃən ˈpruːnɪŋ/',
               phonetic: 'par-TI-scion PRU-ning',
               example:
@@ -7019,7 +7100,7 @@ export default {
             },
             {
               english: 'CockroachDB',
-              italian: 'CockroachDB (database SQL distribuito)',
+              italian: 'Database SQL distribuito (CockroachDB)',
               pronunciation: '/ˈkɒkroʊtʃ diː biː/',
               phonetic: 'KO-kroch DI-BI',
               example:
@@ -7030,7 +7111,7 @@ export default {
             },
             {
               english: 'YugabyteDB',
-              italian: 'YugabyteDB (database SQL distribuito)',
+              italian: 'Database SQL distribuito (YugabyteDB)',
               pronunciation: '/juːˈɡæbaɪt diː biː/',
               phonetic: 'iu-GA-bait DI-BI',
               example:
@@ -7061,7 +7142,7 @@ export default {
             },
             {
               english: 'Paxos',
-              italian: 'Paxos (algoritmo di consenso)',
+              italian: 'Algoritmo di consenso (Paxos)',
               pronunciation: '/ˈpæksɒs/',
               phonetic: 'PAK-sos',
               example:
@@ -7071,7 +7152,7 @@ export default {
             },
             {
               english: 'TrueTime',
-              italian: 'TrueTime / API tempo distribuito Google',
+              italian: 'API tempo distribuito Google (TrueTime)',
               pronunciation: '/truː taɪm/',
               phonetic: 'TRU-TAIM',
               example:
@@ -7092,7 +7173,7 @@ export default {
             },
             {
               english: 'Cross-Region',
-              italian: 'Cross-regione',
+              italian: 'Cross-regione (replica distribuita tra aree geografiche)',
               pronunciation: '/krɒs ˈriːdʒən/',
               phonetic: 'KROS RI-gion',
               example:
@@ -7128,7 +7209,7 @@ export default {
           items: [
             {
               english: 'JSONB',
-              italian: 'JSONB / JSON binario PostgreSQL',
+              italian: 'JSON binario PostgreSQL (JSONB)',
               pronunciation: '/ˈdʒeɪsən biː/',
               phonetic: 'GIEI-son-BI',
               example:
@@ -7151,7 +7232,7 @@ export default {
             },
             {
               english: 'HSTORE',
-              italian: 'HSTORE / mappa chiave-valore PostgreSQL',
+              italian: 'Mappa chiave-valore PostgreSQL (HSTORE)',
               pronunciation: '/ˈeɪtʃ stɔːr/',
               phonetic: 'EICH-STOR',
               example: 'HSTORE stores key-value pairs. = HSTORE memorizza coppie chiave-valore.',
@@ -7173,7 +7254,7 @@ export default {
             },
             {
               english: 'PostGIS',
-              italian: 'PostGIS (estensione geospaziale PostgreSQL)',
+              italian: 'Estensione geospaziale PostgreSQL (PostGIS)',
               pronunciation: '/poʊst dʒɪs/',
               phonetic: 'POST-GIS',
               example:
@@ -7196,7 +7277,7 @@ export default {
             },
             {
               english: 'Foreign Data Wrapper',
-              italian: 'foreign data wrapper / wrapper di dati esterni',
+              italian: 'wrapper di dati esterni (Foreign Data Wrapper)',
               pronunciation: '/ˈfɒrən ˈdeɪtə ˈræpər/',
               phonetic: 'FO-rin DEI-ta RA-per',
               example:
@@ -7208,7 +7289,7 @@ export default {
             },
             {
               english: 'Listen/Notify',
-              italian: 'LISTEN/NOTIFY / pub-sub PostgreSQL',
+              italian: 'pub-sub PostgreSQL (Listen/Notify)',
               pronunciation: '/ˈlɪsən ˈnoʊtɪfaɪ/',
               phonetic: 'LIS-en NO-ti-fai',
               example: 'LISTEN/NOTIFY enables pub/sub. = LISTEN/NOTIFY abilita pub/sub.',
@@ -7230,7 +7311,7 @@ export default {
             },
             {
               english: 'Tablespace',
-              italian: 'tablespace / spazio fisico tabelle',
+              italian: 'spazio fisico tabelle (Tablespace)',
               pronunciation: '/ˈteɪblspeɪs/',
               phonetic: 'TEI-bol-speis',
               example:
@@ -7249,7 +7330,7 @@ export default {
           items: [
             {
               english: 'InnoDB',
-              italian: 'InnoDB (motore di archiviazione transazionale MySQL)',
+              italian: 'Motore di archiviazione transazionale MySQL (InnoDB)',
               pronunciation: '/ˈɪnoʊ diː biː/',
               phonetic: 'IN-no-DI-BI',
               example: 'InnoDB is the default MySQL engine. = InnoDB è il motore MySQL di default.',
@@ -7260,7 +7341,7 @@ export default {
             },
             {
               english: 'MyISAM',
-              italian: 'MyISAM (motore archiviazione MySQL legacy)',
+              italian: 'Motore archiviazione MySQL legacy (MyISAM)',
               pronunciation: '/ˌmaɪ ˌaɪˈsæm/',
               phonetic: 'MAI-AI-SAM',
               example: 'MyISAM is the legacy MySQL engine. = MyISAM è il vecchio motore MySQL.',
@@ -7282,7 +7363,7 @@ export default {
             },
             {
               english: 'MariaDB',
-              italian: 'MariaDB (fork community di MySQL)',
+              italian: 'Fork community di MySQL (MariaDB)',
               pronunciation: '/məˈriːə diː biː/',
               phonetic: 'ma-RI-a-DI-BI',
               example:
@@ -7293,7 +7374,7 @@ export default {
             },
             {
               english: 'Binary Log',
-              italian: 'binary log / log binario delle modifiche',
+              italian: 'log binario delle modifiche (Binary Log)',
               pronunciation: '/ˈbaɪnəri lɔːɡ/',
               phonetic: 'BAI-na-ri LOG',
               example:
@@ -7306,7 +7387,7 @@ export default {
             },
             {
               english: 'GTID',
-              italian: 'GTID (Global Transaction ID)',
+              italian: 'Global Transaction ID (GTID)',
               pronunciation: '/dʒiː tiː aɪ ˈdiː/',
               phonetic: 'GI-TI-AI-DI',
               example: 'GTIDs simplify failover. = I GTID semplificano il failover.',
@@ -7318,7 +7399,7 @@ export default {
             },
             {
               english: 'Group Replication',
-              italian: 'Group Replication / replica di gruppo MySQL',
+              italian: 'Replica di gruppo MySQL (Group Replication)',
               pronunciation: '/ɡruːp ˌreplɪˈkeɪʃən/',
               phonetic: 'GRUP re-pli-KEI-scion',
               example:
@@ -7329,7 +7410,7 @@ export default {
             },
             {
               english: 'Performance Schema',
-              italian: 'Performance Schema / schema metriche MySQL',
+              italian: 'Schema metriche MySQL (Performance Schema)',
               pronunciation: '/pərˈfɔːrməns ˈskiːmə/',
               phonetic: 'per-FOR-mans SKII-ma',
               example:
@@ -7351,7 +7432,7 @@ export default {
             },
             {
               english: 'mysqlbinlog',
-              italian: 'mysqlbinlog / utility di lettura binlog',
+              italian: 'Utility di lettura binlog (mysqlbinlog)',
               pronunciation: '/ˌmaɪ ˌes kjuː el ˈbaɪnlɒɡ/',
               phonetic: 'MAI-ES-KIU-EL-BAIN-log',
               example: 'mysqlbinlog reads binary logs. = mysqlbinlog legge i binary log.',
@@ -7369,7 +7450,7 @@ export default {
           items: [
             {
               english: 'Oracle Database',
-              italian: 'Oracle Database (RDBMS commerciale)',
+              italian: 'RDBMS commerciale (Oracle Database)',
               pronunciation: '/ˈɒrəkl ˈdeɪtəbeɪs/',
               phonetic: 'O-ra-kol DEI-ta-beis',
               example: 'Oracle is enterprise-grade RDBMS. = Oracle è un RDBMS enterprise.',
@@ -7380,7 +7461,7 @@ export default {
             },
             {
               english: 'SQL Server',
-              italian: 'SQL Server (RDBMS Microsoft)',
+              italian: 'RDBMS Microsoft (SQL Server)',
               pronunciation: '/ˌes kjuː ˈel ˈsɜːrvər/',
               phonetic: 'ES-KIU-EL SER-ver',
               example: "SQL Server is Microsoft's RDBMS. = SQL Server è il RDBMS di Microsoft.",
@@ -7390,7 +7471,7 @@ export default {
             },
             {
               english: 'T-SQL',
-              italian: 'T-SQL / Transact-SQL (dialetto Microsoft)',
+              italian: 'Transact-SQL, dialetto Microsoft (T-SQL)',
               pronunciation: '/tiː ˌes kjuː ˈel/',
               phonetic: 'TI-ES-KIU-EL',
               example: 'T-SQL is the SQL Server dialect. = T-SQL è il dialetto SQL Server.',
@@ -7401,7 +7482,7 @@ export default {
             },
             {
               english: 'sqlcmd',
-              italian: 'sqlcmd (CLI SQL Server)',
+              italian: 'CLI SQL Server (sqlcmd)',
               pronunciation: '/ˌes kjuː el siː em ˈdiː/',
               phonetic: 'ES-KIU-EL-SI-EM-DI',
               example: 'sqlcmd is the SQL Server CLI. = sqlcmd è il CLI di SQL Server.',
@@ -7423,7 +7504,7 @@ export default {
             },
             {
               english: 'PDB',
-              italian: 'PDB / Pluggable Database',
+              italian: 'Pluggable Database (PDB)',
               pronunciation: '/piː diː ˈbiː/',
               phonetic: 'PI-DI-BI',
               example: 'PDBs are pluggable databases. = I PDB sono database pluggabili.',
@@ -7434,7 +7515,7 @@ export default {
             },
             {
               english: 'CDB',
-              italian: 'CDB / Container Database',
+              italian: 'Container Database (CDB)',
               pronunciation: '/siː diː ˈbiː/',
               phonetic: 'SI-DI-BI',
               example: 'A CDB hosts multiple PDBs. = Un CDB ospita più PDB.',
@@ -7444,7 +7525,7 @@ export default {
             },
             {
               english: 'Always On',
-              italian: 'Always On / alta disponibilità SQL Server',
+              italian: 'Alta disponibilità SQL Server (Always On)',
               pronunciation: '/ˈɔːlweɪz ɒn/',
               phonetic: 'OL-ueiz ON',
               example: 'Always On provides SQL Server HA. = Always On fornisce HA per SQL Server.',
@@ -7455,7 +7536,7 @@ export default {
             },
             {
               english: 'RAC',
-              italian: 'RAC / Real Application Clusters',
+              italian: 'Real Application Clusters (RAC)',
               pronunciation: '/ræk/',
               phonetic: 'RAK',
               example:
@@ -7466,7 +7547,7 @@ export default {
             },
             {
               english: 'Data Guard',
-              italian: 'Data Guard / disaster recovery Oracle',
+              italian: 'Disaster recovery Oracle (Data Guard)',
               pronunciation: '/ˈdeɪtə ɡɑːrd/',
               phonetic: 'DEI-ta GARD',
               example: 'Data Guard provides Oracle DR. = Data Guard fornisce DR per Oracle.',
@@ -7483,7 +7564,7 @@ export default {
           items: [
             {
               english: 'ANSI SQL',
-              italian: 'ANSI SQL / standard SQL',
+              italian: 'Standard SQL (ANSI SQL)',
               pronunciation: '/ˈænsi ˌes kjuː ˈel/',
               phonetic: 'AN-si-ES-KIU-EL',
               example: 'ANSI SQL is the standard. = ANSI SQL è lo standard.',
@@ -7493,7 +7574,7 @@ export default {
             },
             {
               english: 'SQL:2016',
-              italian: 'SQL:2016 / standard SQL del 2016',
+              italian: 'Standard SQL del 2016 (SQL:2016)',
               pronunciation: '/ˌes kjuː ˈel tuː ˈθaʊzənd ˈsɪkstiːn/',
               phonetic: 'ES-KIU-EL-2016',
               example: 'SQL:2016 added JSON features. = SQL:2016 ha aggiunto funzionalità JSON.',
@@ -7521,7 +7602,7 @@ export default {
             },
             {
               english: 'Vendor Lock-in',
-              italian: 'vendor lock-in / blocco da fornitore',
+              italian: 'blocco da fornitore (Vendor Lock-in)',
               pronunciation: '/ˈvendər lɒk ɪn/',
               phonetic: 'VEN-dor LOK-IN',
               example:
@@ -7531,7 +7612,7 @@ export default {
             },
             {
               english: 'OLTP',
-              italian: 'OLTP / elaborazione transazionale online',
+              italian: 'Elaborazione transazionale online (OLTP)',
               pronunciation: '/ˌoʊ el tiː ˈpiː/',
               phonetic: 'O-EL-TI-PI',
               example:
@@ -7542,7 +7623,7 @@ export default {
             },
             {
               english: 'OLAP',
-              italian: 'OLAP / elaborazione analitica online',
+              italian: 'Elaborazione analitica online (OLAP)',
               pronunciation: '/ˌoʊ el ˈæp/',
               phonetic: 'O-LAP',
               example: 'OLAP handles analytical queries. = OLAP gestisce query analitiche.',
@@ -7552,7 +7633,7 @@ export default {
             },
             {
               english: 'HTAP',
-              italian: 'HTAP / elaborazione ibrida transazionale e analitica',
+              italian: 'Elaborazione ibrida transazionale e analitica (HTAP)',
               pronunciation: '/ˌeɪtʃ tiː eɪ ˈpiː/',
               phonetic: 'EICH-TI-EI-PI',
               example: 'HTAP combines OLTP and OLAP. = HTAP combina OLTP e OLAP.',
@@ -7562,7 +7643,7 @@ export default {
             },
             {
               english: 'DDL',
-              italian: 'DDL / Data Definition Language',
+              italian: 'Data Definition Language (DDL)',
               pronunciation: '/ˌdiː diː ˈel/',
               phonetic: 'DI-DI-EL',
               example:
@@ -7572,7 +7653,7 @@ export default {
             },
             {
               english: 'DML',
-              italian: 'DML / Data Manipulation Language',
+              italian: 'Data Manipulation Language (DML)',
               pronunciation: '/ˌdiː em ˈel/',
               phonetic: 'DI-EM-EL',
               example:
@@ -7777,7 +7858,7 @@ export default {
             },
             {
               english: 'Bitemporal',
-              italian: 'Bitemporale',
+              italian: 'Bitemporale (modello con tempo di validità e tempo di registrazione)',
               pronunciation: '/ˌbaɪˈtempərəl/',
               phonetic: 'bai-TEM-po-ral',
               example:
@@ -7798,7 +7879,7 @@ export default {
             },
             {
               english: 'Mini Dimension',
-              italian: 'Mini dimensione',
+              italian: 'Mini dimensione (tabella separata per attributi che cambiano spesso)',
               pronunciation: '/ˈmɪni dɪˈmenʃən/',
               phonetic: 'MI-ni di-MEN-scion',
               example:
@@ -7825,7 +7906,7 @@ export default {
           items: [
             {
               english: 'Data Warehouse',
-              italian: 'data warehouse / magazzino dati analitico',
+              italian: 'magazzino dati analitico (Data Warehouse)',
               pronunciation: '/ˈdeɪtə ˈwerhaʊs/',
               phonetic: 'DEI-ta UER-haus',
               example:
@@ -7836,7 +7917,7 @@ export default {
             },
             {
               english: 'Data Mart',
-              italian: 'data mart / sottoinsieme tematico del DWH',
+              italian: 'sottoinsieme tematico del DWH (Data Mart)',
               pronunciation: '/ˈdeɪtə mɑːrt/',
               phonetic: 'DEI-ta MART',
               example:
@@ -7847,7 +7928,7 @@ export default {
             },
             {
               english: 'Data Lake',
-              italian: 'data lake / lago dati grezzi',
+              italian: 'lago dati grezzi (Data Lake)',
               pronunciation: '/ˈdeɪtə leɪk/',
               phonetic: 'DEI-ta LEIK',
               example: 'A data lake stores raw data. = Un data lake memorizza dati grezzi.',
@@ -7857,7 +7938,7 @@ export default {
             },
             {
               english: 'Data Lakehouse',
-              italian: 'data lakehouse / ibrido lake + warehouse',
+              italian: 'ibrido lake + warehouse (Data Lakehouse)',
               pronunciation: '/ˈdeɪtə leɪkhaʊs/',
               phonetic: 'DEI-ta LEIK-haus',
               example:
@@ -7890,7 +7971,7 @@ export default {
             },
             {
               english: 'Data Vault',
-              italian: 'data vault / metodologia modellazione DWH',
+              italian: 'metodologia modellazione DWH (Data Vault)',
               pronunciation: '/ˈdeɪtə vɔːlt/',
               phonetic: 'DEI-ta VOLT',
               example:
@@ -7968,7 +8049,7 @@ export default {
             },
             {
               english: 'EAV',
-              italian: 'EAV / Entity-Attribute-Value',
+              italian: 'Entity-Attribute-Value (EAV)',
               pronunciation: '/ˌiː eɪ ˈviː/',
               phonetic: 'I-EI-VI',
               example:
@@ -8012,7 +8093,7 @@ export default {
             },
             {
               english: 'Closure Table',
-              italian: 'closure table / tabella di chiusura per gerarchie',
+              italian: 'tabella di chiusura per gerarchie (Closure Table)',
               pronunciation: '/ˈkloʊʒər ˈteɪbl/',
               phonetic: 'KLO-jer TEI-bol',
               example:
@@ -8032,7 +8113,7 @@ export default {
             },
             {
               english: 'OBT',
-              italian: 'OBT / One Big Table',
+              italian: 'One Big Table (OBT)',
               pronunciation: '/oʊ biː ˈtiː/',
               phonetic: 'O-BI-TI',
               example:
@@ -8059,7 +8140,7 @@ export default {
           items: [
             {
               english: 'SQL Injection',
-              italian: 'SQL injection / iniezione di codice SQL',
+              italian: 'iniezione di codice SQL (SQL Injection)',
               pronunciation: '/ˌes kjuː el ɪnˈdʒekʃən/',
               phonetic: 'ES-KIU-EL in-GEK-scion',
               example: 'SQL injection attacks via input. = SQL injection attacca tramite input.',
@@ -8082,7 +8163,7 @@ export default {
             },
             {
               english: 'Prepared Statement',
-              italian: 'prepared statement / istruzione preparata',
+              italian: 'istruzione preparata (Prepared Statement)',
               pronunciation: '/prɪˈpeərd ˈsteɪtmənt/',
               phonetic: 'pri-PERD STEIT-ment',
               example:
@@ -8103,7 +8184,7 @@ export default {
             },
             {
               english: 'Escape',
-              italian: 'Escape / Sequenza di escape',
+              italian: 'Sequenza di escape (Escape)',
               pronunciation: '/ɪˈskeɪp/',
               phonetic: 'es-KEIP',
               example:
@@ -8123,7 +8204,7 @@ export default {
             },
             {
               english: 'Allowlist',
-              italian: 'allowlist / lista bianca di consentiti',
+              italian: 'lista bianca di consentiti (Allowlist)',
               pronunciation: '/əˈlaʊlɪst/',
               phonetic: 'a-LAU-list',
               example: "Use an allowlist for table names. = Usa un'allowlist per nomi di tabella.",
@@ -8133,7 +8214,7 @@ export default {
             },
             {
               english: 'Blind SQL Injection',
-              italian: 'blind SQL injection / iniezione SQL alla cieca',
+              italian: 'iniezione SQL alla cieca (Blind SQL Injection)',
               pronunciation: '/blaɪnd ˌes kjuː el ɪnˈdʒekʃən/',
               phonetic: 'BLAIND ES-KIU-EL in-GEK-scion',
               example:
@@ -8154,7 +8235,7 @@ export default {
             },
             {
               english: 'sqlmap',
-              italian: 'sqlmap / strumento automatico di SQL injection',
+              italian: 'Strumento automatico di SQL injection (sqlmap)',
               pronunciation: '/ˌes kjuː el mæp/',
               phonetic: 'ES-KIU-EL-MAP',
               example:
@@ -8193,7 +8274,7 @@ export default {
             },
             {
               english: 'TDE',
-              italian: 'TDE / Crittografia trasparente',
+              italian: 'Crittografia trasparente (TDE)',
               pronunciation: '/ˌtiː diː ˈiː/',
               phonetic: 'TI-DI-I',
               example: 'TDE encrypts files transparently. = TDE cifra i file in modo trasparente.',
@@ -8216,7 +8297,7 @@ export default {
             },
             {
               english: 'pgcrypto',
-              italian: 'pgcrypto / estensione crittografica PostgreSQL',
+              italian: 'Estensione crittografica PostgreSQL (pgcrypto)',
               pronunciation: '/piː dʒiː ˈkrɪptoʊ/',
               phonetic: 'PI-GI-KRIP-to',
               example:
@@ -8260,7 +8341,7 @@ export default {
             },
             {
               english: 'KMS',
-              italian: 'KMS / Key Management Service',
+              italian: 'Key Management Service (KMS)',
               pronunciation: '/keɪ em ˈes/',
               phonetic: 'KEI-EM-ES',
               example:
@@ -8290,7 +8371,7 @@ export default {
           items: [
             {
               english: 'Auditing',
-              italian: 'auditing / registrazione delle azioni',
+              italian: 'registrazione delle azioni (Auditing)',
               pronunciation: '/ˈɔːdɪtɪŋ/',
               phonetic: 'O-di-ting',
               example:
@@ -8310,7 +8391,7 @@ export default {
             },
             {
               english: 'pgaudit',
-              italian: 'pgaudit / estensione di audit PostgreSQL',
+              italian: 'Estensione di audit PostgreSQL (pgaudit)',
               pronunciation: '/piː dʒiː ˈɔːdɪt/',
               phonetic: 'PI-GI-O-dit',
               example:
@@ -8331,7 +8412,7 @@ export default {
             },
             {
               english: 'GDPR',
-              italian: 'GDPR (Regolamento UE protezione dati)',
+              italian: 'Regolamento UE protezione dati (GDPR)',
               pronunciation: '/ˌdʒiː diː piː ˈɑːr/',
               phonetic: 'GI-DI-PI-AR',
               example: 'GDPR mandates data protection. = Il GDPR impone la protezione dei dati.',
@@ -8341,7 +8422,7 @@ export default {
             },
             {
               english: 'PII',
-              italian: 'PII / Dati personali',
+              italian: 'Dati personali (PII)',
               pronunciation: '/piː aɪ ˈaɪ/',
               phonetic: 'PI-AI-AI',
               example: 'Encrypt PII at rest. = Cifra i PII a riposo.',
@@ -8421,7 +8502,7 @@ export default {
             },
             {
               english: 'RBAC',
-              italian: 'RBAC / Controllo accessi basato su ruoli',
+              italian: 'Controllo accessi basato su ruoli (RBAC)',
               pronunciation: '/ɑːr bæk/',
               phonetic: 'AR-BAK',
               example: 'RBAC assigns roles to users. = RBAC assegna ruoli agli utenti.',
@@ -8431,7 +8512,7 @@ export default {
             },
             {
               english: 'ABAC',
-              italian: 'ABAC / Controllo accessi basato su attributi',
+              italian: 'Controllo accessi basato su attributi (ABAC)',
               pronunciation: '/eɪ bæk/',
               phonetic: 'EI-BAK',
               example:
@@ -8442,7 +8523,7 @@ export default {
             },
             {
               english: 'Privilege Escalation',
-              italian: 'privilege escalation / scalata di privilegi',
+              italian: 'scalata di privilegi (Privilege Escalation)',
               pronunciation: '/ˈprɪvəlɪdʒ ˌeskəˈleɪʃən/',
               phonetic: 'PRI-ve-lig es-ka-LEI-scion',
               example:
@@ -8452,7 +8533,7 @@ export default {
             },
             {
               english: 'SECURITY DEFINER',
-              italian: 'SECURITY DEFINER / funzione che gira come il creatore',
+              italian: 'Funzione che gira come il creatore (SECURITY DEFINER)',
               pronunciation: '/sɪˈkjʊərɪti dɪˈfaɪnər/',
               phonetic: 'si-KIU-ri-ti di-FAI-ner',
               example:
@@ -8525,7 +8606,7 @@ export default {
           items: [
             {
               english: 'RDS',
-              italian: 'RDS / Relational Database Service',
+              italian: 'Relational Database Service (RDS)',
               pronunciation: '/ɑːr diː ˈes/',
               phonetic: 'AR-DI-ES',
               example:
@@ -8536,7 +8617,7 @@ export default {
             },
             {
               english: 'Aurora',
-              italian: 'Aurora (database AWS compatibile MySQL/Postgres)',
+              italian: 'Database AWS compatibile MySQL/Postgres (Aurora)',
               pronunciation: '/əˈrɔːrə/',
               phonetic: 'a-RO-ra',
               example: "Aurora is AWS's cloud-native DB. = Aurora è il DB cloud-native di AWS.",
@@ -8547,7 +8628,7 @@ export default {
             },
             {
               english: 'DynamoDB',
-              italian: 'DynamoDB (database NoSQL chiave-valore AWS)',
+              italian: 'Database NoSQL chiave-valore AWS (DynamoDB)',
               pronunciation: '/daɪˈnæmoʊ diː biː/',
               phonetic: 'dai-NA-mo-DI-BI',
               example:
@@ -8558,7 +8639,7 @@ export default {
             },
             {
               english: 'Redshift',
-              italian: 'Redshift (data warehouse AWS)',
+              italian: 'Data warehouse AWS (Redshift)',
               pronunciation: '/ˈredʃɪft/',
               phonetic: 'RED-scift',
               example: "Redshift is AWS's data warehouse. = Redshift è il data warehouse di AWS.",
@@ -8568,7 +8649,7 @@ export default {
             },
             {
               english: 'ElastiCache',
-              italian: 'ElastiCache (cache gestita AWS)',
+              italian: 'Cache gestita AWS (ElastiCache)',
               pronunciation: '/ɪˈlæstɪ kæʃ/',
               phonetic: 'e-LAS-ti-KASH',
               example:
@@ -8579,7 +8660,7 @@ export default {
             },
             {
               english: 'Aurora Serverless',
-              italian: 'Aurora Serverless (Aurora a scaling automatico)',
+              italian: 'Aurora a scaling automatico (Aurora Serverless)',
               pronunciation: '/əˈrɔːrə ˈsɜːrvərles/',
               phonetic: 'a-RO-ra SER-ver-les',
               example:
@@ -8590,7 +8671,7 @@ export default {
             },
             {
               english: 'DAX',
-              italian: 'DAX / Cache DynamoDB',
+              italian: 'Cache DynamoDB (DAX)',
               pronunciation: '/dæks/',
               phonetic: 'DAKS',
               example: 'DAX caches DynamoDB reads. = DAX mette in cache letture DynamoDB.',
@@ -8600,7 +8681,7 @@ export default {
             },
             {
               english: 'Multi-AZ',
-              italian: 'multi-AZ / replica su più zone di disponibilità',
+              italian: 'replica su più zone di disponibilità (Multi-AZ)',
               pronunciation: '/ˈmʌlti eɪ zed/',
               phonetic: 'MAL-ti EI-ZED',
               example:
@@ -8621,7 +8702,7 @@ export default {
             },
             {
               english: 'Global Tables',
-              italian: 'Global Tables / tabelle DynamoDB multi-regione',
+              italian: 'Tabelle DynamoDB multi-regione (Global Tables)',
               pronunciation: '/ˈɡloʊbl ˈteɪblz/',
               phonetic: 'GLO-bal TEI-bolz',
               example:
@@ -8639,7 +8720,7 @@ export default {
           items: [
             {
               english: 'Azure SQL Database',
-              italian: 'Azure SQL Database (RDBMS gestito Azure)',
+              italian: 'RDBMS gestito Azure (Azure SQL Database)',
               pronunciation: '/ˈæʒər ˌes kjuː ˈel/',
               phonetic: 'A-jer-ES-KIU-EL',
               example: 'Azure SQL is managed SQL Server. = Azure SQL è SQL Server gestito.',
@@ -8649,7 +8730,7 @@ export default {
             },
             {
               english: 'Cosmos DB',
-              italian: 'Cosmos DB (database multi-modello Azure)',
+              italian: 'Database multi-modello Azure (Cosmos DB)',
               pronunciation: '/ˈkɒzmɒs diː biː/',
               phonetic: 'KOZ-mos-DI-BI',
               example:
@@ -8661,7 +8742,7 @@ export default {
             },
             {
               english: 'Cloud Spanner',
-              italian: 'Cloud Spanner (database SQL globale Google)',
+              italian: 'Database SQL globale Google (Cloud Spanner)',
               pronunciation: '/klaʊd ˈspænər/',
               phonetic: 'KLAUD SPAN-ner',
               example:
@@ -8672,7 +8753,7 @@ export default {
             },
             {
               english: 'Cloud SQL',
-              italian: 'Cloud SQL (RDBMS gestito Google)',
+              italian: 'RDBMS gestito Google (Cloud SQL)',
               pronunciation: '/klaʊd ˌes kjuː ˈel/',
               phonetic: 'KLAUD-ES-KIU-EL',
               example:
@@ -8683,7 +8764,7 @@ export default {
             },
             {
               english: 'BigQuery',
-              italian: 'BigQuery (data warehouse Google)',
+              italian: 'Data warehouse Google (BigQuery)',
               pronunciation: '/bɪɡ ˈkwɪəri/',
               phonetic: 'BIG-KUI-ri',
               example:
@@ -8694,7 +8775,7 @@ export default {
             },
             {
               english: 'Bigtable',
-              italian: 'Bigtable (database wide-column Google)',
+              italian: 'Database wide-column Google (Bigtable)',
               pronunciation: '/bɪɡˈteɪbl/',
               phonetic: 'BIG-TEI-bol',
               example:
@@ -8705,7 +8786,7 @@ export default {
             },
             {
               english: 'Firestore',
-              italian: 'Firestore (database documentale serverless Google)',
+              italian: 'Database documentale serverless Google (Firestore)',
               pronunciation: '/ˈfaɪərstɔːr/',
               phonetic: 'FAI-er-STOR',
               example:
@@ -8716,7 +8797,7 @@ export default {
             },
             {
               english: 'Memorystore',
-              italian: 'Memorystore (Redis/Memcached gestito Google)',
+              italian: 'Redis/Memcached gestito Google (Memorystore)',
               pronunciation: '/ˈmeməri stɔːr/',
               phonetic: 'ME-mo-ri-STOR',
               example: 'Memorystore is managed Redis on GCP. = Memorystore è Redis gestito su GCP.',
@@ -8726,7 +8807,7 @@ export default {
             },
             {
               english: 'Azure Database for PostgreSQL',
-              italian: 'Azure Database for PostgreSQL (servizio Azure)',
+              italian: 'Servizio Azure per PostgreSQL (Azure Database for PostgreSQL)',
               pronunciation: '/ˈæʒər ˈdeɪtəbeɪs/',
               phonetic: 'A-jer DEI-ta-beis',
               example: 'Azure offers managed PostgreSQL. = Azure offre PostgreSQL gestito.',
@@ -8736,7 +8817,7 @@ export default {
             },
             {
               english: 'Hyperscale',
-              italian: 'Hyperscale / variante Azure ad alta scalabilità',
+              italian: 'Variante Azure ad alta scalabilità (Hyperscale)',
               pronunciation: '/ˈhaɪpərˌskeɪl/',
               phonetic: 'HAI-per-SKEIL',
               example: 'Azure Hyperscale uses Citus. = Azure Hyperscale usa Citus.',
@@ -8774,7 +8855,7 @@ export default {
             },
             {
               english: 'Cold Start',
-              italian: 'cold start / partenza a freddo',
+              italian: 'partenza a freddo (Cold Start)',
               pronunciation: '/koʊld stɑːrt/',
               phonetic: 'KOLD-START',
               example:
@@ -8784,7 +8865,7 @@ export default {
             },
             {
               english: 'Neon',
-              italian: 'Neon (PostgreSQL serverless cloud)',
+              italian: 'PostgreSQL serverless cloud (Neon)',
               pronunciation: '/ˈniːɒn/',
               phonetic: 'NI-on',
               example: 'Neon is serverless PostgreSQL. = Neon è PostgreSQL serverless.',
@@ -8794,7 +8875,7 @@ export default {
             },
             {
               english: 'PlanetScale',
-              italian: 'PlanetScale (MySQL serverless basato su Vitess)',
+              italian: 'MySQL serverless basato su Vitess (PlanetScale)',
               pronunciation: '/ˈplænɪt skeɪl/',
               phonetic: 'PLA-net-SKEIL',
               example: 'PlanetScale is serverless MySQL. = PlanetScale è MySQL serverless.',
@@ -8804,7 +8885,7 @@ export default {
             },
             {
               english: 'Branch',
-              italian: 'Branch / Ramo',
+              italian: 'Ramo (Branch)',
               pronunciation: '/bræntʃ/',
               phonetic: 'BRANC',
               example:
@@ -8846,7 +8927,7 @@ export default {
             },
             {
               english: 'On-Demand',
-              italian: 'on-demand / pagamento a richiesta',
+              italian: 'pagamento a richiesta (On-Demand)',
               pronunciation: '/ɒn dɪˈmænd/',
               phonetic: 'ON-di-MAND',
               example:
@@ -8872,7 +8953,7 @@ export default {
             },
             {
               english: 'Snapshot',
-              italian: 'snapshot / istantanea di stato',
+              italian: 'istantanea di stato (Snapshot)',
               pronunciation: '/ˈsnæpʃɒt/',
               phonetic: 'SNAP-scot',
               example: 'Take snapshots before changes. = Fai snapshot prima dei cambiamenti.',
@@ -8902,7 +8983,7 @@ export default {
             },
             {
               english: 'Region',
-              italian: 'Regione',
+              italian: 'Regione cloud (area geografica del data center)',
               pronunciation: '/ˈriːdʒən/',
               phonetic: 'RI-gion',
               example:
@@ -8922,7 +9003,7 @@ export default {
             },
             {
               english: 'VPC',
-              italian: 'VPC / Virtual Private Cloud',
+              italian: 'Virtual Private Cloud (VPC)',
               pronunciation: '/viː piː ˈsiː/',
               phonetic: 'VI-PI-SI',
               example: 'Run databases in a VPC. = Esegui database in una VPC.',
@@ -8953,7 +9034,7 @@ export default {
             },
             {
               english: 'Performance Insights',
-              italian: 'Performance Insights / strumento monitoring AWS',
+              italian: 'Strumento monitoring AWS (Performance Insights)',
               pronunciation: '/pərˈfɔːrməns ˈɪnsaɪts/',
               phonetic: 'per-FOR-mans IN-saits',
               example: 'Performance Insights monitors RDS. = Performance Insights monitora RDS.',
@@ -9022,7 +9103,7 @@ export default {
             },
             {
               english: 'Property Graph',
-              italian: 'property graph / grafo con proprietà',
+              italian: 'grafo con proprietà (Property Graph)',
               pronunciation: '/ˈprɒpərti ɡræf/',
               phonetic: 'PRO-per-ti GRAF',
               example:
@@ -9032,7 +9113,7 @@ export default {
             },
             {
               english: 'RDF',
-              italian: 'RDF (modello di grafo a triple)',
+              italian: 'Modello di grafo a triple (RDF)',
               pronunciation: '/ɑːr diː ˈef/',
               phonetic: 'AR-DI-EF',
               example: 'RDF represents graphs as triples. = RDF rappresenta grafi come triple.',
@@ -9090,7 +9171,7 @@ export default {
           items: [
             {
               english: 'Cypher',
-              italian: 'Cypher (linguaggio query Neo4j)',
+              italian: 'Linguaggio query Neo4j (Cypher)',
               pronunciation: '/ˈsaɪfər/',
               phonetic: 'SAI-fer',
               example:
@@ -9102,7 +9183,7 @@ export default {
             },
             {
               english: 'MATCH',
-              italian: 'MATCH / Trova',
+              italian: 'Trova (MATCH)',
               pronunciation: '/mætʃ/',
               phonetic: 'MAC',
               example: 'MATCH finds patterns in the graph. = MATCH trova pattern nel grafo.',
@@ -9124,7 +9205,7 @@ export default {
             },
             {
               english: 'MERGE',
-              italian: 'MERGE / Crea o trova',
+              italian: 'Crea o trova (MERGE)',
               pronunciation: '/mɜːrdʒ/',
               phonetic: 'MERG',
               example: 'MERGE creates if not exists. = MERGE crea se non esiste.',
@@ -9135,7 +9216,7 @@ export default {
             },
             {
               english: 'RETURN',
-              italian: 'RETURN / Restituisci',
+              italian: 'Restituisci (RETURN)',
               pronunciation: '/rɪˈtɜːrn/',
               phonetic: 'ri-TERN',
               example: 'RETURN outputs query results. = RETURN produce risultati della query.',
@@ -9146,7 +9227,7 @@ export default {
             },
             {
               english: 'Pattern',
-              italian: 'pattern / schema',
+              italian: 'schema (Pattern)',
               pronunciation: '/ˈpætərn/',
               phonetic: 'PA-tern',
               example:
@@ -9180,7 +9261,7 @@ export default {
             },
             {
               english: 'WITH',
-              italian: 'WITH (pipeline)',
+              italian: 'Pipeline di risultati (WITH)',
               pronunciation: '/wɪð/',
               phonetic: 'UID',
               example: 'WITH chains query parts. = WITH concatena parti della query.',
@@ -9191,7 +9272,7 @@ export default {
             },
             {
               english: 'APOC',
-              italian: 'APOC (libreria di procedure Neo4j)',
+              italian: 'Libreria di procedure Neo4j (APOC)',
               pronunciation: '/ˈeɪ pɒk/',
               phonetic: 'EI-POK',
               example: 'APOC adds Neo4j procedures. = APOC aggiunge procedure Neo4j.',
@@ -9209,7 +9290,7 @@ export default {
           items: [
             {
               english: 'PageRank',
-              italian: 'PageRank (algoritmo Google di ranking)',
+              italian: 'Algoritmo Google di ranking (PageRank)',
               pronunciation: '/ˈpeɪdʒræŋk/',
               phonetic: 'PEIG-rank',
               example:
@@ -9241,7 +9322,7 @@ export default {
             },
             {
               english: 'BFS',
-              italian: 'BFS / Ricerca in ampiezza',
+              italian: 'Ricerca in ampiezza (BFS)',
               pronunciation: '/biː ef ˈes/',
               phonetic: 'BI-EF-ES',
               example: 'BFS explores level by level. = BFS esplora livello per livello.',
@@ -9251,7 +9332,7 @@ export default {
             },
             {
               english: 'DFS',
-              italian: 'DFS / Ricerca in profondità',
+              italian: 'Ricerca in profondità (DFS)',
               pronunciation: '/diː ef ˈes/',
               phonetic: 'DI-EF-ES',
               example: 'DFS goes deep first. = DFS va prima in profondità.',
@@ -9261,7 +9342,7 @@ export default {
             },
             {
               english: 'Dijkstra',
-              italian: 'Dijkstra (algoritmo cammini minimi)',
+              italian: 'Algoritmo cammini minimi (Dijkstra)',
               pronunciation: '/ˈdaɪkstrə/',
               phonetic: 'DAIKS-tra',
               example:
@@ -9300,7 +9381,7 @@ export default {
             },
             {
               english: 'Knowledge Graph',
-              italian: 'knowledge graph / grafo della conoscenza',
+              italian: 'grafo della conoscenza (Knowledge Graph)',
               pronunciation: '/ˈnɒlɪdʒ ɡræf/',
               phonetic: 'NO-lig GRAF',
               example: 'Knowledge graphs connect facts. = I knowledge graph connettono fatti.',
@@ -9317,7 +9398,7 @@ export default {
           items: [
             {
               english: 'Neo4j',
-              italian: 'Neo4j (database a grafo)',
+              italian: 'Database a grafo (Neo4j)',
               pronunciation: '/ˈniːoʊ fɔːr ˈdʒeɪ/',
               phonetic: 'NIO-FOR-GEI',
               example: 'Neo4j is the leading graph DB. = Neo4j è il principale DB a grafo.',
@@ -9328,7 +9409,7 @@ export default {
             },
             {
               english: 'ArangoDB',
-              italian: 'ArangoDB (database multi-modello)',
+              italian: 'Database multi-modello (ArangoDB)',
               pronunciation: '/əˈræŋɡoʊ diː biː/',
               phonetic: 'a-RAN-go-DI-BI',
               example: 'ArangoDB is multi-model with graphs. = ArangoDB è multi-modello con grafi.',
@@ -9338,7 +9419,7 @@ export default {
             },
             {
               english: 'JanusGraph',
-              italian: 'JanusGraph (database a grafo distribuito)',
+              italian: 'Database a grafo distribuito (JanusGraph)',
               pronunciation: '/ˈdʒeɪnəs ɡræf/',
               phonetic: 'GIEI-nus GRAF',
               example:
@@ -9349,7 +9430,7 @@ export default {
             },
             {
               english: 'Amazon Neptune',
-              italian: 'Amazon Neptune (database a grafo AWS)',
+              italian: 'Database a grafo AWS (Amazon Neptune)',
               pronunciation: '/ˈæməzən ˈneptjuːn/',
               phonetic: 'A-ma-zon NEP-tiun',
               example:
@@ -9360,7 +9441,7 @@ export default {
             },
             {
               english: 'Gremlin',
-              italian: 'Gremlin (linguaggio query grafi)',
+              italian: 'Linguaggio query grafi (Gremlin)',
               pronunciation: '/ˈɡremlɪn/',
               phonetic: 'GREM-lin',
               example:
@@ -9372,7 +9453,7 @@ export default {
             },
             {
               english: 'TinkerPop',
-              italian: 'TinkerPop (framework grafi Apache)',
+              italian: 'Framework grafi Apache (TinkerPop)',
               pronunciation: '/ˈtɪŋkərpɒp/',
               phonetic: 'TIN-ker-pop',
               example:
@@ -9383,7 +9464,7 @@ export default {
             },
             {
               english: 'SPARQL',
-              italian: 'SPARQL (linguaggio query RDF)',
+              italian: 'Linguaggio query RDF (SPARQL)',
               pronunciation: '/ˈspɑːrkl/',
               phonetic: 'SPAR-kol',
               example: 'SPARQL queries RDF graphs. = SPARQL interroga grafi RDF.',
@@ -9393,7 +9474,7 @@ export default {
             },
             {
               english: 'GQL',
-              italian: 'GQL / Graph Query Language',
+              italian: 'Graph Query Language (GQL)',
               pronunciation: '/dʒiː kjuː ˈel/',
               phonetic: 'GI-KIU-EL',
               example: 'GQL is the new ISO standard. = GQL è il nuovo standard ISO.',
@@ -9450,7 +9531,7 @@ export default {
             },
             {
               english: 'TSDB',
-              italian: 'TSDB / Time-Series Database',
+              italian: 'Time-Series Database (TSDB)',
               pronunciation: '/tiː es diː ˈbiː/',
               phonetic: 'TI-ES-DI-BI',
               example:
@@ -9461,7 +9542,7 @@ export default {
             },
             {
               english: 'Data Point',
-              italian: 'data point / singolo punto dati',
+              italian: 'singolo punto dati (Data Point)',
               pronunciation: '/ˈdeɪtə pɔɪnt/',
               phonetic: 'DEI-ta POINT',
               example:
@@ -9471,7 +9552,7 @@ export default {
             },
             {
               english: 'Tag',
-              italian: 'Tag / Etichetta',
+              italian: 'Etichetta (Tag)',
               pronunciation: '/tæɡ/',
               phonetic: 'TAG',
               example: 'Tags index time series data. = I tag indicizzano dati time series.',
@@ -9563,7 +9644,7 @@ export default {
             },
             {
               english: 'Downsampling',
-              italian: 'downsampling / riduzione della frequenza dei dati',
+              italian: 'riduzione della frequenza dei dati (Downsampling)',
               pronunciation: '/daʊnˈsæmplɪŋ/',
               phonetic: 'DAUN-sam-pling',
               example:
@@ -9597,7 +9678,7 @@ export default {
             },
             {
               english: 'Compression',
-              italian: 'Compressione',
+              italian: 'Compressione dati (riduzione dello spazio su disco)',
               pronunciation: '/kəmˈpreʃən/',
               phonetic: 'kom-PRE-scion',
               example:
@@ -9609,7 +9690,7 @@ export default {
             },
             {
               english: 'Hypertable',
-              italian: 'hypertable / tabella temporale TimescaleDB',
+              italian: 'tabella temporale TimescaleDB (Hypertable)',
               pronunciation: '/ˈhaɪpərˌteɪbl/',
               phonetic: 'HAI-per-TEI-bol',
               example: 'TimescaleDB uses hypertables. = TimescaleDB usa hypertable.',
@@ -9621,7 +9702,7 @@ export default {
             },
             {
               english: 'Chunk',
-              italian: 'chunk / blocco di dati',
+              italian: 'blocco di dati (Chunk)',
               pronunciation: '/tʃʌŋk/',
               phonetic: 'CIANK',
               example: 'Hypertables split into chunks. = Le hypertable si dividono in chunk.',
@@ -9668,7 +9749,7 @@ export default {
           items: [
             {
               english: 'InfluxDB',
-              italian: 'InfluxDB (database time-series)',
+              italian: 'Database time-series (InfluxDB)',
               pronunciation: '/ˈɪnflʌks diː biː/',
               phonetic: 'IN-flaks-DI-BI',
               example: 'InfluxDB is a popular TSDB. = InfluxDB è un TSDB popolare.',
@@ -9679,7 +9760,7 @@ export default {
             },
             {
               english: 'InfluxQL',
-              italian: 'InfluxQL / linguaggio query InfluxDB',
+              italian: 'Linguaggio query InfluxDB (InfluxQL)',
               pronunciation: '/ˈɪnflʌks kjuː el/',
               phonetic: 'IN-flaks-KIU-EL',
               example:
@@ -9691,7 +9772,7 @@ export default {
             },
             {
               english: 'Flux',
-              italian: 'Flux (linguaggio query InfluxDB)',
+              italian: 'Linguaggio query funzionale InfluxDB (Flux)',
               pronunciation: '/flʌks/',
               phonetic: 'FLAKS',
               example:
@@ -9702,7 +9783,7 @@ export default {
             },
             {
               english: 'TimescaleDB',
-              italian: 'TimescaleDB (estensione time-series PostgreSQL)',
+              italian: 'Estensione time-series PostgreSQL (TimescaleDB)',
               pronunciation: '/ˈtaɪmskeɪl diː biː/',
               phonetic: 'TAIM-skeil-DI-BI',
               example:
@@ -9714,7 +9795,7 @@ export default {
             },
             {
               english: 'Prometheus',
-              italian: 'Prometheus (sistema monitoring time-series)',
+              italian: 'Sistema monitoring time-series (Prometheus)',
               pronunciation: '/prəˈmiːθiəs/',
               phonetic: 'pro-MI-tius',
               example: 'Prometheus is a TSDB for metrics. = Prometheus è un TSDB per metriche.',
@@ -9725,7 +9806,7 @@ export default {
             },
             {
               english: 'PromQL',
-              italian: 'PromQL (linguaggio query Prometheus)',
+              italian: 'Linguaggio query Prometheus (PromQL)',
               pronunciation: '/prɒm kjuː ˈel/',
               phonetic: 'PROM-KIU-EL',
               example: 'PromQL queries Prometheus. = PromQL interroga Prometheus.',
@@ -9736,7 +9817,7 @@ export default {
             },
             {
               english: 'Graphite',
-              italian: 'Graphite (sistema monitoring time-series)',
+              italian: 'Sistema monitoring time-series (Graphite)',
               pronunciation: '/ˈɡræfaɪt/',
               phonetic: 'GRA-fait',
               example: 'Graphite is a classic TSDB. = Graphite è un TSDB classico.',
@@ -9746,7 +9827,7 @@ export default {
             },
             {
               english: 'OpenTSDB',
-              italian: 'OpenTSDB (database time-series su HBase)',
+              italian: 'Database time-series su HBase (OpenTSDB)',
               pronunciation: '/ˈoʊpən tiː es diː biː/',
               phonetic: 'O-pen-TI-ES-DI-BI',
               example: 'OpenTSDB runs on HBase. = OpenTSDB gira su HBase.',
@@ -9756,7 +9837,7 @@ export default {
             },
             {
               english: 'VictoriaMetrics',
-              italian: 'VictoriaMetrics (TSDB Prometheus-compatibile)',
+              italian: 'TSDB Prometheus-compatibile (VictoriaMetrics)',
               pronunciation: '/vɪkˈtɔːriə ˈmetrɪks/',
               phonetic: 'vik-TO-ria ME-triks',
               example:
@@ -9767,7 +9848,7 @@ export default {
             },
             {
               english: 'QuestDB',
-              italian: 'QuestDB (TSDB ad alte prestazioni)',
+              italian: 'TSDB ad alte prestazioni (QuestDB)',
               pronunciation: '/kwest diː biː/',
               phonetic: 'KUEST-DI-BI',
               example:
@@ -9823,7 +9904,7 @@ export default {
             },
             {
               english: 'Gauge',
-              italian: 'Gauge / Indicatore',
+              italian: 'Indicatore (Gauge)',
               pronunciation: '/ɡeɪdʒ/',
               phonetic: 'GHEIG',
               example: 'Gauges go up and down. = I gauge salgono e scendono.',
@@ -9844,7 +9925,7 @@ export default {
             },
             {
               english: 'Summary',
-              italian: 'summary / riepilogo statistico',
+              italian: 'riepilogo statistico (Summary)',
               pronunciation: '/ˈsʌməri/',
               phonetic: 'SA-ma-ri',
               example: 'Summaries calculate quantiles. = I summary calcolano quantili.',
@@ -9854,7 +9935,7 @@ export default {
             },
             {
               english: 'Alerting',
-              italian: 'alerting / sistema di avvisi',
+              italian: 'sistema di avvisi (Alerting)',
               pronunciation: '/əˈlɜːrtɪŋ/',
               phonetic: 'a-LER-ting',
               example:
@@ -9865,7 +9946,7 @@ export default {
             },
             {
               english: 'Grafana',
-              italian: 'Grafana (piattaforma di dashboard)',
+              italian: 'Piattaforma di dashboard (Grafana)',
               pronunciation: '/ɡrəˈfɑːnə/',
               phonetic: 'gra-FA-na',
               example: 'Grafana visualizes time series. = Grafana visualizza serie temporali.',
@@ -9875,7 +9956,7 @@ export default {
             },
             {
               english: 'Scrape',
-              italian: 'Scrape / Raccolta',
+              italian: 'Raccolta (Scrape)',
               pronunciation: '/skreɪp/',
               phonetic: 'SKREIP',
               example:
@@ -9902,7 +9983,7 @@ export default {
           items: [
             {
               english: 'ETL',
-              italian: 'ETL (estrazione, trasformazione, caricamento)',
+              italian: 'Estrazione, trasformazione, caricamento (ETL)',
               pronunciation: '/iː tiː ˈel/',
               phonetic: 'I-TI-EL',
               example: 'ETL: Extract, Transform, Load. = ETL: Estrai, Trasforma, Carica.',
@@ -9912,7 +9993,7 @@ export default {
             },
             {
               english: 'ELT',
-              italian: 'ELT (estrai, carica, trasforma)',
+              italian: 'Estrai, carica, trasforma (ELT)',
               pronunciation: '/iː el ˈtiː/',
               phonetic: 'I-EL-TI',
               example: 'ELT loads then transforms in DW. = ELT carica e poi trasforma nel DW.',
@@ -9987,7 +10068,7 @@ export default {
             },
             {
               english: 'Backfill',
-              italian: 'backfill / riempimento di dati storici',
+              italian: 'riempimento di dati storici (Backfill)',
               pronunciation: '/ˈbækfɪl/',
               phonetic: 'BAK-fil',
               example: 'Backfill processes historical data. = Il backfill elabora dati storici.',
@@ -10003,7 +10084,7 @@ export default {
           items: [
             {
               english: 'CDC',
-              italian: 'CDC / Change Data Capture',
+              italian: 'Change Data Capture (CDC)',
               pronunciation: '/siː diː ˈsiː/',
               phonetic: 'SI-DI-SI',
               example: 'CDC streams database changes. = CDC trasmette modifiche del database.',
@@ -10013,7 +10094,7 @@ export default {
             },
             {
               english: 'Debezium',
-              italian: 'Debezium (CDC open source)',
+              italian: 'CDC open source (Debezium)',
               pronunciation: '/dɪˈbiːziəm/',
               phonetic: 'di-BI-zium',
               example:
@@ -10034,7 +10115,7 @@ export default {
             },
             {
               english: 'Topic',
-              italian: 'topic / canale tematico di messaggi',
+              italian: 'canale tematico di messaggi (Topic)',
               pronunciation: '/ˈtɒpɪk/',
               phonetic: 'TO-pik',
               example: 'Kafka topics organize messages. = I topic Kafka organizzano i messaggi.',
@@ -10044,7 +10125,7 @@ export default {
             },
             {
               english: 'Producer',
-              italian: 'Producer / Produttore',
+              italian: 'Produttore (Producer)',
               pronunciation: '/prəˈdjuːsər/',
               phonetic: 'pro-DIU-ser',
               example: 'Producers send messages to topics. = I producer inviano messaggi ai topic.',
@@ -10054,7 +10135,7 @@ export default {
             },
             {
               english: 'Consumer',
-              italian: 'Consumer / Consumatore',
+              italian: 'Consumatore (Consumer)',
               pronunciation: '/kənˈsjuːmər/',
               phonetic: 'kon-SIU-mer',
               example: 'Consumers read messages. = I consumer leggono messaggi.',
@@ -10074,7 +10155,7 @@ export default {
             },
             {
               english: 'Stream Processing',
-              italian: 'stream processing / elaborazione in streaming',
+              italian: 'elaborazione in streaming (Stream Processing)',
               pronunciation: '/striːm ˈproʊsesɪŋ/',
               phonetic: 'STRIIM PRO-ses-sing',
               example:
@@ -10085,7 +10166,7 @@ export default {
             },
             {
               english: 'Apache Flink',
-              italian: 'Apache Flink (motore stream processing)',
+              italian: 'Motore stream processing (Apache Flink)',
               pronunciation: '/əˈpætʃi flɪŋk/',
               phonetic: 'a-PA-ci FLINK',
               example:
@@ -10113,7 +10194,7 @@ export default {
           items: [
             {
               english: 'Apache Airflow',
-              italian: 'Apache Airflow (orchestratore workflow)',
+              italian: 'Orchestratore workflow (Apache Airflow)',
               pronunciation: '/əˈpætʃi ˈeərfloʊ/',
               phonetic: 'a-PA-ci ER-flou',
               example: 'Airflow orchestrates data pipelines. = Airflow orchestra pipeline dati.',
@@ -10123,7 +10204,7 @@ export default {
             },
             {
               english: 'DAG',
-              italian: 'DAG / Grafo Aciclico Diretto',
+              italian: 'Grafo Aciclico Diretto (DAG)',
               pronunciation: '/dæɡ/',
               phonetic: 'DAG',
               example:
@@ -10135,7 +10216,7 @@ export default {
             },
             {
               english: 'Operator',
-              italian: 'Operatore',
+              italian: 'Operatore (nodo nel piano di esecuzione di una query)',
               pronunciation: '/ˈɒpəreɪtər/',
               phonetic: 'O-pe-rei-tor',
               example:
@@ -10146,7 +10227,7 @@ export default {
             },
             {
               english: 'Task',
-              italian: 'task / unità di lavoro',
+              italian: 'unità di lavoro (Task)',
               pronunciation: '/tæsk/',
               phonetic: 'TASK',
               example: "A task is a unit of work. = Un task è un'unità di lavoro.",
@@ -10155,7 +10236,7 @@ export default {
             },
             {
               english: 'Schedule',
-              italian: 'Schedule / Pianificazione',
+              italian: 'Pianificazione (Schedule)',
               pronunciation: '/ˈʃedjuːl/',
               phonetic: 'SCE-diul',
               example:
@@ -10167,7 +10248,7 @@ export default {
             },
             {
               english: 'Dagster',
-              italian: 'Dagster (orchestratore moderno per dati)',
+              italian: 'Orchestratore moderno per dati (Dagster)',
               pronunciation: '/ˈdæɡstər/',
               phonetic: 'DAG-ster',
               example: 'Dagster is a modern orchestrator. = Dagster è un orchestratore moderno.',
@@ -10177,7 +10258,7 @@ export default {
             },
             {
               english: 'Prefect',
-              italian: 'Prefect (orchestratore di workflow Python)',
+              italian: 'Orchestratore di workflow Python (Prefect)',
               pronunciation: '/ˈpriːfekt/',
               phonetic: 'PRI-fekt',
               example: 'Prefect is a Python orchestrator. = Prefect è un orchestratore Python.',
@@ -10187,7 +10268,7 @@ export default {
             },
             {
               english: 'Lineage',
-              italian: 'Lineage / Tracciabilità',
+              italian: 'Tracciabilità (Lineage)',
               pronunciation: '/ˈlɪnɪɪdʒ/',
               phonetic: 'LI-ni-ig',
               example:
@@ -10197,7 +10278,7 @@ export default {
             },
             {
               english: 'SLA',
-              italian: 'SLA / Service Level Agreement',
+              italian: 'Service Level Agreement (SLA)',
               pronunciation: '/es el ˈeɪ/',
               phonetic: 'ES-EL-EI',
               example: 'Define SLAs for pipelines. = Definisci SLA per le pipeline.',
@@ -10206,7 +10287,7 @@ export default {
             },
             {
               english: 'Retry',
-              italian: 'Retry / Ritenta',
+              italian: 'Ritenta (Retry)',
               pronunciation: '/rɪˈtraɪ/',
               phonetic: 'ri-TRAI',
               example:
@@ -10225,7 +10306,7 @@ export default {
           items: [
             {
               english: 'dbt',
-              italian: 'dbt (data build tool, trasformazioni SQL)',
+              italian: 'Data build tool, trasformazioni SQL (dbt)',
               pronunciation: '/ˌdiː biː ˈtiː/',
               phonetic: 'DI-BI-TI',
               example:
@@ -10238,7 +10319,7 @@ export default {
             },
             {
               english: 'Model',
-              italian: 'Modello',
+              italian: 'Modello dati (rappresentazione logica delle entità)',
               pronunciation: '/ˈmɒdl/',
               phonetic: 'MO-del',
               example: 'A dbt model is a SQL SELECT. = Un modello dbt è una SELECT SQL.',
@@ -10248,7 +10329,7 @@ export default {
             },
             {
               english: 'Seed',
-              italian: 'seed / dato iniziale',
+              italian: 'dato iniziale (Seed)',
               pronunciation: '/siːd/',
               phonetic: 'SIID',
               example: 'Seeds load CSVs into the warehouse. = I seed caricano CSV nel warehouse.',
@@ -10258,7 +10339,7 @@ export default {
             },
             {
               english: 'Test',
-              italian: 'test / verifica automatica',
+              italian: 'verifica automatica (Test)',
               pronunciation: '/test/',
               phonetic: 'TEST',
               example:
@@ -10270,7 +10351,7 @@ export default {
             },
             {
               english: 'Schema Drift',
-              italian: 'schema drift / deriva dello schema',
+              italian: 'deriva dello schema (Schema Drift)',
               pronunciation: '/ˈskiːmə drɪft/',
               phonetic: 'SKII-ma DRIFT',
               example: 'Schema drift breaks pipelines. = Lo schema drift rompe le pipeline.',
@@ -10300,7 +10381,7 @@ export default {
             },
             {
               english: 'Great Expectations',
-              italian: 'Great Expectations (qualità dati Python)',
+              italian: 'Qualità dati Python (Great Expectations)',
               pronunciation: '/ɡreɪt ˌekspekˈteɪʃənz/',
               phonetic: 'GREIT eks-pek-TEI-scionz',
               example: 'Great Expectations validates data. = Great Expectations valida i dati.',
@@ -10320,7 +10401,7 @@ export default {
             },
             {
               english: 'Apache Spark',
-              italian: 'Apache Spark (motore di calcolo distribuito)',
+              italian: 'Motore di calcolo distribuito (Apache Spark)',
               pronunciation: '/əˈpætʃi spɑːrk/',
               phonetic: 'a-PA-ci SPARK',
               example:
@@ -10347,7 +10428,7 @@ export default {
           items: [
             {
               english: 'Locking',
-              italian: 'locking / blocchi sui dati',
+              italian: 'blocchi sui dati (Locking)',
               pronunciation: '/ˈlɒkɪŋ/',
               phonetic: 'LO-king',
               example:
@@ -10357,7 +10438,7 @@ export default {
             },
             {
               english: 'SELECT FOR UPDATE',
-              italian: 'SELECT FOR UPDATE / lock di scrittura',
+              italian: 'Lock di scrittura (SELECT FOR UPDATE)',
               pronunciation: '/sɪˈlekt fɔːr ʌpˈdeɪt/',
               phonetic: 'si-LEKT FOR ap-DEIT',
               example:
@@ -10368,7 +10449,7 @@ export default {
             },
             {
               english: 'SELECT FOR SHARE',
-              italian: 'SELECT FOR SHARE / lock di lettura condiviso',
+              italian: 'Lock di lettura condiviso (SELECT FOR SHARE)',
               pronunciation: '/sɪˈlekt fɔːr ʃeər/',
               phonetic: 'si-LEKT FOR SCER',
               example:
@@ -10379,7 +10460,7 @@ export default {
             },
             {
               english: 'NOWAIT',
-              italian: 'NOWAIT / Senza attesa',
+              italian: 'Senza attesa (NOWAIT)',
               pronunciation: '/noʊ weɪt/',
               phonetic: 'NO-UEIT',
               example:
@@ -10390,7 +10471,7 @@ export default {
             },
             {
               english: 'SKIP LOCKED',
-              italian: 'SKIP LOCKED / salta righe bloccate',
+              italian: 'Salta righe bloccate (SKIP LOCKED)',
               pronunciation: '/skɪp lɒkt/',
               phonetic: 'SKIP-LOKT',
               example: 'SKIP LOCKED ignores locked rows. = SKIP LOCKED ignora righe bloccate.',
@@ -10465,7 +10546,7 @@ export default {
           items: [
             {
               english: 'Deadlock',
-              italian: 'Deadlock / Stallo',
+              italian: 'Stallo (Deadlock)',
               pronunciation: '/ˈdedlɒk/',
               phonetic: 'DED-lok',
               example:
@@ -10547,7 +10628,7 @@ export default {
             },
             {
               english: 'Write Skew',
-              italian: 'write skew / anomalia di scrittura',
+              italian: 'anomalia di scrittura (Write Skew)',
               pronunciation: '/raɪt skjuː/',
               phonetic: 'RAIT-SKIU',
               example:
@@ -10574,7 +10655,7 @@ export default {
           items: [
             {
               english: 'MVCC',
-              italian: 'MVCC (controllo concorrenza multi-versione)',
+              italian: 'Controllo concorrenza multi-versione (MVCC)',
               pronunciation: '/em viː siː ˈsiː/',
               phonetic: 'EM-VI-SI-SI',
               example: 'MVCC keeps multiple row versions. = MVCC mantiene più versioni di riga.',
@@ -10594,7 +10675,7 @@ export default {
             },
             {
               english: 'XID',
-              italian: 'XID / Transaction ID',
+              italian: 'Transaction ID (XID)',
               pronunciation: '/eks aɪ ˈdiː/',
               phonetic: 'EKS-AI-DI',
               example: 'Each transaction gets an XID. = Ogni transazione ottiene un XID.',
@@ -10604,7 +10685,7 @@ export default {
             },
             {
               english: 'XMIN',
-              italian: 'XMIN / ID transazione creazione',
+              italian: 'ID transazione creazione (XMIN)',
               pronunciation: '/eks mɪn/',
               phonetic: 'EKS-MIN',
               example: 'XMIN is the creating transaction. = XMIN è la transazione di creazione.',
@@ -10615,7 +10696,7 @@ export default {
             },
             {
               english: 'XMAX',
-              italian: 'XMAX / ID transazione cancellazione',
+              italian: 'ID transazione cancellazione (XMAX)',
               pronunciation: '/eks mæks/',
               phonetic: 'EKS-MAKS',
               example:
@@ -10626,7 +10707,7 @@ export default {
             },
             {
               english: 'Snapshot',
-              italian: 'snapshot / istantanea di stato',
+              italian: 'istantanea di stato (Snapshot)',
               pronunciation: '/ˈsnæpʃɒt/',
               phonetic: 'SNAP-scot',
               example:
@@ -10715,7 +10796,7 @@ export default {
             },
             {
               english: 'Compare-and-Set',
-              italian: 'compare-and-set / operazione atomica di confronto',
+              italian: 'operazione atomica di confronto (Compare-and-Set)',
               pronunciation: '/kəmˈpeər ænd set/',
               phonetic: 'kom-PER-AND-SET',
               example:
@@ -10806,7 +10887,7 @@ export default {
           items: [
             {
               english: 'DBA',
-              italian: 'DBA / Database Administrator',
+              italian: 'Database Administrator (DBA)',
               pronunciation: '/diː biː ˈeɪ/',
               phonetic: 'DI-BI-EI',
               example: 'A DBA manages databases. = Un DBA gestisce database.',
@@ -10835,7 +10916,7 @@ export default {
             },
             {
               english: 'SRE',
-              italian: 'SRE / Site Reliability Engineer',
+              italian: 'Site Reliability Engineer (SRE)',
               pronunciation: '/es ɑːr ˈiː/',
               phonetic: 'ES-AR-I',
               example:
@@ -10856,7 +10937,7 @@ export default {
             },
             {
               english: 'Data Engineer',
-              italian: 'data engineer / ingegnere dei dati',
+              italian: 'ingegnere dei dati (Data Engineer)',
               pronunciation: '/ˈdeɪtə ˌendʒɪˈnɪər/',
               phonetic: 'DEI-ta en-gi-NIR',
               example: 'Data engineers build pipelines. = I data engineer costruiscono pipeline.',
@@ -10865,7 +10946,7 @@ export default {
             },
             {
               english: 'Data Architect',
-              italian: 'data architect / architetto dei dati',
+              italian: 'architetto dei dati (Data Architect)',
               pronunciation: '/ˈdeɪtə ˈɑːrkɪtekt/',
               phonetic: 'DEI-ta AR-ki-tekt',
               example:
@@ -10875,7 +10956,7 @@ export default {
             },
             {
               english: 'On-call',
-              italian: 'On-call / Reperibile',
+              italian: 'Reperibile (On-call)',
               pronunciation: '/ɒn kɔːl/',
               phonetic: 'ON-KOL',
               example: 'DBAs often have on-call duty. = I DBA spesso hanno turno di reperibilità.',
@@ -10884,7 +10965,7 @@ export default {
             },
             {
               english: 'Postmortem',
-              italian: 'postmortem / analisi post-incidente',
+              italian: 'analisi post-incidente (Postmortem)',
               pronunciation: '/poʊstˈmɔːrtəm/',
               phonetic: 'post-MOR-tem',
               example: 'Write postmortems for outages. = Scrivi postmortem per i disservizi.',
@@ -10894,7 +10975,7 @@ export default {
             },
             {
               english: 'Runbook',
-              italian: 'runbook / procedura operativa',
+              italian: 'procedura operativa (Runbook)',
               pronunciation: '/ˈrʌnbʊk/',
               phonetic: 'RAN-buk',
               example:
@@ -10982,7 +11063,7 @@ export default {
             },
             {
               english: 'Provisioning',
-              italian: 'provisioning / fornitura risorse',
+              italian: 'fornitura risorse (Provisioning)',
               pronunciation: '/prəˈvɪʒənɪŋ/',
               phonetic: 'pro-VI-jio-ning',
               example:
@@ -10993,7 +11074,7 @@ export default {
             },
             {
               english: 'IaC',
-              italian: 'IaC / Infrastructure as Code',
+              italian: 'Infrastructure as Code (IaC)',
               pronunciation: '/aɪ eɪ ˈsiː/',
               phonetic: 'AI-EI-SI',
               example: 'IaC manages databases as code. = IaC gestisce database come codice.',
@@ -11003,7 +11084,7 @@ export default {
             },
             {
               english: 'Benchmark',
-              italian: 'benchmark / test prestazionale',
+              italian: 'test prestazionale (Benchmark)',
               pronunciation: '/ˈbentʃmɑːrk/',
               phonetic: 'BENC-mark',
               example: 'Benchmark before going live. = Esegui benchmark prima del go-live.',
@@ -11062,7 +11143,7 @@ export default {
             },
             {
               english: 'Cutover',
-              italian: 'Cutover / Passaggio',
+              italian: 'Passaggio (Cutover)',
               pronunciation: '/ˈkʌtoʊvər/',
               phonetic: 'KAT-o-ver',
               example: 'The cutover switches traffic. = Il cutover commuta il traffico.',
@@ -11071,7 +11152,7 @@ export default {
             },
             {
               english: 'Flyway',
-              italian: 'Flyway (gestore migration SQL)',
+              italian: 'Gestore migration SQL (Flyway)',
               pronunciation: '/ˈflaɪweɪ/',
               phonetic: 'FLAI-uei',
               example: 'Flyway versions schema migrations. = Flyway versiona migrazioni di schema.',
@@ -11081,7 +11162,7 @@ export default {
             },
             {
               english: 'Liquibase',
-              italian: 'Liquibase (gestore migration SQL)',
+              italian: 'Gestore migration SQL (Liquibase)',
               pronunciation: '/ˈlɪkwɪbeɪs/',
               phonetic: 'LI-kui-beis',
               example:
@@ -11130,7 +11211,7 @@ export default {
           items: [
             {
               english: 'VACUUM',
-              italian: 'VACUUM / pulizia righe morte PostgreSQL',
+              italian: 'Pulizia righe morte PostgreSQL (VACUUM)',
               pronunciation: '/ˈvækjuːm/',
               phonetic: 'VAK-ium',
               example: 'VACUUM reclaims dead tuple space. = VACUUM recupera spazio di tuple morte.',
@@ -11141,7 +11222,7 @@ export default {
             },
             {
               english: 'Autovacuum',
-              italian: 'autovacuum / VACUUM automatico',
+              italian: 'VACUUM automatico (Autovacuum)',
               pronunciation: '/ˈɔːtoʊ ˈvækjuːm/',
               phonetic: 'O-to VAK-ium',
               example: 'Autovacuum runs automatically. = Autovacuum gira automaticamente.',
@@ -11151,7 +11232,7 @@ export default {
             },
             {
               english: 'VACUUM FULL',
-              italian: 'VACUUM FULL / VACUUM con riscrittura tabella',
+              italian: 'VACUUM con riscrittura tabella (VACUUM FULL)',
               pronunciation: '/ˈvækjuːm fʊl/',
               phonetic: 'VAK-ium FUL',
               example: 'VACUUM FULL rewrites the table. = VACUUM FULL riscrive la tabella.',
@@ -11173,7 +11254,7 @@ export default {
             },
             {
               english: 'Patch',
-              italian: 'patch / correzione del codice',
+              italian: 'correzione del codice (Patch)',
               pronunciation: '/pætʃ/',
               phonetic: 'PAC',
               example: 'Apply security patches promptly. = Applica patch di sicurezza prontamente.',
@@ -11204,7 +11285,7 @@ export default {
             },
             {
               english: 'pg_upgrade',
-              italian: 'pg_upgrade / upgrade in-place PostgreSQL',
+              italian: 'Upgrade in-place PostgreSQL (pg_upgrade)',
               pronunciation: '/piː dʒiː ˈʌpɡreɪd/',
               phonetic: 'PI-GI-AP-greid',
               example:

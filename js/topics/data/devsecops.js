@@ -24,11 +24,11 @@ export default {
           items: [
             {
               english: 'DevSecOps',
-              italian: 'DevSecOps / sviluppo + sicurezza + operazioni integrati',
+              italian: 'Sviluppo + sicurezza + operazioni integrati (DevSecOps)',
               pronunciation: '/dɛvˈsɛkˌɒps/',
               phonetic: 'DEV-sek-ops',
               example:
-                'DevSecOps integrates security into DevOps. = Il DevSecOps integra la sicurezza nel DevOps.',
+                'Our team adopted DevSecOps to catch vulnerabilities before they reach production. = Il nostro team ha adottato il DevSecOps per trovare vulnerabilità prima che arrivino in produzione.',
               context: 'shift-left',
               difficulty: 'beginner',
               note: 'Fusione di Development, Security e Operations.',
@@ -39,7 +39,7 @@ export default {
               pronunciation: '/ʃɪft lɛft/',
               phonetic: 'SHIFT LEFT',
               example:
-                'Shift left means testing security earlier. = Spostare a sinistra significa testare la sicurezza prima.',
+                'By applying a shift left approach, the team found SQL injection bugs during code review instead of in production. = Applicando un approccio shift left, il team ha trovato bug di SQL injection durante la code review invece che in produzione.',
               context: 'shift-left',
               difficulty: 'beginner',
               note: 'Anticipare i controlli nelle prime fasi del SDLC.',
@@ -49,7 +49,8 @@ export default {
               italian: 'Campione di sicurezza',
               pronunciation: '/sɪˈkjʊərəti ˈtʃæmpiən/',
               phonetic: 'si-KIU-ri-ti CIAM-pion',
-              example: 'A security champion guides the team. = Un security champion guida il team.',
+              example:
+                'Each squad appoints a security champion who reviews pull requests for common vulnerabilities. = Ogni squad nomina un security champion che revisiona le pull request per vulnerabilità comuni.',
               context: 'culture',
               difficulty: 'beginner',
               note: 'Sviluppatore con focus sulla sicurezza nel proprio team.',
@@ -60,7 +61,7 @@ export default {
               pronunciation: '/ɛs diː ɛl siː/',
               phonetic: 'ES-DI-EL-SI',
               example:
-                'Security must cover the entire SDLC. = La sicurezza deve coprire tutto il SDLC.',
+                'We mapped every phase of the SDLC to identify where security controls were missing. = Abbiamo mappato ogni fase del SDLC per identificare dove mancavano controlli di sicurezza.',
               context: 'shift-left',
               difficulty: 'beginner',
               note: 'Software Development Life Cycle.',
@@ -71,7 +72,7 @@ export default {
               pronunciation: '/sɪˈkjʊər baɪ dɪˈzaɪn/',
               phonetic: 'si-KIUR BAI di-ZAIN',
               example:
-                'Secure by design prevents many bugs. = Sicuro per progettazione previene molti bug.',
+                'Building the API with a secure by design philosophy eliminated entire classes of injection attacks. = Costruire la API con una filosofia sicuro per progettazione ha eliminato intere classi di attacchi di injection.',
               context: 'shift-left',
               difficulty: 'beginner',
             },
@@ -81,7 +82,7 @@ export default {
               pronunciation: '/θrɛt ˈmɒdl/',
               phonetic: 'THRET MO-del',
               example:
-                'A threat model lists potential attacks. = Un modello di minaccia elenca attacchi potenziali.',
+                'During sprint planning, we built a threat model to map attack surfaces for the new payment microservice. = Durante la pianificazione dello sprint, abbiamo costruito un threat model per mappare le superfici di attacco del nuovo microservizio di pagamento.',
               context: 'shift-left',
               difficulty: 'beginner',
             },
@@ -91,7 +92,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti ˈpɒstʃər/',
               phonetic: 'si-KIU-ri-ti POS-ciur',
               example:
-                'Our security posture has improved. = La nostra postura di sicurezza è migliorata.',
+                'After adopting automated scanning, our security posture improved across all production services. = Dopo aver adottato la scansione automatica, la nostra postura di sicurezza è migliorata in tutti i servizi in produzione.',
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -101,7 +102,7 @@ export default {
               pronunciation: '/rɪsk əˈsɛsmənt/',
               phonetic: 'RISK a-SES-ment',
               example:
-                'Run a risk assessment before launch. = Esegui una valutazione del rischio prima del lancio.',
+                "The team completed a thorough risk assessment before migrating customer data to the new cloud provider. = Il team ha completato un'approfondita valutazione del rischio prima di migrare i dati dei clienti al nuovo provider cloud.",
               context: 'shift-left',
               difficulty: 'beginner',
             },
@@ -111,7 +112,7 @@ export default {
               pronunciation: '/kənˈtɪnjʊəs sɪˈkjʊərəti/',
               phonetic: 'kon-TI-nius si-KIU-ri-ti',
               example:
-                'Continuous security runs in every pipeline. = La sicurezza continua gira in ogni pipeline.',
+                'With continuous security baked into the CI pipeline, every commit triggers SAST and dependency checks. = Con la sicurezza continua integrata nella pipeline CI, ogni commit attiva SAST e controlli sulle dipendenze.',
               context: 'shift-left',
               difficulty: 'beginner',
             },
@@ -121,7 +122,7 @@ export default {
               pronunciation: '/ˈbleɪmləs ˈkʌltʃər/',
               phonetic: 'BLEIM-les KAL-cer',
               example:
-                'A blameless culture encourages reporting. = Una cultura senza colpa incoraggia la segnalazione.',
+                'Thanks to our blameless culture, developers report misconfigurations without fear of punishment. = Grazie alla nostra cultura senza colpa, gli sviluppatori segnalano le configurazioni errate senza paura di punizioni.',
               context: 'culture',
               difficulty: 'beginner',
               note: 'Concentrarsi sul processo, non sulla colpa.',
@@ -139,7 +140,7 @@ export default {
               pronunciation: '/ˈpiːpl ˈprəʊsɛs tɛkˈnɒlədʒi/',
               phonetic: 'PI-pol PRO-ses tek-NO-lo-gi',
               example:
-                'DevSecOps balances people, process, and technology. = Il DevSecOps bilancia persone, processi e tecnologia.',
+                'A strong DevSecOps program aligns people, process, and technology so that no single pillar becomes a bottleneck. = Un programma DevSecOps efficace allinea persone, processi e tecnologia affinché nessun pilastro diventi un collo di bottiglia.',
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -149,7 +150,7 @@ export default {
               pronunciation: '/dɪˈfɛns ɪn dɛpθ/',
               phonetic: 'di-FENS in DEPTH',
               example:
-                'Defense in depth uses many security layers. = La difesa in profondità usa molti livelli di sicurezza.',
+                'Applying defense in depth means combining firewalls, WAFs, and runtime protection so one failure does not compromise everything. = Applicare la difesa in profondità significa combinare firewall, WAF e protezione runtime così che un singolo guasto non comprometta tutto.',
               context: 'shift-left',
               difficulty: 'beginner',
             },
@@ -159,7 +160,7 @@ export default {
               pronunciation: '/liːst ˈprɪvəlɪdʒ/',
               phonetic: 'LIST PRI-vi-legg',
               example:
-                'Apply least privilege to all accounts. = Applica il privilegio minimo a tutti gli account.',
+                'Following the least privilege principle, the CI bot only has read access to the artifact registry. = Seguendo il principio del privilegio minimo, il bot CI ha solo accesso in lettura al registry degli artefatti.',
               context: 'shift-left',
               difficulty: 'beginner',
               note: 'Dare solo i permessi strettamente necessari.',
@@ -170,7 +171,7 @@ export default {
               pronunciation: '/ˈzɪərəʊ trʌst/',
               phonetic: 'ZI-ro TRAST',
               example:
-                'Zero trust assumes no implicit trust. = Zero trust non presume alcuna fiducia implicita.',
+                "Under a zero trust architecture, every microservice must authenticate even within the internal network. = In un'architettura zero trust, ogni microservizio deve autenticarsi anche all'interno della rete interna.",
               context: 'shift-left',
               difficulty: 'beginner',
             },
@@ -180,7 +181,7 @@ export default {
               pronunciation: '/feɪl sɪˈkjʊər/',
               phonetic: 'FEIL si-KIUR',
               example:
-                'Systems should fail secure, not open. = I sistemi devono fallire in sicurezza, non aperti.',
+                'The authentication gateway is configured to fail secure, blocking all traffic if the identity provider goes down. = Il gateway di autenticazione è configurato per fallire in sicurezza, bloccando tutto il traffico se il provider di identità va giù.',
               context: 'shift-left',
               difficulty: 'beginner',
             },
@@ -190,7 +191,7 @@ export default {
               pronunciation: '/ˌɔːtəˈmeɪʃən fɜːst/',
               phonetic: 'o-to-MEI-scion FERST',
               example:
-                "Automation first reduces human error. = L'automazione prima di tutto riduce l'errore umano.",
+                'An automation first strategy replaced manual penetration checklists with scripted DAST scans on every deploy. = Una strategia automazione prima di tutto ha sostituito le checklist manuali di penetration test con scansioni DAST scriptate a ogni deploy.',
               context: 'automation',
               difficulty: 'beginner',
             },
@@ -200,7 +201,7 @@ export default {
               pronunciation: '/kənˈtɪnjʊəs ɪmˈpruːvmənt/',
               phonetic: 'kon-TI-nius im-PRUV-ment',
               example:
-                'Continuous improvement drives DevSecOps. = Il miglioramento continuo guida il DevSecOps.',
+                'After each incident retrospective, the team applies continuous improvement by updating runbooks and pipeline rules. = Dopo ogni retrospettiva sugli incidenti, il team applica il miglioramento continuo aggiornando runbook e regole di pipeline.',
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -210,7 +211,7 @@ export default {
               pronunciation: '/ˈfiːdbæk luːp/',
               phonetic: 'FID-bak LUP',
               example:
-                'Short feedback loops catch issues fast. = Cicli di feedback brevi trovano problemi in fretta.',
+                "A tight feedback loop between SAST results and the developer IDE surfaces vulnerabilities within minutes of writing code. = Un ciclo di feedback stretto tra i risultati SAST e l'IDE dello sviluppatore evidenzia le vulnerabilità entro pochi minuti dalla scrittura del codice.",
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -220,7 +221,7 @@ export default {
               pronunciation: '/ʃeəd rɪˌspɒnsəˈbɪləti/',
               phonetic: 'SCERD ri-spon-si-BI-li-ti',
               example:
-                'Security is a shared responsibility. = La sicurezza è una responsabilità condivisa.',
+                'In our organization, security is a shared responsibility where developers, ops, and security teams all own part of the risk. = Nella nostra organizzazione, la sicurezza è una responsabilità condivisa dove sviluppatori, ops e team di sicurezza possiedono ciascuno parte del rischio.',
               context: 'culture',
               difficulty: 'beginner',
               note: 'Tutti contribuiscono, non solo il team di sicurezza.',
@@ -231,7 +232,7 @@ export default {
               pronunciation: '/kəmˈplaɪəns/',
               phonetic: 'kom-PLAI-ans',
               example:
-                'Compliance ensures you meet regulations. = La conformità assicura il rispetto delle norme.',
+                'Automating compliance checks in the pipeline guarantees that every release meets PCI-DSS and SOC 2 requirements. = Automatizzare i controlli di conformità nella pipeline garantisce che ogni rilascio soddisfi i requisiti PCI-DSS e SOC 2.',
               context: 'compliance-as-code',
               difficulty: 'beginner',
             },
@@ -248,7 +249,7 @@ export default {
               pronunciation: '/plæn/',
               phonetic: 'PLAN',
               example:
-                'Plan security stories alongside features. = Pianifica le storie di sicurezza insieme alle feature.',
+                'During the plan phase, the team writes security user stories for every new endpoint. = Durante la fase di plan, il team scrive storie utente di sicurezza per ogni nuovo endpoint.',
               context: 'shift-left',
               difficulty: 'beginner',
             },
@@ -258,7 +259,7 @@ export default {
               pronunciation: '/kəʊd/',
               phonetic: 'KOUD',
               example:
-                'Code with security guidelines in mind. = Codifica tenendo a mente le linee guida di sicurezza.',
+                "When developers code new features, IDE plugins highlight insecure patterns in real time. = Quando gli sviluppatori codificano nuove feature, i plugin dell'IDE evidenziano pattern insicuri in tempo reale.",
               context: 'shift-left',
               difficulty: 'beginner',
             },
@@ -268,7 +269,7 @@ export default {
               pronunciation: '/bɪld/',
               phonetic: 'BILD',
               example:
-                'Build steps include security scans. = I passi di build includono scansioni di sicurezza.',
+                "The reproducible build environment guarantees that two engineers compiling the same commit get identical artifacts. = L'ambiente di build riproducibile garantisce che due ingegneri che compilano lo stesso commit ottengano artefatti identici.",
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -278,7 +279,7 @@ export default {
               pronunciation: '/tɛst/',
               phonetic: 'TEST',
               example:
-                'Test for vulnerabilities, not just bugs. = Testa per vulnerabilità, non solo per bug.',
+                'The QA stage now includes a test suite that validates both functional behavior and OWASP Top 10 vulnerabilities. = La fase di QA ora include una suite di test che valida sia il comportamento funzionale che le vulnerabilità OWASP Top 10.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -288,7 +289,7 @@ export default {
               pronunciation: '/rɪˈliːs/',
               phonetic: 'ri-LIS',
               example:
-                'Release only after security gates pass. = Rilascia solo dopo che i security gate passano.',
+                'The pipeline blocks any release that has critical CVEs in its dependency tree. = La pipeline blocca qualsiasi release che abbia CVE critiche nel suo albero delle dipendenze.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -298,7 +299,7 @@ export default {
               pronunciation: '/dɪˈplɔɪ/',
               phonetic: 'di-PLOI',
               example:
-                'Deploy with signed artifacts only. = Distribuisci solo con artefatti firmati.',
+                "Our Kubernetes admission controller only allows a deploy if the container image has a valid cosign signature. = Il nostro admission controller Kubernetes permette il deploy solo se l'immagine container ha una firma cosign valida.",
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -307,7 +308,8 @@ export default {
               italian: 'Operare',
               pronunciation: '/ˈɒpəreɪt/',
               phonetic: 'O-pe-reit',
-              example: 'Operate with continuous monitoring. = Opera con monitoraggio continuo.',
+              example:
+                'The SRE team must operate production clusters with real-time alerting for anomalous network traffic. = Il team SRE deve operare i cluster di produzione con alerting in tempo reale per traffico di rete anomalo.',
               context: 'tools',
               difficulty: 'beginner',
             },
@@ -316,7 +318,8 @@ export default {
               italian: 'Monitorare',
               pronunciation: '/ˈmɒnɪtər/',
               phonetic: 'MO-ni-tor',
-              example: 'Monitor for anomalies in production. = Monitora le anomalie in produzione.',
+              example:
+                'Prometheus and Grafana dashboards monitor CPU spikes and unusual API call patterns around the clock. = Le dashboard Prometheus e Grafana monitorano picchi di CPU e pattern insoliti di chiamate API ventiquattro ore su ventiquattro.',
               context: 'tools',
               difficulty: 'beginner',
             },
@@ -325,7 +328,8 @@ export default {
               italian: 'Rispondere',
               pronunciation: '/rɪˈspɒnd/',
               phonetic: 'ri-SPOND',
-              example: 'Respond quickly to every alert. = Rispondi in fretta a ogni allarme.',
+              example:
+                "When the SIEM flags a brute-force attempt, the on-call engineer must respond within fifteen minutes. = Quando il SIEM segnala un tentativo di brute-force, l'ingegnere di turno deve rispondere entro quindici minuti.",
               context: 'automation',
               difficulty: 'beginner',
             },
@@ -334,7 +338,8 @@ export default {
               italian: 'Ciclo',
               pronunciation: '/luːp/',
               phonetic: 'LUP',
-              example: 'The DevSecOps loop never ends. = Il ciclo DevSecOps non finisce mai.',
+              example:
+                'Each iteration of the DevSecOps loop feeds post-incident learnings back into the planning stage. = Ogni iterazione del ciclo DevSecOps riporta gli insegnamenti post-incidente nella fase di pianificazione.',
               context: 'culture',
               difficulty: 'beginner',
               note: "Spesso rappresentato come simbolo dell'infinito.",
@@ -352,7 +357,7 @@ export default {
               pronunciation: '/dɛvˈsɛkˌɒps ˌɛndʒɪˈnɪər/',
               phonetic: 'DEV-sek-ops en-gi-NIR',
               example:
-                'A DevSecOps engineer integrates security tools. = Un ingegnere DevSecOps integra strumenti di sicurezza.',
+                'We hired a DevSecOps engineer to build guardrails that let developers ship securely without slowing down. = Abbiamo assunto un DevSecOps engineer per costruire guardrail che permettano agli sviluppatori di rilasciare in sicurezza senza rallentare.',
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -362,7 +367,7 @@ export default {
               pronunciation: '/ˈæpˌsɛk ˌɛndʒɪˈnɪər/',
               phonetic: 'AP-sek en-gi-NIR',
               example:
-                "The AppSec engineer reviews code threats. = L'ingegnere AppSec esamina le minacce al codice.",
+                "Before merging the OAuth module, the AppSec engineer ran a manual code review and found a token-leakage flaw. = Prima di unire il modulo OAuth, l'ingegnere AppSec ha eseguito una code review manuale e ha trovato una falla di leak del token.",
               context: 'culture',
               difficulty: 'beginner',
               note: 'Application Security: focus su sicurezza applicativa.',
@@ -373,7 +378,7 @@ export default {
               pronunciation: '/ˈplætfɔːm ˌɛndʒɪˈnɪər/',
               phonetic: 'PLAT-form en-gi-NIR',
               example:
-                'Platform engineers build secure paved roads. = Gli ingegneri di piattaforma costruiscono strade sicure pavimentate.',
+                'Our platform engineer created a golden path Terraform module so every team deploys with encryption and logging by default. = Il nostro platform engineer ha creato un modulo Terraform golden path così ogni team deploya con crittografia e logging di default.',
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -383,7 +388,7 @@ export default {
               pronunciation: '/ɛs ɑːr iː/',
               phonetic: 'ES-AR-I',
               example:
-                'SREs balance reliability and security. = Gli SRE bilanciano affidabilità e sicurezza.',
+                "The SRE on call noticed abnormal latency spikes that turned out to be a crypto-mining process on a compromised node. = L'SRE di turno ha notato picchi di latenza anomali che si sono rivelati un processo di crypto-mining su un nodo compromesso.",
               context: 'culture',
               difficulty: 'beginner',
               note: 'Site Reliability Engineer.',
@@ -394,7 +399,7 @@ export default {
               pronunciation: '/rɛd tiːm/',
               phonetic: 'RED TIM',
               example:
-                'The red team simulates real attacks. = La squadra rossa simula attacchi reali.',
+                'Last quarter, the red team discovered an exposed admin panel that had been publicly accessible for months. = Lo scorso trimestre, la squadra rossa ha scoperto un pannello di amministrazione esposto che era accessibile pubblicamente da mesi.',
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -403,7 +408,8 @@ export default {
               italian: 'Squadra blu',
               pronunciation: '/bluː tiːm/',
               phonetic: 'BLU TIM',
-              example: 'The blue team defends the systems. = La squadra blu difende i sistemi.',
+              example:
+                'After detecting the intrusion attempt, the blue team isolated the affected subnet and rotated all service credentials. = Dopo aver rilevato il tentativo di intrusione, la squadra blu ha isolato la sottorete coinvolta e ruotato tutte le credenziali dei servizi.',
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -413,7 +419,7 @@ export default {
               pronunciation: '/ˈpɜːpl tiːm/',
               phonetic: 'PER-pol TIM',
               example:
-                'The purple team blends offense and defense. = La squadra viola unisce attacco e difesa.',
+                "During the exercise, the purple team ran attack simulations while simultaneously tuning detection rules. = Durante l'esercitazione, la squadra viola ha eseguito simulazioni di attacco mentre contemporaneamente affinava le regole di rilevamento.",
               context: 'culture',
               difficulty: 'beginner',
               note: 'Combinazione di Red e Blue Team.',
@@ -424,7 +430,7 @@ export default {
               pronunciation: '/ˈsteɪkˌhəʊldər/',
               phonetic: 'STEIK-hol-der',
               example:
-                'Inform stakeholders about security risks. = Informa le parti interessate sui rischi di sicurezza.',
+                'Before approving the budget, every stakeholder received a risk dashboard showing critical vulnerability trends. = Prima di approvare il budget, ogni stakeholder ha ricevuto una dashboard del rischio con i trend delle vulnerabilità critiche.',
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -434,7 +440,7 @@ export default {
               pronunciation: '/ˈprɒdʌkt ˈəʊnər/',
               phonetic: 'PRO-dakt OU-ner',
               example:
-                'The product owner prioritizes security work. = Il responsabile di prodotto dà priorità al lavoro di sicurezza.',
+                'Our product owner added a security spike to the sprint backlog after a penetration test revealed two high-severity findings. = Il nostro product owner ha aggiunto uno spike di sicurezza al backlog dello sprint dopo che un penetration test ha rivelato due finding ad alta severità.',
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -444,7 +450,7 @@ export default {
               pronunciation: '/kəmˈplaɪəns ˈɒfɪsər/',
               phonetic: 'kom-PLAI-ans O-fi-ser',
               example:
-                'The compliance officer audits processes. = Il responsabile della conformità verifica i processi.',
+                'The compliance officer reviewed our CI pipeline to confirm that all artifacts are signed and audit logs retained for one year. = Il compliance officer ha revisionato la nostra pipeline CI per confermare che tutti gli artefatti sono firmati e i log di audit conservati per un anno.',
               context: 'compliance-as-code',
               difficulty: 'beginner',
             },
@@ -467,21 +473,22 @@ export default {
           items: [
             {
               english: 'CI/CD',
-              italian: 'CI/CD / integrazione e rilascio continui',
+              italian: 'Integrazione e rilascio continui (CI/CD)',
               pronunciation: '/siː aɪ siː diː/',
               phonetic: 'SI-AI SI-DI',
               example:
-                'CI/CD automates building and deploying. = Il CI/CD automatizza build e distribuzione.',
+                'Every commit pushed to the main branch triggers the CI/CD pipeline, which builds, tests, and deploys automatically. = Ogni commit pushato sul branch main attiva la pipeline CI/CD, che compila, testa e deploya automaticamente.',
               context: 'ci-cd',
               difficulty: 'beginner',
               note: 'Continuous Integration / Continuous Delivery (o Deployment).',
             },
             {
               english: 'Pipeline',
-              italian: 'pipeline / sequenza di stadi CI/CD',
+              italian: 'Sequenza di stadi CI/CD (pipeline)',
               pronunciation: '/ˈpaɪplaɪn/',
               phonetic: 'PAIP-lain',
-              example: 'A pipeline runs steps in order. = Una pipeline esegue passi in ordine.',
+              example:
+                'The security team added a SAST scan stage to the existing pipeline between build and deploy. = Il team di sicurezza ha aggiunto uno stadio di scansione SAST alla pipeline esistente tra build e deploy.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -490,7 +497,8 @@ export default {
               italian: 'Fase',
               pronunciation: '/steɪdʒ/',
               phonetic: 'STEIGG',
-              example: 'Each stage runs related jobs. = Ogni fase esegue job correlati.',
+              example:
+                'Our CI has four stages: build, test, security scan, and deploy to staging. = La nostra CI ha quattro fasi: build, test, scansione di sicurezza e deploy in staging.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -499,7 +507,8 @@ export default {
               italian: 'Lavoro',
               pronunciation: '/dʒɒb/',
               phonetic: 'GIOB',
-              example: 'A job runs commands on a runner. = Un job esegue comandi su un runner.',
+              example:
+                "The SAST job runs on an isolated container to prevent exfiltration of source code. = Il job SAST gira su un container isolato per prevenire l'esfiltrazione del codice sorgente.",
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'jobs:\n  build:\n    runs-on: ubuntu-latest',
@@ -510,7 +519,7 @@ export default {
               pronunciation: '/stɛp/',
               phonetic: 'STEP',
               example:
-                'A step is a single command in a job. = Un passo è un singolo comando in un job.',
+                'Adding a single step to check dependency licenses saved the team hours of manual work every sprint. = Aggiungere un singolo step per controllare le licenze delle dipendenze ha risparmiato al team ore di lavoro manuale ogni sprint.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -519,7 +528,8 @@ export default {
               italian: 'Esecutore',
               pronunciation: '/ˈrʌnər/',
               phonetic: 'RA-ner',
-              example: "The runner executes the workflow. = L'esecutore avvia il workflow.",
+              example:
+                "We hardened every self-hosted runner by disabling network access to internal services during untrusted builds. = Abbiamo rafforzato ogni runner self-hosted disabilitando l'accesso di rete ai servizi interni durante le build non fidate.",
               context: 'ci-cd',
               difficulty: 'beginner',
               tool: 'GitHub Actions, GitLab Runner',
@@ -530,7 +540,7 @@ export default {
               pronunciation: '/ˈwɜːkfləʊ/',
               phonetic: 'UORK-flou',
               example:
-                'A workflow defines pipeline stages. = Un workflow definisce le fasi della pipeline.',
+                'A single reusable workflow enforces secret scanning and SAST across all twenty microservice repositories. = Un singolo workflow riutilizzabile impone scansione segreti e SAST su tutti e venti i repository di microservizi.',
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'on:\n  push:\n    branches: [main]',
@@ -541,7 +551,7 @@ export default {
               pronunciation: '/ˈtrɪɡər/',
               phonetic: 'TRI-gher',
               example:
-                'A push event triggers the pipeline. = Un evento di push innesca la pipeline.',
+                'We configured a cron trigger to run full dependency scans every night at midnight. = Abbiamo configurato un trigger cron per eseguire scansioni complete delle dipendenze ogni notte a mezzanotte.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -551,7 +561,7 @@ export default {
               pronunciation: '/bɪld/',
               phonetic: 'BILD',
               example:
-                'The build produces a deployable artifact. = La compilazione produce un artefatto distribuibile.',
+                "The reproducible build environment guarantees that two engineers compiling the same commit get identical artifacts. = L'ambiente di build riproducibile garantisce che due ingegneri che compilano lo stesso commit ottengano artefatti identici.",
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -561,7 +571,7 @@ export default {
               pronunciation: '/ˈɑːtɪfækt/',
               phonetic: 'AR-ti-fakt',
               example:
-                'Sign every artifact before release. = Firma ogni artefatto prima del rilascio.',
+                'Before promoting an artifact to production, the pipeline verifies its SHA-256 checksum against the signed manifest. = Prima di promuovere un artefatto in produzione, la pipeline verifica il suo checksum SHA-256 contro il manifesto firmato.',
               context: 'ci-cd',
               difficulty: 'beginner',
               note: 'Output di build (binari, immagini, pacchetti).',
@@ -579,7 +589,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti ɡeɪt/',
               phonetic: 'si-KIU-ri-ti GHEIT',
               example:
-                'A security gate blocks risky builds. = Un cancello di sicurezza blocca build rischiose.',
+                'When the DAST scan finds a high-severity issue, the security gate blocks promotion to staging. = Quando la scansione DAST trova un problema ad alta severità, il cancello di sicurezza blocca la promozione in staging.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -589,7 +599,7 @@ export default {
               pronunciation: '/ˈkwɒləti ɡeɪt/',
               phonetic: 'KUO-li-ti GHEIT',
               example:
-                'The quality gate enforces thresholds. = Il cancello di qualità impone soglie.',
+                'SonarQube enforces a quality gate that rejects code with more than five percent duplicated lines or any critical bugs. = SonarQube impone un cancello di qualità che rifiuta codice con più del cinque percento di righe duplicate o qualsiasi bug critico.',
               context: 'ci-cd',
               difficulty: 'beginner',
               tool: 'SonarQube',
@@ -599,7 +609,8 @@ export default {
               italian: 'Rompere la build',
               pronunciation: '/breɪk ðə bɪld/',
               phonetic: 'BREIK de BILD',
-              example: 'Critical CVEs break the build. = Le CVE critiche rompono la build.',
+              example:
+                "A single critical CVE in a transitive dependency can break the build and halt the entire release process. = Una singola CVE critica in una dipendenza transitiva può rompere la build e bloccare l'intero processo di rilascio.",
               context: 'ci-cd',
               difficulty: 'beginner',
               note: 'Far fallire la pipeline per impedire codice insicuro.',
@@ -610,7 +621,7 @@ export default {
               pronunciation: '/priː kəˈmɪt hʊk/',
               phonetic: 'PRI ko-MIT HUK',
               example:
-                'A pre-commit hook scans secrets locally. = Un hook di pre-commit cerca segreti in locale.',
+                'Installing a pre-commit hook that runs gitleaks prevents developers from accidentally committing AWS keys. = Installare un hook pre-commit che esegue gitleaks impedisce agli sviluppatori di committare accidentalmente chiavi AWS.',
               context: 'ci-cd',
               difficulty: 'beginner',
               tool: 'pre-commit, Husky',
@@ -621,7 +632,7 @@ export default {
               pronunciation: '/pʊl rɪˈkwɛst tʃɛk/',
               phonetic: 'PUL ri-KUEST CIEK',
               example:
-                'PR checks must pass before merge. = I PR check devono passare prima del merge.',
+                'GitHub requires every pull request check to pass before the merge button becomes available. = GitHub richiede che ogni controllo della pull request passi prima che il pulsante di merge diventi disponibile.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -631,7 +642,7 @@ export default {
               pronunciation: '/ˈsteɪtəs tʃɛk/',
               phonetic: 'STEI-tas CIEK',
               example:
-                'Required status checks block bad merges. = I controlli di stato obbligatori bloccano merge cattivi.',
+                'We configured three required status checks: unit tests, SAST scan, and license compliance verification. = Abbiamo configurato tre controlli di stato obbligatori: unit test, scansione SAST e verifica di conformità delle licenze.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -641,7 +652,7 @@ export default {
               pronunciation: '/ˈsiːkrɪts ɪn siː aɪ/',
               phonetic: 'SI-krets in SI-AI',
               example:
-                'Store secrets in CI vaults, never in repo. = Salva i segreti nei vault CI, mai nel repo.',
+                'Never hardcode secrets in CI configuration files; always inject them from a vault at runtime. = Non inserire mai segreti nei file di configurazione CI; iniettali sempre da un vault a runtime.',
               context: 'secrets',
               difficulty: 'beginner',
             },
@@ -651,7 +662,7 @@ export default {
               pronunciation: '/dɪˈpɛndənsi kæʃ/',
               phonetic: 'di-PEN-den-si KASH',
               example:
-                'Cache dependencies but verify checksums. = Cache delle dipendenze, ma verifica i checksum.',
+                'Verifying checksums on the dependency cache prevents a poisoned cache from injecting malicious packages. = Verificare i checksum sulla cache delle dipendenze impedisce a una cache avvelenata di iniettare pacchetti malevoli.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -661,7 +672,7 @@ export default {
               pronunciation: '/ˈpaɪplaɪn ˈfeɪljər/',
               phonetic: 'PAIP-lain FEI-lier',
               example:
-                'A pipeline failure stops the release. = Un fallimento della pipeline ferma il rilascio.',
+                'After the third consecutive pipeline failure, the team investigated and found an expired signing certificate. = Dopo il terzo fallimento consecutivo della pipeline, il team ha investigato e trovato un certificato di firma scaduto.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -671,7 +682,7 @@ export default {
               pronunciation: '/ˈmænjʊəl əˈpruːvl/',
               phonetic: 'MA-niu-al a-PRU-val',
               example:
-                'Production deploys need manual approval. = I deploy in produzione richiedono approvazione manuale.',
+                'Production deployments require manual approval from at least two senior engineers before proceeding. = I deployment in produzione richiedono approvazione manuale da almeno due ingegneri senior prima di procedere.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -688,7 +699,7 @@ export default {
               pronunciation: '/ˈɡɪthʌb ˈækʃənz/',
               phonetic: 'GHIT-hab AK-scions',
               example:
-                'GitHub Actions runs CI/CD on GitHub. = GitHub Actions esegue CI/CD su GitHub.',
+                'We migrated our entire CI from Jenkins to GitHub Actions and cut pipeline setup time by seventy percent. = Abbiamo migrato tutta la nostra CI da Jenkins a GitHub Actions e ridotto il tempo di setup della pipeline del settanta percento.',
               context: 'ci-cd',
               difficulty: 'beginner',
               tool: 'GitHub Actions',
@@ -699,7 +710,7 @@ export default {
               pronunciation: '/ˈækʃən/',
               phonetic: 'AK-scion',
               example:
-                "An action is a reusable workflow step. = Un'azione è un passo di workflow riutilizzabile.",
+                'Pinning every third-party action to a specific commit SHA prevents supply-chain attacks through tag manipulation. = Pinnare ogni azione di terze parti a uno SHA di commit specifico previene attacchi supply-chain tramite manipolazione dei tag.',
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'uses: actions/checkout@v4',
@@ -710,7 +721,7 @@ export default {
               pronunciation: '/ˈwɜːkfləʊ faɪl/',
               phonetic: 'UORK-flou FAIL',
               example:
-                'Workflow files live in .github/workflows. = I file di workflow stanno in .github/workflows.',
+                'Every workflow file in the .github/workflows directory is version-controlled and requires a code review to modify. = Ogni file di workflow nella directory .github/workflows è versionato e richiede una code review per essere modificato.',
               context: 'ci-cd',
               difficulty: 'beginner',
               code: '.github/workflows/ci.yml',
@@ -721,7 +732,7 @@ export default {
               pronunciation: '/ˈmeɪtrɪks bɪld/',
               phonetic: 'MEI-triks BILD',
               example:
-                'Matrix builds test many versions in parallel. = Le build a matrice testano molte versioni in parallelo.',
+                "Using a matrix build, we test the application on Node 18, 20, and 22 across Ubuntu and Alpine simultaneously. = Usando una build a matrice, testiamo l'applicazione su Node 18, 20 e 22 su Ubuntu e Alpine simultaneamente.",
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'strategy:\n  matrix:\n    node: [18, 20, 22]',
@@ -732,7 +743,7 @@ export default {
               pronunciation: '/sɛlf ˈhəʊstɪd ˈrʌnər/',
               phonetic: 'SELF HOS-ted RA-ner',
               example:
-                'Self-hosted runners run on your hardware. = I runner self-hosted girano sul tuo hardware.',
+                'The compliance team requires a self-hosted runner for HIPAA workloads because data cannot leave the private network. = Il team di compliance richiede un runner self-hosted per i workload HIPAA perché i dati non possono lasciare la rete privata.',
               context: 'ci-cd',
               difficulty: 'beginner',
               note: 'Attenzione: superficie di attacco aggiuntiva.',
@@ -743,7 +754,7 @@ export default {
               pronunciation: '/ˈmɑːkɪtpleɪs ˈækʃən/',
               phonetic: 'MAR-ket-pleis AK-scion',
               example:
-                'Pin marketplace actions to a SHA. = Pinna le azioni del marketplace a uno SHA.',
+                'Before using any marketplace action, we verify its source code and pin it to a reviewed SHA hash. = Prima di usare qualsiasi azione del marketplace, ne verifichiamo il codice sorgente e la pinniamo a un hash SHA revisionato.',
               context: 'supply-chain',
               difficulty: 'beginner',
               note: 'Mai usare @master, sempre @sha256 o @v1.2.3.',
@@ -753,7 +764,8 @@ export default {
               italian: 'Ambiente',
               pronunciation: '/ɪnˈvaɪrənmənt/',
               phonetic: 'in-VAI-ron-ment',
-              example: 'Each environment has its own secrets. = Ogni ambiente ha i propri segreti.',
+              example:
+                'Separating staging and production into distinct environments ensures that test secrets never leak into live systems. = Separare staging e produzione in ambienti distinti assicura che i segreti di test non finiscano mai nei sistemi live.',
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'environment: production',
@@ -764,7 +776,7 @@ export default {
               pronunciation: '/ˈsiːkrɪt ˈveəriəbl/',
               phonetic: 'SI-kret VE-ria-bol',
               example:
-                'Secret variables are masked in logs. = Le variabili segrete sono mascherate nei log.',
+                'GitHub automatically masks any secret variable printed to the workflow log, showing asterisks instead. = GitHub maschera automaticamente qualsiasi variabile segreta stampata nel log del workflow, mostrando asterischi al suo posto.',
               context: 'secrets',
               difficulty: 'beginner',
               code: '${{ secrets.API_TOKEN }}',
@@ -775,7 +787,7 @@ export default {
               pronunciation: '/əʊ aɪ diː siː ˈtəʊkən/',
               phonetic: 'O-AI-DI-SI TO-ken',
               example:
-                'OIDC tokens replace static cloud credentials. = I token OIDC sostituiscono credenziali cloud statiche.',
+                'Replacing static AWS keys with a short-lived OIDC token eliminated the risk of long-term credential theft. = Sostituire le chiavi AWS statiche con un token OIDC a breve durata ha eliminato il rischio di furto di credenziali a lungo termine.',
               context: 'secrets',
               difficulty: 'beginner',
               note: 'Federazione di identità tra GitHub e cloud.',
@@ -786,7 +798,7 @@ export default {
               pronunciation: '/ˈwɜːkfləʊ pəˈmɪʃən/',
               phonetic: 'UORK-flou per-MI-scion',
               example:
-                'Set workflow permissions to read-only. = Imposta i permessi del workflow in sola lettura.',
+                'Setting the default workflow permission to read-only prevents malicious steps from pushing code changes. = Impostare il permesso del workflow predefinito a sola lettura impedisce a step malevoli di pushare modifiche al codice.',
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'permissions:\n  contents: read',
@@ -804,7 +816,7 @@ export default {
               pronunciation: '/ˈmʌlti steɪdʒ/',
               phonetic: 'MAL-ti STEIGG',
               example:
-                'A multi-stage pipeline separates concerns. = Una pipeline multi-fase separa le responsabilità.',
+                'Our multi-stage pipeline separates linting, unit tests, SAST, and deployment into isolated phases. = La nostra pipeline multi-fase separa linting, unit test, SAST e deployment in fasi isolate.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -814,7 +826,7 @@ export default {
               pronunciation: '/fæn aʊt dʒɒb/',
               phonetic: 'FAN-AUT GIOB',
               example:
-                'Fan-out jobs run scans in parallel. = I job a ventaglio eseguono scansioni in parallelo.',
+                'Three fan-out jobs run SAST, SCA, and secret scanning in parallel, cutting total pipeline time by sixty percent. = Tre job a ventaglio eseguono SAST, SCA e scansione segreti in parallelo, tagliando il tempo totale della pipeline del sessanta percento.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -823,7 +835,8 @@ export default {
               italian: 'Fallire in fretta',
               pronunciation: '/feɪl fɑːst/',
               phonetic: 'FEIL FAST',
-              example: 'Fail fast saves CI minutes. = Fallire in fretta risparmia minuti CI.',
+              example:
+                'Configuring the matrix to fail fast cancels remaining builds as soon as the first one finds a critical error. = Configurare la matrice in fail fast annulla le build rimanenti appena la prima trova un errore critico.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -833,7 +846,7 @@ export default {
               pronunciation: '/kənˈdɪʃənl stɛp/',
               phonetic: 'kon-DI-scio-nal STEP',
               example:
-                'Run scans only on protected branches. = Esegui scansioni solo su branch protetti.',
+                'We added a conditional step that only runs the full penetration test suite on merges to the main branch. = Abbiamo aggiunto uno step condizionale che esegue la suite completa di penetration test solo sui merge nel branch main.',
               context: 'ci-cd',
               difficulty: 'beginner',
               code: "if: github.ref == 'refs/heads/main'",
@@ -844,7 +857,7 @@ export default {
               pronunciation: '/riːˈjuːzəbl ˈwɜːkfləʊ/',
               phonetic: 'ri-IU-za-bol UORK-flou',
               example:
-                'Centralize security with reusable workflows. = Centralizza la sicurezza con workflow riutilizzabili.',
+                'The platform team published a reusable workflow that all thirty repositories call for consistent security scanning. = Il team di piattaforma ha pubblicato un workflow riutilizzabile che tutti e trenta i repository chiamano per una scansione di sicurezza coerente.',
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'uses: org/.github/.../sec.yml@v1',
@@ -855,7 +868,7 @@ export default {
               pronunciation: '/ˈkɒmpəzɪt ˈækʃən/',
               phonetic: 'KOM-po-zit AK-scion',
               example:
-                "A composite action bundles common steps. = Un'azione composita raggruppa passi comuni.",
+                'Our composite action bundles Trivy image scan and Cosign signature verification into a single callable step. = La nostra azione composita raggruppa scansione immagini Trivy e verifica firme Cosign in un singolo step richiamabile.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -864,7 +877,8 @@ export default {
               italian: 'Cache di build',
               pronunciation: '/bɪld kæʃ/',
               phonetic: 'BILD KASH',
-              example: 'Build cache speeds up CI runs. = La cache di build velocizza i run CI.',
+              example:
+                'Using a shared build cache across branches reduced average CI run time from twelve minutes to four. = Usare una cache di build condivisa tra i branch ha ridotto il tempo medio di run CI da dodici a quattro minuti.',
               context: 'ci-cd',
               difficulty: 'beginner',
               command: 'actions/cache@v4',
@@ -875,7 +889,7 @@ export default {
               pronunciation: '/ɪˈfɛmərəl ˈrʌnər/',
               phonetic: 'i-FE-me-ral RA-ner',
               example:
-                'Ephemeral runners reduce attack persistence. = I runner effimeri riducono la persistenza degli attacchi.',
+                "Using an ephemeral runner that destroys itself after each job prevents attackers from persisting on CI infrastructure. = Usare un runner effimero che si autodistrugge dopo ogni job impedisce agli attaccanti di persistere sull'infrastruttura CI.",
               context: 'ci-cd',
               difficulty: 'beginner',
               note: 'Si distruggono dopo ogni job.',
@@ -886,7 +900,7 @@ export default {
               pronunciation: '/ˈpaɪplaɪn æz kəʊd/',
               phonetic: 'PAIP-lain AZ KOUD',
               example:
-                'Pipeline as code lives in version control. = La pipeline come codice vive nel controllo versione.',
+                "Storing the pipeline as code in the same repository as the application enables peer review of every CI change. = Memorizzare la pipeline come codice nello stesso repository dell'applicazione permette la peer review di ogni modifica CI.",
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -896,7 +910,7 @@ export default {
               pronunciation: '/ˈɔːdɪt lɒɡ/',
               phonetic: 'O-dit LOG',
               example:
-                'Audit logs track who changed pipelines. = I registri di audit tracciano chi ha cambiato le pipeline.',
+                "After the incident, we traced the unauthorized pipeline change through the audit log to identify the compromised account. = Dopo l'incidente, abbiamo tracciato la modifica non autorizzata alla pipeline attraverso il registro di audit per identificare l'account compromesso.",
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -923,7 +937,7 @@ export default {
               pronunciation: '/sæst/',
               phonetic: 'SAST',
               example:
-                'SAST scans source code for flaws. = Il SAST analizza il codice sorgente per difetti.',
+                'Running SAST on every pull request catches SQL injection and XSS patterns before code reaches the main branch. = Eseguire SAST su ogni pull request intercetta pattern di SQL injection e XSS prima che il codice raggiunga il branch main.',
               context: 'sast',
               difficulty: 'beginner',
               note: 'Static Application Security Testing.',
@@ -934,28 +948,28 @@ export default {
               pronunciation: '/ˈstætɪk əˈnæləsɪs/',
               phonetic: 'STA-tik a-NA-le-sis',
               example:
-                "Static analysis runs without executing code. = L'analisi statica gira senza eseguire il codice.",
+                'The team configured static analysis rules to flag unsafe deserialization calls across all Java services. = Il team ha configurato regole di analisi statica per segnalare chiamate di deserializzazione non sicure in tutti i servizi Java.',
               context: 'sast',
               difficulty: 'beginner',
             },
             {
               english: 'Linting',
-              italian: 'linting / analisi statica del codice',
+              italian: 'Analisi statica del codice (linting)',
               pronunciation: '/ˈlɪntɪŋ/',
               phonetic: 'LIN-ting',
               example:
-                'Linting catches style and basic bugs. = Il linting trova problemi di stile e bug base.',
+                'Adding security-focused linting rules to ESLint catches dangerous eval() calls at development time. = Aggiungere regole di linting orientate alla sicurezza a ESLint intercetta chiamate eval() pericolose in fase di sviluppo.',
               context: 'sast',
               difficulty: 'beginner',
               tool: 'ESLint, Pylint, golangci-lint',
             },
             {
               english: 'Linter',
-              italian: 'linter / analizzatore statico',
+              italian: 'Analizzatore statico (linter)',
               pronunciation: '/ˈlɪntər/',
               phonetic: 'LIN-ter',
               example:
-                'A linter flags suspicious code patterns. = Un linter segnala pattern di codice sospetti.',
+                "The Python linter flagged twelve instances of subprocess.shell=True that could enable command injection. = Il linter Python ha segnalato dodici istanze di subprocess.shell=True che potevano abilitare l'iniezione di comandi.",
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -965,7 +979,7 @@ export default {
               pronunciation: '/fɔːls ˈpɒzətɪv/',
               phonetic: 'FOLS PO-ze-tiv',
               example:
-                'Tune SAST to reduce false positives. = Calibra il SAST per ridurre i falsi positivi.',
+                'After tuning the rules, we reduced false positive alerts from two hundred per scan to under twenty. = Dopo aver affinato le regole, abbiamo ridotto gli avvisi di falsi positivi da duecento per scansione a meno di venti.',
               context: 'sast',
               difficulty: 'beginner',
               note: 'Avviso che non corrisponde a un vero problema.',
@@ -976,7 +990,7 @@ export default {
               pronunciation: '/fɔːls ˈnɛɡətɪv/',
               phonetic: 'FOLS NE-ga-tiv',
               example:
-                'A false negative misses a real bug. = Un falso negativo manca un bug reale.',
+                'A false negative in the SAST tool allowed an XXE vulnerability to reach production undetected. = Un falso negativo nello strumento SAST ha permesso a una vulnerabilità XXE di raggiungere la produzione senza essere rilevata.',
               context: 'sast',
               difficulty: 'beginner',
               note: 'Più pericoloso del falso positivo.',
@@ -987,7 +1001,7 @@ export default {
               pronunciation: '/ruːl sɛt/',
               phonetic: 'RUL SET',
               example:
-                "Customize the rule set for your stack. = Personalizza l'insieme di regole per il tuo stack.",
+                "We customized the Semgrep rule set to include company-specific patterns for secure database access. = Abbiamo personalizzato il set di regole Semgrep per includere pattern specifici dell'azienda per l'accesso sicuro al database.",
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -997,7 +1011,7 @@ export default {
               pronunciation: '/sɪˈvɛrəti/',
               phonetic: 'si-VE-re-ti',
               example:
-                'Filter findings by severity level. = Filtra le scoperte per livello di gravità.',
+                'Only findings with a severity of high or critical block the pipeline; medium issues generate warnings. = Solo i finding con severità alta o critica bloccano la pipeline; i problemi medi generano avvisi.',
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -1007,7 +1021,7 @@ export default {
               pronunciation: '/ˈfaɪndɪŋ/',
               phonetic: 'FAIN-ding',
               example:
-                'Triage every critical finding fast. = Triagia in fretta ogni riscontro critico.',
+                'The CodeQL scan produced forty-three findings, of which eight were confirmed vulnerabilities needing immediate patches. = La scansione CodeQL ha prodotto quarantatré finding, di cui otto erano vulnerabilità confermate che richiedevano patch immediate.',
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -1017,7 +1031,7 @@ export default {
               pronunciation: '/rɪˌmiːdiˈeɪʃən/',
               phonetic: 'ri-mi-di-EI-scion',
               example:
-                'Each finding needs a remediation plan. = Ogni riscontro richiede un piano di rimedio.',
+                'The security team provided a remediation guide explaining how to replace each insecure cryptographic function. = Il team di sicurezza ha fornito una guida di remediation che spiega come sostituire ogni funzione crittografica insicura.',
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -1034,7 +1048,7 @@ export default {
               pronunciation: '/ˈsəʊnɑːkjuːb/',
               phonetic: 'SO-nar-kiub',
               example:
-                'SonarQube tracks code quality over time. = SonarQube traccia la qualità del codice nel tempo.',
+                'Integrating SonarQube into our CI pipeline reduced unresolved code smells by sixty percent within three months. = Integrare SonarQube nella nostra pipeline CI ha ridotto i code smell irrisolti del sessanta percento in tre mesi.',
               context: 'sast',
               difficulty: 'beginner',
               tool: 'SonarQube',
@@ -1046,7 +1060,7 @@ export default {
               pronunciation: '/ˈsɛmɡrɛp/',
               phonetic: 'SEM-grep',
               example:
-                'Semgrep finds patterns in code fast. = Semgrep trova pattern nel codice in fretta.',
+                'Writing custom Semgrep rules let us detect internal API misuse patterns that generic scanners miss. = Scrivere regole Semgrep personalizzate ci ha permesso di rilevare pattern di uso errato delle API interne che gli scanner generici non trovano.',
               context: 'sast',
               difficulty: 'beginner',
               tool: 'Semgrep',
@@ -1058,7 +1072,7 @@ export default {
               pronunciation: '/kəʊd kjuː ɛl/',
               phonetic: 'KOUD-KIU-EL',
               example:
-                'CodeQL queries code as a database. = CodeQL interroga il codice come un database.',
+                "Using CodeQL data-flow analysis, we traced user input from the HTTP handler all the way to an unsafe SQL query. = Usando l'analisi del flusso dati di CodeQL, abbiamo tracciato l'input utente dal gestore HTTP fino a una query SQL non sicura.",
               context: 'sast',
               difficulty: 'beginner',
               tool: 'CodeQL',
@@ -1070,7 +1084,7 @@ export default {
               pronunciation: '/ˈbændɪt/',
               phonetic: 'BAN-dit',
               example:
-                'Bandit scans Python for security issues. = Bandit analizza Python per problemi di sicurezza.',
+                "Running Bandit on the Flask application flagged three high-severity issues related to insecure YAML loading. = Eseguire Bandit sull'applicazione Flask ha segnalato tre problemi ad alta severità legati al caricamento YAML non sicuro.",
               context: 'sast',
               difficulty: 'beginner',
               tool: 'Bandit',
@@ -1082,7 +1096,7 @@ export default {
               pronunciation: '/ˈɡəʊsɛk/',
               phonetic: 'GO-sek',
               example:
-                'gosec checks Go code for vulnerabilities. = gosec controlla codice Go per vulnerabilità.',
+                "After adding gosec to the pre-commit hooks, developers catch Go crypto misuse before pushing their code. = Dopo aver aggiunto gosec agli hook pre-commit, gli sviluppatori intercettano l'uso errato della crittografia Go prima di pushare il codice.",
               context: 'sast',
               difficulty: 'beginner',
               tool: 'gosec',
@@ -1094,7 +1108,7 @@ export default {
               pronunciation: '/ˈbreɪkmən/',
               phonetic: 'BREIK-man',
               example:
-                'Brakeman analyzes Ruby on Rails apps. = Brakeman analizza app Ruby on Rails.',
+                'The Brakeman report highlighted a mass-assignment vulnerability in the Rails user registration controller. = Il report di Brakeman ha evidenziato una vulnerabilità di mass-assignment nel controller di registrazione utenti Rails.',
               context: 'sast',
               difficulty: 'beginner',
               tool: 'Brakeman',
@@ -1106,7 +1120,7 @@ export default {
               pronunciation: '/ˈtʃɛkmɑːks/',
               phonetic: 'CIEK-marks',
               example:
-                'Checkmarx is an enterprise SAST suite. = Checkmarx è una suite SAST enterprise.',
+                "Our enterprise uses Checkmarx for deep taint analysis across the entire Java monolith codebase. = La nostra azienda usa Checkmarx per l'analisi approfondita del taint attraverso l'intero codebase del monolite Java.",
               context: 'sast',
               difficulty: 'beginner',
               tool: 'Checkmarx',
@@ -1117,7 +1131,7 @@ export default {
               pronunciation: '/ˈfɔːtɪfaɪ/',
               phonetic: 'FOR-ti-fai',
               example:
-                'Fortify scans Java and C for flaws. = Fortify analizza Java e C per difetti.',
+                'The Fortify scan identified a deserialization flaw in the legacy SOAP service handling customer orders. = La scansione Fortify ha identificato una falla di deserializzazione nel servizio SOAP legacy che gestisce gli ordini dei clienti.',
               context: 'sast',
               difficulty: 'beginner',
               tool: 'Fortify',
@@ -1127,18 +1141,19 @@ export default {
               italian: 'Veracode (SAST commerciale)',
               pronunciation: '/ˈvɛrəkəʊd/',
               phonetic: 'VE-ra-koud',
-              example: 'Veracode integrates SAST and SCA. = Veracode integra SAST e SCA.',
+              example:
+                'Before each quarterly release, the team uploads binaries to Veracode for an independent static analysis report. = Prima di ogni rilascio trimestrale, il team carica i binari su Veracode per un report indipendente di analisi statica.',
               context: 'sast',
               difficulty: 'beginner',
               tool: 'Veracode',
             },
             {
               english: 'SARIF',
-              italian: 'SARIF / formato standard di report di analisi statica',
+              italian: 'Formato standard di report di analisi statica (SARIF)',
               pronunciation: '/ˈsærɪf/',
               phonetic: 'SA-rif',
               example:
-                'SARIF is a standard finding format. = SARIF è un formato standard per i riscontri.',
+                'Exporting scanner results in SARIF format allows GitHub to display inline annotations on pull request diffs. = Esportare i risultati dello scanner in formato SARIF permette a GitHub di mostrare annotazioni inline sui diff delle pull request.',
               context: 'sast',
               difficulty: 'beginner',
               note: 'Static Analysis Results Interchange Format.',
@@ -1156,7 +1171,7 @@ export default {
               pronunciation: '/ɪnˈdʒɛkʃən flɔː/',
               phonetic: 'in-GEK-scion FLO',
               example:
-                'Injection flaws top OWASP lists. = I difetti di iniezione sono in cima alle liste OWASP.',
+                'Parameterized queries are the most effective defense against injection flaws in database-driven applications. = Le query parametrizzate sono la difesa più efficace contro le falle di injection nelle applicazioni basate su database.',
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -1166,7 +1181,7 @@ export default {
               pronunciation: '/ɛs kjuː ɛl ɪnˈdʒɛkʃən/',
               phonetic: 'ES-KIU-EL in-GEK-scion',
               example:
-                "SQL injection lets attackers query databases. = L'iniezione SQL permette agli attaccanti di interrogare i database.",
+                "The penetration tester exploited a SQL injection in the search endpoint to dump the entire user table. = Il penetration tester ha sfruttato una SQL injection nell'endpoint di ricerca per esfiltrare l'intera tabella utenti.",
               context: 'sast',
               difficulty: 'beginner',
               code: 'query = "SELECT * FROM u WHERE id=" + input',
@@ -1177,7 +1192,7 @@ export default {
               pronunciation: '/krɒs saɪt ˈskrɪptɪŋ/',
               phonetic: 'KROS-SAIT SKRIP-ting',
               example:
-                'XSS executes attacker scripts in browsers. = Lo XSS esegue script di attaccanti nei browser.',
+                "Sanitizing all user output prevents cross-site scripting attacks that could steal session cookies. = Sanificare tutto l'output utente previene attacchi cross-site scripting che potrebbero rubare i cookie di sessione.",
               context: 'sast',
               difficulty: 'beginner',
               note: 'Abbreviato XSS.',
@@ -1188,7 +1203,7 @@ export default {
               pronunciation: '/ˈhɑːdkəʊdɪd ˈsiːkrɪt/',
               phonetic: 'HARD-ko-ded SI-kret',
               example:
-                'SAST flags hardcoded secrets. = Il SAST segnala segreti codificati nel codice.',
+                'The scanner found a hardcoded secret containing an AWS access key inside a configuration file committed two years ago. = Lo scanner ha trovato un segreto hardcoded contenente una chiave di accesso AWS in un file di configurazione committato due anni fa.',
               context: 'secrets',
               difficulty: 'beginner',
             },
@@ -1198,7 +1213,7 @@ export default {
               pronunciation: '/ɪnˈsɪkjʊə diˌsɪərɪəlaɪˈzeɪʃən/',
               phonetic: 'in-si-KIUR di-si-ria-lai-ZEI-scion',
               example:
-                'Insecure deserialization runs untrusted code. = La deserializzazione insicura esegue codice non fidato.',
+                "An insecure deserialization bug in the Java API allowed attackers to execute arbitrary code via crafted serialized objects. = Un bug di deserializzazione insicura nell'API Java ha permesso agli attaccanti di eseguire codice arbitrario tramite oggetti serializzati costruiti ad hoc.",
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -1208,18 +1223,18 @@ export default {
               pronunciation: '/pɑːθ ˈtrævəsl/',
               phonetic: 'PATH TRA-ver-sal',
               example:
-                "Path traversal escapes the intended folder. = L'attraversamento di percorso esce dalla cartella prevista.",
+                "By exploiting a path traversal flaw in the file-download endpoint, the attacker read /etc/passwd from the server. = Sfruttando una falla di path traversal nell'endpoint di download file, l'attaccante ha letto /etc/passwd dal server.",
               context: 'sast',
               difficulty: 'beginner',
               code: 'open("../../etc/passwd")',
             },
             {
               english: 'Buffer Overflow',
-              italian: 'buffer overflow / scrittura oltre i limiti del buffer',
+              italian: 'Scrittura oltre i limiti del buffer (buffer overflow)',
               pronunciation: '/ˈbʌfə ˌəʊvəˈfləʊ/',
               phonetic: 'BA-fer o-ver-FLOU',
               example:
-                "Buffer overflows can hijack execution. = I buffer overflow possono dirottare l'esecuzione.",
+                'The fuzzer discovered a buffer overflow in the image parsing library that could lead to remote code execution. = Il fuzzer ha scoperto un buffer overflow nella libreria di parsing delle immagini che poteva portare a esecuzione di codice remoto.',
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -1229,7 +1244,7 @@ export default {
               pronunciation: '/reɪs kənˈdɪʃən/',
               phonetic: 'REIS kon-DI-scion',
               example:
-                'Race conditions cause inconsistent state. = Le condizioni di gara causano stato inconsistente.',
+                'A race condition in the payment flow allowed users to double-spend credits by submitting concurrent requests. = Una race condition nel flusso di pagamento permetteva agli utenti di spendere due volte i crediti inviando richieste concorrenti.',
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -1239,7 +1254,7 @@ export default {
               pronunciation: '/ɪnˈsɪkjʊə ˈrændəm/',
               phonetic: 'in-si-KIUR RAN-dom',
               example:
-                'Use crypto random, not Math.random. = Usa random crittografico, non Math.random.',
+                'Using Math.random() for token generation is an insecure random practice; always use crypto.getRandomValues() instead. = Usare Math.random() per la generazione di token è una pratica di random insicuro; usa sempre crypto.getRandomValues() al suo posto.',
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -1249,7 +1264,7 @@ export default {
               pronunciation: '/wiːk krɪpˈtɒɡrəfi/',
               phonetic: 'UIK krip-TO-gra-fi',
               example:
-                'SAST warns on weak cryptography like MD5. = Il SAST avverte su crittografia debole come MD5.',
+                "The audit flagged MD5 hashing of passwords as weak cryptography and recommended migrating to bcrypt. = L'audit ha segnalato l'hashing MD5 delle password come crittografia debole e ha raccomandato la migrazione a bcrypt.",
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -1266,7 +1281,7 @@ export default {
               pronunciation: '/kəʊd rɪˈvjuː/',
               phonetic: 'KOUD ri-VIU',
               example:
-                'Code review catches issues SAST misses. = La code review trova problemi che il SAST manca.',
+                'Requiring a security-focused code review on every merge request caught an IDOR vulnerability before release. = Richiedere una code review orientata alla sicurezza su ogni merge request ha intercettato una vulnerabilità IDOR prima del rilascio.',
               context: 'sast',
               difficulty: 'beginner',
             },
@@ -1276,7 +1291,7 @@ export default {
               pronunciation: '/pʊl rɪˈkwɛst/',
               phonetic: 'PUL ri-KUEST',
               example:
-                'Open a pull request for every change. = Apri una pull request per ogni modifica.',
+                'Every pull request targeting the main branch must include passing SAST results and at least two approvals. = Ogni pull request verso il branch main deve includere risultati SAST positivi e almeno due approvazioni.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -1286,7 +1301,7 @@ export default {
               pronunciation: '/rɪˈvjuːər/',
               phonetic: 'ri-VIU-er',
               example:
-                'Add a security-savvy reviewer. = Aggiungi un revisore esperto di sicurezza.',
+                "The designated security reviewer rejected the merge because the input validation logic was incomplete. = Il reviewer di sicurezza designato ha rifiutato il merge perché la logica di validazione dell'input era incompleta.",
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -1295,7 +1310,8 @@ export default {
               italian: 'Differenza',
               pronunciation: '/dɪf/',
               phonetic: 'DIF',
-              example: 'Read the diff line by line. = Leggi il diff riga per riga.',
+              example:
+                'Examining the diff revealed that the developer had accidentally removed an authorization check from the admin route. = Esaminare il diff ha rivelato che lo sviluppatore aveva accidentalmente rimosso un controllo di autorizzazione dalla route admin.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -1305,7 +1321,7 @@ export default {
               pronunciation: '/ˈɪnlaɪn ˈkɒmɛnt/',
               phonetic: 'IN-lain KO-ment',
               example:
-                'Leave inline comments for context. = Lascia commenti in linea per contesto.',
+                'The reviewer left an inline comment explaining why the raw SQL query should use parameterized bindings. = Il reviewer ha lasciato un commento inline spiegando perché la query SQL raw dovrebbe usare binding parametrizzati.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -1315,7 +1331,7 @@ export default {
               pronunciation: '/tʃeɪndʒ rɪˈkwɛst/',
               phonetic: 'CIEINGG ri-KUEST',
               example:
-                'Mark blockers as change requested. = Segna i blocker come change requested.',
+                'The security team filed a change request to enforce TLS 1.3 across all internal API gateways. = Il team di sicurezza ha aperto una change request per imporre TLS 1.3 su tutti i gateway API interni.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -1325,7 +1341,7 @@ export default {
               pronunciation: '/əˈpruːv/',
               phonetic: 'a-PRUV',
               example:
-                'Approve only after a careful review. = Approva solo dopo una revisione attenta.',
+                'Two code owners must approve the pull request before the merge is allowed on protected branches. = Due code owner devono approvare la pull request prima che il merge sia permesso sui branch protetti.',
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -1335,7 +1351,7 @@ export default {
               pronunciation: '/kəʊd ˈəʊnər/',
               phonetic: 'KOUD OU-ner',
               example:
-                'Code owners must approve sensitive paths. = I code owner devono approvare i percorsi sensibili.',
+                'Defining a code owner for the authentication module ensures that every change to login logic gets expert review. = Definire un code owner per il modulo di autenticazione assicura che ogni modifica alla logica di login riceva una review esperta.',
               context: 'ci-cd',
               difficulty: 'beginner',
               code: 'CODEOWNERS file',
@@ -1346,7 +1362,7 @@ export default {
               pronunciation: '/ˈtʃɛklɪst/',
               phonetic: 'CIEK-list',
               example:
-                'A security checklist guides reviewers. = Una lista di controllo di sicurezza guida i revisori.',
+                "Our security checklist includes items for input validation, output encoding, and proper error handling. = La nostra checklist di sicurezza include elementi per la validazione dell'input, la codifica dell'output e la corretta gestione degli errori.",
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -1356,7 +1372,7 @@ export default {
               pronunciation: '/peər ˈprəʊɡræmɪŋ/',
               phonetic: 'PER PRO-gra-ming',
               example:
-                'Pair programming is real-time review. = La programmazione in coppia è revisione in tempo reale.',
+                'During pair programming, the navigator spotted an insecure direct object reference the driver had overlooked. = Durante il pair programming, il navigatore ha individuato un riferimento diretto a oggetti insicuro che il driver aveva trascurato.',
               context: 'culture',
               difficulty: 'beginner',
             },
@@ -1383,7 +1399,7 @@ export default {
               pronunciation: '/ɛs siː eɪ/',
               phonetic: 'ES-SI-EI',
               example:
-                'SCA inventories third-party code. = Lo SCA inventaria il codice di terze parti.',
+                'Integrating SCA into the pipeline revealed that forty percent of our dependencies had known CVEs. = Integrare la SCA nella pipeline ha rivelato che il quaranta percento delle nostre dipendenze aveva CVE note.',
               context: 'sca',
               difficulty: 'beginner',
               note: 'Software Composition Analysis.',
@@ -1394,7 +1410,7 @@ export default {
               pronunciation: '/dɪˈpɛndənsi/',
               phonetic: 'di-PEN-den-si',
               example:
-                "A modern app has thousands of dependencies. = Un'app moderna ha migliaia di dipendenze.",
+                'Keeping every third-party dependency up to date reduces the window of exposure to known exploits. = Mantenere aggiornata ogni dipendenza di terze parti riduce la finestra di esposizione a exploit noti.',
               context: 'sca',
               difficulty: 'beginner',
             },
@@ -1404,17 +1420,18 @@ export default {
               pronunciation: '/trænˈzɪtɪv dɪˈpɛndənsi/',
               phonetic: 'tran-ZI-tiv di-PEN-den-si',
               example:
-                "Transitive dependencies expand the attack surface. = Le dipendenze transitive ampliano la superficie d'attacco.",
+                'A critical vulnerability in a transitive dependency three levels deep forced us to override the package version. = Una vulnerabilità critica in una dipendenza transitiva profonda tre livelli ci ha costretto a sovrascrivere la versione del pacchetto.',
               context: 'sca',
               difficulty: 'beginner',
               note: 'Dipendenze delle tue dipendenze.',
             },
             {
               english: 'CVE',
-              italian: 'CVE / Common Vulnerabilities and Exposures',
+              italian: 'Common Vulnerabilities and Exposures (CVE)',
               pronunciation: '/siː viː iː/',
               phonetic: 'SI-VI-I',
-              example: 'Each CVE has a unique ID. = Ogni CVE ha un ID univoco.',
+              example:
+                "The scanner flagged CVE-2024-1234 in our logging library, so we patched it before the next release. = Lo scanner ha segnalato la CVE-2024-1234 nella nostra libreria di logging, così l'abbiamo patchata prima del prossimo rilascio.",
               context: 'sca',
               difficulty: 'beginner',
               note: 'Common Vulnerabilities and Exposures.',
@@ -1426,17 +1443,18 @@ export default {
               pronunciation: '/siː viː ɛs ɛs skɔː/',
               phonetic: 'SI-VI-ES-ES SKOR',
               example:
-                'A CVSS score rates severity from 0 to 10. = Un punteggio CVSS valuta la gravità da 0 a 10.',
+                "Any dependency with a CVSS score above seven point zero triggers an automatic pull request for version update. = Qualsiasi dipendenza con un punteggio CVSS superiore a sette punto zero attiva una pull request automatica per l'aggiornamento della versione.",
               context: 'sca',
               difficulty: 'beginner',
               note: 'Common Vulnerability Scoring System.',
             },
             {
               english: 'Patch',
-              italian: 'patch / correzione del codice',
+              italian: 'Correzione del codice (patch)',
               pronunciation: '/pætʃ/',
               phonetic: 'PACI',
-              example: 'Apply patches as soon as possible. = Applica le patch il prima possibile.',
+              example:
+                "The team applied the security patch within twenty-four hours of the critical advisory being published. = Il team ha applicato la patch di sicurezza entro ventiquattro ore dalla pubblicazione dell'avviso critico.",
               context: 'sca',
               difficulty: 'beginner',
             },
@@ -1446,7 +1464,7 @@ export default {
               pronunciation: '/lɒk faɪl/',
               phonetic: 'LOK FAIL',
               example:
-                'Commit the lock file for reproducible builds. = Committa il file di lock per build riproducibili.',
+                'Committing the lock file to the repository ensures reproducible builds and prevents silent dependency upgrades. = Committare il lock file nel repository assicura build riproducibili e previene aggiornamenti silenziosi delle dipendenze.',
               context: 'sca',
               difficulty: 'beginner',
               code: 'package-lock.json, poetry.lock, Cargo.lock',
@@ -1457,17 +1475,17 @@ export default {
               pronunciation: '/ˈpɪnɪŋ/',
               phonetic: 'PI-ning',
               example:
-                'Version pinning prevents surprise upgrades. = Il fissaggio delle versioni previene aggiornamenti a sorpresa.',
+                "Version pinning every CI action and base image digest prevents unexpected changes from breaking security controls. = Il pinning delle versioni di ogni azione CI e digest dell'immagine base previene che cambiamenti inattesi rompano i controlli di sicurezza.",
               context: 'sca',
               difficulty: 'beginner',
             },
             {
               english: 'Manifest',
-              italian: 'manifest / file di manifesto',
+              italian: 'File di manifesto (manifest)',
               pronunciation: '/ˈmænɪfɛst/',
               phonetic: 'MA-ni-fest',
               example:
-                'The manifest lists project dependencies. = Il manifest elenca le dipendenze del progetto.',
+                'The package manifest lists all direct dependencies and their exact versions for audit purposes. = Il file manifest del pacchetto elenca tutte le dipendenze dirette e le loro versioni esatte a fini di audit.',
               context: 'sca',
               difficulty: 'beginner',
               code: 'package.json, pyproject.toml',
@@ -1477,7 +1495,8 @@ export default {
               italian: 'Database di vulnerabilità',
               pronunciation: '/ˌvʌlnərəˈbɪləti ˈdeɪtəbeɪs/',
               phonetic: 'val-ne-ra-BI-li-ti DEI-ta-beis',
-              example: 'NVD is a vulnerability database. = NVD è un database di vulnerabilità.',
+              example:
+                'Grype checks every installed package against the public vulnerability database and flags any match above medium severity. = Grype controlla ogni pacchetto installato contro il database di vulnerabilità pubblico e segnala qualsiasi corrispondenza sopra la severità media.',
               context: 'sca',
               difficulty: 'beginner',
               tool: 'NVD, OSV, GHSA',
@@ -1495,7 +1514,7 @@ export default {
               pronunciation: '/sniːk/',
               phonetic: 'SNIK',
               example:
-                'Snyk scans dependencies and containers. = Snyk analizza dipendenze e container.',
+                'After connecting Snyk to our GitHub repository, it automatically opens fix pull requests for vulnerable dependencies. = Dopo aver collegato Snyk al nostro repository GitHub, apre automaticamente pull request di fix per le dipendenze vulnerabili.',
               context: 'sca',
               difficulty: 'beginner',
               tool: 'Snyk',
@@ -1507,7 +1526,7 @@ export default {
               pronunciation: '/dɪˈpɛndəbɒt/',
               phonetic: 'di-PEN-da-bot',
               example:
-                'Dependabot opens PRs for upgrades. = Dependabot apre PR per gli aggiornamenti.',
+                'Enabling Dependabot alerts on the organization level notifies every team when a critical CVE affects their stack. = Abilitare gli avvisi Dependabot a livello di organizzazione notifica ogni team quando una CVE critica colpisce il loro stack.',
               context: 'sca',
               difficulty: 'beginner',
               tool: 'Dependabot',
@@ -1519,18 +1538,18 @@ export default {
               pronunciation: '/ˈrɛnəveɪt/',
               phonetic: 'RE-no-veit',
               example:
-                'Renovate automates dependency updates. = Renovate automatizza gli aggiornamenti delle dipendenze.',
+                'We configured Renovate to group minor updates into a single pull request to reduce review fatigue. = Abbiamo configurato Renovate per raggruppare gli aggiornamenti minori in una singola pull request per ridurre la fatica di review.',
               context: 'sca',
               difficulty: 'beginner',
               tool: 'Renovate',
             },
             {
               english: 'OWASP Dependency-Check',
-              italian: 'OWASP Dependency-Check / scanner di vulnerabilità',
+              italian: 'Scanner di vulnerabilità (OWASP Dependency-Check)',
               pronunciation: '/ˈəʊwɒsp dɪˈpɛndənsi tʃɛk/',
               phonetic: 'O-uosp di-PEN-den-si CIEK',
               example:
-                'OWASP Dependency-Check is open source. = OWASP Dependency-Check è open source.',
+                'Adding OWASP Dependency-Check to the Maven build identifies CVEs in transitive Java libraries automatically. = Aggiungere OWASP Dependency-Check alla build Maven identifica automaticamente le CVE nelle librerie Java transitive.',
               context: 'sca',
               difficulty: 'beginner',
               tool: 'OWASP Dependency-Check',
@@ -1538,32 +1557,33 @@ export default {
             },
             {
               english: 'npm audit',
-              italian: 'npm audit / scanner npm integrato',
+              italian: 'Scanner npm integrato (npm audit)',
               pronunciation: '/ɛn piː ɛm ˈɔːdɪt/',
               phonetic: 'EN-PI-EM O-dit',
               example:
-                'Run npm audit to find known issues. = Esegui npm audit per trovare problemi noti.',
+                'Running npm audit in the CI pipeline blocks any build that introduces a high-severity vulnerability. = Eseguire npm audit nella pipeline CI blocca qualsiasi build che introduce una vulnerabilità ad alta severità.',
               context: 'sca',
               difficulty: 'beginner',
               command: 'npm audit --production',
             },
             {
               english: 'pip-audit',
-              italian: 'pip-audit / scanner Python',
+              italian: 'Scanner Python (pip-audit)',
               pronunciation: '/pɪp ˈɔːdɪt/',
               phonetic: 'PIP O-dit',
               example:
-                'pip-audit checks Python packages. = pip-audit controlla i pacchetti Python.',
+                'The nightly cron job runs pip-audit to check all Python requirements against the OSV database. = Il cron job notturno esegue pip-audit per controllare tutti i requisiti Python contro il database OSV.',
               context: 'sca',
               difficulty: 'beginner',
               command: 'pip-audit -r requirements.txt',
             },
             {
               english: 'cargo-audit',
-              italian: 'cargo-audit / scanner Rust',
+              italian: 'Scanner Rust (cargo-audit)',
               pronunciation: '/ˈkɑːɡəʊ ˈɔːdɪt/',
               phonetic: 'KAR-go O-dit',
-              example: 'cargo-audit checks Rust crates. = cargo-audit controlla i crate Rust.',
+              example:
+                'Before every release, cargo-audit verifies that no Rust crate dependency contains a known advisory. = Prima di ogni rilascio, cargo-audit verifica che nessuna dipendenza crate Rust contenga un avviso noto.',
               context: 'sca',
               difficulty: 'beginner',
               command: 'cargo audit',
@@ -1574,18 +1594,18 @@ export default {
               pronunciation: '/ˈɡɪthʌb ədˈvaɪzəri/',
               phonetic: 'GHIT-hab ad-VAI-zo-ri',
               example:
-                'GHSA tracks ecosystem advisories. = GHSA traccia gli avvisi degli ecosistemi.',
+                'The GitHub Advisory database published a new entry for the Log4Shell vulnerability within hours of its disclosure. = Il database GitHub Advisory ha pubblicato una nuova voce per la vulnerabilità Log4Shell entro poche ore dalla sua divulgazione.',
               context: 'sca',
               difficulty: 'beginner',
               note: 'GitHub Security Advisory.',
             },
             {
               english: 'OSV',
-              italian: 'OSV / Open Source Vulnerabilities database',
+              italian: 'Open Source Vulnerabilities database (OSV)',
               pronunciation: '/əʊ ɛs viː/',
               phonetic: 'O-ES-VI',
               example:
-                'OSV is a unified vulnerability database. = OSV è un database unificato di vulnerabilità.',
+                'Querying the OSV database by package name returns every known vulnerability across all ecosystems. = Interrogare il database OSV per nome del pacchetto restituisce ogni vulnerabilità nota in tutti gli ecosistemi.',
               context: 'sca',
               difficulty: 'beginner',
               note: 'Open Source Vulnerabilities.',
@@ -1597,7 +1617,7 @@ export default {
               pronunciation: '/ˈwaɪtlɪst ˈlaɪbrəri/',
               phonetic: 'UAIT-list LAI-bra-ri',
               example:
-                'A library whitelist limits supply chain risk. = Una whitelist di librerie limita il rischio supply chain.',
+                'Maintaining a whitelist library of pre-approved packages prevents teams from introducing unvetted dependencies. = Mantenere una whitelist di librerie pre-approvate impedisce ai team di introdurre dipendenze non verificate.',
               context: 'sca',
               difficulty: 'beginner',
             },
@@ -1614,29 +1634,29 @@ export default {
               pronunciation: '/ˈɛsbɒm/',
               phonetic: 'ES-bom',
               example:
-                'An SBOM lists every component shipped. = Una SBOM elenca ogni componente spedito.',
+                'Generating an SBOM for every container image gives the security team full visibility into shipped components. = Generare un SBOM per ogni immagine container dà al team di sicurezza piena visibilità sui componenti distribuiti.',
               context: 'sca',
               difficulty: 'beginner',
               note: 'Software Bill of Materials.',
             },
             {
               english: 'CycloneDX',
-              italian: 'CycloneDX / standard SBOM',
+              italian: 'Standard SBOM (CycloneDX)',
               pronunciation: '/ˈsaɪkləʊndiːɛks/',
               phonetic: 'SAI-klon-DI-EX',
               example:
-                'CycloneDX is a popular SBOM format. = CycloneDX è un formato SBOM popolare.',
+                'We export our dependency data in CycloneDX format so it integrates with the vulnerability management platform. = Esportiamo i dati delle nostre dipendenze in formato CycloneDX così si integrano con la piattaforma di gestione delle vulnerabilità.',
               context: 'sca',
               difficulty: 'beginner',
               tool: 'CycloneDX',
             },
             {
               english: 'SPDX',
-              italian: 'SPDX / standard SBOM e licenze',
+              italian: 'Standard SBOM e licenze (SPDX)',
               pronunciation: '/ɛs piː diː ɛks/',
               phonetic: 'ES-PI-DI-EX',
               example:
-                'SPDX is a Linux Foundation standard. = SPDX è uno standard della Linux Foundation.',
+                "The legal department requires an SPDX document for every release to verify open-source license compliance. = L'ufficio legale richiede un documento SPDX per ogni rilascio per verificare la conformità delle licenze open-source.",
               context: 'sca',
               difficulty: 'beginner',
               tool: 'SPDX',
@@ -1647,7 +1667,8 @@ export default {
               italian: 'Syft (generatore SBOM)',
               pronunciation: '/sɪft/',
               phonetic: 'SIFT',
-              example: 'Syft generates SBOMs from images. = Syft genera SBOM dalle immagini.',
+              example:
+                "Running Syft against the production Docker image generates a comprehensive SBOM in under ten seconds. = Eseguire Syft sull'immagine Docker di produzione genera un SBOM completo in meno di dieci secondi.",
               context: 'sca',
               difficulty: 'beginner',
               tool: 'Syft',
@@ -1658,7 +1679,8 @@ export default {
               italian: 'Grype (scanner di vulnerabilità immagini)',
               pronunciation: '/ɡraɪp/',
               phonetic: 'GRAIP',
-              example: 'Grype matches SBOMs against CVEs. = Grype confronta SBOM con le CVE.',
+              example:
+                'Pairing Grype with Syft creates a pipeline where images are catalogued and then scanned for vulnerabilities automatically. = Abbinare Grype a Syft crea una pipeline dove le immagini vengono catalogate e poi scansionate per vulnerabilità automaticamente.',
               context: 'sca',
               difficulty: 'beginner',
               tool: 'Grype',
@@ -1666,11 +1688,11 @@ export default {
             },
             {
               english: 'VEX',
-              italian: 'VEX / Vulnerability Exploitability eXchange',
+              italian: 'Vulnerability Exploitability eXchange (VEX)',
               pronunciation: '/vɛks/',
               phonetic: 'VEX',
               example:
-                'VEX explains why a CVE is exploitable or not. = VEX spiega perché una CVE è sfruttabile o no.',
+                'Issuing a VEX statement clarifies that the detected CVE is not exploitable in our specific deployment configuration. = Emettere un documento VEX chiarisce che la CVE rilevata non è sfruttabile nella nostra specifica configurazione di deploy.',
               context: 'sca',
               difficulty: 'beginner',
               note: 'Vulnerability Exploitability eXchange.',
@@ -1680,7 +1702,8 @@ export default {
               italian: 'Componente',
               pronunciation: '/kəmˈpəʊnənt/',
               phonetic: 'kom-PO-nent',
-              example: 'Each SBOM component has a PURL. = Ogni componente SBOM ha un PURL.',
+              example:
+                "The SBOM lists every software component, including version, supplier, and cryptographic hash. = L'SBOM elenca ogni componente software, inclusi versione, fornitore e hash crittografico.",
               context: 'sca',
               difficulty: 'beginner',
             },
@@ -1690,7 +1713,7 @@ export default {
               pronunciation: '/pɜːl/',
               phonetic: 'PERL',
               example:
-                'PURLs uniquely identify packages. = I PURL identificano univocamente i pacchetti.',
+                'Using a PURL identifier like pkg:npm/express@4.18.2 uniquely locates the exact package across any registry. = Usare un identificatore PURL come pkg:npm/express@4.18.2 localizza univocamente il pacchetto esatto in qualsiasi registry.',
               context: 'sca',
               difficulty: 'beginner',
               code: 'pkg:npm/lodash@4.17.21',
@@ -1701,7 +1724,7 @@ export default {
               pronunciation: '/ˈlaɪsəns kəmˈplaɪəns/',
               phonetic: 'LAI-sens kom-PLAI-ans',
               example:
-                'SBOMs help track license compliance. = Le SBOM aiutano a tracciare la conformità delle licenze.',
+                'The automated license compliance check rejected a library distributed under the AGPL because our product is proprietary. = Il controllo automatico di conformità delle licenze ha rifiutato una libreria distribuita sotto AGPL perché il nostro prodotto è proprietario.',
               context: 'compliance-as-code',
               difficulty: 'beginner',
             },
@@ -1711,7 +1734,7 @@ export default {
               pronunciation: '/ɪɡˈzɛkjʊtɪv ˈɔːdə/',
               phonetic: 'eg-ZE-kiu-tiv OR-der',
               example:
-                "EO 14028 mandates SBOMs for federal software. = L'EO 14028 impone SBOM al software federale.",
+                "After Executive Order 14028, federal software vendors must provide an SBOM with every delivery. = Dopo l'Executive Order 14028, i fornitori di software federali devono fornire un SBOM con ogni consegna.",
               context: 'compliance-as-code',
               difficulty: 'beginner',
               note: "Ordine USA che ha spinto l'adozione di SBOM.",
@@ -1725,10 +1748,11 @@ export default {
           items: [
             {
               english: 'Triage',
-              italian: 'triage / classificazione iniziale per priorità',
+              italian: 'Classificazione iniziale per priorità (triage)',
               pronunciation: '/ˈtriːɑːʒ/',
               phonetic: 'TRI-asg',
-              example: 'Triage CVEs by exploitability. = Triagia le CVE per sfruttabilità.',
+              example:
+                'During weekly triage meetings, the team classifies new vulnerability findings by severity and business impact. = Durante le riunioni di triage settimanali, il team classifica i nuovi finding di vulnerabilità per severità e impatto aziendale.',
               context: 'sca',
               difficulty: 'beginner',
             },
@@ -1738,7 +1762,7 @@ export default {
               pronunciation: '/ˌriːtʃəˈbɪləti/',
               phonetic: 'ri-cia-BI-li-ti',
               example:
-                'Reachability filters non-exploitable CVEs. = La raggiungibilità filtra le CVE non sfruttabili.',
+                "The reachability analysis confirmed that no production code path actually calls the vulnerable function. = L'analisi di reachability ha confermato che nessun percorso di codice in produzione chiama effettivamente la funzione vulnerabile.",
               context: 'sca',
               difficulty: 'beginner',
               note: 'Verifica se la funzione vulnerabile è davvero usata.',
@@ -1749,7 +1773,7 @@ export default {
               pronunciation: '/ˈmeɪdʒə ˈvɜːʃən bʌmp/',
               phonetic: 'MEI-ger VER-scion BAMP',
               example:
-                'A major version bump may break APIs. = Un salto di versione maggiore può rompere le API.',
+                'A major version bump in the authentication library introduced breaking API changes that required migration. = Un major version bump nella libreria di autenticazione ha introdotto cambiamenti API incompatibili che hanno richiesto una migrazione.',
               context: 'sca',
               difficulty: 'beginner',
             },
@@ -1758,7 +1782,8 @@ export default {
               italian: 'Versionamento semantico',
               pronunciation: '/ˈsɛmvɜː/',
               phonetic: 'SEM-ver',
-              example: 'Semver uses MAJOR.MINOR.PATCH. = Semver usa MAJOR.MINOR.PATCH.',
+              example:
+                'Following semver conventions, a patch release should only fix bugs without adding features or breaking compatibility. = Seguendo le convenzioni semver, una release patch dovrebbe solo correggere bug senza aggiungere funzionalità o rompere la compatibilità.',
               context: 'sca',
               difficulty: 'beginner',
               code: '^1.2.3',
@@ -1769,7 +1794,7 @@ export default {
               pronunciation: '/iː əʊ ɛl ˈlaɪbrəri/',
               phonetic: 'I-O-EL LAI-bra-ri',
               example:
-                'EOL libraries get no security fixes. = Le librerie a fine vita non ricevono fix di sicurezza.',
+                'The scanner flagged three EOL libraries that no longer receive security patches and must be replaced. = Lo scanner ha segnalato tre librerie EOL che non ricevono più patch di sicurezza e devono essere sostituite.',
               context: 'sca',
               difficulty: 'beginner',
               note: 'End of Life.',
@@ -1779,7 +1804,8 @@ export default {
               italian: 'Audit del bundle',
               pronunciation: '/ˈbʌndl ˈɔːdɪt/',
               phonetic: 'BAN-dol O-dit',
-              example: 'Bundle Audit scans Ruby Gemfiles. = Bundle Audit analizza i Gemfile Ruby.',
+              example:
+                'Running bundle audit on the Rails project revealed two gems with critical remote code execution advisories. = Eseguire bundle audit sul progetto Rails ha rivelato due gem con avvisi critici di esecuzione di codice remoto.',
               context: 'sca',
               difficulty: 'beginner',
               command: 'bundle audit check',
@@ -1790,7 +1816,7 @@ export default {
               pronunciation: '/ˈɔːtəʊ mɜːdʒ/',
               phonetic: 'O-to MERGG',
               example:
-                'Auto-merge patch updates with green tests. = Merge automatico delle patch con test verdi.',
+                "We enabled auto-merge for Dependabot PRs that only bump patch versions and pass all security checks. = Abbiamo abilitato l'auto-merge per le PR di Dependabot che incrementano solo versioni patch e passano tutti i controlli di sicurezza.",
               context: 'ci-cd',
               difficulty: 'beginner',
             },
@@ -1800,7 +1826,7 @@ export default {
               pronunciation: '/əˈlaʊlɪst/',
               phonetic: 'a-LAU-list',
               example:
-                'Allowlist trusted package registries. = Aggiungi alla allowlist i registry di pacchetti fidati.',
+                'Adding a CVE to the allowlist requires a documented justification and an expiration date for re-evaluation. = Aggiungere una CVE alla allowlist richiede una giustificazione documentata e una data di scadenza per la rivalutazione.',
               context: 'sca',
               difficulty: 'beginner',
             },
@@ -1810,7 +1836,7 @@ export default {
               pronunciation: '/ˈpraɪvət ˈrɛdʒɪstri/',
               phonetic: 'PRAI-vet RE-gi-stri',
               example:
-                'Use a private registry to vet packages. = Usa un registry privato per validare i pacchetti.',
+                'Hosting internal packages on a private registry prevents supply-chain attacks from public package name squatting. = Ospitare i pacchetti interni su un registry privato previene attacchi supply-chain dal name squatting sui pacchetti pubblici.',
               context: 'sca',
               difficulty: 'beginner',
               tool: 'JFrog Artifactory, Nexus',
@@ -1821,7 +1847,7 @@ export default {
               pronunciation: '/ˈvɛndə rɪsk/',
               phonetic: 'VEN-der RISK',
               example:
-                'Assess vendor risk before adding deps. = Valuta il rischio del fornitore prima di aggiungere deps.',
+                "The procurement team evaluates vendor risk by reviewing the supplier's SOC 2 report and vulnerability history. = Il team di procurement valuta il rischio del vendor revisionando il report SOC 2 del fornitore e la storia delle vulnerabilità.",
               context: 'sca',
               difficulty: 'beginner',
             },
@@ -1848,7 +1874,7 @@ export default {
               pronunciation: '/ˈsiːkrɪt/',
               phonetic: 'SI-kret',
               example:
-                'A secret unlocks a sensitive resource. = Un segreto sblocca una risorsa sensibile.',
+                'Storing a database password as a plaintext secret in a YAML file violates every security best practice. = Memorizzare una password di database come segreto in testo chiaro in un file YAML viola ogni best practice di sicurezza.',
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -1857,16 +1883,18 @@ export default {
               italian: 'Chiave API',
               pronunciation: '/eɪ piː aɪ kiː/',
               phonetic: 'EI-PI-AI KI',
-              example: 'Never commit API keys to git. = Non committare mai chiavi API in git.',
+              example:
+                "The leaked API key gave the attacker full access to the payment gateway for over seventy-two hours. = La chiave API trapelata ha dato all'attaccante accesso completo al gateway di pagamento per oltre settantadue ore.",
               context: 'secrets',
               difficulty: 'intermediate',
             },
             {
               english: 'Token',
-              italian: "token / credenziale d'accesso",
+              italian: "Credenziale d'accesso (token)",
               pronunciation: '/ˈtəʊkən/',
               phonetic: 'TO-ken',
-              example: 'Tokens authenticate clients. = I token autenticano i client.',
+              example:
+                'Each service authenticates to the message broker using a scoped token that expires after fifteen minutes. = Ogni servizio si autentica al message broker usando un token con scope che scade dopo quindici minuti.',
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -1876,16 +1904,17 @@ export default {
               pronunciation: '/krɪˈdɛnʃəl/',
               phonetic: 'kri-DEN-scial',
               example:
-                'Centralize credentials in a vault. = Centralizza le credenziali in un vault.',
+                "Never store any credential in source code; always load it from an environment variable or vault at runtime. = Non memorizzare mai alcuna credenziale nel codice sorgente; caricala sempre da una variabile d'ambiente o da un vault a runtime.",
               context: 'secrets',
               difficulty: 'intermediate',
             },
             {
               english: 'Vault',
-              italian: 'vault / cassaforte di segreti',
+              italian: 'Cassaforte di segreti (vault)',
               pronunciation: '/vɔːlt/',
               phonetic: 'VOLT',
-              example: 'A vault stores secrets encrypted. = Un vault memorizza i segreti cifrati.',
+              example:
+                "The application retrieves its database credentials from the vault at startup, so nothing sensitive lives on disk. = L'applicazione recupera le credenziali del database dal vault all'avvio, così nulla di sensibile rimane su disco.",
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'HashiCorp Vault',
@@ -1896,7 +1925,7 @@ export default {
               pronunciation: '/ɪnˈkrɪpʃən kiː/',
               phonetic: 'in-KRIP-scion KI',
               example:
-                'Rotate encryption keys regularly. = Ruota le chiavi di cifratura regolarmente.',
+                "Rotating the encryption key quarterly limits the blast radius if an older key is ever compromised. = Ruotare la chiave di crittografia trimestralmente limita il raggio d'impatto se una chiave più vecchia viene compromessa.",
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -1905,7 +1934,8 @@ export default {
               italian: 'Chiave master',
               pronunciation: '/ˈmɑːstə kiː/',
               phonetic: 'MAS-ter KI',
-              example: 'Protect the master key offline. = Proteggi la chiave master offline.',
+              example:
+                "Only two people in the organization know the master key, and both fragments are needed to unseal the vault. = Solo due persone nell'organizzazione conoscono la chiave master, e entrambi i frammenti sono necessari per aprire il vault.",
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -1915,7 +1945,7 @@ export default {
               pronunciation: '/ˈsiːkrɪt sprɔːl/',
               phonetic: 'SI-kret SPROL',
               example:
-                'Secret sprawl makes rotation impossible. = La proliferazione di segreti rende impossibile la rotazione.',
+                'Without centralized management, secret sprawl leads to credentials scattered across dozens of config files and wikis. = Senza gestione centralizzata, la proliferazione dei segreti porta a credenziali sparse in decine di file di configurazione e wiki.',
               context: 'secrets',
               difficulty: 'intermediate',
               note: 'Segreti sparsi in tanti posti diversi.',
@@ -1926,7 +1956,7 @@ export default {
               pronunciation: '/ˈsɜːvɪs əˈkaʊnt/',
               phonetic: 'SER-vis a-KAUNT',
               example:
-                'Service accounts authenticate workloads. = Gli account di servizio autenticano i carichi di lavoro.',
+                'Each microservice runs under its own service account with permissions limited to exactly the resources it needs. = Ogni microservizio gira sotto il proprio account di servizio con permessi limitati esattamente alle risorse di cui ha bisogno.',
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -1936,7 +1966,7 @@ export default {
               pronunciation: '/ˈæksɛs ˈtəʊkən/',
               phonetic: 'AK-ses TO-ken',
               example:
-                'Short-lived access tokens reduce risk. = Token di accesso a breve durata riducono il rischio.',
+                'The CI pipeline exchanges an OIDC claim for a short-lived access token that can only read the artifact registry. = La pipeline CI scambia un claim OIDC per un access token a breve durata che può solo leggere il registry degli artefatti.',
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -1953,7 +1983,7 @@ export default {
               pronunciation: '/ˈhæʃɪkɔːp vɔːlt/',
               phonetic: 'HASH-i-korp VOLT',
               example:
-                'HashiCorp Vault is a leading secrets manager. = HashiCorp Vault è un secrets manager leader.',
+                'Our microservices pull TLS certificates from HashiCorp Vault using the Kubernetes auth backend. = I nostri microservizi ottengono certificati TLS da HashiCorp Vault usando il backend di autenticazione Kubernetes.',
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'Vault',
@@ -1965,7 +1995,7 @@ export default {
               pronunciation: '/eɪ dʌbljuː ɛs ˈsiːkrɪts ˈmænɪdʒə/',
               phonetic: 'EI-DABL-IU-ES SI-krets MA-ni-ger',
               example:
-                'AWS Secrets Manager rotates RDS passwords. = AWS Secrets Manager ruota password RDS.',
+                'Enabling automatic rotation in AWS Secrets Manager changes the database password every thirty days without downtime. = Abilitare la rotazione automatica in AWS Secrets Manager cambia la password del database ogni trenta giorni senza downtime.',
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'AWS Secrets Manager',
@@ -1977,7 +2007,7 @@ export default {
               pronunciation: '/eɪ dʌbljuː ɛs pəˈræmɪtə stɔː/',
               phonetic: 'EI-DABL-IU-ES pa-RA-me-ter STOR',
               example:
-                'Parameter Store is cheaper than Secrets Manager. = Parameter Store è più economico di Secrets Manager.',
+                'Non-sensitive configuration values live in AWS Parameter Store while actual secrets go into Secrets Manager. = I valori di configurazione non sensibili stanno in AWS Parameter Store mentre i segreti effettivi vanno in Secrets Manager.',
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'AWS SSM',
@@ -1989,7 +2019,7 @@ export default {
               pronunciation: '/ˈæʒə kiː vɔːlt/',
               phonetic: 'A-zer KI-VOLT',
               example:
-                'Azure Key Vault stores keys and secrets. = Azure Key Vault memorizza chiavi e segreti.',
+                "The application retrieves its signing certificate from Azure Key Vault using a managed identity for passwordless access. = L'applicazione recupera il suo certificato di firma da Azure Key Vault usando un'identità gestita per l'accesso senza password.",
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'Azure Key Vault',
@@ -2001,7 +2031,7 @@ export default {
               pronunciation: '/dʒiː siː piː ˈsiːkrɪt ˈmænɪdʒə/',
               phonetic: 'GI-SI-PI SI-kret MA-ni-ger',
               example:
-                'GCP Secret Manager versions every secret. = GCP Secret Manager versiona ogni segreto.',
+                "IAM policies in GCP Secret Manager ensure that only the production service account can access payment credentials. = Le policy IAM in GCP Secret Manager assicurano che solo l'account di servizio di produzione possa accedere alle credenziali di pagamento.",
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'GCP Secret Manager',
@@ -2012,18 +2042,19 @@ export default {
               italian: 'Segreto sigillato',
               pronunciation: '/siːld ˈsiːkrɪt/',
               phonetic: 'SILD SI-kret',
-              example: 'Sealed Secrets are safe in git. = I Sealed Secrets sono sicuri in git.',
+              example:
+                'Converting Kubernetes secrets to SealedSecret resources lets you safely commit them to a Git repository. = Convertire i secret Kubernetes in risorse SealedSecret permette di committarli in sicurezza in un repository Git.',
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'Bitnami Sealed Secrets',
             },
             {
               english: 'External Secrets Operator',
-              italian: 'External Secrets Operator / sincronizzatore segreti K8s',
+              italian: 'Sincronizzatore segreti K8s (External Secrets Operator)',
               pronunciation: '/ɪkˈstɜːnl ˈsiːkrɪts ˈɒpəreɪtə/',
               phonetic: 'eks-TER-nal SI-krets O-pe-rei-ter',
               example:
-                'ESO syncs secrets into Kubernetes. = ESO sincronizza segreti in Kubernetes.',
+                "The External Secrets Operator synchronizes entries from AWS Secrets Manager into Kubernetes secrets every sixty seconds. = L'External Secrets Operator sincronizza le voci da AWS Secrets Manager nei secret Kubernetes ogni sessanta secondi.",
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'External Secrets Operator',
@@ -2034,7 +2065,7 @@ export default {
               pronunciation: '/ˈdɒplər/',
               phonetic: 'DO-pler',
               example:
-                'Doppler is a developer-friendly secrets tool. = Doppler è un tool di segreti developer-friendly.',
+                'Migrating from .env files to Doppler gave us audit trails, versioning, and environment-specific secret management. = Migrare dai file .env a Doppler ci ha dato tracciabilità, versionamento e gestione dei segreti specifica per ambiente.',
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'Doppler',
@@ -2045,7 +2076,7 @@ export default {
               pronunciation: '/wʌn ˈpɑːswɜːd siː ɛl aɪ/',
               phonetic: 'UAN PAS-uord SI-EL-AI',
               example:
-                '1Password CLI injects secrets at runtime. = La CLI 1Password inietta segreti a runtime.',
+                'Developers use the 1Password CLI to inject credentials into local development without copying them to disk. = Gli sviluppatori usano la CLI di 1Password per iniettare credenziali nello sviluppo locale senza copiarle su disco.',
               context: 'secrets',
               difficulty: 'intermediate',
               tool: '1Password',
@@ -2057,7 +2088,7 @@ export default {
               pronunciation: '/keɪ ɛm ɛs/',
               phonetic: 'KEI-EM-ES',
               example:
-                'KMS encrypts data with managed keys. = KMS cifra i dati con chiavi gestite.',
+                "The application encrypts sensitive fields at rest using an AWS KMS customer-managed key with automatic rotation. = L'applicazione cripta i campi sensibili a riposo usando una chiave AWS KMS gestita dal cliente con rotazione automatica.",
               context: 'secrets',
               difficulty: 'intermediate',
               note: 'Key Management Service.',
@@ -2075,7 +2106,7 @@ export default {
               pronunciation: '/ˈsiːkrɪt ˈskænɪŋ/',
               phonetic: 'SI-kret SKA-ning',
               example:
-                'Secret scanning blocks leaked credentials. = La scansione di segreti blocca le credenziali divulgate.',
+                'Enabling secret scanning at the organization level prevents any repository from accepting commits that contain API keys. = Abilitare la scansione dei segreti a livello di organizzazione impedisce a qualsiasi repository di accettare commit contenenti chiavi API.',
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -2085,7 +2116,7 @@ export default {
               pronunciation: '/ˈɡɪtliːks/',
               phonetic: 'GHIT-liks',
               example:
-                'Gitleaks scans git history for secrets. = Gitleaks analizza la storia git per segreti.',
+                "Running Gitleaks against the entire commit history found three revoked but still-visible AWS credentials. = Eseguire Gitleaks sull'intera cronologia dei commit ha trovato tre credenziali AWS revocate ma ancora visibili.",
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'Gitleaks',
@@ -2097,7 +2128,7 @@ export default {
               pronunciation: '/ˈtrʌflhɒɡ/',
               phonetic: 'TRA-fol-hog',
               example:
-                'TruffleHog verifies if secrets still work. = TruffleHog verifica se i segreti funzionano ancora.',
+                'The TruffleHog scan detected a high-entropy string in a Terraform file that turned out to be a live database password. = La scansione TruffleHog ha rilevato una stringa ad alta entropia in un file Terraform che si è rivelata una password di database attiva.',
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'TruffleHog',
@@ -2109,7 +2140,7 @@ export default {
               pronunciation: '/dɪˈtɛkt ˈsiːkrɪts/',
               phonetic: 'di-TEKT SI-krets',
               example:
-                "detect-secrets uses entropy to flag tokens. = detect-secrets usa l'entropia per segnalare token.",
+                'Adding detect-secrets to the pre-commit framework blocks any commit containing patterns that match known credential formats. = Aggiungere detect-secrets al framework pre-commit blocca qualsiasi commit contenente pattern che corrispondono a formati di credenziali noti.',
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'detect-secrets',
@@ -2121,7 +2152,7 @@ export default {
               pronunciation: '/ˈɡɪthʌb/',
               phonetic: 'GHIT-hab',
               example:
-                'GitHub Secret Scanning runs on public repos. = GitHub Secret Scanning gira sui repo pubblici.',
+                'When GitHub Secret Scanning detects an exposed token, it notifies the token provider for automatic revocation. = Quando GitHub Secret Scanning rileva un token esposto, notifica il fornitore del token per la revoca automatica.',
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'GitHub',
@@ -2132,7 +2163,7 @@ export default {
               pronunciation: '/pʊʃ prəˈtɛkʃən/',
               phonetic: 'PUSH pro-TEK-scion',
               example:
-                'Push protection blocks secrets pre-push. = La protezione del push blocca i segreti prima del push.',
+                'With push protection enabled, Git rejects the push immediately if the commit contains any recognized secret pattern. = Con la push protection abilitata, Git rifiuta il push immediatamente se il commit contiene qualsiasi pattern di segreto riconosciuto.',
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -2142,7 +2173,7 @@ export default {
               pronunciation: '/ˈɛntrəpi dɪˈtɛkʃən/',
               phonetic: 'EN-tro-pi di-TEK-scion',
               example:
-                "Entropy detection finds random-looking strings. = Il rilevamento dell'entropia trova stringhe dall'aspetto casuale.",
+                'High entropy detection catches randomly generated strings like API keys that rule-based scanners might miss. = Il rilevamento ad alta entropia intercetta stringhe generate casualmente come chiavi API che gli scanner basati su regole potrebbero non trovare.',
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -2152,18 +2183,18 @@ export default {
               pronunciation: '/ˈriːdʒɛks ˈpætən/',
               phonetic: 'RI-gex PA-tern',
               example:
-                'Custom regex patterns detect known formats. = Pattern regex personalizzati rilevano formati noti.',
+                "We added a custom regex pattern for our internal API key format so the scanner catches company-specific secrets. = Abbiamo aggiunto un pattern regex personalizzato per il formato delle nostre chiavi API interne così lo scanner intercetta i segreti specifici dell'azienda.",
               context: 'secrets',
               difficulty: 'intermediate',
               code: '/AKIA[0-9A-Z]{16}/',
             },
             {
               english: 'BFG Repo-Cleaner',
-              italian: 'BFG Repo-Cleaner / utility pulizia storia Git',
+              italian: 'Utility pulizia storia Git (BFG Repo-Cleaner)',
               pronunciation: '/biː ɛf dʒiː ˈriːpəʊ ˈkliːnə/',
               phonetic: 'BI-EF-GI RI-po KLI-ner',
               example:
-                'BFG removes secrets from git history. = BFG rimuove segreti dalla storia git.',
+                "After revoking the leaked key, we used BFG Repo-Cleaner to permanently remove it from the entire Git history. = Dopo aver revocato la chiave trapelata, abbiamo usato BFG Repo-Cleaner per rimuoverla permanentemente dall'intera cronologia Git.",
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'BFG Repo-Cleaner',
@@ -2175,7 +2206,7 @@ export default {
               pronunciation: '/liːk ˌnəʊtɪfɪˈkeɪʃən/',
               phonetic: 'LIK no-ti-fi-KEI-scion',
               example:
-                'Cloud providers send leak notifications. = I provider cloud inviano notifiche di leak.',
+                'Our leak notification system sends a Slack alert within seconds when a secret is detected in any repository. = Il nostro sistema di notifica leak invia un avviso Slack entro pochi secondi quando un segreto viene rilevato in qualsiasi repository.',
               context: 'secrets',
               difficulty: 'intermediate',
               note: 'AWS, GitHub e altri rilevano token leakati.',
@@ -2193,7 +2224,7 @@ export default {
               pronunciation: '/ˈsiːkrɪt rəʊˈteɪʃən/',
               phonetic: 'SI-kret ro-TEI-scion',
               example:
-                "Automatic secret rotation limits exposure. = La rotazione automatica dei segreti limita l'esposizione.",
+                "Automated secret rotation replaces database passwords every seven days without any application downtime. = La rotazione automatica dei segreti sostituisce le password del database ogni sette giorni senza alcun downtime dell'applicazione.",
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -2203,7 +2234,7 @@ export default {
               pronunciation: '/daɪˈnæmɪk ˈsiːkrɪt/',
               phonetic: 'dai-NA-mik SI-kret',
               example:
-                'Dynamic secrets exist only for a session. = I segreti dinamici esistono solo per una sessione.',
+                'HashiCorp Vault issues a dynamic secret for each database session that is automatically revoked after its TTL expires. = HashiCorp Vault emette un segreto dinamico per ogni sessione database che viene automaticamente revocato dopo la scadenza del suo TTL.',
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'Vault dynamic secrets',
@@ -2214,7 +2245,7 @@ export default {
               pronunciation: '/ʃɔːt lɪvd krɪˈdɛnʃəl/',
               phonetic: 'SHORT-LIVD kri-DEN-scial',
               example:
-                'Prefer short-lived over static credentials. = Preferisci credenziali a breve durata a quelle statiche.',
+                'Issuing a short-lived credential that expires in fifteen minutes limits the damage window if it is intercepted. = Emettere una credenziale a breve durata che scade in quindici minuti limita la finestra di danno se viene intercettata.',
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -2224,7 +2255,7 @@ export default {
               pronunciation: '/dʒʌst ɪn taɪm ˈæksɛs/',
               phonetic: 'GIAST-IN-TAIM AK-ses',
               example:
-                "JIT access grants permissions on demand. = L'accesso JIT concede permessi su richiesta.",
+                "With just-in-time access, engineers receive production privileges only during an approved maintenance window. = Con l'accesso just-in-time, gli ingegneri ricevono privilegi di produzione solo durante una finestra di manutenzione approvata.",
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -2234,7 +2265,7 @@ export default {
               pronunciation: '/ˈwɜːkləʊd aɪˈdɛntəti/',
               phonetic: 'UORK-loud ai-DEN-te-ti',
               example:
-                "Workload identity replaces static keys. = L'identità del workload sostituisce chiavi statiche.",
+                "Using workload identity federation, the Kubernetes pod authenticates to GCP without storing any service account key file. = Usando la federazione di identità del workload, il pod Kubernetes si autentica a GCP senza memorizzare alcun file di chiave dell'account di servizio.",
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'GCP Workload Identity, IRSA',
@@ -2244,7 +2275,8 @@ export default {
               italian: 'IAM Roles for Service Accounts',
               pronunciation: '/ˈɜːsə/',
               phonetic: 'IR-sa',
-              example: 'IRSA gives EKS pods AWS roles. = IRSA dà ai pod EKS ruoli AWS.',
+              example:
+                "Configuring IRSA for EKS pods eliminates the need for long-lived AWS credentials inside the cluster. = Configurare IRSA per i pod EKS elimina la necessità di credenziali AWS a lunga durata all'interno del cluster.",
               context: 'secrets',
               difficulty: 'intermediate',
               note: 'IAM Roles for Service Accounts (AWS EKS).',
@@ -2255,7 +2287,7 @@ export default {
               pronunciation: '/ˈɛnvələʊp ɪnˈkrɪpʃən/',
               phonetic: 'EN-ve-loup in-KRIP-scion',
               example:
-                'Envelope encryption uses two key tiers. = La cifratura a busta usa due livelli di chiavi.',
+                'With envelope encryption, a data encryption key encrypts the payload while a master key in KMS protects the data key itself. = Con la crittografia a busta, una chiave di crittografia dei dati cifra il payload mentre una chiave master in KMS protegge la chiave dati stessa.',
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -2265,7 +2297,7 @@ export default {
               pronunciation: '/ˈsiːkrɪt ɪnˈdʒɛkʃən/',
               phonetic: 'SI-kret in-GEK-scion',
               example:
-                'Inject secrets as env vars at runtime. = Inietta segreti come env var a runtime.',
+                "The init container handles secret injection by fetching credentials from Vault and writing them to a shared memory volume. = Il container init gestisce l'iniezione dei segreti recuperando le credenziali da Vault e scrivendole in un volume di memoria condiviso.",
               context: 'secrets',
               difficulty: 'intermediate',
             },
@@ -2275,7 +2307,7 @@ export default {
               pronunciation: '/vɔːlt ˈeɪdʒənt/',
               phonetic: 'VOLT EI-gent',
               example:
-                'Vault Agent renews secrets automatically. = Vault Agent rinnova i segreti automaticamente.',
+                'A sidecar Vault Agent automatically renews leases and re-renders templates when secrets rotate. = Un sidecar Vault Agent rinnova automaticamente i lease e rigenera i template quando i segreti ruotano.',
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'Vault Agent',
@@ -2286,7 +2318,7 @@ export default {
               pronunciation: '/breɪk ɡlɑːs prəˈsiːdʒə/',
               phonetic: 'BREIK-GLAS pro-SI-ger',
               example:
-                "A break-glass procedure unlocks emergency access. = Una procedura break-glass sblocca l'accesso d'emergenza.",
+                'The break-glass procedure grants emergency admin access but logs every action and triggers an automatic audit review. = La procedura di break-glass concede accesso admin di emergenza ma registra ogni azione e attiva una revisione di audit automatica.',
               context: 'secrets',
               difficulty: 'intermediate',
               note: '"Rompere il vetro": accesso eccezionale audited.',
@@ -2314,7 +2346,7 @@ export default {
               pronunciation: '/dæst/',
               phonetic: 'DAST',
               example:
-                "DAST tests the running application. = Il DAST testa l'applicazione in esecuzione.",
+                "Running DAST against the staging environment revealed an exposed admin panel that SAST had completely missed. = Eseguire DAST sull'ambiente di staging ha rivelato un pannello admin esposto che la SAST aveva completamente mancato.",
               context: 'dast',
               difficulty: 'intermediate',
               note: 'Dynamic Application Security Testing.',
@@ -2324,17 +2356,18 @@ export default {
               italian: 'Test a scatola nera',
               pronunciation: '/blæk bɒks ˈtɛstɪŋ/',
               phonetic: 'BLAK-BOX TES-ting',
-              example: 'DAST is a black box test. = Il DAST è un test a scatola nera.',
+              example:
+                "During black box testing, the consultant discovered the API returned verbose error messages leaking internal paths. = Durante il black box testing, il consulente ha scoperto che l'API restituiva messaggi di errore verbosi che rivelavano percorsi interni.",
               context: 'dast',
               difficulty: 'intermediate',
             },
             {
               english: 'Crawler',
-              italian: 'crawler / spider che scansiona il sito',
+              italian: 'Spider che scansiona il sito (crawler)',
               pronunciation: '/ˈkrɔːlər/',
               phonetic: 'KRO-ler',
               example:
-                "A crawler discovers app endpoints. = Un crawler scopre gli endpoint dell'app.",
+                'The DAST crawler automatically discovered forty-seven hidden endpoints that were not documented in the OpenAPI spec. = Il crawler DAST ha scoperto automaticamente quarantasette endpoint nascosti non documentati nella specifica OpenAPI.',
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2344,17 +2377,17 @@ export default {
               pronunciation: '/əˈtæk ˈvɛktər/',
               phonetic: 'a-TAK VEK-ter',
               example:
-                'DAST tries common attack vectors. = Il DAST prova vettori di attacco comuni.',
+                "The report identified an unauthenticated REST endpoint as the primary attack vector for privilege escalation. = Il report ha identificato un endpoint REST non autenticato come il principale vettore di attacco per l'escalation dei privilegi.",
               context: 'dast',
               difficulty: 'intermediate',
             },
             {
               english: 'Payload',
-              italian: "payload / corpo dell'attacco",
+              italian: "Corpo dell'attacco (payload)",
               pronunciation: '/ˈpeɪləʊd/',
               phonetic: 'PEI-loud',
               example:
-                'A payload triggers a vulnerability. = Un payload innesca una vulnerabilità.',
+                "The pentester crafted a JSON payload that bypassed input validation and triggered a server-side template injection. = Il pentester ha costruito un payload JSON che aggirava la validazione dell'input e attivava un'iniezione di template lato server.",
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2364,7 +2397,7 @@ export default {
               pronunciation: '/ˈæktɪv skæn/',
               phonetic: 'AK-tiv SKAN',
               example:
-                'Active scans send malicious payloads. = Le scansioni attive inviano payload malevoli.',
+                'An active scan sends real attack requests, so it should only run against staging environments with production-like data. = Una scansione attiva invia richieste di attacco reali, quindi dovrebbe essere eseguita solo su ambienti di staging con dati simili alla produzione.',
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2374,7 +2407,7 @@ export default {
               pronunciation: '/ˈpæsɪv skæn/',
               phonetic: 'PAS-siv SKAN',
               example:
-                'Passive scans observe normal traffic. = Le scansioni passive osservano il traffico normale.',
+                'The passive scan analyzed traffic captured by the proxy and found missing security headers on thirty endpoints. = La scansione passiva ha analizzato il traffico catturato dal proxy e ha trovato header di sicurezza mancanti su trenta endpoint.',
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2384,7 +2417,7 @@ export default {
               pronunciation: '/ɔːˈθɛntɪkeɪtɪd skæn/',
               phonetic: 'o-TEN-ti-kei-ted SKAN',
               example:
-                'Authenticated scans test logged-in flows. = Le scansioni autenticate testano flussi loggati.',
+                'Switching from anonymous to authenticated scan mode uncovered IDOR vulnerabilities behind the login wall. = Passare dalla modalità anonima a quella di scansione autenticata ha scoperto vulnerabilità IDOR dietro la parete di login.',
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2393,17 +2426,18 @@ export default {
               italian: 'Scansione API',
               pronunciation: '/eɪ piː aɪ skæn/',
               phonetic: 'EI-PI-AI SKAN',
-              example: 'API scans use the OpenAPI spec. = Le scansioni API usano la spec OpenAPI.',
+              example:
+                'Importing the OpenAPI spec into ZAP enabled a targeted API scan that found broken object level authorization in three routes. = Importare la specifica OpenAPI in ZAP ha abilitato una scansione API mirata che ha trovato autorizzazione a livello di oggetto non funzionante in tre route.',
               context: 'dast',
               difficulty: 'intermediate',
             },
             {
               english: 'Spider',
-              italian: 'spider / esplorazione automatica delle pagine',
+              italian: 'Esplorazione automatica delle pagine (spider)',
               pronunciation: '/ˈspaɪdər/',
               phonetic: 'SPAI-der',
               example:
-                "The spider maps the application tree. = Lo spider mappa l'albero dell'applicazione.",
+                'Before launching the active scan, the spider maps every reachable page and form to build a complete site tree. = Prima di lanciare la scansione attiva, lo spider mappa ogni pagina e form raggiungibile per costruire un albero completo del sito.',
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2419,7 +2453,8 @@ export default {
               italian: 'OWASP ZAP (proxy DAST open source)',
               pronunciation: '/ˈəʊwɒsp zæp/',
               phonetic: 'O-uosp ZAP',
-              example: 'OWASP ZAP is a free DAST scanner. = OWASP ZAP è uno scanner DAST gratuito.',
+              example:
+                'Integrating OWASP ZAP into the nightly CI pipeline automatically tests every new endpoint for common vulnerabilities. = Integrare OWASP ZAP nella pipeline CI notturna testa automaticamente ogni nuovo endpoint per vulnerabilità comuni.',
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'OWASP ZAP',
@@ -2431,7 +2466,7 @@ export default {
               pronunciation: '/bɜːp swiːt/',
               phonetic: 'BERP SUIT',
               example:
-                'Burp Suite is the pen tester favorite. = Burp Suite è il preferito dei pen tester.',
+                'The security consultant used Burp Suite to intercept API traffic and modify JWT claims to test authorization logic. = Il consulente di sicurezza ha usato Burp Suite per intercettare il traffico API e modificare i claim JWT per testare la logica di autorizzazione.',
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'Burp Suite',
@@ -2442,7 +2477,7 @@ export default {
               pronunciation: '/ˈnjuːkliaɪ/',
               phonetic: 'NIU-klei',
               example:
-                'Nuclei runs templated vulnerability checks. = Nuclei esegue controlli di vulnerabilità da template.',
+                "Writing custom Nuclei templates lets the team scan for organization-specific misconfigurations across all subdomains. = Scrivere template Nuclei personalizzati permette al team di scansionare misconfigurazioni specifiche dell'organizzazione su tutti i sottodomini.",
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'Nuclei',
@@ -2454,7 +2489,7 @@ export default {
               pronunciation: '/ˈnɪktəʊ/',
               phonetic: 'NIK-to',
               example:
-                'Nikto scans web servers for misconfigs. = Nikto analizza i web server per misconfig.',
+                'A quick Nikto scan of the web server detected outdated Apache modules with known remote code execution flaws. = Una scansione rapida Nikto del server web ha rilevato moduli Apache obsoleti con falle note di esecuzione di codice remoto.',
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'Nikto',
@@ -2466,7 +2501,7 @@ export default {
               pronunciation: '/ækjuːˈnɛtɪks/',
               phonetic: 'a-kiu-NE-tiks',
               example:
-                'Acunetix is a commercial DAST suite. = Acunetix è una suite DAST commerciale.',
+                'The enterprise license for Acunetix lets us schedule weekly scans across all customer-facing web applications. = La licenza enterprise di Acunetix ci permette di programmare scansioni settimanali su tutte le applicazioni web rivolte ai clienti.',
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'Acunetix',
@@ -2477,7 +2512,7 @@ export default {
               pronunciation: '/ˈnɛtˌspɑːkə/',
               phonetic: 'NET-spar-ker',
               example:
-                'Netsparker proves vulnerabilities automatically. = Netsparker dimostra le vulnerabilità automaticamente.',
+                'After configuring login macros, Netsparker reached authenticated areas and found stored XSS in the user profile page. = Dopo aver configurato le macro di login, Netsparker ha raggiunto le aree autenticate e ha trovato XSS persistente nella pagina del profilo utente.',
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'Netsparker (Invicti)',
@@ -2487,7 +2522,8 @@ export default {
               italian: 'Wapiti (DAST open source)',
               pronunciation: '/wəˈpiːti/',
               phonetic: 'ua-PI-ti',
-              example: 'Wapiti is an open source DAST tool. = Wapiti è un tool DAST open source.',
+              example:
+                "The open-source scanner Wapiti detected a blind SQL injection on the search endpoint that commercial tools had overlooked. = Lo scanner open-source Wapiti ha rilevato una SQL injection cieca sull'endpoint di ricerca che gli strumenti commerciali avevano trascurato.",
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'Wapiti',
@@ -2495,11 +2531,11 @@ export default {
             },
             {
               english: 'sqlmap',
-              italian: 'sqlmap / strumento automatico di SQL injection',
+              italian: 'Strumento automatico di SQL injection (sqlmap)',
               pronunciation: '/ˈɛs kjuː ɛl mæp/',
               phonetic: 'ES-KIU-EL MAP',
               example:
-                'sqlmap automates SQL injection tests. = sqlmap automatizza test di SQL injection.',
+                "Using sqlmap with the tamper scripts enabled, the pentester extracted the admin password hash through a time-based blind injection. = Usando sqlmap con gli script tamper abilitati, il pentester ha estratto l'hash della password admin tramite un'iniezione cieca basata sul tempo.",
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'sqlmap',
@@ -2510,7 +2546,8 @@ export default {
               italian: 'Arachni (DAST modulare in Ruby)',
               pronunciation: '/əˈræknɪ/',
               phonetic: 'a-RAK-ni',
-              example: 'Arachni scans modern web apps. = Arachni analizza web app moderne.',
+              example:
+                'The Arachni report grouped all findings by severity and provided fix suggestions for each detected vulnerability. = Il report di Arachni ha raggruppato tutti i finding per severità e ha fornito suggerimenti di fix per ogni vulnerabilità rilevata.',
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'Arachni',
@@ -2520,7 +2557,8 @@ export default {
               italian: 'StackHawk (DAST integrato in CI)',
               pronunciation: '/ˈstækhɔːk/',
               phonetic: 'STAK-hok',
-              example: 'StackHawk integrates DAST into CI. = StackHawk integra il DAST nella CI.',
+              example:
+                'Adding StackHawk to the GitHub Actions workflow gives developers DAST feedback directly in their pull request comments. = Aggiungere StackHawk al workflow GitHub Actions dà agli sviluppatori feedback DAST direttamente nei commenti delle pull request.',
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'StackHawk',
@@ -2534,21 +2572,21 @@ export default {
           items: [
             {
               english: 'Fuzzing',
-              italian: 'fuzzing / test con input casuali',
+              italian: 'Test con input casuali (fuzzing)',
               pronunciation: '/ˈfʌzɪŋ/',
               phonetic: 'FA-zing',
               example:
-                'Fuzzing finds crashes with random input. = Il fuzzing trova crash con input casuali.',
+                "Continuous fuzzing with randomized inputs discovered a heap corruption bug that manual testing had never triggered. = Il fuzzing continuo con input casuali ha scoperto un bug di corruzione dell'heap che il testing manuale non aveva mai attivato.",
               context: 'dast',
               difficulty: 'intermediate',
             },
             {
               english: 'Fuzzer',
-              italian: 'fuzzer / strumento di fuzzing',
+              italian: 'Strumento di fuzzing (fuzzer)',
               pronunciation: '/ˈfʌzər/',
               phonetic: 'FA-zer',
               example:
-                'A fuzzer mutates inputs to break apps. = Un fuzzer muta input per rompere app.',
+                "The coverage-guided fuzzer generated over one million test cases in an hour and found three unique crash paths. = Il fuzzer guidato dalla copertura ha generato oltre un milione di test case in un'ora e ha trovato tre percorsi di crash unici.",
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2558,7 +2596,7 @@ export default {
               pronunciation: '/eɪ ɛf ɛl plʌs plʌs/',
               phonetic: 'EI-EF-EL PLAS PLAS',
               example:
-                'AFL++ is a coverage-guided fuzzer. = AFL++ è un fuzzer guidato dalla copertura.',
+                'Instrumenting the parser with AFL++ revealed a memory corruption vulnerability that existed since the first release. = Instrumentare il parser con AFL++ ha rivelato una vulnerabilità di corruzione della memoria presente sin dalla prima release.',
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'AFL++',
@@ -2568,7 +2606,8 @@ export default {
               italian: 'libFuzzer (fuzzer in-process LLVM)',
               pronunciation: '/lɪb ˈfʌzər/',
               phonetic: 'LIB-FA-zer',
-              example: 'libFuzzer is built into Clang. = libFuzzer è integrato in Clang.',
+              example:
+                'We wrote a libFuzzer harness for the JSON parsing function to test edge cases that unit tests could not cover. = Abbiamo scritto un harness libFuzzer per la funzione di parsing JSON per testare casi limite che gli unit test non potevano coprire.',
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'libFuzzer',
@@ -2578,7 +2617,8 @@ export default {
               italian: 'go-fuzz (fuzzer per Go)',
               pronunciation: '/ɡəʊ fʌz/',
               phonetic: 'GO-FAZ',
-              example: 'go-fuzz fuzzes Go code. = go-fuzz esegue fuzzing su codice Go.',
+              example:
+                "Running go-fuzz on the TLS handshake code uncovered a panic triggered by a malformed certificate chain. = Eseguire go-fuzz sul codice dell'handshake TLS ha scoperto un panic causato da una catena di certificati malformata.",
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'go-fuzz',
@@ -2590,7 +2630,7 @@ export default {
               pronunciation: '/ɒs ɛs fʌz/',
               phonetic: 'OS-ES FAZ',
               example:
-                'OSS-Fuzz fuzzes open source projects. = OSS-Fuzz fa fuzzing di progetti open source.',
+                "Submitting the library to OSS-Fuzz provides continuous fuzzing backed by Google's infrastructure at no cost. = Sottoporre la libreria a OSS-Fuzz fornisce fuzzing continuo supportato dall'infrastruttura di Google senza alcun costo.",
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'OSS-Fuzz',
@@ -2601,37 +2641,38 @@ export default {
               pronunciation: '/ˈkʌvərɪdʒ ɡaɪdɪd ˈfʌzɪŋ/',
               phonetic: 'KA-ve-rigg GAI-ded FA-zing',
               example:
-                'Coverage-guided fuzzing explores new paths. = Il fuzzing guidato dalla copertura esplora nuovi percorsi.',
+                'With coverage-guided fuzzing, the tool mutates inputs to reach new code branches, maximizing vulnerability discovery. = Con il fuzzing guidato dalla copertura, lo strumento muta gli input per raggiungere nuovi rami di codice, massimizzando la scoperta di vulnerabilità.',
               context: 'dast',
               difficulty: 'intermediate',
             },
             {
               english: 'Crash',
-              italian: 'crash / arresto del programma',
+              italian: 'Arresto del programma (crash)',
               pronunciation: '/kræʃ/',
               phonetic: 'KRASH',
               example:
-                'Each crash is a potential vulnerability. = Ogni crash è una potenziale vulnerabilità.',
+                'Every crash discovered by the fuzzer is automatically deduplicated, triaged, and filed as a security bug. = Ogni crash scoperto dal fuzzer viene automaticamente deduplicato, classificato e archiviato come bug di sicurezza.',
               context: 'dast',
               difficulty: 'intermediate',
             },
             {
               english: 'Corpus',
-              italian: 'corpus / insieme di input di partenza',
+              italian: 'Insieme di input di partenza (corpus)',
               pronunciation: '/ˈkɔːpəs/',
               phonetic: 'KOR-pus',
-              example: 'A good corpus speeds up fuzzing. = Un buon corpus velocizza il fuzzing.',
+              example:
+                'Seeding the fuzzer with a high-quality corpus of real protocol messages dramatically accelerates code coverage growth. = Popolare il fuzzer con un corpus di alta qualità di messaggi di protocollo reali accelera drasticamente la crescita della copertura del codice.',
               context: 'dast',
               difficulty: 'intermediate',
               note: 'Insieme di input seed iniziali.',
             },
             {
               english: 'Sanitizer',
-              italian: 'sanitizer / strumento rilevazione errori a runtime',
+              italian: 'Strumento rilevazione errori a runtime (sanitizer)',
               pronunciation: '/ˈsænɪtaɪzər/',
               phonetic: 'SA-ni-tai-zer',
               example:
-                'AddressSanitizer catches memory bugs. = AddressSanitizer cattura bug di memoria.',
+                'Compiling with AddressSanitizer enabled, the sanitizer caught an out-of-bounds read that the fuzzer triggered. = Compilando con AddressSanitizer abilitato, il sanitizer ha intercettato una lettura fuori dai limiti attivata dal fuzzer.',
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'ASan, MSan, UBSan',
@@ -2649,17 +2690,17 @@ export default {
               pronunciation: '/ˌpɛnɪˈtreɪʃən ˈtɛstɪŋ/',
               phonetic: 'pe-ni-TREI-scion TES-ting',
               example:
-                'Penetration testing simulates real attacks. = Il test di penetrazione simula attacchi reali.',
+                'Annual penetration testing revealed that the VPN concentrator still accepted deprecated TLS 1.0 connections. = Il penetration testing annuale ha rivelato che il concentratore VPN accettava ancora connessioni TLS 1.0 deprecate.',
               context: 'dast',
               difficulty: 'intermediate',
             },
             {
               english: 'Pen Test',
-              italian: 'pen test / penetration test',
+              italian: 'Penetration test (pen test)',
               pronunciation: '/pɛn tɛst/',
               phonetic: 'PEN TEST',
               example:
-                'Schedule a pen test before launch. = Pianifica un pen test prima del lancio.',
+                'The external pen test confirmed that the rate-limiting controls effectively blocked brute-force login attempts. = Il pen test esterno ha confermato che i controlli di rate-limiting bloccavano efficacemente i tentativi di login brute-force.',
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2669,7 +2710,7 @@ export default {
               pronunciation: '/rɪˈkɒnɪsəns/',
               phonetic: 'ri-KO-ni-sans',
               example:
-                "Recon maps the target attack surface. = La ricognizione mappa la superficie d'attacco target.",
+                'During the reconnaissance phase, the tester used Shodan to discover forgotten development servers exposed to the internet. = Durante la fase di ricognizione, il tester ha usato Shodan per scoprire server di sviluppo dimenticati esposti su internet.',
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2679,7 +2720,7 @@ export default {
               pronunciation: '/ˌɛksplɔɪˈteɪʃən/',
               phonetic: 'eks-ploi-TEI-scion',
               example:
-                'Exploitation proves a finding is real. = Lo sfruttamento dimostra che un riscontro è reale.',
+                'After finding the SQL injection, the exploitation phase demonstrated full database access and data exfiltration. = Dopo aver trovato la SQL injection, la fase di exploitation ha dimostrato accesso completo al database ed esfiltrazione dei dati.',
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2689,7 +2730,7 @@ export default {
               pronunciation: '/pəʊst ˌɛksplɔɪˈteɪʃən/',
               phonetic: 'POUST eks-ploi-TEI-scion',
               example:
-                'Post-exploitation tests lateral movement. = Il post-sfruttamento testa il movimento laterale.',
+                'In the post-exploitation phase, the red team achieved lateral movement to three additional internal servers. = Nella fase di post-exploitation, il red team ha ottenuto movimento laterale verso tre server interni aggiuntivi.',
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2699,17 +2740,17 @@ export default {
               pronunciation: '/kənˈtɪnjʊəs pɛn ˈtɛstɪŋ/',
               phonetic: 'kon-TI-nius PEN TES-ting',
               example:
-                'Continuous pen testing runs in CI/CD. = Il pen testing continuo gira in CI/CD.',
+                'Switching to continuous pen testing lets the team validate security fixes within days instead of waiting for annual engagements. = Passare al pen testing continuo permette al team di validare i fix di sicurezza in pochi giorni invece di aspettare gli impegni annuali.',
               context: 'dast',
               difficulty: 'intermediate',
             },
             {
               english: 'Bug Bounty',
-              italian: 'bug bounty / ricompensa per segnalazione bug',
+              italian: 'Ricompensa per segnalazione bug (bug bounty)',
               pronunciation: '/bʌɡ ˈbaʊnti/',
               phonetic: 'BAG BAUN-ti',
               example:
-                'A bug bounty rewards external researchers. = Un bug bounty premia ricercatori esterni.',
+                'Launching a public bug bounty program attracted researchers who found three critical flaws the internal team had missed. = Lanciare un programma di bug bounty pubblico ha attratto ricercatori che hanno trovato tre falle critiche che il team interno aveva mancato.',
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'HackerOne, Bugcrowd',
@@ -2719,7 +2760,8 @@ export default {
               italian: 'Ambito',
               pronunciation: '/skəʊp/',
               phonetic: 'SKOUP',
-              example: "Define the test scope clearly. = Definisci chiaramente l'ambito del test.",
+              example:
+                "Defining a clear scope for the engagement prevents testers from accidentally disrupting production services. = Definire uno scope chiaro per l'impegno impedisce ai tester di interrompere accidentalmente i servizi in produzione.",
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2728,7 +2770,8 @@ export default {
               italian: 'Fuori ambito',
               pronunciation: '/aʊt əv skəʊp/',
               phonetic: 'AUT-ov-SKOUP',
-              example: 'Production data is out of scope. = I dati di produzione sono fuori ambito.',
+              example:
+                'The client marked third-party payment integrations as out of scope because they are managed by an external vendor. = Il cliente ha segnato le integrazioni di pagamento di terze parti come fuori scope perché sono gestite da un fornitore esterno.',
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2738,7 +2781,7 @@ export default {
               pronunciation: '/ˈpɛntɛst rɪˈpɔːt/',
               phonetic: 'PEN-test ri-PORT',
               example:
-                'A pentest report ranks findings by risk. = Un report di pentest classifica i riscontri per rischio.',
+                'The pentest report included a severity-ranked list of findings with reproduction steps and remediation recommendations. = Il report del pentest includeva un elenco di finding ordinato per severità con passi di riproduzione e raccomandazioni di remediation.',
               context: 'dast',
               difficulty: 'intermediate',
             },
@@ -2765,7 +2808,7 @@ export default {
               pronunciation: '/kənˈteɪnər ˈɪmɪdʒ/',
               phonetic: 'kon-TEI-ner I-migg',
               example:
-                "A container image bundles the app. = Un'immagine container raggruppa l'app.",
+                'Scanning every container image before deployment prevents known-vulnerable packages from reaching production. = Scansionare ogni immagine container prima del deployment impedisce ai pacchetti con vulnerabilità note di raggiungere la produzione.',
               context: 'container-security',
               difficulty: 'intermediate',
             },
@@ -2775,7 +2818,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ ˈskænɪŋ/',
               phonetic: 'I-migg SKA-ning',
               example:
-                'Image scanning finds CVEs in layers. = La scansione immagini trova CVE nei layer.',
+                'Automated image scanning runs on every push to the container registry, flagging any CVE above medium severity. = La scansione automatica delle immagini gira a ogni push nel container registry, segnalando qualsiasi CVE sopra la severità media.',
               context: 'container-security',
               difficulty: 'intermediate',
             },
@@ -2785,7 +2828,7 @@ export default {
               pronunciation: '/ˈtrɪvi/',
               phonetic: 'TRI-vi',
               example:
-                'Trivy is a fast all-in-one scanner. = Trivy è uno scanner all-in-one veloce.',
+                'Adding Trivy to the CI pipeline catches OS package and language library vulnerabilities in under thirty seconds. = Aggiungere Trivy alla pipeline CI intercetta vulnerabilità dei pacchetti OS e delle librerie in meno di trenta secondi.',
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Trivy',
@@ -2796,7 +2839,8 @@ export default {
               italian: 'Grype (scanner di vulnerabilità immagini)',
               pronunciation: '/ɡraɪp/',
               phonetic: 'GRAIP',
-              example: 'Grype scans images and SBOMs. = Grype analizza immagini e SBOM.',
+              example:
+                'Pairing Grype with Syft creates a pipeline where images are catalogued and then scanned for vulnerabilities automatically. = Abbinare Grype a Syft crea una pipeline dove le immagini vengono catalogate e poi scansionate per vulnerabilità automaticamente.',
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Grype',
@@ -2807,7 +2851,8 @@ export default {
               italian: 'Clair (scanner immagini Quay/Red Hat)',
               pronunciation: '/kleər/',
               phonetic: 'KLER',
-              example: 'Clair powers Quay scans. = Clair alimenta le scansioni di Quay.',
+              example:
+                'The on-premises Quay registry uses Clair to scan every layer of each uploaded container image for known CVEs. = Il registry Quay on-premises usa Clair per scansionare ogni layer di ogni immagine container caricata alla ricerca di CVE note.',
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Clair',
@@ -2818,18 +2863,18 @@ export default {
               pronunciation: '/ˈæŋkɔːr/',
               phonetic: 'AN-kor',
               example:
-                'Anchore Engine enforces image policies. = Anchore Engine applica policy sulle immagini.',
+                'Setting up Anchore policy bundles ensures that only images meeting compliance requirements enter the approved registry. = Configurare i bundle di policy Anchore assicura che solo le immagini che soddisfano i requisiti di compliance entrino nel registry approvato.',
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Anchore',
             },
             {
               english: 'Layer',
-              italian: 'layer / strato di immagine container',
+              italian: 'Strato di immagine container (layer)',
               pronunciation: '/ˈleɪər/',
               phonetic: 'LE-ier',
               example:
-                'Each Dockerfile line creates a layer. = Ogni riga Dockerfile crea un layer.',
+                "Each layer in a Docker image inherits the previous one, so a vulnerable base image affects every layer above it. = Ogni layer in un'immagine Docker eredita quello precedente, quindi un'immagine base vulnerabile colpisce ogni layer sopra di essa.",
               context: 'container-security',
               difficulty: 'intermediate',
             },
@@ -2839,7 +2884,7 @@ export default {
               pronunciation: '/ˌvʌlnərəˈbɪləti ˈdeɪtəbeɪs/',
               phonetic: 'val-ne-ra-BI-li-ti DEI-ta-beis',
               example:
-                'Update the vulnerability database daily. = Aggiorna il database di vulnerabilità ogni giorno.',
+                'Grype checks every installed package against the public vulnerability database and flags any match above medium severity. = Grype controlla ogni pacchetto installato contro il database di vulnerabilità pubblico e segnala qualsiasi corrispondenza sopra la severità media.',
               context: 'container-security',
               difficulty: 'intermediate',
             },
@@ -2848,7 +2893,8 @@ export default {
               italian: 'Soglia di gravità',
               pronunciation: '/sɪˈvɛrəti ˈθrɛʃhəʊld/',
               phonetic: 'si-VE-re-ti TRESH-old',
-              example: 'Fail builds above HIGH severity. = Fa fallire le build sopra gravità ALTA.',
+              example:
+                "We configured the admission controller to block any image with findings above the severity threshold of high. = Abbiamo configurato l'admission controller per bloccare qualsiasi immagine con finding sopra la soglia di severità alta.",
               context: 'container-security',
               difficulty: 'intermediate',
               command: 'trivy image --severity HIGH,CRITICAL --exit-code 1 app',
@@ -2859,7 +2905,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ ˈdaɪdʒɛst/',
               phonetic: 'I-migg DAI-gest',
               example:
-                'Pin images by digest, not tag. = Pinna le immagini per digest, non per tag.',
+                'Referencing containers by image digest instead of mutable tags guarantees the exact same binary runs every time. = Referenziare i container per image digest invece che per tag mutabili garantisce che lo stesso identico binario giri ogni volta.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               code: 'nginx@sha256:abc123...',
@@ -2876,17 +2922,18 @@ export default {
               italian: 'Immagine base',
               pronunciation: '/beɪs ˈɪmɪdʒ/',
               phonetic: 'BEIS I-migg',
-              example: "Choose a minimal base image. = Scegli un'immagine base minimale.",
+              example:
+                "Switching to an official hardened base image reduced the total vulnerability count from eighty-seven to four. = Passare a un'immagine base ufficiale rinforzata ha ridotto il conteggio totale delle vulnerabilità da ottantasette a quattro.",
               context: 'container-security',
               difficulty: 'intermediate',
             },
             {
               english: 'Distroless',
-              italian: 'Distroless / immagini senza shell e package manager',
+              italian: 'Immagini senza shell e package manager (Distroless)',
               pronunciation: '/dɪstrəˈlɛs/',
               phonetic: 'di-STRO-les',
               example:
-                "Distroless images contain only the app. = Le immagini distroless contengono solo l'app.",
+                "Using a Distroless image eliminates the shell and package manager, drastically reducing the container attack surface. = Usare un'immagine Distroless elimina la shell e il package manager, riducendo drasticamente la superficie di attacco del container.",
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Google distroless',
@@ -2894,10 +2941,11 @@ export default {
             },
             {
               english: 'Alpine',
-              italian: 'Alpine / distro Linux minimale',
+              italian: 'Distro Linux minimale (Alpine)',
               pronunciation: '/ˈælpaɪn/',
               phonetic: 'AL-pain',
-              example: "Alpine is a tiny base image. = Alpine è un'immagine base minuscola.",
+              example:
+                "Building on Alpine Linux keeps the final image under ten megabytes while still providing a minimal package manager. = Costruire su Alpine Linux mantiene l'immagine finale sotto i dieci megabyte fornendo comunque un package manager minimale.",
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'FROM alpine:3.20',
@@ -2908,7 +2956,7 @@ export default {
               pronunciation: '/ˈmʌlti steɪdʒ bɪld/',
               phonetic: 'MAL-ti STEIGG BILD',
               example:
-                'Multi-stage builds drop build tools. = Le build multi-stage rimuovono i tool di build.',
+                "A multi-stage build compiles the Go binary in a full SDK image and copies only the binary into a scratch container. = Una build multi-stage compila il binario Go in un'immagine SDK completa e copia solo il binario in un container scratch.",
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'FROM golang AS builder\nFROM alpine AS runtime',
@@ -2919,7 +2967,7 @@ export default {
               pronunciation: '/nɒn ruːt ˈjuːzər/',
               phonetic: 'NON-RUT IU-zer',
               example:
-                'Run containers as a non-root user. = Esegui i container come utente non root.',
+                "Running the application as a non-root user inside the container limits the damage from a container escape exploit. = Eseguire l'applicazione come utente non-root dentro il container limita i danni da un exploit di escape dal container.",
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'USER 1001',
@@ -2930,7 +2978,7 @@ export default {
               pronunciation: '/riːd ˈəʊnli ruːt/',
               phonetic: 'RID-ON-li RUT',
               example:
-                'Mount root filesystem as read-only. = Monta il filesystem root in sola lettura.',
+                'Setting a read-only root filesystem prevents malware from writing executable payloads to the container disk. = Impostare un filesystem root in sola lettura impedisce al malware di scrivere payload eseguibili sul disco del container.',
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'readOnlyRootFilesystem: true',
@@ -2941,7 +2989,7 @@ export default {
               pronunciation: '/drɒp ˌkeɪpəˈbɪlətiz/',
               phonetic: 'DROP kei-pa-BI-li-tis',
               example:
-                'Drop all Linux capabilities by default. = Rimuovi tutte le capabilities Linux di default.',
+                'The Dockerfile drops all Linux capabilities and then adds back only NET_BIND_SERVICE for port eighty. = Il Dockerfile rimuove tutte le capability Linux e poi aggiunge solo NET_BIND_SERVICE per la porta ottanta.',
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'capabilities:\n  drop: [ALL]',
@@ -2952,7 +3000,7 @@ export default {
               pronunciation: '/nəʊ njuː ˈprɪvəlɪdʒɪz/',
               phonetic: 'NOU-NIU PRI-vi-leggs',
               example:
-                "Set no_new_privs to block escalation. = Imposta no_new_privs per bloccare l'escalation.",
+                'Setting the no new privileges flag prevents any process inside the container from gaining additional permissions via setuid. = Impostare il flag no new privileges impedisce a qualsiasi processo dentro il container di ottenere permessi aggiuntivi tramite setuid.',
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'allowPrivilegeEscalation: false',
@@ -2962,17 +3010,18 @@ export default {
               italian: 'Immagine minimale',
               pronunciation: '/ˈmɪnɪml ˈɪmɪdʒ/',
               phonetic: 'MI-ni-mal I-migg',
-              example: "A minimal image reduces CVEs. = Un'immagine minimale riduce le CVE.",
+              example:
+                "Trimming unused packages from the minimal image reduced the CVE count from thirty-two to zero critical findings. = Rimuovere i pacchetti inutilizzati dall'immagine minimale ha ridotto il conteggio CVE da trentadue a zero finding critici.",
               context: 'container-security',
               difficulty: 'intermediate',
             },
             {
               english: 'Wolfi',
-              italian: 'Wolfi / distro Linux per container sicuri',
+              italian: 'Distro Linux per container sicuri (Wolfi)',
               pronunciation: '/ˈwɒlfi/',
               phonetic: 'UOL-fi',
               example:
-                'Wolfi is a CVE-free distro for containers. = Wolfi è una distro senza CVE per container.',
+                "Migrating to Wolfi as the base image provided glibc compatibility while maintaining a near-zero CVE footprint. = Migrare a Wolfi come immagine base ha fornito compatibilità glibc mantenendo un'impronta CVE quasi zero.",
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Chainguard Wolfi',
@@ -2989,7 +3038,8 @@ export default {
               italian: 'Registry di container',
               pronunciation: '/kənˈteɪnə ˈrɛdʒɪstri/',
               phonetic: 'kon-TEI-ner RE-gi-stri',
-              example: 'Use a private container registry. = Usa un registry di container privato.',
+              example:
+                'Our private container registry requires image signing and vulnerability scanning before accepting any push. = Il nostro container registry privato richiede la firma delle immagini e la scansione delle vulnerabilità prima di accettare qualsiasi push.',
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Harbor, ECR, Artifactory',
@@ -3000,7 +3050,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ ˈsaɪnɪŋ/',
               phonetic: 'I-migg SAI-ning',
               example:
-                "Image signing proves provenance. = La firma dell'immagine prova la provenienza.",
+                'Enforcing image signing with cosign ensures that only images built by our CI pipeline run in production. = Imporre la firma delle immagini con cosign assicura che solo le immagini costruite dalla nostra pipeline CI girino in produzione.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'cosign',
@@ -3011,7 +3061,8 @@ export default {
               italian: 'Cosign (firma di immagini container)',
               pronunciation: '/ˈkəʊsaɪn/',
               phonetic: 'KO-sain',
-              example: 'Cosign signs OCI artifacts. = Cosign firma artefatti OCI.',
+              example:
+                'We use Cosign to sign every container image after the security scan passes in the CI pipeline. = Usiamo Cosign per firmare ogni immagine container dopo che la scansione di sicurezza passa nella pipeline CI.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'Cosign (Sigstore)',
@@ -3019,10 +3070,11 @@ export default {
             },
             {
               english: 'Notary',
-              italian: 'Notary / firma artefatti Docker',
+              italian: 'Firma artefatti Docker (Notary)',
               pronunciation: '/ˈnəʊtəri/',
               phonetic: 'NO-ta-ri',
-              example: 'Notary v2 signs container images. = Notary v2 firma immagini container.',
+              example:
+                "Docker Content Trust uses Notary to verify that the image you pull was actually signed by the trusted publisher. = Docker Content Trust usa Notary per verificare che l'immagine scaricata sia stata effettivamente firmata dall'editore fidato.",
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'Notary',
@@ -3033,7 +3085,7 @@ export default {
               pronunciation: '/ədˈmɪʃən kənˈtrəʊlər/',
               phonetic: 'ad-MI-scion kon-TRO-ler',
               example:
-                'Admission controllers block unsigned images. = I controllori di ammissione bloccano immagini non firmate.',
+                "The Kubernetes admission controller rejects any pod spec that references an unsigned or unscanned container image. = L'admission controller Kubernetes rifiuta qualsiasi specifica pod che referenzi un'immagine container non firmata o non scansionata.",
               context: 'container-security',
               difficulty: 'intermediate',
             },
@@ -3043,7 +3095,7 @@ export default {
               pronunciation: '/ˈrʌntaɪm sɪˈkjʊərəti/',
               phonetic: 'RAN-taim si-KIU-ri-ti',
               example:
-                'Runtime security detects in-cluster attacks. = La sicurezza a runtime rileva attacchi in-cluster.',
+                "Deploying a runtime security agent detects anomalous syscalls like unexpected shell spawning inside production containers. = Distribuire un agente di runtime security rileva syscall anomale come l'avvio inaspettato di shell dentro i container in produzione.",
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Falco, Tetragon',
@@ -3054,7 +3106,7 @@ export default {
               pronunciation: '/ˈfælkəʊ/',
               phonetic: 'FAL-ko',
               example:
-                'Falco watches syscalls in real time. = Falco osserva le syscall in tempo reale.',
+                'When a container spawns an unexpected shell process, Falco generates a high-priority alert within milliseconds. = Quando un container avvia un processo shell inaspettato, Falco genera un avviso ad alta priorità in pochi millisecondi.',
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Falco',
@@ -3065,7 +3117,7 @@ export default {
               pronunciation: '/kənˈteɪnə ɪˈskeɪp/',
               phonetic: 'kon-TEI-ner i-SKEIP',
               example:
-                "A container escape reaches the host. = Una fuga dal container raggiunge l'host.",
+                'Running containers with minimal privileges and no new privileges flags significantly reduces container escape risk. = Eseguire container con privilegi minimi e flag no new privileges riduce significativamente il rischio di escape dal container.',
               context: 'container-security',
               difficulty: 'intermediate',
             },
@@ -3075,7 +3127,7 @@ export default {
               pronunciation: '/ˈprɪvəlɪdʒd kənˈteɪnə/',
               phonetic: 'PRI-vi-leggd kon-TEI-ner',
               example:
-                'Avoid privileged containers in prod. = Evita container privilegiati in prod.',
+                "Never deploy a privileged container in production because it has full access to the host kernel and devices. = Non deployare mai un container privilegiato in produzione perché ha accesso completo al kernel e ai dispositivi dell'host.",
               context: 'container-security',
               difficulty: 'intermediate',
               note: "privileged: true equivale a root sull'host.",
@@ -3086,7 +3138,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ pʊl ˈpɒləsi/',
               phonetic: 'I-migg PUL PO-li-si',
               example:
-                'Set imagePullPolicy to Always for tags. = Imposta imagePullPolicy ad Always per i tag.',
+                "Setting the image pull policy to Always ensures Kubernetes fetches the latest scanned version on every pod restart. = Impostare la policy di pull dell'immagine su Always assicura che Kubernetes scarichi l'ultima versione scansionata a ogni riavvio del pod.",
               context: 'container-security',
               difficulty: 'intermediate',
               code: 'imagePullPolicy: Always',
@@ -3104,7 +3156,7 @@ export default {
               pronunciation: '/bɪld taɪm skæn/',
               phonetic: 'BILD-TAIM SKAN',
               example:
-                'Run a build-time scan on every push. = Esegui una scansione in fase di build a ogni push.',
+                "Running a build-time scan inside the Dockerfile RUN step catches vulnerabilities before the image even leaves CI. = Eseguire una scansione a tempo di build dentro lo step RUN del Dockerfile intercetta vulnerabilità prima che l'immagine lasci la CI.",
               context: 'container-security',
               difficulty: 'intermediate',
             },
@@ -3114,7 +3166,7 @@ export default {
               pronunciation: '/ˈrɛdʒɪstri skæn/',
               phonetic: 'RE-gi-stri SKAN',
               example:
-                'Registry scans run on stored images. = Le scansioni del registry girano su immagini archiviate.',
+                'A scheduled registry scan re-evaluates stored images every night against newly published vulnerability databases. = Una scansione del registry pianificata rivaluta le immagini memorizzate ogni notte contro i database di vulnerabilità appena pubblicati.',
               context: 'container-security',
               difficulty: 'intermediate',
             },
@@ -3124,7 +3176,7 @@ export default {
               pronunciation: '/kənˈtɪnjʊəs ˈɪmɪdʒ ˈskænɪŋ/',
               phonetic: 'kon-TI-nius I-migg SKA-ning',
               example:
-                'Continuous image scanning catches new CVEs. = La scansione continua delle immagini cattura nuove CVE.',
+                "With continuous image scanning enabled, any new CVE published against a running image triggers an immediate alert. = Con la scansione continua delle immagini abilitata, qualsiasi nuova CVE pubblicata contro un'immagine in esecuzione attiva un avviso immediato.",
               context: 'container-security',
               difficulty: 'intermediate',
             },
@@ -3134,7 +3186,7 @@ export default {
               pronunciation: '/ˈhædəlɪnt/',
               phonetic: 'HA-do-lint',
               example:
-                'Hadolint lints Dockerfile best practices. = Hadolint controlla le best practice del Dockerfile.',
+                'Adding Hadolint to the pre-commit hooks flags Dockerfile anti-patterns like running apt-get without version pinning. = Aggiungere Hadolint agli hook pre-commit segnala anti-pattern nel Dockerfile come eseguire apt-get senza pinning delle versioni.',
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Hadolint',
@@ -3146,7 +3198,7 @@ export default {
               pronunciation: '/ˈdɒkl/',
               phonetic: 'DO-kol',
               example:
-                "Dockle audits image hardening. = Dockle verifica l'hardening dell'immagine.",
+                "The Dockle report highlighted that our image was running as root and lacked a HEALTHCHECK instruction. = Il report di Dockle ha evidenziato che la nostra immagine girava come root e mancava l'istruzione HEALTHCHECK.",
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Dockle',
@@ -3158,7 +3210,7 @@ export default {
               pronunciation: '/siː aɪ ɛs ˈdɒkə ˈbɛntʃmɑːk/',
               phonetic: 'SI-AI-ES DO-ker BENCH-mark',
               example:
-                "The CIS Docker benchmark guides hardening. = Il benchmark CIS Docker guida l'hardening.",
+                'Scoring our Docker host against the CIS Docker Benchmark revealed that TLS was not enabled on the daemon socket. = Valutare il nostro host Docker contro il CIS Docker Benchmark ha rivelato che TLS non era abilitato sul socket del daemon.',
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'docker-bench-security',
@@ -3169,7 +3221,7 @@ export default {
               pronunciation: '/kjuːb bɛntʃ/',
               phonetic: 'KIUB-BENCH',
               example:
-                "kube-bench checks Kubernetes hardening. = kube-bench verifica l'hardening di Kubernetes.",
+                'Running kube-bench on every cluster node verifies compliance with the CIS Kubernetes security recommendations. = Eseguire kube-bench su ogni nodo del cluster verifica la conformità con le raccomandazioni di sicurezza CIS Kubernetes.',
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'kube-bench',
@@ -3181,18 +3233,18 @@ export default {
               pronunciation: '/kweɪ sɪˈkjʊərəti ˈskænər/',
               phonetic: 'KUEI si-KIU-ri-ti SKA-ner',
               example:
-                'Quay scans every push automatically. = Quay analizza ogni push automaticamente.',
+                'The Quay Security Scanner uses Clair as its backend to surface CVEs for every image pushed to the enterprise registry. = Il Quay Security Scanner usa Clair come backend per evidenziare CVE per ogni immagine pushata nel registry aziendale.',
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Red Hat Quay',
             },
             {
               english: 'OCI',
-              italian: 'OCI / Open Container Initiative',
+              italian: 'Open Container Initiative (OCI)',
               pronunciation: '/əʊ siː aɪ/',
               phonetic: 'O-SI-AI',
               example:
-                'OCI is the open container standard. = OCI è lo standard aperto per i container.',
+                'Publishing our images in OCI format ensures compatibility across Docker, Podman, and any compliant container runtime. = Pubblicare le nostre immagini in formato OCI assicura compatibilità tra Docker, Podman e qualsiasi runtime container conforme.',
               context: 'container-security',
               difficulty: 'intermediate',
               note: 'Open Container Initiative.',
@@ -3203,7 +3255,7 @@ export default {
               pronunciation: '/ˈɪmɪdʒ prəˈməʊʃən/',
               phonetic: 'I-migg pro-MO-scion',
               example:
-                'Promote images only after scans pass. = Promuovi le immagini solo dopo che le scansioni passano.',
+                'Our image promotion workflow moves scanned and signed images from the dev registry to the production registry automatically. = Il nostro workflow di promozione delle immagini sposta automaticamente le immagini scansionate e firmate dal registry dev a quello di produzione.',
               context: 'container-security',
               difficulty: 'intermediate',
               note: 'Sposta da staging a prod registry.',
@@ -3231,7 +3283,7 @@ export default {
               pronunciation: '/ˈɪnfrəˌstrʌktʃər æz kəʊd/',
               phonetic: 'IN-fra-strak-cer AZ-KOUD',
               example:
-                "IaC describes infra in source files. = IaC descrive l'infra in file sorgente.",
+                'Defining all cloud resources as infrastructure as code makes every configuration change auditable and reproducible. = Definire tutte le risorse cloud come infrastruttura come codice rende ogni modifica di configurazione verificabile e riproducibile.',
               context: 'iac-security',
               difficulty: 'intermediate',
               note: 'Spesso abbreviato IaC.',
@@ -3241,7 +3293,8 @@ export default {
               italian: 'Terraform (IaC HashiCorp)',
               pronunciation: '/ˈtɛrəfɔːm/',
               phonetic: 'TE-ra-form',
-              example: 'Terraform provisions cloud resources. = Terraform fornisce risorse cloud.',
+              example:
+                'The team uses Terraform to provision AWS VPCs, security groups, and IAM roles through peer-reviewed pull requests. = Il team usa Terraform per provisioning di VPC AWS, security group e ruoli IAM tramite pull request con peer review.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Terraform',
@@ -3252,7 +3305,8 @@ export default {
               italian: 'CloudFormation (IaC AWS)',
               pronunciation: '/klaʊdfɔːˈmeɪʃən/',
               phonetic: 'KLAUD-for-MEI-scion',
-              example: 'CloudFormation is AWS-native IaC. = CloudFormation è IaC nativo AWS.',
+              example:
+                'Every CloudFormation stack update is validated by cfn-nag before it reaches the deployment stage. = Ogni aggiornamento dello stack CloudFormation è validato da cfn-nag prima di raggiungere la fase di deployment.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'AWS CloudFormation',
@@ -3263,7 +3317,7 @@ export default {
               pronunciation: '/pʊˈluːmi/',
               phonetic: 'pu-LU-mi',
               example:
-                'Pulumi uses real programming languages. = Pulumi usa veri linguaggi di programmazione.',
+                "Using Pulumi lets the team define infrastructure in TypeScript and run unit tests on the cloud configuration. = Usare Pulumi permette al team di definire l'infrastruttura in TypeScript e di eseguire unit test sulla configurazione cloud.",
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Pulumi',
@@ -3274,7 +3328,7 @@ export default {
               pronunciation: '/ɑːr ɛm ˈtɛmpleɪt/',
               phonetic: 'AR-EM TEM-pleit',
               example:
-                'ARM templates deploy Azure resources. = I template ARM distribuiscono risorse Azure.',
+                'The security scanner detected an ARM template that created a storage account without encryption enabled. = Lo scanner di sicurezza ha rilevato un ARM template che creava un account di storage senza crittografia abilitata.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Azure ARM',
@@ -3285,7 +3339,7 @@ export default {
               pronunciation: '/ˈbaɪsɛp/',
               phonetic: 'BAI-sep',
               example:
-                'Bicep is a friendlier ARM language. = Bicep è un linguaggio ARM più amichevole.',
+                'Writing Azure resources in Bicep instead of raw JSON simplifies reviews and catches misconfigurations at compile time. = Scrivere risorse Azure in Bicep invece che in JSON grezzo semplifica le review e intercetta misconfigurazioni a tempo di compilazione.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Azure Bicep',
@@ -3296,7 +3350,7 @@ export default {
               pronunciation: '/ˌmɪskənˌfɪɡjʊˈreɪʃən/',
               phonetic: 'mis-kon-fi-ghiu-REI-scion',
               example:
-                'Misconfigurations cause many breaches. = Le errate configurazioni causano molte violazioni.',
+                'A single misconfiguration in the S3 bucket policy exposed customer invoices to the public internet for six hours. = Una singola misconfigurzione nella policy del bucket S3 ha esposto le fatture dei clienti su internet pubblico per sei ore.',
               context: 'iac-security',
               difficulty: 'intermediate',
             },
@@ -3306,7 +3360,7 @@ export default {
               pronunciation: '/drɪft/',
               phonetic: 'DRIFT',
               example:
-                'Detect drift between code and reality. = Rileva la deriva tra codice e realtà.',
+                'Detecting configuration drift between the Terraform state and the actual cloud resources prevents shadow infrastructure. = Rilevare il drift di configurazione tra lo stato Terraform e le risorse cloud effettive previene infrastruttura ombra.',
               context: 'iac-security',
               difficulty: 'intermediate',
               note: "Quando l'infra reale differisce dal codice.",
@@ -3316,7 +3370,8 @@ export default {
               italian: 'File di stato',
               pronunciation: '/steɪt faɪl/',
               phonetic: 'STEIT FAIL',
-              example: 'Encrypt the Terraform state file. = Cifra il file di stato di Terraform.',
+              example:
+                'Encrypting the Terraform state file at rest in the S3 backend protects sensitive outputs like database connection strings. = Criptare il file di stato Terraform a riposo nel backend S3 protegge output sensibili come le stringhe di connessione al database.',
               context: 'iac-security',
               difficulty: 'intermediate',
               note: 'Può contenere segreti in chiaro.',
@@ -3327,7 +3382,7 @@ export default {
               pronunciation: '/plæn/',
               phonetic: 'PLAN',
               example:
-                "Always review the plan before apply. = Rivedi sempre il piano prima dell'apply.",
+                "Reviewing the Terraform plan output in a pull request comment lets the security team catch misconfigurations before apply. = Revisionare l'output del piano Terraform in un commento della pull request permette al team di sicurezza di intercettare misconfigurazioni prima dell'apply.",
               context: 'iac-security',
               difficulty: 'intermediate',
               command: 'terraform plan -out=plan.tfplan',
@@ -3344,7 +3399,8 @@ export default {
               italian: 'Checkov (scanner sicurezza IaC)',
               pronunciation: '/ˈtʃɛkɒv/',
               phonetic: 'CIE-kov',
-              example: 'Checkov scans many IaC formats. = Checkov analizza molti formati IaC.',
+              example:
+                "Integrating Checkov into the CI pipeline blocked a Terraform module that would have created a publicly accessible RDS instance. = Integrare Checkov nella pipeline CI ha bloccato un modulo Terraform che avrebbe creato un'istanza RDS accessibile pubblicamente.",
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Checkov',
@@ -3355,7 +3411,8 @@ export default {
               italian: 'tfsec (scanner sicurezza Terraform)',
               pronunciation: '/tiː ɛf sɛk/',
               phonetic: 'TI-EF-SEK',
-              example: 'tfsec scans Terraform fast. = tfsec analizza Terraform velocemente.',
+              example:
+                'The tfsec scan flagged three security group rules that allowed inbound traffic from any IP address on all ports. = La scansione tfsec ha segnalato tre regole di security group che permettevano traffico in ingresso da qualsiasi indirizzo IP su tutte le porte.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'tfsec',
@@ -3366,7 +3423,8 @@ export default {
               italian: 'Terrascan (scanner sicurezza IaC)',
               pronunciation: '/ˈtɛrəskæn/',
               phonetic: 'TE-ra-skan',
-              example: 'Terrascan supports many policies. = Terrascan supporta molte policy.',
+              example:
+                'Running Terrascan with custom Rego policies validated that all storage resources have encryption and versioning enabled. = Eseguire Terrascan con policy Rego personalizzate ha validato che tutte le risorse di storage hanno crittografia e versionamento abilitati.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Terrascan',
@@ -3377,7 +3435,8 @@ export default {
               italian: 'KICS (scanner IaC Checkmarx)',
               pronunciation: '/kɪks/',
               phonetic: 'KIKS',
-              example: 'KICS scans IaC across providers. = KICS analizza IaC tra provider diversi.',
+              example:
+                'The KICS report identified hardcoded credentials in a CloudFormation template that should have used SSM parameter references. = Il report KICS ha identificato credenziali hardcoded in un template CloudFormation che avrebbe dovuto usare riferimenti a parametri SSM.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'KICS by Checkmarx',
@@ -3388,7 +3447,7 @@ export default {
               pronunciation: '/siː ɛf ɛn næɡ/',
               phonetic: 'SI-EF-EN NAG',
               example:
-                'cfn-nag focuses on CloudFormation. = cfn-nag si concentra su CloudFormation.',
+                'Adding cfn-nag as a pre-commit hook ensures that no CloudFormation template with wildcard IAM policies passes review. = Aggiungere cfn-nag come hook pre-commit assicura che nessun template CloudFormation con policy IAM wildcard passi la review.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'cfn-nag',
@@ -3396,11 +3455,11 @@ export default {
             },
             {
               english: 'Snyk IaC',
-              italian: 'Snyk IaC / scanner IaC Snyk',
+              italian: 'Scanner IaC Snyk (Snyk IaC)',
               pronunciation: '/sniːk aɪ eɪ siː/',
               phonetic: 'SNIK AI-EI-SI',
               example:
-                'Snyk IaC integrates with developer tools. = Snyk IaC si integra con strumenti developer.',
+                "Running Snyk IaC against the Terraform plan output detects security issues before any infrastructure change is applied. = Eseguire Snyk IaC contro l'output del piano Terraform rileva problemi di sicurezza prima che qualsiasi modifica all'infrastruttura venga applicata.",
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Snyk',
@@ -3408,11 +3467,11 @@ export default {
             },
             {
               english: 'Trivy Config',
-              italian: 'Trivy Config / Trivy per file di configurazione',
+              italian: 'Trivy per file di configurazione (Trivy Config)',
               pronunciation: '/ˈtrɪvi ˈkɒnfɪɡ/',
               phonetic: 'TRI-vi KON-fig',
               example:
-                'Trivy Config scans IaC and K8s YAML. = Trivy Config analizza IaC e YAML K8s.',
+                'Using Trivy Config to scan Kubernetes manifests catches missing resource limits and absent security contexts. = Usare Trivy Config per scansionare i manifesti Kubernetes intercetta limiti di risorse mancanti e contesti di sicurezza assenti.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Trivy',
@@ -3420,10 +3479,11 @@ export default {
             },
             {
               english: 'Open Policy Agent',
-              italian: 'Open Policy Agent / motore policy as code',
+              italian: 'Motore policy as code (Open Policy Agent)',
               pronunciation: '/ˈəʊpən ˈpɒləsi ˈeɪdʒənt/',
               phonetic: 'OU-pen PO-li-si EI-gent',
-              example: 'OPA evaluates policies on JSON data. = OPA valuta policy su dati JSON.',
+              example:
+                'Writing Rego rules for Open Policy Agent lets the team enforce custom infrastructure standards across all cloud environments. = Scrivere regole Rego per Open Policy Agent permette al team di imporre standard infrastrutturali personalizzati in tutti gli ambienti cloud.',
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'OPA',
@@ -3433,7 +3493,8 @@ export default {
               italian: 'Output del piano',
               pronunciation: '/plæn ˈaʊtpʊt/',
               phonetic: 'PLAN AUT-put',
-              example: "Scan the JSON plan output. = Scansiona l'output JSON del piano.",
+              example:
+                "Reviewing the plan output in a pull request comment lets security engineers approve infrastructure changes before apply. = Revisionare l'output del plan in un commento della pull request permette agli ingegneri di sicurezza di approvare le modifiche infrastrutturali prima dell'apply.",
               context: 'iac-security',
               difficulty: 'intermediate',
               command: 'terraform show -json plan.tfplan',
@@ -3444,7 +3505,7 @@ export default {
               pronunciation: '/ˈpɒləsi pæk/',
               phonetic: 'PO-li-si PAK',
               example:
-                'A policy pack bundles security rules. = Un pacchetto di policy raggruppa regole di sicurezza.',
+                'The Pulumi policy pack enforces that no EC2 instance type larger than t3.medium is created without approval. = Il policy pack Pulumi impone che nessun tipo di istanza EC2 più grande di t3.medium venga creato senza approvazione.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3461,7 +3522,7 @@ export default {
               pronunciation: '/ˈpʌblɪk ɛs θriː ˈbʌkɪt/',
               phonetic: 'PA-blik ES-TRI BA-ket',
               example:
-                'A public S3 bucket leaks data fast. = Un bucket S3 pubblico fa trapelare dati in fretta.',
+                'The automated scan blocked the deployment because the Terraform plan would have created a public S3 bucket. = La scansione automatica ha bloccato il deployment perché il piano Terraform avrebbe creato un bucket S3 pubblico.',
               context: 'iac-security',
               difficulty: 'intermediate',
               code: 'block_public_acls = true',
@@ -3471,7 +3532,8 @@ export default {
               italian: 'Security group aperto',
               pronunciation: '/ˈəʊpən sɪˈkjʊərəti ɡruːp/',
               phonetic: 'OU-pen si-KIU-ri-ti GRUP',
-              example: 'Avoid 0.0.0.0/0 on SSH ports. = Evita 0.0.0.0/0 sulle porte SSH.',
+              example:
+                'Checkov flagged an open security group that allowed SSH access from 0.0.0.0/0 to all production instances. = Checkov ha segnalato un security group aperto che permetteva accesso SSH da 0.0.0.0/0 a tutte le istanze di produzione.',
               context: 'iac-security',
               difficulty: 'intermediate',
               code: 'cidr_blocks = ["10.0.0.0/16"]',
@@ -3482,7 +3544,7 @@ export default {
               pronunciation: '/ʌnˈɪnkrɪptɪd ˈvɒljuːm/',
               phonetic: 'an-in-KRIP-ted VO-lium',
               example:
-                'Unencrypted volumes expose data at rest. = I volumi non cifrati espongono dati a riposo.',
+                'The compliance scan rejected the deployment because it contained an unencrypted volume storing customer health records. = La scansione di compliance ha rifiutato il deployment perché conteneva un volume non crittografato che memorizzava dati sanitari dei clienti.',
               context: 'iac-security',
               difficulty: 'intermediate',
               code: 'encrypted = true',
@@ -3492,7 +3554,8 @@ export default {
               italian: 'IAM con wildcard',
               pronunciation: '/ˈwaɪldkɑːd aɪ eɪ ɛm/',
               phonetic: 'UAILD-kard AI-EI-EM',
-              example: 'Wildcard IAM grants too much. = IAM con wildcard concede troppo.',
+              example:
+                'Granting wildcard IAM permissions like s3:* gives far more access than any single service actually needs. = Concedere permessi IAM wildcard come s3:* dà molto più accesso di quello che un singolo servizio necessita effettivamente.',
               context: 'iac-security',
               difficulty: 'intermediate',
               code: 'Resource: "*"',
@@ -3502,7 +3565,8 @@ export default {
               italian: 'Regione codificata',
               pronunciation: '/ˈhɑːdkəʊdɪd ˈriːdʒən/',
               phonetic: 'HARD-ko-ded RI-gen',
-              example: 'Avoid hardcoded regions. = Evita regioni codificate.',
+              example:
+                "Avoiding a hardcoded region in the Terraform module makes the infrastructure portable across AWS regions. = Evitare una regione hardcoded nel modulo Terraform rende l'infrastruttura portabile tra le regioni AWS.",
               context: 'iac-security',
               difficulty: 'intermediate',
             },
@@ -3512,7 +3576,7 @@ export default {
               pronunciation: '/pleɪn tɛkst ˈpɑːswɜːd/',
               phonetic: 'PLEIN-TEKST PAS-uord',
               example:
-                'Never store plain-text passwords in IaC. = Non memorizzare password in chiaro in IaC.',
+                'The scanner found a plain-text password in a Helm values file that should have been a sealed secret reference. = Lo scanner ha trovato una password in testo chiaro in un file di valori Helm che avrebbe dovuto essere un riferimento a un sealed secret.',
               context: 'iac-security',
               difficulty: 'intermediate',
             },
@@ -3522,7 +3586,7 @@ export default {
               pronunciation: '/dɪsˈeɪbld ˈlɒɡɪŋ/',
               phonetic: 'di-SEI-bold LO-ghing',
               example:
-                'Disabled logging blocks audit trails. = Il logging disattivato blocca i percorsi di audit.',
+                "A policy check caught a CloudTrail configuration with disabled logging, which would leave account activity invisible. = Un controllo di policy ha intercettato una configurazione CloudTrail con logging disabilitato, che avrebbe lasciato l'attività dell'account invisibile.",
               context: 'iac-security',
               difficulty: 'intermediate',
             },
@@ -3532,7 +3596,7 @@ export default {
               pronunciation: '/aʊtˈdeɪtɪd prəˈvaɪdə/',
               phonetic: 'aut-DEI-ted pro-VAI-der',
               example:
-                'Outdated providers carry CVEs too. = I provider obsoleti portano anche CVE.',
+                'Updating the outdated provider version in Terraform resolved three known security issues in the AWS API calls. = Aggiornare la versione del provider obsoleto in Terraform ha risolto tre problemi di sicurezza noti nelle chiamate API AWS.',
               context: 'iac-security',
               difficulty: 'intermediate',
             },
@@ -3542,7 +3606,7 @@ export default {
               pronunciation: '/ˈprɪvəlɪdʒd ˈsɜːvɪs əˈkaʊnt/',
               phonetic: 'PRI-vi-leggd SER-vis a-KAUNT',
               example:
-                'Avoid privileged service accounts in code. = Evita account di servizio privilegiati nel codice.',
+                'The IaC scanner flagged a privileged service account with project-level owner permissions that violated least-privilege policy. = Lo scanner IaC ha segnalato un account di servizio privilegiato con permessi owner a livello di progetto che violava la policy del privilegio minimo.',
               context: 'iac-security',
               difficulty: 'intermediate',
             },
@@ -3551,7 +3615,8 @@ export default {
               italian: 'VPC di default',
               pronunciation: '/dɪˈfɔːlt viː piː siː/',
               phonetic: 'di-FOLT VI-PI-SI',
-              example: "Don't deploy into the default VPC. = Non distribuire nella VPC di default.",
+              example:
+                'We delete the default VPC in every new AWS account because its permissive settings do not meet our security baseline. = Eliminiamo il VPC predefinito in ogni nuovo account AWS perché le sue impostazioni permissive non soddisfano la nostra baseline di sicurezza.',
               context: 'iac-security',
               difficulty: 'intermediate',
             },
@@ -3568,7 +3633,7 @@ export default {
               pronunciation: '/aɪ eɪ siː ˈpaɪplaɪn/',
               phonetic: 'AI-EI-SI PAIP-lain',
               example:
-                'IaC pipelines run plan, scan, apply. = Le pipeline IaC eseguono plan, scan, apply.',
+                "Our IaC pipeline runs Checkov, tfsec, and cost estimation before allowing any Terraform apply to execute. = La nostra pipeline IaC esegue Checkov, tfsec e stima dei costi prima di permettere l'esecuzione di qualsiasi Terraform apply.",
               context: 'iac-security',
               difficulty: 'intermediate',
             },
@@ -3577,7 +3642,8 @@ export default {
               italian: 'Atlantis (automazione Terraform via PR)',
               pronunciation: '/ætˈlæntɪs/',
               phonetic: 'at-LAN-tis',
-              example: 'Atlantis runs Terraform from PRs. = Atlantis esegue Terraform dalle PR.',
+              example:
+                "Using Atlantis, developers trigger terraform plan from a pull request comment and see the output inline. = Usando Atlantis, gli sviluppatori attivano terraform plan da un commento della pull request e vedono l'output inline.",
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Atlantis',
@@ -3587,18 +3653,19 @@ export default {
               italian: 'Terraform Cloud (servizio gestito Terraform)',
               pronunciation: '/ˈtɛrəfɔːm klaʊd/',
               phonetic: 'TE-ra-form KLAUD',
-              example: 'Terraform Cloud enforces policies. = Terraform Cloud applica policy.',
+              example:
+                'Migrating to Terraform Cloud gave the team remote state locking, policy enforcement, and a full audit trail. = Migrare a Terraform Cloud ha dato al team locking dello stato remoto, enforcement delle policy e una traccia di audit completa.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Terraform Cloud',
             },
             {
               english: 'Sentinel',
-              italian: 'Sentinel / motore policy HashiCorp',
+              italian: 'Motore policy HashiCorp (Sentinel)',
               pronunciation: '/ˈsɛntɪnl/',
               phonetic: 'SEN-ti-nel',
               example:
-                'Sentinel is HashiCorp policy as code. = Sentinel è policy as code di HashiCorp.',
+                'A Sentinel policy prevents any Terraform plan from creating resources without the mandatory cost-center tag. = Una policy Sentinel impedisce a qualsiasi piano Terraform di creare risorse senza il tag di centro di costo obbligatorio.',
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'HashiCorp Sentinel',
@@ -3609,7 +3676,7 @@ export default {
               pronunciation: '/drɪft dɪˈtɛkʃən/',
               phonetic: 'DRIFT di-TEK-scion',
               example:
-                'Drift detection runs on a schedule. = Il rilevamento della deriva gira a cadenza fissa.',
+                'Scheduled drift detection jobs compare the actual cloud state with the Terraform state and alert on any divergence. = I job di rilevamento del drift pianificati confrontano lo stato cloud effettivo con lo stato Terraform e allertano su qualsiasi divergenza.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'driftctl',
@@ -3620,7 +3687,7 @@ export default {
               pronunciation: '/ˈmɒdjuːlz ˈrɛdʒɪstri/',
               phonetic: 'MO-diuls RE-gi-stri',
               example:
-                'Pin modules from a private registry. = Pinna i moduli da un registry privato.',
+                'Publishing vetted Terraform modules to the private modules registry ensures that teams reuse secure, pre-approved patterns. = Pubblicare moduli Terraform verificati nel registry dei moduli privato assicura che i team riutilizzino pattern sicuri e pre-approvati.',
               context: 'iac-security',
               difficulty: 'intermediate',
             },
@@ -3630,7 +3697,7 @@ export default {
               pronunciation: '/plæn dɪf/',
               phonetic: 'PLAN-DIF',
               example:
-                'Comment the plan diff on every PR. = Commenta il diff del piano su ogni PR.',
+                'Reviewing the plan diff in the pull request comment reveals exactly which resources will be created or destroyed. = Revisionare il diff del plan nel commento della pull request rivela esattamente quali risorse saranno create o distrutte.',
               context: 'iac-security',
               difficulty: 'intermediate',
             },
@@ -3640,17 +3707,17 @@ export default {
               pronunciation: '/əˈpruːvl ˈwɜːkfləʊ/',
               phonetic: 'a-PRU-val UORK-flou',
               example:
-                "Production apply needs an approval workflow. = L'apply in produzione richiede un workflow di approvazione.",
+                "The approval workflow requires a security engineer sign-off before any infrastructure change reaches the production account. = Il workflow di approvazione richiede il via libera di un ingegnere di sicurezza prima che qualsiasi modifica infrastrutturale raggiunga l'account di produzione.",
               context: 'iac-security',
               difficulty: 'intermediate',
             },
             {
               english: 'OPA Conftest',
-              italian: 'OPA Conftest / test policy su file di config',
+              italian: 'Test policy su file di config (OPA Conftest)',
               pronunciation: '/ˈəʊpə ˈkɒnftɛst/',
               phonetic: 'O-pa KON-ftest',
               example:
-                'Conftest tests configs against Rego. = Conftest testa configurazioni contro Rego.',
+                'Running OPA Conftest on Kubernetes manifests blocks any deployment missing the required securityContext settings. = Eseguire OPA Conftest sui manifesti Kubernetes blocca qualsiasi deployment privo delle impostazioni securityContext richieste.',
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'Conftest',
@@ -3661,7 +3728,8 @@ export default {
               italian: 'Stima dei costi',
               pronunciation: '/kɒst ˌɛstɪˈmeɪʃən/',
               phonetic: 'KOST es-ti-MEI-scion',
-              example: 'Add cost estimation to plans. = Aggiungi una stima dei costi ai piani.',
+              example:
+                'Adding cost estimation to the IaC pipeline prevents developers from accidentally launching oversized instances. = Aggiungere la stima dei costi alla pipeline IaC impedisce agli sviluppatori di lanciare accidentalmente istanze sovradimensionate.',
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Infracost',
@@ -3689,16 +3757,17 @@ export default {
               pronunciation: '/ˈpɒləsi æz kəʊd/',
               phonetic: 'PO-li-si AZ KOUD',
               example:
-                'Policy as code versions security rules. = Le policy come codice versionano le regole di sicurezza.',
+                'Expressing every security policy as code lets the team version, test, and enforce rules automatically in CI. = Esprimere ogni policy di sicurezza come codice permette al team di versionare, testare e imporre regole automaticamente nella CI.',
               context: 'policy',
               difficulty: 'intermediate',
             },
             {
               english: 'OPA',
-              italian: 'OPA / Open Policy Agent',
+              italian: 'Open Policy Agent (OPA)',
               pronunciation: '/ˈəʊpə/',
               phonetic: 'O-pa',
-              example: 'OPA evaluates policies on JSON inputs. = OPA valuta policy su input JSON.',
+              example:
+                "The admission controller queries OPA for every pod creation request to check whether it meets the cluster security policy. = L'admission controller interroga OPA per ogni richiesta di creazione pod per verificare se soddisfa la policy di sicurezza del cluster.",
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'OPA',
@@ -3706,10 +3775,11 @@ export default {
             },
             {
               english: 'Rego',
-              italian: 'Rego / linguaggio policy di OPA',
+              italian: 'Linguaggio policy di OPA (Rego)',
               pronunciation: '/ˈreɪɡəʊ/',
               phonetic: 'REI-go',
-              example: "Rego is OPA's policy language. = Rego è il linguaggio di policy di OPA.",
+              example:
+                'Writing the authorization logic in Rego decouples policy decisions from application code, making audits simpler. = Scrivere la logica di autorizzazione in Rego disaccoppia le decisioni di policy dal codice applicativo, semplificando gli audit.',
               context: 'policy',
               difficulty: 'intermediate',
               code: 'package main\ndeny[msg] { input.kind == "Pod" }',
@@ -3720,17 +3790,17 @@ export default {
               pronunciation: '/dɪˈsɪʒən/',
               phonetic: 'di-SI-gen',
               example:
-                'OPA returns allow or deny decisions. = OPA restituisce decisioni allow o deny.',
+                'OPA returns an allow or deny decision within a few milliseconds, so it does not add noticeable latency. = OPA restituisce una decisione di allow o deny in pochi millisecondi, quindi non aggiunge latenza percepibile.',
               context: 'policy',
               difficulty: 'intermediate',
             },
             {
               english: 'Bundle',
-              italian: 'bundle / pacchetto OPA',
+              italian: 'Pacchetto OPA (bundle)',
               pronunciation: '/ˈbʌndl/',
               phonetic: 'BAN-dol',
               example:
-                'OPA fetches policy bundles from a server. = OPA recupera bundle di policy da un server.',
+                "The OPA server downloads the latest policy bundle from S3 every thirty seconds to pick up rule changes. = Il server OPA scarica l'ultimo bundle di policy da S3 ogni trenta secondi per recepire i cambiamenti alle regole.",
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3740,7 +3810,7 @@ export default {
               pronunciation: '/əˈlaʊ ruːl/',
               phonetic: 'a-LAU RUL',
               example:
-                'An allow rule defines accepted state. = Una regola allow definisce lo stato accettato.',
+                'The Rego allow rule grants access only when the JWT contains a valid role claim matching the resource owner. = La regola allow in Rego concede accesso solo quando il JWT contiene un claim di ruolo valido che corrisponde al proprietario della risorsa.',
               context: 'policy',
               difficulty: 'intermediate',
               code: 'allow { input.user.role == "admin" }',
@@ -3750,18 +3820,19 @@ export default {
               italian: 'Regola deny',
               pronunciation: '/dɪˈnaɪ ruːl/',
               phonetic: 'di-NAI RUL',
-              example: 'A deny rule lists violations. = Una regola deny elenca le violazioni.',
+              example:
+                'Adding a deny rule that blocks containers running as root caught three misconfigured deployments in staging. = Aggiungere una regola deny che blocca i container eseguiti come root ha intercettato tre deployment mal configurati in staging.',
               context: 'policy',
               difficulty: 'intermediate',
               code: 'deny[msg] { not input.tls }',
             },
             {
               english: 'Input',
-              italian: 'input / dati in ingresso a una policy',
+              italian: 'Dati in ingresso a una policy (input)',
               pronunciation: '/ˈɪnpʊt/',
               phonetic: 'IN-put',
               example:
-                "OPA evaluates rules against the input. = OPA valuta le regole contro l'input.",
+                'OPA evaluates the Kubernetes admission request as input and checks every field against the active policy set. = OPA valuta la richiesta di ammissione Kubernetes come input e controlla ogni campo contro il set di policy attivo.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3771,7 +3842,7 @@ export default {
               pronunciation: '/ˈdeɪtə/',
               phonetic: 'DEI-ta',
               example:
-                'External data feeds into policy decisions. = Dati esterni alimentano le decisioni di policy.',
+                'External data sources like team ownership lists feed into OPA so policies can reference who owns which namespace. = Fonti dati esterne come le liste di proprietà dei team alimentano OPA così le policy possono referenziare chi possiede quale namespace.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3780,7 +3851,8 @@ export default {
               italian: 'Test unitario di policy',
               pronunciation: '/ˈjuːnɪt tɛst fɔː ˈpɒləsi/',
               phonetic: 'IU-nit TEST FOR PO-li-si',
-              example: 'Unit test policies before shipping. = Testa le policy prima del rilascio.',
+              example:
+                'Writing a unit test for every policy rule ensures that future Rego changes do not accidentally weaken security controls. = Scrivere un unit test per ogni regola di policy assicura che i futuri cambiamenti Rego non indeboliscano accidentalmente i controlli di sicurezza.',
               context: 'policy',
               difficulty: 'intermediate',
               command: 'opa test policy/ -v',
@@ -3794,10 +3866,11 @@ export default {
           items: [
             {
               english: 'Conftest',
-              italian: 'conftest / OPA per test su config',
+              italian: 'OPA per test su config (conftest)',
               pronunciation: '/ˈkɒnftɛst/',
               phonetic: 'KON-ftest',
-              example: 'Conftest validates Kubernetes YAML. = Conftest valida YAML Kubernetes.',
+              example:
+                'Running conftest on the Helm values file prevents deploying charts with resource limits set above the approved threshold. = Eseguire conftest sul file dei valori Helm impedisce di deployare chart con limiti di risorse impostati sopra la soglia approvata.',
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'Conftest',
@@ -3808,7 +3881,8 @@ export default {
               italian: 'Manifest YAML',
               pronunciation: '/ˈjæml ˈmænɪfɛst/',
               phonetic: 'IA-mol MA-ni-fest',
-              example: 'Test every YAML manifest in CI. = Testa ogni manifest YAML in CI.',
+              example:
+                'Every YAML manifest committed to the GitOps repository is validated against OPA policies before ArgoCD syncs it. = Ogni manifesto YAML committato nel repository GitOps è validato contro le policy OPA prima che ArgoCD lo sincronizzi.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3817,7 +3891,8 @@ export default {
               italian: 'Policy del Dockerfile',
               pronunciation: '/ˈdɒkəfaɪl ˈpɒləsi/',
               phonetic: 'DO-ker-fail PO-li-si',
-              example: 'Block FROM latest with a policy. = Blocca FROM latest con una policy.',
+              example:
+                "Our Dockerfile policy requires every image to use a pinned base image digest and a non-root USER directive. = La nostra policy Dockerfile richiede che ogni immagine usi un digest dell'immagine base pinnato e una direttiva USER non-root.",
               context: 'policy',
               difficulty: 'intermediate',
               code: 'deny[msg] { input.From == "latest" }',
@@ -3828,7 +3903,7 @@ export default {
               pronunciation: '/rɪˈzɔːs ˈlɪmɪt/',
               phonetic: 'ri-ZORS LI-mit',
               example:
-                'Require resource limits on every pod. = Richiedi limiti di risorse su ogni pod.',
+                'Setting a memory resource limit on every container prevents a single pod from consuming all available node memory. = Impostare un limite di risorse di memoria su ogni container impedisce a un singolo pod di consumare tutta la memoria disponibile del nodo.',
               context: 'policy',
               difficulty: 'intermediate',
               code: 'deny { not input.spec.resources.limits }',
@@ -3839,7 +3914,7 @@ export default {
               pronunciation: '/rɪˈkwaɪəd ˈleɪbl/',
               phonetic: 'ri-KUAIRD LEI-bol',
               example:
-                'Require an owner label on resources. = Richiedi una label owner sulle risorse.',
+                "The admission policy rejects any pod spec missing the required label for cost center and environment designation. = La policy di ammissione rifiuta qualsiasi specifica pod priva del label obbligatorio per centro di costo e designazione dell'ambiente.",
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3849,7 +3924,7 @@ export default {
               pronunciation: '/əˈpruːvd ˈrɛdʒɪstri/',
               phonetic: 'a-PRU-vd RE-gi-stri',
               example:
-                'Allow only images from approved registries. = Permetti solo immagini da registry approvati.',
+                "Only images pulled from the approved registry at registry.internal.io pass the admission controller check. = Solo le immagini scaricate dal registry approvato su registry.internal.io passano il controllo dell'admission controller.",
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3858,7 +3933,8 @@ export default {
               italian: 'Libreria di policy',
               pronunciation: '/ˈpɒləsi ˈlaɪbrəri/',
               phonetic: 'PO-li-si LAI-bra-ri',
-              example: 'Reuse a shared policy library. = Riusa una libreria di policy condivisa.',
+              example:
+                'The central policy library contains over two hundred tested Rego rules shared across all engineering teams. = La libreria di policy centrale contiene oltre duecento regole Rego testate condivise tra tutti i team di ingegneria.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3867,7 +3943,8 @@ export default {
               italian: 'Eccezione',
               pronunciation: '/ɪkˈsɛpʃən/',
               phonetic: 'ek-SEP-scion',
-              example: 'Document each policy exception. = Documenta ogni eccezione di policy.',
+              example:
+                "Granting a policy exception for the legacy service requires a documented risk acceptance signed by the CISO. = Concedere un'eccezione alla policy per il servizio legacy richiede un'accettazione del rischio documentata firmata dal CISO.",
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3877,7 +3954,7 @@ export default {
               pronunciation: '/ˈwɔːnɪŋ ruːl/',
               phonetic: 'UOR-ning RUL',
               example:
-                'A warning rule does not block but alerts. = Una regola di avviso non blocca ma allerta.',
+                'A warning rule alerts developers about deprecated API versions without blocking the deployment pipeline. = Una regola di warning avvisa gli sviluppatori riguardo a versioni API deprecate senza bloccare la pipeline di deployment.',
               context: 'policy',
               difficulty: 'intermediate',
               code: 'warn[msg] { not input.spec.replicas }',
@@ -3888,7 +3965,7 @@ export default {
               pronunciation: '/ˈpɒləsi tɛst ˈkʌvərɪdʒ/',
               phonetic: 'PO-li-si TEST KA-ve-rigg',
               example:
-                'Track policy test coverage in CI. = Traccia la copertura dei test di policy in CI.',
+                'Achieving ninety percent policy test coverage ensures that edge cases in Rego rules do not create security gaps. = Raggiungere il novanta percento di copertura dei test delle policy assicura che i casi limite nelle regole Rego non creino falle di sicurezza.',
               context: 'policy',
               difficulty: 'intermediate',
               command: 'opa test --coverage',
@@ -3906,7 +3983,7 @@ export default {
               pronunciation: '/ədˈmɪʃən kənˈtrəʊlə/',
               phonetic: 'ad-MI-scion kon-TRO-ler',
               example:
-                'Admission controllers reject bad pods. = I controllori di ammissione rifiutano pod cattivi.',
+                "The Kubernetes admission controller rejects any pod spec that references an unsigned or unscanned container image. = L'admission controller Kubernetes rifiuta qualsiasi specifica pod che referenzi un'immagine container non firmata o non scansionata.",
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3916,7 +3993,7 @@ export default {
               pronunciation: '/ˈvælɪdeɪtɪŋ ˈwɛbhʊk/',
               phonetic: 'VA-li-dei-ting UEB-huk',
               example:
-                'Validating webhooks block invalid YAML. = I webhook di validazione bloccano YAML non valido.',
+                'The validating webhook intercepts CREATE and UPDATE requests and rejects pods that violate the security baseline. = Il validating webhook intercetta le richieste CREATE e UPDATE e rifiuta i pod che violano la baseline di sicurezza.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3926,7 +4003,7 @@ export default {
               pronunciation: '/ˈmjuːteɪtɪŋ ˈwɛbhʊk/',
               phonetic: 'MIU-tei-ting UEB-huk',
               example:
-                'Mutating webhooks add default labels. = I webhook mutanti aggiungono label di default.',
+                'Our mutating webhook automatically injects a sidecar proxy and resource limits into every new pod deployment. = Il nostro mutating webhook inietta automaticamente un proxy sidecar e limiti di risorse in ogni nuovo deployment di pod.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3935,7 +4012,8 @@ export default {
               italian: 'Kyverno (policy engine Kubernetes)',
               pronunciation: '/ˈkaɪvɜːnəʊ/',
               phonetic: 'KAI-ver-no',
-              example: 'Kyverno writes K8s policies in YAML. = Kyverno scrive policy K8s in YAML.',
+              example:
+                'Switching from OPA Gatekeeper to Kyverno simplified policy authoring because rules are written in plain YAML. = Passare da OPA Gatekeeper a Kyverno ha semplificato la scrittura delle policy perché le regole sono scritte in YAML semplice.',
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'Kyverno',
@@ -3943,11 +4021,11 @@ export default {
             },
             {
               english: 'OPA Gatekeeper',
-              italian: 'OPA Gatekeeper / OPA per Kubernetes',
+              italian: 'OPA per Kubernetes (OPA Gatekeeper)',
               pronunciation: '/ˈəʊpə ˈɡeɪtkiːpə/',
               phonetic: 'O-pa GHEIT-ki-per',
               example:
-                'Gatekeeper enforces OPA in Kubernetes. = Gatekeeper applica OPA in Kubernetes.',
+                "Deploying OPA Gatekeeper on the cluster enforces constraint templates that reject non-compliant workloads at admission. = Deployare OPA Gatekeeper sul cluster impone constraint template che rifiutano i workload non conformi all'ammissione.",
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'OPA Gatekeeper',
@@ -3958,7 +4036,7 @@ export default {
               pronunciation: '/kənˈstreɪnt/',
               phonetic: 'kon-STREINT',
               example:
-                'A constraint applies a template to namespaces. = Un vincolo applica un template ai namespace.',
+                "The cluster administrator created a constraint that blocks any deployment without explicit CPU and memory limits. = L'amministratore del cluster ha creato un constraint che blocca qualsiasi deployment senza limiti espliciti di CPU e memoria.",
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3968,7 +4046,7 @@ export default {
               pronunciation: '/kənˈstreɪnt ˈtɛmpleɪt/',
               phonetic: 'kon-STREINT TEM-pleit',
               example:
-                'A constraint template defines the rule. = Un template di vincolo definisce la regola.',
+                'A parameterized constraint template lets teams reuse the same validation logic with different threshold values. = Un constraint template parametrizzato permette ai team di riutilizzare la stessa logica di validazione con valori di soglia diversi.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3978,7 +4056,7 @@ export default {
               pronunciation: '/ˈpɒləsi ˈɔːdɪt/',
               phonetic: 'PO-li-si O-dit',
               example:
-                "Run a policy audit before enforce. = Esegui un audit delle policy prima dell'enforce.",
+                'Running a quarterly policy audit checks that every active Rego rule is still relevant and correctly enforced. = Eseguire un audit delle policy trimestrale verifica che ogni regola Rego attiva sia ancora pertinente e correttamente applicata.',
               context: 'policy',
               difficulty: 'intermediate',
               note: 'Modalità solo report, senza blocco.',
@@ -3989,7 +4067,7 @@ export default {
               pronunciation: '/ɪnˈfɔːs məʊd/',
               phonetic: 'in-FORS MOUD',
               example:
-                'Enforce mode rejects violations. = La modalità enforce rifiuta le violazioni.',
+                'Switching the policy from audit mode to enforce mode started blocking non-compliant pods in real time. = Passare la policy dalla modalità audit alla modalità enforce ha iniziato a bloccare i pod non conformi in tempo reale.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -3999,7 +4077,7 @@ export default {
               pronunciation: '/pɒd sɪˈkjʊərəti ˈstændəd/',
               phonetic: 'POD si-KIU-ri-ti STAN-dard',
               example:
-                'Apply restricted pod security standards. = Applica standard di sicurezza pod restricted.',
+                "Applying the restricted Pod Security Standard prevents containers from running as root or mounting host paths. = Applicare il Pod Security Standard ristretto impedisce ai container di girare come root o montare percorsi dell'host.",
               context: 'policy',
               difficulty: 'intermediate',
               note: 'PSS sostituisce le PSP deprecate.',
@@ -4017,17 +4095,17 @@ export default {
               pronunciation: '/priː dɪˈplɔɪ tʃɛk/',
               phonetic: 'PRI-di-PLOI CIEK',
               example:
-                'Pre-deploy checks fail invalid manifests. = I controlli pre-deploy fanno fallire manifest non validi.',
+                'The pre-deploy check validates that all images are signed and all manifests pass OPA policy evaluation. = Il controllo pre-deploy valida che tutte le immagini siano firmate e tutti i manifesti passino la valutazione delle policy OPA.',
               context: 'policy',
               difficulty: 'intermediate',
             },
             {
               english: 'Helm Lint',
-              italian: 'helm lint / linter di Helm chart',
+              italian: 'Linter di Helm chart (helm lint)',
               pronunciation: '/hɛlm lɪnt/',
               phonetic: 'HELM-LINT',
               example:
-                'Helm lint validates chart syntax. = Helm lint valida la sintassi dei chart.',
+                'Running helm lint before packaging the chart catches syntax errors and missing required values in the templates. = Eseguire helm lint prima di pacchettizzare il chart intercetta errori di sintassi e valori obbligatori mancanti nei template.',
               context: 'policy',
               difficulty: 'intermediate',
               command: 'helm lint ./mychart',
@@ -4037,7 +4115,8 @@ export default {
               italian: 'Kubeconform (validatore manifest K8s)',
               pronunciation: '/ˈkjuːbˌkɒnfɔːm/',
               phonetic: 'KIUB-kon-form',
-              example: 'Kubeconform validates K8s schemas. = Kubeconform valida gli schemi K8s.',
+              example:
+                'Validating manifests with Kubeconform ensures they conform to the target Kubernetes API version schema. = Validare i manifesti con Kubeconform assicura che siano conformi allo schema della versione API Kubernetes di destinazione.',
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'Kubeconform',
@@ -4049,7 +4128,7 @@ export default {
               pronunciation: '/ˈpɒləsi ˈpaɪplaɪn/',
               phonetic: 'PO-li-si PAIP-lain',
               example:
-                'A policy pipeline tests every change. = Una pipeline di policy testa ogni modifica.',
+                'Our policy pipeline runs unit tests, integration tests, and dry-run enforcement before merging any Rego change. = La nostra pipeline di policy esegue unit test, test di integrazione e enforcement dry-run prima di unire qualsiasi modifica Rego.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -4059,7 +4138,7 @@ export default {
               pronunciation: '/drɪft ˈpɒləsi/',
               phonetic: 'DRIFT PO-li-si',
               example:
-                'Drift policies catch live changes. = Le policy di deriva catturano modifiche live.',
+                'The drift policy alerts when a manually changed resource no longer matches its Terraform-managed definition. = La policy di drift allerta quando una risorsa modificata manualmente non corrisponde più alla sua definizione gestita da Terraform.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -4069,7 +4148,7 @@ export default {
               pronunciation: '/skɔː kɑːd/',
               phonetic: 'SKOR KARD',
               example:
-                'A score card grades policy compliance. = Una scheda di valutazione misura la conformità delle policy.',
+                'Each team receives a monthly score card showing the percentage of deployments that passed all security policies. = Ogni team riceve una score card mensile che mostra la percentuale di deployment che hanno passato tutte le policy di sicurezza.',
               context: 'policy',
               difficulty: 'intermediate',
               tool: 'OpenSSF Scorecard',
@@ -4080,7 +4159,7 @@ export default {
               pronunciation: '/ˈpɒləsi ˈbʌndl ˈsɜːvə/',
               phonetic: 'PO-li-si BAN-dol SER-ver',
               example:
-                'A bundle server distributes Rego policies. = Un server di bundle distribuisce policy Rego.',
+                'The OPA instances pull the latest rules from the central policy bundle server on every restart and every five minutes. = Le istanze OPA scaricano le regole più recenti dal server del bundle di policy centrale a ogni riavvio e ogni cinque minuti.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -4090,7 +4169,7 @@ export default {
               pronunciation: '/dɪˈsɪʒən lɒɡ/',
               phonetic: 'di-SI-gen LOG',
               example:
-                'Decision logs prove what OPA decided. = I log delle decisioni provano cosa ha deciso OPA.',
+                'Shipping every OPA decision log to the SIEM lets the security team audit which requests were allowed or denied. = Inviare ogni decision log di OPA al SIEM permette al team di sicurezza di verificare quali richieste sono state autorizzate o negate.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -4100,7 +4179,7 @@ export default {
               pronunciation: '/ˈpɒləsi æz tɛst/',
               phonetic: 'PO-li-si AZ-TEST',
               example:
-                'Treat policies like any other test. = Tratta le policy come qualsiasi altro test.',
+                'Treating every policy as a test means it runs in the CI pipeline and must pass before the merge is allowed. = Trattare ogni policy come un test significa che gira nella pipeline CI e deve passare prima che il merge sia consentito.',
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -4110,7 +4189,7 @@ export default {
               pronunciation: '/ʃɪft lɛft ˈpɒləsi/',
               phonetic: 'SHIFT-LEFT PO-li-si',
               example:
-                'Shift-left policy fails fast in dev. = La policy spostata a sinistra fallisce presto in dev.',
+                "Evaluating shift-left policy checks in the developer IDE gives instant feedback before code is even committed. = Valutare i controlli di policy shift-left nell'IDE dello sviluppatore dà feedback istantaneo prima ancora che il codice sia committato.",
               context: 'policy',
               difficulty: 'intermediate',
             },
@@ -4137,7 +4216,7 @@ export default {
               pronunciation: '/ˈsɒftweə səˈplaɪ tʃeɪn/',
               phonetic: 'SOFT-uer sa-PLAI CIEIN',
               example:
-                'The software supply chain spans many vendors. = La catena di approvvigionamento software attraversa molti fornitori.',
+                "Securing the software supply chain requires verifying every dependency, build tool, and CI plugin before use. = Proteggere la catena di fornitura software richiede la verifica di ogni dipendenza, strumento di build e plugin CI prima dell'uso.",
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4147,7 +4226,7 @@ export default {
               pronunciation: '/ˈprɒvənəns/',
               phonetic: 'PRO-ve-nans',
               example:
-                'Provenance proves where an artifact came from. = La provenienza prova da dove arriva un artefatto.',
+                'Generating build provenance records proves exactly which source commit, builder, and parameters produced a given artifact. = Generare record di provenienza della build dimostra esattamente quale commit sorgente, builder e parametri hanno prodotto un dato artefatto.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4156,7 +4235,8 @@ export default {
               italian: 'Attestazione',
               pronunciation: '/ˌætɛˈsteɪʃən/',
               phonetic: 'a-tes-TEI-scion',
-              example: "An attestation is signed metadata. = Un'attestazione è metadata firmato.",
+              example:
+                "Attaching a signed attestation to the container image proves it passed all required security scans before release. = Allegare un'attestazione firmata all'immagine container dimostra che ha superato tutte le scansioni di sicurezza richieste prima del rilascio.",
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4166,7 +4246,7 @@ export default {
               pronunciation: '/ˈsɪɡnətʃər/',
               phonetic: 'SIG-na-cer',
               example:
-                'A signature binds an artifact to a key. = Una firma lega un artefatto a una chiave.',
+                'Verifying the cryptographic signature on each artifact confirms that it has not been tampered with since the build. = Verificare la firma crittografica su ogni artefatto conferma che non è stato manomesso dal momento della build.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4176,17 +4256,17 @@ export default {
               pronunciation: '/ˈvɛrɪfaɪər/',
               phonetic: 'VE-ri-fai-er',
               example:
-                'The verifier checks signatures at deploy. = Il verificatore controlla le firme al deploy.',
+                "The admission controller acts as a verifier, rejecting any container image that lacks a valid cosign signature. = L'admission controller agisce come verificatore, rifiutando qualsiasi immagine container priva di una firma cosign valida.",
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
             {
               english: 'Typosquatting',
-              italian: 'typosquatting / nomi simili per ingannare utenti',
+              italian: 'Nomi simili per ingannare utenti (typosquatting)',
               pronunciation: '/ˈtaɪpəʊˌskwɒtɪŋ/',
               phonetic: 'TAI-po-skuo-ting',
               example:
-                'Typosquatting tricks devs with similar names. = Il typosquatting inganna gli sviluppatori con nomi simili.',
+                'An attacker published a typosquatting package named lodahs to trick developers into installing malicious code. = Un attaccante ha pubblicato un pacchetto di typosquatting chiamato lodahs per ingannare gli sviluppatori facendo installare codice malevolo.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               note: 'Es. lod4sh invece di lodash.',
@@ -4197,7 +4277,7 @@ export default {
               pronunciation: '/dɪˈpɛndənsi kənˈfjuːʒən/',
               phonetic: 'di-PEN-den-si kon-FIU-gen',
               example:
-                'Dependency confusion hijacks internal names. = La confusione di dipendenze dirotta nomi interni.',
+                'A dependency confusion attack exploits private package names by publishing higher-version copies on the public registry. = Un attacco di dependency confusion sfrutta i nomi dei pacchetti privati pubblicando copie con versioni più alte nel registry pubblico.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4207,7 +4287,7 @@ export default {
               pronunciation: '/meɪnˈteɪnə ˈkɒmprəmaɪz/',
               phonetic: 'mein-TEI-ner KOM-pro-maiz',
               example:
-                'Maintainer compromise has hit npm libs. = La compromissione del manutentore ha colpito librerie npm.',
+                "When a maintainer compromise occurs, the attacker pushes a backdoor update that gets pulled by thousands of projects. = Quando avviene un compromesso del maintainer, l'attaccante pusha un aggiornamento con backdoor che viene scaricato da migliaia di progetti.",
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4217,7 +4297,7 @@ export default {
               pronunciation: '/bɪld ˈsɪstəm ˈkɒmprəmaɪz/',
               phonetic: 'BILD SIS-tem KOM-pro-maiz',
               example:
-                'SolarWinds was a build system compromise. = SolarWinds è stato una compromissione del sistema di build.',
+                "The SolarWinds incident demonstrated how a build system compromise can inject malware into legitimate signed software. = L'incidente SolarWinds ha dimostrato come un compromesso del sistema di build possa iniettare malware in software legittimo firmato.",
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4227,7 +4307,7 @@ export default {
               pronunciation: '/trʌst ˈbaʊndəri/',
               phonetic: 'TRAST BAUN-da-ri',
               example:
-                'Map every trust boundary in the pipeline. = Mappa ogni confine di fiducia nella pipeline.',
+                'Defining a clear trust boundary between the CI runner and the production cluster limits lateral movement in case of breach. = Definire un confine di fiducia chiaro tra il runner CI e il cluster di produzione limita il movimento laterale in caso di violazione.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4240,11 +4320,11 @@ export default {
           items: [
             {
               english: 'SLSA',
-              italian: 'SLSA / livelli di sicurezza supply chain',
+              italian: 'Livelli di sicurezza supply chain (SLSA)',
               pronunciation: '/ˈsɒlsə/',
               phonetic: 'SOL-sa',
               example:
-                'SLSA defines supply-chain maturity levels. = SLSA definisce livelli di maturità supply-chain.',
+                "Achieving SLSA Level 3 requires using an isolated build environment with verifiable provenance for every artifact. = Raggiungere il livello SLSA 3 richiede l'uso di un ambiente di build isolato con provenienza verificabile per ogni artefatto.",
               context: 'supply-chain',
               difficulty: 'intermediate',
               note: 'Supply-chain Levels for Software Artifacts.',
@@ -4255,7 +4335,7 @@ export default {
               pronunciation: '/ˈsɒlsə ˈlɛvl wʌn/',
               phonetic: 'SOL-sa LE-vel UAN',
               example:
-                'SLSA L1 requires documented build process. = SLSA L1 richiede un processo di build documentato.',
+                'At SLSA Level 1, the build process must be fully scripted and produce a provenance document. = Al livello SLSA 1, il processo di build deve essere completamente scriptato e produrre un documento di provenienza.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4265,7 +4345,7 @@ export default {
               pronunciation: '/ˈsɒlsə ˈlɛvl tuː/',
               phonetic: 'SOL-sa LE-vel TU',
               example:
-                'SLSA L2 needs hosted build service. = SLSA L2 richiede un servizio di build hosted.',
+                'Reaching SLSA Level 2 means the provenance is generated by a hosted build service and cannot be forged by developers. = Raggiungere il livello SLSA 2 significa che la provenienza è generata da un servizio di build ospitato e non può essere falsificata dagli sviluppatori.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4275,7 +4355,7 @@ export default {
               pronunciation: '/ˈsɒlsə ˈlɛvl θriː/',
               phonetic: 'SOL-sa LE-vel TRI',
               example:
-                'SLSA L3 requires non-falsifiable provenance. = SLSA L3 richiede provenienza non falsificabile.',
+                'At SLSA Level 3, the build runs in an ephemeral isolated environment, preventing any cross-build contamination. = Al livello SLSA 3, la build gira in un ambiente isolato effimero, prevenendo qualsiasi contaminazione tra build.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4285,7 +4365,7 @@ export default {
               pronunciation: '/ˈsɒlsə ˈlɛvl fɔː/',
               phonetic: 'SOL-sa LE-vel FOR',
               example:
-                'SLSA L4 demands two-person review. = SLSA L4 richiede revisione a due persone.',
+                'Meeting SLSA Level 4 requires a two-person review of every source change and a hermetic, reproducible build. = Soddisfare il livello SLSA 4 richiede una revisione a due persone di ogni modifica del sorgente e una build ermetica e riproducibile.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4295,7 +4375,7 @@ export default {
               pronunciation: '/hɜːˈmɛtɪk bɪld/',
               phonetic: 'her-ME-tik BILD',
               example:
-                'Hermetic builds use vetted inputs only. = Le build ermetiche usano solo input validati.',
+                "A hermetic build fetches no external resources at build time, so the output depends only on the declared inputs. = Una build ermetica non scarica risorse esterne a tempo di build, quindi l'output dipende solo dagli input dichiarati.",
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4305,7 +4385,7 @@ export default {
               pronunciation: '/ˌriːprəˈdjuːsəbl bɪld/',
               phonetic: 'ri-pro-DIU-si-bol BILD',
               example:
-                'Reproducible builds yield identical bytes. = Le build riproducibili producono byte identici.',
+                'With a reproducible build, two different machines compiling the same source produce bit-for-bit identical binaries. = Con una build riproducibile, due macchine diverse che compilano lo stesso sorgente producono binari identici bit per bit.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4315,7 +4395,7 @@ export default {
               pronunciation: '/ˈaɪsəleɪtɪd bɪld/',
               phonetic: 'AI-so-lei-ted BILD',
               example:
-                'Isolated builds prevent cross-job tampering. = Le build isolate prevengono manomissioni cross-job.',
+                "Running the compilation in an isolated build container prevents environment variables or host tools from affecting the output. = Eseguire la compilazione in un container di build isolato impedisce che variabili d'ambiente o strumenti dell'host influenzino l'output.",
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4325,7 +4405,7 @@ export default {
               pronunciation: '/ˈtæmpə rɪˈzɪstənt/',
               phonetic: 'TAM-per ri-ZIS-tant',
               example:
-                'Provenance must be tamper-resistant. = La provenienza deve essere resistente alla manomissione.',
+                'Storing the provenance metadata in a tamper-resistant transparency log guarantees that no one can alter the record after the fact. = Memorizzare i metadati di provenienza in un log di trasparenza resistente alle manomissioni garantisce che nessuno possa alterare il record dopo il fatto.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4335,7 +4415,7 @@ export default {
               pronunciation: '/ˈvɛrɪfaɪd sɔːs/',
               phonetic: 'VE-ri-faid SORS',
               example:
-                'Verified sources prove who wrote the code. = Le sorgenti verificate provano chi ha scritto il codice.',
+                'The pipeline only builds from verified source commits that have a valid GPG signature from an authorized contributor. = La pipeline compila solo da commit sorgente verificati che hanno una firma GPG valida da un contributore autorizzato.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4348,11 +4428,11 @@ export default {
           items: [
             {
               english: 'Sigstore',
-              italian: 'Sigstore / firma open source di artefatti',
+              italian: 'Firma open source di artefatti (Sigstore)',
               pronunciation: '/ˈsɪɡstɔː/',
               phonetic: 'SIG-stor',
               example:
-                'Sigstore makes signing software simple. = Sigstore rende semplice firmare il software.',
+                "The open-source Sigstore ecosystem provides keyless signing, a transparency log, and a free certificate authority. = L'ecosistema open-source Sigstore fornisce firma senza chiave, un log di trasparenza e un'autorità di certificazione gratuita.",
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'Sigstore',
@@ -4363,7 +4443,7 @@ export default {
               pronunciation: '/ˈkəʊsaɪn/',
               phonetic: 'KO-sain',
               example:
-                'Cosign signs container images and blobs. = Cosign firma immagini container e blob.',
+                "After building the release artifact, the CI pipeline uses Cosign to attach a keyless signature verified by Fulcio and Rekor. = Dopo aver costruito l'artefatto di rilascio, la pipeline CI usa Cosign per allegare una firma senza chiave verificata da Fulcio e Rekor.",
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'Cosign',
@@ -4371,22 +4451,22 @@ export default {
             },
             {
               english: 'Fulcio',
-              italian: 'Fulcio / CA per certificati effimeri Sigstore',
+              italian: 'CA per certificati effimeri Sigstore (Fulcio)',
               pronunciation: '/ˈfʊltʃiəʊ/',
               phonetic: 'FUL-cio',
               example:
-                'Fulcio issues short-lived signing certs. = Fulcio emette certificati di firma a breve durata.',
+                "During keyless signing, Fulcio issues a short-lived certificate tied to the developer's OIDC identity. = Durante la firma senza chiave, Fulcio emette un certificato a breve durata legato all'identità OIDC dello sviluppatore.",
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'Fulcio',
             },
             {
               english: 'Rekor',
-              italian: 'Rekor / log trasparente Sigstore',
+              italian: 'Log trasparente Sigstore (Rekor)',
               pronunciation: '/ˈrɛkɔː/',
               phonetic: 'RE-kor',
               example:
-                'Rekor logs every signature publicly. = Rekor registra ogni firma pubblicamente.',
+                'Every signature entry recorded in Rekor creates an immutable audit trail that anyone can independently verify. = Ogni voce di firma registrata in Rekor crea una traccia di audit immutabile che chiunque può verificare indipendentemente.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'Rekor',
@@ -4398,7 +4478,7 @@ export default {
               pronunciation: '/ˈkiːləs ˈsaɪnɪŋ/',
               phonetic: 'KI-les SAI-ning',
               example:
-                'Keyless signing uses OIDC identity. = La firma senza chiavi usa identità OIDC.',
+                'With keyless signing, there are no long-lived private keys to protect, because certificates expire within minutes. = Con la firma senza chiave, non ci sono chiavi private a lunga durata da proteggere, perché i certificati scadono in pochi minuti.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               command: 'cosign sign myimage  # OIDC flow',
@@ -4409,16 +4489,17 @@ export default {
               pronunciation: '/trænˈspærənsi lɒɡ/',
               phonetic: 'tran-SPA-ren-si LOG',
               example:
-                'Transparency logs are append-only. = I log di trasparenza sono append-only.',
+                "Publishing every build attestation to a transparency log lets external auditors verify the integrity of released artifacts. = Pubblicare ogni attestazione di build in un log di trasparenza permette agli auditor esterni di verificare l'integrità degli artefatti rilasciati.",
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
             {
               english: 'in-toto',
-              italian: 'in-toto / framework supply chain',
+              italian: 'Framework supply chain (in-toto)',
               pronunciation: '/ɪn ˈtəʊtəʊ/',
               phonetic: 'IN-TO-to',
-              example: 'in-toto attests pipeline steps. = in-toto attesta i passi della pipeline.',
+              example:
+                'Using the in-toto framework, each step of the build pipeline produces a signed link metadata file for verification. = Usando il framework in-toto, ogni passo della pipeline di build produce un file di metadati link firmato per la verifica.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'in-toto',
@@ -4429,7 +4510,7 @@ export default {
               pronunciation: '/ˈprɒvənəns ˌætɛˈsteɪʃən/',
               phonetic: 'PRO-ve-nans a-tes-TEI-scion',
               example:
-                'Generate provenance attestations in CI. = Genera attestazioni di provenienza in CI.',
+                "The GitHub Actions workflow generates a provenance attestation automatically for every container image pushed to the registry. = Il workflow GitHub Actions genera un'attestazione di provenienza automaticamente per ogni immagine container pushata nel registry.",
               context: 'supply-chain',
               difficulty: 'intermediate',
               command: 'cosign attest --predicate prov.json',
@@ -4440,7 +4521,7 @@ export default {
               pronunciation: '/ˈvɛrɪfaɪ ˈsɪɡnətʃər/',
               phonetic: 'VE-ri-fai SIG-na-cer',
               example:
-                "Verify signatures at admission time. = Verifica le firme al momento dell'ammissione.",
+                'Before deploying, the admission webhook runs cosign to verify the signature against the stored public key. = Prima del deploy, il webhook di ammissione esegue cosign per verificare la firma contro la chiave pubblica memorizzata.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               command: 'cosign verify --certificate-identity ...',
@@ -4451,7 +4532,7 @@ export default {
               pronunciation: '/ˈpɒləsi kənˈtrəʊlə/',
               phonetic: 'PO-li-si kon-TRO-ler',
               example:
-                'Sigstore policy controllers gate clusters. = I controllori di policy Sigstore proteggono i cluster.',
+                'The Sigstore policy controller rejects any pod whose image lacks a valid signature matching the configured trust policy. = Il policy controller di Sigstore rifiuta qualsiasi pod la cui immagine manca di una firma valida corrispondente alla policy di fiducia configurata.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'Sigstore Policy Controller',
@@ -4469,7 +4550,7 @@ export default {
               pronunciation: '/ˈɡɪthʌb ˈprɒvənəns/',
               phonetic: 'GHIT-hab PRO-ve-nans',
               example:
-                'GitHub provenance is generated from Actions. = La provenance di GitHub è generata da Actions.',
+                'Enabling GitHub Provenance on the release workflow attaches SLSA Level 3 provenance to every published npm package. = Abilitare GitHub Provenance sul workflow di rilascio allega la provenienza SLSA Livello 3 a ogni pacchetto npm pubblicato.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'slsa-github-generator',
@@ -4480,7 +4561,7 @@ export default {
               pronunciation: '/pɪnd ˈækʃən/',
               phonetic: 'PIND AK-scion',
               example:
-                'Pinned actions reduce supply chain risk. = Le azioni pinnate riducono il rischio supply chain.',
+                'Replacing a tag reference with a pinned action SHA prevents an upstream compromise from hijacking your CI workflow. = Sostituire un riferimento a tag con uno SHA di azione pinnata impedisce a un compromesso upstream di dirottare il workflow CI.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               code: 'uses: actions/checkout@8f4b7f8...',
@@ -4491,7 +4572,7 @@ export default {
               pronunciation: '/ˈlɒkfaɪl ˈmeɪntənəns/',
               phonetic: 'LOK-fail MEIN-te-nans',
               example:
-                'Lockfile maintenance keeps deps fresh. = La manutenzione del lockfile tiene le deps fresche.',
+                'Automated lockfile maintenance updates dependency hashes weekly, catching any digest mismatch that could indicate tampering. = La manutenzione automatica del lockfile aggiorna gli hash delle dipendenze settimanalmente, intercettando qualsiasi mismatch di digest che potrebbe indicare manomissione.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4501,7 +4582,7 @@ export default {
               pronunciation: '/ˈmɪrə rɪˈpɒzɪtəri/',
               phonetic: 'MI-ror ri-PO-zi-to-ri',
               example:
-                'Mirror critical dependencies internally. = Mirrorizza le dipendenze critiche internamente.',
+                'Cloning critical dependencies into a mirror repository protects the build from upstream deletion or registry outages. = Clonare le dipendenze critiche in un repository mirror protegge la build dalla cancellazione upstream o dai disservizi del registry.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4510,7 +4591,8 @@ export default {
               italian: 'Commit firmato',
               pronunciation: '/saɪnd kəˈmɪt/',
               phonetic: 'SAIND ko-MIT',
-              example: 'Require signed commits on main. = Richiedi commit firmati su main.',
+              example:
+                'Requiring every signed commit on the main branch proves that an authorized developer authored each change. = Richiedere ogni commit firmato sul branch main dimostra che uno sviluppatore autorizzato ha creato ogni modifica.',
               context: 'supply-chain',
               difficulty: 'intermediate',
               command: 'git commit -S -m "msg"',
@@ -4520,17 +4602,18 @@ export default {
               italian: 'Chiave GPG',
               pronunciation: '/dʒiː piː dʒiː kiː/',
               phonetic: 'GI-PI-GI KI',
-              example: 'Use a GPG key on a hardware token. = Usa una chiave GPG su token hardware.',
+              example:
+                'Each developer registers a GPG key with GitHub so their commits show a verified badge in the commit log. = Ogni sviluppatore registra una chiave GPG con GitHub così i loro commit mostrano un badge verificato nel log dei commit.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
             {
               english: 'OpenSSF',
-              italian: 'OpenSSF / Open Source Security Foundation',
+              italian: 'Open Source Security Foundation (OpenSSF)',
               pronunciation: '/ˈəʊpən ɛs ɛs ɛf/',
               phonetic: 'O-pen-ES-ES-EF',
               example:
-                'OpenSSF leads supply chain standards. = OpenSSF guida gli standard supply chain.',
+                "The OpenSSF community develops best practices and tooling to help secure the entire open-source software ecosystem. = La comunità OpenSSF sviluppa best practice e strumenti per contribuire a proteggere l'intero ecosistema software open-source.",
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'OpenSSF',
@@ -4538,11 +4621,11 @@ export default {
             },
             {
               english: 'Scorecard',
-              italian: 'OpenSSF Scorecard / valutazione progetti open source',
+              italian: 'Valutazione progetti open source (OpenSSF Scorecard)',
               pronunciation: '/ˈskɔːkɑːd/',
               phonetic: 'SKOR-kard',
               example:
-                'Scorecard rates open source projects. = Scorecard valuta progetti open source.',
+                "Running the OpenSSF Scorecard on our project revealed that branch protection and fuzzing tests were not configured. = Eseguire l'OpenSSF Scorecard sul nostro progetto ha rivelato che la protezione dei branch e i test di fuzzing non erano configurati.",
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'OpenSSF Scorecard',
@@ -4554,7 +4637,7 @@ export default {
               pronunciation: '/siːld bɪld/',
               phonetic: 'SILD BILD',
               example:
-                'A sealed build forbids extra fetches. = Una build sigillata vieta fetch extra.',
+                'Producing a sealed build ensures that no network calls or untracked files can influence the final binary. = Produrre una build sigillata assicura che nessuna chiamata di rete o file non tracciato possa influenzare il binario finale.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4564,7 +4647,7 @@ export default {
               pronunciation: '/ˌriːprəˌdjuːsəˈbɪləti ˈɔːdɪt/',
               phonetic: 'ri-pro-diu-si-BI-li-ti O-dit',
               example:
-                'A reproducibility audit replays builds. = Un audit di riproducibilità ripete le build.',
+                'An independent reproducibility audit confirmed that our container images can be rebuilt from source with identical hashes. = Un audit di riproducibilità indipendente ha confermato che le nostre immagini container possono essere ricostruite dal sorgente con hash identici.',
               context: 'supply-chain',
               difficulty: 'intermediate',
             },
@@ -4591,7 +4674,7 @@ export default {
               pronunciation: '/kəmˈplaɪəns æz kəʊd/',
               phonetic: 'kom-PLAI-ans AZ-KOUD',
               example:
-                'Compliance as code automates audits. = La conformità come codice automatizza gli audit.',
+                'Expressing all regulatory requirements as compliance as code lets the CI pipeline enforce them on every commit. = Esprimere tutti i requisiti normativi come compliance as code permette alla pipeline CI di imporli ad ogni commit.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4600,26 +4683,28 @@ export default {
               italian: 'Controllo',
               pronunciation: '/kənˈtrəʊl/',
               phonetic: 'kon-TROL',
-              example: 'Each control maps to a regulation. = Ogni controllo mappa a una normativa.',
+              example:
+                'Each security control maps to a specific test in the InSpec profile that runs automatically during the pipeline. = Ogni controllo di sicurezza corrisponde a un test specifico nel profilo InSpec che gira automaticamente durante la pipeline.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
             {
               english: 'Framework',
-              italian: 'framework / impalcatura di sviluppo',
+              italian: 'Impalcatura di sviluppo (framework)',
               pronunciation: '/ˈfreɪmwɜːk/',
               phonetic: 'FREIM-uork',
-              example: 'NIST and CIS are common frameworks. = NIST e CIS sono framework comuni.',
+              example:
+                'Choosing the right compliance framework like NIST or CIS depends on industry requirements and customer expectations. = Scegliere il framework di compliance giusto come NIST o CIS dipende dai requisiti del settore e dalle aspettative dei clienti.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
             {
               english: 'Audit',
-              italian: 'audit / verifica di conformità',
+              italian: 'Verifica di conformità (audit)',
               pronunciation: '/ˈɔːdɪt/',
               phonetic: 'O-dit',
               example:
-                'An audit verifies controls work. = Un audit verifica che i controlli funzionino.',
+                "Preparing for the annual audit requires gathering evidence that each security control operated effectively throughout the year. = Prepararsi per l'audit annuale richiede la raccolta di evidenze che ogni controllo di sicurezza abbia operato efficacemente durante tutto l'anno.",
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4628,7 +4713,8 @@ export default {
               italian: 'Evidenza',
               pronunciation: '/ˈɛvɪdəns/',
               phonetic: 'E-vi-dens',
-              example: 'Collect evidence automatically. = Raccogli le evidenze automaticamente.',
+              example:
+                'Automated evidence collection captures screenshots, logs, and scan results to satisfy auditor requests in minutes. = La raccolta automatica di evidenze cattura screenshot, log e risultati delle scansioni per soddisfare le richieste degli auditor in pochi minuti.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4638,13 +4724,13 @@ export default {
               pronunciation: '/ˌætɛˈsteɪʃən/',
               phonetic: 'a-tes-TEI-scion',
               example:
-                'Self-attestations show internal compliance. = Le auto-attestazioni mostrano conformità interna.',
+                "Attaching a signed attestation to the container image proves it passed all required security scans before release. = Allegare un'attestazione firmata all'immagine container dimostra che ha superato tutte le scansioni di sicurezza richieste prima del rilascio.",
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
             {
               english: 'Auditor',
-              italian: 'auditor / revisore',
+              italian: 'Revisore (auditor)',
               pronunciation: '/ˈɔːdɪtə/',
               phonetic: 'O-di-tor',
               example:
@@ -4657,7 +4743,8 @@ export default {
               italian: 'Conformità continua',
               pronunciation: '/kənˈtɪnjʊəs kəmˈplaɪəns/',
               phonetic: 'kon-TI-nius kom-PLAI-ans',
-              example: 'Continuous compliance runs in CI. = La conformità continua gira in CI.',
+              example:
+                'With continuous compliance, every infrastructure change is validated against CIS benchmarks before it reaches production. = Con la compliance continua, ogni modifica infrastrutturale è validata contro i benchmark CIS prima di raggiungere la produzione.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4667,7 +4754,7 @@ export default {
               pronunciation: '/rɪsk ˈrɛdʒɪstə/',
               phonetic: 'RISK RE-gi-ster',
               example:
-                'Update the risk register quarterly. = Aggiorna il registro dei rischi trimestralmente.',
+                'The CISO reviews the risk register quarterly to reassess each entry and update mitigation strategies. = Il CISO revisiona il registro dei rischi trimestralmente per rivalutare ogni voce e aggiornare le strategie di mitigazione.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4677,7 +4764,7 @@ export default {
               pronunciation: '/rɪˌmiːdiˈeɪʃən plæn/',
               phonetic: 'ri-mi-di-EI-scion PLAN',
               example:
-                'A remediation plan tracks fixes. = Un piano di rimedio traccia le correzioni.',
+                'Every critical audit finding must have a remediation plan with an assigned owner and a target completion date. = Ogni finding critico di audit deve avere un piano di remediation con un responsabile assegnato e una data di completamento obiettivo.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4694,7 +4781,7 @@ export default {
               pronunciation: '/ˈɪnspɛk/',
               phonetic: 'IN-spek',
               example:
-                'InSpec writes compliance as tests. = InSpec scrive la conformità come test.',
+                'Writing compliance checks as InSpec profiles lets the team execute them locally and in the CI pipeline identically. = Scrivere i controlli di compliance come profili InSpec permette al team di eseguirli localmente e nella pipeline CI in modo identico.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'Chef InSpec',
@@ -4702,11 +4789,11 @@ export default {
             },
             {
               english: 'Chef Compliance',
-              italian: 'Chef Compliance / suite compliance Chef',
+              italian: 'Suite compliance Chef (Chef Compliance)',
               pronunciation: '/ʃɛf kəmˈplaɪəns/',
               phonetic: 'CIEF kom-PLAI-ans',
               example:
-                'Chef Compliance scales InSpec to fleets. = Chef Compliance scala InSpec a flotte intere.',
+                "Integrating Chef Compliance into the deployment pipeline continuously validates server hardening across the fleet. = Integrare Chef Compliance nella pipeline di deployment valida continuamente l'hardening dei server in tutta la flotta.",
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'Chef Compliance',
@@ -4717,7 +4804,7 @@ export default {
               pronunciation: '/ˈəʊpənskæp/',
               phonetic: 'O-pen-skap',
               example:
-                'OpenSCAP scans systems for benchmarks. = OpenSCAP analizza i sistemi per benchmark.',
+                'The nightly OpenSCAP scan evaluates every Red Hat server against the DISA STIG security baseline. = La scansione OpenSCAP notturna valuta ogni server Red Hat contro la baseline di sicurezza DISA STIG.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'OpenSCAP',
@@ -4725,11 +4812,11 @@ export default {
             },
             {
               english: 'Compliance Operator',
-              italian: 'Compliance Operator / operator OpenShift di compliance',
+              italian: 'Operator OpenShift di compliance (Compliance Operator)',
               pronunciation: '/kəmˈplaɪəns ˈɒpəreɪtə/',
               phonetic: 'kom-PLAI-ans O-pe-rei-ter',
               example:
-                "OpenShift's Compliance Operator runs scans. = Il Compliance Operator di OpenShift esegue scansioni.",
+                'The Compliance Operator on OpenShift continuously evaluates cluster nodes against CIS Kubernetes benchmarks. = Il Compliance Operator su OpenShift valuta continuamente i nodi del cluster contro i benchmark CIS Kubernetes.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'OpenShift Compliance Operator',
@@ -4740,7 +4827,7 @@ export default {
               pronunciation: '/klaʊd kʌˈstəʊdiən/',
               phonetic: 'KLAUD kas-TO-dian',
               example:
-                'Cloud Custodian enforces cloud policies. = Cloud Custodian applica policy cloud.',
+                "We use Cloud Custodian policies to automatically tag, stop, or delete non-compliant AWS resources after hours. = Usiamo le policy di Cloud Custodian per taggare, fermare o eliminare automaticamente le risorse AWS non conformi dopo l'orario lavorativo.",
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'Cloud Custodian',
@@ -4750,7 +4837,8 @@ export default {
               italian: 'Drata (piattaforma compliance automatizzata)',
               pronunciation: '/ˈdrɑːtə/',
               phonetic: 'DRA-ta',
-              example: 'Drata automates SOC 2 evidence. = Drata automatizza le evidenze SOC 2.',
+              example:
+                'Connecting all our tools to Drata automates evidence collection for SOC 2 and ISO 27001 certifications. = Collegare tutti i nostri strumenti a Drata automatizza la raccolta di evidenze per le certificazioni SOC 2 e ISO 27001.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'Drata',
@@ -4761,17 +4849,18 @@ export default {
               pronunciation: '/ˈvæntə/',
               phonetic: 'VAN-ta',
               example:
-                'Vanta checks compliance posture daily. = Vanta verifica la postura di conformità ogni giorno.',
+                'The compliance dashboard in Vanta shows real-time progress toward meeting every SOC 2 Trust Service Criterion. = La dashboard di compliance in Vanta mostra in tempo reale il progresso verso il soddisfacimento di ogni criterio del servizio fiduciario SOC 2.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'Vanta',
             },
             {
               english: 'Tugboat Logic',
-              italian: 'Tugboat Logic / piattaforma compliance OneTrust',
+              italian: 'Piattaforma compliance OneTrust (Tugboat Logic)',
               pronunciation: '/ˈtʌɡbəʊt ˈlɒdʒɪk/',
               phonetic: 'TAG-bout LO-gik',
-              example: 'Tugboat Logic aids audits. = Tugboat Logic aiuta gli audit.',
+              example:
+                "After the acquisition by OneTrust, Tugboat Logic became the platform for managing our compliance program end to end. = Dopo l'acquisizione da parte di OneTrust, Tugboat Logic è diventato la piattaforma per gestire il nostro programma di compliance end to end.",
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'Tugboat Logic',
@@ -4782,17 +4871,17 @@ export default {
               pronunciation: '/ˈprəʊfaɪl/',
               phonetic: 'PRO-fail',
               example:
-                'An InSpec profile groups controls. = Un profilo InSpec raggruppa controlli.',
+                'The CIS Level 2 profile contains stricter controls than Level 1 and is required for systems handling sensitive data. = Il profilo CIS Livello 2 contiene controlli più rigidi del Livello 1 ed è richiesto per i sistemi che gestiscono dati sensibili.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
             {
               english: 'Baseline',
-              italian: 'baseline / valore di riferimento',
+              italian: 'Valore di riferimento (baseline)',
               pronunciation: '/ˈbeɪslaɪn/',
               phonetic: 'BEIS-lain',
               example:
-                'Adopt a CIS baseline as a starting point. = Adotta una baseline CIS come punto di partenza.',
+                "Establishing a security baseline for all new servers ensures consistent hardening across the entire infrastructure. = Stabilire una baseline di sicurezza per tutti i nuovi server assicura un hardening coerente in tutta l'infrastruttura.",
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4809,7 +4898,7 @@ export default {
               pronunciation: '/ˈɛvɪdəns kəˈlɛkʃən/',
               phonetic: 'E-vi-dens ko-LEK-scion',
               example:
-                'Automate evidence collection from APIs. = Automatizza la raccolta evidenze dalle API.',
+                "Automated evidence collection pulls configuration snapshots, scan reports, and access logs for the annual audit. = La raccolta automatica di evidenze preleva snapshot di configurazione, report di scansione e log di accesso per l'audit annuale.",
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4819,7 +4908,7 @@ export default {
               pronunciation: '/ˈɔːdɪt treɪl/',
               phonetic: 'O-dit TREIL',
               example:
-                'CloudTrail keeps an AWS audit trail. = CloudTrail mantiene un tracciato di audit AWS.',
+                'An immutable audit trail records every administrative action so investigators can reconstruct the timeline of any incident. = Una traccia di audit immutabile registra ogni azione amministrativa così gli investigatori possono ricostruire la timeline di qualsiasi incidente.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'AWS CloudTrail',
@@ -4830,7 +4919,7 @@ export default {
               pronunciation: '/ɪˈmjuːtəbl lɒɡz/',
               phonetic: 'i-MIU-ta-bol LOGS',
               example:
-                'Immutable logs satisfy auditors. = I log immutabili soddisfano gli auditor.',
+                'Shipping logs to a write-once storage bucket creates immutable logs that attackers cannot delete or modify. = Inviare i log a un bucket di storage write-once crea log immutabili che gli attaccanti non possono eliminare o modificare.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4840,7 +4929,7 @@ export default {
               pronunciation: '/ˈsnæpʃɒt/',
               phonetic: 'SNAP-sciot',
               example:
-                'Snapshot evidence at fixed intervals. = Cattura istantanee delle evidenze a intervalli fissi.',
+                'Taking a daily configuration snapshot of every cloud account provides a baseline for drift detection. = Acquisire uno snapshot di configurazione giornaliero di ogni account cloud fornisce una baseline per il rilevamento del drift.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4850,7 +4939,7 @@ export default {
               pronunciation: '/kənˈtrəʊl ˈmæpɪŋ/',
               phonetic: 'kon-TROL MA-ping',
               example:
-                'Control mapping links code to standards. = La mappatura dei controlli lega codice a standard.',
+                'The control mapping spreadsheet links each NIST 800-53 control to the specific InSpec test that validates it. = Il foglio di mappatura dei controlli collega ogni controllo NIST 800-53 al test InSpec specifico che lo valida.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4860,26 +4949,27 @@ export default {
               pronunciation: '/siː aɪ ɛs ˈbɛntʃmɑːk/',
               phonetic: 'SI-AI-ES BENCH-mark',
               example:
-                'CIS benchmarks define hardening goals. = I benchmark CIS definiscono obiettivi di hardening.',
+                'Running the CIS Benchmark against production servers revealed that SSH root login was still permitted on twelve hosts. = Eseguire il CIS Benchmark sui server di produzione ha rivelato che il login SSH root era ancora permesso su dodici host.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
             {
               english: 'NIST 800-53',
-              italian: 'NIST 800-53 / catalogo di controlli di sicurezza',
+              italian: 'Catalogo di controlli di sicurezza (NIST 800-53)',
               pronunciation: '/nɪst eɪt hʌndrəd fɪfti θriː/',
               phonetic: 'NIST EIT-HAN-dred FIF-ti-TRI',
               example:
-                'NIST 800-53 lists US federal controls. = NIST 800-53 elenca i controlli federali USA.',
+                'Federal contractors must map their security controls to NIST 800-53 families like Access Control and Incident Response. = I contractor federali devono mappare i loro controlli di sicurezza alle famiglie NIST 800-53 come Controllo degli Accessi e Risposta agli Incidenti.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
             {
               english: 'OSCAL',
-              italian: 'OSCAL / Open Security Controls Assessment Language',
+              italian: 'Open Security Controls Assessment Language (OSCAL)',
               pronunciation: '/ˈɒskəl/',
               phonetic: 'OS-kal',
-              example: 'OSCAL encodes catalogs and SSPs. = OSCAL codifica cataloghi e SSP.',
+              example:
+                'Expressing the system security plan in OSCAL format enables automated validation against multiple compliance frameworks. = Esprimere il piano di sicurezza del sistema in formato OSCAL abilita la validazione automatica contro più framework di compliance.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               note: 'Open Security Controls Assessment Language.',
@@ -4890,7 +4980,7 @@ export default {
               pronunciation: '/kənˈtɪnjʊəs ˈmɒnɪtərɪŋ/',
               phonetic: 'kon-TI-nius MO-ni-to-ring',
               example:
-                'Continuous monitoring beats yearly checks. = Il monitoraggio continuo batte i controlli annuali.',
+                'With continuous monitoring in place, any drift from the approved security baseline triggers an alert within minutes. = Con il monitoraggio continuo in atto, qualsiasi drift dalla baseline di sicurezza approvata attiva un avviso entro pochi minuti.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4900,7 +4990,7 @@ export default {
               pronunciation: '/sɛlf ˈsɜːvɪs ˈɔːdɪt/',
               phonetic: 'SELF SER-vis O-dit',
               example:
-                'Self-service audit portals save time. = I portali di audit self-service risparmiano tempo.',
+                "Developers can run a self-service audit report from the internal portal to check their service's compliance posture. = Gli sviluppatori possono eseguire un report di audit self-service dal portale interno per verificare la postura di compliance del loro servizio.",
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4917,7 +5007,7 @@ export default {
               pronunciation: '/kəmˈplaɪəns ˈpaɪplaɪn/',
               phonetic: 'kom-PLAI-ans PAIP-lain',
               example:
-                'A compliance pipeline gates releases. = Una pipeline di conformità protegge i rilasci.',
+                'The compliance pipeline runs InSpec profiles, collects evidence, and uploads results to Drata after every deployment. = La pipeline di compliance esegue profili InSpec, raccoglie evidenze e carica i risultati su Drata dopo ogni deployment.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4927,7 +5017,7 @@ export default {
               pronunciation: '/ˈtæɡɪŋ ˈstændəd/',
               phonetic: 'TA-ghing STAN-dard',
               example:
-                'Enforce tags via compliance checks. = Imponi i tag tramite controlli di conformità.',
+                "Enforcing a consistent tagging standard on all cloud resources enables accurate cost allocation and security auditing. = Imporre uno standard di tagging coerente su tutte le risorse cloud abilita un'allocazione accurata dei costi e un audit di sicurezza.",
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4937,7 +5027,7 @@ export default {
               pronunciation: '/drɪft rɪˈpɔːt/',
               phonetic: 'DRIFT ri-PORT',
               example:
-                'A drift report flags out-of-policy resources. = Un report di deriva segnala risorse fuori policy.',
+                'The weekly drift report highlighted three EC2 instances whose security groups had been manually widened. = Il report di drift settimanale ha evidenziato tre istanze EC2 i cui security group erano stati ampliati manualmente.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4947,7 +5037,7 @@ export default {
               pronunciation: '/ˈpɒləsi ˈlaɪbrəri/',
               phonetic: 'PO-li-si LAI-bra-ri',
               example:
-                'Share a policy library across teams. = Condividi una libreria di policy tra team.',
+                'The central policy library contains over two hundred tested Rego rules shared across all engineering teams. = La libreria di policy centrale contiene oltre duecento regole Rego testate condivise tra tutti i team di ingegneria.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4956,7 +5046,8 @@ export default {
               italian: 'Campo obbligatorio',
               pronunciation: '/ˈmændətəri fiːld/',
               phonetic: 'MAN-da-to-ri FILD',
-              example: 'Tickets require mandatory fields. = I ticket richiedono campi obbligatori.',
+              example:
+                'The deployment form enforces a mandatory field for the risk level so that no release ships without a risk classification. = Il modulo di deployment impone un campo obbligatorio per il livello di rischio così che nessun rilascio parta senza classificazione del rischio.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4966,7 +5057,7 @@ export default {
               pronunciation: '/tʃeɪndʒ ˈtɪkɪt/',
               phonetic: 'CIEINGG TI-ket',
               example:
-                'Each prod deploy needs a change ticket. = Ogni deploy in prod richiede un ticket di modifica.',
+                "Every infrastructure modification requires a change ticket that links the pull request, approver, and rollback plan. = Ogni modifica infrastrutturale richiede un change ticket che collega la pull request, l'approvatore e il piano di rollback.",
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4976,7 +5067,7 @@ export default {
               pronunciation: '/əˈpruːvl treɪl/',
               phonetic: 'a-PRU-val TREIL',
               example:
-                'Approval trails answer "who approved this?". = I tracciati di approvazioni rispondono "chi l\'ha approvato?".',
+                'The approval trail proves that two senior engineers reviewed and approved the production database migration. = La traccia di approvazione dimostra che due ingegneri senior hanno revisionato e approvato la migrazione del database di produzione.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4985,7 +5076,8 @@ export default {
               italian: 'Fallimento morbido',
               pronunciation: '/sɒft feɪl/',
               phonetic: 'SOFT FEIL',
-              example: 'Soft fail logs without blocking. = Il soft fail registra senza bloccare.',
+              example:
+                "Configuring the new policy check as a soft fail gives teams time to fix violations before enforcement begins. = Configurare il nuovo controllo di policy come soft fail dà ai team il tempo di correggere le violazioni prima che inizi l'enforcement.",
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -4995,7 +5087,7 @@ export default {
               pronunciation: '/hɑːd feɪl/',
               phonetic: 'HARD FEIL',
               example:
-                'Hard fail blocks non-compliant builds. = Il fallimento duro blocca build non conformi.',
+                'After the grace period, switching to hard fail blocks any pipeline that violates the encryption-at-rest requirement. = Dopo il periodo di grazia, passare a hard fail blocca qualsiasi pipeline che viola il requisito di crittografia a riposo.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -5005,7 +5097,7 @@ export default {
               pronunciation: '/kəmˈplaɪəns ˈdæʃbɔːd/',
               phonetic: 'kom-PLAI-ans DASH-bord',
               example:
-                'A compliance dashboard shows posture. = Una dashboard di conformità mostra la postura.',
+                'The executive compliance dashboard displays the percentage of controls passing across all business units. = La dashboard di compliance esecutiva mostra la percentuale di controlli superati in tutte le business unit.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
             },
@@ -5028,32 +5120,33 @@ export default {
           items: [
             {
               english: 'CSPM',
-              italian: 'CSPM / Cloud Security Posture Management',
+              italian: 'Cloud Security Posture Management (CSPM)',
               pronunciation: '/siː ɛs piː ɛm/',
               phonetic: 'SI-ES-PI-EM',
               example:
-                'CSPM finds cloud misconfigurations. = CSPM trova errate configurazioni cloud.',
+                'Deploying a CSPM tool across all three cloud accounts revealed forty-seven publicly accessible storage buckets. = Deployare uno strumento CSPM su tutti e tre gli account cloud ha rivelato quarantasette bucket di storage accessibili pubblicamente.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               note: 'Cloud Security Posture Management.',
             },
             {
               english: 'CWPP',
-              italian: 'CWPP / Cloud Workload Protection Platform',
+              italian: 'Cloud Workload Protection Platform (CWPP)',
               pronunciation: '/siː dʌbljuː piː piː/',
               phonetic: 'SI-DABL-IU-PI-PI',
               example:
-                'CWPP protects cloud workloads at runtime. = CWPP protegge i workload cloud a runtime.',
+                "The CWPP agent monitors runtime behavior and blocks any workload that attempts to download unauthorized executables. = L'agente CWPP monitora il comportamento a runtime e blocca qualsiasi workload che tenta di scaricare eseguibili non autorizzati.",
               context: 'cloud-security',
               difficulty: 'intermediate',
               note: 'Cloud Workload Protection Platform.',
             },
             {
               english: 'CNAPP',
-              italian: 'CNAPP / Cloud-Native Application Protection Platform',
+              italian: 'Cloud-Native Application Protection Platform (CNAPP)',
               pronunciation: '/siː ɛn eɪ piː piː/',
               phonetic: 'SI-EN-EI-PI-PI',
-              example: 'CNAPP merges CSPM and CWPP. = CNAPP unisce CSPM e CWPP.',
+              example:
+                'Consolidating CSPM, CWPP, and CIEM into a single CNAPP platform reduced tool sprawl and unified our cloud security view. = Consolidare CSPM, CWPP e CIEM in una singola piattaforma CNAPP ha ridotto la proliferazione di strumenti e unificato la nostra vista di sicurezza cloud.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               note: 'Cloud-Native Application Protection Platform.',
@@ -5064,7 +5157,7 @@ export default {
               pronunciation: '/ˈpʌblɪk ˈbʌkɪt/',
               phonetic: 'PA-blik BA-ket',
               example:
-                'CSPM alerts on public buckets fast. = CSPM allerta su bucket pubblici velocemente.',
+                'The automated guardrail immediately reverts any S3 bucket ACL change that would create a public bucket. = Il guardrail automatico reverte immediatamente qualsiasi modifica ACL a un bucket S3 che creerebbe un bucket pubblico.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5073,7 +5166,8 @@ export default {
               italian: 'Porta aperta',
               pronunciation: '/ˈəʊpən pɔːt/',
               phonetic: 'OU-pen PORT',
-              example: 'CSPM lists every open port. = CSPM elenca ogni porta aperta.',
+              example:
+                "The CSPM scan flagged an open port on the RDS instance that should only accept connections from the application VPC. = La scansione CSPM ha segnalato una porta aperta sull'istanza RDS che dovrebbe accettare connessioni solo dal VPC dell'applicazione.",
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5083,7 +5177,7 @@ export default {
               pronunciation: '/ɪkˈsɛsɪv pəˈmɪʃən/',
               phonetic: 'ek-SES-siv per-MI-scion',
               example:
-                'Excessive permissions break least privilege. = I permessi eccessivi rompono il privilegio minimo.',
+                "An IAM analyzer report identified eight roles with excessive permission grants that violated least-privilege policy. = Un report dell'analizzatore IAM ha identificato otto ruoli con concessioni di permessi eccessivi che violavano la policy del privilegio minimo.",
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5093,7 +5187,7 @@ export default {
               pronunciation: '/steɪl rɪˈzɔːs/',
               phonetic: 'STEIL ri-ZORS',
               example:
-                'Stale resources increase risk and cost. = Le risorse obsolete aumentano rischio e costi.',
+                'Cloud Custodian automatically terminates any stale resource that has been idle for more than thirty days. = Cloud Custodian termina automaticamente qualsiasi risorsa inutilizzata che è stata inattiva per più di trenta giorni.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5103,7 +5197,7 @@ export default {
               pronunciation: '/ˈpɒstʃə skɔː/',
               phonetic: 'POS-cer SKOR',
               example:
-                'Track the posture score weekly. = Traccia il punteggio di postura settimanalmente.',
+                'Our cloud posture score improved from sixty-two to ninety-one percent after remediating all critical misconfigurations. = Il nostro punteggio di postura cloud è migliorato dal sessantadue al novantuno percento dopo aver rimediato tutte le misconfigurazioni critiche.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5113,17 +5207,17 @@ export default {
               pronunciation: '/ˈɪnvəntəri/',
               phonetic: 'IN-ven-to-ri',
               example:
-                "You can't secure what you don't inventory. = Non puoi proteggere ciò che non inventarii.",
+                'A comprehensive cloud inventory lists every compute instance, database, and storage bucket across all regions. = Un inventario cloud completo elenca ogni istanza di calcolo, database e bucket di storage in tutte le regioni.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
             {
               english: 'Multi-Cloud',
-              italian: 'multi-cloud / uso di più provider cloud',
+              italian: 'Uso di più provider cloud (multi-cloud)',
               pronunciation: '/ˈmʌlti klaʊd/',
               phonetic: 'MAL-ti KLAUD',
               example:
-                'Multi-cloud needs unified visibility. = Il multi-cloud richiede visibilità unificata.',
+                'Operating in a multi-cloud environment requires normalizing security policies across AWS, Azure, and GCP. = Operare in un ambiente multi-cloud richiede la normalizzazione delle policy di sicurezza tra AWS, Azure e GCP.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5139,7 +5233,8 @@ export default {
               italian: 'Prisma Cloud (CNAPP Palo Alto)',
               pronunciation: '/ˈprɪzmə klaʊd/',
               phonetic: 'PRIZ-ma KLAUD',
-              example: 'Prisma Cloud is a popular CNAPP. = Prisma Cloud è un CNAPP popolare.',
+              example:
+                "After deploying Prisma Cloud, the security team gained a single pane of glass for vulnerability and compliance status. = Dopo aver deployato Prisma Cloud, il team di sicurezza ha ottenuto un'unica vista per lo stato di vulnerabilità e compliance.",
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Palo Alto Prisma Cloud',
@@ -5149,7 +5244,8 @@ export default {
               italian: 'Wiz (CNAPP cloud-native)',
               pronunciation: '/wɪz/',
               phonetic: 'UIZ',
-              example: 'Wiz scans cloud without agents. = Wiz analizza il cloud senza agent.',
+              example:
+                'The agentless scanning capability in Wiz maps every cloud workload and highlights toxic permission combinations. = La capacità di scansione senza agente di Wiz mappa ogni workload cloud ed evidenzia combinazioni tossiche di permessi.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Wiz',
@@ -5160,7 +5256,7 @@ export default {
               pronunciation: '/ˈleɪswɜːk/',
               phonetic: 'LEIS-uork',
               example:
-                'Lacework focuses on workload analytics. = Lacework si concentra su analytics di workload.',
+                "Behavioral analysis in Lacework detected an anomalous data exfiltration pattern from a production database at midnight. = L'analisi comportamentale in Lacework ha rilevato un pattern anomalo di esfiltrazione dati da un database di produzione a mezzanotte.",
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Lacework',
@@ -5170,7 +5266,8 @@ export default {
               italian: 'Orca Security (CNAPP agentless)',
               pronunciation: '/ˈɔːkə sɪˈkjʊərəti/',
               phonetic: 'OR-ka si-KIU-ri-ti',
-              example: 'Orca uses snapshot scanning. = Orca usa scansione su snapshot.',
+              example:
+                "Using Orca Security, the team discovered an unpatched Log4j instance running on a forgotten development server. = Usando Orca Security, il team ha scoperto un'istanza Log4j non patchata in esecuzione su un server di sviluppo dimenticato.",
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Orca Security',
@@ -5181,7 +5278,7 @@ export default {
               pronunciation: '/eɪ dʌbljuː ɛs sɪˈkjʊərəti hʌb/',
               phonetic: 'EI-DABL-IU-ES si-KIU-ri-ti HAB',
               example:
-                'Security Hub aggregates AWS findings. = Security Hub aggrega riscontri AWS.',
+                'Aggregating findings from GuardDuty, Inspector, and Macie into AWS Security Hub provides a consolidated security view. = Aggregare i finding da GuardDuty, Inspector e Macie in AWS Security Hub fornisce una vista di sicurezza consolidata.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'AWS Security Hub',
@@ -5191,7 +5288,8 @@ export default {
               italian: 'GCP Security Command Center (centralizza sicurezza GCP)',
               pronunciation: '/dʒiː siː piː sɪˈkjʊərəti kəˈmɑːnd ˈsɛntə/',
               phonetic: 'GI-SI-PI si-KIU-ri-ti ko-MAND SEN-ter',
-              example: "SCC is GCP's native CSPM. = SCC è il CSPM nativo di GCP.",
+              example:
+                'Enabling premium tier in GCP Security Command Center adds threat detection and vulnerability scanning for all projects. = Abilitare il livello premium in GCP Security Command Center aggiunge rilevamento minacce e scansione vulnerabilità per tutti i progetti.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'GCP Security Command Center',
@@ -5202,7 +5300,7 @@ export default {
               pronunciation: '/ˈmaɪkrəʊsɒft dɪˈfɛndə fɔː klaʊd/',
               phonetic: 'MAI-kro-soft di-FEN-der FOR KLAUD',
               example:
-                'Defender for Cloud scores Azure posture. = Defender for Cloud valuta la postura Azure.',
+                'Turning on Microsoft Defender for Cloud provides workload protection and regulatory compliance dashboards for Azure subscriptions. = Attivare Microsoft Defender for Cloud fornisce protezione dei workload e dashboard di compliance normativa per le sottoscrizioni Azure.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Microsoft Defender for Cloud',
@@ -5212,7 +5310,8 @@ export default {
               italian: 'Steampipe (query SQL su API cloud)',
               pronunciation: '/ˈstiːmpaɪp/',
               phonetic: 'STIM-paip',
-              example: 'Steampipe queries cloud as SQL. = Steampipe interroga il cloud come SQL.',
+              example:
+                'Writing SQL queries in Steampipe lets you audit IAM policies, open ports, and encryption status across all cloud providers. = Scrivere query SQL in Steampipe permette di auditare policy IAM, porte aperte e stato della crittografia in tutti i provider cloud.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Steampipe',
@@ -5224,7 +5323,7 @@ export default {
               pronunciation: '/ˈpraʊlər/',
               phonetic: 'PRAU-ler',
               example:
-                'Prowler checks AWS against benchmarks. = Prowler verifica AWS contro benchmark.',
+                'Scheduling nightly Prowler scans provides a daily compliance report against CIS benchmarks for every AWS account. = Programmare scansioni Prowler notturne fornisce un report di compliance giornaliero contro i benchmark CIS per ogni account AWS.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Prowler',
@@ -5236,7 +5335,7 @@ export default {
               pronunciation: '/skaʊt swiːt/',
               phonetic: 'SKAUT SUIT',
               example:
-                'ScoutSuite audits multi-cloud accounts. = ScoutSuite verifica account multi-cloud.',
+                'Running ScoutSuite against our Azure subscription identified twenty-three storage accounts without private endpoints. = Eseguire ScoutSuite sulla nostra sottoscrizione Azure ha identificato ventitré account di storage senza endpoint privati.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'ScoutSuite',
@@ -5251,10 +5350,11 @@ export default {
           items: [
             {
               english: 'IAM',
-              italian: 'IAM / Identity and Access Management',
+              italian: 'Identity and Access Management (IAM)',
               pronunciation: '/aɪ eɪ ɛm/',
               phonetic: 'AI-EI-EM',
-              example: 'IAM controls who can do what. = IAM controlla chi può fare cosa.',
+              example:
+                'Properly configuring IAM roles and policies is the single most important step for securing any cloud environment. = Configurare correttamente ruoli e policy IAM è il singolo passo più importante per proteggere qualsiasi ambiente cloud.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               note: 'Identity and Access Management.',
@@ -5265,7 +5365,7 @@ export default {
               pronunciation: '/rəʊl/',
               phonetic: 'ROUL',
               example:
-                'Assign roles, not direct permissions. = Assegna ruoli, non permessi diretti.',
+                'Creating a dedicated deployment role with only the required permissions prevents developers from exceeding their access. = Creare un ruolo di deployment dedicato con solo i permessi necessari impedisce agli sviluppatori di eccedere il loro accesso.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5275,7 +5375,7 @@ export default {
               pronunciation: '/pəˈmɪʃən ˈbaʊndəri/',
               phonetic: 'per-MI-scion BAUN-da-ri',
               example:
-                'Permission boundaries cap max privilege. = I confini di permessi limitano il privilegio massimo.',
+                'Attaching a permission boundary to the developer IAM role caps the maximum privileges they can self-assign. = Allegare un permission boundary al ruolo IAM dello sviluppatore limita i privilegi massimi che possono auto-assegnarsi.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5284,7 +5384,8 @@ export default {
               italian: 'Policy di controllo servizio',
               pronunciation: '/ˈsɜːvɪs kənˈtrəʊl ˈpɒləsi/',
               phonetic: 'SER-vis kon-TROL PO-li-si',
-              example: 'SCPs guard AWS organizations. = Le SCP proteggono organizzazioni AWS.',
+              example:
+                "The organization root applies a service control policy that blocks all regions except eu-west-1 for data sovereignty. = La root dell'organizzazione applica una service control policy che blocca tutte le regioni tranne eu-west-1 per la sovranità dei dati.",
               context: 'cloud-security',
               difficulty: 'intermediate',
               note: 'AWS Organizations SCPs.',
@@ -5295,17 +5396,17 @@ export default {
               pronunciation: '/dʒʌst ˈɪnʌf ˈæksɛs/',
               phonetic: 'GIAST I-naf AK-ses',
               example:
-                'JEA grants only the needed permissions. = JEA concede solo i permessi necessari.',
+                'Implementing just-enough-access means each Lambda function can only read from its own DynamoDB table. = Implementare il just-enough-access significa che ogni funzione Lambda può solo leggere dalla propria tabella DynamoDB.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
             {
               english: 'IAM Access Analyzer',
-              italian: 'IAM Access Analyzer / analizzatore accessi AWS',
+              italian: 'Analizzatore accessi AWS (IAM Access Analyzer)',
               pronunciation: '/aɪ eɪ ɛm ˈæksɛs ˈænəlaɪzə/',
               phonetic: 'AI-EI-EM AK-ses A-na-lai-zer',
               example:
-                'Access Analyzer flags external access. = Access Analyzer segnala accessi esterni.',
+                'Running IAM Access Analyzer weekly reveals any resource policy that grants unintended cross-account access. = Eseguire IAM Access Analyzer settimanalmente rivela qualsiasi policy di risorsa che concede accesso cross-account non intenzionale.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'AWS IAM Access Analyzer',
@@ -5316,7 +5417,7 @@ export default {
               pronunciation: '/ˈprɪvəlɪdʒ ˌɛskəˈleɪʃən pɑːθ/',
               phonetic: 'PRI-vi-legg es-ka-LEI-scion PATH',
               example:
-                'Map privilege escalation paths. = Mappa i percorsi di escalation privilegi.',
+                'The red team exploited a privilege escalation path through an over-permissioned Lambda role that could modify IAM policies. = Il red team ha sfruttato un percorso di escalation dei privilegi tramite un ruolo Lambda con troppi permessi che poteva modificare policy IAM.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5326,7 +5427,7 @@ export default {
               pronunciation: '/krɒs əˈkaʊnt ˈæksɛs/',
               phonetic: 'KROS a-KAUNT AK-ses',
               example:
-                "Cross-account access uses role assumption. = L'accesso cross-account usa l'assumption di ruolo.",
+                "We set up cross-account access with an external ID condition to prevent confused deputy attacks between AWS accounts. = Abbiamo configurato l'accesso cross-account con una condizione di external ID per prevenire attacchi confused deputy tra account AWS.",
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5335,18 +5436,19 @@ export default {
               italian: 'Autenticazione multi-fattore',
               pronunciation: '/ɛm ɛf eɪ/',
               phonetic: 'EM-EF-EI',
-              example: 'Require MFA for every cloud user. = Richiedi MFA per ogni utente cloud.',
+              example:
+                "Enforcing MFA on all IAM console users reduced account takeover incidents to zero in the last twelve months. = Imporre l'MFA su tutti gli utenti IAM della console ha ridotto gli incidenti di furto account a zero negli ultimi dodici mesi.",
               context: 'cloud-security',
               difficulty: 'intermediate',
               note: 'Multi-Factor Authentication.',
             },
             {
               english: 'PIM',
-              italian: 'PIM / Privileged Identity Management',
+              italian: 'Privileged Identity Management (PIM)',
               pronunciation: '/pɪm/',
               phonetic: 'PIM',
               example:
-                'Azure PIM grants time-bound roles. = Azure PIM concede ruoli a tempo limitato.',
+                'Azure Privileged Identity Management requires engineers to activate their admin role through an approval workflow. = Azure Privileged Identity Management richiede agli ingegneri di attivare il loro ruolo admin tramite un workflow di approvazione.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               note: 'Privileged Identity Management.',
@@ -5364,7 +5466,7 @@ export default {
               pronunciation: '/ɪnˈkrɪpʃən æt rɛst/',
               phonetic: 'in-KRIP-scion AT REST',
               example:
-                'Enable encryption at rest by default. = Abilita la cifratura a riposo di default.',
+                'Enabling encryption at rest on every database and storage bucket is a mandatory control for PCI-DSS compliance. = Abilitare la crittografia a riposo su ogni database e bucket di storage è un controllo obbligatorio per la compliance PCI-DSS.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5374,7 +5476,7 @@ export default {
               pronunciation: '/ɪnˈkrɪpʃən ɪn ˈtrænzɪt/',
               phonetic: 'in-KRIP-scion IN TRAN-zit',
               example:
-                'Force TLS for encryption in transit. = Forza TLS per la cifratura in transito.',
+                'Enforcing TLS 1.3 for all internal service-to-service calls guarantees encryption in transit across the mesh. = Imporre TLS 1.3 per tutte le chiamate interne servizio-a-servizio garantisce la crittografia in transito attraverso la mesh.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5384,7 +5486,7 @@ export default {
               pronunciation: '/ˈkʌstəmə ˈmænɪdʒd kiː/',
               phonetic: 'KAS-to-mer MA-ni-ged KI',
               example:
-                'CMKs give you control over rotation. = Le CMK ti danno controllo sulla rotazione.',
+                'Switching to a customer-managed key for S3 encryption gives the security team full control over key rotation and access. = Passare a una chiave gestita dal cliente per la crittografia S3 dà al team di sicurezza pieno controllo su rotazione e accesso alla chiave.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               note: 'Customer-Managed Key (CMK).',
@@ -5395,7 +5497,7 @@ export default {
               pronunciation: '/viː piː siː ˈɛndpɔɪnt/',
               phonetic: 'VI-PI-SI END-point',
               example:
-                'VPC endpoints keep traffic private. = Gli endpoint VPC mantengono il traffico privato.',
+                "Routing S3 traffic through a VPC endpoint keeps data within the AWS backbone and avoids public internet exposure. = Instradare il traffico S3 attraverso un VPC endpoint mantiene i dati nel backbone AWS ed evita l'esposizione su internet pubblico.",
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5404,7 +5506,8 @@ export default {
               italian: 'Subnet privata',
               pronunciation: '/ˈpraɪvət ˈsʌbnɛt/',
               phonetic: 'PRAI-vet SAB-net',
-              example: 'Workloads run in private subnets. = I workload girano in subnet private.',
+              example:
+                'All application servers reside in a private subnet with no internet gateway, accessible only through the load balancer. = Tutti i server applicativi risiedono in una sottorete privata senza internet gateway, accessibili solo attraverso il load balancer.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5413,27 +5516,29 @@ export default {
               italian: 'Host bastione',
               pronunciation: '/ˈbæstiən həʊst/',
               phonetic: 'BAS-tion HOST',
-              example: 'Use a bastion host for SSH access. = Usa un host bastione per accesso SSH.',
+              example:
+                'Replacing the persistent bastion host with Session Manager eliminated the need to manage SSH keys entirely. = Sostituire il bastion host persistente con Session Manager ha eliminato completamente la necessità di gestire le chiavi SSH.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
             {
               english: 'Session Manager',
-              italian: 'Session Manager / accesso shell sicuro AWS',
+              italian: 'Accesso shell sicuro AWS (Session Manager)',
               pronunciation: '/ˈsɛʃən ˈmænɪdʒər/',
               phonetic: 'SE-scion MA-ni-ger',
               example:
-                'Session Manager replaces SSH safely. = Session Manager sostituisce SSH in sicurezza.',
+                'Using AWS Session Manager provides encrypted shell access to instances without opening any inbound SSH port. = Usare AWS Session Manager fornisce accesso shell crittografato alle istanze senza aprire alcuna porta SSH in ingresso.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'AWS Systems Manager',
             },
             {
               english: 'GuardDuty',
-              italian: 'AWS GuardDuty / rilevatore minacce AWS',
+              italian: 'Rilevatore minacce AWS (AWS GuardDuty)',
               pronunciation: '/ɡɑːd ˈdjuːti/',
               phonetic: 'GARD DIU-ti',
-              example: 'GuardDuty detects threats in AWS. = GuardDuty rileva minacce in AWS.',
+              example:
+                'When AWS GuardDuty detected unusual API calls from a new IP range, it triggered an automated isolation workflow. = Quando AWS GuardDuty ha rilevato chiamate API insolite da un nuovo range IP, ha attivato un workflow di isolamento automatico.',
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'AWS GuardDuty',
@@ -5444,7 +5549,7 @@ export default {
               pronunciation: '/ˈlɒɡɪŋ ˌsɛntrəlaɪˈzeɪʃən/',
               phonetic: 'LO-ghing sen-tra-lai-ZEI-scion',
               example:
-                'Centralize logs in a security account. = Centralizza i log in un account di sicurezza.',
+                'Shipping all VPC flow logs, CloudTrail events, and application logs to a central SIEM enables cross-service correlation. = Inviare tutti i log dei flussi VPC, gli eventi CloudTrail e i log applicativi a un SIEM centrale abilita la correlazione cross-servizio.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -5454,7 +5559,7 @@ export default {
               pronunciation: '/əˈkaʊnt ˈbeɪslaɪnɪŋ/',
               phonetic: 'a-KAUNT BEIS-lai-ning',
               example:
-                'Account baselining standardizes new accounts. = La baseline degli account standardizza nuovi account.',
+                "After account baselining, any new IAM role creation or region activation triggers an automatic security review. = Dopo il baselining dell'account, qualsiasi nuova creazione di ruolo IAM o attivazione di regione attiva una revisione di sicurezza automatica.",
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'AWS Control Tower',
@@ -5482,16 +5587,17 @@ export default {
               pronunciation: '/θrɛt ˈmɒdlɪŋ/',
               phonetic: 'THRET MOD-ling',
               example:
-                'Threat modeling spots risks early. = La modellazione delle minacce trova rischi presto.',
+                'Starting every feature with a threat modeling session ensures the team identifies risks before writing any code. = Iniziare ogni feature con una sessione di threat modeling assicura che il team identifichi i rischi prima di scrivere qualsiasi codice.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
             {
               english: 'Asset',
-              italian: 'asset / risorsa da proteggere',
+              italian: 'Risorsa da proteggere (asset)',
               pronunciation: '/ˈæsɛt/',
               phonetic: 'AS-set',
-              example: 'List every asset before threats. = Elenca ogni asset prima delle minacce.',
+              example:
+                'The threat model begins by listing every asset worth protecting, from customer PII to internal API keys. = Il threat model inizia elencando ogni asset che vale la pena proteggere, dai dati personali dei clienti alle chiavi API interne.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5501,7 +5607,7 @@ export default {
               pronunciation: '/θrɛt ˈæktə/',
               phonetic: 'THRET AK-ter',
               example:
-                'Identify likely threat actors. = Identifica gli attori di minaccia probabili.',
+                'Understanding the motivations of each threat actor helps prioritize defenses against the most likely attack scenarios. = Comprendere le motivazioni di ogni threat actor aiuta a dare priorità alle difese contro gli scenari di attacco più probabili.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5511,7 +5617,7 @@ export default {
               pronunciation: '/əˈtæk ˈsɜːfəs/',
               phonetic: 'a-TAK SER-fis',
               example:
-                'Reduce the attack surface ruthlessly. = Riduci spietatamente la superficie di attacco.',
+                'Reducing the attack surface by closing unused ports and removing debug endpoints is the first hardening step. = Ridurre la superficie di attacco chiudendo porte inutilizzate e rimuovendo endpoint di debug è il primo passo di hardening.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5521,7 +5627,7 @@ export default {
               pronunciation: '/əˈtæk triː/',
               phonetic: 'a-TAK TRI',
               example:
-                'Attack trees branch from a goal. = Gli alberi di attacco si diramano da un obiettivo.',
+                "The security architect drew an attack tree showing every possible path from the public API to the database. = L'architetto di sicurezza ha disegnato un albero di attacco mostrando ogni possibile percorso dall'API pubblica al database.",
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5531,7 +5637,7 @@ export default {
               pronunciation: '/trʌst ˈbaʊndəri/',
               phonetic: 'TRAST BAUN-da-ri',
               example:
-                'A trust boundary needs validation. = Un confine di fiducia richiede validazione.',
+                'Defining a clear trust boundary between the CI runner and the production cluster limits lateral movement in case of breach. = Definire un confine di fiducia chiaro tra il runner CI e il cluster di produzione limita il movimento laterale in caso di violazione.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5541,7 +5647,7 @@ export default {
               pronunciation: '/rɪsk/',
               phonetic: 'RISK',
               example:
-                'Risk equals likelihood times impact. = Il rischio è probabilità per impatto.',
+                'The team rated each risk by likelihood and impact, then focused resources on the top five entries. = Il team ha valutato ogni rischio per probabilità e impatto, poi ha concentrato le risorse sulle prime cinque voci.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5551,7 +5657,7 @@ export default {
               pronunciation: '/ˌmɪtɪˈɡeɪʃən/',
               phonetic: 'mi-ti-GHEI-scion',
               example:
-                'Each threat needs at least one mitigation. = Ogni minaccia richiede almeno una mitigazione.',
+                'The recommended mitigation for the SSRF threat was adding an allowlist of permitted internal IP ranges. = La mitigazione raccomandata per la minaccia SSRF era aggiungere una allowlist di range IP interni consentiti.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5561,7 +5667,7 @@ export default {
               pronunciation: '/ˈwaɪtbɔːdɪŋ ˈsɛʃən/',
               phonetic: 'UAIT-bor-ding SE-scion',
               example:
-                'Run a whiteboarding session per feature. = Esegui una sessione di lavagna per feature.',
+                'During the whiteboarding session, engineers sketched data flows and identified three unprotected trust boundaries. = Durante la sessione alla lavagna, gli ingegneri hanno schematizzato i flussi dati e identificato tre confini di fiducia non protetti.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5571,7 +5677,7 @@ export default {
               pronunciation: '/θrɛt ˈkætəlɒɡ/',
               phonetic: 'THRET KA-ta-log',
               example:
-                'A threat catalog speeds reviews. = Un catalogo di minacce velocizza le revisioni.',
+                'Maintaining an internal threat catalog lets new teams reuse known threat patterns without starting from scratch. = Mantenere un catalogo di minacce interno permette ai nuovi team di riutilizzare pattern di minaccia noti senza partire da zero.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5584,21 +5690,22 @@ export default {
           items: [
             {
               english: 'STRIDE',
-              italian: 'STRIDE / framework di threat modeling Microsoft',
+              italian: 'Framework di threat modeling Microsoft (STRIDE)',
               pronunciation: '/straɪd/',
               phonetic: 'STRAID',
               example:
-                'STRIDE classifies threats by category. = STRIDE classifica le minacce per categoria.',
+                'Applying the STRIDE framework to the payment microservice revealed spoofing and tampering risks in the API gateway. = Applicare il framework STRIDE al microservizio di pagamento ha rivelato rischi di spoofing e manomissione nel gateway API.',
               context: 'shift-left',
               difficulty: 'intermediate',
               note: 'Spoofing, Tampering, Repudiation, Info disclosure, DoS, Elevation.',
             },
             {
               english: 'Spoofing',
-              italian: 'spoofing / impersonificazione',
+              italian: 'Impersonificazione (spoofing)',
               pronunciation: '/ˈspuːfɪŋ/',
               phonetic: 'SPU-fing',
-              example: "Spoofing fakes an identity. = Lo spoofing falsifica un'identità.",
+              example:
+                "Without mutual TLS, a malicious service could perform spoofing by impersonating the identity of a trusted upstream. = Senza TLS reciproco, un servizio malevolo potrebbe effettuare spoofing impersonando l'identità di un upstream fidato.",
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5608,7 +5715,7 @@ export default {
               pronunciation: '/ˈtæmpərɪŋ/',
               phonetic: 'TAM-pe-ring',
               example:
-                'Tampering modifies data in transit. = La manomissione modifica dati in transito.',
+                'Signing every message with HMAC prevents tampering attacks that modify data in transit between microservices. = Firmare ogni messaggio con HMAC previene attacchi di tampering che modificano i dati in transito tra microservizi.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5618,7 +5725,7 @@ export default {
               pronunciation: '/rɪˌpjuːdiˈeɪʃən/',
               phonetic: 'ri-piu-di-EI-scion',
               example:
-                "Repudiation denies an action happened. = Il ripudio nega che un'azione sia avvenuta.",
+                'Immutable audit logs counter repudiation by proving exactly who performed each action and when. = I log di audit immutabili contrastano la ripudiabilità dimostrando esattamente chi ha eseguito ogni azione e quando.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5628,7 +5735,7 @@ export default {
               pronunciation: '/ˌɪnfəˈmeɪʃən dɪsˈkləʊʒə/',
               phonetic: 'in-for-MEI-scion dis-KLO-ger',
               example:
-                'Info disclosure leaks data. = La divulgazione di informazioni divulga dati.',
+                'Returning full stack traces in API error responses creates an information disclosure risk that attackers exploit for reconnaissance. = Restituire tracce di stack complete nelle risposte di errore API crea un rischio di divulgazione di informazioni che gli attaccanti sfruttano per la ricognizione.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5638,7 +5745,7 @@ export default {
               pronunciation: '/dɪˈnaɪəl əv ˈsɜːvɪs/',
               phonetic: 'di-NAI-al OV SER-vis',
               example:
-                'DoS attacks make services unavailable. = Gli attacchi DoS rendono i servizi non disponibili.',
+                "Rate limiting and request-size caps protect the API from a denial of service attack that overwhelms backend resources. = Il rate limiting e i limiti sulla dimensione delle richieste proteggono l'API da un attacco di denial of service che sovraccarica le risorse backend.",
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5648,38 +5755,38 @@ export default {
               pronunciation: '/ˌɛlɪˈveɪʃən əv ˈprɪvəlɪdʒ/',
               phonetic: 'e-li-VEI-scion OV PRI-vi-legg',
               example:
-                "EoP turns a low user into admin. = L'EoP trasforma un utente basso in admin.",
+                "The pentester achieved elevation of privilege by exploiting a missing authorization check on the admin settings endpoint. = Il pentester ha ottenuto l'elevazione dei privilegi sfruttando un controllo di autorizzazione mancante sull'endpoint delle impostazioni admin.",
               context: 'shift-left',
               difficulty: 'intermediate',
             },
             {
               english: 'PASTA',
-              italian: 'PASTA / Process for Attack Simulation',
+              italian: 'Process for Attack Simulation (PASTA)',
               pronunciation: '/ˈpæstə/',
               phonetic: 'PAS-ta',
               example:
-                'PASTA is a risk-based methodology. = PASTA è una metodologia basata sul rischio.',
+                "Following the PASTA methodology, the team simulated real attack scenarios against the e-commerce checkout flow. = Seguendo la metodologia PASTA, il team ha simulato scenari di attacco reali contro il flusso di checkout dell'e-commerce.",
               context: 'shift-left',
               difficulty: 'intermediate',
               note: 'Process for Attack Simulation and Threat Analysis.',
             },
             {
               english: 'LINDDUN',
-              italian: 'LINDDUN / threat modeling per privacy',
+              italian: 'Threat modeling per privacy (LINDDUN)',
               pronunciation: '/ˈlɪndʌn/',
               phonetic: 'LIN-dan',
               example:
-                'LINDDUN focuses on privacy threats. = LINDDUN si concentra su minacce alla privacy.',
+                'Applying the LINDDUN framework to the health data platform identified privacy risks related to linkability and identifiability. = Applicare il framework LINDDUN alla piattaforma di dati sanitari ha identificato rischi di privacy legati alla collegabilità e identificabilità.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
             {
               english: 'DREAD',
-              italian: 'DREAD / framework di rating delle minacce',
+              italian: 'Framework di rating delle minacce (DREAD)',
               pronunciation: '/drɛd/',
               phonetic: 'DRED',
               example:
-                'DREAD scores threats numerically. = DREAD assegna punteggi numerici alle minacce.',
+                'Scoring each threat with the DREAD model helped the team focus on the vulnerability with the highest damage potential. = Valutare ogni minaccia con il modello DREAD ha aiutato il team a concentrarsi sulla vulnerabilità con il più alto potenziale di danno.',
               context: 'shift-left',
               difficulty: 'intermediate',
               note: 'Damage, Reproducibility, Exploitability, Affected, Discoverability.',
@@ -5693,10 +5800,11 @@ export default {
           items: [
             {
               english: 'MITRE ATT&CK',
-              italian: 'MITRE ATT&CK / framework tattiche di attacco',
+              italian: 'Framework tattiche di attacco (MITRE ATT&CK)',
               pronunciation: '/ˈmaɪtə əˈtæk/',
               phonetic: 'MAI-ter a-TAK',
-              example: 'ATT&CK lists tactics and techniques. = ATT&CK elenca tattiche e tecniche.',
+              example:
+                'Mapping detected alerts to MITRE ATT&CK techniques revealed gaps in our coverage of the lateral movement tactic. = Mappare gli avvisi rilevati alle tecniche MITRE ATT&CK ha rivelato lacune nella nostra copertura della tattica di movimento laterale.',
               context: 'shift-left',
               difficulty: 'intermediate',
               tool: 'MITRE ATT&CK',
@@ -5706,7 +5814,8 @@ export default {
               italian: 'Tattica',
               pronunciation: '/ˈtæktɪk/',
               phonetic: 'TAK-tik',
-              example: 'A tactic is the why of an attack. = Una tattica è il perché di un attacco.',
+              example:
+                'Each column in the ATT&CK matrix represents a tactic like initial access, persistence, or data exfiltration. = Ogni colonna nella matrice ATT&CK rappresenta una tattica come accesso iniziale, persistenza o esfiltrazione dei dati.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5715,7 +5824,8 @@ export default {
               italian: 'Tecnica',
               pronunciation: '/tɛkˈniːk/',
               phonetic: 'tek-NIK',
-              example: 'A technique is the how. = Una tecnica è il come.',
+              example:
+                "The attacker used the phishing technique to deliver a malicious document that installed a reverse shell. = L'attaccante ha usato la tecnica di phishing per consegnare un documento malevolo che installava una reverse shell.",
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5725,7 +5835,7 @@ export default {
               pronunciation: '/sʌb tɛkˈniːk/',
               phonetic: 'SAB tek-NIK',
               example:
-                'Sub-techniques add specificity. = Le sotto-tecniche aggiungono specificità.',
+                'Spearphishing via service is a sub-technique under phishing that targets victims through business platforms like LinkedIn. = Lo spearphishing via servizio è una sotto-tecnica del phishing che prende di mira le vittime tramite piattaforme business come LinkedIn.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5735,27 +5845,28 @@ export default {
               pronunciation: '/prəˈsiːdʒə/',
               phonetic: 'pro-SI-ger',
               example:
-                "A procedure is the actual implementation. = Una procedura è l'implementazione reale.",
+                "The threat intelligence report detailed the exact procedure used by the APT group, from initial access to data exfiltration. = Il report di threat intelligence ha dettagliato l'esatta procedura usata dal gruppo APT, dall'accesso iniziale all'esfiltrazione dei dati.",
               context: 'shift-left',
               difficulty: 'intermediate',
             },
             {
               english: 'Kill Chain',
-              italian: "kill chain / catena dell'attacco",
+              italian: "Catena dell'attacco (kill chain)",
               pronunciation: '/kɪl tʃeɪn/',
               phonetic: 'KIL CIEIN',
               example:
-                'Disrupt the kill chain at any step. = Interrompi la kill chain a qualsiasi passo.',
+                "Breaking any link in the kill chain stops the attacker from progressing to the next stage of the intrusion. = Rompere qualsiasi anello della kill chain impedisce all'attaccante di progredire alla fase successiva dell'intrusione.",
               context: 'shift-left',
               difficulty: 'intermediate',
               note: 'Lockheed Martin Cyber Kill Chain.',
             },
             {
               english: 'D3FEND',
-              italian: 'MITRE D3FEND / framework di contromisure',
+              italian: 'Framework di contromisure (MITRE D3FEND)',
               pronunciation: '/dɪˈfɛnd/',
               phonetic: 'di-FEND',
-              example: 'D3FEND maps defenses to ATT&CK. = D3FEND mappa difese ad ATT&CK.',
+              example:
+                'Cross-referencing ATT&CK techniques with MITRE D3FEND identifies specific countermeasures for each known attack pattern. = Incrociare le tecniche ATT&CK con MITRE D3FEND identifica contromisure specifiche per ogni pattern di attacco noto.',
               context: 'shift-left',
               difficulty: 'intermediate',
               tool: 'MITRE D3FEND',
@@ -5765,7 +5876,8 @@ export default {
               italian: "Emulazione dell'avversario",
               pronunciation: '/ˈædvəsəri ˌɛmjʊˈleɪʃən/',
               phonetic: 'AD-ver-sa-ri e-miu-LEI-scion',
-              example: "Atomic Red Team enables emulation. = Atomic Red Team abilita l'emulazione.",
+              example:
+                "The purple team ran an adversary emulation exercise based on the FIN7 group's documented TTPs. = Il purple team ha eseguito un esercizio di emulazione dell'avversario basato sulle TTP documentate del gruppo FIN7.",
               context: 'shift-left',
               difficulty: 'intermediate',
               tool: 'Atomic Red Team, Caldera',
@@ -5776,18 +5888,18 @@ export default {
               pronunciation: '/tiː tiː piːz/',
               phonetic: 'TI-TI-PIS',
               example:
-                "TTPs describe attacker behavior. = Le TTP descrivono il comportamento dell'attaccante.",
+                "Understanding the TTPs of a threat group helps defenders build detections tailored to that specific adversary. = Comprendere le TTP di un gruppo di minaccia aiuta i difensori a costruire rilevamenti su misura per quell'avversario specifico.",
               context: 'shift-left',
               difficulty: 'intermediate',
               note: 'Tactics, Techniques, Procedures.',
             },
             {
               english: 'CWE',
-              italian: 'CWE / Common Weakness Enumeration',
+              italian: 'Common Weakness Enumeration (CWE)',
               pronunciation: '/siː dʌbljuː iː/',
               phonetic: 'SI-DABL-IU-I',
               example:
-                'CWEs categorize software weaknesses. = Le CWE categorizzano le debolezze software.',
+                'Linking each SAST finding to its CWE identifier helps developers understand the root cause and apply the correct fix. = Collegare ogni finding SAST al suo identificatore CWE aiuta gli sviluppatori a capire la causa principale e applicare la correzione corretta.',
               context: 'shift-left',
               difficulty: 'intermediate',
               note: 'Common Weakness Enumeration.',
@@ -5801,20 +5913,22 @@ export default {
           items: [
             {
               english: 'Microsoft Threat Modeling Tool',
-              italian: 'Microsoft Threat Modeling Tool / strumento threat modeling',
+              italian: 'Strumento threat modeling (Microsoft Threat Modeling Tool)',
               pronunciation: '/ˈmaɪkrəʊsɒft θrɛt ˈmɒdlɪŋ tuːl/',
               phonetic: 'MAI-kro-soft THRET MOD-ling TUL',
-              example: 'MS TMT auto-applies STRIDE. = Microsoft TMT applica STRIDE in automatico.',
+              example:
+                'Drawing data flow diagrams in the Microsoft Threat Modeling Tool automatically generates a list of STRIDE-based threats. = Disegnare diagrammi di flusso dati nel Microsoft Threat Modeling Tool genera automaticamente un elenco di minacce basate su STRIDE.',
               context: 'shift-left',
               difficulty: 'intermediate',
               tool: 'Microsoft TMT',
             },
             {
               english: 'OWASP Threat Dragon',
-              italian: 'OWASP Threat Dragon / strumento threat modeling open',
+              italian: 'Strumento threat modeling open (OWASP Threat Dragon)',
               pronunciation: '/ˈəʊwɒsp θrɛt ˈdræɡən/',
               phonetic: 'O-uosp THRET DRA-gon',
-              example: 'Threat Dragon is open source. = Threat Dragon è open source.',
+              example:
+                'The team uses OWASP Threat Dragon to collaboratively build threat models as part of every design review. = Il team usa OWASP Threat Dragon per costruire collaborativamente modelli di minaccia come parte di ogni revisione del design.',
               context: 'shift-left',
               difficulty: 'intermediate',
               tool: 'OWASP Threat Dragon',
@@ -5825,17 +5939,18 @@ export default {
               pronunciation: '/ˈaɪriəsrɪsk/',
               phonetic: 'AI-rius-risk',
               example:
-                'IriusRisk automates threat libraries. = IriusRisk automatizza le librerie di minacce.',
+                "Importing the architecture diagram into IriusRisk automatically suggested forty-three threats and twenty-one countermeasures. = Importare il diagramma dell'architettura in IriusRisk ha suggerito automaticamente quarantatré minacce e ventuno contromisure.",
               context: 'shift-left',
               difficulty: 'intermediate',
               tool: 'IriusRisk',
             },
             {
               english: 'pytm',
-              italian: 'pytm / threat modeling come codice in Python',
+              italian: 'Threat modeling come codice in Python (pytm)',
               pronunciation: '/paɪ tiː ɛm/',
               phonetic: 'PAI-TI-EM',
-              example: 'pytm writes threat models in Python. = pytm scrive threat model in Python.',
+              example:
+                "Writing the system architecture in pytm generates a data flow diagram and a threat report directly from Python code. = Scrivere l'architettura di sistema in pytm genera un diagramma di flusso dati e un report sulle minacce direttamente dal codice Python.",
               context: 'shift-left',
               difficulty: 'intermediate',
               tool: 'pytm',
@@ -5846,7 +5961,8 @@ export default {
               italian: 'Diagramma di flusso dati',
               pronunciation: '/ˈdeɪtə fləʊ ˈdaɪəɡræm/',
               phonetic: 'DEI-ta FLOU DAI-a-gram',
-              example: 'A DFD shows trust boundaries. = Un DFD mostra i confini di fiducia.',
+              example:
+                "The data flow diagram clearly shows where encrypted data crosses trust boundaries between the API and the database. = Il diagramma di flusso dati mostra chiaramente dove i dati crittografati attraversano i confini di fiducia tra l'API e il database.",
               context: 'shift-left',
               difficulty: 'intermediate',
               note: 'DFD: Data Flow Diagram.',
@@ -5857,7 +5973,7 @@ export default {
               pronunciation: '/ˈɑːkɪtɛktʃə ˈdaɪəɡræm/',
               phonetic: 'AR-ki-tek-cer DAI-a-gram',
               example:
-                'Start TM from an architecture diagram. = Parti dal diagramma di architettura per il TM.',
+                "Reviewing the architecture diagram revealed that the internal queue was accessible from the public subnet. = Revisionare il diagramma dell'architettura ha rivelato che la coda interna era accessibile dalla sottorete pubblica.",
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5867,7 +5983,7 @@ export default {
               pronunciation: '/əˈbjuːs keɪs/',
               phonetic: 'a-BIUS KEIS',
               example:
-                "Abuse cases are evil user stories. = I casi d'abuso sono user story malvagie.",
+                "Writing an abuse case for the file upload feature revealed that an attacker could upload a web shell disguised as a JPEG. = Scrivere un caso d'abuso per la funzionalità di upload file ha rivelato che un attaccante poteva caricare una web shell mascherata da JPEG.",
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5877,7 +5993,7 @@ export default {
               pronunciation: '/ˈiːvl ˈjuːzə ˈstɔːri/',
               phonetic: 'I-vol IU-zer STO-ri',
               example:
-                'Write evil user stories with the team. = Scrivi user story malvagie con il team.',
+                "The evil user story read: as an attacker, I want to enumerate valid usernames through the password reset endpoint. = La evil user story recitava: come attaccante, voglio enumerare gli username validi attraverso l'endpoint di reset password.",
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5886,7 +6002,8 @@ export default {
               italian: 'Libreria di minacce',
               pronunciation: '/θrɛt ˈlaɪbrəri/',
               phonetic: 'THRET LAI-bra-ri',
-              example: 'Reuse a curated threat library. = Riusa una libreria di minacce curata.',
+              example:
+                'The centralized threat library contains reusable threat patterns tagged by component type and technology stack. = La libreria di minacce centralizzata contiene pattern di minaccia riutilizzabili taggati per tipo di componente e stack tecnologico.',
               context: 'shift-left',
               difficulty: 'intermediate',
             },
@@ -5896,7 +6013,7 @@ export default {
               pronunciation: '/ˈlɪvɪŋ θrɛt ˈmɒdl/',
               phonetic: 'LI-ving THRET MOD-el',
               example:
-                'A living threat model evolves with code. = Un threat model vivo evolve col codice.',
+                'Updating the living threat model after every major feature change keeps security assessments current and relevant. = Aggiornare il living threat model dopo ogni cambio importante di feature mantiene le valutazioni di sicurezza attuali e pertinenti.',
               context: 'shift-left',
               difficulty: 'intermediate',
               note: 'Aggiornato a ogni cambio di architettura.',
@@ -5920,11 +6037,11 @@ export default {
           items: [
             {
               english: 'SOAR',
-              italian: 'SOAR / Security Orchestration, Automation and Response',
+              italian: 'Security Orchestration, Automation and Response (SOAR)',
               pronunciation: '/sɔː/',
               phonetic: 'SOR',
               example:
-                'SOAR orchestrates security ops. = SOAR orchestra le operazioni di sicurezza.',
+                'Integrating our SIEM with a SOAR platform reduced the average incident response time from four hours to under twenty minutes. = Integrare il nostro SIEM con una piattaforma SOAR ha ridotto il tempo medio di risposta agli incidenti da quattro ore a meno di venti minuti.',
               context: 'automation',
               difficulty: 'advanced',
               note: 'Security Orchestration, Automation and Response.',
@@ -5934,27 +6051,28 @@ export default {
               italian: 'Orchestrazione della sicurezza',
               pronunciation: '/sɪˈkjʊərəti ˌɔːkɪˈstreɪʃən/',
               phonetic: 'si-KIU-ri-ti or-kes-TREI-scion',
-              example: "Orchestration links many tools. = L'orchestrazione collega molti tool.",
+              example:
+                "Effective security orchestration connects the firewall, SIEM, ticketing system, and Slack into a single automated workflow. = Un'efficace orchestrazione di sicurezza collega il firewall, il SIEM, il sistema di ticketing e Slack in un unico workflow automatizzato.",
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'Playbook',
-              italian: 'playbook / piano di risposta',
+              italian: 'Piano di risposta (playbook)',
               pronunciation: '/ˈpleɪbʊk/',
               phonetic: 'PLEI-buk',
               example:
-                'A playbook automates incident steps. = Un playbook automatizza i passi di un incidente.',
+                'The phishing response playbook automatically isolates the affected mailbox and queries the SIEM for similar indicators. = Il playbook di risposta al phishing isola automaticamente la casella email coinvolta e interroga il SIEM per indicatori simili.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'Runbook',
-              italian: 'runbook / procedura operativa',
+              italian: 'Procedura operativa (runbook)',
               pronunciation: '/ˈrʌnbʊk/',
               phonetic: 'RAN-buk',
               example:
-                'Convert runbooks into automated playbooks. = Converti i runbook in playbook automatizzati.',
+                'Following the documented runbook for certificate rotation ensures every step is executed consistently across all environments. = Seguire il runbook documentato per la rotazione dei certificati assicura che ogni passo sia eseguito in modo coerente in tutti gli ambienti.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -5964,7 +6082,7 @@ export default {
               pronunciation: '/ˈɔːtəʊ rɪˌmiːdiˈeɪʃən/',
               phonetic: 'O-to ri-mi-di-EI-scion',
               example:
-                'Auto-remediation closes findings fast. = Il rimedio automatico chiude i riscontri in fretta.',
+                "Configuring auto-remediation for public S3 buckets ensures that misconfigured ACLs are reverted within seconds. = Configurare l'auto-remediation per i bucket S3 pubblici assicura che le ACL mal configurate vengano revertite in pochi secondi.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -5973,17 +6091,18 @@ export default {
               italian: 'Innesco',
               pronunciation: '/ˈtrɪɡər/',
               phonetic: 'TRI-gher',
-              example: 'A trigger starts a playbook. = Un innesco avvia un playbook.',
+              example:
+                'We configured a cron trigger to run full dependency scans every night at midnight. = Abbiamo configurato un trigger cron per eseguire scansioni complete delle dipendenze ogni notte a mezzanotte.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'Webhook',
-              italian: 'webhook / chiamata HTTP automatica',
+              italian: 'Chiamata HTTP automatica (webhook)',
               pronunciation: '/ˈwɛbhʊk/',
               phonetic: 'UEB-huk',
               example:
-                "Webhooks call playbooks externally. = I webhook richiamano playbook dall'esterno.",
+                'The alerting system sends a webhook to the SOAR platform every time GuardDuty detects an anomalous API call. = Il sistema di alerting invia un webhook alla piattaforma SOAR ogni volta che GuardDuty rileva una chiamata API anomala.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -5993,7 +6112,7 @@ export default {
               pronunciation: '/ɪnˈrɪtʃmənt/',
               phonetic: 'in-RI-cement',
               example:
-                "Enrichment adds context to alerts. = L'arricchimento aggiunge contesto agli avvisi.",
+                "The playbook performs enrichment by querying VirusTotal and Shodan to add context to each suspicious IP address. = Il playbook esegue l'arricchimento interrogando VirusTotal e Shodan per aggiungere contesto a ogni indirizzo IP sospetto.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6003,7 +6122,7 @@ export default {
               pronunciation: '/dɪˈsɪʒən brɑːntʃ/',
               phonetic: 'di-SI-gen BRANCH',
               example:
-                'Decision branches handle exceptions. = I rami decisionali gestiscono eccezioni.',
+                "A decision branch in the playbook routes high-severity alerts to the incident commander and low ones to the backlog. = Un ramo decisionale nel playbook instrada gli avvisi ad alta severità al comandante dell'incidente e quelli bassi al backlog.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6013,7 +6132,7 @@ export default {
               pronunciation: '/ˈhjuːmən ɪn ðə luːp/',
               phonetic: 'HIU-man IN-de-LUP',
               example:
-                'Keep a human-in-the-loop for risky steps. = Mantieni un umano nel ciclo per passi rischiosi.',
+                "Adding a human-in-the-loop step before account suspension prevents false positives from locking out legitimate users. = Aggiungere uno step human-in-the-loop prima della sospensione dell'account impedisce che i falsi positivi blocchino utenti legittimi.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6029,7 +6148,8 @@ export default {
               italian: 'Splunk SOAR (piattaforma SOAR)',
               pronunciation: '/splʌŋk sɔː/',
               phonetic: 'SPLANK SOR',
-              example: 'Splunk SOAR was Phantom. = Splunk SOAR si chiamava Phantom.',
+              example:
+                'The security team built over fifty custom playbooks in Splunk SOAR to handle alerts from ten different data sources. = Il team di sicurezza ha costruito oltre cinquanta playbook personalizzati in Splunk SOAR per gestire gli avvisi da dieci fonti dati diverse.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Splunk SOAR',
@@ -6039,7 +6159,8 @@ export default {
               italian: 'Cortex XSOAR (SOAR Palo Alto)',
               pronunciation: '/ˈkɔːtɛks ɛks sɔː/',
               phonetic: 'KOR-teks EX-SOR',
-              example: 'XSOAR was Demisto. = XSOAR si chiamava Demisto.',
+              example:
+                "Migrating to Cortex XSOAR unified our incident management, playbook execution, and case management in one platform. = Migrare a Cortex XSOAR ha unificato la gestione degli incidenti, l'esecuzione dei playbook e la gestione dei casi in una piattaforma.",
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Palo Alto XSOAR',
@@ -6049,7 +6170,8 @@ export default {
               italian: 'Tines (piattaforma SOAR no-code)',
               pronunciation: '/taɪnz/',
               phonetic: 'TAINS',
-              example: 'Tines builds no-code playbooks. = Tines costruisce playbook senza codice.',
+              example:
+                'Building automation workflows in Tines requires no coding, so security analysts can create playbooks independently. = Costruire workflow di automazione in Tines non richiede programmazione, così gli analisti di sicurezza possono creare playbook indipendentemente.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Tines',
@@ -6059,7 +6181,8 @@ export default {
               italian: 'Tracecat (SOAR open source)',
               pronunciation: '/ˈtreɪskæt/',
               phonetic: 'TREIS-kat',
-              example: 'Tracecat is open source SOAR. = Tracecat è SOAR open source.',
+              example:
+                "The open-source Tracecat project provides a lightweight alternative to commercial SOAR platforms for smaller teams. = Il progetto open-source Tracecat fornisce un'alternativa leggera alle piattaforme SOAR commerciali per team più piccoli.",
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Tracecat',
@@ -6069,7 +6192,8 @@ export default {
               italian: 'Shuffle (SOAR open source)',
               pronunciation: '/ˈʃʌfl/',
               phonetic: 'SCIA-fol',
-              example: 'Shuffle is open source SOAR. = Shuffle è SOAR open source.',
+              example:
+                "Installing Shuffle on-premises allowed the government team to automate incident workflows without sending data externally. = Installare Shuffle on-premises ha permesso al team governativo di automatizzare i workflow degli incidenti senza inviare dati all'esterno.",
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Shuffle',
@@ -6080,7 +6204,7 @@ export default {
               pronunciation: '/ðə haɪv/',
               phonetic: 'DE HAIV',
               example:
-                'TheHive is a free incident platform. = TheHive è una piattaforma incidenti gratuita.',
+                'Every security alert from the SIEM creates a case in TheHive where analysts collaborate on investigation and response. = Ogni avviso di sicurezza dal SIEM crea un caso in TheHive dove gli analisti collaborano su indagine e risposta.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'TheHive',
@@ -6091,7 +6215,7 @@ export default {
               pronunciation: '/ɛn eɪt ɛn/',
               phonetic: 'EN-EIT-EN',
               example:
-                'Some teams build security flows with n8n. = Alcuni team costruiscono flussi di sicurezza con n8n.',
+                'Using n8n as a workflow engine, we connected Jira, Slack, and PagerDuty to automate the incident notification chain. = Usando n8n come motore di workflow, abbiamo collegato Jira, Slack e PagerDuty per automatizzare la catena di notifica degli incidenti.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'n8n',
@@ -6101,7 +6225,8 @@ export default {
               italian: 'Motore di workflow',
               pronunciation: '/ˈwɜːkfləʊ ˈɛndʒɪn/',
               phonetic: 'UORK-flou EN-gin',
-              example: 'A workflow engine powers SOAR. = Un motore di workflow alimenta il SOAR.',
+              example:
+                "The SOAR workflow engine executes each playbook step sequentially and logs the result of every action for audit. = Il motore di workflow SOAR esegue ogni passo del playbook in sequenza e registra il risultato di ogni azione per l'audit.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6111,7 +6236,7 @@ export default {
               pronunciation: '/kəˈnɛktə/',
               phonetic: 'ko-NEK-ter',
               example:
-                'Connectors bridge SOAR and tools. = I connettori collegano SOAR e strumenti.',
+                'Installing the AWS connector in the SOAR platform enables playbooks to quarantine EC2 instances automatically. = Installare il connettore AWS nella piattaforma SOAR abilita i playbook a mettere in quarantena le istanze EC2 automaticamente.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6121,7 +6246,7 @@ export default {
               pronunciation: '/ˈkʌstəm ˈækʃən/',
               phonetic: 'KAS-tom AK-scion',
               example:
-                'Build custom actions in Python. = Costruisci azioni personalizzate in Python.',
+                "The team wrote a custom action that queries the internal CMDB to identify the owner of any compromised asset. = Il team ha scritto un'azione personalizzata che interroga il CMDB interno per identificare il proprietario di qualsiasi asset compromesso.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6138,7 +6263,7 @@ export default {
               pronunciation: '/ˈkwɒrəntiːn viː ɛm/',
               phonetic: 'KUO-ran-tin VI-EM',
               example:
-                'Quarantine VMs after malware alerts. = Metti in quarantena le VM dopo allerte malware.',
+                'The automated playbook will quarantine a VM by removing its network interfaces and notifying the security team. = Il playbook automatico metterà in quarantena una VM rimuovendo le sue interfacce di rete e notificando il team di sicurezza.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6148,7 +6273,7 @@ export default {
               pronunciation: '/rɪˈvəʊk ˈtəʊkən/',
               phonetic: 'ri-VOUK TO-ken',
               example:
-                'Revoke leaked tokens immediately. = Revoca i token divulgati immediatamente.',
+                "When the SOAR detects a compromised credential, it triggers a revoke token action across all identity providers. = Quando il SOAR rileva una credenziale compromessa, attiva un'azione di revoca del token su tutti i provider di identità.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6158,7 +6283,7 @@ export default {
               pronunciation: '/dɪsˈeɪbl ˈjuːzə/',
               phonetic: 'di-SEI-bol IU-zer',
               example:
-                'Auto-disable users on suspicious login. = Disabilita auto utenti su login sospetto.',
+                "The compromise playbook can disable a user account in Active Directory within thirty seconds of alert confirmation. = Il playbook di compromissione può disabilitare un account utente in Active Directory entro trenta secondi dalla conferma dell'avviso.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6168,7 +6293,7 @@ export default {
               pronunciation: '/blɒk aɪ piː/',
               phonetic: 'BLOK AI-PI',
               example:
-                'Block IPs that hit the WAF threshold. = Blocca gli IP che superano la soglia del WAF.',
+                "After enrichment confirms the source is malicious, the playbook calls the firewall API to block the IP immediately. = Dopo che l'arricchimento conferma che la sorgente è malevola, il playbook chiama l'API del firewall per bloccare l'IP immediatamente.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6177,7 +6302,8 @@ export default {
               italian: 'Forzare il reset password',
               pronunciation: '/fɔːs ˈpɑːswɜːd ˈriːsɛt/',
               phonetic: 'FORS PAS-uord RI-set',
-              example: 'Force a password reset on breach. = Forza il reset password su violazione.',
+              example:
+                "Detecting credential stuffing against an account triggers a force password reset and sends the user a notification email. = Rilevare il credential stuffing contro un account attiva un reset forzato della password e invia all'utente un'email di notifica.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6187,7 +6313,7 @@ export default {
               pronunciation: '/ˈsnæpʃɒt fɔː fəˈrɛnsɪks/',
               phonetic: 'SNAP-sciot FOR fo-REN-siks',
               example:
-                'Snapshot disks before remediation. = Esegui snapshot dei dischi prima del rimedio.',
+                "Before terminating the compromised instance, the playbook takes a snapshot for forensics so analysts can investigate later. = Prima di terminare l'istanza compromessa, il playbook scatta uno snapshot per la forensica così gli analisti possono investigare dopo.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6197,7 +6323,7 @@ export default {
               pronunciation: '/ˈnəʊtɪfaɪ ˈtʃænl/',
               phonetic: 'NO-ti-fai CIAN-nel',
               example:
-                'Notify the on-call channel automatically. = Notifica il canale on-call automaticamente.',
+                "The incident playbook sends a formatted message to notify the channel with alert severity, affected service, and triage steps. = Il playbook dell'incidente invia un messaggio formattato per notificare il canale con severità dell'avviso, servizio coinvolto e passi di triage.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6207,7 +6333,7 @@ export default {
               pronunciation: '/ˈəʊpən ˈtɪkɪt/',
               phonetic: 'OU-pen TI-ket',
               example:
-                'Auto-open a Jira ticket per finding. = Apre automaticamente un ticket Jira per ogni riscontro.',
+                'For every medium-severity finding, the SOAR creates and assigns a Jira ticket to open a ticket with the responsible team. = Per ogni finding a severità media, il SOAR crea e assegna un ticket Jira per aprire un ticket con il team responsabile.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6217,7 +6343,7 @@ export default {
               pronunciation: '/ˈrəʊlbæk dɪˈplɔɪmənt/',
               phonetic: 'ROL-bak di-PLOI-ment',
               example:
-                'Auto-rollback if security alerts spike. = Rollback automatico se le allerte sicurezza salgono.',
+                'If the canary metrics exceed the error threshold, the automated pipeline will rollback the deployment to the previous version. = Se le metriche canary superano la soglia di errore, la pipeline automatizzata eseguirà il rollback del deployment alla versione precedente.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6227,7 +6353,7 @@ export default {
               pronunciation: '/ˈkwaɪət ˈpɪəriəd/',
               phonetic: 'KUAIET PI-rio-d',
               example:
-                'A quiet period prevents alert flapping. = Un periodo di quiete previene il flapping degli allarmi.',
+                'Setting a quiet period of fifteen minutes suppresses duplicate alerts while the team investigates the initial trigger. = Impostare un periodo di quiete di quindici minuti sopprime gli avvisi duplicati mentre il team indaga il trigger iniziale.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6240,10 +6366,11 @@ export default {
           items: [
             {
               english: 'ChatOps',
-              italian: 'ChatOps / operazioni dal canale chat',
+              italian: 'Operazioni dal canale chat (ChatOps)',
               pronunciation: '/ˈtʃætɒps/',
               phonetic: 'CIAT-ops',
-              example: 'ChatOps runs commands from Slack. = ChatOps esegue comandi da Slack.',
+              example:
+                "With ChatOps integration, engineers can approve deployments, run scans, and query alerts directly from the Slack channel. = Con l'integrazione ChatOps, gli ingegneri possono approvare deployment, eseguire scansioni e interrogare gli avvisi direttamente dal canale Slack.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6252,7 +6379,8 @@ export default {
               italian: 'Bot Slack',
               pronunciation: '/slæk bɒt/',
               phonetic: 'SLAK BOT',
-              example: 'A Slack bot triages alerts. = Un bot Slack triagia gli allarmi.',
+              example:
+                'Our custom Slack bot posts a summary of overnight security alerts so the morning shift can triage them immediately. = Il nostro bot Slack personalizzato posta un riepilogo degli avvisi di sicurezza notturni così il turno mattutino può classificarli immediatamente.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6262,7 +6390,7 @@ export default {
               pronunciation: '/sɛlf ˈhiːlɪŋ ˈsɪstəm/',
               phonetic: 'SELF HI-ling SIS-tem',
               example:
-                'Self-healing systems restart bad pods. = I sistemi auto-riparanti riavviano pod cattivi.',
+                'A self-healing system automatically restarts crashed security agents and notifies the team only if recovery fails. = Un sistema self-healing riavvia automaticamente gli agenti di sicurezza crashati e notifica il team solo se il recovery fallisce.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6272,7 +6400,7 @@ export default {
               pronunciation: '/ɡɪtɒps rɪˌmiːdiˈeɪʃən/',
               phonetic: 'GHIT-ops ri-mi-di-EI-scion',
               example:
-                'GitOps remediation opens auto PRs. = Il rimedio GitOps apre PR automatiche.',
+                'When the scanner detects a misconfigured deployment, GitOps remediation opens a pull request with the corrected manifest. = Quando lo scanner rileva un deployment mal configurato, la remediation GitOps apre una pull request con il manifesto corretto.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6282,17 +6410,17 @@ export default {
               pronunciation: '/kəˈnɛəri dɪˈplɔɪmənt/',
               phonetic: 'ka-NE-ri di-PLOI-ment',
               example:
-                'Canary deployments limit blast radius. = I deploy canarino limitano il blast radius.',
+                'Routing five percent of traffic to the canary deployment catches regressions before the change affects all users. = Instradare il cinque percento del traffico al deployment canary intercetta le regressioni prima che la modifica colpisca tutti gli utenti.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'Feature Flag',
-              italian: 'feature flag / interruttore funzionalità',
+              italian: 'Interruttore funzionalità (feature flag)',
               pronunciation: '/ˈfiːtʃə flæɡ/',
               phonetic: 'FI-cer FLAG',
               example:
-                'Use feature flags to disable risky paths. = Usa feature flag per disabilitare percorsi rischiosi.',
+                'Wrapping the new auth module behind a feature flag lets the team disable it instantly if a vulnerability is found. = Avvolgere il nuovo modulo di autenticazione dietro un feature flag permette al team di disabilitarlo istantaneamente se viene trovata una vulnerabilità.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'LaunchDarkly, Unleash',
@@ -6303,7 +6431,7 @@ export default {
               pronunciation: '/ˈbækˌprɛʃə/',
               phonetic: 'BAK-pre-scer',
               example:
-                'Backpressure protects downstream. = La contropressione protegge i downstream.',
+                'Implementing backpressure in the log pipeline prevents the SIEM from being overwhelmed during traffic spikes. = Implementare la backpressure nella pipeline di log impedisce che il SIEM venga sopraffatto durante i picchi di traffico.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6313,7 +6441,7 @@ export default {
               pronunciation: '/aɪˈdɛmpəʊtənt ˈækʃən/',
               phonetic: 'AI-dem-po-tent AK-scion',
               example:
-                'Idempotent actions are safe to retry. = Le azioni idempotenti sono sicure da ripetere.',
+                "Making every remediation step an idempotent action ensures that retrying a failed playbook does not cause side effects. = Rendere ogni passo di remediation un'azione idempotente assicura che riprovare un playbook fallito non causi effetti collaterali.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6323,7 +6451,7 @@ export default {
               pronunciation: '/rɪˈtraɪ ˈlɒdʒɪk/',
               phonetic: 'ri-TRAI LO-gik',
               example:
-                'Retry logic handles flaky APIs. = La logica di retry gestisce API instabili.',
+                'The connector uses exponential backoff retry logic to handle transient API failures from the ticketing system. = Il connettore usa una logica di retry con backoff esponenziale per gestire i fallimenti API transitori dal sistema di ticketing.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6333,7 +6461,7 @@ export default {
               pronunciation: '/ˈɔːdɪt hʊk/',
               phonetic: 'O-dit HUK',
               example:
-                'Audit hooks log every automated action. = Gli hook di audit registrano ogni azione automatizzata.',
+                'Every automated action passes through an audit hook that writes the who, what, and when to an immutable log. = Ogni azione automatizzata passa attraverso un hook di audit che scrive chi, cosa e quando in un log immutabile.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -6356,11 +6484,11 @@ export default {
           items: [
             {
               english: 'API Gateway',
-              italian: 'API Gateway / gateway delle API',
+              italian: 'Gateway delle API (API Gateway)',
               pronunciation: '/eɪ piː aɪ ˈɡeɪtweɪ/',
               phonetic: 'EI-PI-AI GHEIT-uei',
               example:
-                "An API gateway centralizes auth. = Un API gateway centralizza l'autenticazione.",
+                'Placing an API gateway in front of all microservices centralizes authentication, rate limiting, and request logging. = Posizionare un API gateway davanti a tutti i microservizi centralizza autenticazione, rate limiting e logging delle richieste.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Kong, AWS API Gateway, Apigee',
@@ -6371,17 +6499,18 @@ export default {
               pronunciation: '/reɪt ˈlɪmɪtɪŋ/',
               phonetic: 'REIT LI-mi-ting',
               example:
-                'Rate limiting blocks brute force. = La limitazione del tasso blocca il brute force.',
+                'Configuring rate limiting at one hundred requests per minute per client prevents brute-force and scraping attacks. = Configurare il rate limiting a cento richieste al minuto per client previene attacchi di brute-force e scraping.',
               context: 'tools',
               difficulty: 'advanced',
               code: 'limit_req zone=api burst=10;',
             },
             {
               english: 'Quota',
-              italian: 'quota / limite di utilizzo',
+              italian: 'Limite di utilizzo (quota)',
               pronunciation: '/ˈkwəʊtə/',
               phonetic: 'KUO-ta',
-              example: "API quotas prevent abuse. = Le quote API prevengono l'abuso.",
+              example:
+                'Each API consumer receives a monthly quota of one million calls, enforced by the gateway with real-time counters. = Ogni consumatore API riceve una quota mensile di un milione di chiamate, imposta dal gateway con contatori in tempo reale.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6391,7 +6520,7 @@ export default {
               pronunciation: '/ˈθrɒtlɪŋ/',
               phonetic: 'THROT-ling',
               example:
-                'Throttling slows but allows clients. = Lo strozzamento rallenta ma permette i client.',
+                'When a client exceeds the rate limit, the gateway applies throttling and returns HTTP 429 with a retry-after header. = Quando un client supera il rate limit, il gateway applica il throttling e restituisce HTTP 429 con un header retry-after.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6401,7 +6530,7 @@ export default {
               pronunciation: '/ˈskiːmə ˌvælɪˈdeɪʃən/',
               phonetic: 'SKI-ma va-li-DEI-scion',
               example:
-                'Schema validation rejects bad payloads. = La validazione di schema rifiuta payload cattivi.',
+                'Enabling strict schema validation on the gateway rejects any request with unexpected fields or incorrect data types. = Abilitare la validazione schema rigorosa sul gateway rifiuta qualsiasi richiesta con campi inattesi o tipi di dati errati.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6411,7 +6540,7 @@ export default {
               pronunciation: '/ˈəʊpənˌeɪpiː spɛk/',
               phonetic: 'O-pen-EI-PI SPEK',
               example:
-                'Use the OpenAPI spec to drive checks. = Usa la specifica OpenAPI per guidare i controlli.',
+                'Generating security tests from the OpenAPI spec ensures that every documented endpoint is covered by DAST scans. = Generare test di sicurezza dalla specifica OpenAPI assicura che ogni endpoint documentato sia coperto da scansioni DAST.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'OpenAPI, Swagger',
@@ -6421,7 +6550,8 @@ export default {
               italian: 'TLS mutuo',
               pronunciation: '/ˈmjuːtʃʊəl tiː ɛl ɛs/',
               phonetic: 'MIU-ciual TI-EL-ES',
-              example: 'mTLS authenticates both sides. = Il mTLS autentica entrambi i lati.',
+              example:
+                "Enforcing mutual TLS between the API gateway and backend services prevents unauthorized internal callers. = Imporre il TLS reciproco tra l'API gateway e i servizi backend previene chiamanti interni non autorizzati.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6431,7 +6561,7 @@ export default {
               pronunciation: '/wɒf ruːl/',
               phonetic: 'UOF RUL',
               example:
-                'WAF rules block known attack patterns. = Le regole WAF bloccano pattern di attacco noti.',
+                'A custom WAF rule blocks requests containing SQL injection patterns in the query string and request body. = Una regola WAF personalizzata blocca le richieste contenenti pattern di SQL injection nella query string e nel corpo della richiesta.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6441,7 +6571,7 @@ export default {
               pronunciation: '/rɪˈkwɛst ɪnˈspɛkʃən/',
               phonetic: 'ri-KUEST in-SPEK-scion',
               example:
-                "Request inspection blocks SQL injection. = L'ispezione delle richieste blocca SQL injection.",
+                "Deep request inspection at the gateway layer catches malicious payloads that simple header checks would miss. = L'ispezione profonda delle richieste al livello del gateway intercetta payload malevoli che semplici controlli sugli header non troverebbero.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6451,7 +6581,7 @@ export default {
               pronunciation: '/eɪ piː aɪ ˈkætəlɒɡ/',
               phonetic: 'EI-PI-AI KA-ta-log',
               example:
-                'An API catalog tracks every endpoint. = Un catalogo API traccia ogni endpoint.',
+                'Maintaining a complete API catalog helps the security team audit every endpoint and identify shadow or orphan APIs. = Mantenere un catalogo API completo aiuta il team di sicurezza a verificare ogni endpoint e identificare API ombra o orfane.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6464,29 +6594,32 @@ export default {
           items: [
             {
               english: 'OAuth 2.0',
-              italian: 'OAuth 2.0 / protocollo di autorizzazione',
+              italian: 'Protocollo di autorizzazione (OAuth 2.0)',
               pronunciation: '/əʊɒθ tuː pɔɪnt əʊ/',
               phonetic: 'O-OTH TU-POINT-O',
-              example: "OAuth 2.0 delegates access. = OAuth 2.0 delega l'accesso.",
+              example:
+                "All third-party integrations authenticate through OAuth 2.0 authorization code flow with PKCE to prevent token interception. = Tutte le integrazioni di terze parti si autenticano tramite il flusso di codice di autorizzazione OAuth 2.0 con PKCE per prevenire l'intercettazione dei token.",
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'OIDC',
-              italian: 'OIDC / OpenID Connect',
+              italian: 'OpenID Connect (OIDC)',
               pronunciation: '/əʊ aɪ diː siː/',
               phonetic: 'O-AI-DI-SI',
-              example: 'OIDC adds identity to OAuth. = OIDC aggiunge identità a OAuth.',
+              example:
+                "Using OIDC for single sign-on lets the application verify the user identity without managing passwords directly. = Usare OIDC per il single sign-on permette all'applicazione di verificare l'identità dell'utente senza gestire le password direttamente.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'OpenID Connect.',
             },
             {
               english: 'JWT',
-              italian: 'JWT / JSON Web Token',
+              italian: 'JSON Web Token (JWT)',
               pronunciation: '/dʒɒt/',
               phonetic: 'GIOT',
-              example: 'JWTs are signed JSON tokens. = I JWT sono token JSON firmati.',
+              example:
+                'Validating the JWT signature and expiration on every request prevents token forgery and replay attacks. = Validare la firma e la scadenza del JWT a ogni richiesta previene la contraffazione dei token e gli attacchi di replay.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'JSON Web Token.',
@@ -6496,7 +6629,8 @@ export default {
               italian: 'Token di accesso',
               pronunciation: '/ˈæksɛs ˈtəʊkən/',
               phonetic: 'AK-ses TO-ken',
-              example: 'Access tokens have a short TTL. = I token di accesso hanno una TTL breve.',
+              example:
+                'The CI pipeline exchanges an OIDC claim for a short-lived access token that can only read the artifact registry. = La pipeline CI scambia un claim OIDC per un access token a breve durata che può solo leggere il registry degli artefatti.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6506,7 +6640,7 @@ export default {
               pronunciation: '/rɪˈfrɛʃ ˈtəʊkən/',
               phonetic: 'ri-FRESH TO-ken',
               example:
-                'Refresh tokens renew access tokens. = I token di refresh rinnovano i token di accesso.',
+                'Storing the refresh token in an HttpOnly cookie prevents client-side JavaScript from accessing it. = Memorizzare il refresh token in un cookie HttpOnly impedisce al JavaScript lato client di accedervi.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6515,16 +6649,18 @@ export default {
               italian: 'Ambito',
               pronunciation: '/skəʊp/',
               phonetic: 'SKOUP',
-              example: 'Limit OAuth scopes to the minimum. = Limita gli ambiti OAuth al minimo.',
+              example:
+                "Defining a clear scope for the engagement prevents testers from accidentally disrupting production services. = Definire uno scope chiaro per l'impegno impedisce ai tester di interrompere accidentalmente i servizi in produzione.",
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'PKCE',
-              italian: 'PKCE / Proof Key for Code Exchange',
+              italian: 'Proof Key for Code Exchange (PKCE)',
               pronunciation: '/ˈpɪksi/',
               phonetic: 'PIK-si',
-              example: 'PKCE protects mobile OAuth flows. = PKCE protegge i flussi OAuth mobile.',
+              example:
+                'Adding PKCE to the OAuth flow prevents authorization code interception attacks on mobile and SPA clients. = Aggiungere PKCE al flusso OAuth previene attacchi di intercettazione del codice di autorizzazione su client mobile e SPA.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Proof Key for Code Exchange.',
@@ -6535,16 +6671,17 @@ export default {
               pronunciation: '/ˈtəʊkən ˌɪntrəˈspɛkʃən/',
               phonetic: 'TO-ken in-tro-SPEK-scion',
               example:
-                "Token introspection checks validity online. = L'introspezione del token verifica la validità online.",
+                "Calling the token introspection endpoint on every request ensures revoked tokens are rejected in real time. = Chiamare l'endpoint di token introspection a ogni richiesta assicura che i token revocati vengano rifiutati in tempo reale.",
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'JWKS',
-              italian: 'JWKS / JSON Web Key Set',
+              italian: 'JSON Web Key Set (JWKS)',
               pronunciation: '/dʒɒt ˈkiːz/',
               phonetic: 'GIOT-KIS',
-              example: 'JWKS publishes public keys. = JWKS pubblica le chiavi pubbliche.',
+              example:
+                "The API gateway fetches the latest signing keys from the JWKS endpoint to validate tokens without a shared secret. = L'API gateway scarica le ultime chiavi di firma dall'endpoint JWKS per validare i token senza un segreto condiviso.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'JSON Web Key Set.',
@@ -6555,7 +6692,7 @@ export default {
               pronunciation: '/ɛm tiː ɛl ɛs ɔːθ/',
               phonetic: 'EM-TI-EL-ES OTH',
               example:
-                "mTLS auth replaces tokens for B2B APIs. = L'auth mTLS sostituisce i token per API B2B.",
+                "Configuring mTLS authentication ensures that only clients with a valid certificate issued by our CA can call the API. = Configurare l'autenticazione mTLS assicura che solo i client con un certificato valido emesso dalla nostra CA possano chiamare l'API.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6568,10 +6705,11 @@ export default {
           items: [
             {
               english: 'BOLA',
-              italian: 'BOLA / Broken Object Level Authorization',
+              italian: 'Broken Object Level Authorization (BOLA)',
               pronunciation: '/ˈbəʊlə/',
               phonetic: 'BO-la',
-              example: 'BOLA leaks data via object IDs. = BOLA divulga dati tramite ID oggetto.',
+              example:
+                "The pentester exploited a BOLA vulnerability by changing the order ID in the URL to access another customer's data. = Il pentester ha sfruttato una vulnerabilità BOLA cambiando l'ID dell'ordine nell'URL per accedere ai dati di un altro cliente.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'Broken Object Level Authorization.',
@@ -6582,17 +6720,17 @@ export default {
               pronunciation: '/ˈbrəʊkən ɔːˌθɛntɪˈkeɪʃən/',
               phonetic: 'BROU-ken o-ten-ti-KEI-scion',
               example:
-                "Broken authentication enables takeover. = L'autenticazione rotta abilita il takeover.",
+                'Weak session management led to a broken authentication flaw where session tokens never expired after logout. = Una gestione debole delle sessioni ha portato a una falla di autenticazione non funzionante dove i token di sessione non scadevano mai dopo il logout.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'BOPLA',
-              italian: 'BOPLA / Broken Object Property Level Authorization',
+              italian: 'Broken Object Property Level Authorization (BOPLA)',
               pronunciation: '/ˈbɒplə/',
               phonetic: 'BO-pla',
               example:
-                'BOPLA exposes hidden object properties. = BOPLA espone proprietà nascoste degli oggetti.',
+                'The BOPLA vulnerability allowed a regular user to modify the is_admin property by including it in the update request body. = La vulnerabilità BOPLA permetteva a un utente normale di modificare la proprietà is_admin includendola nel corpo della richiesta di aggiornamento.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Broken Object Property Level Authorization.',
@@ -6602,7 +6740,8 @@ export default {
               italian: 'Risorsa senza limiti',
               pronunciation: '/ˌʌnrɪˈstrɪktɪd rɪˈzɔːs/',
               phonetic: 'an-ri-STRIK-ted ri-ZORS',
-              example: 'Unrestricted resources cause DoS. = Le risorse senza limiti causano DoS.',
+              example:
+                'An unrestricted resource endpoint let attackers request millions of records in a single query, causing a denial of service. = Un endpoint con risorsa senza restrizioni permetteva agli attaccanti di richiedere milioni di record in una singola query, causando un denial of service.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6612,16 +6751,17 @@ export default {
               pronunciation: '/mæs əˈsaɪnmənt/',
               phonetic: 'MAS a-SAIN-ment',
               example:
-                "Mass assignment overwrites trusted fields. = L'assegnazione di massa sovrascrive campi fidati.",
+                'Without explicit field filtering, a mass assignment attack set the user role to admin through a crafted JSON payload. = Senza filtraggio esplicito dei campi, un attacco di mass assignment ha impostato il ruolo utente ad admin tramite un payload JSON costruito ad hoc.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Server-Side Request Forgery',
-              italian: 'SSRF / Server-Side Request Forgery',
+              italian: 'Server-Side Request Forgery (SSRF)',
               pronunciation: '/ˈsɜːvə saɪd rɪˈkwɛst ˈfɔːdʒəri/',
               phonetic: 'SER-ver-SAID ri-KUEST FOR-ge-ri',
-              example: "SSRF reaches internal services. = L'SSRF raggiunge servizi interni.",
+              example:
+                "The SSRF vulnerability in the PDF generator allowed attackers to reach the AWS metadata endpoint and steal IAM credentials. = La vulnerabilità SSRF nel generatore PDF permetteva agli attaccanti di raggiungere l'endpoint dei metadati AWS e rubare credenziali IAM.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'Abbreviato SSRF.',
@@ -6632,7 +6772,7 @@ export default {
               pronunciation: '/ɪmˈprɒpə ˈɪnvəntəri/',
               phonetic: 'im-PRO-per IN-ven-to-ri',
               example:
-                "Improper inventory leaves dev APIs public. = L'inventario improprio lascia API dev pubbliche.",
+                'An improper inventory of APIs left three deprecated endpoints online that still accepted unauthenticated requests. = Un inventario improprio delle API ha lasciato tre endpoint deprecati online che ancora accettavano richieste non autenticate.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6642,7 +6782,7 @@ export default {
               pronunciation: '/ʌnˈseɪf kənˈsʌmpʃən/',
               phonetic: 'an-SEIF kon-SAMP-scion',
               example:
-                'Unsafe consumption trusts third-party APIs. = Il consumo non sicuro si fida di API terze.',
+                'The microservice performed unsafe consumption of the third-party webhook payload without validating the HMAC signature. = Il microservizio eseguiva un consumo non sicuro del payload webhook di terze parti senza validare la firma HMAC.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6652,7 +6792,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti ˌmɪskənˌfɪɡjʊˈreɪʃən/',
               phonetic: 'si-KIU-ri-ti mis-kon-fi-ghiu-REI-scion',
               example:
-                "Misconfiguration leaks debug pages. = L'errata configurazione divulga pagine debug.",
+                'A security misconfiguration in the CORS policy allowed any origin to make authenticated API requests on behalf of users. = Una misconfigurzione di sicurezza nella policy CORS permetteva a qualsiasi origine di effettuare richieste API autenticate per conto degli utenti.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6662,7 +6802,7 @@ export default {
               pronunciation: '/læk əv ɔːθ ɒn ˈfʌŋkʃən/',
               phonetic: 'LAK-ov-OTH ON FANK-scion',
               example:
-                'Admin functions need extra auth. = Le funzioni admin richiedono auth extra.',
+                'The scan discovered a lack of auth on the admin function that allowed anonymous users to delete any record. = La scansione ha scoperto una mancanza di autenticazione sulla funzione admin che permetteva a utenti anonimi di eliminare qualsiasi record.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6678,7 +6818,8 @@ export default {
               italian: 'Salt Security (piattaforma API security)',
               pronunciation: '/sɔːlt sɪˈkjʊərəti/',
               phonetic: 'SOLT si-KIU-ri-ti',
-              example: 'Salt protects APIs in production. = Salt protegge le API in produzione.',
+              example:
+                'Deploying Salt Security on our API traffic revealed anomalous data access patterns from three compromised partner accounts. = Deployare Salt Security sul nostro traffico API ha rivelato pattern anomali di accesso ai dati da tre account partner compromessi.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Salt Security',
@@ -6688,7 +6829,8 @@ export default {
               italian: 'Noname Security (piattaforma API security)',
               pronunciation: '/ˈnəʊneɪm sɪˈkjʊərəti/',
               phonetic: 'NOU-neim si-KIU-ri-ti',
-              example: 'Noname inventories shadow APIs. = Noname inventaria le API ombra.',
+              example:
+                "Connecting Noname Security to the API gateway identified thirty-seven shadow APIs that were not in the official catalog. = Collegare Noname Security all'API gateway ha identificato trentasette API ombra che non erano nel catalogo ufficiale.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Noname Security',
@@ -6699,17 +6841,18 @@ export default {
               pronunciation: '/ˈpəʊstmən/',
               phonetic: 'POST-man',
               example:
-                'Postman runs API security collections. = Postman esegue collezioni di sicurezza API.',
+                'The QA team uses Postman collections to run automated security test suites against every API version before release. = Il team QA usa le collezioni Postman per eseguire suite di test di sicurezza automatizzati contro ogni versione API prima del rilascio.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Postman',
             },
             {
               english: 'Newman',
-              italian: 'Newman / runner Postman da CLI',
+              italian: 'Runner Postman da CLI (Newman)',
               pronunciation: '/ˈnjuːmən/',
               phonetic: 'NIU-man',
-              example: 'Newman runs Postman in CI. = Newman esegue Postman in CI.',
+              example:
+                'Running Postman collections through Newman in the CI pipeline automates API contract and security validation on every build. = Eseguire le collezioni Postman tramite Newman nella pipeline CI automatizza la validazione dei contratti API e di sicurezza a ogni build.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Newman',
@@ -6721,7 +6864,7 @@ export default {
               pronunciation: '/ˌskiːməˈθiːsɪs/',
               phonetic: 'ski-ma-TI-sis',
               example:
-                'Schemathesis fuzzes from OpenAPI. = Schemathesis esegue fuzzing da OpenAPI.',
+                'Pointing Schemathesis at the OpenAPI spec generates thousands of fuzzing inputs to find edge-case API vulnerabilities. = Puntare Schemathesis alla specifica OpenAPI genera migliaia di input di fuzzing per trovare vulnerabilità API in casi limite.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Schemathesis',
@@ -6733,7 +6876,7 @@ export default {
               pronunciation: '/eɪ piː aɪ ˈfʌzɪŋ/',
               phonetic: 'EI-PI-AI FA-zing',
               example:
-                'API fuzzing surfaces edge cases. = Il fuzzing di API fa emergere casi limite.',
+                "Adding API fuzzing to the nightly CI job discovered a crash in the payment endpoint triggered by empty string fields. = Aggiungere il fuzzing API al job CI notturno ha scoperto un crash nell'endpoint di pagamento attivato da campi stringa vuoti.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6743,7 +6886,7 @@ export default {
               pronunciation: '/ˈkɒntrækt tɛst/',
               phonetic: 'KON-trakt TEST',
               example:
-                'Contract tests catch breaking changes. = I test di contratto catturano modifiche breaking.',
+                'A failing contract test caught a breaking change where the response schema dropped a required field after refactoring. = Un test di contratto fallito ha intercettato un breaking change dove lo schema di risposta ha perso un campo obbligatorio dopo il refactoring.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Pact',
@@ -6754,7 +6897,7 @@ export default {
               pronunciation: '/ɡræfˈkjuːɛl sɪˈkjʊərəti/',
               phonetic: 'GRAF-KIU-EL si-KIU-ri-ti',
               example:
-                'GraphQL needs query depth limits. = GraphQL richiede limiti di profondità query.',
+                "Enforcing query depth limits and disabling introspection in production are essential GraphQL security hardening steps. = Imporre limiti di profondità delle query e disabilitare l'introspezione in produzione sono passi essenziali di hardening della sicurezza GraphQL.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GraphQL Armor',
@@ -6764,7 +6907,8 @@ export default {
               italian: 'Sicurezza gRPC',
               pronunciation: '/dʒiː ɑːr piː siː sɪˈkjʊərəti/',
               phonetic: 'GI-AR-PI-SI si-KIU-ri-ti',
-              example: 'gRPC uses TLS and metadata auth. = gRPC usa TLS e auth via metadata.',
+              example:
+                "Configuring interceptors for authentication and input validation strengthens gRPC security across all service boundaries. = Configurare interceptor per autenticazione e validazione dell'input rafforza la sicurezza gRPC attraverso tutti i confini dei servizi.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6773,7 +6917,8 @@ export default {
               italian: 'Honeypot API',
               pronunciation: '/eɪ piː aɪ ˈhʌnipɒt/',
               phonetic: 'EI-PI-AI HA-ni-pot',
-              example: 'API honeypots catch scrapers. = Gli honeypot API catturano gli scraper.',
+              example:
+                'The team deployed an API honeypot that mimics deprecated endpoints to detect and study attacker reconnaissance behavior. = Il team ha deployato un API honeypot che simula endpoint deprecati per rilevare e studiare il comportamento di ricognizione degli attaccanti.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6799,38 +6944,41 @@ export default {
               italian: 'Web Application Firewall',
               pronunciation: '/wɒf/',
               phonetic: 'UOF',
-              example: 'A WAF blocks common web attacks. = Un WAF blocca attacchi web comuni.',
+              example:
+                "Placing a WAF in front of the public-facing application blocks common injection and cross-site scripting attacks at the edge. = Posizionare un WAF davanti all'applicazione pubblica blocca gli attacchi comuni di injection e cross-site scripting al perimetro.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'AWS WAF, Cloudflare, ModSecurity',
             },
             {
               english: 'ModSecurity',
-              italian: 'ModSecurity / WAF open source',
+              italian: 'WAF open source (ModSecurity)',
               pronunciation: '/mɒd sɪˈkjʊərəti/',
               phonetic: 'MOD si-KIU-ri-ti',
-              example: 'ModSecurity is an open source WAF. = ModSecurity è un WAF open source.',
+              example:
+                "Running ModSecurity with the OWASP Core Rule Set provides a solid baseline defense against the most common web attacks. = Eseguire ModSecurity con l'OWASP Core Rule Set fornisce una solida difesa di base contro gli attacchi web più comuni.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'ModSecurity',
             },
             {
               english: 'OWASP CRS',
-              italian: 'OWASP CRS / Core Rule Set per ModSecurity',
+              italian: 'Core Rule Set per ModSecurity (OWASP CRS)',
               pronunciation: '/ˈəʊwɒsp siː ɑːr ɛs/',
               phonetic: 'O-uosp SI-AR-ES',
               example:
-                'OWASP CRS feeds ModSecurity rules. = OWASP CRS alimenta le regole di ModSecurity.',
+                "Upgrading to the latest OWASP CRS version added new rules that detect Log4Shell exploitation attempts. = Aggiornare all'ultima versione dell'OWASP CRS ha aggiunto nuove regole che rilevano tentativi di sfruttamento di Log4Shell.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'Core Rule Set.',
             },
             {
               english: 'RASP',
-              italian: 'RASP / Runtime Application Self-Protection',
+              italian: 'Runtime Application Self-Protection (RASP)',
               pronunciation: '/ræsp/',
               phonetic: 'RASP',
-              example: "RASP runs inside the application. = Il RASP gira dentro l'applicazione.",
+              example:
+                "Embedding a RASP agent inside the application provides context-aware protection that a perimeter WAF cannot match. = Incorporare un agente RASP dentro l'applicazione fornisce protezione contestuale che un WAF perimetrale non può eguagliare.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'Runtime Application Self-Protection.',
@@ -6840,17 +6988,19 @@ export default {
               italian: 'Contrast Security (piattaforma RASP/IAST)',
               pronunciation: '/ˈkɒntrɑːst sɪˈkjʊərəti/',
               phonetic: 'KON-trast si-KIU-ri-ti',
-              example: 'Contrast injects RASP via agent. = Contrast inietta il RASP tramite agent.',
+              example:
+                "The Contrast Security agent detected a real SQL injection in staging that both SAST and DAST tools had missed. = L'agente Contrast Security ha rilevato una SQL injection reale in staging che sia gli strumenti SAST che DAST avevano mancato.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Contrast Security',
             },
             {
               english: 'IAST',
-              italian: 'IAST / Interactive Application Security Testing',
+              italian: 'Interactive Application Security Testing (IAST)',
               pronunciation: '/aɪæst/',
               phonetic: 'AI-AST',
-              example: 'IAST mixes SAST and DAST insights. = IAST mescola insight SAST e DAST.',
+              example:
+                "Running IAST during integration tests combines the accuracy of runtime analysis with the coverage of automated test suites. = Eseguire IAST durante i test di integrazione combina l'accuratezza dell'analisi runtime con la copertura delle suite di test automatizzati.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'Interactive Application Security Testing.',
@@ -6860,7 +7010,8 @@ export default {
               italian: 'Gestione dei bot',
               pronunciation: '/bɒt ˈmænɪdʒmənt/',
               phonetic: 'BOT MA-ni-gment',
-              example: 'Bot management filters scrapers. = La gestione dei bot filtra gli scraper.',
+              example:
+                "The bot management solution distinguished legitimate search engine crawlers from credential-stuffing botnets using behavioral analysis. = La soluzione di gestione dei bot ha distinto i crawler legittimi dei motori di ricerca dai botnet di credential stuffing usando l'analisi comportamentale.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6870,7 +7021,7 @@ export default {
               pronunciation: '/ˈdʒiːəʊ ˈblɒkɪŋ/',
               phonetic: 'GI-o BLO-king',
               example:
-                'Geo blocking is a coarse defense. = Il blocco geografico è una difesa grossolana.',
+                "Enabling geo blocking on the admin panel restricts access to IP ranges from approved office locations only. = Abilitare il geo blocking sul pannello admin limita l'accesso ai range IP provenienti solo dalle sedi ufficio approvate.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6880,7 +7031,7 @@ export default {
               pronunciation: '/ɛdʒ sɪˈkjʊərəti/',
               phonetic: 'EGG si-KIU-ri-ti',
               example:
-                'Edge security stops attacks early. = La sicurezza al bordo ferma gli attacchi presto.',
+                "Moving DDoS mitigation and TLS termination to the edge security layer absorbs attacks before they reach the origin. = Spostare la mitigazione DDoS e la terminazione TLS al livello di sicurezza edge assorbe gli attacchi prima che raggiungano l'origine.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Cloudflare, Fastly, Akamai',
@@ -6890,7 +7041,8 @@ export default {
               italian: 'Scudo CDN',
               pronunciation: '/siː diː ɛn ʃiːld/',
               phonetic: 'SI-DI-EN SCILD',
-              example: 'A CDN shield absorbs DDoS spikes. = Uno scudo CDN assorbe picchi DDoS.',
+              example:
+                'Enabling a CDN shield layer reduces the number of requests reaching the origin server and adds an extra caching tier. = Abilitare un livello CDN shield riduce il numero di richieste che raggiungono il server di origine e aggiunge un ulteriore livello di caching.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6906,7 +7058,8 @@ export default {
               italian: 'Falco (rilevatore eventi runtime cloud-native)',
               pronunciation: '/ˈfælkəʊ/',
               phonetic: 'FAL-ko',
-              example: 'Falco watches kernel events. = Falco osserva eventi del kernel.',
+              example:
+                'When a container spawns an unexpected shell process, Falco generates a high-priority alert within milliseconds. = Quando un container avvia un processo shell inaspettato, Falco genera un avviso ad alta priorità in pochi millisecondi.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Falco',
@@ -6914,31 +7067,33 @@ export default {
             },
             {
               english: 'Tetragon',
-              italian: 'Tetragon / observability di sicurezza eBPF',
+              italian: 'Observability di sicurezza eBPF (Tetragon)',
               pronunciation: '/ˈtɛtrəɡɒn/',
               phonetic: 'TE-tra-gon',
-              example: 'Tetragon enforces eBPF policies. = Tetragon applica policy eBPF.',
+              example:
+                "Using Tetragon for eBPF-based observability lets security teams trace process executions and network connections in real time. = Usare Tetragon per l'osservabilità basata su eBPF permette ai team di sicurezza di tracciare esecuzioni di processi e connessioni di rete in tempo reale.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Cilium Tetragon',
             },
             {
               english: 'eBPF',
-              italian: 'eBPF / extended Berkeley Packet Filter',
+              italian: 'Extended Berkeley Packet Filter (eBPF)',
               pronunciation: '/iː biː piː ɛf/',
               phonetic: 'I-BI-PI-EF',
               example:
-                'eBPF runs custom code in kernel safely. = eBPF esegue codice custom nel kernel in sicurezza.',
+                'Attaching eBPF programs to kernel hooks enables deep visibility into syscall patterns without modifying application code. = Attaccare programmi eBPF agli hook del kernel abilita una visibilità profonda nei pattern di syscall senza modificare il codice applicativo.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'extended Berkeley Packet Filter.',
             },
             {
               english: 'Syscall',
-              italian: 'syscall / chiamata di sistema',
+              italian: 'Chiamata di sistema (syscall)',
               pronunciation: '/ˈsɪskɔːl/',
               phonetic: 'SIS-kol',
-              example: 'Falco rules match syscalls. = Le regole Falco corrispondono a syscall.',
+              example:
+                'Monitoring every syscall made by a container process helps detect unexpected behavior like file reads outside /app. = Monitorare ogni syscall fatta da un processo container aiuta a rilevare comportamenti inattesi come letture di file fuori da /app.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6948,7 +7103,7 @@ export default {
               pronunciation: '/əˈnɒməli dɪˈtɛkʃən/',
               phonetic: 'a-NO-ma-li di-TEK-scion',
               example:
-                'Anomaly detection finds unknown threats. = Il rilevamento anomalie trova minacce sconosciute.',
+                'Machine-learning-based anomaly detection flagged a data exfiltration attempt disguised as normal HTTPS traffic. = Il rilevamento delle anomalie basato su machine learning ha segnalato un tentativo di esfiltrazione dati mascherato da traffico HTTPS normale.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6958,7 +7113,7 @@ export default {
               pronunciation: '/bɪˈheɪvjə əˈnæləsɪs/',
               phonetic: 'bi-HEI-vier a-NA-le-sis',
               example:
-                "Behavior analysis spots living-off-the-land. = L'analisi comportamentale individua living-off-the-land.",
+                "Runtime behavior analysis detected that a compromised container was spawning reverse shells after business hours. = L'analisi comportamentale a runtime ha rilevato che un container compromesso avviava reverse shell fuori dall'orario lavorativo.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -6967,27 +7122,30 @@ export default {
               italian: 'AppArmor (LSM Linux a profili)',
               pronunciation: '/ˈæpɑːmə/',
               phonetic: 'AP-ar-mor',
-              example: 'AppArmor confines processes. = AppArmor confina i processi.',
+              example:
+                "Loading a custom AppArmor profile on the container restricts file access to only the directories the application needs. = Caricare un profilo AppArmor personalizzato sul container limita l'accesso ai file solo alle directory di cui l'applicazione ha bisogno.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'AppArmor',
             },
             {
               english: 'SELinux',
-              italian: 'SELinux / Security-Enhanced Linux',
+              italian: 'Security-Enhanced Linux (SELinux)',
               pronunciation: '/ˈɛs ˈlɪnʌks/',
               phonetic: 'ES-LI-nuks',
-              example: 'SELinux enforces MAC policies. = SELinux applica policy MAC.',
+              example:
+                "Enforcing SELinux policies on the host prevents a compromised container from accessing sensitive kernel resources. = Imporre le policy SELinux sull'host impedisce a un container compromesso di accedere a risorse sensibili del kernel.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'SELinux',
             },
             {
               english: 'Seccomp',
-              italian: 'seccomp / filtro syscall Linux',
+              italian: 'Filtro syscall Linux (seccomp)',
               pronunciation: '/ˈsɛkkɒmp/',
               phonetic: 'SEK-komp',
-              example: 'Seccomp profiles limit syscalls. = I profili Seccomp limitano le syscall.',
+              example:
+                'Applying a strict seccomp profile that allows only sixty approved syscalls blocks most container escape techniques. = Applicare un profilo seccomp rigoroso che permette solo sessanta syscall approvate blocca la maggior parte delle tecniche di escape dai container.',
               context: 'tools',
               difficulty: 'advanced',
               code: 'seccompProfile:\n  type: RuntimeDefault',
@@ -6997,7 +7155,8 @@ export default {
               italian: 'Cilium (CNI eBPF Kubernetes)',
               pronunciation: '/ˈsɪliəm/',
               phonetic: 'SI-lium',
-              example: 'Cilium uses eBPF for networking. = Cilium usa eBPF per il networking.',
+              example:
+                'Replacing kube-proxy with Cilium gave us eBPF-powered network policies with layer-seven protocol visibility. = Sostituire kube-proxy con Cilium ci ha dato policy di rete basate su eBPF con visibilità del protocollo a livello sette.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Cilium',
@@ -7011,20 +7170,22 @@ export default {
           items: [
             {
               english: 'EDR',
-              italian: 'EDR / Endpoint Detection and Response',
+              italian: 'Endpoint Detection and Response (EDR)',
               pronunciation: '/iː diː ɑːr/',
               phonetic: 'I-DI-AR',
-              example: 'EDR agents watch endpoints. = Gli agent EDR osservano gli endpoint.',
+              example:
+                "The EDR agent on every developer workstation detected a trojanized npm package that attempted to exfiltrate SSH keys. = L'agente EDR su ogni workstation degli sviluppatori ha rilevato un pacchetto npm trojanizzato che tentava di esfiltrare le chiavi SSH.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'Endpoint Detection and Response.',
             },
             {
               english: 'XDR',
-              italian: 'XDR / Extended Detection and Response',
+              italian: 'Extended Detection and Response (XDR)',
               pronunciation: '/ɛks diː ɑːr/',
               phonetic: 'EX-DI-AR',
-              example: 'XDR correlates across many telemetry. = XDR correla tra molte telemetrie.',
+              example:
+                'Consolidating endpoint, network, and cloud telemetry into the XDR platform enables cross-domain threat correlation. = Consolidare la telemetria di endpoint, rete e cloud nella piattaforma XDR abilita la correlazione delle minacce cross-dominio.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Extended Detection and Response.',
@@ -7034,7 +7195,8 @@ export default {
               italian: 'CrowdStrike (EDR commerciale)',
               pronunciation: '/ˈkraʊdstraɪk/',
               phonetic: 'KRAUD-straik',
-              example: 'CrowdStrike Falcon is a known EDR. = CrowdStrike Falcon è un noto EDR.',
+              example:
+                'After deploying CrowdStrike Falcon across the fleet, the team detected a fileless malware attack within minutes. = Dopo aver deployato CrowdStrike Falcon su tutta la flotta, il team ha rilevato un attacco malware fileless in pochi minuti.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'CrowdStrike Falcon',
@@ -7044,7 +7206,8 @@ export default {
               italian: 'SentinelOne (EDR commerciale)',
               pronunciation: '/ˈsɛntɪnlwʌn/',
               phonetic: 'SEN-ti-nel-UAN',
-              example: 'SentinelOne combines EDR and EPP. = SentinelOne combina EDR e EPP.',
+              example:
+                "The SentinelOne agent automatically quarantined a ransomware payload and rolled back the encrypted files to their clean state. = L'agente SentinelOne ha automaticamente messo in quarantena un payload ransomware e ripristinato i file crittografati al loro stato pulito.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'SentinelOne',
@@ -7055,17 +7218,18 @@ export default {
               pronunciation: '/ˈmaɪkrəʊsɒft dɪˈfɛndə/',
               phonetic: 'MAI-kro-soft di-FEN-der',
               example:
-                'Defender for Endpoint is built into Windows. = Defender for Endpoint è integrato in Windows.',
+                "Enabling Microsoft Defender for Endpoint on all CI runners detects supply-chain attacks targeting the build environment. = Abilitare Microsoft Defender for Endpoint su tutti i runner CI rileva attacchi supply-chain che prendono di mira l'ambiente di build.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Microsoft Defender',
             },
             {
               english: 'Sysmon',
-              italian: 'Sysmon / monitor di sistema Microsoft Sysinternals',
+              italian: 'Monitor di sistema Microsoft Sysinternals (Sysmon)',
               pronunciation: '/ˈsɪsmɒn/',
               phonetic: 'SIS-mon',
-              example: 'Sysmon enriches Windows events. = Sysmon arricchisce gli eventi Windows.',
+              example:
+                'Shipping Sysmon logs to the SIEM captures detailed process creation, network connection, and file modification events. = Inviare i log di Sysmon al SIEM cattura eventi dettagliati di creazione processi, connessioni di rete e modifiche ai file.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Microsoft Sysmon',
@@ -7075,7 +7239,8 @@ export default {
               italian: 'osquery (telemetria endpoint via SQL)',
               pronunciation: '/əʊˈɛs ˈkwɪəri/',
               phonetic: 'OS-KUI-ri',
-              example: 'Osquery exposes OS state via SQL. = Osquery espone lo stato OS via SQL.',
+              example:
+                'Writing osquery rules lets the security team query every endpoint like a database to find unauthorized software. = Scrivere regole osquery permette al team di sicurezza di interrogare ogni endpoint come un database per trovare software non autorizzato.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Osquery',
@@ -7086,7 +7251,8 @@ export default {
               italian: 'Wazuh (SIEM/EDR open source)',
               pronunciation: '/ˈwɑːzuː/',
               phonetic: 'UA-zu',
-              example: 'Wazuh is open source XDR. = Wazuh è XDR open source.',
+              example:
+                "Deploying the open-source Wazuh agent on all servers provides file integrity monitoring, vulnerability detection, and log analysis. = Deployare l'agente open-source Wazuh su tutti i server fornisce monitoraggio dell'integrità dei file, rilevamento delle vulnerabilità e analisi dei log.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Wazuh',
@@ -7097,7 +7263,7 @@ export default {
               pronunciation: '/θrɛt ˈhʌntɪŋ/',
               phonetic: 'THRET HAN-ting',
               example:
-                'Threat hunting looks for unknowns. = La caccia alle minacce cerca incognite.',
+                "During a proactive threat hunting session, the analyst discovered a dormant backdoor that had been present for six months. = Durante una sessione proattiva di threat hunting, l'analista ha scoperto una backdoor dormiente presente da sei mesi.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7107,7 +7273,7 @@ export default {
               pronunciation: '/dɪˈtɛkʃən ˌɛndʒɪˈnɪərɪŋ/',
               phonetic: 'di-TEK-scion en-gi-NI-ring',
               example:
-                "Detection engineering writes Sigma rules. = L'ingegneria del rilevamento scrive regole Sigma.",
+                'The detection engineering team writes and tests Sigma rules that are deployed to the SIEM within twenty-four hours of a new TTP disclosure. = Il team di detection engineering scrive e testa regole Sigma che vengono deployate nel SIEM entro ventiquattro ore dalla divulgazione di una nuova TTP.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Sigma',
@@ -7125,18 +7291,18 @@ export default {
               pronunciation: '/ˈsɜːvɪs mɛʃ/',
               phonetic: 'SER-vis MESH',
               example:
-                'A service mesh adds mTLS by default. = Una mesh di servizi aggiunge mTLS di default.',
+                'Deploying a service mesh enforces mutual TLS, traffic policies, and observability across all microservices automatically. = Deployare una service mesh impone TLS reciproco, policy di traffico e osservabilità su tutti i microservizi automaticamente.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Istio, Linkerd, Consul',
             },
             {
               english: 'Sidecar',
-              italian: 'sidecar / contenitore affiancato',
+              italian: 'Contenitore affiancato (sidecar)',
               pronunciation: '/ˈsaɪdkɑː/',
               phonetic: 'SAID-kar',
               example:
-                'Sidecars proxy traffic transparently. = I sidecar fanno proxy del traffico in modo trasparente.',
+                'The Envoy sidecar proxy handles TLS termination and access logging so the application code stays security-agnostic. = Il proxy sidecar Envoy gestisce la terminazione TLS e il logging degli accessi così il codice applicativo resta agnostico rispetto alla sicurezza.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7145,7 +7311,8 @@ export default {
               italian: 'Istio (service mesh open source)',
               pronunciation: '/ˈɪstiəʊ/',
               phonetic: 'IS-tio',
-              example: 'Istio brings policy to Kubernetes. = Istio porta policy a Kubernetes.',
+              example:
+                'After installing Istio, all inter-service traffic was automatically encrypted with mTLS without changing any application code. = Dopo aver installato Istio, tutto il traffico inter-servizio è stato automaticamente crittografato con mTLS senza modificare alcun codice applicativo.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Istio',
@@ -7155,7 +7322,8 @@ export default {
               italian: 'Linkerd (service mesh ultra-leggero)',
               pronunciation: '/ˈlɪŋkɜːd/',
               phonetic: 'LINK-erd',
-              example: 'Linkerd is a lightweight mesh. = Linkerd è una mesh leggera.',
+              example:
+                "Choosing Linkerd for our service mesh kept the memory footprint under ten megabytes per sidecar proxy. = Scegliere Linkerd per la nostra service mesh ha mantenuto l'impronta di memoria sotto i dieci megabyte per proxy sidecar.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Linkerd',
@@ -7165,7 +7333,8 @@ export default {
               italian: 'Consul Connect (service mesh HashiCorp)',
               pronunciation: '/ˈkɒnsʊl kəˈnɛkt/',
               phonetic: 'KON-sul ko-NEKT',
-              example: 'Consul Connect federates VMs and pods. = Consul Connect federa VM e pod.',
+              example:
+                'Using Consul Connect, each service receives a short-lived TLS certificate that is automatically rotated every seventy-two hours. = Usando Consul Connect, ogni servizio riceve un certificato TLS a breve durata che viene automaticamente ruotato ogni settantadue ore.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'HashiCorp Consul',
@@ -7176,38 +7345,39 @@ export default {
               pronunciation: '/ˈzɪərəʊ trʌst ˈnɛtwɜːk/',
               phonetic: 'ZI-ro TRAST NET-uork',
               example:
-                'A zero trust network verifies every call. = Una rete zero trust verifica ogni chiamata.',
+                "In a zero trust network architecture, every service must authenticate and authorize each request regardless of network location. = In un'architettura di rete zero trust, ogni servizio deve autenticare e autorizzare ogni richiesta indipendentemente dalla posizione nella rete.",
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'BeyondCorp',
-              italian: 'BeyondCorp / modello zero trust di Google',
+              italian: 'Modello zero trust di Google (BeyondCorp)',
               pronunciation: '/bɪˈjɒndkɔːp/',
               phonetic: 'bi-YOND-korp',
               example:
-                'BeyondCorp removes the VPN perimeter. = BeyondCorp rimuove il perimetro VPN.',
+                "Google's BeyondCorp model eliminates the VPN by verifying device posture and user identity for every access request. = Il modello BeyondCorp di Google elimina la VPN verificando la postura del dispositivo e l'identità dell'utente per ogni richiesta di accesso.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Google BeyondCorp',
             },
             {
               english: 'SPIFFE',
-              italian: 'SPIFFE / standard di identità workload',
+              italian: 'Standard di identità workload (SPIFFE)',
               pronunciation: '/spɪf/',
               phonetic: 'SPIF',
               example:
-                'SPIFFE issues universal workload IDs. = SPIFFE emette ID universali per workload.',
+                "Every workload in the cluster receives a SPIFFE identity that is used for mutual authentication between services. = Ogni workload nel cluster riceve un'identità SPIFFE che viene usata per l'autenticazione reciproca tra servizi.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'SPIFFE/SPIRE',
             },
             {
               english: 'SPIRE',
-              italian: 'SPIRE / implementazione di SPIFFE',
+              italian: 'Implementazione di SPIFFE (SPIRE)',
               pronunciation: '/spaɪər/',
               phonetic: 'SPAIR',
-              example: 'SPIRE is the SPIFFE runtime. = SPIRE è il runtime SPIFFE.',
+              example:
+                'The SPIRE server issues short-lived X.509 certificates and JWT tokens to workloads based on their attested identity. = Il server SPIRE emette certificati X.509 e token JWT a breve durata ai workload basandosi sulla loro identità attestata.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'SPIRE',
@@ -7218,7 +7388,7 @@ export default {
               pronunciation: '/ɔːˌθɒraɪˈzeɪʃən ˈpɒləsi/',
               phonetic: 'o-to-rai-ZEI-scion PO-li-si',
               example:
-                'Authorization policies allow specific calls. = Le policy di autorizzazione permettono chiamate specifiche.',
+                'The Istio authorization policy restricts the payment service to accept requests only from the checkout service. = La policy di autorizzazione Istio limita il servizio di pagamento ad accettare richieste solo dal servizio di checkout.',
               context: 'tools',
               difficulty: 'advanced',
               code: 'apiVersion: security.istio.io/v1\nkind: AuthorizationPolicy',
@@ -7242,10 +7412,11 @@ export default {
           items: [
             {
               english: 'GitOps',
-              italian: 'GitOps / Git come fonte di verità per il deploy',
+              italian: 'Git come fonte di verità per il deploy (GitOps)',
               pronunciation: '/ɡɪtɒps/',
               phonetic: 'GHIT-ops',
-              example: 'GitOps uses Git as source of truth. = GitOps usa Git come fonte di verità.',
+              example:
+                'Adopting GitOps means that the desired cluster state is declared in Git and any manual change is automatically reverted. = Adottare GitOps significa che lo stato desiderato del cluster è dichiarato in Git e qualsiasi modifica manuale viene automaticamente revertita.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7254,7 +7425,8 @@ export default {
               italian: 'Argo CD (motore GitOps Kubernetes)',
               pronunciation: '/ˈɑːɡəʊ siː diː/',
               phonetic: 'AR-go SI-DI',
-              example: 'Argo CD syncs clusters from Git. = Argo CD sincronizza cluster da Git.',
+              example:
+                'After connecting Argo CD to the Git repository, every merged pull request triggers automatic deployment to the staging cluster. = Dopo aver collegato Argo CD al repository Git, ogni pull request unita attiva un deployment automatico sul cluster di staging.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Argo CD',
@@ -7264,7 +7436,8 @@ export default {
               italian: 'Flux (motore GitOps Kubernetes)',
               pronunciation: '/flʌks/',
               phonetic: 'FLAKS',
-              example: 'Flux is a CNCF GitOps tool. = Flux è uno strumento GitOps CNCF.',
+              example:
+                'The team chose Flux because its native support for Helm and Kustomize simplified the migration from manual kubectl deploys. = Il team ha scelto Flux perché il suo supporto nativo per Helm e Kustomize ha semplificato la migrazione dai deploy manuali con kubectl.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Flux',
@@ -7275,7 +7448,7 @@ export default {
               pronunciation: '/dɪˈklærətɪv steɪt/',
               phonetic: 'di-KLA-ra-tiv STEIT',
               example:
-                'Declarative state describes the desired system. = Lo stato dichiarativo descrive il sistema desiderato.',
+                "Storing the entire cluster configuration as declarative state in Git makes every change traceable and reversible. = Memorizzare l'intera configurazione del cluster come stato dichiarativo in Git rende ogni modifica tracciabile e reversibile.",
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7285,7 +7458,7 @@ export default {
               pronunciation: '/ˌrɛkənˌsɪliˈeɪʃən/',
               phonetic: 'rek-on-si-li-EI-scion',
               example:
-                'Reconciliation closes drift continuously. = La riconciliazione chiude la deriva continuamente.',
+                'If someone manually edits a Kubernetes resource, the GitOps controller runs reconciliation to restore the declared state. = Se qualcuno modifica manualmente una risorsa Kubernetes, il controller GitOps esegue la riconciliazione per ripristinare lo stato dichiarato.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7295,7 +7468,7 @@ export default {
               pronunciation: '/pʊl beɪst dɪˈplɔɪ/',
               phonetic: 'PUL-BEIST di-PLOI',
               example:
-                'Pull-based deploys avoid CI cluster creds. = I deploy basati su pull evitano cred CI sul cluster.',
+                "A pull-based deploy model means the cluster agent fetches changes from Git rather than receiving pushes from CI. = Un modello di deploy basato su pull significa che l'agente del cluster recupera le modifiche da Git invece di ricevere push dalla CI.",
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7305,7 +7478,7 @@ export default {
               pronunciation: '/ˌæplɪˈkeɪʃən ˈmænɪfɛst/',
               phonetic: 'ap-li-KEI-scion MA-ni-fest',
               example:
-                'Application manifests live in Git. = I manifest delle applicazioni vivono in Git.',
+                "Every application manifest in the GitOps repo specifies the image digest, resource limits, and security context. = Ogni manifesto dell'applicazione nel repo GitOps specifica il digest dell'immagine, i limiti di risorse e il contesto di sicurezza.",
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7315,7 +7488,7 @@ export default {
               pronunciation: '/sɪŋk ˈpɒləsi/',
               phonetic: 'SINK PO-li-si',
               example:
-                "A sync policy controls auto-apply. = Una policy di sync controlla l'auto-apply.",
+                'Setting the sync policy to auto-prune removes any orphaned Kubernetes resource that no longer exists in the Git repository. = Impostare la sync policy su auto-prune rimuove qualsiasi risorsa Kubernetes orfana che non esiste più nel repository Git.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7325,7 +7498,7 @@ export default {
               pronunciation: '/ɪnˈvaɪrənmənt brɑːntʃ/',
               phonetic: 'in-VAI-ron-ment BRANCH',
               example:
-                'Environment branches map to clusters. = I branch di ambiente mappano ai cluster.',
+                "Promoting changes from the dev environment branch to staging requires a reviewed and approved pull request. = Promuovere le modifiche dal branch dell'ambiente dev allo staging richiede una pull request revisionata e approvata.",
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7335,7 +7508,7 @@ export default {
               pronunciation: '/prəˈməʊʃən ˈpaɪplaɪn/',
               phonetic: 'pro-MO-scion PAIP-lain',
               example:
-                'A promotion pipeline merges across envs. = Una pipeline di promozione fa merge tra ambienti.',
+                'The promotion pipeline moves validated images through dev, staging, and production with gated approvals at each step. = La pipeline di promozione sposta le immagini validate attraverso dev, staging e produzione con approvazioni controllate a ogni passo.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7351,7 +7524,8 @@ export default {
               italian: 'Commit firmato',
               pronunciation: '/saɪnd kəˈmɪt/',
               phonetic: 'SAIND ko-MIT',
-              example: "Signed commits prove the author. = I commit firmati provano l'autore.",
+              example:
+                'Requiring every signed commit on the main branch proves that an authorized developer authored each change. = Richiedere ogni commit firmato sul branch main dimostra che uno sviluppatore autorizzato ha creato ogni modifica.',
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'git commit -S -m "msg"',
@@ -7362,7 +7536,7 @@ export default {
               pronunciation: '/saɪnd tæɡ/',
               phonetic: 'SAIND TAG',
               example:
-                'Sign release tags before publishing. = Firma i tag di release prima di pubblicare.',
+                "Creating a signed tag for every release lets downstream consumers verify the authenticity of the published version. = Creare un tag firmato per ogni rilascio permette ai consumatori downstream di verificare l'autenticità della versione pubblicata.",
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'git tag -s v1.0.0',
@@ -7373,7 +7547,7 @@ export default {
               pronunciation: '/dʒiː piː dʒiː saɪn/',
               phonetic: 'GI-PI-GI SAIN',
               example:
-                'Configure git to GPG sign by default. = Configura git per firmare con GPG di default.',
+                'Setting git config to always GPG sign commits ensures that every change is cryptographically attributable. = Impostare git config per firmare sempre i commit con GPG assicura che ogni modifica sia attribuibile crittograficamente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'commit.gpgsign = true',
@@ -7383,7 +7557,8 @@ export default {
               italian: 'Firma SSH',
               pronunciation: '/ɛs ɛs eɪtʃ saɪn/',
               phonetic: 'ES-ES-EICI SAIN',
-              example: 'SSH signing reuses your SSH key. = La firma SSH riusa la tua chiave SSH.',
+              example:
+                'Developers who already have SSH keys can use SSH sign to verify commits without managing a separate GPG keyring. = Gli sviluppatori che hanno già chiavi SSH possono usare SSH sign per verificare i commit senza gestire un keyring GPG separato.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'gpg.format = ssh',
@@ -7394,7 +7569,7 @@ export default {
               pronunciation: '/ˈvɛrɪfaɪd kəˈmɪt bædʒ/',
               phonetic: 'VE-ri-faid ko-MIT BAGG',
               example:
-                'GitHub shows a verified badge on signed commits. = GitHub mostra un badge verified sui commit firmati.',
+                "A green verified commit badge on GitHub confirms that the commit was signed by a key registered in the account settings. = Un badge di commit verificato verde su GitHub conferma che il commit è stato firmato da una chiave registrata nelle impostazioni dell'account.",
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7403,17 +7578,18 @@ export default {
               italian: 'Hook di commit',
               pronunciation: '/kəˈmɪt hʊk/',
               phonetic: 'ko-MIT HUK',
-              example: 'Commit hooks enforce sign-off. = Gli hook di commit applicano il sign-off.',
+              example:
+                "The commit hook runs gitleaks and eslint before allowing the commit, catching secrets and code issues locally. = L'hook di commit esegue gitleaks e eslint prima di permettere il commit, intercettando segreti e problemi di codice localmente.",
               context: 'ci-cd',
               difficulty: 'advanced',
             },
             {
               english: 'DCO Sign-Off',
-              italian: 'DCO sign-off / firma Developer Certificate of Origin',
+              italian: 'Firma Developer Certificate of Origin (DCO sign-off)',
               pronunciation: '/diː siː əʊ ˈsaɪnɒf/',
               phonetic: 'DI-SI-O SAIN-of',
               example:
-                'DCO sign-off declares license rights. = Il DCO sign-off dichiara i diritti di licenza.',
+                "Open source projects often require a DCO sign-off on every commit to certify the developer's right to submit the code. = I progetti open source spesso richiedono un DCO sign-off su ogni commit per certificare il diritto dello sviluppatore a sottomettere il codice.",
               context: 'ci-cd',
               difficulty: 'advanced',
               note: 'Developer Certificate of Origin.',
@@ -7424,16 +7600,17 @@ export default {
               pronunciation: '/ˈɔːθə ˈiːmeɪl/',
               phonetic: 'O-thor I-meil',
               example:
-                "Verify author emails match the org. = Verifica che le email autore corrispondano all'org.",
+                "Enforcing author email verification on the repository ensures that commits cannot be attributed to spoofed email addresses. = Imporre la verifica dell'email dell'autore sul repository assicura che i commit non possano essere attribuiti a indirizzi email falsificati.",
               context: 'ci-cd',
               difficulty: 'advanced',
             },
             {
               english: 'gitsign',
-              italian: 'gitsign / firma commit con Sigstore',
+              italian: 'Firma commit con Sigstore (gitsign)',
               pronunciation: '/ɡɪtsaɪn/',
               phonetic: 'GHIT-sain',
-              example: 'gitsign uses Sigstore for git. = gitsign usa Sigstore per git.',
+              example:
+                "Using gitsign for commit signing leverages Sigstore's keyless infrastructure, eliminating the need for long-lived GPG keys. = Usare gitsign per la firma dei commit sfrutta l'infrastruttura senza chiave di Sigstore, eliminando la necessità di chiavi GPG a lunga durata.",
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'gitsign',
@@ -7445,7 +7622,7 @@ export default {
               pronunciation: '/ˈhɑːdweə ˈtəʊkən/',
               phonetic: 'HARD-uer TO-ken',
               example:
-                'Store signing keys on a hardware token. = Memorizza chiavi di firma su token hardware.',
+                "Storing the GPG signing key on a hardware token like YubiKey prevents private key extraction even if the workstation is compromised. = Memorizzare la chiave di firma GPG su un hardware token come YubiKey previene l'estrazione della chiave privata anche se la workstation è compromessa.",
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'YubiKey',
@@ -7463,7 +7640,7 @@ export default {
               pronunciation: '/brɑːntʃ prəˈtɛkʃən/',
               phonetic: 'BRANCH pro-TEK-scion',
               example:
-                'Branch protection forbids direct pushes. = La protezione del branch vieta push diretti.',
+                'Enabling branch protection on main requires pull request reviews, status checks, and signed commits before merging. = Abilitare la protezione del branch su main richiede review delle pull request, status check e commit firmati prima del merge.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7473,7 +7650,7 @@ export default {
               pronunciation: '/rɪˈkwaɪəd rɪˈvjuːə/',
               phonetic: 'ri-KUAIRD ri-VIU-er',
               example:
-                'Require at least one reviewer per PR. = Richiedi almeno un revisore per PR.',
+                'The repository settings mandate that at least one required reviewer from the security team approves every change. = Le impostazioni del repository impongono che almeno un reviewer obbligatorio dal team di sicurezza approvi ogni modifica.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7483,7 +7660,7 @@ export default {
               pronunciation: '/ˈlɪniə ˈhɪstəri/',
               phonetic: 'LI-nier HIS-to-ri',
               example:
-                'Linear history forbids merge commits. = La storia lineare vieta i merge commit.',
+                'Enforcing linear history through squash merges makes the audit trail cleaner and simplifies git bisect for debugging. = Imporre la cronologia lineare tramite squash merge rende la traccia di audit più pulita e semplifica git bisect per il debug.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7493,7 +7670,7 @@ export default {
               pronunciation: '/fɔːs pʊʃ/',
               phonetic: 'FORS PUSH',
               example:
-                'Disable force pushes on protected branches. = Disabilita i push forzati sui branch protetti.',
+                'Blocking force push on protected branches prevents anyone from rewriting history and hiding malicious commits. = Bloccare il force push sui branch protetti impedisce a chiunque di riscrivere la cronologia e nascondere commit malevoli.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7503,7 +7680,7 @@ export default {
               pronunciation: '/kəʊd ˈəʊnə/',
               phonetic: 'KOUD OU-ner',
               example:
-                'Code owners must approve sensitive paths. = I code owner devono approvare i percorsi sensibili.',
+                'Defining a code owner for the authentication module ensures that every change to login logic gets expert review. = Definire un code owner per il modulo di autenticazione assicura che ogni modifica alla logica di login riceva una review esperta.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '* @platform-team',
@@ -7514,7 +7691,7 @@ export default {
               pronunciation: '/steɪl rɪˈvjuː dɪsˈmɪsl/',
               phonetic: 'STEIL ri-VIU dis-MIS-sal',
               example:
-                'Dismiss stale reviews on new commits. = Scarta review obsolete a nuovi commit.',
+                'Enabling stale review dismissal invalidates previous approvals when new commits are pushed to the pull request. = Abilitare la dismissal delle review obsolete invalida le approvazioni precedenti quando nuovi commit vengono pushati nella pull request.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7524,7 +7701,7 @@ export default {
               pronunciation: '/rɪˈkwaɪəd ˈsteɪtəs tʃɛk/',
               phonetic: 'ri-KUAIRD STEI-tas CIEK',
               example:
-                'CI must pass as a required status. = La CI deve passare come controllo obbligatorio.',
+                'Adding SAST and secret scanning as a required status check ensures they must pass before any merge to main. = Aggiungere SAST e scansione segreti come status check obbligatorio assicura che debbano passare prima di qualsiasi merge su main.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7533,7 +7710,8 @@ export default {
               italian: 'Limita il push',
               pronunciation: '/rɪˈstrɪkt pʊʃ/',
               phonetic: 'ri-STRIKT PUSH',
-              example: 'Restrict who can push to main. = Limita chi può pushare su main.',
+              example:
+                "Only the CI bot account can push to the release branch thanks to the restrict push rule on the repository. = Solo l'account bot CI può pushare sul branch di rilascio grazie alla regola di restrizione push sul repository.",
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7543,7 +7721,7 @@ export default {
               pronunciation: '/ˌkɒnvəˈseɪʃən ˌrɛzəˈluːʃən/',
               phonetic: 'kon-ver-SEI-scion re-zo-LU-scion',
               example:
-                'Require conversation resolution before merge. = Richiedi risoluzione delle conversazioni prima del merge.',
+                'Requiring conversation resolution before merge ensures that every security comment is explicitly addressed. = Richiedere la risoluzione delle conversazioni prima del merge assicura che ogni commento di sicurezza sia esplicitamente affrontato.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7553,7 +7731,7 @@ export default {
               pronunciation: '/ˈbaɪpɑːs prəˈtɛkʃən/',
               phonetic: 'BAI-pas pro-TEK-scion',
               example:
-                "Audit bypass protection use carefully. = Verifica con cura l'uso del bypass.",
+                "Even repository admins cannot merge without reviews thanks to the bypass protection setting being disabled. = Anche gli admin del repository non possono mergare senza review grazie all'impostazione di bypass protection disabilitata.",
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7569,7 +7747,8 @@ export default {
               italian: 'App di app',
               pronunciation: '/æp əv æps/',
               phonetic: 'AP-OV-APS',
-              example: 'App of apps bootstraps clusters. = App di app fa bootstrap dei cluster.',
+              example:
+                "The app of apps pattern in Argo CD manages all microservice deployments from a single root application manifest. = Il pattern app of apps in Argo CD gestisce tutti i deployment di microservizi da un singolo manifesto dell'applicazione root.",
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Argo CD ApplicationSet',
@@ -7579,28 +7758,30 @@ export default {
               italian: 'Aggiornatore di immagini',
               pronunciation: '/ˈɪmɪdʒ ʌpˈdeɪtə/',
               phonetic: 'I-migg ap-DEI-ter',
-              example: "Image updater bumps tags via PRs. = L'image updater alza i tag tramite PR.",
+              example:
+                'Argo CD Image Updater watches the container registry and opens a commit to update image tags when new versions appear. = Argo CD Image Updater monitora il container registry e apre un commit per aggiornare i tag delle immagini quando appaiono nuove versioni.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Argo CD Image Updater',
             },
             {
               english: 'Helm Chart',
-              italian: 'Helm chart / pacchetto Helm',
+              italian: 'Pacchetto Helm (Helm chart)',
               pronunciation: '/hɛlm tʃɑːt/',
               phonetic: 'HELM CIART',
-              example: 'Sign Helm charts with Cosign. = Firma gli Helm chart con Cosign.',
+              example:
+                "Packaging the application as a Helm chart simplifies templating, versioning, and repeatable deployments across environments. = Pacchettizzare l'applicazione come Helm chart semplifica il templating, il versionamento e i deployment ripetibili tra ambienti.",
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Helm',
             },
             {
               english: 'Kustomize',
-              italian: 'Kustomize / patching YAML Kubernetes',
+              italian: 'Patching YAML Kubernetes (Kustomize)',
               pronunciation: '/kʌˈstəʊmaɪz/',
               phonetic: 'kas-TO-maiz',
               example:
-                'Kustomize layers env-specific patches. = Kustomize sovrappone patch per ambiente.',
+                'Using Kustomize overlays lets the team maintain a single base manifest and apply environment-specific patches for staging and prod. = Usare gli overlay Kustomize permette al team di mantenere un singolo manifesto base e applicare patch specifiche per ambiente per staging e produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Kustomize',
@@ -7611,7 +7792,7 @@ export default {
               pronunciation: '/siːld ˈsiːkrɪts ɪn ɡɪt/',
               phonetic: 'SILD SI-krets IN GHIT',
               example:
-                'Sealed Secrets safely live in Git. = I Sealed Secrets vivono in Git in sicurezza.',
+                'Committing sealed secrets in Git is safe because only the cluster controller holds the private key to decrypt them. = Committare sealed secret in Git è sicuro perché solo il controller del cluster possiede la chiave privata per decifrarli.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Bitnami Sealed Secrets',
@@ -7622,7 +7803,7 @@ export default {
               pronunciation: '/pʊl rɪˈkwɛst rɪˈvjuː bɒt/',
               phonetic: 'PUL ri-KUEST ri-VIU BOT',
               example:
-                'A review bot enforces guidelines. = Un bot di review applica le linee guida.',
+                'The pull request review bot comments on every PR with a security checklist and flags changes to sensitive files. = Il bot di review delle pull request commenta ogni PR con una checklist di sicurezza e segnala le modifiche ai file sensibili.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7631,17 +7812,19 @@ export default {
               italian: 'Mergify (automazione merge PR)',
               pronunciation: '/ˈmɜːdʒɪfaɪ/',
               phonetic: 'MER-gi-fai',
-              example: 'Mergify automates PR merges. = Mergify automatizza i merge delle PR.',
+              example:
+                'Configuring Mergify to auto-merge dependency updates that pass all checks reduces the backlog of open pull requests. = Configurare Mergify per auto-mergare gli aggiornamenti delle dipendenze che passano tutti i controlli riduce il backlog di pull request aperte.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Mergify',
             },
             {
               english: 'Spectral',
-              italian: 'Spectral / linter di OpenAPI/AsyncAPI',
+              italian: 'Linter di OpenAPI/AsyncAPI (Spectral)',
               pronunciation: '/ˈspɛktrəl/',
               phonetic: 'SPEK-tral',
-              example: 'Spectral lints OpenAPI specs. = Spectral controlla spec OpenAPI.',
+              example:
+                'Running Spectral against the OpenAPI definition in CI enforces naming conventions and catches missing security schemes. = Eseguire Spectral contro la definizione OpenAPI nella CI impone convenzioni di naming e intercetta schemi di sicurezza mancanti.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Stoplight Spectral',
@@ -7652,7 +7835,7 @@ export default {
               pronunciation: '/ˈriːpəʊ ˈtɛmpleɪts/',
               phonetic: 'RI-po TEM-pleits',
               example:
-                'Repo templates ship secure defaults. = I template di repo portano default sicuri.',
+                'Our organization provides repo templates pre-configured with branch protection, CI workflows, and security scanning. = La nostra organizzazione fornisce template di repository pre-configurati con protezione dei branch, workflow CI e scansione di sicurezza.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7662,7 +7845,7 @@ export default {
               pronunciation: '/ˈpɒləsi bɒt/',
               phonetic: 'PO-li-si BOT',
               example:
-                'A policy bot blocks risky merges. = Un bot di policy blocca merge rischiosi.',
+                "The policy bot enforces that every pull request has at least one approval from a code owner and passes all status checks. = Il policy bot impone che ogni pull request abbia almeno un'approvazione da un code owner e passi tutti gli status check.",
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Palantir policy-bot',
@@ -7686,10 +7869,11 @@ export default {
           items: [
             {
               english: 'SIEM',
-              italian: 'SIEM / Security Information and Event Management',
+              italian: 'Security Information and Event Management (SIEM)',
               pronunciation: '/siːm/',
               phonetic: 'SIM',
-              example: 'A SIEM correlates logs and alerts. = Un SIEM correla log e allarmi.',
+              example:
+                'Centralizing all security events into a SIEM lets analysts correlate alerts across firewalls, endpoints, and cloud services. = Centralizzare tutti gli eventi di sicurezza in un SIEM permette agli analisti di correlare gli avvisi tra firewall, endpoint e servizi cloud.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Security Information and Event Management.',
@@ -7699,7 +7883,8 @@ export default {
               italian: 'Splunk (piattaforma SIEM e log)',
               pronunciation: '/splʌŋk/',
               phonetic: 'SPLANK',
-              example: 'Splunk indexes huge log volumes. = Splunk indicizza enormi volumi di log.',
+              example:
+                'The security team built custom Splunk dashboards that show real-time login anomalies and failed authentication trends. = Il team di sicurezza ha costruito dashboard Splunk personalizzate che mostrano anomalie di login in tempo reale e trend di autenticazione fallita.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Splunk',
@@ -7710,7 +7895,7 @@ export default {
               pronunciation: '/ɪˈlæstɪk stæk/',
               phonetic: 'i-LAS-tik STAK',
               example:
-                'The Elastic stack powers many SIEMs. = Lo stack Elastic alimenta molti SIEM.',
+                "Deploying the Elastic Stack for log aggregation gave us full-text search and visualization across ten billion events daily. = Deployare l'Elastic Stack per l'aggregazione dei log ci ha dato ricerca full-text e visualizzazione su dieci miliardi di eventi giornalieri.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Elasticsearch, Logstash, Kibana',
@@ -7720,17 +7905,19 @@ export default {
               italian: 'IBM QRadar (SIEM enterprise)',
               pronunciation: '/ˈkjuːreɪdə/',
               phonetic: 'KIU-rei-dar',
-              example: "QRadar is IBM's SIEM. = QRadar è il SIEM di IBM.",
+              example:
+                'After tuning the QRadar correlation rules, the number of false-positive alerts dropped by seventy-five percent. = Dopo aver affinato le regole di correlazione QRadar, il numero di avvisi falsi positivi è sceso del settantacinque percento.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'IBM QRadar',
             },
             {
               english: 'Sentinel',
-              italian: 'Sentinel / motore policy HashiCorp',
+              italian: 'Motore policy HashiCorp (Sentinel)',
               pronunciation: '/ˈsɛntɪnl/',
               phonetic: 'SEN-ti-nel',
-              example: 'Microsoft Sentinel is a cloud SIEM. = Microsoft Sentinel è un SIEM cloud.',
+              example:
+                'A Sentinel policy prevents any Terraform plan from creating resources without the mandatory cost-center tag. = Una policy Sentinel impedisce a qualsiasi piano Terraform di creare risorse senza il tag di centro di costo obbligatorio.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Microsoft Sentinel',
@@ -7741,7 +7928,7 @@ export default {
               pronunciation: '/ˈkrɒnɪkl/',
               phonetic: 'KRO-ni-kol',
               example:
-                "Chronicle is Google's scalable SIEM. = Chronicle è il SIEM scalabile di Google.",
+                'Migrating to Google Chronicle provided petabyte-scale log retention with sub-second search across twelve months of data. = Migrare a Google Chronicle ha fornito retention dei log su scala petabyte con ricerca in meno di un secondo su dodici mesi di dati.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Google Chronicle',
@@ -7752,7 +7939,7 @@ export default {
               pronunciation: '/lɒɡ sɔːs/',
               phonetic: 'LOG SORS',
               example:
-                'Onboard new log sources weekly. = Onboarda nuove sorgenti di log ogni settimana.',
+                'Adding the Kubernetes audit log as a new log source to the SIEM revealed three unauthorized kubectl exec sessions. = Aggiungere il log di audit Kubernetes come nuova sorgente di log al SIEM ha rivelato tre sessioni kubectl exec non autorizzate.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7762,7 +7949,7 @@ export default {
               pronunciation: '/ˈpɑːsɪŋ/',
               phonetic: 'PAR-sing',
               example:
-                "Parsing transforms raw logs to fields. = L'analisi sintattica trasforma log raw in campi.",
+                'Correct log parsing is essential so that timestamps, source IPs, and event types map to the right SIEM fields. = Il parsing corretto dei log è essenziale affinché timestamp, IP sorgente e tipi di evento mappino nei campi giusti del SIEM.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7772,7 +7959,7 @@ export default {
               pronunciation: '/ˌkɒrəˈleɪʃən ruːl/',
               phonetic: 'kor-re-LEI-scion RUL',
               example:
-                'Correlation rules join events into alerts. = Le regole di correlazione uniscono eventi in allarmi.',
+                'The new correlation rule fires an alert when five failed logins from different IPs target the same account within ten minutes. = La nuova regola di correlazione genera un avviso quando cinque login falliti da IP diversi prendono di mira lo stesso account in dieci minuti.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7782,7 +7969,7 @@ export default {
               pronunciation: '/əˈlɜːt fəˈtiːɡ/',
               phonetic: 'a-LERT fa-TIG',
               example:
-                'Alert fatigue blinds responders. = La stanchezza da allarmi acceca i responder.',
+                "Reducing noisy low-priority alerts is critical to combat alert fatigue and keep analysts focused on real threats. = Ridurre gli avvisi rumorosi a bassa priorità è fondamentale per combattere l'alert fatigue e mantenere gli analisti concentrati sulle minacce reali.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7799,7 +7986,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti ˈdæʃbɔːd/',
               phonetic: 'si-KIU-ri-ti DASH-bord',
               example:
-                "A security dashboard shows posture at a glance. = Una dashboard di sicurezza mostra la postura a colpo d'occhio.",
+                'The CISO reviews the security dashboard every Monday to track open vulnerabilities, incidents, and remediation progress. = Il CISO revisiona la dashboard di sicurezza ogni lunedì per monitorare vulnerabilità aperte, incidenti e progresso della remediation.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7809,7 +7996,7 @@ export default {
               pronunciation: '/miːn taɪm tuː dɪˈtɛkt/',
               phonetic: 'MIN-TAIM-TU di-TEKT',
               example:
-                'Lower MTTD means faster detection. = Un MTTD più basso significa rilevamento più rapido.',
+                'Automating alert triage reduced our mean time to detect from eight hours to under forty-five minutes. = Automatizzare il triage degli avvisi ha ridotto il nostro tempo medio di rilevamento da otto ore a meno di quarantacinque minuti.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'MTTD: Mean Time To Detect.',
@@ -7819,7 +8006,8 @@ export default {
               italian: 'Tempo medio di risposta',
               pronunciation: '/miːn taɪm tuː rɪˈspɒnd/',
               phonetic: 'MIN-TAIM-TU ri-SPOND',
-              example: 'MTTR drives incident KPIs. = MTTR guida i KPI degli incidenti.',
+              example:
+                'The SOAR playbook brought the mean time to respond for credential compromises down from two hours to twelve minutes. = Il playbook SOAR ha portato il tempo medio di risposta per le compromissioni di credenziali da due ore a dodici minuti.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7829,7 +8017,7 @@ export default {
               pronunciation: '/ˌvʌlnərəˈbɪləti ˈbæklɒɡ/',
               phonetic: 'val-ne-ra-BI-li-ti BAK-log',
               example:
-                'Track the vulnerability backlog weekly. = Traccia il backlog di vulnerabilità ogni settimana.',
+                'The team prioritizes the vulnerability backlog by CVSS score and reachability analysis to fix the riskiest items first. = Il team prioritizza il backlog delle vulnerabilità per punteggio CVSS e analisi di raggiungibilità per correggere prima gli elementi più rischiosi.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7839,7 +8027,7 @@ export default {
               pronunciation: '/ˈkʌvərɪdʒ ˈmɛtrɪk/',
               phonetic: 'KA-ve-rigg ME-trik',
               example:
-                'A coverage metric shows scanner reach. = Una metrica di copertura mostra la portata dello scanner.',
+                'Tracking the SAST coverage metric across all repositories shows which projects still lack automated security scanning. = Tracciare la metrica di copertura SAST su tutti i repository mostra quali progetti mancano ancora di scansione di sicurezza automatizzata.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7849,7 +8037,7 @@ export default {
               pronunciation: '/ˈhiːtmæp/',
               phonetic: 'HIT-map',
               example:
-                'A heatmap pinpoints risky teams. = Una mappa di calore individua team rischiosi.',
+                'The vulnerability heatmap on the dashboard highlights which microservices carry the highest concentration of unpatched CVEs. = La mappa di calore delle vulnerabilità sulla dashboard evidenzia quali microservizi portano la concentrazione più alta di CVE non patchate.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7859,38 +8047,38 @@ export default {
               pronunciation: '/trɛnd laɪn/',
               phonetic: 'TREND LAIN',
               example:
-                'Trend lines show progress over time. = Le linee di tendenza mostrano i progressi nel tempo.',
+                'A downward trend line on the open-findings chart proves that the remediation program is consistently reducing risk. = Una linea di tendenza in discesa sul grafico dei finding aperti dimostra che il programma di remediation sta riducendo costantemente il rischio.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'SLA',
-              italian: 'SLA / accordo di livello di servizio',
+              italian: 'Accordo di livello di servizio (SLA)',
               pronunciation: '/ɛs ɛl eɪ/',
               phonetic: 'ES-EL-EI',
               example:
-                'Critical CVEs have a 7-day SLA. = Le CVE critiche hanno un SLA di 7 giorni.',
+                'Our internal SLA requires critical vulnerabilities to be patched within seventy-two hours of discovery. = Il nostro SLA interno richiede che le vulnerabilità critiche vengano patchate entro settantadue ore dalla scoperta.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Service Level Agreement.',
             },
             {
               english: 'Burndown',
-              italian: 'burndown / grafico di completamento',
+              italian: 'Grafico di completamento (burndown)',
               pronunciation: '/ˈbɜːndaʊn/',
               phonetic: 'BERN-daun',
               example:
-                'A burndown tracks fix progress. = Un burndown traccia il progresso delle fix.',
+                'The security sprint burndown chart shows that the team is on track to close all high-severity findings before the deadline. = Il grafico di burndown dello sprint di sicurezza mostra che il team è in linea per chiudere tutti i finding ad alta severità prima della scadenza.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'KPI',
-              italian: 'KPI / indicatore chiave di performance',
+              italian: 'Indicatore chiave di performance (KPI)',
               pronunciation: '/keɪ piː aɪ/',
               phonetic: 'KEI-PI-AI',
               example:
-                'Tie security KPIs to business outcomes. = Lega i KPI di sicurezza a outcome di business.',
+                'Tracking the KPI for mean time to remediate helps management understand whether security investments are paying off. = Tracciare il KPI per il tempo medio di remediation aiuta il management a capire se gli investimenti in sicurezza stanno dando risultati.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Key Performance Indicator.',
@@ -7908,7 +8096,7 @@ export default {
               pronunciation: '/lɒɡ ˌæɡrɪˈɡeɪʃən/',
               phonetic: 'LOG a-gri-GHEI-scion',
               example:
-                "Centralize log aggregation in one place. = Centralizza l'aggregazione di log in un posto.",
+                "Centralized log aggregation pipes application, infrastructure, and security logs into a single searchable data lake. = L'aggregazione centralizzata dei log convoglia log applicativi, infrastrutturali e di sicurezza in un singolo data lake ricercabile.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Loki, Graylog',
@@ -7918,7 +8106,8 @@ export default {
               italian: 'Loki (sistema di log Grafana)',
               pronunciation: '/ˈləʊki/',
               phonetic: 'LO-ki',
-              example: "Loki is Grafana's log database. = Loki è il database di log di Grafana.",
+              example:
+                "Using Grafana Loki for log aggregation keeps costs low because it indexes only labels instead of full log content. = Usare Grafana Loki per l'aggregazione dei log mantiene bassi i costi perché indicizza solo le etichette invece del contenuto completo dei log.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Grafana Loki',
@@ -7928,18 +8117,19 @@ export default {
               italian: 'Fluentd (raccoglitore log unificato)',
               pronunciation: '/ˈfluːənt diː/',
               phonetic: 'FLU-ent-DI',
-              example: 'Fluentd unifies log collection. = Fluentd unifica la raccolta di log.',
+              example:
+                'Deploying Fluentd as a DaemonSet on every Kubernetes node collects and forwards container logs to the central SIEM. = Deployare Fluentd come DaemonSet su ogni nodo Kubernetes raccoglie e inoltra i log dei container al SIEM centrale.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Fluentd',
             },
             {
               english: 'Vector',
-              italian: 'Vector / pipeline di osservabilità ad alte prestazioni',
+              italian: 'Pipeline di osservabilità ad alte prestazioni (Vector)',
               pronunciation: '/ˈvɛktə/',
               phonetic: 'VEK-ter',
               example:
-                'Vector is a fast log pipeline tool. = Vector è uno strumento veloce per pipeline di log.',
+                "Replacing Logstash with Vector cut log pipeline memory usage by eighty percent while maintaining the same throughput. = Sostituire Logstash con Vector ha ridotto l'uso di memoria della pipeline di log dell'ottanta percento mantenendo lo stesso throughput.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Vector by Datadog',
@@ -7950,7 +8140,7 @@ export default {
               pronunciation: '/ˈɔːdɪt lɒɡ/',
               phonetic: 'O-dit LOG',
               example:
-                'Audit logs are required for compliance. = I registri di audit sono richiesti per la conformità.',
+                "After the incident, we traced the unauthorized pipeline change through the audit log to identify the compromised account. = Dopo l'incidente, abbiamo tracciato la modifica non autorizzata alla pipeline attraverso il registro di audit per identificare l'account compromesso.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7960,17 +8150,17 @@ export default {
               pronunciation: '/lɒɡ rɪˈtɛnʃən/',
               phonetic: 'LOG ri-TEN-scion',
               example:
-                'Log retention follows regulation. = La ritenzione dei log segue la regolamentazione.',
+                'PCI-DSS requires a minimum log retention period of one year, with three months of data immediately searchable. = PCI-DSS richiede un periodo minimo di retention dei log di un anno, con tre mesi di dati immediatamente ricercabili.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Tail',
-              italian: 'tail / mostra coda del file',
+              italian: 'Mostra coda del file (tail)',
               pronunciation: '/teɪl/',
               phonetic: 'TEIL',
               example:
-                'Tail prod logs during incidents. = Fai tail dei log prod durante incidenti.',
+                "Running tail on the application log file in real time helps developers troubleshoot authentication failures during testing. = Eseguire tail sul file di log dell'applicazione in tempo reale aiuta gli sviluppatori a risolvere i fallimenti di autenticazione durante il test.",
               context: 'tools',
               difficulty: 'advanced',
               command: 'kubectl logs -f pod-name',
@@ -7980,7 +8170,8 @@ export default {
               italian: 'Ricerca di pattern',
               pronunciation: '/ˈpætən sɜːtʃ/',
               phonetic: 'PA-tern SERCH',
-              example: 'Pattern search finds anomalies. = La ricerca di pattern trova anomalie.',
+              example:
+                "Using a regex-based pattern search in the SIEM, the analyst found all occurrences of base64-encoded PowerShell commands. = Usando una ricerca di pattern basata su regex nel SIEM, l'analista ha trovato tutte le occorrenze di comandi PowerShell codificati in base64.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -7989,7 +8180,8 @@ export default {
               italian: 'Redazione di PII',
               pronunciation: '/piː aɪ aɪ rɪˈdækʃən/',
               phonetic: 'PI-AI-AI ri-DAK-scion',
-              example: 'Redact PII before storing logs. = Reda i PII prima di archiviare i log.',
+              example:
+                "The log pipeline applies PII redaction rules that mask email addresses and phone numbers before storage. = La pipeline di log applica regole di redazione PII che mascherano indirizzi email e numeri di telefono prima dell'archiviazione.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'Personal Identifiable Information.',
@@ -7999,7 +8191,8 @@ export default {
               italian: 'Logging strutturato',
               pronunciation: '/ˈstrʌktʃəd ˈlɒɡɪŋ/',
               phonetic: 'STRAK-cer-d LO-ghing',
-              example: 'Structured logs query better. = I log strutturati si interrogano meglio.',
+              example:
+                'Switching to structured logging in JSON format makes it trivial to filter and aggregate events by severity and service name. = Passare al logging strutturato in formato JSON rende banale filtrare e aggregare eventi per severità e nome del servizio.',
               context: 'tools',
               difficulty: 'advanced',
               code: '{"level":"INFO","msg":"login","user":"x"}',
@@ -8013,10 +8206,11 @@ export default {
           items: [
             {
               english: 'MITRE D3FEND',
-              italian: 'MITRE D3FEND / framework di contromisure',
+              italian: 'Framework di contromisure (MITRE D3FEND)',
               pronunciation: '/ˈmaɪtə dɪˈfɛnd/',
               phonetic: 'MAI-ter di-FEND',
-              example: 'D3FEND maps defenses to ATT&CK. = D3FEND mappa le difese ad ATT&CK.',
+              example:
+                'Mapping each detection rule to a MITRE D3FEND technique shows which defensive capabilities are active and which have gaps. = Mappare ogni regola di rilevamento a una tecnica MITRE D3FEND mostra quali capacità difensive sono attive e quali hanno lacune.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'MITRE D3FEND',
@@ -8027,7 +8221,7 @@ export default {
               pronunciation: '/dɪˈtɛkʃən ruːl/',
               phonetic: 'di-TEK-scion RUL',
               example:
-                'Detection rules find attacker patterns. = Le regole di rilevamento trovano pattern di attaccanti.',
+                'The detection engineering team deploys every new detection rule to staging first and validates it against known attack replays. = Il team di detection engineering deploya ogni nuova regola di rilevamento prima in staging e la valida contro replay di attacchi noti.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -8036,7 +8230,8 @@ export default {
               italian: 'Regola Sigma',
               pronunciation: '/ˈsɪɡmə ruːl/',
               phonetic: 'SIG-ma RUL',
-              example: 'Sigma rules port across SIEMs. = Le regole Sigma sono portabili tra SIEM.',
+              example:
+                'Writing detections as Sigma rules makes them portable across Splunk, Elastic, and any other supported SIEM backend. = Scrivere le detection come regole Sigma le rende portabili tra Splunk, Elastic e qualsiasi altro backend SIEM supportato.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Sigma',
@@ -8046,7 +8241,8 @@ export default {
               italian: 'Regola YARA',
               pronunciation: '/ˈjɑːrə ruːl/',
               phonetic: 'IA-ra RUL',
-              example: 'YARA rules identify malware. = Le regole YARA identificano malware.',
+              example:
+                "The malware analyst wrote a YARA rule to detect the specific byte pattern used by the ransomware variant across disk images. = L'analista malware ha scritto una regola YARA per rilevare il pattern di byte specifico usato dalla variante ransomware nelle immagini disco.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'YARA',
@@ -8056,7 +8252,8 @@ export default {
               italian: 'Indicatore di compromissione',
               pronunciation: '/ˈɪndɪkeɪtə əv ˈkɒmprəmaɪz/',
               phonetic: 'IN-di-kei-ter OV KOM-pro-maiz',
-              example: 'Hashes are common IOCs. = Gli hash sono IOC comuni.',
+              example:
+                'Feeding the indicator of compromise list into the firewall automatically blocks known malicious domains and IP addresses. = Alimentare la lista degli indicatori di compromissione nel firewall blocca automaticamente domini e indirizzi IP malevoli noti.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Abbreviato IOC.',
@@ -8067,16 +8264,17 @@ export default {
               pronunciation: '/ˈɪndɪkeɪtə əv əˈtæk/',
               phonetic: 'IN-di-kei-ter OV a-TAK',
               example:
-                'IOAs describe behavior, not artifacts. = Gli IOA descrivono comportamento, non artefatti.',
+                'An indicator of attack focuses on behavioral patterns, like unusual lateral movement, rather than static signatures. = Un indicatore di attacco si concentra su pattern comportamentali, come movimento laterale insolito, piuttosto che su firme statiche.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Threat Intel',
-              italian: 'threat intel / intelligence sulle minacce',
+              italian: 'Intelligence sulle minacce (threat intel)',
               pronunciation: '/θrɛt ˈɪntɛl/',
               phonetic: 'THRET IN-tel',
-              example: 'Feed threat intel into the SIEM. = Alimenta il SIEM con threat intel.',
+              example:
+                'Subscribing to commercial threat intel feeds gives the SOC early warning about emerging campaign indicators. = Abbonarsi a feed di threat intel commerciali dà al SOC preavviso su indicatori di campagne emergenti.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'MISP, OpenCTI',
@@ -8086,7 +8284,8 @@ export default {
               italian: 'Threat Intelligence Platform',
               pronunciation: '/tɪp/',
               phonetic: 'TIP',
-              example: 'A TIP centralizes intel feeds. = Una TIP centralizza i feed di intel.',
+              example:
+                'The threat intelligence platform aggregates IOCs from OSINT, ISACs, and commercial feeds into a single searchable database. = La piattaforma di threat intelligence aggrega IOC da OSINT, ISAC e feed commerciali in un singolo database ricercabile.',
               context: 'tools',
               difficulty: 'advanced',
               note: 'Threat Intelligence Platform.',
@@ -8097,16 +8296,17 @@ export default {
               pronunciation: '/ˈlætərəl ˈmuːvmənt/',
               phonetic: 'LA-te-ral MUV-ment',
               example:
-                'Detect lateral movement quickly. = Rileva il movimento laterale rapidamente.',
+                'The detection rule fires when a workstation initiates SMB connections to three or more servers, indicating potential lateral movement. = La regola di rilevamento si attiva quando una workstation inizia connessioni SMB verso tre o più server, indicando potenziale movimento laterale.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Beaconing',
-              italian: 'beaconing / chiamate periodiche al C2',
+              italian: 'Chiamate periodiche al C2 (beaconing)',
               pronunciation: '/ˈbiːkənɪŋ/',
               phonetic: 'BI-ko-ning',
-              example: 'Beaconing reveals C2 traffic. = Il beaconing rivela traffico C2.',
+              example:
+                "Statistical analysis of DNS query timing revealed a beaconing pattern where the malware contacted its C2 server every five minutes. = L'analisi statistica dei tempi delle query DNS ha rivelato un pattern di beaconing dove il malware contattava il suo server C2 ogni cinque minuti.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -8132,7 +8332,8 @@ export default {
               italian: 'Incidente',
               pronunciation: '/ˈɪnsɪdənt/',
               phonetic: 'IN-si-dent',
-              example: "A security incident triggers IR. = Un incidente di sicurezza innesca l'IR.",
+              example:
+                'An unauthorized access event that affects customer data is classified as a security incident requiring formal response. = Un evento di accesso non autorizzato che colpisce i dati dei clienti è classificato come incidente di sicurezza che richiede risposta formale.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8142,7 +8343,7 @@ export default {
               pronunciation: '/ˈɪnsɪdənt rɪˈspɒns/',
               phonetic: 'IN-si-dent ri-SPONS',
               example:
-                'Test incident response with game days. = Testa la risposta agli incidenti con game day.',
+                'A well-rehearsed incident response plan reduced our recovery time from three days to under six hours last quarter. = Un piano di risposta agli incidenti ben collaudato ha ridotto il nostro tempo di recovery da tre giorni a meno di sei ore lo scorso trimestre.',
               context: 'automation',
               difficulty: 'advanced',
               note: 'Abbreviato IR.',
@@ -8153,16 +8354,17 @@ export default {
               pronunciation: '/sɪˈvɛrəti/',
               phonetic: 'si-VE-re-ti',
               example:
-                'Severity drives the response level. = La gravità guida il livello di risposta.',
+                'Only findings with a severity of high or critical block the pipeline; medium issues generate warnings. = Solo i finding con severità alta o critica bloccano la pipeline; i problemi medi generano avvisi.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'SEV-1',
-              italian: 'SEV-1 / incidente critico',
+              italian: 'Incidente critico (SEV-1)',
               pronunciation: '/sɛv wʌn/',
               phonetic: 'SEV-UAN',
-              example: 'SEV-1 is the most critical. = SEV-1 è la più critica.',
+              example:
+                'Declaring a SEV-1 triggers the on-call chain, opens a war room, and requires executive notification within thirty minutes. = Dichiarare un SEV-1 attiva la catena di reperibilità, apre una war room e richiede la notifica ai dirigenti entro trenta minuti.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8172,7 +8374,7 @@ export default {
               pronunciation: '/ˈɪnsɪdənt kəˈmɑːndə/',
               phonetic: 'IN-si-dent ko-MAN-der',
               example:
-                "The incident commander coordinates roles. = Il comandante dell'incidente coordina i ruoli.",
+                "The incident commander coordinates all response activities and serves as the single point of communication during the crisis. = Il comandante dell'incidente coordina tutte le attività di risposta e funge da singolo punto di comunicazione durante la crisi.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8182,16 +8384,17 @@ export default {
               pronunciation: '/skraɪb/',
               phonetic: 'SKRAIB',
               example:
-                'The scribe captures decisions in real time. = Lo scriba cattura decisioni in tempo reale.',
+                'The scribe documents every decision, action, and timestamp in the war room channel for the post-mortem review. = Lo scribe documenta ogni decisione, azione e timestamp nel canale della war room per la revisione post-mortem.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'War Room',
-              italian: 'war room / sala di crisi',
+              italian: 'Sala di crisi (war room)',
               pronunciation: '/wɔː ruːm/',
               phonetic: 'UOR RUM',
-              example: 'The war room hosts all responders. = La war room ospita tutti i responder.',
+              example:
+                "All responders join the dedicated war room channel where the incident commander assigns tasks and tracks progress. = Tutti i risponditori si uniscono al canale dedicato della war room dove il comandante dell'incidente assegna compiti e traccia il progresso.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8200,17 +8403,19 @@ export default {
               italian: 'Reperibile',
               pronunciation: '/ɒn kɔːl/',
               phonetic: 'ON-KOL',
-              example: 'On-call rotations cover 24/7. = Le rotazioni di reperibilità coprono 24/7.',
+              example:
+                "The on-call engineer is the first responder for any production alert and must acknowledge within fifteen minutes. = L'ingegnere di turno è il primo risponditore per qualsiasi avviso di produzione e deve rispondere entro quindici minuti.",
               context: 'automation',
               difficulty: 'advanced',
               tool: 'PagerDuty, Opsgenie',
             },
             {
               english: 'Pager',
-              italian: 'pager / sistema di reperibilità',
+              italian: 'Sistema di reperibilità (pager)',
               pronunciation: '/ˈpeɪdʒə/',
               phonetic: 'PEI-ger',
-              example: 'A pager wakes the on-call. = Un pager sveglia il reperibile.',
+              example:
+                "When a critical alert fires, the pager system calls the on-call engineer's phone if the initial notification is not acknowledged. = Quando scatta un avviso critico, il sistema di pager chiama il telefono dell'ingegnere di turno se la notifica iniziale non viene riconosciuta.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8220,7 +8425,7 @@ export default {
               pronunciation: '/ˌɛskəˈleɪʃən ˈpɒləsi/',
               phonetic: 'es-ka-LEI-scion PO-li-si',
               example:
-                "Escalation policies route alerts upward. = Le policy di escalation instradano gli allarmi verso l'alto.",
+                'The escalation policy routes unacknowledged alerts to the team lead after ten minutes and to the VP after thirty. = La policy di escalation instrada gli avvisi non riconosciuti al team lead dopo dieci minuti e al VP dopo trenta.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8236,17 +8441,18 @@ export default {
               italian: 'Rilevamento',
               pronunciation: '/dɪˈtɛkʃən/',
               phonetic: 'di-TEK-scion',
-              example: "Detection starts the IR clock. = Il rilevamento avvia l'orologio IR.",
+              example:
+                "The moment of initial detection triggers the incident response timer and determines how quickly containment actions begin. = Il momento del rilevamento iniziale avvia il timer di risposta all'incidente e determina quanto velocemente iniziano le azioni di contenimento.",
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'Triage',
-              italian: 'triage / classificazione iniziale per priorità',
+              italian: 'Classificazione iniziale per priorità (triage)',
               pronunciation: '/ˈtriːɑːʒ/',
               phonetic: 'TRI-asg',
               example:
-                'Triage assigns severity and owner. = Il triage assegna gravità e proprietario.',
+                'During weekly triage meetings, the team classifies new vulnerability findings by severity and business impact. = Durante le riunioni di triage settimanali, il team classifica i nuovi finding di vulnerabilità per severità e impatto aziendale.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8255,7 +8461,8 @@ export default {
               italian: 'Contenimento',
               pronunciation: '/kənˈteɪnmənt/',
               phonetic: 'kon-TEIN-ment',
-              example: 'Containment limits the damage. = Il contenimento limita il danno.',
+              example:
+                "Immediate containment isolated the compromised server from the network, preventing the attacker from moving laterally. = Il contenimento immediato ha isolato il server compromesso dalla rete, impedendo all'attaccante di muoversi lateralmente.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8265,7 +8472,7 @@ export default {
               pronunciation: '/ɪˌrædɪˈkeɪʃən/',
               phonetic: 'i-ra-di-KEI-scion',
               example:
-                "Eradication removes attacker presence. = L'eradicazione rimuove la presenza dell'attaccante.",
+                "During eradication, the team removed the backdoor, rotated all credentials, and rebuilt the affected server from a clean image. = Durante l'eradicazione, il team ha rimosso la backdoor, ruotato tutte le credenziali e ricostruito il server interessato da un'immagine pulita.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8275,7 +8482,7 @@ export default {
               pronunciation: '/rɪˈkʌvəri/',
               phonetic: 'ri-KA-ve-ri',
               example:
-                'Recovery restores normal service. = Il ripristino ristabilisce il servizio normale.',
+                'The recovery phase restored services from verified backups and gradually brought traffic back to normal levels. = La fase di recovery ha ripristinato i servizi dai backup verificati e gradualmente riportato il traffico ai livelli normali.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8285,17 +8492,17 @@ export default {
               pronunciation: '/ˈlɛsənz lɜːnd/',
               phonetic: 'LES-sons LERND',
               example:
-                'Capture lessons learned blamelessly. = Cattura lezioni apprese senza colpe.',
+                'The lessons learned session identified that missing MFA on the VPN was the root cause of the initial compromise. = La sessione di lessons learned ha identificato che la mancanza di MFA sulla VPN era la causa principale della compromissione iniziale.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'Post-Mortem',
-              italian: 'post-mortem / analisi post-incidente',
+              italian: 'Analisi post-incidente (post-mortem)',
               pronunciation: '/pəʊst ˈmɔːtəm/',
               phonetic: 'POUST MOR-tem',
               example:
-                'A blameless post-mortem improves systems. = Un post-mortem senza colpa migliora i sistemi.',
+                'Publishing a blameless post-mortem after every significant incident builds organizational trust and improves future response. = Pubblicare un post-mortem senza colpa dopo ogni incidente significativo costruisce fiducia organizzativa e migliora la risposta futura.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8304,7 +8511,8 @@ export default {
               italian: 'Analisi della causa radice',
               pronunciation: '/ruːt kɔːz əˈnæləsɪs/',
               phonetic: 'RUT-KOZ a-NA-le-sis',
-              example: "RCA finds the underlying cause. = L'RCA trova la causa di fondo.",
+              example:
+                "The root cause analysis revealed that an expired certificate caused the monitoring gap that let the attacker persist. = L'analisi delle cause principali ha rivelato che un certificato scaduto ha causato la lacuna nel monitoraggio che ha permesso all'attaccante di persistere.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8314,7 +8522,7 @@ export default {
               pronunciation: '/ˈækʃən ˈaɪtəm/',
               phonetic: 'AK-scion AI-tem',
               example:
-                "Track action items to closure. = Traccia i punti d'azione fino alla chiusura.",
+                'Every post-mortem produces at least three action items with assigned owners and deadlines tracked in Jira. = Ogni post-mortem produce almeno tre azioni correttive con responsabili assegnati e scadenze tracciate in Jira.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8324,7 +8532,7 @@ export default {
               pronunciation: '/ˈtaɪmlaɪn/',
               phonetic: 'TAIM-lain',
               example:
-                'A timeline orders facts in the post-mortem. = Una cronologia ordina i fatti nel post-mortem.',
+                "The incident timeline reconstructed every event from the initial alert to full recovery in a minute-by-minute log. = La timeline dell'incidente ha ricostruito ogni evento dall'avviso iniziale al recovery completo in un log minuto per minuto.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8341,7 +8549,7 @@ export default {
               pronunciation: '/ˈrəʊlbæk/',
               phonetic: 'ROL-bak',
               example:
-                "Rollback to the last known good. = Esegui rollback all'ultima versione buona.",
+                "After the hotfix introduced a regression, the team performed a rollback to the previous stable release within five minutes. = Dopo che l'hotfix ha introdotto una regressione, il team ha eseguito un rollback alla release stabile precedente entro cinque minuti.",
               context: 'automation',
               difficulty: 'advanced',
               command: 'kubectl rollout undo deploy/app',
@@ -8352,17 +8560,17 @@ export default {
               pronunciation: '/ˈhɒtfɪks ˈpaɪplaɪn/',
               phonetic: 'HOT-fiks PAIP-lain',
               example:
-                'A hotfix pipeline ships in minutes. = Una pipeline di hotfix rilascia in minuti.',
+                'The hotfix pipeline skips non-essential tests to deliver critical security patches to production in under thirty minutes. = La pipeline hotfix salta i test non essenziali per consegnare patch di sicurezza critiche in produzione in meno di trenta minuti.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'Blue/Green Deploy',
-              italian: 'Deploy blue/green',
+              italian: 'Distribuzione blue/green (Blue/Green Deploy)',
               pronunciation: '/bluː ɡriːn dɪˈplɔɪ/',
               phonetic: 'BLU-GRIN di-PLOI',
               example:
-                "Blue/green deploys flip traffic instantly. = I deploy blue/green spostano il traffico all'istante.",
+                "Using a blue/green deploy strategy lets the team switch traffic to the patched environment instantly and roll back if needed. = Usare una strategia di deploy blue/green permette al team di spostare il traffico sull'ambiente patchato istantaneamente e fare rollback se necessario.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8372,7 +8580,7 @@ export default {
               pronunciation: '/kəˈnɛəri ˈrəʊlbæk/',
               phonetic: 'ka-NE-ri ROL-bak',
               example:
-                'Auto-rollback the canary on errors. = Rollback automatico del canarino su errori.',
+                'Automated metrics monitoring triggered a canary rollback after error rates exceeded the five-percent threshold. = Il monitoraggio automatico delle metriche ha attivato un canary rollback dopo che i tassi di errore hanno superato la soglia del cinque percento.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8382,7 +8590,7 @@ export default {
               pronunciation: '/ˈfiːtʃə flæɡ kɪl swɪtʃ/',
               phonetic: 'FI-cer FLAG KIL SUICI',
               example:
-                'A kill switch disables a feature instantly. = Un kill switch disabilita una feature istantaneamente.',
+                'When the vulnerability was confirmed, the team toggled the feature flag kill switch to disable the affected module instantly. = Quando la vulnerabilità è stata confermata, il team ha attivato il kill switch del feature flag per disabilitare il modulo interessato istantaneamente.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8392,7 +8600,7 @@ export default {
               pronunciation: '/ɪˈmɜːdʒənsi tʃeɪndʒ/',
               phonetic: 'i-MER-gen-si CIEINGG',
               example:
-                "Emergency changes follow a fast-track. = Le modifiche d'emergenza seguono una via rapida.",
+                'An emergency change bypasses the normal approval workflow but requires retroactive review within twenty-four hours. = Un cambio di emergenza bypassa il workflow di approvazione normale ma richiede una revisione retroattiva entro ventiquattro ore.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8402,7 +8610,7 @@ export default {
               pronunciation: '/ˈbækaʊt plæn/',
               phonetic: 'BAK-aut PLAN',
               example:
-                'Every change needs a backout plan. = Ogni modifica richiede un piano di backout.',
+                'Every production deployment includes a documented backout plan describing how to revert if the change causes issues. = Ogni deployment in produzione include un piano di backout documentato che descrive come revertire se la modifica causa problemi.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8412,7 +8620,7 @@ export default {
               pronunciation: '/ˈsɜːvɪs ˌdɛɡrəˈdeɪʃən/',
               phonetic: 'SER-vis de-gra-DEI-scion',
               example:
-                'Track service degradation, not just outages. = Traccia il degrado del servizio, non solo i down.',
+                "During the incident, the team chose graceful service degradation over a full outage, disabling only the compromised feature. = Durante l'incidente, il team ha scelto un degrado graduale del servizio invece di un'interruzione completa, disabilitando solo la funzionalità compromessa.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8422,7 +8630,7 @@ export default {
               pronunciation: '/ˈsteɪtəs peɪdʒ/',
               phonetic: 'STEI-tas PEIGG',
               example:
-                'Update the status page promptly. = Aggiorna la pagina di stato prontamente.',
+                'Updating the public status page within fifteen minutes of a confirmed incident maintains customer trust and transparency. = Aggiornare la pagina di stato pubblica entro quindici minuti da un incidente confermato mantiene la fiducia dei clienti e la trasparenza.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Statuspage, Statusgator',
@@ -8433,7 +8641,7 @@ export default {
               pronunciation: '/ˈkʌstəmə kəˌmjuːnɪˈkeɪʃən/',
               phonetic: 'KAS-to-mer ko-miu-ni-KEI-scion',
               example:
-                'Be honest in customer communications. = Sii onesto nelle comunicazioni al cliente.',
+                'The communication playbook templates ensure consistent, timely customer communication during security incidents. = I template del playbook di comunicazione assicurano una comunicazione ai clienti coerente e tempestiva durante gli incidenti di sicurezza.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8450,7 +8658,7 @@ export default {
               pronunciation: '/fəˈrɛnsɪks/',
               phonetic: 'fo-REN-siks',
               example:
-                'Forensics preserves evidence chain. = La forense preserva la catena delle prove.',
+                "The forensics team created a bit-for-bit disk image of the compromised server before any remediation began. = Il team di forensica ha creato un'immagine disco bit per bit del server compromesso prima che iniziasse qualsiasi remediation.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8460,7 +8668,7 @@ export default {
               pronunciation: '/tʃeɪn əv ˈkʌstədi/',
               phonetic: 'CIEIN-OV KAS-to-di',
               example:
-                'Chain of custody is critical for evidence. = La catena di custodia è critica per le prove.',
+                'Maintaining a strict chain of custody for evidence ensures it remains admissible in legal proceedings. = Mantenere una rigorosa catena di custodia per le prove assicura che rimangano ammissibili nei procedimenti legali.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8470,7 +8678,7 @@ export default {
               pronunciation: '/dɪsk ˈɪmɪdʒ/',
               phonetic: 'DISK I-migg',
               example:
-                "Take a disk image before any cleanup. = Acquisisci un'immagine disco prima della pulizia.",
+                "The analyst mounted the forensic disk image in a sandboxed environment to analyze malware artifacts safely. = L'analista ha montato l'immagine disco forense in un ambiente sandboxed per analizzare gli artefatti malware in sicurezza.",
               context: 'automation',
               difficulty: 'advanced',
               command: 'dd if=/dev/sda of=image.raw bs=4M',
@@ -8481,7 +8689,7 @@ export default {
               pronunciation: '/ˈmɛməri dʌmp/',
               phonetic: 'ME-mo-ri DAMP',
               example:
-                'A memory dump captures live state. = Un dump della memoria cattura lo stato live.',
+                'Capturing a live memory dump before shutting down the server preserved encryption keys and network connections in use. = Acquisire un dump della memoria live prima di spegnere il server ha preservato chiavi di crittografia e connessioni di rete in uso.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Volatility',
@@ -8492,7 +8700,7 @@ export default {
               pronunciation: '/ˈtaɪmlaɪn əˈnæləsɪs/',
               phonetic: 'TAIM-lain a-NA-le-sis',
               example:
-                "Timeline analysis reconstructs attacks. = L'analisi della cronologia ricostruisce gli attacchi.",
+                "Forensic timeline analysis correlated file system timestamps with network logs to reconstruct the attacker's exact sequence. = L'analisi forense della timeline ha correlato i timestamp del filesystem con i log di rete per ricostruire la sequenza esatta dell'attaccante.",
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Plaso, log2timeline',
@@ -8503,7 +8711,7 @@ export default {
               pronunciation: '/aɪ əʊ siː swiːp/',
               phonetic: 'AI-O-SI SUIP',
               example:
-                'An IOC sweep finds compromised hosts. = Una spazzata di IOC trova host compromessi.',
+                'Running an IOC sweep across all endpoints confirmed that only one server was affected by the specific malware variant. = Eseguire un IOC sweep su tutti gli endpoint ha confermato che solo un server era colpito dalla specifica variante di malware.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8513,7 +8721,7 @@ export default {
               pronunciation: '/ˈɛvɪdəns ˈlɒkə/',
               phonetic: 'E-vi-dens LO-ker',
               example:
-                'Store evidence in an immutable locker. = Conserva le prove in un armadietto immutabile.',
+                'All forensic artifacts are stored in a write-once evidence locker with tamper-evident seals and access logging. = Tutti gli artefatti forensi sono memorizzati in un evidence locker write-once con sigilli anti-manomissione e logging degli accessi.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8523,7 +8731,7 @@ export default {
               pronunciation: '/hæʃ ˌvɛrɪfɪˈkeɪʃən/',
               phonetic: 'HASH ve-ri-fi-KEI-scion',
               example:
-                "Hash verification proves integrity. = La verifica dell'hash prova l'integrità.",
+                "Before analyzing the disk image, the examiner performed hash verification to confirm the copy matches the original. = Prima di analizzare l'immagine disco, l'esaminatore ha eseguito la verifica dell'hash per confermare che la copia corrisponde all'originale.",
               context: 'automation',
               difficulty: 'advanced',
               command: 'sha256sum image.raw',
@@ -8534,7 +8742,7 @@ export default {
               pronunciation: '/kəʊld ˈstɔːrɪdʒ/',
               phonetic: 'KOULD STO-rigg',
               example:
-                'Move evidence to cold storage long-term. = Sposta le prove in storage freddo a lungo termine.',
+                'Older forensic evidence moves to cold storage on encrypted tapes with a documented retrieval process. = Le prove forensi più vecchie vengono spostate in cold storage su nastri crittografati con un processo di recupero documentato.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8544,7 +8752,7 @@ export default {
               pronunciation: '/kənˈteɪnmənt ˈnɛtwɜːk/',
               phonetic: 'kon-TEIN-ment NET-uork',
               example:
-                'Move suspect hosts to a containment network. = Sposta gli host sospetti in una rete di contenimento.',
+                "Moving the compromised host to a containment network lets analysts observe attacker behavior without risking further spread. = Spostare l'host compromesso in una rete di contenimento permette agli analisti di osservare il comportamento dell'attaccante senza rischiare ulteriore diffusione.",
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -8567,10 +8775,11 @@ export default {
           items: [
             {
               english: 'RBAC',
-              italian: 'RBAC / Role-Based Access Control',
+              italian: 'Role-Based Access Control (RBAC)',
               pronunciation: '/ɑːr biː eɪ siː/',
               phonetic: 'AR-BI-EI-SI',
-              example: "RBAC governs cluster access. = RBAC governa l'accesso al cluster.",
+              example:
+                "Implementing fine-grained RBAC in Kubernetes ensures that developers can only manage resources within their own namespace. = Implementare un RBAC granulare in Kubernetes assicura che gli sviluppatori possano gestire risorse solo all'interno del proprio namespace.",
               context: 'container-security',
               difficulty: 'advanced',
               note: 'Role-Based Access Control.',
@@ -8581,38 +8790,38 @@ export default {
               pronunciation: '/rəʊl/',
               phonetic: 'ROUL',
               example:
-                'A Role grants permissions in a namespace. = Un Role concede permessi in un namespace.',
+                'Creating a dedicated deployment role with only the required permissions prevents developers from exceeding their access. = Creare un ruolo di deployment dedicato con solo i permessi necessari impedisce agli sviluppatori di eccedere il loro accesso.',
               context: 'container-security',
               difficulty: 'advanced',
               code: 'kind: Role\nrules:\n- verbs: [get,list]',
             },
             {
               english: 'ClusterRole',
-              italian: 'ClusterRole / ruolo a livello cluster K8s',
+              italian: 'Ruolo a livello cluster K8s (ClusterRole)',
               pronunciation: '/ˈklʌstərəʊl/',
               phonetic: 'KLAS-ter-roul',
               example:
-                'A ClusterRole spans the whole cluster. = Un ClusterRole copre tutto il cluster.',
+                'A read-only ClusterRole lets the monitoring service list pods and nodes across all namespaces without write access. = Un ClusterRole in sola lettura permette al servizio di monitoraggio di elencare pod e nodi in tutti i namespace senza accesso in scrittura.',
               context: 'container-security',
               difficulty: 'advanced',
             },
             {
               english: 'RoleBinding',
-              italian: 'RoleBinding / aggancio ruolo a soggetto K8s',
+              italian: 'Aggancio ruolo a soggetto K8s (RoleBinding)',
               pronunciation: '/rəʊl ˈbaɪndɪŋ/',
               phonetic: 'ROUL BAIN-ding',
               example:
-                'RoleBindings tie subjects to roles. = I RoleBinding legano soggetti ai ruoli.',
+                'Creating a RoleBinding ties the developer group to the edit role only in the development namespace. = Creare un RoleBinding lega il gruppo degli sviluppatori al ruolo edit solo nel namespace di sviluppo.',
               context: 'container-security',
               difficulty: 'advanced',
             },
             {
               english: 'ServiceAccount',
-              italian: 'ServiceAccount / account di servizio K8s',
+              italian: 'Account di servizio K8s (ServiceAccount)',
               pronunciation: '/ˈsɜːvɪs əˈkaʊnt/',
               phonetic: 'SER-vis a-KAUNT',
               example:
-                'Pods use a ServiceAccount to authenticate. = I pod usano un ServiceAccount per autenticarsi.',
+                'Each pod runs under a dedicated ServiceAccount with the minimum set of API permissions it requires. = Ogni pod gira sotto un ServiceAccount dedicato con il set minimo di permessi API di cui ha bisogno.',
               context: 'container-security',
               difficulty: 'advanced',
               code: 'serviceAccountName: my-sa',
@@ -8622,7 +8831,8 @@ export default {
               italian: 'Soggetto',
               pronunciation: '/ˈsʌbdʒɪkt/',
               phonetic: 'SAB-gekt',
-              example: 'A subject is a user, group, or SA. = Un soggetto è utente, gruppo o SA.',
+              example:
+                "The RoleBinding references each subject by kind—User, Group, or ServiceAccount—to control who gets access. = Il RoleBinding referenzia ogni soggetto per tipo—User, Group o ServiceAccount—per controllare chi ottiene l'accesso.",
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8632,7 +8842,7 @@ export default {
               pronunciation: '/vɜːb/',
               phonetic: 'VERB',
               example:
-                'Verbs include get, list, create, delete. = I verbi includono get, list, create, delete.',
+                'Restricting the allowed verbs to get and list on the secrets resource prevents unauthorized modifications. = Limitare i verbi permessi a get e list sulla risorsa secrets previene modifiche non autorizzate.',
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8642,7 +8852,7 @@ export default {
               pronunciation: '/rɪˈzɔːs/',
               phonetic: 'ri-ZORS',
               example:
-                "Lock down access to secrets resources. = Limita l'accesso alle risorse secrets.",
+                'The RBAC rule restricts which resource types each ServiceAccount can access, limiting pods to only their own configmaps. = La regola RBAC limita quali tipi di risorsa ogni ServiceAccount può accedere, limitando i pod solo alle proprie configmap.',
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8652,17 +8862,17 @@ export default {
               pronunciation: '/ˈneɪmspeɪs ˈbaʊndəri/',
               phonetic: 'NEIM-speis BAUN-da-ri',
               example:
-                'Use namespaces as a security boundary. = Usa i namespace come confine di sicurezza.',
+                "Enforcing a strict namespace boundary prevents one team's workloads from accessing another team's secrets and config maps. = Imporre un confine di namespace rigoroso impedisce ai workload di un team di accedere ai secret e alle config map di un altro team.",
               context: 'container-security',
               difficulty: 'advanced',
             },
             {
               english: 'kube-rbac-proxy',
-              italian: 'kube-rbac-proxy / proxy di autorizzazione',
+              italian: 'Proxy di autorizzazione (kube-rbac-proxy)',
               pronunciation: '/kjuːb ɑːr biː eɪ siː ˈprɒksi/',
               phonetic: 'KIUB-AR-BI-EI-SI PROK-si',
               example:
-                'kube-rbac-proxy guards metric endpoints. = kube-rbac-proxy protegge gli endpoint metrici.',
+                "Deploying kube-rbac-proxy as a sidecar adds fine-grained authorization to custom metrics endpoints exposed by the application. = Deployare kube-rbac-proxy come sidecar aggiunge autorizzazione granulare agli endpoint di metriche personalizzate esposti dall'applicazione.",
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'kube-rbac-proxy',
@@ -8680,17 +8890,18 @@ export default {
               pronunciation: '/ˈnɛtwɜːk ˈpɒləsi/',
               phonetic: 'NET-uork PO-li-si',
               example:
-                'Network policies isolate workloads. = Le policy di rete isolano i workload.',
+                "Applying a network policy that blocks all egress except DNS and the API server limits what a compromised pod can reach. = Applicare una network policy che blocca tutto l'egress tranne DNS e l'API server limita ciò che un pod compromesso può raggiungere.",
               context: 'container-security',
               difficulty: 'advanced',
               code: 'kind: NetworkPolicy\npodSelector: {}',
             },
             {
               english: 'Default Deny',
-              italian: 'default deny / nega di default',
+              italian: 'Nega di default (default deny)',
               pronunciation: '/dɪˈfɔːlt dɪˈnaɪ/',
               phonetic: 'di-FOLT di-NAI',
-              example: 'Start with a default deny policy. = Parti con una policy default deny.',
+              example:
+                'Setting default deny on every namespace means all traffic is blocked unless an explicit network policy allows it. = Impostare default deny su ogni namespace significa che tutto il traffico è bloccato a meno che una network policy esplicita lo permetta.',
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8700,7 +8911,7 @@ export default {
               pronunciation: '/ˈiːɡrɛs ˈpɒləsi/',
               phonetic: 'I-gres PO-li-si',
               example:
-                "Egress policies block data exfil. = Le policy di egress bloccano l'esfiltrazione dati.",
+                "The egress policy limits outbound traffic from the payment pod to only the bank's API endpoint on port 443. = La policy di egress limita il traffico in uscita dal pod di pagamento solo all'endpoint API della banca sulla porta 443.",
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8710,7 +8921,7 @@ export default {
               pronunciation: '/ˈɪnɡrɛs ˈpɒləsi/',
               phonetic: 'IN-gres PO-li-si',
               example:
-                'Ingress policies whitelist callers. = Le policy di ingress mettono in whitelist i chiamanti.',
+                "An ingress policy ensures that only the API gateway pod can send traffic to the backend service pods. = Una policy di ingress assicura che solo il pod dell'API gateway possa inviare traffico ai pod del servizio backend.",
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8719,7 +8930,8 @@ export default {
               italian: 'Selettore di pod',
               pronunciation: '/pɒd sɪˈlɛktə/',
               phonetic: 'POD si-LEK-ter',
-              example: 'Pod selectors target labels. = I selettori di pod prendono di mira label.',
+              example:
+                'The network policy uses a pod selector with the label app=frontend to apply rules only to the web-facing containers. = La network policy usa un pod selector con il label app=frontend per applicare regole solo ai container web-facing.',
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8729,7 +8941,7 @@ export default {
               pronunciation: '/ˈneɪmspeɪs sɪˈlɛktə/',
               phonetic: 'NEIM-speis si-LEK-ter',
               example:
-                'Namespace selectors limit cross-NS traffic. = I selettori di namespace limitano traffico cross-NS.',
+                'Adding a namespace selector allows the monitoring namespace to scrape metrics from all application namespaces. = Aggiungere un namespace selector permette al namespace di monitoraggio di raccogliere metriche da tutti i namespace applicativi.',
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8738,7 +8950,8 @@ export default {
               italian: 'Calico (CNI Kubernetes con NetworkPolicy)',
               pronunciation: '/ˈkælɪkəʊ/',
               phonetic: 'KA-li-ko',
-              example: 'Calico extends NetworkPolicy. = Calico estende NetworkPolicy.',
+              example:
+                'Switching to Calico network policies gave us the ability to write rules based on DNS names instead of just IP addresses. = Passare alle network policy Calico ci ha dato la possibilità di scrivere regole basate su nomi DNS invece che solo su indirizzi IP.',
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'Calico',
@@ -8748,7 +8961,8 @@ export default {
               italian: 'NetworkPolicy Cilium',
               pronunciation: '/ˈsɪliəm ˈnɛtwɜːk ˈpɒləsi/',
               phonetic: 'SI-lium NET-uork PO-li-si',
-              example: 'Cilium adds L7 to NetworkPolicy. = Cilium aggiunge L7 a NetworkPolicy.',
+              example:
+                'A Cilium NetworkPolicy can enforce layer-seven rules that allow HTTP GET but block HTTP DELETE on the same endpoint. = Una Cilium NetworkPolicy può imporre regole a livello sette che permettono HTTP GET ma bloccano HTTP DELETE sullo stesso endpoint.',
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'Cilium',
@@ -8759,7 +8973,7 @@ export default {
               pronunciation: '/ˈsɜːvɪs mɛʃ ˈpɒləsi/',
               phonetic: 'SER-vis MESH PO-li-si',
               example:
-                'Service mesh policies enforce mTLS. = Le policy del service mesh applicano mTLS.',
+                'The service mesh policy requires mutual TLS for all east-west traffic between microservices in the cluster. = La policy della service mesh richiede TLS reciproco per tutto il traffico est-ovest tra microservizi nel cluster.',
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8769,7 +8983,7 @@ export default {
               pronunciation: '/ˌmaɪkrəʊˌsɛɡmɛnˈteɪʃən/',
               phonetic: 'mai-kro-seg-men-TEI-scion',
               example:
-                'Microsegmentation limits blast radius. = La microsegmentazione limita il blast radius.',
+                "Applying microsegmentation limits blast radius so that a compromised pod cannot communicate with unrelated services. = Applicare la microsegmentazione limita il raggio d'impatto così che un pod compromesso non possa comunicare con servizi non correlati.",
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8782,10 +8996,11 @@ export default {
           items: [
             {
               english: 'Pod Security Standard',
-              italian: 'Pod Security Standard / standard di sicurezza pod K8s',
+              italian: 'Standard di sicurezza pod K8s (Pod Security Standard)',
               pronunciation: '/pɒd sɪˈkjʊərəti ˈstændəd/',
               phonetic: 'POD si-KIU-ri-ti STAN-dard',
-              example: 'PSS replaces the old PSP. = PSS sostituisce le vecchie PSP.',
+              example:
+                "Applying the restricted Pod Security Standard prevents containers from running as root or mounting host paths. = Applicare il Pod Security Standard ristretto impedisce ai container di girare come root o montare percorsi dell'host.",
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8795,7 +9010,7 @@ export default {
               pronunciation: '/ˈprɪvəlɪdʒd ˈprəʊfaɪl/',
               phonetic: 'PRI-vi-leggd PRO-fail',
               example:
-                'Avoid the privileged profile in prod. = Evita il profilo privileged in produzione.',
+                'The privileged profile should only be assigned to system-level DaemonSets that genuinely need host-level access. = Il profilo privileged dovrebbe essere assegnato solo ai DaemonSet a livello di sistema che necessitano genuinamente di accesso a livello host.',
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8804,7 +9019,8 @@ export default {
               italian: 'Profilo baseline',
               pronunciation: '/ˈbeɪslaɪn ˈprəʊfaɪl/',
               phonetic: 'BEIS-lain PRO-fail',
-              example: 'Baseline blocks the worst defaults. = Baseline blocca i peggiori default.',
+              example:
+                "Applying the baseline profile to the staging namespace prevents privilege escalation while allowing most common workloads. = Applicare il profilo baseline al namespace di staging previene l'escalation dei privilegi pur permettendo la maggior parte dei workload comuni.",
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8813,16 +9029,18 @@ export default {
               italian: 'Profilo restricted',
               pronunciation: '/rɪˈstrɪktɪd ˈprəʊfaɪl/',
               phonetic: 'ri-STRIK-ted PRO-fail',
-              example: 'Restricted is the strongest preset. = Restricted è il preset più forte.',
+              example:
+                "Production namespaces enforce the restricted profile, which mandates non-root execution and read-only filesystems. = I namespace di produzione impongono il profilo restricted, che impone l'esecuzione non-root e filesystem in sola lettura.",
               context: 'container-security',
               difficulty: 'advanced',
             },
             {
               english: 'OPA Gatekeeper',
-              italian: 'OPA Gatekeeper / OPA per Kubernetes',
+              italian: 'OPA per Kubernetes (OPA Gatekeeper)',
               pronunciation: '/ˈəʊpə ˈɡeɪtkiːpə/',
               phonetic: 'O-pa GHEIT-ki-per',
-              example: 'Gatekeeper enforces Rego in K8s. = Gatekeeper applica Rego in K8s.',
+              example:
+                "Deploying OPA Gatekeeper on the cluster enforces constraint templates that reject non-compliant workloads at admission. = Deployare OPA Gatekeeper sul cluster impone constraint template che rifiutano i workload non conformi all'ammissione.",
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'OPA Gatekeeper',
@@ -8833,7 +9051,7 @@ export default {
               pronunciation: '/kənˈstreɪnt ˈtɛmpleɪt/',
               phonetic: 'kon-STREINT TEM-pleit',
               example:
-                'A constraint template defines policy logic. = Un template di vincolo definisce la logica di policy.',
+                'A parameterized constraint template lets teams reuse the same validation logic with different threshold values. = Un constraint template parametrizzato permette ai team di riutilizzare la stessa logica di validazione con valori di soglia diversi.',
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8843,7 +9061,7 @@ export default {
               pronunciation: '/mjuːˈteɪʃən/',
               phonetic: 'miu-TEI-scion',
               example:
-                'Gatekeeper mutations add defaults. = Le mutazioni di Gatekeeper aggiungono default.',
+                'The Kyverno mutation policy automatically adds resource limits to any pod that a developer forgets to specify. = La policy di mutazione Kyverno aggiunge automaticamente limiti di risorse a qualsiasi pod che uno sviluppatore dimentica di specificare.',
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8853,27 +9071,28 @@ export default {
               pronunciation: '/ˈɔːdɪt məʊd/',
               phonetic: 'O-dit MOUD',
               example:
-                'Audit mode logs without blocking. = La modalità audit registra senza bloccare.',
+                'Running the new policy in audit mode for two weeks revealed twenty non-compliant deployments without disrupting production. = Eseguire la nuova policy in modalità audit per due settimane ha rivelato venti deployment non conformi senza interrompere la produzione.',
               context: 'container-security',
               difficulty: 'advanced',
             },
             {
               english: 'Pod Security Admission',
-              italian: 'Pod Security Admission / controller di sicurezza pod',
+              italian: 'Controller di sicurezza pod (Pod Security Admission)',
               pronunciation: '/pɒd sɪˈkjʊərəti ədˈmɪʃən/',
               phonetic: 'POD si-KIU-ri-ti ad-MI-scion',
               example:
-                'PSA enforces PSS at namespace level. = PSA applica le PSS a livello di namespace.',
+                'Configuring Pod Security Admission at the namespace level enforces security standards without installing any third-party controller. = Configurare Pod Security Admission a livello di namespace impone standard di sicurezza senza installare alcun controller di terze parti.',
               context: 'container-security',
               difficulty: 'advanced',
               code: 'pod-security.kubernetes.io/enforce: restricted',
             },
             {
               english: 'Validating Admission Policy',
-              italian: 'Validating Admission Policy / policy di ammissione',
+              italian: 'Policy di ammissione (Validating Admission Policy)',
               pronunciation: '/ˈvælɪdeɪtɪŋ ədˈmɪʃən ˈpɒləsi/',
               phonetic: 'VA-li-dei-ting ad-MI-scion PO-li-si',
-              example: 'CEL-based VAP runs in-cluster. = Le VAP basate su CEL girano nel cluster.',
+              example:
+                'Writing a validating admission policy in CEL provides native Kubernetes enforcement without depending on OPA or Kyverno. = Scrivere una validating admission policy in CEL fornisce enforcement nativo Kubernetes senza dipendere da OPA o Kyverno.',
               context: 'container-security',
               difficulty: 'advanced',
               note: 'Built-in CEL admission control.',
@@ -8891,7 +9110,7 @@ export default {
               pronunciation: '/eɪ piː aɪ ˈsɜːvə ˈhɑːdənɪŋ/',
               phonetic: 'EI-PI-AI SER-ver HAR-de-ning',
               example:
-                "API server hardening blocks anonymous access. = L'hardening dell'API server blocca l'accesso anonimo.",
+                "Proper API server hardening includes disabling anonymous authentication, enabling audit logging, and encrypting etcd data. = Un corretto hardening dell'API server include disabilitare l'autenticazione anonima, abilitare il logging di audit e crittografare i dati etcd.",
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8900,7 +9119,8 @@ export default {
               italian: 'Cifratura di etcd',
               pronunciation: '/ɛtsiːdiː ɪnˈkrɪpʃən/',
               phonetic: 'ET-SI-DI in-KRIP-scion',
-              example: 'Encrypt secrets at rest in etcd. = Cifra i segreti a riposo in etcd.',
+              example:
+                'Enabling etcd encryption ensures that all secrets stored in the cluster database are encrypted at rest with AES-256. = Abilitare la crittografia etcd assicura che tutti i secret memorizzati nel database del cluster siano crittografati a riposo con AES-256.',
               context: 'container-security',
               difficulty: 'advanced',
               code: 'EncryptionConfiguration with aescbc',
@@ -8911,7 +9131,7 @@ export default {
               pronunciation: '/ˈɔːdɪt ˈpɒləsi/',
               phonetic: 'O-dit PO-li-si',
               example:
-                "Audit policies log K8s API access. = Le policy di audit registrano l'accesso all'API K8s.",
+                'The Kubernetes audit policy captures all requests to secrets and configmaps at the metadata level for security review. = La policy di audit Kubernetes cattura tutte le richieste a secret e configmap a livello di metadati per la revisione di sicurezza.',
               context: 'container-security',
               difficulty: 'advanced',
             },
@@ -8921,49 +9141,50 @@ export default {
               pronunciation: '/nəʊd ˌaɪsəˈleɪʃən/',
               phonetic: 'NOUD ai-so-LEI-scion',
               example:
-                "Node isolation segregates workloads. = L'isolamento dei nodi segrega i workload.",
+                "Using taints for node isolation ensures that sensitive workloads run only on dedicated hardware with stricter controls. = Usare i taint per l'isolamento dei nodi assicura che i workload sensibili girino solo su hardware dedicato con controlli più rigorosi.",
               context: 'container-security',
               difficulty: 'advanced',
             },
             {
               english: 'Taint',
-              italian: 'taint / etichetta che respinge pod K8s',
+              italian: 'Etichetta che respinge pod K8s (taint)',
               pronunciation: '/teɪnt/',
               phonetic: 'TEINT',
               example:
-                'Taints repel pods from sensitive nodes. = I taint respingono pod da nodi sensibili.',
+                'Adding a taint to GPU nodes prevents non-GPU workloads from being scheduled there and wasting specialized resources. = Aggiungere un taint ai nodi GPU impedisce che workload non-GPU vengano schedulati lì e sprechino risorse specializzate.',
               context: 'container-security',
               difficulty: 'advanced',
               command: 'kubectl taint nodes node1 sec=true:NoSchedule',
             },
             {
               english: 'GVisor',
-              italian: 'gVisor / sandbox container Google',
+              italian: 'Sandbox container Google (gVisor)',
               pronunciation: '/ˈdʒiːˌvaɪzə/',
               phonetic: 'GI-VAI-zer',
               example:
-                'gVisor sandboxes container syscalls. = gVisor mette in sandbox le syscall del container.',
+                'Running untrusted containers with gVisor provides an additional kernel-level sandbox that intercepts all syscalls. = Eseguire container non fidati con gVisor fornisce un sandbox aggiuntivo a livello kernel che intercetta tutte le syscall.',
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'Google gVisor',
             },
             {
               english: 'Kata Containers',
-              italian: 'Kata Containers / container con isolamento VM',
+              italian: 'Container con isolamento VM (Kata Containers)',
               pronunciation: '/ˈkɑːtə kənˈteɪnəz/',
               phonetic: 'KA-ta kon-TEI-ners',
               example:
-                'Kata Containers run in lightweight VMs. = I Kata Containers girano in VM leggere.',
+                'Using Kata Containers gives each pod a lightweight virtual machine boundary, providing stronger isolation than standard containers. = Usare Kata Containers dà a ogni pod un confine di macchina virtuale leggero, fornendo un isolamento più forte dei container standard.',
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'Kata Containers',
             },
             {
               english: 'Trivy K8s',
-              italian: 'Trivy K8s / scansione cluster Kubernetes',
+              italian: 'Scansione cluster Kubernetes (Trivy K8s)',
               pronunciation: '/ˈtrɪvi keɪ eɪtɛs/',
               phonetic: 'TRI-vi KEI-EITS',
-              example: 'Trivy K8s audits live clusters. = Trivy K8s audita cluster live.',
+              example:
+                'Running Trivy K8s against the live cluster reveals misconfigured RBAC roles, exposed secrets, and vulnerable running images. = Eseguire Trivy K8s sul cluster live rivela ruoli RBAC mal configurati, secret esposti e immagini in esecuzione vulnerabili.',
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'Trivy',
@@ -8975,7 +9196,7 @@ export default {
               pronunciation: '/ˈkjuːbskeɪp/',
               phonetic: 'KIUB-skeip',
               example:
-                'kubescape checks NSA/MITRE benchmarks. = kubescape verifica benchmark NSA/MITRE.',
+                'Scheduling nightly kubescape scans with CIS and NSA frameworks generates a compliance score for each Kubernetes namespace. = Programmare scansioni kubescape notturne con i framework CIS e NSA genera un punteggio di compliance per ogni namespace Kubernetes.',
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'kubescape',
@@ -8987,7 +9208,7 @@ export default {
               pronunciation: '/siː aɪ ɛs keɪ eɪtɛs/',
               phonetic: 'SI-AI-ES KEI-EITS',
               example:
-                "CIS K8s benchmark guides hardening. = Il benchmark CIS K8s guida l'hardening.",
+                "Running the CIS K8s Benchmark on the master nodes flagged that the API server was not using TLS certificate rotation. = Eseguire il CIS K8s Benchmark sui nodi master ha segnalato che l'API server non usava la rotazione dei certificati TLS.",
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'kube-bench',
@@ -9015,49 +9236,50 @@ export default {
               pronunciation: '/məˈtʃʊərəti ˈmɒdl/',
               phonetic: 'ma-CIU-re-ti MO-del',
               example:
-                'A maturity model benchmarks practices. = Un modello di maturità misura le pratiche.',
+                "Evaluating the organization against a DevSecOps maturity model reveals which security practices need the most improvement. = Valutare l'organizzazione contro un modello di maturità DevSecOps rivela quali pratiche di sicurezza necessitano di più miglioramento.",
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'OWASP DSOMM',
-              italian: 'OWASP DSOMM / DevSecOps Maturity Model',
+              italian: 'DevSecOps Maturity Model (OWASP DSOMM)',
               pronunciation: '/ˈəʊwɒsp ˈdiːsɒm/',
               phonetic: 'O-uosp DI-som',
               example:
-                "OWASP DSOMM scores DevSecOps activity. = OWASP DSOMM misura l'attività DevSecOps.",
+                "Scoring our program against the OWASP DSOMM highlighted that dynamic testing and secret management were at the lowest maturity. = Valutare il nostro programma contro l'OWASP DSOMM ha evidenziato che il testing dinamico e la gestione dei segreti erano al livello di maturità più basso.",
               context: 'culture',
               difficulty: 'advanced',
               note: 'DevSecOps Maturity Model.',
             },
             {
               english: 'OWASP SAMM',
-              italian: 'OWASP SAMM / Software Assurance Maturity Model',
+              italian: 'Software Assurance Maturity Model (OWASP SAMM)',
               pronunciation: '/ˈəʊwɒsp sæm/',
               phonetic: 'O-uosp SAM',
               example:
-                'SAMM is a software assurance model. = SAMM è un modello di assurance software.',
+                'The OWASP SAMM assessment showed that our governance and design practices scored well but our verification was weak. = La valutazione OWASP SAMM ha mostrato che le nostre pratiche di governance e design avevano buoni punteggi ma la verifica era debole.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Software Assurance Maturity Model.',
             },
             {
               english: 'BSIMM',
-              italian: 'BSIMM / Building Security In Maturity Model',
+              italian: 'Building Security In Maturity Model (BSIMM)',
               pronunciation: '/ˈbɪzɪm/',
               phonetic: 'BIS-im',
-              example: 'BSIMM observes industry practices. = BSIMM osserva pratiche di settore.',
+              example:
+                'Comparing our security activities against the BSIMM study revealed that we lag behind peers in penetration testing frequency. = Confrontare le nostre attività di sicurezza con lo studio BSIMM ha rivelato che siamo indietro rispetto ai pari nella frequenza di penetration testing.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Building Security In Maturity Model.',
             },
             {
               english: 'NIST SSDF',
-              italian: 'NIST SSDF / Secure Software Development Framework',
+              italian: 'Secure Software Development Framework (NIST SSDF)',
               pronunciation: '/nɪst ɛs ɛs diː ɛf/',
               phonetic: 'NIST ES-ES-DI-EF',
               example:
-                'NIST SSDF defines secure SDLC tasks. = NIST SSDF definisce compiti SDLC sicuri.',
+                'Aligning our SDLC practices with the NIST SSDF ensures compliance with federal secure software development requirements. = Allineare le nostre pratiche SDLC con il NIST SSDF assicura la conformità con i requisiti federali di sviluppo software sicuro.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Secure Software Development Framework.',
@@ -9068,7 +9290,7 @@ export default {
               pronunciation: '/ˌkeɪpəˈbɪləti ˈlɛvl/',
               phonetic: 'kei-pa-BI-li-ti LE-vel',
               example:
-                'Each capability level is harder. = Ogni livello di capacità è più difficile.',
+                "Moving from capability level one to two requires automating at least eighty percent of the security testing activities. = Passare dal livello di capability uno al due richiede l'automazione di almeno l'ottanta percento delle attività di testing di sicurezza.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9078,7 +9300,7 @@ export default {
               pronunciation: '/ækˈtɪvəti/',
               phonetic: 'ak-TI-vi-ti',
               example:
-                'Activities map to maturity levels. = Le attività mappano a livelli di maturità.',
+                'Each security activity in the maturity model maps to a specific team, tool, and measurable outcome. = Ogni attività di sicurezza nel modello di maturità corrisponde a un team specifico, uno strumento e un risultato misurabile.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9088,7 +9310,7 @@ export default {
               pronunciation: '/ˈpræktɪs/',
               phonetic: 'PRAK-tis',
               example:
-                'A practice groups related activities. = Una pratica raggruppa attività correlate.',
+                'The secure build practice ensures that all CI pipelines include image scanning, signing, and SBOM generation. = La pratica di build sicura assicura che tutte le pipeline CI includano scansione delle immagini, firma e generazione SBOM.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9098,7 +9320,7 @@ export default {
               pronunciation: '/dəˈmeɪn/',
               phonetic: 'do-MEIN',
               example:
-                'Domains organize practices broadly. = I domini organizzano le pratiche in modo ampio.',
+                'Each domain in the maturity model groups related security practices such as build, deploy, and operate. = Ogni dominio nel modello di maturità raggruppa pratiche di sicurezza correlate come build, deploy e operate.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9107,7 +9329,8 @@ export default {
               italian: 'Auto-valutazione',
               pronunciation: '/sɛlf əˈsɛsmənt/',
               phonetic: 'SELF a-SES-ment',
-              example: "Run a yearly self-assessment. = Esegui un'auto-valutazione annuale.",
+              example:
+                "Each team completes a quarterly self-assessment to identify gaps in their security testing and incident response readiness. = Ogni team completa un'auto-valutazione trimestrale per identificare lacune nel testing di sicurezza e nella prontezza di risposta agli incidenti.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9124,7 +9347,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti ˈmɛtrɪk/',
               phonetic: 'si-KIU-ri-ti ME-trik',
               example:
-                'Security metrics drive decisions. = Le metriche di sicurezza guidano le decisioni.',
+                "Tracking the right security metric like mean time to remediate gives leadership actionable insight into program effectiveness. = Tracciare la metrica di sicurezza giusta come il tempo medio di remediation dà alla leadership un insight azionabile sull'efficacia del programma.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9134,7 +9357,7 @@ export default {
               pronunciation: '/ˈkʌvərɪdʒ/',
               phonetic: 'KA-ve-rigg',
               example:
-                'Coverage measures scanner reach. = La copertura misura la portata dello scanner.',
+                'Measuring SAST coverage across all repositories revealed that thirty percent of codebases had no automated scanning at all. = Misurare la copertura SAST su tutti i repository ha rivelato che il trenta percento dei codebase non aveva alcuna scansione automatizzata.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9144,7 +9367,7 @@ export default {
               pronunciation: '/ˈdiːfɛkt ˈdɛnsəti/',
               phonetic: 'DI-fekt DEN-si-ti',
               example:
-                'Defect density tracks bugs per KLOC. = La densità dei difetti traccia bug per KLOC.',
+                'The team reduced defect density from twelve security bugs per thousand lines of code to three after adopting secure coding training. = Il team ha ridotto la densità dei difetti da dodici bug di sicurezza per mille righe di codice a tre dopo aver adottato la formazione sulla codifica sicura.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9154,7 +9377,7 @@ export default {
               pronunciation: '/taɪm tuː rɪˈmiːdieɪt/',
               phonetic: 'TAIM-TU ri-MI-di-eit',
               example:
-                'Cut time to remediate critical CVEs. = Riduci il tempo per rimediare a CVE critiche.',
+                'Cutting the average time to remediate critical vulnerabilities from thirty days to seven demonstrates measurable security improvement. = Ridurre il tempo medio di remediation delle vulnerabilità critiche da trenta giorni a sette dimostra un miglioramento misurabile della sicurezza.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9164,7 +9387,7 @@ export default {
               pronunciation: '/ɪˈskeɪp reɪt/',
               phonetic: 'i-SKEIP REIT',
               example:
-                'Escape rate measures bugs reaching prod. = Il tasso di fuga misura i bug che arrivano in prod.',
+                "A low escape rate means most vulnerabilities are caught before production, proving the effectiveness of shift-left testing. = Un basso tasso di escape significa che la maggior parte delle vulnerabilità viene intercettata prima della produzione, dimostrando l'efficacia del testing shift-left.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9174,7 +9397,7 @@ export default {
               pronunciation: '/rɪˈkʌrəns reɪt/',
               phonetic: 'ri-KA-rens REIT',
               example:
-                'Recurrence rate spots flaky fixes. = Il tasso di ricorrenza individua fix instabili.',
+                'Tracking the recurrence rate of fixed vulnerabilities ensures that similar bugs do not reappear in future releases. = Tracciare il tasso di ricorrenza delle vulnerabilità corrette assicura che bug simili non ricompaiano nelle release future.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9184,7 +9407,7 @@ export default {
               pronunciation: '/əˈdɒpʃən reɪt/',
               phonetic: 'a-DOP-scion REIT',
               example:
-                "Track adoption of new security tools. = Traccia l'adozione di nuovi tool di sicurezza.",
+                "The adoption rate of the new SAST tool reached ninety percent within three months thanks to developer-friendly IDE integration. = Il tasso di adozione del nuovo strumento SAST ha raggiunto il novanta percento in tre mesi grazie all'integrazione IDE developer-friendly.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9194,7 +9417,7 @@ export default {
               pronunciation: '/ˈtreɪnɪŋ kəmˈpliːʃən/',
               phonetic: 'TREI-ning kom-PLI-scion',
               example:
-                'Training completion is a culture KPI. = Il completamento del training è un KPI di cultura.',
+                'Monitoring training completion rates ensures that every new hire finishes the security awareness course within their first month. = Monitorare i tassi di completamento della formazione assicura che ogni nuovo assunto completi il corso di consapevolezza sulla sicurezza entro il primo mese.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9204,7 +9427,7 @@ export default {
               pronunciation: '/ˈdɔːrə ˈmɛtrɪks/',
               phonetic: 'DO-ra ME-triks',
               example:
-                'DORA metrics include change failure rate. = Le metriche DORA includono il tasso di fallimento del cambio.',
+                'Adding security gate time to the DORA metrics reveals how much overhead security checks add to the deployment frequency. = Aggiungere il tempo dei gate di sicurezza alle metriche DORA rivela quanto overhead i controlli di sicurezza aggiungono alla frequenza di deployment.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Lead time, deploy frequency, MTTR, change fail.',
@@ -9215,7 +9438,7 @@ export default {
               pronunciation: '/tʃeɪndʒ ˈfeɪljə reɪt/',
               phonetic: 'CIEINGG FEI-lier REIT',
               example:
-                'Aim for a low change failure rate. = Punta a un basso tasso di fallimento dei cambi.',
+                "After introducing automated security scans, the change failure rate caused by vulnerabilities dropped from eight to two percent. = Dopo aver introdotto scansioni di sicurezza automatizzate, il tasso di fallimento delle modifiche causato da vulnerabilità è sceso dall'otto al due percento.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9232,7 +9455,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti dɛt/',
               phonetic: 'si-KIU-ri-ti DET',
               example:
-                'Security debt grows without paying down. = Il debito di sicurezza cresce se non lo si paga.',
+                'Ignoring low-severity findings for too long accumulates security debt that becomes expensive to address during audits. = Ignorare i finding a bassa severità per troppo tempo accumula debito di sicurezza che diventa costoso da affrontare durante gli audit.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9241,7 +9464,8 @@ export default {
               italian: 'Accettazione del rischio',
               pronunciation: '/rɪsk əkˈsɛptəns/',
               phonetic: 'RISK ak-SEP-tans',
-              example: 'Document every risk acceptance. = Documenta ogni accettazione del rischio.',
+              example:
+                'Every risk acceptance must be documented with a justification, an expiration date, and sign-off from the CISO. = Ogni accettazione del rischio deve essere documentata con una giustificazione, una data di scadenza e la firma del CISO.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9251,7 +9475,7 @@ export default {
               pronunciation: '/ɪkˈsɛpʃən ˈrɛdʒɪstə/',
               phonetic: 'ek-SEP-scion RE-gi-ster',
               example:
-                'An exception register tracks waivers. = Un registro delle eccezioni traccia le deroghe.',
+                'The exception register lists all approved policy exceptions along with their review dates and compensating controls. = Il registro delle eccezioni elenca tutte le eccezioni di policy approvate insieme alle date di revisione e ai controlli compensativi.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9261,17 +9485,17 @@ export default {
               pronunciation: '/ˈbæklɒɡ ˈɡruːmɪŋ/',
               phonetic: 'BAK-log GRU-ming',
               example:
-                'Include security in backlog grooming. = Includi la sicurezza nel grooming del backlog.',
+                "During backlog grooming, the team reviews open vulnerability tickets and reprioritizes them based on current threat intelligence. = Durante il grooming del backlog, il team revisiona i ticket di vulnerabilità aperti e li riprioritizza in base all'intelligence sulle minacce attuale.",
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Spike',
-              italian: 'spike / esplorazione tecnica veloce',
+              italian: 'Esplorazione tecnica veloce (spike)',
               pronunciation: '/spaɪk/',
               phonetic: 'SPAIK',
               example:
-                'Run a security spike before refactor. = Esegui uno spike di sicurezza prima del refactor.',
+                "The security team scheduled a two-day spike to evaluate three container runtime security tools before making a purchase decision. = Il team di sicurezza ha pianificato uno spike di due giorni per valutare tre strumenti di runtime security per container prima di decidere l'acquisto.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9281,7 +9505,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti sprɪnt/',
               phonetic: 'si-KIU-ri-ti SPRINT',
               example:
-                'Quarterly security sprints reduce debt. = Sprint di sicurezza trimestrali riducono il debito.',
+                'Dedicating one security sprint per quarter ensures that accumulated vulnerability debt does not grow out of control. = Dedicare uno sprint di sicurezza per trimestre assicura che il debito di vulnerabilità accumulato non cresca fuori controllo.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9290,7 +9514,8 @@ export default {
               italian: 'Proprietario del rischio',
               pronunciation: '/rɪsk ˈəʊnə/',
               phonetic: 'RISK OU-ner',
-              example: 'Every risk needs an owner. = Ogni rischio richiede un proprietario.',
+              example:
+                'Assigning a risk owner to every entry in the register ensures accountability for tracking mitigation progress. = Assegnare un proprietario del rischio a ogni voce nel registro assicura la responsabilità per il tracciamento del progresso di mitigazione.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9300,7 +9525,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti ˈrəʊdmæp/',
               phonetic: 'si-KIU-ri-ti ROUD-map',
               example:
-                'Publish a yearly security roadmap. = Pubblica una roadmap di sicurezza annuale.',
+                'The annual security roadmap aligns tooling investments, training programs, and maturity milestones with business objectives. = La roadmap di sicurezza annuale allinea investimenti in strumenti, programmi di formazione e traguardi di maturità con gli obiettivi aziendali.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9310,7 +9535,7 @@ export default {
               pronunciation: '/dɛt ˈhiːtmæp/',
               phonetic: 'DET HIT-map',
               example:
-                'A debt heatmap surfaces hotspots. = Una mappa di calore del debito fa emergere hotspot.',
+                'The debt heatmap highlights which services carry the most unresolved vulnerabilities and need immediate attention. = La mappa di calore del debito evidenzia quali servizi portano le vulnerabilità irrisolte più numerose e necessitano attenzione immediata.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9320,7 +9545,7 @@ export default {
               pronunciation: '/ˌdɛfɪˈnɪʃən əv dʌn/',
               phonetic: 'de-fi-NI-scion OV-DAN',
               example:
-                'Add security checks to the DoD. = Aggiungi controlli di sicurezza alla DoD.',
+                'Our definition of done for any feature requires passing SAST, SCA, and a peer security review before merge. = La nostra definizione di done per qualsiasi feature richiede il superamento di SAST, SCA e una peer review di sicurezza prima del merge.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9336,7 +9561,8 @@ export default {
               italian: 'Piano di adozione',
               pronunciation: '/əˈdɒpʃən plæn/',
               phonetic: 'a-DOP-scion PLAN',
-              example: 'An adoption plan paces rollouts. = Un piano di adozione cadenza i rollout.',
+              example:
+                'The adoption plan for the new secret scanner includes a pilot phase, training sessions, and a gradual rollout across all teams. = Il piano di adozione per il nuovo scanner di segreti include una fase pilota, sessioni di formazione e un rollout graduale su tutti i team.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9346,7 +9572,7 @@ export default {
               pronunciation: '/ˈsɛntə əv ˈɛksələns/',
               phonetic: 'SEN-ter OV EK-se-lens',
               example:
-                'A CoE shares security expertise. = Un CoE condivide expertise di sicurezza.',
+                'The DevSecOps center of excellence publishes reusable pipeline templates and best practices for all engineering teams. = Il centro di eccellenza DevSecOps pubblica template di pipeline riutilizzabili e best practice per tutti i team di ingegneria.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9356,7 +9582,7 @@ export default {
               pronunciation: '/peɪvd rəʊd/',
               phonetic: 'PEIVD ROUD',
               example:
-                'Provide a paved road for new services. = Fornisci una strada pavimentata per nuovi servizi.',
+                'Building a paved road with pre-approved tools and templates makes the secure path the easiest path for developers. = Costruire una strada asfaltata con strumenti e template pre-approvati rende il percorso sicuro il più facile per gli sviluppatori.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Modello "easy and secure default".',
@@ -9367,7 +9593,7 @@ export default {
               pronunciation: '/ˈɡəʊldən pɑːθ/',
               phonetic: 'GOL-den PATH',
               example:
-                "A golden path is the secure default. = Un percorso d'oro è il default sicuro.",
+                'Following the golden path for new services guarantees that every project starts with security scanning, logging, and monitoring. = Seguire il golden path per i nuovi servizi garantisce che ogni progetto parta con scansione di sicurezza, logging e monitoraggio.',
               context: 'culture',
               difficulty: 'advanced',
               tool: 'Backstage',
@@ -9378,7 +9604,7 @@ export default {
               pronunciation: '/ɪnˈtɜːnl dɪˈvɛləpə ˈplætfɔːm/',
               phonetic: 'in-TER-nal di-VE-lo-per PLAT-form',
               example:
-                'IDPs ship secure defaults at scale. = Le IDP rilasciano default sicuri su larga scala.',
+                'The internal developer platform abstracts away infrastructure complexity while embedding security controls by default. = La piattaforma interna per sviluppatori astrae la complessità infrastrutturale incorporando controlli di sicurezza di default.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Internal Developer Platform.',
@@ -9389,7 +9615,7 @@ export default {
               pronunciation: '/dɪˈvɛləpər ɪkˈspɪəriəns/',
               phonetic: 'di-VE-lo-per eks-PI-rians',
               example:
-                "Bad DevEx kills security adoption. = Una cattiva DevEx uccide l'adozione della sicurezza.",
+                "Improving developer experience around security tools increases voluntary adoption and reduces workaround attempts. = Migliorare l'esperienza sviluppatore intorno agli strumenti di sicurezza aumenta l'adozione volontaria e riduce i tentativi di aggiramento.",
               context: 'culture',
               difficulty: 'advanced',
               note: 'DevEx.',
@@ -9400,17 +9626,17 @@ export default {
               pronunciation: '/ˈfrɪkʃən/',
               phonetic: 'FRIK-scion',
               example:
-                "Reduce friction or developers bypass. = Riduci l'attrito o gli sviluppatori bypassano.",
+                'Removing unnecessary friction from the secure pipeline encourages developers to use it instead of deploying manually. = Rimuovere la frizione non necessaria dalla pipeline sicura incoraggia gli sviluppatori a usarla invece di deployare manualmente.',
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Self-Service',
-              italian: "self-service / a disposizione dell'utente",
+              italian: "A disposizione dell'utente (self-service)",
               pronunciation: '/sɛlf ˈsɜːvɪs/',
               phonetic: 'SELF SER-vis',
               example:
-                'Self-service security scales fast. = La sicurezza self-service scala in fretta.',
+                'The self-service portal lets developers request new cloud environments pre-configured with all mandatory security controls. = Il portale self-service permette agli sviluppatori di richiedere nuovi ambienti cloud pre-configurati con tutti i controlli di sicurezza obbligatori.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9420,7 +9646,7 @@ export default {
               pronunciation: '/ˈtʃæmpiən ˈnɛtwɜːk/',
               phonetic: 'CIAM-pion NET-uork',
               example:
-                'A champion network spreads knowledge. = Una rete di campioni diffonde la conoscenza.',
+                "Building a champion network with one security advocate per team spreads best practices organically across the company. = Costruire una rete di campioni con un advocate di sicurezza per team diffonde le best practice organicamente in tutta l'azienda.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9430,7 +9656,7 @@ export default {
               pronunciation: '/ˈkwɔːtəli ˈbɪznɪs rɪˈvjuː/',
               phonetic: 'KUOR-ter-li BIZ-nis ri-VIU',
               example:
-                'Show maturity in QBRs to leadership. = Mostra la maturità nei QBR alla leadership.',
+                'The quarterly business review presents security metrics, risk trends, and tooling ROI to the executive leadership team. = La quarterly business review presenta metriche di sicurezza, trend del rischio e ROI degli strumenti al team di leadership esecutiva.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'QBR.',
@@ -9458,7 +9684,7 @@ export default {
               pronunciation: '/sɒk tuː/',
               phonetic: 'SOK-TU',
               example:
-                'SaaS vendors usually need SOC 2. = I vendor SaaS di solito hanno bisogno di SOC 2.',
+                'Achieving SOC 2 Type 2 certification required demonstrating that security controls operated effectively over a twelve-month period. = Ottenere la certificazione SOC 2 Type 2 ha richiesto di dimostrare che i controlli di sicurezza hanno operato efficacemente per un periodo di dodici mesi.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9467,7 +9693,8 @@ export default {
               italian: 'Tipo 1',
               pronunciation: '/taɪp wʌn/',
               phonetic: 'TAIP-UAN',
-              example: 'Type 1 covers a point in time. = Il Tipo 1 copre un istante.',
+              example:
+                'A SOC 2 Type 1 report evaluates the design of security controls at a single point in time. = Un report SOC 2 Type 1 valuta la progettazione dei controlli di sicurezza in un singolo momento nel tempo.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9476,26 +9703,28 @@ export default {
               italian: 'Tipo 2',
               pronunciation: '/taɪp tuː/',
               phonetic: 'TAIP-TU',
-              example: 'Type 2 covers a period of months. = Il Tipo 2 copre un periodo di mesi.',
+              example:
+                'Unlike Type 1, a SOC 2 Type 2 audit tests whether controls operated effectively over the observation period. = A differenza del Type 1, un audit SOC 2 Type 2 testa se i controlli hanno operato efficacemente durante il periodo di osservazione.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
             {
               english: 'Trust Service Criteria',
-              italian: 'Trust Service Criteria / criteri di SOC 2',
+              italian: 'Criteri di SOC 2 (Trust Service Criteria)',
               pronunciation: '/trʌst ˈsɜːvɪs kraɪˈtɪəriə/',
               phonetic: 'TRAST SER-vis krai-TI-ria',
               example:
-                'TSC includes Security and Confidentiality. = I TSC includono Sicurezza e Riservatezza.',
+                "Each Trust Service Criteria category—security, availability, confidentiality—maps to specific controls the auditor verifies. = Ogni categoria dei criteri del servizio fiduciario—sicurezza, disponibilità, riservatezza—corrisponde a controlli specifici che l'auditor verifica.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
             {
               english: 'Auditor',
-              italian: 'auditor / revisore',
+              italian: 'Revisore (auditor)',
               pronunciation: '/ˈɔːdɪtə/',
               phonetic: 'O-di-tor',
-              example: 'A CPA auditor signs the SOC 2. = Un auditor CPA firma il SOC 2.',
+              example:
+                "The external CPA auditor spent two weeks reviewing control evidence before issuing the SOC 2 Type 2 opinion. = L'auditor CPA esterno ha trascorso due settimane revisionando le evidenze dei controlli prima di emettere l'opinione SOC 2 Type 2.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9505,7 +9734,7 @@ export default {
               pronunciation: '/ˈɔːdɪt ˈwɪndəʊ/',
               phonetic: 'O-dit UIN-dou',
               example:
-                'The audit window is typically 6-12 months. = La finestra di audit è tipicamente 6-12 mesi.',
+                "The audit window spans six months, during which the auditor periodically samples evidence to verify control effectiveness. = La finestra di audit copre sei mesi, durante i quali l'auditor campiona periodicamente le evidenze per verificare l'efficacia dei controlli.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9515,7 +9744,7 @@ export default {
               pronunciation: '/kənˈtrəʊl ˈəʊnə/',
               phonetic: 'kon-TROL OU-ner',
               example:
-                'Each control needs a documented owner. = Ogni controllo richiede un proprietario documentato.',
+                'Each control owner is responsible for gathering evidence and demonstrating that their assigned control operates as designed. = Ogni proprietario del controllo è responsabile di raccogliere evidenze e dimostrare che il controllo assegnato opera come progettato.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9525,7 +9754,7 @@ export default {
               pronunciation: '/ˈɛvɪdəns ˈsɑːmpl/',
               phonetic: 'E-vi-dens SAM-pol',
               example:
-                'Auditors pick evidence samples. = Gli auditor scelgono campioni di evidenza.',
+                "The auditor selects a random evidence sample of twenty-five access review records to validate the control's consistent operation. = L'auditor seleziona un campione casuale di venticinque record di revisione degli accessi per validare l'operazione coerente del controllo.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9535,7 +9764,7 @@ export default {
               pronunciation: '/ɡæp əˈnæləsɪs/',
               phonetic: 'GAP a-NA-le-sis',
               example:
-                "Run a gap analysis before audit. = Esegui un'analisi delle lacune prima dell'audit.",
+                "The initial gap analysis identified fifteen controls that needed implementation before the SOC 2 audit could begin. = L'analisi dei gap iniziale ha identificato quindici controlli che necessitavano implementazione prima che l'audit SOC 2 potesse iniziare.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9545,7 +9774,7 @@ export default {
               pronunciation: '/ˈrɛdinəs əˈsɛsmənt/',
               phonetic: 'RE-di-nes a-SES-ment',
               example:
-                'A readiness assessment scopes work. = Una valutazione di prontezza definisce il lavoro.',
+                "Running a readiness assessment six months before the audit gives the team time to close all identified control gaps. = Eseguire una valutazione di prontezza sei mesi prima dell'audit dà al team il tempo di chiudere tutti i gap di controllo identificati.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9561,7 +9790,8 @@ export default {
               italian: 'ISO 27001 (standard di gestione sicurezza)',
               pronunciation: '/ˈaɪsəʊ tuː ˈsɛvənθaʊzənd ʌn/',
               phonetic: 'AI-so 27-mila-1',
-              example: "ISO 27001 certifies the ISMS. = ISO 27001 certifica l'ISMS.",
+              example:
+                'Obtaining ISO 27001 certification proved to enterprise clients that our information security management system meets international standards. = Ottenere la certificazione ISO 27001 ha dimostrato ai clienti enterprise che il nostro sistema di gestione della sicurezza delle informazioni soddisfa gli standard internazionali.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9571,7 +9801,7 @@ export default {
               pronunciation: '/aɪ ɛs ɛm ɛs/',
               phonetic: 'AI-ES-EM-ES',
               example:
-                'An ISMS governs information security. = Un ISMS governa la sicurezza delle informazioni.',
+                'The ISMS document defines the scope, policies, and risk treatment plan that govern our information security practices. = Il documento ISMS definisce lo scope, le policy e il piano di trattamento del rischio che governano le nostre pratiche di sicurezza delle informazioni.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'Information Security Management System.',
@@ -9582,7 +9812,7 @@ export default {
               pronunciation: '/ˈænɛks eɪ/',
               phonetic: 'A-neks-EI',
               example:
-                "Annex A lists 93 controls in 27001:2022. = L'Allegato A elenca 93 controlli in 27001:2022.",
+                "Mapping our controls to ISO 27001 Annex A ensures coverage across all fourteen security control domains. = Mappare i nostri controlli all'Annex A della ISO 27001 assicura la copertura di tutti i quattordici domini di controllo di sicurezza.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9592,7 +9822,7 @@ export default {
               pronunciation: '/ˈsteɪtmənt əv əˌplɪkəˈbɪləti/',
               phonetic: 'STEIT-ment OV a-pli-ka-BI-li-ti',
               example:
-                'The SoA documents control choices. = La SoA documenta le scelte sui controlli.',
+                'The statement of applicability lists which Annex A controls apply to our organization and justifies any exclusions. = La dichiarazione di applicabilità elenca quali controlli Annex A si applicano alla nostra organizzazione e giustifica eventuali esclusioni.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'SoA.',
@@ -9603,7 +9833,7 @@ export default {
               pronunciation: '/ɪnˈtɜːnl ˈɔːdɪt/',
               phonetic: 'in-TER-nal O-dit',
               example:
-                'Run internal audits before external. = Esegui audit interni prima di quelli esterni.',
+                "The annual internal audit uncovered three nonconformities related to access review frequency and incident log retention. = L'audit interno annuale ha scoperto tre non conformità relative alla frequenza di revisione degli accessi e alla retention dei log degli incidenti.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9613,7 +9843,7 @@ export default {
               pronunciation: '/ˈmænɪdʒmənt rɪˈvjuː/',
               phonetic: 'MA-ni-gment ri-VIU',
               example:
-                "Management review steers the ISMS. = La revisione della direzione guida l'ISMS.",
+                "During the management review, leadership evaluates ISMS performance metrics and approves the updated risk treatment plan. = Durante la revisione della direzione, la leadership valuta le metriche di performance dell'ISMS e approva il piano di trattamento del rischio aggiornato.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9623,7 +9853,7 @@ export default {
               pronunciation: '/ˌnɒnkənˈfɔːməti/',
               phonetic: 'non-kon-for-MI-ti',
               example:
-                'Track nonconformities to closure. = Traccia le non conformità fino alla chiusura.',
+                'Each nonconformity must have a documented corrective action plan with a deadline and assigned owner. = Ogni non conformità deve avere un piano di azione correttiva documentato con una scadenza e un responsabile assegnato.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9633,7 +9863,7 @@ export default {
               pronunciation: '/sɜːˈveɪləns ˈɔːdɪt/',
               phonetic: 'ser-VEI-lans O-dit',
               example:
-                'Surveillance audits happen yearly. = Gli audit di sorveglianza avvengono ogni anno.',
+                "The certification body conducts a surveillance audit annually to confirm that the ISMS continues to meet ISO 27001 requirements. = L'ente di certificazione conduce un audit di sorveglianza annualmente per confermare che l'ISMS continua a soddisfare i requisiti ISO 27001.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9643,7 +9873,7 @@ export default {
               pronunciation: '/ˌriːˌsɜːtɪfɪˈkeɪʃən/',
               phonetic: 'ri-ser-ti-fi-KEI-scion',
               example:
-                'Recertification audits run every 3 years. = Gli audit di ricertificazione girano ogni 3 anni.',
+                "Full recertification every three years requires a comprehensive review of the entire information security management system. = La ricertificazione completa ogni tre anni richiede una revisione completa dell'intero sistema di gestione della sicurezza delle informazioni.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9653,7 +9883,7 @@ export default {
               pronunciation: '/ˌsɜːtɪfɪˈkeɪʃən ˈbɒdi/',
               phonetic: 'ser-ti-fi-KEI-scion BO-di',
               example:
-                'A certification body issues the certificate. = Un ente di certificazione emette il certificato.',
+                "Choosing an accredited certification body ensures that the ISO 27001 audit is recognized internationally. = Scegliere un ente di certificazione accreditato assicura che l'audit ISO 27001 sia riconosciuto internazionalmente.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'BSI, TÜV, DNV.',
@@ -9671,7 +9901,7 @@ export default {
               pronunciation: '/piː siː aɪ diː ɛs ɛs/',
               phonetic: 'PI-SI-AI-DI-ES-ES',
               example:
-                'PCI-DSS protects cardholder data. = PCI-DSS protegge i dati dei titolari di carta.',
+                'Any system that stores, processes, or transmits cardholder data must comply with the twelve requirements of PCI-DSS. = Qualsiasi sistema che memorizza, elabora o trasmette dati dei titolari di carta deve rispettare i dodici requisiti del PCI-DSS.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'Payment Card Industry Data Security Standard.',
@@ -9681,7 +9911,8 @@ export default {
               italian: 'Ambiente dati titolari di carta',
               pronunciation: '/ˈkɑːdhəʊldə ˈdeɪtə ɪnˈvaɪrənmənt/',
               phonetic: 'KARD-hol-der DEI-ta in-VAI-ron-ment',
-              example: "Minimize the CDE scope. = Minimizza l'ambito del CDE.",
+              example:
+                "Reducing the scope of the cardholder data environment through tokenization dramatically simplifies PCI-DSS compliance. = Ridurre lo scope dell'ambiente dei dati del titolare di carta tramite tokenizzazione semplifica drasticamente la compliance PCI-DSS.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'CDE.',
@@ -9691,7 +9922,8 @@ export default {
               italian: 'Tokenizzazione',
               pronunciation: '/ˌtəʊkənaɪˈzeɪʃən/',
               phonetic: 'to-ke-nai-ZEI-scion',
-              example: 'Tokenization shrinks the CDE. = La tokenizzazione riduce il CDE.',
+              example:
+                "Replacing credit card numbers with random tokenization values means the application never handles actual cardholder data. = Sostituire i numeri di carta di credito con valori di tokenizzazione casuali significa che l'applicazione non gestisce mai i dati reali del titolare.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9701,27 +9933,28 @@ export default {
               pronunciation: '/ˌsɛɡmɛnˈteɪʃən/',
               phonetic: 'seg-men-TEI-scion',
               example:
-                "Network segmentation limits PCI scope. = La segmentazione di rete limita l'ambito PCI.",
+                'Proper network segmentation isolates the payment processing servers from the rest of the corporate network. = Una corretta segmentazione di rete isola i server di elaborazione dei pagamenti dal resto della rete aziendale.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
             {
               english: 'QSA',
-              italian: 'QSA / Qualified Security Assessor PCI',
+              italian: 'Qualified Security Assessor PCI (QSA)',
               pronunciation: '/kjuː ɛs eɪ/',
               phonetic: 'KIU-ES-EI',
-              example: 'A QSA validates PCI compliance. = Un QSA convalida la conformità PCI.',
+              example:
+                "The QSA reviewed our network diagrams and firewall rules to confirm that the cardholder data environment was properly isolated. = Il QSA ha revisionato i nostri diagrammi di rete e le regole del firewall per confermare che l'ambiente dei dati del titolare fosse propriamente isolato.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'Qualified Security Assessor.',
             },
             {
               english: 'FedRAMP',
-              italian: 'FedRAMP / programma autorizzazione cloud federale USA',
+              italian: 'Programma autorizzazione cloud federale USA (FedRAMP)',
               pronunciation: '/fɛdræmp/',
               phonetic: 'FED-ramp',
               example:
-                'FedRAMP authorizes cloud services for US gov. = FedRAMP autorizza servizi cloud per il governo USA.',
+                "Obtaining a FedRAMP authorization allows the cloud service to be used by any US federal agency without a separate assessment. = Ottenere un'autorizzazione FedRAMP permette al servizio cloud di essere usato da qualsiasi agenzia federale USA senza una valutazione separata.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'Federal Risk and Authorization Management Program.',
@@ -9732,7 +9965,7 @@ export default {
               pronunciation: '/ˌɔːθərɪˈzeɪʃən tuː ˈɒpəreɪt/',
               phonetic: 'o-to-rai-ZEI-scion-TU O-pe-reit',
               example:
-                'An ATO is required to host federal data. = Un ATO è richiesto per ospitare dati federali.',
+                "The agency granted an authorization to operate after the security assessment confirmed all controls met the moderate baseline. = L'agenzia ha concesso l'autorizzazione a operare dopo che la valutazione di sicurezza ha confermato che tutti i controlli soddisfacevano la baseline moderata.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'ATO.',
@@ -9743,17 +9976,18 @@ export default {
               pronunciation: '/kənˈtɪnjʊəs ˈmɒnɪtərɪŋ/',
               phonetic: 'kon-TI-nius MO-ni-to-ring',
               example:
-                'FedRAMP requires continuous monitoring. = FedRAMP richiede monitoraggio continuo.',
+                'With continuous monitoring in place, any drift from the approved security baseline triggers an alert within minutes. = Con il monitoraggio continuo in atto, qualsiasi drift dalla baseline di sicurezza approvata attiva un avviso entro pochi minuti.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'ConMon.',
             },
             {
               english: '3PAO',
-              italian: '3PAO / Third Party Assessment Organization FedRAMP',
+              italian: 'Third Party Assessment Organization FedRAMP (3PAO)',
               pronunciation: '/θriː piː eɪ əʊ/',
               phonetic: 'TRI-PI-EI-O',
-              example: 'A 3PAO assesses FedRAMP packages. = Un 3PAO valuta i package FedRAMP.',
+              example:
+                "The 3PAO conducted an independent assessment of all security controls before submitting the package to the FedRAMP PMO. = L'organizzazione di valutazione di terze parti ha condotto una valutazione indipendente di tutti i controlli di sicurezza prima di sottomettere il pacchetto al PMO FedRAMP.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'Third Party Assessment Organization.',
@@ -9763,7 +9997,8 @@ export default {
               italian: 'Piano di azioni e milestone',
               pronunciation: '/piː əʊ eɪ ɛm/',
               phonetic: 'PI-O-EI-EM',
-              example: 'POA&Ms track open findings. = I POA&M tracciano riscontri aperti.',
+              example:
+                'Every open finding from the assessment is tracked in a POA&M document with a remediation timeline and assigned owner. = Ogni finding aperto dalla valutazione è tracciato in un documento POA&M con una timeline di remediation e un responsabile assegnato.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'Plan of Action and Milestones.',
@@ -9780,7 +10015,8 @@ export default {
               italian: 'GDPR (Regolamento UE protezione dati)',
               pronunciation: '/dʒiː diː piː ɑːr/',
               phonetic: 'GI-DI-PI-AR',
-              example: 'GDPR governs EU personal data. = Il GDPR governa i dati personali UE.',
+              example:
+                "Under the GDPR, organizations must report personal data breaches to the supervisory authority within seventy-two hours. = Secondo il GDPR, le organizzazioni devono segnalare le violazioni dei dati personali all'autorità di controllo entro settantadue ore.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'General Data Protection Regulation.',
@@ -9791,7 +10027,7 @@ export default {
               pronunciation: '/ˈdeɪtə ˈsʌbdʒɪkt/',
               phonetic: 'DEI-ta SAB-gekt',
               example:
-                'Data subjects have access rights. = Gli interessati hanno diritti di accesso.',
+                "Every data subject has the right to request a copy of all personal data the organization holds about them. = Ogni interessato ha il diritto di richiedere una copia di tutti i dati personali che l'organizzazione detiene su di lui.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9800,7 +10036,8 @@ export default {
               italian: 'Titolare del trattamento',
               pronunciation: '/ˈdeɪtə kənˈtrəʊlə/',
               phonetic: 'DEI-ta kon-TRO-ler',
-              example: 'The data controller decides purposes. = Il titolare decide le finalità.',
+              example:
+                'As the data controller, our company determines the purposes and means of processing customer personal information. = Come titolare del trattamento, la nostra azienda determina le finalità e i mezzi del trattamento delle informazioni personali dei clienti.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9810,7 +10047,7 @@ export default {
               pronunciation: '/ˈdeɪtə ˈprəʊsɛsə/',
               phonetic: 'DEI-ta PRO-ses-ser',
               example:
-                'Cloud vendors are often processors. = I vendor cloud sono spesso responsabili.',
+                'The cloud hosting provider acts as a data processor and must follow our instructions for handling personal data. = Il provider di hosting cloud agisce come responsabile del trattamento e deve seguire le nostre istruzioni per la gestione dei dati personali.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9820,7 +10057,7 @@ export default {
               pronunciation: '/ˈdeɪtə ˈprəʊsɛsɪŋ əˈɡriːmənt/',
               phonetic: 'DEI-ta PRO-ses-sing a-GRI-ment',
               example:
-                'A DPA binds processors to obligations. = Un DPA lega i responsabili agli obblighi.',
+                'Signing a data processing agreement with every third-party vendor ensures they handle personal data according to GDPR requirements. = Firmare un accordo di trattamento dei dati con ogni fornitore di terze parti assicura che gestiscano i dati personali secondo i requisiti GDPR.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'DPA.',
@@ -9830,7 +10067,8 @@ export default {
               italian: "Valutazione d'impatto sulla protezione dei dati",
               pronunciation: '/diː piː aɪ eɪ/',
               phonetic: 'DI-PI-AI-EI',
-              example: 'A DPIA assesses privacy risk. = Una DPIA valuta il rischio privacy.',
+              example:
+                'Conducting a DPIA before launching the facial recognition feature identified high privacy risks that required additional safeguards. = Condurre una DPIA prima di lanciare la funzionalità di riconoscimento facciale ha identificato alti rischi per la privacy che richiedevano salvaguardie aggiuntive.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'Data Protection Impact Assessment.',
@@ -9841,7 +10079,7 @@ export default {
               pronunciation: '/raɪt tuː ɪˈreɪʒə/',
               phonetic: 'RAIT TU i-REI-ger',
               example:
-                "Right to erasure deletes user data. = Il diritto all'oblio cancella i dati utente.",
+                "Implementing the right to erasure required building an automated workflow that purges user data from twelve different systems. = Implementare il diritto all'oblio ha richiesto la costruzione di un workflow automatizzato che elimina i dati utente da dodici sistemi diversi.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'Articolo 17 GDPR.',
@@ -9851,7 +10089,8 @@ export default {
               italian: 'Notifica di violazione dei dati',
               pronunciation: '/ˈdeɪtə briːtʃ ˌnəʊtɪfɪˈkeɪʃən/',
               phonetic: 'DEI-ta BRICH no-ti-fi-KEI-scion',
-              example: 'Notify regulators within 72 hours. = Notifica i regolatori entro 72 ore.',
+              example:
+                'The incident response plan includes a data breach notification template pre-approved by legal to ensure timely reporting. = Il piano di risposta agli incidenti include un template di notifica di violazione dei dati pre-approvato dal legale per assicurare una segnalazione tempestiva.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
@@ -9861,17 +10100,17 @@ export default {
               pronunciation: '/ˈprɪvəsi baɪ dɪˈzaɪn/',
               phonetic: 'PRI-va-si BAI di-ZAIN',
               example:
-                'GDPR mandates privacy by design. = Il GDPR impone privacy fin dalla progettazione.',
+                'Applying privacy by design principles led the team to implement data minimization and pseudonymization from the first sprint. = Applicare i principi di privacy by design ha portato il team a implementare la minimizzazione dei dati e la pseudonimizzazione dal primo sprint.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
             },
             {
               english: 'CCPA',
-              italian: 'CCPA / California Consumer Privacy Act',
+              italian: 'California Consumer Privacy Act (CCPA)',
               pronunciation: '/siː siː piː eɪ/',
               phonetic: 'SI-SI-PI-EI',
               example:
-                'CCPA protects California residents. = CCPA protegge i residenti della California.',
+                'Under the CCPA, California consumers can opt out of the sale of their personal information at any time. = Secondo il CCPA, i consumatori della California possono rifiutare la vendita delle loro informazioni personali in qualsiasi momento.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
               note: 'California Consumer Privacy Act.',
@@ -9899,7 +10138,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti əˈweənəs/',
               phonetic: 'si-KIU-ri-ti a-UE-nes',
               example:
-                'Security awareness training is yearly. = La formazione di awareness è annuale.',
+                "Investing in security awareness training reduced successful phishing attacks by sixty percent across the organization. = Investire nella formazione sulla consapevolezza della sicurezza ha ridotto gli attacchi di phishing riusciti del sessanta percento in tutta l'organizzazione.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9909,7 +10148,7 @@ export default {
               pronunciation: '/ˈfɪʃɪŋ ˌsɪmjʊˈleɪʃən/',
               phonetic: 'FI-scing si-miu-LEI-scion',
               example:
-                'Phishing simulations train employees. = Le simulazioni di phishing addestrano i dipendenti.',
+                'Running a monthly phishing simulation campaign helps identify employees who need additional anti-phishing training. = Eseguire una campagna mensile di simulazione di phishing aiuta a identificare i dipendenti che necessitano di formazione anti-phishing aggiuntiva.',
               context: 'culture',
               difficulty: 'advanced',
               tool: 'KnowBe4, Sophos Phish Threat',
@@ -9920,7 +10159,7 @@ export default {
               pronunciation: '/klɪk reɪt/',
               phonetic: 'KLIK REIT',
               example:
-                'A high click rate signals low awareness. = Un alto tasso di click segnala bassa consapevolezza.',
+                'After six months of training, the phishing click rate dropped from twenty-two percent to under five percent. = Dopo sei mesi di formazione, il tasso di click sul phishing è sceso dal ventidue percento a meno del cinque percento.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9930,7 +10169,7 @@ export default {
               pronunciation: '/rɪˈpɔːt reɪt/',
               phonetic: 'ri-PORT REIT',
               example:
-                'Reward employees for report rate. = Premia i dipendenti per il tasso di segnalazione.',
+                'A high report rate on simulated phishing emails proves that employees recognize threats and know the proper escalation path. = Un alto tasso di segnalazione sulle email di phishing simulate dimostra che i dipendenti riconoscono le minacce e conoscono il percorso di escalation corretto.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9940,7 +10179,7 @@ export default {
               pronunciation: '/ˈɒnbɔːdɪŋ ˈtreɪnɪŋ/',
               phonetic: 'ON-bor-ding TREI-ning',
               example:
-                'Onboarding training sets the tone. = La formazione di onboarding dà il tono.',
+                'Every new hire completes a mandatory security onboarding training module within their first week at the company. = Ogni nuovo assunto completa un modulo di formazione sulla sicurezza obbligatorio entro la prima settimana in azienda.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9950,7 +10189,7 @@ export default {
               pronunciation: '/rɪˈfrɛʃə ˈtreɪnɪŋ/',
               phonetic: 'ri-FRE-scer TREI-ning',
               example:
-                'Schedule refresher training annually. = Pianifica formazione di aggiornamento ogni anno.',
+                'Annual refresher training keeps employees updated on the latest social engineering tactics and company security policies. = La formazione di aggiornamento annuale tiene i dipendenti informati sulle ultime tattiche di ingegneria sociale e sulle policy di sicurezza aziendali.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9960,7 +10199,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti ˈnjuːzlɛtə/',
               phonetic: 'si-KIU-ri-ti NIUS-le-ter',
               example:
-                'A monthly newsletter keeps awareness fresh. = Una newsletter mensile mantiene fresca la consapevolezza.',
+                'The monthly security newsletter highlights recent incidents, new policies, and practical tips for staying safe online. = La newsletter di sicurezza mensile evidenzia incidenti recenti, nuove policy e consigli pratici per restare al sicuro online.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9970,7 +10209,7 @@ export default {
               pronunciation: '/ˈteɪbltɒp ˈɛksəsaɪz/',
               phonetic: 'TEI-bol-top EK-ser-saiz',
               example:
-                'Tabletop exercises rehearse incidents. = Le esercitazioni da tavolo provano gli incidenti.',
+                "During the tabletop exercise, the team walked through a ransomware scenario to identify gaps in the response playbook. = Durante l'esercitazione tabletop, il team ha simulato uno scenario ransomware per identificare lacune nel playbook di risposta.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9980,7 +10219,7 @@ export default {
               pronunciation: '/ˈɪnsɪdənt drɪl/',
               phonetic: 'IN-si-dent DRIL',
               example:
-                'Run incident drills quarterly. = Esegui esercitazioni di incidenti trimestrali.',
+                "Quarterly incident drills test the entire response chain from detection through containment and customer communication. = Le esercitazioni trimestrali sugli incidenti testano l'intera catena di risposta dal rilevamento al contenimento e alla comunicazione con i clienti.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -9990,7 +10229,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti ˈpəʊstəz/',
               phonetic: 'si-KIU-ri-ti POS-ters',
               example:
-                'Security posters reinforce key messages. = I poster di sicurezza rinforzano messaggi chiave.',
+                'Placing security posters near shared printers reminds employees to collect sensitive documents promptly. = Posizionare poster di sicurezza vicino alle stampanti condivise ricorda ai dipendenti di raccogliere prontamente i documenti sensibili.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10003,20 +10242,21 @@ export default {
           items: [
             {
               english: 'Gamification',
-              italian: 'gamification / gamificazione',
+              italian: 'Gamificazione (gamification)',
               pronunciation: '/ˌɡeɪmɪfɪˈkeɪʃən/',
               phonetic: 'gei-mi-fi-KEI-scion',
               example:
-                "Gamification boosts training engagement. = La gamification aumenta l'engagement del training.",
+                'Adding gamification elements like points and badges to security training increased course completion rates by forty percent. = Aggiungere elementi di gamificazione come punti e badge alla formazione sulla sicurezza ha aumentato i tassi di completamento dei corsi del quaranta percento.',
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Capture the Flag',
-              italian: 'Capture the Flag / sfida CTF',
+              italian: 'Sfida CTF (Capture the Flag)',
               pronunciation: '/ˈkæptʃə ðə flæɡ/',
               phonetic: 'KAP-cer DE FLAG',
-              example: 'CTFs teach hands-on hacking. = Le CTF insegnano hacking pratico.',
+              example:
+                'The annual Capture the Flag competition let developers practice exploiting and patching real-world vulnerabilities in a safe environment. = La competizione annuale Capture the Flag ha permesso agli sviluppatori di praticare lo sfruttamento e il patching di vulnerabilità reali in un ambiente sicuro.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'CTF.',
@@ -10027,7 +10267,7 @@ export default {
               pronunciation: '/hæk ðə bɒks/',
               phonetic: 'HAK DE BOKS',
               example:
-                'Hack The Box trains on real machines. = Hack The Box addestra su macchine reali.',
+                'Our security team uses Hack the Box labs to sharpen offensive skills on realistic machines without risking production systems. = Il nostro team di sicurezza usa i lab di Hack the Box per affinare le competenze offensive su macchine realistiche senza rischiare i sistemi di produzione.',
               context: 'culture',
               difficulty: 'advanced',
               tool: 'Hack The Box',
@@ -10038,7 +10278,7 @@ export default {
               pronunciation: '/traɪ hæk miː/',
               phonetic: 'TRAI HAK MI',
               example:
-                'TryHackMe is friendly for beginners. = TryHackMe è amichevole per i principianti.',
+                'New hires start with guided TryHackMe learning paths to build foundational knowledge in networking and web exploitation. = I nuovi assunti iniziano con percorsi di apprendimento guidati su TryHackMe per costruire conoscenze fondamentali in networking e sfruttamento web.',
               context: 'culture',
               difficulty: 'advanced',
               tool: 'TryHackMe',
@@ -10049,7 +10289,7 @@ export default {
               pronunciation: '/sɪˈkjʊə kəʊd ˈwɒriə/',
               phonetic: 'si-KIUR KOUD UO-rior',
               example:
-                'Secure Code Warrior gamifies dev training. = Secure Code Warrior gamifica il training dev.',
+                "Embedding Secure Code Warrior challenges into the developer onboarding ensures that every engineer practices secure coding from day one. = Integrare le sfide di Secure Code Warrior nell'onboarding degli sviluppatori assicura che ogni ingegnere pratichi la codifica sicura dal primo giorno.",
               context: 'culture',
               difficulty: 'advanced',
               tool: 'Secure Code Warrior',
@@ -10060,35 +10300,37 @@ export default {
               pronunciation: '/ˈliːdəbɔːd/',
               phonetic: 'LI-der-bord',
               example:
-                'A leaderboard sparks friendly rivalry. = Una classifica accende rivalità amichevole.',
+                'Posting a monthly leaderboard for completed security training modules creates friendly competition across engineering teams. = Pubblicare una classifica mensile per i moduli di formazione sulla sicurezza completati crea una competizione amichevole tra i team di ingegneria.',
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Badge',
-              italian: 'badge / distintivo digitale',
+              italian: 'Distintivo digitale (badge)',
               pronunciation: '/bædʒ/',
               phonetic: 'BAGG',
-              example: 'Earn badges for completing modules. = Guadagna badge completando moduli.',
+              example:
+                'Earning a secure coding badge requires completing all six training modules and passing the final assessment with ninety percent. = Ottenere un badge di codifica sicura richiede il completamento di tutti e sei i moduli di formazione e il superamento della valutazione finale con il novanta percento.',
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Hackathon',
-              italian: 'hackathon / maratona di sviluppo',
+              italian: 'Maratona di sviluppo (hackathon)',
               pronunciation: '/ˈhækəθɒn/',
               phonetic: 'HA-ka-thon',
               example:
-                'Run security hackathons internally. = Organizza hackathon di sicurezza interni.',
+                "The security-focused hackathon produced three prototype tools that the team later integrated into the production pipeline. = L'hackathon focalizzato sulla sicurezza ha prodotto tre prototipi di strumenti che il team ha successivamente integrato nella pipeline di produzione.",
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'War Game',
-              italian: 'war game / esercitazione offensiva',
+              italian: 'Esercitazione offensiva (war game)',
               pronunciation: '/wɔː ɡeɪm/',
               phonetic: 'UOR GHEIM',
-              example: 'War games stress entire teams. = I war game stressano interi team.',
+              example:
+                "During the war game exercise, the red team attempted to breach the staging environment while the blue team defended in real time. = Durante l'esercitazione war game, il red team ha tentato di violare l'ambiente di staging mentre il blue team difendeva in tempo reale.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10098,7 +10340,7 @@ export default {
               pronunciation: '/rɪˈwɔːd ˈmɛkənɪzəm/',
               phonetic: 'ri-UORD ME-ka-niz-em',
               example:
-                'Pair gamification with real rewards. = Abbina la gamification a premi reali.',
+                'Implementing a reward mechanism for reporting security issues increased the number of internal vulnerability reports by threefold. = Implementare un meccanismo di ricompensa per la segnalazione di problemi di sicurezza ha triplicato il numero di report di vulnerabilità interni.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10115,7 +10357,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti ɡɪld/',
               phonetic: 'si-KIU-ri-ti GHILD',
               example:
-                'A security guild gathers practitioners. = Una gilda di sicurezza riunisce praticanti.',
+                'The cross-functional security guild meets biweekly to share learnings, review new tools, and align on best practices. = La gilda di sicurezza cross-funzionale si riunisce ogni due settimane per condividere insegnamenti, revisionare nuovi strumenti e allinearsi sulle best practice.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10125,7 +10367,7 @@ export default {
               pronunciation: '/kəˈmjuːnəti əv ˈpræktɪs/',
               phonetic: 'ko-MIU-ni-ti OV PRAK-tis',
               example:
-                'CoPs share knowledge across teams. = Le CoP condividono conoscenza tra team.',
+                'Our DevSecOps community of practice maintains a shared wiki with runbooks, tool evaluations, and solved incident patterns. = La nostra comunità di pratica DevSecOps mantiene un wiki condiviso con runbook, valutazioni di strumenti e pattern di incidenti risolti.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Community of Practice (CoP).',
@@ -10136,17 +10378,17 @@ export default {
               pronunciation: '/braʊn bæɡ ˈsɛʃən/',
               phonetic: 'BRAUN-BAG SE-scion',
               example:
-                'Brown bag sessions happen at lunch. = Le sessioni brown bag avvengono a pranzo.',
+                'A weekly brown bag session lets team members present security topics informally during their lunch break. = Una sessione brown bag settimanale permette ai membri del team di presentare argomenti di sicurezza in modo informale durante la pausa pranzo.',
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Lightning Talk',
-              italian: 'lightning talk / intervento breve',
+              italian: 'Intervento breve (lightning talk)',
               pronunciation: '/ˈlaɪtnɪŋ tɔːk/',
               phonetic: 'LAIT-ning TOK',
               example:
-                'Lightning talks share quick ideas. = I lightning talk condividono idee veloci.',
+                "Each sprint retrospective includes a five-minute lightning talk on a security topic relevant to the team's current work. = Ogni retrospettiva di sprint include un lightning talk di cinque minuti su un argomento di sicurezza rilevante per il lavoro attuale del team.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10156,16 +10398,17 @@ export default {
               pronunciation: '/ˈɒfɪs ˈaʊəz/',
               phonetic: 'O-fis AU-ers',
               example:
-                'Security office hours unblock teams. = Le ore di consulenza sicurezza sbloccano i team.',
+                'The security team holds weekly office hours where developers can ask questions and get code review guidance. = Il team di sicurezza tiene office hours settimanali dove gli sviluppatori possono fare domande e ottenere indicazioni sulla code review.',
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Mentorship',
-              italian: 'mentorship / mentorato',
+              italian: 'Mentorato (mentorship)',
               pronunciation: '/ˈmɛntəʃɪp/',
               phonetic: 'MEN-tor-scip',
-              example: 'Pair juniors with security mentors. = Abbina junior a mentor di sicurezza.',
+              example:
+                "Pairing junior engineers with a senior security mentorship accelerates their growth in threat modeling and secure architecture. = Abbinare ingegneri junior con un mentorship di sicurezza senior accelera la loro crescita nel threat modeling e nell'architettura sicura.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10175,7 +10418,7 @@ export default {
               pronunciation: '/ɪnˈtɜːnl ˈkɒnfərəns/',
               phonetic: 'in-TER-nal KON-fe-rens',
               example:
-                'Internal conferences celebrate work. = Le conferenze interne celebrano il lavoro.',
+                'The annual internal conference features talks from each team on their biggest security wins and lessons learned. = La conferenza interna annuale presenta talk di ogni team sulle loro più grandi vittorie di sicurezza e lezioni apprese.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10185,7 +10428,7 @@ export default {
               pronunciation: '/ˈəʊpən sɔːs ˌkɒntrɪˈbjuːʃən/',
               phonetic: 'OU-pen SORS kon-tri-BIU-scion',
               example:
-                'Encourage open source contributions. = Incoraggia contribuzioni open source.',
+                'Encouraging open source contribution to security tools like Falco and Trivy builds expertise and strengthens the community. = Incoraggiare la contribuzione open source a strumenti di sicurezza come Falco e Trivy costruisce competenza e rafforza la comunità.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10195,7 +10438,7 @@ export default {
               pronunciation: '/ˈnɒlɪdʒ beɪs/',
               phonetic: 'NO-legg BEIS',
               example:
-                'A knowledge base lowers questions. = Una base di conoscenza riduce le domande.',
+                'The internal knowledge base documents every past incident, remediation pattern, and approved architecture decision record. = La base di conoscenza interna documenta ogni incidente passato, pattern di remediation e record di decisione architetturale approvato.',
               context: 'culture',
               difficulty: 'advanced',
               tool: 'Confluence, Notion',
@@ -10206,7 +10449,7 @@ export default {
               pronunciation: '/slæk ˈtʃænl/',
               phonetic: 'SLAK CIAN-nel',
               example:
-                '#sec-help is a popular Slack channel. = #sec-help è un canale Slack popolare.',
+                'The dedicated security Slack channel serves as the first point of contact for developers who spot suspicious behavior. = Il canale Slack di sicurezza dedicato funge da primo punto di contatto per gli sviluppatori che notano comportamenti sospetti.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10222,17 +10465,18 @@ export default {
               italian: 'Codifica sicura',
               pronunciation: '/sɪˈkjʊə ˈkəʊdɪŋ/',
               phonetic: 'si-KIUR KOU-ding',
-              example: 'Secure coding starts in training. = La codifica sicura parte nel training.',
+              example:
+                "Mandatory secure coding guidelines require parameterized queries, output encoding, and input validation in every service. = Le linee guida obbligatorie di codifica sicura richiedono query parametrizzate, codifica dell'output e validazione dell'input in ogni servizio.",
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'OWASP Top 10',
-              italian: 'OWASP Top 10 / top 10 rischi web',
+              italian: 'Top 10 rischi web (OWASP Top 10)',
               pronunciation: '/ˈəʊwɒsp tɒp tɛn/',
               phonetic: 'O-uosp TOP-TEN',
               example:
-                'OWASP Top 10 lists common web flaws. = OWASP Top 10 elenca difetti web comuni.',
+                'Every developer must demonstrate familiarity with the OWASP Top 10 risks before being granted write access to production repos. = Ogni sviluppatore deve dimostrare familiarità con i rischi OWASP Top 10 prima di ottenere accesso in scrittura ai repo di produzione.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10241,7 +10485,8 @@ export default {
               italian: "Validazione dell'input",
               pronunciation: '/ˈɪnpʊt ˌvælɪˈdeɪʃən/',
               phonetic: 'IN-put va-li-DEI-scion',
-              example: 'Always validate untrusted input. = Valida sempre input non fidato.',
+              example:
+                "Strict input validation on the registration form prevented attackers from injecting malicious HTML tags into user profiles. = Una rigorosa validazione dell'input sul modulo di registrazione ha impedito agli attaccanti di iniettare tag HTML malevoli nei profili utente.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10250,7 +10495,8 @@ export default {
               italian: "Codifica dell'output",
               pronunciation: '/ˈaʊtpʊt ɪnˈkəʊdɪŋ/',
               phonetic: 'AUT-put in-KOU-ding',
-              example: "Output encoding prevents XSS. = La codifica dell'output previene XSS.",
+              example:
+                "Applying context-aware output encoding to every dynamic value in the template eliminates reflected XSS vulnerabilities. = Applicare la codifica dell'output contestuale a ogni valore dinamico nel template elimina le vulnerabilità XSS riflesse.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10259,7 +10505,8 @@ export default {
               italian: 'Query parametrizzata',
               pronunciation: '/pəˈræmɪtəraɪzd ˈkwɪəri/',
               phonetic: 'pa-RA-me-te-raizd KUI-ri',
-              example: 'Parameterized queries kill SQLi. = Le query parametrizzate uccidono SQLi.',
+              example:
+                "Switching from string concatenation to a parameterized query eliminated the SQL injection risk in the search endpoint. = Passare dalla concatenazione di stringhe a una query parametrizzata ha eliminato il rischio di SQL injection nell'endpoint di ricerca.",
               context: 'culture',
               difficulty: 'advanced',
               code: 'cur.execute("SELECT * FROM u WHERE id=?", (id,))',
@@ -10269,7 +10516,8 @@ export default {
               italian: 'Default sicuri',
               pronunciation: '/seɪf dɪˈfɔːlts/',
               phonetic: 'SEIF di-FOLTS',
-              example: 'Ship libraries with safe defaults. = Rilascia librerie con default sicuri.',
+              example:
+                "The framework ships with safe defaults that enable CSRF protection, secure cookies, and content security policies out of the box. = Il framework viene fornito con impostazioni sicure di default che abilitano la protezione CSRF, i cookie sicuri e le policy di sicurezza dei contenuti pronte all'uso.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10279,7 +10527,7 @@ export default {
               pronunciation: '/sɪˈkjʊə ɛs diː keɪ/',
               phonetic: 'si-KIUR ES-DI-KEI',
               example:
-                'Provide a secure SDK to all teams. = Fornisci un SDK sicuro a tutti i team.',
+                'The platform team published a secure SDK that handles authentication, logging, and error handling for all microservices. = Il team di piattaforma ha pubblicato un SDK sicuro che gestisce autenticazione, logging e gestione degli errori per tutti i microservizi.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10289,7 +10537,7 @@ export default {
               pronunciation: '/kəʊd ˈsnɪpɪt ˈlaɪbrəri/',
               phonetic: 'KOUD SNI-pet LAI-bra-ri',
               example:
-                'A snippet library teaches by example. = Una libreria di snippet insegna con esempi.',
+                "The internal code snippet library provides copy-paste examples for common tasks like JWT validation and password hashing. = La libreria interna di snippet di codice fornisce esempi copia-incolla per attività comuni come la validazione JWT e l'hashing delle password.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10299,7 +10547,7 @@ export default {
               pronunciation: '/sɪˈkjʊə ˈkəʊdɪŋ ˈstændəd/',
               phonetic: 'si-KIUR KOU-ding STAN-dard',
               example:
-                'CERT publishes secure coding standards. = CERT pubblica standard di codifica sicura.',
+                "Our secure coding standard mandates that all cryptographic operations use the company-approved library, never raw crypto APIs. = Il nostro standard di codifica sicura impone che tutte le operazioni crittografiche usino la libreria approvata dall'azienda, mai API crittografiche raw.",
               context: 'culture',
               difficulty: 'advanced',
               tool: 'CERT, MISRA',
@@ -10309,7 +10557,8 @@ export default {
               italian: 'Checklist di code review',
               pronunciation: '/kəʊd rɪˈvjuː ˈtʃɛklɪst/',
               phonetic: 'KOUD ri-VIU CIEK-list',
-              example: 'A checklist guides reviewers. = Una checklist guida i revisori.',
+              example:
+                "The security code review checklist reminds reviewers to verify input validation, auth checks, and error handling in every PR. = La checklist di code review di sicurezza ricorda ai reviewer di verificare validazione dell'input, controlli di autenticazione e gestione degli errori in ogni PR.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10345,7 +10594,8 @@ export default {
               italian: 'Ingegnere AppSec',
               pronunciation: '/ˈæpˌsɛk ˌɛndʒɪˈnɪər/',
               phonetic: 'AP-sek en-gi-NIR',
-              example: 'AppSec engineers review designs. = Gli ingegneri AppSec rivedono i design.',
+              example:
+                'Our AppSec engineer leads threat modeling sessions and reviews pull requests for OWASP Top 10 vulnerabilities. = Il nostro AppSec engineer guida le sessioni di threat modeling e revisiona le pull request per vulnerabilità OWASP Top 10.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10355,7 +10605,7 @@ export default {
               pronunciation: '/ˈtuːltʃeɪn ˈɑːkɪtɛkt/',
               phonetic: 'TUL-cein AR-ki-tekt',
               example:
-                'Toolchain architects pick the SAST/SCA stack. = Gli architetti della toolchain scelgono lo stack SAST/SCA.',
+                'The toolchain architect designs the end-to-end security pipeline integrating SAST, SCA, DAST, and signing into a single workflow. = Il toolchain architect progetta la pipeline di sicurezza end-to-end integrando SAST, SCA, DAST e firma in un singolo workflow.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10365,7 +10615,7 @@ export default {
               pronunciation: '/sɪˈkjʊərəti ˈɑːkɪtɛkt/',
               phonetic: 'si-KIU-ri-ti AR-ki-tekt',
               example:
-                'A security architect designs defense layers. = Un architetto di sicurezza progetta livelli di difesa.',
+                "Our security architect reviewed the microservices design and recommended mTLS and RBAC before development began. = Il nostro security architect ha revisionato il design dei microservizi e ha raccomandato mTLS e RBAC prima dell'inizio dello sviluppo.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10375,7 +10625,7 @@ export default {
               pronunciation: '/klaʊd sɪˈkjʊərəti ˌɛndʒɪˈnɪər/',
               phonetic: 'KLAUD si-KIU-ri-ti en-gi-NIR',
               example:
-                'Cloud security engineers focus on AWS, GCP, Azure. = Gli ingegneri cloud security si focalizzano su AWS, GCP, Azure.',
+                'The cloud security engineer wrote Terraform modules that enforce encryption, logging, and least-privilege IAM by default. = Il cloud security engineer ha scritto moduli Terraform che impongono crittografia, logging e IAM a privilegio minimo di default.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10385,17 +10635,17 @@ export default {
               pronunciation: '/dɪˈtɛkʃən ˌɛndʒɪˈnɪər/',
               phonetic: 'di-TEK-scion en-gi-NIR',
               example:
-                'Detection engineers write Sigma rules. = Gli ingegneri di rilevamento scrivono regole Sigma.',
+                'Our detection engineer writes and maintains over two hundred Sigma rules that power the SIEM alerting pipeline. = Il nostro detection engineer scrive e mantiene oltre duecento regole Sigma che alimentano la pipeline di alerting del SIEM.',
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Threat Modeler',
-              italian: 'threat modeler / modellatore di minacce',
+              italian: 'Modellatore di minacce (threat modeler)',
               pronunciation: '/θrɛt ˈmɒdlə/',
               phonetic: 'THRET MOD-ler',
               example:
-                'Threat modelers facilitate workshops. = I threat modeler facilitano workshop.',
+                "Having a dedicated threat modeler on the team ensures that every new feature goes through a structured risk analysis. = Avere un threat modeler dedicato nel team assicura che ogni nuova feature passi attraverso un'analisi del rischio strutturata.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10405,25 +10655,27 @@ export default {
               pronunciation: '/kəmˈplaɪəns ˌɛndʒɪˈnɪər/',
               phonetic: 'kom-PLAI-ans en-gi-NIR',
               example:
-                'Compliance engineers automate audits. = Gli ingegneri di conformità automatizzano audit.',
+                'The compliance engineer automates evidence collection so that auditors receive up-to-date control reports without manual effort. = Il compliance engineer automatizza la raccolta di evidenze così che gli auditor ricevano report sui controlli aggiornati senza sforzo manuale.',
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Red Teamer',
-              italian: 'red teamer / membro del red team',
+              italian: 'Membro del red team (red teamer)',
               pronunciation: '/rɛd ˈtiːmər/',
               phonetic: 'RED TI-mer',
-              example: 'Red teamers emulate adversaries. = I red teamer emulano avversari.',
+              example:
+                "The company hired an experienced red teamer to test the organization's defenses through realistic adversary simulations. = L'azienda ha assunto un red teamer esperto per testare le difese dell'organizzazione tramite simulazioni avversarie realistiche.",
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Blue Teamer',
-              italian: 'blue teamer / membro del blue team',
+              italian: 'Membro del blue team (blue teamer)',
               pronunciation: '/bluː ˈtiːmər/',
               phonetic: 'BLU TI-mer',
-              example: 'Blue teamers defend production. = I blue teamer difendono la produzione.',
+              example:
+                'As a blue teamer, her primary focus is writing detection rules and responding to alerts generated by the SIEM. = Come blue teamer, il suo focus principale è scrivere regole di rilevamento e rispondere agli avvisi generati dal SIEM.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10440,7 +10692,7 @@ export default {
               pronunciation: '/siː aɪ ɛs ɛs piː/',
               phonetic: 'SI-AI-ES-ES-PI',
               example:
-                'CISSP is a senior management cert. = CISSP è una cert da senior management.',
+                'Earning the CISSP certification demonstrated broad security knowledge across eight domains from risk management to software security. = Ottenere la certificazione CISSP ha dimostrato una vasta conoscenza della sicurezza in otto domini dalla gestione del rischio alla sicurezza software.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Certified Information Systems Security Professional.',
@@ -10450,7 +10702,8 @@ export default {
               italian: 'CCSP (certificazione cloud security)',
               pronunciation: '/siː siː ɛs piː/',
               phonetic: 'SI-SI-ES-PI',
-              example: 'CCSP focuses on cloud security. = CCSP si focalizza sulla sicurezza cloud.',
+              example:
+                'The CCSP certification validates expertise in cloud security architecture, governance, and compliance frameworks. = La certificazione CCSP valida la competenza in architettura di sicurezza cloud, governance e framework di compliance.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Certified Cloud Security Professional.',
@@ -10460,29 +10713,30 @@ export default {
               italian: 'OSCP (certificazione pentest Offensive Security)',
               pronunciation: '/əʊ ɛs siː piː/',
               phonetic: 'O-ES-SI-PI',
-              example: 'OSCP is the classic pen test cert. = OSCP è la cert classica di pen test.',
+              example:
+                "Passing the hands-on OSCP exam required exploiting multiple machines in a simulated corporate network within twenty-four hours. = Superare l'esame pratico OSCP ha richiesto lo sfruttamento di molteplici macchine in una rete aziendale simulata entro ventiquattro ore.",
               context: 'culture',
               difficulty: 'advanced',
               note: 'Offensive Security Certified Professional.',
             },
             {
               english: 'GIAC GCSA',
-              italian: 'GIAC GCSA / Cloud Security Automation',
+              italian: 'Cloud Security Automation (GIAC GCSA)',
               pronunciation: '/dʒæk dʒiː siː ɛs eɪ/',
               phonetic: 'GIAK GI-SI-ES-EI',
               example:
-                "GCSA targets cloud security automation. = GCSA punta all'automazione di cloud security.",
+                "The GIAC GCSA certification focuses on automating security controls in cloud-native environments using Infrastructure as Code. = La certificazione GIAC GCSA si concentra sull'automazione dei controlli di sicurezza in ambienti cloud-native usando Infrastructure as Code.",
               context: 'culture',
               difficulty: 'advanced',
               note: 'GIAC Cloud Security Automation.',
             },
             {
               english: 'CKS',
-              italian: 'CKS / Certified Kubernetes Security Specialist',
+              italian: 'Certified Kubernetes Security Specialist (CKS)',
               pronunciation: '/siː keɪ ɛs/',
               phonetic: 'SI-KEI-ES',
               example:
-                'CKS proves Kubernetes security skills. = CKS prova competenze in sicurezza Kubernetes.',
+                "The CKS exam tests hands-on Kubernetes security skills including network policies, pod security, and audit logging. = L'esame CKS testa competenze pratiche di sicurezza Kubernetes incluse network policy, sicurezza dei pod e logging di audit.",
               context: 'culture',
               difficulty: 'advanced',
               note: 'Certified Kubernetes Security Specialist.',
@@ -10493,49 +10747,51 @@ export default {
               pronunciation: '/eɪ dʌbljuː ɛs sɪˈkjʊərəti ˈspɛʃəlti/',
               phonetic: 'EI-DABL-IU-ES si-KIU-ri-ti SPE-scial-ti',
               example:
-                'AWS Security Specialty validates AWS depth. = AWS Security Specialty valida la profondità AWS.',
+                "Passing the AWS Security Specialty exam validated deep knowledge of IAM, encryption, logging, and incident response on AWS. = Superare l'esame AWS Security Specialty ha validato una conoscenza approfondita di IAM, crittografia, logging e risposta agli incidenti su AWS.",
               context: 'culture',
               difficulty: 'advanced',
               tool: 'AWS Certification',
             },
             {
               english: 'AZ-500',
-              italian: 'AZ-500 / Azure Security Engineer Associate',
+              italian: 'Azure Security Engineer Associate (AZ-500)',
               pronunciation: '/eɪ zɛd faɪv hʌndrəd/',
               phonetic: 'EI-ZED 500',
               example:
-                'AZ-500 covers Azure Security Engineer. = AZ-500 copre Azure Security Engineer.',
+                "Studying for the AZ-500 exam deepened the engineer's understanding of Azure network security, identity, and data protection. = Studiare per l'esame AZ-500 ha approfondito la comprensione dell'ingegnere sulla sicurezza di rete Azure, l'identità e la protezione dei dati.",
               context: 'culture',
               difficulty: 'advanced',
               tool: 'Microsoft Certification',
             },
             {
               english: 'CKAD',
-              italian: 'CKAD / Certified Kubernetes Application Developer',
+              italian: 'Certified Kubernetes Application Developer (CKAD)',
               pronunciation: '/siː keɪ eɪ diː/',
               phonetic: 'SI-KEI-EI-DI',
               example:
-                'CKAD certifies app developers in K8s. = CKAD certifica gli sviluppatori app in K8s.',
+                'Although developer-focused, the CKAD certification builds container and Kubernetes fundamentals essential for DevSecOps work. = Sebbene orientata allo sviluppatore, la certificazione CKAD costruisce fondamentali su container e Kubernetes essenziali per il lavoro DevSecOps.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Certified Kubernetes Application Developer.',
             },
             {
               english: 'CRTP',
-              italian: 'CRTP / Certified Red Team Professional',
+              italian: 'Certified Red Team Professional (CRTP)',
               pronunciation: '/siː ɑːr tiː piː/',
               phonetic: 'SI-AR-TI-PI',
-              example: 'CRTP teaches AD attack paths. = CRTP insegna percorsi di attacco AD.',
+              example:
+                'The CRTP certification trains professionals to attack and secure Active Directory environments used in enterprise networks. = La certificazione CRTP forma professionisti ad attaccare e proteggere ambienti Active Directory usati nelle reti aziendali.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Certified Red Team Professional.',
             },
             {
               english: 'eJPT',
-              italian: 'eJPT / eLearnSecurity Junior Penetration Tester',
+              italian: 'eLearnSecurity Junior Penetration Tester (eJPT)',
               pronunciation: '/iː dʒeɪ piː tiː/',
               phonetic: 'I-GEI-PI-TI',
-              example: 'eJPT is a beginner pen test cert. = eJPT è una cert di pen test base.',
+              example:
+                "Starting with the eJPT certification provides a beginner-friendly introduction to penetration testing methodologies and tools. = Iniziare con la certificazione eJPT fornisce un'introduzione adatta ai principianti alle metodologie e agli strumenti di penetration testing.",
               context: 'culture',
               difficulty: 'advanced',
               note: 'eLearnSecurity Junior Pen Tester.',
@@ -10552,17 +10808,18 @@ export default {
               italian: 'Curriculum',
               pronunciation: '/ˈrɛzjʊmeɪ/',
               phonetic: 'RE-ziu-mei',
-              example: 'Tailor your resume to each role. = Adatta il curriculum a ogni ruolo.',
+              example:
+                "Tailoring your resume to highlight pipeline security automation and compliance achievements makes it stand out to hiring managers. = Personalizzare il curriculum per evidenziare l'automazione della sicurezza delle pipeline e i risultati di compliance lo fa risaltare agli occhi dei responsabili delle assunzioni.",
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Portfolio',
-              italian: 'portfolio / raccolta di lavori personali',
+              italian: 'Raccolta di lavori personali (portfolio)',
               pronunciation: '/pɔːtˈfəʊliəʊ/',
               phonetic: 'port-FO-lio',
               example:
-                'A GitHub portfolio shows real skills. = Un portfolio GitHub mostra abilità vere.',
+                'Building a public portfolio with open-source security tools, blog posts, and CTF write-ups demonstrates practical expertise. = Costruire un portfolio pubblico con strumenti di sicurezza open-source, post sul blog e write-up CTF dimostra competenza pratica.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10572,7 +10829,7 @@ export default {
               pronunciation: '/ˈwaɪtbɔːd ˈɪntəvjuː/',
               phonetic: 'UAIT-bord IN-ter-viu',
               example:
-                'Practice whiteboard interviews aloud. = Pratica i colloqui alla lavagna ad alta voce.',
+                'During the whiteboard interview, the candidate designed a secure CI/CD pipeline with signing, scanning, and admission control. = Durante il colloquio alla lavagna, il candidato ha progettato una pipeline CI/CD sicura con firma, scansione e controllo di ammissione.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10582,7 +10839,7 @@ export default {
               pronunciation: '/ˈsɪstəm dɪˈzaɪn ˈɪntəvjuː/',
               phonetic: 'SIS-tem di-ZAIN IN-ter-viu',
               example:
-                'Add security to system design answers. = Aggiungi la sicurezza alle risposte di system design.',
+                'A strong system design interview answer addresses authentication, encryption at rest, rate limiting, and audit logging. = Una risposta forte al colloquio di system design affronta autenticazione, crittografia a riposo, rate limiting e logging di audit.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10592,7 +10849,7 @@ export default {
               pronunciation: '/bɪˈheɪvjərəl ˈɪntəvjuː/',
               phonetic: 'bi-HEI-vio-ral IN-ter-viu',
               example:
-                'Use STAR for behavioral interviews. = Usa STAR per colloqui comportamentali.',
+                'In the behavioral interview, the recruiter asked about a time when the candidate managed a production security incident. = Nel colloquio comportamentale, il recruiter ha chiesto di una volta in cui il candidato ha gestito un incidente di sicurezza in produzione.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Situation, Task, Action, Result.',
@@ -10602,7 +10859,8 @@ export default {
               italian: 'Compito a casa',
               pronunciation: '/teɪk həʊm əˈsaɪnmənt/',
               phonetic: 'TEIK-HOUM a-SAIN-ment',
-              example: 'Time-box take-home assignments. = Limita nel tempo i compiti a casa.',
+              example:
+                "The take-home assignment asked candidates to write a GitHub Actions workflow with SAST, secret scanning, and image signing. = L'esercizio da fare a casa chiedeva ai candidati di scrivere un workflow GitHub Actions con SAST, scansione segreti e firma delle immagini.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10611,7 +10869,8 @@ export default {
               italian: 'Negoziazione dello stipendio',
               pronunciation: '/ˈsæləri nɪˌɡəʊʃiˈeɪʃən/',
               phonetic: 'SA-la-ri ne-go-sci-EI-scion',
-              example: "Always negotiate the offer. = Negozia sempre l'offerta.",
+              example:
+                "Researching market rates before salary negotiation ensures that the offer reflects the candidate's specialized security skills. = Ricercare le tariffe di mercato prima della negoziazione dello stipendio assicura che l'offerta rifletta le competenze di sicurezza specializzate del candidato.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10621,27 +10880,27 @@ export default {
               pronunciation: '/ˈtəʊtl ˌkɒmpɛnˈseɪʃən/',
               phonetic: 'TO-tal kom-pen-SEI-scion',
               example:
-                'Total comp includes equity and bonus. = La comp totale include equity e bonus.',
+                'Evaluating total compensation includes base salary, equity grants, signing bonus, and professional development budgets. = Valutare la compensazione totale include stipendio base, assegnazioni azionarie, bonus di ingresso e budget per lo sviluppo professionale.',
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Networking',
-              italian: 'networking / costruzione di una rete professionale',
+              italian: 'Costruzione di una rete professionale (networking)',
               pronunciation: '/ˈnɛtwɜːkɪŋ/',
               phonetic: 'NET-uor-king',
               example:
-                'Attend conferences for networking. = Partecipa a conferenze per fare networking.',
+                'Attending security conferences and local meetups expands your professional networking and opens doors to job opportunities. = Partecipare a conferenze di sicurezza e meetup locali espande il tuo networking professionale e apre le porte a opportunità lavorative.',
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'LinkedIn',
-              italian: 'LinkedIn / social network professionale',
+              italian: 'Social network professionale (LinkedIn)',
               pronunciation: '/ˈlɪŋktɪn/',
               phonetic: 'LINK-d-IN',
               example:
-                'Polish your LinkedIn profile yearly. = Lucida il profilo LinkedIn ogni anno.',
+                'Sharing security insights and project highlights on LinkedIn attracts recruiters and builds your professional reputation. = Condividere insight di sicurezza e punti salienti dei progetti su LinkedIn attrae i recruiter e costruisce la tua reputazione professionale.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10658,7 +10917,7 @@ export default {
               pronunciation: '/kənˈtɪnjʊəs ˈlɜːnɪŋ/',
               phonetic: 'kon-TI-nius LER-ning',
               example:
-                "Continuous learning is non-negotiable. = L'apprendimento continuo non è negoziabile.",
+                "Dedicating two hours per week to continuous learning through courses, labs, and reading keeps security skills current. = Dedicare due ore a settimana all'apprendimento continuo tramite corsi, lab e lettura mantiene le competenze di sicurezza aggiornate.",
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10668,28 +10927,28 @@ export default {
               pronunciation: '/ˈkɒnfərəns/',
               phonetic: 'KON-fe-rens',
               example:
-                'Black Hat and DEF CON are key conferences. = Black Hat e DEF CON sono conferenze chiave.',
+                'Presenting at a security conference like DEF CON or BSides establishes credibility and contributes knowledge to the community. = Presentare a una conferenza di sicurezza come DEF CON o BSides stabilisce credibilità e contribuisce conoscenza alla comunità.',
               context: 'culture',
               difficulty: 'advanced',
             },
             {
               english: 'Podcast',
-              italian: 'podcast / programma audio in serie',
+              italian: 'Programma audio in serie (podcast)',
               pronunciation: '/ˈpɒdkɑːst/',
               phonetic: 'POD-kast',
               example:
-                'Listen to security podcasts on commute. = Ascolta podcast di sicurezza in viaggio.',
+                'Listening to security-focused podcasts during commutes is an efficient way to stay updated on emerging threats and tools. = Ascoltare podcast focalizzati sulla sicurezza durante il tragitto è un modo efficiente per restare aggiornati su minacce e strumenti emergenti.',
               context: 'culture',
               difficulty: 'advanced',
               note: 'Risky Business, Darknet Diaries.',
             },
             {
               english: 'Newsletter',
-              italian: 'newsletter / lettera informativa periodica',
+              italian: 'Lettera informativa periodica (newsletter)',
               pronunciation: '/ˈnjuːzlɛtə/',
               phonetic: 'NIUS-le-ter',
               example:
-                'Subscribe to a security newsletter. = Iscriviti a una newsletter di sicurezza.',
+                'Subscribing to curated security newsletters delivers the most important vulnerability disclosures and tool updates weekly. = Abbonarsi a newsletter di sicurezza curate fornisce settimanalmente le divulgazioni di vulnerabilità più importanti e gli aggiornamenti degli strumenti.',
               context: 'culture',
               difficulty: 'advanced',
               tool: 'tl;dr sec, CloudSecList',
@@ -10700,7 +10959,7 @@ export default {
               pronunciation: '/bʊk/',
               phonetic: 'BUK',
               example:
-                "Read at least one security book a year. = Leggi almeno un libro di sicurezza all'anno.",
+                'Reading foundational books on application security and threat modeling builds the theoretical depth that tools alone cannot provide. = Leggere libri fondamentali sulla sicurezza delle applicazioni e il threat modeling costruisce la profondità teorica che i soli strumenti non possono fornire.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10709,7 +10968,8 @@ export default {
               italian: 'Mentore',
               pronunciation: '/ˈmɛntɔː/',
               phonetic: 'MEN-tor',
-              example: 'Find a mentor outside your team. = Trova un mentore fuori dal tuo team.',
+              example:
+                'Finding an experienced mentor in the security field accelerates growth by providing guidance on career decisions and technical challenges. = Trovare un mentore esperto nel campo della sicurezza accelera la crescita fornendo orientamento sulle decisioni di carriera e le sfide tecniche.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10718,7 +10978,8 @@ export default {
               italian: 'Laboratorio',
               pronunciation: '/læb/',
               phonetic: 'LAB',
-              example: 'Build a home lab to experiment. = Costruisci un home lab per sperimentare.',
+              example:
+                'Setting up a home lab with vulnerable VMs and container clusters lets you practice offensive and defensive techniques safely. = Allestire un lab domestico con VM vulnerabili e cluster di container ti permette di praticare tecniche offensive e difensive in sicurezza.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10728,7 +10989,7 @@ export default {
               pronunciation: '/ˈəʊpən sɔːs ˈprɒdʒɛkt/',
               phonetic: 'OU-pen SORS PRO-gekt',
               example:
-                'Contribute to an open source project. = Contribuisci a un progetto open source.',
+                'Contributing to an open source project like Falco or Trivy demonstrates hands-on skills that impress interviewers. = Contribuire a un progetto open source come Falco o Trivy dimostra competenze pratiche che impressionano gli intervistatori.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10737,7 +10998,8 @@ export default {
               italian: 'Invio di talk',
               pronunciation: '/tɔːks səbˈmɪʃən/',
               phonetic: 'TOKS sab-MI-scion',
-              example: 'Submit a talk to a local meetup. = Invia un talk a un meetup locale.',
+              example:
+                'Submitting talks to local meetups and conferences is the best way to share knowledge and grow your professional network. = Sottomettere talk a meetup locali e conferenze è il modo migliore per condividere conoscenza e far crescere la tua rete professionale.',
               context: 'culture',
               difficulty: 'advanced',
             },
@@ -10747,7 +11009,7 @@ export default {
               pronunciation: '/ˈpɜːsənl brænd/',
               phonetic: 'PER-so-nal BRAND',
               example:
-                'Build a personal brand via blog posts. = Costruisci un brand personale con post di blog.',
+                'Building a personal brand through blog posts, open-source contributions, and conference talks establishes you as a trusted expert. = Costruire un brand personale tramite post sul blog, contribuzioni open-source e talk a conferenze ti afferma come esperto fidato.',
               context: 'culture',
               difficulty: 'advanced',
             },

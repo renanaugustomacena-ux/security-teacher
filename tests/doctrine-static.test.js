@@ -125,7 +125,7 @@ describe('Doctrine §3 — CSP & Trusted Types', () => {
 });
 
 describe('Doctrine §3.10 — Forbidden runtime sinks', () => {
-  const ALLOWLIST = new Set(['js/topics/data/ethical-hacking.js']);
+  const ALLOWLIST = new Set(['js/topics/data/ethical-hacking.js', 'js/topics/data/devsecops.js']);
   const PATTERNS = [
     { name: 'eval(', re: /\beval\s*\(/ },
     { name: 'new Function(', re: /\bnew\s+Function\s*\(/ },

@@ -858,8 +858,12 @@ export class TopicPracticeManager {
             <div class="exercise-instruction">
               ${this.currentMode === 'listening' ? 'Ascolta e scegli:' : 'Qual \u00E8 la traduzione di:'}
             </div>
-            <div class="exercise-target">${this.escapeHtml(q.english)} ${ttsBtn}</div>
-            ${q.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(q.pronunciation)}</div>` : ''}
+            ${
+              this.currentMode === 'listening'
+                ? `<div class="exercise-target">${ttsBtn}</div>`
+                : `<div class="exercise-target">${this.escapeHtml(q.english)} ${ttsBtn}</div>
+            ${q.pronunciation ? `<div class="exercise-pronunciation">${this.escapeHtml(q.pronunciation)}</div>` : ''}`
+            }
             <div class="options-grid">
               ${options
                 .map(
@@ -907,7 +911,6 @@ export class TopicPracticeManager {
           <div class="exercise-card">
             <div class="exercise-instruction">Completa la frase:</div>
             <div class="exercise-target">${this.escapeHtml(displaySentence)}</div>
-            <p class="translation-hint">Traduzione: ${this.escapeHtml(parts[1] || '')}</p>
             <input type="text" id="topic-writing-input" class="practice-input" placeholder="Parola mancante..." autofocus>
             <button class="btn btn-primary" style="margin-top: 1rem;"
               data-action="topicPractice.checkWriting" data-correct="${escapeForAttr(missingWord)}">
@@ -925,7 +928,6 @@ export class TopicPracticeManager {
         html = `
           <div class="exercise-card">
             <div class="exercise-instruction">Ricostruisci la frase (Inglese):</div>
-            <div class="exercise-target italic">${this.escapeHtml(q.example.split(' = ')[1] || '')}</div>
             <div class="scrambled-words">
               ${words.map((w) => `<span class="word-chip">${this.escapeHtml(w)}</span>`).join(' ')}
             </div>
@@ -1027,7 +1029,7 @@ export class TopicPracticeManager {
           <div class="exercise-card">
             <div class="exercise-instruction">Leggi il paragrafo e scegli l'affermazione corretta:</div>
             <div class="exercise-paragraph">${this.escapeHtml(paragraph)}</div>
-            <div class="exercise-comprehension-question">Quale frase appare nel testo?</div>
+            <div class="exercise-comprehension-question">Quale affermazione è vera in base al testo? / Which statement is true?</div>
             <div class="options-grid">
               ${allOptions
                 .map(
@@ -1048,7 +1050,6 @@ export class TopicPracticeManager {
       case 'scenario': {
         const exampleParts = (q.example || '').split(' = ');
         const englishPhrase = exampleParts[0] || '';
-        const italianHint = exampleParts[1] || q.italian;
 
         const targetWord = q.english;
         const blankedPhrase = englishPhrase.replace(
@@ -1068,7 +1069,6 @@ export class TopicPracticeManager {
             <div class="exercise-instruction">Scenario:</div>
             <div class="exercise-scenario">${this.escapeHtml(scenario)}</div>
             <div class="exercise-target">${this.escapeHtml(blankedPhrase)} ${scenarioTtsBtn}</div>
-            <p class="translation-hint">${this.escapeHtml(italianHint)}</p>
             <div class="options-grid">
               ${options
                 .map(

@@ -24,11 +24,11 @@ export default {
           items: [
             {
               english: 'Node.js',
-              italian: 'Node.js (runtime JavaScript server-side)',
+              italian: 'Runtime JavaScript server-side (Node.js)',
               pronunciation: '/noʊd dʒeɪ ɛs/',
               phonetic: 'NOUD-gei-es',
               example:
-                'Node.js runs JavaScript outside the browser. = Node.js esegue JavaScript fuori dal browser.',
+                'Our backend API is built on Node.js because it handles concurrent connections efficiently. = La nostra API backend è costruita su Node.js perché gestisce connessioni concorrenti in modo efficiente.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'node app.js',
@@ -40,7 +40,7 @@ export default {
               pronunciation: '/ˈrʌntaɪm/',
               phonetic: 'RAN-taim',
               example:
-                'Node.js is a JavaScript runtime. = Node.js è un ambiente di esecuzione JavaScript.',
+                "The runtime environment manages memory allocation and garbage collection during program execution. = L'ambiente di esecuzione gestisce l'allocazione di memoria e il garbage collection durante l'esecuzione del programma.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Il runtime è ciò che esegue il codice quando il programma è in funzione.',
@@ -51,7 +51,7 @@ export default {
               pronunciation: '/viː eɪt ˈendʒɪn/',
               phonetic: 'VI-EIT EN-gin',
               example:
-                'Node.js uses the V8 engine to run JavaScript. = Node.js usa il motore V8 per eseguire JavaScript.',
+                'The V8 engine compiles JavaScript to native machine code using just-in-time compilation. = Il motore V8 compila JavaScript in codice macchina nativo usando la compilazione just-in-time.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'V8',
@@ -59,11 +59,11 @@ export default {
             },
             {
               english: 'JavaScript',
-              italian: 'JavaScript (linguaggio di programmazione web)',
+              italian: 'Linguaggio di programmazione web (JavaScript)',
               pronunciation: '/ˈdʒɑːvəskrɪpt/',
               phonetic: 'GIA-va-script',
               example:
-                'JavaScript is the language used in Node.js. = JavaScript è il linguaggio usato in Node.js.',
+                'Both the frontend and backend of our application are written in JavaScript thanks to Node.js. = Sia il frontend che il backend della nostra applicazione sono scritti in JavaScript grazie a Node.js.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Spesso abbreviato JS.',
@@ -74,7 +74,7 @@ export default {
               pronunciation: '/ˈsɜːrvər saɪd/',
               phonetic: 'SER-ver SAID',
               example:
-                'Node.js enables server-side JavaScript. = Node.js permette JavaScript lato server.',
+                'All data validation should happen server-side to prevent malicious input from reaching the database. = Tutta la validazione dei dati dovrebbe avvenire lato server per impedire che input malevoli raggiungano il database.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Prima di Node, JavaScript girava solo nel browser (lato client).',
@@ -85,7 +85,7 @@ export default {
               pronunciation: '/ˈsɪŋɡl ˈθredɪd/',
               phonetic: 'SIN-gol TRED-ed',
               example:
-                'Node.js is single-threaded but non-blocking. = Node.js ha un singolo thread ma è non-bloccante.',
+                "Even though the event loop is single-threaded, libuv delegates heavy I/O to background threads. = Anche se l'event loop è a singolo thread, libuv delega l'I/O pesante a thread in background.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Un solo thread principale, ma libuv gestisce I/O in background.',
@@ -107,7 +107,7 @@ export default {
               pronunciation: '/krɒs ˈplætfɔːrm/',
               phonetic: 'KROS-PLAT-form',
               example:
-                'Node.js is cross-platform: Linux, macOS, Windows. = Node.js è multipiattaforma: Linux, macOS, Windows.',
+                'We ship the same cross-platform CLI tool to developers on Linux, macOS, and Windows without code changes. = Distribuiamo lo stesso strumento CLI multipiattaforma agli sviluppatori su Linux, macOS e Windows senza modifiche al codice.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -116,7 +116,8 @@ export default {
               italian: 'Codice aperto',
               pronunciation: '/ˈoʊpən sɔːrs/',
               phonetic: 'OU-pen SORS',
-              example: 'Node.js is open source software. = Node.js è software a codice aperto.',
+              example:
+                'Thousands of contributors maintain the open source codebase under the OpenJS Foundation. = Migliaia di contributori mantengono il codice aperto sotto la OpenJS Foundation.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Il codice sorgente è su GitHub: nodejs/node.',
@@ -127,7 +128,7 @@ export default {
               pronunciation: '/repl/',
               phonetic: 'REPOL',
               example:
-                'The Node REPL evaluates JavaScript interactively. = Il REPL di Node valuta JavaScript in modo interattivo.',
+                'During debugging you can test expressions quickly by opening a REPL session in your terminal. = Durante il debugging puoi testare rapidamente espressioni aprendo una sessione REPL nel terminale.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'node',
@@ -146,18 +147,18 @@ export default {
               pronunciation: '/ɪˈvent luːp/',
               phonetic: 'i-VENT LUUP',
               example:
-                "The event loop processes asynchronous tasks. = L'event loop elabora operazioni asincrone.",
+                'Understanding how the event loop schedules timers, I/O, and microtasks is key to writing performant Node code. = Capire come il ciclo di eventi pianifica timer, I/O e microtask è fondamentale per scrivere codice Node performante.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Cuore di Node.js: gestisce eventi e callback in fasi successive.',
             },
             {
               english: 'libuv',
-              italian: 'libuv / libreria event-loop di Node.js',
+              italian: 'Libreria event-loop di Node.js (libuv)',
               pronunciation: '/lɪbˈjuːviː/',
               phonetic: 'LIB-iu-vi',
               example:
-                "libuv provides the event loop in Node.js. = libuv fornisce l'event loop in Node.js.",
+                "Under the hood, libuv abstracts platform-specific I/O operations into a unified asynchronous API. = Internamente, libuv astrae le operazioni I/O specifiche della piattaforma in un'API asincrona unificata.",
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'libuv',
@@ -169,7 +170,7 @@ export default {
               pronunciation: '/θred puːl/',
               phonetic: 'TRED PUUL',
               example:
-                'libuv uses a thread pool for heavy tasks. = libuv usa un pool di thread per operazioni pesanti.',
+                "DNS lookups and file system operations run in the thread pool so they don't block the main event loop. = I lookup DNS e le operazioni sul filesystem girano nel pool di thread per non bloccare l'event loop principale.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Default 4 thread, configurabile con UV_THREADPOOL_SIZE.',
@@ -180,7 +181,7 @@ export default {
               pronunciation: '/eɪˈsɪŋkrənəs/',
               phonetic: 'ei-SIN-kre-nos',
               example:
-                "Asynchronous code does not block execution. = Il codice asincrono non blocca l'esecuzione.",
+                "Reading a file with an asynchronous API lets your server keep handling requests while waiting for disk I/O. = Leggere un file con un'API asincrona permette al server di continuare a gestire richieste mentre aspetta l'I/O disco.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'setTimeout(() => {}, 1000);',
@@ -191,7 +192,7 @@ export default {
               pronunciation: '/ˈsɪŋkrənəs/',
               phonetic: 'SIN-kre-nos',
               example:
-                'Synchronous code blocks until complete. = Il codice sincrono blocca finché non termina.',
+                "Using a synchronous readFileSync during startup is acceptable, but avoid it inside request handlers. = Usare un readFileSync sincrono all'avvio è accettabile, ma evitalo dentro i gestori di richieste.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const data = fs.readFileSync(path);',
@@ -203,7 +204,7 @@ export default {
               pronunciation: '/kənˈkʌrənsi/',
               phonetic: 'kon-KAR-en-si',
               example:
-                'Node.js handles high concurrency efficiently. = Node.js gestisce alta concorrenza in modo efficiente.',
+                'The event-driven model achieves high concurrency without spawning one thread per connection. = Il modello event-driven raggiunge alta concorrenza senza creare un thread per ogni connessione.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -213,7 +214,7 @@ export default {
               pronunciation: '/aɪ oʊ/',
               phonetic: 'AI-O',
               example:
-                'Node.js excels at I/O-bound tasks. = Node.js eccelle in operazioni I/O-bound.',
+                "A chat server is an I/O-bound application because it spends most of its time waiting for network data. = Un server di chat è un'applicazione I/O-bound perché passa la maggior parte del tempo in attesa di dati dalla rete.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Input/Output: lettura file, rete, database.',
@@ -224,7 +225,7 @@ export default {
               pronunciation: '/ˈkɔːlbæk kjuː/',
               phonetic: 'KOL-bak KIU',
               example:
-                'Callbacks wait in the callback queue. = I callback aspettano nella coda dei callback.',
+                'Once the timer expires, its handler is placed in the callback queue until the call stack is empty. = Quando il timer scade, il suo gestore viene inserito nella coda dei callback finché lo stack delle chiamate non è vuoto.',
               context: 'foundations',
               difficulty: 'beginner',
               note: "Detta anche task queue. L'event loop vi attinge a ogni iterazione.",
@@ -235,17 +236,18 @@ export default {
               pronunciation: '/kɔːl stæk/',
               phonetic: 'KOL-STAK',
               example:
-                'JavaScript executes functions on the call stack. = JavaScript esegue le funzioni sullo stack delle chiamate.',
+                'A deeply recursive function can overflow the call stack and crash your Node process. = Una funzione troppo ricorsiva può far traboccare lo stack delle chiamate e mandare in crash il processo Node.',
               context: 'foundations',
               difficulty: 'beginner',
               note: "L'event loop sposta i callback dalla coda allo stack quando è vuoto.",
             },
             {
               english: 'Heap',
-              italian: 'heap / memoria dinamica',
+              italian: 'Memoria dinamica (heap)',
               pronunciation: '/hiːp/',
               phonetic: 'IIP',
-              example: "Objects are allocated on the heap. = Gli oggetti sono allocati sull'heap.",
+              example:
+                'V8 allocates objects on the heap and reclaims unused memory through garbage collection. = V8 alloca gli oggetti nella memoria dinamica (heap) e recupera la memoria inutilizzata tramite il garbage collection.',
               context: 'foundations',
               difficulty: 'beginner',
               note: "V8 gestisce l'heap con un garbage collector generazionale.",
@@ -263,18 +265,18 @@ export default {
               pronunciation: '/ˈmɒdjuːl/',
               phonetic: 'MO-diul',
               example:
-                'A module is a reusable piece of code. = Un modulo è un pezzo di codice riutilizzabile.',
+                'Each file in a Node project acts as a separate module with its own scope. = Ogni file in un progetto Node agisce come un modulo separato con il proprio scope.',
               context: 'foundations',
               difficulty: 'beginner',
               code: "const fs = require('fs');",
             },
             {
               english: 'Require',
-              italian: 'Richiedi / Importa',
+              italian: 'Importazione sincrona (require)',
               pronunciation: '/rɪˈkwaɪər/',
               phonetic: 'ri-KUAIR',
               example:
-                'Use require to import CommonJS modules. = Usa require per importare moduli CommonJS.',
+                'At the top of a CommonJS file, you require dependencies to load them synchronously before your code runs. = In cima a un file CommonJS, importi le dipendenze con require per caricarle in modo sincrono prima che il codice venga eseguito.',
               context: 'foundations',
               difficulty: 'beginner',
               code: "const path = require('path');",
@@ -285,7 +287,8 @@ export default {
               italian: 'Modulo integrato',
               pronunciation: '/ˈbɪlt ɪn ˈmɒdjuːl/',
               phonetic: 'BILT-IN MO-diul',
-              example: 'fs and path are built-in modules. = fs e path sono moduli integrati.',
+              example:
+                'You can use the built-in module "os" to detect available CPU cores and allocate workers accordingly. = Puoi usare il modulo integrato "os" per rilevare le CPU disponibili e allocare i worker di conseguenza.',
               context: 'foundations',
               difficulty: 'beginner',
               code: "const os = require('os');",
@@ -296,7 +299,8 @@ export default {
               italian: 'Modulo core',
               pronunciation: '/kɔːr ˈmɒdjuːl/',
               phonetic: 'KOR MO-diul',
-              example: 'Core modules ship with Node.js. = I moduli core sono inclusi con Node.js.',
+              example:
+                "Using the node: prefix when importing a core module makes the intent explicit and avoids name collisions. = Usare il prefisso node: quando si importa un modulo core rende l'intento esplicito ed evita collisioni di nomi.",
               context: 'foundations',
               difficulty: 'beginner',
               code: "require('node:fs');",
@@ -308,7 +312,7 @@ export default {
               pronunciation: '/ˈɡloʊbl ˈɒbdʒɪkt/',
               phonetic: 'GLOU-bal OB-gekt',
               example:
-                "In Node, the global object is called global. = In Node, l'oggetto globale si chiama global.",
+                "Avoid polluting the global object with variables; use modules to encapsulate state instead. = Evita di inquinare l'oggetto globale con variabili; usa i moduli per incapsulare lo stato.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'global.myVar = 42;',
@@ -327,11 +331,11 @@ export default {
             },
             {
               english: 'Console',
-              italian: 'console / oggetto di stampa di sistema',
+              italian: 'Oggetto di stampa di sistema (console)',
               pronunciation: '/ˈkɒnsoʊl/',
               phonetic: 'KON-sol',
               example:
-                "console.log prints to standard output. = console.log stampa sull'output standard.",
+                'Use console.error for error messages because it writes to stderr instead of stdout. = Usa console.error per i messaggi di errore perché scrive su stderr anziché su stdout.',
               context: 'foundations',
               difficulty: 'beginner',
               code: "console.log('Hello, Node!');",
@@ -342,7 +346,7 @@ export default {
               pronunciation: '/ˌdɜːrˈneɪm/',
               phonetic: 'der-NEIM',
               example:
-                '__dirname is the directory of the current file. = __dirname è la directory del file corrente.',
+                'You can resolve asset paths reliably by joining __dirname with a relative path using path.join. = Puoi risolvere i percorsi degli asset in modo affidabile unendo __dirname con un percorso relativo usando path.join.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'console.log(__dirname);',
@@ -354,7 +358,7 @@ export default {
               pronunciation: '/ˌfaɪlˈneɪm/',
               phonetic: 'fail-NEIM',
               example:
-                '__filename gives the full path of the current file. = __filename dà il percorso completo del file corrente.',
+                "Logging __filename in error messages helps identify exactly which source file threw the exception. = Registrare __filename nei messaggi di errore aiuta a identificare esattamente quale file sorgente ha lanciato l'eccezione.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'console.log(__filename);',
@@ -365,7 +369,7 @@ export default {
               pronunciation: '/ɪkˈspɔːrts/',
               phonetic: 'eks-PORTS',
               example:
-                'Use module.exports to expose functions. = Usa module.exports per esporre funzioni.',
+                'Define your public API by listing only the intended exports in module.exports, keeping internal helpers private. = Definisci la tua API pubblica elencando solo le esportazioni previste in module.exports, mantenendo privati gli helper interni.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'module.exports = { greet };',
@@ -383,7 +387,7 @@ export default {
               pronunciation: '/ɪnˈstɔːl/',
               phonetic: 'in-STOL',
               example:
-                'You can install Node.js from nodejs.org. = Puoi installare Node.js da nodejs.org.',
+                'Before starting any project, install the LTS version from nodejs.org or use a version manager like nvm. = Prima di iniziare qualsiasi progetto, installa la versione LTS da nodejs.org o usa un gestore di versioni come nvm.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'brew install node',
@@ -393,7 +397,8 @@ export default {
               italian: 'Supporto a Lungo Termine',
               pronunciation: '/ɛl tiː ɛs/',
               phonetic: 'EL-TI-ES',
-              example: 'Use the LTS version in production. = Usa la versione LTS in produzione.',
+              example:
+                'Production servers should always run an LTS release because it receives security patches for 30 months. = I server in produzione dovrebbero sempre usare una release LTS perché riceve patch di sicurezza per 30 mesi.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Long Term Support. Versioni pari (18, 20, 22) sono LTS.',
@@ -404,7 +409,7 @@ export default {
               pronunciation: '/ˈkʌrənt/',
               phonetic: 'KAR-rent',
               example:
-                'The current version has the latest features. = La versione corrente ha le funzionalità più recenti.',
+                'Developers test upcoming features on the current release branch before they land in the next LTS. = Gli sviluppatori testano le funzionalità in arrivo sul ramo della versione corrente prima che arrivino nella prossima LTS.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Versioni dispari (19, 21, 23). Più feature ma meno stabili.',
@@ -415,7 +420,7 @@ export default {
               pronunciation: '/ˈvɜːrʒən/',
               phonetic: 'VER-scen',
               example:
-                'Check your Node version with node -v. = Controlla la versione di Node con node -v.',
+                'Always check the Node version on your CI server matches the one you use locally to avoid subtle incompatibilities. = Controlla sempre che la versione di Node sul server CI corrisponda a quella usata localmente per evitare incompatibilità sottili.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'node -v',
@@ -426,7 +431,7 @@ export default {
               pronunciation: '/ɛn viː ɛm/',
               phonetic: 'EN-VI-EM',
               example:
-                'NVM lets you switch between Node versions. = NVM permette di cambiare versione di Node.',
+                'With NVM you can switch to Node 18 for a legacy project and back to Node 22 for your new one in seconds. = Con NVM puoi passare a Node 18 per un progetto legacy e tornare a Node 22 per quello nuovo in pochi secondi.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'NVM',
@@ -439,17 +444,18 @@ export default {
               pronunciation: '/ɪɡˈzekjətəbl/',
               phonetic: 'eg-ZE-kiu-tab-ol',
               example:
-                "The node executable runs your scripts. = L'eseguibile node esegue i tuoi script.",
+                'After installing nvm, run "which node" to confirm the executable points to the nvm-managed version. = Dopo aver installato nvm, esegui "which node" per verificare che l\'eseguibile punti alla versione gestita da nvm.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'which node',
             },
             {
               english: 'Script',
-              italian: 'script / file di comandi eseguibile',
+              italian: 'File di comandi eseguibile (script)',
               pronunciation: '/skrɪpt/',
               phonetic: 'SKRIPT',
-              example: 'Run a script with node script.js. = Esegui uno script con node script.js.',
+              example:
+                'We run the migration script before every deployment to keep the database schema up to date. = Eseguiamo lo script di migrazione prima di ogni deployment per mantenere aggiornato lo schema del database.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'node app.js',
@@ -460,7 +466,7 @@ export default {
               pronunciation: '/ˈɑːrɡjumənt/',
               phonetic: 'AR-giu-ment',
               example:
-                'Pass arguments to your script via process.argv. = Passa argomenti allo script tramite process.argv.',
+                'You can pass an argument like --port=8080 to your CLI tool and parse it from process.argv. = Puoi passare un argomento come --port=8080 al tuo strumento CLI e analizzarlo da process.argv.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'console.log(process.argv);',
@@ -470,18 +476,19 @@ export default {
               italian: 'Ambiente',
               pronunciation: '/ɪnˈvaɪrənmənt/',
               phonetic: 'in-VAI-ron-ment',
-              example: "NODE_ENV indicates the environment. = NODE_ENV indica l'ambiente.",
+              example:
+                "Setting the environment variable NODE_ENV to production disables verbose logging and enables caching. = Impostare la variabile d'ambiente NODE_ENV su production disabilita il logging verboso e abilita la cache.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'process.env.NODE_ENV',
             },
             {
               english: 'Shebang',
-              italian: 'shebang / riga #! di interprete',
+              italian: 'Riga di interprete (shebang)',
               pronunciation: '/ʃəˈbæŋ/',
               phonetic: 'sce-BANG',
               example:
-                'Add a shebang to make a JS file executable. = Aggiungi uno shebang per rendere eseguibile un file JS.',
+                'Adding a shebang line like #!/usr/bin/env node lets you run the script directly without typing "node" first. = Aggiungere una riga shebang come #!/usr/bin/env node permette di eseguire lo script direttamente senza digitare "node" prima.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '#!/usr/bin/env node',
@@ -505,11 +512,11 @@ export default {
           items: [
             {
               english: 'CommonJS',
-              italian: 'CommonJS / sistema di moduli storico Node',
+              italian: 'Sistema di moduli storico di Node (CommonJS)',
               pronunciation: '/ˈkɒmən dʒeɪ ɛs/',
               phonetic: 'KOM-mon-GEI-ES',
               example:
-                'CommonJS is the original module system in Node. = CommonJS è il sistema di moduli originale di Node.',
+                'Legacy packages still rely on CommonJS require/exports syntax, so many Node projects mix CJS and ESM. = I pacchetti legacy usano ancora la sintassi require/exports di CommonJS, perciò molti progetti Node mescolano CJS ed ESM.',
               context: 'modules',
               difficulty: 'beginner',
               code: "const lib = require('lib');",
@@ -521,7 +528,7 @@ export default {
               pronunciation: '/ˈmɒdjuːl ɪkˈspɔːrts/',
               phonetic: 'MO-diul eks-PORTS',
               example:
-                'Assign to module.exports to export. = Assegna a module.exports per esportare.',
+                'You assign your main class or factory function to module.exports so other files can require it directly. = Assegni la tua classe principale o funzione factory a module.exports così altri file possono importarla direttamente con require.',
               context: 'modules',
               difficulty: 'beginner',
               code: 'module.exports = function() {};',
@@ -532,7 +539,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt ˈekspɔːrt/',
               phonetic: 'di-FOLT EKS-port',
               example:
-                'A default export is the main thing the module provides. = Un export predefinito è la cosa principale fornita dal modulo.',
+                "When a module has one primary purpose, use a default export so consumers can import it with any name. = Quando un modulo ha uno scopo principale, usa un'esportazione predefinita così i consumatori possono importarlo con qualsiasi nome.",
               context: 'modules',
               difficulty: 'beginner',
               code: 'module.exports = MyClass;',
@@ -543,7 +550,7 @@ export default {
               pronunciation: '/neɪmd ˈekspɔːrt/',
               phonetic: 'NEIMD EKS-port',
               example:
-                'Named exports allow exporting multiple values. = Gli export con nome permettono di esportare più valori.',
+                'Libraries like Lodash expose many utilities as named exports so you import only what you need. = Librerie come Lodash espongono molte utilità come esportazioni con nome così importi solo ciò che ti serve.',
               context: 'modules',
               difficulty: 'beginner',
               code: 'module.exports = { foo, bar };',
@@ -554,7 +561,7 @@ export default {
               pronunciation: '/ˈmɒdjuːl ˈræpər/',
               phonetic: 'MO-diul RAP-per',
               example:
-                'Each module is wrapped in a function. = Ogni modulo è incapsulato in una funzione.',
+                'The module wrapper provides the exports, require, module, __filename and __dirname variables to each file. = Il wrapper del modulo fornisce le variabili exports, require, module, __filename e __dirname a ogni file.',
               context: 'modules',
               difficulty: 'beginner',
               note: 'Node avvolge il codice in (function(exports, require, module, __filename, __dirname){...}).',
@@ -565,7 +572,7 @@ export default {
               pronunciation: '/ˈmɒdjuːl kæʃ/',
               phonetic: 'MO-diul KASC',
               example:
-                'Modules are cached after the first require. = I moduli sono memorizzati nella cache dopo il primo require.',
+                'Because of the module cache, requiring the same database connection file twice returns the same singleton instance. = Grazie alla cache dei moduli, richiedere lo stesso file di connessione al database due volte restituisce la stessa istanza singleton.',
               context: 'modules',
               difficulty: 'beginner',
               code: 'require.cache',
@@ -577,7 +584,7 @@ export default {
               pronunciation: '/ˈsɜːrkjələr dɪˈpendənsi/',
               phonetic: 'SER-kiu-lar di-PEN-den-si',
               example:
-                'A circular dependency happens when modules require each other. = Una dipendenza circolare accade quando i moduli si richiamano a vicenda.',
+                'If module A requires B and B requires A, you have a circular dependency that may yield incomplete exports. = Se il modulo A richiede B e B richiede A, hai una dipendenza circolare che può produrre esportazioni incomplete.',
               context: 'modules',
               difficulty: 'intermediate',
               note: 'Node gestisce con cautela ma può causare exports parziali.',
@@ -588,7 +595,7 @@ export default {
               pronunciation: '/faɪl ˈmɒdjuːl/',
               phonetic: 'FAIL MO-diul',
               example:
-                'A file module is loaded by relative path. = Un modulo file è caricato per percorso relativo.',
+                'When you require a file module with a relative path like ./utils, Node tries .js, .json, and .node extensions. = Quando importi un modulo file con un percorso relativo come ./utils, Node prova le estensioni .js, .json e .node.',
               context: 'modules',
               difficulty: 'beginner',
               code: "require('./utils');",
@@ -599,7 +606,7 @@ export default {
               pronunciation: '/ˈfoʊldər ˈmɒdjuːl/',
               phonetic: 'FOL-der MO-diul',
               example:
-                'A folder module needs an index.js or package.json. = Un modulo cartella richiede index.js o package.json.',
+                "Organizing a folder module with an index.js barrel file lets consumers require the whole directory with one path. = Organizzare un modulo cartella con un file barrel index.js permette ai consumatori di importare l'intera directory con un solo percorso.",
               context: 'modules',
               difficulty: 'beginner',
               code: "require('./mylib');",
@@ -610,7 +617,7 @@ export default {
               pronunciation: '/ˌrezəˈluːʃən/',
               phonetic: 'rez-o-LIU-scen',
               example:
-                'Module resolution finds the right file. = La risoluzione dei moduli trova il file giusto.',
+                "During module resolution, Node climbs the directory tree looking in each node_modules folder until it finds the package. = Durante la risoluzione dei moduli, Node risale l'albero delle directory cercando in ogni cartella node_modules fino a trovare il pacchetto.",
               context: 'modules',
               difficulty: 'intermediate',
               note: "Node cerca in node_modules risalendo l'albero delle directory.",
@@ -628,7 +635,7 @@ export default {
               pronunciation: '/iː ɛs ˈmɒdjuːlz/',
               phonetic: 'I-ES MO-diuls',
               example:
-                'ES Modules use import and export syntax. = I moduli ES usano la sintassi import ed export.',
+                'Modern Node projects use ES Modules for tree-shaking support and standard JavaScript compatibility. = I progetti Node moderni usano i moduli ES per il supporto al tree-shaking e la compatibilità con JavaScript standard.',
               context: 'modules',
               difficulty: 'beginner',
               code: "import fs from 'fs';",
@@ -640,7 +647,7 @@ export default {
               pronunciation: '/ɪmˈpɔːrt/',
               phonetic: 'im-PORT',
               example:
-                'Use import to bring in functionality. = Usa import per includere funzionalità.',
+                'You can import only the specific functions you need, which helps bundlers eliminate unused code. = Puoi importare solo le funzioni specifiche di cui hai bisogno, il che aiuta i bundler a eliminare il codice inutilizzato.',
               context: 'modules',
               difficulty: 'beginner',
               code: "import { readFile } from 'fs/promises';",
@@ -651,7 +658,7 @@ export default {
               pronunciation: '/ɪkˈspɔːrt/',
               phonetic: 'eks-PORT',
               example:
-                'Use export to make things available. = Usa export per rendere disponibili cose.',
+                'Mark functions and constants with the export keyword so other modules can use them directly. = Contrassegna funzioni e costanti con la parola chiave export così altri moduli possono usarle direttamente.',
               context: 'modules',
               difficulty: 'beginner',
               code: 'export function greet() {}',
@@ -662,7 +669,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt ɪmˈpɔːrt/',
               phonetic: 'di-FOLT im-PORT',
               example:
-                'A default import has no curly braces. = Un import predefinito non ha le parentesi graffe.',
+                'With a default import you can choose any local name, like calling express "app" or "server" in your file. = Con un import predefinito puoi scegliere qualsiasi nome locale, come chiamare express "app" o "server" nel tuo file.',
               context: 'modules',
               difficulty: 'beginner',
               code: "import express from 'express';",
@@ -673,7 +680,7 @@ export default {
               pronunciation: '/neɪmd ɪmˈpɔːrt/',
               phonetic: 'NEIMD im-PORT',
               example:
-                'Named imports use curly braces. = Gli import con nome usano le parentesi graffe.',
+                "With named imports in curly braces, your IDE can autocomplete the exact symbols the module exports. = Con gli import con nome tra parentesi graffe, l'IDE può autocompletare i simboli esatti esportati dal modulo.",
               context: 'modules',
               difficulty: 'beginner',
               code: "import { useState } from 'react';",
@@ -684,7 +691,7 @@ export default {
               pronunciation: '/daɪˈnæmɪk ɪmˈpɔːrt/',
               phonetic: 'dai-NA-mik im-PORT',
               example:
-                "Dynamic import returns a promise. = L'import dinamico restituisce una promise.",
+                "Use a dynamic import to load heavy modules only when the user actually needs them, reducing startup time. = Usa un import dinamico per caricare moduli pesanti solo quando l'utente ne ha effettivamente bisogno, riducendo il tempo di avvio.",
               context: 'modules',
               difficulty: 'intermediate',
               code: "const lib = await import('./lib.js');",
@@ -696,7 +703,7 @@ export default {
               pronunciation: '/dɒt ɛm dʒeɪ ɛs/',
               phonetic: 'DOT-EM-GEI-ES',
               example:
-                'Files with .mjs are always ES Modules. = I file .mjs sono sempre moduli ES.',
+                'Renaming your file to .mjs tells Node to treat it as an ES Module regardless of the package.json type field. = Rinominare il file in .mjs dice a Node di trattarlo come modulo ES indipendentemente dal campo type nel package.json.',
               context: 'modules',
               difficulty: 'beginner',
               code: 'node app.mjs',
@@ -707,7 +714,7 @@ export default {
               pronunciation: '/taɪp ˈmɒdjuːl/',
               phonetic: 'TAIP MO-diul',
               example:
-                'Set "type": "module" to use ESM by default. = Imposta "type": "module" per usare ESM di default.',
+                'After setting "type": "module" in package.json, all .js files in the project are parsed as ES Modules. = Dopo aver impostato "type": "module" in package.json, tutti i file .js del progetto vengono analizzati come moduli ES.',
               context: 'modules',
               difficulty: 'intermediate',
               code: '{ "type": "module" }',
@@ -719,7 +726,7 @@ export default {
               pronunciation: '/tɒp ˈlevl əˈweɪt/',
               phonetic: 'TOP-LEV-el a-UEIT',
               example:
-                'Top-level await works only in ES Modules. = Il top-level await funziona solo nei moduli ES.',
+                "In an ESM entry file you can use top-level await to fetch config from a remote server before starting the app. = In un file di ingresso ESM puoi usare il top-level await per recuperare la config da un server remoto prima di avviare l'app.",
               context: 'modules',
               difficulty: 'intermediate',
               code: 'const data = await fetchData();',
@@ -730,7 +737,7 @@ export default {
               pronunciation: '/ˈstætɪk əˈnæləsɪs/',
               phonetic: 'STA-tik a-NA-le-sis',
               example:
-                'ESM enables better static analysis. = ESM abilita una migliore analisi statica.',
+                "Because ESM imports are evaluated at parse time, bundlers can perform static analysis and remove dead code. = Poiché gli import ESM vengono valutati al momento del parsing, i bundler possono eseguire l'analisi statica e rimuovere il codice inutilizzato.",
               context: 'modules',
               difficulty: 'intermediate',
               note: 'Permette tree shaking e ottimizzazioni a tempo di build.',
@@ -744,11 +751,11 @@ export default {
           items: [
             {
               english: 'NPM',
-              italian: 'npm / Node Package Manager',
+              italian: 'Gestore di pacchetti di Node (NPM)',
               pronunciation: '/ɛn piː ɛm/',
               phonetic: 'EN-PI-EM',
               example:
-                'NPM is the package manager for Node.js. = NPM è il gestore di pacchetti per Node.js.',
+                'Over two million packages are available on NPM, making it the largest software registry in the world. = Oltre due milioni di pacchetti sono disponibili su NPM, rendendolo il registro software più grande al mondo.',
               context: 'modules',
               difficulty: 'beginner',
               tool: 'npm',
@@ -761,7 +768,7 @@ export default {
               pronunciation: '/ˈpækɪdʒ/',
               phonetic: 'PAK-keg',
               example:
-                'A package is a reusable bundle of code. = Un pacchetto è un bundle di codice riutilizzabile.',
+                'Before writing your own date formatting utility, check if an existing package like date-fns already solves the problem. = Prima di scrivere la tua utilità di formattazione date, controlla se un pacchetto esistente come date-fns risolve già il problema.',
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm install lodash',
@@ -772,7 +779,7 @@ export default {
               pronunciation: '/ˈpækɪdʒ ˈredʒɪstri/',
               phonetic: 'PAK-keg RE-gis-tri',
               example:
-                'The npm registry hosts millions of packages. = Il registro npm ospita milioni di pacchetti.',
+                'Companies can set up a private package registry to share internal libraries without publishing to the public npm. = Le aziende possono configurare un registro di pacchetti privato per condividere librerie interne senza pubblicare su npm pubblico.',
               context: 'modules',
               difficulty: 'beginner',
               note: 'Si trova su registry.npmjs.org.',
@@ -783,7 +790,7 @@ export default {
               pronunciation: '/ɪnˈstɔːl/',
               phonetic: 'in-STOL',
               example:
-                'Install a package with npm install. = Installa un pacchetto con npm install.',
+                'Run "npm install express" to download Express and add it to your project\'s dependencies automatically. = Esegui "npm install express" per scaricare Express e aggiungerlo automaticamente alle dipendenze del tuo progetto.',
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm install express',
@@ -795,7 +802,7 @@ export default {
               pronunciation: '/ˌʌnɪnˈstɔːl/',
               phonetic: 'an-in-STOL',
               example:
-                'Remove a package with npm uninstall. = Rimuovi un pacchetto con npm uninstall.',
+                'If you stop using a library, uninstall it to reduce bundle size and avoid potential security vulnerabilities. = Se smetti di usare una libreria, disinstallala per ridurre la dimensione del bundle ed evitare potenziali vulnerabilità di sicurezza.',
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm uninstall express',
@@ -805,7 +812,8 @@ export default {
               italian: 'Aggiorna',
               pronunciation: '/ˌʌpˈdeɪt/',
               phonetic: 'ap-DEIT',
-              example: 'Update packages with npm update. = Aggiorna pacchetti con npm update.',
+              example:
+                'Regularly update your dependencies to get security patches and bug fixes from upstream maintainers. = Aggiorna regolarmente le dipendenze per ottenere patch di sicurezza e correzioni di bug dai manutentori upstream.',
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm update',
@@ -815,7 +823,8 @@ export default {
               italian: 'Inizializza',
               pronunciation: '/ɪˈnɪt/',
               phonetic: 'i-NIT',
-              example: 'npm init creates a package.json. = npm init crea un package.json.',
+              example:
+                'Start every new project with "npm init -y" to generate a default package.json and begin tracking dependencies. = Inizia ogni nuovo progetto con "npm init -y" per generare un package.json predefinito e iniziare a tracciare le dipendenze.',
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm init -y',
@@ -823,11 +832,11 @@ export default {
             },
             {
               english: 'NPX',
-              italian: 'npx / esegue binari npm',
+              italian: 'Esecutore di binari npm (npx)',
               pronunciation: '/ɛn piː ɛks/',
               phonetic: 'EN-PI-EKS',
               example:
-                'NPX runs packages without installing them. = NPX esegue pacchetti senza installarli.',
+                'Instead of installing the scaffolding tool globally, use npx to run it once and discard it afterward. = Invece di installare lo strumento di scaffolding globalmente, usa npx per eseguirlo una volta e scartarlo dopo.',
               context: 'modules',
               difficulty: 'beginner',
               tool: 'npx',
@@ -839,7 +848,8 @@ export default {
               italian: 'Installazione globale',
               pronunciation: '/ˈɡloʊbl ɪnˈstɔːl/',
               phonetic: 'GLOU-bal in-STOL',
-              example: 'Use -g for a global install. = Usa -g per installazione globale.',
+              example:
+                'CLI tools like typescript or eslint are sometimes installed globally so they are accessible from any project. = Strumenti CLI come typescript o eslint vengono a volte installati in modo globale così sono accessibili da qualsiasi progetto.',
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm install -g typescript',
@@ -850,7 +860,7 @@ export default {
               pronunciation: '/ˈloʊkl ɪnˈstɔːl/',
               phonetic: 'LO-kal in-STOL',
               example:
-                "A local install adds the package to node_modules. = Un'installazione locale aggiunge il pacchetto a node_modules.",
+                "Prefer a local install so each project pins its own dependency versions without conflicting with other projects. = Preferisci un'installazione locale così ogni progetto fissa le proprie versioni delle dipendenze senza conflitti con altri progetti.",
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm install axios',
@@ -864,11 +874,11 @@ export default {
           items: [
             {
               english: 'package.json',
-              italian: 'package.json / manifesto del progetto Node',
+              italian: 'Manifesto del progetto Node (package.json)',
               pronunciation: '/ˈpækɪdʒ dɒt dʒeɪˈsɒn/',
               phonetic: 'PAK-keg-dot-GEI-SON',
               example:
-                'package.json describes your project. = package.json descrive il tuo progetto.',
+                'The package.json file lists all dependencies, scripts, and metadata that npm needs to manage your project. = Il file package.json elenca tutte le dipendenze, script e metadati di cui npm ha bisogno per gestire il tuo progetto.',
               context: 'modules',
               difficulty: 'beginner',
               code: '{ "name": "my-app", "version": "1.0.0" }',
@@ -876,11 +886,11 @@ export default {
             },
             {
               english: 'package-lock.json',
-              italian: 'package-lock.json / lockfile npm',
+              italian: 'Lockfile npm (package-lock.json)',
               pronunciation: '/ˈpækɪdʒ lɒk dʒeɪˈsɒn/',
               phonetic: 'PAK-keg-LOK-GEI-SON',
               example:
-                'package-lock.json locks exact versions. = package-lock.json blocca le versioni esatte.',
+                'Always commit the package-lock.json so that every developer and CI server installs the exact same dependency tree. = Committa sempre il package-lock.json così ogni sviluppatore e server CI installa lo stesso identico albero di dipendenze.',
               context: 'modules',
               difficulty: 'beginner',
               note: 'Va sempre committato per build riproducibili.',
@@ -891,7 +901,7 @@ export default {
               pronunciation: '/dɪˈpendənsi/',
               phonetic: 'di-PEN-den-si',
               example:
-                'A dependency is a package your project needs. = Una dipendenza è un pacchetto richiesto dal progetto.',
+                "Every external library your application imports at runtime is listed as a dependency in package.json. = Ogni libreria esterna importata dall'applicazione a runtime è elencata come dipendenza nel package.json.",
               context: 'modules',
               difficulty: 'beginner',
               code: '"dependencies": { "express": "^4.0.0" }',
@@ -902,7 +912,7 @@ export default {
               pronunciation: '/dɛv dɪˈpendənsi/',
               phonetic: 'DEV di-PEN-den-si',
               example:
-                'Dev dependencies are not installed in production. = Le dipendenze dev non si installano in produzione.',
+                "Test frameworks like Jest belong in dev dependencies because they are not needed when the app runs in production. = Framework di test come Jest appartengono alle dipendenze di sviluppo perché non servono quando l'app gira in produzione.",
               context: 'modules',
               difficulty: 'beginner',
               command: 'npm install --save-dev jest',
@@ -914,7 +924,7 @@ export default {
               pronunciation: '/pɪər dɪˈpendənsi/',
               phonetic: 'PIIR di-PEN-den-si',
               example:
-                'A peer dependency must be provided by the host project. = Una peer dependency va fornita dal progetto ospitante.',
+                "A React plugin declares React as a peer dependency so it shares the host project's single React instance. = Un plugin React dichiara React come dipendenza peer così condivide la singola istanza React del progetto ospitante.",
               context: 'modules',
               difficulty: 'intermediate',
               note: 'Comune in plugin che condividono una libreria col consumatore.',
@@ -925,7 +935,7 @@ export default {
               pronunciation: '/ˈɒpʃənl dɪˈpendənsi/',
               phonetic: 'OP-scio-nal di-PEN-den-si',
               example:
-                'Optional dependencies do not fail install if missing. = Le dipendenze opzionali non bloccano se assenti.',
+                'The native fsevents module is listed as an optional dependency because it only works on macOS and can safely be skipped on Linux. = Il modulo nativo fsevents è elencato come dipendenza opzionale perché funziona solo su macOS e può essere tranquillamente ignorato su Linux.',
               context: 'modules',
               difficulty: 'intermediate',
             },
@@ -935,7 +945,7 @@ export default {
               pronunciation: '/ˈsemvər/',
               phonetic: 'SEM-ver',
               example:
-                'Semver uses major.minor.patch versioning. = Semver usa versioni major.minor.patch.',
+                'Under semver rules, incrementing the major number signals breaking changes that require consumers to update their code. = Secondo le regole del versionamento semantico, incrementare il numero major segnala modifiche incompatibili che richiedono ai consumatori di aggiornare il codice.',
               context: 'modules',
               difficulty: 'beginner',
               code: '"^1.2.3"',
@@ -947,7 +957,7 @@ export default {
               pronunciation: '/ˈkærət reɪndʒ/',
               phonetic: 'KA-ret REING',
               example:
-                'The caret allows compatible minor and patch updates. = Il caret consente aggiornamenti minor e patch compatibili.',
+                'A caret range like ^4.18.0 accepts any version from 4.18.0 up to but not including 5.0.0. = Un intervallo con caret come ^4.18.0 accetta qualsiasi versione da 4.18.0 fino a 5.0.0 escluso.',
               context: 'modules',
               difficulty: 'beginner',
               code: '"^4.18.0"',
@@ -959,7 +969,7 @@ export default {
               pronunciation: '/ˈtɪldə reɪndʒ/',
               phonetic: 'TIL-de REING',
               example:
-                'The tilde only allows patch updates. = La tilde consente solo aggiornamenti patch.',
+                'Using a tilde range like ~4.18.0 is safer for critical apps because it only accepts patch-level fixes. = Usare un intervallo con tilde come ~4.18.0 è più sicuro per app critiche perché accetta solo correzioni a livello di patch.',
               context: 'modules',
               difficulty: 'beginner',
               code: '"~4.18.0"',
@@ -971,7 +981,7 @@ export default {
               pronunciation: '/ɛn piː ɛm skrɪpt/',
               phonetic: 'EN-PI-EM SKRIPT',
               example:
-                'NPM scripts automate common tasks. = Gli script NPM automatizzano operazioni comuni.',
+                'Define an NPM script called "test" in package.json so any contributor can run the suite with "npm test". = Definisci uno script NPM chiamato "test" in package.json così qualsiasi contributore può lanciare la suite con "npm test".',
               context: 'modules',
               difficulty: 'beginner',
               code: '"scripts": { "start": "node index.js" }',
@@ -999,7 +1009,7 @@ export default {
               pronunciation: '/ˈfʌŋkʃən ˌdekləˈreɪʃən/',
               phonetic: 'FANK-scen de-kla-REI-scen',
               example:
-                'A function declaration is hoisted. = Una dichiarazione di funzione viene sollevata.',
+                'Because a function declaration is hoisted, you can call it before the line where it appears in the source. = Poiché una dichiarazione di funzione viene sollevata, puoi chiamarla prima della riga in cui appare nel sorgente.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'function sum(a, b) { return a + b; }',
@@ -1010,7 +1020,7 @@ export default {
               pronunciation: '/ˈfʌŋkʃən ɪkˈspreʃən/',
               phonetic: 'FANK-scen eks-PRES-scen',
               example:
-                "A function expression assigns a function to a variable. = Un'espressione di funzione assegna una funzione a una variabile.",
+                "Assigning a function expression to a const prevents accidental reassignment of the handler elsewhere in the code. = Assegnare un'espressione di funzione a una const previene la riassegnazione accidentale del gestore altrove nel codice.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const sum = function(a, b) { return a + b; };',
@@ -1021,7 +1031,7 @@ export default {
               pronunciation: '/ˈæroʊ ˈfʌŋkʃən/',
               phonetic: 'AR-rou FANK-scen',
               example:
-                'Arrow functions have shorter syntax. = Le arrow function hanno sintassi più breve.',
+                'In Express route handlers, an arrow function keeps the enclosing "this" context, which helps in class-based controllers. = Nei gestori di route Express, una funzione freccia mantiene il contesto "this" esterno, utile nei controller basati su classi.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const sum = (a, b) => a + b;',
@@ -1033,7 +1043,7 @@ export default {
               pronunciation: '/pəˈræmɪtər/',
               phonetic: 'pa-RA-me-ter',
               example:
-                'A parameter is a function input variable. = Un parametro è una variabile di input della funzione.',
+                'Name each parameter descriptively so that callers understand what values the function expects. = Dai nomi descrittivi a ogni parametro così chi chiama capisce quali valori la funzione si aspetta.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'function greet(name) {}',
@@ -1044,7 +1054,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt pəˈræmɪtər/',
               phonetic: 'di-FOLT pa-RA-me-ter',
               example:
-                'Default parameters provide fallback values. = I parametri predefiniti forniscono valori di fallback.',
+                'Setting a default parameter for the port avoids crashes when the caller forgets to specify one. = Impostare un parametro predefinito per la porta evita crash quando il chiamante dimentica di specificarne uno.',
               context: 'foundations',
               difficulty: 'beginner',
               code: "function greet(name = 'World') {}",
@@ -1055,7 +1065,7 @@ export default {
               pronunciation: '/rest pəˈræmɪtər/',
               phonetic: 'REST pa-RA-me-ter',
               example:
-                'Rest parameters collect arguments into an array. = I parametri rest raccolgono argomenti in un array.',
+                'A logging function can accept rest parameters to forward any number of arguments to console.log. = Una funzione di logging può accettare parametri rest per inoltrare un numero qualsiasi di argomenti a console.log.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'function sum(...nums) {}',
@@ -1066,7 +1076,7 @@ export default {
               pronunciation: '/ˈhaɪər ˈɔːrdər ˈfʌŋkʃən/',
               phonetic: 'HAI-er OR-der FANK-scen',
               example:
-                'A higher-order function takes or returns functions. = Una funzione di ordine superiore prende o restituisce funzioni.',
+                'Express middleware is a higher-order function that wraps route handlers with authentication or logging logic. = Il middleware Express è una funzione di ordine superiore che avvolge i gestori di route con logica di autenticazione o logging.',
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'arr.map(x => x * 2);',
@@ -1077,7 +1087,7 @@ export default {
               pronunciation: '/ˈkloʊʒər/',
               phonetic: 'CLO-scer',
               example:
-                'A closure captures variables from its scope. = Una closure cattura variabili dal suo scope.',
+                'The rate limiter works through a closure that remembers the request count between invocations. = Il rate limiter funziona tramite una chiusura che ricorda il conteggio delle richieste tra le invocazioni.',
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'function counter() { let n = 0; return () => ++n; }',
@@ -1089,7 +1099,7 @@ export default {
               pronunciation: '/ˈɪfi/',
               phonetic: 'IF-fi',
               example:
-                'An IIFE runs immediately upon definition. = Una IIFE viene eseguita subito alla definizione.',
+                'Wrapping initialization logic in an IIFE prevents its internal variables from leaking into the global scope. = Avvolgere la logica di inizializzazione in una IIFE impedisce alle sue variabili interne di disperdersi nello scope globale.',
               context: 'foundations',
               difficulty: 'intermediate',
               code: "(function() { console.log('hi'); })();",
@@ -1101,7 +1111,7 @@ export default {
               pronunciation: '/ðɪs ˈkiːwɜːrd/',
               phonetic: 'DIS KII-uord',
               example:
-                'this refers to the calling context. = this si riferisce al contesto chiamante.',
+                "Inside a class method, the this keyword gives you access to the instance properties and other methods. = Dentro un metodo di classe, la parola chiave this dà accesso alle proprietà dell'istanza e agli altri metodi.",
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'this.name',
@@ -1120,7 +1130,7 @@ export default {
               pronunciation: '/dɪˈstrʌktʃərɪŋ/',
               phonetic: 'di-STRAK-cer-ing',
               example:
-                'Destructuring extracts values from objects. = La destrutturazione estrae valori dagli oggetti.',
+                "In route handlers you often use destructuring to pull params, query, and body out of the request object. = Nei gestori di route usi spesso la destrutturazione per estrarre params, query e body dall'oggetto request.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const { name, age } = user;',
@@ -1131,7 +1141,7 @@ export default {
               pronunciation: '/ˈɒbdʒɪkt dɪˈstrʌktʃərɪŋ/',
               phonetic: 'OB-gekt di-STRAK-cer-ing',
               example:
-                'Object destructuring uses curly braces. = La destrutturazione di oggetti usa parentesi graffe.',
+                'With object destructuring, you can extract only the id and spread the remaining fields into a "rest" variable. = Con la destrutturazione di oggetti, puoi estrarre solo l\'id e distribuire i campi rimanenti in una variabile "rest".',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const { id, ...rest } = data;',
@@ -1142,7 +1152,7 @@ export default {
               pronunciation: '/əˈreɪ dɪˈstrʌktʃərɪŋ/',
               phonetic: 'ar-REI di-STRAK-cer-ing',
               example:
-                'Array destructuring uses square brackets. = La destrutturazione di array usa parentesi quadre.',
+                'Use array destructuring to assign the first element to "head" and collect the rest into "tail". = Usa la destrutturazione di array per assegnare il primo elemento a "head" e raccogliere il resto in "tail".',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const [first, second] = arr;',
@@ -1153,7 +1163,7 @@ export default {
               pronunciation: '/riːˈneɪmɪŋ/',
               phonetic: 'ri-NEIM-ing',
               example:
-                'You can rename during destructuring. = Puoi rinominare durante la destrutturazione.',
+                'When two modules export a field called "name", renaming during destructuring avoids variable collisions. = Quando due moduli esportano un campo chiamato "name", rinominare durante la destrutturazione evita collisioni di variabili.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const { name: userName } = user;',
@@ -1164,7 +1174,7 @@ export default {
               pronunciation: '/spred ˈɒpəreɪtər/',
               phonetic: 'SPRED OP-er-ei-ter',
               example:
-                "The spread operator expands an iterable. = L'operatore spread espande un iterabile.",
+                "Merging two arrays of middleware is simple with the spread operator: [...authMiddleware, ...routeHandlers]. = Unire due array di middleware è semplice con l'operatore spread: [...authMiddleware, ...routeHandlers].",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const merged = [...a, ...b];',
@@ -1175,7 +1185,7 @@ export default {
               pronunciation: '/ˈɒbdʒɪkt spred/',
               phonetic: 'OB-gekt SPRED',
               example:
-                'Object spread copies properties. = Lo spread di oggetto copia le proprietà.',
+                'Create an immutable update by spreading the original config and overriding only the changed fields. = Crea un aggiornamento immutabile distribuendo la config originale e sovrascrivendo solo i campi modificati.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const clone = { ...original };',
@@ -1186,7 +1196,8 @@ export default {
               italian: 'Letterale template',
               pronunciation: '/ˈtemplɪt ˈlɪtərəl/',
               phonetic: 'TEM-plet LI-te-ral',
-              example: 'Template literals use backticks. = I letterali template usano backtick.',
+              example:
+                'Build SQL queries safely by embedding variables in a template literal passed to a parameterized query builder. = Costruisci query SQL in modo sicuro incorporando variabili in un letterale template passato a un query builder parametrizzato.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '`Hello, ${name}!`',
@@ -1197,7 +1208,7 @@ export default {
               pronunciation: '/tæɡd ˈtemplɪt/',
               phonetic: 'TAGD TEM-plet',
               example:
-                'Tagged templates allow custom string processing. = I template con tag permettono elaborazione stringhe personalizzata.',
+                'Libraries like graphql-tag use a tagged template to parse GraphQL queries at compile time. = Librerie come graphql-tag usano un template con tag per analizzare query GraphQL a tempo di compilazione.',
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'sql`SELECT * FROM users WHERE id = ${id}`',
@@ -1208,7 +1219,7 @@ export default {
               pronunciation: '/ˈɒpʃənl ˈtʃeɪnɪŋ/',
               phonetic: 'OP-scio-nal CEIN-ing',
               example:
-                'Optional chaining returns undefined if missing. = Il concatenamento opzionale ritorna undefined se manca.',
+                'Using optional chaining like user?.address?.city prevents TypeError when any intermediate property is null. = Usare il concatenamento opzionale come user?.address?.city previene TypeError quando una proprietà intermedia è null.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'user?.address?.city',
@@ -1219,7 +1230,7 @@ export default {
               pronunciation: '/ˈnʌlɪʃ ˌkoʊəˈlesɪŋ/',
               phonetic: 'NUL-isc co-a-LES-ing',
               example:
-                'Nullish coalescing returns right side if left is null/undefined. = La coalescenza nullish ritorna il lato destro se il sinistro è null/undefined.',
+                "The nullish coalescing operator ?? falls back to 3000 only when PORT is null or undefined, not when it's 0. = L'operatore di coalescenza nullish ?? ritorna 3000 solo quando PORT è null o undefined, non quando è 0.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const port = process.env.PORT ?? 3000;',
@@ -1236,28 +1247,30 @@ export default {
               italian: 'Variabile',
               pronunciation: '/ˈveəriəbl/',
               phonetic: 'VER-ia-bol',
-              example: 'A variable holds a value. = Una variabile contiene un valore.',
+              example:
+                'Declare a variable with let when you expect its value to change, like a counter tracking retries. = Dichiara una variabile con let quando ti aspetti che il suo valore cambi, come un contatore che traccia i tentativi.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'let count = 0;',
             },
             {
               english: 'let',
-              italian: 'let / parola chiave variabile a blocco',
+              italian: 'Parola chiave per variabile a blocco (let)',
               pronunciation: '/let/',
               phonetic: 'LET',
               example:
-                'let declares a block-scoped variable. = let dichiara una variabile a blocco.',
+                'Inside a for loop, a let variable is scoped to each iteration, avoiding the classic closure bug of var. = Dentro un ciclo for, una variabile let ha scope per ogni iterazione, evitando il classico bug di chiusura di var.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'let total = 0;',
             },
             {
               english: 'const',
-              italian: 'const / parola chiave costante a blocco',
+              italian: 'Parola chiave per costante a blocco (const)',
               pronunciation: '/kɒnst/',
               phonetic: 'KONST',
-              example: 'const declares a constant binding. = const dichiara un legame costante.',
+              example:
+                'Use const for values that never need reassignment, such as configuration objects and imported modules. = Usa const per valori che non necessitano mai di riassegnazione, come oggetti di configurazione e moduli importati.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const PI = 3.14;',
@@ -1265,11 +1278,11 @@ export default {
             },
             {
               english: 'var',
-              italian: 'var / parola chiave variabile a funzione',
+              italian: 'Parola chiave per variabile a funzione (var)',
               pronunciation: '/vɑːr/',
               phonetic: 'VAR',
               example:
-                'var is function-scoped and hoisted. = var è a livello di funzione e viene sollevata.',
+                'Legacy codebases still use var, but linters flag it and suggest replacing with let or const. = Le codebase legacy usano ancora var, ma i linter lo segnalano e suggeriscono di sostituirlo con let o const.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'var x = 1;',
@@ -1281,7 +1294,7 @@ export default {
               pronunciation: '/skoʊp/',
               phonetic: 'SKOUP',
               example:
-                'Scope determines variable visibility. = Lo scope determina la visibilità delle variabili.',
+                "Understanding scope is essential because a variable declared inside a block is invisible to code outside it. = Capire l'ambito è essenziale perché una variabile dichiarata dentro un blocco è invisibile al codice esterno.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Tipi: globale, di funzione, di blocco.',
@@ -1291,7 +1304,8 @@ export default {
               italian: 'Ambito di blocco',
               pronunciation: '/blɒk skoʊp/',
               phonetic: 'BLOK SKOUP',
-              example: 'let and const have block scope. = let e const hanno ambito di blocco.',
+              example:
+                "Variables declared with let inside an if block are confined to that block scope and cannot leak out. = Le variabili dichiarate con let dentro un blocco if sono confinate a quell'ambito di blocco e non possono fuoriuscire.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if (true) { let x = 1; }',
@@ -1302,7 +1316,7 @@ export default {
               pronunciation: '/ˈhɔɪstɪŋ/',
               phonetic: 'OIST-ing',
               example:
-                'Hoisting moves declarations to the top. = Il sollevamento sposta le dichiarazioni in cima.',
+                'Due to hoisting, a var declaration can be accessed before the assignment line, resulting in undefined rather than an error. = A causa del sollevamento, una dichiarazione var può essere letta prima della riga di assegnazione, restituendo undefined anziché un errore.',
               context: 'foundations',
               difficulty: 'intermediate',
               note: 'var e function vengono sollevate; let e const stanno nella TDZ.',
@@ -1313,7 +1327,7 @@ export default {
               pronunciation: '/ˈtempərəl ded zoʊn/',
               phonetic: 'TEM-po-ral DED ZOUN',
               example:
-                'Accessing let before declaration throws in the TDZ. = Accedere a let prima della dichiarazione lancia un errore nella TDZ.',
+                'The temporal dead zone catches bugs early by throwing a ReferenceError if you try to use a let variable before its declaration. = La zona morta temporale cattura bug precocemente lanciando un ReferenceError se cerchi di usare una variabile let prima della sua dichiarazione.',
               context: 'foundations',
               difficulty: 'intermediate',
             },
@@ -1323,7 +1337,7 @@ export default {
               pronunciation: '/strɪkt moʊd/',
               phonetic: 'STRIKT MOUD',
               example:
-                'Strict mode catches more errors. = La modalità rigorosa cattura più errori.',
+                'Enabling strict mode prevents silent failures like assigning to an undeclared variable or duplicating parameter names. = Abilitare la modalità rigorosa previene errori silenziosi come assegnare a una variabile non dichiarata o duplicare nomi di parametri.',
               context: 'foundations',
               difficulty: 'intermediate',
               code: "'use strict';",
@@ -1335,7 +1349,7 @@ export default {
               pronunciation: '/ɪˈmjuːtəbl/',
               phonetic: 'i-MIU-ta-bol',
               example:
-                'Use Object.freeze for immutable objects. = Usa Object.freeze per oggetti immutabili.',
+                "Freeze your configuration object after initialization so no code can accidentally modify immutable settings at runtime. = Congela l'oggetto di configurazione dopo l'inizializzazione così nessun codice può modificare accidentalmente impostazioni immutabili a runtime.",
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'const cfg = Object.freeze({ port: 3000 });',
@@ -1353,7 +1367,7 @@ export default {
               pronunciation: '/klɑːs/',
               phonetic: 'KLAS',
               example:
-                'A class is a template for objects. = Una classe è un modello per gli oggetti.',
+                "Define a User class to encapsulate all user-related fields and validation methods in one place. = Definisci una classe User per incapsulare tutti i campi e i metodi di validazione relativi all'utente in un unico posto.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'class User { constructor(name) { this.name = name; } }',
@@ -1364,7 +1378,7 @@ export default {
               pronunciation: '/kənˈstrʌktər/',
               phonetic: 'kon-STRAK-ter',
               example:
-                'The constructor initializes new instances. = Il costruttore inizializza nuove istanze.',
+                "The constructor validates input and throws an error immediately if required fields are missing. = Il costruttore valida l'input e lancia un errore immediatamente se mancano campi obbligatori.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'constructor(id) { this.id = id; }',
@@ -1374,7 +1388,8 @@ export default {
               italian: 'Istanza',
               pronunciation: '/ˈɪnstəns/',
               phonetic: 'IN-stens',
-              example: "Use new to create an instance. = Usa new per creare un'istanza.",
+              example:
+                "Each time you write new DatabasePool(config) you get a separate instance with its own connection settings. = Ogni volta che scrivi new DatabasePool(config) ottieni un'istanza separata con le proprie impostazioni di connessione.",
               context: 'foundations',
               difficulty: 'beginner',
               code: "const u = new User('Mario');",
@@ -1385,7 +1400,7 @@ export default {
               pronunciation: '/ˈmeθəd/',
               phonetic: 'ME-tod',
               example:
-                'A method is a function on a class. = Un metodo è una funzione su una classe.',
+                'Add a toJSON method to your class so JSON.stringify can serialize it exactly as your API expects. = Aggiungi un metodo toJSON alla tua classe così JSON.stringify può serializzarla esattamente come la tua API si aspetta.',
               context: 'foundations',
               difficulty: 'beginner',
               code: "greet() { return 'hi'; }",
@@ -1396,7 +1411,7 @@ export default {
               pronunciation: '/ˈprɒpərti/',
               phonetic: 'PRO-per-ti',
               example:
-                'A property holds a value on an object. = Una proprietà contiene un valore in un oggetto.',
+                'The "length" property of an array dynamically reflects how many elements it contains. = La proprietà "length" di un array riflette dinamicamente quanti elementi contiene.',
               context: 'foundations',
               difficulty: 'beginner',
               code: "this.name = 'Mario';",
@@ -1406,7 +1421,8 @@ export default {
               italian: 'Ereditarietà',
               pronunciation: '/ɪnˈherɪtəns/',
               phonetic: 'in-E-ri-tens',
-              example: "Use extends for inheritance. = Usa extends per l'ereditarietà.",
+              example:
+                "The Admin class uses inheritance to extend User, adding permissions without duplicating shared logic. = La classe Admin usa l'ereditarietà per estendere User, aggiungendo permessi senza duplicare la logica condivisa.",
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'class Admin extends User {}',
@@ -1417,18 +1433,18 @@ export default {
               pronunciation: '/ˈstætɪk ˈmeθəd/',
               phonetic: 'STA-tik ME-tod',
               example:
-                'Static methods belong to the class itself. = I metodi statici appartengono alla classe stessa.',
+                "A static method like User.fromJSON(data) creates instances from raw objects without needing an existing instance. = Un metodo statico come User.fromJSON(data) crea istanze da oggetti grezzi senza bisogno di un'istanza esistente.",
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'static fromJson(json) {}',
             },
             {
               english: 'Getter/Setter',
-              italian: 'getter/setter / accessori di proprietà',
+              italian: 'Accessori di proprietà (getter/setter)',
               pronunciation: '/ˈɡetər ˈsetər/',
               phonetic: 'GET-ter SET-ter',
               example:
-                "Getters and setters control property access. = Getter e setter controllano l'accesso alle proprietà.",
+                "A setter can validate input before storing it, rejecting negative values for a price property automatically. = Un setter può validare l'input prima di memorizzarlo, rifiutando automaticamente valori negativi per una proprietà prezzo.",
               context: 'foundations',
               difficulty: 'intermediate',
               code: "get fullName() { return this.first + ' ' + this.last; }",
@@ -1439,18 +1455,18 @@ export default {
               pronunciation: '/ˈɒbdʒɪkt ˈlɪtərəl/',
               phonetic: 'OB-gekt LI-te-ral',
               example:
-                'An object literal uses curly braces. = Un letterale di oggetto usa parentesi graffe.',
+                'Creating a config with an object literal is the fastest way to group related settings without defining a class. = Creare una config con un letterale di oggetto è il modo più rapido per raggruppare impostazioni correlate senza definire una classe.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const obj = { x: 1, y: 2 };',
             },
             {
               english: 'JSON',
-              italian: 'JSON (formato dati testuale)',
+              italian: 'Formato dati testuale (JSON)',
               pronunciation: '/ˈdʒeɪsɒn/',
               phonetic: 'GEI-son',
               example:
-                'JSON is JavaScript Object Notation. = JSON è la notazione di oggetti JavaScript.',
+                'REST APIs send and receive JSON because it is lightweight and natively understood by JavaScript. = Le API REST inviano e ricevono JSON perché è leggero e compreso nativamente da JavaScript.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'JSON.stringify(obj);',
@@ -1474,11 +1490,11 @@ export default {
           items: [
             {
               english: 'Callback',
-              italian: 'callback / chiamata di ritorno',
+              italian: 'Chiamata di ritorno (callback)',
               pronunciation: '/ˈkɔːlbæk/',
               phonetic: 'KOL-bak',
               example:
-                'A callback is a function passed to be called later. = Un callback è una funzione passata per essere chiamata dopo.',
+                'Pass a callback to fs.readFile so the function notifies you when the file content is ready. = Passa un callback a fs.readFile così la funzione ti notifica quando il contenuto del file è pronto.',
               context: 'async',
               difficulty: 'beginner',
               code: "fs.readFile('a.txt', (err, data) => {});",
@@ -1489,7 +1505,7 @@ export default {
               pronunciation: '/ˈerər fɜːrst ˈkɔːlbæk/',
               phonetic: 'ER-ror-FERST KOL-bak',
               example:
-                'Node uses error-first callbacks by convention. = Node usa per convenzione callback con errore per primo.',
+                "Always check the error argument first in an error-first callback before using the result data. = Controlla sempre prima l'argomento errore in un callback con errore per primo prima di usare i dati del risultato.",
               context: 'async',
               difficulty: 'beginner',
               code: 'function cb(err, result) {}',
@@ -1497,11 +1513,11 @@ export default {
             },
             {
               english: 'Callback Hell',
-              italian: 'callback hell / annidamento eccessivo di callback',
+              italian: 'Annidamento eccessivo di callback (callback hell)',
               pronunciation: '/ˈkɔːlbæk hel/',
               phonetic: 'KOL-bak EL',
               example:
-                'Callback hell makes code hard to read. = Il callback hell rende il codice difficile da leggere.',
+                'Five nested callbacks create callback hell that makes error handling and debugging nearly impossible. = Cinque callback annidati creano un callback hell che rende la gestione degli errori e il debug quasi impossibile.',
               context: 'async',
               difficulty: 'beginner',
               note: 'Detto anche pyramid of doom. Risolto con Promise e async/await.',
@@ -1511,7 +1527,8 @@ export default {
               italian: 'Callback sincrono',
               pronunciation: '/ˈsɪŋkrənəs ˈkɔːlbæk/',
               phonetic: 'SIN-kre-nos KOL-bak',
-              example: 'Array.map uses synchronous callbacks. = Array.map usa callback sincroni.',
+              example:
+                'Functions like Array.map execute their synchronous callback immediately for each element before returning. = Funzioni come Array.map eseguono il loro callback sincrono immediatamente per ogni elemento prima di restituire.',
               context: 'async',
               difficulty: 'beginner',
               code: '[1,2,3].map(n => n * 2);',
@@ -1522,40 +1539,40 @@ export default {
               pronunciation: '/eɪˈsɪŋkrənəs ˈkɔːlbæk/',
               phonetic: 'ei-SIN-kre-nos KOL-bak',
               example:
-                'setTimeout uses an asynchronous callback. = setTimeout usa un callback asincrono.',
+                "An asynchronous callback like the one passed to fs.readFile runs only after the I/O operation completes. = Un callback asincrono come quello passato a fs.readFile viene eseguito solo dopo che l'operazione I/O è completata.",
               context: 'async',
               difficulty: 'beginner',
               code: 'setTimeout(cb, 1000);',
             },
             {
               english: 'setTimeout',
-              italian: 'setTimeout / esecuzione differita',
+              italian: 'Esecuzione differita (setTimeout)',
               pronunciation: '/sɛt ˈtaɪmaʊt/',
               phonetic: 'SET-TAIM-aut',
               example:
-                'setTimeout schedules a callback later. = setTimeout pianifica un callback più tardi.',
+                'Implement a retry mechanism by calling setTimeout to wait two seconds before reattempting the failed request. = Implementa un meccanismo di retry chiamando setTimeout per aspettare due secondi prima di ritentare la richiesta fallita.',
               context: 'async',
               difficulty: 'beginner',
               code: 'setTimeout(() => {}, 1000);',
             },
             {
               english: 'setInterval',
-              italian: 'setInterval / esecuzione ripetuta',
+              italian: 'Esecuzione ripetuta (setInterval)',
               pronunciation: '/sɛt ˈɪntərvəl/',
               phonetic: 'SET-IN-ter-val',
               example:
-                'setInterval repeats a callback periodically. = setInterval ripete un callback periodicamente.',
+                'A health-check endpoint pings downstream services every 30 seconds using setInterval. = Un endpoint di health-check fa ping ai servizi downstream ogni 30 secondi usando setInterval.',
               context: 'async',
               difficulty: 'beginner',
               code: 'setInterval(tick, 1000);',
             },
             {
               english: 'clearTimeout',
-              italian: 'clearTimeout / annulla timeout',
+              italian: 'Annullamento timeout (clearTimeout)',
               pronunciation: '/klɪər ˈtaɪmaʊt/',
               phonetic: 'KLIR-TAIM-aut',
               example:
-                'clearTimeout cancels a scheduled timeout. = clearTimeout annulla un timeout pianificato.',
+                "If the user responds before the deadline, call clearTimeout to cancel the inactivity warning. = Se l'utente risponde prima della scadenza, chiama clearTimeout per annullare l'avviso di inattività.",
               context: 'async',
               difficulty: 'beginner',
               code: 'clearTimeout(id);',
@@ -1566,7 +1583,7 @@ export default {
               pronunciation: '/kənˌtɪnjuˈeɪʃən/',
               phonetic: 'kon-tin-iu-EI-scen',
               example:
-                'A callback represents a continuation. = Un callback rappresenta una continuazione.',
+                'In continuation-passing style, the function never returns directly but passes its result to a continuation callback. = Nello stile continuation-passing, la funzione non restituisce mai direttamente ma passa il risultato a un callback di continuazione.',
               context: 'async',
               difficulty: 'intermediate',
               note: "Concetto teorico: cosa fare dopo che un'operazione è terminata.",
@@ -1577,7 +1594,7 @@ export default {
               pronunciation: '/ˈpɪrəmɪd əv duːm/',
               phonetic: 'PI-ra-mid-ov-DUUM',
               example:
-                'Nested callbacks create a pyramid of doom. = I callback annidati creano una piramide del destino.',
+                'Refactoring a pyramid of doom into flat async/await code dramatically improves readability and maintainability. = Ristrutturare una piramide del destino in codice async/await piatto migliora drasticamente leggibilità e manutenibilità.',
               context: 'async',
               difficulty: 'intermediate',
               note: 'Indentazione che cresce verso destra annidando callback.',
@@ -1591,11 +1608,11 @@ export default {
           items: [
             {
               english: 'Promise',
-              italian: 'Promise / oggetto di risultato asincrono',
+              italian: 'Oggetto di risultato asincrono (Promise)',
               pronunciation: '/ˈprɒmɪs/',
               phonetic: 'PRO-mis',
               example:
-                'A Promise represents a future value. = Una Promise rappresenta un valore futuro.',
+                'Wrapping a database query in a Promise lets you chain error handling instead of nesting callbacks. = Avvolgere una query al database in una Promise permette di concatenare la gestione errori invece di annidare callback.',
               context: 'async',
               difficulty: 'beginner',
               code: 'const p = new Promise((res, rej) => {});',
@@ -1606,7 +1623,7 @@ export default {
               pronunciation: '/rɪˈzɒlv/',
               phonetic: 'ri-ZOLV',
               example:
-                'Resolve fulfills the promise with a value. = Resolve adempie la promise con un valore.',
+                'Once the data is ready, call resolve with the result to move the Promise into the fulfilled state. = Una volta che i dati sono pronti, chiama resolve con il risultato per portare la Promise nello stato adempiuto.',
               context: 'async',
               difficulty: 'beginner',
               code: 'resolve(data);',
@@ -1616,38 +1633,41 @@ export default {
               italian: 'Rifiuta',
               pronunciation: '/rɪˈdʒekt/',
               phonetic: 'ri-GEKT',
-              example: 'Reject signals a failure. = Reject segnala un fallimento.',
+              example:
+                'If the network request fails, call reject with a descriptive Error so downstream handlers know what went wrong. = Se la richiesta di rete fallisce, chiama reject con un Error descrittivo così i gestori a valle sanno cosa è andato storto.',
               context: 'async',
               difficulty: 'beginner',
               code: "reject(new Error('fail'));",
             },
             {
               english: 'then',
-              italian: 'then / aggancia handler di successo',
+              italian: 'Handler di successo (then)',
               pronunciation: '/ðen/',
               phonetic: 'DEN',
-              example: 'then handles a fulfilled promise. = then gestisce una promise adempiuta.',
+              example:
+                'Chain a then handler to parse the response body as JSON after the HTTP request completes successfully. = Concatena un handler then per analizzare il corpo della risposta come JSON dopo che la richiesta HTTP è completata con successo.',
               context: 'async',
               difficulty: 'beginner',
               code: 'fetch(url).then(res => res.json());',
             },
             {
               english: 'catch',
-              italian: 'catch / aggancia handler di errore',
+              italian: 'Handler di errore (catch)',
               pronunciation: '/kætʃ/',
               phonetic: 'KEC',
-              example: 'catch handles a rejected promise. = catch gestisce una promise rifiutata.',
+              example:
+                'Adding a catch at the end of a promise chain prevents unhandled rejections from crashing the process. = Aggiungere un catch alla fine di una catena di promise previene rifiuti non gestiti che manderebbero in crash il processo.',
               context: 'async',
               difficulty: 'beginner',
               code: 'fetch(url).catch(err => console.error(err));',
             },
             {
               english: 'finally',
-              italian: 'finally / esegue sempre alla fine',
+              italian: 'Esecuzione garantita alla fine (finally)',
               pronunciation: '/ˈfaɪnəli/',
               phonetic: 'FAI-nal-li',
               example:
-                'finally runs after success or failure. = finally viene eseguito dopo successo o fallimento.',
+                'Use finally to release a database connection regardless of whether the query succeeded or threw an error. = Usa finally per rilasciare una connessione al database indipendentemente dal fatto che la query sia riuscita o abbia lanciato un errore.',
               context: 'async',
               difficulty: 'beginner',
               code: '.finally(() => { spinner.stop(); });',
@@ -1658,7 +1678,7 @@ export default {
               pronunciation: '/ˈpendɪŋ/',
               phonetic: 'PEND-ing',
               example:
-                'A pending promise has not settled yet. = Una promise pending non si è ancora risolta.',
+                'While the HTTP request is in flight, the promise remains in a pending state until the server responds. = Mentre la richiesta HTTP è in corso, la promise rimane in stato in sospeso finché il server non risponde.',
               context: 'async',
               difficulty: 'beginner',
               note: 'Stati: pending, fulfilled, rejected.',
@@ -1668,7 +1688,8 @@ export default {
               italian: 'Adempiuta',
               pronunciation: '/fʊlˈfɪld/',
               phonetic: 'ful-FILD',
-              example: 'A fulfilled promise has a value. = Una promise adempiuta ha un valore.',
+              example:
+                "Once the server returns a 200 response, the fetch promise transitions to fulfilled with the response object. = Quando il server restituisce una risposta 200, la promise di fetch diventa adempiuta con l'oggetto risposta.",
               context: 'async',
               difficulty: 'beginner',
             },
@@ -1677,7 +1698,8 @@ export default {
               italian: 'Rifiutata',
               pronunciation: '/rɪˈdʒektɪd/',
               phonetic: 'ri-GEK-ted',
-              example: 'A rejected promise has an error. = Una promise rifiutata ha un errore.',
+              example:
+                'When a DNS lookup fails, the promise is rejected with a network error that the catch handler can log. = Quando un lookup DNS fallisce, la promise viene rifiutata con un errore di rete che il gestore catch può registrare.',
               context: 'async',
               difficulty: 'beginner',
             },
@@ -1687,7 +1709,7 @@ export default {
               pronunciation: '/ˈprɒmɪs tʃeɪn/',
               phonetic: 'PRO-mis CEIN',
               example:
-                'A promise chain links multiple thens. = Una catena di promise collega più then.',
+                'Build a promise chain that fetches data, validates it, transforms it, and then stores it in the database. = Costruisci una catena di promise che recupera dati, li valida, li trasforma e poi li salva nel database.',
               context: 'async',
               difficulty: 'beginner',
               code: '.then(a).then(b).then(c)',
@@ -1701,22 +1723,22 @@ export default {
           items: [
             {
               english: 'async',
-              italian: 'async / parola chiave funzione asincrona',
+              italian: 'Parola chiave per funzione asincrona (async)',
               pronunciation: '/ˈeɪsɪŋk/',
               phonetic: 'EI-sink',
               example:
-                'An async function returns a promise. = Una funzione async restituisce una promise.',
+                'Marking a function as async allows you to use await inside it and automatically wraps the return value in a Promise. = Contrassegnare una funzione come async permette di usare await al suo interno e avvolge automaticamente il valore di ritorno in una Promise.',
               context: 'async',
               difficulty: 'beginner',
               code: 'async function load() { return data; }',
             },
             {
               english: 'await',
-              italian: 'await / attende una Promise',
+              italian: 'Attesa di una Promise (await)',
               pronunciation: '/əˈweɪt/',
               phonetic: 'a-UEIT',
               example:
-                'await pauses until a promise settles. = await mette in pausa finché la promise si risolve.',
+                'Writing "const user = await db.findById(id)" reads like synchronous code but is fully non-blocking. = Scrivere "const user = await db.findById(id)" si legge come codice sincrono ma è completamente non-bloccante.',
               context: 'async',
               difficulty: 'beginner',
               code: 'const data = await fetch(url);',
@@ -1724,11 +1746,11 @@ export default {
             },
             {
               english: 'try/catch',
-              italian: 'try/catch / blocco di gestione eccezioni',
+              italian: 'Blocco di gestione eccezioni (try/catch)',
               pronunciation: '/traɪ kætʃ/',
               phonetic: 'TRAI-KEC',
               example:
-                'Use try/catch with async/await for errors. = Usa try/catch con async/await per gli errori.',
+                'Wrap every await call in a try/catch block to handle network timeouts and validation errors gracefully. = Avvolgi ogni chiamata await in un blocco try/catch per gestire timeout di rete ed errori di validazione in modo elegante.',
               context: 'async',
               difficulty: 'beginner',
               code: 'try { await fn(); } catch (e) {}',
@@ -1739,7 +1761,7 @@ export default {
               pronunciation: '/sɪˈkwenʃəl/',
               phonetic: 'si-KUEN-scal',
               example:
-                "Sequential awaits run one after another. = Le await sequenziali girano una dopo l'altra.",
+                'Use sequential awaits when each step depends on the previous result, like fetching a user then loading their orders. = Usa await sequenziali quando ogni passaggio dipende dal risultato precedente, come recuperare un utente e poi caricare i suoi ordini.',
               context: 'async',
               difficulty: 'beginner',
               code: 'const a = await f(); const b = await g();',
@@ -1750,18 +1772,18 @@ export default {
               pronunciation: '/ˈpærəlel/',
               phonetic: 'PA-ra-lel',
               example:
-                'Promise.all runs promises in parallel. = Promise.all esegue promise in parallelo.',
+                'Fetching user profile and notifications in parallel with Promise.all cuts the total response time in half. = Recuperare profilo utente e notifiche in parallelo con Promise.all dimezza il tempo di risposta totale.',
               context: 'async',
               difficulty: 'intermediate',
               code: 'await Promise.all([f(), g()]);',
             },
             {
               english: 'Promise.all',
-              italian: 'Promise.all / attende tutte (fallisce al primo errore)',
+              italian: 'Attesa di tutte le Promise (Promise.all)',
               pronunciation: '/ˈprɒmɪs ɔːl/',
               phonetic: 'PRO-mis-OL',
               example:
-                'Promise.all waits for all promises. = Promise.all attende tutte le promise.',
+                'Use Promise.all to download ten images concurrently and fail fast if any single download errors out. = Usa Promise.all per scaricare dieci immagini concorrentemente e fallire rapidamente se un singolo download va in errore.',
               context: 'async',
               difficulty: 'intermediate',
               code: 'const [a, b] = await Promise.all([p1, p2]);',
@@ -1769,11 +1791,11 @@ export default {
             },
             {
               english: 'Promise.allSettled',
-              italian: 'Promise.allSettled / attende tutte indipendentemente',
+              italian: 'Attesa completa indipendente (Promise.allSettled)',
               pronunciation: '/ˈprɒmɪs ɔːlˈsetld/',
               phonetic: 'PRO-mis-OL-SET-eld',
               example:
-                'Promise.allSettled waits for every promise to settle. = Promise.allSettled aspetta che ogni promise si risolva.',
+                'With Promise.allSettled you can send notifications to multiple users and log which ones failed without aborting the rest. = Con Promise.allSettled puoi inviare notifiche a più utenti e registrare quali sono fallite senza interrompere le altre.',
               context: 'async',
               difficulty: 'intermediate',
               code: 'await Promise.allSettled(promises);',
@@ -1781,11 +1803,11 @@ export default {
             },
             {
               english: 'Promise.race',
-              italian: 'Promise.race / vince la prima a completarsi',
+              italian: 'Corsa tra Promise (Promise.race)',
               pronunciation: '/ˈprɒmɪs reɪs/',
               phonetic: 'PRO-mis REIS',
               example:
-                'Promise.race returns the first to settle. = Promise.race ritorna la prima che si risolve.',
+                'Implement a request timeout by racing the fetch call against a Promise that rejects after 5 seconds. = Implementa un timeout per la richiesta mettendo in gara la chiamata fetch contro una Promise che rifiuta dopo 5 secondi.',
               context: 'async',
               difficulty: 'intermediate',
               code: 'await Promise.race([req, timeout]);',
@@ -1796,18 +1818,18 @@ export default {
               pronunciation: '/ˌprɒmɪsɪfɪˈkeɪʃən/',
               phonetic: 'pro-mi-si-fi-KEI-scen',
               example:
-                'Promisification converts callbacks to promises. = La promisificazione converte callback in promise.',
+                'Apply promisification to legacy Node APIs so you can use them with async/await in modern code. = Applica la promisificazione alle API Node legacy così puoi usarle con async/await nel codice moderno.',
               context: 'async',
               difficulty: 'intermediate',
               code: 'const readFile = util.promisify(fs.readFile);',
             },
             {
               english: 'util.promisify',
-              italian: 'util.promisify / converte callback in Promise',
+              italian: 'Convertitore callback-to-Promise (util.promisify)',
               pronunciation: '/juːˈtɪl ˈprɒmɪsɪfaɪ/',
               phonetic: 'IU-til PRO-mi-si-fai',
               example:
-                'util.promisify converts callback APIs. = util.promisify converte API a callback.',
+                'Wrap fs.readFile with util.promisify so you can await it instead of passing a callback function. = Avvolgi fs.readFile con util.promisify così puoi usare await invece di passare una funzione callback.',
               context: 'async',
               difficulty: 'intermediate',
               code: 'const sleep = util.promisify(setTimeout);',
@@ -1821,22 +1843,22 @@ export default {
           items: [
             {
               english: 'Microtask',
-              italian: 'microtask / task ad alta priorità del loop',
+              italian: 'Task ad alta priorità del loop (microtask)',
               pronunciation: '/ˈmaɪkroʊtæsk/',
               phonetic: 'MAI-kro-task',
               example:
-                'Promise callbacks are microtasks. = I callback delle promise sono microtask.',
+                'Promise .then handlers and queueMicrotask callbacks are microtasks that execute before the next macrotask. = I gestori .then delle Promise e i callback di queueMicrotask sono microtask che vengono eseguiti prima della prossima macrotask.',
               context: 'async',
               difficulty: 'intermediate',
               note: 'Hanno priorità sulle macrotask.',
             },
             {
               english: 'Macrotask',
-              italian: 'macrotask / task a priorità normale del loop',
+              italian: 'Task a priorità normale del loop (macrotask)',
               pronunciation: '/ˈmækroʊtæsk/',
               phonetic: 'MA-kro-task',
               example:
-                'setTimeout callbacks are macrotasks. = I callback di setTimeout sono macrotask.',
+                "Timer callbacks, I/O events, and setImmediate are all scheduled as macrotasks by the event loop. = I callback dei timer, gli eventi I/O e setImmediate sono tutti pianificati come macrotask dall'event loop.",
               context: 'async',
               difficulty: 'intermediate',
             },
@@ -1846,17 +1868,17 @@ export default {
               pronunciation: '/ˈmaɪkroʊtæsk kjuː/',
               phonetic: 'MAI-kro-task-KIU',
               example:
-                'The microtask queue empties before each phase. = La coda dei microtask viene svuotata prima di ogni fase.',
+                "Between each event loop phase, Node drains the microtask queue completely before moving on. = Tra ogni fase dell'event loop, Node svuota completamente la coda dei microtask prima di procedere.",
               context: 'async',
               difficulty: 'intermediate',
             },
             {
               english: 'process.nextTick',
-              italian: 'process.nextTick / esegue al prossimo tick',
+              italian: 'Esecuzione al prossimo tick (process.nextTick)',
               pronunciation: '/ˈproʊses nekst tɪk/',
               phonetic: 'PRO-ses NEKST-TIK',
               example:
-                'process.nextTick has higher priority than promises. = process.nextTick ha priorità più alta delle promise.',
+                "Emit an event with process.nextTick to ensure listeners are registered before the event fires. = Emetti un evento con process.nextTick per assicurarti che i listener siano registrati prima che l'evento scatti.",
               context: 'async',
               difficulty: 'intermediate',
               code: 'process.nextTick(() => {});',
@@ -1864,11 +1886,11 @@ export default {
             },
             {
               english: 'setImmediate',
-              italian: 'setImmediate / esegue dopo I/O',
+              italian: 'Esecuzione dopo I/O (setImmediate)',
               pronunciation: '/sɛt ɪˈmiːdiət/',
               phonetic: 'SET-i-MII-diet',
               example:
-                'setImmediate runs after I/O events. = setImmediate gira dopo gli eventi I/O.',
+                'Use setImmediate inside an I/O callback to defer heavy computation until after the current I/O events are processed. = Usa setImmediate dentro un callback I/O per rimandare computazioni pesanti dopo che gli eventi I/O correnti sono elaborati.',
               context: 'async',
               difficulty: 'intermediate',
               code: 'setImmediate(() => {});',
@@ -1880,7 +1902,7 @@ export default {
               pronunciation: '/ˈtaɪmərz feɪz/',
               phonetic: 'TAIM-erz FEIZ',
               example:
-                'The timers phase runs setTimeout callbacks. = La fase timer esegue i callback di setTimeout.',
+                "In the timers phase, the event loop checks which setTimeout and setInterval deadlines have expired and fires their callbacks. = Nella fase timer, l'event loop verifica quali scadenze setTimeout e setInterval sono scadute e attiva i loro callback.",
               context: 'async',
               difficulty: 'intermediate',
             },
@@ -1890,7 +1912,7 @@ export default {
               pronunciation: '/pɒl feɪz/',
               phonetic: 'POL FEIZ',
               example:
-                'The poll phase processes I/O callbacks. = La fase di poll elabora i callback I/O.',
+                'During the poll phase, Node waits for incoming connections and file reads, executing their callbacks as they complete. = Durante la fase di poll, Node attende connessioni in arrivo e letture file, eseguendo i loro callback man mano che completano.',
               context: 'async',
               difficulty: 'intermediate',
               note: "Cuore dell'event loop dove vengono presi gli eventi I/O.",
@@ -1901,7 +1923,7 @@ export default {
               pronunciation: '/tʃek feɪz/',
               phonetic: 'CEK FEIZ',
               example:
-                'setImmediate callbacks run in the check phase. = I callback di setImmediate girano nella fase check.',
+                "The check phase runs immediately after the poll phase, which is why setImmediate fires before timers set from within I/O. = La fase check viene eseguita subito dopo la fase poll, per questo setImmediate scatta prima dei timer impostati dall'interno dell'I/O.",
               context: 'async',
               difficulty: 'intermediate',
             },
@@ -1911,7 +1933,7 @@ export default {
               pronunciation: '/kloʊz ˈkɔːlbæks/',
               phonetic: 'KLOUZ KOL-baks',
               example:
-                'Close callbacks fire when streams close. = I callback di chiusura scattano quando gli stream si chiudono.',
+                'When a TCP socket emits the "close" event, its cleanup handler runs during the close callbacks phase. = Quando un socket TCP emette l\'evento "close", il suo gestore di pulizia viene eseguito durante la fase dei callback di chiusura.',
               context: 'async',
               difficulty: 'intermediate',
             },
@@ -1921,7 +1943,7 @@ export default {
               pronunciation: '/stɑːrˈveɪʃən/',
               phonetic: 'star-VEI-scen',
               example:
-                "Heavy microtasks can cause I/O starvation. = Microtask pesanti possono causare starvazione dell'I/O.",
+                "An infinite loop of process.nextTick calls causes I/O starvation because the event loop never reaches the poll phase. = Un ciclo infinito di chiamate process.nextTick causa starvazione dell'I/O perché l'event loop non raggiunge mai la fase poll.",
               context: 'async',
               difficulty: 'advanced',
               note: 'Quando una fase non riceve mai cicli CPU.',
@@ -1944,54 +1966,55 @@ export default {
           items: [
             {
               english: 'File System',
-              italian: 'fs / modulo filesystem di Node',
+              italian: 'Modulo filesystem di Node (fs)',
               pronunciation: '/faɪl ˈsɪstəm/',
               phonetic: 'FAIL-SIS-tem',
               example:
-                'The fs module accesses the file system. = Il modulo fs accede al file system.',
+                'Import the file system module to read configuration files or write logs from your Node application. = Importa il modulo filesystem per leggere file di configurazione o scrivere log dalla tua applicazione Node.',
               context: 'runtime',
               difficulty: 'beginner',
               code: "const fs = require('fs');",
             },
             {
               english: 'readFile',
-              italian: 'leggi file',
+              italian: 'Lettura file asincrona (readFile)',
               pronunciation: '/riːd faɪl/',
               phonetic: 'RID-FAIL',
               example:
-                'readFile reads a file asynchronously. = readFile legge un file in modo asincrono.',
+                'Use readFile to load a JSON config without blocking the server while it waits for the disk. = Usa readFile per caricare una config JSON senza bloccare il server mentre aspetta il disco.',
               context: 'runtime',
               difficulty: 'beginner',
               code: 'fs.readFile(path, (err, data) => {});',
             },
             {
               english: 'writeFile',
-              italian: 'scrivi file',
+              italian: 'Scrittura file (writeFile)',
               pronunciation: '/raɪt faɪl/',
               phonetic: 'RAIT-FAIL',
               example:
-                'writeFile writes content to a file. = writeFile scrive contenuto in un file.',
+                "After generating the report, writeFile saves the HTML output to disk for later download. = Dopo aver generato il report, writeFile salva l'output HTML su disco per il download successivo.",
               context: 'runtime',
               difficulty: 'beginner',
               code: 'fs.writeFile(path, data, cb);',
             },
             {
               english: 'appendFile',
-              italian: 'aggiungi a file',
+              italian: 'Aggiunta a file (appendFile)',
               pronunciation: '/əˈpend faɪl/',
               phonetic: 'a-PEND-FAIL',
               example:
-                'appendFile adds content to an existing file. = appendFile aggiunge contenuto a un file esistente.',
+                'Each incoming request is logged by calling appendFile to add a new line to the access log. = Ogni richiesta in arrivo viene registrata chiamando appendFile per aggiungere una nuova riga al log di accesso.',
               context: 'runtime',
               difficulty: 'beginner',
               code: "fs.appendFile('log.txt', line, cb);",
             },
             {
               english: 'unlink',
-              italian: 'elimina',
+              italian: 'Eliminazione file (unlink)',
               pronunciation: '/ʌnˈlɪŋk/',
               phonetic: 'an-LINK',
-              example: 'unlink deletes a file. = unlink elimina un file.',
+              example:
+                "After the user deletes their account, call unlink to remove their uploaded avatar from the server. = Dopo che l'utente cancella il suo account, chiama unlink per rimuovere l'avatar caricato dal server.",
               context: 'runtime',
               difficulty: 'beginner',
               code: 'fs.unlink(path, cb);',
@@ -1999,42 +2022,44 @@ export default {
             },
             {
               english: 'mkdir',
-              italian: 'crea directory',
+              italian: 'Creazione directory (mkdir)',
               pronunciation: '/meɪk dɪˈrektəri/',
               phonetic: 'MEK-DIR',
-              example: 'mkdir creates a directory. = mkdir crea una directory.',
+              example:
+                "Before saving uploads, use mkdir with the recursive flag to ensure the destination folder tree exists. = Prima di salvare gli upload, usa mkdir con il flag recursive per assicurarti che l'albero di cartelle di destinazione esista.",
               context: 'runtime',
               difficulty: 'beginner',
               code: 'fs.mkdir(path, { recursive: true }, cb);',
             },
             {
               english: 'readdir',
-              italian: 'leggi directory',
+              italian: 'Lettura directory (readdir)',
               pronunciation: '/riːd dɪˈrektəri/',
               phonetic: 'RID-DIR',
               example:
-                'readdir lists directory contents. = readdir elenca il contenuto di una directory.',
+                "Call readdir to list all plugin files in a folder and dynamically load each one at startup. = Chiama readdir per elencare tutti i file plugin in una cartella e caricare dinamicamente ognuno all'avvio.",
               context: 'runtime',
               difficulty: 'beginner',
               code: "fs.readdir('./src', cb);",
             },
             {
               english: 'stat',
-              italian: 'statistiche file',
+              italian: 'Metadati file (stat)',
               pronunciation: '/stæt/',
               phonetic: 'STAT',
-              example: 'stat returns file metadata. = stat ritorna i metadati del file.',
+              example:
+                "Check the file size with stat before streaming large uploads to ensure they don't exceed the limit. = Controlla la dimensione del file con stat prima di inviare grandi upload in streaming per assicurarti che non superino il limite.",
               context: 'runtime',
               difficulty: 'beginner',
               code: 'fs.stat(path, (err, stats) => {});',
             },
             {
               english: 'exists',
-              italian: 'esiste',
+              italian: 'Verifica esistenza (exists)',
               pronunciation: '/ɪɡˈzɪsts/',
               phonetic: 'eg-ZISTS',
               example:
-                "Check existence with fs.access or fs.existsSync. = Controlla l'esistenza con fs.access o fs.existsSync.",
+                'Before reading the config file, verify it exists with fs.access to give a clear error message if missing. = Prima di leggere il file di configurazione, verifica che esista con fs.access per dare un messaggio di errore chiaro se manca.',
               context: 'runtime',
               difficulty: 'beginner',
               code: 'fs.existsSync(path);',
@@ -2046,7 +2071,7 @@ export default {
               pronunciation: '/sɪŋk eɪ piː aɪ/',
               phonetic: 'SINK-EI-PI-AI',
               example:
-                "fs.readFileSync blocks the event loop. = fs.readFileSync blocca l'event loop.",
+                "Loading environment variables at startup with the sync API is acceptable since the event loop is idle. = Caricare le variabili d'ambiente all'avvio con l'API sincrona è accettabile poiché l'event loop è inattivo.",
               context: 'runtime',
               difficulty: 'beginner',
               code: "const data = fs.readFileSync(path, 'utf8');",
@@ -2061,21 +2086,22 @@ export default {
           items: [
             {
               english: 'fs.promises',
-              italian: 'fs.promises / API fs basata su Promise',
+              italian: 'API fs basata su Promise (fs.promises)',
               pronunciation: '/ɛf ɛs ˈprɒmɪsɪz/',
               phonetic: 'EF-ES-PRO-mis-ez',
-              example: 'fs.promises returns promises. = fs.promises ritorna promise.',
+              example:
+                'Import from "fs/promises" to use async/await instead of error-first callbacks for all file operations. = Importa da "fs/promises" per usare async/await invece di callback error-first per tutte le operazioni sui file.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const fs = require('fs/promises');",
             },
             {
               english: 'await readFile',
-              italian: 'await readFile / legge file in modo async',
+              italian: 'Lettura file asincrona con await (await readFile)',
               pronunciation: '/əˈweɪt riːd faɪl/',
               phonetic: 'a-UEIT-RID-FAIL',
               example:
-                'await fs.readFile reads a file with promises. = await fs.readFile legge un file con promise.',
+                'Await fs.readFile with utf8 encoding to get a clean string instead of a raw Buffer. = Fai await di fs.readFile con codifica utf8 per ottenere una stringa pulita invece di un Buffer grezzo.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const data = await fs.readFile(path, 'utf8');",
@@ -2086,7 +2112,7 @@ export default {
               pronunciation: '/ɪnˈkoʊdɪŋ/',
               phonetic: 'in-KOUD-ing',
               example:
-                'Pass utf8 encoding to get a string. = Passa la codifica utf8 per ottenere una stringa.',
+                'Without specifying utf8 encoding, readFile returns a raw Buffer that you must decode manually. = Senza specificare la codifica utf8, readFile restituisce un Buffer grezzo che devi decodificare manualmente.',
               context: 'runtime',
               difficulty: 'beginner',
               code: "fs.readFile(p, 'utf8');",
@@ -2094,43 +2120,44 @@ export default {
             },
             {
               english: 'File Handle',
-              italian: 'Handle file',
+              italian: 'Descrittore file (handle)',
               pronunciation: '/faɪl ˈhændl/',
               phonetic: 'FAIL-HAN-del',
-              example: 'fs.open returns a FileHandle. = fs.open ritorna un FileHandle.',
+              example:
+                'A file handle allows multiple read/write operations on the same file without reopening it each time. = Un descrittore file permette più operazioni di lettura/scrittura sullo stesso file senza riaprirlo ogni volta.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const fh = await fs.open(path, 'r');",
             },
             {
               english: 'Open',
-              italian: 'Apri',
+              italian: 'Apertura file (open)',
               pronunciation: '/ˈoʊpən/',
               phonetic: 'OU-pen',
               example:
-                'fs.open opens a file for reading or writing. = fs.open apre un file in lettura o scrittura.',
+                'Open the log file in append mode so each write adds to the end without overwriting existing content. = Apri il file di log in modalità append così ogni scrittura aggiunge alla fine senza sovrascrivere il contenuto esistente.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "fs.open(path, 'w');",
             },
             {
               english: 'Close',
-              italian: 'Chiudi',
+              italian: 'Chiusura file (close)',
               pronunciation: '/kloʊz/',
               phonetic: 'KLOUZ',
               example:
-                'Always close file handles to free resources. = Chiudi sempre gli handle dei file per liberare risorse.',
+                'Forgetting to close a file handle leads to resource leaks that can exhaust the OS file descriptor limit. = Dimenticare di chiudere un descrittore file porta a perdite di risorse che possono esaurire il limite di descrittori file del sistema operativo.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'await fh.close();',
             },
             {
               english: 'Truncate',
-              italian: 'Tronca',
+              italian: 'Troncamento file (truncate)',
               pronunciation: '/ˈtrʌŋkeɪt/',
               phonetic: 'TRAN-keit',
               example:
-                'truncate reduces a file to a given size. = truncate riduce un file a una dimensione data.',
+                'Before rewriting a cache file, truncate it to zero bytes to ensure no stale data remains at the end. = Prima di riscrivere un file di cache, troncalo a zero byte per assicurarti che nessun dato obsoleto rimanga alla fine.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'await fs.truncate(path, 0);',
@@ -2141,17 +2168,18 @@ export default {
               pronunciation: '/ˈkɒpi faɪl/',
               phonetic: 'KO-pi-FAIL',
               example:
-                'fs.copyFile copies one file to another. = fs.copyFile copia un file in un altro.',
+                'Create a backup before migration by using copyFile to duplicate the database snapshot. = Crea un backup prima della migrazione usando copyFile per duplicare lo snapshot del database.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'await fs.copyFile(src, dst);',
             },
             {
               english: 'Rename',
-              italian: 'Rinomina',
+              italian: 'Rinominazione file (rename)',
               pronunciation: '/riːˈneɪm/',
               phonetic: 'ri-NEIM',
-              example: 'fs.rename renames or moves a file. = fs.rename rinomina o sposta un file.',
+              example:
+                'After writing to a temp file, use rename to atomically move it into the final destination path. = Dopo aver scritto su un file temporaneo, usa rename per spostarlo atomicamente nel percorso di destinazione finale.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'await fs.rename(old, new);',
@@ -2161,7 +2189,8 @@ export default {
               italian: 'Permessi',
               pronunciation: '/pərˈmɪʃənz/',
               phonetic: 'per-MIS-cions',
-              example: 'fs.chmod changes file permissions. = fs.chmod cambia i permessi del file.',
+              example:
+                'Set restrictive file permissions with chmod to prevent other users on the server from reading sensitive configs. = Imposta permessi file restrittivi con chmod per impedire ad altri utenti sul server di leggere configurazioni sensibili.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'await fs.chmod(path, 0o755);',
@@ -2175,22 +2204,22 @@ export default {
           items: [
             {
               english: 'path',
-              italian: 'percorso',
+              italian: 'Percorso',
               pronunciation: '/pæθ/',
               phonetic: 'PAT',
               example:
-                'The path module handles file paths. = Il modulo path gestisce i percorsi file.',
+                'Always use the path module instead of string concatenation to build file paths that work on every operating system. = Usa sempre il modulo path invece della concatenazione di stringhe per costruire percorsi file che funzionano su ogni sistema operativo.',
               context: 'runtime',
               difficulty: 'beginner',
               code: "const path = require('path');",
             },
             {
               english: 'path.join',
-              italian: 'unisci percorso',
+              italian: 'Unione di percorso (path.join)',
               pronunciation: '/pæθ dʒɔɪn/',
               phonetic: 'PAT-GIOIN',
               example:
-                'path.join builds a path safely. = path.join costruisce un percorso in modo sicuro.',
+                'Build the full config file location with path.join(__dirname, "config", "db.json") to handle separators correctly. = Costruisci il percorso completo del file config con path.join(__dirname, "config", "db.json") per gestire i separatori correttamente.',
               context: 'runtime',
               difficulty: 'beginner',
               code: "path.join(__dirname, 'data', 'file.txt');",
@@ -2198,67 +2227,69 @@ export default {
             },
             {
               english: 'path.resolve',
-              italian: 'risolvi percorso',
+              italian: 'Risoluzione percorso (path.resolve)',
               pronunciation: '/pæθ rɪˈzɒlv/',
               phonetic: 'PAT-ri-ZOLV',
               example:
-                'path.resolve returns an absolute path. = path.resolve ritorna un percorso assoluto.',
+                'Use path.resolve to convert a relative path like "./uploads" into a full absolute path for the file system API. = Usa path.resolve per convertire un percorso relativo come "./uploads" in un percorso assoluto completo per l\'API del filesystem.',
               context: 'runtime',
               difficulty: 'beginner',
               code: "path.resolve('./src');",
             },
             {
               english: 'path.dirname',
-              italian: 'directory percorso',
+              italian: 'Directory del percorso (path.dirname)',
               pronunciation: '/pæθ ˈdɜːrneɪm/',
               phonetic: 'PAT-DIR-neim',
               example:
-                'path.dirname returns the directory part. = path.dirname ritorna la parte directory.',
+                'Extract the parent folder from a file path with path.dirname to create sibling files nearby. = Estrai la cartella genitore da un percorso file con path.dirname per creare file fratelli nelle vicinanze.',
               context: 'runtime',
               difficulty: 'beginner',
               code: "path.dirname('/a/b/c.txt');",
             },
             {
               english: 'path.basename',
-              italian: 'nome base percorso',
+              italian: 'Nome base del percorso (path.basename)',
               pronunciation: '/pæθ ˈbeɪsneɪm/',
               phonetic: 'PAT-BEIS-neim',
-              example: 'path.basename returns the filename. = path.basename ritorna il nome file.',
+              example:
+                "Display only the filename to the user by extracting it with path.basename from the full upload path. = Mostra solo il nome del file all'utente estraendolo con path.basename dal percorso completo dell'upload.",
               context: 'runtime',
               difficulty: 'beginner',
               code: "path.basename('/a/b.txt');",
             },
             {
               english: 'path.extname',
-              italian: 'estensione percorso',
+              italian: 'Estensione del percorso (path.extname)',
               pronunciation: '/pæθ ˈekstneɪm/',
               phonetic: 'PAT-EKST-neim',
-              example: "path.extname returns the extension. = path.extname ritorna l'estensione.",
+              example:
+                "Check the file extension with path.extname to reject uploads that are not .jpg or .png images. = Controlla l'estensione del file con path.extname per rifiutare upload che non sono immagini .jpg o .png.",
               context: 'runtime',
               difficulty: 'beginner',
               code: "path.extname('app.js');",
             },
             {
               english: 'path.parse',
-              italian: 'analizza percorso',
+              italian: 'Analisi del percorso (path.parse)',
               pronunciation: '/pæθ pɑːrs/',
               phonetic: 'PAT-PARS',
               example:
-                'path.parse returns an object of parts. = path.parse ritorna un oggetto delle parti.',
+                'Calling path.parse returns an object with root, dir, base, name, and ext so you can manipulate each part. = Chiamare path.parse restituisce un oggetto con root, dir, base, name ed ext così puoi manipolare ogni parte.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "path.parse('/a/b.txt');",
             },
             {
               english: 'path.sep',
-              italian: 'separatore percorso',
+              italian: 'Separatore di percorso (path.sep)',
               pronunciation: '/pæθ sɛp/',
               phonetic: 'PAT-SEP',
               example:
-                'path.sep is the platform path separator. = path.sep è il separatore di percorso della piattaforma.',
+                "Split a user-provided path into segments using path.sep to ensure it works on both Windows and Linux. = Dividi un percorso fornito dall'utente in segmenti usando path.sep per assicurarti che funzioni sia su Windows che su Linux.",
               context: 'runtime',
               difficulty: 'intermediate',
-              code: "path.sep // '/' on Linux, '\\\\' on Windows",
+              code: "path.sep // '/' on Linux, '\\' on Windows",
             },
             {
               english: 'Absolute Path',
@@ -2266,7 +2297,7 @@ export default {
               pronunciation: '/ˈæbsəluːt pæθ/',
               phonetic: 'AB-so-lut PAT',
               example:
-                'An absolute path starts from the root. = Un percorso assoluto parte dalla radice.',
+                "Store files using an absolute path so the application finds them regardless of the working directory. = Salva i file usando un percorso assoluto così l'applicazione li trova indipendentemente dalla directory di lavoro.",
               context: 'runtime',
               difficulty: 'beginner',
               code: '/usr/local/bin',
@@ -2277,7 +2308,7 @@ export default {
               pronunciation: '/ˈrelətɪv pæθ/',
               phonetic: 'RE-la-tiv PAT',
               example:
-                'A relative path is from the current directory. = Un percorso relativo parte dalla directory corrente.',
+                'Keep test fixtures referenced with a relative path so the project stays portable across machines. = Mantieni i test fixture referenziati con un percorso relativo così il progetto resta portabile tra macchine diverse.',
               context: 'runtime',
               difficulty: 'beginner',
               code: './data/file.txt',
@@ -2291,10 +2322,11 @@ export default {
           items: [
             {
               english: 'fs.watch',
-              italian: 'osserva file',
+              italian: 'Osservazione file (fs.watch)',
               pronunciation: '/ɛf ɛs wɒtʃ/',
               phonetic: 'EF-ES-WOC',
-              example: 'fs.watch monitors file changes. = fs.watch monitora le modifiche ai file.',
+              example:
+                "Set up fs.watch on your template directory to hot-reload views whenever a designer changes the HTML. = Configura fs.watch sulla directory dei template per ricaricare automaticamente le viste ogni volta che un designer modifica l'HTML.",
               context: 'runtime',
               difficulty: 'intermediate',
               code: "fs.watch('./src', (event, name) => {});",
@@ -2305,17 +2337,17 @@ export default {
               pronunciation: '/ˈwɒtʃər/',
               phonetic: 'UO-cer',
               example:
-                'A watcher emits events on changes. = Un watcher emette eventi sulle modifiche.',
+                'The watcher emits a "change" event each time you save a file, triggering an automatic rebuild. = L\'osservatore emette un evento "change" ogni volta che salvi un file, innescando una ricompilazione automatica.',
               context: 'runtime',
               difficulty: 'intermediate',
             },
             {
               english: 'Chokidar',
-              italian: 'chokidar / watcher di filesystem',
+              italian: 'Libreria di osservazione filesystem (Chokidar)',
               pronunciation: '/ˈtʃoʊkɪdɑːr/',
               phonetic: 'CIO-ki-dar',
               example:
-                'Chokidar is a robust file watcher library. = Chokidar è una libreria robusta per osservare file.',
+                'Unlike the built-in fs.watch, Chokidar handles cross-platform edge cases and avoids duplicate events reliably. = A differenza del built-in fs.watch, Chokidar gestisce casi limite multipiattaforma ed evita eventi duplicati in modo affidabile.',
               context: 'runtime',
               difficulty: 'intermediate',
               tool: 'Chokidar',
@@ -2328,7 +2360,7 @@ export default {
               pronunciation: '/ɡlɒb ˈpætərn/',
               phonetic: 'GLOB PAT-tern',
               example:
-                'A glob pattern matches multiple files. = Un pattern glob trova file multipli.',
+                'Use a glob pattern like "src/**/*.test.js" to find all test files nested anywhere under the src directory. = Usa un pattern glob come "src/**/*.test.js" per trovare tutti i file di test annidati ovunque sotto la directory src.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: '**/*.js',
@@ -2339,7 +2371,7 @@ export default {
               pronunciation: '/rɪˈkɜːrsɪv/',
               phonetic: 'ri-KER-siv',
               example:
-                'Recursive options scan subdirectories. = Le opzioni ricorsive analizzano sotto-cartelle.',
+                'Pass the recursive flag to mkdir so it creates all missing parent directories in a single call. = Passa il flag recursive a mkdir così crea tutte le directory genitore mancanti in una singola chiamata.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'fs.mkdir(p, { recursive: true });',
@@ -2349,7 +2381,8 @@ export default {
               italian: 'Link simbolico',
               pronunciation: '/ˈsɪmlɪŋk/',
               phonetic: 'SIM-link',
-              example: 'A symlink points to another path. = Un symlink punta a un altro percorso.',
+              example:
+                "Create a symlink from node_modules/.bin to the CLI executable so npm scripts can find it on the PATH. = Crea un link simbolico da node_modules/.bin all'eseguibile CLI così gli script npm possono trovarlo nel PATH.",
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'fs.symlink(target, link);',
@@ -2359,7 +2392,8 @@ export default {
               italian: 'Percorso reale',
               pronunciation: '/ˈrɪəlpæθ/',
               phonetic: 'RIL-PAT',
-              example: 'fs.realpath resolves symlinks. = fs.realpath risolve i symlink.',
+              example:
+                "Call fs.realpath on a symlink to discover the actual file location it points to on disk. = Chiama fs.realpath su un link simbolico per scoprire l'ubicazione reale del file a cui punta sul disco.",
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'await fs.realpath(p);',
@@ -2370,18 +2404,18 @@ export default {
               pronunciation: '/temp dɪˈrektəri/',
               phonetic: 'TEMP-di-REK-to-ri',
               example:
-                'os.tmpdir returns a temp directory. = os.tmpdir ritorna una directory temporanea.',
+                'Write intermediate build artifacts to the temp directory returned by os.tmpdir() to avoid cluttering the project. = Scrivi gli artefatti di build intermedi nella directory temporanea restituita da os.tmpdir() per evitare di ingombrare il progetto.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'os.tmpdir();',
             },
             {
               english: 'cwd',
-              italian: 'directory di lavoro corrente',
+              italian: 'Directory di lavoro corrente (cwd)',
               pronunciation: '/siː dʌbəljuː diː/',
               phonetic: 'SI-DAB-iu-DI',
               example:
-                'process.cwd returns the current directory. = process.cwd ritorna la directory corrente.',
+                "Resolve relative config paths against process.cwd() so the tool works from any directory the user runs it in. = Risolvi percorsi config relativi rispetto a process.cwd() così lo strumento funziona da qualsiasi directory in cui l'utente lo esegue.",
               context: 'runtime',
               difficulty: 'beginner',
               code: 'process.cwd();',
@@ -2393,7 +2427,7 @@ export default {
               pronunciation: '/oʊ ɛs ˈmɒdjuːl/',
               phonetic: 'O-ES-MO-diul',
               example:
-                'The os module gives system information. = Il modulo os dà informazioni di sistema.',
+                'Query the os module for CPU count and total memory to decide how many worker threads to spawn. = Interroga il modulo os per il conteggio CPU e la memoria totale per decidere quanti worker thread lanciare.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'os.platform(); os.cpus();',
@@ -2419,27 +2453,30 @@ export default {
               italian: 'Modulo http',
               pronunciation: '/eɪtʃ tiː tiː piː ˈmɒdjuːl/',
               phonetic: 'EICI-TI-TI-PI MO-diul',
-              example: 'The http module creates HTTP servers. = Il modulo http crea server HTTP.',
+              example:
+                'You can build a simple REST API with just the built-in http module without installing any framework. = Puoi costruire una semplice API REST con il solo modulo http integrato senza installare alcun framework.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const http = require('http');",
             },
             {
               english: 'createServer',
-              italian: 'crea server',
+              italian: 'Creazione server (createServer)',
               pronunciation: '/kriˈeɪt ˈsɜːrvər/',
               phonetic: 'kri-EIT-SER-ver',
-              example: 'http.createServer creates a server. = http.createServer crea un server.',
+              example:
+                "Call http.createServer with a request handler function that reads the URL and returns the appropriate response. = Chiama http.createServer con una funzione gestore di richieste che legge l'URL e restituisce la risposta appropriata.",
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'http.createServer((req, res) => {});',
             },
             {
               english: 'listen',
-              italian: 'ascolta',
+              italian: 'Ascolto (listen)',
               pronunciation: '/ˈlɪsən/',
               phonetic: 'LI-sen',
-              example: 'server.listen binds to a port. = server.listen si lega a una porta.',
+              example:
+                'After creating the server, call listen on port 3000 and log a message confirming it is ready. = Dopo aver creato il server, chiama listen sulla porta 3000 e registra un messaggio che conferma che è pronto.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'server.listen(3000);',
@@ -2450,17 +2487,18 @@ export default {
               pronunciation: '/pɔːrt/',
               phonetic: 'PORT',
               example:
-                'A port identifies a service on a host. = Una porta identifica un servizio su un host.',
+                "Choose a port above 1024 for development so you don't need root privileges to start the server. = Scegli una porta sopra 1024 per lo sviluppo così non servono privilegi root per avviare il server.",
               context: 'runtime',
               difficulty: 'beginner',
               note: 'Porte sotto 1024 richiedono privilegi root.',
             },
             {
               english: 'Host',
-              italian: 'host / macchina di rete',
+              italian: 'Macchina di rete (host)',
               pronunciation: '/hoʊst/',
               phonetic: 'OST',
-              example: "localhost is the local host. = localhost è l'host locale.",
+              example:
+                'Binding to 0.0.0.0 as the host lets your server accept connections from any network interface. = Legare a 0.0.0.0 come host permette al tuo server di accettare connessioni da qualsiasi interfaccia di rete.',
               context: 'runtime',
               difficulty: 'beginner',
               code: "server.listen(3000, 'localhost');",
@@ -2471,7 +2509,7 @@ export default {
               pronunciation: '/rɪˈkwest/',
               phonetic: 'ri-KUEST',
               example:
-                "The request object holds incoming data. = L'oggetto request contiene i dati in entrata.",
+                "Inspect the request object to determine the HTTP method, the URL path, and any custom headers sent by the client. = Ispeziona l'oggetto richiesta per determinare il metodo HTTP, il percorso URL e qualsiasi header personalizzato inviato dal client.",
               context: 'runtime',
               difficulty: 'beginner',
               code: 'req.url, req.method, req.headers',
@@ -2482,29 +2520,29 @@ export default {
               pronunciation: '/rɪˈspɒns/',
               phonetic: 'ri-SPONS',
               example:
-                "The response object sends data back. = L'oggetto response invia dati indietro.",
+                "Set the status code and headers on the response object before writing the body and calling end(). = Imposta il codice di stato e gli header sull'oggetto risposta prima di scrivere il corpo e chiamare end().",
               context: 'runtime',
               difficulty: 'beginner',
               code: "res.end('Hello');",
             },
             {
               english: 'IncomingMessage',
-              italian: 'Messaggio in entrata',
+              italian: 'Messaggio in entrata (IncomingMessage)',
               pronunciation: '/ɪnˈkʌmɪŋ ˈmesɪdʒ/',
               phonetic: 'in-KAM-ing MES-segg',
               example:
-                'IncomingMessage represents an HTTP request. = IncomingMessage rappresenta una richiesta HTTP.',
+                'The IncomingMessage stream lets you read the request body in chunks as data arrives from the client. = Lo stream IncomingMessage permette di leggere il corpo della richiesta in pezzi man mano che i dati arrivano dal client.',
               context: 'runtime',
               difficulty: 'intermediate',
               note: 'Tipo del parametro req nel callback createServer.',
             },
             {
               english: 'ServerResponse',
-              italian: 'Risposta del server',
+              italian: 'Risposta del server (ServerResponse)',
               pronunciation: '/ˈsɜːrvər rɪˈspɒns/',
               phonetic: 'SER-ver-ri-SPONS',
               example:
-                'ServerResponse builds the HTTP response. = ServerResponse costruisce la risposta HTTP.',
+                "The ServerResponse object exposes methods like writeHead, write, and end to construct the HTTP reply. = L'oggetto ServerResponse espone metodi come writeHead, write ed end per costruire la risposta HTTP.",
               context: 'runtime',
               difficulty: 'intermediate',
             },
@@ -2513,7 +2551,8 @@ export default {
               italian: 'Connessione',
               pronunciation: '/kəˈnekʃən/',
               phonetic: 'kon-NEK-scen',
-              example: 'A connection is a TCP socket. = Una connessione è un socket TCP.',
+              example:
+                'Each client connection is backed by a TCP socket that remains open until the response completes or times out. = Ogni connessione client è supportata da un socket TCP che resta aperto fino al completamento della risposta o al timeout.',
               context: 'runtime',
               difficulty: 'intermediate',
             },
@@ -2530,64 +2569,69 @@ export default {
               pronunciation: '/eɪtʃ tiː tiː piː ˈmeθəd/',
               phonetic: 'EICI-TI-TI-PI ME-tod',
               example:
-                'GET, POST, PUT, DELETE are HTTP methods. = GET, POST, PUT, DELETE sono metodi HTTP.',
+                'Your router should check req.method to dispatch each HTTP method to the correct handler function. = Il tuo router dovrebbe controllare req.method per instradare ogni metodo HTTP alla funzione gestore corretta.',
               context: 'runtime',
               difficulty: 'beginner',
               code: 'req.method',
             },
             {
               english: 'GET',
-              italian: 'GET / metodo HTTP di lettura',
+              italian: 'Metodo HTTP di lettura (GET)',
               pronunciation: '/ɡet/',
               phonetic: 'GET',
-              example: 'GET retrieves data from the server. = GET ottiene dati dal server.',
+              example:
+                "A GET request to /api/users should return the full list of users without modifying any data. = Una richiesta GET a /api/users dovrebbe restituire l'elenco completo degli utenti senza modificare alcun dato.",
               context: 'runtime',
               difficulty: 'beginner',
               note: 'Sicuro e idempotente.',
             },
             {
               english: 'POST',
-              italian: 'POST / metodo HTTP di creazione',
+              italian: 'Metodo HTTP di creazione (POST)',
               pronunciation: '/poʊst/',
               phonetic: 'POUST',
-              example: 'POST sends data to the server. = POST invia dati al server.',
+              example:
+                "Submit a registration form via POST so the request body carries the new user's data securely. = Invia un modulo di registrazione via POST così il corpo della richiesta trasporta i dati del nuovo utente in modo sicuro.",
               context: 'runtime',
               difficulty: 'beginner',
             },
             {
               english: 'PUT',
-              italian: 'PUT / metodo HTTP di sostituzione',
+              italian: 'Metodo HTTP di sostituzione (PUT)',
               pronunciation: '/pʊt/',
               phonetic: 'PUT',
-              example: 'PUT replaces a resource. = PUT sostituisce una risorsa.',
+              example:
+                "Send a PUT request with the entire updated resource to replace the existing record on the server. = Invia una richiesta PUT con l'intera risorsa aggiornata per sostituire il record esistente sul server.",
               context: 'runtime',
               difficulty: 'beginner',
             },
             {
               english: 'DELETE',
-              italian: 'DELETE / metodo HTTP di eliminazione',
+              italian: 'Metodo HTTP di eliminazione (DELETE)',
               pronunciation: '/dɪˈliːt/',
               phonetic: 'di-LIT',
-              example: 'DELETE removes a resource. = DELETE rimuove una risorsa.',
+              example:
+                "After confirming with the user, send a DELETE request to remove the resource and return a 204 status. = Dopo aver confermato con l'utente, invia una richiesta DELETE per rimuovere la risorsa e restituire uno stato 204.",
               context: 'runtime',
               difficulty: 'beginner',
             },
             {
               english: 'PATCH',
-              italian: 'PATCH / metodo HTTP di modifica parziale',
+              italian: 'Metodo HTTP di modifica parziale (PATCH)',
               pronunciation: '/pætʃ/',
               phonetic: 'PEC',
               example:
-                'PATCH partially updates a resource. = PATCH aggiorna parzialmente una risorsa.',
+                "Use PATCH when you only need to update a user's email without sending the entire profile object. = Usa PATCH quando devi aggiornare solo l'email di un utente senza inviare l'intero oggetto profilo.",
               context: 'runtime',
               difficulty: 'beginner',
             },
             {
               english: 'URL',
-              italian: 'URL / Uniform Resource Locator',
+              italian: 'Localizzatore uniforme di risorse (URL)',
               pronunciation: '/juː ɑːr ɛl/',
               phonetic: 'IU-AR-EL',
-              example: 'A URL identifies a resource. = Un URL identifica una risorsa.',
+              example:
+                'Each resource in your API is reachable through a unique URL that includes the host, path, and optional query. = Ogni risorsa nella tua API è raggiungibile tramite un URL univoco che include host, percorso e query opzionale.',
               context: 'runtime',
               difficulty: 'beginner',
               note: 'Uniform Resource Locator.',
@@ -2597,7 +2641,8 @@ export default {
               italian: 'Modulo URL',
               pronunciation: '/juː ɑːr ɛl ˈmɒdjuːl/',
               phonetic: 'IU-AR-EL-MO-diul',
-              example: 'The URL class parses URLs. = La classe URL analizza gli URL.',
+              example:
+                'Parse incoming request URLs with the URL class to safely extract pathname, search params, and hash. = Analizza gli URL delle richieste in arrivo con la classe URL per estrarre in modo sicuro pathname, parametri di ricerca e hash.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const u = new URL(req.url, 'http://host');",
@@ -2608,7 +2653,7 @@ export default {
               pronunciation: '/ˈkwɪri strɪŋ/',
               phonetic: 'KUI-ri-STRING',
               example:
-                'A query string follows the question mark. = Una stringa di query segue il punto interrogativo.',
+                'Append filter criteria in the query string like ?status=active&page=2 to let clients paginate results. = Aggiungi criteri di filtro nella stringa di query come ?status=active&page=2 per permettere ai client di paginare i risultati.',
               context: 'runtime',
               difficulty: 'beginner',
               code: '?name=mario&age=30',
@@ -2619,7 +2664,7 @@ export default {
               pronunciation: '/juː ɑːr ɛl pəˈræmɪtərz/',
               phonetic: 'IU-AR-EL pa-RA-me-ters',
               example:
-                'URL parameters are part of the path. = I parametri URL fanno parte del percorso.',
+                "Define a route like /users/:id so the framework extracts the user ID from the URL parameters automatically. = Definisci una route come /users/:id così il framework estrae l'ID utente dai parametri URL automaticamente.",
               context: 'runtime',
               difficulty: 'beginner',
               code: '/users/:id',
@@ -2637,18 +2682,18 @@ export default {
               pronunciation: '/ˈsteɪtəs koʊd/',
               phonetic: 'STEI-tus KOUD',
               example:
-                '200 means success, 404 not found. = 200 significa successo, 404 non trovato.',
+                'Return the correct status code so clients can distinguish between a successful 200 and a validation error 422. = Restituisci il codice di stato corretto così i client possono distinguere tra un successo 200 e un errore di validazione 422.',
               context: 'runtime',
               difficulty: 'beginner',
               code: 'res.statusCode = 200;',
             },
             {
               english: '200 OK',
-              italian: '200 OK / risposta HTTP di successo',
+              italian: 'Risposta HTTP di successo (200 OK)',
               pronunciation: '/tuː ˈhʌndrɪd oʊ keɪ/',
               phonetic: 'TU-AN-dred-O-KEI',
               example:
-                '200 OK is the standard success response. = 200 OK è la risposta standard di successo.',
+                'After fetching the user list successfully, the server responds with 200 OK and the JSON payload. = Dopo aver recuperato con successo la lista utenti, il server risponde con 200 OK e il payload JSON.',
               context: 'runtime',
               difficulty: 'beginner',
             },
@@ -2658,17 +2703,18 @@ export default {
               pronunciation: '/tuː oʊ wʌn kriˈeɪtɪd/',
               phonetic: 'TU-O-UAN-kri-EI-ted',
               example:
-                '201 Created indicates a new resource. = 201 Creato indica una nuova risorsa.',
+                'When a POST request successfully creates a new database record, return 201 Created with the new resource in the body. = Quando una richiesta POST crea con successo un nuovo record nel database, restituisci 201 Creato con la nuova risorsa nel corpo.',
               context: 'runtime',
               difficulty: 'beginner',
               note: 'Tipico di POST riusciti.',
             },
             {
               english: '301 Redirect',
-              italian: '301 Reindirizzamento',
+              italian: '301 Reindirizzamento permanente',
               pronunciation: '/θriː oʊ wʌn rɪˈdaɪrekt/',
               phonetic: 'TRI-O-UAN-ri-DAI-rekt',
-              example: '301 means permanent redirect. = 301 significa reindirizzamento permanente.',
+              example:
+                'After renaming a route, set up a 301 redirect from the old URL so bookmarks and search engines update automatically. = Dopo aver rinominato una route, imposta un reindirizzamento 301 dal vecchio URL così segnalibri e motori di ricerca si aggiornano automaticamente.',
               context: 'runtime',
               difficulty: 'beginner',
             },
@@ -2677,7 +2723,8 @@ export default {
               italian: '400 Richiesta Errata',
               pronunciation: '/fɔːr ˈhʌndrɪd bæd rɪˈkwest/',
               phonetic: 'FOR-AN-dred-BAD-ri-KUEST',
-              example: '400 indicates a malformed request. = 400 indica una richiesta malformata.',
+              example:
+                'Return a 400 Bad Request with a clear error message when required fields are missing from the JSON body. = Restituisci un 400 Richiesta Errata con un messaggio di errore chiaro quando campi obbligatori mancano dal corpo JSON.',
               context: 'runtime',
               difficulty: 'beginner',
             },
@@ -2687,7 +2734,7 @@ export default {
               pronunciation: '/fɔːr oʊ wʌn ˌʌnˈɔːθəraɪzd/',
               phonetic: 'FOR-O-UAN-an-O-to-raisd',
               example:
-                '401 means authentication is required. = 401 significa autenticazione richiesta.',
+                'If the JWT token is expired or missing, the middleware returns 401 Unauthorized before reaching the route handler. = Se il token JWT è scaduto o mancante, il middleware restituisce 401 Non Autorizzato prima di raggiungere il gestore della route.',
               context: 'runtime',
               difficulty: 'beginner',
             },
@@ -2696,7 +2743,8 @@ export default {
               italian: '404 Non Trovato',
               pronunciation: '/fɔːr oʊ fɔːr nɒt faʊnd/',
               phonetic: 'FOR-O-FOR-NOT-FAUND',
-              example: '404 means resource not found. = 404 significa risorsa non trovata.',
+              example:
+                "When no database record matches the requested ID, the API returns 404 Not Found to the client. = Quando nessun record nel database corrisponde all'ID richiesto, l'API restituisce 404 Non Trovato al client.",
               context: 'runtime',
               difficulty: 'beginner',
             },
@@ -2706,7 +2754,7 @@ export default {
               pronunciation: '/faɪv ˈhʌndrɪd ˈsɜːrvər ˈerər/',
               phonetic: 'FAIV-AN-dred SER-ver-ER-ror',
               example:
-                '500 indicates an internal server error. = 500 indica un errore interno del server.',
+                "An uncaught database exception triggers a 500 Internal Server Error that should be logged for investigation. = Un'eccezione non catturata del database provoca un 500 Errore Interno del Server che dovrebbe essere registrato per indagine.",
               context: 'runtime',
               difficulty: 'beginner',
             },
@@ -2715,7 +2763,8 @@ export default {
               italian: 'Intestazioni',
               pronunciation: '/ˈhedərz/',
               phonetic: 'ED-ders',
-              example: 'HTTP headers carry metadata. = Le intestazioni HTTP trasportano metadati.',
+              example:
+                "Set the Content-Type header to application/json so the client knows how to parse the response body. = Imposta l'intestazione Content-Type a application/json così il client sa come analizzare il corpo della risposta.",
               context: 'runtime',
               difficulty: 'beginner',
               code: "res.setHeader('Content-Type', 'application/json');",
@@ -2726,7 +2775,7 @@ export default {
               pronunciation: '/ˈkɒntent taɪp/',
               phonetic: 'KON-tent-TAIP',
               example:
-                'Content-Type tells the client the format. = Content-Type dice al client il formato.',
+                "Sending an image with the wrong Content-Type header causes browsers to display it as garbled text instead. = Inviare un'immagine con l'intestazione Content-Type sbagliata fa sì che i browser la mostrino come testo illeggibile.",
               context: 'runtime',
               difficulty: 'beginner',
               code: 'application/json',
@@ -2740,32 +2789,33 @@ export default {
           items: [
             {
               english: 'http.request',
-              italian: 'richiesta http',
+              italian: 'Richiesta HTTP in uscita (http.request)',
               pronunciation: '/eɪtʃ tiː tiː piː rɪˈkwest/',
               phonetic: 'EICI-TI-TI-PI-ri-KUEST',
               example:
-                'http.request makes outgoing requests. = http.request effettua richieste in uscita.',
+                "Use http.request to call a third-party API from your backend and forward the result to the client. = Usa http.request per chiamare un'API di terze parti dal tuo backend e inoltrare il risultato al client.",
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'http.request(opts, cb);',
             },
             {
               english: 'http.get',
-              italian: 'http.get / scorciatoia HTTP GET',
+              italian: 'Scorciatoia GET (http.get)',
               pronunciation: '/eɪtʃ tiː tiː piː ɡet/',
               phonetic: 'EICI-TI-TI-PI-GET',
               example:
-                'http.get is a shortcut for GET requests. = http.get è una scorciatoia per richieste GET.',
+                'For simple data retrieval, http.get handles the method and request-end automatically, reducing boilerplate. = Per il semplice recupero dati, http.get gestisce automaticamente il metodo e la chiusura della richiesta, riducendo il boilerplate.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'http.get(url, res => {});',
             },
             {
               english: 'fetch',
-              italian: 'fetch / API moderna di richiesta HTTP',
+              italian: 'API moderna di richiesta HTTP (fetch)',
               pronunciation: '/fɛtʃ/',
               phonetic: 'FEC',
-              example: 'Node 18+ has built-in fetch. = Node 18+ ha fetch integrato.',
+              example:
+                "Since Node 18, the built-in fetch API lets you write HTTP requests with the same syntax used in browsers. = Da Node 18, l'API fetch integrata permette di scrivere richieste HTTP con la stessa sintassi usata nei browser.",
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'const res = await fetch(url);',
@@ -2773,10 +2823,11 @@ export default {
             },
             {
               english: 'axios',
-              italian: 'axios / client HTTP basato su Promise',
+              italian: 'Client HTTP basato su Promise (axios)',
               pronunciation: '/ˈæksiɒs/',
               phonetic: 'AK-sios',
-              example: 'axios is a popular HTTP client. = axios è un popolare client HTTP.',
+              example:
+                'Many teams prefer axios for its automatic JSON parsing, interceptors, and request cancellation support. = Molti team preferiscono axios per il parsing JSON automatico, gli interceptor e il supporto alla cancellazione delle richieste.',
               context: 'runtime',
               difficulty: 'intermediate',
               tool: 'Axios',
@@ -2784,11 +2835,11 @@ export default {
             },
             {
               english: 'undici',
-              italian: 'undici / client HTTP ad alte prestazioni',
+              italian: 'Client HTTP ad alte prestazioni (undici)',
               pronunciation: '/ʌnˈdiːtʃi/',
               phonetic: 'UN-di-ci',
               example:
-                'undici is the HTTP client used by Node fetch. = undici è il client HTTP usato dal fetch di Node.',
+                "Node's built-in fetch is powered by undici, which uses HTTP/1.1 connection pooling for maximum throughput. = Il fetch integrato di Node è alimentato da undici, che usa il connection pooling HTTP/1.1 per il massimo throughput.",
               context: 'runtime',
               difficulty: 'intermediate',
               tool: 'undici',
@@ -2796,11 +2847,11 @@ export default {
             },
             {
               english: 'Body',
-              italian: 'Corpo',
+              italian: 'Corpo della richiesta',
               pronunciation: '/ˈbɒdi/',
               phonetic: 'BO-di',
               example:
-                'The request body holds POST data. = Il corpo della richiesta contiene i dati POST.',
+                "Parse the request body as JSON to extract the fields submitted by the client's registration form. = Analizza il corpo della richiesta come JSON per estrarre i campi inviati dal modulo di registrazione del client.",
               context: 'runtime',
               difficulty: 'beginner',
               code: 'await res.json();',
@@ -2810,38 +2861,41 @@ export default {
               italian: 'Risposta JSON',
               pronunciation: '/ˈdʒeɪsɒn rɪˈspɒns/',
               phonetic: 'GEI-son-ri-SPONS',
-              example: 'res.json() parses the JSON body. = res.json() analizza il corpo JSON.',
+              example:
+                'Call res.json() to parse the API response body into a JavaScript object you can work with. = Chiama res.json() per analizzare il corpo della risposta API in un oggetto JavaScript con cui puoi lavorare.',
               context: 'runtime',
               difficulty: 'beginner',
               code: 'const data = await res.json();',
             },
             {
               english: 'Timeout',
-              italian: 'timeout / tempo limite',
+              italian: 'Tempo limite (timeout)',
               pronunciation: '/ˈtaɪmaʊt/',
               phonetic: 'TAIM-aut',
-              example: 'Always set a request timeout. = Imposta sempre un timeout sulle richieste.',
+              example:
+                'Set a five-second timeout on every outgoing request to avoid hanging connections when a downstream service is unresponsive. = Imposta un timeout di cinque secondi su ogni richiesta in uscita per evitare connessioni sospese quando un servizio downstream non risponde.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: '{ timeout: 5000 }',
             },
             {
               english: 'AbortController',
-              italian: 'AbortController / annulla operazioni in corso',
+              italian: 'Controllore di annullamento (AbortController)',
               pronunciation: '/əˈbɔːrt kənˈtroʊlər/',
               phonetic: 'a-BORT-kon-TROL-ler',
               example:
-                'AbortController cancels pending requests. = AbortController cancella richieste in sospeso.',
+                "Pass an AbortController signal to fetch so you can cancel the request if the user navigates away. = Passa un segnale AbortController a fetch così puoi cancellare la richiesta se l'utente naviga altrove.",
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'const ctrl = new AbortController();',
             },
             {
               english: 'HTTPS',
-              italian: 'HTTPS / HTTP cifrato con TLS',
+              italian: 'HTTP cifrato con TLS (HTTPS)',
               pronunciation: '/eɪtʃ tiː tiː piː ɛs/',
               phonetic: 'EICI-TI-TI-PI-ES',
-              example: 'The https module supports TLS. = Il modulo https supporta TLS.',
+              example:
+                'Always use HTTPS in production so data between the client and server is encrypted with TLS. = Usa sempre HTTPS in produzione così i dati tra client e server sono cifrati con TLS.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "const https = require('https');",
@@ -2864,11 +2918,11 @@ export default {
           items: [
             {
               english: 'Express',
-              italian: 'Express (framework web Node)',
+              italian: 'Framework web Node (Express)',
               pronunciation: '/ɪkˈspres/',
               phonetic: 'eks-PRES',
               example:
-                'Express is a minimalist Node web framework. = Express è un framework web Node minimalista.',
+                'Most Node.js tutorials start with Express because its minimal API lets you build a REST server in under 20 lines. = La maggior parte dei tutorial Node.js inizia con Express perché la sua API minimale permette di costruire un server REST in meno di 20 righe.',
               context: 'express',
               difficulty: 'intermediate',
               tool: 'Express',
@@ -2880,7 +2934,7 @@ export default {
               pronunciation: '/ˌæplɪˈkeɪʃən/',
               phonetic: 'a-pli-KEI-scen',
               example:
-                "The app object is your Express application. = L'oggetto app è la tua applicazione Express.",
+                "Create the application instance by calling express() and attach routes and middleware to it. = Crea l'istanza dell'applicazione chiamando express() e collegaci rotte e middleware.",
               context: 'express',
               difficulty: 'intermediate',
               code: 'const app = express();',
@@ -2890,7 +2944,8 @@ export default {
               italian: 'Metodo listen',
               pronunciation: '/ˈlɪsən ˈmeθəd/',
               phonetic: 'LI-sen ME-tod',
-              example: 'app.listen starts the server. = app.listen avvia il server.',
+              example:
+                "Call app.listen with a callback that logs the URL so developers know the server is ready. = Chiama app.listen con un callback che registra l'URL così gli sviluppatori sanno che il server è pronto.",
               context: 'express',
               difficulty: 'intermediate',
               code: 'app.listen(3000);',
@@ -2901,17 +2956,17 @@ export default {
               pronunciation: '/web ˈfreɪmwɜːrk/',
               phonetic: 'UEB FREIM-uork',
               example:
-                'A web framework simplifies HTTP handling. = Un framework web semplifica la gestione HTTP.',
+                'A web framework handles routing, body parsing, and middleware chaining so you can focus on business logic. = Un framework web gestisce routing, parsing del corpo e concatenamento middleware così puoi concentrarti sulla logica di business.',
               context: 'express',
               difficulty: 'intermediate',
             },
             {
               english: 'Hello World',
-              italian: 'Hello World / esempio di base',
+              italian: 'Esempio di base (Hello World)',
               pronunciation: '/həˈloʊ wɜːrld/',
               phonetic: 'el-LOU-UORLD',
               example:
-                "app.get('/', (req, res) => res.send('Hello')). = app.get('/', (req, res) => res.send('Hello')).",
+                'The classic Hello World Express app defines a single GET route on "/" that returns a greeting. = La classica app Express Hello World definisce una singola rotta GET su "/" che restituisce un saluto.',
               context: 'express',
               difficulty: 'intermediate',
               code: "app.get('/', (req, res) => res.send('Hello!'));",
@@ -2922,40 +2977,40 @@ export default {
               pronunciation: '/ˈdʒenəreɪtər/',
               phonetic: 'GEN-er-ei-ter',
               example:
-                "express-generator scaffolds an app. = express-generator crea l'impalcatura di un'app.",
+                'Run the express-generator to scaffold a project with folder structure, views, and basic middleware already configured. = Esegui express-generator per creare un progetto con struttura di cartelle, viste e middleware base già configurati.',
               context: 'express',
               difficulty: 'intermediate',
               command: 'npx express-generator',
             },
             {
               english: 'Fastify',
-              italian: 'Fastify (framework web ad alte prestazioni)',
+              italian: 'Framework web ad alte prestazioni (Fastify)',
               pronunciation: '/ˈfæstɪfaɪ/',
               phonetic: 'FAST-i-fai',
               example:
-                "Fastify is a faster alternative to Express. = Fastify è un'alternativa più veloce a Express.",
+                'Teams migrating from Express to Fastify often see two to three times better throughput on benchmarks. = I team che migrano da Express a Fastify spesso vedono un throughput due o tre volte migliore nei benchmark.',
               context: 'express',
               difficulty: 'intermediate',
               tool: 'Fastify',
             },
             {
               english: 'Koa',
-              italian: 'Koa (framework web minimalista)',
+              italian: 'Framework web minimalista (Koa)',
               pronunciation: '/ˈkoʊə/',
               phonetic: 'KO-a',
               example:
-                'Koa is from the Express team, with async/await. = Koa è del team Express, con async/await.',
+                'Built by the same team behind Express, Koa uses async/await natively and has no built-in middleware. = Costruito dallo stesso team dietro Express, Koa usa async/await nativamente e non ha middleware integrato.',
               context: 'express',
               difficulty: 'intermediate',
               tool: 'Koa',
             },
             {
               english: 'Hapi',
-              italian: 'hapi (framework web configurabile)',
+              italian: 'Framework web configurabile (hapi)',
               pronunciation: '/ˈhæpi/',
               phonetic: 'A-pi',
               example:
-                'Hapi is a configuration-centric framework. = Hapi è un framework basato sulla configurazione.',
+                'In hapi you declare routes, validation, and authentication through a configuration object rather than chained middleware. = In hapi dichiari rotte, validazione e autenticazione attraverso un oggetto di configurazione piuttosto che middleware concatenato.',
               context: 'express',
               difficulty: 'intermediate',
               tool: 'Hapi',
@@ -2965,7 +3020,8 @@ export default {
               italian: 'Metodo send',
               pronunciation: '/sɛnd ˈmeθəd/',
               phonetic: 'SEND ME-tod',
-              example: 'res.send sends the response. = res.send invia la risposta.',
+              example:
+                "Call res.send with a string, Buffer, or object and Express automatically sets the correct Content-Type header. = Chiama res.send con una stringa, Buffer o oggetto ed Express imposta automaticamente l'intestazione Content-Type corretta.",
               context: 'express',
               difficulty: 'intermediate',
               code: "res.send('OK');",
@@ -2982,48 +3038,52 @@ export default {
               italian: 'Rotta',
               pronunciation: '/ruːt/',
               phonetic: 'RUT',
-              example: 'A route maps a URL to a handler. = Una rotta mappa un URL a un handler.',
+              example:
+                "Define a route for each resource like /users and /products so the API has a clear, predictable structure. = Definisci una rotta per ogni risorsa come /users e /products così l'API ha una struttura chiara e prevedibile.",
               context: 'express',
               difficulty: 'intermediate',
               code: "app.get('/users', handler);",
             },
             {
               english: 'app.get',
-              italian: 'app.get / route GET Express',
+              italian: 'Rotta GET Express (app.get)',
               pronunciation: '/æp ɡet/',
               phonetic: 'AP-GET',
-              example: 'app.get handles GET requests. = app.get gestisce richieste GET.',
+              example:
+                'Register a GET handler with app.get to return a list of users when clients visit /api/users. = Registra un gestore GET con app.get per restituire una lista di utenti quando i client visitano /api/users.',
               context: 'express',
               difficulty: 'intermediate',
               code: "app.get('/users', (req, res) => res.json(users));",
             },
             {
               english: 'app.post',
-              italian: 'app.post / route POST Express',
+              italian: 'Rotta POST Express (app.post)',
               pronunciation: '/æp poʊst/',
               phonetic: 'AP-POUST',
-              example: 'app.post handles POST requests. = app.post gestisce richieste POST.',
+              example:
+                'Use app.post on /api/users to validate the request body and insert a new record into the database. = Usa app.post su /api/users per validare il corpo della richiesta e inserire un nuovo record nel database.',
               context: 'express',
               difficulty: 'intermediate',
               code: "app.post('/users', createUser);",
             },
             {
               english: 'app.put',
-              italian: 'app.put / route PUT Express',
+              italian: 'Rotta PUT Express (app.put)',
               pronunciation: '/æp pʊt/',
               phonetic: 'AP-PUT',
-              example: 'app.put handles PUT requests. = app.put gestisce richieste PUT.',
+              example:
+                "Handle full resource replacement with app.put, requiring the client to send every field of the updated entity. = Gestisci la sostituzione completa della risorsa con app.put, richiedendo al client di inviare ogni campo dell'entità aggiornata.",
               context: 'express',
               difficulty: 'intermediate',
               code: "app.put('/users/:id', updateUser);",
             },
             {
               english: 'app.delete',
-              italian: 'app.delete / route DELETE Express',
+              italian: 'Rotta DELETE Express (app.delete)',
               pronunciation: '/æp dɪˈliːt/',
               phonetic: 'AP-di-LIT',
               example:
-                'app.delete handles DELETE requests. = app.delete gestisce richieste DELETE.',
+                'Protect app.delete routes with authentication middleware so only authorized users can remove resources. = Proteggi le rotte app.delete con middleware di autenticazione così solo utenti autorizzati possono rimuovere risorse.',
               context: 'express',
               difficulty: 'intermediate',
               code: "app.delete('/users/:id', deleteUser);",
@@ -3034,7 +3094,7 @@ export default {
               pronunciation: '/ruːt pəˈræmɪtərz/',
               phonetic: 'RUT-pa-RA-me-ters',
               example:
-                'Route parameters use :name syntax. = I parametri di rotta usano la sintassi :nome.',
+                "Extract the user ID from route parameters in /users/:id and use it to query the database. = Estrai l'ID utente dai parametri di rotta in /users/:id e usalo per interrogare il database.",
               context: 'express',
               difficulty: 'intermediate',
               code: '/users/:id',
@@ -3045,7 +3105,7 @@ export default {
               pronunciation: '/ˈwaɪldkɑːrd ruːt/',
               phonetic: 'UAILD-kard RUT',
               example:
-                'A wildcard route matches anything. = Una rotta wildcard combacia con tutto.',
+                'Place a wildcard route at the end of your route definitions to catch unmatched paths and return a custom 404 page. = Piazza una rotta wildcard alla fine delle definizioni di rotta per catturare percorsi non corrispondenti e restituire una pagina 404 personalizzata.',
               context: 'express',
               difficulty: 'intermediate',
               code: "app.get('*', notFoundHandler);",
@@ -3056,18 +3116,18 @@ export default {
               pronunciation: '/ruːt ˈtʃeɪnɪŋ/',
               phonetic: 'RUT-CEIN-ing',
               example:
-                'app.route chains methods on the same path. = app.route concatena metodi sullo stesso percorso.',
+                'With route chaining you define GET, POST, and DELETE for /users in a single fluent block. = Con la concatenazione di rotte definisci GET, POST e DELETE per /users in un singolo blocco fluente.',
               context: 'express',
               difficulty: 'intermediate',
               code: "app.route('/users').get(...).post(...);",
             },
             {
               english: 'Endpoint',
-              italian: 'endpoint / punto terminale di un servizio',
+              italian: 'Punto terminale di un servizio (endpoint)',
               pronunciation: '/ˈendpɔɪnt/',
               phonetic: 'END-point',
               example:
-                'An endpoint is a URL the server responds to. = Un endpoint è un URL a cui il server risponde.',
+                'Document every endpoint in your API so frontend developers know which URLs accept which HTTP methods. = Documenta ogni endpoint nella tua API così gli sviluppatori frontend sanno quali URL accettano quali metodi HTTP.',
               context: 'express',
               difficulty: 'intermediate',
             },
@@ -3077,7 +3137,7 @@ export default {
               pronunciation: '/ˈhændlər/',
               phonetic: 'AN-dler',
               example:
-                'A handler is the function that processes a request. = Un handler è la funzione che elabora una richiesta.',
+                "Keep each handler focused on one responsibility: validate input, call the service layer, and return the result. = Mantieni ogni gestore focalizzato su una responsabilità: validare l'input, chiamare il livello di servizio e restituire il risultato.",
               context: 'express',
               difficulty: 'intermediate',
               code: 'function handler(req, res) {}',
@@ -3091,53 +3151,55 @@ export default {
           items: [
             {
               english: 'req',
-              italian: 'req / oggetto richiesta',
+              italian: 'Oggetto richiesta (req)',
               pronunciation: '/rek/',
               phonetic: 'REK',
               example:
-                'req represents the incoming request. = req rappresenta la richiesta in entrata.',
+                "Destructure req.params, req.query, and req.body at the top of each handler for clean, readable code. = Destruttura req.params, req.query e req.body all'inizio di ogni gestore per un codice pulito e leggibile.",
               context: 'express',
               difficulty: 'intermediate',
               code: 'req.params, req.query, req.body',
             },
             {
               english: 'res',
-              italian: 'res / oggetto risposta',
+              italian: 'Oggetto risposta (res)',
               pronunciation: '/rɛz/',
               phonetic: 'REZ',
-              example: 'res is used to build the response. = res si usa per costruire la risposta.',
+              example:
+                'Chain res.status(200).json(data) to set the status code and send a JSON body in a single expression. = Concatena res.status(200).json(data) per impostare il codice di stato e inviare un corpo JSON in una sola espressione.',
               context: 'express',
               difficulty: 'intermediate',
               code: 'res.status(200).json(data);',
             },
             {
               english: 'req.params',
-              italian: 'parametri di rotta',
+              italian: 'Parametri di rotta (req.params)',
               pronunciation: '/rek pəˈræmz/',
               phonetic: 'REK-PA-rams',
               example:
-                'req.params holds route parameters. = req.params contiene i parametri di rotta.',
+                'Access req.params.id to fetch the specific user record identified by the URL path segment. = Accedi a req.params.id per recuperare il record utente specifico identificato dal segmento del percorso URL.',
               context: 'express',
               difficulty: 'intermediate',
               code: 'req.params.id',
             },
             {
               english: 'req.query',
-              italian: 'query',
+              italian: 'Parametri query (req.query)',
               pronunciation: '/rek ˈkwɪri/',
               phonetic: 'REK-KUI-ri',
               example:
-                'req.query holds query string parameters. = req.query contiene i parametri della query string.',
+                'Read req.query.page and req.query.limit to implement server-side pagination on list endpoints. = Leggi req.query.page e req.query.limit per implementare la paginazione lato server sugli endpoint di lista.',
               context: 'express',
               difficulty: 'intermediate',
               code: 'req.query.page',
             },
             {
               english: 'req.body',
-              italian: 'corpo richiesta',
+              italian: 'Corpo della richiesta (req.body)',
               pronunciation: '/rek ˈbɒdi/',
               phonetic: 'REK-BO-di',
-              example: 'req.body holds parsed body data. = req.body contiene il corpo analizzato.',
+              example:
+                'After enabling express.json(), access req.body.email and req.body.password to create a new account. = Dopo aver abilitato express.json(), accedi a req.body.email e req.body.password per creare un nuovo account.',
               context: 'express',
               difficulty: 'intermediate',
               code: 'req.body.email',
@@ -3145,51 +3207,55 @@ export default {
             },
             {
               english: 'res.json',
-              italian: 'res.json / invia risposta JSON',
+              italian: 'Invio risposta JSON (res.json)',
               pronunciation: '/rɛz ˈdʒeɪsɒn/',
               phonetic: 'REZ-GEI-son',
-              example: 'res.json sends a JSON response. = res.json invia una risposta JSON.',
+              example:
+                'Always use res.json instead of res.send for API responses because it sets Content-Type automatically. = Usa sempre res.json invece di res.send per le risposte API perché imposta Content-Type automaticamente.',
               context: 'express',
               difficulty: 'intermediate',
               code: 'res.json({ ok: true });',
             },
             {
               english: 'res.status',
-              italian: 'res.status / imposta status HTTP',
+              italian: 'Impostazione stato HTTP (res.status)',
               pronunciation: '/rɛz ˈsteɪtəs/',
               phonetic: 'REZ-STEI-tus',
-              example: 'res.status sets the HTTP status. = res.status imposta lo stato HTTP.',
+              example:
+                'Return res.status(404).json({ error: "Not found" }) when the requested resource does not exist in the database. = Restituisci res.status(404).json({ error: "Not found" }) quando la risorsa richiesta non esiste nel database.',
               context: 'express',
               difficulty: 'intermediate',
               code: "res.status(404).send('Not Found');",
             },
             {
               english: 'res.redirect',
-              italian: 'res.redirect / reindirizza',
+              italian: 'Reindirizzamento (res.redirect)',
               pronunciation: '/rɛz rɪˈdaɪrekt/',
               phonetic: 'REZ-ri-DAI-rekt',
-              example: 'res.redirect sends a redirect. = res.redirect invia un reindirizzamento.',
+              example:
+                'After a successful login, call res.redirect("/dashboard") to send the user to their home page. = Dopo un login riuscito, chiama res.redirect("/dashboard") per mandare l\'utente alla sua home page.',
               context: 'express',
               difficulty: 'intermediate',
               code: "res.redirect('/login');",
             },
             {
               english: 'res.cookie',
-              italian: 'res.cookie / imposta cookie',
+              italian: 'Impostazione cookie (res.cookie)',
               pronunciation: '/rɛz ˈkʊki/',
               phonetic: 'REZ-KU-ki',
-              example: 'res.cookie sets a cookie. = res.cookie imposta un cookie.',
+              example:
+                'Set the session token with res.cookie using the httpOnly flag to prevent JavaScript from accessing it. = Imposta il token di sessione con res.cookie usando il flag httpOnly per impedire a JavaScript di accedervi.',
               context: 'express',
               difficulty: 'intermediate',
               code: "res.cookie('token', t, { httpOnly: true });",
             },
             {
               english: 'res.sendFile',
-              italian: 'res.sendFile / invia un file',
+              italian: 'Invio file (res.sendFile)',
               pronunciation: '/rɛz sɛnd faɪl/',
               phonetic: 'REZ-SEND-FAIL',
               example:
-                'res.sendFile streams a file to the client. = res.sendFile invia un file al client.',
+                'Serve a downloadable PDF report by calling res.sendFile with the absolute path to the generated document. = Servi un report PDF scaricabile chiamando res.sendFile con il percorso assoluto del documento generato.',
               context: 'express',
               difficulty: 'intermediate',
               code: 'res.sendFile(path);',
@@ -3203,30 +3269,33 @@ export default {
           items: [
             {
               english: 'Router',
-              italian: 'Router / sotto-applicazione di routing Express',
+              italian: 'Sotto-applicazione di routing (Router)',
               pronunciation: '/ˈruːtər/',
               phonetic: 'RU-ter',
-              example: 'A Router groups related routes. = Un Router raggruppa rotte correlate.',
+              example:
+                "Create a separate Router instance for user-related endpoints so your main app file stays clean. = Crea un'istanza Router separata per gli endpoint relativi agli utenti così il tuo file app principale resta pulito.",
               context: 'express',
               difficulty: 'intermediate',
               code: 'const r = express.Router();',
             },
             {
               english: 'Mount',
-              italian: 'Montare',
+              italian: 'Montaggio',
               pronunciation: '/maʊnt/',
               phonetic: 'MAUNT',
-              example: 'Mount a router with app.use. = Monta un router con app.use.',
+              example:
+                'Mount the user router under /api/v1/users so all its internal routes are namespaced automatically. = Monta il router utenti sotto /api/v1/users così tutte le sue rotte interne sono automaticamente sotto namespace.',
               context: 'express',
               difficulty: 'intermediate',
               code: "app.use('/api', router);",
             },
             {
               english: 'app.use',
-              italian: 'app.use / monta middleware',
+              italian: 'Registrazione middleware (app.use)',
               pronunciation: '/æp juːz/',
               phonetic: 'AP-IUZ',
-              example: 'app.use registers middleware. = app.use registra middleware.',
+              example:
+                'Call app.use(express.json()) before your routes to enable JSON body parsing on every request. = Chiama app.use(express.json()) prima delle rotte per abilitare il parsing JSON del corpo su ogni richiesta.',
               context: 'express',
               difficulty: 'intermediate',
               code: 'app.use(express.json());',
@@ -3236,17 +3305,19 @@ export default {
               italian: 'File statici',
               pronunciation: '/ˈstætɪk faɪlz/',
               phonetic: 'STA-tik-FAILS',
-              example: 'express.static serves static files. = express.static serve file statici.',
+              example:
+                'Serve images, CSS, and JavaScript from a public folder using express.static without writing any route handlers. = Servi immagini, CSS e JavaScript da una cartella pubblica usando express.static senza scrivere alcun gestore di rotta.',
               context: 'express',
               difficulty: 'intermediate',
               code: "app.use(express.static('public'));",
             },
             {
               english: 'Public Folder',
-              italian: 'Cartella public',
+              italian: 'Cartella pubblica',
               pronunciation: '/ˈpʌblɪk ˈfoʊldər/',
               phonetic: 'PA-blik-FOL-der',
-              example: 'The public folder hosts assets. = La cartella public ospita gli asset.',
+              example:
+                'Place all client-side assets in the public folder so they are served directly without going through your API routes. = Metti tutti gli asset lato client nella cartella pubblica così vengono serviti direttamente senza passare per le rotte API.',
               context: 'express',
               difficulty: 'intermediate',
               note: 'Convenzione comune per file pubblici.',
@@ -3256,7 +3327,8 @@ export default {
               italian: 'Modulo rotta',
               pronunciation: '/ruːt ˈmɒdjuːl/',
               phonetic: 'RUT-MO-diul',
-              example: 'Split routes into separate modules. = Dividi le rotte in moduli separati.',
+              example:
+                'Keep each resource in its own route module file so a team of developers can work on them in parallel. = Mantieni ogni risorsa nel proprio file modulo rotta così un team di sviluppatori può lavorarci in parallelo.',
               context: 'express',
               difficulty: 'intermediate',
               code: "require('./routes/users');",
@@ -3266,18 +3338,19 @@ export default {
               italian: 'Motore di template',
               pronunciation: '/vjuː ˈendʒɪn/',
               phonetic: 'VIU-EN-gin',
-              example: 'A view engine renders templates. = Un motore di template rende template.',
+              example:
+                'Configure a view engine so Express can render HTML pages with dynamic data before sending them to the browser. = Configura un motore di template così Express può renderizzare pagine HTML con dati dinamici prima di inviarle al browser.',
               context: 'express',
               difficulty: 'intermediate',
               code: "app.set('view engine', 'pug');",
             },
             {
               english: 'Pug',
-              italian: 'Pug (template engine HTML)',
+              italian: 'Linguaggio di template HTML (Pug)',
               pronunciation: '/pʌɡ/',
               phonetic: 'PAG',
               example:
-                'Pug is a template language for Express. = Pug è un linguaggio di template per Express.',
+                "With Pug you write templates using indentation instead of closing tags, reducing HTML boilerplate significantly. = Con Pug scrivi template usando l'indentazione invece dei tag di chiusura, riducendo significativamente il boilerplate HTML.",
               context: 'express',
               difficulty: 'intermediate',
               tool: 'Pug',
@@ -3285,10 +3358,11 @@ export default {
             },
             {
               english: 'EJS',
-              italian: 'EJS (template engine HTML)',
+              italian: 'Template engine con JS incorporato (EJS)',
               pronunciation: '/iː dʒeɪ ɛs/',
               phonetic: 'I-GEI-ES',
-              example: 'EJS uses HTML with embedded JS. = EJS usa HTML con JS incorporato.',
+              example:
+                'Developers who prefer plain HTML often choose EJS because it embeds JavaScript directly inside standard markup. = Gli sviluppatori che preferiscono HTML puro spesso scelgono EJS perché incorpora JavaScript direttamente nel markup standard.',
               context: 'express',
               difficulty: 'intermediate',
               tool: 'EJS',
@@ -3296,10 +3370,11 @@ export default {
             },
             {
               english: 'Render',
-              italian: 'Rendi',
+              italian: 'Renderizzazione',
               pronunciation: '/ˈrendər/',
               phonetic: 'REN-der',
-              example: 'res.render renders a template. = res.render rende un template.',
+              example:
+                "Call res.render with the template name and a data object to generate the final HTML sent to the browser. = Chiama res.render con il nome del template e un oggetto dati per generare l'HTML finale inviato al browser.",
               context: 'express',
               difficulty: 'intermediate',
               code: "res.render('index', { user });",
@@ -3322,22 +3397,22 @@ export default {
           items: [
             {
               english: 'REST',
-              italian: 'REST / stile architetturale per API HTTP',
+              italian: 'Stile architetturale per API HTTP (REST)',
               pronunciation: '/rɛst/',
               phonetic: 'REST',
               example:
-                'REST stands for Representational State Transfer. = REST sta per Trasferimento di Stato Rappresentativo.',
+                'Our backend follows REST conventions so any client that speaks HTTP can consume the service without a custom SDK. = Il nostro backend segue le convenzioni REST così qualsiasi client che parla HTTP può consumare il servizio senza un SDK personalizzato.',
               context: 'api',
               difficulty: 'intermediate',
               note: 'Architettura introdotta da Roy Fielding nel 2000.',
             },
             {
               english: 'API',
-              italian: 'API / interfaccia di programmazione',
+              italian: 'Interfaccia di programmazione (API)',
               pronunciation: '/eɪ piː aɪ/',
               phonetic: 'EI-PI-AI',
               example:
-                'API stands for Application Programming Interface. = API sta per Interfaccia di Programmazione di Applicazioni.',
+                "The mobile app communicates with the server through a JSON API that exposes user and product endpoints. = L'app mobile comunica con il server attraverso un'API JSON che espone endpoint utenti e prodotti.",
               context: 'api',
               difficulty: 'intermediate',
             },
@@ -3347,7 +3422,7 @@ export default {
               pronunciation: '/ˈriːsɔːrs/',
               phonetic: 'RI-sors',
               example:
-                'A resource is what your API exposes. = Una risorsa è ciò che la tua API espone.',
+                'Each resource in our system maps to a database table, so /orders corresponds to the orders collection. = Ogni risorsa nel nostro sistema corrisponde a una tabella del database, quindi /orders corrisponde alla collezione ordini.',
               context: 'api',
               difficulty: 'intermediate',
               note: 'Esempi: utenti, prodotti, ordini.',
@@ -3358,7 +3433,7 @@ export default {
               pronunciation: '/ˈsteɪtləs/',
               phonetic: 'STEIT-les',
               example:
-                'REST APIs are stateless: each request is independent. = Le API REST sono senza stato: ogni richiesta è indipendente.',
+                'Because the server is stateless, every request must include the JWT token so the backend can identify the caller without session memory. = Poiché il server è senza stato, ogni richiesta deve includere il token JWT così il backend può identificare il chiamante senza memoria di sessione.',
               context: 'api',
               difficulty: 'intermediate',
               note: 'Il server non conserva stato di sessione tra richieste.',
@@ -3368,7 +3443,8 @@ export default {
               italian: 'Idempotente',
               pronunciation: '/ˌaɪdɛmˈpoʊtənt/',
               phonetic: 'ai-dem-PO-tent',
-              example: 'GET, PUT, DELETE are idempotent. = GET, PUT, DELETE sono idempotenti.',
+              example:
+                "Sending the same PUT request twice is safe because the operation is idempotent and produces the same result each time. = Inviare la stessa richiesta PUT due volte è sicuro perché l'operazione è idempotente e produce lo stesso risultato ogni volta.",
               context: 'api',
               difficulty: 'intermediate',
               note: 'Stesso risultato con ripetizioni multiple.',
@@ -3379,7 +3455,7 @@ export default {
               pronunciation: '/seɪf ˈmeθəd/',
               phonetic: 'SEIF-ME-tod',
               example:
-                'GET is a safe method: it does not modify state. = GET è un metodo sicuro: non modifica lo stato.',
+                'Crawlers freely follow links because GET is a safe method that never modifies server-side data. = I crawler seguono liberamente i link perché GET è un metodo sicuro che non modifica mai i dati lato server.',
               context: 'api',
               difficulty: 'intermediate',
             },
@@ -3389,17 +3465,17 @@ export default {
               pronunciation: '/ˈkæʃəbl/',
               phonetic: 'KASC-a-bol',
               example:
-                'GET responses are usually cacheable. = Le risposte GET sono solitamente memorizzabili in cache.',
+                'Product listings are cacheable, so we set a Cache-Control header to reduce database load on repeated requests. = Le liste prodotti sono memorizzabili in cache, quindi impostiamo un header Cache-Control per ridurre il carico sul database nelle richieste ripetute.',
               context: 'api',
               difficulty: 'intermediate',
             },
             {
               english: 'HATEOAS',
-              italian: 'HATEOAS / Hypermedia as the Engine of Application State',
+              italian: 'Ipermedia come motore dello stato applicativo (HATEOAS)',
               pronunciation: '/ˈheɪtiəs/',
               phonetic: 'EI-tios',
               example:
-                'HATEOAS includes links to related resources. = HATEOAS include link a risorse correlate.',
+                'Following the HATEOAS principle, each response includes _links so the client discovers available actions without hardcoding URLs. = Seguendo il principio HATEOAS, ogni risposta include _links così il client scopre le azioni disponibili senza codificare gli URL.',
               context: 'api',
               difficulty: 'advanced',
               note: 'Hypermedia As The Engine Of Application State.',
@@ -3410,7 +3486,7 @@ export default {
               pronunciation: '/ˈvɜːrʒənɪŋ/',
               phonetic: 'VER-scio-ning',
               example:
-                "API versioning prevents breaking changes. = Il versionamento dell'API previene modifiche distruttive.",
+                'We prefix all routes with /api/v2 for versioning so older mobile clients can still hit /api/v1 without breaking. = Prefissiamo tutte le rotte con /api/v2 per il versionamento così i vecchi client mobile possono ancora usare /api/v1 senza rompersi.',
               context: 'api',
               difficulty: 'intermediate',
               code: '/api/v1/users',
@@ -3420,7 +3496,8 @@ export default {
               italian: 'Denominazione risorse',
               pronunciation: '/ˈriːsɔːrs ˈneɪmɪŋ/',
               phonetic: 'RI-sors NEIM-ing',
-              example: 'Use plural nouns: /users not /user. = Usa nomi plurali: /users non /user.',
+              example:
+                'Good resource naming uses plural nouns like /invoices and nests sub-resources as /invoices/:id/items. = Una buona denominazione risorse usa nomi plurali come /invoices e annida sotto-risorse come /invoices/:id/items.',
               context: 'api',
               difficulty: 'intermediate',
               note: 'Convenzione consolidata in REST.',
@@ -3434,50 +3511,54 @@ export default {
           items: [
             {
               english: 'CRUD',
-              italian: 'CRUD / Create Read Update Delete',
+              italian: 'Operazioni fondamentali di accesso ai dati (CRUD)',
               pronunciation: '/krʌd/',
               phonetic: 'KRAD',
               example:
-                'CRUD is Create, Read, Update, Delete. = CRUD è Crea, Leggi, Aggiorna, Elimina.',
+                'Every admin panel needs full CRUD support so managers can create, view, edit, and remove records. = Ogni pannello admin ha bisogno del supporto CRUD completo così i manager possono creare, visualizzare, modificare e rimuovere record.',
               context: 'api',
               difficulty: 'intermediate',
             },
             {
               english: 'Create',
-              italian: 'Crea',
+              italian: 'Creazione',
               pronunciation: '/kriˈeɪt/',
               phonetic: 'kri-EIT',
-              example: 'POST creates a new resource. = POST crea una nuova risorsa.',
+              example:
+                "When a user submits the registration form, the server performs a create operation by inserting a new row into the users table. = Quando un utente invia il modulo di registrazione, il server esegue un'operazione di creazione inserendo una nuova riga nella tabella utenti.",
               context: 'api',
               difficulty: 'intermediate',
               code: 'POST /users',
             },
             {
               english: 'Read',
-              italian: 'Leggi',
+              italian: 'Lettura',
               pronunciation: '/riːd/',
               phonetic: 'RID',
-              example: 'GET reads resources. = GET legge risorse.',
+              example:
+                "The dashboard performs a read operation to fetch the latest orders and display them in a sortable table. = La dashboard esegue un'operazione di lettura per recuperare gli ultimi ordini e mostrarli in una tabella ordinabile.",
               context: 'api',
               difficulty: 'intermediate',
               code: 'GET /users/:id',
             },
             {
               english: 'Update',
-              italian: 'Aggiorna',
+              italian: 'Aggiornamento',
               pronunciation: '/ˌʌpˈdeɪt/',
               phonetic: 'ap-DEIT',
-              example: 'PUT or PATCH updates a resource. = PUT o PATCH aggiornano una risorsa.',
+              example:
+                'Clicking "Save Profile" triggers an update request that patches only the fields the user has changed. = Cliccare "Salva Profilo" attiva una richiesta di aggiornamento che modifica solo i campi che l\'utente ha cambiato.',
               context: 'api',
               difficulty: 'intermediate',
               code: 'PUT /users/:id',
             },
             {
               english: 'Delete',
-              italian: 'Elimina',
+              italian: 'Eliminazione',
               pronunciation: '/dɪˈliːt/',
               phonetic: 'di-LIT',
-              example: 'DELETE removes a resource. = DELETE rimuove una risorsa.',
+              example:
+                "Before performing a delete, the API checks for dependent records and returns 409 Conflict if the resource is still referenced. = Prima di eseguire un'eliminazione, l'API controlla i record dipendenti e restituisce 409 Conflict se la risorsa è ancora referenziata.",
               context: 'api',
               difficulty: 'intermediate',
               code: 'DELETE /users/:id',
@@ -3488,7 +3569,7 @@ export default {
               pronunciation: '/kəˈlekʃən/',
               phonetic: 'kol-LEK-scen',
               example:
-                'A collection is a list of resources. = Una collezione è un elenco di risorse.',
+                "Hitting GET /products returns the full collection, so you typically add pagination to avoid sending thousands of items at once. = Chiamare GET /products restituisce l'intera collezione, quindi tipicamente aggiungi la paginazione per evitare di inviare migliaia di elementi alla volta.",
               context: 'api',
               difficulty: 'intermediate',
               code: 'GET /products',
@@ -3499,7 +3580,7 @@ export default {
               pronunciation: '/ˌpædʒɪˈneɪʃən/',
               phonetic: 'pag-i-NEI-scen',
               example:
-                'Pagination splits large collections. = La paginazione divide grandi collezioni.',
+                'Without pagination, loading 50,000 orders would crash the browser, so we return 20 items per page with next/prev links. = Senza paginazione, caricare 50.000 ordini manderebbe in crash il browser, quindi restituiamo 20 elementi per pagina con link avanti/indietro.',
               context: 'api',
               difficulty: 'intermediate',
               code: '?page=2&limit=20',
@@ -3509,7 +3590,8 @@ export default {
               italian: 'Filtraggio',
               pronunciation: '/ˈfɪltərɪŋ/',
               phonetic: 'FIL-ter-ing',
-              example: 'Filtering narrows down results. = Il filtraggio restringe i risultati.',
+              example:
+                "The admin uses filtering to show only active subscriptions by appending ?status=active to the query string. = L'admin usa il filtraggio per mostrare solo gli abbonamenti attivi aggiungendo ?status=active alla query string.",
               context: 'api',
               difficulty: 'intermediate',
               code: '?status=active',
@@ -3519,7 +3601,8 @@ export default {
               italian: 'Ordinamento',
               pronunciation: '/ˈsɔːrtɪŋ/',
               phonetic: 'SORT-ing',
-              example: "Sorting orders the results. = L'ordinamento ordina i risultati.",
+              example:
+                "Adding ?sort=-createdAt applies sorting so the newest entries appear first in the response array. = Aggiungere ?sort=-createdAt applica l'ordinamento così le voci più recenti appaiono per prime nell'array di risposta.",
               context: 'api',
               difficulty: 'intermediate',
               code: '?sort=-createdAt',
@@ -3530,7 +3613,7 @@ export default {
               pronunciation: '/fiːld sɪˈlekʃən/',
               phonetic: 'FILD-si-LEK-scen',
               example:
-                'Field selection returns only chosen fields. = La selezione campi ritorna solo campi scelti.',
+                'Mobile clients use field selection to request only id and name, saving bandwidth on slow connections. = I client mobile usano la selezione campi per richiedere solo id e name, risparmiando banda sulle connessioni lente.',
               context: 'api',
               difficulty: 'intermediate',
               code: '?fields=id,name',
@@ -3548,7 +3631,7 @@ export default {
               pronunciation: '/kənˈtroʊlər/',
               phonetic: 'kon-TROL-ler',
               example:
-                'A controller handles HTTP requests. = Un controller gestisce richieste HTTP.',
+                'Each controller in our project handles a single resource, keeping the request/response logic separated from business rules. = Ogni controllore nel nostro progetto gestisce una singola risorsa, mantenendo la logica richiesta/risposta separata dalle regole di business.',
               context: 'api',
               difficulty: 'intermediate',
               code: 'exports.getUsers = async (req, res) => {};',
@@ -3559,7 +3642,7 @@ export default {
               pronunciation: '/ˈsɜːrvɪs ˈleɪər/',
               phonetic: 'SER-vis LEI-er',
               example:
-                'The service layer holds business logic. = Lo strato di servizio contiene la logica di business.',
+                "Moving pricing calculations into the service layer lets us reuse the same logic in both the API and the CLI tool. = Spostare i calcoli dei prezzi nello strato di servizio ci permette di riutilizzare la stessa logica sia nell'API che nello strumento CLI.",
               context: 'api',
               difficulty: 'intermediate',
             },
@@ -3569,27 +3652,27 @@ export default {
               pronunciation: '/ˈbɪznɪs ˈlɒdʒɪk/',
               phonetic: 'BIZ-nis LO-gik',
               example:
-                'Keep business logic out of controllers. = Tieni la logica di business fuori dai controller.',
+                'Discount rules and tax calculations are business logic that belongs in the service, not in the route handler. = Le regole di sconto e i calcoli delle tasse sono logica di business che appartiene al servizio, non nel gestore di rotta.',
               context: 'api',
               difficulty: 'intermediate',
             },
             {
               english: 'Repository',
-              italian: 'repository / pattern di accesso a dati',
+              italian: 'Pattern di accesso ai dati (repository)',
               pronunciation: '/rɪˈpɒzɪtəri/',
               phonetic: 'ri-PO-zi-to-ri',
               example:
-                "A repository abstracts data access. = Un repository astrae l'accesso ai dati.",
+                'The repository pattern lets us swap from MongoDB to PostgreSQL without changing any service code. = Il pattern repository ci permette di passare da MongoDB a PostgreSQL senza cambiare alcun codice del servizio.',
               context: 'api',
               difficulty: 'advanced',
             },
             {
               english: 'DTO',
-              italian: 'DTO / Data Transfer Object',
+              italian: 'Oggetto di trasferimento dati (DTO)',
               pronunciation: '/diː tiː oʊ/',
               phonetic: 'DI-TI-O',
               example:
-                'A DTO is a Data Transfer Object. = Un DTO è un Oggetto di Trasferimento Dati.',
+                "We define a DTO for the response so the API never leaks internal fields like passwordHash to the client. = Definiamo un DTO per la risposta così l'API non espone mai campi interni come passwordHash al client.",
               context: 'api',
               difficulty: 'intermediate',
               note: 'Forma dei dati scambiati con il client.',
@@ -3600,28 +3683,29 @@ export default {
               pronunciation: '/ˌvælɪˈdeɪʃən/',
               phonetic: 'val-i-DEI-scen',
               example:
-                'Validation checks request data. = La validazione controlla i dati della richiesta.',
+                'Adding server-side validation prevents malformed data from reaching the database even if client checks are bypassed. = Aggiungere la validazione lato server impedisce che dati malformati raggiungano il database anche se i controlli lato client vengono bypassati.',
               context: 'api',
               difficulty: 'intermediate',
               tool: 'Joi, Zod, express-validator',
             },
             {
               english: 'Schema',
-              italian: 'schema / struttura dei dati',
+              italian: 'Struttura dei dati (schema)',
               pronunciation: '/ˈskiːmə/',
               phonetic: 'SKI-ma',
-              example: 'A schema describes data shape. = Uno schema descrive la forma dei dati.',
+              example:
+                'Define a Zod schema for each endpoint so TypeScript can infer the exact shape of the validated body at compile time. = Definisci uno schema Zod per ogni endpoint così TypeScript può inferire la forma esatta del body validato in fase di compilazione.',
               context: 'api',
               difficulty: 'intermediate',
               code: 'const userSchema = z.object({ name: z.string() });',
             },
             {
               english: 'Joi',
-              italian: 'Joi (libreria di validazione)',
+              italian: 'Libreria di validazione per JavaScript (Joi)',
               pronunciation: '/dʒɔɪ/',
               phonetic: 'GIOI',
               example:
-                'Joi is a popular validation library. = Joi è una popolare libreria di validazione.',
+                "We chose Joi for input validation because its fluent API makes complex rules like conditional required fields easy to express. = Abbiamo scelto Joi per la validazione dell'input perché la sua API fluente rende facile esprimere regole complesse come campi obbligatori condizionali.",
               context: 'api',
               difficulty: 'intermediate',
               tool: 'Joi',
@@ -3629,10 +3713,11 @@ export default {
             },
             {
               english: 'Zod',
-              italian: 'Zod (libreria di validazione TypeScript)',
+              italian: 'Libreria di validazione TypeScript-first (Zod)',
               pronunciation: '/zɒd/',
               phonetic: 'ZOD',
-              example: 'Zod gives TypeScript-first schemas. = Zod offre schemi TypeScript-first.',
+              example:
+                'With Zod, the schema doubles as a TypeScript type, so you get runtime validation and compile-time safety from a single definition. = Con Zod, lo schema funge anche da tipo TypeScript, quindi ottieni validazione a runtime e sicurezza a compile-time da una singola definizione.',
               context: 'api',
               difficulty: 'intermediate',
               tool: 'Zod',
@@ -3640,10 +3725,11 @@ export default {
             },
             {
               english: 'OpenAPI',
-              italian: 'OpenAPI / standard di descrizione API',
+              italian: 'Standard di descrizione API (OpenAPI)',
               pronunciation: '/ˈoʊpən eɪ piː aɪ/',
               phonetic: 'OU-pen-EI-PI-AI',
-              example: 'OpenAPI documents your REST API. = OpenAPI documenta la tua API REST.',
+              example:
+                "Generating an OpenAPI spec from your route definitions gives frontend developers an interactive Swagger UI to test endpoints. = Generare una specifica OpenAPI dalle definizioni delle rotte offre agli sviluppatori frontend un'interfaccia Swagger interattiva per testare gli endpoint.",
               context: 'api',
               difficulty: 'intermediate',
               tool: 'OpenAPI/Swagger',
@@ -3661,7 +3747,8 @@ export default {
               italian: '2xx Successo',
               pronunciation: '/tuː ɛks ɛks/',
               phonetic: 'TU-EKS-EKS',
-              example: '2xx codes indicate success. = I codici 2xx indicano successo.',
+              example:
+                "After creating the user, the API returns a 2xx success code (201 Created) along with the new resource in the response body. = Dopo aver creato l'utente, l'API restituisce un codice 2xx di successo (201 Created) insieme alla nuova risorsa nel corpo della risposta.",
               context: 'api',
               difficulty: 'intermediate',
               note: '200, 201, 204 sono i più comuni.',
@@ -3672,7 +3759,7 @@ export default {
               pronunciation: '/fɔːr ɛks ɛks/',
               phonetic: 'FOR-EKS-EKS',
               example:
-                '4xx errors are caused by the client. = Gli errori 4xx sono causati dal client.',
+                "Sending an expired token triggers a 4xx client error because authentication failure is the caller's responsibility. = Inviare un token scaduto attiva un errore 4xx del client perché il fallimento dell'autenticazione è responsabilità del chiamante.",
               context: 'api',
               difficulty: 'intermediate',
             },
@@ -3682,7 +3769,7 @@ export default {
               pronunciation: '/faɪv ɛks ɛks/',
               phonetic: 'FAIV-EKS-EKS',
               example:
-                '5xx errors are server-side problems. = Gli errori 5xx sono problemi lato server.',
+                "When the database connection pool is exhausted, the API returns a 5xx server error and our alerting system pages the on-call engineer. = Quando il pool di connessioni del database si esaurisce, l'API restituisce un errore 5xx del server e il nostro sistema di allarme avvisa l'ingegnere reperibile.",
               context: 'api',
               difficulty: 'intermediate',
             },
@@ -3691,7 +3778,8 @@ export default {
               italian: '204 Nessun Contenuto',
               pronunciation: '/tuː oʊ fɔːr/',
               phonetic: 'TU-O-FOR',
-              example: '204 means success with no body. = 204 significa successo senza body.',
+              example:
+                "After a successful DELETE, we return 204 No Content because there is no resource left to include in the response body. = Dopo un DELETE riuscito, restituiamo 204 Nessun Contenuto perché non c'è nessuna risorsa da includere nel corpo della risposta.",
               context: 'api',
               difficulty: 'intermediate',
               note: 'Tipico per DELETE riusciti.',
@@ -3701,7 +3789,8 @@ export default {
               italian: '422 Non Processabile',
               pronunciation: '/fɔːr tuː tuː ʌnˈprɒsɛsəbl/',
               phonetic: 'FOR-TU-TU an-PRO-ses-a-bol',
-              example: '422 indicates a validation error. = 422 indica un errore di validazione.',
+              example:
+                'The server responds with 422 Unprocessable when the email field is missing or the password does not meet the complexity requirements. = Il server risponde con 422 Non Processabile quando il campo email manca o la password non soddisfa i requisiti di complessità.',
               context: 'api',
               difficulty: 'intermediate',
             },
@@ -3711,7 +3800,7 @@ export default {
               pronunciation: '/fɔːr tuː naɪn/',
               phonetic: 'FOR-TU-NAIN',
               example:
-                '429 means rate limit exceeded. = 429 significa limite di richieste superato.',
+                "After receiving a 429 Too Many Requests response, the client should read the Retry-After header and wait before sending another call. = Dopo aver ricevuto una risposta 429 Troppe Richieste, il client dovrebbe leggere l'header Retry-After e attendere prima di inviare un'altra chiamata.",
               context: 'api',
               difficulty: 'intermediate',
             },
@@ -3720,7 +3809,8 @@ export default {
               italian: 'Risposta di errore',
               pronunciation: '/ˈerər rɪˈspɒns/',
               phonetic: 'ER-ror-ri-SPONS',
-              example: 'Return consistent error JSON. = Ritorna JSON di errore consistente.',
+              example:
+                'Every error response in our API follows the same JSON structure with code, message, and details so clients can parse errors consistently. = Ogni risposta di errore nella nostra API segue la stessa struttura JSON con code, message e details così i client possono analizzare gli errori in modo consistente.',
               context: 'api',
               difficulty: 'intermediate',
               code: '{ error: { code, message } }',
@@ -3731,7 +3821,7 @@ export default {
               pronunciation: '/ˌhaɪpərˈmiːdiə/',
               phonetic: 'AI-per-MI-dia',
               example:
-                "Hypermedia adds links to responses. = L'ipermedia aggiunge link alle risposte.",
+                "Including hypermedia links in each response lets clients navigate the API dynamically without hardcoding endpoint URLs. = Includere link ipermedia in ogni risposta permette ai client di navigare l'API dinamicamente senza codificare gli URL degli endpoint.",
               context: 'api',
               difficulty: 'advanced',
               code: "{ _links: { self: '/users/1' } }",
@@ -3742,7 +3832,7 @@ export default {
               pronunciation: '/ˌaɪdɛmˈpoʊtənsi kiː/',
               phonetic: 'ai-dem-PO-ten-si-KI',
               example:
-                'An idempotency key prevents duplicates. = Una chiave di idempotenza previene duplicati.',
+                'The payment gateway requires an idempotency key in every POST so a network retry never charges the customer twice. = Il gateway di pagamento richiede una chiave di idempotenza in ogni POST così un retry di rete non addebita mai il cliente due volte.',
               context: 'api',
               difficulty: 'advanced',
               note: 'Comune nelle API di pagamento (Stripe).',
@@ -3753,7 +3843,7 @@ export default {
               pronunciation: '/reɪt ˈlɪmɪt/',
               phonetic: 'REIT LI-mit',
               example:
-                'Rate limits protect APIs from abuse. = I rate limit proteggono le API dagli abusi.',
+                'We set a rate limit of 100 requests per minute per IP to prevent a single client from overwhelming the server. = Impostiamo un limite di frequenza di 100 richieste al minuto per IP per impedire che un singolo client sovraccarichi il server.',
               context: 'api',
               difficulty: 'intermediate',
               tool: 'express-rate-limit',
@@ -3776,22 +3866,22 @@ export default {
           items: [
             {
               english: 'Middleware',
-              italian: 'middleware / componente intermedio',
+              italian: 'Componente intermedio (middleware)',
               pronunciation: '/ˈmɪdlweər/',
               phonetic: 'MID-uel-uer',
               example:
-                'Middleware processes requests before handlers. = I middleware elaborano le richieste prima degli handler.',
+                'Every incoming request passes through a chain of middleware functions that can log, authenticate, and transform data before the final handler runs. = Ogni richiesta in arrivo passa attraverso una catena di funzioni middleware che possono loggare, autenticare e trasformare dati prima che il gestore finale venga eseguito.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use((req, res, next) => { next(); });',
             },
             {
               english: 'next',
-              italian: 'next / passa al middleware successivo',
+              italian: 'Funzione di passaggio al successivo (next)',
               pronunciation: '/nɛkst/',
               phonetic: 'NEKST',
               example:
-                'Call next() to pass control onward. = Chiama next() per passare il controllo.',
+                'If you forget to call next() inside your logging middleware, the request hangs forever and the client gets a timeout error. = Se dimentichi di chiamare next() dentro il tuo middleware di logging, la richiesta resta appesa per sempre e il client riceve un errore di timeout.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'next();',
@@ -3803,27 +3893,27 @@ export default {
               pronunciation: '/ˈmɪdlweər tʃeɪn/',
               phonetic: 'MID-uel-uer-CEIN',
               example:
-                'Middleware runs in registration order. = I middleware girano in ordine di registrazione.',
+                "The middleware chain processes body parsing, authentication, and rate limiting in that exact order before the controller runs. = La catena di middleware elabora il parsing del body, l'autenticazione e il rate limiting in quell'esatto ordine prima che il controller venga eseguito.",
               context: 'middleware',
               difficulty: 'intermediate',
             },
             {
               english: 'Pre-Handler',
-              italian: "pre-handler / handler che precede l'handler principale",
+              italian: 'Gestore preliminare (pre-handler)',
               pronunciation: '/priː ˈhændlər/',
               phonetic: 'PRI-AN-dler',
               example:
-                "A pre-handler runs before the main handler. = Un pre-handler gira prima dell'handler principale.",
+                "A pre-handler validates the request body and attaches the parsed user object to req before the main controller accesses it. = Un pre-handler valida il corpo della richiesta e allega l'oggetto utente analizzato a req prima che il controller principale vi acceda.",
               context: 'middleware',
               difficulty: 'intermediate',
             },
             {
               english: 'Post-Handler',
-              italian: "post-handler / handler che segue l'handler principale",
+              italian: 'Gestore successivo (post-handler)',
               pronunciation: '/poʊst ˈhændlər/',
               phonetic: 'POST-AN-dler',
               example:
-                'A post-handler runs after responding. = Un post-handler gira dopo aver risposto.',
+                'A post-handler can strip sensitive fields from the response or add caching headers after the main logic finishes. = Un post-handler può rimuovere campi sensibili dalla risposta o aggiungere header di cache dopo che la logica principale è terminata.',
               context: 'middleware',
               difficulty: 'intermediate',
             },
@@ -3833,7 +3923,7 @@ export default {
               pronunciation: '/ˌæplɪˈkeɪʃənl ˈlevl/',
               phonetic: 'a-pli-KEI-scio-nal LEV-el',
               example:
-                'app.use registers application-level middleware. = app.use registra middleware a livello applicazione.',
+                "Registering CORS as application-level middleware ensures every route in the app receives the proper cross-origin headers. = Registrare CORS come middleware a livello applicazione assicura che ogni rotta nell'app riceva gli header cross-origin corretti.",
               context: 'middleware',
               difficulty: 'intermediate',
             },
@@ -3843,7 +3933,7 @@ export default {
               pronunciation: '/ˈruːtər ˈlevl/',
               phonetic: 'RU-ter-LEV-el',
               example:
-                'Router-level middleware applies to a Router. = Il middleware a livello router si applica a un Router.',
+                'We attach the auth check as router-level middleware so only the /admin routes require a valid JWT token. = Alleghiamo il controllo auth come middleware a livello router così solo le rotte /admin richiedono un token JWT valido.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'router.use(authMiddleware);',
@@ -3853,7 +3943,8 @@ export default {
               italian: 'Specifico per rotta',
               pronunciation: '/ruːt spəˈsɪfɪk/',
               phonetic: 'RUT-spe-SI-fik',
-              example: "Pass middleware before the handler. = Passa middleware prima dell'handler.",
+              example:
+                "Adding a file-size validator as route-specific middleware ensures only the upload endpoint enforces the 5 MB limit. = Aggiungere un validatore di dimensione file come middleware specifico per rotta assicura che solo l'endpoint di upload imponga il limite di 5 MB.",
               context: 'middleware',
               difficulty: 'intermediate',
               code: "app.get('/admin', auth, handler);",
@@ -3864,7 +3955,7 @@ export default {
               pronunciation: '/ˈerər ˈmɪdlweər/',
               phonetic: 'ER-ror-MID-uel-uer',
               example:
-                'Error middleware has four parameters. = Il middleware di errore ha quattro parametri.',
+                'Express recognizes error middleware by its four parameters (err, req, res, next) and routes all thrown exceptions to it automatically. = Express riconosce il middleware di errore dai suoi quattro parametri (err, req, res, next) e instrada automaticamente tutte le eccezioni lanciate verso di esso.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use((err, req, res, next) => {});',
@@ -3875,7 +3966,7 @@ export default {
               pronunciation: '/ˈeɪsɪŋk ˈmɪdlweər/',
               phonetic: 'EI-sink-MID-uel-uer',
               example:
-                'Async middleware uses async/await. = Il middleware asincrono usa async/await.',
+                'Wrapping database calls inside async middleware lets you await the query result and attach it to req before the handler runs. = Avvolgere le chiamate al database dentro middleware asincrono ti permette di attendere il risultato della query e allegarlo a req prima che il gestore venga eseguito.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use(async (req, res, next) => {});',
@@ -3893,7 +3984,7 @@ export default {
               pronunciation: '/ˈbɒdi ˈpɑːrsər/',
               phonetic: 'BO-di-PAR-ser',
               example:
-                'A body parser reads the request body. = Un body parser legge il corpo della richiesta.',
+                'Without a body parser, req.body is undefined and your POST handler cannot read the JSON payload sent by the client. = Senza un body parser, req.body è undefined e il tuo handler POST non può leggere il payload JSON inviato dal client.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use(express.json());',
@@ -3901,31 +3992,33 @@ export default {
             },
             {
               english: 'express.json',
-              italian: 'express.json / parser JSON Express',
+              italian: 'Parser JSON integrato di Express (express.json)',
               pronunciation: '/ɪkˈspres ˈdʒeɪsɒn/',
               phonetic: 'eks-PRES-GEI-son',
-              example: 'express.json parses JSON bodies. = express.json analizza body JSON.',
+              example:
+                'Setting a 10 MB limit on express.json prevents attackers from crashing the server with oversized JSON payloads. = Impostare un limite di 10 MB su express.json impedisce agli attaccanti di mandare in crash il server con payload JSON sovradimensionati.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: "app.use(express.json({ limit: '10mb' }));",
             },
             {
               english: 'express.urlencoded',
-              italian: 'express.urlencoded / parser form Express',
+              italian: 'Parser moduli HTML di Express (express.urlencoded)',
               pronunciation: '/ɪkˈspres ɜːrl ɪnˈkoʊdɪd/',
               phonetic: 'eks-PRES-ERL-in-KOUD-ed',
-              example: 'urlencoded parses form data. = urlencoded analizza i dati form.',
+              example:
+                'Legacy HTML forms submit data as URL-encoded strings, so express.urlencoded with extended: true parses nested objects correctly. = I moduli HTML legacy inviano dati come stringhe URL-encoded, quindi express.urlencoded con extended: true analizza correttamente oggetti annidati.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use(express.urlencoded({ extended: true }));',
             },
             {
               english: 'Multer',
-              italian: 'Multer / middleware upload file',
+              italian: 'Middleware per upload file (Multer)',
               pronunciation: '/ˈmʌltər/',
               phonetic: 'MAL-ter',
               example:
-                'Multer handles multipart/form-data uploads. = Multer gestisce upload multipart/form-data.',
+                "We use Multer to handle avatar uploads, storing files in an S3 bucket while validating that only JPEG and PNG formats are accepted. = Usiamo Multer per gestire l'upload degli avatar, salvando i file in un bucket S3 e validando che solo i formati JPEG e PNG siano accettati.",
               context: 'middleware',
               difficulty: 'intermediate',
               tool: 'Multer',
@@ -3937,16 +4030,17 @@ export default {
               pronunciation: '/faɪl ˈʌploʊd/',
               phonetic: 'FAIL-AP-loud',
               example:
-                'File upload uses multipart/form-data. = Il caricamento file usa multipart/form-data.',
+                "The file upload endpoint limits each request to five files and 2 MB per file to prevent storage abuse on the server. = L'endpoint di caricamento file limita ogni richiesta a cinque file e 2 MB per file per prevenire abusi di archiviazione sul server.",
               context: 'middleware',
               difficulty: 'intermediate',
             },
             {
               english: 'CORS',
-              italian: 'CORS / Cross-Origin Resource Sharing',
+              italian: 'Condivisione risorse tra origini diverse (CORS)',
               pronunciation: '/kɔːrz/',
               phonetic: 'KORS',
-              example: 'CORS allows cross-origin requests. = CORS permette richieste cross-origin.',
+              example:
+                "The React app on localhost:3000 cannot call the API on localhost:5000 until you enable CORS on the Express server. = L'app React su localhost:3000 non può chiamare l'API su localhost:5000 finché non abiliti CORS sul server Express.",
               context: 'middleware',
               difficulty: 'intermediate',
               tool: 'cors',
@@ -3958,16 +4052,18 @@ export default {
               italian: 'Origine',
               pronunciation: '/ˈɒrɪdʒɪn/',
               phonetic: 'O-ri-gin',
-              example: "The origin is the protocol+host+port. = L'origine è protocollo+host+porta.",
+              example:
+                'Two URLs share the same origin only when their protocol, host, and port all match, so http and https count as different origins. = Due URL condividono la stessa origine solo quando protocollo, host e porta corrispondono tutti, quindi http e https contano come origini diverse.',
               context: 'middleware',
               difficulty: 'intermediate',
             },
             {
               english: 'Preflight',
-              italian: 'preflight / richiesta OPTIONS pre-CORS',
+              italian: 'Richiesta di verifica preliminare (preflight)',
               pronunciation: '/ˈpriːflaɪt/',
               phonetic: 'PRI-flait',
-              example: 'A preflight request uses OPTIONS. = Una richiesta preflight usa OPTIONS.',
+              example:
+                'Before sending a PUT with custom headers, the browser issues a preflight OPTIONS request to check whether the server allows the method. = Prima di inviare un PUT con header personalizzati, il browser emette una richiesta preflight OPTIONS per verificare se il server permette il metodo.',
               context: 'middleware',
               difficulty: 'intermediate',
               note: 'Inviata dal browser prima di richieste cross-origin complesse.',
@@ -3978,7 +4074,7 @@ export default {
               pronunciation: '/əˈlaʊd ˈɒrɪdʒɪnz/',
               phonetic: 'a-LAUD O-ri-gins',
               example:
-                'Configure allowed origins for security. = Configura le origini consentite per sicurezza.',
+                'In production, restrict allowed origins to your own domains so third-party sites cannot make authenticated requests on behalf of your users. = In produzione, limita le origini consentite ai tuoi domini così siti terzi non possono fare richieste autenticate per conto dei tuoi utenti.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: "cors({ origin: ['https://example.com'] })",
@@ -3989,7 +4085,7 @@ export default {
               pronunciation: '/krəˈdenʃəlz/',
               phonetic: 'kre-DEN-scials',
               example:
-                'Set credentials: true to send cookies. = Imposta credentials: true per inviare cookie.',
+                'Enable credentials in the CORS config so the browser includes cookies and authorization headers in cross-origin requests. = Abilita le credenziali nella configurazione CORS così il browser include cookie e header di autorizzazione nelle richieste cross-origin.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'cors({ credentials: true })',
@@ -4003,21 +4099,22 @@ export default {
           items: [
             {
               english: 'Logger',
-              italian: 'logger / oggetto di logging',
+              italian: 'Strumento di registrazione log (logger)',
               pronunciation: '/ˈlɒɡər/',
               phonetic: 'LOG-ger',
-              example: 'A logger records requests. = Un logger registra le richieste.',
+              example:
+                'Attaching a logger middleware as the first step in the chain records the method, URL, and response time for every incoming request. = Collegare un middleware logger come primo passo nella catena registra metodo, URL e tempo di risposta per ogni richiesta in arrivo.',
               context: 'middleware',
               difficulty: 'intermediate',
               tool: 'morgan, pino',
             },
             {
               english: 'Morgan',
-              italian: 'morgan / middleware di log HTTP',
+              italian: 'Middleware di log HTTP per Express (Morgan)',
               pronunciation: '/ˈmɔːrɡən/',
               phonetic: 'MOR-gan',
               example:
-                'Morgan logs HTTP requests for Express. = Morgan logga richieste HTTP per Express.',
+                'Using Morgan in "combined" format writes Apache-style access logs that tools like GoAccess can parse for traffic analysis. = Usare Morgan in formato "combined" scrive log di accesso in stile Apache che strumenti come GoAccess possono analizzare per l\'analisi del traffico.',
               context: 'middleware',
               difficulty: 'intermediate',
               tool: 'Morgan',
@@ -4026,10 +4123,11 @@ export default {
             },
             {
               english: 'Pino',
-              italian: 'Pino / logger ad alte prestazioni',
+              italian: 'Logger strutturato ad alte prestazioni (Pino)',
               pronunciation: '/ˈpiːnoʊ/',
               phonetic: 'PI-no',
-              example: 'Pino is a fast structured logger. = Pino è un logger strutturato veloce.',
+              example:
+                'We switched from Winston to Pino because its JSON-first design and lower overhead cut our p99 logging latency in half. = Siamo passati da Winston a Pino perché il suo design JSON-first e il minor overhead hanno dimezzato la nostra latenza di logging al p99.',
               context: 'middleware',
               difficulty: 'intermediate',
               tool: 'Pino',
@@ -4037,10 +4135,11 @@ export default {
             },
             {
               english: 'Winston',
-              italian: 'Winston / logger configurabile',
+              italian: 'Logger configurabile multi-trasporto (Winston)',
               pronunciation: '/ˈwɪnstən/',
               phonetic: 'UIN-ston',
-              example: 'Winston supports multiple transports. = Winston supporta vari transport.',
+              example:
+                'With Winston you can send error-level logs to a file and info-level logs to the console using different transports in the same config. = Con Winston puoi inviare log di livello errore a un file e log di livello info alla console usando diversi trasporti nella stessa configurazione.',
               context: 'middleware',
               difficulty: 'intermediate',
               tool: 'Winston',
@@ -4050,7 +4149,8 @@ export default {
               italian: 'Compressione',
               pronunciation: '/kəmˈpreʃən/',
               phonetic: 'kom-PRES-scen',
-              example: 'compression gzips responses. = compression comprime con gzip le risposte.',
+              example:
+                'Enabling response compression reduced our API payload sizes by 70%, making mobile clients load data noticeably faster. = Abilitare la compressione delle risposte ha ridotto le dimensioni dei payload API del 70%, facendo caricare i dati notevolmente più velocemente ai client mobile.',
               context: 'middleware',
               difficulty: 'intermediate',
               tool: 'compression',
@@ -4058,51 +4158,52 @@ export default {
             },
             {
               english: 'Gzip',
-              italian: 'Gzip / compressione GNU',
+              italian: 'Compressione standard per il web (Gzip)',
               pronunciation: '/ˈɡiːzɪp/',
               phonetic: 'GI-zip',
-              example: 'Gzip compresses HTTP responses. = Gzip comprime le risposte HTTP.',
+              example:
+                'Almost every modern browser sends Accept-Encoding: gzip, so the server can compress JSON responses on the fly before sending them. = Quasi ogni browser moderno invia Accept-Encoding: gzip, così il server può comprimere le risposte JSON al volo prima di inviarle.',
               context: 'middleware',
               difficulty: 'intermediate',
             },
             {
               english: 'Brotli',
-              italian: 'Brotli / compressione moderna Google',
+              italian: 'Compressione moderna ad alta efficienza (Brotli)',
               pronunciation: '/ˈbroʊtli/',
               phonetic: 'BROT-li',
               example:
-                'Brotli offers better compression than gzip. = Brotli offre compressione migliore di gzip.',
+                'Switching to Brotli for static assets shaved another 15% off transfer sizes compared to gzip at a similar CPU cost. = Passare a Brotli per gli asset statici ha ridotto le dimensioni di trasferimento di un ulteriore 15% rispetto a gzip con un costo CPU simile.',
               context: 'middleware',
               difficulty: 'intermediate',
             },
             {
               english: 'Request ID',
-              italian: 'ID richiesta',
+              italian: 'Identificativo della richiesta',
               pronunciation: '/rɪˈkwest aɪ diː/',
               phonetic: 'ri-KUEST-AI-DI',
               example:
-                'A request ID traces calls across services. = Un request ID traccia chiamate tra servizi.',
+                'Assigning a unique request ID in middleware lets you filter all log lines belonging to a single API call when debugging production issues. = Assegnare un identificativo richiesta unico nel middleware ti permette di filtrare tutte le righe di log appartenenti a una singola chiamata API quando fai debug in produzione.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'req.id = uuid();',
             },
             {
               english: 'Correlation ID',
-              italian: 'ID di correlazione',
+              italian: 'Identificativo di correlazione',
               pronunciation: '/ˌkɒrəˈleɪʃən aɪ diː/',
               phonetic: 'ko-re-LEI-scen-AI-DI',
               example:
-                'A correlation ID links related logs. = Un correlation ID collega log correlati.',
+                "When the order service calls the payment service, it forwards the same correlation ID so engineers can trace the entire transaction across microservices. = Quando il servizio ordini chiama il servizio pagamenti, inoltra lo stesso identificativo di correlazione così gli ingegneri possono tracciare l'intera transazione attraverso i microservizi.",
               context: 'middleware',
               difficulty: 'advanced',
             },
             {
               english: 'Audit Log',
-              italian: 'Log di audit',
+              italian: 'Registro di controllo',
               pronunciation: '/ˈɔːdɪt lɒɡ/',
               phonetic: 'O-dit-LOG',
               example:
-                'An audit log tracks security events. = Un log di audit traccia eventi di sicurezza.',
+                'Every admin action is written to an immutable audit log so compliance officers can review who changed sensitive records and when. = Ogni azione admin viene scritta in un registro di controllo immutabile così i responsabili della conformità possono verificare chi ha modificato i record sensibili e quando.',
               context: 'middleware',
               difficulty: 'advanced',
             },
@@ -4119,7 +4220,7 @@ export default {
               pronunciation: '/ɔːθ ˈmɪdlweər/',
               phonetic: 'OT-MID-uel-uer',
               example:
-                "Auth middleware checks the user identity. = Il middleware di auth controlla l'identità.",
+                "Our auth middleware decodes the JWT, looks up the user in Redis, and attaches the profile to req.user before any route handler executes. = Il nostro middleware di autenticazione decodifica il JWT, cerca l'utente in Redis e allega il profilo a req.user prima che qualsiasi gestore di rotta venga eseguito.",
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'function auth(req, res, next) { /* check */ }',
@@ -4129,18 +4230,19 @@ export default {
               italian: 'Intestazione di autorizzazione',
               pronunciation: '/ˌɔːθəraɪˈzeɪʃən ˈhedər/',
               phonetic: 'O-to-rai-ZEI-scen ED-der',
-              example: "Read the Authorization header. = Leggi l'header Authorization.",
+              example:
+                'The middleware extracts the token from the authorization header, splitting on the space after "Bearer" to isolate the JWT string. = Il middleware estrae il token dall\'intestazione di autorizzazione, separando sullo spazio dopo "Bearer" per isolare la stringa JWT.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'req.headers.authorization',
             },
             {
               english: 'Bearer Token',
-              italian: 'Token Bearer',
+              italian: 'Token al portatore (Bearer)',
               pronunciation: '/ˈbeərər ˈtoʊkən/',
               phonetic: 'BER-rer-TOU-ken',
               example:
-                'Use Bearer tokens for stateless auth. = Usa token Bearer per autenticazione senza stato.',
+                "The mobile app stores the bearer token in secure storage and includes it in every API call so the server can verify identity without sessions. = L'app mobile salva il bearer token nello storage sicuro e lo include in ogni chiamata API così il server può verificare l'identità senza sessioni.",
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'Authorization: Bearer <token>',
@@ -4151,17 +4253,17 @@ export default {
               pronunciation: '/prəˈtektɪd ruːt/',
               phonetic: 'pro-TEK-ted-RUT',
               example:
-                'A protected route requires authentication. = Una rotta protetta richiede autenticazione.',
+                "Accessing the /dashboard protected route without a valid token returns 401 Unauthorized and redirects the user to the login page. = Accedere alla rotta protetta /dashboard senza un token valido restituisce 401 Unauthorized e reindirizza l'utente alla pagina di login.",
               context: 'middleware',
               difficulty: 'intermediate',
             },
             {
               english: 'Role-Based Access',
-              italian: 'Accesso basato su ruolo',
+              italian: 'Controllo di accesso basato su ruoli',
               pronunciation: '/roʊl beɪst ˈækses/',
               phonetic: 'ROUL-BEIST-AK-ses',
               example:
-                "Role-based access checks user roles. = L'accesso basato su ruolo controlla i ruoli.",
+                'With role-based access control, only users whose JWT contains the "admin" role can reach the user management endpoints. = Con il controllo di accesso basato su ruoli, solo gli utenti il cui JWT contiene il ruolo "admin" possono raggiungere gli endpoint di gestione utenti.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: "requireRole('admin')",
@@ -4173,17 +4275,17 @@ export default {
               pronunciation: '/pərˈmɪʃənz/',
               phonetic: 'per-MIS-cions',
               example:
-                'Permissions define allowed actions. = I permessi definiscono le azioni consentite.',
+                'Fine-grained permissions let an editor publish articles but not delete user accounts, even though both actions live under the content section. = Permessi granulari permettono a un editor di pubblicare articoli ma non di eliminare account utente, anche se entrambe le azioni sono nella sezione contenuti.',
               context: 'middleware',
               difficulty: 'intermediate',
             },
             {
               english: 'Error Handler',
-              italian: 'Gestore di errore',
+              italian: 'Gestore centralizzato degli errori',
               pronunciation: '/ˈerər ˈhændlər/',
               phonetic: 'ER-ror-AN-dler',
               example:
-                'A central error handler catches all errors. = Un error handler centrale cattura tutti gli errori.',
+                'Register the global error handler as the last middleware so it catches unhandled exceptions from any route and returns a structured JSON error. = Registra il gestore centralizzato degli errori come ultimo middleware così cattura le eccezioni non gestite da qualsiasi rotta e restituisce un errore JSON strutturato.',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use(errorHandler);',
@@ -4195,17 +4297,18 @@ export default {
               pronunciation: '/fɔːr oʊ fɔːr ˈhændlər/',
               phonetic: 'FOR-O-FOR AN-dler',
               example:
-                'A 404 handler responds to unknown routes. = Un handler 404 risponde a rotte sconosciute.',
+                'Place the 404 handler after all route definitions so any URL that does not match a known endpoint returns a friendly "resource not found" message. = Posiziona il gestore 404 dopo tutte le definizioni di rotta così qualsiasi URL che non corrisponde a un endpoint noto restituisce un messaggio amichevole "risorsa non trovata".',
               context: 'middleware',
               difficulty: 'intermediate',
               code: 'app.use((req, res) => res.status(404).send());',
             },
             {
               english: 'Helmet',
-              italian: 'Helmet / middleware di sicurezza header',
+              italian: 'Middleware di sicurezza per header HTTP (Helmet)',
               pronunciation: '/ˈhɛlmɪt/',
               phonetic: 'EL-met',
-              example: 'Helmet sets security headers. = Helmet imposta header di sicurezza.',
+              example:
+                'Adding Helmet as the first middleware automatically sets Content-Security-Policy, X-Frame-Options, and other headers that harden your app against common attacks. = Aggiungere Helmet come primo middleware imposta automaticamente Content-Security-Policy, X-Frame-Options e altri header che rafforzano la tua app contro attacchi comuni.',
               context: 'middleware',
               difficulty: 'intermediate',
               tool: 'Helmet',
@@ -4214,11 +4317,11 @@ export default {
             },
             {
               english: 'Trust Proxy',
-              italian: 'Fidati del proxy',
+              italian: 'Impostazione fiducia proxy',
               pronunciation: '/trʌst ˈprɒksi/',
               phonetic: 'TRAST PROK-si',
               example:
-                'Trust proxy lets Express read X-Forwarded headers. = Trust proxy permette a Express di leggere header X-Forwarded.',
+                "Behind a load balancer, enable trust proxy so Express reads the real client IP from the X-Forwarded-For header instead of seeing the balancer's address. = Dietro un load balancer, abilita trust proxy così Express legge il vero IP del client dall'header X-Forwarded-For invece di vedere l'indirizzo del balancer.",
               context: 'middleware',
               difficulty: 'intermediate',
               code: "app.set('trust proxy', 1);",
@@ -4241,22 +4344,22 @@ export default {
           items: [
             {
               english: 'MongoDB',
-              italian: 'MongoDB (database documentale NoSQL)',
+              italian: 'Database documentale NoSQL (MongoDB)',
               pronunciation: '/ˈmɒŋɡoʊ diː biː/',
               phonetic: 'MON-go-DI-BI',
               example:
-                'MongoDB is a popular NoSQL database. = MongoDB è un popolare database NoSQL.',
+                'We chose MongoDB for the product catalog because its flexible document model adapts easily when marketing adds new product attributes. = Abbiamo scelto MongoDB per il catalogo prodotti perché il suo modello documentale flessibile si adatta facilmente quando il marketing aggiunge nuovi attributi prodotto.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'MongoDB',
             },
             {
               english: 'Mongoose',
-              italian: 'Mongoose / ODM MongoDB per Node',
+              italian: 'ODM per MongoDB in Node.js (Mongoose)',
               pronunciation: '/ˈmʌŋɡuːs/',
               phonetic: 'MON-gus',
               example:
-                "Mongoose is the most-used ODM for MongoDB. = Mongoose è l'ODM più usato per MongoDB.",
+                'Using Mongoose, we define schemas with built-in validation so the application layer catches missing fields before they reach the database. = Usando Mongoose, definiamo schemi con validazione integrata così il livello applicativo cattura i campi mancanti prima che raggiungano il database.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'Mongoose',
@@ -4264,11 +4367,11 @@ export default {
             },
             {
               english: 'ODM',
-              italian: 'ODM / Object Document Mapper',
+              italian: 'Mappatore oggetto-documento (ODM)',
               pronunciation: '/oʊ diː ɛm/',
               phonetic: 'O-DI-EM',
               example:
-                'ODM stands for Object-Document Mapper. = ODM sta per Object-Document Mapper.',
+                'An ODM maps JavaScript objects to database documents, so you work with familiar class instances instead of raw BSON. = Un ODM mappa oggetti JavaScript su documenti database, così lavori con istanze di classe familiari invece che con BSON grezzo.',
               context: 'database',
               difficulty: 'intermediate',
               note: 'Equivalente NoSQL di un ORM.',
@@ -4278,7 +4381,8 @@ export default {
               italian: 'Documento',
               pronunciation: '/ˈdɒkjumənt/',
               phonetic: 'DO-kiu-ment',
-              example: 'A MongoDB document is BSON. = Un documento MongoDB è BSON.',
+              example:
+                'Each user profile is stored as a single document containing nested objects for address, preferences, and payment methods. = Ogni profilo utente è salvato come un singolo documento contenente oggetti annidati per indirizzo, preferenze e metodi di pagamento.',
               context: 'database',
               difficulty: 'intermediate',
             },
@@ -4287,18 +4391,19 @@ export default {
               italian: 'Collezione',
               pronunciation: '/kəˈlekʃən/',
               phonetic: 'kol-LEK-scen',
-              example: 'A collection groups documents. = Una collezione raggruppa documenti.',
+              example:
+                'The orders collection holds millions of documents, so we added a compound index on customerId and createdAt to speed up dashboard queries. = La collezione ordini contiene milioni di documenti, quindi abbiamo aggiunto un indice composto su customerId e createdAt per velocizzare le query della dashboard.',
               context: 'database',
               difficulty: 'intermediate',
               note: 'Equivalente di una tabella SQL.',
             },
             {
               english: 'Schema',
-              italian: 'schema / struttura dei dati',
+              italian: 'Struttura dei dati (schema)',
               pronunciation: '/ˈskiːmə/',
               phonetic: 'SKI-ma',
               example:
-                'A Mongoose schema defines document shape. = Uno schema Mongoose definisce la forma del documento.',
+                'The Mongoose schema enforces that every product has a non-empty name, a positive price, and a category from a predefined enum list. = Lo schema Mongoose impone che ogni prodotto abbia un nome non vuoto, un prezzo positivo e una categoria da un elenco enum predefinito.',
               context: 'database',
               difficulty: 'intermediate',
               code: 'const userSchema = new mongoose.Schema({});',
@@ -4309,17 +4414,18 @@ export default {
               pronunciation: '/ˈmɒdl/',
               phonetic: 'MO-del',
               example:
-                'A Mongoose model wraps a collection. = Un modello Mongoose incapsula una collezione.',
+                'After defining the schema, compile it into a model so you can call User.create(), User.find(), and other CRUD methods on the collection. = Dopo aver definito lo schema, compilalo in un modello così puoi chiamare User.create(), User.find() e altri metodi CRUD sulla collezione.',
               context: 'database',
               difficulty: 'intermediate',
               code: "const User = mongoose.model('User', userSchema);",
             },
             {
               english: 'Query',
-              italian: 'query / interrogazione',
+              italian: 'Interrogazione (query)',
               pronunciation: '/ˈkwɪri/',
               phonetic: 'KUI-ri',
-              example: 'User.find runs a query. = User.find esegue una query.',
+              example:
+                'Chaining .where(), .sort(), and .limit() on a query lets you build complex filters without writing raw MongoDB syntax. = Concatenare .where(), .sort() e .limit() su una query ti permette di costruire filtri complessi senza scrivere sintassi MongoDB grezza.',
               context: 'database',
               difficulty: 'intermediate',
               code: 'await User.find({ active: true });',
@@ -4330,18 +4436,18 @@ export default {
               pronunciation: '/ˈpɒpjəleɪt/',
               phonetic: 'POP-iu-leit',
               example:
-                'populate joins referenced documents. = populate unisce documenti di riferimento.',
+                'Calling populate on the posts query replaces each author ObjectId with the full user document, similar to a SQL JOIN. = Chiamare populate sulla query dei post sostituisce ogni ObjectId autore con il documento utente completo, simile a una JOIN SQL.',
               context: 'database',
               difficulty: 'intermediate',
               code: "await Post.find().populate('author');",
             },
             {
               english: 'Aggregate',
-              italian: 'Aggrega',
+              italian: 'Aggregazione',
               pronunciation: '/ˈæɡrɪɡeɪt/',
               phonetic: 'AG-gri-geit',
               example:
-                'Aggregations process data in pipelines. = Le aggregazioni elaborano dati in pipeline.',
+                'The analytics dashboard runs an aggregate pipeline that groups orders by month and calculates total revenue for each period. = La dashboard analytics esegue una pipeline di aggregazione che raggruppa gli ordini per mese e calcola il fatturato totale per ogni periodo.',
               context: 'database',
               difficulty: 'advanced',
               code: 'User.aggregate([{ $group: {} }]);',
@@ -4355,63 +4461,65 @@ export default {
           items: [
             {
               english: 'SQL',
-              italian: 'SQL / linguaggio di query relazionale',
+              italian: 'Linguaggio di interrogazione strutturato (SQL)',
               pronunciation: '/ɛs kjuː ɛl/',
               phonetic: 'ES-KIU-EL',
               example:
-                'SQL is the query language for relational DBs. = SQL è il linguaggio di query per DB relazionali.',
+                'Even when using an ORM, knowing raw SQL helps you debug slow queries and write efficient joins that the abstraction layer cannot generate automatically. = Anche quando usi un ORM, conoscere il SQL grezzo ti aiuta a fare debug di query lente e scrivere join efficienti che il livello di astrazione non può generare automaticamente.',
               context: 'database',
               difficulty: 'intermediate',
             },
             {
               english: 'PostgreSQL',
-              italian: 'PostgreSQL (database relazionale open source)',
+              italian: 'Database relazionale open source (PostgreSQL)',
               pronunciation: '/ˈpoʊstɡrɛs kjuː ɛl/',
               phonetic: 'POST-gres-KIU-EL',
               example:
-                'PostgreSQL is a powerful open-source RDBMS. = PostgreSQL è un potente RDBMS open source.',
+                'We migrated from MySQL to PostgreSQL because we needed JSONB columns and full-text search without installing extra extensions. = Siamo migrati da MySQL a PostgreSQL perché avevamo bisogno di colonne JSONB e ricerca full-text senza installare estensioni aggiuntive.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'PostgreSQL',
             },
             {
               english: 'MySQL',
-              italian: 'MySQL (database relazionale open source)',
+              italian: 'Database relazionale open source (MySQL)',
               pronunciation: '/maɪ ɛs kjuː ɛl/',
               phonetic: 'MAI-ES-KIU-EL',
               example:
-                'MySQL is widely used in web apps. = MySQL è ampiamente usato nelle app web.',
+                'Many WordPress and legacy PHP applications rely on MySQL, so our Node.js migration service connects to both the old MySQL instance and the new PostgreSQL cluster. = Molte applicazioni WordPress e PHP legacy si basano su MySQL, quindi il nostro servizio di migrazione Node.js si connette sia alla vecchia istanza MySQL che al nuovo cluster PostgreSQL.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'MySQL',
             },
             {
               english: 'SQLite',
-              italian: 'SQLite (database embedded a file singolo)',
+              italian: 'Database embedded a file singolo (SQLite)',
               pronunciation: '/ɛs kjuː ɛl laɪt/',
               phonetic: 'ES-KIU-EL-LAIT',
-              example: 'SQLite is an embedded database. = SQLite è un database embedded.',
+              example:
+                "For local development and testing, SQLite stores the entire database in a single file, so new developers can start coding without installing a server. = Per lo sviluppo locale e i test, SQLite salva l'intero database in un singolo file, così i nuovi sviluppatori possono iniziare a programmare senza installare un server.",
               context: 'database',
               difficulty: 'intermediate',
               tool: 'SQLite',
             },
             {
               english: 'ORM',
-              italian: 'ORM / Object-Relational Mapper',
+              italian: 'Mappatore oggetto-relazionale (ORM)',
               pronunciation: '/oʊ ɑːr ɛm/',
               phonetic: 'O-AR-EM',
               example:
-                'ORM stands for Object-Relational Mapper. = ORM sta per Mappatore Oggetti-Relazionale.',
+                'An ORM lets you query the database using JavaScript methods instead of writing raw SQL, reducing the chance of injection vulnerabilities. = Un ORM ti permette di interrogare il database usando metodi JavaScript invece di scrivere SQL grezzo, riducendo il rischio di vulnerabilità di injection.',
               context: 'database',
               difficulty: 'intermediate',
               note: 'Mappa righe di tabella in oggetti JS.',
             },
             {
               english: 'Sequelize',
-              italian: 'Sequelize / ORM Node classico',
+              italian: 'ORM classico per Node.js (Sequelize)',
               pronunciation: '/ˈsiːkwəlaɪz/',
               phonetic: 'SI-kuel-aiz',
-              example: 'Sequelize is a popular SQL ORM. = Sequelize è un popolare ORM SQL.',
+              example:
+                'With Sequelize, defining a User model with associations automatically generates the foreign keys and join tables in the underlying SQL database. = Con Sequelize, definire un modello User con associazioni genera automaticamente le chiavi esterne e le tabelle di giunzione nel database SQL sottostante.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'Sequelize',
@@ -4419,21 +4527,22 @@ export default {
             },
             {
               english: 'TypeORM',
-              italian: 'TypeORM / ORM TypeScript',
+              italian: 'ORM per TypeScript con decoratori (TypeORM)',
               pronunciation: '/taɪp oʊ ɑːr ɛm/',
               phonetic: 'TAIP-O-AR-EM',
               example:
-                'TypeORM uses decorators with TypeScript. = TypeORM usa decoratori con TypeScript.',
+                'In a NestJS project, TypeORM decorators like @Entity and @Column turn a plain class into a fully mapped database table with type-safe queries. = In un progetto NestJS, i decoratori TypeORM come @Entity e @Column trasformano una classe semplice in una tabella database completamente mappata con query type-safe.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'TypeORM',
             },
             {
               english: 'Knex',
-              italian: 'Knex / SQL query builder',
+              italian: 'Costruttore di query SQL per Node.js (Knex)',
               pronunciation: '/nɛks/',
               phonetic: 'NEKS',
-              example: 'Knex is a SQL query builder. = Knex è un costruttore di query SQL.',
+              example:
+                'Teams that prefer writing their own SQL often use Knex as a lightweight query builder that handles parameterized queries and connection pooling. = I team che preferiscono scrivere il proprio SQL spesso usano Knex come costruttore di query leggero che gestisce query parametrizzate e pool di connessioni.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'Knex',
@@ -4445,18 +4554,18 @@ export default {
               pronunciation: '/maɪˈɡreɪʃən/',
               phonetic: 'mai-GREI-scen',
               example:
-                'A migration changes the database schema. = Una migrazione cambia lo schema del database.',
+                'Each migration file adds or modifies tables in a versioned, reversible way so the team can roll forward or back on any deployment. = Ogni file di migrazione aggiunge o modifica tabelle in modo versionato e reversibile così il team può avanzare o tornare indietro su qualsiasi deploy.',
               context: 'database',
               difficulty: 'intermediate',
               command: 'npx sequelize db:migrate',
             },
             {
               english: 'Seed',
-              italian: 'seed / dato iniziale',
+              italian: 'Dato iniziale (seed)',
               pronunciation: '/siːd/',
               phonetic: 'SID',
               example:
-                'A seed script populates initial data. = Uno script seed popola dati iniziali.',
+                "Running the seed script populates the database with sample users and products so QA testers have realistic data from the start. = Eseguire lo script seed popola il database con utenti e prodotti di esempio così i tester QA hanno dati realistici fin dall'inizio.",
               context: 'database',
               difficulty: 'intermediate',
               command: 'npx sequelize db:seed:all',
@@ -4470,10 +4579,11 @@ export default {
           items: [
             {
               english: 'Prisma',
-              italian: 'Prisma (ORM TypeScript moderno)',
+              italian: 'ORM TypeScript moderno (Prisma)',
               pronunciation: '/ˈprɪzmə/',
               phonetic: 'PRIZ-ma',
-              example: 'Prisma is a type-safe ORM. = Prisma è un ORM type-safe.',
+              example:
+                'After switching to Prisma, our team gets full autocomplete on every query, catching typos and missing fields at compile time instead of at runtime. = Dopo essere passati a Prisma, il nostro team ottiene autocompletamento completo su ogni query, catturando errori di battitura e campi mancanti a compile time invece che a runtime.',
               context: 'database',
               difficulty: 'intermediate',
               tool: 'Prisma',
@@ -4481,62 +4591,66 @@ export default {
             },
             {
               english: 'Schema File',
-              italian: 'File schema',
+              italian: 'File di definizione dello schema',
               pronunciation: '/ˈskiːmə faɪl/',
               phonetic: 'SKI-ma-FAIL',
               example:
-                'schema.prisma defines your data model. = schema.prisma definisce il modello dati.',
+                'All table definitions, relations, and enums live in a single schema file that serves as the source of truth for both the database and the generated client. = Tutte le definizioni di tabelle, relazioni e enum vivono in un singolo file schema che funge da fonte di verità sia per il database che per il client generato.',
               context: 'database',
               difficulty: 'intermediate',
               code: 'model User { id Int @id }',
             },
             {
               english: 'Prisma Client',
-              italian: 'Client Prisma',
+              italian: 'Client generato automaticamente (Prisma Client)',
               pronunciation: '/ˈprɪzmə ˈklaɪənt/',
               phonetic: 'PRIZ-ma-KLAI-ent',
-              example: 'The Prisma Client is auto-generated. = Il Prisma Client è auto-generato.',
+              example:
+                'Every time you change the schema, run prisma generate to rebuild the Prisma Client with updated types that match your new database structure. = Ogni volta che cambi lo schema, esegui prisma generate per ricostruire il Prisma Client con tipi aggiornati che corrispondono alla tua nuova struttura database.',
               context: 'database',
               difficulty: 'intermediate',
               command: 'npx prisma generate',
             },
             {
               english: 'Prisma Migrate',
-              italian: 'Prisma Migrate / strumento di migration',
+              italian: 'Strumento di migrazione di Prisma (Prisma Migrate)',
               pronunciation: '/ˈprɪzmə maɪˈɡreɪt/',
               phonetic: 'PRIZ-ma-mai-GREIT',
-              example: 'Prisma Migrate evolves the schema. = Prisma Migrate fa evolvere lo schema.',
+              example:
+                "Running Prisma Migrate in development creates a timestamped SQL migration file and applies it, so your local database always matches the latest schema. = Eseguire Prisma Migrate in sviluppo crea un file di migrazione SQL con timestamp e lo applica, così il tuo database locale corrisponde sempre all'ultimo schema.",
               context: 'database',
               difficulty: 'intermediate',
               command: 'npx prisma migrate dev',
             },
             {
               english: 'Prisma Studio',
-              italian: 'Prisma Studio / GUI database',
+              italian: 'Interfaccia grafica del database (Prisma Studio)',
               pronunciation: '/ˈprɪzmə ˈstuːdiˌoʊ/',
               phonetic: 'PRIZ-ma-STU-dio',
-              example: 'Prisma Studio is a GUI for your DB. = Prisma Studio è una GUI per il DB.',
+              example:
+                'Open Prisma Studio in your browser to view, edit, and filter records visually, which is faster than writing ad-hoc queries during development. = Apri Prisma Studio nel browser per visualizzare, modificare e filtrare record visivamente, il che è più veloce che scrivere query ad-hoc durante lo sviluppo.',
               context: 'database',
               difficulty: 'intermediate',
               command: 'npx prisma studio',
             },
             {
               english: 'findUnique',
-              italian: 'findUnique / trova singolo record per chiave',
+              italian: 'Ricerca per campo univoco (findUnique)',
               pronunciation: '/faɪnd juːˈniːk/',
               phonetic: 'FAIND-iu-NIK',
               example:
-                'findUnique fetches by unique field. = findUnique recupera per campo univoco.',
+                "The profile page calls findUnique with the user ID from the URL parameter, returning exactly one record or null if the account was deleted. = La pagina profilo chiama findUnique con l'ID utente dal parametro URL, restituendo esattamente un record o null se l'account è stato eliminato.",
               context: 'database',
               difficulty: 'intermediate',
               code: 'prisma.user.findUnique({ where: { id } });',
             },
             {
               english: 'findMany',
-              italian: 'findMany / trova più record',
+              italian: 'Ricerca di più record (findMany)',
               pronunciation: '/faɪnd ˈmeni/',
               phonetic: 'FAIND-MEN-i',
-              example: 'findMany returns matching rows. = findMany ritorna righe che combaciano.',
+              example:
+                'The admin panel calls findMany with a where clause and pagination to list active users ten at a time. = Il pannello admin chiama findMany con una clausola where e paginazione per elencare gli utenti attivi dieci alla volta.',
               context: 'database',
               difficulty: 'intermediate',
               code: 'prisma.user.findMany();',
@@ -4546,7 +4660,8 @@ export default {
               italian: 'Relazione',
               pronunciation: '/rɪˈleɪʃən/',
               phonetic: 'ri-LEI-scen',
-              example: 'A relation links models. = Una relazione collega modelli.',
+              example:
+                'Defining a one-to-many relation between User and Post in the schema lets Prisma generate include helpers that load posts alongside their authors. = Definire una relazione uno-a-molti tra User e Post nello schema permette a Prisma di generare helper include che caricano i post insieme ai loro autori.',
               context: 'database',
               difficulty: 'intermediate',
               code: 'posts: Post[]',
@@ -4557,7 +4672,7 @@ export default {
               pronunciation: '/trænˈzækʃən/',
               phonetic: 'tran-ZAK-scen',
               example:
-                'Use transactions for atomic operations. = Usa transazioni per operazioni atomiche.',
+                "Wrapping the order creation and inventory decrement in a transaction guarantees that both succeed or both roll back, preventing overselling. = Avvolgere la creazione dell'ordine e il decremento dell'inventario in una transazione garantisce che entrambi riescano o entrambi facciano rollback, prevenendo il sovra-venduto.",
               context: 'database',
               difficulty: 'intermediate',
               code: 'await prisma.$transaction([a, b]);',
@@ -4567,7 +4682,8 @@ export default {
               italian: 'Query grezza',
               pronunciation: '/rɔː ˈkwɪri/',
               phonetic: 'RO-KUI-ri',
-              example: 'Use raw queries when needed. = Usa query grezze quando serve.',
+              example:
+                'For the complex reporting view, we fall back to a raw query because the window function and CTE syntax is not yet supported by the Prisma query builder. = Per la vista di reportistica complessa, ricorriamo a una query grezza perché la sintassi delle window function e CTE non è ancora supportata dal query builder di Prisma.',
               context: 'database',
               difficulty: 'intermediate',
               code: 'prisma.$queryRaw`SELECT * FROM users`',
@@ -4585,7 +4701,7 @@ export default {
               pronunciation: '/kəˈnekʃən strɪŋ/',
               phonetic: 'kon-NEK-scen-STRING',
               example:
-                'A connection string holds DB credentials. = Una stringa di connessione contiene credenziali DB.',
+                "Store the connection string in an environment variable so credentials never appear in committed source code. = Salva la stringa di connessione in una variabile d'ambiente così le credenziali non appaiono mai nel codice sorgente committato.",
               context: 'database',
               difficulty: 'intermediate',
               code: 'postgres://user:pass@host:5432/db',
@@ -4596,18 +4712,18 @@ export default {
               pronunciation: '/kəˈnekʃən puːl/',
               phonetic: 'kon-NEK-scen-PUL',
               example:
-                'A connection pool reuses connections. = Un pool di connessioni riusa connessioni.',
+                'A connection pool keeps ten persistent TCP sockets to the database, eliminating the 30 ms handshake overhead on every query. = Un pool di connessioni mantiene dieci socket TCP persistenti verso il database, eliminando il sovraccarico di handshake di 30 ms su ogni query.',
               context: 'database',
               difficulty: 'intermediate',
               note: 'Evita di aprire/chiudere connessioni ad ogni query.',
             },
             {
               english: 'Pool Size',
-              italian: 'Dimensione pool',
+              italian: 'Dimensione del pool',
               pronunciation: '/puːl saɪz/',
               phonetic: 'PUL-SAIZ',
               example:
-                'Pool size limits concurrent connections. = La dimensione pool limita le connessioni concorrenti.',
+                "Setting the pool size to match your server's CPU cores avoids contention while still handling concurrent requests efficiently. = Impostare la dimensione del pool in base ai core CPU del server evita contesa pur gestendo le richieste concorrenti in modo efficiente.",
               context: 'database',
               difficulty: 'intermediate',
               code: 'pool: { max: 10 }',
@@ -4618,36 +4734,37 @@ export default {
               pronunciation: '/ˈaɪdl ˈtaɪmaʊt/',
               phonetic: 'AI-del-TAIM-aut',
               example:
-                'Idle timeout closes unused connections. = Il timeout di inattività chiude connessioni inutilizzate.',
+                "Setting a 30-second idle timeout frees connections that sit unused, preventing the pool from being exhausted during off-peak hours. = Impostare un timeout di inattività di 30 secondi libera le connessioni inutilizzate, impedendo l'esaurimento del pool durante le ore di basso traffico.",
               context: 'database',
               difficulty: 'intermediate',
             },
             {
               english: 'Reconnect',
-              italian: 'Riconnetti',
+              italian: 'Riconnessione',
               pronunciation: '/ˌriːkəˈnekt/',
               phonetic: 'ri-kon-NEKT',
               example:
-                'Auto-reconnect handles dropped connections. = La riconnessione automatica gestisce connessioni cadute.',
+                "After a brief network outage, the driver's automatic reconnect logic restores the database connection without requiring a full application restart. = Dopo una breve interruzione di rete, la logica di riconnessione automatica del driver ripristina la connessione al database senza richiedere un riavvio completo dell'applicazione.",
               context: 'database',
               difficulty: 'intermediate',
             },
             {
               english: 'Replica Set',
-              italian: 'replica set / gruppo di nodi replicati',
+              italian: 'Gruppo di nodi replicati (replica set)',
               pronunciation: '/ˈreplɪkə sɛt/',
               phonetic: 'RE-pli-ka-SET',
               example:
-                'A replica set provides high availability. = Un replica set fornisce alta disponibilità.',
+                "Our MongoDB replica set has three nodes, so if the primary goes down, one secondary is automatically elected and the application keeps running. = Il nostro replica set MongoDB ha tre nodi, quindi se il primario va giù, un secondario viene eletto automaticamente e l'applicazione continua a funzionare.",
               context: 'database',
               difficulty: 'advanced',
             },
             {
               english: 'Sharding',
-              italian: 'sharding / partizionamento orizzontale',
+              italian: 'Partizionamento orizzontale (sharding)',
               pronunciation: '/ˈʃɑːrdɪŋ/',
               phonetic: 'SCIAR-ding',
-              example: 'Sharding splits data across servers. = Lo sharding divide dati tra server.',
+              example:
+                'When our single database could no longer handle 50,000 writes per second, we introduced sharding to distribute data across four servers by region. = Quando il nostro singolo database non poteva più gestire 50.000 scritture al secondo, abbiamo introdotto lo sharding per distribuire i dati su quattro server per regione.',
               context: 'database',
               difficulty: 'advanced',
             },
@@ -4656,28 +4773,30 @@ export default {
               italian: 'Indice',
               pronunciation: '/ˈɪndeks/',
               phonetic: 'IN-deks',
-              example: 'Indexes speed up queries. = Gli indici velocizzano le query.',
+              example:
+                'Adding a composite index on (status, created_at) cut the dashboard query time from 800 ms to 12 ms on the orders table. = Aggiungere un indice composto su (status, created_at) ha ridotto il tempo della query della dashboard da 800 ms a 12 ms sulla tabella ordini.',
               context: 'database',
               difficulty: 'intermediate',
               code: 'CREATE INDEX idx_email ON users(email);',
             },
             {
               english: 'N+1 Query',
-              italian: 'Query N+1',
+              italian: 'Problema delle query N+1',
               pronunciation: '/ɛn plʌs wʌn ˈkwɪri/',
               phonetic: 'EN-PLAS-UAN KUI-ri',
-              example: 'N+1 queries hurt performance. = Le query N+1 danneggiano le prestazioni.',
+              example:
+                'Loading 100 posts and then fetching each author separately creates an N+1 query problem that floods the database with 101 individual requests. = Caricare 100 post e poi recuperare ogni autore separatamente crea un problema di query N+1 che sommerge il database con 101 richieste individuali.',
               context: 'database',
               difficulty: 'advanced',
               note: 'Risolto con join o eager loading.',
             },
             {
               english: 'Eager Loading',
-              italian: 'Caricamento eager',
+              italian: 'Caricamento anticipato (eager loading)',
               pronunciation: '/ˈiːɡər ˈloʊdɪŋ/',
               phonetic: 'I-ger LOUD-ing',
               example:
-                'Eager loading fetches related data. = Il caricamento eager recupera dati correlati.',
+                'Using eager loading with include: { posts: true } fetches users and their posts in a single query, solving the N+1 problem instantly. = Usare il caricamento anticipato con include: { posts: true } recupera utenti e i loro post in una singola query, risolvendo istantaneamente il problema N+1.',
               context: 'database',
               difficulty: 'advanced',
               code: '{ include: { posts: true } }',
@@ -4703,7 +4822,8 @@ export default {
               italian: 'Autenticazione',
               pronunciation: '/ɔːˌθentɪˈkeɪʃən/',
               phonetic: 'O-ten-ti-KEI-scen',
-              example: "Authentication verifies who you are. = L'autenticazione verifica chi sei.",
+              example:
+                "Before accessing any protected resource, the server performs authentication by verifying the user's credentials against the database. = Prima di accedere a qualsiasi risorsa protetta, il server esegue l'autenticazione verificando le credenziali dell'utente rispetto al database.",
               context: 'security',
               difficulty: 'intermediate',
               note: 'Spesso abbreviato authn.',
@@ -4713,8 +4833,7 @@ export default {
               italian: 'Autorizzazione',
               pronunciation: '/ˌɔːθəraɪˈzeɪʃən/',
               phonetic: 'O-to-rai-ZEI-scen',
-              example:
-                "Authorization controls what you can do. = L'autorizzazione controlla cosa puoi fare.",
+              example: `Even after logging in successfully, the authorization layer checks whether the user has the "admin" role before showing the management panel. = Anche dopo aver effettuato l'accesso con successo, il livello di autorizzazione verifica se l'utente ha il ruolo "admin" prima di mostrare il pannello di gestione.`,
               context: 'security',
               difficulty: 'intermediate',
               note: 'Spesso abbreviato authz. Diverso da authn.',
@@ -4725,39 +4844,39 @@ export default {
               pronunciation: '/ˈseʃən/',
               phonetic: 'SES-scen',
               example:
-                'A session stores user state on the server. = Una sessione conserva lo stato utente sul server.',
+                "After login, the server creates a session that stores the user ID and role in memory, so subsequent requests do not need to re-authenticate. = Dopo il login, il server crea una sessione che salva l'ID utente e il ruolo in memoria, così le richieste successive non devono ri-autenticarsi.",
               context: 'security',
               difficulty: 'intermediate',
               tool: 'express-session',
             },
             {
               english: 'Session ID',
-              italian: 'ID sessione',
+              italian: 'Identificativo di sessione',
               pronunciation: '/ˈseʃən aɪ diː/',
               phonetic: 'SES-scen-AI-DI',
               example:
-                'A session ID identifies a session in the cookie. = Un session ID identifica una sessione nel cookie.',
+                "The browser sends the session ID cookie with every request so the server can look up the corresponding session data in Redis. = Il browser invia il cookie dell'identificativo di sessione con ogni richiesta così il server può recuperare i dati di sessione corrispondenti in Redis.",
               context: 'security',
               difficulty: 'intermediate',
             },
             {
               english: 'Cookie',
-              italian: 'cookie / dati persistenti del browser',
+              italian: 'Dato persistente del browser (cookie)',
               pronunciation: '/ˈkʊki/',
               phonetic: 'KU-ki',
               example:
-                'Cookies store data in the browser. = I cookie memorizzano dati nel browser.',
+                'Setting a cookie with a one-week expiry lets returning visitors stay logged in without entering their password each time. = Impostare un cookie con scadenza di una settimana permette ai visitatori di ritorno di restare loggati senza inserire la password ogni volta.',
               context: 'security',
               difficulty: 'intermediate',
               code: "res.cookie('sid', id);",
             },
             {
               english: 'HttpOnly',
-              italian: 'HttpOnly / cookie inaccessibile a JS',
+              italian: 'Cookie inaccessibile a JavaScript (HttpOnly)',
               pronunciation: '/eɪtʃ tiː tiː piː ˈoʊnli/',
               phonetic: 'EICI-TI-TI-PI-ON-li',
               example:
-                "HttpOnly prevents JS access to cookies. = HttpOnly impedisce l'accesso JS ai cookie.",
+                'Marking the session cookie as HttpOnly ensures that even if an XSS vulnerability exists, malicious scripts cannot read the token. = Marcare il cookie di sessione come HttpOnly assicura che anche se esiste una vulnerabilità XSS, gli script malevoli non possono leggere il token.',
               context: 'security',
               difficulty: 'intermediate',
               code: '{ httpOnly: true }',
@@ -4765,43 +4884,44 @@ export default {
             },
             {
               english: 'Secure Flag',
-              italian: 'Flag Secure',
+              italian: 'Flag per connessione sicura (Secure)',
               pronunciation: '/sɪˈkjʊər flæɡ/',
               phonetic: 'si-KIUR-FLAG',
               example:
-                'Secure cookies are sent only over HTTPS. = I cookie Secure sono inviati solo su HTTPS.',
+                'Enabling the secure flag on your cookie guarantees the browser only sends it over HTTPS, preventing interception on unencrypted connections. = Abilitare il flag secure sul cookie garantisce che il browser lo invii solo su HTTPS, prevenendo intercettazioni su connessioni non crittate.',
               context: 'security',
               difficulty: 'intermediate',
               code: '{ secure: true }',
             },
             {
               english: 'SameSite',
-              italian: 'SameSite / attributo cookie anti-CSRF',
+              italian: 'Attributo cookie anti-CSRF (SameSite)',
               pronunciation: '/seɪm saɪt/',
               phonetic: 'SEIM-SAIT',
-              example: 'SameSite mitigates CSRF attacks. = SameSite mitiga attacchi CSRF.',
+              example:
+                'Setting SameSite to "strict" on the session cookie blocks it from being sent in cross-origin requests, effectively stopping most CSRF attacks. = Impostare SameSite su "strict" nel cookie di sessione impedisce che venga inviato in richieste cross-origin, bloccando efficacemente la maggior parte degli attacchi CSRF.',
               context: 'security',
               difficulty: 'intermediate',
               code: "{ sameSite: 'lax' }",
             },
             {
               english: 'CSRF',
-              italian: 'CSRF / Cross-Site Request Forgery',
+              italian: 'Falsificazione richieste cross-site (CSRF)',
               pronunciation: '/siː ɛs ɑːr ɛf/',
               phonetic: 'SI-ES-AR-EF',
               example:
-                'CSRF tricks users into making requests. = CSRF inganna gli utenti a fare richieste.',
+                "A malicious page can exploit CSRF by embedding a hidden form that submits a money transfer using the victim's authenticated session. = Una pagina malevola può sfruttare il CSRF incorporando un modulo nascosto che invia un trasferimento di denaro usando la sessione autenticata della vittima.",
               context: 'security',
               difficulty: 'intermediate',
               note: 'Cross-Site Request Forgery.',
             },
             {
               english: 'CSRF Token',
-              italian: 'Token CSRF',
+              italian: 'Token anti-CSRF',
               pronunciation: '/siː ɛs ɑːr ɛf ˈtoʊkən/',
               phonetic: 'SI-ES-AR-EF-TOU-ken',
               example:
-                "A CSRF token validates form submissions. = Un token CSRF valida l'invio di form.",
+                'The server generates a unique CSRF token for each form, and rejects submissions where the token is missing or does not match the session. = Il server genera un token CSRF unico per ogni modulo e rifiuta gli invii in cui il token manca o non corrisponde alla sessione.',
               context: 'security',
               difficulty: 'intermediate',
               tool: 'csurf',
@@ -4815,10 +4935,11 @@ export default {
           items: [
             {
               english: 'JWT',
-              italian: 'JWT / JSON Web Token',
+              italian: 'Token web in formato JSON (JWT)',
               pronunciation: '/dʒeɪ ˈdʌbljuː tiː/',
               phonetic: 'GEI-DAB-iu-TI',
-              example: 'JWT means JSON Web Token. = JWT significa JSON Web Token.',
+              example:
+                "After successful login, the server issues a JWT that the client stores and sends with every subsequent request in the Authorization header. = Dopo un login riuscito, il server emette un JWT che il client salva e invia con ogni richiesta successiva nell'header Authorization.",
               context: 'security',
               difficulty: 'intermediate',
               tool: 'jsonwebtoken',
@@ -4826,51 +4947,54 @@ export default {
             },
             {
               english: 'Token',
-              italian: "token / credenziale d'accesso",
+              italian: 'Credenziale di accesso (token)',
               pronunciation: '/ˈtoʊkən/',
               phonetic: 'TOU-ken',
               example:
-                "A token is a string proving identity. = Un token è una stringa che prova l'identità.",
+                "The authentication middleware extracts the token from the request header, decodes it, and attaches the user profile to the request object. = Il middleware di autenticazione estrae il token dall'header della richiesta, lo decodifica e allega il profilo utente all'oggetto request.",
               context: 'security',
               difficulty: 'intermediate',
             },
             {
               english: 'Header (JWT)',
-              italian: 'Header JWT',
+              italian: 'Intestazione del JWT',
               pronunciation: '/ˈhedər/',
               phonetic: 'ED-der',
               example:
-                "The JWT header declares the algorithm. = L'header JWT dichiara l'algoritmo.",
+                "The JWT header specifies the signing algorithm (HS256 or RS256), so the server knows which key to use during verification. = L'intestazione del JWT specifica l'algoritmo di firma (HS256 o RS256), così il server sa quale chiave usare durante la verifica.",
               context: 'security',
               difficulty: 'intermediate',
               code: '{ "alg": "HS256", "typ": "JWT" }',
             },
             {
               english: 'Payload',
-              italian: 'payload / corpo del messaggio',
+              italian: 'Corpo del messaggio (payload)',
               pronunciation: '/ˈpeɪloʊd/',
               phonetic: 'PEI-loud',
-              example: 'The payload contains the claims. = Il payload contiene le claim.',
+              example:
+                "The payload carries claims like the user ID, role, and expiration time, all base64-encoded but not encrypted, so never store secrets in it. = Il payload trasporta claim come l'ID utente, il ruolo e il tempo di scadenza, tutti codificati in base64 ma non crittati, quindi non salvare mai segreti al suo interno.",
               context: 'security',
               difficulty: 'intermediate',
               code: '{ "sub": "123", "exp": 1700000000 }',
             },
             {
               english: 'Signature',
-              italian: 'Firma',
+              italian: 'Firma digitale',
               pronunciation: '/ˈsɪɡnətʃər/',
               phonetic: 'SIG-na-cer',
-              example: 'The signature verifies the token. = La firma verifica il token.',
+              example:
+                'If someone tampers with the payload, the signature will not match and jwt.verify will throw an error, rejecting the forged token. = Se qualcuno manomette il payload, la firma non corrisponderà e jwt.verify lancerà un errore, rifiutando il token contraffatto.',
               context: 'security',
               difficulty: 'intermediate',
               note: 'Calcolata con secret key o chiave privata.',
             },
             {
               english: 'Sign',
-              italian: 'Firma (verbo)',
+              italian: 'Firmare',
               pronunciation: '/saɪn/',
               phonetic: 'SAIN',
-              example: 'jwt.sign creates a JWT. = jwt.sign crea un JWT.',
+              example:
+                "After validating the credentials, call jwt.sign with the user's ID and a one-hour expiry to generate the authentication token. = Dopo aver validato le credenziali, chiama jwt.sign con l'ID dell'utente e una scadenza di un'ora per generare il token di autenticazione.",
               context: 'security',
               difficulty: 'intermediate',
               code: "jwt.sign({ id }, secret, { expiresIn: '1h' });",
@@ -4880,40 +5004,41 @@ export default {
               italian: 'Verifica',
               pronunciation: '/ˈverɪfaɪ/',
               phonetic: 'VE-ri-fai',
-              example: 'jwt.verify checks the signature. = jwt.verify controlla la firma.',
+              example:
+                'On every protected route, the middleware calls jwt.verify to ensure the token has not expired and was signed with the correct secret. = Su ogni rotta protetta, il middleware chiama jwt.verify per assicurarsi che il token non sia scaduto e sia stato firmato con il segreto corretto.',
               context: 'security',
               difficulty: 'intermediate',
               code: 'const data = jwt.verify(token, secret);',
             },
             {
               english: 'Claim',
-              italian: 'claim / dichiarazione contenuta nel JWT',
+              italian: 'Dichiarazione contenuta nel token (claim)',
               pronunciation: '/kleɪm/',
               phonetic: 'KLEIM',
               example:
-                "A claim is a piece of info in the JWT. = Una claim è un'informazione nel JWT.",
+                'The "exp" claim tells the server when the token expires, so it can reject old tokens without needing a database lookup. = La claim "exp" dice al server quando il token scade, così può rifiutare token vecchi senza bisogno di una ricerca nel database.',
               context: 'security',
               difficulty: 'intermediate',
               note: 'Esempi: sub (subject), exp (expiry), iat (issued at).',
             },
             {
               english: 'Refresh Token',
-              italian: 'refresh token / token di rinnovo',
+              italian: 'Token di rinnovo (refresh token)',
               pronunciation: '/rɪˈfreʃ ˈtoʊkən/',
               phonetic: 'ri-FRESC-TOU-ken',
               example:
-                'A refresh token gets a new access token. = Un refresh token ottiene un nuovo access token.',
+                "When the short-lived access token expires, the client sends the refresh token to the /token endpoint to obtain a new pair without asking the user to log in again. = Quando il token di accesso a breve scadenza scade, il client invia il refresh token all'endpoint /token per ottenere una nuova coppia senza chiedere all'utente di rifare il login.",
               context: 'security',
               difficulty: 'advanced',
               note: "Vita più lunga dell'access token.",
             },
             {
               english: 'Access Token',
-              italian: "access token / token d'accesso",
+              italian: 'Token di accesso (access token)',
               pronunciation: '/ˈækses ˈtoʊkən/',
               phonetic: 'AK-ses-TOU-ken',
               example:
-                'An access token authorizes API calls. = Un access token autorizza chiamate API.',
+                'The access token has a 15-minute lifespan so that even if intercepted, the window of vulnerability is extremely short. = Il token di accesso ha una durata di 15 minuti così che anche se intercettato, la finestra di vulnerabilità è estremamente breve.',
               context: 'security',
               difficulty: 'advanced',
             },
@@ -4930,17 +5055,17 @@ export default {
               pronunciation: '/ˈpæsˌwɜːrd hæʃ/',
               phonetic: 'PAS-uord-ASC',
               example:
-                "Never store plain passwords: hash them. = Non memorizzare mai password in chiaro: usa l'hash.",
+                'Storing a password hash instead of plain text means that even if the database is breached, attackers cannot directly read user credentials. = Salvare un hash della password invece del testo in chiaro significa che anche se il database viene violato, gli attaccanti non possono leggere direttamente le credenziali degli utenti.',
               context: 'security',
               difficulty: 'intermediate',
             },
             {
               english: 'bcrypt',
-              italian: 'bcrypt / hashing di password',
+              italian: 'Algoritmo di hashing per password (bcrypt)',
               pronunciation: '/ˈbiːkrɪpt/',
               phonetic: 'BI-kript',
               example:
-                'bcrypt is the standard for password hashing. = bcrypt è lo standard per fare hash di password.',
+                "We hash every new password with bcrypt at a cost factor of 12 before saving it, which takes about 250 ms per hash on modern hardware. = Facciamo l'hash di ogni nuova password con bcrypt a un fattore di costo di 12 prima di salvarla, il che richiede circa 250 ms per hash su hardware moderno.",
               context: 'security',
               difficulty: 'intermediate',
               tool: 'bcrypt',
@@ -4948,11 +5073,11 @@ export default {
             },
             {
               english: 'Salt',
-              italian: 'salt / sale per hash',
+              italian: 'Valore casuale per hash (salt)',
               pronunciation: '/sɔːlt/',
               phonetic: 'SOLT',
               example:
-                'A salt prevents rainbow table attacks. = Un salt previene attacchi rainbow table.',
+                'Each password gets a unique random salt, so two users with the same password end up with completely different hash values in the database. = Ogni password riceve un salt casuale unico, così due utenti con la stessa password finiscono con valori hash completamente diversi nel database.',
               context: 'security',
               difficulty: 'intermediate',
               code: 'await bcrypt.hash(pw, 12);',
@@ -4963,40 +5088,40 @@ export default {
               pronunciation: '/kɒst ˈfæktər/',
               phonetic: 'KOST FAK-ter',
               example:
-                'Cost factor controls hashing time. = Il fattore di costo controlla il tempo di hashing.',
+                'Increasing the cost factor from 10 to 12 doubles the computation time, making brute-force attacks significantly more expensive for attackers. = Aumentare il fattore di costo da 10 a 12 raddoppia il tempo di calcolo, rendendo gli attacchi brute-force significativamente più costosi per gli attaccanti.',
               context: 'security',
               difficulty: 'intermediate',
               note: 'Numero di iterazioni: 10-12 è sicuro nel 2026.',
             },
             {
               english: 'Argon2',
-              italian: 'Argon2 / hashing moderno per password',
+              italian: 'Algoritmo di hashing moderno per password (Argon2)',
               pronunciation: '/ˈɑːrɡən tuː/',
               phonetic: 'AR-gon-TU',
               example:
-                'Argon2 is the modern winner of the Password Hashing Competition. = Argon2 è il vincitore moderno della Password Hashing Competition.',
+                'New projects often adopt Argon2 because it won the Password Hashing Competition and is resistant to both GPU and side-channel attacks. = I nuovi progetti spesso adottano Argon2 perché ha vinto la Password Hashing Competition ed è resistente sia agli attacchi GPU che ai side-channel.',
               context: 'security',
               difficulty: 'advanced',
               tool: 'argon2',
             },
             {
               english: 'scrypt',
-              italian: 'scrypt / hashing memory-hard',
+              italian: 'Algoritmo di hashing memory-hard (scrypt)',
               pronunciation: '/ˈesˌkrɪpt/',
               phonetic: 'ES-kript',
               example:
-                "scrypt is built into Node's crypto module. = scrypt è incluso nel modulo crypto di Node.",
+                "Since scrypt is built into Node's crypto module, you can use it for password hashing without installing any additional dependencies. = Poiché scrypt è integrato nel modulo crypto di Node, puoi usarlo per l'hashing delle password senza installare dipendenze aggiuntive.",
               context: 'security',
               difficulty: 'advanced',
               code: 'crypto.scrypt(pw, salt, 64, cb);',
             },
             {
               english: 'Compare',
-              italian: 'Confronta',
+              italian: 'Confronto',
               pronunciation: '/kəmˈpeər/',
               phonetic: 'kom-PER',
               example:
-                'bcrypt.compare verifies a password. = bcrypt.compare verifica una password.',
+                "During login, bcrypt.compare hashes the submitted password with the same salt and checks whether it matches the stored hash. = Durante il login, bcrypt.compare fa l'hash della password inviata con lo stesso salt e verifica se corrisponde all'hash salvato.",
               context: 'security',
               difficulty: 'intermediate',
               code: 'await bcrypt.compare(pw, hash);',
@@ -5007,28 +5132,28 @@ export default {
               pronunciation: '/ˈtaɪmɪŋ əˈtæk/',
               phonetic: 'TAIM-ing a-TAK',
               example:
-                'Use constant-time compare to avoid timing attacks. = Usa confronti a tempo costante per evitare attacchi temporali.',
+                'A timing attack measures how long string comparison takes to figure out which characters match, so always use crypto.timingSafeEqual for secrets. = Un attacco temporale misura quanto tempo impiega il confronto di stringhe per capire quali caratteri corrispondono, quindi usa sempre crypto.timingSafeEqual per i segreti.',
               context: 'security',
               difficulty: 'advanced',
               code: 'crypto.timingSafeEqual(a, b);',
             },
             {
               english: 'Pepper',
-              italian: "pepper / segreto aggiunto all'hash",
+              italian: 'Segreto lato server aggiunto alla password (pepper)',
               pronunciation: '/ˈpepər/',
               phonetic: 'PEP-per',
               example:
-                'A pepper is a server-side secret added to passwords. = Un pepper è un segreto lato server aggiunto alle password.',
+                "Adding a pepper stored in an environment variable means that even a full database dump is useless without access to the application server's secrets. = Aggiungere un pepper salvato in una variabile d'ambiente significa che anche un dump completo del database è inutile senza accesso ai segreti del server applicativo.",
               context: 'security',
               difficulty: 'advanced',
             },
             {
               english: 'Password Policy',
-              italian: 'Politica password',
+              italian: 'Politica sulle password',
               pronunciation: '/ˈpæsˌwɜːrd ˈpɒlɪsi/',
               phonetic: 'PAS-uord PO-li-si',
               example:
-                'A password policy enforces complexity. = Una politica password impone complessità.',
+                'Our password policy requires at least 12 characters, one uppercase letter, and one number, and it rejects passwords found in known breach databases. = La nostra politica sulle password richiede almeno 12 caratteri, una lettera maiuscola e un numero, e rifiuta le password trovate nei database di violazioni note.',
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -5041,33 +5166,33 @@ export default {
           items: [
             {
               english: 'OAuth 2.0',
-              italian: 'OAuth 2.0 / protocollo di autorizzazione',
+              italian: 'protocollo di autorizzazione (OAuth 2.0)',
               pronunciation: '/oʊˈɔːθ tuː pɔɪnt oʊ/',
               phonetic: 'O-OT-TU-POINT-O',
               example:
-                'OAuth 2.0 enables delegated authorization. = OAuth 2.0 abilita autorizzazione delegata.',
+                "With OAuth 2.0, users can grant your app read-only access to their Google Drive files without ever sharing their Google password. = Con OAuth 2.0, gli utenti possono concedere alla tua app l'accesso in sola lettura ai loro file Google Drive senza mai condividere la loro password Google.",
               context: 'security',
               difficulty: 'advanced',
               note: 'Standard per "Login con Google/Facebook/etc".',
             },
             {
               english: 'OpenID Connect',
-              italian: 'OpenID Connect / livello identità su OAuth',
+              italian: 'Livello di identità su OAuth (OpenID Connect)',
               pronunciation: '/ˈoʊpən aɪ diː kəˈnekt/',
               phonetic: 'OU-pen-AI-DI-kon-NEKT',
               example:
-                'OpenID Connect adds identity to OAuth. = OpenID Connect aggiunge identità a OAuth.',
+                "While OAuth 2.0 handles authorization, OpenID Connect adds a standardized identity layer that provides the user's profile information in an ID token. = Mentre OAuth 2.0 gestisce l'autorizzazione, OpenID Connect aggiunge un livello di identità standardizzato che fornisce le informazioni del profilo utente in un token ID.",
               context: 'security',
               difficulty: 'advanced',
               note: 'Sigla OIDC.',
             },
             {
               english: 'Passport.js',
-              italian: 'Passport.js / middleware di autenticazione Node',
+              italian: 'Middleware di autenticazione per Node.js (Passport.js)',
               pronunciation: '/ˈpɑːspɔːrt dʒeɪ ɛs/',
               phonetic: 'PAS-port-GEI-ES',
               example:
-                'Passport.js handles many auth strategies. = Passport.js gestisce molte strategie di autenticazione.',
+                'Passport.js supports over 500 authentication strategies, so you can add Google, GitHub, and SAML login to the same Express app with minimal code. = Passport.js supporta oltre 500 strategie di autenticazione, così puoi aggiungere login Google, GitHub e SAML alla stessa app Express con codice minimo.',
               context: 'security',
               difficulty: 'intermediate',
               tool: 'Passport.js',
@@ -5075,11 +5200,11 @@ export default {
             },
             {
               english: 'Strategy',
-              italian: 'Strategia',
+              italian: 'Strategia di autenticazione',
               pronunciation: '/ˈstrætədʒi/',
               phonetic: 'STRA-te-gi',
               example:
-                'A Passport strategy authenticates users. = Una strategia Passport autentica utenti.',
+                'Each authentication strategy encapsulates one login method, so swapping from local auth to JWT only requires changing the strategy, not the route logic. = Ogni strategia di autenticazione incapsula un metodo di login, quindi passare da auth locale a JWT richiede solo cambiare la strategia, non la logica delle rotte.',
               context: 'security',
               difficulty: 'intermediate',
               tool: 'passport-local, passport-jwt',
@@ -5090,18 +5215,18 @@ export default {
               pronunciation: '/ˈloʊkl ˈstrætədʒi/',
               phonetic: 'LO-kal-STRA-te-gi',
               example:
-                'Local strategy uses username and password. = La strategia locale usa username e password.',
+                "The local strategy verifies the email and password against the database, then returns the user object if the credentials are valid. = La strategia locale verifica email e password rispetto al database, poi restituisce l'oggetto utente se le credenziali sono valide.",
               context: 'security',
               difficulty: 'intermediate',
               tool: 'passport-local',
             },
             {
               english: 'Google Strategy',
-              italian: 'Strategia Google',
+              italian: 'Strategia di autenticazione Google',
               pronunciation: '/ˈɡuːɡl ˈstrætədʒi/',
               phonetic: 'GU-gol-STRA-te-gi',
               example:
-                'Use the Google strategy for social login. = Usa la strategia Google per login social.',
+                'After the user clicks "Sign in with Google", the Google strategy handles the OAuth redirect, token exchange, and profile retrieval automatically. = Dopo che l\'utente clicca "Accedi con Google", la strategia Google gestisce automaticamente il redirect OAuth, lo scambio di token e il recupero del profilo.',
               context: 'security',
               difficulty: 'advanced',
               tool: 'passport-google-oauth20',
@@ -5112,39 +5237,39 @@ export default {
               pronunciation: '/ˌɔːθəraɪˈzeɪʃən koʊd/',
               phonetic: 'O-to-rai-ZEI-scen-KOUD',
               example:
-                'The authorization code is exchanged for a token. = Il codice di autorizzazione viene scambiato per un token.',
+                "After the user approves access, Google redirects to your callback URL with a short-lived authorization code that you exchange for access and refresh tokens. = Dopo che l'utente approva l'accesso, Google reindirizza al tuo URL di callback con un codice di autorizzazione a breve vita che scambi per token di accesso e di rinnovo.",
               context: 'security',
               difficulty: 'advanced',
             },
             {
               english: 'Client Secret',
-              italian: 'client secret / segreto del client OAuth',
+              italian: 'Segreto del client OAuth (client secret)',
               pronunciation: '/ˈklaɪənt ˈsiːkrɪt/',
               phonetic: 'KLAI-ent-SI-kret',
               example:
-                'The client secret authenticates your app. = Il client secret autentica la tua app.',
+                "Keep the client secret on the server side and load it from an environment variable so it is never exposed in frontend code or version control. = Mantieni il client secret lato server e caricalo da una variabile d'ambiente così non viene mai esposto nel codice frontend o nel controllo versione.",
               context: 'security',
               difficulty: 'advanced',
               note: 'Va custodito sul server, mai esposto al client.',
             },
             {
               english: 'PKCE',
-              italian: 'PKCE / Proof Key for Code Exchange',
+              italian: 'Chiave di prova per scambio codice (PKCE)',
               pronunciation: '/piː kiː siː iː/',
               phonetic: 'PIK-si',
               example:
-                'PKCE adds security for public clients. = PKCE aggiunge sicurezza per client pubblici.',
+                'Mobile and SPA clients use PKCE to prove that the same app that started the OAuth flow is the one exchanging the authorization code, preventing interception attacks. = I client mobile e SPA usano PKCE per dimostrare che la stessa app che ha iniziato il flusso OAuth è quella che scambia il codice di autorizzazione, prevenendo attacchi di intercettazione.',
               context: 'security',
               difficulty: 'advanced',
               note: 'Proof Key for Code Exchange.',
             },
             {
               english: 'MFA',
-              italian: 'Autenticazione a più fattori',
+              italian: 'Autenticazione a più fattori (MFA)',
               pronunciation: '/ɛm ɛf eɪ/',
               phonetic: 'EM-EF-EI',
               example:
-                'MFA stands for Multi-Factor Authentication. = MFA sta per Autenticazione a Più Fattori.',
+                "Enabling MFA requires users to enter a time-based one-time password from their authenticator app after typing their regular password. = Abilitare l'MFA richiede agli utenti di inserire una password monouso basata sul tempo dalla loro app di autenticazione dopo aver digitato la password normale.",
               context: 'security',
               difficulty: 'advanced',
               tool: 'speakeasy, otplib',
@@ -5171,60 +5296,61 @@ export default {
               pronunciation: '/ˈerər/',
               phonetic: 'ER-ror',
               example:
-                'An Error represents a runtime problem. = Un Error rappresenta un problema runtime.',
+                'When the database connection fails, Node creates an Error object that carries the message, a stack trace, and an optional error code for programmatic handling. = Quando la connessione al database fallisce, Node crea un oggetto Error che porta il messaggio, una stack trace e un codice di errore opzionale per la gestione programmatica.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "throw new Error('Boom');",
             },
             {
               english: 'Throw',
-              italian: 'Lancia',
+              italian: 'Lanciare (eccezione)',
               pronunciation: '/θroʊ/',
               phonetic: 'TROU',
-              example: 'Use throw to raise an error. = Usa throw per sollevare un errore.',
+              example:
+                "If the config file is missing, throw an error early so the application stops before entering an inconsistent state. = Se il file di configurazione manca, lancia un errore subito così l'applicazione si ferma prima di entrare in uno stato inconsistente.",
               context: 'runtime',
               difficulty: 'intermediate',
               code: "throw new Error('Bad input');",
             },
             {
               english: 'Stack Trace',
-              italian: 'Traccia di stack',
+              italian: 'Traccia dello stack di chiamate',
               pronunciation: '/stæk treɪs/',
               phonetic: 'STAK-TREIS',
               example:
-                'A stack trace shows the call path. = Una stack trace mostra il percorso delle chiamate.',
+                'Reading the stack trace revealed that the null reference originated in the UserService constructor, three calls deep from the route handler. = Leggere la traccia dello stack ha rivelato che il riferimento null aveva origine nel costruttore UserService, tre chiamate in profondità dal gestore di rotta.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'err.stack',
             },
             {
               english: 'TypeError',
-              italian: 'TypeError / errore di tipo',
+              italian: 'Errore di tipo (TypeError)',
               pronunciation: '/taɪp ˈerər/',
               phonetic: 'TAIP-ER-ror',
               example:
-                'A TypeError occurs on wrong types. = Un TypeError si verifica con tipi errati.',
+                'Calling a method on undefined throws a TypeError, which usually means you forgot to await an async function or import a module. = Chiamare un metodo su undefined lancia un TypeError, che di solito significa che hai dimenticato di attendere una funzione async o importare un modulo.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'null.foo // TypeError',
             },
             {
               english: 'RangeError',
-              italian: 'RangeError / errore di intervallo',
+              italian: 'Errore di intervallo (RangeError)',
               pronunciation: '/reɪndʒ ˈerər/',
               phonetic: 'REING-ER-ror',
               example:
-                'A RangeError happens with out-of-range values. = Un RangeError accade con valori fuori intervallo.',
+                'Passing a negative length to Buffer.alloc throws a RangeError because the size must be a non-negative integer within safe bounds. = Passare una lunghezza negativa a Buffer.alloc lancia un RangeError perché la dimensione deve essere un intero non negativo entro limiti sicuri.',
               context: 'runtime',
               difficulty: 'intermediate',
             },
             {
               english: 'SyntaxError',
-              italian: 'SyntaxError / errore di sintassi',
+              italian: 'Errore di sintassi (SyntaxError)',
               pronunciation: '/ˈsɪntæks ˈerər/',
               phonetic: 'SIN-taks-ER-ror',
               example:
-                'SyntaxError happens at parse time. = SyntaxError accade in fase di parsing.',
+                "A missing closing brace in your config file causes a SyntaxError during JSON.parse, crashing the server on startup. = Una parentesi graffa di chiusura mancante nel file di configurazione causa un SyntaxError durante JSON.parse, mandando in crash il server all'avvio.",
               context: 'runtime',
               difficulty: 'intermediate',
             },
@@ -5234,7 +5360,7 @@ export default {
               pronunciation: '/ˈkʌstəm ˈerər/',
               phonetic: 'KAS-tom-ER-ror',
               example:
-                'Extend Error to create custom errors. = Estendi Error per creare errori personalizzati.',
+                'Creating a custom error class like NotFoundError lets the error middleware distinguish 404 responses from generic 500 server failures. = Creare una classe di errore personalizzata come NotFoundError permette al middleware di errore di distinguere le risposte 404 dai fallimenti generici del server 500.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'class NotFound extends Error {}',
@@ -5244,17 +5370,19 @@ export default {
               italian: 'Codice di errore',
               pronunciation: '/ˈerər koʊd/',
               phonetic: 'ER-ror-KOUD',
-              example: 'Node uses error codes like ENOENT. = Node usa codici come ENOENT.',
+              example:
+                'Checking err.code for ENOENT lets you show a friendly "file not found" message instead of dumping the raw stack trace to the user. = Controllare err.code per ENOENT ti permette di mostrare un messaggio amichevole "file non trovato" invece di mostrare la stack trace grezza all\'utente.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "err.code === 'ENOENT'",
             },
             {
               english: 'cause',
-              italian: 'causa',
+              italian: "Causa dell'errore",
               pronunciation: '/kɔːz/',
               phonetic: 'KOZ',
-              example: 'Use cause to chain errors. = Usa cause per concatenare errori.',
+              example:
+                'Wrapping a low-level database error with a cause preserves the original stack trace while adding business context for debugging. = Avvolgere un errore database a basso livello con una causa preserva la stack trace originale aggiungendo contesto di business per il debug.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "new Error('msg', { cause: original });",
@@ -5262,11 +5390,11 @@ export default {
             },
             {
               english: 'AggregateError',
-              italian: 'AggregateError / errore aggregato',
+              italian: 'Errore aggregato (AggregateError)',
               pronunciation: '/ˈæɡrɪɡət ˈerər/',
               phonetic: 'AG-gri-get-ER-ror',
               example:
-                'AggregateError holds multiple errors. = AggregateError contiene più errori.',
+                'When Promise.any rejects because all promises failed, it wraps every individual rejection into a single AggregateError you can iterate over. = Quando Promise.any viene rifiutata perché tutte le promise sono fallite, avvolge ogni singola rejection in un unico AggregateError su cui puoi iterare.',
               context: 'runtime',
               difficulty: 'advanced',
               note: 'Usato da Promise.any.',
@@ -5280,22 +5408,22 @@ export default {
           items: [
             {
               english: 'try/catch',
-              italian: 'try/catch / blocco di gestione eccezioni',
+              italian: 'blocco di gestione eccezioni (try/catch)',
               pronunciation: '/traɪ kætʃ/',
               phonetic: 'TRAI-KEC',
               example:
-                'try/catch handles synchronous errors. = try/catch gestisce errori sincroni.',
+                'Wrapping the JSON.parse call in a try/catch block prevents the server from crashing when a client sends malformed request bodies. = Avvolgere la chiamata JSON.parse in un blocco try/catch impedisce al server di andare in crash quando un client invia corpi di richiesta malformati.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'try { } catch (e) { }',
             },
             {
               english: 'finally',
-              italian: 'finally / esegue sempre alla fine',
+              italian: 'Blocco di esecuzione finale (finally)',
               pronunciation: '/ˈfaɪnəli/',
               phonetic: 'FAI-nal-li',
               example:
-                'finally runs whether or not an error occurs. = finally gira sia in caso di errore che no.',
+                'The finally block releases the database connection back to the pool regardless of whether the query succeeded or threw an error. = Il blocco finally rilascia la connessione al database nel pool indipendentemente dal fatto che la query sia riuscita o abbia lanciato un errore.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'try {} finally { cleanup(); }',
@@ -5305,17 +5433,18 @@ export default {
               italian: 'Blocco catch',
               pronunciation: '/kætʃ blɒk/',
               phonetic: 'KEC-BLOK',
-              example: "A catch block receives the error. = Un blocco catch riceve l'errore.",
+              example:
+                'Inside the catch block you can inspect the error type, log relevant details, and return a user-friendly message instead of the raw stack trace. = Dentro il blocco catch puoi ispezionare il tipo di errore, loggare dettagli rilevanti e restituire un messaggio user-friendly invece della stack trace grezza.',
               context: 'runtime',
               difficulty: 'intermediate',
             },
             {
               english: 'Rethrow',
-              italian: 'Rilancia',
+              italian: "Rilancio dell'eccezione",
               pronunciation: '/riːˈθroʊ/',
               phonetic: 'RI-trou',
               example:
-                "Rethrow if you cannot handle the error. = Rilancia se non puoi gestire l'errore.",
+                "After logging the error for diagnostics, rethrow it so the global error handler can decide the HTTP status code and response format. = Dopo aver loggato l'errore per la diagnostica, rilancialo così il gestore degli errori globale può decidere il codice di stato HTTP e il formato della risposta.",
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'catch (e) { throw e; }',
@@ -5326,7 +5455,7 @@ export default {
               pronunciation: '/ˈeɪsɪŋk ˈerər/',
               phonetic: 'EI-sink-ER-ror',
               example:
-                'Catch async errors with .catch or try. = Cattura errori async con .catch o try.',
+                'Without try/catch around an await call, an async error from the database driver becomes an unhandled promise rejection that crashes the process. = Senza try/catch attorno a una chiamata await, un errore asincrono dal driver del database diventa una promise rejection non gestita che manda in crash il processo.',
               context: 'runtime',
               difficulty: 'intermediate',
             },
@@ -5336,18 +5465,18 @@ export default {
               pronunciation: '/ʌnˈhændld rɪˈdʒekʃən/',
               phonetic: 'an-AN-deld-ri-GEK-scen',
               example:
-                'An unhandled rejection terminates the process in newer Node. = Una rejection non gestita termina il processo nel Node recente.',
+                'Since Node 15+, an unhandled rejection terminates the process by default, so always attach a .catch() or use try/catch with await. = Da Node 15+, una rejection non gestita termina il processo per default, quindi allega sempre un .catch() o usa try/catch con await.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "process.on('unhandledRejection', cb);",
             },
             {
               english: 'uncaughtException',
-              italian: 'eccezione non catturata',
+              italian: 'Eccezione non catturata',
               pronunciation: '/ʌnˈkɔːt ɪkˈsepʃən/',
               phonetic: 'an-KOT-ek-SEP-scen',
               example:
-                "uncaughtException is a last resort. = uncaughtException è un'ultima risorsa.",
+                "Listening for uncaughtException gives you a chance to log the fatal error and flush metrics before the process exits gracefully. = Ascoltare uncaughtException ti dà la possibilità di loggare l'errore fatale e svuotare le metriche prima che il processo esca in modo controllato.",
               context: 'runtime',
               difficulty: 'intermediate',
               code: "process.on('uncaughtException', cb);",
@@ -5359,28 +5488,29 @@ export default {
               pronunciation: '/ˌɒpəˈreɪʃənl ˈerər/',
               phonetic: 'op-er-EI-scio-nal ER-ror',
               example:
-                'Operational errors are expected at runtime. = Gli errori operativi sono attesi a runtime.',
+                'A dropped database connection is an operational error that you can handle by retrying the query or returning a 503 to the client. = Una connessione al database caduta è un errore operativo che puoi gestire ritentando la query o restituendo un 503 al client.',
               context: 'runtime',
               difficulty: 'advanced',
               note: 'Esempi: connessione DB persa, file mancante.',
             },
             {
               english: 'Programmer Error',
-              italian: 'Errore di programmatore',
+              italian: 'Errore del programmatore',
               pronunciation: '/ˈproʊɡræmər ˈerər/',
               phonetic: 'PRO-gra-mer ER-ror',
-              example: 'Programmer errors are bugs. = Gli errori di programmatore sono bug.',
+              example:
+                'Accessing a property on null is a programmer error (a bug), not something you should retry -- fix the code instead. = Accedere a una proprietà su null è un errore del programmatore (un bug), non qualcosa da ritentare -- correggi il codice invece.',
               context: 'runtime',
               difficulty: 'advanced',
               note: 'Esempi: dereferenza null, parametri sbagliati.',
             },
             {
               english: 'Fail Fast',
-              italian: 'Fallisci presto',
+              italian: 'Fallire velocemente',
               pronunciation: '/feɪl fæst/',
               phonetic: 'FEIL-FAST',
               example:
-                'Fail fast on programmer errors. = Fallisci presto sugli errori di programmatore.',
+                'The fail fast principle says you should crash the process on programmer errors rather than let it run in a corrupted state. = Il principio del fallire velocemente dice che dovresti terminare il processo sugli errori del programmatore piuttosto che lasciarlo girare in uno stato corrotto.',
               context: 'runtime',
               difficulty: 'advanced',
             },
@@ -5397,40 +5527,40 @@ export default {
               pronunciation: '/ˈerər ˈhændlɪŋ ˈmɪdlweər/',
               phonetic: 'ER-ror-AN-dling-MID-uel-uer',
               example:
-                'Error middleware has four parameters. = Il middleware errori ha quattro parametri.',
+                'Express distinguishes error-handling middleware by its four-parameter signature (err, req, res, next), so always include all four even if you do not use next. = Express distingue il middleware di gestione errori dalla sua firma a quattro parametri (err, req, res, next), quindi includi sempre tutti e quattro anche se non usi next.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'app.use((err, req, res, next) => {});',
             },
             {
               english: 'next(err)',
-              italian: 'next(err) / passa errore al middleware Express',
+              italian: 'Passaggio errore al gestore (next(err))',
               pronunciation: '/nɛkst ˈerər/',
               phonetic: 'NEKST-ER-ror',
               example:
-                "Pass an error to next to skip to error handler. = Passa un errore a next per saltare all'error handler.",
+                'When the validation middleware detects a bad payload, calling next(err) skips all remaining route handlers and jumps straight to the error middleware. = Quando il middleware di validazione rileva un payload errato, chiamare next(err) salta tutti i gestori di rotta rimanenti e salta direttamente al middleware di errore.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: "next(new Error('fail'));",
             },
             {
               english: 'Async Wrapper',
-              italian: 'Wrapper async',
+              italian: 'Involucro per funzioni asincrone (async wrapper)',
               pronunciation: '/ˈeɪsɪŋk ˈræpər/',
               phonetic: 'EI-sink-RAP-per',
               example:
-                'An async wrapper forwards rejections to next. = Un wrapper async inoltra le rejection a next.',
+                'An async wrapper catches rejected promises from your route handlers and forwards them to the Express error middleware automatically. = Un async wrapper cattura le promise rifiutate dai tuoi gestori di rotta e le inoltra automaticamente al middleware di errore Express.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'const asyncH = fn => (req, res, next) => fn(req, res, next).catch(next);',
             },
             {
               english: 'express-async-errors',
-              italian: 'express-async-errors / gestione errori async in Express',
+              italian: 'Gestione automatica errori asincroni per Express (express-async-errors)',
               pronunciation: '/ɪkˈspres ˈeɪsɪŋk ˈerərz/',
               phonetic: 'eks-PRES-EI-sink-ER-rors',
               example:
-                'express-async-errors forwards async errors automatically. = express-async-errors inoltra errori async in automatico.',
+                'Importing express-async-errors at the top of your app patches Express to forward rejected promises to the error handler without needing a manual wrapper. = Importare express-async-errors in cima alla tua app modifica Express per inoltrare le promise rifiutate al gestore di errori senza bisogno di un wrapper manuale.',
               context: 'runtime',
               difficulty: 'intermediate',
               tool: 'express-async-errors',
@@ -5441,7 +5571,7 @@ export default {
               pronunciation: '/eɪtʃ tiː tiː piː ˈerər/',
               phonetic: 'EICI-TI-TI-PI-ER-ror',
               example:
-                'http-errors creates HTTP error objects. = http-errors crea oggetti errore HTTP.',
+                'Using the http-errors library to throw createError(404) generates an error object with the correct status and message that the error middleware can send as JSON. = Usare la libreria http-errors per lanciare createError(404) genera un oggetto errore con lo stato e il messaggio corretti che il middleware di errore può inviare come JSON.',
               context: 'runtime',
               difficulty: 'intermediate',
               tool: 'http-errors',
@@ -5453,27 +5583,28 @@ export default {
               pronunciation: '/ˈsteɪtəs koʊd/',
               phonetic: 'STEI-tus-KOUD',
               example:
-                'Set err.status to map errors to HTTP. = Imposta err.status per mappare errori a HTTP.',
+                'The error middleware reads err.status to decide which HTTP status code to return, defaulting to 500 if no code is set. = Il middleware di errore legge err.status per decidere quale codice di stato HTTP restituire, usando 500 come default se nessun codice è impostato.',
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'err.status = 404;',
             },
             {
               english: 'Error Logger',
-              italian: 'Logger di errori',
+              italian: 'Logger degli errori',
               pronunciation: '/ˈerər ˈlɒɡər/',
               phonetic: 'ER-ror-LOG-ger',
               example:
-                'Log every error before responding. = Logga ogni errore prima di rispondere.',
+                "The error logger middleware writes the full stack trace and request metadata to a file before passing the error to the response formatter. = Il middleware logger degli errori scrive la stack trace completa e i metadati della richiesta in un file prima di passare l'errore al formattatore della risposta.",
               context: 'runtime',
               difficulty: 'intermediate',
             },
             {
               english: 'Sentry',
-              italian: 'Sentry (piattaforma di error tracking)',
+              italian: 'Piattaforma di tracciamento errori (Sentry)',
               pronunciation: '/ˈsɛntri/',
               phonetic: 'SEN-tri',
-              example: 'Sentry tracks errors in production. = Sentry traccia errori in produzione.',
+              example:
+                'Integrating Sentry captures every unhandled exception in production and groups them by stack trace, so you see how many users are affected. = Integrare Sentry cattura ogni eccezione non gestita in produzione e le raggruppa per stack trace, così vedi quanti utenti sono colpiti.',
               context: 'runtime',
               difficulty: 'intermediate',
               tool: 'Sentry',
@@ -5481,11 +5612,11 @@ export default {
             },
             {
               english: 'Rollbar',
-              italian: 'Rollbar (piattaforma di error tracking)',
+              italian: 'Servizio di monitoraggio errori (Rollbar)',
               pronunciation: '/ˈroʊlbɑːr/',
               phonetic: 'ROL-bar',
               example:
-                'Rollbar is an error monitoring service. = Rollbar è un servizio di monitoraggio errori.',
+                "With Rollbar configured, every thrown exception triggers a Slack notification with the stack trace and the deployment version that introduced it. = Con Rollbar configurato, ogni eccezione lanciata attiva una notifica Slack con la stack trace e la versione del deploy che l'ha introdotta.",
               context: 'runtime',
               difficulty: 'intermediate',
               tool: 'Rollbar',
@@ -5496,7 +5627,7 @@ export default {
               pronunciation: '/ˈɡreɪsfʊl ˌdeɡrəˈdeɪʃən/',
               phonetic: 'GREIS-ful-de-gra-DEI-scen',
               example:
-                "Graceful degradation keeps the app usable. = Il degrado controllato mantiene l'app utilizzabile.",
+                'When the recommendation engine is down, graceful degradation shows a generic bestsellers list instead of personalized suggestions, keeping the store functional. = Quando il motore di raccomandazione è giù, il degrado controllato mostra una lista di bestseller generica invece di suggerimenti personalizzati, mantenendo il negozio funzionante.',
               context: 'runtime',
               difficulty: 'advanced',
             },
@@ -5509,84 +5640,86 @@ export default {
           items: [
             {
               english: 'Debugger',
-              italian: 'debugger / strumento di analisi del codice',
+              italian: 'Strumento di analisi del codice (debugger)',
               pronunciation: '/dɪˈbʌɡər/',
               phonetic: 'di-BAG-ger',
               example:
-                'Use a debugger to step through code. = Usa un debugger per percorrere il codice.',
+                "Launching the server with --inspect lets you attach a debugger from VS Code or Chrome DevTools and pause execution at any line. = Lanciare il server con --inspect ti permette di collegare un debugger da VS Code o Chrome DevTools e mettere in pausa l'esecuzione su qualsiasi riga.",
               context: 'runtime',
               difficulty: 'intermediate',
               command: 'node --inspect server.js',
             },
             {
               english: 'Inspector',
-              italian: 'Node Inspector / debugger Chrome DevTools',
+              italian: 'Strumento di ispezione Node.js (Inspector)',
               pronunciation: '/ɪnˈspektər/',
               phonetic: 'in-SPEK-ter',
               example:
-                'Node Inspector connects to Chrome DevTools. = Node Inspector si connette a Chrome DevTools.',
+                'Running node --inspect-brk pauses at the first line and opens the inspector protocol, so you can set breakpoints before any code runs. = Eseguire node --inspect-brk mette in pausa alla prima riga e apre il protocollo inspector, così puoi impostare breakpoint prima che qualsiasi codice venga eseguito.',
               context: 'runtime',
               difficulty: 'intermediate',
               command: 'node --inspect-brk app.js',
             },
             {
               english: 'Breakpoint',
-              italian: 'breakpoint / punto di interruzione',
+              italian: 'Punto di interruzione (breakpoint)',
               pronunciation: '/ˈbreɪkˌpɔɪnt/',
               phonetic: 'BREIK-point',
               example:
-                "A breakpoint pauses execution. = Un breakpoint mette in pausa l'esecuzione.",
+                "Setting a breakpoint inside the payment handler lets you inspect the request object, check variable values, and step through the discount logic line by line. = Impostare un breakpoint dentro il gestore pagamenti ti permette di ispezionare l'oggetto richiesta, controllare i valori delle variabili e percorrere la logica di sconto riga per riga.",
               context: 'runtime',
               difficulty: 'intermediate',
               code: 'debugger;',
             },
             {
               english: 'Step Over',
-              italian: 'Passo successivo',
+              italian: 'Esecuzione passo-passo (step over)',
               pronunciation: '/stɛp ˈoʊvər/',
               phonetic: 'STEP-OU-ver',
-              example: "Step over executes one statement. = Step over esegue un'istruzione.",
+              example:
+                "Pressing step over executes the current line including any function call, then stops at the next statement without entering the called function. = Premere step over esegue la riga corrente inclusa qualsiasi chiamata di funzione, poi si ferma all'istruzione successiva senza entrare nella funzione chiamata.",
               context: 'runtime',
               difficulty: 'intermediate',
             },
             {
               english: 'Step Into',
-              italian: 'Entra dentro',
+              italian: 'Entra nella funzione (step into)',
               pronunciation: '/stɛp ˈɪntuː/',
               phonetic: 'STEP-IN-tu',
               example:
-                'Step into enters a function call. = Step into entra in una chiamata di funzione.',
+                'Using step into on the calculateTotal call takes you inside that function so you can inspect how the subtotal and tax are computed. = Usare step into sulla chiamata calculateTotal ti porta dentro quella funzione così puoi ispezionare come vengono calcolati il subtotale e le tasse.',
               context: 'runtime',
               difficulty: 'intermediate',
             },
             {
               english: 'console.log',
-              italian: 'console.log / stampa su stdout',
+              italian: 'Stampa su stdout (console.log)',
               pronunciation: '/ˈkɒnsoʊl lɒɡ/',
               phonetic: 'KON-sol-LOG',
               example:
-                'console.log is the simplest debug tool. = console.log è lo strumento di debug più semplice.',
+                'Sprinkling console.log statements around the route handler quickly reveals which variables hold unexpected values during a tricky bug hunt. = Spargere istruzioni console.log attorno al gestore di rotta rivela velocemente quali variabili contengono valori inattesi durante la caccia a un bug insidioso.',
               context: 'runtime',
               difficulty: 'beginner',
               code: "console.log('value:', x);",
             },
             {
               english: 'console.error',
-              italian: 'console.error / stampa su stderr',
+              italian: 'Stampa su stderr (console.error)',
               pronunciation: '/ˈkɒnsoʊl ˈerər/',
               phonetic: 'KON-sol-ER-ror',
-              example: 'console.error writes to stderr. = console.error scrive su stderr.',
+              example:
+                'Using console.error for exception messages ensures they go to stderr, which you can redirect to a separate error log file in production. = Usare console.error per i messaggi di eccezione assicura che vadano su stderr, che puoi reindirizzare a un file di log errori separato in produzione.',
               context: 'runtime',
               difficulty: 'beginner',
               code: 'console.error(err);',
             },
             {
               english: 'debug Module',
-              italian: 'Modulo debug',
+              italian: 'Modulo di debug con namespace',
               pronunciation: '/dɪˈbʌɡ ˈmɒdjuːl/',
               phonetic: 'di-BAG-MO-diul',
               example:
-                'The debug module enables namespaced logs. = Il modulo debug abilita log con namespace.',
+                'The debug module lets each file create a namespaced logger like "app:db" so you can enable only database-related output during troubleshooting. = Il modulo debug permette a ogni file di creare un logger con namespace come "app:db" così puoi abilitare solo l\'output relativo al database durante il troubleshooting.',
               context: 'runtime',
               difficulty: 'intermediate',
               tool: 'debug',
@@ -5594,22 +5727,22 @@ export default {
             },
             {
               english: 'DEBUG env',
-              italian: 'Variabile DEBUG',
+              italian: "Variabile d'ambiente DEBUG",
               pronunciation: '/dɪˈbʌɡ/',
               phonetic: 'di-BAG',
               example:
-                'Set DEBUG to enable specific namespaces. = Imposta DEBUG per abilitare namespace specifici.',
+                'Setting DEBUG=app:* before starting the server activates all debug loggers whose namespace starts with "app:", filtering out noisy third-party output. = Impostare DEBUG=app:* prima di avviare il server attiva tutti i logger di debug il cui namespace inizia con "app:", filtrando l\'output rumoroso di terze parti.',
               context: 'runtime',
               difficulty: 'intermediate',
               command: 'DEBUG=app:* node app.js',
             },
             {
               english: 'Source Map',
-              italian: 'source map / mappa di origine del codice',
+              italian: 'Mappa di corrispondenza sorgente (source map)',
               pronunciation: '/sɔːrs mæp/',
               phonetic: 'SORS-MAP',
               example:
-                'Source maps map compiled to source code. = Le source map collegano codice compilato a sorgente.',
+                "Enabling source maps in your TypeScript build lets you see original .ts line numbers in stack traces instead of the transpiled .js output. = Abilitare le source map nel tuo build TypeScript ti permette di vedere i numeri di riga originali .ts nelle stack trace invece dell'output .js compilato.",
               context: 'runtime',
               difficulty: 'intermediate',
               command: 'node --enable-source-maps app.js',
@@ -5632,10 +5765,11 @@ export default {
           items: [
             {
               english: 'Buffer',
-              italian: 'Buffer / sequenza di byte di Node',
+              italian: 'Sequenza di byte in memoria (Buffer)',
               pronunciation: '/ˈbʌfər/',
               phonetic: 'BAF-fer',
-              example: 'A Buffer holds raw binary data. = Un Buffer contiene dati binari grezzi.',
+              example:
+                'When reading a file from disk, Node stores the raw bytes in a Buffer before you convert them to a string with a specific encoding. = Quando legge un file dal disco, Node salva i byte grezzi in un Buffer prima che tu li converta in una stringa con una codifica specifica.',
               context: 'streams',
               difficulty: 'intermediate',
               code: "const buf = Buffer.from('hello');",
@@ -5645,28 +5779,29 @@ export default {
               italian: 'Dati binari',
               pronunciation: '/ˈbaɪnəri ˈdeɪtə/',
               phonetic: 'BAI-na-ri DEI-ta',
-              example: 'Binary data is sequences of bytes. = I dati binari sono sequenze di byte.',
+              example:
+                'Images, PDFs, and encrypted payloads are all binary data that cannot be represented as plain text without encoding them first. = Immagini, PDF e payload crittati sono tutti dati binari che non possono essere rappresentati come testo semplice senza prima codificarli.',
               context: 'streams',
               difficulty: 'intermediate',
             },
             {
               english: 'Buffer.from',
-              italian: 'Buffer.from / crea Buffer da sorgente',
+              italian: 'Creazione Buffer da sorgente (Buffer.from)',
               pronunciation: '/ˈbʌfər frɒm/',
               phonetic: 'BAF-fer-FROM',
               example:
-                'Buffer.from creates a buffer from a string. = Buffer.from crea un buffer da una stringa.',
+                "Calling Buffer.from on the user-submitted string lets you compute its SHA-256 hash by feeding raw bytes to the crypto module. = Chiamare Buffer.from sulla stringa inviata dall'utente ti permette di calcolare il suo hash SHA-256 alimentando byte grezzi al modulo crypto.",
               context: 'streams',
               difficulty: 'intermediate',
               code: "Buffer.from('abc', 'utf8');",
             },
             {
               english: 'Buffer.alloc',
-              italian: 'Buffer.alloc / alloca Buffer azzerato',
+              italian: 'Allocazione Buffer sicura (Buffer.alloc)',
               pronunciation: '/ˈbʌfər əˈlɒk/',
               phonetic: 'BAF-fer-a-LOK',
               example:
-                'Buffer.alloc creates an initialized buffer. = Buffer.alloc crea un buffer inizializzato.',
+                'Always use Buffer.alloc for security-sensitive code because it fills the memory with zeros, preventing leaks of previously stored data. = Usa sempre Buffer.alloc per codice sensibile alla sicurezza perché riempie la memoria con zeri, prevenendo fughe di dati precedentemente salvati.',
               context: 'streams',
               difficulty: 'intermediate',
               code: 'Buffer.alloc(10);',
@@ -5674,11 +5809,11 @@ export default {
             },
             {
               english: 'Buffer.allocUnsafe',
-              italian: 'Buffer.allocUnsafe / alloca Buffer non azzerato',
+              italian: 'Allocazione Buffer non sicura (Buffer.allocUnsafe)',
               pronunciation: '/ˈbʌfər əˈlɒk ʌnˈseɪf/',
               phonetic: 'BAF-fer-a-LOK-an-SEIF',
               example:
-                'allocUnsafe is faster but uninitialized. = allocUnsafe è più veloce ma non inizializzato.',
+                'Use Buffer.allocUnsafe only in performance-critical code paths where you immediately overwrite every byte, since it may contain old memory contents. = Usa Buffer.allocUnsafe solo nei percorsi di codice critici per le prestazioni dove sovrascrivi immediatamente ogni byte, poiché potrebbe contenere vecchi contenuti di memoria.',
               context: 'streams',
               difficulty: 'intermediate',
               code: 'Buffer.allocUnsafe(10);',
@@ -5689,27 +5824,28 @@ export default {
               pronunciation: '/ɪnˈkoʊdɪŋ/',
               phonetic: 'in-KOUD-ing',
               example:
-                'Common encodings: utf8, base64, hex. = Codifiche comuni: utf8, base64, hex.',
+                'Specifying the correct encoding when converting a buffer to a string prevents garbled characters, especially with multi-byte UTF-8 sequences. = Specificare la codifica corretta quando si converte un buffer in stringa previene caratteri illeggibili, specialmente con sequenze UTF-8 multi-byte.',
               context: 'streams',
               difficulty: 'intermediate',
               code: "buf.toString('base64');",
             },
             {
               english: 'UTF-8',
-              italian: 'UTF-8 (codifica universale Unicode)',
+              italian: 'Codifica universale Unicode (UTF-8)',
               pronunciation: '/juː tiː ɛf eɪt/',
               phonetic: 'IU-TI-EF-EIT',
               example:
-                'UTF-8 is the default text encoding. = UTF-8 è la codifica testo predefinita.',
+                'Node uses UTF-8 as the default text encoding, which can represent every character from English letters to Chinese ideograms in a single scheme. = Node usa UTF-8 come codifica testo predefinita, che può rappresentare ogni carattere dalle lettere inglesi agli ideogrammi cinesi in un unico schema.',
               context: 'streams',
               difficulty: 'intermediate',
             },
             {
               english: 'Base64',
-              italian: 'Base64 (codifica binario in testo)',
+              italian: 'Codifica binario-testo (Base64)',
               pronunciation: '/beɪs sɪksti fɔːr/',
               phonetic: 'BEIS-SIKS-ti-FOR',
-              example: 'Base64 encodes binary as ASCII. = Base64 codifica binario come ASCII.',
+              example:
+                "The API encodes avatar images as Base64 strings so they can be safely embedded in JSON responses without binary framing issues. = L'API codifica le immagini avatar come stringhe Base64 così possono essere incorporate in modo sicuro nelle risposte JSON senza problemi di framing binario.",
               context: 'streams',
               difficulty: 'intermediate',
               code: "buf.toString('base64');",
@@ -5720,17 +5856,18 @@ export default {
               pronunciation: '/hɛks/',
               phonetic: 'EKS',
               example:
-                'Hex represents bytes as hexadecimal. = Hex rappresenta byte come esadecimale.',
+                'Logging the buffer in hex format shows each byte as two characters, making it easy to spot null bytes or unexpected patterns in network packets. = Loggare il buffer in formato esadecimale mostra ogni byte come due caratteri, rendendo facile individuare byte null o pattern inattesi nei pacchetti di rete.',
               context: 'streams',
               difficulty: 'intermediate',
               code: "buf.toString('hex');",
             },
             {
               english: 'Concat',
-              italian: 'Concatena',
+              italian: 'Concatenazione di buffer',
               pronunciation: '/kənˈkæt/',
               phonetic: 'kon-KAT',
-              example: 'Buffer.concat joins multiple buffers. = Buffer.concat unisce più buffer.',
+              example:
+                'Collecting all chunks from a readable stream into an array and calling Buffer.concat produces a single buffer containing the complete file content. = Raccogliere tutti i chunk da uno stream leggibile in un array e chiamare Buffer.concat produce un singolo buffer contenente il contenuto completo del file.',
               context: 'streams',
               difficulty: 'intermediate',
               code: 'Buffer.concat([a, b]);',
@@ -5744,10 +5881,11 @@ export default {
           items: [
             {
               english: 'Stream',
-              italian: 'Stream / flusso di dati Node',
+              italian: 'Flusso di dati (stream)',
               pronunciation: '/striːm/',
               phonetic: 'STRIM',
-              example: 'A stream is a sequence of data. = Uno stream è una sequenza di dati.',
+              example:
+                'Instead of loading a 2 GB log file into memory, a stream processes it in small chunks so the server stays responsive throughout. = Invece di caricare un file di log da 2 GB in memoria, uno stream lo elabora in piccoli blocchi così il server resta reattivo per tutto il tempo.',
               context: 'streams',
               difficulty: 'intermediate',
               note: 'Permette di lavorare su dati grandi senza caricarli tutti in memoria.',
@@ -5757,69 +5895,71 @@ export default {
               italian: 'Stream leggibile',
               pronunciation: '/ˈriːdəbl striːm/',
               phonetic: 'RID-a-bol-STRIM',
-              example: 'A readable stream produces data. = Uno stream leggibile produce dati.',
+              example:
+                "Opening a file as a readable stream lets you process each 64 KB chunk as it arrives instead of waiting for the entire file to load. = Aprire un file come stream leggibile ti permette di elaborare ogni blocco da 64 KB man mano che arriva invece di attendere che l'intero file si carichi.",
               context: 'streams',
               difficulty: 'intermediate',
               code: 'const rs = fs.createReadStream(path);',
             },
             {
               english: 'data Event',
-              italian: 'Evento data',
+              italian: 'Evento di ricezione dati (data)',
               pronunciation: '/ˈdeɪtə ɪˈvent/',
               phonetic: 'DEI-ta-i-VENT',
-              example: "The data event delivers chunks. = L'evento data consegna chunk.",
+              example:
+                'Each time the operating system has new bytes available, the readable stream fires a data event with a chunk that your handler can process immediately. = Ogni volta che il sistema operativo ha nuovi byte disponibili, lo stream leggibile emette un evento data con un blocco che il tuo gestore può elaborare immediatamente.',
               context: 'streams',
               difficulty: 'intermediate',
               code: "rs.on('data', chunk => {});",
             },
             {
               english: 'end Event',
-              italian: 'Evento end',
+              italian: 'Evento di fine stream (end)',
               pronunciation: '/ɛnd ɪˈvent/',
               phonetic: 'END-i-VENT',
               example:
-                "The end event signals stream completion. = L'evento end segnala il completamento.",
+                "After all chunks have been delivered, the stream fires the end event, signalling that you can finalize processing and close any output resources. = Dopo che tutti i blocchi sono stati consegnati, lo stream emette l'evento end, segnalando che puoi finalizzare l'elaborazione e chiudere qualsiasi risorsa di output.",
               context: 'streams',
               difficulty: 'intermediate',
               code: "rs.on('end', () => {});",
             },
             {
               english: 'Chunk',
-              italian: 'Blocco',
+              italian: 'Blocco di dati (chunk)',
               pronunciation: '/tʃʌŋk/',
               phonetic: 'CIANK',
               example:
-                'A chunk is a piece of stream data. = Un chunk è un pezzo di dati dello stream.',
+                "Each chunk received from the readable stream is a Buffer of up to highWaterMark bytes that you can parse, transform, or write to another destination. = Ogni chunk ricevuto dallo stream leggibile è un Buffer di massimo highWaterMark byte che puoi analizzare, trasformare o scrivere in un'altra destinazione.",
               context: 'streams',
               difficulty: 'intermediate',
             },
             {
               english: 'Flowing Mode',
-              italian: 'Modalità flowing',
+              italian: 'Modalità a flusso continuo (flowing)',
               pronunciation: '/ˈfloʊɪŋ moʊd/',
               phonetic: 'FLOU-ing-MOUD',
               example:
-                'Flowing mode delivers data automatically. = La modalità flowing consegna dati in automatico.',
+                'Attaching a data listener switches the stream to flowing mode, which pushes chunks to your handler as fast as the source can produce them. = Collegare un listener data commuta lo stream in modalità flowing, che invia blocchi al tuo gestore alla velocità con cui la sorgente può produrli.',
               context: 'streams',
               difficulty: 'advanced',
             },
             {
               english: 'Paused Mode',
-              italian: 'Modalità in pausa',
+              italian: 'Modalità in pausa (paused)',
               pronunciation: '/pɔːzd moʊd/',
               phonetic: 'POUSD-MOUD',
               example:
-                'Paused mode requires read calls. = La modalità in pausa richiede chiamate read.',
+                'In paused mode you explicitly call stream.read() each time you are ready for the next chunk, giving you precise control over processing speed. = In modalità in pausa chiami esplicitamente stream.read() ogni volta che sei pronto per il prossimo blocco, dandoti controllo preciso sulla velocità di elaborazione.',
               context: 'streams',
               difficulty: 'advanced',
             },
             {
               english: 'High Water Mark',
-              italian: 'highWaterMark / soglia di buffer dello stream',
+              italian: 'Soglia di buffer dello stream (highWaterMark)',
               pronunciation: '/haɪ ˈwɔːtər mɑːrk/',
               phonetic: 'AI-UO-ter-MARK',
               example:
-                'High water mark sets the buffer size. = High water mark imposta la dimensione del buffer.',
+                'Increasing the highWaterMark from the default 16 KB to 64 KB can improve throughput when reading large files but uses more memory per stream. = Aumentare il highWaterMark dal default di 16 KB a 64 KB può migliorare il throughput leggendo file grandi ma usa più memoria per stream.',
               context: 'streams',
               difficulty: 'advanced',
               code: '{ highWaterMark: 16384 }',
@@ -5830,18 +5970,18 @@ export default {
               pronunciation: '/ˈeɪsɪŋk ˈɪtəreɪtər/',
               phonetic: 'EI-sink-IT-er-eit-er',
               example:
-                'Streams support async iteration. = Gli stream supportano iterazione asincrona.',
+                'Using for-await-of on a readable stream gives you cleaner code than event listeners and handles backpressure and errors automatically. = Usare for-await-of su uno stream leggibile ti dà codice più pulito dei listener di eventi e gestisce backpressure ed errori automaticamente.',
               context: 'streams',
               difficulty: 'intermediate',
               code: 'for await (const chunk of rs) {}',
             },
             {
               english: 'createReadStream',
-              italian: 'fs.createReadStream / stream di lettura file',
+              italian: 'Creazione stream di lettura file (createReadStream)',
               pronunciation: '/kriˈeɪt riːd striːm/',
               phonetic: 'kri-EIT-RID-STRIM',
               example:
-                'createReadStream reads files in chunks. = createReadStream legge file a blocchi.',
+                'Piping fs.createReadStream directly into the HTTP response sends the file to the client without ever loading it entirely into memory. = Fare pipe di fs.createReadStream direttamente nella risposta HTTP invia il file al client senza mai caricarlo interamente in memoria.',
               context: 'streams',
               difficulty: 'intermediate',
               code: "fs.createReadStream('big.csv');",
@@ -5858,27 +5998,30 @@ export default {
               italian: 'Stream scrivibile',
               pronunciation: '/ˈraɪtəbl striːm/',
               phonetic: 'RAIT-a-bol-STRIM',
-              example: 'A writable stream consumes data. = Uno stream scrivibile consuma dati.',
+              example:
+                "The log exporter creates a writable stream to a file and appends each formatted entry, flushing to disk only when the internal buffer fills up. = L'esportatore di log crea uno stream scrivibile verso un file e aggiunge ogni voce formattata, scrivendo su disco solo quando il buffer interno si riempie.",
               context: 'streams',
               difficulty: 'intermediate',
               code: 'const ws = fs.createWriteStream(path);',
             },
             {
               english: 'write',
-              italian: 'scrivi',
+              italian: 'Scrittura su stream',
               pronunciation: '/raɪt/',
               phonetic: 'RAIT',
-              example: 'ws.write sends data to the stream. = ws.write invia dati allo stream.',
+              example:
+                'Each call to ws.write pushes a new chunk into the internal buffer, and Node flushes it to disk asynchronously in the background. = Ogni chiamata a ws.write inserisce un nuovo blocco nel buffer interno, e Node lo scarica su disco in modo asincrono in background.',
               context: 'streams',
               difficulty: 'intermediate',
               code: "ws.write('data\\n');",
             },
             {
               english: 'end',
-              italian: 'fine',
+              italian: 'Chiusura dello stream',
               pronunciation: '/ɛnd/',
               phonetic: 'END',
-              example: 'ws.end finishes writing. = ws.end termina la scrittura.',
+              example:
+                "Calling ws.end() signals that no more data will be written, and the finish event fires once all buffered data has been flushed. = Chiamare ws.end() segnala che non verranno scritti altri dati, e l'evento finish si attiva quando tutti i dati nel buffer sono stati scaricati.",
               context: 'streams',
               difficulty: 'intermediate',
               code: 'ws.end();',
@@ -5889,38 +6032,39 @@ export default {
               pronunciation: '/trænsˈfɔːrm striːm/',
               phonetic: 'trans-FORM-STRIM',
               example:
-                'A transform stream modifies data in transit. = Uno stream transform modifica dati in transito.',
+                'A transform stream sits between a readable and writable, converting CSV rows into JSON objects as each line passes through the pipeline. = Uno stream di trasformazione si interpone tra un leggibile e uno scrivibile, convertendo righe CSV in oggetti JSON mentre ogni riga passa attraverso la pipeline.',
               context: 'streams',
               difficulty: 'advanced',
               code: 'new Transform({ transform(chunk, enc, cb) {} });',
             },
             {
               english: 'Duplex Stream',
-              italian: 'Stream duplex',
+              italian: 'Stream bidirezionale (duplex)',
               pronunciation: '/ˈduːpleks striːm/',
               phonetic: 'DU-pleks-STRIM',
               example:
-                'A duplex stream is both readable and writable. = Uno stream duplex è sia leggibile che scrivibile.',
+                'A TCP socket is a duplex stream because you can read incoming data and write responses on the same connection simultaneously. = Un socket TCP è uno stream duplex perché puoi leggere dati in arrivo e scrivere risposte sulla stessa connessione simultaneamente.',
               context: 'streams',
               difficulty: 'advanced',
             },
             {
               english: 'pipe',
-              italian: 'pipe / canale tra stream',
+              italian: 'Collegamento tra stream (pipe)',
               pronunciation: '/paɪp/',
               phonetic: 'PAIP',
               example:
-                'pipe connects readable to writable. = pipe connette leggibile a scrivibile.',
+                'Calling rs.pipe(ws) automatically reads chunks from the source and writes them to the destination, handling flow control behind the scenes. = Chiamare rs.pipe(ws) legge automaticamente blocchi dalla sorgente e li scrive nella destinazione, gestendo il controllo di flusso dietro le quinte.',
               context: 'streams',
               difficulty: 'intermediate',
               code: 'rs.pipe(ws);',
             },
             {
               english: 'pipeline',
-              italian: 'stream.pipeline / orchestrazione di stream con error',
+              italian: 'Orchestrazione di stream con gestione errori (pipeline)',
               pronunciation: '/ˈpaɪpˌlaɪn/',
               phonetic: 'PAIP-lain',
-              example: 'pipeline handles errors and cleanup. = pipeline gestisce errori e pulizia.',
+              example:
+                'Using stream.pipeline instead of pipe ensures that all streams in the chain are properly destroyed if any step throws an error. = Usare stream.pipeline invece di pipe assicura che tutti gli stream nella catena vengano distrutti correttamente se un qualsiasi passo lancia un errore.',
               context: 'streams',
               difficulty: 'intermediate',
               code: 'await pipeline(rs, gzip, ws);',
@@ -5928,11 +6072,11 @@ export default {
             },
             {
               english: 'Backpressure',
-              italian: 'backpressure / contropressione',
+              italian: 'Contropressione (backpressure)',
               pronunciation: '/ˈbækˌpreʃər/',
               phonetic: 'BAK-pres-cer',
               example:
-                'Backpressure slows producers when consumers lag. = La backpressure rallenta i produttori quando i consumatori sono indietro.',
+                'When the consumer cannot write fast enough, backpressure pauses the producer stream until the buffer drains, preventing out-of-memory crashes. = Quando il consumatore non riesce a scrivere abbastanza velocemente, la backpressure mette in pausa lo stream produttore finché il buffer non si svuota, prevenendo crash per esaurimento memoria.',
               context: 'streams',
               difficulty: 'advanced',
             },
@@ -5942,18 +6086,18 @@ export default {
               pronunciation: '/ˈɒbdʒɪkt moʊd/',
               phonetic: 'OB-gekt-MOUD',
               example:
-                'Object mode streams handle JS objects. = Gli stream in modalità oggetto gestiscono oggetti JS.',
+                'Enabling object mode lets the transform stream pass JavaScript objects between stages instead of raw buffers, simplifying data pipeline logic. = Abilitare la modalità oggetto permette allo stream di trasformazione di passare oggetti JavaScript tra le fasi invece di buffer grezzi, semplificando la logica della pipeline dati.',
               context: 'streams',
               difficulty: 'advanced',
               code: '{ objectMode: true }',
             },
             {
               english: 'zlib',
-              italian: 'zlib / modulo di compressione Node',
+              italian: 'Modulo di compressione nativo di Node (zlib)',
               pronunciation: '/ziː lɪb/',
               phonetic: 'ZI-LIB',
               example:
-                'zlib provides streaming compression. = zlib fornisce compressione in streaming.',
+                'Piping a file through zlib.createGzip compresses it on the fly, so you can serve gzipped responses without storing a pre-compressed copy on disk. = Fare pipe di un file attraverso zlib.createGzip lo comprime al volo, così puoi servire risposte gzipped senza salvare una copia pre-compressa su disco.',
               context: 'streams',
               difficulty: 'intermediate',
               code: 'zlib.createGzip()',
@@ -5970,7 +6114,8 @@ export default {
               italian: 'Streaming CSV',
               pronunciation: '/siː ɛs viː ˈstriːmɪŋ/',
               phonetic: 'SI-ES-VI STRIM-ing',
-              example: 'Stream CSV files line by line. = Fai streaming di CSV riga per riga.',
+              example:
+                "Streaming a million-row CSV through csv-parser processes one record at a time, keeping memory usage flat even as the file grows in size. = Fare streaming di un CSV da un milione di righe attraverso csv-parser elabora un record alla volta, mantenendo l'uso di memoria costante anche man mano che il file cresce.",
               context: 'streams',
               difficulty: 'intermediate',
               tool: 'csv-parser',
@@ -5980,79 +6125,83 @@ export default {
               italian: 'Lettore di righe',
               pronunciation: '/laɪn ˈriːdər/',
               phonetic: 'LAIN-RID-er',
-              example: 'readline reads input line by line. = readline legge input riga per riga.',
+              example:
+                "The readline module processes a 500 MB server log line by line, letting you filter entries by status code without loading the entire file into memory. = Il modulo readline elabora un log del server da 500 MB riga per riga, permettendoti di filtrare le voci per codice di stato senza caricare l'intero file in memoria.",
               context: 'streams',
               difficulty: 'intermediate',
               code: 'const rl = readline.createInterface({ input });',
             },
             {
               english: 'HTTP Streaming',
-              italian: 'Streaming HTTP',
+              italian: 'Streaming su protocollo HTTP',
               pronunciation: '/eɪtʃ tiː tiː piː ˈstriːmɪŋ/',
               phonetic: 'EICI-TI-TI-PI STRIM-ing',
-              example: 'You can pipe a file to res. = Puoi fare pipe di un file su res.',
+              example:
+                "Piping a video file directly to the HTTP response via streaming lets clients start playback before the entire download completes. = Fare pipe di un file video direttamente alla risposta HTTP tramite streaming permette ai client di iniziare la riproduzione prima che l'intero download sia completato.",
               context: 'streams',
               difficulty: 'intermediate',
               code: 'fs.createReadStream(path).pipe(res);',
             },
             {
               english: 'SSE',
-              italian: 'Server-Sent Events',
+              italian: 'Eventi inviati dal server (SSE)',
               pronunciation: '/ɛs ɛs iː/',
               phonetic: 'ES-ES-I',
               example:
-                'SSE streams events from the server. = SSE fa streaming di eventi dal server.',
+                'The dashboard uses SSE to push real-time stock price updates to the browser over a single long-lived HTTP connection. = La dashboard usa SSE per inviare aggiornamenti in tempo reale dei prezzi azionari al browser su una singola connessione HTTP di lunga durata.',
               context: 'streams',
               difficulty: 'advanced',
               note: 'Server-Sent Events. Unidirezionale, più leggero del WebSocket.',
             },
             {
               english: 'Chunked Transfer',
-              italian: 'Trasferimento chunked',
+              italian: 'Trasferimento a blocchi (chunked)',
               pronunciation: '/tʃʌŋkt ˈtrænsˌfɜːr/',
               phonetic: 'CIANKD TRANS-fer',
               example:
-                'Chunked transfer streams the response. = Il trasferimento chunked invia in streaming la risposta.',
+                "With chunked transfer encoding, the server can start sending the HTML before the full page is rendered, improving perceived load time for the user. = Con la codifica di trasferimento a blocchi, il server può iniziare a inviare l'HTML prima che l'intera pagina sia renderizzata, migliorando il tempo di caricamento percepito dall'utente.",
               context: 'streams',
               difficulty: 'advanced',
               code: 'Transfer-Encoding: chunked',
             },
             {
               english: 'Memory Efficiency',
-              italian: 'Efficienza memoria',
+              italian: "Efficienza nell'uso della memoria",
               pronunciation: '/ˈmeməri ɪˈfɪʃənsi/',
               phonetic: 'MEM-mo-ri ef-FI-scen-si',
-              example: 'Streams are memory efficient. = Gli stream sono efficienti in memoria.',
+              example:
+                "Processing a 4 GB database export with streams uses only 16 KB of memory at a time, whereas fs.readFile would try to allocate the full 4 GB buffer. = Elaborare un export di database da 4 GB con gli stream usa solo 16 KB di memoria alla volta, mentre fs.readFile proverebbe ad allocare l'intero buffer da 4 GB.",
               context: 'streams',
               difficulty: 'intermediate',
             },
             {
               english: 'TLS Stream',
-              italian: 'Stream TLS',
+              italian: 'Stream con crittografia TLS',
               pronunciation: '/tiː ɛl ɛs striːm/',
               phonetic: 'TI-EL-ES-STRIM',
-              example: 'TLS sockets are duplex streams. = I socket TLS sono stream duplex.',
+              example:
+                'Since TLS sockets behave as duplex streams, you can pipe encrypted data through transform stages just like any other Node.js stream. = Poiché i socket TLS si comportano come stream duplex, puoi fare pipe di dati crittati attraverso fasi di trasformazione proprio come qualsiasi altro stream Node.js.',
               context: 'streams',
               difficulty: 'advanced',
             },
             {
               english: 'process.stdin',
-              italian: 'process.stdin / stream di input standard',
+              italian: 'Stream di input standard del processo (process.stdin)',
               pronunciation: '/ˈproʊses ɛs tiː diː ɪn/',
               phonetic: 'PRO-ses-STD-IN',
               example:
-                'process.stdin is a readable stream. = process.stdin è uno stream leggibile.',
+                "CLI tools read user input from process.stdin, which is a readable stream you can pipe through a transform to parse commands. = Gli strumenti CLI leggono l'input dell'utente da process.stdin, che è uno stream leggibile che puoi passare attraverso un transform per analizzare i comandi.",
               context: 'streams',
               difficulty: 'intermediate',
               code: "process.stdin.on('data', cb);",
             },
             {
               english: 'process.stdout',
-              italian: 'process.stdout / stream di output standard',
+              italian: 'Stream di output standard del processo (process.stdout)',
               pronunciation: '/ˈproʊses ɛs tiː diː aʊt/',
               phonetic: 'PRO-ses-STD-AUT',
               example:
-                'process.stdout is a writable stream. = process.stdout è uno stream scrivibile.',
+                "Piping a formatted report through process.stdout lets you redirect the output to a file with > or pipe it into another command on the terminal. = Fare pipe di un report formattato attraverso process.stdout ti permette di reindirizzare l'output in un file con > o passarlo a un altro comando sul terminale.",
               context: 'streams',
               difficulty: 'intermediate',
               code: "process.stdout.write('hi');",
@@ -6062,7 +6211,8 @@ export default {
               italian: 'Iteratore di stream',
               pronunciation: '/striːm ˈɪtəreɪtər/',
               phonetic: 'STRIM IT-er-eit-er',
-              example: 'for await iterates over a stream. = for await itera su uno stream.',
+              example:
+                'Using for-await-of on a readable stream is the cleanest pattern for consuming chunks sequentially while letting Node handle backpressure for you. = Usare for-await-of su uno stream leggibile è il pattern più pulito per consumare blocchi sequenzialmente lasciando che Node gestisca la backpressure per te.',
               context: 'streams',
               difficulty: 'intermediate',
               code: 'for await (const c of stream) {}',
@@ -6085,7 +6235,7 @@ export default {
           items: [
             {
               english: 'EventEmitter',
-              italian: 'EventEmitter / classe pub-sub di Node',
+              italian: 'classe pub-sub di Node (EventEmitter)',
               pronunciation: '/ɪˈvent ɪˈmɪtər/',
               phonetic: 'i-VENT-i-MIT-er',
               example:
@@ -6158,7 +6308,7 @@ export default {
             },
             {
               english: 'Listener',
-              italian: 'listener / handler di eventi',
+              italian: 'handler di eventi (Listener)',
               pronunciation: '/ˈlɪsənər/',
               phonetic: 'LI-sen-er',
               example:
@@ -6225,7 +6375,7 @@ export default {
             },
             {
               english: 'Pub/Sub',
-              italian: 'pub/sub / pubblicazione e sottoscrizione',
+              italian: 'pubblicazione e sottoscrizione (Pub/Sub)',
               pronunciation: '/pʌb sʌb/',
               phonetic: 'PAB-SAB',
               example:
@@ -6267,7 +6417,7 @@ export default {
             },
             {
               english: 'Event Sourcing',
-              italian: 'event sourcing / archivio degli eventi',
+              italian: 'archivio degli eventi (Event Sourcing)',
               pronunciation: '/ɪˈvent ˈsɔːrsɪŋ/',
               phonetic: 'i-VENT-SOR-sing',
               example:
@@ -6368,7 +6518,7 @@ export default {
             },
             {
               english: 'prependListener',
-              italian: 'prependListener / aggiunge listener in testa',
+              italian: 'aggiunge listener in testa (prependListener)',
               pronunciation: '/ˈpriːpend ˈlɪsənər/',
               phonetic: 'PRI-pend-LI-sen-er',
               example: 'prependListener adds at the front. = prependListener aggiunge in cima.',
@@ -6378,7 +6528,7 @@ export default {
             },
             {
               english: 'EventTarget',
-              italian: 'EventTarget / interfaccia DOM per eventi',
+              italian: 'interfaccia DOM per eventi (EventTarget)',
               pronunciation: '/ɪˈvent ˈtɑːrɡɪt/',
               phonetic: 'i-VENT-TAR-get',
               example:
@@ -6389,7 +6539,7 @@ export default {
             },
             {
               english: 'CustomEvent',
-              italian: 'CustomEvent / evento personalizzato DOM',
+              italian: 'evento personalizzato DOM (CustomEvent)',
               pronunciation: '/ˈkʌstəm ɪˈvent/',
               phonetic: 'KAS-tom-i-VENT',
               example:
@@ -6400,7 +6550,7 @@ export default {
             },
             {
               english: 'Hook',
-              italian: 'hook / aggancio del ciclo di vita',
+              italian: 'aggancio del ciclo di vita (Hook)',
               pronunciation: '/hʊk/',
               phonetic: 'UK',
               example:
@@ -6417,7 +6567,7 @@ export default {
           items: [
             {
               english: 'events.on',
-              italian: 'events.on / iteratore async di eventi',
+              italian: 'iteratore async di eventi (events.on)',
               pronunciation: '/ɪˈvents ɒn/',
               phonetic: 'i-VENTS-ON',
               example:
@@ -6428,7 +6578,7 @@ export default {
             },
             {
               english: 'events.once',
-              italian: 'events.once / attende un singolo evento',
+              italian: 'attende un singolo evento (events.once)',
               pronunciation: '/ɪˈvents wʌns/',
               phonetic: 'i-VENTS-UANS',
               example:
@@ -6439,7 +6589,7 @@ export default {
             },
             {
               english: 'AbortSignal',
-              italian: 'AbortSignal / segnale di annullamento',
+              italian: 'segnale di annullamento (AbortSignal)',
               pronunciation: '/əˈbɔːrt ˈsɪɡnəl/',
               phonetic: 'a-BORT-SIG-nal',
               example:
@@ -6470,7 +6620,7 @@ export default {
             },
             {
               english: 'Topic',
-              italian: 'topic / canale tematico di messaggi',
+              italian: 'canale tematico di messaggi (Topic)',
               pronunciation: '/ˈtɒpɪk/',
               phonetic: 'TO-pik',
               example: 'A topic groups related events. = Un topic raggruppa eventi correlati.',
@@ -6591,7 +6741,7 @@ export default {
             },
             {
               english: 'node:test',
-              italian: 'node:test / runner di test integrato in Node',
+              italian: 'runner di test integrato in Node (node:test)',
               pronunciation: '/noʊd tɛst/',
               phonetic: 'NOUD-TEST',
               example:
@@ -6603,7 +6753,7 @@ export default {
             },
             {
               english: 'Tap',
-              italian: 'tap / framework di test TAP',
+              italian: 'framework di test TAP (Tap)',
               pronunciation: '/tæp/',
               phonetic: 'TAP',
               example: 'Tap implements the TAP protocol. = Tap implementa il protocollo TAP.',
@@ -6614,7 +6764,7 @@ export default {
             },
             {
               english: 'Tape',
-              italian: 'tape / framework di test TAP minimalista',
+              italian: 'framework di test TAP minimalista (Tape)',
               pronunciation: '/teɪp/',
               phonetic: 'TEIP',
               example:
@@ -6625,7 +6775,7 @@ export default {
             },
             {
               english: 'AVA',
-              italian: 'AVA / framework di test concorrente',
+              italian: 'framework di test concorrente (AVA)',
               pronunciation: '/ˈeɪvə/',
               phonetic: 'EI-va',
               example: 'AVA runs tests in parallel. = AVA esegue i test in parallelo.',
@@ -6652,7 +6802,7 @@ export default {
           items: [
             {
               english: 'describe',
-              italian: 'describe / blocco di test',
+              italian: 'blocco di test (describe)',
               pronunciation: '/dɪˈskraɪb/',
               phonetic: 'di-SKRAIB',
               example: 'describe groups related tests. = describe raggruppa test correlati.',
@@ -6662,7 +6812,7 @@ export default {
             },
             {
               english: 'it',
-              italian: 'it / singolo test',
+              italian: 'singolo test (it)',
               pronunciation: '/ɪt/',
               phonetic: 'IT',
               example: 'it describes a single test case. = it descrive un singolo caso di test.',
@@ -6672,7 +6822,7 @@ export default {
             },
             {
               english: 'test',
-              italian: 'test / singolo test (Vitest/Jest)',
+              italian: 'singolo test (Vitest/Jest) (test)',
               pronunciation: '/tɛst/',
               phonetic: 'TEST',
               example: 'test is an alias for it in Jest. = test è un alias di it in Jest.',
@@ -6692,7 +6842,7 @@ export default {
             },
             {
               english: 'Matcher',
-              italian: 'matcher / asserzione di Jest',
+              italian: 'asserzione di Jest (Matcher)',
               pronunciation: '/ˈmætʃər/',
               phonetic: 'MAC-cer',
               example: 'A matcher compares values. = Un matcher confronta valori.',
@@ -6759,7 +6909,7 @@ export default {
           items: [
             {
               english: 'Mock',
-              italian: 'mock / oggetto fittizio per i test',
+              italian: 'oggetto fittizio per i test (Mock)',
               pronunciation: '/mɒk/',
               phonetic: 'MOK',
               example:
@@ -6770,7 +6920,7 @@ export default {
             },
             {
               english: 'Stub',
-              italian: 'stub / sostituto minimale',
+              italian: 'sostituto minimale (Stub)',
               pronunciation: '/stʌb/',
               phonetic: 'STAB',
               example: 'A stub returns a fixed value. = Uno stub ritorna un valore fisso.',
@@ -6810,7 +6960,7 @@ export default {
             },
             {
               english: 'mockReturnValue',
-              italian: 'mockReturnValue / valore di ritorno fittizio',
+              italian: 'valore di ritorno fittizio (mockReturnValue)',
               pronunciation: '/mɒk rɪˈtɜːrn ˈvæljuː/',
               phonetic: 'MOK-ri-TERN-VAL-iu',
               example:
@@ -6821,7 +6971,7 @@ export default {
             },
             {
               english: 'mockResolvedValue',
-              italian: 'mockResolvedValue / Promise risolta fittizia',
+              italian: 'Promise risolta fittizia (mockResolvedValue)',
               pronunciation: '/mɒk rɪˈzɒlvd ˈvæljuː/',
               phonetic: 'MOK-ri-ZOLVD-VAL-iu',
               example:
@@ -6843,7 +6993,7 @@ export default {
             },
             {
               english: 'nock',
-              italian: 'nock / mock di richieste HTTP',
+              italian: 'mock di richieste HTTP (nock)',
               pronunciation: '/nɒk/',
               phonetic: 'NOK',
               example:
@@ -6854,7 +7004,7 @@ export default {
             },
             {
               english: 'msw',
-              italian: 'msw / Mock Service Worker',
+              italian: 'Mock Service Worker (msw)',
               pronunciation: '/ɛm ɛs ˈdʌbljuː/',
               phonetic: 'EM-ES-DAB-iu',
               example:
@@ -6883,7 +7033,7 @@ export default {
             },
             {
               english: 'End-to-End',
-              italian: 'end-to-end / test da capo a capo',
+              italian: 'test da capo a capo (End-to-End)',
               pronunciation: '/end tuː end/',
               phonetic: 'END-TU-END',
               example: "E2E tests cover the entire flow. = I test E2E coprono l'intero flusso.",
@@ -6893,7 +7043,7 @@ export default {
             },
             {
               english: 'Supertest',
-              italian: 'Supertest / test HTTP per Express',
+              italian: 'test HTTP per Express (Supertest)',
               pronunciation: '/ˈsuːpərtɛst/',
               phonetic: 'SU-per-test',
               example: 'Supertest tests Express routes. = Supertest testa rotte Express.',
@@ -6927,7 +7077,7 @@ export default {
             },
             {
               english: 'Istanbul',
-              italian: 'Istanbul / strumento di copertura',
+              italian: 'strumento di copertura (Istanbul)',
               pronunciation: '/ˈɪstənbʊl/',
               phonetic: 'IS-tan-bul',
               example: 'Istanbul is a coverage tool. = Istanbul è uno strumento di copertura.',
@@ -6946,7 +7096,7 @@ export default {
             },
             {
               english: 'Fixture',
-              italian: 'fixture / dati di test riutilizzabili',
+              italian: 'dati di test riutilizzabili (Fixture)',
               pronunciation: '/ˈfɪkstʃər/',
               phonetic: 'FIKS-cer',
               example: 'Fixtures provide test data. = Le fixture forniscono dati di test.',
@@ -6955,7 +7105,7 @@ export default {
             },
             {
               english: 'Faker',
-              italian: 'Faker / generatore di dati fittizi',
+              italian: 'generatore di dati fittizi (Faker)',
               pronunciation: '/ˈfeɪkər/',
               phonetic: 'FEI-ker',
               example: 'Faker generates fake test data. = Faker genera dati di test fittizi.',
@@ -7013,7 +7163,7 @@ export default {
             },
             {
               english: 'XSS',
-              italian: 'XSS / Cross-Site Scripting',
+              italian: 'Cross-Site Scripting (XSS)',
               pronunciation: '/ɛks ɛs ɛs/',
               phonetic: 'EKS-ES-ES',
               example: 'XSS injects malicious scripts. = XSS inietta script malevoli.',
@@ -7023,7 +7173,7 @@ export default {
             },
             {
               english: 'SQL Injection',
-              italian: 'SQL injection / iniezione di codice SQL',
+              italian: 'iniezione di codice SQL (SQL Injection)',
               pronunciation: '/ɛs kjuː ɛl ɪnˈdʒekʃən/',
               phonetic: 'ES-KIU-EL-in-GEK-scen',
               example:
@@ -7043,7 +7193,7 @@ export default {
             },
             {
               english: 'Command Injection',
-              italian: 'command injection / iniezione di comando shell',
+              italian: 'iniezione di comando shell (Command Injection)',
               pronunciation: '/kəˈmænd ɪnˈdʒekʃən/',
               phonetic: 'kom-MAND-in-GEK-scen',
               example: 'Command injection runs OS commands. = Command injection esegue comandi OS.',
@@ -7053,7 +7203,7 @@ export default {
             },
             {
               english: 'Path Traversal',
-              italian: 'path traversal / attraversamento di percorso',
+              italian: 'attraversamento di percorso (Path Traversal)',
               pronunciation: '/pæθ ˈtrævɜːrsl/',
               phonetic: 'PAT-TRA-ver-sal',
               example:
@@ -7064,7 +7214,7 @@ export default {
             },
             {
               english: 'Validator',
-              italian: 'validator / libreria di validazione',
+              italian: 'libreria di validazione (Validator)',
               pronunciation: '/ˈvælɪdeɪtər/',
               phonetic: 'VA-li-dei-ter',
               example: 'validator.js validates strings. = validator.js valida stringhe.',
@@ -7074,7 +7224,7 @@ export default {
             },
             {
               english: 'express-validator',
-              italian: 'express-validator / middleware di validazione',
+              italian: 'middleware di validazione (express-validator)',
               pronunciation: '/ɪkˈspres ˈvælɪdeɪtər/',
               phonetic: 'eks-PRES-VA-li-dei-ter',
               example:
@@ -7085,7 +7235,7 @@ export default {
             },
             {
               english: 'Whitelist',
-              italian: 'whitelist / lista bianca di consentiti',
+              italian: 'lista bianca di consentiti (Whitelist)',
               pronunciation: '/ˈwaɪtˌlɪst/',
               phonetic: 'UAIT-list',
               example:
@@ -7102,7 +7252,7 @@ export default {
           items: [
             {
               english: 'Helmet',
-              italian: 'Helmet / middleware di sicurezza header',
+              italian: 'middleware di sicurezza header (Helmet)',
               pronunciation: '/ˈhɛlmɪt/',
               phonetic: 'EL-met',
               example:
@@ -7124,7 +7274,7 @@ export default {
             },
             {
               english: 'HSTS',
-              italian: 'HSTS / Strict-Transport-Security',
+              italian: 'Strict-Transport-Security (HSTS)',
               pronunciation: '/eɪtʃ ɛs tiː ɛs/',
               phonetic: 'EICI-ES-TI-ES',
               example: 'HSTS forces HTTPS. = HSTS forza HTTPS.',
@@ -7134,7 +7284,7 @@ export default {
             },
             {
               english: 'X-Frame-Options',
-              italian: 'X-Frame-Options / header anti-clickjacking',
+              italian: 'header anti-clickjacking (X-Frame-Options)',
               pronunciation: '/ɛks freɪm ˈɒpʃənz/',
               phonetic: 'EKS-FREIM-OP-scions',
               example:
@@ -7145,7 +7295,7 @@ export default {
             },
             {
               english: 'X-Content-Type-Options',
-              italian: 'X-Content-Type-Options / header anti-MIME-sniffing',
+              italian: 'header anti-MIME-sniffing (X-Content-Type-Options)',
               pronunciation: '/ɛks ˈkɒntent taɪp ˈɒpʃənz/',
               phonetic: 'EKS-KON-tent-TAIP-OP-scions',
               example:
@@ -7166,7 +7316,7 @@ export default {
             },
             {
               english: 'Permissions-Policy',
-              italian: 'Permissions-Policy / header permessi browser',
+              italian: 'header permessi browser (Permissions-Policy)',
               pronunciation: '/pərˈmɪʃənz ˈpɒlɪsi/',
               phonetic: 'per-MIS-cions-PO-li-si',
               example:
@@ -7176,7 +7326,7 @@ export default {
             },
             {
               english: 'NoSniff',
-              italian: 'nosniff / valore di X-Content-Type-Options',
+              italian: 'valore di X-Content-Type-Options (NoSniff)',
               pronunciation: '/noʊ snɪf/',
               phonetic: 'NO-SNIF',
               example:
@@ -7224,7 +7374,7 @@ export default {
             },
             {
               english: 'express-rate-limit',
-              italian: 'express-rate-limit / middleware di rate limiting',
+              italian: 'middleware di rate limiting (express-rate-limit)',
               pronunciation: '/ɪkˈspres reɪt ˈlɪmɪt/',
               phonetic: 'eks-PRES-REIT-LI-mit',
               example:
@@ -7255,7 +7405,7 @@ export default {
             },
             {
               english: 'CAPTCHA',
-              italian: 'CAPTCHA / test umano-vs-bot',
+              italian: 'test umano-vs-bot (CAPTCHA)',
               pronunciation: '/ˈkæptʃə/',
               phonetic: 'KAP-cia',
               example: 'CAPTCHA distinguishes humans from bots. = CAPTCHA distingue umani da bot.',
@@ -7294,7 +7444,7 @@ export default {
             },
             {
               english: 'DDoS',
-              italian: 'DDoS / Distributed Denial of Service',
+              italian: 'Distributed Denial of Service (DDoS)',
               pronunciation: '/diː dɒs/',
               phonetic: 'DI-DOS',
               example: 'DDoS attacks flood the server. = Gli attacchi DDoS inondano il server.',
@@ -7303,7 +7453,7 @@ export default {
             },
             {
               english: 'Token Bucket',
-              italian: 'token bucket / algoritmo a secchio di gettoni',
+              italian: 'algoritmo a secchio di gettoni (Token Bucket)',
               pronunciation: '/ˈtoʊkən ˈbʌkɪt/',
               phonetic: 'TOU-ken-BAK-ket',
               example:
@@ -7320,7 +7470,7 @@ export default {
           items: [
             {
               english: 'npm audit',
-              italian: 'npm audit / scanner npm integrato',
+              italian: 'scanner npm integrato (npm audit)',
               pronunciation: '/ɛn piː ɛm ˈɔːdɪt/',
               phonetic: 'EN-PI-EM-O-dit',
               example: 'npm audit reports vulnerabilities. = npm audit segnala vulnerabilità.',
@@ -7330,7 +7480,7 @@ export default {
             },
             {
               english: 'npm audit fix',
-              italian: 'npm audit fix / applica patch automatiche',
+              italian: 'applica patch automatiche (npm audit fix)',
               pronunciation: '/ɛn piː ɛm ˈɔːdɪt fɪks/',
               phonetic: 'EN-PI-EM-O-dit-FIKS',
               example:
@@ -7341,7 +7491,7 @@ export default {
             },
             {
               english: 'CVE',
-              italian: 'CVE / Common Vulnerabilities and Exposures',
+              italian: 'Common Vulnerabilities and Exposures (CVE)',
               pronunciation: '/siː viː iː/',
               phonetic: 'SI-VI-I',
               example:
@@ -7383,7 +7533,7 @@ export default {
             },
             {
               english: 'Typosquatting',
-              italian: 'typosquatting / nomi simili per ingannare utenti',
+              italian: 'nomi simili per ingannare utenti (Typosquatting)',
               pronunciation: '/ˈtaɪpoʊˌskwɒtɪŋ/',
               phonetic: 'TAI-po-SKUOT-ing',
               example:
@@ -7394,7 +7544,7 @@ export default {
             },
             {
               english: 'Lockfile',
-              italian: 'lockfile / file di blocco delle versioni',
+              italian: 'file di blocco delle versioni (Lockfile)',
               pronunciation: '/ˈlɒkfaɪl/',
               phonetic: 'LOK-fail',
               example: 'A lockfile pins exact versions. = Un lockfile blocca le versioni esatte.',
@@ -7404,7 +7554,7 @@ export default {
             },
             {
               english: 'npm ci',
-              italian: 'npm ci / installazione strict da lockfile',
+              italian: 'installazione strict da lockfile (npm ci)',
               pronunciation: '/ɛn piː ɛm siː aɪ/',
               phonetic: 'EN-PI-EM-SI-AI',
               example: 'npm ci installs from lockfile only. = npm ci installa solo dal lockfile.',
@@ -7442,7 +7592,7 @@ export default {
           items: [
             {
               english: 'WebSocket',
-              italian: 'WebSocket / canale full-duplex su HTTP',
+              italian: 'canale full-duplex su HTTP (WebSocket)',
               pronunciation: '/ˈwebˌsɒkɪt/',
               phonetic: 'UEB-so-ket',
               example:
@@ -7453,7 +7603,7 @@ export default {
             },
             {
               english: 'Handshake',
-              italian: 'handshake / scambio iniziale di handshake',
+              italian: 'scambio iniziale di handshake (Handshake)',
               pronunciation: '/ˈhændˌʃeɪk/',
               phonetic: 'AND-sceik',
               example:
@@ -7485,7 +7635,7 @@ export default {
             },
             {
               english: 'Frame',
-              italian: 'frame / unità WebSocket',
+              italian: 'unità WebSocket (Frame)',
               pronunciation: '/freɪm/',
               phonetic: 'FREIM',
               example: 'WebSocket sends data in frames. = WebSocket invia dati in frame.',
@@ -7494,7 +7644,7 @@ export default {
             },
             {
               english: 'Ping/Pong',
-              italian: 'ping/pong / heartbeat WebSocket',
+              italian: 'heartbeat WebSocket (Ping/Pong)',
               pronunciation: '/pɪŋ pɒŋ/',
               phonetic: 'PING-PONG',
               example:
@@ -7514,7 +7664,7 @@ export default {
             },
             {
               english: 'wss',
-              italian: 'wss / WebSocket cifrato',
+              italian: 'WebSocket cifrato (wss)',
               pronunciation: '/dʌbljuː ɛs ɛs/',
               phonetic: 'DAB-iu-ES-ES',
               example: 'wss is WebSocket over TLS. = wss è WebSocket su TLS.',
@@ -7534,7 +7684,7 @@ export default {
             },
             {
               english: 'Heartbeat',
-              italian: 'heartbeat / battito di vita',
+              italian: 'battito di vita (Heartbeat)',
               pronunciation: '/ˈhɑːrtbiːt/',
               phonetic: 'ART-bit',
               example: 'Heartbeat detects dead connections. = Heartbeat rileva connessioni morte.',
@@ -7550,7 +7700,7 @@ export default {
           items: [
             {
               english: 'Socket.io',
-              italian: 'Socket.IO / libreria real-time bidirezionale',
+              italian: 'libreria real-time bidirezionale (Socket.io)',
               pronunciation: '/ˈsɒkɪt aɪ oʊ/',
               phonetic: 'SO-ket-AI-O',
               example:
@@ -7584,7 +7734,7 @@ export default {
             },
             {
               english: 'Socket',
-              italian: 'socket / punto di connessione di rete',
+              italian: 'punto di connessione di rete (Socket)',
               pronunciation: '/ˈsɒkɪt/',
               phonetic: 'SO-ket',
               example: 'Each socket represents one client. = Ogni socket rappresenta un client.',
@@ -7594,7 +7744,7 @@ export default {
             },
             {
               english: 'Room',
-              italian: 'room / stanza di Socket.IO',
+              italian: 'stanza di Socket.IO (Room)',
               pronunciation: '/ruːm/',
               phonetic: 'RUM',
               example: 'A room groups sockets together. = Una room raggruppa socket insieme.',
@@ -7604,7 +7754,7 @@ export default {
             },
             {
               english: 'Namespace',
-              italian: 'namespace / spazio dei nomi Socket.IO',
+              italian: 'spazio dei nomi Socket.IO (Namespace)',
               pronunciation: '/ˈneɪmspeɪs/',
               phonetic: 'NEIM-speis',
               example: 'A namespace is a logical channel. = Un namespace è un canale logico.',
@@ -7634,7 +7784,7 @@ export default {
             },
             {
               english: 'Adapter',
-              italian: 'adapter / adattatore di backend pub-sub',
+              italian: 'adattatore di backend pub-sub (Adapter)',
               pronunciation: '/əˈdæptər/',
               phonetic: 'a-DAP-ter',
               example:
@@ -7722,7 +7872,7 @@ export default {
             },
             {
               english: 'Long Polling',
-              italian: 'long polling / polling esteso',
+              italian: 'polling esteso (Long Polling)',
               pronunciation: '/lɒŋ ˈpoʊlɪŋ/',
               phonetic: 'LONG-POL-ing',
               example:
@@ -7771,7 +7921,7 @@ export default {
           items: [
             {
               english: 'WebRTC',
-              italian: 'WebRTC / comunicazione real-time peer-to-peer',
+              italian: 'comunicazione real-time peer-to-peer (WebRTC)',
               pronunciation: '/wɛb ɑːr tiː siː/',
               phonetic: 'UEB-AR-TI-SI',
               example:
@@ -7782,7 +7932,7 @@ export default {
             },
             {
               english: 'Signaling',
-              italian: 'signaling / segnalazione WebRTC',
+              italian: 'segnalazione WebRTC (Signaling)',
               pronunciation: '/ˈsɪɡnəlɪŋ/',
               phonetic: 'SIG-na-ling',
               example:
@@ -7803,7 +7953,7 @@ export default {
             },
             {
               english: 'TURN',
-              italian: 'TURN / relay di traffico per NAT',
+              italian: 'relay di traffico per NAT (TURN)',
               pronunciation: '/tɜːrn/',
               phonetic: 'TERN',
               example:
@@ -7814,7 +7964,7 @@ export default {
             },
             {
               english: 'mediasoup',
-              italian: 'mediasoup / SFU WebRTC Node.js',
+              italian: 'SFU WebRTC Node.js (mediasoup)',
               pronunciation: '/ˈmiːdiəsuːp/',
               phonetic: 'MI-dia-sup',
               example: 'mediasoup is a Node SFU library. = mediasoup è una libreria SFU Node.',
@@ -7833,7 +7983,7 @@ export default {
             },
             {
               english: 'HLS',
-              italian: 'HLS / HTTP Live Streaming',
+              italian: 'HTTP Live Streaming (HLS)',
               pronunciation: '/eɪtʃ ɛl ɛs/',
               phonetic: 'EICI-EL-ES',
               example: 'HLS is HTTP Live Streaming. = HLS è HTTP Live Streaming.',
@@ -7842,7 +7992,7 @@ export default {
             },
             {
               english: 'FFmpeg',
-              italian: 'FFmpeg / suite multimediale',
+              italian: 'suite multimediale (FFmpeg)',
               pronunciation: '/ɛf ɛf ˈempeɡ/',
               phonetic: 'EF-EF-EM-peg',
               example: 'FFmpeg processes video and audio. = FFmpeg elabora video e audio.',
@@ -7852,7 +8002,7 @@ export default {
             },
             {
               english: 'RTMP',
-              italian: 'RTMP / Real-Time Messaging Protocol',
+              italian: 'Real-Time Messaging Protocol (RTMP)',
               pronunciation: '/ɑːr tiː ɛm piː/',
               phonetic: 'AR-TI-EM-PI',
               example:
@@ -7909,7 +8059,7 @@ export default {
             },
             {
               english: 'parentPort',
-              italian: 'parentPort / canale verso il main thread',
+              italian: 'canale verso il main thread (parentPort)',
               pronunciation: '/ˈpeərənt pɔːrt/',
               phonetic: 'PER-ent-PORT',
               example:
@@ -7920,7 +8070,7 @@ export default {
             },
             {
               english: 'postMessage',
-              italian: 'postMessage / invia messaggio',
+              italian: 'invia messaggio (postMessage)',
               pronunciation: '/poʊst ˈmesɪdʒ/',
               phonetic: 'POUST-MES-segg',
               example:
@@ -7930,7 +8080,7 @@ export default {
             },
             {
               english: 'workerData',
-              italian: 'workerData / dati passati al worker',
+              italian: 'dati passati al worker (workerData)',
               pronunciation: '/ˈwɜːrkər ˈdeɪtə/',
               phonetic: 'UORK-er-DEI-ta',
               example: 'workerData passes initial data. = workerData passa dati iniziali.',
@@ -7940,7 +8090,7 @@ export default {
             },
             {
               english: 'SharedArrayBuffer',
-              italian: 'SharedArrayBuffer / buffer condiviso tra worker',
+              italian: 'buffer condiviso tra worker (SharedArrayBuffer)',
               pronunciation: '/ʃɛərd əˈreɪˌbʌfər/',
               phonetic: 'SCERD-ar-REI-BAF-fer',
               example:
@@ -7950,7 +8100,7 @@ export default {
             },
             {
               english: 'Atomics',
-              italian: 'Atomics / operazioni atomiche su SAB',
+              italian: 'operazioni atomiche su SAB (Atomics)',
               pronunciation: '/əˈtɒmɪks/',
               phonetic: 'a-TOM-iks',
               example:
@@ -7960,7 +8110,7 @@ export default {
             },
             {
               english: 'CPU-Bound',
-              italian: 'CPU-bound / limitato dalla CPU',
+              italian: 'limitato dalla CPU (CPU-Bound)',
               pronunciation: '/siː piː juː baʊnd/',
               phonetic: 'SI-PI-IU-BAUND',
               example: 'Use workers for CPU-bound tasks. = Usa worker per operazioni CPU-bound.',
@@ -7979,7 +8129,7 @@ export default {
             },
             {
               english: 'Piscina',
-              italian: 'Piscina / pool di Worker Threads',
+              italian: 'pool di Worker Threads (Piscina)',
               pronunciation: '/pɪˈsiːnə/',
               phonetic: 'pis-SI-na',
               example:
@@ -7998,7 +8148,7 @@ export default {
           items: [
             {
               english: 'child_process',
-              italian: 'child_process / modulo processi figli',
+              italian: 'modulo processi figli (child_process)',
               pronunciation: '/tʃaɪld ˈproʊses/',
               phonetic: 'CIAILD-PRO-ses',
               example:
@@ -8009,7 +8159,7 @@ export default {
             },
             {
               english: 'spawn',
-              italian: 'spawn / lancia processo figlio',
+              italian: 'lancia processo figlio (spawn)',
               pronunciation: '/spɔːn/',
               phonetic: 'SPON',
               example:
@@ -8020,7 +8170,7 @@ export default {
             },
             {
               english: 'exec',
-              italian: 'exec / esegue comando in shell',
+              italian: 'esegue comando in shell (exec)',
               pronunciation: '/ɪɡˈzek/',
               phonetic: 'eg-ZEK',
               example:
@@ -8032,7 +8182,7 @@ export default {
             },
             {
               english: 'execFile',
-              italian: 'execFile / esegue eseguibile senza shell',
+              italian: 'esegue eseguibile senza shell (execFile)',
               pronunciation: '/ɪɡˈzek faɪl/',
               phonetic: 'eg-ZEK-FAIL',
               example:
@@ -8043,7 +8193,7 @@ export default {
             },
             {
               english: 'fork',
-              italian: 'fork / lancia un processo Node figlio',
+              italian: 'lancia un processo Node figlio (fork)',
               pronunciation: '/fɔːrk/',
               phonetic: 'FORK',
               example:
@@ -8054,7 +8204,7 @@ export default {
             },
             {
               english: 'IPC',
-              italian: 'IPC / Inter-Process Communication',
+              italian: 'Inter-Process Communication (IPC)',
               pronunciation: '/aɪ piː siː/',
               phonetic: 'AI-PI-SI',
               example: 'IPC is Inter-Process Communication. = IPC è Comunicazione Tra Processi.',
@@ -8064,7 +8214,7 @@ export default {
             },
             {
               english: 'stdio',
-              italian: 'stdio / configurazione I/O dei processi figli',
+              italian: 'configurazione I/O dei processi figli (stdio)',
               pronunciation: '/ɛs tiː diː aɪ oʊ/',
               phonetic: 'ES-TI-DI-AI-O',
               example:
@@ -8113,7 +8263,7 @@ export default {
           items: [
             {
               english: 'Cluster',
-              italian: 'cluster / modulo cluster di Node',
+              italian: 'modulo cluster di Node (Cluster)',
               pronunciation: '/ˈklʌstər/',
               phonetic: 'KLAS-ter',
               example: 'cluster forks worker processes. = cluster fa fork di processi worker.',
@@ -8123,7 +8273,7 @@ export default {
             },
             {
               english: 'Master',
-              italian: 'master / processo principale del cluster',
+              italian: 'processo principale del cluster (Master)',
               pronunciation: '/ˈmæstər/',
               phonetic: 'MAS-ter',
               example: 'The master coordinates workers. = Il master coordina i worker.',
@@ -8153,7 +8303,7 @@ export default {
             },
             {
               english: 'Round Robin',
-              italian: 'round robin / a turno',
+              italian: 'a turno (Round Robin)',
               pronunciation: '/raʊnd ˈrɒbɪn/',
               phonetic: 'RAUND-RO-bin',
               example:
@@ -8242,7 +8392,7 @@ export default {
             },
             {
               english: 'Mutex',
-              italian: 'mutex / mutua esclusione',
+              italian: 'mutua esclusione (Mutex)',
               pronunciation: '/ˈmjuːtɛks/',
               phonetic: 'MIU-teks',
               example: 'A mutex enforces exclusive access. = Un mutex impone accesso esclusivo.',
@@ -8262,7 +8412,7 @@ export default {
             },
             {
               english: 'p-limit',
-              italian: 'p-limit / limita la concorrenza di Promise',
+              italian: 'limita la concorrenza di Promise (p-limit)',
               pronunciation: '/piː ˈlɪmɪt/',
               phonetic: 'PI-LI-mit',
               example: 'p-limit caps concurrent promises. = p-limit limita promise concorrenti.',
@@ -8284,7 +8434,7 @@ export default {
             },
             {
               english: 'Race Condition',
-              italian: 'race condition / corsa critica',
+              italian: 'corsa critica (Race Condition)',
               pronunciation: '/reɪs kənˈdɪʃən/',
               phonetic: 'REIS-kon-DI-scen',
               example:
@@ -8294,7 +8444,7 @@ export default {
             },
             {
               english: 'Deadlock',
-              italian: 'deadlock / stallo da lock circolari',
+              italian: 'stallo da lock circolari (Deadlock)',
               pronunciation: '/ˈdɛdlɒk/',
               phonetic: 'DED-lok',
               example:
@@ -8304,7 +8454,7 @@ export default {
             },
             {
               english: 'Throttle',
-              italian: 'throttle / limita la frequenza',
+              italian: 'limita la frequenza (Throttle)',
               pronunciation: '/ˈθrɒtl/',
               phonetic: 'TROT-tel',
               example:
@@ -8314,7 +8464,7 @@ export default {
             },
             {
               english: 'Debounce',
-              italian: 'debounce / ritarda fino alla pausa',
+              italian: 'ritarda fino alla pausa (Debounce)',
               pronunciation: '/dɪˈbaʊns/',
               phonetic: 'di-BAUNS',
               example:
@@ -8352,7 +8502,7 @@ export default {
             },
             {
               english: 'tsc',
-              italian: 'tsc / compilatore TypeScript',
+              italian: 'compilatore TypeScript (tsc)',
               pronunciation: '/tiː ɛs siː/',
               phonetic: 'TI-ES-SI',
               example:
@@ -8363,7 +8513,7 @@ export default {
             },
             {
               english: 'tsconfig.json',
-              italian: 'tsconfig.json / configurazione TypeScript',
+              italian: 'configurazione TypeScript (tsconfig.json)',
               pronunciation: '/tiː ɛs ˈkɒnfɪɡ ˈdʒeɪsɒn/',
               phonetic: 'TI-ES-KON-fig-GEI-son',
               example:
@@ -8374,7 +8524,7 @@ export default {
             },
             {
               english: 'ts-node',
-              italian: 'ts-node / esecutore TypeScript runtime',
+              italian: 'esecutore TypeScript runtime (ts-node)',
               pronunciation: '/tiː ɛs noʊd/',
               phonetic: 'TI-ES-NOUD',
               example:
@@ -8386,7 +8536,7 @@ export default {
             },
             {
               english: 'tsx',
-              italian: 'tsx / esecutore TypeScript veloce',
+              italian: 'esecutore TypeScript veloce (tsx)',
               pronunciation: '/tiː ɛs ɛks/',
               phonetic: 'TI-ES-EKS',
               example:
@@ -8409,7 +8559,7 @@ export default {
             },
             {
               english: 'Target',
-              italian: 'target / versione di JS di output',
+              italian: 'versione di JS di output (Target)',
               pronunciation: '/ˈtɑːrɡɪt/',
               phonetic: 'TAR-get',
               example:
@@ -8442,7 +8592,7 @@ export default {
             },
             {
               english: 'DefinitelyTyped',
-              italian: 'DefinitelyTyped / repository di tipi @types',
+              italian: 'repository di tipi @types (DefinitelyTyped)',
               pronunciation: '/ˈdefɪnɪtli ˈtaɪpt/',
               phonetic: 'DEF-i-nit-li-TAIPD',
               example:
@@ -8481,7 +8631,7 @@ export default {
             },
             {
               english: 'any',
-              italian: 'any / tipo qualsiasi (sconsigliato)',
+              italian: 'tipo qualsiasi (sconsigliato) (any)',
               pronunciation: '/ˈeni/',
               phonetic: 'EN-i',
               example: 'any disables type checking. = any disabilita il type checking.',
@@ -8492,7 +8642,7 @@ export default {
             },
             {
               english: 'unknown',
-              italian: 'unknown / tipo sconosciuto sicuro',
+              italian: 'tipo sconosciuto sicuro (unknown)',
               pronunciation: '/ʌnˈnoʊn/',
               phonetic: 'an-NOUN',
               example:
@@ -8503,7 +8653,7 @@ export default {
             },
             {
               english: 'never',
-              italian: 'never / tipo che non assume valore',
+              italian: 'tipo che non assume valore (never)',
               pronunciation: '/ˈnevər/',
               phonetic: 'NEV-er',
               example:
@@ -8513,7 +8663,7 @@ export default {
             },
             {
               english: 'void',
-              italian: 'void / tipo di funzione senza ritorno',
+              italian: 'tipo di funzione senza ritorno (void)',
               pronunciation: '/vɔɪd/',
               phonetic: 'VOID',
               example:
@@ -8808,7 +8958,7 @@ export default {
           items: [
             {
               english: 'MVC',
-              italian: 'MVC / Model-View-Controller',
+              italian: 'Model-View-Controller (MVC)',
               pronunciation: '/ɛm viː siː/',
               phonetic: 'EM-VI-SI',
               example: 'MVC means Model-View-Controller. = MVC significa Model-View-Controller.',
@@ -8857,7 +9007,7 @@ export default {
             },
             {
               english: 'Clean Architecture',
-              italian: 'clean architecture / architettura a cerchi concentrici',
+              italian: 'architettura a cerchi concentrici (Clean Architecture)',
               pronunciation: '/kliːn ˈɑːrkɪˌtekʧər/',
               phonetic: 'KLIN-AR-ki-tek-cer',
               example:
@@ -8958,7 +9108,7 @@ export default {
             },
             {
               english: 'InversifyJS',
-              italian: 'InversifyJS / DI container TypeScript',
+              italian: 'DI container TypeScript (InversifyJS)',
               pronunciation: '/ɪnˈvɜːrsɪfaɪ dʒeɪ ɛs/',
               phonetic: 'in-VER-si-fai-GEI-ES',
               example:
@@ -8969,7 +9119,7 @@ export default {
             },
             {
               english: 'tsyringe',
-              italian: 'tsyringe / DI container leggero',
+              italian: 'DI container leggero (tsyringe)',
               pronunciation: '/tiː ˈsɪrɪndʒ/',
               phonetic: 'TI-si-RINGG',
               example:
@@ -8992,7 +9142,7 @@ export default {
             },
             {
               english: 'Provider',
-              italian: 'provider / fornitore di dipendenze',
+              italian: 'fornitore di dipendenze (Provider)',
               pronunciation: '/prəˈvaɪdər/',
               phonetic: 'pro-VAI-der',
               example:
@@ -9014,7 +9164,7 @@ export default {
             },
             {
               english: 'Singleton',
-              italian: 'singleton / pattern unica istanza',
+              italian: 'pattern unica istanza (Singleton)',
               pronunciation: '/ˈsɪŋɡltən/',
               phonetic: 'SIN-gol-ton',
               example:
@@ -9110,7 +9260,7 @@ export default {
             },
             {
               english: 'CQRS',
-              italian: 'CQRS / Command Query Responsibility Segregation',
+              italian: 'Command Query Responsibility Segregation (CQRS)',
               pronunciation: '/siː kjuː ɑːr ɛs/',
               phonetic: 'SI-KIU-AR-ES',
               example: 'CQRS separates reads from writes. = CQRS separa letture da scritture.',
@@ -9120,7 +9270,7 @@ export default {
             },
             {
               english: 'SOLID',
-              italian: 'SOLID / principi di design OOP',
+              italian: 'principi di design OOP (SOLID)',
               pronunciation: '/ˈsɒlɪd/',
               phonetic: 'SO-lid',
               example:
@@ -9147,7 +9297,7 @@ export default {
             },
             {
               english: 'src',
-              italian: 'src/ / cartella del codice sorgente',
+              italian: '/ cartella del codice sorgente (src)',
               pronunciation: '/sɔːrs/',
               phonetic: 'SORS',
               example: 'src holds your source code. = src contiene il tuo codice sorgente.',
@@ -9157,7 +9307,7 @@ export default {
             },
             {
               english: 'dist',
-              italian: 'dist/ / cartella del build di distribuzione',
+              italian: '/ cartella del build di distribuzione (dist)',
               pronunciation: '/dɪst/',
               phonetic: 'DIST',
               example: "dist is for compiled output. = dist è per l'output compilato.",
@@ -9167,7 +9317,7 @@ export default {
             },
             {
               english: 'config',
-              italian: 'config / cartella di configurazione',
+              italian: 'cartella di configurazione (config)',
               pronunciation: '/ˈkɒnfɪɡ/',
               phonetic: 'KON-fig',
               example:
@@ -9229,7 +9379,7 @@ export default {
             },
             {
               english: 'Linting',
-              italian: 'linting / analisi statica del codice',
+              italian: 'analisi statica del codice (Linting)',
               pronunciation: '/ˈlɪntɪŋ/',
               phonetic: 'LIN-ting',
               example:
@@ -9277,7 +9427,7 @@ export default {
             },
             {
               english: 'Flame Graph',
-              italian: 'flame graph / grafico a fiamma',
+              italian: 'grafico a fiamma (Flame Graph)',
               pronunciation: '/fleɪm ɡræf/',
               phonetic: 'FLEIM-GRAF',
               example:
@@ -9288,7 +9438,7 @@ export default {
             },
             {
               english: '0x',
-              italian: '0x / profiler per Node.js',
+              italian: 'profiler per Node.js (0x)',
               pronunciation: '/zɪərəʊ ɛks/',
               phonetic: 'ZI-ro-EKS',
               example: '0x generates flame graphs. = 0x genera flame graph.',
@@ -9299,7 +9449,7 @@ export default {
             },
             {
               english: 'clinic.js',
-              italian: 'clinic.js / suite di profiling Node',
+              italian: 'suite di profiling Node (clinic.js)',
               pronunciation: '/ˈklɪnɪk dʒeɪ ɛs/',
               phonetic: 'KLI-nik-GEI-ES',
               example:
@@ -9331,7 +9481,7 @@ export default {
             },
             {
               english: 'Performance API',
-              italian: 'Performance API / API di misurazione perf',
+              italian: 'API di misurazione perf (Performance API)',
               pronunciation: '/pərˈfɔːrməns eɪ piː aɪ/',
               phonetic: 'per-FOR-mens-EI-PI-AI',
               example:
@@ -9342,7 +9492,7 @@ export default {
             },
             {
               english: 'Benchmark',
-              italian: 'benchmark / test prestazionale',
+              italian: 'test prestazionale (Benchmark)',
               pronunciation: '/ˈbentʃmɑːrk/',
               phonetic: 'BENC-mark',
               example: 'A benchmark measures throughput. = Un benchmark misura il throughput.',
@@ -9352,7 +9502,7 @@ export default {
             },
             {
               english: 'Autocannon',
-              italian: 'autocannon / strumento di load testing HTTP',
+              italian: 'strumento di load testing HTTP (Autocannon)',
               pronunciation: '/ˈɔːtəʊˌkænən/',
               phonetic: 'OT-to-ka-non',
               example:
@@ -9371,7 +9521,7 @@ export default {
           items: [
             {
               english: 'Garbage Collector',
-              italian: 'garbage collector / raccoglitore di rifiuti',
+              italian: 'raccoglitore di rifiuti (Garbage Collector)',
               pronunciation: '/ˈɡɑːrbɪdʒ kəˈlektər/',
               phonetic: 'GAR-begg-ko-LEK-ter',
               example:
@@ -9392,7 +9542,7 @@ export default {
             },
             {
               english: 'Heap',
-              italian: 'heap / memoria dinamica',
+              italian: 'memoria dinamica (Heap)',
               pronunciation: '/hiːp/',
               phonetic: 'IIP',
               example: "Objects live on the heap. = Gli oggetti vivono sull'heap.",
@@ -9431,7 +9581,7 @@ export default {
             },
             {
               english: 'WeakRef',
-              italian: 'WeakRef / riferimento debole',
+              italian: 'riferimento debole (WeakRef)',
               pronunciation: '/wiːk rɛf/',
               phonetic: 'UIK-REF',
               example:
@@ -9462,7 +9612,7 @@ export default {
             },
             {
               english: 'process.memoryUsage',
-              italian: 'process.memoryUsage / uso di memoria del processo',
+              italian: 'uso di memoria del processo (process.memoryUsage)',
               pronunciation: '/ˈmeməri ˈjuːsɪdʒ/',
               phonetic: 'MEM-mo-ri-IU-segg',
               example:
@@ -9480,7 +9630,7 @@ export default {
           items: [
             {
               english: 'Cache',
-              italian: 'cache / memoria intermedia',
+              italian: 'memoria intermedia (Cache)',
               pronunciation: '/kæʃ/',
               phonetic: 'KASC',
               example: 'A cache stores expensive results. = Una cache memorizza risultati costosi.',
@@ -9500,7 +9650,7 @@ export default {
             },
             {
               english: 'ioredis',
-              italian: 'ioredis / client Redis Node.js',
+              italian: 'client Redis Node.js (ioredis)',
               pronunciation: '/aɪ oʊ ˈredɪs/',
               phonetic: 'AI-O-RE-dis',
               example: 'ioredis is a robust Redis client. = ioredis è un client Redis robusto.',
@@ -9521,7 +9671,7 @@ export default {
             },
             {
               english: 'TTL',
-              italian: 'TTL / time to live',
+              italian: 'time to live (TTL)',
               pronunciation: '/tiː tiː ɛl/',
               phonetic: 'TI-TI-EL',
               example: 'TTL means Time To Live. = TTL significa Tempo di Vita.',
@@ -9531,7 +9681,7 @@ export default {
             },
             {
               english: 'Eviction',
-              italian: 'eviction / sfratto dalla cache',
+              italian: 'sfratto dalla cache (Eviction)',
               pronunciation: '/ɪˈvɪkʃən/',
               phonetic: 'i-VIK-scen',
               example:
@@ -9541,7 +9691,7 @@ export default {
             },
             {
               english: 'LRU',
-              italian: 'LRU / Least Recently Used',
+              italian: 'Least Recently Used (LRU)',
               pronunciation: '/ɛl ɑːr juː/',
               phonetic: 'EL-AR-IU',
               example:
@@ -9553,7 +9703,7 @@ export default {
             },
             {
               english: 'Cache Hit',
-              italian: 'cache hit / dato trovato in cache',
+              italian: 'dato trovato in cache (Cache Hit)',
               pronunciation: '/kæʃ hɪt/',
               phonetic: 'KASC-IT',
               example:
@@ -9563,7 +9713,7 @@ export default {
             },
             {
               english: 'Cache Miss',
-              italian: 'cache miss / dato assente in cache',
+              italian: 'dato assente in cache (Cache Miss)',
               pronunciation: '/kæʃ mɪs/',
               phonetic: 'KASC-MIS',
               example:
@@ -9573,7 +9723,7 @@ export default {
             },
             {
               english: 'Cache Stampede',
-              italian: 'cache stampede / corsa alla cache scaduta',
+              italian: 'corsa alla cache scaduta (Cache Stampede)',
               pronunciation: '/kæʃ stæmˈpiːd/',
               phonetic: 'KASC-stam-PID',
               example:
@@ -9621,7 +9771,7 @@ export default {
             },
             {
               english: 'Streaming',
-              italian: 'streaming / flusso continuo di dati',
+              italian: 'flusso continuo di dati (Streaming)',
               pronunciation: '/ˈstriːmɪŋ/',
               phonetic: 'STRIM-ing',
               example:
@@ -9642,7 +9792,7 @@ export default {
             },
             {
               english: 'Hot Path',
-              italian: 'hot path / percorso caldo del codice',
+              italian: 'percorso caldo del codice (Hot Path)',
               pronunciation: '/hɒt pæθ/',
               phonetic: 'OT-PAT',
               example: "Optimize the hot path first. = Ottimizza prima l'hot path.",
@@ -9672,7 +9822,7 @@ export default {
             },
             {
               english: 'Cold Start',
-              italian: 'cold start / partenza a freddo',
+              italian: 'partenza a freddo (Cold Start)',
               pronunciation: '/koʊld stɑːrt/',
               phonetic: 'KOLD-START',
               example:
@@ -9709,7 +9859,7 @@ export default {
           items: [
             {
               english: 'Process Manager',
-              italian: 'process manager / gestore di processi',
+              italian: 'gestore di processi (Process Manager)',
               pronunciation: '/ˈproʊses ˈmænɪdʒər/',
               phonetic: 'PRO-ses-MAN-i-ger',
               example:
@@ -9731,7 +9881,7 @@ export default {
             },
             {
               english: 'pm2 start',
-              italian: 'pm2 start / avvia processo PM2',
+              italian: 'avvia processo PM2 (pm2 start)',
               pronunciation: '/piː ɛm tuː stɑːrt/',
               phonetic: 'PI-EM-TU-START',
               example: 'pm2 start launches your app. = pm2 start avvia la tua app.',
@@ -9762,7 +9912,7 @@ export default {
             },
             {
               english: 'pm2 logs',
-              italian: 'pm2 logs / visualizza log PM2',
+              italian: 'visualizza log PM2 (pm2 logs)',
               pronunciation: '/piː ɛm tuː lɒɡz/',
               phonetic: 'PI-EM-TU-LOGS',
               example: "pm2 logs streams app logs. = pm2 logs fa streaming dei log dell'app.",
@@ -9792,7 +9942,7 @@ export default {
             },
             {
               english: 'pm2 monit',
-              italian: 'pm2 monit / monitor in tempo reale PM2',
+              italian: 'monitor in tempo reale PM2 (pm2 monit)',
               pronunciation: '/piː ɛm tuː ˈmɒnɪt/',
               phonetic: 'PI-EM-TU-MO-nit',
               example: 'pm2 monit shows live metrics. = pm2 monit mostra metriche live.',
@@ -9802,7 +9952,7 @@ export default {
             },
             {
               english: 'pm2 startup',
-              italian: 'pm2 startup / installa al boot',
+              italian: 'installa al boot (pm2 startup)',
               pronunciation: '/piː ɛm tuː ˈstɑːrtʌp/',
               phonetic: 'PI-EM-TU-START-ap',
               example:
@@ -9831,7 +9981,7 @@ export default {
             },
             {
               english: 'Dockerfile',
-              italian: 'Dockerfile / ricetta di immagine container',
+              italian: 'ricetta di immagine container (Dockerfile)',
               pronunciation: '/ˈdɒkərˌfaɪl/',
               phonetic: 'DOK-er-fail',
               example:
@@ -9864,7 +10014,7 @@ export default {
             },
             {
               english: '.dockerignore',
-              italian: '.dockerignore / esclusioni dal build Docker',
+              italian: 'esclusioni dal build Docker (.dockerignore)',
               pronunciation: '/dɒt ˈdɒkər ɪɡˈnɔːr/',
               phonetic: 'DOT-DOK-er-ig-NOR',
               example:
@@ -9885,7 +10035,7 @@ export default {
             },
             {
               english: 'docker-compose',
-              italian: 'docker-compose / orchestratore multi-container',
+              italian: 'orchestratore multi-container (docker-compose)',
               pronunciation: '/ˈdɒkər kəmˈpoʊz/',
               phonetic: 'DOK-er-kom-POUZ',
               example:
@@ -9896,7 +10046,7 @@ export default {
             },
             {
               english: 'Volume',
-              italian: 'volume / archiviazione persistente per container',
+              italian: 'archiviazione persistente per container (Volume)',
               pronunciation: '/ˈvɒljuːm/',
               phonetic: 'VOL-ium',
               example:
@@ -9906,7 +10056,7 @@ export default {
             },
             {
               english: 'Container',
-              italian: 'container / contenitore isolato',
+              italian: 'contenitore isolato (Container)',
               pronunciation: '/kənˈteɪnər/',
               phonetic: 'kon-TEI-ner',
               example:
@@ -9916,7 +10066,7 @@ export default {
             },
             {
               english: 'docker build',
-              italian: 'docker build / costruisce immagine',
+              italian: 'costruisce immagine (docker build)',
               pronunciation: '/ˈdɒkər bɪld/',
               phonetic: 'DOK-er-BILD',
               example: "docker build creates an image. = docker build crea un'immagine.",
@@ -9965,7 +10115,7 @@ export default {
             },
             {
               english: 'dotenv',
-              italian: 'dotenv / carica .env in process.env',
+              italian: 'carica .env in process.env (dotenv)',
               pronunciation: '/dɒt iː ɛn viː/',
               phonetic: 'DOT-EN-VI',
               example: 'dotenv loads .env into process.env. = dotenv carica .env in process.env.',
@@ -9976,7 +10126,7 @@ export default {
             },
             {
               english: 'Twelve-Factor',
-              italian: 'Twelve-Factor / metodologia 12 fattori',
+              italian: 'metodologia 12 fattori (Twelve-Factor)',
               pronunciation: '/twelv ˈfæktər/',
               phonetic: 'TUELV-FAK-ter',
               example:
@@ -10017,7 +10167,7 @@ export default {
             },
             {
               english: 'Feature Flag',
-              italian: 'feature flag / interruttore funzionalità',
+              italian: 'interruttore funzionalità (Feature Flag)',
               pronunciation: '/ˈfiːtʃər flæɡ/',
               phonetic: 'FI-cer-FLAG',
               example:
@@ -10045,7 +10195,7 @@ export default {
           items: [
             {
               english: 'Health Check',
-              italian: 'health check / controllo di salute',
+              italian: 'controllo di salute (Health Check)',
               pronunciation: '/hɛlθ tʃek/',
               phonetic: 'ELT-CEK',
               example:
@@ -10088,7 +10238,7 @@ export default {
             },
             {
               english: 'SIGTERM',
-              italian: 'SIGTERM / segnale di terminazione',
+              italian: 'segnale di terminazione (SIGTERM)',
               pronunciation: '/sɪɡ tɜːrm/',
               phonetic: 'SIG-TERM',
               example:
@@ -10110,7 +10260,7 @@ export default {
             },
             {
               english: 'Zero Downtime',
-              italian: 'zero downtime / nessun fuori servizio',
+              italian: 'nessun fuori servizio (Zero Downtime)',
               pronunciation: '/ˈzɪəroʊ ˈdaʊntaɪm/',
               phonetic: 'ZI-ro-DAUN-taim',
               example:
@@ -10241,7 +10391,7 @@ export default {
             },
             {
               english: 'Backoff',
-              italian: 'backoff / attesa esponenziale',
+              italian: 'attesa esponenziale (Backoff)',
               pronunciation: '/ˈbækɒf/',
               phonetic: 'BAK-of',
               example:
@@ -10311,7 +10461,7 @@ export default {
             },
             {
               english: 'BullMQ',
-              italian: 'BullMQ / coda di lavori basata su Redis',
+              italian: 'coda di lavori basata su Redis (BullMQ)',
               pronunciation: '/bʊl ɛm kjuː/',
               phonetic: 'BUL-EM-KIU',
               example:
@@ -10341,7 +10491,7 @@ export default {
             },
             {
               english: 'Topic',
-              italian: 'topic / canale tematico di messaggi',
+              italian: 'canale tematico di messaggi (Topic)',
               pronunciation: '/ˈtɒpɪk/',
               phonetic: 'TO-pik',
               example:
@@ -10351,7 +10501,7 @@ export default {
             },
             {
               english: 'Exchange',
-              italian: 'exchange / scambio di RabbitMQ',
+              italian: 'scambio di RabbitMQ (Exchange)',
               pronunciation: '/ɪksˈtʃeɪndʒ/',
               phonetic: 'eks-CEINGG',
               example:
@@ -10371,7 +10521,7 @@ export default {
             },
             {
               english: 'Job',
-              italian: 'job / unità di lavoro',
+              italian: 'unità di lavoro (Job)',
               pronunciation: '/dʒɒb/',
               phonetic: 'GIOB',
               example:
@@ -10389,7 +10539,7 @@ export default {
           items: [
             {
               english: 'RPC',
-              italian: 'RPC / Remote Procedure Call',
+              italian: 'Remote Procedure Call (RPC)',
               pronunciation: '/ɑːr piː siː/',
               phonetic: 'AR-PI-SI',
               example:
@@ -10410,7 +10560,7 @@ export default {
             },
             {
               english: 'Protocol Buffers',
-              italian: 'Protocol Buffers / serializzazione Google',
+              italian: 'serializzazione Google (Protocol Buffers)',
               pronunciation: '/ˈproʊtəkɒl ˈbʌfərz/',
               phonetic: 'PRO-to-kol-BAF-fers',
               example:
@@ -10442,7 +10592,7 @@ export default {
             },
             {
               english: 'tRPC',
-              italian: 'tRPC / RPC tipizzato TypeScript end-to-end',
+              italian: 'RPC tipizzato TypeScript end-to-end (tRPC)',
               pronunciation: '/tiː ɑːr piː siː/',
               phonetic: 'TI-AR-PI-SI',
               example:
@@ -10464,7 +10614,7 @@ export default {
             },
             {
               english: 'Resolver',
-              italian: 'resolver / funzione che risolve campo GraphQL',
+              italian: 'funzione che risolve campo GraphQL (Resolver)',
               pronunciation: '/rɪˈzɒlvər/',
               phonetic: 'ri-ZOL-ver',
               example:
@@ -10474,7 +10624,7 @@ export default {
             },
             {
               english: 'Schema-First',
-              italian: 'schema-first / progettazione a partire dallo schema',
+              italian: 'progettazione a partire dallo schema (Schema-First)',
               pronunciation: '/ˈskiːmə fɜːrst/',
               phonetic: 'SKI-ma-FERST',
               example:
@@ -10522,7 +10672,7 @@ export default {
             },
             {
               english: 'OpenTelemetry',
-              italian: 'OpenTelemetry / framework observability standard',
+              italian: 'framework observability standard (OpenTelemetry)',
               pronunciation: '/ˈoʊpən təˈlemɪtri/',
               phonetic: 'OU-pen-te-LEM-e-tri',
               example:
@@ -10534,7 +10684,7 @@ export default {
             },
             {
               english: 'Span',
-              italian: 'span / unità di lavoro tracciata',
+              italian: 'unità di lavoro tracciata (Span)',
               pronunciation: '/spæn/',
               phonetic: 'SPAN',
               example:
@@ -10620,7 +10770,7 @@ export default {
           items: [
             {
               english: 'Monorepo',
-              italian: 'monorepo / repository unificato di progetti',
+              italian: 'repository unificato di progetti (Monorepo)',
               pronunciation: '/ˈmɒnoʊˌrepoʊ/',
               phonetic: 'MO-no-RE-po',
               example: 'A monorepo holds multiple projects. = Un monorepo contiene più progetti.',
@@ -10629,7 +10779,7 @@ export default {
             },
             {
               english: 'Workspace',
-              italian: 'workspace / area di lavoro multi-pacchetto',
+              italian: 'area di lavoro multi-pacchetto (Workspace)',
               pronunciation: '/ˈwɜːrkspeɪs/',
               phonetic: 'UORK-speis',
               example:
@@ -10640,7 +10790,7 @@ export default {
             },
             {
               english: 'pnpm',
-              italian: 'pnpm / gestore pacchetti efficiente',
+              italian: 'gestore pacchetti efficiente (pnpm)',
               pronunciation: '/piː ɛn piː ɛm/',
               phonetic: 'PI-EN-PI-EM',
               example:
@@ -10696,7 +10846,7 @@ export default {
             },
             {
               english: 'Hoisting',
-              italian: 'hoisting / risalita delle dipendenze comuni',
+              italian: 'risalita delle dipendenze comuni (Hoisting)',
               pronunciation: '/ˈhɔɪstɪŋ/',
               phonetic: 'OIST-ing',
               example: "Hoisting deduplicates dependencies. = L'hoisting deduplica le dipendenze.",
@@ -10733,7 +10883,7 @@ export default {
           items: [
             {
               english: 'npm publish',
-              italian: 'npm publish / pubblica pacchetto su npm',
+              italian: 'pubblica pacchetto su npm (npm publish)',
               pronunciation: '/ɛn piː ɛm ˈpʌblɪʃ/',
               phonetic: 'EN-PI-EM-PA-blisc',
               example:
@@ -10787,7 +10937,7 @@ export default {
             },
             {
               english: 'Changelog',
-              italian: 'changelog / registro delle modifiche',
+              italian: 'registro delle modifiche (Changelog)',
               pronunciation: '/ˈtʃeɪndʒlɒɡ/',
               phonetic: 'CEINGG-log',
               example: 'A changelog documents releases. = Un changelog documenta i rilasci.',
@@ -10877,7 +11027,7 @@ export default {
             },
             {
               english: 'Pipeline',
-              italian: 'pipeline / sequenza di stadi CI/CD',
+              italian: 'sequenza di stadi CI/CD (Pipeline)',
               pronunciation: '/ˈpaɪpˌlaɪn/',
               phonetic: 'PAIP-lain',
               example:
@@ -10920,7 +11070,7 @@ export default {
             },
             {
               english: 'lint-staged',
-              italian: 'lint-staged / linta solo i file in stage',
+              italian: 'linta solo i file in stage (lint-staged)',
               pronunciation: '/lɪnt steɪdʒd/',
               phonetic: 'LINT-STEIGD',
               example:
@@ -10941,7 +11091,7 @@ export default {
             },
             {
               english: 'Commit Hook',
-              italian: 'commit hook / hook al momento del commit',
+              italian: 'hook al momento del commit (Commit Hook)',
               pronunciation: '/kəˈmɪt hʊk/',
               phonetic: 'kom-MIT-UK',
               example: 'A commit hook runs before commit. = Un commit hook gira prima del commit.',
@@ -10967,7 +11117,7 @@ export default {
             },
             {
               english: 'Refactoring',
-              italian: 'refactoring / ristrutturazione del codice',
+              italian: 'ristrutturazione del codice (Refactoring)',
               pronunciation: '/ˌriːˈfæktərɪŋ/',
               phonetic: 'ri-FAK-ter-ing',
               example:
@@ -10987,7 +11137,7 @@ export default {
             },
             {
               english: 'Mentoring',
-              italian: 'mentoring / mentorato',
+              italian: 'mentorato (Mentoring)',
               pronunciation: '/ˈmentərɪŋ/',
               phonetic: 'MEN-ter-ing',
               example:
@@ -10997,7 +11147,7 @@ export default {
             },
             {
               english: 'Postmortem',
-              italian: 'postmortem / analisi post-incidente',
+              italian: 'analisi post-incidente (Postmortem)',
               pronunciation: '/poʊstˈmɔːrtəm/',
               phonetic: 'POST-MOR-tem',
               example: 'A postmortem analyzes incidents. = Un postmortem analizza incidenti.',
@@ -11016,7 +11166,7 @@ export default {
             },
             {
               english: 'RFC',
-              italian: 'RFC / Request for Comments',
+              italian: 'Request for Comments (RFC)',
               pronunciation: '/ɑːr ɛf siː/',
               phonetic: 'AR-EF-SI',
               example:

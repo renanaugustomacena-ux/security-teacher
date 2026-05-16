@@ -1,0 +1,124 @@
+topicId,level,lesson,english,italian,issueType
+"python",0,"py_basics_1","Variable","Variabile",near-identical-translation
+"python",0,"py_basics_1","String","Stringa",near-identical-translation
+"python",0,"py_basics_1","Comment","Commento",near-identical-translation
+"python",0,"py_basics_1","Expression","Espressione",near-identical-translation
+"python",0,"py_basics_2","Boolean","Booleano",near-identical-translation
+"python",0,"py_basics_2","Type","Tipo",near-identical-translation
+"python",0,"py_basics_2","Value","Valore",near-identical-translation
+"python",0,"py_basics_2","Constant","Costante",near-identical-translation
+"python",0,"py_basics_2","Constant","Costante",trivial-example
+"python",0,"py_basics_3","Operator","Operatore",near-identical-translation
+"python",0,"py_basics_3","Addition","Addizione / Somma",trivial-example
+"python",0,"py_basics_3","Multiplication","Moltiplicazione / Prodotto",trivial-example
+"python",0,"py_basics_3","Division","Divisione",near-identical-translation
+"python",0,"py_basics_3","Division","Divisione",trivial-example
+"python",0,"py_basics_3","Modulo","Resto (Modulo)",trivial-example
+"python",0,"py_basics_4","Interpreter","Interprete",near-identical-translation
+"python",0,"py_basics_4","Error","Errore",near-identical-translation
+"python",1,"py_list","List","Lista",near-identical-translation
+"python",1,"py_dict","Value","Valore",near-identical-translation
+"python",1,"py_tuple_set","Tuple","Tupla",near-identical-translation
+"python",1,"py_tuple_set","Immutable","Immutabile",near-identical-translation
+"python",1,"py_tuple_set","Unpacking","Spacchettamento (Unpacking)",trivial-example
+"python",1,"py_tuple_set","Union","Unione",near-identical-translation
+"python",1,"py_tuple_set","Difference","Differenza",near-identical-translation
+"python",1,"py_strings","Join","Unire (Join)",tautological-example
+"python",1,"py_strings","Join","Unire (Join)",trivial-example
+"python",1,"py_strings","Raw String","Stringa Grezza",tautological-example
+"python",2,"py_loops","Iteration","Iterazione",near-identical-translation
+"python",2,"py_loops","Break Statement","Istruzione Break",trivial-example
+"python",2,"py_loops","Range (function)","Intervallo (Range)",trivial-example
+"python",2,"py_logic","All (function)","Tutti (Funzione)",trivial-example
+"python",2,"py_flow_patterns","Flag Variable","Variabile Bandiera (Flag)",trivial-example
+"python",2,"py_flow_patterns","Recursion (Base case)","Ricorsione (Caso base)",trivial-example
+"python",3,"py_func_basics","Parameter","Parametro",near-identical-translation
+"python",3,"py_func_basics","Argument","Argomento",near-identical-translation
+"python",3,"py_func_basics","Positional Argument","Argomento Posizionale",tautological-example
+"python",3,"py_func_adv","Decorator","Decoratore",tautological-example
+"python",3,"py_func_adv","Decorator","Decoratore",near-identical-translation
+"python",3,"py_scope","Scope","Ambito (Scope)",tautological-example
+"python",3,"py_scope","Global","Globale",tautological-example
+"python",3,"py_scope","Global","Globale",near-identical-translation
+"python",3,"py_scope","Local","Locale",tautological-example
+"python",3,"py_scope","Local","Locale",near-identical-translation
+"python",3,"py_scope","Nonlocal","Non locale",near-identical-translation
+"python",3,"py_scope","Namespace","Spazio dei Nomi (Namespace)",trivial-example
+"python",3,"py_func_patterns","Pure Function","Funzione Pura",trivial-example
+"python",4,"py_class_basics","Class","Classe",near-identical-translation
+"python",4,"py_class_basics","Object","Oggetto",trivial-example
+"python",4,"py_class_basics","Attribute","Attributo",near-identical-translation
+"python",4,"py_class_basics","Method","Metodo",near-identical-translation
+"python",4,"py_class_basics","Instance Variable","Variabile di Istanza",tautological-example
+"python",4,"py_class_basics","Class Variable","Variabile di Classe",tautological-example
+"python",4,"py_inheritance","Inheritance","Ereditarietà",tautological-example
+"python",4,"py_inheritance","Polymorphism","Polimorfismo",tautological-example
+"python",4,"py_oop_concepts","Encapsulation","Incapsulamento",tautological-example
+"python",4,"py_oop_concepts","Abstraction","Astrazione",tautological-example
+"python",4,"py_oop_concepts","Abstract Base Class (ABC)","Classe Base Astratta",trivial-example
+"python",4,"py_oop_concepts","Composition","Composizione",near-identical-translation
+"python",4,"py_oop_concepts","Aggregation","Aggregazione",near-identical-translation
+"python",4,"py_oop_advanced","Descriptor","Descrittore",near-identical-translation
+"python",5,"py_modules","Module","Modulo",near-identical-translation
+"python",5,"py_modules","As (Alias)","Come (Alias)",trivial-example
+"python",5,"py_modules","Pip (Package Manager)","Gestore Pacchetti (Pip)",trivial-example
+"python",5,"py_files","Mode","Modalità (Mode)",trivial-example
+"python",5,"py_files","Close","Chiudere",trivial-example
+"python",5,"py_files","Binary Mode","Modalità Binaria",trivial-example
+"python",5,"py_data_formats","CSV (module)","Modulo CSV",trivial-example
+"python",5,"py_data_formats","Encoding (UTF-8)","Codifica",trivial-example
+"python",5,"py_data_formats","Load/Dump","Caricare/Scaricare",trivial-example
+"python",5,"py_venv","Dependency","Dipendenza",trivial-example
+"python",5,"py_venv","Absolute Import","Importazione Assoluta",tautological-example
+"python",5,"py_venv","Circular Import","Importazione Circolare",tautological-example
+"python",6,"py_generators","Generator","Generatore",near-identical-translation
+"python",6,"py_generators","Generator","Generatore",trivial-example
+"python",6,"py_generators","Yield from","Delega Generatore (Yield From)",tautological-example
+"python",6,"py_generators","Yield from","Delega Generatore (Yield From)",trivial-example
+"python",6,"py_generators","Iterator","Iteratore",near-identical-translation
+"python",6,"py_generators","Iterable","Iterabile",near-identical-translation
+"python",7,"py_exceptions","Try Block","Blocco Try (Tenta)",trivial-example
+"python",7,"py_custom_exc","Specificity","Specificità",near-identical-translation
+"python",7,"py_context","Nested Context Managers","Gestori di Contesto Annidati",trivial-example
+"python",8,"py_decorators","Decorator","Decoratore",near-identical-translation
+"python",8,"py_decorators","Class Decorator","Decoratore di Classe",tautological-example
+"python",8,"py_decorators","Monkey Patching","Modifica Dinamica (Monkey Patching)",tautological-example
+"python",8,"py_metaclass","Metaclass","Metaclasse",near-identical-translation
+"python",8,"py_metaclass","Class Factory","Fabbrica di Classi",trivial-example
+"python",8,"py_typing","Type Hints","Suggerimenti di Tipo",tautological-example
+"python",8,"py_typing","Protocol","Protocollo (Protocol)",tautological-example
+"python",8,"py_typing","Callable","Tipo Chiamabile (Callable)",tautological-example
+"python",8,"py_patterns","Design Pattern","Schema Progettuale (Pattern)",tautological-example
+"python",9,"py_threading","Multi-threading","Multithreading",identical-translation
+"python",9,"py_threading","Context Switching","Cambio di Contesto",tautological-example
+"python",9,"py_async","Coroutine","Funzione Sospendibile (Coroutine)",trivial-example
+"python",9,"py_async","Task","Compito (Task)",tautological-example
+"python",9,"py_multiproc","Process","Processo",near-identical-translation
+"python",9,"py_multiproc","IPC (Inter-Process Communication)","Comunicazione tra Processi (IPC)",trivial-example
+"python",9,"py_multiproc","Parallelism","Parallelismo",near-identical-translation
+"python",9,"py_concurrency_patterns","Barrier","Barriera",near-identical-translation
+"python",9,"py_concurrency_patterns","Condition Variable","Variabile di Condizione",tautological-example
+"python",10,"py_unittest","Unit Testing","Test Unitari",tautological-example
+"python",10,"py_unittest","Test Discovery","Scoperta dei Test",tautological-example
+"python",10,"py_unittest","Skipping Tests","Saltare i Test",trivial-example
+"python",10,"py_quality","PEP 8","Guida di Stile Python (PEP 8)",trivial-example
+"python",10,"py_quality","Static Analysis","Analisi Statica",tautological-example
+"python",10,"py_quality","Pythonic","Pythonico",near-identical-translation
+"python",10,"py_performance","Pre-allocation","Pre-allocazione",near-identical-translation
+"python",11,"py_web","FastAPI","Framework Web Async (FastAPI)",tautological-example
+"python",11,"py_web","WSGI (Web Server Gateway Interface)","Interfaccia WSGI",trivial-example
+"python",11,"py_web","Middleware (Web)","Middleware Web",identical-translation
+"python",11,"py_data","Tensor","Tensore (Tensor)",tautological-example
+"python",11,"py_deploy","Packaging","Impacchettamento (Packaging)",trivial-example
+"python",11,"py_deploy","PyInstaller","Compilatore (PyInstaller)",tautological-example
+"python",11,"py_deploy","CI/CD (for Python)","Integrazione/Distribuzione Continua",trivial-example
+"python",0,"py_basics_2","value","",duplicate-across-lessons
+"python",1,"py_dict","value","",duplicate-across-lessons
+"python",0,"py_basics_4","exception","",duplicate-across-lessons
+"python",7,"py_exceptions","exception","",duplicate-across-lessons
+"python",1,"py_list","list comprehension","",duplicate-across-lessons
+"python",6,"py_comprehension","list comprehension","",duplicate-across-lessons
+"python",3,"py_func_adv","decorator","",duplicate-across-lessons
+"python",8,"py_decorators","decorator","",duplicate-across-lessons
+"python",6,"py_functional","functools.wraps","",duplicate-across-lessons
+"python",8,"py_decorators","functools.wraps","",duplicate-across-lessons

@@ -146,11 +146,11 @@ export default {
           items: [
             {
               english: 'Cargo',
-              italian: 'Cargo / gestore di pacchetti e build di Rust',
+              italian: 'Gestore di pacchetti e build di Rust (Cargo)',
               pronunciation: '/ˈkɑːrɡoʊ/',
               phonetic: 'KAR-go',
               example:
-                'Cargo is the build tool and package manager. = Cargo è lo strumento di build e package manager.',
+                'Every Rust project uses Cargo to build, test, and manage dependencies. = Ogni progetto Rust usa Cargo per compilare, testare e gestire le dipendenze.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'cargo',
@@ -158,7 +158,7 @@ export default {
             },
             {
               english: 'Crate',
-              italian: 'crate / pacchetto Rust',
+              italian: 'Pacchetto Rust (crate)',
               pronunciation: '/kreɪt/',
               phonetic: 'KREIT',
               example:
@@ -169,7 +169,7 @@ export default {
             },
             {
               english: 'Cargo New',
-              italian: 'cargo new / crea nuovo progetto',
+              italian: 'Crea nuovo progetto (cargo new)',
               pronunciation: '/ˈkɑːrɡoʊ njuː/',
               phonetic: 'KAR-go NIU',
               example:
@@ -180,7 +180,7 @@ export default {
             },
             {
               english: 'Cargo Build',
-              italian: 'cargo build / compila il progetto',
+              italian: 'Compila il progetto (cargo build)',
               pronunciation: '/ˈkɑːrɡoʊ bɪld/',
               phonetic: 'KAR-go BILD',
               example: 'cargo build compiles the project. = cargo build compila il progetto.',
@@ -190,7 +190,7 @@ export default {
             },
             {
               english: 'Cargo Run',
-              italian: 'cargo run / compila ed esegue',
+              italian: 'Compila ed esegue (cargo run)',
               pronunciation: '/ˈkɑːrɡoʊ rʌn/',
               phonetic: 'KAR-go RAN',
               example:
@@ -204,7 +204,8 @@ export default {
               italian: 'File Cargo.toml',
               pronunciation: '/ˈkɑːrɡoʊ dɒt tɒml/',
               phonetic: 'KAR-go DOT TOML',
-              example: 'Cargo.toml is the manifest file. = Cargo.toml è il file manifesto.',
+              example:
+                'Dependencies and metadata are declared in Cargo.toml. = Dipendenze e metadati sono dichiarati in Cargo.toml.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '[package]\nname = "myapp"',
@@ -216,14 +217,14 @@ export default {
               pronunciation: '/ˈkɑːrɡoʊ dɒt lɒk/',
               phonetic: 'KAR-go DOT LOK',
               example:
-                'Cargo.lock locks the exact dependency versions. = Cargo.lock blocca le versioni esatte delle dipendenze.',
+                'Reproducible builds are guaranteed by pinning versions in Cargo.lock. = Build riproducibili sono garantite dal pinning delle versioni in Cargo.lock.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Va committato per gli eseguibili, opzionale per le librerie.',
             },
             {
               english: 'Rustc',
-              italian: 'rustc / compilatore Rust',
+              italian: 'Compilatore Rust (rustc)',
               pronunciation: '/rʌstˈsiː/',
               phonetic: 'RAST-si',
               example: 'rustc is the Rust compiler. = rustc è il compilatore Rust.',
@@ -234,7 +235,7 @@ export default {
             },
             {
               english: 'Rustup',
-              italian: 'rustup / gestore toolchain Rust',
+              italian: 'Gestore toolchain Rust (rustup)',
               pronunciation: '/ˈrʌstʌp/',
               phonetic: 'RAS-tap',
               example:
@@ -269,7 +270,7 @@ export default {
               pronunciation: '/ˌkɒmpɪˈleɪʃən/',
               phonetic: 'kom-pi-LEI-scen',
               example:
-                'Compilation produces a native binary. = La compilazione produce un binario nativo.',
+                'The Rust compilation process produces a native binary with no runtime overhead. = Il processo di compilazione Rust produce un binario nativo senza overhead a runtime.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'cargo build',
@@ -332,7 +333,7 @@ export default {
             },
             {
               english: 'Cargo Check',
-              italian: 'cargo check / verifica senza compilare',
+              italian: 'Verifica senza compilare (cargo check)',
               pronunciation: '/ˈkɑːrɡoʊ tʃek/',
               phonetic: 'KAR-go CEK',
               example:
@@ -344,7 +345,7 @@ export default {
             },
             {
               english: 'Cargo Clean',
-              italian: 'cargo clean / pulisce gli artefatti',
+              italian: 'Pulisce gli artefatti (cargo clean)',
               pronunciation: '/ˈkɑːrɡoʊ kliːn/',
               phonetic: 'KAR-go KLIN',
               example:
@@ -451,7 +452,7 @@ export default {
             },
             {
               english: 'Rustfmt',
-              italian: 'rustfmt / formattatore Rust',
+              italian: 'Formattatore Rust (rustfmt)',
               pronunciation: '/rʌstˈeftiːem/',
               phonetic: 'RAST-ef-ti-em',
               example:
@@ -463,11 +464,11 @@ export default {
             },
             {
               english: 'Clippy',
-              italian: 'Clippy / linter Rust',
+              italian: 'Linter Rust (Clippy)',
               pronunciation: '/ˈklɪpi/',
               phonetic: 'KLIP-pi',
               example:
-                'Clippy catches common mistakes and improves code. = Clippy individua errori comuni e migliora il codice.',
+                'Before committing, run Clippy to catch common mistakes and anti-patterns. = Prima di committare, esegui Clippy per individuare errori comuni e anti-pattern.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'clippy',
@@ -517,7 +518,8 @@ export default {
               italian: 'Intero a 32 bit con segno',
               pronunciation: '/aɪ ˈθɜːrti tuː/',
               phonetic: 'AI TER-ti TU',
-              example: 'i32 is the default integer type. = i32 è il tipo intero predefinito.',
+              example:
+                'When no type is specified, the compiler defaults to i32 for integer literals. = Quando nessun tipo è specificato, il compilatore usa i32 come default per i letterali interi.',
               context: 'types',
               difficulty: 'beginner',
               code: 'let x: i32 = 42;',
@@ -529,7 +531,7 @@ export default {
               pronunciation: '/juː ˈθɜːrti tuː/',
               phonetic: 'IU TER-ti TU',
               example:
-                'u32 holds non-negative integers up to 4 billion. = u32 contiene interi non negativi fino a 4 miliardi.',
+                'For values that are never negative, u32 stores up to about 4 billion. = Per valori mai negativi, u32 memorizza fino a circa 4 miliardi.',
               context: 'types',
               difficulty: 'beginner',
               code: 'let x: u32 = 100;',
@@ -539,7 +541,8 @@ export default {
               italian: 'Intero a 64 bit con segno',
               pronunciation: '/aɪ ˈsɪksti fɔːr/',
               phonetic: 'AI SIKS-ti FOR',
-              example: 'i64 stores large signed integers. = i64 memorizza grandi interi con segno.',
+              example:
+                'For numbers larger than 2 billion, use i64 to avoid overflow. = Per numeri più grandi di 2 miliardi, usa i64 per evitare overflow.',
               context: 'types',
               difficulty: 'beginner',
               code: 'let big: i64 = 9_000_000_000;',
@@ -550,7 +553,7 @@ export default {
               pronunciation: '/juː ˈsɪksti fɔːr/',
               phonetic: 'IU SIKS-ti FOR',
               example:
-                'u64 stores large unsigned integers. = u64 memorizza grandi interi senza segno.',
+                'File sizes and timestamps often use u64 for large unsigned values. = Dimensioni di file e timestamp usano spesso u64 per grandi valori senza segno.',
               context: 'types',
               difficulty: 'beginner',
               code: 'let count: u64 = 18_000_000_000;',
@@ -560,7 +563,8 @@ export default {
               italian: 'Intero a 8 bit con segno',
               pronunciation: '/aɪ eɪt/',
               phonetic: 'AI EIT',
-              example: 'i8 ranges from -128 to 127. = i8 va da -128 a 127.',
+              example:
+                'With a range from -128 to 127, i8 is ideal for small signed values. = Con un range da -128 a 127, i8 è ideale per piccoli valori con segno.',
               context: 'types',
               difficulty: 'beginner',
               code: 'let small: i8 = -50;',
@@ -570,7 +574,8 @@ export default {
               italian: 'Intero a 8 bit senza segno',
               pronunciation: '/juː eɪt/',
               phonetic: 'IU EIT',
-              example: 'u8 represents a byte value. = u8 rappresenta un valore byte.',
+              example:
+                'Each byte in a buffer is represented as u8 in Rust. = Ogni byte in un buffer è rappresentato come u8 in Rust.',
               context: 'types',
               difficulty: 'beginner',
               code: 'let byte: u8 = 255;',
@@ -582,7 +587,7 @@ export default {
               pronunciation: '/aɪ saɪz/',
               phonetic: 'AI SAIZ',
               example:
-                'isize matches the pointer width of the platform. = isize corrisponde alla larghezza del puntatore della piattaforma.',
+                'On a 64-bit system, isize is 64 bits wide, matching the pointer width. = Su un sistema a 64 bit, isize è largo 64 bit, corrispondente alla larghezza del puntatore.',
               context: 'types',
               difficulty: 'beginner',
               code: 'let idx: isize = -1;',
@@ -594,7 +599,7 @@ export default {
               pronunciation: '/juː saɪz/',
               phonetic: 'IU SAIZ',
               example:
-                'usize is used for indexing collections. = usize è usato per indicizzare collezioni.',
+                'Array indices and collection lengths are always usize in Rust. = Gli indici di array e le lunghezze di collezioni sono sempre usize in Rust.',
               context: 'types',
               difficulty: 'beginner',
               code: 'let len: usize = vec.len();',
@@ -636,7 +641,7 @@ export default {
               pronunciation: '/ef ˈθɜːrti tuː/',
               phonetic: 'EF TER-ti TU',
               example:
-                'f32 is a single-precision floating-point number. = f32 è un numero a virgola mobile a precisione singola.',
+                'For graphics or games where precision matters less, f32 saves memory. = Per grafica o giochi dove la precisione conta meno, f32 risparmia memoria.',
               context: 'types',
               difficulty: 'beginner',
               code: 'let pi: f32 = 3.14;',
@@ -646,7 +651,8 @@ export default {
               italian: 'Float a 64 bit',
               pronunciation: '/ef ˈsɪksti fɔːr/',
               phonetic: 'EF SIKS-ti FOR',
-              example: 'f64 is the default float type. = f64 è il tipo float predefinito.',
+              example:
+                'The compiler defaults to f64 when no float type is specified. = Il compilatore usa f64 come default quando nessun tipo float è specificato.',
               context: 'types',
               difficulty: 'beginner',
               code: 'let e = 2.71828;',
@@ -787,7 +793,7 @@ export default {
             },
             {
               english: 'Array',
-              italian: 'array / sequenza a dimensione fissa',
+              italian: 'Sequenza a dimensione fissa (array)',
               pronunciation: '/əˈreɪ/',
               phonetic: 'a-REI',
               example:
@@ -833,7 +839,7 @@ export default {
             },
             {
               english: 'Slice',
-              italian: 'slice / vista su porzione di array',
+              italian: 'Vista su porzione di array (slice)',
               pronunciation: '/slaɪs/',
               phonetic: 'SLAIS',
               example:
@@ -1029,7 +1035,7 @@ export default {
             },
             {
               english: 'Else If',
-              italian: 'else if / ramo condizionale alternativo',
+              italian: 'Ramo condizionale alternativo (else if)',
               pronunciation: '/els ɪf/',
               phonetic: 'ELS IF',
               example: 'Chain conditions with else if. = Concatena condizioni con else if.',
@@ -1157,7 +1163,7 @@ export default {
             },
             {
               english: 'Break',
-              italian: 'break / esce dal ciclo',
+              italian: 'Esce dal ciclo (break)',
               pronunciation: '/breɪk/',
               phonetic: 'BREIK',
               example: 'break exits the current loop. = break esce dal ciclo corrente.',
@@ -1179,7 +1185,7 @@ export default {
             },
             {
               english: 'Continue',
-              italian: "continue / salta all'iterazione successiva",
+              italian: "Salto all'iterazione successiva (continue)",
               pronunciation: '/kənˈtɪnjuː/',
               phonetic: 'kon-TI-niu',
               example:
@@ -1212,7 +1218,7 @@ export default {
             },
             {
               english: 'Range',
-              italian: 'range / intervallo numerico',
+              italian: 'Intervallo numerico (range)',
               pronunciation: '/reɪndʒ/',
               phonetic: 'REINGI',
               example:
@@ -1240,7 +1246,7 @@ export default {
           items: [
             {
               english: 'Match',
-              italian: 'match / pattern matching',
+              italian: 'Pattern matching (match)',
               pronunciation: '/mætʃ/',
               phonetic: 'MEC',
               example:
@@ -1274,7 +1280,7 @@ export default {
             },
             {
               english: 'Pattern Matching',
-              italian: 'pattern matching / abbinamento per schemi',
+              italian: 'Abbinamento per schemi (pattern matching)',
               pronunciation: '/ˈpætərn ˈmætʃɪŋ/',
               phonetic: 'PAT-tern MEC-cing',
               example:
@@ -1328,7 +1334,7 @@ export default {
             },
             {
               english: 'Binding',
-              italian: 'binding / associazione di un nome',
+              italian: 'Associazione di un nome (binding)',
               pronunciation: '/ˈbaɪndɪŋ/',
               phonetic: 'BAIN-ding',
               example:
@@ -1339,7 +1345,7 @@ export default {
             },
             {
               english: 'If Let',
-              italian: 'if let / pattern match condizionale',
+              italian: 'Pattern match condizionale (if let)',
               pronunciation: '/ɪf let/',
               phonetic: 'IF LET',
               example:
@@ -1486,11 +1492,11 @@ export default {
           items: [
             {
               english: 'Ownership',
-              italian: 'Ownership / proprietà',
+              italian: 'Proprietà (Ownership)',
               pronunciation: '/ˈoʊnərʃɪp/',
               phonetic: 'OU-ner-scip',
               example:
-                "Ownership is Rust's memory safety model. = Ownership è il modello di sicurezza della memoria di Rust.",
+                'Instead of garbage collection, Rust uses ownership rules to manage memory at compile time. = Invece del garbage collection, Rust usa regole di ownership per gestire la memoria a tempo di compilazione.',
               context: 'ownership',
               difficulty: 'beginner',
               note: 'Si mantiene il termine ownership in inglese, in italiano si parla di "proprietà".',
@@ -1521,7 +1527,7 @@ export default {
             },
             {
               english: 'Scope',
-              italian: 'Scope / ambito',
+              italian: 'Ambito (Scope)',
               pronunciation: '/skoʊp/',
               phonetic: 'SKOUP',
               example:
@@ -1532,7 +1538,7 @@ export default {
             },
             {
               english: 'Drop',
-              italian: 'Drop / rilascio',
+              italian: 'Rilascio (Drop)',
               pronunciation: '/drɒp/',
               phonetic: 'DROP',
               example:
@@ -1555,7 +1561,7 @@ export default {
             },
             {
               english: 'Heap',
-              italian: 'heap / memoria dinamica',
+              italian: 'Memoria dinamica (heap)',
               pronunciation: '/hiːp/',
               phonetic: 'HIP',
               example:
@@ -1566,7 +1572,7 @@ export default {
             },
             {
               english: 'Stack',
-              italian: 'stack / pila di chiamate',
+              italian: 'Pila di chiamate (stack)',
               pronunciation: '/stæk/',
               phonetic: 'STAK',
               example: 'Primitive types live on the stack. = I tipi primitivi vivono sullo stack.',
@@ -1587,7 +1593,7 @@ export default {
             },
             {
               english: 'Garbage Collector',
-              italian: 'garbage collector / raccoglitore di rifiuti',
+              italian: 'Raccoglitore di rifiuti (garbage collector)',
               pronunciation: '/ˈɡɑːrbɪdʒ kəˈlektər/',
               phonetic: 'GAR-bigi ko-LEK-ter',
               example: 'Rust has no garbage collector. = Rust non ha garbage collector.',
@@ -1604,7 +1610,7 @@ export default {
           items: [
             {
               english: 'Move',
-              italian: 'move / trasferimento di proprietà',
+              italian: 'Trasferimento di proprietà (move)',
               pronunciation: '/muːv/',
               phonetic: 'MUV',
               example:
@@ -1615,11 +1621,11 @@ export default {
             },
             {
               english: 'Copy',
-              italian: 'Copy / trait per duplicazione bit-a-bit',
+              italian: 'Trait per duplicazione bit-a-bit (Copy)',
               pronunciation: '/ˈkɒpi/',
               phonetic: 'KOP-pi',
               example:
-                'Copy types are copied implicitly. = I tipi Copy sono copiati implicitamente.',
+                'Simple scalar types that implement Copy are duplicated rather than moved. = I tipi scalari semplici che implementano Copy vengono duplicati anziché mossi.',
               context: 'ownership',
               difficulty: 'beginner',
               code: 'let x = 5; let y = x; // both valid',
@@ -1639,7 +1645,7 @@ export default {
             },
             {
               english: 'Clone',
-              italian: 'Clone / trait per duplicazione esplicita',
+              italian: 'Trait per duplicazione esplicita (Clone)',
               pronunciation: '/kloʊn/',
               phonetic: 'KLOUN',
               example:
@@ -1755,7 +1761,7 @@ export default {
             },
             {
               english: 'Memory Leak',
-              italian: 'memory leak / perdita di memoria',
+              italian: 'Perdita di memoria (memory leak)',
               pronunciation: '/ˈmeməri liːk/',
               phonetic: 'ME-me-ri LIK',
               example:
@@ -1766,7 +1772,7 @@ export default {
             },
             {
               english: 'Double Free',
-              italian: 'double free / liberazione duplicata',
+              italian: 'Liberazione duplicata (double free)',
               pronunciation: '/ˈdʌbl friː/',
               phonetic: 'DA-bol FRI',
               example:
@@ -1777,7 +1783,7 @@ export default {
             },
             {
               english: 'Use After Free',
-              italian: 'use-after-free / uso di memoria liberata',
+              italian: 'Uso di memoria liberata (use-after-free)',
               pronunciation: '/juːs ˈɑːftər friː/',
               phonetic: 'IUS AF-ter FRI',
               example:
@@ -1787,7 +1793,7 @@ export default {
             },
             {
               english: 'Forget',
-              italian: 'std::mem::forget / dimentica senza droppare',
+              italian: 'Dimentica senza droppare (std::mem::forget)',
               pronunciation: '/fərˈɡet/',
               phonetic: 'for-GHET',
               example:
@@ -1799,7 +1805,7 @@ export default {
             },
             {
               english: 'Replace',
-              italian: 'std::mem::replace / sostituisce e restituisce',
+              italian: 'Sostituisce e restituisce (std::mem::replace)',
               pronunciation: '/rɪˈpleɪs/',
               phonetic: 'ri-PLEIS',
               example:
@@ -1810,7 +1816,7 @@ export default {
             },
             {
               english: 'Swap',
-              italian: 'std::mem::swap / scambia due valori',
+              italian: 'Scambia due valori (std::mem::swap)',
               pronunciation: '/swɒp/',
               phonetic: 'SUOP',
               example: 'std::mem::swap exchanges two values. = std::mem::swap scambia due valori.',
@@ -1820,7 +1826,7 @@ export default {
             },
             {
               english: 'Take',
-              italian: 'std::mem::take / prende e lascia il default',
+              italian: 'Prende e lascia il default (std::mem::take)',
               pronunciation: '/teɪk/',
               phonetic: 'TEIK',
               example:
@@ -1838,7 +1844,7 @@ export default {
           items: [
             {
               english: 'Borrow Checker',
-              italian: 'borrow checker / controllore di prestiti',
+              italian: 'Controllore di prestiti (borrow checker)',
               pronunciation: '/ˈbɒroʊ ˈtʃekər/',
               phonetic: 'BO-rou CEK-er',
               example:
@@ -1912,10 +1918,11 @@ export default {
             },
             {
               english: 'Box',
-              italian: 'Box<T> / proprietà su heap',
+              italian: 'Proprietà su heap (Box<T>)',
               pronunciation: '/bɒks/',
               phonetic: 'BOKS',
-              example: "Box allocates a value on the heap. = Box alloca un valore sull'heap.",
+              example:
+                "To put a recursive type on the heap, wrap it in a Box. = Per mettere un tipo ricorsivo sull'heap, avvolgilo in un Box.",
               context: 'ownership',
               difficulty: 'beginner',
               code: 'let b = Box::new(5);',
@@ -1938,7 +1945,7 @@ export default {
               pronunciation: '/diːˌæloʊˈkeɪʃən/',
               phonetic: 'di-a-lo-KEI-scen',
               example:
-                'Deallocation happens automatically when value is dropped. = La deallocazione avviene automaticamente quando il valore è droppato.',
+                'When a value is dropped, deallocation of its heap memory happens automatically. = Quando un valore viene droppato, la deallocazione della sua memoria heap avviene automaticamente.',
               context: 'ownership',
               difficulty: 'beginner',
             },
@@ -1971,7 +1978,7 @@ export default {
             },
             {
               english: 'Borrow',
-              italian: 'Prestito / borrow',
+              italian: 'Borrow (Prestito)',
               pronunciation: '/ˈbɒroʊ/',
               phonetic: 'BO-rou',
               example:
@@ -2016,7 +2023,7 @@ export default {
             },
             {
               english: 'Auto Deref',
-              italian: 'Auto-deref',
+              italian: 'Dereferenziazione automatica (auto-deref)',
               pronunciation: '/ˈɔːtoʊ ˈderef/',
               phonetic: 'O-to DE-ref',
               example:
@@ -2098,7 +2105,7 @@ export default {
             },
             {
               english: 'Aliasing',
-              italian: 'aliasing / più riferimenti allo stesso valore',
+              italian: 'Più riferimenti allo stesso valore (aliasing)',
               pronunciation: '/ˈeɪliəsɪŋ/',
               phonetic: 'EI-li-as-ing',
               example: "Rust forbids mutable aliasing. = Rust proibisce l'aliasing mutabile.",
@@ -2119,7 +2126,7 @@ export default {
             },
             {
               english: 'Reborrow',
-              italian: 'reborrow / nuovo prestito da uno esistente',
+              italian: 'Nuovo prestito da uno esistente (reborrow)',
               pronunciation: '/riːˈbɒroʊ/',
               phonetic: 'RI-bo-rou',
               example:
@@ -2131,7 +2138,7 @@ export default {
             },
             {
               english: 'Data Race',
-              italian: 'data race / accesso concorrente non sincronizzato',
+              italian: 'Accesso concorrente non sincronizzato (data race)',
               pronunciation: '/ˈdeɪtə reɪs/',
               phonetic: 'DEI-ta REIS',
               example:
@@ -2175,7 +2182,7 @@ export default {
             },
             {
               english: 'NLL',
-              italian: 'NLL / Non-Lexical Lifetimes',
+              italian: 'Non-Lexical Lifetimes (NLL)',
               pronunciation: '/en el el/',
               phonetic: 'EN EL EL',
               example:
@@ -2264,7 +2271,7 @@ export default {
                 'String literals have a static lifetime. = I letterali stringa hanno durata static.',
               context: 'ownership',
               difficulty: 'intermediate',
-              code: 'let s: &\'static str = "hello";',
+              code: `let s: &'static str = "hello";`,
             },
             {
               english: 'Borrow Error',
@@ -2279,7 +2286,7 @@ export default {
             },
             {
               english: 'Cannot Borrow',
-              italian: 'cannot borrow / errore: non si può prendere in prestito',
+              italian: 'Errore: non si può prendere in prestito (cannot borrow)',
               pronunciation: '/ˈkænət ˈbɒroʊ/',
               phonetic: 'KAN-not BO-rou',
               example:
@@ -2351,7 +2358,7 @@ export default {
             },
             {
               english: 'Fat Pointer',
-              italian: 'fat pointer / puntatore con metadati',
+              italian: 'Puntatore con metadati (fat pointer)',
               pronunciation: '/fæt ˈpɔɪntər/',
               phonetic: 'FAT POIN-ter',
               example:
@@ -2431,7 +2438,7 @@ export default {
           items: [
             {
               english: 'Struct',
-              italian: 'struct / aggregato di campi',
+              italian: 'Aggregato di campi (struct)',
               pronunciation: '/strʌkt/',
               phonetic: 'STRAKT',
               example:
@@ -2498,7 +2505,7 @@ export default {
             },
             {
               english: 'Tuple Struct',
-              italian: 'tuple struct / struct con campi posizionali',
+              italian: 'Struct con campi posizionali (tuple struct)',
               pronunciation: '/ˈtuːpl strʌkt/',
               phonetic: 'TU-pol STRAKT',
               example: 'A tuple struct has unnamed fields. = Una tuple struct ha campi senza nome.',
@@ -2508,7 +2515,7 @@ export default {
             },
             {
               english: 'Unit Struct',
-              italian: 'unit struct / struct senza campi',
+              italian: 'Struct senza campi (unit struct)',
               pronunciation: '/ˈjuːnɪt strʌkt/',
               phonetic: 'IU-nit STRAKT',
               example: 'A unit struct has no fields. = Una unit struct non ha campi.',
@@ -2701,10 +2708,11 @@ export default {
             },
             {
               english: 'PartialEq',
-              italian: 'PartialEq / trait di uguaglianza parziale',
+              italian: 'Trait di uguaglianza parziale (PartialEq)',
               pronunciation: '/ˈpɑːrʃəl iːkjuː/',
               phonetic: 'PAR-scial IK-uel',
-              example: 'PartialEq enables == comparison. = PartialEq abilita il confronto ==.',
+              example:
+                'Deriving PartialEq lets you compare struct instances with ==. = Derivando PartialEq puoi confrontare istanze di struct con ==.',
               context: 'structs',
               difficulty: 'intermediate',
               code: '#[derive(PartialEq)]',
@@ -2840,7 +2848,7 @@ export default {
             },
             {
               english: 'Phantom Data',
-              italian: 'PhantomData / marker per parametri non usati',
+              italian: 'Marker per parametri non usati (PhantomData)',
               pronunciation: '/ˈfæntəm ˈdeɪtə/',
               phonetic: 'FAN-tom DEI-ta',
               example:
@@ -2863,7 +2871,7 @@ export default {
             },
             {
               english: 'Repr C',
-              italian: '#[repr(C)] / layout compatibile con C',
+              italian: 'Layout compatibile con C (#[repr(C)])',
               pronunciation: '/repr siː/',
               phonetic: 'REPR SI',
               example:
@@ -2885,7 +2893,7 @@ export default {
             },
             {
               english: 'Size Of',
-              italian: 'std::mem::size_of / dimensione del tipo',
+              italian: 'Dimensione del tipo (std::mem::size_of)',
               pronunciation: '/saɪz ʌv/',
               phonetic: 'SAIZ OV',
               example:
@@ -2912,7 +2920,7 @@ export default {
           items: [
             {
               english: 'Enum',
-              italian: 'enum / tipo somma',
+              italian: 'Tipo somma (enum)',
               pronunciation: '/ˈiːnʌm/',
               phonetic: 'I-num',
               example:
@@ -2999,7 +3007,7 @@ export default {
             },
             {
               english: 'Repr U8',
-              italian: '#[repr(u8)] / discriminante u8',
+              italian: 'Discriminante u8 (#[repr(u8)])',
               pronunciation: '/repr juː eɪt/',
               phonetic: 'REPR IU EIT',
               example:
@@ -3041,28 +3049,29 @@ export default {
             },
             {
               english: 'Some',
-              italian: 'Some(value) / variante Option contenente valore',
+              italian: 'Variante Option contenente valore (Some(value))',
               pronunciation: '/sʌm/',
               phonetic: 'SAM',
-              example: 'Some wraps a present value. = Some avvolge un valore presente.',
+              example:
+                'When a lookup succeeds, the result is wrapped in Some. = Quando una ricerca ha successo, il risultato è avvolto in Some.',
               context: 'enums',
               difficulty: 'intermediate',
               code: 'let x = Some(42);',
             },
             {
               english: 'None',
-              italian: 'None / variante Option vuota',
+              italian: 'Variante Option vuota (None)',
               pronunciation: '/nʌn/',
               phonetic: 'NAN',
               example:
-                "None represents the absence of a value. = None rappresenta l'assenza di un valore.",
+                'A function returns None to signal that no valid result was found. = Una funzione restituisce None per segnalare che nessun risultato valido è stato trovato.',
               context: 'enums',
               difficulty: 'intermediate',
               code: 'let x: Option<i32> = None;',
             },
             {
               english: 'Unwrap',
-              italian: 'unwrap / estrai o vai in panic',
+              italian: 'Estrai o vai in panic (unwrap)',
               pronunciation: '/ʌnˈræp/',
               phonetic: 'an-RAP',
               example:
@@ -3074,7 +3083,7 @@ export default {
             },
             {
               english: 'Unwrap Or',
-              italian: 'unwrap_or / estrai o usa il default',
+              italian: 'Estrai o usa il default (unwrap_or)',
               pronunciation: '/ʌnˈræp ɔːr/',
               phonetic: 'an-RAP OR',
               example:
@@ -3085,7 +3094,7 @@ export default {
             },
             {
               english: 'Map',
-              italian: 'map / trasforma il valore se presente',
+              italian: 'Trasforma il valore se presente (map)',
               pronunciation: '/mæp/',
               phonetic: 'MAP',
               example: 'map transforms the value if Some. = map trasforma il valore se Some.',
@@ -3095,7 +3104,7 @@ export default {
             },
             {
               english: 'And Then',
-              italian: 'and_then / concatena operazioni Option/Result',
+              italian: 'Concatena operazioni Option/Result (and_then)',
               pronunciation: '/ænd ðen/',
               phonetic: 'AND DEN',
               example: 'and_then chains options. = and_then concatena option.',
@@ -3106,7 +3115,7 @@ export default {
             },
             {
               english: 'Is Some',
-              italian: 'is_some / ritorna true se Option contiene valore',
+              italian: 'Ritorna true se Option contiene valore (is_some)',
               pronunciation: '/ɪz sʌm/',
               phonetic: 'IZ SAM',
               example:
@@ -3117,7 +3126,7 @@ export default {
             },
             {
               english: 'Is None',
-              italian: 'is_none / ritorna true se Option è vuota',
+              italian: 'Ritorna true se Option è vuota (is_none)',
               pronunciation: '/ɪz nʌn/',
               phonetic: 'IZ NAN',
               example:
@@ -3128,7 +3137,7 @@ export default {
             },
             {
               english: 'Take',
-              italian: 'std::mem::take / prende e lascia il default',
+              italian: 'Prende e lascia il default (std::mem::take)',
               pronunciation: '/teɪk/',
               phonetic: 'TEIK',
               example: "take replaces the option with None. = take sostituisce l'option con None.",
@@ -3199,7 +3208,7 @@ export default {
             },
             {
               english: 'If Let',
-              italian: 'if let / pattern match condizionale',
+              italian: 'Pattern match condizionale (if let)',
               pronunciation: '/ɪf let/',
               phonetic: 'IF LET',
               example: 'if let matches a single pattern. = if let matcha un singolo pattern.',
@@ -3209,7 +3218,7 @@ export default {
             },
             {
               english: 'While Let',
-              italian: 'while let / ciclo con pattern match',
+              italian: 'Ciclo con pattern match (while let)',
               pronunciation: '/waɪl let/',
               phonetic: 'UAIL LET',
               example:
@@ -3220,7 +3229,7 @@ export default {
             },
             {
               english: 'Let Else',
-              italian: 'let-else / let con uscita alternativa',
+              italian: 'Let con uscita alternativa (let-else)',
               pronunciation: '/let els/',
               phonetic: 'LET ELS',
               example:
@@ -3272,7 +3281,7 @@ export default {
             },
             {
               english: 'Type State',
-              italian: "type-state / stato dell'oggetto codificato nel tipo",
+              italian: "Stato dell'oggetto codificato nel tipo (type-state)",
               pronunciation: '/taɪp steɪt/',
               phonetic: 'TAIP STEIT',
               example:
@@ -3416,7 +3425,7 @@ export default {
             },
             {
               english: 'Unwrap',
-              italian: 'unwrap / estrai o vai in panic',
+              italian: 'Estrai o vai in panic (unwrap)',
               pronunciation: '/ʌnˈræp/',
               phonetic: 'an-RAP',
               example:
@@ -3428,7 +3437,7 @@ export default {
             },
             {
               english: 'Expect',
-              italian: 'expect / unwrap con messaggio',
+              italian: 'Unwrap con messaggio (expect)',
               pronunciation: '/ɪkˈspekt/',
               phonetic: 'ek-SPEKT',
               example:
@@ -3471,7 +3480,7 @@ export default {
             },
             {
               english: 'Is Ok',
-              italian: 'is_ok / true se Result è Ok',
+              italian: 'True se Result è Ok (is_ok)',
               pronunciation: '/ɪz oʊˈkeɪ/',
               phonetic: 'IZ O-KEI',
               example:
@@ -3482,7 +3491,7 @@ export default {
             },
             {
               english: 'Is Err',
-              italian: 'is_err / true se Result è Err',
+              italian: 'True se Result è Err (is_err)',
               pronunciation: '/ɪz ɜːr/',
               phonetic: 'IZ ER',
               example:
@@ -3500,7 +3509,7 @@ export default {
           items: [
             {
               english: 'Panic',
-              italian: 'panic! / interruzione del thread per errore',
+              italian: 'Interruzione del thread per errore (panic!)',
               pronunciation: '/ˈpænɪk/',
               phonetic: 'PA-nik',
               example: 'panic! aborts the current thread. = panic! interrompe il thread corrente.',
@@ -3532,7 +3541,7 @@ export default {
             },
             {
               english: 'Panic Abort',
-              italian: 'panic=abort / aborta invece di srotolare',
+              italian: 'Aborta invece di srotolare (panic=abort)',
               pronunciation: '/ˈpænɪk əˈbɔːrt/',
               phonetic: 'PA-nik a-BORT',
               example:
@@ -3544,7 +3553,7 @@ export default {
             },
             {
               english: 'Catch Unwind',
-              italian: 'catch_unwind / cattura un panic',
+              italian: 'Cattura un panic (catch_unwind)',
               pronunciation: '/kætʃ ʌnˈwaɪnd/',
               phonetic: 'KEC an-UAIND',
               example: 'catch_unwind catches a panic. = catch_unwind cattura un panic.',
@@ -3566,7 +3575,7 @@ export default {
             },
             {
               english: 'Assert Eq',
-              italian: 'assert_eq! / asserzione di uguaglianza',
+              italian: 'Asserzione di uguaglianza (assert_eq!)',
               pronunciation: '/əˈsɜːrt iːkjuː/',
               phonetic: 'a-SERT IK-uel',
               example:
@@ -3577,7 +3586,7 @@ export default {
             },
             {
               english: 'Debug Assert',
-              italian: 'debug_assert! / asserzione solo in debug',
+              italian: 'Asserzione solo in debug (debug_assert!)',
               pronunciation: '/dɪˈbʌɡ əˈsɜːrt/',
               phonetic: 'di-BAG a-SERT',
               example:
@@ -3588,7 +3597,7 @@ export default {
             },
             {
               english: 'Unreachable',
-              italian: 'unreachable! / dichiara codice irraggiungibile',
+              italian: 'Dichiara codice irraggiungibile (unreachable!)',
               pronunciation: '/ʌnˈriːtʃəbl/',
               phonetic: 'an-RI-cia-bol',
               example:
@@ -3640,7 +3649,7 @@ export default {
             },
             {
               english: 'Box Dyn Error',
-              italian: 'Box<dyn Error> / errore dinamico boxed',
+              italian: 'Errore dinamico boxed (Box<dyn Error>)',
               pronunciation: '/bɒks daɪn ˈerər/',
               phonetic: 'BOKS DAIN ER-rer',
               example:
@@ -3663,7 +3672,7 @@ export default {
             },
             {
               english: 'Thiserror',
-              italian: 'thiserror / derivazione di errori Rust',
+              italian: 'Derivazione di errori Rust (thiserror)',
               pronunciation: '/ðɪsˈerər/',
               phonetic: 'DIS-er-rer',
               example:
@@ -3676,7 +3685,7 @@ export default {
             },
             {
               english: 'Anyhow',
-              italian: 'anyhow / errore generico per applicazioni',
+              italian: 'Errore generico per applicazioni (anyhow)',
               pronunciation: '/ˈeniˌhaʊ/',
               phonetic: 'EN-ni-hau',
               example:
@@ -3740,7 +3749,7 @@ export default {
           items: [
             {
               english: 'Map',
-              italian: 'map / trasforma il valore se presente',
+              italian: 'Trasforma il valore se presente (map)',
               pronunciation: '/mæp/',
               phonetic: 'MAP',
               example: 'map transforms the Ok value. = map trasforma il valore Ok.',
@@ -3750,7 +3759,7 @@ export default {
             },
             {
               english: 'Map Err',
-              italian: "map_err / trasforma l'errore di Result",
+              italian: "Trasforma l'errore di Result (map_err)",
               pronunciation: '/mæp ɜːr/',
               phonetic: 'MAP ER',
               example: 'map_err transforms the Err value. = map_err trasforma il valore Err.',
@@ -3760,7 +3769,7 @@ export default {
             },
             {
               english: 'And Then',
-              italian: 'and_then / concatena operazioni Option/Result',
+              italian: 'Concatena operazioni Option/Result (and_then)',
               pronunciation: '/ænd ðen/',
               phonetic: 'AND DEN',
               example:
@@ -3771,7 +3780,7 @@ export default {
             },
             {
               english: 'Or Else',
-              italian: 'or_else / fallback se Result è Err',
+              italian: 'Fallback se Result è Err (or_else)',
               pronunciation: '/ɔːr els/',
               phonetic: 'OR ELS',
               example:
@@ -3782,7 +3791,7 @@ export default {
             },
             {
               english: 'Unwrap Or',
-              italian: 'unwrap_or / estrai o usa il default',
+              italian: 'Estrai o usa il default (unwrap_or)',
               pronunciation: '/ʌnˈræp ɔːr/',
               phonetic: 'an-RAP OR',
               example:
@@ -3793,7 +3802,7 @@ export default {
             },
             {
               english: 'Unwrap Or Else',
-              italian: 'unwrap_or_else / unwrap con calcolo di default',
+              italian: 'Unwrap con calcolo di default (unwrap_or_else)',
               pronunciation: '/ʌnˈræp ɔːr els/',
               phonetic: 'an-RAP OR ELS',
               example:
@@ -3825,7 +3834,7 @@ export default {
             },
             {
               english: 'Try From',
-              italian: 'TryFrom / conversione fallibile',
+              italian: 'Conversione fallibile (TryFrom)',
               pronunciation: '/traɪ frɒm/',
               phonetic: 'TRAI FROM',
               example:
@@ -3884,7 +3893,7 @@ export default {
             },
             {
               english: 'Push',
-              italian: 'push / aggiungi in coda',
+              italian: 'Aggiungi in coda (push)',
               pronunciation: '/pʊʃ/',
               phonetic: 'PUSCI',
               example: 'push appends an element to a Vec. = push aggiunge un elemento a un Vec.',
@@ -3894,7 +3903,7 @@ export default {
             },
             {
               english: 'Pop',
-              italian: 'pop / rimuovi dalla coda',
+              italian: 'Rimuovi dalla coda (pop)',
               pronunciation: '/pɒp/',
               phonetic: 'POP',
               example:
@@ -3918,7 +3927,7 @@ export default {
             },
             {
               english: 'Get',
-              italian: 'get / accesso opzionale',
+              italian: 'Accesso opzionale (get)',
               pronunciation: '/ɡet/',
               phonetic: 'GHET',
               example:
@@ -3966,7 +3975,7 @@ export default {
               pronunciation: '/ˈɪtəreɪt/',
               phonetic: 'I-te-reit',
               example:
-                'Iterate with iter, iter_mut, into_iter. = Itera con iter, iter_mut, into_iter.',
+                'You can iterate over a collection with iter(), iter_mut(), or into_iter(). = Puoi iterare su una collezione con iter(), iter_mut() o into_iter().',
               context: 'collections',
               difficulty: 'intermediate',
               code: 'for x in v.iter() { ... }',
@@ -3980,7 +3989,7 @@ export default {
           items: [
             {
               english: 'HashMap',
-              italian: 'HashMap / mappa hash',
+              italian: 'Mappa hash (HashMap)',
               pronunciation: '/hæʃ mæp/',
               phonetic: 'HASCI MAP',
               example:
@@ -4024,7 +4033,7 @@ export default {
             },
             {
               english: 'Contains Key',
-              italian: 'contains_key / verifica presenza chiave',
+              italian: 'Verifica presenza chiave (contains_key)',
               pronunciation: '/kənˈteɪnz kiː/',
               phonetic: 'kon-TEINZ KI',
               example:
@@ -4047,7 +4056,7 @@ export default {
             },
             {
               english: 'HashSet',
-              italian: 'HashSet / insieme hash',
+              italian: 'Insieme hash (HashSet)',
               pronunciation: '/hæʃ set/',
               phonetic: 'HASCI SET',
               example: 'HashSet<T> stores unique values. = HashSet<T> memorizza valori unici.',
@@ -4057,10 +4066,11 @@ export default {
             },
             {
               english: 'BTreeMap',
-              italian: 'BTreeMap / mappa ordinata su B-tree',
+              italian: 'Mappa ordinata su B-tree (BTreeMap)',
               pronunciation: '/biː triː mæp/',
               phonetic: 'BI-TRI MAP',
-              example: 'BTreeMap keeps keys sorted. = BTreeMap mantiene le chiavi ordinate.',
+              example:
+                'Unlike HashMap, a BTreeMap keeps its keys sorted in order. = A differenza di HashMap, BTreeMap mantiene le chiavi ordinate.',
               context: 'collections',
               difficulty: 'intermediate',
               code: 'use std::collections::BTreeMap;',
@@ -4068,21 +4078,22 @@ export default {
             },
             {
               english: 'VecDeque',
-              italian: 'VecDeque / coda doppiamente accessibile',
+              italian: 'Coda doppiamente accessibile (VecDeque)',
               pronunciation: '/vek dek/',
               phonetic: 'VEK DEK',
               example:
-                'VecDeque is a double-ended queue. = VecDeque è una coda a doppia estremità.',
+                'For a FIFO queue with efficient push/pop at both ends, use VecDeque. = Per una coda FIFO con push/pop efficienti a entrambe le estremità, usa VecDeque.',
               context: 'collections',
               difficulty: 'intermediate',
               code: 'use std::collections::VecDeque;',
             },
             {
               english: 'BinaryHeap',
-              italian: 'BinaryHeap / coda di priorità',
+              italian: 'Coda di priorità (BinaryHeap)',
               pronunciation: '/ˈbaɪnəri hiːp/',
               phonetic: 'BAI-na-ri HIP',
-              example: 'BinaryHeap is a priority queue. = BinaryHeap è una coda con priorità.',
+              example:
+                "To always extract the largest element first, use a BinaryHeap priority queue. = Per estrarre sempre l'elemento più grande per primo, usa la coda di priorità BinaryHeap.",
               context: 'collections',
               difficulty: 'intermediate',
               code: 'use std::collections::BinaryHeap;',
@@ -4107,7 +4118,7 @@ export default {
             },
             {
               english: 'Iter',
-              italian: 'iter / iteratore di riferimenti',
+              italian: 'Iteratore di riferimenti (iter)',
               pronunciation: '/ˈaɪtər/',
               phonetic: 'AI-ter',
               example:
@@ -4118,7 +4129,7 @@ export default {
             },
             {
               english: 'Iter Mut',
-              italian: 'iter_mut / iteratore di riferimenti mutabili',
+              italian: 'Iteratore di riferimenti mutabili (iter_mut)',
               pronunciation: '/ˈaɪtər mjuːt/',
               phonetic: 'AI-ter MIUT',
               example:
@@ -4129,7 +4140,7 @@ export default {
             },
             {
               english: 'Into Iter',
-              italian: 'into_iter / iteratore consumante',
+              italian: 'Iteratore consumante (into_iter)',
               pronunciation: '/ˈɪntuː ˈaɪtər/',
               phonetic: 'IN-tu AI-ter',
               example: 'into_iter consumes the collection. = into_iter consuma la collezione.',
@@ -4150,7 +4161,7 @@ export default {
             },
             {
               english: 'Filter',
-              italian: 'filter / filtra elementi',
+              italian: 'Filtra elementi (filter)',
               pronunciation: '/ˈfɪltər/',
               phonetic: 'FIL-ter',
               example:
@@ -4161,7 +4172,7 @@ export default {
             },
             {
               english: 'Collect',
-              italian: 'collect / raccoglie in collezione',
+              italian: 'Raccoglie in collezione (collect)',
               pronunciation: '/kəˈlekt/',
               phonetic: 'kol-LEKT',
               example:
@@ -4182,7 +4193,7 @@ export default {
             },
             {
               english: 'Count',
-              italian: 'count / conta gli elementi',
+              italian: 'Conta gli elementi (count)',
               pronunciation: '/kaʊnt/',
               phonetic: 'KAUNT',
               example:
@@ -4252,7 +4263,7 @@ export default {
             },
             {
               english: 'To Lowercase',
-              italian: 'to_lowercase / minuscole',
+              italian: 'Minuscole (to_lowercase)',
               pronunciation: '/tuː ˈloʊərkeɪs/',
               phonetic: 'TU LO-uer-keis',
               example: 'to_lowercase converts to lowercase. = to_lowercase converte in minuscolo.',
@@ -4263,7 +4274,7 @@ export default {
             },
             {
               english: 'To Uppercase',
-              italian: 'to_uppercase / maiuscole',
+              italian: 'Maiuscole (to_uppercase)',
               pronunciation: '/tuː ˈʌpərkeɪs/',
               phonetic: 'TU AP-per-keis',
               example: 'to_uppercase converts to uppercase. = to_uppercase converte in maiuscolo.',
@@ -4273,7 +4284,7 @@ export default {
             },
             {
               english: 'String Contains',
-              italian: 'String::contains / verifica sottostringa',
+              italian: 'Verifica sottostringa (String::contains)',
               pronunciation: '/strɪŋ kənˈteɪnz/',
               phonetic: 'STRING kon-TEINZ',
               example:
@@ -4284,7 +4295,7 @@ export default {
             },
             {
               english: 'String Starts With',
-              italian: 'starts_with / inizia con prefisso',
+              italian: 'Inizia con prefisso (starts_with)',
               pronunciation: '/strɪŋ stɑːrts wɪð/',
               phonetic: 'STRING STARTS UID',
               example: 'starts_with checks the prefix. = starts_with controlla il prefisso.',
@@ -4294,7 +4305,7 @@ export default {
             },
             {
               english: 'Parse',
-              italian: 'parse / analizza una stringa in tipo',
+              italian: 'Analizza una stringa in tipo (parse)',
               pronunciation: '/pɑːrs/',
               phonetic: 'PARS',
               example:
@@ -4332,7 +4343,7 @@ export default {
           items: [
             {
               english: 'Trait',
-              italian: 'trait / interfaccia generica Rust',
+              italian: 'Interfaccia generica Rust (trait)',
               pronunciation: '/treɪt/',
               phonetic: 'TREIT',
               example:
@@ -4410,7 +4421,7 @@ export default {
             },
             {
               english: 'Impl Trait',
-              italian: 'impl Trait / tipo opaco implementante',
+              italian: 'Tipo opaco implementante (impl Trait)',
               pronunciation: '/ɪmpl treɪt/',
               phonetic: 'IMPL TREIT',
               example:
@@ -4450,104 +4461,110 @@ export default {
           items: [
             {
               english: 'Display',
-              italian: 'Display / trait di formattazione user-facing',
+              italian: 'Trait di formattazione user-facing (Display)',
               pronunciation: '/dɪˈspleɪ/',
               phonetic: 'di-SPLEI',
               example:
-                'Display formats user-facing output. = Display formatta output per utenti finali.',
+                "Implementing Display controls how a type appears in user-facing output. = Implementare Display controlla come un tipo appare nell'output per l'utente.",
               context: 'traits',
               difficulty: 'intermediate',
               code: 'impl Display for X { fn fmt(&self, f: ...) { ... } }',
             },
             {
               english: 'Debug',
-              italian: 'Debug / trait di formattazione di debug',
+              italian: 'Trait di formattazione di debug (Debug)',
               pronunciation: '/dɪˈbʌɡ/',
               phonetic: 'di-BAG',
               example:
-                'Debug formats output for developers. = Debug formatta output per sviluppatori.',
+                'Deriving Debug lets you print a struct with {:?} for debugging. = Derivando Debug puoi stampare una struct con {:?} per il debugging.',
               context: 'traits',
               difficulty: 'intermediate',
               code: 'println!("{:?}", x);',
             },
             {
               english: 'Clone',
-              italian: 'Clone / trait per duplicazione esplicita',
+              italian: 'Trait per duplicazione esplicita (Clone)',
               pronunciation: '/kloʊn/',
               phonetic: 'KLOUN',
-              example: 'Clone provides explicit copying. = Clone fornisce copia esplicita.',
+              example:
+                'By calling clone(), you get an independent deep copy of a value. = Chiamando clone(), ottieni una copia profonda indipendente di un valore.',
               context: 'traits',
               difficulty: 'intermediate',
               code: 'let y = x.clone();',
             },
             {
               english: 'Copy',
-              italian: 'Copy / trait per duplicazione bit-a-bit',
+              italian: 'Trait per duplicazione bit-a-bit (Copy)',
               pronunciation: '/ˈkɒpi/',
               phonetic: 'KOP-pi',
-              example: 'Copy enables implicit copying. = Copy abilita copia implicita.',
+              example:
+                'When a type implements Copy, assignments duplicate instead of moving. = Quando un tipo implementa Copy, gli assegnamenti duplicano invece di muovere.',
               context: 'traits',
               difficulty: 'intermediate',
               code: '#[derive(Copy, Clone)]',
             },
             {
               english: 'Iterator',
-              italian: 'Iterator / trait degli iteratori',
+              italian: 'Trait degli iteratori (Iterator)',
               pronunciation: '/ˈɪtəreɪtər/',
               phonetic: 'I-te-rei-ter',
-              example: 'Iterator defines lazy sequences. = Iterator definisce sequenze lazy.',
+              example:
+                'The Iterator trait powers lazy evaluation: no work happens until you consume results. = Il trait Iterator alimenta la valutazione lazy: nessun lavoro avviene finché non consumi i risultati.',
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn next(&mut self) -> Option<Self::Item>',
             },
             {
               english: 'IntoIterator',
-              italian: 'IntoIterator / convertibile in iteratore',
+              italian: 'Convertibile in iteratore (IntoIterator)',
               pronunciation: '/ˈɪntuː ˈɪtəreɪtər/',
               phonetic: 'IN-tu I-te-rei-ter',
               example:
-                'IntoIterator converts a type into an iterator. = IntoIterator converte un tipo in iteratore.',
+                'Thanks to IntoIterator, you can use any collection directly in a for loop. = Grazie a IntoIterator, puoi usare qualsiasi collezione direttamente in un ciclo for.',
               context: 'traits',
               difficulty: 'intermediate',
               code: 'for x in collection { ... }',
             },
             {
               english: 'PartialOrd',
-              italian: 'PartialOrd / ordinamento parziale',
+              italian: 'Ordinamento parziale (PartialOrd)',
               pronunciation: '/ˈpɑːrʃəl ɔːrd/',
               phonetic: 'PAR-scial ORD',
               example:
-                'PartialOrd enables partial ordering. = PartialOrd abilita ordinamento parziale.',
+                'Deriving PartialOrd lets you use <, >, <=, >= on your types. = Derivando PartialOrd puoi usare <, >, <=, >= sui tuoi tipi.',
               context: 'traits',
               difficulty: 'intermediate',
               code: '#[derive(PartialOrd)]',
             },
             {
               english: 'AsRef',
-              italian: 'AsRef / conversione per riferimento',
+              italian: 'Conversione per riferimento (AsRef)',
               pronunciation: '/æz ref/',
               phonetic: 'AS REF',
-              example: 'AsRef converts to a reference. = AsRef converte in un riferimento.',
+              example:
+                'By accepting AsRef<Path>, a function works with both &str and PathBuf. = Accettando AsRef<Path>, una funzione funziona sia con &str che con PathBuf.',
               context: 'traits',
               difficulty: 'intermediate',
               code: 'fn read<P: AsRef<Path>>(path: P)',
             },
             {
               english: 'From',
-              italian: 'From / conversione infallibile',
+              italian: 'Conversione infallibile (From)',
               pronunciation: '/frɒm/',
               phonetic: 'FROM',
-              example: 'From defines value conversions. = From definisce conversioni di valore.',
+              example:
+                'Implementing From<String> lets you convert strings into your custom type. = Implementando From<String> puoi convertire stringhe nel tuo tipo personalizzato.',
               context: 'traits',
               difficulty: 'intermediate',
               code: 'impl From<&str> for String',
             },
             {
               english: 'Into',
-              italian: 'Into / conversione complementare a From',
+              italian: 'Conversione complementare a From (Into)',
               pronunciation: '/ˈɪntuː/',
               phonetic: 'IN-tu',
-              example: "Into is the inverse of From. = Into è l'inverso di From.",
+              example:
+                'Since From is implemented, you automatically get Into for free. = Poiché From è implementato, ottieni automaticamente Into gratuitamente.',
               context: 'traits',
               difficulty: 'intermediate',
               code: 'let s: String = "hi".into();',
@@ -4605,7 +4622,7 @@ export default {
             },
             {
               english: 'VTable',
-              italian: 'vtable / tabella di funzioni virtuali',
+              italian: 'Tabella di funzioni virtuali (vtable)',
               pronunciation: '/viː ˈteɪbl/',
               phonetic: 'VI TEI-bol',
               example:
@@ -4616,7 +4633,7 @@ export default {
             },
             {
               english: 'Object Safety',
-              italian: 'object safety / regole per trait dyn-sicuri',
+              italian: 'Regole per trait dyn-sicuri (object safety)',
               pronunciation: '/ˈɒbdʒekt ˈseɪfti/',
               phonetic: 'OB-gekt SEIF-ti',
               example:
@@ -4678,7 +4695,7 @@ export default {
           items: [
             {
               english: 'Supertrait',
-              italian: 'supertrait / trait richiesto da un altro',
+              italian: 'Trait richiesto da un altro (supertrait)',
               pronunciation: '/ˈsuːpərtreɪt/',
               phonetic: 'SU-per-treit',
               example: 'A supertrait is a required trait. = Un supertrait è un trait richiesto.',
@@ -4716,7 +4733,7 @@ export default {
               pronunciation: '/koʊˈhɪərəns/',
               phonetic: 'ko-HI-rens',
               example:
-                'Coherence ensures unique trait implementations. = La coerenza garantisce implementazioni di trait uniche.',
+                'The coherence rule prevents conflicting trait implementations in Rust. = La regola di coerenza previene implementazioni di trait in conflitto in Rust.',
               context: 'traits',
               difficulty: 'intermediate',
               note: 'Garantisce che esista al massimo una implementazione per coppia (trait, tipo).',
@@ -4734,7 +4751,7 @@ export default {
             },
             {
               english: 'Auto Trait',
-              italian: 'auto trait / trait dedotto automaticamente',
+              italian: 'Trait dedotto automaticamente (auto trait)',
               pronunciation: '/ˈɔːtoʊ treɪt/',
               phonetic: 'O-to TREIT',
               example:
@@ -4776,7 +4793,7 @@ export default {
             },
             {
               english: 'Trait Aliasing',
-              italian: 'trait alias / alias di trait composti',
+              italian: 'Alias di trait composti (trait alias)',
               pronunciation: '/treɪt ˈeɪliəsɪŋ/',
               phonetic: 'TREIT EI-li-as-ing',
               example:
@@ -4837,7 +4854,7 @@ export default {
             },
             {
               english: 'Turbofish',
-              italian: 'turbofish ::<T> / annotazione esplicita di tipo generico',
+              italian: 'Annotazione esplicita di tipo generico (turbofish ::<T>)',
               pronunciation: '/ˈtɜːrboʊfɪʃ/',
               phonetic: 'TUR-bo-fisci',
               example:
@@ -5040,14 +5057,14 @@ export default {
               pronunciation: '/ˌmɒnəmɔːrfaɪˈzeɪʃən/',
               phonetic: 'mo-no-mor-fi-ZEI-scen',
               example:
-                'Monomorphization generates code for each type. = La monomorfizzazione genera codice per ogni tipo.',
+                'During compilation, monomorphization generates specialized code for each concrete type. = Durante la compilazione, la monomorfizzazione genera codice specializzato per ogni tipo concreto.',
               context: 'generics',
               difficulty: 'intermediate',
               note: 'Rust crea una versione separata della funzione per ogni tipo concreto usato.',
             },
             {
               english: 'Code Bloat',
-              italian: 'code bloat / esplosione di codice generato',
+              italian: 'Esplosione di codice generato (code bloat)',
               pronunciation: '/koʊd bloʊt/',
               phonetic: 'KOUD BLOUT',
               example:
@@ -5098,7 +5115,7 @@ export default {
             },
             {
               english: 'Inlining',
-              italian: 'inlining / espansione inline',
+              italian: 'Espansione inline (inlining)',
               pronunciation: '/ˈɪnlaɪnɪŋ/',
               phonetic: 'IN-lai-ning',
               example:
@@ -5113,7 +5130,7 @@ export default {
               pronunciation: '/ˌspeʃəlaɪˈzeɪʃən/',
               phonetic: 'spe-scia-li-ZEI-scen',
               example:
-                'Specialization optimizes for specific types. = La specializzazione ottimizza per tipi specifici.',
+                "With specialization, you can provide a more optimized implementation for specific types. = Con la specializzazione, puoi fornire un'implementazione più ottimizzata per tipi specifici.",
               context: 'generics',
               difficulty: 'intermediate',
               note: 'Feature ancora unstable per fornire impl più specifiche.',
@@ -5168,7 +5185,7 @@ export default {
             },
             {
               english: 'Higher-Ranked Trait Bound',
-              italian: 'HRTB / trait bound a ranghi superiori',
+              italian: 'Trait bound a ranghi superiori (HRTB)',
               pronunciation: '/ˈhaɪər ˈræŋkt treɪt baʊnd/',
               phonetic: 'HAI-er RANKT TREIT BAUND',
               example:
@@ -5271,7 +5288,7 @@ export default {
           items: [
             {
               english: 'Lifetime',
-              italian: 'Lifetime / durata',
+              italian: 'Durata (Lifetime)',
               pronunciation: '/ˈlaɪftaɪm/',
               phonetic: 'LAIF-taim',
               example:
@@ -5310,7 +5327,7 @@ export default {
                 "'static means valid for the program's entire lifetime. = 'static significa valido per l'intera durata del programma.",
               context: 'lifetimes',
               difficulty: 'intermediate',
-              code: 'let s: &\'static str = "hello";',
+              code: `let s: &'static str = "hello";`,
               note: 'Letterali stringa hanno automaticamente lifetime static.',
             },
             {
@@ -5338,7 +5355,7 @@ export default {
             },
             {
               english: 'Outlives',
-              italian: '\'a: \'b / vincolo di durata "vive più a lungo"',
+              italian: `Vincolo di durata "vive più a lungo" ('a: 'b)`,
               pronunciation: '/ˌaʊtˈlaɪvz/',
               phonetic: 'aut-LAIVZ',
               example: "'a: 'b means 'a outlives 'b. = 'a: 'b significa che 'a sopravvive a 'b.",
@@ -5499,7 +5516,7 @@ export default {
           items: [
             {
               english: 'Borrow Checker',
-              italian: 'borrow checker / controllore di prestiti',
+              italian: 'Controllore di prestiti (borrow checker)',
               pronunciation: '/ˈbɒroʊ ˈtʃekər/',
               phonetic: 'BO-rou CEK-er',
               example:
@@ -5509,7 +5526,7 @@ export default {
             },
             {
               english: 'NLL',
-              italian: 'NLL / Non-Lexical Lifetimes',
+              italian: 'Non-Lexical Lifetimes (NLL)',
               pronunciation: '/en el el/',
               phonetic: 'EN EL EL',
               example:
@@ -5520,11 +5537,11 @@ export default {
             },
             {
               english: 'Polonius',
-              italian: 'Polonius / nuovo borrow checker basato su datalog',
+              italian: 'Nuovo borrow checker basato su datalog (Polonius)',
               pronunciation: '/pəˈloʊniəs/',
               phonetic: 'po-LO-ni-us',
               example:
-                'Polonius is the next-gen borrow checker. = Polonius è il borrow checker di prossima generazione.',
+                'The next-generation borrow checker, Polonius, handles more valid programs than NLL. = Il borrow checker di nuova generazione, Polonius, gestisce più programmi validi rispetto a NLL.',
               context: 'lifetimes',
               difficulty: 'intermediate',
               note: 'In sviluppo: gestisce casi complessi che NLL non riesce.',
@@ -5541,7 +5558,7 @@ export default {
             },
             {
               english: 'Borrow Splitting',
-              italian: 'borrow splitting / divisione di prestiti per campi',
+              italian: 'Divisione di prestiti per campi (borrow splitting)',
               pronunciation: '/ˈbɒroʊ ˈsplɪtɪŋ/',
               phonetic: 'BO-rou SPLI-ting',
               example:
@@ -5563,7 +5580,7 @@ export default {
             },
             {
               english: 'Reborrow',
-              italian: 'reborrow / nuovo prestito da uno esistente',
+              italian: 'Nuovo prestito da uno esistente (reborrow)',
               pronunciation: '/riːˈbɒroʊ/',
               phonetic: 'RI-bo-rou',
               example:
@@ -5622,7 +5639,7 @@ export default {
             },
             {
               english: 'HRTB',
-              italian: 'HRTB / Higher-Ranked Trait Bound',
+              italian: 'Higher-Ranked Trait Bound (HRTB)',
               pronunciation: '/eɪtʃ ɑːr tiː biː/',
               phonetic: 'EICI AR TI BI',
               example:
@@ -5644,11 +5661,11 @@ export default {
             },
             {
               english: 'Pin',
-              italian: 'Pin / pin: garantisce che un valore non venga spostato',
+              italian: 'Pin: garantisce che un valore non venga spostato (Pin)',
               pronunciation: '/pɪn/',
               phonetic: 'PIN',
               example:
-                'Pin prevents a value from being moved. = Pin impedisce a un valore di essere mosso.',
+                'Async futures require Pin to guarantee they stay at a fixed memory address. = I future async richiedono Pin per garantire che restino a un indirizzo di memoria fisso.',
               context: 'lifetimes',
               difficulty: 'intermediate',
               code: 'Pin<&mut Future>',
@@ -5700,7 +5717,7 @@ export default {
             },
             {
               english: 'Move Closure',
-              italian: 'move closure / chiusura che cattura per move',
+              italian: 'Chiusura che cattura per move (move closure)',
               pronunciation: '/muːv ˈkloʊʒər/',
               phonetic: 'MUV KLO-gier',
               example:
@@ -5848,7 +5865,7 @@ export default {
           items: [
             {
               english: 'Workspace',
-              italian: 'workspace / spazio di lavoro multi-crate',
+              italian: 'Spazio di lavoro multi-crate (workspace)',
               pronunciation: '/ˈwɜːrkspeɪs/',
               phonetic: 'UORK-speis',
               example:
@@ -5879,7 +5896,7 @@ export default {
             },
             {
               english: 'Crates.io',
-              italian: 'crates.io / registro pubblico di crate',
+              italian: 'Registro pubblico di crate (crates.io)',
               pronunciation: '/kreɪts daɪ oʊ/',
               phonetic: 'KREITS DAI O',
               example:
@@ -5923,7 +5940,7 @@ export default {
             },
             {
               english: 'Feature Flag',
-              italian: 'feature flag / flag di feature crate',
+              italian: 'Flag di feature crate (feature flag)',
               pronunciation: '/ˈfiːtʃər flæɡ/',
               phonetic: 'FI-cier FLAG',
               example:
@@ -5934,7 +5951,7 @@ export default {
             },
             {
               english: 'Semver',
-              italian: 'SemVer / versionamento semantico',
+              italian: 'Versionamento semantico (SemVer)',
               pronunciation: '/sem vɜːr/',
               phonetic: 'SEM-ver',
               example: 'Cargo follows Semantic Versioning. = Cargo segue il Semantic Versioning.',
@@ -5981,7 +5998,7 @@ export default {
             },
             {
               english: 'Pub Crate',
-              italian: 'pub(crate) / visibilità a livello crate',
+              italian: 'Visibilità a livello crate (pub(crate))',
               pronunciation: '/pʌb kreɪt/',
               phonetic: 'PAB KREIT',
               example:
@@ -5992,7 +6009,7 @@ export default {
             },
             {
               english: 'Pub Super',
-              italian: 'pub(super) / visibilità al modulo padre',
+              italian: 'Visibilità al modulo padre (pub(super))',
               pronunciation: '/pʌb ˈsuːpər/',
               phonetic: 'PAB SU-per',
               example:
@@ -6003,7 +6020,7 @@ export default {
             },
             {
               english: 'Pub Use',
-              italian: 'pub use / re-esportazione pubblica',
+              italian: 'Re-esportazione pubblica (pub use)',
               pronunciation: '/pʌb juːs/',
               phonetic: 'PAB IUS',
               example: 'pub use re-exports an item. = pub use ri-esporta un elemento.',
@@ -6044,7 +6061,7 @@ export default {
             },
             {
               english: 'Prelude',
-              italian: 'prelude / set di simboli importati di default',
+              italian: 'Set di simboli importati di default (prelude)',
               pronunciation: '/ˈpreljuːd/',
               phonetic: 'PRE-liud',
               example: 'The prelude is auto-imported. = Il prelude è auto-importato.',
@@ -6071,7 +6088,7 @@ export default {
           items: [
             {
               english: 'Cargo Test',
-              italian: 'cargo test / esegue i test',
+              italian: 'Esegue i test (cargo test)',
               pronunciation: '/ˈkɑːrɡoʊ test/',
               phonetic: 'KAR-go TEST',
               example: 'cargo test runs all tests. = cargo test esegue tutti i test.',
@@ -6081,7 +6098,7 @@ export default {
             },
             {
               english: 'Cargo Doc',
-              italian: 'cargo doc / genera documentazione',
+              italian: 'Genera documentazione (cargo doc)',
               pronunciation: '/ˈkɑːrɡoʊ dɒk/',
               phonetic: 'KAR-go DOK',
               example: 'cargo doc generates documentation. = cargo doc genera documentazione.',
@@ -6091,7 +6108,7 @@ export default {
             },
             {
               english: 'Cargo Update',
-              italian: 'cargo update / aggiorna lockfile',
+              italian: 'Aggiorna lockfile (cargo update)',
               pronunciation: '/ˈkɑːrɡoʊ ˈʌpdeɪt/',
               phonetic: 'KAR-go AP-deit',
               example: 'cargo update updates Cargo.lock. = cargo update aggiorna Cargo.lock.',
@@ -6101,7 +6118,7 @@ export default {
             },
             {
               english: 'Cargo Add',
-              italian: 'cargo add / aggiunge dipendenza',
+              italian: 'Aggiunge dipendenza (cargo add)',
               pronunciation: '/ˈkɑːrɡoʊ æd/',
               phonetic: 'KAR-go AD',
               example: 'cargo add adds a dependency. = cargo add aggiunge una dipendenza.',
@@ -6111,7 +6128,7 @@ export default {
             },
             {
               english: 'Cargo Remove',
-              italian: 'cargo remove / rimuove dipendenza',
+              italian: 'Rimuove dipendenza (cargo remove)',
               pronunciation: '/ˈkɑːrɡoʊ rɪˈmuːv/',
               phonetic: 'KAR-go ri-MUV',
               example:
@@ -6122,7 +6139,7 @@ export default {
             },
             {
               english: 'Cargo Publish',
-              italian: 'cargo publish / pubblica su crates.io',
+              italian: 'Pubblica su crates.io (cargo publish)',
               pronunciation: '/ˈkɑːrɡoʊ ˈpʌblɪʃ/',
               phonetic: 'KAR-go PA-blisci',
               example:
@@ -6133,7 +6150,7 @@ export default {
             },
             {
               english: 'Cargo Bench',
-              italian: 'cargo bench / esegue benchmark',
+              italian: 'Esegue benchmark (cargo bench)',
               pronunciation: '/ˈkɑːrɡoʊ bentʃ/',
               phonetic: 'KAR-go BENC',
               example: 'cargo bench runs benchmarks. = cargo bench esegue benchmark.',
@@ -6144,7 +6161,7 @@ export default {
             },
             {
               english: 'Cargo Tree',
-              italian: 'cargo tree / albero delle dipendenze',
+              italian: 'Albero delle dipendenze (cargo tree)',
               pronunciation: '/ˈkɑːrɡoʊ triː/',
               phonetic: 'KAR-go TRI',
               example:
@@ -6155,7 +6172,7 @@ export default {
             },
             {
               english: 'Cargo Audit',
-              italian: 'cargo audit / audit di vulnerabilità',
+              italian: 'Audit di vulnerabilità (cargo audit)',
               pronunciation: '/ˈkɑːrɡoʊ ˈɔːdɪt/',
               phonetic: 'KAR-go O-dit',
               example:
@@ -6167,7 +6184,7 @@ export default {
             },
             {
               english: 'Cargo Expand',
-              italian: 'cargo expand / mostra macro espanse',
+              italian: 'Mostra macro espanse (cargo expand)',
               pronunciation: '/ˈkɑːrɡoʊ ɪkˈspænd/',
               phonetic: 'KAR-go ek-SPAND',
               example:
@@ -6195,7 +6212,7 @@ export default {
           items: [
             {
               english: 'Closure',
-              italian: 'closure / chiusura',
+              italian: 'Chiusura (closure)',
               pronunciation: '/ˈkloʊʒər/',
               phonetic: 'KLO-gier',
               example:
@@ -6228,7 +6245,7 @@ export default {
             },
             {
               english: 'Move Closure',
-              italian: 'move closure / chiusura che cattura per move',
+              italian: 'Chiusura che cattura per move (move closure)',
               pronunciation: '/muːv ˈkloʊʒər/',
               phonetic: 'MUV KLO-gier',
               example:
@@ -6342,7 +6359,7 @@ export default {
             },
             {
               english: 'Take',
-              italian: 'std::mem::take / prende e lascia il default',
+              italian: 'Prende e lascia il default (std::mem::take)',
               pronunciation: '/teɪk/',
               phonetic: 'TEIK',
               example: 'take limits the number of elements. = take limita il numero di elementi.',
@@ -6352,7 +6369,7 @@ export default {
             },
             {
               english: 'Skip',
-              italian: 'skip / salta n elementi',
+              italian: 'Salta n elementi (skip)',
               pronunciation: '/skɪp/',
               phonetic: 'SKIP',
               example: 'skip ignores the first n elements. = skip ignora i primi n elementi.',
@@ -6362,7 +6379,7 @@ export default {
             },
             {
               english: 'Zip',
-              italian: 'zip / abbina due iteratori',
+              italian: 'Abbina due iteratori (zip)',
               pronunciation: '/zɪp/',
               phonetic: 'ZIP',
               example:
@@ -6373,7 +6390,7 @@ export default {
             },
             {
               english: 'Chain',
-              italian: 'chain / concatena iteratori',
+              italian: 'Concatena iteratori (chain)',
               pronunciation: '/tʃeɪn/',
               phonetic: 'CEIN',
               example: 'chain concatenates two iterators. = chain concatena due iteratori.',
@@ -6383,7 +6400,7 @@ export default {
             },
             {
               english: 'Enumerate',
-              italian: "enumerate / aggiunge l'indice",
+              italian: "Aggiunge l'indice (enumerate)",
               pronunciation: '/ɪˈnjuːməreɪt/',
               phonetic: 'i-NIU-me-reit',
               example:
@@ -6394,7 +6411,7 @@ export default {
             },
             {
               english: 'Flat Map',
-              italian: 'flat_map / mappa e appiattisce',
+              italian: 'Mappa e appiattisce (flat_map)',
               pronunciation: '/flæt mæp/',
               phonetic: 'FLAT MAP',
               example: 'flat_map flattens and maps. = flat_map appiattisce e mappa.',
@@ -6404,7 +6421,7 @@ export default {
             },
             {
               english: 'Peekable',
-              italian: 'peekable / iteratore con peek',
+              italian: 'Iteratore con peek (peekable)',
               pronunciation: '/ˈpiːkəbl/',
               phonetic: 'PI-ka-bol',
               example:
@@ -6422,7 +6439,7 @@ export default {
           items: [
             {
               english: 'Collect',
-              italian: 'collect / raccoglie in collezione',
+              italian: 'Raccoglie in collezione (collect)',
               pronunciation: '/kəˈlekt/',
               phonetic: 'kol-LEKT',
               example:
@@ -6433,7 +6450,7 @@ export default {
             },
             {
               english: 'Fold',
-              italian: 'fold / accumula da sinistra',
+              italian: 'Accumula da sinistra (fold)',
               pronunciation: '/foʊld/',
               phonetic: 'FOULD',
               example:
@@ -6445,7 +6462,7 @@ export default {
             },
             {
               english: 'Reduce',
-              italian: 'reduce / fold senza valore iniziale',
+              italian: 'Fold senza valore iniziale (reduce)',
               pronunciation: '/rɪˈdjuːs/',
               phonetic: 'ri-DIUS',
               example:
@@ -6476,7 +6493,7 @@ export default {
             },
             {
               english: 'Max',
-              italian: 'max / massimo elemento',
+              italian: 'Massimo elemento (max)',
               pronunciation: '/mæks/',
               phonetic: 'MAKS',
               example: "max returns the largest element. = max restituisce l'elemento più grande.",
@@ -6486,7 +6503,7 @@ export default {
             },
             {
               english: 'Min',
-              italian: 'min / minimo elemento',
+              italian: 'Minimo elemento (min)',
               pronunciation: '/mɪn/',
               phonetic: 'MIN',
               example:
@@ -6497,7 +6514,7 @@ export default {
             },
             {
               english: 'Find',
-              italian: 'find / trova primo elemento corrispondente',
+              italian: 'Trova primo elemento corrispondente (find)',
               pronunciation: '/faɪnd/',
               phonetic: 'FAIND',
               example:
@@ -6508,7 +6525,7 @@ export default {
             },
             {
               english: 'Any',
-              italian: 'any / true se almeno uno corrisponde',
+              italian: 'True se almeno uno corrisponde (any)',
               pronunciation: '/ˈeni/',
               phonetic: 'EN-ni',
               example:
@@ -6519,7 +6536,7 @@ export default {
             },
             {
               english: 'All',
-              italian: 'all / true se tutti corrispondono',
+              italian: 'True se tutti corrispondono (all)',
               pronunciation: '/ɔːl/',
               phonetic: 'OL',
               example:
@@ -6631,7 +6648,7 @@ export default {
             },
             {
               english: 'Itertools',
-              italian: 'itertools / libreria di iteratori avanzati',
+              italian: 'Libreria di iteratori avanzati (itertools)',
               pronunciation: '/ˈɪtərtuːlz/',
               phonetic: 'I-ter-tulz',
               example:
@@ -6659,7 +6676,7 @@ export default {
           items: [
             {
               english: 'Box',
-              italian: 'Box<T> / proprietà su heap',
+              italian: 'Proprietà su heap (Box<T>)',
               pronunciation: '/bɒks/',
               phonetic: 'BOKS',
               example: "Box<T> stores T on the heap. = Box<T> memorizza T sull'heap.",
@@ -6670,7 +6687,7 @@ export default {
             },
             {
               english: 'Box New',
-              italian: 'Box::new / crea Box su heap',
+              italian: 'Crea Box su heap (Box::new)',
               pronunciation: '/bɒks njuː/',
               phonetic: 'BOKS NIU',
               example:
@@ -6712,7 +6729,7 @@ export default {
             },
             {
               english: 'Box Leak',
-              italian: "Box::leak / fuga della memoria al 'static",
+              italian: "Fuga della memoria al 'static (Box::leak)",
               pronunciation: '/bɒks liːk/',
               phonetic: 'BOKS LIK',
               example:
@@ -6724,7 +6741,7 @@ export default {
             },
             {
               english: 'Deref',
-              italian: 'Deref / trait di dereferenziazione',
+              italian: 'Trait di dereferenziazione (Deref)',
               pronunciation: '/dɪˈref/',
               phonetic: 'di-REF',
               example:
@@ -6744,16 +6761,17 @@ export default {
             },
             {
               english: 'Boxing',
-              italian: 'boxing / impacchettamento in Box',
+              italian: 'Impacchettamento in Box (boxing)',
               pronunciation: '/ˈbɒksɪŋ/',
               phonetic: 'BOK-sing',
-              example: "Boxing moves a value to the heap. = Boxing sposta un valore sull'heap.",
+              example:
+                "By boxing a large struct, you move it from the stack to the heap. = Facendo boxing di una struct grande, la sposti dallo stack all'heap.",
               context: 'ownership',
               difficulty: 'advanced',
             },
             {
               english: 'Unboxing',
-              italian: 'unboxing / spacchettamento da Box',
+              italian: 'Spacchettamento da Box (unboxing)',
               pronunciation: '/ʌnˈbɒksɪŋ/',
               phonetic: 'an-BOK-sing',
               example: 'Move a value out of a Box with *. = Muove un valore fuori da un Box con *.',
@@ -6770,7 +6788,7 @@ export default {
           items: [
             {
               english: 'Rc',
-              italian: 'Rc<T> / reference counting non-thread-safe',
+              italian: 'Reference counting non-thread-safe (Rc<T>)',
               pronunciation: '/ɑːr siː/',
               phonetic: 'AR SI',
               example: 'Rc<T> provides shared ownership. = Rc<T> fornisce ownership condivisa.',
@@ -6781,7 +6799,7 @@ export default {
             },
             {
               english: 'Arc',
-              italian: 'Arc<T> / reference counting atomico',
+              italian: 'Reference counting atomico (Arc<T>)',
               pronunciation: '/eɪ ɑːr siː/',
               phonetic: 'EI-AR-SI',
               example: 'Arc<T> is the thread-safe Rc. = Arc<T> è la versione thread-safe di Rc.',
@@ -6792,7 +6810,7 @@ export default {
             },
             {
               english: 'Reference Counting',
-              italian: 'reference counting / conteggio dei riferimenti',
+              italian: 'Conteggio dei riferimenti (reference counting)',
               pronunciation: '/ˈrefərəns ˈkaʊntɪŋ/',
               phonetic: 'RE-fe-rens KAUN-ting',
               example:
@@ -6882,10 +6900,11 @@ export default {
           items: [
             {
               english: 'RefCell',
-              italian: 'RefCell<T> / borrow check a runtime',
+              italian: 'Borrow check a runtime (RefCell<T>)',
               pronunciation: '/ref sel/',
               phonetic: 'REF-SEL',
-              example: 'RefCell allows interior mutability. = RefCell permette mutabilità interna.',
+              example:
+                'When the borrow checker is too restrictive, RefCell moves the checks to runtime. = Quando il borrow checker è troppo restrittivo, RefCell sposta i controlli a runtime.',
               context: 'ownership',
               difficulty: 'advanced',
               code: 'let cell = RefCell::new(5);',
@@ -6915,7 +6934,7 @@ export default {
             },
             {
               english: 'Borrow Mut',
-              italian: 'borrow_mut / prestito mutabile a runtime',
+              italian: 'Prestito mutabile a runtime (borrow_mut)',
               pronunciation: '/ˈbɒroʊ mjuːt/',
               phonetic: 'BO-rou MIUT',
               example:
@@ -6936,17 +6955,18 @@ export default {
             },
             {
               english: 'Mutex',
-              italian: 'Mutex<T> / mutua esclusione',
+              italian: 'Mutua esclusione (Mutex<T>)',
               pronunciation: '/ˈmjuːteks/',
               phonetic: 'MIU-teks',
-              example: 'Mutex protects data with locking. = Mutex protegge i dati con il locking.',
+              example:
+                'To safely share mutable state between threads, wrap it in a Mutex. = Per condividere stato mutabile tra thread in sicurezza, avvolgilo in un Mutex.',
               context: 'ownership',
               difficulty: 'advanced',
               code: 'let m = Mutex::new(0);',
             },
             {
               english: 'Lock',
-              italian: 'lock / blocco esclusivo',
+              italian: 'Blocco esclusivo (lock)',
               pronunciation: '/lɒk/',
               phonetic: 'LOK',
               example: 'lock acquires the mutex. = lock acquisisce il mutex.',
@@ -6967,7 +6987,7 @@ export default {
             },
             {
               english: 'Poisoning',
-              italian: 'poisoning / mutex avvelenato dopo panic',
+              italian: 'Mutex avvelenato dopo panic (poisoning)',
               pronunciation: '/ˈpɔɪzənɪŋ/',
               phonetic: 'POI-zo-ning',
               example:
@@ -6978,11 +6998,11 @@ export default {
             },
             {
               english: 'RwLock',
-              italian: 'RwLock<T> / lock lettori-scrittori',
+              italian: 'Lock lettori-scrittori (RwLock<T>)',
               pronunciation: '/ɑːr ˈdʌbljuː lɒk/',
               phonetic: 'AR DA-bel-iu LOK',
               example:
-                'RwLock allows multiple readers or one writer. = RwLock permette molti lettori o un solo scrittore.',
+                'For read-heavy workloads, RwLock is more efficient than Mutex. = Per carichi di lavoro con molte letture, RwLock è più efficiente di Mutex.',
               context: 'ownership',
               difficulty: 'advanced',
               code: 'RwLock::new(value)',
@@ -7018,11 +7038,11 @@ export default {
             },
             {
               english: 'DerefMut',
-              italian: 'DerefMut / trait di dereferenziazione mutabile',
+              italian: 'Trait di dereferenziazione mutabile (DerefMut)',
               pronunciation: '/dɪˈref mjuːt/',
               phonetic: 'di-REF MIUT',
               example:
-                'DerefMut enables mutable dereferencing. = DerefMut abilita la dereferenziazione mutabile.',
+                'Implementing DerefMut lets your smart pointer be used as a mutable reference. = Implementando DerefMut il tuo smart pointer può essere usato come riferimento mutabile.',
               context: 'ownership',
               difficulty: 'advanced',
               code: 'impl DerefMut for X { ... }',
@@ -7039,7 +7059,7 @@ export default {
             },
             {
               english: 'Auto Deref',
-              italian: 'auto-deref / deref automatico nei metodi',
+              italian: 'Dereferenziazione automatica (auto-deref)',
               pronunciation: '/ˈɔːtoʊ dɪˈref/',
               phonetic: 'O-to di-REF',
               example:
@@ -7060,21 +7080,22 @@ export default {
             },
             {
               english: 'Cell',
-              italian: 'Cell<T> / interior mutability per Copy',
+              italian: 'Interior mutability per Copy (Cell<T>)',
               pronunciation: '/sel/',
               phonetic: 'SEL',
               example:
-                'Cell allows interior mutability for Copy types. = Cell permette mutabilità interna per tipi Copy.',
+                "For single-threaded mutation of Copy values, Cell avoids the overhead of RefCell. = Per mutazione single-threaded di valori Copy, Cell evita l'overhead di RefCell.",
               context: 'ownership',
               difficulty: 'advanced',
               code: 'Cell::new(5)',
             },
             {
               english: 'Cow',
-              italian: "Cow<'a, T> / Clone-On-Write",
+              italian: 'Clone-On-Write (Cow)',
               pronunciation: '/kaʊ/',
               phonetic: 'KAU',
-              example: 'Cow stands for Clone-on-Write. = Cow significa Clone-on-Write.',
+              example:
+                'Using Cow, you avoid cloning until a mutation is actually needed. = Usando Cow, eviti la clonazione finché una mutazione non è effettivamente necessaria.',
               context: 'ownership',
               difficulty: 'advanced',
               code: "Cow<'a, str>",
@@ -7082,22 +7103,22 @@ export default {
             },
             {
               english: 'OnceCell',
-              italian: 'OnceCell / inizializzazione singola',
+              italian: 'Inizializzazione singola (OnceCell)',
               pronunciation: '/wʌns sel/',
               phonetic: 'UANS SEL',
               example:
-                'OnceCell allows initialization only once. = OnceCell permette inizializzazione una sola volta.',
+                'Global configuration is often stored in an OnceCell that initializes on first use. = La configurazione globale è spesso memorizzata in un OnceCell che si inizializza al primo uso.',
               context: 'ownership',
               difficulty: 'advanced',
               code: 'OnceCell::new()',
             },
             {
               english: 'LazyCell',
-              italian: 'LazyCell / OnceCell con costruttore lazy',
+              italian: 'OnceCell con costruttore lazy (LazyCell)',
               pronunciation: '/ˈleɪzi sel/',
               phonetic: 'LEI-zi SEL',
               example:
-                'LazyCell initializes on first access. = LazyCell si inizializza al primo accesso.',
+                "With LazyCell, expensive initialization happens only on first access. = Con LazyCell, l'inizializzazione costosa avviene solo al primo accesso.",
               context: 'ownership',
               difficulty: 'advanced',
               code: 'LazyCell::new(|| compute())',
@@ -7120,7 +7141,7 @@ export default {
           items: [
             {
               english: 'Thread',
-              italian: 'thread / thread di esecuzione',
+              italian: 'Thread di esecuzione (thread)',
               pronunciation: '/θred/',
               phonetic: 'TRED',
               example:
@@ -7131,7 +7152,7 @@ export default {
             },
             {
               english: 'Thread Spawn',
-              italian: 'thread::spawn / avvia un nuovo thread',
+              italian: 'Avvia un nuovo thread (thread::spawn)',
               pronunciation: '/θred spɔːn/',
               phonetic: 'TRED SPON',
               example:
@@ -7153,7 +7174,7 @@ export default {
             },
             {
               english: 'Join',
-              italian: 'join / attende terminazione thread',
+              italian: 'Attende terminazione thread (join)',
               pronunciation: '/dʒɔɪn/',
               phonetic: 'GIOIN',
               example:
@@ -7164,7 +7185,7 @@ export default {
             },
             {
               english: 'Move Closure',
-              italian: 'move closure / chiusura che cattura per move',
+              italian: 'Chiusura che cattura per move (move closure)',
               pronunciation: '/muːv ˈkloʊʒər/',
               phonetic: 'MUV KLO-gier',
               example:
@@ -7196,7 +7217,7 @@ export default {
             },
             {
               english: 'Sleep',
-              italian: 'thread::sleep / sospende il thread',
+              italian: 'Sospende il thread (thread::sleep)',
               pronunciation: '/sliːp/',
               phonetic: 'SLIP',
               example: 'thread::sleep pauses the thread. = thread::sleep mette in pausa il thread.',
@@ -7206,7 +7227,7 @@ export default {
             },
             {
               english: 'Park',
-              italian: 'thread::park / parcheggia il thread',
+              italian: 'Parcheggia il thread (thread::park)',
               pronunciation: '/pɑːrk/',
               phonetic: 'PARK',
               example: 'thread::park blocks until unparked. = thread::park blocca fino a unpark.',
@@ -7244,40 +7265,40 @@ export default {
             },
             {
               english: 'MPSC',
-              italian: 'mpsc / multi-producer single-consumer',
+              italian: 'Multi-producer single-consumer (mpsc)',
               pronunciation: '/em piː es siː/',
               phonetic: 'EM-PI-ES-SI',
               example:
-                'MPSC means multiple producer, single consumer. = MPSC significa molti produttori, un solo consumatore.',
+                'The standard library provides MPSC channels where multiple producers feed one consumer. = La libreria standard fornisce canali MPSC dove più produttori alimentano un consumatore.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'let (tx, rx) = mpsc::channel();',
             },
             {
               english: 'Sender',
-              italian: 'Sender / produttore del canale',
+              italian: 'Produttore del canale (Sender)',
               pronunciation: '/ˈsendər/',
               phonetic: 'SEN-der',
               example:
-                'Sender sends messages into the channel. = Sender invia messaggi nel canale.',
+                'Each cloned Sender allows another thread to push messages into the channel. = Ogni Sender clonato permette a un altro thread di inviare messaggi nel canale.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'tx.send(value).unwrap();',
             },
             {
               english: 'Receiver',
-              italian: 'Receiver / consumatore del canale',
+              italian: 'Consumatore del canale (Receiver)',
               pronunciation: '/rɪˈsiːvər/',
               phonetic: 'ri-SI-ver',
               example:
-                'Receiver reads messages from the channel. = Receiver legge messaggi dal canale.',
+                'The single Receiver pulls messages from the channel in FIFO order. = Il singolo Receiver preleva messaggi dal canale in ordine FIFO.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'let val = rx.recv().unwrap();',
             },
             {
               english: 'Sync Channel',
-              italian: 'sync_channel / canale sincrono limitato',
+              italian: 'Canale sincrono limitato (sync_channel)',
               pronunciation: '/sɪŋk ˈtʃænəl/',
               phonetic: 'SINK CIA-nel',
               example: 'sync_channel has a bounded capacity. = sync_channel ha capacità limitata.',
@@ -7287,7 +7308,7 @@ export default {
             },
             {
               english: 'Crossbeam',
-              italian: 'crossbeam / libreria concorrenza Rust',
+              italian: 'Libreria concorrenza Rust (crossbeam)',
               pronunciation: '/ˈkrɒsbiːm/',
               phonetic: 'KROS-bim',
               example:
@@ -7318,7 +7339,7 @@ export default {
             },
             {
               english: 'Try Recv',
-              italian: 'try_recv / ricezione non bloccante',
+              italian: 'Ricezione non bloccante (try_recv)',
               pronunciation: '/traɪ rɪˈsiːv/',
               phonetic: 'TRAI ri-SIV',
               example:
@@ -7347,29 +7368,29 @@ export default {
           items: [
             {
               english: 'Send',
-              italian: 'Send / trait di inviabilità tra thread',
+              italian: 'Trait di inviabilità tra thread (Send)',
               pronunciation: '/send/',
               phonetic: 'SEND',
               example:
-                'Send means a type can be moved between threads. = Send significa che un tipo può essere mosso fra thread.',
+                'Types that implement Send can be safely transferred across thread boundaries. = I tipi che implementano Send possono essere trasferiti in sicurezza oltre i confini dei thread.',
               context: 'concurrency',
               difficulty: 'advanced',
               note: 'Marker trait auto-derivato.',
             },
             {
               english: 'Sync',
-              italian: 'Sync / trait di accesso condiviso sicuro',
+              italian: 'Trait di accesso condiviso sicuro (Sync)',
               pronunciation: '/sɪŋk/',
               phonetic: 'SINK',
               example:
-                'Sync means &T can be shared between threads. = Sync significa che &T può essere condiviso fra thread.',
+                'If a type is Sync, multiple threads can hold immutable references to it simultaneously. = Se un tipo è Sync, più thread possono avere riferimenti immutabili a esso simultaneamente.',
               context: 'concurrency',
               difficulty: 'advanced',
               note: 'T è Sync se &T è Send.',
             },
             {
               english: 'Auto Trait',
-              italian: 'auto trait / trait dedotto automaticamente',
+              italian: 'Trait dedotto automaticamente (auto trait)',
               pronunciation: '/ˈɔːtoʊ treɪt/',
               phonetic: 'O-to TREIT',
               example: 'Send and Sync are auto-implemented. = Send e Sync sono auto-implementati.',
@@ -7398,7 +7419,7 @@ export default {
             },
             {
               english: 'Thread Safety',
-              italian: 'thread safety / sicurezza tra thread',
+              italian: 'Sicurezza tra thread (thread safety)',
               pronunciation: '/θred ˈseɪfti/',
               phonetic: 'TRED SEIF-ti',
               example:
@@ -7431,7 +7452,7 @@ export default {
             },
             {
               english: 'Compare and Swap',
-              italian: 'compare-and-swap / operazione atomica condizionale',
+              italian: 'Operazione atomica condizionale (compare-and-swap)',
               pronunciation: '/kəmˈpeər ænd swɒp/',
               phonetic: 'kom-PER AND SUOP',
               example:
@@ -7442,7 +7463,7 @@ export default {
             },
             {
               english: 'Lock-Free',
-              italian: 'lock-free / senza lock',
+              italian: 'Senza lock (lock-free)',
               pronunciation: '/lɒk friː/',
               phonetic: 'LOK FRI',
               example:
@@ -7459,10 +7480,11 @@ export default {
           items: [
             {
               english: 'Mutex',
-              italian: 'Mutex<T> / mutua esclusione',
+              italian: 'Mutua esclusione (Mutex<T>)',
               pronunciation: '/ˈmjuːteks/',
               phonetic: 'MIU-teks',
-              example: 'Mutex provides mutual exclusion. = Mutex fornisce mutua esclusione.',
+              example:
+                'Only one thread can hold a Mutex lock at a time, ensuring data safety. = Solo un thread può detenere un lock Mutex alla volta, garantendo la sicurezza dei dati.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'Arc<Mutex<T>>',
@@ -7470,11 +7492,11 @@ export default {
             },
             {
               english: 'RwLock',
-              italian: 'RwLock<T> / lock lettori-scrittori',
+              italian: 'Lock lettori-scrittori (RwLock<T>)',
               pronunciation: '/ɑːr ˈdʌbljuː lɒk/',
               phonetic: 'AR DA-bel-iu LOK',
               example:
-                'RwLock allows multiple readers or one writer. = RwLock permette molti lettori o un solo scrittore.',
+                'For read-heavy workloads, RwLock is more efficient than Mutex. = Per carichi di lavoro con molte letture, RwLock è più efficiente di Mutex.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'rwlock.read().unwrap()',
@@ -7485,29 +7507,29 @@ export default {
               pronunciation: '/ˈbæriər/',
               phonetic: 'BA-rier',
               example:
-                'Barrier synchronizes multiple threads at a point. = Barrier sincronizza più thread in un punto.',
+                'All threads wait at the Barrier until every one of them arrives. = Tutti i thread attendono alla Barrier finché ognuno di essi non arriva.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'Barrier::new(n)',
             },
             {
               english: 'Condvar',
-              italian: 'Condvar / variabile di condizione',
+              italian: 'Variabile di condizione (Condvar)',
               pronunciation: '/kɒnd vɑːr/',
               phonetic: 'KOND VAR',
               example:
-                "Condvar enables waiting for a condition. = Condvar abilita l'attesa di una condizione.",
+                'Threads wait on a Condvar until another thread signals that a condition is met. = I thread attendono su una Condvar finché un altro thread segnala che una condizione è soddisfatta.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'Condvar::new()',
             },
             {
               english: 'Once',
-              italian: 'std::sync::Once / esecuzione una sola volta',
+              italian: 'Esecuzione una sola volta (std::sync::Once)',
               pronunciation: '/wʌns/',
               phonetic: 'UANS',
               example:
-                'Once ensures code runs exactly once. = Once garantisce che il codice gira esattamente una volta.',
+                "Global initialization protected by Once is guaranteed to run exactly one time. = L'inizializzazione globale protetta da Once è garantita per essere eseguita esattamente una volta.",
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'static INIT: Once = Once::new();',
@@ -7525,7 +7547,7 @@ export default {
             },
             {
               english: 'Deadlock',
-              italian: 'deadlock / stallo da lock circolari',
+              italian: 'Stallo da lock circolari (deadlock)',
               pronunciation: '/ˈdedlɒk/',
               phonetic: 'DED-lok',
               example:
@@ -7536,7 +7558,7 @@ export default {
             },
             {
               english: 'Race Condition',
-              italian: 'race condition / corsa critica',
+              italian: 'Corsa critica (race condition)',
               pronunciation: '/reɪs kənˈdɪʃən/',
               phonetic: 'REIS kon-DI-scen',
               example:
@@ -7547,7 +7569,7 @@ export default {
             },
             {
               english: 'Spinlock',
-              italian: 'spinlock / lock con attesa attiva',
+              italian: 'Lock con attesa attiva (spinlock)',
               pronunciation: '/ˈspɪnlɒk/',
               phonetic: 'SPIN-lok',
               example:
@@ -7597,7 +7619,7 @@ export default {
             },
             {
               english: 'Await',
-              italian: 'await / attende future',
+              italian: 'Attende future (await)',
               pronunciation: '/əˈweɪt/',
               phonetic: 'a-UEIT',
               example:
@@ -7609,7 +7631,7 @@ export default {
             },
             {
               english: 'Future',
-              italian: 'Future / trait dei valori asincroni',
+              italian: 'Trait dei valori asincroni (Future)',
               pronunciation: '/ˈfjuːtʃər/',
               phonetic: 'FIU-cier',
               example:
@@ -7620,7 +7642,7 @@ export default {
             },
             {
               english: 'Poll',
-              italian: 'Poll / risultato di poll: Ready/Pending',
+              italian: 'Risultato di poll: Ready/Pending (Poll)',
               pronunciation: '/poʊl/',
               phonetic: 'POUL',
               example:
@@ -7631,7 +7653,7 @@ export default {
             },
             {
               english: 'Pending',
-              italian: 'Pending / future non ancora pronto',
+              italian: 'Future non ancora pronto (Pending)',
               pronunciation: '/ˈpendɪŋ/',
               phonetic: 'PEN-ding',
               example:
@@ -7642,7 +7664,7 @@ export default {
             },
             {
               english: 'Ready',
-              italian: 'Ready / future pronto con valore',
+              italian: 'Future pronto con valore (Ready)',
               pronunciation: '/ˈredi/',
               phonetic: 'RE-di',
               example: 'Poll::Ready contains the result. = Poll::Ready contiene il risultato.',
@@ -7662,7 +7684,7 @@ export default {
             },
             {
               english: 'Async Move',
-              italian: 'async move / async block che cattura by-move',
+              italian: 'Async block che cattura by-move (async move)',
               pronunciation: '/əˈsɪŋk muːv/',
               phonetic: 'a-SINK MUV',
               example: 'async move captures by value. = async move cattura per valore.',
@@ -7712,7 +7734,7 @@ export default {
             },
             {
               english: 'Tokio',
-              italian: 'Tokio / runtime async per Rust',
+              italian: 'Runtime async per Rust (Tokio)',
               pronunciation: '/ˈtoʊkioʊ/',
               phonetic: 'TO-ki-o',
               example:
@@ -7724,7 +7746,7 @@ export default {
             },
             {
               english: 'Async-std',
-              italian: 'async-std / runtime async alternativo',
+              italian: 'Runtime async alternativo (async-std)',
               pronunciation: '/əˈsɪŋk es tiː diː/',
               phonetic: 'a-SINK ES-TI-DI',
               example:
@@ -7735,7 +7757,7 @@ export default {
             },
             {
               english: 'Smol',
-              italian: 'smol / runtime async leggero',
+              italian: 'Runtime async leggero (smol)',
               pronunciation: '/smɒl/',
               phonetic: 'SMOL',
               example: 'smol is a small async runtime. = smol è un runtime async piccolo.',
@@ -7745,7 +7767,7 @@ export default {
             },
             {
               english: 'Executor',
-              italian: 'executor / esecutore di future',
+              italian: 'Esecutore di future (executor)',
               pronunciation: '/ɪɡˈzekjʊtər/',
               phonetic: 'eg-ZE-kiu-ter',
               example:
@@ -7755,7 +7777,7 @@ export default {
             },
             {
               english: 'Reactor',
-              italian: "reactor / componente che reagisce all'I/O",
+              italian: "Componente che reagisce all'I/O (reactor)",
               pronunciation: '/riːˈæktər/',
               phonetic: 'ri-AK-ter',
               example: 'The reactor monitors I/O events. = Il reactor monitora eventi I/O.',
@@ -7765,7 +7787,7 @@ export default {
             },
             {
               english: 'Spawn Task',
-              italian: 'spawn task / lancia task asincrono',
+              italian: 'Lancia task asincrono (spawn task)',
               pronunciation: '/spɔːn tɑːsk/',
               phonetic: 'SPON TASK',
               example: 'tokio::spawn schedules a future. = tokio::spawn schedula una future.',
@@ -7775,7 +7797,7 @@ export default {
             },
             {
               english: 'Task',
-              italian: 'task / unità di lavoro asincrono',
+              italian: 'Unità di lavoro asincrono (task)',
               pronunciation: '/tɑːsk/',
               phonetic: 'TASK',
               example:
@@ -7786,7 +7808,7 @@ export default {
             },
             {
               english: 'Block On',
-              italian: 'block_on / esegue future in modo sincrono',
+              italian: 'Esegue future in modo sincrono (block_on)',
               pronunciation: '/blɒk ɒn/',
               phonetic: 'BLOK ON',
               example:
@@ -7815,7 +7837,7 @@ export default {
           items: [
             {
               english: 'Join',
-              italian: 'join / attende terminazione thread',
+              italian: 'Attende terminazione thread (join)',
               pronunciation: '/dʒɔɪn/',
               phonetic: 'GIOIN',
               example:
@@ -7826,7 +7848,7 @@ export default {
             },
             {
               english: 'Select',
-              italian: 'select! / aspetta il primo che si completa',
+              italian: 'Aspetta il primo che si completa (select!)',
               pronunciation: '/sɪˈlekt/',
               phonetic: 'si-LEKT',
               example:
@@ -7837,7 +7859,7 @@ export default {
             },
             {
               english: 'Try Join',
-              italian: 'try_join! / attende tutti, fallisce al primo errore',
+              italian: 'Attende tutti, fallisce al primo errore (try_join!)',
               pronunciation: '/traɪ dʒɔɪn/',
               phonetic: 'TRAI GIOIN',
               example:
@@ -7872,7 +7894,7 @@ export default {
             },
             {
               english: 'Stream',
-              italian: 'Stream / sequenza asincrona di valori',
+              italian: 'Sequenza asincrona di valori (Stream)',
               pronunciation: '/striːm/',
               phonetic: 'STRIM',
               example: 'A Stream is an async iterator. = Uno Stream è un iteratore asincrono.',
@@ -7892,10 +7914,11 @@ export default {
             },
             {
               english: 'Pin',
-              italian: 'Pin / pin: garantisce che un valore non venga spostato',
+              italian: 'Pin: garantisce che un valore non venga spostato (Pin)',
               pronunciation: '/pɪn/',
               phonetic: 'PIN',
-              example: 'Pin prevents memory move. = Pin impedisce il move in memoria.',
+              example:
+                'Self-referential types need Pin to ensure they are not relocated in memory. = I tipi auto-referenziali necessitano di Pin per assicurare che non vengano ricollocati in memoria.',
               context: 'async',
               difficulty: 'advanced',
               code: 'Pin<&mut Future>',
@@ -7913,7 +7936,7 @@ export default {
             },
             {
               english: 'Timeout',
-              italian: 'timeout / tempo limite',
+              italian: 'Tempo limite (timeout)',
               pronunciation: '/ˈtaɪmaʊt/',
               phonetic: 'TAIM-aut',
               example:
@@ -7931,29 +7954,29 @@ export default {
           items: [
             {
               english: 'AsyncRead',
-              italian: 'AsyncRead / trait lettura asincrona',
+              italian: 'Trait lettura asincrona (AsyncRead)',
               pronunciation: '/əˈsɪŋk riːd/',
               phonetic: 'a-SINK RID',
               example:
-                'AsyncRead is async version of Read. = AsyncRead è la versione async di Read.',
+                'The async version of Read, called AsyncRead, enables non-blocking file and socket reads. = La versione async di Read, chiamata AsyncRead, abilita letture non bloccanti di file e socket.',
               context: 'async',
               difficulty: 'advanced',
               code: 'use tokio::io::AsyncReadExt;',
             },
             {
               english: 'AsyncWrite',
-              italian: 'AsyncWrite / trait scrittura asincrona',
+              italian: 'Trait scrittura asincrona (AsyncWrite)',
               pronunciation: '/əˈsɪŋk raɪt/',
               phonetic: 'a-SINK RAIT',
               example:
-                'AsyncWrite is async version of Write. = AsyncWrite è la versione async di Write.',
+                'The async version of Write, called AsyncWrite, enables non-blocking output to sockets and files. = La versione async di Write, chiamata AsyncWrite, abilita output non bloccante su socket e file.',
               context: 'async',
               difficulty: 'advanced',
               code: 'use tokio::io::AsyncWriteExt;',
             },
             {
               english: 'Tcp Listener',
-              italian: 'TcpListener / listener TCP',
+              italian: 'Listener TCP (TcpListener)',
               pronunciation: '/tiː siː piː ˈlɪsənər/',
               phonetic: 'TI-SI-PI LI-se-ner',
               example:
@@ -7964,7 +7987,7 @@ export default {
             },
             {
               english: 'Tcp Stream',
-              italian: 'TcpStream / connessione TCP',
+              italian: 'Connessione TCP (TcpStream)',
               pronunciation: '/tiː siː piː striːm/',
               phonetic: 'TI-SI-PI STRIM',
               example:
@@ -7997,17 +8020,18 @@ export default {
             },
             {
               english: 'Notify',
-              italian: 'Notify / primitivo di notifica Tokio',
+              italian: 'Primitivo di notifica Tokio (Notify)',
               pronunciation: '/ˈnoʊtɪfaɪ/',
               phonetic: 'NO-ti-fai',
-              example: 'Notify wakes a waiting task. = Notify risveglia un task in attesa.',
+              example:
+                'When data is ready, calling notify_one() on a Notify wakes a waiting task. = Quando i dati sono pronti, chiamare notify_one() su un Notify risveglia un task in attesa.',
               context: 'async',
               difficulty: 'advanced',
               code: 'tokio::sync::Notify',
             },
             {
               english: 'Oneshot',
-              italian: 'oneshot / canale singolo invio',
+              italian: 'Canale singolo invio (oneshot)',
               pronunciation: '/ˈwʌnʃɒt/',
               phonetic: 'UAN-sciot',
               example:
@@ -8054,7 +8078,7 @@ export default {
           items: [
             {
               english: 'Macro Rules',
-              italian: 'macro_rules!',
+              italian: 'Definizione di macro dichiarativa (macro_rules!)',
               pronunciation: '/ˈmækroʊ ruːlz/',
               phonetic: 'MAK-ro RULZ',
               example:
@@ -8178,7 +8202,7 @@ export default {
             },
             {
               english: 'Token Stream',
-              italian: 'TokenStream',
+              italian: 'Flusso di token (TokenStream)',
               pronunciation: '/ˈtoʊkən striːm/',
               phonetic: 'TOU-ken STRIM',
               example:
@@ -8223,7 +8247,7 @@ export default {
             },
             {
               english: 'Syn',
-              italian: 'syn / parser di Rust per macro',
+              italian: 'Parser di Rust per macro (syn)',
               pronunciation: '/sɪn/',
               phonetic: 'SIN',
               example:
@@ -8234,7 +8258,7 @@ export default {
             },
             {
               english: 'Quote',
-              italian: 'quote! / generatore di codice macro',
+              italian: 'Generatore di codice macro (quote!)',
               pronunciation: '/kwoʊt/',
               phonetic: 'KUOT',
               example:
@@ -8295,7 +8319,7 @@ export default {
             },
             {
               english: 'Eprintln',
-              italian: 'eprintln! / stampa su stderr',
+              italian: 'Stampa su stderr (eprintln!)',
               pronunciation: '/iːprɪntˈel.en/',
               phonetic: 'I-PRINT-EL-EN',
               example: 'eprintln! writes to standard error. = eprintln! scrive su standard error.',
@@ -8347,7 +8371,7 @@ export default {
             },
             {
               english: 'Unimplemented',
-              italian: 'unimplemented! / segnala non implementato',
+              italian: 'Segnala non implementato (unimplemented!)',
               pronunciation: '/ˌʌnˈɪmplɪmentɪd/',
               phonetic: 'an-IM-pli-men-tid',
               example:
@@ -8369,7 +8393,7 @@ export default {
             },
             {
               english: 'Stringify',
-              italian: 'stringify! / converte tokens in stringa',
+              italian: 'Converte tokens in stringa (stringify!)',
               pronunciation: '/ˈstrɪŋɪfaɪ/',
               phonetic: 'STRIN-gi-fai',
               example:
@@ -8380,7 +8404,7 @@ export default {
             },
             {
               english: 'Include Bytes',
-              italian: 'include_bytes! / include file come byte',
+              italian: 'Include file come byte (include_bytes!)',
               pronunciation: '/ɪnˈkluːd baɪts/',
               phonetic: 'in-KLUD BAITS',
               example:
@@ -8418,7 +8442,7 @@ export default {
             },
             {
               english: 'Macro Export',
-              italian: '#[macro_export] / esporta macro_rules!',
+              italian: 'Esporta macro_rules! (#[macro_export])',
               pronunciation: '/ˈmækroʊ ˈekspɔːrt/',
               phonetic: 'MAK-ro EKS-port',
               example:
@@ -8440,7 +8464,7 @@ export default {
             },
             {
               english: 'Macro 2.0',
-              italian: 'macro 2.0 / nuovo sistema di macro hygienic',
+              italian: 'Nuovo sistema di macro hygienic (macro 2.0)',
               pronunciation: '/ˈmækroʊ tuː poɪnt zɪəroʊ/',
               phonetic: 'MAK-ro TU-POINT-ZI-ro',
               example:
@@ -8461,7 +8485,7 @@ export default {
             },
             {
               english: 'Trace Macros',
-              italian: 'trace_macros! / traccia espansione macro',
+              italian: 'Traccia espansione macro (trace_macros!)',
               pronunciation: '/treɪs ˈmækroʊz/',
               phonetic: 'TREIS MAK-roz',
               example:
@@ -8492,7 +8516,7 @@ export default {
             },
             {
               english: 'DSL',
-              italian: 'DSL / Domain Specific Language',
+              italian: 'Domain Specific Language (DSL)',
               pronunciation: '/diː es el/',
               phonetic: 'DI-ES-EL',
               example: 'Macros enable embedded DSLs. = Le macro abilitano DSL embedded.',
@@ -8551,7 +8575,7 @@ export default {
             },
             {
               english: 'Raw Pointer',
-              italian: 'raw pointer / puntatore non controllato',
+              italian: 'Puntatore non controllato (raw pointer)',
               pronunciation: '/rɔː ˈpɔɪntər/',
               phonetic: 'RO POIN-ter',
               example:
@@ -8635,11 +8659,11 @@ export default {
           items: [
             {
               english: 'FFI',
-              italian: 'FFI / Foreign Function Interface',
+              italian: 'Foreign Function Interface (FFI)',
               pronunciation: '/ef ef aɪ/',
               phonetic: 'EF-EF-AI',
               example:
-                'FFI lets Rust interoperate with other languages. = FFI permette a Rust di interoperare con altri linguaggi.',
+                'Through FFI, Rust code can call C libraries and expose functions to C callers. = Attraverso FFI, il codice Rust può chiamare librerie C ed esporre funzioni a chiamanti C.',
               context: 'unsafe',
               difficulty: 'advanced',
               note: 'Foreign Function Interface, principalmente con C.',
@@ -8657,7 +8681,7 @@ export default {
             },
             {
               english: 'Extern C',
-              italian: 'extern "C" / funzione con ABI C',
+              italian: 'Funzione con ABI C (extern "C")',
               pronunciation: '/ˈekstɜːrn siː/',
               phonetic: 'EKS-tern SI',
               example:
@@ -8668,7 +8692,7 @@ export default {
             },
             {
               english: 'Repr C',
-              italian: '#[repr(C)] / layout compatibile con C',
+              italian: 'Layout compatibile con C (#[repr(C)])',
               pronunciation: '/repr siː/',
               phonetic: 'REPR SI',
               example:
@@ -8679,7 +8703,7 @@ export default {
             },
             {
               english: 'C String',
-              italian: 'CString / stringa C-compatibile',
+              italian: 'Stringa C-compatibile (CString)',
               pronunciation: '/siː strɪŋ/',
               phonetic: 'SI STRING',
               example:
@@ -8690,7 +8714,7 @@ export default {
             },
             {
               english: 'C Str',
-              italian: 'CStr / vista su CString',
+              italian: 'Vista su CString (CStr)',
               pronunciation: '/siː stɜːr/',
               phonetic: 'SI STER',
               example: 'CStr is a borrowed C string. = CStr è una stringa C presa a prestito.',
@@ -8700,7 +8724,7 @@ export default {
             },
             {
               english: 'Bindgen',
-              italian: 'bindgen / genera binding Rust da header C',
+              italian: 'Genera binding Rust da header C (bindgen)',
               pronunciation: '/ˈbaɪndɡen/',
               phonetic: 'BAIND-ghen',
               example:
@@ -8711,7 +8735,7 @@ export default {
             },
             {
               english: 'Cbindgen',
-              italian: 'cbindgen / genera header C da Rust',
+              italian: 'Genera header C da Rust (cbindgen)',
               pronunciation: '/siː ˈbaɪndɡen/',
               phonetic: 'SI-BAIND-ghen',
               example:
@@ -8722,7 +8746,7 @@ export default {
             },
             {
               english: 'No Mangle',
-              italian: '#[no_mangle] / non manipolare il nome del simbolo',
+              italian: 'Non manipolare il nome del simbolo (#[no_mangle])',
               pronunciation: '/noʊ ˈmæŋɡl/',
               phonetic: 'NO MAN-gol',
               example:
@@ -8752,7 +8776,7 @@ export default {
           items: [
             {
               english: 'Transmute',
-              italian: 'std::mem::transmute / cast bit-a-bit pericoloso',
+              italian: 'Cast bit-a-bit pericoloso (std::mem::transmute)',
               pronunciation: '/trænzˈmjuːt/',
               phonetic: 'tranz-MIUT',
               example:
@@ -8764,7 +8788,7 @@ export default {
             },
             {
               english: 'Static Mut',
-              italian: 'static mut / variabile statica mutabile (unsafe)',
+              italian: 'Variabile statica mutabile (unsafe) (static mut)',
               pronunciation: '/ˈstætɪk mjuːt/',
               phonetic: 'STA-tik MIUT',
               example:
@@ -8776,7 +8800,7 @@ export default {
             },
             {
               english: 'Union',
-              italian: 'union / tipo a campi sovrapposti',
+              italian: 'Tipo a campi sovrapposti (union)',
               pronunciation: '/ˈjuːniən/',
               phonetic: 'IU-ni-on',
               example:
@@ -8798,7 +8822,7 @@ export default {
             },
             {
               english: 'Read Volatile',
-              italian: 'read_volatile / lettura volatile',
+              italian: 'Lettura volatile (read_volatile)',
               pronunciation: '/riːd ˈvɒlətaɪl/',
               phonetic: 'RID VO-la-tail',
               example:
@@ -8810,7 +8834,7 @@ export default {
             },
             {
               english: 'Manually Drop',
-              italian: 'ManuallyDrop',
+              italian: 'Rilascio manuale (ManuallyDrop)',
               pronunciation: '/ˈmænjʊəli drɒp/',
               phonetic: 'MAN-ni-ual-li DROP',
               example:
@@ -8821,7 +8845,7 @@ export default {
             },
             {
               english: 'Maybe Uninit',
-              italian: 'MaybeUninit',
+              italian: 'Possibilmente non inizializzato (MaybeUninit)',
               pronunciation: '/ˈmeɪbiː ʌnˈɪnɪt/',
               phonetic: 'MEI-bi an-I-nit',
               example:
@@ -8880,7 +8904,7 @@ export default {
             },
             {
               english: 'Miri',
-              italian: 'Miri / interprete Rust per UB',
+              italian: 'Interprete Rust per UB (Miri)',
               pronunciation: '/ˈmɪri/',
               phonetic: 'MI-ri',
               example:
@@ -8892,7 +8916,7 @@ export default {
             },
             {
               english: 'Sanitizer',
-              italian: 'sanitizer / strumento rilevazione errori a runtime',
+              italian: 'Strumento rilevazione errori a runtime (sanitizer)',
               pronunciation: '/ˈsænɪtaɪzər/',
               phonetic: 'SA-ni-tai-zer',
               example:
@@ -8903,7 +8927,7 @@ export default {
             },
             {
               english: 'Unsafe Cell',
-              italian: 'UnsafeCell',
+              italian: 'Cella senza controlli di sicurezza (UnsafeCell)',
               pronunciation: '/ʌnˈseɪf sel/',
               phonetic: 'an-SEIF SEL',
               example:
@@ -8925,29 +8949,29 @@ export default {
             },
             {
               english: 'Stacked Borrows',
-              italian: 'Stacked Borrows / modello sperimentale di aliasing',
+              italian: 'Modello sperimentale di aliasing (Stacked Borrows)',
               pronunciation: '/stækt ˈbɒroʊz/',
               phonetic: 'STAKT BO-rouz',
               example:
-                "Stacked Borrows is Rust's aliasing model. = Stacked Borrows è il modello di aliasing di Rust.",
+                'The aliasing model called Stacked Borrows validates unsafe code in Miri. = Il modello di aliasing chiamato Stacked Borrows valida il codice unsafe in Miri.',
               context: 'unsafe',
               difficulty: 'advanced',
               note: 'Modello formale verificato da Miri.',
             },
             {
               english: 'Tree Borrows',
-              italian: 'Tree Borrows / variante di Stacked Borrows',
+              italian: 'Variante di Stacked Borrows (Tree Borrows)',
               pronunciation: '/triː ˈbɒroʊz/',
               phonetic: 'TRI BO-rouz',
               example:
-                'Tree Borrows is an alternative aliasing model. = Tree Borrows è un modello alternativo di aliasing.',
+                'As a more permissive alternative, Tree Borrows relaxes some Stacked Borrows rules. = Come alternativa più permissiva, Tree Borrows rilassa alcune regole di Stacked Borrows.',
               context: 'unsafe',
               difficulty: 'advanced',
               note: 'Successore proposto a Stacked Borrows, più permissivo.',
             },
             {
               english: 'No Std',
-              italian: '#![no_std] / senza standard library',
+              italian: 'Senza libreria standard (no_std)',
               pronunciation: '/noʊ es tiː diː/',
               phonetic: 'NO ES-TI-DI',
               example:
@@ -8973,7 +8997,7 @@ export default {
               pronunciation: '/ɪmˈbedɪd rʌst/',
               phonetic: 'em-BED-did RAST',
               example:
-                'Embedded Rust runs on microcontrollers. = Rust embedded gira su microcontrollori.',
+                'Microcontrollers like ARM Cortex-M can run Embedded Rust without an OS. = Microcontrollori come ARM Cortex-M possono eseguire Embedded Rust senza un OS.',
               context: 'unsafe',
               difficulty: 'advanced',
               tool: 'embedded-hal',
@@ -9018,7 +9042,7 @@ export default {
             },
             {
               english: 'GAT',
-              italian: 'GAT / Generic Associated Types',
+              italian: 'Generic Associated Types (GAT)',
               pronunciation: '/dʒiː eɪ tiː/',
               phonetic: 'GI-EI-TI',
               example:
@@ -9030,7 +9054,7 @@ export default {
             },
             {
               english: 'Trait Object',
-              italian: 'trait object / oggetto dinamico dyn Trait',
+              italian: 'Oggetto dinamico dyn Trait (trait object)',
               pronunciation: '/treɪt ˈɒbdʒekt/',
               phonetic: 'TREIT OB-gekt',
               example: 'dyn Trait erases the concrete type. = dyn Trait cancella il tipo concreto.',
@@ -9040,7 +9064,7 @@ export default {
             },
             {
               english: 'Object Safety',
-              italian: 'object safety / regole per trait dyn-sicuri',
+              italian: 'Regole per trait dyn-sicuri (object safety)',
               pronunciation: '/ˈɒbdʒekt ˈseɪfti/',
               phonetic: 'OB-gekt SEIF-ti',
               example:
@@ -9061,7 +9085,7 @@ export default {
             },
             {
               english: 'Dyn Compatible',
-              italian: 'dyn-compatible / compatibile con trait object',
+              italian: 'Compatibile con trait object (dyn-compatible)',
               pronunciation: '/daɪn kəmˈpætɪbl/',
               phonetic: 'DAIN kom-PA-ti-bol',
               example:
@@ -9072,7 +9096,7 @@ export default {
             },
             {
               english: 'Self Sized',
-              italian: 'Self: Sized / vincolo di dimensione nota',
+              italian: 'Vincolo di dimensione nota (Self: Sized)',
               pronunciation: '/self saɪzd/',
               phonetic: 'SELF SAIZD',
               example:
@@ -9111,7 +9135,7 @@ export default {
           items: [
             {
               english: 'VTable',
-              italian: 'vtable / tabella di funzioni virtuali',
+              italian: 'Tabella di funzioni virtuali (vtable)',
               pronunciation: '/viː ˈteɪbl/',
               phonetic: 'VI TEI-bol',
               example:
@@ -9121,7 +9145,7 @@ export default {
             },
             {
               english: 'Fat Pointer',
-              italian: 'fat pointer / puntatore con metadati',
+              italian: 'Puntatore con metadati (fat pointer)',
               pronunciation: '/fæt ˈpɔɪntər/',
               phonetic: 'FAT POIN-ter',
               example: 'Trait objects are fat pointers. = Gli oggetti trait sono fat pointer.',
@@ -9162,7 +9186,7 @@ export default {
             },
             {
               english: 'Downcast',
-              italian: 'downcast / cast verso tipo concreto',
+              italian: 'Cast verso tipo concreto (downcast)',
               pronunciation: '/ˈdaʊnkæst/',
               phonetic: 'DAUN-kast',
               example:
@@ -9184,7 +9208,7 @@ export default {
             },
             {
               english: 'Type Id',
-              italian: 'TypeId',
+              italian: 'Identificatore di tipo a runtime (TypeId)',
               pronunciation: '/taɪp aɪ diː/',
               phonetic: 'TAIP AI-DI',
               example:
@@ -9204,7 +9228,7 @@ export default {
             },
             {
               english: 'Multi Trait',
-              italian: 'multi-trait / dyn Trait1 + Trait2',
+              italian: 'Dyn Trait1 + Trait2 (multi-trait)',
               pronunciation: '/ˈmʌlti treɪt/',
               phonetic: 'MAL-ti TREIT',
               example:
@@ -9222,7 +9246,7 @@ export default {
           items: [
             {
               english: 'Supertrait',
-              italian: 'supertrait / trait richiesto da un altro',
+              italian: 'Trait richiesto da un altro (supertrait)',
               pronunciation: '/ˈsuːpərtreɪt/',
               phonetic: 'SU-per-treit',
               example:
@@ -9233,7 +9257,7 @@ export default {
             },
             {
               english: 'Blanket Impl',
-              italian: 'blanket impl / impl generica per ogni T',
+              italian: 'Impl generica per ogni T (blanket impl)',
               pronunciation: '/ˈblæŋkɪt ɪmpl/',
               phonetic: 'BLAN-kit IMPL',
               example:
@@ -9244,7 +9268,7 @@ export default {
             },
             {
               english: 'Orphan Rule',
-              italian: "orphan rule / regola dell'orfano nei trait",
+              italian: "Regola dell'orfano nei trait (orphan rule)",
               pronunciation: '/ˈɔːrfən ruːl/',
               phonetic: 'OR-fan RUL',
               example:
@@ -9255,7 +9279,7 @@ export default {
             },
             {
               english: 'Newtype Pattern',
-              italian: 'newtype / wrapper a tupla con un campo',
+              italian: 'Wrapper a tupla con un campo (newtype)',
               pronunciation: '/ˈnjuːtaɪp ˈpætərn/',
               phonetic: 'NIU-taip PAT-tern',
               example:
@@ -9285,7 +9309,7 @@ export default {
             },
             {
               english: 'Auto Trait',
-              italian: 'auto trait / trait dedotto automaticamente',
+              italian: 'Trait dedotto automaticamente (auto trait)',
               pronunciation: '/ˈɔːtoʊ treɪt/',
               phonetic: 'O-to TREIT',
               example:
@@ -9310,7 +9334,7 @@ export default {
               pronunciation: '/ˌspeʃəlaɪˈzeɪʃən/',
               phonetic: 'spe-scia-li-ZEI-scen',
               example:
-                'Specialization allows more specific impls. = La specializzazione permette impl più specifici.',
+                "With specialization, you can provide a more optimized implementation for specific types. = Con la specializzazione, puoi fornire un'implementazione più ottimizzata per tipi specifici.",
               context: 'traits',
               difficulty: 'advanced',
               note: 'Ancora unstable, problemi di sound non risolti.',
@@ -9321,7 +9345,7 @@ export default {
               pronunciation: '/koʊˈhɪərəns/',
               phonetic: 'ko-HI-rens',
               example:
-                'Coherence guarantees one impl per (trait, type). = La coerenza garantisce un impl per (trait, tipo).',
+                'The coherence rule prevents conflicting trait implementations in Rust. = La regola di coerenza previene implementazioni di trait in conflitto in Rust.',
               context: 'traits',
               difficulty: 'advanced',
             },
@@ -9334,7 +9358,7 @@ export default {
           items: [
             {
               english: 'Type State',
-              italian: "type-state / stato dell'oggetto codificato nel tipo",
+              italian: "Stato dell'oggetto codificato nel tipo (type-state)",
               pronunciation: '/taɪp steɪt/',
               phonetic: 'TAIP STEIT',
               example:
@@ -9344,7 +9368,7 @@ export default {
             },
             {
               english: 'Builder Pattern',
-              italian: 'builder / pattern di costruzione a passi',
+              italian: 'Pattern di costruzione a passi (builder)',
               pronunciation: '/ˈbɪldər ˈpætərn/',
               phonetic: 'BIL-der PAT-tern',
               example:
@@ -9355,7 +9379,7 @@ export default {
             },
             {
               english: 'Visitor Pattern',
-              italian: 'visitor / pattern visitatore',
+              italian: 'Pattern visitatore (visitor)',
               pronunciation: '/ˈvɪzɪtər ˈpætərn/',
               phonetic: 'VI-si-ter PAT-tern',
               example: 'Match replaces visitor in Rust. = Match sostituisce visitor in Rust.',
@@ -9364,7 +9388,7 @@ export default {
             },
             {
               english: 'Strategy Pattern',
-              italian: 'strategy / pattern strategia',
+              italian: 'Pattern strategia (strategy)',
               pronunciation: '/ˈstrætədʒi ˈpætərn/',
               phonetic: 'STRA-te-gi PAT-tern',
               example:
@@ -9374,7 +9398,7 @@ export default {
             },
             {
               english: 'Adapter Pattern',
-              italian: 'adapter / pattern adattatore',
+              italian: 'Pattern adattatore (adapter)',
               pronunciation: '/əˈdæptər ˈpætərn/',
               phonetic: 'a-DAP-ter PAT-tern',
               example: "Adapter wraps an external API. = Adapter avvolge un'API esterna.",
@@ -9473,7 +9497,7 @@ export default {
             },
             {
               english: 'Cargo Test',
-              italian: 'cargo test / esegue i test',
+              italian: 'Esegue i test (cargo test)',
               pronunciation: '/ˈkɑːrɡoʊ test/',
               phonetic: 'KAR-go TEST',
               example: 'cargo test runs all tests. = cargo test esegue tutti i test.',
@@ -9483,7 +9507,7 @@ export default {
             },
             {
               english: 'Should Panic',
-              italian: '#[should_panic] / test che deve fare panic',
+              italian: 'Test che deve fare panic (#[should_panic])',
               pronunciation: '/ʃʊd ˈpænɪk/',
               phonetic: 'SCIUD PA-nik',
               example: '#[should_panic] expects a panic. = #[should_panic] si aspetta un panic.',
@@ -9514,7 +9538,7 @@ export default {
             },
             {
               english: 'Assert Eq',
-              italian: 'assert_eq! / asserzione di uguaglianza',
+              italian: 'Asserzione di uguaglianza (assert_eq!)',
               pronunciation: '/əˈsɜːrt iːkjuː/',
               phonetic: 'a-SERT IK-uel',
               example:
@@ -9525,7 +9549,7 @@ export default {
             },
             {
               english: 'Assert Ne',
-              italian: 'assert_ne! / asserzione di disuguaglianza',
+              italian: 'Asserzione di disuguaglianza (assert_ne!)',
               pronunciation: '/əˈsɜːrt en iː/',
               phonetic: 'a-SERT EN-I',
               example: 'assert_ne! checks inequality. = assert_ne! controlla la non uguaglianza.',
@@ -9585,7 +9609,7 @@ export default {
             },
             {
               english: 'Doc Test',
-              italian: 'doc test / test estratto dalla documentazione',
+              italian: 'Test estratto dalla documentazione (doc test)',
               pronunciation: '/dɒk test/',
               phonetic: 'DOK TEST',
               example:
@@ -9627,26 +9651,28 @@ export default {
             },
             {
               english: 'Setup',
-              italian: 'setup / preparazione del test',
+              italian: 'Preparazione del test (setup)',
               pronunciation: '/ˈsetʌp/',
               phonetic: 'SET-ap',
-              example: 'Setup runs before each test. = Setup viene eseguito prima di ogni test.',
+              example:
+                'A setup function prepares test fixtures before each test runs. = Una funzione di setup prepara le fixture del test prima di ogni esecuzione.',
               context: 'testing',
               difficulty: 'advanced',
             },
             {
               english: 'Teardown',
-              italian: 'teardown / pulizia post-test',
+              italian: 'Pulizia post-test (teardown)',
               pronunciation: '/ˈteərdaʊn/',
               phonetic: 'TER-daun',
-              example: 'Teardown runs after each test. = Teardown viene eseguito dopo ogni test.',
+              example:
+                'The teardown phase cleans up resources after each test completes. = La fase di teardown pulisce le risorse dopo il completamento di ogni test.',
               context: 'testing',
               difficulty: 'advanced',
               note: 'In Rust spesso si usa Drop per teardown automatico.',
             },
             {
               english: 'Mock',
-              italian: 'mock / oggetto fittizio per i test',
+              italian: 'Oggetto fittizio per i test (mock)',
               pronunciation: '/mɒk/',
               phonetic: 'MOK',
               example: 'mockall provides mocking for tests. = mockall fornisce mocking per i test.',
@@ -9674,7 +9700,7 @@ export default {
           items: [
             {
               english: 'Property Testing',
-              italian: 'property testing / test basato su proprietà',
+              italian: 'Test basato su proprietà (property testing)',
               pronunciation: '/ˈprɒpərti ˈtestɪŋ/',
               phonetic: 'PRO-per-ti TES-ting',
               example:
@@ -9685,7 +9711,7 @@ export default {
             },
             {
               english: 'Proptest',
-              italian: 'proptest / framework property testing Rust',
+              italian: 'Framework property testing Rust (proptest)',
               pronunciation: '/prɒp test/',
               phonetic: 'PROP-TEST',
               example:
@@ -9696,7 +9722,7 @@ export default {
             },
             {
               english: 'Quickcheck',
-              italian: 'quickcheck / property testing in stile Haskell',
+              italian: 'Property testing in stile Haskell (quickcheck)',
               pronunciation: '/ˈkwɪktʃek/',
               phonetic: 'KUIK-cek',
               example:
@@ -9707,7 +9733,7 @@ export default {
             },
             {
               english: 'Fuzzing',
-              italian: 'fuzzing / test con input casuali',
+              italian: 'Test con input casuali (fuzzing)',
               pronunciation: '/ˈfʌzɪŋ/',
               phonetic: 'FA-zing',
               example:
@@ -9719,11 +9745,11 @@ export default {
             },
             {
               english: 'Shrinking',
-              italian: 'shrinking / riduzione del controesempio',
+              italian: 'Riduzione del controesempio (shrinking)',
               pronunciation: '/ˈʃrɪŋkɪŋ/',
               phonetic: 'SCRINK-ing',
               example:
-                "Shrinking finds the minimal failing input. = Shrinking trova l'input minimo che fallisce.",
+                'After finding a failing input, shrinking reduces it to the minimal reproducing case. = Dopo aver trovato un input che fallisce, lo shrinking lo riduce al caso di riproduzione minimo.',
               context: 'testing',
               difficulty: 'advanced',
               note: 'Caratteristica chiave di property testing: minimizza il caso di errore.',
@@ -9750,7 +9776,7 @@ export default {
             },
             {
               english: 'Golden Test',
-              italian: 'golden test / test su output di riferimento',
+              italian: 'Test su output di riferimento (golden test)',
               pronunciation: '/ˈɡoʊldən test/',
               phonetic: 'GOL-den TEST',
               example:
@@ -9787,7 +9813,7 @@ export default {
           items: [
             {
               english: 'Benchmark',
-              italian: 'benchmark / test prestazionale',
+              italian: 'Test prestazionale (benchmark)',
               pronunciation: '/ˈbentʃmɑːrk/',
               phonetic: 'BENC-mark',
               example: 'A benchmark measures performance. = Un benchmark misura la performance.',
@@ -9797,7 +9823,7 @@ export default {
             },
             {
               english: 'Criterion',
-              italian: 'criterion / framework benchmark statistico',
+              italian: 'Framework benchmark statistico (criterion)',
               pronunciation: '/kraɪˈtɪəriən/',
               phonetic: 'krai-TI-ri-on',
               example:
@@ -9809,7 +9835,7 @@ export default {
             },
             {
               english: 'Black Box',
-              italian: "std::hint::black_box / impedisce l'ottimizzazione",
+              italian: "Impedisce l'ottimizzazione (std::hint::black_box)",
               pronunciation: '/blæk bɒks/',
               phonetic: 'BLAK BOKS',
               example:
@@ -9820,7 +9846,7 @@ export default {
             },
             {
               english: 'Throughput',
-              italian: 'throughput / volume di operazioni al secondo',
+              italian: 'Volume di operazioni al secondo (throughput)',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'TRU-put',
               example:
@@ -9833,13 +9859,14 @@ export default {
               italian: 'Latenza',
               pronunciation: '/ˈleɪtənsi/',
               phonetic: 'LEI-ten-si',
-              example: 'Latency measures response time. = La latenza misura il tempo di risposta.',
+              example:
+                'Measuring latency helps identify bottlenecks in request handling. = Misurare la latenza aiuta a identificare colli di bottiglia nella gestione delle richieste.',
               context: 'testing',
               difficulty: 'advanced',
             },
             {
               english: 'Profiling',
-              italian: 'profiling / profilazione delle prestazioni',
+              italian: 'Profilazione delle prestazioni (profiling)',
               pronunciation: '/ˈproʊfaɪlɪŋ/',
               phonetic: 'PRO-fai-ling',
               example: 'perf profiles Rust binaries on Linux. = perf profila binari Rust su Linux.',
@@ -9849,7 +9876,7 @@ export default {
             },
             {
               english: 'Flamegraph',
-              italian: 'flamegraph / grafico a fiamma di profilazione',
+              italian: 'Grafico a fiamma di profilazione (flamegraph)',
               pronunciation: '/ˈfleɪmɡræf/',
               phonetic: 'FLEIM-graf',
               example:
@@ -9860,7 +9887,7 @@ export default {
             },
             {
               english: 'Iai',
-              italian: 'iai / benchmark con cycle counter',
+              italian: 'Benchmark con cycle counter (iai)',
               pronunciation: '/aɪ aɪ/',
               phonetic: 'AI-AI',
               example:
@@ -9939,7 +9966,7 @@ export default {
             },
             {
               english: 'Buf Reader',
-              italian: 'BufReader',
+              italian: 'Lettore con buffer (BufReader)',
               pronunciation: '/bʌf ˈriːdər/',
               phonetic: 'BAF RI-der',
               example:
@@ -9950,7 +9977,7 @@ export default {
             },
             {
               english: 'Buf Writer',
-              italian: 'BufWriter',
+              italian: 'Scrittore con buffer (BufWriter)',
               pronunciation: '/bʌf ˈraɪtər/',
               phonetic: 'BAF RAI-ter',
               example:
@@ -9971,7 +9998,7 @@ export default {
             },
             {
               english: 'Stdin',
-              italian: 'stdin / input standard',
+              italian: 'Input standard (stdin)',
               pronunciation: '/ˌes tiː diː ˈɪn/',
               phonetic: 'ES-TI-DI-IN',
               example:
@@ -9982,7 +10009,7 @@ export default {
             },
             {
               english: 'Stdout',
-              italian: 'stdout / output standard',
+              italian: 'Output standard (stdout)',
               pronunciation: '/ˌes tiː diː ˈaʊt/',
               phonetic: 'ES-TI-DI-AUT',
               example:
@@ -9993,22 +10020,22 @@ export default {
             },
             {
               english: 'Path',
-              italian: 'Path / percorso del filesystem',
+              italian: 'Percorso del filesystem (Path)',
               pronunciation: '/pɑːθ/',
               phonetic: 'PAT',
               example:
-                'Path represents file system paths. = Path rappresenta percorsi del file system.',
+                'Operating on files requires a Path to locate them in the filesystem. = Operare su file richiede un Path per localizzarli nel filesystem.',
               context: 'io',
               difficulty: 'advanced',
               code: 'use std::path::Path;',
             },
             {
               english: 'PathBuf',
-              italian: 'PathBuf / Path proprietario',
+              italian: 'Path proprietario (PathBuf)',
               pronunciation: '/pɑːθ bʌf/',
               phonetic: 'PAT BAF',
               example:
-                'PathBuf is the owned version of Path. = PathBuf è la versione owned di Path.',
+                'While Path borrows path data, PathBuf owns it and allows mutation. = Mentre Path prende in prestito i dati del percorso, PathBuf li possiede e permette la mutazione.',
               context: 'io',
               difficulty: 'advanced',
               code: 'PathBuf::from("/etc/hosts")',
@@ -10022,7 +10049,7 @@ export default {
           items: [
             {
               english: 'TCP Listener',
-              italian: 'TcpListener / listener TCP',
+              italian: 'Listener TCP (TcpListener)',
               pronunciation: '/tiː siː piː ˈlɪsənər/',
               phonetic: 'TI-SI-PI LI-se-ner',
               example:
@@ -10033,7 +10060,7 @@ export default {
             },
             {
               english: 'TCP Stream',
-              italian: 'TcpStream / connessione TCP',
+              italian: 'Connessione TCP (TcpStream)',
               pronunciation: '/tiː siː piː striːm/',
               phonetic: 'TI-SI-PI STRIM',
               example: 'TcpStream is a TCP connection. = TcpStream è una connessione TCP.',
@@ -10064,7 +10091,7 @@ export default {
             },
             {
               english: 'Hyper',
-              italian: 'hyper / libreria HTTP Rust low-level',
+              italian: 'Libreria HTTP Rust low-level (hyper)',
               pronunciation: '/ˈhaɪpər/',
               phonetic: 'HAI-per',
               example:
@@ -10075,7 +10102,7 @@ export default {
             },
             {
               english: 'Reqwest',
-              italian: 'reqwest / client HTTP ad alto livello',
+              italian: 'Client HTTP ad alto livello (reqwest)',
               pronunciation: '/rɪkˈwest/',
               phonetic: 'rik-UEST',
               example:
@@ -10087,7 +10114,7 @@ export default {
             },
             {
               english: 'Axum',
-              italian: 'axum / framework web Tokio',
+              italian: 'Framework web Tokio (axum)',
               pronunciation: '/ˈæksəm/',
               phonetic: 'AK-sum',
               example: 'axum is a modern web framework. = axum è un framework web moderno.',
@@ -10098,7 +10125,7 @@ export default {
             },
             {
               english: 'Actix Web',
-              italian: 'Actix Web / framework web ad alte prestazioni',
+              italian: 'Framework web ad alte prestazioni (Actix Web)',
               pronunciation: '/ˈæktɪks web/',
               phonetic: 'AK-tiks UEB',
               example:
@@ -10109,18 +10136,18 @@ export default {
             },
             {
               english: 'Rocket',
-              italian: 'Rocket / framework web Rust ergonomico',
+              italian: 'Framework web Rust ergonomico (Rocket)',
               pronunciation: '/ˈrɒkɪt/',
               phonetic: 'RO-kit',
               example:
-                'Rocket is an ergonomic web framework. = Rocket è un framework web ergonomico.',
+                'With its intuitive API, Rocket makes building web apps in Rust approachable. = Con la sua API intuitiva, Rocket rende accessibile la costruzione di web app in Rust.',
               context: 'io',
               difficulty: 'advanced',
               tool: 'rocket',
             },
             {
               english: 'Warp',
-              italian: 'warp / framework web filtri-componibili',
+              italian: 'Framework web filtri-componibili (warp)',
               pronunciation: '/wɔːrp/',
               phonetic: 'UORP',
               example: 'warp uses a filter-based design. = warp usa un design basato su filtri.',
@@ -10137,7 +10164,7 @@ export default {
           items: [
             {
               english: 'Serde',
-              italian: 'serde / framework di serializzazione Rust',
+              italian: 'Framework di serializzazione Rust (serde)',
               pronunciation: '/ˈsɜːrdiː/',
               phonetic: 'SER-di',
               example:
@@ -10149,7 +10176,7 @@ export default {
             },
             {
               english: 'Serialize',
-              italian: 'Serialize / trait di serializzazione',
+              italian: 'Trait di serializzazione (Serialize)',
               pronunciation: '/ˈsɪərɪəlaɪz/',
               phonetic: 'SI-ria-laiz',
               example:
@@ -10160,7 +10187,7 @@ export default {
             },
             {
               english: 'Deserialize',
-              italian: 'Deserialize / trait di deserializzazione',
+              italian: 'Trait di deserializzazione (Deserialize)',
               pronunciation: '/diːˈsɪərɪəlaɪz/',
               phonetic: 'di-SI-ria-laiz',
               example:
@@ -10171,7 +10198,7 @@ export default {
             },
             {
               english: 'Serde JSON',
-              italian: 'serde_json / supporto JSON per serde',
+              italian: 'Supporto JSON per serde (serde_json)',
               pronunciation: '/ˈsɜːrdiː ˈdʒeɪsən/',
               phonetic: 'SER-di GEI-son',
               example: 'serde_json handles JSON. = serde_json gestisce JSON.',
@@ -10182,7 +10209,7 @@ export default {
             },
             {
               english: 'Serde YAML',
-              italian: 'serde_yaml / supporto YAML per serde',
+              italian: 'Supporto YAML per serde (serde_yaml)',
               pronunciation: '/ˈsɜːrdiː ˈjæməl/',
               phonetic: 'SER-di IA-mol',
               example: 'serde_yaml handles YAML. = serde_yaml gestisce YAML.',
@@ -10192,7 +10219,7 @@ export default {
             },
             {
               english: 'Toml',
-              italian: 'toml / parser TOML',
+              italian: 'Parser TOML (toml)',
               pronunciation: '/ˈtɒml/',
               phonetic: 'TOML',
               example: 'toml parses TOML configuration. = toml fa parse di configurazione TOML.',
@@ -10203,7 +10230,7 @@ export default {
             },
             {
               english: 'Bincode',
-              italian: 'bincode / serializzazione binaria',
+              italian: 'Serializzazione binaria (bincode)',
               pronunciation: '/ˈbɪnkoʊd/',
               phonetic: 'BIN-koud',
               example:
@@ -10214,7 +10241,7 @@ export default {
             },
             {
               english: 'Postcard',
-              italian: 'postcard / serializzazione binaria embedded',
+              italian: 'Serializzazione binaria embedded (postcard)',
               pronunciation: '/ˈpoʊstkɑːrd/',
               phonetic: 'POST-kard',
               example:
@@ -10252,7 +10279,7 @@ export default {
           items: [
             {
               english: 'Tokio Fs',
-              italian: 'tokio::fs / I/O filesystem asincrono',
+              italian: 'I/O filesystem asincrono (tokio::fs)',
               pronunciation: '/ˈtoʊkioʊ ef es/',
               phonetic: 'TO-ki-o EF-ES',
               example:
@@ -10263,7 +10290,7 @@ export default {
             },
             {
               english: 'Tokio Net',
-              italian: 'tokio::net / I/O di rete asincrono',
+              italian: 'I/O di rete asincrono (tokio::net)',
               pronunciation: '/ˈtoʊkioʊ net/',
               phonetic: 'TO-ki-o NET',
               example:
@@ -10274,7 +10301,7 @@ export default {
             },
             {
               english: 'Async Read Ext',
-              italian: 'AsyncReadExt',
+              italian: 'Estensione di lettura asincrona (AsyncReadExt)',
               pronunciation: '/əˈsɪŋk riːd ekst/',
               phonetic: 'a-SINK RID EKST',
               example:
@@ -10285,7 +10312,7 @@ export default {
             },
             {
               english: 'Async Write Ext',
-              italian: 'AsyncWriteExt',
+              italian: 'Estensione di scrittura asincrona (AsyncWriteExt)',
               pronunciation: '/əˈsɪŋk raɪt ekst/',
               phonetic: 'a-SINK RAIT EKST',
               example:
@@ -10296,7 +10323,7 @@ export default {
             },
             {
               english: 'Async Buf Read',
-              italian: 'Async BufRead',
+              italian: 'Lettura bufferizzata asincrona (AsyncBufRead)',
               pronunciation: '/əˈsɪŋk bʌf riːd/',
               phonetic: 'a-SINK BAF RID',
               example:
@@ -10306,7 +10333,7 @@ export default {
             },
             {
               english: 'Tokio Spawn',
-              italian: 'tokio::spawn / lancia task',
+              italian: 'Lancia task (tokio::spawn)',
               pronunciation: '/ˈtoʊkioʊ spɔːn/',
               phonetic: 'TO-ki-o SPON',
               example:
@@ -10317,7 +10344,7 @@ export default {
             },
             {
               english: 'Mpsc',
-              italian: 'tokio::sync::mpsc / canale async multi-producer',
+              italian: 'Canale async multi-producer (tokio::sync::mpsc)',
               pronunciation: '/em piː es siː/',
               phonetic: 'EM-PI-ES-SI',
               example:
@@ -10348,11 +10375,11 @@ export default {
             },
             {
               english: 'Backpressure',
-              italian: 'backpressure / contropressione',
+              italian: 'Contropressione (backpressure)',
               pronunciation: '/ˈbækpreʃər/',
               phonetic: 'BAK-pres-cer',
               example:
-                'Backpressure prevents producer overload. = Il backpressure previene sovraccarico del producer.',
+                'When consumers are slow, backpressure signals producers to slow down. = Quando i consumatori sono lenti, la backpressure segnala ai produttori di rallentare.',
               context: 'io',
               difficulty: 'advanced',
               note: 'Pattern critico in stream e async I/O.',
@@ -10375,7 +10402,7 @@ export default {
           items: [
             {
               english: 'Tokio',
-              italian: 'Tokio / runtime async per Rust',
+              italian: 'Runtime async per Rust (Tokio)',
               pronunciation: '/ˈtoʊkioʊ/',
               phonetic: 'TO-ki-o',
               example: 'tokio is the dominant async runtime. = tokio è il runtime async dominante.',
@@ -10386,7 +10413,7 @@ export default {
             },
             {
               english: 'Async Std',
-              italian: 'Async-std',
+              italian: 'Runtime asincrono alternativo (async-std)',
               pronunciation: '/əˈsɪŋk es tiː diː/',
               phonetic: 'a-SINK ES-TI-DI',
               example: 'async-std mirrors std with async. = async-std rispecchia std con async.',
@@ -10396,7 +10423,7 @@ export default {
             },
             {
               english: 'Hyper',
-              italian: 'hyper / libreria HTTP Rust low-level',
+              italian: 'Libreria HTTP Rust low-level (hyper)',
               pronunciation: '/ˈhaɪpər/',
               phonetic: 'HAI-per',
               example: 'hyper provides low-level HTTP. = hyper fornisce HTTP di basso livello.',
@@ -10406,7 +10433,7 @@ export default {
             },
             {
               english: 'Tonic',
-              italian: 'tonic / gRPC per Rust',
+              italian: 'GRPC per Rust (tonic)',
               pronunciation: '/ˈtɒnɪk/',
               phonetic: 'TO-nik',
               example: 'tonic provides gRPC for Rust. = tonic fornisce gRPC per Rust.',
@@ -10416,7 +10443,7 @@ export default {
             },
             {
               english: 'Tower',
-              italian: 'tower / astrazioni per servizi async',
+              italian: 'Astrazioni per servizi async (tower)',
               pronunciation: '/ˈtaʊər/',
               phonetic: 'TAU-er',
               example:
@@ -10428,7 +10455,7 @@ export default {
             },
             {
               english: 'Axum',
-              italian: 'axum / framework web Tokio',
+              italian: 'Framework web Tokio (axum)',
               pronunciation: '/ˈæksəm/',
               phonetic: 'AK-sum',
               example:
@@ -10439,7 +10466,7 @@ export default {
             },
             {
               english: 'Reqwest',
-              italian: 'reqwest / client HTTP ad alto livello',
+              italian: 'Client HTTP ad alto livello (reqwest)',
               pronunciation: '/rɪkˈwest/',
               phonetic: 'rik-UEST',
               example: 'reqwest simplifies HTTP requests. = reqwest semplifica le richieste HTTP.',
@@ -10449,7 +10476,7 @@ export default {
             },
             {
               english: 'Tungstenite',
-              italian: 'tungstenite / WebSocket per Rust',
+              italian: 'WebSocket per Rust (tungstenite)',
               pronunciation: '/ˈtʌŋstənaɪt/',
               phonetic: 'TANG-ste-nait',
               example: 'tungstenite handles WebSockets. = tungstenite gestisce WebSocket.',
@@ -10459,7 +10486,7 @@ export default {
             },
             {
               english: 'Tonic Build',
-              italian: 'tonic-build / generatore codice gRPC',
+              italian: 'Generatore codice gRPC (tonic-build)',
               pronunciation: '/ˈtɒnɪk bɪld/',
               phonetic: 'TO-nik BILD',
               example: 'tonic-build generates gRPC code. = tonic-build genera codice gRPC.',
@@ -10469,7 +10496,7 @@ export default {
             },
             {
               english: 'Wasm Bindgen',
-              italian: 'Wasm-bindgen',
+              italian: 'Generatore di binding WebAssembly (wasm-bindgen)',
               pronunciation: '/wɒzm ˈbaɪndɡen/',
               phonetic: 'UASM BAIN-ghen',
               example:
@@ -10487,7 +10514,7 @@ export default {
           items: [
             {
               english: 'Serde',
-              italian: 'serde / framework di serializzazione Rust',
+              italian: 'Framework di serializzazione Rust (serde)',
               pronunciation: '/ˈsɜːrdiː/',
               phonetic: 'SER-di',
               example:
@@ -10498,7 +10525,7 @@ export default {
             },
             {
               english: 'Diesel',
-              italian: 'Diesel / ORM Rust sincrono',
+              italian: 'ORM Rust sincrono (Diesel)',
               pronunciation: '/ˈdiːzəl/',
               phonetic: 'DI-zel',
               example: 'diesel is a type-safe ORM. = diesel è un ORM type-safe.',
@@ -10508,7 +10535,7 @@ export default {
             },
             {
               english: 'SQLx',
-              italian: 'SQLx / SQL compile-time check, async',
+              italian: 'SQL compile-time check, async (SQLx)',
               pronunciation: '/es kjuː el eks/',
               phonetic: 'ES-KIU-EL-EKS',
               example:
@@ -10520,7 +10547,7 @@ export default {
             },
             {
               english: 'Sea ORM',
-              italian: 'SeaORM / ORM async Rust',
+              italian: 'ORM async Rust (SeaORM)',
               pronunciation: '/siː ɔːr em/',
               phonetic: 'SI-OR-EM',
               example:
@@ -10531,7 +10558,7 @@ export default {
             },
             {
               english: 'Polars',
-              italian: 'Polars / dataframe Rust ad alte prestazioni',
+              italian: 'Dataframe Rust ad alte prestazioni (Polars)',
               pronunciation: '/ˈpoʊlərz/',
               phonetic: 'PO-larz',
               example:
@@ -10542,7 +10569,7 @@ export default {
             },
             {
               english: 'Arrow',
-              italian: 'Apache Arrow / formato colonnare in memoria',
+              italian: 'Formato colonnare in memoria (Apache Arrow)',
               pronunciation: '/ˈæroʊ/',
               phonetic: 'A-ro',
               example: 'arrow-rs implements Apache Arrow. = arrow-rs implementa Apache Arrow.',
@@ -10552,7 +10579,7 @@ export default {
             },
             {
               english: 'Ndarray',
-              italian: 'ndarray / array N-dimensionali Rust',
+              italian: 'Array N-dimensionali Rust (ndarray)',
               pronunciation: '/en di əˈreɪ/',
               phonetic: 'EN-DI a-REI',
               example:
@@ -10563,7 +10590,7 @@ export default {
             },
             {
               english: 'Csv',
-              italian: 'csv / parser CSV per Rust',
+              italian: 'Parser CSV per Rust (csv)',
               pronunciation: '/siː es viː/',
               phonetic: 'SI-ES-VI',
               example: 'csv reads and writes CSV files. = csv legge e scrive file CSV.',
@@ -10573,7 +10600,7 @@ export default {
             },
             {
               english: 'Image',
-              italian: 'image / libreria immagini Rust',
+              italian: 'Libreria immagini Rust (image)',
               pronunciation: '/ˈɪmɪdʒ/',
               phonetic: 'I-mig',
               example:
@@ -10584,7 +10611,7 @@ export default {
             },
             {
               english: 'Plotters',
-              italian: 'plotters / libreria grafici Rust',
+              italian: 'Libreria grafici Rust (plotters)',
               pronunciation: '/ˈplɒtərz/',
               phonetic: 'PLOT-terz',
               example: 'plotters draws charts and plots. = plotters disegna grafici e plot.',
@@ -10601,7 +10628,7 @@ export default {
           items: [
             {
               english: 'Clap',
-              italian: 'clap / parser argomenti CLI',
+              italian: 'Parser argomenti CLI (clap)',
               pronunciation: '/klæp/',
               phonetic: 'KLAP',
               example:
@@ -10613,7 +10640,7 @@ export default {
             },
             {
               english: 'Structopt',
-              italian: 'structopt / argomenti CLI da struct (legacy)',
+              italian: 'Argomenti CLI da struct (legacy) (structopt)',
               pronunciation: '/ˈstrʌktɒpt/',
               phonetic: 'STRAKT-opt',
               example:
@@ -10624,7 +10651,7 @@ export default {
             },
             {
               english: 'Indicatif',
-              italian: 'indicatif / barre di progresso CLI',
+              italian: 'Barre di progresso CLI (indicatif)',
               pronunciation: '/ˌɪndɪˈkætɪf/',
               phonetic: 'in-di-KA-tif',
               example: 'indicatif provides progress bars. = indicatif fornisce progress bar.',
@@ -10634,7 +10661,7 @@ export default {
             },
             {
               english: 'Crossterm',
-              italian: 'crossterm / terminale cross-platform',
+              italian: 'Terminale cross-platform (crossterm)',
               pronunciation: '/ˈkrɒstɜːrm/',
               phonetic: 'KROS-term',
               example:
@@ -10645,7 +10672,7 @@ export default {
             },
             {
               english: 'Ratatui',
-              italian: 'Ratatui / TUI framework Rust',
+              italian: 'TUI framework Rust (Ratatui)',
               pronunciation: '/ˌrætəˈtuːi/',
               phonetic: 'ra-ta-TU-i',
               example:
@@ -10657,7 +10684,7 @@ export default {
             },
             {
               english: 'Anyhow',
-              italian: 'anyhow / errore generico per applicazioni',
+              italian: 'Errore generico per applicazioni (anyhow)',
               pronunciation: '/ˈeniˌhaʊ/',
               phonetic: 'EN-ni-hau',
               example: 'anyhow simplifies error handling. = anyhow semplifica la gestione errori.',
@@ -10667,7 +10694,7 @@ export default {
             },
             {
               english: 'Thiserror',
-              italian: 'thiserror / derivazione di errori Rust',
+              italian: 'Derivazione di errori Rust (thiserror)',
               pronunciation: '/ðɪsˈerər/',
               phonetic: 'DIS-er-rer',
               example: 'thiserror derives Error trait. = thiserror deriva il trait Error.',
@@ -10677,7 +10704,7 @@ export default {
             },
             {
               english: 'Tracing',
-              italian: 'tracing / framework di logging strutturato',
+              italian: 'Framework di logging strutturato (tracing)',
               pronunciation: '/ˈtreɪsɪŋ/',
               phonetic: 'TREI-sing',
               example:
@@ -10688,7 +10715,7 @@ export default {
             },
             {
               english: 'Env Logger',
-              italian: 'env_logger / logger basato su variabile RUST_LOG',
+              italian: 'Logger basato su variabile RUST_LOG (env_logger)',
               pronunciation: '/env ˈlɒɡər/',
               phonetic: 'ENV LO-ger',
               example:
@@ -10699,7 +10726,7 @@ export default {
             },
             {
               english: 'Once Cell',
-              italian: 'once_cell / inizializzazione singola',
+              italian: 'Inizializzazione singola (once_cell)',
               pronunciation: '/wʌns sel/',
               phonetic: 'UANS SEL',
               example:
@@ -10728,7 +10755,7 @@ export default {
             },
             {
               english: 'Crossbeam',
-              italian: 'crossbeam / libreria concorrenza Rust',
+              italian: 'Libreria concorrenza Rust (crossbeam)',
               pronunciation: '/ˈkrɒsbiːm/',
               phonetic: 'KROS-bim',
               example:
@@ -10739,7 +10766,7 @@ export default {
             },
             {
               english: 'Regex',
-              italian: 'regex / libreria espressioni regolari',
+              italian: 'Libreria espressioni regolari (regex)',
               pronunciation: '/ˈreɡeks/',
               phonetic: 'RE-geks',
               example:
@@ -10750,7 +10777,7 @@ export default {
             },
             {
               english: 'Chrono',
-              italian: 'chrono / libreria di tempo',
+              italian: 'Libreria di tempo (chrono)',
               pronunciation: '/ˈkrɒnoʊ/',
               phonetic: 'KRO-no',
               example: 'chrono handles dates and times. = chrono gestisce date e orari.',
@@ -10771,7 +10798,7 @@ export default {
             },
             {
               english: 'Uuid',
-              italian: 'uuid / libreria UUID',
+              italian: 'Libreria UUID (uuid)',
               pronunciation: '/juː juː aɪ diː/',
               phonetic: 'IU-IU-AI-DI',
               example: 'uuid generates UUIDs. = uuid genera UUID.',
@@ -10781,7 +10808,7 @@ export default {
             },
             {
               english: 'Rand',
-              italian: 'rand / libreria di numeri casuali',
+              italian: 'Libreria di numeri casuali (rand)',
               pronunciation: '/rænd/',
               phonetic: 'RAND',
               example:
@@ -10792,7 +10819,7 @@ export default {
             },
             {
               english: 'Bevy',
-              italian: 'Bevy / motore di gioco ECS',
+              italian: 'Motore di gioco ECS (Bevy)',
               pronunciation: '/ˈbevi/',
               phonetic: 'BE-vi',
               example: 'bevy is a Rust game engine. = bevy è un game engine Rust.',
@@ -10802,7 +10829,7 @@ export default {
             },
             {
               english: 'Egui',
-              italian: 'egui / GUI immediate-mode',
+              italian: 'GUI immediate-mode (egui)',
               pronunciation: '/iː ɡuː iː/',
               phonetic: 'I-GU-I',
               example:
@@ -10813,7 +10840,7 @@ export default {
             },
             {
               english: 'Ring',
-              italian: 'ring / libreria di crittografia',
+              italian: 'Libreria di crittografia (ring)',
               pronunciation: '/rɪŋ/',
               phonetic: 'RING',
               example:
@@ -10850,7 +10877,7 @@ export default {
             },
             {
               english: 'Rustacean',
-              italian: 'rustacean / appassionato di Rust',
+              italian: 'Appassionato di Rust (rustacean)',
               pronunciation: '/rʌsˈteɪʃən/',
               phonetic: 'ras-TEI-scen',
               example: 'A Rustacean is a Rust programmer. = Un Rustacean è un programmatore Rust.',
@@ -10870,7 +10897,7 @@ export default {
             },
             {
               english: 'Cargo Fmt',
-              italian: 'cargo fmt / formatta il codice',
+              italian: 'Formatta il codice (cargo fmt)',
               pronunciation: '/ˈkɑːrɡoʊ ef em tiː/',
               phonetic: 'KAR-go EF-EM-TI',
               example: 'Always format with cargo fmt. = Formatta sempre con cargo fmt.',
@@ -10880,7 +10907,7 @@ export default {
             },
             {
               english: 'Type Driven Design',
-              italian: 'Type-driven design',
+              italian: 'Progettazione guidata dai tipi (type-driven design)',
               pronunciation: '/taɪp ˈdrɪvən dɪˈzaɪn/',
               phonetic: 'TAIP DRI-ven di-ZAIN',
               example:
@@ -10940,7 +10967,7 @@ export default {
                 'Zero-cost abstractions are a Rust principle. = Le astrazioni a costo zero sono un principio di Rust.',
               context: 'foundations',
               difficulty: 'advanced',
-              note: 'Citazione di Stroustrup: "what you don\'t use, you don\'t pay for".',
+              note: `Citazione di Stroustrup: "what you don't use, you don't pay for".`,
             },
           ],
         },
@@ -10977,7 +11004,7 @@ export default {
               pronunciation: '/el tiː oʊ/',
               phonetic: 'EL-TI-O',
               example:
-                'LTO performs link-time optimization. = LTO esegue ottimizzazione a tempo di link.',
+                'Enabling LTO at link time can significantly reduce binary size. = Abilitare LTO al momento del linking può ridurre significativamente la dimensione del binario.',
               context: 'foundations',
               difficulty: 'advanced',
               code: 'lto = "fat"',
@@ -10985,17 +11012,18 @@ export default {
             },
             {
               english: 'PGO',
-              italian: 'PGO / Profile-Guided Optimization',
+              italian: 'Profile-Guided Optimization (PGO)',
               pronunciation: '/piː dʒiː oʊ/',
               phonetic: 'PI-GI-O',
-              example: 'PGO uses runtime data to optimize. = PGO usa dati runtime per ottimizzare.',
+              example:
+                'By profiling real workloads, PGO guides the compiler to optimize hot paths. = Profilando carichi di lavoro reali, PGO guida il compilatore a ottimizzare i percorsi caldi.',
               context: 'foundations',
               difficulty: 'advanced',
               note: 'Profile-Guided Optimization: requires recording runs.',
             },
             {
               english: 'Inline',
-              italian: 'inline / suggerimento di inlining',
+              italian: 'Suggerimento di inlining (inline)',
               pronunciation: '/ˈɪnlaɪn/',
               phonetic: 'IN-lain',
               example:
@@ -11006,7 +11034,7 @@ export default {
             },
             {
               english: 'Const Fn',
-              italian: 'const fn / funzione utilizzabile a compile-time',
+              italian: 'Funzione utilizzabile a compile-time (const fn)',
               pronunciation: '/kɒnst ef en/',
               phonetic: 'KONST EF-EN',
               example: 'const fn runs at compile time. = const fn gira a tempo di compilazione.',
@@ -11016,7 +11044,7 @@ export default {
             },
             {
               english: 'Branch Prediction',
-              italian: 'branch prediction / predizione dei salti',
+              italian: 'Predizione dei salti (branch prediction)',
               pronunciation: '/bræntʃ prɪˈdɪkʃən/',
               phonetic: 'BRANC pri-DIK-scen',
               example:
@@ -11027,7 +11055,7 @@ export default {
             },
             {
               english: 'SIMD',
-              italian: 'SIMD / Single Instruction Multiple Data',
+              italian: 'Single Instruction Multiple Data (SIMD)',
               pronunciation: '/sɪmd/',
               phonetic: 'SIMD',
               example: 'std::simd provides SIMD operations. = std::simd fornisce operazioni SIMD.',
@@ -11037,7 +11065,7 @@ export default {
             },
             {
               english: 'Cache Friendly',
-              italian: 'Cache-friendly',
+              italian: 'Ottimizzato per la cache (cache-friendly)',
               pronunciation: '/kæʃ ˈfrendli/',
               phonetic: 'KASCI FREND-li',
               example:
@@ -11064,7 +11092,7 @@ export default {
           items: [
             {
               english: 'No Std',
-              italian: 'No_std',
+              italian: 'Senza libreria standard (no_std)',
               pronunciation: '/noʊ es tiː diː/',
               phonetic: 'NO ES-TI-DI',
               example:
@@ -11075,7 +11103,7 @@ export default {
             },
             {
               english: 'No Main',
-              italian: 'No_main',
+              italian: 'Senza funzione main (no_main)',
               pronunciation: '/noʊ meɪn/',
               phonetic: 'NO MEIN',
               example:
@@ -11086,7 +11114,7 @@ export default {
             },
             {
               english: 'Embedded HAL',
-              italian: 'embedded-hal / HAL per Rust embedded',
+              italian: 'HAL per Rust embedded (embedded-hal)',
               pronunciation: '/ɪmˈbedɪd hæl/',
               phonetic: 'em-BED-did HAL',
               example:
@@ -11107,18 +11135,18 @@ export default {
             },
             {
               english: 'RTIC',
-              italian: 'RTIC / Real-Time Interrupt-driven Concurrency',
+              italian: 'Real-Time Interrupt-driven Concurrency (RTIC)',
               pronunciation: '/ɑːr tiː aɪ siː/',
               phonetic: 'AR-TI-AI-SI',
               example:
-                'RTIC is real-time framework for embedded. = RTIC è un framework real-time per embedded.',
+                'For deterministic interrupt handling on embedded systems, RTIC provides a safe framework. = Per la gestione deterministica degli interrupt su sistemi embedded, RTIC fornisce un framework sicuro.',
               context: 'foundations',
               difficulty: 'advanced',
               tool: 'rtic',
             },
             {
               english: 'Cortex M',
-              italian: 'Cortex-M',
+              italian: 'Processore ARM Cortex-M',
               pronunciation: '/ˈkɔːrteks em/',
               phonetic: 'KOR-teks EM',
               example: 'cortex-m supports ARM Cortex-M. = cortex-m supporta ARM Cortex-M.',
@@ -11140,7 +11168,7 @@ export default {
             },
             {
               english: 'Panic Handler',
-              italian: '#[panic_handler] / handler di panic in no_std',
+              italian: 'Handler di panic in no_std (#[panic_handler])',
               pronunciation: '/ˈpænɪk ˈhændlər/',
               phonetic: 'PA-nik HAN-dler',
               example:
@@ -11151,7 +11179,7 @@ export default {
             },
             {
               english: 'Bare Metal',
-              italian: 'bare metal / programmazione senza sistema operativo',
+              italian: 'Programmazione senza sistema operativo (bare metal)',
               pronunciation: '/beər ˈmetəl/',
               phonetic: 'BER ME-tal',
               example: 'Bare metal Rust runs without OS. = Rust bare metal gira senza OS.',
@@ -11178,7 +11206,7 @@ export default {
           items: [
             {
               english: 'Rust Foundation',
-              italian: 'Rust Foundation / fondazione di Rust',
+              italian: 'Fondazione di Rust (Rust Foundation)',
               pronunciation: '/rʌst faʊnˈdeɪʃən/',
               phonetic: 'RAST faun-DEI-scen',
               example:

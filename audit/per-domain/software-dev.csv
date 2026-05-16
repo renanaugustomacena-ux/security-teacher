@@ -1,0 +1,152 @@
+topicId,level,lesson,english,italian,issueType
+"software-dev",0,"dev_basics_1","Code","Codice",near-identical-translation
+"software-dev",0,"dev_basics_1","Program","Programma",near-identical-translation
+"software-dev",0,"dev_basics_1","Program","Programma",trivial-example
+"software-dev",0,"dev_basics_1","Algorithm","Algoritmo",near-identical-translation
+"software-dev",0,"dev_basics_1","Data","Dati",near-identical-translation
+"software-dev",0,"dev_basics_1","Data","Dati",trivial-example
+"software-dev",0,"dev_basics_1","Logic","Logica",near-identical-translation
+"software-dev",0,"dev_basics_1","Logic","Logica",trivial-example
+"software-dev",0,"dev_basics_1","Feature","Funzionalità / Feature",trivial-example
+"software-dev",0,"dev_basics_1","Requirement","Requisito",trivial-example
+"software-dev",0,"dev_basics_2","Text Editor","Editor di Testo",trivial-example
+"software-dev",0,"dev_basics_2","Interpreter","Interprete",near-identical-translation
+"software-dev",0,"dev_basics_2","Interpreter","Interprete",trivial-example
+"software-dev",0,"dev_basics_2","Debugger","strumento di analisi del codice (debugger)",trivial-example
+"software-dev",0,"dev_basics_2","Terminal (CLI)","Terminale / Riga di Comando",trivial-example
+"software-dev",0,"dev_basics_3","Freeze","Blocco / Bloccarsi",trivial-example
+"software-dev",0,"dev_basics_3","Patch / Fix","Correzione / Pezza",trivial-example
+"software-dev",0,"dev_basics_3","Compile-time Error","Errore di compilazione",trivial-example
+"software-dev",0,"dev_basics_3","Breakpoint","Punto di interruzione",trivial-example
+"software-dev",0,"dev_basics_4","Documentation","Documentazione",near-identical-translation
+"software-dev",0,"dev_basics_4","Comment","Commento",near-identical-translation
+"software-dev",0,"dev_basics_4","Comment","Commento",trivial-example
+"software-dev",0,"dev_basics_4","Variable Name","Nome di Variabile",trivial-example
+"software-dev",0,"dev_basics_4","Naming Convention","Convenzione sui Nomi",trivial-example
+"software-dev",0,"dev_basics_4","Versioning","Versionamento",trivial-example
+"software-dev",0,"dev_basics_4","Manual","Manuale",near-identical-translation
+"software-dev",0,"dev_basics_4","Manual","Manuale",trivial-example
+"software-dev",0,"dev_basics_4","Specification","Specifica",trivial-example
+"software-dev",0,"dev_basics_4","Diagram (UML)","Diagramma",trivial-example
+"software-dev",1,"dev_git_basics","Repository","Archivio / Repository",trivial-example
+"software-dev",1,"dev_git_basics","Commit","Registrazione (commit)",trivial-example
+"software-dev",1,"dev_git_basics","Add / Stage","Aggiungere / Mettere in stage",trivial-example
+"software-dev",1,"dev_git_basics","Status","Stato",near-identical-translation
+"software-dev",1,"dev_git_basics","Diff","Differenza / Diff",trivial-example
+"software-dev",1,"dev_git_basics","Remote","Remoto",near-identical-translation
+"software-dev",1,"dev_git_basics","Head","Punta / Head",trivial-example
+"software-dev",1,"dev_git_branch","Branch","Ramo / Branch",trivial-example
+"software-dev",1,"dev_git_branch","Checkout / Switch","Spostarsi / Cambiare",trivial-example
+"software-dev",1,"dev_git_branch","Conflict","Conflitto",near-identical-translation
+"software-dev",1,"dev_git_branch","Conflict","Conflitto",trivial-example
+"software-dev",1,"dev_git_branch","Rebase","Rifondare / Rebase",trivial-example
+"software-dev",1,"dev_git_branch","Tag","Etichetta / Tag",trivial-example
+"software-dev",1,"dev_git_collab","Pull Request (PR)","Richiesta di unione / Pull Request",trivial-example
+"software-dev",1,"dev_git_collab","Code Review","Revisione del codice",trivial-example
+"software-dev",1,"dev_git_collab","Upstream","Sorgente / Upstream",trivial-example
+"software-dev",1,"dev_git_collab","Milestone","Pietra miliare / Milestone",trivial-example
+"software-dev",1,"dev_git_collab","Wiki","Documentazione Wiki",trivial-example
+"software-dev",1,"dev_git_collab","GitFlow","Flusso Git / GitFlow",trivial-example
+"software-dev",1,"dev_git_workflow","Reset (Soft/Hard)","Resettare",trivial-example
+"software-dev",1,"dev_git_workflow","Reflog","Registro di Riferimento / Reflog",trivial-example
+"software-dev",1,"dev_git_workflow","Bisect","Bisecare / Bisect",trivial-example
+"software-dev",1,"dev_git_workflow","Gitignore","File Gitignore",trivial-example
+"software-dev",2,"dev_web_front","HTML (HyperText Markup Language)","Linguaggio a marcatori (HTML)",trivial-example
+"software-dev",2,"dev_web_front","CSS (Cascading Style Sheets)","Fogli di stile (CSS)",trivial-example
+"software-dev",2,"dev_web_front","DOM (Document Object Model)","Modello a oggetti del documento (DOM)",trivial-example
+"software-dev",2,"dev_web_front","Selector","Selettore",near-identical-translation
+"software-dev",2,"dev_web_front","Tag","Etichetta (tag)",trivial-example
+"software-dev",2,"dev_web_front","Attribute","Attributo",near-identical-translation
+"software-dev",2,"dev_web_front","Attribute","Attributo",trivial-example
+"software-dev",2,"dev_web_front","Event Listener","Ascoltatore di Eventi",trivial-example
+"software-dev",2,"dev_web_front","Single Page Application (SPA)","Applicazione a Pagina Singola",trivial-example
+"software-dev",2,"dev_web_back","Server","Servente / Server",trivial-example
+"software-dev",2,"dev_web_back","Database","Base di Dati / Database",trivial-example
+"software-dev",2,"dev_web_back","Authorization","Autorizzazione",trivial-example
+"software-dev",2,"dev_web_back","Routing","Instradamento / Routing",trivial-example
+"software-dev",2,"dev_web_api","API (Application Programming Interface)","Interfaccia Programmazione App (API)",trivial-example
+"software-dev",2,"dev_web_api","REST (Representational State Transfer)","Architettura web standard (REST)",trivial-example
+"software-dev",2,"dev_web_api","HTTP Method (GET, POST, ...)","Metodo HTTP",trivial-example
+"software-dev",2,"dev_web_api","Endpoint","Punto Finale / Endpoint",trivial-example
+"software-dev",2,"dev_web_api","Request","Richiesta",trivial-example
+"software-dev",2,"dev_web_api","Response","Risposta",trivial-example
+"software-dev",2,"dev_web_api","Status Code (200, 404, ...)","Codice di Stato",trivial-example
+"software-dev",2,"dev_web_api","JSON (JavaScript Object Notation)","Formato dati (JSON)",trivial-example
+"software-dev",2,"dev_web_api","Payload","Carico Utile / Payload",trivial-example
+"software-dev",2,"dev_web_tools","Browser","Navigatore / Browser",trivial-example
+"software-dev",2,"dev_web_tools","DevTools (Inspector)","Strumenti Sviluppatore / Ispettore",trivial-example
+"software-dev",2,"dev_web_tools","NPM (Node Package Manager)","Gestore Pacchetti Node",trivial-example
+"software-dev",2,"dev_web_tools","Bundler (Vite / Webpack)","Impacchettatore / Bundler",trivial-example
+"software-dev",2,"dev_web_tools","Postman","Client API (Postman)",trivial-example
+"software-dev",2,"dev_web_tools","Cookies","Cookie / Biscotti Digitali",trivial-example
+"software-dev",2,"dev_web_tools","Local Storage","Memoria Locale / Local Storage",trivial-example
+"software-dev",2,"dev_web_tools","CORS (Cross-Origin Resource Sharing)","Condivisione Risorse tra Origini",trivial-example
+"software-dev",2,"dev_web_tools","HTTPS (Secure)","Connessione sicura (HTTPS)",trivial-example
+"software-dev",2,"dev_web_tools","Lighthouse","Audit web (Lighthouse)",trivial-example
+"software-dev",3,"dev_db_sql","Table","Tabella",trivial-example
+"software-dev",3,"dev_db_sql","Query","Interrogazione / Query",trivial-example
+"software-dev",3,"dev_db_sql","Row (Record)","Riga / Record",trivial-example
+"software-dev",3,"dev_db_sql","SELECT Statement","Istruzione SELECT",trivial-example
+"software-dev",3,"dev_db_sql","WHERE Clause","Clausola WHERE",trivial-example
+"software-dev",3,"dev_db_sql","JOIN","Unione / JOIN",trivial-example
+"software-dev",3,"dev_db_design","Index","Indice",trivial-example
+"software-dev",3,"dev_db_design","Relationship","Relazione",trivial-example
+"software-dev",3,"dev_db_design","Entity-Relationship Diagram (ERD)","Diagramma Entità-Relazione",trivial-example
+"software-dev",3,"dev_db_design","Data Integrity","Integrità dei Dati",trivial-example
+"software-dev",3,"dev_db_nosql","Document","Documento",near-identical-translation
+"software-dev",3,"dev_db_nosql","Scalability (Horizontal)","Scalabilità Orizzontale",trivial-example
+"software-dev",3,"dev_db_ops","Migration","Migrazione",near-identical-translation
+"software-dev",3,"dev_db_ops","Migration","Migrazione",trivial-example
+"software-dev",3,"dev_db_ops","Replication","Replicazione",near-identical-translation
+"software-dev",4,"dev_arch_basics","Peer-to-Peer (P2P)","Paritetica (peer-to-peer)",trivial-example
+"software-dev",4,"dev_arch_basics","Component","Componente",near-identical-translation
+"software-dev",4,"dev_arch_basics","Module","Modulo",near-identical-translation
+"software-dev",4,"dev_arch_basics","Module","Modulo",trivial-example
+"software-dev",4,"dev_arch_patterns","Micro-Frontend","Frontend modulare (micro-frontend)",tautological-example
+"software-dev",4,"dev_arch_api","API Gateway","API Gateway / Punto d'Ingresso",fake-translation
+"software-dev",4,"dev_arch_api","Reverse Proxy","Proxy Inverso",trivial-example
+"software-dev",4,"dev_arch_api","Stateless","Senza Stato / Stateless",trivial-example
+"software-dev",4,"dev_arch_ddd","Domain-Driven Design (DDD)","Progettazione Guidata dal Dominio (DDD)",trivial-example
+"software-dev",4,"dev_arch_ddd","Entity","Entità",near-identical-translation
+"software-dev",4,"dev_arch_ddd","Aggregate","Aggregato",near-identical-translation
+"software-dev",5,"dev_test_unit","Unit Test","Test Unitario",trivial-example
+"software-dev",5,"dev_test_unit","Test Suite","Suite di Test",trivial-example
+"software-dev",5,"dev_test_unit","Fixture","Predisposizione (fixture)",trivial-example
+"software-dev",5,"dev_test_unit","Code Coverage","Copertura del Codice",trivial-example
+"software-dev",5,"dev_test_unit","False Positive","Falso Positivo",near-identical-translation
+"software-dev",5,"dev_test_unit","Refactoring","Rifattorizzazione / Refactoring",trivial-example
+"software-dev",5,"dev_test_integration","Smoke Test","Test di Verifica Rapida / Smoke Test",trivial-example
+"software-dev",5,"dev_test_techniques","Stub","Sostituto (stub)",trivial-example
+"software-dev",6,"dev_devops_deploy","Deployment","Distribuzione / Deploy",trivial-example
+"software-dev",6,"dev_devops_deploy","Environment Drift","Deriva dell'Ambiente",trivial-example
+"software-dev",6,"dev_devops_infra","Container","Contenitore / Container",trivial-example
+"software-dev",6,"dev_devops_infra","Orchestration","Orchestrazione",near-identical-translation
+"software-dev",6,"dev_devops_infra","Virtual Machine (VM)","Macchina Virtuale",trivial-example
+"software-dev",6,"dev_devops_monitor","Observability","Osservabilità",near-identical-translation
+"software-dev",6,"dev_devops_monitor","SLO (Service Level Objective)","Obiettivo Livello Servizio",trivial-example
+"software-dev",7,"dev_sec_vulns","Vulnerability","Vulnerabilità",near-identical-translation
+"software-dev",7,"dev_sec_vulns","Vulnerability","Vulnerabilità",trivial-example
+"software-dev",7,"dev_sec_vulns","CVSS (Common Vulnerability Scoring System)","Punteggio vulnerabilità (CVSS)",trivial-example
+"software-dev",7,"dev_sec_auth","ABAC (Attribute-Based Access Control)","Controllo Accessi Basato su Attributi",trivial-example
+"software-dev",8,"dev_pattern_creational","Creational Pattern","Pattern Creazionale",tautological-example
+"software-dev",8,"dev_pattern_structural","Structural Pattern","Pattern Strutturale",tautological-example
+"software-dev",8,"dev_pattern_behavioral","Behavioral Pattern","Pattern Comportamentale",tautological-example
+"software-dev",9,"dev_scrum","Increment","Incremento",near-identical-translation
+"software-dev",9,"dev_kanban","WIP Limit (Work In Progress)","Limite WIP / Lavori in Corso",trivial-example
+"software-dev",9,"dev_kanban","Kanban Board","Lavagna Kanban",trivial-example
+"software-dev",10,"dev_perf_basics","Latency","Latenza",near-identical-translation
+"software-dev",10,"dev_perf_basics","Efficiency","Efficienza",near-identical-translation
+"software-dev",10,"dev_perf_scaling","Elasticity","Elasticità",near-identical-translation
+"software-dev",10,"dev_perf_scaling","Elasticity","Elasticità",trivial-example
+"software-dev",0,"dev_basics_3","log","",duplicate-across-lessons
+"software-dev",1,"dev_git_branch","log","",duplicate-across-lessons
+"software-dev",1,"dev_git_branch","tag","",duplicate-across-lessons
+"software-dev",2,"dev_web_front","tag","",duplicate-across-lessons
+"software-dev",1,"dev_git_collab","milestone","",duplicate-across-lessons
+"software-dev",9,"dev_pm","milestone","",duplicate-across-lessons
+"software-dev",2,"dev_web_back","microservices","",duplicate-across-lessons
+"software-dev",4,"dev_arch_basics","microservices","",duplicate-across-lessons
+"software-dev",4,"dev_arch_ddd","repository pattern","",duplicate-across-lessons
+"software-dev",8,"dev_pattern_other","repository pattern","",duplicate-across-lessons
+"software-dev",9,"dev_kanban","bottleneck","",duplicate-across-lessons
+"software-dev",10,"dev_perf_optimize","bottleneck","",duplicate-across-lessons

@@ -28,18 +28,18 @@ export default {
               pronunciation: '/ˈvɜːrʒən kənˈtroʊl/',
               phonetic: 'VER-scion kon-TROL',
               example:
-                'Version control tracks changes over time. = Il controllo di versione traccia le modifiche nel tempo.',
+                "Before deploying, our team relies on version control to review every change since the last release. = Prima di fare il deploy, il nostro team usa il controllo di versione per verificare ogni modifica dall'ultima release.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Spesso abbreviato VCS (Version Control System).',
             },
             {
               english: 'Repository',
-              italian: 'repository / archivio del codice',
+              italian: 'archivio del codice (repository)',
               pronunciation: '/rɪˈpɒzɪtɔːri/',
               phonetic: 'ri-PO-zi-tori',
               example:
-                'A Git repository stores your project history. = Una repository Git memorizza la storia del progetto.',
+                "After cloning the repository, you get the full project history on your local machine. = Dopo aver clonato il repository, ottieni l'intera storia del progetto sulla tua macchina locale.",
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git init',
@@ -47,11 +47,11 @@ export default {
             },
             {
               english: 'Commit',
-              italian: 'Commit / Salvataggio',
+              italian: 'salvataggio delle modifiche (commit)',
               pronunciation: '/kəˈmɪt/',
               phonetic: 'KO-mit',
               example:
-                'A commit is a snapshot of your project. = Un commit è uno snapshot del progetto.',
+                'Each time you finish a logical change, save it as a commit so you can revert if needed. = Ogni volta che finisci una modifica logica, salvala come commit per poter tornare indietro se serve.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit -m "Add feature"',
@@ -63,7 +63,7 @@ export default {
               pronunciation: '/ˈwɜːrkɪŋ triː/',
               phonetic: 'UER-king TRII',
               example:
-                "The working tree shows the current files on disk. = L'albero di lavoro mostra i file correnti sul disco.",
+                "When you edit a file, the change appears in the working tree before you stage it. = Quando modifichi un file, la modifica appare nell'albero di lavoro prima che tu la metta in staging.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Detto anche "working directory". Sono i file che vedi e modifichi.',
@@ -74,7 +74,7 @@ export default {
               pronunciation: '/ˈsteɪdʒɪŋ ˈeəriə/',
               phonetic: 'STEI-ging E-ria',
               example:
-                "The staging area holds changes ready to commit. = L'area di staging contiene le modifiche pronte per il commit.",
+                "Only changes moved to the staging area will be included in your next commit. = Solo le modifiche spostate nell'area di staging saranno incluse nel prossimo commit.",
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git add file.txt',
@@ -86,17 +86,18 @@ export default {
               pronunciation: '/ˈɪndeks/',
               phonetic: 'IN-deks',
               example:
-                "The index is another name for the staging area. = L'indice è un altro nome per l'area di staging.",
+                "Internally, Git stores the next commit preview in a binary file called the index. = Internamente, Git salva l'anteprima del prossimo commit in un file binario chiamato indice.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'File binario in .git/index che contiene lo stato dello stage.',
             },
             {
               english: 'HEAD',
-              italian: 'HEAD / Puntatore corrente',
+              italian: 'puntatore corrente (HEAD)',
               pronunciation: '/hed/',
               phonetic: 'HED',
-              example: 'HEAD points to the current commit. = HEAD punta al commit corrente.',
+              example:
+                'When you switch branches, HEAD moves to point to the tip of the new branch. = Quando cambi ramo, HEAD si sposta per puntare alla cima del nuovo ramo.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git log HEAD',
@@ -108,7 +109,7 @@ export default {
               pronunciation: '/dɒt ɡɪt ɪɡˈnɔːr/',
               phonetic: 'DOT GIT ig-NOR',
               example:
-                'Add node_modules to .gitignore to skip them. = Aggiungi node_modules a .gitignore per ignorarli.',
+                'To avoid bloating the repo, add build artifacts and dependencies to .gitignore before your first commit. = Per evitare di gonfiare il repo, aggiungi artefatti di build e dipendenze a .gitignore prima del primo commit.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'node_modules/\n*.log\n.env',
@@ -116,11 +117,11 @@ export default {
             },
             {
               english: 'Snapshot',
-              italian: 'Istantanea / Snapshot',
+              italian: 'istantanea (snapshot)',
               pronunciation: '/ˈsnæpʃɒt/',
               phonetic: 'SNAP-sciot',
               example:
-                "Each commit is a snapshot of all tracked files. = Ogni commit è un'istantanea di tutti i file tracciati.",
+                "Unlike diff-based systems, Git saves a full snapshot of every tracked file at each commit. = A differenza dei sistemi basati su diff, Git salva un'istantanea completa di ogni file tracciato a ogni commit.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'A differenza di altri VCS, Git memorizza snapshot, non solo diff.',
@@ -130,7 +131,8 @@ export default {
               italian: 'File tracciato',
               pronunciation: '/trækt faɪl/',
               phonetic: 'TRAKT FAIL',
-              example: 'A tracked file is known to Git. = Un file tracciato è conosciuto da Git.',
+              example:
+                'Once you run git add on a new file, it becomes a tracked file that Git monitors for changes. = Una volta eseguito git add su un nuovo file, diventa un file tracciato che Git monitora per le modifiche.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git ls-files',
@@ -149,7 +151,7 @@ export default {
               pronunciation: '/ˈmɒdɪfaɪd/',
               phonetic: 'MO-di-faid',
               example:
-                'A modified file has changes not yet staged. = Un file modificato ha cambiamenti non ancora staged.',
+                'If git status shows a file as modified, you still need to stage it before committing. = Se git status mostra un file come modificato, devi ancora metterlo in staging prima di committare.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git status',
@@ -161,18 +163,18 @@ export default {
               pronunciation: '/steɪdʒd/',
               phonetic: 'STEIGD',
               example:
-                'Staged changes will be in the next commit. = Le modifiche in staging finiranno nel prossimo commit.',
+                'Only staged changes get recorded when you run git commit; unstaged edits remain in the working tree. = Solo le modifiche in staging vengono registrate quando esegui git commit; le modifiche non staged restano nel working tree.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git add file.txt',
             },
             {
               english: 'Committed',
-              italian: 'Committed / Salvato',
+              italian: 'salvato nel repository (committed)',
               pronunciation: '/kəˈmɪtɪd/',
               phonetic: 'ko-MI-tid',
               example:
-                'Committed data is safely stored in the repo. = I dati committed sono salvati nel repo.',
+                'Once your work is committed, it is safely stored in the Git database and can be recovered even after mistakes. = Una volta che il lavoro e salvato nel repository, e al sicuro nel database Git e puo essere recuperato anche dopo errori.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Stato finale: i cambiamenti sono nel database di Git.',
@@ -183,7 +185,7 @@ export default {
               pronunciation: '/ʌnˈtrækt/',
               phonetic: 'an-TRAKT',
               example:
-                'New files are untracked until you add them. = I nuovi file sono untracked finché non li aggiungi.',
+                'Creating a new file in the project directory does not automatically make it untracked by Git until you run git add. = Creare un nuovo file nella cartella del progetto non lo rende automaticamente tracciato da Git finche non esegui git add.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git status',
@@ -195,7 +197,7 @@ export default {
               pronunciation: '/ˈloʊkəl rɪˈpɒzɪtɔːri/',
               phonetic: 'LO-kol ri-PO-zi-tori',
               example:
-                'Your local repository lives on your machine. = La repository locale è sulla tua macchina.',
+                'Every developer has a full copy of the local repository, so you can commit and branch without network access. = Ogni sviluppatore ha una copia completa del repository locale, quindi puoi committare e creare rami senza accesso alla rete.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Git è distribuito: ogni clone è una repository completa.',
@@ -206,18 +208,18 @@ export default {
               pronunciation: '/dɪˈstrɪbjʊtɪd/',
               phonetic: 'di-STRI-biu-tid',
               example:
-                'Git is a distributed version control system. = Git è un sistema di controllo di versione distribuito.',
+                'Because Git is distributed, every clone contains the full project history and works offline. = Essendo Git distribuito, ogni clone contiene la storia completa del progetto e funziona offline.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Niente server centrale obbligatorio, a differenza di SVN.',
             },
             {
               english: 'Hash',
-              italian: 'hash / impronta digitale',
+              italian: 'impronta digitale (hash)',
               pronunciation: '/hæʃ/',
               phonetic: 'HASCI',
               example:
-                'Each commit has a unique SHA-1 hash. = Ogni commit ha un hash SHA-1 univoco.',
+                'You can reference any commit by its SHA-1 hash, using as few as seven characters to identify it uniquely. = Puoi fare riferimento a qualsiasi commit tramite il suo hash SHA-1, usando anche solo sette caratteri per identificarlo in modo univoco.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git log --oneline',
@@ -229,7 +231,7 @@ export default {
               pronunciation: '/ˈɒbdʒɪkt/',
               phonetic: 'OB-gekt',
               example:
-                'Git stores everything as objects in .git/objects. = Git memorizza tutto come oggetti in .git/objects.',
+                'Internally, blobs, trees, commits, and tags are all stored as objects in the .git/objects directory. = Internamente, blob, tree, commit e tag sono tutti memorizzati come oggetti nella cartella .git/objects.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Quattro tipi: blob, tree, commit, tag.',
@@ -240,7 +242,7 @@ export default {
               pronunciation: '/ˈrefərəns/',
               phonetic: 'RE-fe-rens',
               example:
-                'A reference is a pointer to a commit. = Un riferimento è un puntatore a un commit.',
+                'Branches and tags are just named references that point to specific commits in the history. = I rami e i tag sono solo riferimenti con un nome che puntano a commit specifici nella storia.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Abbreviato "ref". I rami e i tag sono ref.',
@@ -251,7 +253,7 @@ export default {
               pronunciation: '/ˈɔːθər/',
               phonetic: 'O-tor',
               example:
-                "The commit author is who wrote the changes. = L'autore del commit è chi ha scritto le modifiche.",
+                "After a rebase or cherry-pick, the original author stays in the metadata even if a different person committed it. = Dopo un rebase o cherry-pick, l'autore originale resta nei metadati anche se una persona diversa ha committato.",
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git log --author="Maria"',
@@ -269,7 +271,8 @@ export default {
               italian: 'Installare',
               pronunciation: '/ɪnˈstɔːl/',
               phonetic: 'in-STOL',
-              example: 'Install Git from git-scm.com. = Installa Git da git-scm.com.',
+              example:
+                'The first step on a new machine is to install Git from the official site or your package manager. = Il primo passo su una nuova macchina e installare Git dal sito ufficiale o dal tuo gestore pacchetti.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'sudo apt install git',
@@ -280,7 +283,7 @@ export default {
               pronunciation: '/ɪˈnɪʃəlaɪz/',
               phonetic: 'i-NI-scia-laiz',
               example:
-                'Initialize a new repository with git init. = Inizializza una nuova repo con git init.',
+                'To start tracking an existing project, initialize a new repository in its root folder. = Per iniziare a tracciare un progetto esistente, inizializza un nuovo repository nella sua cartella radice.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git init',
@@ -292,7 +295,7 @@ export default {
               pronunciation: '/ˈjuːzər neɪm/',
               phonetic: 'IU-zer NEIM',
               example:
-                'Set your user name globally for all repos. = Imposta il nome utente globale per tutti i repo.',
+                'Before making your first commit, set your user name so Git can attribute changes correctly. = Prima di fare il primo commit, imposta il tuo nome utente cosi Git puo attribuire le modifiche correttamente.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git config --global user.name "Mario Rossi"',
@@ -302,7 +305,8 @@ export default {
               italian: 'Email utente',
               pronunciation: '/ˈjuːzər ˈiːmeɪl/',
               phonetic: 'IU-zer I-meil',
-              example: 'Your email appears in every commit. = La tua email appare in ogni commit.',
+              example:
+                "Make sure to configure the correct user email, since it appears in every commit and links to your GitHub profile. = Assicurati di configurare l'email utente corretta, perche appare in ogni commit e si collega al tuo profilo GitHub.",
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git config --global user.email "you@example.com"',
@@ -314,7 +318,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt brɑːntʃ/',
               phonetic: 'di-FOLT BRANC',
               example:
-                'The default branch is now usually main. = Il ramo predefinito ora è solitamente main.',
+                'Since 2020, most platforms create the default branch as main instead of the older master name. = Dal 2020, la maggior parte delle piattaforme crea il ramo predefinito con il nome main invece del vecchio master.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git config --global init.defaultBranch main',
@@ -322,11 +326,11 @@ export default {
             },
             {
               english: 'Git Bash',
-              italian: 'Git Bash / shell Git per Windows',
+              italian: 'shell Git per Windows (Git Bash)',
               pronunciation: '/ɡɪt bæʃ/',
               phonetic: 'GIT BASCI',
               example:
-                'Git Bash gives Windows users a Unix shell. = Git Bash dà agli utenti Windows una shell Unix.',
+                'On Windows, developers often use Git Bash to get a Unix-like terminal with all standard Git commands. = Su Windows, gli sviluppatori usano spesso Git Bash per avere un terminale simile a Unix con tutti i comandi Git standard.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'Git Bash',
@@ -338,7 +342,7 @@ export default {
               pronunciation: '/tʃiːt ʃiːt/',
               phonetic: 'CIIT SCIIT',
               example:
-                'A Git cheat sheet helps you remember commands. = Un cheat sheet Git aiuta a ricordare i comandi.',
+                'Keep a cheat sheet handy when learning Git so you can quickly look up less common commands. = Tieni un cheat sheet a portata di mano mentre impari Git per cercare velocemente i comandi meno comuni.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'GitHub e Atlassian pubblicano cheat sheet ufficiali.',
@@ -349,7 +353,7 @@ export default {
               pronunciation: '/ˈmænjʊəl peɪdʒ/',
               phonetic: 'MA-niu-al PEIG',
               example:
-                'Read the manual page for any Git command. = Leggi la pagina di manuale di qualsiasi comando Git.',
+                'When unsure about a flag, open the manual page with git help to see every option explained in detail. = Quando non sei sicuro di un flag, apri la pagina di manuale con git help per vedere ogni opzione spiegata in dettaglio.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git help commit',
@@ -361,7 +365,7 @@ export default {
               pronunciation: '/ˈvɜːrʒən/',
               phonetic: 'VER-scion',
               example:
-                'Check your Git version with git --version. = Controlla la tua versione di Git con git --version.',
+                'Some features like git switch require Git 2.23+, so check your version before using newer commands. = Alcune funzionalita come git switch richiedono Git 2.23+, quindi controlla la versione prima di usare comandi recenti.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git --version',
@@ -372,7 +376,7 @@ export default {
               pronunciation: '/ˈhɪdn ˈfoʊldər/',
               phonetic: 'HI-den FOL-der',
               example:
-                'The .git folder is a hidden folder. = La cartella .git è una cartella nascosta.',
+                'Deleting the hidden folder .git would erase all history, so be careful with recursive file operations. = Cancellare la cartella nascosta .git cancellerebbe tutta la storia, quindi fai attenzione con le operazioni ricorsive sui file.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'ls -la',
@@ -387,21 +391,22 @@ export default {
           items: [
             {
               english: 'History',
-              italian: 'Storia / Cronologia',
+              italian: 'cronologia del progetto (history)',
               pronunciation: '/ˈhɪstəri/',
               phonetic: 'HI-sto-ri',
               example:
-                'Git keeps the full history of your project. = Git conserva la storia completa del progetto.',
+                'With the full project history stored locally, you can search through past commits to understand why a decision was made. = Con la storia completa del progetto salvata localmente, puoi cercare nei commit passati per capire perche una decisione e stata presa.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git log',
             },
             {
               english: 'Backup',
-              italian: 'backup / copia di sicurezza',
+              italian: 'copia di sicurezza (backup)',
               pronunciation: '/ˈbækʌp/',
               phonetic: 'BAK-ap',
-              example: 'A remote repo acts as a backup. = Un repo remoto fa da backup.',
+              example:
+                'Pushing to a remote repository on GitHub gives you an automatic offsite backup of your entire project history. = Pushare su un repository remoto su GitHub ti da un backup automatico fuori sede di tutta la storia del progetto.',
               context: 'foundations',
               difficulty: 'beginner',
               note: "Ogni clone è un backup completo dell'intera storia.",
@@ -412,27 +417,28 @@ export default {
               pronunciation: '/kəˌlæbəˈreɪʃən/',
               phonetic: 'ko-la-bo-REI-scion',
               example:
-                'Git enables teams to collaborate on code. = Git permette ai team di collaborare sul codice.',
+                'Through branches and pull requests, Git enables multiple developers to collaborate on the same codebase without conflicts. = Attraverso rami e pull request, Git permette a piu sviluppatori di collaborare sullo stesso codice senza conflitti.',
               context: 'foundations',
               difficulty: 'beginner',
             },
             {
               english: 'Open Source',
-              italian: 'open source / codice sorgente aperto',
+              italian: 'codice sorgente aperto (open source)',
               pronunciation: '/ˈoʊpən sɔːrs/',
               phonetic: 'O-pen SORS',
-              example: 'Git itself is open source software. = Git stesso è software open source.',
+              example:
+                'Since 2005, Git has been free and open source, maintained by a worldwide community of contributors. = Dal 2005, Git e software gratuito e open source, mantenuto da una comunita mondiale di contributori.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Creato da Linus Torvalds nel 2005 per il kernel Linux.',
             },
             {
               english: 'Linus Torvalds',
-              italian: 'Linus Torvalds (creatore di Git e Linux)',
+              italian: 'creatore di Git e Linux (Linus Torvalds)',
               pronunciation: '/ˈlaɪnəs ˈtɔːrvɔːldz/',
               phonetic: 'LAI-nus TOR-volds',
               example:
-                'Linus Torvalds created Git in ten days. = Linus Torvalds creò Git in dieci giorni.',
+                'In 2005, Linus Torvalds built the first working version of Git in just ten days to manage the Linux kernel source. = Nel 2005, Linus Torvalds costrui la prima versione funzionante di Git in soli dieci giorni per gestire il codice sorgente del kernel Linux.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Lo stesso creatore di Linux. "Git" in slang britannico = persona stupida.',
@@ -443,18 +449,18 @@ export default {
               pronunciation: '/ˈsentrəlaɪzd/',
               phonetic: 'SEN-tra-laizd',
               example:
-                'SVN is a centralized VCS, unlike Git. = SVN è un VCS centralizzato, a differenza di Git.',
+                'Unlike Git, a centralized VCS like SVN requires a constant server connection for most operations. = A differenza di Git, un VCS centralizzato come SVN richiede una connessione costante al server per la maggior parte delle operazioni.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Sistemi come CVS o SVN richiedono un server sempre connesso.',
             },
             {
               english: 'Subversion (SVN)',
-              italian: 'Subversion (SVN) / sistema di controllo versione centralizzato',
+              italian: 'sistema di controllo versione centralizzato (Subversion/SVN)',
               pronunciation: '/ˈsʌbvɜːrʒən/',
               phonetic: 'SAB-ver-scion',
               example:
-                'Many teams migrated from Subversion to Git. = Molti team sono migrati da Subversion a Git.',
+                'When our company migrated from Subversion to Git, we gained offline commits and much faster branching. = Quando la nostra azienda e migrata da Subversion a Git, abbiamo ottenuto commit offline e branching molto piu veloce.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'SVN',
@@ -462,11 +468,11 @@ export default {
             },
             {
               english: 'Mercurial',
-              italian: 'Mercurial (sistema controllo versione distribuito alternativo)',
+              italian: 'sistema di controllo versione distribuito alternativo (Mercurial)',
               pronunciation: '/mɜːrˈkjʊəriəl/',
               phonetic: 'mer-CIU-rial',
               example:
-                'Mercurial is another distributed VCS. = Mercurial è un altro VCS distribuito.',
+                "Before Git dominated, Mercurial was a popular alternative as a distributed version control system. = Prima che Git dominasse, Mercurial era un'alternativa popolare come sistema di controllo versione distribuito.",
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'Mercurial (hg)',
@@ -478,7 +484,7 @@ export default {
               pronunciation: '/ˈbrɑːntʃɪŋ ˈmɒdl/',
               phonetic: 'BRAN-cing MO-del',
               example:
-                "Git's branching model is fast and lightweight. = Il modello a rami di Git è veloce e leggero.",
+                'Creating a branch in Git takes milliseconds because the branching model only writes a 41-byte file. = Creare un ramo in Git richiede millisecondi perche il modello a rami scrive solo un file di 41 byte.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Creare un ramo in Git è quasi istantaneo.',
@@ -489,7 +495,7 @@ export default {
               pronunciation: '/spiːd/',
               phonetic: 'SPID',
               example:
-                'Git is known for its speed on large repos. = Git è famoso per la sua velocità su repo grandi.',
+                'Most operations run instantly because Git keeps everything local, delivering speed even on large repos with thousands of files. = La maggior parte delle operazioni e istantanea perche Git tiene tutto in locale, garantendo velocita anche su repo grandi con migliaia di file.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Operazioni locali, niente latenza di rete per la maggior parte dei comandi.',
@@ -516,7 +522,7 @@ export default {
               pronunciation: '/ɡɪt ɪˈnɪt/',
               phonetic: 'GIT i-NIT',
               example:
-                'Run git init in a new project folder. = Esegui git init in una nuova cartella progetto.',
+                'To start tracking a project, run git init once in the root folder to create the .git directory. = Per iniziare a tracciare un progetto, esegui git init una volta nella cartella radice per creare la directory .git.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git init',
@@ -528,7 +534,7 @@ export default {
               pronunciation: '/ɡɪt æd/',
               phonetic: 'GIT AD',
               example:
-                'Use git add to stage changes for commit. = Usa git add per mettere le modifiche in staging.',
+                'After editing your files, use git add to select which changes you want in the next commit. = Dopo aver modificato i file, usa git add per selezionare quali modifiche vuoi nel prossimo commit.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git add file.txt',
@@ -539,7 +545,7 @@ export default {
               pronunciation: '/ɡɪt æd dɒt/',
               phonetic: 'GIT AD DOT',
               example:
-                'git add . stages everything in the current directory. = git add . mette in staging tutto nella directory corrente.',
+                'Be careful with git add . because it stages everything, including files you might not want to commit. = Fai attenzione con git add . perche mette in staging tutto, inclusi file che potresti non voler committare.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git add .',
@@ -551,7 +557,7 @@ export default {
               pronunciation: '/ɡɪt æd ˈmaɪnəs eɪ/',
               phonetic: 'GIT AD MAI-nus EI',
               example:
-                'git add -A stages all changes including deletions. = git add -A mette in staging tutte le modifiche, comprese le eliminazioni.',
+                'Unlike git add ., the flag git add -A also stages file deletions and changes in parent directories. = A differenza di git add ., il flag git add -A mette in staging anche le cancellazioni e le modifiche nelle cartelle superiori.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git add -A',
@@ -562,7 +568,7 @@ export default {
               pronunciation: '/ɡɪt kəˈmɪt/',
               phonetic: 'GIT ko-MIT',
               example:
-                'git commit saves staged changes to history. = git commit salva le modifiche in staging nella storia.',
+                'Once you are satisfied with your staged changes, run git commit to permanently record them in the project history. = Una volta soddisfatto delle modifiche in staging, esegui git commit per registrarle permanentemente nella storia del progetto.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit -m "Add login form"',
@@ -573,7 +579,7 @@ export default {
               pronunciation: '/kəˈmɪt ˈmesɪdʒ/',
               phonetic: 'KO-mit MES-sig',
               example:
-                'A good commit message describes the why. = Un buon messaggio di commit descrive il perché.',
+                'Writing a clear commit message that explains the reason behind a change helps teammates during code review. = Scrivere un messaggio di commit chiaro che spiega il motivo di una modifica aiuta i compagni durante la code review.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit -m "Fix login bug"',
@@ -585,7 +591,7 @@ export default {
               pronunciation: '/maɪnəs em flæɡ/',
               phonetic: 'MAI-nus EM FLAG',
               example:
-                'Use -m to provide an inline commit message. = Usa -m per fornire un messaggio di commit inline.',
+                'For quick single-line messages, the -m flag lets you commit without opening an editor. = Per messaggi rapidi su una riga, il flag -m ti permette di committare senza aprire un editor.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit -m "msg"',
@@ -597,7 +603,7 @@ export default {
               pronunciation: '/ɡɪt kəˈmɪt eɪ em/',
               phonetic: 'GIT KO-mit EI-EM',
               example:
-                'git commit -am stages tracked files and commits. = git commit -am mette in staging i file tracciati e committa.',
+                'When you only changed existing files, the shortcut git commit -am stages and commits tracked files in one step. = Quando hai modificato solo file esistenti, la scorciatoia git commit -am mette in staging e committa i file tracciati in un passo solo.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit -am "Quick fix"',
@@ -609,7 +615,7 @@ export default {
               pronunciation: '/ˈempti kəˈmɪt/',
               phonetic: 'EM-pti KO-mit',
               example:
-                'An empty commit can trigger a CI build. = Un commit vuoto può avviare una build CI.',
+                'Sometimes teams create an empty commit with --allow-empty to manually trigger a CI pipeline without code changes. = A volte i team creano un commit vuoto con --allow-empty per avviare manualmente una pipeline CI senza modifiche al codice.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit --allow-empty -m "trigger"',
@@ -620,7 +626,7 @@ export default {
               pronunciation: '/əˈtɒmɪk kəˈmɪt/',
               phonetic: 'a-TO-mik KO-mit',
               example:
-                'An atomic commit changes one logical thing. = Un commit atomico cambia una sola cosa logica.',
+                'Best practice is to make each atomic commit self-contained so it can be reverted or cherry-picked independently. = La best practice e rendere ogni commit atomico autosufficiente cosi da poterlo revertire o cherry-pickare indipendentemente.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Best practice: piccoli commit focalizzati, facili da revertare.',
@@ -638,7 +644,7 @@ export default {
               pronunciation: '/ɡɪt ˈsteɪtəs/',
               phonetic: 'GIT STEI-tus',
               example:
-                'git status shows what is staged and modified. = git status mostra cosa è in staging e cosa modificato.',
+                'Run git status frequently to see which files are staged, modified, or untracked before committing. = Esegui git status frequentemente per vedere quali file sono in staging, modificati o non tracciati prima di committare.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git status',
@@ -650,7 +656,7 @@ export default {
               pronunciation: '/ɡɪt ˈsteɪtəs es/',
               phonetic: 'GIT STEI-tus ES',
               example:
-                'git status -s gives a short summary. = git status -s dà un riepilogo breve.',
+                'For a compact overview, use git status -s where M means modified, A means added, and ?? means untracked. = Per una panoramica compatta, usa git status -s dove M significa modificato, A aggiunto e ?? non tracciato.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git status -s',
@@ -662,7 +668,7 @@ export default {
               pronunciation: '/ɡɪt lɒɡ/',
               phonetic: 'GIT LOG',
               example:
-                'git log shows the commit history. = git log mostra la cronologia dei commit.',
+                'To understand how a project evolved, check git log for the full chronological list of commits. = Per capire come un progetto si e evoluto, controlla git log per la lista cronologica completa dei commit.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git log',
@@ -674,7 +680,7 @@ export default {
               pronunciation: '/ɡɪt lɒɡ ˌwʌnˈlaɪn/',
               phonetic: 'GIT LOG UAN-LAIN',
               example:
-                'git log --oneline shows commits one per line. = git log --oneline mostra i commit uno per riga.',
+                'For a quick scan of recent changes, git log --oneline displays each commit on a single line with its short hash. = Per una scansione veloce delle modifiche recenti, git log --oneline mostra ogni commit su una sola riga con il suo hash abbreviato.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git log --oneline',
@@ -685,7 +691,7 @@ export default {
               pronunciation: '/ɡɪt lɒɡ ɡrɑːf/',
               phonetic: 'GIT LOG GRAF',
               example:
-                'git log --graph draws an ASCII branch tree. = git log --graph disegna un albero ASCII dei rami.',
+                'Combine --graph with --oneline --all to see the visual topology of all branches in git log. = Combina --graph con --oneline --all per vedere la topologia visuale di tutti i rami in git log.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git log --oneline --graph --all',
@@ -697,7 +703,7 @@ export default {
               pronunciation: '/ɡɪt dɪf/',
               phonetic: 'GIT DIF',
               example:
-                'git diff shows unstaged changes. = git diff mostra le modifiche non in staging.',
+                'Before staging, run git diff to review exactly what lines you changed in your working tree. = Prima di mettere in staging, esegui git diff per verificare esattamente quali righe hai modificato nel working tree.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git diff',
@@ -708,7 +714,7 @@ export default {
               pronunciation: '/ɡɪt dɪf steɪdʒd/',
               phonetic: 'GIT DIF STEIGD',
               example:
-                'git diff --staged shows what will be committed. = git diff --staged mostra cosa sarà committato.',
+                'Always review git diff --staged before committing to make sure only intended changes are included. = Rivedi sempre git diff --staged prima di committare per assicurarti che solo le modifiche previste siano incluse.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git diff --staged',
@@ -720,7 +726,7 @@ export default {
               pronunciation: '/ɡɪt ʃoʊ/',
               phonetic: 'GIT SCIO',
               example:
-                "git show displays a commit's diff and message. = git show visualizza il diff e il messaggio di un commit.",
+                'To inspect what a specific commit changed, run git show with its hash to see both the message and diff. = Per ispezionare cosa ha cambiato un commit specifico, esegui git show con il suo hash per vedere sia il messaggio che il diff.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git show HEAD',
@@ -731,18 +737,18 @@ export default {
               pronunciation: '/hʌŋk/',
               phonetic: 'HANK',
               example:
-                'A diff is divided into hunks of changes. = Un diff è diviso in blocchi (hunk) di modifiche.',
+                'Each section delimited by @@ in a diff is called a hunk, representing a contiguous block of changed lines. = Ogni sezione delimitata da @@ in un diff e chiamata hunk, e rappresenta un blocco contiguo di righe modificate.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Nelle diff, ogni @@ ... @@ delimita un hunk.',
             },
             {
               english: 'Patch',
-              italian: 'patch / correzione del codice',
+              italian: 'correzione del codice (patch)',
               pronunciation: '/pætʃ/',
               phonetic: 'PACI',
               example:
-                'A patch file contains a diff to apply. = Un file patch contiene un diff da applicare.',
+                'Contributors without push access can email a patch file that maintainers apply with git am. = I contributori senza accesso push possono inviare via email un file patch che i maintainer applicano con git am.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git format-patch HEAD~3',
@@ -761,7 +767,7 @@ export default {
               pronunciation: '/ɡɪt ɑːr em/',
               phonetic: 'GIT AR EM',
               example:
-                'git rm removes a file and stages the deletion. = git rm rimuove un file e mette in staging la cancellazione.',
+                'To properly delete a file from the repository, use git rm which removes it from disk and stages the deletion in one step. = Per cancellare correttamente un file dal repository, usa git rm che lo rimuove dal disco e mette in staging la cancellazione in un solo passo.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git rm old.txt',
@@ -772,7 +778,7 @@ export default {
               pronunciation: '/ɡɪt ɑːr em kæʃt/',
               phonetic: 'GIT AR EM KASCT',
               example:
-                'git rm --cached untracks a file but keeps it on disk. = git rm --cached rende un file non tracciato senza eliminarlo.',
+                'If you accidentally committed a config file, use git rm --cached to untrack it while keeping it on disk. = Se hai committato per sbaglio un file di configurazione, usa git rm --cached per rimuoverlo dal tracciamento mantenendolo su disco.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git rm --cached secret.env',
@@ -784,7 +790,7 @@ export default {
               pronunciation: '/ɡɪt em viː/',
               phonetic: 'GIT EM VI',
               example:
-                'git mv renames a file inside the repo. = git mv rinomina un file dentro il repo.',
+                "Use git mv to rename a file so Git records the rename in one clean step instead of a delete-plus-add. = Usa git mv per rinominare un file cosi Git registra il rename in un unico passo pulito invece di una cancellazione e un'aggiunta.",
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git mv old.txt new.txt',
@@ -796,7 +802,7 @@ export default {
               pronunciation: '/riːˈneɪm/',
               phonetic: 'ri-NEIM',
               example:
-                'Git detects renames automatically in diffs. = Git rileva i rename automaticamente nei diff.',
+                'Even if you use the OS rename command, Git detects renames automatically by comparing file content similarity. = Anche se usi il comando rename del sistema operativo, Git rileva i rename automaticamente confrontando la similarita del contenuto.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git log --follow file.txt',
@@ -808,7 +814,7 @@ export default {
               pronunciation: '/dɪˈliːt/',
               phonetic: 'di-LIT',
               example:
-                'Deleting a file shows up as a deletion in git status. = Eliminare un file appare come deletion in git status.',
+                'If you delete a file with rm, git status will show it as deleted but you still need to stage the deletion. = Se cancelli un file con rm, git status lo mostrera come eliminato ma dovrai comunque mettere in staging la cancellazione.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'rm file.txt && git add file.txt',
@@ -819,7 +825,7 @@ export default {
               pronunciation: '/rɪˈstɔːr faɪl/',
               phonetic: 'ri-STOR FAIL',
               example:
-                'git restore reverts a file to its committed state. = git restore riporta un file allo stato committato.',
+                "If your experiment went wrong, git restore discards working tree changes and reverts the file to its last committed state. = Se il tuo esperimento e andato male, git restore scarta le modifiche nel working tree e riporta il file all'ultimo stato committato.",
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git restore file.txt',
@@ -831,7 +837,7 @@ export default {
               pronunciation: '/dɪsˈkɑːrd ˈtʃeɪndʒɪz/',
               phonetic: 'di-SKARD CIEIN-gis',
               example:
-                'Discard changes you no longer want. = Scarta le modifiche che non ti servono più.',
+                'When an approach fails, you can discard changes in the working tree and start fresh without losing committed work. = Quando un approccio fallisce, puoi scartare le modifiche nel working tree e ricominciare senza perdere il lavoro committato.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git restore .',
@@ -839,11 +845,11 @@ export default {
             },
             {
               english: 'Pattern',
-              italian: 'pattern / schema',
+              italian: 'schema di corrispondenza (pattern)',
               pronunciation: '/ˈpætərn/',
               phonetic: 'PA-tern',
               example:
-                'You can match files with a pattern. = Puoi selezionare file con un pattern.',
+                'Using a glob pattern like *.js lets you add all JavaScript files to staging with a single command. = Usare un pattern glob come *.js permette di aggiungere tutti i file JavaScript allo staging con un solo comando.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git add "*.js"',
@@ -851,11 +857,11 @@ export default {
             },
             {
               english: 'Glob',
-              italian: 'glob / espressione di matching file',
+              italian: 'espressione di matching file (glob)',
               pronunciation: '/ɡlɒb/',
               phonetic: 'GLOB',
               example:
-                'Glob patterns use * and ? wildcards. = I pattern glob usano i caratteri jolly * e ?.',
+                'In .gitignore, glob patterns with * and ? wildcards let you exclude entire categories of files at once. = In .gitignore, i pattern glob con i caratteri jolly * e ? permettono di escludere intere categorie di file in una volta.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '*.log\nbuild/\n!important.log',
@@ -866,7 +872,7 @@ export default {
               pronunciation: '/ˈwaɪldkɑːrd/',
               phonetic: 'UAILD-kard',
               example:
-                "The asterisk is a wildcard for any string. = L'asterisco è un carattere jolly per qualsiasi stringa.",
+                'In .gitignore, the asterisk wildcard matches any sequence of characters, so *.log excludes all log files. = In .gitignore, il carattere jolly asterisco matcha qualsiasi sequenza di caratteri, quindi *.log esclude tutti i file di log.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -883,7 +889,7 @@ export default {
               pronunciation: '/ɡɪt help/',
               phonetic: 'GIT HELP',
               example:
-                'git help opens documentation for any command. = git help apre la documentazione di qualsiasi comando.',
+                'Unsure about git rebase flags? The built-in git help command opens the full manual for any subcommand. = Non sei sicuro dei flag di git rebase? Il comando integrato git help apre il manuale completo di qualsiasi sottocomando.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git help status',
@@ -894,7 +900,7 @@ export default {
               pronunciation: '/ˌdɒkjʊmenˈteɪʃən/',
               phonetic: 'do-kiu-men-TEI-scion',
               example:
-                "The Pro Git book is excellent documentation. = Il libro Pro Git è un'ottima documentazione.",
+                'For deep learning, the Pro Git book at git-scm.com is the most comprehensive free documentation available. = Per un apprendimento approfondito, il libro Pro Git su git-scm.com e la documentazione gratuita piu completa disponibile.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Disponibile gratuitamente su git-scm.com/book.',
@@ -905,7 +911,7 @@ export default {
               pronunciation: '/kwɪk stɑːrt/',
               phonetic: 'KUIK START',
               example:
-                'A quick start guide gets you committing fast. = Una guida quick start ti fa committare velocemente.',
+                'Most project READMEs include a quick start section so new developers can start committing within minutes. = La maggior parte dei README dei progetti include una sezione di avvio rapido cosi i nuovi sviluppatori possono iniziare a committare in pochi minuti.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'git init\ngit add .\ngit commit -m "first"',
@@ -916,18 +922,18 @@ export default {
               pronunciation: '/fɜːrst kəˈmɪt/',
               phonetic: 'FERST KO-mit',
               example:
-                'Your first commit usually adds README and gitignore. = Il primo commit di solito aggiunge README e gitignore.',
+                'A well-structured first commit typically adds README.md, .gitignore, and LICENSE to set up the project foundation. = Un primo commit ben strutturato tipicamente aggiunge README.md, .gitignore e LICENSE per impostare le fondamenta del progetto.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit -m "Initial commit"',
             },
             {
               english: 'README',
-              italian: 'README / file di descrizione del progetto',
+              italian: 'file di descrizione del progetto (README)',
               pronunciation: '/ˌriːdˈmiː/',
               phonetic: 'RID-mi',
               example:
-                'A README explains how to use your project. = Un README spiega come usare il tuo progetto.',
+                'GitHub displays the README file on the repository homepage, making it the first thing visitors see about your project. = GitHub visualizza il file README sulla homepage del repository, rendendolo la prima cosa che i visitatori vedono del tuo progetto.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '# My Project\nDescription here.',
@@ -939,7 +945,7 @@ export default {
               pronunciation: '/ˈlaɪsəns faɪl/',
               phonetic: 'LAI-sens FAIL',
               example:
-                "A LICENSE file declares your project's license. = Un file LICENSE dichiara la licenza del progetto.",
+                "Without a LICENSE file, your code is technically all-rights-reserved, so always declare your project's license explicitly. = Senza un file LICENSE, il tuo codice e tecnicamente tutti-i-diritti-riservati, quindi dichiara sempre esplicitamente la licenza del progetto.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Comuni: MIT, Apache 2.0, GPL.',
@@ -950,7 +956,7 @@ export default {
               pronunciation: '/ɪˈnɪʃəl kəˈmɪt/',
               phonetic: 'i-NI-scial KO-mit',
               example:
-                'Use "Initial commit" as your first message. = Usa "Initial commit" come primo messaggio.',
+                'By convention, many projects use "Initial commit" as their first commit message when setting up the repository. = Per convenzione, molti progetti usano "Initial commit" come messaggio del primo commit quando configurano il repository.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'git commit -m "Initial commit"',
@@ -961,7 +967,7 @@ export default {
               pronunciation: '/ˈwɜːrkfloʊ/',
               phonetic: 'UERK-flo',
               example:
-                'A simple workflow is edit → add → commit. = Un workflow semplice è modifica → add → commit.',
+                'The basic daily workflow in Git is edit files, add them to staging, then commit with a meaningful message. = Il workflow quotidiano di base in Git e modificare i file, aggiungerli allo staging, poi committare con un messaggio significativo.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -971,7 +977,7 @@ export default {
               pronunciation: '/ˈsiːkwəns/',
               phonetic: 'SI-kuens',
               example:
-                'Follow the sequence: stage, commit, push. = Segui la sequenza: stage, commit, push.',
+                'To share your work with the team, follow the standard sequence: stage your changes, commit locally, then push to the remote. = Per condividere il lavoro con il team, segui la sequenza standard: metti in staging le modifiche, committa localmente, poi pusha sul remoto.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -981,7 +987,7 @@ export default {
               pronunciation: '/ˈloʊkəl ˈwɜːrkfloʊ/',
               phonetic: 'LO-kol UERK-flo',
               example:
-                'You can use Git locally without any remote. = Puoi usare Git in locale senza alcun remoto.',
+                'Even without internet or a GitHub account, you can use Git locally to track changes, branch, and manage your project history. = Anche senza internet o un account GitHub, puoi usare Git in locale per tracciare modifiche, creare rami e gestire la storia del progetto.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Tutto funziona offline. Push/pull arrivano solo con i remoti.',
@@ -1004,11 +1010,11 @@ export default {
           items: [
             {
               english: 'Branch',
-              italian: 'Ramo / Branch',
+              italian: 'ramo (branch)',
               pronunciation: '/brɑːntʃ/',
               phonetic: 'BRANC',
               example:
-                'A branch is a movable pointer to a commit. = Un branch è un puntatore mobile a un commit.',
+                'In a typical development workflow, a branch is a movable pointer to a commit helping the team stay organized. = In un tipico flusso di sviluppo, un branch è un puntatore mobile a un commit aiutando il team a restare organizzato.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch',
@@ -1020,7 +1026,7 @@ export default {
               pronunciation: '/ɡɪt brɑːntʃ/',
               phonetic: 'GIT BRANC',
               example:
-                'git branch lists all local branches. = git branch elenca tutti i rami locali.',
+                'During feature development, to see all local branches, run git branch allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, git branch elenca tutti i rami locali permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch',
@@ -1031,7 +1037,7 @@ export default {
               pronunciation: '/kriˈeɪt brɑːntʃ/',
               phonetic: 'kri-EIT BRANC',
               example:
-                'Create a new branch with git branch <name>. = Crea un nuovo ramo con git branch <nome>.',
+                'To keep the codebase stable while developing, create a new branch with git branch <name> which isolates experimental changes from production code. = Per mantenere stabile il codice durante lo sviluppo, crea un nuovo ramo con git branch <nome> il che isola le modifiche sperimentali dal codice di produzione.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch feature-x',
@@ -1042,7 +1048,7 @@ export default {
               pronunciation: '/ɡɪt ˈtʃekaʊt/',
               phonetic: 'GIT CIEK-aut',
               example:
-                'git checkout switches to another branch. = git checkout passa a un altro ramo.',
+                'During feature development, git checkout switches to another branch allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, git checkout passa a un altro ramo permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git checkout main',
@@ -1054,7 +1060,7 @@ export default {
               pronunciation: '/ɡɪt swɪtʃ/',
               phonetic: 'GIT SUICI',
               example:
-                'git switch is the modern way to change branch. = git switch è il modo moderno di cambiare ramo.',
+                'In Git, git switch is the modern way to change branch. = git switch è il modo moderno di cambiare ramo.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git switch main',
@@ -1066,7 +1072,7 @@ export default {
               pronunciation: '/ɡɪt ˈtʃekaʊt biː/',
               phonetic: 'GIT CIEK-aut BI',
               example:
-                'git checkout -b creates and switches to a new branch. = git checkout -b crea e passa a un nuovo ramo.',
+                'Use git checkout -b to create and switches to a new branch. = git checkout -b crea e passa a un nuovo ramo.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git checkout -b feature-x',
@@ -1077,7 +1083,7 @@ export default {
               pronunciation: '/ɡɪt swɪtʃ siː/',
               phonetic: 'GIT SUICI SI',
               example:
-                'git switch -c creates a new branch and switches. = git switch -c crea un nuovo ramo e ci passa.',
+                'Use git switch -c to create new branch and switches. = git switch -c crea un nuovo ramo e ci passa.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git switch -c feature-x',
@@ -1088,7 +1094,7 @@ export default {
               pronunciation: '/brɑːntʃ neɪm/',
               phonetic: 'BRANC NEIM',
               example:
-                'Use slash-separated branch names like feature/login. = Usa nomi tipo feature/login con barre.',
+                'When managing multiple features, use slash-separated branch names like feature/login so each developer can work independently. = Quando si gestiscono piu funzionalita, usa nomi tipo feature/login con barre cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'beginner',
               note: 'Convenzioni comuni: feature/, fix/, hotfix/, release/.',
@@ -1099,7 +1105,7 @@ export default {
               pronunciation: '/meɪn/',
               phonetic: 'MEIN',
               example:
-                'main is the default branch on GitHub. = main è il ramo predefinito su GitHub.',
+                'When managing multiple features, main is the default branch on GitHub so each developer can work independently. = Quando si gestiscono piu funzionalita, main è il ramo predefinito su GitHub cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git switch main',
@@ -1111,7 +1117,7 @@ export default {
               pronunciation: '/ˈmæstər/',
               phonetic: 'MA-ster',
               example:
-                'Old repos still use master as the default branch. = I vecchi repo usano ancora master come ramo predefinito.',
+                'To keep the codebase stable while developing, old repos still use master as the default branch which isolates experimental changes from production code. = Per mantenere stabile il codice durante lo sviluppo, i vecchi repo usano ancora master come ramo predefinito il che isola le modifiche sperimentali dal codice di produzione.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git switch master',
@@ -1130,7 +1136,7 @@ export default {
               pronunciation: '/hed ˈpɔɪntər/',
               phonetic: 'HED POIN-ter',
               example:
-                'HEAD points to the tip of the current branch. = HEAD punta alla cima del ramo corrente.',
+                'In a multi-developer environment, HEAD points to the tip of the current branch ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, HEAD punta alla cima del ramo corrente assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'cat .git/HEAD',
@@ -1141,7 +1147,7 @@ export default {
               pronunciation: '/dɪˈtætʃt hed/',
               phonetic: 'di-TACT HED',
               example:
-                'Checking out a commit puts you in detached HEAD. = Fare checkout di un commit ti porta in detached HEAD.',
+                'To keep the codebase stable while developing, checking out a commit puts you in detached HEAD which isolates experimental changes from production code. = Per mantenere stabile il codice durante lo sviluppo, fare checkout di un commit ti porta in detached HEAD il che isola le modifiche sperimentali dal codice di produzione.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git switch -c rescue',
@@ -1153,7 +1159,7 @@ export default {
               pronunciation: '/tɪp əv brɑːntʃ/',
               phonetic: 'TIP ov BRANC',
               example:
-                'The tip of the branch is its latest commit. = La cima del ramo è il suo ultimo commit.',
+                'To keep the codebase stable while developing, the tip of the branch is its latest commit which isolates experimental changes from production code. = Per mantenere stabile il codice durante lo sviluppo, la cima del ramo è il suo ultimo commit il che isola le modifiche sperimentali dal codice di produzione.',
               context: 'branching',
               difficulty: 'beginner',
               note: 'Detto anche "branch head" (con la b minuscola).',
@@ -1164,7 +1170,7 @@ export default {
               pronunciation: '/ˈpeərənt kəˈmɪt/',
               phonetic: 'PE-rent KO-mit',
               example:
-                'Most commits have a single parent commit. = La maggior parte dei commit ha un solo commit genitore.',
+                'In a multi-developer environment, most commits have a single parent commit ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, la maggior parte dei commit ha un solo commit genitore assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git log --parents',
@@ -1176,17 +1182,18 @@ export default {
               pronunciation: '/ˈænsestər/',
               phonetic: 'AN-se-ster',
               example:
-                "Find the common ancestor of two branches. = Trova l'antenato comune di due rami.",
+                "When managing multiple features, find the common ancestor of two branches so each developer can work independently. = Quando si gestiscono piu funzionalita, trova l'antenato comune di due rami cosi ogni sviluppatore puo lavorare indipendentemente.",
               context: 'branching',
               difficulty: 'beginner',
               command: 'git merge-base main feature',
             },
             {
               english: 'Tilde (~)',
-              italian: 'tilde (~) / antenato relativo del commit',
+              italian: 'antenato relativo del commit (tilde ~)',
               pronunciation: '/ˈtɪldə/',
               phonetic: 'TIL-de',
-              example: 'HEAD~1 means the parent of HEAD. = HEAD~1 indica il genitore di HEAD.',
+              example:
+                'In a multi-developer environment, HEAD~1 means the parent of HEAD ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, HEAD~1 indica il genitore di HEAD assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git show HEAD~3',
@@ -1194,11 +1201,11 @@ export default {
             },
             {
               english: 'Caret (^)',
-              italian: 'caret (^) / genitore del commit',
+              italian: 'genitore del commit (caret ^)',
               pronunciation: '/ˈkærət/',
               phonetic: 'KA-ret',
               example:
-                'HEAD^2 means the second parent of a merge. = HEAD^2 indica il secondo genitore di un merge.',
+                'To keep the codebase stable while developing, HEAD^2 means the second parent of a merge which isolates experimental changes from production code. = Per mantenere stabile il codice durante lo sviluppo, HEAD^2 indica il secondo genitore di un merge il che isola le modifiche sperimentali dal codice di produzione.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git show HEAD^2',
@@ -1210,7 +1217,7 @@ export default {
               pronunciation: '/brɑːntʃ ˈpɔɪntər/',
               phonetic: 'BRANC POIN-ter',
               example:
-                'A branch is just a pointer to a commit. = Un ramo è solo un puntatore a un commit.',
+                'In a multi-developer environment, a branch is just a pointer to a commit ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, un ramo è solo un puntatore a un commit assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'beginner',
               code: '.git/refs/heads/main',
@@ -1221,7 +1228,7 @@ export default {
               pronunciation: '/sɪmˈbɒlɪk ˈrefərəns/',
               phonetic: 'sim-BO-lik RE-fe-rens',
               example:
-                'HEAD is a symbolic reference to a branch. = HEAD è un riferimento simbolico a un ramo.',
+                'When managing multiple features, HEAD is a symbolic reference to a branch so each developer can work independently. = Quando si gestiscono piu funzionalita, HEAD è un riferimento simbolico a un ramo cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git symbolic-ref HEAD',
@@ -1232,7 +1239,7 @@ export default {
               pronunciation: '/ˈkɜːrənt brɑːntʃ/',
               phonetic: 'CA-rent BRANC',
               example:
-                'git branch shows the current branch with an asterisk. = git branch mostra il ramo corrente con un asterisco.',
+                'When managing multiple features, git branch shows the current branch with an asterisk so each developer can work independently. = Quando si gestiscono piu funzionalita, git branch mostra il ramo corrente con un asterisco cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch --show-current',
@@ -1250,7 +1257,7 @@ export default {
               pronunciation: '/lɪst ˈbrɑːntʃɪz/',
               phonetic: 'LIST BRAN-cis',
               example:
-                'git branch -a lists all local and remote branches. = git branch -a elenca tutti i rami locali e remoti.',
+                'To keep the codebase stable while developing, git branch -a lists all local and remote branches which isolates experimental changes from production code. = Per mantenere stabile il codice durante lo sviluppo, git branch -a elenca tutti i rami locali e remoti il che isola le modifiche sperimentali dal codice di produzione.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -a',
@@ -1261,7 +1268,7 @@ export default {
               pronunciation: '/rɪˈmoʊt brɑːntʃ/',
               phonetic: 'ri-MOT BRANC',
               example:
-                'origin/main is the remote tracking branch. = origin/main è il branch di tracking remoto.',
+                'During feature development, origin/main is the remote tracking branch allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, origin/main è il branch di tracking remoto permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -r',
@@ -1272,7 +1279,7 @@ export default {
               pronunciation: '/ˈloʊkəl brɑːntʃ/',
               phonetic: 'LO-kol BRANC',
               example:
-                'A local branch lives only on your machine. = Un ramo locale esiste solo sulla tua macchina.',
+                'In a multi-developer environment, a local branch lives only on your machine ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, un ramo locale esiste solo sulla tua macchina assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch',
@@ -1283,7 +1290,7 @@ export default {
               pronunciation: '/dɪˈliːt brɑːntʃ/',
               phonetic: 'di-LIT BRANC',
               example:
-                'git branch -d removes a merged branch. = git branch -d elimina un ramo già unito.',
+                'When managing multiple features, git branch -d removes a merged branch so each developer can work independently. = Quando si gestiscono piu funzionalita, git branch -d elimina un ramo già unito cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -d feature-x',
@@ -1294,7 +1301,7 @@ export default {
               pronunciation: '/fɔːrs dɪˈliːt/',
               phonetic: 'FORS di-LIT',
               example:
-                'Use -D to force delete an unmerged branch. = Usa -D per forzare la cancellazione di un ramo non unito.',
+                'During feature development, use -D to force delete an unmerged branch allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, usa -D per forzare la cancellazione di un ramo non unito permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -D feature-x',
@@ -1306,7 +1313,7 @@ export default {
               pronunciation: '/riːˈneɪm brɑːntʃ/',
               phonetic: 'ri-NEIM BRANC',
               example:
-                'git branch -m renames the current branch. = git branch -m rinomina il ramo corrente.',
+                'During feature development, git branch -m renames the current branch allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, git branch -m rinomina il ramo corrente permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -m new-name',
@@ -1316,7 +1323,8 @@ export default {
               italian: 'Rami uniti',
               pronunciation: '/mɜːrdʒd ˈbrɑːntʃɪz/',
               phonetic: 'MERGD BRAN-cis',
-              example: 'List branches already merged into main. = Elenca i rami già uniti a main.',
+              example:
+                'During feature development, list branches already merged into main allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, elenca i rami già uniti a main permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch --merged main',
@@ -1327,7 +1335,7 @@ export default {
               pronunciation: '/ʌnˈmɜːrdʒd ˈbrɑːntʃɪz/',
               phonetic: 'an-MERGD BRAN-cis',
               example:
-                'Find unmerged branches that need attention. = Trova i rami non uniti che richiedono attenzione.',
+                'In a multi-developer environment, find unmerged branches that need attention ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, trova i rami non uniti che richiedono attenzione assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch --no-merged main',
@@ -1338,7 +1346,7 @@ export default {
               pronunciation: '/steɪl brɑːntʃ/',
               phonetic: 'STEIL BRANC',
               example:
-                'Clean up stale branches periodically. = Ripulisci i rami obsoleti periodicamente.',
+                'When managing multiple features, clean up stale branches periodically so each developer can work independently. = Quando si gestiscono piu funzionalita, ripulisci i rami obsoleti periodicamente cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'beginner',
               note: 'Spesso eliminati dopo merge della pull request.',
@@ -1349,7 +1357,7 @@ export default {
               pronunciation: '/ˈæktɪv brɑːntʃ/',
               phonetic: 'AK-tiv BRANC',
               example:
-                'Active branches are those with recent commits. = I rami attivi sono quelli con commit recenti.',
+                'During feature development, active branches are those with recent commits allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, i rami attivi sono quelli con commit recenti permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git for-each-ref --sort=-committerdate',
@@ -1367,7 +1375,7 @@ export default {
               pronunciation: '/ˈfiːtʃər brɑːntʃ/',
               phonetic: 'FI-cer BRANC',
               example:
-                'Create a feature branch for each new feature. = Crea un ramo feature per ogni nuova funzionalità.',
+                'During feature development, create a feature branch for each new feature allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, crea un ramo feature per ogni nuova funzionalità permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git switch -c feature/login',
@@ -1378,7 +1386,7 @@ export default {
               pronunciation: '/ˈtɒpɪk brɑːntʃ/',
               phonetic: 'TO-pik BRANC',
               example:
-                'A topic branch focuses on one specific change. = Un ramo tematico si concentra su un cambio specifico.',
+                'In a multi-developer environment, a topic branch focuses on one specific change ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, un ramo tematico si concentra su un cambio specifico assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'beginner',
               note: 'Sinonimo di feature branch nella documentazione Git ufficiale.',
@@ -1388,7 +1396,8 @@ export default {
               italian: 'Ramo a lunga durata',
               pronunciation: '/lɒŋ lɪvd brɑːntʃ/',
               phonetic: 'LONG LIVD BRANC',
-              example: 'main is a long-lived branch. = main è un ramo a lunga durata.',
+              example:
+                'In a multi-developer environment, main is a long-lived branch ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, main è un ramo a lunga durata assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'beginner',
               note: 'Tipicamente main, develop, release.',
@@ -1399,7 +1408,7 @@ export default {
               pronunciation: '/ʃɔːrt lɪvd brɑːntʃ/',
               phonetic: 'SCIORT LIVD BRANC',
               example:
-                'Feature branches should be short-lived. = I rami feature dovrebbero essere a breve durata.',
+                'When managing multiple features, feature branches should be short-lived so each developer can work independently. = Quando si gestiscono piu funzionalita, i rami feature dovrebbero essere a breve durata cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'beginner',
               note: 'Idealmente meno di una settimana.',
@@ -1410,7 +1419,7 @@ export default {
               pronunciation: '/daɪˈvɜːrdʒd/',
               phonetic: 'dai-VERGD',
               example:
-                'Two branches have diverged when they have different commits. = Due rami sono divergenti quando hanno commit diversi.',
+                'During feature development, two branches have diverged when they have different commits allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, due rami sono divergenti quando hanno commit diversi permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git status',
@@ -1421,7 +1430,7 @@ export default {
               pronunciation: '/brɑːntʃ ɒf/',
               phonetic: 'BRANC OF',
               example:
-                'Branch off main to start a new feature. = Dirama da main per iniziare una nuova feature.',
+                'In Git, Branch Off main to start a new feature. = Dirama da main per iniziare una nuova feature.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git switch -c feature main',
@@ -1432,7 +1441,7 @@ export default {
               pronunciation: '/brɑːntʃ ˈtrækɪŋ/',
               phonetic: 'BRANC TRA-king',
               example:
-                'Branch tracking links a local and remote branch. = Il tracking lega un ramo locale a uno remoto.',
+                'In Git, Branch Tracking links a local and remote branch. = Il tracking lega un ramo locale a uno remoto.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git branch -u origin/main',
@@ -1454,7 +1463,7 @@ export default {
               pronunciation: '/brɑːntʃ prəˈtekʃən/',
               phonetic: 'BRANC pro-TEK-scion',
               example:
-                'Branch protection blocks direct pushes to main. = La protezione blocca i push diretti su main.',
+                'In a multi-developer environment, the Branch Protection setting prevents direct pushes to main ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, la protezione blocca i push diretti su main assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'beginner',
               note: "Configurato lato GitHub/GitLab. Forza l'uso di pull request.",
@@ -1465,7 +1474,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt brɑːntʃ ˈsetɪŋ/',
               phonetic: 'di-FOLT BRANC SE-ting',
               example:
-                'Set the default branch in repository settings. = Imposta il ramo predefinito nelle impostazioni del repo.',
+                'When managing multiple features, set the default branch in repository settings so each developer can work independently. = Quando si gestiscono piu funzionalita, imposta il ramo predefinito nelle impostazioni del repo cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'beginner',
               command: 'git config --global init.defaultBranch main',
@@ -1488,10 +1497,11 @@ export default {
           items: [
             {
               english: 'Merge',
-              italian: 'Unione / Merge',
+              italian: 'unione di rami (merge)',
               pronunciation: '/mɜːrdʒ/',
               phonetic: 'MERG',
-              example: 'A merge combines two branches. = Un merge combina due rami.',
+              example:
+                'During feature development, a merge combines two branches allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, un merge combina due rami permettendo il lavoro parallelo senza conflitti.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge feature',
@@ -1503,7 +1513,7 @@ export default {
               pronunciation: '/ɡɪt mɜːrdʒ/',
               phonetic: 'GIT MERG',
               example:
-                'git merge integrates another branch into current. = git merge integra un altro ramo in quello corrente.',
+                'After completing a feature branch, use git merge to integrate another branch into current so the team can review and verify the combined result. = Dopo aver completato un ramo di funzionalita, git merge integra un altro ramo in quello corrente cosi il team puo revisionare e verificare il risultato combinato.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge feature-x',
@@ -1514,7 +1524,7 @@ export default {
               pronunciation: '/fæst ˈfɔːrwərd/',
               phonetic: 'FAST FOR-uard',
               example:
-                'A fast-forward merge moves the pointer ahead. = Un fast-forward sposta il puntatore avanti.',
+                'When integrating completed work back into the main branch, a fast-forward merge moves the pointer ahead ensuring all changes are properly combined. = Quando si integra il lavoro completato nel ramo principale, un fast-forward sposta il puntatore avanti assicurando che tutte le modifiche siano combinate correttamente.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge --ff-only feature',
@@ -1526,7 +1536,7 @@ export default {
               pronunciation: '/noʊ ef ef/',
               phonetic: 'NO EF EF',
               example:
-                '--no-ff forces a merge commit even when fast-forward is possible. = --no-ff forza un commit di merge anche con fast-forward possibile.',
+                'The --no-ff flag forces merge commit even when fast-forward is possible. = --no-ff forza un commit di merge anche con fast-forward possibile.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge --no-ff feature',
@@ -1537,7 +1547,8 @@ export default {
               italian: 'Commit di merge',
               pronunciation: '/mɜːrdʒ kəˈmɪt/',
               phonetic: 'MERG KO-mit',
-              example: 'A merge commit has two parents. = Un commit di merge ha due genitori.',
+              example:
+                "During code integration, a merge commit has two parents which helps maintain a clean and consistent history. = Durante l'integrazione del codice, un commit di merge ha due genitori il che aiuta a mantenere una storia pulita e consistente.",
               context: 'merging',
               difficulty: 'beginner',
               note: 'Riconoscibile dal messaggio "Merge branch ...".',
@@ -1559,7 +1570,7 @@ export default {
               pronunciation: '/mɜːrdʒ ˈstrætədʒi/',
               phonetic: 'MERG STRA-te-gi',
               example:
-                'The default merge strategy is ort. = La strategia di merge predefinita è ort.',
+                "During code integration, the default merge strategy is ort which helps maintain a clean and consistent history. = Durante l'integrazione del codice, la strategia di merge predefinita è ort il che aiuta a mantenere una storia pulita e consistente.",
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge -s ort feature',
@@ -1571,7 +1582,7 @@ export default {
               pronunciation: '/skwɒʃ mɜːrdʒ/',
               phonetic: 'SKUOSC MERG',
               example:
-                'Squash merge combines all commits into one. = Squash merge unisce tutti i commit in uno solo.',
+                'In team workflows where branches must converge, use Squash Merge to integrate all commits into one keeping the project history meaningful. = Nei flussi di lavoro dove i rami devono convergere, squash merge unisce tutti i commit in uno solo mantenendo la storia del progetto significativa.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge --squash feature',
@@ -1583,7 +1594,7 @@ export default {
               pronunciation: '/ɡɪt mɜːrdʒ əˈbɔːrt/',
               phonetic: 'GIT MERG a-BORT',
               example:
-                'git merge --abort cancels an in-progress merge. = git merge --abort annulla un merge in corso.',
+                'After completing a feature branch, use git merge --abort to cancel an in-progress merge so the team can review and verify the combined result. = Dopo aver completato un ramo di funzionalita, git merge --abort annulla un merge in corso cosi il team puo revisionare e verificare il risultato combinato.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge --abort',
@@ -1594,7 +1605,7 @@ export default {
               pronunciation: '/ɔːlˈredi ʌp tə deɪt/',
               phonetic: 'ol-RE-di AP TU DEIT',
               example:
-                'Already up to date means nothing to merge. = Already up to date significa niente da unire.',
+                'In Git, Already Up to Date means nothing to merge. = Already up to date significa niente da unire.',
               context: 'merging',
               difficulty: 'beginner',
               note: 'Output di git merge quando non ci sono cambiamenti.',
@@ -1612,7 +1623,7 @@ export default {
               pronunciation: '/mɜːrdʒ ˈkɒnflɪkt/',
               phonetic: 'MERG KON-flikt',
               example:
-                'A merge conflict happens when changes overlap. = Un conflitto di merge accade quando le modifiche si sovrappongono.',
+                'After completing a feature branch, a merge conflict happens when changes overlap so the team can review and verify the combined result. = Dopo aver completato un ramo di funzionalita, un conflitto di merge accade quando le modifiche si sovrappongono cosi il team puo revisionare e verificare il risultato combinato.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git status',
@@ -1624,7 +1635,7 @@ export default {
               pronunciation: '/ˈkɒnflɪkt ˈmɑːrkər/',
               phonetic: 'KON-flikt MAR-ker',
               example:
-                'Conflict markers show <<<<<<< and >>>>>>>. = I marcatori di conflitto mostrano <<<<<<< e >>>>>>>.',
+                'When integrating completed work back into the main branch, conflict markers show <<<<<<< and >>>>>>> ensuring all changes are properly combined. = Quando si integra il lavoro completato nel ramo principale, i marcatori di conflitto mostrano <<<<<<< e >>>>>>> assicurando che tutte le modifiche siano combinate correttamente.',
               context: 'merging',
               difficulty: 'beginner',
               code: '<<<<<<< HEAD\nmy version\n=======\ntheir version\n>>>>>>> feature',
@@ -1635,7 +1646,7 @@ export default {
               pronunciation: '/rɪˈzɒlv ˈkɒnflɪkt/',
               phonetic: 'ri-ZOLV KON-flikt',
               example:
-                'Edit the file to resolve the conflict. = Modifica il file per risolvere il conflitto.',
+                'After completing a feature branch, edit the file to resolve the conflict so the team can review and verify the combined result. = Dopo aver completato un ramo di funzionalita, modifica il file per risolvere il conflitto cosi il team puo revisionare e verificare il risultato combinato.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git add file.txt && git commit',
@@ -1646,7 +1657,7 @@ export default {
               pronunciation: '/boʊθ ˈmɒdɪfaɪd/',
               phonetic: 'BOT MO-di-faid',
               example:
-                'Both modified means the same lines changed in both branches. = Both modified significa che le stesse righe sono cambiate in entrambi i rami.',
+                'In Git, Both Modified means the same lines changed in both branches. = Both modified significa che le stesse righe sono cambiate in entrambi i rami.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git status',
@@ -1657,7 +1668,7 @@ export default {
               pronunciation: '/ˈmɜːrdʒtuːl/',
               phonetic: 'MERG-tul',
               example:
-                'A mergetool helps resolve conflicts visually. = Un mergetool aiuta a risolvere conflitti visivamente.',
+                'When integrating completed work back into the main branch, a mergetool helps resolve conflicts visually ensuring all changes are properly combined. = Quando si integra il lavoro completato nel ramo principale, un mergetool aiuta a risolvere conflitti visivamente assicurando che tutte le modifiche siano combinate correttamente.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git mergetool',
@@ -1669,7 +1680,7 @@ export default {
               pronunciation: '/əkˈsept ˈaʊərz/',
               phonetic: 'ak-SEPT A-uerz',
               example:
-                'Accept ours keeps the current branch version. = Accept ours mantiene la versione del ramo corrente.',
+                "During code integration, use Accept Ours to keep the current branch version which helps maintain a clean and consistent history. = Durante l'integrazione del codice, accept ours mantiene la versione del ramo corrente il che aiuta a mantenere una storia pulita e consistente.",
               context: 'merging',
               difficulty: 'beginner',
               command: 'git checkout --ours file.txt',
@@ -1680,7 +1691,7 @@ export default {
               pronunciation: '/əkˈsept ðeərz/',
               phonetic: 'ak-SEPT DERZ',
               example:
-                'Accept theirs takes the incoming version. = Accept theirs prende la versione in arrivo.',
+                'In team workflows where branches must converge, Accept Theirs takes the incoming version keeping the project history meaningful. = Nei flussi di lavoro dove i rami devono convergere, accept theirs prende la versione in arrivo mantenendo la storia del progetto significativa.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git checkout --theirs file.txt',
@@ -1690,7 +1701,8 @@ export default {
               italian: 'Segna come risolto',
               pronunciation: '/mɑːrk æz rɪˈzɒlvd/',
               phonetic: 'MARK az ri-ZOLVD',
-              example: 'git add marks the file as resolved. = git add segna il file come risolto.',
+              example:
+                "During code integration, git add marks the file as resolved which helps maintain a clean and consistent history. = Durante l'integrazione del codice, git add segna il file come risolto il che aiuta a mantenere una storia pulita e consistente.",
               context: 'merging',
               difficulty: 'beginner',
               command: 'git add resolved.txt',
@@ -1701,7 +1713,7 @@ export default {
               pronunciation: '/ˈkɒnflɪkt staɪl/',
               phonetic: 'KON-flikt STAIL',
               example:
-                'Set conflict style to diff3 for more context. = Imposta lo stile di conflitto a diff3 per più contesto.',
+                'In team workflows where branches must converge, set conflict style to diff3 for more context keeping the project history meaningful. = Nei flussi di lavoro dove i rami devono convergere, imposta lo stile di conflitto a diff3 per più contesto mantenendo la storia del progetto significativa.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git config merge.conflictstyle diff3',
@@ -1713,7 +1725,7 @@ export default {
               pronunciation: '/ˈriːriːriː/',
               phonetic: 'RI-RI-RI',
               example:
-                'rerere remembers conflict resolutions. = rerere ricorda le risoluzioni dei conflitti.',
+                'In team workflows where branches must converge, rerere remembers conflict resolutions keeping the project history meaningful. = Nei flussi di lavoro dove i rami devono convergere, rerere ricorda le risoluzioni dei conflitti mantenendo la storia del progetto significativa.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git config rerere.enabled true',
@@ -1732,7 +1744,7 @@ export default {
               pronunciation: '/ˈlɪniər ˈhɪstəri/',
               phonetic: 'LI-nia HI-sto-ri',
               example:
-                'Fast-forward keeps a linear history. = Fast-forward mantiene una storia lineare.',
+                "During code integration, fast-forward keeps a linear history which helps maintain a clean and consistent history. = Durante l'integrazione del codice, fast-forward mantiene una storia lineare il che aiuta a mantenere una storia pulita e consistente.",
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge --ff-only',
@@ -1743,7 +1755,7 @@ export default {
               pronunciation: '/nɒn ˈlɪniər/',
               phonetic: 'NON LI-nia',
               example:
-                'Merge commits create a non-linear history. = I merge commit creano una storia non lineare.',
+                'In team workflows where branches must converge, merge commits create a non-linear history keeping the project history meaningful. = Nei flussi di lavoro dove i rami devono convergere, i merge commit creano una storia non lineare mantenendo la storia del progetto significativa.',
               context: 'merging',
               difficulty: 'beginner',
             },
@@ -1753,7 +1765,7 @@ export default {
               pronunciation: '/rɪˈkɜːrsɪv ˈstrætədʒi/',
               phonetic: 'ri-KER-siv STRA-te-gi',
               example:
-                'Recursive is the classic merge strategy. = Recursive è la strategia di merge classica.',
+                'In team workflows where branches must converge, recursive is the classic merge strategy keeping the project history meaningful. = Nei flussi di lavoro dove i rami devono convergere, recursive è la strategia di merge classica mantenendo la storia del progetto significativa.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge -s recursive feature',
@@ -1765,7 +1777,7 @@ export default {
               pronunciation: '/ˈɒktəpəs mɜːrdʒ/',
               phonetic: 'OK-to-pus MERG',
               example:
-                'Octopus merge unites three or more branches. = Octopus unisce tre o più rami.',
+                'In team workflows where branches must converge, use Octopus Merge to integrate three or more branches keeping the project history meaningful. = Nei flussi di lavoro dove i rami devono convergere, octopus unisce tre o più rami mantenendo la storia del progetto significativa.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge branch1 branch2 branch3',
@@ -1777,7 +1789,7 @@ export default {
               pronunciation: '/ˈaʊərz ˈstrætədʒi/',
               phonetic: 'A-uerz STRA-te-gi',
               example:
-                'The ours strategy ignores incoming changes. = La strategia ours ignora le modifiche in arrivo.',
+                'When integrating completed work back into the main branch, the ours strategy ignores incoming changes ensuring all changes are properly combined. = Quando si integra il lavoro completato nel ramo principale, la strategia ours ignora le modifiche in arrivo assicurando che tutte le modifiche siano combinate correttamente.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge -s ours feature',
@@ -1788,7 +1800,7 @@ export default {
               pronunciation: '/ˈsʌbtriː mɜːrdʒ/',
               phonetic: 'SAB-tri MERG',
               example:
-                'Subtree merges another repo as a subdirectory. = Subtree integra un altro repo come sottodirectory.',
+                'After completing a feature branch, subtree merges another repo as a subdirectory so the team can review and verify the combined result. = Dopo aver completato un ramo di funzionalita, subtree integra un altro repo come sottodirectory cosi il team puo revisionare e verificare il risultato combinato.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge -s subtree feature',
@@ -1799,7 +1811,7 @@ export default {
               pronunciation: '/mɜːrdʒ ˈmesɪdʒ/',
               phonetic: 'MERG MES-sig',
               example:
-                'Customize the merge message with -m. = Personalizza il messaggio di merge con -m.',
+                'In team workflows where branches must converge, customize the merge message with -m keeping the project history meaningful. = Nei flussi di lavoro dove i rami devono convergere, personalizza il messaggio di merge con -m mantenendo la storia del progetto significativa.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge -m "Merge feature/login" feature',
@@ -1810,7 +1822,7 @@ export default {
               pronunciation: '/mɜːrdʒ ˈedɪtər/',
               phonetic: 'MERG E-di-tor',
               example:
-                "The merge editor opens for conflict resolution. = L'editor di merge si apre per la risoluzione dei conflitti.",
+                "In team workflows where branches must converge, the merge editor opens for conflict resolution keeping the project history meaningful. = Nei flussi di lavoro dove i rami devono convergere, l'editor di merge si apre per la risoluzione dei conflitti mantenendo la storia del progetto significativa.",
               context: 'merging',
               difficulty: 'beginner',
               tool: 'VS Code, IntelliJ',
@@ -1821,7 +1833,7 @@ export default {
               pronunciation: '/mɜːrdʒ ɪn ˈprɒɡres/',
               phonetic: 'MERG in PRO-gres',
               example:
-                'The repo shows MERGING during a merge. = Il repo mostra MERGING durante un merge.',
+                'When integrating completed work back into the main branch, the repo shows MERGING during a merge ensuring all changes are properly combined. = Quando si integra il lavoro completato nel ramo principale, il repo mostra MERGING durante un merge assicurando che tutte le modifiche siano combinate correttamente.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git status',
@@ -1832,7 +1844,7 @@ export default {
               pronunciation: '/kənˈtɪnjuː mɜːrdʒ/',
               phonetic: 'kon-TI-niu MERG',
               example:
-                'Continue the merge after resolving conflicts. = Continua il merge dopo aver risolto i conflitti.',
+                "During code integration, continue the merge after resolving conflicts which helps maintain a clean and consistent history. = Durante l'integrazione del codice, continua il merge dopo aver risolto i conflitti il che aiuta a mantenere una storia pulita e consistente.",
               context: 'merging',
               difficulty: 'beginner',
               command: 'git merge --continue',
@@ -1850,7 +1862,7 @@ export default {
               pronunciation: '/ʌpˈdeɪt bɪˈfɔːr mɜːrdʒ/',
               phonetic: 'ap-DEIT bi-FOR MERG',
               example:
-                'Always update main before merging into it. = Aggiorna sempre main prima di mergerci dentro.',
+                'After completing a feature branch, always update main before merging into it so the team can review and verify the combined result. = Dopo aver completato un ramo di funzionalita, aggiorna sempre main prima di mergerci dentro cosi il team puo revisionare e verificare il risultato combinato.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git pull --rebase origin main',
@@ -1861,7 +1873,7 @@ export default {
               pronunciation: '/test bɪˈfɔːr mɜːrdʒ/',
               phonetic: 'TEST bi-FOR MERG',
               example:
-                'Run tests before merging into main. = Esegui i test prima di mergeare in main.',
+                'In team workflows where branches must converge, run tests before merging into main keeping the project history meaningful. = Nei flussi di lavoro dove i rami devono convergere, esegui i test prima di mergeare in main mantenendo la storia del progetto significativa.',
               context: 'merging',
               difficulty: 'beginner',
               note: 'Le pipeline CI lo fanno automaticamente sulle PR.',
@@ -1872,7 +1884,7 @@ export default {
               pronunciation: '/kliːn ˈwɜːrkɪŋ triː/',
               phonetic: 'KLIN UER-king TRII',
               example:
-                'Ensure a clean working tree before merging. = Assicurati di avere un working tree pulito prima del merge.',
+                'When integrating completed work back into the main branch, ensure a clean working tree before merging ensuring all changes are properly combined. = Quando si integra il lavoro completato nel ramo principale, assicurati di avere un working tree pulito prima del merge assicurando che tutte le modifiche siano combinate correttamente.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git stash',
@@ -1883,7 +1895,7 @@ export default {
               pronunciation: '/smɔːl ˈmɜːrdʒɪz/',
               phonetic: 'SMOL MER-gis',
               example:
-                'Small frequent merges avoid big conflicts. = Merge piccoli e frequenti evitano grossi conflitti.',
+                'When integrating completed work back into the main branch, small frequent merges avoid big conflicts ensuring all changes are properly combined. = Quando si integra il lavoro completato nel ramo principale, merge piccoli e frequenti evitano grossi conflitti assicurando che tutte le modifiche siano combinate correttamente.',
               context: 'merging',
               difficulty: 'beginner',
             },
@@ -1893,7 +1905,7 @@ export default {
               pronunciation: '/priː mɜːrdʒ rɪˈvjuː/',
               phonetic: 'PRI-MERG ri-VIU',
               example:
-                'A pre-merge review catches issues early. = Una revisione pre-merge cattura problemi presto.',
+                'After completing a feature branch, a pre-merge review catches issues early so the team can review and verify the combined result. = Dopo aver completato un ramo di funzionalita, una revisione pre-merge cattura problemi presto cosi il team puo revisionare e verificare il risultato combinato.',
               context: 'merging',
               difficulty: 'beginner',
             },
@@ -1903,7 +1915,7 @@ export default {
               pronunciation: '/əˈvɔɪd lɒŋ ˈbrɑːntʃɪz/',
               phonetic: 'a-VOID LONG BRAN-cis',
               example:
-                'Avoid long-lived branches to ease merging. = Evita rami a lunga durata per facilitare il merge.',
+                'In team workflows where branches must converge, avoid long-lived branches to ease merging keeping the project history meaningful. = Nei flussi di lavoro dove i rami devono convergere, evita rami a lunga durata per facilitare il merge mantenendo la storia del progetto significativa.',
               context: 'merging',
               difficulty: 'beginner',
             },
@@ -1913,7 +1925,7 @@ export default {
               pronunciation: '/ˈdɒkjʊment mɜːrdʒ/',
               phonetic: 'DO-kiu-ment MERG',
               example:
-                'Document complex merges in the commit message. = Documenta i merge complessi nel messaggio di commit.',
+                "During code integration, document complex merges in the commit message which helps maintain a clean and consistent history. = Durante l'integrazione del codice, documenta i merge complessi nel messaggio di commit il che aiuta a mantenere una storia pulita e consistente.",
               context: 'merging',
               difficulty: 'beginner',
             },
@@ -1923,7 +1935,7 @@ export default {
               pronunciation: '/ˈverɪfaɪ bɪld/',
               phonetic: 'VE-ri-fai BILD',
               example:
-                'Verify the build passes after a merge. = Verifica che la build passi dopo il merge.',
+                "During code integration, verify the build passes after a merge which helps maintain a clean and consistent history. = Durante l'integrazione del codice, verifica che la build passi dopo il merge il che aiuta a mantenere una storia pulita e consistente.",
               context: 'merging',
               difficulty: 'beginner',
               command: 'npm test',
@@ -1934,7 +1946,7 @@ export default {
               pronunciation: '/pʊʃ ˈɑːftər mɜːrdʒ/',
               phonetic: 'PUSC AF-ter MERG',
               example:
-                'Push after a successful local merge. = Fai push dopo un merge locale riuscito.',
+                'After completing a feature branch, push after a successful local merge so the team can review and verify the combined result. = Dopo aver completato un ramo di funzionalita, fai push dopo un merge locale riuscito cosi il team puo revisionare e verificare il risultato combinato.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git push origin main',
@@ -1945,7 +1957,7 @@ export default {
               pronunciation: '/ˈroʊlbæk mɜːrdʒ/',
               phonetic: 'ROL-bak MERG',
               example:
-                'Rollback a bad merge with reset or revert. = Annulla un brutto merge con reset o revert.',
+                'When integrating completed work back into the main branch, rollback a bad merge with reset or revert ensuring all changes are properly combined. = Quando si integra il lavoro completato nel ramo principale, annulla un brutto merge con reset o revert assicurando che tutte le modifiche siano combinate correttamente.',
               context: 'merging',
               difficulty: 'beginner',
               command: 'git reset --hard ORIG_HEAD',
@@ -1973,7 +1985,7 @@ export default {
               pronunciation: '/rɪˈmoʊt/',
               phonetic: 'ri-MOT',
               example:
-                'A remote is a hosted version of your repository. = Un remote è una versione hostata della tua repository.',
+                'After completing a feature branch, a remote is a hosted version of your repository so the team can review and verify the combined result. = Dopo aver completato un ramo di funzionalita, un remote è una versione hostata della tua repository cosi il team puo revisionare e verificare il risultato combinato.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote',
@@ -1984,7 +1996,7 @@ export default {
               pronunciation: '/ˈɒrɪdʒɪn/',
               phonetic: 'O-ri-gin',
               example:
-                'origin is the default name for a remote. = origin è il nome predefinito per un remoto.',
+                'In Git, origin is the default name for a remote. = origin è il nome predefinito per un remoto.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote -v',
@@ -1996,7 +2008,7 @@ export default {
               pronunciation: '/ɡɪt rɪˈmoʊt æd/',
               phonetic: 'GIT ri-MOT AD',
               example:
-                'git remote add adds a new remote to your repo. = git remote add aggiunge un nuovo remoto al tuo repo.',
+                'Use git remote add to stage new remote to your repo. = git remote add aggiunge un nuovo remoto al tuo repo.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote add origin git@github.com:user/repo.git',
@@ -2007,7 +2019,7 @@ export default {
               pronunciation: '/ɡɪt rɪˈmoʊt viː/',
               phonetic: 'GIT ri-MOT VI',
               example:
-                'git remote -v lists remotes with URLs. = git remote -v elenca i remoti con gli URL.',
+                'Before pushing your work to the shared repository, to see remotes with URLs, run git remote -v so your colleagues can access the latest changes. = Prima di inviare il tuo lavoro al repository condiviso, git remote -v elenca i remoti con gli URL cosi i colleghi possono accedere alle ultime modifiche.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote -v',
@@ -2017,7 +2029,8 @@ export default {
               italian: 'URL remoto',
               pronunciation: '/rɪˈmoʊt juː ɑːr el/',
               phonetic: 'ri-MOT IU-AR-EL',
-              example: 'Update a remote URL with set-url. = Aggiorna un URL remoto con set-url.',
+              example:
+                'To share code with your team, update a remote URL with set-url ensuring smooth collaboration across different locations. = Per condividere il codice con il team, aggiorna un URL remoto con set-url assicurando una collaborazione fluida tra diverse sedi.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote set-url origin <new-url>',
@@ -2028,7 +2041,7 @@ export default {
               pronunciation: '/eɪtʃ tiː tiː piː es/',
               phonetic: 'EICH-TI-TI-PI-ES',
               example:
-                'HTTPS remotes use a username and token. = I remoti HTTPS usano username e token.',
+                'To share code with your team, HTTPS remotes use a username and token ensuring smooth collaboration across different locations. = Per condividere il codice con il team, i remoti HTTPS usano username e token assicurando una collaborazione fluida tra diverse sedi.',
               context: 'remote',
               difficulty: 'intermediate',
               code: 'https://github.com/user/repo.git',
@@ -2039,7 +2052,7 @@ export default {
               pronunciation: '/es es eɪtʃ/',
               phonetic: 'ES-ES-EICH',
               example:
-                'SSH remotes use a key pair instead of password. = I remoti SSH usano una coppia di chiavi invece della password.',
+                "In distributed development, SSH remotes use a key pair instead of password which is essential for keeping everyone's copy up to date. = Nello sviluppo distribuito, i remoti SSH usano una coppia di chiavi invece della password il che e essenziale per mantenere la copia di tutti aggiornata.",
               context: 'remote',
               difficulty: 'intermediate',
               code: 'git@github.com:user/repo.git',
@@ -2050,7 +2063,8 @@ export default {
               italian: 'Rimuovere un remoto',
               pronunciation: '/rɪˈmuːv rɪˈmoʊt/',
               phonetic: 'ri-MUV ri-MOT',
-              example: 'git remote remove deletes a remote. = git remote remove elimina un remoto.',
+              example:
+                "In distributed development, git remote remove deletes a remote which is essential for keeping everyone's copy up to date. = Nello sviluppo distribuito, git remote remove elimina un remoto il che e essenziale per mantenere la copia di tutti aggiornata.",
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote remove old-origin',
@@ -2061,7 +2075,7 @@ export default {
               pronunciation: '/riːˈneɪm rɪˈmoʊt/',
               phonetic: 'ri-NEIM ri-MOT',
               example:
-                'git remote rename changes a remote name. = git remote rename cambia il nome di un remoto.',
+                'When collaborating with distributed teams, git remote rename changes a remote name keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, git remote rename cambia il nome di un remoto mantenendo i repository locali e remoti sincronizzati.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote rename origin upstream',
@@ -2071,7 +2085,8 @@ export default {
               italian: 'Più remoti',
               pronunciation: '/ˈmʌlti rɪˈmoʊt/',
               phonetic: 'MAL-ti ri-MOT',
-              example: 'A repo can have multiple remotes. = Un repo può avere più remoti.',
+              example:
+                "In distributed development, a repo can have multiple remotes which is essential for keeping everyone's copy up to date. = Nello sviluppo distribuito, un repo può avere più remoti il che e essenziale per mantenere la copia di tutti aggiornata.",
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git remote add backup git@gitlab.com:user/repo.git',
@@ -2090,7 +2105,7 @@ export default {
               pronunciation: '/ɡɪt kloʊn/',
               phonetic: 'GIT KLON',
               example:
-                'git clone copies a remote repo to local. = git clone copia un repo remoto in locale.',
+                'To share code with your team, use git clone to copy remote repo to local ensuring smooth collaboration across different locations. = Per condividere il codice con il team, git clone copia un repo remoto in locale assicurando una collaborazione fluida tra diverse sedi.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git clone https://github.com/user/repo.git',
@@ -2101,7 +2116,7 @@ export default {
               pronunciation: '/kloʊn juː ɑːr el/',
               phonetic: 'KLON IU-AR-EL',
               example:
-                "Copy the clone URL from the repo page. = Copia l'URL di clone dalla pagina del repo.",
+                "When collaborating with distributed teams, copy the clone URL from the repo page keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, copia l'URL di clone dalla pagina del repo mantenendo i repository locali e remoti sincronizzati.",
               context: 'remote',
               difficulty: 'intermediate',
             },
@@ -2111,7 +2126,7 @@ export default {
               pronunciation: '/ˈʃæloʊ kloʊn/',
               phonetic: 'SCIA-lo KLON',
               example:
-                'A shallow clone limits history depth. = Un clone shallow limita la profondità della storia.',
+                'Before pushing your work to the shared repository, a shallow clone limits history depth so your colleagues can access the latest changes. = Prima di inviare il tuo lavoro al repository condiviso, un clone shallow limita la profondità della storia cosi i colleghi possono accedere alle ultime modifiche.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git clone --depth 1 <url>',
@@ -2123,7 +2138,7 @@ export default {
               pronunciation: '/beər rɪˈpɒzɪtɔːri/',
               phonetic: 'BER ri-PO-zi-tori',
               example:
-                'A bare repository has no working tree. = Una repository bare non ha working tree.',
+                'When collaborating with distributed teams, a bare repository has no working tree keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, una repository bare non ha working tree mantenendo i repository locali e remoti sincronizzati.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git clone --bare <url>',
@@ -2131,11 +2146,11 @@ export default {
             },
             {
               english: 'Mirror',
-              italian: 'mirror / copia speculare del repository',
+              italian: 'copia speculare del repository (mirror)',
               pronunciation: '/ˈmɪrər/',
               phonetic: 'MI-rer',
               example:
-                'A mirror copies all refs exactly. = Un mirror copia tutti i ref esattamente.',
+                'Before pushing your work to the shared repository, a mirror copies all refs exactly so your colleagues can access the latest changes. = Prima di inviare il tuo lavoro al repository condiviso, un mirror copia tutti i ref esattamente cosi i colleghi possono accedere alle ultime modifiche.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git clone --mirror <url>',
@@ -2146,7 +2161,7 @@ export default {
               pronunciation: '/ɡɪt fetʃ/',
               phonetic: 'GIT FECI',
               example:
-                'git fetch downloads remote changes without merging. = git fetch scarica le modifiche remote senza unirle.',
+                'When collaborating with distributed teams, use git fetch to download remote changes without merging keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, git fetch scarica le modifiche remote senza unirle mantenendo i repository locali e remoti sincronizzati.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git fetch origin',
@@ -2158,7 +2173,7 @@ export default {
               pronunciation: '/ɡɪt fetʃ ɔːl/',
               phonetic: 'GIT FECI OL',
               example:
-                'git fetch --all updates all remotes. = git fetch --all aggiorna tutti i remoti.',
+                'To share code with your team, use git fetch --all to update all remotes ensuring smooth collaboration across different locations. = Per condividere il codice con il team, git fetch --all aggiorna tutti i remoti assicurando una collaborazione fluida tra diverse sedi.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git fetch --all',
@@ -2169,7 +2184,7 @@ export default {
               pronunciation: '/pruːn/',
               phonetic: 'PRUN',
               example:
-                'Prune removes deleted remote branches locally. = Prune rimuove i rami remoti eliminati anche localmente.',
+                "In distributed development, to remove deleted remote branches locally, use Prune which is essential for keeping everyone's copy up to date. = Nello sviluppo distribuito, prune rimuove i rami remoti eliminati anche localmente il che e essenziale per mantenere la copia di tutti aggiornata.",
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git fetch --prune',
@@ -2181,7 +2196,7 @@ export default {
               pronunciation: '/rɪˈmoʊt ˈtrækɪŋ brɑːntʃ/',
               phonetic: 'ri-MOT TRA-king BRANC',
               example:
-                'origin/main is a remote-tracking branch. = origin/main è un ramo di tracking remoto.',
+                'When collaborating with distributed teams, origin/main is a remote-tracking branch keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, origin/main è un ramo di tracking remoto mantenendo i repository locali e remoti sincronizzati.',
               context: 'remote',
               difficulty: 'intermediate',
               note: "Locali ma riflettono lo stato remoto al momento dell'ultimo fetch.",
@@ -2191,7 +2206,8 @@ export default {
               italian: 'Refs remoti',
               pronunciation: '/refs rɪˈmoʊts/',
               phonetic: 'REFS ri-MOTS',
-              example: 'Remote refs live in refs/remotes/. = I ref remoti vivono in refs/remotes/.',
+              example:
+                "In distributed development, remote refs live in refs/remotes/ which is essential for keeping everyone's copy up to date. = Nello sviluppo distribuito, i ref remoti vivono in refs/remotes/ il che e essenziale per mantenere la copia di tutti aggiornata.",
               context: 'remote',
               difficulty: 'intermediate',
               code: '.git/refs/remotes/origin/main',
@@ -2209,7 +2225,7 @@ export default {
               pronunciation: '/ɡɪt pʊʃ/',
               phonetic: 'GIT PUSC',
               example:
-                'git push uploads commits to the remote. = git push carica i commit sul remoto.',
+                'When collaborating with distributed teams, use git push to upload commits to the remote keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, git push carica i commit sul remoto mantenendo i repository locali e remoti sincronizzati.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git push origin main',
@@ -2219,7 +2235,8 @@ export default {
               italian: 'Scaricare e unire',
               pronunciation: '/ɡɪt pʊl/',
               phonetic: 'GIT PUL',
-              example: 'git pull is fetch plus merge. = git pull è fetch più merge.',
+              example:
+                'To share code with your team, git pull is fetch plus merge ensuring smooth collaboration across different locations. = Per condividere il codice con il team, git pull è fetch più merge assicurando una collaborazione fluida tra diverse sedi.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git pull origin main',
@@ -2231,7 +2248,7 @@ export default {
               pronunciation: '/ɡɪt pʊl ˈriːbeɪs/',
               phonetic: 'GIT PUL RI-beis',
               example:
-                'pull --rebase keeps history linear. = pull --rebase mantiene la storia lineare.',
+                'To share code with your team, pull --rebase keeps history linear ensuring smooth collaboration across different locations. = Per condividere il codice con il team, pull --rebase mantiene la storia lineare assicurando una collaborazione fluida tra diverse sedi.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git pull --rebase origin main',
@@ -2242,7 +2259,8 @@ export default {
               italian: 'Imposta upstream',
               pronunciation: '/set ˈʌpstriːm/',
               phonetic: 'SET AP-strim',
-              example: "Set the upstream on first push. = Imposta l'upstream al primo push.",
+              example:
+                "In distributed development, set the upstream on first push which is essential for keeping everyone's copy up to date. = Nello sviluppo distribuito, imposta l'upstream al primo push il che e essenziale per mantenere la copia di tutti aggiornata.",
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git push -u origin feature',
@@ -2254,7 +2272,7 @@ export default {
               pronunciation: '/fɔːrs pʊʃ/',
               phonetic: 'FORS PUSC',
               example:
-                'Force push overwrites the remote branch. = Il force push sovrascrive il ramo remoto.',
+                'To share code with your team, Force Push overwrites the remote branch ensuring smooth collaboration across different locations. = Per condividere il codice con il team, il force push sovrascrive il ramo remoto assicurando una collaborazione fluida tra diverse sedi.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git push --force origin feature',
@@ -2266,7 +2284,7 @@ export default {
               pronunciation: '/fɔːrs wɪð liːs/',
               phonetic: 'FORS UID LIS',
               example:
-                '--force-with-lease is safer than --force. = --force-with-lease è più sicuro di --force.',
+                'To share code with your team, --force-with-lease is safer than --force ensuring smooth collaboration across different locations. = Per condividere il codice con il team, --force-with-lease è più sicuro di --force assicurando una collaborazione fluida tra diverse sedi.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git push --force-with-lease',
@@ -2278,18 +2296,18 @@ export default {
               pronunciation: '/rɪˈdʒektɪd pʊʃ/',
               phonetic: 'ri-GEK-tid PUSC',
               example:
-                'Rejected: pull first, then push again. = Rifiutato: fai pull prima, poi push di nuovo.',
+                'When collaborating with distributed teams, rejected: pull first, then push again keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, rifiutato: fai pull prima, poi push di nuovo mantenendo i repository locali e remoti sincronizzati.',
               context: 'remote',
               difficulty: 'intermediate',
               note: 'Errore comune quando il remoto ha commit nuovi.',
             },
             {
               english: 'Non-fast-forward',
-              italian: 'Non fast-forward',
+              italian: 'avanzamento non lineare (non-fast-forward)',
               pronunciation: '/nɒn fæst ˈfɔːrwərd/',
               phonetic: 'NON FAST FOR-uard',
               example:
-                'Non-fast-forward error means histories diverged. = Errore non-fast-forward significa storie divergenti.',
+                'When collaborating with distributed teams, Non-fast-forward error means histories diverged keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, errore non-fast-forward significa storie divergenti mantenendo i repository locali e remoti sincronizzati.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git pull --rebase',
@@ -2299,7 +2317,8 @@ export default {
               italian: 'Push dei tag',
               pronunciation: '/pʊʃ tæɡz/',
               phonetic: 'PUSC TAGS',
-              example: 'git push --tags pushes all tags. = git push --tags invia tutti i tag.',
+              example:
+                'To share code with your team, git push --tags pushes all tags ensuring smooth collaboration across different locations. = Per condividere il codice con il team, git push --tags invia tutti i tag assicurando una collaborazione fluida tra diverse sedi.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git push --tags',
@@ -2310,7 +2329,7 @@ export default {
               pronunciation: '/dɪˈliːt rɪˈmoʊt brɑːntʃ/',
               phonetic: 'di-LIT ri-MOT BRANC',
               example:
-                'Delete a remote branch with --delete. = Elimina un ramo remoto con --delete.',
+                'To share code with your team, delete a remote branch with --delete ensuring smooth collaboration across different locations. = Per condividere il codice con il team, elimina un ramo remoto con --delete assicurando una collaborazione fluida tra diverse sedi.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git push origin --delete feature',
@@ -2328,7 +2347,7 @@ export default {
               pronunciation: '/ɔːˌθentɪˈkeɪʃən/',
               phonetic: 'o-ten-ti-KEI-scion',
               example:
-                'GitHub no longer accepts passwords for HTTPS. = GitHub non accetta più password per HTTPS.',
+                'When collaborating with distributed teams, gitHub no longer accepts passwords for HTTPS keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, gitHub non accetta più password per HTTPS mantenendo i repository locali e remoti sincronizzati.',
               context: 'remote',
               difficulty: 'intermediate',
             },
@@ -2338,7 +2357,7 @@ export default {
               pronunciation: '/ˈpɜːrsənl ˈækses ˈtoʊkən/',
               phonetic: 'PER-son-al AK-ses TO-ken',
               example:
-                'Use a personal access token instead of a password. = Usa un personal access token invece della password.',
+                'Before pushing your work to the shared repository, use a personal access token instead of a password so your colleagues can access the latest changes. = Prima di inviare il tuo lavoro al repository condiviso, usa un personal access token invece della password cosi i colleghi possono accedere alle ultime modifiche.',
               context: 'remote',
               difficulty: 'intermediate',
               note: 'Sigla PAT. Crea da Settings > Developer settings.',
@@ -2349,7 +2368,7 @@ export default {
               pronunciation: '/es es eɪtʃ kiː/',
               phonetic: 'ES-ES-EICH KI',
               example:
-                'Generate an SSH key with ssh-keygen. = Genera una chiave SSH con ssh-keygen.',
+                'Before pushing your work to the shared repository, generate an SSH key with ssh-keygen so your colleagues can access the latest changes. = Prima di inviare il tuo lavoro al repository condiviso, genera una chiave SSH con ssh-keygen cosi i colleghi possono accedere alle ultime modifiche.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'ssh-keygen -t ed25519 -C "you@example.com"',
@@ -2361,7 +2380,7 @@ export default {
               pronunciation: '/ˈpʌblɪk kiː/',
               phonetic: 'PA-blik KI',
               example:
-                'Upload your public key to GitHub. = Carica la tua chiave pubblica su GitHub.',
+                'When collaborating with distributed teams, upload your public key to GitHub keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, carica la tua chiave pubblica su GitHub mantenendo i repository locali e remoti sincronizzati.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'cat ~/.ssh/id_ed25519.pub',
@@ -2371,7 +2390,8 @@ export default {
               italian: 'Chiave privata',
               pronunciation: '/ˈpraɪvət kiː/',
               phonetic: 'PRAI-vat KI',
-              example: 'Never share your private key. = Non condividere mai la chiave privata.',
+              example:
+                "In distributed development, never share your private key which is essential for keeping everyone's copy up to date. = Nello sviluppo distribuito, non condividere mai la chiave privata il che e essenziale per mantenere la copia di tutti aggiornata.",
               context: 'remote',
               difficulty: 'intermediate',
               note: 'File senza estensione, da non committare mai.',
@@ -2382,7 +2402,7 @@ export default {
               pronunciation: '/es es eɪtʃ ˈeɪdʒənt/',
               phonetic: 'ES-ES-EICH EI-gent',
               example:
-                'ssh-agent stores your key in memory. = ssh-agent tiene la chiave in memoria.',
+                'When collaborating with distributed teams, use ssh-agent to store your key in memory keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, ssh-agent tiene la chiave in memoria mantenendo i repository locali e remoti sincronizzati.',
               context: 'remote',
               difficulty: 'intermediate',
               command: 'ssh-add ~/.ssh/id_ed25519',
@@ -2393,7 +2413,7 @@ export default {
               pronunciation: '/noʊn hoʊsts/',
               phonetic: 'NON HOSTS',
               example:
-                'GitHub adds an entry to ~/.ssh/known_hosts. = GitHub aggiunge una voce a ~/.ssh/known_hosts.',
+                "In distributed development, gitHub adds an entry to ~/.ssh/known_hosts which is essential for keeping everyone's copy up to date. = Nello sviluppo distribuito, gitHub aggiunge una voce a ~/.ssh/known_hosts il che e essenziale per mantenere la copia di tutti aggiornata.",
               context: 'remote',
               difficulty: 'intermediate',
               code: '~/.ssh/known_hosts',
@@ -2404,7 +2424,7 @@ export default {
               pronunciation: '/tuː ˈfæktər ɔːθ/',
               phonetic: 'TU FAK-ter OT',
               example:
-                "Enable two-factor auth on GitHub. = Abilita l'autenticazione a due fattori su GitHub.",
+                "When collaborating with distributed teams, enable two-factor auth on GitHub keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, abilita l'autenticazione a due fattori su GitHub mantenendo i repository locali e remoti sincronizzati.",
               context: 'remote',
               difficulty: 'intermediate',
               note: 'Sigla 2FA. Obbligatorio per molte funzioni di GitHub.',
@@ -2415,7 +2435,7 @@ export default {
               pronunciation: '/krɪˈdenʃəl ˈmænɪdʒər/',
               phonetic: 'kre-DEN-scial MA-ni-ger',
               example:
-                'Git Credential Manager stores tokens securely. = Git Credential Manager salva i token in modo sicuro.',
+                'When collaborating with distributed teams, Git Credential Manager stores tokens securely keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, Git Credential Manager salva i token in modo sicuro mantenendo i repository locali e remoti sincronizzati.',
               context: 'remote',
               difficulty: 'intermediate',
               tool: 'git-credential-manager',
@@ -2426,7 +2446,7 @@ export default {
               pronunciation: '/kæʃ krɪˈdenʃəlz/',
               phonetic: 'KASC kre-DEN-scials',
               example:
-                'Cache credentials for 15 minutes. = Memorizza le credenziali per 15 minuti.',
+                "In distributed development, Cache Credentials for 15 minutes which is essential for keeping everyone's copy up to date. = Nello sviluppo distribuito, memorizza le credenziali per 15 minuti il che e essenziale per mantenere la copia di tutti aggiornata.",
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git config --global credential.helper cache',
@@ -2449,11 +2469,11 @@ export default {
           items: [
             {
               english: 'Pull Request',
-              italian: 'pull request / richiesta di integrazione',
+              italian: 'richiesta di integrazione (pull request)',
               pronunciation: '/pʊl rɪˈkwest/',
               phonetic: 'PUL ri-KUEST',
               example:
-                'Open a pull request to propose changes. = Apri una pull request per proporre modifiche.',
+                'When collaborating with distributed teams, open a pull request to propose changes keeping local and remote repositories synchronized. = Quando si collabora con team distribuiti, apri una pull request per proporre modifiche mantenendo i repository locali e remoti sincronizzati.',
               context: 'collaboration',
               difficulty: 'intermediate',
               tool: 'GitHub, Bitbucket',
@@ -2461,10 +2481,11 @@ export default {
             },
             {
               english: 'Merge Request',
-              italian: 'merge request / richiesta di fusione (GitLab)',
+              italian: 'richiesta di fusione su GitLab (merge request)',
               pronunciation: '/mɜːrdʒ rɪˈkwest/',
               phonetic: 'MERG ri-KUEST',
-              example: 'GitLab calls them merge requests. = Su GitLab si chiamano merge request.',
+              example:
+                'In open-source or team projects, gitLab calls them merge requests ensuring all contributions meet quality standards. = In progetti open-source o di team, su GitLab si chiamano merge request assicurando che tutti i contributi rispettino gli standard di qualita.',
               context: 'collaboration',
               difficulty: 'intermediate',
               tool: 'GitLab',
@@ -2476,7 +2497,7 @@ export default {
               pronunciation: '/ˈoʊpən piː ɑːr/',
               phonetic: 'O-pen PI-AR',
               example:
-                'Open a PR after pushing your branch. = Apri una PR dopo aver pushato il tuo ramo.',
+                'When working with your team on a shared codebase, open a PR after pushing your branch promoting better code quality through review. = Quando si lavora con il team su un codice condiviso, apri una PR dopo aver pushato il tuo ramo promuovendo una migliore qualita del codice attraverso la revisione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr create',
@@ -2488,7 +2509,7 @@ export default {
               pronunciation: '/piː ɑːr dɪˈskrɪpʃən/',
               phonetic: 'PI-AR di-SKRIP-scion',
               example:
-                'A clear PR description speeds up review. = Una descrizione chiara della PR velocizza la review.',
+                'During the code review process, a clear PR description speeds up review which catches potential bugs before they reach production. = Durante il processo di revisione del codice, una descrizione chiara della PR velocizza la review il che intercetta potenziali bug prima che raggiungano la produzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -2498,7 +2519,7 @@ export default {
               pronunciation: '/drɑːft piː ɑːr/',
               phonetic: 'DRAFT PI-AR',
               example:
-                'A draft PR is not ready to merge. = Una PR in bozza non è pronta per il merge.',
+                'In open-source or team projects, a draft PR is not ready to merge ensuring all contributions meet quality standards. = In progetti open-source o di team, una PR in bozza non è pronta per il merge assicurando che tutti i contributi rispettino gli standard di qualita.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr create --draft',
@@ -2508,7 +2529,8 @@ export default {
               italian: 'Revisore',
               pronunciation: '/rɪˈvjuːər/',
               phonetic: 'ri-VIU-er',
-              example: 'Assign a reviewer to your PR. = Assegna un revisore alla tua PR.',
+              example:
+                'In open-source or team projects, assign a reviewer to your PR ensuring all contributions meet quality standards. = In progetti open-source o di team, assegna un revisore alla tua PR assicurando che tutti i contributi rispettino gli standard di qualita.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr edit --add-reviewer alice',
@@ -2518,7 +2540,8 @@ export default {
               italian: 'Approvare PR',
               pronunciation: '/əˈpruːv piː ɑːr/',
               phonetic: 'a-PRUV PI-AR',
-              example: 'Approve the PR after reviewing. = Approva la PR dopo averla revisionata.',
+              example:
+                'In open-source or team projects, approve the PR after reviewing ensuring all contributions meet quality standards. = In progetti open-source o di team, approva la PR dopo averla revisionata assicurando che tutti i contributi rispettino gli standard di qualita.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr review --approve',
@@ -2529,7 +2552,7 @@ export default {
               pronunciation: '/rɪˈkwest ˈtʃeɪndʒɪz/',
               phonetic: 'ri-KUEST CIEIN-gis',
               example:
-                'Request changes if something needs fixing. = Richiedi modifiche se qualcosa va sistemato.',
+                'During the code review process, Request Changes if something needs fixing which catches potential bugs before they reach production. = Durante il processo di revisione del codice, richiedi modifiche se qualcosa va sistemato il che intercetta potenziali bug prima che raggiungano la produzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr review --request-changes',
@@ -2539,7 +2562,8 @@ export default {
               italian: 'Mergeare la PR',
               pronunciation: '/mɜːrdʒ piː ɑːr/',
               phonetic: 'MERG PI-AR',
-              example: 'Merge the PR once it is approved. = Merge la PR una volta approvata.',
+              example:
+                'During the code review process, merge the PR once it is approved which catches potential bugs before they reach production. = Durante il processo di revisione del codice, merge la PR una volta approvata il che intercetta potenziali bug prima che raggiungano la produzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr merge --squash',
@@ -2550,7 +2574,7 @@ export default {
               pronunciation: '/kloʊz piː ɑːr/',
               phonetic: 'KLOZ PI-AR',
               example:
-                'Close a PR without merging if abandoned. = Chiudi una PR senza merge se abbandonata.',
+                'During the code review process, close a PR without merging if abandoned which catches potential bugs before they reach production. = Durante il processo di revisione del codice, chiudi una PR senza merge se abbandonata il che intercetta potenziali bug prima che raggiungano la produzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh pr close 42',
@@ -2568,7 +2592,7 @@ export default {
               pronunciation: '/koʊd rɪˈvjuː/',
               phonetic: 'KOUD ri-VIU',
               example:
-                'Code review catches bugs before merge. = La code review trova bug prima del merge.',
+                'For effective team collaboration, Code Review catches bugs before merge so everyone follows the same contribution standards. = Per una collaborazione efficace del team, la code review trova bug prima del merge cosi tutti seguono gli stessi standard di contribuzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               note: 'Pratica fondamentale in team. Migliora la qualità e diffonde conoscenza.',
@@ -2579,7 +2603,7 @@ export default {
               pronunciation: '/ɪnˈlaɪn ˈkɒment/',
               phonetic: 'in-LAIN KO-ment',
               example:
-                'Leave inline comments on specific lines. = Lascia commenti inline su righe specifiche.',
+                'When working with your team on a shared codebase, leave inline comments on specific lines promoting better code quality through review. = Quando si lavora con il team su un codice condiviso, lascia commenti inline su righe specifiche promuovendo una migliore qualita del codice attraverso la revisione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               tool: 'GitHub web UI',
@@ -2600,7 +2624,7 @@ export default {
               pronunciation: '/səˈdʒestʃən/',
               phonetic: 'sa-GES-cion',
               example:
-                'Use suggestions for direct code changes. = Usa i suggerimenti per modifiche dirette al codice.',
+                'When working with your team on a shared codebase, use suggestions for direct code changes promoting better code quality through review. = Quando si lavora con il team su un codice condiviso, usa i suggerimenti per modifiche dirette al codice promuovendo una migliore qualita del codice attraverso la revisione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               code: '```suggestion\nconst x = 5;\n```',
@@ -2612,7 +2636,7 @@ export default {
               pronunciation: '/rɪˈzɒlvd ˌkɒnvərˈseɪʃən/',
               phonetic: 'ri-ZOLVD kon-ver-SEI-scion',
               example:
-                'Mark a conversation as resolved when fixed. = Segna una conversazione come risolta quando sistemata.',
+                'For effective team collaboration, mark a conversation as resolved when fixed so everyone follows the same contribution standards. = Per una collaborazione efficace del team, segna una conversazione come risolta quando sistemata cosi tutti seguono gli stessi standard di contribuzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -2622,7 +2646,7 @@ export default {
               pronunciation: '/ˈnɪtpɪk/',
               phonetic: 'NIT-pik',
               example:
-                'Nit: rename the variable for clarity. = Nit: rinomina la variabile per chiarezza.',
+                'During the code review process, nit: rename the variable for clarity which catches potential bugs before they reach production. = Durante il processo di revisione del codice, nit: rinomina la variabile per chiarezza il che intercetta potenziali bug prima che raggiungano la produzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               note: 'Prefisso "nit:" indica un commento minore non bloccante.',
@@ -2633,7 +2657,7 @@ export default {
               pronunciation: '/ˈblɒkər/',
               phonetic: 'BLO-ker',
               example:
-                'A blocker prevents merging until resolved. = Un blocker impedisce il merge fino a risoluzione.',
+                'During the code review process, a blocker prevents merging until resolved which catches potential bugs before they reach production. = Durante il processo di revisione del codice, un blocker impedisce il merge fino a risoluzione il che intercetta potenziali bug prima che raggiungano la produzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -2642,7 +2666,8 @@ export default {
               italian: 'Mi sembra a posto',
               pronunciation: '/el dʒiː tiː em/',
               phonetic: 'EL-GI-TI-EM',
-              example: 'LGTM means Looks Good To Me. = LGTM significa Looks Good To Me.',
+              example:
+                'When working with your team on a shared codebase, LGTM means Looks Good To Me promoting better code quality through review. = Quando si lavora con il team su un codice condiviso, LGTM significa Looks Good To Me promuovendo una migliore qualita del codice attraverso la revisione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               note: 'Acronimo informale di approvazione veloce.',
@@ -2653,7 +2678,7 @@ export default {
               pronunciation: '/rɪˈvjuː ˈtʃeklɪst/',
               phonetic: 'ri-VIU CIEK-list',
               example:
-                'A review checklist standardizes feedback. = Una checklist di review uniforma il feedback.',
+                'During the code review process, a review checklist standardizes feedback which catches potential bugs before they reach production. = Durante il processo di revisione del codice, una checklist di review uniforma il feedback il che intercetta potenziali bug prima che raggiungano la produzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               code: '- [ ] Tests added\n- [ ] Docs updated',
@@ -2663,7 +2688,8 @@ export default {
               italian: 'Revisione in coppia',
               pronunciation: '/peər rɪˈvjuː/',
               phonetic: 'PER ri-VIU',
-              example: 'Pair review for complex changes. = Pair review per modifiche complesse.',
+              example:
+                'During the code review process, Pair Review for complex changes which catches potential bugs before they reach production. = Durante il processo di revisione del codice, pair review per modifiche complesse il che intercetta potenziali bug prima che raggiungano la produzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -2676,11 +2702,11 @@ export default {
           items: [
             {
               english: 'Fork',
-              italian: 'fork / biforcazione del repository',
+              italian: 'biforcazione del repository (fork)',
               pronunciation: '/fɔːrk/',
               phonetic: 'FORK',
               example:
-                'Fork a repo to make your own copy. = Fai fork di un repo per averne una tua copia.',
+                'In Git, Fork a repo to make your own copy. = Fai fork di un repo per averne una tua copia.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh repo fork user/repo',
@@ -2688,11 +2714,11 @@ export default {
             },
             {
               english: 'Upstream',
-              italian: 'upstream / repository sorgente originario',
+              italian: 'repository sorgente originario (upstream)',
               pronunciation: '/ˈʌpstriːm/',
               phonetic: 'AP-strim',
               example:
-                'Add the original repo as upstream. = Aggiungi il repo originale come upstream.',
+                'In open-source or team projects, add the original repo as upstream ensuring all contributions meet quality standards. = In progetti open-source o di team, aggiungi il repo originale come upstream assicurando che tutti i contributi rispettino gli standard di qualita.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'git remote add upstream <url>',
@@ -2703,7 +2729,7 @@ export default {
               pronunciation: '/sɪŋk fɔːrk/',
               phonetic: 'SINK FORK',
               example:
-                'Sync your fork with upstream regularly. = Sincronizza il tuo fork con upstream regolarmente.',
+                'For effective team collaboration, sync your fork with upstream regularly so everyone follows the same contribution standards. = Per una collaborazione efficace del team, sincronizza il tuo fork con upstream regolarmente cosi tutti seguono gli stessi standard di contribuzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'git pull upstream main',
@@ -2714,17 +2740,17 @@ export default {
               pronunciation: '/traɪˈæŋɡjʊlər/',
               phonetic: 'trai-AN-gular',
               example:
-                'Triangular workflow: clone fork, push fork, pull upstream. = Workflow triangolare: clone fork, push fork, pull upstream.',
+                'When working with your team on a shared codebase, triangular workflow: clone fork, push fork, pull upstream promoting better code quality through review. = Quando si lavora con il team su un codice condiviso, workflow triangolare: clone fork, push fork, pull upstream promuovendo una migliore qualita del codice attraverso la revisione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
             {
               english: 'Open Source',
-              italian: 'open source / codice sorgente aperto',
+              italian: 'codice sorgente aperto (open source)',
               pronunciation: '/ˈoʊpən sɔːrs/',
               phonetic: 'O-pen SORS',
               example:
-                'Open source projects often use forks for contributions. = I progetti open source spesso usano fork per i contributi.',
+                'In Git, Open Source projects often use forks for contributions. = I progetti open source spesso usano fork per i contributi.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -2734,7 +2760,7 @@ export default {
               pronunciation: '/kənˈtrɪbjʊtər/',
               phonetic: 'kon-TRI-biu-tor',
               example:
-                'A contributor sends pull requests to a project. = Un contributore manda pull request a un progetto.',
+                'For effective team collaboration, a contributor sends pull requests to a project so everyone follows the same contribution standards. = Per una collaborazione efficace del team, un contributore manda pull request a un progetto cosi tutti seguono gli stessi standard di contribuzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -2744,7 +2770,7 @@ export default {
               pronunciation: '/meɪnˈteɪnər/',
               phonetic: 'mein-TEI-ner',
               example:
-                'A maintainer reviews and merges PRs. = Un maintainer revisiona e mergia le PR.',
+                'When working with your team on a shared codebase, a maintainer reviews and merges PRs promoting better code quality through review. = Quando si lavora con il team su un codice condiviso, un maintainer revisiona e mergia le PR promuovendo una migliore qualita del codice attraverso la revisione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -2754,7 +2780,7 @@ export default {
               pronunciation: '/kənˈtrɪbjʊtər ɡaɪd/',
               phonetic: 'kon-TRI-biu-tor GAID',
               example:
-                'Read the contributor guide before opening a PR. = Leggi la guida per contributori prima di aprire una PR.',
+                'For effective team collaboration, read the contributor guide before opening a PR so everyone follows the same contribution standards. = Per una collaborazione efficace del team, leggi la guida per contributori prima di aprire una PR cosi tutti seguono gli stessi standard di contribuzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               code: 'CONTRIBUTING.md',
@@ -2764,7 +2790,8 @@ export default {
               italian: 'Accordo di licenza contributore',
               pronunciation: '/siː el eɪ/',
               phonetic: 'SI-EL-EI',
-              example: 'Sign the CLA before contributing. = Firma il CLA prima di contribuire.',
+              example:
+                'When working with your team on a shared codebase, sign the CLA before contributing promoting better code quality through review. = Quando si lavora con il team su un codice condiviso, firma il CLA prima di contribuire promuovendo una migliore qualita del codice attraverso la revisione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               note: 'Contributor License Agreement. Comune in progetti aziendali.',
@@ -2775,7 +2802,7 @@ export default {
               pronunciation: '/dɪˈtætʃt fɔːrk/',
               phonetic: 'di-TACT FORK',
               example:
-                'Detach a fork to make it independent. = Distacca un fork per renderlo indipendente.',
+                'When working with your team on a shared codebase, detach a fork to make it independent promoting better code quality through review. = Quando si lavora con il team su un codice condiviso, distacca un fork per renderlo indipendente promuovendo una migliore qualita del codice attraverso la revisione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               note: "Funzione di GitHub: stacca il fork dall'upstream.",
@@ -2789,10 +2816,11 @@ export default {
           items: [
             {
               english: 'Issue',
-              italian: 'issue / segnalazione o richiesta',
+              italian: 'segnalazione o richiesta (issue)',
               pronunciation: '/ˈɪʃuː/',
               phonetic: 'I-sciu',
-              example: 'Open an issue to report a bug. = Apri una issue per segnalare un bug.',
+              example:
+                'For effective team collaboration, open an issue to report a bug so everyone follows the same contribution standards. = Per una collaborazione efficace del team, apri una issue per segnalare un bug cosi tutti seguono gli stessi standard di contribuzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'gh issue create',
@@ -2804,7 +2832,7 @@ export default {
               pronunciation: '/bʌɡ rɪˈpɔːrt/',
               phonetic: 'BAG ri-PORT',
               example:
-                'A good bug report includes steps to reproduce. = Una buona segnalazione include i passi per riprodurre.',
+                'When working with your team on a shared codebase, a good bug report includes steps to reproduce promoting better code quality through review. = Quando si lavora con il team su un codice condiviso, una buona segnalazione include i passi per riprodurre promuovendo una migliore qualita del codice attraverso la revisione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -2814,7 +2842,7 @@ export default {
               pronunciation: '/ˈfiːtʃər rɪˈkwest/',
               phonetic: 'FI-cer ri-KUEST',
               example:
-                'Submit a feature request for new ideas. = Inviare una feature request per nuove idee.',
+                'For effective team collaboration, submit a feature request for new ideas so everyone follows the same contribution standards. = Per una collaborazione efficace del team, inviare una feature request per nuove idee cosi tutti seguono gli stessi standard di contribuzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -2824,17 +2852,17 @@ export default {
               pronunciation: '/ˈɪʃuː ˈleɪbl/',
               phonetic: 'I-sciu LEI-bol',
               example:
-                'Add labels like "bug" or "enhancement". = Aggiungi etichette come "bug" o "enhancement".',
+                'For effective team collaboration, add labels like "bug" or "enhancement" so everyone follows the same contribution standards. = Per una collaborazione efficace del team, aggiungi etichette come "bug" o "enhancement" cosi tutti seguono gli stessi standard di contribuzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
             {
               english: 'Milestone',
-              italian: 'milestone / traguardo del progetto',
+              italian: 'traguardo del progetto (milestone)',
               pronunciation: '/ˈmaɪlstoʊn/',
               phonetic: 'MAIL-ston',
               example:
-                'A milestone groups issues for a release. = Una milestone raggruppa issue per una release.',
+                'When working with your team on a shared codebase, a milestone groups issues for a release promoting better code quality through review. = Quando si lavora con il team su un codice condiviso, una milestone raggruppa issue per una release promuovendo una migliore qualita del codice attraverso la revisione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -2843,7 +2871,8 @@ export default {
               italian: 'Assegnatario',
               pronunciation: '/əˌsaɪˈniː/',
               phonetic: 'a-SAI-NI',
-              example: 'Set yourself as the assignee. = Impostati come assegnatario.',
+              example:
+                'For effective team collaboration, set yourself as the assignee so everyone follows the same contribution standards. = Per una collaborazione efficace del team, impostati come assegnatario cosi tutti seguono gli stessi standard di contribuzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -2853,7 +2882,7 @@ export default {
               pronunciation: '/ɡɪt bleɪm/',
               phonetic: 'GIT BLEIM',
               example:
-                'git blame shows who changed each line. = git blame mostra chi ha cambiato ogni riga.',
+                'For effective team collaboration, to see who changed each line, run git blame so everyone follows the same contribution standards. = Per una collaborazione efficace del team, git blame mostra chi ha cambiato ogni riga cosi tutti seguono gli stessi standard di contribuzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'git blame file.txt',
@@ -2864,18 +2893,19 @@ export default {
               italian: 'Comando annotate',
               pronunciation: '/ɡɪt ˈænəteɪt/',
               phonetic: 'GIT A-no-teit',
-              example: 'git annotate is similar to git blame. = git annotate è simile a git blame.',
+              example:
+                'During the code review process, git annotate is similar to git blame which catches potential bugs before they reach production. = Durante il processo di revisione del codice, git annotate è simile a git blame il che intercetta potenziali bug prima che raggiungano la produzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               command: 'git annotate file.txt',
             },
             {
               english: 'GitHub',
-              italian: 'GitHub (piattaforma di hosting Git)',
+              italian: 'piattaforma di hosting Git (GitHub)',
               pronunciation: '/ɡɪtˌhʌb/',
               phonetic: 'GIT-HAB',
               example:
-                'GitHub is the most popular Git hosting service. = GitHub è il servizio di hosting Git più popolare.',
+                'In Git, GitHub is the most popular Git hosting service. = GitHub è il servizio di hosting Git più popolare.',
               context: 'collaboration',
               difficulty: 'intermediate',
               tool: 'GitHub',
@@ -2887,7 +2917,7 @@ export default {
               pronunciation: '/ˈkloʊzɪŋ ˈɪʃuː/',
               phonetic: 'KLO-zing I-sciu',
               example:
-                'Reference "Fixes #42" to auto-close on merge. = Scrivi "Fixes #42" per chiudere automaticamente al merge.',
+                'During the code review process, reference "Fixes #42" to auto-close on merge which catches potential bugs before they reach production. = Durante il processo di revisione del codice, scrivi "Fixes #42" per chiudere automaticamente al merge il che intercetta potenziali bug prima che raggiungano la produzione.',
               context: 'collaboration',
               difficulty: 'intermediate',
               note: 'Parole chiave: fixes, closes, resolves.',
@@ -2910,11 +2940,11 @@ export default {
           items: [
             {
               english: 'Git Flow',
-              italian: 'Git Flow (modello di branching strutturato)',
+              italian: 'modello di branching strutturato (Git Flow)',
               pronunciation: '/ɡɪt floʊ/',
               phonetic: 'GIT FLO',
               example:
-                'Git Flow uses develop, release, and feature branches. = Git Flow usa rami develop, release e feature.',
+                'In Git, Git Flow uses develop, release, and feature branches. = Git Flow usa rami develop, release e feature.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'git-flow',
@@ -2926,7 +2956,7 @@ export default {
               pronunciation: '/dɪˈveləp brɑːntʃ/',
               phonetic: 'di-VE-lop BRANC',
               example:
-                'develop is the integration branch in Git Flow. = develop è il ramo di integrazione in Git Flow.',
+                'As part of your daily Git routine, develop is the integration branch in Git Flow streamlining the path from code to production. = Come parte della routine Git quotidiana, develop è il ramo di integrazione in Git Flow semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git switch develop',
@@ -2937,7 +2967,7 @@ export default {
               pronunciation: '/rɪˈliːs brɑːntʃ/',
               phonetic: 'ri-LIS BRANC',
               example:
-                'A release branch prepares a version for production. = Un ramo release prepara una versione per la produzione.',
+                'As part of your daily Git routine, a release branch prepares a version for production streamlining the path from code to production. = Come parte della routine Git quotidiana, un ramo release prepara una versione per la produzione semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git flow release start 1.0.0',
@@ -2948,7 +2978,7 @@ export default {
               pronunciation: '/ˈhɒtfɪks brɑːntʃ/',
               phonetic: 'HOT-fiks BRANC',
               example:
-                'A hotfix branch patches production urgently. = Un ramo hotfix corregge la produzione urgentemente.',
+                'For a production-grade workflow, a hotfix branch patches production urgently which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, un ramo hotfix corregge la produzione urgentemente il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git flow hotfix start 1.0.1',
@@ -2960,7 +2990,7 @@ export default {
               pronunciation: '/səˈpɔːrt brɑːntʃ/',
               phonetic: 'sa-PORT BRANC',
               example:
-                'Support branches maintain old versions. = I rami di supporto mantengono vecchie versioni.',
+                'As part of your daily Git routine, support branches maintain old versions streamlining the path from code to production. = Come parte della routine Git quotidiana, i rami di supporto mantengono vecchie versioni semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -2970,7 +3000,7 @@ export default {
               pronunciation: '/lɒŋ ˈrʌnɪŋ brɑːntʃ/',
               phonetic: 'LONG RA-ning BRANC',
               example:
-                'main and develop are long-running branches. = main e develop sono rami a lunga durata.',
+                'In a well-organized development process, main and develop are long-running branches helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, main e develop sono rami a lunga durata aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -2980,7 +3010,7 @@ export default {
               pronunciation: '/ˌɪntɪˈɡreɪʃən brɑːntʃ/',
               phonetic: 'in-ti-GREI-scion BRANC',
               example:
-                'develop is the integration branch where features merge. = develop è il ramo di integrazione dove si mergia le feature.',
+                'For a production-grade workflow, develop is the integration branch where features merge which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, develop è il ramo di integrazione dove si mergia le feature il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -2990,7 +3020,7 @@ export default {
               pronunciation: '/prəˈdʌkʃən brɑːntʃ/',
               phonetic: 'pro-DAK-scion BRANC',
               example:
-                'main is the production branch in Git Flow. = main è il ramo di produzione in Git Flow.',
+                'When following established development practices, main is the production branch in Git Flow so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, main è il ramo di produzione in Git Flow cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3000,7 +3030,7 @@ export default {
               pronunciation: '/ɡɪt floʊ tuːl/',
               phonetic: 'GIT-FLO TUL',
               example:
-                'The git-flow tool automates the workflow. = Il tool git-flow automatizza il workflow.',
+                'As part of your daily Git routine, the git-flow tool automates the workflow streamlining the path from code to production. = Come parte della routine Git quotidiana, il tool git-flow automatizza il workflow semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git flow init',
@@ -3012,7 +3042,7 @@ export default {
               pronunciation: '/ˈdriːsən ˈmɒdl/',
               phonetic: 'DRI-sen MO-del',
               example:
-                'Vincent Driessen designed the Git Flow model. = Vincent Driessen ha progettato il modello Git Flow.',
+                'In a well-organized development process, vincent Driessen designed the Git Flow model helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, vincent Driessen ha progettato il modello Git Flow aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Articolo originale del 2010 su nvie.com.',
@@ -3026,11 +3056,11 @@ export default {
           items: [
             {
               english: 'GitHub Flow',
-              italian: 'GitHub Flow (modello branching leggero)',
+              italian: 'modello di branching leggero (GitHub Flow)',
               pronunciation: '/ɡɪtˌhʌb floʊ/',
               phonetic: 'GIT-HAB FLO',
               example:
-                'GitHub Flow is simpler than Git Flow. = GitHub Flow è più semplice di Git Flow.',
+                'When following established development practices, GitHub Flow is simpler than Git Flow so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, gitHub Flow è più semplice di Git Flow cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Branch from main → PR → merge. Più adatto al continuous deployment.',
@@ -3040,7 +3070,8 @@ export default {
               italian: 'Diramare da main',
               pronunciation: '/brɑːntʃ frəm meɪn/',
               phonetic: 'BRANC from MEIN',
-              example: "Always branch from the latest main. = Dirama sempre dall'ultimo main.",
+              example:
+                "When following established development practices, always branch from the latest main so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, dirama sempre dall'ultimo main cosi i rilasci avvengono in modo fluido e nei tempi.",
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git switch -c feature main',
@@ -3051,7 +3082,7 @@ export default {
               pronunciation: '/kənˈtɪnjuəs dɪˈplɔɪmənt/',
               phonetic: 'kon-TI-nius di-PLOI-ment',
               example:
-                'Continuous deployment ships every merge to main. = Continuous deployment rilascia ogni merge in main.',
+                'For a production-grade workflow, Continuous Deployment ships every merge to main which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, continuous deployment rilascia ogni merge in main il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Sigla CD. Ogni merge in main va in produzione automaticamente.',
@@ -3061,7 +3092,8 @@ export default {
               italian: 'Rami brevi',
               pronunciation: '/ʃɔːrt ˈbrɑːntʃɪz/',
               phonetic: 'SCIORT BRAN-cis',
-              example: 'GitHub Flow favors short branches. = GitHub Flow preferisce rami brevi.',
+              example:
+                'In a well-organized development process, gitHub Flow favors short branches helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, gitHub Flow preferisce rami brevi aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3070,7 +3102,8 @@ export default {
               italian: 'Mergere in main',
               pronunciation: '/mɜːrdʒ tə meɪn/',
               phonetic: 'MERG TU MEIN',
-              example: 'Merge to main triggers deployment. = Il merge in main avvia il deployment.',
+              example:
+                'For a production-grade workflow, Merge to main triggers deployment which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, il merge in main avvia il deployment il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'gh pr merge --squash',
@@ -3081,7 +3114,7 @@ export default {
               pronunciation: '/ˈsɪŋɡl brɑːntʃ/',
               phonetic: 'SIN-gol BRANC',
               example:
-                'GitHub Flow has only main as a long branch. = GitHub Flow ha solo main come ramo lungo.',
+                'For a production-grade workflow, gitHub Flow has only main as a long branch which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, gitHub Flow ha solo main come ramo lungo il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3090,7 +3123,8 @@ export default {
               italian: 'Deploy da main',
               pronunciation: '/dɪˈplɔɪ frəm meɪn/',
               phonetic: 'di-PLOI from MEIN',
-              example: 'Deploy from main after every merge. = Fai deploy da main dopo ogni merge.',
+              example:
+                'For a production-grade workflow, Deploy from main after every merge which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, fai deploy da main dopo ogni merge il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3100,7 +3134,7 @@ export default {
               pronunciation: '/ˈlaɪtweɪt/',
               phonetic: 'LAIT-ueit',
               example:
-                'GitHub Flow is lightweight by design. = GitHub Flow è leggero per progettazione.',
+                'For a production-grade workflow, gitHub Flow is lightweight by design which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, gitHub Flow è leggero per progettazione il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3109,7 +3143,8 @@ export default {
               italian: 'Unica fonte di verità',
               pronunciation: '/ˈsɪŋɡl sɔːrs əv truːθ/',
               phonetic: 'SIN-gol SORS ov TRUT',
-              example: "main is the single source of truth. = main è l'unica fonte di verità.",
+              example:
+                "As part of your daily Git routine, main is the single source of truth streamlining the path from code to production. = Come parte della routine Git quotidiana, main è l'unica fonte di verità semplificando il percorso dal codice alla produzione.",
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3119,7 +3154,7 @@ export default {
               pronunciation: '/fæst ˌɪtəˈreɪʃən/',
               phonetic: 'FAST i-te-REI-scion',
               example:
-                'GitHub Flow enables fast iteration. = GitHub Flow abilita iterazioni veloci.',
+                'As part of your daily Git routine, gitHub Flow enables fast iteration streamlining the path from code to production. = Come parte della routine Git quotidiana, gitHub Flow abilita iterazioni veloci semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3136,18 +3171,18 @@ export default {
               pronunciation: '/trʌŋk beɪst dɪˈveləpmənt/',
               phonetic: 'TRANK BEIST di-VE-lop-ment',
               example:
-                'Trunk-based development uses one main branch. = Trunk-based development usa un solo ramo main.',
+                'When following established development practices, Trunk-Based Development uses one main branch so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, trunk-based development usa un solo ramo main cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Sigla TBD. Promosso da Google e altri big.',
             },
             {
               english: 'Trunk',
-              italian: 'trunk / ramo principale di sviluppo',
+              italian: 'ramo principale di sviluppo (trunk)',
               pronunciation: '/trʌŋk/',
               phonetic: 'TRANK',
               example:
-                'Trunk is the main shared branch. = Il trunk è il ramo principale condiviso.',
+                'In a well-organized development process, Trunk is the main shared branch helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, il trunk è il ramo principale condiviso aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Origine SVN: il "tronco" del repo.',
@@ -3157,7 +3192,8 @@ export default {
               italian: 'Rami a breve durata',
               pronunciation: '/ʃɔːrt lɪvd ˈbrɑːntʃɪz/',
               phonetic: 'SCIORT LIVD BRAN-cis',
-              example: 'TBD uses very short-lived branches. = TBD usa rami molto brevi.',
+              example:
+                'When following established development practices, TBD uses very short-lived branches so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, TBD usa rami molto brevi cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Tipicamente meno di un giorno o ore.',
@@ -3168,18 +3204,18 @@ export default {
               pronunciation: '/daɪˈrekt tə trʌŋk/',
               phonetic: 'di-REKT TU TRANK',
               example:
-                'Some teams commit directly to trunk. = Alcuni team committano direttamente sul trunk.',
+                'For a production-grade workflow, some teams commit directly to trunk which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, alcuni team committano direttamente sul trunk il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Solo con test automatizzati robusti e team senior.',
             },
             {
               english: 'Feature Flag',
-              italian: 'feature flag / interruttore funzionalità',
+              italian: 'interruttore funzionalita (feature flag)',
               pronunciation: '/ˈfiːtʃər flæɡ/',
               phonetic: 'FI-cer FLAG',
               example:
-                'Feature flags hide unfinished code in trunk. = I feature flag nascondono codice incompleto nel trunk.',
+                'For a production-grade workflow, feature flags hide unfinished code in trunk which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, i feature flag nascondono codice incompleto nel trunk il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'if (flags.NEW_LOGIN) { ... }',
@@ -3191,7 +3227,7 @@ export default {
               pronunciation: '/brɑːntʃ baɪ æbˈstrækʃən/',
               phonetic: 'BRANC bai ab-STRAK-scion',
               example:
-                'Branch by abstraction avoids long-lived branches. = Branching per astrazione evita rami a lunga durata.',
+                'As part of your daily Git routine, Branch by Abstraction avoids long-lived branches streamlining the path from code to production. = Come parte della routine Git quotidiana, branching per astrazione evita rami a lunga durata semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Pattern di Martin Fowler.',
@@ -3202,7 +3238,7 @@ export default {
               pronunciation: '/kənˈtɪnjuəs/',
               phonetic: 'kon-TI-nius',
               example:
-                'CI is essential to trunk-based development. = CI è essenziale per trunk-based.',
+                'When following established development practices, CI is essential to trunk-based development so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, CI è essenziale per trunk-based cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Sigla CI. Test automatici a ogni push.',
@@ -3213,7 +3249,7 @@ export default {
               pronunciation: '/rɪˈliːs treɪn/',
               phonetic: 'ri-LIS TREIN',
               example:
-                'A release train ships at fixed intervals. = Un release train rilascia a intervalli fissi.',
+                'When following established development practices, a release train ships at fixed intervals so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, un release train rilascia a intervalli fissi cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3223,17 +3259,17 @@ export default {
               pronunciation: '/kəˈneəri rɪˈliːs/',
               phonetic: 'ka-NE-ri ri-LIS',
               example:
-                'Canary release rolls out to a small group first. = Una canary release viene rilasciata prima a un gruppo ristretto.',
+                'In Git, Canary Release rolls out to a small group first. = Una canary release viene rilasciata prima a un gruppo ristretto.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
             {
               english: 'Build Cop',
-              italian: 'build cop / responsabile del build verde',
+              italian: 'responsabile del build verde (build cop)',
               pronunciation: '/bɪld kɒp/',
               phonetic: 'BILD KOP',
               example:
-                'The build cop watches over a green trunk. = Il build cop sorveglia il trunk verde.',
+                'For a production-grade workflow, the build cop watches over a green trunk which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, il build cop sorveglia il trunk verde il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Persona o team responsabile di mantenere stabile il trunk.',
@@ -3251,7 +3287,7 @@ export default {
               pronunciation: '/ˈbrɑːntʃɪŋ ˈstrætədʒi/',
               phonetic: 'BRAN-cing STRA-te-gi',
               example:
-                'Choose a branching strategy that fits your team. = Scegli una strategia di branching adatta al tuo team.',
+                'As part of your daily Git routine, choose a branching strategy that fits your team streamlining the path from code to production. = Come parte della routine Git quotidiana, scegli una strategia di branching adatta al tuo team semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3261,7 +3297,7 @@ export default {
               pronunciation: '/tiːm saɪz/',
               phonetic: 'TIM SAIZ',
               example:
-                'Team size impacts the right workflow. = La dimensione del team influisce sul workflow giusto.',
+                'In a well-organized development process, Team Size impacts the right workflow helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, la dimensione del team influisce sul workflow giusto aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3271,7 +3307,7 @@ export default {
               pronunciation: '/rɪˈliːs ˈkeɪdəns/',
               phonetic: 'ri-LIS KEI-dens',
               example:
-                'Daily releases need TBD or GitHub Flow. = Release giornaliere richiedono TBD o GitHub Flow.',
+                'In a well-organized development process, daily releases need TBD or GitHub Flow helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, release giornaliere richiedono TBD o GitHub Flow aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3281,7 +3317,7 @@ export default {
               pronunciation: '/ˈvɜːrʒənd ˈsɒftweər/',
               phonetic: 'VER-scionD SOFT-uer',
               example:
-                'Versioned software (libraries) often uses Git Flow. = Il software versionato (librerie) spesso usa Git Flow.',
+                'In a well-organized development process, Versioned Software (libraries) often uses Git Flow helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, il software versionato (librerie) spesso usa Git Flow aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3291,7 +3327,7 @@ export default {
               pronunciation: '/web ˌæplɪˈkeɪʃən/',
               phonetic: 'UEB a-pli-KEI-scion',
               example:
-                'Web apps usually fit GitHub Flow well. = Le web app si adattano bene a GitHub Flow.',
+                'In a well-organized development process, web apps usually fit GitHub Flow well helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, le web app si adattano bene a GitHub Flow aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3301,7 +3337,7 @@ export default {
               pronunciation: '/ˈkʌstəm ˈwɜːrkfloʊ/',
               phonetic: 'KA-stom UERK-flo',
               example:
-                'Many teams customize their own workflow. = Molti team personalizzano il proprio workflow.',
+                'For a production-grade workflow, many teams customize their own workflow which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, molti team personalizzano il proprio workflow il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3310,7 +3346,8 @@ export default {
               italian: 'Approccio ibrido',
               pronunciation: '/ˈhaɪbrɪd əˈproʊtʃ/',
               phonetic: 'HAI-brid a-PROC',
-              example: 'A hybrid approach mixes elements. = Un approccio ibrido combina elementi.',
+              example:
+                'In a well-organized development process, a hybrid approach mixes elements helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, un approccio ibrido combina elementi aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3320,7 +3357,7 @@ export default {
               pronunciation: '/brɑːntʃ ˈpɒləsi/',
               phonetic: 'BRANC PO-li-si',
               example:
-                'Define a branch policy in writing. = Definisci una policy di ramo per iscritto.',
+                'In a well-organized development process, define a branch policy in writing helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, definisci una policy di ramo per iscritto aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3330,7 +3367,7 @@ export default {
               pronunciation: '/ˈneɪmɪŋ kənˈvenʃən/',
               phonetic: 'NEI-ming kon-VEN-scion',
               example:
-                'Use a consistent branch naming convention. = Usa una convenzione di naming consistente.',
+                'When following established development practices, use a consistent branch naming convention so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, usa una convenzione di naming consistente cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'feature/123-add-login',
@@ -3341,7 +3378,7 @@ export default {
               pronunciation: '/ˈwɜːrkfloʊ dɒk/',
               phonetic: 'UERK-flo DOK',
               example:
-                'Document the workflow in CONTRIBUTING.md. = Documenta il workflow in CONTRIBUTING.md.',
+                'As part of your daily Git routine, document the workflow in CONTRIBUTING.md streamlining the path from code to production. = Come parte della routine Git quotidiana, documenta il workflow in CONTRIBUTING.md semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -3363,11 +3400,11 @@ export default {
           items: [
             {
               english: 'Rebase',
-              italian: 'rebase / ricostruzione su nuova base',
+              italian: 'ricostruzione su nuova base (rebase)',
               pronunciation: '/ˈriːbeɪs/',
               phonetic: 'RI-beis',
               example:
-                "Rebase reapplies commits on top of another base. = Rebase riapplica i commit su un'altra base.",
+                "Use Rebase to replay commits on top of another base. = Rebase riapplica i commit su un'altra base.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase main',
@@ -3379,7 +3416,7 @@ export default {
               pronunciation: '/ɡɪt ˈriːbeɪs/',
               phonetic: 'GIT RI-beis',
               example:
-                'git rebase moves your branch onto another. = git rebase sposta il tuo ramo su un altro.',
+                'During debugging sessions, use git rebase to move your branch onto another so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, git rebase sposta il tuo ramo su un altro cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase main',
@@ -3389,7 +3426,8 @@ export default {
               italian: 'Storia lineare',
               pronunciation: '/ˈlɪniər ˈhɪstəri/',
               phonetic: 'LI-nia HI-sto-ri',
-              example: 'Rebase produces a linear history. = Il rebase produce una storia lineare.',
+              example:
+                'To understand how the codebase evolved, rebase produces a linear history which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, il rebase produce una storia lineare il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git log --graph --oneline',
@@ -3400,7 +3438,7 @@ export default {
               pronunciation: '/riːˈpleɪ kəˈmɪts/',
               phonetic: 'ri-PLEI KO-mits',
               example:
-                'Rebase replays your commits one by one. = Rebase riapplica i tuoi commit uno per uno.',
+                'To understand how the codebase evolved, rebase replays your commits one by one which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, rebase riapplica i tuoi commit uno per uno il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
             },
@@ -3409,7 +3447,8 @@ export default {
               italian: 'Su ramo (--onto)',
               pronunciation: '/ˈɒntə brɑːntʃ/',
               phonetic: 'ON-to BRANC',
-              example: '--onto specifies the new base. = --onto specifica la nuova base.',
+              example:
+                'When investigating past changes to understand a bug, --onto specifies the new base providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, --onto specifica la nuova base fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --onto main feature-old feature-new',
@@ -3420,7 +3459,7 @@ export default {
               pronunciation: '/ˈriːbeɪs ˈkɒnflɪkt/',
               phonetic: 'RI-beis KON-flikt',
               example:
-                'A rebase conflict needs manual resolution. = Un conflitto in rebase richiede risoluzione manuale.',
+                'During debugging sessions, a rebase conflict needs manual resolution so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, un conflitto in rebase richiede risoluzione manuale cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --continue',
@@ -3431,7 +3470,7 @@ export default {
               pronunciation: '/kənˈtɪnjuː ˈriːbeɪs/',
               phonetic: 'kon-TI-niu RI-beis',
               example:
-                'After resolving, continue the rebase. = Dopo aver risolto, continua il rebase.',
+                'To understand how the codebase evolved, after resolving, continue the rebase which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, dopo aver risolto, continua il rebase il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --continue',
@@ -3441,7 +3480,8 @@ export default {
               italian: 'Annullare rebase',
               pronunciation: '/əˈbɔːrt ˈriːbeɪs/',
               phonetic: 'a-BORT RI-beis',
-              example: 'Abort returns to the original state. = Abort torna allo stato originale.',
+              example:
+                'When investigating past changes to understand a bug, abort returns to the original state providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, abort torna allo stato originale fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --abort',
@@ -3451,7 +3491,8 @@ export default {
               italian: 'Saltare commit',
               pronunciation: '/skɪp kəˈmɪt/',
               phonetic: 'SKIP KO-mit',
-              example: 'Skip a commit if you do not want it. = Salta un commit se non lo vuoi.',
+              example:
+                'When investigating past changes to understand a bug, skip a commit if you do not want it providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, salta un commit se non lo vuoi fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --skip',
@@ -3461,7 +3502,8 @@ export default {
               italian: 'Riscrivere la storia',
               pronunciation: '/ˌriːˈraɪt ˈhɪstəri/',
               phonetic: 'ri-RAIT HI-sto-ri',
-              example: 'Rebase rewrites commit hashes. = Rebase riscrive gli hash dei commit.',
+              example:
+                'When investigating past changes to understand a bug, rebase rewrites commit hashes providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, rebase riscrive gli hash dei commit fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               note: 'Mai farlo su rami già pushati e condivisi.',
@@ -3479,59 +3521,62 @@ export default {
               pronunciation: '/ˌɪntərˈæktɪv ˈriːbeɪs/',
               phonetic: 'in-ter-AK-tiv RI-beis',
               example:
-                'Interactive rebase opens an editor with commits. = Il rebase interattivo apre un editor con i commit.',
+                'During debugging sessions, use Interactive Rebase to open an editor with commits so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, il rebase interattivo apre un editor con i commit cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i HEAD~5',
             },
             {
               english: 'pick',
-              italian: 'pick (mantieni)',
+              italian: 'mantieni (pick)',
               pronunciation: '/pɪk/',
               phonetic: 'PIK',
-              example: 'pick keeps the commit as is. = pick mantiene il commit invariato.',
+              example:
+                'To understand how the codebase evolved, use pick to keep the commit as is which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, pick mantiene il commit invariato il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               code: 'pick a3f5e21 Add login form',
             },
             {
               english: 'reword',
-              italian: 'reword (rinomina)',
+              italian: 'rinomina (reword)',
               pronunciation: '/riːˈwɜːrd/',
               phonetic: 'ri-UERD',
-              example: 'reword changes the commit message. = reword cambia il messaggio di commit.',
+              example:
+                "For project auditing and compliance, use reword to change commit message which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, reword cambia il messaggio di commit il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               code: 'reword a3f5e21 Old message',
             },
             {
               english: 'edit',
-              italian: 'edit (modifica)',
+              italian: 'modifica (edit)',
               pronunciation: '/ˈedɪt/',
               phonetic: 'E-dit',
-              example: 'edit pauses to amend the commit. = edit fa pausa per modificare il commit.',
+              example:
+                'During debugging sessions, edit pauses to amend the commit so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, edit fa pausa per modificare il commit cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               code: 'edit a3f5e21 Need fixes',
             },
             {
               english: 'squash',
-              italian: 'squash (unisci)',
+              italian: 'unisci (squash)',
               pronunciation: '/skwɒʃ/',
               phonetic: 'SKUOSC',
               example:
-                'squash combines commits and asks for a message. = squash unisce i commit e chiede un messaggio.',
+                'Use squash to integrate commits and asks for a message. = squash unisce i commit e chiede un messaggio.',
               context: 'history',
               difficulty: 'intermediate',
               code: 'squash b4f6a32 Fix typo',
             },
             {
               english: 'fixup',
-              italian: 'fixup (correggi)',
+              italian: 'correggi (fixup)',
               pronunciation: '/ˈfɪksʌp/',
               phonetic: 'FIK-sap',
               example:
-                'fixup is squash without keeping the message. = fixup è uno squash che scarta il messaggio.',
+                'When investigating past changes to understand a bug, fixup is squash without keeping the message providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, fixup è uno squash che scarta il messaggio fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               code: 'fixup b4f6a32',
@@ -3539,10 +3584,11 @@ export default {
             },
             {
               english: 'drop',
-              italian: 'drop (elimina)',
+              italian: 'elimina (drop)',
               pronunciation: '/drɒp/',
               phonetic: 'DROP',
-              example: 'drop removes the commit entirely. = drop rimuove il commit del tutto.',
+              example:
+                "For project auditing and compliance, to remove commit entirely, use drop which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, drop rimuove il commit del tutto il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               code: 'drop c8e9d12 Bad commit',
@@ -3553,17 +3599,17 @@ export default {
               pronunciation: '/ˌriːˈɔːrdər kəˈmɪts/',
               phonetic: 'ri-OR-der KO-mits',
               example:
-                "Reorder commits by moving lines in the editor. = Riordina i commit spostando le righe nell'editor.",
+                "In Git, Reorder Commits by moving lines in the editor. = Riordina i commit spostando le righe nell'editor.",
               context: 'history',
               difficulty: 'intermediate',
             },
             {
               english: 'autosquash',
-              italian: 'autosquash / compattazione automatica fixup',
+              italian: 'compattazione automatica fixup (autosquash)',
               pronunciation: '/ˈɔːtoʊskwɒʃ/',
               phonetic: 'AU-to-skuosc',
               example:
-                'autosquash arranges fixup commits automatically. = autosquash organizza i commit fixup automaticamente.',
+                'During debugging sessions, autosquash arranges fixup commits automatically so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, autosquash organizza i commit fixup automaticamente cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i --autosquash HEAD~5',
@@ -3574,7 +3620,7 @@ export default {
               pronunciation: '/ˈtuːduː lɪst/',
               phonetic: 'TU-DU LIST',
               example:
-                'The rebase TODO list is editable. = La lista TODO del rebase è modificabile.',
+                'When investigating past changes to understand a bug, the rebase TODO list is editable providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, la lista TODO del rebase è modificabile fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               note: "Apri nell'editor configurato (vim, nano, code).",
@@ -3592,7 +3638,7 @@ export default {
               pronunciation: '/ˈriːbeɪs bɪˈfɔːr pʊʃ/',
               phonetic: 'RI-beis bi-FOR PUSC',
               example:
-                'Rebase before push to keep history clean. = Fai rebase prima del push per una storia pulita.',
+                "For project auditing and compliance, Rebase before Push to keep history clean which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, fai rebase prima del push per una storia pulita il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git pull --rebase',
@@ -3603,18 +3649,18 @@ export default {
               pronunciation: '/pʊl ˈriːbeɪs/',
               phonetic: 'PUL RI-beis',
               example:
-                'Set pull.rebase=true to default to rebase. = Imposta pull.rebase=true per fare rebase di default.',
+                'To understand how the codebase evolved, set pull.rebase=true to default to rebase which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, imposta pull.rebase=true per fare rebase di default il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git config --global pull.rebase true',
             },
             {
               english: 'Rebase vs Merge',
-              italian: 'rebase vs merge / scelta integrazione storia',
+              italian: 'scelta di integrazione della storia (rebase vs merge)',
               pronunciation: '/ˈriːbeɪs vɜːrsəs mɜːrdʒ/',
               phonetic: 'RI-beis VER-sus MERG',
               example:
-                'Rebase keeps history flat; merge preserves context. = Rebase mantiene piatta la storia; merge preserva il contesto.',
+                "For project auditing and compliance, rebase keeps history flat; merge preserves context which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, rebase mantiene piatta la storia; merge preserva il contesto il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
             },
@@ -3624,7 +3670,7 @@ export default {
               pronunciation: '/ˈɡoʊldən ruːl/',
               phonetic: 'GOL-den RUL',
               example:
-                "Golden rule: do not rebase shared branches. = Regola d'oro: non fare rebase di rami condivisi.",
+                "To understand how the codebase evolved, golden rule: do not rebase shared branches which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, regola d'oro: non fare rebase di rami condivisi il che aiuta a tracciare quando sono state introdotte specifiche modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               note: 'Riscrivere storia condivisa rompe i repo degli altri.',
@@ -3635,7 +3681,7 @@ export default {
               pronunciation: '/fɔːrs pʊʃ ˈɑːftər ˈriːbeɪs/',
               phonetic: 'FORS PUSC AF-ter RI-beis',
               example:
-                'After a rebase, you must force push. = Dopo un rebase devi fare force push.',
+                "For project auditing and compliance, after a rebase, you must force push which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, dopo un rebase devi fare force push il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git push --force-with-lease',
@@ -3646,7 +3692,7 @@ export default {
               pronunciation: '/ʌpˈdeɪt ˈfiːtʃər/',
               phonetic: 'ap-DEIT FI-cer',
               example:
-                'Rebase your feature on main regularly. = Fai rebase della feature su main regolarmente.',
+                "For project auditing and compliance, rebase your feature on main regularly which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, fai rebase della feature su main regolarmente il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase main',
@@ -3657,7 +3703,7 @@ export default {
               pronunciation: '/kliːn ʌp ˈhɪstəri/',
               phonetic: 'KLIN AP HI-sto-ri',
               example:
-                'Clean up history with interactive rebase before merge. = Pulisci la storia con rebase interattivo prima del merge.',
+                'In Git, Clean Up History with interactive rebase before merge. = Pulisci la storia con rebase interattivo prima del merge.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i HEAD~10',
@@ -3668,7 +3714,7 @@ export default {
               pronunciation: '/skwɒʃ bɪˈfɔːr mɜːrdʒ/',
               phonetic: 'SKUOSC bi-FOR MERG',
               example:
-                'Squash WIP commits before merging. = Fai squash dei commit WIP prima di mergeare.',
+                'When investigating past changes to understand a bug, squash WIP commits before merging providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, fai squash dei commit WIP prima di mergeare fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
             },
@@ -3678,7 +3724,7 @@ export default {
               pronunciation: '/dʌbljuː aɪ piː kəˈmɪt/',
               phonetic: 'UA-I-PI KO-mit',
               example:
-                'Squash WIP commits to keep history clean. = Squash dei commit WIP per pulire la storia.',
+                "For project auditing and compliance, squash WIP commits to keep history clean which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, squash dei commit WIP per pulire la storia il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               note: 'WIP = Work In Progress. Da unire prima del merge finale.',
@@ -3688,7 +3734,8 @@ export default {
               italian: 'Commit fixup',
               pronunciation: '/ˈfɪksʌp kəˈmɪt/',
               phonetic: 'FIK-sap KO-mit',
-              example: 'Create a fixup commit with --fixup. = Crea un commit fixup con --fixup.',
+              example:
+                "For project auditing and compliance, create a fixup commit with --fixup which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, crea un commit fixup con --fixup il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git commit --fixup=a3f5e21',
@@ -3706,7 +3753,7 @@ export default {
               pronunciation: '/ˈɒntə/',
               phonetic: 'ON-to',
               example:
-                'rebase --onto moves a chunk of history. = rebase --onto sposta un pezzo di storia.',
+                'During debugging sessions, rebase --onto moves a chunk of history so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, rebase --onto sposta un pezzo di storia cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase --onto main develop feature',
@@ -3717,7 +3764,7 @@ export default {
               pronunciation: '/reɪndʒ/',
               phonetic: 'REIN-G',
               example:
-                'Rebase a specific range of commits. = Fai rebase di un intervallo specifico di commit.',
+                'To understand how the codebase evolved, rebase a specific range of commits which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, fai rebase di un intervallo specifico di commit il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i HEAD~5..HEAD',
@@ -3728,7 +3775,7 @@ export default {
               pronunciation: '/ruːt ˈriːbeɪs/',
               phonetic: 'RUT RI-beis',
               example:
-                '--root rebases from the very first commit. = --root fa rebase dal primo commit.',
+                'During debugging sessions, --root rebases from the very first commit so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, --root fa rebase dal primo commit cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i --root',
@@ -3739,39 +3786,39 @@ export default {
               pronunciation: '/prɪˈzɜːrv ˈmɜːrdʒɪz/',
               phonetic: 'pri-ZERV MER-gis',
               example:
-                '--rebase-merges keeps merge commits. = --rebase-merges mantiene i commit di merge.',
+                "For project auditing and compliance, --rebase-merges keeps merge commits which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, --rebase-merges mantiene i commit di merge il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git rebase -i --rebase-merges',
             },
             {
               english: 'exec',
-              italian: 'exec (esegui)',
+              italian: 'esegui (exec)',
               pronunciation: '/ˈeɡzek/',
               phonetic: 'EG-zek',
               example:
-                'exec runs a command between commits. = exec esegue un comando tra i commit.',
+                'To understand how the codebase evolved, use exec to run command between commits which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, exec esegue un comando tra i commit il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               code: 'exec npm test',
             },
             {
               english: 'break',
-              italian: 'break (interruzione)',
+              italian: 'interruzione (break)',
               pronunciation: '/breɪk/',
               phonetic: 'BREIK',
               example:
-                'break pauses the rebase at this point. = break ferma il rebase a questo punto.',
+                "For project auditing and compliance, break pauses the rebase at this point which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, break ferma il rebase a questo punto il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
             },
             {
               english: 'label',
-              italian: 'label / etichetta',
+              italian: 'etichetta (label)',
               pronunciation: '/ˈleɪbl/',
               phonetic: 'LEI-bol',
               example:
-                'label tags a commit for later reference. = label etichetta un commit per riferimento futuro.',
+                'When investigating past changes to understand a bug, use label to mark commit for later reference providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, label etichetta un commit per riferimento futuro fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
             },
@@ -3781,7 +3828,7 @@ export default {
               pronunciation: '/mɜːrdʒ dɪˈrektɪv/',
               phonetic: 'MERG di-REK-tiv',
               example:
-                'merge directive recreates a merge in rebase-merges. = La direttiva merge ricrea un merge in rebase-merges.',
+                'To understand how the codebase evolved, merge directive recreates a merge in rebase-merges which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, la direttiva merge ricrea un merge in rebase-merges il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
             },
@@ -3791,7 +3838,7 @@ export default {
               pronunciation: '/ˈedɪt kəˈmɪt/',
               phonetic: 'E-dit KO-mit',
               example:
-                'Edit a commit, amend, then continue. = Modifica un commit, fai amend, poi continua.',
+                "For project auditing and compliance, edit a commit, amend, then continue which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, modifica un commit, fai amend, poi continua il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git commit --amend && git rebase --continue',
@@ -3802,7 +3849,7 @@ export default {
               pronunciation: '/splɪt kəˈmɪt/',
               phonetic: 'SPLIT KO-mit',
               example:
-                'Split one commit into multiple smaller ones. = Dividi un commit in più commit piccoli.',
+                "For project auditing and compliance, split one commit into multiple smaller ones which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, dividi un commit in più commit piccoli il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset HEAD^ && ...',
@@ -3826,11 +3873,11 @@ export default {
           items: [
             {
               english: 'Stash',
-              italian: 'Stash / Riserva',
+              italian: 'riserva temporanea (stash)',
               pronunciation: '/stæʃ/',
               phonetic: 'STASC',
               example:
-                'A stash holds uncommitted changes aside. = Uno stash mette da parte modifiche non committate.',
+                'To understand how the codebase evolved, a stash holds uncommitted changes aside which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, uno stash mette da parte modifiche non committate il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash',
@@ -3842,7 +3889,7 @@ export default {
               pronunciation: '/ɡɪt stæʃ/',
               phonetic: 'GIT STASC',
               example:
-                'git stash saves your work in progress. = git stash salva il lavoro in corso.',
+                "For project auditing and compliance, use git stash to save your work in progress which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, git stash salva il lavoro in corso il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash',
@@ -3853,7 +3900,7 @@ export default {
               pronunciation: '/ɡɪt stæʃ pʊʃ/',
               phonetic: 'GIT STASC PUSC',
               example:
-                'git stash push -m "msg" stashes with a message. = git stash push -m "msg" stasha con un messaggio.',
+                'The command git stash push -m "msg" stashes with a message. = git stash push -m "msg" stasha con un messaggio.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash push -m "WIP login"',
@@ -3863,7 +3910,8 @@ export default {
               italian: 'Stash pop',
               pronunciation: '/ɡɪt stæʃ pɒp/',
               phonetic: 'GIT STASC POP',
-              example: 'pop reapplies and removes the stash. = pop riapplica e rimuove lo stash.',
+              example:
+                'When investigating past changes to understand a bug, pop reapplies and removes the stash providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, pop riapplica e rimuove lo stash fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash pop',
@@ -3874,7 +3922,7 @@ export default {
               pronunciation: '/ɡɪt stæʃ əˈplaɪ/',
               phonetic: 'GIT STASC a-PLAI',
               example:
-                'apply reapplies but keeps the stash. = apply riapplica ma mantiene lo stash.',
+                "For project auditing and compliance, apply reapplies but keeps the stash which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, apply riapplica ma mantiene lo stash il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash apply',
@@ -3885,7 +3933,7 @@ export default {
               pronunciation: '/ɡɪt stæʃ lɪst/',
               phonetic: 'GIT STASC LIST',
               example:
-                'git stash list shows all your stashes. = git stash list mostra tutti i tuoi stash.',
+                'To understand how the codebase evolved, to see all your stashes, run git stash list which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, git stash list mostra tutti i tuoi stash il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash list',
@@ -3896,7 +3944,7 @@ export default {
               pronunciation: '/ɡɪt stæʃ drɒp/',
               phonetic: 'GIT STASC DROP',
               example:
-                'drop removes a stash without applying. = drop rimuove uno stash senza applicarlo.',
+                'When investigating past changes to understand a bug, drop removes a stash without applying providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, drop rimuove uno stash senza applicarlo fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash drop stash@{0}',
@@ -3906,7 +3954,8 @@ export default {
               italian: 'Cancellare tutti gli stash',
               pronunciation: '/ɡɪt stæʃ klɪər/',
               phonetic: 'GIT STASC KLIR',
-              example: 'clear removes all stashes. = clear rimuove tutti gli stash.',
+              example:
+                'When investigating past changes to understand a bug, clear removes all stashes providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, clear rimuove tutti gli stash fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash clear',
@@ -3917,7 +3966,8 @@ export default {
               italian: 'Riferimento stash',
               pronunciation: '/stæʃ ˈrefərəns/',
               phonetic: 'STASC RE-fe-rens',
-              example: 'stash@{0} is the most recent stash. = stash@{0} è lo stash più recente.',
+              example:
+                'When investigating past changes to understand a bug, stash@{0} is the most recent stash providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, stash@{0} è lo stash più recente fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               code: 'stash@{0}',
@@ -3928,7 +3978,7 @@ export default {
               pronunciation: '/stæʃ wɪð ʌnˈtrækt/',
               phonetic: 'STASC UID an-TRAKT',
               example:
-                '-u includes untracked files in the stash. = -u include file untracked nello stash.',
+                'During debugging sessions, -u includes untracked files in the stash so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, -u include file untracked nello stash cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash push -u',
@@ -3945,7 +3995,8 @@ export default {
               italian: 'Comando reset',
               pronunciation: '/ɡɪt ˈriːset/',
               phonetic: 'GIT RI-set',
-              example: "git reset moves HEAD and the index. = git reset sposta HEAD e l'indice.",
+              example:
+                "To understand how the codebase evolved, use git reset to move HEAD and the index which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, git reset sposta HEAD e l'indice il che aiuta a tracciare quando sono state introdotte specifiche modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset HEAD~1',
@@ -3955,7 +4006,8 @@ export default {
               italian: 'Reset --soft',
               pronunciation: '/sɒft/',
               phonetic: 'SOFT',
-              example: '--soft keeps changes staged. = --soft mantiene le modifiche in staging.',
+              example:
+                'During debugging sessions, use --soft to keep changes staged so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, --soft mantiene le modifiche in staging cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --soft HEAD~1',
@@ -3966,7 +4018,7 @@ export default {
               pronunciation: '/mɪkst/',
               phonetic: 'MIKST',
               example:
-                '--mixed keeps changes unstaged. = --mixed mantiene le modifiche fuori staging.',
+                'To understand how the codebase evolved, use --mixed to keep changes unstaged which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, --mixed mantiene le modifiche fuori staging il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --mixed HEAD~1',
@@ -3977,7 +4029,8 @@ export default {
               italian: 'Reset --hard',
               pronunciation: '/hɑːrd/',
               phonetic: 'HARD',
-              example: '--hard discards all changes. = --hard scarta tutte le modifiche.',
+              example:
+                "For project auditing and compliance, --hard discards all changes which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, --hard scarta tutte le modifiche il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --hard HEAD~1',
@@ -3988,7 +4041,8 @@ export default {
               italian: 'Reset a commit',
               pronunciation: '/ˈriːset tə kəˈmɪt/',
               phonetic: 'RI-set TU KO-mit',
-              example: 'Reset to a specific commit hash. = Reset a uno specifico hash di commit.',
+              example:
+                "For project auditing and compliance, reset to a specific commit hash which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, reset a uno specifico hash di commit il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --hard a3f5e21',
@@ -3999,7 +4053,7 @@ export default {
               pronunciation: '/ʌnˈsteɪdʒ faɪl/',
               phonetic: 'an-STEIG FAIL',
               example:
-                'git reset HEAD file.txt unstages a file. = git reset HEAD file.txt toglie un file dallo staging.',
+                'To understand how the codebase evolved, git reset HEAD file.txt unstages a file which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, git reset HEAD file.txt toglie un file dallo staging il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git restore --staged file.txt',
@@ -4011,7 +4065,7 @@ export default {
               pronunciation: '/ˈriːset hed/',
               phonetic: 'RI-set HED',
               example:
-                'Reset HEAD to the state before staging. = Resetta HEAD allo stato prima dello staging.',
+                'To understand how the codebase evolved, Reset HEAD to the state before staging which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, resetta HEAD allo stato prima dello staging il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset HEAD',
@@ -4022,18 +4076,18 @@ export default {
               pronunciation: '/ˌʌnˈduː kəˈmɪt/',
               phonetic: 'an-DU KO-mit',
               example:
-                'Undo a commit but keep changes. = Annulla un commit ma mantieni le modifiche.',
+                "For project auditing and compliance, undo a commit but keep changes which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, annulla un commit ma mantieni le modifiche il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --soft HEAD~1',
             },
             {
               english: 'ORIG_HEAD',
-              italian: 'ORIG_HEAD / riferimento HEAD precedente',
+              italian: 'riferimento a HEAD precedente (ORIG_HEAD)',
               pronunciation: '/ˈɔːrɪɡ hed/',
               phonetic: 'O-rig HED',
               example:
-                'ORIG_HEAD points to HEAD before reset. = ORIG_HEAD punta a HEAD prima del reset.',
+                'During debugging sessions, ORIG_HEAD points to HEAD before reset so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, ORIG_HEAD punta a HEAD prima del reset cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --hard ORIG_HEAD',
@@ -4044,7 +4098,7 @@ export default {
               pronunciation: '/ˈriːset ˈkɔːʃən/',
               phonetic: 'RI-set KO-scion',
               example:
-                'Reset --hard cannot easily be undone. = Reset --hard non si può annullare facilmente.',
+                'During debugging sessions, reset --hard cannot easily be undone so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, reset --hard non si può annullare facilmente cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               note: 'Ancora possibile recuperare via reflog entro qualche giorno.',
@@ -4062,7 +4116,7 @@ export default {
               pronunciation: '/ɡɪt rɪˈstɔːr/',
               phonetic: 'GIT ri-STOR',
               example:
-                'git restore reverts files to a state. = git restore riporta i file a uno stato.',
+                'When investigating past changes to understand a bug, git restore reverts files to a state providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, git restore riporta i file a uno stato fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git restore file.txt',
@@ -4070,11 +4124,11 @@ export default {
             },
             {
               english: 'restore --staged',
-              italian: 'git restore --staged / rimuove file dallo staging',
+              italian: 'rimuove file dallo staging (restore --staged)',
               pronunciation: '/rɪˈstɔːr steɪdʒd/',
               phonetic: 'ri-STOR STEIGD',
               example:
-                'restore --staged unstages changes. = restore --staged toglie dallo staging.',
+                'When investigating past changes to understand a bug, restore --staged unstages changes providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, restore --staged toglie dallo staging fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git restore --staged file.txt',
@@ -4085,7 +4139,7 @@ export default {
               pronunciation: '/rɪˈstɔːr sɔːrs/',
               phonetic: 'ri-STOR SORS',
               example:
-                'restore --source restores from a specific commit. = restore --source ripristina da un commit specifico.',
+                'To understand how the codebase evolved, restore --source restores from a specific commit which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, restore --source ripristina da un commit specifico il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git restore --source HEAD~3 file.txt',
@@ -4096,7 +4150,7 @@ export default {
               pronunciation: '/ɡɪt kliːn/',
               phonetic: 'GIT KLIN',
               example:
-                'git clean removes untracked files. = git clean rimuove i file non tracciati.',
+                "For project auditing and compliance, to remove untracked files, use git clean which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, git clean rimuove i file non tracciati il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git clean -fd',
@@ -4104,11 +4158,11 @@ export default {
             },
             {
               english: 'Clean Dry Run',
-              italian: 'clean dry run / prova senza eliminare',
+              italian: 'prova senza eliminare (clean dry run)',
               pronunciation: '/kliːn draɪ rʌn/',
               phonetic: 'KLIN DRAI RAN',
               example:
-                'git clean -n shows what would be deleted. = git clean -n mostra cosa verrebbe cancellato.',
+                'To understand how the codebase evolved, git clean -n shows what would be deleted which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, git clean -n mostra cosa verrebbe cancellato il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git clean -n',
@@ -4119,7 +4173,7 @@ export default {
               pronunciation: '/kliːn fɔːrs/',
               phonetic: 'KLIN FORS',
               example:
-                '-f is required to actually delete files. = -f è richiesto per eliminare davvero i file.',
+                'When investigating past changes to understand a bug, -f is required to actually delete files providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, -f è richiesto per eliminare davvero i file fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git clean -f',
@@ -4130,7 +4184,7 @@ export default {
               pronunciation: '/kliːn dəˈrektəriz/',
               phonetic: 'KLIN di-REK-toris',
               example:
-                '-d removes untracked directories too. = -d rimuove anche directory non tracciate.',
+                'When investigating past changes to understand a bug, -d removes untracked directories too providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, -d rimuove anche directory non tracciate fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git clean -fd',
@@ -4140,7 +4194,8 @@ export default {
               italian: 'Clean ignorati',
               pronunciation: '/kliːn ɪɡˈnɔːrd/',
               phonetic: 'KLIN ig-NORD',
-              example: '-x removes ignored files too. = -x rimuove anche i file ignorati.',
+              example:
+                "For project auditing and compliance, -x removes ignored files too which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, -x rimuove anche i file ignorati il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git clean -fdx',
@@ -4151,7 +4206,8 @@ export default {
               italian: 'Scartare tutte le modifiche',
               pronunciation: '/dɪsˈkɑːrd ɔːl/',
               phonetic: 'di-SKARD OL',
-              example: 'Discard all unstaged changes. = Scarta tutte le modifiche non in staging.',
+              example:
+                'During debugging sessions, discard all unstaged changes so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, scarta tutte le modifiche non in staging cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git restore .',
@@ -4161,7 +4217,8 @@ export default {
               italian: 'Reset a HEAD',
               pronunciation: '/ˈriːset tə hed/',
               phonetic: 'RI-set TU HED',
-              example: 'Reset working tree to HEAD. = Resetta il working tree a HEAD.',
+              example:
+                'When investigating past changes to understand a bug, reset working tree to HEAD providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, resetta il working tree a HEAD fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --hard HEAD',
@@ -4179,7 +4236,7 @@ export default {
               pronunciation: '/swɪtʃ wɪð stæʃ/',
               phonetic: 'SUICI UID STASC',
               example:
-                'Stash before switching to another branch. = Fai stash prima di cambiare ramo.',
+                "For project auditing and compliance, stash before switching to another branch which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, fai stash prima di cambiare ramo il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash && git switch main',
@@ -4190,7 +4247,7 @@ export default {
               pronunciation: '/stæʃ brɑːntʃ/',
               phonetic: 'STASC BRANC',
               example:
-                'git stash branch creates a branch from a stash. = git stash branch crea un branch da uno stash.',
+                'To understand how the codebase evolved, git stash branch creates a branch from a stash which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, git stash branch crea un branch da uno stash il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash branch new-feature',
@@ -4201,7 +4258,7 @@ export default {
               pronunciation: '/stæʃ ʃoʊ/',
               phonetic: 'STASC SCIO',
               example:
-                'git stash show displays stash contents. = git stash show visualizza il contenuto dello stash.',
+                'When investigating past changes to understand a bug, git stash show displays stash contents providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, git stash show visualizza il contenuto dello stash fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash show -p',
@@ -4212,7 +4269,7 @@ export default {
               pronunciation: '/ˈpɑːrʃəl stæʃ/',
               phonetic: 'PAR-scial STASC',
               example:
-                'Stash only specific files with -- path. = Stasha solo file specifici con -- path.',
+                'During debugging sessions, stash only specific files with -- path so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, stasha solo file specifici con -- path cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash push -m "css" -- src/style.css',
@@ -4222,7 +4279,8 @@ export default {
               italian: 'Stash interattivo',
               pronunciation: '/ˌɪntərˈæktɪv stæʃ/',
               phonetic: 'in-ter-AK-tiv STASC',
-              example: '-p picks hunks interactively. = -p sceglie hunk interattivamente.',
+              example:
+                'To understand how the codebase evolved, -p picks hunks interactively which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, -p sceglie hunk interattivamente il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash push -p',
@@ -4233,7 +4291,7 @@ export default {
               pronunciation: '/kiːp ˈɪndeks/',
               phonetic: 'KIP IN-deks',
               example:
-                '--keep-index keeps staged files. = --keep-index mantiene i file in staging.',
+                "For project auditing and compliance, --keep-index keeps staged files which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, --keep-index mantiene i file in staging il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash --keep-index',
@@ -4244,7 +4302,7 @@ export default {
               pronunciation: '/stæʃ ˈmʌltɪpl/',
               phonetic: 'STASC MAL-ti-pol',
               example:
-                'You can have many stashes at once. = Puoi avere molti stash contemporaneamente.',
+                "For project auditing and compliance, you can have many stashes at once which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, puoi avere molti stash contemporaneamente il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash list',
@@ -4255,7 +4313,7 @@ export default {
               pronunciation: '/əˈplaɪ spəˈsɪfɪk/',
               phonetic: 'a-PLAI spe-SI-fik',
               example:
-                'Apply a specific stash by reference. = Applica uno stash specifico per riferimento.',
+                'To understand how the codebase evolved, apply a specific stash by reference which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, applica uno stash specifico per riferimento il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git stash apply stash@{2}',
@@ -4265,7 +4323,8 @@ export default {
               italian: 'Conflitto in stash',
               pronunciation: '/stæʃ ˈkɒnflɪkt/',
               phonetic: 'STASC KON-flikt',
-              example: 'Stash apply may produce conflicts. = Stash apply può produrre conflitti.',
+              example:
+                "For project auditing and compliance, stash apply may produce conflicts which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, stash apply può produrre conflitti il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               note: 'Risolvi come un merge normale.',
@@ -4276,7 +4335,7 @@ export default {
               pronunciation: '/lɒst stæʃ/',
               phonetic: 'LOST STASC',
               example:
-                'Recover a dropped stash via reflog. = Recupera uno stash droppato via reflog.',
+                "For project auditing and compliance, recover a dropped stash via reflog which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, recupera uno stash droppato via reflog il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git fsck --unreachable',
@@ -4303,7 +4362,8 @@ export default {
               italian: 'Modificare ultimo commit',
               pronunciation: '/ɡɪt kəˈmɪt əˈmend/',
               phonetic: 'GIT KO-mit a-MEND',
-              example: "--amend modifies the last commit. = --amend modifica l'ultimo commit.",
+              example:
+                "When investigating past changes to understand a bug, --amend modifies the last commit providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, --amend modifica l'ultimo commit fornendo una traccia di audit chiara.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git commit --amend',
@@ -4314,7 +4374,8 @@ export default {
               italian: 'Modificare messaggio',
               pronunciation: '/əˈmend ˈmesɪdʒ/',
               phonetic: 'a-MEND MES-sig',
-              example: 'Amend just the commit message. = Modifica solo il messaggio di commit.',
+              example:
+                'During debugging sessions, amend just the commit message so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, modifica solo il messaggio di commit cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git commit --amend -m "New message"',
@@ -4325,7 +4386,7 @@ export default {
               pronunciation: '/əˈmend noʊ ˈedɪt/',
               phonetic: 'a-MEND NO E-dit',
               example:
-                '--no-edit keeps the original message. = --no-edit mantiene il messaggio originale.',
+                'When investigating past changes to understand a bug, --no-edit keeps the original message providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, --no-edit mantiene il messaggio originale fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git commit --amend --no-edit',
@@ -4336,7 +4397,7 @@ export default {
               pronunciation: '/ɡɪt rɪˈvɜːrt/',
               phonetic: 'GIT ri-VERT',
               example:
-                'git revert creates a new commit that undoes another. = git revert crea un nuovo commit che annulla un altro.',
+                'Use git revert to create new commit that undoes another. = git revert crea un nuovo commit che annulla un altro.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git revert a3f5e21',
@@ -4347,7 +4408,8 @@ export default {
               italian: 'Revert di intervallo',
               pronunciation: '/rɪˈvɜːrt reɪndʒ/',
               phonetic: 'ri-VERT REIN-G',
-              example: 'Revert a range of commits. = Fai revert di un intervallo di commit.',
+              example:
+                "For project auditing and compliance, revert a range of commits which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, fai revert di un intervallo di commit il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git revert HEAD~3..HEAD',
@@ -4358,7 +4420,7 @@ export default {
               pronunciation: '/rɪˈvɜːrt mɜːrdʒ/',
               phonetic: 'ri-VERT MERG',
               example:
-                '-m specifies the parent for merge revert. = -m specifica il genitore per revertare un merge.',
+                'When investigating past changes to understand a bug, -m specifies the parent for merge revert providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, -m specifica il genitore per revertare un merge fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git revert -m 1 a3f5e21',
@@ -4369,7 +4431,7 @@ export default {
               pronunciation: '/kənˈtɪnjuː rɪˈvɜːrt/',
               phonetic: 'kon-TI-niu ri-VERT',
               example:
-                'Continue revert after resolving conflicts. = Continua il revert dopo aver risolto i conflitti.',
+                'To understand how the codebase evolved, Continue Revert after resolving conflicts which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, continua il revert dopo aver risolto i conflitti il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git revert --continue',
@@ -4379,7 +4441,8 @@ export default {
               italian: 'Annullare revert',
               pronunciation: '/əˈbɔːrt rɪˈvɜːrt/',
               phonetic: 'a-BORT ri-VERT',
-              example: 'Abort an in-progress revert. = Annulla un revert in corso.',
+              example:
+                'When investigating past changes to understand a bug, abort an in-progress revert providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, annulla un revert in corso fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git revert --abort',
@@ -4390,7 +4453,7 @@ export default {
               pronunciation: '/rɪˈvɜːrt kəˈmɪt/',
               phonetic: 'ri-VERT KO-mit',
               example:
-                'A revert commit cancels a previous one. = Un revert commit annulla uno precedente.',
+                'To understand how the codebase evolved, a revert commit cancels a previous one which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, un revert commit annulla uno precedente il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
             },
@@ -4400,7 +4463,7 @@ export default {
               pronunciation: '/ˈfɔːrwərd fɪks/',
               phonetic: 'FOR-uard FIKS',
               example:
-                'Use a forward fix instead of revert when possible. = Usa una correzione in avanti invece del revert quando possibile.',
+                'During debugging sessions, use a forward fix instead of revert when possible so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, usa una correzione in avanti invece del revert quando possibile cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               note: 'Filosofia: nuovi commit invece di riscrivere/annullare.',
@@ -4414,11 +4477,11 @@ export default {
           items: [
             {
               english: 'cherry-pick',
-              italian: 'cherry-pick / preleva un commit specifico',
+              italian: 'prelievo di un commit specifico (cherry-pick)',
               pronunciation: '/ˈtʃeri pɪk/',
               phonetic: 'CIE-ri PIK',
               example:
-                'cherry-pick applies a commit from another branch. = cherry-pick applica un commit da un altro branch.',
+                "For project auditing and compliance, cherry-pick applies a commit from another branch which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, cherry-pick applica un commit da un altro branch il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick a3f5e21',
@@ -4429,7 +4492,8 @@ export default {
               italian: 'Cherry-pick di intervallo',
               pronunciation: '/ˈtʃeri pɪk reɪndʒ/',
               phonetic: 'CIE-ri PIK REIN-G',
-              example: 'Cherry-pick a range of commits. = Cherry-pick di un intervallo di commit.',
+              example:
+                'During debugging sessions, cherry-pick a range of commits so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, cherry-pick di un intervallo di commit cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick A..B',
@@ -4440,7 +4504,7 @@ export default {
               pronunciation: '/ˈtʃeri pɪk mɜːrdʒ/',
               phonetic: 'CIE-ri PIK MERG',
               example:
-                'Use -m to cherry-pick a merge commit. = Usa -m per cherry-pick di un merge commit.',
+                'To understand how the codebase evolved, use -m to cherry-pick a merge commit which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, usa -m per cherry-pick di un merge commit il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick -m 1 a3f5e21',
@@ -4451,7 +4515,7 @@ export default {
               pronunciation: '/ˈtʃeri pɪk noʊ kəˈmɪt/',
               phonetic: 'CIE-ri PIK NO KO-mit',
               example:
-                '-n applies changes without committing. = -n applica le modifiche senza committare.',
+                "For project auditing and compliance, -n applies changes without committing which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, -n applica le modifiche senza committare il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick -n a3f5e21',
@@ -4462,18 +4526,18 @@ export default {
               pronunciation: '/ˈtʃeri pɪk ˈkɒnflɪkt/',
               phonetic: 'CIE-ri PIK KON-flikt',
               example:
-                'Resolve conflict, then continue cherry-pick. = Risolvi il conflitto, poi continua il cherry-pick.',
+                "For project auditing and compliance, resolve conflict, then continue cherry-pick which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, risolvi il conflitto, poi continua il cherry-pick il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick --continue',
             },
             {
               english: 'Backport',
-              italian: 'backport / portare fix su versione precedente',
+              italian: 'portare fix su versione precedente (backport)',
               pronunciation: '/ˈbækpɔːrt/',
               phonetic: 'BAK-port',
               example:
-                'Backport a fix from main to a release branch. = Fai backport di un fix da main a un ramo release.',
+                'In Git, Backport a fix from main to a release branch. = Fai backport di un fix da main a un ramo release.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick a3f5e21',
@@ -4481,11 +4545,11 @@ export default {
             },
             {
               english: 'Forwardport',
-              italian: 'forwardport / portare fix su versione futura',
+              italian: 'portare fix su versione futura (forwardport)',
               pronunciation: '/ˈfɔːrwərdpɔːrt/',
               phonetic: 'FOR-uard-port',
               example:
-                'Forwardport from old branch to current. = Fai forwardport dal ramo vecchio al corrente.',
+                'During debugging sessions, Forwardport from old branch to current so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, fai forwardport dal ramo vecchio al corrente cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
             },
@@ -4495,7 +4559,7 @@ export default {
               pronunciation: '/ˈtʃeri pɪk saɪn ɒf/',
               phonetic: 'CIE-ri PIK SAIN-OF',
               example:
-                '-x adds the original commit reference. = -x aggiunge il riferimento al commit originale.',
+                'During debugging sessions, -x adds the original commit reference so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, -x aggiunge il riferimento al commit originale cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick -x a3f5e21',
@@ -4505,7 +4569,8 @@ export default {
               italian: 'Saltare commit',
               pronunciation: '/skɪp kəˈmɪt/',
               phonetic: 'SKIP KO-mit',
-              example: 'Skip an empty cherry-pick. = Salta un cherry-pick vuoto.',
+              example:
+                'When investigating past changes to understand a bug, skip an empty cherry-pick providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, salta un cherry-pick vuoto fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick --skip',
@@ -4515,7 +4580,8 @@ export default {
               italian: 'Strategia cherry-pick',
               pronunciation: '/ˈtʃeri pɪk ˈstrætədʒi/',
               phonetic: 'CIE-ri PIK STRA-te-gi',
-              example: 'Specify a merge strategy with -X. = Specifica una strategia con -X.',
+              example:
+                'During debugging sessions, specify a merge strategy with -X so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, specifica una strategia con -X cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick -X theirs a3f5e21',
@@ -4529,11 +4595,11 @@ export default {
           items: [
             {
               english: 'reflog',
-              italian: 'reflog / log dei movimenti di HEAD',
+              italian: 'log dei movimenti di HEAD (reflog)',
               pronunciation: '/ˈreflɒɡ/',
               phonetic: 'REF-log',
               example:
-                'reflog records every HEAD movement. = reflog registra ogni movimento di HEAD.',
+                "For project auditing and compliance, use reflog to record every HEAD movement which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, reflog registra ogni movimento di HEAD il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reflog',
@@ -4544,7 +4610,8 @@ export default {
               italian: 'Comando reflog',
               pronunciation: '/ɡɪt ˈreflɒɡ/',
               phonetic: 'GIT REF-log',
-              example: "git reflog shows where HEAD was. = git reflog mostra dov'è stato HEAD.",
+              example:
+                "To understand how the codebase evolved, to see where HEAD was, run git reflog which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, git reflog mostra dov'è stato HEAD il che aiuta a tracciare quando sono state introdotte specifiche modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reflog show',
@@ -4554,7 +4621,8 @@ export default {
               italian: 'Riferimento HEAD@{n}',
               pronunciation: '/hed æt n/',
               phonetic: 'HED-AT-N',
-              example: 'HEAD@{1} is the previous HEAD. = HEAD@{1} è il HEAD precedente.',
+              example:
+                'During debugging sessions, HEAD@{1} is the previous HEAD so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, HEAD@{1} è il HEAD precedente cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reset --hard HEAD@{1}',
@@ -4564,7 +4632,8 @@ export default {
               italian: 'Recuperare commit',
               pronunciation: '/rɪˈkʌvər kəˈmɪt/',
               phonetic: 'ri-KA-ver KO-mit',
-              example: 'Recover a lost commit via reflog. = Recupera un commit perso via reflog.',
+              example:
+                "For project auditing and compliance, recover a lost commit via reflog which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, recupera un commit perso via reflog il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git checkout -b rescue a3f5e21',
@@ -4575,7 +4644,7 @@ export default {
               pronunciation: '/ˈreflɒɡ ɪkˈspaɪər/',
               phonetic: 'REF-log ek-SPAIR',
               example:
-                'Reflog entries expire after 90 days by default. = Le entry del reflog scadono dopo 90 giorni di default.',
+                'During debugging sessions, reflog entries expire after 90 days by default so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, le entry del reflog scadono dopo 90 giorni di default cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reflog expire --expire=30.days',
@@ -4585,7 +4654,8 @@ export default {
               italian: 'Reflog di ramo',
               pronunciation: '/brɑːntʃ ˈreflɒɡ/',
               phonetic: 'BRANC REF-log',
-              example: 'Each branch has its own reflog. = Ogni ramo ha il proprio reflog.',
+              example:
+                "For project auditing and compliance, each branch has its own reflog which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, ogni ramo ha il proprio reflog il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reflog show feature',
@@ -4595,18 +4665,19 @@ export default {
               italian: 'Reflog dello stash',
               pronunciation: '/stæʃ ˈreflɒɡ/',
               phonetic: 'STASC REF-log',
-              example: 'Stashes are stored in a reflog too. = Anche gli stash sono in un reflog.',
+              example:
+                'When investigating past changes to understand a bug, stashes are stored in a reflog too providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, anche gli stash sono in un reflog fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git reflog show stash',
             },
             {
               english: 'Garbage Collection',
-              italian: 'garbage collection / pulizia oggetti orfani',
+              italian: 'pulizia oggetti orfani (garbage collection)',
               pronunciation: '/ˈɡɑːrbɪdʒ kəˈlekʃən/',
               phonetic: 'GAR-big ko-LEK-scion',
               example:
-                'gc removes unreachable objects after expiry. = gc rimuove oggetti non raggiungibili dopo la scadenza.',
+                'To understand how the codebase evolved, gc removes unreachable objects after expiry which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, gc rimuove oggetti non raggiungibili dopo la scadenza il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git gc',
@@ -4617,7 +4688,7 @@ export default {
               pronunciation: '/ʌnˈriːtʃəbl ˈɒbdʒɪkt/',
               phonetic: 'an-RI-cia-bol OB-gekt',
               example:
-                'Unreachable objects can be garbage collected. = Gli oggetti non raggiungibili possono essere rimossi.',
+                "For project auditing and compliance, unreachable objects can be garbage collected which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, gli oggetti non raggiungibili possono essere rimossi il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git fsck --unreachable',
@@ -4628,7 +4699,7 @@ export default {
               pronunciation: '/ef es siː keɪ/',
               phonetic: 'EF-ES-SI-KEI',
               example:
-                "git fsck checks object integrity. = git fsck controlla l'integrità degli oggetti.",
+                "To understand how the codebase evolved, git fsck checks object integrity which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, git fsck controlla l'integrità degli oggetti il che aiuta a tracciare quando sono state introdotte specifiche modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git fsck --full',
@@ -4646,7 +4717,7 @@ export default {
               pronunciation: '/ɡɪt baɪˈsekt/',
               phonetic: 'GIT bai-SEKT',
               example:
-                'git bisect finds a bug via binary search. = git bisect trova un bug via ricerca binaria.',
+                'In Git, git bisect finds a bug via binary search. = git bisect trova un bug via ricerca binaria.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect start',
@@ -4654,10 +4725,11 @@ export default {
             },
             {
               english: 'bisect start',
-              italian: 'bisect start / avvia ricerca binaria del bug',
+              italian: 'avvia ricerca binaria del bug (bisect start)',
               pronunciation: '/baɪˈsekt stɑːrt/',
               phonetic: 'bai-SEKT START',
-              example: 'bisect start begins the search. = bisect start inizia la ricerca.',
+              example:
+                'When investigating past changes to understand a bug, bisect start begins the search providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, bisect start inizia la ricerca fornendo una traccia di audit chiara.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect start',
@@ -4667,7 +4739,8 @@ export default {
               italian: 'Marcare come bad',
               pronunciation: '/baɪˈsekt bæd/',
               phonetic: 'bai-SEKT BAD',
-              example: 'bisect bad marks the broken commit. = bisect bad segna il commit rotto.',
+              example:
+                'To understand how the codebase evolved, use bisect bad to mark broken commit which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, bisect bad segna il commit rotto il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect bad',
@@ -4678,17 +4751,18 @@ export default {
               pronunciation: '/baɪˈsekt ɡʊd/',
               phonetic: 'bai-SEKT GUD',
               example:
-                'bisect good marks a working commit. = bisect good segna un commit funzionante.',
+                "For project auditing and compliance, use bisect good to mark working commit which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, bisect good segna un commit funzionante il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect good v1.0',
             },
             {
               english: 'bisect reset',
-              italian: 'bisect reset / termina la sessione bisect',
+              italian: 'termina la sessione bisect (bisect reset)',
               pronunciation: '/baɪˈsekt ˈriːset/',
               phonetic: 'bai-SEKT RI-set',
-              example: 'reset returns to the original branch. = reset torna al ramo originale.',
+              example:
+                "For project auditing and compliance, reset returns to the original branch which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, reset torna al ramo originale il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect reset',
@@ -4699,7 +4773,7 @@ export default {
               pronunciation: '/baɪˈsekt rʌn/',
               phonetic: 'bai-SEKT RAN',
               example:
-                'bisect run automates with a script. = bisect run automatizza con uno script.',
+                "For project auditing and compliance, bisect run automates with a script which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, bisect run automatizza con uno script il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect run npm test',
@@ -4710,7 +4784,7 @@ export default {
               pronunciation: '/ˈbaɪnəri sɜːrtʃ/',
               phonetic: 'BAI-na-ri SERC',
               example:
-                'Binary search splits the history in half. = La ricerca binaria divide la storia a metà.',
+                "For project auditing and compliance, Binary Search splits the history in half which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, la ricerca binaria divide la storia a metà il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
               note: 'Complessità O(log n): trovare in 100 commit richiede ~7 step.',
@@ -4721,28 +4795,28 @@ export default {
               pronunciation: '/rɪˈɡreʃən bʌɡ/',
               phonetic: 'ri-GRES-scion BAG',
               example:
-                'Bisect is great for regression bugs. = Bisect è ottimo per bug di regressione.',
+                "For project auditing and compliance, bisect is great for regression bugs which maintains full traceability of all changes. = Per l'auditing e la conformita del progetto, bisect è ottimo per bug di regressione il che mantiene la piena tracciabilita di tutte le modifiche.",
               context: 'history',
               difficulty: 'intermediate',
             },
             {
               english: 'bisect skip',
-              italian: 'bisect skip / salta commit non testabile',
+              italian: 'salta commit non testabile (bisect skip)',
               pronunciation: '/baɪˈsekt skɪp/',
               phonetic: 'bai-SEKT SKIP',
               example:
-                'skip when a commit cannot be tested. = skip quando un commit non si può testare.',
+                'To understand how the codebase evolved, skip when a commit cannot be tested which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, skip quando un commit non si può testare il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect skip',
             },
             {
               english: 'bisect log',
-              italian: 'bisect log / storico delle decisioni bisect',
+              italian: 'storico delle decisioni bisect (bisect log)',
               pronunciation: '/baɪˈsekt lɒɡ/',
               phonetic: 'bai-SEKT LOG',
               example:
-                'bisect log saves progress for replay. = bisect log salva il progresso per riprodurlo.',
+                'During debugging sessions, use bisect log to save progress for replay so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, bisect log salva il progresso per riprodurlo cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git bisect log > bisect.log',
@@ -4765,10 +4839,11 @@ export default {
           items: [
             {
               english: 'Tag',
-              italian: 'Tag / Etichetta',
+              italian: 'etichetta di versione (tag)',
               pronunciation: '/tæɡ/',
               phonetic: 'TAG',
-              example: 'A tag marks a specific commit. = Un tag marca un commit specifico.',
+              example:
+                'During debugging sessions, a tag marks a specific commit so you can identify exactly when a regression was introduced. = Durante le sessioni di debug, un tag marca un commit specifico cosi puoi identificare esattamente quando e stata introdotta una regressione.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v1.0',
@@ -4779,7 +4854,8 @@ export default {
               italian: 'Comando tag',
               pronunciation: '/ɡɪt tæɡ/',
               phonetic: 'GIT TAG',
-              example: 'git tag lists existing tags. = git tag elenca i tag esistenti.',
+              example:
+                'During feature development, to see existing tags, run git tag allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, git tag elenca i tag esistenti permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag',
@@ -4789,7 +4865,8 @@ export default {
               italian: 'Tag leggero',
               pronunciation: '/ˈlaɪtweɪt tæɡ/',
               phonetic: 'LAIT-uait TAG',
-              example: 'A lightweight tag is just a pointer. = Un tag leggero è solo un puntatore.',
+              example:
+                'During feature development, a lightweight tag is just a pointer allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, un tag leggero è solo un puntatore permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v1.0.1',
@@ -4801,7 +4878,7 @@ export default {
               pronunciation: '/ˈænəteɪtɪd tæɡ/',
               phonetic: 'A-no-tei-tid TAG',
               example:
-                'An annotated tag stores author and message. = Un tag annotato salva autore e messaggio.',
+                'To keep the codebase stable while developing, an annotated tag stores author and message which isolates experimental changes from production code. = Per mantenere stabile il codice durante lo sviluppo, un tag annotato salva autore e messaggio il che isola le modifiche sperimentali dal codice di produzione.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag -a v1.0 -m "Release 1.0"',
@@ -4813,7 +4890,7 @@ export default {
               pronunciation: '/tæɡ ˈmesɪdʒ/',
               phonetic: 'TAG ME-sig',
               example:
-                'Tag messages document the release. = I messaggi del tag documentano la release.',
+                'In a multi-developer environment, tag messages document the release ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, i messaggi del tag documentano la release assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag -a v2.0 -m "Major release"',
@@ -4823,7 +4900,8 @@ export default {
               italian: 'Elencare i tag',
               pronunciation: '/lɪst tæɡz/',
               phonetic: 'LIST TAGS',
-              example: 'List tags matching a pattern. = Elenca i tag che matchano un pattern.',
+              example:
+                'In a multi-developer environment, List Tags matching a pattern ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, elenca i tag che matchano un pattern assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag -l "v1.*"',
@@ -4833,7 +4911,8 @@ export default {
               italian: 'Mostrare un tag',
               pronunciation: '/ʃoʊ tæɡ/',
               phonetic: 'SCIO TAG',
-              example: 'Show tag details and commit. = Mostra dettagli del tag e commit.',
+              example:
+                'When managing multiple features, Show Tag details and commit so each developer can work independently. = Quando si gestiscono piu funzionalita, mostra dettagli del tag e commit cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git show v1.0',
@@ -4844,7 +4923,7 @@ export default {
               pronunciation: '/tæɡ spəˈsɪfɪk kəˈmɪt/',
               phonetic: 'TAG spe-SI-fik KO-mit',
               example:
-                "You can tag any commit by hash. = Puoi taggare qualsiasi commit con l'hash.",
+                "In a multi-developer environment, you can tag any commit by hash ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, puoi taggare qualsiasi commit con l'hash assicurando che il lavoro in corso non influenzi il codice principale.",
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v0.9 a3f5e21',
@@ -4854,7 +4933,8 @@ export default {
               italian: 'Eliminare un tag',
               pronunciation: '/dɪˈliːt tæɡ/',
               phonetic: 'di-LIIT TAG',
-              example: 'Delete a local tag. = Elimina un tag locale.',
+              example:
+                'In a multi-developer environment, delete a local tag ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, elimina un tag locale assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag -d v1.0',
@@ -4865,7 +4945,7 @@ export default {
               pronunciation: '/ˈtʃekaʊt tæɡ/',
               phonetic: 'CEK-aut TAG',
               example:
-                'Checkout creates a detached HEAD on a tag. = Checkout crea un HEAD scollegato sul tag.',
+                'During feature development, checkout creates a detached HEAD on a tag allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, checkout crea un HEAD scollegato sul tag permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git checkout v1.0',
@@ -4884,17 +4964,18 @@ export default {
               pronunciation: '/sɪˈmæntɪk ˈvɜːrʒənɪŋ/',
               phonetic: 'se-MAN-tik VER-scio-ning',
               example:
-                'Semantic versioning uses MAJOR.MINOR.PATCH. = Il versionamento semantico usa MAJOR.MINOR.PATCH.',
+                'During feature development, Semantic Versioning uses MAJOR.MINOR.PATCH allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, il versionamento semantico usa MAJOR.MINOR.PATCH permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               note: 'Spec ufficiale su semver.org. Standard de facto.',
             },
             {
               english: 'SemVer',
-              italian: 'SemVer (versionamento semantico MAJOR.MINOR.PATCH)',
+              italian: 'versionamento semantico MAJOR.MINOR.PATCH (SemVer)',
               pronunciation: '/ˈsemvɜːr/',
               phonetic: 'SEM-ver',
-              example: "SemVer is the abbreviation. = SemVer è l'abbreviazione.",
+              example:
+                "During feature development, SemVer is the abbreviation allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, semVer è l'abbreviazione permettendo il lavoro parallelo senza conflitti.",
               context: 'branching',
               difficulty: 'intermediate',
             },
@@ -4903,7 +4984,8 @@ export default {
               italian: 'Versione major',
               pronunciation: '/ˈmeɪdʒər ˈvɜːrʒən/',
               phonetic: 'MEI-gior VER-scion',
-              example: 'Major bumps mean breaking changes. = Major bump significa breaking change.',
+              example:
+                'In a multi-developer environment, major bumps mean breaking changes ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, major bump significa breaking change assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v2.0.0',
@@ -4914,7 +4996,7 @@ export default {
               pronunciation: '/ˈmaɪnər ˈvɜːrʒən/',
               phonetic: 'MAI-ner VER-scion',
               example:
-                'Minor bumps add features backward-compatible. = Minor bump aggiunge feature retrocompatibili.',
+                'When managing multiple features, minor bumps add features backward-compatible so each developer can work independently. = Quando si gestiscono piu funzionalita, minor bump aggiunge feature retrocompatibili cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v1.1.0',
@@ -4924,28 +5006,30 @@ export default {
               italian: 'Versione patch',
               pronunciation: '/pætʃ ˈvɜːrʒən/',
               phonetic: 'PACI VER-scion',
-              example: 'Patch bumps fix bugs only. = Patch bump risolve solo bug.',
+              example:
+                'During feature development, patch bumps fix bugs only allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, patch bump risolve solo bug permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v1.0.1',
             },
             {
               english: 'Pre-release',
-              italian: 'pre-release / versione anteprima',
+              italian: 'versione anteprima (pre-release)',
               pronunciation: '/priː rɪˈliːs/',
               phonetic: 'PRI-ri-LIIS',
               example:
-                'Pre-releases use suffixes like -alpha. = Le pre-release usano suffissi come -alpha.',
+                'When managing multiple features, pre-releases use suffixes like -alpha so each developer can work independently. = Quando si gestiscono piu funzionalita, le pre-release usano suffissi come -alpha cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v1.0.0-alpha.1',
             },
             {
               english: 'Release Candidate',
-              italian: 'release candidate / candidato al rilascio',
+              italian: 'candidato al rilascio (release candidate)',
               pronunciation: '/rɪˈliːs ˈkændɪdət/',
               phonetic: 'ri-LIIS KAN-di-deit',
-              example: 'rc1 is the first release candidate. = rc1 è la prima release candidate.',
+              example:
+                'To keep the codebase stable while developing, rc1 is the first release candidate which isolates experimental changes from production code. = Per mantenere stabile il codice durante lo sviluppo, rc1 è la prima release candidate il che isola le modifiche sperimentali dal codice di produzione.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag v2.0.0-rc.1',
@@ -4956,29 +5040,29 @@ export default {
               pronunciation: '/bɪld ˌmetəˈdeɪtə/',
               phonetic: 'BILD me-ta-DEI-ta',
               example:
-                'Build metadata follows a plus sign. = I metadati di build seguono il segno più.',
+                'When managing multiple features, Build Metadata follows a plus sign so each developer can work independently. = Quando si gestiscono piu funzionalita, i metadati di build seguono il segno più cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'intermediate',
               code: 'v1.0.0+20230101',
             },
             {
               english: 'Breaking Change',
-              italian: 'breaking change / modifica incompatibile',
+              italian: 'modifica incompatibile (breaking change)',
               pronunciation: '/ˈbreɪkɪŋ tʃeɪndʒ/',
               phonetic: 'BREI-king CIENG',
               example:
-                'A breaking change requires a major bump. = Un breaking change richiede un major bump.',
+                'In a multi-developer environment, a breaking change requires a major bump ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, un breaking change richiede un major bump assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'intermediate',
               note: 'Cambiamento incompatibile con versioni precedenti.',
             },
             {
               english: 'Conventional Commits',
-              italian: 'Conventional Commits (convenzione messaggi commit)',
+              italian: 'convenzione messaggi commit (Conventional Commits)',
               pronunciation: '/kənˈvenʃənəl kəˈmɪts/',
               phonetic: 'kon-VEN-scio-nol KO-mits',
               example:
-                'Conventional Commits drive automatic versioning. = Conventional Commits guidano il versioning automatico.',
+                'During feature development, Conventional Commits drive automatic versioning allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, conventional Commits guidano il versioning automatico permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               code: 'feat: add login\\nfix: typo\\nBREAKING CHANGE: remove API',
@@ -4996,7 +5080,8 @@ export default {
               italian: 'Push di un tag',
               pronunciation: '/pʊʃ tæɡ/',
               phonetic: 'PUSC TAG',
-              example: 'Push a single tag to origin. = Push di un singolo tag a origin.',
+              example:
+                'During feature development, push a single tag to origin allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, push di un singolo tag a origin permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git push origin v1.0',
@@ -5007,7 +5092,8 @@ export default {
               italian: 'Push di tutti i tag',
               pronunciation: '/pʊʃ ɔːl tæɡz/',
               phonetic: 'PUSC OL TAGS',
-              example: 'Push every local tag at once. = Push di ogni tag locale in una volta.',
+              example:
+                'To keep the codebase stable while developing, push every local tag at once which isolates experimental changes from production code. = Per mantenere stabile il codice durante lo sviluppo, push di ogni tag locale in una volta il che isola le modifiche sperimentali dal codice di produzione.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git push --tags',
@@ -5018,7 +5104,7 @@ export default {
               pronunciation: '/pʊʃ ˈfɒloʊ tæɡz/',
               phonetic: 'PUSC FO-lo-u TAGS',
               example:
-                'Follow-tags pushes only annotated tags reachable. = Follow-tags pusha solo annotated tag raggiungibili.',
+                'During feature development, follow-tags pushes only annotated tags reachable allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, follow-tags pusha solo annotated tag raggiungibili permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git push --follow-tags',
@@ -5028,7 +5114,8 @@ export default {
               italian: 'Eliminare un tag remoto',
               pronunciation: '/dɪˈliːt rɪˈmoʊt tæɡ/',
               phonetic: 'di-LIIT ri-MOUT TAG',
-              example: 'Delete a tag on the remote. = Elimina un tag sul remote.',
+              example:
+                'In a multi-developer environment, delete a tag on the remote ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, elimina un tag sul remote assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git push origin --delete v1.0',
@@ -5038,7 +5125,8 @@ export default {
               italian: 'Fetch dei tag',
               pronunciation: '/fetʃ tæɡz/',
               phonetic: 'FEC TAGS',
-              example: 'Fetch tags from the remote. = Fetch dei tag dal remote.',
+              example:
+                'When managing multiple features, Fetch Tags from the remote so each developer can work independently. = Quando si gestiscono piu funzionalita, fetch dei tag dal remote cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git fetch --tags',
@@ -5049,7 +5137,7 @@ export default {
               pronunciation: '/tæɡ ɒpt/',
               phonetic: 'TAG OPT',
               example:
-                'tagOpt configures default tag fetching. = tagOpt configura il fetch di default dei tag.',
+                'In a multi-developer environment, tagOpt configures default tag fetching ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, tagOpt configura il fetch di default dei tag assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'intermediate',
               code: 'remote.origin.tagOpt = --tags',
@@ -5059,7 +5147,8 @@ export default {
               italian: 'Force push di un tag',
               pronunciation: '/fɔːrs pʊʃ tæɡ/',
               phonetic: 'FORS PUSC TAG',
-              example: 'Force push to overwrite a tag. = Force push per sovrascrivere un tag.',
+              example:
+                'In a multi-developer environment, force push to overwrite a tag ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, force push per sovrascrivere un tag assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git push origin v1.0 --force',
@@ -5071,7 +5160,7 @@ export default {
               pronunciation: '/tæɡ prəˈtekʃən/',
               phonetic: 'TAG pro-TEK-scion',
               example:
-                "Tag protection prevents deletion. = La protezione dei tag previene l'eliminazione.",
+                "In a multi-developer environment, the Tag Protection setting prevents deletion ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, la protezione dei tag previene l'eliminazione assicurando che il lavoro in corso non influenzi il codice principale.",
               context: 'branching',
               difficulty: 'intermediate',
               tool: 'GitHub',
@@ -5082,7 +5171,7 @@ export default {
               pronunciation: '/ˈverɪfaɪ tæɡ/',
               phonetic: 'VE-ri-fai TAG',
               example:
-                "Verify a signed tag's GPG signature. = Verifica la firma GPG di un tag firmato.",
+                "In a multi-developer environment, verify a signed tag's GPG signature ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, verifica la firma GPG di un tag firmato assicurando che il lavoro in corso non influenzi il codice principale.",
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag -v v1.0',
@@ -5092,7 +5181,8 @@ export default {
               italian: 'Firmare un tag',
               pronunciation: '/saɪn tæɡ/',
               phonetic: 'SAIN TAG',
-              example: 'Sign a tag with your GPG key. = Firma un tag con la tua chiave GPG.',
+              example:
+                'In a multi-developer environment, sign a tag with your GPG key ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, firma un tag con la tua chiave GPG assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'git tag -s v1.0 -m "Signed release"',
@@ -5106,11 +5196,11 @@ export default {
           items: [
             {
               english: 'Release',
-              italian: 'Release / Rilascio',
+              italian: 'rilascio ufficiale (release)',
               pronunciation: '/rɪˈliːs/',
               phonetic: 'ri-LIIS',
               example:
-                'A release packages a tagged version. = Una release impacchetta una versione taggata.',
+                'When managing multiple features, a release packages a tagged version so each developer can work independently. = Quando si gestiscono piu funzionalita, una release impacchetta una versione taggata cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'intermediate',
               tool: 'GitHub Releases',
@@ -5121,7 +5211,7 @@ export default {
               pronunciation: '/ˈɡɪthʌb rɪˈliːs/',
               phonetic: 'GIT-hab ri-LIIS',
               example:
-                'GitHub Releases attach binaries to a tag. = Le GitHub Release allegano binari a un tag.',
+                'To keep the codebase stable while developing, gitHub Releases attach binaries to a tag which isolates experimental changes from production code. = Per mantenere stabile il codice durante lo sviluppo, le GitHub Release allegano binari a un tag il che isola le modifiche sperimentali dal codice di produzione.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'gh release create v1.0',
@@ -5133,18 +5223,18 @@ export default {
               pronunciation: '/rɪˈliːs noʊts/',
               phonetic: 'ri-LIIS NOUTS',
               example:
-                'Release notes describe what changed. = Le note di rilascio descrivono cosa è cambiato.',
+                'During feature development, Release Notes describe what changed allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, le note di rilascio descrivono cosa è cambiato permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               note: 'Spesso generate automaticamente da Conventional Commits.',
             },
             {
               english: 'Changelog',
-              italian: 'changelog / registro delle modifiche',
+              italian: 'registro delle modifiche (changelog)',
               pronunciation: '/ˈtʃeɪndʒlɒɡ/',
               phonetic: 'CIENG-log',
               example:
-                'CHANGELOG.md tracks changes per version. = CHANGELOG.md traccia i cambiamenti per versione.',
+                'During feature development, Changelog .md tracks changes per version allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, CHANGELOG.md traccia i cambiamenti per versione permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               code: '## [1.0.0] - 2024-01-01\\n### Added\\n- Login feature',
@@ -5156,7 +5246,7 @@ export default {
               pronunciation: '/drɑːft rɪˈliːs/',
               phonetic: 'DRAFT ri-LIIS',
               example:
-                'A draft release is not yet public. = Una bozza di release non è ancora pubblica.',
+                'During feature development, a draft release is not yet public allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, una bozza di release non è ancora pubblica permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'gh release create v1.0 --draft',
@@ -5166,7 +5256,8 @@ export default {
               italian: 'Asset della release',
               pronunciation: '/rɪˈliːs ˈæset/',
               phonetic: 'ri-LIIS AS-set',
-              example: 'Attach binaries as release assets. = Allega binari come asset di release.',
+              example:
+                'When managing multiple features, attach binaries as release assets so each developer can work independently. = Quando si gestiscono piu funzionalita, allega binari come asset di release cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'gh release upload v1.0 build.zip',
@@ -5176,7 +5267,8 @@ export default {
               italian: 'Ultima release',
               pronunciation: '/ˈleɪtɪst rɪˈliːs/',
               phonetic: 'LEI-test ri-LIIS',
-              example: "The latest release is highlighted. = L'ultima release è evidenziata.",
+              example:
+                "To keep the codebase stable while developing, the latest release is highlighted which isolates experimental changes from production code. = Per mantenere stabile il codice durante lo sviluppo, l'ultima release è evidenziata il che isola le modifiche sperimentali dal codice di produzione.",
               context: 'branching',
               difficulty: 'intermediate',
               command: 'gh release view --latest',
@@ -5186,7 +5278,8 @@ export default {
               italian: 'Tag di pre-release',
               pronunciation: '/priː rɪˈliːs tæɡ/',
               phonetic: 'PRI-ri-LIIS TAG',
-              example: 'Mark as pre-release on GitHub. = Marca come pre-release su GitHub.',
+              example:
+                'In a multi-developer environment, mark as pre-release on GitHub ensuring that work-in-progress does not affect the main codebase. = In un ambiente multi-sviluppatore, marca come pre-release su GitHub assicurando che il lavoro in corso non influenzi il codice principale.',
               context: 'branching',
               difficulty: 'intermediate',
               command: 'gh release create v1.0-beta --prerelease',
@@ -5197,7 +5290,7 @@ export default {
               pronunciation: '/rɪˈliːs ˈwɜːrkfloʊ/',
               phonetic: 'ri-LIIS UERK-flou',
               example:
-                'A release workflow automates publishing. = Un workflow di release automatizza la pubblicazione.',
+                'During feature development, a release workflow automates publishing allowing parallel work without conflicts. = Durante lo sviluppo di funzionalita, un workflow di release automatizza la pubblicazione permettendo il lavoro parallelo senza conflitti.',
               context: 'branching',
               difficulty: 'intermediate',
               tool: 'GitHub Actions',
@@ -5205,11 +5298,11 @@ export default {
             },
             {
               english: 'Semantic Release',
-              italian: 'semantic-release / rilascio automatizzato',
+              italian: 'rilascio automatizzato (semantic-release)',
               pronunciation: '/sɪˈmæntɪk rɪˈliːs/',
               phonetic: 'se-MAN-tik ri-LIIS',
               example:
-                'semantic-release fully automates versioning. = semantic-release automatizza completamente il versioning.',
+                'When managing multiple features, semantic-release fully automates versioning so each developer can work independently. = Quando si gestiscono piu funzionalita, semantic-release automatizza completamente il versioning cosi ogni sviluppatore puo lavorare indipendentemente.',
               context: 'branching',
               difficulty: 'intermediate',
               tool: 'semantic-release',
@@ -5237,7 +5330,7 @@ export default {
               pronunciation: '/saɪnd kəˈmɪt/',
               phonetic: 'SAIND KO-mit',
               example:
-                "A signed commit proves the author's identity. = Un commit firmato prova l'identità dell'autore.",
+                "When managing multiple features, a signed commit proves the author's identity so each developer can work independently. = Quando si gestiscono piu funzionalita, un commit firmato prova l'identità dell'autore cosi ogni sviluppatore puo lavorare indipendentemente.",
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git commit -S -m "Signed commit"',
@@ -5245,11 +5338,11 @@ export default {
             },
             {
               english: 'GPG',
-              italian: 'GPG (firma e cifratura)',
+              italian: 'firma e cifratura (GPG)',
               pronunciation: '/dʒiː piː dʒiː/',
               phonetic: 'GI-PI-GI',
               example:
-                'GPG signs commits cryptographically. = GPG firma i commit crittograficamente.',
+                'For a production-grade workflow, GPG signs commits cryptographically which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, GPG firma i commit crittograficamente il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'gpg',
@@ -5261,7 +5354,7 @@ export default {
               pronunciation: '/dʒiː piː dʒiː kiː/',
               phonetic: 'GI-PI-GI KII',
               example:
-                'Generate a new GPG key for signing. = Genera una nuova chiave GPG per firmare.',
+                'When following established development practices, generate a new GPG key for signing so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, genera una nuova chiave GPG per firmare cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'gpg --full-generate-key',
@@ -5272,7 +5365,7 @@ export default {
               pronunciation: '/ˈsaɪnɪŋ kiː/',
               phonetic: 'SAI-ning KII',
               example:
-                'Configure your signing key in git. = Configura la tua chiave di firma in git.',
+                'For a production-grade workflow, configure your signing key in git which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, configura la tua chiave di firma in git il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git config --global user.signingkey ABCD1234',
@@ -5283,7 +5376,7 @@ export default {
               pronunciation: '/kəˈmɪt dʒiː piː dʒiː saɪn/',
               phonetic: 'KO-mit GI-PI-GI SAIN',
               example:
-                'Auto-sign every commit by default. = Firma ogni commit automaticamente di default.',
+                'In a well-organized development process, auto-sign every commit by default helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, firma ogni commit automaticamente di default aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git config --global commit.gpgsign true',
@@ -5294,7 +5387,7 @@ export default {
               pronunciation: '/es es eɪtʃ ˈsaɪnɪŋ/',
               phonetic: 'ES-ES-EICI SAI-ning',
               example:
-                'Modern Git can sign with SSH keys. = Git moderno può firmare con chiavi SSH.',
+                'When following established development practices, modern Git can sign with SSH keys so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, Git moderno può firmare con chiavi SSH cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git config gpg.format ssh',
@@ -5305,7 +5398,8 @@ export default {
               italian: 'Badge Verified',
               pronunciation: '/ˈverɪfaɪd bædʒ/',
               phonetic: 'VE-ri-faid BEG',
-              example: 'GitHub shows a Verified badge. = GitHub mostra un badge Verified.',
+              example:
+                'As part of your daily Git routine, gitHub shows a Verified badge streamlining the path from code to production. = Come parte della routine Git quotidiana, gitHub mostra un badge Verified semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'GitHub',
@@ -5315,7 +5409,8 @@ export default {
               italian: 'Caricamento chiave pubblica',
               pronunciation: '/ˈpʌblɪk kiː ˈʌploʊd/',
               phonetic: 'PA-blik KII AP-loud',
-              example: 'Upload the public key to GitHub. = Carica la chiave pubblica su GitHub.',
+              example:
+                'As part of your daily Git routine, upload the public key to GitHub streamlining the path from code to production. = Come parte della routine Git quotidiana, carica la chiave pubblica su GitHub semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'gpg --armor --export ABCD1234',
@@ -5326,7 +5421,7 @@ export default {
               pronunciation: '/ˈvɪdʒɪlənt moʊd/',
               phonetic: 'VI-gi-lent MOUD',
               example:
-                'Vigilant mode flags unsigned commits. = La modalità vigilante segnala commit non firmati.',
+                'When following established development practices, use Vigilant Mode to mark unsigned commits so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, la modalità vigilante segnala commit non firmati cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'GitHub',
@@ -5337,7 +5432,7 @@ export default {
               pronunciation: '/rɪˈkwaɪərd ˈsɪɡnətʃərz/',
               phonetic: 'ri-KUAIRD SIG-na-cers',
               example:
-                'Branch protection can require signatures. = La protezione del ramo può richiedere firme.',
+                'In a well-organized development process, branch protection can require signatures helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, la protezione del ramo può richiedere firme aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'GitHub',
@@ -5355,7 +5450,8 @@ export default {
               italian: 'Hook di Git',
               pronunciation: '/ɡɪt hʊk/',
               phonetic: 'GIT HUK',
-              example: 'A git hook runs scripts on events. = Un hook esegue script su eventi.',
+              example:
+                'When following established development practices, a git hook runs scripts on events so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, un hook esegue script su eventi cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               code: '.git/hooks/pre-commit',
@@ -5367,7 +5463,7 @@ export default {
               pronunciation: '/priː kəˈmɪt hʊk/',
               phonetic: 'PRI-ko-MIT HUK',
               example:
-                'pre-commit runs before each commit. = pre-commit gira prima di ogni commit.',
+                'For a production-grade workflow, pre-commit runs before each commit which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, pre-commit gira prima di ogni commit il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               code: '#!/bin/sh\\nnpm test',
@@ -5378,7 +5474,7 @@ export default {
               pronunciation: '/kəˈmɪt mes hʊk/',
               phonetic: 'KO-mit MES HUK',
               example:
-                'commit-msg validates commit messages. = commit-msg valida i messaggi di commit.',
+                'In a well-organized development process, commit-msg validates commit messages helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, commit-msg valida i messaggi di commit aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'commitlint',
@@ -5389,7 +5485,7 @@ export default {
               pronunciation: '/priː pʊʃ hʊk/',
               phonetic: 'PRI-PUSC HUK',
               example:
-                'pre-push runs before pushing to remote. = pre-push gira prima di pushare al remote.',
+                'As part of your daily Git routine, pre-push runs before pushing to remote streamlining the path from code to production. = Come parte della routine Git quotidiana, pre-push gira prima di pushare al remote semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
               code: '.git/hooks/pre-push',
@@ -5400,17 +5496,17 @@ export default {
               pronunciation: '/poʊst kəˈmɪt hʊk/',
               phonetic: 'POUST ko-MIT HUK',
               example:
-                'post-commit runs after a successful commit. = post-commit gira dopo un commit riuscito.',
+                'When following established development practices, post-commit runs after a successful commit so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, post-commit gira dopo un commit riuscito cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
             {
               english: 'Husky',
-              italian: 'Husky (gestore hook Git)',
+              italian: 'gestore hook Git (Husky)',
               pronunciation: '/ˈhʌski/',
               phonetic: 'HA-ski',
               example:
-                'Husky simplifies hook management. = Husky semplifica la gestione degli hook.',
+                'In a well-organized development process, Husky simplifies hook management helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, husky semplifica la gestione degli hook aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'husky',
@@ -5419,11 +5515,11 @@ export default {
             },
             {
               english: 'lint-staged',
-              italian: 'lint-staged / linta solo i file in stage',
+              italian: 'linta solo i file in staging (lint-staged)',
               pronunciation: '/lɪnt steɪdʒd/',
               phonetic: 'LINT-steigd',
               example:
-                'lint-staged runs linters only on staged files. = lint-staged gira i linter solo sui file staged.',
+                'In a well-organized development process, use lint-staged to run linters only on staged files helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, lint-staged gira i linter solo sui file staged aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'lint-staged',
@@ -5435,7 +5531,7 @@ export default {
               pronunciation: '/priː kəˈmɪt ˈfreɪmwɜːrk/',
               phonetic: 'PRI-ko-MIT FREIM-uerk',
               example:
-                'pre-commit (Python) manages multilingual hooks. = pre-commit (Python) gestisce hook multilingua.',
+                'As part of your daily Git routine, pre-commit (Python) manages multilingual hooks streamlining the path from code to production. = Come parte della routine Git quotidiana, pre-commit (Python) gestisce hook multilingua semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'pre-commit',
@@ -5446,7 +5542,8 @@ export default {
               italian: 'Saltare gli hook',
               pronunciation: '/skɪp hʊks/',
               phonetic: 'SKIP HUKS',
-              example: 'Skip hooks with --no-verify. = Salta gli hook con --no-verify.',
+              example:
+                'As part of your daily Git routine, Skip Hooks with --no-verify streamlining the path from code to production. = Come parte della routine Git quotidiana, salta gli hook con --no-verify semplificando il percorso dal codice alla produzione.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git commit --no-verify',
@@ -5458,7 +5555,7 @@ export default {
               pronunciation: '/ˈsɜːrvər saɪd hʊk/',
               phonetic: 'SER-ver SAID HUK',
               example:
-                'Server-side hooks enforce policy on push. = Gli hook lato server impongono policy sui push.',
+                'For a production-grade workflow, server-side hooks enforce policy on push which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, gli hook lato server impongono policy sui push il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'pre-receive, update, post-receive',
@@ -5472,10 +5569,11 @@ export default {
           items: [
             {
               english: 'Linter',
-              italian: 'linter / analizzatore statico',
+              italian: 'analizzatore statico del codice (linter)',
               pronunciation: '/ˈlɪntər/',
               phonetic: 'LIN-ter',
-              example: 'A linter catches style and bugs. = Un linter rileva stile e bug.',
+              example:
+                'In a well-organized development process, a linter catches style and bugs helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, un linter rileva stile e bug aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'ESLint',
@@ -5486,18 +5584,18 @@ export default {
               pronunciation: '/ˈfɔːrmætər/',
               phonetic: 'FOR-ma-ter',
               example:
-                'Prettier formats code automatically. = Prettier formatta il codice automaticamente.',
+                'For a production-grade workflow, prettier formats code automatically which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, prettier formatta il codice automaticamente il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'Prettier',
             },
             {
               english: 'ESLint',
-              italian: 'ESLint (linter JavaScript)',
+              italian: 'linter JavaScript (ESLint)',
               pronunciation: '/iː es lɪnt/',
               phonetic: 'I-ES-LINT',
               example:
-                'ESLint enforces JavaScript best practices. = ESLint impone best practice JavaScript.',
+                'When following established development practices, ESLint enforces JavaScript best practices so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, ESLint impone best practice JavaScript cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'eslint',
@@ -5505,11 +5603,11 @@ export default {
             },
             {
               english: 'Prettier',
-              italian: 'Prettier (formattatore di codice)',
+              italian: 'formattatore di codice (Prettier)',
               pronunciation: '/ˈprɪtiər/',
               phonetic: 'PRI-tier',
               example:
-                'Prettier is opinionated and consistent. = Prettier è opinionato e consistente.',
+                'When following established development practices, Prettier is opinionated and consistent so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, prettier è opinionato e consistente cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'prettier',
@@ -5517,11 +5615,11 @@ export default {
             },
             {
               english: 'EditorConfig',
-              italian: 'EditorConfig (config editor cross-IDE)',
+              italian: 'config editor cross-IDE (EditorConfig)',
               pronunciation: '/ˈedɪtər kənˈfɪɡ/',
               phonetic: 'E-di-tor kon-FIG',
               example:
-                '.editorconfig keeps editors consistent. = .editorconfig mantiene gli editor consistenti.',
+                'When following established development practices, .editorconfig keeps editors consistent so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, .editorconfig mantiene gli editor consistenti cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'indent_size = 2\\nend_of_line = lf',
@@ -5531,7 +5629,8 @@ export default {
               italian: 'Controllo dei tipi',
               pronunciation: '/taɪp ˈtʃekɪŋ/',
               phonetic: 'TAIP CEK-ing',
-              example: 'tsc verifies TypeScript types. = tsc verifica i tipi TypeScript.',
+              example:
+                'In a well-organized development process, tsc verifies TypeScript types helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, tsc verifica i tipi TypeScript aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'npx tsc --noEmit',
@@ -5541,7 +5640,8 @@ export default {
               italian: 'Revisione del codice',
               pronunciation: '/koʊd rɪˈvjuː/',
               phonetic: 'KOUD ri-VIU',
-              example: 'Code review catches bugs early. = La code review rileva bug presto.',
+              example:
+                'When following established development practices, Code Review catches bugs early so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, la code review rileva bug presto cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
             },
@@ -5551,7 +5651,7 @@ export default {
               pronunciation: '/ˈstætɪk əˈnæləsɪs/',
               phonetic: 'STA-tik a-NA-li-sis',
               example:
-                "Static analysis runs without execution. = L'analisi statica gira senza esecuzione.",
+                "For a production-grade workflow, use Static Analysis to run without execution which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, l'analisi statica gira senza esecuzione il che riduce il rischio di deploy falliti.",
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'SonarQube',
@@ -5562,7 +5662,7 @@ export default {
               pronunciation: '/test ˈkʌvərɪdʒ/',
               phonetic: 'TEST KA-ve-rig',
               example:
-                'Coverage measures tested code percentage. = La coverage misura la percentuale di codice testato.',
+                'For a production-grade workflow, coverage measures tested code percentage which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, la coverage misura la percentuale di codice testato il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'codecov',
@@ -5570,11 +5670,11 @@ export default {
             },
             {
               english: 'Quality Gate',
-              italian: 'quality gate / soglia di qualità minima',
+              italian: 'soglia di qualita minima (quality gate)',
               pronunciation: '/ˈkwɒlɪti ɡeɪt/',
               phonetic: 'KUO-li-ti GEIT',
               example:
-                'A quality gate blocks bad merges. = Un quality gate blocca merge problematici.',
+                'In a well-organized development process, a quality gate blocks bad merges helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, un quality gate blocca merge problematici aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Soglia minima di qualità per accettare codice.',
@@ -5592,7 +5692,7 @@ export default {
               pronunciation: '/kəˈmɪt ˈmesɪdʒ/',
               phonetic: 'KO-mit ME-sig',
               example:
-                'A good commit message explains why. = Un buon messaggio di commit spiega il perché.',
+                'For a production-grade workflow, a good commit message explains why which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, un buon messaggio di commit spiega il perché il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git commit -m "feat: add login"',
@@ -5603,7 +5703,7 @@ export default {
               pronunciation: '/ˈsʌbdʒɪkt laɪn/',
               phonetic: 'SAB-gekt LAIN',
               example:
-                'Keep the subject under 50 characters. = Tieni il soggetto sotto i 50 caratteri.',
+                'In a well-organized development process, keep the subject under 50 characters helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, tieni il soggetto sotto i 50 caratteri aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Regola dei 50: titolo breve e impact.',
@@ -5614,7 +5714,7 @@ export default {
               pronunciation: '/ɪmˈperətɪv muːd/',
               phonetic: 'im-PE-ra-tiv MUUD',
               example:
-                "Use imperative mood: Add, Fix, Remove. = Usa l'imperativo: Add, Fix, Remove.",
+                "When following established development practices, use imperative mood: Add, Fix, Remove so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, usa l'imperativo: Add, Fix, Remove cosi i rilasci avvengono in modo fluido e nei tempi.",
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Stile usato anche da Git stesso.',
@@ -5625,7 +5725,7 @@ export default {
               pronunciation: '/kəˈmɪt ˈbɒdi/',
               phonetic: 'KO-mit BO-di',
               example:
-                'The body explains context and reasoning. = Il corpo spiega contesto e ragionamento.',
+                'When following established development practices, the body explains context and reasoning so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, il corpo spiega contesto e ragionamento cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'feat: add login\\n\\nUsers can now sign in via email.',
@@ -5636,7 +5736,7 @@ export default {
               pronunciation: '/kəˈmɪt ˈfʊtər/',
               phonetic: 'KO-mit FU-ter',
               example:
-                'Footers reference issues and tickets. = I footer fanno riferimento a issue e ticket.',
+                'In a well-organized development process, footers reference issues and tickets helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, i footer fanno riferimento a issue e ticket aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'Closes #42\\nReviewed-by: Alice',
@@ -5646,17 +5746,19 @@ export default {
               italian: 'Prefisso del tipo',
               pronunciation: '/taɪp ˈpriːfɪks/',
               phonetic: 'TAIP PRI-fiks',
-              example: 'Type prefixes: feat, fix, docs, chore. = Prefissi: feat, fix, docs, chore.',
+              example:
+                'In a well-organized development process, type prefixes: feat, fix, docs, chore helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, prefissi: feat, fix, docs, chore aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'feat(auth): add 2FA support',
             },
             {
               english: 'Scope',
-              italian: 'scope / ambito del commit',
+              italian: 'ambito del commit (scope)',
               pronunciation: '/skoʊp/',
               phonetic: 'SCOUP',
-              example: "Scope narrows the area changed. = Lo scope restringe l'area modificata.",
+              example:
+                "In a well-organized development process, Scope narrows the area changed helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, lo scope restringe l'area modificata aiutando i team a consegnare funzionalita in modo prevedibile.",
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'fix(api): handle null user',
@@ -5667,18 +5769,18 @@ export default {
               pronunciation: '/əˈtɒmɪk kəˈmɪt/',
               phonetic: 'a-TO-mik KO-mit',
               example:
-                'An atomic commit does one thing only. = Un commit atomico fa solo una cosa.',
+                'In a well-organized development process, an atomic commit does one thing only helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, un commit atomico fa solo una cosa aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'workflow',
               difficulty: 'intermediate',
               note: 'Più facile da revertire e da revieware.',
             },
             {
               english: 'commitlint',
-              italian: 'commitlint (linter messaggi commit)',
+              italian: 'linter messaggi commit (commitlint)',
               pronunciation: '/kəˈmɪt lɪnt/',
               phonetic: 'KO-mit LINT',
               example:
-                'commitlint enforces commit conventions. = commitlint impone le convenzioni dei commit.',
+                'For a production-grade workflow, commitlint enforces commit conventions which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, commitlint impone le convenzioni dei commit il che riduce il rischio di deploy falliti.',
               context: 'workflow',
               difficulty: 'intermediate',
               tool: 'commitlint',
@@ -5686,11 +5788,11 @@ export default {
             },
             {
               english: 'Co-authored-by',
-              italian: 'Co-authored-by / co-autore nel commit',
+              italian: 'co-autore nel commit (Co-authored-by)',
               pronunciation: '/koʊ ˈɔːθərd baɪ/',
               phonetic: 'KOU O-tord BAI',
               example:
-                'Co-authored-by credits multiple authors. = Co-authored-by accredita più autori.',
+                'When following established development practices, Co-authored-by credits multiple authors so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, co-authored-by accredita più autori cosi i rilasci avvengono in modo fluido e nei tempi.',
               context: 'workflow',
               difficulty: 'intermediate',
               code: 'Co-authored-by: Alice <alice@ex.com>',
@@ -5718,7 +5820,7 @@ export default {
               pronunciation: '/ɡɪt kənˈfɪɡ/',
               phonetic: 'GIT kon-FIG',
               example:
-                'git config sets key-value options. = git config imposta opzioni chiave-valore.',
+                'In a well-organized development process, git config sets key-value options helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, git config imposta opzioni chiave-valore aiutando i team a consegnare funzionalita in modo prevedibile.',
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --list',
@@ -5729,7 +5831,7 @@ export default {
               pronunciation: '/ˈsɪstəm kənˈfɪɡ/',
               phonetic: 'SI-stem kon-FIG',
               example:
-                'System config applies to all users. = La config di sistema si applica a tutti gli utenti.',
+                "As part of onboarding new developers, System Config applies to all users ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, la config di sistema si applica a tutti gli utenti assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --system',
@@ -5741,7 +5843,7 @@ export default {
               pronunciation: '/ˈɡloʊbəl kənˈfɪɡ/',
               phonetic: 'GLO-bal kon-FIG',
               example:
-                'Global config affects your user. = La config globale riguarda il tuo utente.',
+                "To tailor Git to your team's needs, Global Config affects your user so everyone follows consistent settings. = Per adattare Git alle esigenze del team, la config globale riguarda il tuo utente cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global user.name "Alice"',
@@ -5752,7 +5854,8 @@ export default {
               italian: 'Config locale',
               pronunciation: '/ˈloʊkəl kənˈfɪɡ/',
               phonetic: 'LO-kal kon-FIG',
-              example: 'Local config is per repository. = La config locale è per repository.',
+              example:
+                "As part of onboarding new developers, Local Config is per repository ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, la config locale è per repository assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --local',
@@ -5765,7 +5868,7 @@ export default {
               pronunciation: '/ˈjuːzər neɪm/',
               phonetic: 'IU-zer NEIM',
               example:
-                'user.name appears in commit metadata. = user.name appare nei metadati dei commit.',
+                'For a personalized development setup, user.name appears in commit metadata which streamlines repetitive tasks. = Per una configurazione di sviluppo personalizzata, user.name appare nei metadati dei commit il che semplifica le attivita ripetitive.',
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global user.name "Mario Rossi"',
@@ -5776,7 +5879,7 @@ export default {
               pronunciation: '/ˈjuːzər ˈiːmeɪl/',
               phonetic: 'IU-zer I-meil',
               example:
-                "user.email matches GitHub for attribution. = user.email matcha GitHub per l'attribuzione.",
+                "To tailor Git to your team's needs, user.email matches GitHub for attribution so everyone follows consistent settings. = Per adattare Git alle esigenze del team, user.email matcha GitHub per l'attribuzione cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global user.email "you@ex.com"',
@@ -5788,7 +5891,7 @@ export default {
               pronunciation: '/kɔːr ˈedɪtər/',
               phonetic: 'KOR E-di-tor',
               example:
-                "core.editor sets the commit editor. = core.editor imposta l'editor dei commit.",
+                "When customizing your Git environment, core.editor sets the commit editor making your daily workflow more efficient. = Quando si personalizza l'ambiente Git, core.editor imposta l'editor dei commit rendendo il flusso di lavoro quotidiano piu efficiente.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global core.editor "code --wait"',
@@ -5799,7 +5902,7 @@ export default {
               pronunciation: '/kɔːr ɔːtoʊ siː ɑːr el ef/',
               phonetic: 'KOR au-to-CRLF',
               example:
-                'autocrlf handles line endings cross-platform. = autocrlf gestisce i fine riga cross-platform.',
+                "As part of onboarding new developers, autocrlf handles line endings cross-platform ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, autocrlf gestisce i fine riga cross-platform assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global core.autocrlf input',
@@ -5810,7 +5913,8 @@ export default {
               italian: 'Branch di default',
               pronunciation: '/ɪˈnɪt dɪˈfɔːlt brɑːntʃ/',
               phonetic: 'i-NIT di-FOLT BRANC',
-              example: 'Set the default branch to main. = Imposta il branch di default a main.',
+              example:
+                "To tailor Git to your team's needs, set the default branch to main so everyone follows consistent settings. = Per adattare Git alle esigenze del team, imposta il branch di default a main cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global init.defaultBranch main',
@@ -5821,7 +5925,7 @@ export default {
               pronunciation: '/pʊl ˈriːbeɪs/',
               phonetic: 'PUL RI-beis',
               example:
-                'pull.rebase avoids merge commits on pull. = pull.rebase evita merge commit sui pull.',
+                "To tailor Git to your team's needs, pull.rebase avoids merge commits on pull so everyone follows consistent settings. = Per adattare Git alle esigenze del team, pull.rebase evita merge commit sui pull cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global pull.rebase true',
@@ -5836,11 +5940,11 @@ export default {
           items: [
             {
               english: 'Alias',
-              italian: 'alias / scorciatoia di comando',
+              italian: 'scorciatoia di comando (alias)',
               pronunciation: '/ˈeɪliəs/',
               phonetic: 'EI-li-as',
               example:
-                'Aliases create command shortcuts. = Gli alias creano scorciatoie ai comandi.',
+                "When customizing your Git environment, aliases create command shortcuts making your daily workflow more efficient. = Quando si personalizza l'ambiente Git, gli alias creano scorciatoie ai comandi rendendo il flusso di lavoro quotidiano piu efficiente.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global alias.co checkout',
@@ -5850,7 +5954,8 @@ export default {
               italian: 'Alias co (checkout)',
               pronunciation: '/ˈeɪliəs siː oʊ/',
               phonetic: 'EI-li-as CO',
-              example: 'git co is faster than checkout. = git co è più veloce di checkout.',
+              example:
+                'For a personalized development setup, git co is faster than checkout which streamlines repetitive tasks. = Per una configurazione di sviluppo personalizzata, git co è più veloce di checkout il che semplifica le attivita ripetitive.',
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config alias.co checkout',
@@ -5860,7 +5965,8 @@ export default {
               italian: 'Alias st (status)',
               pronunciation: '/ˈeɪliəs es tiː/',
               phonetic: 'EI-li-as ST',
-              example: 'git st shows status quickly. = git st mostra lo status velocemente.',
+              example:
+                "As part of onboarding new developers, git st shows status quickly ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, git st mostra lo status velocemente assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config alias.st status',
@@ -5870,7 +5976,8 @@ export default {
               italian: 'Alias lg (log grafico)',
               pronunciation: '/ˈeɪliəs el dʒiː/',
               phonetic: 'EI-li-as EL-GI',
-              example: 'lg shows a graph log. = lg mostra un log grafico.',
+              example:
+                "To tailor Git to your team's needs, lg shows a graph log so everyone follows consistent settings. = Per adattare Git alle esigenze del team, lg mostra un log grafico cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.lg = log --graph --oneline --all',
@@ -5881,7 +5988,7 @@ export default {
               pronunciation: '/ʃel ˈeɪliəs/',
               phonetic: 'SCEL EI-li-as',
               example:
-                'Prefix with ! to run shell commands. = Prefissa con ! per eseguire comandi shell.',
+                "When customizing your Git environment, prefix with ! to run shell commands making your daily workflow more efficient. = Quando si personalizza l'ambiente Git, prefissa con ! per eseguire comandi shell rendendo il flusso di lavoro quotidiano piu efficiente.",
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.cleanup = !git branch --merged | grep -v main | xargs git branch -d',
@@ -5892,37 +5999,40 @@ export default {
               pronunciation: '/ˈmʌlti kəˈmɑːnd ˈeɪliəs/',
               phonetic: 'MUL-ti ko-MAND EI-li-as',
               example:
-                'Combine commands with shell scripting. = Combina comandi con scripting shell.',
+                "As part of onboarding new developers, combine commands with shell scripting ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, combina comandi con scripting shell assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.acp = !git add -A && git commit -m "$1" && git push',
             },
             {
               english: 'alias.unstage',
-              italian: 'Alias unstage',
+              italian: 'alias per rimuovere dallo stage (alias.unstage)',
               pronunciation: '/ˈeɪliəs ʌnˈsteɪdʒ/',
               phonetic: 'EI-li-as an-STEIG',
-              example: 'unstage removes files from staging. = unstage rimuove file dallo staging.',
+              example:
+                "As part of onboarding new developers, unstage removes files from staging ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, unstage rimuove file dallo staging assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.unstage = reset HEAD --',
             },
             {
               english: 'alias.last',
-              italian: 'Alias last',
+              italian: "alias per l'ultimo commit (alias.last)",
               pronunciation: '/ˈeɪliəs lɑːst/',
               phonetic: 'EI-li-as LAST',
-              example: 'last shows the most recent commit. = last mostra il commit più recente.',
+              example:
+                "When customizing your Git environment, last shows the most recent commit making your daily workflow more efficient. = Quando si personalizza l'ambiente Git, last mostra il commit più recente rendendo il flusso di lavoro quotidiano piu efficiente.",
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.last = log -1 HEAD',
             },
             {
               english: 'alias.amend',
-              italian: 'Alias amend',
+              italian: 'alias per correggere commit (alias.amend)',
               pronunciation: '/ˈeɪliəs əˈmend/',
               phonetic: 'EI-li-as a-MEND',
-              example: "amend modifies the last commit. = amend modifica l'ultimo commit.",
+              example:
+                "As part of onboarding new developers, amend modifies the last commit ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, amend modifica l'ultimo commit assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               code: 'alias.amend = commit --amend --no-edit',
@@ -5932,7 +6042,8 @@ export default {
               italian: 'Elencare gli alias',
               pronunciation: '/lɪst ˈeɪliəsɪz/',
               phonetic: 'LIST EI-li-a-siz',
-              example: 'List configured aliases. = Elenca gli alias configurati.',
+              example:
+                "When customizing your Git environment, list configured aliases making your daily workflow more efficient. = Quando si personalizza l'ambiente Git, elenca gli alias configurati rendendo il flusso di lavoro quotidiano piu efficiente.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --get-regexp alias',
@@ -5950,7 +6061,7 @@ export default {
               pronunciation: '/ɪnˈkluːd ɪf/',
               phonetic: 'in-KLUD IF',
               example:
-                'includeIf loads config conditionally. = includeIf carica config condizionalmente.',
+                "As part of onboarding new developers, includeIf loads config conditionally ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, includeIf carica config condizionalmente assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               code: '[includeIf "gitdir:~/work/"]\\n  path = .gitconfig-work',
@@ -5962,7 +6073,7 @@ export default {
               pronunciation: '/ɡɪt dɜːr ˈpætərn/',
               phonetic: 'GIT-DER PA-tern',
               example:
-                'gitdir matches by repository path. = gitdir matcha per percorso del repository.',
+                "To tailor Git to your team's needs, gitdir matches by repository path so everyone follows consistent settings. = Per adattare Git alle esigenze del team, gitdir matcha per percorso del repository cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
               code: 'gitdir:~/work/',
@@ -5972,7 +6083,8 @@ export default {
               italian: 'Pattern onbranch',
               pronunciation: '/ɒn brɑːntʃ ˈpætərn/',
               phonetic: 'ON-BRANC PA-tern',
-              example: 'onbranch matches by branch name. = onbranch matcha per nome del ramo.',
+              example:
+                "As part of onboarding new developers, onbranch matches by branch name ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, onbranch matcha per nome del ramo assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               code: '[includeIf "onbranch:main"]',
@@ -5983,7 +6095,7 @@ export default {
               pronunciation: '/wɜːrk ˈproʊfaɪl/',
               phonetic: 'UERK PRO-fail',
               example:
-                'A work profile uses corporate email. = Un profilo di lavoro usa email aziendale.',
+                'For a personalized development setup, a work profile uses corporate email which streamlines repetitive tasks. = Per una configurazione di sviluppo personalizzata, un profilo di lavoro usa email aziendale il che semplifica le attivita ripetitive.',
               context: 'config',
               difficulty: 'intermediate',
               code: '[user]\\n  email = alice@company.com',
@@ -5994,7 +6106,7 @@ export default {
               pronunciation: '/ˈpɜːrsənəl ˈproʊfaɪl/',
               phonetic: 'PER-so-nal PRO-fail',
               example:
-                'Personal profile uses your private email. = Il profilo personale usa la tua email privata.',
+                "To tailor Git to your team's needs, Personal Profile uses your private email so everyone follows consistent settings. = Per adattare Git alle esigenze del team, il profilo personale usa la tua email privata cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
             },
@@ -6003,7 +6115,8 @@ export default {
               italian: 'Config XDG',
               pronunciation: '/eks diː dʒiː kənˈfɪɡ/',
               phonetic: 'X-D-G kon-FIG',
-              example: 'Git also reads XDG_CONFIG_HOME. = Git legge anche XDG_CONFIG_HOME.',
+              example:
+                "As part of onboarding new developers, Git also reads XDG_CONFIG_HOME ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, Git legge anche XDG_CONFIG_HOME assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               code: '~/.config/git/config',
@@ -6014,18 +6127,18 @@ export default {
               pronunciation: '/ˈwɜːrktriː kənˈfɪɡ/',
               phonetic: 'UERK-tri kon-FIG',
               example:
-                'extensions.worktreeConfig enables per-worktree config. = extensions.worktreeConfig abilita config per worktree.',
+                "To tailor Git to your team's needs, extensions.worktreeConfig enables per-worktree config so everyone follows consistent settings. = Per adattare Git alle esigenze del team, extensions.worktreeConfig abilita config per worktree cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config extensions.worktreeConfig true',
             },
             {
               english: 'Insteadof',
-              italian: 'insteadof / riscrittura URL Git',
+              italian: 'riscrittura URL Git (insteadOf)',
               pronunciation: '/ɪnˈstedɒv/',
               phonetic: 'in-STED-ov',
               example:
-                'insteadOf rewrites URLs transparently. = insteadOf riscrive URL in modo trasparente.',
+                "To tailor Git to your team's needs, use Insteadof to rewrite URLs transparently so everyone follows consistent settings. = Per adattare Git alle esigenze del team, insteadOf riscrive URL in modo trasparente cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
               code: 'url."git@github.com:".insteadOf = "https://github.com/"',
@@ -6035,18 +6148,19 @@ export default {
               italian: 'Helper credenziali',
               pronunciation: '/krəˈdenʃəl ˈhelpər/',
               phonetic: 'kre-DEN-scial HEL-per',
-              example: 'Configure a credential helper. = Configura un helper credenziali.',
+              example:
+                "As part of onboarding new developers, configure a credential helper ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, configura un helper credenziali assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global credential.helper store',
             },
             {
               english: 'rerere',
-              italian: 'rerere / riuso registrato delle risoluzioni',
+              italian: 'riuso registrato delle risoluzioni (rerere)',
               pronunciation: '/ˈriːriːriː/',
               phonetic: 'RI-ri-ri',
               example:
-                'rerere remembers conflict resolutions. = rerere ricorda le risoluzioni di conflitti.',
+                "As part of onboarding new developers, rerere remembers conflict resolutions ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, rerere ricorda le risoluzioni di conflitti assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global rerere.enabled true',
@@ -6065,7 +6179,7 @@ export default {
               pronunciation: '/dɒt ɡɪt ɪɡˈnɔːr/',
               phonetic: 'DOT GIT ig-NOR',
               example:
-                '.gitignore lists untracked files to ignore. = .gitignore elenca file non tracciati da ignorare.',
+                'For a personalized development setup, to see untracked files to ignore, run .gitignore which streamlines repetitive tasks. = Per una configurazione di sviluppo personalizzata, .gitignore elenca file non tracciati da ignorare il che semplifica le attivita ripetitive.',
               context: 'config',
               difficulty: 'intermediate',
               code: 'node_modules/\\n.env\\n*.log',
@@ -6075,7 +6189,8 @@ export default {
               italian: 'Pattern glob',
               pronunciation: '/ɡlɒb ˈpætərn/',
               phonetic: 'GLOB PA-tern',
-              example: 'Glob patterns use *, **, and ?. = I pattern glob usano *, ** e ?.',
+              example:
+                "When customizing your Git environment, glob patterns use *, **, and ? making your daily workflow more efficient. = Quando si personalizza l'ambiente Git, i pattern glob usano *, ** e ? rendendo il flusso di lavoro quotidiano piu efficiente.",
               context: 'config',
               difficulty: 'intermediate',
               code: '**/dist/\\n*.tmp',
@@ -6085,7 +6200,8 @@ export default {
               italian: 'Pattern di negazione',
               pronunciation: '/nɪˈɡeɪʃən ˈpætərn/',
               phonetic: 'ne-GHEI-scion PA-tern',
-              example: 'Use ! to negate an ignore rule. = Usa ! per negare una regola di ignore.',
+              example:
+                "As part of onboarding new developers, use ! to negate an ignore rule ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, usa ! per negare una regola di ignore assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               code: '*.log\\n!important.log',
@@ -6096,7 +6212,7 @@ export default {
               pronunciation: '/ˈɡloʊbəl ɡɪt ɪɡˈnɔːr/',
               phonetic: 'GLO-bal GIT ig-NOR',
               example:
-                'A global gitignore covers all repos. = Un gitignore globale copre tutti i repo.',
+                "To tailor Git to your team's needs, a global gitignore covers all repos so everyone follows consistent settings. = Per adattare Git alle esigenze del team, un gitignore globale copre tutti i repo cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global core.excludesFile ~/.gitignore_global',
@@ -6107,7 +6223,7 @@ export default {
               pronunciation: '/dɒt ɡɪt əˈtrɪbjuːts/',
               phonetic: 'DOT GIT a-TRI-biuts',
               example:
-                '.gitattributes sets per-path attributes. = .gitattributes imposta attributi per path.',
+                "As part of onboarding new developers, .gitattributes sets per-path attributes ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, .gitattributes imposta attributi per path assicurando un comportamento consistente nel team.",
               context: 'config',
               difficulty: 'intermediate',
               code: '*.sh text eol=lf\\n*.png binary',
@@ -6117,7 +6233,8 @@ export default {
               italian: 'Normalizzazione fine riga',
               pronunciation: '/laɪn ˈendɪŋ nɔːrməlaɪˈzeɪʃən/',
               phonetic: 'LAIN EN-ding nor-ma-lai-ZEI-scion',
-              example: 'eol=lf forces LF line endings. = eol=lf forza fine riga LF.',
+              example:
+                "When customizing your Git environment, eol=lf forces LF line endings making your daily workflow more efficient. = Quando si personalizza l'ambiente Git, eol=lf forza fine riga LF rendendo il flusso di lavoro quotidiano piu efficiente.",
               context: 'config',
               difficulty: 'intermediate',
               code: '* text=auto eol=lf',
@@ -6128,7 +6245,7 @@ export default {
               pronunciation: '/ɪkˈspɔːrt ɪɡˈnɔːr/',
               phonetic: 'eks-PORT ig-NOR',
               example:
-                'export-ignore excludes from archives. = export-ignore esclude dagli archivi.',
+                "To tailor Git to your team's needs, export-ignore excludes from archives so everyone follows consistent settings. = Per adattare Git alle esigenze del team, export-ignore esclude dagli archivi cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
               code: 'tests/ export-ignore',
@@ -6139,7 +6256,7 @@ export default {
               pronunciation: '/mɜːrdʒ aʊərz/',
               phonetic: 'MERG AURS',
               example:
-                'merge=ours always keeps local version. = merge=ours mantiene sempre la versione locale.',
+                "When customizing your Git environment, merge=ours always keeps local version making your daily workflow more efficient. = Quando si personalizza l'ambiente Git, merge=ours mantiene sempre la versione locale rendendo il flusso di lavoro quotidiano piu efficiente.",
               context: 'config',
               difficulty: 'intermediate',
               code: 'CHANGELOG.md merge=ours',
@@ -6150,7 +6267,7 @@ export default {
               pronunciation: '/dɪf ˈdraɪvər/',
               phonetic: 'DIF DRAI-ver',
               example:
-                'Custom diff drivers handle binary files. = Driver di diff custom gestiscono file binari.',
+                "To tailor Git to your team's needs, custom diff drivers handle binary files so everyone follows consistent settings. = Per adattare Git alle esigenze del team, driver di diff custom gestiscono file binari cosi tutti seguono impostazioni consistenti.",
               context: 'config',
               difficulty: 'intermediate',
               code: '*.docx diff=word',
@@ -6160,7 +6277,8 @@ export default {
               italian: 'Servizio gitignore.io',
               pronunciation: '/ɡɪt ɪɡˈnɔːr aɪ oʊ/',
               phonetic: 'GIT ig-NOR I-O',
-              example: 'gitignore.io generates ignore files. = gitignore.io genera file ignore.',
+              example:
+                "When customizing your Git environment, use gitignore.io to create ignore files making your daily workflow more efficient. = Quando si personalizza l'ambiente Git, gitignore.io genera file ignore rendendo il flusso di lavoro quotidiano piu efficiente.",
               context: 'config',
               difficulty: 'intermediate',
               tool: 'gitignore.io',
@@ -6184,11 +6302,11 @@ export default {
           items: [
             {
               english: 'Submodule',
-              italian: 'Submodule / Sottomodulo',
+              italian: 'sottomodulo Git (submodule)',
               pronunciation: '/ˈsʌbmɒdjuːl/',
               phonetic: 'SAB-mo-giul',
               example:
-                'A submodule is a repo inside a repo. = Un submodule è un repo dentro un repo.',
+                "When customizing your Git environment, a submodule is a repo inside a repo making your daily workflow more efficient. = Quando si personalizza l'ambiente Git, un submodule è un repo dentro un repo rendendo il flusso di lavoro quotidiano piu efficiente.",
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule add <url>',
@@ -6199,7 +6317,8 @@ export default {
               italian: 'Aggiungere un submodule',
               pronunciation: '/ɡɪt ˈsʌbmɒdjuːl æd/',
               phonetic: 'GIT SAB-mo-giul AD',
-              example: 'Add a library as a submodule. = Aggiungi una libreria come submodule.',
+              example:
+                'For power users who need maximum control, add a library as a submodule enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, aggiungi una libreria come submodule abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule add https://github.com/lib/lib.git lib/',
@@ -6210,7 +6329,7 @@ export default {
               pronunciation: '/dɒt ɡɪt ˈmɒdjuːlz/',
               phonetic: 'DOT GIT MO-giuls',
               example:
-                '.gitmodules tracks submodule URLs. = .gitmodules traccia gli URL dei submodule.',
+                'For power users who need maximum control, use .gitmodules to track submodule URLs enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, .gitmodules traccia gli URL dei submodule abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               code: '[submodule "lib"]\\n  path = lib\\n  url = https://github.com/lib/lib.git',
@@ -6221,7 +6340,7 @@ export default {
               pronunciation: '/ˈsʌbmɒdjuːl ɪˈnɪt/',
               phonetic: 'SAB-mo-giul i-NIT',
               example:
-                'init configures submodules locally. = init configura i submodule localmente.',
+                'For complex repository management, init configures submodules locally giving experienced developers fine-grained control. = Per la gestione avanzata del repository, init configura i submodule localmente dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule init',
@@ -6232,7 +6351,7 @@ export default {
               pronunciation: '/ˈsʌbmɒdjuːl ʌpˈdeɪt/',
               phonetic: 'SAB-mo-giul ap-DEIT',
               example:
-                'update fetches submodule content. = update scarica il contenuto del submodule.',
+                'For power users who need maximum control, update fetches submodule content enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, update scarica il contenuto del submodule abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule update --init --recursive',
@@ -6242,7 +6361,8 @@ export default {
               italian: 'Clone ricorsivo',
               pronunciation: '/rɪˈkɜːrsɪv kloʊn/',
               phonetic: 'ri-KER-siv KLOUN',
-              example: 'Clone with submodules in one go. = Clona con submodule in una sola volta.',
+              example:
+                'For power users who need maximum control, clone with submodules in one go enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, clona con submodule in una sola volta abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git clone --recurse-submodules <url>',
@@ -6253,7 +6373,7 @@ export default {
               pronunciation: '/ˈsʌbmɒdjuːl ˈsteɪtəs/',
               phonetic: 'SAB-mo-giul STEI-tas',
               example:
-                'status shows pinned commit per submodule. = status mostra il commit pinnato per submodule.',
+                'In advanced Git scenarios, status shows pinned commit per submodule providing powerful capabilities for experienced users. = In scenari Git avanzati, status mostra il commit pinnato per submodule fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule status',
@@ -6264,7 +6384,7 @@ export default {
               pronunciation: '/ʌpˈdeɪt pɪn/',
               phonetic: 'ap-DEIT PIN',
               example:
-                'Pull a new commit and commit the pointer. = Pulla un nuovo commit e committa il puntatore.',
+                'In advanced Git scenarios, pull a new commit and commit the pointer providing powerful capabilities for experienced users. = In scenari Git avanzati, pulla un nuovo commit e committa il puntatore fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'cd lib && git pull && cd .. && git add lib && git commit',
@@ -6275,7 +6395,7 @@ export default {
               pronunciation: '/ˈfɔːreɪtʃ/',
               phonetic: 'FO-rei-ci',
               example:
-                'foreach runs a command in each submodule. = foreach esegue un comando in ogni submodule.',
+                'In advanced Git scenarios, use foreach to run command in each submodule providing powerful capabilities for experienced users. = In scenari Git avanzati, foreach esegue un comando in ogni submodule fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule foreach git pull',
@@ -6286,7 +6406,7 @@ export default {
               pronunciation: '/diː ɪˈnɪt ˈsʌbmɒdjuːl/',
               phonetic: 'DI-i-NIT SAB-mo-giul',
               example:
-                'deinit unregisters a submodule. = deinit rimuove la registrazione di un submodule.',
+                'When handling edge cases in large codebases, deinit unregisters a submodule which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, deinit rimuove la registrazione di un submodule il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule deinit lib',
@@ -6301,11 +6421,11 @@ export default {
           items: [
             {
               english: 'Subtree',
-              italian: 'Subtree / Sottoalbero',
+              italian: 'sottoalbero Git (subtree)',
               pronunciation: '/ˈsʌbtriː/',
               phonetic: 'SAB-tri',
               example:
-                'A subtree merges another repo into yours. = Un subtree fonde un altro repo nel tuo.',
+                'In advanced Git scenarios, a subtree merges another repo into yours providing powerful capabilities for experienced users. = In scenari Git avanzati, un subtree fonde un altro repo nel tuo fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               note: 'Non richiede comandi extra per chi clona.',
@@ -6315,7 +6435,8 @@ export default {
               italian: 'Aggiungere subtree',
               pronunciation: '/ˈsʌbtriː æd/',
               phonetic: 'SAB-tri AD',
-              example: 'Add an external repo as subtree. = Aggiungi un repo esterno come subtree.',
+              example:
+                'When handling edge cases in large codebases, add an external repo as subtree which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, aggiungi un repo esterno come subtree il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git subtree add --prefix=lib <url> main --squash',
@@ -6326,7 +6447,7 @@ export default {
               pronunciation: '/ˈsʌbtriː pʊl/',
               phonetic: 'SAB-tri PUL',
               example:
-                "pull updates a subtree from upstream. = pull aggiorna un subtree dall'upstream.",
+                "For power users who need maximum control, pull updates a subtree from upstream enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, pull aggiorna un subtree dall'upstream abilitando operazioni non possibili con i comandi base.",
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git subtree pull --prefix=lib <url> main --squash',
@@ -6336,7 +6457,8 @@ export default {
               italian: 'Push di un subtree',
               pronunciation: '/ˈsʌbtriː pʊʃ/',
               phonetic: 'SAB-tri PUSC',
-              example: "push contributes back to upstream. = push contribuisce all'upstream.",
+              example:
+                "For complex repository management, push contributes back to upstream giving experienced developers fine-grained control. = Per la gestione avanzata del repository, push contribuisce all'upstream dando agli sviluppatori esperti un controllo granulare.",
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git subtree push --prefix=lib <url> main',
@@ -6347,7 +6469,7 @@ export default {
               pronunciation: '/skwɒʃ mɜːrdʒ/',
               phonetic: 'SKUOSC MERG',
               example:
-                '--squash collapses subtree history. = --squash collassa la storia del subtree.',
+                'For power users who need maximum control, --squash collapses subtree history enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, --squash collassa la storia del subtree abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git subtree add --squash',
@@ -6359,7 +6481,7 @@ export default {
               pronunciation: '/ˈsʌbtriː splɪt/',
               phonetic: 'SAB-tri SPLIT',
               example:
-                'split extracts a subtree to a new branch. = split estrae un subtree in un nuovo branch.',
+                'For complex repository management, split extracts a subtree to a new branch giving experienced developers fine-grained control. = Per la gestione avanzata del repository, split estrae un subtree in un nuovo branch dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git subtree split --prefix=lib -b lib-split',
@@ -6370,29 +6492,29 @@ export default {
               pronunciation: '/sʌb ˈriːpoʊ/',
               phonetic: 'SAB-RI-po',
               example:
-                'subrepo is a friendlier subtree wrapper. = subrepo è un wrapper più amichevole di subtree.',
+                'In advanced Git scenarios, subrepo is a friendlier subtree wrapper providing powerful capabilities for experienced users. = In scenari Git avanzati, subrepo è un wrapper più amichevole di subtree fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'git-subrepo',
             },
             {
               english: 'Vendoring',
-              italian: 'vendoring / inclusione delle dipendenze',
+              italian: 'inclusione delle dipendenze (vendoring)',
               pronunciation: '/ˈvendərɪŋ/',
               phonetic: 'VEN-de-ring',
               example:
-                'Vendoring copies dependencies into your repo. = Il vendoring copia dipendenze nel tuo repo.',
+                'In advanced Git scenarios, use Vendoring to copy dependencies into your repo providing powerful capabilities for experienced users. = In scenari Git avanzati, il vendoring copia dipendenze nel tuo repo fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               note: 'Comune in Go (vendor/) e Rust (cargo vendor).',
             },
             {
               english: 'Submodule vs Subtree',
-              italian: 'submodule vs subtree / due modi di includere repo',
+              italian: 'due modi di includere repository (submodule vs subtree)',
               pronunciation: '/ˈsʌbmɒdjuːl vɜːrsəs ˈsʌbtriː/',
               phonetic: 'SAB-mo-giul VER-sus SAB-tri',
               example:
-                'Choose subtree for simplicity, submodule for separation. = Scegli subtree per semplicità, submodule per separazione.',
+                'For power users who need maximum control, choose subtree for simplicity, submodule for separation enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, scegli subtree per semplicità, submodule per separazione abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
             },
@@ -6402,7 +6524,7 @@ export default {
               pronunciation: '/ˈnestɪd rɪˈpɒzɪtɔːri/',
               phonetic: 'NE-stid ri-PO-zi-tori',
               example:
-                'A nested repo lives inside a parent. = Un repo annidato vive dentro un parent.',
+                'When handling edge cases in large codebases, a nested repo lives inside a parent which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, un repo annidato vive dentro un parent il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               note: 'Senza submodule, viene ignorato dal parent.',
@@ -6419,17 +6541,19 @@ export default {
               italian: 'Strategia di pinning',
               pronunciation: '/ˈpɪnɪŋ ˈstrætədʒi/',
               phonetic: 'PI-ning STRA-te-gi',
-              example: 'Pin submodules to stable tags. = Pinna i submodule a tag stabili.',
+              example:
+                'In advanced Git scenarios, pin submodules to stable tags providing powerful capabilities for experienced users. = In scenari Git avanzati, pinna i submodule a tag stabili fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'cd lib && git checkout v1.0',
             },
             {
               english: 'Tracking Branch',
-              italian: 'tracking branch / ramo che traccia il remoto',
+              italian: 'ramo che traccia il remoto (tracking branch)',
               pronunciation: '/ˈtrækɪŋ brɑːntʃ/',
               phonetic: 'TRA-king BRANC',
-              example: 'Submodules can track a branch. = I submodule possono tracciare un branch.',
+              example:
+                'For power users who need maximum control, submodules can track a branch enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, i submodule possono tracciare un branch abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule set-branch --branch main lib',
@@ -6440,7 +6564,7 @@ export default {
               pronunciation: '/rɪˈmoʊt ˈtrækɪŋ/',
               phonetic: 'ri-MOUT TRA-king',
               example:
-                'update --remote tracks the branch tip. = update --remote traccia la punta del branch.',
+                'In advanced Git scenarios, update --remote tracks the branch tip providing powerful capabilities for experienced users. = In scenari Git avanzati, update --remote traccia la punta del branch fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule update --remote',
@@ -6451,7 +6575,7 @@ export default {
               pronunciation: '/ˈʃæloʊ ˈsʌbmɒdjuːl/',
               phonetic: 'SCIA-lou SAB-mo-giul',
               example:
-                'Shallow submodules save bandwidth. = I submodule shallow risparmiano banda.',
+                'For complex repository management, shallow submodules save bandwidth giving experienced developers fine-grained control. = Per la gestione avanzata del repository, i submodule shallow risparmiano banda dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule add --depth=1 <url>',
@@ -6461,7 +6585,8 @@ export default {
               italian: 'Branch del submodule',
               pronunciation: '/ˈsʌbmɒdjuːl brɑːntʃ/',
               phonetic: 'SAB-mo-giul BRANC',
-              example: 'Branch field locks to a branch. = Il campo branch blocca a un branch.',
+              example:
+                'In advanced Git scenarios, branch field locks to a branch providing powerful capabilities for experienced users. = In scenari Git avanzati, il campo branch blocca a un branch fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               code: '[submodule "lib"]\\n  branch = main',
@@ -6472,7 +6597,7 @@ export default {
               pronunciation: '/ˈsʌbmɒdjuːl kənˈflɪkt/',
               phonetic: 'SAB-mo-giul kon-FLIKT',
               example:
-                'Conflicts arise on diverging pointers. = I conflitti emergono su puntatori divergenti.',
+                'In advanced Git scenarios, conflicts arise on diverging pointers providing powerful capabilities for experienced users. = In scenari Git avanzati, i conflitti emergono su puntatori divergenti fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               note: 'Risolvere scegliendo il commit corretto del sub-repo.',
@@ -6483,7 +6608,7 @@ export default {
               pronunciation: '/dɪˈtætʃt hed/',
               phonetic: 'di-TACT HED',
               example:
-                'Submodules use detached HEAD by default. = I submodule usano detached HEAD di default.',
+                'When handling edge cases in large codebases, submodules use detached HEAD by default which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, i submodule usano detached HEAD di default il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               note: 'Crea un branch prima di modificare.',
@@ -6494,7 +6619,7 @@ export default {
               pronunciation: '/ˈsʌbmɒdjuːl ˈjʊərel ˈriːraɪt/',
               phonetic: 'SAB-mo-giul URL RI-rait',
               example:
-                'Override submodule URLs locally. = Sovrascrivi gli URL dei submodule localmente.',
+                'For power users who need maximum control, override submodule URLs locally enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, sovrascrivi gli URL dei submodule localmente abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config submodule.lib.url <new-url>',
@@ -6505,7 +6630,7 @@ export default {
               pronunciation: '/sɪŋk ˈsʌbmɒdjuːlz/',
               phonetic: 'SINK SAB-mo-giuls',
               example:
-                'sync updates URLs from .gitmodules. = sync aggiorna gli URL da .gitmodules.',
+                'For complex repository management, sync updates URLs from .gitmodules giving experienced developers fine-grained control. = Per la gestione avanzata del repository, sync aggiorna gli URL da .gitmodules dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git submodule sync',
@@ -6516,7 +6641,7 @@ export default {
               pronunciation: '/fetʃ dʒɒbz/',
               phonetic: 'FEC GIOBS',
               example:
-                'fetchJobs parallelizes submodule fetches. = fetchJobs parallelizza i fetch dei submodule.',
+                'For complex repository management, fetchJobs parallelizes submodule fetches giving experienced developers fine-grained control. = Per la gestione avanzata del repository, fetchJobs parallelizza i fetch dei submodule dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config submodule.fetchJobs 4',
@@ -6530,11 +6655,11 @@ export default {
           items: [
             {
               english: 'Multirepo',
-              italian: 'multirepo / più repository indipendenti',
+              italian: 'architettura a repository indipendenti (multirepo)',
               pronunciation: '/ˈmʌltiˌriːpoʊ/',
               phonetic: 'MUL-ti-RI-po',
               example:
-                'Multirepo splits projects across repos. = Multirepo divide progetti tra repo.',
+                'For power users who need maximum control, Multirepo splits projects across repos enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, multirepo divide progetti tra repo abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               note: 'Opposto del monorepo.',
@@ -6544,7 +6669,8 @@ export default {
               italian: 'Versionamento di librerie',
               pronunciation: '/ˈlaɪbrəri ˈvɜːrʒənɪŋ/',
               phonetic: 'LAI-bra-ri VER-scio-ning',
-              example: 'Pin libraries with semantic version tags. = Pinna librerie con tag semver.',
+              example:
+                'For power users who need maximum control, pin libraries with semantic version tags enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, pinna librerie con tag semver abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
             },
@@ -6554,7 +6680,7 @@ export default {
               pronunciation: '/krɒs ˈriːpoʊ dɪˈpendənsi/',
               phonetic: 'KROS-RI-po di-PEN-den-si',
               example:
-                'Cross-repo dependencies need coordination. = Le dipendenze cross-repo richiedono coordinazione.',
+                'For complex repository management, cross-repo dependencies need coordination giving experienced developers fine-grained control. = Per la gestione avanzata del repository, le dipendenze cross-repo richiedono coordinazione dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
             },
@@ -6563,7 +6689,8 @@ export default {
               italian: 'Cartella vendor',
               pronunciation: '/ˈvendər dɪˈrektəri/',
               phonetic: 'VEN-der di-REK-to-ri',
-              example: 'vendor/ holds copied dependencies. = vendor/ contiene dipendenze copiate.',
+              example:
+                'For power users who need maximum control, vendor/ holds copied dependencies enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, vendor/ contiene dipendenze copiate abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               code: 'vendor/',
@@ -6574,17 +6701,17 @@ export default {
               pronunciation: '/rɪˈliːs treɪn/',
               phonetic: 'ri-LIIS TREIN',
               example:
-                'Release trains coordinate multi-repo releases. = I release train coordinano release multi-repo.',
+                'When handling edge cases in large codebases, release trains coordinate multi-repo releases which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, i release train coordinano release multi-repo il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
             },
             {
               english: 'Lockfile',
-              italian: 'lockfile / file di blocco delle versioni',
+              italian: 'file di blocco delle versioni (lockfile)',
               pronunciation: '/ˈlɒkfaɪl/',
               phonetic: 'LOK-fail',
               example:
-                'Lockfiles pin exact dependency versions. = I lockfile pinnano versioni esatte di dipendenze.',
+                'For power users who need maximum control, lockfiles pin exact dependency versions enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, i lockfile pinnano versioni esatte di dipendenze abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               code: 'package-lock.json\\nyarn.lock\\nCargo.lock',
@@ -6595,7 +6722,7 @@ export default {
               pronunciation: '/dɪˈpendənsi ɡræf/',
               phonetic: 'di-PEN-den-si GRAF',
               example:
-                'Dependency graphs reveal transitive deps. = I grafi delle dipendenze rivelano dipendenze transitive.',
+                'When handling edge cases in large codebases, dependency graphs reveal transitive deps which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, i grafi delle dipendenze rivelano dipendenze transitive il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'GitHub Dependency Graph',
@@ -6606,7 +6733,7 @@ export default {
               pronunciation: '/ɪnˈtɜːrnəl ˈredʒɪstri/',
               phonetic: 'in-TER-nal RE-gi-stri',
               example:
-                'Internal registries host private packages. = I registry interni ospitano pacchetti privati.',
+                'For complex repository management, internal registries host private packages giving experienced developers fine-grained control. = Per la gestione avanzata del repository, i registry interni ospitano pacchetti privati dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'Verdaccio',
@@ -6617,17 +6744,17 @@ export default {
               pronunciation: '/kəmˈpoʊnənt ˈriːpoʊ/',
               phonetic: 'kom-PO-nent RI-po',
               example:
-                'A component repo holds one library. = Un repo di componente contiene una libreria.',
+                'When handling edge cases in large codebases, a component repo holds one library which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, un repo di componente contiene una libreria il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
             },
             {
               english: 'Polyrepo',
-              italian: 'polyrepo / repository multipli',
+              italian: 'architettura a repository multipli (polyrepo)',
               pronunciation: '/ˈpɒliˌriːpoʊ/',
               phonetic: 'PO-li-RI-po',
               example:
-                'Polyrepo is the multi-repo philosophy. = Polyrepo è la filosofia multi-repo.',
+                'In advanced Git scenarios, Polyrepo is the multi-repo philosophy providing powerful capabilities for experienced users. = In scenari Git avanzati, polyrepo è la filosofia multi-repo fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
             },
@@ -6649,11 +6776,11 @@ export default {
           items: [
             {
               english: 'Git LFS',
-              italian: 'Git LFS (gestione file di grandi dimensioni)',
+              italian: 'gestione file di grandi dimensioni (Git LFS)',
               pronunciation: '/ɡɪt el ef es/',
               phonetic: 'GIT EL-EF-ES',
               example:
-                'Git LFS handles large files efficiently. = Git LFS gestisce file grandi efficientemente.',
+                'For power users who need maximum control, Git LFS handles large files efficiently enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, Git LFS gestisce file grandi efficientemente abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'git-lfs',
@@ -6664,7 +6791,8 @@ export default {
               italian: 'Storage di file grandi',
               pronunciation: '/lɑːrdʒ faɪl ˈstɔːrɪdʒ/',
               phonetic: 'LARG FAIL STO-rig',
-              example: 'LFS keeps repos lightweight. = LFS mantiene i repo leggeri.',
+              example:
+                'For complex repository management, LFS keeps repos lightweight giving experienced developers fine-grained control. = Per la gestione avanzata del repository, LFS mantiene i repo leggeri dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
             },
@@ -6673,7 +6801,8 @@ export default {
               italian: 'Installare LFS',
               pronunciation: '/el ef es ɪnˈstɔːl/',
               phonetic: 'LFS in-STOL',
-              example: 'lfs install sets up hooks. = lfs install configura gli hook.',
+              example:
+                'For complex repository management, lfs install sets up hooks giving experienced developers fine-grained control. = Per la gestione avanzata del repository, lfs install configura gli hook dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs install',
@@ -6683,7 +6812,8 @@ export default {
               italian: 'Tracciare con LFS',
               pronunciation: '/el ef es træk/',
               phonetic: 'LFS TRAK',
-              example: 'Track *.psd files with LFS. = Traccia file *.psd con LFS.',
+              example:
+                'For complex repository management, track *.psd files with LFS giving experienced developers fine-grained control. = Per la gestione avanzata del repository, traccia file *.psd con LFS dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs track "*.psd"',
@@ -6694,7 +6824,7 @@ export default {
               pronunciation: '/ˈpɔɪntər faɪl/',
               phonetic: 'POIN-ter FAIL',
               example:
-                'LFS stores a pointer instead of binary. = LFS salva un pointer invece del binario.',
+                'When handling edge cases in large codebases, LFS stores a pointer instead of binary which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, LFS salva un pointer invece del binario il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               code: 'version https://git-lfs.github.com/spec/v1\\noid sha256:abc...\\nsize 12345',
@@ -6704,7 +6834,8 @@ export default {
               italian: 'Elencare file LFS',
               pronunciation: '/el ef es el es faɪlz/',
               phonetic: 'LFS LS-FAILS',
-              example: 'List files tracked by LFS. = Elenca i file tracciati da LFS.',
+              example:
+                'For complex repository management, list files tracked by LFS giving experienced developers fine-grained control. = Per la gestione avanzata del repository, elenca i file tracciati da LFS dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs ls-files',
@@ -6715,7 +6846,7 @@ export default {
               pronunciation: '/el ef es ˈsteɪtəs/',
               phonetic: 'LFS STEI-tas',
               example:
-                'lfs status shows pending LFS changes. = lfs status mostra modifiche LFS pendenti.',
+                'When handling edge cases in large codebases, to see pending LFS changes, run lfs status which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, lfs status mostra modifiche LFS pendenti il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs status',
@@ -6725,7 +6856,8 @@ export default {
               italian: 'Pull LFS',
               pronunciation: '/el ef es pʊl/',
               phonetic: 'LFS PUL',
-              example: 'pull downloads LFS objects. = pull scarica gli oggetti LFS.',
+              example:
+                'For complex repository management, pull downloads LFS objects giving experienced developers fine-grained control. = Per la gestione avanzata del repository, pull scarica gli oggetti LFS dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs pull',
@@ -6736,7 +6868,7 @@ export default {
               pronunciation: '/el ef es fetʃ/',
               phonetic: 'LFS FEC',
               example:
-                'fetch downloads LFS objects without checkout. = fetch scarica oggetti LFS senza checkout.',
+                'When handling edge cases in large codebases, fetch downloads LFS objects without checkout which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, fetch scarica oggetti LFS senza checkout il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs fetch --all',
@@ -6747,7 +6879,7 @@ export default {
               pronunciation: '/el ef es pʊʃ/',
               phonetic: 'LFS PUSC',
               example:
-                'push uploads LFS objects to remote. = push carica gli oggetti LFS al remote.',
+                'For power users who need maximum control, push uploads LFS objects to remote enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, push carica gli oggetti LFS al remote abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs push origin main',
@@ -6765,7 +6897,7 @@ export default {
               pronunciation: '/smʌdʒ ˈfɪltər/',
               phonetic: 'SMAG FIL-ter',
               example:
-                'Smudge replaces pointer with binary on checkout. = Smudge sostituisce il pointer col binario al checkout.',
+                'For power users who need maximum control, smudge replaces pointer with binary on checkout enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, smudge sostituisce il pointer col binario al checkout abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               note: 'Lo smudge converte da repo a working dir.',
@@ -6776,7 +6908,7 @@ export default {
               pronunciation: '/kliːn ˈfɪltər/',
               phonetic: 'KLIN FIL-ter',
               example:
-                "Clean replaces binary with pointer on add. = Clean sostituisce il binario col pointer all'add.",
+                "For power users who need maximum control, clean replaces binary with pointer on add enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, clean sostituisce il binario col pointer all'add abilitando operazioni non possibili con i comandi base.",
               context: 'advanced',
               difficulty: 'advanced',
               note: 'Il clean converte da working dir a repo.',
@@ -6787,17 +6919,18 @@ export default {
               pronunciation: '/el ef es ˈsɜːrvər/',
               phonetic: 'LFS SER-ver',
               example:
-                'LFS objects live on a separate server. = Gli oggetti LFS vivono su un server separato.',
+                'In advanced Git scenarios, LFS objects live on a separate server providing powerful capabilities for experienced users. = In scenari Git avanzati, gli oggetti LFS vivono su un server separato fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'GitHub LFS',
             },
             {
               english: 'OID',
-              italian: 'OID (object id)',
+              italian: 'object id (OID)',
               pronunciation: '/oʊ aɪ diː/',
               phonetic: 'O-I-D',
-              example: "OID is the SHA-256 of the object. = OID è lo SHA-256 dell'oggetto.",
+              example:
+                "In advanced Git scenarios, OID is the SHA-256 of the object providing powerful capabilities for experienced users. = In scenari Git avanzati, OID è lo SHA-256 dell'oggetto fornendo capacita potenti per utenti esperti.",
               context: 'advanced',
               difficulty: 'advanced',
               code: 'oid sha256:abc123...',
@@ -6808,7 +6941,7 @@ export default {
               pronunciation: '/el ef es ˈstɔːrɪdʒ ˈkwoʊtə/',
               phonetic: 'LFS STO-rig KUO-ta',
               example:
-                'GitHub charges for extra LFS storage. = GitHub fa pagare extra storage LFS.',
+                'For complex repository management, gitHub charges for extra LFS storage giving experienced developers fine-grained control. = Per la gestione avanzata del repository, gitHub fa pagare extra storage LFS dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               note: '1 GB free, poi pay-per-pack.',
@@ -6818,7 +6951,8 @@ export default {
               italian: 'Quota di banda',
               pronunciation: '/ˈbændwɪdθ ˈkwoʊtə/',
               phonetic: 'BEND-uidth KUO-ta',
-              example: 'LFS bandwidth is also metered. = Anche la banda LFS è misurata.',
+              example:
+                'When handling edge cases in large codebases, LFS bandwidth is also metered which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, anche la banda LFS è misurata il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
             },
@@ -6827,7 +6961,8 @@ export default {
               italian: 'Lock dei file',
               pronunciation: '/ˈlɒkɪŋ/',
               phonetic: 'LO-king',
-              example: 'lfs lock prevents concurrent edits. = lfs lock previene edit concorrenti.',
+              example:
+                'For power users who need maximum control, lfs lock prevents concurrent edits enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, lfs lock previene edit concorrenti abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs lock asset.psd',
@@ -6838,7 +6973,8 @@ export default {
               italian: 'Sblocco file',
               pronunciation: '/ʌnˈlɒk/',
               phonetic: 'an-LOK',
-              example: 'lfs unlock releases a lock. = lfs unlock rilascia un lock.',
+              example:
+                'For complex repository management, lfs unlock releases a lock giving experienced developers fine-grained control. = Per la gestione avanzata del repository, lfs unlock rilascia un lock dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs unlock asset.psd',
@@ -6849,7 +6985,7 @@ export default {
               pronunciation: '/ˈlɒkəbl ˈætrɪbjuːt/',
               phonetic: 'LO-ka-bol A-tri-biut',
               example:
-                'Mark files as lockable in attributes. = Segna file come lockable negli attributes.',
+                'When handling edge cases in large codebases, mark files as lockable in attributes which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, segna file come lockable negli attributes il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               code: '*.psd filter=lfs lockable',
@@ -6859,7 +6995,8 @@ export default {
               italian: 'Migrare a LFS',
               pronunciation: '/ˈmaɪɡreɪt tuː el ef es/',
               phonetic: 'MAI-greit TU LFS',
-              example: 'lfs migrate rewrites history. = lfs migrate riscrive la history.',
+              example:
+                'When handling edge cases in large codebases, lfs migrate rewrites history which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, lfs migrate riscrive la history il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs migrate import --include="*.psd"',
@@ -6877,7 +7014,8 @@ export default {
               italian: 'Smettere di tracciare',
               pronunciation: '/ʌnˈtræk faɪl/',
               phonetic: 'an-TRAK FAIL',
-              example: 'untrack stops LFS tracking. = untrack ferma il tracking LFS.',
+              example:
+                'In advanced Git scenarios, untrack stops LFS tracking providing powerful capabilities for experienced users. = In scenari Git avanzati, untrack ferma il tracking LFS fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs untrack "*.zip"',
@@ -6888,7 +7026,7 @@ export default {
               pronunciation: '/el ef es pruːn/',
               phonetic: 'LFS PRUN',
               example:
-                'prune deletes old LFS files locally. = prune cancella vecchi file LFS localmente.',
+                'When handling edge cases in large codebases, prune deletes old LFS files locally which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, prune cancella vecchi file LFS localmente il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs prune',
@@ -6899,7 +7037,7 @@ export default {
               pronunciation: '/skɪp smʌdʒ/',
               phonetic: 'SKIP SMAG',
               example:
-                'GIT_LFS_SKIP_SMUDGE clones pointers only. = GIT_LFS_SKIP_SMUDGE clona solo i pointer.',
+                'For complex repository management, GIT_LFS_SKIP_SMUDGE clones pointers only giving experienced developers fine-grained control. = Per la gestione avanzata del repository, GIT_LFS_SKIP_SMUDGE clona solo i pointer dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'GIT_LFS_SKIP_SMUDGE=1 git clone <url>',
@@ -6910,17 +7048,19 @@ export default {
               italian: 'Checkout selettivo',
               pronunciation: '/sɪˈlektɪv ˈtʃekaʊt/',
               phonetic: 'se-LEK-tiv CEK-aut',
-              example: 'Pull only specific LFS files. = Pulla solo specifici file LFS.',
+              example:
+                'In advanced Git scenarios, pull only specific LFS files providing powerful capabilities for experienced users. = In scenari Git avanzati, pulla solo specifici file LFS fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs pull --include="assets/*.png"',
             },
             {
               english: 'LFS in CI',
-              italian: 'LFS in CI / Git LFS nelle pipeline',
+              italian: 'Git LFS nelle pipeline (LFS in CI)',
               pronunciation: '/el ef es ɪn siː aɪ/',
               phonetic: 'LFS-in-CI',
-              example: 'CI must have LFS installed. = La CI deve avere LFS installato.',
+              example:
+                'In advanced Git scenarios, CI must have LFS installed providing powerful capabilities for experienced users. = In scenari Git avanzati, la CI deve avere LFS installato fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               code: 'with:\\n  lfs: true',
@@ -6930,7 +7070,8 @@ export default {
               italian: 'Endpoint personalizzato',
               pronunciation: '/ˈkʌstəm ˈendpɔɪnt/',
               phonetic: 'KA-stom END-point',
-              example: 'Use a private LFS server. = Usa un server LFS privato.',
+              example:
+                'For complex repository management, use a private LFS server giving experienced developers fine-grained control. = Per la gestione avanzata del repository, usa un server LFS privato dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config lfs.url https://lfs.example.com',
@@ -6940,28 +7081,30 @@ export default {
               italian: 'Alternative a LFS',
               pronunciation: '/el ef es ɔːlˈtɜːrnətɪv/',
               phonetic: 'LFS al-TER-na-tiv',
-              example: 'DVC and git-annex offer alternatives. = DVC e git-annex sono alternative.',
+              example:
+                'In advanced Git scenarios, DVC and git-annex offer alternatives providing powerful capabilities for experienced users. = In scenari Git avanzati, DVC e git-annex sono alternative fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'DVC',
             },
             {
               english: 'git-annex',
-              italian: 'git-annex / gestione file grandi alternativa',
+              italian: 'gestione file grandi alternativa (git-annex)',
               pronunciation: '/ɡɪt ˈæneks/',
               phonetic: 'GIT-A-neks',
               example:
-                'git-annex tracks large files differently. = git-annex traccia file grandi diversamente.',
+                'For power users who need maximum control, use git-annex to track large files differently enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, git-annex traccia file grandi diversamente abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'git-annex',
             },
             {
               english: 'DVC',
-              italian: 'DVC (data version control)',
+              italian: 'data version control (DVC)',
               pronunciation: '/diː viː siː/',
               phonetic: 'DI-VI-CI',
-              example: 'DVC is built for ML datasets. = DVC è pensato per dataset ML.',
+              example:
+                'When handling edge cases in large codebases, DVC is built for ML datasets which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, DVC è pensato per dataset ML il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'dvc',
@@ -6972,7 +7115,8 @@ export default {
               italian: 'Limite dimensione repo',
               pronunciation: '/ˈriːpoʊ saɪz ˈlɪmɪt/',
               phonetic: 'RI-po SAIZ LI-mit',
-              example: 'GitHub recommends repos under 1 GB. = GitHub consiglia repo sotto 1 GB.',
+              example:
+                'In advanced Git scenarios, gitHub recommends repos under 1 GB providing powerful capabilities for experienced users. = In scenari Git avanzati, gitHub consiglia repo sotto 1 GB fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               note: 'File singoli oltre 100 MB sono bloccati.',
@@ -6989,7 +7133,8 @@ export default {
               italian: 'Oggetto mancante',
               pronunciation: '/ˈmɪsɪŋ ˈɒbdʒɪkt/',
               phonetic: 'MI-sing OB-gekt',
-              example: 'Object missing on the LFS server. = Oggetto mancante sul server LFS.',
+              example:
+                'For power users who need maximum control, object missing on the LFS server enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, oggetto mancante sul server LFS abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs fsck',
@@ -6999,7 +7144,8 @@ export default {
               italian: 'Verifica LFS',
               pronunciation: '/el ef es ef es siː keɪ/',
               phonetic: 'LFS-FSCK',
-              example: 'fsck checks LFS object integrity. = fsck verifica integrità oggetti LFS.',
+              example:
+                'For complex repository management, fsck checks LFS object integrity giving experienced developers fine-grained control. = Per la gestione avanzata del repository, fsck verifica integrità oggetti LFS dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs fsck',
@@ -7009,7 +7155,8 @@ export default {
               italian: 'Ambiente LFS',
               pronunciation: '/el ef es env/',
               phonetic: 'LFS-ENV',
-              example: 'env shows LFS configuration. = env mostra la config LFS.',
+              example:
+                'In advanced Git scenarios, env shows LFS configuration providing powerful capabilities for experienced users. = In scenari Git avanzati, env mostra la config LFS fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs env',
@@ -7020,7 +7167,7 @@ export default {
               pronunciation: '/ˈkwoʊtə ɪkˈsiːdɪd/',
               phonetic: 'KUO-ta ek-SI-did',
               example:
-                'Push fails when LFS quota is exceeded. = Push fallisce quando la quota LFS è superata.',
+                'When handling edge cases in large codebases, push fails when LFS quota is exceeded which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, push fallisce quando la quota LFS è superata il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               note: 'Acquistare data pack o scegliere altro provider.',
@@ -7031,7 +7178,7 @@ export default {
               pronunciation: '/ˈpɔɪntər wɪˈðaʊt ˈɒbdʒɪkt/',
               phonetic: 'POIN-ter ui-DAUT OB-gekt',
               example:
-                'Pointer present but binary missing. = Pointer presente ma binario mancante.',
+                'In advanced Git scenarios, pointer present but binary missing providing powerful capabilities for experienced users. = In scenari Git avanzati, pointer presente ma binario mancante fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs fetch --all',
@@ -7042,7 +7189,7 @@ export default {
               pronunciation: '/rɒŋ ˈfɪltər/',
               phonetic: 'RONG FIL-ter',
               example:
-                'Wrong filter leaves binary files in repo. = Filtro errato lascia file binari nel repo.',
+                'For power users who need maximum control, Wrong Filter leaves binary files in repo enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, filtro errato lascia file binari nel repo abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               note: 'Verificare .gitattributes con i filter giusti.',
@@ -7052,7 +7199,8 @@ export default {
               italian: 'Reset stato LFS',
               pronunciation: '/ˈriːset el ef es/',
               phonetic: 'RI-set LFS',
-              example: 'Reset LFS to recover from issues. = Reset LFS per recuperare da problemi.',
+              example:
+                'For power users who need maximum control, reset LFS to recover from issues enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, reset LFS per recuperare da problemi abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs uninstall && git lfs install',
@@ -7063,7 +7211,7 @@ export default {
               pronunciation: '/kənˈkʌrənt ˈtrænsfɜːr/',
               phonetic: 'kon-KA-rent TRANS-fer',
               example:
-                'Increase concurrent transfers for speed. = Aumenta trasferimenti concorrenti per velocità.',
+                'For complex repository management, increase concurrent transfers for speed giving experienced developers fine-grained control. = Per la gestione avanzata del repository, aumenta trasferimenti concorrenti per velocità dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config lfs.concurrenttransfers 8',
@@ -7073,7 +7221,8 @@ export default {
               italian: 'Cache LFS',
               pronunciation: '/el ef es kæʃ/',
               phonetic: 'LFS-CASC',
-              example: 'LFS caches in .git/lfs/objects. = LFS fa cache in .git/lfs/objects.',
+              example:
+                'When handling edge cases in large codebases, LFS caches in .git/lfs/objects which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, LFS fa cache in .git/lfs/objects il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               code: '.git/lfs/objects/',
@@ -7083,7 +7232,8 @@ export default {
               italian: 'Pointer corrotto',
               pronunciation: '/kəˈrʌpt ˈpɔɪntər/',
               phonetic: 'ko-RAPT POIN-ter',
-              example: 'Corrupt pointer prevents checkout. = Pointer corrotto previene checkout.',
+              example:
+                'In advanced Git scenarios, the Corrupt Pointer setting prevents checkout providing powerful capabilities for experienced users. = In scenari Git avanzati, pointer corrotto previene checkout fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git lfs migrate fix',
@@ -7106,11 +7256,11 @@ export default {
           items: [
             {
               english: 'Object Store',
-              italian: 'object store / archivio oggetti Git',
+              italian: 'archivio oggetti Git (object store)',
               pronunciation: '/ˈɒbdʒɪkt stɔːr/',
               phonetic: 'OB-gekt STOR',
               example:
-                "The object store keeps all repo data. = L'object store contiene tutti i dati del repo.",
+                "For complex repository management, the object store keeps all repo data giving experienced developers fine-grained control. = Per la gestione avanzata del repository, l'object store contiene tutti i dati del repo dando agli sviluppatori esperti un controllo granulare.",
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/objects/',
@@ -7118,10 +7268,11 @@ export default {
             },
             {
               english: 'Blob',
-              italian: 'blob / oggetto contenuto file in Git',
+              italian: 'oggetto contenuto file in Git (blob)',
               pronunciation: '/blɒb/',
               phonetic: 'BLOB',
-              example: 'A blob stores file content. = Un blob memorizza il contenuto di un file.',
+              example:
+                'At the plumbing level of Git, a blob stores file content giving insight into how Git actually works. = Al livello del plumbing di Git, un blob memorizza il contenuto di un file dando una visione di come Git funziona realmente.',
               context: 'internals',
               difficulty: 'advanced',
               command: 'git cat-file -p <hash>',
@@ -7129,10 +7280,11 @@ export default {
             },
             {
               english: 'Tree',
-              italian: 'Tree / Albero',
+              italian: 'albero delle directory (tree)',
               pronunciation: '/triː/',
               phonetic: 'TRII',
-              example: 'A tree maps names to blobs and trees. = Un tree mappa nomi a blob e tree.',
+              example:
+                "To understand Git's internal architecture, a tree maps names to blobs and trees which is useful when troubleshooting complex issues. = Per capire l'architettura interna di Git, un tree mappa nomi a blob e tree il che e utile quando si risolvono problemi complessi.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git ls-tree HEAD',
@@ -7144,7 +7296,7 @@ export default {
               pronunciation: '/kəˈmɪt ˈɒbdʒɪkt/',
               phonetic: 'KO-mit OB-gekt',
               example:
-                'A commit points to a tree and parents. = Un commit punta a un tree e ai parent.',
+                "Under the hood of Git's object model, a commit points to a tree and parents which explains how Git stores data efficiently. = Sotto il cofano del modello di oggetti di Git, un commit punta a un tree e ai parent il che spiega come Git salva i dati in modo efficiente.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git cat-file -p HEAD',
@@ -7155,18 +7307,19 @@ export default {
               italian: 'Oggetto tag',
               pronunciation: '/tæɡ ˈɒbdʒɪkt/',
               phonetic: 'TAG OB-gekt',
-              example: 'Annotated tags become tag objects. = I tag annotati diventano oggetti tag.',
+              example:
+                'At the plumbing level of Git, annotated tags become tag objects giving insight into how Git actually works. = Al livello del plumbing di Git, i tag annotati diventano oggetti tag dando una visione di come Git funziona realmente.',
               context: 'internals',
               difficulty: 'advanced',
               command: 'git cat-file -p v1.0',
             },
             {
               english: 'SHA-1',
-              italian: 'SHA-1 (algoritmo di hash usato storicamente)',
+              italian: 'algoritmo di hash usato storicamente (SHA-1)',
               pronunciation: '/ʃɑː wʌn/',
               phonetic: 'SCIA-UAN',
               example:
-                'Git identifies objects by SHA-1 hash. = Git identifica oggetti tramite hash SHA-1.',
+                "Under the hood of Git's object model, Git identifies objects by SHA-1 hash which explains how Git stores data efficiently. = Sotto il cofano del modello di oggetti di Git, Git identifica oggetti tramite hash SHA-1 il che spiega come Git salva i dati in modo efficiente.",
               context: 'internals',
               difficulty: 'advanced',
               code: 'a3f5e21b9c4d',
@@ -7174,30 +7327,33 @@ export default {
             },
             {
               english: 'SHA-256',
-              italian: 'SHA-256 (algoritmo di hash più sicuro)',
+              italian: 'algoritmo di hash più sicuro (SHA-256)',
               pronunciation: '/ʃɑː tuː fɪfti sɪks/',
               phonetic: 'SCIA-258',
-              example: 'Git supports SHA-256 repos. = Git supporta repo SHA-256.',
+              example:
+                "To understand Git's internal architecture, Git supports SHA-256 repos which is useful when troubleshooting complex issues. = Per capire l'architettura interna di Git, Git supporta repo SHA-256 il che e utile quando si risolvono problemi complessi.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git init --object-format=sha256',
             },
             {
               english: 'cat-file',
-              italian: 'git cat-file / ispezione oggetti Git',
+              italian: 'ispezione oggetti Git (git cat-file)',
               pronunciation: '/kæt faɪl/',
               phonetic: 'KAT-FAIL',
-              example: 'cat-file inspects any object. = cat-file ispeziona qualsiasi oggetto.',
+              example:
+                'At the plumbing level of Git, cat-file inspects any object giving insight into how Git actually works. = Al livello del plumbing di Git, cat-file ispeziona qualsiasi oggetto dando una visione di come Git funziona realmente.',
               context: 'internals',
               difficulty: 'advanced',
               command: 'git cat-file -t <hash>',
             },
             {
               english: 'hash-object',
-              italian: 'git hash-object / calcola hash di file',
+              italian: 'calcolo hash di file (git hash-object)',
               pronunciation: '/hæʃ ˈɒbdʒɪkt/',
               phonetic: 'HASC-OB-gekt',
-              example: 'hash-object computes a blob SHA. = hash-object calcola lo SHA di un blob.',
+              example:
+                "To understand Git's internal architecture, hash-object computes a blob SHA which is useful when troubleshooting complex issues. = Per capire l'architettura interna di Git, hash-object calcola lo SHA di un blob il che e utile quando si risolvono problemi complessi.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git hash-object file.txt',
@@ -7207,7 +7363,8 @@ export default {
               italian: 'Comando plumbing',
               pronunciation: '/ˈplʌmɪŋ kəˈmɑːnd/',
               phonetic: 'PLA-ming ko-MAND',
-              example: 'Plumbing commands are low-level. = I comandi plumbing sono low-level.',
+              example:
+                "Deep inside Git's storage system, plumbing commands are low-level providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, i comandi plumbing sono low-level fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
               note: 'Opposto: porcelain (alto livello, user-facing).',
@@ -7221,42 +7378,44 @@ export default {
           items: [
             {
               english: 'Reference',
-              italian: 'Reference / Riferimento',
+              italian: 'riferimento a oggetto (reference)',
               pronunciation: '/ˈrefərəns/',
               phonetic: 'RE-fe-rens',
               example:
-                'A ref is a name pointing to a commit. = Un ref è un nome che punta a un commit.',
+                "Deep inside Git's storage system, a ref is a name pointing to a commit providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, un ref è un nome che punta a un commit fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
               code: 'refs/heads/main',
             },
             {
               english: 'refs/heads',
-              italian: 'Cartella refs/heads',
+              italian: 'cartella dei puntatori ai rami (refs/heads)',
               pronunciation: '/refs hedz/',
               phonetic: 'REFS-HEDZ',
-              example: 'refs/heads stores branch refs. = refs/heads contiene i ref dei branch.',
+              example:
+                "Under the hood of Git's object model, use refs/heads to store branch refs which explains how Git stores data efficiently. = Sotto il cofano del modello di oggetti di Git, refs/heads contiene i ref dei branch il che spiega come Git salva i dati in modo efficiente.",
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/refs/heads/main',
             },
             {
               english: 'refs/tags',
-              italian: 'Cartella refs/tags',
+              italian: 'cartella dei puntatori ai tag (refs/tags)',
               pronunciation: '/refs tæɡz/',
               phonetic: 'REFS-TAGS',
-              example: 'refs/tags stores tag refs. = refs/tags contiene i ref dei tag.',
+              example:
+                "Under the hood of Git's object model, use refs/tags to store tag refs which explains how Git stores data efficiently. = Sotto il cofano del modello di oggetti di Git, refs/tags contiene i ref dei tag il che spiega come Git salva i dati in modo efficiente.",
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/refs/tags/v1.0',
             },
             {
               english: 'refs/remotes',
-              italian: 'Cartella refs/remotes',
+              italian: 'cartella dei puntatori remoti (refs/remotes)',
               pronunciation: '/refs rɪˈmoʊts/',
               phonetic: 'REFS-ri-MOUTS',
               example:
-                'refs/remotes tracks remote branches. = refs/remotes traccia i branch remoti.',
+                "To understand Git's internal architecture, use refs/remotes to track remote branches which is useful when troubleshooting complex issues. = Per capire l'architettura interna di Git, refs/remotes traccia i branch remoti il che e utile quando si risolvono problemi complessi.",
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/refs/remotes/origin/main',
@@ -7267,7 +7426,7 @@ export default {
               pronunciation: '/hed faɪl/',
               phonetic: 'HED FAIL',
               example:
-                'HEAD points to the current branch ref. = HEAD punta al ref del branch corrente.',
+                "Under the hood of Git's object model, HEAD points to the current branch ref which explains how Git stores data efficiently. = Sotto il cofano del modello di oggetti di Git, HEAD punta al ref del branch corrente il che spiega come Git salva i dati in modo efficiente.",
               context: 'internals',
               difficulty: 'advanced',
               code: 'ref: refs/heads/main',
@@ -7278,7 +7437,7 @@ export default {
               pronunciation: '/sɪmˈbɒlɪk ref/',
               phonetic: 'sim-BO-lik REF',
               example:
-                'A symbolic ref points to another ref. = Un ref simbolico punta a un altro ref.',
+                "Deep inside Git's storage system, a symbolic ref points to another ref providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, un ref simbolico punta a un altro ref fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git symbolic-ref HEAD',
@@ -7289,28 +7448,29 @@ export default {
               pronunciation: '/pækt refs/',
               phonetic: 'PAKT-REFS',
               example:
-                'packed-refs consolidates refs into one file. = packed-refs consolida i ref in un file.',
+                'At the plumbing level of Git, packed-refs consolidates refs into one file giving insight into how Git actually works. = Al livello del plumbing di Git, packed-refs consolida i ref in un file dando una visione di come Git funziona realmente.',
               context: 'internals',
               difficulty: 'advanced',
               command: 'git pack-refs --all',
             },
             {
               english: 'show-ref',
-              italian: 'git show-ref / elenca riferimenti',
+              italian: 'elenca i riferimenti (git show-ref)',
               pronunciation: '/ʃoʊ ref/',
               phonetic: 'SCIO-REF',
-              example: 'show-ref lists all refs and SHAs. = show-ref elenca tutti i ref e gli SHA.',
+              example:
+                'At the plumbing level of Git, to see all refs and SHAs, run show-ref giving insight into how Git actually works. = Al livello del plumbing di Git, show-ref elenca tutti i ref e gli SHA dando una visione di come Git funziona realmente.',
               context: 'internals',
               difficulty: 'advanced',
               command: 'git show-ref',
             },
             {
               english: 'update-ref',
-              italian: 'git update-ref / aggiorna riferimento',
+              italian: 'aggiorna un riferimento (git update-ref)',
               pronunciation: '/ʌpˈdeɪt ref/',
               phonetic: 'ap-DEIT-REF',
               example:
-                'update-ref edits a ref directly. = update-ref modifica un ref direttamente.',
+                'At the plumbing level of Git, update-ref edits a ref directly giving insight into how Git actually works. = Al livello del plumbing di Git, update-ref modifica un ref direttamente dando una visione di come Git funziona realmente.',
               context: 'internals',
               difficulty: 'advanced',
               command: 'git update-ref refs/heads/main <sha>',
@@ -7322,7 +7482,7 @@ export default {
               pronunciation: '/luːs ˈɒbdʒɪkt/',
               phonetic: 'LUUS OB-gekt',
               example:
-                'Loose objects live as separate files. = Gli oggetti loose vivono come file separati.',
+                "Deep inside Git's storage system, loose objects live as separate files providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, gli oggetti loose vivono come file separati fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/objects/a3/f5e21...',
@@ -7336,10 +7496,11 @@ export default {
           items: [
             {
               english: 'Packfile',
-              italian: 'packfile / archivio compresso di oggetti Git',
+              italian: 'archivio compresso di oggetti Git (packfile)',
               pronunciation: '/ˈpækfaɪl/',
               phonetic: 'PAK-fail',
-              example: 'A packfile compresses many objects. = Un packfile comprime molti oggetti.',
+              example:
+                'At the plumbing level of Git, a packfile compresses many objects giving insight into how Git actually works. = Al livello del plumbing di Git, un packfile comprime molti oggetti dando una visione di come Git funziona realmente.',
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/objects/pack/pack-*.pack',
@@ -7350,7 +7511,8 @@ export default {
               italian: 'Indice del pack',
               pronunciation: '/pæk ˈɪndeks/',
               phonetic: 'PAK IN-deks',
-              example: 'The .idx file indexes the packfile. = Il file .idx indicizza il packfile.',
+              example:
+                "Deep inside Git's storage system, the .idx file indexes the packfile providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, il file .idx indicizza il packfile fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/objects/pack/pack-*.idx',
@@ -7360,7 +7522,8 @@ export default {
               italian: 'Compressione delta',
               pronunciation: '/ˈdeltə kəmˈpreʃən/',
               phonetic: 'DEL-ta kom-PRES-scion',
-              example: 'Delta stores only differences. = Delta memorizza solo le differenze.',
+              example:
+                "To understand Git's internal architecture, delta stores only differences which is useful when troubleshooting complex issues. = Per capire l'architettura interna di Git, delta memorizza solo le differenze il che e utile quando si risolvono problemi complessi.",
               context: 'internals',
               difficulty: 'advanced',
             },
@@ -7370,17 +7533,18 @@ export default {
               pronunciation: '/ɡɪt ɡæræʒ kəˈlekʃən/',
               phonetic: 'GIT-GC',
               example:
-                'gc packs loose objects and prunes. = gc impacchetta gli oggetti loose e prunes.',
+                "To understand Git's internal architecture, gc packs loose objects and prunes which is useful when troubleshooting complex issues. = Per capire l'architettura interna di Git, gc impacchetta gli oggetti loose e prunes il che e utile quando si risolvono problemi complessi.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git gc --aggressive',
             },
             {
               english: 'repack',
-              italian: 'git repack / ricompatta gli oggetti',
+              italian: 'ricompattazione degli oggetti (git repack)',
               pronunciation: '/ˌriːˈpæk/',
               phonetic: 'RI-pak',
-              example: 'repack consolidates pack files. = repack consolida i file pack.',
+              example:
+                "Under the hood of Git's object model, repack consolidates pack files which explains how Git stores data efficiently. = Sotto il cofano del modello di oggetti di Git, repack consolida i file pack il che spiega come Git salva i dati in modo efficiente.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git repack -a -d',
@@ -7391,7 +7555,7 @@ export default {
               pronunciation: '/riːtʃəˈbɪlɪti/',
               phonetic: 'ri-cia-BI-li-ti',
               example:
-                'Reachability determines what is kept. = La raggiungibilità determina cosa viene mantenuto.',
+                "Deep inside Git's storage system, Reachability determines what is kept providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, la raggiungibilità determina cosa viene mantenuto fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
               note: 'Oggetti raggiungibili da ref vengono preservati.',
@@ -7402,7 +7566,7 @@ export default {
               pronunciation: '/ˈbɪtmæp ˈɪndeks/',
               phonetic: 'BIT-map IN-deks',
               example:
-                'Bitmap indexes speed up reachability. = Gli indici bitmap velocizzano la raggiungibilità.',
+                "Deep inside Git's storage system, bitmap indexes speed up reachability providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, gli indici bitmap velocizzano la raggiungibilità fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git config repack.writeBitmaps true',
@@ -7412,18 +7576,19 @@ export default {
               italian: 'Indice multi-pack',
               pronunciation: '/ˈmʌlti pæk ˈɪndeks/',
               phonetic: 'MUL-ti-PAK IN-deks',
-              example: 'midx indexes across multiple packs. = midx indicizza più pack.',
+              example:
+                "Deep inside Git's storage system, midx indexes across multiple packs providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, midx indicizza più pack fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git multi-pack-index write',
             },
             {
               english: 'Commit Graph',
-              italian: 'commit graph / cache del grafo dei commit',
+              italian: 'cache del grafo dei commit (commit-graph)',
               pronunciation: '/kəˈmɪt ɡræf/',
               phonetic: 'KO-mit GRAF',
               example:
-                'Commit graph speeds up history walks. = Commit graph velocizza la navigazione della history.',
+                "Deep inside Git's storage system, Commit Graph speeds up history walks providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, commit graph velocizza la navigazione della history fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git commit-graph write',
@@ -7434,7 +7599,7 @@ export default {
               pronunciation: '/ˈmeɪntənəns/',
               phonetic: 'MEIN-te-nens',
               example:
-                'maintenance runs background optimizations. = maintenance esegue ottimizzazioni in background.',
+                "Deep inside Git's storage system, use Maintenance to run background optimizations providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, maintenance esegue ottimizzazioni in background fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git maintenance start',
@@ -7452,7 +7617,7 @@ export default {
               pronunciation: '/smɑːrt ˈproʊtəkɒl/',
               phonetic: 'SMART PRO-to-kol',
               example:
-                'Smart protocol negotiates objects efficiently. = Il protocollo smart negozia oggetti efficientemente.',
+                "Deep inside Git's storage system, Smart Protocol negotiates objects efficiently providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, il protocollo smart negozia oggetti efficientemente fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
             },
@@ -7462,7 +7627,7 @@ export default {
               pronunciation: '/dʌm ˈproʊtəkɒl/',
               phonetic: 'DAM PRO-to-kol',
               example:
-                'Dumb protocol just serves files via HTTP. = Il protocollo dumb serve file via HTTP.',
+                "To understand Git's internal architecture, Dumb Protocol just serves files via HTTP which is useful when troubleshooting complex issues. = Per capire l'architettura interna di Git, il protocollo dumb serve file via HTTP il che e utile quando si risolvono problemi complessi.",
               context: 'internals',
               difficulty: 'advanced',
               note: 'Lento e deprecato. Usato in mirror statici.',
@@ -7473,46 +7638,49 @@ export default {
               pronunciation: '/ˈproʊtəkɒl tuː/',
               phonetic: 'PRO-to-kol-V2',
               example:
-                "Protocol v2 reduces ref advertisement. = Protocol v2 riduce l'advertise dei ref.",
+                "Under the hood of Git's object model, Protocol v2 reduces ref advertisement which explains how Git stores data efficiently. = Sotto il cofano del modello di oggetti di Git, protocol v2 riduce l'advertise dei ref il che spiega come Git salva i dati in modo efficiente.",
               context: 'internals',
               difficulty: 'advanced',
               command: 'git config --global protocol.version 2',
             },
             {
               english: 'upload-pack',
-              italian: 'upload-pack / lato server di fetch',
+              italian: 'lato server di fetch (upload-pack)',
               pronunciation: '/ˈʌploʊd pæk/',
               phonetic: 'AP-loud-PAK',
-              example: 'upload-pack serves fetch and clone. = upload-pack serve fetch e clone.',
+              example:
+                'At the plumbing level of Git, upload-pack serves fetch and clone giving insight into how Git actually works. = Al livello del plumbing di Git, upload-pack serve fetch e clone dando una visione di come Git funziona realmente.',
               context: 'internals',
               difficulty: 'advanced',
               note: 'Lato server: invia oggetti al client.',
             },
             {
               english: 'receive-pack',
-              italian: 'receive-pack / lato server di push',
+              italian: 'lato server di push (receive-pack)',
               pronunciation: '/rɪˈsiːv pæk/',
               phonetic: 'ri-SIV-PAK',
               example:
-                'receive-pack handles incoming push. = receive-pack gestisce push in arrivo.',
+                'At the plumbing level of Git, receive-pack handles incoming push giving insight into how Git actually works. = Al livello del plumbing di Git, receive-pack gestisce push in arrivo dando una visione di come Git funziona realmente.',
               context: 'internals',
               difficulty: 'advanced',
             },
             {
               english: 'fetch-pack',
-              italian: 'fetch-pack / lato client di fetch',
+              italian: 'lato client di fetch (fetch-pack)',
               pronunciation: '/fetʃ pæk/',
               phonetic: 'FEC-PAK',
-              example: 'fetch-pack runs on the client. = fetch-pack gira sul client.',
+              example:
+                "Under the hood of Git's object model, use fetch-pack to run on the client which explains how Git stores data efficiently. = Sotto il cofano del modello di oggetti di Git, fetch-pack gira sul client il che spiega come Git salva i dati in modo efficiente.",
               context: 'internals',
               difficulty: 'advanced',
             },
             {
               english: 'send-pack',
-              italian: 'send-pack / lato client di push',
+              italian: 'lato client di push (send-pack)',
               pronunciation: '/send pæk/',
               phonetic: 'SEND-PAK',
-              example: 'send-pack pushes from the client. = send-pack pusha dal client.',
+              example:
+                "To understand Git's internal architecture, use send-pack to upload from the client which is useful when troubleshooting complex issues. = Per capire l'architettura interna di Git, send-pack pusha dal client il che e utile quando si risolvono problemi complessi.",
               context: 'internals',
               difficulty: 'advanced',
             },
@@ -7522,7 +7690,7 @@ export default {
               pronunciation: '/nɪˌɡoʊʃiˈeɪʃən/',
               phonetic: 'ne-go-scia-ZIO-ne',
               example:
-                'Negotiation finds common ancestors. = La negoziazione trova antenati comuni.',
+                'At the plumbing level of Git, Negotiation finds common ancestors giving insight into how Git actually works. = Al livello del plumbing di Git, la negoziazione trova antenati comuni dando una visione di come Git funziona realmente.',
               context: 'internals',
               difficulty: 'advanced',
             },
@@ -7531,7 +7699,8 @@ export default {
               italian: 'Trasporto SSH',
               pronunciation: '/es es eɪtʃ ˈtrænspɔːrt/',
               phonetic: 'SSH-TRAN-sport',
-              example: 'SSH is the default Git transport. = SSH è il trasporto Git di default.',
+              example:
+                "Deep inside Git's storage system, SSH is the default Git transport providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, SSH è il trasporto Git di default fornendo la base per tutte le operazioni di alto livello.",
               context: 'internals',
               difficulty: 'advanced',
               code: 'git@github.com:user/repo.git',
@@ -7541,7 +7710,8 @@ export default {
               italian: 'Trasporto HTTPS',
               pronunciation: '/eɪtʃ tiː tiː piː es/',
               phonetic: 'HTTPS',
-              example: 'HTTPS works behind firewalls. = HTTPS funziona dietro i firewall.',
+              example:
+                "Under the hood of Git's object model, HTTPS works behind firewalls which explains how Git stores data efficiently. = Sotto il cofano del modello di oggetti di Git, HTTPS funziona dietro i firewall il che spiega come Git salva i dati in modo efficiente.",
               context: 'internals',
               difficulty: 'advanced',
               code: 'https://github.com/user/repo.git',
@@ -7564,10 +7734,11 @@ export default {
           items: [
             {
               english: 'GitHub Actions',
-              italian: 'GitHub Actions (automazione CI/CD GitHub)',
+              italian: 'automazione CI/CD di GitHub (GitHub Actions)',
               pronunciation: '/ˈɡɪthʌb ˈækʃənz/',
               phonetic: 'GIT-hab AK-scions',
-              example: 'GitHub Actions automates CI/CD. = GitHub Actions automatizza CI/CD.',
+              example:
+                "Under the hood of Git's object model, GitHub Actions automates CI/CD which explains how Git stores data efficiently. = Sotto il cofano del modello di oggetti di Git, gitHub Actions automatizza CI/CD il che spiega come Git salva i dati in modo efficiente.",
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'GitHub Actions',
@@ -7575,53 +7746,55 @@ export default {
             },
             {
               english: 'Workflow',
-              italian: 'workflow / flusso di automazione',
+              italian: 'flusso di automazione (workflow)',
               pronunciation: '/ˈwɜːrkfloʊ/',
               phonetic: 'UERK-flou',
               example:
-                'A workflow defines automation steps. = Un workflow definisce step di automazione.',
+                'As part of DevOps best practices, a workflow defines automation steps enabling rapid and safe releases to production. = Come parte delle best practice DevOps, un workflow definisce step di automazione abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'name: CI\\non: push',
             },
             {
               english: 'Trigger',
-              italian: 'trigger / evento scatenante',
+              italian: 'evento scatenante (trigger)',
               pronunciation: '/ˈtrɪɡər/',
               phonetic: 'TRI-ger',
-              example: 'A trigger fires the workflow. = Un trigger fa partire il workflow.',
+              example:
+                'In a continuous integration pipeline, a trigger fires the workflow automating quality checks on every commit. = In una pipeline di integrazione continua, un trigger fa partire il workflow automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on:\\n  push:\\n    branches: [main]',
             },
             {
               english: 'Job',
-              italian: 'job / processo del workflow',
+              italian: 'processo del workflow (job)',
               pronunciation: '/dʒɒb/',
               phonetic: 'GIOB',
               example:
-                'A job groups steps that run together. = Un job raggruppa step che girano insieme.',
+                'When automating your deployment process, a job groups steps that run together reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, un job raggruppa step che girano insieme riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'jobs:\\n  test:\\n    runs-on: ubuntu-latest',
             },
             {
               english: 'Step',
-              italian: 'step / passo del job',
+              italian: 'passo del job (step)',
               pronunciation: '/step/',
               phonetic: 'STEP',
               example:
-                'Each step runs a command or action. = Ogni step esegue un comando o action.',
+                'In a continuous integration pipeline, each step runs a command or action automating quality checks on every commit. = In una pipeline di integrazione continua, ogni step esegue un comando o action automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'steps:\\n  - run: npm test',
             },
             {
               english: 'Runner',
-              italian: 'runner / esecutore del workflow',
+              italian: 'esecutore del workflow (runner)',
               pronunciation: '/ˈrʌnər/',
               phonetic: 'RA-ner',
-              example: 'A runner executes the workflow. = Un runner esegue il workflow.',
+              example:
+                'In a continuous integration pipeline, a runner executes the workflow automating quality checks on every commit. = In una pipeline di integrazione continua, un runner esegue il workflow automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'runs-on: ubuntu-latest',
@@ -7629,11 +7802,11 @@ export default {
             },
             {
               english: 'Action',
-              italian: 'action / unità riusabile in GitHub Actions',
+              italian: 'unita riusabile in GitHub Actions (action)',
               pronunciation: '/ˈækʃən/',
               phonetic: 'AK-scion',
               example:
-                'Actions are reusable workflow blocks. = Le action sono blocchi di workflow riusabili.',
+                'For reliable software delivery, actions are reusable workflow blocks so code is tested and deployed consistently. = Per una consegna software affidabile, le action sono blocchi di workflow riusabili cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '- uses: actions/checkout@v4',
@@ -7644,7 +7817,7 @@ export default {
               pronunciation: '/ˈækʃənz ˈtʃekaʊt/',
               phonetic: 'AK-scions CEK-aut',
               example:
-                'checkout pulls the repo into the runner. = checkout porta il repo nel runner.',
+                'In a continuous integration pipeline, checkout pulls the repo into the runner automating quality checks on every commit. = In una pipeline di integrazione continua, checkout porta il repo nel runner automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '- uses: actions/checkout@v4\\n  with:\\n    fetch-depth: 0',
@@ -7655,18 +7828,18 @@ export default {
               pronunciation: '/ˈmeɪtrɪks bɪld/',
               phonetic: 'MEI-triks BILD',
               example:
-                'Matrix builds run combinations in parallel. = Le build matrix girano combinazioni in parallelo.',
+                'As part of DevOps best practices, matrix builds run combinations in parallel enabling rapid and safe releases to production. = Come parte delle best practice DevOps, le build matrix girano combinazioni in parallelo abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'strategy:\\n  matrix:\\n    node: [18, 20, 22]',
             },
             {
               english: 'Secret',
-              italian: 'secret / valore riservato',
+              italian: 'valore riservato (secret)',
               pronunciation: '/ˈsiːkrɪt/',
               phonetic: 'SI-krit',
               example:
-                'Secrets store API keys safely. = I secret memorizzano API key in sicurezza.',
+                'In a continuous integration pipeline, secrets store API keys safely automating quality checks on every commit. = In una pipeline di integrazione continua, i secret memorizzano API key in sicurezza automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '${{ secrets.NPM_TOKEN }}',
@@ -7680,10 +7853,11 @@ export default {
           items: [
             {
               english: 'GitLab CI',
-              italian: 'GitLab CI (sistema CI di GitLab)',
+              italian: 'sistema CI di GitLab (GitLab CI)',
               pronunciation: '/ˈɡɪtlæb siː aɪ/',
               phonetic: 'GIT-lab CI',
-              example: 'GitLab CI uses .gitlab-ci.yml. = GitLab CI usa .gitlab-ci.yml.',
+              example:
+                'As part of DevOps best practices, GitLab CI uses .gitlab-ci.yml enabling rapid and safe releases to production. = Come parte delle best practice DevOps, gitLab CI usa .gitlab-ci.yml abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'GitLab CI',
@@ -7691,30 +7865,32 @@ export default {
             },
             {
               english: 'Pipeline',
-              italian: 'pipeline / sequenza di stadi CI/CD',
+              italian: 'sequenza di stadi CI/CD (pipeline)',
               pronunciation: '/ˈpaɪplaɪn/',
               phonetic: 'PAIP-lain',
-              example: 'A pipeline runs on every commit. = Una pipeline gira a ogni commit.',
+              example:
+                'For reliable software delivery, a pipeline runs on every commit so code is tested and deployed consistently. = Per una consegna software affidabile, una pipeline gira a ogni commit cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
             {
               english: 'Stage',
-              italian: 'Stage / Fase',
+              italian: 'fase della pipeline (stage)',
               pronunciation: '/steɪdʒ/',
               phonetic: 'STEIG',
-              example: 'Stages run sequentially. = Gli stage girano sequenzialmente.',
+              example:
+                'For reliable software delivery, stages run sequentially so code is tested and deployed consistently. = Per una consegna software affidabile, gli stage girano sequenzialmente cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'stages:\\n  - test\\n  - build\\n  - deploy',
             },
             {
               english: 'GitLab Runner',
-              italian: 'GitLab Runner / esecutore GitLab CI',
+              italian: 'esecutore GitLab CI (GitLab Runner)',
               pronunciation: '/ˈɡɪtlæb ˈrʌnər/',
               phonetic: 'GIT-lab RA-ner',
               example:
-                'GitLab Runner executes pipeline jobs. = GitLab Runner esegue job di pipeline.',
+                'When automating your deployment process, use GitLab Runner to run pipeline jobs reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, gitLab Runner esegue job di pipeline riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'gitlab-runner',
@@ -7724,28 +7900,30 @@ export default {
               italian: 'Artefatto',
               pronunciation: '/ˈɑːrtɪfækt/',
               phonetic: 'AR-ti-fakt',
-              example: 'Artifacts persist between jobs. = Gli artefatti persistono tra i job.',
+              example:
+                'For reliable software delivery, artifacts persist between jobs so code is tested and deployed consistently. = Per una consegna software affidabile, gli artefatti persistono tra i job cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'artifacts:\\n  paths:\\n    - dist/',
             },
             {
               english: 'Cache',
-              italian: 'cache / memoria intermedia',
+              italian: 'memoria intermedia (cache)',
               pronunciation: '/kæʃ/',
               phonetic: 'CASC',
               example:
-                "Cache speeds up dependency installation. = La cache velocizza l'install delle dipendenze.",
+                "For reliable software delivery, Cache speeds up dependency installation so code is tested and deployed consistently. = Per una consegna software affidabile, la cache velocizza l'install delle dipendenze cosi il codice viene testato e distribuito in modo consistente.",
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'cache:\\n  paths:\\n    - node_modules/',
             },
             {
               english: 'Environment',
-              italian: 'environment / ambiente di deploy',
+              italian: 'ambiente di deploy (environment)',
               pronunciation: '/ɪnˈvaɪrənmənt/',
               phonetic: 'in-VAI-ron-ment',
-              example: 'Environments track deployments. = Gli environment tracciano i deployment.',
+              example:
+                'As part of DevOps best practices, environments track deployments enabling rapid and safe releases to production. = Come parte delle best practice DevOps, gli environment tracciano i deployment abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'environment:\\n  name: production',
@@ -7756,29 +7934,29 @@ export default {
               pronunciation: '/ˈmænjuəl dʒɒb/',
               phonetic: 'MA-nuel GIOB',
               example:
-                'Manual jobs require approval to run. = I job manuali richiedono approvazione per girare.',
+                'As part of DevOps best practices, manual jobs require approval to run enabling rapid and safe releases to production. = Come parte delle best practice DevOps, i job manuali richiedono approvazione per girare abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'when: manual',
             },
             {
               english: 'Include',
-              italian: 'include / inclusione di config esterna',
+              italian: 'inclusione di configurazione esterna (include)',
               pronunciation: '/ɪnˈkluːd/',
               phonetic: 'in-KLUUD',
               example:
-                'Include shares pipeline templates. = Include condivide template di pipeline.',
+                'In a continuous integration pipeline, Include shares pipeline templates automating quality checks on every commit. = In una pipeline di integrazione continua, include condivide template di pipeline automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'include:\\n  - template: Code-Quality.gitlab-ci.yml',
             },
             {
               english: 'Auto DevOps',
-              italian: 'Auto DevOps / pipeline preconfigurata GitLab',
+              italian: 'pipeline preconfigurata GitLab (Auto DevOps)',
               pronunciation: '/ˈɔːtoʊ ˈdevɒps/',
               phonetic: 'AU-to DEV-ops',
               example:
-                'Auto DevOps provides automatic pipelines. = Auto DevOps fornisce pipeline automatiche.',
+                'For reliable software delivery, use Auto DevOps to get automatic pipelines so code is tested and deployed consistently. = Per una consegna software affidabile, auto DevOps fornisce pipeline automatiche cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'GitLab',
@@ -7792,10 +7970,11 @@ export default {
           items: [
             {
               english: 'Webhook',
-              italian: 'webhook / chiamata HTTP automatica',
+              italian: 'chiamata HTTP automatica (webhook)',
               pronunciation: '/ˈwebhʊk/',
               phonetic: 'UEB-huk',
-              example: 'Webhooks notify external services. = I webhook notificano servizi esterni.',
+              example:
+                'When automating your deployment process, webhooks notify external services reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, i webhook notificano servizi esterni riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'GitHub Webhooks',
@@ -7805,7 +7984,8 @@ export default {
               italian: 'Evento push',
               pronunciation: '/pʊʃ ɪˈvent/',
               phonetic: 'PUSC i-VENT',
-              example: 'Push events fire on commits. = Gli eventi push si attivano sui commit.',
+              example:
+                'In a continuous integration pipeline, push events fire on commits automating quality checks on every commit. = In una pipeline di integrazione continua, gli eventi push si attivano sui commit automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on: push',
@@ -7816,7 +7996,7 @@ export default {
               pronunciation: '/pʊl rɪˈkwest ɪˈvent/',
               phonetic: 'PUL-ri-KUEST i-VENT',
               example:
-                'PR events trigger on PR open/sync. = Gli eventi PR si attivano su apertura/sync PR.',
+                'For reliable software delivery, PR events trigger on PR open/sync so code is tested and deployed consistently. = Per una consegna software affidabile, gli eventi PR si attivano su apertura/sync PR cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on: pull_request',
@@ -7826,17 +8006,19 @@ export default {
               italian: 'Evento tag',
               pronunciation: '/tæɡ ɪˈvent/',
               phonetic: 'TAG i-VENT',
-              example: 'Tag events trigger releases. = Gli eventi tag attivano release.',
+              example:
+                'In a continuous integration pipeline, tag events trigger releases automating quality checks on every commit. = In una pipeline di integrazione continua, gli eventi tag attivano release automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: "on:\\n  push:\\n    tags: ['v*']",
             },
             {
               english: 'Schedule',
-              italian: 'schedule / pianificazione cron',
+              italian: 'pianificazione cron (schedule)',
               pronunciation: '/ˈskedʒuːl/',
               phonetic: 'SKE-giul',
-              example: 'Schedule triggers run on cron. = Schedule attiva su cron.',
+              example:
+                'When automating your deployment process, Schedule triggers run on cron reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, schedule attiva su cron riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: "on:\\n  schedule:\\n    - cron: '0 2 * * *'",
@@ -7847,48 +8029,49 @@ export default {
               pronunciation: '/ˈwɜːrkfloʊ dɪˈspætʃ/',
               phonetic: 'UERK-flou di-SPACI',
               example:
-                'workflow_dispatch enables manual runs. = workflow_dispatch abilita run manuali.',
+                'For reliable software delivery, use workflow_dispatch to get manual runs so code is tested and deployed consistently. = Per una consegna software affidabile, workflow_dispatch abilita run manuali cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on: workflow_dispatch',
             },
             {
               english: 'repository_dispatch',
-              italian: 'repository_dispatch / trigger custom GitHub',
+              italian: 'trigger custom di GitHub (repository_dispatch)',
               pronunciation: '/rɪˈpɒzɪtɔːri dɪˈspætʃ/',
               phonetic: 'ri-PO-zi-tori di-SPACI',
               example:
-                'repository_dispatch triggers via API. = repository_dispatch attiva via API.',
+                'When automating your deployment process, repository_dispatch triggers via API reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, repository_dispatch attiva via API riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on: repository_dispatch',
             },
             {
               english: 'Status Check',
-              italian: 'status check / esito controllo CI',
+              italian: 'esito controllo CI (status check)',
               pronunciation: '/ˈsteɪtəs tʃek/',
               phonetic: 'STEI-tas CEK',
-              example: 'Status checks gate PR merges. = Gli status check controllano i merge PR.',
+              example:
+                'For reliable software delivery, status checks gate PR merges so code is tested and deployed consistently. = Per una consegna software affidabile, gli status check controllano i merge PR cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
             {
               english: 'Deploy Hook',
-              italian: 'deploy hook / aggancio di deploy',
+              italian: 'aggancio di deploy (deploy hook)',
               pronunciation: '/dɪˈplɔɪ hʊk/',
               phonetic: 'di-PLOI HUK',
               example:
-                'Deploy hooks notify on success. = I deploy hook notificano in caso di successo.',
+                'In a continuous integration pipeline, deploy hooks notify on success automating quality checks on every commit. = In una pipeline di integrazione continua, i deploy hook notificano in caso di successo automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
             {
               english: 'Payload',
-              italian: 'payload / corpo del messaggio',
+              italian: 'corpo del messaggio (payload)',
               pronunciation: '/ˈpeɪloʊd/',
               phonetic: 'PEI-loud',
               example:
-                "Webhook payloads carry event data. = I payload dei webhook portano dati dell'evento.",
+                "For reliable software delivery, webhook payloads carry event data so code is tested and deployed consistently. = Per una consegna software affidabile, i payload dei webhook portano dati dell'evento cosi il codice viene testato e distribuito in modo consistente.",
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '{"ref": "refs/heads/main", "commits": [...]}',
@@ -7902,11 +8085,11 @@ export default {
           items: [
             {
               english: 'GitOps',
-              italian: 'GitOps / Git come fonte di verità per il deploy',
+              italian: 'Git come fonte di verita per il deploy (GitOps)',
               pronunciation: '/ɡɪt ɒps/',
               phonetic: 'GIT-OPS',
               example:
-                'GitOps uses Git as the source of truth. = GitOps usa Git come source of truth.',
+                'In Git, GitOps uses Git as the source of truth. = GitOps usa Git come source of truth.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'ArgoCD',
@@ -7914,10 +8097,11 @@ export default {
             },
             {
               english: 'Continuous Deployment',
-              italian: 'continuous deployment / rilascio continuo automatico',
+              italian: 'rilascio continuo automatico (continuous deployment)',
               pronunciation: '/kənˈtɪnjuəs dɪˈplɔɪmənt/',
               phonetic: 'kon-TI-nius di-PLOI-ment',
-              example: 'CD deploys every passing build. = CD deploya ogni build che passa.',
+              example:
+                'For reliable software delivery, CD deploys every passing build so code is tested and deployed consistently. = Per una consegna software affidabile, CD deploya ogni build che passa cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -7926,7 +8110,8 @@ export default {
               italian: 'Deploy blue-green',
               pronunciation: '/bluː ɡriːn dɪˈplɔɪ/',
               phonetic: 'BLU-GRIN di-PLOI',
-              example: 'Blue-green keeps two environments. = Blue-green mantiene due ambienti.',
+              example:
+                'As part of DevOps best practices, blue-green keeps two environments enabling rapid and safe releases to production. = Come parte delle best practice DevOps, blue-green mantiene due ambienti abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               note: 'Switch istantaneo per zero-downtime.',
@@ -7937,17 +8122,17 @@ export default {
               pronunciation: '/kəˈneəri dɪˈplɔɪ/',
               phonetic: 'ka-NE-ri di-PLOI',
               example:
-                'Canary deploys to a small subset first. = Canary deploya prima a un piccolo sottogruppo.',
+                'As part of DevOps best practices, canary deploys to a small subset first enabling rapid and safe releases to production. = Come parte delle best practice DevOps, canary deploya prima a un piccolo sottogruppo abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
             {
               english: 'Rollback',
-              italian: 'rollback / ritorno a versione precedente',
+              italian: 'ritorno a versione precedente (rollback)',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROL-bak',
               example:
-                'Rollback reverts to a previous deploy. = Rollback torna a un deploy precedente.',
+                'In a continuous integration pipeline, Rollback reverts to a previous deploy automating quality checks on every commit. = In una pipeline di integrazione continua, rollback torna a un deploy precedente automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'git revert HEAD',
@@ -7958,7 +8143,7 @@ export default {
               pronunciation: '/tæɡ beɪst dɪˈplɔɪ/',
               phonetic: 'TAG BEIST di-PLOI',
               example:
-                'Tag-based deploys trigger on git tag. = I deploy basati su tag si attivano su git tag.',
+                'As part of DevOps best practices, tag-based deploys trigger on git tag enabling rapid and safe releases to production. = Come parte delle best practice DevOps, i deploy basati su tag si attivano su git tag abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: "on:\\n  push:\\n    tags: ['v*']",
@@ -7968,7 +8153,8 @@ export default {
               italian: 'Deploy basato su branch',
               pronunciation: '/brɑːntʃ beɪst dɪˈplɔɪ/',
               phonetic: 'BRANC BEIST di-PLOI',
-              example: 'main deploys to production. = main deploya in produzione.',
+              example:
+                'When automating your deployment process, main deploys to production reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, main deploya in produzione riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: "if: github.ref == 'refs/heads/main'",
@@ -7979,7 +8165,7 @@ export default {
               pronunciation: '/ˈpriːvjuː dɪˈplɔɪ/',
               phonetic: 'PRI-viu di-PLOI',
               example:
-                'Preview deploys give per-PR URLs. = I preview deploy danno URL per ogni PR.',
+                'When automating your deployment process, preview deploys give per-PR URLs reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, i preview deploy danno URL per ogni PR riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Vercel',
@@ -7989,7 +8175,8 @@ export default {
               italian: 'Argo CD (motore GitOps Kubernetes)',
               pronunciation: '/ˈɑːrɡoʊ siː diː/',
               phonetic: 'AR-go-CD',
-              example: 'ArgoCD syncs Kubernetes from Git. = ArgoCD sincronizza Kubernetes da Git.',
+              example:
+                'For reliable software delivery, ArgoCD syncs Kubernetes from Git so code is tested and deployed consistently. = Per una consegna software affidabile, argoCD sincronizza Kubernetes da Git cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Argo CD',
@@ -7997,10 +8184,11 @@ export default {
             },
             {
               english: 'Flux',
-              italian: 'Flux (motore GitOps Kubernetes)',
+              italian: 'motore GitOps Kubernetes (Flux)',
               pronunciation: '/flʌks/',
               phonetic: 'FLAKS',
-              example: 'Flux is another GitOps controller. = Flux è un altro controller GitOps.',
+              example:
+                'When automating your deployment process, Flux is another GitOps controller reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, flux è un altro controller GitOps riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'flux',
@@ -8023,22 +8211,22 @@ export default {
           items: [
             {
               english: 'Monorepo',
-              italian: 'monorepo / repository unificato di progetti',
+              italian: 'repository unificato di progetti (monorepo)',
               pronunciation: '/ˈmɒnoʊˌriːpoʊ/',
               phonetic: 'MO-no-RI-po',
               example:
-                'A monorepo holds many projects together. = Un monorepo contiene molti progetti insieme.',
+                'As part of DevOps best practices, a monorepo holds many projects together enabling rapid and safe releases to production. = Come parte delle best practice DevOps, un monorepo contiene molti progetti insieme abilitando rilasci rapidi e sicuri in produzione.',
               context: 'monorepo',
               difficulty: 'advanced',
               note: 'Stile Google, Facebook. Opposto: polyrepo.',
             },
             {
               english: 'Workspace',
-              italian: 'workspace / area di lavoro multi-pacchetto',
+              italian: 'area di lavoro multi-pacchetto (workspace)',
               pronunciation: '/ˈwɜːrkspeɪs/',
               phonetic: 'UERK-speis',
               example:
-                'Workspaces define monorepo packages. = I workspace definiscono i pacchetti monorepo.',
+                'To scale a codebase shared by many teams, workspaces define monorepo packages avoiding the complexity of managing dozens of separate repos. = Per scalare un codice condiviso da molti team, i workspace definiscono i pacchetti monorepo evitando la complessita di gestire decine di repository separati.',
               context: 'monorepo',
               difficulty: 'advanced',
               code: '"workspaces": ["packages/*"]',
@@ -8049,7 +8237,7 @@ export default {
               pronunciation: '/ˈpækɪdʒ/',
               phonetic: 'PA-kig',
               example:
-                'Each package has its own package.json. = Ogni pacchetto ha il suo package.json.',
+                'In enterprise monorepo setups, each package has its own package.json ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, ogni pacchetto ha il suo package.json assicurando che le modifiche tra piu pacchetti siano coordinate.',
               context: 'monorepo',
               difficulty: 'advanced',
               code: 'packages/api/package.json',
@@ -8059,7 +8247,8 @@ export default {
               italian: 'Workspace pnpm',
               pronunciation: '/piː en piː em ˈwɜːrkspeɪs/',
               phonetic: 'P-N-P-M UERK-speis',
-              example: 'pnpm uses pnpm-workspace.yaml. = pnpm usa pnpm-workspace.yaml.',
+              example:
+                'When managing multiple projects in a single repository, pnpm uses pnpm-workspace.yaml streamlining dependency management across packages. = Quando si gestiscono piu progetti in un singolo repository, pnpm usa pnpm-workspace.yaml semplificando la gestione delle dipendenze tra i pacchetti.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'pnpm',
@@ -8071,7 +8260,7 @@ export default {
               pronunciation: '/jɑːrn ˈwɜːrkspeɪs/',
               phonetic: 'IARN UERK-speis',
               example:
-                'Yarn workspaces hoist dependencies. = Yarn workspace hoistano le dipendenze.',
+                'To scale a codebase shared by many teams, yarn workspaces hoist dependencies avoiding the complexity of managing dozens of separate repos. = Per scalare un codice condiviso da molti team, yarn workspace hoistano le dipendenze evitando la complessita di gestire decine di repository separati.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'yarn',
@@ -8082,7 +8271,7 @@ export default {
               pronunciation: '/en piː em ˈwɜːrkspeɪsɪz/',
               phonetic: 'NPM UERK-spei-siz',
               example:
-                'npm 7+ supports workspaces natively. = npm 7+ supporta workspace nativamente.',
+                'For large-scale monorepo architectures, npm 7+ supports workspaces natively which enables efficient builds and deployments at scale. = Per architetture monorepo su larga scala, npm 7+ supporta workspace nativamente il che abilita build e deploy efficienti su larga scala.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'npm',
@@ -8090,10 +8279,11 @@ export default {
             },
             {
               english: 'Lerna',
-              italian: 'Lerna (gestore monorepo JavaScript)',
+              italian: 'gestore monorepo JavaScript (Lerna)',
               pronunciation: '/ˈlɜːrnə/',
               phonetic: 'LER-na',
-              example: 'Lerna manages JavaScript monorepos. = Lerna gestisce monorepo JavaScript.',
+              example:
+                'When managing multiple projects in a single repository, Lerna manages JavaScript monorepos streamlining dependency management across packages. = Quando si gestiscono piu progetti in un singolo repository, lerna gestisce monorepo JavaScript semplificando la gestione delle dipendenze tra i pacchetti.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'lerna',
@@ -8105,17 +8295,18 @@ export default {
               pronunciation: '/krɒs ˈpækɪdʒ dɪˈpendənsi/',
               phonetic: 'KROS PA-kig di-PEN-den-si',
               example:
-                'Workspaces link packages locally. = I workspace linkano i pacchetti localmente.',
+                'In enterprise monorepo setups, workspaces link packages locally ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, i workspace linkano i pacchetti localmente assicurando che le modifiche tra piu pacchetti siano coordinate.',
               context: 'monorepo',
               difficulty: 'advanced',
               code: '"@org/api": "workspace:*"',
             },
             {
               english: 'Hoisting',
-              italian: 'hoisting / risalita delle dipendenze comuni',
+              italian: 'risalita delle dipendenze comuni (hoisting)',
               pronunciation: '/ˈhɔɪstɪŋ/',
               phonetic: 'HOI-sting',
-              example: "Hoisting deduplicates dependencies. = L'hoisting deduplica le dipendenze.",
+              example:
+                "For large-scale monorepo architectures, Hoisting deduplicates dependencies which enables efficient builds and deployments at scale. = Per architetture monorepo su larga scala, l'hoisting deduplica le dipendenze il che abilita build e deploy efficienti su larga scala.",
               context: 'monorepo',
               difficulty: 'advanced',
             },
@@ -8125,7 +8316,7 @@ export default {
               pronunciation: '/ʃeərd koʊd/',
               phonetic: 'SCERD KOUD',
               example:
-                'Monorepos enable shared libraries. = I monorepo abilitano librerie condivise.',
+                'When managing multiple projects in a single repository, monorepos enable shared libraries streamlining dependency management across packages. = Quando si gestiscono piu progetti in un singolo repository, i monorepo abilitano librerie condivise semplificando la gestione delle dipendenze tra i pacchetti.',
               context: 'monorepo',
               difficulty: 'advanced',
             },
@@ -8138,11 +8329,11 @@ export default {
           items: [
             {
               english: 'Nx',
-              italian: 'Nx (build system monorepo)',
+              italian: 'build system monorepo (Nx)',
               pronunciation: '/en eks/',
               phonetic: 'EN-EKS',
               example:
-                'Nx provides smart, fast monorepo builds. = Nx fornisce build smart e veloci.',
+                'In enterprise monorepo setups, use Nx to get smart, fast monorepo builds ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, nx fornisce build smart e veloci assicurando che le modifiche tra piu pacchetti siano coordinate.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'nx',
@@ -8150,11 +8341,11 @@ export default {
             },
             {
               english: 'Turborepo',
-              italian: 'Turborepo (build system monorepo veloce)',
+              italian: 'build system monorepo veloce (Turborepo)',
               pronunciation: '/ˈtɜːrboʊˌriːpoʊ/',
               phonetic: 'TUR-bo-RI-po',
               example:
-                'Turborepo caches and parallelizes tasks. = Turborepo cacha e parallelizza task.',
+                'When managing multiple projects in a single repository, Turborepo caches and parallelizes tasks streamlining dependency management across packages. = Quando si gestiscono piu progetti in un singolo repository, turborepo cacha e parallelizza task semplificando la gestione delle dipendenze tra i pacchetti.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'turborepo',
@@ -8166,7 +8357,7 @@ export default {
               pronunciation: '/əˈfektɪd bɪld/',
               phonetic: 'a-FEK-tid BILD',
               example:
-                'affected only builds changed packages. = affected builda solo pacchetti modificati.',
+                'In enterprise monorepo setups, affected only builds changed packages ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, affected builda solo pacchetti modificati assicurando che le modifiche tra piu pacchetti siano coordinate.',
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'npx nx affected --target=test',
@@ -8177,7 +8368,7 @@ export default {
               pronunciation: '/rɪˈmoʊt kæʃ/',
               phonetic: 'ri-MOUT CASC',
               example:
-                'Remote cache shares build outputs. = La cache remota condivide output di build.',
+                'When managing multiple projects in a single repository, Remote Cache shares build outputs streamlining dependency management across packages. = Quando si gestiscono piu progetti in un singolo repository, la cache remota condivide output di build semplificando la gestione delle dipendenze tra i pacchetti.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'Nx Cloud',
@@ -8188,39 +8379,40 @@ export default {
               pronunciation: '/tæsk ˈpaɪplaɪn/',
               phonetic: 'TASK PAIP-lain',
               example:
-                'Task pipelines define dependencies. = Le pipeline di task definiscono dipendenze.',
+                'To scale a codebase shared by many teams, task pipelines define dependencies avoiding the complexity of managing dozens of separate repos. = Per scalare un codice condiviso da molti team, le pipeline di task definiscono dipendenze evitando la complessita di gestire decine di repository separati.',
               context: 'monorepo',
               difficulty: 'advanced',
               code: '"build": {"dependsOn": ["^build"]}',
             },
             {
               english: 'Bazel',
-              italian: 'Bazel (build system Google ermetico)',
+              italian: 'build system Google ermetico (Bazel)',
               pronunciation: '/ˈbeɪzəl/',
               phonetic: 'BEI-zel',
               example:
-                "Bazel is Google's polyglot build system. = Bazel è il build system poliglotta di Google.",
+                "In enterprise monorepo setups, Bazel is Google's polyglot build system ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, bazel è il build system poliglotta di Google assicurando che le modifiche tra piu pacchetti siano coordinate.",
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'bazel',
             },
             {
               english: 'Buck',
-              italian: 'Buck (build system Meta)',
+              italian: 'build system Meta (Buck)',
               pronunciation: '/bʌk/',
               phonetic: 'BAK',
-              example: "Buck is Meta's build system. = Buck è il build system di Meta.",
+              example:
+                "To scale a codebase shared by many teams, Buck is Meta's build system avoiding the complexity of managing dozens of separate repos. = Per scalare un codice condiviso da molti team, buck è il build system di Meta evitando la complessita di gestire decine di repository separati.",
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'buck2',
             },
             {
               english: 'Pants',
-              italian: 'Pants (build system per monorepo Python/Go/JS)',
+              italian: 'build system per monorepo (Pants)',
               pronunciation: '/pænts/',
               phonetic: 'PANTS',
               example:
-                'Pants targets Python and JVM monorepos. = Pants è per monorepo Python e JVM.',
+                'When managing multiple projects in a single repository, Pants targets Python and JVM monorepos streamlining dependency management across packages. = Quando si gestiscono piu progetti in un singolo repository, pants è per monorepo Python e JVM semplificando la gestione delle dipendenze tra i pacchetti.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'pants',
@@ -8231,7 +8423,7 @@ export default {
               pronunciation: '/ˈprɒdʒekt ɡræf/',
               phonetic: 'PRO-gekt GRAF',
               example:
-                'A project graph maps dependencies. = Un grafo dei progetti mappa le dipendenze.',
+                'For large-scale monorepo architectures, a project graph maps dependencies which enables efficient builds and deployments at scale. = Per architetture monorepo su larga scala, un grafo dei progetti mappa le dipendenze il che abilita build e deploy efficienti su larga scala.',
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'npx nx graph',
@@ -8242,7 +8434,7 @@ export default {
               pronunciation: '/dɪˈstrɪbjuːtɪd tæsk ekˈsɪˈkjuːʃən/',
               phonetic: 'di-STRI-biu-tid TASK ek-se-KIU-scion',
               example:
-                'DTE parallelizes tasks across machines. = DTE parallelizza task tra macchine.',
+                'In enterprise monorepo setups, DTE parallelizes tasks across machines ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, DTE parallelizza task tra macchine assicurando che le modifiche tra piu pacchetti siano coordinate.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'Nx Cloud',
@@ -8256,11 +8448,11 @@ export default {
           items: [
             {
               english: 'Sparse Checkout',
-              italian: 'sparse checkout / checkout parziale',
+              italian: 'checkout parziale (sparse checkout)',
               pronunciation: '/spɑːrs ˈtʃekaʊt/',
               phonetic: 'SPARS CEK-aut',
               example:
-                'Sparse checkout downloads only some paths. = Sparse checkout scarica solo alcuni path.',
+                'In enterprise monorepo setups, use Sparse Checkout to download only some paths ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, sparse checkout scarica solo alcuni path assicurando che le modifiche tra piu pacchetti siano coordinate.',
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git sparse-checkout init --cone',
@@ -8272,18 +8464,18 @@ export default {
               pronunciation: '/koʊn moʊd/',
               phonetic: 'KOUN MOUD',
               example:
-                'Cone mode is the modern, fast variant. = Cone mode è la variante moderna e veloce.',
+                'When managing multiple projects in a single repository, Cone Mode is the modern, fast variant streamlining dependency management across packages. = Quando si gestiscono piu progetti in un singolo repository, cone mode è la variante moderna e veloce semplificando la gestione delle dipendenze tra i pacchetti.',
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git sparse-checkout init --cone',
             },
             {
               english: 'sparse-checkout set',
-              italian: 'git sparse-checkout set / definisce il sotto-albero',
+              italian: 'definisce il sotto-albero visibile (sparse-checkout set)',
               pronunciation: '/spɑːrs ˈtʃekaʊt set/',
               phonetic: 'SPARS CEK-aut SET',
               example:
-                'set selects directories to checkout. = set seleziona directory da checkare.',
+                'For large-scale monorepo architectures, set selects directories to checkout which enables efficient builds and deployments at scale. = Per architetture monorepo su larga scala, set seleziona directory da checkare il che abilita build e deploy efficienti su larga scala.',
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git sparse-checkout set apps/api libs/shared',
@@ -8293,7 +8485,8 @@ export default {
               italian: 'Elenco sparse',
               pronunciation: '/spɑːrs ˈtʃekaʊt lɪst/',
               phonetic: 'SPARS CEK-aut LIST',
-              example: 'list shows current sparse paths. = list mostra i path sparse correnti.',
+              example:
+                'To scale a codebase shared by many teams, list shows current sparse paths avoiding the complexity of managing dozens of separate repos. = Per scalare un codice condiviso da molti team, list mostra i path sparse correnti evitando la complessita di gestire decine di repository separati.',
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git sparse-checkout list',
@@ -8303,7 +8496,8 @@ export default {
               italian: 'Disabilitare sparse',
               pronunciation: '/spɑːrs ˈtʃekaʊt dɪsˈeɪbəl/',
               phonetic: 'SPARS CEK-aut dis-EI-bol',
-              example: 'disable restores full checkout. = disable ripristina checkout completo.',
+              example:
+                'To scale a codebase shared by many teams, disable restores full checkout avoiding the complexity of managing dozens of separate repos. = Per scalare un codice condiviso da molti team, disable ripristina checkout completo evitando la complessita di gestire decine di repository separati.',
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git sparse-checkout disable',
@@ -8314,7 +8508,7 @@ export default {
               pronunciation: '/ˈpɑːrʃəl kloʊn/',
               phonetic: 'PAR-scial KLOUN',
               example:
-                'Partial clone defers blob downloads. = Il clone parziale rimanda il download dei blob.',
+                'In enterprise monorepo setups, Partial Clone defers blob downloads ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, il clone parziale rimanda il download dei blob assicurando che le modifiche tra piu pacchetti siano coordinate.',
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git clone --filter=blob:none <url>',
@@ -8325,7 +8519,7 @@ export default {
               pronunciation: '/blɒbləs kloʊn/',
               phonetic: 'BLOB-les KLOUN',
               example:
-                'A blobless clone is faster initially. = Un clone senza blob è inizialmente più veloce.',
+                'To scale a codebase shared by many teams, a blobless clone is faster initially avoiding the complexity of managing dozens of separate repos. = Per scalare un codice condiviso da molti team, un clone senza blob è inizialmente più veloce evitando la complessita di gestire decine di repository separati.',
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git clone --filter=blob:none --no-checkout <url>',
@@ -8335,17 +8529,19 @@ export default {
               italian: 'Clone senza tree',
               pronunciation: '/ˈtriːləs kloʊn/',
               phonetic: 'TRI-les KLOUN',
-              example: 'Treeless clones skip trees too. = I clone treeless saltano anche i tree.',
+              example:
+                'When managing multiple projects in a single repository, treeless clones skip trees too streamlining dependency management across packages. = Quando si gestiscono piu progetti in un singolo repository, i clone treeless saltano anche i tree semplificando la gestione delle dipendenze tra i pacchetti.',
               context: 'monorepo',
               difficulty: 'advanced',
               command: 'git clone --filter=tree:0 <url>',
             },
             {
               english: 'Scalar',
-              italian: 'Scalar / strumento Microsoft per repo enormi',
+              italian: 'strumento Microsoft per repository enormi (Scalar)',
               pronunciation: '/ˈskeɪlər/',
               phonetic: 'SKEI-lar',
-              example: 'Scalar optimizes large repositories. = Scalar ottimizza repository grandi.',
+              example:
+                'When managing multiple projects in a single repository, Scalar optimizes large repositories streamlining dependency management across packages. = Quando si gestiscono piu progetti in un singolo repository, scalar ottimizza repository grandi semplificando la gestione delle dipendenze tra i pacchetti.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'scalar',
@@ -8354,10 +8550,11 @@ export default {
             },
             {
               english: 'VFS for Git',
-              italian: 'VFS for Git (filesystem virtuale per Git)',
+              italian: 'filesystem virtuale per Git (VFS for Git)',
               pronunciation: '/viː ef es fɔːr ɡɪt/',
               phonetic: 'V-F-S-for-GIT',
-              example: 'VFS virtualizes monorepo files. = VFS virtualizza i file del monorepo.',
+              example:
+                'In enterprise monorepo setups, VFS virtualizes monorepo files ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, VFS virtualizza i file del monorepo assicurando che le modifiche tra piu pacchetti siano coordinate.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'VFS for Git',
@@ -8372,10 +8569,11 @@ export default {
           items: [
             {
               english: 'Code Owner',
-              italian: 'code owner / responsabile di porzione di codice',
+              italian: 'responsabile di porzione di codice (code owner)',
               pronunciation: '/koʊd ˈoʊnər/',
               phonetic: 'KOUD OU-ner',
-              example: 'CODEOWNERS auto-assigns reviewers. = CODEOWNERS auto-assegna reviewer.',
+              example:
+                'When managing multiple projects in a single repository, CODEOWNERS auto-assigns reviewers streamlining dependency management across packages. = Quando si gestiscono piu progetti in un singolo repository, CODEOWNERS auto-assegna reviewer semplificando la gestione delle dipendenze tra i pacchetti.',
               context: 'monorepo',
               difficulty: 'advanced',
               code: '/apps/api/ @backend-team',
@@ -8385,7 +8583,8 @@ export default {
               italian: 'Cartelle convenzionali',
               pronunciation: '/kənˈvenʃənəl ˈfoʊldərz/',
               phonetic: 'kon-VEN-scio-nol FOL-ders',
-              example: 'apps/, libs/, tools/ are common. = apps/, libs/, tools/ sono comuni.',
+              example:
+                'To scale a codebase shared by many teams, apps/, libs/, tools/ are common avoiding the complexity of managing dozens of separate repos. = Per scalare un codice condiviso da molti team, apps/, libs/, tools/ sono comuni evitando la complessita di gestire decine di repository separati.',
               context: 'monorepo',
               difficulty: 'advanced',
               code: 'apps/\\nlibs/\\ntools/',
@@ -8396,18 +8595,18 @@ export default {
               pronunciation: '/rɪˈliːs pɜːr ˈpækɪdʒ/',
               phonetic: 'ri-LIIS per PA-kig',
               example:
-                'Each package has independent versions. = Ogni pacchetto ha versioni indipendenti.',
+                'In enterprise monorepo setups, each package has independent versions ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, ogni pacchetto ha versioni indipendenti assicurando che le modifiche tra piu pacchetti siano coordinate.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'changesets',
             },
             {
               english: 'Changesets',
-              italian: 'Changesets / strumento gestione versioning monorepo',
+              italian: 'strumento gestione versioning monorepo (Changesets)',
               pronunciation: '/ˈtʃeɪndʒsets/',
               phonetic: 'CIENG-sets',
               example:
-                'Changesets manages monorepo releases. = Changesets gestisce release in monorepo.',
+                'To scale a codebase shared by many teams, Changesets manages monorepo releases avoiding the complexity of managing dozens of separate repos. = Per scalare un codice condiviso da molti team, changesets gestisce release in monorepo evitando la complessita di gestire decine di repository separati.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'changesets',
@@ -8415,11 +8614,11 @@ export default {
             },
             {
               english: 'Release Please',
-              italian: 'Release Please / automazione release Google',
+              italian: 'automazione release di Google (Release Please)',
               pronunciation: '/rɪˈliːs pliːz/',
               phonetic: 'ri-LIIS PLIIZ',
               example:
-                'release-please automates monorepo releases. = release-please automatizza release monorepo.',
+                'For large-scale monorepo architectures, release-please automates monorepo releases which enables efficient builds and deployments at scale. = Per architetture monorepo su larga scala, release-please automatizza release monorepo il che abilita build e deploy efficienti su larga scala.',
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'release-please',
@@ -8430,7 +8629,7 @@ export default {
               pronunciation: '/ˈmɒdjuːl ˈbaʊndəri/',
               phonetic: 'MO-giul BAUN-da-ri',
               example:
-                "Module boundaries enforce architecture. = I confini di modulo impongono l'architettura.",
+                "In enterprise monorepo setups, module boundaries enforce architecture ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, i confini di modulo impongono l'architettura assicurando che le modifiche tra piu pacchetti siano coordinate.",
               context: 'monorepo',
               difficulty: 'advanced',
               tool: 'eslint-plugin-boundaries',
@@ -8440,7 +8639,8 @@ export default {
               italian: 'API interna',
               pronunciation: '/ɪnˈtɜːrnəl eɪ piː aɪ/',
               phonetic: 'in-TER-nal A-P-I',
-              example: 'Mark APIs as internal-only. = Marca le API come solo interne.',
+              example:
+                'To scale a codebase shared by many teams, mark APIs as internal-only avoiding the complexity of managing dozens of separate repos. = Per scalare un codice condiviso da molti team, marca le API come solo interne evitando la complessita di gestire decine di repository separati.',
               context: 'monorepo',
               difficulty: 'advanced',
             },
@@ -8450,18 +8650,18 @@ export default {
               pronunciation: '/əˈtɒmɪk kəˈmɪt əˈkrɔːs/',
               phonetic: 'a-TO-mik KO-mit a-KROS',
               example:
-                'Monorepos enable cross-package atomic changes. = I monorepo abilitano modifiche atomiche cross-pacchetto.',
+                'In enterprise monorepo setups, monorepos enable cross-package atomic changes ensuring changes across multiple packages are coordinated. = In configurazioni monorepo enterprise, i monorepo abilitano modifiche atomiche cross-pacchetto assicurando che le modifiche tra piu pacchetti siano coordinate.',
               context: 'monorepo',
               difficulty: 'advanced',
               note: 'Vantaggio chiave del monorepo.',
             },
             {
               english: 'Trunk-based Development',
-              italian: 'trunk-based development / sviluppo sul ramo unico',
+              italian: 'sviluppo sul ramo unico (trunk-based development)',
               pronunciation: '/trʌŋk beɪst dɪˈveləpmənt/',
               phonetic: 'TRANK-BEIST di-VE-lop-ment',
               example:
-                'Most monorepos use trunk-based dev. = La maggior parte dei monorepo usa trunk-based dev.',
+                'For large-scale monorepo architectures, most monorepos use trunk-based dev which enables efficient builds and deployments at scale. = Per architetture monorepo su larga scala, la maggior parte dei monorepo usa trunk-based dev il che abilita build e deploy efficienti su larga scala.',
               context: 'monorepo',
               difficulty: 'advanced',
             },
@@ -8471,7 +8671,7 @@ export default {
               pronunciation: '/ˈtuːlɪŋ stəˈbɪlɪti/',
               phonetic: 'TU-ling sta-BI-li-ti',
               example:
-                'Monorepos need fast, reliable tooling. = I monorepo richiedono tooling veloce e affidabile.',
+                'For large-scale monorepo architectures, monorepos need fast, reliable tooling which enables efficient builds and deployments at scale. = Per architetture monorepo su larga scala, i monorepo richiedono tooling veloce e affidabile il che abilita build e deploy efficienti su larga scala.',
               context: 'monorepo',
               difficulty: 'advanced',
             },
@@ -8496,7 +8696,8 @@ export default {
               italian: 'Commit perso',
               pronunciation: '/lɒst kəˈmɪt/',
               phonetic: 'LOST KO-mit',
-              example: "A lost commit isn't really lost. = Un commit perso non è davvero perso.",
+              example:
+                "For large-scale monorepo architectures, a lost commit isn't really lost which enables efficient builds and deployments at scale. = Per architetture monorepo su larga scala, un commit perso non è davvero perso il che abilita build e deploy efficienti su larga scala.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Quasi sempre recuperabile via reflog.',
@@ -8506,7 +8707,8 @@ export default {
               italian: 'Recupero via reflog',
               pronunciation: '/ˈreflɒɡ rɪˈkʌvəri/',
               phonetic: 'REF-log ri-KA-ve-ri',
-              example: 'Use reflog to find old HEADs. = Usa reflog per trovare vecchi HEAD.',
+              example:
+                'When debugging a problematic repository, use reflog to find old HEADs helping you recover from common mistakes. = Quando si esegue il debug di un repository problematico, usa reflog per trovare vecchi HEAD aiutandoti a recuperare da errori comuni.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git reflog --all',
@@ -8516,17 +8718,19 @@ export default {
               italian: 'Commit dangling',
               pronunciation: '/ˈdæŋɡlɪŋ kəˈmɪt/',
               phonetic: 'DEN-gling KO-mit',
-              example: 'Dangling commits have no ref. = I commit dangling non hanno ref.',
+              example:
+                'If something goes wrong in your Git history, dangling commits have no ref so you can restore the correct state. = Se qualcosa va storto nella storia Git, i commit dangling non hanno ref cosi puoi ripristinare lo stato corretto.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fsck --lost-found',
             },
             {
               english: 'Lost and Found',
-              italian: 'lost-and-found / commit orfani recuperabili',
+              italian: 'commit orfani recuperabili (lost-and-found)',
               pronunciation: '/lɒst ænd faʊnd/',
               phonetic: 'LOST and FAUND',
-              example: 'fsck --lost-found rescues orphans. = fsck --lost-found salva orfani.',
+              example:
+                'To fix accidental commits or merges, fsck --lost-found rescues orphans providing a safety net for development mistakes. = Per correggere commit o merge accidentali, fsck --lost-found salva orfani fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fsck --lost-found',
@@ -8537,7 +8741,7 @@ export default {
               pronunciation: '/rɪˈstɔːr brɑːntʃ/',
               phonetic: 'ri-STOR BRANC',
               example:
-                'Restore a deleted branch from reflog. = Ripristina un ramo eliminato dal reflog.',
+                'When debugging a problematic repository, restore a deleted branch from reflog helping you recover from common mistakes. = Quando si esegue il debug di un repository problematico, ripristina un ramo eliminato dal reflog aiutandoti a recuperare da errori comuni.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git checkout -b feature HEAD@{1}',
@@ -8548,7 +8752,7 @@ export default {
               pronunciation: '/ˈtʃeri pɪk lɒst wɜːrk/',
               phonetic: 'CIE-ri-PIK LOST UERK',
               example:
-                'Cherry-pick recovered commits onto a branch. = Cherry-pick di commit recuperati su un ramo.',
+                "During emergency recovery situations, cherry-pick recovered commits onto a branch which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, cherry-pick di commit recuperati su un ramo il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git cherry-pick <hash>',
@@ -8558,7 +8762,8 @@ export default {
               italian: 'Commit orfano',
               pronunciation: '/ˈɔːrfən kəˈmɪt/',
               phonetic: 'OR-fan KO-mit',
-              example: 'Orphan commits are unreachable. = I commit orfani non sono raggiungibili.',
+              example:
+                'To fix accidental commits or merges, orphan commits are unreachable providing a safety net for development mistakes. = Per correggere commit o merge accidentali, i commit orfani non sono raggiungibili fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -8567,7 +8772,8 @@ export default {
               italian: 'Finestra del reflog',
               pronunciation: '/ˈreflɒɡ ˈwɪndoʊ/',
               phonetic: 'REF-log UIN-dou',
-              example: 'Reflog keeps 90 days by default. = Il reflog tiene 90 giorni di default.',
+              example:
+                'To fix accidental commits or merges, reflog keeps 90 days by default providing a safety net for development mistakes. = Per correggere commit o merge accidentali, il reflog tiene 90 giorni di default fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Dopo gc, il reflog viene tagliato.',
@@ -8578,7 +8784,7 @@ export default {
               pronunciation: '/priː dʒiː siː rɪˈkʌvəri/',
               phonetic: 'PRI-G-C ri-KA-ve-ri',
               example:
-                'Recover before gc removes objects. = Recupera prima che gc rimuova gli oggetti.',
+                'If something goes wrong in your Git history, recover before gc removes objects so you can restore the correct state. = Se qualcosa va storto nella storia Git, recupera prima che gc rimuova gli oggetti cosi puoi ripristinare lo stato corretto.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Disabilitare gc temporaneo: git config gc.auto 0.',
@@ -8588,7 +8794,8 @@ export default {
               italian: 'Branch lost+found',
               pronunciation: '/lɒst plʌs faʊnd/',
               phonetic: 'LOST-PLUS-FAUND',
-              example: 'Create a branch on the lost commit. = Crea un branch sul commit perso.',
+              example:
+                'To fix accidental commits or merges, create a branch on the lost commit providing a safety net for development mistakes. = Per correggere commit o merge accidentali, crea un branch sul commit perso fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git branch lost-found <hash>',
@@ -8606,7 +8813,7 @@ export default {
               pronunciation: '/fɔːrs pʊʃ dɪˈzɑːstər/',
               phonetic: 'FORS PUSC di-ZA-ster',
               example:
-                'Force push can overwrite remote work. = Force push può sovrascrivere lavoro remoto.',
+                "During emergency recovery situations, force push can overwrite remote work which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, force push può sovrascrivere lavoro remoto il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Causa comune di lavoro perso in team.',
@@ -8617,7 +8824,7 @@ export default {
               pronunciation: '/priː pʊʃ hæʃ/',
               phonetic: 'PRI-PUSC HASC',
               example:
-                'Local reflog stores pre-push state. = Il reflog locale memorizza lo stato pre-push.',
+                "During emergency recovery situations, local reflog stores pre-push state which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, il reflog locale memorizza lo stato pre-push il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git reflog show origin/main',
@@ -8628,7 +8835,7 @@ export default {
               pronunciation: '/ˈɡɪthʌb ɪˈvents eɪ piː aɪ/',
               phonetic: 'GIT-hab i-VENTS API',
               example:
-                'GitHub events log force pushes. = Gli eventi GitHub registrano i force push.',
+                'When debugging a problematic repository, gitHub events log force pushes helping you recover from common mistakes. = Quando si esegue il debug di un repository problematico, gli eventi GitHub registrano i force push aiutandoti a recuperare da errori comuni.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               tool: 'gh api',
@@ -8638,17 +8845,18 @@ export default {
               italian: 'Reflog di un collega',
               pronunciation: '/ˈreflɒɡ frɒm ˈkɒliːɡ/',
               phonetic: 'REF-log from KO-lig',
-              example: "A colleague's reflog can save you. = Il reflog di un collega può salvarti.",
+              example:
+                "When debugging a problematic repository, a colleague's reflog can save you helping you recover from common mistakes. = Quando si esegue il debug di un repository problematico, il reflog di un collega può salvarti aiutandoti a recuperare da errori comuni.",
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
             {
               english: 'Force-with-lease',
-              italian: 'force-with-lease / push forzato sicuro',
+              italian: 'push forzato sicuro (force-with-lease)',
               pronunciation: '/fɔːrs wɪð liːs/',
               phonetic: 'FORS-uid-LIIS',
               example:
-                'force-with-lease prevents overwriting unseen work. = force-with-lease previene sovrascrittura di lavoro non visto.',
+                'To fix accidental commits or merges, the Force-with-lease setting prevents overwriting unseen work providing a safety net for development mistakes. = Per correggere commit o merge accidentali, force-with-lease previene sovrascrittura di lavoro non visto fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git push --force-with-lease',
@@ -8660,7 +8868,7 @@ export default {
               pronunciation: '/brɑːntʃ prəˈtekʃən/',
               phonetic: 'BRANC pro-TEK-scion',
               example:
-                'Branch protection blocks force push. = La protezione del ramo blocca force push.',
+                'To fix accidental commits or merges, the Branch Protection setting prevents force push providing a safety net for development mistakes. = Per correggere commit o merge accidentali, la protezione del ramo blocca force push fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               tool: 'GitHub',
@@ -8671,7 +8879,7 @@ export default {
               pronunciation: '/rɪˈstɔːr frɒm ˈmɪrər/',
               phonetic: 'ri-STOR from MI-rer',
               example:
-                'A mirror clone can restore everything. = Un clone mirror può ripristinare tutto.',
+                'To fix accidental commits or merges, a mirror clone can restore everything providing a safety net for development mistakes. = Per correggere commit o merge accidentali, un clone mirror può ripristinare tutto fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git clone --mirror <url>',
@@ -8682,7 +8890,7 @@ export default {
               pronunciation: '/ˈbækʌp ˈriːpoʊ/',
               phonetic: 'BAK-ap RI-po',
               example:
-                "Periodic backup clones are insurance. = Cloni di backup periodici sono un'assicurazione.",
+                "When debugging a problematic repository, periodic backup clones are insurance helping you recover from common mistakes. = Quando si esegue il debug di un repository problematico, cloni di backup periodici sono un'assicurazione aiutandoti a recuperare da errori comuni.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git clone --mirror <url> backup.git',
@@ -8693,7 +8901,7 @@ export default {
               pronunciation: '/ˈɡɪthʌb ˈɔːdɪt lɒɡ/',
               phonetic: 'GIT-hab AU-dit LOG',
               example:
-                "Audit log records who force pushed. = L'audit log registra chi ha forzato push.",
+                "During emergency recovery situations, audit log records who force pushed which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, l'audit log registra chi ha forzato push il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               tool: 'GitHub',
@@ -8704,7 +8912,7 @@ export default {
               pronunciation: '/ˈreflɒɡ pʊʃ/',
               phonetic: 'REF-log PUSC',
               example:
-                'A user with old reflog can push it back. = Un utente con vecchio reflog può ripusharlo.',
+                'To fix accidental commits or merges, a user with old reflog can push it back providing a safety net for development mistakes. = Per correggere commit o merge accidentali, un utente con vecchio reflog può ripusharlo fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git push origin <hash>:main --force',
@@ -8721,7 +8929,8 @@ export default {
               italian: 'Oggetto corrotto',
               pronunciation: '/kəˈrʌpt ˈɒbdʒɪkt/',
               phonetic: 'ko-RAPT OB-gekt',
-              example: 'fsck identifies corrupt objects. = fsck identifica oggetti corrotti.',
+              example:
+                "During emergency recovery situations, fsck identifies corrupt objects which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, fsck identifica oggetti corrotti il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fsck --full',
@@ -8732,7 +8941,7 @@ export default {
               pronunciation: '/ˈmɪsɪŋ ˈɒbdʒɪkt/',
               phonetic: 'MI-sing OB-gekt',
               example:
-                'Missing objects break operations. = Oggetti mancanti rompono le operazioni.',
+                'To fix accidental commits or merges, missing objects break operations providing a safety net for development mistakes. = Per correggere commit o merge accidentali, oggetti mancanti rompono le operazioni fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fetch origin',
@@ -8742,7 +8951,8 @@ export default {
               italian: 'Index rotto',
               pronunciation: '/ˈbroʊkən ˈɪndeks/',
               phonetic: 'BRO-ken IN-deks',
-              example: 'Delete .git/index to rebuild. = Cancella .git/index per ricostruirlo.',
+              example:
+                'To fix accidental commits or merges, delete .git/index to rebuild providing a safety net for development mistakes. = Per correggere commit o merge accidentali, cancella .git/index per ricostruirlo fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'rm .git/index && git reset',
@@ -8752,18 +8962,19 @@ export default {
               italian: 'Riparazione dal remote',
               pronunciation: '/rɪˈpeər frɒm rɪˈmoʊt/',
               phonetic: 'ri-PER from ri-MOUT',
-              example: 'Fetch missing objects from remote. = Fetch oggetti mancanti dal remote.',
+              example:
+                'If something goes wrong in your Git history, fetch missing objects from remote so you can restore the correct state. = Se qualcosa va storto nella storia Git, fetch oggetti mancanti dal remote cosi puoi ripristinare lo stato corretto.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fetch origin --refetch',
             },
             {
               english: 'Bundle',
-              italian: 'bundle / archivio Git portatile',
+              italian: 'archivio Git portatile (bundle)',
               pronunciation: '/ˈbʌndl/',
               phonetic: 'BAN-dol',
               example:
-                'A bundle is a portable archive of commits. = Un bundle è un archivio portabile di commit.',
+                "During emergency recovery situations, a bundle is a portable archive of commits which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, un bundle è un archivio portabile di commit il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git bundle create repo.bundle --all',
@@ -8773,7 +8984,8 @@ export default {
               italian: 'Ripristino da bundle',
               pronunciation: '/rɪˈstɔːr frɒm ˈbʌndl/',
               phonetic: 'ri-STOR from BAN-dol',
-              example: 'Clone from a bundle file. = Clona da un file bundle.',
+              example:
+                "During emergency recovery situations, clone from a bundle file which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, clona da un file bundle il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git clone repo.bundle restored',
@@ -8784,7 +8996,7 @@ export default {
               pronunciation: '/dɪsk ˈfeɪljər/',
               phonetic: 'DISK FEI-lier',
               example:
-                'Disk failures can corrupt loose objects. = I guasti disco possono corrompere oggetti loose.',
+                'If something goes wrong in your Git history, disk failures can corrupt loose objects so you can restore the correct state. = Se qualcosa va storto nella storia Git, i guasti disco possono corrompere oggetti loose cosi puoi ripristinare lo stato corretto.',
               context: 'troubleshooting',
               difficulty: 'advanced',
             },
@@ -8793,7 +9005,8 @@ export default {
               italian: 'Recupero shallow',
               pronunciation: '/ˈʃæloʊ rɪˈkʌvəri/',
               phonetic: 'SCIA-lou ri-KA-ve-ri',
-              example: 'Convert shallow to full clone. = Converti shallow in clone completo.',
+              example:
+                'To fix accidental commits or merges, convert shallow to full clone providing a safety net for development mistakes. = Per correggere commit o merge accidentali, converti shallow in clone completo fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fetch --unshallow',
@@ -8803,7 +9016,8 @@ export default {
               italian: 'fsck silenzioso',
               pronunciation: '/ef es siː keɪ noʊ ˈdæŋɡlɪŋ/',
               phonetic: 'FSCK no-DEN-gling',
-              example: 'Hide dangling object warnings. = Nasconde warning di oggetti dangling.',
+              example:
+                'If something goes wrong in your Git history, hide dangling object warnings so you can restore the correct state. = Se qualcosa va storto nella storia Git, nasconde warning di oggetti dangling cosi puoi ripristinare lo stato corretto.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fsck --no-dangling',
@@ -8814,7 +9028,7 @@ export default {
               pronunciation: '/riː kloʊn/',
               phonetic: 'RI-KLOUN',
               example:
-                'Sometimes a fresh clone is fastest. = A volte un clone fresco è il più veloce.',
+                'To fix accidental commits or merges, sometimes a fresh clone is fastest providing a safety net for development mistakes. = Per correggere commit o merge accidentali, a volte un clone fresco è il più veloce fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git clone <url> fresh',
@@ -8828,11 +9042,11 @@ export default {
           items: [
             {
               english: 'Detached HEAD',
-              italian: 'detached HEAD / HEAD scollegato dal ramo',
+              italian: 'HEAD scollegato dal ramo (detached HEAD)',
               pronunciation: '/dɪˈtætʃt hed/',
               phonetic: 'di-TACT HED',
               example:
-                'Detached HEAD risks losing commits. = Detached HEAD rischia di perdere commit.',
+                "During emergency recovery situations, Detached HEAD risks losing commits which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, detached HEAD rischia di perdere commit il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git switch -c rescue',
@@ -8844,7 +9058,7 @@ export default {
               pronunciation: '/rɒŋ brɑːntʃ kəˈmɪt/',
               phonetic: 'RONG BRANC KO-mit',
               example:
-                'Move commits with cherry-pick + reset. = Sposta commit con cherry-pick + reset.',
+                "During emergency recovery situations, move commits with cherry-pick + reset which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, sposta commit con cherry-pick + reset il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git checkout correct-branch && git cherry-pick <hash>',
@@ -8854,7 +9068,8 @@ export default {
               italian: 'Autore errato',
               pronunciation: '/rɒŋ ˈɔːθər/',
               phonetic: 'RONG O-tor',
-              example: "Fix the author of the last commit. = Sistema l'autore dell'ultimo commit.",
+              example:
+                "During emergency recovery situations, fix the author of the last commit which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, sistema l'autore dell'ultimo commit il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git commit --amend --author="Alice <a@ex.com>"',
@@ -8865,7 +9080,7 @@ export default {
               pronunciation: '/bɪɡ faɪl mɪˈsteɪk/',
               phonetic: 'BIG FAIL mi-STEIK',
               example:
-                'Big files committed by mistake bloat repos. = File grandi committati per sbaglio gonfiano i repo.',
+                "During emergency recovery situations, big files committed by mistake bloat repos which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, file grandi committati per sbaglio gonfiano i repo il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               tool: 'git-filter-repo',
@@ -8876,7 +9091,7 @@ export default {
               pronunciation: '/ˈsiːkrɪt liːk/',
               phonetic: 'SI-krit LIIK',
               example:
-                'Leaked secrets stay in history. = I segreti leakati rimangono nella history.',
+                'If something goes wrong in your Git history, leaked secrets stay in history so you can restore the correct state. = Se qualcosa va storto nella storia Git, i segreti leakati rimangono nella history cosi puoi ripristinare lo stato corretto.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               note: 'Ruota la secret subito, poi pulisci la history.',
@@ -8886,7 +9101,8 @@ export default {
               italian: 'Merge sbagliato',
               pronunciation: '/rɒŋ mɜːrdʒ/',
               phonetic: 'RONG MERG',
-              example: 'Revert a wrong merge with -m. = Revert di un merge sbagliato con -m.',
+              example:
+                'To fix accidental commits or merges, revert a wrong merge with -m providing a safety net for development mistakes. = Per correggere commit o merge accidentali, revert di un merge sbagliato con -m fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git revert -m 1 <merge-hash>',
@@ -8896,7 +9112,8 @@ export default {
               italian: 'Rebase bloccato',
               pronunciation: '/stʌk ˈriːbeɪs/',
               phonetic: 'STAK RI-beis',
-              example: 'Abort a stuck rebase. = Aborta un rebase bloccato.',
+              example:
+                'When debugging a problematic repository, abort a stuck rebase helping you recover from common mistakes. = Quando si esegue il debug di un repository problematico, aborta un rebase bloccato aiutandoti a recuperare da errori comuni.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git rebase --abort',
@@ -8907,7 +9124,7 @@ export default {
               pronunciation: '/dɪˈtætʃt stæʃ/',
               phonetic: 'di-TACT STASC',
               example:
-                "Stashes survive in fsck output. = Gli stash sopravvivono nell'output di fsck.",
+                "If something goes wrong in your Git history, stashes survive in fsck output so you can restore the correct state. = Se qualcosa va storto nella storia Git, gli stash sopravvivono nell'output di fsck cosi puoi ripristinare lo stato corretto.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fsck --no-reflog',
@@ -8918,7 +9135,7 @@ export default {
               pronunciation: '/ˈfaɪlneɪm keɪs/',
               phonetic: 'FAIL-neim KEIS',
               example:
-                'Case-insensitive FS hides renames. = FS case-insensitive nasconde i rename.',
+                'To fix accidental commits or merges, case-insensitive FS hides renames providing a safety net for development mistakes. = Per correggere commit o merge accidentali, FS case-insensitive nasconde i rename fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git config core.ignoreCase false',
@@ -8928,7 +9145,8 @@ export default {
               italian: 'Problemi CRLF',
               pronunciation: '/siː ɑːr el ef ˈɪʃuː/',
               phonetic: 'CRLF I-sciu',
-              example: 'CRLF mismatches cause spurious diffs. = Mismatch CRLF causano diff spuri.',
+              example:
+                "During emergency recovery situations, CRLF mismatches cause spurious diffs which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, mismatch CRLF causano diff spuri il che puo risparmiare ore di rilavorazione manuale.",
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git config core.autocrlf input',
@@ -8951,11 +9169,11 @@ export default {
           items: [
             {
               english: 'Worktree',
-              italian: 'worktree / albero di lavoro multiplo',
+              italian: 'albero di lavoro multiplo (worktree)',
               pronunciation: '/ˈwɜːrktriː/',
               phonetic: 'UERK-tri',
               example:
-                'A worktree adds a second checkout. = Un worktree aggiunge un secondo checkout.',
+                'To fix accidental commits or merges, a worktree adds a second checkout providing a safety net for development mistakes. = Per correggere commit o merge accidentali, un worktree aggiunge un secondo checkout fornendo una rete di sicurezza per errori di sviluppo.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree add ../hotfix main',
@@ -8966,7 +9184,8 @@ export default {
               italian: 'Aggiungere worktree',
               pronunciation: '/ˈwɜːrktriː æd/',
               phonetic: 'UERK-tri AD',
-              example: 'Add a worktree on a new branch. = Aggiungi un worktree su un nuovo branch.',
+              example:
+                'For complex repository management, add a worktree on a new branch giving experienced developers fine-grained control. = Per la gestione avanzata del repository, aggiungi un worktree su un nuovo branch dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree add -b feature ../feature',
@@ -8976,7 +9195,8 @@ export default {
               italian: 'Elenco worktree',
               pronunciation: '/ˈwɜːrktriː lɪst/',
               phonetic: 'UERK-tri LIST',
-              example: 'list shows all worktrees. = list mostra tutti i worktree.',
+              example:
+                'When handling edge cases in large codebases, list shows all worktrees which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, list mostra tutti i worktree il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree list',
@@ -8986,7 +9206,8 @@ export default {
               italian: 'Rimuovere worktree',
               pronunciation: '/ˈwɜːrktriː rɪˈmuːv/',
               phonetic: 'UERK-tri ri-MUV',
-              example: 'remove deletes a worktree. = remove cancella un worktree.',
+              example:
+                'When handling edge cases in large codebases, remove deletes a worktree which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, remove cancella un worktree il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree remove ../feature',
@@ -8996,7 +9217,8 @@ export default {
               italian: 'Pulire worktree',
               pronunciation: '/ˈwɜːrktriː pruːn/',
               phonetic: 'UERK-tri PRUN',
-              example: 'prune cleans dead worktree refs. = prune pulisce ref morti dei worktree.',
+              example:
+                'For power users who need maximum control, prune cleans dead worktree refs enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, prune pulisce ref morti dei worktree abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree prune',
@@ -9007,7 +9229,7 @@ export default {
               pronunciation: '/lɪŋkt ˈwɜːrktriː/',
               phonetic: 'LINKT UERK-tri',
               example:
-                'Linked worktrees share .git data. = I worktree collegati condividono i dati .git.',
+                'In advanced Git scenarios, linked worktrees share .git data providing powerful capabilities for experienced users. = In scenari Git avanzati, i worktree collegati condividono i dati .git fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
             },
@@ -9017,29 +9239,29 @@ export default {
               pronunciation: '/beər ˈwɜːrktriː/',
               phonetic: 'BER UERK-tri',
               example:
-                'Bare repos host worktrees as siblings. = I repo bare ospitano worktree come fratelli.',
+                'For power users who need maximum control, bare repos host worktrees as siblings enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, i repo bare ospitano worktree come fratelli abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git clone --bare <url>',
             },
             {
               english: 'Worktree per PR',
-              italian: 'worktree per PR / un albero per ogni PR',
+              italian: 'un albero di lavoro per ogni PR (worktree per PR)',
               pronunciation: '/ˈwɜːrktriː pɜːr piː ɑːr/',
               phonetic: 'UERK-tri-per-PR',
               example:
-                'Reviewers checkout PRs as worktrees. = I reviewer checkano PR come worktree.',
+                'In advanced Git scenarios, reviewers checkout PRs as worktrees providing powerful capabilities for experienced users. = In scenari Git avanzati, i reviewer checkano PR come worktree fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'gh pr checkout 42',
             },
             {
               english: 'lock Worktree',
-              italian: 'git worktree lock / blocca un worktree',
+              italian: 'blocca un worktree (git worktree lock)',
               pronunciation: '/lɒk ˈwɜːrktriː/',
               phonetic: 'LOK UERK-tri',
               example:
-                'lock prevents pruning of inactive worktrees. = lock previene la pulizia di worktree inattivi.',
+                'For complex repository management, lock prevents pruning of inactive worktrees giving experienced developers fine-grained control. = Per la gestione avanzata del repository, lock previene la pulizia di worktree inattivi dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree lock ../old',
@@ -9049,7 +9271,8 @@ export default {
               italian: 'Spostare worktree',
               pronunciation: '/muːv ˈwɜːrktriː/',
               phonetic: 'MUUV UERK-tri',
-              example: 'move relocates a worktree directory. = move sposta una cartella worktree.',
+              example:
+                'In advanced Git scenarios, move relocates a worktree directory providing powerful capabilities for experienced users. = In scenari Git avanzati, move sposta una cartella worktree fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git worktree move ../old ../new',
@@ -9063,10 +9286,11 @@ export default {
           items: [
             {
               english: 'filter-branch',
-              italian: 'filter-branch (legacy)',
+              italian: 'legacy (filter-branch)',
               pronunciation: '/ˈfɪltər brɑːntʃ/',
               phonetic: 'FIL-ter BRANC',
-              example: 'filter-branch is slow and deprecated. = filter-branch è lento e deprecato.',
+              example:
+                'For power users who need maximum control, filter-branch is slow and deprecated enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, filter-branch è lento e deprecato abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git filter-branch --tree-filter <cmd>',
@@ -9074,11 +9298,11 @@ export default {
             },
             {
               english: 'git filter-repo',
-              italian: 'git filter-repo / riscrittura di storia',
+              italian: 'riscrittura di storia (git filter-repo)',
               pronunciation: '/ɡɪt ˈfɪltər ˈriːpoʊ/',
               phonetic: 'GIT FIL-ter RI-po',
               example:
-                'filter-repo is the modern replacement. = filter-repo è la sostituta moderna.',
+                'For power users who need maximum control, filter-repo is the modern replacement enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, filter-repo è la sostituta moderna abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'git-filter-repo',
@@ -9089,7 +9313,8 @@ export default {
               italian: 'BFG Repo-Cleaner',
               pronunciation: '/biː ef dʒiː/',
               phonetic: 'BI-EF-GI',
-              example: 'BFG removes large files quickly. = BFG rimuove file grandi velocemente.',
+              example:
+                'For power users who need maximum control, to remove large files quickly, use BFG enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, BFG rimuove file grandi velocemente abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'BFG',
@@ -9102,7 +9327,7 @@ export default {
               pronunciation: '/ˈriːraɪt ˈhɪstəri/',
               phonetic: 'RI-rait HI-sto-ri',
               example:
-                'Rewriting history changes commit hashes. = Riscrivere la history cambia gli hash dei commit.',
+                'For complex repository management, rewriting history changes commit hashes giving experienced developers fine-grained control. = Per la gestione avanzata del repository, riscrivere la history cambia gli hash dei commit dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               note: 'Coordinare col team: tutti devono ri-clonare.',
@@ -9113,7 +9338,7 @@ export default {
               pronunciation: '/pæθ ˈfɪltər/',
               phonetic: 'PATH FIL-ter',
               example:
-                'Extract a subdirectory as new repo. = Estrai una sottocartella come nuovo repo.',
+                'When handling edge cases in large codebases, extract a subdirectory as new repo which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, estrai una sottocartella come nuovo repo il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git filter-repo --path libs/shared',
@@ -9123,7 +9348,8 @@ export default {
               italian: 'Riscrittura autore',
               pronunciation: '/ˈɔːθər ˈriːraɪt/',
               phonetic: 'O-tor RI-rait',
-              example: 'Replace authors via callback. = Sostituisci autori via callback.',
+              example:
+                'When handling edge cases in large codebases, replace authors via callback which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, sostituisci autori via callback il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git filter-repo --mailmap mailmap.txt',
@@ -9133,7 +9359,8 @@ export default {
               italian: 'File mailmap',
               pronunciation: '/ˈmeɪlmæp/',
               phonetic: 'MEIL-map',
-              example: 'mailmap normalizes author names. = mailmap normalizza i nomi degli autori.',
+              example:
+                'When handling edge cases in large codebases, mailmap normalizes author names which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, mailmap normalizza i nomi degli autori il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               code: 'Alice <alice@new.com> <alice@old.com>',
@@ -9143,7 +9370,8 @@ export default {
               italian: 'git replace',
               pronunciation: '/ɡɪt rɪˈpleɪs/',
               phonetic: 'GIT ri-PLEIS',
-              example: 'replace creates virtual swaps. = replace crea sostituzioni virtuali.',
+              example:
+                'For complex repository management, use replace to create virtual swaps giving experienced developers fine-grained control. = Per la gestione avanzata del repository, replace crea sostituzioni virtuali dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git replace <old> <new>',
@@ -9151,11 +9379,11 @@ export default {
             },
             {
               english: 'Grafts',
-              italian: 'Grafts (deprecato)',
+              italian: 'deprecato (Grafts)',
               pronunciation: '/ɡrɑːfts/',
               phonetic: 'GRAFTS',
               example:
-                'Grafts were predecessor of replace. = I grafts erano i predecessori di replace.',
+                'For power users who need maximum control, Grafts were predecessor of replace enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, i grafts erano i predecessori di replace abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               code: '.git/info/grafts',
@@ -9166,7 +9394,7 @@ export default {
               pronunciation: '/fɔːrs pʊʃ ˈɑːftər ˈriːraɪt/',
               phonetic: 'FORS PUSC AF-ter RI-rait',
               example:
-                'You must force push after rewriting. = Devi fare force push dopo riscrittura.',
+                'For power users who need maximum control, you must force push after rewriting enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, devi fare force push dopo riscrittura abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git push --force-with-lease',
@@ -9183,7 +9411,8 @@ export default {
               italian: 'Archivio del repo',
               pronunciation: '/ɡɪt ˈɑːrkaɪv/',
               phonetic: 'GIT AR-kaiv',
-              example: 'archive creates a release tarball. = archive crea un tarball di release.',
+              example:
+                'For complex repository management, archive creates a release tarball giving experienced developers fine-grained control. = Per la gestione avanzata del repository, archive crea un tarball di release dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git archive --format=tar.gz HEAD > release.tar.gz',
@@ -9193,7 +9422,8 @@ export default {
               italian: 'Note Git',
               pronunciation: '/ɡɪt noʊts/',
               phonetic: 'GIT NOUTS',
-              example: 'notes attach metadata to commits. = notes allegano metadati ai commit.',
+              example:
+                'For power users who need maximum control, notes attach metadata to commits enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, notes allegano metadati ai commit abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git notes add -m "Reviewed by Alice"',
@@ -9204,7 +9434,7 @@ export default {
               pronunciation: '/ɡɪt rev pɑːrs/',
               phonetic: 'GIT-REV-PARS',
               example:
-                'rev-parse resolves any reference. = rev-parse risolve qualsiasi riferimento.',
+                'When handling edge cases in large codebases, rev-parse resolves any reference which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, rev-parse risolve qualsiasi riferimento il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git rev-parse HEAD',
@@ -9214,7 +9444,8 @@ export default {
               italian: 'for-each-ref',
               pronunciation: '/ɡɪt fɔːr iːtʃ ref/',
               phonetic: 'GIT-FOR-EACH-REF',
-              example: 'for-each-ref iterates over refs. = for-each-ref itera sui ref.',
+              example:
+                'For power users who need maximum control, for-each-ref iterates over refs enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, for-each-ref itera sui ref abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git for-each-ref --sort=-committerdate refs/heads',
@@ -9224,7 +9455,8 @@ export default {
               italian: 'Elencare i file',
               pronunciation: '/ɡɪt el es faɪlz/',
               phonetic: 'GIT-LS-FAILS',
-              example: 'ls-files lists tracked files. = ls-files elenca i file tracciati.',
+              example:
+                'For power users who need maximum control, ls-files lists tracked files enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, ls-files elenca i file tracciati abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git ls-files',
@@ -9234,7 +9466,8 @@ export default {
               italian: 'diff-tree',
               pronunciation: '/ɡɪt dɪf triː/',
               phonetic: 'GIT-DIF-TRI',
-              example: 'diff-tree compares two trees. = diff-tree confronta due tree.',
+              example:
+                'For complex repository management, diff-tree compares two trees giving experienced developers fine-grained control. = Per la gestione avanzata del repository, diff-tree confronta due tree dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git diff-tree -r HEAD',
@@ -9244,7 +9477,8 @@ export default {
               italian: 'rev-list',
               pronunciation: '/ɡɪt rev lɪst/',
               phonetic: 'GIT-REV-LIST',
-              example: 'rev-list lists commit SHAs. = rev-list elenca SHA dei commit.',
+              example:
+                'In advanced Git scenarios, rev-list lists commit SHAs providing powerful capabilities for experienced users. = In scenari Git avanzati, rev-list elenca SHA dei commit fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git rev-list --count HEAD',
@@ -9254,7 +9488,8 @@ export default {
               italian: 'ls-remote',
               pronunciation: '/ɡɪt el es rɪˈmoʊt/',
               phonetic: 'GIT-LS-ri-MOUT',
-              example: 'ls-remote queries remote refs. = ls-remote interroga ref remoti.',
+              example:
+                'In advanced Git scenarios, ls-remote queries remote refs providing powerful capabilities for experienced users. = In scenari Git avanzati, ls-remote interroga ref remoti fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git ls-remote origin',
@@ -9264,7 +9499,8 @@ export default {
               italian: 'instaweb',
               pronunciation: '/ɡɪt ˈɪnstəweb/',
               phonetic: 'GIT IN-sta-ueb',
-              example: 'instaweb starts a local web view. = instaweb avvia una vista web locale.',
+              example:
+                'When handling edge cases in large codebases, instaweb starts a local web view which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, instaweb avvia una vista web locale il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git instaweb',
@@ -9275,7 +9511,7 @@ export default {
               pronunciation: '/ɡɪt ˈriːriːriː/',
               phonetic: 'GIT-RI-ri-ri',
               example:
-                'rerere replays conflict resolutions. = rerere riproduce risoluzioni di conflitti.',
+                'When handling edge cases in large codebases, rerere replays conflict resolutions which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, rerere riproduce risoluzioni di conflitti il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config rerere.enabled true',
@@ -9289,10 +9525,11 @@ export default {
           items: [
             {
               english: 'GIT_TRACE',
-              italian: 'GIT_TRACE / variabile di tracciamento Git',
+              italian: 'variabile di tracciamento Git (GIT_TRACE)',
               pronunciation: '/ɡɪt treɪs/',
               phonetic: 'GIT-TREIS',
-              example: 'GIT_TRACE debugs git operations. = GIT_TRACE debugga le operazioni git.',
+              example:
+                'For complex repository management, GIT_TRACE debugs git operations giving experienced developers fine-grained control. = Per la gestione avanzata del repository, GIT_TRACE debugga le operazioni git dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'GIT_TRACE=1 git fetch',
@@ -9302,7 +9539,8 @@ export default {
               italian: 'Trace performance',
               pronunciation: '/ɡɪt treɪs pərˈfɔːrməns/',
               phonetic: 'GIT-TREIS per-FOR-mens',
-              example: 'Performance trace shows timings. = Il trace performance mostra i timing.',
+              example:
+                'For power users who need maximum control, performance trace shows timings enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, il trace performance mostra i timing abilitando operazioni non possibili con i comandi base.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'GIT_TRACE_PERFORMANCE=1 git status',
@@ -9312,79 +9550,85 @@ export default {
               italian: 'File system monitor',
               pronunciation: '/ef es ˈmɒnɪtər/',
               phonetic: 'FS-MO-ni-tor',
-              example: 'fsmonitor speeds up git status. = fsmonitor velocizza git status.',
+              example:
+                'When handling edge cases in large codebases, fsmonitor speeds up git status which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, fsmonitor velocizza git status il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git config core.fsmonitor true',
             },
             {
               english: 'gitfast',
-              italian: 'gitfast / wrapper Perl per accelerare Git',
+              italian: 'wrapper Perl per accelerare Git (gitfast)',
               pronunciation: '/ɡɪt fæst/',
               phonetic: 'GIT-FAST',
               example:
-                'gitfast bash completion is faster. = il completamento bash gitfast è più veloce.',
+                'In advanced Git scenarios, gitfast bash completion is faster providing powerful capabilities for experienced users. = In scenari Git avanzati, il completamento bash gitfast è più veloce fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'gitfast',
             },
             {
               english: 'GitLens',
-              italian: 'GitLens (estensione VS Code per Git)',
+              italian: 'estensione VS Code per Git (GitLens)',
               pronunciation: '/ˈɡɪtlenz/',
               phonetic: 'GIT-lens',
-              example: 'GitLens enhances VS Code with Git. = GitLens potenzia VS Code con Git.',
+              example:
+                'For complex repository management, GitLens enhances VS Code with Git giving experienced developers fine-grained control. = Per la gestione avanzata del repository, gitLens potenzia VS Code con Git dando agli sviluppatori esperti un controllo granulare.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'GitLens',
             },
             {
               english: 'lazygit',
-              italian: 'lazygit (TUI Git)',
+              italian: 'TUI Git (lazygit)',
               pronunciation: '/ˈleɪzi ɡɪt/',
               phonetic: 'LEI-zi-GIT',
               example:
-                "lazygit is a terminal UI for Git. = lazygit è un'interfaccia terminale per Git.",
+                "In advanced Git scenarios, lazygit is a terminal UI for Git providing powerful capabilities for experienced users. = In scenari Git avanzati, lazygit è un'interfaccia terminale per Git fornendo capacita potenti per utenti esperti.",
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'lazygit',
             },
             {
               english: 'GitKraken',
-              italian: 'GitKraken (client Git grafico)',
+              italian: 'client Git grafico (GitKraken)',
               pronunciation: '/ɡɪt ˈkreɪkən/',
               phonetic: 'GIT-KREI-ken',
-              example: "GitKraken is a Git GUI app. = GitKraken è un'app GUI per Git.",
+              example:
+                "For complex repository management, GitKraken is a Git GUI app giving experienced developers fine-grained control. = Per la gestione avanzata del repository, gitKraken è un'app GUI per Git dando agli sviluppatori esperti un controllo granulare.",
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'GitKraken',
             },
             {
               english: 'tig',
-              italian: 'tig (TUI navigatore Git)',
+              italian: 'TUI navigatore Git (tig)',
               pronunciation: '/tɪɡ/',
               phonetic: 'TIG',
-              example: 'tig is a text-mode browser for Git. = tig è un browser text-mode per Git.',
+              example:
+                'In advanced Git scenarios, tig is a text-mode browser for Git providing powerful capabilities for experienced users. = In scenari Git avanzati, tig è un browser text-mode per Git fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'tig',
             },
             {
               english: 'git-imerge',
-              italian: 'git-imerge / merge incrementale',
+              italian: 'merge incrementale (git-imerge)',
               pronunciation: '/ɡɪt aɪˈmɜːrdʒ/',
               phonetic: 'GIT-AI-merg',
-              example: 'imerge does incremental merges. = imerge fa merge incrementali.',
+              example:
+                'In advanced Git scenarios, imerge does incremental merges providing powerful capabilities for experienced users. = In scenari Git avanzati, imerge fa merge incrementali fornendo capacita potenti per utenti esperti.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'git-imerge',
             },
             {
               english: 'difftastic',
-              italian: 'difftastic (diff strutturato)',
+              italian: 'diff strutturato (difftastic)',
               pronunciation: '/dɪfˈtæstɪk/',
               phonetic: 'dif-TA-stik',
-              example: 'difftastic is a syntax-aware diff. = difftastic è un diff syntax-aware.',
+              example:
+                'When handling edge cases in large codebases, difftastic is a syntax-aware diff which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, difftastic è un diff syntax-aware il che si rivela inestimabile in ambienti enterprise.',
               context: 'advanced',
               difficulty: 'advanced',
               tool: 'difftastic',
@@ -9408,11 +9652,11 @@ export default {
           items: [
             {
               english: 'Credential Helper',
-              italian: 'credential helper / gestore credenziali Git',
+              italian: 'gestore credenziali Git (credential helper)',
               pronunciation: '/krəˈdenʃəl ˈhelpər/',
               phonetic: 'kre-DEN-scial HEL-per',
               example:
-                'A credential helper caches credentials. = Un credential helper cacha le credenziali.',
+                'For power users who need maximum control, a credential helper caches credentials enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, un credential helper cacha le credenziali abilitando operazioni non possibili con i comandi base.',
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git config credential.helper store',
@@ -9423,7 +9667,7 @@ export default {
               pronunciation: '/krəˈdenʃəl ˈhelpər stɔːr/',
               phonetic: 'kre-DEN-scial HEL-per STOR',
               example:
-                'store keeps credentials in plain text. = store salva credenziali in plain text.',
+                'In choosing the right Git workflow, store keeps credentials in plain text so the process fits your release cadence. = Nella scelta del giusto flusso Git, store salva credenziali in plain text cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git config --global credential.helper store',
@@ -9435,17 +9679,18 @@ export default {
               pronunciation: '/krəˈdenʃəl ˈhelpər kæʃ/',
               phonetic: 'kre-DEN-scial HEL-per CASC',
               example:
-                'cache holds credentials in memory. = cache tiene le credenziali in memoria.',
+                'When establishing team conventions, cache holds credentials in memory promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, cache tiene le credenziali in memoria promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git config credential.helper "cache --timeout=3600"',
             },
             {
               english: 'macOS Keychain',
-              italian: 'portachiavi macOS / archivio credenziali sicuro',
+              italian: 'archivio credenziali sicuro macOS (portachiavi)',
               pronunciation: '/mæk oʊ es ˈkiːtʃeɪn/',
               phonetic: 'MAK-OS KI-cein',
-              example: 'osxkeychain helper uses Keychain. = osxkeychain helper usa Keychain.',
+              example:
+                'When establishing team conventions, osxkeychain helper uses Keychain promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, osxkeychain helper usa Keychain promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git config credential.helper osxkeychain',
@@ -9456,29 +9701,29 @@ export default {
               pronunciation: '/ˈwɪndoʊz krəˈdenʃəl ˈmænɪdʒər/',
               phonetic: 'UIN-dous kre-DEN-scial MA-na-ger',
               example:
-                'manager-core uses Windows Credential Manager. = manager-core usa Credential Manager.',
+                'For enterprise-scale projects, manager-core uses Windows Credential Manager which provides structure for teams of any size. = Per progetti su scala enterprise, manager-core usa Credential Manager il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git config credential.helper manager',
             },
             {
               english: 'libsecret',
-              italian: 'libsecret / archivio credenziali Linux',
+              italian: 'archivio credenziali Linux (libsecret)',
               pronunciation: '/lɪbˈsiːkrət/',
               phonetic: 'lib-SI-kret',
               example:
-                'libsecret integrates with GNOME Keyring. = libsecret si integra con GNOME Keyring.',
+                'For enterprise-scale projects, use libsecret to integrate with GNOME Keyring which provides structure for teams of any size. = Per progetti su scala enterprise, libsecret si integra con GNOME Keyring il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git config credential.helper libsecret',
             },
             {
               english: 'Personal Access Token',
-              italian: 'personal access token / token di accesso personale',
+              italian: 'token di accesso personale (personal access token)',
               pronunciation: '/ˈpɜːrsənəl ˈækses ˈtoʊkən/',
               phonetic: 'PER-so-nal AK-ses TO-ken',
               example:
-                'PATs replace passwords for HTTPS. = I PAT sostituiscono le password per HTTPS.',
+                'For enterprise-scale projects, PATs replace passwords for HTTPS which provides structure for teams of any size. = Per progetti su scala enterprise, i PAT sostituiscono le password per HTTPS il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'GitHub PAT',
@@ -9490,7 +9735,7 @@ export default {
               pronunciation: '/faɪn ɡreɪnd piː eɪ tiː/',
               phonetic: 'FAIN-GREIND PAT',
               example:
-                'Fine-grained PATs scope per repo. = I PAT fine-grained sono per singolo repo.',
+                'In choosing the right Git workflow, fine-grained PATs scope per repo so the process fits your release cadence. = Nella scelta del giusto flusso Git, i PAT fine-grained sono per singolo repo cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'GitHub',
@@ -9500,7 +9745,8 @@ export default {
               italian: 'Token OAuth',
               pronunciation: '/oʊ ɔːθ ˈtoʊkən/',
               phonetic: 'O-AUTH TO-ken',
-              example: 'OAuth tokens authenticate apps. = I token OAuth autenticano app.',
+              example:
+                "When planning your team's branching model, OAuth tokens authenticate apps ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, i token OAuth autenticano app assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -9509,7 +9755,8 @@ export default {
               italian: 'Login con gh',
               pronunciation: '/dʒiː eɪtʃ ɔːθ ˈlɒɡɪn/',
               phonetic: 'GH AUTH LO-gin',
-              example: 'gh auth login configures gh CLI. = gh auth login configura la CLI gh.',
+              example:
+                "When planning your team's branching model, gh auth login configures gh CLI ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, gh auth login configura la CLI gh assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               command: 'gh auth login',
@@ -9528,7 +9775,7 @@ export default {
               pronunciation: '/es es eɪtʃ kiː/',
               phonetic: 'SSH-KII',
               example:
-                'SSH keys authenticate without passwords. = Le chiavi SSH autenticano senza password.',
+                'For enterprise-scale projects, SSH keys authenticate without passwords which provides structure for teams of any size. = Per progetti su scala enterprise, le chiavi SSH autenticano senza password il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
               command: 'ssh-keygen -t ed25519',
@@ -9536,10 +9783,11 @@ export default {
             },
             {
               english: 'ed25519',
-              italian: 'ed25519 (algoritmo chiave SSH moderno)',
+              italian: 'algoritmo chiave SSH moderno (ed25519)',
               pronunciation: '/iː diː tuː faɪv faɪv ˈnaɪnˌtiːn/',
               phonetic: 'ED-25519',
-              example: 'ed25519 is modern and fast. = ed25519 è moderno e veloce.',
+              example:
+                'For enterprise-scale projects, ed25519 is modern and fast which provides structure for teams of any size. = Per progetti su scala enterprise, ed25519 è moderno e veloce il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
               command: 'ssh-keygen -t ed25519 -C "you@ex.com"',
@@ -9550,7 +9798,7 @@ export default {
               pronunciation: '/ˈpʌblɪk kiː/',
               phonetic: 'PA-blik KII',
               example:
-                'Upload your public key to GitHub. = Carica la tua chiave pubblica su GitHub.',
+                "When planning your team's branching model, upload your public key to GitHub ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, carica la tua chiave pubblica su GitHub assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               code: '~/.ssh/id_ed25519.pub',
@@ -9560,39 +9808,41 @@ export default {
               italian: 'Chiave privata',
               pronunciation: '/ˈpraɪvət kiː/',
               phonetic: 'PRAI-vet KII',
-              example: 'Never share your private key. = Non condividere mai la tua chiave privata.',
+              example:
+                'In choosing the right Git workflow, never share your private key so the process fits your release cadence. = Nella scelta del giusto flusso Git, non condividere mai la tua chiave privata cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               code: '~/.ssh/id_ed25519',
             },
             {
               english: 'ssh-agent',
-              italian: 'ssh-agent / agente di chiavi SSH',
+              italian: 'agente di chiavi SSH (ssh-agent)',
               pronunciation: '/es es eɪtʃ ˈeɪdʒənt/',
               phonetic: 'SSH-EI-gent',
-              example: 'ssh-agent caches passphrases. = ssh-agent cacha le passphrase.',
+              example:
+                "When planning your team's branching model, ssh-agent caches passphrases ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, ssh-agent cacha le passphrase assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               command: 'eval "$(ssh-agent -s)" && ssh-add',
             },
             {
               english: 'authorized_keys',
-              italian: 'authorized_keys / file delle chiavi autorizzate',
+              italian: 'file delle chiavi autorizzate (authorized_keys)',
               pronunciation: '/ˈɔːθəraɪzd kiːz/',
               phonetic: 'O-to-raizd KIIS',
               example:
-                'authorized_keys lists allowed keys. = authorized_keys elenca chiavi consentite.',
+                "When planning your team's branching model, to see allowed keys, run authorized_keys ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, authorized_keys elenca chiavi consentite assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               code: '~/.ssh/authorized_keys',
             },
             {
               english: 'Deploy Key',
-              italian: 'deploy key / chiave dedicata al deploy',
+              italian: 'chiave dedicata al deploy (deploy key)',
               pronunciation: '/dɪˈplɔɪ kiː/',
               phonetic: 'di-PLOI KII',
               example:
-                'Deploy keys grant single-repo access. = Le deploy key danno accesso a un solo repo.',
+                'In choosing the right Git workflow, deploy keys grant single-repo access so the process fits your release cadence. = Nella scelta del giusto flusso Git, le deploy key danno accesso a un solo repo cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'GitHub Deploy Keys',
@@ -9603,7 +9853,7 @@ export default {
               pronunciation: '/ˈhɑːrdweər kiː/',
               phonetic: 'HARD-uer KII',
               example:
-                'YubiKey stores SSH keys safely. = YubiKey memorizza chiavi SSH in sicurezza.',
+                'When establishing team conventions, yubiKey stores SSH keys safely promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, yubiKey memorizza chiavi SSH in sicurezza promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'YubiKey',
@@ -9611,11 +9861,11 @@ export default {
             },
             {
               english: 'Passphrase',
-              italian: 'passphrase / frase segreta',
+              italian: 'frase segreta (passphrase)',
               pronunciation: '/ˈpɑːsfreɪz/',
               phonetic: 'PAS-freiz',
               example:
-                'Encrypt private keys with a passphrase. = Cifra le chiavi private con passphrase.',
+                'In choosing the right Git workflow, encrypt private keys with a passphrase so the process fits your release cadence. = Nella scelta del giusto flusso Git, cifra le chiavi private con passphrase cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -9624,7 +9874,8 @@ export default {
               italian: 'Config host SSH',
               pronunciation: '/kənˈfɪɡ hoʊst/',
               phonetic: 'kon-FIG HOUST',
-              example: 'SSH config maps hosts to keys. = SSH config mappa host a chiavi.',
+              example:
+                'In choosing the right Git workflow, SSH config maps hosts to keys so the process fits your release cadence. = Nella scelta del giusto flusso Git, SSH config mappa host a chiavi cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               code: 'Host github.com\\n  IdentityFile ~/.ssh/id_work',
@@ -9638,22 +9889,22 @@ export default {
           items: [
             {
               english: 'Secret Scanning',
-              italian: 'secret scanning / scansione segreti nel codice',
+              italian: 'scansione segreti nel codice (secret scanning)',
               pronunciation: '/ˈsiːkrɪt ˈskænɪŋ/',
               phonetic: 'SI-krit SKAN-ing',
               example:
-                'Secret scanning detects exposed credentials. = Secret scanning rileva credenziali esposte.',
+                'When establishing team conventions, Secret Scanning detects exposed credentials promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, secret scanning rileva credenziali esposte promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'GitHub Secret Scanning',
             },
             {
               english: 'gitleaks',
-              italian: 'gitleaks (scanner segreti git)',
+              italian: 'scanner segreti git (gitleaks)',
               pronunciation: '/ˈɡɪtliːks/',
               phonetic: 'GIT-LIKS',
               example:
-                'gitleaks scans for hardcoded secrets. = gitleaks scansiona segreti hardcoded.',
+                'In choosing the right Git workflow, gitleaks scans for hardcoded secrets so the process fits your release cadence. = Nella scelta del giusto flusso Git, gitleaks scansiona segreti hardcoded cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'gitleaks',
@@ -9661,11 +9912,11 @@ export default {
             },
             {
               english: 'truffleHog',
-              italian: 'truffleHog (scanner segreti git)',
+              italian: 'scanner segreti git (truffleHog)',
               pronunciation: '/ˈtrʌflhɒɡ/',
               phonetic: 'TRA-fol-hog',
               example:
-                'truffleHog finds high-entropy strings. = truffleHog trova stringhe ad alta entropia.',
+                "When planning your team's branching model, truffleHog finds high-entropy strings ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, truffleHog trova stringhe ad alta entropia assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'trufflehog',
@@ -9673,10 +9924,11 @@ export default {
             },
             {
               english: 'detect-secrets',
-              italian: 'detect-secrets (scanner segreti Yelp)',
+              italian: 'scanner segreti Yelp (detect-secrets)',
               pronunciation: '/dɪˈtekt ˈsiːkrɪts/',
               phonetic: 'di-TEKT SI-krits',
-              example: 'detect-secrets baselines and audits. = detect-secrets fa baseline e audit.',
+              example:
+                'When establishing team conventions, detect-secrets baselines and audits promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, detect-secrets fa baseline e audit promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'detect-secrets',
@@ -9684,11 +9936,11 @@ export default {
             },
             {
               english: 'Push Protection',
-              italian: 'push protection / blocco push con segreti',
+              italian: 'blocco push con segreti (push protection)',
               pronunciation: '/pʊʃ prəˈtekʃən/',
               phonetic: 'PUSC pro-TEK-scion',
               example:
-                'Push protection blocks secret pushes. = Push protection blocca push di segreti.',
+                'When establishing team conventions, the Push Protection setting prevents secret pushes promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, push protection blocca push di segreti promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'GitHub',
@@ -9698,7 +9950,8 @@ export default {
               italian: 'File .git-credentials',
               pronunciation: '/dɒt ɡɪt krəˈdenʃəlz/',
               phonetic: 'DOT-GIT-kre-DEN-scials',
-              example: 'Never commit .git-credentials. = Non committare mai .git-credentials.',
+              example:
+                'For enterprise-scale projects, never commit .git-credentials which provides structure for teams of any size. = Per progetti su scala enterprise, non committare mai .git-credentials il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
               code: '~/.git-credentials',
@@ -9709,7 +9962,8 @@ export default {
               italian: 'File .env',
               pronunciation: '/dɒt env/',
               phonetic: 'DOT-ENV',
-              example: '.env files hold local secrets. = I file .env contengono segreti locali.',
+              example:
+                'For enterprise-scale projects, .env files hold local secrets which provides structure for teams of any size. = Per progetti su scala enterprise, i file .env contengono segreti locali il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
               code: '.env',
@@ -9720,7 +9974,8 @@ export default {
               italian: 'Rotazione token',
               pronunciation: '/ˈtoʊkən roʊˈteɪʃən/',
               phonetic: 'TO-ken ro-TEI-scion',
-              example: 'Rotate leaked tokens immediately. = Ruota subito i token leakati.',
+              example:
+                'When establishing team conventions, rotate leaked tokens immediately promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, ruota subito i token leakati promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               note: 'Considerare il token compromesso anche dopo rimozione.',
@@ -9730,17 +9985,19 @@ export default {
               italian: 'Hook pre-commit per segreti',
               pronunciation: '/priː kəˈmɪt ˈsiːkrɪt hʊk/',
               phonetic: 'PRI-ko-MIT SI-krit HUK',
-              example: "Hook prevents secret commits. = L'hook previene commit di segreti.",
+              example:
+                "When planning your team's branching model, hook prevents secret commits ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, l'hook previene commit di segreti assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               code: '- repo: https://github.com/Yelp/detect-secrets',
             },
             {
               english: 'Sealed Secrets',
-              italian: 'sealed secrets / segreti cifrati per Git',
+              italian: 'segreti cifrati per Git (sealed secrets)',
               pronunciation: '/siːld ˈsiːkrɪts/',
               phonetic: 'SIILD SI-krits',
-              example: 'Sealed Secrets encrypts for GitOps. = Sealed Secrets cifra per GitOps.',
+              example:
+                'When establishing team conventions, Sealed Secrets encrypts for GitOps promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, sealed Secrets cifra per GitOps promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'sealed-secrets',
@@ -9758,7 +10015,7 @@ export default {
               pronunciation: '/saɪnd tæɡ/',
               phonetic: 'SAIND TAG',
               example:
-                "Signed tags prove release authenticity. = I tag firmati provano l'autenticità della release.",
+                "In choosing the right Git workflow, signed tags prove release authenticity so the process fits your release cadence. = Nella scelta del giusto flusso Git, i tag firmati provano l'autenticità della release cosi il processo si adatta alla cadenza di rilascio.",
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git tag -s v1.0',
@@ -9769,7 +10026,7 @@ export default {
               pronunciation: '/brɑːntʃ prəˈtekʃən ruːlz/',
               phonetic: 'BRANC pro-TEK-scion RULS',
               example:
-                'Rules require reviews and CI passing. = Le regole richiedono review e CI passati.',
+                'In choosing the right Git workflow, rules require reviews and CI passing so the process fits your release cadence. = Nella scelta del giusto flusso Git, le regole richiedono review e CI passati cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'GitHub',
@@ -9779,7 +10036,8 @@ export default {
               italian: 'Review richieste',
               pronunciation: '/rɪˈkwaɪərd rɪˈvjuːz/',
               phonetic: 'ri-KUAIRD ri-VIUS',
-              example: 'Require at least 2 reviewers. = Richiedi almeno 2 reviewer.',
+              example:
+                'In choosing the right Git workflow, require at least 2 reviewers so the process fits your release cadence. = Nella scelta del giusto flusso Git, richiedi almeno 2 reviewer cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -9789,7 +10047,7 @@ export default {
               pronunciation: '/dɪsˈmɪs steɪl rɪˈvjuːz/',
               phonetic: 'dis-MIS STEIL ri-VIUS',
               example:
-                'New pushes invalidate old approvals. = Nuovi push invalidano vecchie approvazioni.',
+                'In choosing the right Git workflow, new pushes invalidate old approvals so the process fits your release cadence. = Nella scelta del giusto flusso Git, nuovi push invalidano vecchie approvazioni cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -9798,7 +10056,8 @@ export default {
               italian: 'Status check richiesti',
               pronunciation: '/ˈsteɪtəs tʃek rɪˈkwaɪərd/',
               phonetic: 'STEI-tas CEK ri-KUAIRD',
-              example: 'CI must pass before merge. = La CI deve passare prima del merge.',
+              example:
+                'When establishing team conventions, CI must pass before merge promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, la CI deve passare prima del merge promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -9807,7 +10066,8 @@ export default {
               italian: 'Includere admin',
               pronunciation: '/ɪnˈkluːd ədˈmɪnɪstreɪtərz/',
               phonetic: 'in-KLUUD ad-MI-ni-strei-ters',
-              example: 'Apply rules to admins too. = Applica le regole anche agli admin.',
+              example:
+                'In choosing the right Git workflow, apply rules to admins too so the process fits your release cadence. = Nella scelta del giusto flusso Git, applica le regole anche agli admin cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -9816,7 +10076,8 @@ export default {
               italian: 'Restringere push',
               pronunciation: '/rɪˈstrɪkt pʊʃ/',
               phonetic: 'ri-STRIKT PUSC',
-              example: 'Limit who can push to main. = Limita chi può pushare su main.',
+              example:
+                'In choosing the right Git workflow, limit who can push to main so the process fits your release cadence. = Nella scelta del giusto flusso Git, limita chi può pushare su main cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -9825,17 +10086,18 @@ export default {
               italian: '2FA richiesta',
               pronunciation: '/tuː ef eɪ rɪˈkwaɪərd/',
               phonetic: 'TUF-EI ri-KUAIRD',
-              example: "Require 2FA for org members. = Richiedi 2FA per i membri dell'org.",
+              example:
+                "In choosing the right Git workflow, require 2FA for org members so the process fits your release cadence. = Nella scelta del giusto flusso Git, richiedi 2FA per i membri dell'org cosi il processo si adatta alla cadenza di rilascio.",
               context: 'strategy',
               difficulty: 'advanced',
             },
             {
               english: 'Dependabot',
-              italian: 'Dependabot (aggiornamento automatico dipendenze)',
+              italian: 'aggiornamento automatico dipendenze (Dependabot)',
               pronunciation: '/dɪˈpendəbɒt/',
               phonetic: 'di-PEN-da-bot',
               example:
-                'Dependabot patches vulnerable deps. = Dependabot patcha dipendenze vulnerabili.',
+                'In choosing the right Git workflow, Dependabot patches vulnerable deps so the process fits your release cadence. = Nella scelta del giusto flusso Git, dependabot patcha dipendenze vulnerabili cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'Dependabot',
@@ -9846,7 +10108,7 @@ export default {
               pronunciation: '/vʌlnərəˈbɪlɪti əˈlɜːrt/',
               phonetic: 'val-ne-ra-BI-li-ti a-LERT',
               example:
-                'GitHub alerts on vulnerable deps. = GitHub avvisa su dipendenze vulnerabili.',
+                "When planning your team's branching model, gitHub alerts on vulnerable deps ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, gitHub avvisa su dipendenze vulnerabili assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'GitHub Security',
@@ -9869,10 +10131,11 @@ export default {
           items: [
             {
               english: 'GitHub',
-              italian: 'GitHub (piattaforma di hosting Git)',
+              italian: 'piattaforma di hosting Git (GitHub)',
               pronunciation: '/ˈɡɪthʌb/',
               phonetic: 'GIT-hab',
-              example: 'GitHub is the largest Git host. = GitHub è il più grande host Git.',
+              example:
+                'When establishing team conventions, GitHub is the largest Git host promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, gitHub è il più grande host Git promuovendo la consistenza tra tutti i contributori.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitHub',
@@ -9883,7 +10146,8 @@ export default {
               italian: 'CLI gh',
               pronunciation: '/dʒiː eɪtʃ siː el aɪ/',
               phonetic: 'GH-CLI',
-              example: 'gh manages GitHub from terminal. = gh gestisce GitHub da terminale.',
+              example:
+                'As part of your developer toolkit, gh manages GitHub from terminal saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, gh gestisce GitHub da terminale risparmiando tempo sulle attivita Git ripetitive.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'gh',
@@ -9894,78 +10158,85 @@ export default {
               italian: 'Issue GitHub',
               pronunciation: '/ˈɡɪthʌb ˈɪʃuːz/',
               phonetic: 'GIT-hab I-sciuz',
-              example: 'Issues track bugs and features. = Le issue tracciano bug e feature.',
+              example:
+                'As part of your developer toolkit, issues track bugs and features saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, le issue tracciano bug e feature risparmiando tempo sulle attivita Git ripetitive.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'gh issue create',
             },
             {
               english: 'GitHub Discussions',
-              italian: 'GitHub Discussions / forum per repository',
+              italian: 'forum per repository (GitHub Discussions)',
               pronunciation: '/ˈɡɪthʌb dɪˈskʌʃənz/',
               phonetic: 'GIT-hab dis-KAS-scions',
-              example: 'Discussions host Q&A and ideas. = Discussions ospita Q&A e idee.',
+              example:
+                "For a more visual Git experience, discussions host Q&A and ideas making complex operations easier to understand. = Per un'esperienza Git piu visuale, discussions ospita Q&A e idee rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitHub Discussions',
             },
             {
               english: 'GitHub Projects',
-              italian: 'GitHub Projects / pannelli di gestione lavoro',
+              italian: 'pannelli di gestione lavoro (GitHub Projects)',
               pronunciation: '/ˈɡɪthʌb ˈprɒdʒekts/',
               phonetic: 'GIT-hab PRO-gekts',
-              example: 'Projects board manages tasks. = La board Projects gestisce task.',
+              example:
+                "When choosing tools for your Git workflow, projects board manages tasks which enhances the standard Git experience. = Quando si scelgono strumenti per il flusso Git, la board Projects gestisce task il che migliora l'esperienza Git standard.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitHub Projects',
             },
             {
               english: 'GitHub Codespaces',
-              italian: 'GitHub Codespaces (ambienti dev cloud)',
+              italian: 'ambienti dev cloud (GitHub Codespaces)',
               pronunciation: '/ˈɡɪthʌb ˈkoʊdspeɪsɪz/',
               phonetic: 'GIT-hab KOUD-speis',
               example:
-                'Codespaces provides cloud dev envs. = Codespaces fornisce dev env in cloud.',
+                'As part of your developer toolkit, codespaces provides cloud dev envs saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, codespaces fornisce dev env in cloud risparmiando tempo sulle attivita Git ripetitive.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Codespaces',
             },
             {
               english: 'GitHub Pages',
-              italian: 'GitHub Pages (hosting siti statici)',
+              italian: 'hosting siti statici (GitHub Pages)',
               pronunciation: '/ˈɡɪthʌb peɪdʒɪz/',
               phonetic: 'GIT-hab PEI-gis',
-              example: 'Pages hosts static sites. = Pages ospita siti statici.',
+              example:
+                "When choosing tools for your Git workflow, pages hosts static sites which enhances the standard Git experience. = Quando si scelgono strumenti per il flusso Git, pages ospita siti statici il che migliora l'esperienza Git standard.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitHub Pages',
             },
             {
               english: 'GitHub Copilot',
-              italian: 'GitHub Copilot (assistente AI di codice)',
+              italian: 'assistente AI di codice (GitHub Copilot)',
               pronunciation: '/ˈɡɪthʌb ˈkoʊpaɪlət/',
               phonetic: 'GIT-hab KOU-pai-lot',
-              example: 'Copilot is AI pair programming. = Copilot è pair programming AI.',
+              example:
+                "When choosing tools for your Git workflow, copilot is AI pair programming which enhances the standard Git experience. = Quando si scelgono strumenti per il flusso Git, copilot è pair programming AI il che migliora l'esperienza Git standard.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Copilot',
             },
             {
               english: 'GitHub Sponsors',
-              italian: 'GitHub Sponsors / programma di finanziamento',
+              italian: 'programma di finanziamento (GitHub Sponsors)',
               pronunciation: '/ˈɡɪthʌb ˈspɒnsərz/',
               phonetic: 'GIT-hab SPON-sors',
-              example: 'Sponsors funds open source. = Sponsors finanzia open source.',
+              example:
+                "For a more visual Git experience, sponsors funds open source making complex operations easier to understand. = Per un'esperienza Git piu visuale, sponsors finanzia open source rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitHub Sponsors',
             },
             {
               english: 'GitHub Enterprise',
-              italian: 'GitHub Enterprise (versione self-hosted)',
+              italian: 'versione self-hosted (GitHub Enterprise)',
               pronunciation: '/ˈɡɪthʌb ˈentərpraɪz/',
               phonetic: 'GIT-hab EN-ter-praiz',
-              example: 'Enterprise is on-premise GitHub. = Enterprise è GitHub on-premise.',
+              example:
+                "For a more visual Git experience, enterprise is on-premise GitHub making complex operations easier to understand. = Per un'esperienza Git piu visuale, enterprise è GitHub on-premise rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitHub Enterprise',
@@ -9979,11 +10250,11 @@ export default {
           items: [
             {
               english: 'GitLab',
-              italian: 'GitLab (piattaforma DevOps integrata)',
+              italian: 'piattaforma DevOps integrata (GitLab)',
               pronunciation: '/ˈɡɪtlæb/',
               phonetic: 'GIT-lab',
               example:
-                'GitLab is a complete DevOps platform. = GitLab è una piattaforma DevOps completa.',
+                'As part of your developer toolkit, GitLab is a complete DevOps platform saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, gitLab è una piattaforma DevOps completa risparmiando tempo sulle attivita Git ripetitive.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitLab',
@@ -9994,7 +10265,8 @@ export default {
               italian: 'GitLab Community Edition',
               pronunciation: '/ˈɡɪtlæb siː iː/',
               phonetic: 'GIT-lab CE',
-              example: "CE is the open source edition. = CE è l'edizione open source.",
+              example:
+                "As part of your developer toolkit, CE is the open source edition saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, CE è l'edizione open source risparmiando tempo sulle attivita Git ripetitive.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitLab CE',
@@ -10004,7 +10276,8 @@ export default {
               italian: 'GitLab Enterprise Edition',
               pronunciation: '/ˈɡɪtlæb iː iː/',
               phonetic: 'GIT-lab EE',
-              example: 'EE adds enterprise features. = EE aggiunge feature enterprise.',
+              example:
+                "When choosing tools for your Git workflow, EE adds enterprise features which enhances the standard Git experience. = Quando si scelgono strumenti per il flusso Git, EE aggiunge feature enterprise il che migliora l'esperienza Git standard.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitLab EE',
@@ -10014,7 +10287,8 @@ export default {
               italian: 'CLI glab',
               pronunciation: '/dʒiː læb siː el aɪ/',
               phonetic: 'GLAB CLI',
-              example: 'glab manages GitLab from terminal. = glab gestisce GitLab da terminale.',
+              example:
+                "For a more visual Git experience, glab manages GitLab from terminal making complex operations easier to understand. = Per un'esperienza Git piu visuale, glab gestisce GitLab da terminale rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'glab',
@@ -10022,10 +10296,11 @@ export default {
             },
             {
               english: 'Merge Request',
-              italian: 'Merge Request (MR)',
+              italian: 'MR (Merge Request)',
               pronunciation: '/mɜːrdʒ rɪˈkwest/',
               phonetic: 'MERG ri-KUEST',
-              example: "MR is GitLab's name for PR. = MR è il nome GitLab per PR.",
+              example:
+                "As part of your developer toolkit, MR is GitLab's name for PR saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, MR è il nome GitLab per PR risparmiando tempo sulle attivita Git ripetitive.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10034,17 +10309,18 @@ export default {
               italian: 'Bacheche di issue',
               pronunciation: '/ˈɪʃuː bɔːrdz/',
               phonetic: 'I-sciu BORDS',
-              example: 'Issue boards visualize work. = Le issue board visualizzano il lavoro.',
+              example:
+                'To improve your Git productivity, Issue Boards visualize work integrating seamlessly with your development environment. = Per migliorare la produttivita con Git, le issue board visualizzano il lavoro integrandosi perfettamente con il tuo ambiente di sviluppo.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Container Registry',
-              italian: 'container registry / registro immagini container',
+              italian: 'registro immagini container (container registry)',
               pronunciation: '/kənˈteɪnər ˈredʒɪstri/',
               phonetic: 'kon-TEI-ner RE-gi-stri',
               example:
-                'GitLab includes a container registry. = GitLab include un container registry.',
+                'To improve your Git productivity, gitLab includes a container registry integrating seamlessly with your development environment. = Per migliorare la produttivita con Git, gitLab include un container registry integrandosi perfettamente con il tuo ambiente di sviluppo.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitLab Registry',
@@ -10054,27 +10330,30 @@ export default {
               italian: 'Pages su GitLab',
               pronunciation: '/peɪdʒɪz ɒn ˈɡɪtlæb/',
               phonetic: 'PEI-gis on GIT-lab',
-              example: 'GitLab Pages mirrors GitHub Pages. = GitLab Pages è simile a GitHub Pages.',
+              example:
+                'To improve your Git productivity, gitLab Pages mirrors GitHub Pages integrating seamlessly with your development environment. = Per migliorare la produttivita con Git, gitLab Pages è simile a GitHub Pages integrandosi perfettamente con il tuo ambiente di sviluppo.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitLab Pages',
             },
             {
               english: 'GitLab Duo',
-              italian: 'GitLab Duo (assistente AI di GitLab)',
+              italian: 'assistente AI di GitLab (GitLab Duo)',
               pronunciation: '/ˈɡɪtlæb ˈduːoʊ/',
               phonetic: 'GIT-lab DU-o',
-              example: "Duo is GitLab's AI assistant. = Duo è l'assistente AI di GitLab.",
+              example:
+                "When choosing tools for your Git workflow, duo is GitLab's AI assistant which enhances the standard Git experience. = Quando si scelgono strumenti per il flusso Git, duo è l'assistente AI di GitLab il che migliora l'esperienza Git standard.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitLab Duo',
             },
             {
               english: 'Self-managed',
-              italian: 'self-managed / installazione gestita in proprio',
+              italian: 'installazione gestita in proprio (self-managed)',
               pronunciation: '/self ˈmænɪdʒd/',
               phonetic: 'SELF MA-nigd',
-              example: 'Self-managed runs on your infra. = Self-managed gira sulla tua infra.',
+              example:
+                "For a more visual Git experience, use Self-managed to run on your infra making complex operations easier to understand. = Per un'esperienza Git piu visuale, self-managed gira sulla tua infra rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10087,10 +10366,11 @@ export default {
           items: [
             {
               english: 'Bitbucket',
-              italian: 'Bitbucket (piattaforma Atlassian Git)',
+              italian: 'piattaforma Atlassian Git (Bitbucket)',
               pronunciation: '/ˈbɪtbʌkɪt/',
               phonetic: 'BIT-ba-kit',
-              example: 'Bitbucket is by Atlassian. = Bitbucket è di Atlassian.',
+              example:
+                'As part of your developer toolkit, Bitbucket is by Atlassian saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, bitbucket è di Atlassian risparmiando tempo sulle attivita Git ripetitive.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Bitbucket',
@@ -10098,21 +10378,22 @@ export default {
             },
             {
               english: 'Bitbucket Pipelines',
-              italian: 'Bitbucket Pipelines (CI di Bitbucket)',
+              italian: 'CI di Bitbucket (Bitbucket Pipelines)',
               pronunciation: '/ˈbɪtbʌkɪt ˈpaɪplaɪnz/',
               phonetic: 'BIT-ba-kit PAIP-lains',
-              example: 'Pipelines is Bitbucket CI. = Pipelines è la CI di Bitbucket.',
+              example:
+                'To improve your Git productivity, pipelines is Bitbucket CI integrating seamlessly with your development environment. = Per migliorare la produttivita con Git, pipelines è la CI di Bitbucket integrandosi perfettamente con il tuo ambiente di sviluppo.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Bitbucket Pipelines',
             },
             {
               english: 'Gitea',
-              italian: 'Gitea (forge Git self-hosted leggero)',
+              italian: 'forge Git self-hosted leggero (Gitea)',
               pronunciation: '/ˈɡɪtiə/',
               phonetic: 'GHI-te-a',
               example:
-                'Gitea is a lightweight self-hosted host. = Gitea è un host self-hosted leggero.',
+                "For a more visual Git experience, Gitea is a lightweight self-hosted host making complex operations easier to understand. = Per un'esperienza Git piu visuale, gitea è un host self-hosted leggero rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Gitea',
@@ -10120,11 +10401,11 @@ export default {
             },
             {
               english: 'Forgejo',
-              italian: 'Forgejo (fork community-driven di Gitea)',
+              italian: 'fork community-driven di Gitea (Forgejo)',
               pronunciation: '/fɔːrˈdʒeɪoʊ/',
               phonetic: 'for-GE-io',
               example:
-                'Forgejo is a Gitea fork by Codeberg. = Forgejo è un fork di Gitea di Codeberg.',
+                'To improve your Git productivity, Forgejo is a Gitea fork by Codeberg integrating seamlessly with your development environment. = Per migliorare la produttivita con Git, forgejo è un fork di Gitea di Codeberg integrandosi perfettamente con il tuo ambiente di sviluppo.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Forgejo',
@@ -10132,41 +10413,44 @@ export default {
             },
             {
               english: 'Codeberg',
-              italian: 'Codeberg (forge Git no-profit)',
+              italian: 'forge Git no-profit (Codeberg)',
               pronunciation: '/ˈkoʊdbɜːrɡ/',
               phonetic: 'KOUD-berg',
-              example: "Codeberg is a Forgejo instance. = Codeberg è un'istanza Forgejo.",
+              example:
+                "As part of your developer toolkit, Codeberg is a Forgejo instance saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, codeberg è un'istanza Forgejo risparmiando tempo sulle attivita Git ripetitive.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Codeberg',
             },
             {
               english: 'sourcehut',
-              italian: 'sourcehut (forge Git minimalista)',
+              italian: 'forge Git minimalista (sourcehut)',
               pronunciation: '/sɔːrs hʌt/',
               phonetic: 'SORS-HAT',
               example:
-                'sourcehut is minimalist and email-based. = sourcehut è minimalista e basato su email.',
+                'To improve your Git productivity, sourcehut is minimalist and email-based integrating seamlessly with your development environment. = Per migliorare la produttivita con Git, sourcehut è minimalista e basato su email integrandosi perfettamente con il tuo ambiente di sviluppo.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'sourcehut',
             },
             {
               english: 'Azure DevOps',
-              italian: 'Azure DevOps (suite DevOps Microsoft)',
+              italian: 'suite DevOps Microsoft (Azure DevOps)',
               pronunciation: '/ˈæʒər ˈdevɒps/',
               phonetic: 'AZUR DEV-ops',
-              example: 'Azure DevOps hosts Git repos too. = Azure DevOps ospita anche repo Git.',
+              example:
+                "For a more visual Git experience, Azure DevOps hosts Git repos too making complex operations easier to understand. = Per un'esperienza Git piu visuale, azure DevOps ospita anche repo Git rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Azure DevOps',
             },
             {
               english: 'AWS CodeCommit',
-              italian: 'AWS CodeCommit (hosting Git AWS)',
+              italian: 'hosting Git AWS (AWS CodeCommit)',
               pronunciation: '/eɪ dʌbəljuː es koʊd kəˈmɪt/',
               phonetic: 'A-W-S KOUD-ko-MIT',
-              example: "CodeCommit is AWS's Git host. = CodeCommit è l'host Git di AWS.",
+              example:
+                "When choosing tools for your Git workflow, codeCommit is AWS's Git host which enhances the standard Git experience. = Quando si scelgono strumenti per il flusso Git, codeCommit è l'host Git di AWS il che migliora l'esperienza Git standard.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'AWS CodeCommit',
@@ -10176,17 +10460,19 @@ export default {
               italian: 'Google Cloud Source',
               pronunciation: '/klaʊd sɔːrs/',
               phonetic: 'KLAUD SORS',
-              example: 'Cloud Source mirrors GitHub repos. = Cloud Source replica repo GitHub.',
+              example:
+                "For a more visual Git experience, use Cloud Source to copy GitHub repos making complex operations easier to understand. = Per un'esperienza Git piu visuale, cloud Source replica repo GitHub rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Google Cloud Source',
             },
             {
               english: 'Self-hosting',
-              italian: 'self-hosting / hosting in proprio',
+              italian: 'hosting in proprio (self-hosting)',
               pronunciation: '/self ˈhoʊstɪŋ/',
               phonetic: 'SELF HOU-sting',
-              example: 'Self-hosting gives full control. = Self-hosting dà controllo completo.',
+              example:
+                'As part of your developer toolkit, use Self-hosting to get full control saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, self-hosting dà controllo completo risparmiando tempo sulle attivita Git ripetitive.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10203,7 +10489,7 @@ export default {
               pronunciation: '/ˈpraɪsɪŋ/',
               phonetic: 'PRAI-sing',
               example:
-                'GitHub free for unlimited public repos. = GitHub gratis per repo pubblici illimitati.',
+                "For a more visual Git experience, gitHub free for unlimited public repos making complex operations easier to understand. = Per un'esperienza Git piu visuale, gitHub gratis per repo pubblici illimitati rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10213,7 +10499,7 @@ export default {
               pronunciation: '/friː tɪər/',
               phonetic: 'FRII TIER',
               example:
-                'Free tiers vary across platforms. = I tier gratuiti variano tra piattaforme.',
+                "For a more visual Git experience, free tiers vary across platforms making complex operations easier to understand. = Per un'esperienza Git piu visuale, i tier gratuiti variano tra piattaforme rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10222,7 +10508,8 @@ export default {
               italian: 'Minuti CI',
               pronunciation: '/siː aɪ ˈmɪnɪts/',
               phonetic: 'CI MI-nits',
-              example: 'Each platform allots CI minutes. = Ogni piattaforma assegna minuti CI.',
+              example:
+                'As part of your developer toolkit, each platform allots CI minutes saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, ogni piattaforma assegna minuti CI risparmiando tempo sulle attivita Git ripetitive.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10231,7 +10518,8 @@ export default {
               italian: 'Limite storage',
               pronunciation: '/ˈstɔːrɪdʒ ˈlɪmɪt/',
               phonetic: 'STO-rig LI-mit',
-              example: 'GitHub limits free LFS to 1 GB. = GitHub limita LFS gratuito a 1 GB.',
+              example:
+                "For a more visual Git experience, gitHub limits free LFS to 1 GB making complex operations easier to understand. = Per un'esperienza Git piu visuale, gitHub limita LFS gratuito a 1 GB rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10240,28 +10528,30 @@ export default {
               italian: 'Migrazione',
               pronunciation: '/maɪˈɡreɪʃən/',
               phonetic: 'mi-gra-ZIO-ne',
-              example: 'Migrate repos with import tools. = Migra repo con tool di import.',
+              example:
+                "For a more visual Git experience, migrate repos with import tools making complex operations easier to understand. = Per un'esperienza Git piu visuale, migra repo con tool di import rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitHub Importer',
             },
             {
               english: 'Mirroring',
-              italian: 'mirroring / replica del repository',
+              italian: 'replica del repository (mirroring)',
               pronunciation: '/ˈmɪrərɪŋ/',
               phonetic: 'MIR-ro-ring',
-              example: 'Mirror repos across platforms. = Replica repo tra piattaforme.',
+              example:
+                "When choosing tools for your Git workflow, mirror repos across platforms which enhances the standard Git experience. = Quando si scelgono strumenti per il flusso Git, replica repo tra piattaforme il che migliora l'esperienza Git standard.",
               context: 'tools',
               difficulty: 'advanced',
               command: 'git push --mirror <other-url>',
             },
             {
               english: 'Vendor Lock-in',
-              italian: 'vendor lock-in / blocco da fornitore',
+              italian: 'blocco da fornitore (vendor lock-in)',
               pronunciation: '/ˈvendər lɒk ɪn/',
               phonetic: 'VEN-der LOK-IN',
               example:
-                'Vendor lock-in limits flexibility. = Il vendor lock-in limita la flessibilità.',
+                "When choosing tools for your Git workflow, Vendor Lock-in limits flexibility which enhances the standard Git experience. = Quando si scelgono strumenti per il flusso Git, il vendor lock-in limita la flessibilità il che migliora l'esperienza Git standard.",
               context: 'tools',
               difficulty: 'advanced',
               note: 'Issue, PR e CI specifici di piattaforma.',
@@ -10271,16 +10561,18 @@ export default {
               italian: 'Hosting open source',
               pronunciation: '/ˈoʊpən sɔːrs ˈhoʊstɪŋ/',
               phonetic: 'OU-pen SORS HOU-sting',
-              example: 'Most platforms are free for OSS. = Quasi tutte sono gratis per OSS.',
+              example:
+                "When choosing tools for your Git workflow, most platforms are free for OSS which enhances the standard Git experience. = Quando si scelgono strumenti per il flusso Git, quasi tutte sono gratis per OSS il che migliora l'esperienza Git standard.",
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Compliance',
-              italian: 'compliance / conformità normativa',
+              italian: 'conformita normativa (compliance)',
               pronunciation: '/kəmˈplaɪəns/',
               phonetic: 'kom-PLAI-ens',
-              example: 'Self-hosted helps with compliance. = Self-hosted aiuta la compliance.',
+              example:
+                'As part of your developer toolkit, self-hosted helps with compliance saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, self-hosted aiuta la compliance risparmiando tempo sulle attivita Git ripetitive.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10289,7 +10581,8 @@ export default {
               italian: 'Limiti API',
               pronunciation: '/eɪ piː aɪ ˈlɪmɪts/',
               phonetic: 'A-P-I LI-mits',
-              example: 'GitHub has 5000/hour API limits. = GitHub ha limiti API di 5000/ora.',
+              example:
+                "For a more visual Git experience, gitHub has 5000/hour API limits making complex operations easier to understand. = Per un'esperienza Git piu visuale, gitHub ha limiti API di 5000/ora rendendo le operazioni complesse piu facili da capire.",
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10314,7 +10607,8 @@ export default {
               italian: 'Script di hook',
               pronunciation: '/hʊk skrɪpt/',
               phonetic: 'HUK SKRIPT',
-              example: 'Hook scripts run on Git events. = Gli script di hook girano su eventi Git.',
+              example:
+                'To improve your Git productivity, hook scripts run on Git events integrating seamlessly with your development environment. = Per migliorare la produttivita con Git, gli script di hook girano su eventi Git integrandosi perfettamente con il tuo ambiente di sviluppo.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '#!/bin/sh\\nnpm test',
@@ -10325,7 +10619,7 @@ export default {
               pronunciation: '/ʃeərd hʊk/',
               phonetic: 'SCERD HUK',
               example:
-                'Share hooks via husky or pre-commit. = Condividi hook via husky o pre-commit.',
+                'For reliable software delivery, share hooks via husky or pre-commit so code is tested and deployed consistently. = Per una consegna software affidabile, condividi hook via husky o pre-commit cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'husky',
@@ -10336,7 +10630,7 @@ export default {
               pronunciation: '/kɔːr hʊks pæθ/',
               phonetic: 'KOR HUKS-path',
               example:
-                'core.hooksPath sets a custom hook directory. = core.hooksPath imposta una cartella hook custom.',
+                'For reliable software delivery, core.hooksPath sets a custom hook directory so code is tested and deployed consistently. = Per una consegna software affidabile, core.hooksPath imposta una cartella hook custom cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'git config core.hooksPath .githooks',
@@ -10346,7 +10640,8 @@ export default {
               italian: 'Hook post-receive',
               pronunciation: '/poʊst rɪˈsiːv hʊk/',
               phonetic: 'POUST ri-SIV HUK',
-              example: 'post-receive runs on the server. = post-receive gira sul server.',
+              example:
+                'When automating your deployment process, post-receive runs on the server reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, post-receive gira sul server riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'while read old new ref; do ... done',
@@ -10356,7 +10651,8 @@ export default {
               italian: 'Hook pre-receive',
               pronunciation: '/priː rɪˈsiːv hʊk/',
               phonetic: 'PRI-ri-SIV HUK',
-              example: 'pre-receive can reject pushes. = pre-receive può rifiutare push.',
+              example:
+                'For reliable software delivery, pre-receive can reject pushes so code is tested and deployed consistently. = Per una consegna software affidabile, pre-receive può rifiutare push cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -10365,7 +10661,8 @@ export default {
               italian: 'Hook update',
               pronunciation: '/ʌpˈdeɪt hʊk/',
               phonetic: 'ap-DEIT HUK',
-              example: 'update runs per-ref on the server. = update gira per-ref sul server.',
+              example:
+                'For reliable software delivery, update runs per-ref on the server so code is tested and deployed consistently. = Per una consegna software affidabile, update gira per-ref sul server cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
@@ -10374,7 +10671,8 @@ export default {
               italian: 'Hook di auto-deploy',
               pronunciation: '/ˈɔːtoʊ dɪˈplɔɪ hʊk/',
               phonetic: 'AU-to-di-PLOI HUK',
-              example: 'Hook deploys on push to main. = Hook deploya su push a main.',
+              example:
+                'For reliable software delivery, hook deploys on push to main so code is tested and deployed consistently. = Per una consegna software affidabile, hook deploya su push a main cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'if [ "$ref" = "refs/heads/main" ]; then deploy; fi',
@@ -10384,7 +10682,8 @@ export default {
               italian: 'Permessi hook',
               pronunciation: '/hʊk pərˈmɪʃənz/',
               phonetic: 'HUK per-MI-scions',
-              example: 'Hooks must be executable. = Gli hook devono essere eseguibili.',
+              example:
+                'When automating your deployment process, hooks must be executable reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, gli hook devono essere eseguibili riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'chmod +x .git/hooks/pre-commit',
@@ -10394,7 +10693,8 @@ export default {
               italian: 'Saltare verifiche',
               pronunciation: '/skɪp verɪfɪˈkeɪʃən/',
               phonetic: 'SKIP ve-ri-fi-KEI-scion',
-              example: 'Bypass hooks with --no-verify. = Bypassa gli hook con --no-verify.',
+              example:
+                'In a continuous integration pipeline, bypass hooks with --no-verify automating quality checks on every commit. = In una pipeline di integrazione continua, bypassa gli hook con --no-verify automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'git push --no-verify',
@@ -10405,7 +10705,7 @@ export default {
               pronunciation: '/hʊk ˈlaɪbrəri/',
               phonetic: 'HUK LAI-bra-ri',
               example:
-                'pre-commit registry has many hooks. = Il registry di pre-commit ha molti hook.',
+                'For reliable software delivery, pre-commit registry has many hooks so code is tested and deployed consistently. = Per una consegna software affidabile, il registry di pre-commit ha molti hook cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'pre-commit',
@@ -10419,11 +10719,11 @@ export default {
           items: [
             {
               english: 'Dependabot',
-              italian: 'Dependabot (aggiornamento automatico dipendenze)',
+              italian: 'aggiornamento automatico dipendenze (Dependabot)',
               pronunciation: '/dɪˈpendəbɒt/',
               phonetic: 'di-PEN-da-bot',
               example:
-                'Dependabot opens dependency updates. = Dependabot apre aggiornamenti di dipendenze.',
+                'For reliable software delivery, use Dependabot to open dependency updates so code is tested and deployed consistently. = Per una consegna software affidabile, dependabot apre aggiornamenti di dipendenze cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Dependabot',
@@ -10431,11 +10731,11 @@ export default {
             },
             {
               english: 'Renovate',
-              italian: 'Renovate (aggiornamento dipendenze configurabile)',
+              italian: 'aggiornamento dipendenze configurabile (Renovate)',
               pronunciation: '/ˈrenəveɪt/',
               phonetic: 'RE-no-veit',
               example:
-                'Renovate is more configurable than Dependabot. = Renovate è più configurabile di Dependabot.',
+                'In a continuous integration pipeline, Renovate is more configurable than Dependabot automating quality checks on every commit. = In una pipeline di integrazione continua, renovate è più configurabile di Dependabot automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Renovate',
@@ -10443,11 +10743,11 @@ export default {
             },
             {
               english: 'Greenkeeper',
-              italian: 'Greenkeeper (legacy)',
+              italian: 'legacy (Greenkeeper)',
               pronunciation: '/ˈɡriːnkiːpər/',
               phonetic: 'GRIN-ki-per',
               example:
-                "Greenkeeper was the original (deprecated). = Greenkeeper era l'originale (deprecato).",
+                "When automating your deployment process, Greenkeeper was the original (deprecated) reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, greenkeeper era l'originale (deprecato) riducendo gli errori manuali e accelerando la consegna.",
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Greenkeeper',
@@ -10455,21 +10755,22 @@ export default {
             },
             {
               english: 'Mergify',
-              italian: 'Mergify (automazione merge PR)',
+              italian: 'automazione merge PR (Mergify)',
               pronunciation: '/ˈmɜːrdʒɪfaɪ/',
               phonetic: 'MER-gi-fai',
               example:
-                'Mergify auto-merges PRs by rules. = Mergify mergea automaticamente PR per regole.',
+                'When automating your deployment process, Mergify auto-merges PRs by rules reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, mergify mergea automaticamente PR per regole riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Mergify',
             },
             {
               english: 'Stale Bot',
-              italian: 'Stale Bot / bot che chiude issue inattive',
+              italian: 'bot che chiude issue inattive (Stale Bot)',
               pronunciation: '/steɪl bɒt/',
               phonetic: 'STEIL BOT',
-              example: 'Stale closes inactive issues. = Stale chiude issue inattive.',
+              example:
+                'In a continuous integration pipeline, stale closes inactive issues automating quality checks on every commit. = In una pipeline di integrazione continua, stale chiude issue inattive automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'stale',
@@ -10477,21 +10778,22 @@ export default {
             },
             {
               english: 'Probot',
-              italian: 'Probot (framework bot GitHub)',
+              italian: 'framework bot GitHub (Probot)',
               pronunciation: '/ˈproʊbɒt/',
               phonetic: 'PRO-bot',
               example:
-                'Probot framework builds GitHub bots. = Probot è un framework per costruire bot GitHub.',
+                'For reliable software delivery, Probot framework builds GitHub bots so code is tested and deployed consistently. = Per una consegna software affidabile, probot è un framework per costruire bot GitHub cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Probot',
             },
             {
               english: 'CodeQL',
-              italian: 'CodeQL (analisi statica semantica)',
+              italian: 'analisi statica semantica (CodeQL)',
               pronunciation: '/koʊd kjuː el/',
               phonetic: 'KOUD-Q-L',
-              example: 'CodeQL scans for vulnerabilities. = CodeQL scansiona vulnerabilità.',
+              example:
+                'In a continuous integration pipeline, CodeQL scans for vulnerabilities automating quality checks on every commit. = In una pipeline di integrazione continua, codeQL scansiona vulnerabilità automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'CodeQL',
@@ -10501,7 +10803,8 @@ export default {
               italian: 'Bot Snyk',
               pronunciation: '/snɪk bɒt/',
               phonetic: 'SNAIK BOT',
-              example: 'Snyk opens fix PRs for vulns. = Snyk apre PR di fix per vulnerabilità.',
+              example:
+                'In a continuous integration pipeline, snyk opens fix PRs for vulns automating quality checks on every commit. = In una pipeline di integrazione continua, snyk apre PR di fix per vulnerabilità automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Snyk',
@@ -10512,18 +10815,18 @@ export default {
               pronunciation: '/kənˈvenʃənəl kəˈmɪt bɒt/',
               phonetic: 'kon-VEN-scio-nol KO-mit BOT',
               example:
-                'Bots check commit conventions. = I bot controllano le convenzioni dei commit.',
+                'For reliable software delivery, bots check commit conventions so code is tested and deployed consistently. = Per una consegna software affidabile, i bot controllano le convenzioni dei commit cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'commitlint-bot',
             },
             {
               english: 'GitHub App',
-              italian: 'GitHub App / applicazione integrata GitHub',
+              italian: 'applicazione integrata GitHub (GitHub App)',
               pronunciation: '/ˈɡɪthʌb æp/',
               phonetic: 'GIT-hab AP',
               example:
-                "GitHub Apps integrate with the API. = Le GitHub App si integrano con l'API.",
+                "In a continuous integration pipeline, gitHub Apps integrate with the API automating quality checks on every commit. = In una pipeline di integrazione continua, le GitHub App si integrano con l'API automatizzando i controlli di qualita su ogni commit.",
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'GitHub Apps',
@@ -10540,7 +10843,8 @@ export default {
               italian: 'API gh',
               pronunciation: '/dʒiː eɪtʃ eɪ piː aɪ/',
               phonetic: 'GH-API',
-              example: 'gh api makes raw GitHub API calls. = gh api fa chiamate API raw a GitHub.',
+              example:
+                'When automating your deployment process, use gh API to create raw GitHub API calls reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, gh api fa chiamate API raw a GitHub riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'gh api repos/owner/repo',
@@ -10550,27 +10854,30 @@ export default {
               italian: 'curl API GitHub',
               pronunciation: '/kɜːrl ˈɡɪthʌb eɪ piː aɪ/',
               phonetic: 'KERL GIT-hab API',
-              example: "curl can talk to the GitHub API. = curl può parlare con l'API GitHub.",
+              example:
+                "When automating your deployment process, curl can talk to the GitHub API reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, curl può parlare con l'API GitHub riducendo gli errori manuali e accelerando la consegna.",
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'curl -H "Authorization: token $TOKEN" https://api.github.com/user',
             },
             {
               english: 'Octokit',
-              italian: 'Octokit (SDK GitHub ufficiale)',
+              italian: 'SDK GitHub ufficiale (Octokit)',
               pronunciation: '/ˈɒktoʊkɪt/',
               phonetic: 'OK-to-kit',
-              example: "Octokit is the official GitHub SDK. = Octokit è l'SDK ufficiale GitHub.",
+              example:
+                "As part of DevOps best practices, Octokit is the official GitHub SDK enabling rapid and safe releases to production. = Come parte delle best practice DevOps, octokit è l'SDK ufficiale GitHub abilitando rilasci rapidi e sicuri in produzione.",
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Octokit',
             },
             {
               english: 'PyGithub',
-              italian: 'PyGithub (SDK GitHub per Python)',
+              italian: 'SDK GitHub per Python (PyGithub)',
               pronunciation: '/paɪ ˈɡɪthʌb/',
               phonetic: 'PAI-GIT-hab',
-              example: 'PyGithub is the Python wrapper. = PyGithub è il wrapper Python.',
+              example:
+                'In a continuous integration pipeline, PyGithub is the Python wrapper automating quality checks on every commit. = In una pipeline di integrazione continua, pyGithub è il wrapper Python automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'PyGithub',
@@ -10580,7 +10887,8 @@ export default {
               italian: 'Auto-etichettatura',
               pronunciation: '/ˈɔːtoʊ ˈleɪbəl/',
               phonetic: 'AU-to LEI-bel',
-              example: 'Auto-label PRs by changed paths. = Auto-etichetta PR per path modificati.',
+              example:
+                'For reliable software delivery, Auto-label PRs by changed paths so code is tested and deployed consistently. = Per una consegna software affidabile, auto-etichetta PR per path modificati cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'actions/labeler',
@@ -10591,17 +10899,17 @@ export default {
               pronunciation: '/ˈɔːtoʊ əˈsaɪn/',
               phonetic: 'AU-to a-SAIN',
               example:
-                'Auto-assign reviewers via CODEOWNERS. = Auto-assegna reviewer via CODEOWNERS.',
+                'As part of DevOps best practices, Auto-assign reviewers via CODEOWNERS enabling rapid and safe releases to production. = Come parte delle best practice DevOps, auto-assegna reviewer via CODEOWNERS abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
             },
             {
               english: 'Release Drafter',
-              italian: 'Release Drafter / bozza automatica delle release',
+              italian: 'bozza automatica delle release (Release Drafter)',
               pronunciation: '/rɪˈliːs ˈdrɑːftər/',
               phonetic: 'ri-LIIS DRAF-ter',
               example:
-                'release-drafter generates release notes. = release-drafter genera note di rilascio.',
+                'When automating your deployment process, release-drafter generates release notes reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, release-drafter genera note di rilascio riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'release-drafter',
@@ -10612,7 +10920,7 @@ export default {
               pronunciation: '/piː ɑːr ˈtemplət/',
               phonetic: 'PR TEM-plet',
               example:
-                'pull_request_template.md guides PR authors. = pull_request_template.md guida gli autori di PR.',
+                'In a continuous integration pipeline, pull_request_template.md guides PR authors automating quality checks on every commit. = In una pipeline di integrazione continua, pull_request_template.md guida gli autori di PR automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '.github/pull_request_template.md',
@@ -10623,7 +10931,7 @@ export default {
               pronunciation: '/ˈɪʃuː ˈtemplət/',
               phonetic: 'I-sciu TEM-plet',
               example:
-                'Issue templates standardize bug reports. = I template di issue standardizzano i bug report.',
+                'As part of DevOps best practices, issue templates standardize bug reports enabling rapid and safe releases to production. = Come parte delle best practice DevOps, i template di issue standardizzano i bug report abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '.github/ISSUE_TEMPLATE/bug.yml',
@@ -10633,7 +10941,8 @@ export default {
               italian: 'Riuso di workflow',
               pronunciation: '/ˈwɜːrkfloʊ riːˈjuːs/',
               phonetic: 'UERK-flou ri-IUS',
-              example: 'Reusable workflows share logic. = I workflow riusabili condividono logica.',
+              example:
+                'When automating your deployment process, reusable workflows share logic reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, i workflow riusabili condividono logica riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'on: workflow_call',
@@ -10651,7 +10960,7 @@ export default {
               pronunciation: '/bæʃ ˌɔːtəˈmeɪʃən/',
               phonetic: 'BASC au-to-ma-ZIO-ne',
               example:
-                'Bash scripts automate repetitive Git tasks. = Script Bash automatizzano task Git ripetitivi.',
+                'As part of DevOps best practices, bash scripts automate repetitive Git tasks enabling rapid and safe releases to production. = Come parte delle best practice DevOps, script Bash automatizzano task Git ripetitivi abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '#!/bin/bash\\nfor branch in $(git branch); do ...',
@@ -10662,7 +10971,7 @@ export default {
               pronunciation: '/ˈpaɪθən ˌɔːtəˈmeɪʃən/',
               phonetic: 'PAI-ton au-to-ma-ZIO-ne',
               example:
-                'GitPython library wraps Git commands. = La libreria GitPython wrappa i comandi Git.',
+                'As part of DevOps best practices, gitPython library wraps Git commands enabling rapid and safe releases to production. = Come parte delle best practice DevOps, la libreria GitPython wrappa i comandi Git abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'GitPython',
@@ -10672,7 +10981,8 @@ export default {
               italian: 'Action custom',
               pronunciation: '/ˈkʌstəm ˈækʃən/',
               phonetic: 'KA-stom AK-scion',
-              example: 'Build a custom GitHub Action. = Costruisci una GitHub Action custom.',
+              example:
+                'When automating your deployment process, build a custom GitHub Action reducing manual errors and speeding up delivery. = Quando si automatizza il processo di deploy, costruisci una GitHub Action custom riducendo gli errori manuali e accelerando la consegna.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'action.yml',
@@ -10684,7 +10994,7 @@ export default {
               pronunciation: '/kəmˈpɒzɪt ˈækʃən/',
               phonetic: 'kom-PO-zit AK-scion',
               example:
-                'Composite actions wrap multiple steps. = Le action composite raggruppano più step.',
+                'As part of DevOps best practices, composite actions wrap multiple steps enabling rapid and safe releases to production. = Come parte delle best practice DevOps, le action composite raggruppano più step abilitando rilasci rapidi e sicuri in produzione.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'runs:\\n  using: composite\\n  steps: ...',
@@ -10694,7 +11004,8 @@ export default {
               italian: 'Action Docker',
               pronunciation: '/ˈdɒkər ˈækʃən/',
               phonetic: 'DO-ker AK-scion',
-              example: 'Docker actions run in containers. = Le action Docker girano in container.',
+              example:
+                'For reliable software delivery, docker actions run in containers so code is tested and deployed consistently. = Per una consegna software affidabile, le action Docker girano in container cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'using: docker\\nimage: Dockerfile',
@@ -10704,7 +11015,8 @@ export default {
               italian: 'Marketplace GitHub',
               pronunciation: '/ˈɡɪthʌb ˈmɑːrkɪtpleɪs/',
               phonetic: 'GIT-hab MAR-kit-pleis',
-              example: 'Publish actions to the Marketplace. = Pubblica action sul Marketplace.',
+              example:
+                'For reliable software delivery, publish actions to the Marketplace so code is tested and deployed consistently. = Per una consegna software affidabile, pubblica action sul Marketplace cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'GitHub Marketplace',
@@ -10714,7 +11026,8 @@ export default {
               italian: 'Runner self-hosted',
               pronunciation: '/self ˈhoʊstɪd ˈrʌnər/',
               phonetic: 'SELF HOU-stid RA-ner',
-              example: 'Self-hosted runners reduce costs. = I runner self-hosted riducono i costi.',
+              example:
+                'In a continuous integration pipeline, self-hosted runners reduce costs automating quality checks on every commit. = In una pipeline di integrazione continua, i runner self-hosted riducono i costi automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'GitHub Runner',
@@ -10724,17 +11037,19 @@ export default {
               italian: 'Trigger cron',
               pronunciation: '/krɒn ˈtrɪɡər/',
               phonetic: 'KRON TRI-ger',
-              example: 'Schedule jobs with cron syntax. = Schedula job con sintassi cron.',
+              example:
+                'For reliable software delivery, schedule jobs with cron syntax so code is tested and deployed consistently. = Per una consegna software affidabile, schedula job con sintassi cron cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: "cron: '0 0 * * *'",
             },
             {
               english: 'Auto-rebase',
-              italian: 'auto-rebase / rebase automatico',
+              italian: 'rebase automatico (auto-rebase)',
               pronunciation: '/ˈɔːtoʊ ˈriːbeɪs/',
               phonetic: 'AU-to RI-beis',
-              example: 'Auto-rebase keeps PRs up to date. = Auto-rebase mantiene PR aggiornate.',
+              example:
+                'For reliable software delivery, use Auto-rebase to keep PRs up to date so code is tested and deployed consistently. = Per una consegna software affidabile, auto-rebase mantiene PR aggiornate cosi il codice viene testato e distribuito in modo consistente.',
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'autorebase',
@@ -10744,7 +11059,8 @@ export default {
               italian: 'Token di workflow',
               pronunciation: '/ˈwɜːrkfloʊ ˈtoʊkən/',
               phonetic: 'UERK-flou TO-ken',
-              example: 'GITHUB_TOKEN authenticates workflows. = GITHUB_TOKEN autentica i workflow.',
+              example:
+                'In a continuous integration pipeline, GITHUB_TOKEN authenticates workflows automating quality checks on every commit. = In una pipeline di integrazione continua, GITHUB_TOKEN autentica i workflow automatizzando i controlli di qualita su ogni commit.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '${{ secrets.GITHUB_TOKEN }}',
@@ -10771,17 +11087,17 @@ export default {
               pronunciation: '/rɪˈpɒzɪtɔːri ˈstrætədʒi/',
               phonetic: 'ri-PO-zi-tori STRA-te-gi',
               example:
-                'Strategy choice affects scaling. = La scelta della strategia influenza lo scaling.',
+                'As part of DevOps best practices, strategy choice affects scaling enabling rapid and safe releases to production. = Come parte delle best practice DevOps, la scelta della strategia influenza lo scaling abilitando rilasci rapidi e sicuri in produzione.',
               context: 'strategy',
               difficulty: 'advanced',
             },
             {
               english: 'Monorepo vs Polyrepo',
-              italian: 'monorepo vs polyrepo / unico repo o multipli',
+              italian: 'unico repository o multipli (monorepo vs polyrepo)',
               pronunciation: '/ˈmɒnoʊˌriːpoʊ vɜːrsəs ˈpɒliˌriːpoʊ/',
               phonetic: 'MO-no VS PO-li-RI-po',
               example:
-                'Choice depends on team and tooling. = La scelta dipende dal team e dal tooling.',
+                'In choosing the right Git workflow, choice depends on team and tooling so the process fits your release cadence. = Nella scelta del giusto flusso Git, la scelta dipende dal team e dal tooling cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -10791,7 +11107,7 @@ export default {
               pronunciation: '/brɑːntʃ ˈstrætədʒi/',
               phonetic: 'BRANC STRA-te-gi',
               example:
-                'Pick a strategy: GitFlow, trunk, GitHub Flow. = Scegli: GitFlow, trunk, GitHub Flow.',
+                'For enterprise-scale projects, pick a strategy: GitFlow, trunk, GitHub Flow which provides structure for teams of any size. = Per progetti su scala enterprise, scegli: GitFlow, trunk, GitHub Flow il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -10800,7 +11116,8 @@ export default {
               italian: 'Strategia di release',
               pronunciation: '/rɪˈliːs ˈstrætədʒi/',
               phonetic: 'ri-LIIS STRA-te-gi',
-              example: 'Continuous vs scheduled releases. = Release continue vs schedulate.',
+              example:
+                "When planning your team's branching model, continuous vs scheduled releases ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, release continue vs schedulate assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -10809,16 +11126,18 @@ export default {
               italian: 'Politica di versioning',
               pronunciation: '/ˈvɜːrʒənɪŋ ˈpɒləsi/',
               phonetic: 'VER-scio-ning po-li-TI-ka',
-              example: 'Standardize on SemVer or CalVer. = Standardizzare su SemVer o CalVer.',
+              example:
+                "When planning your team's branching model, standardize on SemVer or CalVer ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, standardizzare su SemVer o CalVer assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
             },
             {
               english: 'CalVer',
-              italian: 'CalVer (calendar versioning)',
+              italian: 'calendar versioning (CalVer)',
               pronunciation: '/kælˈvɜːr/',
               phonetic: 'KAL-ver',
-              example: 'CalVer uses dates as versions. = CalVer usa date come versioni.',
+              example:
+                'For enterprise-scale projects, CalVer uses dates as versions which provides structure for teams of any size. = Per progetti su scala enterprise, calVer usa date come versioni il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
               code: 'v2024.04.26',
@@ -10829,7 +11148,8 @@ export default {
               italian: 'Politica di backport',
               pronunciation: '/ˈbækpɔːrt ˈpɒləsi/',
               phonetic: 'BAK-port po-li-TI-ka',
-              example: 'Define which fixes get backported. = Definire quali fix fanno backport.',
+              example:
+                'In choosing the right Git workflow, define which fixes get backported so the process fits your release cadence. = Nella scelta del giusto flusso Git, definire quali fix fanno backport cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -10839,7 +11159,7 @@ export default {
               pronunciation: '/el tiː es brɑːntʃ/',
               phonetic: 'LTS BRANC',
               example:
-                'LTS branches receive long-term fixes. = I branch LTS ricevono fix a lungo termine.',
+                'For enterprise-scale projects, LTS branches receive long-term fixes which provides structure for teams of any size. = Per progetti su scala enterprise, i branch LTS ricevono fix a lungo termine il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -10848,17 +11168,18 @@ export default {
               italian: 'Branch stabile',
               pronunciation: '/ˈsteɪbl brɑːntʃ/',
               phonetic: 'STEI-bol BRANC',
-              example: 'Stable branches accept only fixes. = I branch stabili accettano solo fix.',
+              example:
+                'When establishing team conventions, stable branches accept only fixes promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, i branch stabili accettano solo fix promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
             },
             {
               english: 'EOL',
-              italian: 'EOL (end of life)',
+              italian: 'end of life (EOL)',
               pronunciation: '/iː oʊ el/',
               phonetic: 'EOL',
               example:
-                "Communicate version EOL clearly. = Comunica chiaramente l'EOL delle versioni.",
+                "In choosing the right Git workflow, communicate version EOL clearly so the process fits your release cadence. = Nella scelta del giusto flusso Git, comunica chiaramente l'EOL delle versioni cosi il processo si adatta alla cadenza di rilascio.",
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -10875,7 +11196,7 @@ export default {
               pronunciation: '/koʊd ˈoʊnərz/',
               phonetic: 'KOUD-OU-ners',
               example:
-                'CODEOWNERS auto-requests reviews. = CODEOWNERS richiede review automaticamente.',
+                'For enterprise-scale projects, CODEOWNERS auto-requests reviews which provides structure for teams of any size. = Per progetti su scala enterprise, CODEOWNERS richiede review automaticamente il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
               code: '/api/ @backend\\n*.md @docs',
@@ -10886,7 +11207,7 @@ export default {
               pronunciation: '/ˌkɒntrɪˈbjuːʃən ɡaɪd/',
               phonetic: 'kon-tri-BIU-scion GAID',
               example:
-                'CONTRIBUTING.md explains how to contribute. = CONTRIBUTING.md spiega come contribuire.',
+                "When planning your team's branching model, CONTRIBUTING.md explains how to contribute ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, CONTRIBUTING.md spiega come contribuire assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               code: 'CONTRIBUTING.md',
@@ -10897,7 +11218,7 @@ export default {
               pronunciation: '/koʊd ɒv ˈkɒndʌkt/',
               phonetic: 'KOUD of KON-dakt',
               example:
-                'CODE_OF_CONDUCT.md sets community rules. = CODE_OF_CONDUCT.md stabilisce regole della comunità.',
+                'In choosing the right Git workflow, CODE_OF_CONDUCT.md sets community rules so the process fits your release cadence. = Nella scelta del giusto flusso Git, CODE_OF_CONDUCT.md stabilisce regole della comunità cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               code: 'CODE_OF_CONDUCT.md',
@@ -10908,7 +11229,8 @@ export default {
               italian: 'File di licenza',
               pronunciation: '/ˈlaɪsəns faɪl/',
               phonetic: 'LAI-sens FAIL',
-              example: "LICENSE clarifies usage rights. = LICENSE chiarisce i diritti d'uso.",
+              example:
+                "When establishing team conventions, LICENSE clarifies usage rights promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, LICENSE chiarisce i diritti d'uso promuovendo la consistenza tra tutti i contributori.",
               context: 'strategy',
               difficulty: 'advanced',
               code: 'LICENSE',
@@ -10916,30 +11238,33 @@ export default {
             },
             {
               english: 'CLA',
-              italian: 'CLA (contributor agreement)',
+              italian: 'contributor agreement (CLA)',
               pronunciation: '/siː el eɪ/',
               phonetic: 'CLA',
-              example: 'CLA assigns contribution rights. = CLA assegna diritti di contribuzione.',
+              example:
+                "When planning your team's branching model, CLA assigns contribution rights ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, CLA assegna diritti di contribuzione assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'CLA Assistant',
             },
             {
               english: 'DCO',
-              italian: 'DCO (developer certificate)',
+              italian: 'developer certificate (DCO)',
               pronunciation: '/diː siː oʊ/',
               phonetic: 'DCO',
-              example: 'DCO requires Signed-off-by. = DCO richiede Signed-off-by.',
+              example:
+                "When planning your team's branching model, the DCO flag forces Signed-off-by ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, DCO richiede Signed-off-by assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git commit --signoff',
             },
             {
               english: 'Maintainer',
-              italian: 'maintainer / manutentore del progetto',
+              italian: 'manutentore del progetto (maintainer)',
               pronunciation: '/meɪnˈteɪnər/',
               phonetic: 'mein-TEI-ner',
-              example: 'Maintainers steward the project. = I maintainer guidano il progetto.',
+              example:
+                "When planning your team's branching model, maintainers steward the project ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, i maintainer guidano il progetto assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               code: 'MAINTAINERS.md',
@@ -10950,7 +11275,7 @@ export default {
               pronunciation: '/ɑːr ef siː ˈprɒses/',
               phonetic: 'R-F-C PRO-ses',
               example:
-                'RFCs gather feedback on proposals. = Gli RFC raccolgono feedback su proposte.',
+                'In choosing the right Git workflow, RFCs gather feedback on proposals so the process fits your release cadence. = Nella scelta del giusto flusso Git, gli RFC raccolgono feedback su proposte cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               note: 'Stile usato da Rust, Ember, React.',
@@ -10961,18 +11286,18 @@ export default {
               pronunciation: '/dɪˈsɪʒən lɒɡ/',
               phonetic: 'di-SI-scion LOG',
               example:
-                'ADRs document architecture decisions. = Gli ADR documentano decisioni di architettura.',
+                "When planning your team's branching model, ADRs document architecture decisions ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, gli ADR documentano decisioni di architettura assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               code: 'docs/adr/0001-use-postgres.md',
             },
             {
               english: 'Roadmap',
-              italian: 'roadmap / piano evolutivo',
+              italian: 'piano evolutivo (roadmap)',
               pronunciation: '/ˈroʊdmæp/',
               phonetic: 'ROUD-map',
               example:
-                'A public roadmap aligns the community. = Una roadmap pubblica allinea la community.',
+                "When planning your team's branching model, a public roadmap aligns the community ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, una roadmap pubblica allinea la community assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               code: 'ROADMAP.md',
@@ -10986,11 +11311,11 @@ export default {
           items: [
             {
               english: 'README',
-              italian: 'README / file di descrizione del progetto',
+              italian: 'file di descrizione del progetto (README)',
               pronunciation: '/ˌriːdˈmiː/',
               phonetic: 'RID-MI',
               example:
-                "README is the project front door. = README è la porta d'ingresso del progetto.",
+                "In choosing the right Git workflow, README is the project front door so the process fits your release cadence. = Nella scelta del giusto flusso Git, README è la porta d'ingresso del progetto cosi il processo si adatta alla cadenza di rilascio.",
               context: 'strategy',
               difficulty: 'advanced',
               code: 'README.md',
@@ -11001,18 +11326,18 @@ export default {
               pronunciation: '/ˈsetʌp ɡaɪd/',
               phonetic: 'SET-ap GAID',
               example:
-                'Setup guide reduces onboarding time. = La guida setup riduce il tempo di onboarding.',
+                'When establishing team conventions, Setup Guide reduces onboarding time promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, la guida setup riduce il tempo di onboarding promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               code: 'docs/SETUP.md',
             },
             {
               english: 'Devcontainer',
-              italian: 'devcontainer / container di sviluppo riproducibile',
+              italian: 'container di sviluppo riproducibile (devcontainer)',
               pronunciation: '/dev kənˈteɪnər/',
               phonetic: 'DEV-kon-TEI-ner',
               example:
-                "Devcontainer standardizes dev envs. = Devcontainer standardizza l'ambiente di sviluppo.",
+                "When planning your team's branching model, Devcontainer standardizes dev envs ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, devcontainer standardizza l'ambiente di sviluppo assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               code: '.devcontainer/devcontainer.json',
@@ -11024,27 +11349,28 @@ export default {
               pronunciation: '/ˈɪʃuː ˈtriːɑːʒ/',
               phonetic: 'I-sciu TRI-ag',
               example:
-                'Triage prioritizes incoming issues. = Il triage prioritizza le issue in arrivo.',
+                'For enterprise-scale projects, triage prioritizes incoming issues which provides structure for teams of any size. = Per progetti su scala enterprise, il triage prioritizza le issue in arrivo il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
             },
             {
               english: 'Good First Issue',
-              italian: 'good first issue / issue adatta a principianti',
+              italian: 'issue adatta a principianti (good first issue)',
               pronunciation: '/ɡʊd fɜːrst ˈɪʃuː/',
               phonetic: 'GUD-FERST I-sciu',
-              example: 'Tag entry-level issues for newcomers. = Tagga issue entry-level per nuovi.',
+              example:
+                'In choosing the right Git workflow, tag entry-level issues for newcomers so the process fits your release cadence. = Nella scelta del giusto flusso Git, tagga issue entry-level per nuovi cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               code: 'label: good-first-issue',
             },
             {
               english: 'Mentorship',
-              italian: 'mentorship / mentorato',
+              italian: 'mentorato (mentorship)',
               pronunciation: '/ˈmentɔːrʃɪp/',
               phonetic: 'MEN-tor-scip',
               example:
-                'Mentor pairs reviewers with new devs. = La mentorship abbina reviewer a nuovi dev.',
+                'For enterprise-scale projects, mentor pairs reviewers with new devs which provides structure for teams of any size. = Per progetti su scala enterprise, la mentorship abbina reviewer a nuovi dev il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -11054,17 +11380,18 @@ export default {
               pronunciation: '/koʊd rɪˈvjuː ˈkʌltʃər/',
               phonetic: 'KOUD ri-VIU KAL-cer',
               example:
-                'Healthy review culture is constructive. = Cultura sana di review è costruttiva.',
+                'When establishing team conventions, healthy review culture is constructive promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, cultura sana di review è costruttiva promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               note: 'Conventional Comments aiutano la chiarezza.',
             },
             {
               english: 'Style Guide',
-              italian: 'style guide / guida di stile',
+              italian: 'guida di stile (style guide)',
               pronunciation: '/staɪl ɡaɪd/',
               phonetic: 'STAIL GAID',
-              example: 'Style guides enforce consistency. = Le style guide impongono consistenza.',
+              example:
+                'When establishing team conventions, style guides enforce consistency promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, le style guide impongono consistenza promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               code: 'STYLE.md',
@@ -11074,7 +11401,8 @@ export default {
               italian: 'Sito di documentazione',
               pronunciation: '/dɒkjuˌmenˈteɪʃən saɪt/',
               phonetic: 'do-ku-men-ta-ZIO-ne SAIT',
-              example: 'Docs sites complement READMEs. = I siti di docs complementano i README.',
+              example:
+                'When establishing team conventions, docs sites complement READMEs promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, i siti di docs complementano i README promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'Docusaurus',
@@ -11085,7 +11413,7 @@ export default {
               pronunciation: '/ˈɡlɒsəri/',
               phonetic: 'glos-SA-rio',
               example:
-                'A glossary helps domain knowledge. = Un glossario aiuta la conoscenza di dominio.',
+                'In choosing the right Git workflow, a glossary helps domain knowledge so the process fits your release cadence. = Nella scelta del giusto flusso Git, un glossario aiuta la conoscenza di dominio cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               code: 'docs/GLOSSARY.md',
@@ -11103,7 +11431,7 @@ export default {
               pronunciation: '/ɡɪt ˈmæstəri/',
               phonetic: 'GIT MA-ste-ri',
               example:
-                'Mastery comes from real-world practice. = La padronanza viene dalla pratica reale.',
+                'For enterprise-scale projects, mastery comes from real-world practice which provides structure for teams of any size. = Per progetti su scala enterprise, la padronanza viene dalla pratica reale il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -11113,7 +11441,7 @@ export default {
               pronunciation: '/ˈoʊpən sɔːrs ˌkɒntrɪˈbjuːʃən/',
               phonetic: 'OU-pen SORS kon-tri-BIU-scion',
               example:
-                'OSS contributions build a portfolio. = Le contribuzioni OSS costruiscono un portfolio.',
+                'For enterprise-scale projects, OSS contributions build a portfolio which provides structure for teams of any size. = Per progetti su scala enterprise, le contribuzioni OSS costruiscono un portfolio il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -11122,7 +11450,8 @@ export default {
               italian: 'Profilo GitHub',
               pronunciation: '/ˈɡɪthʌb ˈproʊfaɪl/',
               phonetic: 'GIT-hab PRO-fail',
-              example: 'A polished profile is your CV. = Un profilo curato è il tuo CV.',
+              example:
+                "When planning your team's branching model, a polished profile is your CV ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, un profilo curato è il tuo CV assicurando una collaborazione fluida su larga scala.",
               context: 'strategy',
               difficulty: 'advanced',
               code: 'github.com/username',
@@ -11133,7 +11462,7 @@ export default {
               pronunciation: '/ˌriːdˈmiː ˈproʊfaɪl/',
               phonetic: 'RID-MI PRO-fail',
               example:
-                'Special repo username/username for profile. = Repo speciale username/username per profilo.',
+                'For enterprise-scale projects, special repo username/username for profile which provides structure for teams of any size. = Per progetti su scala enterprise, repo speciale username/username per profilo il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
               note: 'Mostra skill, projects, contatti.',
@@ -11143,7 +11472,8 @@ export default {
               italian: 'Grafo di contribuzioni',
               pronunciation: '/ˌkɒntrɪˈbjuːʃən ɡræf/',
               phonetic: 'kon-tri-BIU-scion GRAF',
-              example: "The green graph shows activity. = Il grafico verde mostra l'attività.",
+              example:
+                "In choosing the right Git workflow, the green graph shows activity so the process fits your release cadence. = Nella scelta del giusto flusso Git, il grafico verde mostra l'attività cosi il processo si adatta alla cadenza di rilascio.",
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -11153,7 +11483,7 @@ export default {
               pronunciation: '/pʊl rɪˈkwest skɪl/',
               phonetic: 'PUL ri-KUEST SKIL',
               example:
-                'Good PRs are small, focused, documented. = Buoni PR sono piccoli, focalizzati, documentati.',
+                'When establishing team conventions, good PRs are small, focused, documented promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, buoni PR sono piccoli, focalizzati, documentati promuovendo la consistenza tra tutti i contributori.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -11163,7 +11493,7 @@ export default {
               pronunciation: '/ˈkɒnflɪkt rezəˈluːʃən skɪl/',
               phonetic: 'KON-flikt re-zo-LU-scion SKIL',
               example:
-                'Resolving conflicts confidently is key. = Risolvere conflitti con sicurezza è chiave.',
+                'For enterprise-scale projects, resolving conflicts confidently is key which provides structure for teams of any size. = Per progetti su scala enterprise, risolvere conflitti con sicurezza è chiave il che fornisce struttura per team di qualsiasi dimensione.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -11173,16 +11503,17 @@ export default {
               pronunciation: '/ˈmentɔːr ˈʌðərz/',
               phonetic: 'MEN-tor A-ders',
               example:
-                'Teaching Git deepens your own knowledge. = Insegnare Git approfondisce la tua conoscenza.',
+                'In choosing the right Git workflow, teaching Git deepens your own knowledge so the process fits your release cadence. = Nella scelta del giusto flusso Git, insegnare Git approfondisce la tua conoscenza cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
             },
             {
               english: 'Tech Talk',
-              italian: 'tech talk / presentazione tecnica',
+              italian: 'presentazione tecnica (tech talk)',
               pronunciation: '/tek tɔːk/',
               phonetic: 'TEK TOK',
-              example: 'Give talks about Git workflows. = Tieni talk sui workflow Git.',
+              example:
+                'In choosing the right Git workflow, give talks about Git workflows so the process fits your release cadence. = Nella scelta del giusto flusso Git, tieni talk sui workflow Git cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
             },
@@ -11192,7 +11523,7 @@ export default {
               pronunciation: '/ˈlaɪflɒŋ ˈlɜːrnɪŋ/',
               phonetic: 'LAIF-long LER-ning',
               example:
-                'Git keeps evolving with new features. = Git continua a evolversi con nuove feature.',
+                'In choosing the right Git workflow, Git keeps evolving with new features so the process fits your release cadence. = Nella scelta del giusto flusso Git, Git continua a evolversi con nuove feature cosi il processo si adatta alla cadenza di rilascio.',
               context: 'strategy',
               difficulty: 'advanced',
               note: 'Seguire git release notes e blog di esperti.',

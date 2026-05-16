@@ -28,7 +28,7 @@ export default {
               pronunciation: '/ˈveəriəbl/',
               phonetic: 'VER-ia-bol',
               example:
-                'A variable stores data in memory. = Una variabile memorizza dati nella memoria.',
+                "Each variable in C must have a declared type before use. = Ogni variabile in C deve avere un tipo dichiarato prima dell'uso.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int x = 5;',
@@ -98,7 +98,7 @@ export default {
               pronunciation: '/ˈhedər faɪl/',
               phonetic: 'HED-er FAIL',
               example:
-                'Include the header file to use standard functions. = Includi il file di intestazione per usare funzioni standard.',
+                'Including a header file gives access to library declarations. = Includere un file di intestazione dà accesso alle dichiarazioni di libreria.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '#include <stdio.h>',
@@ -109,7 +109,7 @@ export default {
               pronunciation: '/kəmˈpaɪlər/',
               phonetic: 'com-PAI-ler',
               example:
-                'The compiler translates C code into machine code. = Il compilatore traduce il codice C in codice macchina.',
+                'GCC is a widely used compiler for C programs. = GCC è un compilatore molto usato per programmi C.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'GCC, Clang',
@@ -120,7 +120,7 @@ export default {
               pronunciation: '/sɔːrs koʊd/',
               phonetic: 'SORS KOUD',
               example:
-                'The source code is saved in a .c file. = Il codice sorgente è salvato in un file .c.',
+                'Developers write source code in plain text files. = Gli sviluppatori scrivono codice sorgente in file di testo.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -130,7 +130,7 @@ export default {
               pronunciation: '/ˈsteɪtmənt/',
               phonetic: 'STEIT-ment',
               example:
-                'Each statement in C ends with a semicolon. = Ogni istruzione in C termina con un punto e virgola.',
+                "A statement is a complete instruction terminated by a semicolon. = Un'istruzione è un comando completo terminato da un punto e virgola.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Il punto e virgola è obbligatorio in C, a differenza di Python.',
@@ -147,7 +147,8 @@ export default {
               italian: 'Output standard',
               pronunciation: '/ˈstændərd ˈaʊtpʊt/',
               phonetic: 'STAN-dard AUT-put',
-              example: "printf writes to standard output. = printf scrive sull'output standard.",
+              example:
+                'Writing to standard output via printf displays text in the terminal. = Scrivere sullo standard output tramite printf mostra testo nel terminale.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Abbreviato stdout. Di solito è il terminale.',
@@ -157,7 +158,8 @@ export default {
               italian: 'Input standard',
               pronunciation: '/ˈstændərd ˈɪnpʊt/',
               phonetic: 'STAN-dard IN-put',
-              example: "scanf reads from standard input. = scanf legge dall'input standard.",
+              example:
+                "Reading from standard input with scanf captures user keyboard input. = Leggere dallo standard input con scanf cattura l'input della tastiera dell'utente.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Abbreviato stdin. Di solito è la tastiera.',
@@ -168,7 +170,7 @@ export default {
               pronunciation: '/ˈkɒment/',
               phonetic: 'KOM-ment',
               example:
-                'Use comments to explain your code. = Usa i commenti per spiegare il tuo codice.',
+                'Adding a comment helps explain the purpose of code. = Aggiungere un commento aiuta a spiegare lo scopo del codice.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '/* This is a comment */',
@@ -191,7 +193,7 @@ export default {
               pronunciation: '/ˈfɔːrmæt ˈspesɪfaɪər/',
               phonetic: 'FOR-mat SPE-si-faier',
               example:
-                'Use %d as the format specifier for integers. = Usa %d come specificatore di formato per gli interi.',
+                'The format specifier %d tells printf to expect an integer argument. = Lo specificatore di formato %d dice a printf di aspettarsi un argomento intero.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'printf("%d", x);',
@@ -213,7 +215,7 @@ export default {
               pronunciation: '/ɪˈskeɪp ˈsiːkwəns/',
               phonetic: 'i-SKEIP SII-kuens',
               example:
-                'An escape sequence represents special characters. = Una sequenza di escape rappresenta caratteri speciali.',
+                'An escape sequence like \\n represents a special character in a string. = Una sequenza di escape come \\n rappresenta un carattere speciale in una stringa.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '\\n \\t \\\\ \\0',
@@ -224,7 +226,7 @@ export default {
               pronunciation: '/ˈsemɪkoʊlən/',
               phonetic: 'SE-mi-kou-lon',
               example:
-                'Every statement must end with a semicolon. = Ogni istruzione deve terminare con un punto e virgola.',
+                'Every statement in C must end with a semicolon. = Ogni istruzione in C deve terminare con un punto e virgola.',
               context: 'foundations',
               difficulty: 'beginner',
               note: "Dimenticare il punto e virgola è l'errore più comune dei principianti.",
@@ -235,7 +237,7 @@ export default {
               pronunciation: '/ˈkɜːrli breɪsɪz/',
               phonetic: 'KER-li BREI-siz',
               example:
-                'Curly braces define code blocks. = Le parentesi graffe definiscono blocchi di codice.',
+                'Opening and closing curly braces define a code block. = Le parentesi graffe di apertura e chiusura definiscono un blocco di codice.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if (x > 0) { ... }',
@@ -246,7 +248,7 @@ export default {
               pronunciation: '/ˈsɪntæks/',
               phonetic: 'SIN-taks',
               example:
-                'A syntax error prevents compilation. = Un errore di sintassi impedisce la compilazione.',
+                'Forgetting a semicolon causes a syntax error in C. = Dimenticare un punto e virgola causa un errore di sintassi in C.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -263,7 +265,7 @@ export default {
               pronunciation: '/ˌkɒmpɪˈleɪʃən/',
               phonetic: 'kom-pi-LEI-scen',
               example:
-                'Compilation converts source code to an executable. = La compilazione converte il codice sorgente in un eseguibile.',
+                'The process of compilation translates source code into machine code. = Il processo di compilazione traduce il codice sorgente in codice macchina.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'gcc main.c -o main',
@@ -274,7 +276,7 @@ export default {
               pronunciation: '/ɪɡˈzekjʊtəbl/',
               phonetic: 'ig-ZEK-iu-ta-bol',
               example:
-                "The executable is the compiled binary file. = L'eseguibile è il file binario compilato.",
+                "The executable is the final binary that the user runs. = L'eseguibile è il binario finale che l'utente esegue.",
               context: 'foundations',
               difficulty: 'beginner',
               command: './main',
@@ -285,7 +287,7 @@ export default {
               pronunciation: '/ˈsɪntæks ˈerər/',
               phonetic: 'SIN-taks ER-rer',
               example:
-                'A missing semicolon causes a syntax error. = Un punto e virgola mancante causa un errore di sintassi.',
+                "A missing semicolon is the most common syntax error in C. = Un punto e virgola mancante è l'errore di sintassi più comune in C.",
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -295,7 +297,7 @@ export default {
               pronunciation: '/ˈwɔːrnɪŋ/',
               phonetic: 'UOR-ning',
               example:
-                'The compiler generates a warning for potential issues. = Il compilatore genera un avvertimento per problemi potenziali.',
+                'Enabling all warnings with -Wall helps catch potential bugs early. = Abilitare tutti i warning con -Wall aiuta a catturare bug potenziali presto.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'gcc -Wall main.c',
@@ -307,7 +309,7 @@ export default {
               pronunciation: '/ˈlɪŋkɪŋ/',
               phonetic: 'LINK-ing',
               example:
-                'Linking combines object files into an executable. = Il collegamento combina file oggetto in un eseguibile.',
+                'The final step of linking combines object files into a single executable. = Il passo finale del collegamento combina file oggetto in un singolo eseguibile.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -317,7 +319,7 @@ export default {
               pronunciation: '/priːˈprɒsesər/',
               phonetic: 'prii-PRO-se-ser',
               example:
-                'The preprocessor handles #include directives before compilation. = Il preprocessore gestisce le direttive #include prima della compilazione.',
+                'Before compilation, the preprocessor handles all directives starting with #. = Prima della compilazione, il preprocessore gestisce tutte le direttive che iniziano con #.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '#include <stdio.h>',
@@ -328,7 +330,7 @@ export default {
               pronunciation: '/ˈɒbdʒekt faɪl/',
               phonetic: 'OB-gekt FAIL',
               example:
-                'The compiler produces an object file with .o extension. = Il compilatore produce un file oggetto con estensione .o.',
+                'The compiler produces an object file containing machine code for one source file. = Il compilatore produce un file oggetto contenente codice macchina per un file sorgente.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'gcc -c main.c',
@@ -339,18 +341,18 @@ export default {
               pronunciation: '/ˈrʌntaɪm ˈerər/',
               phonetic: 'RAN-taim ER-rer',
               example:
-                "A runtime error occurs while the program is running. = Un errore a tempo di esecuzione si verifica durante l'esecuzione del programma.",
+                "A runtime error crashes the program during execution, not at compile time. = Un errore a runtime manda in crash il programma durante l'esecuzione, non a tempo di compilazione.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'A differenza degli errori di compilazione, questi si scoprono solo eseguendo il programma.',
             },
             {
               english: 'Debug',
-              italian: 'Debug / Correzione errori',
+              italian: 'Correzione errori (debug)',
               pronunciation: '/diːˈbʌɡ/',
               phonetic: 'dii-BAG',
               example:
-                'You need to debug the program to find the bug. = Devi fare il debug del programma per trovare il bug.',
+                'Setting up a debug configuration with symbols makes troubleshooting faster. = Impostare una configurazione di debug con simboli rende la risoluzione dei problemi più veloce.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'GDB',
@@ -361,7 +363,7 @@ export default {
               pronunciation: '/ˈlaɪbrəri/',
               phonetic: 'LAI-bre-ri',
               example:
-                'The standard library provides common functions. = La libreria standard fornisce funzioni comuni.',
+                'Linking against the right library provides pre-built functions to your program. = Collegare la libreria giusta fornisce funzioni pre-costruite al tuo programma.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'In italiano "libreria" è un falso amico: in inglese "library" significa biblioteca.',
@@ -402,7 +404,7 @@ export default {
               pronunciation: '/ɪˌnɪʃəlaɪˈzeɪʃən/',
               phonetic: 'i-ni-scia-lai-ZEI-scen',
               example:
-                "Initialization assigns a value to a variable at declaration. = L'inizializzazione assegna un valore a una variabile alla dichiarazione.",
+                'Proper initialization prevents reading garbage values from a variable. = Una corretta inizializzazione previene la lettura di valori spazzatura da una variabile.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int count = 0;',
@@ -413,7 +415,7 @@ export default {
               pronunciation: '/əˈsaɪnmənt/',
               phonetic: 'a-SAIN-ment',
               example:
-                "Assignment sets the value of a variable. = L'assegnamento imposta il valore di una variabile.",
+                "The assignment operator = copies the right-hand value into the left-hand variable. = L'operatore di assegnamento = copia il valore destro nella variabile sinistra.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'x = 42;',
@@ -424,7 +426,7 @@ export default {
               pronunciation: '/ˈkɒnstənt/',
               phonetic: 'KON-stant',
               example:
-                "A constant value cannot be changed after initialization. = Un valore costante non può essere cambiato dopo l'inizializzazione.",
+                'Declaring a constant with const prevents accidental modification. = Dichiarare una costante con const previene modifiche accidentali.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const int MAX = 100;',
@@ -435,7 +437,7 @@ export default {
               pronunciation: '/aɪˈdentɪfaɪər/',
               phonetic: 'ai-DEN-ti-faier',
               example:
-                'An identifier is the name given to a variable or function. = Un identificatore è il nome dato a una variabile o funzione.',
+                'An identifier must start with a letter or underscore in C. = Un identificatore deve iniziare con una lettera o underscore in C.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Deve iniziare con una lettera o underscore, mai con un numero.',
@@ -446,7 +448,7 @@ export default {
               pronunciation: '/ˈkiːwɜːrd/',
               phonetic: 'KII-uerd',
               example:
-                'Keywords like int and return are reserved by the language. = Le parole chiave come int e return sono riservate dal linguaggio.',
+                'Reserved keywords like int and return cannot be used as variable names. = Le parole chiave riservate come int e return non possono essere usate come nomi di variabili.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'C ha 32 parole chiave. Non possono essere usate come nomi di variabili.',
@@ -464,11 +466,11 @@ export default {
             },
             {
               english: 'Scope',
-              italian: 'Ambito / Scope',
+              italian: 'Ambito (scope)',
               pronunciation: '/skoʊp/',
               phonetic: 'SKOUP',
               example:
-                'A variable is only visible within its scope. = Una variabile è visibile solo nel suo ambito.',
+                "The scope of a variable determines where it can be accessed in the code. = L'ambito di una variabile determina dove può essere acceduta nel codice.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Le variabili dichiarate in un blocco non esistono fuori da esso.',
@@ -479,7 +481,7 @@ export default {
               pronunciation: '/ˈdeɪtə taɪp/',
               phonetic: 'DEI-ta TAIP',
               example:
-                'Every variable in C must have a data type. = Ogni variabile in C deve avere un tipo di dato.',
+                "Choosing the right data type prevents overflow and saves memory. = Scegliere il tipo di dato giusto previene l'overflow e risparmia memoria.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int, float, char, double',
@@ -505,18 +507,19 @@ export default {
               italian: 'Intero',
               pronunciation: '/ˈɪntɪdʒər/',
               phonetic: 'IN-ti-ger',
-              example: 'An integer stores whole numbers. = Un intero memorizza numeri interi.',
+              example:
+                'An integer stores whole numbers without decimals. = Un intero memorizza numeri interi senza decimali.',
               context: 'types',
               difficulty: 'beginner',
               code: 'int age = 25;',
             },
             {
               english: 'Short',
-              italian: 'Corto / Short',
+              italian: 'Corto (short)',
               pronunciation: '/ʃɔːrt/',
               phonetic: 'SCIORT',
               example:
-                'A short integer uses less memory than int. = Un intero short usa meno memoria di int.',
+                'A short integer uses less memory but has a smaller value range. = Un intero corto usa meno memoria ma ha un intervallo di valori più piccolo.',
               context: 'types',
               difficulty: 'beginner',
               code: 'short s = 100;',
@@ -524,11 +527,11 @@ export default {
             },
             {
               english: 'Long',
-              italian: 'Lungo / Long',
+              italian: 'Lungo (long)',
               pronunciation: '/lɒŋ/',
               phonetic: 'LONG',
               example:
-                'A long integer can store larger values. = Un intero long può memorizzare valori più grandi.',
+                'A long integer provides at least 32 bits of storage. = Un intero lungo fornisce almeno 32 bit di memorizzazione.',
               context: 'types',
               difficulty: 'beginner',
               code: 'long big = 1000000L;',
@@ -539,7 +542,7 @@ export default {
               pronunciation: '/ʌnˈsaɪnd/',
               phonetic: 'an-SAIND',
               example:
-                'An unsigned integer only stores positive values. = Un intero senza segno memorizza solo valori positivi.',
+                'An unsigned integer only stores non-negative values, doubling the positive range. = Un intero senza segno memorizza solo valori non negativi, raddoppiando il range positivo.',
               context: 'types',
               difficulty: 'beginner',
               code: 'unsigned int count = 0;',
@@ -551,18 +554,18 @@ export default {
               pronunciation: '/saɪnd/',
               phonetic: 'SAIND',
               example:
-                'A signed integer can be positive or negative. = Un intero con segno può essere positivo o negativo.',
+                'A signed integer can represent both positive and negative values. = Un intero con segno può rappresentare sia valori positivi che negativi.',
               context: 'types',
               difficulty: 'beginner',
               note: 'Di default in C gli interi sono signed.',
             },
             {
               english: 'Overflow',
-              italian: 'Traboccamento / Overflow',
+              italian: 'Traboccamento (overflow)',
               pronunciation: '/ˈoʊvərfloʊ/',
               phonetic: 'OU-ver-flou',
               example:
-                'Integer overflow occurs when a value exceeds the maximum. = Il traboccamento avviene quando un valore supera il massimo.',
+                "Integer overflow wraps around, causing unexpected results. = L'overflow intero ricircola, causando risultati inaspettati.",
               context: 'types',
               difficulty: 'beginner',
               note: 'Un int a 32 bit trabocca oltre 2.147.483.647.',
@@ -573,38 +576,39 @@ export default {
               pronunciation: '/ˈsaɪzɒv/',
               phonetic: 'SAIZ-ov',
               example:
-                "The sizeof operator returns the size in bytes. = L'operatore sizeof restituisce la dimensione in byte.",
+                "The sizeof operator returns the size in bytes of a type or variable. = L'operatore sizeof restituisce la dimensione in byte di un tipo o variabile.",
               context: 'types',
               difficulty: 'beginner',
               code: 'printf("%zu", sizeof(int));',
             },
             {
               english: 'Byte',
-              italian: 'byte / unità da 8 bit',
+              italian: 'Unità da 8 bit (byte)',
               pronunciation: '/baɪt/',
               phonetic: 'BAIT',
-              example: 'A char is always one byte in C. = Un char è sempre un byte in C.',
+              example:
+                'One byte consists of 8 bits, the smallest addressable memory unit. = Un byte è composto da 8 bit, la più piccola unità di memoria indirizzabile.',
               context: 'types',
               difficulty: 'beginner',
               note: 'Un byte è composto da 8 bit.',
             },
             {
               english: 'Bit',
-              italian: 'bit / cifra binaria 0 o 1',
+              italian: 'Cifra binaria 0 o 1 (bit)',
               pronunciation: '/bɪt/',
               phonetic: 'BIT',
               example:
-                'A bit is the smallest unit of data. = Un bit è la più piccola unità di dato.',
+                'Each bit stores a single binary digit: 0 or 1. = Ogni bit memorizza una singola cifra binaria: 0 o 1.',
               context: 'types',
               difficulty: 'beginner',
             },
             {
               english: 'Range',
-              italian: 'Intervallo / Range',
+              italian: 'Intervallo (range)',
               pronunciation: '/reɪndʒ/',
               phonetic: 'REING',
               example:
-                "The range of int depends on the number of bits. = L'intervallo di int dipende dal numero di bit.",
+                "The range of int depends on the platform, typically 32 bits. = L'intervallo di int dipende dalla piattaforma, tipicamente 32 bit.",
               context: 'types',
               difficulty: 'beginner',
             },
@@ -621,7 +625,7 @@ export default {
               pronunciation: '/floʊt/',
               phonetic: 'FLOUT',
               example:
-                'A float stores decimal numbers with single precision. = Un float memorizza numeri decimali a singola precisione.',
+                'A float provides about 7 digits of precision for decimal numbers. = Un float fornisce circa 7 cifre di precisione per numeri decimali.',
               context: 'types',
               difficulty: 'beginner',
               code: 'float pi = 3.14f;',
@@ -633,7 +637,7 @@ export default {
               pronunciation: '/ˈdʌbl/',
               phonetic: 'DA-bol',
               example:
-                'A double has more precision than a float. = Un double ha più precisione di un float.',
+                'A double offers about 15 digits of precision, twice that of float. = Un double offre circa 15 cifre di precisione, il doppio di float.',
               context: 'types',
               difficulty: 'beginner',
               code: 'double pi = 3.14159265358979;',
@@ -644,7 +648,7 @@ export default {
               pronunciation: '/ˈkærɪktər/',
               phonetic: 'KA-rik-ter',
               example:
-                'A character is stored using the char type. = Un carattere è memorizzato usando il tipo char.',
+                'Each character in C occupies exactly one byte. = Ogni carattere in C occupa esattamente un byte.',
               context: 'types',
               difficulty: 'beginner',
               code: "char letter = 'A';",
@@ -652,10 +656,11 @@ export default {
             },
             {
               english: 'ASCII',
-              italian: 'ASCII (codifica caratteri base)',
+              italian: 'Codifica caratteri base (ASCII)',
               pronunciation: '/ˈæski/',
               phonetic: 'AS-ki',
-              example: 'The ASCII code for A is 65. = Il codice ASCII per A è 65.',
+              example:
+                'Each ASCII code maps a number from 0 to 127 to a character. = Ogni codice ASCII mappa un numero da 0 a 127 a un carattere.',
               context: 'types',
               difficulty: 'beginner',
               note: 'American Standard Code for Information Interchange.',
@@ -666,7 +671,7 @@ export default {
               pronunciation: '/ˈbuːliən/',
               phonetic: 'BUU-li-an',
               example:
-                'C99 introduced a boolean type with stdbool.h. = C99 ha introdotto un tipo booleano con stdbool.h.',
+                'C89 has no native Boolean type, so integers serve as true and false. = C89 non ha un tipo booleano nativo, quindi gli interi servono come vero e falso.',
               context: 'types',
               difficulty: 'beginner',
               code: '#include <stdbool.h>\nbool flag = true;',
@@ -674,11 +679,11 @@ export default {
             },
             {
               english: 'Void',
-              italian: 'Vuoto / Void',
+              italian: 'Vuoto (void)',
               pronunciation: '/vɔɪd/',
               phonetic: 'VOID',
               example:
-                'A void function returns no value. = Una funzione void non restituisce alcun valore.',
+                'A function returning void produces no value to the caller. = Una funzione che ritorna void non produce alcun valore al chiamante.',
               context: 'types',
               difficulty: 'beginner',
               code: 'void sayHello() { printf("Hi"); }',
@@ -689,7 +694,7 @@ export default {
               pronunciation: '/taɪp ˈkæstɪŋ/',
               phonetic: 'TAIP KAS-ting',
               example:
-                'Type casting converts a value to a different type. = La conversione di tipo trasforma un valore in un tipo diverso.',
+                'Explicit type casting converts an int to a float for precise division. = Il casting esplicito di tipo converte un int in un float per divisioni precise.',
               context: 'types',
               difficulty: 'beginner',
               code: 'int x = (int)3.14;',
@@ -711,7 +716,7 @@ export default {
               pronunciation: '/prɪˈsɪʒən/',
               phonetic: 'pri-SI-scen',
               example:
-                'Float has less precision than double. = Float ha meno precisione di double.',
+                'Floating-point precision limits how many digits are stored accurately. = La precisione in virgola mobile limita quante cifre sono memorizzate accuratamente.',
               context: 'types',
               difficulty: 'beginner',
               note: 'Float: ~7 cifre significative. Double: ~15 cifre.',
@@ -722,7 +727,7 @@ export default {
               pronunciation: '/ˈtaɪpdɛf/',
               phonetic: 'TAIP-def',
               example:
-                'typedef creates an alias for an existing type. = typedef crea un alias per un tipo esistente.',
+                'Using typedef creates an alias for an existing type, simplifying declarations. = Usare typedef crea un alias per un tipo esistente, semplificando le dichiarazioni.',
               context: 'types',
               difficulty: 'beginner',
               code: 'typedef unsigned int uint;',
@@ -750,7 +755,7 @@ export default {
               pronunciation: '/lɒŋ lɒŋ/',
               phonetic: 'LONG LONG',
               example:
-                'long long stores very large integers. = long long memorizza interi molto grandi.',
+                'The type long long stores very large integers with at least 64 bits. = Il tipo long long memorizza interi molto grandi con almeno 64 bit.',
               context: 'types',
               difficulty: 'beginner',
               code: 'long long big = 9223372036854775807LL;',
@@ -776,7 +781,7 @@ export default {
                 'A literal is a fixed value in code. = Un letterale è un valore fisso nel codice.',
               context: 'types',
               difficulty: 'beginner',
-              code: '42, 3.14, \'A\', "hello"',
+              code: `42, 3.14, 'A', "hello"`,
             },
             {
               english: 'Hexadecimal',
@@ -784,7 +789,7 @@ export default {
               pronunciation: '/ˌheksəˈdesɪməl/',
               phonetic: 'ek-sa-DE-si-mal',
               example:
-                'Hexadecimal numbers start with 0x in C. = I numeri esadecimali iniziano con 0x in C.',
+                'In C, hexadecimal numbers start with the prefix 0x. = In C, i numeri esadecimali iniziano con il prefisso 0x.',
               context: 'types',
               difficulty: 'beginner',
               code: 'int hex = 0xFF;',
@@ -795,7 +800,7 @@ export default {
               pronunciation: '/ˈɒktəl/',
               phonetic: 'OK-tal',
               example:
-                'Octal numbers start with a leading zero. = I numeri ottali iniziano con uno zero iniziale.',
+                'In C, octal numbers start with a leading zero, which can confuse beginners. = In C, i numeri ottali iniziano con uno zero iniziale, il che può confondere i principianti.',
               context: 'types',
               difficulty: 'beginner',
               code: 'int oct = 077;',
@@ -807,7 +812,7 @@ export default {
               pronunciation: '/saɪz tiː/',
               phonetic: 'SAIZ-tii',
               example:
-                'size_t is an unsigned type used for sizes. = size_t è un tipo senza segno usato per le dimensioni.',
+                'The type size_t is an unsigned integer used for sizes and array indices. = Il tipo size_t è un intero senza segno usato per dimensioni e indici di array.',
               context: 'types',
               difficulty: 'beginner',
               code: 'size_t len = strlen(str);',
@@ -818,7 +823,7 @@ export default {
               pronunciation: '/trʌŋˈkeɪʃən/',
               phonetic: 'tran-KEI-scen',
               example:
-                'Truncation occurs when converting float to int. = Il troncamento avviene convertendo da float a int.',
+                'Assigning a float to an int causes truncation, dropping the decimal part. = Assegnare un float a un int causa troncamento, perdendo la parte decimale.',
               context: 'types',
               difficulty: 'beginner',
               note: 'La parte decimale viene semplicemente tagliata, non arrotondata.',
@@ -829,7 +834,7 @@ export default {
               pronunciation: '/ˈnæroʊɪŋ/',
               phonetic: 'NA-rou-ing',
               example:
-                'Narrowing conversion may lose data. = La conversione con restringimento può perdere dati.',
+                'A narrowing conversion may lose data, such as assigning a double to an int. = Una conversione con restringimento può perdere dati, come assegnare un double a un int.',
               context: 'types',
               difficulty: 'beginner',
             },
@@ -839,7 +844,7 @@ export default {
               pronunciation: '/ˈwaɪdənɪŋ/',
               phonetic: 'UAI-de-ning',
               example:
-                'Widening conversion is always safe. = La conversione con allargamento è sempre sicura.',
+                'A widening conversion is always safe because the target type can hold all source values. = Una conversione con allargamento è sempre sicura perché il tipo destinazione può contenere tutti i valori sorgente.',
               context: 'types',
               difficulty: 'beginner',
               note: 'Da int a long, da float a double: nessuna perdita di dati.',
@@ -868,7 +873,7 @@ export default {
               pronunciation: '/ɪnt mæks/',
               phonetic: 'INT MAKS',
               example:
-                'INT_MAX is the maximum value for an int. = INT_MAX è il valore massimo per un int.',
+                'The constant INT_MAX is the maximum value an int can hold on the current platform. = La costante INT_MAX è il valore massimo che un int può contenere sulla piattaforma corrente.',
               context: 'types',
               difficulty: 'beginner',
               code: '#include <limits.h>',
@@ -879,7 +884,7 @@ export default {
               pronunciation: '/ɪnt mɪn/',
               phonetic: 'INT MIN',
               example:
-                'INT_MIN is the minimum value for an int. = INT_MIN è il valore minimo per un int.',
+                'The constant INT_MIN is the minimum value for an int, typically -2147483648. = La costante INT_MIN è il valore minimo per un int, tipicamente -2147483648.',
               context: 'types',
               difficulty: 'beginner',
               code: 'printf("%d", INT_MIN);',
@@ -889,7 +894,8 @@ export default {
               italian: 'Massimo float',
               pronunciation: '/floʊt mæks/',
               phonetic: 'FLOUT MAKS',
-              example: 'FLT_MAX is defined in float.h. = FLT_MAX è definito in float.h.',
+              example:
+                'The constant FLT_MAX, defined in float.h, gives the largest representable float. = La costante FLT_MAX, definita in float.h, dà il più grande float rappresentabile.',
               context: 'types',
               difficulty: 'beginner',
               code: '#include <float.h>',
@@ -918,11 +924,11 @@ export default {
             },
             {
               english: 'volatile',
-              italian: 'volatile / parola chiave (valore mutabile esterno)',
+              italian: 'Valore mutabile esterno (volatile)',
               pronunciation: '/ˈvɒlətaɪl/',
               phonetic: 'VO-la-tail',
               example:
-                "The volatile keyword prevents compiler optimization. = La parola chiave volatile impedisce l'ottimizzazione del compilatore.",
+                'Declaring a variable as volatile prevents the compiler from caching its value in a register. = Dichiarare una variabile come volatile impedisce al compilatore di memorizzare il suo valore in un registro.',
               context: 'types',
               difficulty: 'beginner',
               note: 'Usato per variabili che possono cambiare al di fuori del flusso del programma.',
@@ -1005,7 +1011,7 @@ export default {
               pronunciation: '/ˈɪnkrəmənt/',
               phonetic: 'IN-kre-ment',
               example:
-                "The increment operator adds one to a variable. = L'operatore di incremento aggiunge uno a una variabile.",
+                "The increment operator ++ adds one to a variable. = L'operatore di incremento ++ aggiunge uno a una variabile.",
               context: 'syntax',
               difficulty: 'beginner',
               code: 'i++; // or ++i;',
@@ -1016,7 +1022,7 @@ export default {
               pronunciation: '/ˈdekrəmənt/',
               phonetic: 'DE-kre-ment',
               example:
-                "The decrement operator subtracts one. = L'operatore di decremento sottrae uno.",
+                "The decrement operator -- subtracts one from a variable. = L'operatore di decremento -- sottrae uno da una variabile.",
               context: 'syntax',
               difficulty: 'beginner',
               code: 'i--;',
@@ -1027,7 +1033,7 @@ export default {
               pronunciation: '/kəmˈpærɪsən/',
               phonetic: 'com-PA-ri-son',
               example:
-                'Comparison operators return true or false. = Gli operatori di confronto restituiscono vero o falso.',
+                'Comparison operators like == and != evaluate to 0 or 1 in C. = Gli operatori di confronto come == e != producono 0 o 1 in C.',
               context: 'syntax',
               difficulty: 'beginner',
               code: '== != < > <= >=',
@@ -1050,7 +1056,7 @@ export default {
               pronunciation: '/ˈlɒdʒɪkəl/',
               phonetic: 'LO-gi-kal',
               example:
-                'Logical operators combine boolean expressions. = Gli operatori logici combinano espressioni booleane.',
+                'Logical operators && and || combine Boolean conditions. = Gli operatori logici && e || combinano condizioni booleane.',
               context: 'syntax',
               difficulty: 'beginner',
               code: '&& || !',
@@ -1061,7 +1067,7 @@ export default {
               pronunciation: '/ˈlɒdʒɪkəl ænd/',
               phonetic: 'LO-gi-kal AND',
               example:
-                "Logical AND returns true only if both conditions are true. = L'AND logico restituisce vero solo se entrambe le condizioni sono vere.",
+                "The logical AND operator returns true only if both conditions are true. = L'operatore AND logico restituisce vero solo se entrambe le condizioni sono vere.",
               context: 'syntax',
               difficulty: 'beginner',
               code: 'if (x > 0 && x < 100)',
@@ -1072,7 +1078,7 @@ export default {
               pronunciation: '/ˈlɒdʒɪkəl ɔːr/',
               phonetic: 'LO-gi-kal OR',
               example:
-                "Logical OR returns true if at least one condition is true. = L'OR logico restituisce vero se almeno una condizione è vera.",
+                "The logical OR operator returns true if at least one condition is true. = L'operatore OR logico restituisce vero se almeno una condizione è vera.",
               context: 'syntax',
               difficulty: 'beginner',
               code: 'if (x == 0 || x == 1)',
@@ -1101,7 +1107,7 @@ export default {
               pronunciation: '/ɪf ˈsteɪtmənt/',
               phonetic: 'IF STEIT-ment',
               example:
-                "The if statement executes code when a condition is true. = L'istruzione if esegue codice quando una condizione è vera.",
+                "The if statement executes a block only when a condition is true. = L'istruzione if esegue un blocco solo quando una condizione è vera.",
               context: 'syntax',
               difficulty: 'beginner',
               code: 'if (x > 0) { printf("positive"); }',
@@ -1123,7 +1129,7 @@ export default {
               pronunciation: '/els ɪf/',
               phonetic: 'ELS IF',
               example:
-                'Use else if to check multiple conditions. = Usa else if per controllare più condizioni.',
+                'Using else if, you can chain multiple conditions in sequence. = Usando else if, si possono concatenare più condizioni in sequenza.',
               context: 'syntax',
               difficulty: 'beginner',
               code: 'if (x > 0) { ... } else if (x == 0) { ... }',
@@ -1144,7 +1150,7 @@ export default {
               pronunciation: '/ˈtɜːrnəri/',
               phonetic: 'TER-na-ri',
               example:
-                "The ternary operator is a shorthand for if-else. = L'operatore ternario è una scorciatoia per if-else.",
+                "The ternary operator condenses a simple if-else into a single expression. = L'operatore ternario condensa un semplice if-else in una singola espressione.",
               context: 'syntax',
               difficulty: 'beginner',
               code: 'int max = (a > b) ? a : b;',
@@ -1177,7 +1183,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt keɪs/',
               phonetic: 'di-FOLT KEIS',
               example:
-                'The default case handles unmatched values. = Il caso predefinito gestisce i valori non corrispondenti.',
+                'The default case handles values not matched by any case. = Il caso predefinito gestisce valori non corrispondenti a nessun case.',
               context: 'syntax',
               difficulty: 'beginner',
               code: 'default: printf("other"); break;',
@@ -1217,7 +1223,7 @@ export default {
               pronunciation: '/fɔːr luːp/',
               phonetic: 'FOR LUUP',
               example:
-                'A for loop repeats code a specific number of times. = Un ciclo for ripete il codice un numero specifico di volte.',
+                'A for loop repeats a block a known number of times. = Un ciclo for ripete un blocco un numero noto di volte.',
               context: 'syntax',
               difficulty: 'beginner',
               code: 'for (int i = 0; i < 10; i++)',
@@ -1228,7 +1234,7 @@ export default {
               pronunciation: '/waɪl luːp/',
               phonetic: 'UAIL LUUP',
               example:
-                'A while loop repeats while a condition is true. = Un ciclo while ripete finché una condizione è vera.',
+                'The while loop keeps running as long as its condition remains true. = Il ciclo while continua a girare finché la sua condizione resta vera.',
               context: 'syntax',
               difficulty: 'beginner',
               code: 'while (x > 0) { x--; }',
@@ -1272,7 +1278,7 @@ export default {
               pronunciation: '/ˈɪnfɪnɪt luːp/',
               phonetic: 'IN-fi-nit LUUP',
               example:
-                'An infinite loop runs forever if not stopped. = Un ciclo infinito gira per sempre se non fermato.',
+                'An infinite loop runs forever unless explicitly broken. = Un ciclo infinito gira per sempre a meno che non venga interrotto esplicitamente.',
               context: 'syntax',
               difficulty: 'beginner',
               code: 'while (1) { ... }',
@@ -1295,7 +1301,7 @@ export default {
               pronunciation: '/ˈnestɪd luːp/',
               phonetic: 'NES-tid LUUP',
               example:
-                'A nested loop is a loop inside another loop. = Un ciclo annidato è un ciclo dentro un altro ciclo.',
+                'A nested loop runs an inner cycle for every iteration of the outer one. = Un ciclo annidato esegue un ciclo interno per ogni iterazione di quello esterno.',
               context: 'syntax',
               difficulty: 'beginner',
               code: 'for (int i = 0; ...) { for (int j = 0; ...) { } }',
@@ -1333,7 +1339,7 @@ export default {
               pronunciation: '/ˈbɪtwaɪz ænd/',
               phonetic: 'BIT-uaiz AND',
               example:
-                "Bitwise AND compares each bit of two numbers. = L'AND bit a bit confronta ogni bit di due numeri.",
+                "A bitwise AND masks off unwanted bits using the & operator. = Un AND bit a bit maschera i bit indesiderati usando l'operatore &.",
               context: 'syntax',
               difficulty: 'beginner',
               code: 'int result = a & b;',
@@ -1344,7 +1350,7 @@ export default {
               pronunciation: '/ˈbɪtwaɪz ɔːr/',
               phonetic: 'BIT-uaiz OR',
               example:
-                "Bitwise OR sets a bit if either operand has it set. = L'OR bit a bit imposta un bit se almeno un operando lo ha impostato.",
+                "A bitwise OR sets specific bits using the | operator. = Un OR bit a bit imposta bit specifici usando l'operatore |.",
               context: 'syntax',
               difficulty: 'beginner',
               code: 'int result = a | b;',
@@ -1355,7 +1361,7 @@ export default {
               pronunciation: '/ˈbɪtwaɪz ɛks ɔːr/',
               phonetic: 'BIT-uaiz EKS-or',
               example:
-                'XOR returns 1 when bits are different. = XOR restituisce 1 quando i bit sono diversi.',
+                "A bitwise XOR toggles bits using the ^ operator. = Uno XOR bit a bit inverte bit usando l'operatore ^.",
               context: 'syntax',
               difficulty: 'beginner',
               code: 'int result = a ^ b;',
@@ -1400,7 +1406,7 @@ export default {
               pronunciation: '/ˈɒpəreɪtər ˈpresɪdəns/',
               phonetic: 'O-pe-rei-ter PRE-si-dens',
               example:
-                "Operator precedence determines the order of evaluation. = La precedenza degli operatori determina l'ordine di valutazione.",
+                'Knowing operator precedence prevents subtle bugs in complex expressions. = Conoscere la precedenza degli operatori previene bug sottili nelle espressioni complesse.',
               context: 'syntax',
               difficulty: 'beginner',
               note: "Come in matematica: moltiplicazione prima dell'addizione.",
@@ -1433,7 +1439,7 @@ export default {
               pronunciation: '/taɪp prəˈmoʊʃən/',
               phonetic: 'TAIP pro-MOU-scen',
               example:
-                'Type promotion converts smaller types to larger ones in expressions. = La promozione di tipo converte tipi più piccoli in più grandi nelle espressioni.',
+                "During arithmetic, type promotion widens smaller operands to match larger ones. = Durante l'aritmetica, la promozione di tipo allarga gli operandi più piccoli per corrispondere a quelli più grandi.",
               context: 'syntax',
               difficulty: 'beginner',
               note: 'char e short vengono promossi a int nelle operazioni.',
@@ -1472,7 +1478,7 @@ export default {
               pronunciation: '/ˈfʌŋkʃən ˌdefɪˈnɪʃən/',
               phonetic: 'FANK-scen de-fi-NI-scen',
               example:
-                'The function definition includes the body of the function. = La definizione della funzione include il corpo della funzione.',
+                "The function definition provides the actual body with the implementation. = La definizione di funzione fornisce il corpo effettivo con l'implementazione.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int add(int a, int b) { return a + b; }',
@@ -1483,7 +1489,7 @@ export default {
               pronunciation: '/ˈfʌŋkʃən ˈproʊtətaɪp/',
               phonetic: 'FANK-scen PROU-to-taip',
               example:
-                'Place function prototypes at the top of the file. = Posiziona i prototipi di funzione in cima al file.',
+                'Declaring a function prototype before main lets the compiler check call signatures. = Dichiarare un prototipo di funzione prima di main permette al compilatore di controllare le firme delle chiamate.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Permette di usare la funzione prima della sua definizione.',
@@ -1494,7 +1500,7 @@ export default {
               pronunciation: '/pəˈræmɪtər/',
               phonetic: 'pa-RA-mi-ter',
               example:
-                'A parameter is a variable in the function declaration. = Un parametro è una variabile nella dichiarazione della funzione.',
+                'A parameter receives a value passed to the function by the caller. = Un parametro riceve un valore passato alla funzione dal chiamante.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'void greet(char *name)',
@@ -1505,7 +1511,7 @@ export default {
               pronunciation: '/ˈɑːrɡjʊmənt/',
               phonetic: 'AR-ghiu-ment',
               example:
-                'An argument is the actual value passed to a function. = Un argomento è il valore effettivo passato a una funzione.',
+                "The argument is the actual value passed when calling a function. = L'argomento è il valore effettivo passato quando si chiama una funzione.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'greet("Alice");',
@@ -1578,7 +1584,7 @@ export default {
               pronunciation: '/pæs baɪ ˈvæljuː/',
               phonetic: 'PAS BAI VAL-iu',
               example:
-                'C passes arguments by value by default. = C passa gli argomenti per valore di default.',
+                'With pass by value, the function receives a copy, not the original variable. = Con il passaggio per valore, la funzione riceve una copia, non la variabile originale.',
               context: 'foundations',
               difficulty: 'beginner',
               note: "La funzione riceve una copia, non l'originale.",
@@ -1589,7 +1595,7 @@ export default {
               pronunciation: '/ˈloʊkəl ˈveəriəbl/',
               phonetic: 'LOU-kal VER-ia-bol',
               example:
-                'A local variable exists only inside its function. = Una variabile locale esiste solo dentro la sua funzione.',
+                'A local variable exists only within the function where it is declared. = Una variabile locale esiste solo dentro la funzione dove è dichiarata.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -1599,7 +1605,7 @@ export default {
               pronunciation: '/ˈɡloʊbəl ˈveəriəbl/',
               phonetic: 'GLOU-bal VER-ia-bol',
               example:
-                'A global variable is accessible from any function. = Una variabile globale è accessibile da qualsiasi funzione.',
+                'A global variable is accessible from any function in the file. = Una variabile globale è accessibile da qualsiasi funzione nel file.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Dichiarata fuori da tutte le funzioni. Evitarle quando possibile.',
@@ -1610,7 +1616,7 @@ export default {
               pronunciation: '/stæk freɪm/',
               phonetic: 'STAK FREIM',
               example:
-                'Each function call creates a new stack frame. = Ogni chiamata di funzione crea un nuovo frame dello stack.',
+                'Each function call creates a new stack frame to store local variables. = Ogni chiamata a funzione crea un nuovo stack frame per memorizzare le variabili locali.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -1620,7 +1626,7 @@ export default {
               pronunciation: '/rɪˈkɜːrʒən/',
               phonetic: 'ri-KER-scen',
               example:
-                'Recursion is when a function calls itself. = La ricorsione è quando una funzione chiama se stessa.',
+                'Without a base case, recursion causes infinite calls and a stack overflow. = Senza un caso base, la ricorsione causa chiamate infinite e uno stack overflow.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int fact(int n) { return n <= 1 ? 1 : n * fact(n-1); }',
@@ -1642,7 +1648,7 @@ export default {
               pronunciation: '/stæk ˈoʊvərfloʊ/',
               phonetic: 'STAK OU-ver-flou',
               example:
-                'Too many recursive calls cause a stack overflow. = Troppe chiamate ricorsive causano un traboccamento dello stack.',
+                'Deep recursion without a base case causes a stack overflow. = Una ricorsione profonda senza caso base causa uno stack overflow.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -1673,7 +1679,7 @@ export default {
               pronunciation: '/ˌveəriˈædɪk/',
               phonetic: 've-ri-A-dik',
               example:
-                'A variadic function accepts a variable number of arguments. = Una funzione variadic accetta un numero variabile di argomenti.',
+                'A variadic function like printf accepts a variable number of arguments. = Una funzione variadic come printf accetta un numero variabile di argomenti.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int printf(const char *fmt, ...);',
@@ -1712,7 +1718,7 @@ export default {
               pronunciation: '/ˈlaɪftaɪm/',
               phonetic: 'LAIF-taim',
               example:
-                "The lifetime of a local variable is the function execution. = La durata di una variabile locale è l'esecuzione della funzione.",
+                'The lifetime of a local variable ends when its function returns. = La durata di una variabile locale termina quando la sua funzione ritorna.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -1722,7 +1728,7 @@ export default {
               pronunciation: '/ˈstætɪk ˈveəriəbl/',
               phonetic: 'STA-tik VER-ia-bol',
               example:
-                'A static variable retains its value between calls. = Una variabile statica mantiene il suo valore tra le chiamate.',
+                'A static variable retains its value between successive function calls. = Una variabile statica mantiene il suo valore tra chiamate successive alla funzione.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'static int count = 0; count++;',
@@ -1752,21 +1758,21 @@ export default {
             },
             {
               english: 'Shadowing',
-              italian: 'Oscuramento / Shadowing',
+              italian: 'Oscuramento (shadowing)',
               pronunciation: '/ˈʃædoʊɪŋ/',
               phonetic: 'SHA-dou-ing',
               example:
-                "Shadowing occurs when an inner variable hides an outer one. = L'oscuramento avviene quando una variabile interna nasconde una esterna.",
+                'When an inner variable shadows an outer one, the outer becomes hidden. = Quando una variabile interna oscura una esterna, quella esterna diventa nascosta.',
               context: 'foundations',
               difficulty: 'beginner',
             },
             {
               english: 'Linkage',
-              italian: 'Collegamento / Linkage',
+              italian: 'Collegamento (linkage)',
               pronunciation: '/ˈlɪŋkɪdʒ/',
               phonetic: 'LINK-ig',
               example:
-                'External linkage allows a symbol to be shared across files. = Il collegamento esterno permette di condividere un simbolo tra file.',
+                'External linkage allows a symbol to be shared across translation units. = Il collegamento esterno permette a un simbolo di essere condiviso tra unità di traduzione.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -1804,7 +1810,7 @@ export default {
               pronunciation: '/pʊts/',
               phonetic: 'PUTS',
               example:
-                'puts prints a string followed by a newline. = puts stampa una stringa seguita da un newline.',
+                'The function puts prints a string followed by a newline to stdout. = La funzione puts stampa una stringa seguita da un newline su stdout.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'puts("Hello World");',
@@ -1816,7 +1822,7 @@ export default {
               pronunciation: '/ˈɡetʃɑːr/',
               phonetic: 'GHET-ciar',
               example:
-                "getchar reads a single character from input. = getchar legge un singolo carattere dall'input.",
+                'The function getchar reads a single character from standard input. = La funzione getchar legge un singolo carattere dallo standard input.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'char c = getchar();',
@@ -1827,7 +1833,7 @@ export default {
               pronunciation: '/ˈpʊtʃɑːr/',
               phonetic: 'PUT-ciar',
               example:
-                "putchar writes a single character to output. = putchar scrive un singolo carattere sull'output.",
+                'The function putchar writes a single character to standard output. = La funzione putchar scrive un singolo carattere sullo standard output.',
               context: 'foundations',
               difficulty: 'beginner',
               code: "putchar('A');",
@@ -1838,7 +1844,7 @@ export default {
               pronunciation: '/ˈeɪtuːaɪ/',
               phonetic: 'EI-tu-ai',
               example:
-                'atoi converts a string to an integer. = atoi converte una stringa in un intero.',
+                'The function atoi converts a string to an integer but lacks error checking. = La funzione atoi converte una stringa in un intero ma manca di controllo errori.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int n = atoi("42");',
@@ -1850,7 +1856,7 @@ export default {
               pronunciation: '/ˈeksɪt/',
               phonetic: 'EK-sit',
               example:
-                'exit terminates the program immediately. = exit termina il programma immediatamente.',
+                'Calling exit terminates the program and returns a status code to the OS. = Chiamare exit termina il programma e restituisce un codice di stato al sistema operativo.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'exit(EXIT_SUCCESS);',
@@ -1861,7 +1867,7 @@ export default {
               pronunciation: '/æbz/',
               phonetic: 'ABS',
               example:
-                'abs returns the absolute value of an integer. = abs restituisce il valore assoluto di un intero.',
+                'The function abs returns the absolute value of an integer argument. = La funzione abs restituisce il valore assoluto di un argomento intero.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int n = abs(-5); // 5',
@@ -1872,7 +1878,7 @@ export default {
               pronunciation: '/rænd/',
               phonetic: 'RAND',
               example:
-                'rand generates a pseudo-random number. = rand genera un numero pseudo-casuale.',
+                'Calling rand generates a pseudo-random number between 0 and RAND_MAX. = Chiamare rand genera un numero pseudo-casuale tra 0 e RAND_MAX.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int r = rand() % 100;',
@@ -1884,7 +1890,7 @@ export default {
               pronunciation: '/ɛs rænd/',
               phonetic: 'ES-RAND',
               example:
-                'srand sets the seed for random number generation. = srand imposta il seme per la generazione di numeri casuali.',
+                'Calling srand with time(NULL) seeds the random number generator uniquely each run. = Chiamare srand con time(NULL) inizializza il generatore di numeri casuali in modo unico ad ogni esecuzione.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'srand(time(NULL));',
@@ -1895,7 +1901,7 @@ export default {
               pronunciation: '/ˈɛs prɪntɛf/',
               phonetic: 'ES-PRINT-ef',
               example:
-                'sprintf writes formatted output to a string. = sprintf scrive output formattato in una stringa.',
+                'The function sprintf writes formatted output to a string buffer. = La funzione sprintf scrive output formattato in un buffer di stringa.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'char buf[50]; sprintf(buf, "Age: %d", 25);',
@@ -1907,7 +1913,7 @@ export default {
               pronunciation: '/ɛs ˈskænɛf/',
               phonetic: 'ES-SKAN-ef',
               example:
-                'sscanf reads formatted input from a string. = sscanf legge input formattato da una stringa.',
+                'The function sscanf reads formatted input from a string instead of stdin. = La funzione sscanf legge input formattato da una stringa invece che da stdin.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int n; sscanf("42", "%d", &n);',
@@ -1930,11 +1936,11 @@ export default {
           items: [
             {
               english: 'Array',
-              italian: 'Array / Vettore',
+              italian: 'Vettore (array)',
               pronunciation: '/əˈreɪ/',
               phonetic: 'a-REI',
               example:
-                'An array stores multiple values of the same type. = Un array memorizza più valori dello stesso tipo.',
+                'In C, an array stores elements of the same type in contiguous memory. = In C, un array memorizza elementi dello stesso tipo in memoria contigua.',
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int nums[5] = {1, 2, 3, 4, 5};',
@@ -1945,7 +1951,7 @@ export default {
               pronunciation: '/əˈreɪ ˈɪndeks/',
               phonetic: 'a-REI IN-deks',
               example:
-                'Array indices start at zero in C. = Gli indici degli array partono da zero in C.',
+                "The array index starts at 0, so the last element is at size minus one. = L'indice dell'array parte da 0, quindi l'ultimo elemento è a dimensione meno uno.",
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int first = nums[0];',
@@ -1968,7 +1974,7 @@ export default {
               pronunciation: '/əˈreɪ ɪˌnɪʃəlaɪˈzeɪʃən/',
               phonetic: 'a-REI i-ni-scia-lai-ZEI-scen',
               example:
-                'You can initialize an array with values in braces. = Puoi inizializzare un array con valori tra parentesi graffe.',
+                "Partial array initialization sets remaining elements to zero. = L'inizializzazione parziale di un array imposta gli elementi rimanenti a zero.",
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int a[] = {10, 20, 30};',
@@ -1979,7 +1985,7 @@ export default {
               pronunciation: '/əˈreɪ saɪz/',
               phonetic: 'a-REI SAIZ',
               example:
-                "Calculate the array size using sizeof. = Calcola la dimensione dell'array usando sizeof.",
+                "The array size must be known at compile time in standard C89. = La dimensione dell'array deve essere nota a tempo di compilazione in C89 standard.",
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int len = sizeof(a) / sizeof(a[0]);',
@@ -2101,7 +2107,7 @@ export default {
               pronunciation: '/ˌmʌltiˌdaɪˈmenʃənəl/',
               phonetic: 'mal-ti-dai-MEN-scio-nal',
               example:
-                'C supports arrays with more than two dimensions. = C supporta array con più di due dimensioni.',
+                'A multidimensional array stores data in rows and columns, like a matrix. = Un array multidimensionale memorizza dati in righe e colonne, come una matrice.',
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int cube[3][3][3];',
@@ -2123,7 +2129,7 @@ export default {
               pronunciation: '/əˈreɪ dɪˈkeɪ/',
               phonetic: 'a-REI di-KEI',
               example:
-                'An array decays to a pointer when passed to a function. = Un array decade a un puntatore quando passato a una funzione.',
+                "When passed to a function, array decay converts the array name to a pointer. = Quando passato a una funzione, il decadimento dell'array converte il nome dell'array in un puntatore.",
               context: 'pointers',
               difficulty: 'intermediate',
               note: 'Ecco perché sizeof non funziona su array passati come parametri.',
@@ -2146,7 +2152,7 @@ export default {
               pronunciation: '/ˈdezɪɡneɪtɪd/',
               phonetic: 'DE-sig-nei-tid',
               example:
-                'Designated initializers set specific elements. = Gli inizializzatori designati impostano elementi specifici.',
+                'A designated initializer lets you set specific struct fields by name. = Un inizializzatore designato permette di impostare campi specifici della struct per nome.',
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'int a[5] = {[2] = 10, [4] = 20};',
@@ -2175,7 +2181,7 @@ export default {
               pronunciation: '/ˈlɪniər sɜːrtʃ/',
               phonetic: 'LI-nier SERCH',
               example:
-                'Linear search checks each element sequentially. = La ricerca lineare controlla ogni elemento in sequenza.',
+                'A linear search checks each element one by one until it finds a match. = Una ricerca lineare controlla ogni elemento uno per uno finché trova una corrispondenza.',
               context: 'algorithms',
               difficulty: 'intermediate',
             },
@@ -2185,7 +2191,7 @@ export default {
               pronunciation: '/ˈsɔːrtɪŋ/',
               phonetic: 'SOR-ting',
               example:
-                "Sorting arranges array elements in order. = L'ordinamento dispone gli elementi dell'array in ordine.",
+                "In C, sorting arranges array elements in order using comparison functions. = In C, l'ordinamento dispone gli elementi dell'array in ordine usando funzioni di confronto.",
               context: 'algorithms',
               difficulty: 'intermediate',
             },
@@ -2195,7 +2201,7 @@ export default {
               pronunciation: '/ˈbʌbl sɔːrt/',
               phonetic: 'BA-bol SORT',
               example:
-                "Bubble sort repeatedly swaps adjacent elements. = L'ordinamento a bolle scambia ripetutamente elementi adiacenti.",
+                'Despite its simplicity, bubble sort has O(n squared) time complexity. = Nonostante la sua semplicità, il bubble sort ha complessità temporale O(n al quadrato).',
               context: 'algorithms',
               difficulty: 'intermediate',
               note: 'Semplice ma lento: O(n²). Buono solo per scopi didattici.',
@@ -2206,7 +2212,7 @@ export default {
               pronunciation: '/swɒp/',
               phonetic: 'SUOP',
               example:
-                'Swap two elements using a temporary variable. = Scambia due elementi usando una variabile temporanea.',
+                'To swap two elements in C, use a temporary variable to hold one value. = Per scambiare due elementi in C, usa una variabile temporanea per contenere un valore.',
               context: 'algorithms',
               difficulty: 'intermediate',
               code: 'int tmp = a; a = b; b = tmp;',
@@ -2236,11 +2242,11 @@ export default {
             },
             {
               english: 'Buffer',
-              italian: 'Buffer / Memoria temporanea',
+              italian: 'Memoria temporanea (buffer)',
               pronunciation: '/ˈbʌfər/',
               phonetic: 'BAF-fer',
               example:
-                "A buffer is a temporary storage area. = Un buffer è un'area di memorizzazione temporanea.",
+                'A buffer holds data temporarily while it is being transferred. = Un buffer contiene dati temporaneamente mentre vengono trasferiti.',
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'char buffer[1024];',
@@ -2262,7 +2268,7 @@ export default {
               pronunciation: '/ˈsentɪnəl/',
               phonetic: 'SEN-ti-nal',
               example:
-                'A sentinel value marks the end of data. = Un valore sentinella segna la fine dei dati.',
+                'A sentinel value marks the end of data, like -1 in an integer array. = Un valore sentinella segna la fine dei dati, come -1 in un array di interi.',
               context: 'foundations',
               difficulty: 'intermediate',
               note: 'Il carattere \\0 nelle stringhe C è un esempio di sentinella.',
@@ -2280,7 +2286,7 @@ export default {
               pronunciation: '/strɪŋ/',
               phonetic: 'STRING',
               example:
-                'In C, a string is an array of characters. = In C, una stringa è un array di caratteri.',
+                'In C, a string is an array of characters terminated by a null byte. = In C, una stringa è un array di caratteri terminato da un byte nullo.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'char name[] = "Alice";',
@@ -2303,7 +2309,7 @@ export default {
               pronunciation: '/strɪŋ ˈlɪtərəl/',
               phonetic: 'STRING LI-te-ral',
               example:
-                'A string literal is enclosed in double quotes. = Un letterale stringa è racchiuso tra virgolette doppie.',
+                'A string literal like "hello" is stored in read-only memory. = Una stringa letterale come "hello" è memorizzata in memoria di sola lettura.',
               context: 'strings',
               difficulty: 'intermediate',
               code: '"Hello, World!"',
@@ -2317,7 +2323,7 @@ export default {
                 'A character array can be modified, unlike a string literal. = Un array di caratteri può essere modificato, a differenza di un letterale stringa.',
               context: 'strings',
               difficulty: 'intermediate',
-              code: 'char s[] = "hello"; s[0] = \'H\';',
+              code: `char s[] = "hello"; s[0] = 'H';`,
             },
             {
               english: 'strlen',
@@ -2325,7 +2331,7 @@ export default {
               pronunciation: '/ɛs tiː ɑːr lɛn/',
               phonetic: 'STER-LEN',
               example:
-                'strlen returns the length of a string. = strlen restituisce la lunghezza di una stringa.',
+                'Calling strlen returns the length of a string, excluding the null terminator. = Chiamare strlen restituisce la lunghezza di una stringa, escludendo il terminatore nullo.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'size_t len = strlen("hello"); // 5',
@@ -2337,7 +2343,7 @@ export default {
               pronunciation: '/ɛs tiː ɑːr ˈkɒpi/',
               phonetic: 'STER-KO-pi',
               example:
-                'strcpy copies a string to another buffer. = strcpy copia una stringa in un altro buffer.',
+                'Using strcpy without checking buffer size risks a buffer overflow. = Usare strcpy senza controllare la dimensione del buffer rischia un buffer overflow.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'strcpy(dest, src);',
@@ -2348,7 +2354,8 @@ export default {
               italian: 'Confronto stringhe',
               pronunciation: '/ɛs tiː ɑːr kɒmp/',
               phonetic: 'STER-KOMP',
-              example: 'strcmp compares two strings. = strcmp confronta due stringhe.',
+              example:
+                'The function strcmp returns 0 when two strings are identical. = La funzione strcmp restituisce 0 quando due stringhe sono identiche.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'if (strcmp(a, b) == 0) // equal',
@@ -2360,7 +2367,7 @@ export default {
               pronunciation: '/ɛs tiː ɑːr kæt/',
               phonetic: 'STER-KAT',
               example:
-                "strcat appends one string to another. = strcat aggiunge una stringa a un'altra.",
+                "Using strcat appends one string to the end of another. = Usare strcat aggiunge una stringa alla fine di un'altra.",
               context: 'strings',
               difficulty: 'intermediate',
               code: 'strcat(dest, " World");',
@@ -2383,7 +2390,7 @@ export default {
               pronunciation: '/ˈbʌfər ˈoʊvərfloʊ/',
               phonetic: 'BAF-fer OU-ver-flou',
               example:
-                "Buffer overflow is a critical security vulnerability. = L'overflow del buffer è una vulnerabilità critica di sicurezza.",
+                'A buffer overflow writes beyond allocated memory, a critical security flaw. = Un buffer overflow scrive oltre la memoria allocata, un difetto di sicurezza critico.',
               context: 'strings',
               difficulty: 'intermediate',
               note: 'Causa principale di exploit in C. Sempre controllare le dimensioni!',
@@ -2410,7 +2417,7 @@ export default {
               pronunciation: '/ˈpɔɪntər/',
               phonetic: 'POIN-ter',
               example:
-                "A pointer stores the memory address of another variable. = Un puntatore memorizza l'indirizzo di memoria di un'altra variabile.",
+                'Every pointer in C holds a memory address, not the value itself. = Ogni puntatore in C contiene un indirizzo di memoria, non il valore stesso.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int *ptr;',
@@ -2443,7 +2450,7 @@ export default {
               pronunciation: '/diːˈrefərəns/',
               phonetic: 'dii-RE-fe-rens',
               example:
-                'Dereferencing a pointer accesses the value it points to. = Dereferenziare un puntatore accede al valore a cui punta.',
+                "Using the * operator to dereference a pointer accesses the stored value. = Usare l'operatore * per dereferenziare un puntatore accede al valore memorizzato.",
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int value = *ptr;',
@@ -2466,7 +2473,7 @@ export default {
               pronunciation: '/ˈpɔɪntər əˈrɪθmətɪk/',
               phonetic: 'POIN-ter a-RIT-me-tik',
               example:
-                "Pointer arithmetic moves the pointer by the size of the type. = L'aritmetica dei puntatori sposta il puntatore della dimensione del tipo.",
+                "With pointer arithmetic, adding 1 advances by the size of the pointed type. = Con l'aritmetica dei puntatori, aggiungere 1 avanza della dimensione del tipo puntato.",
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'ptr++; // moves by sizeof(*ptr) bytes',
@@ -2477,7 +2484,7 @@ export default {
               pronunciation: '/ˈdæŋɡlɪŋ/',
               phonetic: 'DAN-gling',
               example:
-                'A dangling pointer refers to freed memory. = Un puntatore pendente riferisce a memoria liberata.',
+                'A dangling pointer references memory that has already been freed. = Un puntatore pendente referenzia memoria che è già stata liberata.',
               context: 'pointers',
               difficulty: 'intermediate',
               note: 'Causa comune di bug. Impostare il puntatore a NULL dopo free().',
@@ -2488,7 +2495,7 @@ export default {
               pronunciation: '/waɪld ˈpɔɪntər/',
               phonetic: 'UAILD POIN-ter',
               example:
-                'A wild pointer is uninitialized and points to random memory. = Un puntatore selvaggio non è inizializzato e punta a memoria casuale.',
+                'A wild pointer points to an arbitrary address because it was never initialized. = Un puntatore selvaggio punta a un indirizzo arbitrario perché non è mai stato inizializzato.',
               context: 'pointers',
               difficulty: 'intermediate',
             },
@@ -2509,7 +2516,7 @@ export default {
               pronunciation: '/ˈpɔɪntər tuː əˈreɪ/',
               phonetic: 'POIN-ter TU a-REI',
               example:
-                'An array name can be used as a pointer to its first element. = Il nome di un array può essere usato come puntatore al suo primo elemento.',
+                'A pointer to array points to an entire array, not just its first element. = Un puntatore a array punta a un intero array, non solo al suo primo elemento.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int a[] = {1,2,3}; int *p = a;',
@@ -2560,7 +2567,7 @@ export default {
               pronunciation: '/ˈpɔɪntər kəmˈpærɪsən/',
               phonetic: 'POIN-ter com-PA-ri-son',
               example:
-                'You can compare pointers that point to the same array. = Puoi confrontare puntatori che puntano allo stesso array.',
+                'Two pointers can be compared only if they point into the same array. = Due puntatori possono essere confrontati solo se puntano nello stesso array.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'if (ptr1 < ptr2)',
@@ -2582,7 +2589,7 @@ export default {
               pronunciation: '/pæs baɪ ˈrefərəns/',
               phonetic: 'PAS BAI RE-fe-rens',
               example:
-                'C simulates pass by reference using pointers. = C simula il passaggio per riferimento usando i puntatori.',
+                'Simulating pass by reference in C requires passing a pointer to the variable. = Simulare il passaggio per riferimento in C richiede passare un puntatore alla variabile.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'void swap(int *a, int *b)',
@@ -2628,7 +2635,7 @@ export default {
               pronunciation: '/ˌseɡmənˈteɪʃən fɔːlt/',
               phonetic: 'seg-men-TEI-scen FOLT',
               example:
-                'A segmentation fault occurs when accessing invalid memory. = Un errore di segmentazione avviene quando si accede a memoria non valida.',
+                'A segmentation fault occurs when a program accesses memory it does not own. = Un segmentation fault si verifica quando un programma accede a memoria che non possiede.',
               context: 'pointers',
               difficulty: 'intermediate',
               note: 'Il bug più temuto in C. Dereferenziare NULL causa segfault.',
@@ -2646,7 +2653,7 @@ export default {
               pronunciation: '/ˈpɔɪntər tuː ˈpɔɪntər/',
               phonetic: 'POIN-ter TU POIN-ter',
               example:
-                "A pointer to pointer stores the address of another pointer. = Un puntatore a puntatore memorizza l'indirizzo di un altro puntatore.",
+                "Using a pointer to pointer lets a function modify the caller's pointer. = Usare un puntatore a puntatore permette a una funzione di modificare il puntatore del chiamante.",
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int **pp = &ptr;',
@@ -2701,7 +2708,7 @@ export default {
               pronunciation: '/dʒəˈnerɪk ˈpɔɪntər/',
               phonetic: 'ge-NE-rik POIN-ter',
               example:
-                'void* is the generic pointer type in C. = void* è il tipo di puntatore generico in C.',
+                "Before ANSI C, a generic pointer was often declared as char *. = Prima dell'ANSI C, un puntatore generico era spesso dichiarato come char *.",
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'void *ptr;',
@@ -2731,21 +2738,21 @@ export default {
             },
             {
               english: 'Aliasing',
-              italian: 'aliasing / due puntatori sullo stesso indirizzo',
+              italian: 'Due puntatori sullo stesso indirizzo (aliasing)',
               pronunciation: '/ˈeɪliəsɪŋ/',
               phonetic: 'EI-lia-sing',
               example:
-                "Aliasing occurs when two pointers refer to the same memory. = L'aliasing avviene quando due puntatori riferiscono alla stessa memoria.",
+                "When two pointers alias the same memory, modifying one affects the other. = Quando due puntatori fanno aliasing sulla stessa memoria, modificare uno influenza l'altro.",
               context: 'pointers',
               difficulty: 'intermediate',
             },
             {
               english: 'restrict',
-              italian: 'Restrizione / restrict',
+              italian: 'Restrizione (restrict)',
               pronunciation: '/rɪˈstrɪkt/',
               phonetic: 'ri-STRIKT',
               example:
-                'The restrict keyword promises no aliasing. = La parola chiave restrict promette assenza di aliasing.',
+                'The restrict qualifier promises that no other pointer aliases the same memory. = Il qualificatore restrict promette che nessun altro puntatore fa aliasing sulla stessa memoria.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'void copy(int *restrict dst, const int *restrict src, int n)',
@@ -2764,7 +2771,7 @@ export default {
               pronunciation: '/ˈfʌŋkʃən ˈpɔɪntər/',
               phonetic: 'FANK-scen POIN-ter',
               example:
-                "A function pointer stores the address of a function. = Un puntatore a funzione memorizza l'indirizzo di una funzione.",
+                "A function pointer stores the address of a function for indirect calls. = Un puntatore a funzione memorizza l'indirizzo di una funzione per chiamate indirette.",
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int (*fp)(int, int) = &add;',
@@ -2775,7 +2782,7 @@ export default {
               pronunciation: '/ˈkɔːlbæk/',
               phonetic: 'KOL-bak',
               example:
-                'A callback is a function passed as an argument. = Un callback è una funzione passata come argomento.',
+                "A callback lets a library call user-defined code via a function pointer. = Una callback permette a una libreria di chiamare codice definito dall'utente tramite un puntatore a funzione.",
               context: 'pointers',
               difficulty: 'intermediate',
               note: 'Usato molto nelle librerie C, come qsort.',
@@ -2786,7 +2793,7 @@ export default {
               pronunciation: '/ˈkjuː sɔːrt/',
               phonetic: 'KIIUU SORT',
               example:
-                'qsort sorts an array using a comparison callback. = qsort ordina un array usando un callback di confronto.',
+                "The standard qsort function sorts arrays using a user-provided comparison callback. = La funzione standard qsort ordina array usando una callback di confronto fornita dall'utente.",
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'qsort(arr, n, sizeof(int), compare);',
@@ -2819,7 +2826,7 @@ export default {
               pronunciation: '/dɪˈspætʃ ˈteɪbl/',
               phonetic: 'di-SPACH TEI-bol',
               example:
-                'A dispatch table maps operations to function pointers. = Una tabella di dispatch mappa operazioni a puntatori a funzione.',
+                'A dispatch table maps operation codes to function pointers for fast routing. = Una tabella di dispatch mappa codici operazione a puntatori a funzione per un routing veloce.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'Operation ops[] = {add, sub, mul};',
@@ -2841,7 +2848,7 @@ export default {
               pronunciation: '/əˈreɪ əv ˈpɔɪntərz/',
               phonetic: 'a-REI ov POIN-ters',
               example:
-                'An array of pointers stores multiple addresses. = Un array di puntatori memorizza indirizzi multipli.',
+                'An array of pointers stores multiple addresses, useful for string arrays. = Un array di puntatori memorizza più indirizzi, utile per array di stringhe.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'char *names[] = {"Alice", "Bob"};',
@@ -2852,18 +2859,18 @@ export default {
               pronunciation: '/oʊˈpeɪk ˈpɔɪntər/',
               phonetic: 'ou-PEIK POIN-ter',
               example:
-                "An opaque pointer hides the implementation details. = Un puntatore opaco nasconde i dettagli dell'implementazione.",
+                "An opaque pointer hides the struct's implementation from the user. = Un puntatore opaco nasconde l'implementazione della struct all'utente.",
               context: 'pointers',
               difficulty: 'intermediate',
               note: "Pattern comune per l'incapsulamento in C: la struct è definita solo nel .c.",
             },
             {
               english: 'Handle',
-              italian: 'Handle / Manipolatore',
+              italian: 'Manipolatore (handle)',
               pronunciation: '/ˈhændl/',
               phonetic: 'HAN-dol',
               example:
-                'A handle is an abstract reference to a resource. = Un handle è un riferimento astratto a una risorsa.',
+                'The system assigns a handle to each open file for tracking purposes. = Il sistema assegna un handle a ogni file aperto per scopi di tracciamento.',
               context: 'pointers',
               difficulty: 'intermediate',
               note: 'FILE* è un esempio di handle nella libreria C standard.',
@@ -2890,7 +2897,7 @@ export default {
               pronunciation: '/ˈdʌbl ˈpɔɪntər/',
               phonetic: 'DA-bol POIN-ter',
               example:
-                'A double pointer points to another pointer. = Un doppio puntatore punta a un altro puntatore.',
+                "A double pointer stores the address of another pointer. = Un doppio puntatore memorizza l'indirizzo di un altro puntatore.",
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int **pp;',
@@ -2901,7 +2908,7 @@ export default {
               pronunciation: '/ˈpɔɪntər tuː ˈpɔɪntər/',
               phonetic: 'POIN-ter TU POIN-ter',
               example:
-                'Use pointer to pointer to modify a pointer in a function. = Usa un puntatore a puntatore per modificare un puntatore in una funzione.',
+                "Using a pointer to pointer lets a function modify the caller's pointer. = Usare un puntatore a puntatore permette a una funzione di modificare il puntatore del chiamante.",
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'void alloc(int **pp) { *pp = malloc(sizeof(int)); }',
@@ -2923,7 +2930,7 @@ export default {
               pronunciation: '/ˈɑːrɡ siː/',
               phonetic: 'ARG-SII',
               example:
-                'argc holds the number of command line arguments. = argc contiene il numero di argomenti da riga di comando.',
+                'The parameter argc holds the number of command-line arguments passed to main. = Il parametro argc contiene il numero di argomenti da riga di comando passati a main.',
               context: 'pointers',
               difficulty: 'intermediate',
               note: 'Argument count. Include il nome del programma stesso.',
@@ -2934,7 +2941,7 @@ export default {
               pronunciation: '/ˈɑːrɡ viː/',
               phonetic: 'ARG-VII',
               example:
-                'argv is an array of strings containing the arguments. = argv è un array di stringhe contenente gli argomenti.',
+                'The parameter argv is an array of strings containing the command-line arguments. = Il parametro argv è un array di stringhe contenente gli argomenti da riga di comando.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'printf("%s", argv[0]); // program name',
@@ -3005,7 +3012,7 @@ export default {
               pronunciation: '/ˈfʌŋkʃən ˈpɔɪntər əˈreɪ/',
               phonetic: 'FANK-scen POIN-ter a-REI',
               example:
-                'An array of function pointers enables runtime dispatch. = Un array di puntatori a funzione abilita il dispatch a runtime.',
+                'A function pointer array lets you dispatch calls based on an index. = Un array di puntatori a funzione permette di smistare chiamate in base a un indice.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'int (*ops[])(int,int) = {add, sub, mul, div_fn};',
@@ -3016,7 +3023,7 @@ export default {
               pronunciation: '/steɪt məˈʃiːn/',
               phonetic: 'STEIT ma-SCIIN',
               example:
-                'Function pointers can implement a state machine. = I puntatori a funzione possono implementare una macchina a stati.',
+                'Modeling firmware logic as a state machine makes behavior predictable and testable. = Modellare la logica del firmware come una macchina a stati rende il comportamento prevedibile e testabile.',
               context: 'pointers',
               difficulty: 'intermediate',
             },
@@ -3047,7 +3054,7 @@ export default {
               pronunciation: '/ˈsɪɡnəl ˈhændlər/',
               phonetic: 'SIG-nal HAN-dler',
               example:
-                'A signal handler is a callback for OS signals. = Un gestore di segnale è un callback per i segnali del sistema operativo.',
+                'A signal handler is a function that runs when the process receives a specific signal. = Un gestore di segnale è una funzione che viene eseguita quando il processo riceve un segnale specifico.',
               context: 'systems',
               difficulty: 'intermediate',
               code: 'signal(SIGINT, handler);',
@@ -3058,7 +3065,7 @@ export default {
               pronunciation: '/ˈbiː sɜːrtʃ/',
               phonetic: 'BII SERCH',
               example:
-                'bsearch performs binary search on a sorted array. = bsearch esegue una ricerca binaria su un array ordinato.',
+                'The standard bsearch function performs binary search on a sorted array. = La funzione standard bsearch esegue una ricerca binaria su un array ordinato.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'void *result = bsearch(&key, arr, n, sizeof(int), cmp);',
@@ -3069,7 +3076,7 @@ export default {
               pronunciation: '/æt ˈeksɪt/',
               phonetic: 'AT EK-sit',
               example:
-                'atexit registers a function to call at program exit. = atexit registra una funzione da chiamare alla terminazione del programma.',
+                'Registering a function with atexit ensures it runs before the program exits. = Registrare una funzione con atexit assicura che venga eseguita prima che il programma termini.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'atexit(cleanup);',
@@ -3119,7 +3126,7 @@ export default {
               pronunciation: '/vɔɪd ˈpɔɪntər/',
               phonetic: 'VOID POIN-ter',
               example:
-                "A void pointer can hold the address of any type. = Un puntatore void può contenere l'indirizzo di qualsiasi tipo.",
+                'A void pointer can hold any address but must be cast before dereferencing. = Un puntatore void può contenere qualsiasi indirizzo ma deve essere castato prima di dereferenziare.',
               context: 'pointers',
               difficulty: 'intermediate',
               code: 'void *generic = &x;',
@@ -3161,7 +3168,8 @@ export default {
               italian: 'Copia di memoria',
               pronunciation: '/mɛm ˈkɒpi/',
               phonetic: 'MEM-KO-pi',
-              example: 'memcpy copies a block of memory. = memcpy copia un blocco di memoria.',
+              example:
+                'Calling memcpy copies n bytes from source to destination in memory. = Chiamare memcpy copia n byte dalla sorgente alla destinazione in memoria.',
               context: 'memory',
               difficulty: 'intermediate',
               code: 'memcpy(dest, src, n);',
@@ -3172,7 +3180,7 @@ export default {
               pronunciation: '/mɛm sɛt/',
               phonetic: 'MEM-SET',
               example:
-                'memset fills memory with a byte value. = memset riempie la memoria con un valore in byte.',
+                'Using memset fills a block of memory with a given byte value. = Usare memset riempie un blocco di memoria con un dato valore di byte.',
               context: 'memory',
               difficulty: 'intermediate',
               code: 'memset(buf, 0, sizeof(buf));',
@@ -3183,7 +3191,7 @@ export default {
               pronunciation: '/mɛm kɒmp/',
               phonetic: 'MEM-KOMP',
               example:
-                'memcmp compares two blocks of memory. = memcmp confronta due blocchi di memoria.',
+                'The function memcmp compares two blocks of memory byte by byte. = La funzione memcmp confronta due blocchi di memoria byte per byte.',
               context: 'memory',
               difficulty: 'intermediate',
               code: 'if (memcmp(a, b, n) == 0)',
@@ -3194,18 +3202,18 @@ export default {
               pronunciation: '/strɪkt ˈeɪliəsɪŋ/',
               phonetic: 'STRIKT EI-lia-sing',
               example:
-                'Strict aliasing rules restrict pointer type punning. = Le regole di aliasing stretto limitano il type punning dei puntatori.',
+                'Violating strict aliasing by casting between unrelated pointer types causes undefined behavior. = Violare lo strict aliasing castando tra tipi di puntatori non correlati causa comportamento indefinito.',
               context: 'pointers',
               difficulty: 'intermediate',
               note: "Violare l'aliasing stretto è comportamento indefinito in C.",
             },
             {
               english: 'Type Punning',
-              italian: 'Type punning / Reinterpretazione di tipo',
+              italian: 'Reinterpretazione di tipo (type punning)',
               pronunciation: '/taɪp ˈpʌnɪŋ/',
               phonetic: 'TAIP PAN-ning',
               example:
-                'Type punning reinterprets the bits of one type as another. = Il type punning reinterpreta i bit di un tipo come un altro.',
+                'Using type punning via unions reinterprets the same bytes as different types. = Usare il type punning tramite unioni reinterpreta gli stessi byte come tipi diversi.',
               context: 'pointers',
               difficulty: 'intermediate',
               note: 'Usare union per type punning sicuro in C.',
@@ -3234,7 +3242,7 @@ export default {
               pronunciation: '/juːz ˈæftər friː/',
               phonetic: 'IIUZ AF-ter FRII',
               example:
-                "Use after free accesses memory that was already freed. = L'uso dopo la liberazione accede a memoria già liberata.",
+                "A use-after-free bug accesses memory that has already been returned to the allocator. = Un bug use-after-free accede a memoria che è già stata restituita all'allocatore.",
               context: 'memory',
               difficulty: 'intermediate',
               note: 'Bug gravissimo. Può causare crash o vulnerabilità di sicurezza.',
@@ -3245,7 +3253,7 @@ export default {
               pronunciation: '/ˈdʌbl friː/',
               phonetic: 'DA-bol FRII',
               example:
-                'Double free calls free() on the same pointer twice. = La doppia liberazione chiama free() sullo stesso puntatore due volte.',
+                "Calling free twice on the same pointer (double free) corrupts the heap metadata. = Chiamare free due volte sullo stesso puntatore (double free) corrompe i metadati dell'heap.",
               context: 'memory',
               difficulty: 'intermediate',
               code: 'free(ptr); free(ptr); // BUG!',
@@ -3256,7 +3264,7 @@ export default {
               pronunciation: '/ˈmeməri liːk/',
               phonetic: 'ME-mo-ri LIIK',
               example:
-                'A memory leak occurs when allocated memory is never freed. = Una perdita di memoria avviene quando la memoria allocata non viene mai liberata.',
+                'A memory leak wastes resources because allocated memory is never freed. = Un memory leak spreca risorse perché la memoria allocata non viene mai liberata.',
               context: 'memory',
               difficulty: 'intermediate',
               tool: 'Valgrind',
@@ -3277,7 +3285,7 @@ export default {
               pronunciation: '/ˌʌndɪˈfaɪnd bɪˈheɪvjər/',
               phonetic: 'an-di-FAIND bi-HEI-vier',
               example:
-                'Undefined behavior means anything can happen. = Comportamento indefinito significa che può succedere qualsiasi cosa.',
+                'Triggering undefined behavior means the C standard imposes no requirements on the result. = Attivare un comportamento indefinito significa che lo standard C non impone requisiti sul risultato.',
               context: 'pointers',
               difficulty: 'intermediate',
               note: 'Abbreviato UB. Il compilatore non è obbligato a segnalarlo.',
@@ -3288,7 +3296,7 @@ export default {
               pronunciation: '/əˈdres ˈsænɪtaɪzər/',
               phonetic: 'a-DRES SA-ni-tai-zer',
               example:
-                "Address Sanitizer detects memory errors at runtime. = L'Address Sanitizer rileva errori di memoria a runtime.",
+                'Compiling with Address Sanitizer detects memory errors like overflows at runtime. = Compilare con Address Sanitizer rileva errori di memoria come overflow a runtime.',
               context: 'debugging',
               difficulty: 'intermediate',
               command: 'gcc -fsanitize=address main.c',
@@ -3318,22 +3326,22 @@ export default {
             },
             {
               english: 'Endianness',
-              italian: 'Ordine dei byte / Endianness',
+              italian: 'Ordine dei byte (endianness)',
               pronunciation: '/ˈendiənnəs/',
               phonetic: 'EN-dian-nes',
               example:
-                "Endianness affects how multi-byte values are stored. = L'ordine dei byte influenza come i valori multi-byte sono memorizzati.",
+                'Network protocols typically use big endianness, while x86 CPUs use little endianness. = I protocolli di rete tipicamente usano big endianness, mentre le CPU x86 usano little endianness.',
               context: 'memory',
               difficulty: 'intermediate',
               note: 'Little-endian (x86): byte meno significativo prima.',
             },
             {
               english: 'Padding',
-              italian: 'Riempimento / Padding',
+              italian: 'Riempimento (padding)',
               pronunciation: '/ˈpædɪŋ/',
               phonetic: 'PA-ding',
               example:
-                "Structs may have padding bytes for alignment. = Le struct possono avere byte di riempimento per l'allineamento.",
+                'The compiler inserts padding bytes in structs to satisfy alignment constraints. = Il compilatore inserisce byte di riempimento nelle struct per soddisfare i vincoli di allineamento.',
               context: 'memory',
               difficulty: 'intermediate',
               note: 'sizeof(struct) può essere maggiore della somma dei campi.',
@@ -3360,7 +3368,7 @@ export default {
               pronunciation: '/ɛs tiː ɑːr ɛn ˈkɒpi/',
               phonetic: 'STER-EN-KO-pi',
               example:
-                'strncpy copies at most n characters. = strncpy copia al massimo n caratteri.',
+                'Unlike strcpy, strncpy limits the copy to n characters for safety. = A differenza di strcpy, strncpy limita la copia a n caratteri per sicurezza.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'strncpy(dest, src, sizeof(dest) - 1);',
@@ -3372,7 +3380,7 @@ export default {
               pronunciation: '/ɛs tiː ɑːr ɛn kæt/',
               phonetic: 'STER-EN-KAT',
               example:
-                'strncat appends at most n characters. = strncat aggiunge al massimo n caratteri.',
+                'The function strncat appends at most n characters, preventing buffer overflow. = La funzione strncat aggiunge al massimo n caratteri, prevenendo il buffer overflow.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'strncat(dest, src, sizeof(dest) - strlen(dest) - 1);',
@@ -3383,7 +3391,7 @@ export default {
               pronunciation: '/ɛs tiː ɑːr ɛn kɒmp/',
               phonetic: 'STER-EN-KOMP',
               example:
-                'strncmp compares at most n characters. = strncmp confronta al massimo n caratteri.',
+                'The function strncmp compares at most n characters of two strings. = La funzione strncmp confronta al massimo n caratteri di due stringhe.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'if (strncmp(cmd, "quit", 4) == 0)',
@@ -3394,7 +3402,7 @@ export default {
               pronunciation: '/ɛs tiː ɑːr kɑːr/',
               phonetic: 'STER-KIAR',
               example:
-                'strchr finds the first occurrence of a character. = strchr trova la prima occorrenza di un carattere.',
+                'The function strchr finds the first occurrence of a character in a string. = La funzione strchr trova la prima occorrenza di un carattere in una stringa.',
               context: 'strings',
               difficulty: 'intermediate',
               code: "char *p = strchr(str, '@');",
@@ -3405,7 +3413,7 @@ export default {
               pronunciation: '/ɛs tiː ɑːr ɑːr kɑːr/',
               phonetic: 'STER-AR-KIAR',
               example:
-                "strrchr finds the last occurrence of a character. = strrchr trova l'ultima occorrenza di un carattere.",
+                "The function strrchr finds the last occurrence of a character in a string. = La funzione strrchr trova l'ultima occorrenza di un carattere in una stringa.",
               context: 'strings',
               difficulty: 'intermediate',
               code: "char *ext = strrchr(filename, '.');",
@@ -3416,7 +3424,7 @@ export default {
               pronunciation: '/ɛs tiː ɑːr ɛs tiː ɑːr/',
               phonetic: 'STER-STER',
               example:
-                'strstr finds a substring within a string. = strstr trova una sottostringa dentro una stringa.',
+                'The function strstr finds a substring within a larger string. = La funzione strstr trova una sottostringa dentro una stringa più grande.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'char *found = strstr(text, "hello");',
@@ -3426,7 +3434,8 @@ export default {
               italian: 'Tokenizzazione stringa',
               pronunciation: '/ɛs tiː ɑːr tɒk/',
               phonetic: 'STER-TOK',
-              example: 'strtok splits a string into tokens. = strtok divide una stringa in token.',
+              example:
+                'Calling strtok splits a string into tokens using a delimiter. = Chiamare strtok divide una stringa in token usando un delimitatore.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'char *tok = strtok(str, ",");',
@@ -3438,7 +3447,7 @@ export default {
               pronunciation: '/ɛs tiː ɑːr tuː ɛl/',
               phonetic: 'STER-TU-EL',
               example:
-                'strtol converts a string to a long integer with error checking. = strtol converte una stringa in un intero long con controllo errori.',
+                'Unlike atoi, strtol converts a string to a long integer with error checking. = A differenza di atoi, strtol converte una stringa in un intero long con controllo errori.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'long val = strtol("42", NULL, 10);',
@@ -3450,7 +3459,7 @@ export default {
               pronunciation: '/ɛs ɛn prɪntɛf/',
               phonetic: 'ES-EN-PRINT-ef',
               example:
-                'snprintf prevents buffer overflow in formatted strings. = snprintf previene il buffer overflow nelle stringhe formattate.',
+                'Using snprintf prevents buffer overflow by limiting the number of characters written. = Usare snprintf previene il buffer overflow limitando il numero di caratteri scritti.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'snprintf(buf, sizeof(buf), "Value: %d", x);',
@@ -3587,11 +3596,11 @@ export default {
           items: [
             {
               english: 'Parsing',
-              italian: 'Analisi sintattica / Parsing',
+              italian: 'Analisi sintattica (parsing)',
               pronunciation: '/ˈpɑːrsɪŋ/',
               phonetic: 'PAR-sing',
               example:
-                'Parsing extracts structured data from strings. = Il parsing estrae dati strutturati dalle stringhe.',
+                "Implementing parsing in C typically involves tokenizing the input first. = Implementare l'analisi sintattica in C tipicamente richiede prima la tokenizzazione dell'input.",
               context: 'strings',
               difficulty: 'intermediate',
             },
@@ -3601,7 +3610,7 @@ export default {
               pronunciation: '/ˌtoʊkənaɪˈzeɪʃən/',
               phonetic: 'tou-ke-nai-ZEI-scen',
               example:
-                'Tokenization splits text into meaningful pieces. = La tokenizzazione divide il testo in pezzi significativi.',
+                'The process of tokenization splits text into meaningful pieces called tokens. = Il processo di tokenizzazione divide il testo in pezzi significativi chiamati token.',
               context: 'strings',
               difficulty: 'intermediate',
             },
@@ -3622,7 +3631,7 @@ export default {
               pronunciation: '/ˈfɔːrmæt strɪŋ/',
               phonetic: 'FOR-mat STRING',
               example:
-                'A format string contains placeholders for values. = Una stringa di formato contiene segnaposto per i valori.',
+                "A format string contains placeholders like %s and %d for variable output. = Una stringa di formato contiene segnaposto come %s e %d per l'output variabile.",
               context: 'strings',
               difficulty: 'intermediate',
               code: 'printf("%s is %d years old", name, age);',
@@ -3690,7 +3699,7 @@ export default {
                 'An empty string contains only the null terminator. = Una stringa vuota contiene solo il terminatore nullo.',
               context: 'strings',
               difficulty: 'intermediate',
-              code: 'char s[] = "";  // s[0] == \'\\0\'',
+              code: `char s[] = "";  // s[0] == '\\0'`,
             },
           ],
         },
@@ -3727,7 +3736,7 @@ export default {
               pronunciation: '/baʊndz ˈtʃekɪŋ/',
               phonetic: 'BAUNDS CIEK-ing',
               example:
-                'Always perform bounds checking on string operations. = Esegui sempre il controllo dei limiti sulle operazioni con le stringhe.',
+                'Strict bounds checking prevents reads and writes outside allocated arrays. = Un rigoroso controllo dei limiti previene letture e scritture fuori dagli array allocati.',
               context: 'strings',
               difficulty: 'intermediate',
             },
@@ -3748,7 +3757,7 @@ export default {
               pronunciation: '/ˈɪnpʊt ˌvælɪˈdeɪʃən/',
               phonetic: 'IN-put va-li-DEI-scen',
               example:
-                "Validate all user input before processing. = Valida tutto l'input utente prima dell'elaborazione.",
+                "Thorough input validation rejects malicious data before it reaches sensitive code. = Una validazione approfondita dell'input rifiuta dati malevoli prima che raggiungano codice sensibile.",
               context: 'strings',
               difficulty: 'intermediate',
             },
@@ -3778,7 +3787,7 @@ export default {
               pronunciation: '/ɡets/',
               phonetic: 'GHETS',
               example:
-                'Never use gets — it has no bounds checking. = Non usare mai gets — non ha controllo dei limiti.',
+                "Never use the deprecated gets function because it cannot limit input length. = Non usare mai la funzione deprecata gets perché non può limitare la lunghezza dell'input.",
               context: 'strings',
               difficulty: 'intermediate',
               code: '// Use fgets(buf, sizeof(buf), stdin) instead',
@@ -3790,7 +3799,7 @@ export default {
               pronunciation: '/ɛf ɡets/',
               phonetic: 'EF-GHETS',
               example:
-                'fgets safely reads a line with a size limit. = fgets legge in sicurezza una riga con un limite di dimensione.',
+                'Unlike gets, fgets safely reads a line with a size limit to prevent overflow. = A differenza di gets, fgets legge in sicurezza una riga con un limite di dimensione per prevenire overflow.',
               context: 'strings',
               difficulty: 'intermediate',
               code: 'fgets(buf, sizeof(buf), stdin);',
@@ -3838,7 +3847,7 @@ export default {
               pronunciation: '/ˈmembər/',
               phonetic: 'MEM-ber',
               example:
-                "Access a struct member with the dot operator. = Accedi a un membro della struct con l'operatore punto.",
+                "Each member of a struct has its own offset from the start of the structure. = Ogni membro di una struct ha il proprio offset dall'inizio della struttura.",
               context: 'structs',
               difficulty: 'intermediate',
               code: 'p.x = 10;',
@@ -3849,7 +3858,7 @@ export default {
               pronunciation: '/dɒt ˈɒpəreɪtər/',
               phonetic: 'DOT O-pe-rei-ter',
               example:
-                "The dot operator accesses members of a struct variable. = L'operatore punto accede ai membri di una variabile struct.",
+                "The dot operator accesses a member of a struct value directly. = L'operatore punto accede a un membro di un valore struct direttamente.",
               context: 'structs',
               difficulty: 'intermediate',
               code: 'person.name',
@@ -3860,7 +3869,7 @@ export default {
               pronunciation: '/ˈæroʊ/',
               phonetic: 'A-rou',
               example:
-                "The arrow operator accesses members through a pointer. = L'operatore freccia accede ai membri attraverso un puntatore.",
+                "The arrow operator -> dereferences a pointer and accesses a member in one step. = L'operatore freccia -> dereferenzia un puntatore e accede a un membro in un solo passo.",
               context: 'structs',
               difficulty: 'intermediate',
               code: 'ptr->name  // same as (*ptr).name',
@@ -3905,7 +3914,7 @@ export default {
               pronunciation: '/strʌkt ˈpɔɪntər/',
               phonetic: 'STRAKT POIN-ter',
               example:
-                'Use a pointer to pass structs efficiently. = Usa un puntatore per passare struct in modo efficiente.',
+                "A struct pointer accesses members using the arrow operator ->. = Un puntatore a struct accede ai membri usando l'operatore freccia ->.",
               context: 'structs',
               difficulty: 'intermediate',
               code: 'void move(struct Point *p) { p->x += 1; }',
@@ -3946,7 +3955,7 @@ export default {
               pronunciation: '/ˈjuːnjən/',
               phonetic: 'IU-nion',
               example:
-                "A union stores different types in the same memory location. = Un'unione memorizza tipi diversi nella stessa posizione di memoria.",
+                "A union stores all its members in overlapping memory, sharing the same space. = Un'unione memorizza tutti i suoi membri in memoria sovrapposta, condividendo lo stesso spazio.",
               context: 'structs',
               difficulty: 'intermediate',
               code: 'union Data { int i; float f; char c; };',
@@ -3958,7 +3967,7 @@ export default {
               pronunciation: '/tæɡd ˈjuːnjən/',
               phonetic: 'TAGD IU-nion',
               example:
-                "A tagged union uses a type field to track the active member. = Un'unione etichettata usa un campo tipo per tracciare il membro attivo.",
+                "A tagged union pairs a union with an enum to track which field is active. = Un'unione etichettata abbina un'unione con un enum per tracciare quale campo è attivo.",
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct Variant { int type; union { int i; float f; } val; };',
@@ -4014,7 +4023,7 @@ export default {
               pronunciation: '/ˈfleksɪbl əˈreɪ/',
               phonetic: 'FLEK-si-bol a-REI',
               example:
-                "A flexible array member must be the last member. = Un membro array flessibile deve essere l'ultimo membro.",
+                'A flexible array member at the end of a struct has no fixed size. = Un membro array flessibile alla fine di una struct non ha dimensione fissa.',
               context: 'structs',
               difficulty: 'intermediate',
               code: 'struct Buffer { int len; char data[]; };',
@@ -4038,7 +4047,7 @@ export default {
               pronunciation: '/oʊˈpeɪk taɪp/',
               phonetic: 'ou-PEIK TAIP',
               example:
-                'An opaque type hides its implementation in the .c file. = Un tipo opaco nasconde la sua implementazione nel file .c.',
+                "An opaque type hides its internal structure, exposing only a pointer API. = Un tipo opaco nasconde la sua struttura interna, esponendo solo un'API a puntatore.",
               context: 'structs',
               difficulty: 'intermediate',
               note: "Pattern per l'incapsulamento in C. L'header dichiara solo il puntatore.",
@@ -4049,7 +4058,7 @@ export default {
               pronunciation: '/ˈtaɪpdɛf strʌkt/',
               phonetic: 'TAIP-def STRAKT',
               example:
-                'typedef struct creates a type alias for the struct. = typedef struct crea un alias di tipo per la struct.',
+                'Using typedef struct creates a type alias, letting you omit the struct keyword. = Usare typedef struct crea un alias di tipo, permettendo di omettere la parola chiave struct.',
               context: 'structs',
               difficulty: 'intermediate',
               code: 'typedef struct { int x, y; } Point;',
@@ -4142,7 +4151,7 @@ export default {
               pronunciation: '/bɪt məˌnɪpjʊˈleɪʃən/',
               phonetic: 'BIT ma-ni-piu-LEI-scen',
               example:
-                'Bitfields allow efficient bit manipulation. = I campi di bit permettono manipolazione efficiente dei bit.',
+                'Efficient bit manipulation sets, clears, or toggles individual hardware register bits. = La manipolazione efficiente dei bit imposta, cancella o commuta singoli bit dei registri hardware.',
               context: 'structs',
               difficulty: 'intermediate',
             },
@@ -4177,7 +4186,7 @@ export default {
           items: [
             {
               english: 'Record',
-              italian: 'Record / Registrazione',
+              italian: 'Registrazione (record)',
               pronunciation: '/ˈrekɔːrd/',
               phonetic: 'RE-kord',
               example:
@@ -4249,7 +4258,7 @@ export default {
             },
             {
               english: 'Offset',
-              italian: 'Offset / Scostamento',
+              italian: 'Scostamento (offset)',
               pronunciation: '/ˈɒfset/',
               phonetic: 'OF-set',
               example:
@@ -4264,7 +4273,7 @@ export default {
               pronunciation: '/ˈmeməri puːl/',
               phonetic: 'ME-mo-ri PUUL',
               example:
-                'A memory pool pre-allocates struct instances. = Un pool di memoria pre-alloca istanze di struct.',
+                'A memory pool pre-allocates a large block and carves out chunks as needed. = Un memory pool pre-alloca un grande blocco e ne ritaglia pezzi secondo necessità.',
               context: 'memory',
               difficulty: 'intermediate',
             },
@@ -4274,7 +4283,7 @@ export default {
               pronunciation: '/ˌsɪəriəlaɪˈzeɪʃən/',
               phonetic: 'si-ria-lai-ZEI-scen',
               example:
-                'Serialization converts a struct to a byte stream. = La serializzazione converte una struct in un flusso di byte.',
+                'The process of serialization converts a struct to a byte stream for storage or transmission. = Il processo di serializzazione converte una struct in un flusso di byte per memorizzazione o trasmissione.',
               context: 'structs',
               difficulty: 'intermediate',
               note: 'Attenzione a padding e endianness nella serializzazione.',
@@ -4311,7 +4320,7 @@ export default {
               pronunciation: '/ˈmælɒk/',
               phonetic: 'MAL-ok',
               example:
-                'malloc allocates a block of memory on the heap. = malloc alloca un blocco di memoria sullo heap.',
+                'Calling malloc allocates a block of uninitialized memory on the heap. = Chiamare malloc alloca un blocco di memoria non inizializzata sullo heap.',
               context: 'memory',
               difficulty: 'intermediate',
               code: 'int *p = malloc(10 * sizeof(int));',
@@ -4323,7 +4332,7 @@ export default {
               pronunciation: '/friː/',
               phonetic: 'FRII',
               example:
-                'Always free memory when you are done with it. = Libera sempre la memoria quando hai finito di usarla.',
+                'Failing to call free after malloc leads to a memory leak. = Non chiamare free dopo malloc porta a un memory leak.',
               context: 'memory',
               difficulty: 'intermediate',
               code: 'free(ptr); ptr = NULL;',
@@ -4335,7 +4344,7 @@ export default {
               pronunciation: '/ˈkælɒk/',
               phonetic: 'KAL-ok',
               example:
-                'calloc allocates and zero-initializes memory. = calloc alloca e inizializza a zero la memoria.',
+                'Unlike malloc, calloc initializes all allocated bytes to zero. = A differenza di malloc, calloc inizializza tutti i byte allocati a zero.',
               context: 'memory',
               difficulty: 'intermediate',
               code: 'int *p = calloc(10, sizeof(int));',
@@ -4347,7 +4356,7 @@ export default {
               pronunciation: '/riːˈælɒk/',
               phonetic: 'rii-AL-ok',
               example:
-                'realloc resizes a previously allocated block. = realloc ridimensiona un blocco precedentemente allocato.',
+                'Calling realloc resizes a previously allocated block, possibly moving it. = Chiamare realloc ridimensiona un blocco precedentemente allocato, possibilmente spostandolo.',
               context: 'memory',
               difficulty: 'intermediate',
               code: 'p = realloc(p, 20 * sizeof(int));',
@@ -4359,7 +4368,7 @@ export default {
               pronunciation: '/ˈmeməri liːk/',
               phonetic: 'ME-mo-ri LIIK',
               example:
-                'A memory leak happens when allocated memory is not freed. = Una perdita di memoria avviene quando la memoria allocata non viene liberata.',
+                'A memory leak wastes resources because allocated memory is never freed. = Un memory leak spreca risorse perché la memoria allocata non viene mai liberata.',
               context: 'memory',
               difficulty: 'intermediate',
               tool: 'Valgrind',
@@ -4387,17 +4396,17 @@ export default {
             },
             {
               english: 'Heap',
-              italian: 'Heap / Mucchio',
+              italian: 'Mucchio (heap)',
               pronunciation: '/hiːp/',
               phonetic: 'HIIP',
               example:
-                "The heap is the region of memory for dynamic allocation. = Lo heap è la regione di memoria per l'allocazione dinamica.",
+                "The heap provides memory for dynamic allocation that persists until freed. = L'heap fornisce memoria per l'allocazione dinamica che persiste fino alla liberazione.",
               context: 'memory',
               difficulty: 'intermediate',
             },
             {
               english: 'Stack vs Heap',
-              italian: 'stack vs heap / pila vs memoria dinamica',
+              italian: 'Pila vs memoria dinamica (stack vs heap)',
               pronunciation: '/stæk vɜːrsəs hiːp/',
               phonetic: 'STAK VER-ses HIIP',
               example:
@@ -4415,11 +4424,11 @@ export default {
           items: [
             {
               english: 'Ownership',
-              italian: 'Proprietà / Ownership',
+              italian: 'Proprietà (ownership)',
               pronunciation: '/ˈoʊnərʃɪp/',
               phonetic: 'OU-ner-scip',
               example:
-                'Memory ownership determines who is responsible for freeing. = La proprietà della memoria determina chi è responsabile della liberazione.',
+                'Clear memory ownership prevents double-free and use-after-free bugs. = Una chiara proprietà della memoria previene bug di double-free e use-after-free.',
               context: 'memory',
               difficulty: 'intermediate',
             },
@@ -4466,10 +4475,11 @@ export default {
             },
             {
               english: 'Garbage Collection',
-              italian: 'Raccolta dei rifiuti / Garbage Collection',
+              italian: 'Raccolta dei rifiuti (garbage collection)',
               pronunciation: '/ˈɡɑːrbɪdʒ kəˈlekʃən/',
               phonetic: 'GAR-big co-LEK-scen',
-              example: 'C does not have garbage collection. = C non ha la garbage collection.',
+              example:
+                'C has no garbage collection, so developers must free memory manually. = C non ha raccolta dei rifiuti (garbage collection), quindi gli sviluppatori devono liberare la memoria manualmente.',
               context: 'memory',
               difficulty: 'intermediate',
               note: 'A differenza di Java o Python, in C devi gestire tu la memoria.',
@@ -4528,7 +4538,7 @@ export default {
               pronunciation: '/juːz ˈæftər friː/',
               phonetic: 'IIUZ AF-ter FRII',
               example:
-                "Use after free is one of the most dangerous bugs. = L'uso dopo la liberazione è uno dei bug più pericolosi.",
+                "A use-after-free bug accesses memory that has already been returned to the allocator. = Un bug use-after-free accede a memoria che è già stata restituita all'allocatore.",
               context: 'memory',
               difficulty: 'intermediate',
             },
@@ -4537,7 +4547,8 @@ export default {
               italian: 'Doppia liberazione',
               pronunciation: '/ˈdʌbl friː/',
               phonetic: 'DA-bol FRII',
-              example: 'Double free corrupts the heap. = La doppia liberazione corrompe lo heap.',
+              example:
+                "Calling free twice on the same pointer (double free) corrupts the heap metadata. = Chiamare free due volte sullo stesso puntatore (double free) corrompe i metadati dell'heap.",
               context: 'memory',
               difficulty: 'intermediate',
             },
@@ -4553,11 +4564,11 @@ export default {
             },
             {
               english: 'Valgrind',
-              italian: 'Valgrind (strumento di analisi)',
+              italian: 'Strumento di analisi (Valgrind)',
               pronunciation: '/ˈvælɡrɪnd/',
               phonetic: 'VAL-grind',
               example:
-                'Valgrind detects memory leaks and errors. = Valgrind rileva perdite di memoria ed errori.',
+                'Running Valgrind detects memory leaks and invalid memory accesses at runtime. = Eseguire Valgrind rileva memory leak e accessi alla memoria invalidi a runtime.',
               context: 'debugging',
               difficulty: 'intermediate',
               command: 'valgrind --leak-check=full ./program',
@@ -4580,7 +4591,7 @@ export default {
               pronunciation: '/stæk ˈoʊvərfloʊ/',
               phonetic: 'STAK OU-ver-flou',
               example:
-                'Deep recursion or large local arrays can cause stack overflow. = Ricorsione profonda o grandi array locali possono causare stack overflow.',
+                'Deep recursion without a base case causes a stack overflow. = Una ricorsione profonda senza caso base causa uno stack overflow.',
               context: 'memory',
               difficulty: 'intermediate',
             },
@@ -4624,7 +4635,7 @@ export default {
               pronunciation: '/hiːp ˈoʊvərfloʊ/',
               phonetic: 'HIIP OU-ver-flou',
               example:
-                'A heap overflow writes past the end of a heap buffer. = Un overflow dello heap scrive oltre la fine di un buffer sullo heap.',
+                'A heap overflow writes beyond an allocated buffer on the heap. = Un heap overflow scrive oltre un buffer allocato sullo heap.',
               context: 'memory',
               difficulty: 'intermediate',
             },
@@ -4662,7 +4673,7 @@ export default {
               pronunciation: '/kəˈpæsɪti/',
               phonetic: 'ca-PA-si-ti',
               example:
-                'Capacity is the total allocated space. = La capacità è lo spazio totale allocato.',
+                'In a dynamic array, the capacity is the total allocated space, which may exceed the used size. = In un array dinamico, la capacità è lo spazio totale allocato, che può superare la dimensione usata.',
               context: 'memory',
               difficulty: 'intermediate',
             },
@@ -4672,7 +4683,7 @@ export default {
               pronunciation: '/lɪŋkt lɪst/',
               phonetic: 'LINKT LIST',
               example:
-                'A linked list uses pointers to connect nodes. = Una lista concatenata usa puntatori per collegare i nodi.',
+                'A linked list allocates each node separately and connects them via pointers. = Una lista collegata alloca ogni nodo separatamente e li connette tramite puntatori.',
               context: 'memory',
               difficulty: 'intermediate',
             },
@@ -4689,11 +4700,11 @@ export default {
             },
             {
               english: 'Free List',
-              italian: 'Lista libera / Free list',
+              italian: 'Lista libera (free list)',
               pronunciation: '/friː lɪst/',
               phonetic: 'FRII LIST',
               example:
-                'A free list recycles deallocated nodes. = Una free list ricicla i nodi deallocati.',
+                'A free list tracks available memory blocks for efficient reuse. = Una lista libera tiene traccia dei blocchi di memoria disponibili per un riuso efficiente.',
               context: 'memory',
               difficulty: 'intermediate',
             },
@@ -4761,7 +4772,7 @@ export default {
               pronunciation: '/faɪl ˈpɔɪntər/',
               phonetic: 'FAIL POIN-ter',
               example:
-                'A FILE pointer represents an open file. = Un puntatore FILE rappresenta un file aperto.',
+                'A file pointer of type FILE* manages the state of an open file. = Un puntatore a file di tipo FILE* gestisce lo stato di un file aperto.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'FILE *fp;',
@@ -4772,7 +4783,7 @@ export default {
               pronunciation: '/ɛf ˈoʊpən/',
               phonetic: 'EF OU-pen',
               example:
-                'fopen opens a file and returns a FILE pointer. = fopen apre un file e restituisce un puntatore FILE.',
+                'Calling fopen opens a file and returns a FILE pointer for further operations. = Chiamare fopen apre un file e restituisce un puntatore FILE per ulteriori operazioni.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'FILE *fp = fopen("data.txt", "r");',
@@ -4783,7 +4794,7 @@ export default {
               pronunciation: '/ɛf kloʊz/',
               phonetic: 'EF KLOUZ',
               example:
-                'Always close files with fclose when done. = Chiudi sempre i file con fclose quando hai finito.',
+                'Always call fclose to flush buffers and release file resources. = Chiama sempre fclose per svuotare i buffer e rilasciare le risorse del file.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'fclose(fp);',
@@ -4805,7 +4816,7 @@ export default {
               pronunciation: '/ɛf prɪntɛf/',
               phonetic: 'EF PRINT-ef',
               example:
-                'fprintf writes formatted output to a file. = fprintf scrive output formattato su un file.',
+                'Unlike printf, fprintf writes formatted text to any file stream. = A differenza di printf, fprintf scrive testo formattato su qualsiasi flusso di file.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'fprintf(fp, "Score: %d\\n", score);',
@@ -4816,7 +4827,7 @@ export default {
               pronunciation: '/ɛf ˈskænɛf/',
               phonetic: 'EF SKAN-ef',
               example:
-                'fscanf reads formatted input from a file. = fscanf legge input formattato da un file.',
+                'Using fscanf reads formatted data from a file stream. = Usare fscanf legge dati formattati da un flusso di file.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'fscanf(fp, "%d %s", &num, name);',
@@ -4827,7 +4838,7 @@ export default {
               pronunciation: '/ɛf ɡets/',
               phonetic: 'EF GHETS',
               example:
-                'fgets reads a line from a file safely. = fgets legge una riga da un file in sicurezza.',
+                'Unlike gets, fgets safely reads a line with a size limit to prevent overflow. = A differenza di gets, fgets legge in sicurezza una riga con un limite di dimensione per prevenire overflow.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'fgets(buf, sizeof(buf), fp);',
@@ -4837,7 +4848,8 @@ export default {
               italian: 'Scrittura stringa su file',
               pronunciation: '/ɛf pʊts/',
               phonetic: 'EF PUTS',
-              example: 'fputs writes a string to a file. = fputs scrive una stringa su un file.',
+              example:
+                'The function fputs writes a string to a file without appending a newline. = La funzione fputs scrive una stringa su un file senza aggiungere un newline.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'fputs("Hello\\n", fp);',
@@ -4886,7 +4898,8 @@ export default {
               italian: 'Lettura binaria',
               pronunciation: '/ɛf riːd/',
               phonetic: 'EF RIID',
-              example: 'fread reads binary data from a file. = fread legge dati binari da un file.',
+              example:
+                'Using fread, you can load binary data directly into a struct. = Usando fread, si possono caricare dati binari direttamente in una struct.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'fread(buffer, sizeof(int), count, fp);',
@@ -4897,7 +4910,7 @@ export default {
               pronunciation: '/ɛf raɪt/',
               phonetic: 'EF RAIT',
               example:
-                'fwrite writes binary data to a file. = fwrite scrive dati binari su un file.',
+                'Calling fwrite saves binary data from memory to a file. = Chiamare fwrite salva dati binari dalla memoria a un file.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'fwrite(data, sizeof(int), count, fp);',
@@ -4908,7 +4921,7 @@ export default {
               pronunciation: '/ɛf siːk/',
               phonetic: 'EF SIIK',
               example:
-                "fseek moves the file position indicator. = fseek sposta l'indicatore di posizione del file.",
+                'Calling fseek moves the read/write position to any point in a file. = Chiamare fseek sposta la posizione di lettura/scrittura in qualsiasi punto del file.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'fseek(fp, 0, SEEK_SET);',
@@ -4919,7 +4932,7 @@ export default {
               pronunciation: '/ɛf tel/',
               phonetic: 'EF TEL',
               example:
-                'ftell returns the current position in the file. = ftell restituisce la posizione corrente nel file.',
+                'Calling ftell returns the current byte position in the file. = Chiamare ftell restituisce la posizione corrente in byte nel file.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'long pos = ftell(fp);',
@@ -4930,18 +4943,18 @@ export default {
               pronunciation: '/rɪˈwaɪnd/',
               phonetic: 'ri-UAIND',
               example:
-                "rewind moves the file position to the beginning. = rewind sposta la posizione del file all'inizio.",
+                "Calling rewind moves the file position back to the beginning. = Chiamare rewind riporta la posizione del file all'inizio.",
               context: 'io',
               difficulty: 'intermediate',
               code: 'rewind(fp);',
             },
             {
               english: 'Stream',
-              italian: 'Flusso / Stream',
+              italian: 'Flusso (stream)',
               pronunciation: '/striːm/',
               phonetic: 'STRIIM',
               example:
-                "A stream is an abstraction for I/O operations. = Un flusso è un'astrazione per le operazioni di I/O.",
+                'In C, a stream abstracts the source or destination of data, be it a file or device. = In C, un flusso astrae la sorgente o destinazione dei dati, che sia un file o un dispositivo.',
               context: 'io',
               difficulty: 'intermediate',
               note: 'stdin, stdout e stderr sono stream standard.',
@@ -4952,7 +4965,7 @@ export default {
               pronunciation: '/ˈbʌfərɪŋ/',
               phonetic: 'BAF-fe-ring',
               example:
-                'Buffering improves I/O performance. = La bufferizzazione migliora le prestazioni di I/O.',
+                'Using buffering improves I/O performance by reducing the number of system calls. = Usare la bufferizzazione migliora le prestazioni di I/O riducendo il numero di chiamate di sistema.',
               context: 'io',
               difficulty: 'intermediate',
             },
@@ -4962,7 +4975,7 @@ export default {
               pronunciation: '/ɛf flʌʃ/',
               phonetic: 'EF FLASH',
               example:
-                'fflush forces the buffer to be written to the file. = fflush forza la scrittura del buffer sul file.',
+                'Calling fflush forces the buffer to be written to the underlying file immediately. = Chiamare fflush forza la scrittura del buffer sul file sottostante immediatamente.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'fflush(stdout);',
@@ -4973,7 +4986,7 @@ export default {
               pronunciation: '/ˈtempərəri faɪl/',
               phonetic: 'TEM-po-ra-ri FAIL',
               example:
-                'tmpfile creates a temporary file that is deleted on close. = tmpfile crea un file temporaneo che viene cancellato alla chiusura.',
+                'Creating a temporary file with tmpfile avoids name collisions. = Creare un file temporaneo con tmpfile evita collisioni di nomi.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'FILE *tmp = tmpfile();',
@@ -5002,7 +5015,7 @@ export default {
               pronunciation: '/tekst moʊd/',
               phonetic: 'TEKST MOUD',
               example:
-                'Text mode translates newline characters. = La modalità testo traduce i caratteri di nuova riga.',
+                'In text mode, the runtime converts platform-specific newlines automatically. = In modalità testo, il runtime converte i newline specifici della piattaforma automaticamente.',
               context: 'io',
               difficulty: 'intermediate',
               note: 'Su Windows \\r\\n diventa \\n in lettura.',
@@ -5024,7 +5037,7 @@ export default {
               pronunciation: '/faɪl dɪˈskrɪptər/',
               phonetic: 'FAIL di-SKRIP-ter',
               example:
-                'A file descriptor is a low-level integer handle. = Un descrittore di file è un handle intero a basso livello.',
+                'At the OS level, a file descriptor is an integer handle to an open resource. = A livello di SO, un file descriptor è un intero che identifica una risorsa aperta.',
               context: 'io',
               difficulty: 'intermediate',
               note: 'POSIX: 0=stdin, 1=stdout, 2=stderr. Diverso da FILE*.',
@@ -5052,11 +5065,11 @@ export default {
             },
             {
               english: 'Pipe',
-              italian: 'Pipe / Tubo',
+              italian: 'Tubo (pipe)',
               pronunciation: '/paɪp/',
               phonetic: 'PAIP',
               example:
-                "A pipe connects the output of one program to the input of another. = Un pipe collega l'output di un programma all'input di un altro.",
+                "A pipe connects the output of one process to the input of another. = Una pipe connette l'output di un processo all'input di un altro.",
               context: 'io',
               difficulty: 'intermediate',
               command: 'cat file.txt | grep "error"',
@@ -5067,7 +5080,7 @@ export default {
               pronunciation: '/ɛf ˈerər/',
               phonetic: 'EF ER-rer',
               example:
-                "ferror checks if an error occurred during file I/O. = ferror controlla se è avvenuto un errore durante l'I/O su file.",
+                "The function ferror checks if an error occurred during file I/O. = La funzione ferror controlla se è avvenuto un errore durante l'I/O su file.",
               context: 'io',
               difficulty: 'intermediate',
               code: 'if (ferror(fp)) { ... }',
@@ -5078,7 +5091,7 @@ export default {
               pronunciation: '/ɛf iː oʊ ɛf/',
               phonetic: 'EF-II-OU-EF',
               example:
-                'feof checks if the end of file has been reached. = feof controlla se è stata raggiunta la fine del file.',
+                'The function feof checks if the end of file has been reached during reading. = La funzione feof controlla se è stata raggiunta la fine del file durante la lettura.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'while (!feof(fp))',
@@ -5090,7 +5103,7 @@ export default {
               pronunciation: '/faɪl ˈlɒkɪŋ/',
               phonetic: 'FAIL LOK-ing',
               example:
-                'File locking prevents concurrent access issues. = Il blocco del file previene problemi di accesso concorrente.',
+                'Using file locking prevents two processes from writing to the same file simultaneously. = Usare il file locking previene che due processi scrivano sullo stesso file simultaneamente.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'flock(fd, LOCK_EX);',
@@ -5139,7 +5152,8 @@ export default {
               italian: 'Rinomina file',
               pronunciation: '/rɪˈneɪm/',
               phonetic: 'ri-NEIM',
-              example: 'rename changes the name of a file. = rename cambia il nome di un file.',
+              example:
+                'The function rename changes the name of a file on the filesystem. = La funzione rename cambia il nome di un file nel filesystem.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'rename("old.txt", "new.txt");',
@@ -5149,7 +5163,8 @@ export default {
               italian: 'Rimuovi file',
               pronunciation: '/rɪˈmuːv/',
               phonetic: 'ri-MUUV',
-              example: 'remove deletes a file. = remove cancella un file.',
+              example:
+                'The function remove deletes a file from the filesystem. = La funzione remove cancella un file dal filesystem.',
               context: 'io',
               difficulty: 'intermediate',
               code: 'remove("temp.txt");',
@@ -5230,7 +5245,7 @@ export default {
               pronunciation: '/ɪnˈkluːd/',
               phonetic: 'in-KLUUD',
               example:
-                '#include inserts the contents of another file. = #include inserisce il contenuto di un altro file.',
+                'The #include directive copies the content of a header file into the source. = La direttiva #include copia il contenuto di un file header nel sorgente.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#include <stdio.h>\n#include "myheader.h"',
@@ -5241,18 +5256,19 @@ export default {
               italian: 'Definizione macro',
               pronunciation: '/dɪˈfaɪn/',
               phonetic: 'di-FAIN',
-              example: '#define creates a macro. = #define crea una macro.',
+              example:
+                'Using #define, you create symbolic constants evaluated at compile time. = Usando #define, si creano costanti simboliche valutate a tempo di compilazione.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#define PI 3.14159',
             },
             {
               english: 'Macro',
-              italian: 'macro / sostituzione testuale del preprocessore',
+              italian: 'Sostituzione testuale del preprocessore (macro)',
               pronunciation: '/ˈmækroʊ/',
               phonetic: 'MA-krou',
               example:
-                'A macro is a text substitution rule. = Una macro è una regola di sostituzione testuale.',
+                'A macro expands inline before the compiler sees the code. = Una macro si espande inline prima che il compilatore veda il codice.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               note: 'Le macro vengono espanse prima della compilazione.',
@@ -5275,7 +5291,7 @@ export default {
               pronunciation: '/ɪf def/',
               phonetic: 'IF DEF',
               example:
-                '#ifdef checks if a macro is defined. = #ifdef controlla se una macro è definita.',
+                'The #ifdef directive checks whether a macro is defined. = La direttiva #ifdef controlla se una macro è definita.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#ifdef DEBUG\nprintf("debug info\\n");\n#endif',
@@ -5286,7 +5302,7 @@ export default {
               pronunciation: '/ɪf ɛn def/',
               phonetic: 'IF EN DEF',
               example:
-                '#ifndef checks if a macro is not defined. = #ifndef controlla se una macro non è definita.',
+                'The #ifndef directive checks that a macro has NOT been defined. = La direttiva #ifndef controlla che una macro NON sia stata definita.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#ifndef MYHEADER_H\n#define MYHEADER_H\n...\n#endif',
@@ -5297,7 +5313,7 @@ export default {
               pronunciation: '/ˈhedər ɡɑːrd/',
               phonetic: 'HED-er GARD',
               example:
-                'Header guards prevent double inclusion. = Le guardie di intestazione prevengono la doppia inclusione.',
+                'Every header file should have a header guard or #pragma once to prevent double inclusion. = Ogni file header dovrebbe avere un header guard o #pragma once per prevenire la doppia inclusione.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#ifndef MYLIB_H\n#define MYLIB_H\n// declarations\n#endif',
@@ -5308,7 +5324,7 @@ export default {
               pronunciation: '/ˈpræɡmə wʌns/',
               phonetic: 'PRAG-ma UANS',
               example:
-                "#pragma once is a non-standard alternative to header guards. = #pragma once è un'alternativa non standard alle guardie di intestazione.",
+                "Using #pragma once is a simpler alternative to include guards. = Usare #pragma once è un'alternativa più semplice agli include guard.",
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#pragma once',
@@ -5320,7 +5336,7 @@ export default {
               pronunciation: '/ʌn def/',
               phonetic: 'AN DEF',
               example:
-                '#undef removes a macro definition. = #undef rimuove una definizione di macro.',
+                'Using #undef removes a previously defined macro. = Usare #undef rimuove una macro precedentemente definita.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#undef MAX',
@@ -5331,7 +5347,7 @@ export default {
               pronunciation: '/kənˈdɪʃənəl ˌkɒmpɪˈleɪʃən/',
               phonetic: 'con-DI-scio-nal kom-pi-LEI-scen',
               example:
-                'Conditional compilation includes code based on conditions. = La compilazione condizionale include codice basato su condizioni.',
+                'With conditional compilation, parts of code compile only on certain platforms. = Con la compilazione condizionale, parti di codice si compilano solo su certe piattaforme.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#if defined(_WIN32)\n// Windows code\n#else\n// Unix code\n#endif',
@@ -5349,7 +5365,7 @@ export default {
               pronunciation: '/ˌstrɪŋɡɪfɪˈkeɪʃən/',
               phonetic: 'strin-gi-fi-KEI-scen',
               example:
-                "The # operator converts a macro argument to a string. = L'operatore # converte un argomento macro in una stringa.",
+                "The # operator for stringification turns a macro argument into a string literal. = L'operatore # per la stringificazione trasforma un argomento macro in una stringa letterale.",
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#define STR(x) #x\nprintf(STR(hello)); // "hello"',
@@ -5360,7 +5376,7 @@ export default {
               pronunciation: '/ˈtoʊkən ˈpeɪstɪŋ/',
               phonetic: 'TOU-ken PEIS-ting',
               example:
-                "The ## operator concatenates two tokens. = L'operatore ## concatena due token.",
+                "The ## operator for token pasting concatenates two tokens into one identifier. = L'operatore ## per il token pasting concatena due token in un unico identificatore.",
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#define CONCAT(a, b) a##b\nint CONCAT(my, Var) = 5; // int myVar = 5',
@@ -5371,7 +5387,7 @@ export default {
               pronunciation: '/ˌveəriˈædɪk/',
               phonetic: 've-ri-A-dik',
               example:
-                'A variadic macro accepts a variable number of arguments. = Una macro variadic accetta un numero variabile di argomenti.',
+                'A variadic macro accepts a variable number of arguments using __VA_ARGS__. = Una macro variadic accetta un numero variabile di argomenti usando __VA_ARGS__.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#define LOG(fmt, ...) fprintf(stderr, fmt, __VA_ARGS__)',
@@ -5382,7 +5398,7 @@ export default {
               pronunciation: '/faɪl/',
               phonetic: 'FAIL',
               example:
-                '__FILE__ expands to the current source file name. = __FILE__ si espande al nome del file sorgente corrente.',
+                'The __FILE__ macro expands to the name of the current source file. = La macro __FILE__ si espande nel nome del file sorgente corrente.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: 'printf("File: %s\\n", __FILE__);',
@@ -5393,7 +5409,7 @@ export default {
               pronunciation: '/laɪn/',
               phonetic: 'LAIN',
               example:
-                '__LINE__ expands to the current line number. = __LINE__ si espande al numero di riga corrente.',
+                'The __LINE__ macro expands to the current line number in the source code. = La macro __LINE__ si espande nel numero di riga corrente nel codice sorgente.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: 'printf("Line: %d\\n", __LINE__);',
@@ -5404,7 +5420,7 @@ export default {
               pronunciation: '/fʌŋk/',
               phonetic: 'FANK',
               example:
-                '__func__ contains the current function name. = __func__ contiene il nome della funzione corrente.',
+                "Inside any function, __func__ expands to the function's name as a string. = Dentro qualsiasi funzione, __func__ si espande nel nome della funzione come stringa.",
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: 'printf("Function: %s\\n", __func__);',
@@ -5428,7 +5444,7 @@ export default {
               pronunciation: '/ˈɪnlaɪn/',
               phonetic: 'IN-lain',
               example:
-                'An inline function is often safer than a macro. = Una funzione inline è spesso più sicura di una macro.',
+                'An inline function suggests the compiler insert its code at the call site. = Una funzione inline suggerisce al compilatore di inserire il suo codice nel punto di chiamata.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: 'static inline int max(int a, int b) { return a > b ? a : b; }',
@@ -5439,7 +5455,7 @@ export default {
               pronunciation: '/ˈerər/',
               phonetic: 'ER-rer',
               example:
-                '#error causes a compile-time error with a message. = #error causa un errore a tempo di compilazione con un messaggio.',
+                'The #error directive halts compilation with a custom error message. = La direttiva #error ferma la compilazione con un messaggio di errore personalizzato.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#if !defined(PLATFORM)\n#error "PLATFORM must be defined"\n#endif',
@@ -5468,7 +5484,7 @@ export default {
               pronunciation: '/ˈhedər faɪl/',
               phonetic: 'HED-er FAIL',
               example:
-                'Header files contain declarations shared between source files. = I file di intestazione contengono dichiarazioni condivise tra file sorgente.',
+                'Including a header file gives access to library declarations. = Includere un file di intestazione dà accesso alle dichiarazioni di libreria.',
               context: 'preprocessor',
               difficulty: 'intermediate',
             },
@@ -5658,7 +5674,7 @@ export default {
               pronunciation: '/priːdɪˈfaɪnd/',
               phonetic: 'prii-di-FAIND',
               example:
-                'Predefined macros provide build information. = Le macro predefinite forniscono informazioni sulla build.',
+                'The predefined macro __FILE__ expands to the current source file name. = La macro predefinita __FILE__ si espande nel nome del file sorgente corrente.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '__DATE__, __TIME__, __STDC_VERSION__',
@@ -5680,7 +5696,7 @@ export default {
               pronunciation: '/laɪn/',
               phonetic: 'LAIN',
               example:
-                '#line changes the reported line number. = #line cambia il numero di riga riportato.',
+                'The directive #line changes the reported line number and filename in error messages. = La direttiva #line cambia il numero di riga e il nome file riportati nei messaggi di errore.',
               context: 'preprocessor',
               difficulty: 'intermediate',
               code: '#line 100 "generated.c"',
@@ -5708,7 +5724,7 @@ export default {
               pronunciation: '/ˈmælɒk/',
               phonetic: 'MAL-lok',
               example:
-                'Use malloc to allocate memory dynamically. = Usa malloc per allocare memoria dinamicamente.',
+                'Calling malloc allocates a block of uninitialized memory on the heap. = Chiamare malloc alloca un blocco di memoria non inizializzata sullo heap.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'int *p = malloc(10 * sizeof(int));',
@@ -5720,7 +5736,7 @@ export default {
               pronunciation: '/ˈkælɒk/',
               phonetic: 'KAL-lok',
               example:
-                'calloc allocates and zero-initializes memory. = calloc alloca e inizializza a zero la memoria.',
+                'Unlike malloc, calloc initializes all allocated bytes to zero. = A differenza di malloc, calloc inizializza tutti i byte allocati a zero.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'int *arr = calloc(10, sizeof(int));',
@@ -5732,7 +5748,7 @@ export default {
               pronunciation: '/riːˈælɒk/',
               phonetic: 'ri-AL-lok',
               example:
-                'Use realloc to resize an allocated block. = Usa realloc per ridimensionare un blocco allocato.',
+                'Calling realloc resizes a previously allocated block, possibly moving it. = Chiamare realloc ridimensiona un blocco precedentemente allocato, possibilmente spostandolo.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'p = realloc(p, 20 * sizeof(int));',
@@ -5744,7 +5760,7 @@ export default {
               pronunciation: '/friː/',
               phonetic: 'FRII',
               example:
-                'Always free memory you allocated. = Libera sempre la memoria che hai allocato.',
+                'Failing to call free after malloc leads to a memory leak. = Non chiamare free dopo malloc porta a un memory leak.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'free(p);\np = NULL;',
@@ -5756,7 +5772,7 @@ export default {
               pronunciation: '/ˌeɪtuˈaɪ/',
               phonetic: 'a-tu-AI',
               example:
-                'atoi converts a string to an integer. = atoi converte una stringa in un intero.',
+                'The function atoi converts a string to an integer but lacks error checking. = La funzione atoi converte una stringa in un intero ma manca di controllo errori.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'int n = atoi("42");',
@@ -5768,7 +5784,7 @@ export default {
               pronunciation: '/ˌeɪtuˈef/',
               phonetic: 'a-tu-EF',
               example:
-                'atof converts a string to a double. = atof converte una stringa in un double.',
+                'The function atof converts a string to a double-precision floating-point number. = La funzione atof converte una stringa in un numero in virgola mobile a doppia precisione.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double d = atof("3.14");',
@@ -5779,7 +5795,7 @@ export default {
               pronunciation: '/ˌstrɪnɡtuˈlɒŋ/',
               phonetic: 'STRING-tu-LONG',
               example:
-                'strtol parses a string with error checking. = strtol analizza una stringa con controllo errori.',
+                'Unlike atoi, strtol converts a string to a long integer with error checking. = A differenza di atoi, strtol converte una stringa in un intero long con controllo errori.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'long n = strtol(s, &endptr, 10);',
@@ -5791,7 +5807,7 @@ export default {
               pronunciation: '/ˈkjuːsɔːrt/',
               phonetic: 'KIU-sort',
               example:
-                'qsort sorts an array using a comparator. = qsort ordina un array usando un comparatore.',
+                "The standard qsort function sorts arrays using a user-provided comparison callback. = La funzione standard qsort ordina array usando una callback di confronto fornita dall'utente.",
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'qsort(arr, n, sizeof(int), cmp);',
@@ -5803,7 +5819,7 @@ export default {
               pronunciation: '/biːsɜːrtʃ/',
               phonetic: 'BII-serc',
               example:
-                'bsearch performs binary search on a sorted array. = bsearch effettua una ricerca binaria su un array ordinato.',
+                'The standard bsearch function performs binary search on a sorted array. = La funzione standard bsearch esegue una ricerca binaria su un array ordinato.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'int *r = bsearch(&key, arr, n, sizeof(int), cmp);',
@@ -5815,7 +5831,7 @@ export default {
               pronunciation: '/ˈeɡzɪt/',
               phonetic: 'EG-zit',
               example:
-                'exit terminates the program with a status code. = exit termina il programma con un codice di stato.',
+                'Calling exit terminates the program and returns a status code to the OS. = Chiamare exit termina il programma e restituisce un codice di stato al sistema operativo.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'exit(EXIT_SUCCESS);',
@@ -5834,7 +5850,7 @@ export default {
               pronunciation: '/strˈlen/',
               phonetic: 'str-LEN',
               example:
-                'strlen returns the length of a string. = strlen restituisce la lunghezza di una stringa.',
+                'Calling strlen returns the length of a string, excluding the null terminator. = Chiamare strlen restituisce la lunghezza di una stringa, escludendo il terminatore nullo.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'size_t len = strlen("ciao");',
@@ -5846,7 +5862,7 @@ export default {
               pronunciation: '/strˈkɒpi/',
               phonetic: 'str-KO-pi',
               example:
-                'strcpy copies a string to another buffer. = strcpy copia una stringa in un altro buffer.',
+                'Using strcpy without checking buffer size risks a buffer overflow. = Usare strcpy senza controllare la dimensione del buffer rischia un buffer overflow.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'strcpy(dest, src);',
@@ -5858,7 +5874,7 @@ export default {
               pronunciation: '/strˈenkɒpi/',
               phonetic: 'str-EN-ko-pi',
               example:
-                'strncpy copies at most n characters. = strncpy copia al massimo n caratteri.',
+                'Unlike strcpy, strncpy limits the copy to n characters for safety. = A differenza di strcpy, strncpy limita la copia a n caratteri per sicurezza.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'strncpy(dest, src, sizeof(dest) - 1);',
@@ -5870,7 +5886,7 @@ export default {
               pronunciation: '/strˈkæt/',
               phonetic: 'str-KAT',
               example:
-                "strcat appends one string to another. = strcat appende una stringa a un'altra.",
+                "Using strcat appends one string to the end of another. = Usare strcat aggiunge una stringa alla fine di un'altra.",
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'strcat(dest, " mondo");',
@@ -5882,7 +5898,7 @@ export default {
               pronunciation: '/strˈkæmp/',
               phonetic: 'str-KAMP',
               example:
-                'strcmp compares two strings lexicographically. = strcmp confronta due stringhe lessicograficamente.',
+                'The function strcmp returns 0 when two strings are identical. = La funzione strcmp restituisce 0 quando due stringhe sono identiche.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'if (strcmp(a, b) == 0) { /* uguali */ }',
@@ -5894,7 +5910,7 @@ export default {
               pronunciation: '/strˈtʃɑːr/',
               phonetic: 'str-CIAR',
               example:
-                'strchr finds the first occurrence of a character. = strchr trova la prima occorrenza di un carattere.',
+                'The function strchr finds the first occurrence of a character in a string. = La funzione strchr trova la prima occorrenza di un carattere in una stringa.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: "char *p = strchr(s, '@');",
@@ -5905,7 +5921,7 @@ export default {
               pronunciation: '/strˈstɑːr/',
               phonetic: 'str-STAR',
               example:
-                'strstr finds a substring inside a string. = strstr trova una sottostringa dentro una stringa.',
+                'The function strstr finds a substring within a larger string. = La funzione strstr trova una sottostringa dentro una stringa più grande.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'char *p = strstr(text, "error");',
@@ -5916,7 +5932,7 @@ export default {
               pronunciation: '/ˈmemkɒpi/',
               phonetic: 'MEM-ko-pi',
               example:
-                'memcpy copies bytes from source to destination. = memcpy copia byte da sorgente a destinazione.',
+                'Calling memcpy copies n bytes from source to destination in memory. = Chiamare memcpy copia n byte dalla sorgente alla destinazione in memoria.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'memcpy(dest, src, n);',
@@ -5928,7 +5944,7 @@ export default {
               pronunciation: '/ˈmemset/',
               phonetic: 'MEM-set',
               example:
-                'memset fills memory with a constant byte. = memset riempie la memoria con un byte costante.',
+                'Using memset fills a block of memory with a given byte value. = Usare memset riempie un blocco di memoria con un dato valore di byte.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'memset(buf, 0, sizeof(buf));',
@@ -5940,7 +5956,7 @@ export default {
               pronunciation: '/ˈmemkæmp/',
               phonetic: 'MEM-kamp',
               example:
-                'memcmp compares two memory regions. = memcmp confronta due regioni di memoria.',
+                'The function memcmp compares two blocks of memory byte by byte. = La funzione memcmp confronta due blocchi di memoria byte per byte.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'if (memcmp(a, b, n) == 0) { /* uguali */ }',
@@ -5958,7 +5974,7 @@ export default {
               pronunciation: '/saɪn/',
               phonetic: 'SAIN',
               example:
-                'sin computes the sine of an angle in radians. = sin calcola il seno di un angolo in radianti.',
+                'The function sin computes the sine of an angle expressed in radians. = La funzione sin calcola il seno di un angolo espresso in radianti.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double y = sin(x);',
@@ -5969,7 +5985,8 @@ export default {
               italian: 'Coseno',
               pronunciation: '/kɒs/',
               phonetic: 'KOS',
-              example: 'cos computes the cosine of an angle. = cos calcola il coseno di un angolo.',
+              example:
+                'The function cos computes the cosine of an angle expressed in radians. = La funzione cos calcola il coseno di un angolo espresso in radianti.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double y = cos(x);',
@@ -5979,7 +5996,8 @@ export default {
               italian: 'Tangente',
               pronunciation: '/tæn/',
               phonetic: 'TAN',
-              example: 'tan computes the tangent function. = tan calcola la funzione tangente.',
+              example:
+                'The function tan computes the tangent of an angle expressed in radians. = La funzione tan calcola la tangente di un angolo espresso in radianti.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double y = tan(x);',
@@ -5989,7 +6007,8 @@ export default {
               italian: 'Radice quadrata',
               pronunciation: '/skwɔːrt/',
               phonetic: 'SKUORT',
-              example: 'sqrt computes the square root. = sqrt calcola la radice quadrata.',
+              example:
+                'The function sqrt computes the square root of a non-negative number. = La funzione sqrt calcola la radice quadrata di un numero non negativo.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = sqrt(2.0);',
@@ -5999,7 +6018,8 @@ export default {
               italian: 'Potenza',
               pronunciation: '/paʊ/',
               phonetic: 'PAU',
-              example: 'pow raises x to the power y. = pow eleva x alla potenza y.',
+              example:
+                "The function pow raises a base x to the exponent y, returning a double. = La funzione pow eleva una base x all'esponente y, restituendo un double.",
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = pow(2.0, 10);',
@@ -6010,7 +6030,7 @@ export default {
               pronunciation: '/lɒɡ/',
               phonetic: 'LOG',
               example:
-                'log returns the natural logarithm. = log restituisce il logaritmo naturale.',
+                'The function log returns the natural logarithm (base e) of a number. = La funzione log restituisce il logaritmo naturale (base e) di un numero.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = log(x);',
@@ -6021,7 +6041,8 @@ export default {
               italian: 'Esponenziale',
               pronunciation: '/eksp/',
               phonetic: 'EKSP',
-              example: 'exp computes e raised to the power x. = exp calcola e elevato alla x.',
+              example:
+                'The function exp computes e raised to the power x. = La funzione exp calcola e elevato alla x.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = exp(1.0);',
@@ -6032,7 +6053,7 @@ export default {
               pronunciation: '/flɔːr/',
               phonetic: 'FLOR',
               example:
-                'floor rounds down to the nearest integer. = floor arrotonda per difetto al numero intero più vicino.',
+                'The function floor rounds a floating-point value down to the nearest integer. = La funzione floor arrotonda un valore in virgola mobile per difetto al numero intero più vicino.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = floor(3.7);',
@@ -6043,7 +6064,7 @@ export default {
               pronunciation: '/siːl/',
               phonetic: 'SIIL',
               example:
-                'ceil rounds up to the nearest integer. = ceil arrotonda per eccesso al numero intero più vicino.',
+                'The function ceil rounds a floating-point value up to the nearest integer. = La funzione ceil arrotonda un valore in virgola mobile per eccesso al numero intero più vicino.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = ceil(3.2);',
@@ -6054,7 +6075,7 @@ export default {
               pronunciation: '/ˈefæbs/',
               phonetic: 'EF-abs',
               example:
-                'fabs returns the absolute value of a float. = fabs restituisce il valore assoluto di un float.',
+                'The function fabs returns the absolute value of a floating-point argument. = La funzione fabs restituisce il valore assoluto di un argomento in virgola mobile.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = fabs(-3.5);',
@@ -6073,7 +6094,7 @@ export default {
               pronunciation: '/taɪm/',
               phonetic: 'TAIM',
               example:
-                'time returns the current epoch time. = time restituisce il tempo epoch corrente.',
+                'Calling time returns the current epoch timestamp as a time_t value. = Chiamare time restituisce il timestamp epoch corrente come valore time_t.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'time_t now = time(NULL);',
@@ -6085,7 +6106,7 @@ export default {
               pronunciation: '/ˈtaɪmtiː/',
               phonetic: 'TAIM-ti',
               example:
-                'time_t holds a calendar time value. = time_t contiene un valore di tempo calendario.',
+                'The type time_t holds a calendar time value, typically seconds since 1970. = Il tipo time_t contiene un valore di tempo calendario, tipicamente secondi dal 1970.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'time_t t;',
@@ -6096,7 +6117,7 @@ export default {
               pronunciation: '/ˈloʊkəltaɪm/',
               phonetic: 'LO-kal-taim',
               example:
-                "localtime converts epoch to local time struct. = localtime converte l'epoch in struct di tempo locale.",
+                'The function localtime converts an epoch value to a local time struct. = La funzione localtime converte un valore epoch in una struct di tempo locale.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'struct tm *lt = localtime(&now);',
@@ -6108,7 +6129,7 @@ export default {
               pronunciation: '/strefˈtaɪm/',
               phonetic: 'stref-TAIM',
               example:
-                'strftime formats a time into a string. = strftime formatta un tempo in una stringa.',
+                'The function strftime formats a time value into a human-readable string. = La funzione strftime formatta un valore di tempo in una stringa leggibile.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'strftime(buf, sizeof(buf), "%Y-%m-%d", lt);',
@@ -6119,7 +6140,7 @@ export default {
               pronunciation: '/dɪfˈtaɪm/',
               phonetic: 'dif-TAIM',
               example:
-                'difftime returns the difference between two times. = difftime restituisce la differenza tra due tempi.',
+                'The function difftime returns the difference in seconds between two time_t values. = La funzione difftime restituisce la differenza in secondi tra due valori time_t.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double d = difftime(end, start);',
@@ -6130,7 +6151,7 @@ export default {
               pronunciation: '/klɒk/',
               phonetic: 'KLOK',
               example:
-                'clock measures CPU time used by the program. = clock misura il tempo CPU usato dal programma.',
+                'The function clock measures the CPU time consumed by the calling process. = La funzione clock misura il tempo CPU consumato dal processo chiamante.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'clock_t start = clock();',
@@ -6142,7 +6163,7 @@ export default {
               pronunciation: '/rænd/',
               phonetic: 'RAND',
               example:
-                'rand returns a pseudo-random integer. = rand restituisce un intero pseudo-casuale.',
+                'Calling rand generates a pseudo-random number between 0 and RAND_MAX. = Chiamare rand genera un numero pseudo-casuale tra 0 e RAND_MAX.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'int n = rand() % 100;',
@@ -6154,7 +6175,7 @@ export default {
               pronunciation: '/eˈsrænd/',
               phonetic: 'es-RAND',
               example:
-                'srand seeds the random number generator. = srand inizializza il generatore di numeri casuali.',
+                'Calling srand with time(NULL) seeds the random number generator uniquely each run. = Chiamare srand con time(NULL) inizializza il generatore di numeri casuali in modo unico ad ogni esecuzione.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'srand(time(NULL));',
@@ -6166,7 +6187,7 @@ export default {
               pronunciation: '/rændmæks/',
               phonetic: 'RAND-maks',
               example:
-                'RAND_MAX is the maximum value rand can return. = RAND_MAX è il valore massimo che rand può restituire.',
+                'The constant RAND_MAX defines the maximum value that rand can return. = La costante RAND_MAX definisce il valore massimo che rand può restituire.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'double r = rand() / (double)RAND_MAX;',
@@ -6177,7 +6198,7 @@ export default {
               pronunciation: '/emˈkeɪtaɪm/',
               phonetic: 'em-KEI-taim',
               example:
-                'mktime converts struct tm to time_t. = mktime converte struct tm in time_t.',
+                'The function mktime converts a struct tm to a time_t value, normalizing the fields. = La funzione mktime converte una struct tm in un valore time_t, normalizzando i campi.',
               context: 'stdlib',
               difficulty: 'intermediate',
               code: 'time_t t = mktime(&lt);',
@@ -6204,7 +6225,7 @@ export default {
               pronunciation: '/ˈɜːrnoʊ/',
               phonetic: 'ER-no',
               example:
-                "errno holds the last error code. = errno contiene l'ultimo codice di errore.",
+                "The global errno holds the last error code set by a system or library call. = La variabile globale errno contiene l'ultimo codice di errore impostato da una chiamata di sistema o libreria.",
               context: 'error-handling',
               difficulty: 'advanced',
               code: '#include <errno.h>\nif (fopen("f", "r") == NULL) printf("%d\\n", errno);',
@@ -6216,7 +6237,7 @@ export default {
               pronunciation: '/ˈpɜːrər/',
               phonetic: 'PER-ror',
               example:
-                'perror prints a human-readable error message. = perror stampa un messaggio di errore leggibile.',
+                "Calling perror prints a human-readable error message based on the current errno. = Chiamare perror stampa un messaggio di errore leggibile basato sull'errno corrente.",
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'perror("fopen failed");',
@@ -6228,7 +6249,7 @@ export default {
               pronunciation: '/strˈerər/',
               phonetic: 'str-ER-ror',
               example:
-                "strerror returns an error description string. = strerror restituisce una stringa con la descrizione dell'errore.",
+                'The function strerror returns a string describing the given error code. = La funzione strerror restituisce una stringa che descrive il codice di errore dato.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'fprintf(stderr, "%s\\n", strerror(errno));',
@@ -6262,7 +6283,7 @@ export default {
               pronunciation: '/iːəˈɡeɪn/',
               phonetic: 'i-a-GHEN',
               example:
-                "EAGAIN means the operation should be retried. = EAGAIN significa che l'operazione va ritentata.",
+                "The error code EAGAIN means the operation should be retried later. = Il codice di errore EAGAIN significa che l'operazione va ritentata più tardi.",
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (errno == EAGAIN) retry();',
@@ -6273,7 +6294,8 @@ export default {
               italian: 'Memoria esaurita',
               pronunciation: '/iːnoʊˈmem/',
               phonetic: 'i-no-MEM',
-              example: 'ENOMEM signals out of memory. = ENOMEM segnala memoria esaurita.',
+              example:
+                'The error code ENOMEM signals that the system ran out of memory. = Il codice di errore ENOMEM segnala che il sistema ha esaurito la memoria.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (!p) { errno = ENOMEM; return -1; }',
@@ -6284,7 +6306,7 @@ export default {
               pronunciation: '/iːɪnˈvæl/',
               phonetic: 'i-in-VAL',
               example:
-                "EINVAL means the argument is invalid. = EINVAL significa che l'argomento non è valido.",
+                'The error code EINVAL means an invalid argument was passed. = Il codice di errore EINVAL significa che è stato passato un argomento non valido.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (!s) { errno = EINVAL; return -1; }',
@@ -6294,7 +6316,8 @@ export default {
               italian: 'Permesso negato',
               pronunciation: '/iːˈækses/',
               phonetic: 'i-AK-ses',
-              example: 'EACCES indicates permission denied. = EACCES indica permesso negato.',
+              example:
+                "The error code EACCES indicates that the operation lacks permission. = Il codice di errore EACCES indica che l'operazione non ha i permessi.",
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (errno == EACCES) fprintf(stderr, "no permission\\n");',
@@ -6305,7 +6328,7 @@ export default {
               pronunciation: '/iːnoʊˈent/',
               phonetic: 'i-no-ENT',
               example:
-                'ENOENT signals a missing file or directory. = ENOENT segnala file o directory mancante.',
+                'The error code ENOENT signals that the requested file or directory does not exist. = Il codice di errore ENOENT segnala che il file o la directory richiesta non esiste.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'if (errno == ENOENT) printf("file mancante\\n");',
@@ -6323,7 +6346,7 @@ export default {
               pronunciation: '/əˈsɜːrt/',
               phonetic: 'a-SERT',
               example:
-                'Assert that pointers are not null. = Asserisci che i puntatori non siano null.',
+                'Using assert verifies that pointers are not null during development. = Usare assert verifica che i puntatori non siano null durante lo sviluppo.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'assert(ptr != NULL);',
@@ -6413,7 +6436,7 @@ export default {
               pronunciation: '/əˈbɔːrt/',
               phonetic: 'a-BORT',
               example:
-                'abort terminates the program abnormally. = abort termina il programma in modo anomalo.',
+                'Calling abort terminates the program abnormally, generating a core dump. = Chiamare abort termina il programma in modo anomalo, generando un core dump.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'abort();',
@@ -6510,7 +6533,7 @@ export default {
               pronunciation: '/ˈdʌbl friː/',
               phonetic: 'DA-bol FRII',
               example:
-                'A double free corrupts the heap. = Una doppia liberazione corrompe lo heap.',
+                "Calling free twice on the same pointer (double free) corrupts the heap metadata. = Chiamare free due volte sullo stesso puntatore (double free) corrompe i metadati dell'heap.",
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'free(p); /* ... */ free(p); /* BUG */',
@@ -6563,7 +6586,7 @@ export default {
               pronunciation: '/ˈsɪɡnəl/',
               phonetic: 'SI-gnal',
               example:
-                'A signal interrupts the normal flow of a program. = Un segnale interrompe il normale flusso di un programma.',
+                'A signal notifies a process of an asynchronous event, like Ctrl+C. = Un segnale notifica un processo di un evento asincrono, come Ctrl+C.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: '#include <signal.h>',
@@ -6574,7 +6597,7 @@ export default {
               pronunciation: '/ˈhændlər/',
               phonetic: 'HAND-ler',
               example:
-                'Register a signal handler to catch SIGINT. = Registra un gestore di segnali per catturare SIGINT.',
+                'A signal handler is a function that runs when the process receives a specific signal. = Un gestore di segnale è una funzione che viene eseguita quando il processo riceve un segnale specifico.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'signal(SIGINT, handler);',
@@ -6586,7 +6609,7 @@ export default {
               pronunciation: '/sɪɡˈsegviː/',
               phonetic: 'sig-SEG-vi',
               example:
-                'SIGSEGV is raised on invalid memory access. = SIGSEGV viene generato per accesso a memoria non valida.',
+                'The kernel delivers SIGSEGV when a program accesses invalid memory. = Il kernel invia SIGSEGV quando un programma accede a memoria invalida.',
               context: 'error-handling',
               difficulty: 'advanced',
               note: 'Il famigerato segmentation fault.',
@@ -6597,7 +6620,7 @@ export default {
               pronunciation: '/sɪɡˈeɪbɔːrt/',
               phonetic: 'sig-EI-bort',
               example:
-                'SIGABRT is raised by abort or failed assertions. = SIGABRT è generato da abort o asserzioni fallite.',
+                "The signal SIGABRT is raised by abort or by a failed assertion. = Il segnale SIGABRT è generato da abort o da un'asserzione fallita.",
               context: 'error-handling',
               difficulty: 'advanced',
             },
@@ -6607,7 +6630,7 @@ export default {
               pronunciation: '/reɪz/',
               phonetic: 'REIZ',
               example:
-                'raise sends a signal to the current process. = raise invia un segnale al processo corrente.',
+                'Calling raise sends a signal to the current process itself. = Chiamare raise invia un segnale al processo corrente stesso.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'raise(SIGTERM);',
@@ -6618,7 +6641,7 @@ export default {
               pronunciation: '/setˈdʒʌmp/',
               phonetic: 'set-GIAMP',
               example:
-                'setjmp saves the current execution context. = setjmp salva il contesto di esecuzione corrente.',
+                'Calling setjmp saves the current execution context into a jmp_buf. = Chiamare setjmp salva il contesto di esecuzione corrente in un jmp_buf.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'jmp_buf env;\nif (setjmp(env) == 0) { /* normale */ }',
@@ -6630,7 +6653,7 @@ export default {
               pronunciation: '/lɒŋˈdʒʌmp/',
               phonetic: 'long-GIAMP',
               example:
-                'longjmp jumps back to a saved context. = longjmp salta a un contesto salvato.',
+                'Calling longjmp restores the execution context saved by a previous setjmp. = Chiamare longjmp ripristina il contesto di esecuzione salvato da un precedente setjmp.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'longjmp(env, 1);',
@@ -6641,7 +6664,7 @@ export default {
               pronunciation: '/ˈdʒʌmpbʌf/',
               phonetic: 'GIAMP-baf',
               example:
-                'jmp_buf stores the saved context for setjmp. = jmp_buf memorizza il contesto salvato per setjmp.',
+                'The type jmp_buf stores the execution context needed by setjmp and longjmp. = Il tipo jmp_buf memorizza il contesto di esecuzione necessario a setjmp e longjmp.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'jmp_buf env;',
@@ -6663,7 +6686,7 @@ export default {
               pronunciation: '/ˌætˈeɡzɪt/',
               phonetic: 'at-EG-zit',
               example:
-                "atexit registers a cleanup function for program exit. = atexit registra una funzione di pulizia per l'uscita dal programma.",
+                'Registering a function with atexit ensures it runs before the program exits. = Registrare una funzione con atexit assicura che venga eseguita prima che il programma termini.',
               context: 'error-handling',
               difficulty: 'advanced',
               code: 'atexit(cleanup);',
@@ -6690,7 +6713,7 @@ export default {
               pronunciation: '/lɪŋkt lɪst/',
               phonetic: 'LINKT LIST',
               example:
-                'A linked list stores elements in nodes connected by pointers. = Una lista concatenata memorizza elementi in nodi collegati da puntatori.',
+                'A linked list allocates each node separately and connects them via pointers. = Una lista collegata alloca ogni nodo separatamente e li connette tramite puntatori.',
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'struct Node { int v; struct Node *next; };',
@@ -6754,7 +6777,8 @@ export default {
               italian: 'Inserire',
               pronunciation: '/ɪnˈsɜːrt/',
               phonetic: 'in-SERT',
-              example: "Insert at the head runs in O(1). = L'inserimento in testa è O(1).",
+              example:
+                "In a linked list, insert at the head runs in O(1) constant time. = In una lista collegata, l'inserimento in testa gira in tempo costante O(1).",
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'n->next = head; head = n;',
@@ -6765,7 +6789,7 @@ export default {
               pronunciation: '/dɪˈliːt/',
               phonetic: 'di-LIIT',
               example:
-                'Delete a node by unlinking and freeing it. = Elimina un nodo scollegandolo e liberandolo.',
+                'To delete a node from a linked list, unlink it from the chain and free it. = Per eliminare un nodo da una lista collegata, scollegalo dalla catena e liberalo.',
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'prev->next = curr->next; free(curr);',
@@ -6776,7 +6800,7 @@ export default {
               pronunciation: '/trəˈvɜːrsl/',
               phonetic: 'tra-VER-sal',
               example:
-                "Traversal visits each node once. = L'attraversamento visita ogni nodo una volta.",
+                'A full traversal visits each node once to process or search the data. = Un attraversamento completo visita ogni nodo una volta per processare o cercare i dati.',
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'for (Node *p = head; p; p = p->next) ...',
@@ -6800,10 +6824,11 @@ export default {
           items: [
             {
               english: 'Stack',
-              italian: 'Pila / Stack',
+              italian: 'Pila (stack)',
               pronunciation: '/stæk/',
               phonetic: 'STAK',
-              example: "A stack follows LIFO order. = Uno stack segue l'ordine LIFO.",
+              example:
+                'The stack grows and shrinks automatically as functions are called and return. = Lo stack cresce e si riduce automaticamente quando le funzioni vengono chiamate e ritornano.',
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'struct Stack { int *data; int top; };',
@@ -6814,7 +6839,7 @@ export default {
               pronunciation: '/pʊʃ/',
               phonetic: 'PUSC',
               example:
-                'Push adds an element to the top of the stack. = Push aggiunge un elemento in cima allo stack.',
+                "The push operation adds an element to the top of a stack. = L'operazione push aggiunge un elemento in cima a uno stack.",
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'stack[++top] = value;',
@@ -6825,7 +6850,7 @@ export default {
               pronunciation: '/pɒp/',
               phonetic: 'POP',
               example:
-                "Pop removes and returns the top element. = Pop rimuove e restituisce l'elemento in cima.",
+                "The pop operation removes and returns the element at the top of a stack. = L'operazione pop rimuove e restituisce l'elemento in cima a uno stack.",
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'int v = stack[top--];',
@@ -6836,7 +6861,7 @@ export default {
               pronunciation: '/piːk/',
               phonetic: 'PIIK',
               example:
-                'Peek inspects the top without removing it. = Peek ispeziona la cima senza rimuoverla.',
+                "The peek operation inspects the top element without removing it from the stack. = L'operazione peek ispeziona l'elemento in cima senza rimuoverlo dallo stack.",
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'int v = stack[top];',
@@ -6846,7 +6871,8 @@ export default {
               italian: 'Coda',
               pronunciation: '/kjuː/',
               phonetic: 'KIU',
-              example: "A queue follows FIFO order. = Una coda segue l'ordine FIFO.",
+              example:
+                'A queue follows the first-in-first-out rule, like a line of people. = Una coda segue la regola primo-entrato-primo-uscito, come una fila di persone.',
               context: 'data-structures',
               difficulty: 'advanced',
             },
@@ -6856,7 +6882,7 @@ export default {
               pronunciation: '/enˈkjuː/',
               phonetic: 'en-KIU',
               example:
-                'Enqueue adds an element to the back. = Enqueue aggiunge un elemento in fondo.',
+                "The enqueue operation adds an element to the back of a queue. = L'operazione enqueue aggiunge un elemento in fondo a una coda.",
               context: 'data-structures',
               difficulty: 'advanced',
             },
@@ -6865,7 +6891,8 @@ export default {
               italian: 'Estrarre dalla coda',
               pronunciation: '/diːˈkjuː/',
               phonetic: 'di-KIU',
-              example: "Dequeue removes the front element. = Dequeue rimuove l'elemento in testa.",
+              example:
+                "The dequeue operation removes and returns the front element of a queue. = L'operazione dequeue rimuove e restituisce l'elemento in testa a una coda.",
               context: 'data-structures',
               difficulty: 'advanced',
             },
@@ -6875,7 +6902,7 @@ export default {
               pronunciation: '/ˈsɜːrkjələr ˈbʌfər/',
               phonetic: 'SER-kiu-lar BA-fer',
               example:
-                'A circular buffer wraps around at the end. = Un buffer circolare avvolge alla fine.',
+                "A circular buffer wraps around when it reaches the end, reusing space. = Un buffer circolare ricomincia dall'inizio quando raggiunge la fine, riutilizzando spazio.",
               context: 'data-structures',
               difficulty: 'advanced',
               code: 'idx = (idx + 1) % capacity;',
@@ -6887,7 +6914,7 @@ export default {
               pronunciation: '/praɪˈɒrəti/',
               phonetic: 'prai-O-ri-ti',
               example:
-                "A priority queue dequeues the highest priority item. = Una coda con priorità estrae l'elemento con priorità più alta.",
+                "A priority queue always dequeues the element with the highest priority first. = Una coda con priorità estrae sempre per primo l'elemento con la priorità più alta.",
               context: 'data-structures',
               difficulty: 'advanced',
             },
@@ -6926,7 +6953,7 @@ export default {
               pronunciation: '/ˈbaɪnəri triː/',
               phonetic: 'BAI-na-ri TRII',
               example:
-                'A binary tree has at most two children per node. = Un albero binario ha al massimo due figli per nodo.',
+                'In a binary tree, each node has at most two children. = In un albero binario, ogni nodo ha al massimo due figli.',
               context: 'data-structures',
               difficulty: 'advanced',
             },
@@ -7004,11 +7031,11 @@ export default {
             },
             {
               english: 'Heap',
-              italian: 'Heap (mucchio)',
+              italian: 'Mucchio (Heap)',
               pronunciation: '/hiːp/',
               phonetic: 'HIIP',
               example:
-                'A heap maintains the heap property at every node. = Un heap mantiene la proprietà heap in ogni nodo.',
+                "The heap provides memory for dynamic allocation that persists until freed. = L'heap fornisce memoria per l'allocazione dinamica che persiste fino alla liberazione.",
               context: 'data-structures',
               difficulty: 'advanced',
               note: 'Da non confondere con la regione di memoria heap.',
@@ -7026,7 +7053,7 @@ export default {
               pronunciation: '/hæʃ ˈteɪbl/',
               phonetic: 'HASC TEI-bol',
               example:
-                'A hash table maps keys to values in O(1) average. = Una tabella hash mappa chiavi a valori in O(1) medio.',
+                'A hash table maps keys to values for constant-time lookups on average. = Una tabella hash mappa chiavi a valori per ricerche in tempo costante in media.',
               context: 'data-structures',
               difficulty: 'advanced',
             },
@@ -7057,7 +7084,7 @@ export default {
               pronunciation: '/ˈtʃeɪnɪŋ/',
               phonetic: 'CEI-ning',
               example:
-                'Chaining stores collisions in a linked list. = Il concatenamento memorizza le collisioni in una lista concatenata.',
+                'In a hash table, chaining stores colliding entries in a linked list at each bucket. = In una tabella hash, il concatenamento memorizza le voci in collisione in una lista collegata ad ogni bucket.',
               context: 'data-structures',
               difficulty: 'advanced',
             },
@@ -7087,7 +7114,7 @@ export default {
               pronunciation: '/ɡræf/',
               phonetic: 'GRAF',
               example:
-                'A graph is a set of vertices and edges. = Un grafo è un insieme di vertici e archi.',
+                'A graph represents relationships between nodes connected by edges. = Un grafo rappresenta relazioni tra nodi connessi da archi.',
               context: 'data-structures',
               difficulty: 'advanced',
             },
@@ -7116,7 +7143,7 @@ export default {
               pronunciation: '/əˈdʒeɪsənsi lɪst/',
               phonetic: 'a-GEI-sen-si LIST',
               example:
-                'An adjacency list stores neighbors per vertex. = Una lista di adiacenza memorizza i vicini per vertice.',
+                'An adjacency list uses linked lists to store neighbors, saving memory for sparse graphs. = Una lista di adiacenza usa liste collegate per memorizzare i vicini, risparmiando memoria per grafi sparsi.',
               context: 'data-structures',
               difficulty: 'advanced',
               note: 'Più efficiente per grafi sparsi rispetto alla matrice.',
@@ -7143,7 +7170,7 @@ export default {
               pronunciation: '/ˈbʌbl sɔːrt/',
               phonetic: 'BA-bol SORT',
               example:
-                'Bubble sort repeatedly swaps adjacent elements. = Bubble sort scambia ripetutamente elementi adiacenti.',
+                'Despite its simplicity, bubble sort has O(n squared) time complexity. = Nonostante la sua semplicità, il bubble sort ha complessità temporale O(n al quadrato).',
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Tempo O(n^2): didattico ma inefficiente.',
@@ -7154,7 +7181,7 @@ export default {
               pronunciation: '/sɪˈlekʃən/',
               phonetic: 'si-LEK-scion',
               example:
-                'Selection sort finds the minimum and places it first. = Selection sort trova il minimo e lo mette davanti.',
+                'In each pass, selection sort finds the minimum and swaps it to the front. = Ad ogni passo, il selection sort trova il minimo e lo scambia in prima posizione.',
               context: 'algorithms',
               difficulty: 'advanced',
             },
@@ -7164,7 +7191,7 @@ export default {
               pronunciation: '/ɪnˈsɜːrʃən/',
               phonetic: 'in-SER-scion',
               example:
-                'Insertion sort builds a sorted list one element at a time. = Insertion sort costruisce una lista ordinata un elemento alla volta.',
+                "For nearly sorted data, insertion sort is efficient with O(n) best case. = Per dati quasi ordinati, l'insertion sort è efficiente con caso migliore O(n).",
               context: 'algorithms',
               difficulty: 'advanced',
             },
@@ -7174,7 +7201,7 @@ export default {
               pronunciation: '/ˈkwɪksɔːrt/',
               phonetic: 'KUIK-sort',
               example:
-                'Quicksort partitions around a pivot. = Quicksort partiziona intorno a un pivot.',
+                "The quicksort algorithm recursively partitions around a pivot element. = L'algoritmo quicksort partiziona ricorsivamente intorno a un elemento pivot.",
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'O(n log n) medio, O(n^2) nel caso pessimo.',
@@ -7185,7 +7212,7 @@ export default {
               pronunciation: '/mɜːrdʒ sɔːrt/',
               phonetic: 'MERGE SORT',
               example:
-                'Merge sort divides and merges sorted halves. = Merge sort divide e fonde metà ordinate.',
+                "The divide-and-conquer approach of merge sort guarantees O(n log n) in all cases. = L'approccio divide et impera del merge sort garantisce O(n log n) in tutti i casi.",
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Stabile, O(n log n) garantito, ma usa memoria extra.',
@@ -7196,13 +7223,13 @@ export default {
               pronunciation: '/hiːp sɔːrt/',
               phonetic: 'HIIP SORT',
               example:
-                'Heap sort uses a heap to extract elements in order. = Heap sort usa un heap per estrarre elementi in ordine.',
+                "Using a heap, heap sort achieves O(n log n) with constant extra space. = Usando un heap, l'heap sort raggiunge O(n log n) con spazio extra costante.",
               context: 'algorithms',
               difficulty: 'advanced',
             },
             {
               english: 'Pivot',
-              italian: 'pivot / elemento perno in un algoritmo',
+              italian: 'Elemento perno in un algoritmo (pivot)',
               pronunciation: '/ˈpɪvət/',
               phonetic: 'PI-vot',
               example:
@@ -7254,7 +7281,7 @@ export default {
               pronunciation: '/ˈlɪniər sɜːrtʃ/',
               phonetic: 'LI-niar SERC',
               example:
-                'Linear search scans elements one by one. = La ricerca lineare scorre gli elementi uno per uno.',
+                'A linear search checks each element one by one until it finds a match. = Una ricerca lineare controlla ogni elemento uno per uno finché trova una corrispondenza.',
               context: 'algorithms',
               difficulty: 'advanced',
               code: 'for (int i = 0; i < n; i++) if (a[i] == k) return i;',
@@ -7265,7 +7292,7 @@ export default {
               pronunciation: '/ˈbaɪnəri sɜːrtʃ/',
               phonetic: 'BAI-na-ri SERC',
               example:
-                'Binary search halves the search space each step. = La ricerca binaria dimezza lo spazio di ricerca ad ogni passo.',
+                "For binary search to work, the array must be sorted first. = Perché la ricerca binaria funzioni, l'array deve essere ordinato prima.",
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Funziona solo su array ordinati. O(log n).',
@@ -7276,7 +7303,7 @@ export default {
               pronunciation: '/rɪˈkɜːrʒən/',
               phonetic: 'ri-KER-gion',
               example:
-                'Recursion is a function calling itself. = La ricorsione è una funzione che chiama sé stessa.',
+                'Without a base case, recursion causes infinite calls and a stack overflow. = Senza un caso base, la ricorsione causa chiamate infinite e uno stack overflow.',
               context: 'algorithms',
               difficulty: 'advanced',
               code: 'int fact(int n) { return n <= 1 ? 1 : n * fact(n-1); }',
@@ -7307,7 +7334,7 @@ export default {
               pronunciation: '/dɪˈvaɪd ən ˈkɒŋkər/',
               phonetic: 'di-VAID en KON-ker',
               example:
-                'Divide and conquer splits the problem into subproblems. = Dividi e conquista spezza il problema in sottoproblemi.',
+                'The divide-and-conquer strategy splits a problem in half and solves each part recursively. = La strategia divide et impera divide un problema a metà e risolve ogni parte ricorsivamente.',
               context: 'algorithms',
               difficulty: 'advanced',
             },
@@ -7317,18 +7344,18 @@ export default {
               pronunciation: '/ˌmemoʊaɪˈzeɪʃən/',
               phonetic: 'me-mo-ai-ZEI-scion',
               example:
-                'Memoization caches recursive call results. = La memoizzazione mette in cache i risultati delle chiamate ricorsive.',
+                'Using memoization caches the results of recursive calls to avoid redundant computation. = Usare la memoizzazione mette in cache i risultati delle chiamate ricorsive per evitare calcoli ridondanti.',
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Italiano: "memoizzazione", non "memorizzazione" (false friend).',
             },
             {
               english: 'Backtracking',
-              italian: 'backtracking / ricerca con ritorno indietro',
+              italian: 'Ricerca con ritorno indietro (backtracking)',
               pronunciation: '/ˈbæktrækɪŋ/',
               phonetic: 'BAK-tra-king',
               example:
-                'Backtracking explores choices and undoes failures. = Il backtracking esplora scelte e annulla i fallimenti.',
+                'A backtracking algorithm explores choices and undoes failed paths. = Un algoritmo di backtracking esplora scelte e annulla i percorsi falliti.',
               context: 'algorithms',
               difficulty: 'advanced',
             },
@@ -7344,11 +7371,11 @@ export default {
             },
             {
               english: 'Stack Overflow',
-              italian: 'stack overflow / esaurimento dello stack',
+              italian: 'Esaurimento dello stack (stack overflow)',
               pronunciation: '/stæk ˈoʊvərfloʊ/',
               phonetic: 'STAK O-ver-flou',
               example:
-                'Deep recursion causes stack overflow. = Una ricorsione profonda causa stack overflow.',
+                'Deep recursion without a base case causes a stack overflow. = Una ricorsione profonda senza caso base causa uno stack overflow.',
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Da cui prende il nome il famoso sito Stack Overflow.',
@@ -7362,11 +7389,11 @@ export default {
           items: [
             {
               english: 'Big O',
-              italian: 'Big O / notazione di complessità asintotica',
+              italian: 'Notazione di complessità asintotica (big o)',
               pronunciation: '/bɪɡ oʊ/',
               phonetic: 'BIG O',
               example:
-                'Big O describes worst-case time growth. = Big O descrive la crescita del tempo nel caso peggiore.',
+                "Expressed in Big O notation, an algorithm's worst-case time growth becomes clear. = Espressa in notazione Big O, la crescita del tempo nel caso peggiore di un algoritmo diventa chiara.",
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Notazione fondamentale nei colloqui di lavoro tecnici.',
@@ -7377,7 +7404,7 @@ export default {
               pronunciation: '/taɪm kəmˈpleksəti/',
               phonetic: 'TAIM kom-PLEK-si-ti',
               example:
-                'Time complexity measures how runtime scales. = La complessità temporale misura come scala il tempo di esecuzione.',
+                "Understanding time complexity helps predict how performance scales with input size. = Capire la complessità temporale aiuta a predire come le prestazioni scalano con la dimensione dell'input.",
               context: 'algorithms',
               difficulty: 'advanced',
             },
@@ -7387,7 +7414,7 @@ export default {
               pronunciation: '/speɪs/',
               phonetic: 'SPEIS',
               example:
-                "Space complexity measures memory usage growth. = La complessità spaziale misura la crescita dell'uso di memoria.",
+                'Measuring space complexity reveals how much extra memory an algorithm needs. = Misurare la complessità spaziale rivela quanta memoria aggiuntiva un algoritmo necessita.',
               context: 'algorithms',
               difficulty: 'advanced',
             },
@@ -7397,7 +7424,7 @@ export default {
               pronunciation: '/ˈkɒnstənt taɪm/',
               phonetic: 'KON-stant TAIM',
               example:
-                'Hash table lookup is constant time on average. = La ricerca su hash table è in tempo costante in media.',
+                'Cryptographic code must run in constant time to avoid timing side-channel attacks. = Il codice crittografico deve girare in tempo costante per evitare attacchi side-channel basati sul tempo.',
               context: 'algorithms',
               difficulty: 'advanced',
               code: '/* O(1) */',
@@ -7461,7 +7488,7 @@ export default {
               pronunciation: '/ˈæmərtaɪzd/',
               phonetic: 'A-mor-taizd',
               example:
-                'Amortized cost averages over many operations. = Il costo ammortizzato è la media su molte operazioni.',
+                "The amortized cost averages the expense of an operation over many calls. = Il costo ammortizzato fa la media della spesa di un'operazione su molte chiamate.",
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Es: ridimensionamento del vector ha O(1) ammortizzato.',
@@ -7479,7 +7506,7 @@ export default {
               pronunciation: '/daɪˈnæmɪk/',
               phonetic: 'dai-NA-mik',
               example:
-                'Dynamic programming solves overlapping subproblems. = La programmazione dinamica risolve sottoproblemi sovrapposti.',
+                'Using dynamic programming avoids recomputing overlapping subproblems by caching results. = Usare la programmazione dinamica evita di ricalcolare sotto-problemi sovrapposti memorizzando i risultati.',
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Sigla DP. Tipico della preparazione ai colloqui FAANG.',
@@ -7490,7 +7517,7 @@ export default {
               pronunciation: '/ˈɡriːdi/',
               phonetic: 'GRII-di',
               example:
-                'A greedy algorithm makes locally optimal choices. = Un algoritmo greedy fa scelte localmente ottime.',
+                'A greedy algorithm makes the locally optimal choice at each step. = Un algoritmo greedy fa la scelta localmente ottimale ad ogni passo.',
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Letteralmente "avido": non sempre porta all\'ottimo globale.',
@@ -7521,7 +7548,7 @@ export default {
               pronunciation: '/biː ef es/',
               phonetic: 'BI-EF-ES',
               example:
-                'BFS explores neighbors level by level. = BFS esplora i vicini livello per livello.',
+                'A BFS visits all neighbors at the current depth before going deeper. = Un BFS visita tutti i vicini alla profondità corrente prima di andare più in profondità.',
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Breadth-First Search: usa una coda.',
@@ -7532,7 +7559,7 @@ export default {
               pronunciation: '/diː ef es/',
               phonetic: 'DI-EF-ES',
               example:
-                'DFS explores as deep as possible first. = DFS esplora il più in profondità possibile.',
+                'A DFS explores as deep as possible before backtracking to unvisited neighbors. = Un DFS esplora il più in profondità possibile prima di tornare ai vicini non visitati.',
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Depth-First Search: usa uno stack o ricorsione.',
@@ -7543,7 +7570,7 @@ export default {
               pronunciation: '/ˈdaɪkstrə/',
               phonetic: 'DAIK-stra',
               example:
-                'Dijkstra finds shortest paths from a source. = Dijkstra trova i cammini minimi da una sorgente.',
+                "The Dijkstra algorithm finds shortest paths from a single source in a weighted graph. = L'algoritmo di Dijkstra trova i cammini minimi da una singola sorgente in un grafo pesato.",
               context: 'algorithms',
               difficulty: 'advanced',
               note: 'Solo con pesi non negativi.',
@@ -7595,11 +7622,11 @@ export default {
           items: [
             {
               english: 'GCC',
-              italian: 'GCC (GNU Compiler Collection)',
+              italian: 'GNU Compiler Collection (GCC)',
               pronunciation: '/dʒiː siː siː/',
               phonetic: 'GI-CI-CI',
               example:
-                'GCC compiles C, C++ and other languages. = GCC compila C, C++ e altri linguaggi.',
+                'The GNU Compiler Collection (GCC) compiles C, C++, and other languages. = La GNU Compiler Collection (GCC) compila C, C++ e altri linguaggi.',
               context: 'build',
               difficulty: 'advanced',
               command: 'gcc main.c -o main',
@@ -7607,10 +7634,11 @@ export default {
             },
             {
               english: 'Clang',
-              italian: 'Clang (compilatore C/C++ basato su LLVM)',
+              italian: 'Compilatore C/C++ basato su LLVM (Clang)',
               pronunciation: '/klæŋ/',
               phonetic: 'KLANG',
-              example: 'Clang offers excellent diagnostics. = Clang offre diagnostica eccellente.',
+              example:
+                'The Clang compiler offers excellent diagnostic messages and fast compilation. = Il compilatore Clang offre messaggi diagnostici eccellenti e compilazione veloce.',
               context: 'build',
               difficulty: 'advanced',
               command: 'clang main.c -o main',
@@ -7634,7 +7662,8 @@ export default {
               italian: 'Warning come errori',
               pronunciation: '/dæʃ ˈwɜːrər/',
               phonetic: 'DASC UER-ror',
-              example: '-Werror treats warnings as errors. = -Werror tratta i warning come errori.',
+              example:
+                'The flag -Werror treats all compiler warnings as hard errors. = Il flag -Werror tratta tutti i warning del compilatore come errori bloccanti.',
               context: 'build',
               difficulty: 'advanced',
               command: 'gcc -Wall -Werror main.c',
@@ -7645,7 +7674,7 @@ export default {
               pronunciation: '/dæʃ oʊ tuː/',
               phonetic: 'DASC O-TU',
               example:
-                '-O2 enables most optimizations. = -O2 abilita la maggior parte delle ottimizzazioni.',
+                'The flag -O2 enables most compiler optimizations for faster code. = Il flag -O2 abilita la maggior parte delle ottimizzazioni del compilatore per codice più veloce.',
               context: 'build',
               difficulty: 'advanced',
               command: 'gcc -O2 main.c',
@@ -7666,7 +7695,7 @@ export default {
               pronunciation: '/dæʃ dʒiː/',
               phonetic: 'DASC GI',
               example:
-                '-g embeds debug symbols in the binary. = -g include simboli di debug nel binario.',
+                "The flag -g embeds debug symbols in the binary for use with GDB. = Il flag -g include simboli di debug nel binario per l'uso con GDB.",
               context: 'build',
               difficulty: 'advanced',
               command: 'gcc -g main.c',
@@ -7689,7 +7718,7 @@ export default {
               pronunciation: '/krɒs/',
               phonetic: 'KROS',
               example:
-                "A cross compiler builds binaries for another architecture. = Un compilatore incrociato compila binari per un'altra architettura.",
+                'A cross compiler runs on a PC but produces binary code for a different target CPU. = Un cross compiler gira su un PC ma produce codice binario per una CPU target diversa.',
               context: 'build',
               difficulty: 'advanced',
               command: 'arm-linux-gnueabihf-gcc',
@@ -7713,11 +7742,11 @@ export default {
           items: [
             {
               english: 'Make',
-              italian: 'make / strumento di build',
+              italian: 'Strumento di build (make)',
               pronunciation: '/meɪk/',
               phonetic: 'MEIK',
               example:
-                'make builds targets based on file dependencies. = make costruisce i target in base alle dipendenze.',
+                'Running make reads the Makefile and builds only the changed targets. = Eseguire make legge il Makefile e compila solo i target modificati.',
               context: 'build',
               difficulty: 'advanced',
               command: 'make',
@@ -7725,20 +7754,21 @@ export default {
             },
             {
               english: 'Makefile',
-              italian: 'Makefile / ricetta di compilazione',
+              italian: 'Ricetta di compilazione (makefile)',
               pronunciation: '/ˈmeɪkfaɪl/',
               phonetic: 'MEIK-fail',
               example:
-                'A Makefile describes how to build the project. = Un Makefile descrive come compilare il progetto.',
+                'A Makefile defines rules and dependencies for building C projects. = Un Makefile definisce regole e dipendenze per la compilazione di progetti C.',
               context: 'build',
               difficulty: 'advanced',
             },
             {
               english: 'Target',
-              italian: 'Obiettivo / Target',
+              italian: 'Obiettivo (target)',
               pronunciation: '/ˈtɑːrɡɪt/',
               phonetic: 'TAR-ghit',
-              example: 'A target is a goal of the build. = Un target è un obiettivo della build.',
+              example:
+                'Each target in a Makefile specifies what to build and its prerequisites. = Ogni target in un Makefile specifica cosa compilare e i suoi prerequisiti.',
               context: 'build',
               difficulty: 'advanced',
               code: 'all: main.o',
@@ -7803,7 +7833,7 @@ export default {
               pronunciation: '/ˈveəriəbl/',
               phonetic: 'VE-ria-bol',
               example:
-                'CC and CFLAGS are common Make variables. = CC e CFLAGS sono variabili Make comuni.',
+                "Each variable in C must have a declared type before use. = Ogni variabile in C deve avere un tipo dichiarato prima dell'uso.",
               context: 'build',
               difficulty: 'advanced',
               code: 'CC=gcc\nCFLAGS=-Wall -O2',
@@ -7828,11 +7858,11 @@ export default {
           items: [
             {
               english: 'Linker',
-              italian: 'linker / collegatore di oggetti compilati',
+              italian: 'Collegatore di oggetti compilati (linker)',
               pronunciation: '/ˈlɪŋkər/',
               phonetic: 'LIN-ker',
               example:
-                'The linker combines object files into a binary. = Il linker combina file oggetto in un binario.',
+                'The linker resolves external symbols and combines object files into an executable. = Il linker risolve i simboli esterni e combina i file oggetto in un eseguibile.',
               context: 'build',
               difficulty: 'advanced',
               tool: 'ld, lld',
@@ -7843,7 +7873,7 @@ export default {
               pronunciation: '/ˈɒbdʒɪkt faɪl/',
               phonetic: 'OB-gekt FAIL',
               example:
-                'An object file contains compiled code (.o). = Un file oggetto contiene codice compilato (.o).',
+                'The compiler produces an object file containing machine code for one source file. = Il compilatore produce un file oggetto contenente codice macchina per un file sorgente.',
               context: 'build',
               difficulty: 'advanced',
               command: 'gcc -c main.c',
@@ -7854,7 +7884,7 @@ export default {
               pronunciation: '/ˈlɪŋkɪŋ/',
               phonetic: 'LIN-king',
               example:
-                'Linking resolves symbols across object files. = Il collegamento risolve i simboli tra file oggetto.',
+                'The final step of linking combines object files into a single executable. = Il passo finale del collegamento combina file oggetto in un singolo eseguibile.',
               context: 'build',
               difficulty: 'advanced',
             },
@@ -7864,7 +7894,7 @@ export default {
               pronunciation: '/ˈstætɪk/',
               phonetic: 'STA-tik',
               example:
-                'A static library is linked into the binary (.a). = Una libreria statica viene linkata nel binario (.a).',
+                "A static library is embedded directly into the executable at link time. = Una libreria statica viene incorporata direttamente nell'eseguibile al tempo di linking.",
               context: 'build',
               difficulty: 'advanced',
               command: 'ar rcs libfoo.a foo.o',
@@ -7875,7 +7905,7 @@ export default {
               pronunciation: '/ʃeərd/',
               phonetic: 'SCERD',
               example:
-                'A shared library is loaded at runtime (.so). = Una libreria condivisa è caricata a runtime (.so).',
+                'A shared library is loaded into memory once and used by multiple programs. = Una libreria condivisa viene caricata in memoria una volta e usata da più programmi.',
               context: 'build',
               difficulty: 'advanced',
               command: 'gcc -shared -o libfoo.so foo.o',
@@ -7944,11 +7974,11 @@ export default {
           items: [
             {
               english: 'CMake',
-              italian: 'CMake (generatore di build cross-platform)',
+              italian: 'Generatore di build cross-platform (CMake)',
               pronunciation: '/ˈsiː meɪk/',
               phonetic: 'SI-MEIK',
               example:
-                'CMake generates Makefiles or other build files. = CMake genera Makefile o altri file di build.',
+                'Using CMake generates platform-specific build files from a single configuration. = Usare CMake genera file di build specifici per la piattaforma da una singola configurazione.',
               context: 'build',
               difficulty: 'advanced',
               command: 'cmake -B build && cmake --build build',
@@ -7956,21 +7986,22 @@ export default {
             },
             {
               english: 'CMakeLists.txt',
-              italian: 'CMakeLists.txt (file di configurazione CMake)',
+              italian: 'File di configurazione CMake (CMakeLists.txt)',
               pronunciation: '/ˈsiː meɪk lɪsts/',
               phonetic: 'SI-MEIK-LISTS',
               example:
-                'CMakeLists.txt describes the project to CMake. = CMakeLists.txt descrive il progetto a CMake.',
+                'The file CMakeLists.txt describes the project structure and build rules for CMake. = Il file CMakeLists.txt descrive la struttura del progetto e le regole di build per CMake.',
               context: 'build',
               difficulty: 'advanced',
               code: 'cmake_minimum_required(VERSION 3.10)\nproject(myapp)',
             },
             {
               english: 'Ninja',
-              italian: 'Ninja (build system veloce)',
+              italian: 'Build system veloce (Ninja)',
               pronunciation: '/ˈnɪndʒə/',
               phonetic: 'NIN-gia',
-              example: 'Ninja is a fast build tool. = Ninja è uno strumento di build veloce.',
+              example:
+                'The tool Ninja is a fast, low-level build system often used with CMake. = Lo strumento Ninja è un sistema di build veloce e a basso livello spesso usato con CMake.',
               context: 'build',
               difficulty: 'advanced',
               command: 'ninja',
@@ -7978,10 +8009,11 @@ export default {
             },
             {
               english: 'autoconf',
-              italian: 'autoconf / generatore di script configure',
+              italian: 'Generatore di script configure (autoconf)',
               pronunciation: '/ˈɔːtoʊkɒnf/',
               phonetic: 'AU-to-konf',
-              example: 'autoconf generates configure scripts. = autoconf genera script configure.',
+              example:
+                'The tool autoconf generates portable configure scripts from macro templates. = Lo strumento autoconf genera script configure portabili da modelli macro.',
               context: 'build',
               difficulty: 'advanced',
               tool: 'autoconf',
@@ -7992,7 +8024,7 @@ export default {
               pronunciation: '/kənˈfɪɡər/',
               phonetic: 'kon-FI-gher',
               example:
-                "./configure detects the host environment. = ./configure rileva l'ambiente host.",
+                "Running ./configure detects the host environment and sets up platform-specific build flags. = Eseguire ./configure rileva l'ambiente host e imposta flag di build specifici della piattaforma.",
               context: 'build',
               difficulty: 'advanced',
               command: './configure --prefix=/usr/local',
@@ -8021,11 +8053,11 @@ export default {
             },
             {
               english: 'pkg-config',
-              italian: 'pkg-config / utility metadati di libreria',
+              italian: 'Utility metadati di libreria (pkg-config)',
               pronunciation: '/pækɪdʒ kənˈfɪɡ/',
               phonetic: 'PA-keg kon-FIG',
               example:
-                'pkg-config provides flags for libraries. = pkg-config fornisce i flag per le librerie.',
+                'The tool pkg-config provides compiler and linker flags for installed libraries. = Lo strumento pkg-config fornisce flag per compilatore e linker per le librerie installate.',
               context: 'build',
               difficulty: 'advanced',
               command: 'pkg-config --cflags --libs gtk+-3.0',
@@ -8036,7 +8068,8 @@ export default {
               italian: 'Integrazione continua',
               pronunciation: '/kənˈtɪnjuəs/',
               phonetic: 'kon-TI-nius',
-              example: 'CI builds the project on every push. = CI compila il progetto a ogni push.',
+              example:
+                'A CI pipeline compiles and tests the code on every push. = Una pipeline CI compila e testa il codice ad ogni push.',
               context: 'build',
               difficulty: 'advanced',
               note: 'Sigla CI: GitHub Actions, GitLab CI, Jenkins.',
@@ -8073,7 +8106,7 @@ export default {
               pronunciation: '/dʒiː diː biː/',
               phonetic: 'GI-DI-BI',
               example:
-                'gdb debugs C programs interactively. = gdb fa il debug di programmi C interattivamente.',
+                'Using gdb, developers can set breakpoints and step through C programs interactively. = Usando gdb, gli sviluppatori possono impostare breakpoint e procedere passo passo nei programmi C.',
               context: 'debugging',
               difficulty: 'advanced',
               command: 'gdb ./main',
@@ -8084,7 +8117,8 @@ export default {
               italian: 'Debugger LLVM',
               pronunciation: '/el el diː biː/',
               phonetic: 'EL-EL-DI-BI',
-              example: 'lldb is the LLVM debugger. = lldb è il debugger di LLVM.',
+              example:
+                "The tool lldb is the LLVM project's debugger, an alternative to gdb. = Lo strumento lldb è il debugger del progetto LLVM, un'alternativa a gdb.",
               context: 'debugging',
               difficulty: 'advanced',
               command: 'lldb ./main',
@@ -8096,18 +8130,18 @@ export default {
               pronunciation: '/ˈbreɪkpɔɪnt/',
               phonetic: 'BREIK-point',
               example:
-                "A breakpoint pauses execution at a specific line. = Un punto di interruzione mette in pausa l'esecuzione a una riga specifica.",
+                "Setting a breakpoint pauses execution at a specific line for inspection. = Impostare un breakpoint mette in pausa l'esecuzione a una riga specifica per l'ispezione.",
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) break main.c:42',
             },
             {
               english: 'Step',
-              italian: 'Step (passo)',
+              italian: 'Passo (Step)',
               pronunciation: '/step/',
               phonetic: 'STEP',
               example:
-                'Step into a function call to debug it. = Step in una chiamata di funzione per fare il debug.',
+                "Pressing step in a debugger enters the next function call to trace its execution. = Premere step in un debugger entra nella prossima chiamata di funzione per tracciarne l'esecuzione.",
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) step',
@@ -8118,7 +8152,7 @@ export default {
               pronunciation: '/nekst/',
               phonetic: 'NEKST',
               example:
-                'Next executes the next line without stepping in. = Next esegue la riga successiva senza entrare nelle funzioni.',
+                'Pressing next in a debugger executes the next line without stepping into function calls. = Premere next in un debugger esegue la riga successiva senza entrare nelle chiamate di funzione.',
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) next',
@@ -8129,18 +8163,18 @@ export default {
               pronunciation: '/kənˈtɪnjuː/',
               phonetic: 'kon-TI-niu',
               example:
-                "Continue resumes execution until the next breakpoint. = Continue riprende l'esecuzione fino al prossimo breakpoint.",
+                "Calling continue skips the rest of the current loop iteration. = Chiamare continue salta il resto dell'iterazione corrente del ciclo.",
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) continue',
             },
             {
               english: 'Watchpoint',
-              italian: 'watchpoint / breakpoint su variabile',
+              italian: 'Breakpoint su variabile (watchpoint)',
               pronunciation: '/ˈwɒtʃpɔɪnt/',
               phonetic: 'UOC-point',
               example:
-                'A watchpoint triggers when a variable changes. = Un watchpoint scatta quando una variabile cambia.',
+                "A watchpoint halts the program whenever a variable's value changes. = Un watchpoint ferma il programma ogni volta che il valore di una variabile cambia.",
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) watch x',
@@ -8151,7 +8185,7 @@ export default {
               pronunciation: '/ˈbæktreɪs/',
               phonetic: 'BAK-treis',
               example:
-                'A backtrace shows the call stack. = Una backtrace mostra lo stack delle chiamate.',
+                'Printing a backtrace shows the chain of function calls leading to the current point. = Stampare un backtrace mostra la catena di chiamate a funzione fino al punto corrente.',
               context: 'debugging',
               difficulty: 'advanced',
               command: '(gdb) bt',
@@ -8168,7 +8202,7 @@ export default {
             },
             {
               english: 'Frame',
-              italian: 'frame / record di chiamata sullo stack',
+              italian: 'Record di chiamata sullo stack (frame)',
               pronunciation: '/freɪm/',
               phonetic: 'FREIM',
               example:
@@ -8197,11 +8231,11 @@ export default {
             },
             {
               english: 'Core Dump',
-              italian: 'core dump / dump di memoria al crash',
+              italian: 'Dump di memoria al crash (core dump)',
               pronunciation: '/kɔːr dʌmp/',
               phonetic: 'KOR DAMP',
               example:
-                'A core dump captures program state at crash. = Un core dump cattura lo stato del programma al crash.',
+                "A core dump saves the process memory image for post-mortem analysis. = Un core dump salva l'immagine della memoria del processo per l'analisi post-mortem.",
               context: 'debugging',
               difficulty: 'advanced',
               command: 'ulimit -c unlimited',
@@ -8219,11 +8253,11 @@ export default {
             },
             {
               english: 'Buffer Overflow',
-              italian: 'buffer overflow / scrittura oltre i limiti del buffer',
+              italian: 'Scrittura oltre i limiti del buffer (buffer overflow)',
               pronunciation: '/ˈbʌfər ˈoʊvərfloʊ/',
               phonetic: 'BA-fer O-ver-flou',
               example:
-                "A buffer overflow writes past the array end. = Un buffer overflow scrive oltre la fine dell'array.",
+                'A buffer overflow writes beyond allocated memory, a critical security flaw. = Un buffer overflow scrive oltre la memoria allocata, un difetto di sicurezza critico.',
               context: 'debugging',
               difficulty: 'advanced',
             },
@@ -8233,7 +8267,7 @@ export default {
               pronunciation: '/ˈmeməri liːk/',
               phonetic: 'ME-mo-ri LIIK',
               example:
-                'A memory leak forgets to free allocated memory. = Una perdita di memoria dimentica di liberare memoria allocata.',
+                'A memory leak wastes resources because allocated memory is never freed. = Un memory leak spreca risorse perché la memoria allocata non viene mai liberata.',
               context: 'debugging',
               difficulty: 'advanced',
             },
@@ -8243,7 +8277,7 @@ export default {
               pronunciation: '/ˈdæŋɡlɪŋ/',
               phonetic: 'DAN-gling',
               example:
-                'A dangling pointer references freed memory. = Un puntatore pendente fa riferimento a memoria liberata.',
+                'A dangling pointer references memory that has already been freed. = Un puntatore pendente referenzia memoria che è già stata liberata.',
               context: 'debugging',
               difficulty: 'advanced',
             },
@@ -8253,7 +8287,7 @@ export default {
               pronunciation: '/waɪld/',
               phonetic: 'UAILD',
               example:
-                'A wild pointer was never initialized. = Un puntatore selvaggio non è mai stato inizializzato.',
+                'A wild pointer points to an arbitrary address because it was never initialized. = Un puntatore selvaggio punta a un indirizzo arbitrario perché non è mai stato inizializzato.',
               context: 'debugging',
               difficulty: 'advanced',
             },
@@ -8263,7 +8297,7 @@ export default {
               pronunciation: '/stæk ˈsmæʃɪŋ/',
               phonetic: 'STAK SMA-scing',
               example:
-                "Stack smashing overwrites the return address. = La distruzione dello stack sovrascrive l'indirizzo di ritorno.",
+                "A stack-smashing attack overwrites the return address to hijack control flow. = Un attacco stack smashing sovrascrive l'indirizzo di ritorno per dirottare il flusso di controllo.",
               context: 'debugging',
               difficulty: 'advanced',
             },
@@ -8296,11 +8330,11 @@ export default {
           items: [
             {
               english: 'Valgrind',
-              italian: 'Valgrind (strumento analisi memoria)',
+              italian: 'Strumento analisi memoria (Valgrind)',
               pronunciation: '/ˈvælɡrɪnd/',
               phonetic: 'VAL-grind',
               example:
-                'Valgrind detects memory leaks and errors. = Valgrind rileva memory leak ed errori.',
+                'Running Valgrind detects memory leaks and invalid memory accesses at runtime. = Eseguire Valgrind rileva memory leak e accessi alla memoria invalidi a runtime.',
               context: 'debugging',
               difficulty: 'advanced',
               command: 'valgrind --leak-check=full ./main',
@@ -8312,7 +8346,7 @@ export default {
               pronunciation: '/əˈdresˌsænɪtaɪzər/',
               phonetic: 'a-DRES-sa-ni-tai-zer',
               example:
-                'AddressSanitizer catches memory bugs at runtime. = AddressSanitizer cattura bug di memoria a runtime.',
+                'Compiling with AddressSanitizer catches buffer overflows and use-after-free errors. = Compilare con AddressSanitizer cattura buffer overflow e errori use-after-free.',
               context: 'debugging',
               difficulty: 'advanced',
               command: 'gcc -fsanitize=address main.c',
@@ -8335,7 +8369,8 @@ export default {
               italian: 'Sanitizer di thread',
               pronunciation: '/θredˌsænɪtaɪzər/',
               phonetic: 'TRED-sa-ni-tai-zer',
-              example: 'ThreadSanitizer detects data races. = ThreadSanitizer rileva data race.',
+              example:
+                'Compiling with ThreadSanitizer detects data races between concurrent threads. = Compilare con ThreadSanitizer rileva data race tra thread concorrenti.',
               context: 'debugging',
               difficulty: 'advanced',
               command: 'gcc -fsanitize=thread main.c',
@@ -8347,7 +8382,7 @@ export default {
               pronunciation: '/ˈmeməri/',
               phonetic: 'ME-mo-ri',
               example:
-                'MemorySanitizer catches uninitialized reads. = MemorySanitizer cattura letture non inizializzate.',
+                'Compiling with MemorySanitizer catches reads of uninitialized memory. = Compilare con MemorySanitizer cattura letture di memoria non inizializzata.',
               context: 'debugging',
               difficulty: 'advanced',
               command: 'clang -fsanitize=memory main.c',
@@ -8355,11 +8390,11 @@ export default {
             },
             {
               english: 'Memcheck',
-              italian: 'Memcheck (modulo Valgrind per errori di memoria)',
+              italian: 'Modulo Valgrind per errori di memoria (Memcheck)',
               pronunciation: '/ˈmemtʃek/',
               phonetic: 'MEM-cek',
               example:
-                'Memcheck is the default Valgrind tool. = Memcheck è lo strumento Valgrind di default.',
+                'The Memcheck tool is the default Valgrind detector for memory errors. = Lo strumento Memcheck è il rilevatore Valgrind predefinito per errori di memoria.',
               context: 'debugging',
               difficulty: 'advanced',
               command: 'valgrind --tool=memcheck',
@@ -8398,11 +8433,11 @@ export default {
             },
             {
               english: 'rr',
-              italian: 'rr (record/replay)',
+              italian: 'Record/replay (rr)',
               pronunciation: '/ɑːr ɑːr/',
               phonetic: 'AR-AR',
               example:
-                "rr records and replays program execution. = rr registra e riproduce l'esecuzione di un programma.",
+                "The tool rr records program execution and lets you replay it deterministically. = Lo strumento rr registra l'esecuzione del programma e permette di riprodurla deterministicamente.",
               context: 'debugging',
               difficulty: 'advanced',
               command: 'rr record ./main && rr replay',
@@ -8434,7 +8469,7 @@ export default {
               pronunciation: '/ˈlɒɡɪŋ/',
               phonetic: 'LO-ghing',
               example:
-                'Logging records events for later analysis. = Il logging registra eventi per analisi successiva.',
+                'Adding logging records events for later analysis and troubleshooting. = Aggiungere logging registra eventi per analisi e risoluzione problemi successive.',
               context: 'debugging',
               difficulty: 'advanced',
             },
@@ -8444,7 +8479,7 @@ export default {
               pronunciation: '/ˌriːprəˈdjuːs/',
               phonetic: 'ri-pro-DIUS',
               example:
-                'Reproduce the bug before fixing it. = Riproduci il bug prima di risolverlo.',
+                'Always reproduce the bug reliably before attempting to fix it. = Riproduci sempre il bug in modo affidabile prima di tentare di risolverlo.',
               context: 'debugging',
               difficulty: 'advanced',
             },
@@ -8472,7 +8507,7 @@ export default {
             },
             {
               english: 'Heisenbug',
-              italian: 'heisenbug / bug che sparisce quando lo si osserva',
+              italian: 'Bug che sparisce quando lo si osserva (heisenbug)',
               pronunciation: '/ˈhaɪzənbʌɡ/',
               phonetic: 'HAI-zen-bag',
               example:
@@ -8483,11 +8518,11 @@ export default {
             },
             {
               english: 'Race Condition',
-              italian: 'race condition / corsa critica tra thread',
+              italian: 'Corsa critica tra thread (race condition)',
               pronunciation: '/reɪs kənˈdɪʃən/',
               phonetic: 'REIS kon-DI-scion',
               example:
-                'Race conditions appear in concurrent code. = Le race condition appaiono nel codice concorrente.',
+                'A race condition occurs when two threads modify the same data without synchronization. = Una race condition si verifica quando due thread modificano gli stessi dati senza sincronizzazione.',
               context: 'debugging',
               difficulty: 'advanced',
             },
@@ -8517,7 +8552,8 @@ export default {
               italian: 'Tracciamento syscall',
               pronunciation: '/ˈestreɪs/',
               phonetic: 'ES-treis',
-              example: 'strace logs every system call. = strace registra ogni chiamata di sistema.',
+              example:
+                'Running strace logs every system call a program makes, aiding debugging. = Eseguire strace registra ogni chiamata di sistema che un programma fa, aiutando il debugging.',
               context: 'debugging',
               difficulty: 'advanced',
               command: 'strace -e openat ./main',
@@ -8545,7 +8581,7 @@ export default {
               pronunciation: '/ˈsɪstəm kɔːl/',
               phonetic: 'SI-stem KOL',
               example:
-                'A system call requests a service from the kernel. = Una chiamata di sistema richiede un servizio al kernel.',
+                'Every system call transitions from user space to kernel space. = Ogni chiamata di sistema transita dallo spazio utente allo spazio kernel.',
               context: 'systems',
               difficulty: 'advanced',
               note: 'Spesso abbreviato syscall.',
@@ -8556,7 +8592,7 @@ export default {
               pronunciation: '/ˈoʊpən/',
               phonetic: 'O-pen',
               example:
-                'open opens a file and returns a descriptor. = open apre un file e restituisce un descrittore.',
+                'The system call open opens a file and returns a file descriptor for low-level I/O. = La chiamata di sistema open apre un file e restituisce un descrittore di file per I/O a basso livello.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'int fd = open("file", O_RDONLY);',
@@ -8567,7 +8603,7 @@ export default {
               pronunciation: '/riːd/',
               phonetic: 'RIID',
               example:
-                'read reads bytes from a file descriptor. = read legge byte da un descrittore di file.',
+                'The system call read reads bytes from a file descriptor into a buffer. = La chiamata di sistema read legge byte da un descrittore di file in un buffer.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'ssize_t n = read(fd, buf, len);',
@@ -8578,7 +8614,7 @@ export default {
               pronunciation: '/raɪt/',
               phonetic: 'RAIT',
               example:
-                'write writes bytes to a file descriptor. = write scrive byte su un descrittore di file.',
+                'The system call write sends bytes from a buffer to a file descriptor. = La chiamata di sistema write invia byte da un buffer a un descrittore di file.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'write(fd, buf, len);',
@@ -8588,7 +8624,8 @@ export default {
               italian: 'Chiudere',
               pronunciation: '/kloʊz/',
               phonetic: 'KLOUZ',
-              example: 'close releases a file descriptor. = close rilascia un descrittore di file.',
+              example:
+                'Calling close releases a file descriptor and its associated kernel resources. = Chiamare close rilascia un descrittore di file e le sue risorse kernel associate.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'close(fd);',
@@ -8599,7 +8636,7 @@ export default {
               pronunciation: '/dɪˈskrɪptər/',
               phonetic: 'di-SKRIP-tor',
               example:
-                'A file descriptor is an integer handle to a file. = Un descrittore di file è un handle intero a un file.',
+                'At the OS level, a file descriptor is an integer handle to an open resource. = A livello di SO, un file descriptor è un intero che identifica una risorsa aperta.',
               context: 'systems',
               difficulty: 'advanced',
               note: 'Sigla fd. 0=stdin, 1=stdout, 2=stderr.',
@@ -8609,7 +8646,8 @@ export default {
               italian: 'Posizionamento file',
               pronunciation: '/elˈsiːk/',
               phonetic: 'el-SIIK',
-              example: "lseek moves the file offset. = lseek sposta l'offset del file.",
+              example:
+                "The system call lseek moves the file offset to a new position. = La chiamata di sistema lseek sposta l'offset del file a una nuova posizione.",
               context: 'systems',
               difficulty: 'advanced',
               code: 'lseek(fd, 0, SEEK_END);',
@@ -8619,7 +8657,8 @@ export default {
               italian: 'Mappatura in memoria',
               pronunciation: '/ˈemmæp/',
               phonetic: 'EM-map',
-              example: 'mmap maps a file into memory. = mmap mappa un file in memoria.',
+              example:
+                "Using mmap maps a file or device into the process's virtual address space. = Usare mmap mappa un file o dispositivo nello spazio di indirizzi virtuale del processo.",
               context: 'systems',
               difficulty: 'advanced',
               code: 'void *p = mmap(NULL, len, PROT_READ, MAP_SHARED, fd, 0);',
@@ -8630,7 +8669,7 @@ export default {
               pronunciation: '/efkəntˈroʊl/',
               phonetic: 'ef-kon-TROL',
               example:
-                'fcntl manipulates file descriptor properties. = fcntl manipola le proprietà di un descrittore di file.',
+                'The system call fcntl manipulates file descriptor properties like flags and locks. = La chiamata di sistema fcntl manipola le proprietà dei descrittori di file come flag e lock.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'fcntl(fd, F_SETFL, O_NONBLOCK);',
@@ -8641,7 +8680,7 @@ export default {
               pronunciation: '/ˌaɪoʊkəntˈroʊl/',
               phonetic: 'AI-O-kon-TROL',
               example:
-                'ioctl performs device-specific operations. = ioctl esegue operazioni specifiche del dispositivo.',
+                'The system call ioctl performs device-specific control operations. = La chiamata di sistema ioctl esegue operazioni di controllo specifiche del dispositivo.',
               context: 'systems',
               difficulty: 'advanced',
             },
@@ -8658,16 +8697,17 @@ export default {
               pronunciation: '/ˈprɒses/',
               phonetic: 'PRO-ses',
               example:
-                'Each process has its own memory space. = Ogni processo ha il proprio spazio di memoria.',
+                "A process is a running instance of a program with its own address space. = Un processo è un'istanza in esecuzione di un programma con il proprio spazio di indirizzi.",
               context: 'systems',
               difficulty: 'advanced',
             },
             {
               english: 'fork',
-              italian: 'Fork (biforcazione)',
+              italian: 'Biforcazione (fork)',
               pronunciation: '/fɔːrk/',
               phonetic: 'FORK',
-              example: 'fork creates a child process. = fork crea un processo figlio.',
+              example:
+                'Calling fork creates a child process that is a near-exact copy of the parent. = Chiamare fork crea un processo figlio che è una copia quasi esatta del genitore.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'pid_t pid = fork();',
@@ -8679,7 +8719,7 @@ export default {
               pronunciation: '/ɪɡˈzek/',
               phonetic: 'eg-ZEK',
               example:
-                "exec replaces the process image. = exec sostituisce l'immagine del processo.",
+                "After forking, calling exec replaces the child's memory with a new program image. = Dopo il fork, chiamare exec sostituisce la memoria del figlio con una nuova immagine di programma.",
               context: 'systems',
               difficulty: 'advanced',
               code: 'execl("/bin/ls", "ls", NULL);',
@@ -8690,7 +8730,7 @@ export default {
               pronunciation: '/weɪt/',
               phonetic: 'UEIT',
               example:
-                'wait blocks until a child terminates. = wait blocca fino alla terminazione di un figlio.',
+                'The parent process calls wait to block until a child terminates. = Il processo genitore chiama wait per bloccarsi fino alla terminazione di un figlio.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'int status; wait(&status);',
@@ -8700,7 +8740,8 @@ export default {
               italian: 'Attesa PID specifico',
               pronunciation: '/weɪtpiːaɪˈdiː/',
               phonetic: 'UEIT-PI-AI-DI',
-              example: 'waitpid waits for a specific child. = waitpid attende un figlio specifico.',
+              example:
+                'Using waitpid waits for a specific child process identified by its PID. = Usare waitpid attende un processo figlio specifico identificato dal suo PID.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'waitpid(pid, &status, 0);',
@@ -8744,7 +8785,7 @@ export default {
               pronunciation: '/ˈdiːmən/',
               phonetic: 'DII-mon',
               example:
-                'A daemon runs in the background as a service. = Un demone gira in background come servizio.',
+                'A daemon runs in the background without a controlling terminal. = Un demone gira in background senza un terminale di controllo.',
               context: 'systems',
               difficulty: 'advanced',
               note: 'In italiano si dice "demone" (servizio di sistema).',
@@ -8755,7 +8796,7 @@ export default {
               pronunciation: '/ɪnˈvaɪrənmənt/',
               phonetic: 'in-VAI-ron-ment',
               example:
-                "getenv reads an environment variable. = getenv legge una variabile d'ambiente.",
+                "An environment variable passes configuration to a process from the shell. = Una variabile d'ambiente passa configurazione a un processo dalla shell.",
               context: 'systems',
               difficulty: 'advanced',
               code: 'const char *path = getenv("PATH");',
@@ -8773,18 +8814,18 @@ export default {
               pronunciation: '/aɪ piː siː/',
               phonetic: 'AI-PI-CI',
               example:
-                'IPC mechanisms let processes exchange data. = I meccanismi IPC permettono ai processi di scambiare dati.',
+                'Various IPC mechanisms let processes exchange data using pipes, sockets, or shared memory. = Vari meccanismi IPC permettono ai processi di scambiare dati usando pipe, socket o memoria condivisa.',
               context: 'systems',
               difficulty: 'advanced',
               note: 'Inter-Process Communication.',
             },
             {
               english: 'Pipe',
-              italian: 'pipe / canale di comunicazione tra processi',
+              italian: 'Canale di comunicazione tra processi (pipe)',
               pronunciation: '/paɪp/',
               phonetic: 'PAIP',
               example:
-                'A pipe creates a unidirectional channel. = Una pipe crea un canale unidirezionale.',
+                "A pipe connects the output of one process to the input of another. = Una pipe connette l'output di un processo all'input di un altro.",
               context: 'systems',
               difficulty: 'advanced',
               code: 'int fds[2]; pipe(fds);',
@@ -8795,7 +8836,7 @@ export default {
               pronunciation: '/neɪmd paɪp/',
               phonetic: 'NEIMD PAIP',
               example:
-                'A named pipe (FIFO) has a path in the filesystem. = Una pipe con nome (FIFO) ha un percorso nel filesystem.',
+                'A named pipe persists on the filesystem, allowing unrelated processes to communicate. = Una pipe con nome persiste nel filesystem, permettendo a processi non correlati di comunicare.',
               context: 'systems',
               difficulty: 'advanced',
               command: 'mkfifo /tmp/myfifo',
@@ -8806,7 +8847,7 @@ export default {
               pronunciation: '/ʃeərd ˈmeməri/',
               phonetic: 'SCERD ME-mo-ri',
               example:
-                'Shared memory is the fastest IPC mechanism. = La memoria condivisa è il meccanismo IPC più veloce.',
+                'Using shared memory, multiple processes access the same physical RAM region. = Usando la memoria condivisa, più processi accedono alla stessa regione di RAM fisica.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'int shmid = shmget(key, size, IPC_CREAT|0600);',
@@ -8827,7 +8868,7 @@ export default {
               pronunciation: '/ˈseməfɔːr/',
               phonetic: 'SE-ma-for',
               example:
-                "A semaphore synchronizes access to resources. = Un semaforo sincronizza l'accesso alle risorse.",
+                "A semaphore controls access to a shared resource by counting available slots. = Un semaforo controlla l'accesso a una risorsa condivisa contando gli slot disponibili.",
               context: 'systems',
               difficulty: 'advanced',
               code: 'sem_wait(&sem); /* sezione critica */ sem_post(&sem);',
@@ -8849,7 +8890,7 @@ export default {
               pronunciation: '/djuː tuː/',
               phonetic: 'DIU-TU',
               example:
-                'dup2 redirects a file descriptor. = dup2 reindirizza un descrittore di file.',
+                'The function dup2 redirects a file descriptor, useful for implementing shell pipes. = La funzione dup2 reindirizza un descrittore di file, utile per implementare le pipe della shell.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'dup2(fd, STDOUT_FILENO);',
@@ -8889,7 +8930,8 @@ export default {
               italian: 'Interruzione (Ctrl+C)',
               pronunciation: '/sɪɡɪnt/',
               phonetic: 'SIG-INT',
-              example: 'SIGINT is sent on Ctrl+C. = SIGINT è inviato con Ctrl+C.',
+              example:
+                'Pressing Ctrl+C sends SIGINT to interrupt the foreground process. = Premere Ctrl+C invia SIGINT per interrompere il processo in primo piano.',
               context: 'systems',
               difficulty: 'advanced',
             },
@@ -8899,7 +8941,7 @@ export default {
               pronunciation: '/sɪɡtɜːrm/',
               phonetic: 'SIG-TERM',
               example:
-                'SIGTERM politely asks a process to terminate. = SIGTERM chiede gentilmente al processo di terminare.',
+                'The signal SIGTERM requests graceful termination, allowing cleanup. = Il segnale SIGTERM richiede terminazione graziosa, permettendo la pulizia.',
               context: 'systems',
               difficulty: 'advanced',
               note: 'Default di kill: si può intercettare per cleanup.',
@@ -8910,7 +8952,7 @@ export default {
               pronunciation: '/sɪɡkɪl/',
               phonetic: 'SIG-KIL',
               example:
-                'SIGKILL forcefully kills a process. = SIGKILL termina forzatamente un processo.',
+                'The signal SIGKILL forcefully kills a process and cannot be caught or ignored. = Il segnale SIGKILL termina forzatamente un processo e non può essere catturato o ignorato.',
               context: 'systems',
               difficulty: 'advanced',
               note: 'Non intercettabile: kill -9.',
@@ -8921,7 +8963,7 @@ export default {
               pronunciation: '/sɪɡhʌp/',
               phonetic: 'SIG-HAP',
               example:
-                'SIGHUP is sent when the terminal closes. = SIGHUP è inviato alla chiusura del terminale.',
+                'The signal SIGHUP is sent to a process when its controlling terminal closes. = Il segnale SIGHUP è inviato a un processo quando il suo terminale di controllo si chiude.',
               context: 'systems',
               difficulty: 'advanced',
               note: 'Spesso usato per ricaricare la configurazione.',
@@ -8932,7 +8974,7 @@ export default {
               pronunciation: '/sɪɡpaɪp/',
               phonetic: 'SIG-PAIP',
               example:
-                'SIGPIPE is raised when writing to a closed pipe. = SIGPIPE è generato scrivendo su una pipe chiusa.',
+                'The signal SIGPIPE is raised when a process writes to a pipe with no reader. = Il segnale SIGPIPE è generato quando un processo scrive su una pipe senza lettore.',
               context: 'systems',
               difficulty: 'advanced',
             },
@@ -8942,7 +8984,7 @@ export default {
               pronunciation: '/sɪɡtʃaɪld/',
               phonetic: 'SIG-CIAILD',
               example:
-                'SIGCHLD signals a child state change. = SIGCHLD segnala il cambio di stato di un figlio.',
+                'The signal SIGCHLD notifies the parent when a child process changes state. = Il segnale SIGCHLD notifica il genitore quando un processo figlio cambia stato.',
               context: 'systems',
               difficulty: 'advanced',
             },
@@ -8952,7 +8994,7 @@ export default {
               pronunciation: '/ˌsɪɡˈækʃən/',
               phonetic: 'sig-AK-scion',
               example:
-                'sigaction is the modern way to handle signals. = sigaction è il modo moderno di gestire segnali.',
+                'The function sigaction is the modern, reliable way to install signal handlers. = La funzione sigaction è il modo moderno e affidabile di installare gestori di segnale.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'struct sigaction sa = {0};\nsa.sa_handler = handler;\nsigaction(SIGINT, &sa, NULL);',
@@ -8963,7 +9005,8 @@ export default {
               italian: 'Inviare segnale',
               pronunciation: '/kɪl/',
               phonetic: 'KIL',
-              example: 'kill sends a signal to a process. = kill invia un segnale a un processo.',
+              example:
+                'The function kill sends a specified signal to a process identified by PID. = La funzione kill invia un segnale specificato a un processo identificato dal PID.',
               context: 'systems',
               difficulty: 'advanced',
               code: 'kill(pid, SIGTERM);',
@@ -9008,11 +9051,11 @@ export default {
           items: [
             {
               english: 'Thread',
-              italian: 'Thread (filo di esecuzione)',
+              italian: 'Filo di esecuzione (Thread)',
               pronunciation: '/θred/',
               phonetic: 'TRED',
               example:
-                "A thread is a unit of execution within a process. = Un thread è un'unità di esecuzione dentro un processo.",
+                "A thread shares its process's memory, making communication fast but synchronization critical. = Un thread condivide la memoria del suo processo, rendendo la comunicazione veloce ma la sincronizzazione critica.",
               context: 'concurrency',
               difficulty: 'advanced',
               note: 'Più thread condividono lo stesso spazio di memoria.',
@@ -9023,7 +9066,7 @@ export default {
               pronunciation: '/piː θred/',
               phonetic: 'PI-TRED',
               example:
-                'pthread is the POSIX threads library. = pthread è la libreria thread POSIX.',
+                'The pthread library provides POSIX-compliant threading for C programs. = La libreria pthread fornisce threading conforme a POSIX per programmi C.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: '#include <pthread.h>',
@@ -9035,7 +9078,7 @@ export default {
               pronunciation: '/kriːˈeɪt/',
               phonetic: 'kri-EIT',
               example:
-                'pthread_create starts a new thread. = pthread_create avvia un nuovo thread.',
+                'Calling pthread_create starts a new thread that executes the given function. = Chiamare pthread_create avvia un nuovo thread che esegue la funzione data.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_create(&t, NULL, worker, arg);',
@@ -9046,7 +9089,7 @@ export default {
               pronunciation: '/dʒɔɪn/',
               phonetic: 'GIOIN',
               example:
-                'pthread_join waits for a thread to finish. = pthread_join attende la fine di un thread.',
+                'Calling pthread_join blocks the caller until the specified thread finishes. = Chiamare pthread_join blocca il chiamante fino a che il thread specificato finisce.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_join(t, &result);',
@@ -9057,7 +9100,7 @@ export default {
               pronunciation: '/dɪˈtætʃ/',
               phonetic: 'di-TAC',
               example:
-                "pthread_detach makes a thread free its resources on exit. = pthread_detach fa liberare le risorse del thread all'uscita.",
+                "Calling pthread_detach makes a thread free its resources automatically on exit. = Chiamare pthread_detach fa liberare al thread le sue risorse automaticamente all'uscita.",
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_detach(t);',
@@ -9068,7 +9111,7 @@ export default {
               pronunciation: '/ˈloʊkl/',
               phonetic: 'LO-kal',
               example:
-                'Thread-local storage gives each thread its own copy. = Lo storage locale al thread dà a ogni thread la propria copia.',
+                'A thread-local variable has a separate copy for each thread. = Una variabile thread-local ha una copia separata per ogni thread.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: '_Thread_local int tls_var;',
@@ -9080,7 +9123,7 @@ export default {
               pronunciation: '/puːl/',
               phonetic: 'PUUL',
               example:
-                'A thread pool reuses threads for tasks. = Un pool di thread riusa thread per le task.',
+                'A thread pool reuses a fixed set of threads to process incoming tasks. = Un thread pool riutilizza un insieme fisso di thread per processare task in arrivo.',
               context: 'concurrency',
               difficulty: 'advanced',
             },
@@ -9124,11 +9167,11 @@ export default {
           items: [
             {
               english: 'Mutex',
-              italian: 'Mutex (esclusione mutua)',
+              italian: 'Esclusione mutua (Mutex)',
               pronunciation: '/ˈmjuːteks/',
               phonetic: 'MIU-teks',
               example:
-                "A mutex prevents simultaneous access to data. = Un mutex previene l'accesso simultaneo ai dati.",
+                'A mutex ensures that only one thread enters a critical section at a time. = Un mutex assicura che solo un thread alla volta entri in una sezione critica.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;',
@@ -9136,7 +9179,7 @@ export default {
             },
             {
               english: 'Lock',
-              italian: 'Lock (blocco)',
+              italian: 'Blocco (Lock)',
               pronunciation: '/lɒk/',
               phonetic: 'LOK',
               example:
@@ -9161,7 +9204,7 @@ export default {
               pronunciation: '/ˈkrɪtɪkl/',
               phonetic: 'KRI-ti-kal',
               example:
-                'A critical section accesses shared data. = Una sezione critica accede a dati condivisi.',
+                'A critical section is code that only one thread should execute at a time. = Una sezione critica è codice che solo un thread dovrebbe eseguire alla volta.',
               context: 'concurrency',
               difficulty: 'advanced',
             },
@@ -9178,11 +9221,11 @@ export default {
             },
             {
               english: 'Spinlock',
-              italian: 'spinlock / lock con attesa attiva',
+              italian: 'Lock con attesa attiva (spinlock)',
               pronunciation: '/ˈspɪnlɒk/',
               phonetic: 'SPIN-lok',
               example:
-                'A spinlock busy-waits for the lock. = Uno spinlock attende attivamente il lock.',
+                'A spinlock keeps the CPU busy-waiting instead of sleeping, useful for very short waits. = Uno spinlock tiene la CPU in attesa attiva invece di dormire, utile per attese molto brevi.',
               context: 'concurrency',
               difficulty: 'advanced',
               note: 'Adatto solo a sezioni critiche brevissime.',
@@ -9241,7 +9284,7 @@ export default {
               pronunciation: '/kənˈdɪʃən/',
               phonetic: 'kon-DI-scion',
               example:
-                'Condition variables let threads wait for an event. = Le variabili di condizione fanno attendere i thread per un evento.',
+                'A condition variable lets a thread sleep until another thread signals an event. = Una variabile condizione permette a un thread di dormire finché un altro thread segnala un evento.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_cond_t cv;',
@@ -9274,7 +9317,7 @@ export default {
               pronunciation: '/ˈbrɔːdkɑːst/',
               phonetic: 'BROD-kast',
               example:
-                'cond_broadcast wakes all waiters. = cond_broadcast sveglia tutti i thread in attesa.',
+                'A broadcast message reaches all hosts on the local network segment. = Un messaggio broadcast raggiunge tutti gli host nel segmento di rete locale.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_cond_broadcast(&cv);',
@@ -9295,14 +9338,14 @@ export default {
               pronunciation: '/ˈbæriər/',
               phonetic: 'BA-rier',
               example:
-                'A barrier waits for all threads to reach a point. = Una barriera attende che tutti i thread raggiungano un punto.',
+                'A barrier synchronizes threads by making each one wait until all arrive. = Una barriera sincronizza i thread facendo aspettare ognuno finché tutti arrivano.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'pthread_barrier_t b;',
             },
             {
               english: 'Latch',
-              italian: 'latch / barriera di sincronizzazione monouso',
+              italian: 'Barriera di sincronizzazione monouso (latch)',
               pronunciation: '/lætʃ/',
               phonetic: 'LAC',
               example:
@@ -9327,7 +9370,7 @@ export default {
               pronunciation: '/ˈmeməri/',
               phonetic: 'ME-mo-ri',
               example:
-                'A memory barrier orders memory operations. = Una barriera di memoria ordina le operazioni di memoria.',
+                'A memory barrier prevents the CPU from reordering reads and writes. = Una barriera di memoria impedisce alla CPU di riordinare letture e scritture.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: '__sync_synchronize();',
@@ -9355,14 +9398,14 @@ export default {
               pronunciation: '/reɪs/',
               phonetic: 'REIS',
               example:
-                'A race condition gives non-deterministic results. = Una race condition produce risultati non deterministici.',
+                'A race condition occurs when two threads modify the same data without synchronization. = Una race condition si verifica quando due thread modificano gli stessi dati senza sincronizzazione.',
               context: 'concurrency',
               difficulty: 'advanced',
               note: 'Spesso difficile da riprodurre: usa TSan.',
             },
             {
               english: 'Data Race',
-              italian: 'data race / accesso concorrente non sincronizzato',
+              italian: 'Accesso concorrente non sincronizzato (data race)',
               pronunciation: '/ˈdeɪtə reɪs/',
               phonetic: 'DEI-ta REIS',
               example:
@@ -9376,14 +9419,14 @@ export default {
               pronunciation: '/ˈdedlɒk/',
               phonetic: 'DED-lok',
               example:
-                "A deadlock blocks threads waiting on each other. = Uno stallo blocca thread in attesa l'uno dell'altro.",
+                "A deadlock freezes threads when each waits for a lock held by the other. = Un deadlock blocca i thread quando ognuno aspetta un lock tenuto dall'altro.",
               context: 'concurrency',
               difficulty: 'advanced',
               note: 'Soluzione: ordinare sempre i lock nello stesso modo.',
             },
             {
               english: 'Livelock',
-              italian: 'livelock / blocco attivo (processi che si rincorrono)',
+              italian: 'Blocco attivo (livelock)',
               pronunciation: '/ˈlaɪvlɒk/',
               phonetic: 'LAIV-lok',
               example:
@@ -9393,11 +9436,11 @@ export default {
             },
             {
               english: 'Starvation',
-              italian: 'Starvation (inedia)',
+              italian: 'Inedia (Starvation)',
               pronunciation: '/stɑːrˈveɪʃən/',
               phonetic: 'star-VEI-scion',
               example:
-                'Starvation prevents a thread from making progress. = La starvation impedisce a un thread di progredire.',
+                'Thread starvation prevents a low-priority thread from ever making progress. = La starvation dei thread impedisce a un thread a bassa priorità di progredire.',
               context: 'concurrency',
               difficulty: 'advanced',
             },
@@ -9407,7 +9450,7 @@ export default {
               pronunciation: '/əˈtɒmɪk/',
               phonetic: 'a-TO-mik',
               example:
-                'Atomic operations are indivisible. = Le operazioni atomiche sono indivisibili.',
+                'In concurrent code, atomic operations are indivisible and cannot be interrupted. = Nel codice concorrente, le operazioni atomiche sono indivisibili e non possono essere interrotte.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: '_Atomic int counter = 0;',
@@ -9448,11 +9491,11 @@ export default {
             },
             {
               english: 'volatile',
-              italian: 'volatile / parola chiave (valore mutabile esterno)',
+              italian: 'Valore mutabile esterno (volatile)',
               pronunciation: '/ˈvɒlətaɪl/',
               phonetic: 'VO-la-tail',
               example:
-                'volatile prevents compiler caching of a variable. = volatile impedisce al compilatore di mettere in cache una variabile.',
+                'Declaring a variable as volatile prevents the compiler from caching its value in a register. = Dichiarare una variabile come volatile impedisce al compilatore di memorizzare il suo valore in un registro.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'volatile int *reg;',
@@ -9476,11 +9519,11 @@ export default {
           items: [
             {
               english: 'Socket',
-              italian: 'socket / punto di connessione di rete',
+              italian: 'Punto di connessione di rete (socket)',
               pronunciation: '/ˈsɒkɪt/',
               phonetic: 'SO-ket',
               example:
-                'A socket is an endpoint for network communication. = Un socket è un endpoint per la comunicazione di rete.',
+                'A socket provides an endpoint for sending and receiving data over a network. = Un socket fornisce un punto finale per inviare e ricevere dati su una rete.',
               context: 'network',
               difficulty: 'advanced',
               code: 'int s = socket(AF_INET, SOCK_STREAM, 0);',
@@ -9490,7 +9533,8 @@ export default {
               italian: 'Famiglia indirizzi IPv4',
               pronunciation: '/eɪ ef ˈaɪnet/',
               phonetic: 'EI-EF-AI-net',
-              example: 'AF_INET selects IPv4 addresses. = AF_INET seleziona indirizzi IPv4.',
+              example:
+                'The constant AF_INET selects IPv4 addresses when creating a socket. = La costante AF_INET seleziona indirizzi IPv4 quando si crea un socket.',
               context: 'network',
               difficulty: 'advanced',
             },
@@ -9499,7 +9543,8 @@ export default {
               italian: 'Famiglia indirizzi IPv6',
               pronunciation: '/eɪ ef ˈaɪnet sɪks/',
               phonetic: 'EI-EF-AI-net SIKS',
-              example: 'AF_INET6 selects IPv6 addresses. = AF_INET6 seleziona indirizzi IPv6.',
+              example:
+                'The constant AF_INET6 selects IPv6 addresses when creating a socket. = La costante AF_INET6 seleziona indirizzi IPv6 quando si crea un socket.',
               context: 'network',
               difficulty: 'advanced',
             },
@@ -9508,7 +9553,8 @@ export default {
               italian: 'Socket TCP',
               pronunciation: '/sɒk striːm/',
               phonetic: 'SOK STRIIM',
-              example: 'SOCK_STREAM creates a TCP socket. = SOCK_STREAM crea un socket TCP.',
+              example:
+                'Using SOCK_STREAM creates a TCP socket for reliable, connection-oriented communication. = Usare SOCK_STREAM crea un socket TCP per comunicazione affidabile e orientata alla connessione.',
               context: 'network',
               difficulty: 'advanced',
             },
@@ -9517,7 +9563,8 @@ export default {
               italian: 'Socket UDP',
               pronunciation: '/sɒk ˈdiːɡræm/',
               phonetic: 'SOK DI-gram',
-              example: 'SOCK_DGRAM creates a UDP socket. = SOCK_DGRAM crea un socket UDP.',
+              example:
+                'Using SOCK_DGRAM creates a UDP socket for fast, connectionless datagrams. = Usare SOCK_DGRAM crea un socket UDP per datagrammi veloci e senza connessione.',
               context: 'network',
               difficulty: 'advanced',
             },
@@ -9538,7 +9585,7 @@ export default {
               pronunciation: '/pɔːrt/',
               phonetic: 'PORT',
               example:
-                "A port identifies a service on the host. = Una porta identifica un servizio sull'host.",
+                'A port number distinguishes multiple services running on the same host. = Un numero di porta distingue più servizi in esecuzione sullo stesso host.',
               context: 'network',
               difficulty: 'advanced',
               code: 'addr.sin_port = htons(8080);',
@@ -9549,7 +9596,7 @@ export default {
               pronunciation: '/aɪ piː ˈædres/',
               phonetic: 'AI-PI A-dres',
               example:
-                'inet_pton converts a string to an IP. = inet_pton converte una stringa in un IP.',
+                'An IP address uniquely identifies a host on a network. = Un indirizzo IP identifica univocamente un host su una rete.',
               context: 'network',
               difficulty: 'advanced',
               code: 'inet_pton(AF_INET, "127.0.0.1", &addr.sin_addr);',
@@ -9560,7 +9607,7 @@ export default {
               pronunciation: '/ˈeɪtʃ tɒnz/',
               phonetic: 'EICI-TONS',
               example:
-                "htons converts a 16-bit value to network order. = htons converte un valore a 16 bit nell'ordine di rete.",
+                "The function htons converts a 16-bit value from host to network byte order. = La funzione htons converte un valore a 16 bit dall'ordine host all'ordine di rete.",
               context: 'network',
               difficulty: 'advanced',
               code: 'addr.sin_port = htons(80);',
@@ -9590,7 +9637,7 @@ export default {
               pronunciation: '/baɪnd/',
               phonetic: 'BAIND',
               example:
-                'bind associates a socket with an address. = bind associa un socket a un indirizzo.',
+                'Calling bind associates a socket with a specific local address and port number. = Chiamare bind associa un socket a uno specifico indirizzo locale e numero di porta.',
               context: 'network',
               difficulty: 'advanced',
               code: 'bind(s, (struct sockaddr*)&addr, sizeof(addr));',
@@ -9600,7 +9647,8 @@ export default {
               italian: 'Mettere in ascolto',
               pronunciation: '/ˈlɪsn/',
               phonetic: 'LI-sen',
-              example: 'listen marks a socket as passive. = listen segna un socket come passivo.',
+              example:
+                'After binding, calling listen marks a socket as ready to accept incoming connections. = Dopo il binding, chiamare listen segna un socket come pronto ad accettare connessioni in arrivo.',
               context: 'network',
               difficulty: 'advanced',
               code: 'listen(s, BACKLOG);',
@@ -9611,7 +9659,7 @@ export default {
               pronunciation: '/əkˈsept/',
               phonetic: 'ak-SEPT',
               example:
-                'accept returns a new socket for a client. = accept restituisce un nuovo socket per un client.',
+                'Calling accept blocks until a client connects and returns a new dedicated socket. = Chiamare accept blocca fino a che un client si connette e restituisce un nuovo socket dedicato.',
               context: 'network',
               difficulty: 'advanced',
               code: 'int c = accept(s, NULL, NULL);',
@@ -9632,7 +9680,7 @@ export default {
               pronunciation: '/es oʊ rɪˈjuːzˌædər/',
               phonetic: 'SO-riuz-A-der',
               example:
-                'SO_REUSEADDR allows quick rebinding. = SO_REUSEADDR permette il rebind veloce.',
+                'Setting SO_REUSEADDR allows a server to rebind quickly after a restart. = Impostare SO_REUSEADDR permette a un server di rebindare velocemente dopo un riavvio.',
               context: 'network',
               difficulty: 'advanced',
               code: 'setsockopt(s, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(yes));',
@@ -9650,19 +9698,21 @@ export default {
             },
             {
               english: 'TCP',
-              italian: 'TCP (protocollo affidabile)',
+              italian: 'Protocollo affidabile (TCP)',
               pronunciation: '/tiː siː piː/',
               phonetic: 'TI-CI-PI',
-              example: 'TCP guarantees ordered delivery. = TCP garantisce la consegna ordinata.',
+              example:
+                'Using TCP guarantees reliable, ordered delivery of data between two endpoints. = Usare TCP garantisce la consegna affidabile e ordinata dei dati tra due endpoint.',
               context: 'network',
               difficulty: 'advanced',
             },
             {
               english: 'UDP',
-              italian: 'UDP (protocollo non affidabile)',
+              italian: 'Protocollo non affidabile (UDP)',
               pronunciation: '/juː diː piː/',
               phonetic: 'IU-DI-PI',
-              example: 'UDP is connectionless and fast. = UDP è senza connessione e veloce.',
+              example:
+                'Unlike TCP, UDP sends datagrams without establishing a connection first. = A differenza di TCP, UDP invia datagrammi senza stabilire prima una connessione.',
               context: 'network',
               difficulty: 'advanced',
             },
@@ -9700,7 +9750,7 @@ export default {
               pronunciation: '/kəˈnekt/',
               phonetic: 'kon-NEKT',
               example:
-                'connect initiates a connection to a server. = connect inizia una connessione verso un server.',
+                'The client calls connect to establish a TCP connection with the server. = Il client chiama connect per stabilire una connessione TCP con il server.',
               context: 'network',
               difficulty: 'advanced',
               code: 'connect(s, (struct sockaddr*)&addr, sizeof(addr));',
@@ -9710,7 +9760,8 @@ export default {
               italian: 'Inviare',
               pronunciation: '/send/',
               phonetic: 'SEND',
-              example: 'send transmits data on a socket. = send trasmette dati su un socket.',
+              example:
+                'Calling send transmits data bytes through a connected socket. = Chiamare send trasmette byte di dati attraverso un socket connesso.',
               context: 'network',
               difficulty: 'advanced',
               code: 'send(s, buf, len, 0);',
@@ -9720,7 +9771,8 @@ export default {
               italian: 'Ricevere',
               pronunciation: '/rɪˈsiːv/',
               phonetic: 'ri-SIIV',
-              example: 'recv reads data from a socket. = recv legge dati da un socket.',
+              example:
+                'Calling recv reads incoming data bytes from a connected socket. = Chiamare recv legge byte di dati in arrivo da un socket connesso.',
               context: 'network',
               difficulty: 'advanced',
               code: 'ssize_t n = recv(s, buf, len, 0);',
@@ -9730,7 +9782,8 @@ export default {
               italian: 'Inviare a (UDP)',
               pronunciation: '/sendˈtuː/',
               phonetic: 'SEND-tu',
-              example: 'sendto sends a UDP datagram. = sendto invia un datagramma UDP.',
+              example:
+                "When using UDP, sendto specifies the destination address with each packet. = Quando si usa UDP, sendto specifica l'indirizzo di destinazione con ogni pacchetto.",
               context: 'network',
               difficulty: 'advanced',
             },
@@ -9740,7 +9793,7 @@ export default {
               pronunciation: '/rɪˈsiːvfrəm/',
               phonetic: 'ri-SIIV-from',
               example:
-                'recvfrom receives a UDP datagram and the sender. = recvfrom riceve un datagramma UDP e il mittente.',
+                "Calling recvfrom on a UDP socket retrieves data along with the sender's address. = Chiamare recvfrom su un socket UDP recupera dati insieme all'indirizzo del mittente.",
               context: 'network',
               difficulty: 'advanced',
             },
@@ -9750,7 +9803,7 @@ export default {
               pronunciation: '/ˈʃʌtdaʊn/',
               phonetic: 'SCIAT-daun',
               example:
-                'shutdown closes one or both directions. = shutdown chiude una o entrambe le direzioni.',
+                'Calling shutdown closes one or both directions of a socket connection. = Chiamare shutdown chiude una o entrambe le direzioni di una connessione socket.',
               context: 'network',
               difficulty: 'advanced',
               code: 'shutdown(s, SHUT_WR);',
@@ -9761,7 +9814,7 @@ export default {
               pronunciation: '/ɡet əˈdres ˌɪnfoʊ/',
               phonetic: 'GHET A-dres IN-fo',
               example:
-                'getaddrinfo resolves hostnames to addresses. = getaddrinfo risolve hostname in indirizzi.',
+                'The function getaddrinfo resolves hostnames and service names to socket addresses. = La funzione getaddrinfo risolve hostname e nomi di servizio in indirizzi socket.',
               context: 'network',
               difficulty: 'advanced',
               code: 'getaddrinfo("example.com", "80", &hints, &res);',
@@ -9782,7 +9835,7 @@ export default {
               pronunciation: '/ˈloʊkəlhoʊst/',
               phonetic: 'LO-kal-houst',
               example:
-                "Localhost is the loopback interface 127.0.0.1. = Localhost è l'interfaccia di loopback 127.0.0.1.",
+                "The address localhost (127.0.0.1) is the loopback interface for local testing. = L'indirizzo localhost (127.0.0.1) è l'interfaccia di loopback per i test locali.",
               context: 'network',
               difficulty: 'advanced',
             },
@@ -9792,7 +9845,7 @@ export default {
               pronunciation: '/nɒnˈblɒkɪŋ/',
               phonetic: 'non-BLO-king',
               example:
-                'Non-blocking sockets return immediately. = I socket non bloccanti ritornano immediatamente.',
+                'Setting a socket to non-blocking makes all operations return immediately. = Impostare un socket come non bloccante fa ritornare immediatamente tutte le operazioni.',
               context: 'network',
               difficulty: 'advanced',
               code: 'fcntl(s, F_SETFL, O_NONBLOCK);',
@@ -9810,7 +9863,7 @@ export default {
               pronunciation: '/sɪˈlekt/',
               phonetic: 'si-LEKT',
               example:
-                'select monitors multiple file descriptors. = select monitora più descrittori di file.',
+                'The function select monitors multiple file descriptors for read or write readiness. = La funzione select monitora più descrittori di file per la prontezza in lettura o scrittura.',
               context: 'network',
               difficulty: 'advanced',
               code: 'select(nfds, &readset, NULL, NULL, &tv);',
@@ -9821,7 +9874,8 @@ export default {
               italian: 'Multiplexing poll',
               pronunciation: '/poʊl/',
               phonetic: 'POUL',
-              example: 'poll is a more flexible select. = poll è un select più flessibile.',
+              example:
+                "The function poll is a more flexible alternative to select for monitoring file descriptors. = La funzione poll è un'alternativa più flessibile a select per monitorare i descrittori di file.",
               context: 'network',
               difficulty: 'advanced',
               code: 'struct pollfd pfd; poll(&pfd, 1, -1);',
@@ -9832,7 +9886,7 @@ export default {
               pronunciation: '/iːˈpoʊl/',
               phonetic: 'i-POUL',
               example:
-                'epoll scales to thousands of connections. = epoll scala a migliaia di connessioni.',
+                'On Linux, epoll scales better than select for monitoring thousands of sockets. = Su Linux, epoll scala meglio di select per monitorare migliaia di socket.',
               context: 'network',
               difficulty: 'advanced',
               code: 'int ep = epoll_create1(0);',
@@ -9843,7 +9897,8 @@ export default {
               italian: 'Multiplexing kqueue (BSD)',
               pronunciation: '/keɪˈkjuː/',
               phonetic: 'KEI-KIU',
-              example: "kqueue is the BSD scalable I/O API. = kqueue è l'API I/O scalabile di BSD.",
+              example:
+                "On BSD and macOS, kqueue provides efficient event notification for I/O. = Su BSD e macOS, kqueue fornisce notifica efficiente degli eventi per l'I/O.",
               context: 'network',
               difficulty: 'advanced',
             },
@@ -9896,17 +9951,17 @@ export default {
               pronunciation: '/eɪˈsɪŋkrənəs/',
               phonetic: 'ei-SIN-kro-nes',
               example:
-                "Asynchronous I/O does not block the caller. = L'I/O asincrono non blocca il chiamante.",
+                "With asynchronous I/O, the kernel notifies the program when the operation completes. = Con l'I/O asincrono, il kernel notifica il programma quando l'operazione è completata.",
               context: 'network',
               difficulty: 'advanced',
             },
             {
               english: 'io_uring',
-              italian: 'io_uring (Linux)',
+              italian: 'Linux (io_uring)',
               pronunciation: '/aɪoʊ ˈjʊrɪŋ/',
               phonetic: 'AI-O IU-ring',
               example:
-                'io_uring is a modern Linux async I/O API. = io_uring è una moderna API I/O asincrona di Linux.',
+                "The API io_uring is a modern Linux interface for high-performance async I/O. = L'API io_uring è un'interfaccia Linux moderna per I/O asincrono ad alte prestazioni.",
               context: 'network',
               difficulty: 'advanced',
               note: 'Introdotto in Linux 5.1, ad alte prestazioni.',
@@ -9929,11 +9984,11 @@ export default {
           items: [
             {
               english: 'Buffer Overflow',
-              italian: 'buffer overflow / scrittura oltre i limiti del buffer',
+              italian: 'Scrittura oltre i limiti del buffer (buffer overflow)',
               pronunciation: '/ˈbʌfər ˈoʊvərfloʊ/',
               phonetic: 'BA-fer O-ver-flou',
               example:
-                "A buffer overflow writes past array bounds. = Un buffer overflow scrive oltre i limiti dell'array.",
+                'A buffer overflow writes beyond allocated memory, a critical security flaw. = Un buffer overflow scrive oltre la memoria allocata, un difetto di sicurezza critico.',
               context: 'security',
               difficulty: 'advanced',
               note: 'Vulnerabilità classica e ancora pericolosa nel codice C.',
@@ -9944,7 +9999,7 @@ export default {
               pronunciation: '/stæk/',
               phonetic: 'STAK',
               example:
-                "Stack overflow corrupts the call stack. = L'overflow di stack corrompe lo stack delle chiamate.",
+                'Deep recursion without a base case causes a stack overflow. = Una ricorsione profonda senza caso base causa uno stack overflow.',
               context: 'security',
               difficulty: 'advanced',
             },
@@ -9954,7 +10009,7 @@ export default {
               pronunciation: '/hiːp/',
               phonetic: 'HIIP',
               example:
-                "Heap overflow corrupts the heap allocator. = L'overflow di heap corrompe l'allocatore di heap.",
+                'A heap overflow writes beyond an allocated buffer on the heap. = Un heap overflow scrive oltre un buffer allocato sullo heap.',
               context: 'security',
               difficulty: 'advanced',
             },
@@ -9975,7 +10030,7 @@ export default {
               pronunciation: '/ˈkænəri/',
               phonetic: 'KA-na-ri',
               example:
-                'A stack canary detects stack smashing. = Un canary di stack rileva lo stack smashing.',
+                "A stack canary detects buffer overflows by placing a guard value before the return address. = Uno stack canary rileva buffer overflow posizionando un valore guardia prima dell'indirizzo di ritorno.",
               context: 'security',
               difficulty: 'advanced',
               command: 'gcc -fstack-protector-strong',
@@ -9987,7 +10042,7 @@ export default {
               pronunciation: '/eɪ es el ɑːr/',
               phonetic: 'EI-ES-EL-AR',
               example:
-                'ASLR randomizes memory layout to prevent exploits. = ASLR randomizza il layout di memoria per prevenire exploit.',
+                'With ASLR enabled, the address layout is randomized to hinder exploit development. = Con ASLR abilitato, il layout degli indirizzi è randomizzato per ostacolare lo sviluppo di exploit.',
               context: 'security',
               difficulty: 'advanced',
               note: 'Address Space Layout Randomization.',
@@ -10005,7 +10060,7 @@ export default {
             },
             {
               english: 'Fortify Source',
-              italian: 'Fortify Source / protezioni a tempo di compilazione',
+              italian: 'Protezioni a tempo di compilazione (fortify source)',
               pronunciation: '/ˈfɔːrtɪfaɪ/',
               phonetic: 'FOR-ti-fai',
               example:
@@ -10020,7 +10075,7 @@ export default {
               pronunciation: '/baʊndz/',
               phonetic: 'BAUNDS',
               example:
-                "Always do bounds checking on user input. = Esegui sempre il controllo dei limiti sull'input utente.",
+                'Strict bounds checking prevents reads and writes outside allocated arrays. = Un rigoroso controllo dei limiti previene letture e scritture fuori dagli array allocati.',
               context: 'security',
               difficulty: 'advanced',
             },
@@ -10047,7 +10102,7 @@ export default {
               pronunciation: '/ˈfɔːrmæt/',
               phonetic: 'FOR-mat',
               example:
-                'Format string bugs allow reading or writing memory. = I bug di stringa di formato permettono lettura o scrittura di memoria.',
+                "A format string contains placeholders like %s and %d for variable output. = Una stringa di formato contiene segnaposto come %s e %d per l'output variabile.",
               context: 'security',
               difficulty: 'advanced',
               code: 'printf(user_input); /* PERICOLOSO */',
@@ -10103,7 +10158,7 @@ export default {
               pronunciation: '/tɒktuː/',
               phonetic: 'TOK-TU',
               example:
-                'TOCTOU bugs exploit race conditions on resources. = I bug TOCTOU sfruttano race condition sulle risorse.',
+                'A TOCTOU (time-of-check-time-of-use) bug exploits race conditions between validation and use. = Un bug TOCTOU (time-of-check-time-of-use) sfrutta race condition tra validazione e uso.',
               context: 'security',
               difficulty: 'advanced',
               note: 'Esempio classico: access() seguito da open().',
@@ -10171,7 +10226,7 @@ export default {
               pronunciation: '/ˈdʌbl friː/',
               phonetic: 'DA-bol FRII',
               example:
-                "Double free corrupts the heap allocator. = Il doppio free corrompe l'allocatore di heap.",
+                "Calling free twice on the same pointer (double free) corrupts the heap metadata. = Chiamare free due volte sullo stesso puntatore (double free) corrompe i metadati dell'heap.",
               context: 'security',
               difficulty: 'advanced',
             },
@@ -10187,7 +10242,7 @@ export default {
             },
             {
               english: 'Heap Spray',
-              italian: 'heap spray / saturazione del heap con payload',
+              italian: 'Saturazione del heap con payload (heap spray)',
               pronunciation: '/hiːp spreɪ/',
               phonetic: 'HIIP SPREI',
               example:
@@ -10200,18 +10255,19 @@ export default {
               italian: 'Programmazione orientata al return',
               pronunciation: '/rɒp/',
               phonetic: 'ROP',
-              example: 'ROP chains gadgets to bypass NX. = ROP concatena gadget per bypassare NX.',
+              example:
+                'An attacker using ROP chains small code gadgets to bypass non-executable memory. = Un attaccante che usa ROP concatena piccoli gadget di codice per aggirare la memoria non eseguibile.',
               context: 'security',
               difficulty: 'advanced',
               note: 'Return-Oriented Programming.',
             },
             {
               english: 'Shellcode',
-              italian: 'shellcode / codice macchina di payload',
+              italian: 'Codice macchina di payload (shellcode)',
               pronunciation: '/ˈʃelkoʊd/',
               phonetic: 'SCEL-koud',
               example:
-                'Shellcode is machine code injected by an attacker. = Lo shellcode è codice macchina iniettato da un attaccante.',
+                'An attacker injects shellcode into memory to spawn a command shell. = Un attaccante inietta shellcode in memoria per lanciare una shell di comandi.',
               context: 'security',
               difficulty: 'advanced',
             },
@@ -10220,7 +10276,8 @@ export default {
               italian: 'Eseguibile indipendente da posizione',
               pronunciation: '/paɪ/',
               phonetic: 'PAI',
-              example: "PIE binaries support full ASLR. = I binari PIE supportano l'ASLR completo.",
+              example:
+                'Compiling as PIE (position-independent executable) enables full ASLR randomization. = Compilare come PIE (eseguibile indipendente dalla posizione) abilita la randomizzazione ASLR completa.',
               context: 'security',
               difficulty: 'advanced',
               command: 'gcc -fPIE -pie',
@@ -10232,7 +10289,7 @@ export default {
               pronunciation: '/ˈrelroʊ/',
               phonetic: 'REL-ro',
               example:
-                'RELRO makes the GOT read-only after linking. = RELRO rende la GOT in sola lettura dopo il linking.',
+                'Enabling RELRO makes the GOT read-only after dynamic linking, blocking GOT overwrites. = Abilitare RELRO rende la GOT in sola lettura dopo il linking dinamico, bloccando le sovrascritture della GOT.',
               context: 'security',
               difficulty: 'advanced',
               command: 'gcc -Wl,-z,relro,-z,now',
@@ -10243,7 +10300,7 @@ export default {
               pronunciation: '/siː ef aɪ/',
               phonetic: 'SI-EF-AI',
               example:
-                'CFI prevents control flow hijacking. = CFI previene il dirottamento del flusso di controllo.',
+                'Enabling CFI (control-flow integrity) blocks jumps to unexpected code locations. = Abilitare CFI (integrità del flusso di controllo) blocca i salti a locazioni di codice inaspettate.',
               context: 'security',
               difficulty: 'advanced',
               note: 'Control Flow Integrity.',
@@ -10254,7 +10311,7 @@ export default {
               pronunciation: '/ˈhɑːrdənɪŋ/',
               phonetic: 'HAR-de-ning',
               example:
-                'Compiler hardening flags reduce vulnerabilities. = I flag di hardening del compilatore riducono le vulnerabilità.',
+                'Compiler hardening flags like -fstack-protector add runtime safety checks. = I flag di hardening del compilatore come -fstack-protector aggiungono controlli di sicurezza a runtime.',
               context: 'security',
               difficulty: 'advanced',
               command: 'gcc -fstack-protector-all -D_FORTIFY_SOURCE=2',
@@ -10272,7 +10329,7 @@ export default {
               pronunciation: '/sɪˈkjʊr/',
               phonetic: 'si-KIUR',
               example:
-                'Secure coding prevents common vulnerabilities. = La programmazione sicura previene vulnerabilità comuni.',
+                'Following secure coding guidelines prevents the most common vulnerability classes. = Seguire le linee guida di codifica sicura previene le classi di vulnerabilità più comuni.',
               context: 'security',
               difficulty: 'advanced',
             },
@@ -10282,7 +10339,7 @@ export default {
               pronunciation: '/sɜːrt siː/',
               phonetic: 'SERT-CI',
               example:
-                'CERT C lists secure coding rules. = CERT C elenca regole di programmazione sicura.',
+                'The CERT C standard provides guidelines against common security vulnerabilities. = Lo standard CERT C fornisce linee guida contro le vulnerabilità di sicurezza comuni.',
               context: 'security',
               difficulty: 'advanced',
             },
@@ -10292,7 +10349,7 @@ export default {
               pronunciation: '/ˈkɒnstənt taɪm/',
               phonetic: 'KON-stant TAIM',
               example:
-                'Constant-time code prevents timing attacks. = Il codice a tempo costante previene attacchi temporali.',
+                'Cryptographic code must run in constant time to avoid timing side-channel attacks. = Il codice crittografico deve girare in tempo costante per evitare attacchi side-channel basati sul tempo.',
               context: 'security',
               difficulty: 'advanced',
               code: 'memcmp è NON costante: usa CRYPTO_memcmp.',
@@ -10313,7 +10370,7 @@ export default {
               pronunciation: '/ˈzɪərəʊaɪz/',
               phonetic: 'ZI-ro-aiz',
               example:
-                'Zeroize secrets before freeing memory. = Azzera i segreti prima di liberare la memoria.',
+                'Always zeroize sensitive data like cryptographic keys before freeing their memory. = Azzera sempre i dati sensibili come le chiavi crittografiche prima di liberare la loro memoria.',
               context: 'security',
               difficulty: 'advanced',
               code: 'explicit_bzero(key, sizeof(key));',
@@ -10336,7 +10393,7 @@ export default {
               pronunciation: '/ˈtʃruːt/',
               phonetic: 'CRUUT',
               example:
-                'chroot confines a process to a directory. = chroot confina un processo a una directory.',
+                "Using chroot confines a process to a subdirectory, limiting its filesystem access. = Usare chroot confina un processo a una sottodirectory, limitandone l'accesso al filesystem.",
               context: 'security',
               difficulty: 'advanced',
               code: 'chroot("/jail");',
@@ -10354,7 +10411,7 @@ export default {
             },
             {
               english: 'Capability',
-              italian: 'capability / privilegio fine del kernel',
+              italian: 'Privilegio fine del kernel (capability)',
               pronunciation: '/ˌkeɪpəˈbɪləti/',
               phonetic: 'kei-pa-BI-li-ti',
               example:
@@ -10390,22 +10447,22 @@ export default {
           items: [
             {
               english: 'Bare Metal',
-              italian: 'bare metal / programmazione senza sistema operativo',
+              italian: 'Programmazione senza sistema operativo (bare metal)',
               pronunciation: '/beər ˈmetl/',
               phonetic: 'BER ME-tal',
               example:
-                'Bare metal code runs without an OS. = Il codice bare metal gira senza sistema operativo.',
+                "On bare metal, the programmer controls the hardware directly without OS abstractions. = Su bare metal, il programmatore controlla l'hardware direttamente senza astrazioni del SO.",
               context: 'embedded',
               difficulty: 'advanced',
               note: 'Letteralmente "metallo nudo": direttamente sull\'hardware.',
             },
             {
               english: 'Firmware',
-              italian: 'firmware / software fissato nel dispositivo',
+              italian: 'Software fissato nel dispositivo (firmware)',
               pronunciation: '/ˈfɜːrmweər/',
               phonetic: 'FERM-uer',
               example:
-                'Firmware is software burned into a device. = Il firmware è software inciso nel dispositivo.',
+                "The firmware runs directly on the hardware without an operating system. = Il firmware gira direttamente sull'hardware senza un sistema operativo.",
               context: 'embedded',
               difficulty: 'advanced',
             },
@@ -10415,17 +10472,18 @@ export default {
               pronunciation: '/ˌmaɪkroʊkənˈtroʊlər/',
               phonetic: 'mai-kro-kon-TRO-ler',
               example:
-                'A microcontroller integrates CPU, RAM and peripherals. = Un microcontrollore integra CPU, RAM e periferiche.',
+                'A microcontroller integrates CPU, memory, and I/O peripherals on a single chip. = Un microcontrollore integra CPU, memoria e periferiche I/O su un singolo chip.',
               context: 'embedded',
               difficulty: 'advanced',
               note: 'Sigla MCU. Esempi: STM32, AVR, ESP32.',
             },
             {
               english: 'MCU',
-              italian: 'MCU (microcontrollore)',
+              italian: 'Microcontrollore (MCU)',
               pronunciation: '/em siː juː/',
               phonetic: 'EM-CI-IU',
-              example: 'MCU stands for microcontroller unit. = MCU sta per unità microcontrollore.',
+              example:
+                "The abbreviation MCU stands for microcontroller unit, a chip with CPU and peripherals. = L'abbreviazione MCU sta per unità microcontrollore, un chip con CPU e periferiche.",
               context: 'embedded',
               difficulty: 'advanced',
             },
@@ -10435,13 +10493,13 @@ export default {
               pronunciation: '/flæʃ/',
               phonetic: 'FLASC',
               example:
-                'Flash memory stores firmware persistently. = La memoria flash memorizza il firmware in modo persistente.',
+                'Writing to flash memory requires erasing an entire sector before programming. = Scrivere nella memoria flash richiede la cancellazione di un intero settore prima della programmazione.',
               context: 'embedded',
               difficulty: 'advanced',
             },
             {
               english: 'RAM',
-              italian: 'RAM (memoria ad accesso casuale)',
+              italian: 'Memoria ad accesso casuale (RAM)',
               pronunciation: '/ræm/',
               phonetic: 'RAM',
               example:
@@ -10456,7 +10514,7 @@ export default {
               pronunciation: '/ˈlɪŋkər skrɪpt/',
               phonetic: 'LIN-ker SKRIPT',
               example:
-                'A linker script defines memory layout. = Uno script del linker definisce il layout di memoria.',
+                'A linker script defines where code and data are placed in the memory map. = Uno script del linker definisce dove il codice e i dati sono posizionati nella mappa di memoria.',
               context: 'embedded',
               difficulty: 'advanced',
               code: 'MEMORY { FLASH (rx) : ORIGIN = 0x08000000 }',
@@ -10467,17 +10525,17 @@ export default {
               pronunciation: '/ˈstɑːrtʌp/',
               phonetic: 'STAR-tap',
               example:
-                'Startup code initializes the runtime before main. = Il codice di startup inizializza il runtime prima di main.',
+                'The startup code initializes the stack pointer and zeros the BSS section before main. = Il codice di avvio inizializza lo stack pointer e azzera la sezione BSS prima di main.',
               context: 'embedded',
               difficulty: 'advanced',
             },
             {
               english: 'Bootloader',
-              italian: 'bootloader / programma di avvio',
+              italian: 'Programma di avvio (bootloader)',
               pronunciation: '/ˈbuːtloʊdər/',
               phonetic: 'BUUT-lou-der',
               example:
-                'A bootloader loads the application firmware. = Un bootloader carica il firmware applicativo.',
+                "The bootloader initializes the hardware and loads the main firmware image. = Il bootloader inizializza l'hardware e carica l'immagine del firmware principale.",
               context: 'embedded',
               difficulty: 'advanced',
             },
@@ -10504,18 +10562,18 @@ export default {
               pronunciation: '/ˈredʒɪstər/',
               phonetic: 'RE-gi-ster',
               example:
-                'Hardware registers control peripherals. = I registri hardware controllano le periferiche.',
+                "Writing to a hardware register configures a peripheral's behavior. = Scrivere in un registro hardware configura il comportamento di una periferica.",
               context: 'embedded',
               difficulty: 'advanced',
               code: '#define UART_DR (*(volatile uint32_t*)0x40011000)',
             },
             {
               english: 'volatile',
-              italian: 'volatile / parola chiave (valore mutabile esterno)',
+              italian: 'Valore mutabile esterno (volatile)',
               pronunciation: '/ˈvɒlətaɪl/',
               phonetic: 'VO-la-tail',
               example:
-                "volatile prevents optimization of register reads. = volatile impedisce l'ottimizzazione delle letture dei registri.",
+                'Declaring a variable as volatile prevents the compiler from caching its value in a register. = Dichiarare una variabile come volatile impedisce al compilatore di memorizzare il suo valore in un registro.',
               context: 'embedded',
               difficulty: 'advanced',
               note: 'Indispensabile per registri MMIO e variabili condivise con ISR.',
@@ -10526,18 +10584,18 @@ export default {
               pronunciation: '/em em aɪ oʊ/',
               phonetic: 'EM-EM-AI-O',
               example:
-                'MMIO maps device registers into memory addresses. = MMIO mappa i registri dei dispositivi in indirizzi di memoria.',
+                "With MMIO, device registers are mapped into the processor's memory address space. = Con MMIO, i registri dei dispositivi sono mappati nello spazio di indirizzi di memoria del processore.",
               context: 'embedded',
               difficulty: 'advanced',
               note: 'Memory-Mapped I/O.',
             },
             {
               english: 'GPIO',
-              italian: 'GPIO (pin generici di input/output)',
+              italian: 'Pin generici di input/output (GPIO)',
               pronunciation: '/dʒiː piː aɪ oʊ/',
               phonetic: 'GI-PI-AI-O',
               example:
-                'GPIO pins can be configured as input or output. = I pin GPIO possono essere configurati come input o output.',
+                'Each GPIO pin can be configured as either an input or an output. = Ogni pin GPIO può essere configurato come input o come output.',
               context: 'embedded',
               difficulty: 'advanced',
               note: 'General Purpose Input/Output.',
@@ -10548,7 +10606,7 @@ export default {
               pronunciation: '/bɪt məˌnɪpjʊˈleɪʃən/',
               phonetic: 'BIT ma-ni-piu-LEI-scion',
               example:
-                'Bit manipulation is essential in embedded code. = La manipolazione di bit è essenziale nel codice embedded.',
+                'Efficient bit manipulation sets, clears, or toggles individual hardware register bits. = La manipolazione efficiente dei bit imposta, cancella o commuta singoli bit dei registri hardware.',
               context: 'embedded',
               difficulty: 'advanced',
             },
@@ -10615,11 +10673,11 @@ export default {
           items: [
             {
               english: 'Interrupt',
-              italian: 'interrupt / interruzione hardware',
+              italian: 'Interruzione hardware (interrupt)',
               pronunciation: '/ˌɪntəˈrʌpt/',
               phonetic: 'in-ter-RAPT',
               example:
-                "An interrupt suspends normal execution. = Un interrupt sospende l'esecuzione normale.",
+                'An interrupt pauses the main code to handle an urgent hardware event. = Un interrupt mette in pausa il codice principale per gestire un evento hardware urgente.',
               context: 'embedded',
               difficulty: 'advanced',
             },
@@ -10629,7 +10687,7 @@ export default {
               pronunciation: '/aɪ es ɑːr/',
               phonetic: 'AI-ES-AR',
               example:
-                'An ISR handles a hardware interrupt. = Una ISR gestisce un interrupt hardware.',
+                'An ISR (interrupt service routine) must execute quickly and return. = Una ISR (routine di servizio interrupt) deve eseguire rapidamente e ritornare.',
               context: 'embedded',
               difficulty: 'advanced',
               code: 'void __attribute__((interrupt)) USART1_IRQHandler(void);',
@@ -10640,7 +10698,8 @@ export default {
               italian: 'Richiesta di interrupt',
               pronunciation: '/aɪ ɑːr kjuː/',
               phonetic: 'AI-AR-KIU',
-              example: 'IRQ stands for interrupt request. = IRQ sta per richiesta di interrupt.',
+              example:
+                'Each peripheral raises an IRQ (interrupt request) to notify the CPU of an event. = Ogni periferica genera un IRQ (richiesta di interrupt) per notificare la CPU di un evento.',
               context: 'embedded',
               difficulty: 'advanced',
             },
@@ -10682,7 +10741,7 @@ export default {
               pronunciation: '/en viː aɪ siː/',
               phonetic: 'EN-VI-AI-CI',
               example:
-                'NVIC is the ARM Cortex-M interrupt controller. = NVIC è il controllore di interrupt di ARM Cortex-M.',
+                'The NVIC manages interrupt priorities and routing in ARM Cortex-M processors. = Il NVIC gestisce le priorità e il routing degli interrupt nei processori ARM Cortex-M.',
               context: 'embedded',
               difficulty: 'advanced',
             },
@@ -10698,11 +10757,11 @@ export default {
             },
             {
               english: 'Polling',
-              italian: 'polling / interrogazione ciclica',
+              italian: 'Interrogazione ciclica (polling)',
               pronunciation: '/ˈpoʊlɪŋ/',
               phonetic: 'POU-ling',
               example:
-                'Polling actively checks for events. = Il polling controlla attivamente gli eventi.',
+                'Instead of interrupts, polling repeatedly checks a flag for new data. = Invece degli interrupt, il polling controlla ripetutamente un flag per nuovi dati.',
               context: 'embedded',
               difficulty: 'advanced',
               note: 'Alternativa agli interrupt: spreca CPU ma è prevedibile.',
@@ -10713,7 +10772,7 @@ export default {
               pronunciation: '/diː em eɪ/',
               phonetic: 'DI-EM-EI',
               example:
-                'DMA transfers data without CPU intervention. = DMA trasferisce dati senza intervento della CPU.',
+                'A DMA controller transfers data between memory and peripherals without CPU intervention. = Un controller DMA trasferisce dati tra memoria e periferiche senza intervento della CPU.',
               context: 'embedded',
               difficulty: 'advanced',
               note: 'Direct Memory Access.',
@@ -10731,7 +10790,7 @@ export default {
               pronunciation: '/ɑːr tiː oʊ es/',
               phonetic: 'AR-TI-O-ES',
               example:
-                'An RTOS guarantees response time bounds. = Un RTOS garantisce limiti di tempo di risposta.',
+                'An RTOS schedules tasks with guaranteed maximum response times. = Un RTOS schedula task con tempi di risposta massimi garantiti.',
               context: 'embedded',
               difficulty: 'advanced',
               note: 'Real-Time Operating System. Esempi: FreeRTOS, Zephyr.',
@@ -10758,7 +10817,7 @@ export default {
             },
             {
               english: 'Task',
-              italian: 'task / unità di lavoro pianificabile',
+              italian: 'Unità di lavoro pianificabile (task)',
               pronunciation: '/tæsk/',
               phonetic: 'TASK',
               example: 'An RTOS schedules multiple tasks. = Un RTOS schedula più task.',
@@ -10768,7 +10827,7 @@ export default {
             },
             {
               english: 'Scheduler',
-              italian: 'scheduler / pianificatore di processi',
+              italian: 'Pianificatore di processi (scheduler)',
               pronunciation: '/ˈʃedjuːlər/',
               phonetic: 'SKE-giu-ler',
               example:
@@ -10778,7 +10837,7 @@ export default {
             },
             {
               english: 'Watchdog',
-              italian: 'watchdog / timer di sorveglianza',
+              italian: 'Timer di sorveglianza (watchdog)',
               pronunciation: '/ˈwɒtʃdɒɡ/',
               phonetic: 'UOC-dog',
               example:
@@ -10808,20 +10867,21 @@ export default {
             },
             {
               english: 'I2C',
-              italian: 'I2C (bus seriale a due fili)',
+              italian: 'Bus seriale a due fili (I2C)',
               pronunciation: '/aɪ tuː siː/',
               phonetic: 'AI-TU-CI',
-              example: 'I2C is a two-wire serial bus. = I2C è un bus seriale a due fili.',
+              example:
+                'Multiple devices share a single I2C bus using unique addresses. = Più dispositivi condividono un singolo bus I2C usando indirizzi unici.',
               context: 'embedded',
               difficulty: 'advanced',
             },
             {
               english: 'SPI',
-              italian: 'SPI (bus seriale sincrono)',
+              italian: 'Bus seriale sincrono (SPI)',
               pronunciation: '/es piː aɪ/',
               phonetic: 'ES-PI-AI',
               example:
-                'SPI is a fast synchronous serial bus. = SPI è un bus seriale sincrono veloce.',
+                'The SPI bus transfers data at high speed using four wires. = Il bus SPI trasferisce dati ad alta velocità usando quattro fili.',
               context: 'embedded',
               difficulty: 'advanced',
               note: 'Serial Peripheral Interface.',
@@ -10848,67 +10908,69 @@ export default {
               pronunciation: '/ˈmɪsrə siː/',
               phonetic: 'MIS-ra CI',
               example:
-                "MISRA C defines safe coding rules for automotive. = MISRA C definisce regole di codifica sicura per l'automotive.",
+                'Following MISRA C rules reduces defects in safety-critical automotive software. = Seguire le regole MISRA C riduce i difetti nel software automotive safety-critical.',
               context: 'professional',
               difficulty: 'advanced',
               note: 'Spesso obbligatorio in automotive, aerospaziale, medicale.',
             },
             {
               english: 'ANSI C',
-              italian: 'ANSI C / standard C originale',
+              italian: 'Standard C originale (ansi c)',
               pronunciation: '/ˈænsi siː/',
               phonetic: 'AN-si CI',
-              example: 'ANSI C was standardized in 1989. = ANSI C è stato standardizzato nel 1989.',
+              example:
+                'Code written in ANSI C compiles on virtually any platform with a conforming compiler. = Il codice scritto in ANSI C compila su praticamente qualsiasi piattaforma con un compilatore conforme.',
               context: 'professional',
               difficulty: 'advanced',
               note: 'Equivalente a C89/C90.',
             },
             {
               english: 'C99',
-              italian: 'C99 (standard C del 1999)',
+              italian: 'Standard C del 1999 (C99)',
               pronunciation: '/siː ˈnaɪnti naɪn/',
               phonetic: 'CI nain-TI-NAIN',
               example:
-                'C99 added // comments and inline functions. = C99 ha aggiunto i commenti // e le funzioni inline.',
+                'With C99, programmers gained inline functions, single-line comments, and VLAs. = Con C99, i programmatori hanno ottenuto funzioni inline, commenti su riga singola e VLA.',
               context: 'professional',
               difficulty: 'advanced',
             },
             {
               english: 'C11',
-              italian: 'C11 (standard C del 2011)',
+              italian: 'Standard C del 2011 (C11)',
               pronunciation: '/siː ɪˈlevn/',
               phonetic: 'CI i-LE-ven',
               example:
-                'C11 added _Atomic, threads and _Generic. = C11 ha aggiunto _Atomic, thread e _Generic.',
+                'The C11 standard introduced threads, atomics, and anonymous structs. = Lo standard C11 ha introdotto thread, operazioni atomiche e struct anonime.',
               context: 'professional',
               difficulty: 'advanced',
             },
             {
               english: 'C17',
-              italian: 'C17 (standard C del 2017)',
+              italian: 'Standard C del 2017 (C17)',
               pronunciation: '/siː ˌsevənˈtiːn/',
               phonetic: 'CI se-ven-TIIN',
-              example: 'C17 is a bug-fix release of C11. = C17 è una release di bug-fix di C11.',
+              example:
+                'The C17 revision fixed defects in C11 without adding new features. = La revisione C17 ha corretto difetti in C11 senza aggiungere nuove funzionalità.',
               context: 'professional',
               difficulty: 'advanced',
             },
             {
               english: 'C23',
-              italian: 'C23 (standard C del 2023)',
+              italian: 'Standard C del 2023 (C23)',
               pronunciation: '/siː ˌtwentiˈθriː/',
               phonetic: 'CI tuen-ti-TRII',
               example:
-                'C23 brings constexpr and nullptr to C. = C23 porta constexpr e nullptr in C.',
+                'The upcoming C23 standard brings constexpr and nullptr to C. = Il prossimo standard C23 porta constexpr e nullptr in C.',
               context: 'professional',
               difficulty: 'advanced',
             },
             {
               english: 'POSIX',
-              italian: 'POSIX (standard interfaccia sistemi Unix)',
+              italian: 'Standard interfaccia sistemi Unix (POSIX)',
               pronunciation: '/ˈpɒzɪks/',
               phonetic: 'PO-ziks',
               example:
-                "POSIX defines a portable Unix API. = POSIX definisce un'API Unix portabile.",
+                "Many Unix utilities rely on the POSIX API for portable system calls. = Molte utilità Unix si affidano all'API POSIX per chiamate di sistema portabili.",
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -10918,17 +10980,17 @@ export default {
               pronunciation: '/ˌpɔːrtəˈbɪləti/',
               phonetic: 'por-ta-BI-li-ti',
               example:
-                'Portability allows code to run on multiple platforms. = La portabilità permette al codice di girare su più piattaforme.',
+                'Writing for portability means avoiding compiler-specific extensions. = Scrivere per la portabilità significa evitare estensioni specifiche del compilatore.',
               context: 'professional',
               difficulty: 'advanced',
             },
             {
               english: 'Endianness',
-              italian: 'endianness / ordine dei byte in memoria',
+              italian: 'Ordine dei byte in memoria (endianness)',
               pronunciation: '/ˈendiənnəs/',
               phonetic: 'EN-dian-ness',
               example:
-                "Endianness affects binary file portability. = L'endianness influenza la portabilità di file binari.",
+                'Network protocols typically use big endianness, while x86 CPUs use little endianness. = I protocolli di rete tipicamente usano big endianness, mentre le CPU x86 usano little endianness.',
               context: 'professional',
               difficulty: 'advanced',
               note: 'x86 little-endian, network big-endian.',
@@ -10939,7 +11001,7 @@ export default {
               pronunciation: '/ɪmplɪmenˈteɪʃən/',
               phonetic: 'im-pli-men-TEI-scion',
               example:
-                "Implementation-defined behavior varies by compiler. = Il comportamento definito dall'implementazione varia per compilatore.",
+                "The size of int is implementation-defined and varies between platforms. = La dimensione di int è definita dall'implementazione e varia tra le piattaforme.",
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -10956,16 +11018,17 @@ export default {
               pronunciation: '/ˈstætɪk/',
               phonetic: 'STA-tik',
               example:
-                "Static analysis finds bugs without running code. = L'analisi statica trova bug senza eseguire il codice.",
+                'Running static analysis tools like cppcheck catches bugs before the code even runs. = Eseguire strumenti di analisi statica come cppcheck trova bug prima ancora che il codice giri.',
               context: 'professional',
               difficulty: 'advanced',
             },
             {
               english: 'cppcheck',
-              italian: 'cppcheck (analizzatore statico C/C++)',
+              italian: 'Analizzatore statico C/C++ (cppcheck)',
               pronunciation: '/siː piː piːtʃek/',
               phonetic: 'CI-PI-PI-cek',
-              example: 'cppcheck catches common C/C++ bugs. = cppcheck trova bug comuni in C/C++.',
+              example:
+                'Running cppcheck on your project catches common C/C++ bugs before review. = Eseguire cppcheck sul tuo progetto trova bug comuni in C/C++ prima della review.',
               context: 'professional',
               difficulty: 'advanced',
               command: 'cppcheck --enable=all main.c',
@@ -10973,11 +11036,11 @@ export default {
             },
             {
               english: 'clang-tidy',
-              italian: 'clang-tidy (linter LLVM per C/C++)',
+              italian: 'Linter LLVM per C/C++ (clang-tidy)',
               pronunciation: '/klæŋ ˈtaɪdi/',
               phonetic: 'KLANG TAI-di',
               example:
-                'clang-tidy lints C and C++ code. = clang-tidy fa il lint di codice C e C++.',
+                'The clang-tidy tool enforces coding guidelines and suggests modernization fixes. = Lo strumento clang-tidy impone linee guida di codifica e suggerisce fix di modernizzazione.',
               context: 'professional',
               difficulty: 'advanced',
               command: 'clang-tidy main.c',
@@ -10985,11 +11048,11 @@ export default {
             },
             {
               english: 'clang-format',
-              italian: 'clang-format (formattatore di codice)',
+              italian: 'Formattatore di codice (clang-format)',
               pronunciation: '/klæŋ ˈfɔːrmæt/',
               phonetic: 'KLANG FOR-mat',
               example:
-                'clang-format formats source code consistently. = clang-format formatta il codice in modo consistente.',
+                'Integrating clang-format into CI enforces consistent code style automatically. = Integrare clang-format nella CI impone uno stile di codice consistente automaticamente.',
               context: 'professional',
               difficulty: 'advanced',
               command: 'clang-format -i main.c',
@@ -10997,33 +11060,33 @@ export default {
             },
             {
               english: 'Coverity',
-              italian: 'Coverity (analizzatore statico commerciale)',
+              italian: 'Analizzatore statico commerciale (Coverity)',
               pronunciation: '/kəˈverəti/',
               phonetic: 'kov-VE-ri-ti',
               example:
-                'Coverity is a commercial static analyzer. = Coverity è un analizzatore statico commerciale.',
+                'Enterprise teams use Coverity to find deep defects across large codebases. = I team enterprise usano Coverity per trovare difetti profondi in grandi codebase.',
               context: 'professional',
               difficulty: 'advanced',
               tool: 'Coverity',
             },
             {
               english: 'splint',
-              italian: 'splint (linter per C)',
+              italian: 'Linter per C (splint)',
               pronunciation: '/splɪnt/',
               phonetic: 'SPLINT',
               example:
-                'splint is a classic Unix C analyzer. = splint è un classico analizzatore C per Unix.',
+                'Originally called LCLint, splint performs lightweight annotation-based checking for C. = Chiamato originariamente LCLint, splint esegue controlli leggeri basati su annotazioni per C.',
               context: 'professional',
               difficulty: 'advanced',
               tool: 'splint',
             },
             {
               english: 'Lint',
-              italian: 'lint / analisi statica del codice',
+              italian: 'Analisi statica del codice (lint)',
               pronunciation: '/lɪnt/',
               phonetic: 'LINT',
               example:
-                'A linter flags suspicious code constructs. = Un linter segnala costrutti sospetti.',
+                'Running a lint tool flags suspicious constructs that may indicate bugs. = Eseguire uno strumento lint segnala costrutti sospetti che possono indicare bug.',
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -11033,7 +11096,7 @@ export default {
               pronunciation: '/fɔːls ˈpɒzətɪv/',
               phonetic: 'FOLS PO-ze-tiv',
               example:
-                'Static analyzers produce false positives. = Gli analizzatori statici producono falsi positivi.',
+                'Tuning rules reduces false positives without missing real defects. = Regolare le regole riduce i falsi positivi senza perdere difetti reali.',
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -11042,7 +11105,8 @@ export default {
               italian: 'Copertura del codice',
               pronunciation: '/koʊd ˈkʌvərɪdʒ/',
               phonetic: 'KOUD KA-ve-rege',
-              example: 'gcov measures code coverage. = gcov misura la copertura del codice.',
+              example:
+                'Measuring code coverage with gcov reveals which lines tests never execute. = Misurare la copertura del codice con gcov rivela quali righe i test non eseguono mai.',
               context: 'professional',
               difficulty: 'advanced',
               command: 'gcc --coverage main.c && gcov main',
@@ -11050,11 +11114,11 @@ export default {
             },
             {
               english: 'Fuzzing',
-              italian: 'fuzzing / test con input casuali',
+              italian: 'Test con input casuali (fuzzing)',
               pronunciation: '/ˈfʌzɪŋ/',
               phonetic: 'FA-zing',
               example:
-                'Fuzzing feeds random input to find bugs. = Il fuzzing fornisce input casuali per trovare bug.',
+                'Automated fuzzing with AFL++ discovers edge-case crashes in C code. = Il fuzzing automatizzato con AFL++ scopre crash in casi limite nel codice C.',
               context: 'professional',
               difficulty: 'advanced',
               tool: 'libFuzzer, AFL++',
@@ -11072,17 +11136,17 @@ export default {
               pronunciation: '/koʊd rɪˈvjuː/',
               phonetic: 'KOUD ri-VIU',
               example:
-                'Code review catches bugs before merge. = La code review trova bug prima del merge.',
+                'Peer code review catches logic errors that automated tools miss. = La code review tra pari cattura errori di logica che gli strumenti automatizzati perdono.',
               context: 'professional',
               difficulty: 'advanced',
             },
             {
               english: 'Refactoring',
-              italian: 'refactoring / ristrutturazione del codice',
+              italian: 'Ristrutturazione del codice (refactoring)',
               pronunciation: '/riːˈfæktərɪŋ/',
               phonetic: 'ri-FAK-to-ring',
               example:
-                'Refactoring improves code without changing behavior. = Il refactoring migliora il codice senza cambiarne il comportamento.',
+                'Careful refactoring improves code structure without changing its external behavior. = Un refactoring attento migliora la struttura del codice senza cambiarne il comportamento esterno.',
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -11092,7 +11156,7 @@ export default {
               pronunciation: '/ˈteknɪkl det/',
               phonetic: 'TEK-ni-kal DET',
               example:
-                'Technical debt slows future development. = Il debito tecnico rallenta lo sviluppo futuro.',
+                'Ignoring technical debt makes every future change harder and riskier. = Ignorare il debito tecnico rende ogni cambiamento futuro più difficile e rischioso.',
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -11102,7 +11166,7 @@ export default {
               pronunciation: '/ˈleɡəsi/',
               phonetic: 'LE-ga-si',
               example:
-                'Legacy code is hard to change safely. = Il codice legacy è difficile da modificare in sicurezza.',
+                'Working with legacy code often means adding tests before making any changes. = Lavorare con codice legacy spesso significa aggiungere test prima di fare qualsiasi modifica.',
               context: 'professional',
               difficulty: 'advanced',
               note: 'Spesso senza test e con design datato.',
@@ -11113,7 +11177,7 @@ export default {
               pronunciation: '/koʊd smel/',
               phonetic: 'KOUD SMEL',
               example:
-                'A code smell hints at deeper problems. = Un cattivo odore di codice suggerisce problemi più profondi.',
+                'Long functions and deep nesting are code smells that suggest refactoring is needed. = Funzioni lunghe e annidamento profondo sono cattivi odori di codice che suggeriscono la necessità di refactoring.',
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -11134,7 +11198,7 @@ export default {
               pronunciation: '/ˈneɪmɪŋ kənˈvenʃən/',
               phonetic: 'NEI-ming kon-VEN-scion',
               example:
-                'A naming convention improves readability. = Una convenzione di nomenclatura migliora la leggibilità.',
+                'Using a consistent naming convention across the project reduces cognitive load. = Usare una convenzione di nomenclatura consistente in tutto il progetto riduce il carico cognitivo.',
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -11144,7 +11208,7 @@ export default {
               pronunciation: '/sneɪk keɪs/',
               phonetic: 'SNEIK KEIS',
               example:
-                'Use snake_case for C identifiers. = Usa snake_case per gli identificatori C.',
+                'The Linux kernel uses snake_case as its naming convention for identifiers. = Il kernel Linux usa snake_case come convenzione di nomenclatura per gli identificatori.',
               context: 'professional',
               difficulty: 'advanced',
               note: 'Convenzione tipica del C, a differenza di CamelCase.',
@@ -11155,7 +11219,7 @@ export default {
               pronunciation: '/ˈhedər ɡɑːrd/',
               phonetic: 'HED-er GARD',
               example:
-                'Use header guards to prevent multiple inclusion. = Usa header guard per prevenire inclusioni multiple.',
+                'Every header file should have a header guard or #pragma once to prevent double inclusion. = Ogni file header dovrebbe avere un header guard o #pragma once per prevenire la doppia inclusione.',
               context: 'professional',
               difficulty: 'advanced',
               code: '#ifndef MY_H\n#define MY_H\n/* ... */\n#endif',
@@ -11165,7 +11229,8 @@ export default {
               italian: 'Commento di documentazione',
               pronunciation: '/ˌdɒkjʊmenˈteɪʃən/',
               phonetic: 'do-kiu-men-TEI-scion',
-              example: "Doxygen comments document the API. = I commenti Doxygen documentano l'API.",
+              example:
+                "Well-written documentation comments let Doxygen generate API reference pages. = Commenti di documentazione ben scritti permettono a Doxygen di generare pagine di riferimento dell'API.",
               context: 'professional',
               difficulty: 'advanced',
               code: '/** @brief Adds two numbers */',
@@ -11184,7 +11249,7 @@ export default {
               pronunciation: '/ˈjuːnɪt test/',
               phonetic: 'IU-nit TEST',
               example:
-                'Unit tests verify single functions. = I test unitari verificano singole funzioni.',
+                'Writing a unit test for each function catches regressions early. = Scrivere un test unitario per ogni funzione cattura le regressioni presto.',
               context: 'professional',
               difficulty: 'advanced',
               tool: 'Unity, CMocka, Check',
@@ -11195,17 +11260,17 @@ export default {
               pronunciation: '/ˌɪntɪˈɡreɪʃən/',
               phonetic: 'in-ti-GREI-scion',
               example:
-                "Integration tests check component interaction. = I test di integrazione controllano l'interazione tra componenti.",
+                'An integration test verifies that modules work together correctly. = Un test di integrazione verifica che i moduli funzionino insieme correttamente.',
               context: 'professional',
               difficulty: 'advanced',
             },
             {
               english: 'Mock',
-              italian: 'mock / oggetto fittizio per i test',
+              italian: 'Oggetto fittizio per i test (mock)',
               pronunciation: '/mɒk/',
               phonetic: 'MOK',
               example:
-                'A mock simulates a dependency in tests. = Un mock simula una dipendenza nei test.',
+                'Using a mock replaces a real dependency with a controllable substitute in tests. = Usare un mock sostituisce una dipendenza reale con un sostituto controllabile nei test.',
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -11215,7 +11280,7 @@ export default {
               pronunciation: '/tiː diː diː/',
               phonetic: 'TI-DI-DI',
               example:
-                "TDD writes tests before implementation. = TDD scrive i test prima dell'implementazione.",
+                'In TDD, you write the test before writing the code that makes it pass. = Nel TDD, scrivi il test prima di scrivere il codice che lo fa passare.',
               context: 'professional',
               difficulty: 'advanced',
               note: 'Test-Driven Development.',
@@ -11226,7 +11291,7 @@ export default {
               pronunciation: '/rɪˈɡreʃən/',
               phonetic: 'ri-GRES-scion',
               example:
-                'Regression tests prevent old bugs from returning. = I test di regressione prevengono il ritorno di vecchi bug.',
+                'Adding a regression test for each fixed bug ensures it never resurfaces. = Aggiungere un test di regressione per ogni bug corretto assicura che non riappaia mai.',
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -11235,7 +11300,8 @@ export default {
               italian: 'Integrazione continua',
               pronunciation: '/kənˈtɪnjuəs/',
               phonetic: 'kon-TI-nius',
-              example: 'CI runs tests on every commit. = CI esegue i test ad ogni commit.',
+              example:
+                'A CI pipeline compiles and tests the code on every push. = Una pipeline CI compila e testa il codice ad ogni push.',
               context: 'professional',
               difficulty: 'advanced',
               note: 'Sigla CI.',
@@ -11246,7 +11312,7 @@ export default {
               pronunciation: '/bɪld ˈpaɪplaɪn/',
               phonetic: 'BILD PAIP-lain',
               example:
-                'A build pipeline automates compile, test and deploy. = Una pipeline di build automatizza compilazione, test e deploy.',
+                'A well-designed build pipeline catches failures before code reaches production. = Una pipeline di build ben progettata cattura i fallimenti prima che il codice raggiunga la produzione.',
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -11256,7 +11322,7 @@ export default {
               pronunciation: '/dɪˈfensɪv/',
               phonetic: 'di-FEN-siv',
               example:
-                'Defensive coding validates assumptions explicitly. = La codifica difensiva valida le assunzioni esplicitamente.',
+                'Practicing defensive coding means checking every pointer for NULL before dereferencing. = Praticare la codifica difensiva significa controllare ogni puntatore per NULL prima di dereferenziare.',
               context: 'professional',
               difficulty: 'advanced',
             },
@@ -11266,7 +11332,7 @@ export default {
               pronunciation: '/koʊd staɪl/',
               phonetic: 'KOUD STAIL',
               example:
-                'A consistent code style aids team work. = Uno stile di codice consistente aiuta il lavoro di squadra.',
+                'Agreeing on a code style guide eliminates formatting debates during review. = Concordare su una guida di stile del codice elimina i dibattiti sulla formattazione durante la review.',
               context: 'professional',
               difficulty: 'advanced',
               note: 'Esempi: Linux kernel style, Google C style.',
@@ -11277,7 +11343,7 @@ export default {
               pronunciation: '/best ˈpræktɪs/',
               phonetic: 'BEST PRAK-tis',
               example:
-                'Following best practices reduces bugs. = Seguire le pratiche migliori riduce i bug.',
+                "Adopting best practices from the start avoids costly rewrites later. = Adottare le pratiche migliori dall'inizio evita costose riscritture in seguito.",
               context: 'professional',
               difficulty: 'advanced',
             },

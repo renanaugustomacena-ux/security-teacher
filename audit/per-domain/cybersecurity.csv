@@ -1,0 +1,119 @@
+topicId,level,lesson,english,italian,issueType
+"cybersecurity",0,"cyber_basics_1","Hacker","Pirata informatico (Hacker)",trivial-example
+"cybersecurity",0,"cyber_basics_1","Attack","Attacco",near-identical-translation
+"cybersecurity",0,"cyber_basics_1","Data","Dati",near-identical-translation
+"cybersecurity",0,"cyber_basics_2","Logout","Disconnessione / Disconnettersi",trivial-example
+"cybersecurity",0,"cyber_basics_2","Credential","Credenziale",near-identical-translation
+"cybersecurity",0,"cyber_basics_2","Access","Accesso",near-identical-translation
+"cybersecurity",0,"cyber_basics_3","Risk","Rischio",trivial-example
+"cybersecurity",0,"cyber_basics_3","Vulnerability","Vulnerabilità",near-identical-translation
+"cybersecurity",0,"cyber_basics_3","Update","Aggiornamento",trivial-example
+"cybersecurity",1,"threats_attacks","Brute Force","Forza bruta",tautological-example
+"cybersecurity",1,"threats_attacks","Social Engineering","Ingegneria sociale",tautological-example
+"cybersecurity",1,"threats_attacks","Identity Theft","Furto d'identità",tautological-example
+"cybersecurity",1,"threats_attacks","Insider Threat","Minaccia interna",tautological-example
+"cybersecurity",1,"threats_web","Domain","Dominio",trivial-example
+"cybersecurity",1,"threats_web","Certificate","Certificato",near-identical-translation
+"cybersecurity",1,"threats_defense_intro","Scan","Scansione / Scansionare",trivial-example
+"cybersecurity",1,"threats_defense_intro","Quarantine","Quarantena",near-identical-translation
+"cybersecurity",2,"defense_auth","Biometrics","Biometria",near-identical-translation
+"cybersecurity",2,"defense_auth","One-Time Password (OTP)","OTP / Password monouso",trivial-example
+"cybersecurity",2,"defense_auth","Session","Sessione",near-identical-translation
+"cybersecurity",2,"defense_endpoint","Disk Encryption","Crittografia del disco",tautological-example
+"cybersecurity",3,"net_basics","Switch","Commutatore (Switch)",trivial-example
+"cybersecurity",3,"net_protocols","ARP (Address Resolution Protocol)","ARP / Protocollo di Risoluzione Indirizzi",trivial-example
+"cybersecurity",3,"net_security","Network Segmentation","Segmentazione della Rete",tautological-example
+"cybersecurity",3,"net_security","DMZ (Demilitarized Zone)","Zona Demilitarizzata (DMZ)",trivial-example
+"cybersecurity",3,"net_security","Port Mirroring","Mirroring delle Porte",tautological-example
+"cybersecurity",3,"net_security","Access Control List (ACL)","Lista di Controllo Accessi",trivial-example
+"cybersecurity",3,"net_security","Port Security","Sicurezza delle Porte",tautological-example
+"cybersecurity",4,"crypto_symmetric","Symmetric Encryption","Crittografia Simmetrica",tautological-example
+"cybersecurity",4,"crypto_hash","Collision","Collisione",near-identical-translation
+"cybersecurity",4,"crypto_pki","Root Certificate","Certificato Radice (Root)",tautological-example
+"cybersecurity",4,"crypto_pki","Intermediate Certificate","Certificato Intermedio",tautological-example
+"cybersecurity",5,"web_injection","Command Injection","Iniezione di Comandi",tautological-example
+"cybersecurity",5,"web_auth","Session Fixation","Fissazione di Sessione",tautological-example
+"cybersecurity",5,"web_auth","HttpOnly Cookie","Cookie HttpOnly",tautological-example
+"cybersecurity",5,"web_auth","Credential Stuffing","riutilizzo automatizzato di credenziali rubate (Credential Stuffing)",tautological-example
+"cybersecurity",5,"web_owasp","Broken Access Control","Controllo Accessi Difettoso",tautological-example
+"cybersecurity",5,"web_owasp","Insecure Design","Progettazione Non Sicura",tautological-example
+"cybersecurity",5,"web_defense","Output Encoding","Codifica dell'Output",tautological-example
+"cybersecurity",6,"sys_access","Access Control","Controllo Accessi",tautological-example
+"cybersecurity",6,"sys_access","Horizontal Escalation","Scalata Orizzontale",tautological-example
+"cybersecurity",6,"sys_hardening","System Hardening","Hardening del Sistema",tautological-example
+"cybersecurity",6,"sys_monitoring","Log Correlation","Correlazione dei Log",tautological-example
+"cybersecurity",6,"sys_monitoring","Real-time Alerting","Allarmistica in Tempo Reale",tautological-example
+"cybersecurity",6,"sys_config","Configuration Drift","Deriva della Configurazione",tautological-example
+"cybersecurity",7,"ir_process","Preparation","Preparazione",near-identical-translation
+"cybersecurity",7,"ir_process","Eradication","Eradicazione",near-identical-translation
+"cybersecurity",7,"ir_forensics","Digital Forensics","Informatica Forense",tautological-example
+"cybersecurity",7,"ir_forensics","Evidence Acquisition","Acquisizione delle Prove",tautological-example
+"cybersecurity",7,"ir_forensics","Metadata Analysis","Analisi dei Metadati",tautological-example
+"cybersecurity",7,"ir_threat_intel","Indicator of Compromise (IOC)","Indicatore di Compromissione (IOC)",trivial-example
+"cybersecurity",7,"ir_threat_intel","Dark Web Monitoring","Monitoraggio del Dark Web",tautological-example
+"cybersecurity",7,"ir_recovery","RTO (Recovery Time Objective)","Obiettivo Tempo di Recupero",trivial-example
+"cybersecurity",7,"ir_recovery","Resilience","Resilienza",near-identical-translation
+"cybersecurity",8,"cloud_models","SaaS (Software as a Service)","SaaS / Software come Servizio",trivial-example
+"cybersecurity",8,"cloud_models","Hybrid Cloud","Cloud Ibrido",tautological-example
+"cybersecurity",8,"cloud_iam","IAM (Identity and Access Management)","Gestione Identità e Accessi",trivial-example
+"cybersecurity",8,"cloud_iam","Federated Identity","Identità Federata",tautological-example
+"cybersecurity",8,"cloud_iam","Conditional Access","Accesso Condizionale",tautological-example
+"cybersecurity",8,"cloud_data","Encryption at Rest","Cifratura dei Dati Archiviati",tautological-example
+"cybersecurity",8,"cloud_data","Client-side Encryption","Cifratura Lato Client",tautological-example
+"cybersecurity",8,"cloud_data","Server-side Encryption (SSE)","Cifratura Lato Server",trivial-example
+"cybersecurity",8,"cloud_data","Data Sovereignty","Sovranità dei Dati",tautological-example
+"cybersecurity",8,"cloud_data","Data Masking","Mascheramento dei Dati",tautological-example
+"cybersecurity",9,"mobile_threats","Mobile Malware","Malware Mobile",tautological-example
+"cybersecurity",9,"mobile_threats","App Sandboxing","Sandboxing delle App",tautological-example
+"cybersecurity",9,"mobile_mgmt","Device Attestation","Attestazione del Dispositivo",tautological-example
+"cybersecurity",9,"mobile_app","Certificate Pinning","aggancio del certificato atteso (Certificate Pinning)",tautological-example
+"cybersecurity",9,"mobile_app","Intent Injection","Iniezione di Intent",tautological-example
+"cybersecurity",9,"mobile_app","App Wrapping","Involucro applicativo (App Wrapping)",tautological-example
+"cybersecurity",9,"mobile_network","Cell Tower Spoofing","Spoofing di Torre Cellulare",tautological-example
+"cybersecurity",10,"adv_teams","Adversary Simulation","Simulazione dell'Avversario",tautological-example
+"cybersecurity",10,"adv_teams","Threat Hunting","Caccia alle Minacce / Threat Hunting",tautological-example
+"cybersecurity",10,"adv_malware","Malware Analysis","Analisi del Malware",tautological-example
+"cybersecurity",10,"adv_malware","Static Analysis","Analisi Statica",tautological-example
+"cybersecurity",10,"adv_malware","Dynamic Analysis","Analisi Dinamica",tautological-example
+"cybersecurity",10,"adv_malware","Reverse Engineering","Ingegneria Inversa",tautological-example
+"cybersecurity",10,"adv_apt","Nation-State Actor","Attore Statale",tautological-example
+"cybersecurity",10,"adv_apt","Cyber Espionage","Spionaggio Informatico",tautological-example
+"cybersecurity",10,"adv_apt","Persistence","Persistenza",near-identical-translation
+"cybersecurity",10,"adv_apt","Data Exfiltration","Esfiltrazione dei Dati",tautological-example
+"cybersecurity",10,"adv_offensive","Offensive Security","Sicurezza Offensiva",tautological-example
+"cybersecurity",10,"adv_offensive","Ethical Hacking","Hacking Etico",tautological-example
+"cybersecurity",10,"adv_offensive","Exploit Development","Sviluppo di Exploit",tautological-example
+"cybersecurity",10,"adv_offensive","Post-Exploitation","attività dopo la compromissione (Post-Exploitation)",tautological-example
+"cybersecurity",11,"grc_compliance","Data Sovereignty","Sovranità dei Dati",tautological-example
+"cybersecurity",11,"grc_risk","Risk Avoidance","Evitamento del Rischio",tautological-example
+"cybersecurity",11,"grc_risk","Asset Valuation","Valutazione degli Asset",tautological-example
+"cybersecurity",11,"grc_risk","Quantitative Risk Analysis","Analisi Quantitativa del Rischio",tautological-example
+"cybersecurity",11,"grc_risk","Qualitative Risk Analysis","Analisi Qualitativa del Rischio",tautological-example
+"cybersecurity",11,"grc_career","CISO (Chief Information Security Officer)","Responsabile Sicurezza Informazioni",trivial-example
+"cybersecurity",11,"grc_career","Incident Responder","Addetto Risposta Incidenti",tautological-example
+"cybersecurity",11,"grc_career","Certification","Certificazione",near-identical-translation
+"cybersecurity",11,"grc_career","Security Awareness Training","Formazione Consapevolezza Sicurezza",tautological-example
+"cybersecurity",0,"cyber_basics_1","encryption","",duplicate-across-lessons
+"cybersecurity",2,"defense_crypto_basics","encryption","",duplicate-across-lessons
+"cybersecurity",0,"cyber_basics_3","antivirus","",duplicate-across-lessons
+"cybersecurity",2,"defense_endpoint","antivirus","",duplicate-across-lessons
+"cybersecurity",1,"threats_web","https","",duplicate-across-lessons
+"cybersecurity",2,"defense_crypto_basics","https","",duplicate-across-lessons
+"cybersecurity",1,"threats_web","certificate","",duplicate-across-lessons
+"cybersecurity",2,"defense_auth","certificate","",duplicate-across-lessons
+"cybersecurity",1,"threats_defense_intro","recovery","",duplicate-across-lessons
+"cybersecurity",7,"ir_process","recovery","",duplicate-across-lessons
+"cybersecurity",2,"defense_tools","waf (web application firewall)","",duplicate-across-lessons
+"cybersecurity",5,"web_defense","waf (web application firewall)","",duplicate-across-lessons
+"cybersecurity",2,"defense_auth","identity provider (idp)","",duplicate-across-lessons
+"cybersecurity",8,"cloud_iam","identity provider (idp)","",duplicate-across-lessons
+"cybersecurity",2,"defense_crypto_basics","public key","",duplicate-across-lessons
+"cybersecurity",4,"crypto_asymmetric","public key","",duplicate-across-lessons
+"cybersecurity",2,"defense_crypto_basics","private key","",duplicate-across-lessons
+"cybersecurity",4,"crypto_asymmetric","private key","",duplicate-across-lessons
+"cybersecurity",2,"defense_crypto_basics","digital signature","",duplicate-across-lessons
+"cybersecurity",4,"crypto_hash","digital signature","",duplicate-across-lessons
+"cybersecurity",7,"ir_recovery","tabletop exercise","",duplicate-across-lessons
+"cybersecurity",10,"adv_teams","tabletop exercise","",duplicate-across-lessons
+"cybersecurity",8,"cloud_data","data sovereignty","",duplicate-across-lessons
+"cybersecurity",11,"grc_compliance","data sovereignty","",duplicate-across-lessons

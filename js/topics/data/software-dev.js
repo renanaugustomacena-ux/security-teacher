@@ -25,7 +25,8 @@ export default {
               italian: 'Codice',
               pronunciation: '/ko\u028Ad/',
               phonetic: 'KOUD',
-              example: 'Write clean code. = Scrivi codice pulito.',
+              example:
+                'Refactoring helps you write clean code that is easier to maintain. = Il refactoring ti aiuta a scrivere codice pulito e più facile da mantenere.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Istruzioni scritte in un linguaggio di programmazione.',
@@ -42,11 +43,11 @@ export default {
             },
             {
               english: 'Software',
-              italian: 'software / programma applicativo',
+              italian: 'programma applicativo (software)',
               pronunciation: '/\u02C8s\u0252ftwe\u0259r/',
               phonetic: 'SOFT-uer',
               example:
-                'Software development is a creative process. = Lo sviluppo software \u00E8 un processo creativo.',
+                "Every piece of software starts as an idea that a team turns into working code. = Ogni software nasce come un'idea che un team trasforma in codice funzionante.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Insieme di programmi, dati e documentazione.',
@@ -57,7 +58,7 @@ export default {
               pronunciation: '/\u02C8\u00E6l\u0261\u0259r\u026A\u00F0\u0259m/',
               phonetic: 'AL-go-ri-them',
               example:
-                "The sorting algorithm is efficient. = L'algoritmo di ordinamento \u00E8 efficiente.",
+                "Choosing the right algorithm can reduce execution time from hours to seconds. = Scegliere l'algoritmo giusto pu\u00F2 ridurre il tempo di esecuzione da ore a secondi.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Una procedura passo-passo per risolvere un problema.',
@@ -86,7 +87,7 @@ export default {
               pronunciation: '/\u02C8pr\u0252bl\u0259m \u02C8s\u0252lv\u026A\u014B/',
               phonetic: 'PRO-blem SOL-ving',
               example:
-                'Programming is mostly problem solving. = Programmare \u00E8 soprattutto risolvere problemi.',
+                'Strong problem solving skills matter more than memorising syntax. = Le capacit\u00E0 di risoluzione di problemi contano pi\u00F9 della memorizzazione della sintassi.',
               context: 'career',
               difficulty: 'beginner',
             },
@@ -118,7 +119,7 @@ export default {
               pronunciation: '/r\u026A\u02C8li\u02D0s/',
               phonetic: 're-LIIS',
               example:
-                'The next release is scheduled for tomorrow. = Il prossimo rilascio \u00E8 previsto per domani.',
+                'We schedule a new release every two weeks with bug fixes and features. = Pianifichiamo un nuovo rilascio ogni due settimane con correzioni e funzionalit\u00E0.',
               context: 'management',
               difficulty: 'beginner',
               note: "Una versione specifica del software pronta per l'uso.",
@@ -135,7 +136,8 @@ export default {
               italian: 'Ambiente di Sviluppo Integrato',
               pronunciation: '/\u02CCa\u026A di\u02D0 \u02C8i\u02D0/',
               phonetic: 'ai-dii-II',
-              example: 'Visual Studio Code is a popular IDE. = VS Code \u00E8 un IDE popolare.',
+              example:
+                'A good IDE highlights errors as you type and offers autocompletion. = Un buon IDE evidenzia gli errori mentre scrivi e offre il completamento automatico.',
               context: 'tools',
               difficulty: 'beginner',
               note: 'Include tutto quello che serve: editor, debugger, terminale.',
@@ -174,7 +176,7 @@ export default {
             },
             {
               english: 'Debugger',
-              italian: 'debugger / strumento di analisi del codice',
+              italian: 'strumento di analisi del codice (debugger)',
               pronunciation: '/\u02CCdi\u02D0\u02C8b\u028C\u0261\u0259r/',
               phonetic: 'dii-BA-gher',
               example:
@@ -196,7 +198,8 @@ export default {
               italian: 'Costruzione / Build',
               pronunciation: '/b\u026Ald/',
               phonetic: 'BILD',
-              example: 'Run the build process. = Esegui il processo di build.',
+              example:
+                "If the build fails, check the compiler output for missing dependencies. = Se la build fallisce, controlla l'output del compilatore per dipendenze mancanti.",
               context: 'tools',
               difficulty: 'intermediate',
               note: 'Processo di trasformazione del codice sorgente in un prodotto finito.',
@@ -207,7 +210,7 @@ export default {
               pronunciation: '/\u02C8v\u025C\u02D0r\u0292\u0259n k\u0259n\u02C8tro\u028Al/',
               phonetic: 'VER-scen kon-TROUL',
               example:
-                'Git is a version control system. = Git \u00E8 un sistema di controllo versione.',
+                "Without version control, teams overwrite each other's changes. = Senza il controllo versione, i team sovrascrivono le modifiche degli altri.",
               context: 'tools',
               difficulty: 'intermediate',
             },
@@ -226,7 +229,8 @@ export default {
               italian: 'Cornice di Lavoro / Framework',
               pronunciation: '/\u02C8fre\u026Amw\u025C\u02D0rk/',
               phonetic: 'FREIM-uerk',
-              example: 'React is a popular framework. = React \u00E8 un framework popolare.',
+              example:
+                'Choosing the right framework saves months of development time. = Scegliere il framework giusto fa risparmiare mesi di sviluppo.',
               context: 'tools',
               difficulty: 'intermediate',
               note: 'Una struttura predefinita su cui costruire il software.',
@@ -240,28 +244,29 @@ export default {
           items: [
             {
               english: 'Bug',
-              italian: 'Bug / Difetto',
+              italian: 'Difetto (bug)',
               pronunciation: '/b\u028C\u0261/',
               phonetic: 'BAG',
-              example: 'Find and fix the bug. = Trova e correggi il bug.',
+              example:
+                'The tester found a critical bug that caused data loss during save operations. = Il tester ha trovato un bug critico che causava perdita di dati durante il salvataggio.',
               context: 'errors',
               difficulty: 'beginner',
               note: 'Un errore o un difetto nel software che causa risultati errati.',
             },
             {
               english: 'Debugging',
-              italian: 'Debugging / Correzione Errori',
+              italian: 'Correzione errori (debugging)',
               pronunciation: '/\u02CCdi\u02D0\u02C8b\u028C\u0261\u026A\u014B/',
               phonetic: 'dii-BA-ghing',
               example:
-                'Debugging takes more time than writing code. = Il debugging richiede pi\u00F9 tempo dello scrivere codice.',
+                'Most developers spend more time debugging than writing new code. = La maggior parte degli sviluppatori passa pi\u00F9 tempo a fare debugging che a scrivere codice nuovo.',
               context: 'errors',
               difficulty: 'beginner',
               note: 'Il processo di ricerca e risoluzione dei bug.',
             },
             {
               english: 'Crash',
-              italian: 'Crash / Chiusura Inaspettata',
+              italian: 'Chiusura inaspettata (crash)',
               pronunciation: '/kr\u00E6\u0283/',
               phonetic: 'CRASH',
               example:
@@ -315,16 +320,17 @@ export default {
               pronunciation: '/\u02C8l\u0252d\u0292\u026Ak \u02C8er\u0259r/',
               phonetic: 'LO-gic E-rror',
               example:
-                'The code runs but the result is wrong. = Il codice gira ma il risultato \u00E8 sbagliato.',
+                'A logic error can be subtle: the code compiles and runs but produces wrong results. = Un errore logico pu\u00F2 essere subdolo: il codice compila e gira ma produce risultati sbagliati.',
               context: 'errors',
               difficulty: 'intermediate',
             },
             {
               english: 'Log',
-              italian: 'Log / Registro',
+              italian: 'Registro (log)',
               pronunciation: '/l\u0252\u0261/',
               phonetic: 'LOG',
-              example: 'Check the error logs. = Controlla i log degli errori.',
+              example:
+                'We added structured log entries with timestamps so production issues are easier to trace. = Abbiamo aggiunto voci di log strutturate con timestamp così i problemi in produzione sono più facili da tracciare.',
               context: 'errors',
               difficulty: 'beginner',
             },
@@ -351,7 +357,7 @@ export default {
               pronunciation: '/\u02CCd\u0252kj\u028Amen\u02C8te\u026A\u0283\u0259n/',
               phonetic: 'do-kiu-men-TEI-scen',
               example:
-                'Good documentation is essential. = Una buona documentazione \u00E8 essenziale.',
+                'Keeping documentation up to date prevents new team members from guessing how the system works. = Tenere la documentazione aggiornata evita che i nuovi membri del team debbano indovinare come funziona il sistema.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -467,7 +473,7 @@ export default {
             },
             {
               english: 'Commit',
-              italian: 'Commit / Registrazione',
+              italian: 'Registrazione (commit)',
               pronunciation: '/k\u0259\u02C8m\u026At/',
               phonetic: 'kom-MIT',
               example: 'Write a clear commit message. = Scrivi un messaggio di commit chiaro.',
@@ -480,7 +486,8 @@ export default {
               italian: 'Spingere / Inviare',
               pronunciation: '/p\u028A\u0283/',
               phonetic: 'PUSC',
-              example: 'Push your changes to the server. = Invia le tue modifiche al server.',
+              example:
+                'Always pull before you push to avoid rejected updates. = Fai sempre pull prima di push per evitare aggiornamenti rifiutati.',
               context: 'git',
               difficulty: 'beginner',
             },
@@ -489,7 +496,8 @@ export default {
               italian: 'Tirare / Scaricare',
               pronunciation: '/p\u028Al/',
               phonetic: 'PUL',
-              example: 'Pull the latest updates. = Scarica gli ultimi aggiornamenti.',
+              example:
+                'Every morning the team runs git pull to start with the latest code. = Ogni mattina il team esegue git pull per partire con il codice più recente.',
               context: 'git',
               difficulty: 'beginner',
               note: 'Scarica le modifiche dal server e le unisce al tuo codice.',
@@ -499,7 +507,8 @@ export default {
               italian: 'Clonare / Copiare',
               pronunciation: '/klo\u028An/',
               phonetic: 'CLOUN',
-              example: 'Clone the repo using its URL. = Clona la repo usando il suo URL.',
+              example:
+                'New developers clone the repo on their first day to get the full project history. = I nuovi sviluppatori clonano la repo il primo giorno per ottenere tutta la storia del progetto.',
               context: 'git',
               difficulty: 'beginner',
             },
@@ -518,7 +527,8 @@ export default {
               italian: 'Stato',
               pronunciation: '/\u02C8ste\u026At\u0259s/',
               phonetic: 'STEI-tas',
-              example: 'Check the git status. = Controlla lo stato di git.',
+              example:
+                'Before committing, always run git status to see which files have been changed. = Prima di fare commit, esegui sempre git status per vedere quali file sono stati modificati.',
               context: 'git',
               difficulty: 'beginner',
             },
@@ -538,7 +548,7 @@ export default {
               pronunciation: '/r\u026A\u02C8mo\u028At/',
               phonetic: 're-MOUT',
               example:
-                'The remote server is unreachable. = Il server remoto \u00E8 irraggiungibile.',
+                'You can add multiple remote repositories to push your code to different servers. = Puoi aggiungere pi\u00F9 repository remoti per inviare il codice a server diversi.',
               context: 'git',
               difficulty: 'intermediate',
             },
@@ -586,7 +596,8 @@ export default {
               italian: 'Fondere / Unire',
               pronunciation: '/m\u025C\u02D0rd\u0292/',
               phonetic: 'MERG',
-              example: 'Merge your branch into main. = Unischi il tuo branch nel main.',
+              example:
+                'After the code review passes, merge your feature branch into main. = Dopo che la code review passa, unisci il tuo branch di funzionalità nel main.',
               context: 'git',
               difficulty: 'intermediate',
               note: 'Combina le modifiche di due branch diversi.',
@@ -618,7 +629,7 @@ export default {
               pronunciation: '/fet\u0283/',
               phonetic: 'FECC',
               example:
-                'Fetch from the remote to see updates. = Fai fetch dal remoto per vedere gli aggiornamenti.',
+                'Run git fetch to download remote changes without altering your working directory. = Esegui git fetch per scaricare le modifiche remote senza alterare la tua directory di lavoro.',
               context: 'git',
               difficulty: 'intermediate',
               note: 'Scarica info ma non le unisce al tuo codice (a differenza del pull).',
@@ -628,7 +639,8 @@ export default {
               italian: 'Cronologia / Log',
               pronunciation: '/l\u0252\u0261/',
               phonetic: 'LOG',
-              example: 'Review the commit log. = Rivedi il log dei commit.',
+              example:
+                'Using git log with the --oneline flag shows a condensed commit history. = Usare git log con il flag --oneline mostra una cronologia dei commit condensata.',
               context: 'git',
               difficulty: 'beginner',
             },
@@ -647,7 +659,8 @@ export default {
               italian: 'Nascondere / Mettere da parte',
               pronunciation: '/st\u00E6\u0283/',
               phonetic: 'STASC',
-              example: 'Stash your current changes. = Metti da parte le modifiche attuali.',
+              example:
+                "Before switching branches, stash your uncommitted changes so you don't lose them. = Prima di cambiare branch, metti da parte le modifiche non committate per non perderle.",
               context: 'git',
               difficulty: 'intermediate',
               note: 'Salva temporaneamente le modifiche senza fare un commit.',
@@ -675,7 +688,8 @@ export default {
               italian: 'Bivio / Fork',
               pronunciation: '/f\u0254\u02D0rk/',
               phonetic: 'FORK',
-              example: 'Fork the project to your account. = Copia il progetto sul tuo account.',
+              example:
+                'To contribute to an open-source project, first fork it to your own account. = Per contribuire a un progetto open-source, prima fai il fork sul tuo account.',
               context: 'collaboration',
               difficulty: 'beginner',
               note: 'Copia completa di un progetto pubblico sul proprio profilo.',
@@ -707,7 +721,7 @@ export default {
               pronunciation: '/k\u0259n\u02C8tr\u026Abj\u028At\u0259r/',
               phonetic: 'con-TRI-biu-ter',
               example:
-                'He is a regular contributor to Linux. = \u00C8 un collaboratore regolare di Linux.',
+                'The project has over 200 active contributors from around the world. = Il progetto ha oltre 200 collaboratori attivi da tutto il mondo.',
               context: 'collaboration',
               difficulty: 'beginner',
             },
@@ -727,7 +741,8 @@ export default {
               italian: 'Problema / Segnalazione / Issue',
               pronunciation: '/\u02C8\u026A\u0283u\u02D0/',
               phonetic: 'I-sciu',
-              example: 'Open an issue on GitHub. = Apri una segnalazione su GitHub.',
+              example:
+                'Before writing code, check if someone already opened an issue for the same bug. = Prima di scrivere codice, controlla se qualcuno ha già aperto una issue per lo stesso bug.',
               context: 'collaboration',
               difficulty: 'beginner',
               note: 'Segnalazione di un bug o richiesta di una funzionalit\u00E0.',
@@ -785,7 +800,8 @@ export default {
               italian: 'Scelta selettiva / Cherry-pick',
               pronunciation: '/\u02C8t\u0283eri p\u026Ak/',
               phonetic: 'CER-ri pik',
-              example: 'Cherry-pick the specific fix. = Prendi solo la correzione specifica.',
+              example:
+                'We needed to cherry-pick only the security fix from develop into the release branch. = Dovevamo prendere selettivamente solo la correzione di sicurezza da develop nel branch di rilascio.',
               context: 'git',
               difficulty: 'advanced',
               note: 'Permette di prendere un singolo commit da un branch e applicarlo a un altro.',
@@ -795,7 +811,8 @@ export default {
               italian: 'Schiacciare / Squash',
               pronunciation: '/skw\u0252\u0283/',
               phonetic: 'SKUOSC',
-              example: 'Squash multiple commits into one. = Fondi pi\u00F9 commit in uno solo.',
+              example:
+                'Before merging, squash your ten small commits into a single clean one. = Prima di fare il merge, fondi i tuoi dieci piccoli commit in uno singolo e pulito.',
               context: 'git',
               difficulty: 'advanced',
               note: 'Pulisce la storia del branch unendo tanti piccoli commit in uno unico.',
@@ -805,7 +822,8 @@ export default {
               italian: 'Annullare / Revert',
               pronunciation: '/r\u026A\u02C8v\u025C\u02D0rt/',
               phonetic: 're-VERT',
-              example: 'Revert the malicious commit. = Annulla il commit malevolo.',
+              example:
+                "After the deploy broke production, we had to revert the last commit immediately. = Dopo che il deploy ha rotto la produzione, abbiamo dovuto annullare l'ultimo commit immediatamente.",
               context: 'git',
               difficulty: 'intermediate',
               note: 'Crea un nuovo commit che annulla le modifiche di uno precedente (sicuro per la storia condivisa).',
@@ -837,7 +855,8 @@ export default {
               italian: 'Pezzaconto / Patch',
               pronunciation: '/p\u00E6t\u0283/',
               phonetic: 'PAC',
-              example: 'Send the patch file. = Invia il file di patch.',
+              example:
+                'The Linux kernel community still reviews contributions submitted as patch files via email. = La comunità del kernel Linux rivede ancora i contributi inviati come file di patch via email.',
               context: 'git',
               difficulty: 'intermediate',
             },
@@ -858,7 +877,7 @@ export default {
               pronunciation: '/\u02CCs\u028Cbm\u0252dju\u02D0l/',
               phonetic: 'SAB-mo-diul',
               example:
-                'The library is a submodule of our project. = La libreria \u00E8 un sottomodulo del nostro progetto.',
+                'We use a Git submodule to embed the shared library without duplicating its code. = Usiamo un sottomodulo Git per includere la libreria condivisa senza duplicarne il codice.',
               context: 'git',
               difficulty: 'advanced',
             },
@@ -879,7 +898,7 @@ export default {
               pronunciation: '/\u02C8\u0252r\u026Ad\u0292\u026An/',
               phonetic: 'O-ri-gin',
               example:
-                'Your main remote is usually called origin. = Il tuo remoto principale si chiama solitamente origin.',
+                'When you clone a repo, Git automatically names the source remote "origin". = Quando cloni una repo, Git nomina automaticamente il remoto sorgente "origin".',
               context: 'git',
               difficulty: 'beginner',
             },
@@ -898,7 +917,7 @@ export default {
           items: [
             {
               english: 'HTML (HyperText Markup Language)',
-              italian: 'HTML / Linguaggio a Marcatori',
+              italian: 'Linguaggio a marcatori (HTML)',
               pronunciation: '/\u02CCe\u026At\u0283 ti\u02D0 em \u02C8el/',
               phonetic: 'eic-tii-em-EL',
               example:
@@ -908,7 +927,7 @@ export default {
             },
             {
               english: 'CSS (Cascading Style Sheets)',
-              italian: 'CSS / Fogli di Stile',
+              italian: 'Fogli di stile (CSS)',
               pronunciation: '/\u02CCsi\u02D0 es \u02C8es/',
               phonetic: 'sii-es-ES',
               example: 'Use CSS to style your website. = Usa i CSS per dare stile al tuo sito.',
@@ -917,17 +936,17 @@ export default {
             },
             {
               english: 'JavaScript',
-              italian: 'JavaScript (linguaggio di programmazione web)',
+              italian: 'Linguaggio di programmazione web (JavaScript)',
               pronunciation: '/\u02C8d\u0292\u0251\u02D0v\u0259skr\u026Apt/',
               phonetic: 'GIA-va-skript',
               example:
-                'JavaScript adds interactivity to the web. = JavaScript aggiunge interattivit\u00E0 al web.',
+                'Modern web apps rely on JavaScript for dynamic content, form validation, and real-time updates. = Le web app moderne si affidano a JavaScript per contenuti dinamici, validazione form e aggiornamenti in tempo reale.',
               context: 'frontend',
               difficulty: 'beginner',
             },
             {
               english: 'DOM (Document Object Model)',
-              italian: 'DOM / Modello a Oggetti del Documento',
+              italian: 'Modello a oggetti del documento (DOM)',
               pronunciation: '/\u02CCdi\u02D0 o\u028A \u02CCem/',
               phonetic: 'dii-ou-EM',
               example: 'Manipulate the DOM using JS. = Manipola il DOM usando JS.',
@@ -947,7 +966,7 @@ export default {
             },
             {
               english: 'Tag',
-              italian: 'Tag / Etichetta',
+              italian: 'Etichetta (tag)',
               pronunciation: '/t\u00E6\u0261/',
               phonetic: 'TAG',
               example: 'The <div> tag is a container. = Il tag <div> \u00E8 un contenitore.',
@@ -959,7 +978,7 @@ export default {
               italian: 'Attributo',
               pronunciation: '/\u02C8\u00E6tr\u026Abju\u02D0t/',
               phonetic: 'A-tri-biut',
-              example: 'The "href" is a link attribute. = L\'"href" \u00E8 un attributo di link.',
+              example: `The "href" is a link attribute. = L'"href" \u00E8 un attributo di link.`,
               context: 'frontend',
               difficulty: 'beginner',
             },
@@ -978,7 +997,7 @@ export default {
               pronunciation: '/r\u026A\u02C8sp\u0252ns\u026Av d\u026A\u02C8za\u026An/',
               phonetic: 're-SPON-siv di-ZAIN',
               example:
-                'Responsive design works on all devices. = Il design responsive funziona su tutti i dispositivi.',
+                'With responsive design, a single layout adapts to phones, tablets, and desktops using media queries. = Con il design responsive, un singolo layout si adatta a telefoni, tablet e desktop usando le media query.',
               context: 'design',
               difficulty: 'intermediate',
             },
@@ -1014,7 +1033,8 @@ export default {
               italian: 'Cliente / Client',
               pronunciation: '/\u02C8kla\u026A\u0259nt/',
               phonetic: 'CLAI-ent',
-              example: 'The browser is the client. = Il browser \u00E8 il client.',
+              example:
+                "In web architecture, the client sends requests to the server and displays the response to the user. = Nell'architettura web, il client invia richieste al server e mostra la risposta all'utente.",
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -1033,7 +1053,7 @@ export default {
               pronunciation: '/\u02C8m\u026Adlwe\u0259r/',
               phonetic: 'MID-del-uer',
               example:
-                "Auth is often a middleware. = L'autenticazione \u00E8 spesso un middleware.",
+                'In Express.js, middleware functions can log requests, check tokens, and parse JSON bodies. = In Express.js, le funzioni middleware possono registrare le richieste, controllare i token e parsare i body JSON.',
               context: 'backend',
               difficulty: 'intermediate',
               note: 'Codice che gira tra la richiesta e la risposta finale.',
@@ -1043,7 +1063,8 @@ export default {
               italian: 'Autenticazione',
               pronunciation: '/\u0254\u02D0\u02CC\u03B8ent\u026A\u02C8ke\u026A\u0283\u0259n/',
               phonetic: 'o-then-ti-KEI-scen',
-              example: "Login is part of authentication. = Il login fa parte dell'autenticazione.",
+              example:
+                "Multi-factor authentication requires both a password and a one-time code from your phone. = L'autenticazione a più fattori richiede sia una password che un codice monouso dal telefono.",
               context: 'security',
               difficulty: 'beginner',
             },
@@ -1082,7 +1103,8 @@ export default {
               pronunciation:
                 '/\u02C8s\u025C\u02D0rv\u0259rsa\u026Ad \u02C8rend\u0259r\u026A\u014B/',
               phonetic: 'SER-ver-said REN-der-ing',
-              example: "SSR is good for SEO. = L'SSR \u00E8 ottimo per la SEO.",
+              example:
+                "With server-side rendering, the HTML is generated on the server so search engines can index it immediately. = Con il rendering lato server, l'HTML viene generato sul server cos\u00EC i motori di ricerca possono indicizzarlo subito.",
               context: 'backend',
               difficulty: 'advanced',
               note: "Il server genera l'HTML finale invece di farlo fare al browser.",
@@ -1115,7 +1137,7 @@ export default {
             },
             {
               english: 'REST (Representational State Transfer)',
-              italian: 'REST / Architettura Web Standard',
+              italian: 'Architettura web standard (REST)',
               pronunciation: '/rest/',
               phonetic: 'REST',
               example:
@@ -1173,7 +1195,7 @@ export default {
             },
             {
               english: 'JSON (JavaScript Object Notation)',
-              italian: 'JSON / Formato Dati',
+              italian: 'Formato dati (JSON)',
               pronunciation: '/\u02C8d\u0292e\u026As\u0259n/',
               phonetic: 'GEI-son',
               example:
@@ -1194,11 +1216,11 @@ export default {
             },
             {
               english: 'GraphQL',
-              italian: 'GraphQL / Linguaggio Query API',
+              italian: 'Linguaggio query API (GraphQL)',
               pronunciation: '/\u02CC\u0261r\u00E6fkju\u02D0\u02C8el/',
               phonetic: 'GRAF-kiu-el',
               example:
-                'GraphQL allows clients to request exactly what they need. = Il GraphQL permette ai client di chiedere esattamente cosa gli serve.',
+                'Unlike REST, GraphQL lets the client specify exactly which fields it needs in a single query. = A differenza del REST, GraphQL permette al client di specificare esattamente quali campi servono in una singola query.',
               context: 'backend',
               difficulty: 'advanced',
               note: 'Alternativa moderna al REST, creata da Facebook.',
@@ -1249,7 +1271,7 @@ export default {
             },
             {
               english: 'Postman',
-              italian: 'Postman / Client API',
+              italian: 'Client API (Postman)',
               pronunciation: '/\u02C8po\u028Astm\u0259n/',
               phonetic: 'POST-man',
               example:
@@ -1289,7 +1311,7 @@ export default {
             },
             {
               english: 'HTTPS (Secure)',
-              italian: 'HTTPS / Connessione Sicura',
+              italian: 'Connessione sicura (HTTPS)',
               pronunciation: '/\u02CCe\u026At\u0283ti\u02D0ti\u02D0pi\u02D0 \u02CCes/',
               phonetic: 'eic-tii-tii-pii-ES',
               example: 'Always use HTTPS for security. = Usa sempre HTTPS per la sicurezza.',
@@ -1298,7 +1320,7 @@ export default {
             },
             {
               english: 'Lighthouse',
-              italian: 'Lighthouse / Audit Web',
+              italian: 'Audit web (Lighthouse)',
               pronunciation: '/\u02C8la\u026At ha\u028As/',
               phonetic: 'LAIT-haus',
               example:
@@ -1414,7 +1436,8 @@ export default {
               italian: 'Sistema Gestione DB (DBMS)',
               pronunciation: '/\u02CCdi\u02D0 bi\u02D0 em \u02C8es/',
               phonetic: 'dii-bii-em-ES',
-              example: 'MySQL is a popular DBMS. = MySQL \u00E8 un DBMS popolare.',
+              example:
+                'A DBMS handles concurrent access, permissions, and backups so developers can focus on queries. = Un DBMS gestisce accessi concorrenti, permessi e backup cos\u00EC gli sviluppatori possono concentrarsi sulle query.',
               context: 'database',
               difficulty: 'beginner',
             },
@@ -1427,7 +1450,7 @@ export default {
           items: [
             {
               english: 'Schema',
-              italian: 'schema / struttura dei dati',
+              italian: 'Struttura dei dati (schema)',
               pronunciation: '/\u02C8ski\u02D0m\u0259/',
               phonetic: 'SKII-ma',
               example:
@@ -1462,7 +1485,7 @@ export default {
               pronunciation: '/\u02C8pra\u026Am\u0259ri ki\u02D0/',
               phonetic: 'PRAI-ma-ri kii',
               example:
-                "The ID is usually the primary key. = L'ID \u00E8 solitamente la chiave primaria.",
+                'Every table should have a primary key to uniquely identify each row and prevent duplicates. = Ogni tabella dovrebbe avere una chiave primaria per identificare univocamente ogni riga e prevenire duplicati.',
               context: 'database',
               difficulty: 'beginner',
               note: 'Identificatore unico per ogni riga di una tabella.',
@@ -1513,7 +1536,7 @@ export default {
               pronunciation: '/k\u0259n\u02C8stre\u026Ant/',
               phonetic: 'con-STREINT',
               example:
-                'NOT NULL is a common database constraint. = NOT NULL \u00E8 un vincolo di database comune.',
+                'Adding a UNIQUE constraint on the email column prevents duplicate accounts in the database. = Aggiungere un vincolo UNIQUE sulla colonna email previene account duplicati nel database.',
               context: 'sql',
               difficulty: 'intermediate',
             },
@@ -1536,7 +1559,7 @@ export default {
           items: [
             {
               english: 'NoSQL (Not Only SQL)',
-              italian: 'NoSQL / DB Non Relazionale',
+              italian: 'DB non relazionale (NoSQL)',
               pronunciation: '/\u02CCno\u028A \u02CCes kju\u02D0 \u02C8el/',
               phonetic: 'NOU-ES-KIU-EL',
               example:
@@ -1550,7 +1573,7 @@ export default {
               pronunciation: '/\u02C8d\u0252kj\u028Am\u0259nt st\u0254\u02D0r/',
               phonetic: 'DO-kiu-ment stor',
               example:
-                'MongoDB is a popular document store. = MongoDB \u00E8 un archivio documentale popolare.',
+                'In a document store, each record is a self-contained JSON-like object with flexible fields. = In un archivio documentale, ogni record \u00E8 un oggetto simile a JSON con campi flessibili.',
               context: 'nosql',
               difficulty: 'intermediate',
             },
@@ -1560,7 +1583,7 @@ export default {
               pronunciation: '/ki\u02D0 \u02C8v\u00E6lju\u02D0 st\u0254\u02D0r/',
               phonetic: 'KII-VE-liu stor',
               example:
-                'Redis is an in-memory key-value store. = Redis \u00E8 un archivio chiave-valore in memoria.',
+                'A key-value store maps simple keys to values, making lookups extremely fast for caching and sessions. = Un archivio chiave-valore mappa chiavi semplici a valori, rendendo le ricerche estremamente veloci per cache e sessioni.',
               context: 'nosql',
               difficulty: 'intermediate',
             },
@@ -1570,7 +1593,7 @@ export default {
               pronunciation: '/\u0261r\u00E6f \u02C8de\u026At\u0259be\u026As/',
               phonetic: 'GRAF DEI-ta-beis',
               example:
-                'Neo4j is used for graph databases. = Neo4j \u00E8 usato per i database a grafi.',
+                'Social networks use a graph database to model connections between users efficiently. = I social network usano un database a grafi per modellare le connessioni tra utenti in modo efficiente.',
               context: 'nosql',
               difficulty: 'advanced',
             },
@@ -1580,7 +1603,7 @@ export default {
               pronunciation: '/k\u0259\u02C8lek\u0283\u0259n/',
               phonetic: 'col-LEK-scion',
               example:
-                'A collection in NoSQL is like a table. = Una collezione nel NoSQL \u00E8 come una tabella.',
+                'In MongoDB, you insert documents into a collection the way you insert rows into a SQL table. = In MongoDB, inserisci documenti in una collezione come inseriresti righe in una tabella SQL.',
               context: 'nosql',
               difficulty: 'beginner',
             },
@@ -1590,7 +1613,7 @@ export default {
               pronunciation: '/\u02C8d\u0252kj\u028Am\u0259nt/',
               phonetic: 'DO-kiu-ment',
               example:
-                'Data is stored as documents in MongoDB. = I dati sono salvati come documenti in MongoDB.',
+                'Each document in a NoSQL database can have a different structure, unlike rows in a relational table. = Ogni documento in un database NoSQL può avere una struttura diversa, a differenza delle righe in una tabella relazionale.',
               context: 'nosql',
               difficulty: 'beginner',
             },
@@ -1611,7 +1634,7 @@ export default {
               pronunciation: '/\u02C8ski\u02D0m\u0259les/',
               phonetic: 'SKII-ma-les',
               example:
-                'NoSQL is schema-less, allowing diverse data structures. = Il NoSQL \u00E8 senza schema, permettendo strutture dati diverse.',
+                'A schema-less database lets you add new fields to documents without altering any table definition. = Un database senza schema ti permette di aggiungere nuovi campi ai documenti senza alterare la definizione della tabella.',
               context: 'nosql',
               difficulty: 'intermediate',
             },
@@ -1628,7 +1651,7 @@ export default {
             },
             {
               english: 'BASE (vs ACID)',
-              italian: 'BASE / Modello NoSQL',
+              italian: 'Modello NoSQL (BASE)',
               pronunciation: '/be\u026As/',
               phonetic: 'BEIS',
               example:
@@ -1650,17 +1673,17 @@ export default {
               pronunciation: '/tr\u00E6n\u02C8z\u00E6k\u0283\u0259n/',
               phonetic: 'tran-SAK-scion',
               example:
-                "A transaction is an all-or-nothing operation. = Una transazione \u00E8 un'operazione tutto-o-niente.",
+                "A bank transfer uses a transaction so the debit and credit either both succeed or both roll back. = Un bonifico usa una transazione cos\u00EC l'addebito e l'accredito o riescono entrambi o vengono entrambi annullati.",
               context: 'database',
               difficulty: 'intermediate',
             },
             {
               english: 'ACID',
-              italian: 'ACID / Propriet\u00E0 Transazioni',
+              italian: 'Propriet\u00E0 transazioni (ACID)',
               pronunciation: '/\u02C8\u00E6s\u026Ad/',
               phonetic: 'A-sid',
               example:
-                "ACID properties ensure database reliability. = Le propriet\u00E0 ACID garantiscono l'affidabilit\u00E0 del database.",
+                'The four ACID properties -- Atomicity, Consistency, Isolation, Durability -- guarantee reliable transactions. = Le quattro propriet\u00E0 ACID -- Atomicit\u00E0, Consistenza, Isolamento, Durabilit\u00E0 -- garantiscono transazioni affidabili.',
               context: 'database',
               difficulty: 'advanced',
               note: 'Atomicity, Consistency, Isolation, Durability.',
@@ -1678,7 +1701,7 @@ export default {
             },
             {
               english: 'ORM (Object-Relational Mapping)',
-              italian: 'ORM / Mappatura Oggetti',
+              italian: 'Mappatura oggetti-relazionale (ORM)',
               pronunciation: '/\u02CCo\u028A \u02CC\u0251\u02D0r \u02CCem/',
               phonetic: 'ou-ar-EM',
               example:
@@ -1689,7 +1712,7 @@ export default {
             },
             {
               english: 'Backup',
-              italian: 'Backup / Copia Sicurezza',
+              italian: 'Copia di sicurezza (backup)',
               pronunciation: '/\u02C8b\u00E6k\u028Cp/',
               phonetic: 'BAK-ap',
               example:
@@ -1710,11 +1733,11 @@ export default {
             },
             {
               english: 'Sharding',
-              italian: 'Sharding / Frammentazione',
+              italian: 'Frammentazione (sharding)',
               pronunciation: '/\u02C8\u0283\u0251\u02D0rd\u026A\u014B/',
               phonetic: 'SCAR-ding',
               example:
-                'Sharding splits data across multiple servers. = Lo sharding divide i dati su pi\u00F9 server.',
+                'When a single database server can no longer handle the load, sharding distributes data across several machines. = Quando un singolo server di database non riesce pi\u00F9 a gestire il carico, lo sharding distribuisce i dati su pi\u00F9 macchine.',
               context: 'architecture',
               difficulty: 'expert',
               note: 'Partizionamento orizzontale dei dati per gestire carichi enormi.',
@@ -1789,7 +1812,7 @@ export default {
               pronunciation: '/\u02CCma\u026Akro\u028A\u02C8s\u025C\u02D0rv\u026As\u026Az/',
               phonetic: 'MAI-cro-ser-vi-siz',
               example:
-                'Microservices communicate over the network. = I microservizi comunicano attraverso la rete.',
+                'Breaking a monolith into microservices lets each team deploy and scale their service independently. = Spezzare un monolito in microservizi permette a ogni team di deployare e scalare il proprio servizio indipendentemente.',
               context: 'architecture',
               difficulty: 'intermediate',
               note: "Dividere l'app in piccoli servizi indipendenti.",
@@ -1817,17 +1840,17 @@ export default {
             },
             {
               english: 'Client-Server',
-              italian: 'client-server / architettura richiedente-fornitore',
+              italian: 'Architettura richiedente-fornitore (client-server)',
               pronunciation: '/\u02C8kla\u026A\u0259nt \u02C8s\u025C\u02D0rv\u0259r/',
               phonetic: 'CLAI-ent SER-ver',
               example:
-                'The web is based on the client-server model. = Il web si basa sul modello client-server.',
+                "In a client-server architecture, the browser sends HTTP requests and the server returns HTML, JSON, or other data. = In un'architettura client-server, il browser invia richieste HTTP e il server restituisce HTML, JSON o altri dati.",
               context: 'architecture',
               difficulty: 'beginner',
             },
             {
               english: 'Peer-to-Peer (P2P)',
-              italian: 'Peer-to-Peer / Paritetica',
+              italian: 'Paritetica (peer-to-peer)',
               pronunciation: '/\u02CCp\u026A\u0259r t\u0259 \u02C8p\u026A\u0259r/',
               phonetic: 'PIER tu PIER',
               example:
@@ -1841,7 +1864,7 @@ export default {
               pronunciation: '/k\u0259m\u02C8po\u028An\u0259nt/',
               phonetic: 'com-POU-nent',
               example:
-                'The system is made of modular components. = Il sistema \u00E8 fatto di componenti modulari.',
+                'Each component in the system has a single responsibility and communicates through well-defined interfaces. = Ogni componente nel sistema ha una singola responsabilit\u00E0 e comunica attraverso interfacce ben definite.',
               context: 'architecture',
               difficulty: 'beginner',
             },
@@ -1873,7 +1896,7 @@ export default {
           items: [
             {
               english: 'MVC (Model-View-Controller)',
-              italian: 'MVC / Modello-Vista-Controllore',
+              italian: 'Modello-Vista-Controllore (MVC)',
               pronunciation: '/\u02CCem vi\u02D0 \u02C8si\u02D0/',
               phonetic: 'em-vii-SII',
               example:
@@ -1883,11 +1906,11 @@ export default {
             },
             {
               english: 'MVVM (Model-View-ViewModel)',
-              italian: 'MVVM',
+              italian: 'Modello-Vista-ModelloVista (MVVM)',
               pronunciation: '/\u02CCem vi\u02D0 vi\u02D0 \u02C8em/',
               phonetic: 'em-vii-vii-EM',
               example:
-                "MVVM is popular in frontend frameworks like Angular. = L'MVVM \u00E8 popolare nei framework frontend come Angular.",
+                'The MVVM pattern uses data binding to keep the view and the model in sync automatically. = Il pattern MVVM usa il data binding per mantenere la vista e il modello sincronizzati automaticamente.',
               context: 'architecture-patterns',
               difficulty: 'advanced',
             },
@@ -1915,7 +1938,7 @@ export default {
             },
             {
               english: 'Pub/Sub (Publisher-Subscriber)',
-              italian: 'Pub/Sub / Pubblica-Sottoscrivi',
+              italian: 'Pubblica-sottoscrivi (pub/sub)',
               pronunciation: '/p\u028Cb s\u028Cb/',
               phonetic: 'PAB SAB',
               example:
@@ -1935,7 +1958,7 @@ export default {
             },
             {
               english: 'Serverless',
-              italian: 'Serverless / Senza Server',
+              italian: 'Senza server (serverless)',
               pronunciation: '/\u02C8s\u025C\u02D0rv\u0259rl\u0259s/',
               phonetic: 'SER-ver-les',
               example:
@@ -1946,7 +1969,7 @@ export default {
             },
             {
               english: 'CQRS (Command Query Responsibility Segregation)',
-              italian: 'CQRS / Segregazione Responsabilit\u00E0',
+              italian: 'Segregazione responsabilit\u00E0 (CQRS)',
               pronunciation: '/\u02CCsi\u02D0 kju\u02D0 \u02CC\u0251\u02D0r \u02C8es/',
               phonetic: 'sii-kiu-ar-ES',
               example:
@@ -1956,17 +1979,17 @@ export default {
             },
             {
               english: 'Event Sourcing',
-              italian: 'Event Sourcing / Origine dagli Eventi',
+              italian: 'Origine dagli eventi (event sourcing)',
               pronunciation: '/\u026A\u02C8vent \u02C8s\u0254\u02D0rs\u026A\u014B/',
               phonetic: 'i-VENT SOR-sing',
               example:
-                "Event sourcing stores the entire history of state changes. = L'event sourcing salva l'intera storia dei cambi di stato.",
+                "Instead of storing just the current state, event sourcing records every change as an immutable event. = Invece di salvare solo lo stato attuale, l'event sourcing registra ogni cambiamento come un evento immutabile.",
               context: 'architecture-patterns',
               difficulty: 'expert',
             },
             {
               english: 'Micro-Frontend',
-              italian: 'micro-frontend / frontend modulare a piccoli pezzi',
+              italian: 'Frontend modulare (micro-frontend)',
               pronunciation: '/\u02CCma\u026Akro\u028A \u02C8fr\u028Cntend/',
               phonetic: 'MAI-cro FRONT-end',
               example:
@@ -1994,11 +2017,11 @@ export default {
             },
             {
               english: 'Service Mesh',
-              italian: 'Service Mesh / Maglia di Servizi',
+              italian: 'Maglia di servizi (service mesh)',
               pronunciation: '/\u02C8s\u025C\u02D0rv\u026As me\u0283/',
               phonetic: 'SER-vis MESC',
               example:
-                'Istio is a common service mesh for Kubernetes. = Istio \u00E8 una service mesh comune per Kubernetes.',
+                'A service mesh handles traffic routing, retries, and mutual TLS between microservices transparently. = Una service mesh gestisce routing del traffico, retry e TLS reciproco tra microservizi in modo trasparente.',
               context: 'architecture',
               difficulty: 'expert',
               note: 'Gestisce la comunicazione tra microservizi (service-to-service).',
@@ -2039,17 +2062,17 @@ export default {
               pronunciation: '/\u02C8ste\u026Atf\u028Al/',
               phonetic: 'STEIT-ful',
               example:
-                'Stateful applications are harder to scale. = Le applicazioni stateful sono pi\u00F9 difficili da scalare.',
+                'A stateful service remembers previous requests, which makes horizontal scaling harder. = Un servizio stateful ricorda le richieste precedenti, il che rende la scalabilit\u00E0 orizzontale pi\u00F9 difficile.',
               context: 'architecture',
               difficulty: 'advanced',
             },
             {
               english: 'HATEOAS',
-              italian: 'HATEOAS / REST Evoluto',
+              italian: 'REST evoluto (HATEOAS)',
               pronunciation: '/\u02C8he\u026Ati\u0259s/',
               phonetic: 'HEI-ti-os',
               example:
-                'HATEOAS allows dynamic discovery of API resources. = HATEOAS permette la scoperta dinamica delle risorse API.',
+                "With HATEOAS, the API response includes links that tell the client what actions are available next. = Con HATEOAS, la risposta dell'API include link che dicono al client quali azioni sono disponibili dopo.",
               context: 'architecture',
               difficulty: 'expert',
               note: 'Hypermedia as the Engine of Application State.',
@@ -2067,11 +2090,11 @@ export default {
             },
             {
               english: 'gRPC',
-              italian: 'gRPC / RPC ad alte prestazioni',
+              italian: 'RPC ad alte prestazioni (gRPC)',
               pronunciation: '/\u02CCd\u0292i\u02D0 \u02CC\u0251\u02D0r pi\u02D0 \u02C8si\u02D0/',
               phonetic: 'gii-ar-pii-SII',
               example:
-                "gRPC use Protocol Buffers for efficiency. = gRPC usa i Protocol Buffer per l'efficienza.",
+                'Many internal microservices use gRPC instead of REST because its binary protocol is faster for high-throughput communication. = Molti microservizi interni usano gRPC al posto di REST perché il suo protocollo binario è più veloce per comunicazioni ad alto throughput.',
               context: 'architecture',
               difficulty: 'advanced',
               note: 'Framework RPC creato da Google, molto veloce.',
@@ -2154,7 +2177,7 @@ export default {
               pronunciation: '/\u02C8\u00E6\u0261r\u026A\u0261\u0259t/',
               phonetic: 'AG-gre-gat',
               example:
-                'An aggregate is a cluster of associated objects. = Un aggregato \u00E8 un gruppo di oggetti associati.',
+                "In an e-commerce system, an Order aggregate groups together the order itself, its line items, and the shipping address. = In un sistema e-commerce, un aggregato Order raggruppa l'ordine stesso, le sue righe e l'indirizzo di spedizione.",
               context: 'ddd',
               difficulty: 'expert',
             },
@@ -2238,7 +2261,7 @@ export default {
               pronunciation: '/\u0259\u02C8s\u025C\u02D0r\u0283\u0259n/',
               phonetic: 'as-SER-scion',
               example:
-                "An assertion checks if a condition is true. = Un'asserzione controlla se una condizione \u00E8 vera.",
+                "Each test ends with an assertion that compares the actual output against the expected result. = Ogni test finisce con un'asserzione che confronta l'output effettivo con il risultato atteso.",
               context: 'testing',
               difficulty: 'intermediate',
               note: "Se l'asserzione fallisce, il test fallisce.",
@@ -2255,7 +2278,7 @@ export default {
             },
             {
               english: 'Fixture',
-              italian: 'Fixture / Predisposizione',
+              italian: 'Predisposizione (fixture)',
               pronunciation: '/\u02C8f\u026Akst\u0283\u0259r/',
               phonetic: 'FIKS-ciur',
               example:
@@ -2329,7 +2352,7 @@ export default {
                 '/\u02CC\u026Ant\u026A\u02C8\u0261re\u026A\u0283\u0259n \u02C8test\u026A\u014B/',
               phonetic: 'in-te-GREI-scion TES-ting',
               example:
-                "Integration testing checks how modules work together. = I test d'integrazione controllano come i moduli lavorano insieme.",
+                "After unit tests pass, integration testing verifies that modules interact correctly with the database and external APIs. = Dopo che i test unitari passano, i test d'integrazione verificano che i moduli interagiscano correttamente con il database e le API esterne.",
               context: 'testing',
               difficulty: 'intermediate',
             },
@@ -2361,7 +2384,7 @@ export default {
               pronunciation: '/r\u026A\u02C8\u0261re\u0283\u0259n \u02C8test\u026A\u014B/',
               phonetic: 're-GRE-scion TES-ting',
               example:
-                "Regression testing ensures new changes didn't break old features. = I test di regressione garantiscono che i nuovi cambi non abbiano rotto vecchie funzioni.",
+                'We run regression testing after every release to ensure new features did not break existing functionality. = Eseguiamo test di regressione dopo ogni rilascio per assicurarci che le nuove funzionalità non abbiano rotto quelle esistenti.',
               context: 'testing',
               difficulty: 'intermediate',
             },
@@ -2381,7 +2404,7 @@ export default {
               pronunciation: '/\u02C8s\u026Ast\u0259m \u02C8test\u026A\u014B/',
               phonetic: 'SIS-tem TES-ting',
               example:
-                'System testing evaluates the complete software. = Il test di sistema valuta il software completo.',
+                "Before releasing to users, system testing evaluates the entire application in an environment that mirrors production. = Prima di rilasciare agli utenti, il test di sistema valuta l'intera applicazione in un ambiente che rispecchia la produzione.",
               context: 'testing',
               difficulty: 'intermediate',
             },
@@ -2392,7 +2415,7 @@ export default {
                 '/\u02C8ju\u02D0z\u0259r \u0259k\u02C8sept\u0259ns \u02C8test\u026A\u014B/',
               phonetic: 'IUU-ser ac-CEP-tans TES-ting',
               example:
-                "UAT is performed by end users before release. = L'UAT \u00E8 eseguito dagli utenti finali prima del rilascio.",
+                'During user acceptance testing, real stakeholders verify the software meets their business requirements. = Durante il test di accettazione utente, gli stakeholder reali verificano che il software soddisfi i requisiti di business.',
               context: 'testing',
               difficulty: 'advanced',
             },
@@ -2402,7 +2425,7 @@ export default {
               pronunciation: '/bl\u00E6k b\u0252ks \u02C8test\u026A\u014B/',
               phonetic: 'BLAK boks TES-ting',
               example:
-                'Black-box testing focuses on inputs and outputs. = Il test black-box si concentra su input e output.',
+                'In black-box testing, the tester does not see the source code and validates behavior only through inputs and outputs. = Nel test black-box, il tester non vede il codice sorgente e valida il comportamento solo tramite input e output.',
               context: 'testing',
               difficulty: 'intermediate',
               note: 'Il tester non conosce il codice interno.',
@@ -2413,7 +2436,7 @@ export default {
               pronunciation: '/wa\u026At b\u0252ks \u02C8test\u026A\u014B/',
               phonetic: 'UAIT boks TES-ting',
               example:
-                'White-box testing examines the internal structure. = Il test white-box esamina la struttura interna.',
+                'Unlike black-box, white-box testing requires the tester to read the code and design cases that cover every branch. = A differenza del black-box, il test white-box richiede al tester di leggere il codice e progettare casi che coprano ogni ramo.',
               context: 'testing',
               difficulty: 'intermediate',
               note: 'Il tester ha accesso al codice sorgente.',
@@ -2449,7 +2472,7 @@ export default {
             },
             {
               english: 'Stub',
-              italian: 'Stub / Sostituto',
+              italian: 'Sostituto (stub)',
               pronunciation: '/st\u028Cb/',
               phonetic: 'STAB',
               example:
@@ -2485,7 +2508,7 @@ export default {
               pronunciation: '/mju\u02D0\u02C8te\u026A\u0283\u0259n \u02C8test\u026A\u014B/',
               phonetic: 'miu-TEI-scion TES-ting',
               example:
-                'Mutation testing evaluates the quality of your tests. = Il test di mutazione valuta la qualit\u00E0 dei tuoi test.',
+                'If mutation testing introduces a bug and no test catches it, your test suite has a gap. = Se il test di mutazione introduce un bug e nessun test lo rileva, la tua suite di test ha una lacuna.',
               context: 'testing',
               difficulty: 'expert',
               note: 'Modifica casualmente il codice per vedere se i test falliscono (se non falliscono, i test sono deboli).',
@@ -2496,18 +2519,18 @@ export default {
               pronunciation: '/\u02C8st\u00E6t\u026Ak \u0259\u02C8n\u00E6l\u0259s\u026As/',
               phonetic: 'STA-tik a-NA-li-sis',
               example:
-                'Static analysis tools find bugs without running code. = Gli strumenti di analisi statica trovano bug senza eseguire il codice.',
+                "Running static analysis in your CI pipeline catches common mistakes like unused variables and type mismatches. = Eseguire l'analisi statica nella pipeline CI rileva errori comuni come variabili inutilizzate e mismatch di tipo.",
               context: 'tools',
               difficulty: 'intermediate',
               note: 'Es: ESLint, Pylint, SonarQube.',
             },
             {
               english: 'Fuzz Testing (Fuzzing)',
-              italian: 'Fuzzing / Test con Dati Casuali',
+              italian: 'Test con dati casuali (fuzzing)',
               pronunciation: '/f\u028Cz \u02C8test\u026A\u014B/',
               phonetic: 'FAZ tes-ting',
               example:
-                'Fuzz testing is effective for finding security holes. = Il fuzz testing \u00E8 efficace per trovare falle di sicurezza.',
+                'By sending thousands of random or malformed inputs, fuzz testing uncovers crashes that manual tests would miss. = Inviando migliaia di input casuali o malformati, il fuzz testing scopre crash che i test manuali non troverebbero.',
               context: 'security-testing',
               difficulty: 'advanced',
               note: 'Inviare grandi quantit\u00E0 di dati casuali o malformati per far crashare il sistema.',
@@ -2517,7 +2540,8 @@ export default {
               italian: 'Oggetto Finto / Fake',
               pronunciation: '/fe\u026Ak/',
               phonetic: 'FEIK',
-              example: 'An in-memory database is a fake. = Un database in memoria \u00E8 un fake.',
+              example:
+                "For integration tests, we replaced the real payment gateway with a fake that always returns success. = Per i test d'integrazione, abbiamo sostituito il gateway di pagamento reale con un fake che restituisce sempre successo.",
               context: 'testing',
               difficulty: 'advanced',
               note: "Ha un'implementazione reale ma semplificata (non adatta alla produzione).",
@@ -2567,7 +2591,7 @@ export default {
               pronunciation: '/test \u02CC\u0254\u02D0t\u0259\u02C8me\u026A\u0283\u0259n/',
               phonetic: 'TEST o-to-MEI-scion',
               example:
-                "Test automation saves time in the long run. = L'automazione dei test risparmia tempo nel lungo periodo.",
+                "Investing in test automation now prevents hours of manual checking with every future release. = Investire nell'automazione dei test ora previene ore di verifica manuale a ogni futuro rilascio.",
               context: 'testing',
               difficulty: 'intermediate',
             },
@@ -2577,7 +2601,7 @@ export default {
               pronunciation: '/k\u0259n\u02C8t\u026Anju\u0259s \u02C8test\u026A\u014B/',
               phonetic: 'con-TI-niuos TES-ting',
               example:
-                'Continuous testing is part of the CI/CD pipeline. = Il testing continuo \u00E8 parte della pipeline CI/CD.',
+                'With continuous testing, every commit triggers automated tests so bugs are caught minutes after they are introduced. = Con il testing continuo, ogni commit avvia test automatici cos\u00EC i bug vengono trovati pochi minuti dopo essere stati introdotti.',
               context: 'devops',
               difficulty: 'advanced',
             },
@@ -2587,7 +2611,7 @@ export default {
               pronunciation: '/lo\u028Ad \u02C8test\u026A\u014B/',
               phonetic: 'LOUD TES-ting',
               example:
-                'Load testing checks how the system behaves under pressure. = Il test di carico controlla come si comporta il sistema sotto pressione.',
+                'Before Black Friday, the team ran load testing to simulate 10,000 concurrent users and find bottlenecks. = Prima del Black Friday, il team ha eseguito test di carico per simulare 10.000 utenti concorrenti e trovare colli di bottiglia.',
               context: 'performance',
               difficulty: 'intermediate',
             },
@@ -2597,7 +2621,7 @@ export default {
               pronunciation: '/stres \u02C8test\u026A\u014B/',
               phonetic: 'STRES TES-ting',
               example:
-                "Stress testing finds the breaking point of the app. = Lo stress test trova il punto di rottura dell'app.",
+                'During stress testing, we pushed traffic far beyond normal levels until the server ran out of memory. = Durante lo stress test, abbiamo spinto il traffico ben oltre i livelli normali finché il server non ha esaurito la memoria.',
               context: 'performance',
               difficulty: 'advanced',
             },
@@ -2607,7 +2631,7 @@ export default {
               pronunciation: '/\u02CCju\u02D0z\u0259\u02C8b\u026Al\u0259ti \u02C8test\u026A\u014B/',
               phonetic: 'iu-sa-BI-li-ti TES-ting',
               example:
-                'Usability testing focuses on the user experience. = Il test di usabilit\u00E0 si concentra sulla user experience.',
+                'During usability testing, five participants tried to complete the checkout flow while researchers observed where they got stuck. = Durante il test di usabilit\u00E0, cinque partecipanti hanno provato a completare il flusso di checkout mentre i ricercatori osservavano dove si bloccavano.',
               context: 'ux',
               difficulty: 'intermediate',
             },
@@ -2638,7 +2662,7 @@ export default {
               pronunciation: '/\u02C8di\u02D0fekt \u02C8dens\u0259ti/',
               phonetic: 'DII-fekt DEN-si-ti',
               example:
-                'Defect density measures bugs per line of code. = La densit\u00E0 dei difetti misura i bug per riga di codice.',
+                'A low defect density -- say 0.5 bugs per 1,000 lines -- indicates high code quality. = Una bassa densit\u00E0 dei difetti -- diciamo 0,5 bug ogni 1.000 righe -- indica alta qualit\u00E0 del codice.',
               context: 'metrics',
               difficulty: 'expert',
             },
@@ -2667,11 +2691,11 @@ export default {
           items: [
             {
               english: 'DevOps',
-              italian: 'DevOps (cultura sviluppo + operazioni)',
+              italian: 'Cultura sviluppo e operazioni (DevOps)',
               pronunciation: '/\u02C8dev\u0252ps/',
               phonetic: 'DEV-ops',
               example:
-                'DevOps bridge the gap between development and operations. = Il DevOps colma il divario tra sviluppo e operazioni.',
+                'Adopting DevOps practices reduced our deployment cycle from weeks to hours. = Adottare le pratiche DevOps ha ridotto il nostro ciclo di deploy da settimane a ore.',
               context: 'devops',
               difficulty: 'beginner',
               note: 'Insieme di pratiche che combinano sviluppo software (Dev) e operazioni IT (Ops).',
@@ -2705,14 +2729,14 @@ export default {
                 '/k\u0259n\u02C8t\u026Anju\u0259s d\u026A\u02C8pl\u0254\u026Am\u0259nt/',
               phonetic: 'con-TI-niuos di-PLOI-ment',
               example:
-                'Continuous deployment releases changes automatically to production. = Il continuous deployment rilascia le modifiche automaticamente in produzione.',
+                'With continuous deployment, every passing commit goes live without manual approval. = Con il continuous deployment, ogni commit che supera i test va in produzione senza approvazione manuale.',
               context: 'devops',
               difficulty: 'advanced',
               note: 'A differenza del Delivery, qui il rilascio in produzione non richiede intervento umano.',
             },
             {
               english: 'Pipeline',
-              italian: 'Pipeline / Condotto',
+              italian: 'Condotto (pipeline)',
               pronunciation: '/\u02C8pa\u026Apla\u026An/',
               phonetic: 'PAIP-lain',
               example:
@@ -2726,7 +2750,8 @@ export default {
               italian: 'Gestione del Codice Sorgente',
               pronunciation: '/\u02CCes si\u02D0 \u02CCem/',
               phonetic: 'es-sii-EM',
-              example: "Git is the most widely used SCM. = Git \u00E8 l'SCM pi\u00F9 usato.",
+              example:
+                "A reliable SCM tracks every change, supports branching, and lets teams collaborate without overwriting each other's work. = Un SCM affidabile traccia ogni modifica, supporta il branching e permette ai team di collaborare senza sovrascrivere il lavoro altrui.",
               context: 'tools',
               difficulty: 'beginner',
             },
@@ -2736,7 +2761,7 @@ export default {
               pronunciation: '/b\u026Ald \u02CC\u0254\u02D0t\u0259\u02C8me\u026A\u0283\u0259n/',
               phonetic: 'BILD o-to-MEI-scion',
               example:
-                "Build automation compiles the source code into binary files. = L'automazione della build compila il codice sorgente in file binari.",
+                "With build automation, a single command compiles the code, runs tests, and packages the artifact. = Con l'automazione della build, un singolo comando compila il codice, esegue i test e impacchetta l'artefatto.",
               context: 'devops',
               difficulty: 'intermediate',
             },
@@ -2758,7 +2783,7 @@ export default {
                 '/\u02C8\u0251\u02D0rt\u026Af\u00E6kt r\u026A\u02C8p\u0252z\u026At\u0259ri/',
               phonetic: 'AR-ti-fakt re-PO-si-to-ri',
               example:
-                'JFrog Artifactory is a well-known artifact repository. = JFrog Artifactory \u00E8 un noto repository di artefatti.',
+                'The pipeline stores every versioned build in the artifact repository so any release can be reproduced. = La pipeline salva ogni build versionata nel repository degli artefatti cos\u00EC ogni rilascio pu\u00F2 essere riprodotto.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -2806,7 +2831,8 @@ export default {
               italian: 'Produzione',
               pronunciation: '/pr\u0259\u02C8d\u028Ck\u0283\u0259n/',
               phonetic: 'pro-DAK-scion',
-              example: "The app is live in production. = L'app \u00E8 live in produzione.",
+              example:
+                'Never test directly in production -- always use staging first to catch issues before users are affected. = Mai testare direttamente in produzione -- usa sempre lo staging prima per individuare problemi prima che gli utenti ne risentano.',
               context: 'devops',
               difficulty: 'beginner',
               note: "L'ambiente reale dove gli utenti finali usano l'applicazione.",
@@ -2817,7 +2843,7 @@ export default {
               pronunciation: '/blu\u02D0 \u0261ri\u02D0n d\u026A\u02C8pl\u0254\u026Am\u0259nt/',
               phonetic: 'BLUU GRIIN di-PLOI-ment',
               example:
-                'Blue-green deployment reduces downtime. = Il deploy blue-green riduce i tempi di inattivit\u00E0.',
+                'With blue-green deployment, traffic switches to the new environment instantly and can roll back just as fast. = Con il deploy blue-green, il traffico passa al nuovo ambiente istantaneamente e pu\u00F2 fare rollback altrettanto velocemente.',
               context: 'deployment-strategies',
               difficulty: 'advanced',
               note: 'Due ambienti identici: uno live (Blue) e uno per il nuovo codice (Green). Si scambia il traffico.',
@@ -2900,7 +2926,8 @@ export default {
               pronunciation:
                 '/\u02C8\u026Anfr\u0259\u02CCstr\u028Ckt\u0283\u0259r \u00E6z ko\u028Ad/',
               phonetic: 'IN-fra-strac-ciur az KOUD',
-              example: 'Terraform is a tool for IaC. = Terraform \u00E8 uno strumento per la IaC.',
+              example:
+                "With infrastructure as code, the entire server setup is defined in version-controlled config files. = Con l'infrastruttura come codice, tutta la configurazione del server \u00E8 definita in file di configurazione sotto controllo versione.",
               context: 'devops',
               difficulty: 'intermediate',
               note: 'Gestire server e reti tramite file di configurazione invece di processi manuali.',
@@ -2918,11 +2945,11 @@ export default {
             },
             {
               english: 'Docker',
-              italian: 'Docker (piattaforma container)',
+              italian: 'Piattaforma container (Docker)',
               pronunciation: '/\u02C8d\u0252k\u0259r/',
               phonetic: 'DO-ker',
               example:
-                'Docker revolutionized software distribution. = Docker ha rivoluzionato la distribuzione del software.',
+                'Thanks to Docker, developers can package their app with all dependencies and ship it to any server reliably. = Grazie a Docker, gli sviluppatori possono impacchettare la loro app con tutte le dipendenze e distribuirla su qualsiasi server in modo affidabile.',
               context: 'infrastructure',
               difficulty: 'beginner',
             },
@@ -2938,11 +2965,11 @@ export default {
             },
             {
               english: 'Kubernetes (K8s)',
-              italian: 'Kubernetes',
+              italian: 'Orchestratore di container (Kubernetes)',
               pronunciation: '/\u02CCkju\u02D0b\u0259r\u02C8neti\u02D0z/',
               phonetic: 'ku-ber-NE-tiz',
               example:
-                "Kubernetes is the industry standard for orchestration. = Kubernetes \u00E8 lo standard per l'orchestrazione.",
+                'Most cloud providers offer managed Kubernetes clusters so teams can orchestrate containers without managing the control plane. = La maggior parte dei cloud provider offre cluster Kubernetes gestiti cos\u00EC i team possono orchestrare i container senza gestire il control plane.',
               context: 'infrastructure',
               difficulty: 'advanced',
             },
@@ -2962,7 +2989,7 @@ export default {
               pronunciation: '/\u02C8s\u025C\u02D0rv\u026As d\u026A\u02C8sk\u028Cv\u0259ri/',
               phonetic: 'SER-vis di-SCA-ve-ri',
               example:
-                'Service discovery allows microservices to find each other. = La service discovery permette ai microservizi di trovarsi.',
+                'When a new instance spins up, service discovery registers it so other services can route traffic to it automatically. = Quando una nuova istanza viene avviata, la service discovery la registra così gli altri servizi possono instradare il traffico verso di essa automaticamente.',
               context: 'architecture',
               difficulty: 'advanced',
             },
@@ -2971,7 +2998,8 @@ export default {
               italian: 'Approvvigionamento / Provisioning',
               pronunciation: '/pr\u0259\u02C8v\u026A\u0292\u0259n\u026A\u014B/',
               phonetic: 'pro-VI-scio-ning',
-              example: 'Cloud provisioning is done via API. = Il provisioning cloud si fa via API.',
+              example:
+                'Automated provisioning spins up new servers in minutes, while manual setup used to take days. = Il provisioning automatico avvia nuovi server in minuti, mentre la configurazione manuale richiedeva giorni.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               note: "Il processo di preparazione e configurazione dell'infrastruttura IT.",
@@ -2994,7 +3022,7 @@ export default {
                 '/k\u0259n\u02CCf\u0261j\u028A\u02C8re\u026A\u0283\u0259n \u02C8m\u00E6n\u026Ad\u0292m\u0259nt/',
               phonetic: 'con-fi-gui-REI-scion MAN-ig-ment',
               example:
-                'Ansible is a popular config management tool. = Ansible \u00E8 un noto strumento di gestione configurazione.',
+                'With config management tools like Ansible, you define the desired state and the tool enforces it across all servers. = Con strumenti di gestione della configurazione come Ansible, definisci lo stato desiderato e lo strumento lo applica su tutti i server.',
               context: 'tools',
               difficulty: 'intermediate',
             },
@@ -3021,7 +3049,7 @@ export default {
               pronunciation: '/\u0259\u02C8l\u025C\u02D0rt\u026A\u014B/',
               phonetic: 'a-LER-ting',
               example:
-                "Alerting notifies the team when a service is down. = L'alerting notifica il team quando un servizio \u00E8 gi\u00F9.",
+                "Proper alerting wakes up the on-call engineer within minutes when a critical service goes down. = Un alerting adeguato sveglia l'ingegnere reperibile in pochi minuti quando un servizio critico va gi\u00F9.",
               context: 'operations',
               difficulty: 'intermediate',
             },
@@ -3031,7 +3059,7 @@ export default {
               pronunciation: '/\u02C8l\u0252\u0261\u026A\u014B/',
               phonetic: 'LOG-ghing',
               example:
-                'Good logging is essential for troubleshooting. = Una buona registrazione eventi \u00E8 essenziale per risolvere i problemi.',
+                'Structured logging with correlation IDs lets you trace a single request across dozens of microservices. = Il logging strutturato con ID di correlazione permette di tracciare una singola richiesta attraverso decine di microservizi.',
               context: 'operations',
               difficulty: 'beginner',
             },
@@ -3062,7 +3090,7 @@ export default {
               pronunciation: '/\u0259b\u02CCz\u025C\u02D0rv\u0259\u02C8b\u026Al\u0259ti/',
               phonetic: 'ob-ser-va-BI-li-ti',
               example:
-                "Observability goes beyond simple monitoring. = L'osservabilit\u00E0 va oltre il semplice monitoraggio.",
+                'True observability combines logs, metrics, and traces so you can diagnose problems you never anticipated. = La vera osservabilit\u00E0 combina log, metriche e tracce cos\u00EC puoi diagnosticare problemi che non avevi mai previsto.',
               context: 'operations',
               difficulty: 'advanced',
               note: 'Capacit\u00E0 di capire lo stato interno di un sistema basandosi solo sui dati esterni (log, metriche, tracce).',
@@ -3135,11 +3163,11 @@ export default {
             },
             {
               english: 'Exploit',
-              italian: 'Exploit / Sfruttamento',
+              italian: 'Sfruttamento (exploit)',
               pronunciation: '/\u026Ak\u02C8spl\u0254\u026At/',
               phonetic: 'ik-SPLOIT',
               example:
-                'A zero-day exploit is very dangerous. = Un exploit zero-day \u00E8 molto pericoloso.',
+                'An attacker used a known exploit against the unpatched server and gained full access in minutes. = Un attaccante ha usato un exploit noto contro il server non aggiornato e ha ottenuto accesso completo in pochi minuti.',
               context: 'security',
               difficulty: 'intermediate',
               note: 'Codice o tecnica usata per sfruttare una specifica vulnerabilit\u00E0.',
@@ -3156,7 +3184,7 @@ export default {
             },
             {
               english: 'CVE (Common Vulnerabilities and Exposures)',
-              italian: 'CVE / Catalogo Vulnerabilit\u00E0',
+              italian: 'Catalogo vulnerabilit\u00E0 (CVE)',
               pronunciation: '/\u02CCsi\u02D0 vi\u02D0 \u02C8i\u02D0/',
               phonetic: 'sii-vii-II',
               example:
@@ -3167,7 +3195,7 @@ export default {
             },
             {
               english: 'CVSS (Common Vulnerability Scoring System)',
-              italian: 'CVSS / Punteggio Vulnerabilit\u00E0',
+              italian: 'Punteggio vulnerabilit\u00E0 (CVSS)',
               pronunciation: '/\u02CCsi\u02D0 vi\u02D0 es \u02C8es/',
               phonetic: 'sii-vii-es-ES',
               example:
@@ -3178,18 +3206,18 @@ export default {
             },
             {
               english: 'Buffer Overflow',
-              italian: 'Buffer Overflow / Traboccamento',
+              italian: 'Traboccamento (buffer overflow)',
               pronunciation: '/\u02C8b\u028Cf\u0259r \u02CCo\u028Av\u0259r\u02C8flo\u028A/',
               phonetic: 'BA-fer OU-ver-flou',
               example:
-                'Buffer overflow is a classic memory vulnerability. = Il buffer overflow \u00E8 una classica vulnerabilit\u00E0 di memoria.',
+                'Languages like C are susceptible to buffer overflow because they do not check array bounds at runtime. = Linguaggi come il C sono suscettibili al buffer overflow perch\u00E9 non controllano i limiti degli array a runtime.',
               context: 'security',
               difficulty: 'advanced',
               note: 'Succede quando si scrivono pi\u00F9 dati di quanti un buffer possa contenere.',
             },
             {
               english: 'Race Condition',
-              italian: 'Race Condition / Concorrenza Errata',
+              italian: 'Concorrenza errata (race condition)',
               pronunciation: '/re\u026As k\u0259n\u02C8d\u026A\u0283\u0259n/',
               phonetic: 'REIS con-DI-scion',
               example:
@@ -3226,7 +3254,7 @@ export default {
               pronunciation: '/\u026An\u02C8d\u0292ek\u0283\u0259n/',
               phonetic: 'in-GEK-scion',
               example:
-                'SQL injection is a type of input vulnerability. = La SQL injection \u00E8 un tipo di vulnerabilit\u00E0 di input.',
+                "Using parameterized queries prevents injection attacks where malicious SQL is embedded in user input. = L'uso di query parametrizzate previene attacchi di injection in cui SQL malevolo \u00E8 incorporato nell'input utente.",
               context: 'security',
               difficulty: 'beginner',
             },
@@ -3264,7 +3292,7 @@ export default {
                 '/\u02C8ste\u026Atles \u0254\u02D0\u02CC\u03B8ent\u026A\u02C8ke\u026A\u0283\u0259n/',
               phonetic: 'STEIT-les o-then-ti-KEI-scion',
               example:
-                "Stateless authentication often uses JWT. = L'autenticazione stateless usa spesso i JWT.",
+                "With stateless authentication, the server validates a signed JWT token instead of storing session data. = Con l'autenticazione stateless, il server valida un token JWT firmato invece di salvare dati di sessione.",
               context: 'backend',
               difficulty: 'advanced',
               note: 'Il server non salva sessioni; tutte le info sono nel token inviato dal client.',
@@ -3296,7 +3324,7 @@ export default {
               pronunciation: '/\u02C8si\u02D0kr\u0259t \u02C8m\u00E6n\u026Ad\u0292m\u0259nt/',
               phonetic: 'SII-cret MAN-ig-ment',
               example:
-                'Vault is a tool for secret management. = Vault \u00E8 uno strumento per la gestione dei segreti.',
+                'Proper secret management keeps API keys and passwords out of source code and rotates them automatically. = Una corretta gestione dei segreti tiene le chiavi API e le password fuori dal codice sorgente e le ruota automaticamente.',
               context: 'devops',
               difficulty: 'advanced',
               note: 'Gestire chiavi API, password e certificati in modo sicuro e centralizzato.',
@@ -3317,7 +3345,7 @@ export default {
               pronunciation: '/d\u026A\u02C8fens \u026An dep\u03B8/',
               phonetic: 'di-FENS in DEPTH',
               example:
-                'Defence in depth uses multiple layers of security. = La difesa in profondit\u00E0 usa diversi strati di sicurezza.',
+                'The principle of defence in depth means that if the firewall is bypassed, encryption and access controls still protect the data. = Il principio della difesa in profondit\u00E0 significa che se il firewall viene bypassato, la crittografia e i controlli di accesso proteggono ancora i dati.',
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -3337,7 +3365,7 @@ export default {
               pronunciation: '/fe\u026Al se\u026Af d\u026A\u02C8f\u0254\u02D0lts/',
               phonetic: 'FEIL-seif di-FOLTS',
               example:
-                "Fail-safe defaults ensure access is denied if a check fails. = Il fallimento sicuro garantisce che l'accesso sia negato se un controllo fallisce.",
+                'A system built with fail-safe defaults blocks all access when the authentication service is unreachable, rather than allowing everyone in. = Un sistema costruito con fallimento sicuro blocca tutti gli accessi quando il servizio di autenticazione non è raggiungibile, anziché far entrare tutti.',
               context: 'security',
               difficulty: 'advanced',
             },
@@ -3396,7 +3424,7 @@ export default {
               pronunciation: '/\u02C8si\u02D0kr\u0259t \u02C8sk\u00E6n\u026A\u014B/',
               phonetic: 'SII-cret SKA-ning',
               example:
-                'Secret scanning prevents committing API keys to Git. = La scansione dei segreti previene il commit di chiavi API su Git.',
+                'Automated secret scanning caught a developer who accidentally committed an AWS access key to a public repo. = La scansione automatica dei segreti ha intercettato uno sviluppatore che aveva accidentalmente committato una chiave di accesso AWS in una repo pubblica.',
               context: 'security-tools',
               difficulty: 'beginner',
             },
@@ -3429,13 +3457,13 @@ export default {
                 '/\u02CCv\u028Cln\u0259r\u0259\u02C8b\u026Al\u0259ti \u02C8m\u00E6n\u026Ad\u0292m\u0259nt/',
               phonetic: 'val-ne-re-BI-li-ti MAN-ig-ment',
               example:
-                'Vulnerability management is a continuous process. = La gestione delle vulnerabilit\u00E0 \u00E8 un processo continuo.',
+                'An effective vulnerability management program identifies, prioritises, and patches security flaws before attackers can exploit them. = Un efficace programma di gestione delle vulnerabilit\u00E0 identifica, d\u00E0 priorit\u00E0 e corregge le falle di sicurezza prima che gli attaccanti possano sfruttarle.',
               context: 'management',
               difficulty: 'intermediate',
             },
             {
               english: 'IAST (Interactive AST)',
-              italian: 'IAST / AST Interattivo',
+              italian: 'AST interattivo (IAST)',
               pronunciation: '/\u02CCa\u026A e\u026A es \u02C8ti\u02D0/',
               phonetic: 'ai-ei-es-TII',
               example:
@@ -3466,7 +3494,7 @@ export default {
               pronunciation: '/s\u026A\u02C8kj\u028A\u0259r \u02C8ko\u028Ad\u026A\u014B/',
               phonetic: 'si-KIUR KOU-ding',
               example:
-                'Secure coding practices prevent vulnerabilities. = Le pratiche di programmazione sicura prevengono le vulnerabilit\u00E0.',
+                "Following secure coding guidelines like input validation and parameterized queries prevents most common vulnerabilities. = Seguire le linee guida di programmazione sicura come validazione dell'input e query parametrizzate previene la maggior parte delle vulnerabilit\u00E0 comuni.",
               context: 'development',
               difficulty: 'beginner',
             },
@@ -3487,7 +3515,7 @@ export default {
               pronunciation: '/\u02C8a\u028Atp\u028At \u026An\u02C8ko\u028Ad\u026A\u014B/',
               phonetic: 'AUT-put in-KOU-ding',
               example:
-                "Output encoding is essential to prevent XSS. = La codifica dell'output \u00E8 essenziale per prevenire l'XSS.",
+                "Applying output encoding before rendering user content in HTML prevents cross-site scripting attacks. = Applicare la codifica dell'output prima di mostrare contenuto utente nell'HTML previene attacchi di cross-site scripting.",
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -3508,7 +3536,7 @@ export default {
               pronunciation: '/\u03B8ret \u02C8m\u0252d\u0259l\u026A\u014B/',
               phonetic: 'THRET MO-de-ling',
               example:
-                'Threat modeling helps identify potential attack vectors. = La modellazione delle minacce aiuta a identificare potenziali vettori di attacco.',
+                'During the design phase, threat modeling reveals which components are most exposed to attack. = Durante la fase di progettazione, la modellazione delle minacce rivela quali componenti sono più esposti agli attacchi.',
               context: 'design',
               difficulty: 'advanced',
             },
@@ -3518,7 +3546,7 @@ export default {
               pronunciation: '/stra\u026Ad/',
               phonetic: 'STRAID',
               example:
-                'STRIDE is a common model for threat modeling. = Lo STRIDE \u00E8 un modello comune per la modellazione delle minacce.',
+                'Using the STRIDE framework, the team categorised threats as Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, or Elevation of Privilege. = Usando il framework STRIDE, il team ha categorizzato le minacce come Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service o Elevation of Privilege.',
               context: 'standards',
               difficulty: 'expert',
               note: 'Spoofing, Tampering, Repudiation, Info Disclosure, DoS, Elevation of Privilege.',
@@ -3529,7 +3557,7 @@ export default {
               pronunciation: '/ko\u028Ad \u02C8sa\u026An\u026A\u014B/',
               phonetic: 'KOUD SAIN-ing',
               example:
-                "Code signing ensures the software hasn't been tampered with. = La firma del codice garantisce che il software non sia stato manomesso.",
+                "Before installing the update, the OS verifies the code signing certificate to ensure the binary was not tampered with. = Prima di installare l'aggiornamento, il sistema operativo verifica il certificato di firma del codice per assicurarsi che il binario non sia stato manomesso.",
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -3549,7 +3577,7 @@ export default {
               pronunciation: '/\u02C8si\u02D0kr\u0259t \u02C8m\u0251\u02D0sk\u026A\u014B/',
               phonetic: 'SII-cret MAS-king',
               example:
-                'Secret masking prevents sensitive data from appearing in logs. = Il mascheramento dei segreti impedisce che i dati sensibili appaiano nei log.',
+                'Enable secret masking in your CI pipeline so that passwords and tokens are replaced with asterisks in build logs. = Abilita il mascheramento dei segreti nella pipeline CI così che password e token vengano sostituiti con asterischi nei log di build.',
               context: 'security',
               difficulty: 'intermediate',
             },
@@ -3588,7 +3616,7 @@ export default {
             },
             {
               english: 'Singleton',
-              italian: 'Singleton / Istanza Unica',
+              italian: 'Istanza unica (singleton)',
               pronunciation: '/\u02C8s\u026A\u014B\u026Alt\u0259n/',
               phonetic: 'SIN-gel-ton',
               example:
@@ -3602,7 +3630,7 @@ export default {
               pronunciation: '/\u02C8f\u00E6kt\u0259ri \u02C8me\u03B8\u0259d/',
               phonetic: 'FAC-to-ri ME-thod',
               example:
-                "Factory Method provides an interface for creating objects in a superclass. = Il Factory Method fornisce un'interfaccia per creare oggetti in una superclasse.",
+                'Instead of calling constructors directly, use a factory method to let subclasses decide which class to instantiate. = Invece di chiamare i costruttori direttamente, usa un metodo factory per lasciare alle sottoclassi la scelta della classe da istanziare.',
               context: 'design-patterns',
               difficulty: 'advanced',
             },
@@ -3612,7 +3640,7 @@ export default {
               pronunciation: '/\u00E6b\u02C8str\u00E6kt \u02C8f\u00E6kt\u0259ri/',
               phonetic: 'AB-strakt FAC-to-ri',
               example:
-                "Abstract Factory creates families of related objects. = L'Abstract Factory crea famiglie di oggetti correlati.",
+                'An abstract factory lets you create platform-specific UI elements without coupling the client code to concrete classes. = Una abstract factory ti permette di creare elementi UI specifici per piattaforma senza accoppiare il codice client a classi concrete.',
               context: 'design-patterns',
               difficulty: 'expert',
             },
@@ -3633,7 +3661,7 @@ export default {
               pronunciation: '/\u02C8pro\u028At\u0259ta\u026Ap/',
               phonetic: 'PROU-to-taip',
               example:
-                'Prototype pattern creates new objects by copying an existing one. = Il pattern Prototype crea nuovi oggetti copiandone uno esistente.',
+                "When creating an object is expensive, the prototype pattern clones an existing instance instead. = Quando creare un oggetto è costoso, il pattern prototype clona un'istanza esistente invece.",
               context: 'design-patterns',
               difficulty: 'advanced',
             },
@@ -3655,7 +3683,7 @@ export default {
                 '/d\u026A\u02C8p\u025Bnd\u0259nsi \u026An\u02C8d\u0292\u025Bk\u0283\u0259n/',
               phonetic: 'de-PEN-den-si in-GEK-scion',
               example:
-                'Dependency Injection provides objects that another object needs. = La Dependency Injection fornisce gli oggetti di cui un altro oggetto ha bisogno.',
+                "With dependency injection, the class receives its collaborators from the outside instead of creating them internally. = Con la dependency injection, la classe riceve i suoi collaboratori dall'esterno invece di crearli internamente.",
               context: 'design-patterns',
               difficulty: 'advanced',
             },
@@ -3666,7 +3694,7 @@ export default {
                 '/\u02C8le\u026Azi \u026A\u02CCn\u026A\u0283\u0259la\u026A\u02C8ze\u026A\u0283\u0259n/',
               phonetic: 'LEI-si i-ni-scia-lai-ZEI-scion',
               example:
-                "Lazy initialization delays the creation of an object until it is needed. = L'inizializzazione lazy ritarda la creazione di un oggetto finch\u00E9 non serve.",
+                "With lazy initialization, the database connection is created only when the first query is executed. = Con l'inizializzazione lazy, la connessione al database viene creata solo quando viene eseguita la prima query.",
               context: 'design-patterns',
               difficulty: 'advanced',
             },
@@ -3713,7 +3741,7 @@ export default {
               pronunciation: '/br\u026Ad\u0292/',
               phonetic: 'BRIG',
               example:
-                "Bridge decouples an abstraction from its implementation. = Il Bridge disaccoppia un'astrazione dalla sua implementazione.",
+                'Using the bridge pattern, you can change the rendering engine without modifying the shape hierarchy. = Usando il pattern bridge, puoi cambiare il motore di rendering senza modificare la gerarchia delle forme.',
               context: 'design-patterns',
               difficulty: 'expert',
             },
@@ -3723,7 +3751,7 @@ export default {
               pronunciation: '/\u02C8k\u0252mp\u0259z\u026At/',
               phonetic: 'com-PO-sit',
               example:
-                'Composite pattern treats individual objects and compositions uniformly. = Il pattern Composite tratta singoli oggetti e composizioni in modo uniforme.',
+                'A file system uses the composite pattern: both files and directories implement the same interface. = Un file system usa il pattern composite: sia i file che le directory implementano la stessa interfaccia.',
               context: 'design-patterns',
               difficulty: 'advanced',
               note: 'Permette di creare strutture ad albero.',
@@ -3734,7 +3762,7 @@ export default {
               pronunciation: '/\u02C8dek\u0259re\u026At\u0259r/',
               phonetic: 'DE-co-reiter',
               example:
-                'Decorator adds new behaviors to objects dynamically. = Il Decorator aggiunge nuovi comportamenti agli oggetti dinamicamente.',
+                'You can stack multiple decorators -- like compression, encryption, and logging -- on a data stream without changing the original class. = Puoi impilare più decorator -- come compressione, crittografia e logging -- su uno stream di dati senza cambiare la classe originale.',
               context: 'design-patterns',
               difficulty: 'intermediate',
             },
@@ -3744,7 +3772,7 @@ export default {
               pronunciation: '/f\u0259\u02C8s\u0251\u02D0d/',
               phonetic: 'fa-SAAD',
               example:
-                "Facade provides a simplified interface to a complex library. = Il Facade fornisce un'interfaccia semplificata a una libreria complessa.",
+                "A facade hides the complexity of multiple subsystems behind a single, easy-to-use interface. = Una facade nasconde la complessità di più sottosistemi dietro un'interfaccia singola e facile da usare.",
               context: 'design-patterns',
               difficulty: 'intermediate',
             },
@@ -3754,7 +3782,7 @@ export default {
               pronunciation: '/\u02C8fla\u026Awe\u026At/',
               phonetic: 'FLAI-ueit',
               example:
-                "Flyweight pattern minimizes memory usage by sharing data. = Il pattern Flyweight minimizza l'uso della memoria condividendo i dati.",
+                'In a text editor, the flyweight pattern shares font and style data among thousands of characters to save memory. = In un editor di testo, il pattern flyweight condivide dati di font e stile tra migliaia di caratteri per risparmiare memoria.',
               context: 'design-patterns',
               difficulty: 'expert',
               note: 'Utile per gestire migliaia di piccoli oggetti simili.',
@@ -3776,7 +3804,7 @@ export default {
               pronunciation: '/\u02C8pra\u026Av\u0259t kl\u0251\u02D0s \u02C8de\u026At\u0259/',
               phonetic: 'PRAI-vet CLAS DEITA',
               example:
-                'Private class data pattern prevents accidental attribute modification. = Questo pattern previene modifiche accidentali agli attributi.',
+                'The private class data pattern wraps fields in a read-only object so they cannot be changed after construction. = Il pattern private class data racchiude i campi in un oggetto di sola lettura così non possono essere modificati dopo la costruzione.',
               context: 'design-patterns',
               difficulty: 'advanced',
             },
@@ -3786,7 +3814,7 @@ export default {
               pronunciation: '/\u02C8r\u00E6p\u0259r/',
               phonetic: 'RAP-per',
               example:
-                'Wrapper is another name for the Adapter or Decorator patterns. = Wrapper \u00E8 un altro nome per i pattern Adapter o Decorator.',
+                'A wrapper class encapsulates a third-party library so that replacing it later requires changing only one file. = Una classe wrapper incapsula una libreria di terze parti cos\u00EC sostituirla in futuro richiede di modificare un solo file.',
               context: 'design-patterns',
               difficulty: 'intermediate',
             },
@@ -3814,7 +3842,7 @@ export default {
                 '/t\u0283e\u026An \u0259v r\u026A\u02CCsp\u0252ns\u0259\u02C8b\u026Al\u0259ti/',
               phonetic: 'CEIN ov re-spon-si-BI-li-ti',
               example:
-                'Chain of responsibility passes a request along a chain of handlers. = La catena di responsabilit\u00E0 passa una richiesta lungo una serie di gestori.',
+                'In a chain of responsibility, an authentication handler checks the token, then a logging handler records the request, and finally a validation handler checks the payload. = In una catena di responsabilit\u00E0, un gestore di autenticazione verifica il token, poi un gestore di logging registra la richiesta, e infine un gestore di validazione controlla il payload.',
               context: 'design-patterns',
               difficulty: 'advanced',
             },
@@ -3824,7 +3852,7 @@ export default {
               pronunciation: '/k\u0259\u02C8m\u00E6nd/',
               phonetic: 'com-MAND',
               example:
-                'Command pattern turns a request into a stand-alone object. = Il pattern Command trasforma una richiesta in un oggetto autonomo.',
+                "The command pattern encapsulates each user action as an object, making it trivial to implement undo and redo. = Il pattern command incapsula ogni azione dell'utente come un oggetto, rendendo banale implementare undo e redo.",
               context: 'design-patterns',
               difficulty: 'intermediate',
               note: 'Permette di implementare funzioni come Undo/Redo.',
@@ -3835,7 +3863,7 @@ export default {
               pronunciation: '/\u026A\u02C8t\u0259re\u026At\u0259r/',
               phonetic: 'i-te-REI-ter',
               example:
-                "Iterator pattern lets you traverse elements of a collection without exposing its representation. = L'Iteratore permette di scorrere gli elementi senza esporre la struttura interna.",
+                'An iterator lets you loop through a tree, a list, or a graph using the same for-each syntax. = Un iteratore ti permette di scorrere un albero, una lista o un grafo usando la stessa sintassi for-each.',
               context: 'design-patterns',
               difficulty: 'intermediate',
             },
@@ -3851,11 +3879,11 @@ export default {
             },
             {
               english: 'Memento',
-              italian: 'Memento / Ricordo',
+              italian: 'Ricordo (memento)',
               pronunciation: '/m\u0259\u02C8mento\u028A/',
               phonetic: 'me-MEN-tou',
               example:
-                'Memento pattern allows saving and restoring the previous state of an object. = Il pattern Memento permette di salvare e ripristinare lo stato precedente di un oggetto.',
+                'A text editor uses the memento pattern to take snapshots of the document so users can undo changes. = Un editor di testo usa il pattern memento per salvare istantanee del documento così gli utenti possono annullare le modifiche.',
               context: 'design-patterns',
               difficulty: 'advanced',
             },
@@ -3865,7 +3893,7 @@ export default {
               pronunciation: '/\u0259b\u02C8z\u025C\u02D0rv\u0259r/',
               phonetic: 'ob-SER-ver',
               example:
-                "Observer pattern defines a subscription mechanism to notify multiple objects. = L'Observer definisce un meccanismo di iscrizione per notificare pi\u00F9 oggetti.",
+                'When data changes, the observer pattern automatically notifies every subscriber -- like a newsletter for objects. = Quando i dati cambiano, il pattern observer notifica automaticamente ogni abbonato -- come una newsletter per oggetti.',
               context: 'design-patterns',
               difficulty: 'intermediate',
             },
@@ -3875,7 +3903,7 @@ export default {
               pronunciation: '/ste\u026At/',
               phonetic: 'STEIT',
               example:
-                'State pattern lets an object alter its behavior when its internal state changes. = Il pattern State permette a un oggetto di cambiare comportamento quando cambia il suo stato interno.',
+                'Using the state pattern, a document object behaves differently in Draft, Review, and Published states without giant if-else chains. = Usando il pattern state, un oggetto documento si comporta diversamente negli stati Draft, Review e Published senza enormi catene if-else.',
               context: 'design-patterns',
               difficulty: 'advanced',
             },
@@ -3885,7 +3913,7 @@ export default {
               pronunciation: '/\u02C8str\u00E6t\u0259d\u0292i/',
               phonetic: 'STRA-te-gi',
               example:
-                'Strategy pattern defines a family of algorithms and makes them interchangeable. = Lo Strategy definisce una famiglia di algoritmi e li rende intercambiabili.',
+                'The strategy pattern lets the payment module switch between credit card, PayPal, or crypto at runtime. = Il pattern strategy permette al modulo di pagamento di passare tra carta di credito, PayPal o crypto a runtime.',
               context: 'design-patterns',
               difficulty: 'intermediate',
             },
@@ -3895,7 +3923,7 @@ export default {
               pronunciation: '/\u02C8temple\u026At \u02C8me\u03B8\u0259d/',
               phonetic: 'TEM-pleit ME-thod',
               example:
-                'Template Method defines the skeleton of an algorithm in a superclass. = Il Template Method definisce lo scheletro di un algoritmo in una superclasse.',
+                'The template method defines the overall recipe -- subclasses only override the specific steps they need to customise. = Il template method definisce la ricetta complessiva -- le sottoclassi sovrascrivono solo i passi specifici che devono personalizzare.',
               context: 'design-patterns',
               difficulty: 'advanced',
             },
@@ -3912,7 +3940,7 @@ export default {
               pronunciation: '/\u02C8ju\u02D0n\u026At \u0259v w\u025C\u02D0rk/',
               phonetic: 'IUU-nit ov WERK',
               example:
-                "Unit of Work coordinates the writing of several changes to the DB. = L'Unit of Work coordina il salvataggio di diversi cambiamenti nel DB.",
+                "The unit of work tracks all modifications in a single transaction and commits them together. = L'unit of work traccia tutte le modifiche in una singola transazione e le salva insieme.",
               context: 'data-patterns',
               difficulty: 'advanced',
               note: 'Garantisce che tutte le operazioni in una transazione siano completate con successo o nessuna.',
@@ -3954,7 +3982,7 @@ export default {
               pronunciation: '/\u02C8\u00E6kt\u026Av \u02C8rek\u0254\u02D0rd/',
               phonetic: 'AC-tiv RE-cord',
               example:
-                "Active Record pattern wraps a row in a DB table into an object. = L'Active Record avvolge una riga del DB in un oggetto.",
+                "In Rails, the active record pattern lets you write user.save() and the object handles its own database persistence. = In Rails, il pattern active record ti permette di scrivere user.save() e l'oggetto gestisce la propria persistenza nel database.",
               context: 'data-patterns',
               difficulty: 'advanced',
               note: "L'oggetto contiene sia i dati che i metodi per salvarli (es. user.save()).",
@@ -3965,7 +3993,7 @@ export default {
               pronunciation: '/\u02C8v\u026Az\u026At\u0259r/',
               phonetic: 'VI-si-ter',
               example:
-                'Visitor pattern allows adding new operations to existing classes without modifying them. = Il Visitor permette di aggiungere nuove operazioni a classi esistenti senza modificarle.',
+                "Using the visitor pattern, you can add an export-to-PDF operation to every document type without touching their classes. = Usando il pattern visitor, puoi aggiungere un'operazione di esportazione in PDF a ogni tipo di documento senza toccare le loro classi.",
               context: 'design-patterns',
               difficulty: 'expert',
             },
@@ -3976,7 +4004,7 @@ export default {
                 '/\u026A\u02C8vent \u02C8\u00E6\u0261r\u026A\u02CC\u0261e\u026At\u0259r/',
               phonetic: 'i-VENT AG-gre-geiter',
               example:
-                "Event Aggregator simplifies event handling by centralizing notifications. = L'Aggregatore di Eventi semplifica la gestione degli eventi centralizzando le notifiche.",
+                'An event aggregator acts as a central hub where publishers and subscribers meet without knowing about each other. = Un aggregatore di eventi funge da hub centrale dove publisher e subscriber si incontrano senza conoscersi.',
               context: 'architecture-patterns',
               difficulty: 'advanced',
             },
@@ -3986,7 +4014,7 @@ export default {
               pronunciation: '/\u02C8s\u025C\u02D0rv\u026As lo\u028A\u02C8ke\u026At\u0259r/',
               phonetic: 'SER-vis lou-KEI-ter',
               example:
-                "Service Locator is an alternative to Dependency Injection. = Il Service Locator \u00E8 un'alternativa alla Dependency Injection.",
+                'A service locator provides a global registry of services, but many developers prefer dependency injection because it makes dependencies explicit. = Un service locator fornisce un registro globale dei servizi, ma molti sviluppatori preferiscono la dependency injection perch\u00E9 rende le dipendenze esplicite.',
               context: 'patterns',
               difficulty: 'expert',
             },
@@ -3996,7 +4024,7 @@ export default {
               pronunciation: '/p\u028Cb s\u028Cb/',
               phonetic: 'PAB SAB',
               example:
-                'Pub/Sub is used for asynchronous communication. = Il Pub/Sub \u00E8 usato per la comunicazione asincrona.',
+                'In a pub/sub system, the order service publishes an event and the email service subscribes to it without them knowing about each other. = In un sistema pub/sub, il servizio ordini pubblica un evento e il servizio email si iscrive senza che si conoscano.',
               context: 'architecture-patterns',
               difficulty: 'intermediate',
             },
@@ -4006,7 +4034,7 @@ export default {
               pronunciation: '/\u02CC\u026Ant\u0259r\u02C8sept\u0259rz/',
               phonetic: 'in-ter-CEP-terz',
               example:
-                'Interceptors allow executing logic before or after a method call. = Gli intercettatori permettono di eseguire logica prima o dopo la chiamata a un metodo.',
+                'HTTP interceptors can add an authorization header to every outgoing request automatically. = Gli intercettatori HTTP possono aggiungere un header di autorizzazione a ogni richiesta in uscita automaticamente.',
               context: 'architecture-patterns',
               difficulty: 'advanced',
             },
@@ -4040,7 +4068,7 @@ export default {
               pronunciation: '/\u026A\u02C8ter\u0259t\u026Av d\u026A\u02C8vel\u0259pm\u0259nt/',
               phonetic: 'i-TE-ra-tiv di-VE-lop-ment',
               example:
-                'Iterative development allows for continuous improvement. = Lo sviluppo iterativo permette un miglioramento continuo.',
+                'With iterative development, the team builds a basic version first and refines it through repeated cycles of feedback. = Con lo sviluppo iterativo, il team costruisce una versione base prima e la raffina attraverso cicli ripetuti di feedback.',
               context: 'methodology',
               difficulty: 'intermediate',
             },
@@ -4050,7 +4078,7 @@ export default {
               pronunciation: '/\u02CC\u026Ankr\u0259\u02C8mentl d\u026A\u02C8vel\u0259pm\u0259nt/',
               phonetic: 'in-cre-MEN-tal di-VE-lop-ment',
               example:
-                'Incremental development adds features one by one. = Lo sviluppo incrementale aggiunge funzioni una alla volta.',
+                'In incremental development, each release delivers a usable subset of the final product to gather early user feedback. = Nello sviluppo incrementale, ogni rilascio consegna un sottoinsieme utilizzabile del prodotto finale per raccogliere feedback anticipato dagli utenti.',
               context: 'methodology',
               difficulty: 'intermediate',
             },
@@ -4103,7 +4131,7 @@ export default {
               pronunciation: '/\u0259k\u02C8sept\u0259ns kra\u026A\u02C8t\u026Ari\u0259/',
               phonetic: 'ac-CEP-tans crai-TII-ria',
               example:
-                'Acceptance criteria define the boundaries of a user story. = I criteri di accettazione definiscono i confini di una user story.',
+                'Clear acceptance criteria tell the developer exactly what to build and the tester exactly what to verify. = Criteri di accettazione chiari dicono allo sviluppatore esattamente cosa costruire e al tester esattamente cosa verificare.',
               context: 'requirements',
               difficulty: 'intermediate',
             },
@@ -4123,7 +4151,7 @@ export default {
               pronunciation: '/\u02C8\u00E6d\u0292a\u026Al \u02C8pr\u026Ans\u0259plz/',
               phonetic: 'A-giail PRIN-si-polz',
               example:
-                'Sustainable development is one of the Agile principles. = Lo sviluppo sostenibile \u00E8 uno dei principi Agile.',
+                "The twelve Agile principles emphasise delivering working software frequently and welcoming changing requirements. = I dodici principi Agile enfatizzano il rilascio frequente di software funzionante e l'accoglienza dei cambiamenti nei requisiti.",
               context: 'methodology',
               difficulty: 'beginner',
             },
@@ -4136,21 +4164,21 @@ export default {
           items: [
             {
               english: 'Scrum',
-              italian: 'Scrum (framework agile)',
+              italian: 'Framework agile (Scrum)',
               pronunciation: '/skr\u028Cm/',
               phonetic: 'SCRAM',
               example:
-                'Scrum is a framework for developing complex products. = Lo Scrum \u00E8 un framework per sviluppare prodotti complessi.',
+                'Many teams adopt Scrum because its fixed-length sprints, clear roles, and regular ceremonies create a predictable development rhythm. = Molti team adottano Scrum perch\u00E9 i suoi sprint a durata fissa, ruoli chiari e cerimonie regolari creano un ritmo di sviluppo prevedibile.',
               context: 'scrum',
               difficulty: 'beginner',
             },
             {
               english: 'Sprint',
-              italian: 'Sprint / Ciclo',
+              italian: 'Ciclo (sprint)',
               pronunciation: '/spr\u026Ant/',
               phonetic: 'SPRINT',
               example:
-                'Our sprint length is two weeks. = La durata del nostro sprint \u00E8 di due settimane.',
+                'At the end of each two-week sprint, the team delivers a potentially shippable product increment. = Alla fine di ogni sprint di due settimane, il team consegna un incremento di prodotto potenzialmente rilasciabile.',
               context: 'scrum',
               difficulty: 'beginner',
               note: 'Periodo di tempo fisso in cui il team completa un set di lavori.',
@@ -4168,7 +4196,7 @@ export default {
             },
             {
               english: 'Scrum Master',
-              italian: 'Scrum Master / facilitatore Scrum',
+              italian: 'Facilitatore Scrum (Scrum Master)',
               pronunciation: '/skr\u028Cm \u02C8m\u0251\u02D0st\u0259r/',
               phonetic: 'SCRAM MAS-ter',
               example:
@@ -4183,7 +4211,7 @@ export default {
               pronunciation: '/\u02C8de\u026Ali \u02C8st\u00E6nd\u028Cp/',
               phonetic: 'DEI-li STEND-ap',
               example:
-                'The daily stand-up is a 15-minute sync. = Il daily stand-up \u00E8 una sincronizzazione di 15 minuti.',
+                'During the daily stand-up, each team member shares what they did yesterday, what they plan today, and any blockers. = Durante il daily stand-up, ogni membro del team condivide cosa ha fatto ieri, cosa prevede di fare oggi e qualsiasi blocco.',
               context: 'scrum',
               difficulty: 'beginner',
             },
@@ -4246,11 +4274,11 @@ export default {
           items: [
             {
               english: 'Kanban',
-              italian: 'Kanban (metodologia visiva a flussi)',
+              italian: 'Metodologia visiva a flussi (Kanban)',
               pronunciation: '/\u02C8k\u00E6nb\u00E6n/',
               phonetic: 'KAN-ban',
               example:
-                'Kanban is a visual system for managing work. = Il Kanban \u00E8 un sistema visuale per gestire il lavoro.',
+                'Unlike Scrum, Kanban does not use fixed sprints -- work flows continuously across the board. = A differenza di Scrum, il Kanban non usa sprint fissi -- il lavoro fluisce continuamente sulla lavagna.',
               context: 'kanban',
               difficulty: 'beginner',
               note: 'Dal giapponese: "segnaletica" o "cartellino". Focus sulla visualizzazione del flusso.',
@@ -4282,7 +4310,7 @@ export default {
               pronunciation: '/li\u02D0d ta\u026Am/',
               phonetic: 'LIID taim',
               example:
-                'Lead time measures the total time from request to delivery. = Il lead time misura il tempo totale dalla richiesta alla consegna.',
+                'Reducing lead time from 30 days to 5 means users get features six times faster. = Ridurre il lead time da 30 giorni a 5 significa che gli utenti ricevono le funzionalità sei volte più velocemente.',
               context: 'metrics',
               difficulty: 'advanced',
             },
@@ -4292,7 +4320,7 @@ export default {
               pronunciation: '/\u02C8sa\u026Akl ta\u026Am/',
               phonetic: 'SAI-kel taim',
               example:
-                'Cycle time is the time spent actually working on a task. = Il cycle time \u00E8 il tempo speso a lavorare effettivamente su un compito.',
+                'Tracking cycle time reveals that our tasks spend three days in code review but only one day in development. = Monitorare il cycle time rivela che i nostri task trascorrono tre giorni in code review ma solo un giorno in sviluppo.',
               context: 'metrics',
               difficulty: 'advanced',
             },
@@ -4343,7 +4371,7 @@ export default {
               pronunciation: '/\u02C8b\u0252tlnek/',
               phonetic: 'BO-tel-nek',
               example:
-                'The testing phase is our current bottleneck. = La fase di test \u00E8 il nostro attuale collo di bottiglia.',
+                'Visualising the Kanban board made it obvious that manual QA was the bottleneck slowing every feature. = Visualizzare la lavagna Kanban ha reso evidente che il QA manuale era il collo di bottiglia che rallentava ogni funzionalit\u00E0.',
               context: 'lean',
               difficulty: 'intermediate',
             },
@@ -4360,7 +4388,7 @@ export default {
               pronunciation: '/\u02C8ma\u026Alsto\u028An/',
               phonetic: 'MAIL-stoun',
               example:
-                'The beta release is our next major milestone. = Il rilascio beta \u00E8 la nostra prossima pietra miliare.',
+                'Reaching each milestone on time builds stakeholder confidence and keeps the project funded. = Raggiungere ogni pietra miliare in tempo costruisce la fiducia degli stakeholder e mantiene il progetto finanziato.',
               context: 'management',
               difficulty: 'intermediate',
             },
@@ -4387,7 +4415,7 @@ export default {
             },
             {
               english: 'Planning Poker',
-              italian: 'Planning Poker / stima a carte del team',
+              italian: 'Stima a carte del team (planning poker)',
               pronunciation: '/\u02C8pl\u00E6n\u026A\u014B \u02C8po\u028Ak\u0259r/',
               phonetic: 'PLE-ning POU-ker',
               example:
@@ -4443,7 +4471,7 @@ export default {
                 '/r\u026A\u02C8z\u0254\u02D0rs \u02CC\u00E6l\u0259\u02C8ke\u026A\u0283\u0259n/',
               phonetic: 're-SORS al-lo-KEI-scion',
               example:
-                "Efficient resource allocation is key to PM success. = Un'allocazione efficiente delle risorse \u00E8 la chiave del successo del PM.",
+                'Poor resource allocation left one team idle while another was overloaded with three parallel deadlines. = Una cattiva allocazione delle risorse ha lasciato un team inattivo mentre un altro era sovraccaricato con tre scadenze parallele.',
               context: 'management',
               difficulty: 'intermediate',
             },
@@ -4561,7 +4589,7 @@ export default {
                 '/\u02C8v\u025C\u02D0rt\u026Akl \u02CCske\u026Al\u0259\u02C8b\u026Al\u0259ti/',
               phonetic: 'VER-ti-cal SKEI-la-bi-liti',
               example:
-                'Vertical scaling means adding more RAM to the same server. = La scalabilit\u00E0 verticale significa aggiungere RAM allo stesso server.',
+                "When vertical scaling hits the hardware limit, the only option left is horizontal scaling across multiple machines. = Quando la scalabilit\u00E0 verticale raggiunge il limite hardware, l'unica opzione rimanente \u00E8 la scalabilit\u00E0 orizzontale su pi\u00F9 macchine.",
               context: 'architecture',
               difficulty: 'intermediate',
             },
@@ -4572,7 +4600,7 @@ export default {
                 '/\u02CCh\u0252r\u026A\u02C8z\u0252ntl \u02CCske\u026Al\u0259\u02C8b\u026Al\u0259ti/',
               phonetic: 'o-ri-ZON-tal SKEI-la-bi-liti',
               example:
-                'Horizontal scaling means adding more servers to the cluster. = La scalabilit\u00E0 orizzontale significa aggiungere pi\u00F9 server al cluster.',
+                'Cloud-native apps prefer horizontal scaling because adding more nodes is cheaper than buying a bigger server. = Le app cloud-native preferiscono la scalabilit\u00E0 orizzontale perch\u00E9 aggiungere pi\u00F9 nodi \u00E8 pi\u00F9 economico che comprare un server pi\u00F9 potente.',
               context: 'architecture',
               difficulty: 'intermediate',
             },
@@ -4605,11 +4633,11 @@ export default {
             },
             {
               english: 'Redis',
-              italian: 'Redis / Cache in Memoria',
+              italian: 'Cache in memoria (Redis)',
               pronunciation: '/\u02C8red\u026As/',
               phonetic: 'RE-dis',
               example:
-                'Redis is an in-memory data store used for caching. = Redis \u00E8 un archivio dati in memoria usato per il caching.',
+                'Storing user sessions in Redis reduced our database load by 70 percent. = Salvare le sessioni utente in Redis ha ridotto il carico del nostro database del 70 percento.',
               context: 'tools',
               difficulty: 'intermediate',
             },
@@ -4620,14 +4648,14 @@ export default {
                 '/k\u00E6\u0283 \u026An\u02CCv\u00E6l\u026A\u02C8de\u026A\u0283\u0259n/',
               phonetic: 'CASC in-va-li-DEI-scion',
               example:
-                "Cache invalidation is one of the hardest problems in CS. = L'invalidazione della cache \u00E8 uno dei problemi pi\u00F9 difficili in informatica.",
+                "Getting cache invalidation wrong means users see stale data -- that is why it is considered one of the hardest problems in CS. = Sbagliare l'invalidazione della cache significa che gli utenti vedono dati vecchi -- per questo \u00E8 considerato uno dei problemi pi\u00F9 difficili in informatica.",
               context: 'performance',
               difficulty: 'advanced',
               note: 'Rimuovere dati vecchi o errati dalla cache quando i dati originali cambiano.',
             },
             {
               english: 'Cache Hit',
-              italian: 'Cache Hit / Trovato',
+              italian: 'Trovato in cache (cache hit)',
               pronunciation: '/k\u00E6\u0283 h\u026At/',
               phonetic: 'CASC HIT',
               example:
@@ -4637,7 +4665,7 @@ export default {
             },
             {
               english: 'Cache Miss',
-              italian: 'Cache Miss / Non Trovato',
+              italian: 'Non trovato in cache (cache miss)',
               pronunciation: '/k\u00E6\u0283 m\u026As/',
               phonetic: 'CASC MISS',
               example:
@@ -4662,7 +4690,7 @@ export default {
               pronunciation: '/li\u02D0st \u02C8ri\u02D0sntli ju\u02D0zd/',
               phonetic: 'LIIST RII-sent-li IUUSD',
               example:
-                'LRU is a common cache eviction policy. = LRU \u00E8 una comune politica di espulsione dalla cache.',
+                "When the cache is full, the LRU policy discards the item that has not been accessed for the longest time. = Quando la cache \u00E8 piena, la politica LRU scarta l'elemento che non \u00E8 stato acceduto per il periodo pi\u00F9 lungo.",
               context: 'performance',
               difficulty: 'advanced',
             },
@@ -4682,7 +4710,7 @@ export default {
               pronunciation: '/\u02C8bra\u028Az\u0259r \u02C8k\u00E6\u0283\u026A\u014B/',
               phonetic: 'BRAU-ser CA-scing',
               example:
-                'Browser caching speeds up subsequent visits to the site. = Il caching del browser velocizza le visite successive al sito.',
+                'Setting proper browser caching headers means returning visitors download only the files that actually changed. = Impostare correttamente gli header di caching del browser significa che i visitatori di ritorno scaricano solo i file effettivamente modificati.',
               context: 'frontend',
               difficulty: 'beginner',
             },
@@ -4709,7 +4737,7 @@ export default {
               pronunciation: '/\u02C8ste\u026Atlesn\u0259s/',
               phonetic: 'STEIT-les-nes',
               example:
-                "Statelessness is key to effortless horizontal scaling. = L'assenza di stato \u00E8 la chiave per una scalabilit\u00E0 orizzontale facile.",
+                "Designing for statelessness means any server in the cluster can handle any request, simplifying load balancing. = Progettare per l'assenza di stato significa che qualsiasi server nel cluster pu\u00F2 gestire qualsiasi richiesta, semplificando il bilanciamento del carico.",
               context: 'architecture',
               difficulty: 'advanced',
             },
@@ -4719,7 +4747,7 @@ export default {
               pronunciation: '/\u02CC\u0254\u02D0to\u028A \u02C8ske\u026Al\u026A\u014B/',
               phonetic: 'O-tou SKEI-ling',
               example:
-                "Auto-scaling adds servers automatically during peak traffic. = L'auto-scaling aggiunge server automaticamente durante i picchi di traffico.",
+                "During a flash sale, auto-scaling spun up ten extra servers within minutes and scaled back down when traffic dropped. = Durante una flash sale, l'auto-scaling ha avviato dieci server extra in pochi minuti e li ha ridimensionati quando il traffico è calato.",
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -4819,7 +4847,7 @@ export default {
               pronunciation: '/b\u026A\u0261 o\u028A no\u028A\u02C8te\u026A\u0283\u0259n/',
               phonetic: 'BIG OU nou-TEI-scion',
               example:
-                'Big O notation describes the scalability of an algorithm. = La notazione O-grande descrive la scalabilit\u00E0 di un algoritmo.',
+                'Understanding Big O notation helps you predict whether your algorithm will still be fast with a million records. = Capire la notazione O-grande ti aiuta a prevedere se il tuo algoritmo sar\u00E0 ancora veloce con un milione di record.',
               context: 'computer-science',
               difficulty: 'advanced',
               note: 'Es: O(1) costante, O(n) lineare, O(n^2) quadratica.',
@@ -4830,7 +4858,7 @@ export default {
               pronunciation: '/\u02CCmem\u0259\u026A\u02C8ze\u026A\u0283\u0259n/',
               phonetic: 'me-moi-ZEI-scion',
               example:
-                'Memoization caches the results of expensive function calls. = La memoizzazione salva i risultati di chiamate a funzioni costose.',
+                'Applying memoization to the Fibonacci function reduces its time complexity from exponential to linear. = Applicare la memoizzazione alla funzione di Fibonacci riduce la complessità temporale da esponenziale a lineare.',
               context: 'performance',
               difficulty: 'advanced',
             },
@@ -4872,7 +4900,7 @@ export default {
               pronunciation: '/\u02CCpri\u02D0\u02C8fet\u0283\u026A\u014B/',
               phonetic: 'pri-FECC-ing',
               example:
-                'Prefetching data before the user needs it can improve perceived speed. = Il prefetching pu\u00F2 migliorare la velocit\u00E0 percepita.',
+                "By prefetching the next page while the user reads the current one, navigation feels instantaneous. = Con il prefetching della pagina successiva mentre l'utente legge quella corrente, la navigazione sembra istantanea.",
               context: 'performance',
               difficulty: 'advanced',
             },
@@ -4894,7 +4922,7 @@ export default {
                 '/\u02CCpri\u02D0m\u0259\u02C8tj\u028A\u0259r \u02CC\u0252pt\u026Ama\u026A\u02C8ze\u026A\u0283\u0259n/',
               phonetic: 'pri-ma-TIUR op-ti-mi-ZEI-scion',
               example:
-                "Premature optimization is the root of all evil. = L'ottimizzazione prematura \u00E8 la radice di tutti i mali.",
+                "As Knuth famously said, premature optimization is the root of all evil -- profile first, then optimise the hot paths. = Come Knuth disse notoriamente, l'ottimizzazione prematura \u00E8 la radice di tutti i mali -- prima profila, poi ottimizza i percorsi caldi.",
               context: 'philosophy',
               difficulty: 'intermediate',
               note: 'Citazione di Donald Knuth: non ottimizzare codice che non \u00E8 ancora un problema.',
@@ -4905,7 +4933,7 @@ export default {
               pronunciation: '/\u02C8\u026Andeks\u026A\u014B/',
               phonetic: 'IN-deks-ing',
               example:
-                "Indexing is the most effective way to optimize database queries. = L'indicizzazione \u00E8 il modo pi\u00F9 efficace per ottimizzare le query DB.",
+                'Adding proper indexing to the users table reduced the query time from 3 seconds to 10 milliseconds. = Aggiungere una corretta indicizzazione alla tabella utenti ha ridotto il tempo della query da 3 secondi a 10 millisecondi.',
               context: 'database',
               difficulty: 'intermediate',
             },
@@ -4944,11 +4972,11 @@ export default {
             },
             {
               english: 'Live Coding',
-              italian: 'Live Coding / Codifica dal Vivo',
+              italian: 'Codifica dal vivo (live coding)',
               pronunciation: '/la\u026Av \u02C8ko\u028Ad\u026A\u014B/',
               phonetic: 'LAIV KOU-ding',
               example:
-                'Live coding shows how you write and debug code in real-time. = Il live coding mostra come scrivi e correggi il codice in tempo reale.',
+                "During the live coding session, the interviewer asked me to refactor a recursive function into an iterative one. = Durante la sessione di live coding, l'intervistatore mi ha chiesto di trasformare una funzione ricorsiva in una iterativa.",
               context: 'career',
               difficulty: 'intermediate',
             },
@@ -4980,13 +5008,13 @@ export default {
               pronunciation: '/\u02C8k\u028Clt\u0283\u0259r\u0259l f\u026At/',
               phonetic: 'CAL-ciural FIT',
               example:
-                "Cultural fit determines if you will work well with the existing team. = L'affinit\u00E0 culturale determina se lavorerai bene con il team esistente.",
+                "Companies assess cultural fit to see if a candidate shares the team's values around collaboration, feedback, and ownership. = Le aziende valutano l'affinit\u00E0 culturale per vedere se un candidato condivide i valori del team su collaborazione, feedback e ownership.",
               context: 'career',
               difficulty: 'beginner',
             },
             {
               english: 'Portfolio',
-              italian: 'Portfolio / Raccolta Lavori',
+              italian: 'Raccolta lavori (portfolio)',
               pronunciation: '/p\u0254\u02D0rt\u02C8fo\u028Alio\u028A/',
               phonetic: 'port-FOU-li-ou',
               example:
@@ -5037,7 +5065,7 @@ export default {
               pronunciation: '/per \u02C8pro\u028A\u0261r\u00E6m\u026A\u014B/',
               phonetic: 'PER PRO-gram-ming',
               example:
-                'Pair programming involves two developers working at one workstation. = La prog. in coppia coinvolge due dev su una sola postazione.',
+                "In pair programming, one developer writes code while the other reviews every line and thinks about the overall design. = Nella programmazione in coppia, uno sviluppatore scrive il codice mentre l'altro revisiona ogni riga e pensa al design complessivo.",
               context: 'collaboration',
               difficulty: 'beginner',
               note: "Uno scrive il codice (Driver), l'altro revisiona e pensa alla strategia (Navigator).",
@@ -5048,7 +5076,7 @@ export default {
               pronunciation: '/m\u0252b \u02C8pro\u028A\u0261r\u00E6m\u026A\u014B/',
               phonetic: 'MOB PRO-gram-ming',
               example:
-                'Mob programming is pair programming with the whole team. = Il mob programming \u00E8 una prog. in coppia con tutto il team.',
+                'During mob programming, five developers share one screen and rotate the driver role every fifteen minutes. = Durante il mob programming, cinque sviluppatori condividono uno schermo e si alternano nel ruolo di driver ogni quindici minuti.',
               context: 'collaboration',
               difficulty: 'intermediate',
             },
@@ -5058,7 +5086,7 @@ export default {
               pronunciation: '/p\u026A\u0259r r\u026A\u02C8vju\u02D0/',
               phonetic: 'PIER re-VIU',
               example:
-                'Peer review helps maintain code quality across the team. = La peer review aiuta a mantenere la qualit\u00E0 nel team.',
+                "A thorough peer review catches bugs, shares knowledge, and enforces coding standards before code reaches production. = Un'accurata peer review trova bug, condivide conoscenza e impone standard di codifica prima che il codice arrivi in produzione.",
               context: 'collaboration',
               difficulty: 'beginner',
             },
@@ -5068,17 +5096,17 @@ export default {
               pronunciation: '/\u02C8n\u0252l\u026Ad\u0292 \u02C8\u0283e\u0259r\u026A\u014B/',
               phonetic: 'NO-leg SCER-ing',
               example:
-                'Knowledge sharing prevents silos within the organization. = La condivisione evita la creazione di "silo" (isolamento).',
+                "Weekly knowledge sharing sessions ensure no single developer is the only person who understands a critical system. = Le sessioni settimanali di condivisione della conoscenza assicurano che nessuno sviluppatore sia l'unico a capire un sistema critico.",
               context: 'culture',
               difficulty: 'beginner',
             },
             {
               english: 'Mentoring',
-              italian: 'Mentoring / Affiancamento',
+              italian: 'Affiancamento (mentoring)',
               pronunciation: '/\u02C8ment\u0254\u02D0r\u026A\u014B/',
               phonetic: 'MEN-to-ring',
               example:
-                'Mentoring helps junior developers grow faster. = Il mentoring aiuta i dev junior a crescere pi\u00F9 in fretta.',
+                'Good mentoring pairs a senior engineer with a junior developer for weekly one-on-ones to discuss growth and challenges. = Un buon mentoring abbina un ingegnere senior a uno sviluppatore junior per incontri settimanali per discutere crescita e sfide.',
               context: 'career',
               difficulty: 'intermediate',
             },
@@ -5094,7 +5122,7 @@ export default {
             },
             {
               english: 'Silo (Organizational)',
-              italian: 'Silo / Compartimento Stagno',
+              italian: 'Compartimento stagno (silo)',
               pronunciation: '/\u02C8sa\u026Alo\u028A/',
               phonetic: 'SAI-lou',
               example:
@@ -5109,7 +5137,7 @@ export default {
                 '/\u02C8k\u0252nfl\u026Akt \u02CCrez\u0259\u02C8lu\u02D0\u0283\u0259n/',
               phonetic: 'CON-flikt re-so-LIU-scion',
               example:
-                'Conflict resolution is an important skill for lead developers. = La risoluzione dei conflitti \u00E8 importante per i lead developer.',
+                "Effective conflict resolution turns a heated debate about architecture into a constructive decision the whole team supports. = Un'efficace risoluzione dei conflitti trasforma un acceso dibattito sull'architettura in una decisione costruttiva supportata da tutto il team.",
               context: 'career',
               difficulty: 'advanced',
             },
@@ -5119,7 +5147,7 @@ export default {
               pronunciation: '/\u02C8tekn\u026Akl \u02C8li\u02D0d\u0259r\u0283\u026Ap/',
               phonetic: 'TEK-ni-cal LII-der-scip',
               example:
-                'Technical leadership involves guiding the architectural vision. = La leadership tecnica consiste nel guidare la visione architetturale.',
+                'Strong technical leadership means making sound architectural decisions while empowering the team to own their code. = Una forte leadership tecnica significa prendere decisioni architetturali solide dando al team la responsabilità del proprio codice.',
               context: 'career',
               difficulty: 'advanced',
             },
@@ -5167,7 +5195,7 @@ export default {
               pronunciation: '/\u02C8tekn\u026Akl \u02C8ra\u026At\u026A\u014B/',
               phonetic: 'TEK-ni-cal RAI-ting',
               example:
-                "Technical writing is the art of explaining complex topics clearly. = La scrittura tecnica \u00E8 l'arte di spiegare temi complessi chiaramente.",
+                "Good technical writing explains a complex API in simple language that both developers and product managers can understand. = Una buona scrittura tecnica spiega un'API complessa in un linguaggio semplice che sia sviluppatori che product manager possono capire.",
               context: 'career',
               difficulty: 'intermediate',
             },
@@ -5178,7 +5206,7 @@ export default {
                 '/\u02CCd\u0252kj\u028Amen\u02C8te\u026A\u0283\u0259n \u00E6z ko\u028Ad/',
               phonetic: 'do-kiu-men-TEI-scion az KOUD',
               example:
-                'Documentation-as-Code uses tools like Markdown and Git. = La Doc-as-Code usa strumenti come Markdown e Git.',
+                'Treating documentation-as-code means it lives in the same repo as the source, is reviewed in pull requests, and stays in sync. = Trattare la documentazione come codice significa che vive nella stessa repo del sorgente, viene revisionata nelle pull request e resta sincronizzata.',
               context: 'documentation',
               difficulty: 'intermediate',
             },
@@ -5300,7 +5328,7 @@ export default {
               pronunciation: '/k\u0259n\u02C8t\u026Anju\u0259s \u02C8l\u025C\u02D0rn\u026A\u014B/',
               phonetic: 'con-TI-niuos LER-ning',
               example:
-                "Continuous learning is necessary in the fast-paced tech world. = L'apprendimento continuo \u00E8 necessario nel veloce mondo tech.",
+                "Dedicating one hour each day to continuous learning -- reading docs, watching talks, or contributing to side projects -- compounds over time. = Dedicare un'ora al giorno all'apprendimento continuo -- leggere documentazione, guardare talk o contribuire a side project -- si accumula nel tempo.",
               context: 'career',
               difficulty: 'beginner',
             },
@@ -5316,7 +5344,7 @@ export default {
             },
             {
               english: 'Networking',
-              italian: 'Networking / Relazioni',
+              italian: 'Relazioni professionali (networking)',
               pronunciation: '/\u02C8netw\u025Crk\u026A\u014B/',
               phonetic: 'NET-uer-king',
               example:
@@ -5331,7 +5359,7 @@ export default {
                 '/\u02C8o\u028Ap\u0259n s\u0254\u02D0rs \u02CCk\u0252ntr\u026A\u02C8bju\u02D0\u0283\u0259n/',
               phonetic: 'OUPEN SORS con-tri-BIU-scion',
               example:
-                'Open source contribution is a great way to improve your skills. = Il contributo open source \u00E8 un ottimo modo per migliorare le competenze.',
+                'Making your first open source contribution -- even fixing a typo in the docs -- teaches you how large projects manage collaboration. = Fare il tuo primo contributo open source -- anche correggere un errore nei docs -- ti insegna come i grandi progetti gestiscono la collaborazione.',
               context: 'career',
               difficulty: 'beginner',
             },

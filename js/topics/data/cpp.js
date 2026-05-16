@@ -27,7 +27,8 @@ export default {
               italian: 'Classe',
               pronunciation: '/klɑːs/',
               phonetic: 'KLAAS',
-              example: 'A class defines a new type. = Una classe definisce un nuovo tipo.',
+              example:
+                'Every widget in the GUI is backed by a class that bundles state and behavior. = Ogni widget nella GUI si basa su una classe che unisce stato e comportamento.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'class Dog { /* ... */ };',
@@ -39,7 +40,7 @@ export default {
               pronunciation: '/ˈɒbdʒɪkt/',
               phonetic: 'OB-gekt',
               example:
-                "An object is an instance of a class. = Un oggetto è un'istanza di una classe.",
+                'When you write Dog rex;, you create an object on the stack. = Quando scrivi Dog rex;, crei un oggetto sullo stack.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'Dog rex;',
@@ -50,7 +51,7 @@ export default {
               pronunciation: '/ˈneɪmspeɪs/',
               phonetic: 'NEIM-speis',
               example:
-                'A namespace groups related symbols. = Un namespace raggruppa simboli correlati.',
+                'Wrapping your code in a namespace prevents name collisions with third-party libraries. = Racchiudere il codice in un namespace previene conflitti di nomi con librerie di terze parti.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'namespace app { int x = 1; }',
@@ -62,7 +63,7 @@ export default {
               pronunciation: '/stændərd siː aʊt/',
               phonetic: 'STD-KAUT',
               example:
-                'Use std::cout to print to the screen. = Usa std::cout per stampare a schermo.',
+                'Debugging often starts by printing values with std::cout. = Il debug spesso inizia stampando valori con std::cout.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::cout << "Hello\\n";',
@@ -74,7 +75,7 @@ export default {
               pronunciation: '/stændərd siː ɪn/',
               phonetic: 'STD-SIN',
               example:
-                "Use std::cin to read user input. = Usa std::cin per leggere input dall'utente.",
+                "The program pauses at std::cin until the user types a value and presses Enter. = Il programma si ferma a std::cin finché l'utente digita un valore e preme Invio.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int n; std::cin >> n;',
@@ -85,7 +86,7 @@ export default {
               pronunciation: '/striːm ɪnˈsɜːrʃən/',
               phonetic: 'STRIIM in-SER-scion',
               example:
-                "The << operator performs stream insertion. = L'operatore << esegue l'inserimento nello stream.",
+                'You can chain multiple values in a single stream insertion with <<. = Puoi concatenare più valori in un singolo inserimento nello stream con <<.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::cout << x << "\\n";',
@@ -96,7 +97,7 @@ export default {
               pronunciation: '/striːm ɪkˈstrækʃən/',
               phonetic: 'STRIIM eks-TRAK-scion',
               example:
-                "The >> operator performs stream extraction. = L'operatore >> esegue l'estrazione dallo stream.",
+                "Each >> in a chain performs one stream extraction, parsing the next whitespace-delimited token. = Ogni >> in una catena esegue un'estrazione dallo stream, analizzando il prossimo token delimitato da spazi.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::cin >> x;',
@@ -107,7 +108,7 @@ export default {
               pronunciation: '/ˈhedər/',
               phonetic: 'HED-er',
               example:
-                "Include the iostream header for I/O. = Includi l'header iostream per l'I/O.",
+                'Without the correct header included, the compiler cannot find std::cout or std::vector. = Senza il corretto header incluso, il compilatore non trova std::cout o std::vector.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '#include <iostream>',
@@ -118,7 +119,8 @@ export default {
               italian: 'Funzione principale',
               pronunciation: '/meɪn ˈfʌŋkʃən/',
               phonetic: 'MEIN FANK-scen',
-              example: 'Every C++ program starts at main. = Ogni programma C++ parte da main.',
+              example:
+                'The OS calls the main function when the program launches, and its return value becomes the exit code. = Il sistema operativo chiama la funzione principale al lancio del programma, e il suo valore di ritorno diventa il codice di uscita.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int main() { return 0; }',
@@ -148,7 +150,7 @@ export default {
               pronunciation: '/njuː ˈɒpəreɪtər/',
               phonetic: 'NIU OP-e-rei-tor',
               example:
-                "The new operator allocates memory on the heap. = L'operatore new alloca memoria sull'heap.",
+                "When the size is unknown at compile time, the new operator lets you allocate memory at runtime. = Quando la dimensione non è nota a tempo di compilazione, l'operatore new permette di allocare memoria a runtime.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int* p = new int(5);',
@@ -160,7 +162,7 @@ export default {
               pronunciation: '/dɪˈliːt ˈɒpəreɪtər/',
               phonetic: 'di-LIIT OP-e-rei-tor',
               example:
-                "Use delete to free heap memory. = Usa delete per liberare memoria sull'heap.",
+                "Forgetting the delete operator causes a memory leak that grows every iteration. = Dimenticare l'operatore delete causa un memory leak che cresce ad ogni iterazione.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'delete p;',
@@ -168,21 +170,22 @@ export default {
             },
             {
               english: 'Heap',
-              italian: 'heap / memoria dinamica',
+              italian: 'Memoria dinamica (heap)',
               pronunciation: '/hiːp/',
               phonetic: 'HIIP',
-              example: "Dynamic memory lives on the heap. = La memoria dinamica vive sull'heap.",
+              example:
+                "Objects whose lifetime must outlive the creating function are allocated on the heap. = Gli oggetti la cui vita deve superare la funzione creatrice vengono allocati sull'heap.",
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Detto anche "free store" in C++.',
             },
             {
               english: 'Stack',
-              italian: 'stack / pila di chiamate',
+              italian: 'Pila di chiamate (stack)',
               pronunciation: '/stæk/',
               phonetic: 'STAK',
               example:
-                'Local variables live on the stack. = Le variabili locali vivono sullo stack.',
+                'When a function returns, all its local variables on the stack are automatically destroyed. = Quando una funzione ritorna, tutte le sue variabili locali sullo stack vengono distrutte automaticamente.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int x = 5; // sullo stack',
@@ -193,7 +196,7 @@ export default {
               pronunciation: '/ˈpɔɪntər/',
               phonetic: 'POIN-ter',
               example:
-                'A pointer holds a memory address. = Un puntatore contiene un indirizzo di memoria.',
+                'Passing a large struct by pointer avoids copying all its data. = Passare una struct grande per puntatore evita di copiarne tutti i dati.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int* p = &x;',
@@ -204,7 +207,7 @@ export default {
               pronunciation: '/diːˈrefərəns/',
               phonetic: 'di-REF-er-ens',
               example:
-                "Dereference a pointer with the asterisk. = Dereferenzia un puntatore con l'asterisco.",
+                "To read the value a pointer points to, you must dereference it with the * operator. = Per leggere il valore a cui punta un puntatore, devi dereferenziarlo con l'operatore *.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int v = *p;',
@@ -215,7 +218,7 @@ export default {
               pronunciation: '/əˈdres ɒv/',
               phonetic: 'a-DRES OV',
               example:
-                "The ampersand returns the address of a variable. = L'e-commerciale restituisce l'indirizzo di una variabile.",
+                "With the address-of operator &, you obtain the memory location where a variable is stored. = Con l'operatore address-of &, ottieni la posizione in memoria dove una variabile è memorizzata.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int* p = &x;',
@@ -226,7 +229,7 @@ export default {
               pronunciation: '/nʌl ˈpɔɪntər/',
               phonetic: 'NAL POIN-ter',
               example:
-                'nullptr is the modern null pointer. = nullptr è il puntatore nullo moderno.',
+                'Dereferencing a null pointer causes undefined behavior, so always check before use. = Dereferenziare un puntatore nullo causa comportamento indefinito, quindi controlla sempre prima di usarlo.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int* p = nullptr;',
@@ -237,7 +240,8 @@ export default {
               italian: 'New per array',
               pronunciation: '/əˈreɪ njuː/',
               phonetic: 'a-REI NIU',
-              example: 'Use new[] to allocate arrays. = Usa new[] per allocare array.',
+              example:
+                'When reading N values from a file, array new allocates exactly N slots at runtime. = Quando si leggono N valori da un file, array new alloca esattamente N slot a runtime.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int* arr = new int[10];',
@@ -247,7 +251,8 @@ export default {
               italian: 'Delete per array',
               pronunciation: '/əˈreɪ dɪˈliːt/',
               phonetic: 'a-REI di-LIIT',
-              example: 'Use delete[] to free arrays. = Usa delete[] per liberare array.',
+              example:
+                'Calling array delete with delete[] ensures every element destructor runs before freeing the block. = Chiamare array delete con delete[] assicura che ogni distruttore di elemento venga eseguito prima di liberare il blocco.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'delete[] arr;',
@@ -265,7 +270,8 @@ export default {
               italian: 'Compilatore',
               pronunciation: '/kəmˈpaɪlər/',
               phonetic: 'com-PAI-ler',
-              example: 'g++ is the GNU C++ compiler. = g++ è il compilatore C++ di GNU.',
+              example:
+                'Choosing the right compiler matters: g++ and clang++ support different warning sets. = La scelta del compilatore conta: g++ e clang++ supportano insiemi diversi di warning.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'g++ main.cpp -o main',
@@ -277,7 +283,7 @@ export default {
               pronunciation: '/ˈstændərd ˈvɜːrʒən/',
               phonetic: 'STAN-dard VER-scion',
               example:
-                'Set the C++ standard with -std flag. = Imposta lo standard C++ con il flag -std.',
+                'Locking the standard version to C++20 ensures all developers compile with the same feature set. = Bloccare la versione standard a C++20 assicura che tutti gli sviluppatori compilino con lo stesso set di funzionalità.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'g++ -std=c++20 main.cpp',
@@ -289,7 +295,7 @@ export default {
               pronunciation: '/sɔːrs faɪl/',
               phonetic: 'SORS FAIL',
               example:
-                "C++ source files use the .cpp extension. = I file sorgente C++ usano l'estensione .cpp.",
+                'Each translation unit typically corresponds to one source file compiled independently. = Ogni unità di traduzione corrisponde tipicamente a un file sorgente compilato indipendentemente.',
               context: 'foundations',
               difficulty: 'beginner',
               note: 'Anche .cc, .cxx, .C sono usati.',
@@ -300,7 +306,7 @@ export default {
               pronunciation: '/ˈhedər faɪl/',
               phonetic: 'HED-er FAIL',
               example:
-                'Header files declare classes and functions. = I file header dichiarano classi e funzioni.',
+                'Splitting declarations into header files lets multiple source files share the same interface. = Separare le dichiarazioni in file di intestazione permette a più file sorgente di condividere la stessa interfaccia.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '#include "myclass.h"',
@@ -311,17 +317,18 @@ export default {
               pronunciation: '/ˈɒbdʒɪkt faɪl/',
               phonetic: 'OB-gekt FAIL',
               example:
-                'Each .cpp compiles to an .o object file. = Ogni .cpp compila in un file oggetto .o.',
+                'Compiling each source into a separate object file speeds up rebuilds by recompiling only changed units. = Compilare ogni sorgente in un file oggetto separato velocizza le ricompilazioni ricompilando solo le unità modificate.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'g++ -c main.cpp',
             },
             {
               english: 'Linker',
-              italian: 'linker / collegatore',
+              italian: 'Collegatore (linker)',
               pronunciation: '/ˈlɪŋkər/',
               phonetic: 'LIN-ker',
-              example: 'The linker combines object files. = Il linker combina file oggetto.',
+              example:
+                'After compilation, the linker resolves all cross-file references and produces the final binary. = Dopo la compilazione, il linker risolve tutti i riferimenti tra file e produce il binario finale.',
               context: 'foundations',
               difficulty: 'beginner',
               tool: 'ld, lld, gold',
@@ -332,7 +339,7 @@ export default {
               pronunciation: '/ˈwɔːrnɪŋ flæɡ/',
               phonetic: 'UOR-ning FLAG',
               example:
-                'Always compile with -Wall and -Wextra. = Compila sempre con -Wall e -Wextra.',
+                'Enabling every warning flag during development catches bugs the compiler already knows about. = Abilitare ogni flag di avviso durante lo sviluppo cattura bug che il compilatore già conosce.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'g++ -Wall -Wextra -Wpedantic',
@@ -343,7 +350,8 @@ export default {
               italian: 'Livello di ottimizzazione',
               pronunciation: '/ˌɒptɪmaɪˈzeɪʃən/',
               phonetic: 'op-ti-mai-ZEI-scion',
-              example: 'Use -O2 for release builds. = Usa -O2 per le build di release.',
+              example:
+                'Raising the optimization level from -O0 to -O2 can reduce execution time by an order of magnitude. = Alzare il livello di ottimizzazione da -O0 a -O2 può ridurre il tempo di esecuzione di un ordine di grandezza.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'g++ -O2 main.cpp',
@@ -354,7 +362,8 @@ export default {
               italian: 'Simboli di debug',
               pronunciation: '/dɪˈbʌɡ ˈsɪmbəlz/',
               phonetic: 'di-BAG SIM-bols',
-              example: 'Use -g to include debug symbols. = Usa -g per includere simboli di debug.',
+              example:
+                'Without debug symbols, a crash in GDB shows only memory addresses instead of variable names. = Senza simboli di debug, un crash in GDB mostra solo indirizzi di memoria anziché nomi di variabili.',
               context: 'foundations',
               difficulty: 'beginner',
               command: 'g++ -g main.cpp',
@@ -364,7 +373,8 @@ export default {
               italian: 'Eseguibile',
               pronunciation: '/ɪɡˈzekjətəbl/',
               phonetic: 'eg-ZEK-iu-ta-bol',
-              example: "The executable is the final program. = L'eseguibile è il programma finale.",
+              example:
+                "Once the linker finishes, the resulting executable can run directly on the target OS. = Una volta che il linker termina, l'eseguibile risultante può girare direttamente sul sistema operativo target.",
               context: 'foundations',
               difficulty: 'beginner',
               command: 'g++ -o app main.cpp',
@@ -381,7 +391,8 @@ export default {
               italian: 'Intero',
               pronunciation: '/ˈɪntɪdʒər/',
               phonetic: 'IN-ti-ger',
-              example: 'An int holds a whole number. = Un int contiene un numero intero.',
+              example:
+                'Loop counters are typically declared as an integer since they count discrete steps. = I contatori di ciclo vengono tipicamente dichiarati come intero perché contano passi discreti.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int x = 42;',
@@ -391,7 +402,8 @@ export default {
               italian: 'Virgola mobile',
               pronunciation: '/ˈfloʊtɪŋ pɔɪnt/',
               phonetic: 'FLOU-ting POINT',
-              example: 'Float and double store decimals. = Float e double memorizzano decimali.',
+              example:
+                'Scientific simulations use floating point types because they need to represent fractional values. = Le simulazioni scientifiche usano tipi a virgola mobile perché devono rappresentare valori frazionari.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'double pi = 3.14159;',
@@ -402,7 +414,7 @@ export default {
               pronunciation: '/ˈkærɪktər/',
               phonetic: 'KA-rik-ter',
               example:
-                'A char stores a single character. = Un char memorizza un singolo carattere.',
+                'In C++ a character occupies exactly one byte, making it useful for raw byte buffers too. = In C++ un carattere occupa esattamente un byte, rendendolo utile anche per buffer di byte grezzi.',
               context: 'foundations',
               difficulty: 'beginner',
               code: "char c = 'A';",
@@ -412,7 +424,8 @@ export default {
               italian: 'Booleano',
               pronunciation: '/ˈbuːliən/',
               phonetic: 'BUL-ian',
-              example: 'A bool is true or false. = Un bool è true o false.',
+              example:
+                'Guard conditions rely on a boolean to decide whether a function should proceed. = Le condizioni di guardia si basano su un booleano per decidere se una funzione debba procedere.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'bool ready = true;',
@@ -420,11 +433,11 @@ export default {
             },
             {
               english: 'Void',
-              italian: 'void / tipo vuoto',
+              italian: 'Tipo vuoto (void)',
               pronunciation: '/vɔɪd/',
               phonetic: 'VOID',
               example:
-                'A void function returns nothing. = Una funzione void non restituisce nulla.',
+                'Logging helpers are often marked void because callers do not need a return value. = Le funzioni di logging sono spesso marcate void perché i chiamanti non necessitano di un valore di ritorno.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'void log() { /* ... */ }',
@@ -435,7 +448,7 @@ export default {
               pronunciation: '/ˈɔːtoʊ taɪp/',
               phonetic: 'OO-to TAIP',
               example:
-                "auto deduces the type from initializer. = auto deduce il tipo dall'inizializzatore.",
+                'Using auto type deduction keeps iterator declarations short and readable. = Usare la deduzione con tipo auto mantiene le dichiarazioni degli iteratori brevi e leggibili.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'auto x = 42; // int',
@@ -447,7 +460,7 @@ export default {
               pronunciation: '/kɒnst ˈkwɒlɪfaɪər/',
               phonetic: 'KONST KUO-li-fai-er',
               example:
-                'A const value cannot be modified. = Un valore const non può essere modificato.',
+                'Marking a configuration limit with a const qualifier prevents accidental reassignment later. = Marcare un limite di configurazione con un qualificatore const previene riassegnamenti accidentali in seguito.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'const int MAX = 100;',
@@ -458,7 +471,7 @@ export default {
               pronunciation: '/saɪz taɪp/',
               phonetic: 'SAIZ TAIP',
               example:
-                'size_t represents an unsigned size. = size_t rappresenta una dimensione senza segno.',
+                'Container methods return size type values, so comparing with a signed int triggers a warning. = I metodi dei container restituiscono valori di tipo size_t, quindi il confronto con un int con segno genera un warning.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::size_t n = v.size();',
@@ -469,7 +482,7 @@ export default {
               pronunciation: '/taɪp kɑːst/',
               phonetic: 'TAIP KAAST',
               example:
-                'Use static_cast for safe conversions. = Usa static_cast per conversioni sicure.',
+                'A type cast from double to int truncates the fractional part, so use it deliberately. = Un cast di tipo da double a int tronca la parte frazionaria, quindi usalo deliberatamente.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int x = static_cast<int>(3.14);',
@@ -481,7 +494,7 @@ export default {
               pronunciation: '/ɪˌnɪʃəlaɪˈzeɪʃən/',
               phonetic: 'i-ni-scia-lai-ZEI-scion',
               example:
-                "Use brace initialization for safety. = Usa l'inizializzazione con graffe per sicurezza.",
+                "Brace initialization catches narrowing errors at compile time, making it safer than assignment. = L'inizializzazione con graffe cattura errori di narrowing a tempo di compilazione, rendendola più sicura dell'assegnamento.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int x{5};',
@@ -509,7 +522,7 @@ export default {
               pronunciation: '/ˈrefərəns/',
               phonetic: 'REF-er-ens',
               example:
-                'A reference is an alias to a variable. = Un riferimento è un alias per una variabile.',
+                "Using a reference to the large Config struct lets the printer access all fields without copying the entire object. = Usare un riferimento alla grande struct Config permette al printer di accedere a tutti i campi senza copiare l'intero oggetto.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'int& r = x;',
@@ -544,7 +557,7 @@ export default {
               pronunciation: '/pæs baɪ ˈrefərəns/',
               phonetic: 'PAS BAI REF-er-ens',
               example:
-                'Pass by reference avoids copying. = Il passaggio per riferimento evita la copia.',
+                "The sort function takes the vector by reference so it can reorder elements in place without duplicating the entire container. = La funzione sort prende il vettore per riferimento così può riordinare gli elementi sul posto senza duplicare l'intero container.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'void inc(int& n) { ++n; }',
@@ -555,7 +568,7 @@ export default {
               pronunciation: '/pæs baɪ ˈvæljuː/',
               phonetic: 'PAS BAI VAL-iu',
               example:
-                "Pass by value copies the argument. = Il passaggio per valore copia l'argomento.",
+                'Passing the small Point struct by value is safe and efficient since the copy fits in a register pair. = Passare la piccola struct Point per valore è sicuro ed efficiente poiché la copia sta in una coppia di registri.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'void f(int n);',
@@ -600,7 +613,7 @@ export default {
               pronunciation: '/reɪndʒ fɔːr luːp/',
               phonetic: 'REINGE FOR LUUP',
               example:
-                'A range-based for iterates a container. = Un range-based for itera un container.',
+                'The logger uses a range-based for loop to print every entry in the message queue without managing index variables. = Il logger usa un ciclo range-based for per stampare ogni voce nella coda messaggi senza gestire variabili indice.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'for (auto& x : vec) { /* ... */ }',
@@ -611,7 +624,8 @@ export default {
               italian: 'Auto riferimento',
               pronunciation: '/ˈɔːtoʊ ˈrefərəns/',
               phonetic: 'OO-to REF-er-ens',
-              example: 'auto& binds as a reference. = auto& si lega come riferimento.',
+              example:
+                'Declaring loop variables with auto& avoids copying each element while letting the compiler deduce the exact type. = Dichiarare le variabili del loop con auto& evita di copiare ogni elemento lasciando al compilatore di dedurre il tipo esatto.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'for (auto& item : vec) { /* ... */ }',
@@ -687,7 +701,7 @@ export default {
               pronunciation: '/strɪŋ ˈɒbdʒɪkt/',
               phonetic: 'STRING OB-gekt',
               example:
-                'std::string handles strings safely. = std::string gestisce le stringhe in sicurezza.',
+                "The chat application stores each incoming message in a std::string that automatically manages its own memory as text grows. = L'applicazione di chat memorizza ogni messaggio in arrivo in una std::string che gestisce automaticamente la propria memoria man mano che il testo cresce.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::string s = "hello";',
@@ -698,7 +712,8 @@ export default {
               italian: 'Concatenazione di stringhe',
               pronunciation: '/strɪŋ kənˌkætɪˈneɪʃən/',
               phonetic: 'STRING kon-kat-ti-NEI-scion',
-              example: 'Use + to concatenate strings. = Usa + per concatenare stringhe.',
+              example:
+                "The greeting builder joins the user name and a welcome message with the + operator to concatenate strings. = Il costruttore di saluti unisce il nome utente e un messaggio di benvenuto con l'operatore + per concatenare stringhe.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::string s = a + b;',
@@ -709,7 +724,7 @@ export default {
               pronunciation: '/strɪŋ leŋθ/',
               phonetic: 'STRING LENGT',
               example:
-                'Use .size() or .length() on strings. = Usa .size() o .length() sulle stringhe.',
+                "Before truncating user input, the validator checks the string length with .size() to decide whether trimming is needed. = Prima di troncare l'input utente, il validatore controlla la lunghezza della stringa con .size() per decidere se serve il taglio.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'auto n = s.size();',
@@ -720,7 +735,7 @@ export default {
               pronunciation: '/strɪŋ ˈlɪtərəl/',
               phonetic: 'STRING LI-te-ral',
               example:
-                'A string literal is enclosed in quotes. = Un letterale stringa è racchiuso tra virgolette.',
+                'Passing a string literal like "config.json" to the file-open function implicitly converts it to std::string. = Passare un letterale stringa come "config.json" alla funzione di apertura file lo converte implicitamente in std::string.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'auto s = "hello"s; // C++14',
@@ -749,7 +764,7 @@ export default {
               pronunciation: '/ˈbuːliən ˈlɪtərəl/',
               phonetic: 'BUL-ian LI-te-ral',
               example:
-                'true and false are boolean literals. = true e false sono letterali booleani.',
+                "The initialization flag is set to the boolean literal false at program start and flipped to true after loading completes. = Il flag di inizializzazione viene impostato al letterale booleano false all'avvio del programma e cambiato a true dopo il completamento del caricamento.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'bool ok = true;',
@@ -771,7 +786,7 @@ export default {
               pronunciation: '/ʃɔːrt ˈsɜːrkɪt/',
               phonetic: 'SCIORT SER-kit',
               example:
-                'Logical operators short-circuit. = Gli operatori logici fanno corto circuito.',
+                "Writing ptr && ptr->valid() is safe because the logical AND operator uses short-circuit evaluation, skipping the dereference when ptr is null. = Scrivere ptr && ptr->valid() è sicuro perché l'operatore AND logico usa la valutazione in corto circuito, saltando la dereferenziazione quando ptr è null.",
               context: 'foundations',
               difficulty: 'beginner',
               note: '&& non valuta b se a è false; || non valuta b se a è true.',
@@ -782,14 +797,14 @@ export default {
               pronunciation: '/ɪˈnʌm/',
               phonetic: 'i-NAM',
               example:
-                'An enum defines a set of named values. = Un enum definisce un insieme di valori con nome.',
+                'The network protocol handler uses an enum to map each message type to a named constant like CONNECT or DISCONNECT. = Il gestore del protocollo di rete usa un enum per mappare ogni tipo di messaggio a una costante con nome come CONNECT o DISCONNECT.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'enum Color { RED, GREEN, BLUE };',
             },
             {
               english: 'Enum Class',
-              italian: 'enum class / enum scoped C++',
+              italian: 'Enum scoped C++ (enum class)',
               pronunciation: '/ɪˈnʌm klɑːs/',
               phonetic: 'i-NAM KLAAS',
               example:
@@ -805,7 +820,7 @@ export default {
               pronunciation: '/skoʊpt ɪˈnʌm/',
               phonetic: 'SKOUPT i-NAM',
               example:
-                'Scoped enums avoid name collisions. = Gli enum con scope evitano collisioni di nomi.',
+                'Using a scoped enum for the HTTP status codes prevents the name OK from clashing with a macro defined in a third-party header. = Usare un enum con scope per i codici di stato HTTP impedisce che il nome OK entri in conflitto con una macro definita in un header di terze parti.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'Color c = Color::Red;',
@@ -816,7 +831,7 @@ export default {
               pronunciation: '/ˌʌndərˈlaɪɪŋ taɪp/',
               phonetic: 'an-der-LAI-ing TAIP',
               example:
-                'Specify the underlying type of an enum. = Specifica il tipo sottostante di un enum.',
+                "Setting the underlying type of the StatusCode enum to uint8_t keeps the packet header small when serialized to the wire. = Impostare il tipo sottostante dell'enum StatusCode a uint8_t mantiene l'header del pacchetto piccolo quando serializzato sulla rete.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'enum class Code : uint8_t { A, B };',
@@ -826,7 +841,8 @@ export default {
               italian: 'Istruzione switch',
               pronunciation: '/swɪtʃ ˈsteɪtmənt/',
               phonetic: 'SUICI STEIT-ment',
-              example: 'switch is great for enums. = switch è perfetto per gli enum.',
+              example:
+                "The command dispatcher uses a switch statement on the Action enum to route each user request to the correct handler. = Il dispatcher dei comandi usa un'istruzione switch sull'enum Action per instradare ogni richiesta utente al gestore corretto.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'switch(c) { case Color::Red: ... }',
@@ -837,14 +853,14 @@ export default {
               pronunciation: '/keɪs ˈleɪbl/',
               phonetic: 'KEIS LEI-bol',
               example:
-                "A case label matches a specific value. = Un'etichetta case corrisponde a un valore specifico.",
+                'Each case label inside the parser switch maps a token type like IDENTIFIER or NUMBER to its dedicated parsing routine. = Ogni etichetta case dentro lo switch del parser mappa un tipo di token come IDENTIFIER o NUMBER alla sua routine di parsing dedicata.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'case 1: doSomething(); break;',
             },
             {
               english: 'Constexpr',
-              italian: 'constexpr / espressione costante a tempo di compilazione',
+              italian: 'Espressione costante a tempo di compilazione (constexpr)',
               pronunciation: '/kɒnstˈekspər/',
               phonetic: 'kons-TEK-sper',
               example:
@@ -863,10 +879,11 @@ export default {
           items: [
             {
               english: 'iostream',
-              italian: 'iostream / libreria di I/O standard',
+              italian: 'Libreria di I/O standard (iostream)',
               pronunciation: '/ˈaɪoʊstriːm/',
               phonetic: 'AI-o-striim',
-              example: 'iostream provides cin and cout. = iostream fornisce cin e cout.',
+              example:
+                'Including iostream at the top of your file gives access to console input and output streams. = Includere iostream in cima al file dà accesso agli stream di input e output della console.',
               context: 'foundations',
               difficulty: 'beginner',
               code: '#include <iostream>',
@@ -876,7 +893,8 @@ export default {
               italian: 'Errore standard',
               pronunciation: '/stændərd siː ɛr/',
               phonetic: 'STD-SER',
-              example: "cerr writes to standard error. = cerr scrive sull'errore standard.",
+              example:
+                'The crash handler writes the stack trace to std::cerr because standard error is unbuffered and survives abrupt termination. = Il gestore di crash scrive lo stack trace su std::cerr perché lo standard error non è bufferizzato e sopravvive a terminazioni improvvise.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::cerr << "Error\\n";',
@@ -886,7 +904,8 @@ export default {
               italian: 'Log standard',
               pronunciation: '/stændərd siː lɒɡ/',
               phonetic: 'STD-KLOG',
-              example: "clog is buffered standard error. = clog è l'errore standard bufferizzato.",
+              example:
+                'Diagnostic messages go to std::clog because its buffered output avoids the per-line flush overhead of cerr during heavy logging. = I messaggi diagnostici vanno su std::clog perché il suo output bufferizzato evita il costo del flush per riga di cerr durante il logging intenso.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::clog << "info\\n";',
@@ -896,7 +915,8 @@ export default {
               italian: 'Manipolatore di stream',
               pronunciation: '/striːm məˈnɪpjəleɪtər/',
               phonetic: 'STRIIM ma-NI-piu-lei-tor',
-              example: 'std::setw sets field width. = std::setw imposta la larghezza del campo.',
+              example:
+                'The report formatter aligns columns by applying the stream manipulator std::setw(12) before printing each price. = Il formattatore di report allinea le colonne applicando il manipolatore di stream std::setw(12) prima di stampare ogni prezzo.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::cout << std::setw(5) << x;',
@@ -907,7 +927,8 @@ export default {
               italian: 'Stream di file',
               pronunciation: '/faɪl striːm/',
               phonetic: 'FAIL STRIIM',
-              example: 'std::ifstream reads files. = std::ifstream legge file.',
+              example:
+                'The config loader opens settings.json through a file stream and feeds each line into the parser. = Il caricatore di configurazione apre settings.json attraverso un file stream e passa ogni riga al parser.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::ifstream f("data.txt");',
@@ -917,7 +938,8 @@ export default {
               italian: 'Stream di output su file',
               pronunciation: '/ˈaʊtpʊt faɪl striːm/',
               phonetic: 'AUT-put FAIL STRIIM',
-              example: 'std::ofstream writes files. = std::ofstream scrive file.',
+              example:
+                'At the end of the benchmark, the profiler opens an output file stream to save timing data in CSV format. = Alla fine del benchmark, il profiler apre un output file stream per salvare i dati di timing in formato CSV.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::ofstream out("log.txt");',
@@ -927,7 +949,8 @@ export default {
               italian: 'Lettura riga',
               pronunciation: '/ɡɛtˈlaɪn/',
               phonetic: 'get-LAIN',
-              example: "std::getline reads a whole line. = std::getline legge un'intera riga.",
+              example:
+                "The command-line shell uses std::getline to capture the full user input including spaces, which cin >> alone would split. = La shell a riga di comando usa std::getline per catturare l'intero input utente inclusi gli spazi, che cin >> da solo dividerebbe.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::getline(std::cin, line);',
@@ -939,7 +962,7 @@ export default {
               pronunciation: '/ˈbʌfər flʌʃ/',
               phonetic: 'BAF-fer FLAS',
               example:
-                'std::flush forces buffer to write. = std::flush forza la scrittura del buffer.',
+                "The progress indicator inserts std::flush after each percentage update so the user sees the change immediately instead of waiting for a full buffer. = L'indicatore di progresso inserisce std::flush dopo ogni aggiornamento percentuale così l'utente vede il cambiamento immediatamente invece di attendere un buffer pieno.",
               context: 'foundations',
               difficulty: 'beginner',
               code: 'std::cout << "x" << std::flush;',
@@ -950,7 +973,7 @@ export default {
               pronunciation: '/striːm steɪt/',
               phonetic: 'STRIIM STEIT',
               example:
-                'Check if a stream is in good state. = Controlla se uno stream è in buono stato.',
+                'After opening the database file, the loader checks the stream state with good() before attempting to read records. = Dopo aver aperto il file del database, il loader controlla lo stato dello stream con good() prima di tentare di leggere i record.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'if (in.good()) { /* ... */ }',
@@ -961,7 +984,7 @@ export default {
               pronunciation: '/iː oʊ ɛf/',
               phonetic: 'I-O-EF',
               example:
-                'eof() returns true at end of file. = eof() restituisce true alla fine del file.',
+                'The line reader keeps extracting records until eof() signals that the input file has been fully consumed. = Il lettore di righe continua a estrarre record finché eof() segnala che il file di input è stato completamente consumato.',
               context: 'foundations',
               difficulty: 'beginner',
               code: 'while (!in.eof()) { /* ... */ }',
@@ -989,7 +1012,7 @@ export default {
               pronunciation: '/ˈmembər ˈveəriəbl/',
               phonetic: 'MEM-ber VE-ri-a-bol',
               example:
-                'A member variable holds class state. = Una variabile membro contiene lo stato della classe.',
+                'The Player class stores health and position as member variables so every method can access and modify them. = La classe Player memorizza vita e posizione come variabili membro così ogni metodo può accedervi e modificarle.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'class A { int x; };',
@@ -1013,7 +1036,7 @@ export default {
               pronunciation: '/kənˈstrʌktər/',
               phonetic: 'kon-STRAK-tor',
               example:
-                "A constructor initializes the object. = Un costruttore inizializza l'oggetto.",
+                "The DatabaseConnection constructor opens the socket and authenticates, so the object is fully ready to use as soon as it is created. = Il costruttore di DatabaseConnection apre il socket e autentica, così l'oggetto è completamente pronto all'uso appena creato.",
               context: 'oop',
               difficulty: 'beginner',
               code: 'class A { A() {} };',
@@ -1023,7 +1046,8 @@ export default {
               italian: 'Distruttore',
               pronunciation: '/dɪˈstrʌktər/',
               phonetic: 'di-STRAK-tor',
-              example: 'A destructor cleans up resources. = Un distruttore libera le risorse.',
+              example:
+                "When the FileHandle goes out of scope, its destructor automatically closes the underlying OS handle. = Quando il FileHandle esce dallo scope, il suo distruttore chiude automaticamente l'handle OS sottostante.",
               context: 'oop',
               difficulty: 'beginner',
               code: 'class A { ~A() {} };',
@@ -1034,7 +1058,8 @@ export default {
               italian: 'Puntatore this',
               pronunciation: '/ðɪs ˈpɔɪntər/',
               phonetic: 'DIS POIN-ter',
-              example: "this points to the current object. = this punta all'oggetto corrente.",
+              example:
+                'The fluent builder returns *this from each setter, so the caller can chain calls like b.setWidth(10).setHeight(20). = Il builder fluente restituisce *this da ogni setter, così il chiamante può concatenare chiamate come b.setWidth(10).setHeight(20).',
               context: 'oop',
               difficulty: 'beginner',
               code: 'this->x = 5;',
@@ -1044,7 +1069,8 @@ export default {
               italian: 'Istanza di oggetto',
               pronunciation: '/ˈɒbdʒɪkt ˈɪnstəns/',
               phonetic: 'OB-gekt IN-stans',
-              example: 'Each instance has its own state. = Ogni istanza ha il proprio stato.',
+              example:
+                'Creating two separate Logger instances lets each object instance write to a different file without interference. = Creare due istanze Logger separate permette a ogni istanza di oggetto di scrivere su un file diverso senza interferenze.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'A a1, a2;',
@@ -1063,7 +1089,7 @@ export default {
             },
             {
               english: 'Struct',
-              italian: 'struct / aggregato di campi',
+              italian: 'Aggregato di campi (struct)',
               pronunciation: '/strʌkt/',
               phonetic: 'STRAKT',
               example:
@@ -1152,29 +1178,29 @@ export default {
               pronunciation: '/ɪnˌkæpsjəˈleɪʃən/',
               phonetic: 'in-kap-siu-LEI-scion',
               example:
-                "Encapsulation hides internal state. = L'incapsulamento nasconde lo stato interno.",
+                "A bank-account class uses encapsulation to keep the balance private and expose only deposit and withdraw methods. = Una classe conto-bancario usa l'incapsulamento per mantenere privato il saldo ed esporre solo i metodi deposita e preleva.",
               context: 'oop',
               difficulty: 'beginner',
               note: 'Uno dei pilastri della programmazione orientata agli oggetti.',
             },
             {
               english: 'Getter',
-              italian: 'getter / metodo di lettura',
+              italian: 'Metodo di lettura (getter)',
               pronunciation: '/ˈɡetər/',
               phonetic: 'GHE-ter',
               example:
-                'A getter returns a private member. = Un getter restituisce un membro privato.',
+                'The Sensor class exposes a getter for the temperature field so that client code can read the value without modifying it. = La classe Sensor espone un getter per il campo temperatura così il codice client può leggere il valore senza modificarlo.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'int getX() const { return x; }',
             },
             {
               english: 'Setter',
-              italian: 'setter / metodo di scrittura',
+              italian: 'Metodo di scrittura (setter)',
               pronunciation: '/ˈsetər/',
               phonetic: 'SE-ter',
               example:
-                'A setter modifies a private member. = Un setter modifica un membro privato.',
+                'The Volume class validates the input range inside the setter before storing the new level in the private field. = La classe Volume valida il range di input dentro il setter prima di memorizzare il nuovo livello nel campo privato.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'void setX(int v) { x = v; }',
@@ -1185,7 +1211,7 @@ export default {
               pronunciation: '/frend/',
               phonetic: 'FREND',
               example:
-                'A friend can access private members. = Un friend può accedere a membri privati.',
+                "The operator<< overload is declared as a friend of the Matrix class so it can iterate over the private data array. = L'overload di operator<< è dichiarato come friend della classe Matrix così può iterare sull'array di dati privato.",
               context: 'oop',
               difficulty: 'beginner',
               code: 'friend class Bar;',
@@ -1257,7 +1283,7 @@ export default {
               pronunciation: '/muːv kənˈstrʌktər/',
               phonetic: 'MUUV kon-STRAK-tor',
               example:
-                'The move constructor steals resources. = Il costruttore di spostamento ruba risorse.',
+                'Returning a large vector from a factory function triggers the move constructor, which transfers the internal buffer instead of copying every element. = Restituire un grande vettore da una funzione factory attiva il costruttore di spostamento, che trasferisce il buffer interno invece di copiare ogni elemento.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'A(A&& other) noexcept;',
@@ -1269,7 +1295,7 @@ export default {
               pronunciation: '/muːv əˈsaɪnmənt/',
               phonetic: 'MUUV a-SAIN-ment',
               example:
-                "Move assignment transfers ownership. = L'assegnazione di spostamento trasferisce la proprietà.",
+                "Calling buffer = std::move(temp) invokes move assignment, which transfers ownership of the heap memory without allocating a new block. = Chiamare buffer = std::move(temp) invoca l'assegnazione di spostamento, che trasferisce la proprietà della memoria heap senza allocare un nuovo blocco.",
               context: 'oop',
               difficulty: 'beginner',
               code: 'A& operator=(A&& other) noexcept;',
@@ -1280,7 +1306,7 @@ export default {
               pronunciation: '/ɪkˈsplɪsɪt kənˈstrʌktər/',
               phonetic: 'eks-PLI-sit kon-STRAK-tor',
               example:
-                'explicit prevents implicit conversions. = explicit impedisce conversioni implicite.',
+                'Marking the String(int size) constructor as explicit prevents an int from silently converting to a String in function calls. = Marcare il costruttore String(int size) come explicit impedisce che un int si converta silenziosamente a String nelle chiamate di funzione.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'explicit A(int x);',
@@ -1303,7 +1329,7 @@ export default {
               pronunciation: '/dɪˈfɔːltɪd ˈfʌŋkʃən/',
               phonetic: 'di-FOL-ted FANK-scen',
               example:
-                'Use = default to request the default version. = Usa = default per chiedere la versione predefinita.',
+                'Writing Widget() = default tells the compiler to generate the defaulted function body, which is clearer than an empty brace pair. = Scrivere Widget() = default dice al compilatore di generare il corpo della funzione di default, che è più chiaro di una coppia di parentesi vuote.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'A() = default;',
@@ -1314,7 +1340,7 @@ export default {
               pronunciation: '/dɪˈliːtɪd ˈfʌŋkʃən/',
               phonetic: 'di-LII-ted FANK-scen',
               example:
-                'Use = delete to forbid a function. = Usa = delete per vietare una funzione.',
+                'The unique-handle class marks the copy constructor as a deleted function so that the compiler rejects any attempt to duplicate it. = La classe unique-handle marca il costruttore di copia come funzione eliminata così il compilatore rifiuta qualsiasi tentativo di duplicarla.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'A(const A&) = delete;',
@@ -1354,7 +1380,8 @@ export default {
               italian: 'Funzione statica',
               pronunciation: '/ˈstætɪk ˈfʌŋkʃən/',
               phonetic: 'STA-tik FANK-scen',
-              example: 'A static function does not have this. = Una funzione statica non ha this.',
+              example:
+                'The factory method Logger::create() is declared as a static function because it constructs a new instance rather than operating on an existing one. = Il metodo factory Logger::create() è dichiarato come funzione statica perché costruisce una nuova istanza piuttosto che operare su una esistente.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'static int total();',
@@ -1395,10 +1422,11 @@ export default {
             },
             {
               english: 'Singleton',
-              italian: 'singleton / pattern unica istanza',
+              italian: 'Pattern unica istanza (singleton)',
               pronunciation: '/ˈsɪŋɡltən/',
               phonetic: 'SIN-gol-ton',
-              example: 'A singleton has a single instance. = Un singleton ha una singola istanza.',
+              example:
+                "The application settings are exposed through a singleton so that every module reads and writes the same configuration instance. = Le impostazioni dell'applicazione sono esposte tramite un singleton così ogni modulo legge e scrive la stessa istanza di configurazione.",
               context: 'oop',
               difficulty: 'beginner',
               code: 'static A& instance();',
@@ -1479,7 +1507,7 @@ export default {
               pronunciation: '/dɪˈraɪvd klɑːs/',
               phonetic: 'di-RAIVD KLAAS',
               example:
-                'A derived class extends a base class. = Una classe derivata estende una classe base.',
+                'The Dog derived class adds a bark() method while inheriting all the movement logic defined in Animal. = La classe derivata Dog aggiunge un metodo bark() ereditando tutta la logica di movimento definita in Animal.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'class Dog : public Animal {};',
@@ -1501,7 +1529,8 @@ export default {
               italian: 'Ereditarietà privata',
               pronunciation: '/ˈpraɪvət ɪnˈherɪtəns/',
               phonetic: 'PRAI-vet in-HE-ri-tans',
-              example: "private inheritance models has-a. = L'ereditarietà privata modella has-a.",
+              example:
+                "The Timer class uses private inheritance from Clock to reuse its internal tick logic without exposing Clock's public API to Timer's users. = La classe Timer usa ereditarietà privata da Clock per riusare la sua logica di tick interna senza esporre l'API pubblica di Clock agli utenti di Timer.",
               context: 'oop',
               difficulty: 'beginner',
               code: 'class A : private B {};',
@@ -1512,7 +1541,7 @@ export default {
               pronunciation: '/ɪnˈherɪtəns/',
               phonetic: 'in-HE-ri-tans',
               example:
-                "Inheritance reuses code across classes. = L'ereditarietà riusa codice tra classi.",
+                'The Button and Slider classes share layout logic through inheritance from a common Widget base. = Le classi Button e Slider condividono la logica di layout tramite ereditarietà da una base Widget comune.',
               context: 'oop',
               difficulty: 'beginner',
             },
@@ -1522,7 +1551,7 @@ export default {
               pronunciation: '/ˈsʌbklɑːs/',
               phonetic: 'SAB-klas',
               example:
-                'A subclass inherits from a superclass. = Una sottoclasse eredita da una superclasse.',
+                'The ElectricCar subclass inherits fuel-tracking from Vehicle and overrides the refuel method to handle battery charging instead. = La sottoclasse ElectricCar eredita il tracciamento carburante da Vehicle e sovrascrive il metodo refuel per gestire la ricarica della batteria.',
               context: 'oop',
               difficulty: 'beginner',
             },
@@ -1531,7 +1560,8 @@ export default {
               italian: 'Superclasse',
               pronunciation: '/ˈsuːpərklɑːs/',
               phonetic: 'SU-per-klas',
-              example: 'The superclass is at the top. = La superclasse è in cima.',
+              example:
+                'When debugging the hierarchy, start from the Shape superclass at the top and trace how each child specializes the draw method. = Quando si esegue il debug della gerarchia, parti dalla superclasse Shape in cima e traccia come ogni figlio specializza il metodo draw.',
               context: 'oop',
               difficulty: 'beginner',
             },
@@ -1540,7 +1570,8 @@ export default {
               italian: 'Relazione is-a',
               pronunciation: '/ɪz eɪ rɪˈleɪʃənʃɪp/',
               phonetic: 'IZ-EI ri-LEI-scion-scip',
-              example: 'A dog is-a animal. = Un cane è-un animale.',
+              example:
+                "Saying Dog is-a Animal justifies public inheritance, because every Dog can be used wherever an Animal is expected. = Dire Dog è-un Animal giustifica l'ereditarietà pubblica, perché ogni Dog può essere usato ovunque sia atteso un Animal.",
               context: 'oop',
               difficulty: 'beginner',
               note: "Tipica giustificazione dell'ereditarietà pubblica.",
@@ -1562,7 +1593,7 @@ export default {
               pronunciation: '/ˈslaɪsɪŋ/',
               phonetic: 'SLAI-sing',
               example:
-                'Slicing happens when copying derived to base by value. = Lo slicing avviene copiando derivata in base per valore.',
+                'Passing a Dog to a function expecting Animal by value triggers slicing, losing all Dog-specific data. = Passare un Dog a una funzione che si aspetta Animal per valore causa slicing, perdendo tutti i dati specifici di Dog.',
               context: 'oop',
               difficulty: 'beginner',
               note: 'Per evitarlo, usa puntatori o riferimenti.',
@@ -1580,7 +1611,7 @@ export default {
               pronunciation: '/ˈvɜːrtʃuəl ˈfʌŋkʃən/',
               phonetic: 'VER-ciu-al FANK-scen',
               example:
-                'A virtual function can be overridden. = Una funzione virtuale può essere ridefinita.',
+                'The Shape base class declares draw() as a virtual function so each subclass like Circle and Rectangle provides its own rendering logic. = La classe base Shape dichiara draw() come funzione virtuale così ogni sottoclasse come Circle e Rectangle fornisce la propria logica di rendering.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'virtual void speak();',
@@ -1603,7 +1634,7 @@ export default {
               pronunciation: '/ˈfaɪnl ˈkiːwɜːrd/',
               phonetic: 'FAI-nol KII-uord',
               example:
-                'final prevents further overriding. = final impedisce ulteriori ridefinizioni.',
+                'The optimized FastRenderer marks its draw() method as final so the compiler can devirtualize calls to it. = Il FastRenderer ottimizzato marca il suo metodo draw() come final così il compilatore può devirtualizzare le chiamate ad esso.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'void speak() final;',
@@ -1626,7 +1657,7 @@ export default {
               pronunciation: '/ˌoʊvərˈraɪd/',
               phonetic: 'O-ver-RAID',
               example:
-                'Override changes inherited behavior. = La ridefinizione cambia il comportamento ereditato.',
+                'The Circle class marks its draw() method with override to replace the generic Shape rendering. = La classe Circle marca il suo metodo draw() con override per sostituire il rendering generico di Shape.',
               context: 'oop',
               difficulty: 'beginner',
             },
@@ -1635,7 +1666,8 @@ export default {
               italian: 'Ereditarietà multipla',
               pronunciation: '/ˈmʌltɪpl ɪnˈherɪtəns/',
               phonetic: 'MAL-ti-pol in-HE-ri-tans',
-              example: 'C++ supports multiple inheritance. = C++ supporta ereditarietà multipla.',
+              example:
+                "The AudioWidget class uses multiple inheritance to combine both Widget and AudioSource functionality in a single object. = La classe AudioWidget usa l'ereditarietà multipla per combinare le funzionalità di Widget e AudioSource in un singolo oggetto.",
               context: 'oop',
               difficulty: 'beginner',
               code: 'class C : public A, public B {};',
@@ -1658,7 +1690,7 @@ export default {
               pronunciation: '/ˈvɜːrtʃuəl ɪnˈherɪtəns/',
               phonetic: 'VER-ciu-al in-HE-ri-tans',
               example:
-                'virtual base solves diamond problem. = La base virtuale risolve il problema del diamante.',
+                'Declaring the shared Printable base as virtual ensures only one copy of its members exists in the derived Printable + Serializable combination. = Dichiarare la base condivisa Printable come virtual assicura che esista una sola copia dei suoi membri nella combinazione derivata Printable + Serializable.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'class B : virtual public A {};',
@@ -1669,7 +1701,7 @@ export default {
               pronunciation: '/ˈmeθəd ˈhaɪdɪŋ/',
               phonetic: 'ME-tod HAI-ding',
               example:
-                'Non-virtual functions can be hidden. = Le funzioni non virtuali possono essere nascoste.',
+                'Defining a non-virtual print() in the derived class hides the base-class version, causing confusing behavior when called through a base pointer. = Definire un print() non virtuale nella classe derivata nasconde la versione della classe base, causando comportamento confuso quando chiamato tramite un puntatore base.',
               context: 'oop',
               difficulty: 'beginner',
               note: 'Differenza chiave da override.',
@@ -1709,7 +1741,7 @@ export default {
               pronunciation: '/pjʊər ˈvɜːrtʃuəl/',
               phonetic: 'PIUR VER-ciu-al',
               example:
-                'A pure virtual function has no body. = Una funzione pura virtuale non ha corpo.',
+                'The Serializer base class declares serialize() as a pure virtual function, forcing each format subclass to provide its own encoding logic. = La classe base Serializer dichiara serialize() come funzione pura virtuale, forzando ogni sottoclasse di formato a fornire la propria logica di codifica.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'virtual void f() = 0;',
@@ -1732,7 +1764,7 @@ export default {
               pronunciation: '/ˈkɒŋkriːt klɑːs/',
               phonetic: 'KON-kriit KLAAS',
               example:
-                'A concrete class can be instantiated. = Una classe concreta può essere istanziata.',
+                'After implementing all pure virtual methods, the PngEncoder becomes a concrete class that the image pipeline can instantiate and use. = Dopo aver implementato tutti i metodi puri virtuali, PngEncoder diventa una classe concreta che la pipeline di immagini può istanziare e usare.',
               context: 'oop',
               difficulty: 'beginner',
             },
@@ -1742,7 +1774,7 @@ export default {
               pronunciation: '/ˌɪmplɪmenˈteɪʃən/',
               phonetic: 'im-ple-men-TEI-scion',
               example:
-                "Derived classes provide implementation. = Le classi derivate forniscono l'implementazione.",
+                'Each database driver provides its own implementation of the connect() and query() methods declared in the abstract DbBackend class. = Ogni driver di database fornisce la propria implementazione dei metodi connect() e query() dichiarati nella classe astratta DbBackend.',
               context: 'oop',
               difficulty: 'beginner',
             },
@@ -1773,7 +1805,8 @@ export default {
               italian: 'Interfaccia pura',
               pronunciation: '/pjʊər ˈɪntərfeɪs/',
               phonetic: 'PIUR IN-ter-feis',
-              example: "A pure interface has only methods. = Un'interfaccia pura ha solo metodi.",
+              example:
+                "The ILogger pure interface defines only log() and flush() methods, so any backend from console to cloud can plug in seamlessly. = L'interfaccia pura ILogger definisce solo i metodi log() e flush(), così qualsiasi backend dalla console al cloud può integrarsi senza problemi.",
               context: 'oop',
               difficulty: 'beginner',
             },
@@ -1783,7 +1816,7 @@ export default {
               pronunciation: '/ˈæbstrækt ˈmeθəd/',
               phonetic: 'AB-strakt ME-tod',
               example:
-                'An abstract method must be overridden. = Un metodo astratto deve essere ridefinito.',
+                "The compiler rejects instantiation of Codec until the derived class overrides every abstract method like encode() and decode(). = Il compilatore rifiuta l'istanziazione di Codec finché la classe derivata non sovrascrive ogni metodo astratto come encode() e decode().",
               context: 'oop',
               difficulty: 'beginner',
             },
@@ -1810,7 +1843,7 @@ export default {
               pronunciation: '/ˌkɒmpəˈzɪʃən/',
               phonetic: 'kom-po-ZI-scion',
               example:
-                'Prefer composition over inheritance. = Preferisci composizione a ereditarietà.',
+                "The game Engine holds a PhysicsWorld and a Renderer as member objects, preferring composition over inheritance to keep each subsystem replaceable. = Il motore di gioco tiene PhysicsWorld e Renderer come oggetti membro, preferendo la composizione all'ereditarietà per mantenere ogni sottosistema sostituibile.",
               context: 'oop',
               difficulty: 'beginner',
               note: 'Una linea guida classica del design OO.',
@@ -1821,7 +1854,7 @@ export default {
               pronunciation: '/ˌæɡrɪˈɡeɪʃən/',
               phonetic: 'a-gre-GHEI-scion',
               example:
-                "Aggregation is a weak form of composition. = L'aggregazione è una forma debole di composizione.",
+                "A University holds a list of Professors via aggregation, since each Professor can exist independently. = Un'Università tiene una lista di Professori tramite aggregazione, poiché ogni Professore può esistere indipendentemente.",
               context: 'oop',
               difficulty: 'beginner',
             },
@@ -1830,14 +1863,15 @@ export default {
               italian: 'Relazione has-a',
               pronunciation: '/hæz eɪ rɪˈleɪʃənʃɪp/',
               phonetic: 'HAZ-EI ri-LEI-scion-scip',
-              example: "A car has-a engine. = Un'auto ha-un motore.",
+              example:
+                "Modeling a Car that has-a Engine as a member variable makes it easy to swap different engine implementations without changing the Car API. = Modellare un'Auto che ha-un Motore come variabile membro rende facile scambiare diverse implementazioni del motore senza cambiare l'API dell'Auto.",
               context: 'oop',
               difficulty: 'beginner',
               note: 'Tipica giustificazione della composizione.',
             },
             {
               english: 'Mixin',
-              italian: 'mixin / classe di funzionalità riusabile',
+              italian: 'Classe di funzionalità riusabile (mixin)',
               pronunciation: '/ˈmɪksɪn/',
               phonetic: 'MIK-sin',
               example:
@@ -1862,27 +1896,29 @@ export default {
               pronunciation: '/ˌpɒlɪˈmɔːrfɪk kənˈteɪnər/',
               phonetic: 'po-li-MOR-fik kon-TEI-ner',
               example:
-                'Use pointers in polymorphic containers. = Usa puntatori nei container polimorfici.',
+                'The zoo simulator stores unique_ptr<Animal> in a polymorphic container so it can hold dogs, cats, and birds in one vector. = Il simulatore dello zoo memorizza unique_ptr<Animal> in un container polimorfico così può contenere cani, gatti e uccelli in un unico vettore.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'std::vector<std::unique_ptr<Animal>> zoo;',
             },
             {
               english: 'Up-Cast',
-              italian: 'up-cast / cast verso classe base',
+              italian: 'Cast verso classe base (up-cast)',
               pronunciation: '/ʌp kɑːst/',
               phonetic: 'AP-KAAST',
-              example: "Up-cast goes from derived to base. = L'up-cast va da derivata a base.",
+              example:
+                'Storing a Dog pointer in an Animal pointer is an implicit up-cast that the compiler allows without any special syntax. = Memorizzare un puntatore Dog in un puntatore Animal è un up-cast implicito che il compilatore permette senza alcuna sintassi speciale.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'Animal* a = new Dog();',
             },
             {
               english: 'Down-Cast',
-              italian: 'down-cast / cast verso classe derivata',
+              italian: 'Cast verso classe derivata (down-cast)',
               pronunciation: '/daʊn kɑːst/',
               phonetic: 'DAUN-KAAST',
-              example: 'Down-cast goes from base to derived. = Il down-cast va da base a derivata.',
+              example:
+                'The event handler performs a down-cast with dynamic_cast to access Dog-specific methods when the generic Animal pointer actually holds a Dog. = Il gestore di eventi esegue un down-cast con dynamic_cast per accedere ai metodi specifici di Dog quando il puntatore generico Animal contiene effettivamente un Dog.',
               context: 'oop',
               difficulty: 'beginner',
               code: 'Dog* d = dynamic_cast<Dog*>(a);',
@@ -1894,7 +1930,7 @@ export default {
               pronunciation: '/ˈempti beɪs/',
               phonetic: 'EMP-ti BEIS',
               example:
-                "EBO removes overhead of empty bases. = EBO elimina l'overhead delle basi vuote.",
+                "The allocator-aware container inherits from the empty Allocator type; EBO ensures this adds zero bytes to the object size. = Il container allocator-aware eredita dal tipo vuoto Allocator; EBO assicura che questo aggiunga zero byte alla dimensione dell'oggetto.",
               context: 'oop',
               difficulty: 'beginner',
               note: 'Acronimo: Empty Base Optimization.',
@@ -1931,7 +1967,7 @@ export default {
               pronunciation: '/ˌpɒlɪˈmɔːrfɪzəm/',
               phonetic: 'po-li-MOR-fi-zem',
               example:
-                "Polymorphism lets one interface serve many types. = Il polimorfismo permette a un'interfaccia di servire molti tipi.",
+                "The render engine iterates a vector of Shape pointers and calls draw() on each, relying on polymorphism to pick the correct implementation. = Il motore di rendering itera un vettore di puntatori Shape e chiama draw() su ciascuno, affidandosi al polimorfismo per scegliere l'implementazione corretta.",
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -1971,7 +2007,8 @@ export default {
               italian: 'Puntatore virtuale',
               pronunciation: '/viː ˈpɔɪntər/',
               phonetic: 'VI-POIN-ter',
-              example: 'Each polymorphic object has a vptr. = Ogni oggetto polimorfico ha un vptr.',
+              example:
+                'The debugger reveals that each polymorphic Widget object carries a hidden v-pointer that the runtime follows to dispatch virtual calls. = Il debugger rivela che ogni oggetto Widget polimorfico porta un v-pointer nascosto che il runtime segue per eseguire il dispatch delle chiamate virtuali.',
               context: 'oop',
               difficulty: 'intermediate',
               note: 'Aggiunge una parola di overhead per oggetto.',
@@ -1982,7 +2019,7 @@ export default {
               pronunciation: '/leɪt ˈbaɪndɪŋ/',
               phonetic: 'LEIT BAIN-ding',
               example:
-                'Late binding resolves calls at runtime. = Il binding tardivo risolve le chiamate a runtime.',
+                'When the event loop calls handler->process(), the runtime uses late binding through the vtable to invoke the correct derived-class method. = Quando il loop eventi chiama handler->process(), il runtime usa il binding tardivo attraverso la vtable per invocare il metodo corretto della classe derivata.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2002,18 +2039,18 @@ export default {
               pronunciation: '/rʌn taɪm/',
               phonetic: 'RAN-TAIM',
               example:
-                'RTTI provides type info at runtime. = RTTI fornisce informazioni di tipo a runtime.',
+                "The plugin loader uses RTTI to verify that a dynamically loaded object actually implements the expected interface before calling its methods. = Il caricatore di plugin usa RTTI per verificare che un oggetto caricato dinamicamente implementi effettivamente l'interfaccia attesa prima di chiamarne i metodi.",
               context: 'oop',
               difficulty: 'intermediate',
               note: 'Sigla RTTI. Si attiva con typeid e dynamic_cast.',
             },
             {
               english: 'typeid',
-              italian: 'typeid / operatore di identificazione tipo',
+              italian: 'Operatore di identificazione tipo (typeid)',
               pronunciation: '/taɪp ˈaɪdiː/',
               phonetic: 'TAIP-AI-DI',
               example:
-                'typeid returns runtime type info. = typeid restituisce informazioni di tipo a runtime.',
+                "The logging subsystem calls typeid on the caught exception to print its actual type name. = Il sottosistema di logging chiama typeid sull'eccezione catturata per stamparne il nome di tipo effettivo.",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'auto& info = typeid(*p);',
@@ -2023,7 +2060,8 @@ export default {
               italian: 'Cast dinamico',
               pronunciation: '/daɪˈnæmɪk kɑːst/',
               phonetic: 'dai-NA-mik KAAST',
-              example: 'dynamic_cast checks at runtime. = dynamic_cast verifica a runtime.',
+              example:
+                'Before calling bark(), the handler uses dynamic_cast to safely verify that the Animal pointer really holds a Dog. = Prima di chiamare bark(), il gestore usa dynamic_cast per verificare in modo sicuro che il puntatore Animal contenga realmente un Dog.',
               context: 'oop',
               difficulty: 'intermediate',
               code: 'Dog* d = dynamic_cast<Dog*>(a);',
@@ -2063,7 +2101,7 @@ export default {
               pronunciation: '/ˈvɪzɪtər ˈpætərn/',
               phonetic: 'VI-zi-tor PAT-tern',
               example:
-                'Visitor separates operations from data. = Visitor separa operazioni dai dati.',
+                "The code formatter applies the visitor pattern so new formatting rules can be added without touching the AST node classes. = Il formattatore di codice applica il pattern visitor così nuove regole di formattazione possono essere aggiunte senza toccare le classi nodo dell'AST.",
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2083,7 +2121,7 @@ export default {
               pronunciation: '/taɪp ɪˈreɪʒər/',
               phonetic: 'TAIP i-REI-zer',
               example:
-                'std::function uses type erasure. = std::function usa la cancellazione di tipo.',
+                'The callback registry stores handlers as std::function objects, relying on type erasure to accept lambdas, function pointers, and bound methods alike. = Il registro di callback memorizza i gestori come oggetti std::function, affidandosi alla cancellazione di tipo per accettare lambda, puntatori a funzione e metodi legati allo stesso modo.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2092,7 +2130,8 @@ export default {
               italian: 'Classe sigillata',
               pronunciation: '/siːld klɑːs/',
               phonetic: 'SIILD KLAAS',
-              example: 'Mark a class final to seal it. = Marca una classe final per sigillarla.',
+              example:
+                'The framework marks its internal SecurityPolicy class as final to prevent third-party code from overriding its safety checks. = Il framework marca la sua classe interna SecurityPolicy come final per impedire al codice di terze parti di sovrascrivere i suoi controlli di sicurezza.',
               context: 'oop',
               difficulty: 'intermediate',
               code: 'class Foo final { /* ... */ };',
@@ -2113,7 +2152,7 @@ export default {
               pronunciation: '/diːˌvɜːrtʃuəlaɪˈzeɪʃən/',
               phonetic: 'di-ver-ciu-a-lai-ZEI-scion',
               example:
-                'Compilers can devirtualize known calls. = I compilatori possono devirtualizzare chiamate note.',
+                'When the compiler proves that the pointer always holds a Circle, it applies devirtualization to replace the virtual draw() call with a direct one. = Quando il compilatore dimostra che il puntatore contiene sempre un Circle, applica la devirtualizzazione per sostituire la chiamata virtuale a draw() con una diretta.',
               context: 'oop',
               difficulty: 'intermediate',
               note: 'Riduce overhead se il compilatore conosce il tipo concreto.',
@@ -2134,7 +2173,7 @@ export default {
               pronunciation: '/ˌɪndəˈrekt kɔːl/',
               phonetic: 'in-di-REKT KOOL',
               example:
-                'Virtual calls are indirect calls. = Le chiamate virtuali sono chiamate indirette.',
+                'Each virtual method invocation is an indirect call through the vtable, which the CPU branch predictor finds harder to optimize. = Ogni invocazione di metodo virtuale è una chiamata indiretta attraverso la vtable, che il predittore di branch della CPU trova più difficile da ottimizzare.',
               context: 'oop',
               difficulty: 'intermediate',
               note: 'Possono essere meno predicibili dalla CPU.',
@@ -2173,7 +2212,7 @@ export default {
               pronunciation: '/poʊstkənˈdɪʃən/',
               phonetic: 'post-kon-DI-scion',
               example:
-                'A postcondition holds after the call. = Una postcondizione vale dopo la chiamata.',
+                'The sort function guarantees as a postcondition that the output range is in non-decreasing order when it returns. = La funzione sort garantisce come postcondizione che il range di output sia in ordine non decrescente quando ritorna.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2183,7 +2222,7 @@ export default {
               pronunciation: '/ɪnˈveəriənt/',
               phonetic: 'in-VE-ri-ant',
               example:
-                'Class invariants describe valid states. = Gli invarianti descrivono stati validi.',
+                "The BoundedQueue class maintains the invariant that size never exceeds capacity, checking it in every public method. = La classe BoundedQueue mantiene l'invariante che size non superi mai capacity, verificandolo in ogni metodo pubblico.",
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2203,7 +2242,7 @@ export default {
               pronunciation: '/pjʊər ˈfʌŋkʃən/',
               phonetic: 'PIUR FANK-scen',
               example:
-                'A pure function has no side effects. = Una funzione pura non ha effetti collaterali.',
+                'The distance calculator is written as a pure function that only reads its Point arguments and returns a double, making it trivially thread-safe. = Il calcolatore di distanza è scritto come funzione pura che legge solo i suoi argomenti Point e restituisce un double, rendendolo banalmente thread-safe.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2213,7 +2252,7 @@ export default {
               pronunciation: '/saɪd ɪˈfekt/',
               phonetic: 'SAID i-FEKT',
               example:
-                'A side effect modifies external state. = Un effetto collaterale modifica stato esterno.',
+                'Calling the logger inside the calculation function introduces a side effect that writes to the log file every time the formula runs. = Chiamare il logger dentro la funzione di calcolo introduce un effetto collaterale che scrive sul file di log ogni volta che la formula viene eseguita.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2222,7 +2261,8 @@ export default {
               italian: 'Stabilità API',
               pronunciation: '/eɪ piː aɪ stəˈbɪləti/',
               phonetic: 'EI-PI-AI sta-BI-li-ti',
-              example: 'Stable APIs do not break clients. = Le API stabili non rompono i client.',
+              example:
+                'The library guarantees API stability by never removing public methods in minor releases, so downstream projects can upgrade safely. = La libreria garantisce stabilità API non rimuovendo mai metodi pubblici nelle release minori, così i progetti downstream possono aggiornare in sicurezza.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2260,17 +2300,17 @@ export default {
               pronunciation: '/ˌɪndəˈrekʃən kɒst/',
               phonetic: 'in-di-REK-scion KOST',
               example:
-                'Virtual calls add indirection cost. = Le chiamate virtuali aggiungono costo di indirezione.',
+                "Profiling showed that the tight rendering loop spent 8 percent of its time on the indirection cost of virtual draw() calls. = Il profiling ha mostrato che il loop di rendering stretto spendeva l'8 percento del suo tempo sul costo di indirezione delle chiamate virtuali draw().",
               context: 'oop',
               difficulty: 'intermediate',
             },
             {
               english: 'Cache Miss',
-              italian: 'cache miss / dato assente in cache',
+              italian: 'Dato assente in cache (cache miss)',
               pronunciation: '/kæʃ mɪs/',
               phonetic: 'KAS MIS',
               example:
-                'Vtable lookups can cause cache misses. = I lookup in vtable possono causare cache miss.',
+                "Iterating a vector of polymorphic pointers scattered across the heap triggers a cache miss on almost every vtable lookup. = Iterare un vettore di puntatori polimorfici sparsi nell'heap causa un cache miss su quasi ogni lookup della vtable.",
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2280,13 +2320,13 @@ export default {
               pronunciation: '/brɑːntʃ prɪˈdɪkʃən/',
               phonetic: 'BRANC pri-DIK-scion',
               example:
-                'Indirect calls hurt branch prediction. = Le chiamate indirette danneggiano la predizione del salto.',
+                'Mixing many derived types in one container hurts branch prediction because the CPU cannot guess which virtual implementation will run next. = Mescolare molti tipi derivati in un container danneggia la predizione del salto perché la CPU non riesce a indovinare quale implementazione virtuale verrà eseguita dopo.',
               context: 'oop',
               difficulty: 'intermediate',
             },
             {
               english: 'Inlining',
-              italian: 'inlining / espansione inline',
+              italian: 'Espansione inline (inlining)',
               pronunciation: '/ˌɪnˈlaɪnɪŋ/',
               phonetic: 'in-LAI-ning',
               example:
@@ -2307,11 +2347,11 @@ export default {
             },
             {
               english: 'CRTP',
-              italian: 'CRTP (Curiously Recurring Template Pattern)',
+              italian: 'Pattern template ricorsivo curioso (CRTP)',
               pronunciation: '/siː ɑːr tiː piː/',
               phonetic: 'SI-AR-TI-PI',
               example:
-                'CRTP gives static polymorphism via templates. = CRTP fornisce polimorfismo statico tramite template.',
+                'The counter mixin uses CRTP so each derived class gets its own static instance count without virtual dispatch. = Il mixin contatore usa CRTP così ogni classe derivata ottiene il proprio conteggio statico di istanze senza dispatch virtuale.',
               context: 'oop',
               difficulty: 'intermediate',
               code: 'template<class T> struct Base {};',
@@ -2323,14 +2363,14 @@ export default {
               pronunciation: '/ˈkɒnsept/',
               phonetic: 'KON-sept',
               example:
-                'Concepts enable static polymorphism. = I concept abilitano il polimorfismo statico.',
+                "The numeric library uses C++20 concepts to constrain template parameters, giving concept polymorphism without the overhead of virtual dispatch. = La libreria numerica usa i concepts C++20 per vincolare i parametri template, offrendo polimorfismo con concept senza l'overhead del dispatch virtuale.",
               context: 'oop',
               difficulty: 'intermediate',
               note: 'Disponibile da C++20.',
             },
             {
               english: 'Tag Dispatch',
-              italian: 'tag dispatch / dispatch per tipo-etichetta',
+              italian: 'Dispatch per tipo-etichetta (tag dispatch)',
               pronunciation: '/tæɡ ˈdɪspætʃ/',
               phonetic: 'TAG DIS-paci',
               example:
@@ -2391,7 +2431,8 @@ export default {
               italian: 'Operatore più',
               pronunciation: '/ˈɒpəreɪtər plʌs/',
               phonetic: 'OP-e-rei-tor PLAS',
-              example: 'operator+ adds two values. = operator+ somma due valori.',
+              example:
+                'The Vec3 class defines operator+ so that physics code can write velocity + acceleration naturally. = La classe Vec3 definisce operator+ così il codice di fisica può scrivere velocity + acceleration in modo naturale.',
               context: 'oop',
               difficulty: 'intermediate',
               code: 'Vec operator+(const Vec& o);',
@@ -2401,7 +2442,8 @@ export default {
               italian: 'Operatore meno',
               pronunciation: '/ˈɒpəreɪtər ˈmaɪnəs/',
               phonetic: 'OP-e-rei-tor MAI-nus',
-              example: 'operator- subtracts two values. = operator- sottrae due valori.',
+              example:
+                'Using operator- on two Date objects returns a Duration representing the number of days between them. = Usare operator- su due oggetti Date restituisce un Duration che rappresenta il numero di giorni tra di essi.',
               context: 'oop',
               difficulty: 'intermediate',
               code: 'Vec operator-(const Vec& o);',
@@ -2412,7 +2454,7 @@ export default {
               pronunciation: '/ˈkɒmpaʊnd əˈsaɪnmənt/',
               phonetic: 'KOM-paund a-SAIN-ment',
               example:
-                "operator+= modifies the left operand. = operator+= modifica l'operando sinistro.",
+                "The Matrix class implements compound assignment operator+= to accumulate transformation matrices in the render pipeline. = La classe Matrix implementa l'operatore di assegnazione composta operator+= per accumulare matrici di trasformazione nella pipeline di rendering.",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'Vec& operator+=(const Vec& o);',
@@ -2444,7 +2486,7 @@ export default {
               pronunciation: '/ˈjuːnəri/',
               phonetic: 'IU-na-ri',
               example:
-                'A unary operator takes one operand. = Un operatore unario prende un operando.',
+                'Defining a unary operator- for the Vector class lets the physics engine negate velocity with a simple minus sign. = Definire un operatore unario operator- per la classe Vector permette al motore di fisica di negare la velocità con un semplice segno meno.',
               context: 'oop',
               difficulty: 'intermediate',
               code: 'Vec operator-() const;',
@@ -2455,7 +2497,7 @@ export default {
               pronunciation: '/ˈbaɪnəri/',
               phonetic: 'BAI-na-ri',
               example:
-                'A binary operator takes two operands. = Un operatore binario prende due operandi.',
+                'The cross product is modeled as a binary operator that takes two Vec3 operands and returns a new perpendicular vector. = Il prodotto vettoriale è modellato come operatore binario che prende due operandi Vec3 e restituisce un nuovo vettore perpendicolare.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2464,7 +2506,8 @@ export default {
               italian: 'Operatore di incremento',
               pronunciation: '/ˈɪnkrəmənt/',
               phonetic: 'IN-kre-ment',
-              example: 'operator++ increments a value. = operator++ incrementa un valore.',
+              example:
+                "The custom iterator defines increment operator++ to advance to the next filtered element in the collection. = L'iteratore personalizzato definisce l'operatore di incremento operator++ per avanzare al prossimo elemento filtrato nella collezione.",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'A& operator++();',
@@ -2475,7 +2518,8 @@ export default {
               italian: 'Operatore di decremento',
               pronunciation: '/ˈdiːkrəmənt/',
               phonetic: 'DI-kre-ment',
-              example: 'operator-- decrements a value. = operator-- decrementa un valore.',
+              example:
+                "The reverse iterator implements decrement operator-- to walk backwards through the linked list from tail to head. = L'iteratore inverso implementa l'operatore di decremento operator-- per camminare all'indietro nella lista concatenata dalla coda alla testa.",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'A& operator--();',
@@ -2492,7 +2536,8 @@ export default {
               italian: 'Operatore di uguaglianza',
               pronunciation: '/iːˈkwɒləti/',
               phonetic: 'i-KUO-li-ti',
-              example: 'operator== compares for equality. = operator== confronta per uguaglianza.',
+              example:
+                "The Point class defines equality operator== to compare both x and y coordinates so unit tests can assert exact positions. = La classe Point definisce l'operatore di uguaglianza operator== per confrontare sia la coordinata x che y così i test unitari possono asserire posizioni esatte.",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'bool operator==(const A& o) const;',
@@ -2503,7 +2548,7 @@ export default {
               pronunciation: '/ˌɪnɪˈkwɒləti/',
               phonetic: 'i-ne-KUO-li-ti',
               example:
-                'operator!= is paired with operator==. = operator!= è accoppiato a operator==.',
+                "In C++20 the compiler auto-generates the inequality operator!= from operator==, but in older standards you must write both manually. = In C++20 il compilatore auto-genera l'operatore di disuguaglianza operator!= da operator==, ma negli standard più vecchi devi scriverli entrambi manualmente.",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'bool operator!=(const A& o) const;',
@@ -2513,7 +2558,8 @@ export default {
               italian: 'Minore di',
               pronunciation: '/les ðæn/',
               phonetic: 'LES-DAN',
-              example: 'operator< orders objects. = operator< ordina gli oggetti.',
+              example:
+                'Defining operator< for the Student class lets std::sort rank them by GPA without a separate comparator. = Definire operator< per la classe Student permette a std::sort di ordinarli per GPA senza un comparatore separato.',
               context: 'oop',
               difficulty: 'intermediate',
               code: 'bool operator<(const A& o) const;',
@@ -2524,7 +2570,7 @@ export default {
               pronunciation: '/ˈspeɪsʃɪp/',
               phonetic: 'SPEIS-scip',
               example:
-                'operator<=> generates all comparisons. = operator<=> genera tutti i confronti.',
+                "Defaulting the spaceship operator<=> on the Record class auto-generates all six comparison operators in one line. = Mettere a default l'operatore spaceship operator<=> sulla classe Record auto-genera tutti e sei gli operatori di confronto in una riga.",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'auto operator<=>(const A&) const = default;',
@@ -2546,7 +2592,7 @@ export default {
               pronunciation: '/ˈpɑːrʃəl ˈɔːrdərɪŋ/',
               phonetic: 'PAR-scial OR-de-ring',
               example:
-                'Floating-point uses partial ordering. = I numeri in virgola mobile usano ordinamento parziale.',
+                "Because NaN is not comparable, floating-point arithmetic follows partial ordering rules rather than a strict total order. = Poiché NaN non è confrontabile, l'aritmetica in virgola mobile segue regole di ordinamento parziale piuttosto che un ordine totale stretto.",
               context: 'oop',
               difficulty: 'intermediate',
               note: 'NaN crea valori non confrontabili.',
@@ -2557,7 +2603,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt kəmˈpærɪsən/',
               phonetic: 'di-FOLT kom-PA-ri-son',
               example:
-                'C++20 lets you = default comparison. = C++20 permette = default per i confronti.',
+                'In C++20, writing bool operator==(const Config&) const = default generates a member-wise default comparison automatically. = In C++20, scrivere bool operator==(const Config&) const = default genera automaticamente un confronto di default membro per membro.',
               context: 'oop',
               difficulty: 'intermediate',
               code: 'bool operator==(const A&) const = default;',
@@ -2567,7 +2613,8 @@ export default {
               italian: 'Negazione logica',
               pronunciation: '/ˈlɒdʒɪkl nɒt/',
               phonetic: 'LO-gi-kol NOT',
-              example: 'operator! negates a boolean. = operator! nega un booleano.',
+              example:
+                "The Optional wrapper defines logical not operator! so callers can write if (!result) to detect an empty state. = Il wrapper Optional definisce l'operatore di negazione logica operator! così i chiamanti possono scrivere if (!result) per rilevare uno stato vuoto.",
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2577,7 +2624,7 @@ export default {
               pronunciation: '/ɪmˈplɪsɪt buːl/',
               phonetic: 'im-PLI-sit BUL',
               example:
-                'operator bool enables boolean tests. = operator bool abilita test booleani.',
+                'The Connection class provides an explicit implicit bool conversion so users can write if (conn) to check whether the link is alive. = La classe Connection fornisce una conversione bool esplicita così gli utenti possono scrivere if (conn) per verificare se il collegamento è attivo.',
               context: 'oop',
               difficulty: 'intermediate',
               code: 'explicit operator bool() const;',
@@ -2605,7 +2652,8 @@ export default {
               italian: 'Operatore di stream',
               pronunciation: '/striːm ˈɒpəreɪtər/',
               phonetic: 'STRIIM OP-e-rei-tor',
-              example: 'operator<< prints to a stream. = operator<< stampa su uno stream.',
+              example:
+                "The overloaded stream operator<< for the Color class lets you write std::cout << color and get a human-readable name. = L'operatore di stream operator<< sovraccaricato per la classe Color ti permette di scrivere std::cout << color e ottenere un nome leggibile.",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'std::ostream& operator<<(std::ostream&, const A&);',
@@ -2616,7 +2664,7 @@ export default {
               pronunciation: '/ˈsʌbskrɪpt/',
               phonetic: 'SAB-skript',
               example:
-                'operator[] accesses elements by index. = operator[] accede agli elementi tramite indice.',
+                "The Matrix class defines subscript operator[] to let callers access rows with natural matrix[i][j] syntax. = La classe Matrix definisce l'operatore di indicizzazione operator[] per permettere ai chiamanti di accedere alle righe con la sintassi naturale matrix[i][j].",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'T& operator[](size_t i);',
@@ -2627,7 +2675,7 @@ export default {
               pronunciation: '/ˈfʌŋkʃən kɔːl/',
               phonetic: 'FANK-scen KOOL',
               example:
-                'operator() makes objects callable. = operator() rende gli oggetti chiamabili.',
+                "The Multiplier functor stores a factor and uses function call operator() so it can be passed directly to std::transform. = Il functor Multiplier memorizza un fattore e usa l'operatore di chiamata operator() così può essere passato direttamente a std::transform.",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'int operator()(int x) const;',
@@ -2661,7 +2709,7 @@ export default {
               pronunciation: '/ˈæroʊ/',
               phonetic: 'A-ro',
               example:
-                'operator-> dereferences smart pointers. = operator-> dereferenzia gli smart pointer.',
+                "The smart pointer wrapper overloads the arrow operator-> so callers access the underlying object with the same ptr->method() syntax as raw pointers. = Il wrapper smart pointer sovraccarica l'operatore freccia operator-> così i chiamanti accedono all'oggetto sottostante con la stessa sintassi ptr->method() dei puntatori grezzi.",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'T* operator->();',
@@ -2671,7 +2719,8 @@ export default {
               italian: 'Operatore indirizzo-di',
               pronunciation: '/əˈdres ɒv/',
               phonetic: 'a-DRES OV',
-              example: "operator& takes the address. = operator& prende l'indirizzo.",
+              example:
+                "Overloading address-of operator& is almost never needed, and doing so breaks std::addressof and confuses template libraries. = Sovraccaricare l'operatore indirizzo-di operator& non è quasi mai necessario, e farlo rompe std::addressof e confonde le librerie template.",
               context: 'oop',
               difficulty: 'intermediate',
               note: 'Raramente sovraccaricato in pratica.',
@@ -2691,7 +2740,8 @@ export default {
               italian: 'Sovraccarico di new/delete',
               pronunciation: '/njuː dɪˈliːt/',
               phonetic: 'NIU di-LIIT',
-              example: 'You can overload new and delete. = Puoi sovraccaricare new e delete.',
+              example:
+                'The game engine overloads new and delete at class level to route all Entity allocations through a fast pool allocator. = Il motore di gioco sovraccarica new e delete a livello di classe per instradare tutte le allocazioni di Entity attraverso un pool allocator veloce.',
               context: 'oop',
               difficulty: 'intermediate',
               code: 'void* operator new(size_t);',
@@ -2731,7 +2781,7 @@ export default {
               pronunciation: '/səˈpraɪz/',
               phonetic: 'sa-PRAIZ',
               example:
-                'Operators should not surprise users. = Gli operatori non devono sorprendere gli utenti.',
+                'Following the no surprise principle means operator+ on a Currency class should add amounts, not concatenate strings. = Seguire il principio di non sorpresa significa che operator+ su una classe Currency deve sommare importi, non concatenare stringhe.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2740,7 +2790,8 @@ export default {
               italian: 'Letterale definito da utente',
               pronunciation: '/ˈjuːzər dɪˈfaɪnd ˈlɪtərəl/',
               phonetic: 'IU-zer di-FAIND LI-te-ral',
-              example: 'A UDL extends literal syntax. = Una UDL estende la sintassi dei letterali.',
+              example:
+                'Defining a user-defined literal _km lets the physics module express distances as auto d = 42.5_km, which the compiler converts to kilometers. = Definire un letterale definito da utente _km permette al modulo di fisica di esprimere distanze come auto d = 42.5_km, che il compilatore converte in chilometri.',
               context: 'oop',
               difficulty: 'intermediate',
               code: 'auto t = 10_km;',
@@ -2752,7 +2803,7 @@ export default {
               pronunciation: '/ˈɒpəreɪtər/',
               phonetic: 'OP-e-rei-tor',
               example:
-                'Operator functions look like operatorX. = Le funzioni operatore si chiamano operatorX.',
+                'When you write a + b for your Vec class, the compiler looks up the operator function named operator+ that matches the argument types. = Quando scrivi a + b per la tua classe Vec, il compilatore cerca la funzione operatore chiamata operator+ che corrisponde ai tipi degli argomenti.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2772,14 +2823,14 @@ export default {
               pronunciation: '/self əˈsaɪnmənt/',
               phonetic: 'SELF a-SAIN-ment',
               example:
-                "Handle self-assignment in operator=. = Gestisci l'auto-assegnazione in operator=.",
+                "Writing a = a triggers self-assignment, so the operator= must check this == &other before releasing the old buffer. = Scrivere a = a attiva l'auto-assegnazione, quindi l'operator= deve controllare this == &other prima di rilasciare il vecchio buffer.",
               context: 'oop',
               difficulty: 'intermediate',
               code: 'if (this == &other) return *this;',
             },
             {
               english: 'Copy and Swap',
-              italian: 'copy-and-swap / idioma di assegnazione sicura',
+              italian: 'Idioma di assegnazione sicura (copy-and-swap)',
               pronunciation: '/ˈkɒpi ænd swɒp/',
               phonetic: 'KO-pi END SUOP',
               example:
@@ -2792,7 +2843,8 @@ export default {
               italian: 'Operatore noexcept',
               pronunciation: '/ˌnoʊɪkˈsept/',
               phonetic: 'no-ek-SEPT',
-              example: 'Mark move and swap noexcept. = Marca move e swap come noexcept.',
+              example:
+                'Marking move and swap as noexcept operator guarantees allows std::vector to use moves during reallocation instead of slower copies. = Marcare move e swap come operatore noexcept garantisce che std::vector possa usare i move durante la riallocazione invece di copie più lente.',
               context: 'oop',
               difficulty: 'intermediate',
               note: 'Necessario per usare il move dentro container.',
@@ -2803,7 +2855,7 @@ export default {
               pronunciation: '/kɒnst kəˈrektnəs/',
               phonetic: 'KONST kor-REKT-nes',
               example:
-                'Mark non-modifying operators const. = Marca const gli operatori non modificanti.',
+                "Declaring operator== as const ensures const correctness, allowing comparisons even when you hold a const reference to the object. = Dichiarare operator== come const assicura correttezza const, permettendo confronti anche quando si detiene un riferimento const all'oggetto.",
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2835,10 +2887,11 @@ export default {
           items: [
             {
               english: 'Vector',
-              italian: 'std::vector / array dinamico',
+              italian: 'Array dinamico (std::vector)',
               pronunciation: '/ˈvektər/',
               phonetic: 'VEK-tor',
-              example: 'std::vector is a dynamic array. = std::vector è un array dinamico.',
+              example:
+                'The particle system stores all active particles in a std::vector because its contiguous memory layout is cache-friendly. = Il sistema di particelle memorizza tutte le particelle attive in un std::vector perché il suo layout di memoria contiguo è cache-friendly.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::vector<int> v = {1, 2, 3};',
@@ -2846,18 +2899,18 @@ export default {
             },
             {
               english: 'List',
-              italian: 'std::list / lista doppiamente concatenata',
+              italian: 'Lista doppiamente concatenata (std::list)',
               pronunciation: '/lɪst/',
               phonetic: 'LIST',
               example:
-                'std::list is a doubly-linked list. = std::list è una lista doppiamente collegata.',
+                'The LRU cache uses a std::list so that moving an accessed element to the front takes constant time without invalidating other iterators. = La cache LRU usa una std::list così spostare un elemento acceduto in testa richiede tempo costante senza invalidare altri iteratori.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::list<int> l;',
             },
             {
               english: 'Forward List',
-              italian: 'std::forward_list / lista singolarmente concatenata',
+              italian: 'Lista singolarmente concatenata (std::forward_list)',
               pronunciation: '/ˈfɔːrwərd lɪst/',
               phonetic: 'FOR-uord LIST',
               example:
@@ -2868,11 +2921,11 @@ export default {
             },
             {
               english: 'Deque',
-              italian: 'std::deque / coda doppiamente accessibile',
+              italian: 'Coda doppiamente accessibile (std::deque)',
               pronunciation: '/dek/',
               phonetic: 'DEK',
               example:
-                'std::deque allows fast push_front. = std::deque permette push_front veloce.',
+                "The sliding-window algorithm uses a std::deque because it needs to push new readings at the back and pop expired ones from the front in constant time. = L'algoritmo a finestra scorrevole usa una std::deque perché deve inserire nuove letture in coda e rimuovere quelle scadute dalla testa in tempo costante.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::deque<int> dq;',
@@ -2880,21 +2933,22 @@ export default {
             },
             {
               english: 'Array',
-              italian: 'std::array / array a dimensione fissa',
+              italian: 'Array a dimensione fissa (std::array)',
               pronunciation: '/əˈreɪ/',
               phonetic: 'a-REI',
               example:
-                'std::array wraps a fixed-size array. = std::array incapsula un array a dimensione fissa.',
+                'The RGB color class stores its three channels in a std::array<uint8_t, 3> to get bounds checking and STL algorithm support. = La classe colore RGB memorizza i suoi tre canali in un std::array<uint8_t, 3> per ottenere controllo dei limiti e supporto agli algoritmi STL.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::array<int, 5> a;',
             },
             {
               english: 'Span',
-              italian: 'std::span / vista non-proprietaria su sequenza',
+              italian: 'Vista non-proprietaria su sequenza (std::span)',
               pronunciation: '/spæn/',
               phonetic: 'SPAN',
-              example: 'std::span is a non-owning view. = std::span è una vista non possessiva.',
+              example:
+                'The audio filter accepts a std::span<float> parameter so it works with vectors, arrays, and raw buffers without copying data. = Il filtro audio accetta un parametro std::span<float> così funziona con vettori, array e buffer grezzi senza copiare dati.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::span<int> view = vec;',
@@ -2906,7 +2960,7 @@ export default {
               pronunciation: '/kəˈpæsəti/',
               phonetic: 'ka-PA-si-ti',
               example:
-                'capacity() returns reserved size. = capacity() restituisce la dimensione riservata.',
+                'After calling reserve(1000), checking capacity() confirms the vector has pre-allocated room for at least 1000 elements. = Dopo aver chiamato reserve(1000), controllare capacity() conferma che il vettore ha pre-allocato spazio per almeno 1000 elementi.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'v.capacity();',
@@ -2916,7 +2970,8 @@ export default {
               italian: 'Riserva',
               pronunciation: '/rɪˈzɜːrv/',
               phonetic: 'ri-ZERV',
-              example: 'reserve() pre-allocates memory. = reserve() pre-alloca memoria.',
+              example:
+                'Calling reserve() before the parsing loop avoids repeated reallocations as the vector grows with each new token. = Chiamare reserve() prima del loop di parsing evita riallocazioni ripetute man mano che il vettore cresce con ogni nuovo token.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'v.reserve(1000);',
@@ -2927,7 +2982,8 @@ export default {
               italian: 'Inserimento in coda',
               pronunciation: '/pʊʃ bæk/',
               phonetic: 'PUS-BAK',
-              example: 'push_back appends an element. = push_back aggiunge un elemento in coda.',
+              example:
+                "The event queue calls push_back each time a mouse click is detected, appending the event for later processing. = La coda eventi chiama push_back ogni volta che viene rilevato un click del mouse, aggiungendo l'evento per l'elaborazione successiva.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'v.push_back(42);',
@@ -2937,7 +2993,8 @@ export default {
               italian: 'Costruzione in coda',
               pronunciation: '/ɪmˈpleɪs bæk/',
               phonetic: 'em-PLEIS BAK',
-              example: 'emplace_back constructs in place. = emplace_back costruisce in loco.',
+              example:
+                'Using emplace_back with the x and y coordinates constructs the Point directly inside the vector, avoiding a temporary copy. = Usare emplace_back con le coordinate x e y costruisce il Point direttamente dentro il vettore, evitando una copia temporanea.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'v.emplace_back(1, 2);',
@@ -2952,11 +3009,11 @@ export default {
           items: [
             {
               english: 'Map',
-              italian: 'std::map / mappa ordinata',
+              italian: 'Mappa ordinata (std::map)',
               pronunciation: '/mæp/',
               phonetic: 'MAP',
               example:
-                'std::map is an ordered key-value store. = std::map è un dizionario ordinato.',
+                'The configuration manager stores settings in a std::map so they print in alphabetical key order when dumped to the log. = Il gestore di configurazione memorizza le impostazioni in una std::map così vengono stampate in ordine alfabetico di chiave quando scaricate nel log.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::map<std::string, int> m;',
@@ -2964,29 +3021,29 @@ export default {
             },
             {
               english: 'Set',
-              italian: 'std::set / insieme ordinato',
+              italian: 'Insieme ordinato (std::set)',
               pronunciation: '/set/',
               phonetic: 'SET',
               example:
-                'std::set holds unique sorted values. = std::set contiene valori unici ordinati.',
+                'The spell checker loads its dictionary into a std::set to guarantee uniqueness and enable fast logarithmic lookups. = Il correttore ortografico carica il suo dizionario in un std::set per garantire unicità e abilitare ricerche logaritmiche veloci.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::set<int> s;',
             },
             {
               english: 'Multimap',
-              italian: 'std::multimap / mappa con chiavi duplicate',
+              italian: 'Mappa con chiavi duplicate (std::multimap)',
               pronunciation: '/ˌmʌltiˈmæp/',
               phonetic: 'mal-ti-MAP',
               example:
-                'std::multimap allows duplicate keys. = std::multimap permette chiavi duplicate.',
+                'The event log uses a std::multimap keyed by timestamp so that multiple events occurring at the same millisecond are all preserved. = Il log eventi usa una std::multimap con chiave timestamp così più eventi che si verificano nello stesso millisecondo vengono tutti preservati.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::multimap<int, std::string> mm;',
             },
             {
               english: 'Multiset',
-              italian: 'std::multiset / insieme con duplicati',
+              italian: 'Insieme con duplicati (std::multiset)',
               pronunciation: '/ˌmʌltiˈset/',
               phonetic: 'mal-ti-SET',
               example:
@@ -2997,7 +3054,7 @@ export default {
             },
             {
               english: 'Unordered Map',
-              italian: 'std::unordered_map / mappa hash',
+              italian: 'Mappa hash (std::unordered_map)',
               pronunciation: '/ˌʌnˈɔːrdərd mæp/',
               phonetic: 'an-OR-derd MAP',
               example:
@@ -3009,11 +3066,11 @@ export default {
             },
             {
               english: 'Unordered Set',
-              italian: 'std::unordered_set / insieme hash',
+              italian: 'Insieme hash (std::unordered_set)',
               pronunciation: '/ˌʌnˈɔːrdərd set/',
               phonetic: 'an-OR-derd SET',
               example:
-                'std::unordered_set is a hash-based set. = std::unordered_set è un set basato su hash.',
+                'The visited-nodes tracker uses an std::unordered_set to check in constant time whether the BFS has already explored a given state. = Il tracciatore di nodi visitati usa un std::unordered_set per verificare in tempo costante se il BFS ha già esplorato un dato stato.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::unordered_set<int> us;',
@@ -3024,14 +3081,14 @@ export default {
               pronunciation: '/hæʃ ˈfʌŋkʃən/',
               phonetic: 'HAS FANK-scen',
               example:
-                'A hash function maps keys to buckets. = Una funzione hash mappa chiavi in bucket.',
+                'The custom Point type specializes std::hash with a hash function that combines x and y so it can be used as an unordered_map key. = Il tipo custom Point specializza std::hash con una funzione hash che combina x e y così può essere usato come chiave di unordered_map.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::hash<std::string>{}(s);',
             },
             {
               english: 'Bucket',
-              italian: 'bucket / secchio della tabella hash',
+              italian: 'Secchio della tabella hash (bucket)',
               pronunciation: '/ˈbʌkɪt/',
               phonetic: 'BAK-it',
               example:
@@ -3045,7 +3102,7 @@ export default {
               pronunciation: '/ɪnˈsɜːrt/',
               phonetic: 'in-SERT',
               example:
-                'insert returns iterator and bool. = insert restituisce un iteratore e un booleano.',
+                "After calling insert on the map, the returned pair tells you both where the element lives and whether it was actually added. = Dopo aver chiamato insert sulla mappa, la coppia restituita ti dice sia dove si trova l'elemento sia se è stato effettivamente aggiunto.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto [it, ok] = m.insert({k, v});',
@@ -3055,7 +3112,8 @@ export default {
               italian: 'Ricerca',
               pronunciation: '/faɪnd/',
               phonetic: 'FAIND',
-              example: 'find returns iterator or end(). = find restituisce un iteratore o end().',
+              example:
+                'The cache checks whether a key exists by calling find on the map and comparing the result to end() before accessing the value. = La cache verifica se una chiave esiste chiamando find sulla mappa e confrontando il risultato con end() prima di accedere al valore.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = m.find(key);',
@@ -3072,7 +3130,8 @@ export default {
               italian: 'Adattatore stack',
               pronunciation: '/stæk əˈdæptər/',
               phonetic: 'STAK a-DAP-tor',
-              example: 'std::stack is a LIFO container. = std::stack è un container LIFO.',
+              example:
+                "The undo history is modeled as a stack adapter so the most recent action is always on top and gets popped first. = La cronologia di undo è modellata come adattatore stack così l'azione più recente è sempre in cima e viene rimossa per prima.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::stack<int> st;',
@@ -3082,7 +3141,8 @@ export default {
               italian: 'Adattatore queue',
               pronunciation: '/kjuː/',
               phonetic: 'KIU',
-              example: 'std::queue is a FIFO container. = std::queue è un container FIFO.',
+              example:
+                "The print spooler pushes new jobs to the back of a queue adapter and processes them in the order they arrived. = Lo spooler di stampa inserisce nuovi lavori in fondo a un adattatore queue e li elabora nell'ordine in cui sono arrivati.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::queue<int> q;',
@@ -3101,20 +3161,22 @@ export default {
             },
             {
               english: 'Top',
-              italian: 'top / elemento in cima',
+              italian: 'Elemento in cima (top)',
               pronunciation: '/tɒp/',
               phonetic: 'TOP',
-              example: "top() returns the top element. = top() restituisce l'elemento in cima.",
+              example:
+                "Before popping the undo stack, the editor calls top() to display a preview of the action about to be reverted. = Prima di fare pop dallo stack di undo, l'editor chiama top() per mostrare un'anteprima dell'azione che sta per essere annullata.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto v = st.top();',
             },
             {
               english: 'Pop',
-              italian: 'pop / rimozione elemento in cima',
+              italian: 'Rimozione elemento in cima (pop)',
               pronunciation: '/pɒp/',
               phonetic: 'POP',
-              example: "pop() removes the top element. = pop() rimuove l'elemento in cima.",
+              example:
+                'After reading and processing the top task, the scheduler calls pop() to remove it from the priority queue. = Dopo aver letto ed elaborato il task in cima, lo scheduler chiama pop() per rimuoverlo dalla coda con priorità.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'st.pop();',
@@ -3136,7 +3198,8 @@ export default {
               italian: 'Fine',
               pronunciation: '/bæk/',
               phonetic: 'BAK',
-              example: "back() returns the last element. = back() restituisce l'ultimo elemento.",
+              example:
+                'The logger calls back() on the message buffer to retrieve the most recently enqueued entry for real-time display. = Il logger chiama back() sul buffer dei messaggi per recuperare la voce più recente accodata per la visualizzazione in tempo reale.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto v = q.back();',
@@ -3146,7 +3209,8 @@ export default {
               italian: 'Container sottostante',
               pronunciation: '/ˌʌndərˈlaɪɪŋ/',
               phonetic: 'an-der-LAI-ing',
-              example: 'Stack uses deque by default. = Stack usa deque di default.',
+              example:
+                'You can switch the underlying container of std::stack from the default deque to a vector by specifying it as a template argument. = Puoi cambiare il container sottostante di std::stack dalla deque predefinita a un vector specificandolo come argomento template.',
               context: 'stl',
               difficulty: 'intermediate',
             },
@@ -3194,7 +3258,8 @@ export default {
               italian: 'Inizio',
               pronunciation: '/bɪˈɡɪn/',
               phonetic: 'bi-GHIN',
-              example: 'begin() returns first iterator. = begin() restituisce il primo iteratore.',
+              example:
+                'The range-based for loop internally calls begin() and end() on the container to obtain the iterator pair that bounds the traversal. = Il ciclo range-based for chiama internamente begin() e end() sul container per ottenere la coppia di iteratori che delimita la traversata.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = v.begin();',
@@ -3227,7 +3292,8 @@ export default {
               italian: 'Iteratore inverso',
               pronunciation: '/rɪˈvɜːrs/',
               phonetic: 'ri-VERS',
-              example: 'rbegin() iterates in reverse. = rbegin() itera in senso inverso.',
+              example:
+                'The undo system walks the action log from newest to oldest using a reverse iterator obtained from rbegin(). = Il sistema di undo percorre il log delle azioni dal più recente al più vecchio usando un iteratore inverso ottenuto da rbegin().',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'for (auto it = v.rbegin(); it != v.rend(); ++it);',
@@ -3305,7 +3371,8 @@ export default {
               italian: 'Ordinamento',
               pronunciation: '/sɔːrt/',
               phonetic: 'SORT',
-              example: 'std::sort sorts a range. = std::sort ordina un intervallo.',
+              example:
+                'After loading sensor readings into a vector, the analysis pipeline calls std::sort to rank them by timestamp. = Dopo aver caricato le letture dei sensori in un vettore, la pipeline di analisi chiama std::sort per ordinarle per timestamp.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::sort(v.begin(), v.end());',
@@ -3327,7 +3394,8 @@ export default {
               italian: 'Trova',
               pronunciation: '/faɪnd/',
               phonetic: 'FAIND',
-              example: 'std::find searches for a value. = std::find cerca un valore.',
+              example:
+                'The command parser uses std::find to locate the first occurrence of the delimiter character in the input buffer. = Il parser dei comandi usa std::find per localizzare la prima occorrenza del carattere delimitatore nel buffer di input.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::find(v.begin(), v.end(), x);',
@@ -3337,7 +3405,8 @@ export default {
               italian: 'Trova se',
               pronunciation: '/faɪnd ɪf/',
               phonetic: 'FAIND-IF',
-              example: 'find_if takes a predicate. = find_if prende un predicato.',
+              example:
+                'The task scheduler calls find_if with a lambda that matches the first pending job whose priority exceeds the threshold. = Lo scheduler dei task chiama find_if con una lambda che individua il primo lavoro in attesa la cui priorità supera la soglia.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::find_if(v.begin(), v.end(), pred);',
@@ -3347,7 +3416,8 @@ export default {
               italian: 'Ricerca binaria',
               pronunciation: '/ˈbaɪnəri sɜːrtʃ/',
               phonetic: 'BAI-na-ri SERC',
-              example: 'binary_search needs sorted data. = binary_search richiede dati ordinati.',
+              example:
+                'Once the word list is sorted, the spell checker calls binary_search to verify each input word in O(log n) time. = Una volta che la lista di parole è ordinata, il correttore ortografico chiama binary_search per verificare ogni parola in input in tempo O(log n).',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'bool found = std::binary_search(v.begin(), v.end(), x);',
@@ -3379,7 +3449,8 @@ export default {
               italian: 'Elemento minimo',
               pronunciation: '/mɪn ˈelɪmənt/',
               phonetic: 'MIN E-le-ment',
-              example: 'min_element finds the smallest. = min_element trova il più piccolo.',
+              example:
+                'The weather dashboard calls min_element on the hourly temperatures vector to highlight the coldest reading of the day. = La dashboard meteo chiama min_element sul vettore delle temperature orarie per evidenziare la lettura più fredda della giornata.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::min_element(v.begin(), v.end());',
@@ -3389,7 +3460,8 @@ export default {
               italian: 'Elemento massimo',
               pronunciation: '/mæks ˈelɪmənt/',
               phonetic: 'MAKS E-le-ment',
-              example: 'max_element finds the largest. = max_element trova il più grande.',
+              example:
+                'The benchmark suite calls max_element on the timing results to report the worst-case latency across all iterations. = La suite di benchmark chiama max_element sui risultati di timing per riportare la latenza nel caso peggiore tra tutte le iterazioni.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::max_element(v.begin(), v.end());',
@@ -3399,7 +3471,8 @@ export default {
               italian: 'Comparatore',
               pronunciation: '/kəmˈpærətər/',
               phonetic: 'kom-PA-re-tor',
-              example: "A comparator defines ordering. = Un comparatore definisce l'ordinamento.",
+              example:
+                'Passing std::greater<>{} as a comparator to std::sort arranges the scores in descending order for the leaderboard display. = Passare std::greater<>{} come comparatore a std::sort dispone i punteggi in ordine decrescente per la visualizzazione della classifica.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::sort(v.begin(), v.end(), std::greater<>{});',
@@ -3417,7 +3490,7 @@ export default {
               pronunciation: '/trænsˈfɔːrm/',
               phonetic: 'trans-FORM',
               example:
-                'std::transform applies a function to each. = std::transform applica una funzione a ciascuno.',
+                'The image processor uses std::transform to apply a brightness adjustment function to every pixel in the buffer. = Il processore di immagini usa std::transform per applicare una funzione di regolazione della luminosità a ogni pixel nel buffer.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::transform(a.begin(), a.end(), b.begin(), f);',
@@ -3427,7 +3500,8 @@ export default {
               italian: 'Copia',
               pronunciation: '/ˈkɒpi/',
               phonetic: 'KO-pi',
-              example: 'std::copy copies a range. = std::copy copia un intervallo.',
+              example:
+                'The backup routine uses std::copy to duplicate the active configuration buffer into a snapshot vector before applying changes. = La routine di backup usa std::copy per duplicare il buffer di configurazione attivo in un vettore snapshot prima di applicare le modifiche.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::copy(a.begin(), a.end(), b.begin());',
@@ -3438,7 +3512,7 @@ export default {
               pronunciation: '/muːv/',
               phonetic: 'MUUV',
               example:
-                "std::move algorithm moves elements. = L'algoritmo std::move sposta elementi.",
+                "When migrating objects between containers, the resource manager calls the std::move algorithm to transfer ownership without deep copies. = Quando si migrano oggetti tra contenitori, il gestore risorse chiama l'algoritmo std::move per trasferire la proprietà senza copie profonde.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::move(a.begin(), a.end(), b.begin());',
@@ -3448,7 +3522,8 @@ export default {
               italian: 'Riempimento',
               pronunciation: '/fɪl/',
               phonetic: 'FIL',
-              example: 'std::fill fills with a value. = std::fill riempie con un valore.',
+              example:
+                'Before reusing the pixel buffer, the renderer calls std::fill to set every element to the default background color value. = Prima di riutilizzare il buffer pixel, il renderer chiama std::fill per impostare ogni elemento al valore del colore di sfondo predefinito.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::fill(v.begin(), v.end(), 0);',
@@ -3459,7 +3534,7 @@ export default {
               pronunciation: '/ˈdʒenəreɪt/',
               phonetic: 'GE-ne-reit',
               example:
-                'std::generate calls a function for each slot. = std::generate chiama una funzione per ogni slot.',
+                'The test harness populates the data vector by calling std::generate with a random number engine to produce realistic input samples. = Il test harness popola il vettore dati chiamando std::generate con un motore di numeri casuali per produrre campioni di input realistici.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::generate(v.begin(), v.end(), rng);',
@@ -3470,7 +3545,7 @@ export default {
               pronunciation: '/rɪˈpleɪs/',
               phonetic: 'ri-PLEIS',
               example:
-                'std::replace swaps values in range. = std::replace sostituisce valori in un intervallo.',
+                'After detecting corrupted sensor readings, the calibration module calls std::replace to swap every sentinel value with the corrected default. = Dopo aver rilevato letture del sensore corrotte, il modulo di calibrazione chiama std::replace per sostituire ogni valore sentinella con il valore corretto predefinito.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::replace(v.begin(), v.end(), 0, 1);',
@@ -3481,7 +3556,7 @@ export default {
               pronunciation: '/rɪˈmuːv/',
               phonetic: 'ri-MUUV',
               example:
-                'std::remove logically removes elements. = std::remove rimuove logicamente elementi.',
+                "The event filter uses std::remove to logically discard expired entries from the queue before erasing the trailing range. = Il filtro eventi usa std::remove per scartare logicamente le voci scadute dalla coda prima di cancellare l'intervallo finale.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::remove(v.begin(), v.end(), 0);',
@@ -3493,7 +3568,7 @@ export default {
               pronunciation: '/ɪˈreɪs rɪˈmuːv/',
               phonetic: 'i-REIS ri-MUUV',
               example:
-                "The erase-remove idiom truly deletes elements. = L'idioma erase-remove cancella davvero gli elementi.",
+                "To clean up disconnected sessions, the server applies the erase-remove idiom to permanently shrink the client list in a single pass. = Per ripulire le sessioni disconnesse, il server applica l'idioma erase-remove per ridurre permanentemente la lista client in un singolo passaggio.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'v.erase(std::remove(v.begin(), v.end(), 0), v.end());',
@@ -3505,7 +3580,7 @@ export default {
               pronunciation: '/juːˈniːk/',
               phonetic: 'iu-NIIK',
               example:
-                'std::unique removes consecutive duplicates. = std::unique rimuove duplicati consecutivi.',
+                'After sorting the log timestamps, the deduplication step calls std::unique to collapse consecutive duplicate entries into a single representative. = Dopo aver ordinato i timestamp dei log, il passaggio di deduplicazione chiama std::unique per comprimere le voci duplicate consecutive in un singolo rappresentante.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::unique(v.begin(), v.end());',
@@ -3515,7 +3590,8 @@ export default {
               italian: 'Inverti',
               pronunciation: '/rɪˈvɜːrs/',
               phonetic: 'ri-VERS',
-              example: 'std::reverse reverses a range. = std::reverse inverte un intervallo.',
+              example:
+                "The string utility calls std::reverse on the character vector to flip a palindrome candidate before comparing it to the original. = L'utility per stringhe chiama std::reverse sul vettore di caratteri per invertire un candidato palindromo prima di confrontarlo con l'originale.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::reverse(v.begin(), v.end());',
@@ -3532,7 +3608,8 @@ export default {
               italian: 'Somma',
               pronunciation: '/əˈkjuːmjəleɪt/',
               phonetic: 'a-KIU-miu-leit',
-              example: 'std::accumulate sums a range. = std::accumulate somma un intervallo.',
+              example:
+                'The invoice module calls std::accumulate to compute the grand total by summing every line-item price in the order vector. = Il modulo fatture chiama std::accumulate per calcolare il totale sommando ogni prezzo delle voci nel vettore ordini.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto sum = std::accumulate(v.begin(), v.end(), 0);',
@@ -3543,7 +3620,8 @@ export default {
               italian: 'Riduzione',
               pronunciation: '/rɪˈdjuːs/',
               phonetic: 'ri-DIUS',
-              example: 'std::reduce can be parallelized. = std::reduce può essere parallelizzato.',
+              example:
+                'The analytics engine uses std::reduce with a parallel execution policy to aggregate millions of telemetry samples across CPU cores. = Il motore di analisi usa std::reduce con una policy di esecuzione parallela per aggregare milioni di campioni di telemetria tra i core della CPU.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto sum = std::reduce(v.begin(), v.end());',
@@ -3555,7 +3633,7 @@ export default {
               pronunciation: '/ˈɪnər ˈprɒdʌkt/',
               phonetic: 'IN-er PROD-akt',
               example:
-                'inner_product computes dot product. = inner_product calcola il prodotto scalare.',
+                'The physics engine calls inner_product on the force and displacement vectors to compute the work done on each rigid body per frame. = Il motore fisico chiama inner_product sui vettori forza e spostamento per calcolare il lavoro svolto su ogni corpo rigido per frame.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto dp = std::inner_product(a.begin(), a.end(), b.begin(), 0);',
@@ -3565,7 +3643,8 @@ export default {
               italian: 'Somma parziale',
               pronunciation: '/ˈpɑːrʃəl sʌm/',
               phonetic: 'PAR-scial SAM',
-              example: 'partial_sum builds prefix sums. = partial_sum costruisce somme prefisse.',
+              example:
+                "The range-query optimizer precomputes a prefix array by calling partial_sum so that any sub-range total can be answered in constant time. = L'ottimizzatore di query a intervallo precalcola un array di prefissi chiamando partial_sum così che qualsiasi totale di sotto-intervallo possa essere risposto in tempo costante.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::partial_sum(a.begin(), a.end(), b.begin());',
@@ -3576,18 +3655,18 @@ export default {
               pronunciation: '/əˈdʒeɪsənt/',
               phonetic: 'a-GEI-sent',
               example:
-                'adjacent_difference computes deltas. = adjacent_difference calcola le differenze.',
+                "The signal processing pipeline applies adjacent_difference to the sampled waveform to obtain the rate of change between consecutive readings. = La pipeline di elaborazione del segnale applica adjacent_difference alla forma d'onda campionata per ottenere la velocità di variazione tra letture consecutive.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::adjacent_difference(a.begin(), a.end(), b.begin());',
             },
             {
               english: 'Iota',
-              italian: 'std::iota / riempimento incrementale',
+              italian: 'Riempimento incrementale (std::iota)',
               pronunciation: '/aɪˈoʊtə/',
               phonetic: 'AI-O-ta',
               example:
-                'std::iota fills with sequential values. = std::iota riempie con valori sequenziali.',
+                "Before shuffling the deck, the card game initializes the index array by calling std::iota to assign each slot its sequential position number. = Prima di mescolare il mazzo, il gioco di carte inizializza l'array di indici chiamando std::iota per assegnare a ogni posizione il suo numero sequenziale.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::iota(v.begin(), v.end(), 0);',
@@ -3598,7 +3677,8 @@ export default {
               italian: 'Conta',
               pronunciation: '/kaʊnt/',
               phonetic: 'KAUNT',
-              example: 'std::count counts equal values. = std::count conta valori uguali.',
+              example:
+                "The voting system uses std::count to tally how many ballots in the vector match the selected candidate identifier. = Il sistema di voto usa std::count per contare quante schede nel vettore corrispondono all'identificatore del candidato selezionato.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto n = std::count(v.begin(), v.end(), 1);',
@@ -3608,7 +3688,8 @@ export default {
               italian: 'Conta se',
               pronunciation: '/kaʊnt ɪf/',
               phonetic: 'KAUNT-IF',
-              example: 'count_if takes a predicate. = count_if prende un predicato.',
+              example:
+                'The monitoring dashboard calls count_if with a lambda predicate to determine how many servers currently exceed the CPU usage threshold. = La dashboard di monitoraggio chiama count_if con un predicato lambda per determinare quanti server superano attualmente la soglia di utilizzo della CPU.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto n = std::count_if(v.begin(), v.end(), pred);',
@@ -3619,7 +3700,7 @@ export default {
               pronunciation: '/ɔːl ɒv/',
               phonetic: 'OOL-OV',
               example:
-                'all_of returns true if all match. = all_of restituisce true se tutti corrispondono.',
+                'Before launching the spacecraft simulation, the pre-flight check uses all_of to verify that every subsystem reports a ready status. = Prima di lanciare la simulazione del veicolo spaziale, il controllo pre-volo usa all_of per verificare che ogni sottosistema riporti uno stato pronto.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'bool ok = std::all_of(v.begin(), v.end(), pred);',
@@ -3630,7 +3711,7 @@ export default {
               pronunciation: '/ˈeni ɒv/',
               phonetic: 'E-ni-OV',
               example:
-                'any_of returns true if any matches. = any_of restituisce true se almeno uno corrisponde.',
+                'The firewall rule engine calls any_of to check whether at least one access-control entry permits the incoming connection request. = Il motore di regole del firewall chiama any_of per verificare se almeno una voce di controllo accessi permette la richiesta di connessione in arrivo.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'bool found = std::any_of(v.begin(), v.end(), pred);',
@@ -3648,7 +3729,7 @@ export default {
               pronunciation: '/ˈreɪndʒɪz/',
               phonetic: 'REIN-gez',
               example:
-                'The ranges library makes algorithms composable. = La libreria ranges rende gli algoritmi componibili.',
+                'By switching from iterator pairs to the ranges library, the team made the data pipeline far more readable and composable without sacrificing performance. = Passando dalle coppie di iteratori alla libreria ranges, il team ha reso la pipeline dati molto più leggibile e componibile senza sacrificare le prestazioni.',
               context: 'stl',
               difficulty: 'intermediate',
               code: '#include <ranges>',
@@ -3656,11 +3737,11 @@ export default {
             },
             {
               english: 'Range',
-              italian: 'range / intervallo',
+              italian: 'Intervallo (range)',
               pronunciation: '/reɪndʒ/',
               phonetic: 'REINGE',
               example:
-                'A range is anything with begin and end. = Un range è qualsiasi cosa con begin e end.',
+                'In C++20 any container that exposes begin and end iterators qualifies as a range, allowing algorithms to accept it directly without manual iterator extraction. = In C++20 qualsiasi contenitore che espone iteratori begin e end si qualifica come range, permettendo agli algoritmi di accettarlo direttamente senza estrazione manuale degli iteratori.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'std::ranges::sort(v);',
@@ -3670,7 +3751,8 @@ export default {
               italian: 'Vista',
               pronunciation: '/vjuː/',
               phonetic: 'VIU',
-              example: 'A view is a lazy range. = Una vista è un range lazy.',
+              example:
+                'Because a view is a lightweight, non-owning lazy range, the logging framework can chain multiple filters without allocating temporary containers. = Poiché una view è un range lazy leggero e non proprietario, il framework di logging può concatenare più filtri senza allocare contenitori temporanei.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto v = std::views::iota(0, 10);',
@@ -3681,7 +3763,7 @@ export default {
               pronunciation: '/ˈfɪltər vjuː/',
               phonetic: 'FIL-ter VIU',
               example:
-                'std::views::filter keeps matching elements. = std::views::filter mantiene gli elementi corrispondenti.',
+                'The report generator pipes the transaction list through std::views::filter to retain only entries whose amount exceeds the audit threshold. = Il generatore di report convoglia la lista transazioni attraverso std::views::filter per mantenere solo le voci il cui importo supera la soglia di audit.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto evens = v | std::views::filter(is_even);',
@@ -3692,7 +3774,7 @@ export default {
               pronunciation: '/trænsˈfɔːrm vjuː/',
               phonetic: 'trans-FORM VIU',
               example:
-                'std::views::transform maps elements. = std::views::transform mappa gli elementi.',
+                'The serialization layer pipes each record through std::views::transform to convert raw structs into their JSON string representations lazily. = Il livello di serializzazione convoglia ogni record attraverso std::views::transform per convertire le struct grezze nelle loro rappresentazioni stringa JSON in modo lazy.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto sq = v | std::views::transform([](int x){return x*x;});',
@@ -3702,7 +3784,8 @@ export default {
               italian: 'Vista take',
               pronunciation: '/teɪk vjuː/',
               phonetic: 'TEIK VIU',
-              example: 'std::views::take takes first N. = std::views::take prende i primi N.',
+              example:
+                'The preview panel uses std::views::take to display only the first five search results from the potentially enormous match list. = Il pannello di anteprima usa std::views::take per visualizzare solo i primi cinque risultati di ricerca dalla lista di corrispondenze potenzialmente enorme.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto first3 = v | std::views::take(3);',
@@ -3712,7 +3795,8 @@ export default {
               italian: 'Vista drop',
               pronunciation: '/drɒp vjuː/',
               phonetic: 'DROP VIU',
-              example: 'std::views::drop skips first N. = std::views::drop salta i primi N.',
+              example:
+                'After reading the CSV header row, the parser applies std::views::drop to skip the first line and process only the data rows. = Dopo aver letto la riga di intestazione CSV, il parser applica std::views::drop per saltare la prima riga e processare solo le righe dati.',
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto rest = v | std::views::drop(3);',
@@ -3722,7 +3806,8 @@ export default {
               italian: 'Operatore pipe',
               pronunciation: '/paɪp/',
               phonetic: 'PAIP',
-              example: "The | operator chains views. = L'operatore | concatena le viste.",
+              example:
+                "The data pipeline reads sensor values and uses the pipe operator to chain a filter, a transform, and a take view into a single readable expression. = La pipeline dati legge i valori dei sensori e usa l'operatore pipe per concatenare un filtro, una trasformazione e una vista take in un'unica espressione leggibile.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'v | views::filter(p) | views::transform(f);',
@@ -3732,7 +3817,8 @@ export default {
               italian: 'Valutazione pigra',
               pronunciation: '/ˈleɪzi/',
               phonetic: 'LEI-zi',
-              example: 'Views use lazy evaluation. = Le viste usano valutazione pigra.',
+              example:
+                'Thanks to lazy evaluation, chaining multiple views processes each element on demand without creating intermediate containers or copying data. = Grazie alla valutazione pigra, concatenare più viste processa ogni elemento su richiesta senza creare contenitori intermedi o copiare dati.',
               context: 'stl',
               difficulty: 'intermediate',
               note: 'Niente copie intermedie.',
@@ -3742,7 +3828,8 @@ export default {
               italian: 'Algoritmo su range',
               pronunciation: '/reɪndʒ ˈælɡərɪðəm/',
               phonetic: 'REINGE AL-go-ri-tem',
-              example: 'std::ranges::find takes a range. = std::ranges::find prende un range.',
+              example:
+                "Instead of passing begin and end iterators manually, the modernized codebase calls the range algorithm std::ranges::find and passes the container directly. = Invece di passare iteratori begin e end manualmente, il codice modernizzato chiama l'algoritmo su range std::ranges::find e passa il contenitore direttamente.",
               context: 'stl',
               difficulty: 'intermediate',
               code: 'auto it = std::ranges::find(v, x);',
@@ -3765,10 +3852,11 @@ export default {
           items: [
             {
               english: 'Template',
-              italian: 'template / modello generico',
+              italian: 'Modello generico (template)',
               pronunciation: '/ˈtemplət/',
               phonetic: 'TEM-plet',
-              example: 'A template defines generic code. = Un template definisce codice generico.',
+              example:
+                'Rather than writing separate functions for int and double, the math library defines a single template that generates type-safe code for any numeric type. = Invece di scrivere funzioni separate per int e double, la libreria matematica definisce un singolo template che genera codice type-safe per qualsiasi tipo numerico.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template <typename T> T add(T a, T b);',
@@ -3779,7 +3867,7 @@ export default {
               pronunciation: '/ˈfʌŋkʃən ˈtemplət/',
               phonetic: 'FANK-scen TEM-plet',
               example:
-                'Function templates work for any type. = I template di funzione funzionano per ogni tipo.',
+                "The serialization library uses function templates so the same encode routine can handle integers, strings, and user-defined types transparently. = La libreria di serializzazione usa template di funzione così che la stessa routine encode possa gestire interi, stringhe e tipi definiti dall'utente in modo trasparente.",
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<class T> T max(T a, T b);',
@@ -3789,7 +3877,8 @@ export default {
               italian: 'Parametro di tipo',
               pronunciation: '/taɪp pəˈræmɪtər/',
               phonetic: 'TAIP pa-RA-mi-ter',
-              example: 'A type parameter holds a type. = Un parametro di tipo contiene un tipo.',
+              example:
+                'When declaring the container class, the developer introduces a type parameter T so the compiler can substitute the actual element type at each instantiation site. = Quando si dichiara la classe contenitore, lo sviluppatore introduce un parametro di tipo T così che il compilatore possa sostituire il tipo di elemento effettivo in ogni punto di istanziazione.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template <typename T>',
@@ -3799,7 +3888,8 @@ export default {
               italian: 'Parola chiave typename',
               pronunciation: '/ˈtaɪpneɪm/',
               phonetic: 'TAIP-neim',
-              example: 'typename names a type parameter. = typename nomina un parametro di tipo.',
+              example:
+                "Inside the template declaration, the typename keyword tells the compiler that the following identifier represents a type rather than a value. = All'interno della dichiarazione template, la parola chiave typename dice al compilatore che l'identificatore seguente rappresenta un tipo piuttosto che un valore.",
               context: 'templates',
               difficulty: 'intermediate',
               note: 'Sinonimo di class nei template.',
@@ -3810,7 +3900,7 @@ export default {
               pronunciation: '/klɑːs/',
               phonetic: 'KLAAS',
               example:
-                'class can also declare type parameters. = class può dichiarare parametri di tipo.',
+                'In older codebases you may see the class keyword used instead of typename to declare type parameters, as both are interchangeable in template parameter lists. = Nei codici più vecchi potresti vedere la parola chiave class usata al posto di typename per dichiarare parametri di tipo, dato che entrambe sono intercambiabili nelle liste di parametri template.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template <class T>',
@@ -3821,7 +3911,7 @@ export default {
               pronunciation: '/ˈtemplət ˈɑːrɡjumənt/',
               phonetic: 'TEM-plet AR-giu-ment',
               example:
-                'You pass template arguments in angle brackets. = Passi gli argomenti template in parentesi angolari.',
+                "When calling the generic function explicitly, the developer specifies the template argument in angle brackets to force a particular specialization. = Quando si chiama esplicitamente la funzione generica, lo sviluppatore specifica l'argomento di template in parentesi angolari per forzare una specializzazione particolare.",
               context: 'templates',
               difficulty: 'intermediate',
               code: 'add<int>(1, 2);',
@@ -3832,7 +3922,7 @@ export default {
               pronunciation: '/ɪnˌstænʃiˈeɪʃən/',
               phonetic: 'in-stan-scia-EI-scion',
               example:
-                "Each use creates a template instantiation. = Ogni utilizzo crea un'istanziazione.",
+                'Every distinct type used with the generic sort function triggers a new template instantiation, producing a dedicated machine-code version for that type. = Ogni tipo distinto usato con la funzione generica sort attiva una nuova istanziazione del template, producendo una versione di codice macchina dedicata per quel tipo.',
               context: 'templates',
               difficulty: 'intermediate',
             },
@@ -3842,7 +3932,7 @@ export default {
               pronunciation: '/taɪp dɪˈdʌkʃən/',
               phonetic: 'TAIP di-DAK-scion',
               example:
-                'The compiler deduces template arguments. = Il compilatore deduce gli argomenti template.',
+                'When the caller passes two integers, the compiler automatically performs type deduction and resolves T to int without requiring explicit angle-bracket syntax. = Quando il chiamante passa due interi, il compilatore esegue automaticamente la deduzione di tipo e risolve T a int senza richiedere la sintassi esplicita con parentesi angolari.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'add(1, 2); // T deduced as int',
@@ -3853,7 +3943,7 @@ export default {
               pronunciation: '/dʒəˈnerɪk/',
               phonetic: 'gie-NE-rik',
               example:
-                'Templates produce generic functions. = I template producono funzioni generiche.',
+                "The math toolkit exposes a single generic function for linear interpolation that works with floats, doubles, and custom fixed-point types equally well. = Il toolkit matematico espone una singola funzione generica per l'interpolazione lineare che funziona ugualmente bene con float, double e tipi a virgola fissa personalizzati.",
               context: 'templates',
               difficulty: 'intermediate',
             },
@@ -3863,7 +3953,7 @@ export default {
               pronunciation: '/kəmˈpaɪl taɪm/',
               phonetic: 'kom-PAIL TAIM',
               example:
-                'Templates run at compile time. = I template si eseguono a tempo di compilazione.',
+                'Because templates are resolved entirely at compile time, the generated binary contains fully optimized machine code with no runtime dispatch overhead. = Poiché i template vengono risolti interamente a tempo di compilazione, il binario generato contiene codice macchina completamente ottimizzato senza overhead di dispatch a runtime.',
               context: 'templates',
               difficulty: 'intermediate',
               note: 'Nessun overhead a runtime.',
@@ -3880,7 +3970,8 @@ export default {
               italian: 'Template di classe',
               pronunciation: '/klɑːs ˈtemplət/',
               phonetic: 'KLAAS TEM-plet',
-              example: 'std::vector is a class template. = std::vector è un template di classe.',
+              example:
+                "The standard library's std::vector is a class template that generates a distinct, type-safe dynamic array for each element type you specify. = Lo std::vector della libreria standard è un template di classe che genera un array dinamico distinto e type-safe per ogni tipo di elemento che si specifica.",
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<class T> class Box { T value; };',
@@ -3891,7 +3982,7 @@ export default {
               pronunciation: '/dʒəˈnerɪk kənˈteɪnər/',
               phonetic: 'gie-NE-rik kon-TEI-ner',
               example:
-                'A generic container works with any type. = Un container generico funziona con qualsiasi tipo.',
+                "The engine's resource cache is implemented as a generic container so it can store textures, meshes, and audio clips with the same interface. = La cache delle risorse del motore è implementata come container generico così può memorizzare texture, mesh e clip audio con la stessa interfaccia.",
               context: 'templates',
               difficulty: 'intermediate',
             },
@@ -3901,7 +3992,7 @@ export default {
               pronunciation: '/ˈtemplət ˈmembər/',
               phonetic: 'TEM-plet MEM-ber',
               example:
-                'Class templates can have member templates. = I template di classe possono avere template membri.',
+                'The allocator-aware container defines a template member function for converting from any compatible allocator type during construction. = Il contenitore allocator-aware definisce una funzione membro template per la conversione da qualsiasi tipo di allocatore compatibile durante la costruzione.',
               context: 'templates',
               difficulty: 'intermediate',
             },
@@ -3911,7 +4002,7 @@ export default {
               pronunciation: '/ˈtemplət ˈhedər/',
               phonetic: 'TEM-plet HED-er',
               example:
-                'Templates usually live entirely in headers. = I template di solito vivono interamente negli header.',
+                'Because the compiler needs the full definition to instantiate a template, the project places all template code in the header file rather than splitting it into a separate source file. = Poiché il compilatore necessita della definizione completa per istanziare un template, il progetto inserisce tutto il codice template nel file header piuttosto che separarlo in un file sorgente distinto.',
               context: 'templates',
               difficulty: 'intermediate',
               note: 'Causa: il compilatore deve vedere la definizione per istanziare.',
@@ -3922,7 +4013,7 @@ export default {
               pronunciation: '/dɪˈdʌkʃən/',
               phonetic: 'di-DAK-scion',
               example:
-                'CTAD deduces class template parameters. = CTAD deduce i parametri di un template di classe.',
+                'With C++17 class template argument deduction, you can write std::pair p{1, 2.0} and the compiler infers pair<int,double> automatically through CTAD. = Con la deduzione degli argomenti del template di classe di C++17, puoi scrivere std::pair p{1, 2.0} e il compilatore inferisce pair<int,double> automaticamente tramite CTAD.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'std::pair p{1, 2.0}; // pair<int,double>',
@@ -3933,7 +4024,8 @@ export default {
               italian: 'Guida di deduzione',
               pronunciation: '/dɪˈdʌkʃən ɡaɪd/',
               phonetic: 'di-DAK-scion GAID',
-              example: 'A deduction guide helps CTAD. = Una guida di deduzione aiuta il CTAD.',
+              example:
+                'The custom container provides an explicit deduction guide so that the compiler can infer the element type from iterator pairs passed to the constructor. = Il contenitore personalizzato fornisce una guida di deduzione esplicita così che il compilatore possa inferire il tipo di elemento dalle coppie di iteratori passate al costruttore.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<class T> Box(T) -> Box<T>;',
@@ -3944,7 +4036,7 @@ export default {
               pronunciation: '/ˌspeʃəlaɪˈzeɪʃən/',
               phonetic: 'spe-scia-lai-ZEI-scion',
               example:
-                'A specialization handles a specific type. = Una specializzazione gestisce un tipo specifico.',
+                'The hash template has a specialization for std::string that uses an optimized algorithm instead of the generic byte-level fallback. = Il template hash ha una specializzazione per std::string che usa un algoritmo ottimizzato invece del fallback generico a livello di byte.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<> class Box<bool> { /* ... */ };',
@@ -3955,7 +4047,7 @@ export default {
               pronunciation: '/ˈpɑːrʃəl/',
               phonetic: 'PAR-scial',
               example:
-                'Partial specialization fixes some parameters. = La specializzazione parziale fissa alcuni parametri.',
+                'The smart-pointer traits use partial specialization to provide a different deleter strategy whenever the element type is an array rather than a single object. = I traits dello smart pointer usano la specializzazione parziale per fornire una strategia di deleter diversa ogni volta che il tipo di elemento è un array anziché un singolo oggetto.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<class T> class Box<T*> {};',
@@ -3967,7 +4059,7 @@ export default {
               pronunciation: '/fʊl/',
               phonetic: 'FUL',
               example:
-                'Full specialization fixes all parameters. = La specializzazione completa fissa tutti i parametri.',
+                "The serializer's full specialization for bool encodes values as single bits instead of full bytes to minimize the binary payload size. = La specializzazione completa del serializzatore per bool codifica i valori come singoli bit invece di byte completi per minimizzare la dimensione del payload binario.",
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<> class Box<int> {};',
@@ -3978,7 +4070,7 @@ export default {
               pronunciation: '/dʒəˈnerɪk ˈproʊɡræmɪŋ/',
               phonetic: 'gie-NE-rik PRO-gram-ming',
               example:
-                'C++ supports generic programming via templates. = C++ supporta la programmazione generica tramite template.',
+                "The STL demonstrates how C++ embraces generic programming by providing algorithms and containers that operate on any type satisfying the required interface. = La STL dimostra come C++ abbracci la programmazione generica fornendo algoritmi e contenitori che operano su qualsiasi tipo che soddisfi l'interfaccia richiesta.",
               context: 'templates',
               difficulty: 'intermediate',
             },
@@ -3994,7 +4086,8 @@ export default {
               italian: 'Parametro non di tipo',
               pronunciation: '/nɒn taɪp pəˈræmɪtər/',
               phonetic: 'NON-TAIP pa-RA-mi-ter',
-              example: 'A non-type parameter is a value. = Un parametro non di tipo è un valore.',
+              example:
+                'The fixed-size buffer class accepts a non-type parameter N that specifies the capacity at compile time, avoiding heap allocations entirely. = La classe buffer a dimensione fissa accetta un parametro non di tipo N che specifica la capacità a tempo di compilazione, evitando completamente le allocazioni heap.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<int N> class Buffer {};',
@@ -4005,7 +4098,7 @@ export default {
               pronunciation: '/ˈɪntɪdʒər/',
               phonetic: 'IN-ti-ger',
               example:
-                'A common non-type parameter is an int. = Un parametro non tipo comune è un int.',
+                "std::array uses an integer parameter to fix the size of the array at compile time, enabling stack allocation and bounds-check optimizations. = std::array usa un parametro intero per fissare la dimensione dell'array a tempo di compilazione, abilitando l'allocazione sullo stack e le ottimizzazioni del controllo dei limiti.",
               context: 'templates',
               difficulty: 'intermediate',
               code: 'std::array<int, 10> a;',
@@ -4016,7 +4109,7 @@ export default {
               pronunciation: '/ˈpɔɪntər/',
               phonetic: 'POIN-ter',
               example:
-                'Pointers can be template parameters. = I puntatori possono essere parametri template.',
+                'A compile-time callback can be injected via a pointer parameter, letting the template select the comparison function without virtual dispatch overhead. = Un callback a tempo di compilazione può essere iniettato tramite un parametro puntatore, permettendo al template di selezionare la funzione di confronto senza overhead di dispatch virtuale.',
               context: 'templates',
               difficulty: 'intermediate',
             },
@@ -4026,7 +4119,7 @@ export default {
               pronunciation: '/ˈɔːtoʊ/',
               phonetic: 'OO-to',
               example:
-                'auto deduces non-type parameter type. = auto deduce il tipo di parametro non tipo.',
+                'Since C++17, using auto in a template parameter list lets the compiler deduce the non-type parameter type from the value passed at each instantiation point. = Da C++17, usare auto nella lista dei parametri template permette al compilatore di dedurre il tipo del parametro non tipo dal valore passato in ogni punto di istanziazione.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<auto N> /* ... */',
@@ -4038,7 +4131,7 @@ export default {
               pronunciation: '/dɪˈfɔːlt/',
               phonetic: 'di-FOLT',
               example:
-                'Templates can have default arguments. = I template possono avere argomenti di default.',
+                'The allocator-based container specifies a default argument for the allocator parameter so that callers rarely need to provide one explicitly. = Il contenitore basato su allocatore specifica un argomento di default per il parametro allocatore così che i chiamanti raramente debbano fornirne uno esplicitamente.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<class T = int> class A {};',
@@ -4049,7 +4142,7 @@ export default {
               pronunciation: '/ˈtemplət ˈtemplət/',
               phonetic: 'TEM-plet TEM-plet',
               example:
-                'Template template parameters take templates. = I parametri template di template prendono template.',
+                'The generic graph class uses a template template parameter so the caller can choose whether edges are stored in a vector, a list, or another container. = La classe grafo generica usa un parametro template di template così che il chiamante possa scegliere se i lati sono memorizzati in un vector, una list o un altro contenitore.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<template<class> class C>',
@@ -4060,7 +4153,7 @@ export default {
               pronunciation: '/ˈeɪliəs/',
               phonetic: 'EI-li-as',
               example:
-                'A template alias renames a generic type. = Un alias template rinomina un tipo generico.',
+                'The project defines a type alias template Vec<T> as a shorthand for std::vector<T, custom_allocator<T>> to keep declarations concise across the codebase. = Il progetto definisce un alias di tipo template Vec<T> come abbreviazione di std::vector<T, custom_allocator<T>> per mantenere le dichiarazioni concise in tutto il codice.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<class T> using Vec = std::vector<T>;',
@@ -4072,7 +4165,7 @@ export default {
               pronunciation: '/ˈveəriəbl/',
               phonetic: 'VE-ri-a-bol',
               example:
-                'A variable template defines a parameterized constant. = Una variabile template definisce una costante parametrizzata.',
+                "The math header defines a variable template for pi so the constant is automatically provided in the correct precision for float, double, and long double. = L'header matematico definisce una variabile template per pi così che la costante venga fornita automaticamente nella precisione corretta per float, double e long double.",
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template<class T> constexpr T pi = T(3.14);',
@@ -4084,7 +4177,7 @@ export default {
               pronunciation: '/kəmˈpaɪl taɪm/',
               phonetic: 'kom-PAIL TAIM',
               example:
-                'Non-type parameters must be compile-time constants. = I parametri non tipo devono essere costanti a compile time.',
+                'Passing a runtime variable as a non-type template argument will not compile because the value must be a compile-time constant known before code generation begins. = Passare una variabile runtime come argomento template non di tipo non compilerà perché il valore deve essere una costante a compile-time nota prima che inizi la generazione del codice.',
               context: 'templates',
               difficulty: 'intermediate',
             },
@@ -4094,7 +4187,7 @@ export default {
               pronunciation: '/kɒnstˈekspər/',
               phonetic: 'kons-TEK-sper',
               example:
-                'C++20 allows constexpr structural types. = C++20 permette tipi strutturali constexpr.',
+                'In C++20 you can pass a constexpr struct as a template parameter, provided the type meets the structural requirements of having all public members and no mutable fields. = In C++20 puoi passare una struct constexpr come parametro template, a condizione che il tipo soddisfi i requisiti strutturali di avere tutti i membri pubblici e nessun campo mutable.',
               context: 'templates',
               difficulty: 'intermediate',
             },
@@ -4111,7 +4204,7 @@ export default {
               pronunciation: '/ˈerər/',
               phonetic: 'ER-ror',
               example:
-                'Template errors can be cryptic. = Gli errori dei template possono essere criptici.',
+                "When a type lacks the required operator, the compiler may emit a deeply nested template error that is difficult to read without concept constraints. = Quando un tipo manca dell'operatore richiesto, il compilatore può emettere un errore di template profondamente annidato difficile da leggere senza vincoli di concept.",
               context: 'templates',
               difficulty: 'intermediate',
               note: 'I concept di C++20 aiutano a renderli più chiari.',
@@ -4122,7 +4215,7 @@ export default {
               pronunciation: '/ˌsʌbstɪˈtjuːʃən/',
               phonetic: 'sab-sti-TIU-scion',
               example:
-                'Substitution failure is not an error (SFINAE). = Il fallimento di sostituzione non è un errore.',
+                "If a template argument makes the function signature invalid, substitution failure is not an error; the compiler simply removes that overload from the candidate set. = Se un argomento template rende la firma della funzione invalida, il fallimento di sostituzione non è un errore; il compilatore semplicemente rimuove quell'overload dall'insieme dei candidati.",
               context: 'templates',
               difficulty: 'intermediate',
               note: 'Acronimo SFINAE.',
@@ -4133,7 +4226,7 @@ export default {
               pronunciation: '/tuː feɪz ˈlʊkʊp/',
               phonetic: 'TUU-FEIZ LUUK-up',
               example:
-                'Templates use two-phase name lookup. = I template usano lookup dei nomi a due fasi.',
+                'During the first phase the compiler checks non-dependent names, and during the second phase two-phase lookup resolves dependent names once the template type is known. = Durante la prima fase il compilatore controlla i nomi non dipendenti, e durante la seconda fase il lookup a due fasi risolve i nomi dipendenti una volta che il tipo del template è noto.',
               context: 'templates',
               difficulty: 'intermediate',
             },
@@ -4143,7 +4236,7 @@ export default {
               pronunciation: '/dɪˈpendənt neɪm/',
               phonetic: 'di-PEN-dent NEIM',
               example:
-                'Use typename for dependent type names. = Usa typename per nomi di tipo dipendenti.',
+                'When accessing a nested type inside a templated class, you must prefix the dependent name with typename to tell the compiler it refers to a type and not a static member. = Quando si accede a un tipo annidato dentro una classe template, devi prefissare il nome dipendente con typename per dire al compilatore che si riferisce a un tipo e non a un membro statico.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'typename T::value_type x;',
@@ -4154,7 +4247,7 @@ export default {
               pronunciation: '/ˌdɪsæmbɪɡjuˈeɪʃən/',
               phonetic: 'dis-am-bi-ghu-EI-scion',
               example:
-                'Use template keyword to disambiguate. = Usa la parola template per disambiguare.',
+                'When calling a templated method through a dependent base pointer, you need the template keyword for disambiguation so the parser does not confuse the angle bracket with a less-than comparison. = Quando si chiama un metodo template tramite un puntatore base dipendente, serve la parola chiave template per la disambiguazione così che il parser non confonda la parentesi angolare con un confronto minore-di.',
               context: 'templates',
               difficulty: 'intermediate',
               code: 'p.template foo<int>();',
@@ -4165,7 +4258,7 @@ export default {
               pronunciation: '/ˈkɒnsept/',
               phonetic: 'KON-sept',
               example:
-                'Concept errors give clearer messages. = Gli errori dei concept danno messaggi più chiari.',
+                "When the developer passes an unsuitable type, the concept error clearly states which requirement was not met instead of flooding the terminal with nested instantiation traces. = Quando lo sviluppatore passa un tipo non adatto, l'errore del concept indica chiaramente quale requisito non è stato soddisfatto invece di inondare il terminale con tracce di istanziazione annidate.",
               context: 'templates',
               difficulty: 'intermediate',
               note: 'Disponibile da C++20.',
@@ -4176,17 +4269,17 @@ export default {
               pronunciation: '/ˈerər/',
               phonetic: 'ER-ror',
               example:
-                'Templates fail with compile errors. = I template falliscono con errori di compilazione.',
+                "If the type passed to the generic container does not support the expected comparison operator, the template instantiation fails with a compile error at the call site. = Se il tipo passato al contenitore generico non supporta l'operatore di confronto atteso, l'istanziazione del template fallisce con un errore di compilazione nel punto di chiamata.",
               context: 'templates',
               difficulty: 'intermediate',
             },
             {
               english: 'Static Assert',
-              italian: 'static_assert / asserzione a tempo di compilazione',
+              italian: 'Asserzione a tempo di compilazione (static_assert)',
               pronunciation: '/ˈstætɪk əˈsɜːrt/',
               phonetic: 'STA-tik a-SERT',
               example:
-                'static_assert checks compile-time conditions. = static_assert verifica condizioni a compile time.',
+                "The network buffer class uses static_assert to verify at compile time that the platform's int is at least four bytes, preventing subtle data corruption on exotic architectures. = La classe buffer di rete usa static_assert per verificare a tempo di compilazione che l'int della piattaforma sia almeno quattro byte, prevenendo corruzione dati sottile su architetture esotiche.",
               context: 'templates',
               difficulty: 'intermediate',
               code: 'static_assert(sizeof(int) >= 4, "min");',
@@ -4196,7 +4289,8 @@ export default {
               italian: 'Bloat dei template',
               pronunciation: '/bloʊt/',
               phonetic: 'BLOUT',
-              example: 'Heavy templates cause code bloat. = Template pesanti causano code bloat.',
+              example:
+                'Instantiating the same complex container template with dozens of different types leads to significant template bloat, increasing the final binary size. = Istanziare lo stesso template di contenitore complesso con decine di tipi diversi porta a un significativo bloat dei template, aumentando la dimensione del binario finale.',
               context: 'templates',
               difficulty: 'intermediate',
               note: 'Ogni istanziazione genera codice separato.',
@@ -4207,7 +4301,7 @@ export default {
               pronunciation: '/ɪkˈsplɪsɪt ɪnˌstænʃiˈeɪʃən/',
               phonetic: 'eks-PLI-sit in-stan-scia-EI-scion',
               example:
-                "Explicit instantiation reduces compile time. = L'istanziazione esplicita riduce i tempi di compilazione.",
+                "By placing an explicit instantiation for the most common types in a single translation unit, the build system avoids redundant codegen across dozens of source files. = Inserendo un'istanziazione esplicita per i tipi più comuni in una singola unità di traduzione, il sistema di build evita codegen ridondante in decine di file sorgente.",
               context: 'templates',
               difficulty: 'intermediate',
               code: 'template class Box<int>;',
@@ -4234,18 +4328,18 @@ export default {
               pronunciation: '/smɑːrt ˈpɔɪntər/',
               phonetic: 'SMART POIN-ter',
               example:
-                'Smart pointers manage memory automatically. = I puntatori intelligenti gestiscono la memoria automaticamente.',
+                'Replacing raw pointers with smart pointers eliminated every manual delete call and fixed three memory leaks in the rendering subsystem. = Sostituire i puntatori grezzi con puntatori intelligenti ha eliminato ogni chiamata delete manuale e corretto tre memory leak nel sottosistema di rendering.',
               context: 'memory',
               difficulty: 'intermediate',
               note: 'Sostituiscono new/delete manuali.',
             },
             {
               english: 'Unique Ptr',
-              italian: 'std::unique_ptr / smart pointer a proprietà unica',
+              italian: 'Smart pointer a proprietà unica (std::unique_ptr)',
               pronunciation: '/juːˈniːk ˈpɔɪntər/',
               phonetic: 'iu-NIIK POIN-ter',
               example:
-                'std::unique_ptr owns one object exclusively. = std::unique_ptr possiede un oggetto in esclusiva.',
+                'The scene node holds a std::unique_ptr to its mesh data, guaranteeing that exactly one owner exists and the memory is freed when the node is destroyed. = Il nodo della scena contiene un std::unique_ptr ai dati mesh, garantendo che esista esattamente un proprietario e la memoria venga liberata quando il nodo viene distrutto.',
               context: 'memory',
               difficulty: 'intermediate',
               code: 'std::unique_ptr<T> p;',
@@ -4253,11 +4347,11 @@ export default {
             },
             {
               english: 'Make Unique',
-              italian: 'std::make_unique / fabbrica per unique_ptr',
+              italian: 'Fabbrica per unique_ptr (std::make_unique)',
               pronunciation: '/meɪk juːˈniːk/',
               phonetic: 'MEIK iu-NIIK',
               example:
-                'std::make_unique creates a unique_ptr. = std::make_unique crea un unique_ptr.',
+                "The factory function returns std::make_unique<Widget>(config) to construct the widget and wrap it in a unique_ptr in a single exception-safe expression. = La funzione factory restituisce std::make_unique<Widget>(config) per costruire il widget e avvolgerlo in un unique_ptr in un'unica espressione exception-safe.",
               context: 'memory',
               difficulty: 'intermediate',
               code: 'auto p = std::make_unique<Foo>(1, 2);',
@@ -4269,7 +4363,7 @@ export default {
               pronunciation: '/ˈoʊnərʃɪp/',
               phonetic: 'O-ner-scip',
               example:
-                'unique_ptr enforces exclusive ownership. = unique_ptr impone possesso esclusivo.',
+                "The resource manager transfers ownership of the loaded texture to the renderer through a unique_ptr, making the single-owner contract explicit in the API. = Il gestore risorse trasferisce la proprietà della texture caricata al renderer attraverso un unique_ptr, rendendo il contratto di proprietario unico esplicito nell'API.",
               context: 'memory',
               difficulty: 'intermediate',
             },
@@ -4278,28 +4372,30 @@ export default {
               italian: 'Solo movibile',
               pronunciation: '/muːv ˈoʊnli/',
               phonetic: 'MUUV ON-li',
-              example: 'unique_ptr is move-only. = unique_ptr è solo movibile.',
+              example:
+                'Because unique_ptr is move-only, the compiler prevents accidental copies and forces you to explicitly transfer ownership with std::move when handing it off. = Poiché unique_ptr è solo movibile, il compilatore previene copie accidentali e ti obbliga a trasferire esplicitamente la proprietà con std::move quando lo cedi.',
               context: 'memory',
               difficulty: 'intermediate',
               code: 'auto q = std::move(p);',
             },
             {
               english: 'Reset',
-              italian: 'reset / azzeramento del puntatore',
+              italian: 'Azzeramento del puntatore (reset)',
               pronunciation: '/rɪˈset/',
               phonetic: 'ri-SET',
-              example: "reset() releases the managed object. = reset() rilascia l'oggetto gestito.",
+              example:
+                "When the cache entry expires, the manager calls reset() on the unique_ptr to immediately release the managed object and free the underlying memory. = Quando la voce della cache scade, il manager chiama reset() sull'unique_ptr per rilasciare immediatamente l'oggetto gestito e liberare la memoria sottostante.",
               context: 'memory',
               difficulty: 'intermediate',
               code: 'p.reset();',
             },
             {
               english: 'Release',
-              italian: 'release / cessione della proprietà',
+              italian: 'Cessione della proprietà (release)',
               pronunciation: '/rɪˈliːs/',
               phonetic: 'ri-LIIS',
               example:
-                'release() returns the raw pointer. = release() restituisce il puntatore raw.',
+                "When passing the buffer to a C API that takes ownership, the wrapper calls release() to obtain the raw pointer and relinquish smart-pointer management. = Quando si passa il buffer a un'API C che assume la proprietà, il wrapper chiama release() per ottenere il puntatore raw e cedere la gestione del puntatore intelligente.",
               context: 'memory',
               difficulty: 'intermediate',
               code: 'auto raw = p.release();',
@@ -4311,7 +4407,7 @@ export default {
               pronunciation: '/ɡet/',
               phonetic: 'GHET',
               example:
-                'get() returns the raw pointer without releasing. = get() restituisce il raw senza rilasciare.',
+                "The interop layer calls get() on the unique_ptr to pass the raw pointer to the legacy C function while retaining ownership in the caller. = Il livello di interoperabilità chiama get() sull'unique_ptr per passare il puntatore raw alla funzione C legacy mantenendo la proprietà nel chiamante.",
               context: 'memory',
               difficulty: 'intermediate',
               code: 'T* raw = p.get();',
@@ -4322,7 +4418,7 @@ export default {
               pronunciation: '/ˈkʌstəm dɪˈliːtər/',
               phonetic: 'KAS-tom di-LII-ter',
               example:
-                'unique_ptr accepts a custom deleter. = unique_ptr accetta un deleter personalizzato.',
+                "The file wrapper creates a unique_ptr with a custom deleter that calls fclose, ensuring the handle is closed even if an exception interrupts the processing pipeline. = Il wrapper del file crea un unique_ptr con un deleter personalizzato che chiama fclose, assicurando che l'handle venga chiuso anche se un'eccezione interrompe la pipeline di elaborazione.",
               context: 'memory',
               difficulty: 'intermediate',
               code: 'std::unique_ptr<FILE, decltype(&fclose)> f(p, &fclose);',
@@ -4332,7 +4428,8 @@ export default {
               italian: 'Unique ptr per array',
               pronunciation: '/əˈreɪ/',
               phonetic: 'a-REI',
-              example: 'unique_ptr<T[]> manages an array. = unique_ptr<T[]> gestisce un array.',
+              example:
+                "The image decoder allocates a pixel buffer using unique_ptr<uint8_t[]> to manage the dynamically sized array and guarantee its deallocation on scope exit. = Il decoder di immagini alloca un buffer pixel usando unique_ptr<uint8_t[]> per gestire l'array a dimensione dinamica e garantire la sua deallocazione all'uscita dallo scope.",
               context: 'memory',
               difficulty: 'intermediate',
               code: 'auto arr = std::make_unique<int[]>(10);',
@@ -4346,22 +4443,22 @@ export default {
           items: [
             {
               english: 'Shared Ptr',
-              italian: 'std::shared_ptr / smart pointer a proprietà condivisa',
+              italian: 'Smart pointer a proprietà condivisa (std::shared_ptr)',
               pronunciation: '/ʃeərd ˈpɔɪntər/',
               phonetic: 'SCERD POIN-ter',
               example:
-                'std::shared_ptr shares ownership via ref count. = std::shared_ptr condivide il possesso tramite ref count.',
+                "Multiple UI widgets hold a std::shared_ptr to the same configuration object so that changes propagate automatically and the resource is freed when the last widget closes. = Più widget UI contengono un std::shared_ptr allo stesso oggetto di configurazione così che le modifiche si propaghino automaticamente e la risorsa venga liberata quando l'ultimo widget si chiude.",
               context: 'memory',
               difficulty: 'intermediate',
               code: 'std::shared_ptr<T> p;',
             },
             {
               english: 'Make Shared',
-              italian: 'std::make_shared / fabbrica per shared_ptr',
+              italian: 'Fabbrica per shared_ptr (std::make_shared)',
               pronunciation: '/meɪk ʃeərd/',
               phonetic: 'MEIK SCERD',
               example:
-                'std::make_shared is faster than new. = std::make_shared è più veloce di new.',
+                "Using std::make_shared is faster than calling new separately because it performs a single heap allocation for both the object and the internal control block. = Usare std::make_shared è più veloce che chiamare new separatamente perché esegue una singola allocazione heap sia per l'oggetto che per il blocco di controllo interno.",
               context: 'memory',
               difficulty: 'intermediate',
               code: 'auto p = std::make_shared<Foo>(1, 2);',
@@ -4373,7 +4470,7 @@ export default {
               pronunciation: '/ˈrefərəns kaʊnt/',
               phonetic: 'REF-er-ens KAUNT',
               example:
-                'shared_ptr tracks a reference count. = shared_ptr traccia un conteggio dei riferimenti.',
+                'Each time a shared_ptr is copied or destroyed, the internal reference count is updated atomically to reflect the current number of active owners. = Ogni volta che un shared_ptr viene copiato o distrutto, il conteggio dei riferimenti interno viene aggiornato atomicamente per riflettere il numero attuale di proprietari attivi.',
               context: 'memory',
               difficulty: 'intermediate',
               code: 'p.use_count();',
@@ -4384,7 +4481,7 @@ export default {
               pronunciation: '/kənˈtroʊl blɒk/',
               phonetic: 'kon-TROL BLOK',
               example:
-                'The control block stores ref counts. = Il blocco di controllo memorizza i ref count.',
+                "Alongside the managed object, the allocator creates a control block that stores both the strong reference count and the weak reference count for lifetime tracking. = Accanto all'oggetto gestito, l'allocatore crea un blocco di controllo che memorizza sia il conteggio dei riferimenti forti che quello dei riferimenti deboli per il tracciamento della vita.",
               context: 'memory',
               difficulty: 'intermediate',
             },
@@ -4394,7 +4491,7 @@ export default {
               pronunciation: '/əˈtɒmɪk/',
               phonetic: 'a-TO-mik',
               example:
-                'shared_ptr uses atomic ref count operations. = shared_ptr usa operazioni atomiche sul ref count.',
+                "Copying a shared_ptr across threads is safe because the underlying atomic increment on the reference count prevents data races in the control block. = Copiare un shared_ptr tra thread è sicuro perché l'incremento atomico sottostante sul conteggio dei riferimenti previene data race nel blocco di controllo.",
               context: 'memory',
               difficulty: 'intermediate',
               note: "Fornisce thread safety sul control block, non sull'oggetto.",
@@ -4405,7 +4502,7 @@ export default {
               pronunciation: '/ʃeərd ˈoʊnərʃɪp/',
               phonetic: 'SCERD O-ner-scip',
               example:
-                'shared_ptr models shared ownership. = shared_ptr modella possesso condiviso.',
+                "The plugin system uses shared_ptr to model shared ownership of the configuration object, letting each loaded plugin read settings without worrying about deallocation order. = Il sistema di plugin usa shared_ptr per modellare la proprietà condivisa dell'oggetto di configurazione, permettendo a ogni plugin caricato di leggere le impostazioni senza preoccuparsi dell'ordine di deallocazione.",
               context: 'memory',
               difficulty: 'intermediate',
               note: 'Da usare solo se serve davvero, preferisci unique_ptr.',
@@ -4416,7 +4513,7 @@ export default {
               pronunciation: '/ˈeɪliəsɪŋ/',
               phonetic: 'EI-li-a-sing',
               example:
-                'Aliasing constructor shares lifetime. = Il costruttore di aliasing condivide la vita.',
+                "The aliasing constructor lets you create a shared_ptr that points to a member of the managed object while sharing the parent's lifetime and control block. = Il costruttore di aliasing permette di creare un shared_ptr che punta a un membro dell'oggetto gestito condividendo la vita e il blocco di controllo del padre.",
               context: 'memory',
               difficulty: 'intermediate',
               code: 'std::shared_ptr<int> q(p, &p->member);',
@@ -4427,7 +4524,7 @@ export default {
               pronunciation: '/ˈsaɪklɪk/',
               phonetic: 'SAI-klik',
               example:
-                'Cyclic shared_ptr causes memory leaks. = shared_ptr ciclici causano memory leak.',
+                "When two objects hold shared_ptr instances to each other, a cyclic reference forms and neither is ever freed because both reference counts remain at one indefinitely. = Quando due oggetti contengono istanze shared_ptr l'uno verso l'altro, si forma un riferimento ciclico e nessuno dei due viene mai liberato perché entrambi i conteggi dei riferimenti rimangono a uno indefinitamente.",
               context: 'memory',
               difficulty: 'intermediate',
               note: 'Risolvi con weak_ptr.',
@@ -4437,18 +4534,19 @@ export default {
               italian: 'Conteggio uso',
               pronunciation: '/juːs kaʊnt/',
               phonetic: 'IUS KAUNT',
-              example: 'use_count() returns the ref count. = use_count() restituisce il ref count.',
+              example:
+                'During debugging, the developer calls use_count() on the shared_ptr to verify that no unexpected copies are keeping the network connection alive after shutdown. = Durante il debug, lo sviluppatore chiama use_count() sullo shared_ptr per verificare che nessuna copia inattesa stia mantenendo viva la connessione di rete dopo lo shutdown.',
               context: 'memory',
               difficulty: 'intermediate',
               code: 'auto n = p.use_count();',
             },
             {
               english: 'Enable Shared From This',
-              italian: 'enable_shared_from_this',
+              italian: 'Abilitazione condivisione da this (enable_shared_from_this)',
               pronunciation: '/ɪˈneɪbl/',
               phonetic: 'i-NEI-bol',
               example:
-                'enable_shared_from_this lets you get shared from this. = enable_shared_from_this permette di ottenere shared da this.',
+                "The asynchronous task handler inherits from enable_shared_from_this so that callbacks can safely obtain a shared_ptr from within the object's own member functions. = Il gestore di task asincroni eredita da enable_shared_from_this così che i callback possano ottenere in sicurezza un shared_ptr dall'interno delle funzioni membro dell'oggetto stesso.",
               context: 'memory',
               difficulty: 'intermediate',
               code: 'class A : public std::enable_shared_from_this<A> {};',
@@ -4462,7 +4560,7 @@ export default {
           items: [
             {
               english: 'Weak Ptr',
-              italian: 'std::weak_ptr / riferimento debole',
+              italian: 'Riferimento debole (std::weak_ptr)',
               pronunciation: '/wiːk ˈpɔɪntər/',
               phonetic: 'UIIK POIN-ter',
               example:
@@ -4474,7 +4572,7 @@ export default {
             },
             {
               english: 'Lock',
-              italian: 'lock / blocco esclusivo',
+              italian: 'Blocco esclusivo (lock)',
               pronunciation: '/lɒk/',
               phonetic: 'LOK',
               example:
@@ -4573,11 +4671,11 @@ export default {
           items: [
             {
               english: 'RAII',
-              italian: 'RAII (Resource Acquisition Is Initialization)',
+              italian: 'Acquisizione risorse tramite inizializzazione (RAII)',
               pronunciation: '/ɑːr eɪ aɪ aɪ/',
               phonetic: 'AR-EI-AI-AI',
               example:
-                "RAII ties resources to object lifetime. = RAII lega le risorse alla durata dell'oggetto.",
+                'The database connection wrapper follows RAII, opening the connection in the constructor and closing it in the destructor. = Il wrapper per la connessione al database segue RAII, aprendo la connessione nel costruttore e chiudendola nel distruttore.',
               context: 'memory',
               difficulty: 'intermediate',
               note: 'Resource Acquisition Is Initialization.',
@@ -4615,7 +4713,7 @@ export default {
             },
             {
               english: 'Scope Guard',
-              italian: 'scope guard / guardia di ambito',
+              italian: 'Guardia di ambito (scope guard)',
               pronunciation: '/skoʊp ɡɑːrd/',
               phonetic: 'SKOUP GARD',
               example:
@@ -4635,7 +4733,7 @@ export default {
             },
             {
               english: 'Lock Guard',
-              italian: 'std::lock_guard / RAII per mutex',
+              italian: 'RAII per mutex (std::lock_guard)',
               pronunciation: '/lɒk ɡɑːrd/',
               phonetic: 'LOK GARD',
               example: 'std::lock_guard is RAII for mutex. = std::lock_guard è RAII per i mutex.',
@@ -4645,7 +4743,7 @@ export default {
             },
             {
               english: 'File Guard',
-              italian: 'file guard / chiusura RAII di file',
+              italian: 'Chiusura RAII di file (file guard)',
               pronunciation: '/faɪl ɡɑːrd/',
               phonetic: 'FAIL GARD',
               example:
@@ -4804,10 +4902,11 @@ export default {
           items: [
             {
               english: 'std::exception',
-              italian: 'std::exception / classe base eccezioni',
+              italian: 'Classe base eccezioni (std::exception)',
               pronunciation: '/ɪkˈsepʃən/',
               phonetic: 'ek-SEP-scion',
-              example: 'std::exception is the base class. = std::exception è la classe base.',
+              example:
+                'All custom error classes in the network module inherit from std::exception so a single catch block handles them. = Tutte le classi di errore personalizzate nel modulo di rete ereditano da std::exception così un singolo blocco catch le gestisce.',
               context: 'exceptions',
               difficulty: 'intermediate',
               code: 'class MyEx : public std::exception {};',
@@ -4857,7 +4956,7 @@ export default {
             },
             {
               english: 'Bad Alloc',
-              italian: 'std::bad_alloc / eccezione allocazione fallita',
+              italian: 'Eccezione allocazione fallita (std::bad_alloc)',
               pronunciation: '/bæd əˈlɒk/',
               phonetic: 'BAD a-LOK',
               example:
@@ -4867,7 +4966,7 @@ export default {
             },
             {
               english: 'Bad Cast',
-              italian: 'std::bad_cast / eccezione cast fallito',
+              italian: 'Eccezione cast fallito (std::bad_cast)',
               pronunciation: '/bæd kɑːst/',
               phonetic: 'BAD KAAST',
               example:
@@ -4916,7 +5015,7 @@ export default {
           items: [
             {
               english: 'Noexcept',
-              italian: 'noexcept / specificatore non lancia eccezioni',
+              italian: 'Specificatore non lancia eccezioni (noexcept)',
               pronunciation: '/ˌnoʊɪkˈsept/',
               phonetic: 'no-ek-SEPT',
               example:
@@ -4979,7 +5078,7 @@ export default {
             },
             {
               english: 'Move Noexcept',
-              italian: 'move-noexcept / move che non lancia eccezioni',
+              italian: 'Move che non lancia eccezioni (move-noexcept)',
               pronunciation: '/muːv/',
               phonetic: 'MUUV',
               example: 'Mark move operations noexcept. = Marca le operazioni move come noexcept.',
@@ -5000,7 +5099,7 @@ export default {
             },
             {
               english: 'Terminate',
-              italian: 'std::terminate / termine programma',
+              italian: 'Termine programma (std::terminate)',
               pronunciation: '/ˈtɜːrmɪneɪt/',
               phonetic: 'TER-mi-neit',
               example: 'std::terminate ends the program. = std::terminate termina il programma.',
@@ -5010,7 +5109,7 @@ export default {
             },
             {
               english: 'Set Terminate',
-              italian: 'std::set_terminate / handler di terminazione',
+              italian: 'Handler di terminazione (std::set_terminate)',
               pronunciation: '/set ˈtɜːrmɪneɪt/',
               phonetic: 'SET TER-mi-neit',
               example:
@@ -5028,7 +5127,7 @@ export default {
           items: [
             {
               english: 'Optional',
-              italian: 'std::optional / valore opzionale',
+              italian: 'Valore opzionale (std::optional)',
               pronunciation: '/ˈɒpʃənl/',
               phonetic: 'OP-scio-nal',
               example:
@@ -5040,7 +5139,7 @@ export default {
             },
             {
               english: 'Expected',
-              italian: 'std::expected / valore o errore (C++23)',
+              italian: 'Valore o errore C++23 (std::expected)',
               pronunciation: '/ɪkˈspektɪd/',
               phonetic: 'eks-PEK-ted',
               example:
@@ -5071,7 +5170,7 @@ export default {
             },
             {
               english: 'Outcome',
-              italian: 'outcome / libreria gestione errori Boost',
+              italian: 'Libreria gestione errori Boost (outcome)',
               pronunciation: '/ˈaʊtkʌm/',
               phonetic: 'AUT-kam',
               example:
@@ -5266,18 +5365,18 @@ export default {
           items: [
             {
               english: 'std::function',
-              italian: 'std::function / wrapper di callable',
+              italian: 'Wrapper di callable (std::function)',
               pronunciation: '/ˈfʌŋkʃən/',
               phonetic: 'FANK-scen',
               example:
-                'std::function holds any callable. = std::function contiene qualsiasi callable.',
+                "The event bus stores callbacks as std::function objects so it can accept lambdas, free functions, and bound methods. = L'event bus memorizza le callback come oggetti std::function così può accettare lambda, funzioni libere e metodi legati.",
               context: 'lambdas',
               difficulty: 'intermediate',
               code: 'std::function<int(int)> f = [](int x){return x+1;};',
             },
             {
               english: 'Callable',
-              italian: 'callable / oggetto invocabile',
+              italian: 'Oggetto invocabile (callable)',
               pronunciation: '/ˈkɔːləbl/',
               phonetic: 'KOO-la-bol',
               example:
@@ -5309,7 +5408,7 @@ export default {
             },
             {
               english: 'Bind',
-              italian: 'std::bind / aggancio di argomenti',
+              italian: 'Aggancio di argomenti (std::bind)',
               pronunciation: '/baɪnd/',
               phonetic: 'BAIND',
               example: 'std::bind binds arguments. = std::bind lega argomenti.',
@@ -5340,7 +5439,7 @@ export default {
             },
             {
               english: 'Callback',
-              italian: 'callback / chiamata di ritorno',
+              italian: 'Chiamata di ritorno (callback)',
               pronunciation: '/ˈkɔːlbæk/',
               phonetic: 'KOOL-bak',
               example:
@@ -5455,7 +5554,7 @@ export default {
             },
             {
               english: 'Y Combinator',
-              italian: 'Y combinator / combinatore di ricorsione',
+              italian: 'Combinatore di ricorsione (Y combinator)',
               pronunciation: '/waɪ ˈkɒmbɪneɪtər/',
               phonetic: 'UAI KOM-bi-nei-tor',
               example:
@@ -5548,17 +5647,17 @@ export default {
               pronunciation: '/ˌmemoʊaɪˈzeɪʃən/',
               phonetic: 'me-mo-ai-ZEI-scion',
               example:
-                'Memoization caches function results. = La memoizzazione fa cache dei risultati.',
+                'The recursive Fibonacci solver uses memoization to store previously computed values and avoid exponential recalculation. = Il risolutore ricorsivo di Fibonacci usa la memoizzazione per memorizzare valori già calcolati ed evitare ricalcoli esponenziali.',
               context: 'lambdas',
               difficulty: 'intermediate',
             },
             {
               english: 'Currying',
-              italian: 'currying / trasformazione in funzioni a un argomento',
+              italian: 'Trasformazione in funzioni a un argomento (currying)',
               pronunciation: '/ˈkʌriɪŋ/',
               phonetic: 'KAR-ring',
               example:
-                'Currying turns a multi-arg fn into chain. = Il currying trasforma una funzione multi-arg in catena.',
+                'Applying currying to the add(a, b) function produces a chain where add(3) returns a lambda that adds 3 to any argument. = Applicando il currying alla funzione add(a, b) si ottiene una catena dove add(3) restituisce una lambda che aggiunge 3 a qualsiasi argomento.',
               context: 'lambdas',
               difficulty: 'intermediate',
             },
@@ -5576,7 +5675,7 @@ export default {
             },
             {
               english: 'Pipeline',
-              italian: 'pipeline / catena di trasformazioni',
+              italian: 'Catena di trasformazioni (pipeline)',
               pronunciation: '/ˈpaɪplaɪn/',
               phonetic: 'PAIP-lain',
               example: 'A pipeline composes functions. = Una pipeline compone funzioni.',
@@ -5622,7 +5721,7 @@ export default {
             },
             {
               english: 'Decltype',
-              italian: 'decltype / dedurre il tipo',
+              italian: 'Dedurre il tipo (decltype)',
               pronunciation: '/dekˈtaɪp/',
               phonetic: 'dek-TAIP',
               example:
@@ -5644,7 +5743,7 @@ export default {
             },
             {
               english: 'Decltype Auto',
-              italian: 'decltype(auto) / deduzione preservando referenze',
+              italian: 'Deduzione preservando referenze (decltype(auto))',
               pronunciation: '/dekˈtaɪp ˈɔːtoʊ/',
               phonetic: 'dek-TAIP OO-to',
               example:
@@ -5655,7 +5754,7 @@ export default {
             },
             {
               english: 'Nullptr',
-              italian: 'nullptr / puntatore nullo tipizzato',
+              italian: 'Puntatore nullo tipizzato (nullptr)',
               pronunciation: '/ˈnʌlptər/',
               phonetic: 'NAL-pter',
               example:
@@ -5667,7 +5766,7 @@ export default {
             },
             {
               english: 'Range For',
-              italian: 'range-for / ciclo for su sequenza',
+              italian: 'Ciclo for su sequenza (range-for)',
               pronunciation: '/reɪndʒ fɔːr/',
               phonetic: 'REINGE FOR',
               example: 'range-for iterates over containers. = range-for itera sui container.',
@@ -5745,7 +5844,7 @@ export default {
             },
             {
               english: 'Std Move',
-              italian: 'std::move',
+              italian: 'Spostamento standard (std::move)',
               pronunciation: '/stændərd muːv/',
               phonetic: 'STD-MUUV',
               example:
@@ -5757,7 +5856,7 @@ export default {
             },
             {
               english: 'Lvalue',
-              italian: 'lvalue / espressione con indirizzo',
+              italian: 'Espressione con indirizzo (lvalue)',
               pronunciation: '/ˈelˌvæljuː/',
               phonetic: 'EL-val-iu',
               example: 'An lvalue has a name and persists. = Un lvalue ha un nome e persiste.',
@@ -5766,7 +5865,7 @@ export default {
             },
             {
               english: 'Rvalue',
-              italian: 'rvalue / espressione temporanea',
+              italian: 'Espressione temporanea (rvalue)',
               pronunciation: '/ˈɑːrˌvæljuː/',
               phonetic: 'AR-val-iu',
               example: 'An rvalue is temporary. = Un rvalue è temporaneo.',
@@ -5775,7 +5874,7 @@ export default {
             },
             {
               english: 'Xvalue',
-              italian: 'xvalue / valore esauribile',
+              italian: 'Valore esauribile (xvalue)',
               pronunciation: '/ˈɛksˌvæljuː/',
               phonetic: 'EKS-val-iu',
               example: 'An xvalue is an expiring value. = Un xvalue è un valore in scadenza.',
@@ -5784,7 +5883,7 @@ export default {
             },
             {
               english: 'Prvalue',
-              italian: 'prvalue / pure rvalue',
+              italian: 'Pure rvalue (prvalue)',
               pronunciation: '/ˈpiː ɑːrˌvæljuː/',
               phonetic: 'PI-AR-val-iu',
               example: 'A prvalue is a pure rvalue. = Un prvalue è un rvalue puro.',
@@ -5874,7 +5973,7 @@ export default {
             },
             {
               english: 'Constexpr',
-              italian: 'constexpr / espressione costante a tempo di compilazione',
+              italian: 'Espressione costante a tempo di compilazione (constexpr)',
               pronunciation: '/kɒnstˈekspər/',
               phonetic: 'kons-TEK-sper',
               example:
@@ -5895,7 +5994,7 @@ export default {
             },
             {
               english: 'Static Assert',
-              italian: 'static_assert / asserzione a tempo di compilazione',
+              italian: 'Asserzione a tempo di compilazione (static_assert)',
               pronunciation: '/əˈsɜːrt/',
               phonetic: 'a-SERT',
               example:
@@ -5965,7 +6064,7 @@ export default {
             },
             {
               english: 'Array',
-              italian: 'std::array / array a dimensione fissa',
+              italian: 'Array a dimensione fissa (std::array)',
               pronunciation: '/əˈreɪ/',
               phonetic: 'a-REI',
               example: 'std::array wraps C-style arrays. = std::array incapsula array stile C.',
@@ -5975,7 +6074,7 @@ export default {
             },
             {
               english: 'Chrono',
-              italian: 'std::chrono / libreria di tempo',
+              italian: 'Libreria di tempo (std::chrono)',
               pronunciation: '/ˈkroʊnoʊ/',
               phonetic: 'KRO-no',
               example:
@@ -5986,7 +6085,7 @@ export default {
             },
             {
               english: 'Random',
-              italian: 'std::random / libreria di numeri casuali',
+              italian: 'Libreria di numeri casuali (std::random)',
               pronunciation: '/ˈrændəm/',
               phonetic: 'RAN-dom',
               example: 'std::random replaces rand(). = std::random sostituisce rand().',
@@ -5996,7 +6095,7 @@ export default {
             },
             {
               english: 'Regex',
-              italian: 'std::regex / libreria di espressioni regolari',
+              italian: 'Libreria di espressioni regolari (std::regex)',
               pronunciation: '/ˈriːdʒeks/',
               phonetic: 'RI-geks',
               example:
@@ -6007,7 +6106,7 @@ export default {
             },
             {
               english: 'Thread',
-              italian: 'std::thread / thread di esecuzione',
+              italian: 'Thread di esecuzione (std::thread)',
               pronunciation: '/θred/',
               phonetic: 'TRED',
               example: 'std::thread starts a thread. = std::thread avvia un thread.',
@@ -6017,7 +6116,7 @@ export default {
             },
             {
               english: 'Atomic',
-              italian: 'std::atomic / operazioni atomiche',
+              italian: 'Operazioni atomiche (std::atomic)',
               pronunciation: '/əˈtɒmɪk/',
               phonetic: 'a-TO-mik',
               example:
@@ -6039,7 +6138,7 @@ export default {
             },
             {
               english: 'Make Shared',
-              italian: 'std::make_shared / fabbrica per shared_ptr',
+              italian: 'Fabbrica per shared_ptr (std::make_shared)',
               pronunciation: '/meɪk ʃeərd/',
               phonetic: 'MEIK SCERD',
               example:
@@ -6111,7 +6210,7 @@ export default {
             },
             {
               english: 'Std Optional',
-              italian: 'std::optional',
+              italian: 'Valore opzionale standard (std::optional)',
               pronunciation: '/ˈɒpʃənl/',
               phonetic: 'OP-scio-nal',
               example: 'std::optional may hold a value. = std::optional può contenere un valore.',
@@ -6121,7 +6220,7 @@ export default {
             },
             {
               english: 'Std Variant',
-              italian: 'std::variant',
+              italian: 'Variante di tipo sicura (std::variant)',
               pronunciation: '/ˈveəriənt/',
               phonetic: 'VE-ri-ant',
               example: 'std::variant is a type-safe union. = std::variant è una union type-safe.',
@@ -6131,7 +6230,7 @@ export default {
             },
             {
               english: 'Std Any',
-              italian: 'std::any',
+              italian: 'Contenitore di tipo qualsiasi (std::any)',
               pronunciation: '/ˈeni/',
               phonetic: 'E-ni',
               example: 'std::any holds any type. = std::any contiene qualsiasi tipo.',
@@ -6141,7 +6240,7 @@ export default {
             },
             {
               english: 'Std String View',
-              italian: 'std::string_view',
+              italian: 'Vista non proprietaria su stringa (std::string_view)',
               pronunciation: '/strɪŋ vjuː/',
               phonetic: 'STRING-VIU',
               example:
@@ -6153,7 +6252,7 @@ export default {
             },
             {
               english: 'Std Filesystem',
-              italian: 'std::filesystem',
+              italian: 'Libreria di gestione file system (std::filesystem)',
               pronunciation: '/ˈfaɪlsɪstəm/',
               phonetic: 'FAIL-sis-tem',
               example: 'std::filesystem manipulates paths. = std::filesystem manipola percorsi.',
@@ -6163,7 +6262,7 @@ export default {
             },
             {
               english: 'Std Visit',
-              italian: 'std::visit',
+              italian: 'Visita di variante (std::visit)',
               pronunciation: '/ˈvɪzɪt/',
               phonetic: 'VI-zit',
               example:
@@ -6181,7 +6280,7 @@ export default {
           items: [
             {
               english: 'Concept',
-              italian: 'concept / vincolo su template (C++20)',
+              italian: 'Vincolo su template C++20 (concept)',
               pronunciation: '/ˈkɒnsept/',
               phonetic: 'KON-sept',
               example:
@@ -6233,7 +6332,7 @@ export default {
             },
             {
               english: 'Std Integral',
-              italian: 'std::integral',
+              italian: 'Concetto tipo intero (std::integral)',
               pronunciation: '/ˈɪntɪɡrəl/',
               phonetic: 'IN-te-gral',
               example: 'std::integral matches integers. = std::integral corrisponde agli interi.',
@@ -6243,7 +6342,7 @@ export default {
             },
             {
               english: 'Std Floating Point',
-              italian: 'std::floating_point',
+              italian: 'Concetto tipo virgola mobile (std::floating_point)',
               pronunciation: '/ˈfloʊtɪŋ/',
               phonetic: 'FLOU-ting',
               example:
@@ -6288,7 +6387,7 @@ export default {
           items: [
             {
               english: 'Coroutine',
-              italian: 'coroutine / funzione sospendibile (C++20)',
+              italian: 'Funzione sospendibile C++20 (coroutine)',
               pronunciation: '/ˈkɒroʊtiːn/',
               phonetic: 'KO-ro-tiin',
               example:
@@ -6299,7 +6398,7 @@ export default {
             },
             {
               english: 'Co Await',
-              italian: 'co_await',
+              italian: 'Attesa di coroutine (co_await)',
               pronunciation: '/koʊ əˈweɪt/',
               phonetic: 'KO-a-UEIT',
               example: 'co_await suspends a coroutine. = co_await sospende una coroutine.',
@@ -6309,7 +6408,7 @@ export default {
             },
             {
               english: 'Co Yield',
-              italian: 'co_yield',
+              italian: 'Produzione di valore da coroutine (co_yield)',
               pronunciation: '/koʊ jiːld/',
               phonetic: 'KO-IIILD',
               example: 'co_yield produces a value. = co_yield produce un valore.',
@@ -6319,7 +6418,7 @@ export default {
             },
             {
               english: 'Co Return',
-              italian: 'co_return',
+              italian: 'Ritorno da coroutine (co_return)',
               pronunciation: '/koʊ rɪˈtɜːrn/',
               phonetic: 'KO-ri-TERN',
               example: 'co_return ends a coroutine. = co_return termina una coroutine.',
@@ -6359,7 +6458,7 @@ export default {
             },
             {
               english: 'Awaitable',
-              italian: 'awaitable / oggetto attendibile',
+              italian: 'Oggetto attendibile (awaitable)',
               pronunciation: '/əˈweɪtəbl/',
               phonetic: 'a-UEI-ta-bol',
               example: 'An awaitable can be co_awaited. = Un awaitable può essere co_awaited.',
@@ -6368,7 +6467,7 @@ export default {
             },
             {
               english: 'Suspend Always',
-              italian: 'std::suspend_always / sospensione sempre',
+              italian: 'Sospensione sempre (std::suspend_always)',
               pronunciation: '/səˈspend ˈɔːlweɪz/',
               phonetic: 'sa-SPEND OOL-ueiz',
               example:
@@ -6378,7 +6477,7 @@ export default {
             },
             {
               english: 'Suspend Never',
-              italian: 'std::suspend_never / sospensione mai',
+              italian: 'Sospensione mai (std::suspend_never)',
               pronunciation: '/səˈspend ˈnevər/',
               phonetic: 'sa-SPEND NE-ver',
               example: 'std::suspend_never never suspends. = std::suspend_never non sospende mai.',
@@ -6405,7 +6504,7 @@ export default {
             },
             {
               english: 'Export',
-              italian: 'export / esporta da modulo',
+              italian: 'Esporta da modulo (export)',
               pronunciation: '/ˈekspɔːrt/',
               phonetic: 'EKS-port',
               example: 'export makes symbols visible. = export rende i simboli visibili.',
@@ -6415,7 +6514,7 @@ export default {
             },
             {
               english: 'Import',
-              italian: 'import / importa modulo',
+              italian: 'Importa modulo (import)',
               pronunciation: '/ɪmˈpɔːrt/',
               phonetic: 'im-PORT',
               example: 'import loads a module. = import carica un modulo.',
@@ -6445,7 +6544,7 @@ export default {
             },
             {
               english: 'Std Format',
-              italian: 'std::format',
+              italian: 'Formattazione di testo (std::format)',
               pronunciation: '/ˈfɔːrmæt/',
               phonetic: 'FOR-mat',
               example:
@@ -6456,7 +6555,7 @@ export default {
             },
             {
               english: 'Std Print',
-              italian: 'std::print',
+              italian: 'Stampa formattata (std::print)',
               pronunciation: '/prɪnt/',
               phonetic: 'PRINT',
               example: 'std::print is type-safe printf. = std::print è printf type-safe.',
@@ -6482,7 +6581,7 @@ export default {
               pronunciation: '/θriː weɪ kəmˈpærɪsən/',
               phonetic: 'TRII-UEI kom-PA-ri-son',
               example:
-                'operator<=> generates all comparisons. = operator<=> genera tutti i confronti.',
+                "The Version struct uses the three-way comparison operator<=> to let std::sort order releases from oldest to newest automatically. = La struct Version usa l'operatore di confronto a tre vie operator<=> per permettere a std::sort di ordinare le release dalla più vecchia alla più nuova automaticamente.",
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'auto operator<=>(const A&) const = default;',
@@ -6599,7 +6698,7 @@ export default {
             },
             {
               english: 'Tuple Get',
-              italian: 'std::get / accesso a elemento tuple',
+              italian: 'Accesso a elemento tuple (std::get)',
               pronunciation: '/ˈtuːpl ɡet/',
               phonetic: 'TUU-pol GHET',
               example: 'std::get extracts a tuple element. = std::get estrae un elemento di tupla.',
@@ -6609,7 +6708,7 @@ export default {
             },
             {
               english: 'Apply',
-              italian: 'std::apply / chiama funzione con tupla',
+              italian: 'Chiama funzione con tupla (std::apply)',
               pronunciation: '/əˈplaɪ/',
               phonetic: 'a-PLAI',
               example:
@@ -6627,18 +6726,18 @@ export default {
           items: [
             {
               english: 'SFINAE',
-              italian: 'SFINAE (Substitution Failure Is Not An Error)',
+              italian: 'Il fallimento di sostituzione non è un errore (SFINAE)',
               pronunciation: '/ˈsfɪneɪ/',
               phonetic: 'SFI-NEI',
               example:
-                'SFINAE means substitution failure is not an error. = SFINAE significa che il fallimento di sostituzione non è un errore.',
+                'The serializer template relies on SFINAE to silently discard overloads for types that lack a to_string method. = Il template serializzatore si affida a SFINAE per scartare silenziosamente gli overload per tipi che non hanno un metodo to_string.',
               context: 'templates',
               difficulty: 'advanced',
               note: 'Substitution Failure Is Not An Error.',
             },
             {
               english: 'Enable If',
-              italian: 'enable_if',
+              italian: 'Abilitazione condizionale di template (enable_if)',
               pronunciation: '/ɪˈneɪbl ɪf/',
               phonetic: 'i-NEI-bol IF',
               example: 'std::enable_if removes overloads. = std::enable_if rimuove overload.',
@@ -6648,7 +6747,7 @@ export default {
             },
             {
               english: 'Tag Dispatch',
-              italian: 'tag dispatch / dispatch per tipo-etichetta',
+              italian: 'Dispatch per tipo-etichetta (tag dispatch)',
               pronunciation: '/tæɡ ˈdɪspætʃ/',
               phonetic: 'TAG DIS-paci',
               example:
@@ -6658,7 +6757,7 @@ export default {
             },
             {
               english: 'Void T',
-              italian: 'void_t',
+              italian: 'Tipo void condizionale (void_t)',
               pronunciation: '/vɔɪd tiː/',
               phonetic: 'VOID-TI',
               example: 'std::void_t is a SFINAE helper. = std::void_t è un helper per SFINAE.',
@@ -6708,7 +6807,7 @@ export default {
             },
             {
               english: 'If Constexpr',
-              italian: 'if constexpr / branch a tempo di compilazione',
+              italian: 'Branch a tempo di compilazione (if constexpr)',
               pronunciation: '/kɒnstˈekspər/',
               phonetic: 'kons-TEK-sper',
               example:
@@ -6746,7 +6845,7 @@ export default {
             },
             {
               english: 'Is Same',
-              italian: 'is_same',
+              italian: 'Verifica uguaglianza di tipi (is_same)',
               pronunciation: '/ɪz seɪm/',
               phonetic: 'IZ-SEIM',
               example: 'is_same compares two types. = is_same confronta due tipi.',
@@ -6756,7 +6855,7 @@ export default {
             },
             {
               english: 'Is Pointer',
-              italian: 'is_pointer',
+              italian: 'Verifica tipo puntatore (is_pointer)',
               pronunciation: '/ˈpɔɪntər/',
               phonetic: 'POIN-ter',
               example: 'is_pointer detects pointer types. = is_pointer rileva i tipi puntatore.',
@@ -6766,7 +6865,7 @@ export default {
             },
             {
               english: 'Remove Reference',
-              italian: 'remove_reference',
+              italian: 'Rimozione del riferimento dal tipo (remove_reference)',
               pronunciation: '/rɪˈmuːv/',
               phonetic: 'ri-MUUV',
               example:
@@ -6777,7 +6876,7 @@ export default {
             },
             {
               english: 'Remove Const',
-              italian: 'remove_const',
+              italian: 'Rimozione della costanza dal tipo (remove_const)',
               pronunciation: '/rɪˈmuːv kɒnst/',
               phonetic: 'ri-MUUV KONST',
               example: 'remove_const removes const. = remove_const rimuove const.',
@@ -6787,7 +6886,7 @@ export default {
             },
             {
               english: 'Decay',
-              italian: 'std::decay / decadimento dei tipi',
+              italian: 'Decadimento dei tipi (std::decay)',
               pronunciation: '/dɪˈkeɪ/',
               phonetic: 'di-KEI',
               example:
@@ -6798,7 +6897,7 @@ export default {
             },
             {
               english: 'Conditional',
-              italian: 'std::conditional / scelta tipo condizionale',
+              italian: 'Scelta tipo condizionale (std::conditional)',
               pronunciation: '/kənˈdɪʃənl/',
               phonetic: 'kon-DI-scio-nal',
               example:
@@ -6809,7 +6908,7 @@ export default {
             },
             {
               english: 'Common Type',
-              italian: 'common_type',
+              italian: 'Tipo comune tra più tipi (common_type)',
               pronunciation: '/ˈkɒmən/',
               phonetic: 'KO-mon',
               example: 'common_type finds a shared type. = common_type trova un tipo comune.',
@@ -6819,7 +6918,7 @@ export default {
             },
             {
               english: 'Integral Constant',
-              italian: 'integral_constant',
+              italian: 'Costante integrale a tempo di compilazione (integral_constant)',
               pronunciation: '/ˈɪntɪɡrəl ˈkɒnstənt/',
               phonetic: 'IN-te-gral KONS-tant',
               example:
@@ -6830,7 +6929,7 @@ export default {
             },
             {
               english: 'True Type',
-              italian: 'true_type',
+              italian: 'Tipo booleano vero a tempo di compilazione (true_type)',
               pronunciation: '/truː taɪp/',
               phonetic: 'TRUU-TAIP',
               example:
@@ -6858,7 +6957,7 @@ export default {
             },
             {
               english: 'Consteval',
-              italian: 'consteval / funzione obbligatoriamente costante',
+              italian: 'Funzione obbligatoriamente costante (consteval)',
               pronunciation: '/kɒnstˈiːvəl/',
               phonetic: 'kons-TII-val',
               example:
@@ -6870,7 +6969,7 @@ export default {
             },
             {
               english: 'Constinit',
-              italian: 'constinit / inizializzazione costante',
+              italian: 'Inizializzazione costante (constinit)',
               pronunciation: '/kɒnstˈɪnɪt/',
               phonetic: 'kons-TI-nit',
               example:
@@ -6967,7 +7066,7 @@ export default {
           items: [
             {
               english: 'Thread',
-              italian: 'std::thread / thread di esecuzione',
+              italian: 'Thread di esecuzione (std::thread)',
               pronunciation: '/θred/',
               phonetic: 'TRED',
               example:
@@ -6978,7 +7077,7 @@ export default {
             },
             {
               english: 'Join',
-              italian: 'join / attesa terminazione thread',
+              italian: 'Attesa terminazione thread (join)',
               pronunciation: '/dʒɔɪn/',
               phonetic: 'GIOIN',
               example:
@@ -6989,7 +7088,7 @@ export default {
             },
             {
               english: 'Detach',
-              italian: 'detach / scollega thread',
+              italian: 'Scollega thread (detach)',
               pronunciation: '/dɪˈtætʃ/',
               phonetic: 'di-TACI',
               example:
@@ -7001,7 +7100,7 @@ export default {
             },
             {
               english: 'Joinable',
-              italian: 'joinable / thread terminabile',
+              italian: 'Thread terminabile (joinable)',
               pronunciation: '/ˈdʒɔɪnəbl/',
               phonetic: 'GIOI-na-bol',
               example:
@@ -7043,7 +7142,7 @@ export default {
             },
             {
               english: 'Yield',
-              italian: 'yield / cede il time-slice',
+              italian: 'Cede il time-slice (yield)',
               pronunciation: '/jiːld/',
               phonetic: 'IIILD',
               example: 'yield hints to reschedule. = yield suggerisce di rischedulare.',
@@ -7053,7 +7152,7 @@ export default {
             },
             {
               english: 'Jthread',
-              italian: 'std::jthread / thread auto-joinante',
+              italian: 'Thread auto-joinante (std::jthread)',
               pronunciation: '/ˈdʒeɪθred/',
               phonetic: 'GIEI-tred',
               example:
@@ -7083,7 +7182,7 @@ export default {
           items: [
             {
               english: 'Mutex',
-              italian: 'std::mutex / mutua esclusione',
+              italian: 'Mutua esclusione (std::mutex)',
               pronunciation: '/ˈmjuːteks/',
               phonetic: 'MIU-teks',
               example: 'std::mutex protects shared data. = std::mutex protegge dati condivisi.',
@@ -7093,7 +7192,7 @@ export default {
             },
             {
               english: 'Lock Guard',
-              italian: 'std::lock_guard / RAII per mutex',
+              italian: 'RAII per mutex (std::lock_guard)',
               pronunciation: '/lɒk ɡɑːrd/',
               phonetic: 'LOK GARD',
               example:
@@ -7105,7 +7204,7 @@ export default {
             },
             {
               english: 'Unique Lock',
-              italian: 'std::unique_lock / lock RAII flessibile',
+              italian: 'Lock RAII flessibile (std::unique_lock)',
               pronunciation: '/juːˈniːk lɒk/',
               phonetic: 'iu-NIIK LOK',
               example:
@@ -7116,7 +7215,7 @@ export default {
             },
             {
               english: 'Scoped Lock',
-              italian: 'std::scoped_lock / lock multi-mutex deadlock-free',
+              italian: 'Lock multi-mutex deadlock-free (std::scoped_lock)',
               pronunciation: '/skoʊpt lɒk/',
               phonetic: 'SKOUPT LOK',
               example:
@@ -7151,7 +7250,7 @@ export default {
             },
             {
               english: 'Try Lock',
-              italian: 'try_lock / tentativo di lock non bloccante',
+              italian: 'Tentativo di lock non bloccante (try_lock)',
               pronunciation: '/traɪ lɒk/',
               phonetic: 'TRAI LOK',
               example:
@@ -7162,7 +7261,7 @@ export default {
             },
             {
               english: 'Deadlock',
-              italian: 'deadlock / stallo da lock circolari',
+              italian: 'Stallo da lock circolari (deadlock)',
               pronunciation: '/ˈdedlɒk/',
               phonetic: 'DED-lok',
               example:
@@ -7173,7 +7272,7 @@ export default {
             },
             {
               english: 'Lock Free',
-              italian: 'Lock-free',
+              italian: 'Senza blocco (lock-free)',
               pronunciation: '/lɒk friː/',
               phonetic: 'LOK-FRII',
               example:
@@ -7200,7 +7299,7 @@ export default {
           items: [
             {
               english: 'Atomic',
-              italian: 'std::atomic / operazioni atomiche',
+              italian: 'Operazioni atomiche (std::atomic)',
               pronunciation: '/əˈtɒmɪk/',
               phonetic: 'a-TO-mik',
               example:
@@ -7222,7 +7321,7 @@ export default {
             },
             {
               english: 'Compare Exchange',
-              italian: 'compare_exchange / scambio atomico condizionato',
+              italian: 'Scambio atomico condizionato (compare_exchange)',
               pronunciation: '/kəmˈpeər ɪksˈtʃeɪndʒ/',
               phonetic: 'kom-PER eks-CEINGE',
               example:
@@ -7295,7 +7394,7 @@ export default {
             },
             {
               english: 'Data Race',
-              italian: 'data race / corsa critica sui dati',
+              italian: 'Corsa critica sui dati (data race)',
               pronunciation: '/ˈdeɪtə reɪs/',
               phonetic: 'DEI-ta REIS',
               example: 'A data race is undefined behavior. = Una data race è undefined behavior.',
@@ -7312,7 +7411,7 @@ export default {
           items: [
             {
               english: 'Future',
-              italian: 'std::future / risultato asincrono',
+              italian: 'Risultato asincrono (std::future)',
               pronunciation: '/ˈfjuːtʃər/',
               phonetic: 'FIU-cer',
               example:
@@ -7323,7 +7422,7 @@ export default {
             },
             {
               english: 'Promise',
-              italian: 'std::promise / produttore di future',
+              italian: 'Produttore di future (std::promise)',
               pronunciation: '/ˈprɒmɪs/',
               phonetic: 'PRO-mis',
               example:
@@ -7334,7 +7433,7 @@ export default {
             },
             {
               english: 'Async',
-              italian: 'std::async / lancio asincrono',
+              italian: 'Lancio asincrono (std::async)',
               pronunciation: '/əˈsɪŋk/',
               phonetic: 'a-SINK',
               example:
@@ -7355,7 +7454,7 @@ export default {
             },
             {
               english: 'Wait For',
-              italian: 'wait_for / attesa con timeout',
+              italian: 'Attesa con timeout (wait_for)',
               pronunciation: '/weɪt fɔːr/',
               phonetic: 'UEIT FOR',
               example: 'wait_for waits with a timeout. = wait_for aspetta con un timeout.',
@@ -7365,7 +7464,7 @@ export default {
             },
             {
               english: 'Packaged Task',
-              italian: 'std::packaged_task / task con future associata',
+              italian: 'Task con future associata (std::packaged_task)',
               pronunciation: '/ˈpækɪdʒd tæsk/',
               phonetic: 'PA-kegd TASK',
               example:
@@ -7376,7 +7475,7 @@ export default {
             },
             {
               english: 'Shared Future',
-              italian: 'std::shared_future / future condivisibile',
+              italian: 'Future condivisibile (std::shared_future)',
               pronunciation: '/ʃeərd/',
               phonetic: 'SCERD',
               example: 'shared_future can be copied. = shared_future può essere copiato.',
@@ -7397,7 +7496,7 @@ export default {
             },
             {
               english: 'Notify All',
-              italian: 'notify_all / risveglia tutti gli attesi',
+              italian: 'Risveglia tutti gli attesi (notify_all)',
               pronunciation: '/ˈnoʊtɪfaɪ ɔːl/',
               phonetic: 'NO-ti-fai OOL',
               example:
@@ -7476,7 +7575,7 @@ export default {
             },
             {
               english: 'Move And Swap',
-              italian: 'move-and-swap / idioma move-assignment',
+              italian: 'Idioma move-assignment (move-and-swap)',
               pronunciation: '/muːv ænd swɒp/',
               phonetic: 'MUUV-AND-SUOP',
               example:
@@ -7486,21 +7585,22 @@ export default {
             },
             {
               english: 'RVO',
-              italian: 'RVO (Return Value Optimization)',
+              italian: 'Ottimizzazione del valore di ritorno (RVO)',
               pronunciation: '/ɑːr viː oʊ/',
               phonetic: 'AR-VI-O',
-              example: 'RVO elides the return copy. = RVO elide la copia di ritorno.',
+              example:
+                "The compiler applies RVO to the factory function, constructing the Widget directly in the caller's memory without any copy. = Il compilatore applica RVO alla funzione factory, costruendo il Widget direttamente nella memoria del chiamante senza alcuna copia.",
               context: 'memory',
               difficulty: 'advanced',
               note: 'Return Value Optimization.',
             },
             {
               english: 'NRVO',
-              italian: 'NRVO (Named Return Value Optimization)',
+              italian: 'Ottimizzazione del valore di ritorno con nome (NRVO)',
               pronunciation: '/en ɑːr viː oʊ/',
               phonetic: 'EN-AR-VI-O',
               example:
-                'NRVO elides named return copies. = NRVO elide le copie di ritorno con nome.',
+                'When a function declares a local Widget result and returns it by name, the compiler can apply NRVO to eliminate the copy. = Quando una funzione dichiara un Widget locale e lo restituisce per nome, il compilatore può applicare NRVO per eliminare la copia.',
               context: 'memory',
               difficulty: 'advanced',
               note: 'Named RVO.',
@@ -7568,7 +7668,7 @@ export default {
             },
             {
               english: 'Std Forward',
-              italian: 'std::forward',
+              italian: 'Inoltro perfetto (std::forward)',
               pronunciation: '/ˈfɔːrwərd/',
               phonetic: 'FOR-uord',
               example:
@@ -7643,7 +7743,7 @@ export default {
             },
             {
               english: 'Move If Noexcept',
-              italian: 'move_if_noexcept / move solo se non lancia',
+              italian: 'Move solo se non lancia (move_if_noexcept)',
               pronunciation: '/muːv ɪf/',
               phonetic: 'MUUV-IF',
               example:
@@ -7810,7 +7910,7 @@ export default {
             },
             {
               english: 'Thread Local',
-              italian: 'thread_local / storage per thread',
+              italian: 'Storage per thread (thread_local)',
               pronunciation: '/θred ˈloʊkl/',
               phonetic: 'TRED LO-kal',
               example:
@@ -7841,11 +7941,11 @@ export default {
             },
             {
               english: 'Aliasing',
-              italian: 'aliasing / più nomi sullo stesso oggetto',
+              italian: 'Più nomi sullo stesso oggetto (aliasing)',
               pronunciation: '/ˈeɪliəsɪŋ/',
               phonetic: 'EI-li-a-sing',
               example:
-                'Aliasing means two refs to same object. = Aliasing significa due ref allo stesso oggetto.',
+                'When a function takes two int& parameters, aliasing can occur if both refer to the same variable, causing unexpected results. = Quando una funzione prende due parametri int&, può verificarsi aliasing se entrambi si riferiscono alla stessa variabile, causando risultati inattesi.',
               context: 'memory',
               difficulty: 'advanced',
             },
@@ -7888,11 +7988,11 @@ export default {
           items: [
             {
               english: 'Singleton',
-              italian: 'singleton / pattern unica istanza',
+              italian: 'Pattern unica istanza (singleton)',
               pronunciation: '/ˈsɪŋɡltən/',
               phonetic: 'SIN-gol-ton',
               example:
-                "Singleton has exactly one instance. = Il singleton ha esattamente un'istanza.",
+                'The logger class implements a singleton so every subsystem writes to the same log stream. = La classe logger implementa un singleton così ogni sottosistema scrive sullo stesso stream di log.',
               context: 'patterns',
               difficulty: 'advanced',
               code: 'static A& instance() { static A a; return a; }',
@@ -7900,7 +8000,7 @@ export default {
             },
             {
               english: 'Factory',
-              italian: 'factory / pattern fabbrica',
+              italian: 'Pattern fabbrica (factory)',
               pronunciation: '/ˈfæktəri/',
               phonetic: 'FAK-to-ri',
               example:
@@ -7911,7 +8011,7 @@ export default {
             },
             {
               english: 'Abstract Factory',
-              italian: 'abstract factory / fabbrica astratta',
+              italian: 'Fabbrica astratta (abstract factory)',
               pronunciation: '/ˈæbstrækt/',
               phonetic: 'AB-strakt',
               example:
@@ -7921,28 +8021,28 @@ export default {
             },
             {
               english: 'Builder',
-              italian: 'builder / costruttore a passi',
+              italian: 'Costruttore a passi (builder)',
               pronunciation: '/ˈbɪldər/',
               phonetic: 'BIL-der',
               example:
-                'Builder constructs complex objects step by step. = Builder costruisce oggetti complessi passo dopo passo.',
+                "The SQL query object uses a builder so the caller can chain where(), orderBy(), and limit() before calling build(). = L'oggetto query SQL usa un builder così il chiamante può concatenare where(), orderBy() e limit() prima di chiamare build().",
               context: 'patterns',
               difficulty: 'advanced',
             },
             {
               english: 'Prototype',
-              italian: 'prototype / clonazione di prototipo',
+              italian: 'Clonazione di prototipo (prototype)',
               pronunciation: '/ˈproʊtətaɪp/',
               phonetic: 'PRO-to-taip',
               example:
-                'Prototype clones an existing object. = Prototype clona un oggetto esistente.',
+                "The level editor duplicates enemies by calling clone() on a prototype instead of re-reading their config from disk. = L'editor di livelli duplica i nemici chiamando clone() su un prototipo invece di rileggere la loro configurazione da disco.",
               context: 'patterns',
               difficulty: 'advanced',
               code: 'virtual std::unique_ptr<A> clone() const;',
             },
             {
               english: 'Object Pool',
-              italian: 'object pool / pool di oggetti riusabili',
+              italian: 'Pool di oggetti riusabili (object pool)',
               pronunciation: '/ˈɒbdʒɪkt puːl/',
               phonetic: 'OB-gekt PUUL',
               example:
@@ -7983,7 +8083,7 @@ export default {
             },
             {
               english: 'Registry',
-              italian: 'registry / registro di oggetti',
+              italian: 'Registro di oggetti (registry)',
               pronunciation: '/ˈredʒɪstri/',
               phonetic: 'RE-gi-stri',
               example: 'A registry maps names to objects. = Un registry mappa nomi a oggetti.',
@@ -7999,10 +8099,11 @@ export default {
           items: [
             {
               english: 'CRTP',
-              italian: 'CRTP (Curiously Recurring Template Pattern)',
+              italian: 'Pattern template ricorsivo curioso (CRTP)',
               pronunciation: '/siː ɑːr tiː piː/',
               phonetic: 'SI-AR-TI-PI',
-              example: 'CRTP enables static polymorphism. = CRTP abilita polimorfismo statico.',
+              example:
+                'The physics engine uses CRTP to inject optimized collision methods into each shape class at compile time. = Il motore fisico usa CRTP per iniettare metodi di collisione ottimizzati in ogni classe forma a tempo di compilazione.',
               context: 'patterns',
               difficulty: 'advanced',
               code: 'template<class D> struct Base { /* ... */ };',
@@ -8032,31 +8133,31 @@ export default {
             },
             {
               english: 'Bridge',
-              italian: 'bridge / disaccoppia astrazione e implementazione',
+              italian: 'Disaccoppia astrazione e implementazione (bridge)',
               pronunciation: '/brɪdʒ/',
               phonetic: 'BRIGE',
               example:
-                "Bridge separates abstraction from impl. = Bridge separa l'astrazione dall'impl.",
+                "The graphics renderer uses the bridge pattern to keep the Renderer API independent from the OpenGL and Vulkan backends. = Il renderer grafico usa il pattern bridge per mantenere l'API Renderer indipendente dai backend OpenGL e Vulkan.",
               context: 'patterns',
               difficulty: 'advanced',
             },
             {
               english: 'Composite',
-              italian: 'composite / albero di componenti uniformi',
+              italian: 'Albero di componenti uniformi (composite)',
               pronunciation: '/ˈkɒmpəzɪt/',
               phonetic: 'KOM-po-zit',
               example:
-                'Composite treats individuals and groups uniformly. = Composite tratta individui e gruppi uniformemente.',
+                "The UI toolkit models both single widgets and panels with children as a composite tree so the layout algorithm handles both uniformly. = Il toolkit UI modella sia i widget singoli che i pannelli con figli come un albero composite così l'algoritmo di layout li gestisce uniformemente.",
               context: 'patterns',
               difficulty: 'advanced',
             },
             {
               english: 'Decorator',
-              italian: 'decorator / arricchimento dinamico di oggetto',
+              italian: 'Arricchimento dinamico di oggetto (decorator)',
               pronunciation: '/ˈdekəreɪtər/',
               phonetic: 'DEK-o-rei-tor',
               example:
-                'Decorator adds behavior dynamically. = Decorator aggiunge comportamento dinamicamente.',
+                'The logging stream wraps the original output stream with a decorator that prepends a timestamp to every line. = Lo stream di logging avvolge lo stream di output originale con un decorator che prepone un timestamp a ogni riga.',
               context: 'patterns',
               difficulty: 'advanced',
             },
@@ -8066,13 +8167,13 @@ export default {
               pronunciation: '/fəˈsɑːd/',
               phonetic: 'fa-SAAD',
               example:
-                "Facade provides a simple interface. = La facciata fornisce un'interfaccia semplice.",
+                'The audio engine exposes a simple facade with play() and stop() instead of revealing the complex mixer and buffer internals. = Il motore audio espone una facciata semplice con play() e stop() invece di rivelare gli interni complessi di mixer e buffer.',
               context: 'patterns',
               difficulty: 'advanced',
             },
             {
               english: 'Proxy',
-              italian: 'proxy / surrogato di oggetto',
+              italian: 'Surrogato di oggetto (proxy)',
               pronunciation: '/ˈprɒksi/',
               phonetic: 'PROK-si',
               example:
@@ -8082,16 +8183,17 @@ export default {
             },
             {
               english: 'Flyweight',
-              italian: 'flyweight / oggetto condiviso a peso ridotto',
+              italian: 'Oggetto condiviso a peso ridotto (flyweight)',
               pronunciation: '/ˈflaɪweɪt/',
               phonetic: 'FLAI-ueit',
-              example: 'Flyweight shares immutable state. = Flyweight condivide stato immutabile.',
+              example:
+                "The text editor uses the flyweight pattern to share a single Font object among thousands of characters with the same typeface. = L'editor di testo usa il pattern flyweight per condividere un singolo oggetto Font tra migliaia di caratteri con lo stesso tipo di carattere.",
               context: 'patterns',
               difficulty: 'advanced',
             },
             {
               english: 'Mixin',
-              italian: 'mixin / classe di funzionalità riusabile',
+              italian: 'Classe di funzionalità riusabile (mixin)',
               pronunciation: '/ˈmɪksɪn/',
               phonetic: 'MIK-sin',
               example:
@@ -8108,17 +8210,17 @@ export default {
           items: [
             {
               english: 'Observer',
-              italian: 'observer / pattern osservatore',
+              italian: 'Pattern osservatore (observer)',
               pronunciation: '/əbˈzɜːrvər/',
               phonetic: 'ob-ZER-ver',
               example:
-                'Observer notifies subscribers of changes. = Observer notifica gli abbonati dei cambiamenti.',
+                'The stock ticker class acts as an observer subject, pushing price updates to all registered chart widgets in real time. = La classe ticker azionario agisce come soggetto observer, inviando aggiornamenti di prezzo a tutti i widget grafici registrati in tempo reale.',
               context: 'patterns',
               difficulty: 'advanced',
             },
             {
               english: 'Subject',
-              italian: 'subject / soggetto osservato',
+              italian: 'Soggetto osservato (subject)',
               pronunciation: '/ˈsʌbdʒekt/',
               phonetic: 'SAB-gekt',
               example: 'The subject holds observers. = Il subject contiene gli observer.',
@@ -8127,30 +8229,32 @@ export default {
             },
             {
               english: 'Strategy',
-              italian: 'strategy / scelta di algoritmo a runtime',
+              italian: 'Scelta di algoritmo a runtime (strategy)',
               pronunciation: '/ˈstrætədʒi/',
               phonetic: 'STRA-te-gi',
-              example: 'Strategy swaps algorithms. = Strategy scambia algoritmi.',
+              example:
+                'The payment module uses the strategy pattern to switch between credit-card and PayPal processing at runtime. = Il modulo pagamenti usa il pattern strategy per passare tra elaborazione carta di credito e PayPal a runtime.',
               context: 'patterns',
               difficulty: 'advanced',
             },
             {
               english: 'Visitor',
-              italian: 'visitor / visita di una struttura',
+              italian: 'Visita di una struttura (visitor)',
               pronunciation: '/ˈvɪzɪtər/',
               phonetic: 'VI-zi-tor',
               example:
-                'Visitor performs operations on a hierarchy. = Visitor esegue operazioni su una gerarchia.',
+                "The compiler uses a visitor to walk the AST and emit different code for each node type without modifying the node classes. = Il compilatore usa un visitor per percorrere l'AST ed emettere codice diverso per ogni tipo di nodo senza modificare le classi dei nodi.",
               context: 'patterns',
               difficulty: 'advanced',
               code: 'std::visit(visitor, variant);',
             },
             {
               english: 'Command',
-              italian: 'command / azione come oggetto',
+              italian: 'Azione come oggetto (command)',
               pronunciation: '/kəˈmɑːnd/',
               phonetic: 'kom-MAND',
-              example: 'Command encapsulates a request. = Command incapsula una richiesta.',
+              example:
+                'The undo system stores every user action as a command object, so pressing Ctrl+Z replays them in reverse order. = Il sistema di undo memorizza ogni azione utente come oggetto command, così premendo Ctrl+Z le riesegue in ordine inverso.',
               context: 'patterns',
               difficulty: 'advanced',
             },
@@ -8166,27 +8270,27 @@ export default {
             },
             {
               english: 'State',
-              italian: 'state / cambio comportamento per stato',
+              italian: 'Cambio comportamento per stato (state)',
               pronunciation: '/steɪt/',
               phonetic: 'STEIT',
               example:
-                'State changes behavior with internal state. = State cambia comportamento con stato interno.',
+                'The TCP connection class uses the state pattern so its send() method behaves differently in Connecting, Open, and Closed states. = La classe connessione TCP usa il pattern state così il suo metodo send() si comporta diversamente negli stati Connecting, Open e Closed.',
               context: 'patterns',
               difficulty: 'advanced',
             },
             {
               english: 'Mediator',
-              italian: 'mediator / mediatore tra oggetti',
+              italian: 'Mediatore tra oggetti (mediator)',
               pronunciation: '/ˈmiːdieɪtər/',
               phonetic: 'MII-di-ei-tor',
               example:
-                'Mediator centralizes communication. = Mediator centralizza la comunicazione.',
+                'The chat room acts as a mediator so that no user object needs a direct reference to another; all messages flow through the room. = La chat room agisce come mediator così nessun oggetto utente necessita di un riferimento diretto a un altro; tutti i messaggi fluiscono attraverso la stanza.',
               context: 'patterns',
               difficulty: 'advanced',
             },
             {
               english: 'Chain Of Responsibility',
-              italian: 'chain of responsibility / catena di responsabilità',
+              italian: 'Catena di responsabilità (chain of responsibility)',
               pronunciation: '/tʃeɪn ɒv/',
               phonetic: 'CEIN-OV',
               example:
@@ -8338,17 +8442,18 @@ export default {
             },
             {
               english: 'Setw',
-              italian: 'std::setw / larghezza campo I/O',
+              italian: 'Larghezza campo I/O (std::setw)',
               pronunciation: '/set ˈdʌbljuː/',
               phonetic: 'SET-DAB-iu',
-              example: 'std::setw sets field width. = std::setw imposta la larghezza del campo.',
+              example:
+                'The table printer uses std::setw to pad each column to a fixed width so that numbers line up vertically. = Il printer della tabella usa std::setw per riempire ogni colonna a una larghezza fissa in modo che i numeri si allineino verticalmente.',
               context: 'io',
               difficulty: 'advanced',
               code: 'std::cout << std::setw(10) << x;',
             },
             {
               english: 'Setprecision',
-              italian: 'std::setprecision / precisione di stampa',
+              italian: 'Precisione di stampa (std::setprecision)',
               pronunciation: '/set prɪˈsɪʒən/',
               phonetic: 'SET pri-SI-zion',
               example:
@@ -8359,7 +8464,7 @@ export default {
             },
             {
               english: 'Hex',
-              italian: 'std::hex / formato esadecimale',
+              italian: 'Formato esadecimale (std::hex)',
               pronunciation: '/heks/',
               phonetic: 'HEKS',
               example: 'std::hex formats as hexadecimal. = std::hex formatta in esadecimale.',
@@ -8369,7 +8474,7 @@ export default {
             },
             {
               english: 'Fixed',
-              italian: 'std::fixed / formato a virgola fissa',
+              italian: 'Formato a virgola fissa (std::fixed)',
               pronunciation: '/fɪkst/',
               phonetic: 'FIKST',
               example:
@@ -8402,7 +8507,7 @@ export default {
             },
             {
               english: 'Boolalpha',
-              italian: 'std::boolalpha / formato testuale dei booleani',
+              italian: 'Formato testuale dei booleani (std::boolalpha)',
               pronunciation: '/buːlˈælfə/',
               phonetic: 'BUL-AL-fa',
               example: 'std::boolalpha prints true/false. = std::boolalpha stampa true/false.',
@@ -8492,7 +8597,7 @@ export default {
             },
             {
               english: 'Tellg',
-              italian: 'tellg / posizione corrente di lettura',
+              italian: 'Posizione corrente di lettura (tellg)',
               pronunciation: '/tel dʒiː/',
               phonetic: 'TEL-GI',
               example:
@@ -8503,7 +8608,7 @@ export default {
             },
             {
               english: 'Seekg',
-              italian: 'seekg / sposta posizione di lettura',
+              italian: 'Sposta posizione di lettura (seekg)',
               pronunciation: '/siːk dʒiː/',
               phonetic: 'SIIK-GI',
               example: 'seekg moves the read position. = seekg sposta la posizione di lettura.',
@@ -8522,7 +8627,7 @@ export default {
             },
             {
               english: 'Fail Bit',
-              italian: 'failbit / bit di errore di stream',
+              italian: 'Bit di errore di stream (failbit)',
               pronunciation: '/feɪl/',
               phonetic: 'FEIL',
               example: 'fail() indicates a logical error. = fail() indica un errore logico.',
@@ -8531,7 +8636,7 @@ export default {
             },
             {
               english: 'Bad Bit',
-              italian: 'badbit / bit di errore grave di stream',
+              italian: 'Bit di errore grave di stream (badbit)',
               pronunciation: '/bæd/',
               phonetic: 'BAD',
               example:
@@ -8558,7 +8663,7 @@ export default {
             },
             {
               english: 'OStringStream',
-              italian: 'std::ostringstream / stream di scrittura su stringa',
+              italian: 'Stream di scrittura su stringa (std::ostringstream)',
               pronunciation: '/oʊ strɪŋ striːm/',
               phonetic: 'O-STRING-STRIIM',
               example:
@@ -8569,7 +8674,7 @@ export default {
             },
             {
               english: 'IStringStream',
-              italian: 'std::istringstream / stream di lettura da stringa',
+              italian: 'Stream di lettura da stringa (std::istringstream)',
               pronunciation: '/aɪ strɪŋ striːm/',
               phonetic: 'AI-STRING-STRIIM',
               example:
@@ -8595,7 +8700,7 @@ export default {
               pronunciation: '/ˈtoʊkənaɪz/',
               phonetic: 'TO-ke-naiz',
               example:
-                'Tokenize splits strings into tokens. = Tokenizzare divide stringhe in token.',
+                'The CSV reader uses a stringstream to tokenize each line by commas and populate a vector of fields. = Il lettore CSV usa un stringstream per tokenizzare ogni riga tramite virgole e popolare un vettore di campi.',
               context: 'io',
               difficulty: 'advanced',
             },
@@ -8604,7 +8709,8 @@ export default {
               italian: 'Analizzare',
               pronunciation: '/pɑːrs/',
               phonetic: 'PARS',
-              example: 'Parse interprets text into data. = Analizzare interpreta testo in dati.',
+              example:
+                'The config loader reads the YAML file and must parse each key-value pair into strongly-typed settings. = Il caricatore di configurazione legge il file YAML e deve analizzare ogni coppia chiave-valore in impostazioni fortemente tipizzate.',
               context: 'io',
               difficulty: 'advanced',
             },
@@ -8621,7 +8727,7 @@ export default {
             },
             {
               english: 'From Chars',
-              italian: 'std::from_chars / parsing veloce',
+              italian: 'Parsing veloce (std::from_chars)',
               pronunciation: '/frɒm tʃɑːrz/',
               phonetic: 'FROM CIARS',
               example:
@@ -8633,7 +8739,7 @@ export default {
             },
             {
               english: 'To Chars',
-              italian: 'std::to_chars / formattazione veloce',
+              italian: 'Formattazione veloce (std::to_chars)',
               pronunciation: '/tuː tʃɑːrz/',
               phonetic: 'TUU CIARS',
               example:
@@ -8664,7 +8770,7 @@ export default {
               pronunciation: '/ˌsɪəriəlaɪˈzeɪʃən/',
               phonetic: 'si-ria-lai-ZEI-scion',
               example:
-                'Serialization converts objects to bytes. = La serializzazione converte oggetti in byte.',
+                'Before sending a game state packet over the network, the engine performs serialization to convert the world snapshot into a byte stream. = Prima di inviare un pacchetto di stato del gioco sulla rete, il motore esegue la serializzazione per convertire lo snapshot del mondo in un flusso di byte.',
               context: 'io',
               difficulty: 'advanced',
             },
@@ -8674,7 +8780,7 @@ export default {
               pronunciation: '/diːˌsɪəriəlaɪˈzeɪʃən/',
               phonetic: 'di-si-ria-lai-ZEI-scion',
               example:
-                'Deserialization rebuilds objects. = La deserializzazione ricostruisce oggetti.',
+                "When the server receives a binary packet, deserialization reconstructs the original Player object from the raw bytes. = Quando il server riceve un pacchetto binario, la deserializzazione ricostruisce l'oggetto Player originale dai byte grezzi.",
               context: 'io',
               difficulty: 'advanced',
             },
@@ -8691,7 +8797,7 @@ export default {
             },
             {
               english: 'Boost Serialization',
-              italian: 'Boost.Serialization / libreria di serializzazione',
+              italian: 'Libreria di serializzazione (Boost.Serialization)',
               pronunciation: '/buːst/',
               phonetic: 'BUUST',
               example:
@@ -8702,7 +8808,7 @@ export default {
             },
             {
               english: 'Protocol Buffers',
-              italian: 'Protocol Buffers / serializzazione Google',
+              italian: 'Serializzazione Google (Protocol Buffers)',
               pronunciation: '/ˈproʊtəkɒl/',
               phonetic: 'PRO-to-kol',
               example:
@@ -8713,7 +8819,7 @@ export default {
             },
             {
               english: 'Flatbuffers',
-              italian: 'FlatBuffers / serializzazione zero-copy',
+              italian: 'Serializzazione zero-copy (FlatBuffers)',
               pronunciation: '/ˈflætˌbʌfərz/',
               phonetic: 'FLAT-BAF-fers',
               example:
@@ -8724,7 +8830,7 @@ export default {
             },
             {
               english: 'Cereal',
-              italian: 'Cereal / libreria header-only di serializzazione',
+              italian: 'Libreria header-only di serializzazione (Cereal)',
               pronunciation: '/ˈsɪəriəl/',
               phonetic: 'SI-rial',
               example:
@@ -8735,7 +8841,7 @@ export default {
             },
             {
               english: 'Schema',
-              italian: 'schema / struttura dei dati',
+              italian: 'Struttura dei dati (schema)',
               pronunciation: '/ˈskiːmə/',
               phonetic: 'SKII-ma',
               example:
@@ -8781,11 +8887,11 @@ export default {
           items: [
             {
               english: 'CMake',
-              italian: 'CMake (generatore build cross-platform)',
+              italian: 'Generatore di build cross-platform (CMake)',
               pronunciation: '/siːmeɪk/',
               phonetic: 'SI-MEIK',
               example:
-                'CMake is the de-facto C++ build tool. = CMake è lo strumento di build C++ de-facto.',
+                'Most open-source C++ projects ship a CMakeLists.txt so contributors only need CMake to build on any platform. = La maggior parte dei progetti C++ open-source fornisce un CMakeLists.txt così i collaboratori hanno bisogno solo di CMake per compilare su qualsiasi piattaforma.',
               context: 'build',
               difficulty: 'advanced',
               command: 'cmake -S . -B build',
@@ -8793,7 +8899,7 @@ export default {
             },
             {
               english: 'CMakeLists',
-              italian: 'CMakeLists.txt (file di configurazione CMake)',
+              italian: 'File di configurazione CMake (CMakeLists.txt)',
               pronunciation: '/siːmeɪk lɪsts/',
               phonetic: 'SI-MEIK LISTS',
               example:
@@ -8878,10 +8984,11 @@ export default {
             },
             {
               english: 'CTest',
-              italian: 'CTest (esecutore di test CMake)',
+              italian: 'Esecutore di test CMake (CTest)',
               pronunciation: '/siːtɛst/',
               phonetic: 'SI-TEST',
-              example: 'CTest runs CMake-driven tests. = CTest esegue test guidati da CMake.',
+              example:
+                'The CI pipeline invokes CTest after the build step to run every registered unit test and report failures. = La pipeline CI invoca CTest dopo la fase di build per eseguire ogni test unitario registrato e segnalare i fallimenti.',
               context: 'build',
               difficulty: 'advanced',
               command: 'ctest --test-dir build',
@@ -8896,10 +9003,11 @@ export default {
           items: [
             {
               english: 'Conan',
-              italian: 'Conan (gestore di pacchetti C++)',
+              italian: 'Gestore di pacchetti C++ (Conan)',
               pronunciation: '/ˈkoʊnən/',
               phonetic: 'KO-nan',
-              example: 'Conan manages C++ dependencies. = Conan gestisce dipendenze C++.',
+              example:
+                'Adding Boost and fmt to conanfile.txt lets Conan fetch, build, and link both libraries automatically. = Aggiungere Boost e fmt al conanfile.txt permette a Conan di scaricare, compilare e linkare entrambe le librerie automaticamente.',
               context: 'build',
               difficulty: 'advanced',
               command: 'conan install . --build=missing',
@@ -8907,7 +9015,7 @@ export default {
             },
             {
               english: 'Vcpkg',
-              italian: 'Vcpkg (gestore di pacchetti C++ Microsoft)',
+              italian: 'Gestore di pacchetti C++ Microsoft (Vcpkg)',
               pronunciation: '/viː siː ˈpækɪdʒ/',
               phonetic: 'VI-SI-PAKEG',
               example:
@@ -8919,7 +9027,7 @@ export default {
             },
             {
               english: 'Conanfile',
-              italian: 'conanfile / ricetta Conan',
+              italian: 'Ricetta Conan (conanfile)',
               pronunciation: '/ˈkoʊnənfaɪl/',
               phonetic: 'KO-nan-fail',
               example:
@@ -8960,7 +9068,7 @@ export default {
             },
             {
               english: 'Triplet',
-              italian: 'triplet / piattaforma target Vcpkg',
+              italian: 'Piattaforma target Vcpkg (triplet)',
               pronunciation: '/ˈtrɪplət/',
               phonetic: 'TRI-plet',
               example: 'vcpkg uses triplets like x64-linux. = vcpkg usa triplet come x64-linux.',
@@ -8979,7 +9087,7 @@ export default {
             },
             {
               english: 'Lockfile',
-              italian: 'lockfile / file di blocco delle versioni',
+              italian: 'File di blocco delle versioni (lockfile)',
               pronunciation: '/ˈlɒkfaɪl/',
               phonetic: 'LOK-fail',
               example: 'A lockfile pins exact versions. = Un lockfile fissa le versioni esatte.',
@@ -9024,7 +9132,7 @@ export default {
             },
             {
               english: 'ODR',
-              italian: 'ODR (One Definition Rule)',
+              italian: 'Regola della definizione unica (ODR)',
               pronunciation: '/oʊ diː ɑːr/',
               phonetic: 'O-DI-AR',
               example: 'ODR: One Definition Rule. = ODR: regola della singola definizione.',
@@ -9034,7 +9142,7 @@ export default {
             },
             {
               english: 'Linkage',
-              italian: 'linkage / visibilità del simbolo',
+              italian: 'Visibilità del simbolo (linkage)',
               pronunciation: '/ˈlɪŋkɪdʒ/',
               phonetic: 'LIN-kig',
               example:
@@ -9122,7 +9230,7 @@ export default {
             },
             {
               english: 'Unity Build',
-              italian: 'unity build / compilazione unificata',
+              italian: 'Compilazione unificata (unity build)',
               pronunciation: '/ˈjuːnəti/',
               phonetic: 'IU-ni-ti',
               example:
@@ -9144,7 +9252,7 @@ export default {
             },
             {
               english: 'Include Guard',
-              italian: 'include guard / protezione doppia inclusione',
+              italian: 'Protezione doppia inclusione (include guard)',
               pronunciation: '/ɪnˈkluːd ɡɑːrd/',
               phonetic: 'in-KLUUD GARD',
               example:
@@ -9155,7 +9263,7 @@ export default {
             },
             {
               english: 'Pragma Once',
-              italian: '#pragma once / direttiva di inclusione singola',
+              italian: 'Direttiva di inclusione singola (#pragma once)',
               pronunciation: '/ˈpræɡmə wʌns/',
               phonetic: 'PRAG-ma UONS',
               example:
@@ -9189,11 +9297,11 @@ export default {
             },
             {
               english: 'LTO',
-              italian: 'LTO (Link-Time Optimization)',
+              italian: 'Ottimizzazione a tempo di linking (LTO)',
               pronunciation: '/el tiː oʊ/',
               phonetic: 'EL-TI-O',
               example:
-                'LTO optimizes across translation units. = LTO ottimizza attraverso le unità di traduzione.',
+                'Enabling LTO in the release build shrank the final binary by 15 percent because the linker could inline across source files. = Abilitare LTO nella build di release ha ridotto il binario finale del 15 percento perché il linker poteva fare inline tra file sorgente.',
               context: 'build',
               difficulty: 'advanced',
               command: 'g++ -flto',
@@ -9201,10 +9309,11 @@ export default {
             },
             {
               english: 'Ninja',
-              italian: 'Ninja (build system veloce)',
+              italian: 'Sistema di build veloce (Ninja)',
               pronunciation: '/ˈnɪndʒə/',
               phonetic: 'NIN-gia',
-              example: 'Ninja is a fast build tool. = Ninja è uno strumento di build veloce.',
+              example:
+                'Switching the CMake generator to Ninja cut the incremental build time from twelve seconds to under three. = Passare il generatore CMake a Ninja ha ridotto il tempo di build incrementale da dodici secondi a meno di tre.',
               context: 'build',
               difficulty: 'advanced',
               command: 'cmake -G Ninja',
@@ -9237,7 +9346,7 @@ export default {
           items: [
             {
               english: 'Cache Friendly',
-              italian: 'cache friendly / amico della cache',
+              italian: 'Amico della cache (cache friendly)',
               pronunciation: '/kæʃ ˈfrendli/',
               phonetic: 'KAS-FREN-dli',
               example:
@@ -9257,7 +9366,7 @@ export default {
             },
             {
               english: 'Cache Hit',
-              italian: 'cache hit / dato trovato in cache',
+              italian: 'Dato trovato in cache (cache hit)',
               pronunciation: '/hɪt/',
               phonetic: 'HIT',
               example: 'A cache hit is fast access. = Un cache hit è un accesso veloce.',
@@ -9266,7 +9375,7 @@ export default {
             },
             {
               english: 'Cache Miss',
-              italian: 'cache miss / dato assente in cache',
+              italian: 'Dato assente in cache (cache miss)',
               pronunciation: '/mɪs/',
               phonetic: 'MIS',
               example: 'A cache miss is slow. = Un cache miss è lento.',
@@ -9275,7 +9384,7 @@ export default {
             },
             {
               english: 'False Sharing',
-              italian: 'false sharing / condivisione falsa di linee cache',
+              italian: 'Condivisione falsa di linee cache (false sharing)',
               pronunciation: '/fɔːls ˈʃeərɪŋ/',
               phonetic: 'FOLS SCE-ring',
               example:
@@ -9296,7 +9405,7 @@ export default {
             },
             {
               english: 'AoS vs SoA',
-              italian: 'AoS vs SoA / array di struct vs struct di array',
+              italian: 'Array di struct vs struct di array (AoS vs SoA)',
               pronunciation: '/eɪ oʊ es viː es oʊ eɪ/',
               phonetic: 'A-O-S VS S-O-A',
               example: 'SoA can be faster than AoS. = SoA può essere più veloce di AoS.',
@@ -9316,20 +9425,22 @@ export default {
             },
             {
               english: 'Prefetching',
-              italian: 'prefetching / pre-caricamento in cache',
+              italian: 'Pre-caricamento in cache (prefetching)',
               pronunciation: '/ˈpriːfetʃɪŋ/',
               phonetic: 'PRI-fe-cing',
-              example: 'Prefetching loads data ahead. = Il prefetching carica dati in anticipo.',
+              example:
+                'The particle system inserts a prefetching hint before the inner loop so that the next batch of position data is already in L1 cache. = Il sistema di particelle inserisce un suggerimento di prefetching prima del loop interno così il prossimo blocco di dati di posizione è già nella cache L1.',
               context: 'performance',
               difficulty: 'advanced',
               code: '__builtin_prefetch(p);',
             },
             {
               english: 'Padding',
-              italian: 'padding / riempimento per allineamento',
+              italian: 'Riempimento per allineamento (padding)',
               pronunciation: '/ˈpædɪŋ/',
               phonetic: 'PA-ding',
-              example: 'Padding aligns struct fields. = Il padding allinea i campi di struct.',
+              example:
+                'Reordering the struct members from largest to smallest eliminated three bytes of padding and reduced cache pressure. = Riordinare i membri della struct dal più grande al più piccolo ha eliminato tre byte di padding e ridotto la pressione sulla cache.',
               context: 'performance',
               difficulty: 'advanced',
             },
@@ -9342,17 +9453,17 @@ export default {
           items: [
             {
               english: 'Profiling',
-              italian: 'profiling / profilazione delle prestazioni',
+              italian: 'Profilazione delle prestazioni (profiling)',
               pronunciation: '/ˈproʊfaɪlɪŋ/',
               phonetic: 'PRO-fai-ling',
               example:
-                'Profiling measures program behavior. = Il profiling misura il comportamento del programma.',
+                'After users reported slow startup, profiling revealed that 60 percent of the time was spent loading unused plugins. = Dopo che gli utenti hanno segnalato un avvio lento, il profiling ha rivelato che il 60 percento del tempo era speso a caricare plugin inutilizzati.',
               context: 'performance',
               difficulty: 'advanced',
             },
             {
               english: 'Hotspot',
-              italian: 'hotspot / punto caldo del codice',
+              italian: 'Punto caldo del codice (hotspot)',
               pronunciation: '/ˈhɒtspɒt/',
               phonetic: 'HOT-spot',
               example:
@@ -9377,14 +9488,14 @@ export default {
               pronunciation: '/ˌɪnstrəmenˈteɪʃən/',
               phonetic: 'in-stru-men-TEI-scion',
               example:
-                'Instrumentation injects profiling code. = La strumentazione inietta codice di profiling.',
+                'Compiling with -pg enables instrumentation so gprof can record how many times each function is called and for how long. = Compilare con -pg abilita la strumentazione così gprof può registrare quante volte ogni funzione viene chiamata e per quanto tempo.',
               context: 'performance',
               difficulty: 'advanced',
               tool: 'gprof, callgrind',
             },
             {
               english: 'Flame Graph',
-              italian: 'flame graph / grafico a fiamma',
+              italian: 'Grafico a fiamma (flame graph)',
               pronunciation: '/fleɪm ɡræf/',
               phonetic: 'FLEIM GRAF',
               example:
@@ -9395,10 +9506,11 @@ export default {
             },
             {
               english: 'Valgrind',
-              italian: 'Valgrind (strumento analisi memoria)',
+              italian: 'Strumento di analisi della memoria (Valgrind)',
               pronunciation: '/ˈvælɡrɪnd/',
               phonetic: 'VAL-grind',
-              example: 'Valgrind detects memory errors. = Valgrind rileva errori di memoria.',
+              example:
+                'Running the test suite under Valgrind uncovered a use-after-free bug that only manifested on certain input sizes. = Eseguire la suite di test sotto Valgrind ha scoperto un bug use-after-free che si manifestava solo con certe dimensioni di input.',
               context: 'performance',
               difficulty: 'advanced',
               command: 'valgrind --tool=callgrind ./app',
@@ -9426,7 +9538,7 @@ export default {
             },
             {
               english: 'Microbenchmark',
-              italian: 'microbenchmark / benchmark a piccola granularità',
+              italian: 'Benchmark a piccola granularità (microbenchmark)',
               pronunciation: '/ˈmaɪkroʊˌbentʃmɑːrk/',
               phonetic: 'MAI-kro-BENC-mark',
               example:
@@ -9455,11 +9567,11 @@ export default {
           items: [
             {
               english: 'SIMD',
-              italian: 'SIMD (Single Instruction Multiple Data)',
+              italian: 'Istruzione singola dati multipli (SIMD)',
               pronunciation: '/ˈsɪmd/',
               phonetic: 'SIMD',
               example:
-                'SIMD processes many values at once. = SIMD processa molti valori alla volta.',
+                'The image filter processes four pixels in parallel by packing them into a SIMD register and applying the convolution kernel in a single instruction. = Il filtro immagine elabora quattro pixel in parallelo impacchettandoli in un registro SIMD e applicando il kernel di convoluzione in una singola istruzione.',
               context: 'performance',
               difficulty: 'advanced',
               note: 'Single Instruction Multiple Data.',
@@ -9476,10 +9588,11 @@ export default {
             },
             {
               english: 'AVX',
-              italian: 'AVX (estensione SIMD x86)',
+              italian: 'Estensione SIMD per architettura x86 (AVX)',
               pronunciation: '/eɪ viː eks/',
               phonetic: 'EI-VI-EKS',
-              example: "AVX is an Intel SIMD extension. = AVX è un'estensione SIMD Intel.",
+              example:
+                'Compiling the math library with -mavx2 unlocks AVX instructions that double the throughput of the matrix multiplication kernel. = Compilare la libreria matematica con -mavx2 sblocca le istruzioni AVX che raddoppiano il throughput del kernel di moltiplicazione matriciale.',
               context: 'performance',
               difficulty: 'advanced',
               command: 'g++ -mavx2',
@@ -9490,7 +9603,7 @@ export default {
               pronunciation: '/ɪnˈtrɪnsɪks/',
               phonetic: 'in-TRIN-siks',
               example:
-                'Intrinsics expose CPU instructions. = Gli intrinseci espongono istruzioni CPU.',
+                'Instead of writing inline assembly, the audio DSP code calls _mm256_add_ps through intrinsics for portable SIMD arithmetic. = Invece di scrivere assembly inline, il codice DSP audio chiama _mm256_add_ps tramite intrinseci per aritmetica SIMD portabile.',
               context: 'performance',
               difficulty: 'advanced',
               code: '_mm256_add_ps(a, b);',
@@ -9509,10 +9622,11 @@ export default {
             },
             {
               english: 'OpenMP',
-              italian: 'OpenMP (libreria parallelismo a direttive)',
+              italian: 'Libreria di parallelismo a direttive (OpenMP)',
               pronunciation: '/ˈoʊpən em piː/',
               phonetic: 'O-pen-EM-PI',
-              example: 'OpenMP simplifies parallel loops. = OpenMP semplifica i loop paralleli.',
+              example:
+                'Adding a single #pragma omp parallel for above the image-processing loop lets OpenMP distribute the rows across all available cores. = Aggiungere un singolo #pragma omp parallel for sopra il loop di elaborazione immagini permette a OpenMP di distribuire le righe su tutti i core disponibili.',
               context: 'performance',
               difficulty: 'advanced',
               code: '#pragma omp parallel for',
@@ -9540,7 +9654,7 @@ export default {
             },
             {
               english: 'Work Stealing',
-              italian: 'work stealing / furto di lavoro tra thread',
+              italian: 'Furto di lavoro tra thread (work stealing)',
               pronunciation: '/wɜːrk ˈstiːlɪŋ/',
               phonetic: 'UORK STII-ling',
               example:
@@ -9550,7 +9664,7 @@ export default {
             },
             {
               english: 'Std Execution',
-              italian: 'std::execution',
+              italian: 'Politica di esecuzione parallela (std::execution)',
               pronunciation: '/ˌeksɪˈkjuːʃən/',
               phonetic: 'ek-si-KIU-scion',
               example:
@@ -9579,7 +9693,7 @@ export default {
             },
             {
               english: 'Hot Path',
-              italian: 'hot path / percorso caldo del codice',
+              italian: 'Percorso caldo del codice (hot path)',
               pronunciation: '/hɒt pæθ/',
               phonetic: 'HOT PAT',
               example: "The hot path runs most often. = L'hot path gira più spesso.",
@@ -9597,7 +9711,7 @@ export default {
             },
             {
               english: 'Force Inline',
-              italian: 'force inline / forzare inlining',
+              italian: 'Forzare inlining (force inline)',
               pronunciation: '/fɔːrs/',
               phonetic: 'FORS',
               example:
@@ -9607,7 +9721,7 @@ export default {
             },
             {
               english: 'No Inline',
-              italian: 'no inline / vietare inlining',
+              italian: 'Vietare inlining (no inline)',
               pronunciation: '/noʊ ˌɪnˈlaɪn/',
               phonetic: 'NO in-LAIN',
               example:
@@ -9617,7 +9731,7 @@ export default {
             },
             {
               english: 'Restrict',
-              italian: 'restrict / puntatore non aliasing',
+              italian: 'Puntatore non aliasing (restrict)',
               pronunciation: '/rɪˈstrɪkt/',
               phonetic: 'ri-STRIKT',
               example:
@@ -9639,7 +9753,7 @@ export default {
             },
             {
               english: 'Small Buffer Optimization',
-              italian: 'small buffer optimization / ottimizzazione buffer piccoli',
+              italian: 'Ottimizzazione buffer piccoli (small buffer optimization)',
               pronunciation: '/smɔːl ˈbʌfər/',
               phonetic: 'SMOOL BAF-fer',
               example:
@@ -9727,7 +9841,7 @@ export default {
             },
             {
               english: 'Higher Kinded',
-              italian: 'higher-kinded / di ordine superiore (template)',
+              italian: 'Di ordine superiore (template) (higher-kinded)',
               pronunciation: '/ˈhaɪər ˈkaɪndɪd/',
               phonetic: 'HAI-er KAIN-ded',
               example:
@@ -9777,7 +9891,7 @@ export default {
             },
             {
               english: 'Index Sequence',
-              italian: 'std::index_sequence / sequenza di indici',
+              italian: 'Sequenza di indici (std::index_sequence)',
               pronunciation: '/ˈɪndeks ˈsiːkwəns/',
               phonetic: 'IN-deks SII-kuens',
               example:
@@ -9817,7 +9931,7 @@ export default {
             },
             {
               english: 'Constexpr If',
-              italian: 'if constexpr / branch a tempo di compilazione',
+              italian: 'Branch a tempo di compilazione (if constexpr)',
               pronunciation: '/ɪf/',
               phonetic: 'IF',
               example:
@@ -9905,7 +10019,7 @@ export default {
           items: [
             {
               english: 'Is Constructible',
-              italian: 'is_constructible',
+              italian: 'Verifica costruibilità di tipo (is_constructible)',
               pronunciation: '/kənˈstrʌktəbl/',
               phonetic: 'kon-STRAK-ta-bol',
               example:
@@ -9916,7 +10030,7 @@ export default {
             },
             {
               english: 'Is Trivial',
-              italian: 'is_trivial',
+              italian: 'Verifica tipo triviale (is_trivial)',
               pronunciation: '/ˈtrɪviəl/',
               phonetic: 'TRI-vial',
               example: 'is_trivial detects trivial types. = is_trivial rileva tipi triviali.',
@@ -9926,7 +10040,7 @@ export default {
             },
             {
               english: 'Is Standard Layout',
-              italian: 'is_standard_layout',
+              italian: 'Verifica layout standard del tipo (is_standard_layout)',
               pronunciation: '/ˈstændərd/',
               phonetic: 'STAN-dard',
               example:
@@ -9937,7 +10051,7 @@ export default {
             },
             {
               english: 'Is Polymorphic',
-              italian: 'is_polymorphic',
+              italian: 'Verifica tipo polimorfico (is_polymorphic)',
               pronunciation: '/ˌpɒlɪˈmɔːrfɪk/',
               phonetic: 'po-li-MOR-fik',
               example:
@@ -9947,7 +10061,7 @@ export default {
             },
             {
               english: 'Is Convertible',
-              italian: 'is_convertible',
+              italian: 'Verifica convertibilità tra tipi (is_convertible)',
               pronunciation: '/kənˈvɜːrtəbl/',
               phonetic: 'kon-VER-ta-bol',
               example: 'is_convertible checks conversions. = is_convertible verifica conversioni.',
@@ -9956,7 +10070,7 @@ export default {
             },
             {
               english: 'Is Function',
-              italian: 'is_function',
+              italian: 'Verifica tipo funzione (is_function)',
               pronunciation: '/ˈfʌŋkʃən/',
               phonetic: 'FANK-scen',
               example: 'is_function detects function types. = is_function rileva tipi funzione.',
@@ -9965,7 +10079,7 @@ export default {
             },
             {
               english: 'Conjunction',
-              italian: 'std::conjunction / AND logico tra trait',
+              italian: 'AND logico tra trait (std::conjunction)',
               pronunciation: '/kənˈdʒʌŋkʃən/',
               phonetic: 'kon-GIUNK-scion',
               example:
@@ -9976,7 +10090,7 @@ export default {
             },
             {
               english: 'Disjunction',
-              italian: 'std::disjunction / OR logico tra trait',
+              italian: 'OR logico tra trait (std::disjunction)',
               pronunciation: '/dɪsˈdʒʌŋkʃən/',
               phonetic: 'dis-GIUNK-scion',
               example:
@@ -9986,7 +10100,7 @@ export default {
             },
             {
               english: 'Negation',
-              italian: 'std::negation / NOT logico di trait',
+              italian: 'NOT logico di trait (std::negation)',
               pronunciation: '/nɪˈɡeɪʃən/',
               phonetic: 'ni-GHEI-scion',
               example: 'std::negation negates a trait. = std::negation nega un tratto.',
@@ -10065,7 +10179,7 @@ export default {
             },
             {
               english: 'Boost Hana',
-              italian: 'Boost.Hana',
+              italian: 'Libreria di metaprogrammazione (Boost.Hana)',
               pronunciation: '/buːst ˈhɑːnə/',
               phonetic: 'BUUST HA-na',
               example:
@@ -10135,11 +10249,11 @@ export default {
           items: [
             {
               english: 'Google Test',
-              italian: 'Google Test (framework di unit test)',
+              italian: 'Framework di unit test (Google Test)',
               pronunciation: '/ˈɡuːɡl test/',
               phonetic: 'GUU-gol TEST',
               example:
-                'Google Test is a popular C++ testing lib. = Google Test è una libreria di test C++ popolare.',
+                'The team chose Google Test for the matrix library because its rich matcher API makes assertion messages clear and readable. = Il team ha scelto Google Test per la libreria di matrici perché la sua ricca API di matcher rende i messaggi di asserzione chiari e leggibili.',
               context: 'testing',
               difficulty: 'advanced',
               tool: 'Google Test',
@@ -10188,7 +10302,7 @@ export default {
             },
             {
               english: 'Setup',
-              italian: 'setup / preparazione del test',
+              italian: 'Preparazione del test (setup)',
               pronunciation: '/ˈsetʌp/',
               phonetic: 'SET-ap',
               example: 'SetUp() runs before each test. = SetUp() gira prima di ogni test.',
@@ -10197,7 +10311,7 @@ export default {
             },
             {
               english: 'Teardown',
-              italian: 'teardown / pulizia post-test',
+              italian: 'Pulizia post-test (teardown)',
               pronunciation: '/ˈtɪərdaʊn/',
               phonetic: 'TIR-daun',
               example: 'TearDown() runs after each test. = TearDown() gira dopo ogni test.',
@@ -10227,7 +10341,7 @@ export default {
             },
             {
               english: 'Death Test',
-              italian: 'death test / test che verifica un crash atteso',
+              italian: 'Test che verifica un crash atteso (death test)',
               pronunciation: '/deθ test/',
               phonetic: 'DET TEST',
               example:
@@ -10245,11 +10359,11 @@ export default {
           items: [
             {
               english: 'Catch2',
-              italian: 'Catch2 (framework di unit test header-only)',
+              italian: 'Framework di unit test header-only (Catch2)',
               pronunciation: '/kætʃ tuː/',
               phonetic: 'KACI-TU',
               example:
-                'Catch2 is a header-only test framework. = Catch2 è un framework di test header-only.',
+                'The small utility library uses Catch2 because a single header include is enough to start writing tests without any build-system setup. = La piccola libreria di utilità usa Catch2 perché un singolo header include è sufficiente per iniziare a scrivere test senza alcuna configurazione del build system.',
               context: 'testing',
               difficulty: 'advanced',
               tool: 'Catch2',
@@ -10266,7 +10380,7 @@ export default {
             },
             {
               english: 'Test Case',
-              italian: 'test case / caso di test',
+              italian: 'Caso di test (test case)',
               pronunciation: '/keɪs/',
               phonetic: 'KEIS',
               example: 'TEST_CASE defines a Catch2 test. = TEST_CASE definisce un test Catch2.',
@@ -10286,7 +10400,7 @@ export default {
             },
             {
               english: 'Require',
-              italian: 'REQUIRE / asserzione critica Catch2',
+              italian: 'Asserzione critica Catch2 (REQUIRE)',
               pronunciation: '/rɪˈkwaɪər/',
               phonetic: 'ri-KUAIR',
               example: 'REQUIRE aborts on failure. = REQUIRE aborta in caso di fallimento.',
@@ -10296,7 +10410,7 @@ export default {
             },
             {
               english: 'Check',
-              italian: 'CHECK / asserzione non fatale Catch2',
+              italian: 'Asserzione non fatale Catch2 (CHECK)',
               pronunciation: '/tʃek/',
               phonetic: 'CEK',
               example: 'CHECK continues on failure. = CHECK continua in caso di fallimento.',
@@ -10306,17 +10420,18 @@ export default {
             },
             {
               english: 'Approx',
-              italian: 'Approx / confronto approssimato float',
+              italian: 'Confronto approssimato float (Approx)',
               pronunciation: '/əˈprɒks/',
               phonetic: 'a-PROKS',
-              example: 'Approx compares floats. = Approx confronta float.',
+              example:
+                'The physics test wraps the expected velocity in Approx to tolerate tiny floating-point rounding differences. = Il test di fisica avvolge la velocità attesa in Approx per tollerare piccole differenze di arrotondamento in virgola mobile.',
               context: 'testing',
               difficulty: 'advanced',
               code: 'REQUIRE(x == Approx(3.14));',
             },
             {
               english: 'Tag',
-              italian: 'tag / etichetta del test',
+              italian: 'Etichetta del test (tag)',
               pronunciation: '/tæɡ/',
               phonetic: 'TAG',
               example: 'Tags categorize tests. = I tag categorizzano i test.',
@@ -10336,7 +10451,7 @@ export default {
             },
             {
               english: 'Header Only',
-              italian: 'header-only / libreria solo header',
+              italian: 'Libreria solo header (header-only)',
               pronunciation: '/ˈhedər ˈoʊnli/',
               phonetic: 'HED-er ON-li',
               example:
@@ -10353,7 +10468,7 @@ export default {
           items: [
             {
               english: 'GMock',
-              italian: 'GMock (libreria mock di Google)',
+              italian: 'Libreria mock di Google (GMock)',
               pronunciation: '/dʒiː mɒk/',
               phonetic: 'GI-MOK',
               example:
@@ -10396,7 +10511,7 @@ export default {
             },
             {
               english: 'Stub',
-              italian: 'stub / sostituto minimale',
+              italian: 'Sostituto minimale (stub)',
               pronunciation: '/stʌb/',
               phonetic: 'STAB',
               example:
@@ -10406,7 +10521,7 @@ export default {
             },
             {
               english: 'Fake',
-              italian: 'fake / sostituto funzionante',
+              italian: 'Sostituto funzionante (fake)',
               pronunciation: '/feɪk/',
               phonetic: 'FEIK',
               example:
@@ -10416,11 +10531,11 @@ export default {
             },
             {
               english: 'Fuzzing',
-              italian: 'fuzzing / test con input casuali',
+              italian: 'Test con input casuali (fuzzing)',
               pronunciation: '/ˈfʌzɪŋ/',
               phonetic: 'FAZ-zing',
               example:
-                'Fuzzing feeds random inputs to find bugs. = Il fuzzing dà input casuali per trovare bug.',
+                'The security team runs continuous fuzzing against the JSON parser to catch crashes triggered by malformed payloads. = Il team di sicurezza esegue fuzzing continuo contro il parser JSON per catturare crash causati da payload malformati.',
               context: 'testing',
               difficulty: 'advanced',
               tool: 'libFuzzer, AFL',
@@ -10438,18 +10553,18 @@ export default {
             },
             {
               english: 'AFL',
-              italian: 'AFL (American Fuzzy Lop)',
+              italian: 'Fuzzer guidato dalla copertura (AFL)',
               pronunciation: '/eɪ ef el/',
               phonetic: 'EI-EF-EL',
               example:
-                'AFL is a coverage-guided fuzzer. = AFL è un fuzzer guidato dalla copertura.',
+                'Running the image decoder through AFL for 48 hours uncovered two heap-overflow bugs that no unit test had caught. = Eseguire il decoder di immagini attraverso AFL per 48 ore ha scoperto due bug di heap-overflow che nessun test unitario aveva rilevato.',
               context: 'testing',
               difficulty: 'advanced',
               tool: 'AFL, AFL++',
             },
             {
               english: 'Property Test',
-              italian: 'property test / test basato su proprietà',
+              italian: 'Test basato su proprietà (property test)',
               pronunciation: '/ˈprɒpərti test/',
               phonetic: 'PRO-per-ti TEST',
               example: 'Property tests verify invariants. = I property test verificano invarianti.',
@@ -10528,7 +10643,7 @@ export default {
             },
             {
               english: 'Benchmark',
-              italian: 'benchmark / test prestazionale',
+              italian: 'Test prestazionale (benchmark)',
               pronunciation: '/ˈbentʃmɑːrk/',
               phonetic: 'BENC-mark',
               example: 'Benchmarks measure performance. = I benchmark misurano la performance.',
@@ -10597,11 +10712,11 @@ export default {
             },
             {
               english: 'GSL',
-              italian: 'GSL (Guidelines Support Library)',
+              italian: 'Libreria di supporto alle linee guida (GSL)',
               pronunciation: '/dʒiː es el/',
               phonetic: 'GI-ES-EL',
               example:
-                'GSL is the Guidelines Support Library. = GSL è la Guidelines Support Library.',
+                'The team adopted GSL so that every owning pointer is annotated with gsl::owner and null violations are caught at compile time. = Il team ha adottato GSL così ogni puntatore proprietario è annotato con gsl::owner e le violazioni null vengono catturate a tempo di compilazione.',
               context: 'foundations',
               difficulty: 'advanced',
               code: 'gsl::span<int> s;',
@@ -10620,7 +10735,7 @@ export default {
             },
             {
               english: 'Not Null',
-              italian: 'gsl::not_null / puntatore non nullo',
+              italian: 'Puntatore non nullo (gsl::not_null)',
               pronunciation: '/nɒt nʌl/',
               phonetic: 'NOT NAL',
               example:
@@ -10631,7 +10746,7 @@ export default {
             },
             {
               english: 'Narrow Cast',
-              italian: 'gsl::narrow_cast / cast restrittivo controllato',
+              italian: 'Cast restrittivo controllato (gsl::narrow_cast)',
               pronunciation: '/ˈnæroʊ/',
               phonetic: 'NA-ro',
               example: 'gsl::narrow throws on overflow. = gsl::narrow lancia in caso di overflow.',
@@ -10682,7 +10797,7 @@ export default {
             },
             {
               english: 'Best Practice',
-              italian: 'best practice / pratica raccomandata',
+              italian: 'Pratica raccomandata (best practice)',
               pronunciation: '/best ˈpræktɪs/',
               phonetic: 'BEST PRAK-tis',
               example: 'Best practices reduce bugs. = Le best practice riducono i bug.',
@@ -10698,7 +10813,7 @@ export default {
           items: [
             {
               english: 'Sanitizer',
-              italian: 'sanitizer / strumento rilevazione errori a runtime',
+              italian: 'Strumento rilevazione errori a runtime (sanitizer)',
               pronunciation: '/ˈsænɪtaɪzər/',
               phonetic: 'SA-ni-tai-zer',
               example: 'Sanitizers detect bugs at runtime. = I sanitizer rilevano bug a runtime.',
@@ -10708,7 +10823,7 @@ export default {
             },
             {
               english: 'Address Sanitizer',
-              italian: 'AddressSanitizer / sanitizer per memoria',
+              italian: 'Sanitizer per memoria (AddressSanitizer)',
               pronunciation: '/əˈdres/',
               phonetic: 'a-DRES',
               example: 'ASan detects memory errors. = ASan rileva errori di memoria.',
@@ -10719,7 +10834,7 @@ export default {
             },
             {
               english: 'Undefined Behavior Sanitizer',
-              italian: 'UBSan / sanitizer per comportamento indefinito',
+              italian: 'Sanitizer per comportamento indefinito (UBSan)',
               pronunciation: '/ˌʌnˈdiːfaɪnd/',
               phonetic: 'an-di-FAIND',
               example: 'UBSan catches undefined behavior. = UBSan cattura undefined behavior.',
@@ -10730,7 +10845,7 @@ export default {
             },
             {
               english: 'Thread Sanitizer',
-              italian: 'ThreadSanitizer / sanitizer per data race',
+              italian: 'Sanitizer per data race (ThreadSanitizer)',
               pronunciation: '/θred/',
               phonetic: 'TRED',
               example: 'TSan detects data races. = TSan rileva data race.',
@@ -10741,7 +10856,7 @@ export default {
             },
             {
               english: 'Memory Sanitizer',
-              italian: 'MemorySanitizer / sanitizer per memoria non inizializzata',
+              italian: 'Sanitizer per memoria non inizializzata (MemorySanitizer)',
               pronunciation: '/ˈmemri/',
               phonetic: 'MEM-ri',
               example: 'MSan finds uninitialized reads. = MSan trova letture non inizializzate.',
@@ -10752,7 +10867,7 @@ export default {
             },
             {
               english: 'Leak Sanitizer',
-              italian: 'LeakSanitizer / sanitizer per perdite memoria',
+              italian: 'Sanitizer per perdite memoria (LeakSanitizer)',
               pronunciation: '/liːk/',
               phonetic: 'LIIK',
               example: 'LSan detects memory leaks. = LSan rileva memory leak.',
@@ -10774,7 +10889,7 @@ export default {
             },
             {
               english: 'Clang Tidy',
-              italian: 'Clang-Tidy',
+              italian: 'Analizzatore statico e linter C++ (Clang-Tidy)',
               pronunciation: '/klæŋ ˈtaɪdi/',
               phonetic: 'KLANG TAI-di',
               example:
@@ -10845,7 +10960,7 @@ export default {
             },
             {
               english: 'Range Based',
-              italian: 'Range-based',
+              italian: 'Basato su intervalli (range-based)',
               pronunciation: '/reɪndʒ beɪst/',
               phonetic: 'REINGE BEIST',
               example:
@@ -10921,7 +11036,7 @@ export default {
           items: [
             {
               english: 'Code Review',
-              italian: 'code review / revisione del codice',
+              italian: 'Revisione del codice (code review)',
               pronunciation: '/koʊd rɪˈvjuː/',
               phonetic: 'KOUD ri-VIU',
               example:
@@ -10931,7 +11046,7 @@ export default {
             },
             {
               english: 'Pull Request',
-              italian: 'pull request / richiesta di integrazione',
+              italian: 'Richiesta di integrazione (pull request)',
               pronunciation: '/pʊl rɪˈkwest/',
               phonetic: 'PUL ri-KUEST',
               example: 'A pull request proposes changes. = Una pull request propone modifiche.',
@@ -10940,7 +11055,7 @@ export default {
             },
             {
               english: 'Merge Request',
-              italian: 'merge request / richiesta di fusione (GitLab)',
+              italian: 'Richiesta di fusione (GitLab) (merge request)',
               pronunciation: '/mɜːrdʒ rɪˈkwest/',
               phonetic: 'MERG ri-KUEST',
               example: 'GitLab calls them merge requests. = GitLab le chiama merge request.',
@@ -10971,7 +11086,7 @@ export default {
             },
             {
               english: 'Lint',
-              italian: 'lint / analisi statica del codice',
+              italian: 'Analisi statica del codice (lint)',
               pronunciation: '/lɪnt/',
               phonetic: 'LINT',
               example: 'Linters flag style issues. = I linter segnalano problemi di stile.',
@@ -10990,11 +11105,11 @@ export default {
             },
             {
               english: 'Refactoring',
-              italian: 'refactoring / ristrutturazione del codice',
+              italian: 'Ristrutturazione del codice (refactoring)',
               pronunciation: '/ˌriːˈfæktərɪŋ/',
               phonetic: 'ri-FAK-to-ring',
               example:
-                'Refactoring improves code without changing behavior. = Il refactoring migliora il codice senza cambiare comportamento.',
+                'The team applied refactoring to split the 2000-line parser into smaller classes, keeping every test green throughout the process. = Il team ha applicato il refactoring per dividere il parser da 2000 righe in classi più piccole, mantenendo tutti i test verdi durante il processo.',
               context: 'foundations',
               difficulty: 'advanced',
             },
@@ -11010,7 +11125,7 @@ export default {
             },
             {
               english: 'Pair Programming',
-              italian: 'pair programming / programmazione in coppia',
+              italian: 'Programmazione in coppia (pair programming)',
               pronunciation: '/peər/',
               phonetic: 'PER',
               example:
