@@ -1,0 +1,117 @@
+{
+  "fixes": [
+    {
+      "level": "6",
+      "lesson": "c_advptr_1",
+      "english": "Double Pointer",
+      "set": {
+        "english": "Pointer-to-Pointer Variable",
+        "italian": "Variabile puntatore a puntatore",
+        "example": "Declaring a pointer-to-pointer variable such as int **pp gives one location whose contents are the address of another int pointer. = Dichiarare una variabile puntatore a puntatore come int **pp da' una posizione il cui contenuto e' l'indirizzo di un altro puntatore a int.",
+        "note": "Rinominato per distinguere il concetto di variabile dal pattern di parametro a doppio puntatore."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_3",
+      "english": "Use After Free (memory debug)",
+      "set": {
+        "example": "Sanitizers flag use after free (memory debug) when an alias keeps reading memory that another code path has already released to the allocator. = I sanitizer segnalano uso dopo free (debug memoria) quando un alias continua a leggere memoria che un altro percorso ha gia' rilasciato all'allocatore."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Doubly Linked List",
+      "set": {
+        "english": "Doubly Linked List Removal",
+        "italian": "Rimozione in lista doppiamente linkata",
+        "example": "Given a node reference, doubly linked list removal splices the node out in O(1) by rewiring the prev and next pointers of its neighbors. = Data una referenza al nodo, la rimozione in lista doppiamente linkata stacca il nodo in O(1) ricollegando i puntatori prev e next dei vicini.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Doubly Linked List' presente piu' avanti nello stesso modulo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "List Traversal",
+      "set": {
+        "example": "Walking from head to tail by following each node's next pointer is the canonical list traversal idiom used to print or search a linked list. = Camminare dalla testa alla coda seguendo il puntatore next di ogni nodo e' l'idioma canonico di visita di lista usato per stampare o cercare in una lista linkata."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_3",
+      "english": "Pre-order Traversal",
+      "set": {
+        "example": "A tree serializer relies on pre-order traversal so each parent's value is emitted before either of its subtrees gets recursed into. = Un serializzatore di albero si affida alla visita pre-ordine cosi' il valore di ogni padre viene emesso prima che uno dei suoi sottoalberi venga visitato ricorsivamente."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_2",
+      "english": "Algorithmic Recursion",
+      "set": {
+        "example": "Expressing merge sort or tree problems through algorithmic recursion lets the C code mirror the mathematical recurrence almost line for line. = Esprimere il merge sort o problemi su alberi tramite ricorsione algoritmica permette al codice C di rispecchiare la ricorrenza matematica quasi riga per riga."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "Library Linking",
+      "set": {
+        "example": "Passing -lm to gcc triggers library linking against libm so calls to sin, cos and sqrt resolve at link time instead of failing. = Passare -lm a gcc innesca il collegamento di librerie contro libm cosi' le chiamate a sin, cos e sqrt si risolvono al tempo di linking invece di fallire."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_2",
+      "english": "Heap Corruption (debugging)",
+      "set": {
+        "example": "A bug causing heap corruption (debugging) often surfaces much later as a crash deep inside malloc itself, far from the original buggy write. = Un bug che causa corruzione dello heap (debug) spesso emerge molto piu' tardi come un crash dentro malloc stesso, lontano dalla scrittura buggata originale."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_3",
+      "english": "POSIX Shared Memory",
+      "set": {
+        "example": "Two unrelated processes can map the same region using POSIX shared memory via shm_open and mmap to exchange data without any copy. = Due processi non correlati possono mappare la stessa regione usando la memoria condivisa POSIX tramite shm_open e mmap per scambiare dati senza alcuna copia."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_2",
+      "english": "Format String Vulnerability",
+      "set": {
+        "english": "Printf Format String Attack",
+        "italian": "Attacco format string su printf",
+        "example": "An attacker who controls the format argument to printf triggers a printf format string attack, leaking stack data or writing bytes via %n. = Un attaccante che controlla l'argomento format di printf innesca un attacco format string su printf, facendo trapelare dati di stack o scrivendo byte tramite %n.",
+        "note": "Rinominato per distinguerlo dall'item 'Format String Vulnerability' introduttivo del modulo stringhe."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_2",
+      "english": "Security Bounds Checking",
+      "set": {
+        "example": "Validating every external length field with security bounds checking stops attacker-controlled sizes from reaching allocation or copy primitives. = Validare ogni campo lunghezza esterno con controllo dei limiti per sicurezza impedisce che dimensioni controllate dall'attaccante raggiungano primitive di allocazione o copia."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Register Bit Manipulation",
+      "set": {
+        "example": "Configuring a UART or GPIO peripheral in embedded C requires register bit manipulation to set, clear and toggle the individual control bits. = Configurare una periferica UART o GPIO in C embedded richiede manipolazione di bit su registri per settare, azzerare e invertire i singoli bit di controllo."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Toggle Bit",
+      "set": {
+        "example": "The common idiom to toggle bit 5 of a control register uses XOR as in reg ^= (1U << 5) so only that single bit flips without touching its neighbors. = L'idioma comune per invertire il bit 5 di un registro di controllo usa lo XOR come reg ^= (1U << 5) cosi' solo quel singolo bit si inverte senza toccare i vicini."
+      }
+    }
+  ]
+}

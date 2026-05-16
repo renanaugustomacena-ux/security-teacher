@@ -1,0 +1,810 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "db_foundations_4",
+      "english": "Disk Persistence",
+      "set": {
+        "example": "Every committed transaction must reach disk persistence on the WAL file before the client receives a success acknowledgement from PostgreSQL. = Ogni transazione confermata deve raggiungere la persistenza su disco sul file WAL prima che il client riceva un acknowledgement di successo da PostgreSQL."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_3",
+      "english": "Dependency Preservation",
+      "set": {
+        "example": "Schemas split into 3NF generally meet dependency preservation, so every original functional dependency can still be enforced without joining the new tables. = Gli schemi divisi in 3NF generalmente garantiscono la preservazione delle dipendenze, cosi ogni dipendenza funzionale originale puo' ancora essere verificata senza unire le nuove tabelle."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Over-indexing",
+      "set": {
+        "example": "The write-heavy events table suffers from over-indexing: each INSERT updates twelve B-trees and now takes thirty milliseconds instead of two. = La tabella events con molte scritture soffre di eccesso di indici: ogni INSERT aggiorna dodici B-tree e ora richiede trenta millisecondi invece di due."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "Classic Two-Phase Commit",
+      "set": {
+        "example": "The XA driver runs a classic two-phase commit across the orders database and the payments database so both ledgers either succeed or roll back together. = Il driver XA esegue un two-phase commit classico tra il database ordini e il database pagamenti cosi entrambi i registri o riescono o eseguono il rollback insieme."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "Atomicity",
+      "set": {
+        "example": "A bank transfer relies on atomicity so that debiting the sender and crediting the recipient either both happen or neither does. = Un bonifico bancario si affida all'atomicita' cosi che addebitare il mittente e accreditare il destinatario o avvengano entrambi o nessuno dei due."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "Consistency",
+      "set": {
+        "example": "Foreign-key constraints enforce consistency by refusing any commit that would leave an order pointing at a non-existent customer row. = I vincoli di chiave esterna impongono la coerenza rifiutando ogni commit che lascerebbe un ordine puntare a una riga cliente inesistente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "Isolation",
+      "set": {
+        "example": "Serializable isolation prevents two concurrent reservations from booking the same hotel room because each transaction sees a private snapshot. = L'isolamento serializable impedisce a due prenotazioni concorrenti di prenotare la stessa camera d'albergo perche' ogni transazione vede uno snapshot privato."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "Durability",
+      "set": {
+        "example": "PostgreSQL guarantees durability by flushing the WAL record to disk with fsync before reporting COMMIT success to the application. = PostgreSQL garantisce la durabilita' scaricando il record WAL su disco con fsync prima di segnalare il successo del COMMIT all'applicazione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Read Uncommitted",
+      "set": {
+        "example": "Setting the session to read uncommitted allows dirty reads, so a reporting job may see rows that are about to be rolled back. = Impostare la sessione su read uncommitted permette letture sporche, cosi un job di reportistica puo' vedere righe che stanno per essere annullate."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Read Committed",
+      "set": {
+        "example": "PostgreSQL defaults to read committed, so each statement inside the transaction sees only data committed before that statement started. = PostgreSQL adotta read committed di default, cosi ogni istruzione dentro la transazione vede solo i dati confermati prima che quell'istruzione iniziasse."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Repeatable Read",
+      "set": {
+        "example": "The nightly invoice job runs under repeatable read so a re-execution of the same SELECT returns identical rows even if other sessions commit. = Il job notturno di fatturazione gira in repeatable read cosi una nuova esecuzione della stessa SELECT restituisce righe identiche anche se altre sessioni effettuano commit."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Serializable",
+      "set": {
+        "example": "PostgreSQL uses serializable snapshot isolation to abort one of two transactions whose interleaving would violate a true serial order. = PostgreSQL usa serializable snapshot isolation per interrompere una delle due transazioni il cui intreccio violerebbe un vero ordine seriale."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Snapshot Isolation",
+      "set": {
+        "example": "MVCC engines implement snapshot isolation by giving each transaction a frozen view of the database at the moment its first statement began. = I motori MVCC implementano l'isolamento snapshot dando a ogni transazione una vista congelata del database al momento della sua prima istruzione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Postgres MVCC",
+      "set": {
+        "example": "Under Postgres MVCC every UPDATE writes a new row version and leaves the old one for VACUUM to reclaim once no transaction needs it. = In Postgres MVCC ogni UPDATE scrive una nuova versione di riga e lascia la vecchia che VACUUM recupera una volta che nessuna transazione ne ha bisogno."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Optimistic Locking",
+      "set": {
+        "example": "The product editor uses optimistic locking on a version column so the UPDATE fails when a colleague has already saved the page. = L'editor prodotti usa lock ottimistico su una colonna version cosi l'UPDATE fallisce quando un collega ha gia' salvato la pagina."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Pessimistic Locking",
+      "set": {
+        "example": "The checkout flow uses pessimistic locking via SELECT FOR UPDATE on the inventory row so two carts cannot claim the last unit. = Il flusso di checkout usa lock pessimistico via SELECT FOR UPDATE sulla riga di inventario cosi due carrelli non possono reclamare l'ultima unita'."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "ROW_NUMBER",
+      "set": {
+        "example": "The leaderboard query assigns each player a unique rank with ROW_NUMBER() OVER (ORDER BY score DESC) even when scores are tied. = La query della classifica assegna a ogni giocatore una posizione unica con ROW_NUMBER() OVER (ORDER BY score DESC) anche quando i punteggi sono pari."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "RANK",
+      "set": {
+        "example": "Use RANK() OVER (ORDER BY total DESC) on sales totals so tied salespeople share a position and the next rank is skipped accordingly. = Usa RANK() OVER (ORDER BY total DESC) sui totali vendite cosi i venditori pari condividono una posizione e il prossimo rank viene saltato di conseguenza."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "DENSE_RANK",
+      "set": {
+        "example": "Switch from RANK to DENSE_RANK() OVER (ORDER BY score DESC) when tied entries should not leave gaps in the numbering. = Passa da RANK a DENSE_RANK() OVER (ORDER BY score DESC) quando le posizioni pari non devono lasciare buchi nella numerazione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "LAG",
+      "set": {
+        "example": "Compute month-over-month deltas with LAG(revenue) OVER (ORDER BY month) so each row sees the previous month's revenue alongside its own. = Calcola le variazioni mese su mese con LAG(revenue) OVER (ORDER BY month) cosi ogni riga vede il ricavo del mese precedente accanto al proprio."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "LEAD",
+      "set": {
+        "example": "Pair each event with the next one using LEAD(event_at) OVER (PARTITION BY user_id ORDER BY event_at) to measure session gaps. = Affianca a ogni evento il successivo usando LEAD(event_at) OVER (PARTITION BY user_id ORDER BY event_at) per misurare i gap di sessione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "NTILE",
+      "set": {
+        "example": "Bucket customers into spend quartiles with NTILE(4) OVER (ORDER BY total_spent) so marketing can target the top 25 percent. = Suddividi i clienti in quartili di spesa con NTILE(4) OVER (ORDER BY total_spent) cosi il marketing puo' targetizzare il 25 percento piu' alto."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "PL/pgSQL",
+      "set": {
+        "example": "Wrap the multi-statement order-fulfillment logic in a PL/pgSQL function so application code can call it as a single transactional SELECT. = Avvolgi la logica di evasione ordini multi-istruzione in una funzione PL/pgSQL cosi il codice applicativo puo' chiamarla come una singola SELECT transazionale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "PL/SQL",
+      "set": {
+        "example": "Oracle developers move heavy validation logic into a PL/SQL package so the network round-trip count drops from one per row to one per batch. = Gli sviluppatori Oracle spostano la logica di validazione pesante in un package PL/SQL cosi il numero di round-trip di rete cala da uno per riga a uno per batch."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_1",
+      "english": "Polyglot Persistence",
+      "set": {
+        "example": "The e-commerce platform adopts polyglot persistence: PostgreSQL for orders, Redis for sessions, and Elasticsearch for the product search index. = La piattaforma e-commerce adotta la persistenza poliglotta: PostgreSQL per gli ordini, Redis per le sessioni ed Elasticsearch per l'indice di ricerca prodotti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "Partition Tolerance",
+      "set": {
+        "example": "A multi-region cluster needs partition tolerance because transatlantic links go down occasionally and the system must keep answering somewhere. = Un cluster multi-regione necessita di tolleranza alle partizioni perche' i collegamenti transatlantici cadono occasionalmente e il sistema deve continuare a rispondere da qualche parte."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "BASE",
+      "set": {
+        "example": "Cassandra deployments embrace the BASE model: writes return fast, replicas converge later, and operators tune consistency per query. = I deployment Cassandra abbracciano il modello BASE: le scritture tornano veloci, le repliche convergono dopo, e gli operatori regolano la coerenza per query."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "DynamoDB Eventual Consistency",
+      "set": {
+        "example": "A read right after PutItem may hit a replica that has not yet caught up, which is DynamoDB eventual consistency saving latency at the cost of freshness. = Una lettura subito dopo PutItem puo' colpire una replica non ancora aggiornata, cioe' la coerenza eventuale in DynamoDB che risparmia latenza al costo della freschezza."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "Linearizability",
+      "set": {
+        "example": "A distributed counter offers linearizability when every read returns the value of the most recently completed increment, no matter which node serves it. = Un contatore distribuito offre linearizzabilita' quando ogni lettura restituisce il valore dell'incremento piu' recente completato, indipendentemente dal nodo che la serve."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "PACELC",
+      "set": {
+        "example": "Cassandra and DynamoDB sit in the same PACELC quadrant: under partition they sacrifice consistency, and even without partition they trade latency for it. = Cassandra e DynamoDB si trovano nello stesso quadrante PACELC: sotto partizione sacrificano la coerenza, e anche senza partizione la barattano con la latenza."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_4",
+      "english": "Anti-Entropy",
+      "set": {
+        "example": "Cassandra repair runs an anti-entropy protocol that builds Merkle trees on each replica and streams the missing rows between them. = La repair di Cassandra esegue un protocollo di anti-entropia che costruisce alberi di Merkle su ogni replica e trasmette le righe mancanti tra di loro."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_4",
+      "english": "Causal Consistency",
+      "set": {
+        "example": "A messaging app needs causal consistency so a reply never appears before the original message, even when reads bounce between regions. = Una app di messaggistica necessita di coerenza causale cosi una risposta non appare mai prima del messaggio originale, anche quando le letture rimbalzano tra regioni."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "MongoDB",
+      "set": {
+        "example": "The product catalog migrated to MongoDB so each item can carry a flexible attribute map without the wide tables that PostgreSQL would require. = Il catalogo prodotti e' migrato a MongoDB cosi ogni articolo puo' portare una mappa di attributi flessibile senza le wide table che richiederebbe PostgreSQL."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$lookup",
+      "set": {
+        "example": "An aggregation pipeline can join orders with users by adding a $lookup stage that pulls in the matching user document by its _id. = Una pipeline di aggregazione puo' unire ordini e utenti aggiungendo uno stage $lookup che recupera il documento utente corrispondente tramite il suo _id."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$facet",
+      "set": {
+        "example": "A single product-search request returns the page rows, the total count, and per-brand facets by branching the pipeline with a $facet stage. = Una singola richiesta di ricerca prodotti restituisce le righe di pagina, il conteggio totale e le faccette per brand ramificando la pipeline con uno stage $facet."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "Sharding",
+      "set": {
+        "example": "A multi-tenant SaaS turns to sharding on tenant_id once the primary collection grows past two billion documents and a single shard saturates. = Un SaaS multi-tenant ricorre allo sharding su tenant_id quando la collezione primaria supera i due miliardi di documenti e una singola shard satura."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "Redis",
+      "set": {
+        "example": "The API caches user session tokens in Redis with a 15-minute TTL so the relational database never sees the chatty auth-check traffic. = L'API memorizza i token di sessione utente in Redis con un TTL di 15 minuti cosi il database relazionale non vede mai il traffico chiacchierone di controllo auth."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "SET",
+      "set": {
+        "english": "Redis SET",
+        "italian": "Comando Redis SET",
+        "example": "The session middleware issues a Redis SET command to store the user token under a key like session:42 with a 30-minute expiry. = Il middleware di sessione invia un comando Redis SET per memorizzare il token utente sotto una chiave come session:42 con scadenza di 30 minuti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "EXISTS",
+      "set": {
+        "english": "Redis EXISTS",
+        "italian": "Comando Redis EXISTS",
+        "example": "Before writing a cache value, the app issues a Redis EXISTS check on the key so it can decide whether to overwrite or skip the SETNX-style flow. = Prima di scrivere un valore cache, l'app invia un controllo Redis EXISTS sulla chiave cosi puo' decidere se sovrascrivere o saltare il flusso stile SETNX."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "Redis Streams",
+      "set": {
+        "example": "The order-event bus relies on Redis Streams with consumer groups so each worker claims a distinct slice of pending messages. = Il bus di eventi ordine si affida a Redis Streams con consumer group cosi ogni worker reclama una porzione distinta di messaggi pendenti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "Point-in-Time Recovery",
+      "set": {
+        "example": "A late-night DROP TABLE incident is reversed with point-in-time recovery by restoring last night's base backup and replaying WAL up to 02:14 UTC. = Un incidente notturno di DROP TABLE viene annullato con il recovery a un punto nel tempo ripristinando il base backup di ieri sera e riproducendo il WAL fino alle 02:14 UTC."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "WAL Archive",
+      "set": {
+        "example": "Continuous backup ships every closed segment to the WAL archive on S3 so a clone can be rebuilt to any second within the retention window. = Il backup continuo invia ogni segmento chiuso all'archivio WAL su S3 cosi una clone puo' essere ricostruita a qualsiasi secondo dentro la finestra di retention."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "Verify Backup",
+      "set": {
+        "example": "Every Friday a job restores last night's snapshot into a sandbox and runs a checksum on critical tables to verify the backup is recoverable. = Ogni venerdi' un job ripristina lo snapshot della scorsa notte in un sandbox ed esegue un checksum sulle tabelle critiche per verificare che il backup sia ripristinabile."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Streaming Replication",
+      "set": {
+        "example": "PostgreSQL streaming replication keeps a hot standby a few milliseconds behind by shipping each WAL record over a long-lived TCP connection. = La replicazione streaming di PostgreSQL mantiene un hot standby pochi millisecondi indietro inviando ogni record WAL su una connessione TCP long-lived."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Physical Replication",
+      "set": {
+        "example": "Postgres standbys built with physical replication are byte-identical clones, so the standby cannot have extra indexes or different table contents. = Gli standby Postgres costruiti con replicazione fisica sono cloni byte-identici, quindi lo standby non puo' avere indici extra o contenuti di tabella diversi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_3",
+      "english": "Cascading Replication",
+      "set": {
+        "example": "Large fleets use cascading replication so a single mid-tier replica feeds twenty leaf nodes and the primary only handles one outgoing WAL stream. = Le grandi flotte usano la replicazione a cascata cosi una singola replica intermedia alimenta venti nodi foglia e il primario gestisce un solo flusso WAL uscente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Database Sharding",
+      "set": {
+        "example": "An online game adopts database sharding on player_id once a single Postgres node can no longer keep up with the write throughput from match events. = Un gioco online adotta lo sharding di database su player_id quando un singolo nodo Postgres non riesce piu' a stare al passo con il throughput di scrittura degli eventi partita."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Hash Sharding",
+      "set": {
+        "example": "User profiles are placed via hash sharding on user_id so the load spreads evenly across the eight shards even when traffic skews to power users. = I profili utente vengono distribuiti via sharding per hash su user_id cosi il carico si distribuisce uniformemente sulle otto shard anche quando il traffico si concentra sui power user."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Directory-Based Sharding",
+      "set": {
+        "example": "A multi-tenant SaaS picks directory-based sharding so a lookup table maps each tenant_id to the right shard and large tenants can be relocated. = Un SaaS multi-tenant sceglie lo sharding basato su directory cosi una tabella di lookup mappa ogni tenant_id alla shard giusta e i tenant grandi possono essere ricollocati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_6",
+      "english": "Consistent Hashing",
+      "set": {
+        "example": "Cassandra distributes keys with consistent hashing so adding a new node only shuffles 1/N of the data instead of the entire keyspace. = Cassandra distribuisce le chiavi con hashing consistente cosi aggiungere un nuovo nodo rimescola solo 1/N dei dati invece dell'intero keyspace."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Partition Pruning",
+      "set": {
+        "example": "The events table is partitioned by month so a WHERE created_at >= '2026-05-01' triggers partition pruning and reads one of sixty children. = La tabella events e' partizionata per mese cosi una WHERE created_at >= '2026-05-01' attiva la partition pruning e legge uno di sessanta figli."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_13",
+      "english": "Tablespace",
+      "set": {
+        "english": "PostgreSQL Tablespace",
+        "italian": "Tablespace PostgreSQL",
+        "example": "A PostgreSQL tablespace is created on the NVMe mount so hot indexes can be moved off the spinning disk and query latency drops by half. = Un tablespace PostgreSQL viene creato sul mount NVMe cosi gli indici caldi possono essere spostati dal disco rotante e la latenza delle query si dimezza."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_15",
+      "english": "SQL Server",
+      "set": {
+        "example": "Microsoft SQL Server powers the order-management backend with Always On availability groups and synchronous replicas in two data centres. = Microsoft SQL Server alimenta il backend di order management con availability group Always On e repliche sincrone in due data center."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_15",
+      "english": "T-SQL",
+      "set": {
+        "note": "Dialetto SQL di Microsoft SQL Server (Transact-SQL): aggiunge variabili, controllo di flusso (IF/WHILE), TRY/CATCH e stored procedure proprietarie."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_16",
+      "english": "SQL:2016",
+      "set": {
+        "example": "Postgres 12 added JSON_TABLE and other SQL:2016 features so JSON columns can be queried with relational-style projections instead of operators. = Postgres 12 ha aggiunto JSON_TABLE e altre feature SQL:2016 cosi le colonne JSON possono essere interrogate con proiezioni in stile relazionale invece che operatori."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_16",
+      "english": "Portability",
+      "set": {
+        "example": "Sticking to ANSI SQL improves portability between PostgreSQL, MySQL and SQL Server so the same migration script can run on every customer's database. = Restare su ANSI SQL migliora la portabilita' tra PostgreSQL, MySQL e SQL Server cosi lo stesso script di migrazione puo' girare sul database di ogni cliente."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "db_sql_16",
+      "english": "OLTP",
+      "set": {
+        "example": "Banking core systems live on OLTP databases that absorb thousands of short, ACID-compliant transactions per second with sub-10ms latency. = I core system bancari vivono su database OLTP che assorbono migliaia di transazioni corte e ACID-compliant al secondo con latenza sotto i 10ms."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_1",
+      "english": "Star Schema",
+      "set": {
+        "english": "Dimensional Star Schema",
+        "italian": "Star Schema dimensionale",
+        "example": "The sales mart is shaped as a dimensional star schema with a fact_sales table joined to dim_date, dim_product, and dim_store for fast slice-and-dice. = Il sales mart e' modellato come uno star schema dimensionale con una tabella fact_sales unita a dim_date, dim_product e dim_store per slice-and-dice rapido."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_1",
+      "english": "Surrogate Key",
+      "set": {
+        "english": "Dimensional Surrogate Key",
+        "italian": "Chiave surrogata dimensionale",
+        "example": "Each dimension carries an integer dimensional surrogate key like product_sk so a change of source product_code does not break historical facts. = Ogni dimensione porta una chiave surrogata dimensionale intera come product_sk cosi un cambio di product_code sorgente non rompe i fatti storici."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_1",
+      "english": "Natural Key",
+      "set": {
+        "english": "Dimensional Natural Key",
+        "italian": "Chiave naturale dimensionale",
+        "example": "The dim_product table keeps the source product_code as a dimensional natural key alongside the surrogate so analysts can join back to OLTP exports. = La tabella dim_product mantiene il product_code sorgente come chiave naturale dimensionale accanto alla surrogata cosi gli analisti possono fare join con gli export OLTP."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_2",
+      "english": "Slowly Changing Dimension",
+      "set": {
+        "note": "Tecnica del data warehousing per gestire l'evoluzione storica degli attributi di una dimensione: SCD1 sovrascrive, SCD2 versiona con effective_from/effective_to, SCD3 aggiunge una colonna 'previous value'."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_2",
+      "english": "SCD Type 3",
+      "set": {
+        "example": "An SCD Type 3 dimension stores only the current and the previous value, useful when analysts must compare a customer's old and new segment in one row. = Una dimensione SCD Type 3 memorizza solo il valore corrente e quello precedente, utile quando gli analisti devono confrontare il vecchio e il nuovo segmento di un cliente in una riga."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_3",
+      "english": "Cube",
+      "set": {
+        "english": "OLAP Cube",
+        "italian": "Cubo OLAP",
+        "example": "An SSAS OLAP cube is built on top of the star schema so Excel pivot tables get sub-second drill-down across region, product, and quarter. = Un cubo OLAP SSAS viene costruito sopra lo star schema cosi le pivot Excel ottengono drill-down sub-secondo su regione, prodotto e trimestre."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_3",
+      "english": "Data Vault",
+      "set": {
+        "example": "Regulated warehouses adopt Data Vault modeling so source-system changes only require new satellites without touching existing hubs and links. = I warehouse regolamentati adottano la modellazione Data Vault cosi i cambi nei sistemi sorgente richiedono solo nuovi satellite senza toccare hub e link esistenti."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "db_modeling_4",
+      "english": "Type 6 SCD",
+      "set": {
+        "example": "A Type 6 SCD row keeps the historical value, the effective_from/to range, and a current_value column copied across versions for easy current-vs-history reporting. = Una riga di Type 6 SCD mantiene il valore storico, il range effective_from/to e una colonna current_value copiata tra le versioni per facilitare la reportistica current vs history."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_1",
+      "english": "Blind SQL Injection",
+      "set": {
+        "example": "Attackers extract a single bit of data per request with blind SQL injection, encoding the answer through error pages or response-time differences. = Gli attaccanti estraggono un singolo bit di dati per richiesta con blind SQL injection, codificando la risposta tramite pagine di errore o differenze nei tempi di risposta."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_3",
+      "english": "GDPR",
+      "set": {
+        "example": "EU consumer apps must answer right-to-erasure requests within 30 days, a GDPR obligation that drives the design of every data-retention pipeline. = Le app consumer UE devono rispondere alle richieste right-to-erasure entro 30 giorni, un obbligo GDPR che guida il design di ogni pipeline di data retention."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_3",
+      "english": "pgaudit",
+      "set": {
+        "example": "Compliance teams enable the pgaudit extension and direct its output to syslog so every schema change and data mutation is captured as SOC2 evidence. = I team compliance abilitano l'estensione pgaudit e indirizzano il suo output a syslog cosi ogni cambio di schema e mutazione di dati viene catturato come evidenza SOC2."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_3",
+      "english": "Pseudonymization",
+      "set": {
+        "example": "An analytics export applies pseudonymization to replace each customer_id with a stable HMAC token, so analysts can join across datasets without seeing identities. = Un export analytics applica pseudonimizzazione per sostituire ogni customer_id con un token HMAC stabile, cosi gli analisti possono fare join tra dataset senza vedere le identita'."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "db_security_4",
+      "english": "ABAC",
+      "set": {
+        "example": "Document repositories rely on ABAC so a policy can grant read access only when the requester's department attribute matches the document's owner_department. = I repository documentali si affidano ad ABAC cosi una policy puo' concedere accesso in lettura solo quando l'attributo department del richiedente combacia con owner_department del documento."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "db_cloud_1",
+      "english": "Aurora",
+      "set": {
+        "example": "Amazon Aurora rewrites the storage layer beneath MySQL or PostgreSQL so writes survive on six replicas across three availability zones with low latency. = Amazon Aurora riscrive lo storage layer sotto MySQL o PostgreSQL cosi le scritture sopravvivono su sei repliche in tre availability zone con bassa latenza."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "db_cloud_1",
+      "english": "Aurora Serverless",
+      "set": {
+        "example": "Spiky dev environments suit Aurora Serverless v2: capacity scales from 0.5 ACU to 64 ACU in seconds and the bill follows the actual load. = Gli ambienti dev con picchi si addicono ad Aurora Serverless v2: la capacita' scala da 0.5 ACU a 64 ACU in pochi secondi e il conto segue il carico reale."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "db_cloud_2",
+      "english": "Cosmos DB",
+      "set": {
+        "example": "A globally distributed catalog runs on Cosmos DB with five-region writes so European customers and US customers both observe sub-50ms write latency. = Un catalogo distribuito globalmente gira su Cosmos DB con scritture multi-regione su cinque region cosi clienti europei e statunitensi osservano entrambi una latenza di scrittura sotto i 50ms."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "db_cloud_2",
+      "english": "Cloud Spanner",
+      "set": {
+        "example": "A worldwide payments backend picks Cloud Spanner because TrueTime-backed external consistency lets a transaction commit across continents without coordination locks. = Un backend pagamenti mondiale sceglie Cloud Spanner perche' la coerenza esterna basata su TrueTime permette a una transazione di committare tra continenti senza lock di coordinamento."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "db_cloud_2",
+      "english": "Firestore",
+      "set": {
+        "example": "A mobile chat app stores conversation documents in Firestore so client SDKs receive push-style updates whenever a peer adds a message. = Una chat mobile memorizza i documenti di conversazione in Firestore cosi gli SDK client ricevono aggiornamenti push-style ogni volta che un peer aggiunge un messaggio."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "db_cloud_2",
+      "english": "Azure Database for PostgreSQL",
+      "set": {
+        "example": "An enterprise migrating off on-prem PostgreSQL lands on Azure Database for PostgreSQL Flexible Server so VNet integration and AAD auth match its compliance posture. = Un'azienda che migra da PostgreSQL on-prem atterra su Azure Database for PostgreSQL Flexible Server cosi integrazione VNet e auth AAD combaciano con la sua compliance posture."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "db_cloud_3",
+      "english": "Neon",
+      "set": {
+        "example": "Preview environments adopt Neon because its branching feature spins up an isolated copy of the production database in under a second per pull request. = Gli ambienti di preview adottano Neon perche' la feature di branching crea una copia isolata del database di produzione in meno di un secondo per pull request."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "db_cloud_3",
+      "english": "PlanetScale",
+      "set": {
+        "example": "A high-traffic SaaS runs on PlanetScale to gain non-blocking schema changes via Vitess so ALTER TABLE on a billion-row table never pauses writes. = Un SaaS ad alto traffico gira su PlanetScale per ottenere cambi di schema non bloccanti via Vitess cosi un ALTER TABLE su una tabella da un miliardo di righe non blocca mai le scritture."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "db_cloud_4",
+      "english": "Snapshot",
+      "set": {
+        "english": "Cloud DB Snapshot",
+        "italian": "Snapshot di Cloud DB",
+        "example": "An RDS cloud DB snapshot captures the entire volume at a consistent point so a clone can be restored into a different VPC for a load-testing rehearsal. = Uno snapshot di cloud DB RDS cattura l'intero volume in un punto coerente cosi una clone puo' essere ripristinata in una VPC diversa per una prova di load testing."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Graph Database",
+      "set": {
+        "english": "Native Graph Database",
+        "italian": "Graph Database nativo",
+        "example": "A native graph database like Neo4j stores edges as physical pointers so a five-hop friend-of-friend traversal stays constant-time regardless of table size. = Un graph database nativo come Neo4j memorizza gli archi come puntatori fisici cosi una traversal a cinque hop friend-of-friend resta a tempo costante indipendentemente dalla dimensione delle tabelle."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Edge",
+      "set": {
+        "english": "Graph Edge",
+        "italian": "Arco del grafo",
+        "example": "A FOLLOWS graph edge between two User nodes carries a since-timestamp property so a recommendation query can weight recent follows higher. = Un arco del grafo FOLLOWS tra due nodi User porta una proprieta' since-timestamp cosi una query di raccomandazione puo' pesare di piu' i follow recenti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Adjacency",
+      "set": {
+        "example": "Each Neo4j node stores its own adjacency list as a linked structure, so traversing to its direct neighbours never touches a global index. = Ogni nodo Neo4j memorizza la propria adjacency list come struttura linkata, cosi attraversare verso i vicini diretti non tocca mai un indice globale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "Cypher",
+      "set": {
+        "example": "Neo4j queries are written in Cypher with patterns like (u:User)-[:FOLLOWS]->(p:User) so the read intent looks like the diagram on a whiteboard. = Le query Neo4j si scrivono in Cypher con pattern come (u:User)-[:FOLLOWS]->(p:User) cosi l'intento di lettura assomiglia al diagramma su una lavagna."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "MERGE",
+      "set": {
+        "example": "Idempotent ingestion uses MERGE (u:User {id:$id}) ON CREATE SET u.created_at = timestamp() so re-running the load never duplicates a node. = L'ingestione idempotente usa MERGE (u:User {id:$id}) ON CREATE SET u.created_at = timestamp() cosi rieseguire il load non duplica mai un nodo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_14",
+      "english": "WITH",
+      "set": {
+        "english": "Cypher WITH",
+        "italian": "WITH di Cypher",
+        "example": "A Cypher pipeline uses WITH user, count(p) AS posts WHERE posts > 10 to pipe aggregated results into the next MATCH clause. = Una pipeline Cypher usa WITH user, count(p) AS posts WHERE posts > 10 per inviare risultati aggregati alla prossima clausola MATCH."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_15",
+      "english": "Cycle Detection",
+      "set": {
+        "example": "Fraud teams run cycle detection on the money-transfer graph so a loop of three or more accounts paying each other surfaces as a suspicious ring. = I team antifrode eseguono il cycle detection sul grafo dei trasferimenti di denaro cosi un loop di tre o piu' conti che si pagano reciprocamente emerge come un ring sospetto."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "Neo4j",
+      "set": {
+        "example": "A recommendation engine adopts Neo4j because expressing 'friends-of-friends who liked X' is a four-line Cypher MATCH instead of a six-table SQL join. = Un motore di raccomandazioni adotta Neo4j perche' esprimere 'friends-of-friends che hanno gradito X' diventa un MATCH Cypher di quattro righe invece di una join SQL a sei tabelle."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "JanusGraph",
+      "set": {
+        "example": "Petabyte-scale knowledge graphs run on JanusGraph because it persists vertices and edges into Cassandra or HBase and serves queries via Gremlin. = I knowledge graph a scala petabyte girano su JanusGraph perche' persiste vertici e archi in Cassandra o HBase e serve le query via Gremlin."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "Prometheus",
+      "set": {
+        "example": "Site reliability teams run Prometheus to scrape metrics from every service every 15 seconds and alert on percentile latency breaches via Alertmanager. = I team SRE fanno girare Prometheus per scrappare metriche da ogni servizio ogni 15 secondi e alertare sui breach di latenza percentile via Alertmanager."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "OpenTSDB",
+      "set": {
+        "example": "Industrial sensor archives land in OpenTSDB on top of HBase, so a fleet of 50,000 devices can append billions of metric points per day. = Gli archivi di sensori industriali atterrano in OpenTSDB sopra HBase, cosi una flotta di 50.000 dispositivi puo' aggiungere miliardi di punti metrici al giorno."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "QuestDB",
+      "set": {
+        "example": "A trading platform stores tick data in QuestDB because its SQL extensions for time-bucketed queries return sub-millisecond results on a billion rows. = Una piattaforma di trading memorizza i dati di tick in QuestDB perche' le sue estensioni SQL per query per time bucket restituiscono risultati sotto il millisecondo su un miliardo di righe."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_6",
+      "english": "Stream Processing",
+      "set": {
+        "example": "Fraud scoring uses stream processing on the order-event topic so each transaction is enriched and classified within 200ms of the customer click. = Lo scoring antifrode usa stream processing sul topic degli eventi ordine cosi ogni transazione viene arricchita e classificata entro 200ms dal click del cliente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_6",
+      "english": "Apache Flink",
+      "set": {
+        "example": "Real-time analytics pipelines pick Apache Flink because exactly-once state checkpointing keeps aggregates correct even after a TaskManager crash. = Le pipeline di analytics real-time scelgono Apache Flink perche' il checkpointing dello stato exactly-once mantiene gli aggregati corretti anche dopo un crash del TaskManager."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Prefect",
+      "set": {
+        "example": "Data teams pick Prefect over Airflow when dynamic DAGs are essential, since each Python function can decide its downstream tasks at runtime. = I team dati scelgono Prefect rispetto ad Airflow quando i DAG dinamici sono essenziali, dato che ogni funzione Python puo' decidere i suoi task downstream a runtime."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_6",
+      "english": "Write Skew",
+      "set": {
+        "example": "Two on-call doctors disabling their pager simultaneously is the classic write skew anomaly: each transaction sees one colleague still on duty and commits. = Due dottori in on-call che disabilitano il pager contemporaneamente e' l'anomalia classica di write skew: ogni transazione vede un collega ancora in turno e committa."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Pessimistic Concurrency",
+      "set": {
+        "example": "Bank ledgers stick to pessimistic concurrency by taking SELECT FOR UPDATE on the account row so two withdrawals cannot interleave on the same balance. = I ledger bancari restano su concorrenza pessimistica prendendo SELECT FOR UPDATE sulla riga del conto cosi due prelievi non possono intrecciarsi sullo stesso saldo."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Distributed Two-Phase Commit",
+      "set": {
+        "example": "A booking platform uses distributed two-phase commit across the seat reservation service and the payments service so a failure on either side rolls everything back. = Una piattaforma di booking usa two-phase commit distribuito tra il servizio di prenotazione posti e il servizio pagamenti cosi un fallimento su uno dei due fa il rollback di tutto."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Distributed Eventual Consistency",
+      "set": {
+        "example": "Edge-deployed shopping carts converge under distributed eventual consistency: a phone offline in the subway syncs additions back to the cloud when signal returns. = I carrelli e-commerce edge-deployed convergono sotto coerenza eventuale distribuita: un telefono offline in metropolitana sincronizza le aggiunte al cloud quando torna il segnale."
+      }
+    }
+  ]
+}

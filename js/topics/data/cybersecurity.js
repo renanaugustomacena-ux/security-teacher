@@ -1187,7 +1187,8 @@ export default {
               italian: 'antivirus di nuova generazione',
               pronunciation: '/\u02CC\u00E6nti\u02C8va\u026Ar\u0259s/',
               phonetic: 'an-ti-VAI-res',
-              example: `Next-generation antivirus relies on behavioral analysis and machine learning instead of static signature databases. = L'antivirus di nuova generazione si affida ad analisi comportamentale e machine learning invece che a database di signature statiche.`,
+              example:
+                'Modern EDR suites bundle a next-generation antivirus engine that scores process behavior rather than matching static byte signatures. = Le suite EDR moderne integrano un motore antivirus di nuova generazione che valuta il comportamento dei processi invece di confrontare signature statiche.',
               context: 'endpoint-security',
               difficulty: 'intermediate',
               note: 'Spesso abbreviato in NGAV; integrato nelle suite EDR moderne.',
@@ -1323,10 +1324,10 @@ export default {
             },
             {
               english: 'HTTPS strict transport',
-              italian: 'HTTPS strict transport (HSTS)',
+              italian: 'trasporto HTTPS rigoroso (HSTS)',
               pronunciation: '/\u02CCe\u026At\u0283 ti\u02D0 ti\u02D0 pi\u02D0 \u02C8\u025Bs/',
               phonetic: 'eic-tii-tii-pii-ES',
-              example: `Enabling HTTPS strict transport via the HSTS header tells browsers to refuse any future plaintext connection to your domain. = Abilitare HTTPS strict transport tramite l'header HSTS dice ai browser di rifiutare ogni futura connessione in chiaro al tuo dominio.`,
+              example: `After deploying the HTTPS strict transport header with a one-year max-age, browsers refuse to fall back to plaintext on that domain. = Dopo aver distribuito l'header del trasporto HTTPS rigoroso con max-age di un anno, i browser rifiutano di tornare al testo in chiaro su quel dominio.`,
               context: 'cryptography',
               difficulty: 'intermediate',
               note: `L'header chiave è Strict-Transport-Security; la direttiva preload include il dominio nelle liste hardcoded dei browser.`,
@@ -1371,7 +1372,7 @@ export default {
               pronunciation: '/\u026An\u02C8kr\u026Ap\u0283\u0259n/',
               phonetic: 'in-KRIP-scen',
               example:
-                'End-to-end encryption ensures that only the conversation participants, not the server, can read the message contents. = La crittografia end-to-end garantisce che solo i partecipanti alla conversazione, non il server, possano leggere i contenuti del messaggio.',
+                'Modern chat apps advertise end-to-end encryption so that the relay server only sees opaque ciphertext, never the underlying message. = Le app di chat moderne pubblicizzano la crittografia end-to-end in modo che il server di relay veda solo ciphertext opaco, mai il messaggio sottostante.',
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Acronimo comune: E2EE. La chiave non è mai accessibile al provider del servizio.',
@@ -2198,8 +2199,7 @@ export default {
               pronunciation:
                 '/\u02C8d\u026Ad\u0292\u026At\u0259l \u02C8s\u026A\u0261n\u0259t\u0283\u0259r/',
               phonetic: 'DI-gi-tel SIG-ne-cer',
-              example:
-                'Digital signature verification on each package install ensures the binary came from the official maintainer, not a mirror. = La verifica della firma digitale a ogni installazione di pacchetto garantisce che il binario provenga dal maintainer ufficiale, non da un mirror.',
+              example: `Package managers like apt run digital signature verification against the maintainer's GPG key before unpacking any downloaded archive. = I gestori di pacchetti come apt eseguono la verifica della firma digitale contro la chiave GPG del maintainer prima di scompattare qualsiasi archivio scaricato.`,
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'I package manager moderni (apt, dnf, pacman) eseguono la verifica automaticamente con le chiavi GPG dei repo.',

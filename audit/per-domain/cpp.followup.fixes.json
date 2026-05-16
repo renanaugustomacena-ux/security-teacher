@@ -1,0 +1,164 @@
+{
+  "fixes": [
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Defaulted Function",
+      "set": {
+        "example": "Adding Widget() = default to the class body declares a defaulted function and signals intent more clearly than writing an empty body. = Aggiungere Widget() = default al corpo della classe dichiara una funzione di default e segnala l'intento meglio di un corpo vuoto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Init Capture",
+      "set": {
+        "example": "Writing [handle = std::move(ptr)] in the capture list uses an init capture to move the unique_ptr into the closure cleanly. = Scrivere [handle = std::move(ptr)] nella lista di cattura usa una cattura con inizializzazione per spostare lo unique_ptr nella closure in modo pulito."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Generic Lambda",
+      "set": {
+        "example": "Declaring auto add = [](auto a, auto b) { return a + b; } produces a generic lambda whose call operator is itself a function template. = Dichiarare auto add = [](auto a, auto b) { return a + b; } produce una lambda generica il cui operatore di chiamata è un template di funzione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Stateful Lambda",
+      "set": {
+        "example": "Capturing [count = 0]() mutable { return ++count; } yields a stateful lambda whose internal counter survives across successive invocations. = Catturare [count = 0]() mutable { return ++count; } produce una lambda con stato il cui contatore interno sopravvive tra invocazioni successive."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Function Composition",
+      "set": {
+        "example": "Building const auto fg = [&](auto x) { return f(g(x)); } captures function composition so callers apply the combined transformation in one step. = Costruire const auto fg = [&](auto x) { return f(g(x)); } cattura la composizione di funzioni così i chiamanti applicano la trasformazione combinata in un solo passo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Lvalue",
+      "set": {
+        "example": "A named variable like int x = 0; is the textbook lvalue: it has an identifiable memory location, so you can take its address with &x. = Una variabile con nome come int x = 0; è il lvalue da manuale: ha una posizione di memoria identificabile, quindi puoi prenderne l'indirizzo con &x."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Default Function",
+      "set": {
+        "example": "Writing Point() = default declares an explicit default function whose compiler-generated body initializes each member with its in-class default. = Scrivere Point() = default dichiara una funzione di default esplicita il cui corpo generato dal compilatore inizializza ogni membro col suo default in-class."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Modern Deleted Function",
+      "set": {
+        "example": "Marking the copy constructor as = delete creates a modern deleted function so any attempt to copy a UniqueHandle is flagged at compile time. = Marcare il costruttore di copia come = delete crea una funzione eliminata moderna così qualsiasi tentativo di copiare un UniqueHandle è segnalato a compile time."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Structured Bindings",
+      "set": {
+        "example": "Writing auto [it, inserted] = map.try_emplace(key, value); destructures the returned pair via structured bindings into two clearly named locals. = Scrivere auto [it, inserted] = map.try_emplace(key, value); destruttura la coppia restituita tramite binding strutturati in due locali con nomi chiari."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "If Init",
+      "set": {
+        "example": "Writing if (auto it = m.find(k); it != m.end()) is an If Init form that scopes the iterator to the branches of the conditional. = Scrivere if (auto it = m.find(k); it != m.end()) è una forma If con init che limita l'iteratore ai rami del condizionale."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "File Stream",
+      "set": {
+        "english": "Bidirectional File Stream",
+        "italian": "Stream di file bidirezionale",
+        "example": "Opening with std::fstream creates a bidirectional file stream so the same handle reads existing tokens and writes updated ones back in place. = Aprire con std::fstream crea uno stream di file bidirezionale così lo stesso handle legge token esistenti e scrive quelli aggiornati al loro posto."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_2",
+      "english": "Mixin",
+      "set": {
+        "english": "CRTP Mixin",
+        "italian": "Mixin tramite CRTP",
+        "example": "Dropping a Printable CRTP mixin into a class hierarchy shares serialization without touching unrelated parts of the design. = Inserire un mixin CRTP Printable in una gerarchia di classi condivide serializzazione senza toccare parti non correlate del design."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "Tag Dispatch",
+      "set": {
+        "english": "Iterator Tag Dispatch",
+        "italian": "Iterator tag dispatch",
+        "example": "Picking a specialized algorithm via iterator tag dispatch passes iterator_category as an extra argument that drives overload resolution. = Scegliere un algoritmo specializzato tramite iterator tag dispatch passa iterator_category come argomento extra che guida l'overload."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Static Polymorphism",
+      "set": {
+        "english": "CRTP Static Polymorphism",
+        "italian": "Polimorfismo statico tramite CRTP",
+        "example": "Reaching for CRTP static polymorphism gives templates virtual-call performance without paying for the vtable indirection at every call site. = Affidarsi al polimorfismo statico tramite CRTP dà ai template prestazioni da virtual call senza pagare l'indirezione della vtable a ogni call site."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Template Bloat",
+      "set": {
+        "english": "Binary Template Bloat",
+        "italian": "Bloat del binario da template",
+        "example": "Big projects must watch for binary template bloat because each instantiation can balloon object files and slow down link times noticeably. = I progetti grandi devono badare al bloat del binario da template perché ogni istanziazione può gonfiare gli object file e rallentare i link time."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Lock Guard",
+      "set": {
+        "english": "Scoped Lock Guard",
+        "italian": "std::scoped_lock",
+        "example": "Switching to a scoped lock guard like std::scoped_lock locks multiple mutexes atomically and releases them in reverse order at scope exit. = Passare a un scoped lock guard come std::scoped_lock blocca più mutex atomicamente e li rilascia in ordine inverso all'uscita dallo scope."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Thread",
+      "set": {
+        "english": "Worker Thread",
+        "italian": "Thread di lavoro",
+        "example": "Spinning up a worker thread with std::thread t(do_work, payload) runs heavy computation in parallel with the UI loop without blocking it. = Avviare un thread di lavoro con std::thread t(do_work, payload) esegue calcolo pesante in parallelo con il loop UI senza bloccarlo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Type Traits",
+      "set": {
+        "english": "Type Traits Library",
+        "italian": "Libreria type traits",
+        "example": "Reaching for the type traits library like std::is_integral_v writes generic code that adapts behavior based on the deduced T at compile time. = Affidarsi alla libreria type traits come std::is_integral_v scrive codice generico che adatta il comportamento al T dedotto a tempo di compilazione."
+      }
+    }
+  ]
+}

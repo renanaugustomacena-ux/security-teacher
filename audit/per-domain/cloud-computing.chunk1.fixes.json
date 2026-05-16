@@ -1,211 +1,1750 @@
-{"fixes":[
-{"level":"0","lesson":"cloud_foundations_1","english":"Cloud","set":{"italian":"Cloud","note":"Cloud (lett. nuvola) = infrastruttura di calcolo, storage e rete fornita on-demand via internet da provider come AWS, Azure, GCP."}},
-{"level":"0","lesson":"cloud_foundations_1","english":"Tenant","set":{"italian":"Tenant","note":"Tenant (lett. inquilino) = cliente o organizzazione isolata in un ambiente cloud multi-tenant condiviso."}},
-{"level":"0","lesson":"cloud_foundations_1","english":"On-Demand","set":{"italian":"On-demand","note":"On-demand = modello di consumo cloud in cui le risorse vengono allocate al momento della richiesta e pagate a uso."}},
-{"level":"0","lesson":"cloud_foundations_2","english":"PaaS","set":{"example":"Deploying the Spring Boot service onto a PaaS like Heroku skips OS patching and exposes a git-push deploy workflow. = Distribuire il servizio Spring Boot su un PaaS come Heroku evita il patching del SO ed espone un flusso di deploy via git-push."}},
-{"level":"0","lesson":"cloud_foundations_2","english":"SaaS","set":{"example":"The finance team chose a SaaS billing platform so they could stop maintaining the in-house invoicing servers. = Il team finance ha scelto una piattaforma SaaS di fatturazione per smettere di mantenere i server interni delle fatture."}},
-{"level":"0","lesson":"cloud_foundations_2","english":"Serverless","set":{"italian":"Serverless","note":"Serverless = modello di esecuzione in cui il provider gestisce server e scaling; lo sviluppatore paga solo l'esecuzione effettiva del codice."}},
-{"level":"0","lesson":"cloud_foundations_3","english":"Public Cloud","set":{"example":"Migrating the staging environment to a public cloud cut hardware procurement time from weeks to a single afternoon. = Migrare l'ambiente di staging su un public cloud ha ridotto il tempo di approvvigionamento hardware da settimane a un pomeriggio."}},
-{"level":"0","lesson":"cloud_foundations_3","english":"Hybrid Cloud","set":{"example":"The bank's hybrid cloud keeps sensitive ledgers on-prem while bursting analytics jobs to AWS during quarter-end peaks. = L'hybrid cloud della banca tiene i registri sensibili on-prem mentre fa burst dei job analitici su AWS nei picchi di fine trimestre.","note":"Hybrid cloud = architettura che combina infrastruttura on-premise con uno o più cloud pubblici, con workload che si spostano tra i due."}},
-{"level":"0","lesson":"cloud_foundations_4","english":"Data Residency","set":{"example":"GDPR rules forced the team to enforce EU data residency by pinning S3 buckets to the eu-west-1 region. = Le regole GDPR hanno costretto il team a imporre la data residency UE fissando i bucket S3 nella regione eu-west-1."}},
-{"level":"0","lesson":"cloud_foundations_4","english":"Region Pair","set":{"example":"Choosing a region pair like North Europe and West Europe gives Azure customers built-in DR with low cross-region latency. = Scegliere una region pair come North Europe e West Europe offre ai clienti Azure un DR integrato con bassa latenza cross-region."}},
-{"level":"1","lesson":"cloud_compute_1","english":"EC2","set":{"italian":"EC2","example":"Right-sizing every EC2 instance after the load test reveals workloads that fit a smaller class and cuts the monthly bill by ~30%. = Fare il right-sizing di ogni istanza EC2 dopo il load test rivela carichi che entrano in una classe più piccola e taglia la bolletta mensile di circa il 30%.","note":"EC2 = Elastic Compute Cloud; servizio AWS di macchine virtuali on-demand."}},
-{"level":"1","lesson":"cloud_compute_1","english":"Guest OS","set":{"example":"Patching the guest OS inside every EC2 instance is the customer's job under the AWS shared responsibility model. = Fare il patching del guest OS dentro ogni istanza EC2 spetta al cliente nel modello di responsabilità condivisa AWS."}},
-{"level":"1","lesson":"cloud_compute_1","english":"Snapshot","set":{"example":"Taking a snapshot of the EBS volume before the schema migration gives a one-click rollback if the deploy goes wrong. = Prendere uno snapshot del volume EBS prima della migrazione di schema offre un rollback in un click se il deploy va storto."}},
-{"level":"1","lesson":"cloud_compute_2","english":"AMI","set":{"italian":"AMI","example":"Baking the Datadog agent into the team's gold AMI means every new EC2 instance ships with monitoring on day one. = Integrare l'agente Datadog nella gold AMI del team fa sì che ogni nuova istanza EC2 nasca con il monitoring attivo.","note":"AMI = Amazon Machine Image; template che descrive il sistema operativo e il software preinstallato per avviare un'istanza EC2."}},
-{"level":"1","lesson":"cloud_compute_2","english":"vCPU","set":{"italian":"vCPU","note":"vCPU = virtual CPU; unità di calcolo virtualizzata esposta a un'istanza cloud, tipicamente mappata su un thread fisico."}},
-{"level":"1","lesson":"cloud_compute_2","english":"Memory","set":{"example":"Sizing the JVM heap to leave 25% of instance memory free prevents OOM kills under sustained traffic bursts. = Dimensionare l'heap JVM lasciando libero il 25% della memoria d'istanza evita kill OOM sotto burst di traffico prolungati."}},
-{"level":"1","lesson":"cloud_compute_2","english":"Reserved Instance","set":{"example":"Buying a 3-year reserved instance for the always-on Postgres node cut its compute bill by 62% versus on-demand. = Comprare una reserved instance triennale per il nodo Postgres sempre acceso ha tagliato del 62% la bolletta di compute rispetto all'on-demand."}},
-{"level":"1","lesson":"cloud_compute_2","english":"Image","set":{"example":"Rebuilding the base image weekly with the latest CVE patches keeps every spawned VM compliant by default. = Ricostruire l'image base ogni settimana con le ultime patch CVE mantiene ogni VM avviata conforme di default."}},
-{"level":"1","lesson":"cloud_compute_3","english":"Scaling Policy","set":{"example":"A scaling policy that adds two nodes when CPU stays above 70% for five minutes smooths out the 9am login surge. = Una scaling policy che aggiunge due nodi se la CPU resta sopra il 70% per cinque minuti smorza il picco di login delle 9 del mattino."}},
-{"level":"1","lesson":"cloud_compute_3","english":"Capacity","set":{"example":"Reserving spare capacity during Black Friday avoids InsufficientCapacityErrors when the auto-scaler tries to add nodes. = Riservare capacity di scorta durante il Black Friday evita InsufficientCapacityErrors quando l'auto-scaler prova ad aggiungere nodi."}},
-{"level":"1","lesson":"cloud_compute_4","english":"Sticky Session","set":{"example":"Enabling sticky sessions on the ALB pinned each user to the same backend, eliminating the cart-loss bug across deploys. = Abilitare le sticky session sull'ALB ha fissato ogni utente sullo stesso backend, eliminando il bug di perdita carrello tra i deploy."}},
-{"level":"1","lesson":"cloud_compute_4","english":"Target Group","set":{"example":"The ALB routes /api/* traffic to the orders target group and everything else to the storefront target group. = L'ALB inoltra il traffico /api/* al target group degli ordini e tutto il resto al target group dello storefront."}},
-{"level":"2","lesson":"cloud_storage_1","english":"S3","set":{"italian":"S3","note":"S3 = Simple Storage Service; object storage AWS scalabile, durabile (11 nove) e accessibile via API HTTPS."}},
-{"level":"2","lesson":"cloud_storage_1","english":"Bucket","set":{"example":"Creating a dedicated bucket per environment stops a staging deploy from accidentally overwriting production assets. = Creare un bucket dedicato per ambiente impedisce che un deploy in staging sovrascriva accidentalmente asset di produzione."}},
-{"level":"2","lesson":"cloud_storage_1","english":"Object","set":{"example":"Each uploaded receipt is stored as an immutable object keyed by date and customer ID for quick lookup. = Ogni ricevuta caricata viene salvata come oggetto immutabile, indicizzato per data e ID cliente per ricerche veloci."}},
-{"level":"2","lesson":"cloud_storage_1","english":"Blob","set":{"italian":"Blob","note":"Blob = Binary Large Object; in Azure Storage indica il singolo file (immagine, video, dump) salvato dentro un container."}},
-{"level":"2","lesson":"cloud_storage_2","english":"EBS","set":{"italian":"EBS","example":"Attaching a gp3 EBS volume to the database instance gave 16k IOPS at a third of the io1 cost. = Collegare un volume EBS gp3 all'istanza del database ha dato 16k IOPS a un terzo del costo di io1.","note":"EBS = Elastic Block Store; block storage AWS persistente da agganciare a un'istanza EC2 come un disco."}},
-{"level":"2","lesson":"cloud_storage_2","english":"Volume","set":{"example":"Resizing the data volume from 100GB to 500GB online avoided downtime when the analytics export blew past quota. = Ridimensionare il volume dati da 100GB a 500GB online ha evitato il downtime quando l'export analytics ha sfondato la quota."}},
-{"level":"2","lesson":"cloud_storage_2","english":"IOPS","set":{"italian":"IOPS","note":"IOPS = Input/Output Operations Per Second; metrica chiave della performance di un volume storage."}},
-{"level":"2","lesson":"cloud_storage_2","english":"File Storage","set":{"example":"Shifting the Jenkins workspace to file storage let three controllers share build artifacts without rsync hacks. = Spostare la workspace di Jenkins su file storage ha permesso a tre controller di condividere artefatti di build senza hack di rsync."}},
-{"level":"2","lesson":"cloud_storage_2","english":"EFS","set":{"italian":"EFS","example":"Mounting an EFS share across all worker pods made user uploads instantly available regardless of which node served the request. = Montare uno share EFS su tutti i pod worker ha reso disponibili gli upload utente a prescindere dal nodo che ha servito la richiesta.","note":"EFS = Elastic File System; file system NFS gestito AWS, condivisibile tra più istanze."}},
-{"level":"2","lesson":"cloud_storage_2","english":"NFS","set":{"italian":"NFS","example":"Exporting the build cache over NFS let the CI runners reuse compiled artifacts and cut pipeline times by 40%. = Esportare la cache di build via NFS ha permesso ai runner CI di riusare gli artefatti compilati, tagliando i tempi della pipeline del 40%.","note":"NFS = Network File System; protocollo di file sharing di rete originato in ambiente Unix."}},
-{"level":"2","lesson":"cloud_storage_2","english":"SMB","set":{"italian":"SMB","example":"Connecting the Windows print server to an SMB share on Azure Files let users keep their existing UNC paths. = Connettere il print server Windows a uno share SMB su Azure Files ha permesso agli utenti di mantenere i percorsi UNC esistenti.","note":"SMB = Server Message Block; protocollo di file e printer sharing prevalente nei sistemi Windows."}},
-{"level":"2","lesson":"cloud_storage_2","english":"Mount Point","set":{"example":"Choosing /mnt/data as the mount point keeps app code clean and matches the path baked into the container image. = Scegliere /mnt/data come mount point mantiene pulito il codice dell'app e combacia col path cotto nell'immagine container."}},
-{"level":"2","lesson":"cloud_storage_3","english":"Cool Tier","set":{"example":"Moving log archives older than 30 days to the cool tier dropped storage costs by half without losing query access. = Spostare gli archivi log più vecchi di 30 giorni nel cool tier ha dimezzato i costi di storage senza perdere l'accesso in query."}},
-{"level":"2","lesson":"cloud_storage_3","english":"Retrieval","set":{"example":"Standard Glacier retrieval brings the file back in 3-5 hours, while expedited retrieval finishes in under 5 minutes. = Il retrieval Glacier standard riporta il file in 3-5 ore, mentre il retrieval expedited finisce in meno di 5 minuti."}},
-{"level":"2","lesson":"cloud_storage_4","english":"Durability","set":{"example":"S3 advertises eleven nines of durability, meaning losing one object out of ten million takes statistically 10,000 years. = S3 dichiara undici nove di durability, ovvero perdere un oggetto su dieci milioni richiede statisticamente 10.000 anni."}},
-{"level":"2","lesson":"cloud_storage_4","english":"Vault","set":{"example":"Compliance officers required a Glacier vault with lock policy so audit logs cannot be deleted before seven years pass. = I responsabili compliance hanno preteso un vault Glacier con lock policy affinché i log di audit non si possano cancellare prima di sette anni."}},
-{"level":"3","lesson":"cloud_networking_1","english":"VPC","set":{"italian":"VPC","note":"VPC = Virtual Private Cloud; rete virtuale isolata in AWS, configurabile con subnet, route table e security group."}},
-{"level":"3","lesson":"cloud_networking_1","english":"VNet","set":{"italian":"VNet","example":"Peering the hub VNet with three spoke VNets gave each team isolated workloads while sharing the central firewall. = Fare peering della VNet hub con tre VNet spoke ha dato a ogni team workload isolati pur condividendo il firewall centrale.","note":"VNet = Virtual Network; equivalente Azure della VPC AWS."}},
-{"level":"3","lesson":"cloud_networking_1","english":"Public Subnet","set":{"example":"Placing only the ALB in a public subnet keeps the application servers in private subnets, reachable only via the load balancer. = Mettere solo l'ALB in una public subnet tiene gli application server in subnet private, raggiungibili solo via load balancer."}},
-{"level":"3","lesson":"cloud_networking_1","english":"CIDR Block","set":{"example":"Allocating a /16 CIDR block to the VPC leaves room for 65,000 IPs split across four /18 subnets for each AZ. = Allocare un blocco CIDR /16 alla VPC lascia spazio per 65.000 IP divisi su quattro subnet /18 una per AZ."}},
-{"level":"3","lesson":"cloud_networking_1","english":"Route Table","set":{"example":"The private route table sends 0.0.0.0/0 through the NAT gateway, while the public one targets the internet gateway directly. = La route table privata manda 0.0.0.0/0 attraverso il NAT gateway, mentre quella pubblica punta direttamente all'internet gateway."}},
-{"level":"3","lesson":"cloud_networking_1","english":"NAT Gateway","set":{"example":"A single NAT gateway in each AZ lets private subnet instances download OS patches without exposing them to inbound traffic. = Un singolo NAT Gateway per AZ permette alle istanze in subnet privata di scaricare patch del SO senza esporle a traffico inbound."}},
-{"level":"3","lesson":"cloud_networking_1","english":"Egress","set":{"example":"Charging $0.09 per GB of egress traffic to the internet quickly dwarfs compute costs for video streaming workloads. = Far pagare 0,09$ per GB di traffico egress verso internet supera in fretta i costi di compute per i carichi di streaming video."}},
-{"level":"3","lesson":"cloud_networking_2","english":"Inbound Rule","set":{"example":"An inbound rule on port 443 from 0.0.0.0/0 is fine for the ALB but disastrous on a database security group. = Una regola inbound sulla porta 443 da 0.0.0.0/0 va bene per l'ALB ma è disastrosa su un security group del database."}},
-{"level":"3","lesson":"cloud_networking_2","english":"Allow List","set":{"example":"The bastion's SSH allow list contains only the office NAT and the on-call engineer's home IP, refreshed every quarter. = L'allow list SSH del bastion contiene solo il NAT dell'ufficio e l'IP di casa dell'on-call, rinfrescata ogni trimestre."}},
-{"level":"3","lesson":"cloud_networking_2","english":"Deny List","set":{"example":"Adding the abusive scraper's /24 to the WAF deny list cut spurious login attempts by 90% within minutes. = Aggiungere il /24 dello scraper abusivo alla deny list del WAF ha tagliato del 90% i tentativi di login spuri in pochi minuti."}},
-{"level":"3","lesson":"cloud_networking_3","english":"DNS","set":{"italian":"DNS","example":"Switching the apex record from CNAME to an Alias on Route 53 cut DNS lookup time by skipping a second resolver hop. = Passare il record apex da CNAME ad Alias su Route 53 ha tagliato il tempo di risoluzione DNS evitando un hop di resolver.","note":"DNS = Domain Name System; sistema gerarchico che traduce nomi a dominio in indirizzi IP."}},
-{"level":"3","lesson":"cloud_networking_3","english":"Hosted Zone","set":{"example":"Creating a private hosted zone for internal.example.com lets workloads resolve service names without exposing them publicly. = Creare una hosted zone privata per internal.example.com permette ai workload di risolvere i nomi dei servizi senza esporli pubblicamente."}},
-{"level":"3","lesson":"cloud_networking_3","english":"A Record","set":{"example":"Updating the A record for api.example.com to the new ALB IP rolled the traffic over without code changes. = Aggiornare il record A di api.example.com con il nuovo IP dell'ALB ha spostato il traffico senza modifiche al codice."}},
-{"level":"3","lesson":"cloud_networking_3","english":"CNAME","set":{"italian":"CNAME","example":"Pointing the marketing CNAME at shop.shopify.com lets the SaaS handle SSL and CDN without touching DNS again. = Far puntare il CNAME marketing a shop.shopify.com lascia al SaaS gestire SSL e CDN senza più toccare il DNS.","note":"CNAME = Canonical Name record; record DNS che alias un nome a un altro nome anziché a un IP."}},
-{"level":"3","lesson":"cloud_networking_3","english":"Alias Record","set":{"example":"Using an alias record at the zone apex avoids the CNAME-at-apex restriction and resolves directly to the ALB. = Usare un alias record sull'apex della zona evita il limite del CNAME on apex e risolve direttamente sull'ALB."}},
-{"level":"3","lesson":"cloud_networking_3","english":"TTL","set":{"italian":"TTL","example":"Dropping the production A record TTL to 60 seconds the day before a failover keeps stale resolvers from prolonging the outage. = Abbassare il TTL del record A di produzione a 60 secondi il giorno prima del failover evita che i resolver stantii prolunghino il disservizio.","note":"TTL = Time To Live; durata in secondi per cui un record DNS può essere messo in cache."}},
-{"level":"3","lesson":"cloud_networking_3","english":"Routing Policy","set":{"example":"Choosing a weighted routing policy let us send 5% of traffic to the canary stack and 95% to the stable release. = Scegliere una routing policy weighted ci ha permesso di mandare il 5% del traffico al canary stack e il 95% alla release stabile."}},
-{"level":"3","lesson":"cloud_networking_3","english":"Geolocation Routing","set":{"example":"Geolocation routing sends German users to the Frankfurt cluster and US users to Virginia, halving median latency. = Il geolocation routing manda gli utenti tedeschi al cluster di Francoforte e gli statunitensi in Virginia, dimezzando la latenza mediana."}},
-{"level":"3","lesson":"cloud_networking_4","english":"VPN","set":{"italian":"VPN","note":"VPN = Virtual Private Network; tunnel cifrato tra due reti o tra client e rete su trasporto pubblico."}},
-{"level":"3","lesson":"cloud_networking_4","english":"ExpressRoute","set":{"example":"ExpressRoute carved a private 1 Gbps line between the Milan datacenter and Azure West Europe, bypassing public internet entirely. = ExpressRoute ha aperto una linea privata da 1 Gbps tra il datacenter di Milano e Azure West Europe, bypassando del tutto internet pubblico."}},
-{"level":"3","lesson":"cloud_networking_4","english":"BGP","set":{"italian":"BGP","example":"Tweaking the BGP local preference on the backup link kept normal traffic on the primary fiber and only failed over on link loss. = Modificare la BGP local preference sul link di backup ha tenuto il traffico normale sulla fibra primaria e ha fatto failover solo in caso di perdita link.","note":"BGP = Border Gateway Protocol; protocollo di routing inter-AS usato per scambiare percorsi su internet e nei tunnel cloud."}},
-{"level":"4","lesson":"cloud_iam_1","english":"IAM","set":{"italian":"IAM","example":"Locking the root account behind hardware MFA and managing daily work with IAM users is rule one of any AWS landing zone. = Bloccare l'account root dietro MFA hardware e gestire il lavoro quotidiano con utenti IAM è la regola uno di ogni AWS landing zone.","note":"IAM = Identity and Access Management; servizio AWS per definire utenti, gruppi, ruoli e policy di accesso."}},
-{"level":"4","lesson":"cloud_iam_1","english":"User","set":{"example":"Creating a dedicated IAM user per developer and tagging it with their email keeps audit logs traceable to a real person. = Creare un utente IAM dedicato per sviluppatore e taggarlo con la sua email rende i log di audit tracciabili a una persona reale."}},
-{"level":"4","lesson":"cloud_iam_1","english":"Role","set":{"example":"Letting EC2 instances assume an IAM role removes the need to ship long-lived access keys inside the AMI. = Far assumere alle istanze EC2 un ruolo IAM elimina la necessità di spedire access key di lunga durata dentro l'AMI."}},
-{"level":"4","lesson":"cloud_iam_1","english":"Identity","set":{"example":"Federating Okta with AWS SSO unifies every developer identity behind a single login and MFA flow. = Federare Okta con AWS SSO unifica ogni identità di sviluppatore dietro un singolo login e flusso MFA."}},
-{"level":"4","lesson":"cloud_iam_1","english":"Access Key","set":{"example":"Rotating the CI pipeline's access key every 30 days through Secrets Manager limits blast radius if it ever leaks. = Ruotare l'access key della pipeline CI ogni 30 giorni via Secrets Manager limita il raggio di danno se mai trapelasse."}},
-{"level":"4","lesson":"cloud_iam_1","english":"Secret Key","set":{"example":"Pushing a secret key to a public GitHub repo triggers AWS's automated quarantine within minutes thanks to scanning bots. = Pushare una secret key su un repo GitHub pubblico fa scattare la quarantena automatica AWS in pochi minuti grazie ai bot di scanning."}},
-{"level":"4","lesson":"cloud_iam_1","english":"ARN","set":{"italian":"ARN","note":"ARN = Amazon Resource Name; identificatore globalmente unico di una risorsa AWS, nel formato arn:partition:service:region:account:resource."}},
-{"level":"4","lesson":"cloud_iam_2","english":"Resource","set":{"example":"Scoping the policy's Resource field to a single bucket ARN prevents a leaked role from listing every S3 bucket in the account. = Restringere il campo Resource della policy a un singolo ARN di bucket impedisce a un ruolo trapelato di listare ogni bucket S3 dell'account."}},
-{"level":"4","lesson":"cloud_iam_2","english":"Resource-Based Policy","set":{"example":"Attaching a resource-based policy to an S3 bucket grants cross-account read without the consumer needing to assume a role. = Attaccare una resource-based policy a un bucket S3 concede lettura cross-account senza che il consumer debba assumere un ruolo."}},
-{"level":"4","lesson":"cloud_iam_3","english":"STS","set":{"italian":"STS","note":"STS = Security Token Service; servizio AWS che emette credenziali temporanee usate da role assumption, federation e SSO."}},
-{"level":"4","lesson":"cloud_iam_3","english":"Token","set":{"example":"The CLI prints an STS token valid for one hour, then refreshes silently before each AWS API call expires. = La CLI stampa un token STS valido un'ora, poi lo rinfresca silenziosamente prima che scada ogni chiamata API AWS."}},
-{"level":"4","lesson":"cloud_iam_4","english":"MFA","set":{"italian":"MFA","example":"Forcing MFA on every IAM user that can touch production stops 99% of credential-stuffing attacks before they land. = Imporre MFA su ogni utente IAM che tocca produzione blocca il 99% degli attacchi di credential stuffing prima che vadano a segno.","note":"MFA = Multi-Factor Authentication; richiede due o più fattori (knowledge, possession, inherence) per autenticarsi."}},
-{"level":"4","lesson":"cloud_iam_4","english":"Two-Factor Authentication","set":{"example":"Adding two-factor authentication via TOTP cut account takeover incidents from twelve last year to zero this quarter. = Aggiungere two-factor authentication via TOTP ha ridotto gli incidenti di account takeover da dodici l'anno scorso a zero in questo trimestre."}},
-{"level":"4","lesson":"cloud_iam_4","english":"TOTP","set":{"italian":"TOTP","example":"The Google Authenticator app generates a fresh TOTP code every 30 seconds derived from a shared secret seeded at enrolment. = L'app Google Authenticator genera un codice TOTP nuovo ogni 30 secondi derivato da un secret condiviso al momento dell'enrolment.","note":"TOTP = Time-based One-Time Password (RFC 6238); password monouso calcolata da chiave condivisa e timestamp corrente."}},
-{"level":"4","lesson":"cloud_iam_4","english":"SSO","set":{"italian":"SSO","example":"Wiring AWS, GitHub and Jira behind a single SSO portal removed the password reset queue that drained the help desk daily. = Cablare AWS, GitHub e Jira dietro un singolo portale SSO ha cancellato la coda dei reset password che drenava l'help desk ogni giorno.","note":"SSO = Single Sign-On; l'utente si autentica una volta e accede a più applicazioni senza riautenticarsi."}},
-{"level":"4","lesson":"cloud_iam_4","english":"OIDC","set":{"italian":"OIDC","note":"OIDC = OpenID Connect; layer di autenticazione costruito sopra OAuth 2.0 che restituisce un ID token JWT firmato."}},
-{"level":"4","lesson":"cloud_iam_4","english":"Identity Provider","set":{"example":"Configuring Okta as the identity provider for AWS SSO centralised onboarding into the HR-driven joiner workflow. = Configurare Okta come identity provider per AWS SSO ha centralizzato l'onboarding nel workflow joiner guidato dall'HR."}},
-{"level":"4","lesson":"cloud_iam_4","english":"Conditional Access","set":{"example":"A conditional access rule blocks MFA-less logins from outside corporate IPs, even with valid passwords. = Una regola di conditional access blocca i login senza MFA da IP fuori dalla rete aziendale, anche con password valide."}},
-{"level":"5","lesson":"cloud_serverless_1","english":"Function","set":{"example":"Splitting the monolith into one Lambda function per use case makes cold start tuning surgical instead of all-or-nothing. = Spezzare il monolite in una funzione Lambda per use case rende il tuning del cold start chirurgico invece che all-or-nothing."}},
-{"level":"5","lesson":"cloud_serverless_1","english":"Event","set":{"example":"Each S3 PutObject event triggers the resize Lambda, which writes back thumbnails into a sibling bucket. = Ogni evento S3 PutObject innesca la Lambda di resize, che riscrive le thumbnail in un bucket gemello."}},
-{"level":"5","lesson":"cloud_serverless_1","english":"Context","set":{"example":"Reading context.getRemainingTimeInMillis() inside the Lambda handler lets the function bail out before the 15-minute hard timeout. = Leggere context.getRemainingTimeInMillis() dentro l'handler Lambda permette alla funzione di uscire prima del timeout duro di 15 minuti."}},
-{"level":"5","lesson":"cloud_serverless_1","english":"Trigger","set":{"example":"Wiring a cron trigger every 5 minutes turned the report-generation Lambda into a hands-off scheduler. = Cablare un trigger cron ogni 5 minuti ha trasformato la Lambda di generazione report in uno scheduler hands-off."}},
-{"level":"5","lesson":"cloud_serverless_1","english":"Cold Start","set":{"example":"A 1.8-second cold start on the checkout Lambda was masked by enabling provisioned concurrency for two warm instances. = Un cold start di 1,8 secondi sulla Lambda di checkout è stato nascosto abilitando provisioned concurrency per due istanze warm."}},
-{"level":"5","lesson":"cloud_serverless_1","english":"Warm Start","set":{"example":"After the first invocation, subsequent warm starts handle the same request in 18ms instead of the cold 1200ms. = Dopo la prima invocazione, i successivi warm start gestiscono la stessa richiesta in 18ms invece dei 1200ms a freddo."}},
-{"level":"5","lesson":"cloud_serverless_1","english":"Provisioned Concurrency","set":{"example":"Setting provisioned concurrency to 50 on Black Friday eve eliminated cold-start spikes during the midnight sale launch. = Impostare provisioned concurrency a 50 alla vigilia del Black Friday ha eliminato i picchi di cold start al lancio dei saldi di mezzanotte."}},
-{"level":"5","lesson":"cloud_serverless_2","english":"REST API","set":{"example":"Defining the REST API in OpenAPI lets the team generate both Postman collections and TypeScript clients from one source. = Definire la REST API in OpenAPI permette al team di generare sia collection Postman sia client TypeScript da un'unica fonte."}},
-{"level":"5","lesson":"cloud_serverless_2","english":"HTTP API","set":{"example":"Migrating low-cost webhooks to an HTTP API on API Gateway cut per-request cost by 70% versus the REST flavour. = Migrare i webhook a basso costo su una HTTP API di API Gateway ha tagliato del 70% il costo per richiesta rispetto alla variante REST."}},
-{"level":"5","lesson":"cloud_serverless_2","english":"Resource Path","set":{"example":"Mapping the resource path /orders/{id} to the GetOrder Lambda keeps the URL hierarchy aligned with the domain model. = Mappare il resource path /orders/{id} sulla Lambda GetOrder mantiene la gerarchia URL allineata col modello di dominio."}},
-{"level":"5","lesson":"cloud_serverless_2","english":"Method","set":{"example":"Reserving the DELETE method behind an admin authorizer prevents external callers from purging orders by mistake. = Riservare il method DELETE dietro un authorizer admin impedisce a chiamanti esterni di cancellare ordini per errore."}},
-{"level":"5","lesson":"cloud_serverless_2","english":"Integration","set":{"example":"A direct integration between API Gateway and DynamoDB removed the trivial Lambda proxy and cut latency by 40ms. = Una integration diretta tra API Gateway e DynamoDB ha rimosso la Lambda proxy banale e tagliato la latenza di 40ms."}},
-{"level":"5","lesson":"cloud_serverless_3","english":"Event Source","set":{"example":"Adding Kinesis as an event source to the Lambda lets it consume the click-stream in 100-record batches automatically. = Aggiungere Kinesis come event source alla Lambda le permette di consumare il click-stream in batch da 100 record automaticamente."}},
-{"level":"5","lesson":"cloud_serverless_3","english":"Webhook","set":{"example":"GitHub fires a webhook on every push, and the listener Lambda triggers the build inside the team's CodeBuild project. = GitHub spara un webhook a ogni push e la Lambda listener innesca la build nel progetto CodeBuild del team."}},
-{"level":"5","lesson":"cloud_serverless_3","english":"Idempotency","set":{"example":"Storing each Stripe event ID in DynamoDB guarantees idempotency, so retried webhooks never double-charge the customer. = Salvare ogni ID evento Stripe in DynamoDB garantisce idempotency, così i webhook ritentati non addebitano due volte il cliente."}},
-{"level":"5","lesson":"cloud_serverless_4","english":"Step Functions","set":{"example":"Modelling the order pipeline in Step Functions makes the retry, branch and timeout logic visible at a glance in the console. = Modellare la pipeline ordini in Step Functions rende visibili a colpo d'occhio retry, branch e timeout nella console."}},
-{"level":"5","lesson":"cloud_serverless_4","english":"Choice State","set":{"example":"A Choice state branches the workflow into the refund path when amount > 0 and the cancellation path otherwise. = Uno stato Choice biforca il workflow nel percorso di rimborso quando amount > 0 e in quello di cancellazione altrimenti."}},
-{"level":"5","lesson":"cloud_serverless_4","english":"Map State","set":{"example":"A Map state fans out the import job over 200 CSV files in parallel without writing a single line of concurrency code. = Uno stato Map fan-outta il job di import su 200 file CSV in parallelo senza scrivere una riga di codice di concorrenza."}},
-{"level":"5","lesson":"cloud_serverless_4","english":"ASL","set":{"italian":"ASL","example":"Writing the workflow definition directly in ASL JSON makes the state machine reviewable in pull requests without UI screenshots. = Scrivere la definizione del workflow direttamente in ASL JSON rende la state machine reviewabile in pull request senza screenshot della UI.","note":"ASL = Amazon States Language; DSL JSON usato per descrivere le state machine di AWS Step Functions."}},
-{"level":"6","lesson":"cloud_database_1","english":"RDS","set":{"italian":"RDS","example":"Migrating the legacy Postgres VM onto RDS handed over backup, patching and read-replica management to AWS in one weekend. = Migrare la VM Postgres legacy su RDS ha passato ad AWS backup, patching e gestione delle read replica in un weekend.","note":"RDS = Relational Database Service; servizio gestito AWS per database relazionali (Postgres, MySQL, MariaDB, Oracle, SQL Server)."}},
-{"level":"6","lesson":"cloud_database_1","english":"Read Replica","set":{"example":"Pointing the reporting service at a read replica isolated heavy analytical queries from the OLTP write workload. = Puntare il servizio di reporting a una read replica ha isolato le query analitiche pesanti dal carico OLTP in scrittura."}},
-{"level":"6","lesson":"cloud_database_1","english":"Connection Pool","set":{"example":"Fronting RDS with RDS Proxy gave the Lambda fleet a shared connection pool, killing the max_connections errors. = Mettere RDS Proxy davanti a RDS ha dato alla flotta Lambda un connection pool condiviso, eliminando gli errori max_connections."}},
-{"level":"6","lesson":"cloud_database_2","english":"Sort Key","set":{"example":"Picking createdAt as the sort key on the orders table makes range queries for the last 24 hours trivially efficient. = Scegliere createdAt come sort key sulla tabella ordini rende banalmente efficienti le query a range sulle ultime 24 ore."}},
-{"level":"6","lesson":"cloud_database_2","english":"Item","set":{"example":"Storing each shopping cart as a single DynamoDB item under userId keeps reads to one round-trip per page load. = Salvare ogni carrello come singolo item DynamoDB sotto userId tiene le letture a un round-trip per caricamento pagina."}},
-{"level":"6","lesson":"cloud_database_2","english":"On-Demand Mode","set":{"example":"Switching the rarely-used audit table to on-demand mode stopped paying for provisioned capacity that idled 23 hours a day. = Passare la tabella di audit poco usata in on-demand mode ha smesso di pagare capacity provisioned ferma 23 ore al giorno."}},
-{"level":"6","lesson":"cloud_database_2","english":"Eventually Consistent","set":{"example":"DynamoDB's eventually consistent reads cost half the RCUs but may return data up to a second stale, fine for a feed view. = Le letture eventually consistent di DynamoDB costano metà delle RCU ma possono restituire dati stantii fino a un secondo, ok per una feed view."}},
-{"level":"6","lesson":"cloud_database_3","english":"TTL","set":{"italian":"TTL","note":"TTL = Time To Live; campo che indica quando un record (es. cache entry, DynamoDB item) può essere scartato automaticamente."}},
-{"level":"6","lesson":"cloud_database_3","english":"Eviction","set":{"example":"With the LRU eviction policy, Redis silently drops the oldest unused keys to keep the working set under the maxmemory limit. = Con la policy di eviction LRU, Redis scarta in silenzio le chiavi più vecchie non usate per tenere il working set sotto maxmemory."}},
-{"level":"6","lesson":"cloud_database_3","english":"Write-Through","set":{"example":"A write-through cache keeps Redis and Postgres in lockstep, so the next read after a write never hits a stale value. = Una cache write-through tiene Redis e Postgres allineati, così la lettura subito dopo una scrittura non trova mai un valore stantio."}},
-{"level":"6","lesson":"cloud_database_3","english":"Lazy Loading","set":{"example":"With lazy loading, the cache stays empty until the first miss, which slows the cold path but minimises wasted memory. = Con lazy loading, la cache resta vuota fino al primo miss, rallentando il percorso a freddo ma minimizzando la memoria sprecata."}},
-{"level":"6","lesson":"cloud_database_4","english":"Time-Series Database","set":{"example":"Storing IoT telemetry in a time-series database like Timestream beats RDS at ingest rate by an order of magnitude. = Salvare la telemetria IoT in un time-series database come Timestream batte RDS sull'ingest rate di un ordine di grandezza."}},
-{"level":"6","lesson":"cloud_database_4","english":"OLTP","set":{"italian":"OLTP","note":"OLTP = Online Transaction Processing; carichi caratterizzati da transazioni brevi, frequenti e in scrittura (es. checkout)."}},
-{"level":"6","lesson":"cloud_database_4","english":"OLAP","set":{"italian":"OLAP","note":"OLAP = Online Analytical Processing; carichi di analisi su grandi volumi di dati, prevalentemente in lettura (es. report)."}},
-{"level":"7","lesson":"cloud_containers_1","english":"Container","set":{"example":"Packaging the Python service as a container made the dev laptop behave like the production EKS pod down to the kernel calls. = Impacchettare il servizio Python come container ha reso il laptop dev identico al pod EKS di produzione fin sui kernel call."}},
-{"level":"7","lesson":"cloud_containers_1","english":"Dockerfile","set":{"example":"Pinning the base image to python:3.12.4-slim inside the Dockerfile froze the runtime and made builds reproducible. = Pinnare la base image a python:3.12.4-slim dentro il Dockerfile ha congelato il runtime e reso i build riproducibili."}},
-{"level":"7","lesson":"cloud_containers_1","english":"Multi-Stage Build","set":{"example":"A multi-stage build compiles the Go binary in a 900MB SDK image, then copies it into a 20MB distroless runtime. = Una build multi-stage compila il binario Go in un'immagine SDK da 900MB, poi lo copia in un runtime distroless da 20MB."}},
-{"level":"7","lesson":"cloud_containers_1","english":"Image Tag","set":{"example":"Replacing the floating :latest image tag with the immutable git SHA killed the surprise rollouts that broke production. = Sostituire il tag immagine fluttuante :latest con la SHA git immutabile ha eliminato i rollout a sorpresa che rompevano produzione."}},
-{"level":"7","lesson":"cloud_containers_1","english":"OCI","set":{"italian":"OCI","note":"OCI = Open Container Initiative; standard aperto per il formato delle immagini e dei runtime container, sostenuto da Docker, Red Hat e altri."}},
-{"level":"7","lesson":"cloud_containers_1","english":"Init Container","set":{"example":"An init container runs the schema migration to completion before the app container ever opens a socket to the database. = Un init container esegue la migrazione di schema fino in fondo prima che l'app container apra un socket sul database."}},
-{"level":"7","lesson":"cloud_containers_2","english":"Container Registry","set":{"example":"Pushing images to a private container registry instead of Docker Hub avoided the new pull rate limits hitting the CI pipeline. = Pushare le immagini su un container registry privato invece che su Docker Hub ha evitato i nuovi rate limit sui pull che colpivano la CI."}},
-{"level":"7","lesson":"cloud_containers_2","english":"ECR","set":{"italian":"ECR","example":"Enabling ECR scan-on-push flags critical CVEs in the image before any pod gets the chance to pull it into production. = Abilitare lo scan-on-push di ECR segnala CVE critiche nell'immagine prima che un pod la pulli in produzione.","note":"ECR = Elastic Container Registry; registry container privato gestito AWS, integrato con IAM e KMS."}},
-{"level":"7","lesson":"cloud_containers_2","english":"ACR","set":{"italian":"ACR","example":"Geo-replicating the production ACR across three Azure regions cut image pull latency for clusters running close to users. = Geo-replicare l'ACR di produzione su tre region Azure ha tagliato la latenza di pull immagini per cluster vicini agli utenti.","note":"ACR = Azure Container Registry; registry container privato gestito da Azure, con replica geografica integrata."}},
-{"level":"7","lesson":"cloud_containers_2","english":"GCR","set":{"italian":"GCR","note":"GCR = Google Container Registry; registry container originario di GCP, ora superato da Artifact Registry per i nuovi progetti."}},
-{"level":"7","lesson":"cloud_containers_2","english":"Push","set":{"example":"Pushing the freshly built image to ECR with a unique git SHA tag makes every deploy traceable to a specific commit. = Pushare l'immagine appena buildata su ECR con un tag SHA git unico rende ogni deploy tracciabile a un commit specifico."}},
-{"level":"7","lesson":"cloud_containers_2","english":"Pull","set":{"example":"Pulling the image from a regional ECR cache instead of the central registry cut pod startup from 22s to 6s. = Pullare l'immagine da una cache ECR regionale invece che dal registry centrale ha tagliato lo startup dei pod da 22s a 6s."}},
-{"level":"7","lesson":"cloud_containers_2","english":"Image Scanning","set":{"example":"Wiring Trivy as an image scanning step in CI blocks any pull request that introduces a high-severity vulnerability. = Cablare Trivy come step di image scanning in CI blocca ogni pull request che introduce una vulnerabilità di alta severità."}},
-{"level":"7","lesson":"cloud_containers_3","english":"ECS","set":{"italian":"ECS","example":"Running the worker fleet on ECS with Fargate removed the EC2 node-group lifecycle work from the team's plate entirely. = Far girare la flotta worker su ECS con Fargate ha tolto del tutto al team il lavoro di lifecycle dei node-group EC2.","note":"ECS = Elastic Container Service; orchestratore container AWS-native con backend EC2 o Fargate."}},
-{"level":"7","lesson":"cloud_containers_3","english":"Fargate","set":{"example":"Switching the bursty batch job to Fargate eliminated idle EC2 capacity costs between weekly invoice runs. = Passare il job batch bursty a Fargate ha eliminato i costi di capacity EC2 ferma tra una run di fatturazione settimanale e l'altra."}},
-{"level":"7","lesson":"cloud_containers_3","english":"Launch Type","set":{"example":"Choosing the FARGATE launch type for the ECS service offloaded all node sizing decisions to AWS scheduling. = Scegliere il launch type FARGATE per il servizio ECS ha scaricato su AWS ogni decisione di node sizing."}},
-{"level":"7","lesson":"cloud_containers_3","english":"Container Insights","set":{"example":"Enabling Container Insights on the cluster exposed per-task CPU and memory at no extra cost from the CloudWatch console. = Abilitare Container Insights sul cluster ha esposto CPU e memoria per-task senza costo extra dalla console CloudWatch."}},
-{"level":"7","lesson":"cloud_containers_4","english":"Kubernetes","set":{"italian":"Kubernetes","example":"Adopting Kubernetes let the team unify deployment of three services across AWS, GCP and on-prem behind a single Helm chart. = Adottare Kubernetes ha permesso al team di unificare il deploy di tre servizi su AWS, GCP e on-prem dietro un singolo Helm chart.","note":"Kubernetes (k8s) = orchestratore container open source originato in Google, oggi standard de facto per i workload containerizzati."}},
-{"level":"7","lesson":"cloud_containers_4","english":"EKS","set":{"italian":"EKS","example":"Spinning up an EKS cluster with managed node groups gave the platform team Kubernetes without owning the control plane. = Tirare su un cluster EKS con managed node group ha dato al team platform Kubernetes senza dover possedere il control plane.","note":"EKS = Elastic Kubernetes Service; Kubernetes gestito AWS con control plane SLA 99,95%."}},
-{"level":"7","lesson":"cloud_containers_4","english":"AKS","set":{"italian":"AKS","example":"Bootstrapping AKS with Azure AD integration let developers kubectl with their corporate identity, no static kubeconfigs. = Fare il bootstrap di AKS con integrazione Azure AD ha permesso ai dev di fare kubectl con l'identità aziendale, senza kubeconfig statici.","note":"AKS = Azure Kubernetes Service; Kubernetes gestito Azure, con control plane gratuito ma nodi a pagamento."}},
-{"level":"7","lesson":"cloud_containers_4","english":"GKE","set":{"italian":"GKE","example":"Choosing GKE Autopilot abstracted node management entirely, billing only for the CPU and memory each pod actually requests. = Scegliere GKE Autopilot ha astratto del tutto la gestione dei nodi, fatturando solo CPU e memoria effettivamente richieste da ogni pod.","note":"GKE = Google Kubernetes Engine; Kubernetes gestito GCP, disponibile in modalità Standard e Autopilot."}},
-{"level":"7","lesson":"cloud_containers_4","english":"Node","set":{"example":"Draining the node before patching the kernel forces the scheduler to reschedule pods elsewhere without dropping traffic. = Drenare il nodo prima di patchare il kernel costringe lo scheduler a rischedulare i pod altrove senza droppare traffico."}},
-{"level":"7","lesson":"cloud_containers_4","english":"Control Plane","set":{"example":"Upgrading the control plane to Kubernetes 1.29 is a separate, non-disruptive step before rolling worker nodes onto the new version. = L'upgrade del control plane a Kubernetes 1.29 è uno step separato e non disruptive, prima di rollare i worker node sulla nuova versione."}},
-{"level":"7","lesson":"cloud_containers_4","english":"Worker Node","set":{"example":"Tainting one worker node group for GPU workloads keeps the expensive instances reserved for the inference pods that need them. = Tintare un gruppo di worker node per workload GPU tiene le istanze costose riservate ai pod di inferenza che le richiedono."}},
-{"level":"7","lesson":"cloud_containers_4","english":"Karpenter","set":{"example":"Replacing the Cluster Autoscaler with Karpenter cut bin-packing waste by picking the cheapest fitting EC2 type per pending pod. = Sostituire Cluster Autoscaler con Karpenter ha tagliato lo spreco di bin-packing scegliendo il tipo EC2 più economico adatto a ogni pod in attesa."}},
-{"level":"8","lesson":"cloud_iac_1","english":"Imperative","set":{"example":"An imperative bash script runs the steps top-to-bottom and breaks at the first error, leaving the system in a half-applied state. = Uno script bash imperativo esegue gli step dall'alto in basso e si rompe al primo errore, lasciando il sistema in uno stato applicato a metà."}},
-{"level":"8","lesson":"cloud_iac_1","english":"Idempotent","set":{"example":"An idempotent Ansible playbook can be re-run a hundred times and only change something on the first run that actually needs work. = Un playbook Ansible idempotente può essere rieseguito cento volte e cambia qualcosa solo alla prima run che ha davvero del lavoro da fare."}},
-{"level":"8","lesson":"cloud_iac_1","english":"Pet vs Cattle","set":{"example":"The pet vs cattle mindset shift retires hand-named servers in favour of autoscaled, disposable fleets identified only by ID. = Il cambio di mentalità pet vs cattle manda in pensione i server nominati a mano in favore di flotte autoscalate e usa-e-getta identificate solo da ID."}},
-{"level":"8","lesson":"cloud_iac_1","english":"GitOps","set":{"example":"With GitOps, merging a PR to main causes ArgoCD to reconcile the production cluster, making rollback a simple git revert. = Con GitOps, il merge di una PR su main fa sì che ArgoCD riconcili il cluster di produzione, rendendo il rollback un semplice git revert."}},
-{"level":"8","lesson":"cloud_iac_2","english":"Terraform","set":{"example":"Adopting Terraform let the team review every infrastructure change as a pull request next to the application code. = Adottare Terraform ha permesso al team di revisionare ogni modifica infrastrutturale come pull request accanto al codice applicativo."}},
-{"level":"8","lesson":"cloud_iac_2","english":"OpenTofu","set":{"example":"Switching from Terraform to OpenTofu after the licence change preserved every module and state file without rewrites. = Passare da Terraform a OpenTofu dopo il cambio di licenza ha preservato ogni modulo e file di state senza riscritture."}},
-{"level":"8","lesson":"cloud_iac_2","english":"HCL","set":{"italian":"HCL","example":"Declaring the bucket policy in HCL keeps the JSON document inline and version-controlled alongside the resource definition. = Dichiarare la bucket policy in HCL tiene il documento JSON inline e versionato insieme alla definizione della risorsa.","note":"HCL = HashiCorp Configuration Language; DSL dichiarativo usato da Terraform, Vault, Nomad e altri tool HashiCorp."}},
-{"level":"8","lesson":"cloud_iac_2","english":"Provider","set":{"example":"Pinning the AWS provider to a major version in Terraform protects the workspace from breaking changes in a Friday afternoon plan. = Pinnare il provider AWS a una major version in Terraform protegge la workspace da breaking change in un plan del venerdì pomeriggio."}},
-{"level":"8","lesson":"cloud_iac_2","english":"Resource","set":{"example":"Splitting a 4000-line resource block into reusable modules made the Terraform plan diff readable again during code review. = Spezzare un blocco resource da 4000 righe in moduli riusabili ha reso di nuovo leggibile il diff del Terraform plan in code review."}},
-{"level":"8","lesson":"cloud_iac_2","english":"Variable","set":{"example":"Hoisting the environment name into a Terraform variable removed twelve copy-pasted ternaries across the module tree. = Tirare fuori il nome ambiente in una variable Terraform ha rimosso dodici ternari copia-incollati nell'albero dei moduli."}},
-{"level":"8","lesson":"cloud_iac_2","english":"Output","set":{"example":"Exposing the new VPC ID as an output lets downstream stacks consume it via terraform_remote_state without hard-coded IDs. = Esporre l'ID della nuova VPC come output permette agli stack a valle di consumarlo via terraform_remote_state senza ID hardcoded."}},
-{"level":"8","lesson":"cloud_iac_2","english":"Module","set":{"example":"Extracting the load-balancer setup into a reusable module cut three teams' Terraform footprint from 600 lines to 40 each. = Estrarre il setup del load balancer in un modulo riusabile ha ridotto la footprint Terraform di tre team da 600 righe a 40 ciascuno."}},
-{"level":"8","lesson":"cloud_iac_2","english":"Workspace","set":{"example":"Each Terraform workspace maps to one environment (dev, staging, prod), keeping their state files cleanly separated. = Ogni workspace Terraform mappa su un ambiente (dev, staging, prod), tenendo i file di state nettamente separati."}},
-{"level":"8","lesson":"cloud_iac_3","english":"State Lock","set":{"example":"Storing the Terraform state lock in DynamoDB stops two engineers from running terraform apply concurrently and corrupting the file. = Tenere il state lock di Terraform in DynamoDB impedisce a due ingegneri di lanciare terraform apply in concorrenza e corrompere il file."}},
-{"level":"8","lesson":"cloud_iac_3","english":"Plan","set":{"example":"Posting the terraform plan as a comment on the PR lets reviewers see the exact resources that will be added or destroyed. = Pubblicare il terraform plan come commento sulla PR permette ai reviewer di vedere le risorse esatte che verranno aggiunte o distrutte."}},
-{"level":"8","lesson":"cloud_iac_3","english":"Refresh","set":{"example":"Running terraform refresh before the plan reconciles the state file with reality after a colleague's out-of-band console change. = Lanciare terraform refresh prima del plan riconcilia il file di state con la realtà dopo una modifica out-of-band da console di un collega."}},
-{"level":"8","lesson":"cloud_iac_3","english":"Import","set":{"example":"Using terraform import on the legacy bucket pulled it under IaC management without needing to recreate or migrate data. = Usare terraform import sul bucket legacy lo ha portato sotto gestione IaC senza dover ricreare o migrare i dati."}},
-{"level":"8","lesson":"cloud_iac_3","english":"Lifecycle Block","set":{"example":"Adding a lifecycle block with prevent_destroy on the production database stops a stray terraform apply from wiping the data. = Aggiungere un lifecycle block con prevent_destroy sul database di produzione impedisce a un terraform apply errato di azzerare i dati."}},
-{"level":"8","lesson":"cloud_iac_4","english":"CloudFormation","set":{"example":"Templating the landing zone in CloudFormation let the security team enforce drift detection through native StackSet APIs. = Templare la landing zone in CloudFormation ha permesso al team security di imporre la drift detection via API StackSet native."}},
-{"level":"8","lesson":"cloud_iac_4","english":"Stack","set":{"example":"Deleting the stack tears down every resource it created in reverse-dependency order, leaving the account clean. = Cancellare lo stack abbatte ogni risorsa che ha creato in ordine inverso di dipendenze, lasciando l'account pulito."}},
-{"level":"8","lesson":"cloud_iac_4","english":"Stack Set","set":{"example":"A single StackSet rolled the new IAM password policy out to all 23 accounts in the organisation in one click. = Un singolo StackSet ha rollato la nuova IAM password policy su tutti i 23 account dell'organizzazione in un click."}},
-{"level":"8","lesson":"cloud_iac_4","english":"Change Set","set":{"example":"Previewing the deploy as a change set caught a planned replacement of the production database before anyone clicked execute. = Visualizzare il deploy come change set ha intercettato un replacement pianificato del database di produzione prima che qualcuno cliccasse execute."}},
-{"level":"8","lesson":"cloud_iac_4","english":"Pulumi","set":{"example":"Choosing Pulumi let the team describe AWS infrastructure in TypeScript next to the application that consumes it. = Scegliere Pulumi ha permesso al team di descrivere l'infrastruttura AWS in TypeScript accanto all'applicazione che la consuma."}},
-{"level":"8","lesson":"cloud_iac_4","english":"CDK","set":{"italian":"CDK","note":"CDK = Cloud Development Kit; framework AWS che traspila codice TypeScript/Python in template CloudFormation."}},
-{"level":"8","lesson":"cloud_iac_4","english":"Bicep","set":{"example":"Rewriting the noisy ARM JSON templates in Bicep cut the deployment file size by 60% and added type-checking at compile time. = Riscrivere i template ARM JSON rumorosi in Bicep ha tagliato del 60% le dimensioni dei file di deploy e aggiunto il type-checking a compile-time."}},
-{"level":"8","lesson":"cloud_iac_4","english":"ARM Template","set":{"example":"The legacy ARM template provisions the storage account, but new modules are written in Bicep to keep diffs reviewable. = Il template ARM legacy fa il provisioning dello storage account, ma i nuovi moduli si scrivono in Bicep per tenere i diff revisionabili."}},
-{"level":"8","lesson":"cloud_iac_4","english":"Crossplane","set":{"example":"Installing Crossplane on the management cluster let platform engineers expose AWS, GCP and Snowflake as Kubernetes CRDs. = Installare Crossplane sul cluster di management ha permesso ai platform engineer di esporre AWS, GCP e Snowflake come CRD Kubernetes."}},
-{"level":"9","lesson":"cloud_cost_1","english":"Pay-as-you-go","set":{"example":"Pay-as-you-go pricing turned the experiment from a six-week procurement cycle into a Friday afternoon spike with $7 of cost. = Il prezzo pay-as-you-go ha trasformato l'esperimento da un ciclo di procurement di sei settimane a uno spike del venerdì pomeriggio da 7$ di costo."}},
-{"level":"9","lesson":"cloud_cost_1","english":"On-Demand Pricing","set":{"example":"On-demand pricing is the safe default for spiky workloads, even though it costs roughly 3x what a Reserved Instance would. = L'on-demand pricing è il default sicuro per carichi spiky, anche se costa circa 3 volte una Reserved Instance."}},
-{"level":"9","lesson":"cloud_cost_1","english":"Reserved Instance","set":{"example":"Locking in a one-year reserved instance for the baseline cluster cut compute cost by 40% with no architectural change. = Bloccare una reserved instance annuale per il cluster di baseline ha tagliato del 40% il costo di compute senza alcun cambio architetturale."}},
-{"level":"9","lesson":"cloud_cost_1","english":"Savings Plan","set":{"example":"Committing to a compute savings plan saved the team 28% across EC2, Fargate and Lambda without locking into a specific instance family. = Impegnarsi su un compute savings plan ha fatto risparmiare al team il 28% su EC2, Fargate e Lambda senza vincolarsi a una specifica famiglia d'istanza."}},
-{"level":"9","lesson":"cloud_cost_1","english":"Spot Instance","set":{"example":"Running the nightly ML training on spot instances cut costs by 70%, accepting that AWS may reclaim the capacity with two minutes' notice. = Far girare il training ML notturno su spot instance ha tagliato i costi del 70%, accettando che AWS reclami la capacity con due minuti di preavviso."}},
-{"level":"9","lesson":"cloud_cost_1","english":"Convertible RI","set":{"example":"A convertible RI traded a smaller discount for the right to switch from m5 to m6i once Graviton wasn't a fit for the workload. = Una convertible RI ha barattato uno sconto minore col diritto di passare da m5 a m6i quando Graviton non si è rivelato adatto al workload."}},
-{"level":"9","lesson":"cloud_cost_1","english":"Credit","set":{"example":"Burning the startup's AWS credit on a staging environment kept the production bill low during the first six months of revenue. = Bruciare il credit AWS della startup sull'ambiente di staging ha tenuto bassa la bolletta di produzione nei primi sei mesi di fatturato."}},
-{"level":"9","lesson":"cloud_cost_2","english":"Cost Explorer","set":{"example":"Slicing last month's spend in Cost Explorer by service and tag pinpointed the rogue EMR cluster that had been running idle for weeks. = Affettare la spesa del mese scorso in Cost Explorer per servizio e tag ha individuato il cluster EMR ribelle rimasto idle per settimane."}},
-{"level":"9","lesson":"cloud_cost_2","english":"Billing Dashboard","set":{"example":"Pinning the billing dashboard to the team's Friday review keeps cloud spend visible alongside the weekly KPIs. = Mettere la billing dashboard nella review del venerdì del team rende la spesa cloud visibile accanto agli KPI settimanali."}},
-{"level":"9","lesson":"cloud_cost_2","english":"Budget","set":{"example":"Setting a $5,000 monthly budget with email alerts at 50% and 80% catches runaway spend before the CFO does. = Impostare un budget mensile da 5000$ con alert email al 50% e 80% intercetta la spesa fuori controllo prima del CFO."}},
-{"level":"9","lesson":"cloud_cost_2","english":"Cost Allocation Tag","set":{"example":"Enforcing a cost-center cost allocation tag on every resource maps each AWS dollar back to the product team that spent it. = Imporre un cost allocation tag di centro di costo su ogni risorsa mappa ogni dollaro AWS sul product team che l'ha speso."}},
-{"level":"9","lesson":"cloud_cost_2","english":"Showback","set":{"example":"Sending each team a monthly showback report drove voluntary cleanup of idle dev environments without any formal chargeback. = Mandare a ogni team un report mensile di showback ha spinto la pulizia volontaria degli ambienti dev idle senza alcun chargeback formale."}},
-{"level":"9","lesson":"cloud_cost_2","english":"Chargeback","set":{"example":"Rolling out chargeback so each product line pays its own AWS bill made cost a first-class concern in design reviews. = Rollare il chargeback in modo che ogni linea di prodotto paghi la sua bolletta AWS ha reso il costo una preoccupazione di prima classe nelle design review."}},
-{"level":"9","lesson":"cloud_cost_2","english":"Cost Anomaly","set":{"example":"A Cost Anomaly Detection alert caught a misconfigured Lambda invoking itself in a recursion loop within two hours of deploy. = Un alert di Cost Anomaly Detection ha intercettato una Lambda mal configurata che si invocava in loop ricorsivo entro due ore dal deploy."}},
-{"level":"9","lesson":"cloud_cost_2","english":"Trusted Advisor","set":{"example":"The weekly Trusted Advisor report flagged an unattached EBS volume that had been billing $42 a month for the last year. = Il report settimanale di Trusted Advisor ha segnalato un volume EBS non collegato che fatturava 42$ al mese da un anno."}},
-{"level":"9","lesson":"cloud_cost_2","english":"CUR","set":{"italian":"CUR","example":"Loading the CUR into Athena let finance write SQL queries that broke down spend by tag, region and usage type. = Caricare il CUR in Athena ha permesso a finance di scrivere query SQL che spaccavano la spesa per tag, region e usage type.","note":"CUR = Cost and Usage Report; report dettagliato AWS scritto in S3, base per analisi finanziarie avanzate."}},
-{"level":"9","lesson":"cloud_cost_3","english":"Rightsizing","set":{"example":"Rightsizing the orders service from m5.2xlarge to m6i.large after the load test cut its compute bill by 65% with zero latency impact. = Fare rightsizing del servizio ordini da m5.2xlarge a m6i.large dopo il load test ha tagliato del 65% la bolletta di compute senza impatti sulla latenza."}},
-{"level":"9","lesson":"cloud_cost_3","english":"Idle Resource","set":{"example":"A weekly sweep for idle resources caught 17 unattached EBS volumes and 4 dev RDS instances forgotten since the last project. = Una passata settimanale per le idle resource ha trovato 17 volumi EBS non collegati e 4 RDS dev dimenticati dall'ultimo progetto."}},
-{"level":"9","lesson":"cloud_cost_3","english":"Underutilized","set":{"example":"Compute Optimizer flagged the analytics box as underutilized at 4% CPU, suggesting a downsize from m5.4xlarge to m5.large. = Compute Optimizer ha segnalato la macchina analytics come underutilized al 4% di CPU, suggerendo un downsize da m5.4xlarge a m5.large."}},
-{"level":"9","lesson":"cloud_cost_3","english":"Auto-Stop","set":{"example":"An auto-stop schedule shuts the dev EC2 fleet down at 8pm and restarts it at 8am, knocking 60% off non-production compute. = Uno schedule di auto-stop spegne la flotta EC2 dev alle 20 e la riavvia alle 8, tagliando del 60% il compute non produttivo."}},
-{"level":"9","lesson":"cloud_cost_3","english":"Storage Lifecycle","set":{"example":"A storage lifecycle policy tiers objects to Glacier after 90 days and deletes them after 7 years to meet legal retention. = Una policy di storage lifecycle sposta gli oggetti in Glacier dopo 90 giorni e li cancella dopo 7 anni per soddisfare la retention legale."}},
-{"level":"9","lesson":"cloud_cost_3","english":"Compute Optimizer","set":{"example":"Acting on Compute Optimizer's right-sizing suggestions for 40 EC2 instances saved the team $1,800 a month in idle capacity. = Agire sui suggerimenti di right-sizing di Compute Optimizer per 40 istanze EC2 ha fatto risparmiare al team 1800$ al mese di capacity idle."}},
-{"level":"9","lesson":"cloud_cost_3","english":"Utilization","set":{"example":"Aiming for 70% steady-state CPU utilization leaves headroom for spikes without wasting money on perpetually idle capacity. = Puntare al 70% di utilization CPU steady-state lascia margine per gli spike senza sprecare soldi su capacity perennemente idle."}},
-{"level":"9","lesson":"cloud_cost_3","english":"Resource Optimization","set":{"example":"A quarterly resource optimization review pairs platform and finance to prune zombie environments accumulated over the previous months. = Una review trimestrale di resource optimization mette platform e finance insieme a potare ambienti zombie accumulati nei mesi precedenti."}},
-{"level":"9","lesson":"cloud_cost_4","english":"FinOps","set":{"example":"Embedding a FinOps practitioner in each squad shifted cost from a quarterly surprise to a daily design constraint. = Inserire un praticante FinOps in ogni squad ha spostato il costo da una sorpresa trimestrale a un vincolo di design quotidiano."}},
-{"level":"9","lesson":"cloud_cost_4","english":"Cost Awareness","set":{"example":"Publishing the per-feature AWS cost in Slack each Monday built cost awareness without imposing top-down spending caps. = Pubblicare il costo AWS per feature su Slack ogni lunedì ha costruito cost awareness senza imporre cap di spesa top-down."}},
-{"level":"9","lesson":"cloud_cost_4","english":"Forecasting","set":{"italian":"Forecasting","note":"Forecasting = previsione della spesa cloud futura partendo da trend storici e crescita pianificata del business."}},
-{"level":"9","lesson":"cloud_cost_4","english":"Cost Center","set":{"example":"Tagging every resource with its cost center lets finance push the AWS bill straight into the ERP without a manual split. = Taggare ogni risorsa col suo cost center permette a finance di spingere la bolletta AWS direttamente nell'ERP senza split manuale."}},
-{"level":"9","lesson":"cloud_cost_4","english":"Waste","set":{"example":"A FinOps audit revealed $11,000 a month of waste from orphan load balancers and snapshots no one had touched in over a year. = Un audit FinOps ha rivelato 11.000$ al mese di waste da load balancer orfani e snapshot non toccati da oltre un anno."}},
-{"level":"9","lesson":"cloud_cost_4","english":"Cloud Bill","set":{"example":"Reading the cloud bill line by line each month is the single highest-ROI engineering activity nobody schedules. = Leggere la bolletta cloud riga per riga ogni mese è l'attività ingegneristica a ROI più alto che nessuno schedula."}},
-{"level":"10","lesson":"cloud_monitoring_1","english":"CloudWatch","set":{"italian":"CloudWatch","note":"CloudWatch = servizio AWS di metriche, log, eventi e allarmi, integrato di default con la maggior parte dei servizi AWS."}},
-{"level":"10","lesson":"cloud_monitoring_1","english":"Metric","set":{"example":"Emitting a custom metric for orders_per_minute lets the on-call see business health, not just CPU and memory. = Emettere una metric custom per orders_per_minute permette all'on-call di vedere la salute del business, non solo CPU e memoria."}},
-{"level":"10","lesson":"cloud_monitoring_1","english":"Custom Metric","set":{"example":"Pushing a custom metric for failed_logins straight from the app exposed the brute-force spike that infra metrics had missed. = Pushare una metric custom per failed_logins direttamente dall'app ha esposto lo spike di brute-force che le metric infra non vedevano."}},
-{"level":"10","lesson":"cloud_monitoring_1","english":"Namespace","set":{"example":"Grouping all checkout-related metrics under the Checkout namespace keeps dashboards focused and IAM policies tight. = Raggruppare tutte le metric del checkout sotto il namespace Checkout tiene le dashboard focalizzate e le policy IAM strette."}},
-{"level":"10","lesson":"cloud_monitoring_1","english":"Dimension","set":{"example":"Adding the region dimension to error_count exposes hotspots in eu-west-1 that an aggregated count would hide. = Aggiungere la dimension region a error_count espone hotspot in eu-west-1 che un conteggio aggregato nasconderebbe."}},
-{"level":"10","lesson":"cloud_monitoring_1","english":"Statistic","set":{"example":"Alarming on the p99 statistic of latency catches tail outliers that the average would smooth into invisibility. = Lanciare alarm sulla statistic p99 della latenza intercetta gli outlier di coda che la media leviga fino a renderli invisibili."}},
-{"level":"10","lesson":"cloud_monitoring_1","english":"Period","set":{"example":"Setting the metric period to one minute trades higher cost for faster alarm response on critical production paths. = Impostare il period della metric a un minuto baratta costo più alto con risposta più rapida degli alarm sui path critici di produzione."}},
-{"level":"10","lesson":"cloud_monitoring_1","english":"Embedded Metric Format","set":{"example":"Logging structured JSON in Embedded Metric Format lets CloudWatch parse metrics straight from log lines without a separate SDK call. = Loggare JSON strutturato in Embedded Metric Format permette a CloudWatch di estrarre metric direttamente dalle log line senza chiamata SDK separata."}},
-{"level":"10","lesson":"cloud_monitoring_2","english":"Log Group","set":{"example":"Routing each Lambda's output to its own log group makes filtering by function in CloudWatch Logs Insights straightforward. = Instradare l'output di ogni Lambda nel suo log group rende immediato filtrare per funzione in CloudWatch Logs Insights."}},
-{"level":"10","lesson":"cloud_monitoring_2","english":"Log Retention","set":{"example":"Capping log retention at 30 days on dev and 1 year on prod kept the monthly log bill under control without losing audit reach. = Cappare la log retention a 30 giorni in dev e 1 anno in prod ha tenuto sotto controllo la bolletta mensile dei log senza perdere portata di audit."}},
-{"level":"10","lesson":"cloud_monitoring_2","english":"Centralized Logging","set":{"example":"Shipping every account's logs to a central S3 bucket and querying with Athena gave security one place to investigate cross-account incidents. = Spedire i log di ogni account in un bucket S3 centrale e interrogarli con Athena ha dato alla security un unico posto dove investigare incidenti cross-account."}},
-{"level":"10","lesson":"cloud_monitoring_2","english":"Log Encryption","set":{"example":"Enabling KMS log encryption on every log group satisfied auditors who wanted CMK control over data at rest. = Abilitare la log encryption KMS su ogni log group ha soddisfatto gli auditor che volevano controllo CMK sui dati a riposo."}},
-{"level":"10","lesson":"cloud_monitoring_3","english":"Alarm","set":{"example":"An alarm on p99 latency above 500ms for three consecutive minutes paged on-call the night the database started thrashing. = Un alarm sulla latenza p99 sopra 500ms per tre minuti consecutivi ha paginato l'on-call la notte in cui il database ha iniziato a thrashare."}},
-{"level":"10","lesson":"cloud_monitoring_3","english":"Threshold","set":{"example":"Raising the alarm threshold from 70% to 85% CPU stopped the 3am pages during the predictable nightly batch run. = Alzare la threshold di alarm dal 70% all'85% di CPU ha fermato i page delle 3 di notte durante la batch run notturna prevedibile."}},
-{"level":"10","lesson":"cloud_monitoring_3","english":"Alarm State","set":{"example":"When the alarm state flips from OK to ALARM, PagerDuty pages the on-call engineer through the SNS topic subscription. = Quando l'alarm state passa da OK ad ALARM, PagerDuty pagina l'ingegnere on-call tramite la subscription al topic SNS."}},
-{"level":"10","lesson":"cloud_monitoring_3","english":"Anomaly Detection","set":{"example":"Switching from a static threshold to anomaly detection on the orders metric stopped paging during legitimate Black Friday spikes. = Passare da una soglia statica all'anomaly detection sulla metric ordini ha smesso di paginare durante gli spike legittimi del Black Friday."}},
-{"level":"10","lesson":"cloud_monitoring_3","english":"Alert Fatigue","set":{"example":"After triaging six months of pages, the team retired noisy alarms and cut alert fatigue from 40 pages a week to under 5. = Dopo aver triaggiato sei mesi di page, il team ha pensionato gli alarm rumorosi e tagliato l'alert fatigue da 40 page a settimana a meno di 5."}}
-]}
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "cloud_foundations_1",
+      "english": "Cloud",
+      "set": {
+        "italian": "Cloud",
+        "note": "Cloud (lett. nuvola) = infrastruttura di calcolo, storage e rete fornita on-demand via internet da provider come AWS, Azure, GCP."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cloud_foundations_1",
+      "english": "Tenant",
+      "set": {
+        "italian": "Tenant",
+        "note": "Tenant (lett. inquilino) = cliente o organizzazione isolata in un ambiente cloud multi-tenant condiviso."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cloud_foundations_1",
+      "english": "On-Demand",
+      "set": {
+        "italian": "On-demand",
+        "note": "On-demand = modello di consumo cloud in cui le risorse vengono allocate al momento della richiesta e pagate a uso."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cloud_foundations_2",
+      "english": "PaaS",
+      "set": {
+        "example": "Deploying the Spring Boot service onto a PaaS like Heroku skips OS patching and exposes a git-push deploy workflow. = Distribuire il servizio Spring Boot su un PaaS come Heroku evita il patching del SO ed espone un flusso di deploy via git-push."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cloud_foundations_2",
+      "english": "SaaS",
+      "set": {
+        "example": "The finance team chose a SaaS billing platform so they could stop maintaining the in-house invoicing servers. = Il team finance ha scelto una piattaforma SaaS di fatturazione per smettere di mantenere i server interni delle fatture."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cloud_foundations_2",
+      "english": "Serverless",
+      "set": {
+        "italian": "Serverless",
+        "note": "Serverless = modello di esecuzione in cui il provider gestisce server e scaling; lo sviluppatore paga solo l'esecuzione effettiva del codice."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cloud_foundations_3",
+      "english": "Public Cloud",
+      "set": {
+        "example": "Migrating the staging environment to a public cloud cut hardware procurement time from weeks to a single afternoon. = Migrare l'ambiente di staging su un public cloud ha ridotto il tempo di approvvigionamento hardware da settimane a un pomeriggio."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cloud_foundations_3",
+      "english": "Hybrid Cloud",
+      "set": {
+        "example": "The bank's hybrid cloud keeps sensitive ledgers on-prem while bursting analytics jobs to AWS during quarter-end peaks. = L'hybrid cloud della banca tiene i registri sensibili on-prem mentre fa burst dei job analitici su AWS nei picchi di fine trimestre.",
+        "note": "Hybrid cloud = architettura che combina infrastruttura on-premise con uno o più cloud pubblici, con workload che si spostano tra i due."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cloud_foundations_4",
+      "english": "Data Residency",
+      "set": {
+        "example": "GDPR rules forced the team to enforce EU data residency by pinning S3 buckets to the eu-west-1 region. = Le regole GDPR hanno costretto il team a imporre la data residency UE fissando i bucket S3 nella regione eu-west-1."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cloud_foundations_4",
+      "english": "Region Pair",
+      "set": {
+        "example": "Choosing a region pair like North Europe and West Europe gives Azure customers built-in DR with low cross-region latency. = Scegliere una region pair come North Europe e West Europe offre ai clienti Azure un DR integrato con bassa latenza cross-region."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_1",
+      "english": "EC2",
+      "set": {
+        "italian": "EC2",
+        "example": "Right-sizing every EC2 instance after the load test reveals workloads that fit a smaller class and cuts the monthly bill by ~30%. = Fare il right-sizing di ogni istanza EC2 dopo il load test rivela carichi che entrano in una classe più piccola e taglia la bolletta mensile di circa il 30%.",
+        "note": "EC2 = Elastic Compute Cloud; servizio AWS di macchine virtuali on-demand."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_1",
+      "english": "Guest OS",
+      "set": {
+        "example": "Patching the guest OS inside every EC2 instance is the customer's job under the AWS shared responsibility model. = Fare il patching del guest OS dentro ogni istanza EC2 spetta al cliente nel modello di responsabilità condivisa AWS."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_1",
+      "english": "Snapshot",
+      "set": {
+        "example": "Taking a snapshot of the EBS volume before the schema migration gives a one-click rollback if the deploy goes wrong. = Prendere uno snapshot del volume EBS prima della migrazione di schema offre un rollback in un click se il deploy va storto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_2",
+      "english": "AMI",
+      "set": {
+        "italian": "AMI",
+        "example": "Baking the Datadog agent into the team's gold AMI means every new EC2 instance ships with monitoring on day one. = Integrare l'agente Datadog nella gold AMI del team fa sì che ogni nuova istanza EC2 nasca con il monitoring attivo.",
+        "note": "AMI = Amazon Machine Image; template che descrive il sistema operativo e il software preinstallato per avviare un'istanza EC2."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_2",
+      "english": "vCPU",
+      "set": {
+        "italian": "vCPU",
+        "note": "vCPU = virtual CPU; unità di calcolo virtualizzata esposta a un'istanza cloud, tipicamente mappata su un thread fisico."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_2",
+      "english": "Memory",
+      "set": {
+        "example": "Sizing the JVM heap to leave 25% of instance memory free prevents OOM kills under sustained traffic bursts. = Dimensionare l'heap JVM lasciando libero il 25% della memoria d'istanza evita kill OOM sotto burst di traffico prolungati."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_2",
+      "english": "Reserved Instance",
+      "set": {
+        "example": "Buying a 3-year reserved instance for the always-on Postgres node cut its compute bill by 62% versus on-demand. = Comprare una reserved instance triennale per il nodo Postgres sempre acceso ha tagliato del 62% la bolletta di compute rispetto all'on-demand."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_2",
+      "english": "Image",
+      "set": {
+        "example": "Rebuilding the base image weekly with the latest CVE patches keeps every spawned VM compliant by default. = Ricostruire l'image base ogni settimana con le ultime patch CVE mantiene ogni VM avviata conforme di default."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_3",
+      "english": "Scaling Policy",
+      "set": {
+        "example": "A scaling policy that adds two nodes when CPU stays above 70% for five minutes smooths out the 9am login surge. = Una scaling policy che aggiunge due nodi se la CPU resta sopra il 70% per cinque minuti smorza il picco di login delle 9 del mattino."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_3",
+      "english": "Capacity",
+      "set": {
+        "example": "Reserving spare capacity during Black Friday avoids InsufficientCapacityErrors when the auto-scaler tries to add nodes. = Riservare capacity di scorta durante il Black Friday evita InsufficientCapacityErrors quando l'auto-scaler prova ad aggiungere nodi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_4",
+      "english": "Sticky Session",
+      "set": {
+        "example": "Enabling sticky sessions on the ALB pinned each user to the same backend, eliminating the cart-loss bug across deploys. = Abilitare le sticky session sull'ALB ha fissato ogni utente sullo stesso backend, eliminando il bug di perdita carrello tra i deploy."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cloud_compute_4",
+      "english": "Target Group",
+      "set": {
+        "example": "The ALB routes /api/* traffic to the orders target group and everything else to the storefront target group. = L'ALB inoltra il traffico /api/* al target group degli ordini e tutto il resto al target group dello storefront."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_1",
+      "english": "S3",
+      "set": {
+        "italian": "S3",
+        "note": "S3 = Simple Storage Service; object storage AWS scalabile, durabile (11 nove) e accessibile via API HTTPS."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_1",
+      "english": "Bucket",
+      "set": {
+        "example": "Creating a dedicated bucket per environment stops a staging deploy from accidentally overwriting production assets. = Creare un bucket dedicato per ambiente impedisce che un deploy in staging sovrascriva accidentalmente asset di produzione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_1",
+      "english": "Object",
+      "set": {
+        "example": "Each uploaded receipt is stored as an immutable object keyed by date and customer ID for quick lookup. = Ogni ricevuta caricata viene salvata come oggetto immutabile, indicizzato per data e ID cliente per ricerche veloci."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_1",
+      "english": "Blob",
+      "set": {
+        "italian": "Blob",
+        "note": "Blob = Binary Large Object; in Azure Storage indica il singolo file (immagine, video, dump) salvato dentro un container."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "EBS",
+      "set": {
+        "italian": "EBS",
+        "example": "Attaching a gp3 EBS volume to the database instance gave 16k IOPS at a third of the io1 cost. = Collegare un volume EBS gp3 all'istanza del database ha dato 16k IOPS a un terzo del costo di io1.",
+        "note": "EBS = Elastic Block Store; block storage AWS persistente da agganciare a un'istanza EC2 come un disco."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "Volume",
+      "set": {
+        "example": "Resizing the data volume from 100GB to 500GB online avoided downtime when the analytics export blew past quota. = Ridimensionare il volume dati da 100GB a 500GB online ha evitato il downtime quando l'export analytics ha sfondato la quota."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "IOPS",
+      "set": {
+        "italian": "IOPS",
+        "note": "IOPS = Input/Output Operations Per Second; metrica chiave della performance di un volume storage."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "File Storage",
+      "set": {
+        "example": "Shifting the Jenkins workspace to file storage let three controllers share build artifacts without rsync hacks. = Spostare la workspace di Jenkins su file storage ha permesso a tre controller di condividere artefatti di build senza hack di rsync."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "EFS",
+      "set": {
+        "italian": "EFS",
+        "example": "Mounting an EFS share across all worker pods made user uploads instantly available regardless of which node served the request. = Montare uno share EFS su tutti i pod worker ha reso disponibili gli upload utente a prescindere dal nodo che ha servito la richiesta.",
+        "note": "EFS = Elastic File System; file system NFS gestito AWS, condivisibile tra più istanze."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "NFS",
+      "set": {
+        "italian": "NFS",
+        "example": "Exporting the build cache over NFS let the CI runners reuse compiled artifacts and cut pipeline times by 40%. = Esportare la cache di build via NFS ha permesso ai runner CI di riusare gli artefatti compilati, tagliando i tempi della pipeline del 40%.",
+        "note": "NFS = Network File System; protocollo di file sharing di rete originato in ambiente Unix."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "SMB",
+      "set": {
+        "italian": "SMB",
+        "example": "Connecting the Windows print server to an SMB share on Azure Files let users keep their existing UNC paths. = Connettere il print server Windows a uno share SMB su Azure Files ha permesso agli utenti di mantenere i percorsi UNC esistenti.",
+        "note": "SMB = Server Message Block; protocollo di file e printer sharing prevalente nei sistemi Windows."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_2",
+      "english": "Mount Point",
+      "set": {
+        "example": "Choosing /mnt/data as the mount point keeps app code clean and matches the path baked into the container image. = Scegliere /mnt/data come mount point mantiene pulito il codice dell'app e combacia col path cotto nell'immagine container."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_3",
+      "english": "Cool Tier",
+      "set": {
+        "example": "Moving log archives older than 30 days to the cool tier dropped storage costs by half without losing query access. = Spostare gli archivi log più vecchi di 30 giorni nel cool tier ha dimezzato i costi di storage senza perdere l'accesso in query."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_3",
+      "english": "Retrieval",
+      "set": {
+        "example": "Standard Glacier retrieval brings the file back in 3-5 hours, while expedited retrieval finishes in under 5 minutes. = Il retrieval Glacier standard riporta il file in 3-5 ore, mentre il retrieval expedited finisce in meno di 5 minuti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_4",
+      "english": "Durability",
+      "set": {
+        "example": "S3 advertises eleven nines of durability, meaning losing one object out of ten million takes statistically 10,000 years. = S3 dichiara undici nove di durability, ovvero perdere un oggetto su dieci milioni richiede statisticamente 10.000 anni."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cloud_storage_4",
+      "english": "Vault",
+      "set": {
+        "example": "Compliance officers required a Glacier vault with lock policy so audit logs cannot be deleted before seven years pass. = I responsabili compliance hanno preteso un vault Glacier con lock policy affinché i log di audit non si possano cancellare prima di sette anni."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "VPC",
+      "set": {
+        "italian": "VPC",
+        "note": "VPC = Virtual Private Cloud; rete virtuale isolata in AWS, configurabile con subnet, route table e security group."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "VNet",
+      "set": {
+        "italian": "VNet",
+        "example": "Peering the hub VNet with three spoke VNets gave each team isolated workloads while sharing the central firewall. = Fare peering della VNet hub con tre VNet spoke ha dato a ogni team workload isolati pur condividendo il firewall centrale.",
+        "note": "VNet = Virtual Network; equivalente Azure della VPC AWS."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "Public Subnet",
+      "set": {
+        "example": "Placing only the ALB in a public subnet keeps the application servers in private subnets, reachable only via the load balancer. = Mettere solo l'ALB in una public subnet tiene gli application server in subnet private, raggiungibili solo via load balancer."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "CIDR Block",
+      "set": {
+        "example": "Allocating a /16 CIDR block to the VPC leaves room for 65,000 IPs split across four /18 subnets for each AZ. = Allocare un blocco CIDR /16 alla VPC lascia spazio per 65.000 IP divisi su quattro subnet /18 una per AZ."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "Route Table",
+      "set": {
+        "example": "The private route table sends 0.0.0.0/0 through the NAT gateway, while the public one targets the internet gateway directly. = La route table privata manda 0.0.0.0/0 attraverso il NAT gateway, mentre quella pubblica punta direttamente all'internet gateway."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "NAT Gateway",
+      "set": {
+        "example": "A single NAT gateway in each AZ lets private subnet instances download OS patches without exposing them to inbound traffic. = Un singolo NAT Gateway per AZ permette alle istanze in subnet privata di scaricare patch del SO senza esporle a traffico inbound."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_1",
+      "english": "Egress",
+      "set": {
+        "example": "Charging $0.09 per GB of egress traffic to the internet quickly dwarfs compute costs for video streaming workloads. = Far pagare 0,09$ per GB di traffico egress verso internet supera in fretta i costi di compute per i carichi di streaming video."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_2",
+      "english": "Inbound Rule",
+      "set": {
+        "example": "An inbound rule on port 443 from 0.0.0.0/0 is fine for the ALB but disastrous on a database security group. = Una regola inbound sulla porta 443 da 0.0.0.0/0 va bene per l'ALB ma è disastrosa su un security group del database."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_2",
+      "english": "Allow List",
+      "set": {
+        "example": "The bastion's SSH allow list contains only the office NAT and the on-call engineer's home IP, refreshed every quarter. = L'allow list SSH del bastion contiene solo il NAT dell'ufficio e l'IP di casa dell'on-call, rinfrescata ogni trimestre."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_2",
+      "english": "Deny List",
+      "set": {
+        "example": "Adding the abusive scraper's /24 to the WAF deny list cut spurious login attempts by 90% within minutes. = Aggiungere il /24 dello scraper abusivo alla deny list del WAF ha tagliato del 90% i tentativi di login spuri in pochi minuti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_3",
+      "english": "DNS",
+      "set": {
+        "italian": "DNS",
+        "example": "Switching the apex record from CNAME to an Alias on Route 53 cut DNS lookup time by skipping a second resolver hop. = Passare il record apex da CNAME ad Alias su Route 53 ha tagliato il tempo di risoluzione DNS evitando un hop di resolver.",
+        "note": "DNS = Domain Name System; sistema gerarchico che traduce nomi a dominio in indirizzi IP."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_3",
+      "english": "Hosted Zone",
+      "set": {
+        "example": "Creating a private hosted zone for internal.example.com lets workloads resolve service names without exposing them publicly. = Creare una hosted zone privata per internal.example.com permette ai workload di risolvere i nomi dei servizi senza esporli pubblicamente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_3",
+      "english": "A Record",
+      "set": {
+        "example": "Updating the A record for api.example.com to the new ALB IP rolled the traffic over without code changes. = Aggiornare il record A di api.example.com con il nuovo IP dell'ALB ha spostato il traffico senza modifiche al codice."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_3",
+      "english": "CNAME",
+      "set": {
+        "italian": "CNAME",
+        "example": "Pointing the marketing CNAME at shop.shopify.com lets the SaaS handle SSL and CDN without touching DNS again. = Far puntare il CNAME marketing a shop.shopify.com lascia al SaaS gestire SSL e CDN senza più toccare il DNS.",
+        "note": "CNAME = Canonical Name record; record DNS che alias un nome a un altro nome anziché a un IP."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_3",
+      "english": "Alias Record",
+      "set": {
+        "example": "Using an alias record at the zone apex avoids the CNAME-at-apex restriction and resolves directly to the ALB. = Usare un alias record sull'apex della zona evita il limite del CNAME on apex e risolve direttamente sull'ALB."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_3",
+      "english": "TTL",
+      "set": {
+        "italian": "TTL",
+        "example": "Dropping the production A record TTL to 60 seconds the day before a failover keeps stale resolvers from prolonging the outage. = Abbassare il TTL del record A di produzione a 60 secondi il giorno prima del failover evita che i resolver stantii prolunghino il disservizio.",
+        "note": "TTL = Time To Live; durata in secondi per cui un record DNS può essere messo in cache."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_3",
+      "english": "Routing Policy",
+      "set": {
+        "example": "Choosing a weighted routing policy let us send 5% of traffic to the canary stack and 95% to the stable release. = Scegliere una routing policy weighted ci ha permesso di mandare il 5% del traffico al canary stack e il 95% alla release stabile."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_3",
+      "english": "Geolocation Routing",
+      "set": {
+        "example": "Geolocation routing sends German users to the Frankfurt cluster and US users to Virginia, halving median latency. = Il geolocation routing manda gli utenti tedeschi al cluster di Francoforte e gli statunitensi in Virginia, dimezzando la latenza mediana."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_4",
+      "english": "VPN",
+      "set": {
+        "italian": "VPN",
+        "note": "VPN = Virtual Private Network; tunnel cifrato tra due reti o tra client e rete su trasporto pubblico."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_4",
+      "english": "ExpressRoute",
+      "set": {
+        "example": "ExpressRoute carved a private 1 Gbps line between the Milan datacenter and Azure West Europe, bypassing public internet entirely. = ExpressRoute ha aperto una linea privata da 1 Gbps tra il datacenter di Milano e Azure West Europe, bypassando del tutto internet pubblico."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cloud_networking_4",
+      "english": "BGP",
+      "set": {
+        "italian": "BGP",
+        "example": "Tweaking the BGP local preference on the backup link kept normal traffic on the primary fiber and only failed over on link loss. = Modificare la BGP local preference sul link di backup ha tenuto il traffico normale sulla fibra primaria e ha fatto failover solo in caso di perdita link.",
+        "note": "BGP = Border Gateway Protocol; protocollo di routing inter-AS usato per scambiare percorsi su internet e nei tunnel cloud."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "IAM",
+      "set": {
+        "italian": "IAM",
+        "example": "Locking the root account behind hardware MFA and managing daily work with IAM users is rule one of any AWS landing zone. = Bloccare l'account root dietro MFA hardware e gestire il lavoro quotidiano con utenti IAM è la regola uno di ogni AWS landing zone.",
+        "note": "IAM = Identity and Access Management; servizio AWS per definire utenti, gruppi, ruoli e policy di accesso."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "User",
+      "set": {
+        "example": "Creating a dedicated IAM user per developer and tagging it with their email keeps audit logs traceable to a real person. = Creare un utente IAM dedicato per sviluppatore e taggarlo con la sua email rende i log di audit tracciabili a una persona reale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "Role",
+      "set": {
+        "example": "Letting EC2 instances assume an IAM role removes the need to ship long-lived access keys inside the AMI. = Far assumere alle istanze EC2 un ruolo IAM elimina la necessità di spedire access key di lunga durata dentro l'AMI."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "Identity",
+      "set": {
+        "example": "Federating Okta with AWS SSO unifies every developer identity behind a single login and MFA flow. = Federare Okta con AWS SSO unifica ogni identità di sviluppatore dietro un singolo login e flusso MFA."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "Access Key",
+      "set": {
+        "example": "Rotating the CI pipeline's access key every 30 days through Secrets Manager limits blast radius if it ever leaks. = Ruotare l'access key della pipeline CI ogni 30 giorni via Secrets Manager limita il raggio di danno se mai trapelasse."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "Secret Key",
+      "set": {
+        "example": "Pushing a secret key to a public GitHub repo triggers AWS's automated quarantine within minutes thanks to scanning bots. = Pushare una secret key su un repo GitHub pubblico fa scattare la quarantena automatica AWS in pochi minuti grazie ai bot di scanning."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_1",
+      "english": "ARN",
+      "set": {
+        "italian": "ARN",
+        "note": "ARN = Amazon Resource Name; identificatore globalmente unico di una risorsa AWS, nel formato arn:partition:service:region:account:resource."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_2",
+      "english": "Resource",
+      "set": {
+        "example": "Scoping the policy's Resource field to a single bucket ARN prevents a leaked role from listing every S3 bucket in the account. = Restringere il campo Resource della policy a un singolo ARN di bucket impedisce a un ruolo trapelato di listare ogni bucket S3 dell'account."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_2",
+      "english": "Resource-Based Policy",
+      "set": {
+        "example": "Attaching a resource-based policy to an S3 bucket grants cross-account read without the consumer needing to assume a role. = Attaccare una resource-based policy a un bucket S3 concede lettura cross-account senza che il consumer debba assumere un ruolo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_3",
+      "english": "STS",
+      "set": {
+        "italian": "STS",
+        "note": "STS = Security Token Service; servizio AWS che emette credenziali temporanee usate da role assumption, federation e SSO."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_3",
+      "english": "Token",
+      "set": {
+        "example": "The CLI prints an STS token valid for one hour, then refreshes silently before each AWS API call expires. = La CLI stampa un token STS valido un'ora, poi lo rinfresca silenziosamente prima che scada ogni chiamata API AWS."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_4",
+      "english": "MFA",
+      "set": {
+        "italian": "MFA",
+        "example": "Forcing MFA on every IAM user that can touch production stops 99% of credential-stuffing attacks before they land. = Imporre MFA su ogni utente IAM che tocca produzione blocca il 99% degli attacchi di credential stuffing prima che vadano a segno.",
+        "note": "MFA = Multi-Factor Authentication; richiede due o più fattori (knowledge, possession, inherence) per autenticarsi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_4",
+      "english": "Two-Factor Authentication",
+      "set": {
+        "example": "Adding two-factor authentication via TOTP cut account takeover incidents from twelve last year to zero this quarter. = Aggiungere two-factor authentication via TOTP ha ridotto gli incidenti di account takeover da dodici l'anno scorso a zero in questo trimestre."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_4",
+      "english": "TOTP",
+      "set": {
+        "italian": "TOTP",
+        "example": "The Google Authenticator app generates a fresh TOTP code every 30 seconds derived from a shared secret seeded at enrolment. = L'app Google Authenticator genera un codice TOTP nuovo ogni 30 secondi derivato da un secret condiviso al momento dell'enrolment.",
+        "note": "TOTP = Time-based One-Time Password (RFC 6238); password monouso calcolata da chiave condivisa e timestamp corrente."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_4",
+      "english": "SSO",
+      "set": {
+        "italian": "SSO",
+        "example": "Wiring AWS, GitHub and Jira behind a single SSO portal removed the password reset queue that drained the help desk daily. = Cablare AWS, GitHub e Jira dietro un singolo portale SSO ha cancellato la coda dei reset password che drenava l'help desk ogni giorno.",
+        "note": "SSO = Single Sign-On; l'utente si autentica una volta e accede a più applicazioni senza riautenticarsi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_4",
+      "english": "OIDC",
+      "set": {
+        "italian": "OIDC",
+        "note": "OIDC = OpenID Connect; layer di autenticazione costruito sopra OAuth 2.0 che restituisce un ID token JWT firmato."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_4",
+      "english": "Identity Provider",
+      "set": {
+        "example": "Configuring Okta as the identity provider for AWS SSO centralised onboarding into the HR-driven joiner workflow. = Configurare Okta come identity provider per AWS SSO ha centralizzato l'onboarding nel workflow joiner guidato dall'HR."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cloud_iam_4",
+      "english": "Conditional Access",
+      "set": {
+        "example": "A conditional access rule blocks MFA-less logins from outside corporate IPs, even with valid passwords. = Una regola di conditional access blocca i login senza MFA da IP fuori dalla rete aziendale, anche con password valide."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Function",
+      "set": {
+        "example": "Splitting the monolith into one Lambda function per use case makes cold start tuning surgical instead of all-or-nothing. = Spezzare il monolite in una funzione Lambda per use case rende il tuning del cold start chirurgico invece che all-or-nothing."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Event",
+      "set": {
+        "example": "Each S3 PutObject event triggers the resize Lambda, which writes back thumbnails into a sibling bucket. = Ogni evento S3 PutObject innesca la Lambda di resize, che riscrive le thumbnail in un bucket gemello."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Context",
+      "set": {
+        "example": "Reading context.getRemainingTimeInMillis() inside the Lambda handler lets the function bail out before the 15-minute hard timeout. = Leggere context.getRemainingTimeInMillis() dentro l'handler Lambda permette alla funzione di uscire prima del timeout duro di 15 minuti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Trigger",
+      "set": {
+        "example": "Wiring a cron trigger every 5 minutes turned the report-generation Lambda into a hands-off scheduler. = Cablare un trigger cron ogni 5 minuti ha trasformato la Lambda di generazione report in uno scheduler hands-off."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Cold Start",
+      "set": {
+        "example": "A 1.8-second cold start on the checkout Lambda was masked by enabling provisioned concurrency for two warm instances. = Un cold start di 1,8 secondi sulla Lambda di checkout è stato nascosto abilitando provisioned concurrency per due istanze warm."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Warm Start",
+      "set": {
+        "example": "After the first invocation, subsequent warm starts handle the same request in 18ms instead of the cold 1200ms. = Dopo la prima invocazione, i successivi warm start gestiscono la stessa richiesta in 18ms invece dei 1200ms a freddo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_1",
+      "english": "Provisioned Concurrency",
+      "set": {
+        "example": "Setting provisioned concurrency to 50 on Black Friday eve eliminated cold-start spikes during the midnight sale launch. = Impostare provisioned concurrency a 50 alla vigilia del Black Friday ha eliminato i picchi di cold start al lancio dei saldi di mezzanotte."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_2",
+      "english": "REST API",
+      "set": {
+        "example": "Defining the REST API in OpenAPI lets the team generate both Postman collections and TypeScript clients from one source. = Definire la REST API in OpenAPI permette al team di generare sia collection Postman sia client TypeScript da un'unica fonte."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_2",
+      "english": "HTTP API",
+      "set": {
+        "example": "Migrating low-cost webhooks to an HTTP API on API Gateway cut per-request cost by 70% versus the REST flavour. = Migrare i webhook a basso costo su una HTTP API di API Gateway ha tagliato del 70% il costo per richiesta rispetto alla variante REST."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_2",
+      "english": "Resource Path",
+      "set": {
+        "example": "Mapping the resource path /orders/{id} to the GetOrder Lambda keeps the URL hierarchy aligned with the domain model. = Mappare il resource path /orders/{id} sulla Lambda GetOrder mantiene la gerarchia URL allineata col modello di dominio."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_2",
+      "english": "Method",
+      "set": {
+        "example": "Reserving the DELETE method behind an admin authorizer prevents external callers from purging orders by mistake. = Riservare il method DELETE dietro un authorizer admin impedisce a chiamanti esterni di cancellare ordini per errore."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_2",
+      "english": "Integration",
+      "set": {
+        "example": "A direct integration between API Gateway and DynamoDB removed the trivial Lambda proxy and cut latency by 40ms. = Una integration diretta tra API Gateway e DynamoDB ha rimosso la Lambda proxy banale e tagliato la latenza di 40ms."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_3",
+      "english": "Event Source",
+      "set": {
+        "example": "Adding Kinesis as an event source to the Lambda lets it consume the click-stream in 100-record batches automatically. = Aggiungere Kinesis come event source alla Lambda le permette di consumare il click-stream in batch da 100 record automaticamente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_3",
+      "english": "Webhook",
+      "set": {
+        "example": "GitHub fires a webhook on every push, and the listener Lambda triggers the build inside the team's CodeBuild project. = GitHub spara un webhook a ogni push e la Lambda listener innesca la build nel progetto CodeBuild del team."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_3",
+      "english": "Idempotency",
+      "set": {
+        "example": "Storing each Stripe event ID in DynamoDB guarantees idempotency, so retried webhooks never double-charge the customer. = Salvare ogni ID evento Stripe in DynamoDB garantisce idempotency, così i webhook ritentati non addebitano due volte il cliente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_4",
+      "english": "Step Functions",
+      "set": {
+        "example": "Modelling the order pipeline in Step Functions makes the retry, branch and timeout logic visible at a glance in the console. = Modellare la pipeline ordini in Step Functions rende visibili a colpo d'occhio retry, branch e timeout nella console."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_4",
+      "english": "Choice State",
+      "set": {
+        "example": "A Choice state branches the workflow into the refund path when amount > 0 and the cancellation path otherwise. = Uno stato Choice biforca il workflow nel percorso di rimborso quando amount > 0 e in quello di cancellazione altrimenti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_4",
+      "english": "Map State",
+      "set": {
+        "example": "A Map state fans out the import job over 200 CSV files in parallel without writing a single line of concurrency code. = Uno stato Map fan-outta il job di import su 200 file CSV in parallelo senza scrivere una riga di codice di concorrenza."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cloud_serverless_4",
+      "english": "ASL",
+      "set": {
+        "italian": "ASL",
+        "example": "Writing the workflow definition directly in ASL JSON makes the state machine reviewable in pull requests without UI screenshots. = Scrivere la definizione del workflow direttamente in ASL JSON rende la state machine reviewabile in pull request senza screenshot della UI.",
+        "note": "ASL = Amazon States Language; DSL JSON usato per descrivere le state machine di AWS Step Functions."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_1",
+      "english": "RDS",
+      "set": {
+        "italian": "RDS",
+        "example": "Migrating the legacy Postgres VM onto RDS handed over backup, patching and read-replica management to AWS in one weekend. = Migrare la VM Postgres legacy su RDS ha passato ad AWS backup, patching e gestione delle read replica in un weekend.",
+        "note": "RDS = Relational Database Service; servizio gestito AWS per database relazionali (Postgres, MySQL, MariaDB, Oracle, SQL Server)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_1",
+      "english": "Read Replica",
+      "set": {
+        "example": "Pointing the reporting service at a read replica isolated heavy analytical queries from the OLTP write workload. = Puntare il servizio di reporting a una read replica ha isolato le query analitiche pesanti dal carico OLTP in scrittura."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_1",
+      "english": "Connection Pool",
+      "set": {
+        "example": "Fronting RDS with RDS Proxy gave the Lambda fleet a shared connection pool, killing the max_connections errors. = Mettere RDS Proxy davanti a RDS ha dato alla flotta Lambda un connection pool condiviso, eliminando gli errori max_connections."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_2",
+      "english": "Sort Key",
+      "set": {
+        "example": "Picking createdAt as the sort key on the orders table makes range queries for the last 24 hours trivially efficient. = Scegliere createdAt come sort key sulla tabella ordini rende banalmente efficienti le query a range sulle ultime 24 ore."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_2",
+      "english": "Item",
+      "set": {
+        "example": "Storing each shopping cart as a single DynamoDB item under userId keeps reads to one round-trip per page load. = Salvare ogni carrello come singolo item DynamoDB sotto userId tiene le letture a un round-trip per caricamento pagina."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_2",
+      "english": "On-Demand Mode",
+      "set": {
+        "example": "Switching the rarely-used audit table to on-demand mode stopped paying for provisioned capacity that idled 23 hours a day. = Passare la tabella di audit poco usata in on-demand mode ha smesso di pagare capacity provisioned ferma 23 ore al giorno."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_2",
+      "english": "Eventually Consistent",
+      "set": {
+        "example": "DynamoDB's eventually consistent reads cost half the RCUs but may return data up to a second stale, fine for a feed view. = Le letture eventually consistent di DynamoDB costano metà delle RCU ma possono restituire dati stantii fino a un secondo, ok per una feed view."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_3",
+      "english": "TTL",
+      "set": {
+        "italian": "TTL",
+        "note": "TTL = Time To Live; campo che indica quando un record (es. cache entry, DynamoDB item) può essere scartato automaticamente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_3",
+      "english": "Eviction",
+      "set": {
+        "example": "With the LRU eviction policy, Redis silently drops the oldest unused keys to keep the working set under the maxmemory limit. = Con la policy di eviction LRU, Redis scarta in silenzio le chiavi più vecchie non usate per tenere il working set sotto maxmemory."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_3",
+      "english": "Write-Through",
+      "set": {
+        "example": "A write-through cache keeps Redis and Postgres in lockstep, so the next read after a write never hits a stale value. = Una cache write-through tiene Redis e Postgres allineati, così la lettura subito dopo una scrittura non trova mai un valore stantio."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_3",
+      "english": "Lazy Loading",
+      "set": {
+        "example": "With lazy loading, the cache stays empty until the first miss, which slows the cold path but minimises wasted memory. = Con lazy loading, la cache resta vuota fino al primo miss, rallentando il percorso a freddo ma minimizzando la memoria sprecata."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_4",
+      "english": "Time-Series Database",
+      "set": {
+        "example": "Storing IoT telemetry in a time-series database like Timestream beats RDS at ingest rate by an order of magnitude. = Salvare la telemetria IoT in un time-series database come Timestream batte RDS sull'ingest rate di un ordine di grandezza."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_4",
+      "english": "OLTP",
+      "set": {
+        "italian": "OLTP",
+        "note": "OLTP = Online Transaction Processing; carichi caratterizzati da transazioni brevi, frequenti e in scrittura (es. checkout)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cloud_database_4",
+      "english": "OLAP",
+      "set": {
+        "italian": "OLAP",
+        "note": "OLAP = Online Analytical Processing; carichi di analisi su grandi volumi di dati, prevalentemente in lettura (es. report)."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_1",
+      "english": "Container",
+      "set": {
+        "example": "Packaging the Python service as a container made the dev laptop behave like the production EKS pod down to the kernel calls. = Impacchettare il servizio Python come container ha reso il laptop dev identico al pod EKS di produzione fin sui kernel call."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_1",
+      "english": "Dockerfile",
+      "set": {
+        "example": "Pinning the base image to python:3.12.4-slim inside the Dockerfile froze the runtime and made builds reproducible. = Pinnare la base image a python:3.12.4-slim dentro il Dockerfile ha congelato il runtime e reso i build riproducibili."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_1",
+      "english": "Multi-Stage Build",
+      "set": {
+        "example": "A multi-stage build compiles the Go binary in a 900MB SDK image, then copies it into a 20MB distroless runtime. = Una build multi-stage compila il binario Go in un'immagine SDK da 900MB, poi lo copia in un runtime distroless da 20MB."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_1",
+      "english": "Image Tag",
+      "set": {
+        "example": "Replacing the floating :latest image tag with the immutable git SHA killed the surprise rollouts that broke production. = Sostituire il tag immagine fluttuante :latest con la SHA git immutabile ha eliminato i rollout a sorpresa che rompevano produzione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_1",
+      "english": "OCI",
+      "set": {
+        "italian": "OCI",
+        "note": "OCI = Open Container Initiative; standard aperto per il formato delle immagini e dei runtime container, sostenuto da Docker, Red Hat e altri."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_1",
+      "english": "Init Container",
+      "set": {
+        "example": "An init container runs the schema migration to completion before the app container ever opens a socket to the database. = Un init container esegue la migrazione di schema fino in fondo prima che l'app container apra un socket sul database."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "Container Registry",
+      "set": {
+        "example": "Pushing images to a private container registry instead of Docker Hub avoided the new pull rate limits hitting the CI pipeline. = Pushare le immagini su un container registry privato invece che su Docker Hub ha evitato i nuovi rate limit sui pull che colpivano la CI."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "ECR",
+      "set": {
+        "italian": "ECR",
+        "example": "Enabling ECR scan-on-push flags critical CVEs in the image before any pod gets the chance to pull it into production. = Abilitare lo scan-on-push di ECR segnala CVE critiche nell'immagine prima che un pod la pulli in produzione.",
+        "note": "ECR = Elastic Container Registry; registry container privato gestito AWS, integrato con IAM e KMS."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "ACR",
+      "set": {
+        "italian": "ACR",
+        "example": "Geo-replicating the production ACR across three Azure regions cut image pull latency for clusters running close to users. = Geo-replicare l'ACR di produzione su tre region Azure ha tagliato la latenza di pull immagini per cluster vicini agli utenti.",
+        "note": "ACR = Azure Container Registry; registry container privato gestito da Azure, con replica geografica integrata."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "GCR",
+      "set": {
+        "italian": "GCR",
+        "note": "GCR = Google Container Registry; registry container originario di GCP, ora superato da Artifact Registry per i nuovi progetti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "Push",
+      "set": {
+        "example": "Pushing the freshly built image to ECR with a unique git SHA tag makes every deploy traceable to a specific commit. = Pushare l'immagine appena buildata su ECR con un tag SHA git unico rende ogni deploy tracciabile a un commit specifico."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "Pull",
+      "set": {
+        "example": "Pulling the image from a regional ECR cache instead of the central registry cut pod startup from 22s to 6s. = Pullare l'immagine da una cache ECR regionale invece che dal registry centrale ha tagliato lo startup dei pod da 22s a 6s."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_2",
+      "english": "Image Scanning",
+      "set": {
+        "example": "Wiring Trivy as an image scanning step in CI blocks any pull request that introduces a high-severity vulnerability. = Cablare Trivy come step di image scanning in CI blocca ogni pull request che introduce una vulnerabilità di alta severità."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_3",
+      "english": "ECS",
+      "set": {
+        "italian": "ECS",
+        "example": "Running the worker fleet on ECS with Fargate removed the EC2 node-group lifecycle work from the team's plate entirely. = Far girare la flotta worker su ECS con Fargate ha tolto del tutto al team il lavoro di lifecycle dei node-group EC2.",
+        "note": "ECS = Elastic Container Service; orchestratore container AWS-native con backend EC2 o Fargate."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_3",
+      "english": "Fargate",
+      "set": {
+        "example": "Switching the bursty batch job to Fargate eliminated idle EC2 capacity costs between weekly invoice runs. = Passare il job batch bursty a Fargate ha eliminato i costi di capacity EC2 ferma tra una run di fatturazione settimanale e l'altra."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_3",
+      "english": "Launch Type",
+      "set": {
+        "example": "Choosing the FARGATE launch type for the ECS service offloaded all node sizing decisions to AWS scheduling. = Scegliere il launch type FARGATE per il servizio ECS ha scaricato su AWS ogni decisione di node sizing."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_3",
+      "english": "Container Insights",
+      "set": {
+        "example": "Enabling Container Insights on the cluster exposed per-task CPU and memory at no extra cost from the CloudWatch console. = Abilitare Container Insights sul cluster ha esposto CPU e memoria per-task senza costo extra dalla console CloudWatch."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "Kubernetes",
+      "set": {
+        "italian": "Kubernetes",
+        "example": "Adopting Kubernetes let the team unify deployment of three services across AWS, GCP and on-prem behind a single Helm chart. = Adottare Kubernetes ha permesso al team di unificare il deploy di tre servizi su AWS, GCP e on-prem dietro un singolo Helm chart.",
+        "note": "Kubernetes (k8s) = orchestratore container open source originato in Google, oggi standard de facto per i workload containerizzati."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "EKS",
+      "set": {
+        "italian": "EKS",
+        "example": "Spinning up an EKS cluster with managed node groups gave the platform team Kubernetes without owning the control plane. = Tirare su un cluster EKS con managed node group ha dato al team platform Kubernetes senza dover possedere il control plane.",
+        "note": "EKS = Elastic Kubernetes Service; Kubernetes gestito AWS con control plane SLA 99,95%."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "AKS",
+      "set": {
+        "italian": "AKS",
+        "example": "Bootstrapping AKS with Azure AD integration let developers kubectl with their corporate identity, no static kubeconfigs. = Fare il bootstrap di AKS con integrazione Azure AD ha permesso ai dev di fare kubectl con l'identità aziendale, senza kubeconfig statici.",
+        "note": "AKS = Azure Kubernetes Service; Kubernetes gestito Azure, con control plane gratuito ma nodi a pagamento."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "GKE",
+      "set": {
+        "italian": "GKE",
+        "example": "Choosing GKE Autopilot abstracted node management entirely, billing only for the CPU and memory each pod actually requests. = Scegliere GKE Autopilot ha astratto del tutto la gestione dei nodi, fatturando solo CPU e memoria effettivamente richieste da ogni pod.",
+        "note": "GKE = Google Kubernetes Engine; Kubernetes gestito GCP, disponibile in modalità Standard e Autopilot."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "Node",
+      "set": {
+        "example": "Draining the node before patching the kernel forces the scheduler to reschedule pods elsewhere without dropping traffic. = Drenare il nodo prima di patchare il kernel costringe lo scheduler a rischedulare i pod altrove senza droppare traffico."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "Control Plane",
+      "set": {
+        "example": "Upgrading the control plane to Kubernetes 1.29 is a separate, non-disruptive step before rolling worker nodes onto the new version. = L'upgrade del control plane a Kubernetes 1.29 è uno step separato e non disruptive, prima di rollare i worker node sulla nuova versione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "Worker Node",
+      "set": {
+        "example": "Tainting one worker node group for GPU workloads keeps the expensive instances reserved for the inference pods that need them. = Tintare un gruppo di worker node per workload GPU tiene le istanze costose riservate ai pod di inferenza che le richiedono."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "cloud_containers_4",
+      "english": "Karpenter",
+      "set": {
+        "example": "Replacing the Cluster Autoscaler with Karpenter cut bin-packing waste by picking the cheapest fitting EC2 type per pending pod. = Sostituire Cluster Autoscaler con Karpenter ha tagliato lo spreco di bin-packing scegliendo il tipo EC2 più economico adatto a ogni pod in attesa."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_1",
+      "english": "Imperative",
+      "set": {
+        "example": "An imperative bash script runs the steps top-to-bottom and breaks at the first error, leaving the system in a half-applied state. = Uno script bash imperativo esegue gli step dall'alto in basso e si rompe al primo errore, lasciando il sistema in uno stato applicato a metà."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_1",
+      "english": "Idempotent",
+      "set": {
+        "example": "An idempotent Ansible playbook can be re-run a hundred times and only change something on the first run that actually needs work. = Un playbook Ansible idempotente può essere rieseguito cento volte e cambia qualcosa solo alla prima run che ha davvero del lavoro da fare."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_1",
+      "english": "Pet vs Cattle",
+      "set": {
+        "example": "The pet vs cattle mindset shift retires hand-named servers in favour of autoscaled, disposable fleets identified only by ID. = Il cambio di mentalità pet vs cattle manda in pensione i server nominati a mano in favore di flotte autoscalate e usa-e-getta identificate solo da ID."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_1",
+      "english": "GitOps",
+      "set": {
+        "example": "With GitOps, merging a PR to main causes ArgoCD to reconcile the production cluster, making rollback a simple git revert. = Con GitOps, il merge di una PR su main fa sì che ArgoCD riconcili il cluster di produzione, rendendo il rollback un semplice git revert."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Terraform",
+      "set": {
+        "example": "Adopting Terraform let the team review every infrastructure change as a pull request next to the application code. = Adottare Terraform ha permesso al team di revisionare ogni modifica infrastrutturale come pull request accanto al codice applicativo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "OpenTofu",
+      "set": {
+        "example": "Switching from Terraform to OpenTofu after the licence change preserved every module and state file without rewrites. = Passare da Terraform a OpenTofu dopo il cambio di licenza ha preservato ogni modulo e file di state senza riscritture."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "HCL",
+      "set": {
+        "italian": "HCL",
+        "example": "Declaring the bucket policy in HCL keeps the JSON document inline and version-controlled alongside the resource definition. = Dichiarare la bucket policy in HCL tiene il documento JSON inline e versionato insieme alla definizione della risorsa.",
+        "note": "HCL = HashiCorp Configuration Language; DSL dichiarativo usato da Terraform, Vault, Nomad e altri tool HashiCorp."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Provider",
+      "set": {
+        "example": "Pinning the AWS provider to a major version in Terraform protects the workspace from breaking changes in a Friday afternoon plan. = Pinnare il provider AWS a una major version in Terraform protegge la workspace da breaking change in un plan del venerdì pomeriggio."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Resource",
+      "set": {
+        "example": "Splitting a 4000-line resource block into reusable modules made the Terraform plan diff readable again during code review. = Spezzare un blocco resource da 4000 righe in moduli riusabili ha reso di nuovo leggibile il diff del Terraform plan in code review."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Variable",
+      "set": {
+        "example": "Hoisting the environment name into a Terraform variable removed twelve copy-pasted ternaries across the module tree. = Tirare fuori il nome ambiente in una variable Terraform ha rimosso dodici ternari copia-incollati nell'albero dei moduli."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Output",
+      "set": {
+        "example": "Exposing the new VPC ID as an output lets downstream stacks consume it via terraform_remote_state without hard-coded IDs. = Esporre l'ID della nuova VPC come output permette agli stack a valle di consumarlo via terraform_remote_state senza ID hardcoded."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Module",
+      "set": {
+        "example": "Extracting the load-balancer setup into a reusable module cut three teams' Terraform footprint from 600 lines to 40 each. = Estrarre il setup del load balancer in un modulo riusabile ha ridotto la footprint Terraform di tre team da 600 righe a 40 ciascuno."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_2",
+      "english": "Workspace",
+      "set": {
+        "example": "Each Terraform workspace maps to one environment (dev, staging, prod), keeping their state files cleanly separated. = Ogni workspace Terraform mappa su un ambiente (dev, staging, prod), tenendo i file di state nettamente separati."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "State Lock",
+      "set": {
+        "example": "Storing the Terraform state lock in DynamoDB stops two engineers from running terraform apply concurrently and corrupting the file. = Tenere il state lock di Terraform in DynamoDB impedisce a due ingegneri di lanciare terraform apply in concorrenza e corrompere il file."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Plan",
+      "set": {
+        "example": "Posting the terraform plan as a comment on the PR lets reviewers see the exact resources that will be added or destroyed. = Pubblicare il terraform plan come commento sulla PR permette ai reviewer di vedere le risorse esatte che verranno aggiunte o distrutte."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Refresh",
+      "set": {
+        "example": "Running terraform refresh before the plan reconciles the state file with reality after a colleague's out-of-band console change. = Lanciare terraform refresh prima del plan riconcilia il file di state con la realtà dopo una modifica out-of-band da console di un collega."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Import",
+      "set": {
+        "example": "Using terraform import on the legacy bucket pulled it under IaC management without needing to recreate or migrate data. = Usare terraform import sul bucket legacy lo ha portato sotto gestione IaC senza dover ricreare o migrare i dati."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_3",
+      "english": "Lifecycle Block",
+      "set": {
+        "example": "Adding a lifecycle block with prevent_destroy on the production database stops a stray terraform apply from wiping the data. = Aggiungere un lifecycle block con prevent_destroy sul database di produzione impedisce a un terraform apply errato di azzerare i dati."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "CloudFormation",
+      "set": {
+        "example": "Templating the landing zone in CloudFormation let the security team enforce drift detection through native StackSet APIs. = Templare la landing zone in CloudFormation ha permesso al team security di imporre la drift detection via API StackSet native."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "Stack",
+      "set": {
+        "example": "Deleting the stack tears down every resource it created in reverse-dependency order, leaving the account clean. = Cancellare lo stack abbatte ogni risorsa che ha creato in ordine inverso di dipendenze, lasciando l'account pulito."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "Stack Set",
+      "set": {
+        "example": "A single StackSet rolled the new IAM password policy out to all 23 accounts in the organisation in one click. = Un singolo StackSet ha rollato la nuova IAM password policy su tutti i 23 account dell'organizzazione in un click."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "Change Set",
+      "set": {
+        "example": "Previewing the deploy as a change set caught a planned replacement of the production database before anyone clicked execute. = Visualizzare il deploy come change set ha intercettato un replacement pianificato del database di produzione prima che qualcuno cliccasse execute."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "Pulumi",
+      "set": {
+        "example": "Choosing Pulumi let the team describe AWS infrastructure in TypeScript next to the application that consumes it. = Scegliere Pulumi ha permesso al team di descrivere l'infrastruttura AWS in TypeScript accanto all'applicazione che la consuma."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "CDK",
+      "set": {
+        "italian": "CDK",
+        "note": "CDK = Cloud Development Kit; framework AWS che traspila codice TypeScript/Python in template CloudFormation."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "Bicep",
+      "set": {
+        "example": "Rewriting the noisy ARM JSON templates in Bicep cut the deployment file size by 60% and added type-checking at compile time. = Riscrivere i template ARM JSON rumorosi in Bicep ha tagliato del 60% le dimensioni dei file di deploy e aggiunto il type-checking a compile-time."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "ARM Template",
+      "set": {
+        "example": "The legacy ARM template provisions the storage account, but new modules are written in Bicep to keep diffs reviewable. = Il template ARM legacy fa il provisioning dello storage account, ma i nuovi moduli si scrivono in Bicep per tenere i diff revisionabili."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_4",
+      "english": "Crossplane",
+      "set": {
+        "example": "Installing Crossplane on the management cluster let platform engineers expose AWS, GCP and Snowflake as Kubernetes CRDs. = Installare Crossplane sul cluster di management ha permesso ai platform engineer di esporre AWS, GCP e Snowflake come CRD Kubernetes."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_1",
+      "english": "Pay-as-you-go",
+      "set": {
+        "example": "Pay-as-you-go pricing turned the experiment from a six-week procurement cycle into a Friday afternoon spike with $7 of cost. = Il prezzo pay-as-you-go ha trasformato l'esperimento da un ciclo di procurement di sei settimane a uno spike del venerdì pomeriggio da 7$ di costo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_1",
+      "english": "On-Demand Pricing",
+      "set": {
+        "example": "On-demand pricing is the safe default for spiky workloads, even though it costs roughly 3x what a Reserved Instance would. = L'on-demand pricing è il default sicuro per carichi spiky, anche se costa circa 3 volte una Reserved Instance."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_1",
+      "english": "Reserved Instance",
+      "set": {
+        "example": "Locking in a one-year reserved instance for the baseline cluster cut compute cost by 40% with no architectural change. = Bloccare una reserved instance annuale per il cluster di baseline ha tagliato del 40% il costo di compute senza alcun cambio architetturale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_1",
+      "english": "Savings Plan",
+      "set": {
+        "example": "Committing to a compute savings plan saved the team 28% across EC2, Fargate and Lambda without locking into a specific instance family. = Impegnarsi su un compute savings plan ha fatto risparmiare al team il 28% su EC2, Fargate e Lambda senza vincolarsi a una specifica famiglia d'istanza."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_1",
+      "english": "Spot Instance",
+      "set": {
+        "example": "Running the nightly ML training on spot instances cut costs by 70%, accepting that AWS may reclaim the capacity with two minutes' notice. = Far girare il training ML notturno su spot instance ha tagliato i costi del 70%, accettando che AWS reclami la capacity con due minuti di preavviso."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_1",
+      "english": "Convertible RI",
+      "set": {
+        "example": "A convertible RI traded a smaller discount for the right to switch from m5 to m6i once Graviton wasn't a fit for the workload. = Una convertible RI ha barattato uno sconto minore col diritto di passare da m5 a m6i quando Graviton non si è rivelato adatto al workload."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_1",
+      "english": "Credit",
+      "set": {
+        "example": "Burning the startup's AWS credit on a staging environment kept the production bill low during the first six months of revenue. = Bruciare il credit AWS della startup sull'ambiente di staging ha tenuto bassa la bolletta di produzione nei primi sei mesi di fatturato."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "Cost Explorer",
+      "set": {
+        "example": "Slicing last month's spend in Cost Explorer by service and tag pinpointed the rogue EMR cluster that had been running idle for weeks. = Affettare la spesa del mese scorso in Cost Explorer per servizio e tag ha individuato il cluster EMR ribelle rimasto idle per settimane."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "Billing Dashboard",
+      "set": {
+        "example": "Pinning the billing dashboard to the team's Friday review keeps cloud spend visible alongside the weekly KPIs. = Mettere la billing dashboard nella review del venerdì del team rende la spesa cloud visibile accanto agli KPI settimanali."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "Budget",
+      "set": {
+        "example": "Setting a $5,000 monthly budget with email alerts at 50% and 80% catches runaway spend before the CFO does. = Impostare un budget mensile da 5000$ con alert email al 50% e 80% intercetta la spesa fuori controllo prima del CFO."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "Cost Allocation Tag",
+      "set": {
+        "example": "Enforcing a cost-center cost allocation tag on every resource maps each AWS dollar back to the product team that spent it. = Imporre un cost allocation tag di centro di costo su ogni risorsa mappa ogni dollaro AWS sul product team che l'ha speso."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "Showback",
+      "set": {
+        "example": "Sending each team a monthly showback report drove voluntary cleanup of idle dev environments without any formal chargeback. = Mandare a ogni team un report mensile di showback ha spinto la pulizia volontaria degli ambienti dev idle senza alcun chargeback formale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "Chargeback",
+      "set": {
+        "example": "Rolling out chargeback so each product line pays its own AWS bill made cost a first-class concern in design reviews. = Rollare il chargeback in modo che ogni linea di prodotto paghi la sua bolletta AWS ha reso il costo una preoccupazione di prima classe nelle design review."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "Cost Anomaly",
+      "set": {
+        "example": "A Cost Anomaly Detection alert caught a misconfigured Lambda invoking itself in a recursion loop within two hours of deploy. = Un alert di Cost Anomaly Detection ha intercettato una Lambda mal configurata che si invocava in loop ricorsivo entro due ore dal deploy."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "Trusted Advisor",
+      "set": {
+        "example": "The weekly Trusted Advisor report flagged an unattached EBS volume that had been billing $42 a month for the last year. = Il report settimanale di Trusted Advisor ha segnalato un volume EBS non collegato che fatturava 42$ al mese da un anno."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_2",
+      "english": "CUR",
+      "set": {
+        "italian": "CUR",
+        "example": "Loading the CUR into Athena let finance write SQL queries that broke down spend by tag, region and usage type. = Caricare il CUR in Athena ha permesso a finance di scrivere query SQL che spaccavano la spesa per tag, region e usage type.",
+        "note": "CUR = Cost and Usage Report; report dettagliato AWS scritto in S3, base per analisi finanziarie avanzate."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_3",
+      "english": "Rightsizing",
+      "set": {
+        "example": "Rightsizing the orders service from m5.2xlarge to m6i.large after the load test cut its compute bill by 65% with zero latency impact. = Fare rightsizing del servizio ordini da m5.2xlarge a m6i.large dopo il load test ha tagliato del 65% la bolletta di compute senza impatti sulla latenza."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_3",
+      "english": "Idle Resource",
+      "set": {
+        "example": "A weekly sweep for idle resources caught 17 unattached EBS volumes and 4 dev RDS instances forgotten since the last project. = Una passata settimanale per le idle resource ha trovato 17 volumi EBS non collegati e 4 RDS dev dimenticati dall'ultimo progetto."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_3",
+      "english": "Underutilized",
+      "set": {
+        "example": "Compute Optimizer flagged the analytics box as underutilized at 4% CPU, suggesting a downsize from m5.4xlarge to m5.large. = Compute Optimizer ha segnalato la macchina analytics come underutilized al 4% di CPU, suggerendo un downsize da m5.4xlarge a m5.large."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_3",
+      "english": "Auto-Stop",
+      "set": {
+        "example": "An auto-stop schedule shuts the dev EC2 fleet down at 8pm and restarts it at 8am, knocking 60% off non-production compute. = Uno schedule di auto-stop spegne la flotta EC2 dev alle 20 e la riavvia alle 8, tagliando del 60% il compute non produttivo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_3",
+      "english": "Storage Lifecycle",
+      "set": {
+        "example": "A storage lifecycle policy tiers objects to Glacier after 90 days and deletes them after 7 years to meet legal retention. = Una policy di storage lifecycle sposta gli oggetti in Glacier dopo 90 giorni e li cancella dopo 7 anni per soddisfare la retention legale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_3",
+      "english": "Compute Optimizer",
+      "set": {
+        "example": "Acting on Compute Optimizer's right-sizing suggestions for 40 EC2 instances saved the team $1,800 a month in idle capacity. = Agire sui suggerimenti di right-sizing di Compute Optimizer per 40 istanze EC2 ha fatto risparmiare al team 1800$ al mese di capacity idle."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_3",
+      "english": "Utilization",
+      "set": {
+        "example": "Aiming for 70% steady-state CPU utilization leaves headroom for spikes without wasting money on perpetually idle capacity. = Puntare al 70% di utilization CPU steady-state lascia margine per gli spike senza sprecare soldi su capacity perennemente idle."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_3",
+      "english": "Resource Optimization",
+      "set": {
+        "example": "A quarterly resource optimization review pairs platform and finance to prune zombie environments accumulated over the previous months. = Una review trimestrale di resource optimization mette platform e finance insieme a potare ambienti zombie accumulati nei mesi precedenti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_4",
+      "english": "FinOps",
+      "set": {
+        "example": "Embedding a FinOps practitioner in each squad shifted cost from a quarterly surprise to a daily design constraint. = Inserire un praticante FinOps in ogni squad ha spostato il costo da una sorpresa trimestrale a un vincolo di design quotidiano."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_4",
+      "english": "Cost Awareness",
+      "set": {
+        "example": "Publishing the per-feature AWS cost in Slack each Monday built cost awareness without imposing top-down spending caps. = Pubblicare il costo AWS per feature su Slack ogni lunedì ha costruito cost awareness senza imporre cap di spesa top-down."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_4",
+      "english": "Forecasting",
+      "set": {
+        "italian": "Forecasting",
+        "note": "Forecasting = previsione della spesa cloud futura partendo da trend storici e crescita pianificata del business."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_4",
+      "english": "Cost Center",
+      "set": {
+        "example": "Tagging every resource with its cost center lets finance push the AWS bill straight into the ERP without a manual split. = Taggare ogni risorsa col suo cost center permette a finance di spingere la bolletta AWS direttamente nell'ERP senza split manuale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_4",
+      "english": "Waste",
+      "set": {
+        "example": "A FinOps audit revealed $11,000 a month of waste from orphan load balancers and snapshots no one had touched in over a year. = Un audit FinOps ha rivelato 11.000$ al mese di waste da load balancer orfani e snapshot non toccati da oltre un anno."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cloud_cost_4",
+      "english": "Cloud Bill",
+      "set": {
+        "example": "Reading the cloud bill line by line each month is the single highest-ROI engineering activity nobody schedules. = Leggere la bolletta cloud riga per riga ogni mese è l'attività ingegneristica a ROI più alto che nessuno schedula."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_1",
+      "english": "CloudWatch",
+      "set": {
+        "italian": "CloudWatch",
+        "note": "CloudWatch = servizio AWS di metriche, log, eventi e allarmi, integrato di default con la maggior parte dei servizi AWS."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_1",
+      "english": "Metric",
+      "set": {
+        "example": "Emitting a custom metric for orders_per_minute lets the on-call see business health, not just CPU and memory. = Emettere una metric custom per orders_per_minute permette all'on-call di vedere la salute del business, non solo CPU e memoria."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_1",
+      "english": "Custom Metric",
+      "set": {
+        "example": "Pushing a custom metric for failed_logins straight from the app exposed the brute-force spike that infra metrics had missed. = Pushare una metric custom per failed_logins direttamente dall'app ha esposto lo spike di brute-force che le metric infra non vedevano."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_1",
+      "english": "Namespace",
+      "set": {
+        "example": "Grouping all checkout-related metrics under the Checkout namespace keeps dashboards focused and IAM policies tight. = Raggruppare tutte le metric del checkout sotto il namespace Checkout tiene le dashboard focalizzate e le policy IAM strette."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_1",
+      "english": "Dimension",
+      "set": {
+        "example": "Adding the region dimension to error_count exposes hotspots in eu-west-1 that an aggregated count would hide. = Aggiungere la dimension region a error_count espone hotspot in eu-west-1 che un conteggio aggregato nasconderebbe."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_1",
+      "english": "Statistic",
+      "set": {
+        "example": "Alarming on the p99 statistic of latency catches tail outliers that the average would smooth into invisibility. = Lanciare alarm sulla statistic p99 della latenza intercetta gli outlier di coda che la media leviga fino a renderli invisibili."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_1",
+      "english": "Period",
+      "set": {
+        "example": "Setting the metric period to one minute trades higher cost for faster alarm response on critical production paths. = Impostare il period della metric a un minuto baratta costo più alto con risposta più rapida degli alarm sui path critici di produzione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_1",
+      "english": "Embedded Metric Format",
+      "set": {
+        "example": "Logging structured JSON in Embedded Metric Format lets CloudWatch parse metrics straight from log lines without a separate SDK call. = Loggare JSON strutturato in Embedded Metric Format permette a CloudWatch di estrarre metric direttamente dalle log line senza chiamata SDK separata."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_2",
+      "english": "Log Group",
+      "set": {
+        "example": "Routing each Lambda's output to its own log group makes filtering by function in CloudWatch Logs Insights straightforward. = Instradare l'output di ogni Lambda nel suo log group rende immediato filtrare per funzione in CloudWatch Logs Insights."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_2",
+      "english": "Log Retention",
+      "set": {
+        "example": "Capping log retention at 30 days on dev and 1 year on prod kept the monthly log bill under control without losing audit reach. = Cappare la log retention a 30 giorni in dev e 1 anno in prod ha tenuto sotto controllo la bolletta mensile dei log senza perdere portata di audit."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_2",
+      "english": "Centralized Logging",
+      "set": {
+        "example": "Shipping every account's logs to a central S3 bucket and querying with Athena gave security one place to investigate cross-account incidents. = Spedire i log di ogni account in un bucket S3 centrale e interrogarli con Athena ha dato alla security un unico posto dove investigare incidenti cross-account."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_2",
+      "english": "Log Encryption",
+      "set": {
+        "example": "Enabling KMS log encryption on every log group satisfied auditors who wanted CMK control over data at rest. = Abilitare la log encryption KMS su ogni log group ha soddisfatto gli auditor che volevano controllo CMK sui dati a riposo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_3",
+      "english": "Alarm",
+      "set": {
+        "example": "An alarm on p99 latency above 500ms for three consecutive minutes paged on-call the night the database started thrashing. = Un alarm sulla latenza p99 sopra 500ms per tre minuti consecutivi ha paginato l'on-call la notte in cui il database ha iniziato a thrashare."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_3",
+      "english": "Threshold",
+      "set": {
+        "example": "Raising the alarm threshold from 70% to 85% CPU stopped the 3am pages during the predictable nightly batch run. = Alzare la threshold di alarm dal 70% all'85% di CPU ha fermato i page delle 3 di notte durante la batch run notturna prevedibile."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_3",
+      "english": "Alarm State",
+      "set": {
+        "example": "When the alarm state flips from OK to ALARM, PagerDuty pages the on-call engineer through the SNS topic subscription. = Quando l'alarm state passa da OK ad ALARM, PagerDuty pagina l'ingegnere on-call tramite la subscription al topic SNS."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_3",
+      "english": "Anomaly Detection",
+      "set": {
+        "example": "Switching from a static threshold to anomaly detection on the orders metric stopped paging during legitimate Black Friday spikes. = Passare da una soglia statica all'anomaly detection sulla metric ordini ha smesso di paginare durante gli spike legittimi del Black Friday."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cloud_monitoring_3",
+      "english": "Alert Fatigue",
+      "set": {
+        "example": "After triaging six months of pages, the team retired noisy alarms and cut alert fatigue from 40 pages a week to under 5. = Dopo aver triaggiato sei mesi di page, il team ha pensionato gli alarm rumorosi e tagliato l'alert fatigue da 40 page a settimana a meno di 5."
+      }
+    }
+  ]
+}

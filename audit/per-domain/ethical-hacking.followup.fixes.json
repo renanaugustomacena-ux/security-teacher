@@ -1,0 +1,71 @@
+{
+  "fixes": [
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_1",
+      "english": "WPA3",
+      "set": {
+        "example": "To prevent offline dictionary attacks, WPA3 replaces the PSK handshake with Simultaneous Authentication of Equals (SAE). = Per prevenire gli attacchi dizionario offline, WPA3 sostituisce l'handshake PSK con Simultaneous Authentication of Equals (SAE)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "Kismet",
+      "set": {
+        "example": "During a wardrive the team left Kismet running for an hour to map every SSID, hidden BSSID, and rogue access point in range. = Durante un wardrive il team ha lasciato Kismet attivo per un'ora per mappare ogni SSID, BSSID nascosto e access point rogue nel raggio."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "Argon2",
+      "set": {
+        "example": "OWASP recommends Argon2id as the default password hash because it is memory-hard and resists both GPU and ASIC cracking. = OWASP raccomanda Argon2id come hash predefinito per le password perche e memory-hard e resiste sia al cracking su GPU sia su ASIC."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Burp Suite Professional",
+      "set": {
+        "example": "During the first afternoon of testing, Burp Suite Professional's active scanner flagged a blind SQLi and a stored XSS in the login flow. = Durante il primo pomeriggio di test, lo scanner attivo di Burp Suite Professional ha segnalato una SQLi cieca e un XSS persistente nel flusso di login."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "GetUserSPNs.py",
+      "set": {
+        "example": "To roast every service account in seconds, the operator ran GetUserSPNs.py -request -dc-ip 10.0.0.1 corp/lowuser against the DC. = Per fare roast di ogni service account in pochi secondi, l'operatore ha eseguito GetUserSPNs.py -request -dc-ip 10.0.0.1 corp/lowuser contro il DC."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "GetNPUsers.py",
+      "set": {
+        "example": "Looking for DONT_REQ_PREAUTH accounts, the operator ran GetNPUsers.py corp.local/ -usersfile users.txt -no-pass to harvest AS-REPs. = Cercando account con DONT_REQ_PREAUTH, l'operatore ha eseguito GetNPUsers.py corp.local/ -usersfile users.txt -no-pass per raccogliere AS-REP."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "wmiexec.py",
+      "set": {
+        "example": "From the Linux jump box the operator ran wmiexec.py -hashes :NTLMHASH corp/admin@10.0.0.5 to land a semi-interactive shell on the file server. = Dal jump box Linux l'operatore ha eseguito wmiexec.py -hashes :NTLMHASH corp/admin@10.0.0.5 per ottenere una shell semi-interattiva sul file server."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "Wordlist",
+      "set": {
+        "english": "Custom Wordlist",
+        "italian": "Dizionario personalizzato (custom wordlist)",
+        "example": "A targeted engagement pays off when the tester builds a Custom Wordlist from the company's blog and bio pages with CeWL. = Un ingaggio mirato rende quando il tester costruisce un Custom Wordlist dal blog e dalle pagine bio dell'azienda con CeWL.",
+        "note": "Rinominato da Wordlist per disambiguare dal Wordlist di livello 3 (active recon)."
+      }
+    }
+  ]
+}

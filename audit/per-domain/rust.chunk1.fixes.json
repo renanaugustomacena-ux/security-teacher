@@ -1,159 +1,1279 @@
-{"fixes":[
-{"level":"0","lesson":"rust_foundations_1","english":"Variable","set":{"example":"In Rust, you declare a variable with the let keyword, and by default the binding is immutable unless you add mut. = In Rust, dichiari una variabile con la parola chiave let, e di default il binding è immutabile a meno che tu aggiunga mut."}},
-{"level":"0","lesson":"rust_foundations_1","english":"Mutable","set":{"example":"To increment a counter inside a loop you need a mutable binding, declared with let mut counter = 0 in the function. = Per incrementare un contatore dentro un ciclo serve un binding mutable, dichiarato con let mut counter = 0 nella funzione."}},
-{"level":"0","lesson":"rust_foundations_1","english":"Function","set":{"example":"You define a reusable function in Rust with fn add(a: i32, b: i32) -> i32 and call it like add(2, 3) from main. = Definisci una funzione riutilizzabile in Rust con fn add(a: i32, b: i32) -> i32 e la chiami come add(2, 3) da main."}},
-{"level":"0","lesson":"rust_foundations_1","english":"Main Function","set":{"example":"Every Rust binary needs a main function with signature fn main() that serves as the program entry point. = Ogni binario Rust necessita di una main function con firma fn main() che funge da punto di ingresso del programma."}},
-{"level":"0","lesson":"rust_foundations_1","english":"Expression","set":{"example":"In Rust an expression like 2 + 3 produces a value, while a statement ends with a semicolon and produces no value. = In Rust una expression come 2 + 3 produce un valore, mentre uno statement termina con un punto e virgola e non produce valore."}},
-{"level":"0","lesson":"rust_foundations_2","english":"Crate","set":{"italian":"Crate","example":"A crate is the smallest compilation unit in Rust; running cargo build compiles your crate and all its dependencies. = Un crate è la più piccola unità di compilazione in Rust; eseguire cargo build compila il tuo crate e tutte le sue dipendenze.","note":"Loanword: in Rust si dice 'crate' anche in italiano."}},
-{"level":"0","lesson":"rust_foundations_2","english":"Cargo New","set":{"italian":"cargo new","example":"To start a new Rust project, run cargo new my_app which creates a folder with Cargo.toml and a src/main.rs file. = Per iniziare un nuovo progetto Rust, esegui cargo new my_app che crea una cartella con Cargo.toml e un file src/main.rs."}},
-{"level":"0","lesson":"rust_foundations_2","english":"Cargo Build","set":{"italian":"cargo build","example":"Running cargo build inside a project folder compiles all source files and produces a debug binary in target/debug. = Eseguire cargo build dentro la cartella di un progetto compila tutti i file sorgenti e produce un binario di debug in target/debug."}},
-{"level":"0","lesson":"rust_foundations_2","english":"Cargo Run","set":{"italian":"cargo run","example":"During development, cargo run is convenient because it compiles your code if needed and then executes the resulting binary. = Durante lo sviluppo, cargo run è comodo perché compila il tuo codice se necessario e poi esegue il binario risultante."}},
-{"level":"0","lesson":"rust_foundations_2","english":"Rustc","set":{"italian":"rustc","example":"The rustc command is the underlying Rust compiler; cargo invokes it for you with the right flags during a build. = Il comando rustc è il compilatore Rust sottostante; cargo lo invoca al posto tuo con i flag corretti durante una build."}},
-{"level":"0","lesson":"rust_foundations_2","english":"Rustup","set":{"italian":"rustup","example":"You install and switch between Rust toolchain versions using rustup, for example rustup default stable or rustup update. = Installi e cambi tra versioni della toolchain Rust usando rustup, ad esempio rustup default stable oppure rustup update."}},
-{"level":"0","lesson":"rust_foundations_2","english":"Edition","set":{"example":"The edition field in Cargo.toml, like edition = \"2021\", controls which language edition rustc uses for your crate. = Il campo edition in Cargo.toml, come edition = \"2021\", controlla quale edition del linguaggio rustc usa per il tuo crate."}},
-{"level":"0","lesson":"rust_foundations_3","english":"Warning","set":{"example":"During cargo build, an unused variable produces a warning but the program still compiles and runs successfully. = Durante cargo build, una variabile non usata produce un warning ma il programma viene comunque compilato ed eseguito con successo."}},
-{"level":"0","lesson":"rust_foundations_3","english":"Debug Build","set":{"example":"By default cargo build produces a debug build with extra checks and debug symbols, slower than a release build but easier to debug. = Di default cargo build produce una debug build con controlli extra e simboli di debug, più lenta di una release build ma più facile da debuggare."}},
-{"level":"0","lesson":"rust_foundations_3","english":"Cargo Check","set":{"italian":"cargo check","example":"To quickly verify your code typechecks without producing a binary, run cargo check which is much faster than cargo build. = Per verificare rapidamente che il tuo codice passi il typecheck senza produrre un binario, esegui cargo check che è molto più veloce di cargo build."}},
-{"level":"0","lesson":"rust_foundations_3","english":"Cargo Clean","set":{"italian":"cargo clean","example":"When build artifacts grow large or appear stale, running cargo clean removes the target/ directory entirely. = Quando gli artefatti di build crescono molto o sembrano stantii, eseguire cargo clean rimuove interamente la directory target/."}},
-{"level":"0","lesson":"rust_foundations_3","english":"Binary Crate","set":{"example":"A binary crate has a src/main.rs entry point and produces an executable program, like a command-line tool you can run. = Un binary crate ha un punto di ingresso src/main.rs e produce un programma eseguibile, come uno strumento da riga di comando che puoi eseguire."}},
-{"level":"0","lesson":"rust_foundations_3","english":"Library Crate","set":{"example":"A library crate uses src/lib.rs and exposes reusable types and functions to other crates that declare it as a dependency. = Un library crate usa src/lib.rs ed espone tipi e funzioni riutilizzabili ad altri crate che lo dichiarano come dipendenza."}},
-{"level":"0","lesson":"rust_foundations_4","english":"Comment","set":{"example":"Use a single-line comment in Rust with // followed by text to explain why a piece of logic exists in your codebase. = Usa un comment a riga singola in Rust con // seguito da testo per spiegare perché una parte di logica esiste nel tuo codebase."}},
-{"level":"0","lesson":"rust_foundations_4","english":"Block Comment","set":{"example":"For long explanations spanning many lines, use a Rust block comment delimited by /* and */ that wraps the entire paragraph. = Per spiegazioni lunghe su più righe, usa un block comment Rust delimitato da /* e */ che racchiude l'intero paragrafo."}},
-{"level":"0","lesson":"rust_foundations_4","english":"Doc Comment","set":{"example":"Write a doc comment with /// above a public function so cargo doc can generate HTML API documentation from it. = Scrivi un doc comment con /// sopra una funzione pubblica così cargo doc può generare documentazione API HTML da esso."}},
-{"level":"0","lesson":"rust_foundations_4","english":"Pascal Case","set":{"example":"In Rust, types and traits use Pascal Case, like struct HttpClient or trait DatabaseConnection in your modules. = In Rust, tipi e trait usano Pascal Case, come struct HttpClient o trait DatabaseConnection nei tuoi moduli."}},
-{"level":"0","lesson":"rust_foundations_4","english":"Screaming Snake Case","set":{"example":"By convention, constants in Rust use Screaming Snake Case, like const MAX_RETRIES: u32 = 5 declared at module level. = Per convenzione, le costanti in Rust usano Screaming Snake Case, come const MAX_RETRIES: u32 = 5 dichiarata a livello di modulo."}},
-{"level":"0","lesson":"rust_foundations_4","english":"Rustfmt","set":{"italian":"rustfmt","example":"To enforce a consistent style across a Rust project, run cargo fmt which uses rustfmt under the hood to reformat all source files. = Per imporre uno stile consistente in un progetto Rust, esegui cargo fmt che usa rustfmt sotto il cofano per riformattare tutti i file sorgenti."}},
-{"level":"0","lesson":"rust_foundations_4","english":"Curly Braces","set":{"example":"In Rust, curly braces delimit blocks for functions, if expressions, and loops, like fn main() { println!(\"hi\"); } in your code. = In Rust, le curly braces delimitano i blocchi per funzioni, espressioni if e cicli, come fn main() { println!(\"hi\"); } nel tuo codice."}},
-{"level":"1","lesson":"rust_types_1","english":"Integer Overflow","set":{"example":"Adding 1 to a u8 holding 255 causes an integer overflow which panics in debug builds and wraps around in release builds. = Sommare 1 a un u8 che contiene 255 causa un integer overflow che va in panic nelle build debug e fa wrap-around nelle build release."}},
-{"level":"1","lesson":"rust_types_2","english":"Bool","set":{"italian":"bool","example":"You store a true or false value in Rust using the bool type, as in let is_ready: bool = false; in your function. = Memorizzi un valore vero o falso in Rust usando il tipo bool, come in let is_ready: bool = false; nella tua funzione."}},
-{"level":"1","lesson":"rust_types_2","english":"Type Inference","set":{"example":"Thanks to type inference, you can write let count = 42 and the compiler will deduce that count has type i32 by default. = Grazie alla type inference, puoi scrivere let count = 42 e il compilatore dedurrà che count ha tipo i32 di default."}},
-{"level":"1","lesson":"rust_types_2","english":"Type Cast","set":{"example":"To convert between numeric types in Rust you perform a type cast with the as keyword, like let big = small as u64; in your code. = Per convertire tra tipi numerici in Rust esegui un type cast con la parola chiave as, come let big = small as u64; nel tuo codice."}},
-{"level":"1","lesson":"rust_types_3","english":"Range Expression","set":{"example":"A range expression like 0..10 produces values from 0 up to but not including 10, often used in a for loop over indices. = Una range expression come 0..10 produce valori da 0 fino a 10 escluso, spesso usata in un ciclo for sugli indici."}},
-{"level":"1","lesson":"rust_types_4","english":"String Push","set":{"example":"To append a single character to an owned Rust String, use s.push('!') which mutates the buffer in place and grows it if needed. = Per aggiungere un singolo carattere a una String Rust posseduta, usa s.push('!') che muta il buffer in place e lo fa crescere se necessario."}},
-{"level":"1","lesson":"rust_types_4","english":"UTF-8","set":{"italian":"UTF-8"}},
-{"level":"2","lesson":"rust_foundations_5","english":"Else If","set":{"example":"Chain alternative conditions in Rust with else if, like if x > 0 { ... } else if x < 0 { ... } else { ... } in your function. = Concatena condizioni alternative in Rust con else if, come if x > 0 { ... } else if x < 0 { ... } else { ... } nella tua funzione."}},
-{"level":"2","lesson":"rust_foundations_5","english":"Boolean Condition","set":{"example":"An if expression in Rust requires a boolean condition, so you write if user.is_active { ... } rather than relying on truthy values. = Un'espressione if in Rust richiede una boolean condition, quindi scrivi if user.is_active { ... } invece di basarti su valori truthy."}},
-{"level":"2","lesson":"rust_foundations_5","english":"Comparison Operator","set":{"example":"Use the >= comparison operator in Rust to test if a value is at least some threshold, as in if age >= 18 { allow_entry(); } in your code. = Usa il comparison operator >= in Rust per verificare se un valore è almeno una soglia, come in if age >= 18 { allow_entry(); } nel tuo codice."}},
-{"level":"2","lesson":"rust_foundations_5","english":"Logical NOT","set":{"example":"In Rust the logical NOT is written with !, so if !user.is_logged_in() { redirect_to_login(); } inverts the boolean expression. = In Rust il logical NOT si scrive con !, quindi if !user.is_logged_in() { redirect_to_login(); } inverte l'espressione booleana."}},
-{"level":"2","lesson":"rust_foundations_5","english":"Branch","set":{"example":"Each arm of an if/else in Rust is a branch, and the compiler enforces that all branches return values of the same type. = Ogni ramo di un if/else in Rust è una branch, e il compilatore impone che tutte le branch restituiscano valori dello stesso tipo."}},
-{"level":"2","lesson":"rust_foundations_6","english":"Loop","set":{"italian":"loop","example":"The unconditional loop keyword in Rust runs forever until you break out, useful for event loops like loop { handle_event(); } in a server. = La parola chiave loop incondizionata in Rust gira per sempre finché non fai break, utile per event loop come loop { handle_event(); } in un server."}},
-{"level":"2","lesson":"rust_foundations_6","english":"For Loop","set":{"example":"Iterate over a vector in Rust with a for loop, like for item in items.iter() { println!(\"{item}\"); } in your function. = Itera su un vettore in Rust con un for loop, come for item in items.iter() { println!(\"{item}\"); } nella tua funzione."}},
-{"level":"2","lesson":"rust_foundations_6","english":"Break","set":{"italian":"break","example":"Inside a Rust loop, use break to exit early when a condition is met, like if found { break; } after scanning a list. = Dentro un loop Rust, usa break per uscire in anticipo quando una condizione è soddisfatta, come if found { break; } dopo aver scansionato una lista."}},
-{"level":"2","lesson":"rust_foundations_6","english":"Break With Value","set":{"example":"You can return a value from a loop using break with value, like let result = loop { if done { break 42; } }; in your code. = Puoi restituire un valore da un loop usando break with value, come let result = loop { if done { break 42; } }; nel tuo codice."}},
-{"level":"2","lesson":"rust_foundations_6","english":"Continue","set":{"italian":"continue","example":"Use continue inside a Rust for loop to skip the current iteration, like for n in nums { if n < 0 { continue; } process(n); } in code. = Usa continue dentro un for loop Rust per saltare l'iterazione corrente, come for n in nums { if n < 0 { continue; } process(n); } nel codice."}},
-{"level":"2","lesson":"rust_foundations_6","english":"Loop Label","set":{"example":"Use a Rust loop label like 'outer: loop { ... break 'outer; ... } to break out of an outer loop from inside a nested one. = Usa una loop label Rust come 'outer: loop { ... break 'outer; ... } per uscire da un loop esterno da dentro uno annidato."}},
-{"level":"2","lesson":"rust_foundations_6","english":"Iterator","set":{"example":"Call .iter() on a vector to get an iterator, then chain .map() and .filter() to transform the sequence lazily before collecting. = Chiama .iter() su un vettore per ottenere un iterator, poi concatena .map() e .filter() per trasformare la sequenza in modo lazy prima di collect."}},
-{"level":"2","lesson":"rust_foundations_6","english":"Reverse Iteration","set":{"example":"For reverse iteration in Rust use .rev() on an iterator, as in for n in (1..=5).rev() { println!(\"{n}\"); } prints 5 down to 1. = Per la reverse iteration in Rust usa .rev() su un iteratore, come in for n in (1..=5).rev() { println!(\"{n}\"); } stampa da 5 a 1."}},
-{"level":"2","lesson":"rust_foundations_7","english":"Match","set":{"italian":"match","example":"Use match in Rust to handle every variant of an enum, like match opt { Some(x) => x, None => 0 } returning the inner value or zero. = Usa match in Rust per gestire ogni variante di un enum, come match opt { Some(x) => x, None => 0 } che restituisce il valore interno o zero."}},
-{"level":"2","lesson":"rust_foundations_7","english":"Wildcard Pattern","set":{"example":"In a Rust match, the underscore wildcard pattern catches any remaining case, like _ => println!(\"other\") to make the match exhaustive. = In un match Rust, il wildcard pattern underscore cattura qualsiasi caso rimanente, come _ => println!(\"other\") per rendere il match esaustivo."}},
-{"level":"2","lesson":"rust_foundations_7","english":"Pattern Matching","set":{"italian":"pattern matching","example":"Rust supports pattern matching in match arms and let bindings, like let (x, y) = pair; which destructures a tuple into two values. = Rust supporta il pattern matching nei rami match e nei binding let, come let (x, y) = pair; che destruttura una tupla in due valori."}},
-{"level":"2","lesson":"rust_foundations_7","english":"Match Guard","set":{"example":"Add a match guard to a Rust arm with extra conditions, like Some(n) if n > 0 => println!(\"positive\"), to refine pattern matching. = Aggiungi una match guard a un ramo Rust con condizioni extra, come Some(n) if n > 0 => println!(\"positive\"), per raffinare il pattern matching."}},
-{"level":"2","lesson":"rust_foundations_7","english":"Exhaustiveness","set":{"example":"The Rust compiler enforces exhaustiveness in match: every possible variant of an enum must be handled or the code will not compile. = Il compilatore Rust impone l'exhaustiveness nel match: ogni variante possibile di un enum deve essere gestita o il codice non compila."}},
-{"level":"2","lesson":"rust_foundations_7","english":"Or Pattern","set":{"example":"Use an or pattern in a Rust match arm to combine cases, like 1 | 2 | 3 => println!(\"small\"), which fires for any of those values. = Usa un or pattern in un ramo match Rust per combinare casi, come 1 | 2 | 3 => println!(\"small\"), che scatta per uno qualsiasi di quei valori."}},
-{"level":"2","lesson":"rust_foundations_7","english":"Range Pattern","set":{"example":"In a Rust match you can use a range pattern like 1..=9 => println!(\"single digit\") to match all integers from 1 through 9 inclusive. = In un match Rust puoi usare un range pattern come 1..=9 => println!(\"single digit\") per matchare tutti gli interi da 1 a 9 inclusi."}},
-{"level":"2","lesson":"rust_foundations_7","english":"If Let","set":{"italian":"if let","example":"Use if let in Rust as a concise alternative to match for one case, like if let Some(x) = opt { use(x); } skipping the None branch. = Usa if let in Rust come alternativa concisa a match per un solo caso, come if let Some(x) = opt { use(x); } saltando il ramo None."}},
-{"level":"2","lesson":"rust_foundations_8","english":"Function Parameter","set":{"example":"In Rust each function parameter must have an explicit type, as in fn greet(name: &str) { println!(\"hi {name}\"); } in your module. = In Rust ogni function parameter deve avere un tipo esplicito, come in fn greet(name: &str) { println!(\"hi {name}\"); } nel tuo modulo."}},
-{"level":"2","lesson":"rust_foundations_8","english":"Explicit Return","set":{"example":"While Rust uses the last expression as the value, you can use an explicit return statement to exit early, like return Err(e); in error paths. = Mentre Rust usa l'ultima espressione come valore, puoi usare un explicit return statement per uscire in anticipo, come return Err(e); nei percorsi di errore."}},
-{"level":"2","lesson":"rust_foundations_8","english":"Recursive Function","set":{"example":"A recursive function in Rust calls itself, like fn factorial(n: u64) -> u64 { if n <= 1 { 1 } else { n * factorial(n - 1) } } in code. = Una recursive function in Rust chiama se stessa, come fn factorial(n: u64) -> u64 { if n <= 1 { 1 } else { n * factorial(n - 1) } } nel codice."}},
-{"level":"3","lesson":"rust_ownership_1","english":"Owner","set":{"example":"In Rust each value has exactly one owner at any time, and when the owner goes out of scope the value is automatically dropped. = In Rust ogni valore ha esattamente un owner in ogni momento, e quando l'owner esce dallo scope il valore viene rilasciato automaticamente."}},
-{"level":"3","lesson":"rust_ownership_1","english":"Move Semantics","set":{"example":"Rust's move semantics mean that let b = a; transfers ownership of a String from a to b, after which a can no longer be used. = La move semantics di Rust significa che let b = a; trasferisce l'ownership di una String da a a b, dopodiché a non può più essere usata."}},
-{"level":"3","lesson":"rust_ownership_1","english":"RAII","set":{"italian":"RAII","example":"Rust applies the RAII idiom: a File acquired in a function is automatically closed when its handle goes out of scope, even on early return. = Rust applica l'idioma RAII: un File acquisito in una funzione viene chiuso automaticamente quando il suo handle esce dallo scope, anche su return anticipato."}},
-{"level":"3","lesson":"rust_ownership_1","english":"Heap","set":{"example":"A Rust Vec stores its elements on the heap so it can grow at runtime, while the Vec struct itself sits on the stack with a pointer. = Un Vec Rust memorizza i suoi elementi sull'heap così può crescere a runtime, mentre la struct Vec stessa sta sullo stack con un puntatore."}},
-{"level":"3","lesson":"rust_ownership_1","english":"Stack","set":{"example":"Local variables of fixed size, like an i32 or a small array, live on the stack and are reclaimed automatically when the function returns. = Le variabili locali di dimensione fissa, come un i32 o un piccolo array, vivono sullo stack e vengono rilasciate automaticamente al ritorno della funzione."}},
-{"level":"3","lesson":"rust_ownership_1","english":"Garbage Collector","set":{"example":"Unlike Java or Go, Rust has no garbage collector at runtime; memory is freed deterministically via ownership and Drop implementations. = A differenza di Java o Go, Rust non ha un garbage collector a runtime; la memoria è liberata in modo deterministico tramite ownership e implementazioni di Drop."}},
-{"level":"3","lesson":"rust_ownership_2","english":"Move","set":{"italian":"move","example":"Passing a String to a function in Rust performs a move by default, so the caller can no longer use that String after the call. = Passare una String a una funzione in Rust esegue un move di default, quindi il chiamante non può più usare quella String dopo la chiamata."}},
-{"level":"3","lesson":"rust_ownership_2","english":"Copy Trait","set":{"example":"Primitive types like i32 implement the Copy trait, so let b = a; duplicates the value bitwise and a remains usable afterward. = Tipi primitivi come i32 implementano il Copy trait, quindi let b = a; duplica il valore bit per bit e a rimane utilizzabile dopo."}},
-{"level":"3","lesson":"rust_ownership_2","english":"Clone","set":{"italian":"Clone","example":"To deeply duplicate a String in Rust call s.clone(), which allocates a new heap buffer and copies the contents byte by byte. = Per duplicare profondamente una String in Rust chiama s.clone(), che alloca un nuovo buffer sull'heap e copia i contenuti byte per byte."}},
-{"level":"3","lesson":"rust_ownership_2","english":"Clone Trait","set":{"example":"Implement the Clone trait on your struct with #[derive(Clone)] so callers can create independent copies via instance.clone() in code. = Implementa il Clone trait sulla tua struct con #[derive(Clone)] così i chiamanti possono creare copie indipendenti tramite instance.clone() nel codice."}},
-{"level":"3","lesson":"rust_ownership_2","english":"Shallow Copy","set":{"example":"A shallow copy duplicates only the top-level fields like a pointer and length, leaving the underlying heap buffer shared between values. = Una shallow copy duplica solo i campi di primo livello come un puntatore e una lunghezza, lasciando il buffer heap sottostante condiviso tra i valori."}},
-{"level":"3","lesson":"rust_ownership_2","english":"Deep Copy","set":{"example":"Calling .clone() on a Vec<String> performs a deep copy, allocating new heap memory for each contained String rather than aliasing it. = Chiamare .clone() su un Vec<String> esegue una deep copy, allocando nuova memoria heap per ogni String contenuta invece di farne aliasing."}},
-{"level":"3","lesson":"rust_ownership_2","english":"Use After Move","set":{"example":"Trying to print a String after it was moved into another binding triggers a use after move error, caught at compile time by the borrow checker. = Tentare di stampare una String dopo che è stata spostata in un altro binding genera un errore use after move, intercettato a compile time dal borrow checker."}},
-{"level":"3","lesson":"rust_ownership_3","english":"Destructor","set":{"example":"Implement Drop on a Rust type to provide a destructor that closes file handles or releases locks when the value goes out of scope. = Implementa Drop su un tipo Rust per fornire un destructor che chiude handle di file o rilascia lock quando il valore esce dallo scope."}},
-{"level":"3","lesson":"rust_ownership_3","english":"Memory Leak","set":{"example":"Even in Rust you can create a memory leak by building a reference cycle of Rc<T> values that never reach a strong count of zero. = Anche in Rust puoi creare un memory leak costruendo un ciclo di riferimenti di valori Rc<T> che non raggiungono mai uno strong count pari a zero."}},
-{"level":"3","lesson":"rust_ownership_3","english":"Double Free","set":{"example":"Rust's ownership rules prevent a double free at compile time: only the current owner can drop the value, so two frees of the same buffer cannot happen. = Le regole di ownership di Rust prevengono un double free a compile time: solo l'owner corrente può rilasciare il valore, quindi due free dello stesso buffer non possono accadere."}},
-{"level":"3","lesson":"rust_ownership_3","english":"Forget","set":{"example":"Calling std::mem::forget on a value tells Rust not to run its destructor, useful when ownership is being passed to FFI code that takes over cleanup. = Chiamare std::mem::forget su un valore dice a Rust di non eseguire il suo destructor, utile quando l'ownership viene passata a codice FFI che si occupa della pulizia."}},
-{"level":"3","lesson":"rust_ownership_3","english":"Swap","set":{"example":"Use std::mem::swap(&mut a, &mut b) in Rust to exchange the contents of two mutable bindings without taking ownership of either value. = Usa std::mem::swap(&mut a, &mut b) in Rust per scambiare i contenuti di due binding mutabili senza prendere ownership di nessuno dei due valori."}},
-{"level":"3","lesson":"rust_ownership_3","english":"Take","set":{"example":"In Rust std::mem::take(&mut field) replaces field with its Default value and returns the original, often used to move data out of a struct. = In Rust std::mem::take(&mut field) sostituisce field con il suo valore Default e restituisce l'originale, spesso usato per spostare dati fuori da una struct."}},
-{"level":"3","lesson":"rust_ownership_4","english":"Compile-Time Check","set":{"example":"The Rust borrow checker performs a compile-time check that prevents dangling references, so memory safety bugs cannot reach production binaries. = Il borrow checker di Rust esegue un compile-time check che previene riferimenti penzolanti, quindi i bug di memory safety non possono raggiungere i binari di produzione."}},
-{"level":"3","lesson":"rust_ownership_4","english":"Zero Cost Abstraction","set":{"example":"Rust iterators are a zero cost abstraction: a chained .map().filter().sum() compiles down to a tight loop equivalent to a hand-written one. = Gli iteratori Rust sono una zero cost abstraction: una catena .map().filter().sum() compila in un loop stretto equivalente a uno scritto a mano."}},
-{"level":"3","lesson":"rust_ownership_4","english":"Heap Allocation","set":{"example":"Calling Box::new(value) in Rust performs a heap allocation, storing value on the heap and giving you a pointer-sized handle on the stack. = Chiamare Box::new(value) in Rust esegue una heap allocation, memorizzando value sull'heap e dandoti un handle dimensione puntatore sullo stack."}},
-{"level":"4","lesson":"rust_ownership_5","english":"Borrow","set":{"italian":"borrow","example":"In Rust you borrow a String by passing &s to a function, granting read-only access without transferring ownership to the callee. = In Rust fai un borrow di una String passando &s a una funzione, concedendo accesso in sola lettura senza trasferire ownership al chiamato."}},
-{"level":"4","lesson":"rust_ownership_5","english":"Reference Operator","set":{"example":"The & reference operator in Rust creates a shared reference, as in let r = &value; which lets you read value without taking ownership. = Il reference operator & in Rust crea un riferimento condiviso, come in let r = &value; che ti permette di leggere value senza prendere ownership."}},
-{"level":"4","lesson":"rust_ownership_5","english":"Auto Deref","set":{"example":"Thanks to Rust's auto deref, calling s.len() on a Box<String> works because the compiler inserts the * needed to reach the inner String. = Grazie all'auto deref di Rust, chiamare s.len() su un Box<String> funziona perché il compilatore inserisce l'* necessario per raggiungere la String interna."}},
-{"level":"4","lesson":"rust_ownership_5","english":"Borrowing Rules","set":{"example":"Rust's borrowing rules allow either many shared references or one exclusive mutable reference at any given time, but never both simultaneously. = Le borrowing rules di Rust permettono o molti riferimenti condivisi o un riferimento mutabile esclusivo in ogni momento, ma mai entrambi contemporaneamente."}},
-{"level":"4","lesson":"rust_ownership_6","english":"Exclusive Reference","set":{"example":"A &mut T in Rust is an exclusive reference: while it exists, no other reference to the same value, shared or mutable, may coexist. = Un &mut T in Rust è una exclusive reference: mentre esiste, nessun altro riferimento allo stesso valore, condiviso o mutabile, può coesistere."}},
-{"level":"4","lesson":"rust_ownership_6","english":"Aliasing","set":{"example":"Rust prevents data races by forbidding aliasing of mutable references, ensuring no two &mut pointers can refer to the same value at once. = Rust previene le data race vietando l'aliasing di riferimenti mutabili, garantendo che due puntatori &mut non possano riferirsi allo stesso valore simultaneamente."}},
-{"level":"4","lesson":"rust_ownership_6","english":"Mut Keyword","set":{"example":"In Rust the mut keyword marks a binding or reference as mutable, as in let mut count = 0; allowing you to reassign or modify it later. = In Rust la parola chiave mut marca un binding o un riferimento come mutabile, come in let mut count = 0; permettendoti di riassegnarlo o modificarlo dopo."}},
-{"level":"4","lesson":"rust_ownership_7","english":"Dangling Pointer","set":{"example":"Rust's borrow checker rejects code that would create a dangling pointer, such as returning a reference to a local variable from a function. = Il borrow checker di Rust rifiuta codice che creerebbe un dangling pointer, come restituire un riferimento a una variabile locale da una funzione."}},
-{"level":"4","lesson":"rust_ownership_7","english":"Borrow Conflict","set":{"example":"Mutating a Vec while iterating over its shared reference triggers a borrow conflict, since shared and mutable borrows cannot overlap. = Mutare un Vec mentre si itera sul suo riferimento condiviso genera un borrow conflict, dato che borrow condivisi e mutabili non possono sovrapporsi."}},
-{"level":"4","lesson":"rust_ownership_7","english":"Borrow Lifetime","set":{"example":"The Rust compiler tracks the borrow lifetime, ensuring a &str reference does not outlive the String it points into in any code path. = Il compilatore Rust traccia la borrow lifetime, assicurando che un riferimento &str non sopravviva alla String a cui punta in nessun percorso di codice."}},
-{"level":"4","lesson":"rust_ownership_7","english":"Static Lifetime","set":{"example":"A string literal in Rust has type &'static str with static lifetime, meaning it lives for the entire duration of the running program. = Una stringa letterale in Rust ha tipo &'static str con static lifetime, ovvero vive per l'intera durata del programma in esecuzione."}},
-{"level":"4","lesson":"rust_ownership_7","english":"Cannot Borrow","set":{"example":"The error cannot borrow x as mutable because it is also borrowed as immutable appears when shared and exclusive borrows overlap in scope. = L'errore cannot borrow x as mutable because it is also borrowed as immutable appare quando borrow condivisi ed esclusivi si sovrappongono nello scope."}},
-{"level":"4","lesson":"rust_ownership_8","english":"Slice Length","set":{"example":"Call .len() on a slice to get its slice length, as in let n = numbers[1..4].len(); which returns 3 for a three-element window. = Chiama .len() su una slice per ottenere la sua slice length, come in let n = numbers[1..4].len(); che restituisce 3 per una finestra di tre elementi."}},
-{"level":"4","lesson":"rust_ownership_8","english":"Empty Slice","set":{"example":"An empty slice like &arr[2..2] has length zero, which is useful as a sentinel return when no elements satisfy a search condition. = Una empty slice come &arr[2..2] ha lunghezza zero, utile come ritorno sentinella quando nessun elemento soddisfa una condizione di ricerca."}},
-{"level":"4","lesson":"rust_ownership_8","english":"Slice From Vec","set":{"example":"Take a slice from Vec in Rust with &v[..] or &v[1..3], passing a borrowed view of the data into functions expecting a &[T] parameter. = Prendi una slice from Vec in Rust con &v[..] oppure &v[1..3], passando una vista presa in prestito dei dati a funzioni che si aspettano un parametro &[T]."}},
-{"level":"4","lesson":"rust_ownership_8","english":"Slice Indexing","set":{"example":"Use slice indexing like nums[2] to read an element, but an out-of-bounds index causes a panic instead of returning undefined behavior. = Usa lo slice indexing come nums[2] per leggere un elemento, ma un indice fuori dai limiti causa un panic invece di restituire undefined behavior."}},
-{"level":"5","lesson":"rust_structs_1","english":"Field","set":{"example":"Access a field on a Rust struct with dot notation, as in let name = user.name; where name is a String field declared on the struct. = Accedi a un field su una struct Rust con notazione punto, come in let name = user.name; dove name è un campo String dichiarato sulla struct."}},
-{"level":"5","lesson":"rust_structs_1","english":"Field Access","set":{"example":"In Rust field access through a reference uses auto-deref, so r.email works on both User and &User without an explicit dereference. = In Rust il field access tramite un riferimento usa auto-deref, quindi r.email funziona sia su User che su &User senza dereferenziazione esplicita."}},
-{"level":"5","lesson":"rust_structs_1","english":"Struct Update","set":{"example":"Use Rust struct update syntax like User { email: new_email, ..old_user } to copy remaining fields from old_user into the new instance. = Usa la sintassi struct update di Rust come User { email: new_email, ..old_user } per copiare i campi rimanenti da old_user nella nuova istanza."}},
-{"level":"5","lesson":"rust_structs_1","english":"Tuple Struct","set":{"example":"Declare a tuple struct in Rust like struct Point(f64, f64); and access its fields positionally with p.0 and p.1 in your functions. = Dichiara una tuple struct in Rust come struct Point(f64, f64); e accedi ai suoi campi posizionalmente con p.0 e p.1 nelle tue funzioni."}},
-{"level":"5","lesson":"rust_structs_1","english":"Unit Struct","set":{"example":"A unit struct like struct Marker; has no fields and is useful as a type-level tag, often combined with PhantomData for generic markers. = Una unit struct come struct Marker; non ha campi ed è utile come tag a livello di tipo, spesso combinata con PhantomData per marker generici."}},
-{"level":"5","lesson":"rust_structs_1","english":"Pub Field","set":{"example":"Mark a struct field as public with the pub keyword, as in struct Config { pub host: String }, exposing host to other modules. = Marca un campo struct come pubblico con la parola chiave pub, come in struct Config { pub host: String }, esponendo host ad altri moduli."}},
-{"level":"5","lesson":"rust_structs_1","english":"Encapsulation","set":{"example":"In Rust encapsulation is enforced at the module level: private fields are accessible only from within the module that defines the struct. = In Rust l'encapsulation è imposta a livello di modulo: i campi privati sono accessibili solo dall'interno del modulo che definisce la struct."}},
-{"level":"5","lesson":"rust_structs_2","english":"Self Parameter","set":{"example":"In a Rust method, &self is the self parameter that borrows the receiver immutably, like fn area(&self) -> f64 on a Rectangle struct. = In un metodo Rust, &self è il self parameter che fa borrow del receiver in modo immutabile, come fn area(&self) -> f64 su una struct Rectangle."}},
-{"level":"5","lesson":"rust_structs_2","english":"Associated Function","set":{"example":"A Rust associated function declared without self, like fn new(width: u32, height: u32) -> Self, is called as Rectangle::new(10, 20). = Una associated function Rust dichiarata senza self, come fn new(width: u32, height: u32) -> Self, viene chiamata come Rectangle::new(10, 20)."}},
-{"level":"5","lesson":"rust_structs_2","english":"Self Type","set":{"example":"Inside an impl block, the Self type refers to the type being implemented, so you can write fn default() -> Self { ... } to return a fresh instance. = Dentro un blocco impl, il tipo Self si riferisce al tipo implementato, quindi puoi scrivere fn default() -> Self { ... } per restituire una nuova istanza."}},
-{"level":"5","lesson":"rust_structs_2","english":"Method Chain","set":{"example":"A method chain in Rust like builder.host(\"localhost\").port(8080).build() relies on each method returning Self to keep the chain going. = Una method chain in Rust come builder.host(\"localhost\").port(8080).build() dipende dal fatto che ogni metodo restituisca Self per continuare la catena."}},
-{"level":"5","lesson":"rust_structs_3","english":"Derive Attribute","set":{"example":"Use a derive attribute like #[derive(Debug, Clone)] above a struct so the compiler implements those traits for you automatically. = Usa un derive attribute come #[derive(Debug, Clone)] sopra una struct così il compilatore implementa quei trait per te automaticamente."}},
-{"level":"5","lesson":"rust_structs_3","english":"Debug Trait","set":{"example":"Derive the Debug trait with #[derive(Debug)] so you can print a struct using the {:?} format specifier, like println!(\"{:?}\", config); in code. = Deriva il Debug trait con #[derive(Debug)] così puoi stampare una struct usando il format specifier {:?}, come println!(\"{:?}\", config); nel codice."}},
-{"level":"5","lesson":"rust_structs_3","english":"Display Trait","set":{"example":"Implement the Display trait by writing fmt::Display for your struct so callers can use {} format and get human-friendly output. = Implementa il Display trait scrivendo fmt::Display per la tua struct così i chiamanti possono usare il formato {} e ottenere output amichevole."}},
-{"level":"5","lesson":"rust_structs_3","english":"Eq Trait","set":{"example":"Derive the Eq trait alongside PartialEq for types where equality is reflexive and total, like an enum UserRole with three discrete variants. = Deriva il Eq trait insieme a PartialEq per tipi dove l'uguaglianza è riflessiva e totale, come un enum UserRole con tre varianti discrete."}},
-{"level":"5","lesson":"rust_structs_3","english":"Hash Trait","set":{"example":"Derive the Hash trait on a struct so instances can be used as keys in a HashMap, with #[derive(Hash, Eq, PartialEq)] above the definition. = Deriva il Hash trait su una struct così le istanze possono essere usate come chiavi in una HashMap, con #[derive(Hash, Eq, PartialEq)] sopra la definizione."}},
-{"level":"5","lesson":"rust_structs_3","english":"Clone Derive","set":{"example":"Add a clone derive like #[derive(Clone)] to give your struct a .clone() method that copies every field according to its own Clone behavior. = Aggiungi un clone derive come #[derive(Clone)] per dare alla tua struct un metodo .clone() che copia ogni campo secondo il proprio comportamento Clone."}},
-{"level":"5","lesson":"rust_structs_3","english":"Ord Trait","set":{"example":"Derive the Ord trait so a Vec of your type can be sorted with v.sort(), which calls cmp on each pair to produce a total ordering. = Deriva il Ord trait così un Vec del tuo tipo può essere ordinato con v.sort(), che chiama cmp su ogni coppia per produrre un ordinamento totale."}},
-{"level":"5","lesson":"rust_structs_3","english":"Custom Derive","set":{"example":"A custom derive macro like #[derive(Serialize)] from serde generates code at compile time so your struct can be encoded as JSON. = Una custom derive macro come #[derive(Serialize)] di serde genera codice a compile time così la tua struct può essere codificata come JSON."}},
-{"level":"5","lesson":"rust_structs_4","english":"Private Field","set":{"example":"A struct field without pub is a private field, only accessible from inside the defining module, which enforces invariants like non-empty buffers. = Un campo struct senza pub è un private field, accessibile solo dall'interno del modulo che lo definisce, il che impone invarianti come buffer non vuoti."}},
-{"level":"5","lesson":"rust_structs_4","english":"Repr C","set":{"example":"Annotate a Rust struct with #[repr(C)] to give it a C-compatible memory layout, required when passing instances across an FFI boundary. = Annota una struct Rust con #[repr(C)] per darle un layout di memoria compatibile con C, necessario quando passi istanze attraverso un confine FFI."}},
-{"level":"6","lesson":"rust_enums_1","english":"Variant","set":{"example":"Each option of a Rust enum is a variant, like Some and None inside enum Option<T> { Some(T), None } in the standard library. = Ogni opzione di un enum Rust è una variant, come Some e None dentro enum Option<T> { Some(T), None } nella libreria standard."}},
-{"level":"6","lesson":"rust_enums_1","english":"Tagged Union","set":{"example":"A Rust enum is a tagged union: each value stores both a discriminant indicating the variant and the data carried by that variant. = Un enum Rust è una tagged union: ogni valore memorizza sia un discriminante che indica la variante sia i dati portati da quella variante."}},
-{"level":"6","lesson":"rust_enums_1","english":"Variant With Data","set":{"example":"Define a variant with data like enum Shape { Circle(f64), Rectangle { w: f64, h: f64 } } where each arm carries its own payload. = Definisci una variant with data come enum Shape { Circle(f64), Rectangle { w: f64, h: f64 } } dove ogni ramo porta il proprio payload."}},
-{"level":"6","lesson":"rust_enums_1","english":"Struct-Like Variant","set":{"example":"A struct-like variant in Rust uses named fields, like enum Event { Click { x: i32, y: i32 } } so you can pattern match on x and y directly. = Una struct-like variant in Rust usa campi nominati, come enum Event { Click { x: i32, y: i32 } } così puoi fare pattern matching su x e y direttamente."}},
-{"level":"6","lesson":"rust_enums_1","english":"Enum Method","set":{"example":"Add an enum method via impl, like impl Direction { fn opposite(&self) -> Self { ... } } so callers can write current.opposite() in code. = Aggiungi un enum method tramite impl, come impl Direction { fn opposite(&self) -> Self { ... } } così i chiamanti possono scrivere current.opposite() nel codice."}},
-{"level":"6","lesson":"rust_enums_1","english":"Repr U8","set":{"example":"Annotate an enum with #[repr(u8)] to force a one-byte discriminant, useful when matching the binary layout of a network protocol header. = Annota un enum con #[repr(u8)] per forzare un discriminante di un byte, utile quando si fa matching del layout binario di un header di protocollo di rete."}},
-{"level":"6","lesson":"rust_enums_1","english":"Empty Enum","set":{"example":"An empty enum like enum Never {} has no variants and no values, often used as a never-type placeholder in generic error-handling code. = Un empty enum come enum Never {} non ha varianti né valori, spesso usato come placeholder never-type in codice generico di gestione errori."}},
-{"level":"6","lesson":"rust_enums_2","english":"Option Type","set":{"example":"Use the Rust Option type to represent a value that may be absent, like fn find_user(id: u64) -> Option<User> returning Some or None. = Usa il tipo Option di Rust per rappresentare un valore che potrebbe essere assente, come fn find_user(id: u64) -> Option<User> che restituisce Some o None."}},
-{"level":"6","lesson":"rust_enums_2","english":"Unwrap","set":{"italian":"unwrap","example":"Calling .unwrap() on an Option returns the inner value if it is Some, or panics with a generic message if the value is None at runtime. = Chiamare .unwrap() su un Option restituisce il valore interno se è Some, o va in panic con un messaggio generico se il valore è None a runtime."}},
-{"level":"6","lesson":"rust_enums_2","english":"Unwrap Or","set":{"example":"Use .unwrap_or(default) on an Option to return the inner value when present or a fallback otherwise, like config.timeout.unwrap_or(30) for seconds. = Usa .unwrap_or(default) su un Option per restituire il valore interno quando presente o un fallback altrimenti, come config.timeout.unwrap_or(30) per i secondi."}},
-{"level":"6","lesson":"rust_enums_2","english":"Map","set":{"example":"Calling .map(|x| x * 2) on Some(5) gives Some(10) while .map on None stays None, transforming the inner value only when present. = Chiamare .map(|x| x * 2) su Some(5) dà Some(10) mentre .map su None resta None, trasformando il valore interno solo quando presente."}},
-{"level":"6","lesson":"rust_enums_2","english":"And Then","set":{"example":"Use .and_then(|user| user.email()) on an Option<User> to chain a fallible lookup that itself returns an Option, avoiding nested matches. = Usa .and_then(|user| user.email()) su un Option<User> per concatenare una lookup fallibile che a sua volta restituisce un Option, evitando match annidati."}},
-{"level":"6","lesson":"rust_enums_2","english":"Is None","set":{"example":"Check whether an Option is empty without consuming it by calling .is_none(), as in if cache.is_none() { populate_cache(); } in startup code. = Verifica se un Option è vuoto senza consumarlo chiamando .is_none(), come in if cache.is_none() { populate_cache(); } nel codice di avvio."}},
-{"level":"6","lesson":"rust_enums_2","english":"Take","set":{"example":"Use .take() on an Option<T> field to move the value out and leave None behind, often used in Drop implementations and builder patterns. = Usa .take() su un campo Option<T> per spostare fuori il valore e lasciare None al suo posto, spesso usato in implementazioni di Drop e pattern builder."}},
-{"level":"6","lesson":"rust_enums_3","english":"Match Exhaustiveness","set":{"example":"The Rust compiler enforces match exhaustiveness on enums: if you add a new variant, every match expression without _ stops compiling. = Il compilatore Rust impone la match exhaustiveness sugli enum: se aggiungi una nuova variante, ogni espressione match senza _ smette di compilare."}},
-{"level":"6","lesson":"rust_enums_3","english":"Struct Pattern","set":{"example":"Destructure with a struct pattern in a match arm like Point { x, y } => println!(\"{x},{y}\") to bind both fields by name at once. = Destruttura con uno struct pattern in un ramo match come Point { x, y } => println!(\"{x},{y}\") per legare entrambi i campi per nome in un colpo solo."}},
-{"level":"6","lesson":"rust_enums_3","english":"Tuple Pattern","set":{"example":"Use a tuple pattern like let (status, body) = response.split(); to destructure a (u16, String) returned by an HTTP helper function. = Usa un tuple pattern come let (status, body) = response.split(); per destrutturare una (u16, String) restituita da una funzione HTTP di supporto."}},
-{"level":"6","lesson":"rust_enums_3","english":"If Let","set":{"italian":"if let","example":"Prefer if let Ok(value) = parse_int(s) over a full match when you only care about the success case and want to ignore the error branch. = Preferisci if let Ok(value) = parse_int(s) rispetto a un match completo quando ti interessa solo il caso di successo e vuoi ignorare il ramo errore."}},
-{"level":"6","lesson":"rust_enums_3","english":"While Let","set":{"example":"Use while let Some(item) = stack.pop() to drain a Vec one element at a time, exiting the loop automatically when pop() returns None. = Usa while let Some(item) = stack.pop() per svuotare un Vec un elemento alla volta, uscendo dal loop automaticamente quando pop() restituisce None."}},
-{"level":"6","lesson":"rust_enums_3","english":"Rest Pattern","set":{"example":"Use a rest pattern like [first, .., last] in a slice match to bind only the boundary elements and ignore everything in between. = Usa un rest pattern come [first, .., last] in un match su slice per legare solo gli elementi al bordo e ignorare tutto ciò che sta in mezzo."}},
-{"level":"6","lesson":"rust_enums_4","english":"State Machine","set":{"example":"Model a TCP connection as a state machine with enum State { Closed, Listen, Established, Closing } and transitions encoded as methods. = Modella una connessione TCP come una state machine con enum State { Closed, Listen, Established, Closing } e transizioni codificate come metodi."}},
-{"level":"6","lesson":"rust_enums_4","english":"Type State","set":{"example":"With Rust's type state pattern, an HttpRequest<Unbuilt> exposes .body() while HttpRequest<Built> only exposes .send(), enforced at compile time. = Con il pattern type state di Rust, un HttpRequest<Unbuilt> espone .body() mentre HttpRequest<Built> espone solo .send(), imposto a compile time."}},
-{"level":"6","lesson":"rust_enums_4","english":"Polymorphism","set":{"example":"Rust supports polymorphism through trait objects like Box<dyn Shape>, letting you store circles and squares in the same Vec and call .area() on each. = Rust supporta il polymorphism tramite trait object come Box<dyn Shape>, lasciandoti memorizzare cerchi e quadrati nello stesso Vec e chiamare .area() su ognuno."}},
-{"level":"6","lesson":"rust_enums_4","english":"Sum Type","set":{"example":"A Rust enum is a sum type: enum Shape { Circle(f64), Square(f64) } holds either a circle or a square, but never both values at once. = Un enum Rust è un sum type: enum Shape { Circle(f64), Square(f64) } contiene o un cerchio o un quadrato, ma mai entrambi i valori insieme."}},
-{"level":"6","lesson":"rust_enums_4","english":"Product Type","set":{"example":"A Rust struct is a product type: struct Point { x: f64, y: f64 } holds both x and y together, with the field set being their cartesian product. = Una struct Rust è un product type: struct Point { x: f64, y: f64 } contiene sia x che y insieme, con il set di campi che è il loro prodotto cartesiano."}},
-{"level":"6","lesson":"rust_enums_4","english":"Visitor Pattern","set":{"example":"Implement the visitor pattern in Rust with a trait whose methods correspond to enum variants, letting you add new operations without touching the enum. = Implementa il visitor pattern in Rust con un trait i cui metodi corrispondono alle varianti dell'enum, lasciandoti aggiungere nuove operazioni senza toccare l'enum."}},
-{"level":"6","lesson":"rust_enums_4","english":"Error Variant","set":{"example":"Add a dedicated error variant per failure cause, like enum DbError { Timeout, NotFound, Conflict }, so callers can pattern match precisely. = Aggiungi una error variant dedicata per causa di errore, come enum DbError { Timeout, NotFound, Conflict }, così i chiamanti possono fare pattern match in modo preciso."}},
-{"level":"6","lesson":"rust_enums_4","english":"Recursive Enum","set":{"example":"Define a recursive enum like enum Tree { Leaf(i32), Node(Box<Tree>, Box<Tree>) } where Box breaks the infinite size that would otherwise prevent compilation. = Definisci un recursive enum come enum Tree { Leaf(i32), Node(Box<Tree>, Box<Tree>) } dove Box rompe la dimensione infinita che altrimenti impedirebbe la compilazione."}},
-{"level":"6","lesson":"rust_enums_4","english":"Marker Variant","set":{"example":"Add a marker variant like enum Status { Active, Disabled, Tombstoned } to flag deleted rows without losing the original record from the database. = Aggiungi una marker variant come enum Status { Active, Disabled, Tombstoned } per segnalare righe cancellate senza perdere il record originale dal database."}},
-{"level":"7","lesson":"rust_error_handling_1","english":"Ok Variant","set":{"example":"In a Result<T, E> the Ok variant carries the successful value, so a function returning Ok(user) signals that the lookup succeeded with a User. = In un Result<T, E> la Ok variant porta il valore di successo, quindi una funzione che restituisce Ok(user) segnala che la lookup è riuscita con uno User."}},
-{"level":"7","lesson":"rust_error_handling_1","english":"Err Variant","set":{"example":"The Err variant of Result carries the failure value, like Err(DbError::NotFound) so the caller can match on the cause and react appropriately. = La Err variant di Result porta il valore di fallimento, come Err(DbError::NotFound) così il chiamante può fare match sulla causa e reagire appropriatamente."}},
-{"level":"7","lesson":"rust_error_handling_1","english":"Unwrap","set":{"italian":"unwrap","example":"Calling .unwrap() on a Result returns the Ok value or panics on Err, so reserve it for prototypes or cases where failure indicates a bug. = Chiamare .unwrap() su un Result restituisce il valore Ok o va in panic su Err, quindi riservalo a prototipi o casi in cui il fallimento indica un bug."}},
-{"level":"7","lesson":"rust_error_handling_1","english":"Expect","set":{"italian":"expect","example":"Prefer .expect(\"config file missing\") over .unwrap() because the panic message describes the invariant that was violated at the call site. = Preferisci .expect(\"config file missing\") rispetto a .unwrap() perché il messaggio di panic descrive l'invariante violata al sito di chiamata."}},
-{"level":"7","lesson":"rust_error_handling_1","english":"Question Mark","set":{"example":"The Rust question mark operator turns let user = find(id)?; into early-return-on-error syntax, propagating the Err value to the caller automatically. = L'operatore question mark di Rust trasforma let user = find(id)?; in una sintassi early-return-on-error, propagando il valore Err al chiamante automaticamente."}},
-{"level":"7","lesson":"rust_error_handling_1","english":"Error Propagation","set":{"example":"Use the ? operator for error propagation, as in let bytes = std::fs::read(path)?; which forwards any io::Error to the enclosing function. = Usa l'operatore ? per la error propagation, come in let bytes = std::fs::read(path)?; che inoltra qualsiasi io::Error alla funzione contenente."}},
-{"level":"7","lesson":"rust_error_handling_1","english":"Match Result","set":{"example":"Use match Result to handle both cases explicitly, like match parse(s) { Ok(n) => use(n), Err(e) => log(e) } in a robust parser loop. = Usa match Result per gestire entrambi i casi esplicitamente, come match parse(s) { Ok(n) => use(n), Err(e) => log(e) } in un loop di parser robusto."}},
-{"level":"7","lesson":"rust_error_handling_1","english":"Is Ok","set":{"example":"Call .is_ok() on a Result to test the success case without consuming it, useful in a quick boolean check like if response.is_ok() { metrics.bump(); }. = Chiama .is_ok() su un Result per testare il caso di successo senza consumarlo, utile in un check booleano rapido come if response.is_ok() { metrics.bump(); }."}},
-{"level":"7","lesson":"rust_error_handling_1","english":"Is Err","set":{"example":"Use .is_err() on a Result to short-circuit a retry loop, as in while attempt().is_err() && tries < 3 { tries += 1; } before giving up. = Usa .is_err() su un Result per cortocircuitare un loop di retry, come in while attempt().is_err() && tries < 3 { tries += 1; } prima di rinunciare."}},
-{"level":"7","lesson":"rust_error_handling_2","english":"Panic","set":{"italian":"panic","example":"In Rust a panic unwinds the current thread, printing a backtrace and aborting the program if it reaches main, used for unrecoverable bugs only. = In Rust un panic srotola il thread corrente, stampando un backtrace e abortendo il programma se raggiunge main, usato solo per bug non recuperabili."}},
-{"level":"7","lesson":"rust_error_handling_2","english":"Panic Macro","set":{"example":"Trigger a panic deliberately with the panic! macro, as in panic!(\"unreachable state: {kind:?}\") inside a match arm that should never run. = Genera un panic deliberatamente con la macro panic!, come in panic!(\"unreachable state: {kind:?}\") dentro un ramo match che non dovrebbe mai eseguirsi."}},
-{"level":"7","lesson":"rust_error_handling_2","english":"Panic Abort","set":{"example":"Set panic = \"abort\" in Cargo.toml to enable panic abort behavior, producing smaller binaries by skipping unwinding code at the cost of no cleanup. = Imposta panic = \"abort\" in Cargo.toml per abilitare il comportamento panic abort, producendo binari più piccoli saltando il codice di unwinding al costo di nessun cleanup."}},
-{"level":"7","lesson":"rust_error_handling_2","english":"Catch Unwind","set":{"example":"Wrap risky FFI-bound code with std::panic::catch_unwind to catch unwind from a panicking closure and convert it into a Result<T, Box<dyn Any>>. = Avvolgi codice rischioso legato all'FFI con std::panic::catch_unwind per fare catch unwind da una closure in panic e convertirlo in un Result<T, Box<dyn Any>>."}}
-]}
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Variable",
+      "set": {
+        "example": "In Rust, you declare a variable with the let keyword, and by default the binding is immutable unless you add mut. = In Rust, dichiari una variabile con la parola chiave let, e di default il binding è immutabile a meno che tu aggiunga mut."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Mutable",
+      "set": {
+        "example": "To increment a counter inside a loop you need a mutable binding, declared with let mut counter = 0 in the function. = Per incrementare un contatore dentro un ciclo serve un binding mutable, dichiarato con let mut counter = 0 nella funzione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Function",
+      "set": {
+        "example": "You define a reusable function in Rust with fn add(a: i32, b: i32) -> i32 and call it like add(2, 3) from main. = Definisci una funzione riutilizzabile in Rust con fn add(a: i32, b: i32) -> i32 e la chiami come add(2, 3) da main."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Main Function",
+      "set": {
+        "example": "Every Rust binary needs a main function with signature fn main() that serves as the program entry point. = Ogni binario Rust necessita di una main function con firma fn main() che funge da punto di ingresso del programma."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_1",
+      "english": "Expression",
+      "set": {
+        "example": "In Rust an expression like 2 + 3 produces a value, while a statement ends with a semicolon and produces no value. = In Rust una expression come 2 + 3 produce un valore, mentre uno statement termina con un punto e virgola e non produce valore."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Crate",
+      "set": {
+        "italian": "Crate",
+        "example": "A crate is the smallest compilation unit in Rust; running cargo build compiles your crate and all its dependencies. = Un crate è la più piccola unità di compilazione in Rust; eseguire cargo build compila il tuo crate e tutte le sue dipendenze.",
+        "note": "Loanword: in Rust si dice 'crate' anche in italiano."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Cargo New",
+      "set": {
+        "italian": "cargo new",
+        "example": "To start a new Rust project, run cargo new my_app which creates a folder with Cargo.toml and a src/main.rs file. = Per iniziare un nuovo progetto Rust, esegui cargo new my_app che crea una cartella con Cargo.toml e un file src/main.rs."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Cargo Build",
+      "set": {
+        "italian": "cargo build",
+        "example": "Running cargo build inside a project folder compiles all source files and produces a debug binary in target/debug. = Eseguire cargo build dentro la cartella di un progetto compila tutti i file sorgenti e produce un binario di debug in target/debug."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Cargo Run",
+      "set": {
+        "italian": "cargo run",
+        "example": "During development, cargo run is convenient because it compiles your code if needed and then executes the resulting binary. = Durante lo sviluppo, cargo run è comodo perché compila il tuo codice se necessario e poi esegue il binario risultante."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Rustc",
+      "set": {
+        "italian": "rustc",
+        "example": "The rustc command is the underlying Rust compiler; cargo invokes it for you with the right flags during a build. = Il comando rustc è il compilatore Rust sottostante; cargo lo invoca al posto tuo con i flag corretti durante una build."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Rustup",
+      "set": {
+        "italian": "rustup",
+        "example": "You install and switch between Rust toolchain versions using rustup, for example rustup default stable or rustup update. = Installi e cambi tra versioni della toolchain Rust usando rustup, ad esempio rustup default stable oppure rustup update."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_2",
+      "english": "Edition",
+      "set": {
+        "example": "The edition field in Cargo.toml, like edition = \"2021\", controls which language edition rustc uses for your crate. = Il campo edition in Cargo.toml, come edition = \"2021\", controlla quale edition del linguaggio rustc usa per il tuo crate."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Warning",
+      "set": {
+        "example": "During cargo build, an unused variable produces a warning but the program still compiles and runs successfully. = Durante cargo build, una variabile non usata produce un warning ma il programma viene comunque compilato ed eseguito con successo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Debug Build",
+      "set": {
+        "example": "By default cargo build produces a debug build with extra checks and debug symbols, slower than a release build but easier to debug. = Di default cargo build produce una debug build con controlli extra e simboli di debug, più lenta di una release build ma più facile da debuggare."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Cargo Check",
+      "set": {
+        "italian": "cargo check",
+        "example": "To quickly verify your code typechecks without producing a binary, run cargo check which is much faster than cargo build. = Per verificare rapidamente che il tuo codice passi il typecheck senza produrre un binario, esegui cargo check che è molto più veloce di cargo build."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Cargo Clean",
+      "set": {
+        "italian": "cargo clean",
+        "example": "When build artifacts grow large or appear stale, running cargo clean removes the target/ directory entirely. = Quando gli artefatti di build crescono molto o sembrano stantii, eseguire cargo clean rimuove interamente la directory target/."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Binary Crate",
+      "set": {
+        "example": "A binary crate has a src/main.rs entry point and produces an executable program, like a command-line tool you can run. = Un binary crate ha un punto di ingresso src/main.rs e produce un programma eseguibile, come uno strumento da riga di comando che puoi eseguire."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_3",
+      "english": "Library Crate",
+      "set": {
+        "example": "A library crate uses src/lib.rs and exposes reusable types and functions to other crates that declare it as a dependency. = Un library crate usa src/lib.rs ed espone tipi e funzioni riutilizzabili ad altri crate che lo dichiarano come dipendenza."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Comment",
+      "set": {
+        "example": "Use a single-line comment in Rust with // followed by text to explain why a piece of logic exists in your codebase. = Usa un comment a riga singola in Rust con // seguito da testo per spiegare perché una parte di logica esiste nel tuo codebase."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Block Comment",
+      "set": {
+        "example": "For long explanations spanning many lines, use a Rust block comment delimited by /* and */ that wraps the entire paragraph. = Per spiegazioni lunghe su più righe, usa un block comment Rust delimitato da /* e */ che racchiude l'intero paragrafo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Doc Comment",
+      "set": {
+        "example": "Write a doc comment with /// above a public function so cargo doc can generate HTML API documentation from it. = Scrivi un doc comment con /// sopra una funzione pubblica così cargo doc può generare documentazione API HTML da esso."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Pascal Case",
+      "set": {
+        "example": "In Rust, types and traits use Pascal Case, like struct HttpClient or trait DatabaseConnection in your modules. = In Rust, tipi e trait usano Pascal Case, come struct HttpClient o trait DatabaseConnection nei tuoi moduli."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Screaming Snake Case",
+      "set": {
+        "example": "By convention, constants in Rust use Screaming Snake Case, like const MAX_RETRIES: u32 = 5 declared at module level. = Per convenzione, le costanti in Rust usano Screaming Snake Case, come const MAX_RETRIES: u32 = 5 dichiarata a livello di modulo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Rustfmt",
+      "set": {
+        "italian": "rustfmt",
+        "example": "To enforce a consistent style across a Rust project, run cargo fmt which uses rustfmt under the hood to reformat all source files. = Per imporre uno stile consistente in un progetto Rust, esegui cargo fmt che usa rustfmt sotto il cofano per riformattare tutti i file sorgenti."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "rust_foundations_4",
+      "english": "Curly Braces",
+      "set": {
+        "example": "In Rust, curly braces delimit blocks for functions, if expressions, and loops, like fn main() { println!(\"hi\"); } in your code. = In Rust, le curly braces delimitano i blocchi per funzioni, espressioni if e cicli, come fn main() { println!(\"hi\"); } nel tuo codice."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_1",
+      "english": "Integer Overflow",
+      "set": {
+        "example": "Adding 1 to a u8 holding 255 causes an integer overflow which panics in debug builds and wraps around in release builds. = Sommare 1 a un u8 che contiene 255 causa un integer overflow che va in panic nelle build debug e fa wrap-around nelle build release."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "Bool",
+      "set": {
+        "italian": "bool",
+        "example": "You store a true or false value in Rust using the bool type, as in let is_ready: bool = false; in your function. = Memorizzi un valore vero o falso in Rust usando il tipo bool, come in let is_ready: bool = false; nella tua funzione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "Type Inference",
+      "set": {
+        "example": "Thanks to type inference, you can write let count = 42 and the compiler will deduce that count has type i32 by default. = Grazie alla type inference, puoi scrivere let count = 42 e il compilatore dedurrà che count ha tipo i32 di default."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_2",
+      "english": "Type Cast",
+      "set": {
+        "example": "To convert between numeric types in Rust you perform a type cast with the as keyword, like let big = small as u64; in your code. = Per convertire tra tipi numerici in Rust esegui un type cast con la parola chiave as, come let big = small as u64; nel tuo codice."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_3",
+      "english": "Range Expression",
+      "set": {
+        "example": "A range expression like 0..10 produces values from 0 up to but not including 10, often used in a for loop over indices. = Una range expression come 0..10 produce valori da 0 fino a 10 escluso, spesso usata in un ciclo for sugli indici."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "rust_types_4",
+      "english": "String Push",
+      "set": {
+        "example": "To append a single character to an owned Rust String, use s.push('!') which mutates the buffer in place and grows it if needed. = Per aggiungere un singolo carattere a una String Rust posseduta, usa s.push('!') che muta il buffer in place e lo fa crescere se necessario."
+      }
+    },
+    { "level": "1", "lesson": "rust_types_4", "english": "UTF-8", "set": { "italian": "UTF-8" } },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Else If",
+      "set": {
+        "example": "Chain alternative conditions in Rust with else if, like if x > 0 { ... } else if x < 0 { ... } else { ... } in your function. = Concatena condizioni alternative in Rust con else if, come if x > 0 { ... } else if x < 0 { ... } else { ... } nella tua funzione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Boolean Condition",
+      "set": {
+        "example": "An if expression in Rust requires a boolean condition, so you write if user.is_active { ... } rather than relying on truthy values. = Un'espressione if in Rust richiede una boolean condition, quindi scrivi if user.is_active { ... } invece di basarti su valori truthy."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Comparison Operator",
+      "set": {
+        "example": "Use the >= comparison operator in Rust to test if a value is at least some threshold, as in if age >= 18 { allow_entry(); } in your code. = Usa il comparison operator >= in Rust per verificare se un valore è almeno una soglia, come in if age >= 18 { allow_entry(); } nel tuo codice."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Logical NOT",
+      "set": {
+        "example": "In Rust the logical NOT is written with !, so if !user.is_logged_in() { redirect_to_login(); } inverts the boolean expression. = In Rust il logical NOT si scrive con !, quindi if !user.is_logged_in() { redirect_to_login(); } inverte l'espressione booleana."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_5",
+      "english": "Branch",
+      "set": {
+        "example": "Each arm of an if/else in Rust is a branch, and the compiler enforces that all branches return values of the same type. = Ogni ramo di un if/else in Rust è una branch, e il compilatore impone che tutte le branch restituiscano valori dello stesso tipo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Loop",
+      "set": {
+        "italian": "loop",
+        "example": "The unconditional loop keyword in Rust runs forever until you break out, useful for event loops like loop { handle_event(); } in a server. = La parola chiave loop incondizionata in Rust gira per sempre finché non fai break, utile per event loop come loop { handle_event(); } in un server."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "For Loop",
+      "set": {
+        "example": "Iterate over a vector in Rust with a for loop, like for item in items.iter() { println!(\"{item}\"); } in your function. = Itera su un vettore in Rust con un for loop, come for item in items.iter() { println!(\"{item}\"); } nella tua funzione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Break",
+      "set": {
+        "italian": "break",
+        "example": "Inside a Rust loop, use break to exit early when a condition is met, like if found { break; } after scanning a list. = Dentro un loop Rust, usa break per uscire in anticipo quando una condizione è soddisfatta, come if found { break; } dopo aver scansionato una lista."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Break With Value",
+      "set": {
+        "example": "You can return a value from a loop using break with value, like let result = loop { if done { break 42; } }; in your code. = Puoi restituire un valore da un loop usando break with value, come let result = loop { if done { break 42; } }; nel tuo codice."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Continue",
+      "set": {
+        "italian": "continue",
+        "example": "Use continue inside a Rust for loop to skip the current iteration, like for n in nums { if n < 0 { continue; } process(n); } in code. = Usa continue dentro un for loop Rust per saltare l'iterazione corrente, come for n in nums { if n < 0 { continue; } process(n); } nel codice."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Loop Label",
+      "set": {
+        "example": "Use a Rust loop label like 'outer: loop { ... break 'outer; ... } to break out of an outer loop from inside a nested one. = Usa una loop label Rust come 'outer: loop { ... break 'outer; ... } per uscire da un loop esterno da dentro uno annidato."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Iterator",
+      "set": {
+        "example": "Call .iter() on a vector to get an iterator, then chain .map() and .filter() to transform the sequence lazily before collecting. = Chiama .iter() su un vettore per ottenere un iterator, poi concatena .map() e .filter() per trasformare la sequenza in modo lazy prima di collect."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_6",
+      "english": "Reverse Iteration",
+      "set": {
+        "example": "For reverse iteration in Rust use .rev() on an iterator, as in for n in (1..=5).rev() { println!(\"{n}\"); } prints 5 down to 1. = Per la reverse iteration in Rust usa .rev() su un iteratore, come in for n in (1..=5).rev() { println!(\"{n}\"); } stampa da 5 a 1."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Match",
+      "set": {
+        "italian": "match",
+        "example": "Use match in Rust to handle every variant of an enum, like match opt { Some(x) => x, None => 0 } returning the inner value or zero. = Usa match in Rust per gestire ogni variante di un enum, come match opt { Some(x) => x, None => 0 } che restituisce il valore interno o zero."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Wildcard Pattern",
+      "set": {
+        "example": "In a Rust match, the underscore wildcard pattern catches any remaining case, like _ => println!(\"other\") to make the match exhaustive. = In un match Rust, il wildcard pattern underscore cattura qualsiasi caso rimanente, come _ => println!(\"other\") per rendere il match esaustivo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Pattern Matching",
+      "set": {
+        "italian": "pattern matching",
+        "example": "Rust supports pattern matching in match arms and let bindings, like let (x, y) = pair; which destructures a tuple into two values. = Rust supporta il pattern matching nei rami match e nei binding let, come let (x, y) = pair; che destruttura una tupla in due valori."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Match Guard",
+      "set": {
+        "example": "Add a match guard to a Rust arm with extra conditions, like Some(n) if n > 0 => println!(\"positive\"), to refine pattern matching. = Aggiungi una match guard a un ramo Rust con condizioni extra, come Some(n) if n > 0 => println!(\"positive\"), per raffinare il pattern matching."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Exhaustiveness",
+      "set": {
+        "example": "The Rust compiler enforces exhaustiveness in match: every possible variant of an enum must be handled or the code will not compile. = Il compilatore Rust impone l'exhaustiveness nel match: ogni variante possibile di un enum deve essere gestita o il codice non compila."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Or Pattern",
+      "set": {
+        "example": "Use an or pattern in a Rust match arm to combine cases, like 1 | 2 | 3 => println!(\"small\"), which fires for any of those values. = Usa un or pattern in un ramo match Rust per combinare casi, come 1 | 2 | 3 => println!(\"small\"), che scatta per uno qualsiasi di quei valori."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "Range Pattern",
+      "set": {
+        "example": "In a Rust match you can use a range pattern like 1..=9 => println!(\"single digit\") to match all integers from 1 through 9 inclusive. = In un match Rust puoi usare un range pattern come 1..=9 => println!(\"single digit\") per matchare tutti gli interi da 1 a 9 inclusi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_7",
+      "english": "If Let",
+      "set": {
+        "italian": "if let",
+        "example": "Use if let in Rust as a concise alternative to match for one case, like if let Some(x) = opt { use(x); } skipping the None branch. = Usa if let in Rust come alternativa concisa a match per un solo caso, come if let Some(x) = opt { use(x); } saltando il ramo None."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Function Parameter",
+      "set": {
+        "example": "In Rust each function parameter must have an explicit type, as in fn greet(name: &str) { println!(\"hi {name}\"); } in your module. = In Rust ogni function parameter deve avere un tipo esplicito, come in fn greet(name: &str) { println!(\"hi {name}\"); } nel tuo modulo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Explicit Return",
+      "set": {
+        "example": "While Rust uses the last expression as the value, you can use an explicit return statement to exit early, like return Err(e); in error paths. = Mentre Rust usa l'ultima espressione come valore, puoi usare un explicit return statement per uscire in anticipo, come return Err(e); nei percorsi di errore."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "rust_foundations_8",
+      "english": "Recursive Function",
+      "set": {
+        "example": "A recursive function in Rust calls itself, like fn factorial(n: u64) -> u64 { if n <= 1 { 1 } else { n * factorial(n - 1) } } in code. = Una recursive function in Rust chiama se stessa, come fn factorial(n: u64) -> u64 { if n <= 1 { 1 } else { n * factorial(n - 1) } } nel codice."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_1",
+      "english": "Owner",
+      "set": {
+        "example": "In Rust each value has exactly one owner at any time, and when the owner goes out of scope the value is automatically dropped. = In Rust ogni valore ha esattamente un owner in ogni momento, e quando l'owner esce dallo scope il valore viene rilasciato automaticamente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_1",
+      "english": "Move Semantics",
+      "set": {
+        "example": "Rust's move semantics mean that let b = a; transfers ownership of a String from a to b, after which a can no longer be used. = La move semantics di Rust significa che let b = a; trasferisce l'ownership di una String da a a b, dopodiché a non può più essere usata."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_1",
+      "english": "RAII",
+      "set": {
+        "italian": "RAII",
+        "example": "Rust applies the RAII idiom: a File acquired in a function is automatically closed when its handle goes out of scope, even on early return. = Rust applica l'idioma RAII: un File acquisito in una funzione viene chiuso automaticamente quando il suo handle esce dallo scope, anche su return anticipato."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_1",
+      "english": "Heap",
+      "set": {
+        "example": "A Rust Vec stores its elements on the heap so it can grow at runtime, while the Vec struct itself sits on the stack with a pointer. = Un Vec Rust memorizza i suoi elementi sull'heap così può crescere a runtime, mentre la struct Vec stessa sta sullo stack con un puntatore."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_1",
+      "english": "Stack",
+      "set": {
+        "example": "Local variables of fixed size, like an i32 or a small array, live on the stack and are reclaimed automatically when the function returns. = Le variabili locali di dimensione fissa, come un i32 o un piccolo array, vivono sullo stack e vengono rilasciate automaticamente al ritorno della funzione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_1",
+      "english": "Garbage Collector",
+      "set": {
+        "example": "Unlike Java or Go, Rust has no garbage collector at runtime; memory is freed deterministically via ownership and Drop implementations. = A differenza di Java o Go, Rust non ha un garbage collector a runtime; la memoria è liberata in modo deterministico tramite ownership e implementazioni di Drop."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Move",
+      "set": {
+        "italian": "move",
+        "example": "Passing a String to a function in Rust performs a move by default, so the caller can no longer use that String after the call. = Passare una String a una funzione in Rust esegue un move di default, quindi il chiamante non può più usare quella String dopo la chiamata."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Copy Trait",
+      "set": {
+        "example": "Primitive types like i32 implement the Copy trait, so let b = a; duplicates the value bitwise and a remains usable afterward. = Tipi primitivi come i32 implementano il Copy trait, quindi let b = a; duplica il valore bit per bit e a rimane utilizzabile dopo."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Clone",
+      "set": {
+        "italian": "Clone",
+        "example": "To deeply duplicate a String in Rust call s.clone(), which allocates a new heap buffer and copies the contents byte by byte. = Per duplicare profondamente una String in Rust chiama s.clone(), che alloca un nuovo buffer sull'heap e copia i contenuti byte per byte."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Clone Trait",
+      "set": {
+        "example": "Implement the Clone trait on your struct with #[derive(Clone)] so callers can create independent copies via instance.clone() in code. = Implementa il Clone trait sulla tua struct con #[derive(Clone)] così i chiamanti possono creare copie indipendenti tramite instance.clone() nel codice."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Shallow Copy",
+      "set": {
+        "example": "A shallow copy duplicates only the top-level fields like a pointer and length, leaving the underlying heap buffer shared between values. = Una shallow copy duplica solo i campi di primo livello come un puntatore e una lunghezza, lasciando il buffer heap sottostante condiviso tra i valori."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Deep Copy",
+      "set": {
+        "example": "Calling .clone() on a Vec<String> performs a deep copy, allocating new heap memory for each contained String rather than aliasing it. = Chiamare .clone() su un Vec<String> esegue una deep copy, allocando nuova memoria heap per ogni String contenuta invece di farne aliasing."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_2",
+      "english": "Use After Move",
+      "set": {
+        "example": "Trying to print a String after it was moved into another binding triggers a use after move error, caught at compile time by the borrow checker. = Tentare di stampare una String dopo che è stata spostata in un altro binding genera un errore use after move, intercettato a compile time dal borrow checker."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_3",
+      "english": "Destructor",
+      "set": {
+        "example": "Implement Drop on a Rust type to provide a destructor that closes file handles or releases locks when the value goes out of scope. = Implementa Drop su un tipo Rust per fornire un destructor che chiude handle di file o rilascia lock quando il valore esce dallo scope."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_3",
+      "english": "Memory Leak",
+      "set": {
+        "example": "Even in Rust you can create a memory leak by building a reference cycle of Rc<T> values that never reach a strong count of zero. = Anche in Rust puoi creare un memory leak costruendo un ciclo di riferimenti di valori Rc<T> che non raggiungono mai uno strong count pari a zero."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_3",
+      "english": "Double Free",
+      "set": {
+        "example": "Rust's ownership rules prevent a double free at compile time: only the current owner can drop the value, so two frees of the same buffer cannot happen. = Le regole di ownership di Rust prevengono un double free a compile time: solo l'owner corrente può rilasciare il valore, quindi due free dello stesso buffer non possono accadere."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_3",
+      "english": "Forget",
+      "set": {
+        "example": "Calling std::mem::forget on a value tells Rust not to run its destructor, useful when ownership is being passed to FFI code that takes over cleanup. = Chiamare std::mem::forget su un valore dice a Rust di non eseguire il suo destructor, utile quando l'ownership viene passata a codice FFI che si occupa della pulizia."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_3",
+      "english": "Swap",
+      "set": {
+        "example": "Use std::mem::swap(&mut a, &mut b) in Rust to exchange the contents of two mutable bindings without taking ownership of either value. = Usa std::mem::swap(&mut a, &mut b) in Rust per scambiare i contenuti di due binding mutabili senza prendere ownership di nessuno dei due valori."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_3",
+      "english": "Take",
+      "set": {
+        "example": "In Rust std::mem::take(&mut field) replaces field with its Default value and returns the original, often used to move data out of a struct. = In Rust std::mem::take(&mut field) sostituisce field con il suo valore Default e restituisce l'originale, spesso usato per spostare dati fuori da una struct."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_4",
+      "english": "Compile-Time Check",
+      "set": {
+        "example": "The Rust borrow checker performs a compile-time check that prevents dangling references, so memory safety bugs cannot reach production binaries. = Il borrow checker di Rust esegue un compile-time check che previene riferimenti penzolanti, quindi i bug di memory safety non possono raggiungere i binari di produzione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_4",
+      "english": "Zero Cost Abstraction",
+      "set": {
+        "example": "Rust iterators are a zero cost abstraction: a chained .map().filter().sum() compiles down to a tight loop equivalent to a hand-written one. = Gli iteratori Rust sono una zero cost abstraction: una catena .map().filter().sum() compila in un loop stretto equivalente a uno scritto a mano."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "rust_ownership_4",
+      "english": "Heap Allocation",
+      "set": {
+        "example": "Calling Box::new(value) in Rust performs a heap allocation, storing value on the heap and giving you a pointer-sized handle on the stack. = Chiamare Box::new(value) in Rust esegue una heap allocation, memorizzando value sull'heap e dandoti un handle dimensione puntatore sullo stack."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Borrow",
+      "set": {
+        "italian": "borrow",
+        "example": "In Rust you borrow a String by passing &s to a function, granting read-only access without transferring ownership to the callee. = In Rust fai un borrow di una String passando &s a una funzione, concedendo accesso in sola lettura senza trasferire ownership al chiamato."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Reference Operator",
+      "set": {
+        "example": "The & reference operator in Rust creates a shared reference, as in let r = &value; which lets you read value without taking ownership. = Il reference operator & in Rust crea un riferimento condiviso, come in let r = &value; che ti permette di leggere value senza prendere ownership."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Auto Deref",
+      "set": {
+        "example": "Thanks to Rust's auto deref, calling s.len() on a Box<String> works because the compiler inserts the * needed to reach the inner String. = Grazie all'auto deref di Rust, chiamare s.len() su un Box<String> funziona perché il compilatore inserisce l'* necessario per raggiungere la String interna."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_5",
+      "english": "Borrowing Rules",
+      "set": {
+        "example": "Rust's borrowing rules allow either many shared references or one exclusive mutable reference at any given time, but never both simultaneously. = Le borrowing rules di Rust permettono o molti riferimenti condivisi o un riferimento mutabile esclusivo in ogni momento, ma mai entrambi contemporaneamente."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_6",
+      "english": "Exclusive Reference",
+      "set": {
+        "example": "A &mut T in Rust is an exclusive reference: while it exists, no other reference to the same value, shared or mutable, may coexist. = Un &mut T in Rust è una exclusive reference: mentre esiste, nessun altro riferimento allo stesso valore, condiviso o mutabile, può coesistere."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_6",
+      "english": "Aliasing",
+      "set": {
+        "example": "Rust prevents data races by forbidding aliasing of mutable references, ensuring no two &mut pointers can refer to the same value at once. = Rust previene le data race vietando l'aliasing di riferimenti mutabili, garantendo che due puntatori &mut non possano riferirsi allo stesso valore simultaneamente."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_6",
+      "english": "Mut Keyword",
+      "set": {
+        "example": "In Rust the mut keyword marks a binding or reference as mutable, as in let mut count = 0; allowing you to reassign or modify it later. = In Rust la parola chiave mut marca un binding o un riferimento come mutabile, come in let mut count = 0; permettendoti di riassegnarlo o modificarlo dopo."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_7",
+      "english": "Dangling Pointer",
+      "set": {
+        "example": "Rust's borrow checker rejects code that would create a dangling pointer, such as returning a reference to a local variable from a function. = Il borrow checker di Rust rifiuta codice che creerebbe un dangling pointer, come restituire un riferimento a una variabile locale da una funzione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_7",
+      "english": "Borrow Conflict",
+      "set": {
+        "example": "Mutating a Vec while iterating over its shared reference triggers a borrow conflict, since shared and mutable borrows cannot overlap. = Mutare un Vec mentre si itera sul suo riferimento condiviso genera un borrow conflict, dato che borrow condivisi e mutabili non possono sovrapporsi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_7",
+      "english": "Borrow Lifetime",
+      "set": {
+        "example": "The Rust compiler tracks the borrow lifetime, ensuring a &str reference does not outlive the String it points into in any code path. = Il compilatore Rust traccia la borrow lifetime, assicurando che un riferimento &str non sopravviva alla String a cui punta in nessun percorso di codice."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_7",
+      "english": "Static Lifetime",
+      "set": {
+        "example": "A string literal in Rust has type &'static str with static lifetime, meaning it lives for the entire duration of the running program. = Una stringa letterale in Rust ha tipo &'static str con static lifetime, ovvero vive per l'intera durata del programma in esecuzione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_7",
+      "english": "Cannot Borrow",
+      "set": {
+        "example": "The error cannot borrow x as mutable because it is also borrowed as immutable appears when shared and exclusive borrows overlap in scope. = L'errore cannot borrow x as mutable because it is also borrowed as immutable appare quando borrow condivisi ed esclusivi si sovrappongono nello scope."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Slice Length",
+      "set": {
+        "example": "Call .len() on a slice to get its slice length, as in let n = numbers[1..4].len(); which returns 3 for a three-element window. = Chiama .len() su una slice per ottenere la sua slice length, come in let n = numbers[1..4].len(); che restituisce 3 per una finestra di tre elementi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Empty Slice",
+      "set": {
+        "example": "An empty slice like &arr[2..2] has length zero, which is useful as a sentinel return when no elements satisfy a search condition. = Una empty slice come &arr[2..2] ha lunghezza zero, utile come ritorno sentinella quando nessun elemento soddisfa una condizione di ricerca."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Slice From Vec",
+      "set": {
+        "example": "Take a slice from Vec in Rust with &v[..] or &v[1..3], passing a borrowed view of the data into functions expecting a &[T] parameter. = Prendi una slice from Vec in Rust con &v[..] oppure &v[1..3], passando una vista presa in prestito dei dati a funzioni che si aspettano un parametro &[T]."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Slice Indexing",
+      "set": {
+        "example": "Use slice indexing like nums[2] to read an element, but an out-of-bounds index causes a panic instead of returning undefined behavior. = Usa lo slice indexing come nums[2] per leggere un elemento, ma un indice fuori dai limiti causa un panic invece di restituire undefined behavior."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Field",
+      "set": {
+        "example": "Access a field on a Rust struct with dot notation, as in let name = user.name; where name is a String field declared on the struct. = Accedi a un field su una struct Rust con notazione punto, come in let name = user.name; dove name è un campo String dichiarato sulla struct."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Field Access",
+      "set": {
+        "example": "In Rust field access through a reference uses auto-deref, so r.email works on both User and &User without an explicit dereference. = In Rust il field access tramite un riferimento usa auto-deref, quindi r.email funziona sia su User che su &User senza dereferenziazione esplicita."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Struct Update",
+      "set": {
+        "example": "Use Rust struct update syntax like User { email: new_email, ..old_user } to copy remaining fields from old_user into the new instance. = Usa la sintassi struct update di Rust come User { email: new_email, ..old_user } per copiare i campi rimanenti da old_user nella nuova istanza."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Tuple Struct",
+      "set": {
+        "example": "Declare a tuple struct in Rust like struct Point(f64, f64); and access its fields positionally with p.0 and p.1 in your functions. = Dichiara una tuple struct in Rust come struct Point(f64, f64); e accedi ai suoi campi posizionalmente con p.0 e p.1 nelle tue funzioni."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Unit Struct",
+      "set": {
+        "example": "A unit struct like struct Marker; has no fields and is useful as a type-level tag, often combined with PhantomData for generic markers. = Una unit struct come struct Marker; non ha campi ed è utile come tag a livello di tipo, spesso combinata con PhantomData per marker generici."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Pub Field",
+      "set": {
+        "example": "Mark a struct field as public with the pub keyword, as in struct Config { pub host: String }, exposing host to other modules. = Marca un campo struct come pubblico con la parola chiave pub, come in struct Config { pub host: String }, esponendo host ad altri moduli."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_1",
+      "english": "Encapsulation",
+      "set": {
+        "example": "In Rust encapsulation is enforced at the module level: private fields are accessible only from within the module that defines the struct. = In Rust l'encapsulation è imposta a livello di modulo: i campi privati sono accessibili solo dall'interno del modulo che definisce la struct."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Self Parameter",
+      "set": {
+        "example": "In a Rust method, &self is the self parameter that borrows the receiver immutably, like fn area(&self) -> f64 on a Rectangle struct. = In un metodo Rust, &self è il self parameter che fa borrow del receiver in modo immutabile, come fn area(&self) -> f64 su una struct Rectangle."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Associated Function",
+      "set": {
+        "example": "A Rust associated function declared without self, like fn new(width: u32, height: u32) -> Self, is called as Rectangle::new(10, 20). = Una associated function Rust dichiarata senza self, come fn new(width: u32, height: u32) -> Self, viene chiamata come Rectangle::new(10, 20)."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Self Type",
+      "set": {
+        "example": "Inside an impl block, the Self type refers to the type being implemented, so you can write fn default() -> Self { ... } to return a fresh instance. = Dentro un blocco impl, il tipo Self si riferisce al tipo implementato, quindi puoi scrivere fn default() -> Self { ... } per restituire una nuova istanza."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Method Chain",
+      "set": {
+        "example": "A method chain in Rust like builder.host(\"localhost\").port(8080).build() relies on each method returning Self to keep the chain going. = Una method chain in Rust come builder.host(\"localhost\").port(8080).build() dipende dal fatto che ogni metodo restituisca Self per continuare la catena."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Derive Attribute",
+      "set": {
+        "example": "Use a derive attribute like #[derive(Debug, Clone)] above a struct so the compiler implements those traits for you automatically. = Usa un derive attribute come #[derive(Debug, Clone)] sopra una struct così il compilatore implementa quei trait per te automaticamente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Debug Trait",
+      "set": {
+        "example": "Derive the Debug trait with #[derive(Debug)] so you can print a struct using the {:?} format specifier, like println!(\"{:?}\", config); in code. = Deriva il Debug trait con #[derive(Debug)] così puoi stampare una struct usando il format specifier {:?}, come println!(\"{:?}\", config); nel codice."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Display Trait",
+      "set": {
+        "example": "Implement the Display trait by writing fmt::Display for your struct so callers can use {} format and get human-friendly output. = Implementa il Display trait scrivendo fmt::Display per la tua struct così i chiamanti possono usare il formato {} e ottenere output amichevole."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Eq Trait",
+      "set": {
+        "example": "Derive the Eq trait alongside PartialEq for types where equality is reflexive and total, like an enum UserRole with three discrete variants. = Deriva il Eq trait insieme a PartialEq per tipi dove l'uguaglianza è riflessiva e totale, come un enum UserRole con tre varianti discrete."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Hash Trait",
+      "set": {
+        "example": "Derive the Hash trait on a struct so instances can be used as keys in a HashMap, with #[derive(Hash, Eq, PartialEq)] above the definition. = Deriva il Hash trait su una struct così le istanze possono essere usate come chiavi in una HashMap, con #[derive(Hash, Eq, PartialEq)] sopra la definizione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Clone Derive",
+      "set": {
+        "example": "Add a clone derive like #[derive(Clone)] to give your struct a .clone() method that copies every field according to its own Clone behavior. = Aggiungi un clone derive come #[derive(Clone)] per dare alla tua struct un metodo .clone() che copia ogni campo secondo il proprio comportamento Clone."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Ord Trait",
+      "set": {
+        "example": "Derive the Ord trait so a Vec of your type can be sorted with v.sort(), which calls cmp on each pair to produce a total ordering. = Deriva il Ord trait così un Vec del tuo tipo può essere ordinato con v.sort(), che chiama cmp su ogni coppia per produrre un ordinamento totale."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_3",
+      "english": "Custom Derive",
+      "set": {
+        "example": "A custom derive macro like #[derive(Serialize)] from serde generates code at compile time so your struct can be encoded as JSON. = Una custom derive macro come #[derive(Serialize)] di serde genera codice a compile time così la tua struct può essere codificata come JSON."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_4",
+      "english": "Private Field",
+      "set": {
+        "example": "A struct field without pub is a private field, only accessible from inside the defining module, which enforces invariants like non-empty buffers. = Un campo struct senza pub è un private field, accessibile solo dall'interno del modulo che lo definisce, il che impone invarianti come buffer non vuoti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_4",
+      "english": "Repr C",
+      "set": {
+        "example": "Annotate a Rust struct with #[repr(C)] to give it a C-compatible memory layout, required when passing instances across an FFI boundary. = Annota una struct Rust con #[repr(C)] per darle un layout di memoria compatibile con C, necessario quando passi istanze attraverso un confine FFI."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Variant",
+      "set": {
+        "example": "Each option of a Rust enum is a variant, like Some and None inside enum Option<T> { Some(T), None } in the standard library. = Ogni opzione di un enum Rust è una variant, come Some e None dentro enum Option<T> { Some(T), None } nella libreria standard."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Tagged Union",
+      "set": {
+        "example": "A Rust enum is a tagged union: each value stores both a discriminant indicating the variant and the data carried by that variant. = Un enum Rust è una tagged union: ogni valore memorizza sia un discriminante che indica la variante sia i dati portati da quella variante."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Variant With Data",
+      "set": {
+        "example": "Define a variant with data like enum Shape { Circle(f64), Rectangle { w: f64, h: f64 } } where each arm carries its own payload. = Definisci una variant with data come enum Shape { Circle(f64), Rectangle { w: f64, h: f64 } } dove ogni ramo porta il proprio payload."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Struct-Like Variant",
+      "set": {
+        "example": "A struct-like variant in Rust uses named fields, like enum Event { Click { x: i32, y: i32 } } so you can pattern match on x and y directly. = Una struct-like variant in Rust usa campi nominati, come enum Event { Click { x: i32, y: i32 } } così puoi fare pattern matching su x e y direttamente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Enum Method",
+      "set": {
+        "example": "Add an enum method via impl, like impl Direction { fn opposite(&self) -> Self { ... } } so callers can write current.opposite() in code. = Aggiungi un enum method tramite impl, come impl Direction { fn opposite(&self) -> Self { ... } } così i chiamanti possono scrivere current.opposite() nel codice."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Repr U8",
+      "set": {
+        "example": "Annotate an enum with #[repr(u8)] to force a one-byte discriminant, useful when matching the binary layout of a network protocol header. = Annota un enum con #[repr(u8)] per forzare un discriminante di un byte, utile quando si fa matching del layout binario di un header di protocollo di rete."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_1",
+      "english": "Empty Enum",
+      "set": {
+        "example": "An empty enum like enum Never {} has no variants and no values, often used as a never-type placeholder in generic error-handling code. = Un empty enum come enum Never {} non ha varianti né valori, spesso usato come placeholder never-type in codice generico di gestione errori."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Option Type",
+      "set": {
+        "example": "Use the Rust Option type to represent a value that may be absent, like fn find_user(id: u64) -> Option<User> returning Some or None. = Usa il tipo Option di Rust per rappresentare un valore che potrebbe essere assente, come fn find_user(id: u64) -> Option<User> che restituisce Some o None."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Unwrap",
+      "set": {
+        "italian": "unwrap",
+        "example": "Calling .unwrap() on an Option returns the inner value if it is Some, or panics with a generic message if the value is None at runtime. = Chiamare .unwrap() su un Option restituisce il valore interno se è Some, o va in panic con un messaggio generico se il valore è None a runtime."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Unwrap Or",
+      "set": {
+        "example": "Use .unwrap_or(default) on an Option to return the inner value when present or a fallback otherwise, like config.timeout.unwrap_or(30) for seconds. = Usa .unwrap_or(default) su un Option per restituire il valore interno quando presente o un fallback altrimenti, come config.timeout.unwrap_or(30) per i secondi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Map",
+      "set": {
+        "example": "Calling .map(|x| x * 2) on Some(5) gives Some(10) while .map on None stays None, transforming the inner value only when present. = Chiamare .map(|x| x * 2) su Some(5) dà Some(10) mentre .map su None resta None, trasformando il valore interno solo quando presente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "And Then",
+      "set": {
+        "example": "Use .and_then(|user| user.email()) on an Option<User> to chain a fallible lookup that itself returns an Option, avoiding nested matches. = Usa .and_then(|user| user.email()) su un Option<User> per concatenare una lookup fallibile che a sua volta restituisce un Option, evitando match annidati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Is None",
+      "set": {
+        "example": "Check whether an Option is empty without consuming it by calling .is_none(), as in if cache.is_none() { populate_cache(); } in startup code. = Verifica se un Option è vuoto senza consumarlo chiamando .is_none(), come in if cache.is_none() { populate_cache(); } nel codice di avvio."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Take",
+      "set": {
+        "example": "Use .take() on an Option<T> field to move the value out and leave None behind, often used in Drop implementations and builder patterns. = Usa .take() su un campo Option<T> per spostare fuori il valore e lasciare None al suo posto, spesso usato in implementazioni di Drop e pattern builder."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "Match Exhaustiveness",
+      "set": {
+        "example": "The Rust compiler enforces match exhaustiveness on enums: if you add a new variant, every match expression without _ stops compiling. = Il compilatore Rust impone la match exhaustiveness sugli enum: se aggiungi una nuova variante, ogni espressione match senza _ smette di compilare."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "Struct Pattern",
+      "set": {
+        "example": "Destructure with a struct pattern in a match arm like Point { x, y } => println!(\"{x},{y}\") to bind both fields by name at once. = Destruttura con uno struct pattern in un ramo match come Point { x, y } => println!(\"{x},{y}\") per legare entrambi i campi per nome in un colpo solo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "Tuple Pattern",
+      "set": {
+        "example": "Use a tuple pattern like let (status, body) = response.split(); to destructure a (u16, String) returned by an HTTP helper function. = Usa un tuple pattern come let (status, body) = response.split(); per destrutturare una (u16, String) restituita da una funzione HTTP di supporto."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "If Let",
+      "set": {
+        "italian": "if let",
+        "example": "Prefer if let Ok(value) = parse_int(s) over a full match when you only care about the success case and want to ignore the error branch. = Preferisci if let Ok(value) = parse_int(s) rispetto a un match completo quando ti interessa solo il caso di successo e vuoi ignorare il ramo errore."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "While Let",
+      "set": {
+        "example": "Use while let Some(item) = stack.pop() to drain a Vec one element at a time, exiting the loop automatically when pop() returns None. = Usa while let Some(item) = stack.pop() per svuotare un Vec un elemento alla volta, uscendo dal loop automaticamente quando pop() restituisce None."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "Rest Pattern",
+      "set": {
+        "example": "Use a rest pattern like [first, .., last] in a slice match to bind only the boundary elements and ignore everything in between. = Usa un rest pattern come [first, .., last] in un match su slice per legare solo gli elementi al bordo e ignorare tutto ciò che sta in mezzo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "State Machine",
+      "set": {
+        "example": "Model a TCP connection as a state machine with enum State { Closed, Listen, Established, Closing } and transitions encoded as methods. = Modella una connessione TCP come una state machine con enum State { Closed, Listen, Established, Closing } e transizioni codificate come metodi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Type State",
+      "set": {
+        "example": "With Rust's type state pattern, an HttpRequest<Unbuilt> exposes .body() while HttpRequest<Built> only exposes .send(), enforced at compile time. = Con il pattern type state di Rust, un HttpRequest<Unbuilt> espone .body() mentre HttpRequest<Built> espone solo .send(), imposto a compile time."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Polymorphism",
+      "set": {
+        "example": "Rust supports polymorphism through trait objects like Box<dyn Shape>, letting you store circles and squares in the same Vec and call .area() on each. = Rust supporta il polymorphism tramite trait object come Box<dyn Shape>, lasciandoti memorizzare cerchi e quadrati nello stesso Vec e chiamare .area() su ognuno."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Sum Type",
+      "set": {
+        "example": "A Rust enum is a sum type: enum Shape { Circle(f64), Square(f64) } holds either a circle or a square, but never both values at once. = Un enum Rust è un sum type: enum Shape { Circle(f64), Square(f64) } contiene o un cerchio o un quadrato, ma mai entrambi i valori insieme."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Product Type",
+      "set": {
+        "example": "A Rust struct is a product type: struct Point { x: f64, y: f64 } holds both x and y together, with the field set being their cartesian product. = Una struct Rust è un product type: struct Point { x: f64, y: f64 } contiene sia x che y insieme, con il set di campi che è il loro prodotto cartesiano."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Visitor Pattern",
+      "set": {
+        "example": "Implement the visitor pattern in Rust with a trait whose methods correspond to enum variants, letting you add new operations without touching the enum. = Implementa il visitor pattern in Rust con un trait i cui metodi corrispondono alle varianti dell'enum, lasciandoti aggiungere nuove operazioni senza toccare l'enum."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Error Variant",
+      "set": {
+        "example": "Add a dedicated error variant per failure cause, like enum DbError { Timeout, NotFound, Conflict }, so callers can pattern match precisely. = Aggiungi una error variant dedicata per causa di errore, come enum DbError { Timeout, NotFound, Conflict }, così i chiamanti possono fare pattern match in modo preciso."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Recursive Enum",
+      "set": {
+        "example": "Define a recursive enum like enum Tree { Leaf(i32), Node(Box<Tree>, Box<Tree>) } where Box breaks the infinite size that would otherwise prevent compilation. = Definisci un recursive enum come enum Tree { Leaf(i32), Node(Box<Tree>, Box<Tree>) } dove Box rompe la dimensione infinita che altrimenti impedirebbe la compilazione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_4",
+      "english": "Marker Variant",
+      "set": {
+        "example": "Add a marker variant like enum Status { Active, Disabled, Tombstoned } to flag deleted rows without losing the original record from the database. = Aggiungi una marker variant come enum Status { Active, Disabled, Tombstoned } per segnalare righe cancellate senza perdere il record originale dal database."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Ok Variant",
+      "set": {
+        "example": "In a Result<T, E> the Ok variant carries the successful value, so a function returning Ok(user) signals that the lookup succeeded with a User. = In un Result<T, E> la Ok variant porta il valore di successo, quindi una funzione che restituisce Ok(user) segnala che la lookup è riuscita con uno User."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Err Variant",
+      "set": {
+        "example": "The Err variant of Result carries the failure value, like Err(DbError::NotFound) so the caller can match on the cause and react appropriately. = La Err variant di Result porta il valore di fallimento, come Err(DbError::NotFound) così il chiamante può fare match sulla causa e reagire appropriatamente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Unwrap",
+      "set": {
+        "italian": "unwrap",
+        "example": "Calling .unwrap() on a Result returns the Ok value or panics on Err, so reserve it for prototypes or cases where failure indicates a bug. = Chiamare .unwrap() su un Result restituisce il valore Ok o va in panic su Err, quindi riservalo a prototipi o casi in cui il fallimento indica un bug."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Expect",
+      "set": {
+        "italian": "expect",
+        "example": "Prefer .expect(\"config file missing\") over .unwrap() because the panic message describes the invariant that was violated at the call site. = Preferisci .expect(\"config file missing\") rispetto a .unwrap() perché il messaggio di panic descrive l'invariante violata al sito di chiamata."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Question Mark",
+      "set": {
+        "example": "The Rust question mark operator turns let user = find(id)?; into early-return-on-error syntax, propagating the Err value to the caller automatically. = L'operatore question mark di Rust trasforma let user = find(id)?; in una sintassi early-return-on-error, propagando il valore Err al chiamante automaticamente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Error Propagation",
+      "set": {
+        "example": "Use the ? operator for error propagation, as in let bytes = std::fs::read(path)?; which forwards any io::Error to the enclosing function. = Usa l'operatore ? per la error propagation, come in let bytes = std::fs::read(path)?; che inoltra qualsiasi io::Error alla funzione contenente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Match Result",
+      "set": {
+        "example": "Use match Result to handle both cases explicitly, like match parse(s) { Ok(n) => use(n), Err(e) => log(e) } in a robust parser loop. = Usa match Result per gestire entrambi i casi esplicitamente, come match parse(s) { Ok(n) => use(n), Err(e) => log(e) } in un loop di parser robusto."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Is Ok",
+      "set": {
+        "example": "Call .is_ok() on a Result to test the success case without consuming it, useful in a quick boolean check like if response.is_ok() { metrics.bump(); }. = Chiama .is_ok() su un Result per testare il caso di successo senza consumarlo, utile in un check booleano rapido come if response.is_ok() { metrics.bump(); }."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Is Err",
+      "set": {
+        "example": "Use .is_err() on a Result to short-circuit a retry loop, as in while attempt().is_err() && tries < 3 { tries += 1; } before giving up. = Usa .is_err() su un Result per cortocircuitare un loop di retry, come in while attempt().is_err() && tries < 3 { tries += 1; } prima di rinunciare."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Panic",
+      "set": {
+        "italian": "panic",
+        "example": "In Rust a panic unwinds the current thread, printing a backtrace and aborting the program if it reaches main, used for unrecoverable bugs only. = In Rust un panic srotola il thread corrente, stampando un backtrace e abortendo il programma se raggiunge main, usato solo per bug non recuperabili."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Panic Macro",
+      "set": {
+        "example": "Trigger a panic deliberately with the panic! macro, as in panic!(\"unreachable state: {kind:?}\") inside a match arm that should never run. = Genera un panic deliberatamente con la macro panic!, come in panic!(\"unreachable state: {kind:?}\") dentro un ramo match che non dovrebbe mai eseguirsi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Panic Abort",
+      "set": {
+        "example": "Set panic = \"abort\" in Cargo.toml to enable panic abort behavior, producing smaller binaries by skipping unwinding code at the cost of no cleanup. = Imposta panic = \"abort\" in Cargo.toml per abilitare il comportamento panic abort, producendo binari più piccoli saltando il codice di unwinding al costo di nessun cleanup."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Catch Unwind",
+      "set": {
+        "example": "Wrap risky FFI-bound code with std::panic::catch_unwind to catch unwind from a panicking closure and convert it into a Result<T, Box<dyn Any>>. = Avvolgi codice rischioso legato all'FFI con std::panic::catch_unwind per fare catch unwind da una closure in panic e convertirlo in un Result<T, Box<dyn Any>>."
+      }
+    }
+  ]
+}

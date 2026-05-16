@@ -1,162 +1,1423 @@
-{"fixes":[
-{"level":"19","lesson":"db_nosql_15","english":"Recommendation","set":{"example":"Build a product recommendation engine using a graph database to traverse user preferences and similar purchases in real time. = Costruisci un motore di raccomandazione prodotti usando un database a grafo per attraversare preferenze utente e acquisti simili in tempo reale."}},
-{"level":"19","lesson":"db_nosql_15","english":"Fraud Detection","set":{"example":"Apply graph-based fraud detection to spot rings of accounts sharing devices, addresses, and payment methods within seconds. = Applica il rilevamento frodi basato su grafi per individuare reti di account che condividono dispositivi, indirizzi e metodi di pagamento in pochi secondi."}},
-{"level":"19","lesson":"db_nosql_15","english":"Knowledge Graph","set":{"italian":"Grafo della conoscenza","example":"Wikidata is a public knowledge graph that connects entities, properties, and relationships across millions of topics. = Wikidata è un grafo della conoscenza pubblico che collega entità, proprietà e relazioni tra milioni di argomenti."}},
-{"level":"19","lesson":"db_nosql_16","english":"Neo4j","set":{"italian":"Neo4j","example":"Neo4j stores nodes and relationships as first-class citizens, making graph traversals far faster than recursive SQL joins. = Neo4j memorizza nodi e relazioni come cittadini di prima classe, rendendo le traversate del grafo molto più veloci dei join SQL ricorsivi."}},
-{"level":"19","lesson":"db_nosql_16","english":"ArangoDB","set":{"italian":"ArangoDB","example":"Use ArangoDB when you need a single engine that handles documents, graphs, and key-value data with one query language. = Usa ArangoDB quando ti serve un singolo motore che gestisce documenti, grafi e dati chiave-valore con un unico linguaggio di query."}},
-{"level":"19","lesson":"db_nosql_16","english":"JanusGraph","set":{"italian":"JanusGraph","example":"JanusGraph scales graph workloads horizontally on top of Cassandra or HBase, supporting graphs with billions of edges. = JanusGraph scala i carichi grafo orizzontalmente sopra Cassandra o HBase, supportando grafi con miliardi di archi."}},
-{"level":"19","lesson":"db_nosql_16","english":"Amazon Neptune","set":{"italian":"Amazon Neptune","example":"Pick Amazon Neptune for a fully managed graph database that supports both Gremlin and SPARQL on AWS infrastructure. = Scegli Amazon Neptune per un database a grafo completamente gestito che supporta sia Gremlin che SPARQL su infrastruttura AWS."}},
-{"level":"19","lesson":"db_nosql_16","english":"Gremlin","set":{"italian":"Gremlin","example":"Traverse a social graph with Gremlin: g.V().has('user','name','Alice').out('follows').values('name'). = Attraversa un grafo sociale con Gremlin: g.V().has('user','name','Alice').out('follows').values('name')."}},
-{"level":"19","lesson":"db_nosql_16","english":"TinkerPop","set":{"italian":"TinkerPop","example":"Apache TinkerPop provides a vendor-neutral graph framework so that Gremlin queries run on Neptune, JanusGraph, and Neo4j alike. = Apache TinkerPop fornisce un framework grafo neutrale rispetto al vendor in modo che le query Gremlin girino su Neptune, JanusGraph e Neo4j."}},
-{"level":"19","lesson":"db_nosql_16","english":"SPARQL","set":{"italian":"SPARQL","example":"Query an RDF triple store with SPARQL: SELECT ?city WHERE { ?city rdf:type :Capital ; :country :Italy } . = Interroga un triple store RDF con SPARQL: SELECT ?city WHERE { ?city rdf:type :Capital ; :country :Italy } ."}},
-{"level":"19","lesson":"db_nosql_16","english":"GQL","set":{"italian":"GQL","example":"ISO/IEC GQL aims to standardize property graph querying the way SQL did for relational databases decades ago. = ISO/IEC GQL mira a standardizzare le query sui property graph come SQL ha fatto per i database relazionali decenni fa."}},
-{"level":"19","lesson":"db_nosql_16","english":"Native Graph Storage","set":{"italian":"Storage grafo nativo","example":"With native graph storage each relationship is a physical pointer, so a friend-of-friend query stays O(1) per hop. = Con lo storage grafo nativo ogni relazione è un puntatore fisico, quindi una query amico-di-amico resta O(1) per salto."}},
-{"level":"19","lesson":"db_nosql_16","english":"Index-Free Adjacency","set":{"italian":"Adiacenza senza indice","example":"Thanks to index-free adjacency, Neo4j traverses a million edges without consulting any B-tree lookup structures. = Grazie all'adiacenza senza indice, Neo4j attraversa un milione di archi senza consultare strutture di lookup B-tree."}},
-{"level":"20","lesson":"db_analytics_1","english":"Time Series","set":{"italian":"Serie temporale","example":"Store CPU usage as a time series with one sample per second to plot daily and weekly utilization patterns. = Memorizza l'utilizzo CPU come serie temporale con un campione al secondo per tracciare schemi di utilizzo giornalieri e settimanali."}},
-{"level":"20","lesson":"db_analytics_1","english":"TSDB","set":{"italian":"TSDB","example":"Reach for a TSDB like InfluxDB or Prometheus when ingesting millions of timestamped metrics per minute from sensors and services. = Affidati a un TSDB come InfluxDB o Prometheus quando ingerisci milioni di metriche con timestamp al minuto da sensori e servizi."}},
-{"level":"20","lesson":"db_analytics_1","english":"Tag","set":{"italian":"Tag","example":"In InfluxDB, attach a host=web01 tag to each metric so you can group dashboards by server without scanning every row. = In InfluxDB, allega un tag host=web01 a ogni metrica così puoi raggruppare i dashboard per server senza scansionare ogni riga."}},
-{"level":"20","lesson":"db_analytics_1","english":"Field","set":{"english":"Time-Series Field","italian":"Campo time-series","example":"In a TSDB the numeric field stores the measured value, while tags carry the indexed labels used for filtering. = In un TSDB il campo time-series memorizza il valore misurato, mentre i tag portano le etichette indicizzate usate per filtrare."}},
-{"level":"20","lesson":"db_analytics_1","english":"Measurement","set":{"italian":"Misura","example":"Each cpu_usage measurement in InfluxDB groups together the same metric collected across many hosts and time points. = Ogni misura cpu_usage in InfluxDB raggruppa la stessa metrica raccolta da molti host e istanti temporali."}},
-{"level":"20","lesson":"db_analytics_1","english":"High Cardinality","set":{"italian":"Alta cardinalità","example":"Avoid putting request IDs into tags: the resulting high cardinality will blow up TSDB memory and slow every query down. = Evita di mettere request ID nei tag: l'alta cardinalità risultante farà esplodere la memoria del TSDB e rallenterà ogni query."}},
-{"level":"20","lesson":"db_analytics_1","english":"Time Bucket","set":{"example":"Group readings into one-minute time buckets to compute average temperature without scanning every raw sample. = Raggruppa le letture in time bucket di un minuto per calcolare la temperatura media senza scansionare ogni campione grezzo."}},
-{"level":"20","lesson":"db_analytics_1","english":"Window Aggregate","set":{"italian":"Aggregato a finestra","example":"Use a window aggregate to compute the rolling 5-minute average error rate over the last hour of API traffic. = Usa un aggregato a finestra per calcolare la media mobile a 5 minuti del tasso di errore sull'ultima ora di traffico API."}},
-{"level":"20","lesson":"db_analytics_1","english":"Cardinality Explosion","set":{"example":"A cardinality explosion happened after adding user_id as a label, ballooning the metric series from 1k to 10M overnight. = Un'esplosione di cardinalità è avvenuta dopo aver aggiunto user_id come label, gonfiando le serie metriche da 1k a 10M in una notte."}},
-{"level":"20","lesson":"db_analytics_2","english":"Retention Policy","set":{"example":"Define a retention policy of 30 days for raw metrics and 1 year for hourly aggregates to balance cost and history. = Definisci una politica di retention di 30 giorni per le metriche grezze e 1 anno per gli aggregati orari per bilanciare costo e storico."}},
-{"level":"20","lesson":"db_analytics_2","english":"Downsampling","set":{"italian":"Downsampling","example":"Apply downsampling to reduce one-second samples into one-minute averages once the data crosses the 7-day mark. = Applica il downsampling per ridurre i campioni al secondo in medie al minuto una volta che i dati superano i 7 giorni."}},
-{"level":"20","lesson":"db_analytics_2","english":"Continuous Aggregate","set":{"italian":"Aggregato continuo","example":"A TimescaleDB continuous aggregate keeps an hourly summary up to date automatically as new raw rows arrive. = Un aggregato continuo TimescaleDB mantiene aggiornato un riassunto orario automaticamente man mano che arrivano nuove righe grezze."}},
-{"level":"20","lesson":"db_analytics_2","english":"Compression","set":{"italian":"Compressione","example":"Enable native compression on chunks older than 7 days to cut TimescaleDB storage by up to 95% for typical time-series workloads. = Abilita la compressione nativa sui chunk più vecchi di 7 giorni per ridurre lo storage TimescaleDB fino al 95% per carichi time-series tipici."}},
-{"level":"20","lesson":"db_analytics_2","english":"Hypertable","set":{"italian":"Hypertable","example":"Convert a regular metrics table into a TimescaleDB hypertable so that inserts are automatically partitioned by time and space. = Converti una tabella metriche regolare in una hypertable TimescaleDB così che gli insert siano partizionati automaticamente per tempo e spazio."}},
-{"level":"20","lesson":"db_analytics_2","english":"Chunk","set":{"italian":"Chunk","example":"Each TimescaleDB chunk covers a one-day slice of a hypertable, making it trivial to drop or compress old data. = Ogni chunk TimescaleDB copre una fetta di un giorno di una hypertable, rendendo banale eliminare o comprimere i dati vecchi."}},
-{"level":"20","lesson":"db_analytics_2","english":"Drop Chunks","set":{"italian":"Drop chunks","example":"Schedule a drop_chunks job nightly to delete metric chunks older than 90 days and reclaim disk space on the analytics node. = Pianifica un job drop_chunks notturno per eliminare i chunk di metriche più vecchi di 90 giorni e recuperare spazio disco sul nodo analytics."}},
-{"level":"20","lesson":"db_analytics_2","english":"TTL (TSDB)","set":{"italian":"TTL (TSDB)","example":"Set a TTL of 14 days on Cassandra metric rows so old data expires automatically without expensive DELETE queries. = Imposta un TTL di 14 giorni sulle righe di metriche Cassandra così i dati vecchi scadono automaticamente senza costose query DELETE."}},
-{"level":"20","lesson":"db_analytics_2","english":"Cold Storage","set":{"example":"Tier metrics older than 6 months to S3 cold storage so that the hot TSDB stays small while history remains queryable. = Sposta le metriche più vecchie di 6 mesi su storage freddo S3 così che il TSDB caldo resti piccolo mentre lo storico resta interrogabile."}},
-{"level":"20","lesson":"db_analytics_3","english":"InfluxDB","set":{"italian":"InfluxDB","example":"Pipe Telegraf agents directly into InfluxDB to collect server metrics every 10 seconds with built-in retention policies. = Manda gli agenti Telegraf direttamente in InfluxDB per raccogliere metriche server ogni 10 secondi con politiche di retention integrate."}},
-{"level":"20","lesson":"db_analytics_3","english":"InfluxQL","set":{"italian":"InfluxQL","example":"Run a SQL-like InfluxQL query: SELECT mean(value) FROM cpu WHERE time > now() - 1h GROUP BY time(1m). = Esegui una query InfluxQL in stile SQL: SELECT mean(value) FROM cpu WHERE time > now() - 1h GROUP BY time(1m)."}},
-{"level":"20","lesson":"db_analytics_3","english":"Flux","set":{"italian":"Flux","example":"Express a Flux pipeline like from(bucket:\"metrics\") |> range(start:-1h) |> mean() to compose data sources and transforms. = Esprimi una pipeline Flux come from(bucket:\"metrics\") |> range(start:-1h) |> mean() per comporre fonti dati e trasformazioni."}},
-{"level":"20","lesson":"db_analytics_3","english":"TimescaleDB","set":{"italian":"TimescaleDB","example":"Adopt TimescaleDB when your team already speaks PostgreSQL but needs hypertables and continuous aggregates for telemetry. = Adotta TimescaleDB quando il tuo team già parla PostgreSQL ma serve hypertable e aggregati continui per la telemetria."}},
-{"level":"20","lesson":"db_analytics_3","english":"Prometheus","set":{"italian":"Prometheus","example":"Prometheus scrapes /metrics endpoints every 15 seconds and stores the samples in a local time-series database on disk. = Prometheus fa scraping degli endpoint /metrics ogni 15 secondi e memorizza i campioni in un database time-series locale su disco."}},
-{"level":"20","lesson":"db_analytics_3","english":"PromQL","set":{"italian":"PromQL","example":"Write a PromQL expression like rate(http_requests_total[5m]) to measure per-second request rate over a 5-minute window. = Scrivi un'espressione PromQL come rate(http_requests_total[5m]) per misurare il tasso di richieste al secondo su una finestra di 5 minuti."}},
-{"level":"20","lesson":"db_analytics_3","english":"Graphite","set":{"italian":"Graphite","example":"Legacy stacks still pipe StatsD metrics into Graphite, which stores them as Whisper files organized by metric name. = Stack legacy ancora mandano metriche StatsD in Graphite, che le memorizza come file Whisper organizzati per nome metrica."}},
-{"level":"20","lesson":"db_analytics_3","english":"OpenTSDB","set":{"italian":"OpenTSDB","example":"OpenTSDB stores time-series points on top of HBase, making it a fit for clusters already running the Hadoop stack. = OpenTSDB memorizza punti time-series sopra HBase, rendendolo adatto a cluster che già eseguono lo stack Hadoop."}},
-{"level":"20","lesson":"db_analytics_3","english":"VictoriaMetrics","set":{"italian":"VictoriaMetrics","example":"Replace Prometheus with VictoriaMetrics when retention exceeds 6 months and you need lower memory per active series. = Sostituisci Prometheus con VictoriaMetrics quando la retention supera i 6 mesi e serve meno memoria per serie attiva."}},
-{"level":"20","lesson":"db_analytics_3","english":"QuestDB","set":{"italian":"QuestDB","example":"QuestDB ingests millions of rows per second using SIMD-accelerated SQL, ideal for financial tick data workloads. = QuestDB ingerisce milioni di righe al secondo usando SQL accelerato con SIMD, ideale per carichi di tick data finanziari."}},
-{"level":"20","lesson":"db_analytics_4","english":"IoT Data","set":{"example":"Stream IoT data from 50k thermostats into Kafka, then land it in a TSDB partitioned by device and hour for analytics. = Manda in streaming dati IoT da 50k termostati in Kafka, poi atterra in un TSDB partizionato per dispositivo e ora per analytics."}},
-{"level":"20","lesson":"db_analytics_4","english":"Sensor Data","set":{"example":"Ingest temperature and vibration sensor data from a wind turbine fleet at 1 Hz to detect anomalies before failures occur. = Ingerisci dati sensore di temperatura e vibrazione da una flotta di turbine eoliche a 1 Hz per rilevare anomalie prima dei guasti."}},
-{"level":"20","lesson":"db_analytics_4","english":"Telemetry","set":{"italian":"Telemetria","example":"Ship OpenTelemetry telemetry from every microservice to a central collector so SREs can correlate traces, metrics, and logs. = Invia telemetria OpenTelemetry da ogni microservizio a un collector centrale così gli SRE possono correlare trace, metriche e log."}},
-{"level":"20","lesson":"db_analytics_4","english":"Counter","set":{"italian":"Contatore","example":"A request counter only ever increases, so we always compute rate(counter[5m]) instead of plotting the raw value. = Un contatore di richieste può solo crescere, quindi calcoliamo sempre rate(counter[5m]) invece di tracciare il valore grezzo."}},
-{"level":"20","lesson":"db_analytics_4","english":"Gauge","set":{"italian":"Gauge","example":"CPU temperature is exposed as a gauge metric because the value can go up or down between successive scrapes. = La temperatura CPU è esposta come metrica gauge perché il valore può salire o scendere tra scrape successivi."}},
-{"level":"20","lesson":"db_analytics_4","english":"Histogram","set":{"english":"Time-Series Histogram","italian":"Istogramma time-series","example":"A Prometheus time-series histogram bucket counts how many requests completed in under 100ms, 250ms, and 1s respectively. = Un istogramma time-series Prometheus conta quante richieste sono completate sotto 100ms, 250ms e 1s rispettivamente."}},
-{"level":"20","lesson":"db_analytics_4","english":"Summary","set":{"italian":"Summary","example":"Prefer histogram over summary when you need to aggregate quantiles across multiple instances at query time. = Preferisci histogram a summary quando devi aggregare i quantili tra più istanze a tempo di query."}},
-{"level":"20","lesson":"db_analytics_4","english":"Alerting","set":{"italian":"Alerting","example":"Configure alerting rules in Alertmanager so PagerDuty wakes the on-call engineer when p99 latency exceeds 500 ms for 5 minutes. = Configura regole di alerting in Alertmanager così PagerDuty sveglia l'ingegnere reperibile quando la latenza p99 supera 500 ms per 5 minuti."}},
-{"level":"20","lesson":"db_analytics_4","english":"Grafana","set":{"italian":"Grafana","example":"Build a Grafana dashboard that overlays Prometheus latency metrics with Loki logs to debug spikes in a single pane. = Costruisci una dashboard Grafana che sovrappone le metriche di latenza Prometheus con i log Loki per debuggare gli spike in un unico pannello."}},
-{"level":"20","lesson":"db_analytics_4","english":"Scrape","set":{"italian":"Scrape","example":"Prometheus performs a scrape every 15 seconds, pulling the /metrics endpoint of each registered service target. = Prometheus esegue uno scrape ogni 15 secondi, prelevando l'endpoint /metrics di ogni target servizio registrato."}},
-{"level":"21","lesson":"db_analytics_5","english":"ETL","set":{"italian":"ETL","example":"A nightly ETL job pulls orders from Postgres, scrubs PII, and loads aggregates into Snowflake for the BI team. = Un job ETL notturno preleva gli ordini da Postgres, ripulisce le PII e carica gli aggregati in Snowflake per il team BI."}},
-{"level":"21","lesson":"db_analytics_5","english":"ELT","set":{"italian":"ELT","example":"In modern ELT pipelines we land raw events into BigQuery first and then transform with dbt models on the warehouse. = Nelle pipeline ELT moderne facciamo prima atterrare gli eventi grezzi in BigQuery e poi trasformiamo con modelli dbt sul warehouse."}},
-{"level":"21","lesson":"db_analytics_5","english":"Extract","set":{"english":"ETL Extract Step","italian":"Estrazione ETL","example":"The ETL extract step reads from source MySQL replicas every hour, capturing only rows changed since the last watermark. = L'estrazione ETL legge dalle repliche MySQL sorgente ogni ora, catturando solo le righe cambiate dall'ultimo watermark."}},
-{"level":"21","lesson":"db_analytics_5","english":"Transform","set":{"italian":"Trasforma","example":"During the transform phase, dbt models join raw orders with customers and cast amount columns into a canonical USD currency. = Durante la fase di trasformazione, i modelli dbt uniscono ordini grezzi con clienti e convertono le colonne importo in valuta canonica USD."}},
-{"level":"21","lesson":"db_analytics_5","english":"Load","set":{"italian":"Carica","example":"The pipeline must load the cleaned dataset into Snowflake before 6 AM so morning dashboards reflect yesterday's numbers. = La pipeline deve caricare il dataset pulito in Snowflake prima delle 6 del mattino così i dashboard mattutini riflettono i numeri di ieri."}},
-{"level":"21","lesson":"db_analytics_5","english":"Batch Processing","set":{"italian":"Elaborazione batch","example":"Nightly batch processing recomputes the full customer lifetime value table because real-time updates are not required. = L'elaborazione batch notturna ricalcola l'intera tabella customer lifetime value perché aggiornamenti in tempo reale non servono."}},
-{"level":"21","lesson":"db_analytics_5","english":"Data Source","set":{"example":"Register Salesforce as a new data source in Fivetran and schedule incremental syncs every 15 minutes into the warehouse. = Registra Salesforce come nuova fonte dati in Fivetran e pianifica sync incrementali ogni 15 minuti nel warehouse."}},
-{"level":"21","lesson":"db_analytics_5","english":"Data Sink","set":{"example":"Configure the Kafka Connect sink to write cleansed events into Elasticsearch for full-text search on customer support tickets. = Configura il sink Kafka Connect per scrivere eventi puliti in Elasticsearch per la ricerca full-text su ticket di supporto clienti."}},
-{"level":"21","lesson":"db_analytics_5","english":"Idempotency","set":{"example":"Achieve idempotency in the pipeline by using a stable primary key so reruns merge rows instead of duplicating them. = Ottieni l'idempotenza nella pipeline usando una chiave primaria stabile così i rerun fanno merge delle righe invece di duplicarle."}},
-{"level":"21","lesson":"db_analytics_5","english":"Backfill","set":{"italian":"Backfill","example":"Run a backfill for the past 30 days after fixing the bug, reprocessing all events through the corrected transformation logic. = Esegui un backfill degli ultimi 30 giorni dopo aver fixato il bug, riprocessando tutti gli eventi con la logica di trasformazione corretta."}},
-{"level":"21","lesson":"db_analytics_6","english":"CDC","set":{"italian":"CDC","example":"Stream OLTP changes via CDC so the data warehouse stays within a 5-second lag without polling every table on a schedule. = Manda in streaming i cambi OLTP via CDC così il warehouse resta entro 5 secondi di lag senza fare polling di ogni tabella a intervalli."}},
-{"level":"21","lesson":"db_analytics_6","english":"Debezium","set":{"italian":"Debezium","example":"Deploy Debezium connectors to tail the Postgres WAL and emit row-level change events onto a Kafka topic in near real time. = Deploya connettori Debezium per leggere il WAL Postgres ed emettere eventi di cambio a livello riga su un topic Kafka in quasi tempo reale."}},
-{"level":"21","lesson":"db_analytics_6","english":"Kafka","set":{"italian":"Kafka","example":"Use Kafka as the central event bus so payments, fraud, and analytics services consume the same stream independently and at their own pace. = Usa Kafka come bus eventi centrale così i servizi pagamenti, frodi e analytics consumano lo stesso stream indipendentemente al loro ritmo."}},
-{"level":"21","lesson":"db_analytics_6","english":"Topic","set":{"italian":"Topic","example":"Create a Kafka topic named orders.created with 12 partitions to let downstream consumers process events in parallel by key. = Crea un topic Kafka chiamato orders.created con 12 partizioni per consentire ai consumatori downstream di processare gli eventi in parallelo per chiave."}},
-{"level":"21","lesson":"db_analytics_6","english":"Producer","set":{"italian":"Producer","example":"The checkout service acts as a Kafka producer, publishing one order.created message per successful transaction with acks=all. = Il servizio checkout agisce da producer Kafka, pubblicando un messaggio order.created per ogni transazione riuscita con acks=all."}},
-{"level":"21","lesson":"db_analytics_6","english":"Consumer","set":{"italian":"Consumer","example":"The billing service runs as a Kafka consumer group, splitting the order.created topic partitions across three pods. = Il servizio billing gira come consumer group Kafka, dividendo le partizioni del topic order.created tra tre pod."}},
-{"level":"21","lesson":"db_analytics_6","english":"Partition","set":{"example":"Pick user_id as the Kafka partition key so all events for one user land in the same partition and stay ordered. = Scegli user_id come chiave di partizione Kafka così tutti gli eventi di un utente atterrano nella stessa partizione e restano ordinati."}},
-{"level":"21","lesson":"db_analytics_6","english":"Stream Processing","set":{"italian":"Stream processing","example":"Stream processing with Flink computes a rolling 1-minute fraud score on every payment event without waiting for batch jobs. = Lo stream processing con Flink calcola uno score frodi a finestra mobile di 1 minuto su ogni evento pagamento senza attendere job batch."}},
-{"level":"21","lesson":"db_analytics_6","english":"Apache Flink","set":{"italian":"Apache Flink","example":"Apache Flink runs stateful streaming jobs with exactly-once semantics, ideal for real-time fraud detection on payment streams. = Apache Flink esegue job streaming stateful con semantica exactly-once, ideale per rilevamento frodi in tempo reale su stream di pagamenti."}},
-{"level":"21","lesson":"db_analytics_7","english":"Apache Airflow","set":{"italian":"Apache Airflow","example":"Schedule a 50-task data pipeline in Apache Airflow with retries, SLAs, and Slack alerts on every DAG failure. = Pianifica una pipeline dati da 50 task in Apache Airflow con retry, SLA e alert Slack a ogni fallimento del DAG."}},
-{"level":"21","lesson":"db_analytics_7","english":"DAG","set":{"italian":"DAG","example":"Define an Airflow DAG where the load_orders task depends on extract_orders, ensuring the right execution order. = Definisci un DAG Airflow dove il task load_orders dipende da extract_orders, garantendo il corretto ordine di esecuzione."}},
-{"level":"21","lesson":"db_analytics_7","english":"Operator","set":{"italian":"Operator","example":"Use the PostgresOperator in Airflow to execute a SQL aggregation against the analytics database as part of the nightly DAG. = Usa il PostgresOperator in Airflow per eseguire un'aggregazione SQL contro il database analytics come parte del DAG notturno."}},
-{"level":"21","lesson":"db_analytics_7","english":"Task","set":{"italian":"Task","example":"Mark the heavy aggregation task as idempotent so Airflow can retry it three times without polluting downstream tables. = Marca il task di aggregazione pesante come idempotente così Airflow può ritentarlo tre volte senza sporcare le tabelle downstream."}},
-{"level":"21","lesson":"db_analytics_7","english":"Schedule","set":{"italian":"Pianificazione","example":"Set the DAG schedule to 0 2 * * * so the pipeline runs every night at 02:00 UTC, after the OLTP backup completes. = Imposta la pianificazione del DAG a 0 2 * * * così la pipeline gira ogni notte alle 02:00 UTC, dopo che il backup OLTP completa."}},
-{"level":"21","lesson":"db_analytics_7","english":"Dagster","set":{"italian":"Dagster","example":"Adopt Dagster when you want software-defined assets and asset materialization graphs rather than imperative Airflow tasks. = Adotta Dagster quando vuoi asset definiti via software e grafi di materializzazione asset invece di task imperativi Airflow."}},
-{"level":"21","lesson":"db_analytics_7","english":"Prefect","set":{"italian":"Prefect","example":"Prefect 2 represents pipelines as plain Python flows, so engineers reuse normal control flow and dependency injection patterns. = Prefect 2 rappresenta le pipeline come normali flow Python, così gli ingegneri riusano i pattern di controllo di flusso e dependency injection."}},
-{"level":"21","lesson":"db_analytics_7","english":"Lineage","set":{"italian":"Lineage","example":"OpenLineage captures column-level lineage across dbt and Spark, so analysts can trace where the revenue column actually comes from. = OpenLineage cattura il lineage a livello colonna tra dbt e Spark, così gli analisti possono tracciare da dove arriva davvero la colonna revenue."}},
-{"level":"21","lesson":"db_analytics_7","english":"SLA","set":{"italian":"SLA","example":"Set an SLA of 4 hours on the daily revenue DAG so PagerDuty fires whenever the pipeline misses its delivery window. = Imposta un SLA di 4 ore sul DAG revenue giornaliero così PagerDuty scatta quando la pipeline manca la finestra di consegna."}},
-{"level":"21","lesson":"db_analytics_8","english":"dbt","set":{"italian":"dbt","example":"Use dbt to express warehouse transformations as version-controlled SQL models with tests, docs, and DAG-based execution. = Usa dbt per esprimere le trasformazioni di warehouse come modelli SQL versionati con test, documentazione ed esecuzione basata su DAG."}},
-{"level":"21","lesson":"db_analytics_8","english":"Model","set":{"italian":"Model dbt","example":"Each dbt model is a SELECT statement materialized as a table or view in the warehouse and tied to its sources via ref(). = Ogni model dbt è uno statement SELECT materializzato come tabella o vista nel warehouse e legato alle sue sorgenti via ref()."}},
-{"level":"21","lesson":"db_analytics_8","english":"Seed","set":{"italian":"Seed","example":"Check a small countries.csv into the dbt project and load it as a seed table to enrich orders with country names. = Inserisci un piccolo countries.csv nel progetto dbt e caricalo come tabella seed per arricchire gli ordini con nomi di paese."}},
-{"level":"21","lesson":"db_analytics_8","english":"Test","set":{"italian":"Test dbt","example":"Add a not_null and unique test on order_id in dbt so the CI pipeline fails before bad data reaches BI dashboards. = Aggiungi un test not_null e unique su order_id in dbt così la pipeline CI fallisce prima che dati cattivi raggiungano i dashboard BI."}},
-{"level":"21","lesson":"db_analytics_8","english":"Schema Drift","set":{"italian":"Schema drift","example":"Detect schema drift in source tables by failing the dbt run when a new column appears or a type changes unexpectedly. = Rileva lo schema drift nelle tabelle sorgente facendo fallire il run dbt quando appare una nuova colonna o un tipo cambia inaspettatamente."}},
-{"level":"21","lesson":"db_analytics_8","english":"Data Contract","set":{"italian":"Data contract","example":"Publish a data contract that promises orders.amount stays non-null and in USD, so downstream teams build with confidence. = Pubblica un data contract che promette che orders.amount resta non-null e in USD, così i team downstream costruiscono con fiducia."}},
-{"level":"21","lesson":"db_analytics_8","english":"Data Quality","set":{"example":"Run nightly data quality checks that compare row counts and column sums between source MySQL and Snowflake mirrors. = Esegui controlli di data quality notturni che confrontano conteggi righe e somme colonne tra MySQL sorgente e mirror Snowflake."}},
-{"level":"21","lesson":"db_analytics_8","english":"Great Expectations","set":{"italian":"Great Expectations","example":"Wire Great Expectations into Airflow so every batch run validates orders against a suite of expectations before publishing. = Aggancia Great Expectations a Airflow così ogni run batch valida gli ordini contro una suite di expectation prima di pubblicare."}},
-{"level":"21","lesson":"db_analytics_8","english":"Data Catalog","set":{"example":"Index the warehouse into a data catalog like DataHub so analysts can search column lineage and ownership without asking the team. = Indicizza il warehouse in un data catalog come DataHub così gli analisti possono cercare lineage e ownership delle colonne senza chiedere al team."}},
-{"level":"21","lesson":"db_analytics_8","english":"Apache Spark","set":{"italian":"Apache Spark","example":"Run a daily Apache Spark job on EMR to join 5 TB of clickstream with the user dimension table and write Parquet to S3. = Esegui un job Apache Spark giornaliero su EMR per unire 5 TB di clickstream con la tabella dimension utente e scrivere Parquet su S3."}},
-{"level":"22","lesson":"db_transactions_5","english":"Locking","set":{"italian":"Locking","example":"Aggressive row-level locking on the inventory table caused checkout to stall whenever a single SKU went viral on social media. = Un locking aggressivo a livello riga sulla tabella inventory ha bloccato il checkout ogni volta che una singola SKU diventava virale sui social."}},
-{"level":"22","lesson":"db_transactions_5","english":"SELECT FOR UPDATE","set":{"italian":"SELECT FOR UPDATE","example":"Run SELECT FOR UPDATE on the wallet row before debiting it so concurrent transfers serialize instead of double-spending. = Esegui SELECT FOR UPDATE sulla riga wallet prima di addebitarla così trasferimenti concorrenti si serializzano invece di fare double-spending."}},
-{"level":"22","lesson":"db_transactions_5","english":"SELECT FOR SHARE","set":{"italian":"SELECT FOR SHARE","example":"Use SELECT FOR SHARE when reading a referenced parent row that must not be deleted before the child insert commits. = Usa SELECT FOR SHARE quando leggi una riga padre referenziata che non deve essere eliminata prima che l'insert figlio committi."}},
-{"level":"22","lesson":"db_transactions_5","english":"NOWAIT","set":{"italian":"NOWAIT","example":"Append NOWAIT to SELECT FOR UPDATE so the API returns a 409 immediately instead of hanging when the row is already locked. = Aggiungi NOWAIT a SELECT FOR UPDATE così l'API ritorna subito un 409 invece di restare appesa quando la riga è già lockata."}},
-{"level":"22","lesson":"db_transactions_5","english":"SKIP LOCKED","set":{"italian":"SKIP LOCKED","example":"Implement a job queue in Postgres using SELECT ... FOR UPDATE SKIP LOCKED so multiple workers pull different rows safely. = Implementa una coda di job in Postgres usando SELECT ... FOR UPDATE SKIP LOCKED così più worker prendono righe diverse in modo sicuro."}},
-{"level":"22","lesson":"db_transactions_5","english":"Advisory Lock","set":{"italian":"Advisory lock","example":"Take a Postgres advisory lock keyed by tenant_id so only one background job per tenant runs at a time across the fleet. = Prendi un advisory lock Postgres chiavato su tenant_id così solo un job in background per tenant gira alla volta sulla flotta."}},
-{"level":"22","lesson":"db_transactions_5","english":"Lock Timeout","set":{"example":"Set lock_timeout=5s in Postgres so a runaway transaction cannot block production writes for longer than five seconds. = Imposta lock_timeout=5s in Postgres così una transazione fuori controllo non possa bloccare le scritture di produzione per più di cinque secondi."}},
-{"level":"22","lesson":"db_transactions_5","english":"Statement Timeout","set":{"example":"Enable statement_timeout=30s on the analytics user so heavy ad-hoc queries cannot starve OLTP connections indefinitely. = Abilita statement_timeout=30s sull'utente analytics così pesanti query ad-hoc non possano affamare le connessioni OLTP indefinitamente."}},
-{"level":"22","lesson":"db_transactions_5","english":"Granular Locking","set":{"example":"InnoDB's granular locking lets two transactions update different rows in the same table without ever blocking each other. = Il locking granulare di InnoDB permette a due transazioni di aggiornare righe diverse della stessa tabella senza mai bloccarsi a vicenda."}},
-{"level":"22","lesson":"db_transactions_6","english":"Deadlock","set":{"english":"Cycle Deadlock","italian":"Deadlock ciclico","example":"A cycle deadlock happened when transaction A locked accounts(1) then accounts(2) while B did the reverse, forcing the engine to abort B. = Un deadlock ciclico è avvenuto quando la transazione A ha lockato accounts(1) poi accounts(2) mentre B faceva il contrario, costringendo il motore ad abortire B."}},
-{"level":"22","lesson":"db_transactions_6","english":"Wait-For Graph","set":{"italian":"Wait-for graph","example":"The database periodically inspects the wait-for graph looking for cycles, and when it finds one it picks a victim transaction to abort. = Il database ispeziona periodicamente il wait-for graph cercando cicli, e quando ne trova uno sceglie una transazione vittima da abortire."}},
-{"level":"22","lesson":"db_transactions_6","english":"Deadlock Victim","set":{"example":"Postgres logged transaction 4711 as the deadlock victim because it had performed the least amount of work so far. = Postgres ha loggato la transazione 4711 come vittima del deadlock perché aveva svolto la minor quantità di lavoro fino a quel momento."}},
-{"level":"22","lesson":"db_transactions_6","english":"Lock Order","set":{"example":"Enforce a global lock order such as accounts before transactions in every code path so deadlocks become impossible by construction. = Imponi un ordine di lock globale come accounts prima di transactions in ogni percorso di codice così i deadlock diventano impossibili per costruzione."}},
-{"level":"22","lesson":"db_transactions_6","english":"Lost Update","set":{"italian":"Aggiornamento perduto","example":"A lost update occurs when two clients read counter=10, both add 1, and the second write overwrites the first without seeing it. = Un aggiornamento perduto succede quando due client leggono counter=10, entrambi aggiungono 1, e la seconda scrittura sovrascrive la prima senza vederla."}},
-{"level":"22","lesson":"db_transactions_6","english":"Write Skew","set":{"italian":"Write skew","example":"Write skew lets two doctors both go off-call because each transaction reads enough remaining doctors but writes change the invariant. = Il write skew permette a due dottori di togliersi dalla reperibilità perché ogni transazione legge abbastanza dottori residui ma le scritture cambiano l'invariante."}},
-{"level":"22","lesson":"db_transactions_7","english":"MVCC","set":{"english":"PostgreSQL MVCC","italian":"PostgreSQL MVCC","example":"In PostgreSQL MVCC, readers never block writers because each transaction sees a snapshot of the row versions visible at start time. = In PostgreSQL MVCC, i lettori non bloccano mai gli scrittori perché ogni transazione vede uno snapshot delle versioni di riga visibili al suo inizio."}},
-{"level":"22","lesson":"db_transactions_7","english":"Tuple Version","set":{"example":"Each UPDATE produces a new tuple version with fresh xmin so old readers continue to see the previous row without waiting. = Ogni UPDATE produce una nuova versione di tupla con xmin fresco così i vecchi lettori continuano a vedere la riga precedente senza attendere."}},
-{"level":"22","lesson":"db_transactions_7","english":"XID","set":{"italian":"XID","example":"Postgres assigns a new XID to every write transaction, and once it crosses 2 billion you must vacuum to prevent wraparound. = Postgres assegna un nuovo XID a ogni transazione di scrittura, e una volta superati i 2 miliardi devi fare vacuum per evitare il wraparound."}},
-{"level":"22","lesson":"db_transactions_7","english":"XMIN","set":{"italian":"XMIN","example":"The xmin column on a tuple records which transaction created that row version, so MVCC can decide whether each snapshot can see it. = La colonna xmin di una tupla registra quale transazione ha creato quella versione di riga, così MVCC può decidere se ogni snapshot può vederla."}},
-{"level":"22","lesson":"db_transactions_7","english":"XMAX","set":{"italian":"XMAX","example":"Postgres stamps xmax on a tuple when a transaction deletes or updates it, marking the row version as obsolete for newer snapshots. = Postgres marca xmax su una tupla quando una transazione la elimina o aggiorna, segnando la versione di riga come obsoleta per snapshot più nuovi."}},
-{"level":"22","lesson":"db_transactions_7","english":"Visibility","set":{"example":"MVCC visibility rules compare a snapshot's xmin and xmax bounds against each tuple's stamps to decide which row version a query may read. = Le regole di visibility MVCC confrontano i bound xmin e xmax di uno snapshot con i timbri di ogni tupla per decidere quale versione di riga una query può leggere."}},
-{"level":"22","lesson":"db_transactions_7","english":"Bloat","set":{"italian":"Bloat","example":"Heavy UPDATEs without aggressive vacuum left the orders table 4x its expected size in bloat, slowing every sequential scan. = Pesanti UPDATE senza vacuum aggressivo hanno lasciato la tabella orders 4 volte la sua dimensione attesa in bloat, rallentando ogni sequential scan."}},
-{"level":"22","lesson":"db_transactions_7","english":"Dead Tuple","set":{"example":"Each obsolete row version stays on disk as a dead tuple until autovacuum reclaims it and updates the visibility map. = Ogni versione di riga obsoleta resta su disco come tupla morta finché autovacuum non la recupera e aggiorna la visibility map."}},
-{"level":"22","lesson":"db_transactions_7","english":"HOT Update","set":{"italian":"HOT update","example":"A HOT update keeps the new tuple version on the same page when no indexed column changed, avoiding extra index bloat in PostgreSQL. = Un HOT update mantiene la nuova versione di tupla sulla stessa pagina quando nessuna colonna indicizzata è cambiata, evitando extra index bloat in PostgreSQL."}},
-{"level":"22","lesson":"db_transactions_8","english":"Optimistic Concurrency","set":{"italian":"Concorrenza ottimistica","example":"With optimistic concurrency, the UPDATE includes WHERE version=$1 and bumps version, so stale writers are simply rejected with 0 rows affected. = Con la concorrenza ottimistica, l'UPDATE include WHERE version=$1 e incrementa version, così scrittori stantii sono semplicemente rifiutati con 0 righe affette."}},
-{"level":"22","lesson":"db_transactions_8","english":"Pessimistic Concurrency","set":{"italian":"Concorrenza pessimistica","example":"Pessimistic concurrency takes a row lock up front, ideal for short critical sections where conflicts are common and retries expensive. = La concorrenza pessimistica prende un lock di riga in anticipo, ideale per sezioni critiche brevi dove i conflitti sono comuni e i retry costosi."}},
-{"level":"22","lesson":"db_transactions_8","english":"Compare-and-Set","set":{"italian":"Compare-and-set","example":"Implement compare-and-set in Redis by using WATCH on the counter key, then EXEC inside MULTI to abort if it changed meanwhile. = Implementa compare-and-set in Redis usando WATCH sulla chiave counter, poi EXEC dentro MULTI per abortire se è cambiata nel frattempo."}},
-{"level":"22","lesson":"db_transactions_8","english":"Atomic Operation","set":{"example":"Use Redis INCR as a single atomic operation to count API hits, since the increment happens under the engine's internal lock. = Usa Redis INCR come singola operazione atomica per contare le hit API, dato che l'incremento avviene sotto il lock interno del motore."}},
-{"level":"22","lesson":"db_transactions_8","english":"Idempotency Key","set":{"italian":"Chiave idempotente","example":"Stripe requires an Idempotency-Key header on every POST so a retried payment after a timeout will not charge the customer twice. = Stripe richiede un header Idempotency-Key su ogni POST così un pagamento ritentato dopo un timeout non addebiti due volte il cliente."}},
-{"level":"22","lesson":"db_transactions_8","english":"Saga Pattern","set":{"example":"Model the multi-service checkout as a saga pattern with compensating actions to refund the card if shipping reservation fails. = Modella il checkout multi-servizio come un saga pattern con azioni compensanti per rimborsare la carta se la prenotazione spedizione fallisce."}},
-{"level":"22","lesson":"db_transactions_8","english":"Eventual Consistency","set":{"english":"Distributed Eventual Consistency","italian":"Coerenza eventuale distribuita","example":"Distributed eventual consistency means a DynamoDB read may return stale data for a few hundred ms after a write to a different region. = La coerenza eventuale distribuita significa che una lettura DynamoDB può ritornare dati stantii per qualche centinaio di ms dopo una scrittura in una regione diversa."}},
-{"level":"23","lesson":"db_administration_5","english":"DBA","set":{"italian":"DBA","example":"The DBA on call last night spent two hours killing runaway queries that were saturating the primary's connection pool. = Il DBA di reperibilità la scorsa notte ha passato due ore a uccidere query fuori controllo che saturavano la connection pool del primario."}},
-{"level":"23","lesson":"db_administration_5","english":"Production DBA","set":{"italian":"DBA di produzione","example":"The production DBA owns backups, failover drills, and patch windows for the customer-facing Postgres cluster running 24x7. = Il DBA di produzione possiede backup, drill di failover e finestre di patch per il cluster Postgres customer-facing che gira 24x7."}},
-{"level":"23","lesson":"db_administration_5","english":"Development DBA","set":{"italian":"DBA di sviluppo","example":"Our development DBA reviews every schema migration in pull requests and coaches developers on writing safe online DDL. = Il nostro DBA di sviluppo rivede ogni schema migration nelle pull request e fa coaching agli sviluppatori sulla scrittura di DDL online sicuro."}},
-{"level":"23","lesson":"db_administration_5","english":"SRE","set":{"italian":"SRE","example":"An SRE on the data platform team owns SLOs for query latency and writes runbooks that on-call engineers follow at 3 AM. = Un SRE del team data platform possiede gli SLO per la latenza query e scrive runbook che gli ingegneri reperibili seguono alle 3 di notte."}},
-{"level":"23","lesson":"db_administration_5","english":"Database Engineer","set":{"italian":"Database engineer","example":"Hire a database engineer when you need someone who can tune PostgreSQL internals, design indexes, and review query plans. = Assumi un database engineer quando ti serve qualcuno che sappia tunare gli internals PostgreSQL, progettare indici e rivedere piani di query."}},
-{"level":"23","lesson":"db_administration_5","english":"Data Engineer","set":{"italian":"Data engineer","example":"A data engineer builds the dbt models and Airflow DAGs that turn raw events into the dimensional model analysts trust. = Un data engineer costruisce i modelli dbt e i DAG Airflow che trasformano eventi grezzi nel modello dimensionale di cui si fidano gli analisti."}},
-{"level":"23","lesson":"db_administration_5","english":"Data Architect","set":{"italian":"Data architect","example":"The data architect defines the canonical entity model and decides which datasets live in the warehouse versus the lakehouse. = Il data architect definisce il modello entità canonico e decide quali dataset vivono nel warehouse contro il lakehouse."}},
-{"level":"23","lesson":"db_administration_5","english":"On-call","set":{"italian":"On-call","example":"You join the weekly on-call rotation for the database team, owning all production incidents from Monday 9 AM to the following Monday. = Entri nella rotazione on-call settimanale per il team database, possedendo tutti gli incidenti di produzione da lunedì 9 al lunedì seguente."}},
-{"level":"23","lesson":"db_administration_5","english":"Postmortem","set":{"italian":"Postmortem","example":"After the 3-hour outage we wrote a blameless postmortem documenting the trigger, the contributing factors, and three concrete action items. = Dopo i 3 ore di outage abbiamo scritto un postmortem senza colpa documentando il trigger, i fattori contribuenti e tre action item concreti."}},
-{"level":"23","lesson":"db_administration_6","english":"Capacity Planning","set":{"italian":"Pianificazione di capacità","example":"Use 12 months of growth data for capacity planning so we know whether to upsize the Postgres instance before Black Friday traffic hits. = Usa 12 mesi di dati di crescita per la pianificazione di capacità così sappiamo se ridimensionare l'istanza Postgres prima del traffico Black Friday."}},
-{"level":"23","lesson":"db_administration_6","english":"Sizing","set":{"example":"Initial sizing for the new analytics cluster targets 8 vCPU and 32 GB RAM, with room to triple over the next 18 months. = Il sizing iniziale per il nuovo cluster analytics punta a 8 vCPU e 32 GB RAM, con margine per triplicare nei prossimi 18 mesi."}},
-{"level":"23","lesson":"db_administration_6","english":"Forecasting","set":{"example":"Use Prophet forecasting on monthly storage growth to plan when the warehouse will need its next disk expansion. = Usa il forecasting Prophet sulla crescita storage mensile per pianificare quando il warehouse richiederà la prossima espansione disco."}},
-{"level":"23","lesson":"db_administration_6","english":"Growth Rate","set":{"example":"Database table growth rate doubled this quarter, which forced an emergency upgrade of the replica's disk tier last week. = Il tasso di crescita delle tabelle database è raddoppiato questo trimestre, costringendo a un upgrade urgente del tier disco della replica la scorsa settimana."}},
-{"level":"23","lesson":"db_administration_6","english":"Headroom","set":{"example":"Keep at least 30% CPU headroom on the primary database so the autovacuum and replication catch-up workloads do not impact latency. = Mantieni almeno il 30% di margine CPU sul database primario così i carichi autovacuum e replication catch-up non impattino la latenza."}},
-{"level":"23","lesson":"db_administration_6","english":"Vertical Scaling","set":{"italian":"Scaling verticale","example":"Apply vertical scaling first by jumping from db.r6g.large to db.r6g.4xlarge before sharding the orders table across nodes. = Applica prima lo scaling verticale saltando da db.r6g.large a db.r6g.4xlarge prima di shardare la tabella orders tra nodi."}},
-{"level":"23","lesson":"db_administration_6","english":"Horizontal Scaling","set":{"italian":"Scaling orizzontale","example":"Reach for horizontal scaling with Citus shards when a single Postgres node can no longer absorb the write throughput. = Affidati allo scaling orizzontale con shard Citus quando un singolo nodo Postgres non riesce più ad assorbire il throughput di scrittura."}},
-{"level":"23","lesson":"db_administration_6","english":"Provisioning","set":{"italian":"Provisioning","example":"Automate database provisioning with Terraform so a new staging environment with replica and backups stands up in 15 minutes. = Automatizza il provisioning del database con Terraform così un nuovo ambiente staging con replica e backup si alza in 15 minuti."}},
-{"level":"23","lesson":"db_administration_6","english":"IaC","set":{"italian":"IaC","example":"Manage every RDS instance through IaC modules in Terraform so reviewers can diff parameter group changes in pull requests. = Gestisci ogni istanza RDS tramite moduli IaC in Terraform così i reviewer possano vedere i diff dei cambi di parameter group nelle pull request."}},
-{"level":"23","lesson":"db_administration_6","english":"Benchmark","set":{"italian":"Benchmark","example":"Run a pgbench benchmark with 200 clients at TPC-B scale 1000 to compare two Postgres versions on identical hardware. = Esegui un benchmark pgbench con 200 client a scala TPC-B 1000 per confrontare due versioni Postgres su hardware identico."}},
-{"level":"23","lesson":"db_administration_7","english":"Schema Migration","set":{"italian":"Migrazione di schema","example":"Plan a schema migration that adds a NULLABLE column first, backfills in batches, and only later enforces NOT NULL. = Pianifica una migrazione di schema che aggiunge prima una colonna NULLABLE, fa backfill a batch e solo dopo applica NOT NULL."}},
-{"level":"23","lesson":"db_administration_7","english":"Data Migration","set":{"italian":"Migrazione di dati","example":"Run the data migration in batches of 10k rows with a sleep between batches to avoid overwhelming the replication stream. = Esegui la migrazione di dati a batch di 10k righe con uno sleep tra i batch per evitare di sopraffare lo stream di replication."}},
-{"level":"23","lesson":"db_administration_7","english":"Zero Downtime Migration","set":{"italian":"Migrazione senza downtime","example":"Execute a zero downtime migration by dual-writing to old and new tables, backfilling history, then switching reads atomically. = Esegui una migrazione senza downtime facendo dual-write su vecchie e nuove tabelle, backfill dello storico, poi switch atomico delle letture."}},
-{"level":"23","lesson":"db_administration_7","english":"Cutover","set":{"italian":"Cutover","example":"Schedule the cutover at 04:00 UTC on Sunday so we can flip DNS to the new database with the smallest possible user impact. = Pianifica il cutover alle 04:00 UTC di domenica così possiamo girare il DNS al nuovo database con il minor impatto utente possibile."}},
-{"level":"23","lesson":"db_administration_7","english":"Flyway","set":{"italian":"Flyway","example":"Apply database migrations with Flyway on application boot so every environment converges to the same schema version automatically. = Applica le migrazioni database con Flyway al boot dell'applicazione così ogni ambiente converge alla stessa versione schema automaticamente."}},
-{"level":"23","lesson":"db_administration_7","english":"Liquibase","set":{"italian":"Liquibase","example":"Use Liquibase changesets in YAML to manage Oracle schema evolution with built-in rollback support and per-change checksums. = Usa i changeset Liquibase in YAML per gestire l'evoluzione schema Oracle con supporto rollback integrato e checksum per cambio."}},
-{"level":"23","lesson":"db_administration_7","english":"Forward Migration","set":{"italian":"Migrazione forward","example":"Every forward migration must be paired with a reviewed rollback script so CI can replay the change up and back down. = Ogni migrazione forward deve essere accoppiata a uno script di rollback rivisto così la CI può rieseguire il cambio avanti e indietro."}},
-{"level":"23","lesson":"db_administration_7","english":"Rollback Migration","set":{"italian":"Migrazione di rollback","example":"Test the rollback migration on a staging clone of production so we know it actually reverses the schema change cleanly. = Testa la migrazione di rollback su un clone staging di produzione così sappiamo che inverte davvero il cambio schema pulitamente."}},
-{"level":"23","lesson":"db_administration_7","english":"Expand-Contract","set":{"italian":"Espandi-contrai","example":"Apply the expand-contract pattern: deploy code that writes both columns, backfill, switch readers, then drop the old column. = Applica il pattern espandi-contrai: deploya codice che scrive entrambe le colonne, fai backfill, switch dei lettori, poi droppa la vecchia colonna."}},
-{"level":"23","lesson":"db_administration_8","english":"VACUUM","set":{"italian":"VACUUM","example":"Run VACUUM ANALYZE on the orders table after the nightly backfill so the planner picks fresh statistics for morning reports. = Esegui VACUUM ANALYZE sulla tabella orders dopo il backfill notturno così il planner sceglie statistiche fresche per i report mattutini."}},
-{"level":"23","lesson":"db_administration_8","english":"Autovacuum","set":{"italian":"Autovacuum","example":"Tune autovacuum_vacuum_scale_factor=0.05 on a high-write table so Postgres triggers vacuum before bloat reaches a painful level. = Tuna autovacuum_vacuum_scale_factor=0.05 su una tabella ad alto write così Postgres triggera il vacuum prima che il bloat raggiunga livelli dolorosi."}},
-{"level":"23","lesson":"db_administration_8","english":"VACUUM FULL","set":{"italian":"VACUUM FULL","example":"Schedule a VACUUM FULL during the maintenance window because it rewrites the entire table and takes an exclusive lock the whole time. = Pianifica un VACUUM FULL durante la finestra di manutenzione perché riscrive l'intera tabella e prende un lock esclusivo per tutto il tempo."}},
-{"level":"23","lesson":"db_administration_8","english":"Patch","set":{"italian":"Patch","example":"Apply the security patch for CVE-2024-0985 within the 14-day SLA window across all production Postgres clusters. = Applica la patch di sicurezza per CVE-2024-0985 entro la finestra SLA di 14 giorni su tutti i cluster Postgres di produzione."}},
-{"level":"23","lesson":"db_administration_8","english":"Minor Version","set":{"italian":"Versione minore","example":"Upgrade to the new minor version of Postgres each quarter to absorb bug fixes and security patches without breaking compatibility. = Aggiorna alla nuova versione minore di Postgres ogni trimestre per assorbire bug fix e patch di sicurezza senza rompere la compatibilità."}},
-{"level":"23","lesson":"db_administration_8","english":"Major Version Upgrade","set":{"italian":"Aggiornamento versione maggiore","example":"Plan a major version upgrade from Postgres 14 to 16 with pg_upgrade --link, a dry run on staging, and a published rollback plan. = Pianifica un aggiornamento versione maggiore da Postgres 14 a 16 con pg_upgrade --link, un dry run su staging e un piano di rollback pubblicato."}},
-{"level":"23","lesson":"db_administration_8","english":"pg_upgrade","set":{"italian":"pg_upgrade","example":"Use pg_upgrade --link to move a 2 TB cluster from Postgres 14 to 16 in minutes by reusing data files instead of dumping and restoring. = Usa pg_upgrade --link per spostare un cluster da 2 TB da Postgres 14 a 16 in minuti riusando i file dati invece di fare dump e restore."}},
-{"level":"23","lesson":"db_administration_8","english":"Index Rebuild","set":{"example":"Schedule a concurrent index rebuild after a large bulk delete reclaims half the leaf pages and inflates B-tree depth. = Pianifica una ricostruzione indici concorrente dopo che una grossa cancellazione massiva libera metà delle leaf page e gonfia la profondità del B-tree."}},
-{"level":"23","lesson":"db_administration_8","english":"Continuous Improvement","set":{"example":"Adopt a continuous improvement habit by reviewing the slowest 5 queries weekly and fixing one root cause per sprint. = Adotta un'abitudine di miglioramento continuo rivedendo le 5 query più lente settimanalmente e fixando una root cause per sprint."}},
-{"level":"22","lesson":"db_transactions_8","english":"Two-Phase Commit","set":{"english":"Distributed Two-Phase Commit","italian":"Two-phase commit distribuito","example":"Distributed two-phase commit coordinates a transaction across multiple databases, requiring all participants to vote prepare before the commit. = Il two-phase commit distribuito coordina una transazione su più database, richiedendo che tutti i partecipanti votino prepare prima del commit."}},
-{"level":"14","lesson":"db_replication_5","english":"Shard Key","set":{"english":"Sharding Shard Key","italian":"Chiave di sharding","example":"Picking a poor sharding shard key like timestamp creates hot shards because all recent writes pile onto the latest partition. = Scegliere una pessima chiave di sharding come timestamp crea shard caldi perché tutte le scritture recenti si accumulano sulla partizione più recente."}},
-{"level":"22","lesson":"db_transactions_7","english":"Snapshot","set":{"english":"MVCC Snapshot","italian":"Snapshot MVCC","example":"An MVCC snapshot freezes the visible row versions at transaction start, so two readers in the same snapshot always see identical data. = Uno snapshot MVCC congela le versioni di riga visibili all'inizio della transazione, così due lettori nello stesso snapshot vedono sempre dati identici."}}
-]}
+{
+  "fixes": [
+    {
+      "level": "19",
+      "lesson": "db_nosql_15",
+      "english": "Recommendation",
+      "set": {
+        "example": "Build a product recommendation engine using a graph database to traverse user preferences and similar purchases in real time. = Costruisci un motore di raccomandazione prodotti usando un database a grafo per attraversare preferenze utente e acquisti simili in tempo reale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_15",
+      "english": "Fraud Detection",
+      "set": {
+        "example": "Apply graph-based fraud detection to spot rings of accounts sharing devices, addresses, and payment methods within seconds. = Applica il rilevamento frodi basato su grafi per individuare reti di account che condividono dispositivi, indirizzi e metodi di pagamento in pochi secondi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_15",
+      "english": "Knowledge Graph",
+      "set": {
+        "italian": "Grafo della conoscenza",
+        "example": "Wikidata is a public knowledge graph that connects entities, properties, and relationships across millions of topics. = Wikidata è un grafo della conoscenza pubblico che collega entità, proprietà e relazioni tra milioni di argomenti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "Neo4j",
+      "set": {
+        "italian": "Neo4j",
+        "example": "Neo4j stores nodes and relationships as first-class citizens, making graph traversals far faster than recursive SQL joins. = Neo4j memorizza nodi e relazioni come cittadini di prima classe, rendendo le traversate del grafo molto più veloci dei join SQL ricorsivi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "ArangoDB",
+      "set": {
+        "italian": "ArangoDB",
+        "example": "Use ArangoDB when you need a single engine that handles documents, graphs, and key-value data with one query language. = Usa ArangoDB quando ti serve un singolo motore che gestisce documenti, grafi e dati chiave-valore con un unico linguaggio di query."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "JanusGraph",
+      "set": {
+        "italian": "JanusGraph",
+        "example": "JanusGraph scales graph workloads horizontally on top of Cassandra or HBase, supporting graphs with billions of edges. = JanusGraph scala i carichi grafo orizzontalmente sopra Cassandra o HBase, supportando grafi con miliardi di archi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "Amazon Neptune",
+      "set": {
+        "italian": "Amazon Neptune",
+        "example": "Pick Amazon Neptune for a fully managed graph database that supports both Gremlin and SPARQL on AWS infrastructure. = Scegli Amazon Neptune per un database a grafo completamente gestito che supporta sia Gremlin che SPARQL su infrastruttura AWS."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "Gremlin",
+      "set": {
+        "italian": "Gremlin",
+        "example": "Traverse a social graph with Gremlin: g.V().has('user','name','Alice').out('follows').values('name'). = Attraversa un grafo sociale con Gremlin: g.V().has('user','name','Alice').out('follows').values('name')."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "TinkerPop",
+      "set": {
+        "italian": "TinkerPop",
+        "example": "Apache TinkerPop provides a vendor-neutral graph framework so that Gremlin queries run on Neptune, JanusGraph, and Neo4j alike. = Apache TinkerPop fornisce un framework grafo neutrale rispetto al vendor in modo che le query Gremlin girino su Neptune, JanusGraph e Neo4j."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "SPARQL",
+      "set": {
+        "italian": "SPARQL",
+        "example": "Query an RDF triple store with SPARQL: SELECT ?city WHERE { ?city rdf:type :Capital ; :country :Italy } . = Interroga un triple store RDF con SPARQL: SELECT ?city WHERE { ?city rdf:type :Capital ; :country :Italy } ."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "GQL",
+      "set": {
+        "italian": "GQL",
+        "example": "ISO/IEC GQL aims to standardize property graph querying the way SQL did for relational databases decades ago. = ISO/IEC GQL mira a standardizzare le query sui property graph come SQL ha fatto per i database relazionali decenni fa."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "Native Graph Storage",
+      "set": {
+        "italian": "Storage grafo nativo",
+        "example": "With native graph storage each relationship is a physical pointer, so a friend-of-friend query stays O(1) per hop. = Con lo storage grafo nativo ogni relazione è un puntatore fisico, quindi una query amico-di-amico resta O(1) per salto."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_16",
+      "english": "Index-Free Adjacency",
+      "set": {
+        "italian": "Adiacenza senza indice",
+        "example": "Thanks to index-free adjacency, Neo4j traverses a million edges without consulting any B-tree lookup structures. = Grazie all'adiacenza senza indice, Neo4j attraversa un milione di archi senza consultare strutture di lookup B-tree."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "Time Series",
+      "set": {
+        "italian": "Serie temporale",
+        "example": "Store CPU usage as a time series with one sample per second to plot daily and weekly utilization patterns. = Memorizza l'utilizzo CPU come serie temporale con un campione al secondo per tracciare schemi di utilizzo giornalieri e settimanali."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "TSDB",
+      "set": {
+        "italian": "TSDB",
+        "example": "Reach for a TSDB like InfluxDB or Prometheus when ingesting millions of timestamped metrics per minute from sensors and services. = Affidati a un TSDB come InfluxDB o Prometheus quando ingerisci milioni di metriche con timestamp al minuto da sensori e servizi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "Tag",
+      "set": {
+        "italian": "Tag",
+        "example": "In InfluxDB, attach a host=web01 tag to each metric so you can group dashboards by server without scanning every row. = In InfluxDB, allega un tag host=web01 a ogni metrica così puoi raggruppare i dashboard per server senza scansionare ogni riga."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "Field",
+      "set": {
+        "english": "Time-Series Field",
+        "italian": "Campo time-series",
+        "example": "In a TSDB the numeric field stores the measured value, while tags carry the indexed labels used for filtering. = In un TSDB il campo time-series memorizza il valore misurato, mentre i tag portano le etichette indicizzate usate per filtrare."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "Measurement",
+      "set": {
+        "italian": "Misura",
+        "example": "Each cpu_usage measurement in InfluxDB groups together the same metric collected across many hosts and time points. = Ogni misura cpu_usage in InfluxDB raggruppa la stessa metrica raccolta da molti host e istanti temporali."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "High Cardinality",
+      "set": {
+        "italian": "Alta cardinalità",
+        "example": "Avoid putting request IDs into tags: the resulting high cardinality will blow up TSDB memory and slow every query down. = Evita di mettere request ID nei tag: l'alta cardinalità risultante farà esplodere la memoria del TSDB e rallenterà ogni query."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "Time Bucket",
+      "set": {
+        "example": "Group readings into one-minute time buckets to compute average temperature without scanning every raw sample. = Raggruppa le letture in time bucket di un minuto per calcolare la temperatura media senza scansionare ogni campione grezzo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "Window Aggregate",
+      "set": {
+        "italian": "Aggregato a finestra",
+        "example": "Use a window aggregate to compute the rolling 5-minute average error rate over the last hour of API traffic. = Usa un aggregato a finestra per calcolare la media mobile a 5 minuti del tasso di errore sull'ultima ora di traffico API."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_1",
+      "english": "Cardinality Explosion",
+      "set": {
+        "example": "A cardinality explosion happened after adding user_id as a label, ballooning the metric series from 1k to 10M overnight. = Un'esplosione di cardinalità è avvenuta dopo aver aggiunto user_id come label, gonfiando le serie metriche da 1k a 10M in una notte."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Retention Policy",
+      "set": {
+        "example": "Define a retention policy of 30 days for raw metrics and 1 year for hourly aggregates to balance cost and history. = Definisci una politica di retention di 30 giorni per le metriche grezze e 1 anno per gli aggregati orari per bilanciare costo e storico."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Downsampling",
+      "set": {
+        "italian": "Downsampling",
+        "example": "Apply downsampling to reduce one-second samples into one-minute averages once the data crosses the 7-day mark. = Applica il downsampling per ridurre i campioni al secondo in medie al minuto una volta che i dati superano i 7 giorni."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Continuous Aggregate",
+      "set": {
+        "italian": "Aggregato continuo",
+        "example": "A TimescaleDB continuous aggregate keeps an hourly summary up to date automatically as new raw rows arrive. = Un aggregato continuo TimescaleDB mantiene aggiornato un riassunto orario automaticamente man mano che arrivano nuove righe grezze."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Compression",
+      "set": {
+        "italian": "Compressione",
+        "example": "Enable native compression on chunks older than 7 days to cut TimescaleDB storage by up to 95% for typical time-series workloads. = Abilita la compressione nativa sui chunk più vecchi di 7 giorni per ridurre lo storage TimescaleDB fino al 95% per carichi time-series tipici."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Hypertable",
+      "set": {
+        "italian": "Hypertable",
+        "example": "Convert a regular metrics table into a TimescaleDB hypertable so that inserts are automatically partitioned by time and space. = Converti una tabella metriche regolare in una hypertable TimescaleDB così che gli insert siano partizionati automaticamente per tempo e spazio."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Chunk",
+      "set": {
+        "italian": "Chunk",
+        "example": "Each TimescaleDB chunk covers a one-day slice of a hypertable, making it trivial to drop or compress old data. = Ogni chunk TimescaleDB copre una fetta di un giorno di una hypertable, rendendo banale eliminare o comprimere i dati vecchi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Drop Chunks",
+      "set": {
+        "italian": "Drop chunks",
+        "example": "Schedule a drop_chunks job nightly to delete metric chunks older than 90 days and reclaim disk space on the analytics node. = Pianifica un job drop_chunks notturno per eliminare i chunk di metriche più vecchi di 90 giorni e recuperare spazio disco sul nodo analytics."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "TTL (TSDB)",
+      "set": {
+        "italian": "TTL (TSDB)",
+        "example": "Set a TTL of 14 days on Cassandra metric rows so old data expires automatically without expensive DELETE queries. = Imposta un TTL di 14 giorni sulle righe di metriche Cassandra così i dati vecchi scadono automaticamente senza costose query DELETE."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_2",
+      "english": "Cold Storage",
+      "set": {
+        "example": "Tier metrics older than 6 months to S3 cold storage so that the hot TSDB stays small while history remains queryable. = Sposta le metriche più vecchie di 6 mesi su storage freddo S3 così che il TSDB caldo resti piccolo mentre lo storico resta interrogabile."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "InfluxDB",
+      "set": {
+        "italian": "InfluxDB",
+        "example": "Pipe Telegraf agents directly into InfluxDB to collect server metrics every 10 seconds with built-in retention policies. = Manda gli agenti Telegraf direttamente in InfluxDB per raccogliere metriche server ogni 10 secondi con politiche di retention integrate."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "InfluxQL",
+      "set": {
+        "italian": "InfluxQL",
+        "example": "Run a SQL-like InfluxQL query: SELECT mean(value) FROM cpu WHERE time > now() - 1h GROUP BY time(1m). = Esegui una query InfluxQL in stile SQL: SELECT mean(value) FROM cpu WHERE time > now() - 1h GROUP BY time(1m)."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "Flux",
+      "set": {
+        "italian": "Flux",
+        "example": "Express a Flux pipeline like from(bucket:\"metrics\") |> range(start:-1h) |> mean() to compose data sources and transforms. = Esprimi una pipeline Flux come from(bucket:\"metrics\") |> range(start:-1h) |> mean() per comporre fonti dati e trasformazioni."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "TimescaleDB",
+      "set": {
+        "italian": "TimescaleDB",
+        "example": "Adopt TimescaleDB when your team already speaks PostgreSQL but needs hypertables and continuous aggregates for telemetry. = Adotta TimescaleDB quando il tuo team già parla PostgreSQL ma serve hypertable e aggregati continui per la telemetria."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "Prometheus",
+      "set": {
+        "italian": "Prometheus",
+        "example": "Prometheus scrapes /metrics endpoints every 15 seconds and stores the samples in a local time-series database on disk. = Prometheus fa scraping degli endpoint /metrics ogni 15 secondi e memorizza i campioni in un database time-series locale su disco."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "PromQL",
+      "set": {
+        "italian": "PromQL",
+        "example": "Write a PromQL expression like rate(http_requests_total[5m]) to measure per-second request rate over a 5-minute window. = Scrivi un'espressione PromQL come rate(http_requests_total[5m]) per misurare il tasso di richieste al secondo su una finestra di 5 minuti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "Graphite",
+      "set": {
+        "italian": "Graphite",
+        "example": "Legacy stacks still pipe StatsD metrics into Graphite, which stores them as Whisper files organized by metric name. = Stack legacy ancora mandano metriche StatsD in Graphite, che le memorizza come file Whisper organizzati per nome metrica."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "OpenTSDB",
+      "set": {
+        "italian": "OpenTSDB",
+        "example": "OpenTSDB stores time-series points on top of HBase, making it a fit for clusters already running the Hadoop stack. = OpenTSDB memorizza punti time-series sopra HBase, rendendolo adatto a cluster che già eseguono lo stack Hadoop."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "VictoriaMetrics",
+      "set": {
+        "italian": "VictoriaMetrics",
+        "example": "Replace Prometheus with VictoriaMetrics when retention exceeds 6 months and you need lower memory per active series. = Sostituisci Prometheus con VictoriaMetrics quando la retention supera i 6 mesi e serve meno memoria per serie attiva."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_3",
+      "english": "QuestDB",
+      "set": {
+        "italian": "QuestDB",
+        "example": "QuestDB ingests millions of rows per second using SIMD-accelerated SQL, ideal for financial tick data workloads. = QuestDB ingerisce milioni di righe al secondo usando SQL accelerato con SIMD, ideale per carichi di tick data finanziari."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_4",
+      "english": "IoT Data",
+      "set": {
+        "example": "Stream IoT data from 50k thermostats into Kafka, then land it in a TSDB partitioned by device and hour for analytics. = Manda in streaming dati IoT da 50k termostati in Kafka, poi atterra in un TSDB partizionato per dispositivo e ora per analytics."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_4",
+      "english": "Sensor Data",
+      "set": {
+        "example": "Ingest temperature and vibration sensor data from a wind turbine fleet at 1 Hz to detect anomalies before failures occur. = Ingerisci dati sensore di temperatura e vibrazione da una flotta di turbine eoliche a 1 Hz per rilevare anomalie prima dei guasti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_4",
+      "english": "Telemetry",
+      "set": {
+        "italian": "Telemetria",
+        "example": "Ship OpenTelemetry telemetry from every microservice to a central collector so SREs can correlate traces, metrics, and logs. = Invia telemetria OpenTelemetry da ogni microservizio a un collector centrale così gli SRE possono correlare trace, metriche e log."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_4",
+      "english": "Counter",
+      "set": {
+        "italian": "Contatore",
+        "example": "A request counter only ever increases, so we always compute rate(counter[5m]) instead of plotting the raw value. = Un contatore di richieste può solo crescere, quindi calcoliamo sempre rate(counter[5m]) invece di tracciare il valore grezzo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_4",
+      "english": "Gauge",
+      "set": {
+        "italian": "Gauge",
+        "example": "CPU temperature is exposed as a gauge metric because the value can go up or down between successive scrapes. = La temperatura CPU è esposta come metrica gauge perché il valore può salire o scendere tra scrape successivi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_4",
+      "english": "Histogram",
+      "set": {
+        "english": "Time-Series Histogram",
+        "italian": "Istogramma time-series",
+        "example": "A Prometheus time-series histogram bucket counts how many requests completed in under 100ms, 250ms, and 1s respectively. = Un istogramma time-series Prometheus conta quante richieste sono completate sotto 100ms, 250ms e 1s rispettivamente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_4",
+      "english": "Summary",
+      "set": {
+        "italian": "Summary",
+        "example": "Prefer histogram over summary when you need to aggregate quantiles across multiple instances at query time. = Preferisci histogram a summary quando devi aggregare i quantili tra più istanze a tempo di query."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_4",
+      "english": "Alerting",
+      "set": {
+        "italian": "Alerting",
+        "example": "Configure alerting rules in Alertmanager so PagerDuty wakes the on-call engineer when p99 latency exceeds 500 ms for 5 minutes. = Configura regole di alerting in Alertmanager così PagerDuty sveglia l'ingegnere reperibile quando la latenza p99 supera 500 ms per 5 minuti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_4",
+      "english": "Grafana",
+      "set": {
+        "italian": "Grafana",
+        "example": "Build a Grafana dashboard that overlays Prometheus latency metrics with Loki logs to debug spikes in a single pane. = Costruisci una dashboard Grafana che sovrappone le metriche di latenza Prometheus con i log Loki per debuggare gli spike in un unico pannello."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "db_analytics_4",
+      "english": "Scrape",
+      "set": {
+        "italian": "Scrape",
+        "example": "Prometheus performs a scrape every 15 seconds, pulling the /metrics endpoint of each registered service target. = Prometheus esegue uno scrape ogni 15 secondi, prelevando l'endpoint /metrics di ogni target servizio registrato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_5",
+      "english": "ETL",
+      "set": {
+        "italian": "ETL",
+        "example": "A nightly ETL job pulls orders from Postgres, scrubs PII, and loads aggregates into Snowflake for the BI team. = Un job ETL notturno preleva gli ordini da Postgres, ripulisce le PII e carica gli aggregati in Snowflake per il team BI."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_5",
+      "english": "ELT",
+      "set": {
+        "italian": "ELT",
+        "example": "In modern ELT pipelines we land raw events into BigQuery first and then transform with dbt models on the warehouse. = Nelle pipeline ELT moderne facciamo prima atterrare gli eventi grezzi in BigQuery e poi trasformiamo con modelli dbt sul warehouse."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_5",
+      "english": "Extract",
+      "set": {
+        "english": "ETL Extract Step",
+        "italian": "Estrazione ETL",
+        "example": "The ETL extract step reads from source MySQL replicas every hour, capturing only rows changed since the last watermark. = L'estrazione ETL legge dalle repliche MySQL sorgente ogni ora, catturando solo le righe cambiate dall'ultimo watermark."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_5",
+      "english": "Transform",
+      "set": {
+        "italian": "Trasforma",
+        "example": "During the transform phase, dbt models join raw orders with customers and cast amount columns into a canonical USD currency. = Durante la fase di trasformazione, i modelli dbt uniscono ordini grezzi con clienti e convertono le colonne importo in valuta canonica USD."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_5",
+      "english": "Load",
+      "set": {
+        "italian": "Carica",
+        "example": "The pipeline must load the cleaned dataset into Snowflake before 6 AM so morning dashboards reflect yesterday's numbers. = La pipeline deve caricare il dataset pulito in Snowflake prima delle 6 del mattino così i dashboard mattutini riflettono i numeri di ieri."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_5",
+      "english": "Batch Processing",
+      "set": {
+        "italian": "Elaborazione batch",
+        "example": "Nightly batch processing recomputes the full customer lifetime value table because real-time updates are not required. = L'elaborazione batch notturna ricalcola l'intera tabella customer lifetime value perché aggiornamenti in tempo reale non servono."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_5",
+      "english": "Data Source",
+      "set": {
+        "example": "Register Salesforce as a new data source in Fivetran and schedule incremental syncs every 15 minutes into the warehouse. = Registra Salesforce come nuova fonte dati in Fivetran e pianifica sync incrementali ogni 15 minuti nel warehouse."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_5",
+      "english": "Data Sink",
+      "set": {
+        "example": "Configure the Kafka Connect sink to write cleansed events into Elasticsearch for full-text search on customer support tickets. = Configura il sink Kafka Connect per scrivere eventi puliti in Elasticsearch per la ricerca full-text su ticket di supporto clienti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_5",
+      "english": "Idempotency",
+      "set": {
+        "example": "Achieve idempotency in the pipeline by using a stable primary key so reruns merge rows instead of duplicating them. = Ottieni l'idempotenza nella pipeline usando una chiave primaria stabile così i rerun fanno merge delle righe invece di duplicarle."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_5",
+      "english": "Backfill",
+      "set": {
+        "italian": "Backfill",
+        "example": "Run a backfill for the past 30 days after fixing the bug, reprocessing all events through the corrected transformation logic. = Esegui un backfill degli ultimi 30 giorni dopo aver fixato il bug, riprocessando tutti gli eventi con la logica di trasformazione corretta."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_6",
+      "english": "CDC",
+      "set": {
+        "italian": "CDC",
+        "example": "Stream OLTP changes via CDC so the data warehouse stays within a 5-second lag without polling every table on a schedule. = Manda in streaming i cambi OLTP via CDC così il warehouse resta entro 5 secondi di lag senza fare polling di ogni tabella a intervalli."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_6",
+      "english": "Debezium",
+      "set": {
+        "italian": "Debezium",
+        "example": "Deploy Debezium connectors to tail the Postgres WAL and emit row-level change events onto a Kafka topic in near real time. = Deploya connettori Debezium per leggere il WAL Postgres ed emettere eventi di cambio a livello riga su un topic Kafka in quasi tempo reale."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_6",
+      "english": "Kafka",
+      "set": {
+        "italian": "Kafka",
+        "example": "Use Kafka as the central event bus so payments, fraud, and analytics services consume the same stream independently and at their own pace. = Usa Kafka come bus eventi centrale così i servizi pagamenti, frodi e analytics consumano lo stesso stream indipendentemente al loro ritmo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_6",
+      "english": "Topic",
+      "set": {
+        "italian": "Topic",
+        "example": "Create a Kafka topic named orders.created with 12 partitions to let downstream consumers process events in parallel by key. = Crea un topic Kafka chiamato orders.created con 12 partizioni per consentire ai consumatori downstream di processare gli eventi in parallelo per chiave."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_6",
+      "english": "Producer",
+      "set": {
+        "italian": "Producer",
+        "example": "The checkout service acts as a Kafka producer, publishing one order.created message per successful transaction with acks=all. = Il servizio checkout agisce da producer Kafka, pubblicando un messaggio order.created per ogni transazione riuscita con acks=all."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_6",
+      "english": "Consumer",
+      "set": {
+        "italian": "Consumer",
+        "example": "The billing service runs as a Kafka consumer group, splitting the order.created topic partitions across three pods. = Il servizio billing gira come consumer group Kafka, dividendo le partizioni del topic order.created tra tre pod."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_6",
+      "english": "Partition",
+      "set": {
+        "example": "Pick user_id as the Kafka partition key so all events for one user land in the same partition and stay ordered. = Scegli user_id come chiave di partizione Kafka così tutti gli eventi di un utente atterrano nella stessa partizione e restano ordinati."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_6",
+      "english": "Stream Processing",
+      "set": {
+        "italian": "Stream processing",
+        "example": "Stream processing with Flink computes a rolling 1-minute fraud score on every payment event without waiting for batch jobs. = Lo stream processing con Flink calcola uno score frodi a finestra mobile di 1 minuto su ogni evento pagamento senza attendere job batch."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_6",
+      "english": "Apache Flink",
+      "set": {
+        "italian": "Apache Flink",
+        "example": "Apache Flink runs stateful streaming jobs with exactly-once semantics, ideal for real-time fraud detection on payment streams. = Apache Flink esegue job streaming stateful con semantica exactly-once, ideale per rilevamento frodi in tempo reale su stream di pagamenti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Apache Airflow",
+      "set": {
+        "italian": "Apache Airflow",
+        "example": "Schedule a 50-task data pipeline in Apache Airflow with retries, SLAs, and Slack alerts on every DAG failure. = Pianifica una pipeline dati da 50 task in Apache Airflow con retry, SLA e alert Slack a ogni fallimento del DAG."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "DAG",
+      "set": {
+        "italian": "DAG",
+        "example": "Define an Airflow DAG where the load_orders task depends on extract_orders, ensuring the right execution order. = Definisci un DAG Airflow dove il task load_orders dipende da extract_orders, garantendo il corretto ordine di esecuzione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Operator",
+      "set": {
+        "italian": "Operator",
+        "example": "Use the PostgresOperator in Airflow to execute a SQL aggregation against the analytics database as part of the nightly DAG. = Usa il PostgresOperator in Airflow per eseguire un'aggregazione SQL contro il database analytics come parte del DAG notturno."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Task",
+      "set": {
+        "italian": "Task",
+        "example": "Mark the heavy aggregation task as idempotent so Airflow can retry it three times without polluting downstream tables. = Marca il task di aggregazione pesante come idempotente così Airflow può ritentarlo tre volte senza sporcare le tabelle downstream."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Schedule",
+      "set": {
+        "italian": "Pianificazione",
+        "example": "Set the DAG schedule to 0 2 * * * so the pipeline runs every night at 02:00 UTC, after the OLTP backup completes. = Imposta la pianificazione del DAG a 0 2 * * * così la pipeline gira ogni notte alle 02:00 UTC, dopo che il backup OLTP completa."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Dagster",
+      "set": {
+        "italian": "Dagster",
+        "example": "Adopt Dagster when you want software-defined assets and asset materialization graphs rather than imperative Airflow tasks. = Adotta Dagster quando vuoi asset definiti via software e grafi di materializzazione asset invece di task imperativi Airflow."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Prefect",
+      "set": {
+        "italian": "Prefect",
+        "example": "Prefect 2 represents pipelines as plain Python flows, so engineers reuse normal control flow and dependency injection patterns. = Prefect 2 rappresenta le pipeline come normali flow Python, così gli ingegneri riusano i pattern di controllo di flusso e dependency injection."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "Lineage",
+      "set": {
+        "italian": "Lineage",
+        "example": "OpenLineage captures column-level lineage across dbt and Spark, so analysts can trace where the revenue column actually comes from. = OpenLineage cattura il lineage a livello colonna tra dbt e Spark, così gli analisti possono tracciare da dove arriva davvero la colonna revenue."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_7",
+      "english": "SLA",
+      "set": {
+        "italian": "SLA",
+        "example": "Set an SLA of 4 hours on the daily revenue DAG so PagerDuty fires whenever the pipeline misses its delivery window. = Imposta un SLA di 4 ore sul DAG revenue giornaliero così PagerDuty scatta quando la pipeline manca la finestra di consegna."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "dbt",
+      "set": {
+        "italian": "dbt",
+        "example": "Use dbt to express warehouse transformations as version-controlled SQL models with tests, docs, and DAG-based execution. = Usa dbt per esprimere le trasformazioni di warehouse come modelli SQL versionati con test, documentazione ed esecuzione basata su DAG."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "Model",
+      "set": {
+        "italian": "Model dbt",
+        "example": "Each dbt model is a SELECT statement materialized as a table or view in the warehouse and tied to its sources via ref(). = Ogni model dbt è uno statement SELECT materializzato come tabella o vista nel warehouse e legato alle sue sorgenti via ref()."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "Seed",
+      "set": {
+        "italian": "Seed",
+        "example": "Check a small countries.csv into the dbt project and load it as a seed table to enrich orders with country names. = Inserisci un piccolo countries.csv nel progetto dbt e caricalo come tabella seed per arricchire gli ordini con nomi di paese."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "Test",
+      "set": {
+        "italian": "Test dbt",
+        "example": "Add a not_null and unique test on order_id in dbt so the CI pipeline fails before bad data reaches BI dashboards. = Aggiungi un test not_null e unique su order_id in dbt così la pipeline CI fallisce prima che dati cattivi raggiungano i dashboard BI."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "Schema Drift",
+      "set": {
+        "italian": "Schema drift",
+        "example": "Detect schema drift in source tables by failing the dbt run when a new column appears or a type changes unexpectedly. = Rileva lo schema drift nelle tabelle sorgente facendo fallire il run dbt quando appare una nuova colonna o un tipo cambia inaspettatamente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "Data Contract",
+      "set": {
+        "italian": "Data contract",
+        "example": "Publish a data contract that promises orders.amount stays non-null and in USD, so downstream teams build with confidence. = Pubblica un data contract che promette che orders.amount resta non-null e in USD, così i team downstream costruiscono con fiducia."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "Data Quality",
+      "set": {
+        "example": "Run nightly data quality checks that compare row counts and column sums between source MySQL and Snowflake mirrors. = Esegui controlli di data quality notturni che confrontano conteggi righe e somme colonne tra MySQL sorgente e mirror Snowflake."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "Great Expectations",
+      "set": {
+        "italian": "Great Expectations",
+        "example": "Wire Great Expectations into Airflow so every batch run validates orders against a suite of expectations before publishing. = Aggancia Great Expectations a Airflow così ogni run batch valida gli ordini contro una suite di expectation prima di pubblicare."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "Data Catalog",
+      "set": {
+        "example": "Index the warehouse into a data catalog like DataHub so analysts can search column lineage and ownership without asking the team. = Indicizza il warehouse in un data catalog come DataHub così gli analisti possono cercare lineage e ownership delle colonne senza chiedere al team."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "db_analytics_8",
+      "english": "Apache Spark",
+      "set": {
+        "italian": "Apache Spark",
+        "example": "Run a daily Apache Spark job on EMR to join 5 TB of clickstream with the user dimension table and write Parquet to S3. = Esegui un job Apache Spark giornaliero su EMR per unire 5 TB di clickstream con la tabella dimension utente e scrivere Parquet su S3."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "Locking",
+      "set": {
+        "italian": "Locking",
+        "example": "Aggressive row-level locking on the inventory table caused checkout to stall whenever a single SKU went viral on social media. = Un locking aggressivo a livello riga sulla tabella inventory ha bloccato il checkout ogni volta che una singola SKU diventava virale sui social."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "SELECT FOR UPDATE",
+      "set": {
+        "italian": "SELECT FOR UPDATE",
+        "example": "Run SELECT FOR UPDATE on the wallet row before debiting it so concurrent transfers serialize instead of double-spending. = Esegui SELECT FOR UPDATE sulla riga wallet prima di addebitarla così trasferimenti concorrenti si serializzano invece di fare double-spending."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "SELECT FOR SHARE",
+      "set": {
+        "italian": "SELECT FOR SHARE",
+        "example": "Use SELECT FOR SHARE when reading a referenced parent row that must not be deleted before the child insert commits. = Usa SELECT FOR SHARE quando leggi una riga padre referenziata che non deve essere eliminata prima che l'insert figlio committi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "NOWAIT",
+      "set": {
+        "italian": "NOWAIT",
+        "example": "Append NOWAIT to SELECT FOR UPDATE so the API returns a 409 immediately instead of hanging when the row is already locked. = Aggiungi NOWAIT a SELECT FOR UPDATE così l'API ritorna subito un 409 invece di restare appesa quando la riga è già lockata."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "SKIP LOCKED",
+      "set": {
+        "italian": "SKIP LOCKED",
+        "example": "Implement a job queue in Postgres using SELECT ... FOR UPDATE SKIP LOCKED so multiple workers pull different rows safely. = Implementa una coda di job in Postgres usando SELECT ... FOR UPDATE SKIP LOCKED così più worker prendono righe diverse in modo sicuro."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "Advisory Lock",
+      "set": {
+        "italian": "Advisory lock",
+        "example": "Take a Postgres advisory lock keyed by tenant_id so only one background job per tenant runs at a time across the fleet. = Prendi un advisory lock Postgres chiavato su tenant_id così solo un job in background per tenant gira alla volta sulla flotta."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "Lock Timeout",
+      "set": {
+        "example": "Set lock_timeout=5s in Postgres so a runaway transaction cannot block production writes for longer than five seconds. = Imposta lock_timeout=5s in Postgres così una transazione fuori controllo non possa bloccare le scritture di produzione per più di cinque secondi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "Statement Timeout",
+      "set": {
+        "example": "Enable statement_timeout=30s on the analytics user so heavy ad-hoc queries cannot starve OLTP connections indefinitely. = Abilita statement_timeout=30s sull'utente analytics così pesanti query ad-hoc non possano affamare le connessioni OLTP indefinitamente."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_5",
+      "english": "Granular Locking",
+      "set": {
+        "example": "InnoDB's granular locking lets two transactions update different rows in the same table without ever blocking each other. = Il locking granulare di InnoDB permette a due transazioni di aggiornare righe diverse della stessa tabella senza mai bloccarsi a vicenda."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_6",
+      "english": "Deadlock",
+      "set": {
+        "english": "Cycle Deadlock",
+        "italian": "Deadlock ciclico",
+        "example": "A cycle deadlock happened when transaction A locked accounts(1) then accounts(2) while B did the reverse, forcing the engine to abort B. = Un deadlock ciclico è avvenuto quando la transazione A ha lockato accounts(1) poi accounts(2) mentre B faceva il contrario, costringendo il motore ad abortire B."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_6",
+      "english": "Wait-For Graph",
+      "set": {
+        "italian": "Wait-for graph",
+        "example": "The database periodically inspects the wait-for graph looking for cycles, and when it finds one it picks a victim transaction to abort. = Il database ispeziona periodicamente il wait-for graph cercando cicli, e quando ne trova uno sceglie una transazione vittima da abortire."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_6",
+      "english": "Deadlock Victim",
+      "set": {
+        "example": "Postgres logged transaction 4711 as the deadlock victim because it had performed the least amount of work so far. = Postgres ha loggato la transazione 4711 come vittima del deadlock perché aveva svolto la minor quantità di lavoro fino a quel momento."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_6",
+      "english": "Lock Order",
+      "set": {
+        "example": "Enforce a global lock order such as accounts before transactions in every code path so deadlocks become impossible by construction. = Imponi un ordine di lock globale come accounts prima di transactions in ogni percorso di codice così i deadlock diventano impossibili per costruzione."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_6",
+      "english": "Lost Update",
+      "set": {
+        "italian": "Aggiornamento perduto",
+        "example": "A lost update occurs when two clients read counter=10, both add 1, and the second write overwrites the first without seeing it. = Un aggiornamento perduto succede quando due client leggono counter=10, entrambi aggiungono 1, e la seconda scrittura sovrascrive la prima senza vederla."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_6",
+      "english": "Write Skew",
+      "set": {
+        "italian": "Write skew",
+        "example": "Write skew lets two doctors both go off-call because each transaction reads enough remaining doctors but writes change the invariant. = Il write skew permette a due dottori di togliersi dalla reperibilità perché ogni transazione legge abbastanza dottori residui ma le scritture cambiano l'invariante."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "MVCC",
+      "set": {
+        "english": "PostgreSQL MVCC",
+        "italian": "PostgreSQL MVCC",
+        "example": "In PostgreSQL MVCC, readers never block writers because each transaction sees a snapshot of the row versions visible at start time. = In PostgreSQL MVCC, i lettori non bloccano mai gli scrittori perché ogni transazione vede uno snapshot delle versioni di riga visibili al suo inizio."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "Tuple Version",
+      "set": {
+        "example": "Each UPDATE produces a new tuple version with fresh xmin so old readers continue to see the previous row without waiting. = Ogni UPDATE produce una nuova versione di tupla con xmin fresco così i vecchi lettori continuano a vedere la riga precedente senza attendere."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "XID",
+      "set": {
+        "italian": "XID",
+        "example": "Postgres assigns a new XID to every write transaction, and once it crosses 2 billion you must vacuum to prevent wraparound. = Postgres assegna un nuovo XID a ogni transazione di scrittura, e una volta superati i 2 miliardi devi fare vacuum per evitare il wraparound."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "XMIN",
+      "set": {
+        "italian": "XMIN",
+        "example": "The xmin column on a tuple records which transaction created that row version, so MVCC can decide whether each snapshot can see it. = La colonna xmin di una tupla registra quale transazione ha creato quella versione di riga, così MVCC può decidere se ogni snapshot può vederla."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "XMAX",
+      "set": {
+        "italian": "XMAX",
+        "example": "Postgres stamps xmax on a tuple when a transaction deletes or updates it, marking the row version as obsolete for newer snapshots. = Postgres marca xmax su una tupla quando una transazione la elimina o aggiorna, segnando la versione di riga come obsoleta per snapshot più nuovi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "Visibility",
+      "set": {
+        "example": "MVCC visibility rules compare a snapshot's xmin and xmax bounds against each tuple's stamps to decide which row version a query may read. = Le regole di visibility MVCC confrontano i bound xmin e xmax di uno snapshot con i timbri di ogni tupla per decidere quale versione di riga una query può leggere."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "Bloat",
+      "set": {
+        "italian": "Bloat",
+        "example": "Heavy UPDATEs without aggressive vacuum left the orders table 4x its expected size in bloat, slowing every sequential scan. = Pesanti UPDATE senza vacuum aggressivo hanno lasciato la tabella orders 4 volte la sua dimensione attesa in bloat, rallentando ogni sequential scan."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "Dead Tuple",
+      "set": {
+        "example": "Each obsolete row version stays on disk as a dead tuple until autovacuum reclaims it and updates the visibility map. = Ogni versione di riga obsoleta resta su disco come tupla morta finché autovacuum non la recupera e aggiorna la visibility map."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "HOT Update",
+      "set": {
+        "italian": "HOT update",
+        "example": "A HOT update keeps the new tuple version on the same page when no indexed column changed, avoiding extra index bloat in PostgreSQL. = Un HOT update mantiene la nuova versione di tupla sulla stessa pagina quando nessuna colonna indicizzata è cambiata, evitando extra index bloat in PostgreSQL."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Optimistic Concurrency",
+      "set": {
+        "italian": "Concorrenza ottimistica",
+        "example": "With optimistic concurrency, the UPDATE includes WHERE version=$1 and bumps version, so stale writers are simply rejected with 0 rows affected. = Con la concorrenza ottimistica, l'UPDATE include WHERE version=$1 e incrementa version, così scrittori stantii sono semplicemente rifiutati con 0 righe affette."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Pessimistic Concurrency",
+      "set": {
+        "italian": "Concorrenza pessimistica",
+        "example": "Pessimistic concurrency takes a row lock up front, ideal for short critical sections where conflicts are common and retries expensive. = La concorrenza pessimistica prende un lock di riga in anticipo, ideale per sezioni critiche brevi dove i conflitti sono comuni e i retry costosi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Compare-and-Set",
+      "set": {
+        "italian": "Compare-and-set",
+        "example": "Implement compare-and-set in Redis by using WATCH on the counter key, then EXEC inside MULTI to abort if it changed meanwhile. = Implementa compare-and-set in Redis usando WATCH sulla chiave counter, poi EXEC dentro MULTI per abortire se è cambiata nel frattempo."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Atomic Operation",
+      "set": {
+        "example": "Use Redis INCR as a single atomic operation to count API hits, since the increment happens under the engine's internal lock. = Usa Redis INCR come singola operazione atomica per contare le hit API, dato che l'incremento avviene sotto il lock interno del motore."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Idempotency Key",
+      "set": {
+        "italian": "Chiave idempotente",
+        "example": "Stripe requires an Idempotency-Key header on every POST so a retried payment after a timeout will not charge the customer twice. = Stripe richiede un header Idempotency-Key su ogni POST così un pagamento ritentato dopo un timeout non addebiti due volte il cliente."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Saga Pattern",
+      "set": {
+        "example": "Model the multi-service checkout as a saga pattern with compensating actions to refund the card if shipping reservation fails. = Modella il checkout multi-servizio come un saga pattern con azioni compensanti per rimborsare la carta se la prenotazione spedizione fallisce."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Eventual Consistency",
+      "set": {
+        "english": "Distributed Eventual Consistency",
+        "italian": "Coerenza eventuale distribuita",
+        "example": "Distributed eventual consistency means a DynamoDB read may return stale data for a few hundred ms after a write to a different region. = La coerenza eventuale distribuita significa che una lettura DynamoDB può ritornare dati stantii per qualche centinaio di ms dopo una scrittura in una regione diversa."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_5",
+      "english": "DBA",
+      "set": {
+        "italian": "DBA",
+        "example": "The DBA on call last night spent two hours killing runaway queries that were saturating the primary's connection pool. = Il DBA di reperibilità la scorsa notte ha passato due ore a uccidere query fuori controllo che saturavano la connection pool del primario."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_5",
+      "english": "Production DBA",
+      "set": {
+        "italian": "DBA di produzione",
+        "example": "The production DBA owns backups, failover drills, and patch windows for the customer-facing Postgres cluster running 24x7. = Il DBA di produzione possiede backup, drill di failover e finestre di patch per il cluster Postgres customer-facing che gira 24x7."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_5",
+      "english": "Development DBA",
+      "set": {
+        "italian": "DBA di sviluppo",
+        "example": "Our development DBA reviews every schema migration in pull requests and coaches developers on writing safe online DDL. = Il nostro DBA di sviluppo rivede ogni schema migration nelle pull request e fa coaching agli sviluppatori sulla scrittura di DDL online sicuro."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_5",
+      "english": "SRE",
+      "set": {
+        "italian": "SRE",
+        "example": "An SRE on the data platform team owns SLOs for query latency and writes runbooks that on-call engineers follow at 3 AM. = Un SRE del team data platform possiede gli SLO per la latenza query e scrive runbook che gli ingegneri reperibili seguono alle 3 di notte."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_5",
+      "english": "Database Engineer",
+      "set": {
+        "italian": "Database engineer",
+        "example": "Hire a database engineer when you need someone who can tune PostgreSQL internals, design indexes, and review query plans. = Assumi un database engineer quando ti serve qualcuno che sappia tunare gli internals PostgreSQL, progettare indici e rivedere piani di query."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_5",
+      "english": "Data Engineer",
+      "set": {
+        "italian": "Data engineer",
+        "example": "A data engineer builds the dbt models and Airflow DAGs that turn raw events into the dimensional model analysts trust. = Un data engineer costruisce i modelli dbt e i DAG Airflow che trasformano eventi grezzi nel modello dimensionale di cui si fidano gli analisti."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_5",
+      "english": "Data Architect",
+      "set": {
+        "italian": "Data architect",
+        "example": "The data architect defines the canonical entity model and decides which datasets live in the warehouse versus the lakehouse. = Il data architect definisce il modello entità canonico e decide quali dataset vivono nel warehouse contro il lakehouse."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_5",
+      "english": "On-call",
+      "set": {
+        "italian": "On-call",
+        "example": "You join the weekly on-call rotation for the database team, owning all production incidents from Monday 9 AM to the following Monday. = Entri nella rotazione on-call settimanale per il team database, possedendo tutti gli incidenti di produzione da lunedì 9 al lunedì seguente."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_5",
+      "english": "Postmortem",
+      "set": {
+        "italian": "Postmortem",
+        "example": "After the 3-hour outage we wrote a blameless postmortem documenting the trigger, the contributing factors, and three concrete action items. = Dopo i 3 ore di outage abbiamo scritto un postmortem senza colpa documentando il trigger, i fattori contribuenti e tre action item concreti."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_6",
+      "english": "Capacity Planning",
+      "set": {
+        "italian": "Pianificazione di capacità",
+        "example": "Use 12 months of growth data for capacity planning so we know whether to upsize the Postgres instance before Black Friday traffic hits. = Usa 12 mesi di dati di crescita per la pianificazione di capacità così sappiamo se ridimensionare l'istanza Postgres prima del traffico Black Friday."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_6",
+      "english": "Sizing",
+      "set": {
+        "example": "Initial sizing for the new analytics cluster targets 8 vCPU and 32 GB RAM, with room to triple over the next 18 months. = Il sizing iniziale per il nuovo cluster analytics punta a 8 vCPU e 32 GB RAM, con margine per triplicare nei prossimi 18 mesi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_6",
+      "english": "Forecasting",
+      "set": {
+        "example": "Use Prophet forecasting on monthly storage growth to plan when the warehouse will need its next disk expansion. = Usa il forecasting Prophet sulla crescita storage mensile per pianificare quando il warehouse richiederà la prossima espansione disco."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_6",
+      "english": "Growth Rate",
+      "set": {
+        "example": "Database table growth rate doubled this quarter, which forced an emergency upgrade of the replica's disk tier last week. = Il tasso di crescita delle tabelle database è raddoppiato questo trimestre, costringendo a un upgrade urgente del tier disco della replica la scorsa settimana."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_6",
+      "english": "Headroom",
+      "set": {
+        "example": "Keep at least 30% CPU headroom on the primary database so the autovacuum and replication catch-up workloads do not impact latency. = Mantieni almeno il 30% di margine CPU sul database primario così i carichi autovacuum e replication catch-up non impattino la latenza."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_6",
+      "english": "Vertical Scaling",
+      "set": {
+        "italian": "Scaling verticale",
+        "example": "Apply vertical scaling first by jumping from db.r6g.large to db.r6g.4xlarge before sharding the orders table across nodes. = Applica prima lo scaling verticale saltando da db.r6g.large a db.r6g.4xlarge prima di shardare la tabella orders tra nodi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_6",
+      "english": "Horizontal Scaling",
+      "set": {
+        "italian": "Scaling orizzontale",
+        "example": "Reach for horizontal scaling with Citus shards when a single Postgres node can no longer absorb the write throughput. = Affidati allo scaling orizzontale con shard Citus quando un singolo nodo Postgres non riesce più ad assorbire il throughput di scrittura."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_6",
+      "english": "Provisioning",
+      "set": {
+        "italian": "Provisioning",
+        "example": "Automate database provisioning with Terraform so a new staging environment with replica and backups stands up in 15 minutes. = Automatizza il provisioning del database con Terraform così un nuovo ambiente staging con replica e backup si alza in 15 minuti."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_6",
+      "english": "IaC",
+      "set": {
+        "italian": "IaC",
+        "example": "Manage every RDS instance through IaC modules in Terraform so reviewers can diff parameter group changes in pull requests. = Gestisci ogni istanza RDS tramite moduli IaC in Terraform così i reviewer possano vedere i diff dei cambi di parameter group nelle pull request."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_6",
+      "english": "Benchmark",
+      "set": {
+        "italian": "Benchmark",
+        "example": "Run a pgbench benchmark with 200 clients at TPC-B scale 1000 to compare two Postgres versions on identical hardware. = Esegui un benchmark pgbench con 200 client a scala TPC-B 1000 per confrontare due versioni Postgres su hardware identico."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_7",
+      "english": "Schema Migration",
+      "set": {
+        "italian": "Migrazione di schema",
+        "example": "Plan a schema migration that adds a NULLABLE column first, backfills in batches, and only later enforces NOT NULL. = Pianifica una migrazione di schema che aggiunge prima una colonna NULLABLE, fa backfill a batch e solo dopo applica NOT NULL."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_7",
+      "english": "Data Migration",
+      "set": {
+        "italian": "Migrazione di dati",
+        "example": "Run the data migration in batches of 10k rows with a sleep between batches to avoid overwhelming the replication stream. = Esegui la migrazione di dati a batch di 10k righe con uno sleep tra i batch per evitare di sopraffare lo stream di replication."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_7",
+      "english": "Zero Downtime Migration",
+      "set": {
+        "italian": "Migrazione senza downtime",
+        "example": "Execute a zero downtime migration by dual-writing to old and new tables, backfilling history, then switching reads atomically. = Esegui una migrazione senza downtime facendo dual-write su vecchie e nuove tabelle, backfill dello storico, poi switch atomico delle letture."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_7",
+      "english": "Cutover",
+      "set": {
+        "italian": "Cutover",
+        "example": "Schedule the cutover at 04:00 UTC on Sunday so we can flip DNS to the new database with the smallest possible user impact. = Pianifica il cutover alle 04:00 UTC di domenica così possiamo girare il DNS al nuovo database con il minor impatto utente possibile."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_7",
+      "english": "Flyway",
+      "set": {
+        "italian": "Flyway",
+        "example": "Apply database migrations with Flyway on application boot so every environment converges to the same schema version automatically. = Applica le migrazioni database con Flyway al boot dell'applicazione così ogni ambiente converge alla stessa versione schema automaticamente."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_7",
+      "english": "Liquibase",
+      "set": {
+        "italian": "Liquibase",
+        "example": "Use Liquibase changesets in YAML to manage Oracle schema evolution with built-in rollback support and per-change checksums. = Usa i changeset Liquibase in YAML per gestire l'evoluzione schema Oracle con supporto rollback integrato e checksum per cambio."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_7",
+      "english": "Forward Migration",
+      "set": {
+        "italian": "Migrazione forward",
+        "example": "Every forward migration must be paired with a reviewed rollback script so CI can replay the change up and back down. = Ogni migrazione forward deve essere accoppiata a uno script di rollback rivisto così la CI può rieseguire il cambio avanti e indietro."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_7",
+      "english": "Rollback Migration",
+      "set": {
+        "italian": "Migrazione di rollback",
+        "example": "Test the rollback migration on a staging clone of production so we know it actually reverses the schema change cleanly. = Testa la migrazione di rollback su un clone staging di produzione così sappiamo che inverte davvero il cambio schema pulitamente."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_7",
+      "english": "Expand-Contract",
+      "set": {
+        "italian": "Espandi-contrai",
+        "example": "Apply the expand-contract pattern: deploy code that writes both columns, backfill, switch readers, then drop the old column. = Applica il pattern espandi-contrai: deploya codice che scrive entrambe le colonne, fai backfill, switch dei lettori, poi droppa la vecchia colonna."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "VACUUM",
+      "set": {
+        "italian": "VACUUM",
+        "example": "Run VACUUM ANALYZE on the orders table after the nightly backfill so the planner picks fresh statistics for morning reports. = Esegui VACUUM ANALYZE sulla tabella orders dopo il backfill notturno così il planner sceglie statistiche fresche per i report mattutini."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "Autovacuum",
+      "set": {
+        "italian": "Autovacuum",
+        "example": "Tune autovacuum_vacuum_scale_factor=0.05 on a high-write table so Postgres triggers vacuum before bloat reaches a painful level. = Tuna autovacuum_vacuum_scale_factor=0.05 su una tabella ad alto write così Postgres triggera il vacuum prima che il bloat raggiunga livelli dolorosi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "VACUUM FULL",
+      "set": {
+        "italian": "VACUUM FULL",
+        "example": "Schedule a VACUUM FULL during the maintenance window because it rewrites the entire table and takes an exclusive lock the whole time. = Pianifica un VACUUM FULL durante la finestra di manutenzione perché riscrive l'intera tabella e prende un lock esclusivo per tutto il tempo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "Patch",
+      "set": {
+        "italian": "Patch",
+        "example": "Apply the security patch for CVE-2024-0985 within the 14-day SLA window across all production Postgres clusters. = Applica la patch di sicurezza per CVE-2024-0985 entro la finestra SLA di 14 giorni su tutti i cluster Postgres di produzione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "Minor Version",
+      "set": {
+        "italian": "Versione minore",
+        "example": "Upgrade to the new minor version of Postgres each quarter to absorb bug fixes and security patches without breaking compatibility. = Aggiorna alla nuova versione minore di Postgres ogni trimestre per assorbire bug fix e patch di sicurezza senza rompere la compatibilità."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "Major Version Upgrade",
+      "set": {
+        "italian": "Aggiornamento versione maggiore",
+        "example": "Plan a major version upgrade from Postgres 14 to 16 with pg_upgrade --link, a dry run on staging, and a published rollback plan. = Pianifica un aggiornamento versione maggiore da Postgres 14 a 16 con pg_upgrade --link, un dry run su staging e un piano di rollback pubblicato."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "pg_upgrade",
+      "set": {
+        "italian": "pg_upgrade",
+        "example": "Use pg_upgrade --link to move a 2 TB cluster from Postgres 14 to 16 in minutes by reusing data files instead of dumping and restoring. = Usa pg_upgrade --link per spostare un cluster da 2 TB da Postgres 14 a 16 in minuti riusando i file dati invece di fare dump e restore."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "Index Rebuild",
+      "set": {
+        "example": "Schedule a concurrent index rebuild after a large bulk delete reclaims half the leaf pages and inflates B-tree depth. = Pianifica una ricostruzione indici concorrente dopo che una grossa cancellazione massiva libera metà delle leaf page e gonfia la profondità del B-tree."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "db_administration_8",
+      "english": "Continuous Improvement",
+      "set": {
+        "example": "Adopt a continuous improvement habit by reviewing the slowest 5 queries weekly and fixing one root cause per sprint. = Adotta un'abitudine di miglioramento continuo rivedendo le 5 query più lente settimanalmente e fixando una root cause per sprint."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_8",
+      "english": "Two-Phase Commit",
+      "set": {
+        "english": "Distributed Two-Phase Commit",
+        "italian": "Two-phase commit distribuito",
+        "example": "Distributed two-phase commit coordinates a transaction across multiple databases, requiring all participants to vote prepare before the commit. = Il two-phase commit distribuito coordina una transazione su più database, richiedendo che tutti i partecipanti votino prepare prima del commit."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Shard Key",
+      "set": {
+        "english": "Sharding Shard Key",
+        "italian": "Chiave di sharding",
+        "example": "Picking a poor sharding shard key like timestamp creates hot shards because all recent writes pile onto the latest partition. = Scegliere una pessima chiave di sharding come timestamp crea shard caldi perché tutte le scritture recenti si accumulano sulla partizione più recente."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "db_transactions_7",
+      "english": "Snapshot",
+      "set": {
+        "english": "MVCC Snapshot",
+        "italian": "Snapshot MVCC",
+        "example": "An MVCC snapshot freezes the visible row versions at transaction start, so two readers in the same snapshot always see identical data. = Uno snapshot MVCC congela le versioni di riga visibili all'inizio della transazione, così due lettori nello stesso snapshot vedono sempre dati identici."
+      }
+    }
+  ]
+}

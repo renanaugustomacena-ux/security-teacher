@@ -1,0 +1,132 @@
+{
+  "fixes": [
+    {
+      "level": "21",
+      "lesson": "c_security_1",
+      "english": "Security Bounds Checking",
+      "set": {
+        "example": "Adding security bounds checking around every memcpy guards against buffer overflow exploits that fuzzing campaigns and adversarial inputs routinely uncover. = Aggiungere security bounds checking attorno a ogni memcpy protegge dagli exploit di buffer overflow che fuzzing e input avversari scoprono regolarmente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Defaulted Function",
+      "set": {
+        "example": "Marking a defaulted function with `= default` keeps the compiler-generated implementation while letting you adjust constexpr or noexcept specifiers. = Marcare una defaulted function con `= default` mantiene l'implementazione generata dal compilatore lasciandoti regolare gli specificatori constexpr o noexcept."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Init Capture",
+      "set": {
+        "example": "Use an init capture to move a unique_ptr into a lambda body, transferring ownership without forcing the surrounding scope to retain the resource. = Usa un init capture per muovere un unique_ptr nel corpo di una lambda, trasferendo l'ownership senza forzare lo scope circostante a tenere la risorsa."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Generic Lambda",
+      "set": {
+        "example": "A generic lambda with `auto` parameters lets one closure work on int, double, and custom types without writing a separate template function. = Una generic lambda con parametri `auto` permette a una closure di funzionare su int, double e tipi custom senza scrivere una template function separata."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Stateful Lambda",
+      "set": {
+        "example": "Wrap a counter in a stateful lambda by capturing it by reference so successive invocations mutate the same accumulated value. = Avvolgi un counter in una stateful lambda catturandolo per riferimento così invocazioni successive modificano lo stesso valore accumulato."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Function Composition",
+      "set": {
+        "example": "Chain validate, normalize, and persist via function composition so the data pipeline reads top-to-bottom without intermediate temporaries cluttering the code. = Concatena validate, normalize e persist tramite function composition così la pipeline dati si legge dall'alto in basso senza temporanei intermedi che intasano il codice."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Lvalue",
+      "set": {
+        "example": "An lvalue refers to a named storage location you can take the address of, unlike a temporary that disappears at the end of the full expression. = Un lvalue si riferisce a una locazione di memoria con nome di cui puoi prendere l'indirizzo, a differenza di un temporaneo che scompare alla fine dell'espressione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Default Function",
+      "set": {
+        "example": "Declaring a special member as a default function with `= default` makes intent explicit and preserves the trivial properties needed for memcpy-safe types. = Dichiarare un membro speciale come default function con `= default` rende l'intento esplicito e preserva le proprietà triviali necessarie per tipi memcpy-safe."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Modern Deleted Function",
+      "set": {
+        "example": "Forbidding copy construction via a modern deleted function with `= delete` produces a compile-time error instead of the legacy trick of declaring it private and undefined. = Vietare la costruzione per copia tramite una modern deleted function con `= delete` produce un errore di compilazione invece del vecchio trucco di dichiararla privata e non definita."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Structured Bindings",
+      "set": {
+        "example": "When iterating a `std::map`, structured bindings let you write `for (auto& [key, value] : m)` instead of accessing `.first` and `.second` everywhere. = Quando itera una `std::map`, le structured bindings permettono di scrivere `for (auto& [key, value] : m)` invece di accedere ovunque a `.first` e `.second`."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "If Init",
+      "set": {
+        "example": "Use the if init form `if (auto it = m.find(k); it != m.end())` to limit the iterator's scope to the conditional block without polluting the enclosing scope. = Usa la forma if init `if (auto it = m.find(k); it != m.end())` per limitare lo scope dell'iteratore al blocco condizionale senza inquinare lo scope esterno."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "db_nosql_13",
+      "english": "Graph Edge",
+      "set": {
+        "english": "Property Graph Edge",
+        "italian": "Arco con proprietà",
+        "example": "Storing a since-timestamp on a property graph edge lets the recommendation query weight recent FOLLOWS connections higher than ancient ones. = Memorizzare un timestamp since su un arco con proprietà permette alla query di raccomandazione di pesare di più le connessioni FOLLOWS recenti rispetto a quelle vecchie."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Redis Set",
+      "set": {
+        "english": "Redis Set Datatype",
+        "italian": "Tipo Set di Redis",
+        "example": "Tracking active sessions with the Redis Set datatype via SADD online:users alice bob automatically deduplicates user IDs and gives O(1) membership checks. = Tracciare le sessioni attive con il tipo Set di Redis tramite SADD online:users alice bob deduplica automaticamente gli ID utente e dà controlli di membership O(1)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_2",
+      "english": "Take",
+      "set": {
+        "english": "Option::take",
+        "italian": "Option::take",
+        "example": "Calling `Option::take` on a struct field swaps in `None` and hands you the owned value, useful when re-parenting a linked-list node. = Chiamare `Option::take` su un campo struct sostituisce con `None` e restituisce il valore owned, utile quando ri-genitorizzi un nodo di linked list."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_3",
+      "english": "Auto Trait",
+      "set": {
+        "english": "Auto Trait (Send/Sync)",
+        "italian": "Auto trait (Send/Sync)",
+        "example": "An auto trait like Send is implemented automatically by the compiler for every type whose fields all satisfy it, which is how thread-safety propagates. = Un auto trait come Send è implementato automaticamente dal compilatore per ogni tipo i cui campi lo soddisfano tutti, ed è così che la thread-safety si propaga."
+      }
+    }
+  ]
+}

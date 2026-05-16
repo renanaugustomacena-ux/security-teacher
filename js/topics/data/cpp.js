@@ -1326,8 +1326,7 @@ export default {
               italian: 'Funzione di default',
               pronunciation: '/dɪˈfɔːltɪd ˈfʌŋkʃən/',
               phonetic: 'di-FOL-ted FANK-scen',
-              example:
-                'Writing Widget() = default tells the compiler to synthesize the body, making it a defaulted function that is clearer than an empty {} block. = Scrivere Widget() = default dice al compilatore di sintetizzare il corpo, rendendola una funzione di default più chiara di un blocco {} vuoto.',
+              example: `Marking a defaulted function with \`= default\` keeps the compiler-generated implementation while letting you adjust constexpr or noexcept specifiers. = Marcare una defaulted function con \`= default\` mantiene l'implementazione generata dal compilatore lasciandoti regolare gli specificatori constexpr o noexcept.`,
               context: 'oop',
               difficulty: 'beginner',
               code: 'A() = default;',
@@ -5296,8 +5295,7 @@ export default {
               italian: 'Cattura con inizializzazione',
               pronunciation: '/ɪˈnɪt/',
               phonetic: 'i-NIT',
-              example:
-                'Writing [handle = std::move(ptr)] in the capture list is an init capture that moves the unique_ptr into the closure, transferring ownership cleanly. = Scrivere [handle = std::move(ptr)] nella lista di cattura è una cattura con inizializzazione che sposta lo unique_ptr nella closure, trasferendo la proprietà in modo pulito.',
+              example: `Use an init capture to move a unique_ptr into a lambda body, transferring ownership without forcing the surrounding scope to retain the resource. = Usa un init capture per muovere un unique_ptr nel corpo di una lambda, trasferendo l'ownership senza forzare lo scope circostante a tenere la risorsa.`,
               context: 'lambdas',
               difficulty: 'intermediate',
               code: '[p = std::move(ptr)]() { /* ... */ }',
@@ -5468,8 +5466,7 @@ export default {
               italian: 'Lambda generica',
               pronunciation: '/dʒəˈnerɪk/',
               phonetic: 'gie-NE-rik',
-              example:
-                'Declaring auto add = [](auto a, auto b) { return a + b; } makes it a generic lambda whose call operator is itself a function template. = Dichiarare auto add = [](auto a, auto b) { return a + b; } la rende una lambda generica il cui operatore di chiamata è esso stesso un template di funzione.',
+              example: `A generic lambda with \`auto\` parameters lets one closure work on int, double, and custom types without writing a separate template function. = Una generic lambda con parametri \`auto\` permette a una closure di funzionare su int, double e tipi custom senza scrivere una template function separata.`,
               context: 'lambdas',
               difficulty: 'intermediate',
               code: 'auto f = [](auto x) { return x + 1; };',
@@ -5526,7 +5523,7 @@ export default {
               pronunciation: '/ˈsteɪtfəl/',
               phonetic: 'STEIT-ful',
               example:
-                'The progress reporter [count = 0]() mutable { return ++count; } is a stateful lambda whose internal counter survives across successive invocations. = Il reporter di avanzamento [count = 0]() mutable { return ++count; } è una lambda con stato il cui contatore interno sopravvive tra invocazioni successive.',
+                'Wrap a counter in a stateful lambda by capturing it by reference so successive invocations mutate the same accumulated value. = Avvolgi un counter in una stateful lambda catturandolo per riferimento così invocazioni successive modificano lo stesso valore accumulato.',
               context: 'lambdas',
               difficulty: 'intermediate',
             },
@@ -5675,8 +5672,7 @@ export default {
               italian: 'Composizione di funzioni',
               pronunciation: '/ˌkɒmpəˈzɪʃən/',
               phonetic: 'kom-po-ZI-scion',
-              example:
-                'Building const auto fg = [&](auto x) { return f(g(x)); } captures function composition explicitly so callers can apply the combined transformation in one step. = Costruire const auto fg = [&](auto x) { return f(g(x)); } cattura la composizione di funzioni esplicitamente così i chiamanti possono applicare la trasformazione combinata in un solo passo.',
+              example: `Chain validate, normalize, and persist via function composition so the data pipeline reads top-to-bottom without intermediate temporaries cluttering the code. = Concatena validate, normalize e persist tramite function composition così la pipeline dati si legge dall'alto in basso senza temporanei intermedi che intasano il codice.`,
               context: 'lambdas',
               difficulty: 'intermediate',
               note: 'Rinominato da Composition per disambiguare dalla composizione OO di livello 3.',
@@ -5851,7 +5847,7 @@ export default {
               italian: 'lvalue',
               pronunciation: '/ˈelˌvæljuː/',
               phonetic: 'EL-val-iu',
-              example: `A named variable like int x = 0; is the textbook lvalue: it has an identifiable memory location, so you can take its address with &x. = Una variabile con nome come int x = 0; è il lvalue da manuale: ha una posizione di memoria identificabile, quindi puoi prenderne l'indirizzo con &x.`,
+              example: `An lvalue refers to a named storage location you can take the address of, unlike a temporary that disappears at the end of the full expression. = Un lvalue si riferisce a una locazione di memoria con nome di cui puoi prendere l'indirizzo, a differenza di un temporaneo che scompare alla fine dell'espressione.`,
               context: 'modern-cpp',
               difficulty: 'intermediate',
               note: 'Termine C++: lvalue (categoria di valore del linguaggio, non si traduce).',
@@ -5934,8 +5930,7 @@ export default {
               italian: 'Funzione di default',
               pronunciation: '/dɪˈfɔːlt/',
               phonetic: 'di-FOLT',
-              example:
-                'Writing Point() = default declares an explicitly default function whose compiler-generated body initializes each member with its in-class default. = Scrivere Point() = default dichiara una funzione di default esplicita il cui corpo generato dal compilatore inizializza ogni membro col suo default in-class.',
+              example: `Declaring a special member as a default function with \`= default\` makes intent explicit and preserves the trivial properties needed for memcpy-safe types. = Dichiarare un membro speciale come default function con \`= default\` rende l'intento esplicito e preserva le proprietà triviali necessarie per tipi memcpy-safe.`,
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'A() = default;',
@@ -5945,8 +5940,7 @@ export default {
               italian: 'Funzione eliminata (modern C++)',
               pronunciation: '/dɪˈliːtɪd/',
               phonetic: 'di-LII-ted',
-              example:
-                'Marking the copy constructor as = delete creates a modern deleted function so any attempt to copy a UniqueHandle is flagged at compile time. = Marcare il costruttore di copia come = delete crea una funzione eliminata moderna così qualsiasi tentativo di copiare un UniqueHandle è segnalato a compile time.',
+              example: `Forbidding copy construction via a modern deleted function with \`= delete\` produces a compile-time error instead of the legacy trick of declaring it private and undefined. = Vietare la costruzione per copia tramite una modern deleted function con \`= delete\` produce un errore di compilazione invece del vecchio trucco di dichiararla privata e non definita.`,
               context: 'modern-cpp',
               difficulty: 'intermediate',
               code: 'A(const A&) = delete;',
@@ -6181,8 +6175,7 @@ export default {
               italian: 'Binding strutturato',
               pronunciation: '/ˈstrʌktʃərd/',
               phonetic: 'STRAK-cerd',
-              example:
-                'Writing auto [it, inserted] = map.try_emplace(key, value); destructures the returned pair with structured bindings into two clearly named locals. = Scrivere auto [it, inserted] = map.try_emplace(key, value); destruttura la coppia restituita con binding strutturati in due locali con nomi chiari.',
+              example: `When iterating a \`std::map\`, structured bindings let you write \`for (auto& [key, value] : m)\` instead of accessing \`.first\` and \`.second\` everywhere. = Quando itera una \`std::map\`, le structured bindings permettono di scrivere \`for (auto& [key, value] : m)\` invece di accedere ovunque a \`.first\` e \`.second\`.`,
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'auto [a, b] = std::make_pair(1, 2);',
@@ -6193,7 +6186,8 @@ export default {
               italian: 'If con init',
               pronunciation: '/ɪf ɪˈnɪt/',
               phonetic: 'IF i-NIT',
-              example: `Using if (auto it = m.find(k); it != m.end()) is an if-init form that scopes the iterator to the conditional branches and keeps the outer namespace clean. = Usare if (auto it = m.find(k); it != m.end()) è una forma if-init che limita l'iteratore ai rami condizionali e tiene pulito il namespace esterno.`,
+              example:
+                'The if init syntax binds an iterator inline so its scope ends with the conditional, keeping the enclosing function tidy when handling map lookups. = La sintassi if init lega un iteratore inline così il suo scope termina col condizionale, mantenendo la funzione esterna pulita nei lookup su map.',
               context: 'modern-cpp',
               difficulty: 'advanced',
               code: 'if (auto it = m.find(k); it != m.end()) {}',
@@ -6782,12 +6776,11 @@ export default {
               code: 'std::enable_if_t<cond, T>',
             },
             {
-              english: 'Tag Dispatch',
-              italian: 'Tag dispatch',
+              english: 'Iterator Tag Dispatch',
+              italian: 'Iterator tag dispatch',
               pronunciation: '/tæɡ ˈdɪspætʃ/',
               phonetic: 'TAG DIS-paci',
-              example:
-                'Pick a specialized algorithm at compile time via tag dispatch by passing iterator_category as an extra tag argument. = Seleziona un algoritmo specializzato a tempo di compilazione tramite tag dispatch passando iterator_category come argomento tag extra.',
+              example: `Picking a specialized algorithm via iterator tag dispatch passes iterator_category as an extra argument that drives overload resolution. = Scegliere un algoritmo specializzato tramite iterator tag dispatch passa iterator_category come argomento extra che guida l'overload.`,
               context: 'templates',
               difficulty: 'advanced',
               note: 'Tecnica per scegliere overload distinti a compile time tramite tipi sentinella.',
@@ -6871,12 +6864,12 @@ export default {
           description: 'Type traits e introspezione',
           items: [
             {
-              english: 'Type Traits',
-              italian: 'Tratti di tipo',
+              english: 'Type Traits Library',
+              italian: 'Libreria type traits',
               pronunciation: '/treɪts/',
               phonetic: 'TREITS',
               example:
-                'Reach for type traits like std::is_integral_v to write generic code that adapts behavior based on the deduced T. = Affidati ai type traits come std::is_integral_v per scrivere codice generico che adatta il comportamento al T dedotto.',
+                'Reaching for the type traits library like std::is_integral_v writes generic code that adapts behavior based on the deduced T at compile time. = Affidarsi alla libreria type traits come std::is_integral_v scrive codice generico che adatta il comportamento al T dedotto a tempo di compilazione.',
               context: 'templates',
               difficulty: 'advanced',
               code: '#include <type_traits>',
@@ -7042,11 +7035,11 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Static Polymorphism',
-              italian: 'Polimorfismo statico',
+              english: 'CRTP Static Polymorphism',
+              italian: 'Polimorfismo statico tramite CRTP',
               pronunciation: '/ˌpɒlɪˈmɔːrfɪzəm/',
               phonetic: 'po-li-MOR-fi-zem',
-              example: `Reach for static polymorphism via templates when you want virtual-call performance without the vtable indirection. = Affidati al polimorfismo statico tramite template quando vuoi prestazioni da virtual call senza l'indirezione della vtable.`,
+              example: `Reaching for CRTP static polymorphism gives templates virtual-call performance without paying for the vtable indirection at every call site. = Affidarsi al polimorfismo statico tramite CRTP dà ai template prestazioni da virtual call senza pagare l'indirezione della vtable a ogni call site.`,
               context: 'templates',
               difficulty: 'advanced',
             },
@@ -7070,12 +7063,12 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Template Bloat',
-              italian: 'Bloat dei template',
+              english: 'Binary Template Bloat',
+              italian: 'Bloat del binario da template',
               pronunciation: '/bloʊt/',
               phonetic: 'BLOUT',
               example:
-                'Watch out for template bloat: each instantiation can blow up binary size and slow down link times in big projects. = Attento al template bloat: ogni istanziazione può far esplodere la dimensione del binario e rallentare i link time.',
+                'Big projects must watch for binary template bloat because each instantiation can balloon object files and slow down link times noticeably. = I progetti grandi devono badare al bloat del binario da template perché ogni istanziazione può gonfiare gli object file e rallentare i link time.',
               context: 'templates',
               difficulty: 'advanced',
             },
@@ -7106,12 +7099,12 @@ export default {
           description: 'std::thread e gestione thread',
           items: [
             {
-              english: 'Thread',
-              italian: 'Thread di esecuzione (std::thread)',
+              english: 'Worker Thread',
+              italian: 'Thread di lavoro',
               pronunciation: '/θred/',
               phonetic: 'TRED',
               example:
-                'Spin up a worker with std::thread t(do_work, payload) so heavy computation runs in parallel with the UI loop. = Avvia un worker con std::thread t(do_work, payload) così il calcolo pesante gira in parallelo con il loop della UI.',
+                'Spinning up a worker thread with std::thread t(do_work, payload) runs heavy computation in parallel with the UI loop without blocking it. = Avviare un thread di lavoro con std::thread t(do_work, payload) esegue calcolo pesante in parallelo con il loop UI senza bloccarlo.',
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::thread t(work);',
@@ -7234,11 +7227,11 @@ export default {
               code: 'std::mutex m;',
             },
             {
-              english: 'Lock Guard',
-              italian: 'RAII per mutex (std::lock_guard)',
+              english: 'Scoped Lock Guard',
+              italian: 'std::scoped_lock',
               pronunciation: '/lɒk ɡɑːrd/',
               phonetic: 'LOK GARD',
-              example: `Wrap a critical section in std::lock_guard<std::mutex> lk(m); so the mutex auto-releases even if the body throws. = Avvolgi una sezione critica in std::lock_guard<std::mutex> lk(m); così il mutex si auto-rilascia anche se il corpo solleva un'eccezione.`,
+              example: `Switching to a scoped lock guard like std::scoped_lock locks multiple mutexes atomically and releases them in reverse order at scope exit. = Passare a un scoped lock guard come std::scoped_lock blocca più mutex atomicamente e li rilascia in ordine inverso all'uscita dallo scope.`,
               context: 'concurrency',
               difficulty: 'advanced',
               code: 'std::lock_guard lk(m);',
@@ -8230,12 +8223,12 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Mixin',
-              italian: 'Classe di funzionalità riusabile (mixin)',
+              english: 'CRTP Mixin',
+              italian: 'Mixin tramite CRTP',
               pronunciation: '/ˈmɪksɪn/',
               phonetic: 'MIK-sin',
               example:
-                'Drop a Printable mixin into a class hierarchy through CRTP to share serialization without touching unrelated parts of the design. = Inserisci un mixin Printable in una gerarchia di classi tramite CRTP per condividere serializzazione senza toccare parti non correlate del design.',
+                'Dropping a Printable CRTP mixin into a class hierarchy shares serialization without touching unrelated parts of the design. = Inserire un mixin CRTP Printable in una gerarchia di classi condivide serializzazione senza toccare parti non correlate del design.',
               context: 'patterns',
               difficulty: 'advanced',
             },
@@ -8586,12 +8579,12 @@ export default {
           description: 'Lettura e scrittura di file',
           items: [
             {
-              english: 'File Stream',
-              italian: 'Stream di file',
+              english: 'Bidirectional File Stream',
+              italian: 'Stream di file bidirezionale',
               pronunciation: '/faɪl striːm/',
               phonetic: 'FAIL STRIIM',
               example:
-                'Open a configuration file with std::ifstream and stream tokens out via operator>> instead of dealing with raw FILE* handles. = Apri un file di configurazione con std::ifstream e leggi token tramite operator>> invece di gestire handle FILE* raw.',
+                'Opening with std::fstream creates a bidirectional file stream so the same handle reads existing tokens and writes updated ones back in place. = Aprire con std::fstream crea uno stream di file bidirezionale così lo stesso handle legge token esistenti e scrive quelli aggiornati al loro posto.',
               context: 'io',
               difficulty: 'advanced',
               code: 'std::fstream f("data");',

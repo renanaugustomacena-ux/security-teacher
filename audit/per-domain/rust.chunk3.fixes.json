@@ -1,165 +1,1471 @@
-{"fixes":[
-{"level":"13","lesson":"rust_collections_7","english":"Any","set":{"italian":"True se almeno uno corrisponde (any)","example":"Use any to short-circuit and return true as soon as one element matches the predicate. = Usa any per cortocircuitare e restituire true non appena un elemento soddisfa il predicato."}},
-{"level":"13","lesson":"rust_collections_7","english":"All","set":{"italian":"True se tutti corrispondono (all)","example":"Use all on the iterator to check that every user record contains a valid email before importing. = Usa all sull'iteratore per verificare che ogni record utente contenga un'email valida prima dell'importazione."}},
-{"level":"13","lesson":"rust_collections_8","english":"Custom Iterator","set":{"italian":"Iteratore personalizzato","example":"Implement a custom iterator over the log file's records so callers can iterate without loading everything in memory. = Implementa un iteratore personalizzato sui record del file di log così i chiamanti possono iterare senza caricare tutto in memoria."}},
-{"level":"13","lesson":"rust_collections_8","english":"Next Method","set":{"italian":"Metodo next","example":"The next method on Iterator returns Some(item) until the sequence is exhausted, then None. = Il metodo next su Iterator restituisce Some(item) finché la sequenza non è esaurita, poi None."}},
-{"level":"13","lesson":"rust_collections_8","english":"Exact Size","set":{"italian":"Dimensione esatta","example":"Implement ExactSizeIterator when the exact size is known upfront so callers can preallocate buffers. = Implementa ExactSizeIterator quando la dimensione esatta è nota in anticipo così i chiamanti possono preallocare i buffer."}},
-{"level":"13","lesson":"rust_collections_8","english":"Lazy Iterator","set":{"italian":"Iteratore lazy","example":"A lazy iterator builds up a chain of map and filter calls but only computes values when next is called. = Un iteratore lazy costruisce una catena di chiamate map e filter ma calcola i valori solo quando viene chiamato next."}},
-{"level":"13","lesson":"rust_collections_8","english":"Iterator State","set":{"italian":"Stato di iteratore","example":"Store the cursor position as iterator state inside the struct so each call to next advances correctly. = Memorizza la posizione del cursore come stato di iteratore dentro la struct così ogni chiamata a next avanza correttamente."}},
-{"level":"13","lesson":"rust_collections_8","english":"Iterator Composition","set":{"italian":"Composizione di iteratori","example":"Use iterator composition to chain filter, map, and take into a single pipeline that scans logs in one pass. = Usa la composizione di iteratori per concatenare filter, map e take in una singola pipeline che scorre i log in un solo passaggio."}},
-{"level":"13","lesson":"rust_collections_8","english":"Itertools","set":{"italian":"itertools","example":"Add the itertools crate to access combinators like group_by and chunks not present in the standard library. = Aggiungi il crate itertools per accedere a combinatori come group_by e chunks non presenti nella libreria standard."}},
-{"level":"14","lesson":"rust_ownership_9","english":"Box","set":{"italian":"Box","example":"Wrap the large config struct in a Box so only a pointer lives on the stack and the data sits on the heap. = Avvolgi la grande struct di config in un Box così solo un puntatore vive sullo stack e i dati stanno sull'heap."}},
-{"level":"14","lesson":"rust_ownership_9","english":"Box New","set":{"italian":"Crea Box su heap (Box::new)","example":"Call Box::new(value) to move the value onto the heap and obtain a Box<T> owning that allocation. = Chiama Box::new(value) per spostare il valore sull'heap e ottenere un Box<T> che possiede quell'allocazione."}},
-{"level":"14","lesson":"rust_ownership_9","english":"Heap Pointer","set":{"italian":"Puntatore a heap","example":"A heap pointer like Box<T> keeps the actual buffer on the heap so it survives moving the owner around. = Un puntatore a heap come Box<T> tiene il buffer effettivo sull'heap così sopravvive allo spostamento del proprietario."}},
-{"level":"14","lesson":"rust_ownership_9","english":"Recursive Type","set":{"italian":"Tipo ricorsivo","example":"Define a recursive type like a linked list using Box<Self> so the compiler can compute a finite size. = Definisci un tipo ricorsivo come una lista linkata usando Box<Self> così il compilatore può calcolare una dimensione finita."}},
-{"level":"14","lesson":"rust_ownership_9","english":"Trait Object Box","set":{"italian":"Box di trait object","example":"Return Box<dyn Error> as a trait object box so the caller can handle any concrete error type uniformly. = Restituisci Box<dyn Error> come box di trait object così il chiamante può gestire qualunque tipo di errore concreto in modo uniforme."}},
-{"level":"14","lesson":"rust_ownership_9","english":"Single Ownership","set":{"italian":"Ownership singola","example":"Box<T> enforces single ownership: exactly one binding owns the heap value and frees it when dropped. = Box<T> impone ownership singola: esattamente un binding possiede il valore sull'heap e lo libera al drop."}},
-{"level":"14","lesson":"rust_ownership_9","english":"Unboxing","set":{"italian":"Spacchettamento da Box (unboxing)","example":"Move the inner value out with *boxed to perform unboxing and consume the Box in a single expression. = Sposta fuori il valore interno con *boxed per eseguire lo spacchettamento e consumare la Box in una sola espressione."}},
-{"level":"14","lesson":"rust_ownership_10","english":"Rc","set":{"italian":"Reference counting non-thread-safe (Rc<T>)","example":"Wrap the shared config in Rc<Config> so several owners on the same thread can read it without copying. = Avvolgi la config condivisa in Rc<Config> così più proprietari sullo stesso thread possono leggerla senza copiare."}},
-{"level":"14","lesson":"rust_ownership_10","english":"Arc","set":{"italian":"Arc","example":"Use Arc<Cache> when sharing the cache across threads since reference counting is performed atomically. = Usa Arc<Cache> quando condividi la cache tra thread poiché il reference counting viene eseguito atomicamente."}},
-{"level":"14","lesson":"rust_ownership_10","english":"Reference Counting","set":{"italian":"Conteggio dei riferimenti","example":"Reference counting via Rc tracks how many owners hold the value and frees the allocation when the count hits zero. = Il conteggio dei riferimenti tramite Rc traccia quanti proprietari mantengono il valore e libera l'allocazione quando il conteggio arriva a zero."}},
-{"level":"14","lesson":"rust_ownership_10","english":"Weak Reference","set":{"italian":"Riferimento debole","example":"Store parent links as Weak<Node> so circular references in the tree never form cycles that leak memory. = Memorizza i link al genitore come Weak<Node> così i riferimenti circolari nell'albero non formano mai cicli che perdono memoria."}},
-{"level":"14","lesson":"rust_ownership_10","english":"Reference Cycle","set":{"italian":"Ciclo di riferimenti","example":"A reference cycle between two Rc-owned nodes prevents both from being dropped and leaks heap memory. = Un ciclo di riferimenti tra due nodi posseduti da Rc impedisce a entrambi di essere droppati e perde memoria heap."}},
-{"level":"14","lesson":"rust_ownership_10","english":"Clone Rc","set":{"italian":"Clone di Rc","example":"Calling rc.clone() performs a cheap clone of Rc that only bumps the reference count rather than duplicating data. = Chiamare rc.clone() esegue un clone economico di Rc che incrementa solo il conteggio dei riferimenti invece di duplicare i dati."}},
-{"level":"14","lesson":"rust_ownership_10","english":"Send Trait","set":{"italian":"Trait Send","example":"A type implements the Send trait when it can be safely transferred across thread boundaries. = Un tipo implementa il trait Send quando può essere trasferito in sicurezza attraverso i confini dei thread."}},
-{"level":"14","lesson":"rust_ownership_10","english":"Shared Ownership","set":{"italian":"Ownership condivisa","example":"Rc and Arc provide shared ownership so several parts of the program can keep the same allocation alive. = Rc e Arc forniscono ownership condivisa così più parti del programma possono mantenere viva la stessa allocazione."}},
-{"level":"14","lesson":"rust_ownership_11","english":"Interior Mutability","set":{"italian":"Mutabilità interna","example":"Wrap the counter in RefCell to gain interior mutability while keeping the outer binding immutable. = Avvolgi il contatore in RefCell per ottenere mutabilità interna mantenendo il binding esterno immutabile."}},
-{"level":"14","lesson":"rust_ownership_11","english":"Borrow Method","set":{"italian":"Metodo borrow","example":"Call cell.borrow() to obtain an immutable Ref guard and read the inner value without taking the cell apart. = Chiama cell.borrow() per ottenere una guardia Ref immutabile e leggere il valore interno senza smontare la cella."}},
-{"level":"14","lesson":"rust_ownership_11","english":"Borrow Mut","set":{"italian":"Prestito mutabile a runtime (borrow_mut)","example":"Use cell.borrow_mut() to obtain a unique mutable reference; the call panics if any other borrow is live. = Usa cell.borrow_mut() per ottenere un riferimento mutabile unico; la chiamata fa panic se un altro prestito è attivo."}},
-{"level":"14","lesson":"rust_ownership_11","english":"Runtime Borrow Check","set":{"italian":"Controllo borrow a runtime","example":"RefCell performs a runtime borrow check and panics when conflicting borrows are detected at the call site. = RefCell esegue un controllo borrow a runtime e fa panic quando vengono rilevati prestiti in conflitto al sito di chiamata."}},
-{"level":"14","lesson":"rust_ownership_11","english":"Lock","set":{"italian":"Blocco esclusivo (lock)","example":"Call mutex.lock().unwrap() to acquire an exclusive lock and read or mutate the shared counter. = Chiama mutex.lock().unwrap() per acquisire un lock esclusivo e leggere o mutare il contatore condiviso."}},
-{"level":"14","lesson":"rust_ownership_12","english":"Deref Trait","set":{"italian":"Trait Deref","example":"Implement the Deref trait for a smart pointer so users can call inner methods directly through the wrapper. = Implementa il trait Deref per uno smart pointer così gli utenti possono chiamare i metodi interni direttamente tramite il wrapper."}},
-{"level":"14","lesson":"rust_ownership_12","english":"Deref Coercion","set":{"italian":"Coercione Deref","example":"Thanks to deref coercion, passing &String where &str is expected works because String implements Deref<Target=str>. = Grazie alla coercione Deref, passare &String dove ci si aspetta &str funziona perché String implementa Deref<Target=str>."}},
-{"level":"14","lesson":"rust_ownership_12","english":"Drop Method","set":{"italian":"Metodo drop","example":"Implement the drop method to close the file handle exactly when the resource owner goes out of scope. = Implementa il metodo drop per chiudere l'handle del file esattamente quando il proprietario della risorsa esce dallo scope."}},
-{"level":"15","lesson":"rust_concurrency_1","english":"Thread","set":{"italian":"Thread di esecuzione (thread)","example":"Spawn a worker thread to encode video frames while the main thread keeps reading from the camera. = Spawn di un thread worker per codificare frame video mentre il thread principale continua a leggere dalla camera."}},
-{"level":"15","lesson":"rust_concurrency_1","english":"Thread Spawn","set":{"italian":"Avvia un nuovo thread (thread::spawn)","example":"Call thread::spawn(move || worker(rx)) to launch a background task that owns its captured channel receiver. = Chiama thread::spawn(move || worker(rx)) per avviare un task in background che possiede il receiver di canale catturato."}},
-{"level":"15","lesson":"rust_concurrency_1","english":"Join Handle","set":{"italian":"Handle di join","example":"Keep the JoinHandle returned by spawn so you can later call join and propagate the worker's panic or result. = Tieni il JoinHandle restituito da spawn così puoi poi chiamare join e propagare il panic o il risultato del worker."}},
-{"level":"15","lesson":"rust_concurrency_1","english":"Join","set":{"italian":"Attende terminazione thread (join)","example":"Call handle.join() in the main thread to wait for the worker to finish and obtain its returned value. = Chiama handle.join() nel thread principale per attendere che il worker finisca e ottenere il valore restituito."}},
-{"level":"15","lesson":"rust_concurrency_1","english":"OS Thread","set":{"italian":"Thread OS","example":"std::thread maps each spawned thread to a real OS thread scheduled by the operating system kernel. = std::thread mappa ogni thread spawnato a un vero thread OS schedulato dal kernel del sistema operativo."}},
-{"level":"15","lesson":"rust_concurrency_1","english":"Sleep","set":{"italian":"Sospende il thread (thread::sleep)","example":"Use thread::sleep(Duration::from_secs(1)) in the retry loop to back off before hitting the server again. = Usa thread::sleep(Duration::from_secs(1)) nel loop di retry per fare backoff prima di colpire di nuovo il server."}},
-{"level":"15","lesson":"rust_concurrency_1","english":"Park","set":{"italian":"Parcheggia il thread (thread::park)","example":"Call thread::park() to suspend the worker until another thread calls unpark on its handle. = Chiama thread::park() per sospendere il worker finché un altro thread non chiama unpark sul suo handle."}},
-{"level":"15","lesson":"rust_concurrency_1","english":"Spawn Result","set":{"italian":"Risultato di spawn","example":"Inspect the spawn result via join().unwrap() to surface any panic raised inside the worker closure. = Ispeziona il risultato di spawn tramite join().unwrap() per far emergere qualunque panic sollevato dentro la closure del worker."}},
-{"level":"15","lesson":"rust_concurrency_2","english":"Channel","set":{"italian":"Canale","example":"Create an mpsc channel so producer threads can push jobs to a single consumer that drains the queue. = Crea un canale mpsc così i thread producer possono pushare job a un singolo consumer che svuota la coda."}},
-{"level":"15","lesson":"rust_concurrency_2","english":"Sync Channel","set":{"italian":"Canale sincrono limitato (sync_channel)","example":"Build a sync_channel(8) to apply back-pressure on producers when the consumer falls behind by more than eight messages. = Costruisci un sync_channel(8) per applicare back-pressure ai producer quando il consumer rimane indietro di più di otto messaggi."}},
-{"level":"15","lesson":"rust_concurrency_2","english":"Crossbeam","set":{"italian":"crossbeam","example":"Pull in the crossbeam crate when you need scoped threads or its faster multi-producer multi-consumer channels. = Importa il crate crossbeam quando ti servono scoped thread o i suoi canali multi-producer multi-consumer più veloci."}},
-{"level":"15","lesson":"rust_concurrency_2","english":"Bounded Channel","set":{"italian":"Canale limitato","example":"Use a bounded channel of capacity 64 so the producer blocks instead of accumulating frames in unbounded memory. = Usa un canale limitato di capacità 64 così il producer si blocca invece di accumulare frame in memoria illimitata."}},
-{"level":"15","lesson":"rust_concurrency_2","english":"Unbounded Channel","set":{"italian":"Canale illimitato","example":"Pick an unbounded channel for low-volume events when back-pressure is not desirable and bursts are short. = Scegli un canale illimitato per eventi a basso volume quando il back-pressure non è desiderabile e i burst sono brevi."}},
-{"level":"15","lesson":"rust_concurrency_3","english":"Auto Trait","set":{"italian":"Trait dedotto automaticamente (auto trait)","example":"Send and Sync are auto traits the compiler implements for a struct when all its fields are themselves Send or Sync. = Send e Sync sono auto trait che il compilatore implementa per una struct quando tutti i suoi campi sono a loro volta Send o Sync."}},
-{"level":"15","lesson":"rust_concurrency_3","english":"Not Sync","set":{"italian":"Non Sync","example":"Cell<T> is intentionally Not Sync so two threads cannot share &Cell without breaking interior-mutability invariants. = Cell<T> è intenzionalmente Not Sync così due thread non possono condividere &Cell senza rompere gli invarianti di mutabilità interna."}},
-{"level":"15","lesson":"rust_concurrency_3","english":"Memory Ordering","set":{"italian":"Ordinamento di memoria","example":"Pass Ordering::SeqCst to enforce strong memory ordering when reasoning about cross-thread visibility of atomic stores. = Passa Ordering::SeqCst per imporre un ordinamento di memoria forte quando ragioni sulla visibilità cross-thread degli store atomici."}},
-{"level":"15","lesson":"rust_concurrency_4","english":"Semaphore","set":{"italian":"Semaforo","example":"Use a tokio Semaphore with 10 permits to cap how many concurrent uploads can run against the storage service. = Usa un Semaphore di tokio con 10 permit per limitare quanti upload concorrenti possono girare verso il servizio di storage."}},
-{"level":"15","lesson":"rust_concurrency_4","english":"Deadlock","set":{"italian":"Stallo da lock circolari (deadlock)","example":"Two workers grabbing locks A and B in opposite orders produce a deadlock where neither can progress. = Due worker che prendono i lock A e B in ordini opposti producono un deadlock dove nessuno dei due può progredire."}},
-{"level":"15","lesson":"rust_concurrency_4","english":"Spinlock","set":{"italian":"Lock con attesa attiva (spinlock)","example":"Prefer a spinlock only when contention is rare and critical sections are tiny, since busy waiting burns CPU. = Preferisci uno spinlock solo quando la contesa è rara e le sezioni critiche sono minuscole, poiché l'attesa attiva brucia CPU."}},
-{"level":"15","lesson":"rust_concurrency_4","english":"Rayon","set":{"italian":"rayon","example":"Add rayon and call par_iter on the input vector to parallelize the CPU-bound transformation across all cores. = Aggiungi rayon e chiama par_iter sul vettore di input per parallelizzare la trasformazione CPU-bound su tutti i core."}},
-{"level":"16","lesson":"rust_async_1","english":"Async Function","set":{"italian":"Funzione async","example":"Mark fetch_user as an async function so the body compiles into a state machine returning impl Future<Output = User>. = Marca fetch_user come funzione async così il corpo viene compilato in una macchina a stati che restituisce impl Future<Output = User>."}},
-{"level":"16","lesson":"rust_async_1","english":"Await","set":{"italian":"Attende future (await)","example":"Write let body = response.text().await? to await the future and yield control until the body is ready. = Scrivi let body = response.text().await? per attendere il future e cedere il controllo finché il corpo non è pronto."}},
-{"level":"16","lesson":"rust_async_1","english":"Future","set":{"italian":"Trait dei valori asincroni (Future)","example":"A Future represents a value not yet ready; the runtime polls it until it returns Ready with the final output. = Un Future rappresenta un valore non ancora pronto; il runtime lo fa poll finché non restituisce Ready con l'output finale."}},
-{"level":"16","lesson":"rust_async_1","english":"Poll","set":{"italian":"Risultato di poll: Ready/Pending (Poll)","example":"Future::poll returns Poll::Ready(value) when the work has finished or Poll::Pending when the task must be re-scheduled. = Future::poll restituisce Poll::Ready(value) quando il lavoro è finito o Poll::Pending quando il task deve essere rischedulato."}},
-{"level":"16","lesson":"rust_async_1","english":"Pending","set":{"italian":"Future non ancora pronto (Pending)","example":"Return Poll::Pending after registering the waker so the executor knows the future has more work to do later. = Restituisci Poll::Pending dopo aver registrato il waker così l'executor sa che il future ha ancora lavoro da fare in seguito."}},
-{"level":"16","lesson":"rust_async_1","english":"Ready","set":{"italian":"Future pronto con valore (Ready)","example":"Return Poll::Ready(response) from poll once the network read has completed and the value can be handed back. = Restituisci Poll::Ready(response) da poll una volta che la lettura di rete è completata e il valore può essere restituito."}},
-{"level":"16","lesson":"rust_async_1","english":"Async Block","set":{"italian":"Blocco async","example":"Wrap a few await calls inside an async block to produce an inline future you can pass to tokio::spawn. = Avvolgi alcune chiamate await dentro un blocco async per produrre un future inline che puoi passare a tokio::spawn."}},
-{"level":"16","lesson":"rust_async_1","english":"Async Move","set":{"italian":"Async block che cattura by-move (async move)","example":"Use async move { writer.send(payload).await } to transfer ownership of writer and payload into the spawned future. = Usa async move { writer.send(payload).await } per trasferire l'ownership di writer e payload nel future spawnato."}},
-{"level":"16","lesson":"rust_async_1","english":"Cooperative Scheduling","set":{"italian":"Scheduling cooperativo","example":"Tokio relies on cooperative scheduling: tasks must reach an await point so the runtime can switch to other work. = Tokio si affida allo scheduling cooperativo: i task devono raggiungere un punto await così il runtime può passare ad altro lavoro."}},
-{"level":"16","lesson":"rust_async_1","english":"Zero Cost Async","set":{"italian":"Async a costo zero","example":"Rust offers zero cost async because async fn lowers to a state machine without per-call heap allocations. = Rust offre async a costo zero perché async fn viene tradotto in una macchina a stati senza allocazioni sull'heap per chiamata."}},
-{"level":"16","lesson":"rust_async_2","english":"Async Runtime","set":{"italian":"Runtime async","example":"Pick an async runtime like Tokio to drive your futures, manage timers, and integrate with the OS event loop. = Scegli un runtime async come Tokio per pilotare i tuoi future, gestire i timer e integrarsi con l'event loop dell'OS."}},
-{"level":"16","lesson":"rust_async_2","english":"Tokio","set":{"italian":"Tokio","example":"Annotate main with #[tokio::main] so Tokio starts a multithreaded runtime before invoking your async entry point. = Annota main con #[tokio::main] così Tokio avvia un runtime multithreaded prima di invocare il tuo entry point async."}},
-{"level":"16","lesson":"rust_async_2","english":"Async-std","set":{"italian":"async-std","example":"Choose async-std when you want an async API that closely mirrors std signatures like fs::read_to_string. = Scegli async-std quando vuoi un'API async che rispecchia da vicino le signature di std come fs::read_to_string."}},
-{"level":"16","lesson":"rust_async_2","english":"Smol","set":{"italian":"smol","example":"Pull in smol for a tiny embeddable runtime ideal for CLI tools that only need a handful of concurrent tasks. = Importa smol per un runtime piccolo ed embeddable ideale per strumenti CLI che richiedono solo poche task concorrenti."}},
-{"level":"16","lesson":"rust_async_2","english":"Reactor","set":{"italian":"Componente che reagisce all'I/O (reactor)","example":"The reactor wraps epoll on Linux and wakes parked tasks once their sockets become readable or writable. = Il reactor avvolge epoll su Linux e risveglia le task parcheggiate una volta che i loro socket diventano leggibili o scrivibili."}},
-{"level":"16","lesson":"rust_async_2","english":"Spawn Task","set":{"italian":"Lancia task asincrono (spawn task)","example":"Call tokio::spawn to spawn a task running the future concurrently with the rest of the application. = Chiama tokio::spawn per spawnare un task che esegue il future concorrentemente al resto dell'applicazione."}},
-{"level":"16","lesson":"rust_async_2","english":"Block On","set":{"italian":"Esegue future in modo sincrono (block_on)","example":"Use Runtime::block_on(future) in tests to drive an async function to completion from synchronous code. = Usa Runtime::block_on(future) nei test per pilotare una funzione async fino al completamento da codice sincrono."}},
-{"level":"16","lesson":"rust_async_3","english":"Join","set":{"italian":"Concatena future in parallelo (join!)","example":"Use tokio::join!(fetch_a(), fetch_b()) to await both futures concurrently and receive a tuple of their outputs. = Usa tokio::join!(fetch_a(), fetch_b()) per attendere entrambi i future concorrentemente e ricevere una tupla dei loro output."}},
-{"level":"16","lesson":"rust_async_3","english":"Select","set":{"italian":"Aspetta il primo che si completa (select!)","example":"Use tokio::select! to race a timeout future against a network read and act on whichever finishes first. = Usa tokio::select! per mettere in gara un future di timeout contro una lettura di rete e agire su quello che finisce per primo."}},
-{"level":"16","lesson":"rust_async_3","english":"Try Join","set":{"italian":"Attende tutti, fallisce al primo errore (try_join!)","example":"Run try_join!(load_user(id), load_orders(id)) to fail fast if either side returns Err before the other completes. = Esegui try_join!(load_user(id), load_orders(id)) per fallire velocemente se uno dei due lati restituisce Err prima che l'altro completi."}},
-{"level":"16","lesson":"rust_async_3","english":"Stream","set":{"italian":"Sequenza asincrona di valori (Stream)","example":"Implement Stream<Item = LogEntry> over a tailing reader so consumers can asynchronously iterate new log lines. = Implementa Stream<Item = LogEntry> su un reader tailing così i consumer possono iterare asincronamente le nuove righe di log."}},
-{"level":"16","lesson":"rust_async_3","english":"Async Iter","set":{"italian":"Iter async","example":"Loop with while let Some(item) = stream.next().await over an async iter to process events as they arrive. = Cicla con while let Some(item) = stream.next().await su un iter async per processare gli eventi man mano che arrivano."}},
-{"level":"16","lesson":"rust_async_3","english":"Cancellation","set":{"italian":"Cancellazione","example":"Dropping the task handle triggers cancellation, so the future stops being polled at its next await point. = Droppare l'handle del task innesca la cancellazione, così il future smette di essere pollato al suo prossimo punto await."}},
-{"level":"16","lesson":"rust_async_4","english":"Tcp Listener","set":{"italian":"Listener TCP (TcpListener)","example":"Bind a TcpListener on 0.0.0.0:8080 and await listener.accept() in a loop to handle incoming connections. = Fai bind di un TcpListener su 0.0.0.0:8080 e fai await listener.accept() in un loop per gestire le connessioni in arrivo."}},
-{"level":"16","lesson":"rust_async_4","english":"Async Channel","set":{"italian":"Canale async","example":"Pick an async channel like tokio::sync::mpsc so senders can await capacity instead of blocking the executor. = Scegli un canale async come tokio::sync::mpsc così i sender possono attendere capacità invece di bloccare l'executor."}},
-{"level":"16","lesson":"rust_async_4","english":"Async Mutex","set":{"italian":"Mutex async","example":"Hold a tokio Mutex when the critical section contains await points so the runtime can park rather than block. = Tieni un Mutex di tokio quando la sezione critica contiene punti await così il runtime può parcheggiare invece di bloccare."}},
-{"level":"16","lesson":"rust_async_4","english":"Oneshot","set":{"italian":"Canale singolo invio (oneshot)","example":"Pair oneshot::channel() with a spawned task so the task can send a single result back to the caller and shut down. = Accoppia oneshot::channel() con un task spawnato così il task può inviare un singolo risultato al chiamante e spegnersi."}},
-{"level":"16","lesson":"rust_async_4","english":"Broadcast Channel","set":{"italian":"Canale broadcast","example":"Use a broadcast channel to fan out config updates so every subscribed task observes the new value once. = Usa un canale broadcast per fare fan-out degli aggiornamenti di config così ogni task sottoscritto osserva il nuovo valore una volta."}},
-{"level":"16","lesson":"rust_async_4","english":"Async Drop","set":{"italian":"Drop async","example":"Rust still lacks native async drop, so resources needing await on cleanup expose explicit close().await methods. = Rust manca ancora di async drop nativo, quindi le risorse che richiedono await in cleanup espongono metodi espliciti close().await."}},
-{"level":"17","lesson":"rust_macros_1","english":"Macro Pattern","set":{"italian":"Pattern di macro","example":"Define a macro pattern like ($x:expr, $y:expr) so macro_rules matches the call site against the given fragments. = Definisci un pattern di macro come ($x:expr, $y:expr) così macro_rules confronta il sito di chiamata con i frammenti dati."}},
-{"level":"17","lesson":"rust_macros_1","english":"Macro Fragment","set":{"italian":"Frammento di macro","example":"Use the expr macro fragment for arguments that must parse as a Rust expression rather than a raw token stream. = Usa il frammento di macro expr per argomenti che devono essere parsati come un'espressione Rust invece che come un raw token stream."}},
-{"level":"17","lesson":"rust_macros_1","english":"Macro Repetition","set":{"italian":"Ripetizione di macro","example":"Use macro repetition with $( $x:expr ),* to accept a comma-separated list of expressions of arbitrary length. = Usa la ripetizione di macro con $( $x:expr ),* per accettare una lista di espressioni separate da virgola di lunghezza arbitraria."}},
-{"level":"17","lesson":"rust_macros_1","english":"Macro Hygiene","set":{"italian":"Igiene di macro","example":"Thanks to macro hygiene, identifiers introduced inside a macro_rules! body never collide with names in the caller. = Grazie all'igiene di macro, gli identificatori introdotti dentro un body macro_rules! non collidono mai con i nomi nel chiamante."}},
-{"level":"17","lesson":"rust_macros_1","english":"Macro Invocation","set":{"italian":"Invocazione di macro","example":"A macro invocation like println!(\"ok\") is expanded by the compiler before name resolution and type checking. = Un'invocazione di macro come println!(\"ok\") viene espansa dal compilatore prima della risoluzione dei nomi e del type checking."}},
-{"level":"17","lesson":"rust_macros_1","english":"Vec Macro","set":{"italian":"Macro vec!","example":"Build a vector inline with the vec! macro: let nums = vec![1, 2, 3] is shorter than pushing one element at a time. = Costruisci un vettore inline con la macro vec!: let nums = vec![1, 2, 3] è più corto del push di un elemento alla volta."}},
-{"level":"17","lesson":"rust_macros_1","english":"Recursive Macro","set":{"italian":"Macro ricorsiva","example":"Write a recursive macro that peels one token at a time and re-invokes itself on the tail until the list is empty. = Scrivi una macro ricorsiva che pela un token alla volta e si reinvoca sulla coda finché la lista non è vuota."}},
-{"level":"17","lesson":"rust_macros_2","english":"Procedural Macro","set":{"italian":"Macro procedurale","example":"Ship a procedural macro in its own proc-macro crate so the compiler can run it to transform a TokenStream at build time. = Pubblica una macro procedurale nel suo crate proc-macro così il compilatore può eseguirla per trasformare un TokenStream a build time."}},
-{"level":"17","lesson":"rust_macros_2","english":"Token Stream","set":{"italian":"Flusso di token (TokenStream)","example":"A proc macro receives a TokenStream as input and returns a new token stream containing the generated code. = Una proc macro riceve un TokenStream come input e restituisce un nuovo token stream contenente il codice generato."}},
-{"level":"17","lesson":"rust_macros_2","english":"Derive Macro","set":{"italian":"Macro derive","example":"Annotate a struct with #[derive(Serialize)] so the derive macro from serde generates serialization code at compile time. = Annota una struct con #[derive(Serialize)] così la macro derive di serde genera il codice di serializzazione a tempo di compilazione."}},
-{"level":"17","lesson":"rust_macros_2","english":"Attribute Macro","set":{"italian":"Macro attributo","example":"An attribute macro like #[tokio::main] rewrites the annotated fn into one that boots the runtime around its body. = Una macro attributo come #[tokio::main] riscrive la fn annotata in una che fa boot del runtime attorno al suo corpo."}},
-{"level":"17","lesson":"rust_macros_2","english":"Syn","set":{"italian":"syn","example":"Use syn::parse_macro_input! to turn the incoming TokenStream into a typed AST node you can pattern match. = Usa syn::parse_macro_input! per trasformare il TokenStream in arrivo in un nodo AST tipato su cui puoi fare pattern matching."}},
-{"level":"17","lesson":"rust_macros_2","english":"Quote","set":{"italian":"quote!","example":"Use the quote! macro to splice Rust syntax templates and produce the TokenStream returned from a proc macro. = Usa la macro quote! per inserire template di sintassi Rust e produrre il TokenStream restituito da una proc macro."}},
-{"level":"17","lesson":"rust_macros_2","english":"Proc Macro Crate","set":{"italian":"Crate proc-macro","example":"Declare proc-macro = true in Cargo.toml to mark the package as a proc macro crate that exports macro entry points. = Dichiara proc-macro = true in Cargo.toml per marcare il pacchetto come crate proc-macro che esporta entry point di macro."}},
-{"level":"17","lesson":"rust_macros_2","english":"Custom Derive","set":{"italian":"Custom derive","example":"Expose a custom derive like #[derive(Builder)] from the macro crate so users can opt in to the generated builder pattern. = Esponi un custom derive come #[derive(Builder)] dal crate macro così gli utenti possono fare opt-in al pattern builder generato."}},
-{"level":"17","lesson":"rust_macros_3","english":"Print Macro","set":{"italian":"Macro print","example":"Call the print macro with print!(\"loaded {} rows\", count) to write to stdout without appending a newline. = Chiama la macro print con print!(\"loaded {} rows\", count) per scrivere su stdout senza aggiungere una newline."}},
-{"level":"17","lesson":"rust_macros_3","english":"Eprintln","set":{"italian":"Stampa su stderr (eprintln!)","example":"Use eprintln!(\"failed to open {}: {}\", path, err) so the diagnostic goes to stderr and can be filtered separately. = Usa eprintln!(\"failed to open {}: {}\", path, err) così la diagnostica va su stderr e può essere filtrata separatamente."}},
-{"level":"17","lesson":"rust_macros_3","english":"Write Macro","set":{"italian":"Macro write","example":"Use the write! macro to format text directly into a buffer that implements std::fmt::Write or std::io::Write. = Usa la macro write! per formattare testo direttamente in un buffer che implementa std::fmt::Write o std::io::Write."}},
-{"level":"17","lesson":"rust_macros_3","english":"Dbg Macro","set":{"italian":"Macro dbg!","example":"Sprinkle the dbg! macro around suspect expressions to print file, line, and value to stderr during debugging. = Cospargi la macro dbg! attorno alle espressioni sospette per stampare file, linea e valore su stderr durante il debug."}},
-{"level":"17","lesson":"rust_macros_3","english":"Panic Macro","set":{"italian":"Macro panic","example":"Trigger an immediate abort path with the panic! macro when an invariant the program depends on is violated. = Innesca un percorso di abort immediato con la macro panic! quando un invariante da cui il programma dipende viene violato."}},
-{"level":"17","lesson":"rust_macros_3","english":"Unimplemented","set":{"italian":"Segnala non implementato (unimplemented!)","example":"Stub out a trait method with unimplemented!() so the file compiles but any call site panics until you fill it in. = Stub di un metodo trait con unimplemented!() così il file compila ma ogni sito di chiamata fa panic finché non lo riempi."}},
-{"level":"17","lesson":"rust_macros_3","english":"Concat Macro","set":{"italian":"Macro concat","example":"Use the concat! macro to glue several string literals into a single &'static str known at compile time. = Usa la macro concat! per incollare diverse stringhe letterali in un singolo &'static str noto a tempo di compilazione."}},
-{"level":"17","lesson":"rust_macros_3","english":"Stringify","set":{"italian":"Converte tokens in stringa (stringify!)","example":"Wrap an expression with stringify!(x + 1) to embed the literal source text of those tokens into the generated code. = Avvolgi un'espressione con stringify!(x + 1) per inserire il testo sorgente letterale di quei token nel codice generato."}},
-{"level":"17","lesson":"rust_macros_3","english":"Include Bytes","set":{"italian":"Include file come byte (include_bytes!)","example":"Embed a binary asset with include_bytes!(\"icon.png\") so the slice ships inside the compiled executable. = Embedda un asset binario con include_bytes!(\"icon.png\") così lo slice viene spedito dentro l'eseguibile compilato."}},
-{"level":"17","lesson":"rust_macros_4","english":"Macro Documentation","set":{"italian":"Documentazione di macro","example":"Place /// doc comments above macro_rules! so the rendered macro documentation appears alongside functions on docs.rs. = Posiziona i commenti /// sopra macro_rules! così la documentazione di macro renderizzata appare insieme alle funzioni su docs.rs."}},
-{"level":"17","lesson":"rust_macros_4","english":"Macro Export","set":{"italian":"Esporta macro_rules! (#[macro_export])","example":"Add #[macro_export] above macro_rules! my_macro so downstream crates can use my_macro! after importing your crate. = Aggiungi #[macro_export] sopra macro_rules! my_macro così i crate downstream possono usare my_macro! dopo aver importato il tuo crate."}},
-{"level":"17","lesson":"rust_macros_4","english":"Macro Path","set":{"italian":"Percorso di macro","example":"Invoke a macro by its full macro path like serde_json::json!({\"ok\": true}) to disambiguate macros with similar names. = Invoca una macro tramite il suo percorso di macro completo come serde_json::json!({\"ok\": true}) per disambiguare macro con nomi simili."}},
-{"level":"17","lesson":"rust_macros_4","english":"Macro Debugging","set":{"italian":"Debug di macro","example":"For macro debugging, run cargo expand to see exactly what tokens the macro produced before the rest of compilation runs. = Per il debug di macro, esegui cargo expand per vedere esattamente quali token la macro ha prodotto prima che il resto della compilazione giri."}},
-{"level":"17","lesson":"rust_macros_4","english":"Trace Macros","set":{"italian":"Traccia espansione macro (trace_macros!)","example":"Enable trace_macros!(true) on nightly to log every macro expansion the compiler performs in the current scope. = Abilita trace_macros!(true) su nightly per loggare ogni espansione di macro che il compilatore esegue nello scope corrente."}},
-{"level":"17","lesson":"rust_macros_4","english":"Compile Time","set":{"italian":"Tempo di compilazione","example":"Const evaluation lets you compute a lookup table at compile time so the resulting binary embeds it as a static array. = La valutazione const ti permette di calcolare una lookup table a tempo di compilazione così il binario risultante la embedda come array static."}},
-{"level":"17","lesson":"rust_macros_4","english":"DSL","set":{"italian":"DSL","example":"Procedural macros let you embed a small DSL like SQL or HTML inside Rust source while keeping compile-time checks. = Le macro procedurali ti permettono di embeddare un piccolo DSL come SQL o HTML dentro il sorgente Rust mantenendo i check a tempo di compilazione."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Unsafe Block","set":{"italian":"Blocco unsafe","example":"Confine raw pointer dereferences to a narrow unsafe block so the rest of the function stays inside safe Rust. = Confina i dereference di raw pointer in un blocco unsafe ristretto così il resto della funzione rimane dentro Rust safe."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Unsafe Function","set":{"italian":"Funzione unsafe","example":"Declare an unsafe function when calling it requires invariants the compiler cannot check, like a valid pointer argument. = Dichiara una funzione unsafe quando chiamarla richiede invarianti che il compilatore non può verificare, come un argomento puntatore valido."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Unsafe Trait","set":{"italian":"Trait unsafe","example":"Mark Send as an unsafe trait because the compiler trusts the implementer to ensure thread-safe transfer of values. = Marca Send come trait unsafe perché il compilatore si fida che l'implementatore garantisca il trasferimento thread-safe dei valori."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Raw Pointer","set":{"italian":"Puntatore non controllato (raw pointer)","example":"Use the raw pointer *const u8 when interfacing with a C API that hands you an arbitrary memory address. = Usa il raw pointer *const u8 quando ti interfacci con un'API C che ti consegna un indirizzo di memoria arbitrario."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Const Pointer","set":{"italian":"Puntatore const","example":"Cast a reference via &x as *const i32 to get a const pointer you can compare with values returned from a C library. = Cast di un riferimento tramite &x as *const i32 per ottenere un puntatore const che puoi confrontare con valori restituiti da una libreria C."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Mut Pointer","set":{"italian":"Puntatore mut","example":"Acquire a mut pointer with &mut x as *mut i32 only when you really need to call ptr::write to overwrite the slot. = Acquisisci un puntatore mut con &mut x as *mut i32 solo quando hai davvero bisogno di chiamare ptr::write per sovrascrivere lo slot."}},
-{"level":"18","lesson":"rust_unsafe_1","english":"Sound Code","set":{"italian":"Codice sound","example":"Sound code guarantees that no safe caller can ever trigger undefined behavior, even with adversarial inputs. = Il codice sound garantisce che nessun chiamante safe possa mai innescare undefined behavior, anche con input avversariali."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"Extern Block","set":{"italian":"Blocco extern","example":"Declare foreign symbols inside an extern block so Rust knows their signatures and the linker can resolve them. = Dichiara i simboli esterni dentro un blocco extern così Rust conosce le loro signature e il linker può risolverli."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"Extern C","set":{"italian":"Funzione con ABI C (extern \"C\")","example":"Define extern \"C\" fn callback(ptr: *const u8) so the function uses the C calling convention expected by libuv. = Definisci extern \"C\" fn callback(ptr: *const u8) così la funzione usa la convenzione di chiamata C attesa da libuv."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"C Str","set":{"italian":"Vista su CString (CStr)","example":"Build a &CStr from the raw pointer returned by getenv so you can safely inspect the NUL-terminated environment value. = Costruisci un &CStr dal raw pointer restituito da getenv così puoi ispezionare in sicurezza il valore d'ambiente terminato da NUL."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"Bindgen","set":{"italian":"bindgen","example":"Run bindgen on libfoo.h in build.rs so Cargo regenerates idiomatic Rust FFI bindings whenever the header changes. = Esegui bindgen su libfoo.h in build.rs così Cargo rigenera binding FFI Rust idiomatici ogni volta che l'header cambia."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"Cbindgen","set":{"italian":"cbindgen","example":"Run cbindgen --crate my_lib -o my_lib.h to publish a stable C header that downstream C consumers can include. = Esegui cbindgen --crate my_lib -o my_lib.h per pubblicare un header C stabile che i consumer C downstream possono includere."}},
-{"level":"18","lesson":"rust_unsafe_2","english":"No Mangle","set":{"italian":"Non manipolare il nome del simbolo (#[no_mangle])","example":"Tag pub extern \"C\" fn init with #[no_mangle] so the symbol keeps its readable name in the produced shared library. = Tagga pub extern \"C\" fn init con #[no_mangle] così il simbolo mantiene il suo nome leggibile nella libreria condivisa prodotta."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Transmute","set":{"italian":"Cast bit-a-bit pericoloso (std::mem::transmute)","example":"Reach for std::mem::transmute only after checking that source and destination have identical size and alignment. = Ricorri a std::mem::transmute solo dopo aver verificato che sorgente e destinazione abbiano dimensione e allineamento identici."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Static Mut","set":{"italian":"Variabile statica mutabile (unsafe) (static mut)","example":"Reading or writing a static mut COUNTER must happen inside an unsafe block because no synchronization is enforced. = Leggere o scrivere uno static mut COUNTER deve avvenire dentro un blocco unsafe perché non viene imposta alcuna sincronizzazione."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Union","set":{"italian":"Tipo a campi sovrapposti (union)","example":"Define a union FloatBits that overlays an f32 and a u32 to inspect the raw IEEE-754 bit pattern of a float. = Definisci una union FloatBits che sovrappone un f32 e un u32 per ispezionare il raw bit pattern IEEE-754 di un float."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Pointer Offset","set":{"italian":"Offset di puntatore","example":"Compute a pointer offset with ptr.add(i) inside unsafe code to step through a contiguous C-allocated array. = Calcola un offset di puntatore con ptr.add(i) dentro codice unsafe per scorrere un array allocato in C contiguo."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Manually Drop","set":{"italian":"Rilascio manuale (ManuallyDrop)","example":"Wrap a value in ManuallyDrop when ownership is transferred over FFI so Rust does not also try to drop it. = Avvolgi un valore in ManuallyDrop quando l'ownership è trasferita via FFI così Rust non prova anche lui a droppearlo."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Inline Assembly","set":{"italian":"Assembly inline","example":"Use the asm! macro to emit a few lines of inline assembly that read the x86 timestamp counter via the RDTSC instruction. = Usa la macro asm! per emettere poche righe di assembly inline che leggono il timestamp counter x86 tramite l'istruzione RDTSC."}},
-{"level":"18","lesson":"rust_unsafe_3","english":"Pointer Cast","set":{"italian":"Cast di puntatore","example":"Perform a pointer cast like buf.as_ptr() as *const u32 when reinterpreting a byte buffer as a slice of words. = Esegui un pointer cast come buf.as_ptr() as *const u32 quando reinterpreti un buffer di byte come uno slice di word."}},
-{"level":"18","lesson":"rust_unsafe_4","english":"Encapsulation","set":{"italian":"Incapsulamento","example":"Use module-level encapsulation so the unsafe FFI calls live behind a safe Rust API that validates all inputs. = Usa l'incapsulamento a livello di modulo così le chiamate FFI unsafe vivono dietro un'API Rust safe che valida tutti gli input."}},
-{"level":"18","lesson":"rust_unsafe_4","english":"Miri","set":{"italian":"Miri","example":"Run cargo +nightly miri test to execute your unsafe code under Miri and surface undefined behavior on the spot. = Esegui cargo +nightly miri test per eseguire il tuo codice unsafe sotto Miri e far emergere undefined behavior all'istante."}},
-{"level":"18","lesson":"rust_unsafe_4","english":"Sanitizer","set":{"italian":"Strumento rilevazione errori a runtime (sanitizer)","example":"Build with -Zsanitizer=address so the AddressSanitizer instruments your binary and reports out-of-bounds writes at runtime. = Compila con -Zsanitizer=address così l'AddressSanitizer strumenta il tuo binario e segnala scritture out-of-bounds a runtime."}},
-{"level":"18","lesson":"rust_unsafe_4","english":"Aliasing Rule","set":{"italian":"Regola di aliasing","example":"The aliasing rule forbids holding a &mut T while any &T or *mut T to the same memory is also live. = La regola di aliasing vieta di tenere un &mut T mentre un qualsiasi &T o *mut T sulla stessa memoria è anch'esso vivo."}},
-{"level":"18","lesson":"rust_unsafe_4","english":"Core Library","set":{"italian":"Libreria core","example":"Depend only on the core library inside a no_std crate so the code can run on embedded targets without an allocator. = Dipendi solo dalla libreria core dentro un crate no_std così il codice può girare su target embedded senza un allocatore."}},
-{"level":"19","lesson":"rust_traits_5","english":"Associated Type","set":{"italian":"Tipo associato","example":"Iterator declares an associated type Item so each implementor pins the element type up front instead of as a generic. = Iterator dichiara un tipo associato Item così ogni implementatore fissa il tipo elemento in anticipo invece che come generico."}},
-{"level":"19","lesson":"rust_traits_5","english":"Type Projection","set":{"italian":"Proiezione di tipo","example":"Write the type projection <T as Iterator>::Item to refer to the element type produced by a specific implementation. = Scrivi la proiezione di tipo <T as Iterator>::Item per riferirti al tipo elemento prodotto da un'implementazione specifica."}},
-{"level":"19","lesson":"rust_traits_5","english":"Trait Object","set":{"italian":"Oggetto dinamico dyn Trait (trait object)","example":"Store handlers as Vec<Box<dyn Handler>> using a trait object so different concrete types share the same vector. = Memorizza gli handler come Vec<Box<dyn Handler>> usando un trait object così diversi tipi concreti condividono lo stesso vettore."}},
-{"level":"19","lesson":"rust_traits_5","english":"Type Family","set":{"italian":"Famiglia di tipi","example":"Use a type family of associated types on Graph to relate Node, Edge, and Iter without committing to a single representation. = Usa una famiglia di tipi di tipi associati su Graph per mettere in relazione Node, Edge e Iter senza impegnarsi a una singola rappresentazione."}},
-{"level":"19","lesson":"rust_traits_5","english":"Trait Alias","set":{"italian":"Alias di trait","example":"Define a trait alias like trait Sendable = Send + 'static so generic bounds stay readable across many functions. = Definisci un alias di trait come trait Sendable = Send + 'static così i vincoli generici rimangono leggibili in molte funzioni."}},
-{"level":"19","lesson":"rust_traits_6","english":"Fat Pointer","set":{"italian":"Puntatore con metadati (fat pointer)","example":"A &dyn Trait is a fat pointer storing both the data pointer and a pointer to the vtable for dynamic dispatch. = Un &dyn Trait è un fat pointer che memorizza sia il data pointer sia un puntatore alla vtable per il dispatch dinamico."}},
-{"level":"19","lesson":"rust_traits_6","english":"Downcast","set":{"italian":"Cast verso tipo concreto (downcast)","example":"Call any.downcast_ref::<MyError>() to attempt a downcast from &dyn Any back to its original concrete type. = Chiama any.downcast_ref::<MyError>() per tentare un downcast da &dyn Any al suo tipo concreto originale."}},
-{"level":"19","lesson":"rust_traits_6","english":"Erased Type","set":{"italian":"Tipo erased","example":"Returning Box<dyn Iterator<Item = u32>> produces an erased type whose concrete identity is hidden from callers. = Restituire Box<dyn Iterator<Item = u32>> produce un tipo erased la cui identità concreta è nascosta ai chiamanti."}},
-{"level":"19","lesson":"rust_traits_6","english":"Multi Trait","set":{"italian":"Dyn Trait1 + Trait2 (multi-trait)","example":"Type Box<dyn Read + Send> shows the multi-trait object so callers can both read bytes and move it between threads. = Il tipo Box<dyn Read + Send> mostra l'oggetto multi-trait così i chiamanti possono sia leggere byte sia spostarlo tra thread."}},
-{"level":"19","lesson":"rust_traits_7","english":"Trait Inheritance","set":{"italian":"Eredità di trait","example":"Use trait inheritance with trait Eq: PartialEq so any Eq implementor automatically provides PartialEq too. = Usa l'eredità di trait con trait Eq: PartialEq così ogni implementatore di Eq fornisce automaticamente anche PartialEq."}},
-{"level":"19","lesson":"rust_traits_7","english":"Marker Trait","set":{"italian":"Trait marker","example":"Implement the Copy marker trait on a small POD struct to opt into bitwise copies instead of moves. = Implementa il trait marker Copy su una piccola struct POD per fare opt-in a copie bitwise invece di move."}},
-{"level":"19","lesson":"rust_traits_7","english":"Auto Trait","set":{"italian":"Auto trait","example":"Send and Sync are auto traits derived by the compiler when every field of the type is already Send or Sync. = Send e Sync sono auto trait derivati dal compilatore quando ogni campo del tipo è già Send o Sync."}},
-{"level":"19","lesson":"rust_traits_7","english":"Negative Bound","set":{"italian":"Vincolo negativo","example":"Use a negative bound like T: !Send on nightly to express that the API rejects types that can move across threads. = Usa un vincolo negativo come T: !Send su nightly per esprimere che l'API rifiuta tipi che possono muoversi tra thread."}},
-{"level":"19","lesson":"rust_traits_8","english":"Type State","set":{"italian":"Stato dell'oggetto codificato nel tipo (type-state)","example":"Model a connection with type state Connection<Open> and Connection<Closed> so misuse like reading after close fails to compile. = Modella una connessione con type state Connection<Open> e Connection<Closed> così uso improprio come leggere dopo close non compila."}},
-{"level":"19","lesson":"rust_traits_8","english":"Builder Pattern","set":{"italian":"Pattern di costruzione a passi (builder)","example":"Expose RequestBuilder::new().header(\"Auth\", token).body(payload).send() so the builder pattern guides users through optional steps. = Esponi RequestBuilder::new().header(\"Auth\", token).body(payload).send() così il pattern builder guida gli utenti attraverso passi opzionali."}},
-{"level":"19","lesson":"rust_traits_8","english":"Visitor Pattern","set":{"italian":"Pattern visitatore (visitor)","example":"Define an AstVisitor trait so each pass implements the visitor pattern over expression, statement, and item nodes. = Definisci un trait AstVisitor così ogni pass implementa il pattern visitatore su nodi expression, statement e item."}},
-{"level":"19","lesson":"rust_traits_8","english":"Adapter Pattern","set":{"italian":"Pattern adattatore (adapter)","example":"Wrap a tokio::TcpStream in a SyncStream adapter following the adapter pattern so legacy blocking code can use it. = Avvolgi un tokio::TcpStream in un adapter SyncStream seguendo il pattern adattatore così codice legacy bloccante può usarlo."}},
-{"level":"19","lesson":"rust_traits_8","english":"Sealed Trait","set":{"italian":"Trait sigillato","example":"Make a sealed trait by adding a hidden supertrait private::Sealed so external crates cannot add new implementations. = Crea un trait sigillato aggiungendo un supertrait nascosto private::Sealed così crate esterni non possono aggiungere nuove implementazioni."}},
-{"level":"19","lesson":"rust_traits_8","english":"Extension Trait","set":{"italian":"Trait di estensione","example":"Define an extension trait StrExt with new helper methods and impl it for str to add behavior without forking std. = Definisci un trait di estensione StrExt con nuovi metodi helper e implementalo per str per aggiungere comportamento senza forkare std."}},
-{"level":"19","lesson":"rust_traits_8","english":"Trait Object Method","set":{"italian":"Metodo di trait object","example":"Each trait object method dispatches through the vtable, so methods using generics or Self by value cannot be object-safe. = Ogni metodo di trait object fa dispatch tramite la vtable, quindi metodi che usano generici o Self per valore non possono essere object-safe."}},
-{"level":"19","lesson":"rust_traits_8","english":"Witness Type","set":{"italian":"Tipo testimone","example":"Pass a witness type like PhantomData<Verified> as a parameter so possessing the value proves a check has run. = Passa un tipo testimone come PhantomData<Verified> come parametro così possedere il valore dimostra che un controllo è stato eseguito."}},
-{"level":"20","lesson":"rust_testing_1","english":"Test Attribute","set":{"italian":"Attributo test","example":"Place the #[test] test attribute above a fn so cargo test collects it and runs it in a dedicated thread. = Posiziona l'attributo test #[test] sopra una fn così cargo test la raccoglie e la esegue in un thread dedicato."}},
-{"level":"20","lesson":"rust_testing_1","english":"Cargo Test","set":{"italian":"Esegue i test (cargo test)","example":"Run cargo test --workspace to compile and execute every #[test] in every crate of the workspace in one go. = Esegui cargo test --workspace per compilare ed eseguire ogni #[test] in ogni crate del workspace in un colpo solo."}},
-{"level":"20","lesson":"rust_testing_1","english":"Should Panic","set":{"italian":"Test che deve fare panic (#[should_panic])","example":"Annotate a test with #[should_panic(expected = \"divide by zero\")] so the test passes only when the panic message matches. = Annota un test con #[should_panic(expected = \"divide by zero\")] così il test passa solo quando il messaggio di panic corrisponde."}},
-{"level":"20","lesson":"rust_testing_1","english":"Ignore Attribute","set":{"italian":"Attributo ignore","example":"Mark a slow integration test with the #[ignore] attribute so it only runs when invoked with cargo test -- --ignored. = Marca un test di integrazione lento con l'attributo #[ignore] così gira solo quando invocato con cargo test -- --ignored."}},
-{"level":"20","lesson":"rust_testing_1","english":"Test Filter","set":{"italian":"Filtro test","example":"Apply a test filter like cargo test parser:: to only run tests whose names start with that path prefix. = Applica un filtro test come cargo test parser:: per eseguire solo i test i cui nomi iniziano con quel prefisso di path."}}
-]}
+{
+  "fixes": [
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "Any",
+      "set": {
+        "italian": "True se almeno uno corrisponde (any)",
+        "example": "Use any to short-circuit and return true as soon as one element matches the predicate. = Usa any per cortocircuitare e restituire true non appena un elemento soddisfa il predicato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_7",
+      "english": "All",
+      "set": {
+        "italian": "True se tutti corrispondono (all)",
+        "example": "Use all on the iterator to check that every user record contains a valid email before importing. = Usa all sull'iteratore per verificare che ogni record utente contenga un'email valida prima dell'importazione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Custom Iterator",
+      "set": {
+        "italian": "Iteratore personalizzato",
+        "example": "Implement a custom iterator over the log file's records so callers can iterate without loading everything in memory. = Implementa un iteratore personalizzato sui record del file di log così i chiamanti possono iterare senza caricare tutto in memoria."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Next Method",
+      "set": {
+        "italian": "Metodo next",
+        "example": "The next method on Iterator returns Some(item) until the sequence is exhausted, then None. = Il metodo next su Iterator restituisce Some(item) finché la sequenza non è esaurita, poi None."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Exact Size",
+      "set": {
+        "italian": "Dimensione esatta",
+        "example": "Implement ExactSizeIterator when the exact size is known upfront so callers can preallocate buffers. = Implementa ExactSizeIterator quando la dimensione esatta è nota in anticipo così i chiamanti possono preallocare i buffer."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Lazy Iterator",
+      "set": {
+        "italian": "Iteratore lazy",
+        "example": "A lazy iterator builds up a chain of map and filter calls but only computes values when next is called. = Un iteratore lazy costruisce una catena di chiamate map e filter ma calcola i valori solo quando viene chiamato next."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Iterator State",
+      "set": {
+        "italian": "Stato di iteratore",
+        "example": "Store the cursor position as iterator state inside the struct so each call to next advances correctly. = Memorizza la posizione del cursore come stato di iteratore dentro la struct così ogni chiamata a next avanza correttamente."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Iterator Composition",
+      "set": {
+        "italian": "Composizione di iteratori",
+        "example": "Use iterator composition to chain filter, map, and take into a single pipeline that scans logs in one pass. = Usa la composizione di iteratori per concatenare filter, map e take in una singola pipeline che scorre i log in un solo passaggio."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_8",
+      "english": "Itertools",
+      "set": {
+        "italian": "itertools",
+        "example": "Add the itertools crate to access combinators like group_by and chunks not present in the standard library. = Aggiungi il crate itertools per accedere a combinatori come group_by e chunks non presenti nella libreria standard."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Box",
+      "set": {
+        "italian": "Box",
+        "example": "Wrap the large config struct in a Box so only a pointer lives on the stack and the data sits on the heap. = Avvolgi la grande struct di config in un Box così solo un puntatore vive sullo stack e i dati stanno sull'heap."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Box New",
+      "set": {
+        "italian": "Crea Box su heap (Box::new)",
+        "example": "Call Box::new(value) to move the value onto the heap and obtain a Box<T> owning that allocation. = Chiama Box::new(value) per spostare il valore sull'heap e ottenere un Box<T> che possiede quell'allocazione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Heap Pointer",
+      "set": {
+        "italian": "Puntatore a heap",
+        "example": "A heap pointer like Box<T> keeps the actual buffer on the heap so it survives moving the owner around. = Un puntatore a heap come Box<T> tiene il buffer effettivo sull'heap così sopravvive allo spostamento del proprietario."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Recursive Type",
+      "set": {
+        "italian": "Tipo ricorsivo",
+        "example": "Define a recursive type like a linked list using Box<Self> so the compiler can compute a finite size. = Definisci un tipo ricorsivo come una lista linkata usando Box<Self> così il compilatore può calcolare una dimensione finita."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Trait Object Box",
+      "set": {
+        "italian": "Box di trait object",
+        "example": "Return Box<dyn Error> as a trait object box so the caller can handle any concrete error type uniformly. = Restituisci Box<dyn Error> come box di trait object così il chiamante può gestire qualunque tipo di errore concreto in modo uniforme."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Single Ownership",
+      "set": {
+        "italian": "Ownership singola",
+        "example": "Box<T> enforces single ownership: exactly one binding owns the heap value and frees it when dropped. = Box<T> impone ownership singola: esattamente un binding possiede il valore sull'heap e lo libera al drop."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Unboxing",
+      "set": {
+        "italian": "Spacchettamento da Box (unboxing)",
+        "example": "Move the inner value out with *boxed to perform unboxing and consume the Box in a single expression. = Sposta fuori il valore interno con *boxed per eseguire lo spacchettamento e consumare la Box in una sola espressione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Rc",
+      "set": {
+        "italian": "Reference counting non-thread-safe (Rc<T>)",
+        "example": "Wrap the shared config in Rc<Config> so several owners on the same thread can read it without copying. = Avvolgi la config condivisa in Rc<Config> così più proprietari sullo stesso thread possono leggerla senza copiare."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Arc",
+      "set": {
+        "italian": "Arc",
+        "example": "Use Arc<Cache> when sharing the cache across threads since reference counting is performed atomically. = Usa Arc<Cache> quando condividi la cache tra thread poiché il reference counting viene eseguito atomicamente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Reference Counting",
+      "set": {
+        "italian": "Conteggio dei riferimenti",
+        "example": "Reference counting via Rc tracks how many owners hold the value and frees the allocation when the count hits zero. = Il conteggio dei riferimenti tramite Rc traccia quanti proprietari mantengono il valore e libera l'allocazione quando il conteggio arriva a zero."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Weak Reference",
+      "set": {
+        "italian": "Riferimento debole",
+        "example": "Store parent links as Weak<Node> so circular references in the tree never form cycles that leak memory. = Memorizza i link al genitore come Weak<Node> così i riferimenti circolari nell'albero non formano mai cicli che perdono memoria."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Reference Cycle",
+      "set": {
+        "italian": "Ciclo di riferimenti",
+        "example": "A reference cycle between two Rc-owned nodes prevents both from being dropped and leaks heap memory. = Un ciclo di riferimenti tra due nodi posseduti da Rc impedisce a entrambi di essere droppati e perde memoria heap."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Clone Rc",
+      "set": {
+        "italian": "Clone di Rc",
+        "example": "Calling rc.clone() performs a cheap clone of Rc that only bumps the reference count rather than duplicating data. = Chiamare rc.clone() esegue un clone economico di Rc che incrementa solo il conteggio dei riferimenti invece di duplicare i dati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Send Trait",
+      "set": {
+        "italian": "Trait Send",
+        "example": "A type implements the Send trait when it can be safely transferred across thread boundaries. = Un tipo implementa il trait Send quando può essere trasferito in sicurezza attraverso i confini dei thread."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Shared Ownership",
+      "set": {
+        "italian": "Ownership condivisa",
+        "example": "Rc and Arc provide shared ownership so several parts of the program can keep the same allocation alive. = Rc e Arc forniscono ownership condivisa così più parti del programma possono mantenere viva la stessa allocazione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_11",
+      "english": "Interior Mutability",
+      "set": {
+        "italian": "Mutabilità interna",
+        "example": "Wrap the counter in RefCell to gain interior mutability while keeping the outer binding immutable. = Avvolgi il contatore in RefCell per ottenere mutabilità interna mantenendo il binding esterno immutabile."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_11",
+      "english": "Borrow Method",
+      "set": {
+        "italian": "Metodo borrow",
+        "example": "Call cell.borrow() to obtain an immutable Ref guard and read the inner value without taking the cell apart. = Chiama cell.borrow() per ottenere una guardia Ref immutabile e leggere il valore interno senza smontare la cella."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_11",
+      "english": "Borrow Mut",
+      "set": {
+        "italian": "Prestito mutabile a runtime (borrow_mut)",
+        "example": "Use cell.borrow_mut() to obtain a unique mutable reference; the call panics if any other borrow is live. = Usa cell.borrow_mut() per ottenere un riferimento mutabile unico; la chiamata fa panic se un altro prestito è attivo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_11",
+      "english": "Runtime Borrow Check",
+      "set": {
+        "italian": "Controllo borrow a runtime",
+        "example": "RefCell performs a runtime borrow check and panics when conflicting borrows are detected at the call site. = RefCell esegue un controllo borrow a runtime e fa panic quando vengono rilevati prestiti in conflitto al sito di chiamata."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_11",
+      "english": "Lock",
+      "set": {
+        "italian": "Blocco esclusivo (lock)",
+        "example": "Call mutex.lock().unwrap() to acquire an exclusive lock and read or mutate the shared counter. = Chiama mutex.lock().unwrap() per acquisire un lock esclusivo e leggere o mutare il contatore condiviso."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "Deref Trait",
+      "set": {
+        "italian": "Trait Deref",
+        "example": "Implement the Deref trait for a smart pointer so users can call inner methods directly through the wrapper. = Implementa il trait Deref per uno smart pointer così gli utenti possono chiamare i metodi interni direttamente tramite il wrapper."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "Deref Coercion",
+      "set": {
+        "italian": "Coercione Deref",
+        "example": "Thanks to deref coercion, passing &String where &str is expected works because String implements Deref<Target=str>. = Grazie alla coercione Deref, passare &String dove ci si aspetta &str funziona perché String implementa Deref<Target=str>."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "Drop Method",
+      "set": {
+        "italian": "Metodo drop",
+        "example": "Implement the drop method to close the file handle exactly when the resource owner goes out of scope. = Implementa il metodo drop per chiudere l'handle del file esattamente quando il proprietario della risorsa esce dallo scope."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Thread",
+      "set": {
+        "italian": "Thread di esecuzione (thread)",
+        "example": "Spawn a worker thread to encode video frames while the main thread keeps reading from the camera. = Spawn di un thread worker per codificare frame video mentre il thread principale continua a leggere dalla camera."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Thread Spawn",
+      "set": {
+        "italian": "Avvia un nuovo thread (thread::spawn)",
+        "example": "Call thread::spawn(move || worker(rx)) to launch a background task that owns its captured channel receiver. = Chiama thread::spawn(move || worker(rx)) per avviare un task in background che possiede il receiver di canale catturato."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Join Handle",
+      "set": {
+        "italian": "Handle di join",
+        "example": "Keep the JoinHandle returned by spawn so you can later call join and propagate the worker's panic or result. = Tieni il JoinHandle restituito da spawn così puoi poi chiamare join e propagare il panic o il risultato del worker."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Join",
+      "set": {
+        "italian": "Attende terminazione thread (join)",
+        "example": "Call handle.join() in the main thread to wait for the worker to finish and obtain its returned value. = Chiama handle.join() nel thread principale per attendere che il worker finisca e ottenere il valore restituito."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "OS Thread",
+      "set": {
+        "italian": "Thread OS",
+        "example": "std::thread maps each spawned thread to a real OS thread scheduled by the operating system kernel. = std::thread mappa ogni thread spawnato a un vero thread OS schedulato dal kernel del sistema operativo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Sleep",
+      "set": {
+        "italian": "Sospende il thread (thread::sleep)",
+        "example": "Use thread::sleep(Duration::from_secs(1)) in the retry loop to back off before hitting the server again. = Usa thread::sleep(Duration::from_secs(1)) nel loop di retry per fare backoff prima di colpire di nuovo il server."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Park",
+      "set": {
+        "italian": "Parcheggia il thread (thread::park)",
+        "example": "Call thread::park() to suspend the worker until another thread calls unpark on its handle. = Chiama thread::park() per sospendere il worker finché un altro thread non chiama unpark sul suo handle."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Spawn Result",
+      "set": {
+        "italian": "Risultato di spawn",
+        "example": "Inspect the spawn result via join().unwrap() to surface any panic raised inside the worker closure. = Ispeziona il risultato di spawn tramite join().unwrap() per far emergere qualunque panic sollevato dentro la closure del worker."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_2",
+      "english": "Channel",
+      "set": {
+        "italian": "Canale",
+        "example": "Create an mpsc channel so producer threads can push jobs to a single consumer that drains the queue. = Crea un canale mpsc così i thread producer possono pushare job a un singolo consumer che svuota la coda."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_2",
+      "english": "Sync Channel",
+      "set": {
+        "italian": "Canale sincrono limitato (sync_channel)",
+        "example": "Build a sync_channel(8) to apply back-pressure on producers when the consumer falls behind by more than eight messages. = Costruisci un sync_channel(8) per applicare back-pressure ai producer quando il consumer rimane indietro di più di otto messaggi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_2",
+      "english": "Crossbeam",
+      "set": {
+        "italian": "crossbeam",
+        "example": "Pull in the crossbeam crate when you need scoped threads or its faster multi-producer multi-consumer channels. = Importa il crate crossbeam quando ti servono scoped thread o i suoi canali multi-producer multi-consumer più veloci."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_2",
+      "english": "Bounded Channel",
+      "set": {
+        "italian": "Canale limitato",
+        "example": "Use a bounded channel of capacity 64 so the producer blocks instead of accumulating frames in unbounded memory. = Usa un canale limitato di capacità 64 così il producer si blocca invece di accumulare frame in memoria illimitata."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_2",
+      "english": "Unbounded Channel",
+      "set": {
+        "italian": "Canale illimitato",
+        "example": "Pick an unbounded channel for low-volume events when back-pressure is not desirable and bursts are short. = Scegli un canale illimitato per eventi a basso volume quando il back-pressure non è desiderabile e i burst sono brevi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_3",
+      "english": "Auto Trait",
+      "set": {
+        "italian": "Trait dedotto automaticamente (auto trait)",
+        "example": "Send and Sync are auto traits the compiler implements for a struct when all its fields are themselves Send or Sync. = Send e Sync sono auto trait che il compilatore implementa per una struct quando tutti i suoi campi sono a loro volta Send o Sync."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_3",
+      "english": "Not Sync",
+      "set": {
+        "italian": "Non Sync",
+        "example": "Cell<T> is intentionally Not Sync so two threads cannot share &Cell without breaking interior-mutability invariants. = Cell<T> è intenzionalmente Not Sync così due thread non possono condividere &Cell senza rompere gli invarianti di mutabilità interna."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_3",
+      "english": "Memory Ordering",
+      "set": {
+        "italian": "Ordinamento di memoria",
+        "example": "Pass Ordering::SeqCst to enforce strong memory ordering when reasoning about cross-thread visibility of atomic stores. = Passa Ordering::SeqCst per imporre un ordinamento di memoria forte quando ragioni sulla visibilità cross-thread degli store atomici."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "Semaphore",
+      "set": {
+        "italian": "Semaforo",
+        "example": "Use a tokio Semaphore with 10 permits to cap how many concurrent uploads can run against the storage service. = Usa un Semaphore di tokio con 10 permit per limitare quanti upload concorrenti possono girare verso il servizio di storage."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "Deadlock",
+      "set": {
+        "italian": "Stallo da lock circolari (deadlock)",
+        "example": "Two workers grabbing locks A and B in opposite orders produce a deadlock where neither can progress. = Due worker che prendono i lock A e B in ordini opposti producono un deadlock dove nessuno dei due può progredire."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "Spinlock",
+      "set": {
+        "italian": "Lock con attesa attiva (spinlock)",
+        "example": "Prefer a spinlock only when contention is rare and critical sections are tiny, since busy waiting burns CPU. = Preferisci uno spinlock solo quando la contesa è rara e le sezioni critiche sono minuscole, poiché l'attesa attiva brucia CPU."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "Rayon",
+      "set": {
+        "italian": "rayon",
+        "example": "Add rayon and call par_iter on the input vector to parallelize the CPU-bound transformation across all cores. = Aggiungi rayon e chiama par_iter sul vettore di input per parallelizzare la trasformazione CPU-bound su tutti i core."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Async Function",
+      "set": {
+        "italian": "Funzione async",
+        "example": "Mark fetch_user as an async function so the body compiles into a state machine returning impl Future<Output = User>. = Marca fetch_user come funzione async così il corpo viene compilato in una macchina a stati che restituisce impl Future<Output = User>."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Await",
+      "set": {
+        "italian": "Attende future (await)",
+        "example": "Write let body = response.text().await? to await the future and yield control until the body is ready. = Scrivi let body = response.text().await? per attendere il future e cedere il controllo finché il corpo non è pronto."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Future",
+      "set": {
+        "italian": "Trait dei valori asincroni (Future)",
+        "example": "A Future represents a value not yet ready; the runtime polls it until it returns Ready with the final output. = Un Future rappresenta un valore non ancora pronto; il runtime lo fa poll finché non restituisce Ready con l'output finale."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Poll",
+      "set": {
+        "italian": "Risultato di poll: Ready/Pending (Poll)",
+        "example": "Future::poll returns Poll::Ready(value) when the work has finished or Poll::Pending when the task must be re-scheduled. = Future::poll restituisce Poll::Ready(value) quando il lavoro è finito o Poll::Pending quando il task deve essere rischedulato."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Pending",
+      "set": {
+        "italian": "Future non ancora pronto (Pending)",
+        "example": "Return Poll::Pending after registering the waker so the executor knows the future has more work to do later. = Restituisci Poll::Pending dopo aver registrato il waker così l'executor sa che il future ha ancora lavoro da fare in seguito."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Ready",
+      "set": {
+        "italian": "Future pronto con valore (Ready)",
+        "example": "Return Poll::Ready(response) from poll once the network read has completed and the value can be handed back. = Restituisci Poll::Ready(response) da poll una volta che la lettura di rete è completata e il valore può essere restituito."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Async Block",
+      "set": {
+        "italian": "Blocco async",
+        "example": "Wrap a few await calls inside an async block to produce an inline future you can pass to tokio::spawn. = Avvolgi alcune chiamate await dentro un blocco async per produrre un future inline che puoi passare a tokio::spawn."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Async Move",
+      "set": {
+        "italian": "Async block che cattura by-move (async move)",
+        "example": "Use async move { writer.send(payload).await } to transfer ownership of writer and payload into the spawned future. = Usa async move { writer.send(payload).await } per trasferire l'ownership di writer e payload nel future spawnato."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Cooperative Scheduling",
+      "set": {
+        "italian": "Scheduling cooperativo",
+        "example": "Tokio relies on cooperative scheduling: tasks must reach an await point so the runtime can switch to other work. = Tokio si affida allo scheduling cooperativo: i task devono raggiungere un punto await così il runtime può passare ad altro lavoro."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Zero Cost Async",
+      "set": {
+        "italian": "Async a costo zero",
+        "example": "Rust offers zero cost async because async fn lowers to a state machine without per-call heap allocations. = Rust offre async a costo zero perché async fn viene tradotto in una macchina a stati senza allocazioni sull'heap per chiamata."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_2",
+      "english": "Async Runtime",
+      "set": {
+        "italian": "Runtime async",
+        "example": "Pick an async runtime like Tokio to drive your futures, manage timers, and integrate with the OS event loop. = Scegli un runtime async come Tokio per pilotare i tuoi future, gestire i timer e integrarsi con l'event loop dell'OS."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_2",
+      "english": "Tokio",
+      "set": {
+        "italian": "Tokio",
+        "example": "Annotate main with #[tokio::main] so Tokio starts a multithreaded runtime before invoking your async entry point. = Annota main con #[tokio::main] così Tokio avvia un runtime multithreaded prima di invocare il tuo entry point async."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_2",
+      "english": "Async-std",
+      "set": {
+        "italian": "async-std",
+        "example": "Choose async-std when you want an async API that closely mirrors std signatures like fs::read_to_string. = Scegli async-std quando vuoi un'API async che rispecchia da vicino le signature di std come fs::read_to_string."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_2",
+      "english": "Smol",
+      "set": {
+        "italian": "smol",
+        "example": "Pull in smol for a tiny embeddable runtime ideal for CLI tools that only need a handful of concurrent tasks. = Importa smol per un runtime piccolo ed embeddable ideale per strumenti CLI che richiedono solo poche task concorrenti."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_2",
+      "english": "Reactor",
+      "set": {
+        "italian": "Componente che reagisce all'I/O (reactor)",
+        "example": "The reactor wraps epoll on Linux and wakes parked tasks once their sockets become readable or writable. = Il reactor avvolge epoll su Linux e risveglia le task parcheggiate una volta che i loro socket diventano leggibili o scrivibili."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_2",
+      "english": "Spawn Task",
+      "set": {
+        "italian": "Lancia task asincrono (spawn task)",
+        "example": "Call tokio::spawn to spawn a task running the future concurrently with the rest of the application. = Chiama tokio::spawn per spawnare un task che esegue il future concorrentemente al resto dell'applicazione."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_2",
+      "english": "Block On",
+      "set": {
+        "italian": "Esegue future in modo sincrono (block_on)",
+        "example": "Use Runtime::block_on(future) in tests to drive an async function to completion from synchronous code. = Usa Runtime::block_on(future) nei test per pilotare una funzione async fino al completamento da codice sincrono."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Join",
+      "set": {
+        "italian": "Concatena future in parallelo (join!)",
+        "example": "Use tokio::join!(fetch_a(), fetch_b()) to await both futures concurrently and receive a tuple of their outputs. = Usa tokio::join!(fetch_a(), fetch_b()) per attendere entrambi i future concorrentemente e ricevere una tupla dei loro output."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Select",
+      "set": {
+        "italian": "Aspetta il primo che si completa (select!)",
+        "example": "Use tokio::select! to race a timeout future against a network read and act on whichever finishes first. = Usa tokio::select! per mettere in gara un future di timeout contro una lettura di rete e agire su quello che finisce per primo."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Try Join",
+      "set": {
+        "italian": "Attende tutti, fallisce al primo errore (try_join!)",
+        "example": "Run try_join!(load_user(id), load_orders(id)) to fail fast if either side returns Err before the other completes. = Esegui try_join!(load_user(id), load_orders(id)) per fallire velocemente se uno dei due lati restituisce Err prima che l'altro completi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Stream",
+      "set": {
+        "italian": "Sequenza asincrona di valori (Stream)",
+        "example": "Implement Stream<Item = LogEntry> over a tailing reader so consumers can asynchronously iterate new log lines. = Implementa Stream<Item = LogEntry> su un reader tailing così i consumer possono iterare asincronamente le nuove righe di log."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Async Iter",
+      "set": {
+        "italian": "Iter async",
+        "example": "Loop with while let Some(item) = stream.next().await over an async iter to process events as they arrive. = Cicla con while let Some(item) = stream.next().await su un iter async per processare gli eventi man mano che arrivano."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Cancellation",
+      "set": {
+        "italian": "Cancellazione",
+        "example": "Dropping the task handle triggers cancellation, so the future stops being polled at its next await point. = Droppare l'handle del task innesca la cancellazione, così il future smette di essere pollato al suo prossimo punto await."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Tcp Listener",
+      "set": {
+        "italian": "Listener TCP (TcpListener)",
+        "example": "Bind a TcpListener on 0.0.0.0:8080 and await listener.accept() in a loop to handle incoming connections. = Fai bind di un TcpListener su 0.0.0.0:8080 e fai await listener.accept() in un loop per gestire le connessioni in arrivo."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Async Channel",
+      "set": {
+        "italian": "Canale async",
+        "example": "Pick an async channel like tokio::sync::mpsc so senders can await capacity instead of blocking the executor. = Scegli un canale async come tokio::sync::mpsc così i sender possono attendere capacità invece di bloccare l'executor."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Async Mutex",
+      "set": {
+        "italian": "Mutex async",
+        "example": "Hold a tokio Mutex when the critical section contains await points so the runtime can park rather than block. = Tieni un Mutex di tokio quando la sezione critica contiene punti await così il runtime può parcheggiare invece di bloccare."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Oneshot",
+      "set": {
+        "italian": "Canale singolo invio (oneshot)",
+        "example": "Pair oneshot::channel() with a spawned task so the task can send a single result back to the caller and shut down. = Accoppia oneshot::channel() con un task spawnato così il task può inviare un singolo risultato al chiamante e spegnersi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Broadcast Channel",
+      "set": {
+        "italian": "Canale broadcast",
+        "example": "Use a broadcast channel to fan out config updates so every subscribed task observes the new value once. = Usa un canale broadcast per fare fan-out degli aggiornamenti di config così ogni task sottoscritto osserva il nuovo valore una volta."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_4",
+      "english": "Async Drop",
+      "set": {
+        "italian": "Drop async",
+        "example": "Rust still lacks native async drop, so resources needing await on cleanup expose explicit close().await methods. = Rust manca ancora di async drop nativo, quindi le risorse che richiedono await in cleanup espongono metodi espliciti close().await."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Macro Pattern",
+      "set": {
+        "italian": "Pattern di macro",
+        "example": "Define a macro pattern like ($x:expr, $y:expr) so macro_rules matches the call site against the given fragments. = Definisci un pattern di macro come ($x:expr, $y:expr) così macro_rules confronta il sito di chiamata con i frammenti dati."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Macro Fragment",
+      "set": {
+        "italian": "Frammento di macro",
+        "example": "Use the expr macro fragment for arguments that must parse as a Rust expression rather than a raw token stream. = Usa il frammento di macro expr per argomenti che devono essere parsati come un'espressione Rust invece che come un raw token stream."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Macro Repetition",
+      "set": {
+        "italian": "Ripetizione di macro",
+        "example": "Use macro repetition with $( $x:expr ),* to accept a comma-separated list of expressions of arbitrary length. = Usa la ripetizione di macro con $( $x:expr ),* per accettare una lista di espressioni separate da virgola di lunghezza arbitraria."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Macro Hygiene",
+      "set": {
+        "italian": "Igiene di macro",
+        "example": "Thanks to macro hygiene, identifiers introduced inside a macro_rules! body never collide with names in the caller. = Grazie all'igiene di macro, gli identificatori introdotti dentro un body macro_rules! non collidono mai con i nomi nel chiamante."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Macro Invocation",
+      "set": {
+        "italian": "Invocazione di macro",
+        "example": "A macro invocation like println!(\"ok\") is expanded by the compiler before name resolution and type checking. = Un'invocazione di macro come println!(\"ok\") viene espansa dal compilatore prima della risoluzione dei nomi e del type checking."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Vec Macro",
+      "set": {
+        "italian": "Macro vec!",
+        "example": "Build a vector inline with the vec! macro: let nums = vec![1, 2, 3] is shorter than pushing one element at a time. = Costruisci un vettore inline con la macro vec!: let nums = vec![1, 2, 3] è più corto del push di un elemento alla volta."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Recursive Macro",
+      "set": {
+        "italian": "Macro ricorsiva",
+        "example": "Write a recursive macro that peels one token at a time and re-invokes itself on the tail until the list is empty. = Scrivi una macro ricorsiva che pela un token alla volta e si reinvoca sulla coda finché la lista non è vuota."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Procedural Macro",
+      "set": {
+        "italian": "Macro procedurale",
+        "example": "Ship a procedural macro in its own proc-macro crate so the compiler can run it to transform a TokenStream at build time. = Pubblica una macro procedurale nel suo crate proc-macro così il compilatore può eseguirla per trasformare un TokenStream a build time."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Token Stream",
+      "set": {
+        "italian": "Flusso di token (TokenStream)",
+        "example": "A proc macro receives a TokenStream as input and returns a new token stream containing the generated code. = Una proc macro riceve un TokenStream come input e restituisce un nuovo token stream contenente il codice generato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Derive Macro",
+      "set": {
+        "italian": "Macro derive",
+        "example": "Annotate a struct with #[derive(Serialize)] so the derive macro from serde generates serialization code at compile time. = Annota una struct con #[derive(Serialize)] così la macro derive di serde genera il codice di serializzazione a tempo di compilazione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Attribute Macro",
+      "set": {
+        "italian": "Macro attributo",
+        "example": "An attribute macro like #[tokio::main] rewrites the annotated fn into one that boots the runtime around its body. = Una macro attributo come #[tokio::main] riscrive la fn annotata in una che fa boot del runtime attorno al suo corpo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Syn",
+      "set": {
+        "italian": "syn",
+        "example": "Use syn::parse_macro_input! to turn the incoming TokenStream into a typed AST node you can pattern match. = Usa syn::parse_macro_input! per trasformare il TokenStream in arrivo in un nodo AST tipato su cui puoi fare pattern matching."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Quote",
+      "set": {
+        "italian": "quote!",
+        "example": "Use the quote! macro to splice Rust syntax templates and produce the TokenStream returned from a proc macro. = Usa la macro quote! per inserire template di sintassi Rust e produrre il TokenStream restituito da una proc macro."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Proc Macro Crate",
+      "set": {
+        "italian": "Crate proc-macro",
+        "example": "Declare proc-macro = true in Cargo.toml to mark the package as a proc macro crate that exports macro entry points. = Dichiara proc-macro = true in Cargo.toml per marcare il pacchetto come crate proc-macro che esporta entry point di macro."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Custom Derive",
+      "set": {
+        "italian": "Custom derive",
+        "example": "Expose a custom derive like #[derive(Builder)] from the macro crate so users can opt in to the generated builder pattern. = Esponi un custom derive come #[derive(Builder)] dal crate macro così gli utenti possono fare opt-in al pattern builder generato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Print Macro",
+      "set": {
+        "italian": "Macro print",
+        "example": "Call the print macro with print!(\"loaded {} rows\", count) to write to stdout without appending a newline. = Chiama la macro print con print!(\"loaded {} rows\", count) per scrivere su stdout senza aggiungere una newline."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Eprintln",
+      "set": {
+        "italian": "Stampa su stderr (eprintln!)",
+        "example": "Use eprintln!(\"failed to open {}: {}\", path, err) so the diagnostic goes to stderr and can be filtered separately. = Usa eprintln!(\"failed to open {}: {}\", path, err) così la diagnostica va su stderr e può essere filtrata separatamente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Write Macro",
+      "set": {
+        "italian": "Macro write",
+        "example": "Use the write! macro to format text directly into a buffer that implements std::fmt::Write or std::io::Write. = Usa la macro write! per formattare testo direttamente in un buffer che implementa std::fmt::Write o std::io::Write."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Dbg Macro",
+      "set": {
+        "italian": "Macro dbg!",
+        "example": "Sprinkle the dbg! macro around suspect expressions to print file, line, and value to stderr during debugging. = Cospargi la macro dbg! attorno alle espressioni sospette per stampare file, linea e valore su stderr durante il debug."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Panic Macro",
+      "set": {
+        "italian": "Macro panic",
+        "example": "Trigger an immediate abort path with the panic! macro when an invariant the program depends on is violated. = Innesca un percorso di abort immediato con la macro panic! quando un invariante da cui il programma dipende viene violato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Unimplemented",
+      "set": {
+        "italian": "Segnala non implementato (unimplemented!)",
+        "example": "Stub out a trait method with unimplemented!() so the file compiles but any call site panics until you fill it in. = Stub di un metodo trait con unimplemented!() così il file compila ma ogni sito di chiamata fa panic finché non lo riempi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Concat Macro",
+      "set": {
+        "italian": "Macro concat",
+        "example": "Use the concat! macro to glue several string literals into a single &'static str known at compile time. = Usa la macro concat! per incollare diverse stringhe letterali in un singolo &'static str noto a tempo di compilazione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Stringify",
+      "set": {
+        "italian": "Converte tokens in stringa (stringify!)",
+        "example": "Wrap an expression with stringify!(x + 1) to embed the literal source text of those tokens into the generated code. = Avvolgi un'espressione con stringify!(x + 1) per inserire il testo sorgente letterale di quei token nel codice generato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Include Bytes",
+      "set": {
+        "italian": "Include file come byte (include_bytes!)",
+        "example": "Embed a binary asset with include_bytes!(\"icon.png\") so the slice ships inside the compiled executable. = Embedda un asset binario con include_bytes!(\"icon.png\") così lo slice viene spedito dentro l'eseguibile compilato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "Macro Documentation",
+      "set": {
+        "italian": "Documentazione di macro",
+        "example": "Place /// doc comments above macro_rules! so the rendered macro documentation appears alongside functions on docs.rs. = Posiziona i commenti /// sopra macro_rules! così la documentazione di macro renderizzata appare insieme alle funzioni su docs.rs."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "Macro Export",
+      "set": {
+        "italian": "Esporta macro_rules! (#[macro_export])",
+        "example": "Add #[macro_export] above macro_rules! my_macro so downstream crates can use my_macro! after importing your crate. = Aggiungi #[macro_export] sopra macro_rules! my_macro così i crate downstream possono usare my_macro! dopo aver importato il tuo crate."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "Macro Path",
+      "set": {
+        "italian": "Percorso di macro",
+        "example": "Invoke a macro by its full macro path like serde_json::json!({\"ok\": true}) to disambiguate macros with similar names. = Invoca una macro tramite il suo percorso di macro completo come serde_json::json!({\"ok\": true}) per disambiguare macro con nomi simili."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "Macro Debugging",
+      "set": {
+        "italian": "Debug di macro",
+        "example": "For macro debugging, run cargo expand to see exactly what tokens the macro produced before the rest of compilation runs. = Per il debug di macro, esegui cargo expand per vedere esattamente quali token la macro ha prodotto prima che il resto della compilazione giri."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "Trace Macros",
+      "set": {
+        "italian": "Traccia espansione macro (trace_macros!)",
+        "example": "Enable trace_macros!(true) on nightly to log every macro expansion the compiler performs in the current scope. = Abilita trace_macros!(true) su nightly per loggare ogni espansione di macro che il compilatore esegue nello scope corrente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "Compile Time",
+      "set": {
+        "italian": "Tempo di compilazione",
+        "example": "Const evaluation lets you compute a lookup table at compile time so the resulting binary embeds it as a static array. = La valutazione const ti permette di calcolare una lookup table a tempo di compilazione così il binario risultante la embedda come array static."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "DSL",
+      "set": {
+        "italian": "DSL",
+        "example": "Procedural macros let you embed a small DSL like SQL or HTML inside Rust source while keeping compile-time checks. = Le macro procedurali ti permettono di embeddare un piccolo DSL come SQL o HTML dentro il sorgente Rust mantenendo i check a tempo di compilazione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Unsafe Block",
+      "set": {
+        "italian": "Blocco unsafe",
+        "example": "Confine raw pointer dereferences to a narrow unsafe block so the rest of the function stays inside safe Rust. = Confina i dereference di raw pointer in un blocco unsafe ristretto così il resto della funzione rimane dentro Rust safe."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Unsafe Function",
+      "set": {
+        "italian": "Funzione unsafe",
+        "example": "Declare an unsafe function when calling it requires invariants the compiler cannot check, like a valid pointer argument. = Dichiara una funzione unsafe quando chiamarla richiede invarianti che il compilatore non può verificare, come un argomento puntatore valido."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Unsafe Trait",
+      "set": {
+        "italian": "Trait unsafe",
+        "example": "Mark Send as an unsafe trait because the compiler trusts the implementer to ensure thread-safe transfer of values. = Marca Send come trait unsafe perché il compilatore si fida che l'implementatore garantisca il trasferimento thread-safe dei valori."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Raw Pointer",
+      "set": {
+        "italian": "Puntatore non controllato (raw pointer)",
+        "example": "Use the raw pointer *const u8 when interfacing with a C API that hands you an arbitrary memory address. = Usa il raw pointer *const u8 quando ti interfacci con un'API C che ti consegna un indirizzo di memoria arbitrario."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Const Pointer",
+      "set": {
+        "italian": "Puntatore const",
+        "example": "Cast a reference via &x as *const i32 to get a const pointer you can compare with values returned from a C library. = Cast di un riferimento tramite &x as *const i32 per ottenere un puntatore const che puoi confrontare con valori restituiti da una libreria C."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Mut Pointer",
+      "set": {
+        "italian": "Puntatore mut",
+        "example": "Acquire a mut pointer with &mut x as *mut i32 only when you really need to call ptr::write to overwrite the slot. = Acquisisci un puntatore mut con &mut x as *mut i32 solo quando hai davvero bisogno di chiamare ptr::write per sovrascrivere lo slot."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Sound Code",
+      "set": {
+        "italian": "Codice sound",
+        "example": "Sound code guarantees that no safe caller can ever trigger undefined behavior, even with adversarial inputs. = Il codice sound garantisce che nessun chiamante safe possa mai innescare undefined behavior, anche con input avversariali."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "Extern Block",
+      "set": {
+        "italian": "Blocco extern",
+        "example": "Declare foreign symbols inside an extern block so Rust knows their signatures and the linker can resolve them. = Dichiara i simboli esterni dentro un blocco extern così Rust conosce le loro signature e il linker può risolverli."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "Extern C",
+      "set": {
+        "italian": "Funzione con ABI C (extern \"C\")",
+        "example": "Define extern \"C\" fn callback(ptr: *const u8) so the function uses the C calling convention expected by libuv. = Definisci extern \"C\" fn callback(ptr: *const u8) così la funzione usa la convenzione di chiamata C attesa da libuv."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "C Str",
+      "set": {
+        "italian": "Vista su CString (CStr)",
+        "example": "Build a &CStr from the raw pointer returned by getenv so you can safely inspect the NUL-terminated environment value. = Costruisci un &CStr dal raw pointer restituito da getenv così puoi ispezionare in sicurezza il valore d'ambiente terminato da NUL."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "Bindgen",
+      "set": {
+        "italian": "bindgen",
+        "example": "Run bindgen on libfoo.h in build.rs so Cargo regenerates idiomatic Rust FFI bindings whenever the header changes. = Esegui bindgen su libfoo.h in build.rs così Cargo rigenera binding FFI Rust idiomatici ogni volta che l'header cambia."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "Cbindgen",
+      "set": {
+        "italian": "cbindgen",
+        "example": "Run cbindgen --crate my_lib -o my_lib.h to publish a stable C header that downstream C consumers can include. = Esegui cbindgen --crate my_lib -o my_lib.h per pubblicare un header C stabile che i consumer C downstream possono includere."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "No Mangle",
+      "set": {
+        "italian": "Non manipolare il nome del simbolo (#[no_mangle])",
+        "example": "Tag pub extern \"C\" fn init with #[no_mangle] so the symbol keeps its readable name in the produced shared library. = Tagga pub extern \"C\" fn init con #[no_mangle] così il simbolo mantiene il suo nome leggibile nella libreria condivisa prodotta."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Transmute",
+      "set": {
+        "italian": "Cast bit-a-bit pericoloso (std::mem::transmute)",
+        "example": "Reach for std::mem::transmute only after checking that source and destination have identical size and alignment. = Ricorri a std::mem::transmute solo dopo aver verificato che sorgente e destinazione abbiano dimensione e allineamento identici."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Static Mut",
+      "set": {
+        "italian": "Variabile statica mutabile (unsafe) (static mut)",
+        "example": "Reading or writing a static mut COUNTER must happen inside an unsafe block because no synchronization is enforced. = Leggere o scrivere uno static mut COUNTER deve avvenire dentro un blocco unsafe perché non viene imposta alcuna sincronizzazione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Union",
+      "set": {
+        "italian": "Tipo a campi sovrapposti (union)",
+        "example": "Define a union FloatBits that overlays an f32 and a u32 to inspect the raw IEEE-754 bit pattern of a float. = Definisci una union FloatBits che sovrappone un f32 e un u32 per ispezionare il raw bit pattern IEEE-754 di un float."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Pointer Offset",
+      "set": {
+        "italian": "Offset di puntatore",
+        "example": "Compute a pointer offset with ptr.add(i) inside unsafe code to step through a contiguous C-allocated array. = Calcola un offset di puntatore con ptr.add(i) dentro codice unsafe per scorrere un array allocato in C contiguo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Manually Drop",
+      "set": {
+        "italian": "Rilascio manuale (ManuallyDrop)",
+        "example": "Wrap a value in ManuallyDrop when ownership is transferred over FFI so Rust does not also try to drop it. = Avvolgi un valore in ManuallyDrop quando l'ownership è trasferita via FFI così Rust non prova anche lui a droppearlo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Inline Assembly",
+      "set": {
+        "italian": "Assembly inline",
+        "example": "Use the asm! macro to emit a few lines of inline assembly that read the x86 timestamp counter via the RDTSC instruction. = Usa la macro asm! per emettere poche righe di assembly inline che leggono il timestamp counter x86 tramite l'istruzione RDTSC."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_3",
+      "english": "Pointer Cast",
+      "set": {
+        "italian": "Cast di puntatore",
+        "example": "Perform a pointer cast like buf.as_ptr() as *const u32 when reinterpreting a byte buffer as a slice of words. = Esegui un pointer cast come buf.as_ptr() as *const u32 quando reinterpreti un buffer di byte come uno slice di word."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_4",
+      "english": "Encapsulation",
+      "set": {
+        "italian": "Incapsulamento",
+        "example": "Use module-level encapsulation so the unsafe FFI calls live behind a safe Rust API that validates all inputs. = Usa l'incapsulamento a livello di modulo così le chiamate FFI unsafe vivono dietro un'API Rust safe che valida tutti gli input."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_4",
+      "english": "Miri",
+      "set": {
+        "italian": "Miri",
+        "example": "Run cargo +nightly miri test to execute your unsafe code under Miri and surface undefined behavior on the spot. = Esegui cargo +nightly miri test per eseguire il tuo codice unsafe sotto Miri e far emergere undefined behavior all'istante."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_4",
+      "english": "Sanitizer",
+      "set": {
+        "italian": "Strumento rilevazione errori a runtime (sanitizer)",
+        "example": "Build with -Zsanitizer=address so the AddressSanitizer instruments your binary and reports out-of-bounds writes at runtime. = Compila con -Zsanitizer=address così l'AddressSanitizer strumenta il tuo binario e segnala scritture out-of-bounds a runtime."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_4",
+      "english": "Aliasing Rule",
+      "set": {
+        "italian": "Regola di aliasing",
+        "example": "The aliasing rule forbids holding a &mut T while any &T or *mut T to the same memory is also live. = La regola di aliasing vieta di tenere un &mut T mentre un qualsiasi &T o *mut T sulla stessa memoria è anch'esso vivo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_4",
+      "english": "Core Library",
+      "set": {
+        "italian": "Libreria core",
+        "example": "Depend only on the core library inside a no_std crate so the code can run on embedded targets without an allocator. = Dipendi solo dalla libreria core dentro un crate no_std così il codice può girare su target embedded senza un allocatore."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Associated Type",
+      "set": {
+        "italian": "Tipo associato",
+        "example": "Iterator declares an associated type Item so each implementor pins the element type up front instead of as a generic. = Iterator dichiara un tipo associato Item così ogni implementatore fissa il tipo elemento in anticipo invece che come generico."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Type Projection",
+      "set": {
+        "italian": "Proiezione di tipo",
+        "example": "Write the type projection <T as Iterator>::Item to refer to the element type produced by a specific implementation. = Scrivi la proiezione di tipo <T as Iterator>::Item per riferirti al tipo elemento prodotto da un'implementazione specifica."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Trait Object",
+      "set": {
+        "italian": "Oggetto dinamico dyn Trait (trait object)",
+        "example": "Store handlers as Vec<Box<dyn Handler>> using a trait object so different concrete types share the same vector. = Memorizza gli handler come Vec<Box<dyn Handler>> usando un trait object così diversi tipi concreti condividono lo stesso vettore."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Type Family",
+      "set": {
+        "italian": "Famiglia di tipi",
+        "example": "Use a type family of associated types on Graph to relate Node, Edge, and Iter without committing to a single representation. = Usa una famiglia di tipi di tipi associati su Graph per mettere in relazione Node, Edge e Iter senza impegnarsi a una singola rappresentazione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Trait Alias",
+      "set": {
+        "italian": "Alias di trait",
+        "example": "Define a trait alias like trait Sendable = Send + 'static so generic bounds stay readable across many functions. = Definisci un alias di trait come trait Sendable = Send + 'static così i vincoli generici rimangono leggibili in molte funzioni."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "Fat Pointer",
+      "set": {
+        "italian": "Puntatore con metadati (fat pointer)",
+        "example": "A &dyn Trait is a fat pointer storing both the data pointer and a pointer to the vtable for dynamic dispatch. = Un &dyn Trait è un fat pointer che memorizza sia il data pointer sia un puntatore alla vtable per il dispatch dinamico."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "Downcast",
+      "set": {
+        "italian": "Cast verso tipo concreto (downcast)",
+        "example": "Call any.downcast_ref::<MyError>() to attempt a downcast from &dyn Any back to its original concrete type. = Chiama any.downcast_ref::<MyError>() per tentare un downcast da &dyn Any al suo tipo concreto originale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "Erased Type",
+      "set": {
+        "italian": "Tipo erased",
+        "example": "Returning Box<dyn Iterator<Item = u32>> produces an erased type whose concrete identity is hidden from callers. = Restituire Box<dyn Iterator<Item = u32>> produce un tipo erased la cui identità concreta è nascosta ai chiamanti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "Multi Trait",
+      "set": {
+        "italian": "Dyn Trait1 + Trait2 (multi-trait)",
+        "example": "Type Box<dyn Read + Send> shows the multi-trait object so callers can both read bytes and move it between threads. = Il tipo Box<dyn Read + Send> mostra l'oggetto multi-trait così i chiamanti possono sia leggere byte sia spostarlo tra thread."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Trait Inheritance",
+      "set": {
+        "italian": "Eredità di trait",
+        "example": "Use trait inheritance with trait Eq: PartialEq so any Eq implementor automatically provides PartialEq too. = Usa l'eredità di trait con trait Eq: PartialEq così ogni implementatore di Eq fornisce automaticamente anche PartialEq."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Marker Trait",
+      "set": {
+        "italian": "Trait marker",
+        "example": "Implement the Copy marker trait on a small POD struct to opt into bitwise copies instead of moves. = Implementa il trait marker Copy su una piccola struct POD per fare opt-in a copie bitwise invece di move."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Auto Trait",
+      "set": {
+        "italian": "Auto trait",
+        "example": "Send and Sync are auto traits derived by the compiler when every field of the type is already Send or Sync. = Send e Sync sono auto trait derivati dal compilatore quando ogni campo del tipo è già Send o Sync."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Negative Bound",
+      "set": {
+        "italian": "Vincolo negativo",
+        "example": "Use a negative bound like T: !Send on nightly to express that the API rejects types that can move across threads. = Usa un vincolo negativo come T: !Send su nightly per esprimere che l'API rifiuta tipi che possono muoversi tra thread."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Type State",
+      "set": {
+        "italian": "Stato dell'oggetto codificato nel tipo (type-state)",
+        "example": "Model a connection with type state Connection<Open> and Connection<Closed> so misuse like reading after close fails to compile. = Modella una connessione con type state Connection<Open> e Connection<Closed> così uso improprio come leggere dopo close non compila."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Builder Pattern",
+      "set": {
+        "italian": "Pattern di costruzione a passi (builder)",
+        "example": "Expose RequestBuilder::new().header(\"Auth\", token).body(payload).send() so the builder pattern guides users through optional steps. = Esponi RequestBuilder::new().header(\"Auth\", token).body(payload).send() così il pattern builder guida gli utenti attraverso passi opzionali."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Visitor Pattern",
+      "set": {
+        "italian": "Pattern visitatore (visitor)",
+        "example": "Define an AstVisitor trait so each pass implements the visitor pattern over expression, statement, and item nodes. = Definisci un trait AstVisitor così ogni pass implementa il pattern visitatore su nodi expression, statement e item."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Adapter Pattern",
+      "set": {
+        "italian": "Pattern adattatore (adapter)",
+        "example": "Wrap a tokio::TcpStream in a SyncStream adapter following the adapter pattern so legacy blocking code can use it. = Avvolgi un tokio::TcpStream in un adapter SyncStream seguendo il pattern adattatore così codice legacy bloccante può usarlo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Sealed Trait",
+      "set": {
+        "italian": "Trait sigillato",
+        "example": "Make a sealed trait by adding a hidden supertrait private::Sealed so external crates cannot add new implementations. = Crea un trait sigillato aggiungendo un supertrait nascosto private::Sealed così crate esterni non possono aggiungere nuove implementazioni."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Extension Trait",
+      "set": {
+        "italian": "Trait di estensione",
+        "example": "Define an extension trait StrExt with new helper methods and impl it for str to add behavior without forking std. = Definisci un trait di estensione StrExt con nuovi metodi helper e implementalo per str per aggiungere comportamento senza forkare std."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Trait Object Method",
+      "set": {
+        "italian": "Metodo di trait object",
+        "example": "Each trait object method dispatches through the vtable, so methods using generics or Self by value cannot be object-safe. = Ogni metodo di trait object fa dispatch tramite la vtable, quindi metodi che usano generici o Self per valore non possono essere object-safe."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Witness Type",
+      "set": {
+        "italian": "Tipo testimone",
+        "example": "Pass a witness type like PhantomData<Verified> as a parameter so possessing the value proves a check has run. = Passa un tipo testimone come PhantomData<Verified> come parametro così possedere il valore dimostra che un controllo è stato eseguito."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Test Attribute",
+      "set": {
+        "italian": "Attributo test",
+        "example": "Place the #[test] test attribute above a fn so cargo test collects it and runs it in a dedicated thread. = Posiziona l'attributo test #[test] sopra una fn così cargo test la raccoglie e la esegue in un thread dedicato."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Cargo Test",
+      "set": {
+        "italian": "Esegue i test (cargo test)",
+        "example": "Run cargo test --workspace to compile and execute every #[test] in every crate of the workspace in one go. = Esegui cargo test --workspace per compilare ed eseguire ogni #[test] in ogni crate del workspace in un colpo solo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Should Panic",
+      "set": {
+        "italian": "Test che deve fare panic (#[should_panic])",
+        "example": "Annotate a test with #[should_panic(expected = \"divide by zero\")] so the test passes only when the panic message matches. = Annota un test con #[should_panic(expected = \"divide by zero\")] così il test passa solo quando il messaggio di panic corrisponde."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Ignore Attribute",
+      "set": {
+        "italian": "Attributo ignore",
+        "example": "Mark a slow integration test with the #[ignore] attribute so it only runs when invoked with cargo test -- --ignored. = Marca un test di integrazione lento con l'attributo #[ignore] così gira solo quando invocato con cargo test -- --ignored."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Test Filter",
+      "set": {
+        "italian": "Filtro test",
+        "example": "Apply a test filter like cargo test parser:: to only run tests whose names start with that path prefix. = Applica un filtro test come cargo test parser:: per eseguire solo i test i cui nomi iniziano con quel prefisso di path."
+      }
+    }
+  ]
+}

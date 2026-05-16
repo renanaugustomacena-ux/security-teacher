@@ -1,0 +1,23 @@
+{
+  "fixes": [
+    {
+      "level": "21",
+      "lesson": "ai_security_1",
+      "english": "Defensive Distillation",
+      "set": {
+        "example": "Researchers proposed defensive distillation in 2016 to train a second model on softened probabilities, making gradient attacks harder. = I ricercatori hanno proposto la distillazione difensiva nel 2016 per addestrare un secondo modello su probabilità ammorbidite, rendendo più difficili gli attacchi basati sul gradiente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ai_security_4",
+      "english": "Defensive Distillation",
+      "set": {
+        "english": "Gradient Masking",
+        "italian": "Mascheramento del gradiente",
+        "example": "Many early defenses relied on gradient masking to hide useful gradients from attackers, but adaptive attacks usually bypass them. = Molte difese iniziali si affidavano al mascheramento del gradiente per nascondere gradienti utili agli attaccanti, ma gli attacchi adattivi solitamente li bypassano.",
+        "note": "Rinominato per evitare duplicato con 'Defensive Distillation' della lezione 'Adversarial Attacks'."
+      }
+    }
+  ]
+}

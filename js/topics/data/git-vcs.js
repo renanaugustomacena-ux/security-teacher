@@ -7381,11 +7381,11 @@ export default {
           description: 'Branch, tag e HEAD come ref',
           items: [
             {
-              english: 'Symbolic Reference',
-              italian: 'riferimento simbolico (symbolic ref)',
+              english: 'Symbolic Reference Target',
+              italian: 'destinazione del riferimento simbolico',
               pronunciation: '/ˈrefərəns/',
               phonetic: 'RE-fe-rens',
-              example: `HEAD is a symbolic reference that points to the current branch ref instead of a commit hash directly. = HEAD e' un riferimento simbolico che punta alla ref del branch corrente invece che direttamente a un hash di commit.`,
+              example: `Under the hood, HEAD's symbolic reference target is refs/heads/main while you are on the main branch, not a commit hash directly. = Sotto il cofano, la destinazione del riferimento simbolico di HEAD e' refs/heads/main mentre sei sul branch main, non direttamente un hash di commit.`,
               context: 'internals',
               difficulty: 'advanced',
               code: 'refs/heads/main',
@@ -10141,12 +10141,12 @@ export default {
           description: 'La piattaforma più diffusa',
           items: [
             {
-              english: 'GitHub Enterprise',
-              italian: 'GitHub Enterprise',
+              english: 'GitHub Enterprise Server',
+              italian: 'versione self-hosted (GitHub Enterprise Server)',
               pronunciation: '/ˈɡɪthʌb/',
               phonetic: 'GIT-hab',
               example:
-                'Large companies host their own GitHub Enterprise instance to keep source code inside the corporate network. = Le grandi aziende ospitano una propria istanza GitHub Enterprise per mantenere il codice sorgente dentro la rete aziendale.',
+                'For air-gapped environments, GitHub Enterprise Server runs on your own infrastructure giving full control over data residency and access. = Per ambienti air-gapped, GitHub Enterprise Server gira sulla tua infrastruttura dando pieno controllo su residenza dei dati e accessi.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitHub',

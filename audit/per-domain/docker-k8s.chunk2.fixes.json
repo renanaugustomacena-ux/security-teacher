@@ -1,169 +1,1337 @@
 {
   "fixes": [
-    {"level":"15","lesson":"dk_storage_4","english":"emptyDir","set":{"example":"Sidecar containers often share an emptyDir volume so the main app can write logs that a log-forwarder reads from the same directory. = I container sidecar condividono spesso un volume emptyDir così l'app principale può scrivere log che un log-forwarder legge dalla stessa directory."}},
-    {"level":"15","lesson":"dk_storage_4","english":"Ephemeral Volume","set":{"example":"An ephemeral volume is created when the pod starts and destroyed when it stops, making it ideal for scratch space or caches. = Un volume effimero viene creato all'avvio del pod e distrutto quando si ferma, ideale per spazio scratch o cache."}},
-    {"level":"16","lesson":"dk_k8s_net_1","english":"CNI","set":{"example":"When you join a node to the cluster, the kubelet calls the CNI plugin to set up the pod's network namespace and IP address. = Quando si aggiunge un nodo al cluster, il kubelet chiama il plugin CNI per configurare il namespace di rete e l'IP del pod."}},
-    {"level":"16","lesson":"dk_k8s_net_1","english":"Calico","set":{"italian":"Calico","example":"We chose Calico in production because we need NetworkPolicy enforcement plus BGP routing between racks without an overlay. = Abbiamo scelto Calico in produzione perché ci servono enforcement di NetworkPolicy e routing BGP tra rack senza overlay."}},
-    {"level":"16","lesson":"dk_k8s_net_1","english":"Cilium","set":{"italian":"Cilium","example":"Our platform team migrated to Cilium so we could replace kube-proxy with eBPF and gain L7-aware network policies. = Il nostro platform team ha migrato a Cilium per sostituire kube-proxy con eBPF e ottenere network policy L7-aware."}},
-    {"level":"16","lesson":"dk_k8s_net_1","english":"Flannel","set":{"italian":"Flannel","example":"For our small dev cluster we picked Flannel with VXLAN because it just works without any BGP configuration on the underlying network. = Per il nostro piccolo cluster di sviluppo abbiamo scelto Flannel con VXLAN perché funziona subito senza configurare BGP sulla rete sottostante."}},
-    {"level":"16","lesson":"dk_k8s_net_1","english":"Weave Net","set":{"italian":"Weave Net","example":"Some legacy clusters still run Weave Net for its built-in pod-to-pod encryption, though the project is now in maintenance mode. = Alcuni cluster legacy usano ancora Weave Net per la cifratura pod-a-pod integrata, anche se il progetto ora è in maintenance."}},
-    {"level":"16","lesson":"dk_k8s_net_1","english":"Pod CIDR","set":{"example":"Make sure the Pod CIDR does not overlap with your VPC range, otherwise traffic from pods to corporate networks will be black-holed. = Assicurarsi che il Pod CIDR non si sovrapponga al range della VPC, altrimenti il traffico dai pod verso le reti aziendali sarà perso."}},
-    {"level":"16","lesson":"dk_k8s_net_1","english":"Service CIDR","set":{"example":"The Service CIDR is configured at cluster init and cannot be changed easily, so pick a range large enough for years of growth. = Il Service CIDR è configurato all'init del cluster e non si cambia facilmente, quindi scegliere un range abbastanza grande per anni di crescita."}},
-    {"level":"16","lesson":"dk_k8s_net_1","english":"BGP","set":{"example":"In Calico-on-bare-metal setups, each node peers with the top-of-rack switch over BGP so pod IPs are routable across the datacenter. = Nelle installazioni Calico su bare-metal, ogni nodo fa peering con lo switch top-of-rack via BGP così gli IP dei pod sono instradabili nel datacenter."}},
-    {"level":"16","lesson":"dk_k8s_net_1","english":"IP-in-IP","set":{"example":"Calico falls back to IP-in-IP encapsulation when nodes sit in different subnets and BGP routes are not propagated end-to-end. = Calico ripiega sull'incapsulamento IP-in-IP quando i nodi sono in subnet diverse e le rotte BGP non sono propagate end-to-end."}},
-    {"level":"16","lesson":"dk_k8s_net_1","english":"VXLAN","set":{"example":"Most overlay CNIs default to VXLAN encapsulation because UDP port 4789 traverses cloud security groups more reliably than IP-in-IP. = La maggior parte dei CNI overlay usa di default l'incapsulamento VXLAN perché la porta UDP 4789 attraversa i security group cloud più affidabilmente di IP-in-IP."}},
-    {"level":"16","lesson":"dk_k8s_net_2","english":"NetworkPolicy","set":{"example":"After enabling a default-deny NetworkPolicy in the namespace, we whitelisted only the database port from the API service. = Dopo aver abilitato una NetworkPolicy default-deny nel namespace, abbiamo whitelistato solo la porta del database dal service API."}},
-    {"level":"16","lesson":"dk_k8s_net_2","english":"Ingress Rules","set":{"example":"The ingress rules in our policy allow traffic on port 8080 only from pods labeled app=frontend in the same namespace. = Le regole di ingress nella nostra policy permettono traffico sulla porta 8080 solo dai pod con label app=frontend nello stesso namespace."}},
-    {"level":"16","lesson":"dk_k8s_net_2","english":"Egress Rules","set":{"example":"We added egress rules so the payment pods can only reach the Stripe API hostname and our internal metrics collector. = Abbiamo aggiunto regole di egress così i pod di pagamento possono raggiungere solo l'hostname API Stripe e il collector di metriche interno."}},
-    {"level":"16","lesson":"dk_k8s_net_2","english":"podSelector","set":{"example":"An empty podSelector in a NetworkPolicy matches every pod in the namespace, which is the standard pattern for default-deny. = Un podSelector vuoto in una NetworkPolicy matcha ogni pod nel namespace, pattern standard per il default-deny."}},
-    {"level":"16","lesson":"dk_k8s_net_2","english":"namespaceSelector","set":{"example":"Using a namespaceSelector with the kubernetes.io/metadata.name label lets policies grant access only to pods from the monitoring namespace. = Usando un namespaceSelector con la label kubernetes.io/metadata.name le policy concedono accesso solo ai pod dal namespace monitoring."}},
-    {"level":"16","lesson":"dk_k8s_net_2","english":"ipBlock","set":{"example":"We use an ipBlock with the office VPN CIDR so on-call engineers can curl pod IPs directly for incident debugging. = Usiamo un ipBlock con il CIDR della VPN ufficio così gli ingegneri di on-call possono fare curl agli IP dei pod direttamente per il debug degli incident."}},
-    {"level":"16","lesson":"dk_k8s_net_2","english":"Default Deny","set":{"example":"Rolling out a default-deny policy per namespace is the standard zero-trust baseline before adding explicit allow rules. = Rilasciare una policy default-deny per namespace è la baseline zero-trust standard prima di aggiungere regole di allow esplicite."}},
-    {"level":"16","lesson":"dk_k8s_net_2","english":"Network Segmentation","set":{"example":"Proper network segmentation between the public-facing API and the internal billing service contains blast radius if the API is compromised. = Una segmentazione di rete corretta tra l'API pubblica e il servizio billing interno contiene il blast radius se l'API è compromessa."}},
-    {"level":"16","lesson":"dk_k8s_net_2","english":"Cilium NetworkPolicy","set":{"example":"A CiliumNetworkPolicy can match traffic by HTTP path or Kafka topic, going beyond what stock NetworkPolicy can express. = Una CiliumNetworkPolicy può matchare traffico per path HTTP o topic Kafka, andando oltre quanto esprimibile dalla NetworkPolicy standard."}},
-    {"level":"16","lesson":"dk_k8s_net_3","english":"CoreDNS","set":{"example":"When DNS lookups inside pods start timing out, check CoreDNS pod logs and CPU usage before blaming the application code. = Quando le risoluzioni DNS dentro i pod iniziano ad andare in timeout, controllare log e CPU dei pod CoreDNS prima di incolpare il codice applicativo."}},
-    {"level":"16","lesson":"dk_k8s_net_3","english":"Cluster DNS","set":{"example":"Every pod is automatically configured with the cluster DNS IP in /etc/resolv.conf so service names resolve cluster-wide. = Ogni pod è configurato automaticamente con l'IP del DNS del cluster in /etc/resolv.conf così i nomi dei service risolvono cluster-wide."}},
-    {"level":"16","lesson":"dk_k8s_net_3","english":"Search Path","set":{"example":"The pod's DNS search path lets you write 'mysql' instead of 'mysql.prod.svc.cluster.local' for service discovery in the same namespace. = Il search path DNS del pod permette di scrivere 'mysql' invece di 'mysql.prod.svc.cluster.local' per il service discovery nello stesso namespace."}},
-    {"level":"16","lesson":"dk_k8s_net_3","english":"dnsPolicy","set":{"example":"Setting dnsPolicy to ClusterFirstWithHostNet is required for pods on hostNetwork that still need cluster DNS resolution. = Impostare dnsPolicy a ClusterFirstWithHostNet è necessario per pod su hostNetwork che richiedono ancora la risoluzione DNS del cluster."}},
-    {"level":"16","lesson":"dk_k8s_net_3","english":"Corefile","set":{"example":"Editing the Corefile ConfigMap lets you add per-zone forwarders so internal.corp domains resolve via the corporate DNS server. = Modificando il ConfigMap Corefile si aggiungono forwarder per zona così i domini internal.corp risolvono tramite il DNS aziendale."}},
-    {"level":"16","lesson":"dk_k8s_net_3","english":"Upstream DNS","set":{"example":"Configure the upstream DNS in CoreDNS to point at your VPC resolver, otherwise external hostname lookups will fail. = Configurare il DNS upstream in CoreDNS per puntare al resolver della VPC, altrimenti le risoluzioni di hostname esterni falliranno."}},
-    {"level":"16","lesson":"dk_k8s_net_3","english":"Stub Domain","set":{"example":"Define a stub domain for legacy.local so those lookups are forwarded to the on-prem DNS instead of the public resolvers. = Definire uno stub domain per legacy.local così le risoluzioni sono inoltrate al DNS on-prem invece dei resolver pubblici."}},
-    {"level":"16","lesson":"dk_k8s_net_3","english":"Cache Plugin","set":{"example":"The CoreDNS cache plugin keeps successful answers in memory for 30 seconds, dramatically reducing load on upstream resolvers. = Il cache plugin di CoreDNS tiene le risposte di successo in memoria per 30 secondi, riducendo drasticamente il carico sui resolver upstream."}},
-    {"level":"16","lesson":"dk_k8s_net_3","english":"NodeLocal DNSCache","set":{"example":"Deploying NodeLocal DNSCache as a DaemonSet cut our p99 DNS resolution latency from 20ms to under 1ms cluster-wide. = Deployare NodeLocal DNSCache come DaemonSet ha tagliato la nostra latenza DNS p99 da 20ms a meno di 1ms cluster-wide."}},
-    {"level":"16","lesson":"dk_k8s_net_4","english":"kube-proxy","set":{"english":"kube-proxy (service routing)","italian":"kube-proxy (instradamento dei service)","example":"On each node, kube-proxy watches the API server and programs iptables or IPVS rules so packets to a ClusterIP reach a healthy backend pod. = Su ogni nodo, kube-proxy osserva l'API server e programma regole iptables o IPVS così i pacchetti verso un ClusterIP raggiungono un pod backend sano."}},
-    {"level":"16","lesson":"dk_k8s_net_4","english":"iptables Mode","set":{"example":"In iptables mode kube-proxy generates linear rules per service, which becomes a bottleneck once you exceed a few thousand services. = In modalità iptables kube-proxy genera regole lineari per service, che diventa un collo di bottiglia oltre qualche migliaio di service."}},
-    {"level":"16","lesson":"dk_k8s_net_4","english":"IPVS Mode","set":{"example":"We switched kube-proxy to IPVS mode after the cluster grew past 5000 services, lowering connection setup latency significantly. = Abbiamo passato kube-proxy in modalità IPVS dopo che il cluster ha superato i 5000 service, abbassando significativamente la latenza di connessione."}},
-    {"level":"16","lesson":"dk_k8s_net_4","english":"Connection Tracking","set":{"example":"Watch the nf_conntrack table on busy nodes because hitting the max entries silently drops new connections under load. = Tenere d'occhio la tabella nf_conntrack sui nodi affollati perché raggiungere il limite di entry fa droppare silenziosamente le nuove connessioni sotto carico."}},
-    {"level":"16","lesson":"dk_k8s_net_4","english":"externalTrafficPolicy","set":{"example":"Setting externalTrafficPolicy to Local preserves the client source IP but only sends traffic to nodes that already host a backend pod. = Impostare externalTrafficPolicy a Local preserva l'IP sorgente del client ma manda traffico solo ai nodi che ospitano già un pod backend."}},
-    {"level":"16","lesson":"dk_k8s_net_4","english":"internalTrafficPolicy","set":{"example":"Setting internalTrafficPolicy to Local makes pods talk to backends on the same node, reducing cross-AZ traffic costs. = Impostare internalTrafficPolicy a Local fa parlare i pod con backend sullo stesso nodo, riducendo i costi di traffico cross-AZ."}},
-    {"level":"16","lesson":"dk_k8s_net_4","english":"Cluster Networking Model","set":{"example":"Kubernetes mandates a flat cluster networking model where every pod can reach every other pod without NAT in between. = Kubernetes impone un modello di networking del cluster piatto dove ogni pod può raggiungere ogni altro pod senza NAT in mezzo."}},
-    {"level":"16","lesson":"dk_k8s_net_4","english":"Source NAT","set":{"example":"Without externalTrafficPolicy=Local, source NAT rewrites the client IP to the node IP and your access logs lose real client addresses. = Senza externalTrafficPolicy=Local, il source NAT riscrive l'IP del client con l'IP del nodo e i log di accesso perdono gli indirizzi reali dei client."}},
-    {"level":"17","lesson":"dk_helm_1","english":"Helm","set":{"example":"Our team manages Prometheus, Grafana, and ingress-nginx with Helm so upgrades are one-line commands tied to chart versions. = Il nostro team gestisce Prometheus, Grafana e ingress-nginx con Helm così gli upgrade sono comandi di una riga legati a versioni del chart."}},
-    {"level":"17","lesson":"dk_helm_1","english":"Chart","set":{"example":"A chart packages all the YAML templates, default values, and dependencies needed to install an application on Kubernetes. = Un chart impacchetta tutti i template YAML, i valori di default e le dipendenze necessarie per installare un'applicazione su Kubernetes."}},
-    {"level":"17","lesson":"dk_helm_1","english":"Release","set":{"example":"Each helm install creates a new release tracked by name in the namespace, so you can deploy the same chart twice with different values. = Ogni helm install crea una nuova release tracciata per nome nel namespace, così puoi deployare lo stesso chart due volte con valori diversi."}},
-    {"level":"17","lesson":"dk_helm_1","english":"Repository","set":{"example":"After running helm repo add bitnami https://charts.bitnami.com/bitnami the repository is searchable and installable. = Dopo helm repo add bitnami https://charts.bitnami.com/bitnami il repository è cercabile e installabile."}},
-    {"level":"17","lesson":"dk_helm_1","english":"helm install","set":{"example":"Run helm install myapp ./mychart -f production-values.yaml to deploy with environment-specific overrides. = Esegui helm install myapp ./mychart -f production-values.yaml per deployare con override specifici dell'ambiente."}},
-    {"level":"17","lesson":"dk_helm_1","english":"helm upgrade","set":{"example":"Use helm upgrade --install with the same release name in CI so the first deploy and every subsequent rollout share one command. = Usa helm upgrade --install con lo stesso nome di release in CI così il primo deploy e ogni rollout successivo condividono un solo comando."}},
-    {"level":"17","lesson":"dk_helm_1","english":"helm uninstall","set":{"example":"Running helm uninstall myapp deletes every Kubernetes resource the release created, including PVCs unless you set keepHistory. = Eseguire helm uninstall myapp elimina ogni risorsa Kubernetes creata dalla release, incluse le PVC se non si imposta keepHistory."}},
-    {"level":"17","lesson":"dk_helm_1","english":"helm list","set":{"example":"Use helm list -A to see every release across all namespaces, useful for auditing what is currently deployed in the cluster. = Usa helm list -A per vedere ogni release in tutti i namespace, utile per fare audit di cosa è attualmente deployato nel cluster."}},
-    {"level":"17","lesson":"dk_helm_1","english":"helm rollback","set":{"example":"After a bad release we ran helm rollback myapp 3 to restore the previous working revision in under 30 seconds. = Dopo una release sbagliata abbiamo eseguito helm rollback myapp 3 per ripristinare la revisione funzionante precedente in meno di 30 secondi."}},
-    {"level":"17","lesson":"dk_helm_1","english":"helm search","set":{"example":"Use helm search repo nginx to discover available charts in the repositories you have added locally. = Usa helm search repo nginx per scoprire i chart disponibili nei repository aggiunti localmente."}},
-    {"level":"17","lesson":"dk_helm_2","english":"Chart.yaml","set":{"example":"The Chart.yaml at the root of every chart declares the name, version, appVersion, and any chart dependencies. = Il Chart.yaml alla radice di ogni chart dichiara nome, version, appVersion e ogni dipendenza del chart."}},
-    {"level":"17","lesson":"dk_helm_2","english":"values.yaml","set":{"example":"The values.yaml in the chart provides defaults that users override with -f myvalues.yaml or --set image.tag=v2. = Il values.yaml nel chart fornisce default che gli utenti sovrascrivono con -f myvalues.yaml o --set image.tag=v2."}},
-    {"level":"17","lesson":"dk_helm_2","english":"templates/","set":{"example":"Inside the templates/ directory every YAML file is rendered through the Go template engine before being applied to the cluster. = Dentro la directory templates/ ogni file YAML viene renderizzato attraverso il template engine Go prima di essere applicato al cluster."}},
-    {"level":"17","lesson":"dk_helm_2","english":"charts/","set":{"example":"The charts/ subdirectory holds vendored sub-chart tarballs pulled by helm dependency update from the dependencies list. = La sottodirectory charts/ contiene i tarball dei sub-chart pullati da helm dependency update dalla lista dependencies."}},
-    {"level":"17","lesson":"dk_helm_2","english":"NOTES.txt","set":{"example":"Authors put the rendered service URL and credentials in NOTES.txt so users see them immediately after helm install. = Gli autori mettono l'URL del service renderizzato e le credenziali in NOTES.txt così gli utenti li vedono subito dopo helm install."}},
-    {"level":"17","lesson":"dk_helm_2","english":"_helpers.tpl","set":{"example":"Define a fullname template in _helpers.tpl and reuse it across every resource so labels stay consistent. = Definire un template fullname in _helpers.tpl e riutilizzarlo in ogni risorsa così le label restano consistenti."}},
-    {"level":"17","lesson":"dk_helm_2","english":"apiVersion","set":{"example":"Set apiVersion to v2 in Chart.yaml to use modern Helm 3 features like library charts and dependencies block. = Impostare apiVersion a v2 in Chart.yaml per usare le feature moderne di Helm 3 come library chart e blocco dependencies."}},
-    {"level":"17","lesson":"dk_helm_2","english":"Chart Version","set":{"example":"Bump the chart version in Chart.yaml whenever you change templates so helm history shows a meaningful diff. = Incrementare la chart version in Chart.yaml ogni volta che cambi i template così helm history mostra una diff significativa."}},
-    {"level":"17","lesson":"dk_helm_2","english":"appVersion","set":{"italian":"appVersion","example":"Set appVersion to your application's semantic version like 1.4.2 so dashboards can correlate releases with code changes. = Impostare appVersion alla versione semantica della tua applicazione come 1.4.2 così le dashboard correlano release e cambi di codice."}},
-    {"level":"17","lesson":"dk_helm_2","english":"Dependencies","set":{"example":"Declare dependencies in Chart.yaml so installing your chart automatically pulls in the bitnami/postgresql dependency. = Dichiarare le dependencies in Chart.yaml così installando il tuo chart si tira automaticamente la dipendenza bitnami/postgresql."}},
-    {"level":"17","lesson":"dk_helm_3","english":"Go Template","set":{"example":"Helm uses the Go template engine, so you can call sprig functions like quote or default inside double braces. = Helm usa il template engine di Go, quindi puoi chiamare funzioni sprig come quote o default dentro le doppie graffe."}},
-    {"level":"17","lesson":"dk_helm_3","english":".Values","set":{"example":"Reference {{ .Values.image.repository }} in a template to substitute whatever the user set in their values.yaml. = Referenziare {{ .Values.image.repository }} in un template per sostituire ciò che l'utente ha impostato nel suo values.yaml."}},
-    {"level":"17","lesson":"dk_helm_3","english":".Release","set":{"example":"Use {{ .Release.Name }} to prefix resource names so two installs of the same chart never collide in the namespace. = Usare {{ .Release.Name }} per prefissare i nomi delle risorse così due install dello stesso chart non collidono mai nel namespace."}},
-    {"level":"17","lesson":"dk_helm_3","english":".Chart","set":{"example":"Inject {{ .Chart.AppVersion }} into a label so kubectl can group pods by the application version that deployed them. = Iniettare {{ .Chart.AppVersion }} in una label così kubectl può raggruppare i pod per versione dell'applicazione che li ha deployati."}},
-    {"level":"17","lesson":"dk_helm_3","english":"Pipeline","set":{"italian":"Pipeline","example":"Chain template functions with pipes like {{ .Values.name | upper | quote }} to transform values before injection. = Concatenare funzioni template con pipe come {{ .Values.name | upper | quote }} per trasformare valori prima dell'iniezione."}},
-    {"level":"17","lesson":"dk_helm_3","english":"if/else","set":{"example":"Use {{ if .Values.persistence.enabled }} blocks to render PVC manifests only when the user wants persistent storage. = Usare blocchi {{ if .Values.persistence.enabled }} per renderizzare manifest PVC solo quando l'utente vuole storage persistente."}},
-    {"level":"17","lesson":"dk_helm_3","english":"range","set":{"example":"Iterate over a list of users with {{ range .Values.users }} to emit one ConfigMap entry per element. = Iterare su una lista di utenti con {{ range .Values.users }} per emettere una entry ConfigMap per elemento."}},
-    {"level":"17","lesson":"dk_helm_3","english":"with","set":{"example":"Wrap a block in {{ with .Values.ingress }} so . inside the block points at .Values.ingress for shorter expressions. = Avvolgere un blocco in {{ with .Values.ingress }} così . dentro il blocco punta a .Values.ingress per espressioni più brevi."}},
-    {"level":"17","lesson":"dk_helm_3","english":"include","set":{"example":"Call {{ include \"mychart.labels\" . }} to render the labels template defined in _helpers.tpl on every resource. = Chiamare {{ include \"mychart.labels\" . }} per renderizzare il template labels definito in _helpers.tpl in ogni risorsa."}},
-    {"level":"17","lesson":"dk_helm_3","english":"tpl Function","set":{"example":"The tpl function lets you render a template string supplied via values.yaml at install time, useful for user-provided snippets. = La funzione tpl permette di renderizzare una stringa template fornita via values.yaml all'install, utile per snippet forniti dall'utente."}},
-    {"level":"17","lesson":"dk_helm_4","english":"Hook","set":{"example":"Annotate a Job with helm.sh/hook: pre-install so it runs to completion before any other manifest is applied to the cluster. = Annotare un Job con helm.sh/hook: pre-install così gira a completamento prima che ogni altro manifest sia applicato al cluster."}},
-    {"level":"17","lesson":"dk_helm_4","english":"pre-install","set":{"example":"A pre-install hook is the right place to create namespaces or CRDs that the rest of the chart will reference. = Un hook pre-install è il posto giusto per creare namespace o CRD che il resto del chart referenzierà."}},
-    {"level":"17","lesson":"dk_helm_4","english":"post-install","set":{"example":"Use a post-install hook to run database migrations or seed initial data once all the main resources are healthy. = Usare un hook post-install per eseguire migrazioni del database o seedare dati iniziali una volta che le risorse principali sono sane."}},
-    {"level":"17","lesson":"dk_helm_4","english":"pre-upgrade","set":{"example":"A pre-upgrade hook can back up the database before helm applies new schema changes from the upgraded chart. = Un hook pre-upgrade può fare backup del database prima che helm applichi nuovi cambi di schema dal chart aggiornato."}},
-    {"level":"17","lesson":"dk_helm_4","english":"pre-delete","set":{"example":"Add a pre-delete hook to drain queues or export metrics before helm uninstall tears down the application pods. = Aggiungere un hook pre-delete per drenare code o esportare metriche prima che helm uninstall smonti i pod applicativi."}},
-    {"level":"17","lesson":"dk_helm_4","english":"Hook Weight","set":{"example":"Use hook weight annotations to control ordering when multiple pre-install hooks must run in a specific sequence. = Usare le annotation di hook weight per controllare l'ordinamento quando più hook pre-install devono girare in una sequenza specifica."}},
-    {"level":"17","lesson":"dk_helm_4","english":"Sub-chart","set":{"example":"Bundling redis as a sub-chart lets your application chart depend on it without forcing users to install redis separately. = Includere redis come sub-chart permette al tuo chart applicativo di dipendere da lui senza costringere gli utenti a installare redis separatamente."}},
-    {"level":"17","lesson":"dk_helm_4","english":"helm dependency update","set":{"example":"Run helm dependency update before packaging so the charts/ directory contains the exact versions pinned in Chart.yaml. = Eseguire helm dependency update prima del packaging così la directory charts/ contiene le versioni esatte pinnate in Chart.yaml."}},
-    {"level":"17","lesson":"dk_helm_4","english":"Library Chart","set":{"example":"Extract common labels and selectors into a library chart that application charts include as a dependency for consistency. = Estrarre label e selector comuni in un library chart che i chart applicativi includono come dipendenza per consistenza."}},
-    {"level":"17","lesson":"dk_helm_4","english":"helm package","set":{"example":"Run helm package ./mychart to produce a versioned tarball that you can upload to an OCI registry or static chart repo. = Eseguire helm package ./mychart per produrre un tarball versionato da caricare su un OCI registry o repo statico di chart."}},
-    {"level":"18","lesson":"dk_k8s_sec_1","english":"RBAC","set":{"example":"Enabling RBAC means every kubectl call is checked against a Role or ClusterRole bound to the caller's user or service account. = Abilitare RBAC significa che ogni chiamata kubectl viene verificata contro un Role o ClusterRole legato all'utente o service account del chiamante."}},
-    {"level":"18","lesson":"dk_k8s_sec_1","english":"RoleBinding","set":{"example":"Create a RoleBinding to grant the developer group view access only within their team's namespace, not across the cluster. = Creare un RoleBinding per concedere al gruppo developer accesso view solo dentro il namespace del loro team, non in tutto il cluster."}},
-    {"level":"18","lesson":"dk_k8s_sec_1","english":"ClusterRoleBinding","set":{"example":"Use a ClusterRoleBinding sparingly because it grants the bound subject permissions across every namespace in the cluster. = Usare un ClusterRoleBinding con parsimonia perché concede al soggetto legato permessi su ogni namespace del cluster."}},
-    {"level":"18","lesson":"dk_k8s_sec_1","english":"Subject","set":{"example":"The subjects field in a RoleBinding lists the users, groups, or service accounts that receive the role's permissions. = Il campo subjects in un RoleBinding lista gli utenti, gruppi o service account che ricevono i permessi del ruolo."}},
-    {"level":"18","lesson":"dk_k8s_sec_1","english":"Verbs","set":{"italian":"Verbs","example":"In a Role rule the verbs list controls which actions are allowed, such as get, list, watch, create, update, patch, or delete. = In una regola Role la lista verbs controlla quali azioni sono permesse, come get, list, watch, create, update, patch o delete."}},
-    {"level":"18","lesson":"dk_k8s_sec_1","english":"apiGroups","set":{"example":"Set apiGroups to [\"apps\"] in a rule to grant access to Deployments and StatefulSets which live in the apps API group. = Impostare apiGroups a [\"apps\"] in una regola per concedere accesso a Deployment e StatefulSet che vivono nel gruppo API apps."}},
-    {"level":"18","lesson":"dk_k8s_sec_1","english":"kubectl auth can-i","set":{"example":"Run kubectl auth can-i delete pods --as=dev-user to confirm a service account has the expected permissions before deploying. = Esegui kubectl auth can-i delete pods --as=dev-user per confermare che un service account abbia i permessi attesi prima di deployare."}},
-    {"level":"18","lesson":"dk_k8s_sec_1","english":"Aggregated Role","set":{"example":"An aggregated ClusterRole automatically combines rules from any ClusterRole matching its aggregationRule label selector. = Un ClusterRole aggregato combina automaticamente le regole da ogni ClusterRole che matcha il selector aggregationRule."}},
-    {"level":"18","lesson":"dk_k8s_sec_2","english":"ServiceAccount","set":{"example":"Create a dedicated ServiceAccount per workload so the audit log clearly attributes API calls to a specific application. = Creare un ServiceAccount dedicato per workload così l'audit log attribuisce chiaramente le chiamate API a un'applicazione specifica."}},
-    {"level":"18","lesson":"dk_k8s_sec_2","english":"automountServiceAccountToken","set":{"example":"Set automountServiceAccountToken to false on workloads that never call the Kubernetes API to shrink the attack surface. = Impostare automountServiceAccountToken a false sui workload che non chiamano mai l'API Kubernetes per ridurre la superficie d'attacco."}},
-    {"level":"18","lesson":"dk_k8s_sec_2","english":"IRSA","set":{"example":"With IRSA configured on EKS, our pods assume an IAM role via the projected OIDC token and call AWS APIs without static credentials. = Con IRSA configurato su EKS, i nostri pod assumono un ruolo IAM tramite il token OIDC proiettato e chiamano API AWS senza credenziali statiche."}},
-    {"level":"18","lesson":"dk_k8s_sec_2","english":"Workload Identity","set":{"example":"On GKE, Workload Identity binds a Kubernetes ServiceAccount to a GCP service account so pods inherit cloud IAM permissions cleanly. = Su GKE, Workload Identity lega un ServiceAccount Kubernetes a un service account GCP così i pod ereditano i permessi IAM cloud in modo pulito."}},
-    {"level":"18","lesson":"dk_k8s_sec_2","english":"OIDC","set":{"example":"Configure the API server to trust an OIDC issuer like Okta so engineers log in with their corporate identity instead of static tokens. = Configurare l'API server a fidarsi di un issuer OIDC come Okta così gli ingegneri loggano con l'identità aziendale invece di token statici."}},
-    {"level":"18","lesson":"dk_k8s_sec_2","english":"Bound Token","set":{"example":"A bound token is tied to a specific pod and expires automatically, replacing the legacy never-expiring ServiceAccount secrets. = Un bound token è legato a un pod specifico e scade automaticamente, sostituendo i vecchi secret ServiceAccount che non scadevano mai."}},
-    {"level":"18","lesson":"dk_k8s_sec_2","english":"TokenRequest API","set":{"example":"The TokenRequest API issues short-lived audience-scoped tokens that workloads use to authenticate to other services securely. = L'API TokenRequest emette token a vita breve con audience specifica che i workload usano per autenticarsi ad altri service in modo sicuro."}},
-    {"level":"18","lesson":"dk_k8s_sec_3","english":"PodSecurityPolicy","set":{"example":"Note that PodSecurityPolicy was removed in Kubernetes 1.25, so migrate your enforcement to Pod Security Standards or OPA Gatekeeper. = Nota che PodSecurityPolicy è stato rimosso in Kubernetes 1.25, quindi migra il tuo enforcement a Pod Security Standards o OPA Gatekeeper."}},
-    {"level":"18","lesson":"dk_k8s_sec_3","english":"Pod Security Standards","set":{"example":"Label the namespace with pod-security.kubernetes.io/enforce=restricted to apply the strictest Pod Security Standards profile. = Etichettare il namespace con pod-security.kubernetes.io/enforce=restricted per applicare il profilo più stretto dei Pod Security Standards."}},
-    {"level":"18","lesson":"dk_k8s_sec_3","english":"privileged Profile","set":{"example":"The privileged profile imposes no restrictions and is appropriate only for kube-system and trusted infrastructure workloads. = Il profilo privileged non impone restrizioni ed è appropriato solo per kube-system e workload infrastrutturali fidati."}},
-    {"level":"18","lesson":"dk_k8s_sec_3","english":"restricted Profile","set":{"example":"The restricted profile enforces runAsNonRoot, drops all capabilities, and forbids hostPath volumes for hardened workloads. = Il profilo restricted impone runAsNonRoot, droppa tutte le capability e vieta i volumi hostPath per workload hardened."}},
-    {"level":"18","lesson":"dk_k8s_sec_3","english":"securityContext","set":{"example":"Set a pod-level securityContext with fsGroup and runAsNonRoot so every container inherits secure defaults unless overridden. = Impostare un securityContext a livello pod con fsGroup e runAsNonRoot così ogni container eredita default sicuri se non sovrascritti."}},
-    {"level":"18","lesson":"dk_k8s_sec_3","english":"runAsNonRoot","set":{"example":"Setting runAsNonRoot to true makes the kubelet refuse to start the container if the image's USER is 0, preventing accidental root pods. = Impostare runAsNonRoot a true fa rifiutare al kubelet l'avvio del container se l'USER dell'immagine è 0, prevenendo pod root accidentali."}},
-    {"level":"18","lesson":"dk_k8s_sec_3","english":"runAsUser","set":{"example":"Pin runAsUser to 1001 so the process runs as a non-privileged UID even if the base image's USER directive is missing. = Pinnare runAsUser a 1001 così il processo gira con un UID non privilegiato anche se manca la direttiva USER dell'immagine base."}},
-    {"level":"18","lesson":"dk_k8s_sec_3","english":"fsGroup","set":{"example":"Set fsGroup to 2000 so mounted PVC volumes are chowned to that GID and the non-root container can write to them. = Impostare fsGroup a 2000 così i volumi PVC montati vengono chownati a quel GID e il container non-root può scriverci."}},
-    {"level":"18","lesson":"dk_k8s_sec_3","english":"seccompProfile","set":{"example":"Set seccompProfile to type RuntimeDefault to apply the container runtime's hardened syscall filter to every container in the pod. = Impostare seccompProfile a tipo RuntimeDefault per applicare il filtro syscall hardened del container runtime a ogni container del pod."}},
-    {"level":"18","lesson":"dk_k8s_sec_4","english":"OPA","set":{"example":"With OPA installed, the cluster evaluates Rego policies against admission requests so you can enforce rules like every namespace must carry an owner label. = Con OPA installato, il cluster valuta policy Rego sulle richieste di admission così puoi imporre regole come ogni namespace deve avere una label owner."}},
-    {"level":"18","lesson":"dk_k8s_sec_4","english":"Gatekeeper","set":{"example":"Install Gatekeeper to enforce Rego policies cluster-wide, blocking pods that violate organizational standards at admission time. = Installare Gatekeeper per imporre policy Rego cluster-wide, bloccando i pod che violano gli standard organizzativi all'admission."}},
-    {"level":"18","lesson":"dk_k8s_sec_4","english":"Rego","set":{"example":"Write a Rego policy that returns a violation message when any deployment lacks a teamOwner label, then ship it as a ConstraintTemplate. = Scrivere una policy Rego che ritorni un messaggio di violation quando un deployment manca della label teamOwner, poi shipparla come ConstraintTemplate."}},
-    {"level":"18","lesson":"dk_k8s_sec_4","english":"ConstraintTemplate","set":{"example":"A ConstraintTemplate defines the Rego logic once, then teams instantiate Constraints to apply that policy to specific kinds and namespaces. = Un ConstraintTemplate definisce la logica Rego una volta, poi i team istanziano Constraint per applicare quella policy a kind e namespace specifici."}},
-    {"level":"18","lesson":"dk_k8s_sec_4","english":"Constraint","set":{"example":"Each Constraint instantiates a ConstraintTemplate with parameters like the list of required labels for namespaces in production. = Ogni Constraint istanzia un ConstraintTemplate con parametri come la lista delle label richieste per i namespace in produzione."}},
-    {"level":"18","lesson":"dk_k8s_sec_4","english":"Admission Webhook","set":{"example":"An admission webhook is an HTTPS endpoint the API server calls to validate or mutate every create and update request. = Un admission webhook è un endpoint HTTPS che l'API server chiama per validare o mutare ogni richiesta di create e update."}},
-    {"level":"18","lesson":"dk_k8s_sec_4","english":"Validating Admission","set":{"example":"A validating admission webhook can reject a Pod whose container image is not from the company's approved registry list. = Un webhook di validating admission può rifiutare un Pod la cui immagine container non è dal registry approvato aziendale."}},
-    {"level":"18","lesson":"dk_k8s_sec_4","english":"Mutating Admission","set":{"example":"A mutating admission webhook can inject sidecar containers or default resource requests into every pod before it is persisted. = Un webhook di mutating admission può iniettare container sidecar o request di risorse di default in ogni pod prima che sia persistito."}},
-    {"level":"18","lesson":"dk_k8s_sec_4","english":"Kyverno","set":{"italian":"Kyverno","example":"Many platform teams pick Kyverno over OPA because it expresses policies in Kubernetes-native YAML instead of requiring engineers to learn Rego. = Molti platform team scelgono Kyverno invece di OPA perché esprime le policy in YAML Kubernetes-native senza costringere gli ingegneri a imparare Rego."}},
-    {"level":"18","lesson":"dk_k8s_sec_4","english":"Audit Mode","set":{"example":"Roll out new Gatekeeper constraints in audit mode first so you can see which existing resources would violate the policy before enforcing it. = Rilasciare prima i nuovi constraint Gatekeeper in modalità audit così vedi quali risorse esistenti violerebbero la policy prima di imporla."}},
-    {"level":"19","lesson":"dk_scale_1","english":"HPA","set":{"example":"Configure an HPA targeting 70 percent CPU utilization so the deployment scales out automatically during traffic spikes. = Configurare un HPA che punta al 70 percento di utilizzo CPU così il deployment scala out automaticamente durante i picchi di traffico."}},
-    {"level":"19","lesson":"dk_scale_1","english":"Target Utilization","set":{"example":"Choose a target utilization around 60-70 percent so the HPA has headroom to scale before existing pods get overwhelmed. = Scegliere un'utilizzazione target intorno al 60-70 percento così l'HPA ha margine per scalare prima che i pod esistenti siano sopraffatti."}},
-    {"level":"19","lesson":"dk_scale_1","english":"minReplicas","set":{"example":"Set minReplicas to 3 so the deployment always has enough capacity to survive a node failure even at low traffic. = Impostare minReplicas a 3 così il deployment ha sempre capacità sufficiente a sopravvivere a un guasto nodo anche con basso traffico."}},
-    {"level":"19","lesson":"dk_scale_1","english":"maxReplicas","set":{"example":"Cap maxReplicas at 50 so a runaway HPA never exhausts cluster capacity or blows your monthly cloud budget. = Limitare maxReplicas a 50 così un HPA fuori controllo non esaurisce mai la capacità del cluster o fa esplodere il budget cloud mensile."}},
-    {"level":"19","lesson":"dk_scale_1","english":"Custom Metric","set":{"example":"Wire the HPA to a custom metric like requests_per_second exposed via Prometheus Adapter when CPU is not a good scaling signal. = Collegare l'HPA a una metrica custom come requests_per_second esposta via Prometheus Adapter quando la CPU non è un buon segnale di scaling."}},
-    {"level":"19","lesson":"dk_scale_1","english":"External Metric","set":{"example":"Use an external metric like an SQS queue length to scale the worker deployment based on pending messages, not pod CPU. = Usare una metrica esterna come la lunghezza di una coda SQS per scalare il deployment worker in base ai messaggi pendenti, non alla CPU del pod."}},
-    {"level":"19","lesson":"dk_scale_1","english":"Cooldown Period","set":{"example":"Tune the cooldown period to 5 minutes after scale-down so brief traffic dips do not cause repeated pod churn. = Tarare il cooldown period a 5 minuti dopo lo scale-down così cali di traffico brevi non causano churn ripetuti dei pod."}},
-    {"level":"19","lesson":"dk_scale_1","english":"Stabilization Window","set":{"example":"Set the scale-down stabilization window to 300 seconds so the HPA waits for sustained low load before removing pods. = Impostare la finestra di stabilizzazione per lo scale-down a 300 secondi così l'HPA aspetta carico basso sostenuto prima di rimuovere pod."}},
-    {"level":"19","lesson":"dk_scale_1","english":"metrics-server","set":{"example":"Install metrics-server as a prerequisite for the HPA, since without it kubectl top and CPU-based autoscaling will not work. = Installare metrics-server come prerequisito per l'HPA, dato che senza di esso kubectl top e l'autoscaling basato su CPU non funzionano."}},
-    {"level":"19","lesson":"dk_scale_2","english":"VPA","set":{"example":"Run the VPA in recommendation mode to learn the right CPU and memory requests for your workload before turning on auto-update. = Eseguire il VPA in modalità recommendation per imparare le request di CPU e memoria giuste per il tuo workload prima di abilitare l'auto-update."}},
-    {"level":"19","lesson":"dk_scale_2","english":"Auto Mode","set":{"example":"In Auto mode the VPA evicts pods to apply new resource requests, so combine it with a PDB to avoid availability gaps. = In modalità Auto il VPA evicta i pod per applicare nuove request di risorse, quindi combinalo con un PDB per evitare buchi di disponibilità."}},
-    {"level":"19","lesson":"dk_scale_2","english":"Cluster Autoscaler","set":{"example":"The Cluster Autoscaler watches for unschedulable pods and provisions new nodes from the configured ASG until those pods can land. = Il Cluster Autoscaler osserva i pod non schedulabili e provisiona nuovi nodi dal ASG configurato finché quei pod riescono a piazzarsi."}},
-    {"level":"19","lesson":"dk_scale_2","english":"Node Group","set":{"example":"Define a separate node group for GPU workloads so the autoscaler scales those expensive nodes independently from CPU-only nodes. = Definire un node group separato per i workload GPU così l'autoscaler scala quei nodi costosi indipendentemente dai nodi solo-CPU."}},
-    {"level":"19","lesson":"dk_scale_2","english":"Karpenter","set":{"example":"On EKS we replaced the Cluster Autoscaler with Karpenter so the platform picks the cheapest EC2 type that fits the pending pods. = Su EKS abbiamo sostituito il Cluster Autoscaler con Karpenter così la piattaforma sceglie il tipo EC2 più economico che ospita i pod pendenti."}},
-    {"level":"19","lesson":"dk_scale_2","english":"Spot Instances","set":{"example":"Run stateless batch jobs on spot instances to cut compute costs by 70 percent, accepting that nodes can be reclaimed at any moment. = Eseguire job batch stateless su istanze spot per tagliare i costi di compute del 70 percento, accettando che i nodi possano essere reclamati in qualsiasi momento."}},
-    {"level":"19","lesson":"dk_scale_2","english":"Resource Bin Packing","set":{"example":"Good resource bin packing means the scheduler fills each node close to its capacity before spinning up another node. = Un buon bin packing delle risorse significa che lo scheduler riempie ogni nodo vicino alla sua capacità prima di tirare su un altro nodo."}},
-    {"level":"19","lesson":"dk_scale_2","english":"Resource Recommendation","set":{"example":"The VPA emits resource recommendations based on observed usage, helping teams right-size requests without manual profiling. = Il VPA emette raccomandazioni di risorse basate sull'utilizzo osservato, aiutando i team a dimensionare correttamente le request senza profilazione manuale."}},
-    {"level":"19","lesson":"dk_scale_2","english":"Right-Sizing","set":{"example":"Periodic right-sizing of pod requests reduces wasted capacity, often saving 30 percent on cloud bills without affecting performance. = Il right-sizing periodico delle request dei pod riduce la capacità sprecata, spesso risparmiando il 30 percento sulle bollette cloud senza impattare le performance."}},
-    {"level":"19","lesson":"dk_scale_3","english":"PodDisruptionBudget","set":{"example":"Attach a PodDisruptionBudget to your stateful service so cluster maintenance never drains more replicas than the app can tolerate. = Allegare un PodDisruptionBudget al tuo service stateful così la manutenzione cluster non drena mai più repliche di quante l'app possa tollerare."}},
-    {"level":"19","lesson":"dk_scale_3","english":"PDB","set":{"example":"A PDB with minAvailable=2 blocks kubectl drain from evicting a third replica until a new one is ready elsewhere. = Un PDB con minAvailable=2 blocca kubectl drain dall'evictare una terza replica finché una nuova è pronta altrove."}},
-    {"level":"19","lesson":"dk_scale_3","english":"minAvailable","set":{"example":"Set minAvailable to 80 percent on the API deployment so node drains preserve enough capacity to serve incoming traffic. = Impostare minAvailable a 80 percento sul deployment API così i drain dei nodi preservano capacità sufficiente per servire il traffico in entrata."}},
-    {"level":"19","lesson":"dk_scale_3","english":"maxUnavailable","set":{"english":"maxUnavailable (PDB)","italian":"maxUnavailable (nel PDB)","example":"In a PDB, maxUnavailable=1 means voluntary disruptions may take at most one replica down at any given moment. = In un PDB, maxUnavailable=1 significa che le interruzioni volontarie possono mettere giù al massimo una replica in un dato momento."}},
-    {"level":"19","lesson":"dk_scale_3","english":"Voluntary Disruption","set":{"example":"A voluntary disruption is initiated by an operator action like draining a node for an OS upgrade, and is gated by the PDB. = Un'interruzione volontaria è avviata da un'azione dell'operatore come il drain di un nodo per un upgrade OS, ed è bloccata dal PDB."}},
-    {"level":"19","lesson":"dk_scale_3","english":"Involuntary Disruption","set":{"example":"An involuntary disruption like a node hardware failure or kernel panic is not blocked by the PDB, so plan for it with replication. = Un'interruzione involontaria come un guasto hardware del nodo o un kernel panic non è bloccata dal PDB, quindi pianificarla con la replicazione."}},
-    {"level":"19","lesson":"dk_scale_3","english":"Eviction","set":{"example":"During an eviction the kubelet sends SIGTERM to the container, waits up to terminationGracePeriodSeconds, then SIGKILLs anything still running. = Durante un'eviction il kubelet manda SIGTERM al container, aspetta fino a terminationGracePeriodSeconds, poi SIGKILLa qualsiasi cosa stia ancora girando."}},
-    {"level":"19","lesson":"dk_scale_3","english":"Eviction API","set":{"example":"The Eviction API at /pods/<name>/eviction respects PDBs, unlike a direct delete which bypasses disruption budgets entirely. = L'Eviction API a /pods/<name>/eviction rispetta i PDB, a differenza di un delete diretto che bypassa completamente i disruption budget."}},
-    {"level":"19","lesson":"dk_scale_3","english":"Graceful Termination","set":{"example":"Implement graceful termination by handling SIGTERM to stop accepting new connections while finishing in-flight requests. = Implementare la terminazione graceful gestendo SIGTERM per smettere di accettare nuove connessioni mentre si finiscono le richieste in volo."}},
-    {"level":"19","lesson":"dk_scale_3","english":"Pod Priority","set":{"example":"Assign a high pod priority class to the API gateway so the scheduler preempts lower-priority batch pods when the cluster is full. = Assegnare una pod priority class alta all'API gateway così lo scheduler prerilascia i pod batch a priorità minore quando il cluster è pieno."}},
-    {"level":"19","lesson":"dk_scale_4","english":"KEDA","set":{"example":"Deploy KEDA so a queue worker can scale from zero to dozens of pods based on Kafka lag or SQS queue depth, not just CPU. = Deployare KEDA così un queue worker può scalare da zero a decine di pod basandosi su lag Kafka o profondità coda SQS, non solo CPU."}},
-    {"level":"19","lesson":"dk_scale_4","english":"ScaledObject","set":{"example":"Create a ScaledObject that points at the worker Deployment and references a Kafka trigger to drive replica count based on lag. = Creare un ScaledObject che punta al Deployment worker e referenzia un trigger Kafka per pilotare il count di repliche in base al lag."}},
-    {"level":"19","lesson":"dk_scale_4","english":"Scaler","set":{"example":"KEDA ships scalers for Kafka, RabbitMQ, AWS SQS, PostgreSQL, and many more, so you rarely need a custom external metric. = KEDA fornisce scaler per Kafka, RabbitMQ, AWS SQS, PostgreSQL e molti altri, quindi raramente serve una metrica esterna custom."}},
-    {"level":"19","lesson":"dk_scale_4","english":"Trigger","set":{"example":"Define a trigger of type kafka with topic and consumerGroup so KEDA polls the lag and scales the worker pods accordingly. = Definire un trigger di tipo kafka con topic e consumerGroup così KEDA pollla il lag e scala i pod worker di conseguenza."}},
-    {"level":"19","lesson":"dk_scale_4","english":"Scale to Zero","set":{"example":"KEDA can scale to zero replicas when the queue is empty, eliminating idle compute cost for bursty workloads. = KEDA può scalare a zero repliche quando la coda è vuota, eliminando il costo di compute idle per workload a bursti."}},
-    {"level":"19","lesson":"dk_scale_4","english":"Cron Trigger","set":{"example":"Use a cron trigger to pre-warm replicas every weekday at 8am, ensuring capacity is ready before the morning traffic ramp. = Usare un trigger cron per pre-scaldare le repliche ogni giorno feriale alle 8, assicurando che la capacità sia pronta prima della rampa di traffico mattutina."}},
-    {"level":"19","lesson":"dk_scale_4","english":"Polling Interval","set":{"example":"Lower the polling interval to 15 seconds for latency-sensitive triggers, but be aware it increases load on the metrics source. = Abbassare l'intervallo di polling a 15 secondi per trigger sensibili alla latenza, ma sapere che aumenta il carico sulla sorgente metrica."}},
-    {"level":"19","lesson":"dk_scale_4","english":"Cooldown","set":{"example":"The cooldown after KEDA scales a deployment to zero prevents flapping when sporadic messages arrive in quick succession. = Il cooldown dopo che KEDA scala un deployment a zero previene il flapping quando messaggi sporadici arrivano in rapida successione."}},
-    {"level":"19","lesson":"dk_scale_4","english":"TriggerAuthentication","set":{"example":"Use TriggerAuthentication to reference a Kubernetes Secret containing the credentials KEDA needs to query the AWS SQS API. = Usare TriggerAuthentication per referenziare un Secret Kubernetes con le credenziali che KEDA usa per interrogare l'API AWS SQS."}},
-    {"level":"19","lesson":"dk_scale_4","english":"ScaledJob","set":{"example":"A ScaledJob spawns a new Job per queued work item instead of scaling pod replicas, which suits one-shot processing tasks. = Un ScaledJob spawna un nuovo Job per ogni item in coda invece di scalare repliche di pod, adatto a task di elaborazione one-shot."}},
-    {"level":"20","lesson":"dk_mon_1","english":"Metrics Server","set":{"example":"Install Metrics Server so kubectl top nodes and the HPA can read CPU and memory usage for every pod in the cluster. = Installare Metrics Server così kubectl top nodes e l'HPA possono leggere l'uso CPU e memoria di ogni pod del cluster."}},
-    {"level":"20","lesson":"dk_mon_1","english":"kubectl top","set":{"example":"Run kubectl top pods -n prod --sort-by=memory to quickly find the leakiest pod when investigating an OOM alert. = Eseguire kubectl top pods -n prod --sort-by=memory per trovare velocemente il pod che leaks di più investigando un alert OOM."}},
-    {"level":"20","lesson":"dk_mon_1","english":"Prometheus","set":{"italian":"Prometheus","example":"Most Kubernetes shops run Prometheus alongside Grafana because the pull-based scraping model fits ephemeral pods naturally. = La maggior parte degli ambienti Kubernetes esegue Prometheus accanto a Grafana perché il modello pull-based di scraping si adatta naturalmente ai pod effimeri."}},
-    {"level":"20","lesson":"dk_mon_1","english":"PromQL","set":{"example":"Write a PromQL query like rate(http_requests_total[5m]) to chart the per-second request rate over the last five minutes. = Scrivere una query PromQL come rate(http_requests_total[5m]) per graficare il rate di richieste al secondo negli ultimi cinque minuti."}},
-    {"level":"20","lesson":"dk_mon_1","english":"ServiceMonitor","set":{"example":"Define a ServiceMonitor in the namespace so prometheus-operator automatically discovers and scrapes the matching Services. = Definire un ServiceMonitor nel namespace così prometheus-operator scopre automaticamente e scrape i Service che matchano."}},
-    {"level":"20","lesson":"dk_mon_1","english":"PodMonitor","set":{"example":"Use a PodMonitor when you want to scrape pods directly without going through a Service, useful for headless workloads. = Usare un PodMonitor quando vuoi scrapare pod direttamente senza passare per un Service, utile per workload headless."}},
-    {"level":"20","lesson":"dk_mon_1","english":"Exporter","set":{"example":"Run a node_exporter DaemonSet so Prometheus can scrape per-node Linux metrics like load average and disk IO. = Eseguire un DaemonSet node_exporter così Prometheus può scrapare metriche Linux per nodo come load average e IO disco."}},
-    {"level":"20","lesson":"dk_mon_1","english":"kube-state-metrics","set":{"example":"Deploy kube-state-metrics to expose Kubernetes object state like Deployment replica counts and Pod phases as Prometheus metrics. = Deployare kube-state-metrics per esporre lo stato degli oggetti Kubernetes come count di repliche Deployment e fasi Pod come metriche Prometheus."}},
-    {"level":"20","lesson":"dk_mon_1","english":"Scrape Interval","set":{"example":"Set the scrape interval to 30 seconds for low-cardinality jobs to balance resolution and Prometheus storage cost. = Impostare l'intervallo di scraping a 30 secondi per job a bassa cardinalità per bilanciare risoluzione e costo di storage Prometheus."}},
-    {"level":"20","lesson":"dk_mon_1","english":"Time Series","set":{"example":"Each unique combination of metric name and labels is a separate time series in Prometheus, so watch label cardinality closely. = Ogni combinazione unica di nome metrica e label è una serie temporale separata in Prometheus, quindi tenere d'occhio la cardinalità delle label."}},
-    {"level":"20","lesson":"dk_mon_2","english":"Liveness Endpoint","set":{"example":"Expose a /healthz liveness endpoint that returns 200 only when the app's main event loop is responsive, not just that the process is alive. = Esporre un endpoint liveness /healthz che ritorna 200 solo quando l'event loop principale dell'app è responsivo, non solo che il processo sia vivo."}},
-    {"level":"20","lesson":"dk_mon_2","english":"Readiness Endpoint","set":{"example":"The /ready readiness endpoint should return 503 while the app warms its cache so the Service does not route traffic to it yet. = L'endpoint readiness /ready dovrebbe ritornare 503 mentre l'app scalda la cache così il Service non gli routa traffico ancora."}},
-    {"level":"20","lesson":"dk_mon_2","english":"Health Check","set":{"example":"A proper health check distinguishes liveness from readiness so the kubelet restarts hung pods without removing warming pods from the Service. = Un health check corretto distingue liveness da readiness così il kubelet riavvia pod bloccati senza rimuovere pod in warming dal Service."}},
-    {"level":"20","lesson":"dk_mon_2","english":"Golden Signals","set":{"example":"Dashboards built around the Golden Signals (latency, traffic, errors, saturation) catch most production issues before customers do. = Le dashboard costruite sui Golden Signals (latenza, traffico, errori, saturazione) intercettano la maggior parte dei problemi di produzione prima dei clienti."}},
-    {"level":"20","lesson":"dk_mon_2","english":"SLO","set":{"example":"Define an SLO of 99.9 percent successful requests over 28 days so the team has a concrete error budget to spend on changes. = Definire un SLO del 99,9 percento di richieste di successo su 28 giorni così il team ha un error budget concreto da spendere sui cambiamenti."}}
+    {
+      "level": "15",
+      "lesson": "dk_storage_4",
+      "english": "emptyDir",
+      "set": {
+        "example": "Sidecar containers often share an emptyDir volume so the main app can write logs that a log-forwarder reads from the same directory. = I container sidecar condividono spesso un volume emptyDir così l'app principale può scrivere log che un log-forwarder legge dalla stessa directory."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dk_storage_4",
+      "english": "Ephemeral Volume",
+      "set": {
+        "example": "An ephemeral volume is created when the pod starts and destroyed when it stops, making it ideal for scratch space or caches. = Un volume effimero viene creato all'avvio del pod e distrutto quando si ferma, ideale per spazio scratch o cache."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "CNI",
+      "set": {
+        "example": "When you join a node to the cluster, the kubelet calls the CNI plugin to set up the pod's network namespace and IP address. = Quando si aggiunge un nodo al cluster, il kubelet chiama il plugin CNI per configurare il namespace di rete e l'IP del pod."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "Calico",
+      "set": {
+        "italian": "Calico",
+        "example": "We chose Calico in production because we need NetworkPolicy enforcement plus BGP routing between racks without an overlay. = Abbiamo scelto Calico in produzione perché ci servono enforcement di NetworkPolicy e routing BGP tra rack senza overlay."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "Cilium",
+      "set": {
+        "italian": "Cilium",
+        "example": "Our platform team migrated to Cilium so we could replace kube-proxy with eBPF and gain L7-aware network policies. = Il nostro platform team ha migrato a Cilium per sostituire kube-proxy con eBPF e ottenere network policy L7-aware."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "Flannel",
+      "set": {
+        "italian": "Flannel",
+        "example": "For our small dev cluster we picked Flannel with VXLAN because it just works without any BGP configuration on the underlying network. = Per il nostro piccolo cluster di sviluppo abbiamo scelto Flannel con VXLAN perché funziona subito senza configurare BGP sulla rete sottostante."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "Weave Net",
+      "set": {
+        "italian": "Weave Net",
+        "example": "Some legacy clusters still run Weave Net for its built-in pod-to-pod encryption, though the project is now in maintenance mode. = Alcuni cluster legacy usano ancora Weave Net per la cifratura pod-a-pod integrata, anche se il progetto ora è in maintenance."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "Pod CIDR",
+      "set": {
+        "example": "Make sure the Pod CIDR does not overlap with your VPC range, otherwise traffic from pods to corporate networks will be black-holed. = Assicurarsi che il Pod CIDR non si sovrapponga al range della VPC, altrimenti il traffico dai pod verso le reti aziendali sarà perso."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "Service CIDR",
+      "set": {
+        "example": "The Service CIDR is configured at cluster init and cannot be changed easily, so pick a range large enough for years of growth. = Il Service CIDR è configurato all'init del cluster e non si cambia facilmente, quindi scegliere un range abbastanza grande per anni di crescita."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "BGP",
+      "set": {
+        "example": "In Calico-on-bare-metal setups, each node peers with the top-of-rack switch over BGP so pod IPs are routable across the datacenter. = Nelle installazioni Calico su bare-metal, ogni nodo fa peering con lo switch top-of-rack via BGP così gli IP dei pod sono instradabili nel datacenter."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "IP-in-IP",
+      "set": {
+        "example": "Calico falls back to IP-in-IP encapsulation when nodes sit in different subnets and BGP routes are not propagated end-to-end. = Calico ripiega sull'incapsulamento IP-in-IP quando i nodi sono in subnet diverse e le rotte BGP non sono propagate end-to-end."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_1",
+      "english": "VXLAN",
+      "set": {
+        "example": "Most overlay CNIs default to VXLAN encapsulation because UDP port 4789 traverses cloud security groups more reliably than IP-in-IP. = La maggior parte dei CNI overlay usa di default l'incapsulamento VXLAN perché la porta UDP 4789 attraversa i security group cloud più affidabilmente di IP-in-IP."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "NetworkPolicy",
+      "set": {
+        "example": "After enabling a default-deny NetworkPolicy in the namespace, we whitelisted only the database port from the API service. = Dopo aver abilitato una NetworkPolicy default-deny nel namespace, abbiamo whitelistato solo la porta del database dal service API."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "Ingress Rules",
+      "set": {
+        "example": "The ingress rules in our policy allow traffic on port 8080 only from pods labeled app=frontend in the same namespace. = Le regole di ingress nella nostra policy permettono traffico sulla porta 8080 solo dai pod con label app=frontend nello stesso namespace."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "Egress Rules",
+      "set": {
+        "example": "We added egress rules so the payment pods can only reach the Stripe API hostname and our internal metrics collector. = Abbiamo aggiunto regole di egress così i pod di pagamento possono raggiungere solo l'hostname API Stripe e il collector di metriche interno."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "podSelector",
+      "set": {
+        "example": "An empty podSelector in a NetworkPolicy matches every pod in the namespace, which is the standard pattern for default-deny. = Un podSelector vuoto in una NetworkPolicy matcha ogni pod nel namespace, pattern standard per il default-deny."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "namespaceSelector",
+      "set": {
+        "example": "Using a namespaceSelector with the kubernetes.io/metadata.name label lets policies grant access only to pods from the monitoring namespace. = Usando un namespaceSelector con la label kubernetes.io/metadata.name le policy concedono accesso solo ai pod dal namespace monitoring."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "ipBlock",
+      "set": {
+        "example": "We use an ipBlock with the office VPN CIDR so on-call engineers can curl pod IPs directly for incident debugging. = Usiamo un ipBlock con il CIDR della VPN ufficio così gli ingegneri di on-call possono fare curl agli IP dei pod direttamente per il debug degli incident."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "Default Deny",
+      "set": {
+        "example": "Rolling out a default-deny policy per namespace is the standard zero-trust baseline before adding explicit allow rules. = Rilasciare una policy default-deny per namespace è la baseline zero-trust standard prima di aggiungere regole di allow esplicite."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "Network Segmentation",
+      "set": {
+        "example": "Proper network segmentation between the public-facing API and the internal billing service contains blast radius if the API is compromised. = Una segmentazione di rete corretta tra l'API pubblica e il servizio billing interno contiene il blast radius se l'API è compromessa."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_2",
+      "english": "Cilium NetworkPolicy",
+      "set": {
+        "example": "A CiliumNetworkPolicy can match traffic by HTTP path or Kafka topic, going beyond what stock NetworkPolicy can express. = Una CiliumNetworkPolicy può matchare traffico per path HTTP o topic Kafka, andando oltre quanto esprimibile dalla NetworkPolicy standard."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_3",
+      "english": "CoreDNS",
+      "set": {
+        "example": "When DNS lookups inside pods start timing out, check CoreDNS pod logs and CPU usage before blaming the application code. = Quando le risoluzioni DNS dentro i pod iniziano ad andare in timeout, controllare log e CPU dei pod CoreDNS prima di incolpare il codice applicativo."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_3",
+      "english": "Cluster DNS",
+      "set": {
+        "example": "Every pod is automatically configured with the cluster DNS IP in /etc/resolv.conf so service names resolve cluster-wide. = Ogni pod è configurato automaticamente con l'IP del DNS del cluster in /etc/resolv.conf così i nomi dei service risolvono cluster-wide."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_3",
+      "english": "Search Path",
+      "set": {
+        "example": "The pod's DNS search path lets you write 'mysql' instead of 'mysql.prod.svc.cluster.local' for service discovery in the same namespace. = Il search path DNS del pod permette di scrivere 'mysql' invece di 'mysql.prod.svc.cluster.local' per il service discovery nello stesso namespace."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_3",
+      "english": "dnsPolicy",
+      "set": {
+        "example": "Setting dnsPolicy to ClusterFirstWithHostNet is required for pods on hostNetwork that still need cluster DNS resolution. = Impostare dnsPolicy a ClusterFirstWithHostNet è necessario per pod su hostNetwork che richiedono ancora la risoluzione DNS del cluster."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_3",
+      "english": "Corefile",
+      "set": {
+        "example": "Editing the Corefile ConfigMap lets you add per-zone forwarders so internal.corp domains resolve via the corporate DNS server. = Modificando il ConfigMap Corefile si aggiungono forwarder per zona così i domini internal.corp risolvono tramite il DNS aziendale."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_3",
+      "english": "Upstream DNS",
+      "set": {
+        "example": "Configure the upstream DNS in CoreDNS to point at your VPC resolver, otherwise external hostname lookups will fail. = Configurare il DNS upstream in CoreDNS per puntare al resolver della VPC, altrimenti le risoluzioni di hostname esterni falliranno."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_3",
+      "english": "Stub Domain",
+      "set": {
+        "example": "Define a stub domain for legacy.local so those lookups are forwarded to the on-prem DNS instead of the public resolvers. = Definire uno stub domain per legacy.local così le risoluzioni sono inoltrate al DNS on-prem invece dei resolver pubblici."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_3",
+      "english": "Cache Plugin",
+      "set": {
+        "example": "The CoreDNS cache plugin keeps successful answers in memory for 30 seconds, dramatically reducing load on upstream resolvers. = Il cache plugin di CoreDNS tiene le risposte di successo in memoria per 30 secondi, riducendo drasticamente il carico sui resolver upstream."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_3",
+      "english": "NodeLocal DNSCache",
+      "set": {
+        "example": "Deploying NodeLocal DNSCache as a DaemonSet cut our p99 DNS resolution latency from 20ms to under 1ms cluster-wide. = Deployare NodeLocal DNSCache come DaemonSet ha tagliato la nostra latenza DNS p99 da 20ms a meno di 1ms cluster-wide."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_4",
+      "english": "kube-proxy",
+      "set": {
+        "english": "kube-proxy (service routing)",
+        "italian": "kube-proxy (instradamento dei service)",
+        "example": "On each node, kube-proxy watches the API server and programs iptables or IPVS rules so packets to a ClusterIP reach a healthy backend pod. = Su ogni nodo, kube-proxy osserva l'API server e programma regole iptables o IPVS così i pacchetti verso un ClusterIP raggiungono un pod backend sano."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_4",
+      "english": "iptables Mode",
+      "set": {
+        "example": "In iptables mode kube-proxy generates linear rules per service, which becomes a bottleneck once you exceed a few thousand services. = In modalità iptables kube-proxy genera regole lineari per service, che diventa un collo di bottiglia oltre qualche migliaio di service."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_4",
+      "english": "IPVS Mode",
+      "set": {
+        "example": "We switched kube-proxy to IPVS mode after the cluster grew past 5000 services, lowering connection setup latency significantly. = Abbiamo passato kube-proxy in modalità IPVS dopo che il cluster ha superato i 5000 service, abbassando significativamente la latenza di connessione."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_4",
+      "english": "Connection Tracking",
+      "set": {
+        "example": "Watch the nf_conntrack table on busy nodes because hitting the max entries silently drops new connections under load. = Tenere d'occhio la tabella nf_conntrack sui nodi affollati perché raggiungere il limite di entry fa droppare silenziosamente le nuove connessioni sotto carico."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_4",
+      "english": "externalTrafficPolicy",
+      "set": {
+        "example": "Setting externalTrafficPolicy to Local preserves the client source IP but only sends traffic to nodes that already host a backend pod. = Impostare externalTrafficPolicy a Local preserva l'IP sorgente del client ma manda traffico solo ai nodi che ospitano già un pod backend."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_4",
+      "english": "internalTrafficPolicy",
+      "set": {
+        "example": "Setting internalTrafficPolicy to Local makes pods talk to backends on the same node, reducing cross-AZ traffic costs. = Impostare internalTrafficPolicy a Local fa parlare i pod con backend sullo stesso nodo, riducendo i costi di traffico cross-AZ."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_4",
+      "english": "Cluster Networking Model",
+      "set": {
+        "example": "Kubernetes mandates a flat cluster networking model where every pod can reach every other pod without NAT in between. = Kubernetes impone un modello di networking del cluster piatto dove ogni pod può raggiungere ogni altro pod senza NAT in mezzo."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_4",
+      "english": "Source NAT",
+      "set": {
+        "example": "Without externalTrafficPolicy=Local, source NAT rewrites the client IP to the node IP and your access logs lose real client addresses. = Senza externalTrafficPolicy=Local, il source NAT riscrive l'IP del client con l'IP del nodo e i log di accesso perdono gli indirizzi reali dei client."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "Helm",
+      "set": {
+        "example": "Our team manages Prometheus, Grafana, and ingress-nginx with Helm so upgrades are one-line commands tied to chart versions. = Il nostro team gestisce Prometheus, Grafana e ingress-nginx con Helm così gli upgrade sono comandi di una riga legati a versioni del chart."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "Chart",
+      "set": {
+        "example": "A chart packages all the YAML templates, default values, and dependencies needed to install an application on Kubernetes. = Un chart impacchetta tutti i template YAML, i valori di default e le dipendenze necessarie per installare un'applicazione su Kubernetes."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "Release",
+      "set": {
+        "example": "Each helm install creates a new release tracked by name in the namespace, so you can deploy the same chart twice with different values. = Ogni helm install crea una nuova release tracciata per nome nel namespace, così puoi deployare lo stesso chart due volte con valori diversi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "Repository",
+      "set": {
+        "example": "After running helm repo add bitnami https://charts.bitnami.com/bitnami the repository is searchable and installable. = Dopo helm repo add bitnami https://charts.bitnami.com/bitnami il repository è cercabile e installabile."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm install",
+      "set": {
+        "example": "Run helm install myapp ./mychart -f production-values.yaml to deploy with environment-specific overrides. = Esegui helm install myapp ./mychart -f production-values.yaml per deployare con override specifici dell'ambiente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm upgrade",
+      "set": {
+        "example": "Use helm upgrade --install with the same release name in CI so the first deploy and every subsequent rollout share one command. = Usa helm upgrade --install con lo stesso nome di release in CI così il primo deploy e ogni rollout successivo condividono un solo comando."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm uninstall",
+      "set": {
+        "example": "Running helm uninstall myapp deletes every Kubernetes resource the release created, including PVCs unless you set keepHistory. = Eseguire helm uninstall myapp elimina ogni risorsa Kubernetes creata dalla release, incluse le PVC se non si imposta keepHistory."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm list",
+      "set": {
+        "example": "Use helm list -A to see every release across all namespaces, useful for auditing what is currently deployed in the cluster. = Usa helm list -A per vedere ogni release in tutti i namespace, utile per fare audit di cosa è attualmente deployato nel cluster."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm rollback",
+      "set": {
+        "example": "After a bad release we ran helm rollback myapp 3 to restore the previous working revision in under 30 seconds. = Dopo una release sbagliata abbiamo eseguito helm rollback myapp 3 per ripristinare la revisione funzionante precedente in meno di 30 secondi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_1",
+      "english": "helm search",
+      "set": {
+        "example": "Use helm search repo nginx to discover available charts in the repositories you have added locally. = Usa helm search repo nginx per scoprire i chart disponibili nei repository aggiunti localmente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "Chart.yaml",
+      "set": {
+        "example": "The Chart.yaml at the root of every chart declares the name, version, appVersion, and any chart dependencies. = Il Chart.yaml alla radice di ogni chart dichiara nome, version, appVersion e ogni dipendenza del chart."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "values.yaml",
+      "set": {
+        "example": "The values.yaml in the chart provides defaults that users override with -f myvalues.yaml or --set image.tag=v2. = Il values.yaml nel chart fornisce default che gli utenti sovrascrivono con -f myvalues.yaml o --set image.tag=v2."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "templates/",
+      "set": {
+        "example": "Inside the templates/ directory every YAML file is rendered through the Go template engine before being applied to the cluster. = Dentro la directory templates/ ogni file YAML viene renderizzato attraverso il template engine Go prima di essere applicato al cluster."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "charts/",
+      "set": {
+        "example": "The charts/ subdirectory holds vendored sub-chart tarballs pulled by helm dependency update from the dependencies list. = La sottodirectory charts/ contiene i tarball dei sub-chart pullati da helm dependency update dalla lista dependencies."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "NOTES.txt",
+      "set": {
+        "example": "Authors put the rendered service URL and credentials in NOTES.txt so users see them immediately after helm install. = Gli autori mettono l'URL del service renderizzato e le credenziali in NOTES.txt così gli utenti li vedono subito dopo helm install."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "_helpers.tpl",
+      "set": {
+        "example": "Define a fullname template in _helpers.tpl and reuse it across every resource so labels stay consistent. = Definire un template fullname in _helpers.tpl e riutilizzarlo in ogni risorsa così le label restano consistenti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "apiVersion",
+      "set": {
+        "example": "Set apiVersion to v2 in Chart.yaml to use modern Helm 3 features like library charts and dependencies block. = Impostare apiVersion a v2 in Chart.yaml per usare le feature moderne di Helm 3 come library chart e blocco dependencies."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "Chart Version",
+      "set": {
+        "example": "Bump the chart version in Chart.yaml whenever you change templates so helm history shows a meaningful diff. = Incrementare la chart version in Chart.yaml ogni volta che cambi i template così helm history mostra una diff significativa."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "appVersion",
+      "set": {
+        "italian": "appVersion",
+        "example": "Set appVersion to your application's semantic version like 1.4.2 so dashboards can correlate releases with code changes. = Impostare appVersion alla versione semantica della tua applicazione come 1.4.2 così le dashboard correlano release e cambi di codice."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_2",
+      "english": "Dependencies",
+      "set": {
+        "example": "Declare dependencies in Chart.yaml so installing your chart automatically pulls in the bitnami/postgresql dependency. = Dichiarare le dependencies in Chart.yaml così installando il tuo chart si tira automaticamente la dipendenza bitnami/postgresql."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "Go Template",
+      "set": {
+        "example": "Helm uses the Go template engine, so you can call sprig functions like quote or default inside double braces. = Helm usa il template engine di Go, quindi puoi chiamare funzioni sprig come quote o default dentro le doppie graffe."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": ".Values",
+      "set": {
+        "example": "Reference {{ .Values.image.repository }} in a template to substitute whatever the user set in their values.yaml. = Referenziare {{ .Values.image.repository }} in un template per sostituire ciò che l'utente ha impostato nel suo values.yaml."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": ".Release",
+      "set": {
+        "example": "Use {{ .Release.Name }} to prefix resource names so two installs of the same chart never collide in the namespace. = Usare {{ .Release.Name }} per prefissare i nomi delle risorse così due install dello stesso chart non collidono mai nel namespace."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": ".Chart",
+      "set": {
+        "example": "Inject {{ .Chart.AppVersion }} into a label so kubectl can group pods by the application version that deployed them. = Iniettare {{ .Chart.AppVersion }} in una label così kubectl può raggruppare i pod per versione dell'applicazione che li ha deployati."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "Pipeline",
+      "set": {
+        "italian": "Pipeline",
+        "example": "Chain template functions with pipes like {{ .Values.name | upper | quote }} to transform values before injection. = Concatenare funzioni template con pipe come {{ .Values.name | upper | quote }} per trasformare valori prima dell'iniezione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "if/else",
+      "set": {
+        "example": "Use {{ if .Values.persistence.enabled }} blocks to render PVC manifests only when the user wants persistent storage. = Usare blocchi {{ if .Values.persistence.enabled }} per renderizzare manifest PVC solo quando l'utente vuole storage persistente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "range",
+      "set": {
+        "example": "Iterate over a list of users with {{ range .Values.users }} to emit one ConfigMap entry per element. = Iterare su una lista di utenti con {{ range .Values.users }} per emettere una entry ConfigMap per elemento."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "with",
+      "set": {
+        "example": "Wrap a block in {{ with .Values.ingress }} so . inside the block points at .Values.ingress for shorter expressions. = Avvolgere un blocco in {{ with .Values.ingress }} così . dentro il blocco punta a .Values.ingress per espressioni più brevi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "include",
+      "set": {
+        "example": "Call {{ include \"mychart.labels\" . }} to render the labels template defined in _helpers.tpl on every resource. = Chiamare {{ include \"mychart.labels\" . }} per renderizzare il template labels definito in _helpers.tpl in ogni risorsa."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_3",
+      "english": "tpl Function",
+      "set": {
+        "example": "The tpl function lets you render a template string supplied via values.yaml at install time, useful for user-provided snippets. = La funzione tpl permette di renderizzare una stringa template fornita via values.yaml all'install, utile per snippet forniti dall'utente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "Hook",
+      "set": {
+        "example": "Annotate a Job with helm.sh/hook: pre-install so it runs to completion before any other manifest is applied to the cluster. = Annotare un Job con helm.sh/hook: pre-install così gira a completamento prima che ogni altro manifest sia applicato al cluster."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "pre-install",
+      "set": {
+        "example": "A pre-install hook is the right place to create namespaces or CRDs that the rest of the chart will reference. = Un hook pre-install è il posto giusto per creare namespace o CRD che il resto del chart referenzierà."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "post-install",
+      "set": {
+        "example": "Use a post-install hook to run database migrations or seed initial data once all the main resources are healthy. = Usare un hook post-install per eseguire migrazioni del database o seedare dati iniziali una volta che le risorse principali sono sane."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "pre-upgrade",
+      "set": {
+        "example": "A pre-upgrade hook can back up the database before helm applies new schema changes from the upgraded chart. = Un hook pre-upgrade può fare backup del database prima che helm applichi nuovi cambi di schema dal chart aggiornato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "pre-delete",
+      "set": {
+        "example": "Add a pre-delete hook to drain queues or export metrics before helm uninstall tears down the application pods. = Aggiungere un hook pre-delete per drenare code o esportare metriche prima che helm uninstall smonti i pod applicativi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "Hook Weight",
+      "set": {
+        "example": "Use hook weight annotations to control ordering when multiple pre-install hooks must run in a specific sequence. = Usare le annotation di hook weight per controllare l'ordinamento quando più hook pre-install devono girare in una sequenza specifica."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "Sub-chart",
+      "set": {
+        "example": "Bundling redis as a sub-chart lets your application chart depend on it without forcing users to install redis separately. = Includere redis come sub-chart permette al tuo chart applicativo di dipendere da lui senza costringere gli utenti a installare redis separatamente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "helm dependency update",
+      "set": {
+        "example": "Run helm dependency update before packaging so the charts/ directory contains the exact versions pinned in Chart.yaml. = Eseguire helm dependency update prima del packaging così la directory charts/ contiene le versioni esatte pinnate in Chart.yaml."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "Library Chart",
+      "set": {
+        "example": "Extract common labels and selectors into a library chart that application charts include as a dependency for consistency. = Estrarre label e selector comuni in un library chart che i chart applicativi includono come dipendenza per consistenza."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dk_helm_4",
+      "english": "helm package",
+      "set": {
+        "example": "Run helm package ./mychart to produce a versioned tarball that you can upload to an OCI registry or static chart repo. = Eseguire helm package ./mychart per produrre un tarball versionato da caricare su un OCI registry o repo statico di chart."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "RBAC",
+      "set": {
+        "example": "Enabling RBAC means every kubectl call is checked against a Role or ClusterRole bound to the caller's user or service account. = Abilitare RBAC significa che ogni chiamata kubectl viene verificata contro un Role o ClusterRole legato all'utente o service account del chiamante."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "RoleBinding",
+      "set": {
+        "example": "Create a RoleBinding to grant the developer group view access only within their team's namespace, not across the cluster. = Creare un RoleBinding per concedere al gruppo developer accesso view solo dentro il namespace del loro team, non in tutto il cluster."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "ClusterRoleBinding",
+      "set": {
+        "example": "Use a ClusterRoleBinding sparingly because it grants the bound subject permissions across every namespace in the cluster. = Usare un ClusterRoleBinding con parsimonia perché concede al soggetto legato permessi su ogni namespace del cluster."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "Subject",
+      "set": {
+        "example": "The subjects field in a RoleBinding lists the users, groups, or service accounts that receive the role's permissions. = Il campo subjects in un RoleBinding lista gli utenti, gruppi o service account che ricevono i permessi del ruolo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "Verbs",
+      "set": {
+        "italian": "Verbs",
+        "example": "In a Role rule the verbs list controls which actions are allowed, such as get, list, watch, create, update, patch, or delete. = In una regola Role la lista verbs controlla quali azioni sono permesse, come get, list, watch, create, update, patch o delete."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "apiGroups",
+      "set": {
+        "example": "Set apiGroups to [\"apps\"] in a rule to grant access to Deployments and StatefulSets which live in the apps API group. = Impostare apiGroups a [\"apps\"] in una regola per concedere accesso a Deployment e StatefulSet che vivono nel gruppo API apps."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "kubectl auth can-i",
+      "set": {
+        "example": "Run kubectl auth can-i delete pods --as=dev-user to confirm a service account has the expected permissions before deploying. = Esegui kubectl auth can-i delete pods --as=dev-user per confermare che un service account abbia i permessi attesi prima di deployare."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_1",
+      "english": "Aggregated Role",
+      "set": {
+        "example": "An aggregated ClusterRole automatically combines rules from any ClusterRole matching its aggregationRule label selector. = Un ClusterRole aggregato combina automaticamente le regole da ogni ClusterRole che matcha il selector aggregationRule."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_2",
+      "english": "ServiceAccount",
+      "set": {
+        "example": "Create a dedicated ServiceAccount per workload so the audit log clearly attributes API calls to a specific application. = Creare un ServiceAccount dedicato per workload così l'audit log attribuisce chiaramente le chiamate API a un'applicazione specifica."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_2",
+      "english": "automountServiceAccountToken",
+      "set": {
+        "example": "Set automountServiceAccountToken to false on workloads that never call the Kubernetes API to shrink the attack surface. = Impostare automountServiceAccountToken a false sui workload che non chiamano mai l'API Kubernetes per ridurre la superficie d'attacco."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_2",
+      "english": "IRSA",
+      "set": {
+        "example": "With IRSA configured on EKS, our pods assume an IAM role via the projected OIDC token and call AWS APIs without static credentials. = Con IRSA configurato su EKS, i nostri pod assumono un ruolo IAM tramite il token OIDC proiettato e chiamano API AWS senza credenziali statiche."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_2",
+      "english": "Workload Identity",
+      "set": {
+        "example": "On GKE, Workload Identity binds a Kubernetes ServiceAccount to a GCP service account so pods inherit cloud IAM permissions cleanly. = Su GKE, Workload Identity lega un ServiceAccount Kubernetes a un service account GCP così i pod ereditano i permessi IAM cloud in modo pulito."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_2",
+      "english": "OIDC",
+      "set": {
+        "example": "Configure the API server to trust an OIDC issuer like Okta so engineers log in with their corporate identity instead of static tokens. = Configurare l'API server a fidarsi di un issuer OIDC come Okta così gli ingegneri loggano con l'identità aziendale invece di token statici."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_2",
+      "english": "Bound Token",
+      "set": {
+        "example": "A bound token is tied to a specific pod and expires automatically, replacing the legacy never-expiring ServiceAccount secrets. = Un bound token è legato a un pod specifico e scade automaticamente, sostituendo i vecchi secret ServiceAccount che non scadevano mai."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_2",
+      "english": "TokenRequest API",
+      "set": {
+        "example": "The TokenRequest API issues short-lived audience-scoped tokens that workloads use to authenticate to other services securely. = L'API TokenRequest emette token a vita breve con audience specifica che i workload usano per autenticarsi ad altri service in modo sicuro."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "PodSecurityPolicy",
+      "set": {
+        "example": "Note that PodSecurityPolicy was removed in Kubernetes 1.25, so migrate your enforcement to Pod Security Standards or OPA Gatekeeper. = Nota che PodSecurityPolicy è stato rimosso in Kubernetes 1.25, quindi migra il tuo enforcement a Pod Security Standards o OPA Gatekeeper."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "Pod Security Standards",
+      "set": {
+        "example": "Label the namespace with pod-security.kubernetes.io/enforce=restricted to apply the strictest Pod Security Standards profile. = Etichettare il namespace con pod-security.kubernetes.io/enforce=restricted per applicare il profilo più stretto dei Pod Security Standards."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "privileged Profile",
+      "set": {
+        "example": "The privileged profile imposes no restrictions and is appropriate only for kube-system and trusted infrastructure workloads. = Il profilo privileged non impone restrizioni ed è appropriato solo per kube-system e workload infrastrutturali fidati."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "restricted Profile",
+      "set": {
+        "example": "The restricted profile enforces runAsNonRoot, drops all capabilities, and forbids hostPath volumes for hardened workloads. = Il profilo restricted impone runAsNonRoot, droppa tutte le capability e vieta i volumi hostPath per workload hardened."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "securityContext",
+      "set": {
+        "example": "Set a pod-level securityContext with fsGroup and runAsNonRoot so every container inherits secure defaults unless overridden. = Impostare un securityContext a livello pod con fsGroup e runAsNonRoot così ogni container eredita default sicuri se non sovrascritti."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "runAsNonRoot",
+      "set": {
+        "example": "Setting runAsNonRoot to true makes the kubelet refuse to start the container if the image's USER is 0, preventing accidental root pods. = Impostare runAsNonRoot a true fa rifiutare al kubelet l'avvio del container se l'USER dell'immagine è 0, prevenendo pod root accidentali."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "runAsUser",
+      "set": {
+        "example": "Pin runAsUser to 1001 so the process runs as a non-privileged UID even if the base image's USER directive is missing. = Pinnare runAsUser a 1001 così il processo gira con un UID non privilegiato anche se manca la direttiva USER dell'immagine base."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "fsGroup",
+      "set": {
+        "example": "Set fsGroup to 2000 so mounted PVC volumes are chowned to that GID and the non-root container can write to them. = Impostare fsGroup a 2000 così i volumi PVC montati vengono chownati a quel GID e il container non-root può scriverci."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_3",
+      "english": "seccompProfile",
+      "set": {
+        "example": "Set seccompProfile to type RuntimeDefault to apply the container runtime's hardened syscall filter to every container in the pod. = Impostare seccompProfile a tipo RuntimeDefault per applicare il filtro syscall hardened del container runtime a ogni container del pod."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "OPA",
+      "set": {
+        "example": "With OPA installed, the cluster evaluates Rego policies against admission requests so you can enforce rules like every namespace must carry an owner label. = Con OPA installato, il cluster valuta policy Rego sulle richieste di admission così puoi imporre regole come ogni namespace deve avere una label owner."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "Gatekeeper",
+      "set": {
+        "example": "Install Gatekeeper to enforce Rego policies cluster-wide, blocking pods that violate organizational standards at admission time. = Installare Gatekeeper per imporre policy Rego cluster-wide, bloccando i pod che violano gli standard organizzativi all'admission."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "Rego",
+      "set": {
+        "example": "Write a Rego policy that returns a violation message when any deployment lacks a teamOwner label, then ship it as a ConstraintTemplate. = Scrivere una policy Rego che ritorni un messaggio di violation quando un deployment manca della label teamOwner, poi shipparla come ConstraintTemplate."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "ConstraintTemplate",
+      "set": {
+        "example": "A ConstraintTemplate defines the Rego logic once, then teams instantiate Constraints to apply that policy to specific kinds and namespaces. = Un ConstraintTemplate definisce la logica Rego una volta, poi i team istanziano Constraint per applicare quella policy a kind e namespace specifici."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "Constraint",
+      "set": {
+        "example": "Each Constraint instantiates a ConstraintTemplate with parameters like the list of required labels for namespaces in production. = Ogni Constraint istanzia un ConstraintTemplate con parametri come la lista delle label richieste per i namespace in produzione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "Admission Webhook",
+      "set": {
+        "example": "An admission webhook is an HTTPS endpoint the API server calls to validate or mutate every create and update request. = Un admission webhook è un endpoint HTTPS che l'API server chiama per validare o mutare ogni richiesta di create e update."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "Validating Admission",
+      "set": {
+        "example": "A validating admission webhook can reject a Pod whose container image is not from the company's approved registry list. = Un webhook di validating admission può rifiutare un Pod la cui immagine container non è dal registry approvato aziendale."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "Mutating Admission",
+      "set": {
+        "example": "A mutating admission webhook can inject sidecar containers or default resource requests into every pod before it is persisted. = Un webhook di mutating admission può iniettare container sidecar o request di risorse di default in ogni pod prima che sia persistito."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "Kyverno",
+      "set": {
+        "italian": "Kyverno",
+        "example": "Many platform teams pick Kyverno over OPA because it expresses policies in Kubernetes-native YAML instead of requiring engineers to learn Rego. = Molti platform team scelgono Kyverno invece di OPA perché esprime le policy in YAML Kubernetes-native senza costringere gli ingegneri a imparare Rego."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_4",
+      "english": "Audit Mode",
+      "set": {
+        "example": "Roll out new Gatekeeper constraints in audit mode first so you can see which existing resources would violate the policy before enforcing it. = Rilasciare prima i nuovi constraint Gatekeeper in modalità audit così vedi quali risorse esistenti violerebbero la policy prima di imporla."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "HPA",
+      "set": {
+        "example": "Configure an HPA targeting 70 percent CPU utilization so the deployment scales out automatically during traffic spikes. = Configurare un HPA che punta al 70 percento di utilizzo CPU così il deployment scala out automaticamente durante i picchi di traffico."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "Target Utilization",
+      "set": {
+        "example": "Choose a target utilization around 60-70 percent so the HPA has headroom to scale before existing pods get overwhelmed. = Scegliere un'utilizzazione target intorno al 60-70 percento così l'HPA ha margine per scalare prima che i pod esistenti siano sopraffatti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "minReplicas",
+      "set": {
+        "example": "Set minReplicas to 3 so the deployment always has enough capacity to survive a node failure even at low traffic. = Impostare minReplicas a 3 così il deployment ha sempre capacità sufficiente a sopravvivere a un guasto nodo anche con basso traffico."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "maxReplicas",
+      "set": {
+        "example": "Cap maxReplicas at 50 so a runaway HPA never exhausts cluster capacity or blows your monthly cloud budget. = Limitare maxReplicas a 50 così un HPA fuori controllo non esaurisce mai la capacità del cluster o fa esplodere il budget cloud mensile."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "Custom Metric",
+      "set": {
+        "example": "Wire the HPA to a custom metric like requests_per_second exposed via Prometheus Adapter when CPU is not a good scaling signal. = Collegare l'HPA a una metrica custom come requests_per_second esposta via Prometheus Adapter quando la CPU non è un buon segnale di scaling."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "External Metric",
+      "set": {
+        "example": "Use an external metric like an SQS queue length to scale the worker deployment based on pending messages, not pod CPU. = Usare una metrica esterna come la lunghezza di una coda SQS per scalare il deployment worker in base ai messaggi pendenti, non alla CPU del pod."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "Cooldown Period",
+      "set": {
+        "example": "Tune the cooldown period to 5 minutes after scale-down so brief traffic dips do not cause repeated pod churn. = Tarare il cooldown period a 5 minuti dopo lo scale-down così cali di traffico brevi non causano churn ripetuti dei pod."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "Stabilization Window",
+      "set": {
+        "example": "Set the scale-down stabilization window to 300 seconds so the HPA waits for sustained low load before removing pods. = Impostare la finestra di stabilizzazione per lo scale-down a 300 secondi così l'HPA aspetta carico basso sostenuto prima di rimuovere pod."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_1",
+      "english": "metrics-server",
+      "set": {
+        "example": "Install metrics-server as a prerequisite for the HPA, since without it kubectl top and CPU-based autoscaling will not work. = Installare metrics-server come prerequisito per l'HPA, dato che senza di esso kubectl top e l'autoscaling basato su CPU non funzionano."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "VPA",
+      "set": {
+        "example": "Run the VPA in recommendation mode to learn the right CPU and memory requests for your workload before turning on auto-update. = Eseguire il VPA in modalità recommendation per imparare le request di CPU e memoria giuste per il tuo workload prima di abilitare l'auto-update."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "Auto Mode",
+      "set": {
+        "example": "In Auto mode the VPA evicts pods to apply new resource requests, so combine it with a PDB to avoid availability gaps. = In modalità Auto il VPA evicta i pod per applicare nuove request di risorse, quindi combinalo con un PDB per evitare buchi di disponibilità."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "Cluster Autoscaler",
+      "set": {
+        "example": "The Cluster Autoscaler watches for unschedulable pods and provisions new nodes from the configured ASG until those pods can land. = Il Cluster Autoscaler osserva i pod non schedulabili e provisiona nuovi nodi dal ASG configurato finché quei pod riescono a piazzarsi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "Node Group",
+      "set": {
+        "example": "Define a separate node group for GPU workloads so the autoscaler scales those expensive nodes independently from CPU-only nodes. = Definire un node group separato per i workload GPU così l'autoscaler scala quei nodi costosi indipendentemente dai nodi solo-CPU."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "Karpenter",
+      "set": {
+        "example": "On EKS we replaced the Cluster Autoscaler with Karpenter so the platform picks the cheapest EC2 type that fits the pending pods. = Su EKS abbiamo sostituito il Cluster Autoscaler con Karpenter così la piattaforma sceglie il tipo EC2 più economico che ospita i pod pendenti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "Spot Instances",
+      "set": {
+        "example": "Run stateless batch jobs on spot instances to cut compute costs by 70 percent, accepting that nodes can be reclaimed at any moment. = Eseguire job batch stateless su istanze spot per tagliare i costi di compute del 70 percento, accettando che i nodi possano essere reclamati in qualsiasi momento."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "Resource Bin Packing",
+      "set": {
+        "example": "Good resource bin packing means the scheduler fills each node close to its capacity before spinning up another node. = Un buon bin packing delle risorse significa che lo scheduler riempie ogni nodo vicino alla sua capacità prima di tirare su un altro nodo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "Resource Recommendation",
+      "set": {
+        "example": "The VPA emits resource recommendations based on observed usage, helping teams right-size requests without manual profiling. = Il VPA emette raccomandazioni di risorse basate sull'utilizzo osservato, aiutando i team a dimensionare correttamente le request senza profilazione manuale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_2",
+      "english": "Right-Sizing",
+      "set": {
+        "example": "Periodic right-sizing of pod requests reduces wasted capacity, often saving 30 percent on cloud bills without affecting performance. = Il right-sizing periodico delle request dei pod riduce la capacità sprecata, spesso risparmiando il 30 percento sulle bollette cloud senza impattare le performance."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "PodDisruptionBudget",
+      "set": {
+        "example": "Attach a PodDisruptionBudget to your stateful service so cluster maintenance never drains more replicas than the app can tolerate. = Allegare un PodDisruptionBudget al tuo service stateful così la manutenzione cluster non drena mai più repliche di quante l'app possa tollerare."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "PDB",
+      "set": {
+        "example": "A PDB with minAvailable=2 blocks kubectl drain from evicting a third replica until a new one is ready elsewhere. = Un PDB con minAvailable=2 blocca kubectl drain dall'evictare una terza replica finché una nuova è pronta altrove."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "minAvailable",
+      "set": {
+        "example": "Set minAvailable to 80 percent on the API deployment so node drains preserve enough capacity to serve incoming traffic. = Impostare minAvailable a 80 percento sul deployment API così i drain dei nodi preservano capacità sufficiente per servire il traffico in entrata."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "maxUnavailable",
+      "set": {
+        "english": "maxUnavailable (PDB)",
+        "italian": "maxUnavailable (nel PDB)",
+        "example": "In a PDB, maxUnavailable=1 means voluntary disruptions may take at most one replica down at any given moment. = In un PDB, maxUnavailable=1 significa che le interruzioni volontarie possono mettere giù al massimo una replica in un dato momento."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "Voluntary Disruption",
+      "set": {
+        "example": "A voluntary disruption is initiated by an operator action like draining a node for an OS upgrade, and is gated by the PDB. = Un'interruzione volontaria è avviata da un'azione dell'operatore come il drain di un nodo per un upgrade OS, ed è bloccata dal PDB."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "Involuntary Disruption",
+      "set": {
+        "example": "An involuntary disruption like a node hardware failure or kernel panic is not blocked by the PDB, so plan for it with replication. = Un'interruzione involontaria come un guasto hardware del nodo o un kernel panic non è bloccata dal PDB, quindi pianificarla con la replicazione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "Eviction",
+      "set": {
+        "example": "During an eviction the kubelet sends SIGTERM to the container, waits up to terminationGracePeriodSeconds, then SIGKILLs anything still running. = Durante un'eviction il kubelet manda SIGTERM al container, aspetta fino a terminationGracePeriodSeconds, poi SIGKILLa qualsiasi cosa stia ancora girando."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "Eviction API",
+      "set": {
+        "example": "The Eviction API at /pods/<name>/eviction respects PDBs, unlike a direct delete which bypasses disruption budgets entirely. = L'Eviction API a /pods/<name>/eviction rispetta i PDB, a differenza di un delete diretto che bypassa completamente i disruption budget."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "Graceful Termination",
+      "set": {
+        "example": "Implement graceful termination by handling SIGTERM to stop accepting new connections while finishing in-flight requests. = Implementare la terminazione graceful gestendo SIGTERM per smettere di accettare nuove connessioni mentre si finiscono le richieste in volo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_3",
+      "english": "Pod Priority",
+      "set": {
+        "example": "Assign a high pod priority class to the API gateway so the scheduler preempts lower-priority batch pods when the cluster is full. = Assegnare una pod priority class alta all'API gateway così lo scheduler prerilascia i pod batch a priorità minore quando il cluster è pieno."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "KEDA",
+      "set": {
+        "example": "Deploy KEDA so a queue worker can scale from zero to dozens of pods based on Kafka lag or SQS queue depth, not just CPU. = Deployare KEDA così un queue worker può scalare da zero a decine di pod basandosi su lag Kafka o profondità coda SQS, non solo CPU."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "ScaledObject",
+      "set": {
+        "example": "Create a ScaledObject that points at the worker Deployment and references a Kafka trigger to drive replica count based on lag. = Creare un ScaledObject che punta al Deployment worker e referenzia un trigger Kafka per pilotare il count di repliche in base al lag."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "Scaler",
+      "set": {
+        "example": "KEDA ships scalers for Kafka, RabbitMQ, AWS SQS, PostgreSQL, and many more, so you rarely need a custom external metric. = KEDA fornisce scaler per Kafka, RabbitMQ, AWS SQS, PostgreSQL e molti altri, quindi raramente serve una metrica esterna custom."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "Trigger",
+      "set": {
+        "example": "Define a trigger of type kafka with topic and consumerGroup so KEDA polls the lag and scales the worker pods accordingly. = Definire un trigger di tipo kafka con topic e consumerGroup così KEDA pollla il lag e scala i pod worker di conseguenza."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "Scale to Zero",
+      "set": {
+        "example": "KEDA can scale to zero replicas when the queue is empty, eliminating idle compute cost for bursty workloads. = KEDA può scalare a zero repliche quando la coda è vuota, eliminando il costo di compute idle per workload a bursti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "Cron Trigger",
+      "set": {
+        "example": "Use a cron trigger to pre-warm replicas every weekday at 8am, ensuring capacity is ready before the morning traffic ramp. = Usare un trigger cron per pre-scaldare le repliche ogni giorno feriale alle 8, assicurando che la capacità sia pronta prima della rampa di traffico mattutina."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "Polling Interval",
+      "set": {
+        "example": "Lower the polling interval to 15 seconds for latency-sensitive triggers, but be aware it increases load on the metrics source. = Abbassare l'intervallo di polling a 15 secondi per trigger sensibili alla latenza, ma sapere che aumenta il carico sulla sorgente metrica."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "Cooldown",
+      "set": {
+        "example": "The cooldown after KEDA scales a deployment to zero prevents flapping when sporadic messages arrive in quick succession. = Il cooldown dopo che KEDA scala un deployment a zero previene il flapping quando messaggi sporadici arrivano in rapida successione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "TriggerAuthentication",
+      "set": {
+        "example": "Use TriggerAuthentication to reference a Kubernetes Secret containing the credentials KEDA needs to query the AWS SQS API. = Usare TriggerAuthentication per referenziare un Secret Kubernetes con le credenziali che KEDA usa per interrogare l'API AWS SQS."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dk_scale_4",
+      "english": "ScaledJob",
+      "set": {
+        "example": "A ScaledJob spawns a new Job per queued work item instead of scaling pod replicas, which suits one-shot processing tasks. = Un ScaledJob spawna un nuovo Job per ogni item in coda invece di scalare repliche di pod, adatto a task di elaborazione one-shot."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "Metrics Server",
+      "set": {
+        "example": "Install Metrics Server so kubectl top nodes and the HPA can read CPU and memory usage for every pod in the cluster. = Installare Metrics Server così kubectl top nodes e l'HPA possono leggere l'uso CPU e memoria di ogni pod del cluster."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "kubectl top",
+      "set": {
+        "example": "Run kubectl top pods -n prod --sort-by=memory to quickly find the leakiest pod when investigating an OOM alert. = Eseguire kubectl top pods -n prod --sort-by=memory per trovare velocemente il pod che leaks di più investigando un alert OOM."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "Prometheus",
+      "set": {
+        "italian": "Prometheus",
+        "example": "Most Kubernetes shops run Prometheus alongside Grafana because the pull-based scraping model fits ephemeral pods naturally. = La maggior parte degli ambienti Kubernetes esegue Prometheus accanto a Grafana perché il modello pull-based di scraping si adatta naturalmente ai pod effimeri."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "PromQL",
+      "set": {
+        "example": "Write a PromQL query like rate(http_requests_total[5m]) to chart the per-second request rate over the last five minutes. = Scrivere una query PromQL come rate(http_requests_total[5m]) per graficare il rate di richieste al secondo negli ultimi cinque minuti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "ServiceMonitor",
+      "set": {
+        "example": "Define a ServiceMonitor in the namespace so prometheus-operator automatically discovers and scrapes the matching Services. = Definire un ServiceMonitor nel namespace così prometheus-operator scopre automaticamente e scrape i Service che matchano."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "PodMonitor",
+      "set": {
+        "example": "Use a PodMonitor when you want to scrape pods directly without going through a Service, useful for headless workloads. = Usare un PodMonitor quando vuoi scrapare pod direttamente senza passare per un Service, utile per workload headless."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "Exporter",
+      "set": {
+        "example": "Run a node_exporter DaemonSet so Prometheus can scrape per-node Linux metrics like load average and disk IO. = Eseguire un DaemonSet node_exporter così Prometheus può scrapare metriche Linux per nodo come load average e IO disco."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "kube-state-metrics",
+      "set": {
+        "example": "Deploy kube-state-metrics to expose Kubernetes object state like Deployment replica counts and Pod phases as Prometheus metrics. = Deployare kube-state-metrics per esporre lo stato degli oggetti Kubernetes come count di repliche Deployment e fasi Pod come metriche Prometheus."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "Scrape Interval",
+      "set": {
+        "example": "Set the scrape interval to 30 seconds for low-cardinality jobs to balance resolution and Prometheus storage cost. = Impostare l'intervallo di scraping a 30 secondi per job a bassa cardinalità per bilanciare risoluzione e costo di storage Prometheus."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_1",
+      "english": "Time Series",
+      "set": {
+        "example": "Each unique combination of metric name and labels is a separate time series in Prometheus, so watch label cardinality closely. = Ogni combinazione unica di nome metrica e label è una serie temporale separata in Prometheus, quindi tenere d'occhio la cardinalità delle label."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "Liveness Endpoint",
+      "set": {
+        "example": "Expose a /healthz liveness endpoint that returns 200 only when the app's main event loop is responsive, not just that the process is alive. = Esporre un endpoint liveness /healthz che ritorna 200 solo quando l'event loop principale dell'app è responsivo, non solo che il processo sia vivo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "Readiness Endpoint",
+      "set": {
+        "example": "The /ready readiness endpoint should return 503 while the app warms its cache so the Service does not route traffic to it yet. = L'endpoint readiness /ready dovrebbe ritornare 503 mentre l'app scalda la cache così il Service non gli routa traffico ancora."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "Health Check",
+      "set": {
+        "example": "A proper health check distinguishes liveness from readiness so the kubelet restarts hung pods without removing warming pods from the Service. = Un health check corretto distingue liveness da readiness così il kubelet riavvia pod bloccati senza rimuovere pod in warming dal Service."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "Golden Signals",
+      "set": {
+        "example": "Dashboards built around the Golden Signals (latency, traffic, errors, saturation) catch most production issues before customers do. = Le dashboard costruite sui Golden Signals (latenza, traffico, errori, saturazione) intercettano la maggior parte dei problemi di produzione prima dei clienti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "SLO",
+      "set": {
+        "example": "Define an SLO of 99.9 percent successful requests over 28 days so the team has a concrete error budget to spend on changes. = Definire un SLO del 99,9 percento di richieste di successo su 28 giorni così il team ha un error budget concreto da spendere sui cambiamenti."
+      }
+    }
   ]
 }

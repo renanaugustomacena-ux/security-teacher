@@ -1,0 +1,84 @@
+{
+  "fixes": [
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Install",
+      "set": {
+        "example": "Before compiling C extensions, you typically install development headers with apt install build-essential to provide the required toolchain. = Prima di compilare estensioni C, di solito installi gli header di sviluppo con apt install build-essential per fornire la toolchain richiesta."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Clone",
+      "set": {
+        "example": "To preserve a forensic image, you can clone a failing disk with dd if=/dev/sda of=/dev/sdb bs=4M conv=noerror,sync onto a healthy drive. = Per preservare un'immagine forense, puoi clonare un disco difettoso con dd if=/dev/sda of=/dev/sdb bs=4M conv=noerror,sync su un drive sano."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Import",
+      "set": {
+        "example": "To reproduce a production bug locally, import a SQL dump with psql -d staging -f prod.sql against the same schema. = Per riprodurre un bug di produzione in locale, importa un dump SQL con psql -d staging -f prod.sql contro lo stesso schema."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Grant",
+      "set": {
+        "example": "So a BI user can query without altering data, grant read-only access with GRANT SELECT ON reports TO analyst at the database level. = Cosi' un utente BI puo' interrogare senza alterare i dati, concedi accesso in sola lettura con GRANT SELECT ON reports TO analyst a livello di database."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Compile",
+      "set": {
+        "example": "For testing on a lab box, compile a custom kernel with make -j$(nproc) bzImage modules then install it via make modules_install. = Per testarlo su una macchina di laboratorio, compila un kernel personalizzato con make -j$(nproc) bzImage modules poi installalo via make modules_install."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Kernel",
+      "set": {
+        "english": "Linux Kernel",
+        "italian": "Kernel Linux",
+        "example": "Every hardware request from a user-space program crosses into the Linux Kernel before reaching the underlying physical device. = Ogni richiesta hardware da un programma user-space attraversa il Kernel Linux prima di raggiungere il dispositivo fisico sottostante."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Usage",
+      "set": {
+        "english": "CPU Usage",
+        "italian": "Utilizzo CPU",
+        "example": "During a latency spike, sort processes by CPU usage with top -o %CPU to immediately spot the runaway worker eating cycles. = Durante un picco di latenza, ordina i processi per utilizzo CPU con top -o %CPU per individuare subito il worker fuori controllo che divora cicli."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Log",
+      "set": {
+        "english": "Boot Log",
+        "italian": "Log di avvio",
+        "example": "After a failed startup, inspect the boot log with journalctl -b -1 to see which unit blocked the previous boot sequence. = Dopo un avvio fallito, ispeziona il log di avvio con journalctl -b -1 per vedere quale unit ha bloccato la sequenza di boot precedente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Log",
+      "set": {
+        "english": "Log Entry",
+        "italian": "Voce di log",
+        "example": "When triaging an outage, each log entry from journalctl gives a timestamp, unit and message that pinpoint the exact failure step. = Quando triagi un'interruzione, ogni voce di log da journalctl fornisce timestamp, unit e messaggio che individuano l'esatto passo del guasto."
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "fixes": [
+    {
+      "level": "9",
+      "lesson": "net_firewalls_4",
+      "english": "Connection Tracking",
+      "set": {
+        "example": "On a stateful firewall, connection tracking lets return traffic from an established outbound flow back in without a matching inbound rule. = Su un firewall stateful, il tracking delle connessioni permette al traffico di ritorno di un flusso uscente stabilito di rientrare senza una regola in ingresso corrispondente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_1",
+      "english": "VPN encapsulation",
+      "set": {
+        "example": "To traverse an untrusted path, VPN encapsulation wraps the original IP packet inside a new header that carries it across the tunnel. = Per attraversare un percorso non fidato, l'incapsulamento VPN avvolge il pacchetto IP originale dentro un nuovo header che lo trasporta lungo il tunnel."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_file_2",
+      "english": "FTPS",
+      "set": {
+        "example": "When legacy file servers still demand FTP, FTPS adds a TLS layer so credentials and payload never travel in plaintext. = Quando i server di file legacy richiedono ancora FTP, FTPS aggiunge un livello TLS così credenziali e payload non viaggiano mai in chiaro."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "Jumbograms",
+      "set": {
+        "example": "On storage backends, jumbograms with an MTU near 9000 bytes cut per-packet overhead and boost throughput considerably. = Sui backend di storage, i jumbogram con MTU vicino a 9000 byte riducono l'overhead per pacchetto e aumentano notevolmente il throughput."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "OSPFv3",
+      "set": {
+        "example": "For IPv6 networks, OSPFv3 carries prefixes in dedicated LSAs and relies on IPsec for authentication instead of MD5. = Per le reti IPv6, OSPFv3 trasporta i prefissi in LSA dedicate e si affida a IPsec per l'autenticazione invece di MD5."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_eigrp_3",
+      "english": "EIGRP named mode",
+      "set": {
+        "example": "Instead of the legacy classic syntax, EIGRP named mode groups all settings under one hierarchical block that is far easier to maintain. = Invece della classica sintassi legacy, EIGRP named mode raggruppa tutte le impostazioni sotto un singolo blocco gerarchico molto piu' facile da mantenere."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_career_4",
+      "english": "Continuous Learning",
+      "set": {
+        "example": "In a field that ships RFCs monthly, continuous learning through vendor blogs, conferences and open-source projects keeps engineers relevant. = In un settore che pubblica RFC ogni mese, l'apprendimento continuo tramite blog dei vendor, conferenze e progetti open source mantiene gli ingegneri al passo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_4",
+      "english": "Layer 3 Switch",
+      "set": {
+        "english": "Routed Port",
+        "italian": "porta routed",
+        "pronunciation": "/ˈruːtɪd pɔːrt/",
+        "phonetic": "RU-tid PORT",
+        "example": "On an access switch, a routed port is a physical interface configured for Layer 3 instead of a VLAN, useful for point-to-point uplinks. = Su uno switch di accesso, una porta routed e' un'interfaccia fisica configurata per il Layer 3 invece che per una VLAN, utile per uplink punto-punto."
+      }
+    }
+  ]
+}

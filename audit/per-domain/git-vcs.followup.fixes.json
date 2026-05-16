@@ -1,0 +1,24 @@
+{
+  "fixes": [
+    {
+      "level": "15",
+      "lesson": "git_internals_2",
+      "english": "Symbolic Reference",
+      "set": {
+        "english": "Symbolic Reference Target",
+        "italian": "destinazione del riferimento simbolico",
+        "example": "Under the hood, HEAD's symbolic reference target is refs/heads/main while you are on the main branch, not a commit hash directly. = Sotto il cofano, la destinazione del riferimento simbolico di HEAD e' refs/heads/main mentre sei sul branch main, non direttamente un hash di commit."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "git_platforms_1",
+      "english": "GitHub Enterprise",
+      "set": {
+        "english": "GitHub Enterprise Server",
+        "italian": "versione self-hosted (GitHub Enterprise Server)",
+        "example": "For air-gapped environments, GitHub Enterprise Server runs on your own infrastructure giving full control over data residency and access. = Per ambienti air-gapped, GitHub Enterprise Server gira sulla tua infrastruttura dando pieno controllo su residenza dei dati e accessi."
+      }
+    }
+  ]
+}

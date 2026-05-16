@@ -2530,12 +2530,12 @@ export default {
               difficulty: 'beginner',
             },
             {
-              english: 'Usage',
-              italian: 'Utilizzo',
+              english: 'CPU Usage',
+              italian: 'Utilizzo CPU',
               pronunciation: '/ˈjuːsɪdʒ/',
               phonetic: 'IU-sig',
               example:
-                "Monitoring disk usage across all mount points prevents unexpected downtime caused by a full filesystem. = Monitorare l'utilizzo del disco su tutti i punti di montaggio previene fermi imprevisti causati da un filesystem pieno.",
+                'During a latency spike, sort processes by CPU usage with top -o %CPU to immediately spot the runaway worker eating cycles. = Durante un picco di latenza, ordina i processi per utilizzo CPU con top -o %CPU per individuare subito il worker fuori controllo che divora cicli.',
               context: 'monitor',
               difficulty: 'beginner',
             },
@@ -2937,12 +2937,12 @@ export default {
           description: 'boot, grub, init, modules...',
           items: [
             {
-              english: 'Kernel',
-              italian: 'Nucleo del sistema (kernel)',
+              english: 'Linux Kernel',
+              italian: 'Kernel Linux',
               pronunciation: '/ˈkɜːrnl/',
               phonetic: 'KER-nel',
               example:
-                "Every hardware request from an application passes through the kernel before reaching the physical device. = Ogni richiesta hardware da un'applicazione passa attraverso il kernel prima di raggiungere il dispositivo fisico.",
+                'Every hardware request from a user-space program crosses into the Linux Kernel before reaching the underlying physical device. = Ogni richiesta hardware da un programma user-space attraversa il Kernel Linux prima di raggiungere il dispositivo fisico sottostante.',
               context: 'kernel',
               difficulty: 'beginner',
             },
@@ -2988,12 +2988,12 @@ export default {
               difficulty: 'intermediate',
             },
             {
-              english: 'Log',
-              italian: 'Registro eventi (log)',
+              english: 'Boot Log',
+              italian: 'Log di avvio',
               pronunciation: '/lɒɡ/',
               phonetic: 'LOG',
               example:
-                'After plugging in new hardware, check dmesg to see if the kernel log shows a recognized device. = Dopo aver collegato nuovo hardware, controlla dmesg per vedere se il registro del kernel mostra un dispositivo riconosciuto.',
+                'After a failed startup, inspect the boot log with journalctl -b -1 to see which unit blocked the previous boot sequence. = Dopo un avvio fallito, ispeziona il log di avvio con journalctl -b -1 per vedere quale unit ha bloccato la sequenza di boot precedente.',
               context: 'kernel',
               difficulty: 'advanced',
             },
@@ -3808,12 +3808,11 @@ export default {
           description: 'syslog, journal, rotate, audit...',
           items: [
             {
-              english: 'Log',
-              italian: 'Registro / Log',
+              english: 'Log Entry',
+              italian: 'Voce di log',
               pronunciation: '/lɒɡ/',
               phonetic: 'LOG',
-              example:
-                "Reviewing system logs after an outage reveals the sequence of events that led to the failure. = Esaminare i log di sistema dopo un'interruzione rivela la sequenza di eventi che ha portato al guasto.",
+              example: `When triaging an outage, each log entry from journalctl gives a timestamp, unit and message that pinpoint the exact failure step. = Quando triagi un'interruzione, ogni voce di log da journalctl fornisce timestamp, unit e messaggio che individuano l'esatto passo del guasto.`,
               context: 'admin',
               difficulty: 'beginner',
             },
@@ -4382,7 +4381,8 @@ export default {
               italian: 'Installare',
               pronunciation: '/ɪnˈstɔːl/',
               phonetic: 'in-STOL',
-              example: `Install development headers with apt install build-essential before compiling a kernel module or C extension from source. = Installa gli header di sviluppo con apt install build-essential prima di compilare un modulo del kernel o un'estensione C dai sorgenti.`,
+              example:
+                'Before compiling C extensions, you typically install development headers with apt install build-essential to provide the required toolchain. = Prima di compilare estensioni C, di solito installi gli header di sviluppo con apt install build-essential per fornire la toolchain richiesta.',
               context: 'admin',
               difficulty: 'beginner',
             },
@@ -4522,7 +4522,7 @@ export default {
               italian: 'Clonare',
               pronunciation: '/kloʊn/',
               phonetic: 'KLOUN',
-              example: `Clone a failing disk to a new drive with dd if=/dev/sda of=/dev/sdb bs=4M conv=noerror,sync to preserve a forensic image. = Clona un disco difettoso su un nuovo drive con dd if=/dev/sda of=/dev/sdb bs=4M conv=noerror,sync per preservare un'immagine forense.`,
+              example: `To preserve a forensic image, you can clone a failing disk with dd if=/dev/sda of=/dev/sdb bs=4M conv=noerror,sync onto a healthy drive. = Per preservare un'immagine forense, puoi clonare un disco difettoso con dd if=/dev/sda of=/dev/sdb bs=4M conv=noerror,sync su un drive sano.`,
               context: 'admin',
               difficulty: 'advanced',
             },
@@ -4733,7 +4733,7 @@ export default {
               pronunciation: '/ˈɪmpɔːrt/',
               phonetic: 'IM-port',
               example:
-                'Import a SQL dump via psql -d staging -f prod.sql to reproduce a production bug against the same data shape. = Importa un dump SQL via psql -d staging -f prod.sql per riprodurre un bug di produzione contro la stessa forma dei dati.',
+                'To reproduce a production bug locally, import a SQL dump with psql -d staging -f prod.sql against the same schema. = Per riprodurre un bug di produzione in locale, importa un dump SQL con psql -d staging -f prod.sql contro lo stesso schema.',
               context: 'db',
               difficulty: 'intermediate',
             },
@@ -4751,7 +4751,7 @@ export default {
               italian: 'Concedere',
               pronunciation: '/ɡrænt/',
               phonetic: 'GRANT',
-              example: `Grant read-only access with GRANT SELECT ON reports TO analyst so a BI user can query without altering data. = Concedi accesso in sola lettura con GRANT SELECT ON reports TO analyst cosi' un utente BI puo' interrogare senza alterare i dati.`,
+              example: `So a BI user can query without altering data, grant read-only access with GRANT SELECT ON reports TO analyst at the database level. = Cosi' un utente BI puo' interrogare senza alterare i dati, concedi accesso in sola lettura con GRANT SELECT ON reports TO analyst a livello di database.`,
               context: 'db',
               difficulty: 'advanced',
             },
@@ -5165,7 +5165,7 @@ export default {
               pronunciation: '/kəmˈpaɪl/',
               phonetic: 'kom-PAIL',
               example:
-                'Compile a custom kernel with make -j$(nproc) bzImage modules then install it via make modules_install && make install for testing. = Compila un kernel personalizzato con make -j$(nproc) bzImage modules poi installalo via make modules_install && make install per testarlo.',
+                'For testing on a lab box, compile a custom kernel with make -j$(nproc) bzImage modules then install it via make modules_install. = Per testarlo su una macchina di laboratorio, compila un kernel personalizzato con make -j$(nproc) bzImage modules poi installalo via make modules_install.',
               context: 'kernel',
               difficulty: 'expert',
             },

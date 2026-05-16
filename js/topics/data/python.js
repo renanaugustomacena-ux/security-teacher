@@ -749,7 +749,8 @@ export default {
               italian: 'Spacchettamento (Unpacking)',
               pronunciation: '/\u02CC\u028Cn\u02C8p\u00E6k\u026A\u014B/',
               phonetic: 'an-PA-king',
-              example: `With tuple unpacking like name, age = get_user(), you assign multiple return values to named variables in one line. = Con lo spacchettamento di tupla come name, age = get_user(), assegni piu' valori di ritorno a variabili nominate in una riga.`,
+              example:
+                'Iterating with for key, value in dict.items() relies on tuple unpacking to bind each pair to two named locals per loop. = Iterare con for key, value in dict.items() si basa sullo spacchettamento di tupla per legare ogni coppia a due variabili nominate ad ogni ciclo.',
               context: 'syntax',
               difficulty: 'intermediate',
               code: 'x, y = (10, 20)',
@@ -1326,7 +1327,8 @@ export default {
               italian: 'Variabile Bandiera (Flag)',
               pronunciation: '/fl\u00E6\u0261 \u02C8veri\u0259bl/',
               phonetic: 'FLAG VE-ri-ebol',
-              example: `Set a flag variable like found = False before a loop, then update it inside to remember whether the search succeeded. = Imposta una variabile bandiera come found = False prima di un ciclo, poi aggiornala all'interno per ricordare se la ricerca ha avuto successo.`,
+              example:
+                'Initializing a found flag variable to False before scanning a list lets you record whether the search ever succeeded inside the loop. = Inizializzare una variabile bandiera found a False prima di scansionare una lista ti permette di registrare se la ricerca abbia mai avuto successo dentro il ciclo.',
               context: 'patterns',
               difficulty: 'beginner',
             },
@@ -1674,7 +1676,7 @@ export default {
               pronunciation: '/\u02C8lo\u028Akl/',
               phonetic: 'LOU-kal',
               example:
-                'When you assign x = 5 inside a function, x becomes a local variable that disappears as soon as the function returns. = Quando assegni x = 5 dentro una funzione, x diventa una variabile locale che scompare appena la funzione ritorna.',
+                'Names introduced by assignment inside a function body live in the local scope and vanish once the call frame is popped on return. = I nomi introdotti per assegnazione dentro il corpo di una funzione vivono nello scope locale e svaniscono quando il frame di chiamata viene rimosso al ritorno.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -1965,7 +1967,7 @@ export default {
               pronunciation: '/\u02C8\u026Anst\u0259ns \u02C8veri\u0259bl/',
               phonetic: 'IN-stans VE-ri-ebol',
               example:
-                'Assigning self.balance = 0 inside __init__ creates an instance variable unique to each account object. = Assegnare self.balance = 0 dentro __init__ crea una variabile di istanza unica per ogni oggetto account.',
+                'Attributes attached to self inside __init__ become instance variables, giving each object its own independent copy of that state. = Gli attributi attaccati a self dentro __init__ diventano variabili di istanza, dando a ogni oggetto la propria copia indipendente di quello stato.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -1975,7 +1977,7 @@ export default {
               pronunciation: '/kl\u0251\u02D0s \u02C8veri\u0259bl/',
               phonetic: 'CLAS VE-ri-ebol',
               example:
-                'Defining count = 0 directly inside the class body makes it a class variable shared by every instance. = Definire count = 0 direttamente nel corpo della classe la rende una variabile di classe condivisa da ogni istanza.',
+                'Attributes defined directly in the class body act as class variables shared by every instance unless one shadows it with self. = Gli attributi definiti direttamente nel corpo della classe agiscono come variabili di classe condivise da ogni istanza a meno che una non la mascheri con self.',
               context: 'oop',
               difficulty: 'intermediate',
             },

@@ -1,0 +1,412 @@
+{
+  "fixes": [
+    {
+      "level": "3",
+      "lesson": "rust_ownership_1",
+      "english": "Move Semantics",
+      "set": {
+        "example": "Passing a String to a function transfers ownership via move semantics, so the original binding can no longer be read afterwards. = Passare una String a una funzione trasferisce l'ownership tramite move semantics, così il binding originale non può più essere letto dopo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "If Let",
+      "set": {
+        "english": "If Let Else Chain",
+        "italian": "if let else",
+        "example": "Combine an if let else chain to handle the Some branch immediately and fall back to a recovery path when the Option holds None. = Combina una catena if let else per gestire subito il ramo Some e cadere su un percorso di recupero quando l'Option contiene None."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "rust_enums_3",
+      "english": "While Let",
+      "set": {
+        "example": "Drain a Vec by writing a while let Some(item) loop that keeps running as long as pop returns a populated variant. = Svuota un Vec scrivendo un loop while let Some(item) che continua a girare finché pop restituisce una variante popolata."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_2",
+      "english": "Panic Abort",
+      "set": {
+        "example": "Configure the release profile with panic abort so a panic skips stack unwinding and the final binary stays smaller and faster to load. = Configura il profilo release con panic abort così un panic salta lo srotolamento dello stack e il binario finale resta più piccolo e veloce da caricare."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_4",
+      "english": "Trait Inheritance",
+      "set": {
+        "example": "Writing trait Logger: Debug + Send leverages trait inheritance to require every Logger implementor to also be Debug-printable and Send. = Scrivere trait Logger: Debug + Send sfrutta la trait inheritance per richiedere che ogni implementatore di Logger sia anche stampabile con Debug e Send."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_4",
+      "english": "Trait Aliasing",
+      "set": {
+        "example": "Declaring trait Handler with Fn(Req) -> Resp bounds shows trait aliasing replacing a long bound list at every generic call site. = Dichiarare trait Handler con i bound Fn(Req) -> Resp mostra il trait aliasing che sostituisce una lunga lista di bound a ogni call site generico."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_1",
+      "english": "Default Type Parameter",
+      "set": {
+        "example": "A signature like HashMap<K, V, S> with RandomState as a default type parameter lets callers normally omit the hasher unless customizing it. = Una firma come HashMap<K, V, S> con RandomState come default type parameter permette ai chiamanti di omettere normalmente l'hasher salvo personalizzazione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "rust_generics_2",
+      "english": "Generic Type Alias",
+      "set": {
+        "example": "Introducing type ApiResult<T> as a generic type alias for Result<T, ApiError> hides the error parameter at every handler signature in your module. = Introdurre type ApiResult<T> come generic type alias per Result<T, ApiError> nasconde il parametro errore a ogni firma di handler nel tuo modulo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_10",
+      "english": "Path Dependency",
+      "set": {
+        "example": "Pointing common to a sibling folder declares a path dependency so the workspace pulls the crate from disk instead of crates.io during builds. = Puntare common a una cartella vicina dichiara una path dependency così il workspace prende il crate dal disco invece che da crates.io durante le build."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "rust_foundations_10",
+      "english": "Version Specifier",
+      "set": {
+        "example": "Pinning serde with the version specifier \"^1.2\" tells Cargo to accept any 1.x release at or above 1.2 but reject the breaking 2.0 jump. = Fissare serde con il version specifier \"^1.2\" dice a Cargo di accettare ogni release 1.x a partire dalla 1.2 ma rifiutare il salto breaking 2.0."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_10",
+      "english": "Reference Counting",
+      "set": {
+        "example": "Sharing an immutable config across threads through Arc<Config> uses reference counting so the data drops only after the last clone releases it. = Condividere una config immutabile tra thread tramite Arc<Config> usa il reference counting così i dati vengono droppati solo dopo l'ultimo clone."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_1",
+      "english": "Await",
+      "set": {
+        "example": "Suspending a task with resp.text().await yields control to the scheduler while the network response arrives and the runtime keeps other tasks running. = Sospendere un task con resp.text().await cede il controllo allo scheduler mentre arriva la risposta di rete e il runtime tiene altri task in esecuzione."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Stream",
+      "set": {
+        "example": "Iterating paginated results with a Stream lets each next().await fetch the following page lazily instead of buffering every result in memory at once. = Iterare risultati paginati con uno Stream permette a ogni next().await di prelevare la pagina successiva pigramente invece di bufferizzare tutto in memoria."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Async Iter",
+      "set": {
+        "example": "An async iter abstraction lets you write for await item in stream once the unstable AsyncIterator trait stabilizes in the standard library. = Un'astrazione async iter ti permette di scrivere for await item in stream una volta che il trait AsyncIterator unstable si stabilizza in std."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Proc Macro Crate",
+      "set": {
+        "example": "Marking a package as a proc macro crate by setting the proc-macro flag in Cargo.toml lets the compiler load it as a host-side plugin during builds. = Marcare un pacchetto come proc macro crate impostando il flag proc-macro in Cargo.toml fa caricare il pacchetto come plugin lato host."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_1",
+      "english": "Sound Code",
+      "set": {
+        "example": "A library exposing only safe APIs is sound code when no caller can ever trigger undefined behaviour, even with unsafe blocks hidden internally. = Una libreria che espone solo API safe è sound code quando nessun chiamante può mai innescare undefined behaviour, anche con blocchi unsafe nascosti internamente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "Erased Type",
+      "set": {
+        "example": "Returning Box<dyn Error> exposes an erased type so the caller sees a single interface while concrete error variants stay hidden behind the vtable. = Restituire Box<dyn Error> espone un erased type così il chiamante vede una singola interfaccia mentre le varianti concrete di errore restano nascoste dietro la vtable."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_6",
+      "english": "Take",
+      "set": {
+        "english": "Iterator Take",
+        "italian": "Iterator Take",
+        "example": "Limit a stream with iterator take like (1..).take(5) so the consumer pulls exactly the first five values before short-circuiting the upstream. = Limita uno stream con iterator take come (1..).take(5) così il consumatore tira esattamente i primi cinque valori prima di interrompere a monte."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_3",
+      "english": "Borrow Checker",
+      "set": {
+        "english": "Borrow Checker NLL",
+        "italian": "borrow checker NLL",
+        "example": "Thanks to the borrow checker NLL, the compiler ends a borrow at the last use of a reference instead of at the close of its lexical scope. = Grazie al borrow checker NLL, il compilatore termina un borrow all'ultimo uso di un riferimento invece che alla chiusura del suo scope lessicale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_9",
+      "english": "Box",
+      "set": {
+        "english": "Box Smart Pointer",
+        "italian": "Box smart pointer",
+        "example": "Putting a recursive Node inside a Box smart pointer breaks the infinite-size cycle so the compiler can lay the struct out with known size. = Mettere un Node ricorsivo dentro un Box smart pointer rompe il ciclo di dimensione infinita così il compilatore può sistemare la struct sullo stack."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_3",
+      "english": "Reborrow",
+      "set": {
+        "english": "Lifetime Reborrow",
+        "italian": "lifetime reborrow",
+        "example": "Passing &mut *self performs a lifetime reborrow so the callee gets a shorter borrow without taking ownership of the original mutable reference. = Passare &mut *self esegue un lifetime reborrow così il chiamato ottiene un borrow più corto senza prendere ownership del riferimento mutabile originale."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_1",
+      "english": "Borrow Lifetime",
+      "set": {
+        "english": "Explicit Borrow Lifetime",
+        "italian": "explicit borrow lifetime",
+        "example": "Annotating fn longest<'a>(x: &'a str, y: &'a str) gives an explicit borrow lifetime that ties the returned reference to both inputs at once. = Annotare fn longest<'a>(x: &'a str, y: &'a str) dà un explicit borrow lifetime che lega il riferimento restituito a entrambi gli input."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_4",
+      "english": "Encapsulation",
+      "set": {
+        "english": "Unsafe Encapsulation",
+        "italian": "Incapsulamento di unsafe",
+        "example": "Wrapping a raw pointer behind a safe API performs unsafe encapsulation so the dangerous operations never leak to downstream callers of the crate. = Avvolgere un puntatore raw dietro un'API safe esegue l'unsafe encapsulation così le operazioni pericolose non trapelano mai ai chiamanti downstream."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_2",
+      "english": "Custom Derive",
+      "set": {
+        "english": "Custom Derive Helper Attribute",
+        "italian": "custom derive helper attribute",
+        "example": "Registering a custom derive helper attribute like serde rename lets the proc macro read field-level configuration during expansion of the derive. = Registrare un custom derive helper attribute come serde rename permette alla proc macro di leggere configurazione a livello di campo durante l'espansione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_1",
+      "english": "Unwrap",
+      "set": {
+        "english": "Result Unwrap",
+        "italian": "Result unwrap",
+        "example": "Calling result unwrap on a Result<T, E> returns the inner T on Ok but panics with the formatted error when the value is Err at runtime. = Chiamare result unwrap su un Result<T, E> restituisce il T interno su Ok ma fa panic con l'errore formattato quando il valore è Err a runtime."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Unwrap Or",
+      "set": {
+        "english": "Result Unwrap Or",
+        "italian": "Result unwrap_or",
+        "example": "Using result unwrap_or with a default_config argument makes a failing Result silently substitute a safe fallback instead of panicking on Err. = Usare result unwrap_or con un argomento default_config fa sostituire silenziosamente un fallback sicuro a un Result fallito invece di fare panic su Err."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "Map",
+      "set": {
+        "english": "Result Map",
+        "italian": "Result map",
+        "example": "Applying result map with a closure that adds one transforms the Ok payload while leaving the Err variant untouched for downstream combinators. = Applicare result map con una closure che aggiunge uno trasforma il payload Ok lasciando intatta la variante Err per i combinator successivi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "rust_error_handling_4",
+      "english": "And Then",
+      "set": {
+        "english": "Result And Then",
+        "italian": "Result and_then",
+        "example": "Chaining fallible steps with result and_then makes each next stage run only after the previous one returns Ok, propagating errors short-circuit. = Concatenare passi fallibili con result and_then fa girare ogni stage successivo solo dopo che il precedente restituisce Ok, propagando gli errori in corto circuito."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Type State",
+      "set": {
+        "english": "Type State Builder",
+        "italian": "type state builder",
+        "example": "Implement a type state builder where Request<Unsent> exposes send only after body returns Request<Ready> so misuse simply fails to compile. = Implementa un type state builder dove Request<Unsent> espone send solo dopo che body restituisce Request<Ready> così l'uso improprio semplicemente non compila."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Visitor Pattern",
+      "set": {
+        "english": "Trait Visitor Pattern",
+        "italian": "trait visitor pattern",
+        "example": "Define a trait visitor pattern with methods like visit_expr on a Visitor trait so AST consumers can plug in custom traversals without forking. = Definisci un trait visitor pattern con metodi come visit_expr su un trait Visitor così i consumatori di AST possono inserire traversali personalizzati."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_3",
+      "english": "Panic Macro",
+      "set": {
+        "english": "Panic Macro Formatting",
+        "italian": "panic! macro formatting",
+        "example": "Passing a format string with named arguments to panic! uses panic macro formatting so the abort message embeds runtime values for diagnostics. = Passare una format string con argomenti nominati a panic! usa il panic macro formatting così il messaggio di abort embedda valori runtime per la diagnostica."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Vec Macro",
+      "set": {
+        "english": "Vec Macro Repeat",
+        "italian": "vec! macro repeat",
+        "example": "Initialize a fixed-size buffer with vec macro repeat syntax like vec![0u8; 1024] so the macro fills a Vec with one thousand zero bytes inline. = Inizializza un buffer di dimensione fissa con la sintassi vec macro repeat come vec![0u8; 1024] così la macro riempie un Vec con mille byte zero."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Marker Trait",
+      "set": {
+        "english": "Marker Trait Bound",
+        "italian": "marker trait bound",
+        "example": "Adding a marker trait bound like T: Send + 'static at a generic site restricts the API to values that can travel safely across threads. = Aggiungere un marker trait bound come T: Send + 'static a un sito generico restringe l'API a valori che possono viaggiare in sicurezza tra thread."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Auto Trait",
+      "set": {
+        "english": "Auto Trait Leakage",
+        "italian": "auto trait leakage",
+        "example": "Returning impl Future without explicit Send bound can cause auto trait leakage so the caller cannot spawn the future on a multi-thread runtime. = Restituire impl Future senza un bound Send esplicito può causare auto trait leakage così il chiamante non può fare spawn della future su un runtime multi-thread."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Trait Inheritance",
+      "set": {
+        "english": "Trait Inheritance Bound",
+        "italian": "trait inheritance bound",
+        "example": "Express a trait inheritance bound such as trait Read: Seek so every implementor must already provide a seek cursor beside its read methods. = Esprimi un trait inheritance bound come trait Read: Seek così ogni implementatore deve già fornire un cursore seek accanto ai suoi metodi read."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_4",
+      "english": "Compile Time",
+      "set": {
+        "english": "Compile Time Evaluation",
+        "italian": "compile time evaluation",
+        "example": "Using const fn together with compile time evaluation makes the compiler bake a lookup table directly into the binary as a static array. = Usare const fn insieme alla compile time evaluation fa incorporare al compilatore una lookup table direttamente nel binario come array statico."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "rust_collections_5",
+      "english": "Move Closure",
+      "set": {
+        "english": "Iterator Move Closure",
+        "italian": "iterator move closure",
+        "example": "When you spawn a parallel iterator across threads, an iterator move closure captures every captured binding by ownership instead of by borrow. = Quando fai spawn di un iteratore parallelo tra thread, un iterator move closure cattura ogni binding catturato per ownership invece che per borrow."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Cargo Test",
+      "set": {
+        "english": "Cargo Test Filter",
+        "italian": "Cargo Test Filter",
+        "example": "Run only matching tests with cargo test filter syntax like cargo test parse_user so the test binary executes a single targeted subset of cases. = Esegui solo i test che combaciano con la sintassi cargo test filter come cargo test parse_user così il binario di test esegue un sottoinsieme mirato."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Join",
+      "set": {
+        "english": "Async Join",
+        "italian": "async join",
+        "example": "Drive two futures concurrently with async join by calling tokio join on fetch_a and fetch_b so the runtime polls both tasks at the same time. = Pilota due future concorrentemente con async join chiamando tokio join su fetch_a e fetch_b così il runtime fa polling di entrambi i task insieme."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_4",
+      "english": "Crossbeam",
+      "set": {
+        "english": "Crossbeam Channel",
+        "italian": "crossbeam channel",
+        "example": "Replace std::sync::mpsc with the crossbeam channel crate to get a multi-producer multi-consumer queue with select support over many channels. = Sostituisci std::sync::mpsc con il crate crossbeam channel per ottenere una coda multi-producer multi-consumer con supporto select su più canali."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_4",
+      "english": "Rayon",
+      "set": {
+        "english": "Rayon Par Iter",
+        "italian": "rayon par_iter",
+        "example": "Convert a sequential pipeline with rayon par_iter so v.par_iter().map(expensive).sum() spreads the work across the global thread pool automatically. = Converti una pipeline sequenziale con rayon par_iter così v.par_iter().map(expensive).sum() distribuisce il lavoro sul thread pool globale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Hyper",
+      "set": {
+        "english": "Hyper Server",
+        "italian": "hyper server",
+        "example": "Build a low-level hyper server with Server::bind(&addr).serve(make_svc) when a framework would add unwanted abstraction over the raw HTTP layer. = Costruisci un hyper server di basso livello con Server::bind(&addr).serve(make_svc) quando un framework aggiungerebbe astrazione indesiderata sull'HTTP raw."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Reqwest",
+      "set": {
+        "english": "Reqwest Client",
+        "italian": "reqwest Client",
+        "example": "Reuse a single reqwest Client across requests so connection pooling, DNS caching and TLS sessions amortize their cost over every API call you make. = Riusa un singolo reqwest Client tra richieste così connection pooling, caching DNS e sessioni TLS ammortizzano il costo su ogni chiamata API."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Axum",
+      "set": {
+        "english": "Axum Router",
+        "italian": "axum Router",
+        "example": "Wire endpoints into an axum Router with Router::new().route on path patterns and a handler so each handler receives typed extractors automatically. = Collega gli endpoint in un axum Router con Router::new().route su pattern di percorso e un handler così ogni handler riceve extractor tipati."
+      }
+    }
+  ]
+}

@@ -2938,7 +2938,7 @@ export default {
               italian: "Deriva dell'Ambiente",
               pronunciation: '/\u026An\u02C8va\u026Ar\u0259nm\u0259nt dr\u026Aft/',
               phonetic: 'in-VAI-ron-ment DRIFT',
-              example: `Environment drift between staging and production is the root cause of bugs that work on every laptop but fail in the cloud. = La deriva dell'ambiente tra staging e produzione è la causa principale dei bug che funzionano su ogni laptop ma falliscono nel cloud.`,
+              example: `Teams fight environment drift between staging and production because bugs that pass on every laptop still fail once the cloud config diverges. = I team combattono la deriva dell'ambiente tra staging e produzione perché i bug che passano su ogni laptop falliscono comunque quando la config cloud diverge.`,
               context: 'devops',
               difficulty: 'advanced',
             },

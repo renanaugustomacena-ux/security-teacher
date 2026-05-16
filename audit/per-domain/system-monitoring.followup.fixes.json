@@ -1,0 +1,270 @@
+{
+  "fixes": [
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "Splunk",
+      "set": {
+        "example": "Operators chain Splunk SPL pipes like index=web status=500 | stats count by host to spot which frontend host emits the most 500s. = Gli operatori concatenano pipe Splunk SPL come index=web status=500 | stats count by host per individuare quale host frontend emette piu' 500."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "PromQL",
+      "set": {
+        "example": "Writing PromQL like rate(http_requests_total[5m]) computes per-second request rate over a 5-minute window for live dashboards. = Scrivere PromQL come rate(http_requests_total[5m]) calcola il tasso di richieste al secondo su una finestra di 5 minuti per dashboard live."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_4",
+      "english": "Cost Attribution",
+      "set": {
+        "example": "Per-team cost attribution via Datadog APM tags shows which squad drives most of the spans bill, focusing optimisation where it pays off. = L'attribuzione dei costi per team tramite tag Datadog APM mostra quale squad genera la maggior parte della bolletta degli span, focalizzando l'ottimizzazione dove rende."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Process Exporter",
+      "set": {
+        "example": "Running Process Exporter groups individual PIDs by command pattern so you can monitor CPU and RSS for nginx workers without listing every PID. = Eseguire Process Exporter raggruppa i singoli PID per pattern di comando cosi' che si possano monitorare CPU e RSS dei worker nginx senza elencare ogni PID."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "Telegraf",
+      "set": {
+        "example": "Deploying Telegraf as a sidecar scrapes MySQL, Redis and host metrics via plugins, then ships everything to InfluxDB in one process. = Distribuire Telegraf come sidecar raccoglie metriche MySQL, Redis e host tramite plugin, poi invia tutto a InfluxDB in un unico processo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_4",
+      "english": "pgBouncer",
+      "set": {
+        "example": "Putting pgBouncer in front of Postgres in transaction mode lets 10000 client connections share just 100 backend sessions safely. = Mettere pgBouncer davanti a Postgres in modalita' transazione permette a 10000 connessioni client di condividere in sicurezza solo 100 sessioni backend."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_1",
+      "english": "CloudWatch",
+      "set": {
+        "example": "Wiring CloudWatch into an ECS cluster exposes per-task CPU, memory and custom metrics without installing any third-party agent. = Collegare CloudWatch a un cluster ECS espone metriche CPU, memoria e custom per task senza installare alcun agent di terze parti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_1",
+      "english": "EMF",
+      "set": {
+        "example": "Emitting EMF JSON inside Lambda logs publishes custom metrics to CloudWatch without an extra PutMetricData API call per invocation. = Emettere JSON EMF dentro i log Lambda pubblica metriche custom su CloudWatch senza una chiamata PutMetricData extra per invocazione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_1",
+      "english": "Container Insights",
+      "set": {
+        "example": "Enabling Container Insights on EKS automatically scrapes per-pod CPU, memory and network metrics into CloudWatch without extra exporter setup. = Abilitare Container Insights su EKS raccoglie automaticamente metriche CPU, memoria e rete per pod in CloudWatch senza configurazione di exporter aggiuntivi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_1",
+      "english": "Trusted Advisor",
+      "set": {
+        "example": "Reviewing Trusted Advisor weekly flags idle EC2 instances and over-provisioned EBS volumes, often surfacing thousands in easy monthly savings. = Rivedere Trusted Advisor settimanalmente segnala istanze EC2 inattive e volumi EBS sovradimensionati, spesso facendo emergere migliaia di risparmi facili al mese."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_2",
+      "english": "Azure Monitor",
+      "set": {
+        "example": "Routing every subscription through Azure Monitor unifies platform metrics, resource logs and Application Insights traces in a single query surface. = Instradare ogni subscription attraverso Azure Monitor unifica metriche di piattaforma, log delle risorse e tracce Application Insights in un'unica superficie di query."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Cloud Monitoring",
+      "set": {
+        "example": "Configuring Cloud Monitoring uptime checks against a Cloud Run endpoint pages the on-call within 60 seconds of a regional outage. = Configurare check di uptime su Cloud Monitoring contro un endpoint Cloud Run chiama il reperibile entro 60 secondi da un disservizio regionale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Cloud Trace",
+      "set": {
+        "example": "Enabling Cloud Trace auto-instruments App Engine and Cloud Run requests, so a single click shows downstream latencies across every backend hop. = Abilitare Cloud Trace strumenta automaticamente le richieste App Engine e Cloud Run, cosi' un singolo click mostra le latenze downstream attraverso ogni hop di backend."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Workload Identity",
+      "set": {
+        "example": "Adopting Workload Identity binds a Kubernetes service account to a GCP IAM service account, killing the need for long-lived JSON key files. = Adottare Workload Identity collega un service account Kubernetes a un service account IAM GCP, eliminando la necessita' di file di chiave JSON a lunga vita."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_4",
+      "english": "Chaos Engineering",
+      "set": {
+        "example": "Running Chaos Engineering drills like killing random pods in production validates that retries and circuit breakers actually do their job under load. = Eseguire drill di Chaos Engineering come uccidere pod casuali in produzione verifica che retry e circuit breaker facciano davvero il loro lavoro sotto carico."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_1",
+      "english": "PagerDuty",
+      "set": {
+        "example": "Centralising on-call rotations in PagerDuty bundles escalation policies, schedules and incident timelines into one workflow per service. = Centralizzare i turni reperibili in PagerDuty unisce policy di escalation, schedule e timeline incidenti in un workflow per servizio."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_2",
+      "english": "Better Uptime",
+      "set": {
+        "example": "Adopting Better Uptime bundles public status pages and on-call rotations in one product, sparing small teams a second alerting tool. = Adottare Better Uptime unisce status page pubbliche e turni reperibili in un unico prodotto, risparmiando ai team piccoli un secondo strumento di alerting."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_2",
+      "english": "Grafana OnCall",
+      "set": {
+        "example": "Self-hosting Grafana OnCall gives teams open-source escalation, schedules and integrations without paying for a commercial pager. = Auto-ospitare Grafana OnCall offre ai team escalation open-source, schedule e integrazioni senza pagare un pager commerciale."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_1",
+      "english": "HPA",
+      "set": {
+        "example": "Watching HPA metrics reveals current versus desired replicas, exposing when autoscaling stalls because CPU targets are unreachable. = Osservare le metriche HPA rivela repliche correnti rispetto a quelle desiderate, esponendo quando l'autoscaling si blocca perche' i target CPU sono irraggiungibili."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "PCI DSS",
+      "set": {
+        "example": "Meeting PCI DSS requires logging every cardholder-data access for at least one year, with daily review and tamper-evident storage. = Soddisfare PCI DSS richiede di loggare ogni accesso ai dati di carta per almeno un anno, con revisione giornaliera e storage a prova di manomissione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "GDPR",
+      "set": {
+        "example": "Under GDPR, EU operators must purge personal data from log archives once the documented retention window expires. = Sotto il GDPR, gli operatori UE devono eliminare i dati personali dagli archivi log una volta scaduta la finestra di retention documentata."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_4",
+      "english": "TTP",
+      "set": {
+        "example": "Cataloguing TTPs from past breaches lets the SOC write detections against attacker behaviour patterns instead of fragile IP hashes. = Catalogare TTP dalle breach passate permette al SOC di scrivere detection contro pattern di comportamento attaccante invece di fragili hash IP."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "ML Anomaly Detection",
+      "set": {
+        "example": "Applying ML anomaly detection to Prometheus histograms catches slow regressions that static thresholds miss until a customer files a support ticket. = Applicare ML anomaly detection a istogrammi Prometheus becca regressioni lente che le soglie statiche perdono finche' un cliente non apre un ticket di supporto."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "AIOps Forecasting",
+      "set": {
+        "example": "Running AIOps forecasting on production telemetry predicts next quarter's compute needs, freeing capacity planners from spreadsheet guesswork. = Eseguire AIOps forecasting sulla telemetria di produzione predice il fabbisogno compute del prossimo trimestre, liberando i capacity planner dalle congetture su fogli di calcolo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_4",
+      "english": "Cultural Change",
+      "set": {
+        "example": "Driving cultural change is the slowest part of SRE adoption, since blameless postmortems clash with command-and-control habits. = Guidare il cambiamento culturale e' la parte piu' lenta dell'adozione di SRE, poiche' i postmortem blameless cozzano con le abitudini di command-and-control."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_4",
+      "english": "Throughput",
+      "set": {
+        "english": "Application Throughput",
+        "italian": "Throughput applicativo",
+        "example": "After the connection pool fix, our application throughput climbed from 2000 to 8000 requests per second on the same hardware. = Dopo il fix del connection pool, il nostro throughput applicativo e' salito da 2000 a 8000 richieste al secondo sullo stesso hardware.",
+        "note": "Rinominato per distinguerlo dall'item 'Throughput' del modulo metriche di sistema."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_2",
+      "english": "KQL",
+      "set": {
+        "english": "Azure KQL",
+        "italian": "Azure KQL",
+        "example": "A typical Azure KQL query like AppRequests | where ResultCode == 500 | summarize count() by Name exposes the noisiest failing endpoints in seconds. = Una tipica query Azure KQL come AppRequests | where ResultCode == 500 | summarize count() by Name espone gli endpoint piu' rumorosi che falliscono in pochi secondi.",
+        "note": "Rinominato per distinguerlo dall'item 'KQL' (Kibana Query Language) del modulo tooling log."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_1",
+      "english": "Tag",
+      "set": {
+        "english": "Dashboard Tag",
+        "italian": "Tag di dashboard",
+        "example": "Adding a kubernetes dashboard tag to every cluster panel lets engineers filter the Grafana home and find the right view in seconds during an incident. = Aggiungere un tag di dashboard kubernetes a ogni pannello cluster permette agli ingegneri di filtrare la home Grafana e trovare la vista giusta in pochi secondi durante un incidente.",
+        "note": "Rinominato per distinguerlo dall'item 'Tag' (Fluentd) del modulo tooling log."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Cloud Logging",
+      "set": {
+        "english": "GCP Cloud Logging Service",
+        "italian": "Servizio GCP Cloud Logging",
+        "example": "The GCP Cloud Logging service ingests structured entries from every project and exports them to BigQuery, Pub/Sub or external SIEMs via sinks. = Il servizio GCP Cloud Logging ingerisce voci strutturate da ogni progetto e le esporta a BigQuery, Pub/Sub o SIEM esterni tramite sink.",
+        "note": "Rinominato per distinguerlo dall'item 'Cloud Logging' del modulo tooling log."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_2",
+      "english": "Severity Level",
+      "set": {
+        "english": "Incident Severity Level",
+        "italian": "Livello di severità dell'incidente",
+        "example": "Assigning the right incident severity level early routes the page to the correct on-call rotation and unlocks the SEV1 war-room workflow. = Assegnare presto il giusto livello di severità dell'incidente instrada la chiamata al turno on-call giusto e attiva il workflow della war-room SEV1.",
+        "note": "Rinominato per distinguerlo dall'item 'Severity Level' del modulo alerting."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_4",
+      "english": "Annotation",
+      "set": {
+        "english": "Grafana Annotation",
+        "italian": "Annotazione Grafana",
+        "example": "A Grafana annotation tied to a Loki query draws release markers on every panel, helping link a latency spike to the right deploy. = Un'annotazione Grafana collegata a una query Loki disegna marcatori di release su ogni pannello, aiutando a collegare un picco di latenza al deploy giusto.",
+        "note": "Rinominato per distinguerlo dall'item 'Annotation' (Alertmanager) del modulo alerting."
+      }
+    }
+  ]
+}

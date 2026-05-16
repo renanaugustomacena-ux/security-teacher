@@ -9895,7 +9895,7 @@ export default {
               pronunciation: '/ˌædvərˈseəriəl ˈtreɪnɪŋ/',
               phonetic: 'ad-ver-SE-rial TREI-ning',
               example:
-                'Defensive distillation trains a second model on softened probability outputs of the first to make adversarial perturbations harder to craft. = La distillazione difensiva addestra un secondo modello sulle probabilità ammorbidite del primo per rendere più difficile costruire perturbazioni avversarie.',
+                'Researchers proposed defensive distillation in 2016 to train a second model on softened probabilities, making gradient attacks harder. = I ricercatori hanno proposto la distillazione difensiva nel 2016 per addestrare un secondo modello su probabilità ammorbidite, rendendo più difficili gli attacchi basati sul gradiente.',
               context: 'ethics',
               difficulty: 'advanced',
               note: 'Successivamente dimostrata aggirabile da attacchi C&W ma utile come baseline difensiva.',
@@ -10175,14 +10175,15 @@ export default {
           description: 'Proteggere i sistemi IA',
           items: [
             {
-              english: 'Defensive Distillation',
-              italian: 'Distillazione difensiva',
+              english: 'Gradient Masking',
+              italian: 'Mascheramento del gradiente',
               pronunciation: '/dɪˈfensɪv ˌdɪstɪˈleɪʃən/',
               phonetic: 'di-FEN-siv dis-ti-LEI-scen',
               example:
-                'Training a student model on softened probability outputs via defensive distillation makes gradients less useful to attackers. = Addestrare un modello studente su probabilità ammorbidite tramite distillazione difensiva rende i gradienti meno utili agli attaccanti.',
+                'Many early defenses relied on gradient masking to hide useful gradients from attackers, but adaptive attacks usually bypass them. = Molte difese iniziali si affidavano al mascheramento del gradiente per nascondere gradienti utili agli attaccanti, ma gli attacchi adattivi solitamente li bypassano.',
               context: 'ethics',
               difficulty: 'advanced',
+              note: `Rinominato per evitare duplicato con 'Defensive Distillation' della lezione 'Adversarial Attacks'.`,
             },
             {
               english: 'Input Sanitization',

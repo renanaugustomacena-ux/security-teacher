@@ -1,0 +1,37 @@
+{
+  "fixes": [
+    {
+      "level": "2",
+      "lesson": "defense_endpoint",
+      "english": "next-generation antivirus",
+      "set": {
+        "example": "Modern EDR suites bundle a next-generation antivirus engine that scores process behavior rather than matching static byte signatures. = Le suite EDR moderne integrano un motore antivirus di nuova generazione che valuta il comportamento dei processi invece di confrontare signature statiche."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "HTTPS strict transport",
+      "set": {
+        "italian": "trasporto HTTPS rigoroso (HSTS)",
+        "example": "After deploying the HTTPS strict transport header with a one-year max-age, browsers refuse to fall back to plaintext on that domain. = Dopo aver distribuito l'header del trasporto HTTPS rigoroso con max-age di un anno, i browser rifiutano di tornare al testo in chiaro su quel dominio."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "end-to-end encryption",
+      "set": {
+        "example": "Modern chat apps advertise end-to-end encryption so that the relay server only sees opaque ciphertext, never the underlying message. = Le app di chat moderne pubblicizzano la crittografia end-to-end in modo che il server di relay veda solo ciphertext opaco, mai il messaggio sottostante."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_hash",
+      "english": "digital signature verification",
+      "set": {
+        "example": "Package managers like apt run digital signature verification against the maintainer's GPG key before unpacking any downloaded archive. = I gestori di pacchetti come apt eseguono la verifica della firma digitale contro la chiave GPG del maintainer prima di scompattare qualsiasi archivio scaricato."
+      }
+    }
+  ]
+}

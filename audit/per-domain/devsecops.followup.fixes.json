@@ -1,0 +1,52 @@
+{
+  "fixes": [
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_3",
+      "english": "Cosign keyless signing",
+      "set": {
+        "example": "Pipelines adopt Cosign keyless signing to fetch short-lived certificates from Fulcio via OIDC instead of long-lived keys. = Le pipeline adottano la firma keyless con Cosign per ottenere certificati a breve durata da Fulcio tramite OIDC invece di chiavi a lunga durata."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_2",
+      "english": "Falco runtime detection",
+      "set": {
+        "example": "Production clusters rely on Falco runtime detection to stream kernel syscalls and match them against YAML rules in real time. = I cluster di produzione si affidano al rilevamento runtime con Falco per intercettare syscall del kernel e confrontarle con regole YAML in tempo reale."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_1",
+      "english": "Microsoft Sentinel",
+      "set": {
+        "example": "Azure shops pipe logs into Microsoft Sentinel, which ingests data from third-party connectors to deliver cloud-native SIEM and SOAR. = Le aziende Azure convogliano i log in Microsoft Sentinel, che ingerisce dati da connettori di terze parti per offrire SIEM e SOAR cloud-native."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dso_automation_incident_2",
+      "english": "Incident Triage",
+      "set": {
+        "example": "During the response phase, incident triage decides which alerts deserve a full investigation and which can be closed as benign. = Durante la fase di risposta, il triage degli incidenti decide quali alert meritano un'indagine completa e quali possono essere chiusi come benigni."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_3",
+      "english": "Gatekeeper Constraints",
+      "set": {
+        "example": "Platform teams write Gatekeeper constraints that reuse cluster templates to enforce policy on specific namespaces and label selectors. = I team di piattaforma scrivono constraint Gatekeeper che riutilizzano i template del cluster per imporre policy su namespace e label selector specifici."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dso_compliance_reg_3",
+      "english": "FedRAMP Continuous Monitoring",
+      "set": {
+        "example": "Federal cloud offerings rely on FedRAMP continuous monitoring, which mandates monthly POA&M updates and quarterly scans to keep the ATO valid. = Le offerte cloud federali si affidano al continuous monitoring FedRAMP, che impone aggiornamenti POA&M mensili e scansioni trimestrali per mantenere l'ATO valida."
+      }
+    }
+  ]
+}

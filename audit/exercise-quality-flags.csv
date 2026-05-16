@@ -59,14 +59,11 @@ topicId,level,lesson,english,italian,issueType
 "ai-engineering",19,"ai_advanced_1","Expert","Esperto",near-identical-translation
 "ai-engineering",19,"ai_advanced_3","Multimodal","Multimodale",near-identical-translation
 "ai-engineering",19,"ai_advanced_4","Memory","Memoria",near-identical-translation
-"ai-engineering",21,"ai_security_1","Defensive Distillation","Distillazione difensiva",tautological-example
 "ai-engineering",21,"ai_security_1","Perturbation","Perturbazione",near-identical-translation
 "ai-engineering",22,"ai_research_1","Conference","Conferenza",near-identical-translation
 "ai-engineering",22,"ai_research_3","Replication","Replicazione",near-identical-translation
 "ai-engineering",22,"ai_research_4","Neuro-Symbolic","Neuro-simbolico",near-identical-translation
 "ai-engineering",23,"ai_pro_4","Innovation","Innovazione",near-identical-translation
-"ai-engineering",21,"ai_security_1","Defensive Distillation","",duplicate-across-lessons
-"ai-engineering",21,"ai_security_4","Defensive Distillation","",duplicate-across-lessons
 "c-programming",0,"c_foundations_1","Variable","Variabile",near-identical-translation
 "c-programming",0,"c_foundations_1","scanf","scanf",identical-translation
 "c-programming",0,"c_foundations_2","Comment","Commento",near-identical-translation
@@ -96,7 +93,6 @@ topicId,level,lesson,english,italian,issueType
 "c-programming",8,"c_structs_1","Structure","Struttura",near-identical-translation
 "c-programming",8,"c_structs_2","Union","Unione",near-identical-translation
 "c-programming",8,"c_structs_4","Offset","offset",identical-translation
-"c-programming",9,"c_memory_3","Use After Free (memory debug)","Uso dopo free (debug memoria)",tautological-example
 "c-programming",9,"c_memory_4","Capacity","Capacità",near-identical-translation
 "c-programming",10,"c_io_4","stdin","stdin",identical-translation
 "c-programming",10,"c_io_4","stderr","stderr",identical-translation
@@ -112,24 +108,18 @@ topicId,level,lesson,english,italian,issueType
 "c-programming",13,"c_errors_2","Invariant","Invariante",near-identical-translation
 "c-programming",13,"c_errors_4","Signal","Segnale",near-identical-translation
 "c-programming",14,"c_datastruct_1","Node","Nodo",near-identical-translation
-"c-programming",14,"c_datastruct_1","List Traversal","Visita di lista",tautological-example
-"c-programming",14,"c_datastruct_3","Pre-order Traversal","Visita pre-ordine",tautological-example
 "c-programming",14,"c_datastruct_4","Collision","Collisione",near-identical-translation
 "c-programming",14,"c_datastruct_4","Graph","Grafo",near-identical-translation
 "c-programming",15,"c_algos_1","Comparator","Comparatore",near-identical-translation
-"c-programming",15,"c_algos_2","Algorithmic Recursion","Ricorsione algoritmica",tautological-example
 "c-programming",15,"c_algos_4","Heuristic","Euristica",near-identical-translation
 "c-programming",16,"c_build_1","-Wall","-Wall",identical-translation
 "c-programming",16,"c_build_2","Prerequisite","Prerequisito",near-identical-translation
-"c-programming",16,"c_build_3","Library Linking","Collegamento di librerie",tautological-example
 "c-programming",16,"c_build_3","Symbol","Simbolo",near-identical-translation
 "c-programming",17,"c_debug_1","Continue","Continua",near-identical-translation
-"c-programming",17,"c_debug_2","Heap Corruption (debugging)","Corruzione dello heap (debug)",tautological-example
 "c-programming",17,"c_debug_3","UndefinedBehaviorSanitizer","UndefinedBehaviorSanitizer",identical-translation
 "c-programming",18,"c_systems_2","Process","Processo",near-identical-translation
 "c-programming",18,"c_systems_2","PID","PID",identical-translation
 "c-programming",18,"c_systems_2","Daemon","Demone",near-identical-translation
-"c-programming",18,"c_systems_3","POSIX Shared Memory","Memoria condivisa POSIX",tautological-example
 "c-programming",19,"c_concurrency_3","pthread_cond_wait","pthread_cond_wait",identical-translation
 "c-programming",19,"c_concurrency_3","pthread_cond_signal","pthread_cond_signal",identical-translation
 "c-programming",19,"c_concurrency_3","Barrier","Barriera",near-identical-translation
@@ -137,24 +127,15 @@ topicId,level,lesson,english,italian,issueType
 "c-programming",20,"c_sockets_1","sockaddr","sockaddr",identical-translation
 "c-programming",20,"c_sockets_1","Port","Porta",near-identical-translation
 "c-programming",21,"c_security_1","Stack Buffer Overflow","Stack buffer overflow",identical-translation
-"c-programming",21,"c_security_1","Security Bounds Checking","Controllo dei limiti per sicurezza",tautological-example
 "c-programming",21,"c_security_2","Validation","Validazione",near-identical-translation
 "c-programming",21,"c_security_4","Seccomp","seccomp",identical-translation
 "c-programming",22,"c_embedded_1","Microcontroller","Microcontrollore",near-identical-translation
 "c-programming",22,"c_embedded_2","Register","Registro",near-identical-translation
 "c-programming",22,"c_embedded_2","volatile (MMIO)","volatile (MMIO)",identical-translation
-"c-programming",22,"c_embedded_2","Register Bit Manipulation","Manipolazione di bit su registri",tautological-example
-"c-programming",22,"c_embedded_2","Toggle Bit","Invertire bit",tautological-example
 "c-programming",22,"c_embedded_3","Priority","Priorità",near-identical-translation
 "c-programming",22,"c_embedded_4","Task","task",identical-translation
 "c-programming",23,"c_pro_1","Portability","Portabilità",near-identical-translation
 "c-programming",23,"c_pro_2","False Positive","Falso positivo",near-identical-translation
-"c-programming",6,"c_advptr_1","Double Pointer","",duplicate-in-lesson
-"c-programming",6,"c_advptr_1","Double Pointer","",duplicate-in-lesson
-"c-programming",7,"c_strings_4","Format String Vulnerability","",duplicate-across-lessons
-"c-programming",21,"c_security_2","Format String Vulnerability","",duplicate-across-lessons
-"c-programming",14,"c_datastruct_1","Doubly Linked List","",duplicate-in-lesson
-"c-programming",14,"c_datastruct_1","Doubly Linked List","",duplicate-in-lesson
 "cloud-computing",0,"cloud_foundations_1","Cloud","Cloud",identical-translation
 "cloud-computing",0,"cloud_foundations_1","Tenant","Tenant",identical-translation
 "cloud-computing",0,"cloud_foundations_1","Scalability","Scalabilità",near-identical-translation
@@ -184,14 +165,11 @@ topicId,level,lesson,english,italian,issueType
 "cloud-computing",3,"cloud_networking_3","DNS","DNS",identical-translation
 "cloud-computing",3,"cloud_networking_3","CNAME","CNAME",identical-translation
 "cloud-computing",3,"cloud_networking_3","TTL","TTL",identical-translation
-"cloud-computing",3,"cloud_networking_3","Geolocation Routing","Routing geolocalizzato",tautological-example
 "cloud-computing",3,"cloud_networking_4","VPN","VPN",identical-translation
-"cloud-computing",3,"cloud_networking_4","ExpressRoute","Circuito dedicato verso Azure (ExpressRoute)",tautological-example
 "cloud-computing",3,"cloud_networking_4","BGP","BGP",identical-translation
 "cloud-computing",4,"cloud_iam_1","IAM","IAM",identical-translation
 "cloud-computing",4,"cloud_iam_1","Role","Ruolo",near-identical-translation
 "cloud-computing",4,"cloud_iam_1","Identity","Identità",near-identical-translation
-"cloud-computing",4,"cloud_iam_1","ARN","ARN",tautological-example
 "cloud-computing",4,"cloud_iam_1","ARN","ARN",identical-translation
 "cloud-computing",4,"cloud_iam_2","Effect","Effetto",near-identical-translation
 "cloud-computing",4,"cloud_iam_2","Condition","Condizione",near-identical-translation
@@ -208,18 +186,12 @@ topicId,level,lesson,english,italian,issueType
 "cloud-computing",5,"cloud_serverless_3","Idempotency","Idempotenza",near-identical-translation
 "cloud-computing",5,"cloud_serverless_4","ASL","ASL",identical-translation
 "cloud-computing",6,"cloud_database_1","RDS","RDS",identical-translation
-"cloud-computing",6,"cloud_database_3","TTL","TTL",identical-translation
 "cloud-computing",6,"cloud_database_4","OLTP","OLTP",identical-translation
 "cloud-computing",6,"cloud_database_4","OLAP","OLAP",identical-translation
-"cloud-computing",7,"cloud_containers_1","OCI","OCI",tautological-example
 "cloud-computing",7,"cloud_containers_1","OCI","OCI",identical-translation
 "cloud-computing",7,"cloud_containers_2","ECR","ECR",identical-translation
 "cloud-computing",7,"cloud_containers_2","ACR","ACR",identical-translation
-"cloud-computing",7,"cloud_containers_2","GCR","GCR",tautological-example
 "cloud-computing",7,"cloud_containers_2","GCR","GCR",identical-translation
-"cloud-computing",7,"cloud_containers_2","Push","Caricamento di immagine (push)",tautological-example
-"cloud-computing",7,"cloud_containers_2","Pull","Scaricamento di immagine (pull)",tautological-example
-"cloud-computing",7,"cloud_containers_2","Replication","Replicazione",near-identical-translation
 "cloud-computing",7,"cloud_containers_3","ECS","ECS",identical-translation
 "cloud-computing",7,"cloud_containers_4","Kubernetes","Kubernetes",identical-translation
 "cloud-computing",7,"cloud_containers_4","EKS","EKS",identical-translation
@@ -227,19 +199,15 @@ topicId,level,lesson,english,italian,issueType
 "cloud-computing",7,"cloud_containers_4","GKE","GKE",identical-translation
 "cloud-computing",7,"cloud_containers_4","Node","Nodo",near-identical-translation
 "cloud-computing",8,"cloud_iac_1","Imperative","Imperativo",near-identical-translation
-"cloud-computing",8,"cloud_iac_1","Provisioning Drift","Drift di provisioning",tautological-example
 "cloud-computing",8,"cloud_iac_1","Idempotent","Idempotente",near-identical-translation
 "cloud-computing",8,"cloud_iac_2","HCL","HCL",identical-translation
+"cloud-computing",8,"cloud_iac_2","Terraform Provider","Terraform Provider",identical-translation
 "cloud-computing",8,"cloud_iac_2","Variable","Variabile",near-identical-translation
 "cloud-computing",8,"cloud_iac_2","Module","Modulo",near-identical-translation
 "cloud-computing",8,"cloud_iac_4","CDK","CDK",identical-translation
-"cloud-computing",9,"cloud_cost_1","Pay-as-you-go","Pagamento a consumo (pay-as-you-go)",tautological-example
-"cloud-computing",9,"cloud_cost_1","On-Demand Pricing","Prezzo on-demand",tautological-example
 "cloud-computing",9,"cloud_cost_1","Credit","Credito",near-identical-translation
 "cloud-computing",9,"cloud_cost_2","CUR","CUR",identical-translation
-"cloud-computing",9,"cloud_cost_3","Rightsizing","Dimensionamento corretto (rightsizing)",tautological-example
 "cloud-computing",9,"cloud_cost_4","Forecasting","Forecasting",identical-translation
-"cloud-computing",10,"cloud_monitoring_1","CloudWatch","CloudWatch",tautological-example
 "cloud-computing",10,"cloud_monitoring_1","CloudWatch","CloudWatch",identical-translation
 "cloud-computing",10,"cloud_monitoring_1","Metric","Metrica",near-identical-translation
 "cloud-computing",10,"cloud_monitoring_1","Dimension","Dimensione",near-identical-translation
@@ -251,51 +219,34 @@ topicId,level,lesson,english,italian,issueType
 "cloud-computing",10,"cloud_monitoring_3","SNS Topic","SNS Topic",identical-translation
 "cloud-computing",10,"cloud_monitoring_3","Runbook","Runbook",identical-translation
 "cloud-computing",10,"cloud_monitoring_4","Observability","Observability",identical-translation
-"cloud-computing",10,"cloud_monitoring_4","Distributed Tracing","Tracing distribuito",tautological-example
 "cloud-computing",10,"cloud_monitoring_4","Span","Span",identical-translation
 "cloud-computing",10,"cloud_monitoring_4","OpenTelemetry","OpenTelemetry",identical-translation
 "cloud-computing",10,"cloud_monitoring_4","Sampling","Sampling",identical-translation
 "cloud-computing",10,"cloud_monitoring_4","APM","APM",identical-translation
-"cloud-computing",10,"cloud_monitoring_4","RUM","RUM",tautological-example
 "cloud-computing",10,"cloud_monitoring_4","RUM","RUM",identical-translation
 "cloud-computing",11,"cloud_security_1","KMS","KMS",identical-translation
 "cloud-computing",11,"cloud_security_1","Customer Managed Key","Customer Managed Key",identical-translation
-"cloud-computing",11,"cloud_security_1","Envelope Encryption","Envelope Encryption",tautological-example
 "cloud-computing",11,"cloud_security_1","Envelope Encryption","Envelope Encryption",identical-translation
 "cloud-computing",11,"cloud_security_1","Data Key","Data Key",identical-translation
 "cloud-computing",11,"cloud_security_1","HSM","HSM",identical-translation
 "cloud-computing",11,"cloud_security_2","Secrets Manager","Secrets Manager",identical-translation
 "cloud-computing",11,"cloud_security_2","Parameter Store","Parameter Store",identical-translation
-"cloud-computing",11,"cloud_security_2","HashiCorp Vault","HashiCorp Vault",tautological-example
 "cloud-computing",11,"cloud_security_2","HashiCorp Vault","HashiCorp Vault",identical-translation
-"cloud-computing",11,"cloud_security_2","External Secrets","External Secrets",tautological-example
 "cloud-computing",11,"cloud_security_2","External Secrets","External Secrets",identical-translation
 "cloud-computing",11,"cloud_security_2","Sealed Secret","Sealed Secret",identical-translation
 "cloud-computing",11,"cloud_security_2","SOPS","SOPS",identical-translation
 "cloud-computing",11,"cloud_security_3","WAF","WAF",identical-translation
 "cloud-computing",11,"cloud_security_3","Shield","Shield",identical-translation
-"cloud-computing",11,"cloud_security_3","DDoS Protection","Protezione DDoS",tautological-example
 "cloud-computing",11,"cloud_security_3","Rate Limiting","Rate Limiting",identical-translation
-"cloud-computing",11,"cloud_security_3","GuardDuty","GuardDuty",tautological-example
 "cloud-computing",11,"cloud_security_3","GuardDuty","GuardDuty",identical-translation
-"cloud-computing",11,"cloud_security_3","Security Hub","Security Hub",tautological-example
 "cloud-computing",11,"cloud_security_3","Security Hub","Security Hub",identical-translation
-"cloud-computing",11,"cloud_security_3","Macie","Macie",tautological-example
 "cloud-computing",11,"cloud_security_3","Macie","Macie",identical-translation
 "cloud-computing",11,"cloud_security_3","Inspector","Inspector",identical-translation
-"cloud-computing",11,"cloud_security_3","CloudTrail","CloudTrail",tautological-example
 "cloud-computing",11,"cloud_security_3","CloudTrail","CloudTrail",identical-translation
 "cloud-computing",11,"cloud_security_4","Audit Trail","Audit Trail",identical-translation
-"cloud-computing",11,"cloud_security_4","Defense in Depth","Difesa in profondità",tautological-example
-"cloud-computing",11,"cloud_security_4","Zero Trust","Zero Trust",tautological-example
 "cloud-computing",11,"cloud_security_4","Zero Trust","Zero Trust",identical-translation
 "cloud-computing",11,"cloud_security_4","Hardening","Hardening",identical-translation
 "cloud-computing",12,"cloud_architecture_1","Well-Architected Framework","Well-Architected Framework",identical-translation
-"cloud-computing",12,"cloud_architecture_1","Operational Excellence","Eccellenza operativa",tautological-example
-"cloud-computing",12,"cloud_architecture_1","Performance Efficiency","Efficienza delle performance",tautological-example
-"cloud-computing",12,"cloud_architecture_1","Cost Optimization","Ottimizzazione costi",tautological-example
-"cloud-computing",12,"cloud_architecture_2","High Availability","Alta disponibilità",tautological-example
-"cloud-computing",12,"cloud_architecture_2","Fault Tolerance","Tolleranza ai guasti",tautological-example
 "cloud-computing",12,"cloud_architecture_2","SLA","SLA",identical-translation
 "cloud-computing",12,"cloud_architecture_2","SLO","SLO",identical-translation
 "cloud-computing",12,"cloud_architecture_2","SLI","SLI",identical-translation
@@ -304,50 +255,38 @@ topicId,level,lesson,english,italian,issueType
 "cloud-computing",12,"cloud_architecture_3","Disaster Recovery","Disaster Recovery",identical-translation
 "cloud-computing",12,"cloud_architecture_3","RTO","RTO",identical-translation
 "cloud-computing",12,"cloud_architecture_3","RPO","RPO",identical-translation
-"cloud-computing",12,"cloud_architecture_3","Backup and Restore","Backup and Restore",tautological-example
 "cloud-computing",12,"cloud_architecture_3","Backup and Restore","Backup and Restore",identical-translation
 "cloud-computing",12,"cloud_architecture_3","Pilot Light","Pilot Light",identical-translation
-"cloud-computing",12,"cloud_architecture_3","Warm Standby","Warm Standby",tautological-example
 "cloud-computing",12,"cloud_architecture_3","Warm Standby","Warm Standby",identical-translation
 "cloud-computing",12,"cloud_architecture_3","Multi-Site","Multi-Site",identical-translation
-"cloud-computing",12,"cloud_architecture_3","Failback","Failback",tautological-example
 "cloud-computing",12,"cloud_architecture_3","Failback","Failback",identical-translation
 "cloud-computing",12,"cloud_architecture_4","Monolith","Monolite",near-identical-translation
 "cloud-computing",12,"cloud_architecture_4","StatefulSet","StatefulSet",identical-translation
-"cloud-computing",12,"cloud_architecture_4","Loose Coupling","Accoppiamento debole",tautological-example
-"cloud-computing",12,"cloud_architecture_4","Backpressure","Backpressure",tautological-example
 "cloud-computing",12,"cloud_architecture_4","Backpressure","Backpressure",identical-translation
 "cloud-computing",13,"cloud_services_1","SQS","SQS",identical-translation
 "cloud-computing",13,"cloud_services_1","Standard Queue","Standard Queue",identical-translation
 "cloud-computing",13,"cloud_services_1","FIFO Queue","FIFO Queue",identical-translation
-"cloud-computing",13,"cloud_services_1","Long Polling","Long Polling",tautological-example
 "cloud-computing",13,"cloud_services_1","Long Polling","Long Polling",identical-translation
 "cloud-computing",13,"cloud_services_1","Batch Receive","Batch Receive",identical-translation
 "cloud-computing",13,"cloud_services_2","Pub/Sub","Pub/Sub",identical-translation
 "cloud-computing",13,"cloud_services_2","SNS","SNS",identical-translation
 "cloud-computing",13,"cloud_services_2","Topic","Topic",identical-translation
 "cloud-computing",13,"cloud_services_2","Push Subscription","Push subscription",identical-translation
-"cloud-computing",13,"cloud_services_2","Message Filtering","Filtro messaggi",tautological-example
-"cloud-computing",13,"cloud_services_3","EventBridge","EventBridge",tautological-example
 "cloud-computing",13,"cloud_services_3","EventBridge","EventBridge",identical-translation
 "cloud-computing",13,"cloud_services_3","Target","Target",identical-translation
 "cloud-computing",13,"cloud_services_3","Schema Registry","Schema Registry",identical-translation
 "cloud-computing",13,"cloud_services_3","Archive","Archive",identical-translation
 "cloud-computing",13,"cloud_services_3","Replay","Replay",identical-translation
 "cloud-computing",13,"cloud_services_3","Event Pattern","Event Pattern",identical-translation
-"cloud-computing",13,"cloud_services_4","Kinesis","Kinesis",tautological-example
 "cloud-computing",13,"cloud_services_4","Kinesis","Kinesis",identical-translation
 "cloud-computing",13,"cloud_services_4","Shard","Shard",identical-translation
 "cloud-computing",13,"cloud_services_4","Producer","Producer",identical-translation
 "cloud-computing",13,"cloud_services_4","Consumer","Consumer",identical-translation
 "cloud-computing",13,"cloud_services_4","Kafka","Kafka",identical-translation
-"cloud-computing",13,"cloud_services_4","MSK","MSK",tautological-example
 "cloud-computing",13,"cloud_services_4","MSK","MSK",identical-translation
 "cloud-computing",13,"cloud_services_4","Firehose","Firehose",identical-translation
 "cloud-computing",14,"cloud_services_5","CDN","CDN",identical-translation
-"cloud-computing",14,"cloud_services_5","CloudFront","CloudFront",tautological-example
 "cloud-computing",14,"cloud_services_5","CloudFront","CloudFront",identical-translation
-"cloud-computing",14,"cloud_services_5","Cloudflare","Cloudflare",tautological-example
 "cloud-computing",14,"cloud_services_5","Cloudflare","Cloudflare",identical-translation
 "cloud-computing",14,"cloud_services_5","Edge Location (CDN)","Edge Location (CDN)",identical-translation
 "cloud-computing",14,"cloud_services_5","Origin","Origin",identical-translation
@@ -355,15 +294,11 @@ topicId,level,lesson,english,italian,issueType
 "cloud-computing",14,"cloud_services_5","Cache Behavior","Cache Behavior",identical-translation
 "cloud-computing",14,"cloud_services_5","Cache Invalidation","Cache Invalidation",identical-translation
 "cloud-computing",14,"cloud_services_5","OAI","OAI",identical-translation
-"cloud-computing",14,"cloud_services_6","Lambda@Edge","Lambda@Edge",tautological-example
 "cloud-computing",14,"cloud_services_6","Lambda@Edge","Lambda@Edge",identical-translation
-"cloud-computing",14,"cloud_services_6","CloudFront Functions","CloudFront Functions",tautological-example
 "cloud-computing",14,"cloud_services_6","CloudFront Functions","CloudFront Functions",identical-translation
-"cloud-computing",14,"cloud_services_6","Cloudflare Workers","Cloudflare Workers",tautological-example
 "cloud-computing",14,"cloud_services_6","Cloudflare Workers","Cloudflare Workers",identical-translation
 "cloud-computing",14,"cloud_services_6","Viewer Request","Viewer Request",identical-translation
 "cloud-computing",14,"cloud_services_6","Origin Request","Origin Request",identical-translation
-"cloud-computing",14,"cloud_services_6","Edge Computing (serverless edge)","Edge computing (serverless al perimetro)",tautological-example
 "cloud-computing",14,"cloud_services_6","A/B Testing at Edge","A/B testing all'edge",near-identical-translation
 "cloud-computing",14,"cloud_services_7","Cache Hit Ratio","Cache Hit Ratio",identical-translation
 "cloud-computing",14,"cloud_services_7","Cache-Control","Cache-Control",identical-translation
@@ -371,53 +306,33 @@ topicId,level,lesson,english,italian,issueType
 "cloud-computing",14,"cloud_services_7","Origin Shield","Origin Shield",identical-translation
 "cloud-computing",14,"cloud_services_7","Purge","Purge",identical-translation
 "cloud-computing",14,"cloud_services_7","Bypass Cache","Bypass Cache",identical-translation
-"cloud-computing",14,"cloud_services_7","CDN Egress","CDN Egress",tautological-example
 "cloud-computing",14,"cloud_services_7","CDN Egress","CDN Egress",identical-translation
-"cloud-computing",14,"cloud_services_8","Anycast","Anycast",tautological-example
 "cloud-computing",14,"cloud_services_8","Anycast","Anycast",identical-translation
 "cloud-computing",14,"cloud_services_8","Global Accelerator","Global Accelerator",identical-translation
-"cloud-computing",14,"cloud_services_8","Cloud Armor","Cloud Armor",tautological-example
 "cloud-computing",14,"cloud_services_8","Cloud Armor","Cloud Armor",identical-translation
-"cloud-computing",14,"cloud_services_8","TCP Acceleration","Accelerazione TCP",tautological-example
 "cloud-computing",14,"cloud_services_8","HTTP/3","HTTP/3",identical-translation
-"cloud-computing",14,"cloud_services_8","QUIC","QUIC",tautological-example
 "cloud-computing",14,"cloud_services_8","QUIC","QUIC",identical-translation
 "cloud-computing",14,"cloud_services_8","PoP","PoP",identical-translation
 "cloud-computing",15,"cloud_migration_1","Lift and Shift","Lift and Shift",identical-translation
-"cloud-computing",15,"cloud_migration_1","Rehosting","Rehosting",tautological-example
 "cloud-computing",15,"cloud_migration_1","Rehosting","Rehosting",identical-translation
 "cloud-computing",15,"cloud_migration_1","Re-platform","Re-platform",identical-translation
 "cloud-computing",15,"cloud_migration_1","Re-architect","Re-architect",identical-translation
 "cloud-computing",15,"cloud_migration_1","Refactor","Refactor",identical-translation
-"cloud-computing",15,"cloud_migration_1","Repurchase","Repurchase",tautological-example
 "cloud-computing",15,"cloud_migration_1","Repurchase","Repurchase",identical-translation
 "cloud-computing",15,"cloud_migration_1","Retire","Retire",identical-translation
 "cloud-computing",15,"cloud_migration_1","Retain","Retain",identical-translation
-"cloud-computing",15,"cloud_migration_2","Migration Hub","Migration Hub",tautological-example
 "cloud-computing",15,"cloud_migration_2","Migration Hub","Migration Hub",identical-translation
-"cloud-computing",15,"cloud_migration_2","AWS MGN","AWS MGN",tautological-example
 "cloud-computing",15,"cloud_migration_2","AWS MGN","AWS MGN",identical-translation
-"cloud-computing",15,"cloud_migration_2","Azure Migrate","Azure Migrate",tautological-example
 "cloud-computing",15,"cloud_migration_2","Azure Migrate","Azure Migrate",identical-translation
-"cloud-computing",15,"cloud_migration_2","GCP Migrate for Compute Engine","GCP Migrate for Compute Engine",tautological-example
 "cloud-computing",15,"cloud_migration_2","GCP Migrate for Compute Engine","GCP Migrate for Compute Engine",identical-translation
-"cloud-computing",15,"cloud_migration_2","DMS","DMS",tautological-example
 "cloud-computing",15,"cloud_migration_2","DMS","DMS",identical-translation
-"cloud-computing",15,"cloud_migration_2","Snowball","Snowball",tautological-example
 "cloud-computing",15,"cloud_migration_2","Snowball","Snowball",identical-translation
-"cloud-computing",15,"cloud_migration_2","DataSync","DataSync",tautological-example
 "cloud-computing",15,"cloud_migration_2","DataSync","DataSync",identical-translation
-"cloud-computing",15,"cloud_migration_2","Storage Gateway","Storage Gateway",tautological-example
 "cloud-computing",15,"cloud_migration_2","Storage Gateway","Storage Gateway",identical-translation
-"cloud-computing",15,"cloud_migration_2","CloudEndure","CloudEndure",tautological-example
 "cloud-computing",15,"cloud_migration_2","CloudEndure","CloudEndure",identical-translation
 "cloud-computing",15,"cloud_migration_3","Discovery","Discovery",identical-translation
 "cloud-computing",15,"cloud_migration_3","Cutover","Cutover",identical-translation
 "cloud-computing",15,"cloud_migration_3","Validation","Validazione",near-identical-translation
-"cloud-computing",15,"cloud_migration_3","Decommission","Dismissione",tautological-example
-"cloud-computing",15,"cloud_migration_4","Modernization","Modernizzazione",tautological-example
-"cloud-computing",15,"cloud_migration_4","Containerization","Containerizzazione",tautological-example
-"cloud-computing",15,"cloud_migration_4","Replatforming","Replatforming",tautological-example
 "cloud-computing",15,"cloud_migration_4","Replatforming","Replatforming",identical-translation
 "cloud-computing",15,"cloud_migration_4","Greenfield","Greenfield",identical-translation
 "cloud-computing",15,"cloud_migration_4","Brownfield","Brownfield",identical-translation
@@ -425,81 +340,47 @@ topicId,level,lesson,english,italian,issueType
 "cloud-computing",16,"cloud_architecture_5","Multi-Cloud (strategy)","Multi-Cloud (strategia)",near-identical-translation
 "cloud-computing",16,"cloud_architecture_5","Vendor Lock-in","Vendor Lock-in",identical-translation
 "cloud-computing",16,"cloud_architecture_5","Cloud-Agnostic","Cloud-Agnostic",identical-translation
-"cloud-computing",16,"cloud_architecture_5","Crossplane (control plane)","Crossplane (control plane)",tautological-example
 "cloud-computing",16,"cloud_architecture_5","Crossplane (control plane)","Crossplane (control plane)",identical-translation
-"cloud-computing",16,"cloud_architecture_5","Anthos","Anthos",tautological-example
 "cloud-computing",16,"cloud_architecture_5","Anthos","Anthos",identical-translation
-"cloud-computing",16,"cloud_architecture_5","AWS Outposts","AWS Outposts",tautological-example
 "cloud-computing",16,"cloud_architecture_5","AWS Outposts","AWS Outposts",identical-translation
-"cloud-computing",16,"cloud_architecture_5","Azure Arc","Azure Arc",tautological-example
 "cloud-computing",16,"cloud_architecture_5","Azure Arc","Azure Arc",identical-translation
-"cloud-computing",16,"cloud_architecture_5","Distributed Cloud","Distributed Cloud",tautological-example
 "cloud-computing",16,"cloud_architecture_5","Distributed Cloud","Distributed Cloud",identical-translation
 "cloud-computing",16,"cloud_architecture_6","Portability","Portabilità",near-identical-translation
 "cloud-computing",16,"cloud_architecture_6","Open Source","Open Source",identical-translation
-"cloud-computing",16,"cloud_architecture_6","CNCF","CNCF",tautological-example
 "cloud-computing",16,"cloud_architecture_6","CNCF","CNCF",identical-translation
-"cloud-computing",16,"cloud_architecture_6","MinIO","MinIO",tautological-example
 "cloud-computing",16,"cloud_architecture_6","MinIO","MinIO",identical-translation
-"cloud-computing",16,"cloud_architecture_6","Knative","Knative",tautological-example
 "cloud-computing",16,"cloud_architecture_6","Knative","Knative",identical-translation
-"cloud-computing",16,"cloud_architecture_6","Serverless Framework","Serverless Framework",tautological-example
 "cloud-computing",16,"cloud_architecture_6","Serverless Framework","Serverless Framework",identical-translation
-"cloud-computing",16,"cloud_architecture_6","Workload Mobility","Workload Mobility",tautological-example
 "cloud-computing",16,"cloud_architecture_6","Workload Mobility","Workload Mobility",identical-translation
-"cloud-computing",16,"cloud_architecture_6","Cloud Bursting","Cloud Bursting",tautological-example
 "cloud-computing",16,"cloud_architecture_6","Cloud Bursting","Cloud Bursting",identical-translation
-"cloud-computing",16,"cloud_architecture_7","Spinnaker","Spinnaker",tautological-example
 "cloud-computing",16,"cloud_architecture_7","Spinnaker","Spinnaker",identical-translation
-"cloud-computing",16,"cloud_architecture_7","Rancher","Rancher",tautological-example
 "cloud-computing",16,"cloud_architecture_7","Rancher","Rancher",identical-translation
 "cloud-computing",16,"cloud_architecture_7","Service Mesh (multi-cluster)","Service mesh (multi-cluster)",identical-translation
 "cloud-computing",16,"cloud_architecture_7","Multi-Cluster","Multi-Cluster",identical-translation
 "cloud-computing",16,"cloud_architecture_7","Federation (multi-cluster)","Federazione (multi-cluster)",near-identical-translation
 "cloud-computing",16,"cloud_architecture_7","CMP","CMP",identical-translation
-"cloud-computing",16,"cloud_architecture_7","Argo CD","Argo CD",tautological-example
 "cloud-computing",16,"cloud_architecture_7","Argo CD","Argo CD",identical-translation
-"cloud-computing",16,"cloud_architecture_7","Cluster API","Cluster API",tautological-example
 "cloud-computing",16,"cloud_architecture_7","Cluster API","Cluster API",identical-translation
-"cloud-computing",16,"cloud_architecture_8","Data Egress Cost","Costo egress dati",tautological-example
-"cloud-computing",16,"cloud_architecture_8","Identity Federation","Federazione identità",tautological-example
-"cloud-computing",16,"cloud_architecture_8","Provider Neutrality","Neutralità del provider",tautological-example
-"cloud-computing",16,"cloud_architecture_8","Hybrid Identity","Identità ibrida",tautological-example
 "cloud-computing",17,"cloud_services_9","CodePipeline","CodePipeline",identical-translation
-"cloud-computing",17,"cloud_services_9","CodeBuild","CodeBuild",tautological-example
 "cloud-computing",17,"cloud_services_9","CodeBuild","CodeBuild",identical-translation
-"cloud-computing",17,"cloud_services_9","CodeDeploy","CodeDeploy",tautological-example
 "cloud-computing",17,"cloud_services_9","CodeDeploy","CodeDeploy",identical-translation
-"cloud-computing",17,"cloud_services_9","CodeCommit","CodeCommit",tautological-example
 "cloud-computing",17,"cloud_services_9","CodeCommit","CodeCommit",identical-translation
-"cloud-computing",17,"cloud_services_9","CodeArtifact","CodeArtifact",tautological-example
 "cloud-computing",17,"cloud_services_9","CodeArtifact","CodeArtifact",identical-translation
-"cloud-computing",17,"cloud_services_9","CodeStar","CodeStar",tautological-example
 "cloud-computing",17,"cloud_services_9","CodeStar","CodeStar",identical-translation
-"cloud-computing",17,"cloud_services_10","Azure DevOps","Azure DevOps",tautological-example
 "cloud-computing",17,"cloud_services_10","Azure DevOps","Azure DevOps",identical-translation
-"cloud-computing",17,"cloud_services_10","Azure Pipelines","Azure Pipelines",tautological-example
 "cloud-computing",17,"cloud_services_10","Azure Pipelines","Azure Pipelines",identical-translation
-"cloud-computing",17,"cloud_services_10","Azure Repos","Azure Repos",tautological-example
 "cloud-computing",17,"cloud_services_10","Azure Repos","Azure Repos",identical-translation
-"cloud-computing",17,"cloud_services_10","Azure Boards","Azure Boards",tautological-example
 "cloud-computing",17,"cloud_services_10","Azure Boards","Azure Boards",identical-translation
-"cloud-computing",17,"cloud_services_10","Azure Artifacts","Azure Artifacts",tautological-example
 "cloud-computing",17,"cloud_services_10","Azure Artifacts","Azure Artifacts",identical-translation
 "cloud-computing",17,"cloud_services_10","Self-Hosted Agent","Self-Hosted Agent",identical-translation
 "cloud-computing",17,"cloud_services_10","YAML Pipeline","YAML Pipeline",identical-translation
 "cloud-computing",17,"cloud_services_10","Multi-Stage Pipeline","Multi-Stage Pipeline",identical-translation
-"cloud-computing",17,"cloud_services_11","Cloud Build","Cloud Build",tautological-example
 "cloud-computing",17,"cloud_services_11","Cloud Build","Cloud Build",identical-translation
-"cloud-computing",17,"cloud_services_11","Cloud Source Repositories","Cloud Source Repositories",tautological-example
 "cloud-computing",17,"cloud_services_11","Cloud Source Repositories","Cloud Source Repositories",identical-translation
-"cloud-computing",17,"cloud_services_11","Artifact Registry","Artifact Registry",tautological-example
 "cloud-computing",17,"cloud_services_11","Artifact Registry","Artifact Registry",identical-translation
-"cloud-computing",17,"cloud_services_11","Cloud Deploy","Cloud Deploy",tautological-example
 "cloud-computing",17,"cloud_services_11","Cloud Deploy","Cloud Deploy",identical-translation
 "cloud-computing",17,"cloud_services_11","cloudbuild.yaml","cloudbuild.yaml",identical-translation
 "cloud-computing",17,"cloud_services_11","Custom Builder","Custom Builder",identical-translation
-"cloud-computing",17,"cloud_services_11","Container Analysis","Container Analysis",tautological-example
 "cloud-computing",17,"cloud_services_11","Container Analysis","Container Analysis",identical-translation
 "cloud-computing",18,"cloud_services_13","Redshift","Redshift",identical-translation
 "cloud-computing",18,"cloud_services_13","BigQuery","BigQuery",identical-translation
@@ -546,23 +427,6 @@ topicId,level,lesson,english,italian,issueType
 "cloud-computing",23,"cloud_foundations_6","CKA","CKA",identical-translation
 "cloud-computing",23,"cloud_foundations_6","CKAD","CKAD",identical-translation
 "cloud-computing",23,"cloud_foundations_7","SRE","SRE",identical-translation
-"cloud-computing",0,"cloud_foundations_1","Provider","",duplicate-across-lessons
-"cloud-computing",8,"cloud_iac_2","Provider","",duplicate-across-lessons
-"cloud-computing",0,"cloud_foundations_1","Resource","",duplicate-across-lessons
-"cloud-computing",4,"cloud_iam_2","Resource","",duplicate-across-lessons
-"cloud-computing",8,"cloud_iac_2","Resource","",duplicate-across-lessons
-"cloud-computing",0,"cloud_foundations_2","Pay-as-you-go","",duplicate-across-lessons
-"cloud-computing",9,"cloud_cost_1","Pay-as-you-go","",duplicate-across-lessons
-"cloud-computing",1,"cloud_compute_2","Spot Instance","",duplicate-across-lessons
-"cloud-computing",9,"cloud_cost_1","Spot Instance","",duplicate-across-lessons
-"cloud-computing",1,"cloud_compute_2","Reserved Instance","",duplicate-across-lessons
-"cloud-computing",9,"cloud_cost_1","Reserved Instance","",duplicate-across-lessons
-"cloud-computing",2,"cloud_storage_4","Replication","",duplicate-across-lessons
-"cloud-computing",7,"cloud_containers_2","Replication","",duplicate-across-lessons
-"cloud-computing",3,"cloud_networking_3","TTL","",duplicate-across-lessons
-"cloud-computing",6,"cloud_database_3","TTL","",duplicate-across-lessons
-"cloud-computing",3,"cloud_networking_4","Endpoint","",duplicate-across-lessons
-"cloud-computing",5,"cloud_serverless_2","Endpoint","",duplicate-across-lessons
 "cpp",0,"cpp_foundations_1","Class","Classe",near-identical-translation
 "cpp",0,"cpp_foundations_4","Boolean","Booleano",near-identical-translation
 "cpp",1,"cpp_foundations_7","Enum Class","enum class",identical-translation
@@ -570,7 +434,6 @@ topicId,level,lesson,english,italian,issueType
 "cpp",2,"cpp_oop_2","Public","public",identical-translation
 "cpp",2,"cpp_oop_2","Private","private",identical-translation
 "cpp",2,"cpp_oop_2","Protected","protected",identical-translation
-"cpp",2,"cpp_oop_3","Defaulted Function","Funzione di default",trivial-example
 "cpp",3,"cpp_oop_5","Superclass","Superclasse",near-identical-translation
 "cpp",3,"cpp_oop_7","Implementation","Implementazione",near-identical-translation
 "cpp",3,"cpp_oop_8","Composition","Composizione",near-identical-translation
@@ -589,31 +452,22 @@ topicId,level,lesson,english,italian,issueType
 "cpp",9,"cpp_memory_4","Acquisition","Acquisizione",near-identical-translation
 "cpp",10,"cpp_exceptions_3","Noexcept","noexcept",identical-translation
 "cpp",10,"cpp_exceptions_4","Assertion","Asserzione",near-identical-translation
-"cpp",11,"cpp_lambdas_1","Init Capture","Cattura con inizializzazione",trivial-example
 "cpp",11,"cpp_lambdas_2","Functor","Funtore",near-identical-translation
-"cpp",11,"cpp_lambdas_3","Generic Lambda","Lambda generica",trivial-example
-"cpp",11,"cpp_lambdas_3","Stateful Lambda","Lambda con stato",trivial-example
-"cpp",11,"cpp_lambdas_4","Function Composition","Composizione di funzioni",trivial-example
 "cpp",12,"cpp_modern_cpp_1","Decltype","decltype",identical-translation
 "cpp",12,"cpp_modern_cpp_1","Decltype Auto","decltype(auto)",near-identical-translation
 "cpp",12,"cpp_modern_cpp_1","Nullptr","nullptr",identical-translation
 "cpp",12,"cpp_modern_cpp_2","Std Move","std::move",near-identical-translation
 "cpp",12,"cpp_modern_cpp_2","Lvalue","lvalue",identical-translation
-"cpp",12,"cpp_modern_cpp_2","Lvalue","lvalue",trivial-example
 "cpp",12,"cpp_modern_cpp_2","Rvalue","rvalue",identical-translation
 "cpp",12,"cpp_modern_cpp_2","Xvalue","xvalue",identical-translation
 "cpp",12,"cpp_modern_cpp_2","Prvalue","prvalue",identical-translation
-"cpp",12,"cpp_modern_cpp_3","Default Function","Funzione di default",trivial-example
-"cpp",12,"cpp_modern_cpp_3","Modern Deleted Function","Funzione eliminata (modern C++)",trivial-example
-"cpp",13,"cpp_modern_cpp_5","Structured Bindings","Binding strutturato",trivial-example
-"cpp",13,"cpp_modern_cpp_5","If Init","If con init",trivial-example
 "cpp",13,"cpp_modern_cpp_5","Std Optional","std::optional",near-identical-translation
 "cpp",13,"cpp_modern_cpp_5","Std Variant","std::variant",near-identical-translation
 "cpp",13,"cpp_modern_cpp_5","Std Any","std::any",near-identical-translation
 "cpp",13,"cpp_modern_cpp_5","Std String View","std::string_view",near-identical-translation
 "cpp",13,"cpp_modern_cpp_7","Generator","Generatore",near-identical-translation
 "cpp",13,"cpp_modern_cpp_8","Module","Modulo",near-identical-translation
-"cpp",14,"cpp_templates_6","Tag Dispatch","Tag dispatch",identical-translation
+"cpp",14,"cpp_templates_6","Iterator Tag Dispatch","Iterator tag dispatch",identical-translation
 "cpp",15,"cpp_concurrency_1","Sleep For","Sleep per",near-identical-translation
 "cpp",16,"cpp_memory_7","Move Special","Move speciale",near-identical-translation
 "cpp",18,"cpp_io_1","Scientific","Scientifico",near-identical-translation
@@ -630,22 +484,6 @@ topicId,level,lesson,english,italian,issueType
 "cpp",22,"cpp_testing_4","Lcov","lcov",identical-translation
 "cpp",23,"cpp_foundations_10","Cppcheck","cppcheck",identical-translation
 "cpp",23,"cpp_foundations_11","Use Auto","Usa auto",near-identical-translation
-"cpp",1,"cpp_foundations_8","File Stream","",duplicate-across-lessons
-"cpp",18,"cpp_io_2","File Stream","",duplicate-across-lessons
-"cpp",3,"cpp_oop_8","Mixin","",duplicate-across-lessons
-"cpp",17,"cpp_patterns_2","Mixin","",duplicate-across-lessons
-"cpp",4,"cpp_oop_12","Tag Dispatch","",duplicate-across-lessons
-"cpp",14,"cpp_templates_6","Tag Dispatch","",duplicate-across-lessons
-"cpp",4,"cpp_oop_12","Static Polymorphism","",duplicate-across-lessons
-"cpp",14,"cpp_templates_8","Static Polymorphism","",duplicate-across-lessons
-"cpp",8,"cpp_templates_4","Template Bloat","",duplicate-across-lessons
-"cpp",14,"cpp_templates_8","Template Bloat","",duplicate-across-lessons
-"cpp",9,"cpp_memory_4","Lock Guard","",duplicate-across-lessons
-"cpp",15,"cpp_concurrency_2","Lock Guard","",duplicate-across-lessons
-"cpp",12,"cpp_modern_cpp_4","Thread","",duplicate-across-lessons
-"cpp",15,"cpp_concurrency_1","Thread","",duplicate-across-lessons
-"cpp",12,"cpp_modern_cpp_4","Type Traits","",duplicate-across-lessons
-"cpp",14,"cpp_templates_7","Type Traits","",duplicate-across-lessons
 "cybersecurity",0,"cyber_basics_1","Attack","Attacco",near-identical-translation
 "cybersecurity",0,"cyber_basics_1","Data","Dati",near-identical-translation
 "cybersecurity",0,"cyber_basics_2","Credential","Credenziale",near-identical-translation
@@ -655,11 +493,7 @@ topicId,level,lesson,english,italian,issueType
 "cybersecurity",1,"threats_defense_intro","Quarantine","Quarantena",near-identical-translation
 "cybersecurity",2,"defense_auth","Biometrics","Biometria",near-identical-translation
 "cybersecurity",2,"defense_auth","Session","Sessione",near-identical-translation
-"cybersecurity",2,"defense_endpoint","next-generation antivirus","antivirus di nuova generazione",tautological-example
-"cybersecurity",2,"defense_crypto_basics","HTTPS strict transport","HTTPS strict transport (HSTS)",fake-translation
-"cybersecurity",2,"defense_crypto_basics","end-to-end encryption","crittografia end-to-end",tautological-example
 "cybersecurity",4,"crypto_hash","Collision","Collisione",near-identical-translation
-"cybersecurity",4,"crypto_hash","digital signature verification","verifica della firma digitale",tautological-example
 "cybersecurity",5,"web_auth","Credential Stuffing","Credential Stuffing",identical-translation
 "cybersecurity",7,"ir_process","Preparation","Preparazione",near-identical-translation
 "cybersecurity",7,"ir_process","Eradication","Eradicazione",near-identical-translation
@@ -671,7 +505,6 @@ topicId,level,lesson,english,italian,issueType
 "cybersecurity",10,"adv_offensive","Post-Exploitation","Post-Exploitation",identical-translation
 "cybersecurity",11,"grc_career","Certification","Certificazione",near-identical-translation
 "databases",0,"db_foundations_3","NOT NULL","Non nullo",near-identical-translation
-"databases",0,"db_foundations_4","Disk Persistence","Persistenza su disco",tautological-example
 "databases",0,"db_foundations_4","Disk","Disco",near-identical-translation
 "databases",0,"db_foundations_4","Data","Dati",near-identical-translation
 "databases",0,"db_foundations_4","Metadata","Metadati",near-identical-translation
@@ -682,9 +515,7 @@ topicId,level,lesson,english,italian,issueType
 "databases",3,"db_design_1","Attribute","Attributo",near-identical-translation
 "databases",4,"db_normalization_1","Decomposition","Decomposizione",near-identical-translation
 "databases",4,"db_normalization_3","Anomaly","Anomalia",near-identical-translation
-"databases",4,"db_normalization_3","Dependency Preservation","Preservazione delle dipendenze",tautological-example
 "databases",4,"db_normalization_4","Pre-aggregation","Pre-aggregazione",near-identical-translation
-"databases",5,"db_indexing_3","Over-indexing","Eccesso di indici",tautological-example
 "databases",5,"db_indexing_4","JSON Index","JSON Index",identical-translation
 "databases",5,"db_indexing_4","Heap","Heap",identical-translation
 "databases",5,"db_indexing_4","IOT","IOT",identical-translation
@@ -693,27 +524,14 @@ topicId,level,lesson,english,italian,issueType
 "databases",6,"db_transactions_1","ROLLBACK","ROLLBACK",identical-translation
 "databases",6,"db_transactions_1","SAVEPOINT","SAVEPOINT",identical-translation
 "databases",6,"db_transactions_1","Auto-commit","Auto-commit",identical-translation
-"databases",6,"db_transactions_1","Classic Two-Phase Commit","Two-Phase Commit classico",tautological-example
 "databases",6,"db_transactions_2","ACID","ACID",identical-translation
-"databases",6,"db_transactions_2","Atomicity","Atomicità",tautological-example
 "databases",6,"db_transactions_2","Atomicity","Atomicità",near-identical-translation
-"databases",6,"db_transactions_2","Consistency","Coerenza",tautological-example
-"databases",6,"db_transactions_2","Isolation","Isolamento",tautological-example
-"databases",6,"db_transactions_2","Durability","Durabilità",tautological-example
 "databases",6,"db_transactions_2","Durability","Durabilità",near-identical-translation
 "databases",6,"db_transactions_2","WAL","WAL",identical-translation
-"databases",6,"db_transactions_3","Read Uncommitted","Read Uncommitted",tautological-example
 "databases",6,"db_transactions_3","Read Uncommitted","Read Uncommitted",identical-translation
-"databases",6,"db_transactions_3","Read Committed","Read Committed",tautological-example
 "databases",6,"db_transactions_3","Read Committed","Read Committed",identical-translation
-"databases",6,"db_transactions_3","Repeatable Read","Repeatable Read",tautological-example
 "databases",6,"db_transactions_3","Repeatable Read","Repeatable Read",identical-translation
-"databases",6,"db_transactions_3","Serializable","Serializable",tautological-example
 "databases",6,"db_transactions_3","Serializable","Serializable",identical-translation
-"databases",6,"db_transactions_3","Snapshot Isolation","Isolamento snapshot",tautological-example
-"databases",6,"db_transactions_4","Postgres MVCC","MVCC di Postgres",tautological-example
-"databases",6,"db_transactions_4","Optimistic Locking","Lock ottimistico",tautological-example
-"databases",6,"db_transactions_4","Pessimistic Locking","Lock pessimistico",tautological-example
 "databases",7,"db_sql_9","NOT EXISTS","NOT EXISTS",identical-translation
 "databases",7,"db_sql_9","ANY","ANY",identical-translation
 "databases",7,"db_sql_9","ALL","ALL",identical-translation
@@ -722,43 +540,26 @@ topicId,level,lesson,english,italian,issueType
 "databases",7,"db_sql_10","WITH","WITH",identical-translation
 "databases",7,"db_sql_11","OVER","OVER",identical-translation
 "databases",7,"db_sql_11","PARTITION BY","PARTITION BY",identical-translation
-"databases",7,"db_sql_11","ROW_NUMBER","ROW_NUMBER",tautological-example
 "databases",7,"db_sql_11","ROW_NUMBER","ROW_NUMBER",identical-translation
-"databases",7,"db_sql_11","RANK","RANK",tautological-example
 "databases",7,"db_sql_11","RANK","RANK",identical-translation
-"databases",7,"db_sql_11","DENSE_RANK","DENSE_RANK",tautological-example
 "databases",7,"db_sql_11","DENSE_RANK","DENSE_RANK",identical-translation
-"databases",7,"db_sql_11","LAG","LAG",tautological-example
 "databases",7,"db_sql_11","LAG","LAG",identical-translation
-"databases",7,"db_sql_11","LEAD","LEAD",tautological-example
 "databases",7,"db_sql_11","LEAD","LEAD",identical-translation
-"databases",7,"db_sql_11","NTILE","NTILE",tautological-example
 "databases",7,"db_sql_11","NTILE","NTILE",identical-translation
 "databases",7,"db_sql_12","Trigger","Trigger",identical-translation
-"databases",7,"db_sql_12","PL/pgSQL","PL/pgSQL",tautological-example
 "databases",7,"db_sql_12","PL/pgSQL","PL/pgSQL",identical-translation
-"databases",7,"db_sql_12","PL/SQL","PL/SQL",tautological-example
 "databases",7,"db_sql_12","PL/SQL","PL/SQL",identical-translation
 "databases",7,"db_sql_12","EXEC","EXEC",identical-translation
 "databases",7,"db_sql_12","CALL","CALL",identical-translation
 "databases",8,"db_nosql_1","NewSQL","NewSQL",identical-translation
-"databases",8,"db_nosql_1","Polyglot Persistence","Persistenza poliglotta",tautological-example
-"databases",8,"db_nosql_2","Partition Tolerance","Tolleranza alle partizioni",tautological-example
-"databases",8,"db_nosql_2","BASE","BASE",tautological-example
 "databases",8,"db_nosql_2","BASE","BASE",identical-translation
-"databases",8,"db_nosql_2","DynamoDB Eventual Consistency","Coerenza eventuale in DynamoDB",tautological-example
-"databases",8,"db_nosql_2","Linearizability","Linearizzabilità",tautological-example
 "databases",8,"db_nosql_2","Linearizability","Linearizzabilità",near-identical-translation
-"databases",8,"db_nosql_2","PACELC","PACELC",tautological-example
 "databases",8,"db_nosql_2","PACELC","PACELC",identical-translation
 "databases",8,"db_nosql_2","Quorum","Quorum",identical-translation
 "databases",8,"db_nosql_3","BSON","BSON",identical-translation
-"databases",8,"db_nosql_4","Anti-Entropy","Anti-entropia",tautological-example
 "databases",8,"db_nosql_4","Anti-Entropy","Anti-entropia",near-identical-translation
 "databases",8,"db_nosql_4","CRDT","CRDT",identical-translation
 "databases",8,"db_nosql_4","Hinted Handoff","Hinted Handoff",identical-translation
-"databases",8,"db_nosql_4","Causal Consistency","Coerenza causale",tautological-example
-"databases",9,"db_nosql_5","MongoDB","MongoDB",tautological-example
 "databases",9,"db_nosql_5","MongoDB","MongoDB",identical-translation
 "databases",9,"db_nosql_5","ObjectId","ObjectId",identical-translation
 "databases",9,"db_nosql_5","find","find",identical-translation
@@ -778,21 +579,16 @@ topicId,level,lesson,english,italian,issueType
 "databases",9,"db_nosql_7","$group","$group",identical-translation
 "databases",9,"db_nosql_7","$project","$project",identical-translation
 "databases",9,"db_nosql_7","$sort","$sort",identical-translation
-"databases",9,"db_nosql_7","$lookup","$lookup",tautological-example
 "databases",9,"db_nosql_7","$lookup","$lookup",identical-translation
 "databases",9,"db_nosql_7","$unwind","$unwind",identical-translation
 "databases",9,"db_nosql_7","$limit","$limit",identical-translation
-"databases",9,"db_nosql_7","$facet","$facet",tautological-example
 "databases",9,"db_nosql_7","$facet","$facet",identical-translation
 "databases",9,"db_nosql_8","Oplog","Oplog",identical-translation
-"databases",9,"db_nosql_8","Sharding","Sharding",tautological-example
 "databases",9,"db_nosql_8","Sharding","Sharding",identical-translation
 "databases",9,"db_nosql_8","Mongos","Mongos",identical-translation
-"databases",10,"db_nosql_9","Redis","Redis",tautological-example
 "databases",10,"db_nosql_9","Redis","Redis",identical-translation
 "databases",10,"db_nosql_9","GET","GET",identical-translation
 "databases",10,"db_nosql_9","DEL","DEL",identical-translation
-"databases",10,"db_nosql_12","Redis Streams","Stream Redis",tautological-example
 "databases",10,"db_nosql_12","AOF","AOF",identical-translation
 "databases",11,"db_optimization_1","Buffers","Buffer",near-identical-translation
 "databases",11,"db_optimization_2","Statistics","Statistiche",near-identical-translation
@@ -803,19 +599,13 @@ topicId,level,lesson,english,italian,issueType
 "databases",12,"db_administration_1","pg_dump","pg_dump",identical-translation
 "databases",12,"db_administration_1","mysqldump","mysqldump",identical-translation
 "databases",12,"db_administration_2","pg_restore","pg_restore",identical-translation
-"databases",12,"db_administration_2","Point-in-Time Recovery","Recovery a un punto nel tempo",tautological-example
 "databases",12,"db_administration_2","RTO","RTO",identical-translation
 "databases",12,"db_administration_2","RPO","RPO",identical-translation
-"databases",12,"db_administration_2","WAL Archive","Archivio WAL",trivial-example
-"databases",12,"db_administration_2","Verify Backup","Verifica backup",tautological-example
 "databases",12,"db_administration_3","Privilege","Privilegio",near-identical-translation
 "databases",12,"db_administration_3","Role","Ruolo",near-identical-translation
 "databases",12,"db_administration_3","pg_hba.conf","pg_hba.conf",identical-translation
 "databases",13,"db_replication_1","Replication","Replicazione",near-identical-translation
 "databases",13,"db_replication_1","Primary-Replica","Primario-replica",near-identical-translation
-"databases",13,"db_replication_1","Streaming Replication","Replicazione streaming",tautological-example
-"databases",13,"db_replication_1","Physical Replication","Replicazione fisica",tautological-example
-"databases",13,"db_replication_3","Cascading Replication","Replicazione a cascata",tautological-example
 "databases",13,"db_replication_4","Patroni","Patroni",identical-translation
 "databases",13,"db_replication_4","pg_basebackup","pg_basebackup",identical-translation
 "databases",13,"db_replication_4","PgBouncer","PgBouncer",identical-translation
@@ -826,12 +616,6 @@ topicId,level,lesson,english,italian,issueType
 "databases",13,"db_replication_4","pglogical","pglogical",identical-translation
 "databases",13,"db_replication_4","Slony","Slony",identical-translation
 "databases",13,"db_replication_4","Repmgr","Repmgr",identical-translation
-"databases",14,"db_replication_5","Database Sharding","Sharding di database",tautological-example
-"databases",14,"db_replication_5","Hash Sharding","Sharding per hash",tautological-example
-"databases",14,"db_replication_5","Hash Sharding","Sharding per hash",trivial-example
-"databases",14,"db_replication_5","Directory-Based Sharding","Sharding basato su directory",tautological-example
-"databases",14,"db_replication_6","Consistent Hashing","Hashing consistente",tautological-example
-"databases",14,"db_replication_7","Partition Pruning","esclusione partizioni inutili (Partition Pruning)",tautological-example
 "databases",14,"db_replication_8","CockroachDB","CockroachDB",identical-translation
 "databases",14,"db_replication_8","YugabyteDB","YugabyteDB",identical-translation
 "databases",14,"db_replication_8","Paxos","Paxos",identical-translation
@@ -846,7 +630,6 @@ topicId,level,lesson,english,italian,issueType
 "databases",15,"db_sql_13","Foreign Data Wrapper","Foreign Data Wrapper",identical-translation
 "databases",15,"db_sql_13","Listen/Notify","Listen/Notify",identical-translation
 "databases",15,"db_sql_13","Logical Decoding","Logical Decoding",identical-translation
-"databases",15,"db_sql_13","Tablespace","Tablespace (PostgreSQL)",fake-translation
 "databases",15,"db_sql_14","InnoDB","InnoDB",identical-translation
 "databases",15,"db_sql_14","MyISAM","MyISAM",identical-translation
 "databases",15,"db_sql_14","MariaDB","MariaDB",identical-translation
@@ -857,10 +640,8 @@ topicId,level,lesson,english,italian,issueType
 "databases",15,"db_sql_14","Information Schema","Information Schema",identical-translation
 "databases",15,"db_sql_14","mysqlbinlog","mysqlbinlog",identical-translation
 "databases",15,"db_sql_15","Oracle Database","Oracle Database",identical-translation
-"databases",15,"db_sql_15","SQL Server","SQL Server",tautological-example
 "databases",15,"db_sql_15","SQL Server","SQL Server",identical-translation
 "databases",15,"db_sql_15","T-SQL","T-SQL",identical-translation
-"databases",15,"db_sql_15","T-SQL","T-SQL",redundant-note
 "databases",15,"db_sql_15","sqlcmd","sqlcmd",identical-translation
 "databases",15,"db_sql_15","Tablespace (Oracle)","Tablespace (Oracle)",identical-translation
 "databases",15,"db_sql_15","PDB","PDB",identical-translation
@@ -868,30 +649,23 @@ topicId,level,lesson,english,italian,issueType
 "databases",15,"db_sql_15","Always On","Always On",identical-translation
 "databases",15,"db_sql_15","Data Guard","Data Guard",identical-translation
 "databases",15,"db_sql_16","ANSI SQL","ANSI SQL",identical-translation
-"databases",15,"db_sql_16","SQL:2016","SQL:2016",tautological-example
 "databases",15,"db_sql_16","SQL:2016","SQL:2016",identical-translation
 "databases",15,"db_sql_16","SQL Dialect","SQL Dialect",identical-translation
 "databases",15,"db_sql_16","Portability","Portabilità",near-identical-translation
-"databases",15,"db_sql_16","Portability","Portabilità",trivial-example
 "databases",15,"db_sql_16","Vendor Lock-in","Vendor Lock-in",identical-translation
-"databases",15,"db_sql_16","OLTP","OLTP",tautological-example
 "databases",15,"db_sql_16","OLTP","OLTP",identical-translation
 "databases",15,"db_sql_16","OLAP","OLAP",identical-translation
 "databases",15,"db_sql_16","HTAP","HTAP",identical-translation
 "databases",15,"db_sql_16","DDL","DDL",identical-translation
 "databases",15,"db_sql_16","DML","DML",identical-translation
-"databases",16,"db_modeling_1","Star Schema","Star Schema (Dimensional)",fake-translation
 "databases",16,"db_modeling_1","Fact Table","Fact Table",identical-translation
 "databases",16,"db_modeling_1","Dimension Table","Dimension Table",identical-translation
 "databases",16,"db_modeling_1","Snowflake Schema","Snowflake Schema",identical-translation
-"databases",16,"db_modeling_1","Surrogate Key","Surrogate Key (Dimensional)",fake-translation
 "databases",16,"db_modeling_1","Grain","Grain",identical-translation
 "databases",16,"db_modeling_1","Conformed Dimension","Conformed Dimension",identical-translation
 "databases",16,"db_modeling_2","Slowly Changing Dimension","Slowly Changing Dimension",identical-translation
-"databases",16,"db_modeling_2","Slowly Changing Dimension","Slowly Changing Dimension",redundant-note
 "databases",16,"db_modeling_2","SCD Type 1","SCD Type 1",identical-translation
 "databases",16,"db_modeling_2","SCD Type 2","SCD Type 2",identical-translation
-"databases",16,"db_modeling_2","SCD Type 3","SCD Type 3",tautological-example
 "databases",16,"db_modeling_2","SCD Type 3","SCD Type 3",identical-translation
 "databases",16,"db_modeling_2","Effective Date","Effective Date",identical-translation
 "databases",16,"db_modeling_2","Current Flag","Current Flag",identical-translation
@@ -902,11 +676,9 @@ topicId,level,lesson,english,italian,issueType
 "databases",16,"db_modeling_3","Data Lake","Data Lake",identical-translation
 "databases",16,"db_modeling_3","Inmon Approach","Inmon Approach",identical-translation
 "databases",16,"db_modeling_3","Kimball Approach","Kimball Approach",identical-translation
-"databases",16,"db_modeling_3","Data Vault","Data Vault",tautological-example
 "databases",16,"db_modeling_3","Data Vault","Data Vault",identical-translation
 "databases",16,"db_modeling_3","Staging Area","Staging Area",identical-translation
 "databases",16,"db_modeling_3","Aggregate Table","Aggregate Table",identical-translation
-"databases",16,"db_modeling_3","Cube","Cube (OLAP Dimensional)",fake-translation
 "databases",16,"db_modeling_4","Normalization Level","Normalization Level",identical-translation
 "databases",16,"db_modeling_4","Wide Table","Wide Table",identical-translation
 "databases",16,"db_modeling_4","Narrow Table","Narrow Table",identical-translation
@@ -915,7 +687,6 @@ topicId,level,lesson,english,italian,issueType
 "databases",16,"db_modeling_4","Adjacency List","Adjacency List",identical-translation
 "databases",16,"db_modeling_4","Nested Set","Nested Set",identical-translation
 "databases",16,"db_modeling_4","Closure Table","Closure Table",identical-translation
-"databases",16,"db_modeling_4","Type 6 SCD","Type 6 SCD",tautological-example
 "databases",16,"db_modeling_4","Type 6 SCD","Type 6 SCD",identical-translation
 "databases",16,"db_modeling_4","OBT","OBT",identical-translation
 "databases",17,"db_security_1","SQL Injection","SQL Injection",identical-translation
@@ -924,7 +695,6 @@ topicId,level,lesson,english,italian,issueType
 "databases",17,"db_security_1","Escape","Escape",identical-translation
 "databases",17,"db_security_1","Input Validation","Input Validation",identical-translation
 "databases",17,"db_security_1","Allowlist","Allowlist",identical-translation
-"databases",17,"db_security_1","Blind SQL Injection","Blind SQL Injection",tautological-example
 "databases",17,"db_security_1","Blind SQL Injection","Blind SQL Injection",identical-translation
 "databases",17,"db_security_1","Time-Based Injection","Time-Based Injection",identical-translation
 "databases",17,"db_security_1","sqlmap","sqlmap",identical-translation
@@ -941,19 +711,15 @@ topicId,level,lesson,english,italian,issueType
 "databases",17,"db_security_3","Auditing","Auditing",identical-translation
 "databases",17,"db_security_3","Audit Log","Audit Log",identical-translation
 "databases",17,"db_security_3","pgaudit","pgaudit",identical-translation
-"databases",17,"db_security_3","pgaudit","pgaudit",trivial-example
 "databases",17,"db_security_3","Audit Trail","Audit Trail",identical-translation
-"databases",17,"db_security_3","GDPR","GDPR",tautological-example
 "databases",17,"db_security_3","GDPR","GDPR",identical-translation
 "databases",17,"db_security_3","PII","PII",identical-translation
 "databases",17,"db_security_3","Data Masking","Data Masking",identical-translation
 "databases",17,"db_security_3","Anonymization","Anonymization",identical-translation
-"databases",17,"db_security_3","Pseudonymization","Pseudonymization",tautological-example
 "databases",17,"db_security_3","Pseudonymization","Pseudonymization",identical-translation
 "databases",17,"db_security_4","Row-Level Security","Row-Level Security",identical-translation
 "databases",17,"db_security_4","Column-Level Security","Column-Level Security",identical-translation
 "databases",17,"db_security_4","RBAC","RBAC",identical-translation
-"databases",17,"db_security_4","ABAC","ABAC",tautological-example
 "databases",17,"db_security_4","ABAC","ABAC",identical-translation
 "databases",17,"db_security_4","Privilege Escalation","Privilege Escalation",identical-translation
 "databases",17,"db_security_4","SECURITY DEFINER","SECURITY DEFINER",identical-translation
@@ -962,43 +728,34 @@ topicId,level,lesson,english,italian,issueType
 "databases",17,"db_security_4","Service Account","Service Account",identical-translation
 "databases",17,"db_security_4","Secret Rotation","Secret Rotation",identical-translation
 "databases",18,"db_cloud_1","RDS","RDS",identical-translation
-"databases",18,"db_cloud_1","Aurora","Aurora",tautological-example
 "databases",18,"db_cloud_1","Aurora","Aurora",identical-translation
 "databases",18,"db_cloud_1","DynamoDB","DynamoDB",identical-translation
 "databases",18,"db_cloud_1","Redshift","Redshift",identical-translation
 "databases",18,"db_cloud_1","ElastiCache","ElastiCache",identical-translation
-"databases",18,"db_cloud_1","Aurora Serverless","Aurora Serverless",tautological-example
 "databases",18,"db_cloud_1","Aurora Serverless","Aurora Serverless",identical-translation
 "databases",18,"db_cloud_1","DAX","DAX",identical-translation
 "databases",18,"db_cloud_1","Multi-AZ","Multi-AZ",identical-translation
 "databases",18,"db_cloud_1","Read Replica (RDS)","Read Replica (RDS)",identical-translation
 "databases",18,"db_cloud_2","Azure SQL Database","Azure SQL Database",identical-translation
-"databases",18,"db_cloud_2","Cosmos DB","Cosmos DB",tautological-example
 "databases",18,"db_cloud_2","Cosmos DB","Cosmos DB",identical-translation
-"databases",18,"db_cloud_2","Cloud Spanner","Cloud Spanner",tautological-example
 "databases",18,"db_cloud_2","Cloud Spanner","Cloud Spanner",identical-translation
 "databases",18,"db_cloud_2","Cloud SQL","Cloud SQL",identical-translation
 "databases",18,"db_cloud_2","BigQuery","BigQuery",identical-translation
 "databases",18,"db_cloud_2","Bigtable","Bigtable",identical-translation
-"databases",18,"db_cloud_2","Firestore","Firestore",tautological-example
 "databases",18,"db_cloud_2","Firestore","Firestore",identical-translation
 "databases",18,"db_cloud_2","Memorystore","Memorystore",identical-translation
-"databases",18,"db_cloud_2","Azure Database for PostgreSQL","Azure Database for PostgreSQL",tautological-example
 "databases",18,"db_cloud_2","Azure Database for PostgreSQL","Azure Database for PostgreSQL",identical-translation
 "databases",18,"db_cloud_2","Hyperscale","Hyperscale",identical-translation
 "databases",18,"db_cloud_3","Serverless Database","Serverless Database",identical-translation
 "databases",18,"db_cloud_3","Auto-Pause","Auto-Pause",identical-translation
 "databases",18,"db_cloud_3","Cold Start","Cold Start",identical-translation
-"databases",18,"db_cloud_3","Neon","Neon",tautological-example
 "databases",18,"db_cloud_3","Neon","Neon",identical-translation
-"databases",18,"db_cloud_3","PlanetScale","PlanetScale",tautological-example
 "databases",18,"db_cloud_3","PlanetScale","PlanetScale",identical-translation
 "databases",18,"db_cloud_3","Compute Pause","Compute Pause",identical-translation
 "databases",18,"db_cloud_3","Pay Per Query","Pay Per Query",identical-translation
 "databases",18,"db_cloud_3","Capacity Unit","Capacity Unit",identical-translation
 "databases",18,"db_cloud_3","On-Demand","On-Demand",identical-translation
 "databases",18,"db_cloud_4","Managed Service","Managed Service",identical-translation
-"databases",18,"db_cloud_4","Snapshot","Snapshot (Cloud DB)",fake-translation
 "databases",18,"db_cloud_4","Automated Backup","Automated Backup",identical-translation
 "databases",18,"db_cloud_4","Reserved Capacity","Reserved Capacity",identical-translation
 "databases",18,"db_cloud_4","Region","Region",identical-translation
@@ -1007,28 +764,22 @@ topicId,level,lesson,english,italian,issueType
 "databases",18,"db_cloud_4","Private Endpoint","Private Endpoint",identical-translation
 "databases",18,"db_cloud_4","IAM Authentication","IAM Authentication",identical-translation
 "databases",18,"db_cloud_4","Performance Insights","Performance Insights",identical-translation
-"databases",19,"db_nosql_13","Graph Database","Graph Database (Native)",fake-translation
 "databases",19,"db_nosql_13","Node","Node",identical-translation
-"databases",19,"db_nosql_13","Edge","Edge (Graph)",fake-translation
 "databases",19,"db_nosql_13","Relationship (Graph)","Relationship (Graph)",identical-translation
 "databases",19,"db_nosql_13","Property Graph","Property Graph",identical-translation
 "databases",19,"db_nosql_13","RDF","RDF",identical-translation
 "databases",19,"db_nosql_13","Triple","Triple",identical-translation
 "databases",19,"db_nosql_13","Traversal","Traversal",identical-translation
 "databases",19,"db_nosql_13","Shortest Path","Shortest Path",identical-translation
-"databases",19,"db_nosql_13","Adjacency","Adjacency",tautological-example
 "databases",19,"db_nosql_13","Adjacency","Adjacency",identical-translation
-"databases",19,"db_nosql_14","Cypher","Cypher",tautological-example
 "databases",19,"db_nosql_14","Cypher","Cypher",identical-translation
 "databases",19,"db_nosql_14","MATCH","MATCH",identical-translation
 "databases",19,"db_nosql_14","CREATE (Cypher)","CREATE (Cypher)",identical-translation
-"databases",19,"db_nosql_14","MERGE","MERGE",tautological-example
 "databases",19,"db_nosql_14","MERGE","MERGE",identical-translation
 "databases",19,"db_nosql_14","RETURN","RETURN",identical-translation
 "databases",19,"db_nosql_14","Pattern","Pattern",identical-translation
 "databases",19,"db_nosql_14","Variable Length","Variable Length",identical-translation
 "databases",19,"db_nosql_14","WHERE (Cypher)","WHERE (Cypher)",identical-translation
-"databases",19,"db_nosql_14","WITH","WITH (Cypher Pipeline)",fake-translation
 "databases",19,"db_nosql_14","APOC","APOC",identical-translation
 "databases",19,"db_nosql_15","PageRank","PageRank",identical-translation
 "databases",19,"db_nosql_15","Centrality","Centrality",identical-translation
@@ -1036,12 +787,9 @@ topicId,level,lesson,english,italian,issueType
 "databases",19,"db_nosql_15","BFS","BFS",identical-translation
 "databases",19,"db_nosql_15","DFS","DFS",identical-translation
 "databases",19,"db_nosql_15","Dijkstra","Dijkstra",identical-translation
-"databases",19,"db_nosql_15","Cycle Detection","Cycle Detection",tautological-example
 "databases",19,"db_nosql_15","Cycle Detection","Cycle Detection",identical-translation
-"databases",19,"db_nosql_16","Neo4j","Neo4j",tautological-example
 "databases",19,"db_nosql_16","Neo4j","Neo4j",identical-translation
 "databases",19,"db_nosql_16","ArangoDB","ArangoDB",identical-translation
-"databases",19,"db_nosql_16","JanusGraph","JanusGraph",tautological-example
 "databases",19,"db_nosql_16","JanusGraph","JanusGraph",identical-translation
 "databases",19,"db_nosql_16","Amazon Neptune","Amazon Neptune",identical-translation
 "databases",19,"db_nosql_16","Gremlin","Gremlin",identical-translation
@@ -1060,14 +808,11 @@ topicId,level,lesson,english,italian,issueType
 "databases",20,"db_analytics_3","InfluxQL","InfluxQL",identical-translation
 "databases",20,"db_analytics_3","Flux","Flux",identical-translation
 "databases",20,"db_analytics_3","TimescaleDB","TimescaleDB",identical-translation
-"databases",20,"db_analytics_3","Prometheus","Prometheus",tautological-example
 "databases",20,"db_analytics_3","Prometheus","Prometheus",identical-translation
 "databases",20,"db_analytics_3","PromQL","PromQL",identical-translation
 "databases",20,"db_analytics_3","Graphite","Graphite",identical-translation
-"databases",20,"db_analytics_3","OpenTSDB","OpenTSDB",tautological-example
 "databases",20,"db_analytics_3","OpenTSDB","OpenTSDB",identical-translation
 "databases",20,"db_analytics_3","VictoriaMetrics","VictoriaMetrics",identical-translation
-"databases",20,"db_analytics_3","QuestDB","QuestDB",tautological-example
 "databases",20,"db_analytics_3","QuestDB","QuestDB",identical-translation
 "databases",20,"db_analytics_4","Telemetry","Telemetria",near-identical-translation
 "databases",20,"db_analytics_4","Gauge","Gauge",identical-translation
@@ -1087,16 +832,13 @@ topicId,level,lesson,english,italian,issueType
 "databases",21,"db_analytics_6","Producer","Producer",identical-translation
 "databases",21,"db_analytics_6","Consumer","Consumer",identical-translation
 "databases",21,"db_analytics_6","Partition","Partizione",near-identical-translation
-"databases",21,"db_analytics_6","Stream Processing","Stream processing",tautological-example
 "databases",21,"db_analytics_6","Stream Processing","Stream processing",identical-translation
-"databases",21,"db_analytics_6","Apache Flink","Apache Flink",tautological-example
 "databases",21,"db_analytics_6","Apache Flink","Apache Flink",identical-translation
 "databases",21,"db_analytics_7","Apache Airflow","Apache Airflow",identical-translation
 "databases",21,"db_analytics_7","DAG","DAG",identical-translation
 "databases",21,"db_analytics_7","Operator","Operator",identical-translation
 "databases",21,"db_analytics_7","Task","Task",identical-translation
 "databases",21,"db_analytics_7","Dagster","Dagster",identical-translation
-"databases",21,"db_analytics_7","Prefect","Prefect",tautological-example
 "databases",21,"db_analytics_7","Prefect","Prefect",identical-translation
 "databases",21,"db_analytics_7","Lineage","Lineage",identical-translation
 "databases",21,"db_analytics_7","SLA","SLA",identical-translation
@@ -1113,7 +855,6 @@ topicId,level,lesson,english,italian,issueType
 "databases",22,"db_transactions_5","SKIP LOCKED","SKIP LOCKED",identical-translation
 "databases",22,"db_transactions_5","Advisory Lock","Advisory lock",identical-translation
 "databases",22,"db_transactions_6","Wait-For Graph","Wait-for graph",identical-translation
-"databases",22,"db_transactions_6","Write Skew","Write skew",tautological-example
 "databases",22,"db_transactions_6","Write Skew","Write skew",identical-translation
 "databases",22,"db_transactions_7","PostgreSQL MVCC","PostgreSQL MVCC",identical-translation
 "databases",22,"db_transactions_7","XID","XID",identical-translation
@@ -1122,10 +863,7 @@ topicId,level,lesson,english,italian,issueType
 "databases",22,"db_transactions_7","Visibility","Visibilità",near-identical-translation
 "databases",22,"db_transactions_7","Bloat","Bloat",identical-translation
 "databases",22,"db_transactions_7","HOT Update","HOT update",identical-translation
-"databases",22,"db_transactions_8","Pessimistic Concurrency","Concorrenza pessimistica",tautological-example
 "databases",22,"db_transactions_8","Compare-and-Set","Compare-and-set",identical-translation
-"databases",22,"db_transactions_8","Distributed Two-Phase Commit","Two-phase commit distribuito",tautological-example
-"databases",22,"db_transactions_8","Distributed Eventual Consistency","Coerenza eventuale distribuita",tautological-example
 "databases",23,"db_administration_5","DBA","DBA",identical-translation
 "databases",23,"db_administration_5","SRE","SRE",identical-translation
 "databases",23,"db_administration_5","Database Engineer","Database engineer",identical-translation
@@ -1145,24 +883,6 @@ topicId,level,lesson,english,italian,issueType
 "databases",23,"db_administration_8","VACUUM FULL","VACUUM FULL",identical-translation
 "databases",23,"db_administration_8","Patch","Patch",identical-translation
 "databases",23,"db_administration_8","pg_upgrade","pg_upgrade",identical-translation
-"databases",0,"db_foundations_4","Tablespace","",duplicate-across-lessons
-"databases",15,"db_sql_13","Tablespace","",duplicate-across-lessons
-"databases",1,"db_sql_2","SET","",duplicate-across-lessons
-"databases",10,"db_nosql_9","SET","",duplicate-across-lessons
-"databases",2,"db_sql_6","CUBE","",duplicate-across-lessons
-"databases",16,"db_modeling_3","Cube","",duplicate-across-lessons
-"databases",3,"db_design_2","Surrogate Key","",duplicate-across-lessons
-"databases",16,"db_modeling_1","Surrogate Key","",duplicate-across-lessons
-"databases",3,"db_design_2","Natural Key","",duplicate-across-lessons
-"databases",16,"db_modeling_1","Natural Key","",duplicate-across-lessons
-"databases",4,"db_normalization_4","Star Schema","",duplicate-across-lessons
-"databases",16,"db_modeling_1","Star Schema","",duplicate-across-lessons
-"databases",7,"db_sql_9","EXISTS","",duplicate-across-lessons
-"databases",10,"db_nosql_9","EXISTS","",duplicate-across-lessons
-"databases",7,"db_sql_10","WITH","",duplicate-across-lessons
-"databases",19,"db_nosql_14","WITH","",duplicate-across-lessons
-"databases",8,"db_nosql_1","Graph Database","",duplicate-across-lessons
-"databases",19,"db_nosql_13","Graph Database","",duplicate-across-lessons
 "devsecops",0,"dso_shift_left_3","Operate","Operare",near-identical-translation
 "devsecops",1,"dso_ci_cd_3","GitHub Actions","GitHub Actions",identical-translation
 "devsecops",2,"dso_sast_1","False Positive","Falso positivo",near-identical-translation
@@ -1231,7 +951,6 @@ topicId,level,lesson,english,italian,issueType
 "devsecops",8,"dso_policy_3","Kyverno","Kyverno",identical-translation
 "devsecops",8,"dso_policy_4","Kubeconform","Kubeconform",identical-translation
 "devsecops",9,"dso_supply_chain_1","Attestation","Attestazione",near-identical-translation
-"devsecops",9,"dso_supply_chain_3","Cosign keyless signing","Firma keyless con Cosign",tautological-example
 "devsecops",10,"dso_compliance_as_code_1","Control","Controllo",near-identical-translation
 "devsecops",10,"dso_compliance_as_code_1","Evidence","Evidenza",near-identical-translation
 "devsecops",10,"dso_compliance_as_code_2","InSpec","InSpec",identical-translation
@@ -1270,7 +989,6 @@ topicId,level,lesson,english,italian,issueType
 "devsecops",14,"dso_tools_api_4","Postman","Postman",identical-translation
 "devsecops",14,"dso_tools_api_4","Schemathesis","Schemathesis",identical-translation
 "devsecops",15,"dso_tools_runtime_1","Contrast Security","Contrast Security",identical-translation
-"devsecops",15,"dso_tools_runtime_2","Falco runtime detection","Rilevamento runtime con Falco",tautological-example
 "devsecops",15,"dso_tools_runtime_2","AppArmor","AppArmor",identical-translation
 "devsecops",15,"dso_tools_runtime_2","Cilium","Cilium",identical-translation
 "devsecops",15,"dso_tools_runtime_3","CrowdStrike","CrowdStrike",identical-translation
@@ -1285,18 +1003,15 @@ topicId,level,lesson,english,italian,issueType
 "devsecops",16,"dso_ci_cd_gitops_1","Flux","Flux",identical-translation
 "devsecops",16,"dso_ci_cd_gitops_4","Mergify","Mergify",identical-translation
 "devsecops",17,"dso_tools_monitoring_1","Splunk","Splunk",identical-translation
-"devsecops",17,"dso_tools_monitoring_1","Microsoft Sentinel","Microsoft Sentinel",tautological-example
 "devsecops",17,"dso_tools_monitoring_1","Microsoft Sentinel","Microsoft Sentinel",identical-translation
 "devsecops",17,"dso_tools_monitoring_3","Loki","Loki",identical-translation
 "devsecops",17,"dso_tools_monitoring_3","Fluentd","Fluentd",identical-translation
 "devsecops",18,"dso_automation_incident_1","Incident","Incidente",near-identical-translation
 "devsecops",18,"dso_automation_incident_1","Scribe","Scriba",near-identical-translation
-"devsecops",18,"dso_automation_incident_2","Incident Triage","Triage degli incidenti",tautological-example
 "devsecops",18,"dso_automation_incident_2","Eradication","Eradicazione",near-identical-translation
 "devsecops",19,"dso_container_security_k8s_1","Verb","Verbo",near-identical-translation
 "devsecops",19,"dso_container_security_k8s_2","Calico","Calico",identical-translation
 "devsecops",19,"dso_container_security_k8s_2","Microsegmentation","Microsegmentazione",near-identical-translation
-"devsecops",19,"dso_container_security_k8s_3","Gatekeeper Constraints","Constraint Gatekeeper",tautological-example
 "devsecops",19,"dso_container_security_k8s_3","Mutation","Mutazione",near-identical-translation
 "devsecops",19,"dso_container_security_k8s_4","kubescape","kubescape",identical-translation
 "devsecops",20,"dso_culture_maturity_1","Activity","Attività",near-identical-translation
@@ -1307,7 +1022,6 @@ topicId,level,lesson,english,italian,issueType
 "devsecops",21,"dso_compliance_reg_2","ISO 27001","ISO 27001",identical-translation
 "devsecops",21,"dso_compliance_reg_2","Nonconformity","Non conformità",near-identical-translation
 "devsecops",21,"dso_compliance_reg_3","Segmentation","Segmentazione",near-identical-translation
-"devsecops",21,"dso_compliance_reg_3","FedRAMP Continuous Monitoring","Continuous monitoring FedRAMP",tautological-example
 "devsecops",21,"dso_compliance_reg_4","GDPR","GDPR",identical-translation
 "devsecops",22,"dso_culture_training_2","Hack the Box","Hack The Box",identical-translation
 "devsecops",22,"dso_culture_training_2","TryHackMe","TryHackMe",identical-translation
@@ -1457,7 +1171,6 @@ topicId,level,lesson,english,italian,issueType
 "ethical-hacking",8,"ethack_network_hacking_4","proxychains","proxychains",identical-translation
 "ethical-hacking",8,"ethack_network_hacking_4","sshuttle","sshuttle",identical-translation
 "ethical-hacking",9,"ethack_wireless_1","WPA2","WPA2",identical-translation
-"ethical-hacking",9,"ethack_wireless_1","WPA3","WPA3",tautological-example
 "ethical-hacking",9,"ethack_wireless_1","WPA3","WPA3",identical-translation
 "ethical-hacking",9,"ethack_wireless_1","PMKID","PMKID",identical-translation
 "ethical-hacking",9,"ethack_wireless_1","EAPOL","EAPOL",identical-translation
@@ -1465,7 +1178,6 @@ topicId,level,lesson,english,italian,issueType
 "ethical-hacking",9,"ethack_wireless_2","airodump-ng","airodump-ng",identical-translation
 "ethical-hacking",9,"ethack_wireless_2","aireplay-ng","aireplay-ng",identical-translation
 "ethical-hacking",9,"ethack_wireless_2","Wifite","Wifite",identical-translation
-"ethical-hacking",9,"ethack_wireless_2","Kismet","Kismet",tautological-example
 "ethical-hacking",9,"ethack_wireless_2","Kismet","Kismet",identical-translation
 "ethical-hacking",9,"ethack_wireless_2","Hashcat","Hashcat",identical-translation
 "ethical-hacking",9,"ethack_wireless_2","hcxdumptool","hcxdumptool",identical-translation
@@ -1482,7 +1194,6 @@ topicId,level,lesson,english,italian,issueType
 "ethical-hacking",10,"ethack_password_cracking_2","rockyou.txt","rockyou.txt",identical-translation
 "ethical-hacking",10,"ethack_password_cracking_2","CeWL","CeWL",identical-translation
 "ethical-hacking",10,"ethack_password_cracking_2","crunch","crunch",identical-translation
-"ethical-hacking",10,"ethack_password_cracking_3","Argon2","Hash moderno (Argon2)",tautological-example
 "ethical-hacking",10,"ethack_password_cracking_4","Mimikatz","Mimikatz",identical-translation
 "ethical-hacking",11,"ethack_post_exploitation_1","sudo -l","sudo -l",identical-translation
 "ethical-hacking",11,"ethack_post_exploitation_3","WinRM","WinRM",identical-translation
@@ -1515,7 +1226,6 @@ topicId,level,lesson,english,italian,issueType
 "ethical-hacking",13,"ethack_tools_3","Wireshark","Wireshark",identical-translation
 "ethical-hacking",13,"ethack_tools_3","tcpdump","tcpdump",identical-translation
 "ethical-hacking",13,"ethack_tools_3","tshark","tshark",identical-translation
-"ethical-hacking",13,"ethack_tools_3","Burp Suite Professional","Burp Suite Professional",tautological-example
 "ethical-hacking",13,"ethack_tools_3","Burp Suite Professional","Burp Suite Professional",identical-translation
 "ethical-hacking",13,"ethack_tools_3","Burp Extender","Burp Extender",identical-translation
 "ethical-hacking",13,"ethack_tools_3","Turbo Intruder","Turbo Intruder",identical-translation
@@ -1545,11 +1255,8 @@ topicId,level,lesson,english,italian,issueType
 "ethical-hacking",14,"ethack_advanced_tools_3","ADCS","ADCS",identical-translation
 "ethical-hacking",14,"ethack_advanced_tools_3","Certipy","Certipy",identical-translation
 "ethical-hacking",14,"ethack_advanced_tools_4","mitm6","mitm6",identical-translation
-"ethical-hacking",14,"ethack_advanced_tools_4","GetUserSPNs.py","GetUserSPNs.py",tautological-example
 "ethical-hacking",14,"ethack_advanced_tools_4","GetUserSPNs.py","GetUserSPNs.py",identical-translation
-"ethical-hacking",14,"ethack_advanced_tools_4","GetNPUsers.py","GetNPUsers.py",tautological-example
 "ethical-hacking",14,"ethack_advanced_tools_4","GetNPUsers.py","GetNPUsers.py",identical-translation
-"ethical-hacking",14,"ethack_advanced_tools_4","wmiexec.py","wmiexec.py",tautological-example
 "ethical-hacking",14,"ethack_advanced_tools_4","wmiexec.py","wmiexec.py",identical-translation
 "ethical-hacking",14,"ethack_advanced_tools_4","evil-winrm","evil-winrm",identical-translation
 "ethical-hacking",14,"ethack_advanced_tools_4","pwntools","pwntools",identical-translation
@@ -1616,8 +1323,6 @@ topicId,level,lesson,english,italian,issueType
 "ethical-hacking",21,"ethack_legal_3","Duplicate","Duplicato",near-identical-translation
 "ethical-hacking",22,"ethack_ctf_labs_2","OffSec PG","OffSec PG",identical-translation
 "ethical-hacking",23,"ethack_career_2","OSCE3","OSCE3",identical-translation
-"ethical-hacking",3,"ethack_active_recon_4","Wordlist","",duplicate-across-lessons
-"ethical-hacking",10,"ethack_password_cracking_2","Wordlist","",duplicate-across-lessons
 "git-vcs",0,"git_foundations_2","Author","Autore",near-identical-translation
 "git-vcs",0,"git_foundations_3","Version","Versione",near-identical-translation
 "git-vcs",0,"git_foundations_4","Collaboration","Collaborazione",near-identical-translation
@@ -1637,14 +1342,9 @@ topicId,level,lesson,english,italian,issueType
 "git-vcs",15,"git_internals_4","Protocol v2","Protocollo v2",near-identical-translation
 "git-vcs",16,"git_cicd_1","actions/checkout","Action checkout",near-identical-translation
 "git-vcs",20,"git_security_1","Credential Helper Store","credential helper store",identical-translation
-"git-vcs",21,"git_platforms_1","GitHub Enterprise","GitHub Enterprise",identical-translation
 "git-vcs",21,"git_platforms_2","Pages on GitLab","Pages su GitLab",near-identical-translation
 "git-vcs",21,"git_platforms_4","Migration","Migrazione",near-identical-translation
 "git-vcs",23,"git_professional_3","Glossary","Glossario",near-identical-translation
-"git-vcs",2,"git_branching_2","Symbolic Reference","",duplicate-across-lessons
-"git-vcs",15,"git_internals_2","Symbolic Reference","",duplicate-across-lessons
-"git-vcs",21,"git_platforms_1","GitHub Enterprise","",duplicate-in-lesson
-"git-vcs",21,"git_platforms_1","GitHub Enterprise","",duplicate-in-lesson
 "linux",0,"linux_basics_1","Terminal","Terminale",near-identical-translation
 "linux",0,"linux_basics_1","Command","Comando",near-identical-translation
 "linux",0,"linux_basics_1","Bash","Bash",identical-translation
@@ -1760,15 +1460,11 @@ topicId,level,lesson,english,italian,issueType
 "linux",9,"linux_audit","Event","Evento",near-identical-translation
 "linux",9,"linux_audit","Alert","Allerta",near-identical-translation
 "linux",9,"linux_audit","Incident","Incidente",near-identical-translation
-"linux",10,"linux_packages","Install","Installare",tautological-example
 "linux",10,"linux_backup","Incremental","Incrementale",near-identical-translation
-"linux",10,"linux_backup","Clone","Clonare",tautological-example
 "linux",10,"linux_backup","Clone","Clonare",near-identical-translation
 "linux",10,"linux_backup","Integrity","Integrità",near-identical-translation
 "linux",10,"linux_web","Configuration","Configurazione",near-identical-translation
 "linux",10,"linux_web","SSL/TLS","SSL/TLS",identical-translation
-"linux",10,"linux_db","Import","Importare",tautological-example
-"linux",10,"linux_db","Grant","Concedere",tautological-example
 "linux",11,"linux_containers","Docker","Docker",identical-translation
 "linux",11,"linux_containers","Orchestration","Orchestrazione",near-identical-translation
 "linux",11,"linux_containers","Registry","Registro",near-identical-translation
@@ -1777,15 +1473,7 @@ topicId,level,lesson,english,italian,issueType
 "linux",11,"linux_virtualization","Migration","Migrazione",near-identical-translation
 "linux",11,"linux_performance","Scalability","Scalabilità",near-identical-translation
 "linux",11,"linux_kernel_adv","LTS","LTS",identical-translation
-"linux",11,"linux_kernel_adv","Compile","Compilare",tautological-example
 "linux",11,"linux_kernel_adv","Compile","Compilare",near-identical-translation
-"linux",0,"linux_basics_3","Kernel","",duplicate-across-lessons
-"linux",6,"linux_kernel","Kernel","",duplicate-across-lessons
-"linux",0,"linux_basics_4","Usage","",duplicate-across-lessons
-"linux",5,"linux_monitoring","Usage","",duplicate-across-lessons
-"linux",5,"linux_services","Log","",duplicate-across-lessons
-"linux",6,"linux_kernel","Log","",duplicate-across-lessons
-"linux",8,"linux_logs","Log","",duplicate-across-lessons
 "networking",0,"net_foundations_1","Node","Nodo",near-identical-translation
 "networking",0,"net_foundations_1","Protocol","Protocollo",near-identical-translation
 "networking",0,"net_foundations_2","Segment","Segmento",near-identical-translation
@@ -1862,8 +1550,6 @@ topicId,level,lesson,english,italian,issueType
 "networking",9,"net_firewalls_4","nftables","nftables",identical-translation
 "networking",9,"net_firewalls_4","ufw","ufw",identical-translation
 "networking",9,"net_firewalls_4","firewalld","firewalld",identical-translation
-"networking",9,"net_firewalls_4","Connection Tracking","Tracking connessioni",tautological-example
-"networking",10,"net_vpn_1","VPN encapsulation","incapsulamento VPN",tautological-example
 "networking",10,"net_vpn_2","IPsec","IPsec",identical-translation
 "networking",10,"net_vpn_2","IKE","IKE",identical-translation
 "networking",10,"net_vpn_2","IKEv2","IKEv2",identical-translation
@@ -1889,7 +1575,6 @@ topicId,level,lesson,english,italian,issueType
 "networking",12,"net_protocols_email_1","DKIM","DKIM",identical-translation
 "networking",12,"net_protocols_email_1","DMARC","DMARC",identical-translation
 "networking",12,"net_protocols_email_1","STARTTLS","STARTTLS",identical-translation
-"networking",12,"net_protocols_file_2","FTPS","FTPS",tautological-example
 "networking",12,"net_protocols_file_2","FTPS","FTPS",identical-translation
 "networking",12,"net_protocols_file_2","SFTP","SFTP",identical-translation
 "networking",12,"net_protocols_file_2","SCP","SCP",identical-translation
@@ -1936,7 +1621,6 @@ topicId,level,lesson,english,italian,issueType
 "networking",13,"net_tools_scan_4","NSE","NSE",identical-translation
 "networking",13,"net_tools_scan_4","Zenmap","Zenmap",identical-translation
 "networking",14,"net_troubleshoot_2","MSS Clamping","MSS clamping",identical-translation
-"networking",14,"net_troubleshoot_2","Jumbograms","Jumbogram",tautological-example
 "networking",14,"net_troubleshoot_2","Jumbograms","Jumbogram",near-identical-translation
 "networking",14,"net_troubleshoot_3","Bufferbloat","bufferbloat",identical-translation
 "networking",14,"net_troubleshoot_3","BBR","BBR",identical-translation
@@ -1963,13 +1647,11 @@ topicId,level,lesson,english,italian,issueType
 "networking",16,"net_routing_bgp_1","BGP","BGP",identical-translation
 "networking",16,"net_routing_bgp_1","eBGP","eBGP",identical-translation
 "networking",16,"net_routing_bgp_1","iBGP","iBGP",identical-translation
-"networking",16,"net_routing_ospf_2","OSPFv3","OSPFv3",tautological-example
 "networking",16,"net_routing_ospf_2","OSPFv3","OSPFv3",identical-translation
 "networking",16,"net_routing_ospf_2","LSA","LSA",identical-translation
 "networking",16,"net_routing_ospf_2","LSDB","LSDB",identical-translation
 "networking",16,"net_routing_ospf_2","ABR","ABR",identical-translation
 "networking",16,"net_routing_ospf_2","ASBR","ASBR",identical-translation
-"networking",16,"net_routing_eigrp_3","EIGRP named mode","EIGRP named mode",tautological-example
 "networking",16,"net_routing_eigrp_3","EIGRP named mode","EIGRP named mode",identical-translation
 "networking",16,"net_routing_eigrp_3","DUAL","DUAL",identical-translation
 "networking",16,"net_routing_eigrp_3","Successor","Successore",near-identical-translation
@@ -2099,9 +1781,6 @@ topicId,level,lesson,english,italian,issueType
 "networking",23,"net_pro_career_4","RFC","RFC",identical-translation
 "networking",23,"net_pro_career_4","NANOG","NANOG",identical-translation
 "networking",23,"net_pro_career_4","RIPE","RIPE",identical-translation
-"networking",23,"net_pro_career_4","Continuous Learning","apprendimento continuo",tautological-example
-"networking",4,"net_switching_2","Layer 3 switch","",duplicate-across-lessons
-"networking",5,"net_routing_4","Layer 3 Switch","",duplicate-across-lessons
 "nodejs",0,"node_foundations_3","Module","Modulo",near-identical-translation
 "nodejs",0,"node_foundations_3","Process","Processo",near-identical-translation
 "nodejs",0,"node_foundations_4","Version","Versione",near-identical-translation
@@ -2127,6 +1806,8 @@ topicId,level,lesson,english,italian,issueType
 "nodejs",6,"node_express_1","Generator","Generatore",near-identical-translation
 "nodejs",6,"node_express_2","Route","Rotta",near-identical-translation
 "nodejs",7,"node_api_1","Idempotent","Idempotente",near-identical-translation
+"nodejs",7,"node_api_2","PATCH Update","PATCH Update",identical-translation
+"nodejs",7,"node_api_2","Soft Delete","Soft Delete",identical-translation
 "nodejs",7,"node_api_2","Pagination","Paginazione",near-identical-translation
 "nodejs",7,"node_api_3","Controller","Controllore",near-identical-translation
 "nodejs",7,"node_api_3","Validation","Validazione",near-identical-translation
@@ -2135,17 +1816,23 @@ topicId,level,lesson,english,italian,issueType
 "nodejs",8,"node_middleware_2","Origin","Origine",near-identical-translation
 "nodejs",8,"node_middleware_2","Credentials","Credenziali",near-identical-translation
 "nodejs",8,"node_middleware_3","Compression","Compressione",near-identical-translation
+"nodejs",8,"node_middleware_4","Route Permissions","Route Permissions",identical-translation
 "nodejs",9,"node_database_1","Document","Documento",near-identical-translation
+"nodejs",9,"node_database_1","MongoDB Collection","MongoDB Collection",identical-translation
+"nodejs",9,"node_database_1","Mongoose Schema","Mongoose Schema",identical-translation
 "nodejs",9,"node_database_1","Mongoose Model","Mongoose Model",identical-translation
 "nodejs",9,"node_database_2","Migration","Migrazione",near-identical-translation
 "nodejs",9,"node_database_3","Relation","Relazione",near-identical-translation
 "nodejs",10,"node_security_1","Session","Sessione",near-identical-translation
 "nodejs",11,"node_runtime_9","Error","Errore",near-identical-translation
+"nodejs",11,"node_runtime_10","async try/catch","async try/catch",identical-translation
+"nodejs",11,"node_runtime_10","process.on finally","process.on finally",identical-translation
+"nodejs",11,"node_runtime_11","Error Status Code","Error Status Code",identical-translation
+"nodejs",12,"node_streams_1","Stream Encoding","Stream Encoding",identical-translation
 "nodejs",13,"node_events_1","EventEmitter","EventEmitter",identical-translation
 "nodejs",13,"node_events_1","emit","emit",identical-translation
 "nodejs",13,"node_events_1","once","once",identical-translation
 "nodejs",13,"node_events_1","off","off",identical-translation
-"nodejs",13,"node_events_4","Reactive","Reattivo",tautological-example
 "nodejs",13,"node_events_4","Reactive","Reattivo",near-identical-translation
 "nodejs",14,"node_testing_1","Jest","Jest",identical-translation
 "nodejs",14,"node_testing_1","Mocha","Mocha",identical-translation
@@ -2194,7 +1881,6 @@ topicId,level,lesson,english,italian,issueType
 "nodejs",16,"node_api_7","Server Sent Events","Server Sent Events",identical-translation
 "nodejs",16,"node_api_7","Long Polling","long polling",identical-translation
 "nodejs",16,"node_api_7","Sticky Session","sticky session",identical-translation
-"nodejs",16,"node_api_7","Scaling Sockets","scalare i socket",tautological-example
 "nodejs",16,"node_api_8","WebRTC","WebRTC",identical-translation
 "nodejs",16,"node_api_8","Signaling","signaling",identical-translation
 "nodejs",16,"node_api_8","STUN","STUN",identical-translation
@@ -2276,7 +1962,6 @@ topicId,level,lesson,english,italian,issueType
 "nodejs",19,"node_foundations_9","Aggregate Root","aggregate root",identical-translation
 "nodejs",19,"node_foundations_10","Dependency Injection","dependency injection",identical-translation
 "nodejs",19,"node_foundations_10","Inversion of Control","inversion of control",identical-translation
-"nodejs",19,"node_foundations_10","Constructor Injection","constructor injection",tautological-example
 "nodejs",19,"node_foundations_10","Constructor Injection","constructor injection",identical-translation
 "nodejs",19,"node_foundations_10","DI Container","DI container",identical-translation
 "nodejs",19,"node_foundations_10","InversifyJS","InversifyJS",identical-translation
@@ -2307,6 +1992,7 @@ topicId,level,lesson,english,italian,issueType
 "nodejs",20,"node_performance_1","Performance API","Performance API",identical-translation
 "nodejs",20,"node_performance_1","Benchmark","benchmark",identical-translation
 "nodejs",20,"node_performance_1","Autocannon","Autocannon",identical-translation
+"nodejs",20,"node_performance_2","Heap Memory Leak","Heap Memory Leak",identical-translation
 "nodejs",20,"node_performance_2","New Space","new space",identical-translation
 "nodejs",20,"node_performance_2","WeakRef","WeakRef",identical-translation
 "nodejs",20,"node_performance_2","OOM","OOM",identical-translation
@@ -2340,7 +2026,7 @@ topicId,level,lesson,english,italian,issueType
 "nodejs",22,"node_api_10","RabbitMQ","RabbitMQ",identical-translation
 "nodejs",22,"node_api_10","Kafka","Kafka",identical-translation
 "nodejs",22,"node_api_10","BullMQ","BullMQ",identical-translation
-"nodejs",22,"node_api_10","Topic","Topic",identical-translation
+"nodejs",22,"node_api_10","Kafka Topic","Kafka Topic",identical-translation
 "nodejs",22,"node_api_10","Job","Job",identical-translation
 "nodejs",22,"node_api_11","RPC","RPC",identical-translation
 "nodejs",22,"node_api_11","gRPC","gRPC",identical-translation
@@ -2361,12 +2047,12 @@ topicId,level,lesson,english,italian,issueType
 "nodejs",23,"node_foundations_13","Yarn Workspaces","Yarn Workspaces",identical-translation
 "nodejs",23,"node_foundations_13","Turborepo","Turborepo",identical-translation
 "nodejs",23,"node_foundations_13","Lerna","Lerna",identical-translation
-"nodejs",23,"node_foundations_13","Hoisting","Hoisting",identical-translation
+"nodejs",23,"node_foundations_13","Dependency Hoisting","Dependency Hoisting",identical-translation
 "nodejs",23,"node_foundations_14","npm publish","npm publish",identical-translation
 "nodejs",23,"node_foundations_14","Changelog","Changelog",identical-translation
-"nodejs",23,"node_foundations_14","Semantic Release","Rilascio semantico",tautological-example
 "nodejs",23,"node_foundations_14","Deprecate","Deprecare",near-identical-translation
 "nodejs",23,"node_foundations_15","GitHub Actions","GitHub Actions",identical-translation
+"nodejs",23,"node_foundations_15","CI Pipeline","CI Pipeline",identical-translation
 "nodejs",23,"node_foundations_15","ESLint","ESLint",identical-translation
 "nodejs",23,"node_foundations_15","Prettier","Prettier",identical-translation
 "nodejs",23,"node_foundations_15","Husky","Husky",identical-translation
@@ -2376,32 +2062,6 @@ topicId,level,lesson,english,italian,issueType
 "nodejs",23,"node_foundations_16","Mentoring","Mentoring",identical-translation
 "nodejs",23,"node_foundations_16","Postmortem","Postmortem",identical-translation
 "nodejs",23,"node_foundations_16","RFC","RFC",identical-translation
-"nodejs",1,"node_modules_3","Update","",duplicate-across-lessons
-"nodejs",7,"node_api_2","Update","",duplicate-across-lessons
-"nodejs",2,"node_foundations_7","Hoisting","",duplicate-across-lessons
-"nodejs",23,"node_foundations_13","Hoisting","",duplicate-across-lessons
-"nodejs",3,"node_async_2","finally","",duplicate-across-lessons
-"nodejs",11,"node_runtime_10","finally","",duplicate-across-lessons
-"nodejs",3,"node_async_3","try/catch","",duplicate-across-lessons
-"nodejs",11,"node_runtime_10","try/catch","",duplicate-across-lessons
-"nodejs",4,"node_runtime_2","Encoding","",duplicate-across-lessons
-"nodejs",12,"node_streams_1","Encoding","",duplicate-across-lessons
-"nodejs",4,"node_runtime_2","Permissions","",duplicate-across-lessons
-"nodejs",8,"node_middleware_4","Permissions","",duplicate-across-lessons
-"nodejs",5,"node_runtime_6","DELETE","",duplicate-across-lessons
-"nodejs",7,"node_api_2","Delete","",duplicate-across-lessons
-"nodejs",5,"node_runtime_7","Status Code","",duplicate-across-lessons
-"nodejs",11,"node_runtime_11","Status Code","",duplicate-across-lessons
-"nodejs",7,"node_api_2","Collection","",duplicate-across-lessons
-"nodejs",9,"node_database_1","Collection","",duplicate-across-lessons
-"nodejs",7,"node_api_3","Schema","",duplicate-across-lessons
-"nodejs",9,"node_database_1","Schema","",duplicate-across-lessons
-"nodejs",12,"node_streams_3","pipeline","",duplicate-across-lessons
-"nodejs",23,"node_foundations_15","Pipeline","",duplicate-across-lessons
-"nodejs",13,"node_events_2","Memory Leak","",duplicate-across-lessons
-"nodejs",20,"node_performance_2","Memory Leak","",duplicate-across-lessons
-"nodejs",13,"node_events_4","Topic","",duplicate-across-lessons
-"nodejs",22,"node_api_10","Topic","",duplicate-across-lessons
 "python",0,"py_basics_1","Variable","Variabile",near-identical-translation
 "python",0,"py_basics_1","String","Stringa",near-identical-translation
 "python",0,"py_basics_1","Comment","Commento",near-identical-translation
@@ -2417,23 +2077,18 @@ topicId,level,lesson,english,italian,issueType
 "python",1,"py_list","List","Lista",near-identical-translation
 "python",1,"py_tuple_set","Tuple","Tupla",near-identical-translation
 "python",1,"py_tuple_set","Immutable","Immutabile",near-identical-translation
-"python",1,"py_tuple_set","Unpacking","Spacchettamento (Unpacking)",trivial-example
 "python",1,"py_tuple_set","Union","Unione",near-identical-translation
 "python",1,"py_tuple_set","Difference","Differenza",near-identical-translation
 "python",2,"py_loops","Iteration","Iterazione",near-identical-translation
-"python",2,"py_flow_patterns","Flag Variable","Variabile Bandiera (Flag)",trivial-example
 "python",3,"py_func_basics","Parameter","Parametro",near-identical-translation
 "python",3,"py_func_basics","Argument","Argomento",near-identical-translation
 "python",3,"py_func_adv","Decorator","Decoratore",near-identical-translation
 "python",3,"py_scope","Global","Globale",near-identical-translation
 "python",3,"py_scope","Local","Locale",near-identical-translation
-"python",3,"py_scope","Local","Locale",trivial-example
 "python",3,"py_scope","Nonlocal","Non locale",near-identical-translation
 "python",4,"py_class_basics","Class","Classe",near-identical-translation
 "python",4,"py_class_basics","Attribute","Attributo",near-identical-translation
 "python",4,"py_class_basics","Method","Metodo",near-identical-translation
-"python",4,"py_class_basics","Instance Variable","Variabile di Istanza",trivial-example
-"python",4,"py_class_basics","Class Variable","Variabile di Classe",trivial-example
 "python",4,"py_oop_concepts","Composition","Composizione",near-identical-translation
 "python",4,"py_oop_concepts","Aggregation","Aggregazione",near-identical-translation
 "python",4,"py_oop_advanced","Descriptor","Descrittore",near-identical-translation
@@ -2479,7 +2134,6 @@ topicId,level,lesson,english,italian,issueType
 "rust",2,"rust_foundations_7","Pattern Matching","pattern matching",identical-translation
 "rust",2,"rust_foundations_7","If Let","if let",identical-translation
 "rust",2,"rust_foundations_8","Constant","Costante",near-identical-translation
-"rust",3,"rust_ownership_1","Move Semantics","Semantica di move",trivial-example
 "rust",3,"rust_ownership_1","RAII","RAII",identical-translation
 "rust",3,"rust_ownership_2","Move","move",identical-translation
 "rust",3,"rust_ownership_2","Clone","Clone",identical-translation
@@ -2490,16 +2144,15 @@ topicId,level,lesson,english,italian,issueType
 "rust",6,"rust_enums_1","Variant","Variante",near-identical-translation
 "rust",6,"rust_enums_1","Discriminant","Discriminante",near-identical-translation
 "rust",6,"rust_enums_2","Unwrap","unwrap",identical-translation
-"rust",6,"rust_enums_3","If Let","if let",identical-translation
-"rust",6,"rust_enums_3","If Let","if let",trivial-example
-"rust",6,"rust_enums_3","While Let","Ciclo con pattern match (while let)",trivial-example
-"rust",7,"rust_error_handling_1","Unwrap","unwrap",identical-translation
+"rust",6,"rust_enums_2","Option::take","Option::take",identical-translation
+"rust",7,"rust_error_handling_1","Result Unwrap","Result unwrap",identical-translation
 "rust",7,"rust_error_handling_1","Expect","expect",identical-translation
 "rust",7,"rust_error_handling_2","Panic","panic",identical-translation
-"rust",7,"rust_error_handling_2","Panic Abort","Aborta invece di srotolare (panic=abort)",trivial-example
 "rust",7,"rust_error_handling_3","Thiserror","thiserror",identical-translation
 "rust",7,"rust_error_handling_3","Anyhow","anyhow",identical-translation
-"rust",7,"rust_error_handling_4","Map","map",identical-translation
+"rust",7,"rust_error_handling_4","Result Map","Result map",identical-translation
+"rust",7,"rust_error_handling_4","Result And Then","Result and_then",near-identical-translation
+"rust",7,"rust_error_handling_4","Result Unwrap Or","Result unwrap_or",near-identical-translation
 "rust",8,"rust_collections_1","Vec","Vec",identical-translation
 "rust",8,"rust_collections_1","Push","push",identical-translation
 "rust",8,"rust_collections_1","Pop","pop",identical-translation
@@ -2515,19 +2168,16 @@ topicId,level,lesson,english,italian,issueType
 "rust",8,"rust_collections_3","Count","count",identical-translation
 "rust",8,"rust_collections_4","Parse","parse",identical-translation
 "rust",9,"rust_traits_4","Supertrait","supertrait",identical-translation
-"rust",9,"rust_traits_4","Trait Inheritance","Ereditarietà di trait",tautological-example
-"rust",9,"rust_traits_4","Trait Aliasing","Alias di trait composti (trait alias)",trivial-example
-"rust",10,"rust_generics_1","Default Type Parameter","Parametro di tipo predefinito",trivial-example
-"rust",10,"rust_generics_2","Generic Type Alias","Alias di tipo generico",trivial-example
+"rust",11,"rust_lifetimes_1","Explicit Borrow Lifetime","explicit borrow lifetime",identical-translation
+"rust",11,"rust_lifetimes_3","Borrow Checker NLL","borrow checker NLL",identical-translation
+"rust",11,"rust_lifetimes_3","Lifetime Reborrow","lifetime reborrow",identical-translation
 "rust",11,"rust_lifetimes_3","Invariant","Invariante",near-identical-translation
 "rust",11,"rust_lifetimes_4","HRTB","HRTB",identical-translation
 "rust",11,"rust_lifetimes_4","Self-Referential","Self-referenziale",near-identical-translation
 "rust",12,"rust_foundations_9","Module","Modulo",near-identical-translation
 "rust",12,"rust_foundations_10","Workspace","workspace",identical-translation
-"rust",12,"rust_foundations_10","Path Dependency","Dipendenza per percorso",trivial-example
 "rust",12,"rust_foundations_10","Crates.io","crates.io",identical-translation
 "rust",12,"rust_foundations_10","Semver","SemVer",identical-translation
-"rust",12,"rust_foundations_10","Version Specifier","Specificatore di versione",trivial-example
 "rust",12,"rust_foundations_11","Private","Privato",near-identical-translation
 "rust",12,"rust_foundations_11","Public","Pubblico",near-identical-translation
 "rust",12,"rust_foundations_11","Prelude","prelude",identical-translation
@@ -2542,37 +2192,42 @@ topicId,level,lesson,english,italian,issueType
 "rust",12,"rust_foundations_12","Cargo Audit","cargo audit",identical-translation
 "rust",12,"rust_foundations_12","Cargo Expand","cargo expand",identical-translation
 "rust",13,"rust_collections_5","Capture","Cattura",near-identical-translation
+"rust",13,"rust_collections_5","Iterator Move Closure","iterator move closure",identical-translation
+"rust",13,"rust_collections_6","Iterator Take","Iterator Take",identical-translation
 "rust",13,"rust_collections_7","Collect (terminal)","collect (terminale)",near-identical-translation
 "rust",13,"rust_collections_7","Sum (terminal)","sum (terminale)",near-identical-translation
 "rust",13,"rust_collections_7","Product","product",identical-translation
 "rust",13,"rust_collections_8","Itertools","itertools",identical-translation
-"rust",14,"rust_ownership_9","Box","Box",identical-translation
+"rust",14,"rust_ownership_9","Box Smart Pointer","Box smart pointer",identical-translation
 "rust",14,"rust_ownership_10","Arc","Arc",identical-translation
-"rust",14,"rust_ownership_10","Reference Counting","Conteggio dei riferimenti",tautological-example
 "rust",15,"rust_concurrency_1","Thread Local","Thread locale",near-identical-translation
 "rust",15,"rust_concurrency_2","Crossbeam","crossbeam",identical-translation
+"rust",15,"rust_concurrency_3","Auto Trait (Send/Sync)","Auto trait (Send/Sync)",identical-translation
 "rust",15,"rust_concurrency_3","Not Send","Non Send",near-identical-translation
 "rust",15,"rust_concurrency_3","Not Sync","Non Sync",near-identical-translation
 "rust",15,"rust_concurrency_4","Barrier","Barriera",near-identical-translation
 "rust",15,"rust_concurrency_4","Rayon","rayon",identical-translation
-"rust",16,"rust_async_1","Await","Attende future (await)",trivial-example
 "rust",16,"rust_async_2","Tokio","Tokio",identical-translation
 "rust",16,"rust_async_2","Async-std","async-std",identical-translation
 "rust",16,"rust_async_2","Smol","smol",identical-translation
-"rust",16,"rust_async_3","Stream","Sequenza asincrona di valori (Stream)",trivial-example
-"rust",16,"rust_async_3","Async Iter","Iter async",trivial-example
+"rust",16,"rust_async_3","Async Join","async join",identical-translation
 "rust",16,"rust_async_3","Cancellation","Cancellazione",near-identical-translation
+"rust",17,"rust_macros_1","Vec Macro Repeat","vec! macro repeat",identical-translation
 "rust",17,"rust_macros_2","Syn","syn",identical-translation
 "rust",17,"rust_macros_2","Quote","quote!",identical-translation
-"rust",17,"rust_macros_2","Proc Macro Crate","Crate proc-macro",trivial-example
-"rust",17,"rust_macros_2","Custom Derive","Custom derive",identical-translation
+"rust",17,"rust_macros_2","Custom Derive Helper Attribute","custom derive helper attribute",identical-translation
+"rust",17,"rust_macros_3","Panic Macro Formatting","panic! macro formatting",identical-translation
+"rust",17,"rust_macros_4","Compile Time Evaluation","compile time evaluation",identical-translation
 "rust",17,"rust_macros_4","DSL","DSL",identical-translation
-"rust",18,"rust_unsafe_1","Sound Code","Codice sound",tautological-example
 "rust",18,"rust_unsafe_2","Bindgen","bindgen",identical-translation
 "rust",18,"rust_unsafe_2","Cbindgen","cbindgen",identical-translation
 "rust",18,"rust_unsafe_4","Miri","Miri",identical-translation
-"rust",19,"rust_traits_6","Erased Type","Tipo erased",trivial-example
-"rust",19,"rust_traits_7","Auto Trait","Auto trait",identical-translation
+"rust",19,"rust_traits_7","Trait Inheritance Bound","trait inheritance bound",identical-translation
+"rust",19,"rust_traits_7","Marker Trait Bound","marker trait bound",identical-translation
+"rust",19,"rust_traits_7","Auto Trait Leakage","auto trait leakage",identical-translation
+"rust",19,"rust_traits_8","Type State Builder","type state builder",identical-translation
+"rust",19,"rust_traits_8","Trait Visitor Pattern","trait visitor pattern",identical-translation
+"rust",20,"rust_testing_1","Cargo Test Filter","Cargo Test Filter",identical-translation
 "rust",20,"rust_testing_2","Mock","Mock",identical-translation
 "rust",20,"rust_testing_3","Proptest","Proptest",identical-translation
 "rust",20,"rust_testing_3","Quickcheck","Quickcheck",identical-translation
@@ -2590,11 +2245,11 @@ topicId,level,lesson,english,italian,issueType
 "rust",21,"rust_io_3","Bincode","Bincode",identical-translation
 "rust",21,"rust_io_3","Postcard","Postcard",identical-translation
 "rust",22,"rust_ecosystem_1","Async Std","Async Std",identical-translation
-"rust",22,"rust_ecosystem_1","Hyper","Hyper",identical-translation
+"rust",22,"rust_ecosystem_1","Hyper Server","hyper server",identical-translation
 "rust",22,"rust_ecosystem_1","Tonic","Tonic",identical-translation
 "rust",22,"rust_ecosystem_1","Tower","Tower",identical-translation
-"rust",22,"rust_ecosystem_1","Axum","Axum",identical-translation
-"rust",22,"rust_ecosystem_1","Reqwest","Reqwest",identical-translation
+"rust",22,"rust_ecosystem_1","Axum Router","axum Router",identical-translation
+"rust",22,"rust_ecosystem_1","Reqwest Client","reqwest Client",identical-translation
 "rust",22,"rust_ecosystem_1","Tungstenite","Tungstenite",identical-translation
 "rust",22,"rust_ecosystem_1","Tonic Build","Tonic Build",identical-translation
 "rust",22,"rust_ecosystem_2","Diesel","Diesel",identical-translation
@@ -2614,8 +2269,8 @@ topicId,level,lesson,english,italian,issueType
 "rust",22,"rust_ecosystem_3","Tracing","Tracing",identical-translation
 "rust",22,"rust_ecosystem_3","Env Logger","Env Logger",identical-translation
 "rust",22,"rust_ecosystem_3","Once Cell","Once Cell",identical-translation
-"rust",22,"rust_ecosystem_4","Rayon","Rayon",identical-translation
-"rust",22,"rust_ecosystem_4","Crossbeam","Crossbeam",identical-translation
+"rust",22,"rust_ecosystem_4","Rayon Par Iter","rayon par_iter",near-identical-translation
+"rust",22,"rust_ecosystem_4","Crossbeam Channel","crossbeam channel",identical-translation
 "rust",22,"rust_ecosystem_4","Regex","Regex",identical-translation
 "rust",22,"rust_ecosystem_4","Chrono","Chrono",identical-translation
 "rust",22,"rust_ecosystem_4","Uuid","Uuid",identical-translation
@@ -2626,64 +2281,6 @@ topicId,level,lesson,english,italian,issueType
 "rust",23,"rust_foundations_14","Profile","Profilo",near-identical-translation
 "rust",23,"rust_foundations_14","LTO","LTO",identical-translation
 "rust",23,"rust_foundations_15","Microcontroller","Microcontrollore",near-identical-translation
-"rust",2,"rust_foundations_7","If Let","",duplicate-across-lessons
-"rust",6,"rust_enums_3","If Let","",duplicate-across-lessons
-"rust",3,"rust_ownership_3","Take","",duplicate-across-lessons
-"rust",6,"rust_enums_2","Take","",duplicate-across-lessons
-"rust",13,"rust_collections_6","Take","",duplicate-across-lessons
-"rust",3,"rust_ownership_4","Borrow Checker","",duplicate-across-lessons
-"rust",11,"rust_lifetimes_3","Borrow Checker","",duplicate-across-lessons
-"rust",3,"rust_ownership_4","Box","",duplicate-across-lessons
-"rust",14,"rust_ownership_9","Box","",duplicate-across-lessons
-"rust",4,"rust_ownership_6","Reborrow","",duplicate-across-lessons
-"rust",11,"rust_lifetimes_3","Reborrow","",duplicate-across-lessons
-"rust",4,"rust_ownership_7","Borrow Lifetime","",duplicate-across-lessons
-"rust",11,"rust_lifetimes_1","Borrow Lifetime","",duplicate-across-lessons
-"rust",5,"rust_structs_1","Encapsulation","",duplicate-across-lessons
-"rust",18,"rust_unsafe_4","Encapsulation","",duplicate-across-lessons
-"rust",5,"rust_structs_3","Custom Derive","",duplicate-across-lessons
-"rust",17,"rust_macros_2","Custom Derive","",duplicate-across-lessons
-"rust",6,"rust_enums_2","Unwrap","",duplicate-across-lessons
-"rust",7,"rust_error_handling_1","Unwrap","",duplicate-across-lessons
-"rust",6,"rust_enums_2","Unwrap Or","",duplicate-across-lessons
-"rust",7,"rust_error_handling_4","Unwrap Or","",duplicate-across-lessons
-"rust",6,"rust_enums_2","Map","",duplicate-across-lessons
-"rust",7,"rust_error_handling_4","Map","",duplicate-across-lessons
-"rust",6,"rust_enums_2","And Then","",duplicate-across-lessons
-"rust",7,"rust_error_handling_4","And Then","",duplicate-across-lessons
-"rust",6,"rust_enums_4","Type State","",duplicate-across-lessons
-"rust",19,"rust_traits_8","Type State","",duplicate-across-lessons
-"rust",6,"rust_enums_4","Visitor Pattern","",duplicate-across-lessons
-"rust",19,"rust_traits_8","Visitor Pattern","",duplicate-across-lessons
-"rust",7,"rust_error_handling_2","Panic Macro","",duplicate-across-lessons
-"rust",17,"rust_macros_3","Panic Macro","",duplicate-across-lessons
-"rust",8,"rust_collections_1","Vec Macro","",duplicate-across-lessons
-"rust",17,"rust_macros_1","Vec Macro","",duplicate-across-lessons
-"rust",9,"rust_traits_4","Marker Trait","",duplicate-across-lessons
-"rust",19,"rust_traits_7","Marker Trait","",duplicate-across-lessons
-"rust",9,"rust_traits_4","Auto Trait","",duplicate-across-lessons
-"rust",15,"rust_concurrency_3","Auto Trait","",duplicate-across-lessons
-"rust",19,"rust_traits_7","Auto Trait","",duplicate-across-lessons
-"rust",9,"rust_traits_4","Trait Inheritance","",duplicate-across-lessons
-"rust",19,"rust_traits_7","Trait Inheritance","",duplicate-across-lessons
-"rust",10,"rust_generics_3","Compile Time","",duplicate-across-lessons
-"rust",17,"rust_macros_4","Compile Time","",duplicate-across-lessons
-"rust",11,"rust_lifetimes_4","Move Closure","",duplicate-across-lessons
-"rust",13,"rust_collections_5","Move Closure","",duplicate-across-lessons
-"rust",12,"rust_foundations_12","Cargo Test","",duplicate-across-lessons
-"rust",20,"rust_testing_1","Cargo Test","",duplicate-across-lessons
-"rust",15,"rust_concurrency_1","Join","",duplicate-across-lessons
-"rust",16,"rust_async_3","Join","",duplicate-across-lessons
-"rust",15,"rust_concurrency_2","Crossbeam","",duplicate-across-lessons
-"rust",22,"rust_ecosystem_4","Crossbeam","",duplicate-across-lessons
-"rust",15,"rust_concurrency_4","Rayon","",duplicate-across-lessons
-"rust",22,"rust_ecosystem_4","Rayon","",duplicate-across-lessons
-"rust",21,"rust_io_2","Hyper","",duplicate-across-lessons
-"rust",22,"rust_ecosystem_1","Hyper","",duplicate-across-lessons
-"rust",21,"rust_io_2","Reqwest","",duplicate-across-lessons
-"rust",22,"rust_ecosystem_1","Reqwest","",duplicate-across-lessons
-"rust",21,"rust_io_2","Axum","",duplicate-across-lessons
-"rust",22,"rust_ecosystem_1","Axum","",duplicate-across-lessons
 "software-dev",0,"dev_basics_1","Code","Codice",near-identical-translation
 "software-dev",0,"dev_basics_1","Program","Programma",near-identical-translation
 "software-dev",0,"dev_basics_1","Algorithm","Algoritmo",near-identical-translation
@@ -2708,7 +2305,6 @@ topicId,level,lesson,english,italian,issueType
 "software-dev",4,"dev_arch_ddd","Entity","Entità",near-identical-translation
 "software-dev",4,"dev_arch_ddd","Aggregate","Aggregato",near-identical-translation
 "software-dev",5,"dev_test_unit","False Positive","Falso Positivo",near-identical-translation
-"software-dev",6,"dev_devops_deploy","Environment Drift","Deriva dell'Ambiente",tautological-example
 "software-dev",6,"dev_devops_infra","Orchestration","Orchestrazione",near-identical-translation
 "software-dev",6,"dev_devops_monitor","Observability","Osservabilità",near-identical-translation
 "software-dev",7,"dev_sec_vulns","Vulnerability","Vulnerabilità",near-identical-translation
@@ -2741,7 +2337,6 @@ topicId,level,lesson,english,italian,issueType
 "system-monitoring",3,"mon_logs_tools_4","Logs Insights","Logs Insights",identical-translation
 "system-monitoring",3,"mon_logs_tools_4","Azure Monitor Logs","Azure Monitor Logs",identical-translation
 "system-monitoring",3,"mon_logs_tools_4","Datadog Logs","Datadog Logs",identical-translation
-"system-monitoring",3,"mon_logs_tools_4","Splunk","Splunk SPL",tautological-example
 "system-monitoring",4,"mon_alerting_2","Primary","Primario",near-identical-translation
 "system-monitoring",4,"mon_alerting_2","Secondary","Secondario",near-identical-translation
 "system-monitoring",4,"mon_alerting_4","False Positive","Falso positivo",near-identical-translation
@@ -2751,7 +2346,6 @@ topicId,level,lesson,english,italian,issueType
 "system-monitoring",5,"mon_prometheus_3","Cardinality","Cardinalità",near-identical-translation
 "system-monitoring",5,"mon_prometheus_4","Block","Blocco",near-identical-translation
 "system-monitoring",5,"mon_prometheus_4","WAL","WAL",identical-translation
-"system-monitoring",6,"mon_promql_1","PromQL","PromQL",tautological-example
 "system-monitoring",6,"mon_promql_1","PromQL","PromQL",identical-translation
 "system-monitoring",6,"mon_promql_1","Selector","Selettore",near-identical-translation
 "system-monitoring",6,"mon_promql_4","Multi-Burn-Rate","Multi burn-rate",near-identical-translation
@@ -2774,51 +2368,35 @@ topicId,level,lesson,english,italian,issueType
 "system-monitoring",10,"mon_apm_2","Application","Applicazione",near-identical-translation
 "system-monitoring",10,"mon_apm_3","Datadog","Datadog",identical-translation
 "system-monitoring",10,"mon_apm_3","RUM","RUM",identical-translation
-"system-monitoring",10,"mon_apm_4","Cost Attribution","Attribuzione dei costi",tautological-example
-"system-monitoring",11,"mon_infrastructure_1","Process Exporter","Esportatore metriche di processo (Process Exporter)",tautological-example
 "system-monitoring",11,"mon_infrastructure_1","IPMI","IPMI",identical-translation
 "system-monitoring",11,"mon_infrastructure_1","NUMA","NUMA",identical-translation
 "system-monitoring",11,"mon_infrastructure_2","SNMP","SNMP",identical-translation
 "system-monitoring",11,"mon_infrastructure_2","MIB","MIB",identical-translation
 "system-monitoring",11,"mon_infrastructure_2","NetFlow","NetFlow",identical-translation
-"system-monitoring",11,"mon_infrastructure_2","Telegraf","Telegraf",tautological-example
 "system-monitoring",11,"mon_infrastructure_2","Telegraf","Telegraf",identical-translation
-"system-monitoring",11,"mon_infrastructure_4","pgBouncer","pgBouncer",tautological-example
 "system-monitoring",11,"mon_infrastructure_4","pgBouncer","pgBouncer",identical-translation
-"system-monitoring",12,"mon_cloud_1","CloudWatch","CloudWatch",tautological-example
 "system-monitoring",12,"mon_cloud_1","CloudWatch","CloudWatch",identical-translation
-"system-monitoring",12,"mon_cloud_1","EMF","EMF",tautological-example
 "system-monitoring",12,"mon_cloud_1","EMF","EMF",identical-translation
-"system-monitoring",12,"mon_cloud_1","EMF","EMF",trivial-example
-"system-monitoring",12,"mon_cloud_1","Container Insights","Monitoring container AWS (Container Insights)",tautological-example
-"system-monitoring",12,"mon_cloud_1","Trusted Advisor","Consigli AWS (Trusted Advisor)",tautological-example
-"system-monitoring",12,"mon_cloud_2","Azure Monitor","Azure Monitor",tautological-example
 "system-monitoring",12,"mon_cloud_2","Azure Monitor","Azure Monitor",identical-translation
+"system-monitoring",12,"mon_cloud_2","Azure KQL","Azure KQL",identical-translation
 "system-monitoring",12,"mon_cloud_2","Application Insights","Application Insights",identical-translation
-"system-monitoring",12,"mon_cloud_3","Cloud Monitoring","Cloud Monitoring",tautological-example
 "system-monitoring",12,"mon_cloud_3","Cloud Monitoring","Cloud Monitoring",identical-translation
-"system-monitoring",12,"mon_cloud_3","Cloud Trace","Cloud Trace",tautological-example
 "system-monitoring",12,"mon_cloud_3","Cloud Trace","Cloud Trace",identical-translation
 "system-monitoring",12,"mon_cloud_3","Cloud Profiler","Cloud Profiler",identical-translation
-"system-monitoring",12,"mon_cloud_3","Workload Identity","Identità GCP per carichi di lavoro (Workload Identity)",tautological-example
 "system-monitoring",12,"mon_cloud_3","MQL","MQL",identical-translation
 "system-monitoring",12,"mon_cloud_4","Dimension","Dimensione",near-identical-translation
 "system-monitoring",12,"mon_cloud_4","Statistic","Statistica",near-identical-translation
 "system-monitoring",12,"mon_cloud_4","Cost Per Metric","Costo per metrica",near-identical-translation
-"system-monitoring",13,"mon_sre_4","Chaos Engineering","Ingegneria del caos (Chaos Engineering)",tautological-example
 "system-monitoring",14,"mon_incidents_3","RCA","RCA",identical-translation
 "system-monitoring",14,"mon_incidents_3","MTTA","MTTA",identical-translation
 "system-monitoring",14,"mon_incidents_3","MTTD","MTTD",identical-translation
 "system-monitoring",14,"mon_incidents_3","Mitigation","Mitigazione",near-identical-translation
-"system-monitoring",15,"mon_alerting_pro_1","PagerDuty","PagerDuty",tautological-example
 "system-monitoring",15,"mon_alerting_pro_1","PagerDuty","PagerDuty",identical-translation
 "system-monitoring",15,"mon_alerting_pro_1","Statuspage.io","Statuspage.io",identical-translation
 "system-monitoring",15,"mon_alerting_pro_2","OpsGenie","OpsGenie",identical-translation
 "system-monitoring",15,"mon_alerting_pro_2","Squadcast","Squadcast",identical-translation
 "system-monitoring",15,"mon_alerting_pro_2","Splunk On-Call","Splunk On-Call",identical-translation
-"system-monitoring",15,"mon_alerting_pro_2","Better Uptime","Better Uptime",tautological-example
 "system-monitoring",15,"mon_alerting_pro_2","Better Uptime","Better Uptime",identical-translation
-"system-monitoring",15,"mon_alerting_pro_2","Grafana OnCall","Grafana OnCall",tautological-example
 "system-monitoring",15,"mon_alerting_pro_2","Grafana OnCall","Grafana OnCall",identical-translation
 "system-monitoring",15,"mon_alerting_pro_2","Route","Rotta",near-identical-translation
 "system-monitoring",15,"mon_alerting_pro_2","Templates","Template",near-identical-translation
@@ -2830,7 +2408,6 @@ topicId,level,lesson,english,italian,issueType
 "system-monitoring",16,"mon_otel_1","OTLP","OTLP",identical-translation
 "system-monitoring",16,"mon_otel_1","OTel Exporter","OTel Exporter",identical-translation
 "system-monitoring",16,"mon_otel_2","Attribute","Attributo",near-identical-translation
-"system-monitoring",17,"mon_k8s_1","HPA","HPA",tautological-example
 "system-monitoring",17,"mon_k8s_1","HPA","HPA",identical-translation
 "system-monitoring",17,"mon_k8s_3","Event","Evento",near-identical-translation
 "system-monitoring",17,"mon_k8s_4","Istio","Istio",identical-translation
@@ -2839,9 +2416,7 @@ topicId,level,lesson,english,italian,issueType
 "system-monitoring",18,"mon_capacity_1","ARIMA","ARIMA",identical-translation
 "system-monitoring",19,"mon_security_1","Wazuh","Wazuh",identical-translation
 "system-monitoring",19,"mon_security_1","Correlation","Correlazione",near-identical-translation
-"system-monitoring",19,"mon_security_2","PCI DSS","PCI DSS",tautological-example
 "system-monitoring",19,"mon_security_2","PCI DSS","PCI DSS",identical-translation
-"system-monitoring",19,"mon_security_2","GDPR","GDPR",tautological-example
 "system-monitoring",19,"mon_security_2","GDPR","GDPR",identical-translation
 "system-monitoring",19,"mon_security_2","SOC 2","SOC 2",identical-translation
 "system-monitoring",19,"mon_security_3","Control","Controllo",near-identical-translation
@@ -2849,13 +2424,10 @@ topicId,level,lesson,english,italian,issueType
 "system-monitoring",19,"mon_security_3","Immutability","Immutabilità",near-identical-translation
 "system-monitoring",19,"mon_security_3","DLP","DLP",identical-translation
 "system-monitoring",19,"mon_security_4","IOC","IOC",identical-translation
-"system-monitoring",19,"mon_security_4","TTP","TTP",tautological-example
 "system-monitoring",19,"mon_security_4","TTP","TTP",identical-translation
 "system-monitoring",19,"mon_security_4","EDR","EDR",identical-translation
 "system-monitoring",19,"mon_security_4","SOC","SOC",identical-translation
-"system-monitoring",20,"mon_aiops_1","ML Anomaly Detection","ML Anomaly Detection",tautological-example
 "system-monitoring",20,"mon_aiops_1","ML Anomaly Detection","ML Anomaly Detection",identical-translation
-"system-monitoring",20,"mon_aiops_1","AIOps Forecasting","AIOps Forecasting",tautological-example
 "system-monitoring",20,"mon_aiops_1","AIOps Forecasting","AIOps Forecasting",identical-translation
 "system-monitoring",20,"mon_aiops_2","LSTM","LSTM",identical-translation
 "system-monitoring",20,"mon_aiops_2","Isolation Forest","Isolation Forest",identical-translation
@@ -2908,16 +2480,3 @@ topicId,level,lesson,english,italian,issueType
 "system-monitoring",23,"mon_pro_sre_2","Traffic","Traffico",near-identical-translation
 "system-monitoring",23,"mon_pro_sre_2","Brendan Gregg","Brendan Gregg",identical-translation
 "system-monitoring",23,"mon_pro_sre_3","Tech Lead","Tech lead",identical-translation
-"system-monitoring",23,"mon_pro_sre_4","Cultural Change","Cambiamento culturale",tautological-example
-"system-monitoring",1,"mon_metrics_2","Throughput","",duplicate-across-lessons
-"system-monitoring",1,"mon_metrics_4","Throughput","",duplicate-across-lessons
-"system-monitoring",3,"mon_logs_tools_1","KQL","",duplicate-across-lessons
-"system-monitoring",12,"mon_cloud_2","KQL","",duplicate-across-lessons
-"system-monitoring",3,"mon_logs_tools_3","Tag","",duplicate-across-lessons
-"system-monitoring",7,"mon_grafana_1","Tag","",duplicate-across-lessons
-"system-monitoring",3,"mon_logs_tools_4","Cloud Logging","",duplicate-across-lessons
-"system-monitoring",12,"mon_cloud_3","Cloud Logging","",duplicate-across-lessons
-"system-monitoring",4,"mon_alerting_1","Severity Level","",duplicate-across-lessons
-"system-monitoring",14,"mon_incidents_2","Severity Level","",duplicate-across-lessons
-"system-monitoring",4,"mon_alerting_1","Annotation","",duplicate-across-lessons
-"system-monitoring",7,"mon_grafana_4","Annotation","",duplicate-across-lessons

@@ -1,0 +1,166 @@
+{
+  "fixes": [
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "Reactive",
+      "set": {
+        "example": "In a reactive system, streams of events flow through composable operators so the UI updates the instant new data arrives. = In un sistema reattivo, gli stream di eventi attraversano operatori componibili così la UI si aggiorna nell'istante in cui arrivano nuovi dati."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_7",
+      "english": "Scaling Sockets",
+      "set": {
+        "example": "When traffic explodes, scaling sockets across Node processes requires a Redis pub/sub adapter so every instance sees every emitted event. = Quando il traffico esplode, scalare i socket su più processi Node richiede un adapter Redis pub/sub così ogni istanza vede ogni evento emesso."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "Constructor Injection",
+      "set": {
+        "example": "We prefer constructor injection because the type system refuses to compile when a required dependency is missing from the call site. = Preferiamo la constructor injection perché il sistema di tipi rifiuta di compilare quando una dipendenza obbligatoria manca dal call site."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Semantic Release",
+      "set": {
+        "example": "Our pipeline runs semantic release on every merge to main, letting conventional commits decide if the next tag is a patch, minor or major bump. = La nostra pipeline esegue semantic release a ogni merge su main, lasciando che i commit convenzionali decidano se il prossimo tag è un bump patch, minor o major."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Update",
+      "set": {
+        "english": "PATCH Update",
+        "italian": "PATCH Update",
+        "example": "A PATCH update lets clients change just the email field without resending the entire user document over the wire. = Un PATCH update permette ai client di cambiare solo il campo email senza rispedire l'intero documento utente in rete."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "Hoisting",
+      "set": {
+        "english": "Dependency Hoisting",
+        "italian": "Dependency Hoisting",
+        "example": "With pnpm, dependency hoisting is strict so each package only sees the modules it explicitly declared in its package.json. = Con pnpm, il dependency hoisting è rigoroso così ogni pacchetto vede solo i moduli che ha dichiarato esplicitamente nel suo package.json."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_10",
+      "english": "finally",
+      "set": {
+        "english": "process.on finally",
+        "italian": "process.on finally",
+        "example": "Even in a global handler, a process.on finally block guarantees that file handles and DB pools are released before Node exits the program. = Anche in un handler globale, un blocco process.on finally garantisce che file handle e pool DB siano rilasciati prima che Node esca dal programma."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_10",
+      "english": "try/catch",
+      "set": {
+        "english": "async try/catch",
+        "italian": "async try/catch",
+        "example": "Inside an async function, an async try/catch wraps awaited calls so rejected promises surface as exceptions you can log with full stack traces. = Dentro una async function, un async try/catch avvolge le chiamate awaited così le promise rifiutate emergono come eccezioni che puoi loggare con stack trace completi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_1",
+      "english": "Encoding",
+      "set": {
+        "english": "Stream Encoding",
+        "italian": "Stream Encoding",
+        "example": "Setting the stream encoding to utf8 tells Node to emit decoded strings on data events instead of raw Buffer chunks. = Impostare lo stream encoding su utf8 dice a Node di emettere stringhe decodificate sugli eventi data invece di chunk Buffer grezzi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_4",
+      "english": "Permissions",
+      "set": {
+        "english": "Route Permissions",
+        "italian": "Route Permissions",
+        "example": "Our authorization middleware checks the route permissions against the JWT claims before letting the request reach the controller. = Il nostro middleware di autorizzazione verifica le route permissions contro i claim del JWT prima di lasciare arrivare la richiesta al controller."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Delete",
+      "set": {
+        "english": "Soft Delete",
+        "italian": "Soft Delete",
+        "example": "Using a soft delete pattern, the user row stays in the table with a deletedAt timestamp so audits and undo flows still work. = Usando un pattern soft delete, la riga utente resta nella tabella con un timestamp deletedAt così audit e flussi di undo funzionano ancora."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_11",
+      "english": "Status Code",
+      "set": {
+        "english": "Error Status Code",
+        "italian": "Error Status Code",
+        "example": "Our error handler maps each thrown class to a specific error status code so clients distinguish 404 not-found from 422 validation. = Il nostro error handler mappa ogni classe lanciata a uno specifico error status code così i client distinguono 404 not-found da 422 validation."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Collection",
+      "set": {
+        "english": "MongoDB Collection",
+        "italian": "MongoDB Collection",
+        "example": "Each MongoDB collection stores documents with a flexible schema, so adding a new field to one record never breaks the others. = Ogni MongoDB collection memorizza documenti con uno schema flessibile, così aggiungere un nuovo campo a un record non rompe mai gli altri."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Schema",
+      "set": {
+        "english": "Mongoose Schema",
+        "italian": "Mongoose Schema",
+        "example": "Defining a Mongoose schema gives every document strict types, default values, and validation rules enforced before MongoDB ever sees the write. = Definire un Mongoose schema dà a ogni documento tipi rigorosi, valori di default e regole di validazione applicate prima ancora che MongoDB veda la scrittura."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "Pipeline",
+      "set": {
+        "english": "CI Pipeline",
+        "italian": "CI Pipeline",
+        "example": "Our CI pipeline runs lint, type-check, unit tests and integration tests in parallel jobs before any artifact is published. = La nostra CI pipeline esegue lint, type-check, unit test e integration test in job paralleli prima che qualunque artefatto sia pubblicato."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_2",
+      "english": "Memory Leak",
+      "set": {
+        "english": "Heap Memory Leak",
+        "italian": "Heap Memory Leak",
+        "example": "Comparing two heap snapshots taken minutes apart is the fastest way to locate a heap memory leak caused by a Map that never releases its keys. = Confrontare due heap snapshot presi a minuti di distanza è il modo più rapido per localizzare un heap memory leak causato da una Map che non rilascia mai le sue chiavi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_10",
+      "english": "Topic",
+      "set": {
+        "english": "Kafka Topic",
+        "italian": "Kafka Topic",
+        "example": "Producers append events to a Kafka topic partitioned by user id, so every consumer in the group processes a disjoint slice of the traffic. = I producer accodano eventi a un Kafka topic partizionato per user id, così ogni consumer del gruppo elabora una fetta disgiunta del traffico."
+      }
+    }
+  ]
+}

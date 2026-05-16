@@ -1,0 +1,44 @@
+{
+  "fixes": [
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Unpacking",
+      "set": {
+        "example": "Iterating with for key, value in dict.items() relies on tuple unpacking to bind each pair to two named locals per loop. = Iterare con for key, value in dict.items() si basa sullo spacchettamento di tupla per legare ogni coppia a due variabili nominate ad ogni ciclo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Flag Variable",
+      "set": {
+        "example": "Initializing a found flag variable to False before scanning a list lets you record whether the search ever succeeded inside the loop. = Inizializzare una variabile bandiera found a False prima di scansionare una lista ti permette di registrare se la ricerca abbia mai avuto successo dentro il ciclo."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Local",
+      "set": {
+        "example": "Names introduced by assignment inside a function body live in the local scope and vanish once the call frame is popped on return. = I nomi introdotti per assegnazione dentro il corpo di una funzione vivono nello scope locale e svaniscono quando il frame di chiamata viene rimosso al ritorno."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Instance Variable",
+      "set": {
+        "example": "Attributes attached to self inside __init__ become instance variables, giving each object its own independent copy of that state. = Gli attributi attaccati a self dentro __init__ diventano variabili di istanza, dando a ogni oggetto la propria copia indipendente di quello stato."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Class Variable",
+      "set": {
+        "example": "Attributes defined directly in the class body act as class variables shared by every instance unless one shadows it with self. = Gli attributi definiti direttamente nel corpo della classe agiscono come variabili di classe condivise da ogni istanza a meno che una non la mascheri con self."
+      }
+    }
+  ]
+}
