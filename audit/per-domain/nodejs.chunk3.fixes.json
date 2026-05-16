@@ -1,0 +1,1334 @@
+{
+  "fixes": [
+    {
+      "level": "20",
+      "lesson": "node_performance_2",
+      "english": "Old Space",
+      "set": {
+        "example": "Long-lived buffers and cached templates eventually migrate into the V8 old space after surviving several minor GC cycles. = Buffer di lunga durata e template in cache migrano nell'old space di V8 dopo essere sopravvissuti a vari cicli minori di GC."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_2",
+      "english": "Mark and Sweep",
+      "set": {
+        "example": "V8's full GC runs a mark and sweep pass over the old space whenever heap fragmentation crosses a configured threshold. = Il GC completo di V8 esegue una passata mark and sweep sull'old space quando la frammentazione dell'heap supera una soglia configurata."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_2",
+      "english": "WeakRef",
+      "set": {
+        "italian": "WeakRef",
+        "example": "Wrap a large response body in a WeakRef so the cache entry can be reclaimed if memory pressure rises before the next read. = Avvolgi un corpo di risposta grande in un WeakRef così la voce di cache può essere recuperata se la pressione memoria sale prima della prossima lettura."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_2",
+      "english": "OOM",
+      "set": {
+        "italian": "OOM",
+        "example": "The pod was killed with an OOM signal after a runaway request kept allocating 50 MB buffers in a tight loop. = Il pod è stato terminato con un segnale OOM dopo che una richiesta impazzita continuava ad allocare buffer da 50 MB in un ciclo stretto."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_2",
+      "english": "process.memoryUsage",
+      "set": {
+        "italian": "process.memoryUsage",
+        "example": "Sample process.memoryUsage every 10 seconds and ship the rss and heapUsed values to Prometheus for trend dashboards. = Campiona process.memoryUsage ogni 10 secondi e invia i valori rss e heapUsed a Prometheus per dashboard di trend."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_3",
+      "english": "Cache",
+      "set": {
+        "example": "An in-process LRU cache fronts the user lookup so repeat profile reads avoid hitting Postgres on every request. = Una cache LRU in-process protegge la lookup utente così letture profilo ripetute evitano di colpire Postgres ad ogni richiesta."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_3",
+      "english": "Redis",
+      "set": {
+        "italian": "Redis",
+        "example": "We moved session tokens out of memory and into Redis so any Node instance in the cluster can validate a request. = Abbiamo spostato i token di sessione fuori dalla memoria e dentro Redis così qualunque istanza Node nel cluster può validare una richiesta."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_3",
+      "english": "ioredis",
+      "set": {
+        "italian": "ioredis",
+        "example": "Switching to ioredis with a connection pool cut p95 cache latency from 12 ms to 3 ms under production load. = Passare a ioredis con un pool di connessioni ha ridotto la latenza p95 della cache da 12 ms a 3 ms sotto carico di produzione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_3",
+      "english": "Memoization",
+      "set": {
+        "example": "Apply memoization to the priceForCart function so the same shopping cart payload is not recomputed during a single render. = Applica la memoization alla funzione priceForCart così lo stesso payload del carrello non viene ricalcolato durante un singolo render."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_3",
+      "english": "TTL",
+      "set": {
+        "italian": "TTL",
+        "example": "Give the rate-limit counter a TTL of 60 seconds in Redis so it expires automatically and we never need a cleanup job. = Dai al contatore di rate-limit un TTL di 60 secondi in Redis così scade automaticamente e non serve mai un job di pulizia."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_3",
+      "english": "Eviction",
+      "set": {
+        "italian": "Eviction",
+        "example": "When the LRU cache reaches 10 000 entries an eviction removes the coldest key to make room for a new write. = Quando la cache LRU raggiunge 10 000 voci un eviction rimuove la chiave più fredda per fare spazio a una nuova scrittura."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_3",
+      "english": "LRU",
+      "set": {
+        "italian": "LRU",
+        "example": "We chose an LRU policy for the route handler cache because recent endpoints are by far the ones most likely to be requested again. = Abbiamo scelto una politica LRU per la cache degli handler di route perché gli endpoint recenti sono di gran lunga quelli più probabili da essere richiesti di nuovo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_3",
+      "english": "Cache Miss",
+      "set": {
+        "example": "Each cache miss on the catalog endpoint costs us a 40 ms Postgres round-trip, so we log them to spot hot keys to prewarm. = Ogni cache miss sull'endpoint catalogo ci costa un round-trip Postgres di 40 ms, quindi le logghiamo per individuare chiavi calde da preriscaldare."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_4",
+      "english": "Event Loop Lag",
+      "set": {
+        "example": "A 200 ms event loop lag spike showed up whenever a user uploaded a CSV larger than 50 MB and we parsed it synchronously. = Un picco di event loop lag di 200 ms appariva ogni volta che un utente caricava un CSV più grande di 50 MB e lo facevamo parsing in modo sincrono."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_4",
+      "english": "Blocking Code",
+      "set": {
+        "example": "Synchronous JSON parsing on a 30 MB payload counts as blocking code and stalls every other request handler for hundreds of milliseconds. = Il parsing JSON sincrono di un payload da 30 MB conta come blocking code e blocca ogni altro handler di richiesta per centinaia di millisecondi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_4",
+      "english": "Lazy Loading",
+      "set": {
+        "example": "We use lazy loading for the PDF rendering module so the 8 MB dependency is only required when an export endpoint is actually hit. = Usiamo il lazy loading per il modulo di rendering PDF così la dipendenza da 8 MB viene richiesta solo quando un endpoint di export viene effettivamente chiamato."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_4",
+      "english": "JIT Compilation",
+      "set": {
+        "example": "V8's JIT compilation turns the hot validator function into optimized machine code after a few thousand calls in production. = La JIT compilation di V8 trasforma la funzione di validazione calda in codice macchina ottimizzato dopo qualche migliaio di chiamate in produzione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_4",
+      "english": "Hot Path",
+      "set": {
+        "italian": "Hot Path",
+        "example": "The request authentication middleware is on the hot path of every API call, so we avoid allocating new objects inside it. = Il middleware di autenticazione richieste è sull'hot path di ogni chiamata API, quindi evitiamo di allocare oggetti nuovi al suo interno."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_4",
+      "english": "Tree Shaking",
+      "set": {
+        "italian": "Tree Shaking",
+        "example": "Enabling tree shaking in esbuild dropped 180 KB of unused lodash helpers from the serverless bundle we ship to production. = Abilitare il tree shaking in esbuild ha rimosso 180 KB di helper lodash non usati dal bundle serverless che spediamo in produzione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_4",
+      "english": "Bundle Size",
+      "set": {
+        "example": "Reducing bundle size from 4 MB to 900 KB cut cold-start latency on Lambda by almost a full second per invocation. = Ridurre la bundle size da 4 MB a 900 KB ha tagliato la latenza di cold-start su Lambda di quasi un secondo intero per invocazione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_4",
+      "english": "Cold Start",
+      "set": {
+        "italian": "Cold Start",
+        "example": "Every Lambda cold start adds about 800 ms because Node must load 120 modules before serving the first request. = Ogni cold start di Lambda aggiunge circa 800 ms perché Node deve caricare 120 moduli prima di servire la prima richiesta."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_4",
+      "english": "p99 Latency",
+      "set": {
+        "italian": "p99 Latency",
+        "example": "Our SLO says checkout p99 latency must stay under 400 ms during the Friday-evening peak traffic window. = Il nostro SLO dice che la p99 latency del checkout deve restare sotto 400 ms durante la finestra di traffico di picco del venerdì sera."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "Process Manager",
+      "set": {
+        "example": "A process manager like PM2 restarts the API automatically if the Node process exits with a non-zero status. = Un process manager come PM2 riavvia automaticamente l'API se il processo Node esce con uno stato non zero."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "PM2",
+      "set": {
+        "italian": "PM2",
+        "example": "We run the Express API under PM2 in cluster mode across 4 cores on each production server. = Eseguiamo l'API Express sotto PM2 in cluster mode su 4 core di ogni server di produzione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "pm2 start",
+      "set": {
+        "italian": "pm2 start",
+        "example": "On deploy we run pm2 start ecosystem.config.js --env production to spin up all the workers defined in the file. = Al deploy lanciamo pm2 start ecosystem.config.js --env production per avviare tutti i worker definiti nel file."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "Cluster Mode",
+      "set": {
+        "example": "Running the API in cluster mode under PM2 forks one Node process per CPU core to absorb a sudden traffic spike. = Eseguire l'API in cluster mode sotto PM2 fa il fork di un processo Node per core CPU per assorbire un picco improvviso di traffico."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "Ecosystem File",
+      "set": {
+        "example": "The ecosystem.config.js file declares two PM2 apps, the HTTP API and a background worker, with their env variables. = Il file ecosystem.config.js dichiara due app PM2, l'API HTTP e un worker in background, con le loro variabili d'ambiente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "pm2 logs",
+      "set": {
+        "italian": "pm2 logs",
+        "example": "I tailed pm2 logs api --lines 200 during the incident to spot the unhandled promise rejection in real time. = Ho seguito pm2 logs api --lines 200 durante l'incidente per individuare in tempo reale la rejection di promise non gestita."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "Auto Restart",
+      "set": {
+        "example": "PM2's auto restart kicked in twice during the night when a memory leak crossed the 800 MB threshold we configured. = L'auto restart di PM2 è scattato due volte durante la notte quando una memory leak ha superato la soglia di 800 MB che abbiamo configurato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "Memory Limit",
+      "set": {
+        "example": "We set a memory limit of 600 MB per PM2 worker so a slow leak triggers a clean restart before the kernel OOM-kills us. = Impostiamo un memory limit di 600 MB per worker PM2 così una leak lenta provoca un restart pulito prima che il kernel ci uccida con OOM."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "pm2 monit",
+      "set": {
+        "italian": "pm2 monit",
+        "example": "Running pm2 monit on the box during a load test showed one worker pinned at 100% CPU while the others were idle. = Eseguendo pm2 monit sulla macchina durante un load test si vedeva un worker fisso al 100% di CPU mentre gli altri erano inattivi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_1",
+      "english": "pm2 startup",
+      "set": {
+        "italian": "pm2 startup",
+        "example": "After provisioning a fresh Ubuntu host we run pm2 startup systemd so the API comes back up automatically after a reboot. = Dopo aver provisionato un host Ubuntu nuovo eseguiamo pm2 startup systemd così l'API torna su automaticamente dopo un reboot."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "Docker",
+      "set": {
+        "italian": "Docker",
+        "example": "We ship the Node API as a Docker image built from node:20-alpine and pushed to our private ECR registry. = Spediamo l'API Node come immagine Docker costruita da node:20-alpine e pushata al nostro registry ECR privato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "Dockerfile",
+      "set": {
+        "italian": "Dockerfile",
+        "example": "The Dockerfile copies package.json first so npm install layer is cached when only application code changes between builds. = Il Dockerfile copia package.json per primo così il layer npm install è in cache quando tra build cambia solo il codice applicativo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "Multi-Stage Build",
+      "set": {
+        "example": "A multi-stage build compiles TypeScript in one stage then copies only the dist folder into a slim runtime image. = Una multi-stage build compila TypeScript in uno stage poi copia solo la cartella dist in un'immagine runtime snella."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "Alpine Image",
+      "set": {
+        "example": "Switching from node:20 to the alpine image dropped our final container size from 950 MB to about 180 MB. = Passare da node:20 all'alpine image ha ridotto la dimensione finale del container da 950 MB a circa 180 MB."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": ".dockerignore",
+      "set": {
+        "italian": ".dockerignore",
+        "example": "Adding node_modules and .git to .dockerignore stopped the build context from ballooning to 600 MB on every docker build. = Aggiungere node_modules e .git al .dockerignore ha impedito al contesto di build di gonfiarsi a 600 MB ad ogni docker build."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "docker-compose",
+      "set": {
+        "italian": "docker-compose",
+        "example": "Locally we run docker-compose up to bring the API, Postgres and Redis online in one shot for integration tests. = In locale eseguiamo docker-compose up per portare su l'API, Postgres e Redis in un colpo solo per i test di integrazione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "Volume",
+      "set": {
+        "example": "A named Docker volume holds the Postgres data directory so it survives across container restarts and image upgrades. = Un volume Docker nominato contiene la directory dati di Postgres così sopravvive a riavvii del container e aggiornamenti di immagine."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "Container",
+      "set": {
+        "example": "Each microservice runs in its own Docker container so a memory leak in the recommender does not take down the checkout API. = Ogni microservizio gira nel suo container Docker così una memory leak nel recommender non tira giù l'API di checkout."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_2",
+      "english": "docker build",
+      "set": {
+        "italian": "docker build",
+        "example": "Our CI pipeline runs docker build -t api:${SHA} . on every merge to main and pushes the tagged image to ECR. = La nostra pipeline CI esegue docker build -t api:${SHA} . ad ogni merge su main e pusha l'immagine taggata su ECR."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": "Environment Variable",
+      "set": {
+        "example": "The DATABASE_URL environment variable points the Node API at a different Postgres in staging than in production. = La environment variable DATABASE_URL punta l'API Node a un Postgres diverso in staging rispetto a produzione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": "NODE_ENV",
+      "set": {
+        "italian": "NODE_ENV",
+        "example": "Express disables stack traces in error responses whenever NODE_ENV is set to production at startup time. = Express disabilita gli stack trace nelle risposte di errore ogni volta che NODE_ENV è impostato a production all'avvio."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": ".env File",
+      "set": {
+        "example": "Local developers keep a personal .env file with their own DATABASE_URL and STRIPE_KEY values, ignored by git. = Gli sviluppatori locali tengono un personale .env file con i loro valori di DATABASE_URL e STRIPE_KEY, ignorato da git."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": "dotenv",
+      "set": {
+        "italian": "dotenv",
+        "example": "Calling require('dotenv').config() on the first line of server.js loads the local .env into process.env for development. = Chiamare require('dotenv').config() sulla prima riga di server.js carica il .env locale in process.env per lo sviluppo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": "Twelve-Factor",
+      "set": {
+        "italian": "Twelve-Factor",
+        "example": "Our deployment follows the Twelve-Factor playbook by keeping every config value in environment variables instead of YAML files. = Il nostro deployment segue il playbook Twelve-Factor tenendo ogni valore di config in variabili d'ambiente invece che in file YAML."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": "Config as Code",
+      "set": {
+        "example": "Treating config as code means the staging database hostname lives in a versioned Terraform file, not on someone's laptop. = Trattare la config as code significa che l'hostname del database di staging vive in un file Terraform versionato, non sul portatile di qualcuno."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": "Secret Management",
+      "set": {
+        "example": "Production secret management is handled by AWS Secrets Manager, and the Node API fetches the Stripe key at boot time. = La secret management di produzione è gestita da AWS Secrets Manager, e l'API Node recupera la chiave Stripe all'avvio."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": "Feature Flag",
+      "set": {
+        "italian": "Feature Flag",
+        "example": "A LaunchDarkly feature flag let us roll the new checkout flow out to 5% of traffic before exposing it to everyone. = Un feature flag su LaunchDarkly ci ha permesso di rilasciare il nuovo flusso di checkout al 5% del traffico prima di esporlo a tutti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_3",
+      "english": "Config Validation",
+      "set": {
+        "example": "We run zod-based config validation at boot so a missing JWT_SECRET crashes the API immediately instead of failing on first login. = Eseguiamo una config validation basata su zod all'avvio così un JWT_SECRET mancante fa crashare l'API subito invece di fallire al primo login."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_4",
+      "english": "Liveness Probe",
+      "set": {
+        "example": "Kubernetes restarts the pod whenever the liveness probe at /healthz returns a non-200 status three times in a row. = Kubernetes riavvia il pod ogni volta che la liveness probe su /healthz restituisce uno stato diverso da 200 tre volte di fila."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_4",
+      "english": "Readiness Probe",
+      "set": {
+        "example": "The readiness probe on /ready only returns 200 once the Node app has connected to Postgres and warmed its in-memory cache. = La readiness probe su /ready restituisce 200 solo quando l'app Node si è connessa a Postgres e ha riscaldato la sua cache in memoria."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_4",
+      "english": "Graceful Shutdown",
+      "set": {
+        "example": "On SIGTERM we trigger a graceful shutdown that stops accepting new requests but lets in-flight ones finish for up to 30 seconds. = Su SIGTERM scateniamo una graceful shutdown che smette di accettare nuove richieste ma lascia finire quelle in volo fino a 30 secondi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_4",
+      "english": "SIGTERM",
+      "set": {
+        "italian": "SIGTERM",
+        "example": "Kubernetes sends a SIGTERM to the Node container 30 seconds before forcing it down with SIGKILL during a rolling deploy. = Kubernetes invia un SIGTERM al container Node 30 secondi prima di forzare lo stop con SIGKILL durante un rolling deploy."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_4",
+      "english": "Zero Downtime",
+      "set": {
+        "italian": "Zero Downtime",
+        "example": "A rolling deploy with readiness probes gives us zero downtime even when the new image takes 15 seconds to warm up. = Un rolling deploy con readiness probe ci dà zero downtime anche quando l'immagine nuova impiega 15 secondi a riscaldarsi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_4",
+      "english": "Canary Release",
+      "set": {
+        "example": "We did a canary release of the new payment service to 2% of European traffic for an hour before promoting it globally. = Abbiamo fatto un canary release del nuovo servizio di pagamento al 2% del traffico europeo per un'ora prima di promuoverlo globalmente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "node_deployment_4",
+      "english": "Reverse Proxy",
+      "set": {
+        "example": "Nginx sits in front of the Node API as a reverse proxy that terminates TLS and routes /api requests to the right upstream pool. = Nginx sta davanti all'API Node come reverse proxy che termina il TLS e instrada le richieste /api al pool upstream giusto."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_9",
+      "english": "Monolith",
+      "set": {
+        "example": "We started as a single Express monolith handling auth, billing and search before extracting the first microservice. = Siamo partiti come un singolo monolite Express che gestiva auth, billing e search prima di estrarre il primo microservizio."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_9",
+      "english": "Service Discovery",
+      "set": {
+        "example": "Consul-based service discovery lets the checkout service find a healthy payments instance without hard-coding any hostnames. = La service discovery basata su Consul permette al servizio di checkout di trovare un'istanza payments sana senza hard-codare hostname."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_9",
+      "english": "Retry",
+      "set": {
+        "example": "We wrap the Stripe call in an exponential-backoff retry that gives up after 5 attempts and surfaces the original error. = Avvolgiamo la chiamata a Stripe in una retry a backoff esponenziale che si arrende dopo 5 tentativi e mostra l'errore originale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_9",
+      "english": "Bulkhead",
+      "set": {
+        "example": "A bulkhead pattern isolates outbound traffic to flaky third-party APIs in their own connection pool so they cannot starve the main one. = Un pattern bulkhead isola il traffico outbound verso API di terze parti instabili in un proprio pool di connessioni così non possono affamare quello principale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_10",
+      "english": "RabbitMQ",
+      "set": {
+        "italian": "RabbitMQ",
+        "example": "We push every order-created event onto a RabbitMQ exchange so billing, shipping and emails can consume it independently. = Pubblichiamo ogni evento order-created su un exchange RabbitMQ così billing, shipping ed email possono consumarlo indipendentemente."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_10",
+      "english": "Kafka",
+      "set": {
+        "italian": "Kafka",
+        "example": "Clickstream events flow into Kafka where analytics jobs replay the last 7 days of partitions to recompute funnels. = Gli eventi di clickstream confluiscono in Kafka dove i job di analytics rigiocano gli ultimi 7 giorni di partizioni per ricalcolare i funnel."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_10",
+      "english": "BullMQ",
+      "set": {
+        "italian": "BullMQ",
+        "example": "Background image resizing runs on a BullMQ queue backed by Redis with 4 worker processes pulling jobs in parallel. = Il resize di immagini in background gira su una queue BullMQ basata su Redis con 4 processi worker che tirano job in parallelo."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_10",
+      "english": "Producer",
+      "set": {
+        "example": "The checkout API acts as a Kafka producer that publishes one order.completed event per successful payment. = L'API di checkout fa da producer Kafka che pubblica un evento order.completed per ogni pagamento riuscito."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_10",
+      "english": "Consumer",
+      "set": {
+        "example": "A Node consumer reads from the order.completed topic and writes a confirmation row into the analytics warehouse. = Un consumer Node legge dal topic order.completed e scrive una riga di conferma nel data warehouse analytics."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_10",
+      "english": "Topic",
+      "set": {
+        "italian": "Topic",
+        "example": "We split high-volume events across an orders topic and a low-priority audit topic so consumer lag stays bounded. = Suddividiamo gli eventi ad alto volume su un topic orders e un topic audit a bassa priorità così il lag dei consumer resta limitato.",
+        "english_new": "Kafka Topic"
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_10",
+      "english": "Job",
+      "set": {
+        "italian": "Job",
+        "example": "Each BullMQ job carries the userId and target image size so the worker has everything it needs to start the resize. = Ogni job BullMQ porta lo userId e la dimensione immagine target così il worker ha tutto il necessario per iniziare il resize."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_11",
+      "english": "RPC",
+      "set": {
+        "italian": "RPC",
+        "example": "Internal services talk over RPC instead of REST so the calling code looks like a plain TypeScript function. = I servizi interni parlano via RPC invece di REST così il codice chiamante sembra una semplice funzione TypeScript."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_11",
+      "english": "gRPC",
+      "set": {
+        "italian": "gRPC",
+        "example": "The recommender service exposes a gRPC endpoint over HTTP/2 that streams suggestions back as a server-side stream. = Il servizio recommender espone un endpoint gRPC su HTTP/2 che restituisce suggerimenti come stream lato server."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_11",
+      "english": "Protocol Buffers",
+      "set": {
+        "italian": "Protocol Buffers",
+        "example": "We describe the cart message in a .proto file so the same Protocol Buffers schema generates types for Node, Go and Swift. = Descriviamo il messaggio cart in un file .proto così lo stesso schema Protocol Buffers genera tipi per Node, Go e Swift."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_11",
+      "english": "tRPC",
+      "set": {
+        "italian": "tRPC",
+        "example": "Our Next.js front end calls the Node backend through tRPC so request and response types stay in sync without manual codegen. = Il nostro front end Next.js chiama il backend Node tramite tRPC così tipi di richiesta e risposta restano allineati senza codegen manuale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_11",
+      "english": "GraphQL",
+      "set": {
+        "italian": "GraphQL",
+        "example": "The mobile client sends a single GraphQL query that returns a user with their last 5 orders and shipping addresses in one round trip. = Il client mobile invia una singola query GraphQL che restituisce un utente con i suoi ultimi 5 ordini e indirizzi di spedizione in un solo round trip."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_11",
+      "english": "Resolver",
+      "set": {
+        "italian": "Resolver",
+        "example": "The order resolver loads line items lazily so a query that only asks for the total never touches the items table. = Il resolver order carica gli item in modo pigro così una query che chiede solo il totale non tocca mai la tabella items."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_11",
+      "english": "Schema-First",
+      "set": {
+        "italian": "Schema-First",
+        "example": "We follow a schema-first workflow where the .graphql file is reviewed in a PR before any resolver code is written. = Seguiamo un workflow schema-first dove il file .graphql è revisionato in una PR prima di scrivere qualsiasi codice resolver."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_12",
+      "english": "Observability",
+      "set": {
+        "example": "Strong observability means a 500 ms latency spike at 03:17 ties directly to the slow Postgres query that caused it. = Una observability forte significa che un picco di latenza di 500 ms alle 03:17 si collega direttamente alla query Postgres lenta che lo ha causato."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_12",
+      "english": "Distributed Tracing",
+      "set": {
+        "example": "Our distributed tracing showed the failing checkout traversed gateway, payments and inventory before timing out on the email service. = Il nostro distributed tracing ha mostrato che il checkout fallito attraversava gateway, payments e inventory prima di andare in timeout sul servizio email."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_12",
+      "english": "OpenTelemetry",
+      "set": {
+        "italian": "OpenTelemetry",
+        "example": "Wiring OpenTelemetry into the Express middleware automatically created spans for every incoming HTTP request without code changes. = Collegare OpenTelemetry al middleware Express ha creato automaticamente span per ogni richiesta HTTP in arrivo senza modifiche al codice."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_12",
+      "english": "Trace ID",
+      "set": {
+        "example": "Every log line carries the same trace id so we can follow a single user request across the gateway, API and worker. = Ogni riga di log porta lo stesso trace id così possiamo seguire una singola richiesta utente attraverso gateway, API e worker."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_12",
+      "english": "Prometheus",
+      "set": {
+        "italian": "Prometheus",
+        "example": "The Node API exposes a /metrics endpoint that Prometheus scrapes every 15 seconds to build rate and error panels. = L'API Node espone un endpoint /metrics che Prometheus fa scrape ogni 15 secondi per costruire pannelli di rate ed errori."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_12",
+      "english": "Grafana",
+      "set": {
+        "italian": "Grafana",
+        "example": "Our on-call team uses a Grafana dashboard with p50, p95 and p99 latency panels split by HTTP route. = Il nostro team on-call usa una dashboard Grafana con pannelli p50, p95 e p99 di latenza divisi per route HTTP."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_12",
+      "english": "Structured Logging",
+      "set": {
+        "example": "Pino gives us structured logging where every line is JSON with userId, route and durationMs ready for downstream tools. = Pino ci dà uno structured logging dove ogni riga è JSON con userId, route e durationMs pronti per gli strumenti a valle."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "node_api_12",
+      "english": "SLO",
+      "set": {
+        "italian": "SLO",
+        "example": "Our checkout SLO promises a 99.9% success rate measured in a rolling 30-day window before we burn error budget. = Il nostro SLO di checkout promette un tasso di successo del 99.9% misurato in una finestra mobile di 30 giorni prima di bruciare error budget."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "Monorepo",
+      "set": {
+        "italian": "Monorepo",
+        "example": "Our monorepo holds the Next.js web app, the Node API and 6 shared packages in one Git repository managed by pnpm. = Il nostro monorepo contiene la web app Next.js, l'API Node e 6 pacchetti condivisi in un solo repository Git gestito da pnpm."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "pnpm",
+      "set": {
+        "italian": "pnpm",
+        "example": "Switching to pnpm dropped our node_modules from 1.8 GB to 380 MB by hard-linking duplicate package versions. = Passare a pnpm ha ridotto il nostro node_modules da 1.8 GB a 380 MB facendo hard-link delle versioni duplicate dei pacchetti."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "Yarn Workspaces",
+      "set": {
+        "italian": "Yarn Workspaces",
+        "example": "We declared every internal package under packages/* in Yarn Workspaces so a single yarn install hydrates the whole repo. = Abbiamo dichiarato ogni pacchetto interno sotto packages/* in Yarn Workspaces così un singolo yarn install idrata l'intero repo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "Nx",
+      "set": {
+        "italian": "Nx",
+        "example": "Nx caches build outputs across CI runs so a PR that touches only the web app skips rebuilding the API package entirely. = Nx mette in cache gli output di build tra le run di CI così una PR che tocca solo la web app salta del tutto il rebuild del pacchetto API."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "Turborepo",
+      "set": {
+        "italian": "Turborepo",
+        "example": "The remote cache in Turborepo makes a clean CI run finish in 90 seconds instead of 11 minutes when no packages have actually changed. = La remote cache di Turborepo fa finire una run CI pulita in 90 secondi invece di 11 minuti quando nessun pacchetto è effettivamente cambiato."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "Lerna",
+      "set": {
+        "italian": "Lerna",
+        "example": "We rely on Lerna to orchestrate the version bump and publish flow across the 8 packages we ship to npm under a single scope. = Ci affidiamo a Lerna per orchestrare il flusso di version bump e publish sui 8 pacchetti che spediamo a npm sotto un unico scope."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "Hoisting",
+      "set": {
+        "italian": "Hoisting",
+        "example": "Yarn hoisting pulls react up to the root node_modules so both the web app and the design system share a single copy. = L'hoisting di Yarn tira su react al node_modules di root così sia la web app sia il design system condividono una sola copia.",
+        "english_new": "Workspace Dependency Hoisting"
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_13",
+      "english": "Shared Library",
+      "set": {
+        "example": "The shared library packages/ui exports our Button and Modal components so both the dashboard and admin app reuse them. = La shared library packages/ui esporta i nostri componenti Button e Modal così sia la dashboard sia l'admin app li riusano."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "npm publish",
+      "set": {
+        "italian": "npm publish",
+        "example": "Running npm publish --access public pushed version 2.4.0 of our SDK to the registry where customers could install it immediately. = Eseguire npm publish --access public ha pushato la versione 2.4.0 del nostro SDK al registry dove i clienti potevano installarla immediatamente."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Public Package",
+      "set": {
+        "example": "A public package on npm shows up in the global search and can be installed by anyone with a network connection. = Un public package su npm appare nella ricerca globale e può essere installato da chiunque abbia connessione di rete."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Scoped Package",
+      "set": {
+        "example": "A scoped package like @acme/utils lives in our company's npm namespace and avoids naming collisions with public packages. = Uno scoped package come @acme/utils vive nel namespace npm della nostra azienda ed evita collisioni di nomi con pacchetti pubblici."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Private Package",
+      "set": {
+        "example": "Our @acme/internal-auth private package is published to GitHub Packages and only installable with a valid PAT. = Il nostro private package @acme/internal-auth è pubblicato su GitHub Packages e installabile solo con un PAT valido."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Version Bump",
+      "set": {
+        "example": "A version bump from 1.4.2 to 2.0.0 signals to consumers that the new release breaks at least one public API. = Un version bump da 1.4.2 a 2.0.0 segnala ai consumatori che la nuova release rompe almeno una API pubblica."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Changelog",
+      "set": {
+        "italian": "Changelog",
+        "example": "Our CHANGELOG.md groups each release under Added, Changed and Fixed so consumers can scan upgrade impact in seconds. = Il nostro CHANGELOG.md raggruppa ogni release sotto Added, Changed e Fixed così i consumatori scansionano l'impatto dell'upgrade in pochi secondi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Semantic Release",
+      "set": {
+        "example": "Semantic release reads conventional commits on main and decides whether the next tag is a patch, minor or major bump. = Semantic release legge i commit convenzionali su main e decide se il prossimo tag è un bump patch, minor o major."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Conventional Commits",
+      "set": {
+        "example": "Following conventional commits, the message 'fix(auth): refresh tokens before expiry' bumps the patch version automatically. = Seguendo i conventional commits, il messaggio 'fix(auth): refresh tokens before expiry' fa bump automatico della versione patch."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "npm Tag",
+      "set": {
+        "example": "We publish prereleases under the npm tag beta so adventurous users opt in with npm install acme@beta without affecting latest. = Pubblichiamo le prerelease sotto l'npm tag beta così utenti coraggiosi optano con npm install acme@beta senza intaccare latest."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_14",
+      "english": "Deprecate",
+      "set": {
+        "italian": "Deprecare",
+        "example": "We deprecate the legacy fetchUser export by marking it with a JSDoc @deprecated tag and pointing users at fetchUserById. = Deprechiamo l'export legacy fetchUser marcandolo con un tag JSDoc @deprecated e indirizzando gli utenti a fetchUserById."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "CI",
+      "set": {
+        "italian": "CI",
+        "example": "Our CI on GitHub Actions runs lint, type-check and unit tests on every pull request before review is allowed. = La nostra CI su GitHub Actions esegue lint, type-check e unit test ad ogni pull request prima che la review sia permessa."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "CD",
+      "set": {
+        "italian": "CD",
+        "example": "Once main is green our CD pipeline builds a Docker image, pushes it to ECR and updates the Kubernetes deployment automatically. = Quando main è verde la nostra pipeline CD costruisce un'immagine Docker, la pusha su ECR e aggiorna il deployment Kubernetes automaticamente."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "GitHub Actions",
+      "set": {
+        "italian": "GitHub Actions",
+        "example": "A GitHub Actions workflow at .github/workflows/ci.yml runs the test matrix across Node 18, 20 and 22 in parallel. = Un workflow GitHub Actions in .github/workflows/ci.yml esegue la matrice di test su Node 18, 20 e 22 in parallelo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "ESLint",
+      "set": {
+        "italian": "ESLint",
+        "example": "Our ESLint config flags any await missing a try/catch in async route handlers, catching error-handling regressions in CI. = La nostra config ESLint segnala ogni await senza try/catch negli handler async, intercettando regressioni di gestione errori in CI."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "Prettier",
+      "set": {
+        "italian": "Prettier",
+        "example": "Running prettier --write on a Prettier-formatted repo gives every contributor identical indentation no matter their editor. = Eseguire prettier --write su un repo formattato con Prettier dà a ogni contributor un'indentazione identica indipendentemente dall'editor."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "Husky",
+      "set": {
+        "italian": "Husky",
+        "example": "A Husky pre-commit hook runs lint-staged so a colleague cannot accidentally commit unformatted code on Friday afternoon. = Un hook pre-commit di Husky esegue lint-staged così un collega non può accidentalmente committare codice non formattato il venerdì pomeriggio."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "lint-staged",
+      "set": {
+        "italian": "lint-staged",
+        "example": "On every commit lint-staged formats only the .ts files in the staging area instead of reformatting the entire repository. = Ad ogni commit lint-staged formatta solo i file .ts in staging invece di riformattare l'intero repository."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "Code Review",
+      "set": {
+        "example": "A 30-minute code review on the new auth middleware caught an open redirect bug that the test suite had missed entirely. = Una code review di 30 minuti sul nuovo middleware di auth ha intercettato un bug di open redirect che la suite di test aveva mancato del tutto."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "Commit Hook",
+      "set": {
+        "italian": "Commit Hook",
+        "example": "A pre-commit hook installed by Husky runs prettier and eslint --fix so a colleague never commits unformatted code by accident. = Un commit hook installato da Husky esegue prettier ed eslint --fix così un collega non committa mai codice non formattato per sbaglio."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_16",
+      "english": "Code Smell",
+      "set": {
+        "example": "A 400-line function that takes 12 boolean flags is a clear code smell and a candidate for a refactor before adding features. = Una funzione di 400 righe che prende 12 flag booleani è un chiaro code smell e candidata a un refactor prima di aggiungere funzionalità."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_16",
+      "english": "Refactoring",
+      "set": {
+        "italian": "Refactoring",
+        "example": "A careful refactoring of the order module to extract a PriceCalculator class kept behavior identical while halving the cyclomatic complexity. = Un attento refactoring del modulo order per estrarre una classe PriceCalculator ha mantenuto il comportamento identico dimezzando la complessità ciclomatica."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_16",
+      "english": "Technical Debt",
+      "set": {
+        "example": "We carry technical debt in the auth layer where every endpoint reimplements its own JWT validation in slightly different ways. = Portiamo technical debt nel layer di auth dove ogni endpoint reimplementa la propria validazione JWT in modi leggermente diversi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_16",
+      "english": "Mentoring",
+      "set": {
+        "italian": "Mentoring",
+        "example": "Senior engineers spend Friday afternoons mentoring juniors on code reviews, design docs and incident response drills. = Gli ingegneri senior passano i venerdì pomeriggio facendo mentoring ai junior su code review, design doc ed esercitazioni di incident response."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_16",
+      "english": "Postmortem",
+      "set": {
+        "italian": "Postmortem",
+        "example": "Our postmortem on the 40-minute checkout outage produced 6 action items and an updated runbook for Redis failover. = Il nostro postmortem sull'outage di 40 minuti del checkout ha prodotto 6 action item e un runbook aggiornato per il failover di Redis."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_16",
+      "english": "On-Call",
+      "set": {
+        "example": "Being on-call this week means I carry the pager and respond to PagerDuty alerts about the production Node services within 5 minutes. = Essere on-call questa settimana significa che porto il pager e rispondo agli alert PagerDuty sui servizi Node di produzione entro 5 minuti."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_16",
+      "english": "RFC",
+      "set": {
+        "italian": "RFC",
+        "example": "Before changing how sessions are stored we circulated an RFC document for a week so every team could weigh in on the trade-offs. = Prima di cambiare come sono memorizzate le sessioni abbiamo fatto circolare un documento RFC per una settimana così ogni team poteva pesare sui trade-off."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_16",
+      "english": "Architecture Decision Record",
+      "set": {
+        "example": "An architecture decision record documents why we chose Postgres over DynamoDB so future engineers do not relitigate the call. = Un architecture decision record documenta perché abbiamo scelto Postgres rispetto a DynamoDB così ingegneri futuri non rimettono in discussione la scelta."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_16",
+      "english": "Continuous Learning",
+      "set": {
+        "example": "Our team carves out 2 hours every Friday for continuous learning where each engineer reads a paper or watches a conference talk. = Il nostro team ritaglia 2 ore ogni venerdì per la continuous learning dove ogni ingegnere legge un paper o guarda un talk di conferenza."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_2",
+      "english": "Concurrency",
+      "set": {
+        "english_new": "Node Concurrency",
+        "italian": "Concorrenza in Node",
+        "example": "Node's single-threaded concurrency lets one process juggle thousands of open sockets through the event loop. = La concorrenza single-threaded di Node permette a un processo di gestire migliaia di socket aperti tramite l'event loop."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_2",
+      "english": "Heap",
+      "set": {
+        "english_new": "V8 Heap",
+        "italian": "Heap V8",
+        "example": "Every Node object lives on the V8 heap and is reclaimed by the garbage collector when nothing references it anymore. = Ogni oggetto Node vive sull'heap V8 ed è recuperato dal garbage collector quando nulla lo referenzia più."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "node_foundations_4",
+      "english": "Install",
+      "set": {
+        "english_new": "npm install",
+        "italian": "npm install",
+        "example": "Running npm install in a fresh checkout hydrates node_modules from the lockfile so every contributor gets the same dependency tree. = Eseguire npm install in un checkout fresco idrata node_modules dal lockfile così ogni contributor ottiene lo stesso albero di dipendenze."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_3",
+      "english": "Update",
+      "set": {
+        "english_new": "Package Update",
+        "italian": "Aggiornamento Pacchetto",
+        "example": "An npm package update from express 4.18 to 4.19 may patch a security advisory without breaking any of your route handlers. = Un package update npm da express 4.18 a 4.19 può patchare un advisory di sicurezza senza rompere nessuno dei tuoi handler di route."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Update",
+      "set": {
+        "english_new": "REST Update",
+        "italian": "Update REST",
+        "example": "A REST update sends PATCH /users/42 with a JSON body to change only the email field without touching other user attributes. = Un update REST invia PATCH /users/42 con un body JSON per cambiare solo il campo email senza toccare altri attributi utente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_7",
+      "english": "Hoisting",
+      "set": {
+        "english_new": "JavaScript Hoisting",
+        "italian": "Hoisting JavaScript",
+        "example": "JavaScript hoisting lets you reference a function declaration before the line where it appears in the source file. = L'hoisting di JavaScript ti permette di riferire una dichiarazione di funzione prima della riga dove appare nel file sorgente."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "node_foundations_7",
+      "english": "Strict Mode",
+      "set": {
+        "english_new": "JavaScript Strict Mode",
+        "italian": "Modalità Strict JavaScript",
+        "example": "Adding 'use strict' at the top of a Node module enables JavaScript strict mode and turns silent assignment errors into thrown exceptions. = Aggiungere 'use strict' in cima a un modulo Node abilita la strict mode JavaScript e trasforma errori silenziosi di assegnazione in eccezioni lanciate."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_2",
+      "english": "finally",
+      "set": {
+        "english_new": "Promise finally",
+        "italian": "finally su Promise",
+        "example": "Chaining a Promise finally on the database query guarantees we release the connection even when the await throws. = Concatenare un finally su Promise sulla query di database garantisce di rilasciare la connessione anche quando l'await lancia."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_10",
+      "english": "finally",
+      "set": {
+        "english_new": "try/finally Cleanup",
+        "italian": "Cleanup try/finally",
+        "example": "A try/finally cleanup block closes the open file descriptor whether the read succeeded or threw a permission error. = Un blocco di cleanup try/finally chiude il file descriptor aperto sia che la lettura sia riuscita o abbia lanciato un errore di permesso."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "try/catch",
+      "set": {
+        "english_new": "async/await try/catch",
+        "italian": "try/catch su async/await",
+        "example": "Wrapping an await call in a try/catch on async/await surfaces the rejection as a synchronous-looking exception you can handle line by line. = Avvolgere una chiamata await in un try/catch su async/await fa emergere la rejection come eccezione apparentemente sincrona che puoi gestire riga per riga."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_10",
+      "english": "try/catch",
+      "set": {
+        "english_new": "Runtime try/catch",
+        "italian": "try/catch a Runtime",
+        "example": "A runtime try/catch around fs.readFileSync lets the request handler return a clean 404 when the configured file is missing on disk. = Un try/catch a runtime intorno a fs.readFileSync permette all'handler di richiesta di restituire un 404 pulito quando il file configurato è mancante su disco."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "Encoding",
+      "set": {
+        "english_new": "File Encoding",
+        "italian": "Encoding del File",
+        "example": "Passing the file encoding utf-8 to fs.readFile returns a string instead of a raw Buffer of bytes from disk. = Passare il file encoding utf-8 a fs.readFile restituisce una stringa invece di un Buffer grezzo di byte dal disco."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_1",
+      "english": "Encoding",
+      "set": {
+        "english_new": "Stream Encoding",
+        "italian": "Encoding dello Stream",
+        "example": "Calling stream.setEncoding('utf-8') sets the stream encoding so each data event delivers a string instead of a Buffer chunk. = Chiamare stream.setEncoding('utf-8') imposta lo stream encoding così ogni evento data consegna una stringa invece di un chunk Buffer."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "Permissions",
+      "set": {
+        "english_new": "File Permissions",
+        "italian": "Permessi del File",
+        "example": "Insufficient file permissions on /etc/secrets cause fs.readFile to reject with an EACCES error inside the Node API. = Permessi del file insufficienti su /etc/secrets fanno rifiutare fs.readFile con un errore EACCES dentro l'API Node."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_4",
+      "english": "Permissions",
+      "set": {
+        "english_new": "Authorization Permissions",
+        "italian": "Permessi di Autorizzazione",
+        "example": "The middleware checks the authorization permissions on the JWT claims before letting the request hit the admin route handler. = Il middleware controlla i permessi di autorizzazione sui claim del JWT prima di lasciare arrivare la richiesta all'handler della route admin."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_6",
+      "english": "DELETE",
+      "set": {
+        "english_new": "HTTP DELETE Method",
+        "italian": "Metodo HTTP DELETE",
+        "example": "The HTTP DELETE method on /sessions/42 tells the Node API to drop the session row and invalidate any cached tokens. = Il metodo HTTP DELETE su /sessions/42 dice all'API Node di eliminare la riga sessione e invalidare ogni token in cache."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Delete",
+      "set": {
+        "english_new": "REST Delete Endpoint",
+        "italian": "Endpoint REST Delete",
+        "example": "A REST delete endpoint like DELETE /users/42 removes the user record and returns 204 No Content on success. = Un endpoint REST delete come DELETE /users/42 rimuove il record utente e restituisce 204 No Content in caso di successo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "node_runtime_7",
+      "english": "Status Code",
+      "set": {
+        "english_new": "HTTP Status Code",
+        "italian": "HTTP Status Code",
+        "example": "The Node server returns an HTTP status code of 503 when its database pool is exhausted so upstream load balancers retry. = Il server Node restituisce un HTTP status code 503 quando il suo pool database è esaurito così i load balancer a monte fanno retry."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "node_runtime_11",
+      "english": "Status Code",
+      "set": {
+        "english_new": "Error Status Code",
+        "italian": "Status Code di Errore",
+        "example": "An unhandled exception in the route handler is mapped to an error status code 500 so the client knows the request never succeeded. = Un'eccezione non gestita nell'handler di route è mappata a uno status code di errore 500 così il client sa che la richiesta non è mai riuscita."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_2",
+      "english": "Collection",
+      "set": {
+        "english_new": "REST Collection",
+        "italian": "Collection REST",
+        "example": "A REST collection endpoint like GET /users returns a JSON array of user resources together with paging metadata. = Un endpoint di collection REST come GET /users restituisce un array JSON di risorse utente insieme a metadati di paginazione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Collection",
+      "set": {
+        "english_new": "MongoDB Collection",
+        "italian": "Collection MongoDB",
+        "example": "The MongoDB collection users stores one document per account and is indexed on the email field for fast login lookups. = La collection MongoDB users memorizza un documento per account ed è indicizzata sul campo email per lookup di login veloci."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_3",
+      "english": "Service Layer",
+      "set": {
+        "english_new": "API Service Layer",
+        "italian": "Service Layer dell'API",
+        "example": "The API service layer hides the Postgres queries so route handlers in Express never import the database driver directly. = Il service layer dell'API nasconde le query Postgres così gli handler di route in Express non importano mai il driver di database direttamente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "node_api_3",
+      "english": "Schema",
+      "set": {
+        "english_new": "Request Schema",
+        "italian": "Schema della Richiesta",
+        "example": "A zod request schema validates the body of POST /users at the edge so handlers below it can treat input as already trusted. = Uno schema della richiesta zod valida il body di POST /users al bordo così gli handler sotto possono trattare l'input come già fidato."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Schema",
+      "set": {
+        "english_new": "Database Schema",
+        "italian": "Schema del Database",
+        "example": "The database schema for orders has a foreign key into customers and a partial index on status='paid' for reporting queries. = Lo schema del database per orders ha una foreign key verso customers e un indice parziale su status='paid' per query di reportistica."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "node_middleware_4",
+      "english": "Helmet",
+      "set": {
+        "english_new": "helmet middleware",
+        "italian": "middleware helmet",
+        "example": "The helmet middleware sets sensible HTTP security headers like Content-Security-Policy and X-Frame-Options on every Express response. = Il middleware helmet imposta header HTTP di sicurezza sensati come Content-Security-Policy e X-Frame-Options su ogni risposta Express."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Aggregate",
+      "set": {
+        "english_new": "MongoDB Aggregate",
+        "italian": "Aggregate MongoDB",
+        "example": "A MongoDB aggregate pipeline can $match orders by month and then $group total revenue per customer in a single round trip. = Una pipeline aggregate MongoDB può fare $match degli ordini per mese e poi $group del fatturato totale per cliente in un solo round trip."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "node_streams_3",
+      "english": "pipeline",
+      "set": {
+        "english_new": "stream pipeline",
+        "italian": "stream pipeline",
+        "example": "Wrapping fs.createReadStream and zlib.createGzip in stream.pipeline propagates errors and closes every stream when one of them fails. = Avvolgere fs.createReadStream e zlib.createGzip in stream.pipeline propaga gli errori e chiude ogni stream quando uno di loro fallisce."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "node_foundations_15",
+      "english": "Pipeline",
+      "set": {
+        "english_new": "CI/CD Pipeline",
+        "italian": "Pipeline CI/CD",
+        "example": "Our CI/CD pipeline lints, tests, builds the Docker image and rolls out to staging within 8 minutes on every merge to main. = La nostra pipeline CI/CD fa lint, test, build dell'immagine Docker e roll-out su staging entro 8 minuti ad ogni merge su main."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_2",
+      "english": "Observer Pattern",
+      "set": {
+        "english_new": "EventEmitter Observer Pattern",
+        "italian": "Observer Pattern con EventEmitter",
+        "example": "Node's EventEmitter is a textbook observer pattern where many listeners react to one emitter publishing 'data' or 'end' events. = L'EventEmitter di Node è un observer pattern da manuale dove molti listener reagiscono a un emitter che pubblica eventi 'data' o 'end'."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_2",
+      "english": "Memory Leak",
+      "set": {
+        "english_new": "EventEmitter Memory Leak",
+        "italian": "Memory Leak con EventEmitter",
+        "example": "Forgetting to call removeListener on a long-lived EventEmitter is a classic EventEmitter memory leak that grows the heap on every request. = Dimenticare di chiamare removeListener su un EventEmitter di lunga durata è una classica memory leak con EventEmitter che cresce l'heap ad ogni richiesta."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_2",
+      "english": "Memory Leak",
+      "set": {
+        "english_new": "Heap Memory Leak",
+        "italian": "Memory Leak nell'Heap",
+        "example": "A heap memory leak in the Node API showed up as steadily climbing rss in Grafana until PM2 restarted the worker after 8 hours. = Una memory leak nell'heap dell'API Node appariva come rss in costante salita su Grafana finché PM2 non riavviava il worker dopo 8 ore."
+      }
+    }
+  ]
+}

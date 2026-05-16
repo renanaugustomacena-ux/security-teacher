@@ -39,7 +39,7 @@ export default {
               pronunciation: '/\u02C8h\u00E6k\u0259r/',
               phonetic: 'HAK-er',
               example:
-                "The hacker gained access to the system. = L'hacker ha ottenuto accesso al sistema.",
+                'A skilled hacker probed the staging server for hours before finding an exposed admin endpoint. = Un hacker esperto ha sondato il server di staging per ore prima di trovare un endpoint admin esposto.',
               context: 'threat-actors',
               difficulty: 'beginner',
               note: 'Non tutti gli hacker sono criminali: esistono "white hat" (etici) e "black hat" (malevoli).',
@@ -173,7 +173,7 @@ export default {
               pronunciation: '/\u02C8l\u0252\u0261a\u028At/',
               phonetic: 'LOG-aut',
               example:
-                'Remember to logout when you are done. = Ricorda di disconnetterti quando hai finito.',
+                'Auto-logout after 15 minutes of inactivity is a baseline control on any banking or healthcare portal. = Il logout automatico dopo 15 minuti di inattività è un controllo minimo su qualsiasi portale bancario o sanitario.',
               context: 'authentication',
               difficulty: 'beginner',
             },
@@ -261,8 +261,7 @@ export default {
               italian: 'Rischio',
               pronunciation: '/r\u026Ask/',
               phonetic: 'RISK',
-              example:
-                'Every system has some level of risk. = Ogni sistema ha un certo livello di rischio.',
+              example: `Every change to a production system carries some risk, so we weigh the impact against the benefit before rolling it out. = Ogni modifica a un sistema in produzione comporta un certo rischio, perciò valutiamo l'impatto rispetto al beneficio prima di rilasciarla.`,
               context: 'risk-management',
               difficulty: 'beginner',
             },
@@ -312,8 +311,7 @@ export default {
               italian: 'Aggiornamento',
               pronunciation: '/\u028Cp\u02C8de\u026At/',
               phonetic: 'ap-DEIT',
-              example:
-                'Always keep your software up to date. = Tieni sempre aggiornato il tuo software.',
+              example: `Apply the security update within 48 hours when the vendor flags a vulnerability as actively exploited. = Applica l'update di sicurezza entro 48 ore quando il vendor segnala una vulnerabilità come attivamente sfruttata.`,
               context: 'defense',
               difficulty: 'beginner',
             },
@@ -628,7 +626,7 @@ export default {
               pronunciation: '/bru\u02D0t f\u0254\u02D0rs/',
               phonetic: 'BRUUT FORS',
               example:
-                'Brute force attacks try every possible password. = Gli attacchi di forza bruta provano ogni password possibile.',
+                'Rate limiting and account lockout policies make a brute force attack against the login form impractical. = Il rate limiting e le policy di blocco account rendono impraticabile un attacco di forza bruta contro la form di login.',
               context: 'attack-techniques',
               difficulty: 'beginner',
             },
@@ -639,7 +637,7 @@ export default {
                 '/\u02C8so\u028A\u0283\u0259l end\u0292\u026A\u02C8n\u026A\u0259r\u026A\u014B/',
               phonetic: 'SOU-scial en-gi-NIR-ing',
               example:
-                "Social engineering tricks people into revealing secrets. = L'ingegneria sociale inganna le persone a rivelare segreti.",
+                'Most successful breaches start with social engineering rather than a technical exploit of the perimeter. = La maggior parte delle violazioni riuscite inizia con ingegneria sociale piuttosto che con un exploit tecnico del perimetro.',
               context: 'social-engineering',
               difficulty: 'beginner',
               note: "L'attacco pi\u00F9 pericoloso: sfrutta la psicologia umana, non la tecnologia.",
@@ -670,8 +668,7 @@ export default {
               italian: "Furto d'identit\u00E0",
               pronunciation: '/a\u026A\u02C8dent\u0259ti \u03B8eft/',
               phonetic: 'ai-DEN-ti-ti THEFT',
-              example:
-                "Identity theft can ruin your financial life. = Il furto d'identit\u00E0 pu\u00F2 rovinare la tua vita finanziaria.",
+              example: `After the leak of SSNs and dates of birth, the firm offered free identity theft monitoring for two years. = Dopo la fuga di SSN e date di nascita, l'azienda ha offerto monitoraggio del furto d'identità gratuito per due anni.`,
               context: 'threats',
               difficulty: 'beginner',
             },
@@ -701,8 +698,7 @@ export default {
               italian: 'Minaccia interna',
               pronunciation: '/\u026An\u02C8sa\u026Ad\u0259r \u03B8ret/',
               phonetic: 'in-SAI-der THRET',
-              example:
-                "Insider threats come from within the organization. = Le minacce interne provengono dall'interno dell'organizzazione.",
+              example: `Detecting an insider threat is hard because the user already has legitimate access to the systems they abuse. = Rilevare una minaccia interna è difficile perché l'utente ha già accesso legittimo ai sistemi di cui abusa.`,
               context: 'threat-actors',
               difficulty: 'beginner',
             },
@@ -771,7 +767,7 @@ export default {
               pronunciation: '/d\u0259\u02C8me\u026An/',
               phonetic: 'de-MEIN',
               example:
-                'Fake domains look similar to real ones. = I domini falsi assomigliano a quelli veri.',
+                'Attackers register a look-alike domain a few weeks before the campaign so the WHOIS record looks aged. = Gli aggressori registrano un dominio simile qualche settimana prima della campagna così il record WHOIS sembra invecchiato.',
               context: 'web-security',
               difficulty: 'beginner',
             },
@@ -838,7 +834,7 @@ export default {
               pronunciation: '/sk\u00E6n/',
               phonetic: 'SKAN',
               example:
-                'Run a full scan with your antivirus. = Esegui una scansione completa con il tuo antivirus.',
+                'Schedule a weekly authenticated scan of the internal subnet to catch missing patches before attackers do. = Pianifica una scansione autenticata settimanale della subnet interna per intercettare patch mancanti prima degli aggressori.',
               context: 'defense',
               difficulty: 'beginner',
             },
@@ -1125,15 +1121,15 @@ export default {
               note: 'Un solo login per tanti servizi: comodo ma se compromesso, tutti gli account sono a rischio.',
             },
             {
-              english: 'Certificate',
-              italian: 'Certificato digitale',
+              english: 'client certificate',
+              italian: 'certificato client',
               pronunciation: '/s\u0259r\u02C8t\u026Af\u026Ak\u0259t/',
               phonetic: 'ser-TI-fi-ket',
               example:
-                'The server presented its certificate to prove its identity. = Il server ha presentato il suo certificato per provare la sua identit\u00E0.',
+                'Mutual TLS uses a client certificate so the server can authenticate the caller without relying on a shared secret. = Il mutual TLS usa un certificato client così il server può autenticare il chiamante senza affidarsi a un segreto condiviso.',
               context: 'authentication',
               difficulty: 'intermediate',
-              note: "Come una carta d'identit\u00E0 digitale: emesso da un'autorit\u00E0 fidata (CA) per verificare l'identit\u00E0.",
+              note: 'Tipico delle API B2B, dei microservizi interni e degli accessi VPN aziendali.',
             },
             {
               english: 'One-Time Password (OTP)',
@@ -1141,7 +1137,7 @@ export default {
               pronunciation: '/w\u028Cn ta\u026Am \u02C8p\u00E6sw\u025Crd/',
               phonetic: 'uan taim PAS-uerd',
               example:
-                "Enter the OTP sent to your phone. = Inserisci l'OTP inviato al tuo telefono.",
+                'The bank sends a 6-digit one-time password by SMS, valid for 60 seconds, to confirm each wire transfer. = La banca invia una one-time password di 6 cifre via SMS, valida 60 secondi, per confermare ogni bonifico.',
               context: 'authentication',
               difficulty: 'intermediate',
               note: 'Valida per un solo utilizzo: anche se intercettata, non pu\u00F2 essere riusata.',
@@ -1187,15 +1183,14 @@ export default {
           description: 'Protezione dei dispositivi',
           items: [
             {
-              english: 'Antivirus',
-              italian: 'software anti-malware (Antivirus)',
+              english: 'next-generation antivirus',
+              italian: 'antivirus di nuova generazione',
               pronunciation: '/\u02CC\u00E6nti\u02C8va\u026Ar\u0259s/',
               phonetic: 'an-ti-VAI-res',
-              example:
-                'Keep your antivirus software up to date. = Mantieni il tuo antivirus aggiornato.',
+              example: `Next-generation antivirus relies on behavioral analysis and machine learning instead of static signature databases. = L'antivirus di nuova generazione si affida ad analisi comportamentale e machine learning invece che a database di signature statiche.`,
               context: 'endpoint-security',
               difficulty: 'intermediate',
-              note: 'Attenzione alla pronuncia inglese: "anti-VAI-res", non "anti-virus" come in italiano.',
+              note: 'Spesso abbreviato in NGAV; integrato nelle suite EDR moderne.',
             },
             {
               english: 'Endpoint',
@@ -1214,7 +1209,7 @@ export default {
               pronunciation: '/d\u026Ask \u026An\u02C8kr\u026Ap\u0283\u0259n/',
               phonetic: 'disk in-KRIP-scen',
               example:
-                'Disk encryption protects data if a laptop is stolen. = La crittografia del disco protegge i dati se un laptop viene rubato.',
+                'Without full disk encryption, a stolen laptop hands over every cached credential and offline document to the thief. = Senza crittografia del disco completa, un laptop rubato consegna al ladro ogni credenziale cached e documento offline.',
               context: 'endpoint-security',
               difficulty: 'intermediate',
               note: 'BitLocker (Windows) e FileVault (Mac) sono gli strumenti pi\u00F9 comuni.',
@@ -1327,15 +1322,14 @@ export default {
               note: 'Successore di SSL. La versione attuale \u00E8 TLS 1.3 (2018), molto pi\u00F9 veloce e sicura.',
             },
             {
-              english: 'HTTPS',
-              italian: 'Protocollo sicuro (HTTPS)',
+              english: 'HTTPS strict transport',
+              italian: 'HTTPS strict transport (HSTS)',
               pronunciation: '/\u02CCe\u026At\u0283 ti\u02D0 ti\u02D0 pi\u02D0 \u02C8\u025Bs/',
               phonetic: 'eic-tii-tii-pii-ES',
-              example:
-                'Always check for HTTPS before entering passwords. = Controlla sempre che ci sia HTTPS prima di inserire password.',
+              example: `Enabling HTTPS strict transport via the HSTS header tells browsers to refuse any future plaintext connection to your domain. = Abilitare HTTPS strict transport tramite l'header HSTS dice ai browser di rifiutare ogni futura connessione in chiaro al tuo dominio.`,
               context: 'cryptography',
               difficulty: 'intermediate',
-              note: 'HTTP + TLS = HTTPS. Il lucchetto nel browser indica una connessione crittografata.',
+              note: `L'header chiave è Strict-Transport-Security; la direttiva preload include il dominio nelle liste hardcoded dei browser.`,
             },
             {
               english: 'Digital Certificate',
@@ -1372,15 +1366,15 @@ export default {
               note: 'Deve rimanere assolutamente segreta. Se compromessa, tutta la sicurezza crolla.',
             },
             {
-              english: 'Encryption',
-              italian: 'Crittografia / Cifratura',
+              english: 'end-to-end encryption',
+              italian: 'crittografia end-to-end',
               pronunciation: '/\u026An\u02C8kr\u026Ap\u0283\u0259n/',
               phonetic: 'in-KRIP-scen',
               example:
-                "Full-disk encryption converts all data on the drive into unreadable ciphertext. = La crittografia dell'intero disco converte tutti i dati in testo cifrato illeggibile.",
+                'End-to-end encryption ensures that only the conversation participants, not the server, can read the message contents. = La crittografia end-to-end garantisce che solo i partecipanti alla conversazione, non il server, possano leggere i contenuti del messaggio.',
               context: 'cryptography',
               difficulty: 'intermediate',
-              note: 'Dal greco "kryptos" (nascosto). Processo di rendere i dati incomprensibili senza la chiave.',
+              note: 'Acronimo comune: E2EE. La chiave non è mai accessibile al provider del servizio.',
             },
             {
               english: 'Decryption',
@@ -1483,7 +1477,7 @@ export default {
               pronunciation: '/sw\u026At\u0283/',
               phonetic: 'SUICC',
               example:
-                "A switch connects devices within a LAN. = Uno switch connette i dispositivi all'interno di una LAN.",
+                'A managed switch lets you assign each port to a different VLAN to segment traffic at layer 2. = Uno switch gestito permette di assegnare ogni porta a una VLAN diversa per segmentare il traffico al layer 2.',
               context: 'networking',
               difficulty: 'beginner',
               note: 'Lavora al Livello 2 (Data Link) usando gli indirizzi MAC.',
@@ -1618,8 +1612,7 @@ export default {
               italian: 'ARP / Protocollo di Risoluzione Indirizzi',
               pronunciation: '/\u02CC\u0251\u02D0rp/',
               phonetic: 'ARP',
-              example:
-                "ARP maps IP addresses to MAC addresses. = L'ARP mappa indirizzi IP a indirizzi MAC.",
+              example: `Run \`arp -a\` to inspect the ARP cache when a host suddenly stops reaching its default gateway. = Lancia \`arp -a\` per ispezionare la cache ARP quando un host smette improvvisamente di raggiungere il default gateway.`,
               context: 'protocols',
               difficulty: 'advanced',
               note: 'Livello 2/3. Fondamentale per far comunicare IP e hardware in una rete locale.',
@@ -1666,8 +1659,7 @@ export default {
               italian: 'Segmentazione della Rete',
               pronunciation: '/\u02C8netw\u025Crk \u02CCse\u0261men\u02C8te\u026A\u0283\u0259n/',
               phonetic: 'NET-uerk seg-men-TEI-scen',
-              example:
-                'Network segmentation limits lateral movement during a breach. = La segmentazione della rete limita il movimento laterale durante una violazione.',
+              example: `Proper network segmentation contains a ransomware outbreak inside one VLAN instead of letting it pivot company-wide. = Una segmentazione della rete adeguata contiene un'epidemia ransomware dentro una VLAN invece di lasciarla pivotare in tutta l'azienda.`,
               context: 'defense',
               difficulty: 'intermediate',
               note: 'Dividere la rete in sezioni isolate per limitare il movimento laterale degli attaccanti.',
@@ -1678,7 +1670,7 @@ export default {
               pronunciation: '/\u02CCdi\u02D0 em \u02C8zed/',
               phonetic: 'dii-em-ZED',
               example:
-                'Public servers are hosted in the DMZ. = I server pubblici sono ospitati nella DMZ.',
+                'Public web servers live in the DMZ so a compromise there does not give direct access to the internal LAN. = I server web pubblici vivono nella DMZ così una compromissione lì non dà accesso diretto alla LAN interna.',
               context: 'architecture',
               difficulty: 'intermediate',
               note: "Sotto-rete isolata rivolta all'esterno, separata dalla rete interna fidata.",
@@ -1699,8 +1691,7 @@ export default {
               italian: 'Mirroring delle Porte',
               pronunciation: '/p\u0254\u02D0rt \u02C8m\u026Ar\u0259r\u026A\u014B/',
               phonetic: 'PORT MIR-rer-ing',
-              example:
-                'Port mirroring is used for network monitoring. = Il port mirroring \u00E8 usato per il monitoraggio della rete.',
+              example: `Enable port mirroring on the uplink so the IDS sees a copy of every packet traversing the core switch. = Abilita il mirroring delle porte sull'uplink così l'IDS vede una copia di ogni pacchetto che attraversa lo switch core.`,
               context: 'monitoring',
               difficulty: 'advanced',
               note: 'Inviare una copia del traffico di rete a uno strumento di monitoraggio o analisi.',
@@ -1710,8 +1701,7 @@ export default {
               italian: 'Lista di Controllo Accessi',
               pronunciation: '/\u02CC\u00E6kses k\u0259n\u02C8tro\u028Al l\u026Ast/',
               phonetic: 'AK-ses kon-TROUL list',
-              example:
-                'ACLs on routers define who can enter. = Le ACL sui router definiscono chi pu\u00F2 entrare.',
+              example: `Tighten the inbound ACL on the edge router to deny RFC1918 source addresses from the public interface. = Stringi l'ACL in ingresso sull'edge router per negare gli indirizzi sorgente RFC1918 sull'interfaccia pubblica.`,
               context: 'defense',
               difficulty: 'intermediate',
               note: 'Regole che permettono o negano il traffico in base a IP, porta o protocollo.',
@@ -1722,7 +1712,7 @@ export default {
               pronunciation: '/p\u0254\u02D0rt s\u026A\u02C8kj\u028A\u0259r\u0259ti/',
               phonetic: 'PORT si-KIUR-i-ti',
               example:
-                'Port security prevents unauthorized devices from connecting. = La sicurezza delle porte impedisce la connessione di dispositivi non autorizzati.',
+                'With port security enabled, the switch shuts down any access port that suddenly sees a new MAC address. = Con la port security abilitata, lo switch chiude qualsiasi porta di accesso che vede improvvisamente un nuovo MAC address.',
               context: 'defense',
               difficulty: 'intermediate',
               note: 'Tecnica di Livello 2 che limita gli indirizzi MAC che possono connettersi a una porta fisica.',
@@ -1903,7 +1893,7 @@ export default {
               pronunciation: '/s\u026A\u02C8metr\u026Ak \u026An\u02C8kr\u026Ap\u0283\u0259n/',
               phonetic: 'sim-ME-trik in-KRIP-scen',
               example:
-                'Symmetric encryption uses the same key for both encryption and decryption. = La crittografia simmetrica usa la stessa chiave sia per la cifratura che per la decifratura.',
+                'We rely on symmetric encryption for bulk data because AES-GCM is orders of magnitude faster than RSA. = Ci affidiamo alla crittografia simmetrica per i dati massivi perché AES-GCM è ordini di grandezza più veloce di RSA.',
               context: 'cryptography',
               difficulty: 'intermediate',
               note: 'Veloce ed efficiente, ma richiede un modo sicuro per scambiarsi la chiave.',
@@ -2026,26 +2016,26 @@ export default {
               note: 'Usa due chiavi diverse ma matematicamente legate tra loro.',
             },
             {
-              english: 'Public Key',
-              italian: 'Chiave Pubblica',
+              english: 'public key fingerprint',
+              italian: 'fingerprint della chiave pubblica',
               pronunciation: '/\u02C8p\u028Cbl\u026Ak ki\u02D0/',
               phonetic: 'PA-blik KII',
               example:
-                'Distribute your public key so people can encrypt messages for you. = Distribuisci la tua chiave pubblica cos\u00EC gli altri possono cifrare messaggi per te.',
+                'Comparing the public key fingerprint over a second channel prevents a man-in-the-middle from substituting their own key. = Confrontare la fingerprint della chiave pubblica su un secondo canale impedisce a un man-in-the-middle di sostituire la propria chiave.',
               context: 'cryptography',
               difficulty: 'beginner',
-              note: 'Libera per tutti; serve per cifrare o verificare firme.',
+              note: 'SSH mostra la fingerprint al primo collegamento (TOFU: trust on first use).',
             },
             {
-              english: 'Private Key',
-              italian: 'Chiave Privata',
+              english: 'private key passphrase',
+              italian: 'passphrase della chiave privata',
               pronunciation: '/\u02C8pra\u026Av\u0259t ki\u02D0/',
               phonetic: 'PRAI-vet KII',
               example:
-                'Losing your private key means losing your encrypted data. = Perdere la chiave privata significa perdere i tuoi dati cifrati.',
+                'Protect every exported private key with a strong passphrase so a stolen file alone is not enough to impersonate you. = Proteggi ogni chiave privata esportata con una passphrase robusta così un file rubato da solo non basta per impersonarti.',
               context: 'cryptography',
               difficulty: 'beginner',
-              note: 'Segreta; serve per decifrare o firmare messaggi.',
+              note: 'ssh-add la chiede una volta e mantiene la chiave decifrata in agente per la sessione.',
             },
             {
               english: 'Key Pair',
@@ -2203,16 +2193,16 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Digital Signature',
-              italian: 'Firma Digitale',
+              english: 'digital signature verification',
+              italian: 'verifica della firma digitale',
               pronunciation:
                 '/\u02C8d\u026Ad\u0292\u026At\u0259l \u02C8s\u026A\u0261n\u0259t\u0283\u0259r/',
               phonetic: 'DI-gi-tel SIG-ne-cer',
               example:
-                'Software updates are verified with a digital signature to confirm they come from the original vendor. = Gli aggiornamenti software sono verificati con una firma digitale per confermare che provengano dal produttore originale.',
+                'Digital signature verification on each package install ensures the binary came from the official maintainer, not a mirror. = La verifica della firma digitale a ogni installazione di pacchetto garantisce che il binario provenga dal maintainer ufficiale, non da un mirror.',
               context: 'cryptography',
               difficulty: 'intermediate',
-              note: "Cifra l'hash del messaggio con la propria chiave privata.",
+              note: 'I package manager moderni (apt, dnf, pacman) eseguono la verifica automaticamente con le chiavi GPG dei repo.',
             },
             {
               english: 'Non-repudiation',
@@ -2323,7 +2313,7 @@ export default {
               pronunciation: '/ru\u02D0t s\u0259r\u02C8t\u026Af\u026Ak\u0259t/',
               phonetic: 'RUUT ser-TI-fi-ket',
               example:
-                'Root certificates are stored in your operating system. = I certificati root sono salvati nel tuo sistema operativo.',
+                'If a private root certificate is compromised, every downstream cert it issued must be revoked and reissued. = Se un certificato radice privato è compromesso, ogni cert downstream da esso emesso deve essere revocato e riemesso.',
               context: 'trust-infrastructure',
               difficulty: 'intermediate',
               note: 'La base di tutta la fiducia digitale; se questo \u00E8 compromesso, tutto crolla.',
@@ -2335,7 +2325,7 @@ export default {
                 '/\u02CC\u026Ant\u0259r\u02C8mi\u02D0di\u0259t s\u0259r\u02C8t\u026Af\u026Ak\u0259t/',
               phonetic: 'in-ter-MII-di-et ser-TI-fi-ket',
               example:
-                'Intermediate certificates link your certificate to the root. = I certificati intermedi collegano il tuo certificato al root.',
+                'Browsers complain when the server forgets to send the intermediate certificate alongside its leaf cert. = I browser si lamentano quando il server dimentica di inviare il certificato intermedio insieme al cert foglia.',
               context: 'trust-infrastructure',
               difficulty: 'advanced',
             },
@@ -2421,8 +2411,7 @@ export default {
               italian: 'Iniezione di Comandi',
               pronunciation: '/k\u0259\u02C8m\u00E6nd \u026An\u02C8d\u0292ek\u0283\u0259n/',
               phonetic: 'com-MAND in-GEK-scen',
-              example:
-                "Command injection can give full server access. = L'iniezione di comandi pu\u00F2 dare pieno accesso al server.",
+              example: `Passing user input straight to \`os.system()\` is the classic command injection pitfall in legacy Python scripts. = Passare l'input utente direttamente a \`os.system()\` è la classica trappola di iniezione di comandi negli script Python legacy.`,
               context: 'web-vulnerabilities',
               difficulty: 'intermediate',
               note: "Permette di eseguire comandi del sistema operativo attraverso un'applicazione vulnerabile.",
@@ -2507,8 +2496,7 @@ export default {
               italian: 'Fissazione di Sessione',
               pronunciation: '/\u02C8se\u0283\u0259n f\u026Ak\u02C8se\u026A\u0283\u0259n/',
               phonetic: 'SE-scen fik-SEI-scen',
-              example:
-                "Session fixation involves pre-setting a user's session ID. = La fissazione di sessione consiste nel pre-impostare l'ID sessione dell'utente.",
+              example: `Always regenerate the session ID after login to defeat session fixation attacks against the application. = Rigenera sempre l'ID di sessione dopo il login per sconfiggere gli attacchi di session fixation contro l'applicazione.`,
               context: 'web-vulnerabilities',
               difficulty: 'advanced',
             },
@@ -2519,7 +2507,7 @@ export default {
                 '/\u02CCe\u026At\u0283 ti\u02D0 ti\u02D0 pi\u02D0 \u02C8o\u028Anli \u02C8k\u028Aki/',
               phonetic: 'eic-tii-tii-pii-OUN-li KU-ki',
               example:
-                'HttpOnly cookies cannot be accessed by JavaScript. = I cookie HttpOnly non sono accessibili via JavaScript.',
+                'Setting the session as an HttpOnly cookie prevents client-side scripts from reading it during an XSS attack. = Impostare la sessione come cookie HttpOnly impedisce agli script client-side di leggerla durante un attacco XSS.',
               context: 'defense',
               difficulty: 'intermediate',
               note: 'Protezione fondamentale contro il furto di cookie tramite XSS.',
@@ -2571,14 +2559,13 @@ export default {
             },
             {
               english: 'Credential Stuffing',
-              italian: 'riutilizzo automatizzato di credenziali rubate (Credential Stuffing)',
+              italian: 'Credential Stuffing',
               pronunciation: '/kr\u026A\u02C8den\u0283l \u02C8st\u028Cf\u026A\u014B/',
               phonetic: 'cre-DEN-scial STAF-fing',
-              example:
-                'Credential stuffing uses leaked passwords from other sites. = Il credential stuffing usa password rubate da altri siti.',
+              example: `MFA and bot-detection at the login endpoint are the cheapest defenses against credential stuffing waves. = MFA e bot-detection sull'endpoint di login sono le difese più economiche contro le ondate di credential stuffing.`,
               context: 'threats',
               difficulty: 'intermediate',
-              note: 'Attacco automatizzato che prova coppie username/password rubate su molti siti diversi.',
+              note: 'Termine inglese usato anche in italiano: indica il riutilizzo automatizzato di credenziali rubate da altri data breach.',
             },
             {
               english: 'Secure Cookie',
@@ -2614,7 +2601,7 @@ export default {
               pronunciation: '/\u02C8bro\u028Ak\u0259n \u02C8\u00E6kses k\u0259n\u02C8tro\u028Al/',
               phonetic: 'BROUKEN ak-ses kon-TROUL',
               example:
-                'Broken access control is #1 on the OWASP Top 10. = Il controllo accessi difettoso \u00E8 al primo posto della OWASP Top 10.',
+                'OWASP ranks broken access control as the number-one web risk because most apps still trust client-side checks. = OWASP classifica il controllo accessi difettoso come il rischio web numero uno perché molte app si affidano ancora a controlli client-side.',
               context: 'owasp-top-10',
               difficulty: 'intermediate',
               note: 'Vulnerabilit\u00E0 che permette di accedere a risorse fuori dai propri permessi.',
@@ -2637,7 +2624,7 @@ export default {
               pronunciation: '/\u02CC\u026Ans\u026A\u02C8kj\u028A\u0259r d\u026A\u02C8za\u026An/',
               phonetic: 'in-si-KIUR di-ZAIN',
               example:
-                'Insecure design cannot be fixed by a patch alone. = Una progettazione non sicura non si corregge solo con una patch.',
+                'You cannot patch your way out of insecure design: the threat model has to be revisited at the architecture stage. = Non si può rattoppare la propria via fuori da una progettazione non sicura: il modello di minaccia va rivisitato in fase di architettura.',
               context: 'owasp-top-10',
               difficulty: 'advanced',
               note: "Falle che derivano da una cattiva architettura fin dall'inizio.",
@@ -2716,15 +2703,14 @@ export default {
           description: 'WAF, CORS, CSP, rate limiting',
           items: [
             {
-              english: 'WAF (Web Application Firewall)',
-              italian: 'WAF / Firewall per Applicazioni Web',
+              english: 'WAF ruleset',
+              italian: 'ruleset del WAF',
               pronunciation: '/w\u0252f/',
               phonetic: 'UAF',
-              example:
-                'A WAF protects against common web attacks. = Un WAF protegge dai comuni attacchi web.',
+              example: `Tuning the WAF ruleset against application-specific traffic patterns is essential to keep false positives low. = Calibrare il ruleset del WAF rispetto ai pattern di traffico specifici dell'applicazione è essenziale per tenere bassi i falsi positivi.`,
               context: 'defense-tools',
               difficulty: 'intermediate',
-              note: 'Filtra il traffico HTTP per bloccare SQLi, XSS e altre minacce.',
+              note: 'OWASP CRS è il ruleset open source di riferimento per i WAF basati su ModSecurity e Coraza.',
             },
             {
               english: 'Content Security Policy (CSP)',
@@ -2797,8 +2783,7 @@ export default {
               italian: "Codifica dell'Output",
               pronunciation: '/\u02C8a\u028Atp\u028At \u026An\u02C8ko\u028Ad\u026A\u014B/',
               phonetic: 'AUT-put in-KOU-ding',
-              example:
-                "Output encoding neutralizes malicious scripts in HTML. = La codifica dell'output neutralizza script malevoli nell'HTML.",
+              example: `Context-aware output encoding in the template engine is the most reliable defense against reflected XSS. = La codifica dell'output sensibile al contesto nel template engine è la difesa più affidabile contro l'XSS riflesso.`,
               context: 'defense',
               difficulty: 'intermediate',
               note: 'Trasformare i caratteri speciali (es. < in &lt;) prima di visualizzarli.',
@@ -2842,7 +2827,7 @@ export default {
               pronunciation: '/\u02CC\u00E6kses k\u0259n\u02C8tro\u028Al/',
               phonetic: 'AK-ses kon-TROUL',
               example:
-                'Access control limits who can use resources. = Il controllo accessi limita chi pu\u00F2 usare le risorse.',
+                'Audit your access control policies every quarter to catch dormant accounts that still hold production privileges. = Verifica le tue policy di controllo accessi ogni trimestre per scoprire account dormienti che mantengono privilegi di produzione.',
               context: 'security-foundations',
               difficulty: 'beginner',
             },
@@ -2933,8 +2918,7 @@ export default {
               pronunciation:
                 '/\u02CCh\u0252r\u026A\u02C8z\u0252ntl \u02CCesk\u0259\u02C8le\u026A\u0283\u0259n/',
               phonetic: 'o-ri-ZON-tal es-ka-LEI-scen',
-              example:
-                "Horizontal escalation involves accessing another user's data. = La scalata orizzontale consiste nell'accedere ai dati di un altro utente.",
+              example: `An IDOR bug usually enables horizontal escalation, letting one user read or modify another user's data. = Un bug IDOR di solito abilita la scalata orizzontale, permettendo a un utente di leggere o modificare i dati di un altro utente.`,
               context: 'attack-techniques',
               difficulty: 'intermediate',
             },
@@ -2961,8 +2945,7 @@ export default {
               italian: 'Hardening del Sistema',
               pronunciation: '/\u02C8s\u026Ast\u0259m \u02C8h\u0251\u02D0rdn\u026A\u014B/',
               phonetic: 'SIS-tem HAR-de-ning',
-              example:
-                "System hardening is the process of securing a system by reducing its vulnerability surface. = L'hardening \u00E8 il processo di messa in sicurezza di un sistema riducendo la sua superficie di vulnerabilit\u00E0.",
+              example: `CIS Benchmarks give you a concrete checklist for system hardening on Linux, Windows and most cloud baselines. = I CIS Benchmark forniscono una checklist concreta per l'hardening del sistema su Linux, Windows e la maggior parte delle baseline cloud.`,
               context: 'defense-strategies',
               difficulty: 'intermediate',
             },
@@ -3100,7 +3083,7 @@ export default {
               pronunciation: '/l\u0252\u0261 \u02CCk\u0252r\u0259\u02C8le\u026A\u0283\u0259n/',
               phonetic: 'LOG cor-re-LEI-scen',
               example:
-                'Log correlation helps identify complex attack patterns. = La correlazione dei log aiuta a identificare pattern di attacco complessi.',
+                'Cross-source log correlation in the SIEM links a failed login on the VPN to a later admin action on the database. = La correlazione dei log tra fonti diverse nel SIEM collega un login fallito sulla VPN a una successiva azione admin sul database.',
               context: 'monitoring',
               difficulty: 'advanced',
               note: 'Mettere insieme eventi da diverse fonti per trovare un legame comune.',
@@ -3175,7 +3158,7 @@ export default {
                 '/r\u026A\u02C8\u0259l ta\u026Am \u0259\u02C8l\u025C\u02D0rt\u026A\u014B/',
               phonetic: 'RIIL taim a-LER-ting',
               example:
-                "Real-time alerting is crucial for fast response. = L'allarmistica in tempo reale \u00E8 fondamentale per una risposta rapida.",
+                'Tune your real-time alerting carefully: an analyst who gets 500 alerts per shift will start ignoring all of them. = Calibra con cura la tua allarmistica in tempo reale: un analista che riceve 500 alert per turno inizierà a ignorarli tutti.',
               context: 'monitoring',
               difficulty: 'beginner',
             },
@@ -3213,8 +3196,7 @@ export default {
               italian: 'Deriva della Configurazione',
               pronunciation: '/k\u0259n\u02CCf\u0261j\u028A\u02C8re\u026A\u0283\u0259n dr\u026Aft/',
               phonetic: 'con-fi-gui-REI-scen DRIFT',
-              example:
-                'Configuration drift happens when systems change over time. = La deriva della configurazione avviene quando i sistemi cambiano nel tempo.',
+              example: `Infrastructure-as-code plus periodic compliance scans are the standard antidote to configuration drift across the fleet. = Infrastructure-as-code più scansioni di conformità periodiche sono l'antidoto standard alla deriva della configurazione sulla flotta.`,
               context: 'management',
               difficulty: 'advanced',
               note: 'Il fenomeno per cui un sistema diventa meno sicuro a causa di modifiche manuali non tracciate.',
@@ -3370,14 +3352,15 @@ export default {
               note: 'Rimuovere il malware, chiudere le vulnerabilit\u00E0 e eliminare gli account compromessi.',
             },
             {
-              english: 'Recovery',
-              italian: 'Ripristino / Recupero',
+              english: 'recovery playbook',
+              italian: 'playbook di recupero',
               pronunciation: '/r\u026A\u02C8k\u028Cv\u0259ri/',
               phonetic: 're-KA-ve-ri',
               example:
-                'During recovery, systems are brought back online. = Durante il ripristino, i sistemi vengono riportati online.',
+                'A recovery playbook documents the exact sequence of restores, validations and communications after a ransomware incident. = Un playbook di recupero documenta la sequenza esatta di restore, validazioni e comunicazioni dopo un incidente ransomware.',
               context: 'incident-response',
               difficulty: 'beginner',
+              note: 'Va testato regolarmente con tabletop exercise: un playbook mai provato fallisce sotto stress.',
             },
             {
               english: 'Lessons Learned',
@@ -3423,7 +3406,7 @@ export default {
               pronunciation: '/\u02C8d\u026Ad\u0292\u026At\u0259l f\u0259\u02C8rens\u026Aks/',
               phonetic: 'DI-gi-tel fo-REN-siks',
               example:
-                "Digital forensics is used to recover and investigate evidence. = L'informatica forense \u00E8 usata per recuperare e analizzare le prove.",
+                'A solid digital forensics process preserves chain of custody so the evidence holds up in court later on. = Un solido processo di informatica forense preserva la catena di custodia così le prove reggono in tribunale in seguito.',
               context: 'forensics',
               difficulty: 'intermediate',
             },
@@ -3444,8 +3427,7 @@ export default {
               pronunciation:
                 '/\u02C8ev\u026Ad\u0259ns \u02CC\u00E6kw\u026A\u02C8z\u026A\u0283\u0259n/',
               phonetic: 'E-vi-dens ac-kui-SI-scen',
-              example:
-                "Evidence acquisition must not alter the original data. = L'acquisizione delle prove non deve alterare i dati originali.",
+              example: `Document hashes and timestamps during evidence acquisition so the integrity of the disk image can be verified later. = Documenta hash e timestamp durante l'acquisizione delle prove così l'integrità dell'immagine del disco può essere verificata in seguito.`,
               context: 'forensics-process',
               difficulty: 'intermediate',
             },
@@ -3497,8 +3479,7 @@ export default {
               italian: 'Analisi dei Metadati',
               pronunciation: '/\u02C8met\u0259de\u026At\u0259 \u0259\u02C8n\u00E6l\u0259s\u026As/',
               phonetic: 'ME-ta-deita a-NA-li-sis',
-              example:
-                "Metadata analysis reveals when a file was created or modified. = L'analisi dei metadati rivela quando un file \u00E8 stato creato o modificato.",
+              example: `Routine metadata analysis of an exfiltrated PDF revealed the author's username and the workstation that produced it. = L'analisi dei metadati di routine di un PDF esfiltrato ha rivelato lo username dell'autore e la workstation che lo ha prodotto.`,
               context: 'forensics',
               difficulty: 'intermediate',
             },
@@ -3548,8 +3529,7 @@ export default {
               pronunciation:
                 '/\u02CC\u026And\u026Ake\u026At\u0259r \u0259v \u02C8k\u0252mpr\u0259ma\u026Az/',
               phonetic: 'IN-di-keiter ov COM-pro-mais',
-              example:
-                'A malicious IP address is a common IOC. = Un indirizzo IP malevolo \u00E8 un comune IOC.',
+              example: `Push every fresh IOC from the vendor feed into the EDR within minutes to block ongoing campaigns. = Spingi ogni nuovo IOC dal feed del vendor nell'EDR entro pochi minuti per bloccare campagne in corso.`,
               context: 'threat-intelligence',
               difficulty: 'intermediate',
               note: 'Prove tecniche che indicano che un sistema \u00E8 stato violato (es. hash di file, IP, nomi dominio).',
@@ -3633,8 +3613,7 @@ export default {
               italian: 'Monitoraggio del Dark Web',
               pronunciation: '/d\u0251\u02D0rk web \u02C8m\u0252n\u026At\u0259r\u026A\u014B/',
               phonetic: 'DARK UEB MO-ni-to-ring',
-              example:
-                'Dark web monitoring can alert you if company data is for sale. = Il monitoraggio del dark web ti avvisa se i dati aziendali sono in vendita.',
+              example: `Continuous dark web monitoring caught the leaked credentials hours before the attacker tried to reuse them. = Il monitoraggio continuo del Dark Web ha intercettato le credenziali trafugate ore prima che l'attaccante provasse a riutilizzarle.`,
               context: 'threat-intelligence',
               difficulty: 'intermediate',
             },
@@ -3673,8 +3652,7 @@ export default {
               italian: 'Obiettivo Tempo di Recupero',
               pronunciation: '/\u02CC\u0251\u02D0r ti\u02D0 \u02C8o\u028A/',
               phonetic: 'ar-tii-OU',
-              example:
-                'Our RTO for the web server is 4 hours. = Il nostro RTO per il web server \u00E8 di 4 ore.',
+              example: `A 4-hour RTO means the business expects the service back online within four hours of an outage being declared. = Un RTO di 4 ore significa che il business si aspetta il servizio nuovamente online entro quattro ore dalla dichiarazione di un'interruzione.`,
               context: 'incident-response',
               difficulty: 'advanced',
               note: 'Il tempo massimo consentito per riportare online un sistema.',
@@ -3781,8 +3759,7 @@ export default {
               italian: 'SaaS / Software come Servizio',
               pronunciation: '/\u02CCes e\u026A e\u026A \u02C8es/',
               phonetic: 'es-ei-ei-ES',
-              example:
-                'Gmail is a common example of SaaS. = Gmail \u00E8 un esempio comune di SaaS.',
+              example: `With SaaS the vendor handles patching and uptime, but data classification stays the customer's responsibility. = Con il SaaS il vendor gestisce patching e uptime, ma la classificazione dei dati resta responsabilità del cliente.`,
               context: 'cloud-models',
               difficulty: 'beginner',
               note: "L'utente usa l'applicazione via web; il provider gestisce tutto il resto.",
@@ -3847,7 +3824,7 @@ export default {
               pronunciation: '/\u02C8ha\u026Abr\u026Ad kla\u028Ad/',
               phonetic: 'HAI-brid CLAUD',
               example:
-                'Hybrid cloud combines on-premises and public cloud. = Il cloud ibrido combina infrastruttura locale e cloud pubblico.',
+                'A hybrid cloud setup keeps regulated PII on-premises while bursting analytics workloads to the public provider. = Un setup di cloud ibrido tiene i PII regolamentati on-premises sfruttando il provider pubblico per i carichi analitici a burst.',
               context: 'cloud-models',
               difficulty: 'intermediate',
             },
@@ -3884,19 +3861,19 @@ export default {
               pronunciation: '/\u02CCa\u026A e\u026A \u02CCem/',
               phonetic: 'ai-ei-EM',
               example:
-                "IAM is the core of cloud security. = L'IAM \u00E8 il cuore della sicurezza cloud.",
+                'A well-designed IAM model uses groups and roles so adding a new hire takes a single membership change. = Un modello IAM ben progettato usa gruppi e ruoli così aggiungere un nuovo assunto richiede un singolo cambio di membership.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
             {
-              english: 'Identity Provider (IdP)',
-              italian: 'Provider di Identit\u00E0',
+              english: 'cloud identity provider',
+              italian: 'identity provider cloud',
               pronunciation: '/a\u026A\u02C8dent\u0259ti pr\u0259\u02C8va\u026Ad\u0259r/',
               phonetic: 'ai-DEN-ti-ti pro-VAI-der',
-              example:
-                'Azure AD is a popular cloud Identity Provider. = Azure AD \u00E8 un noto IdP cloud.',
+              example: `A central cloud identity provider lets every SaaS app delegate authentication via SAML or OpenID Connect. = Un identity provider cloud centrale permette a ogni app SaaS di delegare l'autenticazione via SAML o OpenID Connect.`,
               context: 'iam',
               difficulty: 'intermediate',
+              note: 'Esempi: Okta, Azure AD/Entra ID, Google Workspace, AWS IAM Identity Center.',
             },
             {
               english: 'Service Account',
@@ -3957,8 +3934,7 @@ export default {
               pronunciation:
                 '/\u02C8fed\u0259re\u026At\u026Ad a\u026A\u02CCdent\u026Af\u026Ak\u0259\u02CC\u0283\u0259n/',
               phonetic: 'FE-de-reited ai-den-ti-fi-KEI-scen',
-              example:
-                "Federated identity allows single sign-on across domains. = L'identit\u00E0 federata permette il single sign-on tra domini diversi.",
+              example: `Enabling federated identity via SAML lets employees use their corporate login across every SaaS app the company adopts. = Abilitare l'identità federata via SAML permette ai dipendenti di usare il login aziendale su ogni app SaaS adottata dall'azienda.`,
               context: 'iam',
               difficulty: 'advanced',
             },
@@ -3967,8 +3943,7 @@ export default {
               italian: 'Accesso Condizionale',
               pronunciation: '/k\u0259n\u02C8d\u026A\u0283\u0259nl \u02C8\u00E6kses/',
               phonetic: 'con-DI-scio-nel AK-ses',
-              example:
-                "Conditional access checks the user location and device. = L'accesso condizionale controlla la posizione e il dispositivo dell'utente.",
+              example: `A conditional access policy can block sign-ins from anonymous proxies or require MFA outside the office network. = Una policy di accesso condizionale può bloccare i login da proxy anonimi o richiedere MFA fuori dalla rete d'ufficio.`,
               context: 'iam',
               difficulty: 'advanced',
             },
@@ -3996,7 +3971,7 @@ export default {
               pronunciation: '/\u026An\u02C8kr\u026Ap\u0283\u0259n \u00E6t rest/',
               phonetic: 'in-KRIP-scen at REST',
               example:
-                'Encryption at rest protects data stored on disks. = La cifratura dei dati archiviati protegge i dati salvati sui dischi.',
+                'Cloud providers offer encryption at rest by default, but customer-managed keys give you control over revocation. = I provider cloud offrono la cifratura dei dati archiviati di default, ma le chiavi gestite dal cliente danno il controllo sulla revoca.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -4018,7 +3993,7 @@ export default {
                 '/\u02C8kla\u026A\u0259nt sa\u026Ad \u026An\u02C8kr\u026Ap\u0283\u0259n/',
               phonetic: 'CLAI-ent said in-KRIP-scen',
               example:
-                'Client-side encryption means only you have the keys. = La cifratura lato client significa che solo tu hai le chiavi.',
+                'End-to-end messaging apps perform client-side encryption so the server only ever sees opaque ciphertext blobs. = Le app di messaggistica end-to-end eseguono la cifratura lato client così il server vede solo blob opachi di ciphertext.',
               context: 'cloud-security',
               difficulty: 'advanced',
               note: 'I dati vengono cifrati prima di essere inviati al cloud.',
@@ -4030,7 +4005,7 @@ export default {
                 '/\u02C8s\u025C\u02D0rv\u0259rsa\u026Ad \u026An\u02C8kr\u026Ap\u0283\u0259n/',
               phonetic: 'SER-ver said in-KRIP-scen',
               example:
-                'SSE is managed by the cloud provider. = La SSE \u00E8 gestita dal cloud provider.',
+                'Amazon S3 buckets enable SSE-S3 by default, encrypting every new object before it is written to disk. = I bucket Amazon S3 abilitano SSE-S3 di default, cifrando ogni nuovo oggetto prima che venga scritto su disco.',
               context: 'cloud-security',
               difficulty: 'intermediate',
             },
@@ -4061,8 +4036,7 @@ export default {
               italian: 'Sovranit\u00E0 dei Dati',
               pronunciation: '/\u02C8de\u026At\u0259 \u02C8s\u0252vr\u026Anti/',
               phonetic: 'DEI-ta SO-vren-ti',
-              example:
-                'Data sovereignty means data is subject to local laws. = La sovranit\u00E0 dei dati significa che i dati sono soggetti alle leggi locali.',
+              example: `Choosing the right cloud region is a question of data sovereignty: some jurisdictions forbid storing citizen data abroad. = Scegliere la giusta regione cloud è una questione di sovranità dei dati: alcune giurisdizioni vietano di archiviare i dati dei cittadini all'estero.`,
               context: 'compliance',
               difficulty: 'advanced',
             },
@@ -4093,7 +4067,7 @@ export default {
               pronunciation: '/\u02C8de\u026At\u0259 \u02C8m\u0251\u02D0sk\u026A\u014B/',
               phonetic: 'DEI-ta MAS-king',
               example:
-                'Data masking hides sensitive info in non-production environments. = Il mascheramento dei dati nasconde info sensibili in ambienti non-prod.',
+                'Dynamic data masking in the query layer shows analysts only the last four digits of each customer card number. = Il mascheramento dinamico dei dati nel query layer mostra agli analisti solo le ultime quattro cifre di ogni numero di carta cliente.',
               context: 'data-security',
               difficulty: 'advanced',
             },
@@ -4225,7 +4199,7 @@ export default {
               pronunciation: '/\u02C8mo\u028Aba\u026Al \u02C8m\u00E6lwe\u0259r/',
               phonetic: 'MOU-bail MAL-uer',
               example:
-                'Mobile malware can steal your contacts and messages. = Il malware mobile pu\u00F2 rubare i tuoi contatti e messaggi.',
+                'Most mobile malware spreads through fake app stores or through SMS links that lead to unsigned APK files. = La maggior parte del malware mobile si diffonde tramite app store falsi o link SMS che portano a file APK non firmati.',
               context: 'threats',
               difficulty: 'beginner',
             },
@@ -4245,8 +4219,7 @@ export default {
               italian: 'Sandboxing delle App',
               pronunciation: '/\u00E6p \u02C8s\u00E6ndb\u0252ks\u026A\u014B/',
               phonetic: 'AP SAND-bok-sing',
-              example:
-                "App sandboxing prevents apps from accessing other apps' data. = Il sandboxing delle app impedisce alle app di accedere ai dati di altre app.",
+              example: `iOS relies on strict app sandboxing so a compromised game cannot read the user's banking app data. = iOS si affida a un rigoroso sandboxing delle app così un gioco compromesso non può leggere i dati dell'app bancaria dell'utente.`,
               context: 'defense',
               difficulty: 'intermediate',
               note: 'Ogni app gira in un suo ambiente isolato.',
@@ -4390,8 +4363,7 @@ export default {
               italian: 'Attestazione del Dispositivo',
               pronunciation: '/d\u026A\u02C8va\u026As \u02CC\u00E6te\u02C8ste\u026A\u0283\u0259n/',
               phonetic: 'di-VAIS at-te-STEI-scen',
-              example:
-                "Device attestation verifies that the hardware is untampered. = L'attestazione del dispositivo verifica che l'hardware non sia manomesso.",
+              example: `Server-side device attestation rejects logins from rooted phones before the credentials are ever submitted. = L'attestazione del dispositivo lato server rifiuta i login da telefoni rooted prima ancora che le credenziali siano sottomesse.`,
               context: 'defense',
               difficulty: 'advanced',
             },
@@ -4444,14 +4416,13 @@ export default {
           items: [
             {
               english: 'Certificate Pinning',
-              italian: 'aggancio del certificato atteso (Certificate Pinning)',
+              italian: 'Certificate Pinning',
               pronunciation: '/s\u0259r\u02C8t\u026Af\u026Ak\u0259t \u02C8p\u026An\u026A\u014B/',
               phonetic: 'ser-TI-fi-ket PIN-ning',
-              example:
-                'Certificate pinning prevents MitM attacks by trusting only a specific certificate. = Il certificate pinning previene gli attacchi MitM fidandosi solo di un certificato specifico.',
+              example: `Banking apps use certificate pinning so a rogue CA in the user's trust store cannot silently MITM their traffic. = Le app bancarie usano il certificate pinning così una CA fraudolenta nel trust store dell'utente non può fare MITM silenzioso sul loro traffico.`,
               context: 'defense',
               difficulty: 'advanced',
-              note: 'L\'app rifiuta qualsiasi certificato che non sia quello "inchiodato" nel codice.',
+              note: `Termine inglese usato in italiano: indica l'aggancio dell'app a un certificato o chiave pubblica attesa.`,
             },
             {
               english: 'Code Obfuscation',
@@ -4511,8 +4482,7 @@ export default {
               italian: 'Iniezione di Intent',
               pronunciation: '/\u026An\u02C8tent \u026An\u02C8d\u0292ek\u0283\u0259n/',
               phonetic: 'in-TENT in-GEK-scen',
-              example:
-                "Intent injection exploits inter-app communication on Android. = L'iniezione di intent sfrutta la comunicazione tra app su Android.",
+              example: `An Android intent injection bug lets a malicious app trigger restricted activities that the target app never exposed publicly. = Un bug di iniezione di intent su Android permette a un'app malevola di triggerare activity ristrette che l'app target non ha mai esposto pubblicamente.`,
               context: 'web-vulnerabilities',
               difficulty: 'expert',
             },
@@ -4529,13 +4499,13 @@ export default {
             },
             {
               english: 'App Wrapping',
-              italian: 'Involucro applicativo (App Wrapping)',
+              italian: 'App Wrapping',
               pronunciation: '/\u00E6p \u02C8r\u00E6p\u026A\u014B/',
               phonetic: 'AP RAP-ping',
-              example:
-                "App wrapping adds a security layer to existing apps. = L'app wrapping aggiunge un livello di sicurezza ad app esistenti.",
+              example: `Enterprises rely on app wrapping when they have to enforce MDM policies on an APK they did not build themselves. = Le aziende si affidano all'app wrapping quando devono imporre policy MDM su un APK che non hanno costruito loro stesse.`,
               context: 'defense',
               difficulty: 'advanced',
+              note: `Termine inglese usato in italiano: indica l'aggiunta di un involucro di policy attorno a un'app esistente.`,
             },
             {
               english: 'Biometric Unlock',
@@ -4591,7 +4561,7 @@ export default {
               pronunciation: '/sel \u02C8ta\u028A\u0259r \u02C8spu\u02D0f\u026A\u014B/',
               phonetic: 'SEL TAU-er SPUU-fing',
               example:
-                'Cell tower spoofing can track your location. = Lo spoofing delle torri cellulari pu\u00F2 tracciare la tua posizione.',
+                'A rogue IMSI catcher performs cell tower spoofing to force nearby phones into a downgraded, unencrypted protocol. = Un IMSI catcher fraudolento esegue lo spoofing di torre cellulare per forzare i telefoni vicini su un protocollo declassato e non cifrato.',
               context: 'threats',
               difficulty: 'advanced',
             },
@@ -4730,21 +4700,19 @@ export default {
               pronunciation:
                 '/\u02C8\u00E6dv\u0259rseri \u02CCs\u026Amju\u02C8le\u026A\u0283\u0259n/',
               phonetic: 'AD-ver-se-ri si-miu-LEI-scen',
-              example:
-                "Adversary simulation mimics the tactics of specific APT groups. = La simulazione dell'avversario imita le tattiche di specifici gruppi APT.",
+              example: `A full adversary simulation chains spear-phishing, lateral movement and data theft to test detection end-to-end. = Una simulazione dell'avversario completa concatena spear-phishing, movimento laterale e furto dati per testare la detection end-to-end.`,
               context: 'offensive-security',
               difficulty: 'advanced',
             },
             {
               english: 'Threat Hunting',
-              italian: 'Caccia alle Minacce / Threat Hunting',
+              italian: 'Threat Hunting',
               pronunciation: '/\u03B8ret \u02C8h\u028Cnt\u026A\u014B/',
               phonetic: 'THRET HAN-ting',
-              example:
-                'Threat hunting is a proactive approach to finding hidden attackers. = Il threat hunting \u00E8 un approccio proattivo per trovare attaccanti nascosti.',
+              example: `Proactive threat hunting starts from a hypothesis about attacker behavior and queries telemetry to confirm or refute it. = Il threat hunting proattivo parte da un'ipotesi sul comportamento dell'attaccante e interroga la telemetria per confermarla o smentirla.`,
               context: 'defensive-security',
               difficulty: 'advanced',
-              note: 'Non aspettare un allarme, ma cercare attivamente segni di intrusione nei log.',
+              note: 'Termine inglese usato in italiano: indica la caccia proattiva a minacce non ancora segnalate dai tool automatici.',
             },
             {
               english: 'SOAR (Security Orchestration, Automation, and Response)',
@@ -4757,14 +4725,15 @@ export default {
               difficulty: 'expert',
             },
             {
-              english: 'Tabletop Exercise',
-              italian: 'Esercitazione Tabletop',
+              english: 'purple-team tabletop exercise',
+              italian: 'tabletop exercise di purple team',
               pronunciation: '/\u02C8te\u026Ablt\u0252p \u02C8eks\u0259rsa\u026Az/',
               phonetic: 'TEIBL-top ek-ser-sais',
               example:
-                "A tabletop exercise tests decision-making during a crisis. = Un'esercitazione tabletop testa la capacit\u00E0 decisionale durante una crisi.",
+                'A purple-team tabletop exercise walks attackers and defenders through the same scenario to surface detection gaps together. = Un tabletop exercise di purple team guida attaccanti e difensori attraverso lo stesso scenario per far emergere insieme i gap di detection.',
               context: 'incident-response',
               difficulty: 'intermediate',
+              note: 'Più collaborativo della classica simulazione red-vs-blue, ottimo per affinare playbook e runbook.',
             },
             {
               english: 'Cyber Range',
@@ -4790,7 +4759,7 @@ export default {
               pronunciation: '/\u02C8m\u00E6lwe\u0259r \u0259\u02C8n\u00E6l\u0259s\u026As/',
               phonetic: 'MAL-uer a-NA-li-sis',
               example:
-                "Malware analysis reveals how a virus works. = L'analisi del malware rivela come funziona un virus.",
+                'A solid malware analysis report covers behavior, persistence mechanisms and indicators useful to the SOC. = Un solido report di analisi del malware copre comportamento, meccanismi di persistenza e indicatori utili al SOC.',
               context: 'analysis',
               difficulty: 'intermediate',
             },
@@ -4799,8 +4768,7 @@ export default {
               italian: 'Analisi Statica',
               pronunciation: '/\u02C8st\u00E6t\u026Ak \u0259\u02C8n\u00E6l\u0259s\u026As/',
               phonetic: 'STA-tik a-NA-li-sis',
-              example:
-                "Static analysis examines the code without running it. = L'analisi statica esamina il codice senza eseguirlo.",
+              example: `Begin with static analysis of the binary so you map imports, strings and packers before running it in a sandbox. = Comincia con l'analisi statica del binario così mappi import, stringhe e packer prima di eseguirlo in una sandbox.`,
               context: 'analysis',
               difficulty: 'intermediate',
             },
@@ -4810,7 +4778,7 @@ export default {
               pronunciation: '/da\u026A\u02C8n\u00E6m\u026Ak \u0259\u02C8n\u00E6l\u0259s\u026As/',
               phonetic: 'dai-NA-mik a-NA-li-sis',
               example:
-                "Dynamic analysis involves executing the malware in a controlled environment. = L'analisi dinamica consiste nell'eseguire il malware in un ambiente controllato.",
+                'Detonate the sample in an isolated VM and watch the dynamic analysis traces for network beacons and registry writes. = Detona il sample in una VM isolata e osserva le tracce di analisi dinamica per beacon di rete e scritture al registro.',
               context: 'analysis',
               difficulty: 'intermediate',
             },
@@ -4820,8 +4788,7 @@ export default {
               pronunciation:
                 '/r\u026A\u02C8v\u025C\u02D0rs \u02CCend\u0292\u026A\u02C8n\u026A\u0259r\u026A\u014B/',
               phonetic: 're-VERS en-gi-NIR-ing',
-              example:
-                "Reverse engineering is used to reconstruct the source code. = L'ingegneria inversa \u00E8 usata per ricostruire il codice sorgente.",
+              example: `Ghidra and IDA Pro are the de facto tools for reverse engineering of stripped binaries during incident response. = Ghidra e IDA Pro sono gli strumenti de facto per l'ingegneria inversa di binari stripped durante l'incident response.`,
               context: 'analysis',
               difficulty: 'advanced',
             },
@@ -4912,7 +4879,7 @@ export default {
               pronunciation: '/\u02C8ne\u026A\u0283\u0259n ste\u026At \u02C8\u00E6kt\u0259r/',
               phonetic: 'NEI-scion STEIT AC-ter',
               example:
-                'Nation-state actors conduct cyber espionage for political gain. = Gli attori statali conducono spionaggio informatico per vantaggi politici.',
+                'A nation-state actor invests in custom zero-days, while criminal groups usually recycle commodity exploits. = Un attore statale investe in zero-day custom, mentre i gruppi criminali di solito riciclano exploit commodity.',
               context: 'threat-actors',
               difficulty: 'intermediate',
             },
@@ -4921,8 +4888,7 @@ export default {
               italian: 'Spionaggio Informatico',
               pronunciation: '/\u02C8sa\u026Ab\u0259r \u02C8esp\u026A\u0259n\u0251\u02D0\u0292/',
               phonetic: 'SAI-ber ES-pion-ag',
-              example:
-                'Cyber espionage targets government and military secrets. = Lo spionaggio informatico colpisce segreti governativi e militari.',
+              example: `Long-running cyber espionage campaigns prefer stealth over speed: the attacker stays hidden for months while siphoning data. = Le campagne di spionaggio informatico di lungo corso preferiscono la furtività alla velocità: l'attaccante resta nascosto per mesi mentre sottrae dati.`,
               context: 'threats',
               difficulty: 'beginner',
             },
@@ -4965,8 +4931,7 @@ export default {
               pronunciation:
                 '/\u02C8de\u026At\u0259 \u02CCeksf\u026Al\u02C8tre\u026A\u0283\u0259n/',
               phonetic: 'DEITA eks-fil-TREI-scion',
-              example:
-                "Data exfiltration usually happens slowly to avoid detection. = L'esfiltrazione dei dati avviene solitamente lentamente per evitare il rilevamento.",
+              example: `Slow, chunked data exfiltration over DNS often evades volume-based DLP rules tuned for HTTP uploads. = L'esfiltrazione dei dati lenta e a chunk via DNS spesso elude le regole DLP basate sul volume calibrate per gli upload HTTP.`,
               context: 'threats',
               difficulty: 'beginner',
             },
@@ -5015,8 +4980,7 @@ export default {
               italian: 'Sicurezza Offensiva',
               pronunciation: '/\u0259\u02C8fens\u026Av s\u026A\u02C8kj\u028A\u0259r\u0259ti/',
               phonetic: 'of-FEN-siv si-KIUR-i-ti',
-              example:
-                'Offensive security focuses on finding and exploiting vulnerabilities proactively. = La sicurezza offensiva si concentra sul trovare e sfruttare proattivamente le vulnerabilit\u00E0.',
+              example: `An offensive security team finds weaknesses before adversaries do and feeds the lessons back into the blue team's defenses. = Un team di sicurezza offensiva trova debolezze prima degli avversari e restituisce le lezioni alle difese del blue team.`,
               context: 'offensive-security',
               difficulty: 'intermediate',
             },
@@ -5025,8 +4989,7 @@ export default {
               italian: 'Hacking Etico',
               pronunciation: '/\u02C8e\u03B8\u026Akl \u02C8h\u00E6k\u026A\u014B/',
               phonetic: 'E-thi-cal HAK-ing',
-              example:
-                "Ethical hacking is legal and used to improve security. = L'hacking etico \u00E8 legale e usato per migliorare la sicurezza.",
+              example: `Practitioners of ethical hacking always operate under a written scope and a clearly defined rules-of-engagement document. = I praticanti dell'hacking etico operano sempre sotto uno scope scritto e un documento di rules-of-engagement chiaramente definito.`,
               context: 'offensive-security',
               difficulty: 'beginner',
             },
@@ -5047,7 +5010,7 @@ export default {
               pronunciation: '/\u026Ak\u02C8spl\u0254\u026At d\u026A\u02C8vel\u0259pm\u0259nt/',
               phonetic: 'ik-SPLOIT di-VE-lop-ment',
               example:
-                'Exploit development requires deep knowledge of memory and CPU. = Lo sviluppo di exploit richiede una conoscenza profonda di memoria e CPU.',
+                'Modern exploit development must defeat ASLR, DEP and CFG before the payload ever gets a chance to run. = Lo sviluppo di exploit moderno deve sconfiggere ASLR, DEP e CFG prima che il payload abbia la possibilità di eseguire.',
               context: 'research',
               difficulty: 'expert',
             },
@@ -5074,13 +5037,13 @@ export default {
             },
             {
               english: 'Post-Exploitation',
-              italian: 'attività dopo la compromissione (Post-Exploitation)',
+              italian: 'Post-Exploitation',
               pronunciation: '/po\u028Ast \u02CCekspl\u0254\u026A\u02C8te\u026A\u0283\u0259n/',
               phonetic: 'POUST eks-ploi-TEI-scion',
-              example:
-                'Post-exploitation involves gathering data after a successful breach. = La post-exploitation consiste nel raccogliere dati dopo una violazione riuscita.',
+              example: `During post-exploitation the operator hunts for credentials in memory and pivots toward the domain controller. = Durante il post-exploitation l'operatore caccia credenziali in memoria e fa pivoting verso il domain controller.`,
               context: 'offensive-security',
               difficulty: 'advanced',
+              note: `Termine inglese usato in italiano: indica le attività svolte dopo aver ottenuto l'accesso iniziale alla macchina.`,
             },
             {
               english: 'Shellcode',
@@ -5320,14 +5283,15 @@ export default {
               difficulty: 'intermediate',
             },
             {
-              english: 'Data Sovereignty',
-              italian: 'Sovranit\u00E0 dei Dati',
+              english: 'data sovereignty clause',
+              italian: 'clausola di sovranità dei dati',
               pronunciation: '/\u02C8de\u026At\u0259 \u02C8s\u0252vr\u026Anti/',
               phonetic: 'DEITA SO-vren-ti',
               example:
-                "Data sovereignty requires data to remain within a country's borders. = La sovranit\u00E0 dei dati richiede che rimangano entro i confini nazionali.",
+                'A data sovereignty clause in the cloud contract guarantees that customer records never leave the EU region without consent. = Una clausola di sovranità dei dati nel contratto cloud garantisce che i record dei clienti non lascino mai la regione UE senza consenso.',
               context: 'compliance',
               difficulty: 'advanced',
+              note: 'Critica per i settori regolamentati (PA, sanità, finanza) sottoposti a GDPR e a normative nazionali.',
             },
             {
               english: 'Acceptable Use Policy (AUP)',
@@ -5392,8 +5356,7 @@ export default {
               italian: 'Evitamento del Rischio',
               pronunciation: '/r\u026Ask \u0259\u02C8v\u0254\u026Ad\u0259ns/',
               phonetic: 'RISK a-VOI-dans',
-              example:
-                "Risk avoidance means stopping the activity that causes the risk. = L'evitamento del rischio significa interrompere l'attivit\u00E0 che lo causa.",
+              example: `Sometimes the right answer is risk avoidance: drop the feature entirely rather than ship it with weak controls. = A volte la risposta giusta è l'evitamento del rischio: elimina del tutto la feature invece di rilasciarla con controlli deboli.`,
               context: 'risk-management',
               difficulty: 'intermediate',
             },
@@ -5403,7 +5366,7 @@ export default {
               pronunciation: '/\u02C8\u00E6set \u02CCv\u00E6lju\u02C8e\u026A\u0283\u0259n/',
               phonetic: 'AS-set va-liu-EI-scion',
               example:
-                'Asset valuation determines how much to spend on protection. = La valutazione degli asset determina quanto spendere per la protezione.',
+                'Realistic asset valuation drives every downstream risk calculation, including insurance premiums and recovery budgets. = Una valutazione degli asset realistica guida ogni calcolo del rischio downstream, inclusi i premi assicurativi e i budget di recupero.',
               context: 'risk-management',
               difficulty: 'advanced',
             },
@@ -5423,8 +5386,7 @@ export default {
               pronunciation:
                 '/\u02C8kw\u0252nt\u026At\u0259t\u026Av r\u026Ask \u0259\u02C8n\u00E6l\u0259s\u026As/',
               phonetic: 'KUON-ti-tativ RISK a-NA-li-sis',
-              example:
-                "Quantitative risk analysis uses numerical data and money values. = L'analisi quantitativa usa dati numerici e valori monetari.",
+              example: `Boards prefer quantitative risk analysis because dollar figures and probabilities translate directly into investment trade-offs. = I board preferiscono l'analisi quantitativa del rischio perché cifre in dollari e probabilità si traducono direttamente in trade-off di investimento.`,
               context: 'risk-management',
               difficulty: 'advanced',
             },
@@ -5434,8 +5396,7 @@ export default {
               pronunciation:
                 '/\u02C8kw\u0252l\u026At\u0259t\u026Av r\u026Ask \u0259\u02C8n\u00E6l\u0259s\u026As/',
               phonetic: 'KUA-li-tativ RISK a-NA-li-sis',
-              example:
-                'Qualitative risk analysis uses scales like "Low", "Medium", "High". = L\'analisi qualitativa usa scale come "Basso", "Medio", "Alto".',
+              example: `Small teams default to qualitative risk analysis with a simple high/medium/low matrix instead of full Monte Carlo models. = I team piccoli ripiegano sull'analisi qualitativa del rischio con una semplice matrice alto/medio/basso invece di modelli Monte Carlo completi.`,
               context: 'risk-management',
               difficulty: 'beginner',
             },
@@ -5462,7 +5423,7 @@ export default {
               pronunciation: '/\u02C8si\u02D0so\u028A/',
               phonetic: 'SII-sou',
               example:
-                'The CISO reports directly to the CEO. = Il CISO riferisce direttamente al CEO.',
+                'A modern CISO spends as much time briefing the board on cyber risk as managing the security operations team itself. = Un CISO moderno passa tanto tempo a fare briefing al board sul rischio cyber quanto a gestire il team di security operations stesso.',
               context: 'roles',
               difficulty: 'beginner',
             },
@@ -5503,7 +5464,7 @@ export default {
               pronunciation: '/\u02C8\u026Ans\u026Ad\u0259nt r\u026A\u02C8sp\u0252nd\u0259r/',
               phonetic: 'IN-si-dent re-SPON-der',
               example:
-                'Incident responders handle the immediate aftermath of an attack. = Gli addetti alla risposta incidenti gestiscono le conseguenze immediate di un attacco.',
+                'A seasoned incident responder triages alerts under pressure and writes a clear post-mortem once the dust settles. = Un addetto risposta incidenti esperto fa triage degli alert sotto pressione e scrive un post-mortem chiaro una volta che la polvere si è posata.',
               context: 'roles',
               difficulty: 'intermediate',
             },
@@ -5534,7 +5495,7 @@ export default {
                 '/s\u026A\u02C8kj\u028A\u0259r\u0259ti \u0259\u02C8we\u0259rn\u0259s \u02C8tre\u026An\u026A\u014B/',
               phonetic: 'si-KIUR-iti a-UER-nes TREI-ning',
               example:
-                'Security awareness training reduces the risk of phishing. = La formazione riduce il rischio di phishing.',
+                'Quarterly security awareness training that includes simulated phishing measurably lowers click-through on real attacks. = La formazione sulla consapevolezza della sicurezza trimestrale che include phishing simulato abbassa misurabilmente il click-through sugli attacchi reali.',
               context: 'training',
               difficulty: 'beginner',
             },

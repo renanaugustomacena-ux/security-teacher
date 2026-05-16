@@ -1,0 +1,2221 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "c_foundations_1",
+      "english": "Function",
+      "set": {
+        "example": "Refactoring a long main into smaller functions makes each unit easier to test and reason about in isolation. = Rifattorizzare un main lungo in funzioni piu' piccole rende ogni unita' piu' facile da testare e ragionare in isolamento."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "c_foundations_1",
+      "english": "scanf",
+      "set": {
+        "italian": "scanf",
+        "example": "Reading user input with scanf without bounds checking is a classic source of buffer overflows in beginner C code. = Leggere input utente con scanf senza controllo dei limiti e' una classica fonte di buffer overflow nel codice C dei principianti.",
+        "note": "Termine italiano: scanf (funzione standard di libreria C, non si traduce)."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "c_foundations_2",
+      "english": "Single-Line Comment",
+      "set": {
+        "example": "Use a single-line comment with // to annotate a tricky line without breaking the visual rhythm of the code. = Usa un commento su riga singola con // per annotare una riga complicata senza spezzare il ritmo visivo del codice."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "c_foundations_4",
+      "english": "Assignment",
+      "set": {
+        "example": "An assignment in C evaluates the right-hand expression and stores the result in the lvalue on the left. = Un assegnamento in C valuta l'espressione di destra e memorizza il risultato nell'lvalue di sinistra."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "c_types_2",
+      "english": "Implicit Conversion",
+      "set": {
+        "example": "Mixing int and double in an expression triggers an implicit conversion that can hide precision loss from the compiler's view. = Mescolare int e double in un'espressione innesca una conversione implicita che puo' nascondere la perdita di precisione alla vista del compilatore."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "c_types_3",
+      "english": "Type Modifier",
+      "set": {
+        "example": "Adding the unsigned type modifier doubles the positive range of an integer at the cost of losing negative values. = Aggiungere il modificatore di tipo unsigned raddoppia l'intervallo positivo di un intero al costo di perdere i valori negativi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "c_types_3",
+      "english": "Literal",
+      "set": {
+        "example": "Writing 0x1F as a hexadecimal literal makes bitmask intent clearer than the decimal equivalent 31. = Scrivere 0x1F come letterale esadecimale rende l'intento del bitmask piu' chiaro dell'equivalente decimale 31."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "c_types_4",
+      "english": "Type Qualifier",
+      "set": {
+        "example": "Adding the const type qualifier to a parameter signals that the function will not mutate the pointed-to data. = Aggiungere il qualificatore di tipo const a un parametro segnala che la funzione non modifichera' i dati puntati."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "c_types_4",
+      "english": "const",
+      "set": {
+        "italian": "const",
+        "example": "Marking a pointer parameter as const tells callers and the compiler that the function will not modify the pointed memory. = Marcare un parametro puntatore come const dice ai chiamanti e al compilatore che la funzione non modifichera' la memoria puntata.",
+        "note": "Termine italiano: const (parola chiave del linguaggio C, non si traduce)."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "c_types_4",
+      "english": "Storage Class",
+      "set": {
+        "example": "Choosing the right storage class controls whether a variable lives on the stack, in static memory, or in a register hint. = Scegliere la giusta classe di memorizzazione controlla se una variabile vive sullo stack, in memoria statica, o come hint di registro."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "c_control_1",
+      "english": "Arithmetic Operator",
+      "set": {
+        "example": "Each arithmetic operator in C follows precedence rules that can produce surprising results when mixing integer and floating types. = Ogni operatore aritmetico in C segue regole di precedenza che possono produrre risultati sorprendenti mescolando tipi interi e a virgola mobile."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "c_control_1",
+      "english": "Comparison Operator",
+      "set": {
+        "example": "Using a comparison operator on floating-point values can give unexpected results due to representation rounding. = Usare un operatore di confronto su valori a virgola mobile puo' dare risultati inattesi a causa degli arrotondamenti di rappresentazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "c_control_1",
+      "english": "Equality Operator",
+      "set": {
+        "example": "Confusing the equality operator == with the assignment operator = is one of the oldest beginner mistakes in C. = Confondere l'operatore di uguaglianza == con l'operatore di assegnamento = e' uno dei piu' vecchi errori da principiante in C."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "c_control_1",
+      "english": "Logical Operator",
+      "set": {
+        "example": "Each logical operator in C short-circuits, so the right operand of && is only evaluated when the left side is true. = Ogni operatore logico in C va in corto circuito, quindi l'operando destro di && viene valutato solo quando il lato sinistro e' vero."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "c_control_2",
+      "english": "Break Statement",
+      "set": {
+        "example": "A well-placed break statement in a loop can exit early when the search has already found its target. = Un'istruzione break ben piazzata in un ciclo puo' uscire in anticipo quando la ricerca ha gia' trovato il suo obiettivo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "c_control_2",
+      "english": "Fall-Through",
+      "set": {
+        "example": "Forgetting a break in a switch causes fall-through to the next case, which is a common source of subtle C bugs. = Dimenticare un break in uno switch causa fall-through al caso successivo, una fonte comune di bug C sottili."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "c_control_3",
+      "english": "Do-While Loop",
+      "set": {
+        "example": "A do-while loop guarantees the body runs at least once, which fits menu prompts where the user must answer first. = Un ciclo do-while garantisce che il corpo venga eseguito almeno una volta, perfetto per i menu dove l'utente deve rispondere per primo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "c_control_3",
+      "english": "Continue Statement",
+      "set": {
+        "example": "Inserting a continue statement skips the rest of the loop body and jumps directly to the next iteration test. = Inserire un'istruzione continue salta il resto del corpo del ciclo e va direttamente al test della prossima iterazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "c_control_4",
+      "english": "Bit Shift",
+      "set": {
+        "example": "Replacing a multiplication by a power of two with a left bit shift can be faster on constrained microcontrollers. = Sostituire una moltiplicazione per una potenza di due con uno scorrimento di bit a sinistra puo' essere piu' veloce su microcontrollori con risorse limitate.",
+        "note": "Su CPU moderne il compilatore ottimizza gia' queste sostituzioni; lo shift manuale serve soprattutto per leggibilita' o flag."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "c_control_4",
+      "english": "Complement",
+      "set": {
+        "example": "Applying the bitwise complement operator ~ flips every bit, useful for building a mask that clears specific flags. = Applicare l'operatore di complemento bit a bit ~ inverte ogni bit, utile per costruire una maschera che azzera flag specifici."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "c_control_4",
+      "english": "Compound Assignment",
+      "set": {
+        "example": "A compound assignment like x += 1 evaluates the left-hand side only once, which matters when it has side effects. = Un assegnamento composto come x += 1 valuta il lato sinistro una sola volta, cosa che conta quando ha effetti collaterali."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "c_functions_3",
+      "english": "Block Scope",
+      "set": {
+        "example": "Declaring a temporary inside an if branch limits its block scope and prevents accidental reuse later. = Dichiarare una variabile temporanea dentro un ramo if limita il suo ambito di blocco e previene il riuso accidentale dopo."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "c_functions_3",
+      "english": "Internal Linkage",
+      "set": {
+        "example": "Marking a helper with static gives it internal linkage so the symbol stays private to its translation unit. = Marcare una funzione di supporto con static le da' collegamento interno cosi' il simbolo resta privato alla sua unita' di traduzione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "c_arrays_1",
+      "english": "Array Declaration",
+      "set": {
+        "example": "An array declaration in C must include a compile-time constant size unless you reach for a variable-length array. = Una dichiarazione di array in C deve includere una dimensione costante a tempo di compilazione a meno di ricorrere a un VLA."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "c_arrays_1",
+      "english": "Zero-Indexed",
+      "set": {
+        "example": "C arrays are zero-indexed, so the first element of arr is arr[0] and the last of size N is arr[N-1]. = Gli array in C sono indicizzati da zero, quindi il primo elemento di arr e' arr[0] e l'ultimo di dimensione N e' arr[N-1]."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "c_arrays_2",
+      "english": "Row",
+      "set": {
+        "example": "Iterating over a matrix row by row improves cache locality in row-major layouts like the C language uses. = Iterare su una matrice riga per riga migliora la localita' di cache nei layout per righe come quelli usati dal C."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "c_arrays_2",
+      "english": "Row-Major Order",
+      "set": {
+        "example": "C stores multidimensional arrays in row-major order, so adjacent column accesses sit next to each other in memory. = Il C memorizza gli array multidimensionali per righe, quindi accessi a colonne adiacenti sono vicini in memoria."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "c_arrays_2",
+      "english": "Array of Strings",
+      "set": {
+        "example": "Storing command-line options as an array of strings makes lookup loops trivial and keeps the data layout simple. = Memorizzare le opzioni della riga di comando come array di stringhe rende banali i cicli di ricerca e mantiene semplice il layout dei dati."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "c_arrays_2",
+      "english": "Variable-Length Array",
+      "set": {
+        "example": "Using a variable-length array sized by a runtime parameter avoids malloc but can blow the stack on large inputs. = Usare un array a lunghezza variabile dimensionato da un parametro a runtime evita malloc ma puo' far esplodere lo stack su input grandi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "c_arrays_3",
+      "english": "Array Copy",
+      "set": {
+        "example": "Performing an array copy in C requires an explicit loop or memcpy because plain assignment is not allowed on arrays. = Eseguire una copia dell'array in C richiede un ciclo esplicito o memcpy perche' l'assegnamento diretto non e' permesso sugli array."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "c_pointers_1",
+      "english": "NULL Pointer",
+      "set": {
+        "example": "Initializing a freshly declared pointer to a NULL pointer makes accidental dereferences crash loudly instead of corrupting memory. = Inizializzare un puntatore appena dichiarato a puntatore NULL fa crashare rumorosamente i dereferenze accidentali invece di corrompere la memoria."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "c_pointers_2",
+      "english": "Subscript Notation",
+      "set": {
+        "example": "Switching from *(arr + i) to subscript notation arr[i] is just syntactic sugar that the compiler treats identically. = Passare da *(arr + i) alla notazione a indice arr[i] e' solo zucchero sintattico che il compilatore tratta in modo identico."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "c_pointers_3",
+      "english": "Pointer Casting",
+      "set": {
+        "example": "Reaching for pointer casting between unrelated types is often a hint that a refactor or a union would be safer. = Ricorrere al cast di puntatore tra tipi non correlati e' spesso un segnale che un refactor o una union sarebbe piu' sicuro."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "c_pointers_3",
+      "english": "Pointer Assignment",
+      "set": {
+        "example": "A simple pointer assignment copies the address, not the pointed-to value, so both pointers now alias the same object. = Un semplice assegnamento di puntatore copia l'indirizzo, non il valore puntato, quindi entrambi i puntatori ora aliasano lo stesso oggetto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "c_pointers_4",
+      "english": "Comparison Function",
+      "set": {
+        "example": "qsort accepts a comparison function pointer that returns negative, zero, or positive to drive the sort order. = qsort accetta un puntatore a funzione di confronto che ritorna negativo, zero o positivo per guidare l'ordinamento."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "c_strings_1",
+      "english": "String Duplication",
+      "set": {
+        "example": "Calling strdup performs string duplication into a freshly malloc'd buffer that the caller must free later. = Chiamare strdup esegue una duplicazione di stringa in un buffer appena allocato con malloc che il chiamante deve liberare dopo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "c_strings_2",
+      "english": "String Concatenation",
+      "set": {
+        "example": "Naive string concatenation with strcat is unsafe when the destination buffer cannot hold both source and original content. = La concatenazione di stringhe ingenua con strcat e' insicura quando il buffer di destinazione non puo' contenere sia la sorgente sia il contenuto originale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "c_strings_2",
+      "english": "String Reversal",
+      "set": {
+        "example": "Implementing string reversal in place swaps characters from the two ends inward until the indices meet. = Implementare l'inversione di stringa sul posto scambia i caratteri dalle due estremita' verso il centro finche' gli indici si incontrano."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "c_strings_2",
+      "english": "String Comparison",
+      "set": {
+        "example": "Use strcmp for string comparison; == on char* only compares pointer addresses, not the underlying characters. = Usa strcmp per il confronto di stringhe; == su char* confronta solo gli indirizzi dei puntatori, non i caratteri sottostanti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "c_strings_2",
+      "english": "Wide Character",
+      "set": {
+        "example": "Using a wide character type wchar_t lets a program represent code points outside the basic ASCII range natively. = Usare il tipo wide character wchar_t permette a un programma di rappresentare nativamente code point fuori dall'intervallo ASCII di base."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "c_strings_2",
+      "english": "Multibyte String",
+      "set": {
+        "example": "Converting a multibyte string to wide characters with mbstowcs depends on the current locale setting. = Convertire una stringa multibyte in caratteri wide con mbstowcs dipende dall'impostazione di locale corrente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "c_strings_3",
+      "english": "String Length",
+      "set": {
+        "example": "Computing string length with strlen is O(n) because the function walks until it finds the null terminator. = Calcolare la lunghezza della stringa con strlen e' O(n) perche' la funzione cammina finche' non trova il terminatore null."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "c_strings_4",
+      "english": "Buffer Overflow Attack",
+      "set": {
+        "example": "A classic stack-based buffer overflow attack overwrites the saved return address to redirect execution to attacker-controlled code. = Un classico attacco di overflow del buffer su stack sovrascrive l'indirizzo di ritorno salvato per dirottare l'esecuzione verso codice controllato dall'attaccante."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "c_strings_4",
+      "english": "Null-Terminated String",
+      "set": {
+        "example": "Every C string is a null-terminated string, so functions like strlen rely on the trailing \\0 byte to know when to stop. = Ogni stringa C e' una stringa terminata da null, quindi funzioni come strlen si affidano al byte \\0 finale per sapere quando fermarsi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "c_strings_4",
+      "english": "String Truncation",
+      "set": {
+        "example": "Prefer strlcpy when available to avoid silent string truncation that leaves the destination without a null terminator. = Preferisci strlcpy quando disponibile per evitare il troncamento silenzioso che lascia la destinazione senza terminatore null."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Struct Initialization",
+      "set": {
+        "example": "Designated struct initialization with {.field = value} keeps the source readable even when fields are later reordered. = L'inizializzazione di struct designata con {.field = value} mantiene il sorgente leggibile anche quando i campi vengono riordinati in seguito."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_1",
+      "english": "Struct Size",
+      "set": {
+        "example": "Padding between members means struct size is often larger than the naive sum of its field sizes. = Il padding tra i membri fa si' che la dimensione della struct sia spesso maggiore della somma ingenua dei suoi campi.",
+        "note": "Usa offsetof e sizeof per ispezionare il layout effettivo e adattare l'ordine dei campi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Enum Value",
+      "set": {
+        "example": "Assigning an explicit enum value to the first constant prevents accidental shifts when new entries are added later. = Assegnare un valore esplicito al primo costante di un enum previene spostamenti accidentali quando vengono aggiunte nuove voci dopo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Bitfield",
+      "set": {
+        "example": "Packing several flags into a bitfield saves space in struct layouts targeting embedded systems with tight RAM. = Impacchettare diversi flag in un campo di bit risparmia spazio nei layout di struct destinati a sistemi embedded con poca RAM."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Anonymous Structure",
+      "set": {
+        "example": "Embedding an anonymous structure inside a union lets fields be accessed without an extra dotted path. = Incorporare una struttura anonima dentro una union permette di accedere ai campi senza un percorso puntato extra."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_3",
+      "english": "Constructor Pattern",
+      "set": {
+        "example": "A constructor pattern in C is just a function that allocates a struct, fills its invariants, and returns the pointer. = Un pattern costruttore in C e' solo una funzione che alloca una struct, riempie i suoi invarianti e ritorna il puntatore."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_3",
+      "english": "Destructor Pattern",
+      "set": {
+        "example": "Pairing every new_foo with a free_foo destructor pattern keeps ownership obvious and reduces leaks. = Accoppiare ogni new_foo con un pattern distruttore free_foo rende ovvia la proprieta' e riduce le perdite."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_3",
+      "english": "Struct Composition",
+      "set": {
+        "example": "Building a Player from a Position via struct composition is the C idiom that replaces classical inheritance. = Costruire un Player a partire da una Position tramite composizione di struct e' l'idioma C che sostituisce l'ereditarieta' classica."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_4",
+      "english": "Aggregate Type",
+      "set": {
+        "example": "Any struct or array counts as an aggregate type, which means you can initialize it with a brace-enclosed list. = Qualunque struct o array conta come tipo aggregato, il che significa che puoi inizializzarlo con una lista tra parentesi graffe."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_4",
+      "english": "Data Alignment",
+      "set": {
+        "example": "Respecting natural data alignment lets the CPU load fields in a single memory transaction instead of two unaligned reads. = Rispettare l'allineamento naturale dei dati permette alla CPU di caricare i campi in una singola transazione di memoria invece di due letture non allineate."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_4",
+      "english": "Offset",
+      "set": {
+        "italian": "offset",
+        "example": "Use offsetof(struct foo, bar) to compute the offset of a member without depending on padding assumptions. = Usa offsetof(struct foo, bar) per calcolare l'offset di un membro senza dipendere da assunzioni di padding.",
+        "note": "Termine italiano: offset (in inglese nei contesti C/embedded; raramente 'scostamento')."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_1",
+      "english": "Dynamic Memory Allocation",
+      "set": {
+        "example": "Switching from a fixed buffer to dynamic memory allocation lets a program adapt to inputs of unknown size at runtime. = Passare da un buffer fisso all'allocazione dinamica della memoria permette a un programma di adattarsi a input di dimensione sconosciuta a runtime."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_1",
+      "english": "Heap Fragmentation",
+      "set": {
+        "example": "Long-running daemons can suffer from heap fragmentation when alloc and free sizes mismatch over time. = I daemon a lunga esecuzione possono soffrire di frammentazione dello heap quando le dimensioni di alloc e free non combaciano nel tempo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_1",
+      "english": "Allocation Failure",
+      "set": {
+        "example": "Always check malloc for an allocation failure and propagate the NULL upward instead of dereferencing blindly. = Controlla sempre malloc per fallimenti di allocazione e propaga il NULL verso l'alto invece di dereferenziarlo alla cieca."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_2",
+      "english": "Resource Acquisition",
+      "set": {
+        "example": "Centralizing resource acquisition at the top of a function mirrors the RAII spirit even in plain C code. = Centralizzare l'acquisizione di risorse in cima a una funzione rispecchia lo spirito RAII anche in codice C puro."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_2",
+      "english": "Reference Counting",
+      "set": {
+        "example": "Implementing reference counting on shared objects requires atomic increment and decrement to stay thread-safe. = Implementare il conteggio dei riferimenti su oggetti condivisi richiede incremento e decremento atomici per restare thread-safe."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_2",
+      "english": "Memory-Mapped File",
+      "set": {
+        "example": "Reading a large dataset as a memory-mapped file via mmap lets the kernel page contents in on demand. = Leggere un dataset grande come file mappato in memoria con mmap permette al kernel di paginare i contenuti su richiesta."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_2",
+      "english": "Virtual Memory",
+      "set": {
+        "example": "Modern operating systems give each process the illusion of its own contiguous virtual memory address space. = I sistemi operativi moderni danno a ogni processo l'illusione del proprio spazio di memoria virtuale contiguo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_3",
+      "english": "Memory Corruption",
+      "set": {
+        "example": "Writing past the end of a buffer can cause silent memory corruption that crashes the program much later, far from the root cause. = Scrivere oltre la fine di un buffer puo' causare corruzione della memoria silenziosa che fa crashare il programma molto piu' tardi, lontano dalla causa originale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_3",
+      "english": "Memory Sanitizer",
+      "set": {
+        "example": "Compiling tests with the AddressSanitizer memory sanitizer catches out-of-bounds reads that would be invisible in release builds. = Compilare i test con il memory sanitizer AddressSanitizer cattura letture fuori dai limiti che sarebbero invisibili in build di rilascio."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_3",
+      "english": "Leak Sanitizer",
+      "set": {
+        "example": "Enabling the LeakSanitizer pass on a CI run flags any allocation still reachable at exit as a leak candidate. = Abilitare il passaggio LeakSanitizer su una run di CI segnala come candidata a leak ogni allocazione ancora raggiungibile all'uscita."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_4",
+      "english": "Memory Debugging",
+      "set": {
+        "example": "Routine memory debugging with tools like valgrind catches double-frees and uninitialized reads before users do. = Il debug della memoria di routine con strumenti come valgrind cattura double-free e letture non inizializzate prima degli utenti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "End of File",
+      "set": {
+        "example": "Reading until fgetc returns EOF is the canonical way to consume the entire stream up to end of file. = Leggere finche' fgetc ritorna EOF e' il modo canonico per consumare l'intero stream fino alla fine del file."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_3",
+      "english": "Line Reading",
+      "set": {
+        "example": "Using getline for line reading on POSIX systems handles arbitrary line lengths without manual buffer growth. = Usare getline per la lettura per righe su sistemi POSIX gestisce righe di lunghezza arbitraria senza far crescere manualmente il buffer."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "Append Mode",
+      "set": {
+        "example": "Opening a log file in append mode with fopen(path, \"a\") guarantees new writes go past existing content. = Aprire un file di log in modalita' aggiunta con fopen(path, \"a\") garantisce che le nuove scritture vadano oltre il contenuto esistente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "Random Access",
+      "set": {
+        "example": "fseek and ftell give a stream random access so code can jump back to arbitrary byte positions in the file. = fseek e ftell danno a uno stream accesso casuale cosi' il codice puo' saltare indietro a posizioni di byte arbitrarie nel file."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "File Size",
+      "set": {
+        "example": "Determine the file size portably by seeking to SEEK_END and querying ftell on the resulting position. = Determina la dimensione del file in modo portabile facendo seek a SEEK_END e interrogando ftell sulla posizione risultante."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "stdin",
+      "set": {
+        "italian": "stdin",
+        "example": "Piping a generator into a C program lets it read structured records from stdin without opening a file. = Fare pipe di un generatore in un programma C gli permette di leggere record strutturati da stdin senza aprire un file.",
+        "note": "Termine italiano: stdin (stream standard di input; nome usato anche nel codice e in italiano)."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_4",
+      "english": "stderr",
+      "set": {
+        "italian": "stderr",
+        "example": "Routing diagnostic messages to stderr keeps the regular stdout stream clean for downstream pipes. = Indirizzare i messaggi diagnostici su stderr mantiene pulito lo stream stdout regolare per le pipe a valle.",
+        "note": "Termine italiano: stderr (stream standard di errore; nome usato anche in italiano)."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_1",
+      "english": "Function-like Macro",
+      "set": {
+        "example": "Wrapping the body of a function-like macro in do { ... } while (0) keeps semicolon usage at the call site safe. = Avvolgere il corpo di una macro simile a funzione in do { ... } while (0) mantiene sicuro l'uso del punto e virgola al sito di chiamata."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_3",
+      "english": "Source File",
+      "set": {
+        "example": "Each .c source file in a project compiles into its own object before the linker joins them into a binary. = Ogni file sorgente .c in un progetto compila nel suo oggetto prima che il linker li unisca in un binario."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_3",
+      "english": "Internal Header",
+      "set": {
+        "example": "Splitting helpers into an internal header keeps private declarations out of the public API surface. = Separare le funzioni di supporto in un header interno tiene le dichiarazioni private fuori dalla superficie dell'API pubblica."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_3",
+      "english": "Precompiled Header",
+      "set": {
+        "example": "A precompiled header for system includes can shave noticeable seconds off large multi-file C builds. = Un header precompilato per gli include di sistema puo' ridurre secondi significativi nelle build C multi-file grandi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_3",
+      "english": "Separate Compilation",
+      "set": {
+        "example": "Embracing separate compilation lets developers rebuild only the changed translation unit instead of the whole codebase. = Abbracciare la compilazione separata permette agli sviluppatori di ricompilare solo l'unita' di traduzione modificata invece dell'intera codebase."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Release Build",
+      "set": {
+        "example": "Producing a release build with -O2 and stripped symbols delivers smaller, faster binaries to end users. = Produrre una build di rilascio con -O2 e simboli rimossi consegna binari piu' piccoli e veloci agli utenti finali."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Feature Toggle",
+      "set": {
+        "example": "Wrapping a risky code path behind an #ifdef feature toggle lets QA enable it for canary builds only. = Avvolgere un percorso di codice rischioso dietro un interruttore di funzionalita' #ifdef permette al QA di abilitarlo solo per build canary."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Assert",
+      "set": {
+        "example": "Sprinkling an assert at function entry documents invariants and crashes loud in debug instead of corrupting state silently. = Spargere un'assert all'ingresso di una funzione documenta gli invarianti e fa crashare rumorosamente in debug invece di corrompere lo stato silenziosamente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_4",
+      "english": "Static Assert",
+      "set": {
+        "example": "A static_assert that sizeof(struct Foo) == 32 catches accidental layout drift at compile time. = Una static_assert che sizeof(struct Foo) == 32 cattura derive accidentali di layout a tempo di compilazione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "Defensive Programming",
+      "set": {
+        "example": "Adding NULL checks at every API boundary follows defensive programming and surfaces bugs at the caller instead of the callee. = Aggiungere controlli NULL a ogni confine di API segue la programmazione difensiva e fa emergere i bug nel chiamante invece che nel chiamato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Guard Clause",
+      "set": {
+        "example": "Replacing nested ifs with an early-return guard clause flattens code paths and makes happy-path logic obvious. = Sostituire if annidati con una guard clause che ritorna in anticipo appiattisce i percorsi di codice e rende ovvia la logica del happy path."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Resource Leak",
+      "set": {
+        "example": "Forgetting a fclose on early-return paths is a classic resource leak that valgrind --leak-check=full will flag. = Dimenticare una fclose nei percorsi di ritorno anticipato e' una classica perdita di risorsa che valgrind --leak-check=full segnalera'."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Use-After-Free",
+      "set": {
+        "example": "A subtle use-after-free occurs when one alias is freed but a stale pointer is later dereferenced through another. = Un sottile uso dopo liberazione capita quando un alias e' liberato ma un puntatore stantio viene poi dereferenziato attraverso un altro."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Error Propagation",
+      "set": {
+        "example": "Consistent error propagation by returning negative codes lets the top of the call stack decide the user-facing message. = La propagazione errori consistente ritornando codici negativi permette al vertice dello stack di decidere il messaggio rivolto all'utente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Tail Pointer",
+      "set": {
+        "example": "Maintaining a tail pointer on a singly linked list turns append from O(n) into O(1) per insertion. = Mantenere un puntatore alla coda su una lista linkata singola trasforma l'append da O(n) a O(1) per inserimento."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Sentinel Node",
+      "set": {
+        "example": "Using a sentinel node at the head of a linked list eliminates special cases for insertion and deletion at the boundaries. = Usare un nodo sentinella in testa a una lista linkata elimina i casi speciali per inserimento e cancellazione ai bordi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_3",
+      "english": "Root",
+      "set": {
+        "example": "Every traversal of a tree starts at the root and visits children in a strategy chosen by the algorithm. = Ogni visita di un albero parte dalla radice e visita i figli con una strategia scelta dall'algoritmo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_3",
+      "english": "Leaf",
+      "set": {
+        "example": "A leaf is a tree node with no children, often used as the termination condition during recursive traversal. = Una foglia e' un nodo dell'albero senza figli, spesso usato come condizione di terminazione durante la visita ricorsiva."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_3",
+      "english": "In-order Traversal",
+      "set": {
+        "example": "Walking a binary search tree with in-order traversal yields its keys in sorted ascending order. = Visitare un albero binario di ricerca in-ordine produce le sue chiavi in ordine ascendente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_3",
+      "english": "Pre-order Traversal",
+      "set": {
+        "example": "Pre-order traversal visits the current node before its children, which is useful for serializing tree shape. = La visita pre-ordine visita il nodo corrente prima dei suoi figli, utile per serializzare la forma dell'albero."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_3",
+      "english": "Post-order Traversal",
+      "set": {
+        "example": "Use post-order traversal when freeing a tree so children are released before their parent pointer disappears. = Usa la visita post-ordine quando liberi un albero cosi' i figli sono rilasciati prima che il puntatore al padre scompaia."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_4",
+      "english": "Open Addressing",
+      "set": {
+        "example": "Hash tables that use open addressing store colliding keys in alternate slots instead of growing per-bucket chains. = Le hash table che usano indirizzamento aperto memorizzano le chiavi in collisione in slot alternativi invece di far crescere catene per bucket."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_4",
+      "english": "Edge",
+      "set": {
+        "example": "An edge connects two graph vertices and may carry a weight when modeling distances or capacities. = Un arco connette due vertici di un grafo e puo' portare un peso quando si modellano distanze o capacita'."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_1",
+      "english": "Comparator",
+      "set": {
+        "example": "Passing a custom comparator to qsort lets you sort an array of structs by any field, ascending or descending. = Passare un comparatore personalizzato a qsort permette di ordinare un array di struct per qualunque campo, ascendente o discendente.",
+        "note": "Per qsort il comparator deve restituire un int negativo, zero o positivo in stile strcmp."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_2",
+      "english": "Tail Recursion",
+      "set": {
+        "example": "Rewriting a loop as tail recursion is elegant but a C compiler may or may not turn it back into iteration. = Riscrivere un ciclo come ricorsione di coda e' elegante ma un compilatore C potrebbe o no trasformarlo di nuovo in iterazione."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_2",
+      "english": "Brute Force",
+      "set": {
+        "example": "Reaching for a brute force solution first gives you a correct baseline before optimizing with smarter algorithms. = Ricorrere prima a una soluzione brute force ti da' una baseline corretta prima di ottimizzare con algoritmi piu' intelligenti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_3",
+      "english": "Linear Time",
+      "set": {
+        "example": "Computing the sum of an array runs in linear time because the work scales proportionally with input size. = Calcolare la somma di un array gira in tempo lineare perche' il lavoro scala proporzionalmente con la dimensione dell'input."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_3",
+      "english": "Logarithmic Time",
+      "set": {
+        "example": "Binary search runs in logarithmic time, halving the candidate range with every comparison. = La ricerca binaria gira in tempo logaritmico, dimezzando l'intervallo dei candidati a ogni confronto."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_3",
+      "english": "Worst Case",
+      "set": {
+        "example": "Hash maps have O(1) average lookup but the worst case degenerates to O(n) when many keys hash to the same bucket. = Le hash map hanno lookup medio O(1) ma il caso peggiore degenera a O(n) quando molte chiavi hashano nello stesso bucket."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_4",
+      "english": "Sliding Window",
+      "set": {
+        "example": "A sliding window approach lets you compute fixed-size subarray aggregates in O(n) by reusing the previous window's sum. = Un approccio a finestra scorrevole permette di calcolare aggregati su sottoarray di dimensione fissa in O(n) riusando la somma della finestra precedente."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_4",
+      "english": "Optimal Substructure",
+      "set": {
+        "example": "Problems that exhibit optimal substructure can be solved by combining optimal solutions of their subproblems, which is the basis of dynamic programming. = I problemi che mostrano sottostruttura ottima possono essere risolti combinando soluzioni ottime dei loro sottoproblemi, che e' la base della programmazione dinamica.",
+        "note": "E' una delle due condizioni richieste dalla programmazione dinamica; l'altra e' la sovrapposizione dei sottoproblemi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "-Wall",
+      "set": {
+        "italian": "-Wall",
+        "example": "Compiling with -Wall enables most useful warnings and is considered the bare minimum for any serious C project. = Compilare con -Wall abilita la maggior parte dei warning utili ed e' considerato il minimo per qualunque progetto C serio.",
+        "note": "Termine italiano: -Wall (flag GCC/Clang; resta in inglese nel codice e nei makefile)."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "-O0",
+      "set": {
+        "italian": "-O0",
+        "example": "Building with -O0 keeps the binary close to the source so debuggers can step through every statement without surprises. = Buildare con -O0 mantiene il binario vicino al sorgente cosi' i debugger possono fare step su ogni istruzione senza sorprese.",
+        "note": "Termine italiano: -O0 (flag di ottimizzazione GCC/Clang; resta invariato)."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_1",
+      "english": "Compilation Unit",
+      "set": {
+        "example": "Each .c file plus all its included headers forms one compilation unit that the compiler processes independently. = Ogni file .c piu' tutti i suoi header inclusi forma un'unita' di compilazione che il compilatore processa indipendentemente."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_2",
+      "english": "Prerequisite",
+      "set": {
+        "example": "A make rule treats every prerequisite listed after the colon as a file that must exist and be up to date before the recipe runs. = Una regola make tratta ogni prerequisito elencato dopo i due punti come un file che deve esistere ed essere aggiornato prima che la ricetta venga eseguita.",
+        "note": "In Make ogni prerequisito che e' piu' nuovo del target forza la riesecuzione della ricetta."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_2",
+      "english": "Phony Target",
+      "set": {
+        "example": "Declaring a phony target like .PHONY: clean prevents make from getting confused if a file named clean exists. = Dichiarare un target fittizio come .PHONY: clean evita che make si confonda se esiste un file di nome clean."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_2",
+      "english": "Clean Target",
+      "set": {
+        "example": "A standard clean target removes build artifacts so the next run starts from a fresh, reproducible state. = Un target di pulizia standard rimuove gli artefatti di build cosi' la prossima esecuzione parte da uno stato fresco e riproducibile."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "Dynamic Linking",
+      "set": {
+        "example": "Choosing dynamic linking lets multiple programs share one libc.so in memory at the cost of runtime dependency management. = Scegliere il collegamento dinamico permette a piu' programmi di condividere una libc.so in memoria al costo della gestione delle dipendenze a runtime."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "Symbol",
+      "set": {
+        "example": "Each function and global variable contributes a symbol to the object file that the linker resolves into final addresses. = Ogni funzione e variabile globale contribuisce un simbolo al file oggetto che il linker risolve in indirizzi finali.",
+        "note": "Usa nm o objdump -t per ispezionare la tabella dei simboli."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "Undefined Reference",
+      "set": {
+        "example": "An undefined reference error from the linker usually means a missing library on the command line or a forgotten implementation. = Un errore di riferimento non definito dal linker di solito significa una libreria mancante sulla riga di comando o un'implementazione dimenticata."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "-l flag",
+      "set": {
+        "english": "-l link flag",
+        "italian": "flag -l (link)",
+        "example": "Use the -l link flag like -lm to tell the linker which libraries to pull symbols from. = Usa il flag -l (link) come -lm per dire al linker da quali librerie prendere i simboli.",
+        "note": "Il flag -l si combina con -L che specifica le directory in cui cercare; nomi separati per evitare la collisione tra -l e -L nella stessa lezione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_1",
+      "english": "Print",
+      "set": {
+        "english": "Print Value Command",
+        "italian": "Comando di stampa valore",
+        "example": "In gdb the print value command displays the current contents of any variable or expression in the running program. = In gdb il comando di stampa valore mostra il contenuto corrente di qualunque variabile o espressione nel programma in esecuzione.",
+        "note": "Nel debugger lo si scrive solitamente print o p; nome esteso scelto per evitare confusione con altri item Print."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "UndefinedBehaviorSanitizer",
+      "set": {
+        "italian": "UndefinedBehaviorSanitizer",
+        "example": "Building tests with UndefinedBehaviorSanitizer detects signed overflow and null dereferences that would otherwise silently miscompile. = Buildare i test con UndefinedBehaviorSanitizer rileva overflow di interi con segno e dereference null che altrimenti verrebbero silenziosamente miscompilati.",
+        "note": "Termine italiano: UndefinedBehaviorSanitizer o UBSan (nome dello strumento, non si traduce)."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "Definitely Lost",
+      "set": {
+        "example": "A definitely lost block in valgrind output is memory that no live pointer still references, the clearest leak signature. = Un blocco definitivamente perso nell'output di valgrind e' memoria che nessun puntatore vivo referenzia piu', la firma piu' chiara di una leak."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "Still Reachable",
+      "set": {
+        "example": "Memory marked still reachable in valgrind is not lost but never freed, often acceptable for global caches. = La memoria marcata come ancora raggiungibile in valgrind non e' persa ma mai liberata, spesso accettabile per cache globali."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_4",
+      "english": "Printf Debugging",
+      "set": {
+        "example": "Sprinkling printf statements is the universal printf debugging technique that works even when a real debugger is unavailable. = Spargere istruzioni printf e' la tecnica universale di debug con printf che funziona anche quando un vero debugger non e' disponibile."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_4",
+      "english": "Minimal Reproducer",
+      "set": {
+        "example": "Distilling a bug report into a minimal reproducer makes it much easier for maintainers to fix or assign blame to a library. = Distillare una segnalazione di bug in un riproduttore minimo rende molto piu' facile per i manutentori sistemarlo o attribuirlo a una libreria."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_4",
+      "english": "Heisenbug",
+      "set": {
+        "example": "Race conditions often manifest as a heisenbug that disappears the moment you attach a debugger and changes timing. = Le race condition spesso si manifestano come un heisenbug che sparisce nel momento in cui colleghi un debugger e cambi il timing.",
+        "note": "Il nome gioca sul principio di indeterminazione di Heisenberg: osservare il sistema lo modifica."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_4",
+      "english": "Rubber Duck Debugging",
+      "set": {
+        "example": "Practicing rubber duck debugging by explaining the code line by line to a toy forces you to articulate hidden assumptions. = Praticare il debug con paperella spiegando il codice riga per riga a un giocattolo ti costringe ad articolare assunzioni nascoste."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_2",
+      "english": "PID",
+      "set": {
+        "italian": "PID",
+        "example": "Each running process is identified by a unique PID that the kernel recycles after the process exits. = Ogni processo in esecuzione e' identificato da un PID unico che il kernel ricicla dopo l'uscita del processo.",
+        "note": "Termine italiano: PID (Process ID, acronimo invariato in italiano)."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_2",
+      "english": "Orphan Process",
+      "set": {
+        "example": "When a parent exits before its children, those children become orphan processes that init adopts at PID 1. = Quando un padre esce prima dei suoi figli, quei figli diventano processi orfani che init adotta sotto il PID 1."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_3",
+      "english": "POSIX Shared Memory",
+      "set": {
+        "example": "POSIX shared memory via shm_open lets two unrelated processes map the same region for zero-copy data exchange. = La memoria condivisa POSIX tramite shm_open permette a due processi non correlati di mappare la stessa regione per scambio dati senza copia."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_4",
+      "english": "Signal Mask",
+      "set": {
+        "example": "Setting a signal mask with sigprocmask lets a thread block specific signals while it runs critical sections. = Impostare una maschera di segnali con sigprocmask permette a un thread di bloccare segnali specifici mentre esegue sezioni critiche."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_4",
+      "english": "Async-Signal-Safe",
+      "set": {
+        "note": "printf, malloc e la maggior parte della libreria standard NON sono async-signal-safe; usa write e sig_atomic_t nei signal handler."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_1",
+      "english": "Worker Thread",
+      "set": {
+        "example": "Spinning up a pool of worker threads lets a server handle requests in parallel without forking heavy processes. = Avviare un pool di thread lavoratori permette a un server di gestire richieste in parallelo senza fare fork di processi pesanti.",
+        "note": "Riusare i thread con un pool evita il costo di pthread_create per ogni job."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_1",
+      "english": "Main Thread",
+      "set": {
+        "example": "Keeping I/O off the main thread prevents a slow disk read from blocking the program's event loop. = Tenere l'I/O fuori dal thread principale evita che una lettura disco lenta blocchi l'event loop del programma."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_2",
+      "english": "Unlock",
+      "set": {
+        "example": "Always pair every lock with an unlock on every return path or use a goto cleanup pattern to guarantee release. = Accoppia sempre ogni lock con uno sblocco su ogni percorso di ritorno o usa un pattern goto cleanup per garantire il rilascio."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_2",
+      "english": "Trylock",
+      "set": {
+        "example": "Calling trylock instead of lock lets a thread back off and try other work when contention is high. = Chiamare trylock invece di lock permette a un thread di ripiegare e provare altro lavoro quando la contesa e' alta."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_2",
+      "english": "Priority Inversion",
+      "set": {
+        "example": "Classic priority inversion happens when a low-priority task holds a lock that a high-priority task needs, blocking the latter indefinitely. = La classica inversione di priorita' capita quando un task a bassa priorita' tiene un lock di cui un task ad alta priorita' ha bisogno, bloccando quest'ultimo indefinitamente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_3",
+      "english": "pthread_cond_wait",
+      "set": {
+        "italian": "pthread_cond_wait",
+        "example": "Calling pthread_cond_wait atomically releases the associated mutex and parks the thread until another thread signals. = Chiamare pthread_cond_wait rilascia atomicamente il mutex associato e parcheggia il thread finche' un altro thread segnala.",
+        "note": "Termine italiano: pthread_cond_wait (funzione POSIX, nome resta invariato)."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_3",
+      "english": "pthread_cond_signal",
+      "set": {
+        "italian": "pthread_cond_signal",
+        "example": "Use pthread_cond_signal when exactly one waiter must wake, and pthread_cond_broadcast when all of them should. = Usa pthread_cond_signal quando esattamente un waiter deve svegliarsi, e pthread_cond_broadcast quando devono svegliarsi tutti.",
+        "note": "Termine italiano: pthread_cond_signal (funzione POSIX, nome resta invariato)."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_3",
+      "english": "Happens-Before",
+      "set": {
+        "example": "The C11 memory model defines a happens-before relation that programmers rely on to reason about cross-thread visibility. = Il modello di memoria del C11 definisce una relazione happens-before su cui i programmatori si affidano per ragionare sulla visibilita' tra thread."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_4",
+      "english": "Data Race",
+      "set": {
+        "example": "Two threads writing the same variable without synchronization form a data race and the result is undefined behavior in C. = Due thread che scrivono la stessa variabile senza sincronizzazione formano una data race e il risultato e' comportamento indefinito in C."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_4",
+      "english": "Compare-and-Swap",
+      "set": {
+        "example": "Lock-free queues rely on a compare-and-swap loop to publish updates only when the expected previous value is still there. = Le code lock-free si affidano a un ciclo di compare-and-swap per pubblicare aggiornamenti solo quando il valore precedente atteso e' ancora li'."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_4",
+      "english": "False Sharing",
+      "set": {
+        "example": "Two threads writing different fields on the same cache line cause false sharing that destroys multicore scaling. = Due thread che scrivono campi diversi sulla stessa cache line causano false sharing che distrugge la scalabilita' multicore."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_1",
+      "english": "sockaddr",
+      "set": {
+        "italian": "sockaddr",
+        "example": "Most socket APIs take a generic sockaddr pointer plus a length so the same function works for IPv4 and IPv6. = La maggior parte delle API socket prende un puntatore sockaddr generico piu' una lunghezza cosi' la stessa funzione funziona per IPv4 e IPv6.",
+        "note": "Termine italiano: sockaddr (struct POSIX; nome invariato)."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_1",
+      "english": "Byte Order",
+      "set": {
+        "example": "Network protocols require multibyte integers to use big-endian byte order, so htons converts host values before transmission. = I protocolli di rete richiedono che gli interi multibyte usino ordine dei byte big-endian, cosi' htons converte i valori host prima della trasmissione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_2",
+      "english": "Backlog",
+      "set": {
+        "example": "The backlog argument to listen sets how many pending TCP connections the kernel queues before the application accepts them. = L'argomento backlog di listen imposta quante connessioni TCP pendenti il kernel mette in coda prima che l'applicazione le accetti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_2",
+      "english": "Three-Way Handshake",
+      "set": {
+        "example": "Each TCP connection begins with a three-way handshake of SYN, SYN-ACK, and ACK packets between client and server. = Ogni connessione TCP comincia con un handshake a tre vie di pacchetti SYN, SYN-ACK e ACK tra client e server."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_3",
+      "english": "DNS Lookup",
+      "set": {
+        "example": "getaddrinfo performs a DNS lookup and returns a linked list of sockaddr candidates the client can iterate. = getaddrinfo esegue una risoluzione DNS e ritorna una lista linkata di candidati sockaddr che il client puo' iterare."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_4",
+      "english": "Event Loop",
+      "set": {
+        "example": "A C event loop built on epoll multiplexes thousands of sockets in a single thread without spawning per-connection workers. = Un event loop C basato su epoll multiplexa migliaia di socket in un singolo thread senza spawnare worker per connessione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_4",
+      "english": "Edge-Triggered",
+      "set": {
+        "example": "Using edge-triggered epoll mode requires the application to drain each socket fully or it will miss subsequent notifications. = Usare epoll in modalita' edge-triggered richiede che l'applicazione drena ogni socket completamente o perdera' le notifiche successive."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "c_sockets_4",
+      "english": "Level-Triggered",
+      "set": {
+        "example": "Default epoll is level-triggered, so the kernel keeps notifying as long as data remains available to read. = Epoll di default e' level-triggered, quindi il kernel continua a notificare finche' restano dati disponibili da leggere."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_1",
+      "english": "Off-by-One",
+      "set": {
+        "example": "A classic off-by-one mistake writes one past the end of a buffer, the bug that defined a whole generation of CVEs. = Un classico errore di uno scrive un byte oltre la fine di un buffer, il bug che ha definito un'intera generazione di CVE.",
+        "note": "Tipicamente capita nei loop con <= invece di < o nel calcolo della dimensione di terminatori null."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_1",
+      "english": "NX Bit",
+      "set": {
+        "example": "The CPU's NX bit marks data pages non-executable so injected shellcode on the stack fails to run as instructions. = Il bit no-execute della CPU marca le pagine dati come non eseguibili cosi' lo shellcode iniettato sullo stack fallisce nell'essere eseguito come istruzioni.",
+        "note": "Insieme ad ASLR rende molto piu' difficili gli exploit classici di stack overflow."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_1",
+      "english": "Safe Functions",
+      "set": {
+        "example": "Prefer the safe functions snprintf and strlcpy over sprintf and strcpy to avoid silent buffer overflows. = Preferisci le funzioni sicure snprintf e strlcpy a sprintf e strcpy per evitare buffer overflow silenziosi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_2",
+      "english": "Integer Overflow",
+      "set": {
+        "example": "Multiplying two user-supplied sizes risks integer overflow that wraps to a tiny allocation and a later out-of-bounds write. = Moltiplicare due dimensioni fornite dall'utente rischia un overflow di interi che si avvolge in un'allocazione minuscola e una scrittura fuori dai limiti dopo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_2",
+      "english": "Path Traversal",
+      "set": {
+        "example": "An unchecked user filename can enable path traversal via ../ sequences that escape the intended sandbox directory. = Un nome file utente non controllato puo' abilitare path traversal tramite sequenze ../ che escono dalla directory sandbox prevista."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_2",
+      "english": "Tainted Input",
+      "set": {
+        "example": "Treat any value from the network as tainted input and validate it before letting it drive memory sizes or syscall arguments. = Tratta qualunque valore dalla rete come input contaminato e validalo prima di lasciarlo guidare dimensioni di memoria o argomenti di syscall."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_2",
+      "english": "Sanitization",
+      "set": {
+        "example": "Proper sanitization strips or escapes dangerous characters before passing user data to shell commands or SQL queries. = Una sanificazione adeguata rimuove o fa escape dei caratteri pericolosi prima di passare dati utente a comandi shell o query SQL."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_2",
+      "english": "Validation",
+      "set": {
+        "example": "Input validation at the trust boundary rejects malformed packets before they reach parsing code that assumes well-formed data. = La validazione dell'input al confine di fiducia rifiuta pacchetti malformati prima che raggiungano codice di parsing che assume dati ben formati."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_3",
+      "english": "Use-After-Free",
+      "set": {
+        "english": "Exploitable Use-After-Free",
+        "italian": "Uso dopo free sfruttabile",
+        "example": "An exploitable use-after-free lets an attacker control freed-then-reallocated memory and hijack a vtable pointer dereferenced later. = Un uso dopo free sfruttabile permette a un attaccante di controllare memoria liberata e poi riallocata e dirottare un puntatore vtable dereferenziato dopo.",
+        "note": "Distinto dall'item generale 'Use-After-Free' nel modulo errori; qui il focus e' sul vettore di exploit."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_3",
+      "english": "Information Leak",
+      "set": {
+        "example": "Returning uninitialized stack bytes to a remote caller is an information leak that can expose pointers and defeat ASLR. = Restituire byte di stack non inizializzati a un chiamante remoto e' una fuga di informazioni che puo' esporre puntatori e sconfiggere ASLR."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_3",
+      "english": "Heap Spray",
+      "set": {
+        "example": "Attackers perform a heap spray by allocating many identical payload blocks so a stray pointer is likely to land in controlled memory. = Gli attaccanti eseguono uno heap spray allocando molti blocchi di payload identici cosi' un puntatore vagante e' probabile che atterri in memoria controllata."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_4",
+      "english": "Side Channel",
+      "set": {
+        "example": "Comparing secrets with memcmp leaks a timing side channel that an attacker can use to recover the key byte by byte. = Confrontare segreti con memcmp fa trapelare un canale laterale di timing che un attaccante puo' usare per recuperare la chiave byte per byte."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_4",
+      "english": "Privilege Drop",
+      "set": {
+        "example": "After binding a privileged port, daemons perform a privilege drop with setuid to reduce blast radius after compromise. = Dopo aver fatto bind a una porta privilegiata, i daemon eseguono una riduzione privilegi con setuid per ridurre il raggio di esplosione dopo una compromissione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_4",
+      "english": "Seccomp",
+      "set": {
+        "italian": "seccomp",
+        "example": "Installing a seccomp BPF filter restricts a process to a tiny syscall whitelist, sharply limiting what an exploited bug can do. = Installare un filtro seccomp BPF restringe un processo a una piccola whitelist di syscall, limitando nettamente cio' che un bug sfruttato puo' fare.",
+        "note": "Termine italiano: seccomp (meccanismo Linux di sandboxing; nome invariato)."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Bit Mask",
+      "set": {
+        "example": "Apply a bit mask with status & 0x0F to isolate the four least significant flag bits before testing them. = Applica una maschera di bit con status & 0x0F per isolare i quattro bit di flag meno significativi prima di testarli."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Bit Shift",
+      "set": {
+        "english": "Register Bit Shift",
+        "italian": "Scorrimento di bit (registro)",
+        "example": "Programming a hardware register often involves a register bit shift to position a value into the correct field width. = Programmare un registro hardware spesso richiede uno scorrimento di bit per posizionare un valore nella larghezza di campo corretta.",
+        "note": "Distinto dall'item 'Bit Shift' nel modulo controllo; qui il contesto e' hardware-register programming."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Set Bit",
+      "set": {
+        "example": "To set bit 3 of a register without disturbing the others, OR the register with (1U << 3). = Per settare il bit 3 di un registro senza disturbare gli altri, fai OR del registro con (1U << 3)."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Toggle Bit",
+      "set": {
+        "example": "Toggle bit 5 with an XOR like reg ^= (1U << 5) so the bit flips without affecting any neighbors. = Inverti il bit 5 con uno XOR come reg ^= (1U << 5) cosi' il bit si inverte senza intaccare i vicini."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_3",
+      "english": "Vector Table",
+      "set": {
+        "example": "On ARM Cortex-M the vector table at address 0 lists the initial stack pointer and the address of each interrupt handler. = Su ARM Cortex-M la tabella dei vettori all'indirizzo 0 elenca il puntatore di stack iniziale e l'indirizzo di ogni handler di interrupt."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_3",
+      "english": "Enable Interrupts",
+      "set": {
+        "example": "Call __enable_irq to enable interrupts globally on Cortex-M once all peripheral setup is complete. = Chiama __enable_irq per abilitare gli interrupt globalmente su Cortex-M una volta completato il setup di tutte le periferiche."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_3",
+      "english": "Disable Interrupts",
+      "set": {
+        "example": "Briefly disable interrupts around access to a shared variable to prevent corruption from an ISR firing mid-update. = Disabilita brevemente gli interrupt attorno all'accesso a una variabile condivisa per prevenire corruzione da una ISR che parte a meta' aggiornamento."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_4",
+      "english": "Real-Time",
+      "set": {
+        "example": "Industrial control loops need real-time guarantees so a sensor reading and motor command happen within a bounded deadline. = I loop di controllo industriale richiedono garanzie di tempo reale cosi' una lettura del sensore e un comando al motore avvengono entro una deadline limitata."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_4",
+      "english": "Hard Real-Time",
+      "set": {
+        "example": "A hard real-time system treats a missed deadline as a system failure, unlike soft real-time which only degrades quality. = Un sistema a tempo reale stretto tratta una deadline mancata come fallimento di sistema, a differenza del soft real-time che degrada solo la qualita'.",
+        "note": "Esempi tipici: ABS automobilistici, pacemaker, controllori di volo."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_4",
+      "english": "Task",
+      "set": {
+        "italian": "task",
+        "example": "An RTOS schedules each task according to its priority and the chosen scheduling policy like preemptive or cooperative. = Un RTOS schedula ogni task secondo la sua priorita' e la politica di scheduling scelta come preemptive o cooperative.",
+        "note": "Termine italiano: task (in contesti RTOS si lascia invariato; piu' specifico di 'processo' o 'thread')."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_4",
+      "english": "Power Management",
+      "set": {
+        "example": "Battery-powered devices implement aggressive power management by gating clocks to peripherals not currently in use. = I dispositivi alimentati a batteria implementano una gestione energetica aggressiva spegnendo i clock alle periferiche non in uso."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_4",
+      "english": "Sleep Mode",
+      "set": {
+        "example": "Entering sleep mode on a microcontroller can drop current draw from milliamps to microamps until an interrupt wakes it. = Entrare in modalita' sleep su un microcontrollore puo' far scendere l'assorbimento da milliampere a microampere finche' un interrupt non lo sveglia.",
+        "note": "Diverse profondita' (sleep, deep-sleep, stop) trovano un compromesso tra consumo e latenza di risveglio."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_2",
+      "english": "Variable",
+      "set": {
+        "english": "Make Variable",
+        "italian": "Variabile Make",
+        "example": "Defining a Make variable like CFLAGS=-Wall -O2 centralizes compiler options so every rule picks them up consistently. = Definire una variabile Make come CFLAGS=-Wall -O2 centralizza le opzioni del compilatore cosi' ogni regola le prende in modo consistente.",
+        "note": "Rinominato per distinguerlo dall'item 'Variable' nelle fondamenta C."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_3",
+      "english": "Header File",
+      "set": {
+        "english": "Public Header File",
+        "italian": "Header file pubblico",
+        "example": "A library's public header file declares only the API symbols intended for external callers and hides everything else. = L'header file pubblico di una libreria dichiara solo i simboli dell'API destinati ai chiamanti esterni e nasconde tutto il resto.",
+        "note": "Rinominato per evitare collisione con l'item 'Header File' generico di c_foundations_1."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "Linking",
+      "set": {
+        "english": "Library Linking",
+        "italian": "Collegamento di librerie",
+        "example": "Library linking adds external .a or .so dependencies to the binary so it can resolve symbols from outside its own object files. = Il collegamento di librerie aggiunge dipendenze esterne .a o .so al binario cosi' puo' risolvere simboli da fuori i propri file oggetto.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Linking' del modulo fondamenta."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "c_build_3",
+      "english": "Object File",
+      "set": {
+        "english": "Relocatable Object File",
+        "italian": "File oggetto rilocabile",
+        "example": "A relocatable object file produced by gcc -c contains machine code plus a relocation table the linker uses to fix addresses. = Un file oggetto rilocabile prodotto da gcc -c contiene codice macchina piu' una tabella di rilocazione che il linker usa per sistemare gli indirizzi.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Object File' del modulo fondamenta."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "c_structs_2",
+      "english": "Enumeration",
+      "set": {
+        "english": "Enum Definition",
+        "italian": "Definizione di enum",
+        "example": "An enum definition inside a struct module groups related symbolic constants and gives them a self-documenting type. = Una definizione di enum dentro un modulo struct raggruppa costanti simboliche correlate e da' loro un tipo auto-documentante.",
+        "note": "Rinominato per distinguerlo dall'item 'Enumeration' del modulo tipi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_4",
+      "english": "volatile",
+      "set": {
+        "english": "volatile (concurrency)",
+        "italian": "volatile (concorrenza)",
+        "example": "Marking a flag as volatile (concurrency) only stops the compiler from caching reads; it does NOT provide atomicity or ordering across threads. = Marcare un flag come volatile (concorrenza) impedisce solo al compilatore di cachare le letture; NON fornisce atomicita' od ordering tra thread.",
+        "note": "In codice multi-thread serve _Atomic o le primitive di <stdatomic.h>, non volatile."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "volatile",
+      "set": {
+        "english": "volatile (MMIO)",
+        "italian": "volatile (MMIO)",
+        "example": "Hardware registers must be declared volatile (MMIO) so the compiler does not eliminate repeated reads that drive device state machines. = I registri hardware vanno dichiarati volatile (MMIO) cosi' il compilatore non elimina le letture ripetute che pilotano le macchine a stati dei dispositivi.",
+        "note": "L'uso primario di volatile in C e' proprio l'accesso a memoria mappata su periferiche."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_2",
+      "english": "Recursion",
+      "set": {
+        "english": "Algorithmic Recursion",
+        "italian": "Ricorsione algoritmica",
+        "example": "Algorithmic recursion lets you express divide-and-conquer solutions like merge sort with code that mirrors the recurrence directly. = La ricorsione algoritmica permette di esprimere soluzioni divide-and-conquer come il merge sort con codice che rispecchia direttamente la ricorrenza.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Recursion' del modulo funzioni."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_2",
+      "english": "Base Case",
+      "set": {
+        "english": "Recursion Base Case",
+        "italian": "Caso base della ricorsione",
+        "example": "Every recursive function needs a recursion base case that returns without further calls, otherwise the stack will eventually overflow. = Ogni funzione ricorsiva ha bisogno di un caso base della ricorsione che ritorna senza ulteriori chiamate, altrimenti lo stack prima o poi straboccera'.",
+        "note": "Rinominato per distinguerlo dall'item 'Base Case' del modulo funzioni."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_3",
+      "english": "Stack Overflow",
+      "set": {
+        "english": "Stack Overflow (heap context)",
+        "italian": "Stack overflow (contesto heap)",
+        "example": "When debugging memory issues, a stack overflow (heap context) usually surfaces as a crash in deeply recursive code touching large local arrays. = Quando si fa debug di problemi di memoria, uno stack overflow (contesto heap) di solito emerge come crash in codice profondamente ricorsivo che tocca grandi array locali.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Stack Overflow' del modulo funzioni."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_2",
+      "english": "Stack Overflow",
+      "set": {
+        "english": "Recursion Stack Overflow",
+        "italian": "Stack overflow ricorsivo",
+        "example": "Algorithms with deep recursion can trigger a recursion stack overflow, which is why iterative or tail-recursive variants are often preferred. = Algoritmi con ricorsione profonda possono innescare uno stack overflow ricorsivo, motivo per cui varianti iterative o tail-ricorsive sono spesso preferite.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Stack Overflow' del modulo funzioni."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_1",
+      "english": "Stack Overflow",
+      "set": {
+        "english": "Stack Buffer Overflow",
+        "italian": "Stack buffer overflow",
+        "example": "A stack buffer overflow exploit overwrites the saved return address on the stack to hijack control flow into attacker code. = Un exploit di stack buffer overflow sovrascrive l'indirizzo di ritorno salvato sullo stack per dirottare il flusso di controllo verso codice dell'attaccante.",
+        "note": "Rinominato per distinguerlo dall'item 'Stack Overflow' del modulo funzioni (ricorsione)."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "c_preproc_3",
+      "english": "Forward Declaration",
+      "set": {
+        "english": "Header Forward Declaration",
+        "italian": "Dichiarazione anticipata negli header",
+        "example": "Putting a header forward declaration like struct Foo; in a header avoids pulling in the full type definition just to declare a pointer. = Mettere una dichiarazione anticipata negli header come struct Foo; in un header evita di tirare dentro la definizione completa del tipo solo per dichiarare un puntatore.",
+        "note": "Rinominato per distinguerlo dall'item generico del modulo funzioni."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "atoi",
+      "set": {
+        "english": "atoi (stdlib)",
+        "italian": "atoi (stdlib)",
+        "example": "stdlib's atoi (stdlib) returns 0 on failure and undefined behavior on overflow, which is why strtol is the preferred modern choice. = L'atoi (stdlib) di stdlib ritorna 0 al fallimento e comportamento indefinito in overflow, motivo per cui strtol e' la scelta moderna preferita.",
+        "note": "Rinominato per distinguerlo dall'item 'atoi' del modulo funzioni; in C la funzione resta atoi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "exit",
+      "set": {
+        "english": "exit (stdlib)",
+        "italian": "exit (stdlib)",
+        "example": "Calling exit (stdlib) flushes stdio buffers and runs registered atexit handlers before terminating the whole process. = Chiamare exit (stdlib) flusha i buffer stdio ed esegue gli handler atexit registrati prima di terminare l'intero processo.",
+        "note": "Rinominato per distinguerlo dall'item 'exit' del modulo funzioni; la funzione C resta exit."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "rand",
+      "set": {
+        "english": "rand (stdlib)",
+        "italian": "rand (stdlib)",
+        "example": "stdlib's rand (stdlib) is fine for toy code but its low entropy and predictability make it unsuitable for cryptographic use. = L'rand (stdlib) di stdlib va bene per codice giocattolo ma la sua bassa entropia e prevedibilita' la rendono inadatta a uso crittografico.",
+        "note": "Rinominato per distinguerlo dall'item 'rand' del modulo funzioni; la funzione C resta rand."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_4",
+      "english": "srand",
+      "set": {
+        "english": "srand (stdlib)",
+        "italian": "srand (stdlib)",
+        "example": "Seed a deterministic test by calling srand (stdlib) with a fixed value so each run produces the same pseudo-random sequence. = Fai il seed di un test deterministico chiamando srand (stdlib) con un valore fisso cosi' ogni run produce la stessa sequenza pseudo-random.",
+        "note": "Rinominato per distinguerlo dall'item 'srand' del modulo funzioni; la funzione C resta srand."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Traversal",
+      "set": {
+        "english": "List Traversal",
+        "italian": "Visita di lista",
+        "example": "List traversal walks a linked list from head to tail following the next pointer of every node. = La visita di lista cammina su una lista linkata dalla testa alla coda seguendo il puntatore next di ogni nodo.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Traversal' del modulo array."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_2",
+      "english": "Linear Search",
+      "set": {
+        "english": "Linear Search Algorithm",
+        "italian": "Algoritmo di ricerca lineare",
+        "example": "The linear search algorithm is the fallback when data is unsorted and you cannot afford to sort it first. = L'algoritmo di ricerca lineare e' il fallback quando i dati non sono ordinati e non puoi permetterti di ordinarli prima.",
+        "note": "Rinominato per distinguerlo dall'item 'Linear Search' del modulo array."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "c_algos_1",
+      "english": "Bubble Sort",
+      "set": {
+        "english": "Bubble Sort Algorithm",
+        "italian": "Algoritmo bubble sort",
+        "example": "The bubble sort algorithm is the classic teaching example for sorting because its inner loop maps directly to swap-on-comparison logic. = L'algoritmo bubble sort e' il classico esempio didattico per l'ordinamento perche' il suo ciclo interno mappa direttamente sulla logica swap-on-comparison.",
+        "note": "Rinominato per distinguerlo dall'item 'Bubble Sort' del modulo array."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strlen",
+      "set": {
+        "english": "strlen (stdlib reference)",
+        "italian": "strlen (riferimento stdlib)",
+        "example": "The stdlib reference for strlen (stdlib reference) is in <string.h> and assumes the input is a properly null-terminated C string. = Il riferimento stdlib per strlen (riferimento stdlib) e' in <string.h> e assume che l'input sia una stringa C correttamente terminata da null.",
+        "note": "Rinominato per distinguerlo dall'item 'strlen' del modulo array; la funzione C resta strlen."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strcpy",
+      "set": {
+        "english": "strcpy (stdlib reference)",
+        "italian": "strcpy (riferimento stdlib)",
+        "example": "The stdlib reference for strcpy (stdlib reference) makes no effort to validate the destination size, hence its reputation for buffer overflows. = Il riferimento stdlib per strcpy (riferimento stdlib) non fa alcun tentativo di validare la dimensione di destinazione, da cui la sua reputazione per i buffer overflow.",
+        "note": "Rinominato per distinguerlo dall'item 'strcpy' del modulo array; la funzione C resta strcpy."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strcmp",
+      "set": {
+        "english": "strcmp (stdlib reference)",
+        "italian": "strcmp (riferimento stdlib)",
+        "example": "The stdlib reference for strcmp (stdlib reference) returns 0 for equality, which is the opposite truthiness from what an if condition expects. = Il riferimento stdlib per strcmp (riferimento stdlib) ritorna 0 per l'uguaglianza, l'opposto della truthiness che si aspetta un if.",
+        "note": "Rinominato per distinguerlo dall'item 'strcmp' del modulo array; la funzione C resta strcmp."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strcat",
+      "set": {
+        "english": "strcat (stdlib reference)",
+        "italian": "strcat (riferimento stdlib)",
+        "example": "The stdlib reference for strcat (stdlib reference) requires the destination buffer to already be null-terminated and large enough for the result. = Il riferimento stdlib per strcat (riferimento stdlib) richiede che il buffer di destinazione sia gia' terminato da null e abbastanza grande per il risultato.",
+        "note": "Rinominato per distinguerlo dall'item 'strcat' del modulo array; la funzione C resta strcat."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_2",
+      "english": "Buffer Overflow",
+      "set": {
+        "english": "Buffer Overflow (debugging)",
+        "italian": "Buffer overflow (debug)",
+        "example": "When debugging crashes, a buffer overflow (debugging) often surfaces as memory corruption detected far away from the original out-of-bounds write. = Quando si fa debug di crash, un buffer overflow (debug) spesso emerge come corruzione di memoria rilevata molto lontano dalla scrittura fuori dai limiti originale.",
+        "note": "Rinominato per distinguerlo dall'item 'Buffer Overflow' del modulo array."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_1",
+      "english": "Buffer Overflow",
+      "set": {
+        "english": "Exploitable Buffer Overflow",
+        "italian": "Buffer overflow sfruttabile",
+        "example": "An exploitable buffer overflow on the stack can let an attacker pivot from a single out-of-bounds write into arbitrary code execution. = Un buffer overflow sfruttabile sullo stack puo' permettere a un attaccante di passare da una singola scrittura fuori dai limiti all'esecuzione di codice arbitrario.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Buffer Overflow' del modulo array."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_2",
+      "english": "Dangling Pointer",
+      "set": {
+        "english": "Dangling Pointer (debugging)",
+        "italian": "Puntatore pendente (debug)",
+        "example": "Memory debuggers flag a dangling pointer (debugging) when an access reaches an address that was already freed earlier in the trace. = I debugger di memoria segnalano un puntatore pendente (debug) quando un accesso raggiunge un indirizzo che era gia' stato liberato prima nella traccia.",
+        "note": "Rinominato per distinguerlo dall'item 'Dangling Pointer' del modulo puntatori."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_2",
+      "english": "Wild Pointer",
+      "set": {
+        "english": "Wild Pointer (debugging)",
+        "italian": "Puntatore selvaggio (debug)",
+        "example": "AddressSanitizer reports a wild pointer (debugging) when a dereference targets an address that was never returned by any allocator. = AddressSanitizer riporta un puntatore selvaggio (debug) quando una dereference colpisce un indirizzo mai restituito da un allocatore.",
+        "note": "Rinominato per distinguerlo dall'item 'Wild Pointer' del modulo puntatori."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "c_advptr_1",
+      "english": "Pointer to Pointer",
+      "set": {
+        "english": "Double Pointer",
+        "italian": "Puntatore a puntatore (double pointer)",
+        "example": "Accepting a double pointer parameter lets a function reassign the caller's pointer, useful for linked-list head updates. = Accettare un parametro a doppio puntatore permette a una funzione di riassegnare il puntatore del chiamante, utile per aggiornare la testa di una lista linkata.",
+        "note": "Rinominato per distinguerlo dall'item 'Pointer to Pointer' del modulo puntatori base."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_4",
+      "english": "Dynamic Array",
+      "set": {
+        "english": "Growable Dynamic Array",
+        "italian": "Array dinamico ridimensionabile",
+        "example": "A growable dynamic array doubles its capacity on overflow so amortized append cost stays O(1) even as inputs grow. = Un array dinamico ridimensionabile raddoppia la sua capacita' in overflow cosi' il costo ammortizzato di append resta O(1) anche al crescere degli input.",
+        "note": "Rinominato per distinguerlo dall'item 'Dynamic Array' del modulo puntatori."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "NULL Check",
+      "set": {
+        "english": "Defensive NULL Check",
+        "italian": "Controllo NULL difensivo",
+        "example": "A defensive NULL check at the top of a function rejects bad input before any dereference and keeps later code readable. = Un controllo NULL difensivo in cima a una funzione rifiuta input cattivo prima di qualunque dereference e mantiene leggibile il codice successivo.",
+        "note": "Rinominato per distinguerlo dall'item 'Null Check' del modulo puntatori."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "qsort",
+      "set": {
+        "english": "qsort (stdlib reference)",
+        "italian": "qsort (riferimento stdlib)",
+        "example": "The stdlib reference for qsort (stdlib reference) accepts a generic void* base, an element count, an element size, and a comparator. = Il riferimento stdlib per qsort (riferimento stdlib) accetta una base void* generica, un conteggio di elementi, una dimensione di elemento e un comparatore.",
+        "note": "Rinominato per distinguerlo dall'item 'qsort' del modulo puntatori; la funzione C resta qsort."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "c_advptr_3",
+      "english": "Void Pointer",
+      "set": {
+        "english": "Generic Void Pointer",
+        "italian": "Puntatore void generico",
+        "example": "A generic void pointer parameter lets a function accept any type, but the caller must agree on the actual layout out of band. = Un parametro a puntatore void generico permette a una funzione di accettare qualunque tipo, ma il chiamante deve concordare il layout reale fuori banda.",
+        "note": "Rinominato per distinguerlo dall'item 'void Pointer' del modulo puntatori base."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_4",
+      "english": "Signal Handler",
+      "set": {
+        "english": "Error Signal Handler",
+        "italian": "Handler di segnale per errori",
+        "example": "An error signal handler for SIGSEGV can print a backtrace before re-raising so crashed programs leave actionable diagnostics. = Un handler di segnale per errori per SIGSEGV puo' stampare una backtrace prima del re-raise cosi' i programmi crashati lasciano diagnostiche azionabili.",
+        "note": "Rinominato per distinguerlo dall'item 'Signal Handler' del modulo puntatori avanzati."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "bsearch",
+      "set": {
+        "english": "bsearch (stdlib reference)",
+        "italian": "bsearch (riferimento stdlib)",
+        "example": "The stdlib reference for bsearch (stdlib reference) requires its input array to already be sorted by the same comparator. = Il riferimento stdlib per bsearch (riferimento stdlib) richiede che l'array di input sia gia' ordinato dallo stesso comparatore.",
+        "note": "Rinominato per distinguerlo dall'item 'bsearch' del modulo puntatori avanzati; la funzione C resta bsearch."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_4",
+      "english": "atexit",
+      "set": {
+        "english": "atexit (error path)",
+        "italian": "atexit (percorso di errore)",
+        "example": "Registering cleanup with atexit (error path) guarantees critical flushes even when a fatal error path calls exit instead of returning. = Registrare il cleanup con atexit (percorso di errore) garantisce flush critici anche quando un percorso di errore fatale chiama exit invece di ritornare.",
+        "note": "Rinominato per distinguerlo dall'item 'atexit' del modulo puntatori avanzati; la funzione C resta atexit."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "memcpy",
+      "set": {
+        "english": "memcpy (stdlib reference)",
+        "italian": "memcpy (riferimento stdlib)",
+        "example": "The stdlib reference for memcpy (stdlib reference) requires that source and destination buffers do not overlap; use memmove when they might. = Il riferimento stdlib per memcpy (riferimento stdlib) richiede che i buffer sorgente e destinazione non si sovrappongano; usa memmove quando potrebbero.",
+        "note": "Rinominato per distinguerlo dall'item 'memcpy' del modulo puntatori avanzati; la funzione C resta memcpy."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "memset",
+      "set": {
+        "english": "memset (stdlib reference)",
+        "italian": "memset (riferimento stdlib)",
+        "example": "The stdlib reference for memset (stdlib reference) is the canonical way to zero out a buffer, though compilers may elide it on dead memory. = Il riferimento stdlib per memset (riferimento stdlib) e' il modo canonico per azzerare un buffer, anche se i compilatori possono eliminarlo su memoria morta.",
+        "note": "Rinominato per distinguerlo dall'item 'memset' del modulo puntatori avanzati; la funzione C resta memset."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "memcmp",
+      "set": {
+        "english": "memcmp (stdlib reference)",
+        "italian": "memcmp (riferimento stdlib)",
+        "example": "The stdlib reference for memcmp (stdlib reference) compares raw bytes, which is fine for plain data but unsafe for structs with padding holes. = Il riferimento stdlib per memcmp (riferimento stdlib) confronta byte grezzi, che va bene per dati semplici ma e' insicuro per struct con buchi di padding.",
+        "note": "Rinominato per distinguerlo dall'item 'memcmp' del modulo puntatori avanzati; la funzione C resta memcmp."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_3",
+      "english": "Use After Free",
+      "set": {
+        "english": "Use After Free (memory debug)",
+        "italian": "Uso dopo free (debug memoria)",
+        "example": "Use after free (memory debug) is what sanitizers flag when an alias keeps using memory that another path has already released. = Uso dopo free (debug memoria) e' cio' che i sanitizer segnalano quando un alias continua a usare memoria che un altro percorso ha gia' rilasciato.",
+        "note": "Rinominato per distinguerlo dall'item 'Use After Free' del modulo puntatori avanzati."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_3",
+      "english": "Double Free",
+      "set": {
+        "english": "Double Free (memory debug)",
+        "italian": "Doppia free (debug memoria)",
+        "example": "A double free (memory debug) corrupts the allocator's internal lists and may cause crashes far from the offending call. = Una doppia free (debug memoria) corrompe le liste interne dell'allocatore e puo' causare crash lontano dalla chiamata incriminata.",
+        "note": "Rinominato per distinguerlo dall'item 'Double Free' del modulo puntatori avanzati."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Double Free",
+      "set": {
+        "english": "Double Free (error handling)",
+        "italian": "Doppia free (gestione errori)",
+        "example": "Defensive code can avoid double free (error handling) by setting the pointer to NULL right after the first free call. = Codice difensivo puo' evitare una doppia free (gestione errori) impostando il puntatore a NULL subito dopo la prima chiamata free.",
+        "note": "Rinominato per distinguerlo dall'item 'Double Free' del modulo puntatori avanzati."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_3",
+      "english": "Double Free",
+      "set": {
+        "english": "Exploitable Double Free",
+        "italian": "Doppia free sfruttabile",
+        "example": "An exploitable double free can be turned into arbitrary-write primitives by carefully timing reallocations between the two free calls. = Una doppia free sfruttabile puo' essere trasformata in primitive di scrittura arbitraria temporizzando attentamente le riallocazioni tra le due chiamate free.",
+        "note": "Rinominato per distinguerlo dall'item 'Double Free' del modulo puntatori avanzati."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "c_memory_1",
+      "english": "Memory Leak",
+      "set": {
+        "english": "Allocator Memory Leak",
+        "italian": "Memory leak dell'allocatore",
+        "example": "An allocator memory leak grows the resident set over time as malloc'd blocks are never paired with a corresponding free. = Un memory leak dell'allocatore fa crescere il resident set nel tempo perche' i blocchi allocati con malloc non sono mai accoppiati con una free corrispondente.",
+        "note": "Rinominato per distinguerlo dall'item 'Memory Leak' del modulo puntatori avanzati."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_2",
+      "english": "Memory Leak",
+      "set": {
+        "english": "Diagnosable Memory Leak",
+        "italian": "Memory leak diagnosticabile",
+        "example": "Tooling like valgrind turns a vague slowdown into a diagnosable memory leak with file, line, and allocation backtrace. = Strumenti come valgrind trasformano un vago rallentamento in un memory leak diagnosticabile con file, riga e backtrace di allocazione.",
+        "note": "Rinominato per distinguerlo dall'item 'Memory Leak' del modulo puntatori avanzati."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "c_pro_1",
+      "english": "Endianness",
+      "set": {
+        "english": "Portable Endianness",
+        "italian": "Endianness portabile",
+        "example": "Writing portable code that handles portable endianness means converting via htonl and ntohl at every serialization boundary. = Scrivere codice portabile che gestisce endianness portabile significa convertire con htonl e ntohl a ogni confine di serializzazione.",
+        "note": "Rinominato per distinguerlo dall'item 'Endianness' del modulo puntatori avanzati."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strncpy",
+      "set": {
+        "english": "strncpy (stdlib reference)",
+        "italian": "strncpy (riferimento stdlib)",
+        "example": "The stdlib reference for strncpy (stdlib reference) pads with NULs to fill the count but does not guarantee a terminator when source is too long. = Il riferimento stdlib per strncpy (riferimento stdlib) riempie di NUL fino al count ma non garantisce un terminatore quando la sorgente e' troppo lunga.",
+        "note": "Rinominato per distinguerlo dall'item 'strncpy' del modulo stringhe; la funzione C resta strncpy."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strchr",
+      "set": {
+        "english": "strchr (stdlib reference)",
+        "italian": "strchr (riferimento stdlib)",
+        "example": "The stdlib reference for strchr (stdlib reference) returns a pointer into the original string at the first occurrence, or NULL if not found. = Il riferimento stdlib per strchr (riferimento stdlib) ritorna un puntatore nella stringa originale alla prima occorrenza, o NULL se non trovato.",
+        "note": "Rinominato per distinguerlo dall'item 'strchr' del modulo stringhe; la funzione C resta strchr."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_2",
+      "english": "strstr",
+      "set": {
+        "english": "strstr (stdlib reference)",
+        "italian": "strstr (riferimento stdlib)",
+        "example": "The stdlib reference for strstr (stdlib reference) locates a needle substring inside a haystack and returns a pointer to the match. = Il riferimento stdlib per strstr (riferimento stdlib) localizza una sottostringa needle dentro un haystack e ritorna un puntatore al match.",
+        "note": "Rinominato per distinguerlo dall'item 'strstr' del modulo stringhe; la funzione C resta strstr."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "strtol",
+      "set": {
+        "english": "strtol (stdlib reference)",
+        "italian": "strtol (riferimento stdlib)",
+        "example": "The stdlib reference for strtol (stdlib reference) signals overflow via errno and reports the first non-digit through the endptr argument. = Il riferimento stdlib per strtol (riferimento stdlib) segnala overflow tramite errno e riporta il primo non-digit tramite l'argomento endptr.",
+        "note": "Rinominato per distinguerlo dall'item 'strtol' del modulo stringhe; la funzione C resta strtol."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_2",
+      "english": "Format String",
+      "set": {
+        "english": "Format String Vulnerability",
+        "italian": "Vulnerabilita' format string",
+        "example": "A classic format string vulnerability lets attacker-controlled user input reach printf, leaking stack data or writing arbitrary bytes via %n. = Una classica vulnerabilita' format string permette a input utente controllato dall'attaccante di raggiungere printf, facendo trapelare dati di stack o scrivendo byte arbitrari tramite %n.",
+        "note": "Rinominato per distinguerlo dall'item 'Format String' del modulo stringhe."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_1",
+      "english": "Bounds Checking",
+      "set": {
+        "english": "Security Bounds Checking",
+        "italian": "Controllo dei limiti per sicurezza",
+        "example": "Security bounds checking on every external length field stops attacker-controlled sizes from driving downstream allocation and copy primitives. = Il controllo dei limiti per sicurezza su ogni campo lunghezza esterno impedisce che dimensioni controllate dall'attaccante guidino primitive di allocazione e copia a valle.",
+        "note": "Rinominato per distinguerlo dall'item 'Bounds Checking' del modulo stringhe."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "c_io_1",
+      "english": "fgets",
+      "set": {
+        "english": "fgets (file I/O)",
+        "italian": "fgets (I/O file)",
+        "example": "Reading a config file line by line with fgets (file I/O) caps each read at sizeof(buf)-1 and always leaves a null terminator. = Leggere un file di configurazione riga per riga con fgets (I/O file) limita ogni lettura a sizeof(buf)-1 e lascia sempre un terminatore null.",
+        "note": "Rinominato per distinguerlo dall'item 'fgets' del modulo stringhe; la funzione C resta fgets."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "c_embedded_2",
+      "english": "Bit Manipulation",
+      "set": {
+        "english": "Register Bit Manipulation",
+        "italian": "Manipolazione di bit su registri",
+        "example": "Register bit manipulation is the daily bread of embedded C: setting, clearing, and toggling individual bits to configure peripherals. = La manipolazione di bit su registri e' il pane quotidiano del C embedded: settare, azzerare e invertire singoli bit per configurare le periferiche.",
+        "note": "Rinominato per distinguerlo dall'item 'Bit Manipulation' del modulo struct."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "malloc",
+      "set": {
+        "english": "malloc (stdlib reference)",
+        "italian": "malloc (riferimento stdlib)",
+        "example": "The stdlib reference for malloc (stdlib reference) returns memory aligned for any standard type but with indeterminate contents. = Il riferimento stdlib per malloc (riferimento stdlib) ritorna memoria allineata per qualunque tipo standard ma con contenuto indeterminato.",
+        "note": "Rinominato per distinguerlo dall'item 'malloc' del modulo memoria; la funzione C resta malloc."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "free",
+      "set": {
+        "english": "free (stdlib reference)",
+        "italian": "free (riferimento stdlib)",
+        "example": "The stdlib reference for free (stdlib reference) accepts NULL as a no-op, which simplifies cleanup paths considerably. = Il riferimento stdlib per free (riferimento stdlib) accetta NULL come no-op, il che semplifica notevolmente i percorsi di cleanup.",
+        "note": "Rinominato per distinguerlo dall'item 'free' del modulo memoria; la funzione C resta free."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "calloc",
+      "set": {
+        "english": "calloc (stdlib reference)",
+        "italian": "calloc (riferimento stdlib)",
+        "example": "The stdlib reference for calloc (stdlib reference) zero-initializes the returned buffer and detects multiplication overflow in count*size. = Il riferimento stdlib per calloc (riferimento stdlib) inizializza a zero il buffer ritornato e rileva overflow di moltiplicazione in count*size.",
+        "note": "Rinominato per distinguerlo dall'item 'calloc' del modulo memoria; la funzione C resta calloc."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "c_stdlib_1",
+      "english": "realloc",
+      "set": {
+        "english": "realloc (stdlib reference)",
+        "italian": "realloc (riferimento stdlib)",
+        "example": "The stdlib reference for realloc (stdlib reference) may move the block, so always store the result before overwriting the old pointer. = Il riferimento stdlib per realloc (riferimento stdlib) puo' spostare il blocco, quindi memorizza sempre il risultato prima di sovrascrivere il vecchio puntatore.",
+        "note": "Rinominato per distinguerlo dall'item 'realloc' del modulo memoria; la funzione C resta realloc."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_3",
+      "english": "Heap",
+      "set": {
+        "english": "Binary Heap",
+        "italian": "Heap binario",
+        "example": "A binary heap is a tree-shaped array that supports O(log n) extract-min, perfect for priority queues and Dijkstra's algorithm. = Un heap binario e' un array a forma di albero che supporta extract-min O(log n), perfetto per code di priorita' e per l'algoritmo di Dijkstra.",
+        "note": "Rinominato per distinguerlo dall'item 'Heap' del modulo memoria, che indica l'area di allocazione dinamica."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_3",
+      "english": "Cleanup Function",
+      "set": {
+        "english": "Error Cleanup Function",
+        "italian": "Funzione di cleanup degli errori",
+        "example": "An error cleanup function reached via goto consolidates resource release so each early return does not duplicate teardown code. = Una funzione di cleanup degli errori raggiunta via goto consolida il rilascio delle risorse cosi' ogni return anticipato non duplica il codice di teardown.",
+        "note": "Rinominato per distinguerlo dall'item 'Cleanup Function' del modulo memoria."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_2",
+      "english": "Heap Corruption",
+      "set": {
+        "english": "Heap Corruption (debugging)",
+        "italian": "Corruzione dello heap (debug)",
+        "example": "Heap corruption (debugging) often shows up as a crash inside malloc itself, far away from the original buggy write. = La corruzione dello heap (debug) spesso si manifesta come un crash dentro malloc stesso, lontano dalla scrittura buggata originale.",
+        "note": "Rinominato per distinguerlo dall'item 'Heap Corruption' del modulo memoria."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "c_debug_3",
+      "english": "Valgrind",
+      "set": {
+        "english": "Valgrind suite",
+        "italian": "Suite Valgrind",
+        "example": "The Valgrind suite bundles memcheck, helgrind, and cachegrind so a single tool can investigate memory, threads, and cache behavior. = La suite Valgrind raggruppa memcheck, helgrind e cachegrind cosi' un singolo strumento puo' investigare memoria, thread e comportamento di cache.",
+        "note": "Rinominato per distinguerlo dall'item 'Valgrind' del modulo memoria."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_1",
+      "english": "Heap Overflow",
+      "set": {
+        "english": "Exploitable Heap Overflow",
+        "italian": "Heap overflow sfruttabile",
+        "example": "An exploitable heap overflow can corrupt allocator metadata or adjacent objects to gain a write-what-where primitive. = Un heap overflow sfruttabile puo' corrompere i metadati dell'allocatore o oggetti adiacenti per ottenere una primitiva write-what-where.",
+        "note": "Rinominato per distinguerlo dall'item 'Heap Overflow' del modulo memoria."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "c_datastruct_1",
+      "english": "Linked List",
+      "set": {
+        "english": "Doubly Linked List",
+        "italian": "Lista doppiamente linkata",
+        "example": "A doubly linked list stores both next and prev pointers in each node, enabling O(1) removal given a node reference. = Una lista doppiamente linkata memorizza i puntatori next e prev in ogni nodo, abilitando rimozione O(1) data una referenza al nodo.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Linked List' del modulo memoria."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_1",
+      "english": "File Descriptor",
+      "set": {
+        "english": "POSIX File Descriptor",
+        "italian": "File descriptor POSIX",
+        "example": "A POSIX file descriptor is a small non-negative integer that the kernel uses to index the per-process open file table. = Un file descriptor POSIX e' un piccolo intero non negativo che il kernel usa per indicizzare la tabella dei file aperti per processo.",
+        "note": "Rinominato per distinguerlo dall'item 'File Descriptor' del modulo I/O."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "c_systems_3",
+      "english": "Pipe",
+      "set": {
+        "english": "IPC Pipe",
+        "italian": "Pipe IPC",
+        "example": "Creating an IPC pipe with pipe(fds) returns two file descriptors that share a kernel buffer for unidirectional byte streaming. = Creare una pipe IPC con pipe(fds) ritorna due file descriptor che condividono un buffer del kernel per streaming di byte unidirezionale.",
+        "note": "Rinominato per distinguerlo dall'item 'Pipe' del modulo I/O."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "c_pro_3",
+      "english": "Header Guard",
+      "set": {
+        "english": "Modern Header Guard",
+        "italian": "Header guard moderno",
+        "example": "Many modern projects replace the classic #ifndef trio with a single #pragma once as a more compact modern header guard. = Molti progetti moderni sostituiscono il classico trio #ifndef con un singolo #pragma once come header guard moderno piu' compatto.",
+        "note": "Rinominato per distinguerlo dall'item 'Header Guard' del modulo preprocessore."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "c_errors_2",
+      "english": "Assert",
+      "set": {
+        "english": "Runtime Assert",
+        "italian": "Assert a runtime",
+        "example": "Use a runtime assert to verify a precondition that should be impossible to violate; if it ever fires you have a bug, not bad data. = Usa un'assert a runtime per verificare una precondizione che dovrebbe essere impossibile violare; se mai scatta hai un bug, non dati cattivi.",
+        "note": "Rinominato per distinguerlo dall'item 'Assert' del modulo preprocessore."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "c_security_4",
+      "english": "Constant Time",
+      "set": {
+        "english": "Constant-Time Comparison",
+        "italian": "Confronto a tempo costante",
+        "example": "Comparing two MAC tags with a constant-time comparison prevents timing side channels that would leak the secret one byte at a time. = Confrontare due tag MAC con un confronto a tempo costante previene canali laterali di timing che farebbero trapelare il segreto un byte alla volta.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Constant Time' del modulo algoritmi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "c_pro_4",
+      "english": "Continuous Integration",
+      "set": {
+        "english": "CI for C Projects",
+        "italian": "CI per progetti C",
+        "example": "Setting up CI for C projects with a matrix of compilers (gcc, clang, msvc) catches portability bugs before they hit the main branch. = Impostare CI per progetti C con una matrice di compilatori (gcc, clang, msvc) cattura bug di portabilita' prima che colpiscano il branch principale.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Continuous Integration' del modulo build."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "c_concurrency_4",
+      "english": "Race Condition",
+      "set": {
+        "english": "Concurrent Race Condition",
+        "italian": "Race condition concorrente",
+        "example": "A concurrent race condition occurs when correctness depends on the unpredictable order in which two threads access shared state. = Una race condition concorrente capita quando la correttezza dipende dall'ordine imprevedibile con cui due thread accedono a stato condiviso.",
+        "note": "Rinominato per distinguerlo dall'item generico 'Race Condition' del modulo debug."
+      }
+    }
+  ]
+}

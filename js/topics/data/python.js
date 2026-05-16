@@ -213,7 +213,7 @@ export default {
               pronunciation: '/\u02C8k\u0252nst\u0259nt/',
               phonetic: 'KON-stant',
               example:
-                'Defining a constant like MAX_RETRIES = 3 at module level makes your code easier to maintain. = Definire una costante come MAX_RETRIES = 3 a livello di modulo rende il codice più facile da mantenere.',
+                'By convention, declaring a constant in uppercase like MAX_RETRIES = 3 at module level signals it should not change. = Per convenzione, dichiarare una costante in maiuscolo come MAX_RETRIES = 3 a livello di modulo segnala che non deve cambiare.',
               context: 'foundations',
               difficulty: 'intermediate',
               note: 'Python non ha vere costanti immutabili; per convenzione si usano nomi maiuscoli (PI = 3.14).',
@@ -286,7 +286,7 @@ export default {
               italian: 'Addizione / Somma',
               pronunciation: '/\u0259\u02C8d\u026A\u0283\u0259n/',
               phonetic: 'e-DI-scen',
-              example: "2 + 3 uses the addition operator. = 2 + 3 usa l'operatore di addizione.",
+              example: `The addition operator + works on numbers and concatenates strings, so 'Hello ' + name builds a greeting. = L'operatore di addizione + funziona sui numeri e concatena stringhe, quindi 'Hello ' + name costruisce un saluto.`,
               context: 'arithmetic',
               difficulty: 'beginner',
               code: 'x = 10 + 5 # 15',
@@ -307,7 +307,7 @@ export default {
               italian: 'Moltiplicazione / Prodotto',
               pronunciation: '/\u02CCm\u028Clt\u026Apl\u026A\u02C8ke\u026A\u0283\u0259n/',
               phonetic: 'mal-ti-pli-KEI-scen',
-              example: 'x * y calculates the product. = x * y calcola il prodotto.',
+              example: `In Python, the multiplication operator * also repeats sequences: 'ab' * 3 returns 'ababab', handy for building separators. = In Python, l'operatore di moltiplicazione * ripete anche le sequenze: 'ab' * 3 restituisce 'ababab', utile per costruire separatori.`,
               context: 'arithmetic',
               difficulty: 'beginner',
               note: 'In Python, puoi moltiplicare una stringa per un intero per ripeterla ("A" * 3 = "AAA").',
@@ -317,8 +317,7 @@ export default {
               italian: 'Divisione',
               pronunciation: '/d\u026A\u02C8v\u026A\u0292\u0259n/',
               phonetic: 'di-VI-scen',
-              example:
-                '10 / 3 gives a float in Python 3. = 10 / 3 restituisce un float in Python 3.',
+              example: `In Python 3, the / division operator always returns a float (10 / 4 = 2.5), while // performs integer division and returns 2. = In Python 3, l'operatore di divisione / restituisce sempre un float (10 / 4 = 2.5), mentre // esegue la divisione intera e restituisce 2.`,
               context: 'arithmetic',
               difficulty: 'beginner',
               note: 'In Python 3, la divisione / d\u00E0 sempre un float; // \u00E8 la divisione intera.',
@@ -328,7 +327,7 @@ export default {
               italian: 'Resto (Modulo)',
               pronunciation: '/\u02C8m\u0252dj\u028Alo\u028A/',
               phonetic: 'MO-diu-lou',
-              example: '10 % 3 is 1 (the remainder). = 10 % 3 \u00E8 1 (il resto).',
+              example: `Use the modulo operator % to check parity (n % 2 == 0) or to wrap indices around a circular buffer of fixed size. = Usa l'operatore modulo % per controllare la parita' (n % 2 == 0) o per ciclare indici in un buffer circolare di dimensione fissa.`,
               context: 'arithmetic',
               difficulty: 'intermediate',
               note: 'Utile per controllare se un numero \u00E8 pari (n % 2 == 0).',
@@ -634,14 +633,14 @@ export default {
               note: 'In Python, le chiavi devono essere oggetti immutabili (hashable).',
             },
             {
-              english: 'Value',
-              italian: 'Valore',
+              english: 'Dictionary Value',
+              italian: 'Valore di Dizionario',
               pronunciation: '/\u02C8v\u00E6lju\u02D0/',
               phonetic: 'VE-liu',
-              example:
-                'Each value in a dictionary can be a list, another dict, or any Python object. = Ogni valore in un dizionario pu\u00F2 essere una lista, un altro dict o qualsiasi oggetto Python.',
+              example: `Each dictionary value is reached by its key, as in scores['alice'], which lets you look up data in O(1) average time. = Ogni valore di dizionario si raggiunge tramite la sua chiave, come in scores['alice'], il che permette di cercare dati in tempo medio O(1).`,
               context: 'data-structures',
               difficulty: 'beginner',
+              note: 'A differenza di una lista, un dizionario indicizza i valori per chiave invece che per posizione.',
             },
             {
               english: 'Item',
@@ -750,8 +749,7 @@ export default {
               italian: 'Spacchettamento (Unpacking)',
               pronunciation: '/\u02CC\u028Cn\u02C8p\u00E6k\u026A\u014B/',
               phonetic: 'an-PA-king',
-              example:
-                "Tuple unpacking like name, age = get_user() makes code more readable than indexing. = Lo spacchettamento di tupla come name, age = get_user() rende il codice più leggibile rispetto all'indicizzazione.",
+              example: `With tuple unpacking like name, age = get_user(), you assign multiple return values to named variables in one line. = Con lo spacchettamento di tupla come name, age = get_user(), assegni piu' valori di ritorno a variabili nominate in una riga.`,
               context: 'syntax',
               difficulty: 'intermediate',
               code: 'x, y = (10, 20)',
@@ -869,8 +867,7 @@ export default {
               italian: 'Unire (Join)',
               pronunciation: '/d\u0292\u0254\u026An/',
               phonetic: 'GIOIN',
-              example:
-                '" ".join(["A", "B"]) results in "A B". = " ".join(["A", "B"]) produce "A B".',
+              example: `Use ', '.join(items) to merge a list of strings into a single CSV-like line without writing a manual loop. = Usa ', '.join(items) per unire una lista di stringhe in una singola riga in stile CSV senza scrivere un ciclo manuale.`,
               context: 'methods',
               difficulty: 'intermediate',
               note: 'Unisce gli elementi di un iterabile con la stringa come separatore.',
@@ -945,8 +942,7 @@ export default {
               italian: 'Stringa Grezza',
               pronunciation: '/r\u0254\u02D0 str\u026A\u014B/',
               phonetic: 'RO STRING',
-              example:
-                'Raw strings are essential for regular expressions because they prevent Python from interpreting backslashes as escape sequences. = Le stringhe raw sono essenziali per le espressioni regolari perch\u00E9 impediscono a Python di interpretare i backslash come sequenze di escape.',
+              example: `When writing a regex or a Windows path, prefix the string with r as in r'\\d+' to avoid escaping every backslash. = Quando scrivi una regex o un percorso Windows, prefissa la stringa con r come in r'\\d+' per evitare di fare l'escape di ogni backslash.`,
               context: 'syntax',
               difficulty: 'advanced',
               note: 'Ignora gli escape character; utile per percorsi Windows e regex.',
@@ -1114,8 +1110,7 @@ export default {
               italian: 'Istruzione Break',
               pronunciation: '/bre\u026Ak \u02C8ste\u026Atm\u0259nt/',
               phonetic: 'BREIK STEIT-ment',
-              example:
-                'Use break to exit the loop immediately. = Usa break per uscire immediatamente dal ciclo.',
+              example: `When searching a list, a break statement exits the loop as soon as you find the match, avoiding wasted iterations. = Quando cerchi in una lista, un'istruzione break esce dal ciclo appena trovi la corrispondenza, evitando iterazioni sprecate.`,
               context: 'control-flow',
               difficulty: 'intermediate',
             },
@@ -1134,8 +1129,7 @@ export default {
               italian: 'Intervallo (Range)',
               pronunciation: '/re\u026And\u0292/',
               phonetic: 'REING',
-              example:
-                'range(5) produces numbers from 0 to 4. = range(5) produce i numeri da 0 a 4.',
+              example: `Use range(start, stop, step) inside a for loop to iterate over a numeric sequence without building the full list in memory. = Usa range(start, stop, step) dentro un ciclo for per iterare su una sequenza numerica senza costruire l'intera lista in memoria.`,
               context: 'functions',
               difficulty: 'beginner',
               note: "Molto usato nei cicli for per ripetere un'azione N volte.",
@@ -1284,7 +1278,7 @@ export default {
               pronunciation: '/\u0254\u02D0l/',
               phonetic: 'OL',
               example:
-                'all(list) is True if all are True. = all(list) \u00E8 True se tutti sono True.',
+                'Pass a generator to all() to verify a condition on every item, for example all(x > 0 for x in numbers). = Passa un generatore a all() per verificare una condizione su ogni elemento, ad esempio all(x > 0 for x in numbers).',
               context: 'functions',
               difficulty: 'intermediate',
             },
@@ -1332,8 +1326,7 @@ export default {
               italian: 'Variabile Bandiera (Flag)',
               pronunciation: '/fl\u00E6\u0261 \u02C8veri\u0259bl/',
               phonetic: 'FLAG VE-ri-ebol',
-              example:
-                'A flag variable tracks a state change. = Una variabile flag tiene traccia di un cambio di stato.',
+              example: `Set a flag variable like found = False before a loop, then update it inside to remember whether the search succeeded. = Imposta una variabile bandiera come found = False prima di un ciclo, poi aggiornala all'interno per ricordare se la ricerca ha avuto successo.`,
               context: 'patterns',
               difficulty: 'beginner',
             },
@@ -1375,7 +1368,7 @@ export default {
               pronunciation: '/r\u026A\u02C8k\u025C\u02D0r\u0292\u0259n/',
               phonetic: 're-KER-scen',
               example:
-                'Recursion needs a base case to stop. = La ricorsione ha bisogno di un caso base per fermarsi.',
+                'Every recursive function needs a base case (e.g. n == 0 in factorial) to stop calling itself, otherwise you hit a RecursionError. = Ogni funzione ricorsiva ha bisogno di un caso base (es. n == 0 in fattoriale) per smettere di chiamarsi, altrimenti ottieni un RecursionError.',
               context: 'patterns',
               difficulty: 'intermediate',
             },
@@ -1517,8 +1510,7 @@ export default {
               pronunciation:
                 '/p\u0259\u02C8z\u026A\u0283\u0259nl \u02C8\u0251\u02D0r\u0261jum\u0259nt/',
               phonetic: 'po-SI-scio-nel AR-ghiu-ment',
-              example:
-                'Positional arguments depend on their order. = Gli argomenti posizionali dipendono dal loro ordine.',
+              example: `When you call connect('localhost', 5432), each positional argument is bound to a parameter based on its order in the signature. = Quando chiami connect('localhost', 5432), ogni argomento posizionale viene legato a un parametro in base al suo ordine nella firma.`,
               context: 'functions',
               difficulty: 'intermediate',
             },
@@ -1591,11 +1583,11 @@ export default {
               pronunciation: '/\u02C8dek\u0259re\u026At\u0259r/',
               phonetic: 'DE-co-rei-ter',
               example:
-                'Decorators modify the behavior of a function. = I decoratori modificano il comportamento di una funzione.',
+                'Adding @cache above a function lets a decorator wrap it to memoize results without changing the original code. = Aggiungere @cache sopra una funzione permette a un decoratore di avvolgerla per memorizzare i risultati senza modificare il codice originale.',
               context: 'functions',
               difficulty: 'advanced',
               code: '@my_decorator\ndef func():',
-              note: "Una funzione che ne prende un'altra e ne estende le funzionalit\u00E0 senza modificarla direttamente.",
+              note: 'Si lascia spesso il termine inglese decorator nelle conversazioni tecniche.',
             },
             {
               english: 'Wrapper',
@@ -1662,18 +1654,17 @@ export default {
               italian: 'Ambito (Scope)',
               pronunciation: '/sko\u028Ap/',
               phonetic: 'SKOUP',
-              example:
-                'Scope defines where a variable is accessible. = Lo scope definisce dove una variabile \u00E8 accessibile.',
+              example: `The lexical scope of a variable determines where it can be read or written, following Python's LEGB lookup rule. = L'ambito lessicale di una variabile determina dove puo' essere letta o scritta, seguendo la regola di lookup LEGB di Python.`,
               context: 'foundations',
               difficulty: 'beginner',
+              note: 'Spesso ci si riferisce a questo concetto come scope, lasciando il termine inglese.',
             },
             {
               english: 'Global',
               italian: 'Globale',
               pronunciation: '/\u02C8\u0261lo\u028Abl/',
               phonetic: 'GLOU-bal',
-              example:
-                'Global variables are defined outside functions. = Le variabili globali sono definite fuori dalle funzioni.',
+              example: `A variable defined at module level is global to that file and can be read from any function inside it. = Una variabile definita a livello di modulo e' globale per quel file e puo' essere letta da qualsiasi funzione al suo interno.`,
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -1683,7 +1674,7 @@ export default {
               pronunciation: '/\u02C8lo\u028Akl/',
               phonetic: 'LOU-kal',
               example:
-                'Local variables exist only inside a function. = Le variabili locali esistono solo dentro una funzione.',
+                'When you assign x = 5 inside a function, x becomes a local variable that disappears as soon as the function returns. = Quando assegni x = 5 dentro una funzione, x diventa una variabile locale che scompare appena la funzione ritorna.',
               context: 'foundations',
               difficulty: 'beginner',
             },
@@ -1714,7 +1705,7 @@ export default {
               pronunciation: '/\u02C8ne\u026Am spe\u026As/',
               phonetic: 'NEIM-speis',
               example:
-                'A namespace maps names to objects. = Un namespace mappa i nomi agli oggetti.',
+                'Every module, class, and function has its own namespace, implemented as a dictionary that maps names to objects. = Ogni modulo, classe e funzione ha il proprio namespace, implementato come un dizionario che mappa nomi a oggetti.',
               context: 'foundations',
               difficulty: 'intermediate',
               note: 'Implementato internamente come un dizionario.',
@@ -1826,8 +1817,7 @@ export default {
               italian: 'Funzione Pura',
               pronunciation: '/pj\u028A\u0259r \u02C8f\u028C\u014Bk\u0283\u0259n/',
               phonetic: 'PIUR FANK-scen',
-              example:
-                'A pure function has no side effects. = Una funzione pura non ha effetti collaterali.',
+              example: `A function like math.sqrt(x) is a pure function: same input always produces the same output, and it never mutates external state. = Una funzione come math.sqrt(x) e' una funzione pura: lo stesso input produce sempre lo stesso output e non muta mai lo stato esterno.`,
               context: 'patterns',
               difficulty: 'intermediate',
               note: 'Restituisce sempre lo stesso output per lo stesso input.',
@@ -1902,7 +1892,8 @@ export default {
               italian: 'Oggetto',
               pronunciation: '/\u02C8\u0252bd\u0292\u026Akt/',
               phonetic: 'OB-gect',
-              example: 'Everything in Python is an object. = Tutto in Python \u00E8 un oggetto.',
+              example:
+                'Even integers and functions are objects in Python, which means you can inspect their methods with dir() at runtime. = Anche gli interi e le funzioni sono oggetti in Python, il che significa che puoi ispezionarne i metodi con dir() a runtime.',
               context: 'oop',
               difficulty: 'beginner',
             },
@@ -1974,7 +1965,7 @@ export default {
               pronunciation: '/\u02C8\u026Anst\u0259ns \u02C8veri\u0259bl/',
               phonetic: 'IN-stans VE-ri-ebol',
               example:
-                'Instance variables are unique to each object. = Le variabili di istanza sono uniche per ogni oggetto.',
+                'Assigning self.balance = 0 inside __init__ creates an instance variable unique to each account object. = Assegnare self.balance = 0 dentro __init__ crea una variabile di istanza unica per ogni oggetto account.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -1984,7 +1975,7 @@ export default {
               pronunciation: '/kl\u0251\u02D0s \u02C8veri\u0259bl/',
               phonetic: 'CLAS VE-ri-ebol',
               example:
-                'Class variables are shared by all instances. = Le variabili di classe sono condivise da tutte le istanze.',
+                'Defining count = 0 directly inside the class body makes it a class variable shared by every instance. = Definire count = 0 direttamente nel corpo della classe la rende una variabile di classe condivisa da ogni istanza.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2000,8 +1991,7 @@ export default {
               italian: 'Ereditariet\u00E0',
               pronunciation: '/\u026An\u02C8her\u026At\u0259ns/',
               phonetic: 'in-HE-ri-tans',
-              example:
-                "Inheritance allows a class to derive from another. = L'ereditariet\u00E0 permette a una classe di derivare da un'altra.",
+              example: `By using inheritance, a Manager class can extend Employee and add bonus logic without rewriting the shared attributes. = Usando l'ereditarieta', una classe Manager puo' estendere Employee e aggiungere logica di bonus senza riscrivere gli attributi condivisi.`,
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2095,8 +2085,7 @@ export default {
               italian: 'Polimorfismo',
               pronunciation: '/\u02CCp\u0252li\u02C8m\u0254\u02D0rf\u026Az\u0259m/',
               phonetic: 'po-li-MOR-fi-sem',
-              example:
-                'Polymorphism allows different classes to be treated through the same interface. = Il polimorfismo permette a classi diverse di essere trattate tramite la stessa interfaccia.',
+              example: `Thanks to polymorphism, a single render(shape) function can call shape.draw() whether shape is a Circle or a Square. = Grazie al polimorfismo, una sola funzione render(shape) puo' chiamare shape.draw() sia che shape sia un Circle o un Square.`,
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2112,8 +2101,7 @@ export default {
               italian: 'Incapsulamento',
               pronunciation: '/\u026An\u02CCk\u00E6psju\u02C8le\u026A\u0283\u0259n/',
               phonetic: 'in-kap-su-LEI-scen',
-              example:
-                "Encapsulation hides the internal state of an object. = L'incapsulamento nasconde lo stato interno di un oggetto.",
+              example: `Through encapsulation, a BankAccount class hides its balance behind methods like deposit() so callers cannot corrupt the state. = Attraverso l'incapsulamento, una classe BankAccount nasconde il suo saldo dietro metodi come deposit() cosi' i chiamanti non possono corrompere lo stato.`,
               context: 'oop',
               difficulty: 'intermediate',
               note: 'Protegge i dati da accessi non autorizzati o accidentali.',
@@ -2124,7 +2112,7 @@ export default {
               pronunciation: '/\u00E6b\u02C8str\u00E6k\u0283\u0259n/',
               phonetic: 'ab-STRAK-scen',
               example:
-                "Abstraction simplifies complex systems by hiding details. = L'astrazione semplifica sistemi complessi nascondendo i dettagli.",
+                'Good abstraction lets callers use open(path) without knowing whether the file lives on disk or in cloud storage. = Una buona astrazione permette ai chiamanti di usare open(path) senza sapere se il file vive su disco o in cloud storage.',
               context: 'oop',
               difficulty: 'intermediate',
             },
@@ -2168,7 +2156,7 @@ export default {
               pronunciation: '/\u02C8\u00E6bstr\u00E6kt be\u026As kl\u0251\u02D0s/',
               phonetic: 'AB-strakt BEIS CLAS',
               example:
-                'You cannot instantiate an ABC directly. = Non puoi istanziare direttamente una ABC.',
+                'Defining a Shape ABC with an abstract draw() method forces every subclass like Circle and Square to provide its own implementation. = Definire una ABC Shape con un metodo astratto draw() obbliga ogni sottoclasse come Circle e Square a fornire la propria implementazione.',
               context: 'oop',
               difficulty: 'advanced',
               note: 'Usata per definire uno standard per le sottoclassi (modulo abc).',
@@ -2393,7 +2381,7 @@ export default {
               italian: 'Come (Alias)',
               pronunciation: '/\u00E6z/',
               phonetic: 'AS',
-              example: 'import pandas as pd uses an alias. = import pandas as pd usa un alias.',
+              example: `Writing import numpy as np uses the as keyword to alias the module under a shorter name preferred in scientific code. = Scrivere import numpy as np usa la parola chiave as per creare un alias del modulo con un nome piu' corto preferito nel codice scientifico.`,
               context: 'syntax',
               difficulty: 'beginner',
             },
@@ -2425,10 +2413,10 @@ export default {
               pronunciation: '/p\u026Ap/',
               phonetic: 'PIP',
               example:
-                'Use pip to install libraries from PyPI. = Usa pip per installare librerie da PyPI.',
+                'Run pip install -r requirements.txt to let the package manager fetch every project dependency from PyPI in one shot. = Esegui pip install -r requirements.txt per far scaricare al package manager ogni dipendenza del progetto da PyPI in un colpo solo.',
               context: 'tools',
               difficulty: 'beginner',
-              note: 'Pip Installs Packages.',
+              note: 'Acronimo ricorsivo: Pip Installs Packages.',
             },
             {
               english: 'PyPI (Python Package Index)',
@@ -2483,8 +2471,7 @@ export default {
               italian: 'Modalit\u00E0 (Mode)',
               pronunciation: '/mo\u028Ad/',
               phonetic: 'MOUD',
-              example:
-                '"r" is for reading, "w" is for writing. = "r" \u00E8 per leggere, "w" per scrivere.',
+              example: `Pass a mode like 'r' for read, 'w' for write, or 'a' for append as the second argument to open(). = Passa una modalita' come 'r' per leggere, 'w' per scrivere o 'a' per accodare come secondo argomento a open().`,
               context: 'io',
               difficulty: 'beginner',
               note: '"a" per aggiungere (append), "x" per creazione esclusiva.',
@@ -2524,7 +2511,7 @@ export default {
               italian: 'Chiudere',
               pronunciation: '/klo\u028Az/',
               phonetic: 'CLOUS',
-              example: "Always close the file after use. = Chiudi sempre il file dopo l'uso.",
+              example: `If you do not close a file explicitly, the OS may keep its descriptor open; this is why a with block is safer. = Se non chiudi esplicitamente un file, il sistema operativo puo' tenerne aperto il descrittore; per questo un blocco with e' piu' sicuro.`,
               context: 'io',
               difficulty: 'beginner',
               note: 'Libera le risorse di sistema occupate dal file.',
@@ -2545,8 +2532,7 @@ export default {
               italian: 'Modalit\u00E0 Binaria',
               pronunciation: '/\u02C8ba\u026An\u0259ri mo\u028Ad/',
               phonetic: 'BAI-ne-ri moud',
-              example:
-                'Open images in binary mode ("rb"). = Apri le immagini in modalit\u00E0 binaria ("rb").',
+              example: `Open images, PDFs or compressed archives in binary mode ('rb' or 'wb') so Python does not try to decode their bytes as text. = Apri immagini, PDF o archivi compressi in modalita' binaria ('rb' o 'wb') cosi' Python non prova a decodificarne i byte come testo.`,
               context: 'io',
               difficulty: 'advanced',
             },
@@ -2604,10 +2590,10 @@ export default {
               pronunciation: '/\u02CCsi\u02D0 es \u02C8vi\u02D0/',
               phonetic: 'sii-es-VII',
               example:
-                'CSV is used for spreadsheet data. = Il CSV \u00E8 usato per dati in stile foglio di calcolo.',
+                'Use csv.DictReader from the CSV module to iterate rows of a spreadsheet as dictionaries keyed by the header line. = Usa csv.DictReader dal modulo CSV per iterare le righe di un foglio di calcolo come dizionari indicizzati dalla riga di intestazione.',
               context: 'data',
               difficulty: 'beginner',
-              note: 'Comma Separated Values.',
+              note: 'Comma-Separated Values: formato testuale per dati tabellari.',
             },
             {
               english: 'YAML',
@@ -2645,8 +2631,7 @@ export default {
               italian: 'Codifica',
               pronunciation: '/\u026An\u02C8ko\u028Ad\u026A\u014B/',
               phonetic: 'in-KOU-ding',
-              example:
-                'Python 3 uses UTF-8 by default. = Python 3 usa UTF-8 per impostazione predefinita.',
+              example: `Always pass encoding='utf-8' to open() when reading text files so emoji and accented characters survive the round trip. = Passa sempre encoding='utf-8' a open() quando leggi file di testo cosi' emoji e caratteri accentati sopravvivono al round trip.`,
               context: 'data',
               difficulty: 'intermediate',
             },
@@ -2655,7 +2640,8 @@ export default {
               italian: 'Caricare/Scaricare',
               pronunciation: '/lo\u028Ad/ /d\u028Cmp/',
               phonetic: 'LOUD DAMP',
-              example: 'json.dump() writes data to a file. = json.dump() scrive i dati in un file.',
+              example:
+                'In the json module, dump/load work with file objects, while dumps/loads work with strings (the trailing s stands for string). = Nel modulo json, dump/load lavorano con oggetti file, mentre dumps/loads lavorano con stringhe (la s finale sta per string).',
               context: 'data',
               difficulty: 'intermediate',
               note: 'dump/load lavorano con file; dumps/loads lavorano con stringhe (la "s" sta per string).',
@@ -2715,8 +2701,7 @@ export default {
               italian: 'Dipendenza',
               pronunciation: '/d\u026A\u02C8pend\u0259nsi/',
               phonetic: 'de-PEN-den-si',
-              example:
-                'The project has a dependency on NumPy. = Il progetto ha una dipendenza da NumPy.',
+              example: `Pin each dependency to an exact version in requirements.txt so production builds match what you tested locally. = Blocca ogni dipendenza a una versione esatta in requirements.txt cosi' le build di produzione corrispondono a quanto testato in locale.`,
               context: 'ecosystem',
               difficulty: 'intermediate',
             },
@@ -2746,8 +2731,7 @@ export default {
               italian: 'Importazione Assoluta',
               pronunciation: '/\u02C8\u00E6bs\u0259lu\u02D0t \u02C8\u026Amp\u0254\u02D0rt/',
               phonetic: 'AB-so-liut IM-port',
-              example:
-                'Absolute imports use the full path from the project root. = Gli import assoluti usano il percorso intero dalla radice del progetto.',
+              example: `Prefer an absolute import like from myapp.utils import helper over relative imports, since it stays valid even if you move the file. = Preferisci un import assoluto come from myapp.utils import helper agli import relativi, perche' resta valido anche se sposti il file.`,
               context: 'organization',
               difficulty: 'advanced',
             },
@@ -2756,8 +2740,7 @@ export default {
               italian: 'Importazione Circolare',
               pronunciation: '/\u02C8s\u025C\u02D0rkj\u0259l\u0259r \u02C8\u026Amp\u0254\u02D0rt/',
               phonetic: 'SER-kiu-lar IM-port',
-              example:
-                "Circular imports cause errors during initialization. = Gli import circolari causano errori durante l'inizializzazione.",
+              example: `If module A imports B and B imports A at top level, you get a circular import that fails because one of them is only half-initialized. = Se il modulo A importa B e B importa A a livello top, ottieni un import circolare che fallisce perche' uno dei due e' solo inizializzato a meta'.`,
               context: 'errors',
               difficulty: 'advanced',
               note: 'Succede quando il modulo A importa B e il modulo B importa A.',
@@ -2796,15 +2779,14 @@ export default {
           description: 'List/dict/set comprehension...',
           items: [
             {
-              english: 'List Comprehension',
-              italian: 'Comprensione di Lista',
+              english: 'Nested List Comprehension',
+              italian: 'Comprensione di Liste Annidata',
               pronunciation: '/l\u026Ast \u02CC\u0252mpr\u026A\u02C8hen\u0283\u0259n/',
               phonetic: 'LIST com-pri-EN-scen',
-              example:
-                '[x**2 for x in range(5)] is a list comprehension. = [x**2 for x in range(5)] \u00E8 una list comprehension.',
+              example: `A nested list comprehension like [c for row in matrix for c in row] flattens a 2D grid into a single list in one expression. = Una comprensione di liste annidata come [c for row in matrix for c in row] appiattisce una griglia 2D in una sola lista in un'unica espressione.`,
               context: 'syntax',
               difficulty: 'intermediate',
-              note: 'Crea una nuova lista trasformando o filtrando gli elementi di un iterabile.',
+              note: `Quando si supera un livello di annidamento, conviene tornare a un ciclo for esplicito per leggibilita'.`,
             },
             {
               english: 'Dictionary Comprehension',
@@ -2915,7 +2897,7 @@ export default {
               pronunciation: '/\u02C8d\u0292en\u0259re\u026At\u0259r/',
               phonetic: 'GEN-e-reiter',
               example:
-                'A generator produces values on demand. = Un generatore produce valori su richiesta.',
+                'Replacing a list with a generator like (line.upper() for line in file) lets you process huge files without loading them into memory. = Sostituire una lista con un generatore come (line.upper() for line in file) permette di elaborare file enormi senza caricarli in memoria.',
               context: 'functions',
               difficulty: 'intermediate',
             },
@@ -2935,8 +2917,7 @@ export default {
               italian: 'Delega Generatore (Yield From)',
               pronunciation: '/ji\u02D0ld fr\u0252m/',
               phonetic: 'II-old FROM',
-              example:
-                'yield from delegates to a subgenerator. = yield from delega a un sottogeneratore.',
+              example: `Inside an outer generator, yield from inner() delegates iteration to a sub-generator and forwards send/throw transparently. = Dentro un generatore esterno, yield from inner() delega l'iterazione a un sotto-generatore e inoltra send/throw in modo trasparente.`,
               context: 'syntax',
               difficulty: 'expert',
               code: 'yield from range(10)',
@@ -3252,22 +3233,22 @@ export default {
           description: 'try, except, finally, raise...',
           items: [
             {
-              english: 'Exception',
-              italian: 'Eccezione',
+              english: 'Built-in Exception',
+              italian: 'Eccezione Integrata',
               pronunciation: '/\u026Ak\u02C8sep\u0283\u0259n/',
               phonetic: 'ik-SEP-scen',
               example:
-                "An exception is an error that occurs at runtime. = Un'eccezione \u00E8 un errore che avviene durante l'esecuzione.",
+                'Python ships with a hierarchy of built-in exceptions like ValueError, KeyError and TypeError that you can raise or catch directly. = Python include una gerarchia di eccezioni integrate come ValueError, KeyError e TypeError che puoi sollevare o catturare direttamente.',
               context: 'errors',
               difficulty: 'beginner',
+              note: `Tutte derivano da BaseException; le piu' comuni ereditano da Exception.`,
             },
             {
               english: 'Try Block',
               italian: 'Blocco Try (Tenta)',
               pronunciation: '/tra\u026A bl\u0252k/',
               phonetic: 'TRAI block',
-              example:
-                'Put the risky code inside a try block. = Metti il codice rischioso dentro un blocco try.',
+              example: `Wrap a risky call like json.loads(data) inside a try block so a malformed payload does not crash the whole program. = Avvolgi una chiamata rischiosa come json.loads(data) dentro un blocco try cosi' un payload malformato non manda in crash l'intero programma.`,
               context: 'control-flow',
               difficulty: 'beginner',
             },
@@ -3676,8 +3657,7 @@ export default {
               pronunciation:
                 '/\u02C8nest\u026Ad \u02C8k\u0252ntekst \u02C8m\u00E6n\u026Ad\u0292\u0259rz/',
               phonetic: 'NES-ted CON-tekst MAN-ig-gers',
-              example:
-                'You can nest multiple with statements. = Puoi annidare pi\u00F9 istruzioni with.',
+              example: `Open source and destination files with nested context managers using one with statement: with open(src) as a, open(dst, 'w') as b. = Apri file sorgente e destinazione con gestori di contesto annidati usando un solo with: with open(src) as a, open(dst, 'w') as b.`,
               context: 'syntax',
               difficulty: 'intermediate',
               code: 'with open("a.txt") as a, open("b.txt") as b:',
@@ -3706,14 +3686,14 @@ export default {
           description: 'Decorator, functools, wraps...',
           items: [
             {
-              english: 'Decorator',
-              italian: 'Decoratore',
+              english: 'Decorator Factory',
+              italian: 'Fabbrica di Decoratori',
               pronunciation: '/\u02C8dek\u0259re\u026At\u0259r/',
               phonetic: 'DE-co-reiter',
-              example:
-                'A decorator wraps a function to modify its behavior. = Un decoratore avvolge una funzione per modificarne il comportamento.',
+              example: `A decorator factory like @retry(times=3) is a function that returns the actual decorator, allowing per-use configuration. = Una fabbrica di decoratori come @retry(times=3) e' una funzione che restituisce il decoratore vero e proprio, permettendo configurazione per utilizzo.`,
               context: 'functions',
               difficulty: 'intermediate',
+              note: 'Tre livelli di funzioni annidate: factory, decorator, wrapper.',
             },
             {
               english: 'Wrapper Function',
@@ -3726,14 +3706,14 @@ export default {
               difficulty: 'intermediate',
             },
             {
-              english: 'Functools.wraps',
-              italian: 'Preservazione Metadati',
+              english: '@wraps Usage',
+              italian: 'Uso di @wraps',
               pronunciation: '/r\u00E6ps/',
               phonetic: 'RAPS',
-              example:
-                'Use @wraps to keep the original function docstring. = Usa @wraps per mantenere la docstring della funzione originale.',
+              example: `Inside a decorator, applying @wraps(func) to the wrapper copies the original name, docstring and signature so introspection still works. = Dentro un decoratore, applicare @wraps(func) al wrapper copia il nome, la docstring e la firma originali cosi' l'introspezione continua a funzionare.`,
               context: 'advanced',
               difficulty: 'advanced',
+              note: 'Senza @wraps, help(funzione_decorata) mostrerebbe i metadati del wrapper invece di quelli originali.',
             },
             {
               english: 'Decorator with Arguments',
@@ -3752,8 +3732,7 @@ export default {
               italian: 'Decoratore di Classe',
               pronunciation: '/kl\u0251\u02D0s \u02C8dek\u0259re\u026At\u0259r/',
               phonetic: 'CLAS DE-co-reiter',
-              example:
-                "Class decorators modify the entire class definition. = I decoratori di classe modificano l'intera definizione della classe.",
+              example: `Adding @dataclass above a class is a class decorator that auto-generates __init__, __repr__ and __eq__ for you. = Aggiungere @dataclass sopra una classe e' un decoratore di classe che genera automaticamente __init__, __repr__ e __eq__ per te.`,
               context: 'advanced',
               difficulty: 'advanced',
             },
@@ -3793,7 +3772,7 @@ export default {
               pronunciation: '/\u02C8m\u028C\u014Bki \u02C8p\u00E6t\u0283\u026A\u014B/',
               phonetic: 'MAN-ki PAC-cing',
               example:
-                'Monkey patching replaces methods at runtime. = Il monkey patching sostituisce i metodi a tempo di esecuzione.',
+                'Tests sometimes replace requests.get with a fake using monkey patching to avoid hitting the network during the suite. = I test a volte sostituiscono requests.get con un finto usando il monkey patching per evitare chiamate di rete durante la suite.',
               context: 'advanced',
               difficulty: 'expert',
               note: 'Pratica potente ma pericolosa: modifica il codice di altri moduli "al volo".',
@@ -3864,7 +3843,7 @@ export default {
               pronunciation: '/kl\u0251\u02D0s \u02C8f\u00E6kt\u0259ri/',
               phonetic: 'CLAS FAC-to-ri',
               example:
-                'A metaclass can act as a class factory. = Una metaclasse pu\u00F2 fungere da fabbrica di classi.',
+                'Use a class factory function like make_enum(name, values) to build a new class dynamically at runtime instead of writing it by hand. = Usa una funzione fabbrica di classi come make_enum(name, values) per costruire una nuova classe dinamicamente a runtime invece di scriverla a mano.',
               context: 'patterns',
               difficulty: 'expert',
             },
@@ -3935,7 +3914,7 @@ export default {
               pronunciation: '/ta\u026Ap h\u026Ants/',
               phonetic: 'TAIP HINTS',
               example:
-                'Type hints improve code documentation and tools. = I type hints migliorano la documentazione e gli strumenti.',
+                'Adding type hints like def greet(name: str) -> str helps editors offer autocompletion and lets mypy catch bugs before runtime. = Aggiungere suggerimenti di tipo come def greet(name: str) -> str aiuta gli editor a offrire autocompletamento e permette a mypy di intercettare bug prima del runtime.',
               context: 'foundations',
               difficulty: 'intermediate',
               code: 'def greet(name: str) -> str:',
@@ -4008,8 +3987,7 @@ export default {
               italian: 'Protocollo (Protocol)',
               pronunciation: '/\u02C8pro\u028At\u0259k\u0252l/',
               phonetic: 'PROU-to-col',
-              example:
-                'Protocols define structural subtyping (static duck typing). = I protocolli definiscono la sottotipizzazione strutturale.',
+              example: `Declaring a Protocol with a read() method lets any class with that method satisfy the type, without explicit inheritance (structural typing). = Dichiarare un Protocol con un metodo read() permette a qualsiasi classe con quel metodo di soddisfare il tipo, senza ereditarieta' esplicita (tipizzazione strutturale).`,
               context: 'typing',
               difficulty: 'expert',
               note: 'Introdotto in Python 3.8; permette di definire interfacce senza ereditariet\u00E0 esplicita.',
@@ -4030,8 +4008,7 @@ export default {
               italian: 'Tipo Chiamabile (Callable)',
               pronunciation: '/\u02C8k\u0254\u02D0l\u0259bl/',
               phonetic: 'COL-la-bol',
-              example:
-                'Callable[[int], str] is a function that takes an int and returns a str. = Callable \u00E8 una funzione che prende un int e restituisce una str.',
+              example: `Annotate a callback parameter with Callable[[int, int], int] so type checkers verify the function takes two ints and returns one. = Annota un parametro di callback con Callable[[int, int], int] cosi' i type checker verificano che la funzione prenda due int e ne restituisca uno.`,
               context: 'typing',
               difficulty: 'advanced',
             },
@@ -4047,8 +4024,7 @@ export default {
               italian: 'Schema Progettuale (Pattern)',
               pronunciation: '/d\u026A\u02C8za\u026An \u02C8p\u00E6t\u0259rn/',
               phonetic: 'di-ZAIN PAT-tern',
-              example:
-                'Design patterns are reusable solutions to common problems. = I design pattern sono soluzioni riutilizzabili a problemi comuni.',
+              example: `A reusable design pattern like Strategy or Observer captures a proven solution so teams do not reinvent it for every project. = Uno schema progettuale riutilizzabile come Strategy o Observer cattura una soluzione provata cosi' i team non la reinventano ad ogni progetto.`,
               context: 'architecture',
               difficulty: 'intermediate',
             },
@@ -4178,6 +4154,7 @@ export default {
                 'In Python, multi-threading is effective for I/O tasks but limited by the GIL for CPU work. = In Python, il multithreading \u00E8 efficace per compiti di I/O ma limitato dal GIL per lavoro su CPU.',
               context: 'concurrency',
               difficulty: 'intermediate',
+              note: 'Termine inglese mantenuto invariato in italiano; si parla quasi sempre di multithreading anche nei testi tecnici italiani.',
             },
             {
               english: 'GIL (Global Interpreter Lock)',
@@ -4256,8 +4233,7 @@ export default {
               italian: 'Cambio di Contesto',
               pronunciation: '/\u02C8k\u0252ntekst \u02C8sw\u026At\u0283\u026A\u014B/',
               phonetic: 'CON-tekst SUICC-ing',
-              example:
-                'Context switching has a performance overhead. = Il cambio di contesto ha un costo prestazionale.',
+              example: `The OS performs a context switching operation every few milliseconds, and the saved/restored state adds measurable overhead. = Il sistema operativo esegue un'operazione di cambio di contesto ogni pochi millisecondi, e lo stato salvato e ripristinato aggiunge un overhead misurabile.`,
               context: 'internals',
               difficulty: 'expert',
             },
@@ -4285,7 +4261,7 @@ export default {
               pronunciation: '/\u02CCko\u028Ar\u028A\u02C8ti\u02D0n/',
               phonetic: 'co-RUU-tiin',
               example:
-                'Define a coroutine using "async def". = Definisci una coroutine usando "async def".',
+                'Declare a coroutine with async def fetch(url): then await fetch(url) inside an event loop to perform non-blocking I/O. = Dichiara una coroutine con async def fetch(url): poi await fetch(url) dentro un event loop per eseguire I/O non bloccante.',
               context: 'concurrency',
               difficulty: 'intermediate',
               note: 'Una funzione che pu\u00F2 sospendere la sua esecuzione.',
@@ -4336,8 +4312,7 @@ export default {
               italian: 'Compito (Task)',
               pronunciation: '/t\u0251\u02D0sk/',
               phonetic: 'TASK',
-              example:
-                'Tasks are used to run coroutines concurrently. = I task servono a far girare coroutine contemporaneamente.',
+              example: `Wrap a coroutine in an asyncio task via asyncio.create_task(coro) to schedule it concurrently with the rest of the event loop. = Avvolgi una coroutine in un task asyncio tramite asyncio.create_task(coro) per schedularla in concorrenza con il resto dell'event loop.`,
               context: 'concurrency',
               difficulty: 'intermediate',
             },
@@ -4418,7 +4393,7 @@ export default {
               pronunciation: '/\u02CCa\u026A pi\u02D0 \u02C8si\u02D0/',
               phonetic: 'ai-pi-SII',
               example:
-                "Processes use IPC to exchange data. = I processi usano l'IPC per scambiarsi dati.",
+                'Processes do not share memory, so IPC mechanisms like Queue, Pipe or shared_memory are needed to pass data between them. = I processi non condividono memoria, quindi servono meccanismi IPC come Queue, Pipe o shared_memory per passare dati tra loro.',
               context: 'concurrency',
               difficulty: 'advanced',
             },
@@ -4527,8 +4502,7 @@ export default {
               italian: 'Variabile di Condizione',
               pronunciation: '/k\u0259n\u02C8d\u026A\u0283\u0259n \u02C8veri\u0259bl/',
               phonetic: 'con-DI-scion VE-ri-ebol',
-              example:
-                'Condition variables allow threads to wait for specific events. = Le variabili di condizione permettono ai thread di aspettare eventi specifici.',
+              example: `With a condition variable, a consumer thread can call cv.wait() until a producer calls cv.notify() to signal that data is ready. = Con una variabile di condizione, un thread consumatore puo' chiamare cv.wait() finche' un produttore chiama cv.notify() per segnalare che i dati sono pronti.`,
               context: 'concurrency',
               difficulty: 'expert',
             },
@@ -4612,8 +4586,7 @@ export default {
               italian: 'Test Unitari',
               pronunciation: '/\u02C8ju\u02D0n\u026At \u02C8test\u026A\u014B/',
               phonetic: 'IUU-nit TES-ting',
-              example:
-                'Unit testing verifies that individual components work correctly. = I test unitari verificano che i singoli componenti funzionino correttamente.',
+              example: `Practicing unit testing means writing fast, isolated tests for one function at a time so regressions surface immediately. = Praticare i test unitari significa scrivere test rapidi e isolati per una funzione alla volta cosi' le regressioni emergono subito.`,
               context: 'testing',
               difficulty: 'intermediate',
             },
@@ -4676,7 +4649,7 @@ export default {
               pronunciation: '/test d\u026A\u02C8sk\u028Cv\u0259ri/',
               phonetic: 'TEST di-SCA-ve-ri',
               example:
-                'Test discovery finds all files starting with "test_". = La scoperta dei test trova tutti i file che iniziano con "test_".',
+                'Running pytest with no arguments triggers test discovery, which collects every file matching test_*.py under the current directory. = Eseguire pytest senza argomenti innesca la scoperta dei test, che raccoglie ogni file che corrisponde a test_*.py sotto la cartella corrente.',
               context: 'tools',
               difficulty: 'intermediate',
             },
@@ -4696,8 +4669,7 @@ export default {
               italian: 'Saltare i Test',
               pronunciation: '/\u02C8sk\u026Ap\u026A\u014B tests/',
               phonetic: 'SKIP-ping tests',
-              example:
-                'Skip tests that only run on Windows. = Salta i test che girano solo su Windows.',
+              example: `Use @pytest.mark.skipif(sys.platform != 'linux', reason='linux only') to make skipping tests conditional on the runtime environment. = Usa @pytest.mark.skipif(sys.platform != 'linux', reason='linux only') per rendere il saltare i test condizionato dall'ambiente runtime.`,
               context: 'testing',
               difficulty: 'intermediate',
               code: '@pytest.mark.skip',
@@ -4845,10 +4817,10 @@ export default {
               pronunciation: '/pep e\u026At/',
               phonetic: 'PEP-eit',
               example:
-                'Follow PEP 8 to write Pythonic code. = Segui la PEP 8 per scrivere codice Pythonico.',
+                'Tools like flake8 and ruff check your code against PEP 8 automatically, enforcing 4-space indentation and 79-character lines. = Strumenti come flake8 e ruff controllano il codice rispetto a PEP 8 automaticamente, applicando indentazione a 4 spazi e righe da 79 caratteri.',
               context: 'standards',
               difficulty: 'beginner',
-              note: 'Il documento ufficiale che definisce lo stile di codifica consigliato per Python.',
+              note: 'Python Enhancement Proposal numero 8: la guida di stile ufficiale di Python.',
             },
             {
               english: 'Black (Formatter)',
@@ -4875,8 +4847,7 @@ export default {
               italian: 'Analisi Statica',
               pronunciation: '/\u02C8st\u00E6t\u026Ak \u0259\u02C8n\u00E6l\u0259s\u026As/',
               phonetic: 'STA-tik a-NA-li-sis',
-              example:
-                'Static analysis tools like Pylint find potential bugs. = Strumenti di analisi statica come Pylint trovano potenziali bug.',
+              example: `Running static analysis with mypy or pylint catches type errors and unused imports without ever executing the program. = Eseguire l'analisi statica con mypy o pylint individua errori di tipo e import inutilizzati senza mai eseguire il programma.`,
               context: 'tools',
               difficulty: 'intermediate',
             },
@@ -5091,8 +5062,7 @@ export default {
               italian: 'Framework Web Async (FastAPI)',
               pronunciation: '/\u02CCf\u0251\u02D0st e\u026A pi\u02D0 \u02C8a\u026A/',
               phonetic: 'FAST-ei-pi-ai',
-              example:
-                'FastAPI automatically validates request data and generates interactive API documentation from your type hints. = FastAPI valida automaticamente i dati delle richieste e genera documentazione API interattiva dai tuoi type hint.',
+              example: `Building an endpoint with FastAPI takes just a function plus a Pydantic model, and you get OpenAPI docs at /docs for free. = Costruire un endpoint con FastAPI richiede solo una funzione piu' un modello Pydantic, e ottieni la documentazione OpenAPI su /docs gratis.`,
               context: 'ecosystem',
               difficulty: 'intermediate',
               note: 'Basato su type hints e asyncio; genera automaticamente documentazione Swagger.',
@@ -5102,8 +5072,7 @@ export default {
               italian: 'Interfaccia WSGI',
               pronunciation: '/\u02CCw\u026Az\u0261i/',
               phonetic: 'UIS-ghi',
-              example:
-                'Gunicorn is a popular WSGI server. = Gunicorn \u00E8 un server WSGI popolare.',
+              example: `Synchronous frameworks like Flask and Django talk to servers like Gunicorn through the WSGI standard interface. = I framework sincroni come Flask e Django parlano con server come Gunicorn tramite l'interfaccia standard WSGI.`,
               context: 'backend',
               difficulty: 'advanced',
               note: 'Standard per la comunicazione tra server web e app Python sincrone.',
@@ -5148,6 +5117,7 @@ export default {
                 'Web middleware can process requests before they reach the view. = Il middleware web pu\u00F2 elaborare le richieste prima che arrivino alla vista.',
               context: 'web-development',
               difficulty: 'intermediate',
+              note: 'In italiano si usa quasi sempre il prestito inglese middleware, anche al singolare.',
             },
             {
               english: 'Django ORM',
@@ -5263,8 +5233,7 @@ export default {
               italian: 'Tensore (Tensor)',
               pronunciation: '/\u02C8tens\u0259r/',
               phonetic: 'TEN-ser',
-              example:
-                'Tensors are the core data structure in deep learning. = I tensori sono la struttura dati centrale nel deep learning.',
+              example: `In PyTorch, a tensor is essentially an n-dimensional array that can live on the GPU and track gradients for backpropagation. = In PyTorch, un tensore e' essenzialmente un array n-dimensionale che puo' vivere sulla GPU e tracciare i gradienti per la backpropagation.`,
               context: 'machine-learning',
               difficulty: 'advanced',
               note: 'Un array multidimensionale usato in PyTorch e TensorFlow.',
@@ -5430,8 +5399,7 @@ export default {
               italian: 'Impacchettamento (Packaging)',
               pronunciation: '/\u02C8p\u00E6k\u026Ad\u0292\u026A\u014B/',
               phonetic: 'PA-keg-ing',
-              example:
-                'Use Poetry or Setuptools for packaging. = Usa Poetry o Setuptools per il packaging.',
+              example: `Modern Python packaging uses pyproject.toml plus tools like Poetry or Hatch to build wheels ready to upload to PyPI. = Il packaging Python moderno usa pyproject.toml piu' strumenti come Poetry o Hatch per costruire wheel pronti per il caricamento su PyPI.`,
               context: 'ecosystem',
               difficulty: 'advanced',
             },
@@ -5440,8 +5408,7 @@ export default {
               italian: 'Compilatore (PyInstaller)',
               pronunciation: '/\u02CCpa\u026A \u026An\u02C8st\u0254\u02D0l\u0259r/',
               phonetic: 'PAI-in-staller',
-              example:
-                "PyInstaller bundles a Python app into a single executable. = PyInstaller impacchetta un'app Python in un singolo eseguibile.",
+              example: `Running pyinstaller --onefile app.py lets PyInstaller bundle the interpreter and all dependencies into a single executable. = Eseguire pyinstaller --onefile app.py permette a PyInstaller di impacchettare l'interprete e tutte le dipendenze in un singolo eseguibile.`,
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -5450,8 +5417,7 @@ export default {
               italian: 'Integrazione/Distribuzione Continua',
               pronunciation: '/\u02CCsi\u02D0 a\u026A \u02CCsi\u02D0 di\u02D0/',
               phonetic: 'sii-ai-sii-dii',
-              example:
-                'Setup GitHub Actions for Python CI/CD. = Configura GitHub Actions per la CI/CD di Python.',
+              example: `A typical Python CI/CD pipeline runs ruff, mypy and pytest on every push, then publishes a wheel or Docker image on tag. = Una tipica pipeline CI/CD Python esegue ruff, mypy e pytest a ogni push, poi pubblica un wheel o un'immagine Docker al tag.`,
               context: 'devops',
               difficulty: 'intermediate',
             },

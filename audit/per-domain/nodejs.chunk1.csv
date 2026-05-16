@@ -1,0 +1,221 @@
+topicId,level,lesson,english,italian,issueType
+"nodejs",0,"node_foundations_1","Non-Blocking","Non bloccante",tautological-example
+"nodejs",0,"node_foundations_3","Module","Modulo",near-identical-translation
+"nodejs",0,"node_foundations_3","Process","Processo",near-identical-translation
+"nodejs",0,"node_foundations_4","Version","Versione",near-identical-translation
+"nodejs",0,"node_foundations_4","Argument","Argomento",near-identical-translation
+"nodejs",1,"node_modules_2","Import","Importa",near-identical-translation
+"nodejs",1,"node_modules_2","Export","Esporta",near-identical-translation
+"nodejs",1,"node_modules_3","Install","Installa",near-identical-translation
+"nodejs",1,"node_modules_3","Install","",duplicate-across-lessons
+"nodejs",2,"node_foundations_5","Parameter","Parametro",near-identical-translation
+"nodejs",2,"node_foundations_7","Variable","Variabile",near-identical-translation
+"nodejs",2,"node_foundations_7","Immutable","Immutabile",near-identical-translation
+"nodejs",2,"node_foundations_8","Class","Classe",near-identical-translation
+"nodejs",2,"node_foundations_8","Method","Metodo",near-identical-translation
+"nodejs",3,"node_async_1","Continuation","Continuazione",near-identical-translation
+"nodejs",3,"node_async_2","Resolve","Risolvi",near-identical-translation
+"nodejs",3,"node_async_3","await","Attesa di una Promise (await)",trivial-example
+"nodejs",3,"node_async_3","Sequential","Sequenziale",near-identical-translation
+"nodejs",3,"node_async_3","Parallel","Parallelo",near-identical-translation
+"nodejs",3,"node_async_3","Promisification","Promisificazione",near-identical-translation
+"nodejs",3,"node_async_4","Starvation","Starvazione",near-identical-translation
+"nodejs",4,"node_runtime_2","Open","Apertura file (open)",tautological-example
+"nodejs",4,"node_runtime_2","Copy File","Copia file",near-identical-translation
+"nodejs",5,"node_runtime_5","Port","Porta",near-identical-translation
+"nodejs",5,"node_runtime_7","201 Created","201 Creato",near-identical-translation
+"nodejs",6,"node_express_1","Application","Applicazione",near-identical-translation
+"nodejs",6,"node_express_1","Generator","Generatore",near-identical-translation
+"nodejs",6,"node_express_2","Route","Rotta",near-identical-translation
+"nodejs",6,"node_express_4","Mount","Montaggio",tautological-example
+"nodejs",7,"node_api_1","Idempotent","Idempotente",near-identical-translation
+"nodejs",7,"node_api_2","Pagination","Paginazione",near-identical-translation
+"nodejs",7,"node_api_3","Controller","Controllore",near-identical-translation
+"nodejs",7,"node_api_3","Validation","Validazione",near-identical-translation
+"nodejs",7,"node_api_4","2xx Success","2xx Successo",near-identical-translation
+"nodejs",7,"node_api_4","Hypermedia","Ipermedia",near-identical-translation
+"nodejs",8,"node_middleware_2","Origin","Origine",near-identical-translation
+"nodejs",8,"node_middleware_2","Credentials","Credenziali",near-identical-translation
+"nodejs",8,"node_middleware_3","Compression","Compressione",near-identical-translation
+"nodejs",9,"node_database_1","Document","Documento",near-identical-translation
+"nodejs",9,"node_database_1","Model","Modello",near-identical-translation
+"nodejs",9,"node_database_1","Model","",duplicate-across-lessons
+"nodejs",9,"node_database_2","Migration","Migrazione",near-identical-translation
+"nodejs",9,"node_database_3","Relation","Relazione",near-identical-translation
+"nodejs",10,"node_security_1","Session","Sessione",near-identical-translation
+"nodejs",10,"node_security_4","Passport.js","Middleware di autenticazione per Node.js (Passport.js)",tautological-example
+"nodejs",11,"node_runtime_9","Error","Errore",near-identical-translation
+"nodejs",13,"node_events_1","EventEmitter","classe pub-sub di Node (EventEmitter)",tautological-example
+"nodejs",13,"node_events_1","on","on (ascolta)",fake-translation
+"nodejs",13,"node_events_1","on","on (ascolta)",trivial-example
+"nodejs",13,"node_events_1","emit","emetti",tautological-example
+"nodejs",13,"node_events_1","emit","emetti",trivial-example
+"nodejs",13,"node_events_1","once","once (una volta)",tautological-example
+"nodejs",13,"node_events_1","once","once (una volta)",fake-translation
+"nodejs",13,"node_events_1","once","once (una volta)",trivial-example
+"nodejs",13,"node_events_1","off","off (rimuovi)",tautological-example
+"nodejs",13,"node_events_1","off","off (rimuovi)",fake-translation
+"nodejs",13,"node_events_1","off","off (rimuovi)",trivial-example
+"nodejs",13,"node_events_1","removeListener","rimuovi listener",tautological-example
+"nodejs",13,"node_events_1","removeListener","rimuovi listener",trivial-example
+"nodejs",13,"node_events_1","removeAllListeners","rimuovi tutti i listener",tautological-example
+"nodejs",13,"node_events_1","Listener","handler di eventi (Listener)",trivial-example
+"nodejs",13,"node_events_1","Max Listeners","Numero massimo di listener",trivial-example
+"nodejs",13,"node_events_1","EventEmitter Inheritance","Eredità da EventEmitter",trivial-example
+"nodejs",13,"node_events_2","Event-Driven","Guidato dagli eventi",trivial-example
+"nodejs",13,"node_events_2","Publisher","Pubblicatore",trivial-example
+"nodejs",13,"node_events_2","Subscriber","Sottoscrittore",trivial-example
+"nodejs",13,"node_events_2","Pub/Sub","pubblicazione e sottoscrizione (Pub/Sub)",tautological-example
+"nodejs",13,"node_events_2","Loose Coupling","Accoppiamento lasco",trivial-example
+"nodejs",13,"node_events_2","Event Sourcing","archivio degli eventi (Event Sourcing)",tautological-example
+"nodejs",13,"node_events_2","Error Event","Evento error",trivial-example
+"nodejs",13,"node_events_3","Event Name","Nome evento",trivial-example
+"nodejs",13,"node_events_3","Event Bus","Bus di eventi",trivial-example
+"nodejs",13,"node_events_3","Async Listener","Listener asincrono",tautological-example
+"nodejs",13,"node_events_3","Async Listener","Listener asincrono",trivial-example
+"nodejs",13,"node_events_3","Listener Order","Ordine listener",trivial-example
+"nodejs",13,"node_events_3","prependListener","aggiunge listener in testa (prependListener)",tautological-example
+"nodejs",13,"node_events_3","prependListener","aggiunge listener in testa (prependListener)",trivial-example
+"nodejs",13,"node_events_3","EventTarget","interfaccia DOM per eventi (EventTarget)",tautological-example
+"nodejs",13,"node_events_3","CustomEvent","evento personalizzato DOM (CustomEvent)",tautological-example
+"nodejs",13,"node_events_3","CustomEvent","evento personalizzato DOM (CustomEvent)",trivial-example
+"nodejs",13,"node_events_3","Hook","aggancio del ciclo di vita (Hook)",tautological-example
+"nodejs",13,"node_events_3","Hook","aggancio del ciclo di vita (Hook)",trivial-example
+"nodejs",13,"node_events_4","events.on","iteratore async di eventi (events.on)",tautological-example
+"nodejs",13,"node_events_4","events.on","iteratore async di eventi (events.on)",trivial-example
+"nodejs",13,"node_events_4","events.once","attende un singolo evento (events.once)",tautological-example
+"nodejs",13,"node_events_4","events.once","attende un singolo evento (events.once)",trivial-example
+"nodejs",13,"node_events_4","AbortSignal","segnale di annullamento (AbortSignal)",tautological-example
+"nodejs",13,"node_events_4","AbortSignal","segnale di annullamento (AbortSignal)",trivial-example
+"nodejs",13,"node_events_4","Async Generator","Generatore asincrono",tautological-example
+"nodejs",13,"node_events_4","Channel","Canale",trivial-example
+"nodejs",13,"node_events_4","Topic","canale tematico di messaggi (Topic)",trivial-example
+"nodejs",13,"node_events_4","Topic","",duplicate-across-lessons
+"nodejs",13,"node_events_4","Event Filtering","Filtraggio eventi",trivial-example
+"nodejs",13,"node_events_4","Event Throttling","Throttling eventi",trivial-example
+"nodejs",13,"node_events_4","Reactive","Reattivo",near-identical-translation
+"nodejs",13,"node_events_4","Reactive","Reattivo",trivial-example
+"nodejs",14,"node_testing_1","Jest","Jest (framework di test JavaScript)",tautological-example
+"nodejs",14,"node_testing_1","Jest","Jest (framework di test JavaScript)",fake-translation
+"nodejs",14,"node_testing_1","Mocha","Mocha (framework di test JavaScript)",tautological-example
+"nodejs",14,"node_testing_1","Mocha","Mocha (framework di test JavaScript)",fake-translation
+"nodejs",14,"node_testing_1","Mocha","Mocha (framework di test JavaScript)",trivial-example
+"nodejs",14,"node_testing_1","Chai","Chai (libreria di asserzioni)",tautological-example
+"nodejs",14,"node_testing_1","Chai","Chai (libreria di asserzioni)",fake-translation
+"nodejs",14,"node_testing_1","Chai","Chai (libreria di asserzioni)",trivial-example
+"nodejs",14,"node_testing_1","Vitest","Vitest (framework di test ESM moderno)",tautological-example
+"nodejs",14,"node_testing_1","Vitest","Vitest (framework di test ESM moderno)",fake-translation
+"nodejs",14,"node_testing_1","Vitest","Vitest (framework di test ESM moderno)",trivial-example
+"nodejs",14,"node_testing_1","node:test","runner di test integrato in Node (node:test)",tautological-example
+"nodejs",14,"node_testing_1","node:test","runner di test integrato in Node (node:test)",trivial-example
+"nodejs",14,"node_testing_1","Tap","framework di test TAP (Tap)",tautological-example
+"nodejs",14,"node_testing_1","Tap","framework di test TAP (Tap)",trivial-example
+"nodejs",14,"node_testing_1","Tape","framework di test TAP minimalista (Tape)",tautological-example
+"nodejs",14,"node_testing_1","Tape","framework di test TAP minimalista (Tape)",trivial-example
+"nodejs",14,"node_testing_1","AVA","framework di test concorrente (AVA)",tautological-example
+"nodejs",14,"node_testing_1","AVA","framework di test concorrente (AVA)",trivial-example
+"nodejs",14,"node_testing_1","Test Runner","Esecutore di test",trivial-example
+"nodejs",14,"node_testing_2","describe","blocco di test (describe)",tautological-example
+"nodejs",14,"node_testing_2","describe","blocco di test (describe)",trivial-example
+"nodejs",14,"node_testing_2","it","singolo test (it)",trivial-example
+"nodejs",14,"node_testing_2","test","singolo test (Vitest/Jest) (test)",tautological-example
+"nodejs",14,"node_testing_2","test","singolo test (Vitest/Jest) (test)",trivial-example
+"nodejs",14,"node_testing_2","expect","aspettati",tautological-example
+"nodejs",14,"node_testing_2","expect","aspettati",trivial-example
+"nodejs",14,"node_testing_2","Matcher","asserzione di Jest (Matcher)",trivial-example
+"nodejs",14,"node_testing_2","beforeEach","prima di ognuno",tautological-example
+"nodejs",14,"node_testing_2","beforeEach","prima di ognuno",trivial-example
+"nodejs",14,"node_testing_2","afterEach","dopo ognuno",tautological-example
+"nodejs",14,"node_testing_2","afterEach","dopo ognuno",trivial-example
+"nodejs",14,"node_testing_2","beforeAll","prima di tutti",tautological-example
+"nodejs",14,"node_testing_2","beforeAll","prima di tutti",trivial-example
+"nodejs",14,"node_testing_2","Test Case","Caso di test",trivial-example
+"nodejs",14,"node_testing_2","Test Suite","Suite di test",trivial-example
+"nodejs",14,"node_testing_3","Mock","oggetto fittizio per i test (Mock)",trivial-example
+"nodejs",14,"node_testing_3","Stub","sostituto minimale (Stub)",trivial-example
+"nodejs",14,"node_testing_3","Spy","Spia",near-identical-translation
+"nodejs",14,"node_testing_3","Mock Function","Funzione mock",trivial-example
+"nodejs",14,"node_testing_3","mockReturnValue","valore di ritorno fittizio (mockReturnValue)",tautological-example
+"nodejs",14,"node_testing_3","mockReturnValue","valore di ritorno fittizio (mockReturnValue)",trivial-example
+"nodejs",14,"node_testing_3","mockResolvedValue","Promise risolta fittizia (mockResolvedValue)",tautological-example
+"nodejs",14,"node_testing_3","mockResolvedValue","Promise risolta fittizia (mockResolvedValue)",trivial-example
+"nodejs",14,"node_testing_3","Sinon","Sinon (libreria mock/stub/spy)",tautological-example
+"nodejs",14,"node_testing_3","Sinon","Sinon (libreria mock/stub/spy)",fake-translation
+"nodejs",14,"node_testing_3","Sinon","Sinon (libreria mock/stub/spy)",trivial-example
+"nodejs",14,"node_testing_3","nock","mock di richieste HTTP (nock)",tautological-example
+"nodejs",14,"node_testing_3","nock","mock di richieste HTTP (nock)",trivial-example
+"nodejs",14,"node_testing_3","msw","Mock Service Worker (msw)",tautological-example
+"nodejs",14,"node_testing_3","msw","Mock Service Worker (msw)",trivial-example
+"nodejs",14,"node_testing_4","Integration Test","Test di integrazione",tautological-example
+"nodejs",14,"node_testing_4","End-to-End","test da capo a capo (End-to-End)",trivial-example
+"nodejs",14,"node_testing_4","Supertest","test HTTP per Express (Supertest)",tautological-example
+"nodejs",14,"node_testing_4","Supertest","test HTTP per Express (Supertest)",trivial-example
+"nodejs",14,"node_testing_4","Snapshot Test","Test snapshot",tautological-example
+"nodejs",14,"node_testing_4","Snapshot Test","Test snapshot",trivial-example
+"nodejs",14,"node_testing_4","Code Coverage","Copertura del codice",tautological-example
+"nodejs",14,"node_testing_4","Code Coverage","Copertura del codice",trivial-example
+"nodejs",14,"node_testing_4","Istanbul","strumento di copertura (Istanbul)",tautological-example
+"nodejs",14,"node_testing_4","Istanbul","strumento di copertura (Istanbul)",trivial-example
+"nodejs",14,"node_testing_4","Test Database","Database di test",trivial-example
+"nodejs",14,"node_testing_4","Fixture","dati di test riutilizzabili (Fixture)",tautological-example
+"nodejs",14,"node_testing_4","Fixture","dati di test riutilizzabili (Fixture)",trivial-example
+"nodejs",14,"node_testing_4","Faker","generatore di dati fittizi (Faker)",tautological-example
+"nodejs",14,"node_testing_4","Faker","generatore di dati fittizi (Faker)",trivial-example
+"nodejs",14,"node_testing_4","Test in Watch Mode","Test in modalità watch",trivial-example
+"nodejs",15,"node_security_5","Input Validation","Validazione input",trivial-example
+"nodejs",15,"node_security_5","Sanitization","Sanificazione",tautological-example
+"nodejs",15,"node_security_5","XSS","Cross-Site Scripting (XSS)",tautological-example
+"nodejs",15,"node_security_5","XSS","Cross-Site Scripting (XSS)",trivial-example
+"nodejs",15,"node_security_5","SQL Injection","iniezione di codice SQL (SQL Injection)",tautological-example
+"nodejs",15,"node_security_5","Parameterized Query","Query parametrizzata",trivial-example
+"nodejs",15,"node_security_5","Command Injection","iniezione di comando shell (Command Injection)",tautological-example
+"nodejs",15,"node_security_5","Command Injection","iniezione di comando shell (Command Injection)",trivial-example
+"nodejs",15,"node_security_5","Path Traversal","attraversamento di percorso (Path Traversal)",tautological-example
+"nodejs",15,"node_security_5","Validator","libreria di validazione (Validator)",tautological-example
+"nodejs",15,"node_security_5","Validator","libreria di validazione (Validator)",trivial-example
+"nodejs",15,"node_security_5","express-validator","middleware di validazione (express-validator)",tautological-example
+"nodejs",15,"node_security_5","Whitelist","lista bianca di consentiti (Whitelist)",trivial-example
+"nodejs",15,"node_security_6","Helmet","middleware di sicurezza header (Helmet)",tautological-example
+"nodejs",15,"node_security_6","Helmet","middleware di sicurezza header (Helmet)",trivial-example
+"nodejs",15,"node_security_6","Helmet","",duplicate-across-lessons
+"nodejs",15,"node_security_6","CSP","Content Security Policy",tautological-example
+"nodejs",15,"node_security_6","CSP","Content Security Policy",trivial-example
+"nodejs",15,"node_security_6","HSTS","Strict-Transport-Security (HSTS)",tautological-example
+"nodejs",15,"node_security_6","HSTS","Strict-Transport-Security (HSTS)",trivial-example
+"nodejs",15,"node_security_6","X-Frame-Options","header anti-clickjacking (X-Frame-Options)",tautological-example
+"nodejs",15,"node_security_6","X-Frame-Options","header anti-clickjacking (X-Frame-Options)",trivial-example
+"nodejs",15,"node_security_6","X-Content-Type-Options","header anti-MIME-sniffing (X-Content-Type-Options)",tautological-example
+"nodejs",15,"node_security_6","Referrer Policy","Referrer-Policy / header di referrer",trivial-example
+"nodejs",15,"node_security_6","Permissions-Policy","header permessi browser (Permissions-Policy)",tautological-example
+"nodejs",15,"node_security_6","NoSniff","valore di X-Content-Type-Options (NoSniff)",tautological-example
+"nodejs",15,"node_security_6","Subresource Integrity","Integrità sottorisorsa",trivial-example
+"nodejs",15,"node_security_6","Trust Boundary","Confine di fiducia",trivial-example
+"nodejs",15,"node_security_7","Rate Limiting","Limitazione di frequenza",tautological-example
+"nodejs",15,"node_security_7","express-rate-limit","middleware di rate limiting (express-rate-limit)",tautological-example
+"nodejs",15,"node_security_7","Brute Force","Forza bruta",tautological-example
+"nodejs",15,"node_security_7","Brute Force","Forza bruta",trivial-example
+"nodejs",15,"node_security_7","Account Lockout","Blocco account",trivial-example
+"nodejs",15,"node_security_7","CAPTCHA","test umano-vs-bot (CAPTCHA)",tautological-example
+"nodejs",15,"node_security_7","CAPTCHA","test umano-vs-bot (CAPTCHA)",trivial-example
+"nodejs",15,"node_security_7","IP Allowlist","Allowlist IP",tautological-example
+"nodejs",15,"node_security_7","IP Allowlist","Allowlist IP",trivial-example
+"nodejs",15,"node_security_7","WAF","Web Application Firewall",trivial-example
+"nodejs",15,"node_security_7","DDoS","Distributed Denial of Service (DDoS)",tautological-example
+"nodejs",15,"node_security_7","DDoS","Distributed Denial of Service (DDoS)",trivial-example
+"nodejs",15,"node_security_7","Token Bucket","algoritmo a secchio di gettoni (Token Bucket)",tautological-example
+"nodejs",15,"node_security_8","npm audit","scanner npm integrato (npm audit)",tautological-example
+"nodejs",15,"node_security_8","npm audit","scanner npm integrato (npm audit)",trivial-example
+"nodejs",15,"node_security_8","npm audit fix","applica patch automatiche (npm audit fix)",tautological-example
+"nodejs",15,"node_security_8","npm audit fix","applica patch automatiche (npm audit fix)",trivial-example
+"nodejs",15,"node_security_8","CVE","Common Vulnerabilities and Exposures (CVE)",trivial-example
+"nodejs",15,"node_security_8","Snyk","Snyk (piattaforma sicurezza dipendenze)",tautological-example
+"nodejs",15,"node_security_8","Snyk","Snyk (piattaforma sicurezza dipendenze)",fake-translation
+"nodejs",15,"node_security_8","Snyk","Snyk (piattaforma sicurezza dipendenze)",trivial-example
+"nodejs",15,"node_security_8","Dependabot","Dependabot (aggiornamento automatico dipendenze)",tautological-example
+"nodejs",15,"node_security_8","Dependabot","Dependabot (aggiornamento automatico dipendenze)",fake-translation
+"nodejs",15,"node_security_8","Dependabot","Dependabot (aggiornamento automatico dipendenze)",trivial-example
+"nodejs",15,"node_security_8","Typosquatting","nomi simili per ingannare utenti (Typosquatting)",tautological-example
+"nodejs",15,"node_security_8","Lockfile","file di blocco delle versioni (Lockfile)",trivial-example
+"nodejs",15,"node_security_8","npm ci","installazione strict da lockfile (npm ci)",tautological-example
+"nodejs",15,"node_security_8","npm ci","installazione strict da lockfile (npm ci)",trivial-example
+"nodejs",15,"node_security_8","Provenance","Provenienza",trivial-example

@@ -1,0 +1,229 @@
+topicId,level,lesson,english,italian,issueType
+"rust",20,"rust_testing_1","Assert Ne","Asserzione di disuguaglianza (assert_ne!)",trivial-example
+"rust",20,"rust_testing_1","Test Output","Output di test",trivial-example
+"rust",20,"rust_testing_1","Test Threading","Threading dei test",trivial-example
+"rust",20,"rust_testing_2","Integration Test","Test di integrazione",tautological-example
+"rust",20,"rust_testing_2","Doc Test","Test estratto dalla documentazione (doc test)",tautological-example
+"rust",20,"rust_testing_2","Common Module","Modulo comune",trivial-example
+"rust",20,"rust_testing_2","Test Fixture","Fixture di test",trivial-example
+"rust",20,"rust_testing_2","Mock","Oggetto fittizio per i test (mock)",tautological-example
+"rust",20,"rust_testing_2","Mock","Oggetto fittizio per i test (mock)",trivial-example
+"rust",20,"rust_testing_2","Test Coverage","Copertura di test",trivial-example
+"rust",20,"rust_testing_3","Property Testing","Test basato su proprietà (property testing)",tautological-example
+"rust",20,"rust_testing_3","Property Testing","Test basato su proprietà (property testing)",trivial-example
+"rust",20,"rust_testing_3","Proptest","Framework property testing Rust (proptest)",tautological-example
+"rust",20,"rust_testing_3","Proptest","Framework property testing Rust (proptest)",trivial-example
+"rust",20,"rust_testing_3","Quickcheck","Property testing in stile Haskell (quickcheck)",tautological-example
+"rust",20,"rust_testing_3","Test Generator","Generatore di test",trivial-example
+"rust",20,"rust_testing_3","Snapshot Test","Test snapshot",trivial-example
+"rust",20,"rust_testing_3","Golden Test","Test su output di riferimento (golden test)",tautological-example
+"rust",20,"rust_testing_3","Differential Testing","Testing differenziale",tautological-example
+"rust",20,"rust_testing_4","Benchmark","Test prestazionale (benchmark)",trivial-example
+"rust",20,"rust_testing_4","Criterion","Framework benchmark statistico (criterion)",tautological-example
+"rust",20,"rust_testing_4","Latency","Latenza",near-identical-translation
+"rust",20,"rust_testing_4","Profiling","Profilazione delle prestazioni (profiling)",trivial-example
+"rust",20,"rust_testing_4","Iai","Benchmark con cycle counter (iai)",tautological-example
+"rust",20,"rust_testing_4","Regression Test","Test di regressione",tautological-example
+"rust",21,"rust_io_1","Read File","Lettura file",trivial-example
+"rust",21,"rust_io_1","Write File","Scrittura file",trivial-example
+"rust",21,"rust_io_1","File Open","Apertura file",trivial-example
+"rust",21,"rust_io_1","Buf Reader","Lettore con buffer (BufReader)",trivial-example
+"rust",21,"rust_io_1","Read Line","Lettura riga",trivial-example
+"rust",21,"rust_io_2","TCP Listener","Listener TCP (TcpListener)",trivial-example
+"rust",21,"rust_io_2","TCP Listener","",duplicate-across-lessons
+"rust",21,"rust_io_2","TCP Stream","Connessione TCP (TcpStream)",trivial-example
+"rust",21,"rust_io_2","TCP Stream","",duplicate-across-lessons
+"rust",21,"rust_io_2","Socket Address","Indirizzo socket",trivial-example
+"rust",21,"rust_io_2","Hyper","Libreria HTTP Rust low-level (hyper)",tautological-example
+"rust",21,"rust_io_2","Hyper","Libreria HTTP Rust low-level (hyper)",trivial-example
+"rust",21,"rust_io_2","Hyper","",duplicate-across-lessons
+"rust",21,"rust_io_2","Reqwest","Client HTTP ad alto livello (reqwest)",tautological-example
+"rust",21,"rust_io_2","Reqwest","Client HTTP ad alto livello (reqwest)",trivial-example
+"rust",21,"rust_io_2","Reqwest","",duplicate-across-lessons
+"rust",21,"rust_io_2","Axum","Framework web Tokio (axum)",tautological-example
+"rust",21,"rust_io_2","Axum","Framework web Tokio (axum)",trivial-example
+"rust",21,"rust_io_2","Axum","",duplicate-across-lessons
+"rust",21,"rust_io_2","Warp","Framework web filtri-componibili (warp)",tautological-example
+"rust",21,"rust_io_2","Warp","Framework web filtri-componibili (warp)",trivial-example
+"rust",21,"rust_io_3","Serde","Framework di serializzazione Rust (serde)",tautological-example
+"rust",21,"rust_io_3","Serde","",duplicate-across-lessons
+"rust",21,"rust_io_3","Serde JSON","Supporto JSON per serde (serde_json)",trivial-example
+"rust",21,"rust_io_3","Serde YAML","Supporto YAML per serde (serde_yaml)",trivial-example
+"rust",21,"rust_io_3","Toml","Parser TOML (toml)",tautological-example
+"rust",21,"rust_io_3","Toml","Parser TOML (toml)",trivial-example
+"rust",21,"rust_io_3","Bincode","Serializzazione binaria (bincode)",tautological-example
+"rust",21,"rust_io_3","Postcard","Serializzazione binaria embedded (postcard)",tautological-example
+"rust",21,"rust_io_3","Skip Field","Skip campo",trivial-example
+"rust",21,"rust_io_3","Rename Field","Rename campo",trivial-example
+"rust",21,"rust_io_4","Tokio Net","I/O di rete asincrono (tokio::net)",trivial-example
+"rust",21,"rust_io_4","Async Read Ext","Estensione di lettura asincrona (AsyncReadExt)",trivial-example
+"rust",21,"rust_io_4","Async Write Ext","Estensione di scrittura asincrona (AsyncWriteExt)",trivial-example
+"rust",21,"rust_io_4","Async Buf Read","Lettura bufferizzata asincrona (AsyncBufRead)",trivial-example
+"rust",21,"rust_io_4","Tokio Spawn","Lancia task (tokio::spawn)",trivial-example
+"rust",21,"rust_io_4","Async Server","Server async",tautological-example
+"rust",21,"rust_io_4","Async Client","Client async",tautological-example
+"rust",21,"rust_io_4","Async Client","Client async",trivial-example
+"rust",22,"rust_ecosystem_1","Tokio","Runtime async per Rust (Tokio)",tautological-example
+"rust",22,"rust_ecosystem_1","Tokio","Runtime async per Rust (Tokio)",trivial-example
+"rust",22,"rust_ecosystem_1","Tokio","",duplicate-across-lessons
+"rust",22,"rust_ecosystem_1","Async Std","Runtime asincrono alternativo (async-std)",trivial-example
+"rust",22,"rust_ecosystem_1","Hyper","Libreria HTTP Rust low-level (hyper)",tautological-example
+"rust",22,"rust_ecosystem_1","Hyper","Libreria HTTP Rust low-level (hyper)",trivial-example
+"rust",22,"rust_ecosystem_1","Hyper","",duplicate-across-lessons
+"rust",22,"rust_ecosystem_1","Tonic","GRPC per Rust (tonic)",tautological-example
+"rust",22,"rust_ecosystem_1","Tonic","GRPC per Rust (tonic)",trivial-example
+"rust",22,"rust_ecosystem_1","Tower","Astrazioni per servizi async (tower)",tautological-example
+"rust",22,"rust_ecosystem_1","Tower","Astrazioni per servizi async (tower)",trivial-example
+"rust",22,"rust_ecosystem_1","Axum","Framework web Tokio (axum)",tautological-example
+"rust",22,"rust_ecosystem_1","Axum","Framework web Tokio (axum)",trivial-example
+"rust",22,"rust_ecosystem_1","Axum","",duplicate-across-lessons
+"rust",22,"rust_ecosystem_1","Reqwest","Client HTTP ad alto livello (reqwest)",tautological-example
+"rust",22,"rust_ecosystem_1","Reqwest","Client HTTP ad alto livello (reqwest)",trivial-example
+"rust",22,"rust_ecosystem_1","Reqwest","",duplicate-across-lessons
+"rust",22,"rust_ecosystem_1","Tungstenite","WebSocket per Rust (tungstenite)",tautological-example
+"rust",22,"rust_ecosystem_1","Tungstenite","WebSocket per Rust (tungstenite)",trivial-example
+"rust",22,"rust_ecosystem_1","Tonic Build","Generatore codice gRPC (tonic-build)",trivial-example
+"rust",22,"rust_ecosystem_2","Serde","Framework di serializzazione Rust (serde)",tautological-example
+"rust",22,"rust_ecosystem_2","Serde","",duplicate-across-lessons
+"rust",22,"rust_ecosystem_2","Diesel","ORM Rust sincrono (Diesel)",tautological-example
+"rust",22,"rust_ecosystem_2","Diesel","ORM Rust sincrono (Diesel)",trivial-example
+"rust",22,"rust_ecosystem_2","SQLx","SQL compile-time check, async (SQLx)",tautological-example
+"rust",22,"rust_ecosystem_2","SQLx","SQL compile-time check, async (SQLx)",trivial-example
+"rust",22,"rust_ecosystem_2","Sea ORM","ORM async Rust (SeaORM)",trivial-example
+"rust",22,"rust_ecosystem_2","Polars","Dataframe Rust ad alte prestazioni (Polars)",tautological-example
+"rust",22,"rust_ecosystem_2","Polars","Dataframe Rust ad alte prestazioni (Polars)",trivial-example
+"rust",22,"rust_ecosystem_2","Arrow","Formato colonnare in memoria (Apache Arrow)",tautological-example
+"rust",22,"rust_ecosystem_2","Arrow","Formato colonnare in memoria (Apache Arrow)",trivial-example
+"rust",22,"rust_ecosystem_2","Ndarray","Array N-dimensionali Rust (ndarray)",tautological-example
+"rust",22,"rust_ecosystem_2","Ndarray","Array N-dimensionali Rust (ndarray)",trivial-example
+"rust",22,"rust_ecosystem_2","Csv","Parser CSV per Rust (csv)",tautological-example
+"rust",22,"rust_ecosystem_2","Csv","Parser CSV per Rust (csv)",trivial-example
+"rust",22,"rust_ecosystem_2","Image","Libreria immagini Rust (image)",tautological-example
+"rust",22,"rust_ecosystem_2","Image","Libreria immagini Rust (image)",trivial-example
+"rust",22,"rust_ecosystem_2","Plotters","Libreria grafici Rust (plotters)",tautological-example
+"rust",22,"rust_ecosystem_2","Plotters","Libreria grafici Rust (plotters)",trivial-example
+"rust",22,"rust_ecosystem_3","Clap","Parser argomenti CLI (clap)",tautological-example
+"rust",22,"rust_ecosystem_3","Structopt","Argomenti CLI da struct (legacy) (structopt)",tautological-example
+"rust",22,"rust_ecosystem_3","Structopt","Argomenti CLI da struct (legacy) (structopt)",trivial-example
+"rust",22,"rust_ecosystem_3","Indicatif","Barre di progresso CLI (indicatif)",tautological-example
+"rust",22,"rust_ecosystem_3","Indicatif","Barre di progresso CLI (indicatif)",trivial-example
+"rust",22,"rust_ecosystem_3","Crossterm","Terminale cross-platform (crossterm)",tautological-example
+"rust",22,"rust_ecosystem_3","Ratatui","TUI framework Rust (Ratatui)",tautological-example
+"rust",22,"rust_ecosystem_3","Ratatui","TUI framework Rust (Ratatui)",trivial-example
+"rust",22,"rust_ecosystem_3","Anyhow","Errore generico per applicazioni (anyhow)",tautological-example
+"rust",22,"rust_ecosystem_3","Anyhow","Errore generico per applicazioni (anyhow)",trivial-example
+"rust",22,"rust_ecosystem_3","Anyhow","",duplicate-across-lessons
+"rust",22,"rust_ecosystem_3","Thiserror","Derivazione di errori Rust (thiserror)",tautological-example
+"rust",22,"rust_ecosystem_3","Thiserror","Derivazione di errori Rust (thiserror)",trivial-example
+"rust",22,"rust_ecosystem_3","Thiserror","",duplicate-across-lessons
+"rust",22,"rust_ecosystem_3","Tracing","Framework di logging strutturato (tracing)",tautological-example
+"rust",22,"rust_ecosystem_3","Tracing","Framework di logging strutturato (tracing)",trivial-example
+"rust",22,"rust_ecosystem_3","Env Logger","Logger basato su variabile RUST_LOG (env_logger)",trivial-example
+"rust",22,"rust_ecosystem_3","Once Cell","Inizializzazione singola (once_cell)",trivial-example
+"rust",22,"rust_ecosystem_4","Rayon","rayon (libreria parallelismo data-parallel)",tautological-example
+"rust",22,"rust_ecosystem_4","Rayon","rayon (libreria parallelismo data-parallel)",fake-translation
+"rust",22,"rust_ecosystem_4","Rayon","rayon (libreria parallelismo data-parallel)",trivial-example
+"rust",22,"rust_ecosystem_4","Rayon","",duplicate-across-lessons
+"rust",22,"rust_ecosystem_4","Crossbeam","Libreria concorrenza Rust (crossbeam)",tautological-example
+"rust",22,"rust_ecosystem_4","Crossbeam","",duplicate-across-lessons
+"rust",22,"rust_ecosystem_4","Regex","Libreria espressioni regolari (regex)",tautological-example
+"rust",22,"rust_ecosystem_4","Regex","Libreria espressioni regolari (regex)",trivial-example
+"rust",22,"rust_ecosystem_4","Chrono","Libreria di tempo (chrono)",tautological-example
+"rust",22,"rust_ecosystem_4","Chrono","Libreria di tempo (chrono)",trivial-example
+"rust",22,"rust_ecosystem_4","Uuid","Libreria UUID (uuid)",tautological-example
+"rust",22,"rust_ecosystem_4","Uuid","Libreria UUID (uuid)",trivial-example
+"rust",22,"rust_ecosystem_4","Rand","Libreria di numeri casuali (rand)",tautological-example
+"rust",22,"rust_ecosystem_4","Rand","Libreria di numeri casuali (rand)",trivial-example
+"rust",22,"rust_ecosystem_4","Bevy","Motore di gioco ECS (Bevy)",tautological-example
+"rust",22,"rust_ecosystem_4","Bevy","Motore di gioco ECS (Bevy)",trivial-example
+"rust",22,"rust_ecosystem_4","Egui","GUI immediate-mode (egui)",tautological-example
+"rust",22,"rust_ecosystem_4","Egui","GUI immediate-mode (egui)",trivial-example
+"rust",22,"rust_ecosystem_4","Ring","Libreria di crittografia (ring)",tautological-example
+"rust",22,"rust_ecosystem_4","Ring","Libreria di crittografia (ring)",trivial-example
+"rust",23,"rust_foundations_13","Idiomatic Code","Codice idiomatico",tautological-example
+"rust",23,"rust_foundations_13","Rustacean","Appassionato di Rust (rustacean)",trivial-example
+"rust",23,"rust_foundations_13","Clippy Lints","Lint di Clippy",trivial-example
+"rust",23,"rust_foundations_13","Cargo Fmt","Formatta il codice (cargo fmt)",trivial-example
+"rust",23,"rust_foundations_13","Make Invalid States Unrepresentable","Stati invalidi non rappresentabili",trivial-example
+"rust",23,"rust_foundations_14","Release Mode","Modalità release",trivial-example
+"rust",23,"rust_foundations_14","Profile","Profilo",near-identical-translation
+"rust",23,"rust_foundations_14","Profile","Profilo",trivial-example
+"rust",23,"rust_foundations_14","LTO","LTO (Link-Time Optimization)",fake-translation
+"rust",23,"rust_foundations_14","Inline","Suggerimento di inlining (inline)",tautological-example
+"rust",23,"rust_foundations_14","Inline","Suggerimento di inlining (inline)",trivial-example
+"rust",23,"rust_foundations_14","Const Fn","Funzione utilizzabile a compile-time (const fn)",tautological-example
+"rust",23,"rust_foundations_14","Const Fn","Funzione utilizzabile a compile-time (const fn)",trivial-example
+"rust",23,"rust_foundations_14","SIMD","Single Instruction Multiple Data (SIMD)",trivial-example
+"rust",23,"rust_foundations_14","Allocation Free","Senza allocazioni",trivial-example
+"rust",23,"rust_foundations_15","No Main","Senza funzione main (no_main)",trivial-example
+"rust",23,"rust_foundations_15","Microcontroller","Microcontrollore",near-identical-translation
+"rust",23,"rust_foundations_15","Microcontroller","Microcontrollore",trivial-example
+"rust",23,"rust_foundations_15","Cortex M","Processore ARM Cortex-M",trivial-example
+"rust",23,"rust_foundations_15","Heapless","Senza heap",tautological-example
+"rust",23,"rust_foundations_15","Heapless","Senza heap",trivial-example
+"rust",23,"rust_foundations_15","Panic Handler","Handler di panic in no_std (#[panic_handler])",trivial-example
+"rust",23,"rust_foundations_15","Bare Metal","Programmazione senza sistema operativo (bare metal)",tautological-example
+"rust",23,"rust_foundations_15","Bare Metal","Programmazione senza sistema operativo (bare metal)",trivial-example
+"rust",23,"rust_foundations_15","Cross Compilation","Compilazione incrociata",trivial-example
+"rust",23,"rust_foundations_16","Edition","Edizione",tautological-example
+"rust",23,"rust_foundations_16","Edition","Edizione",near-identical-translation
+"rust",23,"rust_foundations_16","Edition","Edizione",trivial-example
+"rust",23,"rust_foundations_16","Edition","",duplicate-across-lessons
+"rust",23,"rust_foundations_16","Beta Channel","Canale beta",trivial-example
+"rust",23,"rust_foundations_16","Nightly Channel","Canale nightly",trivial-example
+"rust",0,"rust_foundations_1","Println Macro","",duplicate-across-lessons
+"rust",17,"rust_macros_1","Println Macro","",duplicate-across-lessons
+"rust",1,"rust_types_4","String Slice","",duplicate-across-lessons
+"rust",4,"rust_ownership_8","String Slice","",duplicate-across-lessons
+"rust",9,"rust_traits_2","Iterator","",duplicate-across-lessons
+"rust",3,"rust_ownership_2","Copy","",duplicate-across-lessons
+"rust",9,"rust_traits_2","Copy","",duplicate-across-lessons
+"rust",9,"rust_traits_2","Clone","",duplicate-across-lessons
+"rust",3,"rust_ownership_4","Borrow Checker","",duplicate-across-lessons
+"rust",3,"rust_ownership_4","String Conversion","",duplicate-across-lessons
+"rust",4,"rust_ownership_8","String Conversion","",duplicate-across-lessons
+"rust",3,"rust_ownership_4","Box","",duplicate-across-lessons
+"rust",14,"rust_ownership_12","Auto Deref","",duplicate-across-lessons
+"rust",4,"rust_ownership_6","Reborrow","",duplicate-across-lessons
+"rust",4,"rust_ownership_6","NLL","",duplicate-across-lessons
+"rust",11,"rust_lifetimes_3","NLL","",duplicate-across-lessons
+"rust",11,"rust_lifetimes_1","Static Lifetime","",duplicate-across-lessons
+"rust",4,"rust_ownership_8","Fat Pointer","",duplicate-across-lessons
+"rust",5,"rust_structs_2","Builder Pattern","",duplicate-across-lessons
+"rust",5,"rust_structs_4","Newtype Pattern","",duplicate-across-lessons
+"rust",19,"rust_traits_7","Newtype Pattern","",duplicate-across-lessons
+"rust",18,"rust_unsafe_2","Repr C","",duplicate-across-lessons
+"rust",7,"rust_error_handling_2","Assert Eq","",duplicate-across-lessons
+"rust",20,"rust_testing_1","Assert Eq","",duplicate-across-lessons
+"rust",9,"rust_traits_3","Trait Object","",duplicate-across-lessons
+"rust",19,"rust_traits_6","Dynamic Dispatch","",duplicate-across-lessons
+"rust",9,"rust_traits_3","Static Dispatch","",duplicate-across-lessons
+"rust",9,"rust_traits_3","VTable","",duplicate-across-lessons
+"rust",19,"rust_traits_6","VTable","",duplicate-across-lessons
+"rust",9,"rust_traits_3","Object Safety","",duplicate-across-lessons
+"rust",19,"rust_traits_5","Object Safety","",duplicate-across-lessons
+"rust",19,"rust_traits_7","Supertrait","",duplicate-across-lessons
+"rust",9,"rust_traits_4","Orphan Rule","",duplicate-across-lessons
+"rust",19,"rust_traits_7","Orphan Rule","",duplicate-across-lessons
+"rust",9,"rust_traits_4","Coherence","",duplicate-across-lessons
+"rust",19,"rust_traits_7","Coherence","",duplicate-across-lessons
+"rust",10,"rust_generics_2","Phantom Type","",duplicate-across-lessons
+"rust",19,"rust_traits_8","Phantom Type","",duplicate-across-lessons
+"rust",10,"rust_generics_3","Specialization","",duplicate-across-lessons
+"rust",19,"rust_traits_7","Specialization","",duplicate-across-lessons
+"rust",11,"rust_lifetimes_1","Lifetime Variance","",duplicate-across-lessons
+"rust",11,"rust_lifetimes_3","Lifetime Variance","",duplicate-across-lessons
+"rust",11,"rust_lifetimes_4","Pin","",duplicate-across-lessons
+"rust",16,"rust_async_3","Pin","",duplicate-across-lessons
+"rust",11,"rust_lifetimes_4","Move Closure","",duplicate-across-lessons
+"rust",15,"rust_concurrency_1","Move Closure","",duplicate-across-lessons
+"rust",21,"rust_io_1","Path","",duplicate-across-lessons
+"rust",14,"rust_ownership_11","Mutex","",duplicate-across-lessons
+"rust",15,"rust_concurrency_4","Mutex","",duplicate-across-lessons
+"rust",14,"rust_ownership_11","RwLock","",duplicate-across-lessons
+"rust",15,"rust_concurrency_4","RwLock","",duplicate-across-lessons
+"rust",15,"rust_concurrency_2","MPSC","",duplicate-across-lessons
+"rust",21,"rust_io_4","Mpsc","",duplicate-across-lessons
+"rust",16,"rust_async_4","Tcp Stream","",duplicate-across-lessons
+"rust",18,"rust_unsafe_4","No Std","",duplicate-across-lessons
+"rust",23,"rust_foundations_15","No Std","",duplicate-across-lessons

@@ -1,0 +1,213 @@
+topicId,level,lesson,english,italian,issueType
+"cpp",0,"cpp_foundations_1","Class","Classe",near-identical-translation
+"cpp",0,"cpp_foundations_4","Boolean","Booleano",near-identical-translation
+"cpp",1,"cpp_foundations_5","Return by Reference","Ritorno per riferimento",tautological-example
+"cpp",1,"cpp_foundations_6","Function Overloading","Sovraccarico di funzioni",tautological-example
+"cpp",1,"cpp_foundations_6","Default Argument","Argomento di default",tautological-example
+"cpp",1,"cpp_foundations_6","Default Argument","",duplicate-across-lessons
+"cpp",1,"cpp_foundations_7","Logical Operator","Operatore logico",tautological-example
+"cpp",1,"cpp_foundations_7","Enum Class","Enum scoped C++ (enum class)",tautological-example
+"cpp",1,"cpp_foundations_7","Constexpr","Espressione costante a tempo di compilazione (constexpr)",tautological-example
+"cpp",1,"cpp_foundations_7","Constexpr","",duplicate-across-lessons
+"cpp",2,"cpp_oop_1","Class Member","Membro di classe",tautological-example
+"cpp",2,"cpp_oop_2","Access Specifier","Specificatore di accesso",tautological-example
+"cpp",2,"cpp_oop_2","Public","Pubblico",tautological-example
+"cpp",2,"cpp_oop_2","Public","Pubblico",near-identical-translation
+"cpp",2,"cpp_oop_2","Private","Privato",tautological-example
+"cpp",2,"cpp_oop_2","Private","Privato",near-identical-translation
+"cpp",2,"cpp_oop_2","Protected","Protetto",tautological-example
+"cpp",2,"cpp_oop_2","Class Invariant","Invariante di classe",tautological-example
+"cpp",2,"cpp_oop_3","Move Assignment","Assegnazione di spostamento",trivial-example
+"cpp",2,"cpp_oop_3","Move Assignment","",duplicate-across-lessons
+"cpp",2,"cpp_oop_3","Defaulted Function","Funzione di default",trivial-example
+"cpp",2,"cpp_oop_3","Rule of Three","Regola del tre",tautological-example
+"cpp",3,"cpp_oop_5","Public Inheritance","Ereditarietà pubblica",tautological-example
+"cpp",3,"cpp_oop_5","Superclass","Superclasse",near-identical-translation
+"cpp",3,"cpp_oop_7","Implementation","Implementazione",near-identical-translation
+"cpp",3,"cpp_oop_8","Composition","Composizione",near-identical-translation
+"cpp",3,"cpp_oop_8","Composition","",duplicate-across-lessons
+"cpp",3,"cpp_oop_8","Aggregation","Aggregazione",near-identical-translation
+"cpp",3,"cpp_oop_8","Template Method","Metodo template",tautological-example
+"cpp",3,"cpp_oop_8","Empty Base Optimization","Ottimizzazione base vuota",redundant-note
+"cpp",4,"cpp_oop_9","Dynamic Dispatch","Dispatch dinamico",tautological-example
+"cpp",4,"cpp_oop_9","Static Dispatch","Dispatch statico",tautological-example
+"cpp",4,"cpp_oop_9","Early Binding","Binding anticipato",tautological-example
+"cpp",4,"cpp_oop_11","Contract Programming","Programmazione a contratto",tautological-example
+"cpp",4,"cpp_oop_11","Precondition","Precondizione",near-identical-translation
+"cpp",4,"cpp_oop_11","Postcondition","Postcondizione",near-identical-translation
+"cpp",4,"cpp_oop_11","Invariant","Invariante",near-identical-translation
+"cpp",4,"cpp_oop_11","ABI Stability","Stabilità ABI",tautological-example
+"cpp",4,"cpp_oop_12","Tag Dispatch","Dispatch per tipo-etichetta (tag dispatch)",tautological-example
+"cpp",4,"cpp_oop_12","Tag Dispatch","",duplicate-across-lessons
+"cpp",4,"cpp_oop_12","Static Polymorphism","Polimorfismo statico",tautological-example
+"cpp",4,"cpp_oop_12","Static Polymorphism","",duplicate-across-lessons
+"cpp",5,"cpp_oop_13","Operator Overloading","Sovraccarico operatori",tautological-example
+"cpp",5,"cpp_oop_14","Comparison Chain","Catena di confronto",trivial-example
+"cpp",5,"cpp_oop_16","Self-Assignment","Auto-assegnazione",trivial-example
+"cpp",5,"cpp_oop_16","Copy and Swap","Idioma di assegnazione sicura (copy-and-swap)",tautological-example
+"cpp",6,"cpp_stl_1","Capacity","Capacità",near-identical-translation
+"cpp",6,"cpp_stl_1","Reserve","Riserva",near-identical-translation
+"cpp",6,"cpp_stl_2","Multiset","Insieme con duplicati (std::multiset)",trivial-example
+"cpp",6,"cpp_stl_2","Unordered Map","Mappa hash (std::unordered_map)",trivial-example
+"cpp",6,"cpp_stl_3","Priority Queue","Coda con priorità",trivial-example
+"cpp",6,"cpp_stl_3","Front","Inizio",tautological-example
+"cpp",6,"cpp_stl_3","Front","Inizio",trivial-example
+"cpp",6,"cpp_stl_3","Container Concept","Concetto di container",trivial-example
+"cpp",6,"cpp_stl_3","Empty Check","Verifica vuoto",tautological-example
+"cpp",6,"cpp_stl_4","Iterator","Iteratore",near-identical-translation
+"cpp",6,"cpp_stl_4","Iterator","Iteratore",trivial-example
+"cpp",6,"cpp_stl_4","End","Fine",tautological-example
+"cpp",6,"cpp_stl_4","End","Fine",trivial-example
+"cpp",6,"cpp_stl_4","Const Iterator","Iteratore const",trivial-example
+"cpp",6,"cpp_stl_4","Random Access Iterator","Iteratore ad accesso casuale",trivial-example
+"cpp",6,"cpp_stl_4","Bidirectional Iterator","Iteratore bidirezionale",trivial-example
+"cpp",6,"cpp_stl_4","Forward Iterator","Iteratore forward",tautological-example
+"cpp",6,"cpp_stl_4","Forward Iterator","Iteratore forward",trivial-example
+"cpp",6,"cpp_stl_4","Iterator Invalidation","Invalidazione iteratore",trivial-example
+"cpp",6,"cpp_stl_4","Iterator Adapter","Adattatore di iteratori",trivial-example
+"cpp",7,"cpp_stl_5","Comparator","Comparatore",near-identical-translation
+"cpp",7,"cpp_stl_6","Copy","Copia",near-identical-translation
+"cpp",7,"cpp_stl_6","Generate","Genera",near-identical-translation
+"cpp",7,"cpp_stl_7","Count","Conta",near-identical-translation
+"cpp",8,"cpp_templates_3","Variable Template","Variabile template",near-identical-translation
+"cpp",9,"cpp_memory_3","Weak Ptr","Riferimento debole (std::weak_ptr)",trivial-example
+"cpp",9,"cpp_memory_3","Lock","Blocco esclusivo (lock)",tautological-example
+"cpp",9,"cpp_memory_3","Lock","Blocco esclusivo (lock)",trivial-example
+"cpp",9,"cpp_memory_3","Expired","Scaduto",tautological-example
+"cpp",9,"cpp_memory_3","Observer Pattern","Pattern observer",trivial-example
+"cpp",9,"cpp_memory_3","Break Cycle","Rompere ciclo",trivial-example
+"cpp",9,"cpp_memory_3","Pointer Lifetime","Durata del puntatore",trivial-example
+"cpp",9,"cpp_memory_3","Non-Owning Reference","Riferimento non possessivo",trivial-example
+"cpp",9,"cpp_memory_4","Resource","Risorsa",trivial-example
+"cpp",9,"cpp_memory_4","Acquisition","Acquisizione",near-identical-translation
+"cpp",9,"cpp_memory_4","Release On Destruction","Rilascio nel distruttore",trivial-example
+"cpp",9,"cpp_memory_4","Stack Allocation","Allocazione su stack",trivial-example
+"cpp",9,"cpp_memory_4","Lock Guard","RAII per mutex (std::lock_guard)",trivial-example
+"cpp",9,"cpp_memory_4","Lock Guard","",duplicate-across-lessons
+"cpp",9,"cpp_memory_4","File Guard","Chiusura RAII di file (file guard)",trivial-example
+"cpp",9,"cpp_memory_4","Exception Safety","Sicurezza alle eccezioni",trivial-example
+"cpp",9,"cpp_memory_4","Deterministic Destruction","Distruzione deterministica",trivial-example
+"cpp",10,"cpp_exceptions_1","Exception","Eccezione",trivial-example
+"cpp",10,"cpp_exceptions_1","Try Block","Blocco try",trivial-example
+"cpp",10,"cpp_exceptions_1","Catch Block","Blocco catch",trivial-example
+"cpp",10,"cpp_exceptions_1","Throw","Lancia",tautological-example
+"cpp",10,"cpp_exceptions_1","Throw","Lancia",trivial-example
+"cpp",10,"cpp_exceptions_1","Catch All","Cattura tutto",trivial-example
+"cpp",10,"cpp_exceptions_1","Stack Unwinding","Srotolamento dello stack",tautological-example
+"cpp",10,"cpp_exceptions_1","Stack Unwinding","Srotolamento dello stack",trivial-example
+"cpp",10,"cpp_exceptions_1","Catch By Reference","Catch per riferimento",trivial-example
+"cpp",10,"cpp_exceptions_2","Out of Range","Fuori intervallo",trivial-example
+"cpp",10,"cpp_exceptions_2","What Method","Metodo what",trivial-example
+"cpp",10,"cpp_exceptions_2","Exception Specification","Specifica di eccezione",trivial-example
+"cpp",10,"cpp_exceptions_3","Noexcept","Specificatore non lancia eccezioni (noexcept)",tautological-example
+"cpp",10,"cpp_exceptions_3","Noexcept","Specificatore non lancia eccezioni (noexcept)",trivial-example
+"cpp",10,"cpp_exceptions_3","Conditional Noexcept","Noexcept condizionale",trivial-example
+"cpp",10,"cpp_exceptions_3","Strong Guarantee","Garanzia forte",tautological-example
+"cpp",10,"cpp_exceptions_3","Basic Guarantee","Garanzia base",tautological-example
+"cpp",10,"cpp_exceptions_3","Basic Guarantee","Garanzia base",trivial-example
+"cpp",10,"cpp_exceptions_3","Move Noexcept","Move che non lancia eccezioni (move-noexcept)",trivial-example
+"cpp",10,"cpp_exceptions_3","Throw From Destructor","Lancio dal distruttore",trivial-example
+"cpp",10,"cpp_exceptions_3","Terminate","Termine programma (std::terminate)",trivial-example
+"cpp",10,"cpp_exceptions_4","Expected","Valore o errore C++23 (std::expected)",trivial-example
+"cpp",10,"cpp_exceptions_4","Error Code","Codice di errore",trivial-example
+"cpp",10,"cpp_exceptions_4","Outcome","Libreria gestione errori Boost (outcome)",trivial-example
+"cpp",10,"cpp_exceptions_4","Assertion","Asserzione",near-identical-translation
+"cpp",10,"cpp_exceptions_4","Assertion","Asserzione",trivial-example
+"cpp",10,"cpp_exceptions_4","Contract Check","Verifica di contratto",tautological-example
+"cpp",10,"cpp_exceptions_4","Contract Check","Verifica di contratto",trivial-example
+"cpp",10,"cpp_exceptions_4","Defensive Programming","Programmazione difensiva",trivial-example
+"cpp",10,"cpp_exceptions_4","Error Propagation","Propagazione errori",trivial-example
+"cpp",10,"cpp_exceptions_4","Fail Fast","Fallisci in fretta",tautological-example
+"cpp",10,"cpp_exceptions_4","Fail Fast","Fallisci in fretta",trivial-example
+"cpp",11,"cpp_lambdas_1","Capture By Value","Cattura per valore",tautological-example
+"cpp",11,"cpp_lambdas_1","Capture By Value","Cattura per valore",trivial-example
+"cpp",11,"cpp_lambdas_1","Capture By Reference","Cattura per riferimento",tautological-example
+"cpp",11,"cpp_lambdas_1","Default Capture","Cattura di default",trivial-example
+"cpp",11,"cpp_lambdas_1","Init Capture","Cattura con inizializzazione",tautological-example
+"cpp",11,"cpp_lambdas_1","Init Capture","Cattura con inizializzazione",trivial-example
+"cpp",11,"cpp_lambdas_1","Closure","Chiusura",trivial-example
+"cpp",11,"cpp_lambdas_1","Trailing Return","Tipo di ritorno trailing",trivial-example
+"cpp",11,"cpp_lambdas_2","Callable","Oggetto invocabile (callable)",trivial-example
+"cpp",11,"cpp_lambdas_2","Functor","Funtore",near-identical-translation
+"cpp",11,"cpp_lambdas_2","Functor","Funtore",trivial-example
+"cpp",11,"cpp_lambdas_2","Bind","Aggancio di argomenti (std::bind)",trivial-example
+"cpp",11,"cpp_lambdas_2","Type Erased Functor","Funtore con tipo cancellato",trivial-example
+"cpp",11,"cpp_lambdas_2","Function Wrapper","Wrapper di funzione",trivial-example
+"cpp",11,"cpp_lambdas_2","Invoke","Invoca",near-identical-translation
+"cpp",11,"cpp_lambdas_2","Invoke","Invoca",trivial-example
+"cpp",11,"cpp_lambdas_3","Generic Lambda","Lambda generica",trivial-example
+"cpp",11,"cpp_lambdas_3","Variadic Lambda","Lambda variadica",trivial-example
+"cpp",11,"cpp_lambdas_3","Stateless Lambda","Lambda senza stato",trivial-example
+"cpp",11,"cpp_lambdas_3","Stateful Lambda","Lambda con stato",trivial-example
+"cpp",11,"cpp_lambdas_3","Recursive Lambda","Lambda ricorsiva",tautological-example
+"cpp",11,"cpp_lambdas_3","Recursive Lambda","Lambda ricorsiva",trivial-example
+"cpp",11,"cpp_lambdas_3","Immediately Invoked","Invocata immediatamente",trivial-example
+"cpp",11,"cpp_lambdas_3","Lambda Overload","Overload di lambda",trivial-example
+"cpp",11,"cpp_lambdas_4","Functional Header","Header functional",trivial-example
+"cpp",11,"cpp_lambdas_4","Greater Functor","Funtore greater",trivial-example
+"cpp",11,"cpp_lambdas_4","Less Functor","Funtore less",trivial-example
+"cpp",11,"cpp_lambdas_4","Plus Functor","Funtore plus",trivial-example
+"cpp",11,"cpp_lambdas_4","Reference Wrapper","Wrapper di riferimento",trivial-example
+"cpp",11,"cpp_lambdas_4","Partial Application","Applicazione parziale",tautological-example
+"cpp",11,"cpp_lambdas_4","Pipeline","Catena di trasformazioni (pipeline)",trivial-example
+"cpp",11,"cpp_lambdas_4","Composition","Composizione",near-identical-translation
+"cpp",11,"cpp_lambdas_4","Composition","Composizione",trivial-example
+"cpp",11,"cpp_lambdas_4","Composition","",duplicate-across-lessons
+"cpp",12,"cpp_modern_cpp_1","Auto Keyword","Parola chiave auto",trivial-example
+"cpp",12,"cpp_modern_cpp_1","Decltype","Dedurre il tipo (decltype)",tautological-example
+"cpp",12,"cpp_modern_cpp_1","Decltype Auto","Deduzione preservando referenze (decltype(auto))",trivial-example
+"cpp",12,"cpp_modern_cpp_1","Nullptr","Puntatore nullo tipizzato (nullptr)",tautological-example
+"cpp",12,"cpp_modern_cpp_1","Nullptr","Puntatore nullo tipizzato (nullptr)",trivial-example
+"cpp",12,"cpp_modern_cpp_1","Range For","Ciclo for su sequenza (range-for)",trivial-example
+"cpp",12,"cpp_modern_cpp_1","Brace Initialization","Inizializzazione con graffe",trivial-example
+"cpp",12,"cpp_modern_cpp_1","Uniform Initialization","Inizializzazione uniforme",trivial-example
+"cpp",12,"cpp_modern_cpp_1","Auto Variable","Variabile auto",trivial-example
+"cpp",12,"cpp_modern_cpp_2","Move Semantics","Semantica del move",tautological-example
+"cpp",12,"cpp_modern_cpp_2","Std Move","Spostamento standard (std::move)",trivial-example
+"cpp",12,"cpp_modern_cpp_2","Lvalue","Espressione con indirizzo (lvalue)",trivial-example
+"cpp",12,"cpp_modern_cpp_2","Rvalue","Espressione temporanea (rvalue)",trivial-example
+"cpp",12,"cpp_modern_cpp_2","Xvalue","Valore esauribile (xvalue)",trivial-example
+"cpp",12,"cpp_modern_cpp_2","Prvalue","Pure rvalue (prvalue)",trivial-example
+"cpp",12,"cpp_modern_cpp_2","Move Constructor","Costruttore di move",trivial-example
+"cpp",12,"cpp_modern_cpp_2","Move Constructor","",duplicate-across-lessons
+"cpp",12,"cpp_modern_cpp_2","Move Assignment","Assegnazione di move",tautological-example
+"cpp",12,"cpp_modern_cpp_2","Move Assignment","",duplicate-across-lessons
+"cpp",12,"cpp_modern_cpp_3","Default Function","Funzione di default",trivial-example
+"cpp",12,"cpp_modern_cpp_3","Deleted Function","Funzione eliminata",trivial-example
+"cpp",12,"cpp_modern_cpp_3","Deleted Function","",duplicate-across-lessons
+"cpp",12,"cpp_modern_cpp_3","Override Specifier","Specificatore override",trivial-example
+"cpp",12,"cpp_modern_cpp_3","Final Specifier","Specificatore final",trivial-example
+"cpp",12,"cpp_modern_cpp_3","Constexpr","Espressione costante a tempo di compilazione (constexpr)",tautological-example
+"cpp",12,"cpp_modern_cpp_3","Constexpr","",duplicate-across-lessons
+"cpp",12,"cpp_modern_cpp_3","Strongly Typed Enum","Enum fortemente tipizzato",trivial-example
+"cpp",12,"cpp_modern_cpp_3","Static Assert","Asserzione a tempo di compilazione (static_assert)",trivial-example
+"cpp",12,"cpp_modern_cpp_3","Static Assert","",duplicate-across-lessons
+"cpp",12,"cpp_modern_cpp_3","Raw String Literal","Stringa raw",tautological-example
+"cpp",12,"cpp_modern_cpp_3","Raw String Literal","Stringa raw",trivial-example
+"cpp",12,"cpp_modern_cpp_3","Right Angle Brackets","Parentesi angolari di chiusura",trivial-example
+"cpp",12,"cpp_modern_cpp_3","User-Defined Literal","Letterale definito utente",trivial-example
+"cpp",12,"cpp_modern_cpp_3","User-Defined Literal","",duplicate-across-lessons
+"cpp",12,"cpp_modern_cpp_4","Tuple","Tupla",near-identical-translation
+"cpp",12,"cpp_modern_cpp_4","Tuple","Tupla",trivial-example
+"cpp",12,"cpp_modern_cpp_4","Pair","Coppia",trivial-example
+"cpp",12,"cpp_modern_cpp_4","Array","Array a dimensione fissa (std::array)",trivial-example
+"cpp",12,"cpp_modern_cpp_4","Array","",duplicate-across-lessons
+"cpp",12,"cpp_modern_cpp_4","Random","Libreria di numeri casuali (std::random)",trivial-example
+"cpp",12,"cpp_modern_cpp_4","Thread","Thread di esecuzione (std::thread)",trivial-example
+"cpp",12,"cpp_modern_cpp_4","Thread","",duplicate-across-lessons
+"cpp",12,"cpp_modern_cpp_4","Type Traits","Tratti di tipo",tautological-example
+"cpp",12,"cpp_modern_cpp_4","Type Traits","",duplicate-across-lessons
+"cpp",12,"cpp_modern_cpp_4","Make Shared","Fabbrica per shared_ptr (std::make_shared)",trivial-example
+"cpp",12,"cpp_modern_cpp_4","Make Shared","",duplicate-across-lessons
+"cpp",13,"cpp_modern_cpp_5","Structured Bindings","Binding strutturato",tautological-example
+"cpp",13,"cpp_modern_cpp_5","Structured Bindings","Binding strutturato",trivial-example
+"cpp",13,"cpp_modern_cpp_5","If Init","If con init",tautological-example
+"cpp",13,"cpp_modern_cpp_5","If Init","If con init",trivial-example
+"cpp",13,"cpp_modern_cpp_5","Constexpr If","If constexpr",trivial-example
+"cpp",13,"cpp_modern_cpp_5","Constexpr If","",duplicate-across-lessons
+"cpp",13,"cpp_modern_cpp_5","Inline Variable","Variabile inline",trivial-example
+"cpp",13,"cpp_modern_cpp_5","Inline Variable","",duplicate-across-lessons
+"cpp",13,"cpp_modern_cpp_5","Std Optional","Valore opzionale standard (std::optional)",trivial-example
+"cpp",13,"cpp_modern_cpp_5","Std Variant","Variante di tipo sicura (std::variant)",trivial-example
+"cpp",13,"cpp_modern_cpp_5","Std Any","Contenitore di tipo qualsiasi (std::any)",trivial-example
+"cpp",13,"cpp_modern_cpp_5","Std String View","Vista non proprietaria su stringa (std::string_view)",trivial-example

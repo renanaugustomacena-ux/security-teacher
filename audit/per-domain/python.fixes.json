@@ -1,0 +1,608 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "py_basics_2",
+      "english": "Constant",
+      "set": {
+        "example": "By convention, declaring a constant in uppercase like MAX_RETRIES = 3 at module level signals it should not change. = Per convenzione, dichiarare una costante in maiuscolo come MAX_RETRIES = 3 a livello di modulo segnala che non deve cambiare."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Addition",
+      "set": {
+        "example": "The addition operator + works on numbers and concatenates strings, so 'Hello ' + name builds a greeting. = L'operatore di addizione + funziona sui numeri e concatena stringhe, quindi 'Hello ' + name costruisce un saluto."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Multiplication",
+      "set": {
+        "example": "In Python, the multiplication operator * also repeats sequences: 'ab' * 3 returns 'ababab', handy for building separators. = In Python, l'operatore di moltiplicazione * ripete anche le sequenze: 'ab' * 3 restituisce 'ababab', utile per costruire separatori."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Division",
+      "set": {
+        "example": "In Python 3, the / division operator always returns a float (10 / 4 = 2.5), while // performs integer division and returns 2. = In Python 3, l'operatore di divisione / restituisce sempre un float (10 / 4 = 2.5), mentre // esegue la divisione intera e restituisce 2."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "py_basics_3",
+      "english": "Modulo",
+      "set": {
+        "example": "Use the modulo operator % to check parity (n % 2 == 0) or to wrap indices around a circular buffer of fixed size. = Usa l'operatore modulo % per controllare la parita' (n % 2 == 0) o per ciclare indici in un buffer circolare di dimensione fissa."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_tuple_set",
+      "english": "Unpacking",
+      "set": {
+        "example": "With tuple unpacking like name, age = get_user(), you assign multiple return values to named variables in one line. = Con lo spacchettamento di tupla come name, age = get_user(), assegni piu' valori di ritorno a variabili nominate in una riga."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Join",
+      "set": {
+        "example": "Use ', '.join(items) to merge a list of strings into a single CSV-like line without writing a manual loop. = Usa ', '.join(items) per unire una lista di stringhe in una singola riga in stile CSV senza scrivere un ciclo manuale."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_strings",
+      "english": "Raw String",
+      "set": {
+        "example": "When writing a regex or a Windows path, prefix the string with r as in r'\\d+' to avoid escaping every backslash. = Quando scrivi una regex o un percorso Windows, prefissa la stringa con r come in r'\\d+' per evitare di fare l'escape di ogni backslash."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Break Statement",
+      "set": {
+        "example": "When searching a list, a break statement exits the loop as soon as you find the match, avoiding wasted iterations. = Quando cerchi in una lista, un'istruzione break esce dal ciclo appena trovi la corrispondenza, evitando iterazioni sprecate."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_loops",
+      "english": "Range (function)",
+      "set": {
+        "example": "Use range(start, stop, step) inside a for loop to iterate over a numeric sequence without building the full list in memory. = Usa range(start, stop, step) dentro un ciclo for per iterare su una sequenza numerica senza costruire l'intera lista in memoria."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_logic",
+      "english": "All (function)",
+      "set": {
+        "example": "Pass a generator to all() to verify a condition on every item, for example all(x > 0 for x in numbers). = Passa un generatore a all() per verificare una condizione su ogni elemento, ad esempio all(x > 0 for x in numbers)."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Flag Variable",
+      "set": {
+        "example": "Set a flag variable like found = False before a loop, then update it inside to remember whether the search succeeded. = Imposta una variabile bandiera come found = False prima di un ciclo, poi aggiornala all'interno per ricordare se la ricerca ha avuto successo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "py_flow_patterns",
+      "english": "Recursion (Base case)",
+      "set": {
+        "example": "Every recursive function needs a base case (e.g. n == 0 in factorial) to stop calling itself, otherwise you hit a RecursionError. = Ogni funzione ricorsiva ha bisogno di un caso base (es. n == 0 in fattoriale) per smettere di chiamarsi, altrimenti ottieni un RecursionError."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_basics",
+      "english": "Positional Argument",
+      "set": {
+        "example": "When you call connect('localhost', 5432), each positional argument is bound to a parameter based on its order in the signature. = Quando chiami connect('localhost', 5432), ogni argomento posizionale viene legato a un parametro in base al suo ordine nella firma."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_adv",
+      "english": "Decorator",
+      "set": {
+        "example": "Adding @cache above a function lets a decorator wrap it to memoize results without changing the original code. = Aggiungere @cache sopra una funzione permette a un decoratore di avvolgerla per memorizzare i risultati senza modificare il codice originale.",
+        "note": "Si lascia spesso il termine inglese decorator nelle conversazioni tecniche."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Scope",
+      "set": {
+        "example": "The lexical scope of a variable determines where it can be read or written, following Python's LEGB lookup rule. = L'ambito lessicale di una variabile determina dove puo' essere letta o scritta, seguendo la regola di lookup LEGB di Python.",
+        "note": "Spesso ci si riferisce a questo concetto come scope, lasciando il termine inglese."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Global",
+      "set": {
+        "example": "A variable defined at module level is global to that file and can be read from any function inside it. = Una variabile definita a livello di modulo e' globale per quel file e puo' essere letta da qualsiasi funzione al suo interno."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Local",
+      "set": {
+        "example": "When you assign x = 5 inside a function, x becomes a local variable that disappears as soon as the function returns. = Quando assegni x = 5 dentro una funzione, x diventa una variabile locale che scompare appena la funzione ritorna."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_scope",
+      "english": "Namespace",
+      "set": {
+        "example": "Every module, class, and function has its own namespace, implemented as a dictionary that maps names to objects. = Ogni modulo, classe e funzione ha il proprio namespace, implementato come un dizionario che mappa nomi a oggetti."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "py_func_patterns",
+      "english": "Pure Function",
+      "set": {
+        "example": "A function like math.sqrt(x) is a pure function: same input always produces the same output, and it never mutates external state. = Una funzione come math.sqrt(x) e' una funzione pura: lo stesso input produce sempre lo stesso output e non muta mai lo stato esterno."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Object",
+      "set": {
+        "example": "Even integers and functions are objects in Python, which means you can inspect their methods with dir() at runtime. = Anche gli interi e le funzioni sono oggetti in Python, il che significa che puoi ispezionarne i metodi con dir() a runtime."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Instance Variable",
+      "set": {
+        "example": "Assigning self.balance = 0 inside __init__ creates an instance variable unique to each account object. = Assegnare self.balance = 0 dentro __init__ crea una variabile di istanza unica per ogni oggetto account."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_class_basics",
+      "english": "Class Variable",
+      "set": {
+        "example": "Defining count = 0 directly inside the class body makes it a class variable shared by every instance. = Definire count = 0 direttamente nel corpo della classe la rende una variabile di classe condivisa da ogni istanza."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Inheritance",
+      "set": {
+        "example": "By using inheritance, a Manager class can extend Employee and add bonus logic without rewriting the shared attributes. = Usando l'ereditarieta', una classe Manager puo' estendere Employee e aggiungere logica di bonus senza riscrivere gli attributi condivisi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_inheritance",
+      "english": "Polymorphism",
+      "set": {
+        "example": "Thanks to polymorphism, a single render(shape) function can call shape.draw() whether shape is a Circle or a Square. = Grazie al polimorfismo, una sola funzione render(shape) puo' chiamare shape.draw() sia che shape sia un Circle o un Square."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Encapsulation",
+      "set": {
+        "example": "Through encapsulation, a BankAccount class hides its balance behind methods like deposit() so callers cannot corrupt the state. = Attraverso l'incapsulamento, una classe BankAccount nasconde il suo saldo dietro metodi come deposit() cosi' i chiamanti non possono corrompere lo stato."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Abstraction",
+      "set": {
+        "example": "Good abstraction lets callers use open(path) without knowing whether the file lives on disk or in cloud storage. = Una buona astrazione permette ai chiamanti di usare open(path) senza sapere se il file vive su disco o in cloud storage."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "py_oop_concepts",
+      "english": "Abstract Base Class (ABC)",
+      "set": {
+        "example": "Defining a Shape ABC with an abstract draw() method forces every subclass like Circle and Square to provide its own implementation. = Definire una ABC Shape con un metodo astratto draw() obbliga ogni sottoclasse come Circle e Square a fornire la propria implementazione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "As (Alias)",
+      "set": {
+        "example": "Writing import numpy as np uses the as keyword to alias the module under a shorter name preferred in scientific code. = Scrivere import numpy as np usa la parola chiave as per creare un alias del modulo con un nome piu' corto preferito nel codice scientifico."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_modules",
+      "english": "Pip (Package Manager)",
+      "set": {
+        "example": "Run pip install -r requirements.txt to let the package manager fetch every project dependency from PyPI in one shot. = Esegui pip install -r requirements.txt per far scaricare al package manager ogni dipendenza del progetto da PyPI in un colpo solo.",
+        "note": "Acronimo ricorsivo: Pip Installs Packages."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Mode",
+      "set": {
+        "example": "Pass a mode like 'r' for read, 'w' for write, or 'a' for append as the second argument to open(). = Passa una modalita' come 'r' per leggere, 'w' per scrivere o 'a' per accodare come secondo argomento a open()."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Close",
+      "set": {
+        "example": "If you do not close a file explicitly, the OS may keep its descriptor open; this is why a with block is safer. = Se non chiudi esplicitamente un file, il sistema operativo puo' tenerne aperto il descrittore; per questo un blocco with e' piu' sicuro."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_files",
+      "english": "Binary Mode",
+      "set": {
+        "example": "Open images, PDFs or compressed archives in binary mode ('rb' or 'wb') so Python does not try to decode their bytes as text. = Apri immagini, PDF o archivi compressi in modalita' binaria ('rb' o 'wb') cosi' Python non prova a decodificarne i byte come testo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "CSV (module)",
+      "set": {
+        "example": "Use csv.DictReader from the CSV module to iterate rows of a spreadsheet as dictionaries keyed by the header line. = Usa csv.DictReader dal modulo CSV per iterare le righe di un foglio di calcolo come dizionari indicizzati dalla riga di intestazione.",
+        "note": "Comma-Separated Values: formato testuale per dati tabellari."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Encoding (UTF-8)",
+      "set": {
+        "example": "Always pass encoding='utf-8' to open() when reading text files so emoji and accented characters survive the round trip. = Passa sempre encoding='utf-8' a open() quando leggi file di testo cosi' emoji e caratteri accentati sopravvivono al round trip."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_data_formats",
+      "english": "Load/Dump",
+      "set": {
+        "example": "In the json module, dump/load work with file objects, while dumps/loads work with strings (the trailing s stands for string). = Nel modulo json, dump/load lavorano con oggetti file, mentre dumps/loads lavorano con stringhe (la s finale sta per string)."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Dependency",
+      "set": {
+        "example": "Pin each dependency to an exact version in requirements.txt so production builds match what you tested locally. = Blocca ogni dipendenza a una versione esatta in requirements.txt cosi' le build di produzione corrispondono a quanto testato in locale."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Absolute Import",
+      "set": {
+        "example": "Prefer an absolute import like from myapp.utils import helper over relative imports, since it stays valid even if you move the file. = Preferisci un import assoluto come from myapp.utils import helper agli import relativi, perche' resta valido anche se sposti il file."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "py_venv",
+      "english": "Circular Import",
+      "set": {
+        "example": "If module A imports B and B imports A at top level, you get a circular import that fails because one of them is only half-initialized. = Se il modulo A importa B e B importa A a livello top, ottieni un import circolare che fallisce perche' uno dei due e' solo inizializzato a meta'."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Generator",
+      "set": {
+        "example": "Replacing a list with a generator like (line.upper() for line in file) lets you process huge files without loading them into memory. = Sostituire una lista con un generatore come (line.upper() for line in file) permette di elaborare file enormi senza caricarli in memoria."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_generators",
+      "english": "Yield from",
+      "set": {
+        "example": "Inside an outer generator, yield from inner() delegates iteration to a sub-generator and forwards send/throw transparently. = Dentro un generatore esterno, yield from inner() delega l'iterazione a un sotto-generatore e inoltra send/throw in modo trasparente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Try Block",
+      "set": {
+        "example": "Wrap a risky call like json.loads(data) inside a try block so a malformed payload does not crash the whole program. = Avvolgi una chiamata rischiosa come json.loads(data) dentro un blocco try cosi' un payload malformato non manda in crash l'intero programma."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_context",
+      "english": "Nested Context Managers",
+      "set": {
+        "example": "Open source and destination files with nested context managers using one with statement: with open(src) as a, open(dst, 'w') as b. = Apri file sorgente e destinazione con gestori di contesto annidati usando un solo with: with open(src) as a, open(dst, 'w') as b."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Class Decorator",
+      "set": {
+        "example": "Adding @dataclass above a class is a class decorator that auto-generates __init__, __repr__ and __eq__ for you. = Aggiungere @dataclass sopra una classe e' un decoratore di classe che genera automaticamente __init__, __repr__ e __eq__ per te."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Monkey Patching",
+      "set": {
+        "example": "Tests sometimes replace requests.get with a fake using monkey patching to avoid hitting the network during the suite. = I test a volte sostituiscono requests.get con un finto usando il monkey patching per evitare chiamate di rete durante la suite."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_metaclass",
+      "english": "Class Factory",
+      "set": {
+        "example": "Use a class factory function like make_enum(name, values) to build a new class dynamically at runtime instead of writing it by hand. = Usa una funzione fabbrica di classi come make_enum(name, values) per costruire una nuova classe dinamicamente a runtime invece di scriverla a mano."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Type Hints",
+      "set": {
+        "example": "Adding type hints like def greet(name: str) -> str helps editors offer autocompletion and lets mypy catch bugs before runtime. = Aggiungere suggerimenti di tipo come def greet(name: str) -> str aiuta gli editor a offrire autocompletamento e permette a mypy di intercettare bug prima del runtime."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Protocol",
+      "set": {
+        "example": "Declaring a Protocol with a read() method lets any class with that method satisfy the type, without explicit inheritance (structural typing). = Dichiarare un Protocol con un metodo read() permette a qualsiasi classe con quel metodo di soddisfare il tipo, senza ereditarieta' esplicita (tipizzazione strutturale)."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_typing",
+      "english": "Callable",
+      "set": {
+        "example": "Annotate a callback parameter with Callable[[int, int], int] so type checkers verify the function takes two ints and returns one. = Annota un parametro di callback con Callable[[int, int], int] cosi' i type checker verificano che la funzione prenda due int e ne restituisca uno."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_patterns",
+      "english": "Design Pattern",
+      "set": {
+        "example": "A reusable design pattern like Strategy or Observer captures a proven solution so teams do not reinvent it for every project. = Uno schema progettuale riutilizzabile come Strategy o Observer cattura una soluzione provata cosi' i team non la reinventano ad ogni progetto."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Multi-threading",
+      "set": {
+        "note": "Termine inglese mantenuto invariato in italiano; si parla quasi sempre di multithreading anche nei testi tecnici italiani."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_threading",
+      "english": "Context Switching",
+      "set": {
+        "example": "The OS performs a context switching operation every few milliseconds, and the saved/restored state adds measurable overhead. = Il sistema operativo esegue un'operazione di cambio di contesto ogni pochi millisecondi, e lo stato salvato e ripristinato aggiunge un overhead misurabile."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Coroutine",
+      "set": {
+        "example": "Declare a coroutine with async def fetch(url): then await fetch(url) inside an event loop to perform non-blocking I/O. = Dichiara una coroutine con async def fetch(url): poi await fetch(url) dentro un event loop per eseguire I/O non bloccante."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_async",
+      "english": "Task",
+      "set": {
+        "example": "Wrap a coroutine in an asyncio task via asyncio.create_task(coro) to schedule it concurrently with the rest of the event loop. = Avvolgi una coroutine in un task asyncio tramite asyncio.create_task(coro) per schedularla in concorrenza con il resto dell'event loop."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_multiproc",
+      "english": "IPC (Inter-Process Communication)",
+      "set": {
+        "example": "Processes do not share memory, so IPC mechanisms like Queue, Pipe or shared_memory are needed to pass data between them. = I processi non condividono memoria, quindi servono meccanismi IPC come Queue, Pipe o shared_memory per passare dati tra loro."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "py_concurrency_patterns",
+      "english": "Condition Variable",
+      "set": {
+        "example": "With a condition variable, a consumer thread can call cv.wait() until a producer calls cv.notify() to signal that data is ready. = Con una variabile di condizione, un thread consumatore puo' chiamare cv.wait() finche' un produttore chiama cv.notify() per segnalare che i dati sono pronti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Unit Testing",
+      "set": {
+        "example": "Practicing unit testing means writing fast, isolated tests for one function at a time so regressions surface immediately. = Praticare i test unitari significa scrivere test rapidi e isolati per una funzione alla volta cosi' le regressioni emergono subito."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Test Discovery",
+      "set": {
+        "example": "Running pytest with no arguments triggers test discovery, which collects every file matching test_*.py under the current directory. = Eseguire pytest senza argomenti innesca la scoperta dei test, che raccoglie ogni file che corrisponde a test_*.py sotto la cartella corrente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_unittest",
+      "english": "Skipping Tests",
+      "set": {
+        "example": "Use @pytest.mark.skipif(sys.platform != 'linux', reason='linux only') to make skipping tests conditional on the runtime environment. = Usa @pytest.mark.skipif(sys.platform != 'linux', reason='linux only') per rendere il saltare i test condizionato dall'ambiente runtime."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "PEP 8",
+      "set": {
+        "example": "Tools like flake8 and ruff check your code against PEP 8 automatically, enforcing 4-space indentation and 79-character lines. = Strumenti come flake8 e ruff controllano il codice rispetto a PEP 8 automaticamente, applicando indentazione a 4 spazi e righe da 79 caratteri.",
+        "note": "Python Enhancement Proposal numero 8: la guida di stile ufficiale di Python."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "py_quality",
+      "english": "Static Analysis",
+      "set": {
+        "example": "Running static analysis with mypy or pylint catches type errors and unused imports without ever executing the program. = Eseguire l'analisi statica con mypy o pylint individua errori di tipo e import inutilizzati senza mai eseguire il programma."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "FastAPI",
+      "set": {
+        "example": "Building an endpoint with FastAPI takes just a function plus a Pydantic model, and you get OpenAPI docs at /docs for free. = Costruire un endpoint con FastAPI richiede solo una funzione piu' un modello Pydantic, e ottieni la documentazione OpenAPI su /docs gratis."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "WSGI (Web Server Gateway Interface)",
+      "set": {
+        "example": "Synchronous frameworks like Flask and Django talk to servers like Gunicorn through the WSGI standard interface. = I framework sincroni come Flask e Django parlano con server come Gunicorn tramite l'interfaccia standard WSGI."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_web",
+      "english": "Middleware (Web)",
+      "set": {
+        "note": "In italiano si usa quasi sempre il prestito inglese middleware, anche al singolare."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_data",
+      "english": "Tensor",
+      "set": {
+        "example": "In PyTorch, a tensor is essentially an n-dimensional array that can live on the GPU and track gradients for backpropagation. = In PyTorch, un tensore e' essenzialmente un array n-dimensionale che puo' vivere sulla GPU e tracciare i gradienti per la backpropagation."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "Packaging",
+      "set": {
+        "example": "Modern Python packaging uses pyproject.toml plus tools like Poetry or Hatch to build wheels ready to upload to PyPI. = Il packaging Python moderno usa pyproject.toml piu' strumenti come Poetry o Hatch per costruire wheel pronti per il caricamento su PyPI."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "PyInstaller",
+      "set": {
+        "example": "Running pyinstaller --onefile app.py lets PyInstaller bundle the interpreter and all dependencies into a single executable. = Eseguire pyinstaller --onefile app.py permette a PyInstaller di impacchettare l'interprete e tutte le dipendenze in un singolo eseguibile."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "py_deploy",
+      "english": "CI/CD (for Python)",
+      "set": {
+        "example": "A typical Python CI/CD pipeline runs ruff, mypy and pytest on every push, then publishes a wheel or Docker image on tag. = Una tipica pipeline CI/CD Python esegue ruff, mypy e pytest a ogni push, poi pubblica un wheel o un'immagine Docker al tag."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "py_dict",
+      "english": "Value",
+      "set": {
+        "english": "Dictionary Value",
+        "italian": "Valore di Dizionario",
+        "example": "Each dictionary value is reached by its key, as in scores['alice'], which lets you look up data in O(1) average time. = Ogni valore di dizionario si raggiunge tramite la sua chiave, come in scores['alice'], il che permette di cercare dati in tempo medio O(1).",
+        "note": "A differenza di una lista, un dizionario indicizza i valori per chiave invece che per posizione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "py_exceptions",
+      "english": "Exception",
+      "set": {
+        "english": "Built-in Exception",
+        "italian": "Eccezione Integrata",
+        "example": "Python ships with a hierarchy of built-in exceptions like ValueError, KeyError and TypeError that you can raise or catch directly. = Python include una gerarchia di eccezioni integrate come ValueError, KeyError e TypeError che puoi sollevare o catturare direttamente.",
+        "note": "Tutte derivano da BaseException; le piu' comuni ereditano da Exception."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "py_comprehension",
+      "english": "List Comprehension",
+      "set": {
+        "english": "Nested List Comprehension",
+        "italian": "Comprensione di Liste Annidata",
+        "example": "A nested list comprehension like [c for row in matrix for c in row] flattens a 2D grid into a single list in one expression. = Una comprensione di liste annidata come [c for row in matrix for c in row] appiattisce una griglia 2D in una sola lista in un'unica espressione.",
+        "note": "Quando si supera un livello di annidamento, conviene tornare a un ciclo for esplicito per leggibilita'."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Decorator",
+      "set": {
+        "english": "Decorator Factory",
+        "italian": "Fabbrica di Decoratori",
+        "example": "A decorator factory like @retry(times=3) is a function that returns the actual decorator, allowing per-use configuration. = Una fabbrica di decoratori come @retry(times=3) e' una funzione che restituisce il decoratore vero e proprio, permettendo configurazione per utilizzo.",
+        "note": "Tre livelli di funzioni annidate: factory, decorator, wrapper."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "py_decorators",
+      "english": "Functools.wraps",
+      "set": {
+        "english": "@wraps Usage",
+        "italian": "Uso di @wraps",
+        "example": "Inside a decorator, applying @wraps(func) to the wrapper copies the original name, docstring and signature so introspection still works. = Dentro un decoratore, applicare @wraps(func) al wrapper copia il nome, la docstring e la firma originali cosi' l'introspezione continua a funzionare.",
+        "note": "Senza @wraps, help(funzione_decorata) mostrerebbe i metadati del wrapper invece di quelli originali."
+      }
+    }
+  ]
+}

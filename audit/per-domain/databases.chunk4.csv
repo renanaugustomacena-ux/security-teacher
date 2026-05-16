@@ -1,0 +1,270 @@
+topicId,level,lesson,english,italian,issueType
+"databases",19,"db_nosql_15","Recommendation","Raccomandazione",trivial-example
+"databases",19,"db_nosql_15","Fraud Detection","Rilevamento frodi",trivial-example
+"databases",19,"db_nosql_15","Knowledge Graph","grafo della conoscenza (Knowledge Graph)",tautological-example
+"databases",19,"db_nosql_15","Knowledge Graph","grafo della conoscenza (Knowledge Graph)",trivial-example
+"databases",19,"db_nosql_16","Neo4j","Database a grafo (Neo4j)",tautological-example
+"databases",19,"db_nosql_16","Neo4j","Database a grafo (Neo4j)",trivial-example
+"databases",19,"db_nosql_16","ArangoDB","Database multi-modello (ArangoDB)",tautological-example
+"databases",19,"db_nosql_16","ArangoDB","Database multi-modello (ArangoDB)",trivial-example
+"databases",19,"db_nosql_16","JanusGraph","Database a grafo distribuito (JanusGraph)",tautological-example
+"databases",19,"db_nosql_16","JanusGraph","Database a grafo distribuito (JanusGraph)",trivial-example
+"databases",19,"db_nosql_16","Amazon Neptune","Database a grafo AWS (Amazon Neptune)",trivial-example
+"databases",19,"db_nosql_16","Gremlin","Linguaggio query grafi (Gremlin)",tautological-example
+"databases",19,"db_nosql_16","Gremlin","Linguaggio query grafi (Gremlin)",trivial-example
+"databases",19,"db_nosql_16","TinkerPop","Framework grafi Apache (TinkerPop)",tautological-example
+"databases",19,"db_nosql_16","SPARQL","Linguaggio query RDF (SPARQL)",tautological-example
+"databases",19,"db_nosql_16","SPARQL","Linguaggio query RDF (SPARQL)",trivial-example
+"databases",19,"db_nosql_16","GQL","Graph Query Language (GQL)",tautological-example
+"databases",19,"db_nosql_16","GQL","Graph Query Language (GQL)",trivial-example
+"databases",19,"db_nosql_16","Native Graph Storage","Storage grafo nativo",tautological-example
+"databases",19,"db_nosql_16","Index-Free Adjacency","Adiacenza senza indice",tautological-example
+"databases",20,"db_analytics_1","Time Series","Serie temporale",tautological-example
+"databases",20,"db_analytics_1","Time Series","Serie temporale",trivial-example
+"databases",20,"db_analytics_1","TSDB","Time-Series Database (TSDB)",trivial-example
+"databases",20,"db_analytics_1","Tag","Etichetta (Tag)",tautological-example
+"databases",20,"db_analytics_1","Tag","Etichetta (Tag)",trivial-example
+"databases",20,"db_analytics_1","Field","Campo",tautological-example
+"databases",20,"db_analytics_1","Field","Campo",trivial-example
+"databases",20,"db_analytics_1","Field","",duplicate-across-lessons
+"databases",20,"db_analytics_1","Measurement","Misura",tautological-example
+"databases",20,"db_analytics_1","Measurement","Misura",trivial-example
+"databases",20,"db_analytics_1","High Cardinality","Alta cardinalità",tautological-example
+"databases",20,"db_analytics_1","High Cardinality","Alta cardinalità",trivial-example
+"databases",20,"db_analytics_1","Time Bucket","Bucket temporale",trivial-example
+"databases",20,"db_analytics_1","Window Aggregate","Aggregato a finestra",tautological-example
+"databases",20,"db_analytics_1","Window Aggregate","Aggregato a finestra",trivial-example
+"databases",20,"db_analytics_1","Cardinality Explosion","Esplosione di cardinalità",trivial-example
+"databases",20,"db_analytics_2","Retention Policy","Politica di retention",trivial-example
+"databases",20,"db_analytics_2","Downsampling","riduzione della frequenza dei dati (Downsampling)",tautological-example
+"databases",20,"db_analytics_2","Downsampling","riduzione della frequenza dei dati (Downsampling)",trivial-example
+"databases",20,"db_analytics_2","Continuous Aggregate","Aggregato continuo",tautological-example
+"databases",20,"db_analytics_2","Continuous Aggregate","Aggregato continuo",trivial-example
+"databases",20,"db_analytics_2","Compression","Compressione dati (riduzione dello spazio su disco)",trivial-example
+"databases",20,"db_analytics_2","Hypertable","tabella temporale TimescaleDB (Hypertable)",trivial-example
+"databases",20,"db_analytics_2","Chunk","blocco di dati (Chunk)",trivial-example
+"databases",20,"db_analytics_2","Drop Chunks","Elimina chunk",trivial-example
+"databases",20,"db_analytics_2","TTL (TSDB)","TTL nei TSDB",trivial-example
+"databases",20,"db_analytics_2","Cold Storage","Storage freddo",trivial-example
+"databases",20,"db_analytics_3","InfluxDB","Database time-series (InfluxDB)",tautological-example
+"databases",20,"db_analytics_3","InfluxDB","Database time-series (InfluxDB)",trivial-example
+"databases",20,"db_analytics_3","InfluxQL","Linguaggio query InfluxDB (InfluxQL)",tautological-example
+"databases",20,"db_analytics_3","InfluxQL","Linguaggio query InfluxDB (InfluxQL)",trivial-example
+"databases",20,"db_analytics_3","Flux","Linguaggio query funzionale InfluxDB (Flux)",tautological-example
+"databases",20,"db_analytics_3","Flux","Linguaggio query funzionale InfluxDB (Flux)",trivial-example
+"databases",20,"db_analytics_3","TimescaleDB","Estensione time-series PostgreSQL (TimescaleDB)",tautological-example
+"databases",20,"db_analytics_3","Prometheus","Sistema monitoring time-series (Prometheus)",tautological-example
+"databases",20,"db_analytics_3","Prometheus","Sistema monitoring time-series (Prometheus)",trivial-example
+"databases",20,"db_analytics_3","PromQL","Linguaggio query Prometheus (PromQL)",tautological-example
+"databases",20,"db_analytics_3","PromQL","Linguaggio query Prometheus (PromQL)",trivial-example
+"databases",20,"db_analytics_3","Graphite","Sistema monitoring time-series (Graphite)",tautological-example
+"databases",20,"db_analytics_3","Graphite","Sistema monitoring time-series (Graphite)",trivial-example
+"databases",20,"db_analytics_3","OpenTSDB","Database time-series su HBase (OpenTSDB)",tautological-example
+"databases",20,"db_analytics_3","OpenTSDB","Database time-series su HBase (OpenTSDB)",trivial-example
+"databases",20,"db_analytics_3","VictoriaMetrics","TSDB Prometheus-compatibile (VictoriaMetrics)",tautological-example
+"databases",20,"db_analytics_3","QuestDB","TSDB ad alte prestazioni (QuestDB)",tautological-example
+"databases",20,"db_analytics_3","QuestDB","TSDB ad alte prestazioni (QuestDB)",trivial-example
+"databases",20,"db_analytics_4","IoT Data","Dati IoT",trivial-example
+"databases",20,"db_analytics_4","Sensor Data","Dati sensore",trivial-example
+"databases",20,"db_analytics_4","Telemetry","Telemetria",tautological-example
+"databases",20,"db_analytics_4","Telemetry","Telemetria",near-identical-translation
+"databases",20,"db_analytics_4","Telemetry","Telemetria",trivial-example
+"databases",20,"db_analytics_4","Counter","Contatore",tautological-example
+"databases",20,"db_analytics_4","Counter","Contatore",trivial-example
+"databases",20,"db_analytics_4","Gauge","Indicatore (Gauge)",tautological-example
+"databases",20,"db_analytics_4","Gauge","Indicatore (Gauge)",trivial-example
+"databases",20,"db_analytics_4","Histogram","Istogramma",tautological-example
+"databases",20,"db_analytics_4","Histogram","Istogramma",trivial-example
+"databases",20,"db_analytics_4","Histogram","",duplicate-across-lessons
+"databases",20,"db_analytics_4","Summary","riepilogo statistico (Summary)",trivial-example
+"databases",20,"db_analytics_4","Alerting","sistema di avvisi (Alerting)",tautological-example
+"databases",20,"db_analytics_4","Alerting","sistema di avvisi (Alerting)",trivial-example
+"databases",20,"db_analytics_4","Grafana","Piattaforma di dashboard (Grafana)",tautological-example
+"databases",20,"db_analytics_4","Grafana","Piattaforma di dashboard (Grafana)",trivial-example
+"databases",20,"db_analytics_4","Scrape","Raccolta (Scrape)",trivial-example
+"databases",21,"db_analytics_5","ETL","Estrazione, trasformazione, caricamento (ETL)",tautological-example
+"databases",21,"db_analytics_5","ETL","Estrazione, trasformazione, caricamento (ETL)",trivial-example
+"databases",21,"db_analytics_5","ELT","Estrai, carica, trasforma (ELT)",tautological-example
+"databases",21,"db_analytics_5","ELT","Estrai, carica, trasforma (ELT)",trivial-example
+"databases",21,"db_analytics_5","Extract","Estrai",tautological-example
+"databases",21,"db_analytics_5","Extract","Estrai",trivial-example
+"databases",21,"db_analytics_5","Extract","",duplicate-across-lessons
+"databases",21,"db_analytics_5","Transform","Trasforma",tautological-example
+"databases",21,"db_analytics_5","Transform","Trasforma",near-identical-translation
+"databases",21,"db_analytics_5","Transform","Trasforma",trivial-example
+"databases",21,"db_analytics_5","Load","Carica",tautological-example
+"databases",21,"db_analytics_5","Load","Carica",trivial-example
+"databases",21,"db_analytics_5","Batch Processing","Elaborazione batch",tautological-example
+"databases",21,"db_analytics_5","Batch Processing","Elaborazione batch",trivial-example
+"databases",21,"db_analytics_5","Data Source","Fonte dati",trivial-example
+"databases",21,"db_analytics_5","Data Sink","Sink di dati",trivial-example
+"databases",21,"db_analytics_5","Idempotency","Idempotenza",near-identical-translation
+"databases",21,"db_analytics_5","Idempotency","Idempotenza",trivial-example
+"databases",21,"db_analytics_5","Backfill","riempimento di dati storici (Backfill)",tautological-example
+"databases",21,"db_analytics_5","Backfill","riempimento di dati storici (Backfill)",trivial-example
+"databases",21,"db_analytics_6","CDC","Change Data Capture (CDC)",tautological-example
+"databases",21,"db_analytics_6","CDC","Change Data Capture (CDC)",trivial-example
+"databases",21,"db_analytics_6","Debezium","CDC open source (Debezium)",tautological-example
+"databases",21,"db_analytics_6","Debezium","CDC open source (Debezium)",trivial-example
+"databases",21,"db_analytics_6","Kafka","Apache Kafka (broker di messaggi distribuito)",tautological-example
+"databases",21,"db_analytics_6","Kafka","Apache Kafka (broker di messaggi distribuito)",trivial-example
+"databases",21,"db_analytics_6","Topic","canale tematico di messaggi (Topic)",trivial-example
+"databases",21,"db_analytics_6","Producer","Produttore (Producer)",tautological-example
+"databases",21,"db_analytics_6","Producer","Produttore (Producer)",trivial-example
+"databases",21,"db_analytics_6","Consumer","Consumatore (Consumer)",tautological-example
+"databases",21,"db_analytics_6","Consumer","Consumatore (Consumer)",trivial-example
+"databases",21,"db_analytics_6","Partition","Partizione",near-identical-translation
+"databases",21,"db_analytics_6","Partition","Partizione",trivial-example
+"databases",21,"db_analytics_6","Stream Processing","elaborazione in streaming (Stream Processing)",tautological-example
+"databases",21,"db_analytics_6","Apache Flink","Motore stream processing (Apache Flink)",trivial-example
+"databases",21,"db_analytics_7","Apache Airflow","Orchestratore workflow (Apache Airflow)",trivial-example
+"databases",21,"db_analytics_7","DAG","Grafo Aciclico Diretto (DAG)",trivial-example
+"databases",21,"db_analytics_7","Operator","Operatore (nodo nel piano di esecuzione di una query)",trivial-example
+"databases",21,"db_analytics_7","Task","unità di lavoro (Task)",trivial-example
+"databases",21,"db_analytics_7","Schedule","Pianificazione (Schedule)",tautological-example
+"databases",21,"db_analytics_7","Schedule","Pianificazione (Schedule)",trivial-example
+"databases",21,"db_analytics_7","Dagster","Orchestratore moderno per dati (Dagster)",tautological-example
+"databases",21,"db_analytics_7","Dagster","Orchestratore moderno per dati (Dagster)",trivial-example
+"databases",21,"db_analytics_7","Prefect","Orchestratore di workflow Python (Prefect)",tautological-example
+"databases",21,"db_analytics_7","Prefect","Orchestratore di workflow Python (Prefect)",trivial-example
+"databases",21,"db_analytics_7","Lineage","Tracciabilità (Lineage)",trivial-example
+"databases",21,"db_analytics_7","SLA","Service Level Agreement (SLA)",trivial-example
+"databases",21,"db_analytics_8","dbt","Data build tool, trasformazioni SQL (dbt)",tautological-example
+"databases",21,"db_analytics_8","dbt","Data build tool, trasformazioni SQL (dbt)",trivial-example
+"databases",21,"db_analytics_8","Model","Modello dati (rappresentazione logica delle entità)",trivial-example
+"databases",21,"db_analytics_8","Seed","dato iniziale (Seed)",tautological-example
+"databases",21,"db_analytics_8","Seed","dato iniziale (Seed)",trivial-example
+"databases",21,"db_analytics_8","Test","verifica automatica (Test)",trivial-example
+"databases",21,"db_analytics_8","Schema Drift","deriva dello schema (Schema Drift)",tautological-example
+"databases",21,"db_analytics_8","Schema Drift","deriva dello schema (Schema Drift)",trivial-example
+"databases",21,"db_analytics_8","Data Contract","Contratto dati",tautological-example
+"databases",21,"db_analytics_8","Data Contract","Contratto dati",trivial-example
+"databases",21,"db_analytics_8","Data Quality","Qualità dei dati",trivial-example
+"databases",21,"db_analytics_8","Great Expectations","Qualità dati Python (Great Expectations)",tautological-example
+"databases",21,"db_analytics_8","Great Expectations","Qualità dati Python (Great Expectations)",trivial-example
+"databases",21,"db_analytics_8","Data Catalog","Catalogo dati",trivial-example
+"databases",21,"db_analytics_8","Apache Spark","Motore di calcolo distribuito (Apache Spark)",trivial-example
+"databases",22,"db_transactions_5","Locking","blocchi sui dati (Locking)",tautological-example
+"databases",22,"db_transactions_5","Locking","blocchi sui dati (Locking)",trivial-example
+"databases",22,"db_transactions_5","SELECT FOR UPDATE","Lock di scrittura (SELECT FOR UPDATE)",tautological-example
+"databases",22,"db_transactions_5","SELECT FOR SHARE","Lock di lettura condiviso (SELECT FOR SHARE)",tautological-example
+"databases",22,"db_transactions_5","NOWAIT","Senza attesa (NOWAIT)",tautological-example
+"databases",22,"db_transactions_5","NOWAIT","Senza attesa (NOWAIT)",trivial-example
+"databases",22,"db_transactions_5","SKIP LOCKED","Salta righe bloccate (SKIP LOCKED)",tautological-example
+"databases",22,"db_transactions_5","SKIP LOCKED","Salta righe bloccate (SKIP LOCKED)",trivial-example
+"databases",22,"db_transactions_5","Advisory Lock","Lock advisory",tautological-example
+"databases",22,"db_transactions_5","Advisory Lock","Lock advisory",trivial-example
+"databases",22,"db_transactions_5","Lock Timeout","Timeout di lock",trivial-example
+"databases",22,"db_transactions_5","Statement Timeout","Timeout di statement",trivial-example
+"databases",22,"db_transactions_5","Granular Locking","Lock granulare",trivial-example
+"databases",22,"db_transactions_6","Deadlock","Stallo (Deadlock)",tautological-example
+"databases",22,"db_transactions_6","Deadlock","Stallo (Deadlock)",trivial-example
+"databases",22,"db_transactions_6","Deadlock","",duplicate-across-lessons
+"databases",22,"db_transactions_6","Wait-For Graph","Grafo wait-for",tautological-example
+"databases",22,"db_transactions_6","Wait-For Graph","Grafo wait-for",trivial-example
+"databases",22,"db_transactions_6","Deadlock Victim","Vittima del deadlock",trivial-example
+"databases",22,"db_transactions_6","Lock Order","Ordine dei lock",trivial-example
+"databases",22,"db_transactions_6","Lost Update","Aggiornamento perduto",tautological-example
+"databases",22,"db_transactions_6","Lost Update","Aggiornamento perduto",trivial-example
+"databases",22,"db_transactions_6","Write Skew","anomalia di scrittura (Write Skew)",tautological-example
+"databases",22,"db_transactions_6","Write Skew","anomalia di scrittura (Write Skew)",trivial-example
+"databases",22,"db_transactions_7","MVCC","Controllo concorrenza multi-versione (MVCC)",tautological-example
+"databases",22,"db_transactions_7","MVCC","Controllo concorrenza multi-versione (MVCC)",trivial-example
+"databases",22,"db_transactions_7","MVCC","",duplicate-across-lessons
+"databases",22,"db_transactions_7","Tuple Version","Versione di tupla",trivial-example
+"databases",22,"db_transactions_7","XID","Transaction ID (XID)",trivial-example
+"databases",22,"db_transactions_7","XMIN","ID transazione creazione (XMIN)",tautological-example
+"databases",22,"db_transactions_7","XMIN","ID transazione creazione (XMIN)",trivial-example
+"databases",22,"db_transactions_7","XMAX","ID transazione cancellazione (XMAX)",tautological-example
+"databases",22,"db_transactions_7","XMAX","ID transazione cancellazione (XMAX)",trivial-example
+"databases",22,"db_transactions_7","Visibility","Visibilità",near-identical-translation
+"databases",22,"db_transactions_7","Visibility","Visibilità",trivial-example
+"databases",22,"db_transactions_7","Bloat","Gonfiore",trivial-example
+"databases",22,"db_transactions_7","Dead Tuple","Tupla morta",trivial-example
+"databases",22,"db_transactions_7","HOT Update","HOT update (Heap-Only Tuple update PostgreSQL)",tautological-example
+"databases",22,"db_transactions_7","HOT Update","HOT update (Heap-Only Tuple update PostgreSQL)",fake-translation
+"databases",22,"db_transactions_7","HOT Update","HOT update (Heap-Only Tuple update PostgreSQL)",trivial-example
+"databases",22,"db_transactions_8","Optimistic Concurrency","Concorrenza ottimistica",tautological-example
+"databases",22,"db_transactions_8","Pessimistic Concurrency","Concorrenza pessimistica",tautological-example
+"databases",22,"db_transactions_8","Pessimistic Concurrency","Concorrenza pessimistica",trivial-example
+"databases",22,"db_transactions_8","Compare-and-Set","operazione atomica di confronto (Compare-and-Set)",trivial-example
+"databases",22,"db_transactions_8","Atomic Operation","Operazione atomica",trivial-example
+"databases",22,"db_transactions_8","Idempotency Key","Chiave idempotente",tautological-example
+"databases",22,"db_transactions_8","Saga Pattern","Pattern Saga",trivial-example
+"databases",22,"db_transactions_8","Eventual Consistency","Coerenza eventuale",tautological-example
+"databases",22,"db_transactions_8","Eventual Consistency","Coerenza eventuale",trivial-example
+"databases",22,"db_transactions_8","Eventual Consistency","",duplicate-across-lessons
+"databases",23,"db_administration_5","DBA","Database Administrator (DBA)",trivial-example
+"databases",23,"db_administration_5","Production DBA","DBA di produzione",tautological-example
+"databases",23,"db_administration_5","Production DBA","DBA di produzione",trivial-example
+"databases",23,"db_administration_5","Development DBA","DBA di sviluppo",tautological-example
+"databases",23,"db_administration_5","Development DBA","DBA di sviluppo",trivial-example
+"databases",23,"db_administration_5","SRE","Site Reliability Engineer (SRE)",tautological-example
+"databases",23,"db_administration_5","SRE","Site Reliability Engineer (SRE)",trivial-example
+"databases",23,"db_administration_5","Database Engineer","Ingegnere di database",tautological-example
+"databases",23,"db_administration_5","Data Engineer","ingegnere dei dati (Data Engineer)",tautological-example
+"databases",23,"db_administration_5","Data Engineer","ingegnere dei dati (Data Engineer)",trivial-example
+"databases",23,"db_administration_5","Data Architect","architetto dei dati (Data Architect)",tautological-example
+"databases",23,"db_administration_5","Data Architect","architetto dei dati (Data Architect)",trivial-example
+"databases",23,"db_administration_5","On-call","Reperibile (On-call)",trivial-example
+"databases",23,"db_administration_5","Postmortem","analisi post-incidente (Postmortem)",trivial-example
+"databases",23,"db_administration_6","Capacity Planning","Pianificazione di capacità",tautological-example
+"databases",23,"db_administration_6","Sizing","Dimensionamento",trivial-example
+"databases",23,"db_administration_6","Forecasting","Previsione",trivial-example
+"databases",23,"db_administration_6","Growth Rate","Tasso di crescita",trivial-example
+"databases",23,"db_administration_6","Headroom","Margine",trivial-example
+"databases",23,"db_administration_6","Vertical Scaling","Scaling verticale",tautological-example
+"databases",23,"db_administration_6","Horizontal Scaling","Scaling orizzontale",tautological-example
+"databases",23,"db_administration_6","Horizontal Scaling","Scaling orizzontale",trivial-example
+"databases",23,"db_administration_6","Provisioning","fornitura risorse (Provisioning)",trivial-example
+"databases",23,"db_administration_6","IaC","Infrastructure as Code (IaC)",tautological-example
+"databases",23,"db_administration_6","IaC","Infrastructure as Code (IaC)",trivial-example
+"databases",23,"db_administration_6","Benchmark","test prestazionale (Benchmark)",tautological-example
+"databases",23,"db_administration_6","Benchmark","test prestazionale (Benchmark)",trivial-example
+"databases",23,"db_administration_7","Migration","Migrazione",near-identical-translation
+"databases",23,"db_administration_7","Schema Migration","Migrazione di schema",tautological-example
+"databases",23,"db_administration_7","Schema Migration","Migrazione di schema",trivial-example
+"databases",23,"db_administration_7","Data Migration","Migrazione di dati",tautological-example
+"databases",23,"db_administration_7","Zero Downtime Migration","Migrazione senza downtime",tautological-example
+"databases",23,"db_administration_7","Zero Downtime Migration","Migrazione senza downtime",trivial-example
+"databases",23,"db_administration_7","Cutover","Passaggio (Cutover)",trivial-example
+"databases",23,"db_administration_7","Flyway","Gestore migration SQL (Flyway)",tautological-example
+"databases",23,"db_administration_7","Flyway","Gestore migration SQL (Flyway)",trivial-example
+"databases",23,"db_administration_7","Liquibase","Gestore migration SQL (Liquibase)",tautological-example
+"databases",23,"db_administration_7","Forward Migration","Migrazione forward",tautological-example
+"databases",23,"db_administration_7","Forward Migration","Migrazione forward",trivial-example
+"databases",23,"db_administration_7","Rollback Migration","Migrazione di rollback",tautological-example
+"databases",23,"db_administration_7","Rollback Migration","Migrazione di rollback",trivial-example
+"databases",23,"db_administration_7","Expand-Contract","Espandi-contrai",tautological-example
+"databases",23,"db_administration_8","VACUUM","Pulizia righe morte PostgreSQL (VACUUM)",tautological-example
+"databases",23,"db_administration_8","VACUUM","Pulizia righe morte PostgreSQL (VACUUM)",trivial-example
+"databases",23,"db_administration_8","Autovacuum","VACUUM automatico (Autovacuum)",tautological-example
+"databases",23,"db_administration_8","Autovacuum","VACUUM automatico (Autovacuum)",trivial-example
+"databases",23,"db_administration_8","VACUUM FULL","VACUUM con riscrittura tabella (VACUUM FULL)",tautological-example
+"databases",23,"db_administration_8","VACUUM FULL","VACUUM con riscrittura tabella (VACUUM FULL)",trivial-example
+"databases",23,"db_administration_8","Patch","correzione del codice (Patch)",trivial-example
+"databases",23,"db_administration_8","Minor Version","Versione minore",tautological-example
+"databases",23,"db_administration_8","Minor Version","Versione minore",trivial-example
+"databases",23,"db_administration_8","Major Version Upgrade","Aggiornamento versione maggiore",tautological-example
+"databases",23,"db_administration_8","Major Version Upgrade","Aggiornamento versione maggiore",trivial-example
+"databases",23,"db_administration_8","pg_upgrade","Upgrade in-place PostgreSQL (pg_upgrade)",tautological-example
+"databases",23,"db_administration_8","pg_upgrade","Upgrade in-place PostgreSQL (pg_upgrade)",trivial-example
+"databases",23,"db_administration_8","Index Rebuild","Ricostruzione indici",trivial-example
+"databases",23,"db_administration_8","Continuous Improvement","Miglioramento continuo",trivial-example
+"databases",0,"db_foundations_1","Field","",duplicate-across-lessons
+"databases",0,"db_foundations_4","Tablespace","",duplicate-across-lessons
+"databases",1,"db_sql_2","SET","",duplicate-across-lessons
+"databases",10,"db_nosql_9","SET","",duplicate-across-lessons
+"databases",1,"db_sql_4","EXTRACT","",duplicate-across-lessons
+"databases",2,"db_sql_6","CUBE","",duplicate-across-lessons
+"databases",3,"db_design_2","Surrogate Key","",duplicate-across-lessons
+"databases",3,"db_design_2","Natural Key","",duplicate-across-lessons
+"databases",16,"db_modeling_1","Natural Key","",duplicate-across-lessons
+"databases",4,"db_normalization_4","Star Schema","",duplicate-across-lessons
+"databases",22,"db_transactions_8","Two-Phase Commit","",duplicate-across-lessons
+"databases",6,"db_transactions_4","Deadlock","",duplicate-across-lessons
+"databases",7,"db_sql_9","EXISTS","",duplicate-across-lessons
+"databases",10,"db_nosql_9","EXISTS","",duplicate-across-lessons
+"databases",8,"db_nosql_1","Graph Database","",duplicate-across-lessons
+"databases",14,"db_replication_5","Shard Key","",duplicate-across-lessons
+"databases",22,"db_transactions_7","Snapshot","",duplicate-across-lessons

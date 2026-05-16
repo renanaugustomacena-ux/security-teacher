@@ -1,0 +1,974 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "node_foundations_1",
+      "english": "Non-Blocking",
+      "set": {
+        "example": "Because file reads in Node use non-blocking I/O, the server can keep serving thousands of other connections while waiting for the disk. = Poiche' le letture su file in Node usano I/O non bloccante, il server puo' continuare a servire migliaia di altre connessioni mentre attende il disco."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "node_modules_3",
+      "english": "Install",
+      "set": {
+        "english": "npm install",
+        "italian": "npm install",
+        "example": "Running npm install reads package.json, downloads each dependency into node_modules, and updates the package-lock.json snapshot. = Eseguire npm install legge package.json, scarica ogni dipendenza in node_modules e aggiorna lo snapshot package-lock.json.",
+        "note": "Abbreviato npm i. Distinto dal verbo Install gia' presente al livello 0."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "node_async_3",
+      "english": "await",
+      "set": {
+        "example": "Inside an Express handler you await db.users.findById(req.params.id) so the route stays readable like synchronous code without blocking. = Dentro un handler Express attendi db.users.findById(req.params.id) cosi' la rotta resta leggibile come codice sincrono senza bloccare."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "node_runtime_2",
+      "english": "Open",
+      "set": {
+        "example": "Before appending to a long-running log, scripts call fs.open in append mode so writes do not overwrite existing entries. = Prima di accodare a un log a lunga esecuzione, gli script chiamano fs.open in modalita' append cosi' le scritture non sovrascrivono le voci esistenti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "node_express_4",
+      "english": "Mount",
+      "set": {
+        "example": "After defining the users router, you mount it under /api/v1/users so all of its routes inherit that prefix automatically. = Dopo aver definito il router utenti, lo monti sotto /api/v1/users cosi' tutte le sue rotte ereditano automaticamente quel prefisso."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "node_database_1",
+      "english": "Model",
+      "set": {
+        "english": "Mongoose Model",
+        "italian": "Mongoose Model",
+        "example": "A Mongoose Model wraps a schema and exposes find, save, and update helpers for the corresponding MongoDB collection. = Un Mongoose Model avvolge uno schema ed espone gli helper find, save e update per la collezione MongoDB corrispondente.",
+        "note": "Distinto dal Model generico (MVC) gia' presente al livello 19."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "node_security_4",
+      "english": "Passport.js",
+      "set": {
+        "example": "Teams adopt Passport.js to plug in Google, GitHub, and SAML logins through the same Express middleware pipeline without rewriting routes. = I team adottano Passport.js per inserire login Google, GitHub e SAML attraverso la stessa pipeline middleware Express senza riscrivere le rotte."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "EventEmitter",
+      "set": {
+        "italian": "EventEmitter",
+        "example": "Streams, HTTP servers, and child processes all extend EventEmitter so you can subscribe to data, error, and close events uniformly. = Stream, server HTTP e child process estendono tutti EventEmitter cosi' puoi sottoscriverti uniformemente agli eventi data, error e close."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "on",
+      "set": {
+        "italian": "on",
+        "example": "Call socket.on('data', handler) to register a long-lived listener that fires every time a chunk arrives on the connection. = Chiama socket.on('data', handler) per registrare un listener persistente che si attiva ogni volta che un chunk arriva sulla connessione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "emit",
+      "set": {
+        "italian": "emit",
+        "example": "Inside a Cart class you call this.emit('item:added', item) so any subscribed analytics listener can react without tight coupling. = Dentro una classe Cart chiami this.emit('item:added', item) cosi' qualsiasi listener di analytics sottoscritto puo' reagire senza accoppiamento stretto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "once",
+      "set": {
+        "italian": "once",
+        "example": "Use server.once('listening', startWorkers) when initialization logic must run a single time after the server binds the port. = Usa server.once('listening', startWorkers) quando la logica di inizializzazione deve girare una sola volta dopo che il server lega la porta."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "off",
+      "set": {
+        "italian": "off",
+        "example": "When a React component unmounts, call socket.off('message', handler) to detach the listener and prevent memory leaks. = Quando un componente React si smonta, chiama socket.off('message', handler) per staccare il listener e prevenire memory leak."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "removeListener",
+      "set": {
+        "example": "Long-running daemons call emitter.removeListener('tick', poll) before recreating the timer so duplicate handlers do not accumulate. = I daemon a lunga esecuzione chiamano emitter.removeListener('tick', poll) prima di ricreare il timer cosi' gli handler duplicati non si accumulano."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "removeAllListeners",
+      "set": {
+        "example": "During graceful shutdown, services call emitter.removeAllListeners() to make sure no callback fires while the process is tearing down. = Durante lo shutdown graceful, i servizi chiamano emitter.removeAllListeners() per assicurarsi che nessun callback parta mentre il processo viene smontato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "Listener",
+      "set": {
+        "example": "Each registered listener runs synchronously in order, so a slow callback can delay every other handler on the same event. = Ogni listener registrato gira sincronamente in ordine, quindi un callback lento puo' ritardare ogni altro handler sullo stesso evento."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "Max Listeners",
+      "set": {
+        "example": "If you legitimately need more than ten subscribers, raise the max listeners with emitter.setMaxListeners(50) to silence the leak warning. = Se hai legittimamente bisogno di piu' di dieci sottoscrittori, alza il limite max listener con emitter.setMaxListeners(50) per silenziare l'avviso di leak."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_1",
+      "english": "EventEmitter Inheritance",
+      "set": {
+        "example": "Domain classes like Job or Queue use EventEmitter inheritance so callers can subscribe to lifecycle events with familiar on/emit syntax. = Classi di dominio come Job o Queue usano l'ereditarieta' da EventEmitter cosi' i chiamanti possono sottoscriversi a eventi di ciclo vita con la sintassi familiare on/emit."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_2",
+      "english": "Event-Driven",
+      "set": {
+        "example": "Node's event-driven model lets a single thread juggle thousands of HTTP requests by reacting to I/O completions instead of blocking. = Il modello event-driven di Node permette a un singolo thread di gestire migliaia di richieste HTTP reagendo ai completamenti I/O invece di bloccare."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_2",
+      "english": "Publisher",
+      "set": {
+        "example": "In a pub/sub architecture, the publisher only knows the event name and never imports the listeners that consume it. = In un'architettura pub/sub, il publisher conosce solo il nome dell'evento e non importa mai i listener che lo consumano."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_2",
+      "english": "Subscriber",
+      "set": {
+        "example": "Each subscriber registers a callback for a topic and processes messages independently of how many other subscribers exist. = Ogni subscriber registra un callback per un topic e processa i messaggi indipendentemente da quanti altri subscriber esistono."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_2",
+      "english": "Pub/Sub",
+      "set": {
+        "example": "Adopting a pub/sub pattern lets the order service emit OrderPlaced once while billing, shipping, and analytics react in parallel. = Adottare un pattern pub/sub permette al servizio ordini di emettere OrderPlaced una volta mentre fatturazione, spedizione e analytics reagiscono in parallelo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_2",
+      "english": "Loose Coupling",
+      "set": {
+        "example": "Emitting domain events instead of calling other services directly keeps loose coupling between modules and simplifies later refactoring. = Emettere eventi di dominio invece di chiamare direttamente altri servizi mantiene un accoppiamento lasco tra moduli e semplifica i refactoring futuri."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_2",
+      "english": "Event Sourcing",
+      "set": {
+        "example": "With event sourcing your bank ledger stores deposits and withdrawals as immutable events and rebuilds the balance by replay. = Con l'event sourcing il tuo libro mastro bancario salva depositi e prelievi come eventi immutabili e ricostruisce il saldo per replay."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_2",
+      "english": "Error Event",
+      "set": {
+        "example": "Always attach a listener to the error event on streams and sockets, because an unhandled error event will crash the Node process. = Aggancia sempre un listener all'evento error su stream e socket, perche' un evento error non gestito manda in crash il processo Node."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "Event Name",
+      "set": {
+        "example": "Conventions like 'item:added' and 'user:logged_in' keep event names searchable and reduce typos when subscribing across modules. = Convenzioni come 'item:added' e 'user:logged_in' mantengono i nomi evento ricercabili e riducono i typo quando ci si sottoscrive tra moduli."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "Event Bus",
+      "set": {
+        "example": "A shared event bus singleton lets unrelated modules broadcast notifications without importing each other or creating circular dependencies. = Un singleton event bus condiviso permette a moduli non correlati di trasmettere notifiche senza importarsi tra loro o creare dipendenze circolari."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "Async Listener",
+      "set": {
+        "example": "When an async listener throws, you must wrap the body in try/catch yourself because EventEmitter does not await returned promises. = Quando un listener asincrono lancia un'eccezione, devi avvolgere il corpo in try/catch a mano perche' EventEmitter non attende le promise restituite."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "Listener Order",
+      "set": {
+        "example": "Because listener order matches registration order, registering a metrics listener first guarantees it observes every emit before business handlers. = Poiche' l'ordine dei listener corrisponde all'ordine di registrazione, registrare per primo un listener di metriche garantisce che osservi ogni emit prima degli handler di business."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "prependListener",
+      "set": {
+        "example": "Use ee.prependListener('data', metrics) when an instrumentation hook must run before any other listener that may swallow the payload. = Usa ee.prependListener('data', metrics) quando un hook di strumentazione deve girare prima di qualsiasi altro listener che potrebbe consumare il payload."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "EventTarget",
+      "set": {
+        "example": "Modern Node code can use the standard EventTarget API so the same listener logic runs in the browser without changes. = Il codice Node moderno puo' usare l'API standard EventTarget cosi' la stessa logica di listener gira nel browser senza modifiche."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "CustomEvent",
+      "set": {
+        "example": "Dispatching new CustomEvent('order:paid', { detail: order }) attaches the full payload that listeners can read via event.detail. = Fare dispatch di new CustomEvent('order:paid', { detail: order }) aggancia il payload completo che i listener possono leggere via event.detail."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_3",
+      "english": "Hook",
+      "set": {
+        "example": "Frameworks like Fastify expose hooks such as onRequest and onSend so plugins can run logic at well-defined points of the request lifecycle. = Framework come Fastify espongono hook come onRequest e onSend cosi' i plugin possono eseguire logica in punti ben definiti del ciclo di vita della richiesta."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "events.on",
+      "set": {
+        "example": "Wrapping a socket with for await (const [msg] of events.on(socket, 'message')) lets you consume the event stream with normal loops. = Avvolgere un socket con for await (const [msg] of events.on(socket, 'message')) permette di consumare lo stream di eventi con cicli normali."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "events.once",
+      "set": {
+        "example": "During bootstrap you can await events.once(db, 'ready') to suspend the rest of startup until the database emits its ready event. = Durante il bootstrap puoi attendere events.once(db, 'ready') per sospendere il resto dello startup finche' il database non emette il suo evento ready."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "AbortSignal",
+      "set": {
+        "example": "Passing an AbortSignal to events.once(ee, 'done', { signal }) lets you cancel the wait when the caller's timeout fires. = Passare un AbortSignal a events.once(ee, 'done', { signal }) permette di annullare l'attesa quando scatta il timeout del chiamante."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "Async Generator",
+      "set": {
+        "example": "Wrapping a Kafka consumer in an async generator lets downstream code pull messages with for await without exposing the underlying client. = Avvolgere un consumer Kafka in un generatore asincrono permette al codice a valle di estrarre messaggi con for await senza esporre il client sottostante."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "Channel",
+      "set": {
+        "example": "In a worker pool, each channel pairs a producer with a single consumer so backpressure can be applied independently per stream. = In un pool di worker, ogni canale accoppia un produttore con un singolo consumatore cosi' la backpressure puo' essere applicata indipendentemente per stream."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "Topic",
+      "set": {
+        "example": "Subscribing to the 'orders.created' topic lets the shipping service react only to relevant events emitted by the publisher. = Sottoscriversi al topic 'orders.created' permette al servizio spedizioni di reagire solo agli eventi rilevanti emessi dal publisher."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "Event Filtering",
+      "set": {
+        "example": "Implement event filtering on the consumer side so analytics listeners only react to high-value orders above a configurable threshold. = Implementa il filtraggio degli eventi lato consumatore cosi' i listener di analytics reagiscono solo agli ordini di valore elevato sopra una soglia configurabile."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "Event Throttling",
+      "set": {
+        "example": "Apply event throttling on resize handlers to fire layout recalculations at most once every 100 ms instead of on every pixel change. = Applica il throttling degli eventi sui resize handler per scatenare ricalcoli di layout al massimo ogni 100 ms invece che a ogni pixel."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "node_events_4",
+      "english": "Reactive",
+      "set": {
+        "example": "Reactive libraries like RxJS turn click and HTTP events into observable streams you can compose with map, filter, and debounce. = Le librerie reactive come RxJS trasformano eventi click e HTTP in stream osservabili che puoi comporre con map, filter e debounce."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "Jest",
+      "set": {
+        "italian": "Jest",
+        "example": "Most React and Node projects pick Jest because it bundles a runner, assertions, mocks, and snapshot tests in a single dependency. = La maggior parte dei progetti React e Node sceglie Jest perche' raggruppa runner, asserzioni, mock e test snapshot in un'unica dipendenza."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "Mocha",
+      "set": {
+        "italian": "Mocha",
+        "example": "Teams that prefer assembling their own stack pair Mocha as the runner with Chai for assertions and Sinon for spies. = I team che preferiscono assemblare il proprio stack abbinano Mocha come runner a Chai per le asserzioni e Sinon per gli spy."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "Chai",
+      "set": {
+        "italian": "Chai",
+        "example": "With Chai you can pick between expect, should, and assert styles to match the assertion idiom your team already uses. = Con Chai puoi scegliere tra gli stili expect, should e assert per allinearti all'idioma di asserzione che il team usa gia'."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "Vitest",
+      "set": {
+        "italian": "Vitest",
+        "example": "Projects already built with Vite often migrate to Vitest because it reuses the same config and runs tests with native ESM speed. = I progetti gia' costruiti con Vite spesso migrano a Vitest perche' riusa la stessa config ed esegue i test con la velocita' ESM nativa."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "node:test",
+      "set": {
+        "italian": "node:test",
+        "example": "From Node 18 you can run unit tests with just node --test, removing the need for an external runner in small CLI tools. = Da Node 18 puoi eseguire test unitari con il solo node --test, eliminando il bisogno di un runner esterno nei piccoli strumenti CLI."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "Tap",
+      "set": {
+        "italian": "Tap",
+        "example": "Output that follows the Tap protocol is machine-readable, so CI dashboards can parse pass/fail counts without scraping ANSI logs. = L'output che segue il protocollo Tap e' leggibile da macchina, cosi' le dashboard CI possono analizzare i conteggi pass/fail senza dover analizzare log ANSI."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "Tape",
+      "set": {
+        "italian": "Tape",
+        "example": "Minimalist projects pick Tape when they want a tiny dependency that just emits TAP output without globals or magic. = I progetti minimalisti scelgono Tape quando vogliono una dipendenza minima che emette solo output TAP senza globali o magia."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "AVA",
+      "set": {
+        "italian": "AVA",
+        "example": "Because AVA runs each test file in its own process, slow IO-bound suites finish in a fraction of the wall-clock time. = Poiche' AVA esegue ogni file di test nel proprio processo, le suite lente IO-bound finiscono in una frazione del tempo reale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_1",
+      "english": "Test Runner",
+      "set": {
+        "example": "A test runner discovers .test.js files, executes each describe block in isolation, and aggregates the pass/fail counts at the end. = Un test runner scopre i file .test.js, esegue ogni blocco describe in isolamento e aggrega i conteggi pass/fail alla fine."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "describe",
+      "set": {
+        "example": "Wrap related cases in describe('UserService', () => { ... }) so the runner reports failures grouped by the feature under test. = Avvolgi i casi correlati in describe('UserService', () => { ... }) cosi' il runner riporta i fallimenti raggruppati per la feature sotto test."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "it",
+      "set": {
+        "example": "Write it('returns 404 when the user is missing', async () => { ... }) so the test name reads as a behavioural specification. = Scrivi it('returns 404 when the user is missing', async () => { ... }) cosi' il nome del test si legge come una specifica comportamentale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "test",
+      "set": {
+        "example": "Jest and Vitest both accept test('hashes the password with bcrypt', async () => { ... }) as an equivalent alias for it. = Sia Jest che Vitest accettano test('hashes the password with bcrypt', async () => { ... }) come alias equivalente di it."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "expect",
+      "set": {
+        "example": "An assertion like expect(sum(1, 2)).toBe(3) fails with a readable diff so you immediately see actual versus expected. = Un'asserzione come expect(sum(1, 2)).toBe(3) fallisce con un diff leggibile cosi' vedi subito reale e atteso."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "Matcher",
+      "set": {
+        "example": "Pick the right matcher (toEqual for deep objects, toBeCloseTo for floats, toThrow for exceptions) so failures read like specifications. = Scegli il matcher giusto (toEqual per oggetti profondi, toBeCloseTo per float, toThrow per eccezioni) cosi' i fallimenti si leggono come specifiche."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "beforeEach",
+      "set": {
+        "example": "Use beforeEach(() => seedDatabase()) so every test starts from the same known fixtures without leaking state between cases. = Usa beforeEach(() => seedDatabase()) cosi' ogni test parte dalle stesse fixture note senza far trapelare stato tra i casi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "afterEach",
+      "set": {
+        "example": "Register afterEach(() => server.close()) so resources opened by individual tests are released even when assertions throw. = Registra afterEach(() => server.close()) cosi' le risorse aperte dai singoli test sono rilasciate anche quando le asserzioni lanciano eccezioni."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "beforeAll",
+      "set": {
+        "example": "Expensive setup like spinning a Docker test container belongs in beforeAll so it runs once per suite instead of per test. = Setup costosi come avviare un container Docker di test stanno in beforeAll cosi' girano una volta per suite invece che per test."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "Test Case",
+      "set": {
+        "example": "Keep each test case focused on one assertion path so a failure message points directly at the broken behavior. = Mantieni ogni caso di test focalizzato su un singolo percorso di asserzione cosi' il messaggio di fallimento punta direttamente al comportamento rotto."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_2",
+      "english": "Test Suite",
+      "set": {
+        "example": "Organising the test suite by feature folder lets new contributors find related cases without grepping across the repository. = Organizzare la test suite per cartella di feature permette ai nuovi contributori di trovare casi correlati senza grep nell'intero repository."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "Mock",
+      "set": {
+        "example": "Replacing the payment gateway with a mock keeps unit tests deterministic and avoids charging real cards during CI runs. = Sostituire il gateway di pagamento con un mock mantiene i test unitari deterministici ed evita di addebitare carte reali durante i run CI."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "Stub",
+      "set": {
+        "example": "Inject a stub that always returns a fixed user record so the code under test never depends on a live database during unit runs. = Inietta uno stub che restituisce sempre un record utente fisso cosi' il codice sotto test non dipende mai da un database reale durante i run unitari."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "Mock Function",
+      "set": {
+        "example": "Create a mock function with jest.fn() and assert on .mock.calls to verify it was invoked with the expected arguments. = Crea una mock function con jest.fn() e fai asserzioni su .mock.calls per verificare che sia stata invocata con gli argomenti attesi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "mockReturnValue",
+      "set": {
+        "example": "Chain fn.mockReturnValue({ id: 1 }) on a Jest mock so any caller receives the canned response without hitting the real implementation. = Concatena fn.mockReturnValue({ id: 1 }) su un mock Jest cosi' ogni chiamante riceve la risposta predefinita senza colpire l'implementazione reale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "mockResolvedValue",
+      "set": {
+        "example": "Use db.findUser.mockResolvedValue(fakeUser) so awaiting the mock resolves to the fake user without touching a real database. = Usa db.findUser.mockResolvedValue(fakeUser) cosi' fare await sul mock si risolve nell'utente fittizio senza toccare un database reale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "Sinon",
+      "set": {
+        "italian": "Sinon",
+        "example": "Projects that use Mocha rely on Sinon to add spies, stubs, and timers without coupling to a specific assertion library. = I progetti che usano Mocha si affidano a Sinon per aggiungere spy, stub e timer senza accoppiarsi a una specifica libreria di asserzioni."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "nock",
+      "set": {
+        "italian": "nock",
+        "example": "Wrap external API calls with nock so unit tests can simulate 429 throttling or 500 errors without hitting the real third-party service. = Avvolgi le chiamate API esterne con nock cosi' i test unitari possono simulare throttling 429 o errori 500 senza colpire il servizio terzo reale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_3",
+      "english": "msw",
+      "set": {
+        "italian": "msw",
+        "example": "Frontend tests use msw to intercept fetch calls at the network layer so the same handlers work both in Jest and in the browser. = I test frontend usano msw per intercettare le chiamate fetch a livello rete cosi' gli stessi handler funzionano sia in Jest sia nel browser."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Integration Test",
+      "set": {
+        "example": "An integration test wires the real Express router to a real Postgres test database to catch issues that unit tests miss at the seams. = Un test di integrazione collega il vero router Express a un vero database Postgres di test per intercettare problemi che i test unitari mancano alle giunzioni."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "End-to-End",
+      "set": {
+        "example": "An end-to-end test drives a real browser through login, checkout, and order confirmation so the entire user flow stays green in CI. = Un test end-to-end pilota un browser reale attraverso login, checkout e conferma ordine cosi' l'intero flusso utente resta verde in CI."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Supertest",
+      "set": {
+        "italian": "Supertest",
+        "example": "With Supertest you mount your Express app in memory and assert on responses like await request(app).get('/users').expect(200). = Con Supertest monti la tua app Express in memoria e fai asserzioni sulle risposte come await request(app).get('/users').expect(200)."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Snapshot Test",
+      "set": {
+        "example": "Saving a snapshot test for rendered HTML flags accidental UI changes during code review without writing explicit assertions per element. = Salvare un test snapshot per l'HTML renderizzato segnala modifiche UI accidentali durante la code review senza scrivere asserzioni esplicite per elemento."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Code Coverage",
+      "set": {
+        "example": "Running jest --coverage produces a code coverage report that highlights which branches of business logic are still untested. = Eseguire jest --coverage produce un report di code coverage che evidenzia quali rami di logica di business sono ancora non testati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Istanbul",
+      "set": {
+        "italian": "Istanbul",
+        "example": "Under the hood, Jest delegates to Istanbul to instrument each source file and tally statement, branch, and function coverage. = Sotto il cofano, Jest delega a Istanbul l'instrumentazione di ogni file sorgente per contare la copertura di statement, branch e function."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Test Database",
+      "set": {
+        "example": "Provision a dedicated test database that is truncated before every run so suites stay deterministic and never pollute production data. = Predisponi un database di test dedicato che viene truncato prima di ogni run cosi' le suite restano deterministiche e non inquinano mai i dati di produzione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Fixture",
+      "set": {
+        "example": "Storing reusable fixture JSON in a tests/fixtures folder lets every spec start from a known dataset without duplicating setup code. = Salvare fixture JSON riutilizzabili in una cartella tests/fixtures permette a ogni spec di partire da un dataset noto senza duplicare il codice di setup."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Faker",
+      "set": {
+        "italian": "Faker",
+        "example": "Generate realistic dummy emails and addresses with Faker so seed scripts populate staging environments without leaking real user data. = Genera email e indirizzi realistici fittizi con Faker cosi' gli script seed popolano gli ambienti di staging senza far trapelare dati reali."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "node_testing_4",
+      "english": "Test in Watch Mode",
+      "set": {
+        "example": "Running jest --watch reruns only the tests affected by your last edit, giving sub-second feedback during red-green-refactor loops. = Eseguire jest --watch rilancia solo i test influenzati dall'ultima modifica, dando feedback sotto il secondo durante i cicli red-green-refactor."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "Input Validation",
+      "set": {
+        "example": "Strong input validation on every API endpoint rejects malformed payloads early and removes whole classes of injection vulnerabilities. = Una forte validazione dell'input su ogni endpoint API rifiuta presto payload malformati e rimuove intere classi di vulnerabilita' di injection."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "Sanitization",
+      "set": {
+        "example": "Before storing user comments in MongoDB, run sanitization with DOMPurify to strip embedded script tags and event handlers. = Prima di salvare commenti utente in MongoDB, esegui la sanificazione con DOMPurify per rimuovere tag script incorporati e handler di eventi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "XSS",
+      "set": {
+        "italian": "XSS",
+        "example": "A reflected XSS bug lets an attacker append <script> tags in a URL parameter that the page renders unescaped back to the victim. = Un bug XSS riflesso permette a un attaccante di accodare tag <script> in un parametro URL che la pagina renderizza senza escape verso la vittima."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "SQL Injection",
+      "set": {
+        "example": "A classic SQL injection turns the form input ' OR 1=1 -- into a query that returns every user record, leaking the full table. = Una SQL injection classica trasforma l'input form ' OR 1=1 -- in una query che restituisce ogni record utente, esponendo l'intera tabella."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "Parameterized Query",
+      "set": {
+        "example": "Switching to a parameterized query like db.query('SELECT * FROM u WHERE id=$1', [id]) neutralises SQL injection even with hostile input. = Passare a una query parametrizzata come db.query('SELECT * FROM u WHERE id=$1', [id]) neutralizza la SQL injection anche con input ostile."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "Command Injection",
+      "set": {
+        "example": "Concatenating user input into exec('ping ' + host) opens a command injection where ; rm -rf / would run alongside the ping. = Concatenare input utente in exec('ping ' + host) apre una command injection dove ; rm -rf / girerebbe insieme al ping."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "Path Traversal",
+      "set": {
+        "example": "A naive download endpoint that joins user input with __dirname enables path traversal like ../../../etc/passwd to leak server files. = Un endpoint di download ingenuo che unisce input utente con __dirname abilita un path traversal come ../../../etc/passwd per esfiltrare file del server."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "Validator",
+      "set": {
+        "example": "Pull in the validator package and call isEmail or isUUID to enforce input shape before any business logic processes the request. = Includi il pacchetto validator e chiama isEmail o isUUID per imporre la forma dell'input prima che qualsiasi logica di business processi la richiesta."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "express-validator",
+      "set": {
+        "italian": "express-validator",
+        "example": "Chaining body('email').isEmail() with express-validator declares validation rules per field and surfaces all errors in a single response. = Concatenare body('email').isEmail() con express-validator dichiara regole di validazione per campo e mostra tutti gli errori in un'unica risposta."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_5",
+      "english": "Whitelist",
+      "set": {
+        "example": "Define a whitelist of allowed query parameters so unknown keys are rejected instead of silently flowing into the ORM filter object. = Definisci una whitelist di query parameter consentiti cosi' chiavi sconosciute sono rifiutate invece di scorrere silenziosamente nell'oggetto filtro ORM."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "Helmet",
+      "set": {
+        "english": "helmet middleware",
+        "italian": "helmet middleware",
+        "example": "Calling app.use(helmet()) wires in the helmet middleware that sets CSP, HSTS, and X-Frame-Options with sensible defaults. = Chiamare app.use(helmet()) collega l'helmet middleware che imposta CSP, HSTS e X-Frame-Options con default sensati.",
+        "note": "Rinominato per distinguere dall'Helmet generico al livello 8."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "CSP",
+      "set": {
+        "italian": "CSP",
+        "example": "A strict CSP header like Content-Security-Policy: default-src 'self' blocks inline scripts and stops most reflected XSS payloads. = Un header CSP severo come Content-Security-Policy: default-src 'self' blocca script inline e ferma la maggior parte dei payload XSS riflessi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "HSTS",
+      "set": {
+        "italian": "HSTS",
+        "example": "Sending HSTS with max-age=31536000 tells browsers to refuse plain HTTP for the next year, defeating downgrade attacks on first request. = Inviare HSTS con max-age=31536000 dice ai browser di rifiutare HTTP in chiaro per il prossimo anno, sconfiggendo attacchi di downgrade alla prima richiesta."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "X-Frame-Options",
+      "set": {
+        "example": "Setting X-Frame-Options: DENY stops any other site from embedding your page in an iframe, defending against clickjacking. = Impostare X-Frame-Options: DENY impedisce a qualsiasi altro sito di incorporare la tua pagina in un iframe, difendendo dal clickjacking."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "X-Content-Type-Options",
+      "set": {
+        "example": "Always emit X-Content-Type-Options: nosniff so browsers respect the declared MIME type and never execute uploaded text as JavaScript. = Emetti sempre X-Content-Type-Options: nosniff cosi' i browser rispettano il MIME type dichiarato e non eseguono mai testo caricato come JavaScript."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "Referrer Policy",
+      "set": {
+        "example": "Configure Referrer Policy: strict-origin-when-cross-origin so internal URLs do not leak to third-party analytics scripts in the Referer header. = Configura Referrer Policy: strict-origin-when-cross-origin cosi' gli URL interni non vengono esposti agli script di analytics terzi nell'header Referer."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "Permissions-Policy",
+      "set": {
+        "example": "Send Permissions-Policy: camera=(), microphone=() to disable hardware APIs the app does not need, reducing the attack surface. = Invia Permissions-Policy: camera=(), microphone=() per disabilitare API hardware non necessarie all'app, riducendo la superficie di attacco."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "NoSniff",
+      "set": {
+        "example": "The nosniff value of X-Content-Type-Options is what stops Internet Explorer from guessing that an uploaded .txt is executable HTML. = Il valore nosniff di X-Content-Type-Options e' cio' che impedisce a Internet Explorer di indovinare che un .txt caricato sia HTML eseguibile."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "Subresource Integrity",
+      "set": {
+        "example": "Adding integrity=\"sha384-...\" to a CDN script tag enforces subresource integrity so the browser refuses code if the CDN is compromised. = Aggiungere integrity=\"sha384-...\" a un tag script CDN impone l'integrita' della sottorisorsa cosi' il browser rifiuta il codice se il CDN viene compromesso."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_6",
+      "english": "Trust Boundary",
+      "set": {
+        "example": "Drawing a clear trust boundary between the public REST surface and internal services tells you exactly where authentication must be enforced. = Disegnare un confine di fiducia chiaro tra la superficie REST pubblica e i servizi interni ti dice esattamente dove l'autenticazione deve essere imposta."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_7",
+      "english": "Rate Limiting",
+      "set": {
+        "example": "Applying rate limiting of 100 requests per IP per minute on /login slows down credential stuffing without affecting honest users. = Applicare rate limiting di 100 richieste per IP al minuto su /login rallenta il credential stuffing senza penalizzare gli utenti onesti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_7",
+      "english": "express-rate-limit",
+      "set": {
+        "italian": "express-rate-limit",
+        "example": "Drop express-rate-limit into the auth router with a windowMs of 60000 to cap brute-force attempts per source address. = Inserisci express-rate-limit nel router di auth con un windowMs di 60000 per limitare i tentativi di brute-force per indirizzo sorgente."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_7",
+      "english": "Brute Force",
+      "set": {
+        "example": "Attackers run a brute force script that tries millions of leaked passwords against your login endpoint until one succeeds. = Gli attaccanti eseguono uno script di brute force che prova milioni di password trapelate contro il tuo endpoint di login finche' una non riesce."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_7",
+      "english": "Account Lockout",
+      "set": {
+        "example": "Enforcing account lockout after five failed attempts within ten minutes stops automated brute-force scripts without much friction for real users. = Imporre un blocco account dopo cinque tentativi falliti in dieci minuti ferma gli script di brute-force automatici senza molto attrito per gli utenti reali."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_7",
+      "english": "CAPTCHA",
+      "set": {
+        "italian": "CAPTCHA",
+        "example": "Adding a CAPTCHA challenge after three failed logins blocks credential-stuffing bots while still letting legitimate users retry. = Aggiungere una sfida CAPTCHA dopo tre login falliti blocca i bot di credential stuffing pur permettendo agli utenti legittimi di riprovare."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_7",
+      "english": "IP Allowlist",
+      "set": {
+        "example": "Restrict the admin dashboard to an IP allowlist of office subnets so credentials leaked elsewhere cannot reach the sensitive endpoints. = Restringi la dashboard admin a una IP allowlist di subnet d'ufficio cosi' credenziali trapelate altrove non possono raggiungere gli endpoint sensibili."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_7",
+      "english": "WAF",
+      "set": {
+        "italian": "WAF",
+        "example": "A WAF in front of the API inspects every request and blocks well-known SQL injection and XSS signatures before they reach Node. = Un WAF davanti all'API ispeziona ogni richiesta e blocca le firme note di SQL injection e XSS prima che raggiungano Node."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_7",
+      "english": "DDoS",
+      "set": {
+        "italian": "DDoS",
+        "example": "During a DDoS attack, thousands of compromised devices flood the load balancer with junk traffic so legitimate users cannot connect. = Durante un attacco DDoS, migliaia di dispositivi compromessi inondano il load balancer di traffico spazzatura cosi' gli utenti legittimi non possono connettersi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_7",
+      "english": "Token Bucket",
+      "set": {
+        "example": "A token bucket algorithm gives each client a refillable quota so short bursts are allowed while sustained abuse is throttled. = Un algoritmo token bucket assegna a ogni client una quota ricaricabile cosi' brevi raffiche sono consentite mentre l'abuso prolungato e' limitato."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "npm audit",
+      "set": {
+        "italian": "npm audit",
+        "example": "Running npm audit during CI fails the build whenever a transitive dependency picks up a known high-severity advisory. = Eseguire npm audit durante la CI fa fallire la build ogni volta che una dipendenza transitiva acquisisce un advisory noto ad alta severita'."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "npm audit fix",
+      "set": {
+        "italian": "npm audit fix",
+        "example": "After a fresh advisory lands, run npm audit fix to upgrade vulnerable transitive packages while staying inside the declared semver ranges. = Quando arriva un nuovo advisory, esegui npm audit fix per aggiornare pacchetti transitivi vulnerabili rimanendo dentro i range semver dichiarati."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "CVE",
+      "set": {
+        "italian": "CVE",
+        "example": "Each public vulnerability gets a CVE identifier like CVE-2024-1234 so vendors, scanners, and patch notes can refer to the same issue. = Ogni vulnerabilita' pubblica ottiene un identificatore CVE come CVE-2024-1234 cosi' vendor, scanner e patch note possono riferirsi alla stessa issue."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "Snyk",
+      "set": {
+        "italian": "Snyk",
+        "example": "Connecting the repo to Snyk surfaces vulnerable transitive dependencies directly in pull requests and suggests safe upgrade paths. = Collegare il repo a Snyk evidenzia dipendenze transitive vulnerabili direttamente nelle pull request e suggerisce percorsi di upgrade sicuri."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "Dependabot",
+      "set": {
+        "italian": "Dependabot",
+        "example": "Enable Dependabot on GitHub and it will open weekly PRs that bump vulnerable packages so the team never sits on stale advisories. = Abilita Dependabot su GitHub e aprira' PR settimanali che alzano i pacchetti vulnerabili cosi' il team non resta mai su advisory vecchi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "Typosquatting",
+      "set": {
+        "example": "A typosquatting attack publishes a malicious 'expres' package hoping developers mistype it while installing the real 'express'. = Un attacco di typosquatting pubblica un pacchetto malevolo 'expres' sperando che gli sviluppatori lo digitino male installando il vero 'express'."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "Lockfile",
+      "set": {
+        "example": "Committing the package-lock.json lockfile guarantees CI installs the exact same dependency tree your developers tested locally. = Committare il lockfile package-lock.json garantisce che la CI installi l'albero di dipendenze identico a quello testato in locale dagli sviluppatori."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "npm ci",
+      "set": {
+        "italian": "npm ci",
+        "example": "On CI servers, prefer npm ci over npm install so the build fails fast if the lockfile and package.json have drifted apart. = Sui server CI, preferisci npm ci a npm install cosi' la build fallisce subito se lockfile e package.json sono divergenti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "node_security_8",
+      "english": "Provenance",
+      "set": {
+        "example": "Publishing with npm publish --provenance attaches signed provenance metadata so consumers can verify the package came from your CI pipeline. = Pubblicare con npm publish --provenance allega metadata di provenance firmati cosi' i consumatori possono verificare che il pacchetto provenga dalla tua pipeline CI."
+      }
+    }
+  ]
+}

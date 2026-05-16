@@ -1,0 +1,1038 @@
+{
+  "fixes": [
+    {
+      "level": "2",
+      "lesson": "net_tcpip_2",
+      "english": "SYN",
+      "set": {
+        "italian": "SYN",
+        "note": "SYN sta per 'synchronize': è il primo flag del three-way handshake TCP."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_2",
+      "english": "ACK",
+      "set": {
+        "italian": "ACK",
+        "note": "ACK sta per 'acknowledgement': conferma la ricezione di un segmento TCP."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_2",
+      "english": "FIN",
+      "set": {
+        "italian": "FIN",
+        "note": "FIN sta per 'finish': segnala la chiusura ordinata di una connessione TCP."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_2",
+      "english": "RST",
+      "set": {
+        "italian": "RST",
+        "note": "RST sta per 'reset': interrompe bruscamente una connessione TCP."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "net_tcpip_2",
+      "english": "PSH",
+      "set": {
+        "italian": "PSH",
+        "note": "PSH sta per 'push': dice al ricevente di passare subito i dati all'applicazione senza bufferizzarli."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_3",
+      "english": "RIP",
+      "set": {
+        "italian": "RIP",
+        "note": "RIP (Routing Information Protocol) è un protocollo distance-vector basato sul conteggio degli hop."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_3",
+      "english": "OSPF",
+      "set": {
+        "italian": "OSPF",
+        "note": "OSPF (Open Shortest Path First) è un protocollo link-state che usa l'algoritmo di Dijkstra."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_2",
+      "english": "802.11ac",
+      "set": {
+        "italian": "802.11ac",
+        "note": "Standard IEEE noto commercialmente come Wi-Fi 5, opera in banda 5 GHz."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_2",
+      "english": "802.11ax",
+      "set": {
+        "italian": "802.11ax",
+        "note": "Standard IEEE noto commercialmente come Wi-Fi 6, introduce OFDMA e MU-MIMO uplink."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_other_4",
+      "english": "Active Directory",
+      "set": {
+        "italian": "Active Directory",
+        "note": "Servizio di directory di Microsoft per gestione di identità, gruppi e policy in ambienti Windows."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_capture_3",
+      "english": "Wireshark",
+      "set": {
+        "italian": "Wireshark",
+        "note": "Analizzatore di protocollo grafico più diffuso, basato sulla libreria libpcap."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_dscp_2",
+      "english": "EF",
+      "set": {
+        "italian": "EF",
+        "note": "EF (Expedited Forwarding, DSCP 46) è la classe a priorità più alta, usata per traffico voce."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_dscp_2",
+      "english": "AF",
+      "set": {
+        "italian": "AF",
+        "note": "AF (Assured Forwarding) definisce 4 classi con 3 livelli di drop precedence ciascuna."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_intent_4",
+      "english": "Cisco DNA Center",
+      "set": {
+        "italian": "Cisco DNA Center",
+        "note": "Piattaforma Cisco per gestione di rete intent-based con automazione, assurance e analytics."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_idsips_1",
+      "english": "Snort",
+      "set": {
+        "italian": "Snort",
+        "note": "IDS/IPS open source storico, ora mantenuto da Cisco; usa regole testuali sul traffico."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_idsips_1",
+      "english": "Suricata",
+      "set": {
+        "italian": "Suricata",
+        "note": "IDS/IPS open source multi-thread, compatibile con le regole Snort ma più moderno e performante."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_apis_2",
+      "english": "gRPC",
+      "set": {
+        "italian": "gRPC",
+        "note": "Framework RPC ad alte prestazioni di Google, basato su HTTP/2 e Protocol Buffers."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "Zabbix",
+      "set": {
+        "italian": "Zabbix",
+        "note": "Sistema open source di monitoring enterprise per metriche di rete, host e applicazioni."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "PRTG",
+      "set": {
+        "italian": "PRTG",
+        "note": "Sistema di monitoring commerciale di Paessler basato su sensori (SNMP, sFlow, NetFlow, ecc.)."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "Nagios",
+      "set": {
+        "italian": "Nagios",
+        "note": "Sistema di monitoring storico per host e servizi, base di molti fork moderni come Icinga."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "LibreNMS",
+      "set": {
+        "italian": "LibreNMS",
+        "note": "NMS open source basato su PHP e MySQL, con auto-discovery via SNMP e dashboard integrate."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "Grafana",
+      "set": {
+        "italian": "Grafana",
+        "note": "Piattaforma open source di dashboard e visualizzazione per metriche time-series."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_npm_3",
+      "english": "Prometheus",
+      "set": {
+        "italian": "Prometheus",
+        "note": "Sistema di monitoring CNCF basato su un database time-series e sul linguaggio di query PromQL."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_logs_4",
+      "english": "PagerDuty",
+      "set": {
+        "italian": "PagerDuty",
+        "note": "Piattaforma on-call e incident response che instrada gli alert al tecnico di turno."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_certs_1",
+      "english": "CCNA",
+      "set": {
+        "italian": "CCNA",
+        "note": "Cisco Certified Network Associate: certificazione Cisco di livello associate per i fondamenti di rete."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_certs_1",
+      "english": "CCNP",
+      "set": {
+        "italian": "CCNP",
+        "note": "Cisco Certified Network Professional: certificazione Cisco di livello professional con specializzazioni."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_certs_1",
+      "english": "CCIE",
+      "set": {
+        "italian": "CCIE",
+        "note": "Cisco Certified Internetwork Expert: la certificazione Cisco più avanzata, con esame lab pratico."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_certs_1",
+      "english": "CompTIA Network+",
+      "set": {
+        "italian": "CompTIA Network+",
+        "note": "Certificazione neutrale vendor di livello entry per i fondamenti del networking."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_certs_1",
+      "english": "JNCIA",
+      "set": {
+        "italian": "JNCIA",
+        "note": "Juniper Networks Certified Internet Associate: certificazione Juniper di livello entry su Junos OS."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_certs_1",
+      "english": "AWS Advanced Networking",
+      "set": {
+        "italian": "AWS Advanced Networking",
+        "note": "Certificazione AWS specialty per architetture di rete cloud complesse e ibride."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_certs_1",
+      "english": "PCNSE",
+      "set": {
+        "italian": "PCNSE",
+        "note": "Palo Alto Networks Certified Network Security Engineer: certificazione sui firewall Palo Alto."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_certs_1",
+      "english": "Fortinet NSE",
+      "set": {
+        "italian": "Fortinet NSE",
+        "note": "Network Security Expert: percorso di certificazione Fortinet su 8 livelli (NSE 1-8)."
+      }
+    },
+
+    {
+      "level": "3",
+      "lesson": "net_addressing_2",
+      "english": "Address Class",
+      "set": {
+        "example": "Classful routing assigned each IPv4 address class a fixed prefix length, which CIDR later replaced with variable masks. = Il routing classful assegnava a ogni classe di indirizzi IPv4 una lunghezza di prefisso fissa, che CIDR ha poi sostituito con maschere variabili."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_linux_4",
+      "english": "Class",
+      "set": {
+        "example": "In HTB you create a parent class to define total bandwidth and child classes to share it among traffic groups. = In HTB crei una classe padre per definire la banda totale e classi figlie per condividerla tra gruppi di traffico."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_p4_3",
+      "english": "Programmable Switch",
+      "set": {
+        "example": "On a programmable switch you can write a custom P4 program to parse a new header type the silicon never saw before. = Su uno switch programmabile puoi scrivere un programma P4 custom per analizzare un nuovo tipo di header che il silicio non aveva mai visto prima."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_intent_4",
+      "english": "Service Mesh",
+      "set": {
+        "example": "Adopting a service mesh like Istio offloads retries, mTLS and tracing from each microservice into a sidecar proxy. = Adottare una service mesh come Istio sposta retry, mTLS e tracing da ogni microservizio a un sidecar proxy."
+      }
+    },
+
+    {
+      "level": "3",
+      "lesson": "net_addressing_1",
+      "english": "IP Address",
+      "set": {
+        "example": "We had to whitelist the office IP address on the database firewall before remote workers could query analytics. = Abbiamo dovuto inserire in whitelist l'indirizzo IP dell'ufficio sul firewall del database prima che i lavoratori da remoto potessero interrogare l'analytics."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_2",
+      "english": "Subnet Mask",
+      "set": {
+        "example": "A /24 subnet mask (255.255.255.0) gives you 254 usable host addresses inside one broadcast domain. = Una subnet mask /24 (255.255.255.0) ti da' 254 indirizzi host utilizzabili dentro un singolo dominio di broadcast."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_2",
+      "english": "Network Address",
+      "set": {
+        "example": "The network address is the first IP of a subnet and identifies the whole segment rather than any single host. = L'indirizzo di rete e' il primo IP di una sottorete e identifica l'intero segmento invece di un singolo host."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_addressing_2",
+      "english": "Broadcast Address",
+      "set": {
+        "example": "Sending a packet to the subnet broadcast address (e.g. 192.168.1.255) delivers it to every host in that LAN. = Inviare un pacchetto all'indirizzo di broadcast della sottorete (es. 192.168.1.255) lo consegna a ogni host di quella LAN."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_1",
+      "english": "OUI",
+      "set": {
+        "example": "The first three bytes of a MAC address form the OUI, which lets you look up the manufacturer of a NIC. = I primi tre byte di un indirizzo MAC formano l'OUI, che ti permette di risalire al produttore di una scheda di rete."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_1",
+      "english": "Broadcast Domain",
+      "set": {
+        "example": "Splitting one big VLAN into smaller broadcast domains reduces ARP traffic and limits failure blast radius. = Dividere una grossa VLAN in domini di broadcast più piccoli riduce il traffico ARP e limita l'impatto dei guasti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_1",
+      "english": "Hop",
+      "set": {
+        "example": "Each router a packet crosses counts as one hop, and the TTL is decremented at every hop until it reaches zero. = Ogni router che un pacchetto attraversa conta come un hop, e il TTL viene decrementato a ogni hop finché non arriva a zero."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_2",
+      "english": "Policy-Based Routing",
+      "set": {
+        "example": "We use policy-based routing to send guest Wi-Fi traffic through the cheap consumer link and corporate traffic through MPLS. = Usiamo il policy-based routing per inviare il traffico del Wi-Fi ospiti sul link consumer economico e il traffico aziendale tramite MPLS.",
+        "note": "Diverso dal routing classico, decide il next-hop in base a sorgente, applicazione o marcatura del pacchetto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_3",
+      "english": "Neighbor",
+      "set": {
+        "example": "Two OSPF routers become neighbors only after they exchange Hello packets and agree on area, hello interval and authentication. = Due router OSPF diventano vicini solo dopo aver scambiato pacchetti Hello e concordato area, hello interval e autenticazione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_4",
+      "english": "Summarization",
+      "set": {
+        "example": "Route summarization at area borders shrinks routing tables and hides internal topology changes from the rest of the network. = La summarization delle rotte ai confini delle aree riduce le tabelle di routing e nasconde i cambi di topologia interni al resto della rete."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_4",
+      "english": "Bidirectional Forwarding Detection",
+      "set": {
+        "note": "BFD rileva guasti di link in pochi millisecondi, molto più veloce dei timer hello dei protocolli di routing."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_1",
+      "english": "Iterative Query",
+      "set": {
+        "example": "A root server answers an iterative query by referring the resolver to the TLD server rather than resolving the name itself. = Un root server risponde a una query iterativa rinviando il resolver al server TLD invece di risolvere il nome da solo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_3",
+      "english": "DNS Cache",
+      "set": {
+        "example": "Flushing the local DNS cache after changing an A record forces the OS to re-query the authoritative server. = Svuotare la cache DNS locale dopo aver cambiato un record A obbliga il sistema operativo a riconsultare il server autoritativo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_1",
+      "english": "Pipelining",
+      "set": {
+        "example": "HTTP/1.1 pipelining lets a client send several requests on the same TCP connection without waiting for each response. = Il pipelining di HTTP/1.1 permette al client di inviare più richieste sulla stessa connessione TCP senza attendere ogni risposta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "Request",
+      "set": {
+        "example": "Every HTTP request includes a method, a path, headers and optionally a body sent to the server. = Ogni richiesta HTTP include un metodo, un path, header e opzionalmente un body inviato al server."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "HTTP Header",
+      "set": {
+        "example": "The User-Agent HTTP header tells the server which browser or client library is making the request. = L'header HTTP User-Agent indica al server quale browser o libreria client sta facendo la richiesta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "404 Not Found",
+      "set": {
+        "example": "Returning 404 Not Found means the URL is valid syntax but the requested resource does not exist on the server. = Restituire 404 Not Found significa che l'URL e' sintatticamente valido ma la risorsa richiesta non esiste sul server."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "net_protocols_2",
+      "english": "500 Internal Server Error",
+      "set": {
+        "example": "A 500 Internal Server Error usually points to an unhandled exception in the backend rather than a problem with the request. = Un 500 Internal Server Error di solito indica un'eccezione non gestita nel backend piuttosto che un problema con la richiesta."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_1",
+      "english": "Default Policy",
+      "set": {
+        "example": "Setting the default policy to DROP on the INPUT chain enforces a deny-by-default posture on the firewall. = Impostare la policy predefinita a DROP sulla chain INPUT impone una postura deny-by-default sul firewall."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_1",
+      "english": "Five-Tuple",
+      "set": {
+        "example": "Stateful firewalls track a five-tuple of source IP, destination IP, source port, destination port and protocol per flow. = I firewall stateful tracciano una cinquina di IP sorgente, IP destinazione, porta sorgente, porta destinazione e protocollo per ogni flusso."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_3",
+      "english": "Wildcard Mask",
+      "set": {
+        "example": "On Cisco ACLs you write a wildcard mask like 0.0.0.255 to mean 'match the first 24 bits of the address'. = Sulle ACL Cisco scrivi una wildcard mask come 0.0.0.255 per dire 'fa match sui primi 24 bit dell'indirizzo'."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_3",
+      "english": "Rule Order",
+      "set": {
+        "example": "Firewall rule order is critical: a permissive rule placed before a deny rule will silently override the block. = L'ordine delle regole del firewall e' critico: una regola permissiva messa prima di una deny annulla silenziosamente il blocco."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_4",
+      "english": "Table",
+      "set": {
+        "example": "iptables organizes rules into tables like filter, nat and mangle, each handling a different stage of packet processing. = iptables organizza le regole in tabelle come filter, nat e mangle, ognuna gestisce una fase diversa del processing dei pacchetti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_4",
+      "english": "Match",
+      "set": {
+        "example": "An iptables rule combines a match condition (port, protocol, state) with a target action like ACCEPT or DROP. = Una regola iptables combina una condizione di match (porta, protocollo, stato) con un'azione target come ACCEPT o DROP."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "net_firewalls_4",
+      "english": "Connection Tracking",
+      "set": {
+        "example": "Connection tracking (conntrack) lets the firewall accept return traffic for an outbound flow without an explicit inbound rule. = Il tracking delle connessioni (conntrack) permette al firewall di accettare il traffico di ritorno di un flusso uscente senza una regola in ingresso esplicita."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_1",
+      "english": "Tunneling Protocol",
+      "set": {
+        "example": "A tunneling protocol like GRE or IPsec wraps original packets inside a new IP header so they can cross an untrusted network. = Un protocollo di tunneling come GRE o IPsec incapsula i pacchetti originali dentro un nuovo header IP per attraversare una rete non fidata."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_1",
+      "english": "Encryption",
+      "set": {
+        "example": "Modern VPNs use AES-GCM or ChaCha20-Poly1305 encryption to protect tunneled traffic from eavesdropping on the wire. = Le VPN moderne usano cifratura AES-GCM o ChaCha20-Poly1305 per proteggere il traffico nel tunnel dall'intercettazione sulla linea."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_1",
+      "english": "MTU Issue",
+      "set": {
+        "example": "An MTU issue after enabling IPsec often shows up as TCP sessions that connect but hang on large payloads. = Un problema di MTU dopo aver attivato IPsec spesso si manifesta come sessioni TCP che si connettono ma si bloccano sui payload grandi."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_3",
+      "english": "Public Key",
+      "set": {
+        "example": "Each WireGuard peer is identified by its Curve25519 public key, which you exchange out of band before bringing the tunnel up. = Ogni peer WireGuard e' identificato dalla sua chiave pubblica Curve25519, che scambi fuori banda prima di alzare il tunnel."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_4",
+      "english": "Rekey",
+      "set": {
+        "example": "IPsec automatically does a rekey before the SA expires so the tunnel never carries traffic with stale keying material. = IPsec rinegozia automaticamente le chiavi prima che scada la SA, così il tunnel non trasporta mai traffico con materiale crittografico vecchio."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_4",
+      "english": "Perfect Forward Secrecy",
+      "set": {
+        "example": "Enabling Perfect Forward Secrecy means compromising one session key does not let an attacker decrypt past or future sessions. = Abilitare la Perfect Forward Secrecy significa che compromettere una chiave di sessione non permette a un attaccante di decifrare sessioni passate o future."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_proxy_2",
+      "english": "Open Proxy",
+      "set": {
+        "example": "An open proxy on the public Internet quickly gets abused for spam, credential stuffing and traffic anonymization. = Un proxy aperto sull'Internet pubblico viene rapidamente abusato per spam, credential stuffing e anonimizzazione del traffico."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "net_services_lb_3",
+      "english": "Layer 4 Load Balancer",
+      "set": {
+        "example": "A Layer 4 load balancer distributes connections based on IP and port without inspecting the application payload. = Un bilanciatore Layer 4 distribuisce le connessioni in base a IP e porta senza ispezionare il payload applicativo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_file_2",
+      "english": "FTPS",
+      "set": {
+        "example": "FTPS adds TLS encryption on top of classic FTP, so credentials and data are not transmitted in clear text. = FTPS aggiunge cifratura TLS al classico FTP, così credenziali e dati non viaggiano in chiaro."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_file_2",
+      "english": "Passive Mode",
+      "set": {
+        "example": "FTP passive mode lets the client open the data connection, which works better behind NAT and stateful firewalls. = La modalita' passiva di FTP fa aprire al client la connessione dati, e funziona meglio dietro NAT e firewall stateful."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "net_protocols_other_4",
+      "english": "OID",
+      "set": {
+        "example": "Each SNMP variable is identified by an OID, a dotted-number path like 1.3.6.1.2.1.2.2.1.10 for ifInOctets. = Ogni variabile SNMP e' identificata da un OID, un percorso di numeri puntati come 1.3.6.1.2.1.2.2.1.10 per ifInOctets."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_scan_4",
+      "english": "OS Detection",
+      "set": {
+        "example": "nmap OS detection (-O) sends crafted probes and matches the TCP/IP stack fingerprint against its signature database. = L'OS detection di nmap (-O) invia probe costruiti ad hoc e confronta l'impronta dello stack TCP/IP con il suo database di firme."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "Don't Fragment",
+      "set": {
+        "example": "Path MTU Discovery relies on the Don't Fragment flag: routers drop oversized packets and send back ICMP messages. = Il Path MTU Discovery si basa sul flag Don't Fragment: i router scartano i pacchetti troppo grandi e rimandano messaggi ICMP."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "Jumbograms",
+      "set": {
+        "example": "Jumbograms with an MTU around 9000 bytes reduce overhead on storage networks and high-throughput backends. = I jumbogram con MTU intorno a 9000 byte riducono l'overhead su reti di storage e backend ad alto throughput."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_3",
+      "english": "Bandwidth-Delay Product",
+      "set": {
+        "example": "The bandwidth-delay product tells you the in-flight bytes a TCP window must hold to keep a fat long pipe saturated. = Il prodotto banda-ritardo indica i byte in volo che una finestra TCP deve contenere per saturare un canale grosso e lungo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_methodology_4",
+      "english": "Root Cause",
+      "set": {
+        "example": "Always document the root cause of a network outage so the same misconfiguration does not bite the team twice. = Documenta sempre la causa radice di un'interruzione di rete così la stessa misconfigurazione non colpisce due volte il team."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_1",
+      "english": "Programmability",
+      "set": {
+        "example": "SDN programmability lets you push topology-wide policy changes through an API instead of touching every device by hand. = La programmabilità SDN ti permette di applicare modifiche di policy a tutta la topologia tramite API invece di toccare ogni dispositivo a mano."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_nfv_2",
+      "english": "Underlay Network",
+      "set": {
+        "example": "In a VXLAN fabric the underlay network is a plain IP routed transport while overlays carry tenant traffic. = In una fabric VXLAN la rete underlay e' un semplice trasporto IP routato mentre gli overlay portano il traffico dei tenant."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "net_sdn_p4_3",
+      "english": "Network OS",
+      "set": {
+        "example": "A modern network OS like SONiC runs as a Linux container stack and decouples software upgrades from hardware refreshes. = Un network OS moderno come SONiC gira come stack di container Linux e separa gli aggiornamenti software dal refresh dell'hardware."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_idsips_1",
+      "english": "Signature",
+      "set": {
+        "example": "An IDS signature describes a packet pattern that maps to a known exploit, like a specific Shellshock HTTP header. = Una firma IDS descrive un pattern di pacchetto associato a un exploit noto, come uno specifico header HTTP di Shellshock."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_idsips_1",
+      "english": "Inline Mode",
+      "set": {
+        "example": "Switching an IPS from passive tap to inline mode lets it drop malicious packets, but a sensor outage now breaks traffic. = Passare un IPS da tap passivo a modalità inline gli permette di scartare i pacchetti malevoli, ma un guasto del sensore ora interrompe il traffico."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_attacks_4",
+      "english": "Spoofing",
+      "set": {
+        "example": "ARP spoofing on a switched LAN lets an attacker poison the cache of neighbors and redirect traffic through their host. = Lo spoofing ARP su una LAN switched permette a un attaccante di avvelenare la cache dei vicini e dirottare il traffico sul proprio host."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "VNet",
+      "set": {
+        "example": "Each Azure VNet is logically isolated and you peer two VNets together to let workloads talk over the Microsoft backbone. = Ogni VNet Azure e' isolata logicamente e fai il peering di due VNet per far comunicare i workload sulla backbone Microsoft."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_vpc_1",
+      "english": "Region",
+      "set": {
+        "example": "Choosing the right cloud region trades off latency to users, data residency rules and the price per GB of egress. = Scegliere la cloud region giusta bilancia latenza verso gli utenti, regole di residenza dati e prezzo per GB di egress."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_lb_3",
+      "english": "ELB",
+      "set": {
+        "example": "An AWS ELB scales automatically with traffic and distributes requests across healthy targets in multiple availability zones. = Un ELB di AWS scala automaticamente con il traffico e distribuisce le richieste tra i target sani in più availability zone."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_tools_1",
+      "english": "Inventory",
+      "set": {
+        "example": "An Ansible inventory file groups hosts by role so a playbook can target only the edge routers or only the core switches. = Un file di inventory Ansible raggruppa gli host per ruolo, così un playbook può colpire solo i router edge o solo i core switch."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_python_3",
+      "english": "Genie",
+      "set": {
+        "example": "Cisco Genie parses CLI output into structured Python objects so you can write assertions in a network test suite. = Cisco Genie trasforma l'output CLI in oggetti Python strutturati così puoi scrivere assertion in una suite di test di rete."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_cicd_4",
+      "english": "Infrastructure as Code",
+      "set": {
+        "example": "Treating network configs as Infrastructure as Code lets you peer review changes in a pull request before they touch production. = Trattare le configurazioni di rete come Infrastructure as Code ti permette di fare code review dei cambiamenti in una pull request prima che tocchino la produzione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_cicd_4",
+      "english": "Network Lab",
+      "set": {
+        "example": "We rebuild the full network lab in containerlab every night to catch regressions before they reach the production fabric. = Ricostruiamo ogni notte l'intero lab di rete in containerlab per intercettare le regressioni prima che arrivino alla fabric di produzione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "net_auto_cicd_4",
+      "english": "Rollback",
+      "set": {
+        "example": "Plan a rollback step before pushing a routing change: many automation tools auto-revert if the device loses connectivity. = Pianifica un passo di rollback prima di applicare un cambio di routing: molti tool di automazione fanno revert automatico se il device perde connettività."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "Community String",
+      "set": {
+        "example": "An SNMPv2c community string acts as a plaintext password and should never traverse untrusted networks unencrypted. = Una community string SNMPv2c funge da password in chiaro e non dovrebbe mai attraversare reti non fidate senza cifratura."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_snmp_2",
+      "english": "Polling Interval",
+      "set": {
+        "example": "A 1-minute polling interval is a good default for interface counters, but CPU and memory often need 30 seconds. = Un intervallo di polling di 1 minuto e' un buon default per i counter di interfaccia, ma CPU e memoria richiedono spesso 30 secondi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "net_monitor_logs_4",
+      "english": "Severity Level",
+      "set": {
+        "example": "Syslog severity levels go from emergency (0) to debug (7), and most teams forward warning (4) and above to the SIEM. = I livelli di severità syslog vanno da emergency (0) a debug (7), e la maggior parte dei team inoltra warning (4) e superiori al SIEM."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "net_design_dcn_3",
+      "english": "End of Row",
+      "set": {
+        "example": "An end-of-row switch concentrates several rack cabinets onto one chassis, simplifying cabling but creating a fatter blast radius. = Uno switch end-of-row concentra più armadi rack su un unico chassis, semplificando il cablaggio ma creando un blast radius più ampio."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_certs_1",
+      "english": "Wireshark Certification",
+      "set": {
+        "example": "Earning the Wireshark Certified Network Analyst certification proves you can dissect captures and troubleshoot live traffic. = Ottenere la certificazione Wireshark Certified Network Analyst dimostra che sai sezionare le catture e fare troubleshooting sul traffico live."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_roles_2",
+      "english": "Network Administrator",
+      "set": {
+        "example": "A network administrator owns day-to-day operations like VLAN changes, firewall rule reviews and capacity planning. = Un amministratore di rete gestisce le operazioni quotidiane come modifiche VLAN, revisione delle regole firewall e pianificazione della capacità."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_practice_3",
+      "english": "Configuration Backup",
+      "set": {
+        "example": "Nightly configuration backups to a Git repo give you a tamper-evident history and a one-command rollback for every device. = Backup notturni delle configurazioni su un repo Git ti danno una storia a prova di manomissione e un rollback in un comando per ogni device."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_practice_3",
+      "english": "Least Privilege",
+      "set": {
+        "example": "Applying least privilege on RADIUS roles means a NOC operator can reboot a switch but cannot edit BGP policy. = Applicare il principio del privilegio minimo sui ruoli RADIUS significa che un operatore NOC può riavviare uno switch ma non modificare la policy BGP."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "net_pro_career_4",
+      "english": "Continuous Learning",
+      "set": {
+        "example": "Continuous learning in networking means following RFCs, vendor blogs and projects like FRR to keep pace with the field. = L'apprendimento continuo nel networking significa seguire RFC, blog dei vendor e progetti come FRR per stare al passo con il settore."
+      }
+    },
+
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "host",
+      "set": {
+        "english": "host command",
+        "italian": "comando host",
+        "example": "The host command performs a quick DNS lookup, ideal in scripts where you only need the answer without dig's verbosity. = Il comando host esegue un lookup DNS veloce, ideale negli script dove ti serve solo la risposta senza la verbosità di dig.",
+        "note": "Su Linux moderno è spesso un alias di bind-utils ed è più sintetico di dig."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "net_osi_2",
+      "english": "Segment",
+      "set": {
+        "english": "TCP segment",
+        "italian": "segmento TCP",
+        "example": "TCP breaks the application byte stream into segments, each carrying a sequence number for in-order reassembly. = TCP suddivide il flusso di byte applicativo in segmenti TCP, ognuno con un numero di sequenza per il riassemblaggio in ordine.",
+        "note": "Il segmento e' la PDU del livello 4 (transport) nel modello OSI."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_1",
+      "english": "Jitter",
+      "set": {
+        "english": "network jitter",
+        "italian": "jitter di rete",
+        "example": "High network jitter ruins VoIP calls even when bandwidth is plenty, because packets arrive out of cadence. = Un alto jitter di rete rovina le chiamate VoIP anche con banda abbondante, perché i pacchetti arrivano fuori cadenza.",
+        "note": "Misurato come deviazione del ritardo tra pacchetti consecutivi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_1",
+      "english": "Packet Loss",
+      "set": {
+        "english": "packet loss rate",
+        "italian": "tasso di perdita pacchetti",
+        "example": "A persistent 2% packet loss rate cripples TCP throughput long before users notice individual missing packets. = Un tasso di perdita pacchetti persistente del 2% degrada drasticamente il throughput TCP molto prima che gli utenti notino singoli pacchetti mancanti.",
+        "note": "Su WAN/Internet anche valori bassi (>1%) collassano la finestra di congestione TCP."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "net_routing_1",
+      "english": "Router",
+      "set": {
+        "english": "core router",
+        "italian": "router di core",
+        "example": "A core router moves traffic between major aggregation points and rarely runs access-layer features like NAT or DHCP. = Un router di core sposta traffico tra grandi punti di aggregazione e raramente esegue funzioni di accesso come NAT o DHCP.",
+        "note": "Si contrappone all'access router o edge router, posizionato vicino agli utenti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "net_switching_2",
+      "english": "Switch",
+      "set": {
+        "english": "Layer 3 switch",
+        "italian": "switch Layer 3",
+        "example": "A Layer 3 switch combines fast hardware switching with routing in silicon, perfect for inter-VLAN traffic at line rate. = Uno switch Layer 3 combina switching hardware veloce con il routing in silicio, perfetto per il traffico inter-VLAN a line rate.",
+        "note": "Detto anche multilayer switch, supporta sia funzioni L2 sia L3."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "net_wireless_1",
+      "english": "Access Point",
+      "set": {
+        "english": "wireless access point",
+        "italian": "access point wireless",
+        "example": "A wireless access point bridges Wi-Fi clients to the wired LAN and is centrally managed by the wireless LAN controller. = Un access point wireless fa da ponte tra i client Wi-Fi e la LAN cablata ed e' gestito centralmente dal controller wireless.",
+        "note": "Abbreviato AP, è il punto di ingresso radio per i dispositivi mobili."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "net_design_ha_2",
+      "english": "Stack",
+      "set": {
+        "english": "switch stack",
+        "italian": "stack di switch",
+        "example": "A switch stack lets multiple physical units act as one logical device, sharing MAC tables and a single management plane. = Uno stack di switch permette a più unità fisiche di comportarsi come un unico dispositivo logico, condividendo tabelle MAC e un solo piano di gestione.",
+        "note": "Tecnologie tipiche: Cisco StackWise, Aruba VSF, Juniper Virtual Chassis."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "net_vpn_1",
+      "english": "Encapsulation",
+      "set": {
+        "english": "VPN encapsulation",
+        "italian": "incapsulamento VPN",
+        "example": "VPN encapsulation wraps the original IP packet inside a new header so it can be tunneled across an untrusted network. = L'incapsulamento VPN avvolge il pacchetto IP originale dentro un nuovo header così può essere veicolato in tunnel su una rete non fidata.",
+        "note": "Esempi: ESP per IPsec, header GRE per i tunnel GRE, header WireGuard per WG."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "net_troubleshoot_2",
+      "english": "MTU",
+      "set": {
+        "english": "path MTU",
+        "italian": "MTU di percorso",
+        "example": "The path MTU is the smallest MTU along the route between two hosts and determines the largest packet that crosses without fragmentation. = L'MTU di percorso e' il minimo MTU lungo la rotta tra due host e determina il pacchetto più grande che attraversa senza frammentazione.",
+        "note": "Scoperto dinamicamente con Path MTU Discovery via ICMP 'Fragmentation Needed'."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_modern_2",
+      "english": "ip",
+      "set": {
+        "english": "ip command",
+        "italian": "comando ip",
+        "example": "The ip command from iproute2 replaces ifconfig and route, exposing every Linux networking knob in one tool. = Il comando ip di iproute2 sostituisce ifconfig e route, esponendo ogni leva del networking Linux in un singolo tool.",
+        "note": "Sintassi tipica: ip <oggetto> <azione>, es. 'ip addr add', 'ip route show'."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "net_qos_1",
+      "english": "Best-Effort",
+      "set": {
+        "english": "best-effort class",
+        "italian": "classe best-effort",
+        "example": "In a DiffServ design the best-effort class gets whatever bandwidth is left after voice, video and business traffic are served. = In una progettazione DiffServ la classe best-effort riceve la banda residua dopo aver servito voce, video e traffico business.",
+        "note": "Corrisponde al DSCP 0 (default) e ha la priorità più bassa."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "net_dns_3",
+      "english": "TTL",
+      "set": {
+        "english": "DNS TTL",
+        "italian": "TTL DNS",
+        "example": "A short DNS TTL means resolvers re-query the authoritative server often, useful right before a planned cutover. = Un TTL DNS breve significa che i resolver riconsultano il server autoritativo spesso, utile poco prima di un cutover pianificato.",
+        "note": "Non confondere con il TTL dell'header IP, che invece limita gli hop di un pacchetto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "net_tools_basic_1",
+      "english": "arp",
+      "set": {
+        "english": "arp command",
+        "italian": "comando arp",
+        "example": "Running the arp command shows the kernel ARP cache, mapping known IPv4 neighbors to their MAC addresses. = Eseguire il comando arp mostra la cache ARP del kernel, mappando i vicini IPv4 noti ai loro indirizzi MAC.",
+        "note": "Sui sistemi moderni è spesso sostituito da 'ip neigh', che fa lo stesso ed è più consistente."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_ospf_2",
+      "english": "OSPF",
+      "set": {
+        "english": "OSPFv3",
+        "italian": "OSPFv3",
+        "example": "OSPFv3 extends OSPF to IPv6 by carrying prefixes in dedicated LSAs and authenticating with IPsec instead of MD5. = OSPFv3 estende OSPF a IPv6 trasportando i prefissi in LSA dedicati e autenticandosi con IPsec invece di MD5.",
+        "note": "Stesso algoritmo SPF di OSPFv2 ma con LSA ridisegnate per IPv6."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "net_routing_eigrp_3",
+      "english": "EIGRP",
+      "set": {
+        "english": "EIGRP named mode",
+        "italian": "EIGRP named mode",
+        "example": "EIGRP named mode replaces the legacy classic configuration with a single hierarchical block, easier to maintain at scale. = L'EIGRP named mode sostituisce la classica configurazione legacy con un singolo blocco gerarchico, più facile da mantenere su larga scala.",
+        "note": "Cisco raccomanda named mode da IOS 15.x in poi, deprecando il classic mode."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "net_cloud_dns_4",
+      "english": "Health Check",
+      "set": {
+        "english": "DNS health check",
+        "italian": "health check DNS",
+        "example": "A DNS health check on Route 53 removes unhealthy endpoints from the answer set, steering users to a working region. = Un health check DNS su Route 53 rimuove gli endpoint non sani dal set di risposte, dirigendo gli utenti verso una region funzionante.",
+        "note": "Combinato con record di failover, abilita disaster recovery DNS-driven."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "net_security_dmz_2",
+      "english": "DMZ",
+      "set": {
+        "english": "DMZ network",
+        "italian": "rete DMZ",
+        "example": "A DMZ network hosts public-facing services like the web and SMTP relays, isolated from the internal LAN by strict firewall rules. = Una rete DMZ ospita servizi esposti pubblicamente come web e relay SMTP, isolati dalla LAN interna da regole firewall stringenti.",
+        "note": "Acronimo di 'demilitarized zone'; oggi spesso sostituita da segmentazione zero-trust."
+      }
+    }
+  ]
+}

@@ -1,0 +1,947 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "dev_basics_1",
+      "english": "Program",
+      "set": {
+        "example": "A well-written program executes thousands of tasks per second without consuming excessive memory. = Un programma ben scritto esegue migliaia di compiti al secondo senza consumare memoria eccessiva."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_1",
+      "english": "Data",
+      "set": {
+        "example": "Modern applications collect huge amounts of data that must be processed into useful information for users. = Le applicazioni moderne raccolgono enormi quantità di dati che devono essere elaborati in informazioni utili per gli utenti."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_1",
+      "english": "Logic",
+      "set": {
+        "example": "Keep the business logic separate from the UI so the same rules can be reused across mobile, web, and desktop clients. = Tieni la logica di business separata dalla UI così le stesse regole possono essere riusate su client mobile, web e desktop."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_1",
+      "english": "Feature",
+      "set": {
+        "example": "Before shipping a new feature, the team writes acceptance tests and updates the documentation for the support staff. = Prima di rilasciare una nuova funzionalità, il team scrive test di accettazione e aggiorna la documentazione per il personale di supporto."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_1",
+      "english": "Requirement",
+      "set": {
+        "example": "Each requirement must be testable, otherwise nobody can prove whether the implementation actually satisfies it. = Ogni requisito deve essere testabile, altrimenti nessuno può dimostrare se l'implementazione lo soddisfa davvero."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_2",
+      "english": "Text Editor",
+      "set": {
+        "example": "A lightweight text editor like VS Code starts faster than a full IDE and is ideal for quick scripts. = Un editor di testo leggero come VS Code si avvia più velocemente di un IDE completo ed è ideale per script veloci."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_2",
+      "english": "Interpreter",
+      "set": {
+        "example": "An interpreter executes Python code line by line, which makes debugging fast but slows down production performance. = Un interprete esegue il codice Python riga per riga, rendendo veloce il debugging ma rallentando le prestazioni in produzione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_2",
+      "english": "Debugger",
+      "set": {
+        "example": "Attach the debugger to the running process to inspect variables, set breakpoints, and step through the failing function. = Collega il debugger al processo in esecuzione per ispezionare le variabili, mettere breakpoint e scorrere passo passo la funzione che fallisce."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_2",
+      "english": "Terminal (CLI)",
+      "set": {
+        "example": "Power users prefer the terminal because chaining commands with pipes is faster than clicking through a graphical interface. = Gli utenti esperti preferiscono il terminale perché concatenare comandi con le pipe è più veloce che cliccare in un'interfaccia grafica."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_3",
+      "english": "Freeze",
+      "set": {
+        "example": "The browser tab tends to freeze when an infinite loop blocks the main JavaScript thread for several seconds. = La scheda del browser tende a bloccarsi quando un loop infinito blocca il thread principale di JavaScript per diversi secondi."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_3",
+      "english": "Patch / Fix",
+      "set": {
+        "example": "Vendors release a patch within hours when a critical security fix needs to reach customers before attackers exploit the flaw. = I vendor rilasciano una patch entro poche ore quando una correzione di sicurezza critica deve raggiungere i clienti prima che gli aggressori sfruttino la falla."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_3",
+      "english": "Compile-time Error",
+      "set": {
+        "example": "A missing semicolon causes a compile-time error in C, so the program never reaches the testing stage. = Un punto e virgola mancante causa un errore di compilazione in C, quindi il programma non raggiunge mai la fase di test."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_3",
+      "english": "Breakpoint",
+      "set": {
+        "example": "Place a conditional breakpoint that triggers only when the user ID equals 42 to avoid stopping on every iteration. = Metti un breakpoint condizionale che si attiva solo quando l'ID utente è uguale a 42 per evitare di fermarsi a ogni iterazione."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Comment",
+      "set": {
+        "example": "Write a comment to explain the why behind a tricky algorithm, not to repeat what the code already says clearly. = Scrivi un commento per spiegare il perché dietro un algoritmo complicato, non per ripetere ciò che il codice già dice chiaramente."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Variable Name",
+      "set": {
+        "example": "A descriptive variable name like userEmail beats a cryptic single letter when someone else needs to read the code months later. = Un nome di variabile descrittivo come userEmail batte una singola lettera criptica quando qualcun altro deve leggere il codice mesi dopo."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Naming Convention",
+      "set": {
+        "example": "Following a consistent naming convention like camelCase or snake_case prevents subtle bugs when modules from different teams interact. = Seguire una convenzione di nomi coerente come camelCase o snake_case previene bug sottili quando moduli di team diversi interagiscono."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Versioning",
+      "set": {
+        "example": "Semantic versioning communicates breaking changes through the major number so consumers know when an upgrade requires code changes. = Il versionamento semantico comunica i cambiamenti incompatibili attraverso il numero major così i consumatori sanno quando un aggiornamento richiede modifiche al codice."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Manual",
+      "set": {
+        "example": "Reading the manual before configuring a complex tool saves hours of trial-and-error troubleshooting later. = Leggere il manuale prima di configurare uno strumento complesso fa risparmiare ore di problem solving a tentativi più tardi."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Specification",
+      "set": {
+        "example": "The HTTP specification defines status codes, headers, and methods so different vendors can interoperate without ambiguity. = La specifica HTTP definisce codici di stato, header e metodi così vendor diversi possono interoperare senza ambiguità."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "dev_basics_4",
+      "english": "Diagram (UML)",
+      "set": {
+        "example": "A UML class diagram makes inheritance and associations visible at a glance, which helps onboard new developers faster. = Un diagramma UML delle classi rende visibili a colpo d'occhio l'ereditarietà e le associazioni, il che aiuta a far entrare i nuovi sviluppatori più velocemente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Repository",
+      "set": {
+        "example": "Clone the repository over SSH so that pushes are authenticated with your key instead of asking for a password every time. = Clona la repository tramite SSH così i push vengono autenticati con la tua chiave invece di chiedere una password ogni volta."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Commit",
+      "set": {
+        "example": "A clear commit message explains why the change was made, not just what changed, since the diff already shows what. = Un messaggio di commit chiaro spiega perché è stato fatto il cambiamento, non solo cosa è cambiato, dato che la diff già mostra cosa."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Add / Stage",
+      "set": {
+        "example": "Use git add -p to stage only some hunks of a modified file when you want to split a noisy change into two separate commits. = Usa git add -p per mettere in stage solo alcune porzioni di un file modificato quando vuoi dividere una modifica disordinata in due commit separati."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Diff",
+      "set": {
+        "example": "Reading the diff before pushing helps you catch debug print statements or commented-out code that should never reach production. = Leggere la diff prima di fare push ti aiuta a individuare print di debug o codice commentato che non dovrebbero mai arrivare in produzione."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_basics",
+      "english": "Head",
+      "set": {
+        "example": "Detaching HEAD lets you inspect an old commit without affecting any branch, but commits made there can be lost easily. = Il detach dell'HEAD ti permette di ispezionare un vecchio commit senza influenzare alcun branch, ma i commit fatti lì possono andare persi facilmente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Branch",
+      "set": {
+        "example": "Creating a short-lived feature branch isolates your work-in-progress from main, so the trunk always stays releasable. = Creare un branch di funzionalità breve isola il tuo lavoro in corso da main, così il tronco rimane sempre rilasciabile."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Checkout / Switch",
+      "set": {
+        "example": "Run git switch to move between branches more safely than checkout, which can also be used for restoring files. = Esegui git switch per spostarti tra branch in modo più sicuro di checkout, che può anche essere usato per ripristinare file."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Conflict",
+      "set": {
+        "example": "Resolving a merge conflict requires opening the affected file, choosing which version to keep, and staging the result. = Risolvere un conflitto di merge richiede di aprire il file interessato, scegliere quale versione tenere e mettere in stage il risultato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Rebase",
+      "set": {
+        "example": "Interactive rebase lets you reorder, squash, or reword commits before sharing the branch, producing a cleaner history. = Il rebase interattivo ti permette di riordinare, schiacciare o riformulare i commit prima di condividere il branch, producendo una storia più pulita."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Tag",
+      "set": {
+        "example": "Annotated tags carry an author, date, and message, which makes them the recommended choice for marking release versions. = I tag annotati portano un autore, una data e un messaggio, il che li rende la scelta consigliata per marcare le versioni di rilascio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_collab",
+      "english": "Pull Request (PR)",
+      "set": {
+        "example": "A small pull request with focused changes is easier to review and merges faster than a giant one touching dozens of files. = Una pull request piccola con modifiche mirate è più facile da revisionare e viene mergeata più velocemente di una gigante che tocca decine di file."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_collab",
+      "english": "Code Review",
+      "set": {
+        "example": "Effective code review checks both correctness and readability so the codebase stays maintainable as the team grows. = Una code review efficace controlla sia la correttezza che la leggibilità così la codebase rimane manutenibile mentre il team cresce."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_collab",
+      "english": "Upstream",
+      "set": {
+        "example": "Add the original project as the upstream remote so you can pull new commits and keep your fork in sync. = Aggiungi il progetto originale come remoto upstream così puoi tirare i nuovi commit e mantenere il tuo fork sincronizzato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_collab",
+      "english": "Milestone",
+      "set": {
+        "example": "Group related issues under a milestone like 'v2.0' so contributors can see exactly which tasks block the next release. = Raggruppa le issue collegate sotto una milestone come 'v2.0' così i contributori possono vedere esattamente quali task bloccano il prossimo rilascio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_collab",
+      "english": "Wiki",
+      "set": {
+        "example": "Keep architectural decisions on the project wiki rather than scattered chat messages, so newcomers can find context easily. = Tieni le decisioni architetturali sulla wiki del progetto invece che in messaggi chat sparsi, così i nuovi arrivati possono trovare il contesto facilmente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_collab",
+      "english": "GitFlow",
+      "set": {
+        "example": "Teams shipping versioned products often adopt GitFlow because its release and hotfix branches map cleanly onto formal release cycles. = I team che rilasciano prodotti versionati spesso adottano GitFlow perché i suoi branch di release e hotfix si mappano bene su cicli di rilascio formali."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Reset (Soft/Hard)",
+      "set": {
+        "example": "Use git reset --soft to undo a commit while keeping your changes staged, ready to be reorganised into different commits. = Usa git reset --soft per annullare un commit mantenendo le modifiche in stage, pronte per essere riorganizzate in commit diversi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Reflog",
+      "set": {
+        "example": "After an accidental hard reset, the reflog lets you find the lost commit hash and bring the work back from oblivion. = Dopo un reset hard accidentale, il reflog ti permette di trovare l'hash del commit perso e riportare il lavoro dall'oblio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Bisect",
+      "set": {
+        "example": "Git bisect halves the search space at each step, so even a thousand-commit history can be searched in roughly ten iterations. = Git bisect dimezza lo spazio di ricerca a ogni passo, così anche una storia di mille commit può essere cercata in circa dieci iterazioni."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_workflow",
+      "english": "Gitignore",
+      "set": {
+        "example": "List build artifacts, secrets, and local config files in .gitignore so they never end up in a shared repository by accident. = Elenca artefatti di build, segreti e file di configurazione locali nel .gitignore così non finiscono mai in una repository condivisa per sbaglio."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dev_git_branch",
+      "english": "Log",
+      "set": {
+        "english": "git log --oneline",
+        "italian": "git log --oneline",
+        "example": "Running git log --oneline produces one commit per line, which is ideal when scanning recent history during a code review. = Eseguire git log --oneline produce un commit per riga, il che è ideale quando si scansiona la storia recente durante una code review.",
+        "note": "Variante compatta del comando git log, utile per overview rapide della cronologia."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "HTML (HyperText Markup Language)",
+      "set": {
+        "example": "Semantic HTML tags like header, nav, and article help screen readers and search engines understand page structure. = I tag HTML semantici come header, nav e article aiutano gli screen reader e i motori di ricerca a capire la struttura della pagina."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "CSS (Cascading Style Sheets)",
+      "set": {
+        "example": "Modern CSS supports flexbox and grid layouts, eliminating the float-based hacks that web developers used a decade ago. = Il CSS moderno supporta i layout flexbox e grid, eliminando gli hack basati su float che gli sviluppatori web usavano un decennio fa."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "DOM (Document Object Model)",
+      "set": {
+        "example": "Direct DOM manipulation is slow at scale, which is why modern frameworks like React use a virtual DOM to batch updates. = La manipolazione diretta del DOM è lenta su larga scala, ed è per questo che i framework moderni come React usano un DOM virtuale per raggruppare gli aggiornamenti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "Tag",
+      "set": {
+        "english": "HTML tag",
+        "italian": "tag HTML",
+        "example": "Always close every HTML tag explicitly, since unclosed elements can cause the browser to render the layout in surprising ways. = Chiudi sempre ogni tag HTML esplicitamente, dato che gli elementi non chiusi possono far renderizzare il layout al browser in modi sorprendenti.",
+        "note": "Distinto dai tag Git, che etichettano commit specifici per i rilasci."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "Attribute",
+      "set": {
+        "example": "Use the data-* attribute prefix to attach custom values to HTML elements without breaking the standard validators. = Usa il prefisso data-* per gli attributi per allegare valori personalizzati agli elementi HTML senza rompere i validatori standard."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "Event Listener",
+      "set": {
+        "example": "Remember to remove every event listener you add inside a React component, otherwise memory leaks accumulate on each remount. = Ricorda di rimuovere ogni event listener che aggiungi dentro un componente React, altrimenti i memory leak si accumulano a ogni remount."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_front",
+      "english": "Single Page Application (SPA)",
+      "set": {
+        "example": "Building a single page application gives users a fluid experience but requires careful handling of routing, SEO, and initial load time. = Costruire una single page application dà agli utenti un'esperienza fluida ma richiede una gestione attenta di routing, SEO e tempo di caricamento iniziale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Server",
+      "set": {
+        "example": "A production web server typically runs behind a reverse proxy that handles TLS termination and request rate limiting. = Un web server di produzione tipicamente gira dietro un reverse proxy che gestisce la terminazione TLS e il rate limiting delle richieste."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Database",
+      "set": {
+        "example": "Choose a relational database when transactions and complex joins matter, and a NoSQL one for flexible schemas and horizontal scale. = Scegli un database relazionale quando contano transazioni e join complessi, e uno NoSQL per schemi flessibili e scalabilità orizzontale."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Authorization",
+      "set": {
+        "example": "After login, the backend reads the user's role and grants authorization to access only the endpoints allowed by that role. = Dopo il login, il backend legge il ruolo dell'utente e concede l'autorizzazione ad accedere solo agli endpoint permessi da quel ruolo."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_back",
+      "english": "Routing",
+      "set": {
+        "example": "Define routing rules that map each HTTP path to a specific controller function, keeping URL design separate from business logic. = Definisci regole di routing che mappano ogni path HTTP a una specifica funzione del controller, tenendo il design degli URL separato dalla logica di business."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "API (Application Programming Interface)",
+      "set": {
+        "example": "Public APIs let third-party developers build integrations without needing access to the underlying source code or database. = Le API pubbliche permettono agli sviluppatori di terze parti di costruire integrazioni senza dover accedere al codice sorgente o al database sottostante."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "REST (Representational State Transfer)",
+      "set": {
+        "example": "A REST API exposes resources through standard HTTP verbs, which makes it easy to cache, test, and consume from any language. = Un'API REST espone le risorse attraverso i verbi HTTP standard, il che la rende facile da cachare, testare e consumare da qualsiasi linguaggio.",
+        "note": "REST è un loanword: si lascia in inglese."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "HTTP Method (GET, POST, ...)",
+      "set": {
+        "example": "Choose the right HTTP method for each operation: GET for reads, POST for creates, PUT for replacements, and DELETE to remove. = Scegli il metodo HTTP giusto per ogni operazione: GET per le letture, POST per le creazioni, PUT per le sostituzioni e DELETE per rimuovere."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "Endpoint",
+      "set": {
+        "example": "Document every endpoint with its URL, expected payload, and possible status codes so consumers can integrate without guessing. = Documenta ogni endpoint con il suo URL, payload atteso e possibili codici di stato così i consumatori possono integrare senza tirare a indovinare."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "Request",
+      "set": {
+        "example": "Inspect a failing HTTP request in the network tab to verify the headers, body, and target URL match what the backend expects. = Ispeziona una richiesta HTTP fallita nella scheda network per verificare che header, body e URL di destinazione corrispondano a ciò che il backend si aspetta."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "Response",
+      "set": {
+        "example": "A well-designed API response includes a status code, a body in JSON, and headers that describe caching policy and content type. = Una risposta API ben progettata include un codice di stato, un body in JSON e header che descrivono la politica di caching e il tipo di contenuto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "Status Code (200, 404, ...)",
+      "set": {
+        "example": "Returning the correct HTTP status code lets clients tell apart a missing resource (404) from a server failure (500) without parsing the body. = Restituire il codice di stato HTTP corretto permette ai client di distinguere una risorsa mancante (404) da un fallimento del server (500) senza parsare il body."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "JSON (JavaScript Object Notation)",
+      "set": {
+        "example": "Most modern APIs exchange data in JSON because it is human-readable, language-agnostic, and natively supported by browsers. = La maggior parte delle API moderne scambia dati in JSON perché è leggibile dall'uomo, indipendente dal linguaggio e supportato nativamente dai browser."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_api",
+      "english": "Payload",
+      "set": {
+        "example": "Validate the request payload against a schema before processing it, otherwise malformed input can crash downstream services. = Valida il payload della richiesta contro uno schema prima di elaborarlo, altrimenti input malformati possono far crashare i servizi a valle."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "Browser",
+      "set": {
+        "example": "Test your site in multiple browsers because rendering engines like Blink, Gecko, and WebKit handle some CSS features differently. = Testa il tuo sito su più browser perché i motori di rendering come Blink, Gecko e WebKit gestiscono alcune funzionalità CSS in modo diverso."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "DevTools (Inspector)",
+      "set": {
+        "example": "Open DevTools and use the network tab to find slow API calls or the performance tab to spot long JavaScript tasks. = Apri i DevTools e usa la scheda network per trovare chiamate API lente o la scheda performance per individuare task JavaScript lunghi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "NPM (Node Package Manager)",
+      "set": {
+        "example": "Run npm audit periodically because npm packages can introduce vulnerabilities long after they were first installed in the project. = Esegui npm audit periodicamente perché i pacchetti npm possono introdurre vulnerabilità molto dopo essere stati installati per la prima volta nel progetto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "Bundler (Vite / Webpack)",
+      "set": {
+        "example": "A modern bundler like Vite uses native ES modules in development for near-instant reloads, then produces an optimised build for production. = Un bundler moderno come Vite usa moduli ES nativi in sviluppo per reload quasi istantanei, poi produce una build ottimizzata per la produzione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "Postman",
+      "set": {
+        "example": "Save common requests in a Postman collection so teammates can reproduce the same scenarios without writing curl commands by hand. = Salva le richieste comuni in una collezione Postman così i colleghi possono riprodurre gli stessi scenari senza scrivere comandi curl a mano."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "Cookies",
+      "set": {
+        "example": "Mark authentication cookies as HttpOnly and Secure so they are not exposed to JavaScript and travel only over HTTPS. = Marca i cookie di autenticazione come HttpOnly e Secure così non vengono esposti a JavaScript e viaggiano solo su HTTPS."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "Local Storage",
+      "set": {
+        "example": "Use local storage to remember user UI preferences across visits, but never store tokens or sensitive data there. = Usa il local storage per ricordare le preferenze UI dell'utente tra le visite, ma non salvare mai token o dati sensibili lì."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "CORS (Cross-Origin Resource Sharing)",
+      "set": {
+        "example": "Configure CORS headers on the API to allow only trusted front-end origins, blocking unauthorised sites from calling protected endpoints. = Configura gli header CORS sull'API per permettere solo le origin del front-end fidate, bloccando i siti non autorizzati dal chiamare endpoint protetti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "HTTPS (Secure)",
+      "set": {
+        "example": "Modern browsers warn users when a site does not use HTTPS, which makes TLS effectively mandatory for any public web service. = I browser moderni avvertono gli utenti quando un sito non usa HTTPS, il che rende il TLS di fatto obbligatorio per qualsiasi servizio web pubblico."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dev_web_tools",
+      "english": "Lighthouse",
+      "set": {
+        "example": "Run Lighthouse against your production URL to get a scored report covering performance, accessibility, SEO, and best practices. = Esegui Lighthouse sul tuo URL di produzione per ottenere un report con punteggi che copre performance, accessibilità, SEO e best practice."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "Table",
+      "set": {
+        "example": "Design each table around a single entity such as users or orders, and use foreign keys to model the relationships between them. = Progetta ogni tabella attorno a una singola entità come users o orders, e usa le chiavi esterne per modellare le relazioni tra di esse."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "Query",
+      "set": {
+        "example": "Prefer parameterised queries over string concatenation, otherwise user input can be interpreted as SQL and open the door to injection. = Preferisci query parametrizzate alla concatenazione di stringhe, altrimenti l'input dell'utente può essere interpretato come SQL e aprire la porta all'injection."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "Row (Record)",
+      "set": {
+        "example": "Each row in the users table stores one person's data, with the primary key guaranteeing that no two rows describe the same user. = Ogni riga nella tabella users memorizza i dati di una persona, con la chiave primaria che garantisce che due righe non descrivano lo stesso utente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "SELECT Statement",
+      "set": {
+        "example": "Avoid SELECT * in production code: list the columns explicitly so adding new fields to the table does not break clients. = Evita SELECT * nel codice di produzione: elenca le colonne esplicitamente così aggiungere nuovi campi alla tabella non rompe i client."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "WHERE Clause",
+      "set": {
+        "example": "A WHERE clause on an indexed column lets the database skip most rows, turning a sequential scan into a fast lookup. = Una clausola WHERE su una colonna indicizzata permette al database di saltare la maggior parte delle righe, trasformando una scansione sequenziale in una ricerca veloce."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_sql",
+      "english": "JOIN",
+      "set": {
+        "example": "Use an INNER JOIN to fetch only rows that match in both tables, and a LEFT JOIN to keep all rows from the first one. = Usa un INNER JOIN per recuperare solo le righe che corrispondono in entrambe le tabelle, e un LEFT JOIN per mantenere tutte le righe della prima."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_design",
+      "english": "Index",
+      "set": {
+        "example": "Add an index on columns used in WHERE or JOIN clauses, but remember each extra index slows down writes and consumes disk space. = Aggiungi un indice sulle colonne usate in WHERE o JOIN, ma ricorda che ogni indice extra rallenta le scritture e consuma spazio su disco."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_design",
+      "english": "Relationship",
+      "set": {
+        "example": "A one-to-many relationship between authors and books is modelled by adding an author_id column to the books table. = Una relazione uno-a-molti tra autori e libri viene modellata aggiungendo una colonna author_id nella tabella books."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_design",
+      "english": "Entity-Relationship Diagram (ERD)",
+      "set": {
+        "example": "Sketch an entity-relationship diagram before writing CREATE TABLE statements, so the team agrees on cardinalities and ownership upfront. = Disegna un diagramma entità-relazione prima di scrivere le istruzioni CREATE TABLE, così il team concorda sulle cardinalità e sulla proprietà in anticipo."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_design",
+      "english": "Data Integrity",
+      "set": {
+        "example": "Constraints, foreign keys, and transactions together preserve data integrity, even when multiple processes write concurrently. = Vincoli, chiavi esterne e transazioni insieme preservano l'integrità dei dati, anche quando processi multipli scrivono contemporaneamente."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_nosql",
+      "english": "Scalability (Horizontal)",
+      "set": {
+        "example": "NoSQL stores were designed for horizontal scalability, letting you add commodity nodes instead of paying for ever-bigger servers. = I database NoSQL sono stati progettati per la scalabilità orizzontale, permettendoti di aggiungere nodi commodity invece di pagare per server sempre più grandi."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dev_db_ops",
+      "english": "Migration",
+      "set": {
+        "example": "Every database migration should be reversible, so a deployment gone wrong can be rolled back without manual SQL surgery. = Ogni migrazione del database dovrebbe essere reversibile, così un deploy andato male può essere annullato senza chirurgia SQL manuale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_basics",
+      "english": "Peer-to-Peer (P2P)",
+      "set": {
+        "example": "Peer-to-peer file sharing networks distribute load across users, so the system gets faster as more participants join. = Le reti peer-to-peer di condivisione file distribuiscono il carico tra gli utenti, così il sistema diventa più veloce man mano che più partecipanti si uniscono."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_basics",
+      "english": "Module",
+      "set": {
+        "example": "Split the application into modules with clear public interfaces, so each one can be developed and tested in isolation. = Dividi l'applicazione in moduli con interfacce pubbliche chiare, così ciascuno può essere sviluppato e testato in isolamento."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_patterns",
+      "english": "Micro-Frontend",
+      "set": {
+        "example": "Adopting a micro-frontend approach lets each team ship its own UI piece independently, at the cost of a heavier integration layer. = Adottare un approccio micro-frontend permette a ogni team di rilasciare il proprio pezzo di UI indipendentemente, al costo di un layer di integrazione più pesante."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_api",
+      "english": "API Gateway",
+      "set": {
+        "italian": "API Gateway",
+        "note": "Il termine API Gateway si lascia in inglese; gestisce routing, auth e rate limiting davanti ai microservizi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_api",
+      "english": "Reverse Proxy",
+      "set": {
+        "example": "Putting a reverse proxy like Nginx in front of the app server lets you centralise TLS, compression, and request logging. = Mettere un reverse proxy come Nginx davanti al server applicativo ti permette di centralizzare TLS, compressione e logging delle richieste."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_api",
+      "english": "Stateless",
+      "set": {
+        "example": "Designing endpoints to be stateless means any node can serve any request, which is the foundation of easy horizontal scaling. = Progettare endpoint stateless significa che qualsiasi nodo può servire qualsiasi richiesta, il che è la base di una facile scalabilità orizzontale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_ddd",
+      "english": "Domain-Driven Design (DDD)",
+      "set": {
+        "example": "Teams adopting domain-driven design model the software around business concepts like Order or Invoice, not around database tables. = I team che adottano il domain-driven design modellano il software attorno a concetti di business come Order o Invoice, non attorno alle tabelle del database."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Unit Test",
+      "set": {
+        "example": "A good unit test runs in milliseconds, exercises a single function, and fails for exactly one reason when the logic breaks. = Un buon unit test gira in millisecondi, esercita una singola funzione e fallisce per esattamente un motivo quando la logica si rompe."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Test Suite",
+      "set": {
+        "example": "Split the test suite into fast unit tests run on every commit and slow end-to-end tests scheduled nightly to keep feedback quick. = Dividi la suite di test in unit test veloci eseguiti a ogni commit e test end-to-end lenti schedulati di notte per mantenere il feedback rapido."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Fixture",
+      "set": {
+        "example": "Centralise data setup in a shared fixture so every test starts from the same known state without duplicating boilerplate. = Centralizza il setup dei dati in una fixture condivisa così ogni test parte dallo stesso stato noto senza duplicare boilerplate.",
+        "note": "Loanword: in italiano tecnico si lascia spesso 'fixture'."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Code Coverage",
+      "set": {
+        "example": "High code coverage gives confidence that tests exercise most paths, but it does not guarantee that the assertions are meaningful. = Una alta code coverage dà fiducia che i test esercitino la maggior parte dei percorsi, ma non garantisce che le asserzioni siano significative."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_unit",
+      "english": "Refactoring",
+      "set": {
+        "example": "Continuous refactoring keeps the codebase healthy: small structural improvements after each feature prevent technical debt from snowballing. = Il refactoring continuo mantiene la codebase sana: piccoli miglioramenti strutturali dopo ogni funzionalità prevengono l'accumulo di debito tecnico.",
+        "note": "Loanword: refactoring si lascia in inglese anche in italiano tecnico."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_integration",
+      "english": "Smoke Test",
+      "set": {
+        "example": "After every deployment, a quick smoke test checks that the homepage loads, login works, and the database is reachable. = Dopo ogni deployment, un rapido smoke test controlla che la homepage si carichi, il login funzioni e il database sia raggiungibile."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dev_test_techniques",
+      "english": "Stub",
+      "set": {
+        "example": "Replace the external payment API with a stub that returns predefined responses, so tests run offline and remain deterministic. = Sostituisci l'API esterna di pagamento con uno stub che restituisce risposte predefinite, così i test girano offline e rimangono deterministici.",
+        "note": "Loanword: stub si lascia in inglese in italiano tecnico."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_deploy",
+      "english": "Deployment",
+      "set": {
+        "example": "Automating the deployment pipeline reduces human error and lets the team ship updates several times a day without ceremony. = Automatizzare la pipeline di deployment riduce l'errore umano e permette al team di rilasciare aggiornamenti più volte al giorno senza cerimonie."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_deploy",
+      "english": "Environment Drift",
+      "set": {
+        "example": "Environment drift between staging and production is the root cause of bugs that work on every laptop but fail in the cloud. = La deriva dell'ambiente tra staging e produzione è la causa principale dei bug che funzionano su ogni laptop ma falliscono nel cloud."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Container",
+      "set": {
+        "example": "Packaging the service into a container guarantees the same Linux distribution, Python version, and dependencies run everywhere. = Impacchettare il servizio in un container garantisce che la stessa distribuzione Linux, versione Python e dipendenze girino ovunque."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_infra",
+      "english": "Virtual Machine (VM)",
+      "set": {
+        "example": "A virtual machine emulates an entire operating system, which gives strong isolation but uses much more RAM than a container. = Una virtual machine emula un intero sistema operativo, il che dà un forte isolamento ma usa molta più RAM di un container."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dev_devops_monitor",
+      "english": "SLO (Service Level Objective)",
+      "set": {
+        "example": "Set an SLO of 99.9 percent availability and let the error budget tell you when to slow down feature work to invest in reliability. = Imposta un SLO del 99,9 percento di disponibilità e lascia che il budget degli errori ti dica quando rallentare il lavoro sulle feature per investire in affidabilità."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_vulns",
+      "english": "Vulnerability",
+      "set": {
+        "example": "Triage every newly reported vulnerability by CVSS score and exposure, so the security team patches what attackers are most likely to exploit. = Fai triage di ogni vulnerabilità appena segnalata per punteggio CVSS ed esposizione, così il team di sicurezza patcha ciò che gli aggressori hanno più probabilità di sfruttare."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_vulns",
+      "english": "CVSS (Common Vulnerability Scoring System)",
+      "set": {
+        "example": "A CVSS score above 9.0 typically triggers an emergency response, while lower scores can wait for the next regular patch cycle. = Un punteggio CVSS sopra 9.0 tipicamente attiva una risposta di emergenza, mentre punteggi più bassi possono aspettare il prossimo ciclo di patch regolare."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dev_sec_auth",
+      "english": "ABAC (Attribute-Based Access Control)",
+      "set": {
+        "example": "ABAC evaluates rules over user attributes, resource tags, and request context, so policies can express conditions like 'only during work hours from the corporate network'. = ABAC valuta regole su attributi utente, tag della risorsa e contesto della richiesta, così le policy possono esprimere condizioni come 'solo durante l'orario di lavoro dalla rete aziendale'."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_creational",
+      "english": "Creational Pattern",
+      "set": {
+        "example": "Choosing a creational pattern like Factory or Builder isolates the rest of the code from the details of how objects come to life. = Scegliere un pattern creazionale come Factory o Builder isola il resto del codice dai dettagli di come gli oggetti vengono creati."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_structural",
+      "english": "Structural Pattern",
+      "set": {
+        "example": "Adapter, Facade, and Decorator are classic examples of a structural pattern: each one composes existing objects into a new shape without modifying them. = Adapter, Facade e Decorator sono esempi classici di pattern strutturale: ciascuno compone oggetti esistenti in una nuova forma senza modificarli."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_behavioral",
+      "english": "Behavioral Pattern",
+      "set": {
+        "example": "Observer, Strategy, and Command are textbook examples of a behavioral pattern, since each one defines how objects collaborate at runtime. = Observer, Strategy e Command sono esempi da manuale di pattern comportamentale, dato che ciascuno definisce come gli oggetti collaborano a runtime."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dev_kanban",
+      "english": "WIP Limit (Work In Progress)",
+      "set": {
+        "example": "Lowering the WIP limit from six tasks to three forced the team to finish work before starting new items, which cut cycle time in half. = Abbassare il limite WIP da sei task a tre ha forzato il team a finire il lavoro prima di iniziare nuovi elementi, il che ha dimezzato il cycle time."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dev_kanban",
+      "english": "Kanban Board",
+      "set": {
+        "example": "A physical or digital Kanban board with columns like To Do, Doing, and Done makes work visible and exposes where tasks pile up. = Una Kanban board fisica o digitale con colonne come To Do, Doing e Done rende il lavoro visibile ed espone dove i task si accumulano."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_scaling",
+      "english": "Elasticity",
+      "set": {
+        "example": "Cloud elasticity lets the platform add servers during a Black Friday spike and release them once traffic returns to normal levels. = L'elasticità del cloud permette alla piattaforma di aggiungere server durante un picco di Black Friday e di rilasciarli una volta che il traffico torna ai livelli normali."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dev_pm",
+      "english": "Milestone",
+      "set": {
+        "english": "project milestone",
+        "italian": "milestone di progetto",
+        "example": "Each project milestone bundles related deliverables and a target date, so executives can track progress against the overall plan. = Ogni milestone di progetto raggruppa deliverable correlati e una data obiettivo, così i dirigenti possono tracciare i progressi rispetto al piano complessivo.",
+        "note": "Distinta dalla milestone di GitHub, che raggruppa issue e pull request."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dev_arch_basics",
+      "english": "Microservices",
+      "set": {
+        "english": "microservices architecture",
+        "italian": "architettura a microservizi",
+        "example": "Adopting a microservices architecture lets each team deploy independently, at the cost of distributed-system complexity. = Adottare un'architettura a microservizi permette a ogni team di fare il deploy in modo indipendente, al costo della complessità da sistema distribuito.",
+        "note": "Distinto dal termine 'Microservices' usato come concetto generale nel backend (level 2)."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dev_pattern_other",
+      "english": "Repository Pattern",
+      "set": {
+        "english": "generic repository pattern",
+        "italian": "generic repository pattern",
+        "example": "A generic repository pattern provides CRUD methods for every entity type, which reduces boilerplate but can hide important query differences. = Un generic repository pattern fornisce metodi CRUD per ogni tipo di entità, il che riduce il boilerplate ma può nascondere importanti differenze tra le query.",
+        "note": "Variante semplificata del Repository Pattern del DDD (level 4), riusabile su qualsiasi entità."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dev_perf_optimize",
+      "english": "Bottleneck",
+      "set": {
+        "english": "performance bottleneck",
+        "italian": "collo di bottiglia delle prestazioni",
+        "example": "Profile the system under realistic load to find the performance bottleneck before optimising, otherwise you may speed up code that was never slow. = Profila il sistema sotto carico realistico per trovare il collo di bottiglia delle prestazioni prima di ottimizzare, altrimenti rischi di accelerare codice che non era mai lento.",
+        "note": "Distinto dal bottleneck Kanban (level 9), che riguarda il flusso di lavoro del team."
+      }
+    }
+  ]
+}

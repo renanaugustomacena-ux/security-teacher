@@ -1,0 +1,1474 @@
+{
+  "fixes": [
+    {
+      "level": "14",
+      "lesson": "mon_incidents_1",
+      "english": "Status Update",
+      "set": {
+        "example": "During a SEV1 outage the incident commander pushes a status update every 15 minutes so leadership and customers stay aligned. = Durante un disservizio SEV1 l'incident commander invia uno status update ogni 15 minuti perché leadership e clienti restino allineati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_1",
+      "english": "Customer Communication",
+      "set": {
+        "example": "Clear customer communication during downtime preserves trust far more effectively than a postmortem published days later. = Una customer communication chiara durante il downtime preserva la fiducia molto più di un postmortem pubblicato giorni dopo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_2",
+      "english": "Severity",
+      "set": {
+        "english": "Severity Level",
+        "italian": "Livello di severità",
+        "example": "Assigning the right severity level early routes the page to the correct on-call rotation and unlocks the SEV1 war-room workflow. = Assegnare presto il giusto livello di severità instrada la chiamata al turno on-call giusto e attiva il workflow della war-room SEV1."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_2",
+      "english": "SEV1",
+      "set": {
+        "example": "A total checkout outage on Black Friday triggers a SEV1 incident with an executive bridge call within minutes. = Un'interruzione totale del checkout durante il Black Friday attiva un incidente SEV1 con una bridge call dirigenziale in pochi minuti."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_2",
+      "english": "SEV2",
+      "set": {
+        "example": "Search returning empty results for premium users while the rest of the site works qualifies as a SEV2 incident. = La ricerca che restituisce risultati vuoti per gli utenti premium mentre il resto del sito funziona si qualifica come incidente SEV2."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_2",
+      "english": "SEV3",
+      "set": {
+        "example": "A 5% spike in checkout latency without errors is usually filed as a SEV3 needing follow-up but no late-night page. = Un picco del 5% nella latenza del checkout senza errori è di solito classificato SEV3 con follow-up ma senza chiamata notturna."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_2",
+      "english": "SEV4",
+      "set": {
+        "example": "A misaligned button on the help page is typically logged as SEV4 and rolled into the next sprint, not paged on-call. = Un bottone disallineato sulla pagina di aiuto viene di solito registrato come SEV4 e gestito nello sprint successivo, non in reperibilità."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_2",
+      "english": "Escalation",
+      "set": {
+        "example": "If the primary on-call does not acknowledge within five minutes, the escalation policy pages the secondary and then the manager. = Se l'on-call primario non riconosce entro cinque minuti, la policy di escalation chiama il secondario e poi il manager."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_2",
+      "english": "Major Incident",
+      "set": {
+        "example": "Banks declare a major incident when payment processing fails because each minute of downtime translates into measurable revenue loss. = Le banche dichiarano un major incident quando il processing pagamenti si interrompe perché ogni minuto di downtime equivale a perdita di fatturato misurabile."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_2",
+      "english": "Severity Matrix",
+      "set": {
+        "example": "A clear severity matrix removes arguments at 3am by mapping symptoms like \"payments down\" directly to SEV1 with no debate. = Una severity matrix chiara elimina le discussioni alle 3 di notte mappando sintomi come 'pagamenti giù' direttamente a SEV1 senza dibattito."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_2",
+      "english": "Customer-Impacting",
+      "set": {
+        "example": "Anything customer-impacting goes on the public status page within five minutes, even before the root cause is known. = Tutto ciò che è customer-impacting va sulla pagina di stato pubblica entro cinque minuti, anche prima che la causa radice sia nota."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_3",
+      "english": "RCA",
+      "set": {
+        "italian": "RCA",
+        "note": "Root Cause Analysis: analisi della causa radice di un incidente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_3",
+      "english": "MTTR",
+      "set": {
+        "english": "Incident MTTR",
+        "italian": "MTTR di incidente",
+        "example": "Tracking incident MTTR per service tells you where runbooks need investment and where automation will pay back fastest. = Tracciare l'MTTR di incidente per servizio dice dove investire sui runbook e dove l'automazione renderà più velocemente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_3",
+      "english": "MTTA",
+      "set": {
+        "italian": "MTTA",
+        "note": "Mean Time To Acknowledge: tempo medio prima che un on-call prenda in carico una chiamata."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_3",
+      "english": "MTTD",
+      "set": {
+        "italian": "MTTD",
+        "note": "Mean Time To Detection: tempo medio per accorgersi che un problema è in corso.",
+        "example": "Pushing MTTD below five minutes usually requires synthetic monitoring on critical user journeys plus anomaly detection on Golden Signals. = Portare l'MTTD sotto i cinque minuti richiede di solito monitoring sintetico sui percorsi utente critici più anomaly detection sui Golden Signals."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_3",
+      "english": "Mitigation",
+      "set": {
+        "example": "Flipping the feature flag off is a fast mitigation that buys engineers time to find and ship a proper fix the next day. = Spegnere il feature flag è una mitigation veloce che dà agli ingegneri il tempo di trovare e rilasciare una fix vera il giorno dopo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_3",
+      "english": "Workaround",
+      "set": {
+        "example": "A documented workaround like \"restart the worker every hour\" is acceptable for a few days, never as a permanent solution. = Un workaround documentato come 'riavvia il worker ogni ora' è accettabile per qualche giorno, mai come soluzione permanente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_3",
+      "english": "Hotfix",
+      "set": {
+        "example": "We pushed a hotfix to production at 2am to patch the SQL injection before bots could weaponise the disclosed CVE. = Abbiamo rilasciato un hotfix in produzione alle 2 di notte per chiudere la SQL injection prima che i bot weaponizzassero il CVE divulgato."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_3",
+      "english": "Rollback",
+      "set": {
+        "english": "Production Rollback",
+        "italian": "Rollback di produzione",
+        "example": "Once error rates spiked we triggered an immediate production rollback to the previous container image rather than chase a forward fix. = Quando i tassi di errore sono esplosi abbiamo attivato un rollback di produzione immediato all'immagine container precedente invece di inseguire una fix in avanti."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_4",
+      "english": "Runbook",
+      "set": {
+        "example": "When the database CPU alert fires the on-call opens the dedicated runbook and follows the diagnostic queries step by step. = Quando scatta l'alert sulla CPU del database l'on-call apre il runbook dedicato e segue le query diagnostiche passo per passo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_4",
+      "english": "Playbook",
+      "set": {
+        "example": "Our DDoS playbook lists exactly who to call at Cloudflare and which mitigation rules to enable in what order. = Il nostro playbook DDoS elenca esattamente chi chiamare in Cloudflare e quali regole di mitigation abilitare in quale ordine."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_4",
+      "english": "Runbook Automation",
+      "set": {
+        "example": "Investing in runbook automation lets a tier-1 alert auto-restart a stuck pod before the on-call even reaches their laptop. = Investire in runbook automation permette a un alert tier-1 di riavviare automaticamente un pod bloccato prima che l'on-call raggiunga il laptop."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_4",
+      "english": "Remediation",
+      "set": {
+        "example": "Add a remediation section to each runbook with the exact kubectl commands, expected output, and how to verify success. = Aggiungi una sezione di remediation a ogni runbook con i comandi kubectl esatti, l'output atteso e come verificare il successo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_4",
+      "english": "Decision Tree",
+      "set": {
+        "example": "A simple decision tree at the top of the runbook routes the responder to the right diagnostic branch in under a minute. = Un semplice decision tree all'inizio del runbook instrada il responder al ramo diagnostico giusto in meno di un minuto."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_4",
+      "english": "Wiki",
+      "set": {
+        "example": "Storing runbooks in a searchable wiki like Confluence makes them discoverable from incident chat with a single link. = Mantenere i runbook in un wiki ricercabile come Confluence li rende scopribili dalla chat di incidente con un singolo link."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_4",
+      "english": "Living Document",
+      "set": {
+        "example": "Treating runbooks as a living document means every postmortem produces a concrete diff against the existing procedure. = Trattare i runbook come living document significa che ogni postmortem produce un diff concreto contro la procedura esistente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_4",
+      "english": "Drill",
+      "set": {
+        "example": "Run a quarterly game-day drill where you simulate a region failure and time how long full recovery actually takes. = Esegui un game-day drill trimestrale dove simuli il fallimento di una region e misuri quanto tempo richiede davvero il ripristino."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_1",
+      "english": "PagerDuty",
+      "set": {
+        "italian": "PagerDuty"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_1",
+      "english": "Schedule",
+      "set": {
+        "example": "Building a follow-the-sun schedule across three regions keeps on-call coverage at sane hours for every team member. = Costruire uno schedule follow-the-sun su tre region mantiene la copertura on-call in orari sani per ogni membro del team."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_1",
+      "english": "Layer",
+      "set": {
+        "example": "Holiday coverage is implemented as an override layer on top of the primary rotation without rewriting the base schedule. = La copertura per le ferie si implementa come layer di override sopra alla rotazione primaria senza riscrivere lo schedule base."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_1",
+      "english": "Event Rule",
+      "set": {
+        "example": "We wrote a PagerDuty event rule that drops alerts tagged env=staging during business hours to stop noisy interruptions. = Abbiamo scritto un event rule PagerDuty che scarta gli alert taggati env=staging negli orari di ufficio per fermare interruzioni rumorose."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_1",
+      "english": "Incident Workflow",
+      "set": {
+        "example": "Our incident workflow auto-creates a Slack channel, opens a Zoom bridge, and pings the comms lead within thirty seconds of a SEV1. = Il nostro incident workflow crea automaticamente un canale Slack, apre un bridge Zoom e pinga il comms lead entro trenta secondi da un SEV1."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_1",
+      "english": "Stakeholder",
+      "set": {
+        "example": "Send tailored stakeholder updates to executives every thirty minutes so they can answer customer questions without paging engineers. = Invia stakeholder update mirati ai dirigenti ogni trenta minuti così possono rispondere ai clienti senza disturbare gli ingegneri."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_1",
+      "english": "API Token",
+      "set": {
+        "example": "Store the PagerDuty API token in a vault and inject it into CI via a short-lived secret rather than committing it to repo. = Conserva l'API token PagerDuty in un vault e iniettalo nella CI tramite un secret a breve vita invece di committarlo in repo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_2",
+      "english": "OpsGenie",
+      "set": {
+        "italian": "OpsGenie",
+        "example": "Teams already deep in the Atlassian stack often pick OpsGenie because escalations flow naturally into Jira and Confluence runbooks. = I team già radicati nello stack Atlassian spesso scelgono OpsGenie perché le escalation fluiscono naturalmente in Jira e nei runbook Confluence."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_2",
+      "english": "Squadcast",
+      "set": {
+        "italian": "Squadcast",
+        "example": "Smaller teams pick Squadcast as a budget-friendly PagerDuty alternative that still ships SLO tracking and postmortem templates. = I team più piccoli scelgono Squadcast come alternativa economica a PagerDuty che offre comunque tracking SLO e template di postmortem."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_2",
+      "english": "Splunk On-Call",
+      "set": {
+        "italian": "Splunk On-Call",
+        "example": "Shops with heavy Splunk investments often consolidate paging on Splunk On-Call to keep logs, alerts and incidents in one bill. = Le aziende con investimenti pesanti su Splunk consolidano spesso il paging su Splunk On-Call per tenere log, alert e incidenti in un'unica fattura."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_2",
+      "english": "Better Uptime",
+      "set": {
+        "italian": "Better Uptime"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_2",
+      "english": "Grafana OnCall",
+      "set": {
+        "italian": "Grafana OnCall"
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_2",
+      "english": "Alertmanager",
+      "set": {
+        "example": "We point every Prometheus replica at the same Alertmanager cluster so deduplicated pages reach PagerDuty exactly once. = Puntiamo ogni replica Prometheus allo stesso cluster Alertmanager così le pagine deduplicate arrivano a PagerDuty esattamente una volta."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_2",
+      "english": "Inhibition",
+      "set": {
+        "example": "An inhibition rule silences pod-level alerts whenever the parent node is already firing a NodeDown to cut noise during outages. = Una regola di inhibition silenzia gli alert a livello di pod quando il nodo padre sta già sparando un NodeDown per tagliare rumore durante i disservizi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_2",
+      "english": "Templates",
+      "set": {
+        "example": "Custom Alertmanager templates inject the runbook URL and Grafana dashboard link straight into the Slack message body. = Template Alertmanager custom iniettano l'URL del runbook e il link al dashboard Grafana direttamente nel corpo del messaggio Slack."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_3",
+      "english": "Alert Grouping",
+      "set": {
+        "example": "Smart alert grouping turns one hundred per-pod failures during a rolling restart into a single page with a clear summary. = Un alert grouping intelligente trasforma cento fallimenti per-pod durante un rolling restart in un singolo page con un riassunto chiaro."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_3",
+      "english": "Deduplication",
+      "set": {
+        "example": "Without deduplication, repeated firings of the same Prometheus alert across replicas would flood the on-call queue with identical tickets. = Senza deduplication i firing ripetuti dello stesso alert Prometheus tra repliche inonderebbero la coda on-call di ticket identici."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_3",
+      "english": "Group By",
+      "set": {
+        "example": "Set group_by to alertname and cluster so every alert storm from a single cluster lands in one consolidated PagerDuty incident. = Imposta group_by su alertname e cluster così ogni tempesta di alert da un singolo cluster arriva in un incidente PagerDuty consolidato."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_3",
+      "english": "Group Wait",
+      "set": {
+        "example": "Setting group_wait to thirty seconds lets Alertmanager batch correlated firings before paging the on-call only once. = Impostare group_wait a trenta secondi permette ad Alertmanager di accorpare i firing correlati prima di chiamare l'on-call una sola volta."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_3",
+      "english": "Group Interval",
+      "set": {
+        "example": "A five-minute group_interval prevents a new alert in the same group from re-paging immediately after the first notification went out. = Un group_interval di cinque minuti impedisce a un nuovo alert dello stesso gruppo di rinotificare subito dopo la prima notifica."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_3",
+      "english": "Repeat Interval",
+      "set": {
+        "example": "We use a four-hour repeat_interval on persistent alerts so the on-call gets re-paged if the incident drags into the next handoff. = Usiamo un repeat_interval di quattro ore sugli alert persistenti così l'on-call viene richiamato se l'incidente sconfina nel turno successivo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_3",
+      "english": "Suppression",
+      "set": {
+        "example": "Maintenance windows automatically apply suppression on dependent service alerts so a planned DB restart does not page five teams. = Le finestre di manutenzione applicano automaticamente suppression sugli alert dei servizi dipendenti così un riavvio DB pianificato non chiama cinque team."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_4",
+      "english": "Alert Spam",
+      "set": {
+        "example": "Six months of unaddressed alert spam at one bank trained engineers to mute the channel completely, hiding a real SEV1 for hours. = Sei mesi di alert spam ignorati in una banca hanno abituato gli ingegneri a silenziare il canale, nascondendo un vero SEV1 per ore."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_4",
+      "english": "Cause Alert Antipattern",
+      "set": {
+        "example": "Falling into the cause alert antipattern means paging on every disk-full warning instead of on the user-visible 500 errors they may produce. = Cadere nel cause alert antipattern significa chiamare per ogni warning disco pieno invece che sugli errori 500 visibili agli utenti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_4",
+      "english": "Threshold Hell",
+      "set": {
+        "example": "Teams stuck in threshold hell maintain hundreds of static cutoffs that all need re-tuning every time traffic patterns shift seasonally. = I team bloccati nel threshold hell mantengono centinaia di soglie statiche da ritarare ogni volta che il traffico cambia stagionalmente."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_4",
+      "english": "Burnout",
+      "set": {
+        "example": "Three weeks of 3am pages caused on-call burnout for the SRE team, who collectively asked HR to redesign the rotation. = Tre settimane di chiamate alle 3 di notte hanno causato burnout al team SRE, che ha collettivamente chiesto a HR di ridisegnare la rotazione."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_4",
+      "english": "Over-Alerting",
+      "set": {
+        "example": "Symptoms of over-alerting include engineers acknowledging pages without reading them and dashboards covered in permanently red panels. = I sintomi dell'over-alerting includono ingegneri che riconoscono le chiamate senza leggerle e dashboard coperti di pannelli sempre rossi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_4",
+      "english": "Under-Alerting",
+      "set": {
+        "example": "Chronic under-alerting becomes obvious when a customer tweet about a checkout outage arrives before any internal page does. = L'under-alerting cronico diventa ovvio quando un tweet di un cliente su un disservizio del checkout arriva prima di qualsiasi pagina interna."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_4",
+      "english": "No Ownership",
+      "set": {
+        "example": "When a critical alert hits the no ownership state nobody investigates and the same incident recurs every two weeks unfixed. = Quando un alert critico raggiunge lo stato no ownership nessuno indaga e lo stesso incidente si ripete ogni due settimane senza correzione."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_1",
+      "english": "OpenTelemetry",
+      "set": {
+        "italian": "OpenTelemetry",
+        "example": "Adopting OpenTelemetry across services lets you switch from Jaeger to Tempo as a backend without touching application instrumentation. = Adottare OpenTelemetry tra i servizi permette di passare da Jaeger a Tempo come backend senza toccare la strumentazione applicativa."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_1",
+      "english": "OTel",
+      "set": {
+        "italian": "OTel",
+        "example": "Junior engineers usually meet OTel through the auto-instrumentation agents before ever writing a manual span. = I junior engineer di solito incontrano OTel attraverso gli agent di auto-instrumentation prima ancora di scrivere uno span manuale."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_1",
+      "english": "API",
+      "set": {
+        "italian": "API",
+        "example": "Splitting the OTel API from the SDK lets library authors instrument their code without forcing a specific exporter on consumers. = Separare l'API OTel dall'SDK permette agli autori di librerie di strumentare il codice senza imporre un exporter specifico ai consumatori."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_1",
+      "english": "OTLP",
+      "set": {
+        "italian": "OTLP",
+        "example": "Almost every modern observability backend now ingests OTLP directly, removing the need for vendor-specific exporters. = Quasi ogni backend di observability moderno ingerisce OTLP direttamente, eliminando la necessità di exporter vendor-specific."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_1",
+      "english": "Exporter",
+      "set": {
+        "english": "OTel Exporter",
+        "italian": "OTel Exporter",
+        "example": "Configure an OTLP/HTTP OTel exporter to ship spans to Honeycomb without standing up a self-managed collector tier first. = Configura un OTel exporter OTLP/HTTP per inviare span a Honeycomb senza dover prima alzare un tier di collector self-managed."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_2",
+      "english": "Auto-Instrumentation",
+      "set": {
+        "english": "OTel Auto-Instrumentation",
+        "italian": "Auto-instrumentation OTel",
+        "example": "Drop the OTel auto-instrumentation agent into a Spring Boot app to capture HTTP, JDBC and Kafka spans without code changes. = Inserisci l'agent di auto-instrumentation OTel in un'app Spring Boot per catturare span HTTP, JDBC e Kafka senza modifiche al codice."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_2",
+      "english": "Java Agent",
+      "set": {
+        "example": "Attach the OTel Java agent via -javaagent at JVM startup so existing JARs gain distributed tracing with zero code rebuilds. = Attacca il Java agent OTel via -javaagent all'avvio della JVM così i JAR esistenti acquisiscono tracing distribuito senza rebuild di codice."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_2",
+      "english": "Meter",
+      "set": {
+        "example": "Acquire a meter scoped to the orders package so every counter and histogram shares the right resource attributes automatically. = Ottieni un meter con scope nel package orders così ogni counter e histogram condivide automaticamente i resource attribute corretti."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_2",
+      "english": "Span Kind",
+      "set": {
+        "example": "Setting span kind to SERVER on the HTTP handler lets backends render service-graph dependencies correctly from a single trace. = Impostare lo span kind a SERVER sull'handler HTTP permette ai backend di disegnare le dipendenze del service graph correttamente da una singola trace."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_2",
+      "english": "Attribute",
+      "set": {
+        "example": "Add an http.route attribute to each request span so dashboards can aggregate latency by endpoint rather than by raw URL. = Aggiungi un attributo http.route a ogni span di richiesta così i dashboard possono aggregare la latenza per endpoint invece che per URL grezza."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_2",
+      "english": "Baggage",
+      "set": {
+        "example": "Use OTel baggage to carry the tenant ID across microservices so downstream logs and spans share the same customer context. = Usa il baggage OTel per portare il tenant ID tra microservizi così log e span downstream condividono lo stesso contesto cliente."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_2",
+      "english": "Span Limit",
+      "set": {
+        "example": "Bumping the span limit for attribute count avoids silently dropping useful fields when instrumenting verbose GraphQL resolvers. = Alzare lo span limit sul conteggio di attributi evita di scartare silenziosamente campi utili strumentando resolver GraphQL verbosi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_3",
+      "english": "Traceparent",
+      "set": {
+        "example": "Forwarding the traceparent header through an API gateway is mandatory to keep upstream and downstream spans in the same trace tree. = Inoltrare il traceparent header attraverso un API gateway è obbligatorio per tenere span upstream e downstream nello stesso trace tree."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_3",
+      "english": "Tracestate",
+      "set": {
+        "example": "Vendors stash sampling priority hints inside tracestate so each backend can keep its proprietary metadata across hops. = I vendor infilano hint sulla priorità di sampling dentro tracestate così ogni backend mantiene i suoi metadata proprietari tra gli hop."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_3",
+      "english": "W3C Trace Context",
+      "set": {
+        "example": "Standardising on W3C Trace Context lets a Datadog-instrumented service interoperate cleanly with a Jaeger-instrumented downstream. = Standardizzare su W3C Trace Context permette a un servizio strumentato Datadog di interoperare pulitamente con un downstream strumentato Jaeger."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_3",
+      "english": "Inject",
+      "set": {
+        "example": "Outgoing HTTP clients must inject the active trace context into request headers or the downstream span becomes an orphan root. = I client HTTP in uscita devono iniettare il contesto di trace attivo negli header della richiesta o lo span downstream diventa una root orfana."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_3",
+      "english": "Extract",
+      "set": {
+        "example": "Server middleware extracts the propagated trace context from incoming headers before opening the request span on the carrier. = Il middleware server estrae il contesto di trace propagato dagli header in arrivo prima di aprire lo span di richiesta sul carrier."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_3",
+      "english": "gRPC Metadata",
+      "set": {
+        "example": "Trace context rides as gRPC metadata under the traceparent key, since HTTP/2 trailers are the closest analogue to REST headers. = Il contesto di trace viaggia come gRPC metadata sotto la chiave traceparent, poiché i trailer HTTP/2 sono l'analogo più vicino agli header REST."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_3",
+      "english": "Message Header",
+      "set": {
+        "example": "Producers stamp the traceparent into each Kafka message header so consumers can stitch downstream spans onto the original transaction. = I producer marchiano il traceparent in ogni message header Kafka così i consumer possono cucire span downstream sulla transazione originale."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_3",
+      "english": "Cross-Service Context",
+      "set": {
+        "example": "Without cross-service context you end up with hundreds of single-span traces and zero way to debug a slow request end-to-end. = Senza cross-service context ti ritrovi centinaia di trace mono-span e nessun modo per debuggare end-to-end una richiesta lenta."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_3",
+      "english": "Async Context",
+      "set": {
+        "example": "Wrapping a callback with the runtime's async context API ensures the span stays attached after an await crosses event-loop turns. = Avvolgere una callback con l'API di async context del runtime garantisce che lo span resti agganciato anche dopo un await che attraversa giri di event-loop."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_4",
+      "english": "Agent Mode",
+      "set": {
+        "example": "Deploying the Collector in agent mode on every host keeps telemetry local until a gateway tier can batch and ship it. = Distribuire il Collector in agent mode su ogni host mantiene la telemetria locale finché un tier gateway può aggregarla e inviarla."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_4",
+      "english": "Gateway Mode",
+      "set": {
+        "example": "In gateway mode a small fleet of Collector replicas aggregates traffic from every agent before exporting to backends like Tempo or Mimir. = In gateway mode una piccola flotta di repliche Collector aggrega traffico da ogni agent prima di esportare verso backend come Tempo o Mimir."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_4",
+      "english": "DaemonSet",
+      "set": {
+        "example": "Running the OTel Collector as a DaemonSet guarantees that pods on every Kubernetes node ship to a local sidecar over loopback. = Far girare il Collector OTel come DaemonSet garantisce che i pod su ogni nodo Kubernetes inviino a un sidecar locale via loopback."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_4",
+      "english": "Tail Sampling",
+      "set": {
+        "english": "OTel Tail Sampling",
+        "italian": "Tail sampling OTel",
+        "example": "Enable OTel tail sampling at the gateway tier so the policy keeps every trace containing an error or a span over 1 second. = Abilita il tail sampling OTel al tier gateway così la policy mantiene ogni trace che contiene un errore o uno span sopra il secondo."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_4",
+      "english": "Head Sampling",
+      "set": {
+        "example": "Cheap-to-decide head sampling drops 90% of traces at the SDK so backends store only a representative slice of production traffic. = L'head sampling economico da decidere scarta il 90% delle trace nell'SDK così i backend memorizzano solo una fetta rappresentativa del traffico."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_1",
+      "english": "kube-state-metrics",
+      "set": {
+        "example": "Charts of kube_pod_status_phase from kube-state-metrics surface CrashLoopBackOff outbreaks long before users notice failures. = I grafici di kube_pod_status_phase da kube-state-metrics mostrano outbreak di CrashLoopBackOff molto prima che gli utenti si accorgano dei fallimenti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_1",
+      "english": "Pod Phase",
+      "set": {
+        "example": "Alert when pod phase remains Pending for over five minutes because it usually signals scheduler trouble or missing resources. = Lancia un alert quando la pod phase resta Pending per più di cinque minuti perché di solito segnala problemi di scheduler o risorse mancanti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_1",
+      "english": "Node Status",
+      "set": {
+        "example": "Wire a panel showing node status across the fleet so a single NotReady worker pops red on the on-call dashboard immediately. = Cabla un pannello che mostra il node status su tutta la flotta così un singolo worker NotReady diventa rosso subito sul dashboard on-call."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_1",
+      "english": "Job Status",
+      "set": {
+        "example": "Page the on-call whenever a critical nightly backup job status remains Failed for two consecutive runs without recovery. = Chiama l'on-call quando un job status di backup notturno critico resta Failed per due esecuzioni consecutive senza recovery."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_1",
+      "english": "CronJob",
+      "set": {
+        "example": "Verify that the kube_cronjob_next_schedule_time gauge stays in the near future, otherwise the CronJob has silently stopped firing. = Verifica che la gauge kube_cronjob_next_schedule_time resti nel prossimo futuro, altrimenti il CronJob ha smesso silenziosamente di partire."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_1",
+      "english": "PVC",
+      "set": {
+        "example": "Track pending PVC count per namespace to catch storage-class misconfiguration before a Deployment rollout stalls on scheduling. = Traccia il numero di PVC pending per namespace per beccare misconfigurazioni della storage-class prima che un rollout di Deployment si pianti sullo scheduling."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_1",
+      "english": "HPA",
+      "set": {
+        "italian": "HPA",
+        "note": "Horizontal Pod Autoscaler: oggetto Kubernetes che ridimensiona automaticamente le repliche di un Deployment in base alle metriche."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_1",
+      "english": "Resource Quota",
+      "set": {
+        "example": "Charting resource quota usage per namespace catches teams approaching their CPU ceiling before deploys start failing with Forbidden errors. = Graficare l'uso della resource quota per namespace becca i team vicini al tetto di CPU prima che i deploy falliscano con errori Forbidden."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_1",
+      "english": "Label Selector",
+      "set": {
+        "example": "Tighten the ServiceMonitor label selector to app.kubernetes.io/name=api so scraping does not accidentally pick up sidecars on the same port. = Stringi il label selector del ServiceMonitor su app.kubernetes.io/name=api così lo scraping non prende per errore sidecar sulla stessa porta."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_2",
+      "english": "kube-prometheus-stack",
+      "set": {
+        "example": "A fresh helm install of kube-prometheus-stack gives you Prometheus, Alertmanager, Grafana and the operator wired together in minutes. = Un'installazione helm fresca di kube-prometheus-stack ti dà Prometheus, Alertmanager, Grafana e l'operator collegati in pochi minuti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_2",
+      "english": "PodMonitor",
+      "set": {
+        "example": "Use a PodMonitor when your workload exposes metrics directly on pod IPs without a fronting Service to scrape from. = Usa un PodMonitor quando il workload espone metriche direttamente sugli IP dei pod senza un Service davanti da cui scrappare."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_2",
+      "english": "PrometheusRule",
+      "set": {
+        "example": "Define a PrometheusRule named api-burn-rate so deploying alerts becomes a git commit instead of a manual Prometheus reload. = Definisci una PrometheusRule chiamata api-burn-rate così rilasciare alert diventa un git commit invece di un reload manuale di Prometheus."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_2",
+      "english": "AlertmanagerConfig",
+      "set": {
+        "example": "Each tenant team owns its own AlertmanagerConfig so they can route severity=critical to their own PagerDuty without ops involvement. = Ogni team tenant possiede il suo AlertmanagerConfig così può instradare severity=critical alla sua PagerDuty senza coinvolgere ops."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_2",
+      "english": "CRD",
+      "set": {
+        "example": "Installing a new CRD via apiextensions.k8s.io lets the operator manage application-specific resources as if they were native kinds. = Installare una nuova CRD via apiextensions.k8s.io permette all'operator di gestire risorse applicative come se fossero kind nativi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_2",
+      "english": "Helm Chart",
+      "set": {
+        "example": "Pin the Helm chart version in your GitOps repo so a CI run never silently upgrades production to a breaking chart release. = Blocca la versione dell'Helm chart nel repo GitOps così una run di CI non aggiorna silenziosamente la produzione a una release chart breaking."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_3",
+      "english": "Container Log",
+      "set": {
+        "example": "Aggregate container log lines into Loki by tailing /var/log/pods so a kubectl delete pod does not lose any audit data. = Aggrega le righe di container log in Loki tailando /var/log/pods così un kubectl delete pod non perde dati di audit."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_3",
+      "english": "Pod Logs",
+      "set": {
+        "example": "Use kubectl logs -f --tail=200 to stream the last lines of pod logs while a deploy rolls out so failures surface immediately. = Usa kubectl logs -f --tail=200 per streammare le ultime righe dei pod logs mentre un deploy si rolla così i fallimenti emergono subito."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_3",
+      "english": "Log Path",
+      "set": {
+        "example": "Mount the host /var/log/pods log path into the Promtail DaemonSet so it can read every container's stdout without API calls. = Monta il log path host /var/log/pods nel DaemonSet Promtail così può leggere lo stdout di ogni container senza chiamate API."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_3",
+      "english": "Event",
+      "set": {
+        "example": "Stream Kubernetes Event objects into your SIEM so suspicious patterns like repeated FailedScheduling or BackOff surface on a security dashboard. = Streamma gli oggetti Event di Kubernetes nel SIEM così pattern sospetti come FailedScheduling o BackOff ripetuti emergono in un dashboard di sicurezza."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_3",
+      "english": "Stern",
+      "set": {
+        "example": "During an incident, stern -n payments app=api tails logs from every replica in one terminal instead of juggling kubectl windows. = Durante un incidente, stern -n payments app=api taila i log di ogni replica in un terminale invece di giocolare con finestre kubectl."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_3",
+      "english": "Cluster Logging",
+      "set": {
+        "example": "A solid cluster logging pipeline ships every node and pod log to a central Elasticsearch within seconds of the line being written. = Una solida pipeline di cluster logging spedisce ogni log di nodo e pod a un Elasticsearch centrale entro secondi dalla scrittura della riga."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_4",
+      "english": "Istio",
+      "set": {
+        "italian": "Istio",
+        "example": "Enabling Istio on a Kubernetes cluster injects an Envoy sidecar into every pod and gives you mTLS, retries and tracing out of the box. = Abilitare Istio su un cluster Kubernetes inietta un sidecar Envoy in ogni pod e fornisce mTLS, retry e tracing pronti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_4",
+      "english": "Linkerd",
+      "set": {
+        "italian": "Linkerd",
+        "example": "Compared to Istio, Linkerd ships a much smaller Rust-based proxy that keeps p99 latency overhead under one millisecond per hop. = Rispetto a Istio, Linkerd offre un proxy Rust molto più piccolo che mantiene l'overhead di latenza p99 sotto un millisecondo per hop."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_4",
+      "english": "Envoy Proxy",
+      "set": {
+        "example": "An Envoy Proxy sidecar terminates mTLS, emits RED metrics, and applies retry policies without the application needing any networking code. = Un sidecar Envoy Proxy termina mTLS, emette metriche RED e applica policy di retry senza che l'applicazione abbia bisogno di codice di rete."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_4",
+      "english": "Mesh Telemetry",
+      "set": {
+        "example": "Out-of-the-box mesh telemetry from Istio gives you per-service RED metrics in Grafana without instrumenting application code. = La mesh telemetry pronta all'uso di Istio dà metriche RED per servizio in Grafana senza strumentare codice applicativo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_4",
+      "english": "RED Method",
+      "set": {
+        "example": "Apply the RED method to every microservice dashboard to expose request rate, error rate and duration in a uniform layout. = Applica il RED method a ogni dashboard di microservizio per esporre rate di richieste, tasso di errore e durata in un layout uniforme."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_1",
+      "english": "Forecasting",
+      "set": {
+        "example": "Capacity forecasting based on six weeks of history catches the holiday peak in time to pre-reserve EC2 instances and avoid spot evictions. = Il forecasting di capacità basato su sei settimane di storia becca il picco festivo in tempo per pre-riservare istanze EC2 ed evitare eviction degli spot."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_1",
+      "english": "Seasonality",
+      "set": {
+        "example": "Detecting seasonality in checkout traffic is critical because Sunday-evening spikes can be 4x Tuesday-afternoon baseline volumes. = Rilevare la seasonality nel traffico del checkout è critico perché i picchi della domenica sera possono essere 4x i volumi base del martedì pomeriggio."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_1",
+      "english": "Prophet",
+      "set": {
+        "italian": "Prophet",
+        "example": "We feed Prophet a year of Prometheus history per cluster to forecast the next quarter's compute spend within a 5% confidence band. = Diamo in pasto a Prophet un anno di storia Prometheus per cluster per prevedere la spesa compute del prossimo trimestre entro una banda di confidenza del 5%."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_1",
+      "english": "ARIMA",
+      "set": {
+        "italian": "ARIMA",
+        "example": "Classical ARIMA still beats fancier deep-learning baselines when the workload is stable and you only have a few hundred data points. = Il classico ARIMA batte ancora baseline deep-learning più sofisticati quando il workload è stabile e hai solo poche centinaia di punti dati."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_1",
+      "english": "Holt-Winters",
+      "set": {
+        "example": "Running Holt-Winters on memory_used over the last hour produces a smoothed prediction that flags slow leaks long before OOMKilled. = Eseguire Holt-Winters su memory_used nell'ultima ora produce una predizione smussata che segnala leak lenti molto prima di OOMKilled."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_2",
+      "english": "Saturation Metric",
+      "set": {
+        "example": "Tracking the disk IO saturation metric ahead of utilisation surfaces queueing pressure before the latency SLO actually breaks. = Tracciare la saturation metric sull'IO disco prima dell'utilizzo mostra la pressione di accodamento prima che l'SLO di latenza si rompa davvero."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_2",
+      "english": "Queue Depth",
+      "set": {
+        "example": "Watching SQS queue depth instead of consumer CPU tells you immediately when downstream processing cannot keep up with producers. = Guardare la queue depth di SQS invece della CPU del consumer dice subito quando il processing downstream non riesce a stare dietro ai producer."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_2",
+      "english": "Backpressure",
+      "set": {
+        "example": "Healthy backpressure makes a Kafka consumer slow producers down via lag rather than letting downstream services topple under load. = Una backpressure sana fa rallentare i producer da parte di un consumer Kafka tramite il lag invece di far crollare i servizi downstream sotto carico."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_2",
+      "english": "Headroom",
+      "set": {
+        "english": "Capacity Headroom",
+        "italian": "Headroom di capacità",
+        "example": "Keep at least 30% capacity headroom on every cluster so a single AZ failure does not push the survivors into latency-melting saturation. = Mantieni almeno il 30% di headroom di capacità su ogni cluster così il fallimento di una singola AZ non spinge i superstiti in saturation distruttiva per la latenza."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_2",
+      "english": "USE Method",
+      "set": {
+        "english": "USE Method (capacity)",
+        "italian": "Metodo USE (capacità)",
+        "example": "Apply the USE method (capacity view) to every resource by checking utilisation, saturation and errors during capacity planning reviews. = Applica il metodo USE (vista capacità) a ogni risorsa controllando utilizzo, saturation ed errori durante le review di capacity planning."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_2",
+      "english": "Bottleneck Analysis",
+      "set": {
+        "example": "Proper bottleneck analysis often reveals that doubling DB connections fixes more latency than scaling stateless workers horizontally. = Un'analisi del collo di bottiglia fatta bene spesso rivela che raddoppiare le connessioni DB migliora la latenza più che scalare worker stateless orizzontalmente."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_2",
+      "english": "Right-Sizing",
+      "set": {
+        "example": "Quarterly right-sizing on EKS workloads typically reclaims 25-40% of reserved CPU just by aligning requests with observed p95 usage. = Il right-sizing trimestrale sui workload EKS recupera tipicamente il 25-40% della CPU riservata solo allineando le request all'uso p95 osservato."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_3",
+      "english": "FinOps",
+      "set": {
+        "example": "Mature FinOps practice puts engineers and finance in the same weekly meeting to review unit economics and approve commit-spend decisions. = Una pratica FinOps matura mette ingegneri e finance nello stesso meeting settimanale per rivedere unit economics e approvare decisioni di commitment di spesa."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_3",
+      "english": "Cost Per Request",
+      "set": {
+        "example": "Plotting cost per request alongside latency shows when a microservice rewrite actually paid back the engineering investment. = Plottare il costo per richiesta accanto alla latenza mostra quando un rewrite di microservizio ha davvero ripagato l'investimento ingegneristico."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_3",
+      "english": "Unit Economics",
+      "set": {
+        "example": "Healthy unit economics means each premium customer generates more revenue than the cost of the cloud resources their traffic consumes. = Unit economics sane significano che ogni cliente premium genera più ricavi del costo delle risorse cloud consumate dal suo traffico."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_3",
+      "english": "Spot Instance",
+      "set": {
+        "example": "Running stateless batch jobs on AWS spot instance fleets typically slashes compute spend by 70% at the cost of handling random reclaims. = Eseguire job batch stateless su flotte di spot instance AWS taglia tipicamente la spesa compute del 70% al costo di gestire reclamation casuali."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_3",
+      "english": "Reserved Instance",
+      "set": {
+        "example": "A three-year reserved instance commitment on the baseline database fleet cuts hourly cost by half versus on-demand pricing. = Un impegno reserved instance triennale sulla flotta database di base taglia il costo orario della metà rispetto al pricing on-demand."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_3",
+      "english": "Showback",
+      "set": {
+        "example": "Quarterly showback reports make engineering teams aware of their cloud bill without yet creating the political friction of real chargebacks. = Report di showback trimestrali rendono i team engineering consapevoli della loro bolletta cloud senza ancora creare l'attrito politico dei chargeback veri."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_3",
+      "english": "Chargeback",
+      "set": {
+        "example": "Real chargeback bills each cost-center for its observed cloud usage and creates direct incentives to delete idle resources every sprint. = Un chargeback vero addebita a ogni cost-center il suo uso cloud osservato e crea incentivi diretti a cancellare risorse inattive ogni sprint."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_3",
+      "english": "Idle Resource",
+      "set": {
+        "example": "Scanning for idle resource patterns like CPU under 5% for 30 days routinely uncovers six-figure annual savings in mature accounts. = Scansionare pattern di idle resource come CPU sotto il 5% per 30 giorni scopre regolarmente risparmi annui a sei cifre in account maturi."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_3",
+      "english": "Wasted Spend",
+      "set": {
+        "example": "Tagging every resource with cost-center and environment lets FinOps queries surface wasted spend on forgotten dev clusters within minutes. = Taggare ogni risorsa con cost-center e environment permette alle query FinOps di mostrare wasted spend su cluster di dev dimenticati in pochi minuti."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_4",
+      "english": "Benchmark",
+      "set": {
+        "example": "Run the same wrk benchmark against staging before and after a Postgres index change to quantify the latency win in p95 milliseconds. = Esegui lo stesso benchmark wrk contro staging prima e dopo un cambio di indice Postgres per quantificare la vittoria di latenza in millisecondi p95."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_4",
+      "english": "Profiling",
+      "set": {
+        "example": "Continuous profiling with pprof in production catches CPU-hungry regressions in p99 latency that synthetic benchmarks never reproduce. = Il profiling continuo con pprof in produzione becca regressioni CPU-affamate nella latenza p99 che i benchmark sintetici non riproducono mai."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_4",
+      "english": "Flame Graph",
+      "set": {
+        "example": "A CPU flame graph from production reveals that 40% of compute time goes into JSON serialisation, pointing at a clear optimisation target. = Un flame graph CPU dalla produzione rivela che il 40% del tempo compute va in serializzazione JSON, indicando un chiaro target di ottimizzazione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_4",
+      "english": "Hot Spot",
+      "set": {
+        "example": "Profilers expose a hot spot in the auth middleware: every request was unnecessarily re-parsing the JWT signing key from disk. = I profiler mostrano un hot spot nel middleware di auth: ogni richiesta ri-parserava inutilmente la chiave di firma JWT dal disco."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_4",
+      "english": "Memory Leak",
+      "set": {
+        "example": "A subtle memory leak in a Node.js worker grew RSS by 100MB per hour and only triggered OOMKilled five days into the deploy. = Un memory leak sottile in un worker Node.js faceva crescere la RSS di 100MB l'ora e ha attivato OOMKilled solo cinque giorni dopo il deploy."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_4",
+      "english": "Garbage Collection",
+      "set": {
+        "example": "Switching the JVM to the G1 garbage collection algorithm cut our p99 GC pause time from 800ms to under 50ms during peak hours. = Passare la JVM all'algoritmo G1 di garbage collection ha tagliato il tempo di pausa GC p99 da 800ms a sotto 50ms durante le ore di picco."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_4",
+      "english": "Cache Layer",
+      "set": {
+        "example": "Introducing a Redis cache layer in front of the product catalogue cut p95 latency from 180ms to 12ms and halved DB CPU usage. = Introdurre un cache layer Redis davanti al catalogo prodotti ha tagliato la latenza p95 da 180ms a 12ms e dimezzato l'uso CPU del DB."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_4",
+      "english": "Database Tuning",
+      "set": {
+        "example": "Two days of careful database tuning with EXPLAIN ANALYZE often outperforms a costly hardware upgrade by an order of magnitude. = Due giorni di database tuning attento con EXPLAIN ANALYZE superano spesso un costoso upgrade hardware di un ordine di grandezza."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "mon_capacity_4",
+      "english": "Capacity Test",
+      "set": {
+        "example": "Run a quarterly capacity test that pushes production-shape load until the first SLO breaks, then document the exact saturation point. = Esegui un capacity test trimestrale che spinge carico di forma produttiva fino a rompere il primo SLO, poi documenta il punto esatto di saturation."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_1",
+      "english": "Splunk",
+      "set": {
+        "english": "Splunk SIEM",
+        "italian": "Splunk",
+        "example": "Many enterprise SOCs still standardise on Splunk SIEM because it correlates auth, firewall and EDR logs in a single search head. = Molti SOC enterprise standardizzano ancora su Splunk SIEM perché correla log di auth, firewall ed EDR in una singola search head."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_1",
+      "english": "Sentinel",
+      "set": {
+        "example": "Microsoft Sentinel pulls signals directly from Entra ID, Defender and Office 365 so identity-based attacks surface without custom connectors. = Microsoft Sentinel pesca segnali direttamente da Entra ID, Defender e Office 365 così gli attacchi basati su identità emergono senza connettori custom."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_1",
+      "english": "QRadar",
+      "set": {
+        "example": "Large banks still rely on IBM QRadar because its risk-scoring engine integrates cleanly with on-prem mainframe audit feeds. = Le grandi banche si affidano ancora a IBM QRadar perché il suo motore di risk-scoring si integra pulitamente con i feed di audit mainframe on-prem."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_1",
+      "english": "Wazuh",
+      "set": {
+        "italian": "Wazuh",
+        "example": "Smaller teams adopt Wazuh as an open-source SIEM bundled with HIDS agents to ship a SOC capability without enterprise license costs. = I team più piccoli adottano Wazuh come SIEM open-source bundlato con agent HIDS per spedire una capacità SOC senza costi di licenza enterprise."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_1",
+      "english": "Sigma Rule",
+      "set": {
+        "example": "Writing detections as Sigma rules in YAML lets the same logic compile to Splunk SPL, Elastic EQL and Sentinel KQL queries automatically. = Scrivere detection come Sigma rule in YAML permette alla stessa logica di compilare automaticamente in query Splunk SPL, Elastic EQL e Sentinel KQL."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_1",
+      "english": "Correlation",
+      "set": {
+        "example": "Cross-source correlation links a failed SSH burst on one host to a successful login from the same IP on another within a single incident. = La correlation cross-source collega un burst SSH fallito su un host a un login riuscito dallo stesso IP su un altro dentro un singolo incidente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_1",
+      "english": "Threat Intelligence",
+      "set": {
+        "example": "Subscribing to commercial threat intelligence feeds enriches every login event with a real-time reputation score for the source IP. = Sottoscrivere feed commerciali di threat intelligence arricchisce ogni evento di login con un punteggio di reputazione real-time per l'IP sorgente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "Audit Log",
+      "set": {
+        "english": "Application Audit Log",
+        "italian": "Audit log applicativo",
+        "example": "Every privileged action in the admin panel writes an application audit log entry with actor, target, before/after state and signed timestamp. = Ogni azione privilegiata nel pannello admin scrive una entry di audit log applicativo con attore, target, stato prima/dopo e timestamp firmato."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "CloudTrail",
+      "set": {
+        "example": "Forwarding CloudTrail events to a dedicated security account creates a tamper-resistant record of every API call across the entire AWS organisation. = Inoltrare gli eventi CloudTrail a un account di sicurezza dedicato crea un record resistente alla manomissione di ogni chiamata API in tutta l'organizzazione AWS."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "Audit Trail",
+      "set": {
+        "example": "SOC 2 Type II auditors expect a complete audit trail covering every production access for the entire 12-month observation window. = Gli auditor SOC 2 Type II si aspettano un audit trail completo che copra ogni accesso produttivo per l'intera finestra di osservazione di 12 mesi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "PCI DSS",
+      "set": {
+        "italian": "PCI DSS",
+        "note": "Payment Card Industry Data Security Standard: standard internazionale per la protezione dei dati delle carte di pagamento."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "GDPR",
+      "set": {
+        "italian": "GDPR",
+        "note": "General Data Protection Regulation (UE 2016/679): regolamento europeo che disciplina il trattamento dei dati personali."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "SOC 2",
+      "set": {
+        "italian": "SOC 2",
+        "note": "Standard di audit AICPA per fornitori di servizi cloud, basato sui Trust Service Criteria (sicurezza, disponibilità, integrità, riservatezza, privacy).",
+        "example": "Closing a SOC 2 Type II audit requires twelve months of evidence that every production change went through a documented change-approval workflow. = Chiudere un audit SOC 2 Type II richiede dodici mesi di evidenza che ogni modifica in produzione sia passata da un workflow documentato di approvazione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "Tamper-Proof",
+      "set": {
+        "example": "Streaming logs into an append-only S3 bucket with object lock makes the archive tamper-proof and acceptable as evidence in compliance audits. = Streammare i log in un bucket S3 append-only con object lock rende l'archivio tamper-proof e accettabile come evidenza negli audit di compliance."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "Forwarder",
+      "set": {
+        "example": "Deploy a Splunk universal forwarder on every Linux host so syslog, auditd and application logs reach the indexer over an encrypted channel. = Distribuisci un Splunk universal forwarder su ogni host Linux così syslog, auditd e log applicativi raggiungono l'indexer su un canale cifrato."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "Index Time",
+      "set": {
+        "example": "Field extraction performed at index time in Splunk consumes more disk but makes subsequent search queries return results in milliseconds. = L'estrazione dei field eseguita a index time in Splunk consuma più disco ma fa restituire alle query di search successive risultati in millisecondi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_3",
+      "english": "Compliance Monitoring",
+      "set": {
+        "example": "Continuous compliance monitoring fires a ticket the moment an S3 bucket gets accidentally flipped from private to public access. = Il compliance monitoring continuo apre un ticket nel momento in cui un bucket S3 viene accidentalmente girato da accesso privato a pubblico."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_3",
+      "english": "Evidence",
+      "set": {
+        "example": "Auditors expect signed log evidence of every quarterly access review, not a verbal claim that someone in the team performed it. = Gli auditor si aspettano evidence firmata via log di ogni access review trimestrale, non una dichiarazione verbale che qualcuno del team l'abbia fatta."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_3",
+      "english": "WORM Storage",
+      "set": {
+        "example": "Compliance teams park forensic logs on WORM storage like S3 Object Lock so even a privileged actor cannot rewrite history during an investigation. = I team di compliance parcheggiano i log forensi su WORM storage tipo S3 Object Lock così nemmeno un attore privilegiato può riscrivere la storia durante un'indagine."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_3",
+      "english": "Immutability",
+      "set": {
+        "example": "Cryptographic hash chains give logs append-only immutability so any retroactive edit is mathematically detectable during forensic review. = Le catene di hash crittografici danno ai log un'immutability append-only così ogni modifica retroattiva è matematicamente rilevabile in fase forense."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_3",
+      "english": "PII",
+      "set": {
+        "example": "Run a PII scanner over every log stream so a fiscal code leaking into an error message gets redacted before reaching long-term storage. = Esegui uno scanner PII su ogni stream di log così un codice fiscale che trapela in un messaggio di errore viene redatto prima di raggiungere lo storage a lungo termine."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_3",
+      "english": "DLP",
+      "set": {
+        "italian": "DLP",
+        "note": "Data Loss Prevention: insieme di controlli che bloccano l'esfiltrazione accidentale o malevola di dati sensibili.",
+        "example": "A DLP policy on outbound email blocks any message containing what looks like a credit-card number before it ever leaves the company gateway. = Una policy DLP sulla posta in uscita blocca qualsiasi messaggio che contiene quello che sembra un numero di carta prima che esca dal gateway aziendale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_4",
+      "english": "Anomaly Detection",
+      "set": {
+        "example": "Behavioural anomaly detection flags a developer downloading the entire customer database at 3am when their normal pattern is a few rows per day. = La anomaly detection comportamentale segnala uno sviluppatore che scarica l'intero database clienti alle 3 di notte quando il suo pattern normale è qualche riga al giorno."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_4",
+      "english": "Lateral Movement",
+      "set": {
+        "example": "Catching lateral movement early relies on alerting whenever a service account suddenly authenticates against hosts it has never touched before. = Beccare presto il lateral movement si basa su alert quando un service account improvvisamente si autentica contro host che non aveva mai toccato."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_4",
+      "english": "IOC",
+      "set": {
+        "italian": "IOC",
+        "note": "Indicator Of Compromise: artefatto osservabile (hash, IP, dominio, chiave di registro) che suggerisce un'intrusione in corso o passata.",
+        "example": "Subscribing to vendor IOC feeds lets the SIEM auto-block known malicious IPs within seconds of their first appearance in a threat report. = Sottoscrivere feed IOC di vendor permette al SIEM di auto-bloccare IP malevoli noti entro secondi dalla loro prima apparizione in un threat report."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_4",
+      "english": "TTP",
+      "set": {
+        "italian": "TTP",
+        "note": "Tactics, Techniques and Procedures: livelli del comportamento dell'attaccante, dal piano strategico alle azioni operative."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_4",
+      "english": "MITRE ATT&CK",
+      "set": {
+        "example": "Mapping every detection to a MITRE ATT&CK technique lets the SOC see at a glance which kill-chain phases have weak coverage. = Mappare ogni detection a una tecnica MITRE ATT&CK permette al SOC di vedere a colpo d'occhio quali fasi della kill-chain hanno copertura debole."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_4",
+      "english": "EDR",
+      "set": {
+        "italian": "EDR",
+        "note": "Endpoint Detection and Response: agent che monitora processi, rete e filesystem sull'endpoint e fornisce capacità di risposta remota.",
+        "example": "When the EDR agent flags a suspicious PowerShell child process, the SOC can isolate the host from the network straight from the console. = Quando l'agent EDR segnala un processo figlio PowerShell sospetto, il SOC può isolare l'host dalla rete direttamente dalla console."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_4",
+      "english": "SOC",
+      "set": {
+        "italian": "SOC",
+        "note": "Security Operations Center: team (e relativa piattaforma) che monitora 24x7 alert di sicurezza e coordina la risposta agli incidenti.",
+        "example": "A modern SOC runs in a follow-the-sun model with hand-offs across three continents so a critical alert never waits more than five minutes. = Un SOC moderno gira in modello follow-the-sun con hand-off su tre continenti così un alert critico non aspetta mai più di cinque minuti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "AIOps",
+      "set": {
+        "example": "Adopting AIOps platforms like Moogsoft cut alert volume by 80% by clustering raw signals into a handful of correlated situations per day. = Adottare piattaforme AIOps come Moogsoft ha tagliato il volume di alert dell'80% raggruppando segnali grezzi in poche situazioni correlate al giorno."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "Anomaly Detection",
+      "set": {
+        "english": "ML Anomaly Detection",
+        "italian": "ML Anomaly Detection",
+        "example": "ML anomaly detection on Prometheus histograms catches slow regressions that static thresholds miss until a customer files a support ticket. = La ML anomaly detection su istogrammi Prometheus becca regressioni lente che le soglie statiche perdono finché un cliente non apre un ticket di supporto."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "Predictive Alerting",
+      "set": {
+        "example": "With predictive alerting on disk growth, the on-call expands storage during business hours instead of being paged at 3am for a full volume. = Con il predictive alerting sulla crescita disco, l'on-call espande lo storage in orari di ufficio invece di essere chiamato alle 3 di notte per un volume pieno."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "Noise Reduction",
+      "set": {
+        "example": "ML-driven noise reduction collapses thousands of repeated CPU spikes during a deploy into a single situation the on-call actually reads. = La noise reduction guidata da ML collassa migliaia di picchi CPU ripetuti durante un deploy in una singola situazione che l'on-call legge davvero."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "Event Correlation",
+      "set": {
+        "example": "Smart event correlation links a switch failure to the downstream pod evictions and database timeouts into one root-cause incident, not three. = Una event correlation intelligente collega un guasto switch alle eviction di pod downstream e ai timeout DB in un unico incidente root-cause, non tre."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "Root Cause Analysis",
+      "set": {
+        "example": "Topology-aware root cause analysis points to the failed Redis node within seconds, instead of forcing engineers to chase symptom dashboards. = Una root cause analysis topology-aware indica il nodo Redis guasto in pochi secondi, invece di costringere gli ingegneri a inseguire dashboard di sintomi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "Topology Awareness",
+      "set": {
+        "example": "Without topology awareness an AIOps engine cannot tell that a database outage will inevitably ripple into the dependent payment microservice. = Senza topology awareness un motore AIOps non riesce a capire che un disservizio del database si propagherà inevitabilmente al microservizio pagamenti dipendente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "Forecasting",
+      "set": {
+        "english": "AIOps Forecasting",
+        "italian": "AIOps Forecasting",
+        "example": "AIOps forecasting predicts the next quarter's compute needs from production telemetry, freeing capacity planners from spreadsheet guesswork. = L'AIOps forecasting predice il fabbisogno compute del prossimo trimestre dalla telemetria di produzione, liberando i capacity planner dalle congetture su fogli di calcolo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "Pattern Recognition",
+      "set": {
+        "example": "Running pattern recognition over six months of incident history surfaces a recurring Sunday-night memory leak nobody had spotted as a trend. = Far girare pattern recognition su sei mesi di storia incidenti mostra un memory leak ricorrente della domenica notte che nessuno aveva visto come trend."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_1",
+      "english": "Self-Healing",
+      "set": {
+        "example": "True self-healing systems detect a stuck pod, kill it, scale up replacements, and only escalate to humans if recovery actions fail twice. = I veri sistemi self-healing rilevano un pod bloccato, lo uccidono, scalano sostituti e fanno escalation a umani solo se le azioni di recovery falliscono due volte."
+      }
+    }
+  ]
+}

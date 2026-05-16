@@ -1,0 +1,130 @@
+{
+  "fixes": [
+    {
+      "level": "8",
+      "lesson": "ai_vision_3",
+      "english": "Semantic Segmentation",
+      "set": {
+        "example": "For autonomous driving, models perform semantic segmentation to label every pixel as road, sidewalk, vehicle, or pedestrian. = Per la guida autonoma, i modelli eseguono la segmentazione semantica per etichettare ogni pixel come strada, marciapiede, veicolo o pedone."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ai_responsible_2",
+      "english": "Explainability",
+      "set": {
+        "note": "Tecniche come SHAP e LIME forniscono spiegazioni post-hoc richieste da normative come GDPR per decisioni automatizzate."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ai_frameworks_2",
+      "english": "Dataset",
+      "set": {
+        "english": "Collate Function",
+        "italian": "Funzione di collazione (collate)",
+        "example": "A custom collate function lets the DataLoader pad variable-length sequences into a single batch tensor cleanly. = Una funzione di collate personalizzata permette al DataLoader di fare padding di sequenze a lunghezza variabile in un singolo tensore batch in modo pulito.",
+        "note": "Si passa al DataLoader tramite l'argomento collate_fn."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ai_training_1",
+      "english": "Iteration",
+      "set": {
+        "english": "Warmup Steps",
+        "italian": "Passi di riscaldamento (warmup)",
+        "example": "Setting 500 warmup steps lets the learning rate ramp up gradually and avoids early gradient explosions in transformer training. = Impostare 500 warmup step lascia che il learning rate salga gradualmente ed evita esplosioni precoci del gradiente nell'addestramento dei transformer.",
+        "note": "Comune nei transformer e nei modelli con learning rate scheduler."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ai_pro_3",
+      "english": "Standardization",
+      "set": {
+        "english": "Maturity Assessment",
+        "italian": "Valutazione della maturità",
+        "example": "A quarterly MLOps maturity assessment scores teams on automation, monitoring, and governance to highlight the next investment areas. = Una valutazione trimestrale della maturità MLOps valuta i team su automazione, monitoraggio e governance per evidenziare le prossime aree di investimento.",
+        "note": "Spesso basata su framework come Google MLOps Maturity Model o Microsoft MLOps Capability Model."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "R-Squared",
+      "set": {
+        "english": "Pseudo R-Squared",
+        "italian": "Pseudo R quadrato",
+        "example": "For logistic regression we report McFadden's pseudo R-squared because the standard R-squared is not defined for binary outcomes. = Per la regressione logistica riportiamo lo pseudo R quadrato di McFadden perché l'R quadrato standard non è definito per esiti binari.",
+        "note": "Esistono diverse formulazioni: McFadden, Cox-Snell, Nagelkerke."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ai_evaluation_3",
+      "english": "Explained Variance",
+      "set": {
+        "english": "Predicted vs Actual Plot",
+        "italian": "Grafico predetto vs reale",
+        "example": "Inspecting the predicted vs actual plot quickly reveals whether the regression systematically over- or under-predicts in certain ranges. = Ispezionare il grafico predetto vs reale rivela rapidamente se la regressione sovra- o sotto-stima sistematicamente in certi intervalli.",
+        "note": "Idealmente i punti si dispongono lungo la diagonale y=x."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_2",
+      "english": "Vector Database",
+      "set": {
+        "english": "Graph Database",
+        "italian": "Database a grafo",
+        "example": "Recommendation pipelines often store user-item relationships in a graph database to enable multi-hop traversals at query time. = Le pipeline di raccomandazione spesso memorizzano le relazioni utente-item in un database a grafo per abilitare attraversamenti multi-hop al momento della query.",
+        "note": "Esempi: Neo4j, Amazon Neptune, ArangoDB."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ai_research_1",
+      "english": "Citation",
+      "set": {
+        "english": "Citation Index",
+        "italian": "Indice di citazione",
+        "example": "Tools like Google Scholar and Semantic Scholar build a citation index that lets you trace which later papers extend a given result. = Strumenti come Google Scholar e Semantic Scholar costruiscono un indice di citazione che permette di tracciare quali articoli successivi estendono un dato risultato.",
+        "note": "Misure derivate includono h-index e impact factor."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ai_research_3",
+      "english": "Ablation Study",
+      "set": {
+        "english": "Sensitivity Analysis",
+        "italian": "Analisi di sensibilità",
+        "example": "A sensitivity analysis on the learning rate showed results were stable between 1e-4 and 5e-4 but degraded sharply outside that range. = Un'analisi di sensibilità sul learning rate ha mostrato che i risultati erano stabili tra 1e-4 e 5e-4 ma degradavano bruscamente fuori da quell'intervallo.",
+        "note": "Più ampia dell'ablation study: varia parametri continui, non solo presenza/assenza di componenti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ai_security_1",
+      "english": "Adversarial Training",
+      "set": {
+        "english": "Defensive Distillation",
+        "italian": "Distillazione difensiva",
+        "example": "Defensive distillation trains a second model on softened probability outputs of the first to make adversarial perturbations harder to craft. = La distillazione difensiva addestra un secondo modello sulle probabilità ammorbidite del primo per rendere più difficile costruire perturbazioni avversarie.",
+        "note": "Successivamente dimostrata aggirabile da attacchi C&W ma utile come baseline difensiva."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ai_scale_3",
+      "english": "Feature Store",
+      "set": {
+        "english": "Feature Pipeline",
+        "italian": "Pipeline di feature",
+        "example": "The feature pipeline ingests raw event logs hourly, computes rolling aggregates, and writes the results to both online and offline stores. = La pipeline di feature ingerisce i log eventi grezzi ogni ora, calcola aggregati a finestra mobile e scrive i risultati su store online e offline.",
+        "note": "Tipicamente orchestrata con Airflow, Dagster o framework specifici come Feast."
+      }
+    }
+  ]
+}

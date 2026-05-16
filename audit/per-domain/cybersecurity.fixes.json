@@ -1,0 +1,770 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "cyber_basics_1",
+      "english": "Hacker",
+      "set": {
+        "example": "A skilled hacker probed the staging server for hours before finding an exposed admin endpoint. = Un hacker esperto ha sondato il server di staging per ore prima di trovare un endpoint admin esposto."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_2",
+      "english": "Logout",
+      "set": {
+        "example": "Auto-logout after 15 minutes of inactivity is a baseline control on any banking or healthcare portal. = Il logout automatico dopo 15 minuti di inattività è un controllo minimo su qualsiasi portale bancario o sanitario."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_3",
+      "english": "Risk",
+      "set": {
+        "example": "Every change to a production system carries some risk, so we weigh the impact against the benefit before rolling it out. = Ogni modifica a un sistema in produzione comporta un certo rischio, perciò valutiamo l'impatto rispetto al beneficio prima di rilasciarla."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "cyber_basics_3",
+      "english": "Update",
+      "set": {
+        "example": "Apply the security update within 48 hours when the vendor flags a vulnerability as actively exploited. = Applica l'update di sicurezza entro 48 ore quando il vendor segnala una vulnerabilità come attivamente sfruttata."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_attacks",
+      "english": "Brute Force",
+      "set": {
+        "example": "Rate limiting and account lockout policies make a brute force attack against the login form impractical. = Il rate limiting e le policy di blocco account rendono impraticabile un attacco di forza bruta contro la form di login."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_attacks",
+      "english": "Social Engineering",
+      "set": {
+        "example": "Most successful breaches start with social engineering rather than a technical exploit of the perimeter. = La maggior parte delle violazioni riuscite inizia con ingegneria sociale piuttosto che con un exploit tecnico del perimetro."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_attacks",
+      "english": "Identity Theft",
+      "set": {
+        "example": "After the leak of SSNs and dates of birth, the firm offered free identity theft monitoring for two years. = Dopo la fuga di SSN e date di nascita, l'azienda ha offerto monitoraggio del furto d'identità gratuito per due anni."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_attacks",
+      "english": "Insider Threat",
+      "set": {
+        "example": "Detecting an insider threat is hard because the user already has legitimate access to the systems they abuse. = Rilevare una minaccia interna è difficile perché l'utente ha già accesso legittimo ai sistemi di cui abusa."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_web",
+      "english": "Domain",
+      "set": {
+        "example": "Attackers register a look-alike domain a few weeks before the campaign so the WHOIS record looks aged. = Gli aggressori registrano un dominio simile qualche settimana prima della campagna così il record WHOIS sembra invecchiato."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "threats_defense_intro",
+      "english": "Scan",
+      "set": {
+        "example": "Schedule a weekly authenticated scan of the internal subnet to catch missing patches before attackers do. = Pianifica una scansione autenticata settimanale della subnet interna per intercettare patch mancanti prima degli aggressori."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_auth",
+      "english": "One-Time Password (OTP)",
+      "set": {
+        "example": "The bank sends a 6-digit one-time password by SMS, valid for 60 seconds, to confirm each wire transfer. = La banca invia una one-time password di 6 cifre via SMS, valida 60 secondi, per confermare ogni bonifico."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_endpoint",
+      "english": "Disk Encryption",
+      "set": {
+        "example": "Without full disk encryption, a stolen laptop hands over every cached credential and offline document to the thief. = Senza crittografia del disco completa, un laptop rubato consegna al ladro ogni credenziale cached e documento offline."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_basics",
+      "english": "Switch",
+      "set": {
+        "example": "A managed switch lets you assign each port to a different VLAN to segment traffic at layer 2. = Uno switch gestito permette di assegnare ogni porta a una VLAN diversa per segmentare il traffico al layer 2."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_protocols",
+      "english": "ARP (Address Resolution Protocol)",
+      "set": {
+        "example": "Run `arp -a` to inspect the ARP cache when a host suddenly stops reaching its default gateway. = Lancia `arp -a` per ispezionare la cache ARP quando un host smette improvvisamente di raggiungere il default gateway."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_security",
+      "english": "Network Segmentation",
+      "set": {
+        "example": "Proper network segmentation contains a ransomware outbreak inside one VLAN instead of letting it pivot company-wide. = Una segmentazione della rete adeguata contiene un'epidemia ransomware dentro una VLAN invece di lasciarla pivotare in tutta l'azienda."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_security",
+      "english": "DMZ (Demilitarized Zone)",
+      "set": {
+        "example": "Public web servers live in the DMZ so a compromise there does not give direct access to the internal LAN. = I server web pubblici vivono nella DMZ così una compromissione lì non dà accesso diretto alla LAN interna."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_security",
+      "english": "Port Mirroring",
+      "set": {
+        "example": "Enable port mirroring on the uplink so the IDS sees a copy of every packet traversing the core switch. = Abilita il mirroring delle porte sull'uplink così l'IDS vede una copia di ogni pacchetto che attraversa lo switch core."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_security",
+      "english": "Access Control List (ACL)",
+      "set": {
+        "example": "Tighten the inbound ACL on the edge router to deny RFC1918 source addresses from the public interface. = Stringi l'ACL in ingresso sull'edge router per negare gli indirizzi sorgente RFC1918 sull'interfaccia pubblica."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "net_security",
+      "english": "Port Security",
+      "set": {
+        "example": "With port security enabled, the switch shuts down any access port that suddenly sees a new MAC address. = Con la port security abilitata, lo switch chiude qualsiasi porta di accesso che vede improvvisamente un nuovo MAC address."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_symmetric",
+      "english": "Symmetric Encryption",
+      "set": {
+        "example": "We rely on symmetric encryption for bulk data because AES-GCM is orders of magnitude faster than RSA. = Ci affidiamo alla crittografia simmetrica per i dati massivi perché AES-GCM è ordini di grandezza più veloce di RSA."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_pki",
+      "english": "Root Certificate",
+      "set": {
+        "example": "If a private root certificate is compromised, every downstream cert it issued must be revoked and reissued. = Se un certificato radice privato è compromesso, ogni cert downstream da esso emesso deve essere revocato e riemesso."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_pki",
+      "english": "Intermediate Certificate",
+      "set": {
+        "example": "Browsers complain when the server forgets to send the intermediate certificate alongside its leaf cert. = I browser si lamentano quando il server dimentica di inviare il certificato intermedio insieme al cert foglia."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_injection",
+      "english": "Command Injection",
+      "set": {
+        "example": "Passing user input straight to `os.system()` is the classic command injection pitfall in legacy Python scripts. = Passare l'input utente direttamente a `os.system()` è la classica trappola di iniezione di comandi negli script Python legacy."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "Session Fixation",
+      "set": {
+        "example": "Always regenerate the session ID after login to defeat session fixation attacks against the application. = Rigenera sempre l'ID di sessione dopo il login per sconfiggere gli attacchi di session fixation contro l'applicazione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "HttpOnly Cookie",
+      "set": {
+        "example": "Setting the session as an HttpOnly cookie prevents client-side scripts from reading it during an XSS attack. = Impostare la sessione come cookie HttpOnly impedisce agli script client-side di leggerla durante un attacco XSS."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_auth",
+      "english": "Credential Stuffing",
+      "set": {
+        "italian": "Credential Stuffing",
+        "example": "MFA and bot-detection at the login endpoint are the cheapest defenses against credential stuffing waves. = MFA e bot-detection sull'endpoint di login sono le difese più economiche contro le ondate di credential stuffing.",
+        "note": "Termine inglese usato anche in italiano: indica il riutilizzo automatizzato di credenziali rubate da altri data breach."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_owasp",
+      "english": "Broken Access Control",
+      "set": {
+        "example": "OWASP ranks broken access control as the number-one web risk because most apps still trust client-side checks. = OWASP classifica il controllo accessi difettoso come il rischio web numero uno perché molte app si affidano ancora a controlli client-side."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_owasp",
+      "english": "Insecure Design",
+      "set": {
+        "example": "You cannot patch your way out of insecure design: the threat model has to be revisited at the architecture stage. = Non si può rattoppare la propria via fuori da una progettazione non sicura: il modello di minaccia va rivisitato in fase di architettura."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "Output Encoding",
+      "set": {
+        "example": "Context-aware output encoding in the template engine is the most reliable defense against reflected XSS. = La codifica dell'output sensibile al contesto nel template engine è la difesa più affidabile contro l'XSS riflesso."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_access",
+      "english": "Access Control",
+      "set": {
+        "example": "Audit your access control policies every quarter to catch dormant accounts that still hold production privileges. = Verifica le tue policy di controllo accessi ogni trimestre per scoprire account dormienti che mantengono privilegi di produzione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_access",
+      "english": "Horizontal Escalation",
+      "set": {
+        "example": "An IDOR bug usually enables horizontal escalation, letting one user read or modify another user's data. = Un bug IDOR di solito abilita la scalata orizzontale, permettendo a un utente di leggere o modificare i dati di un altro utente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_hardening",
+      "english": "System Hardening",
+      "set": {
+        "example": "CIS Benchmarks give you a concrete checklist for system hardening on Linux, Windows and most cloud baselines. = I CIS Benchmark forniscono una checklist concreta per l'hardening del sistema su Linux, Windows e la maggior parte delle baseline cloud."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_monitoring",
+      "english": "Log Correlation",
+      "set": {
+        "example": "Cross-source log correlation in the SIEM links a failed login on the VPN to a later admin action on the database. = La correlazione dei log tra fonti diverse nel SIEM collega un login fallito sulla VPN a una successiva azione admin sul database."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_monitoring",
+      "english": "Real-time Alerting",
+      "set": {
+        "example": "Tune your real-time alerting carefully: an analyst who gets 500 alerts per shift will start ignoring all of them. = Calibra con cura la tua allarmistica in tempo reale: un analista che riceve 500 alert per turno inizierà a ignorarli tutti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "sys_config",
+      "english": "Configuration Drift",
+      "set": {
+        "example": "Infrastructure-as-code plus periodic compliance scans are the standard antidote to configuration drift across the fleet. = Infrastructure-as-code più scansioni di conformità periodiche sono l'antidoto standard alla deriva della configurazione sulla flotta."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_forensics",
+      "english": "Digital Forensics",
+      "set": {
+        "example": "A solid digital forensics process preserves chain of custody so the evidence holds up in court later on. = Un solido processo di informatica forense preserva la catena di custodia così le prove reggono in tribunale in seguito."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_forensics",
+      "english": "Evidence Acquisition",
+      "set": {
+        "example": "Document hashes and timestamps during evidence acquisition so the integrity of the disk image can be verified later. = Documenta hash e timestamp durante l'acquisizione delle prove così l'integrità dell'immagine del disco può essere verificata in seguito."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_forensics",
+      "english": "Metadata Analysis",
+      "set": {
+        "example": "Routine metadata analysis of an exfiltrated PDF revealed the author's username and the workstation that produced it. = L'analisi dei metadati di routine di un PDF esfiltrato ha rivelato lo username dell'autore e la workstation che lo ha prodotto."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_threat_intel",
+      "english": "Indicator of Compromise (IOC)",
+      "set": {
+        "example": "Push every fresh IOC from the vendor feed into the EDR within minutes to block ongoing campaigns. = Spingi ogni nuovo IOC dal feed del vendor nell'EDR entro pochi minuti per bloccare campagne in corso."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_threat_intel",
+      "english": "Dark Web Monitoring",
+      "set": {
+        "example": "Continuous dark web monitoring caught the leaked credentials hours before the attacker tried to reuse them. = Il monitoraggio continuo del Dark Web ha intercettato le credenziali trafugate ore prima che l'attaccante provasse a riutilizzarle."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_recovery",
+      "english": "RTO (Recovery Time Objective)",
+      "set": {
+        "example": "A 4-hour RTO means the business expects the service back online within four hours of an outage being declared. = Un RTO di 4 ore significa che il business si aspetta il servizio nuovamente online entro quattro ore dalla dichiarazione di un'interruzione."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_models",
+      "english": "SaaS (Software as a Service)",
+      "set": {
+        "example": "With SaaS the vendor handles patching and uptime, but data classification stays the customer's responsibility. = Con il SaaS il vendor gestisce patching e uptime, ma la classificazione dei dati resta responsabilità del cliente."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_models",
+      "english": "Hybrid Cloud",
+      "set": {
+        "example": "A hybrid cloud setup keeps regulated PII on-premises while bursting analytics workloads to the public provider. = Un setup di cloud ibrido tiene i PII regolamentati on-premises sfruttando il provider pubblico per i carichi analitici a burst."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "IAM (Identity and Access Management)",
+      "set": {
+        "example": "A well-designed IAM model uses groups and roles so adding a new hire takes a single membership change. = Un modello IAM ben progettato usa gruppi e ruoli così aggiungere un nuovo assunto richiede un singolo cambio di membership."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "Federated Identity",
+      "set": {
+        "example": "Enabling federated identity via SAML lets employees use their corporate login across every SaaS app the company adopts. = Abilitare l'identità federata via SAML permette ai dipendenti di usare il login aziendale su ogni app SaaS adottata dall'azienda."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "Conditional Access",
+      "set": {
+        "example": "A conditional access policy can block sign-ins from anonymous proxies or require MFA outside the office network. = Una policy di accesso condizionale può bloccare i login da proxy anonimi o richiedere MFA fuori dalla rete d'ufficio."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Encryption at Rest",
+      "set": {
+        "example": "Cloud providers offer encryption at rest by default, but customer-managed keys give you control over revocation. = I provider cloud offrono la cifratura dei dati archiviati di default, ma le chiavi gestite dal cliente danno il controllo sulla revoca."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Client-side Encryption",
+      "set": {
+        "example": "End-to-end messaging apps perform client-side encryption so the server only ever sees opaque ciphertext blobs. = Le app di messaggistica end-to-end eseguono la cifratura lato client così il server vede solo blob opachi di ciphertext."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Server-side Encryption (SSE)",
+      "set": {
+        "example": "Amazon S3 buckets enable SSE-S3 by default, encrypting every new object before it is written to disk. = I bucket Amazon S3 abilitano SSE-S3 di default, cifrando ogni nuovo oggetto prima che venga scritto su disco."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Data Masking",
+      "set": {
+        "example": "Dynamic data masking in the query layer shows analysts only the last four digits of each customer card number. = Il mascheramento dinamico dei dati nel query layer mostra agli analisti solo le ultime quattro cifre di ogni numero di carta cliente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_threats",
+      "english": "Mobile Malware",
+      "set": {
+        "example": "Most mobile malware spreads through fake app stores or through SMS links that lead to unsigned APK files. = La maggior parte del malware mobile si diffonde tramite app store falsi o link SMS che portano a file APK non firmati."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_threats",
+      "english": "App Sandboxing",
+      "set": {
+        "example": "iOS relies on strict app sandboxing so a compromised game cannot read the user's banking app data. = iOS si affida a un rigoroso sandboxing delle app così un gioco compromesso non può leggere i dati dell'app bancaria dell'utente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_mgmt",
+      "english": "Device Attestation",
+      "set": {
+        "example": "Server-side device attestation rejects logins from rooted phones before the credentials are ever submitted. = L'attestazione del dispositivo lato server rifiuta i login da telefoni rooted prima ancora che le credenziali siano sottomesse."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_app",
+      "english": "Certificate Pinning",
+      "set": {
+        "italian": "Certificate Pinning",
+        "example": "Banking apps use certificate pinning so a rogue CA in the user's trust store cannot silently MITM their traffic. = Le app bancarie usano il certificate pinning così una CA fraudolenta nel trust store dell'utente non può fare MITM silenzioso sul loro traffico.",
+        "note": "Termine inglese usato in italiano: indica l'aggancio dell'app a un certificato o chiave pubblica attesa."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_app",
+      "english": "Intent Injection",
+      "set": {
+        "example": "An Android intent injection bug lets a malicious app trigger restricted activities that the target app never exposed publicly. = Un bug di iniezione di intent su Android permette a un'app malevola di triggerare activity ristrette che l'app target non ha mai esposto pubblicamente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_app",
+      "english": "App Wrapping",
+      "set": {
+        "italian": "App Wrapping",
+        "example": "Enterprises rely on app wrapping when they have to enforce MDM policies on an APK they did not build themselves. = Le aziende si affidano all'app wrapping quando devono imporre policy MDM su un APK che non hanno costruito loro stesse.",
+        "note": "Termine inglese usato in italiano: indica l'aggiunta di un involucro di policy attorno a un'app esistente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mobile_network",
+      "english": "Cell Tower Spoofing",
+      "set": {
+        "example": "A rogue IMSI catcher performs cell tower spoofing to force nearby phones into a downgraded, unencrypted protocol. = Un IMSI catcher fraudolento esegue lo spoofing di torre cellulare per forzare i telefoni vicini su un protocollo declassato e non cifrato."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_teams",
+      "english": "Adversary Simulation",
+      "set": {
+        "example": "A full adversary simulation chains spear-phishing, lateral movement and data theft to test detection end-to-end. = Una simulazione dell'avversario completa concatena spear-phishing, movimento laterale e furto dati per testare la detection end-to-end."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_teams",
+      "english": "Threat Hunting",
+      "set": {
+        "italian": "Threat Hunting",
+        "example": "Proactive threat hunting starts from a hypothesis about attacker behavior and queries telemetry to confirm or refute it. = Il threat hunting proattivo parte da un'ipotesi sul comportamento dell'attaccante e interroga la telemetria per confermarla o smentirla.",
+        "note": "Termine inglese usato in italiano: indica la caccia proattiva a minacce non ancora segnalate dai tool automatici."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Malware Analysis",
+      "set": {
+        "example": "A solid malware analysis report covers behavior, persistence mechanisms and indicators useful to the SOC. = Un solido report di analisi del malware copre comportamento, meccanismi di persistenza e indicatori utili al SOC."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Static Analysis",
+      "set": {
+        "example": "Begin with static analysis of the binary so you map imports, strings and packers before running it in a sandbox. = Comincia con l'analisi statica del binario così mappi import, stringhe e packer prima di eseguirlo in una sandbox."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Dynamic Analysis",
+      "set": {
+        "example": "Detonate the sample in an isolated VM and watch the dynamic analysis traces for network beacons and registry writes. = Detona il sample in una VM isolata e osserva le tracce di analisi dinamica per beacon di rete e scritture al registro."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_malware",
+      "english": "Reverse Engineering",
+      "set": {
+        "example": "Ghidra and IDA Pro are the de facto tools for reverse engineering of stripped binaries during incident response. = Ghidra e IDA Pro sono gli strumenti de facto per l'ingegneria inversa di binari stripped durante l'incident response."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_apt",
+      "english": "Nation-State Actor",
+      "set": {
+        "example": "A nation-state actor invests in custom zero-days, while criminal groups usually recycle commodity exploits. = Un attore statale investe in zero-day custom, mentre i gruppi criminali di solito riciclano exploit commodity."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_apt",
+      "english": "Cyber Espionage",
+      "set": {
+        "example": "Long-running cyber espionage campaigns prefer stealth over speed: the attacker stays hidden for months while siphoning data. = Le campagne di spionaggio informatico di lungo corso preferiscono la furtività alla velocità: l'attaccante resta nascosto per mesi mentre sottrae dati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_apt",
+      "english": "Data Exfiltration",
+      "set": {
+        "example": "Slow, chunked data exfiltration over DNS often evades volume-based DLP rules tuned for HTTP uploads. = L'esfiltrazione dei dati lenta e a chunk via DNS spesso elude le regole DLP basate sul volume calibrate per gli upload HTTP."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_offensive",
+      "english": "Offensive Security",
+      "set": {
+        "example": "An offensive security team finds weaknesses before adversaries do and feeds the lessons back into the blue team's defenses. = Un team di sicurezza offensiva trova debolezze prima degli avversari e restituisce le lezioni alle difese del blue team."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_offensive",
+      "english": "Ethical Hacking",
+      "set": {
+        "example": "Practitioners of ethical hacking always operate under a written scope and a clearly defined rules-of-engagement document. = I praticanti dell'hacking etico operano sempre sotto uno scope scritto e un documento di rules-of-engagement chiaramente definito."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_offensive",
+      "english": "Exploit Development",
+      "set": {
+        "example": "Modern exploit development must defeat ASLR, DEP and CFG before the payload ever gets a chance to run. = Lo sviluppo di exploit moderno deve sconfiggere ASLR, DEP e CFG prima che il payload abbia la possibilità di eseguire."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_offensive",
+      "english": "Post-Exploitation",
+      "set": {
+        "italian": "Post-Exploitation",
+        "example": "During post-exploitation the operator hunts for credentials in memory and pivots toward the domain controller. = Durante il post-exploitation l'operatore caccia credenziali in memoria e fa pivoting verso il domain controller.",
+        "note": "Termine inglese usato in italiano: indica le attività svolte dopo aver ottenuto l'accesso iniziale alla macchina."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_risk",
+      "english": "Risk Avoidance",
+      "set": {
+        "example": "Sometimes the right answer is risk avoidance: drop the feature entirely rather than ship it with weak controls. = A volte la risposta giusta è l'evitamento del rischio: elimina del tutto la feature invece di rilasciarla con controlli deboli."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_risk",
+      "english": "Asset Valuation",
+      "set": {
+        "example": "Realistic asset valuation drives every downstream risk calculation, including insurance premiums and recovery budgets. = Una valutazione degli asset realistica guida ogni calcolo del rischio downstream, inclusi i premi assicurativi e i budget di recupero."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_risk",
+      "english": "Quantitative Risk Analysis",
+      "set": {
+        "example": "Boards prefer quantitative risk analysis because dollar figures and probabilities translate directly into investment trade-offs. = I board preferiscono l'analisi quantitativa del rischio perché cifre in dollari e probabilità si traducono direttamente in trade-off di investimento."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_risk",
+      "english": "Qualitative Risk Analysis",
+      "set": {
+        "example": "Small teams default to qualitative risk analysis with a simple high/medium/low matrix instead of full Monte Carlo models. = I team piccoli ripiegano sull'analisi qualitativa del rischio con una semplice matrice alto/medio/basso invece di modelli Monte Carlo completi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_career",
+      "english": "CISO (Chief Information Security Officer)",
+      "set": {
+        "example": "A modern CISO spends as much time briefing the board on cyber risk as managing the security operations team itself. = Un CISO moderno passa tanto tempo a fare briefing al board sul rischio cyber quanto a gestire il team di security operations stesso."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_career",
+      "english": "Incident Responder",
+      "set": {
+        "example": "A seasoned incident responder triages alerts under pressure and writes a clear post-mortem once the dust settles. = Un addetto risposta incidenti esperto fa triage degli alert sotto pressione e scrive un post-mortem chiaro una volta che la polvere si è posata."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_career",
+      "english": "Security Awareness Training",
+      "set": {
+        "example": "Quarterly security awareness training that includes simulated phishing measurably lowers click-through on real attacks. = La formazione sulla consapevolezza della sicurezza trimestrale che include phishing simulato abbassa misurabilmente il click-through sugli attacchi reali."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "Encryption",
+      "set": {
+        "english": "end-to-end encryption",
+        "italian": "crittografia end-to-end",
+        "example": "End-to-end encryption ensures that only the conversation participants, not the server, can read the message contents. = La crittografia end-to-end garantisce che solo i partecipanti alla conversazione, non il server, possano leggere i contenuti del messaggio.",
+        "note": "Acronimo comune: E2EE. La chiave non è mai accessibile al provider del servizio."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_endpoint",
+      "english": "Antivirus",
+      "set": {
+        "english": "next-generation antivirus",
+        "italian": "antivirus di nuova generazione",
+        "example": "Next-generation antivirus relies on behavioral analysis and machine learning instead of static signature databases. = L'antivirus di nuova generazione si affida ad analisi comportamentale e machine learning invece che a database di signature statiche.",
+        "note": "Spesso abbreviato in NGAV; integrato nelle suite EDR moderne."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_crypto_basics",
+      "english": "HTTPS",
+      "set": {
+        "english": "HTTPS strict transport",
+        "italian": "HTTPS strict transport (HSTS)",
+        "example": "Enabling HTTPS strict transport via the HSTS header tells browsers to refuse any future plaintext connection to your domain. = Abilitare HTTPS strict transport tramite l'header HSTS dice ai browser di rifiutare ogni futura connessione in chiaro al tuo dominio.",
+        "note": "L'header chiave è Strict-Transport-Security; la direttiva preload include il dominio nelle liste hardcoded dei browser."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "defense_auth",
+      "english": "Certificate",
+      "set": {
+        "english": "client certificate",
+        "italian": "certificato client",
+        "example": "Mutual TLS uses a client certificate so the server can authenticate the caller without relying on a shared secret. = Il mutual TLS usa un certificato client così il server può autenticare il chiamante senza affidarsi a un segreto condiviso.",
+        "note": "Tipico delle API B2B, dei microservizi interni e degli accessi VPN aziendali."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ir_process",
+      "english": "Recovery",
+      "set": {
+        "english": "recovery playbook",
+        "italian": "playbook di recupero",
+        "example": "A recovery playbook documents the exact sequence of restores, validations and communications after a ransomware incident. = Un playbook di recupero documenta la sequenza esatta di restore, validazioni e comunicazioni dopo un incidente ransomware.",
+        "note": "Va testato regolarmente con tabletop exercise: un playbook mai provato fallisce sotto stress."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "web_defense",
+      "english": "WAF (Web Application Firewall)",
+      "set": {
+        "english": "WAF ruleset",
+        "italian": "ruleset del WAF",
+        "example": "Tuning the WAF ruleset against application-specific traffic patterns is essential to keep false positives low. = Calibrare il ruleset del WAF rispetto ai pattern di traffico specifici dell'applicazione è essenziale per tenere bassi i falsi positivi.",
+        "note": "OWASP CRS è il ruleset open source di riferimento per i WAF basati su ModSecurity e Coraza."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iam",
+      "english": "Identity Provider (IdP)",
+      "set": {
+        "english": "cloud identity provider",
+        "italian": "identity provider cloud",
+        "example": "A central cloud identity provider lets every SaaS app delegate authentication via SAML or OpenID Connect. = Un identity provider cloud centrale permette a ogni app SaaS di delegare l'autenticazione via SAML o OpenID Connect.",
+        "note": "Esempi: Okta, Azure AD/Entra ID, Google Workspace, AWS IAM Identity Center."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "Public Key",
+      "set": {
+        "english": "public key fingerprint",
+        "italian": "fingerprint della chiave pubblica",
+        "example": "Comparing the public key fingerprint over a second channel prevents a man-in-the-middle from substituting their own key. = Confrontare la fingerprint della chiave pubblica su un secondo canale impedisce a un man-in-the-middle di sostituire la propria chiave.",
+        "note": "SSH mostra la fingerprint al primo collegamento (TOFU: trust on first use)."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_asymmetric",
+      "english": "Private Key",
+      "set": {
+        "english": "private key passphrase",
+        "italian": "passphrase della chiave privata",
+        "example": "Protect every exported private key with a strong passphrase so a stolen file alone is not enough to impersonate you. = Proteggi ogni chiave privata esportata con una passphrase robusta così un file rubato da solo non basta per impersonarti.",
+        "note": "ssh-add la chiede una volta e mantiene la chiave decifrata in agente per la sessione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "crypto_hash",
+      "english": "Digital Signature",
+      "set": {
+        "english": "digital signature verification",
+        "italian": "verifica della firma digitale",
+        "example": "Digital signature verification on each package install ensures the binary came from the official maintainer, not a mirror. = La verifica della firma digitale a ogni installazione di pacchetto garantisce che il binario provenga dal maintainer ufficiale, non da un mirror.",
+        "note": "I package manager moderni (apt, dnf, pacman) eseguono la verifica automaticamente con le chiavi GPG dei repo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "adv_teams",
+      "english": "Tabletop Exercise",
+      "set": {
+        "english": "purple-team tabletop exercise",
+        "italian": "tabletop exercise di purple team",
+        "example": "A purple-team tabletop exercise walks attackers and defenders through the same scenario to surface detection gaps together. = Un tabletop exercise di purple team guida attaccanti e difensori attraverso lo stesso scenario per far emergere insieme i gap di detection.",
+        "note": "Più collaborativo della classica simulazione red-vs-blue, ottimo per affinare playbook e runbook."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_data",
+      "english": "Data Sovereignty",
+      "set": {
+        "example": "Choosing the right cloud region is a question of data sovereignty: some jurisdictions forbid storing citizen data abroad. = Scegliere la giusta regione cloud è una questione di sovranità dei dati: alcune giurisdizioni vietano di archiviare i dati dei cittadini all'estero."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "grc_compliance",
+      "english": "Data Sovereignty",
+      "set": {
+        "english": "data sovereignty clause",
+        "italian": "clausola di sovranità dei dati",
+        "example": "A data sovereignty clause in the cloud contract guarantees that customer records never leave the EU region without consent. = Una clausola di sovranità dei dati nel contratto cloud garantisce che i record dei clienti non lascino mai la regione UE senza consenso.",
+        "note": "Critica per i settori regolamentati (PA, sanità, finanza) sottoposti a GDPR e a normative nazionali."
+      }
+    }
+  ]
+}

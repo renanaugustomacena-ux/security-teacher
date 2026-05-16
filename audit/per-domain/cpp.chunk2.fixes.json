@@ -1,0 +1,1344 @@
+{
+  "fixes": [
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Filesystem",
+      "set": {
+        "example": "Use std::filesystem to iterate a directory tree and compute total size without manually handling per-OS path separators. = Usa std::filesystem per iterare un albero di directory e calcolare la dimensione totale senza gestire manualmente i separatori per OS."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Visit",
+      "set": {
+        "example": "Pass an overloaded lambda set to std::visit so each alternative of a variant gets dispatched to the right handler. = Passa un insieme di lambda overloadate a std::visit così ogni alternativa di una variant è instradata al gestore giusto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Requires Clause",
+      "set": {
+        "example": "Constrain a template with a requires clause so only types exposing a size() method match the function overload. = Vincola un template con una requires clause così solo i tipi che espongono un metodo size() corrispondono all'overload."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Constraint",
+      "set": {
+        "example": "Attach a constraint to a template parameter so the compiler rejects unsupported types with a clear diagnostic instead of a deep error. = Aggiungi un constraint a un parametro di template così il compilatore rifiuta tipi non supportati con una diagnostica chiara."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Auto Concept",
+      "set": {
+        "example": "Declare a parameter as std::integral auto so the function only accepts integer types and reads almost like English. = Dichiara un parametro come std::integral auto così la funzione accetta solo tipi interi e si legge quasi come inglese."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Std Integral",
+      "set": {
+        "example": "Constrain an algorithm with std::integral when you want to forbid floating-point or pointer arguments at compile time. = Vincola un algoritmo con std::integral quando vuoi vietare argomenti in virgola mobile o puntatori a tempo di compilazione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Std Floating Point",
+      "set": {
+        "example": "Use std::floating_point to write a numeric helper that only compiles for float, double, and long double arguments. = Usa std::floating_point per scrivere un helper numerico che compila solo per argomenti float, double e long double."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Concept Conjunction",
+      "set": {
+        "example": "Combine two concepts with && to form a concept conjunction that requires both interfaces from the candidate type. = Combina due concept con && per formare una concept conjunction che richiede entrambe le interfacce dal tipo candidato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_6",
+      "english": "Concept Disjunction",
+      "set": {
+        "example": "Use a concept disjunction with || when an algorithm can work on either iterators or contiguous ranges interchangeably. = Usa una concept disjunction con || quando un algoritmo può lavorare indifferentemente su iteratori o range contigui."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Co Await",
+      "set": {
+        "example": "Pause a coroutine with co_await while waiting for an async I/O result without blocking the underlying thread. = Sospendi una coroutine con co_await mentre aspetti un risultato di I/O asincrono senza bloccare il thread sottostante."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Co Yield",
+      "set": {
+        "example": "Stream values lazily from a generator coroutine by emitting each item with co_yield instead of building a full vector. = Trasmetti valori in modo lazy da una coroutine generatore emettendo ogni elemento con co_yield invece di costruire un vector intero."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Co Return",
+      "set": {
+        "example": "End a task coroutine with co_return to deliver the final value back to the awaiting caller. = Termina una coroutine task con co_return per consegnare il valore finale al chiamante in attesa."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Promise Type",
+      "set": {
+        "example": "Define a promise_type to customize how a coroutine is constructed, suspended, and how it produces its result. = Definisci un promise_type per personalizzare come una coroutine viene costruita, sospesa e come produce il suo risultato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Generator",
+      "set": {
+        "example": "Implement a lazy generator coroutine that yields each Fibonacci number on demand so the caller pulls only what it needs. = Implementa una coroutine generatore lazy che produce ogni numero di Fibonacci a richiesta così il chiamante preleva solo ciò che serve."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Awaitable",
+      "set": {
+        "example": "Wrap a network socket in an awaitable so calling code can simply co_await read() instead of registering callbacks. = Avvolgi un socket di rete in un awaitable così il codice chiamante può semplicemente co_await read() invece di registrare callback."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Suspend Always",
+      "set": {
+        "example": "Return std::suspend_always from initial_suspend to make a lazy generator that only runs work when the consumer pulls. = Ritorna std::suspend_always da initial_suspend per ottenere un generatore lazy che esegue lavoro solo quando il consumatore preleva."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_7",
+      "english": "Suspend Never",
+      "set": {
+        "example": "Return std::suspend_never from initial_suspend when you want a coroutine that starts executing eagerly upon creation. = Ritorna std::suspend_never da initial_suspend quando vuoi una coroutine che inizia a eseguire subito alla creazione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Module",
+      "set": {
+        "example": "Migrate a heavy header full of templates to a C++20 module to slash include times and avoid macro leakage. = Migra un header pesante pieno di template a un modulo C++20 per tagliare i tempi di include ed evitare leakage di macro.",
+        "note": "I moduli sostituiscono il vecchio modello a header negli stili moderni."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Export",
+      "set": {
+        "example": "Mark only the public API of a module with export so internal helpers stay hidden from importers and link faster. = Marca solo l'API pubblica di un modulo con export così gli helper interni restano nascosti agli importatori e linkano più veloce."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Import",
+      "set": {
+        "example": "Bring in a precompiled module with import std; to access the standard library without parsing thousands of header lines. = Includi un modulo precompilato con import std; per accedere alla libreria standard senza parsare migliaia di righe di header."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Module Interface",
+      "set": {
+        "example": "Place the module interface unit in a .ixx or .cppm file where you declare what gets exported to consumers. = Colloca la module interface unit in un file .ixx o .cppm dove dichiari cosa viene esportato ai consumatori."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Std Format",
+      "set": {
+        "example": "Build a log line with std::format using {} placeholders for type-safe substitution instead of printf-style risk. = Costruisci una riga di log con std::format usando placeholder {} per sostituzione type-safe invece del rischio stile printf."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Std Print",
+      "set": {
+        "example": "Replace std::cout chains with std::print to emit formatted text in one call without manual stream manipulators. = Sostituisci catene di std::cout con std::print per emettere testo formattato in una sola chiamata senza manipolatori di stream manuali."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Format Spec",
+      "set": {
+        "example": "Add a format spec like {:.2f} inside a std::format string to render a double with two decimal digits and fixed notation. = Aggiungi una format spec come {:.2f} dentro una stringa std::format per rendere un double con due cifre decimali e notazione fissa."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_8",
+      "english": "Designated Initializer",
+      "set": {
+        "example": "Initialize a Config struct with designated initializers like {.port=8080, .host=\"x\"} so each field is self-documenting. = Inizializza una struct Config con designated initializer come {.port=8080, .host=\"x\"} così ogni campo si auto-documenta."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Parameter Pack",
+      "set": {
+        "example": "Accept an arbitrary number of arguments in a template by declaring typename... Args as a parameter pack. = Accetta un numero arbitrario di argomenti in un template dichiarando typename... Args come parameter pack."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Pack Expansion",
+      "set": {
+        "example": "Forward a whole parameter pack into make_unique with std::forward<Args>(args)... to expand the pack inline. = Inoltra un intero parameter pack a make_unique con std::forward<Args>(args)... per espandere il pack inline."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Sizeof Pack",
+      "set": {
+        "example": "Query the count of arguments at compile time with sizeof...(Args) to choose between optimized fast paths. = Interroga il numero di argomenti a tempo di compilazione con sizeof...(Args) per scegliere tra fast path ottimizzati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Fold Expression",
+      "set": {
+        "example": "Sum a parameter pack in one line with the fold expression (args + ...) instead of writing a recursive helper. = Somma un parameter pack in una sola riga con la fold expression (args + ...) invece di scrivere un helper ricorsivo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Left Fold",
+      "set": {
+        "example": "Use a left fold like (0 + ... + args) when accumulation order matters and you want associativity to bind from the left. = Usa un left fold come (0 + ... + args) quando l'ordine di accumulazione conta e vuoi associatività che lega da sinistra."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Right Fold",
+      "set": {
+        "example": "Pick a right fold (args + ... + 0) for operations like exponentiation where right-associativity is the natural reading. = Scegli un right fold (args + ... + 0) per operazioni come l'esponenziazione dove l'associatività a destra è la lettura naturale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Recursive Variadic",
+      "set": {
+        "example": "Before fold expressions existed, writers used recursive variadic templates with a base case to walk through each argument. = Prima dell'esistenza delle fold expression, gli sviluppatori usavano template variadici ricorsivi con un caso base per scorrere ogni argomento."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_5",
+      "english": "Tuple Get",
+      "set": {
+        "example": "Extract the second element of a tuple with std::get<1>(t) for compile-time indexed access without runtime overhead. = Estrai il secondo elemento di una tupla con std::get<1>(t) per accesso indicizzato a tempo di compilazione senza overhead runtime."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "Enable If",
+      "set": {
+        "example": "Restrict an overload to integer types using std::enable_if_t<std::is_integral_v<T>> as a SFINAE-style guard. = Restringi un overload ai tipi interi usando std::enable_if_t<std::is_integral_v<T>> come guardia in stile SFINAE."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "Tag Dispatch",
+      "set": {
+        "italian": "Tag dispatch",
+        "example": "Pick a specialized algorithm at compile time via tag dispatch by passing iterator_category as an extra tag argument. = Seleziona un algoritmo specializzato a tempo di compilazione tramite tag dispatch passando iterator_category come argomento tag extra.",
+        "note": "Tecnica per scegliere overload distinti a compile time tramite tipi sentinella."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "Void T",
+      "set": {
+        "example": "Detect whether T has a nested type member by checking std::void_t<typename T::value_type> in a partial specialization. = Rileva se T ha un type member annidato controllando std::void_t<typename T::value_type> in una specializzazione parziale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "Detection Idiom",
+      "set": {
+        "example": "Apply the detection idiom to query at compile time whether a class exposes a serialize() method before calling it. = Applica l'detection idiom per chiedere a tempo di compilazione se una classe espone un metodo serialize() prima di chiamarlo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "Concept Replacement",
+      "set": {
+        "example": "Rewrite an old enable_if heavy helper with a concept replacement so error messages mention the failing requirement directly. = Riscrivi un vecchio helper pieno di enable_if con un concept replacement così i messaggi di errore citano direttamente il requisito fallito."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_6",
+      "english": "If Constexpr",
+      "set": {
+        "example": "Branch at compile time with if constexpr to skip dereferencing pointers when T is not a pointer type. = Diramati a tempo di compilazione con if constexpr per saltare il dereferenziamento di puntatori quando T non è un tipo puntatore."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Type Traits",
+      "set": {
+        "example": "Reach for type traits like std::is_integral_v to write generic code that adapts behavior based on the deduced T. = Affidati ai type traits come std::is_integral_v per scrivere codice generico che adatta il comportamento al T dedotto.",
+        "note": "Header <type_traits> raccoglie metafunzioni per introspezione di tipi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Is Same",
+      "set": {
+        "example": "Static-assert that two deduced types match with static_assert(std::is_same_v<A, B>) to catch wiring bugs at compile time. = Static-asserisci che due tipi dedotti coincidano con static_assert(std::is_same_v<A, B>) per cogliere bug di cablaggio a compile time."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Is Pointer",
+      "set": {
+        "example": "Branch a helper with std::is_pointer_v<T> so it dereferences pointer arguments but copies value arguments directly. = Diramati in un helper con std::is_pointer_v<T> così dereferenzia argomenti puntatore ma copia direttamente quelli a valore."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Remove Reference",
+      "set": {
+        "example": "Strip & or && from a deduced type using std::remove_reference_t<T> before storing it inside a generic container. = Rimuovi & o && da un tipo dedotto usando std::remove_reference_t<T> prima di conservarlo in un container generico."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Remove Const",
+      "set": {
+        "example": "Drop const-ness with std::remove_const_t<T> when you must rebuild a mutable copy of a deduced template type. = Elimina la const-ness con std::remove_const_t<T> quando devi ricostruire una copia mutabile di un tipo template dedotto."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_7",
+      "english": "Common Type",
+      "set": {
+        "example": "Use std::common_type_t<int, double> to pick the result type of arithmetic on heterogeneous numeric arguments. = Usa std::common_type_t<int, double> per scegliere il tipo risultato di aritmetica su argomenti numerici eterogenei."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Consteval",
+      "set": {
+        "example": "Force evaluation at compile time by marking a hash helper consteval so any runtime call is a hard compiler error. = Forza la valutazione a tempo di compilazione marcando un helper di hash consteval così ogni chiamata runtime è un hard error del compilatore."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Constinit",
+      "set": {
+        "example": "Apply constinit to a global lookup table to guarantee it is initialized at compile time and avoid the static init fiasco. = Applica constinit a una tabella di lookup globale per garantire inizializzazione a compile time ed evitare lo static init fiasco."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Constexpr Container",
+      "set": {
+        "example": "Build a small std::array as a constexpr container so lookups can be folded into the binary as immediate values. = Costruisci un piccolo std::array come container constexpr così i lookup possono essere ripiegati nel binario come valori immediati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Static Polymorphism",
+      "set": {
+        "example": "Reach for static polymorphism via templates when you want virtual-call performance without the vtable indirection. = Affidati al polimorfismo statico tramite template quando vuoi prestazioni da virtual call senza l'indirezione della vtable."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Compile Time Branching",
+      "set": {
+        "example": "Replace runtime if/else hot paths with compile-time branching via if constexpr so the optimizer drops unused arms. = Sostituisci hot path runtime con if/else con branching a compile time tramite if constexpr così l'ottimizzatore elimina i rami inutilizzati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Template Recursion",
+      "set": {
+        "example": "Compute factorials at compile time with template recursion that ends in a specialization for the base case 0. = Calcola fattoriali a tempo di compilazione con template recursion che termina in una specializzazione per il caso base 0."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "cpp_templates_8",
+      "english": "Template Bloat",
+      "set": {
+        "example": "Watch out for template bloat: each instantiation can blow up binary size and slow down link times in big projects. = Attento al template bloat: ogni istanziazione può far esplodere la dimensione del binario e rallentare i link time."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Thread",
+      "set": {
+        "example": "Spin up a worker with std::thread t(do_work, payload) so heavy computation runs in parallel with the UI loop. = Avvia un worker con std::thread t(do_work, payload) così il calcolo pesante gira in parallelo con il loop della UI."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Join",
+      "set": {
+        "example": "Call t.join() before the std::thread destructor to ensure the worker finished and avoid std::terminate from a live thread. = Chiama t.join() prima del distruttore di std::thread per assicurarti che il worker abbia finito ed evitare std::terminate per un thread vivo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Detach",
+      "set": {
+        "example": "Use t.detach() only for background tasks whose lifetime you do not need to synchronize, accepting they outlive main. = Usa t.detach() solo per task in background la cui durata non devi sincronizzare, accettando che sopravvivano a main."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Joinable",
+      "set": {
+        "example": "Check if (t.joinable()) before calling join to avoid invoking it on a thread that was already detached or moved-from. = Controlla if (t.joinable()) prima di chiamare join per evitare di invocarla su un thread già detached o spostato."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Thread ID",
+      "set": {
+        "example": "Print std::this_thread::get_id() inside a task to confirm two workers actually run on different OS-level threads. = Stampa std::this_thread::get_id() dentro un task per confermare che due worker eseguano davvero su thread di OS diversi."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Sleep For",
+      "set": {
+        "example": "Pause a worker thread between retries with std::this_thread::sleep_for(500ms) so a flaky API gets time to recover. = Metti in pausa un thread worker tra i retry con std::this_thread::sleep_for(500ms) così un'API instabile ha tempo di recuperare."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Yield",
+      "set": {
+        "example": "Insert std::this_thread::yield() in a tight spin loop to politely hand the CPU back to the scheduler when no work is ready. = Inserisci std::this_thread::yield() in uno spin loop stretto per restituire educatamente la CPU allo scheduler quando non c'è lavoro pronto."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Jthread",
+      "set": {
+        "example": "Prefer std::jthread over std::thread because it auto-joins on destruction and supports cooperative cancellation natively. = Preferisci std::jthread a std::thread perché si auto-joina in distruzione e supporta cancellazione cooperativa nativamente."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_1",
+      "english": "Stop Token",
+      "set": {
+        "example": "Pass a std::stop_token into a jthread worker so it can poll stop_requested() and exit cleanly when asked. = Passa uno std::stop_token in un worker jthread così può interrogare stop_requested() e uscire pulitamente quando richiesto."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Mutex",
+      "set": {
+        "example": "Protect a shared counter with a std::mutex so two threads never witness a torn read or duplicated increment. = Proteggi un contatore condiviso con uno std::mutex così due thread non vedano mai una lettura strappata o un incremento duplicato."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Lock Guard",
+      "set": {
+        "example": "Wrap a critical section in std::lock_guard<std::mutex> lk(m); so the mutex auto-releases even if the body throws. = Avvolgi una sezione critica in std::lock_guard<std::mutex> lk(m); così il mutex si auto-rilascia anche se il corpo solleva un'eccezione."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Unique Lock",
+      "set": {
+        "example": "Choose std::unique_lock over lock_guard when you need to unlock and relock around an expensive non-shared computation. = Scegli std::unique_lock invece di lock_guard quando devi sbloccare e riloccare attorno a un calcolo costoso non condiviso."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Deadlock",
+      "set": {
+        "example": "Avoid a deadlock by always acquiring mutexes in the same global order or by using std::scoped_lock to lock multiple at once. = Evita un deadlock acquisendo sempre i mutex nello stesso ordine globale o usando std::scoped_lock per loccare più mutex insieme."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_2",
+      "english": "Lock Free",
+      "set": {
+        "example": "Design a lock-free queue with std::atomic pointers when reducing contention matters more than implementation simplicity. = Progetta una coda lock-free con puntatori std::atomic quando ridurre la contesa conta più della semplicità d'implementazione."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Compare Exchange",
+      "set": {
+        "example": "Implement a CAS retry loop with compare_exchange_weak to update a shared head pointer without taking any mutex. = Implementa un retry loop CAS con compare_exchange_weak per aggiornare un puntatore head condiviso senza prendere alcun mutex."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Memory Order",
+      "set": {
+        "example": "Pick the weakest memory order that still guarantees correctness so the compiler and CPU can reorder for maximum throughput. = Scegli il memory order più debole che garantisca ancora correttezza così compilatore e CPU possono riordinare per il massimo throughput."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Memory Order Relaxed",
+      "set": {
+        "example": "Use memory_order_relaxed for a simple stats counter where only atomicity matters and no other reads need to be ordered. = Usa memory_order_relaxed per un semplice contatore di statistiche dove conta solo l'atomicità e nessun'altra lettura va ordinata."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Sequential Consistency",
+      "set": {
+        "example": "Default to sequential consistency on atomics until profiling proves that weaker orders deliver a measurable speedup. = Usa di default la sequential consistency sugli atomic finché un profiling non dimostra che ordini più deboli portano uno speedup misurabile."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Memory Fence",
+      "set": {
+        "example": "Insert std::atomic_thread_fence as a standalone memory fence between two independent atomic operations when ordering matters. = Inserisci std::atomic_thread_fence come memory fence isolata tra due operazioni atomiche indipendenti quando l'ordinamento conta."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Data Race",
+      "set": {
+        "example": "Treat any unsynchronized concurrent access to non-atomic data as a data race; the standard says the resulting program is UB. = Tratta ogni accesso concorrente non sincronizzato a dati non atomici come un data race; lo standard dice che il programma risultante è UB."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Future",
+      "set": {
+        "example": "Kick off an HTTP fetch and hold an std::future to retrieve the response body once the background worker finishes. = Lancia una fetch HTTP e mantieni uno std::future per recuperare il corpo della risposta quando il worker in background finisce."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Promise",
+      "set": {
+        "example": "Use std::promise on the producer side to push a computed value into the shared state that the future will later read. = Usa std::promise dal lato produttore per spingere un valore calcolato nello stato condiviso che la future leggerà dopo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Get Future Value",
+      "set": {
+        "example": "Call f.get() to retrieve the future value and block the caller until the producer either fulfills the promise or throws. = Chiama f.get() per ottenere il valore della future e bloccare il chiamante finché il produttore non soddisfa la promise o solleva."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Wait For",
+      "set": {
+        "example": "Call f.wait_for(100ms) to wait at most 100 milliseconds and decide whether to retry or surface a timeout error. = Chiama f.wait_for(100ms) per aspettare al massimo 100 millisecondi e decidere se riprovare o sollevare un errore di timeout."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Packaged Task",
+      "set": {
+        "example": "Wrap a callable in std::packaged_task to bundle the function and its result future, ready to hand off to a thread pool. = Avvolgi un callable in std::packaged_task per impacchettare la funzione e la sua future risultato, pronto per essere passato a un thread pool."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Shared Future",
+      "set": {
+        "example": "Convert a future to std::shared_future when multiple consumers must each call get() on the same asynchronous result. = Converti una future in std::shared_future quando più consumatori devono ciascuno chiamare get() sullo stesso risultato asincrono."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_4",
+      "english": "Notify All",
+      "set": {
+        "example": "Signal cv.notify_all() after publishing a stop flag so every consumer waiting on the condition variable wakes up at once. = Segnala cv.notify_all() dopo aver pubblicato un flag di stop così ogni consumer in attesa sulla condition variable si risveglia in una volta."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Move Constructor Impl",
+      "set": {
+        "example": "Write a move constructor implementation that steals the raw buffer pointer and resets the source to a valid empty state. = Scrivi un'implementazione di move constructor che ruba il puntatore al buffer raw e ripristina la sorgente a uno stato valido vuoto."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Resource Steal",
+      "set": {
+        "example": "A move operation performs a resource steal: ownership of the heap allocation transfers to the new object instead of duplicating it. = Un'operazione di move esegue un resource steal: la ownership dell'allocazione su heap viene trasferita al nuovo oggetto invece di duplicarla."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Empty Source",
+      "set": {
+        "example": "After a move you leave the empty source in a destructible but unspecified state, typically with null pointers and zero size. = Dopo un move lasci l'empty source in uno stato distruttibile ma non specificato, tipicamente con puntatori null e size zero."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Noexcept Move",
+      "set": {
+        "example": "Mark a move constructor noexcept so std::vector chooses to move rather than copy elements during reallocations. = Marca un move constructor noexcept così std::vector sceglie di spostare invece di copiare gli elementi durante le riallocazioni."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Move And Swap",
+      "set": {
+        "example": "Implement assignment with the move-and-swap idiom by taking the right-hand side by value and swapping internals, freeing the old data. = Implementa l'assignment con l'idioma move-and-swap prendendo il right-hand side per valore e swappando gli interni, liberando i vecchi dati."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Copy Elision",
+      "set": {
+        "example": "Rely on guaranteed copy elision when returning a local object by value so no temporary is ever constructed or destroyed. = Affidati alla copy elision garantita quando ritorni un oggetto locale per valore così nessun temporary viene mai costruito o distrutto."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Move Iterator",
+      "set": {
+        "example": "Wrap iterators with std::make_move_iterator to turn a copy-based algorithm like std::copy into a move-based transfer. = Avvolgi gli iteratori con std::make_move_iterator per trasformare un algoritmo basato su copia come std::copy in un trasferimento basato su move."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_5",
+      "english": "Self Move",
+      "set": {
+        "example": "Guard against a self-move in operator= by checking if (this != &other) so you do not destroy your own state. = Difenditi da un self-move in operator= controllando if (this != &other) così non distruggi il tuo stesso stato."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Std Forward",
+      "set": {
+        "example": "Forward a template parameter as the exact same value category with std::forward<T>(arg) inside a perfect-forwarding wrapper. = Inoltra un parametro template con la stessa value category usando std::forward<T>(arg) dentro un wrapper di perfect forwarding."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Reference Collapsing",
+      "set": {
+        "example": "Thanks to reference collapsing, T&& becomes a forwarding reference that binds to lvalues and rvalues depending on the deduced T. = Grazie al reference collapsing, T&& diventa un forwarding reference che si lega a lvalue e rvalue a seconda del T dedotto."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Perfect Forwarding",
+      "set": {
+        "example": "A factory that calls make_unique<T>(std::forward<Args>(args)...) uses perfect forwarding to preserve every argument's value category. = Una factory che chiama make_unique<T>(std::forward<Args>(args)...) usa il perfect forwarding per preservare la value category di ogni argomento."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Emplace Forwarding",
+      "set": {
+        "example": "Vector::emplace_back relies on emplace forwarding to construct the element in place from the original constructor arguments. = Vector::emplace_back si basa sull'emplace forwarding per costruire l'elemento in loco a partire dagli argomenti originali del costruttore."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Forwarding Constructor",
+      "set": {
+        "example": "Write a forwarding constructor templated on Args&&... when a class must initialize a member from any compatible argument list. = Scrivi un forwarding constructor templato su Args&&... quando una classe deve inizializzare un membro da qualunque lista compatibile di argomenti."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_6",
+      "english": "Argument Deduction",
+      "set": {
+        "example": "Template argument deduction picks T as the reference type for an lvalue and as the bare type for an rvalue passed to a T&& parameter. = L'argument deduction dei template sceglie T come tipo riferimento per un lvalue e come tipo nudo per un rvalue passato a un parametro T&&."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_7",
+      "english": "Use After Move",
+      "set": {
+        "example": "Static analyzers flag use-after-move bugs when code reads from a string that was already given away to another owner. = Gli analyzer statici segnalano bug di use-after-move quando il codice legge da una string già ceduta a un altro proprietario."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_7",
+      "english": "Move From Const",
+      "set": {
+        "example": "Trying to move from const silently falls back to a copy because std::move on a const lvalue yields a const rvalue. = Provare a fare move da const ricade silenziosamente in una copia perché std::move su un lvalue const produce un rvalue const."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_7",
+      "english": "Return Std Move",
+      "set": {
+        "example": "Avoid writing return std::move(local) on a local variable because it actually disables copy elision and pessimizes the return. = Evita di scrivere return std::move(local) su una variabile locale perché disabilita la copy elision e pessimizza il return."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_7",
+      "english": "Move Pessimization",
+      "set": {
+        "example": "A common move pessimization is forcing a move on a return value where the compiler would have already elided the copy. = Una move pessimization comune è forzare un move su un valore di ritorno dove il compilatore avrebbe già eliso la copia."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_7",
+      "english": "Move Special",
+      "set": {
+        "example": "The move special member functions include the move constructor and move assignment that the compiler generates when allowed. = Le move special member function comprendono il move constructor e il move assignment che il compilatore genera quando consentito."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_7",
+      "english": "Rule Of Five",
+      "set": {
+        "example": "When a class manages a raw resource, follow the rule of five and explicitly define copy, move, and destructor members together. = Quando una classe gestisce una risorsa raw, segui la rule of five e definisci esplicitamente i membri copy, move e destructor insieme."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_7",
+      "english": "Rule Of Zero",
+      "set": {
+        "example": "Apply the rule of zero by composing your class out of smart pointers and containers so the compiler-generated specials just work. = Applica la rule of zero componendo la tua classe con smart pointer e container così le special generate dal compilatore funzionano subito."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_7",
+      "english": "Sink Argument",
+      "set": {
+        "example": "Take a sink argument by value when a function is going to store it: callers may move or copy as suits their lifetime. = Prendi un sink argument per valore quando una funzione lo memorizzerà: i chiamanti possono fare move o copia secondo la loro lifetime."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_8",
+      "english": "Object Lifetime",
+      "set": {
+        "example": "An object lifetime begins after its constructor returns and ends right before its destructor starts running. = La lifetime di un oggetto inizia dopo che il suo costruttore ritorna e termina subito prima che il distruttore inizi a girare."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_8",
+      "english": "Static Storage",
+      "set": {
+        "example": "Globals and namespace-scope variables live in static storage for the entire run of the program from initialization to exit. = Le variabili globali e a scope di namespace vivono in static storage per l'intera esecuzione del programma dall'inizializzazione all'uscita."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_8",
+      "english": "Automatic Storage",
+      "set": {
+        "example": "Function-local variables sit in automatic storage on the stack and are destroyed when the enclosing block exits. = Le variabili locali a funzione stanno in automatic storage sullo stack e vengono distrutte all'uscita dal blocco contenente."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_8",
+      "english": "Dynamic Storage",
+      "set": {
+        "example": "Objects allocated with new or make_unique live in dynamic storage and persist until you delete them or the unique_ptr resets. = Gli oggetti allocati con new o make_unique vivono in dynamic storage e persistono finché non fai delete o l'unique_ptr non resetta."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_8",
+      "english": "Thread Local",
+      "set": {
+        "example": "Mark a per-thread cache as thread_local so each worker thread gets its own copy and no synchronization is needed on access. = Marca una cache per thread come thread_local così ogni worker thread ottiene la sua copia e non serve sincronizzazione all'accesso."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_8",
+      "english": "Lifetime Extension",
+      "set": {
+        "example": "Binding a temporary to a const reference triggers lifetime extension so the temporary outlives the full expression. = Legare un temporary a un riferimento const innesca la lifetime extension così il temporary sopravvive all'intera espressione."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "cpp_memory_8",
+      "english": "Strict Aliasing",
+      "set": {
+        "example": "The strict aliasing rule says you cannot access an int through a float pointer without invoking undefined behavior. = La regola di strict aliasing dice che non puoi accedere a un int tramite un puntatore float senza incorrere in undefined behavior."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Factory",
+      "set": {
+        "example": "Replace scattered new calls with a factory function so callers ask for a Shape and receive the right concrete subclass. = Sostituisci chiamate sparse a new con una factory così i chiamanti chiedono uno Shape e ricevono la giusta sottoclasse concreta."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Abstract Factory",
+      "set": {
+        "example": "Introduce an abstract factory when the system must produce whole families of related widgets that share a theme. = Introduci una abstract factory quando il sistema deve produrre intere famiglie di widget correlati che condividono un tema."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Lazy Initialization",
+      "set": {
+        "example": "Defer heavy setup with lazy initialization so a logger only opens its file on the first message, not at program start. = Posticipa il setup pesante con la lazy initialization così un logger apre il suo file solo al primo messaggio, non all'avvio."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Named Constructor",
+      "set": {
+        "example": "Expose static named constructors like Color::fromRGB or Color::fromHex to make intent obvious at the call site. = Esponi named constructor statici come Color::fromRGB o Color::fromHex per rendere ovvia l'intenzione al call site."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Registry",
+      "set": {
+        "example": "Maintain a plugin registry that maps a string id to a factory so new modules can self-register at static init time. = Mantieni una registry di plugin che mappa un id stringa a una factory così nuovi moduli possono auto-registrarsi a static init."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_2",
+      "english": "Pimpl Idiom",
+      "set": {
+        "example": "Hide implementation details behind a pimpl idiom so changing private members does not recompile every translation unit. = Nascondi i dettagli implementativi dietro un pimpl idiom così cambiare membri privati non ricompila ogni translation unit."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_2",
+      "english": "Proxy",
+      "set": {
+        "example": "Wrap a remote service behind a proxy so client code calls methods locally while network details stay hidden. = Avvolgi un servizio remoto dietro un proxy così il codice client chiama metodi localmente mentre i dettagli di rete restano nascosti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_2",
+      "english": "Mixin",
+      "set": {
+        "example": "Drop a Printable mixin into a class hierarchy through CRTP to share serialization without touching unrelated parts of the design. = Inserisci un mixin Printable in una gerarchia di classi tramite CRTP per condividere serializzazione senza toccare parti non correlate del design."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_3",
+      "english": "Subject",
+      "set": {
+        "example": "In the observer pattern the subject keeps a list of listeners and notifies them whenever its state changes. = Nel pattern observer il subject mantiene una lista di listener e li notifica ogni volta che il suo stato cambia."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_3",
+      "english": "Chain Of Responsibility",
+      "set": {
+        "example": "Route a request through a chain of responsibility so each middleware decides to handle it or forward to the next link. = Instrada una richiesta attraverso una chain of responsibility così ogni middleware decide se gestirla o inoltrare al link successivo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "RAII Pattern",
+      "set": {
+        "example": "Apply the RAII pattern to file handles so closing happens automatically when the handle leaves scope, even on exceptions. = Applica il pattern RAII agli handle di file così la chiusura avviene automaticamente quando l'handle esce dallo scope, anche su eccezioni."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "Resource Handle",
+      "set": {
+        "example": "Encapsulate an OS socket in a resource handle class so callers cannot forget to release it or double-close the descriptor. = Incapsula un socket di OS in una classe resource handle così i chiamanti non possono dimenticare di rilasciarlo o chiuderlo due volte."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "Type Safe Enum",
+      "set": {
+        "example": "Use enum class Color { Red, Green } as a type-safe enum so its values cannot implicitly convert into integers or other enums. = Usa enum class Color { Red, Green } come enum type-safe così i suoi valori non si convertono implicitamente in interi o altri enum."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "Strong Typedef",
+      "set": {
+        "example": "Wrap a UserId int into a strong typedef struct so the compiler refuses to mix it with an unrelated OrderId integer. = Avvolgi un int UserId in uno strong typedef struct così il compilatore rifiuta di mescolarlo con un OrderId intero non correlato."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "Tag Type",
+      "set": {
+        "example": "Define an empty struct as a tag type to disambiguate overloads or to pass compile-time information through the type system. = Definisci una struct vuota come tag type per disambiguare overload o per passare informazione compile-time attraverso il type system."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "Phantom Type",
+      "set": {
+        "example": "Tag a Quantity<Meter> with a phantom type parameter so the compiler stops you from adding meters to seconds by accident. = Tagga una Quantity<Meter> con un phantom type parameter così il compilatore ti impedisce di sommare metri a secondi per sbaglio."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "Named Parameter",
+      "set": {
+        "example": "Simulate named parameters in a builder by chaining .with_port(8080).with_host(\"db\") so call sites stay self-documenting. = Simula named parameter in un builder concatenando .with_port(8080).with_host(\"db\") così i call site restano auto-documentanti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "Hidden Friend",
+      "set": {
+        "example": "Declare operator== inside a class as a hidden friend so it participates in ADL but does not pollute the enclosing namespace. = Dichiara operator== dentro una classe come hidden friend così partecipa all'ADL ma non inquina il namespace contenente."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_4",
+      "english": "Expression Template",
+      "set": {
+        "example": "Build a vector math library on expression templates so a+b+c fuses into a single loop with no temporary vectors. = Costruisci una libreria di vector math su expression template così a+b+c si fonde in un singolo loop senza vector temporanei."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Setprecision",
+      "set": {
+        "example": "Stream std::setprecision(4) into std::cout to render doubles with four significant digits in a report column. = Streamma std::setprecision(4) in std::cout per rendere i double con quattro cifre significative in una colonna di report."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Hex",
+      "set": {
+        "example": "Switch a stream to hexadecimal output with std::cout << std::hex when dumping memory addresses or bitmasks for debugging. = Cambia uno stream in output esadecimale con std::cout << std::hex quando dumpi indirizzi di memoria o bitmask per debug."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Fixed",
+      "set": {
+        "example": "Combine std::fixed with setprecision to print monetary amounts like 12.30 always with two decimal digits and no scientific notation. = Combina std::fixed con setprecision per stampare importi monetari come 12.30 sempre con due decimali e nessuna notazione scientifica."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Scientific",
+      "set": {
+        "example": "Apply std::scientific to a stream when printing tiny or huge physics quantities so they show up as 1.23e-05 form. = Applica std::scientific a uno stream quando stampi quantità fisiche minuscole o enormi così appaiono nella forma 1.23e-05."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Fill Character",
+      "set": {
+        "example": "Set the fill character with std::setfill('0') before std::setw(4) so dates pad as 0007 instead of three spaces and a 7. = Imposta il fill character con std::setfill('0') prima di std::setw(4) così le date si paddano come 0007 invece di tre spazi e un 7."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Boolalpha",
+      "set": {
+        "example": "Toggle std::boolalpha on cout to print booleans as the words true and false instead of 1 and 0 in human-facing logs. = Attiva std::boolalpha su cout per stampare booleani come le parole true e false invece di 1 e 0 in log destinati all'utente."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_1",
+      "english": "Stream Locale",
+      "set": {
+        "example": "Imbue a stream locale with std::locale(\"de_DE.UTF-8\") so number formatting uses the German thousands and decimal separators. = Imbui un locale dello stream con std::locale(\"de_DE.UTF-8\") così la formattazione numerica usa i separatori tedeschi di migliaia e decimali."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "File Stream",
+      "set": {
+        "example": "Open a configuration file with std::ifstream and stream tokens out via operator>> instead of dealing with raw FILE* handles. = Apri un file di configurazione con std::ifstream e leggi token tramite operator>> invece di gestire handle FILE* raw."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Open Mode",
+      "set": {
+        "example": "Combine open modes like std::ios::out | std::ios::app to append to a log file without truncating the existing content. = Combina open mode come std::ios::out | std::ios::app per appendere a un file di log senza troncare il contenuto esistente."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Binary Mode",
+      "set": {
+        "example": "Open a stream in std::ios::binary mode when reading PNG bytes so Windows does not silently translate CRLF sequences. = Apri uno stream in modalità std::ios::binary quando leggi byte PNG così Windows non traduce silenziosamente le sequenze CRLF."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Read",
+      "set": {
+        "example": "Pull a fixed block of bytes from a binary stream with in.read(buf, n) and then check in.gcount() to see how many actually arrived. = Estrai un blocco fisso di byte da uno stream binario con in.read(buf, n) e controlla in.gcount() per vedere quanti sono davvero arrivati."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Write",
+      "set": {
+        "example": "Persist a packed struct to disk with out.write(reinterpret_cast<const char*>(&rec), sizeof(rec)) for raw binary records. = Persisti una struct packed su disco con out.write(reinterpret_cast<const char*>(&rec), sizeof(rec)) per record binari raw."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Tellg",
+      "set": {
+        "example": "Capture the current read offset of an input stream via auto pos = in.tellg(); so you can later seek back and reparse the same record. = Cattura l'offset corrente di lettura di uno stream di input con auto pos = in.tellg(); così puoi più tardi tornare indietro e riparsare lo stesso record."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Seekg",
+      "set": {
+        "example": "Jump to the start of the file with in.seekg(0, std::ios::beg) to restart streaming after probing the header bytes. = Salta all'inizio del file con in.seekg(0, std::ios::beg) per ricominciare lo streaming dopo aver sondato i byte di header."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Eof Bit",
+      "set": {
+        "example": "After a read loop, check in.eof() to confirm the eof bit was set because the stream really hit the end and not an error. = Dopo un loop di lettura, controlla in.eof() per confermare che l'eof bit sia stato impostato perché lo stream ha davvero raggiunto la fine e non un errore."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Fail Bit",
+      "set": {
+        "example": "Inspect in.fail() to detect a fail bit triggered by a failed type extraction, like reading letters into an int. = Ispeziona in.fail() per rilevare un fail bit causato da un'estrazione di tipo fallita, come leggere lettere in un int."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_2",
+      "english": "Bad Bit",
+      "set": {
+        "example": "If in.bad() returns true the bad bit indicates an unrecoverable hardware-level I/O error, like a disk read failure. = Se in.bad() ritorna true il bad bit indica un errore di I/O a livello hardware non recuperabile, come un fallimento di lettura disco."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "String Stream",
+      "set": {
+        "example": "Reuse a string stream to build a CSV row in memory without touching the disk and then write the final string in one syscall. = Riusa uno string stream per costruire una riga CSV in memoria senza toccare il disco e poi scrivere la stringa finale in una syscall."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "OStringStream",
+      "set": {
+        "example": "Compose a log line into a std::ostringstream and then call .str() to retrieve the final formatted buffer ready for the sink. = Componi una riga di log in uno std::ostringstream e poi chiama .str() per recuperare il buffer formattato finale pronto per il sink."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "IStringStream",
+      "set": {
+        "example": "Parse a space-separated record by wrapping the line in a std::istringstream and extracting fields with operator>>. = Parsa un record separato da spazi avvolgendo la riga in uno std::istringstream ed estraendo i campi con operator>>."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "Str Method",
+      "set": {
+        "example": "Call .str() on a stringstream to grab the accumulated content, and use .str(\"\") to reset it for the next reuse cycle. = Chiama .str() su uno stringstream per ottenere il contenuto accumulato, e usa .str(\"\") per resettarlo per il prossimo riuso."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "StoX Functions",
+      "set": {
+        "example": "Use locale-aware stoi or stod functions to convert strings into numbers, but watch out: they throw on malformed input. = Usa le funzioni stoi o stod locale-aware per convertire stringhe in numeri, ma attento: lanciano eccezioni su input malformati."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "From Chars",
+      "set": {
+        "example": "Reach for std::from_chars in a hot JSON parser because it skips locale handling and is significantly faster than stoi or stod. = Affidati a std::from_chars in un parser JSON hot perché salta la gestione del locale ed è significativamente più veloce di stoi o stod."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_3",
+      "english": "Locale Independent",
+      "set": {
+        "example": "Use locale-independent parsing for protocol fields like JSON numbers where a comma decimal would corrupt the wire format. = Usa parsing locale-indipendente per campi di protocollo come numeri JSON dove una virgola decimale corromperebbe il formato wire."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_4",
+      "english": "JSON Library",
+      "set": {
+        "example": "Pick nlohmann::json as a header-only JSON library when you want straightforward serialization without pulling a heavy build system. = Scegli nlohmann::json come JSON library header-only quando vuoi serializzazione semplice senza tirarsi dietro un build system pesante."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_4",
+      "english": "Protocol Buffers",
+      "set": {
+        "example": "Define an RPC message in a .proto file and let protoc generate C++ classes so two services agree on a strict binary schema. = Definisci un messaggio RPC in un file .proto e lascia che protoc generi classi C++ così due servizi concordano uno schema binario stretto."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_4",
+      "english": "Flatbuffers",
+      "set": {
+        "example": "Reach for FlatBuffers when a game needs to read serialized data without any parsing or memory allocation step at all. = Affidati a FlatBuffers quando un gioco deve leggere dati serializzati senza alcun passo di parsing o allocazione di memoria."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_4",
+      "english": "Cereal",
+      "set": {
+        "example": "Add Cereal as a header-only dependency to serialize and deserialize arbitrary C++ structs in just a few annotated lines. = Aggiungi Cereal come dipendenza header-only per serializzare e deserializzare struct C++ arbitrarie in poche righe annotate."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_4",
+      "english": "Schema",
+      "set": {
+        "example": "Lock the wire format with a schema so old clients can keep decoding new payloads as long as fields are added in a backward-compatible way. = Blocca il formato wire con uno schema così i client vecchi possono continuare a decodificare i nuovi payload finché i campi sono aggiunti in modo backward-compatible."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cpp_io_4",
+      "english": "Binary Format",
+      "set": {
+        "example": "Switch from JSON to a binary format like Protocol Buffers when bandwidth dominates latency in a high-throughput RPC service. = Passa da JSON a un binary format come Protocol Buffers quando la banda domina la latenza in un servizio RPC ad alto throughput."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "CMakeLists",
+      "set": {
+        "example": "Add an add_executable(app main.cpp) line inside CMakeLists.txt so CMake knows which target to build for your project. = Aggiungi una riga add_executable(app main.cpp) dentro CMakeLists.txt così CMake sa quale target costruire per il tuo progetto."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "Add Executable",
+      "set": {
+        "example": "Call add_executable(server src/main.cpp src/net.cpp) in CMakeLists to register a new executable target with two source files. = Chiama add_executable(server src/main.cpp src/net.cpp) in CMakeLists per registrare un nuovo target eseguibile con due file sorgente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "Add Library",
+      "set": {
+        "example": "Use add_library(net STATIC src/net.cpp) inside CMakeLists to declare a static library that other targets can later link against. = Usa add_library(net STATIC src/net.cpp) dentro CMakeLists per dichiarare una libreria statica che altri target possono linkare in seguito."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "Find Package",
+      "set": {
+        "example": "Locate an installed library from CMake by calling find_package(Boost REQUIRED) and then linking via target_link_libraries. = Localizza una libreria installata da CMake chiamando find_package(Boost REQUIRED) e poi linkando tramite target_link_libraries."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "CMake Build",
+      "set": {
+        "example": "Run cmake --build build --parallel to trigger a CMake build that compiles every target concurrently across CPU cores. = Esegui cmake --build build --parallel per innescare una build CMake che compila ogni target in parallelo su tutti i core CPU."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_1",
+      "english": "CMake Install",
+      "set": {
+        "example": "Invoke cmake --install build --prefix /opt/myapp to copy the built binaries and headers to the install prefix layout. = Invoca cmake --install build --prefix /opt/myapp per copiare binari e header costruiti nel layout di prefix di installazione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_2",
+      "english": "Vcpkg",
+      "set": {
+        "example": "Bootstrap dependencies on Windows by running vcpkg install fmt boost-asio so CMake can find them via integrate install. = Avvia le dipendenze su Windows eseguendo vcpkg install fmt boost-asio così CMake può trovarle tramite integrate install."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_2",
+      "english": "Conanfile",
+      "set": {
+        "example": "Declare your project dependencies and build options in a conanfile.txt so Conan can resolve and install matching binaries. = Dichiara le dipendenze del tuo progetto e le opzioni di build in un conanfile.txt così Conan può risolvere e installare binari corrispondenti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_2",
+      "english": "Manifest Mode",
+      "set": {
+        "example": "Adopt vcpkg manifest mode by checking in a vcpkg.json so each developer pulls the exact same set of pinned dependency versions. = Adotta la modalità manifest di vcpkg committando un vcpkg.json così ogni sviluppatore ottiene esattamente lo stesso set di versioni di dipendenza pinnate."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_2",
+      "english": "Profile",
+      "set": {
+        "example": "Define a Conan profile that pins the compiler, std=c++20, and build type so CI and laptops compile dependencies the same way. = Definisci un Conan profile che fissi compilatore, std=c++20 e build type così CI e laptop compilino le dipendenze nello stesso modo."
+      }
+    }
+  ]
+}

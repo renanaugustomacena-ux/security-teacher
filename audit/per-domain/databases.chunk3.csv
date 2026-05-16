@@ -1,0 +1,286 @@
+topicId,level,lesson,english,italian,issueType
+"databases",14,"db_replication_8","Paxos","Algoritmo di consenso (Paxos)",tautological-example
+"databases",14,"db_replication_8","Cross-Region","Cross-regione (replica distribuita tra aree geografiche)",tautological-example
+"databases",14,"db_replication_8","Cross-Region","Cross-regione (replica distribuita tra aree geografiche)",trivial-example
+"databases",14,"db_replication_8","Geo-Replication","Replicazione geografica",tautological-example
+"databases",14,"db_replication_8","Geo-Replication","Replicazione geografica",trivial-example
+"databases",15,"db_sql_13","JSONB","JSON binario PostgreSQL (JSONB)",tautological-example
+"databases",15,"db_sql_13","JSONB","JSON binario PostgreSQL (JSONB)",trivial-example
+"databases",15,"db_sql_13","Array Type","Tipo array",trivial-example
+"databases",15,"db_sql_13","HSTORE","Mappa chiave-valore PostgreSQL (HSTORE)",tautological-example
+"databases",15,"db_sql_13","HSTORE","Mappa chiave-valore PostgreSQL (HSTORE)",trivial-example
+"databases",15,"db_sql_13","Range Type","Tipo range",tautological-example
+"databases",15,"db_sql_13","Range Type","Tipo range",trivial-example
+"databases",15,"db_sql_13","PostGIS","Estensione geospaziale PostgreSQL (PostGIS)",tautological-example
+"databases",15,"db_sql_13","PostGIS","Estensione geospaziale PostgreSQL (PostGIS)",trivial-example
+"databases",15,"db_sql_13","Extension","Estensione",tautological-example
+"databases",15,"db_sql_13","Extension","Estensione",near-identical-translation
+"databases",15,"db_sql_13","Extension","Estensione",trivial-example
+"databases",15,"db_sql_13","Foreign Data Wrapper","wrapper di dati esterni (Foreign Data Wrapper)",trivial-example
+"databases",15,"db_sql_13","Listen/Notify","pub-sub PostgreSQL (Listen/Notify)",tautological-example
+"databases",15,"db_sql_13","Listen/Notify","pub-sub PostgreSQL (Listen/Notify)",trivial-example
+"databases",15,"db_sql_13","Logical Decoding","Decodifica logica",tautological-example
+"databases",15,"db_sql_13","Logical Decoding","Decodifica logica",trivial-example
+"databases",15,"db_sql_13","Tablespace","spazio fisico tabelle (Tablespace)",tautological-example
+"databases",15,"db_sql_13","Tablespace","",duplicate-across-lessons
+"databases",15,"db_sql_14","InnoDB","Motore di archiviazione transazionale MySQL (InnoDB)",tautological-example
+"databases",15,"db_sql_14","InnoDB","Motore di archiviazione transazionale MySQL (InnoDB)",trivial-example
+"databases",15,"db_sql_14","MyISAM","Motore archiviazione MySQL legacy (MyISAM)",tautological-example
+"databases",15,"db_sql_14","MyISAM","Motore archiviazione MySQL legacy (MyISAM)",trivial-example
+"databases",15,"db_sql_14","MariaDB","Fork community di MySQL (MariaDB)",tautological-example
+"databases",15,"db_sql_14","MariaDB","Fork community di MySQL (MariaDB)",trivial-example
+"databases",15,"db_sql_14","Binary Log","log binario delle modifiche (Binary Log)",trivial-example
+"databases",15,"db_sql_14","GTID","Global Transaction ID (GTID)",tautological-example
+"databases",15,"db_sql_14","GTID","Global Transaction ID (GTID)",trivial-example
+"databases",15,"db_sql_14","Group Replication","Replica di gruppo MySQL (Group Replication)",tautological-example
+"databases",15,"db_sql_14","Performance Schema","Schema metriche MySQL (Performance Schema)",tautological-example
+"databases",15,"db_sql_14","Information Schema","INFORMATION_SCHEMA / vista metadati standard SQL",trivial-example
+"databases",15,"db_sql_14","mysqlbinlog","Utility di lettura binlog (mysqlbinlog)",tautological-example
+"databases",15,"db_sql_14","mysqlbinlog","Utility di lettura binlog (mysqlbinlog)",trivial-example
+"databases",15,"db_sql_15","Oracle Database","RDBMS commerciale (Oracle Database)",trivial-example
+"databases",15,"db_sql_15","SQL Server","RDBMS Microsoft (SQL Server)",tautological-example
+"databases",15,"db_sql_15","SQL Server","RDBMS Microsoft (SQL Server)",trivial-example
+"databases",15,"db_sql_15","T-SQL","Transact-SQL, dialetto Microsoft (T-SQL)",tautological-example
+"databases",15,"db_sql_15","T-SQL","Transact-SQL, dialetto Microsoft (T-SQL)",trivial-example
+"databases",15,"db_sql_15","T-SQL","Transact-SQL, dialetto Microsoft (T-SQL)",redundant-note
+"databases",15,"db_sql_15","sqlcmd","CLI SQL Server (sqlcmd)",tautological-example
+"databases",15,"db_sql_15","sqlcmd","CLI SQL Server (sqlcmd)",trivial-example
+"databases",15,"db_sql_15","Tablespace (Oracle)","Tablespace Oracle",identical-translation
+"databases",15,"db_sql_15","Tablespace (Oracle)","Tablespace Oracle",trivial-example
+"databases",15,"db_sql_15","PDB","Pluggable Database (PDB)",tautological-example
+"databases",15,"db_sql_15","PDB","Pluggable Database (PDB)",trivial-example
+"databases",15,"db_sql_15","CDB","Container Database (CDB)",trivial-example
+"databases",15,"db_sql_15","Always On","Alta disponibilità SQL Server (Always On)",tautological-example
+"databases",15,"db_sql_15","Always On","Alta disponibilità SQL Server (Always On)",trivial-example
+"databases",15,"db_sql_15","Data Guard","Disaster recovery Oracle (Data Guard)",tautological-example
+"databases",15,"db_sql_15","Data Guard","Disaster recovery Oracle (Data Guard)",trivial-example
+"databases",15,"db_sql_16","ANSI SQL","Standard SQL (ANSI SQL)",tautological-example
+"databases",15,"db_sql_16","ANSI SQL","Standard SQL (ANSI SQL)",trivial-example
+"databases",15,"db_sql_16","SQL:2016","Standard SQL del 2016 (SQL:2016)",tautological-example
+"databases",15,"db_sql_16","SQL:2016","Standard SQL del 2016 (SQL:2016)",trivial-example
+"databases",15,"db_sql_16","SQL Dialect","Dialetto SQL",trivial-example
+"databases",15,"db_sql_16","Portability","Portabilità",near-identical-translation
+"databases",15,"db_sql_16","Portability","Portabilità",trivial-example
+"databases",15,"db_sql_16","Vendor Lock-in","blocco da fornitore (Vendor Lock-in)",trivial-example
+"databases",15,"db_sql_16","OLTP","Elaborazione transazionale online (OLTP)",tautological-example
+"databases",15,"db_sql_16","OLTP","Elaborazione transazionale online (OLTP)",trivial-example
+"databases",15,"db_sql_16","OLAP","Elaborazione analitica online (OLAP)",tautological-example
+"databases",15,"db_sql_16","OLAP","Elaborazione analitica online (OLAP)",trivial-example
+"databases",15,"db_sql_16","HTAP","Elaborazione ibrida transazionale e analitica (HTAP)",tautological-example
+"databases",15,"db_sql_16","HTAP","Elaborazione ibrida transazionale e analitica (HTAP)",trivial-example
+"databases",15,"db_sql_16","DDL","Data Definition Language (DDL)",tautological-example
+"databases",15,"db_sql_16","DML","Data Manipulation Language (DML)",tautological-example
+"databases",16,"db_modeling_1","Star Schema","Schema a stella",trivial-example
+"databases",16,"db_modeling_1","Star Schema","",duplicate-across-lessons
+"databases",16,"db_modeling_1","Fact Table","Tabella dei fatti",tautological-example
+"databases",16,"db_modeling_1","Fact Table","Tabella dei fatti",trivial-example
+"databases",16,"db_modeling_1","Dimension Table","Tabella dimensione",tautological-example
+"databases",16,"db_modeling_1","Dimension Table","Tabella dimensione",trivial-example
+"databases",16,"db_modeling_1","Snowflake Schema","Schema a fiocco di neve",tautological-example
+"databases",16,"db_modeling_1","Snowflake Schema","Schema a fiocco di neve",trivial-example
+"databases",16,"db_modeling_1","Surrogate Key","Chiave surrogata",trivial-example
+"databases",16,"db_modeling_1","Surrogate Key","",duplicate-across-lessons
+"databases",16,"db_modeling_1","Grain","Granularità",trivial-example
+"databases",16,"db_modeling_1","Conformed Dimension","Dimensione conformata",tautological-example
+"databases",16,"db_modeling_2","Slowly Changing Dimension","Dimensione a lento cambio",trivial-example
+"databases",16,"db_modeling_2","Slowly Changing Dimension","Dimensione a lento cambio",redundant-note
+"databases",16,"db_modeling_2","SCD Type 1","SCD Tipo 1",tautological-example
+"databases",16,"db_modeling_2","SCD Type 1","SCD Tipo 1",near-identical-translation
+"databases",16,"db_modeling_2","SCD Type 1","SCD Tipo 1",trivial-example
+"databases",16,"db_modeling_2","SCD Type 2","SCD Tipo 2",tautological-example
+"databases",16,"db_modeling_2","SCD Type 2","SCD Tipo 2",near-identical-translation
+"databases",16,"db_modeling_2","SCD Type 2","SCD Tipo 2",trivial-example
+"databases",16,"db_modeling_2","SCD Type 3","SCD Tipo 3",tautological-example
+"databases",16,"db_modeling_2","SCD Type 3","SCD Tipo 3",near-identical-translation
+"databases",16,"db_modeling_2","SCD Type 3","SCD Tipo 3",trivial-example
+"databases",16,"db_modeling_2","Effective Date","Data di efficacia",tautological-example
+"databases",16,"db_modeling_2","Effective Date","Data di efficacia",trivial-example
+"databases",16,"db_modeling_2","Current Flag","Flag corrente",trivial-example
+"databases",16,"db_modeling_2","Bitemporal","Bitemporale (modello con tempo di validità e tempo di registrazione)",tautological-example
+"databases",16,"db_modeling_2","Bitemporal","Bitemporale (modello con tempo di validità e tempo di registrazione)",trivial-example
+"databases",16,"db_modeling_2","Late Arriving Dimension","Dimensione in ritardo",tautological-example
+"databases",16,"db_modeling_2","Mini Dimension","Mini dimensione (tabella separata per attributi che cambiano spesso)",tautological-example
+"databases",16,"db_modeling_2","Audit Dimension","Dimensione di audit",tautological-example
+"databases",16,"db_modeling_2","Audit Dimension","Dimensione di audit",trivial-example
+"databases",16,"db_modeling_3","Data Lake","lago dati grezzi (Data Lake)",trivial-example
+"databases",16,"db_modeling_3","Inmon Approach","Approccio Inmon",trivial-example
+"databases",16,"db_modeling_3","Kimball Approach","Approccio Kimball",trivial-example
+"databases",16,"db_modeling_3","Data Vault","metodologia modellazione DWH (Data Vault)",tautological-example
+"databases",16,"db_modeling_3","Data Vault","metodologia modellazione DWH (Data Vault)",trivial-example
+"databases",16,"db_modeling_3","Staging Area","Area di staging",trivial-example
+"databases",16,"db_modeling_3","Aggregate Table","Tabella aggregata",tautological-example
+"databases",16,"db_modeling_3","Aggregate Table","Tabella aggregata",trivial-example
+"databases",16,"db_modeling_3","Cube","Cubo OLAP",trivial-example
+"databases",16,"db_modeling_3","Cube","",duplicate-across-lessons
+"databases",16,"db_modeling_4","Normalization Level","Livello di normalizzazione",trivial-example
+"databases",16,"db_modeling_4","Wide Table","Tabella larga",tautological-example
+"databases",16,"db_modeling_4","Narrow Table","Tabella stretta",tautological-example
+"databases",16,"db_modeling_4","Narrow Table","Tabella stretta",trivial-example
+"databases",16,"db_modeling_4","EAV","Entity-Attribute-Value (EAV)",tautological-example
+"databases",16,"db_modeling_4","EAV","Entity-Attribute-Value (EAV)",trivial-example
+"databases",16,"db_modeling_4","Materialized Path","Percorso materializzato",tautological-example
+"databases",16,"db_modeling_4","Materialized Path","Percorso materializzato",trivial-example
+"databases",16,"db_modeling_4","Adjacency List","Lista di adiacenza",tautological-example
+"databases",16,"db_modeling_4","Adjacency List","Lista di adiacenza",trivial-example
+"databases",16,"db_modeling_4","Nested Set","Set annidato",tautological-example
+"databases",16,"db_modeling_4","Nested Set","Set annidato",trivial-example
+"databases",16,"db_modeling_4","Closure Table","tabella di chiusura per gerarchie (Closure Table)",tautological-example
+"databases",16,"db_modeling_4","Type 6 SCD","SCD Tipo 6",trivial-example
+"databases",16,"db_modeling_4","OBT","One Big Table (OBT)",tautological-example
+"databases",17,"db_security_1","SQL Injection","iniezione di codice SQL (SQL Injection)",tautological-example
+"databases",17,"db_security_1","SQL Injection","iniezione di codice SQL (SQL Injection)",trivial-example
+"databases",17,"db_security_1","Prepared Statement","istruzione preparata (Prepared Statement)",tautological-example
+"databases",17,"db_security_1","Bind Parameter","Parametro bind",tautological-example
+"databases",17,"db_security_1","Bind Parameter","Parametro bind",trivial-example
+"databases",17,"db_security_1","Escape","Sequenza di escape (Escape)",tautological-example
+"databases",17,"db_security_1","Escape","Sequenza di escape (Escape)",trivial-example
+"databases",17,"db_security_1","Input Validation","Validazione input",trivial-example
+"databases",17,"db_security_1","Allowlist","lista bianca di consentiti (Allowlist)",trivial-example
+"databases",17,"db_security_1","Blind SQL Injection","iniezione SQL alla cieca (Blind SQL Injection)",tautological-example
+"databases",17,"db_security_1","Time-Based Injection","Injection time-based",tautological-example
+"databases",17,"db_security_1","sqlmap","Strumento automatico di SQL injection (sqlmap)",tautological-example
+"databases",17,"db_security_1","sqlmap","Strumento automatico di SQL injection (sqlmap)",trivial-example
+"databases",17,"db_security_2","Encryption at Rest","Crittografia a riposo",tautological-example
+"databases",17,"db_security_2","Encryption in Transit","Crittografia in transito",trivial-example
+"databases",17,"db_security_2","TDE","Crittografia trasparente (TDE)",tautological-example
+"databases",17,"db_security_2","TDE","Crittografia trasparente (TDE)",trivial-example
+"databases",17,"db_security_2","Column-Level Encryption","Crittografia a livello di colonna",tautological-example
+"databases",17,"db_security_2","pgcrypto","Estensione crittografica PostgreSQL (pgcrypto)",tautological-example
+"databases",17,"db_security_2","pgcrypto","Estensione crittografica PostgreSQL (pgcrypto)",trivial-example
+"databases",17,"db_security_2","Hashing","hashing / calcolo dell'impronta digitale",fake-translation
+"databases",17,"db_security_2","Hashing","hashing / calcolo dell'impronta digitale",trivial-example
+"databases",17,"db_security_2","Salt","Sale crittografico",trivial-example
+"databases",17,"db_security_2","Key Management","Gestione chiavi",trivial-example
+"databases",17,"db_security_2","KMS","Key Management Service (KMS)",trivial-example
+"databases",17,"db_security_2","SSL Certificate","Certificato SSL",trivial-example
+"databases",17,"db_security_3","Auditing","registrazione delle azioni (Auditing)",tautological-example
+"databases",17,"db_security_3","Audit Log","Log di audit",tautological-example
+"databases",17,"db_security_3","Audit Log","Log di audit",trivial-example
+"databases",17,"db_security_3","pgaudit","Estensione di audit PostgreSQL (pgaudit)",tautological-example
+"databases",17,"db_security_3","pgaudit","Estensione di audit PostgreSQL (pgaudit)",trivial-example
+"databases",17,"db_security_3","Audit Trail","Pista di audit",trivial-example
+"databases",17,"db_security_3","GDPR","Regolamento UE protezione dati (GDPR)",tautological-example
+"databases",17,"db_security_3","GDPR","Regolamento UE protezione dati (GDPR)",trivial-example
+"databases",17,"db_security_3","PII","Dati personali (PII)",trivial-example
+"databases",17,"db_security_3","Data Masking","Mascheramento dati",tautological-example
+"databases",17,"db_security_3","Data Masking","Mascheramento dati",trivial-example
+"databases",17,"db_security_3","Anonymization","Anonimizzazione",tautological-example
+"databases",17,"db_security_3","Anonymization","Anonimizzazione",trivial-example
+"databases",17,"db_security_3","Pseudonymization","Pseudonimizzazione",tautological-example
+"databases",17,"db_security_4","Row-Level Security","Sicurezza a livello di riga",trivial-example
+"databases",17,"db_security_4","Column-Level Security","Sicurezza a livello di colonna",tautological-example
+"databases",17,"db_security_4","RBAC","Controllo accessi basato su ruoli (RBAC)",tautological-example
+"databases",17,"db_security_4","RBAC","Controllo accessi basato su ruoli (RBAC)",trivial-example
+"databases",17,"db_security_4","ABAC","Controllo accessi basato su attributi (ABAC)",tautological-example
+"databases",17,"db_security_4","Privilege Escalation","scalata di privilegi (Privilege Escalation)",trivial-example
+"databases",17,"db_security_4","SECURITY DEFINER","Funzione che gira come il creatore (SECURITY DEFINER)",tautological-example
+"databases",17,"db_security_4","View-Based Security","Sicurezza basata su viste",trivial-example
+"databases",17,"db_security_4","Network ACL","ACL di rete",tautological-example
+"databases",17,"db_security_4","Service Account","Account di servizio",trivial-example
+"databases",17,"db_security_4","Secret Rotation","Rotazione segreti",trivial-example
+"databases",18,"db_cloud_1","RDS","Relational Database Service (RDS)",trivial-example
+"databases",18,"db_cloud_1","Aurora","Database AWS compatibile MySQL/Postgres (Aurora)",tautological-example
+"databases",18,"db_cloud_1","Aurora","Database AWS compatibile MySQL/Postgres (Aurora)",trivial-example
+"databases",18,"db_cloud_1","DynamoDB","Database NoSQL chiave-valore AWS (DynamoDB)",tautological-example
+"databases",18,"db_cloud_1","Redshift","Data warehouse AWS (Redshift)",tautological-example
+"databases",18,"db_cloud_1","Redshift","Data warehouse AWS (Redshift)",trivial-example
+"databases",18,"db_cloud_1","ElastiCache","Cache gestita AWS (ElastiCache)",tautological-example
+"databases",18,"db_cloud_1","Aurora Serverless","Aurora a scaling automatico (Aurora Serverless)",tautological-example
+"databases",18,"db_cloud_1","Aurora Serverless","Aurora a scaling automatico (Aurora Serverless)",trivial-example
+"databases",18,"db_cloud_1","DAX","Cache DynamoDB (DAX)",tautological-example
+"databases",18,"db_cloud_1","DAX","Cache DynamoDB (DAX)",trivial-example
+"databases",18,"db_cloud_1","Multi-AZ","replica su più zone di disponibilità (Multi-AZ)",tautological-example
+"databases",18,"db_cloud_1","Multi-AZ","replica su più zone di disponibilità (Multi-AZ)",trivial-example
+"databases",18,"db_cloud_1","Read Replica (RDS)","Replica in lettura RDS",trivial-example
+"databases",18,"db_cloud_2","Azure SQL Database","RDBMS gestito Azure (Azure SQL Database)",trivial-example
+"databases",18,"db_cloud_2","Cosmos DB","Database multi-modello Azure (Cosmos DB)",tautological-example
+"databases",18,"db_cloud_2","Cosmos DB","Database multi-modello Azure (Cosmos DB)",trivial-example
+"databases",18,"db_cloud_2","Cloud Spanner","Database SQL globale Google (Cloud Spanner)",tautological-example
+"databases",18,"db_cloud_2","Cloud SQL","RDBMS gestito Google (Cloud SQL)",tautological-example
+"databases",18,"db_cloud_2","BigQuery","Data warehouse Google (BigQuery)",tautological-example
+"databases",18,"db_cloud_2","BigQuery","Data warehouse Google (BigQuery)",trivial-example
+"databases",18,"db_cloud_2","Bigtable","Database wide-column Google (Bigtable)",tautological-example
+"databases",18,"db_cloud_2","Bigtable","Database wide-column Google (Bigtable)",trivial-example
+"databases",18,"db_cloud_2","Firestore","Database documentale serverless Google (Firestore)",tautological-example
+"databases",18,"db_cloud_2","Firestore","Database documentale serverless Google (Firestore)",trivial-example
+"databases",18,"db_cloud_2","Memorystore","Redis/Memcached gestito Google (Memorystore)",tautological-example
+"databases",18,"db_cloud_2","Memorystore","Redis/Memcached gestito Google (Memorystore)",trivial-example
+"databases",18,"db_cloud_2","Azure Database for PostgreSQL","Servizio Azure per PostgreSQL (Azure Database for PostgreSQL)",trivial-example
+"databases",18,"db_cloud_2","Hyperscale","Variante Azure ad alta scalabilità (Hyperscale)",trivial-example
+"databases",18,"db_cloud_3","Serverless Database","Database serverless",tautological-example
+"databases",18,"db_cloud_3","Serverless Database","Database serverless",trivial-example
+"databases",18,"db_cloud_3","Auto-Pause","Auto-pausa",near-identical-translation
+"databases",18,"db_cloud_3","Auto-Pause","Auto-pausa",trivial-example
+"databases",18,"db_cloud_3","Cold Start","partenza a freddo (Cold Start)",tautological-example
+"databases",18,"db_cloud_3","Cold Start","partenza a freddo (Cold Start)",trivial-example
+"databases",18,"db_cloud_3","Neon","PostgreSQL serverless cloud (Neon)",tautological-example
+"databases",18,"db_cloud_3","Neon","PostgreSQL serverless cloud (Neon)",trivial-example
+"databases",18,"db_cloud_3","PlanetScale","MySQL serverless basato su Vitess (PlanetScale)",tautological-example
+"databases",18,"db_cloud_3","PlanetScale","MySQL serverless basato su Vitess (PlanetScale)",trivial-example
+"databases",18,"db_cloud_3","Compute Pause","Pausa del compute",trivial-example
+"databases",18,"db_cloud_3","Pay Per Query","Pagamento per query",trivial-example
+"databases",18,"db_cloud_3","Capacity Unit","Unità di capacità",trivial-example
+"databases",18,"db_cloud_3","On-Demand","pagamento a richiesta (On-Demand)",tautological-example
+"databases",18,"db_cloud_4","Managed Service","Servizio gestito",trivial-example
+"databases",18,"db_cloud_4","Snapshot","istantanea di stato (Snapshot)",trivial-example
+"databases",18,"db_cloud_4","Snapshot","",duplicate-across-lessons
+"databases",18,"db_cloud_4","Automated Backup","Backup automatico",trivial-example
+"databases",18,"db_cloud_4","Reserved Capacity","Capacità riservata",tautological-example
+"databases",18,"db_cloud_4","Reserved Capacity","Capacità riservata",trivial-example
+"databases",18,"db_cloud_4","Region","Regione cloud (area geografica del data center)",trivial-example
+"databases",18,"db_cloud_4","Availability Zone","Zona di disponibilità",trivial-example
+"databases",18,"db_cloud_4","VPC","Virtual Private Cloud (VPC)",trivial-example
+"databases",18,"db_cloud_4","Private Endpoint","Endpoint privato",tautological-example
+"databases",18,"db_cloud_4","IAM Authentication","Autenticazione IAM",tautological-example
+"databases",18,"db_cloud_4","Performance Insights","Strumento monitoring AWS (Performance Insights)",tautological-example
+"databases",18,"db_cloud_4","Performance Insights","Strumento monitoring AWS (Performance Insights)",trivial-example
+"databases",19,"db_nosql_13","Graph Database","Database a grafo",trivial-example
+"databases",19,"db_nosql_13","Graph Database","",duplicate-across-lessons
+"databases",19,"db_nosql_13","Node","Nodo",near-identical-translation
+"databases",19,"db_nosql_13","Node","Nodo",trivial-example
+"databases",19,"db_nosql_13","Edge","Arco",trivial-example
+"databases",19,"db_nosql_13","Edge","",duplicate-across-lessons
+"databases",19,"db_nosql_13","Relationship (Graph)","Relazione (Grafo)",trivial-example
+"databases",19,"db_nosql_13","Property Graph","grafo con proprietà (Property Graph)",tautological-example
+"databases",19,"db_nosql_13","RDF","Modello di grafo a triple (RDF)",tautological-example
+"databases",19,"db_nosql_13","RDF","Modello di grafo a triple (RDF)",trivial-example
+"databases",19,"db_nosql_13","Triple","Tripla",near-identical-translation
+"databases",19,"db_nosql_13","Triple","Tripla",trivial-example
+"databases",19,"db_nosql_13","Traversal","Attraversamento",trivial-example
+"databases",19,"db_nosql_13","Shortest Path","Percorso più corto",trivial-example
+"databases",19,"db_nosql_13","Adjacency","Adiacenza",tautological-example
+"databases",19,"db_nosql_13","Adjacency","Adiacenza",trivial-example
+"databases",19,"db_nosql_14","Cypher","Linguaggio query Neo4j (Cypher)",tautological-example
+"databases",19,"db_nosql_14","Cypher","Linguaggio query Neo4j (Cypher)",trivial-example
+"databases",19,"db_nosql_14","MATCH","Trova (MATCH)",tautological-example
+"databases",19,"db_nosql_14","MATCH","Trova (MATCH)",trivial-example
+"databases",19,"db_nosql_14","CREATE (Cypher)","CREATE Cypher",identical-translation
+"databases",19,"db_nosql_14","CREATE (Cypher)","CREATE Cypher",trivial-example
+"databases",19,"db_nosql_14","MERGE","Crea o trova (MERGE)",tautological-example
+"databases",19,"db_nosql_14","MERGE","Crea o trova (MERGE)",trivial-example
+"databases",19,"db_nosql_14","RETURN","Restituisci (RETURN)",tautological-example
+"databases",19,"db_nosql_14","RETURN","Restituisci (RETURN)",trivial-example
+"databases",19,"db_nosql_14","Pattern","schema (Pattern)",trivial-example
+"databases",19,"db_nosql_14","Variable Length","Lunghezza variabile",trivial-example
+"databases",19,"db_nosql_14","WHERE (Cypher)","WHERE Cypher",identical-translation
+"databases",19,"db_nosql_14","WHERE (Cypher)","WHERE Cypher",trivial-example
+"databases",19,"db_nosql_14","WITH","Pipeline di risultati (WITH)",tautological-example
+"databases",19,"db_nosql_14","WITH","Pipeline di risultati (WITH)",trivial-example
+"databases",19,"db_nosql_14","WITH","",duplicate-across-lessons
+"databases",19,"db_nosql_14","APOC","Libreria di procedure Neo4j (APOC)",tautological-example
+"databases",19,"db_nosql_14","APOC","Libreria di procedure Neo4j (APOC)",trivial-example
+"databases",19,"db_nosql_15","PageRank","Algoritmo Google di ranking (PageRank)",tautological-example
+"databases",19,"db_nosql_15","PageRank","Algoritmo Google di ranking (PageRank)",trivial-example
+"databases",19,"db_nosql_15","Centrality","Centralità",tautological-example
+"databases",19,"db_nosql_15","Centrality","Centralità",near-identical-translation
+"databases",19,"db_nosql_15","Centrality","Centralità",trivial-example
+"databases",19,"db_nosql_15","Community Detection","Rilevamento community",tautological-example
+"databases",19,"db_nosql_15","Community Detection","Rilevamento community",trivial-example
+"databases",19,"db_nosql_15","BFS","Ricerca in ampiezza (BFS)",tautological-example
+"databases",19,"db_nosql_15","BFS","Ricerca in ampiezza (BFS)",trivial-example
+"databases",19,"db_nosql_15","DFS","Ricerca in profondità (DFS)",tautological-example
+"databases",19,"db_nosql_15","DFS","Ricerca in profondità (DFS)",trivial-example
+"databases",19,"db_nosql_15","Dijkstra","Algoritmo cammini minimi (Dijkstra)",tautological-example
+"databases",19,"db_nosql_15","Dijkstra","Algoritmo cammini minimi (Dijkstra)",trivial-example
+"databases",19,"db_nosql_15","Cycle Detection","Rilevamento cicli",tautological-example
+"databases",19,"db_nosql_15","Cycle Detection","Rilevamento cicli",trivial-example

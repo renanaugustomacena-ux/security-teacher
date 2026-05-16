@@ -1,0 +1,237 @@
+topicId,level,lesson,english,italian,issueType
+"nodejs",16,"node_api_5","WebSocket","canale full-duplex su HTTP (WebSocket)",tautological-example
+"nodejs",16,"node_api_5","ws Library","Libreria ws",trivial-example
+"nodejs",16,"node_api_5","Frame","unità WebSocket (Frame)",trivial-example
+"nodejs",16,"node_api_5","Ping/Pong","heartbeat WebSocket (Ping/Pong)",tautological-example
+"nodejs",16,"node_api_5","Ping/Pong","heartbeat WebSocket (Ping/Pong)",trivial-example
+"nodejs",16,"node_api_5","Close Frame","Frame di chiusura",trivial-example
+"nodejs",16,"node_api_5","wss","WebSocket cifrato (wss)",tautological-example
+"nodejs",16,"node_api_5","wss","WebSocket cifrato (wss)",trivial-example
+"nodejs",16,"node_api_5","Reconnection","Riconnessione",trivial-example
+"nodejs",16,"node_api_5","Heartbeat","battito di vita (Heartbeat)",tautological-example
+"nodejs",16,"node_api_5","Heartbeat","battito di vita (Heartbeat)",trivial-example
+"nodejs",16,"node_api_6","Socket.io","libreria real-time bidirezionale (Socket.io)",tautological-example
+"nodejs",16,"node_api_6","Socket","punto di connessione di rete (Socket)",trivial-example
+"nodejs",16,"node_api_6","Room","stanza di Socket.IO (Room)",trivial-example
+"nodejs",16,"node_api_6","Namespace","spazio dei nomi Socket.IO (Namespace)",trivial-example
+"nodejs",16,"node_api_6","Broadcasting","Broadcast",tautological-example
+"nodejs",16,"node_api_6","Broadcasting","Broadcast",trivial-example
+"nodejs",16,"node_api_6","Acknowledgement","Conferma di ricezione",trivial-example
+"nodejs",16,"node_api_6","Polling Fallback","Fallback a polling",tautological-example
+"nodejs",16,"node_api_7","Chat App","App di chat",trivial-example
+"nodejs",16,"node_api_7","Live Updates","Aggiornamenti in tempo reale",tautological-example
+"nodejs",16,"node_api_7","Live Updates","Aggiornamenti in tempo reale",trivial-example
+"nodejs",16,"node_api_7","Presence","Presenza",tautological-example
+"nodejs",16,"node_api_7","Presence","Presenza",near-identical-translation
+"nodejs",16,"node_api_7","Presence","Presenza",trivial-example
+"nodejs",16,"node_api_7","Multiplayer","Multigiocatore",trivial-example
+"nodejs",16,"node_api_7","Server Sent Events","Eventi inviati dal server",trivial-example
+"nodejs",16,"node_api_7","Long Polling","polling esteso (Long Polling)",tautological-example
+"nodejs",16,"node_api_7","Long Polling","polling esteso (Long Polling)",trivial-example
+"nodejs",16,"node_api_7","Sticky Session","Sessione persistente",tautological-example
+"nodejs",16,"node_api_7","Scaling Sockets","Scalare i socket",tautological-example
+"nodejs",16,"node_api_7","Scaling Sockets","Scalare i socket",trivial-example
+"nodejs",16,"node_api_8","WebRTC","comunicazione real-time peer-to-peer (WebRTC)",tautological-example
+"nodejs",16,"node_api_8","Signaling","segnalazione WebRTC (Signaling)",trivial-example
+"nodejs",16,"node_api_8","STUN","STUN / scoperta dell'indirizzo pubblico",tautological-example
+"nodejs",16,"node_api_8","STUN","STUN / scoperta dell'indirizzo pubblico",fake-translation
+"nodejs",16,"node_api_8","STUN","STUN / scoperta dell'indirizzo pubblico",trivial-example
+"nodejs",16,"node_api_8","TURN","relay di traffico per NAT (TURN)",tautological-example
+"nodejs",16,"node_api_8","TURN","relay di traffico per NAT (TURN)",trivial-example
+"nodejs",16,"node_api_8","mediasoup","SFU WebRTC Node.js (mediasoup)",tautological-example
+"nodejs",16,"node_api_8","mediasoup","SFU WebRTC Node.js (mediasoup)",trivial-example
+"nodejs",16,"node_api_8","Live Streaming","Streaming live",trivial-example
+"nodejs",16,"node_api_8","HLS","HTTP Live Streaming (HLS)",tautological-example
+"nodejs",16,"node_api_8","HLS","HTTP Live Streaming (HLS)",trivial-example
+"nodejs",16,"node_api_8","FFmpeg","suite multimediale (FFmpeg)",tautological-example
+"nodejs",16,"node_api_8","FFmpeg","suite multimediale (FFmpeg)",trivial-example
+"nodejs",16,"node_api_8","RTMP","Real-Time Messaging Protocol (RTMP)",tautological-example
+"nodejs",16,"node_api_8","Transcoding","Transcodifica",tautological-example
+"nodejs",16,"node_api_8","Transcoding","Transcodifica",trivial-example
+"nodejs",17,"node_runtime_13","Worker Thread","Thread worker",tautological-example
+"nodejs",17,"node_runtime_13","Worker Thread","Thread worker",trivial-example
+"nodejs",17,"node_runtime_13","Main Thread","Thread principale",trivial-example
+"nodejs",17,"node_runtime_13","parentPort","canale verso il main thread (parentPort)",tautological-example
+"nodejs",17,"node_runtime_13","postMessage","invia messaggio (postMessage)",tautological-example
+"nodejs",17,"node_runtime_13","postMessage","invia messaggio (postMessage)",trivial-example
+"nodejs",17,"node_runtime_13","workerData","dati passati al worker (workerData)",tautological-example
+"nodejs",17,"node_runtime_13","workerData","dati passati al worker (workerData)",trivial-example
+"nodejs",17,"node_runtime_13","SharedArrayBuffer","buffer condiviso tra worker (SharedArrayBuffer)",tautological-example
+"nodejs",17,"node_runtime_13","Atomics","operazioni atomiche su SAB (Atomics)",tautological-example
+"nodejs",17,"node_runtime_13","CPU-Bound","limitato dalla CPU (CPU-Bound)",trivial-example
+"nodejs",17,"node_runtime_13","Worker Pool","Pool di worker",trivial-example
+"nodejs",17,"node_runtime_13","Piscina","pool di Worker Threads (Piscina)",tautological-example
+"nodejs",17,"node_runtime_13","Piscina","pool di Worker Threads (Piscina)",trivial-example
+"nodejs",17,"node_runtime_14","child_process","modulo processi figli (child_process)",tautological-example
+"nodejs",17,"node_runtime_14","child_process","modulo processi figli (child_process)",trivial-example
+"nodejs",17,"node_runtime_14","spawn","lancia processo figlio (spawn)",tautological-example
+"nodejs",17,"node_runtime_14","spawn","lancia processo figlio (spawn)",trivial-example
+"nodejs",17,"node_runtime_14","exec","esegue comando in shell (exec)",tautological-example
+"nodejs",17,"node_runtime_14","execFile","esegue eseguibile senza shell (execFile)",tautological-example
+"nodejs",17,"node_runtime_14","fork","lancia un processo Node figlio (fork)",tautological-example
+"nodejs",17,"node_runtime_14","fork","lancia un processo Node figlio (fork)",trivial-example
+"nodejs",17,"node_runtime_14","IPC","Inter-Process Communication (IPC)",tautological-example
+"nodejs",17,"node_runtime_14","IPC","Inter-Process Communication (IPC)",trivial-example
+"nodejs",17,"node_runtime_14","stdio","configurazione I/O dei processi figli (stdio)",tautological-example
+"nodejs",17,"node_runtime_14","stdio","configurazione I/O dei processi figli (stdio)",trivial-example
+"nodejs",17,"node_runtime_14","Exit Code","Codice di uscita",trivial-example
+"nodejs",17,"node_runtime_14","Kill","Termina",tautological-example
+"nodejs",17,"node_runtime_14","Kill","Termina",trivial-example
+"nodejs",17,"node_runtime_14","Signal","Segnale",tautological-example
+"nodejs",17,"node_runtime_14","Signal","Segnale",near-identical-translation
+"nodejs",17,"node_runtime_14","Signal","Segnale",trivial-example
+"nodejs",17,"node_runtime_15","Cluster","modulo cluster di Node (Cluster)",tautological-example
+"nodejs",17,"node_runtime_15","Cluster","modulo cluster di Node (Cluster)",trivial-example
+"nodejs",17,"node_runtime_15","Master","processo principale del cluster (Master)",trivial-example
+"nodejs",17,"node_runtime_15","Primary Process","Processo primario",tautological-example
+"nodejs",17,"node_runtime_15","Primary Process","Processo primario",trivial-example
+"nodejs",17,"node_runtime_15","Worker Process","Processo worker",trivial-example
+"nodejs",17,"node_runtime_15","Round Robin","a turno (Round Robin)",trivial-example
+"nodejs",17,"node_runtime_15","CPU Cores","Core CPU",trivial-example
+"nodejs",17,"node_runtime_15","Zero-Downtime Reload","Reload senza downtime",trivial-example
+"nodejs",17,"node_runtime_15","Shared Port","Porta condivisa",trivial-example
+"nodejs",17,"node_runtime_15","Worker Crash","Crash worker",trivial-example
+"nodejs",17,"node_runtime_15","Shared State","Stato condiviso",trivial-example
+"nodejs",17,"node_runtime_16","Concurrency","Concorrenza",tautological-example
+"nodejs",17,"node_runtime_16","Concurrency","Concorrenza",trivial-example
+"nodejs",17,"node_runtime_16","Concurrency","",duplicate-across-lessons
+"nodejs",17,"node_runtime_16","Parallelism","Parallelismo",tautological-example
+"nodejs",17,"node_runtime_16","Parallelism","Parallelismo",near-identical-translation
+"nodejs",17,"node_runtime_16","Mutex","mutua esclusione (Mutex)",trivial-example
+"nodejs",17,"node_runtime_16","p-limit","limita la concorrenza di Promise (p-limit)",tautological-example
+"nodejs",17,"node_runtime_16","p-limit","limita la concorrenza di Promise (p-limit)",trivial-example
+"nodejs",17,"node_runtime_16","Queue","Coda",trivial-example
+"nodejs",17,"node_runtime_16","Throttle","limita la frequenza (Throttle)",tautological-example
+"nodejs",17,"node_runtime_16","Throttle","limita la frequenza (Throttle)",trivial-example
+"nodejs",17,"node_runtime_16","Debounce","ritarda fino alla pausa (Debounce)",tautological-example
+"nodejs",18,"node_typescript_1","TypeScript","TypeScript (linguaggio JS tipizzato)",tautological-example
+"nodejs",18,"node_typescript_1","TypeScript","TypeScript (linguaggio JS tipizzato)",fake-translation
+"nodejs",18,"node_typescript_1","tsc","compilatore TypeScript (tsc)",tautological-example
+"nodejs",18,"node_typescript_1","tsc","compilatore TypeScript (tsc)",trivial-example
+"nodejs",18,"node_typescript_1","tsconfig.json","configurazione TypeScript (tsconfig.json)",tautological-example
+"nodejs",18,"node_typescript_1","tsconfig.json","configurazione TypeScript (tsconfig.json)",trivial-example
+"nodejs",18,"node_typescript_1","ts-node","esecutore TypeScript runtime (ts-node)",tautological-example
+"nodejs",18,"node_typescript_1","ts-node","esecutore TypeScript runtime (ts-node)",trivial-example
+"nodejs",18,"node_typescript_1","tsx","esecutore TypeScript veloce (tsx)",tautological-example
+"nodejs",18,"node_typescript_1","tsx","esecutore TypeScript veloce (tsx)",trivial-example
+"nodejs",18,"node_typescript_1","Strict Mode","Modalità rigorosa",tautological-example
+"nodejs",18,"node_typescript_1","Strict Mode","Modalità rigorosa",trivial-example
+"nodejs",18,"node_typescript_1","Strict Mode","",duplicate-across-lessons
+"nodejs",18,"node_typescript_1","Target","versione di JS di output (Target)",tautological-example
+"nodejs",18,"node_typescript_1","Target","versione di JS di output (Target)",trivial-example
+"nodejs",18,"node_typescript_1","Type Definitions","Definizioni di tipo",trivial-example
+"nodejs",18,"node_typescript_1","DefinitelyTyped","repository di tipi @types (DefinitelyTyped)",tautological-example
+"nodejs",18,"node_typescript_1","DefinitelyTyped","repository di tipi @types (DefinitelyTyped)",trivial-example
+"nodejs",18,"node_typescript_2","Type Annotation","Annotazione di tipo",trivial-example
+"nodejs",18,"node_typescript_2","Primitive Type","Tipo primitivo",tautological-example
+"nodejs",18,"node_typescript_2","any","tipo qualsiasi (sconsigliato) (any)",tautological-example
+"nodejs",18,"node_typescript_2","any","tipo qualsiasi (sconsigliato) (any)",trivial-example
+"nodejs",18,"node_typescript_2","unknown","tipo sconosciuto sicuro (unknown)",tautological-example
+"nodejs",18,"node_typescript_2","unknown","tipo sconosciuto sicuro (unknown)",trivial-example
+"nodejs",18,"node_typescript_2","never","tipo che non assume valore (never)",tautological-example
+"nodejs",18,"node_typescript_2","never","tipo che non assume valore (never)",trivial-example
+"nodejs",18,"node_typescript_2","void","tipo di funzione senza ritorno (void)",tautological-example
+"nodejs",18,"node_typescript_2","Literal Type","Tipo letterale",trivial-example
+"nodejs",18,"node_typescript_2","Union Type","Tipo unione",trivial-example
+"nodejs",18,"node_typescript_2","Intersection Type","Tipo intersezione",trivial-example
+"nodejs",18,"node_typescript_2","Type Inference","Inferenza di tipo",trivial-example
+"nodejs",18,"node_typescript_3","Interface","Interfaccia",trivial-example
+"nodejs",18,"node_typescript_3","type Alias","Alias di tipo",trivial-example
+"nodejs",18,"node_typescript_3","Optional Property","Proprietà opzionale",trivial-example
+"nodejs",18,"node_typescript_3","readonly","sola lettura",tautological-example
+"nodejs",18,"node_typescript_3","readonly","sola lettura",trivial-example
+"nodejs",18,"node_typescript_3","Index Signature","Firma di indice",tautological-example
+"nodejs",18,"node_typescript_3","Index Signature","Firma di indice",trivial-example
+"nodejs",18,"node_typescript_3","Generic","Generico",tautological-example
+"nodejs",18,"node_typescript_3","Generic","Generico",near-identical-translation
+"nodejs",18,"node_typescript_3","Generic","Generico",trivial-example
+"nodejs",18,"node_typescript_3","Type Parameter","Parametro di tipo",trivial-example
+"nodejs",18,"node_typescript_3","Enum","Enumerazione",tautological-example
+"nodejs",18,"node_typescript_3","Enum","Enumerazione",trivial-example
+"nodejs",18,"node_typescript_3","Tuple","Tupla",near-identical-translation
+"nodejs",18,"node_typescript_3","Tuple","Tupla",trivial-example
+"nodejs",18,"node_typescript_3","Record","Record<K,V> / mappa chiave-valore tipizzata",tautological-example
+"nodejs",18,"node_typescript_3","Record","Record<K,V> / mappa chiave-valore tipizzata",trivial-example
+"nodejs",18,"node_typescript_4","Utility Type","Tipo di utilità",trivial-example
+"nodejs",18,"node_typescript_4","Partial","Parziale",tautological-example
+"nodejs",18,"node_typescript_4","Partial","Parziale",near-identical-translation
+"nodejs",18,"node_typescript_4","Partial","Parziale",trivial-example
+"nodejs",18,"node_typescript_4","Pick","Pick<T,K> / sottoinsieme di proprietà",tautological-example
+"nodejs",18,"node_typescript_4","Pick","Pick<T,K> / sottoinsieme di proprietà",trivial-example
+"nodejs",18,"node_typescript_4","Omit","Omit<T,K> / esclude proprietà",tautological-example
+"nodejs",18,"node_typescript_4","Omit","Omit<T,K> / esclude proprietà",trivial-example
+"nodejs",18,"node_typescript_4","Type Guard","Guardia di tipo",trivial-example
+"nodejs",18,"node_typescript_4","Type Assertion","Asserzione di tipo",trivial-example
+"nodejs",18,"node_typescript_4","Mapped Type","Tipo mappato",tautological-example
+"nodejs",18,"node_typescript_4","Mapped Type","Tipo mappato",trivial-example
+"nodejs",18,"node_typescript_4","Conditional Type","Tipo condizionale",tautological-example
+"nodejs",18,"node_typescript_4","Decorator","Decoratore",tautological-example
+"nodejs",18,"node_typescript_4","Decorator","Decoratore",near-identical-translation
+"nodejs",18,"node_typescript_4","Declaration File","File di dichiarazione",trivial-example
+"nodejs",19,"node_foundations_9","MVC","Model-View-Controller (MVC)",tautological-example
+"nodejs",19,"node_foundations_9","MVC","Model-View-Controller (MVC)",trivial-example
+"nodejs",19,"node_foundations_9","Model","Modello",near-identical-translation
+"nodejs",19,"node_foundations_9","Model","Modello",trivial-example
+"nodejs",19,"node_foundations_9","Model","",duplicate-across-lessons
+"nodejs",19,"node_foundations_9","View","Vista",trivial-example
+"nodejs",19,"node_foundations_9","Hexagonal Architecture","Architettura esagonale",tautological-example
+"nodejs",19,"node_foundations_9","Clean Architecture","architettura a cerchi concentrici (Clean Architecture)",tautological-example
+"nodejs",19,"node_foundations_9","DDD","Domain-Driven Design",tautological-example
+"nodejs",19,"node_foundations_9","DDD","Domain-Driven Design",trivial-example
+"nodejs",19,"node_foundations_9","Bounded Context","Contesto delimitato",trivial-example
+"nodejs",19,"node_foundations_9","Aggregate","Aggregato",near-identical-translation
+"nodejs",19,"node_foundations_9","Aggregate","Aggregato",trivial-example
+"nodejs",19,"node_foundations_9","Aggregate","",duplicate-across-lessons
+"nodejs",19,"node_foundations_10","Dependency Injection","Iniezione di dipendenze",trivial-example
+"nodejs",19,"node_foundations_10","Inversion of Control","Inversione del controllo",trivial-example
+"nodejs",19,"node_foundations_10","Constructor Injection","Iniezione via costruttore",tautological-example
+"nodejs",19,"node_foundations_10","DI Container","Container DI",trivial-example
+"nodejs",19,"node_foundations_10","InversifyJS","DI container TypeScript (InversifyJS)",tautological-example
+"nodejs",19,"node_foundations_10","tsyringe","DI container leggero (tsyringe)",tautological-example
+"nodejs",19,"node_foundations_10","tsyringe","DI container leggero (tsyringe)",trivial-example
+"nodejs",19,"node_foundations_10","NestJS","NestJS (framework Node enterprise)",tautological-example
+"nodejs",19,"node_foundations_10","NestJS","NestJS (framework Node enterprise)",fake-translation
+"nodejs",19,"node_foundations_10","Provider","fornitore di dipendenze (Provider)",trivial-example
+"nodejs",19,"node_foundations_10","Module (Nest)","Modulo (Nest)",near-identical-translation
+"nodejs",19,"node_foundations_10","Module (Nest)","Modulo (Nest)",trivial-example
+"nodejs",19,"node_foundations_10","Singleton","pattern unica istanza (Singleton)",trivial-example
+"nodejs",19,"node_foundations_11","Repository Pattern","Pattern repository",tautological-example
+"nodejs",19,"node_foundations_11","Service Layer","Strato di servizio",trivial-example
+"nodejs",19,"node_foundations_11","Service Layer","",duplicate-across-lessons
+"nodejs",19,"node_foundations_11","Strategy Pattern","Pattern strategia",trivial-example
+"nodejs",19,"node_foundations_11","Decorator Pattern","Pattern decoratore",trivial-example
+"nodejs",19,"node_foundations_11","Singleton Pattern","Pattern singleton",trivial-example
+"nodejs",19,"node_foundations_11","Observer Pattern","Pattern observer",tautological-example
+"nodejs",19,"node_foundations_11","Observer Pattern","Pattern observer",trivial-example
+"nodejs",19,"node_foundations_11","Observer Pattern","",duplicate-across-lessons
+"nodejs",19,"node_foundations_11","CQRS","Command Query Responsibility Segregation (CQRS)",tautological-example
+"nodejs",19,"node_foundations_11","CQRS","Command Query Responsibility Segregation (CQRS)",trivial-example
+"nodejs",19,"node_foundations_11","SOLID","principi di design OOP (SOLID)",tautological-example
+"nodejs",19,"node_foundations_11","SOLID","principi di design OOP (SOLID)",trivial-example
+"nodejs",19,"node_foundations_12","src","/ cartella del codice sorgente (src)",tautological-example
+"nodejs",19,"node_foundations_12","src","/ cartella del codice sorgente (src)",trivial-example
+"nodejs",19,"node_foundations_12","dist","/ cartella del build di distribuzione (dist)",tautological-example
+"nodejs",19,"node_foundations_12","dist","/ cartella del build di distribuzione (dist)",trivial-example
+"nodejs",19,"node_foundations_12","config","cartella di configurazione (config)",tautological-example
+"nodejs",19,"node_foundations_12","config","cartella di configurazione (config)",trivial-example
+"nodejs",19,"node_foundations_12","Domain Folder","Cartella dominio",trivial-example
+"nodejs",19,"node_foundations_12","Barrel File","File barrel",trivial-example
+"nodejs",19,"node_foundations_12","Feature Folder","Cartella feature",tautological-example
+"nodejs",19,"node_foundations_12","Feature Folder","Cartella feature",trivial-example
+"nodejs",19,"node_foundations_12","Style Guide","Guida di stile",trivial-example
+"nodejs",19,"node_foundations_12","Linting","analisi statica del codice (Linting)",tautological-example
+"nodejs",19,"node_foundations_12","Linting","analisi statica del codice (Linting)",trivial-example
+"nodejs",20,"node_performance_1","Profiling","Profilazione",tautological-example
+"nodejs",20,"node_performance_1","Flame Graph","grafico a fiamma (Flame Graph)",trivial-example
+"nodejs",20,"node_performance_1","0x","profiler per Node.js (0x)",trivial-example
+"nodejs",20,"node_performance_1","clinic.js","suite di profiling Node (clinic.js)",tautological-example
+"nodejs",20,"node_performance_1","clinic.js","suite di profiling Node (clinic.js)",trivial-example
+"nodejs",20,"node_performance_1","CPU Profile","Profilo CPU",trivial-example
+"nodejs",20,"node_performance_1","Heap Snapshot","Snapshot dell'heap",trivial-example
+"nodejs",20,"node_performance_1","Performance API","API di misurazione perf (Performance API)",trivial-example
+"nodejs",20,"node_performance_1","Benchmark","test prestazionale (Benchmark)",trivial-example
+"nodejs",20,"node_performance_1","Autocannon","strumento di load testing HTTP (Autocannon)",tautological-example
+"nodejs",20,"node_performance_1","Autocannon","strumento di load testing HTTP (Autocannon)",trivial-example
+"nodejs",20,"node_performance_2","Heap","memoria dinamica (Heap)",trivial-example
+"nodejs",20,"node_performance_2","Heap","",duplicate-across-lessons
+"nodejs",20,"node_performance_2","New Space","Nuovo spazio",trivial-example

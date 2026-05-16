@@ -1,343 +1,142 @@
 topicId,level,lesson,english,italian,issueType
 "linux",0,"linux_basics_1","Terminal","Terminale",near-identical-translation
 "linux",0,"linux_basics_1","Command","Comando",near-identical-translation
-"linux",0,"linux_basics_1","Bash","Bash (shell GNU/Bourne Again)",fake-translation
+"linux",0,"linux_basics_1","Bash","Bash",identical-translation
 "linux",0,"linux_basics_1","Argument","Argomento",near-identical-translation
 "linux",0,"linux_basics_1","Option","Opzione",near-identical-translation
-"linux",0,"linux_basics_2","Path","Percorso (path)",trivial-example
 "linux",0,"linux_basics_2","Extension","Estensione",near-identical-translation
 "linux",0,"linux_basics_3","Session","Sessione",near-identical-translation
 "linux",0,"linux_basics_3","Process","Processo",near-identical-translation
-"linux",0,"linux_basics_3","Process","Processo",trivial-example
 "linux",0,"linux_basics_4","Manual","Manuale",near-identical-translation
 "linux",0,"linux_basics_4","Verbose","Verboso",near-identical-translation
 "linux",0,"linux_basics_4","Version","Versione",near-identical-translation
-"linux",1,"linux_file_ops","Copy","Copia (cp)",trivial-example
-"linux",1,"linux_file_ops","Touch","Tocca (touch)",tautological-example
-"linux",1,"linux_file_ops","Rename","Rinomina",trivial-example
-"linux",1,"linux_view","Cat","Concatena (cat)",tautological-example
-"linux",1,"linux_view","Cat","Concatena (cat)",trivial-example
-"linux",1,"linux_view","Less","Meno (less)",tautological-example
-"linux",1,"linux_view","More","Più (more)",tautological-example
+"linux",1,"linux_file_ops","Touch","touch",identical-translation
+"linux",1,"linux_view","Cat","cat",identical-translation
+"linux",1,"linux_view","Less","less",identical-translation
+"linux",1,"linux_view","More","more",identical-translation
 "linux",1,"linux_view","Content","Contenuto",near-identical-translation
-"linux",1,"linux_view","Pager","Paginatore",trivial-example
-"linux",1,"linux_search","Find","Trova (find)",tautological-example
-"linux",1,"linux_search","Locate","Localizza (locate)",tautological-example
-"linux",1,"linux_search","Which","Quale (which)",tautological-example
-"linux",1,"linux_search","Whereis","Dov'è (whereis)",tautological-example
+"linux",1,"linux_search","Find","find",identical-translation
+"linux",1,"linux_search","Locate","locate",identical-translation
+"linux",1,"linux_search","Which","which",identical-translation
+"linux",1,"linux_search","Whereis","whereis",identical-translation
 "linux",1,"linux_search","Type","Tipo",near-identical-translation
-"linux",1,"linux_search","Type","Tipo",trivial-example
-"linux",2,"linux_editors","Nano","Nano (editor di testo)",fake-translation
-"linux",2,"linux_editors","Vim","Vim (Vi IMproved)",fake-translation
-"linux",2,"linux_editors","Insert Mode","Modalità Inserimento",trivial-example
-"linux",2,"linux_editors","Search","Cerca",trivial-example
-"linux",2,"linux_text_proc","Grep","Grep (Cerca testo)",tautological-example
-"linux",2,"linux_text_proc","Grep","Grep (Cerca testo)",fake-translation
-"linux",2,"linux_text_proc","Pipeline","Pipeline (|)",fake-translation
-"linux",2,"linux_text_proc","Pipeline","Pipeline (|)",identical-translation
-"linux",2,"linux_text_proc","Cut","Taglia (cut)",tautological-example
-"linux",2,"linux_text_proc","Awk","Awk (linguaggio elaborazione testo)",tautological-example
-"linux",2,"linux_text_proc","Awk","Awk (linguaggio elaborazione testo)",fake-translation
-"linux",2,"linux_text_util","Word Count","Conta Parole (wc)",trivial-example
-"linux",2,"linux_text_util","Patch","Patch (Applica diff)",tautological-example
-"linux",2,"linux_text_util","Patch","Patch (Applica diff)",fake-translation
+"linux",2,"linux_editors","Nano","nano",identical-translation
+"linux",2,"linux_editors","Vim","vim",identical-translation
+"linux",2,"linux_text_proc","Grep","grep",identical-translation
+"linux",2,"linux_text_proc","Pipeline","pipeline",identical-translation
+"linux",2,"linux_text_proc","Cut","cut",identical-translation
+"linux",2,"linux_text_proc","Awk","awk",identical-translation
+"linux",2,"linux_text_util","Patch","patch",identical-translation
 "linux",2,"linux_archives","Archive","Archivio",near-identical-translation
-"linux",2,"linux_archives","Archive","Archivio",trivial-example
-"linux",2,"linux_archives","Tarball","Tarball (.tar.gz)",fake-translation
-"linux",2,"linux_archives","Zip","Zip (formato archivio compresso)",fake-translation
-"linux",2,"linux_archives","Gzip","Gzip (compressore GNU)",fake-translation
-"linux",2,"linux_archives","Flag z","Flag z (per gzip)",fake-translation
-"linux",2,"linux_archives","List Contents","Elenca contenuti (-t)",trivial-example
-"linux",2,"linux_archives","Verbose","Verboso (-v)",trivial-example
-"linux",3,"linux_users","Delete User","Elimina Utente (deluser)",trivial-example
+"linux",2,"linux_archives","Tarball","tarball",identical-translation
+"linux",2,"linux_archives","Zip","zip",identical-translation
+"linux",2,"linux_archives","Gzip","gzip",identical-translation
+"linux",2,"linux_archives","Flag z","flag z",identical-translation
 "linux",3,"linux_users","Members","Membri",near-identical-translation
 "linux",3,"linux_users","Profile","Profilo",near-identical-translation
 "linux",3,"linux_perms","Octal","Ottale",near-identical-translation
 "linux",3,"linux_perms","Symbolic","Simbolico",near-identical-translation
 "linux",3,"linux_special_perms","Attribute","Attributo",near-identical-translation
-"linux",3,"linux_identity","Finger","Informazioni utente di rete (finger)",tautological-example
+"linux",3,"linux_identity","Finger","finger",identical-translation
 "linux",3,"linux_identity","Effective","Effettivo",near-identical-translation
 "linux",3,"linux_identity","Real","Reale",near-identical-translation
 "linux",4,"linux_net_basics","Protocol","Protocollo",near-identical-translation
 "linux",4,"linux_net_basics","Port","Porta",near-identical-translation
-"linux",4,"linux_net_basics","DNS","DNS (Domain Name System)",fake-translation
+"linux",4,"linux_net_basics","DNS","DNS",identical-translation
 "linux",4,"linux_net_basics","Latency","Latenza",near-identical-translation
 "linux",4,"linux_net_config","Route","Rotta",near-identical-translation
-"linux",4,"linux_net_config","Ethernet","Ethernet (Cavo)",fake-translation
-"linux",4,"linux_net_config","Localhost","Indirizzo locale (localhost)",tautological-example
-"linux",4,"linux_remote","SSH","SSH (Secure Shell)",fake-translation
+"linux",4,"linux_net_config","Ethernet","Ethernet",identical-translation
+"linux",4,"linux_net_config","Localhost","localhost",identical-translation
+"linux",4,"linux_remote","SSH","SSH",identical-translation
 "linux",4,"linux_remote","Remote","Remoto",near-identical-translation
-"linux",4,"linux_net_diag","Trace","Tracciare",tautological-example
+"linux",4,"linux_net_diag","Trace","trace",identical-translation
 "linux",4,"linux_net_diag","Traffic","Traffico",near-identical-translation
-"linux",5,"linux_proc_mgmt","PID","PID (ID Processo)",fake-translation
-"linux",5,"linux_proc_mgmt","Top","Top (In cima)",fake-translation
+"linux",5,"linux_proc_mgmt","PID","PID",identical-translation
+"linux",5,"linux_proc_mgmt","Top","top",identical-translation
 "linux",5,"linux_proc_mgmt","Signal","Segnale",near-identical-translation
 "linux",5,"linux_proc_mgmt","Priority","Priorità",near-identical-translation
-"linux",5,"linux_proc_mgmt","Nice","Nice (Cortesia)",tautological-example
-"linux",5,"linux_proc_mgmt","Nice","Nice (Cortesia)",fake-translation
+"linux",5,"linux_proc_mgmt","Nice","nice",identical-translation
 "linux",5,"linux_services","Daemon","Demone",near-identical-translation
 "linux",5,"linux_services","Status","Stato",near-identical-translation
 "linux",5,"linux_scheduling","Minute","Minuto",near-identical-translation
-"linux",5,"linux_scheduling","At","Alle (at)",trivial-example
 "linux",5,"linux_scheduling","Interval","Intervallo",near-identical-translation
-"linux",5,"linux_monitoring","Watch","Guarda / Monitora",tautological-example
+"linux",5,"linux_monitoring","Watch","watch",identical-translation
 "linux",5,"linux_monitoring","Limit","Limite",near-identical-translation
 "linux",6,"linux_info","System","Sistema",near-identical-translation
 "linux",6,"linux_info","Architecture","Architettura",near-identical-translation
-"linux",6,"linux_info","USB","USB (Universal Serial Bus)",fake-translation
+"linux",6,"linux_info","USB","USB",identical-translation
 "linux",6,"linux_info","Distribution","Distribuzione",near-identical-translation
 "linux",6,"linux_disks","Disk","Disco",near-identical-translation
 "linux",6,"linux_disks","Partition","Partizione",near-identical-translation
-"linux",6,"linux_devices","Null","Null (Vuoto)",fake-translation
+"linux",6,"linux_devices","Null","null",identical-translation
 "linux",6,"linux_devices","Module","Modulo",near-identical-translation
-"linux",6,"linux_devices","Stdio","Input/Output Standard",tautological-example
-"linux",6,"linux_kernel","Grub","Grub (Bootloader)",fake-translation
+"linux",6,"linux_kernel","Grub","GRUB",identical-translation
 "linux",6,"linux_kernel","Panic","Panico",near-identical-translation
 "linux",6,"linux_kernel","Parameters","Parametri",near-identical-translation
-"linux",6,"linux_kernel","Version","Versione",near-identical-translation
-"linux",7,"bash_basics","Shebang","Shebang (#!)",fake-translation
-"linux",7,"bash_basics","Shebang","Shebang (#!)",identical-translation
+"linux",7,"bash_basics","Shebang","shebang",identical-translation
 "linux",7,"bash_basics","Variable","Variabile",near-identical-translation
 "linux",7,"bash_basics","Comment","Commento (#)",near-identical-translation
-"linux",7,"bash_vars","Export","Esportare",tautological-example
-"linux",7,"bash_vars","PATH","Percorso di ricerca comandi (PATH)",tautological-example
+"linux",7,"bash_vars","Export","export",identical-translation
 "linux",7,"bash_vars","Arithmetic","Aritmetica",near-identical-translation
 "linux",7,"bash_vars","Global","Globale",near-identical-translation
 "linux",7,"bash_vars","Local","Locale",near-identical-translation
 "linux",7,"bash_vars","Expansion","Espansione",near-identical-translation
 "linux",7,"bash_control","Condition","Condizione",near-identical-translation
-"linux",7,"bash_control","Case","Caso (case)",tautological-example
+"linux",7,"bash_control","Case","case",identical-translation
 "linux",7,"bash_control","Boolean","Booleano",near-identical-translation
 "linux",7,"bash_funcs","Define","Definire",near-identical-translation
-"linux",7,"bash_funcs","Return","Ritornare",trivial-example
 "linux",7,"bash_funcs","Parameter","Parametro",near-identical-translation
-"linux",7,"bash_funcs","Debug","Debug (-x)",fake-translation
-"linux",7,"bash_funcs","Debug","Debug (-x)",near-identical-translation
+"linux",7,"bash_funcs","Debug","debug",identical-translation
 "linux",7,"bash_funcs","Modular","Modulare",near-identical-translation
-"linux",8,"linux_regex","Regex","Regex (Espressione Regolare)",fake-translation
+"linux",8,"linux_regex","Regex","regex",identical-translation
 "linux",8,"linux_regex","Anchor","Ancora",near-identical-translation
-"linux",8,"linux_regex","Group","Gruppo",tautological-example
-"linux",8,"linux_regex","Extended","Esteso (-E)",tautological-example
-"linux",8,"linux_encoding","ASCII","ASCII (codifica caratteri base)",fake-translation
-"linux",8,"linux_encoding","UTF-8","UTF-8 (codifica universale Unicode)",fake-translation
+"linux",8,"linux_regex","egrep / grep -E","egrep / grep -E",identical-translation
+"linux",8,"linux_encoding","ASCII","ASCII",identical-translation
+"linux",8,"linux_encoding","UTF-8","UTF-8",identical-translation
 "linux",8,"linux_encoding","Binary","Binario",near-identical-translation
-"linux",8,"linux_encoding","Base64","Base64 (codifica binario in testo)",fake-translation
-"linux",8,"linux_streams","Tee","Tee (T)",tautological-example
-"linux",8,"linux_streams","Tee","Tee (T)",fake-translation
-"linux",8,"linux_streams","Tee","Tee (T)",near-identical-translation
-"linux",8,"linux_streams","Process Substitution","Sostituzione Processo",tautological-example
-"linux",8,"linux_logs","Journal","Giornale (Systemd)",tautological-example
-"linux",8,"linux_logs","Journal","Giornale (Systemd)",trivial-example
+"linux",8,"linux_encoding","Base64","Base64",identical-translation
+"linux",8,"linux_streams","Tee","tee",identical-translation
+"linux",8,"linux_logs","Journal","journal",identical-translation
 "linux",8,"linux_logs","Rotate","Ruotare",near-identical-translation
-"linux",9,"linux_firewall","Stateful","Stateful (Con stato)",fake-translation
+"linux",9,"linux_firewall","Stateful","stateful",identical-translation
 "linux",9,"linux_firewall","Zone","Zona",near-identical-translation
 "linux",9,"linux_crypto","Certificate","Certificato",near-identical-translation
 "linux",9,"linux_crypto","Symmetric","Simmetrico",near-identical-translation
-"linux",9,"linux_crypto","Asymmetric","Asimmetrico",tautological-example
 "linux",9,"linux_crypto","Asymmetric","Asimmetrico",near-identical-translation
 "linux",9,"linux_crypto","Entropy","Entropia",near-identical-translation
-"linux",9,"linux_access","Sudoers","Sudoers (File)",fake-translation
+"linux",9,"linux_access","Sudoers","sudoers",identical-translation
 "linux",9,"linux_access","Privilege","Privilegio",near-identical-translation
-"linux",9,"linux_access","Escalate","Scalare (Privilegi)",trivial-example
-"linux",9,"linux_access","PAM","PAM (Auth Modules)",tautological-example
-"linux",9,"linux_access","PAM","PAM (Auth Modules)",fake-translation
-"linux",9,"linux_access","Chroot","Chroot (Jail)",fake-translation
-"linux",9,"linux_audit","Audit Trail","Traccia di Audit",trivial-example
-"linux",9,"linux_audit","Logwatch","Logwatch (analizzatore di log)",fake-translation
-"linux",9,"linux_audit","Logwatch","Logwatch (analizzatore di log)",trivial-example
+"linux",9,"linux_access","PAM","PAM",identical-translation
+"linux",9,"linux_access","Chroot","chroot",identical-translation
+"linux",9,"linux_audit","Logwatch","Logwatch",identical-translation
 "linux",9,"linux_audit","Intrusion","Intrusione",near-identical-translation
-"linux",9,"linux_audit","Intrusion","Intrusione",trivial-example
-"linux",9,"linux_audit","Fail2Ban","Fail2Ban (blocco automatico IP)",tautological-example
-"linux",9,"linux_audit","Fail2Ban","Fail2Ban (blocco automatico IP)",fake-translation
-"linux",9,"linux_audit","Fail2Ban","Fail2Ban (blocco automatico IP)",trivial-example
+"linux",9,"linux_audit","Fail2Ban","Fail2Ban",identical-translation
 "linux",9,"linux_audit","Event","Evento",near-identical-translation
-"linux",9,"linux_audit","Event","Evento",trivial-example
 "linux",9,"linux_audit","Alert","Allerta",near-identical-translation
-"linux",9,"linux_audit","Alert","Allerta",trivial-example
-"linux",9,"linux_audit","Monitor","Monitorare",tautological-example
-"linux",9,"linux_audit","Monitor","Monitorare",trivial-example
-"linux",9,"linux_audit","Baseline","Linea di base",trivial-example
-"linux",9,"linux_audit","Forensics","forense / analisi post-incidente",trivial-example
 "linux",9,"linux_audit","Incident","Incidente",near-identical-translation
-"linux",9,"linux_audit","Incident","Incidente",trivial-example
-"linux",10,"linux_packages","Package","Pacchetto",trivial-example
-"linux",10,"linux_packages","Repository","Archivio software (repository)",trivial-example
-"linux",10,"linux_packages","Install","Installare",trivial-example
-"linux",10,"linux_packages","Update","Aggiornare (Lista)",trivial-example
-"linux",10,"linux_packages","Upgrade","Aggiornare (Software)",trivial-example
-"linux",10,"linux_packages","Remove","Rimuovere",trivial-example
-"linux",10,"linux_packages","Source Code","Codice Sorgente",trivial-example
-"linux",10,"linux_packages","Binary","Binario",near-identical-translation
-"linux",10,"linux_packages","Binary","Binario",trivial-example
-"linux",10,"linux_packages","Mirror","Specchio del repository (mirror)",trivial-example
-"linux",10,"linux_backup","Backup","Copia di sicurezza (backup)",trivial-example
-"linux",10,"linux_backup","Restore","Ripristinare",tautological-example
-"linux",10,"linux_backup","Restore","Ripristinare",trivial-example
-"linux",10,"linux_backup","Sync","Sincronizzare",trivial-example
-"linux",10,"linux_backup","Snapshot","Istantanea (snapshot)",trivial-example
-"linux",10,"linux_backup","Incremental","Incrementale",tautological-example
+"linux",10,"linux_packages","Install","Installare",tautological-example
 "linux",10,"linux_backup","Incremental","Incrementale",near-identical-translation
-"linux",10,"linux_backup","Incremental","Incrementale",trivial-example
-"linux",10,"linux_backup","Archive","Archivio",near-identical-translation
-"linux",10,"linux_backup","Archive","Archivio",trivial-example
 "linux",10,"linux_backup","Clone","Clonare",tautological-example
 "linux",10,"linux_backup","Clone","Clonare",near-identical-translation
-"linux",10,"linux_backup","Clone","Clonare",trivial-example
-"linux",10,"linux_backup","Remote","Remoto",near-identical-translation
-"linux",10,"linux_backup","Remote","Remoto",trivial-example
-"linux",10,"linux_backup","Retention","Conservazione (retention)",trivial-example
 "linux",10,"linux_backup","Integrity","Integrità",near-identical-translation
-"linux",10,"linux_backup","Integrity","Integrità",trivial-example
-"linux",10,"linux_web","Web Server","Server Web",trivial-example
-"linux",10,"linux_web","Request","Richiesta",trivial-example
-"linux",10,"linux_web","Response","Risposta",trivial-example
-"linux",10,"linux_web","Header","Intestazione",trivial-example
-"linux",10,"linux_web","Proxy","Intermediario di rete (proxy)",trivial-example
-"linux",10,"linux_web","Load Balancing","Bilanciamento Carico",trivial-example
-"linux",10,"linux_web","Log","Log Accessi",trivial-example
 "linux",10,"linux_web","Configuration","Configurazione",near-identical-translation
-"linux",10,"linux_web","Configuration","Configurazione",trivial-example
-"linux",10,"linux_web","Virtual Host","host virtuale / sito multiplo",trivial-example
-"linux",10,"linux_web","SSL/TLS","SSL/TLS (crittografia in transito)",fake-translation
-"linux",10,"linux_web","SSL/TLS","SSL/TLS (crittografia in transito)",trivial-example
-"linux",10,"linux_db","Database","base di dati / database",trivial-example
-"linux",10,"linux_db","Query","Interrogazione / Query",trivial-example
-"linux",10,"linux_db","Table","Tabella",trivial-example
-"linux",10,"linux_db","Record","Riga di dati (record)",trivial-example
-"linux",10,"linux_db","Client","Programma richiedente (client)",trivial-example
-"linux",10,"linux_db","Server","Programma fornitore (server)",trivial-example
-"linux",10,"linux_db","Dump","Esportazione dati (dump)",trivial-example
+"linux",10,"linux_web","SSL/TLS","SSL/TLS",identical-translation
 "linux",10,"linux_db","Import","Importare",tautological-example
-"linux",10,"linux_db","Import","Importare",trivial-example
-"linux",10,"linux_db","Connection","Connessione",trivial-example
 "linux",10,"linux_db","Grant","Concedere",tautological-example
-"linux",10,"linux_db","Grant","Concedere",trivial-example
-"linux",11,"linux_containers","Container","Contenitore isolato (container)",tautological-example
-"linux",11,"linux_containers","Image","Immagine",trivial-example
-"linux",11,"linux_containers","Docker","Docker (piattaforma container)",tautological-example
-"linux",11,"linux_containers","Docker","Docker (piattaforma container)",fake-translation
-"linux",11,"linux_containers","Docker","Docker (piattaforma container)",trivial-example
-"linux",11,"linux_containers","Volume","Unità di archiviazione (volume)",trivial-example
-"linux",11,"linux_containers","Network","Rete",trivial-example
+"linux",11,"linux_containers","Docker","Docker",identical-translation
 "linux",11,"linux_containers","Orchestration","Orchestrazione",near-identical-translation
-"linux",11,"linux_containers","Orchestration","Orchestrazione",trivial-example
 "linux",11,"linux_containers","Registry","Registro",near-identical-translation
-"linux",11,"linux_containers","Registry","Registro",trivial-example
-"linux",11,"linux_containers","Namespace","Spazio dei nomi (namespace)",tautological-example
-"linux",11,"linux_containers","Namespace","Spazio dei nomi (namespace)",trivial-example
-"linux",11,"linux_containers","Cgroups","Cgroups (Control Groups)",tautological-example
-"linux",11,"linux_containers","Cgroups","Cgroups (Control Groups)",fake-translation
-"linux",11,"linux_containers","Cgroups","Cgroups (Control Groups)",trivial-example
-"linux",11,"linux_containers","Microservices","Microservizi",trivial-example
-"linux",11,"linux_virtualization","Virtual Machine","Macchina Virtuale (VM)",trivial-example
-"linux",11,"linux_virtualization","Hypervisor","Supervisore di macchine virtuali (hypervisor)",trivial-example
-"linux",11,"linux_virtualization","Guest","Ospite (Guest)",trivial-example
-"linux",11,"linux_virtualization","Host","Ospitante (Host)",trivial-example
-"linux",11,"linux_virtualization","Snapshot","Istantanea di stato (snapshot)",trivial-example
+"linux",11,"linux_containers","Cgroups","cgroups",identical-translation
 "linux",11,"linux_virtualization","Emulation","Emulazione",near-identical-translation
-"linux",11,"linux_virtualization","Emulation","Emulazione",trivial-example
-"linux",11,"linux_virtualization","Provisioning","Fornitura risorse (provisioning)",trivial-example
-"linux",11,"linux_virtualization","Cloud","Nuvola informatica (cloud)",tautological-example
 "linux",11,"linux_virtualization","Migration","Migrazione",near-identical-translation
-"linux",11,"linux_virtualization","Migration","Migrazione",trivial-example
-"linux",11,"linux_performance","Benchmark","test prestazionale (Benchmark)",trivial-example
-"linux",11,"linux_performance","Tuning","Ottimizzazione (Tuning)",trivial-example
-"linux",11,"linux_performance","Profile","Profilare",tautological-example
-"linux",11,"linux_performance","Profile","Profilare",near-identical-translation
-"linux",11,"linux_performance","Profile","Profilare",trivial-example
-"linux",11,"linux_performance","Trace","Tracciare (Strace)",trivial-example
-"linux",11,"linux_performance","Latency","Latenza",near-identical-translation
-"linux",11,"linux_performance","Latency","Latenza",trivial-example
-"linux",11,"linux_performance","Throughput","Capacità (Throughput)",trivial-example
-"linux",11,"linux_performance","Cache","memoria intermedia (Cache)",trivial-example
-"linux",11,"linux_performance","Overhead","Sovraccarico (Overhead)",trivial-example
 "linux",11,"linux_performance","Scalability","Scalabilità",near-identical-translation
-"linux",11,"linux_performance","Scalability","Scalabilità",trivial-example
-"linux",11,"linux_kernel_adv","Interrupt","Interruzione / Interrupt",trivial-example
-"linux",11,"linux_kernel_adv","Scheduler","pianificatore di processi (Scheduler)",trivial-example
-"linux",11,"linux_kernel_adv","Memory Management","Gestione Memoria",trivial-example
-"linux",11,"linux_kernel_adv","Filesystem","File system (VFS)",trivial-example
-"linux",11,"linux_kernel_adv","Driver","Pilota di periferica (driver)",trivial-example
-"linux",11,"linux_kernel_adv","Patch","correzione del codice (Patch)",trivial-example
-"linux",11,"linux_kernel_adv","Mainline","ramo principale del kernel (Mainline)",trivial-example
-"linux",11,"linux_kernel_adv","LTS","LTS (Supporto a Lungo Termine)",fake-translation
-"linux",11,"linux_kernel_adv","LTS","LTS (Supporto a Lungo Termine)",trivial-example
+"linux",11,"linux_kernel_adv","LTS","LTS",identical-translation
 "linux",11,"linux_kernel_adv","Compile","Compilare",tautological-example
 "linux",11,"linux_kernel_adv","Compile","Compilare",near-identical-translation
-"linux",11,"linux_kernel_adv","Compile","Compilare",trivial-example
-"linux",0,"linux_basics_1","console","",duplicate-across-lessons
-"linux",6,"linux_devices","console","",duplicate-across-lessons
-"linux",0,"linux_basics_1","argument","",duplicate-across-lessons
-"linux",7,"bash_basics","argument","",duplicate-across-lessons
-"linux",0,"linux_basics_1","execute","",duplicate-across-lessons
-"linux",3,"linux_perms","execute","",duplicate-across-lessons
-"linux",0,"linux_basics_2","path","",duplicate-across-lessons
-"linux",7,"bash_vars","path","",duplicate-across-lessons
-"linux",0,"linux_basics_2","filesystem","",duplicate-across-lessons
-"linux",11,"linux_kernel_adv","filesystem","",duplicate-across-lessons
-"linux",0,"linux_basics_3","group","",duplicate-across-lessons
-"linux",8,"linux_regex","group","",duplicate-across-lessons
-"linux",0,"linux_basics_3","kernel","",duplicate-across-lessons
-"linux",6,"linux_kernel","kernel","",duplicate-across-lessons
-"linux",8,"linux_logs","kernel","",duplicate-across-lessons
-"linux",0,"linux_basics_4","usage","",duplicate-across-lessons
-"linux",5,"linux_monitoring","usage","",duplicate-across-lessons
-"linux",6,"linux_disks","usage","",duplicate-across-lessons
-"linux",0,"linux_basics_4","verbose","",duplicate-across-lessons
-"linux",2,"linux_archives","verbose","",duplicate-across-lessons
-"linux",0,"linux_basics_4","version","",duplicate-across-lessons
-"linux",6,"linux_kernel","version","",duplicate-across-lessons
-"linux",1,"linux_file_ops","remove","",duplicate-across-lessons
-"linux",10,"linux_packages","remove","",duplicate-across-lessons
-"linux",1,"linux_view","tail","",duplicate-across-lessons
-"linux",8,"linux_logs","tail","",duplicate-across-lessons
-"linux",1,"linux_search","pattern","",duplicate-across-lessons
-"linux",8,"linux_regex","pattern","",duplicate-across-lessons
-"linux",2,"linux_text_proc","grep","",duplicate-across-lessons
-"linux",8,"linux_regex","grep","",duplicate-across-lessons
-"linux",2,"linux_text_proc","redirect","",duplicate-across-lessons
-"linux",8,"linux_streams","redirect","",duplicate-across-lessons
-"linux",2,"linux_text_proc","echo","",duplicate-across-lessons
-"linux",7,"bash_basics","echo","",duplicate-across-lessons
-"linux",2,"linux_text_util","patch","",duplicate-across-lessons
-"linux",11,"linux_kernel_adv","patch","",duplicate-across-lessons
-"linux",2,"linux_archives","archive","",duplicate-across-lessons
-"linux",10,"linux_backup","archive","",duplicate-across-lessons
-"linux",3,"linux_users","profile","",duplicate-across-lessons
-"linux",11,"linux_performance","profile","",duplicate-across-lessons
-"linux",3,"linux_perms","read","",duplicate-across-lessons
-"linux",7,"bash_basics","read","",duplicate-across-lessons
-"linux",4,"linux_net_basics","latency","",duplicate-across-lessons
-"linux",11,"linux_performance","latency","",duplicate-across-lessons
-"linux",4,"linux_net_basics","firewall","",duplicate-across-lessons
-"linux",9,"linux_firewall","firewall","",duplicate-across-lessons
-"linux",4,"linux_remote","remote","",duplicate-across-lessons
-"linux",10,"linux_backup","remote","",duplicate-across-lessons
-"linux",4,"linux_remote","connection","",duplicate-across-lessons
-"linux",10,"linux_db","connection","",duplicate-across-lessons
-"linux",4,"linux_remote","host","",duplicate-across-lessons
-"linux",11,"linux_virtualization","host","",duplicate-across-lessons
-"linux",4,"linux_net_diag","trace","",duplicate-across-lessons
-"linux",11,"linux_performance","trace","",duplicate-across-lessons
-"linux",5,"linux_services","log","",duplicate-across-lessons
-"linux",6,"linux_kernel","log","",duplicate-across-lessons
-"linux",8,"linux_logs","log","",duplicate-across-lessons
-"linux",10,"linux_web","log","",duplicate-across-lessons
-"linux",6,"linux_disks","volume","",duplicate-across-lessons
-"linux",11,"linux_containers","volume","",duplicate-across-lessons
-"linux",6,"linux_devices","driver","",duplicate-across-lessons
-"linux",11,"linux_kernel_adv","driver","",duplicate-across-lessons
-"linux",6,"linux_kernel","update","",duplicate-across-lessons
-"linux",10,"linux_packages","update","",duplicate-across-lessons
-"linux",6,"linux_kernel","source","",duplicate-across-lessons
-"linux",7,"bash_funcs","source","",duplicate-across-lessons
-"linux",7,"bash_funcs","debug","",duplicate-across-lessons
-"linux",8,"linux_logs","debug","",duplicate-across-lessons
-"linux",8,"linux_encoding","binary","",duplicate-across-lessons
-"linux",10,"linux_packages","binary","",duplicate-across-lessons
-"linux",8,"linux_logs","audit","",duplicate-across-lessons
-"linux",9,"linux_access","audit","",duplicate-across-lessons
-"linux",9,"linux_firewall","table","",duplicate-across-lessons
-"linux",10,"linux_db","table","",duplicate-across-lessons
-"linux",10,"linux_backup","snapshot","",duplicate-across-lessons
-"linux",11,"linux_virtualization","snapshot","",duplicate-across-lessons
+"linux",0,"linux_basics_3","Kernel","",duplicate-across-lessons
+"linux",6,"linux_kernel","Kernel","",duplicate-across-lessons
+"linux",0,"linux_basics_4","Usage","",duplicate-across-lessons
+"linux",5,"linux_monitoring","Usage","",duplicate-across-lessons
+"linux",5,"linux_services","Log","",duplicate-across-lessons
+"linux",6,"linux_kernel","Log","",duplicate-across-lessons
+"linux",8,"linux_logs","Log","",duplicate-across-lessons

@@ -1,0 +1,1397 @@
+{
+  "fixes": [
+    {
+      "level": "16",
+      "lesson": "node_api_5",
+      "english": "WebSocket",
+      "set": {
+        "italian": "WebSocket",
+        "example": "Trading dashboards push live price ticks to the browser over a WebSocket so users never have to refresh. = Le dashboard di trading inviano i tick di prezzo live al browser su WebSocket così gli utenti non devono mai ricaricare."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_5",
+      "english": "ws Library",
+      "set": {
+        "italian": "Libreria ws",
+        "example": "The ws library is the lowest-level Node WebSocket implementation, used as the engine under Socket.IO and most chat backends. = La libreria ws è l'implementazione WebSocket più di basso livello in Node, usata come motore sotto Socket.IO e nella maggior parte dei backend di chat."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_5",
+      "english": "Frame",
+      "set": {
+        "italian": "frame WebSocket",
+        "example": "Each chat message becomes one text frame on the wire, and large uploads are sliced into many binary frames. = Ogni messaggio di chat diventa un frame testuale sul filo, e gli upload grandi sono divisi in molti frame binari."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_5",
+      "english": "Ping/Pong",
+      "set": {
+        "italian": "ping/pong",
+        "example": "Servers send periodic Ping/Pong frames to detect half-open WebSocket connections and free up idle resources. = I server inviano frame Ping/Pong periodici per rilevare connessioni WebSocket semi-aperte e liberare risorse inattive."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_5",
+      "english": "Close Frame",
+      "set": {
+        "italian": "frame di chiusura",
+        "example": "Sending a Close Frame with code 1000 lets both sides flush pending data before tearing down the WebSocket cleanly. = Inviare un Close Frame con codice 1000 lascia che entrambi i lati svuotino i dati pendenti prima di chiudere il WebSocket in modo pulito."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_5",
+      "english": "wss",
+      "set": {
+        "italian": "wss",
+        "example": "Browsers refuse wss connections whose TLS certificate does not match the hostname, so always use a valid cert in production. = I browser rifiutano connessioni wss il cui certificato TLS non corrisponde all'hostname, quindi usa sempre un cert valido in produzione."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_5",
+      "english": "Reconnection",
+      "set": {
+        "italian": "riconnessione",
+        "example": "Mobile clients implement exponential backoff Reconnection so a flaky cellular network does not hammer the server with retries. = I client mobili implementano riconnessione a backoff esponenziale così una rete cellulare instabile non martella il server con i retry."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_5",
+      "english": "Heartbeat",
+      "set": {
+        "italian": "heartbeat",
+        "example": "If the server stops receiving a Heartbeat for thirty seconds it assumes the client is gone and releases the session. = Se il server smette di ricevere un Heartbeat per trenta secondi assume che il client sia sparito e rilascia la sessione."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Socket.io",
+      "set": {
+        "italian": "Socket.io",
+        "example": "Multiplayer browser games rely on Socket.io because it falls back to long polling when corporate proxies block raw WebSockets. = I giochi browser multiplayer si affidano a Socket.io perché fa fallback a long polling quando i proxy aziendali bloccano i WebSocket grezzi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Socket",
+      "set": {
+        "italian": "socket",
+        "example": "Each connected browser tab is represented by a unique Socket object on the server, keyed by its session id. = Ogni tab del browser connesso è rappresentato da un oggetto Socket univoco sul server, indicizzato per session id."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Room",
+      "set": {
+        "italian": "room",
+        "example": "Joining a Room named after the chat channel lets the server broadcast only to the dozen users actually viewing it. = Entrare in una Room nominata come il canale di chat permette al server di fare broadcast solo alla dozzina di utenti che la stanno effettivamente vedendo."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Namespace",
+      "set": {
+        "italian": "namespace",
+        "example": "Admin tools live under the /admin Namespace so they share the same WebSocket connection without colliding with client events. = Gli strumenti admin vivono sotto il Namespace /admin così condividono la stessa connessione WebSocket senza collidere con gli eventi client."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Broadcasting",
+      "set": {
+        "italian": "broadcasting",
+        "example": "When a player scores, the server uses Broadcasting to push the new leaderboard to every spectator except the one who triggered it. = Quando un giocatore segna, il server usa il Broadcasting per inviare la nuova classifica a ogni spettatore tranne quello che ha scatenato l'evento."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Acknowledgement",
+      "set": {
+        "italian": "acknowledgement",
+        "example": "Critical messages request an Acknowledgement callback so the sender knows the server processed the payload, not just received it. = I messaggi critici richiedono una callback di Acknowledgement così il mittente sa che il server ha processato il payload, non solo ricevuto."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_6",
+      "english": "Polling Fallback",
+      "set": {
+        "italian": "polling fallback",
+        "example": "Behind strict corporate firewalls Socket.IO uses a Polling Fallback over HTTP because raw WebSocket upgrades are blocked. = Dietro firewall aziendali stretti Socket.IO usa un Polling Fallback su HTTP perché gli upgrade WebSocket grezzi sono bloccati."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_7",
+      "english": "Chat App",
+      "set": {
+        "italian": "app di chat",
+        "example": "Building a real-time Chat App is the canonical exercise for learning rooms, presence, and message persistence with Socket.IO. = Costruire una Chat App in tempo reale è l'esercizio canonico per imparare room, presenza e persistenza dei messaggi con Socket.IO."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_7",
+      "english": "Live Updates",
+      "set": {
+        "italian": "live updates",
+        "example": "E-commerce sites push Live Updates to product pages so the stock counter drops the instant another shopper checks out. = I siti di e-commerce inviano Live Updates alle pagine prodotto così il contatore di stock cala nell'istante in cui un altro cliente fa checkout."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_7",
+      "english": "Presence",
+      "set": {
+        "italian": "presence",
+        "example": "Slack tracks user Presence by combining the last WebSocket heartbeat with explicit away signals from the desktop client. = Slack traccia la Presence dell'utente combinando l'ultimo heartbeat WebSocket con segnali di away espliciti dal client desktop."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_7",
+      "english": "Multiplayer",
+      "set": {
+        "italian": "multiplayer",
+        "example": "A turn-based Multiplayer board game synchronizes state via Socket.IO rooms, one room per match in progress. = Un gioco da tavolo Multiplayer a turni sincronizza lo stato via room di Socket.IO, una room per ogni partita in corso."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_7",
+      "english": "Server Sent Events",
+      "set": {
+        "italian": "Server Sent Events",
+        "example": "Streaming AI tokens from the LLM to the browser is a perfect use case for Server Sent Events since traffic is one-way. = Fare streaming dei token AI dall'LLM al browser è un caso d'uso perfetto per Server Sent Events visto che il traffico è unidirezionale."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_7",
+      "english": "Long Polling",
+      "set": {
+        "italian": "long polling",
+        "example": "Before WebSockets, Gmail relied on Long Polling: the client kept an HTTP request open until the server had new mail to push. = Prima dei WebSocket, Gmail si affidava al Long Polling: il client teneva aperta una richiesta HTTP finché il server non aveva nuova posta da inviare."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_7",
+      "english": "Sticky Session",
+      "set": {
+        "italian": "sticky session",
+        "example": "Without Sticky Session routing at the load balancer, a Socket.IO handshake can land on a node that knows nothing about the upgrade. = Senza routing Sticky Session sul load balancer, un handshake Socket.IO può atterrare su un nodo che non sa nulla dell'upgrade."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_7",
+      "english": "Scaling Sockets",
+      "set": {
+        "italian": "scalare i socket",
+        "example": "Scaling Sockets across multiple Node processes usually means adopting the socket.io-redis adapter so events fan out cluster-wide. = Scalare i socket su più processi Node di solito significa adottare l'adapter socket.io-redis così gli eventi si diffondono in tutto il cluster."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_8",
+      "english": "WebRTC",
+      "set": {
+        "italian": "WebRTC",
+        "example": "Video calling apps like Google Meet open a WebRTC peer connection so the media stream travels directly between browsers when possible. = App di video chiamate come Google Meet aprono una peer connection WebRTC così lo stream media viaggia direttamente tra i browser quando possibile."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_8",
+      "english": "Signaling",
+      "set": {
+        "italian": "signaling",
+        "example": "A small Node WebSocket server handles WebRTC Signaling: it just relays SDP offers and ICE candidates between the two peers. = Un piccolo server Node WebSocket gestisce il Signaling WebRTC: si limita a inoltrare offerte SDP e candidati ICE tra i due peer."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_8",
+      "english": "STUN",
+      "set": {
+        "italian": "STUN",
+        "example": "Browsers query a STUN server to discover their public IP and port so two peers behind NAT can attempt a direct WebRTC connection. = I browser interrogano un server STUN per scoprire il loro IP e porta pubblici così due peer dietro NAT possono tentare una connessione WebRTC diretta."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_8",
+      "english": "TURN",
+      "set": {
+        "italian": "TURN",
+        "example": "When symmetric NAT blocks a direct peer connection, WebRTC falls back to a TURN relay that forwards media for both sides. = Quando un NAT simmetrico blocca la peer connection diretta, WebRTC fa fallback a un relay TURN che inoltra i media per entrambi i lati."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_8",
+      "english": "mediasoup",
+      "set": {
+        "italian": "mediasoup",
+        "example": "Large video conferences route streams through mediasoup, a Node SFU that forwards each publisher to many subscribers efficiently. = Le video conferenze grandi instradano gli stream tramite mediasoup, un SFU Node che inoltra ogni publisher a molti subscriber in modo efficiente."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_8",
+      "english": "Live Streaming",
+      "set": {
+        "italian": "live streaming",
+        "example": "Twitch handles Live Streaming by ingesting RTMP from broadcasters and transcoding to multiple HLS quality levels for viewers. = Twitch gestisce il Live Streaming ingerendo RTMP dai broadcaster e transcodificando a più livelli di qualità HLS per gli spettatori."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_8",
+      "english": "HLS",
+      "set": {
+        "italian": "HLS",
+        "example": "Apple devices play HLS streams natively, which is why every video-on-demand platform must produce an HLS variant of each title. = I dispositivi Apple riproducono nativamente gli stream HLS, ed è per questo che ogni piattaforma di video on demand deve produrre una variante HLS di ogni titolo."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_8",
+      "english": "FFmpeg",
+      "set": {
+        "italian": "FFmpeg",
+        "example": "Video pipelines spawn FFmpeg as a child process to re-encode uploads from MOV to H.264 MP4 before publishing them. = Le pipeline video lanciano FFmpeg come child process per ricodificare gli upload da MOV a MP4 H.264 prima di pubblicarli."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_8",
+      "english": "RTMP",
+      "set": {
+        "italian": "RTMP",
+        "example": "OBS Studio publishes the broadcaster's stream over RTMP to the ingest server, which then packages it for HLS playback. = OBS Studio pubblica lo stream del broadcaster via RTMP al server di ingest, che poi lo impacchetta per la riproduzione HLS."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "node_api_8",
+      "english": "Transcoding",
+      "set": {
+        "italian": "transcodifica",
+        "example": "Cloud video services run Transcoding jobs after every upload to generate 1080p, 720p, and 360p variants for adaptive playback. = I servizi video cloud eseguono job di Transcoding dopo ogni upload per generare varianti 1080p, 720p e 360p per il playback adattivo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "Worker Thread",
+      "set": {
+        "italian": "Worker Thread",
+        "example": "Heavy image resizing is offloaded to a Worker Thread so the HTTP event loop stays free to serve incoming requests. = Il resize pesante delle immagini è spostato su un Worker Thread così l'event loop HTTP resta libero di servire le richieste in arrivo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "Main Thread",
+      "set": {
+        "italian": "main thread",
+        "example": "Anything that touches the HTTP server runs on the Main Thread; only pure CPU work belongs in a worker. = Tutto ciò che tocca il server HTTP gira sul Main Thread; solo lavoro CPU puro va in un worker."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "parentPort",
+      "set": {
+        "italian": "parentPort",
+        "example": "Inside a worker, calling parentPort.postMessage sends a result back to the main thread without spawning a new process. = Dentro un worker, chiamare parentPort.postMessage invia un risultato al main thread senza lanciare un nuovo processo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "postMessage",
+      "set": {
+        "italian": "postMessage",
+        "example": "Workers exchange data exclusively via postMessage; shared variables across threads are not allowed without SharedArrayBuffer. = I worker scambiano dati esclusivamente via postMessage; variabili condivise tra thread non sono consentite senza SharedArrayBuffer."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "workerData",
+      "set": {
+        "italian": "workerData",
+        "example": "Initial configuration is handed to a worker through workerData so the thread can start with the right input on its first tick. = La configurazione iniziale è passata a un worker tramite workerData così il thread può partire con l'input giusto al primo tick."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "SharedArrayBuffer",
+      "set": {
+        "italian": "SharedArrayBuffer",
+        "example": "Real-time audio pipelines use a SharedArrayBuffer to give workers zero-copy access to PCM samples produced by the main thread. = Le pipeline audio real-time usano un SharedArrayBuffer per dare ai worker accesso zero-copy ai sample PCM prodotti dal main thread."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "Atomics",
+      "set": {
+        "italian": "Atomics",
+        "example": "Coordinating two workers on the same buffer requires Atomics.wait and Atomics.notify to avoid race conditions on shared counters. = Coordinare due worker sullo stesso buffer richiede Atomics.wait e Atomics.notify per evitare race condition sui contatori condivisi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "CPU-Bound",
+      "set": {
+        "italian": "CPU-bound",
+        "example": "PDF rendering is CPU-Bound work, so wrapping it in a worker thread stops it from blocking the HTTP server for seconds. = Il rendering di PDF è lavoro CPU-Bound, quindi avvolgerlo in un worker thread impedisce che blocchi il server HTTP per secondi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "Worker Pool",
+      "set": {
+        "italian": "worker pool",
+        "example": "A Worker Pool of size four matches a quad-core box and recycles threads so cold-start cost is paid only once at boot. = Un Worker Pool di dimensione quattro si abbina a una macchina quad-core e ricicla i thread così il costo di cold start è pagato solo una volta al boot."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_13",
+      "english": "Piscina",
+      "set": {
+        "italian": "Piscina",
+        "example": "The Piscina library wraps worker_threads with a friendly Promise API and built-in queueing, ideal for image processing batches. = La libreria Piscina avvolge worker_threads con un'API a Promise amichevole e queueing integrato, ideale per batch di image processing."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "child_process",
+      "set": {
+        "italian": "child_process",
+        "example": "The built-in child_process module is how Node shells out to CLI tools like git, ffmpeg, or imagemagick from JavaScript. = Il modulo built-in child_process è come Node fa shell out a tool CLI come git, ffmpeg o imagemagick da JavaScript."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "spawn",
+      "set": {
+        "italian": "spawn",
+        "example": "For long-running CLI output you prefer spawn over exec because it streams stdout instead of buffering the whole result in memory. = Per output CLI di lunga durata preferisci spawn a exec perché streamma stdout invece di bufferizzare l'intero risultato in memoria."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "exec",
+      "set": {
+        "italian": "exec",
+        "example": "Calling exec with user-supplied input is a classic command injection vector because the whole string is parsed by a shell. = Chiamare exec con input fornito dall'utente è un classico vettore di command injection perché l'intera stringa è parsata da una shell."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "execFile",
+      "set": {
+        "italian": "execFile",
+        "example": "When you only need to launch a single binary with arguments, execFile is safer than exec because no shell parses the args. = Quando devi solo lanciare un singolo binario con argomenti, execFile è più sicuro di exec perché nessuna shell parsa gli arg."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "fork",
+      "set": {
+        "italian": "fork",
+        "example": "Using fork to start a worker script gives you an IPC channel for free so parent and child can swap JSON messages. = Usare fork per avviare uno script worker ti dà un canale IPC gratis così padre e figlio possono scambiare messaggi JSON."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "IPC",
+      "set": {
+        "italian": "IPC",
+        "example": "Between a forked Node child and its parent, IPC carries serialized messages via a hidden file descriptor managed by libuv. = Tra un figlio Node forked e suo padre, l'IPC trasporta messaggi serializzati via un file descriptor nascosto gestito da libuv."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "stdio",
+      "set": {
+        "italian": "stdio",
+        "example": "Setting stdio to 'inherit' lets the child write directly to the parent's terminal, useful when you want live CLI output. = Impostare stdio a 'inherit' lascia che il figlio scriva direttamente sul terminale del padre, utile quando vuoi output CLI live."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "Exit Code",
+      "set": {
+        "italian": "exit code",
+        "example": "CI pipelines branch on the child's Exit Code: zero means success, anything else aborts the build with a red status. = Le pipeline CI fanno branching sull'Exit Code del figlio: zero significa successo, qualsiasi altro valore aborta la build con stato rosso."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "Kill",
+      "set": {
+        "italian": "kill",
+        "example": "Calling child.Kill('SIGTERM') asks the child to shut down gracefully, falling back to SIGKILL only if it ignores the request. = Chiamare child.Kill('SIGTERM') chiede al figlio di spegnersi gracefully, facendo fallback a SIGKILL solo se ignora la richiesta."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_14",
+      "english": "Signal",
+      "set": {
+        "italian": "signal",
+        "example": "PM2 sends a SIGUSR2 Signal to trigger a zero-downtime reload, while Kubernetes prefers SIGTERM for graceful pod termination. = PM2 invia un Signal SIGUSR2 per scatenare un reload senza downtime, mentre Kubernetes preferisce SIGTERM per terminazione gracefully dei pod."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Cluster",
+      "set": {
+        "italian": "Cluster",
+        "example": "Running Node under the Cluster module lets one master fork N workers, all sharing the same TCP port for load balancing. = Eseguire Node sotto il modulo Cluster permette a un master di fare fork di N worker, tutti che condividono la stessa porta TCP per il load balancing."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Master",
+      "set": {
+        "italian": "master",
+        "example": "In legacy cluster code the Master process owns the listening socket and dispatches connections to its worker pool. = Nel codice cluster legacy il processo Master possiede il socket in ascolto e dispaccia le connessioni al suo worker pool."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Primary Process",
+      "set": {
+        "italian": "processo primario",
+        "example": "Node 16 renamed master to Primary Process to align with industry-wide moves away from master/slave terminology in tooling. = Node 16 ha rinominato master a Primary Process per allinearsi al movimento dell'industria via dalla terminologia master/slave nel tooling."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Worker Process",
+      "set": {
+        "italian": "worker process",
+        "example": "Each Worker Process in a cluster is a full Node instance with its own V8 heap, so memory leaks stay isolated to one fork. = Ogni Worker Process in un cluster è un'istanza Node completa con il proprio heap V8, così i memory leak restano isolati a un singolo fork."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Round Robin",
+      "set": {
+        "italian": "round robin",
+        "example": "On Linux the Node cluster module distributes new connections to workers via Round Robin instead of the default OS scheduling. = Su Linux il modulo cluster di Node distribuisce le nuove connessioni ai worker via Round Robin invece dello scheduling OS di default."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "CPU Cores",
+      "set": {
+        "italian": "CPU core",
+        "example": "Sizing a Node cluster to the number of CPU Cores from os.cpus() maximizes throughput without oversubscribing the scheduler. = Dimensionare un cluster Node al numero di CPU Cores da os.cpus() massimizza il throughput senza oversubscription dello scheduler."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Zero-Downtime Reload",
+      "set": {
+        "italian": "reload senza downtime",
+        "example": "PM2 achieves a Zero-Downtime Reload by spawning new workers, waiting for them to listen, then killing the old ones one by one. = PM2 ottiene un Zero-Downtime Reload lanciando nuovi worker, aspettando che siano in ascolto, poi uccidendo i vecchi uno per uno."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Shared Port",
+      "set": {
+        "italian": "porta condivisa",
+        "example": "Cluster lets multiple workers bind to a Shared Port because the master holds the real listener and hands sockets to children. = Cluster lascia che più worker si bindino a una Shared Port perché il master tiene il listener reale e passa i socket ai figli."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Worker Crash",
+      "set": {
+        "italian": "crash di un worker",
+        "example": "After a Worker Crash, the primary fires the 'exit' event and most setups respawn a fresh worker to keep capacity steady. = Dopo un Worker Crash, il primary scatena l'evento 'exit' e la maggior parte dei setup respawna un worker fresco per tenere stabile la capacità."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_15",
+      "english": "Shared State",
+      "set": {
+        "italian": "stato condiviso",
+        "example": "Cluster workers do not share memory, so any Shared State like sessions must live in Redis or another external store. = I worker cluster non condividono memoria, quindi qualsiasi Shared State come le sessioni deve vivere in Redis o un altro store esterno."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_16",
+      "english": "Concurrency",
+      "set": {
+        "english": "Concurrency Limit",
+        "italian": "limite di concorrenza",
+        "example": "Setting a Concurrency Limit of ten on outgoing HTTP calls prevents a burst of work from exhausting the connection pool. = Impostare un Concurrency Limit di dieci sulle chiamate HTTP uscenti previene che un burst di lavoro esaurisca il pool di connessioni."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_16",
+      "english": "Parallelism",
+      "set": {
+        "italian": "parallelismo",
+        "example": "True Parallelism in Node only happens across worker threads or child processes, never inside a single event loop. = Il vero Parallelism in Node accade solo tra worker thread o child process, mai dentro un singolo event loop."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_16",
+      "english": "Mutex",
+      "set": {
+        "italian": "mutex",
+        "example": "Even single-threaded Node needs a Mutex around critical sections that span awaits, otherwise two requests can corrupt a counter. = Anche Node single-thread ha bisogno di un Mutex attorno alle sezioni critiche che attraversano await, altrimenti due richieste possono corrompere un contatore."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_16",
+      "english": "p-limit",
+      "set": {
+        "italian": "p-limit",
+        "example": "Wrapping fetch calls with p-limit caps concurrent requests to five so a large URL list does not trigger rate limits upstream. = Avvolgere le chiamate fetch con p-limit limita le richieste concorrenti a cinque così una grande lista di URL non scatena rate limit upstream."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_16",
+      "english": "Queue",
+      "set": {
+        "italian": "queue",
+        "example": "BullMQ stores each background job in a Redis Queue so workers can pick up tasks fairly, even after a Node restart. = BullMQ memorizza ogni job in background in una Queue Redis così i worker possono prendere task in modo equo, anche dopo un restart di Node."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_16",
+      "english": "Throttle",
+      "set": {
+        "italian": "throttle",
+        "example": "Search-as-you-type inputs Throttle requests to one per 250ms so the autocomplete API never sees a key-by-key flood. = Le search-as-you-type fanno Throttle delle richieste a una ogni 250ms così l'API di autocomplete non vede mai un flood per ogni tasto."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "node_runtime_16",
+      "english": "Debounce",
+      "set": {
+        "italian": "debounce",
+        "example": "Saving form state to localStorage with a 500ms Debounce avoids a write on every keystroke while still capturing the final value. = Salvare lo stato del form su localStorage con un Debounce di 500ms evita una scrittura a ogni tasto preservando comunque il valore finale."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "TypeScript",
+      "set": {
+        "italian": "TypeScript",
+        "example": "Most modern Node backends are written in TypeScript because static types catch refactor regressions long before they hit prod. = La maggior parte dei backend Node moderni sono scritti in TypeScript perché i tipi statici intercettano regressioni dai refactor molto prima che colpiscano la prod."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "tsc",
+      "set": {
+        "italian": "tsc",
+        "example": "Running tsc --noEmit in CI is a cheap way to fail a pull request that introduces any type error in the codebase. = Eseguire tsc --noEmit in CI è un modo economico per far fallire una pull request che introduce qualsiasi errore di tipo nel codebase."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "tsconfig.json",
+      "set": {
+        "italian": "tsconfig.json",
+        "example": "Most teams keep a strict tsconfig.json at the repo root and let editors and tsc share the same compiler settings. = La maggior parte dei team tiene un tsconfig.json strict alla radice del repo e lascia che editor e tsc condividano le stesse impostazioni del compilatore."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "ts-node",
+      "set": {
+        "italian": "ts-node",
+        "example": "During development ts-node lets you boot a TypeScript Express server directly with no separate compile step. = In sviluppo ts-node ti permette di avviare un server Express TypeScript direttamente senza passaggio di compile separato."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "tsx",
+      "set": {
+        "italian": "tsx",
+        "example": "Many modern teams have replaced ts-node with tsx because it boots faster, supports ESM, and handles JSX out of the box. = Molti team moderni hanno sostituito ts-node con tsx perché si avvia più veloce, supporta ESM e gestisce JSX out of the box."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "Strict Mode",
+      "set": {
+        "english": "Strict Mode (tsconfig)",
+        "italian": "strict mode di TypeScript",
+        "example": "Turning on TypeScript Strict Mode enables noImplicitAny, strictNullChecks, and a dozen other safety flags at once. = Attivare lo strict mode di TypeScript abilita noImplicitAny, strictNullChecks e altri dieci flag di sicurezza in un colpo solo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "Target",
+      "set": {
+        "italian": "target",
+        "example": "Setting Target to ES2022 in tsconfig.json lets tsc emit optional chaining and top-level await without any down-leveling. = Impostare Target a ES2022 in tsconfig.json lascia che tsc emetta optional chaining e top-level await senza alcun down-leveling."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "Type Definitions",
+      "set": {
+        "italian": "type definitions",
+        "example": "Untyped npm packages get their Type Definitions from @types/<name>, installed as a dev dependency from DefinitelyTyped. = I pacchetti npm non tipizzati prendono le loro Type Definitions da @types/<name>, installati come dev dependency da DefinitelyTyped."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_1",
+      "english": "DefinitelyTyped",
+      "set": {
+        "italian": "DefinitelyTyped",
+        "example": "Community-maintained types for thousands of JS packages live in DefinitelyTyped and ship via the @types npm scope. = I tipi mantenuti dalla community per migliaia di pacchetti JS vivono in DefinitelyTyped e vengono distribuiti via lo scope npm @types."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "Type Annotation",
+      "set": {
+        "italian": "annotazione di tipo",
+        "example": "Adding a Type Annotation to a function parameter forces callers to pass matching shapes instead of relying on duck typing. = Aggiungere un'annotazione di tipo a un parametro di funzione obbliga i chiamanti a passare shape corrispondenti invece di affidarsi al duck typing."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "Primitive Type",
+      "set": {
+        "italian": "tipo primitivo",
+        "example": "TypeScript's seven Primitive Type values cover string, number, boolean, bigint, symbol, null, and undefined. = I sette valori di Primitive Type di TypeScript coprono string, number, boolean, bigint, symbol, null e undefined."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "any",
+      "set": {
+        "italian": "any",
+        "example": "Sprinkling any types disables TypeScript's safety net, which is why most teams forbid implicit any in CI. = Spargere tipi any disabilita la rete di sicurezza di TypeScript, motivo per cui la maggior parte dei team vieta any implicito in CI."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "unknown",
+      "set": {
+        "italian": "unknown",
+        "example": "JSON.parse returns unknown in strict typings so you must validate the shape before treating it as your domain type. = JSON.parse ritorna unknown in tipizzazione strict così devi validare la shape prima di trattarlo come tipo del tuo dominio."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "never",
+      "set": {
+        "italian": "never",
+        "example": "An exhaustive switch on a discriminated union uses never in the default branch to fail the build when a new case appears. = Uno switch esaustivo su una discriminated union usa never nel ramo default per far fallire la build quando appare un nuovo caso."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "void",
+      "set": {
+        "italian": "void",
+        "example": "Express middleware signatures often return void because the response is sent via res.send rather than as a return value. = Le firme dei middleware Express spesso ritornano void perché la risposta è inviata via res.send invece che come valore di ritorno."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "Literal Type",
+      "set": {
+        "italian": "literal type",
+        "example": "A Literal Type like 'GET' | 'POST' | 'PUT' lets TypeScript reject any HTTP verb that is not in the allowed set. = Un Literal Type come 'GET' | 'POST' | 'PUT' lascia che TypeScript rifiuti qualsiasi verbo HTTP che non è nel set consentito."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "Union Type",
+      "set": {
+        "italian": "union type",
+        "example": "Returning a Union Type like User | null forces callers to handle the absent case explicitly with a null check. = Ritornare un Union Type come User | null obbliga i chiamanti a gestire il caso assente esplicitamente con un null check."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "Intersection Type",
+      "set": {
+        "italian": "intersection type",
+        "example": "An Intersection Type like Auditable & Timestamped composes two mixins without giving up either set of properties. = Un Intersection Type come Auditable & Timestamped compone due mixin senza rinunciare a nessuno dei due set di proprietà."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_2",
+      "english": "Type Inference",
+      "set": {
+        "italian": "inferenza di tipo",
+        "example": "Thanks to Type Inference you can omit return-type annotations because TypeScript already knows what your function returns. = Grazie alla Type Inference puoi omettere le annotazioni del tipo di ritorno perché TypeScript già sa cosa ritorna la tua funzione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Interface",
+      "set": {
+        "italian": "interface",
+        "example": "Domain models like User and Order are usually declared as an Interface so other modules can implement them with extra fields. = I modelli di dominio come User e Order sono di solito dichiarati come Interface così altri moduli possono implementarli con campi extra."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "type Alias",
+      "set": {
+        "italian": "type alias",
+        "example": "Reach for a type Alias whenever you need a union, tuple, or mapped behavior that an interface declaration cannot express. = Scegli un type Alias ogni volta che ti serve un comportamento union, tuple o mapped che una dichiarazione interface non può esprimere."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Optional Property",
+      "set": {
+        "italian": "proprietà opzionale",
+        "example": "Marking phone as an Optional Property with phone?: string lets you create a user without supplying every contact field. = Marcare phone come Optional Property con phone?: string lascia che tu crei un utente senza fornire ogni campo di contatto."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "readonly",
+      "set": {
+        "italian": "readonly",
+        "example": "Declaring config: readonly AppConfig stops accidental mutations of the shared configuration object at compile time. = Dichiarare config: readonly AppConfig blocca mutazioni accidentali dell'oggetto di configurazione condiviso al tempo di compilazione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Index Signature",
+      "set": {
+        "italian": "index signature",
+        "example": "An Index Signature like [key: string]: number lets a type act as a dictionary with unknown keys but a fixed value type. = Un'Index Signature come [key: string]: number lascia che un tipo agisca come dizionario con chiavi sconosciute ma tipo valore fisso."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Generic",
+      "set": {
+        "italian": "generic",
+        "example": "Writing a Generic Repository<T> avoids duplicating CRUD code for every entity while keeping return types fully type-safe. = Scrivere un Generic Repository<T> evita di duplicare codice CRUD per ogni entità mantenendo i tipi di ritorno completamente type-safe."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Type Parameter",
+      "set": {
+        "italian": "parametro di tipo",
+        "example": "The Type Parameter T in function identity<T>(x: T) is what flows the input type straight through to the return type. = Il Type Parameter T in function identity<T>(x: T) è ciò che fa fluire il tipo di input dritto fino al tipo di ritorno."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Enum",
+      "set": {
+        "italian": "enum",
+        "example": "An Enum like enum Role { Admin, Editor, Viewer } names magic numbers, though many teams now prefer string literal unions. = Un Enum come enum Role { Admin, Editor, Viewer } dà un nome ai numeri magici, anche se molti team ora preferiscono union di string literal."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Tuple",
+      "set": {
+        "italian": "tuple",
+        "example": "React's useState returns a Tuple of [value, setValue] so destructuring gives you both the state and the updater at once. = useState di React ritorna una Tuple di [value, setValue] così il destructuring ti dà sia lo stato che l'updater in una sola volta."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_3",
+      "english": "Record",
+      "set": {
+        "italian": "Record",
+        "example": "Use Record<UserId, Permission[]> to model a typed lookup table where each user id maps to a list of permissions. = Usa Record<UserId, Permission[]> per modellare una tabella di lookup tipizzata dove ogni user id mappa a una lista di permessi."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Utility Type",
+      "set": {
+        "italian": "utility type",
+        "example": "Built-in Utility Type helpers like Partial, Required, and Pick let you derive related shapes without redefining each field. = Gli helper Utility Type built-in come Partial, Required e Pick ti lasciano derivare shape correlate senza ridefinire ogni campo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Partial",
+      "set": {
+        "italian": "Partial",
+        "example": "An update handler takes Partial<User> so the caller can supply only the fields that actually change in this request. = Un handler di update prende Partial<User> così il chiamante può fornire solo i campi che cambiano effettivamente in questa richiesta."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Pick",
+      "set": {
+        "italian": "Pick",
+        "example": "Returning Pick<User, 'id' | 'email'> from a public API hides internal fields like password hashes from the response shape. = Ritornare Pick<User, 'id' | 'email'> da un'API pubblica nasconde campi interni come password hash dalla shape della risposta."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Omit",
+      "set": {
+        "italian": "Omit",
+        "example": "When creating a user, the input is typically Omit<User, 'id' | 'createdAt'> because those fields are filled in by the database. = Quando crei un utente, l'input è tipicamente Omit<User, 'id' | 'createdAt'> perché quei campi sono riempiti dal database."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Type Guard",
+      "set": {
+        "italian": "type guard",
+        "example": "A user-defined Type Guard like function isUser(x): x is User narrows unknown values before you access domain-specific fields. = Un Type Guard user-defined come function isUser(x): x is User restringe valori unknown prima che tu acceda a campi specifici di dominio."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Type Assertion",
+      "set": {
+        "italian": "type assertion",
+        "example": "Using a Type Assertion like response as User tells the compiler to trust you, so abuse it and runtime bugs sneak back in. = Usare una Type Assertion come response as User dice al compilatore di fidarsi di te, quindi se ne abusi i bug runtime tornano dentro."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Mapped Type",
+      "set": {
+        "italian": "mapped type",
+        "example": "A Mapped Type like { [K in keyof T]?: T[K] } is exactly how Partial<T> is implemented inside the TypeScript standard library. = Un Mapped Type come { [K in keyof T]?: T[K] } è esattamente come Partial<T> è implementato dentro la libreria standard di TypeScript."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Conditional Type",
+      "set": {
+        "italian": "conditional type",
+        "example": "A Conditional Type like T extends Function ? T : never lets you pick only the function-typed properties of an object. = Un Conditional Type come T extends Function ? T : never ti lascia selezionare solo le proprietà di tipo funzione di un oggetto."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Decorator",
+      "set": {
+        "italian": "decorator",
+        "example": "NestJS controllers use a @Controller Decorator to attach routing metadata that the framework reads at bootstrap time. = I controller NestJS usano un Decorator @Controller per attaccare metadati di routing che il framework legge al bootstrap."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "node_typescript_4",
+      "english": "Declaration File",
+      "set": {
+        "italian": "declaration file",
+        "example": "Every published TypeScript library ships a .d.ts Declaration File so consumers get types without bundling the source. = Ogni libreria TypeScript pubblicata distribuisce un Declaration File .d.ts così i consumatori ottengono i tipi senza fare bundle del sorgente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_9",
+      "english": "MVC",
+      "set": {
+        "italian": "MVC",
+        "example": "Classic Express apps follow MVC: routes call controllers, controllers ask models for data, and views render the response. = Le app Express classiche seguono MVC: le route chiamano controller, i controller chiedono dati ai model, e le view renderizzano la risposta."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_9",
+      "english": "Model",
+      "set": {
+        "english": "Domain Model",
+        "italian": "modello di dominio",
+        "example": "A rich Domain Model puts business rules like 'an order must have at least one item' inside the entity itself, not in services. = Un Domain Model ricco mette regole di business come 'un ordine deve avere almeno un item' dentro l'entità stessa, non nei servizi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_9",
+      "english": "View",
+      "set": {
+        "italian": "view",
+        "example": "In MVC the View only formats data: it never queries the database directly, that responsibility belongs to the controller. = In MVC la view formatta solo i dati: non interroga mai il database direttamente, quella responsabilità è del controller."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_9",
+      "english": "Hexagonal Architecture",
+      "set": {
+        "italian": "architettura esagonale",
+        "example": "Adopting Hexagonal Architecture lets you swap Postgres for an in-memory store in tests without touching any domain code. = Adottare l'architettura esagonale ti lascia sostituire Postgres con uno store in memoria nei test senza toccare codice di dominio."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_9",
+      "english": "Clean Architecture",
+      "set": {
+        "italian": "Clean Architecture",
+        "example": "In Clean Architecture the inner use-case layer never imports Express or Mongoose; adapters at the edge bridge to those frameworks. = Nella Clean Architecture il layer interno di use case non importa mai Express o Mongoose; gli adapter ai bordi fanno da ponte verso quei framework."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_9",
+      "english": "DDD",
+      "set": {
+        "italian": "DDD",
+        "example": "Teams adopt DDD on complex domains like insurance or banking, where ubiquitous language is more valuable than CRUD shortcuts. = I team adottano DDD su domini complessi come assicurazioni o banking, dove il ubiquitous language è più prezioso delle scorciatoie CRUD."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_9",
+      "english": "Bounded Context",
+      "set": {
+        "italian": "bounded context",
+        "example": "Billing and Shipping each define their own Bounded Context, so the word 'Order' can mean different things in each microservice. = Billing e Shipping definiscono ciascuno il proprio Bounded Context, così la parola 'Order' può significare cose diverse in ogni microservizio."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_9",
+      "english": "Aggregate",
+      "set": {
+        "english": "Aggregate Root",
+        "italian": "aggregate root",
+        "example": "An Order Aggregate Root is the only entry point for modifying its line items, so invariants like total > 0 stay enforced. = Un Aggregate Root Order è l'unico entry point per modificare i suoi line item, così invarianti come total > 0 restano garantite."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "Dependency Injection",
+      "set": {
+        "italian": "dependency injection",
+        "example": "With Dependency Injection a UserService receives its repository in the constructor, making it trivial to swap for a mock. = Con la dependency injection un UserService riceve il suo repository nel costruttore, rendendo banale sostituirlo con un mock."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "Inversion of Control",
+      "set": {
+        "italian": "inversion of control",
+        "example": "Frameworks like NestJS implement Inversion of Control by instantiating your classes and wiring dependencies for you at bootstrap. = Framework come NestJS implementano l'inversion of control istanziando le tue classi e cablando le dipendenze per te al bootstrap."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "Constructor Injection",
+      "set": {
+        "italian": "constructor injection",
+        "example": "Constructor Injection is the preferred DI style in TypeScript because required dependencies become impossible to forget. = La constructor injection è lo stile DI preferito in TypeScript perché le dipendenze obbligatorie diventano impossibili da dimenticare."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "DI Container",
+      "set": {
+        "italian": "DI container",
+        "example": "A DI Container scans your decorated classes at startup and assembles the dependency graph, so you stop calling new manually. = Un DI Container scansiona le tue classi decorate allo startup e assembla il grafo delle dipendenze, così smetti di chiamare new manualmente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "InversifyJS",
+      "set": {
+        "italian": "InversifyJS",
+        "example": "Express apps often use InversifyJS when they outgrow ad-hoc factories but do not want the full NestJS framework. = Le app Express spesso usano InversifyJS quando crescono oltre le factory ad-hoc ma non vogliono il framework NestJS completo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "tsyringe",
+      "set": {
+        "italian": "tsyringe",
+        "example": "Microsoft's tsyringe is a tiny DI container that uses reflect-metadata so a single @injectable decorator wires up classes. = tsyringe di Microsoft è un piccolo DI container che usa reflect-metadata così un singolo decorator @injectable cabla le classi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "NestJS",
+      "set": {
+        "italian": "NestJS",
+        "example": "Enterprise teams reach for NestJS because it bakes in DI, modules, and TypeScript decorators inspired by Angular conventions. = I team enterprise scelgono NestJS perché integra DI, moduli e decorator TypeScript ispirati alle convenzioni di Angular."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "Provider",
+      "set": {
+        "italian": "provider",
+        "example": "Anything injectable in NestJS, from services to repositories, is registered as a Provider in its parent module. = Tutto ciò che è iniettabile in NestJS, dai servizi ai repository, è registrato come Provider nel suo modulo padre."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "Module (Nest)",
+      "set": {
+        "italian": "module (Nest)",
+        "example": "A NestJS Module groups related controllers, providers, and imports so the DI container can lazy-load each feature area. = Un Module NestJS raggruppa controller, provider e import correlati così il DI container può lazy-loadare ogni area di feature."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_10",
+      "english": "Singleton",
+      "set": {
+        "italian": "singleton",
+        "example": "NestJS treats every provider as a Singleton by default so configuration and database pools stay shared across requests. = NestJS tratta ogni provider come Singleton di default così configurazione e pool del database restano condivisi tra le richieste."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_11",
+      "english": "Repository Pattern",
+      "set": {
+        "italian": "repository pattern",
+        "example": "Putting all Mongoose calls behind a Repository Pattern keeps your domain code free of database-specific query syntax. = Mettere tutte le chiamate Mongoose dietro un repository pattern tiene il tuo codice di dominio libero da sintassi di query specifica del database."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_11",
+      "english": "Service Layer",
+      "set": {
+        "english": "Application Service",
+        "italian": "application service",
+        "example": "An Application Service like CheckoutService orchestrates payment, inventory, and email steps inside a single transactional boundary. = Un Application Service come CheckoutService orchestra i passi di payment, inventory ed email dentro un singolo confine transazionale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_11",
+      "english": "Strategy Pattern",
+      "set": {
+        "italian": "strategy pattern",
+        "example": "A payment module uses the Strategy Pattern so Stripe, PayPal, and bank transfer all implement the same Pay interface. = Un modulo di pagamento usa lo strategy pattern così Stripe, PayPal e bonifico bancario implementano tutti la stessa interface Pay."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_11",
+      "english": "Decorator Pattern",
+      "set": {
+        "italian": "decorator pattern",
+        "example": "Wrapping a UserService with a CachedUserService is the Decorator Pattern: same interface, transparent extra behavior. = Avvolgere uno UserService con un CachedUserService è il decorator pattern: stessa interface, comportamento extra trasparente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_11",
+      "english": "Singleton Pattern",
+      "set": {
+        "italian": "singleton pattern",
+        "example": "The Singleton Pattern fits things like a database connection pool, where multiple instances would just waste sockets. = Il singleton pattern si adatta a cose come un pool di connessioni al database, dove istanze multiple sprecherebbero solo socket."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_11",
+      "english": "Observer Pattern",
+      "set": {
+        "english": "Observer Pattern (EventEmitter)",
+        "italian": "observer pattern via EventEmitter",
+        "example": "Node's built-in EventEmitter is a textbook implementation of the Observer Pattern, dispatching events to all subscribed listeners. = L'EventEmitter built-in di Node è un'implementazione da manuale dell'observer pattern, dispacciando eventi a tutti i listener iscritti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_11",
+      "english": "CQRS",
+      "set": {
+        "italian": "CQRS",
+        "example": "Adopting CQRS splits the write model from the read model, so analytics queries do not slow down user-facing transactions. = Adottare CQRS separa il write model dal read model, così le query di analytics non rallentano le transazioni utente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_11",
+      "english": "SOLID",
+      "set": {
+        "italian": "SOLID",
+        "example": "Teams cite SOLID during code review when arguing that a 500-line class violates single responsibility and should be split. = I team citano SOLID durante la code review quando argomentano che una classe da 500 righe viola la single responsibility e va spezzata."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_12",
+      "english": "src",
+      "set": {
+        "italian": "src",
+        "example": "Most Node projects keep all TypeScript sources under src/ and exclude that folder from being shipped to npm. = La maggior parte dei progetti Node tiene tutti i sorgenti TypeScript sotto src/ ed esclude quella cartella dall'essere distribuita su npm."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_12",
+      "english": "dist",
+      "set": {
+        "italian": "dist",
+        "example": "After tsc finishes compiling, the dist/ folder holds the JavaScript output that actually runs in production via node dist/server.js. = Dopo che tsc finisce di compilare, la cartella dist/ contiene l'output JavaScript che effettivamente gira in produzione via node dist/server.js."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_12",
+      "english": "config",
+      "set": {
+        "italian": "config",
+        "example": "Twelve-factor apps put environment-aware files under config/ so default.json, production.json, and test.json stay side by side. = Le app twelve-factor mettono file environment-aware sotto config/ così default.json, production.json e test.json stanno fianco a fianco."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_12",
+      "english": "Domain Folder",
+      "set": {
+        "italian": "cartella di dominio",
+        "example": "Grouping code by Domain Folder like src/billing/ keeps everything about invoices in one place instead of scattering by file type. = Raggruppare il codice per Domain Folder come src/billing/ tiene tutto sulle fatture in un posto solo invece di disperderlo per tipo di file."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_12",
+      "english": "Barrel File",
+      "set": {
+        "italian": "barrel file",
+        "example": "An index.ts Barrel File re-exports everything in a folder so consumers can write import { UserService } from './users'. = Un barrel file index.ts ri-esporta tutto in una cartella così i consumatori possono scrivere import { UserService } from './users'."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_12",
+      "english": "Feature Folder",
+      "set": {
+        "italian": "feature folder",
+        "example": "Vertical slices in a Feature Folder colocate route, controller, service, and tests so adding a feature touches one directory. = Le slice verticali in una Feature Folder collocano route, controller, service e test così aggiungere una feature tocca una directory."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_12",
+      "english": "Style Guide",
+      "set": {
+        "italian": "style guide",
+        "example": "Adopting Airbnb's Style Guide via eslint-config-airbnb gives a Node team consistent rules with almost zero configuration work. = Adottare la Style Guide di Airbnb via eslint-config-airbnb dà a un team Node regole consistenti con quasi zero lavoro di configurazione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "node_foundations_12",
+      "english": "Linting",
+      "set": {
+        "italian": "linting",
+        "example": "Running ESLint as part of Linting in pre-commit catches missing awaits and unused imports before they reach the pull request. = Eseguire ESLint come parte del Linting in pre-commit intercetta await mancanti e import inutilizzati prima che raggiungano la pull request."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "Profiling",
+      "set": {
+        "italian": "profiling",
+        "example": "Before optimizing a slow endpoint, Profiling with --inspect tells you whether the cost is CPU, GC, or downstream I/O. = Prima di ottimizzare un endpoint lento, il Profiling con --inspect ti dice se il costo è CPU, GC o I/O downstream."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "Flame Graph",
+      "set": {
+        "italian": "flame graph",
+        "example": "Reading a Flame Graph top-down shows the call stack; the widest plateau marks the function eating most CPU time. = Leggere un Flame Graph dall'alto in basso mostra lo stack di chiamate; il plateau più largo segna la funzione che mangia più tempo CPU."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "0x",
+      "set": {
+        "italian": "0x",
+        "example": "Run 0x npm start to wrap a Node process and get an interactive flame graph showing exactly where CPU time is spent. = Esegui 0x npm start per avvolgere un processo Node e ottenere un flame graph interattivo che mostra esattamente dove è speso il tempo CPU."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "clinic.js",
+      "set": {
+        "italian": "clinic.js",
+        "example": "NearForm's clinic.js bundles Doctor, Flame, and Bubbleprof so you can diagnose CPU, event loop, and async issues from one CLI. = clinic.js di NearForm raggruppa Doctor, Flame e Bubbleprof così puoi diagnosticare problemi CPU, event loop e async da una sola CLI."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "CPU Profile",
+      "set": {
+        "italian": "CPU profile",
+        "example": "Capturing a CPU Profile from Chrome DevTools and loading it into speedscope reveals which Node functions cost most cycles. = Catturare un CPU Profile da Chrome DevTools e caricarlo in speedscope rivela quali funzioni Node costano più cicli."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "Heap Snapshot",
+      "set": {
+        "italian": "heap snapshot",
+        "example": "Taking two Heap Snapshot captures around a leak and diffing them in DevTools pinpoints which objects keep accumulating. = Catturare due Heap Snapshot attorno a un leak e farne diff in DevTools individua quali oggetti continuano ad accumularsi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "Performance API",
+      "set": {
+        "italian": "Performance API",
+        "example": "Wrap a code path with perf_hooks.performance.mark to use the Performance API and measure exact millisecond timings in production. = Avvolgi un percorso di codice con perf_hooks.performance.mark per usare la Performance API e misurare timing al millisecondo esatti in produzione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "Benchmark",
+      "set": {
+        "italian": "benchmark",
+        "example": "Use tinybench or benchmark.js to write a Benchmark suite that compares two JSON parsers on realistic payloads. = Usa tinybench o benchmark.js per scrivere una suite di Benchmark che confronta due parser JSON su payload realistici."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_1",
+      "english": "Autocannon",
+      "set": {
+        "italian": "Autocannon",
+        "example": "Hammer your API with autocannon -c 100 -d 30 http://localhost:3000 to see realistic requests-per-second under sustained load. = Martella la tua API con autocannon -c 100 -d 30 http://localhost:3000 per vedere requests-per-second realistiche sotto carico sostenuto."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_2",
+      "english": "Heap",
+      "set": {
+        "english": "V8 Heap",
+        "italian": "heap di V8",
+        "example": "Sizing the V8 Heap with --max-old-space-size=4096 prevents OOM crashes on workers that hold large datasets in memory. = Dimensionare l'heap di V8 con --max-old-space-size=4096 previene crash OOM sui worker che tengono grandi dataset in memoria."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "node_performance_2",
+      "english": "New Space",
+      "set": {
+        "italian": "new space",
+        "example": "Short-lived allocations live in the V8 New Space, which is collected in fast minor GC cycles rather than full mark-sweep. = Le allocazioni di breve vita vivono nel New Space di V8, che viene raccolto in cicli minor GC veloci invece che full mark-sweep."
+      }
+    }
+  ]
+}

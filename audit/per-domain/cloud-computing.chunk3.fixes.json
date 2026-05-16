@@ -1,0 +1,1715 @@
+{
+  "fixes": [
+    {
+      "level": "17",
+      "lesson": "cloud_services_12",
+      "english": "Feature Flag",
+      "set": {
+        "example": "Teams gate the new checkout flow behind a feature flag so they can disable it instantly if conversion drops without redeploying. = I team proteggono il nuovo flusso di checkout dietro un feature flag per poterlo disabilitare istantaneamente se la conversione cala senza fare redeploy."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_12",
+      "english": "A/B Testing",
+      "set": {
+        "example": "Marketing runs A/B testing on two landing page variants for two weeks before promoting the winner with higher signup rates. = Il marketing esegue A/B testing su due varianti di landing page per due settimane prima di promuovere la vincitrice con piu' iscrizioni."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_12",
+      "english": "Shadow Traffic",
+      "set": {
+        "example": "Before cutover, the team mirrors production requests as shadow traffic to the new service to validate latency without affecting users. = Prima del cutover, il team rispecchia le richieste di produzione come shadow traffic al nuovo servizio per validare la latenza senza impattare gli utenti."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_12",
+      "english": "Rollback",
+      "set": {
+        "example": "When the canary deploy doubled error rates, the on-call engineer triggered an automated rollback to the previous container image within sixty seconds. = Quando il deploy canary ha raddoppiato il tasso di errori, l'ingegnere on-call ha attivato un rollback automatico all'immagine container precedente entro sessanta secondi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_12",
+      "english": "Progressive Delivery",
+      "set": {
+        "example": "Argo Rollouts implements progressive delivery by gradually shifting traffic and pausing on Prometheus alerts before promoting the new revision. = Argo Rollouts implementa la progressive delivery spostando gradualmente il traffico e mettendo in pausa su alert Prometheus prima di promuovere la nuova revisione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cloud_services_12",
+      "english": "Traffic Shifting",
+      "set": {
+        "example": "Istio enables fine-grained traffic shifting from v1 to v2 in five-percent increments, allowing observability teams to catch regressions early. = Istio abilita un traffic shifting granulare da v1 a v2 in incrementi del cinque percento, permettendo ai team di osservabilita' di intercettare regressioni in anticipo."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "Data Warehouse",
+      "set": {
+        "example": "Analytics teams load nightly Snowflake ETL jobs into the corporate data warehouse so executives can run quarterly revenue reports each morning. = I team di analytics caricano job ETL Snowflake notturni nel data warehouse aziendale per permettere ai dirigenti di eseguire report trimestrali sui ricavi ogni mattina."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "Redshift",
+      "set": {
+        "italian": "Redshift",
+        "example": "Migrating a 50 TB on-premises warehouse to Amazon Redshift cut nightly batch reporting time from six hours to forty minutes. = Migrare un warehouse on-premises da 50 TB ad Amazon Redshift ha ridotto il tempo di reportistica batch notturna da sei ore a quaranta minuti."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "BigQuery",
+      "set": {
+        "italian": "BigQuery",
+        "example": "Marketing scans terabytes of clickstream logs in BigQuery using standard SQL without managing a single cluster or worker node. = Il marketing scansiona terabyte di log di clickstream in BigQuery usando SQL standard senza gestire un singolo cluster o worker node."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "Snowflake",
+      "set": {
+        "italian": "Snowflake",
+        "example": "Finance separates compute warehouses in Snowflake so reporting queries never block the heavy ELT pipelines run by data engineering. = Finance separa i warehouse di calcolo in Snowflake affinche' le query di reportistica non blocchino mai le pipeline ELT pesanti gestite dal data engineering."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "Synapse Analytics",
+      "set": {
+        "example": "Microsoft customers use Azure Synapse Analytics to combine T-SQL queries over data lake files with managed Spark notebooks in one workspace. = I clienti Microsoft usano Azure Synapse Analytics per combinare query T-SQL su file di data lake con notebook Spark gestiti in un unico workspace."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "Columnar Storage",
+      "set": {
+        "example": "Analytical engines like Parquet rely on columnar storage so scanning a single metric across billions of rows reads only the relevant column. = Motori analitici come Parquet si basano su columnar storage affinche' scansionare una singola metrica su miliardi di righe legga solo la colonna pertinente."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "Slot",
+      "set": {
+        "example": "Reserving 500 BigQuery slots gives the finance team predictable monthly costs versus on-demand pricing for their critical reporting workloads. = Riservare 500 slot BigQuery garantisce al team finance costi mensili prevedibili rispetto al prezzo on-demand per i loro carichi di reportistica critici."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "Cluster Key",
+      "set": {
+        "example": "Defining customer_id as the cluster key in Snowflake co-locates a tenant's rows on disk and dramatically reduces partition pruning time. = Definire customer_id come cluster key in Snowflake colloca le righe di un tenant insieme su disco e riduce drasticamente il tempo di partition pruning."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_13",
+      "english": "Materialized View",
+      "set": {
+        "example": "Pre-aggregating daily sales totals into a materialized view lets dashboards respond in milliseconds without re-scanning the raw fact table. = Pre-aggregare i totali di vendita giornalieri in una materialized view permette ai dashboard di rispondere in millisecondi senza ri-scansionare la tabella dei fatti grezza."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_14",
+      "english": "Lake Formation",
+      "set": {
+        "example": "Data platform teams use AWS Lake Formation to grant fine-grained column and row-level access to analysts without copying datasets. = I team di data platform usano AWS Lake Formation per concedere accessi granulari a colonne e righe agli analisti senza copiare i dataset."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_14",
+      "english": "Parquet",
+      "set": {
+        "example": "Storing event logs as Parquet on S3 cuts Athena scan costs by 80% compared to JSON because only queried columns are read. = Memorizzare i log eventi come Parquet su S3 taglia i costi di scansione Athena dell'80% rispetto al JSON perche' vengono lette solo le colonne richieste."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_14",
+      "english": "Avro",
+      "set": {
+        "example": "Kafka producers serialize messages with Avro and a schema registry so consumers can evolve fields backwards-compatibly across deploys. = I producer Kafka serializzano i messaggi con Avro e uno schema registry affinche' i consumer possano far evolvere i campi in modo retrocompatibile tra i deploy."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_14",
+      "english": "ORC",
+      "set": {
+        "example": "Hive tables on EMR often use ORC because predicate pushdown and stripe-level indexes accelerate selective queries over petabyte datasets. = Le tabelle Hive su EMR usano spesso ORC perche' il predicate pushdown e gli indici a livello di stripe accelerano le query selettive su dataset di petabyte."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_14",
+      "english": "Delta Lake",
+      "set": {
+        "example": "Databricks customers adopt Delta Lake on S3 to get ACID transactions and time travel queries over data lake parquet files. = I clienti Databricks adottano Delta Lake su S3 per ottenere transazioni ACID e query time travel sui file parquet del data lake."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_14",
+      "english": "Iceberg",
+      "set": {
+        "example": "Netflix open-sourced Apache Iceberg to handle schema evolution and hidden partitioning across exabytes of analytics data on object storage. = Netflix ha reso open source Apache Iceberg per gestire l'evoluzione dello schema e il partizionamento nascosto su exabyte di dati analitici su object storage."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_14",
+      "english": "Athena",
+      "set": {
+        "example": "Compliance teams run ad-hoc Amazon Athena queries against CloudTrail JSON logs without provisioning servers or pre-loading the data. = I team di compliance eseguono query ad-hoc di Amazon Athena su log JSON di CloudTrail senza fare provisioning di server o pre-caricare i dati."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "ETL",
+      "set": {
+        "italian": "ETL",
+        "example": "Nightly ETL jobs extract Salesforce records, transform currency fields, and load them into the data warehouse before morning dashboards refresh. = Job ETL notturni estraggono record da Salesforce, trasformano i campi valuta e li caricano nel data warehouse prima dell'aggiornamento dei dashboard mattutini."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "ELT",
+      "set": {
+        "italian": "ELT",
+        "example": "Modern stacks favor ELT over ETL because Snowflake compute can transform terabytes faster than legacy Informatica jobs running on small VMs. = Gli stack moderni preferiscono ELT a ETL perche' il calcolo Snowflake puo' trasformare terabyte piu' velocemente dei vecchi job Informatica su piccole VM."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Glue",
+      "set": {
+        "italian": "Glue",
+        "example": "Data engineers schedule AWS Glue jobs in PySpark to clean raw S3 events and write Parquet output partitioned by date. = I data engineer schedulano job AWS Glue in PySpark per pulire eventi raw S3 e scrivere output Parquet partizionato per data."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Glue Crawler",
+      "set": {
+        "example": "Pointing an AWS Glue Crawler at the raw zone auto-discovers schemas and registers tables in the Data Catalog for Athena. = Puntare un AWS Glue Crawler alla raw zone scopre automaticamente gli schemi e registra le tabelle nel Data Catalog per Athena."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Data Catalog",
+      "set": {
+        "example": "Centralizing tables in AWS Glue Data Catalog lets Athena, EMR, and Redshift Spectrum share schemas without each maintaining its own metadata. = Centralizzare le tabelle nel Data Catalog di AWS Glue consente ad Athena, EMR e Redshift Spectrum di condividere gli schemi senza che ognuno mantenga i propri metadati."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Dataflow",
+      "set": {
+        "example": "Streaming clickstream events into Google Dataflow lets the pipeline aggregate sessions per user with exactly-once semantics. = Trasmettere in streaming eventi di clickstream verso Google Dataflow permette alla pipeline di aggregare sessioni per utente con semantica exactly-once."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Apache Beam",
+      "set": {
+        "italian": "Apache Beam",
+        "example": "Writing pipelines in Apache Beam lets the same code execute on Google Dataflow in production and Direct Runner locally for testing. = Scrivere pipeline in Apache Beam permette allo stesso codice di girare su Google Dataflow in produzione e Direct Runner localmente per i test."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "EMR",
+      "set": {
+        "italian": "EMR",
+        "example": "Bioinformatics teams spin up transient AWS EMR clusters to run Spark jobs over genomic data, then tear them down to save cost. = I team di bioinformatica avviano cluster AWS EMR transitori per eseguire job Spark su dati genomici, poi li distruggono per risparmiare."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Dataproc",
+      "set": {
+        "example": "Google Dataproc clusters start in 90 seconds, making them ideal for ephemeral Spark and Hadoop workloads triggered from Composer DAGs. = I cluster Google Dataproc partono in 90 secondi, rendendoli ideali per carichi Spark e Hadoop effimeri attivati da DAG di Composer."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_15",
+      "english": "Spark",
+      "set": {
+        "example": "Data engineers process terabytes of clickstream logs with Apache Spark on EMR using DataFrame APIs and adaptive query execution. = I data engineer elaborano terabyte di log di clickstream con Apache Spark su EMR usando le API DataFrame e l'adaptive query execution."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_16",
+      "english": "Change Data Capture",
+      "set": {
+        "example": "Debezium streams MySQL binlog changes via Kafka so downstream search indexes update within seconds of any row mutation. = Debezium trasmette in streaming i cambi del binlog MySQL tramite Kafka affinche' gli indici di ricerca downstream si aggiornino entro secondi da ogni mutazione di riga."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_16",
+      "english": "Event Sourcing",
+      "set": {
+        "example": "Banking ledgers benefit from event sourcing because every deposit and withdrawal is an immutable append, making audits trivial. = I ledger bancari beneficiano dell'event sourcing perche' ogni deposito e prelievo e' un append immutabile, rendendo gli audit banali."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_16",
+      "english": "Stream Processing",
+      "set": {
+        "example": "Real-time fraud detection relies on stream processing engines like Flink to score transactions against ML models within milliseconds. = Il rilevamento frodi in tempo reale si basa su motori di stream processing come Flink per valutare transazioni con modelli ML entro millisecondi."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_16",
+      "english": "Watermark",
+      "set": {
+        "italian": "Watermark",
+        "example": "Flink uses a watermark of two minutes to decide when a streaming window can close, even if some late events still trickle in. = Flink usa un watermark di due minuti per decidere quando una finestra di streaming puo' chiudersi, anche se alcuni eventi tardivi arrivano ancora."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_16",
+      "english": "Exactly-Once",
+      "set": {
+        "example": "Payment processing pipelines require exactly-once semantics to ensure no card is double-charged even if Kafka consumers crash mid-batch. = Le pipeline di elaborazione pagamenti richiedono semantica exactly-once per garantire che nessuna carta sia addebitata due volte anche se i consumer Kafka crashano a meta' batch."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_16",
+      "english": "At-Least-Once",
+      "set": {
+        "example": "Most Kafka deployments default to at-least-once delivery, so consumer code must be idempotent to handle occasional duplicate messages. = Molti deployment Kafka usano per default la consegna at-least-once, quindi il codice consumer deve essere idempotente per gestire i messaggi duplicati occasionali."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_16",
+      "english": "Lambda Architecture",
+      "set": {
+        "example": "Twitter pioneered Lambda Architecture by combining a Hadoop batch layer with Storm speed layer to compute analytics over hashtag streams. = Twitter ha aperto la strada alla Lambda Architecture combinando un batch layer Hadoop con uno speed layer Storm per calcolare analytics su stream di hashtag."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "cloud_services_16",
+      "english": "Kappa Architecture",
+      "set": {
+        "example": "LinkedIn migrated from Lambda to Kappa Architecture by replaying Kafka logs through a single streaming pipeline, eliminating the batch layer. = LinkedIn e' migrata da Lambda a Kappa Architecture rieseguendo i log Kafka attraverso una singola pipeline di streaming, eliminando il batch layer."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_17",
+      "english": "SageMaker",
+      "set": {
+        "italian": "SageMaker",
+        "example": "ML teams use Amazon SageMaker to train XGBoost models on managed GPU clusters and deploy them behind autoscaling inference endpoints. = I team ML usano Amazon SageMaker per addestrare modelli XGBoost su cluster GPU gestiti e deployarli dietro endpoint di inferenza con autoscaling."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_17",
+      "english": "Studio",
+      "set": {
+        "example": "Data scientists open SageMaker Studio in a browser to run JupyterLab notebooks on managed kernels with versioned experiments. = I data scientist aprono SageMaker Studio nel browser per eseguire notebook JupyterLab su kernel gestiti con esperimenti versionati."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_17",
+      "english": "Training Job",
+      "set": {
+        "example": "Submitting a SageMaker training job with 8 p3 instances finishes a transformer fine-tune in two hours instead of overnight on a laptop. = Inviare un training job SageMaker con 8 istanze p3 termina un fine-tune di transformer in due ore invece che in una notte intera su un laptop."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_17",
+      "english": "Feature Store",
+      "set": {
+        "example": "Centralizing customer features in a feature store ensures training and online inference use the exact same computation for predictions. = Centralizzare le feature dei clienti in un feature store garantisce che training e inferenza online usino esattamente lo stesso calcolo per le predizioni."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_17",
+      "english": "Hyperparameter Tuning",
+      "set": {
+        "example": "Running SageMaker hyperparameter tuning over 100 trials with Bayesian search identified an optimal learning rate that cut validation loss by 30%. = Eseguire l'hyperparameter tuning SageMaker su 100 trial con ricerca bayesiana ha identificato un learning rate ottimale che ha ridotto la validation loss del 30%."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_17",
+      "english": "AutoPilot",
+      "set": {
+        "example": "Business analysts use SageMaker AutoPilot to generate baseline classification models on tabular CSVs without writing any training code. = Gli analisti di business usano SageMaker AutoPilot per generare modelli di classificazione baseline su CSV tabellari senza scrivere codice di training."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_18",
+      "english": "Vertex AI",
+      "set": {
+        "italian": "Vertex AI",
+        "example": "Teams on GCP unify experiment tracking, model registry, and endpoint deployment inside Vertex AI to avoid stitching multiple ML services. = I team su GCP unificano experiment tracking, model registry e deploy degli endpoint dentro Vertex AI per evitare di cucire piu' servizi ML."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_18",
+      "english": "AutoML",
+      "set": {
+        "example": "Citizen data scientists upload a tabular CSV and let Vertex AutoML produce a deployable classification model in under an hour. = I citizen data scientist caricano un CSV tabellare e lasciano che Vertex AutoML produca un modello di classificazione deployabile in meno di un'ora."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_18",
+      "english": "Workbench",
+      "set": {
+        "example": "Researchers spin up a Vertex AI Workbench instance with a preconfigured TensorFlow image and persistent disk to iterate on notebooks. = I ricercatori avviano un'istanza Vertex AI Workbench con un'immagine TensorFlow preconfigurata e un disco persistente per iterare sui notebook."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_18",
+      "english": "Model Garden",
+      "set": {
+        "example": "Browsing Vertex AI Model Garden lets teams compare and deploy Gemini, Llama, and Stable Diffusion variants with one-click endpoints. = Sfogliare Vertex AI Model Garden permette ai team di confrontare e deployare varianti di Gemini, Llama e Stable Diffusion con endpoint a un click."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_18",
+      "english": "Vertex Pipelines",
+      "set": {
+        "example": "Defining a training workflow as Vertex Pipelines using KFP gives reproducible runs with lineage tracking and automatic component caching. = Definire un workflow di training come Vertex Pipelines con KFP da' esecuzioni riproducibili con tracciamento del lineage e caching automatico dei componenti."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_18",
+      "english": "Vertex Endpoints",
+      "set": {
+        "example": "Deploying a fraud model to Vertex Endpoints with autoscaling handles bursty traffic during Black Friday while staying under 50ms latency. = Deployare un modello antifrode su Vertex Endpoints con autoscaling gestisce il traffico a picchi durante il Black Friday rimanendo sotto i 50ms di latenza."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_18",
+      "english": "TPU",
+      "set": {
+        "italian": "TPU",
+        "example": "Training large transformer models on Google TPU v5 pods finishes 4x faster than equivalent NVIDIA A100 GPU clusters at lower cost. = Addestrare grandi modelli transformer su pod Google TPU v5 termina 4x piu' veloce dei cluster GPU NVIDIA A100 equivalenti a costo inferiore."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_18",
+      "english": "Feature Engineering",
+      "set": {
+        "example": "Most ML model improvements come from feature engineering work like adding rolling 7-day aggregates rather than tweaking neural net architectures. = La maggior parte dei miglioramenti dei modelli ML viene dal lavoro di feature engineering come aggiungere aggregati a finestra mobile di 7 giorni piuttosto che modificare architetture di reti neurali."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_18",
+      "english": "Vertex AI Search",
+      "set": {
+        "example": "Retailers embed Vertex AI Search to power product discovery with natural language queries and grounded results over their catalog. = I retailer integrano Vertex AI Search per alimentare la product discovery con query in linguaggio naturale e risultati ancorati sul loro catalogo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Bedrock",
+      "set": {
+        "example": "Enterprises call Claude and Llama models through AWS Bedrock to keep data inside their VPC without managing GPU infrastructure. = Le aziende chiamano modelli Claude e Llama attraverso AWS Bedrock per mantenere i dati dentro la loro VPC senza gestire infrastruttura GPU."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Azure OpenAI",
+      "set": {
+        "example": "Regulated banks consume GPT-4 through Azure OpenAI Service to satisfy data residency and SOC 2 audit requirements unavailable on the public API. = Le banche regolamentate consumano GPT-4 attraverso Azure OpenAI Service per soddisfare requisiti di data residency e audit SOC 2 non disponibili sull'API pubblica."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Gemini",
+      "set": {
+        "italian": "Gemini",
+        "example": "Developers call Google Gemini with image and text inputs to extract structured invoice data from scanned PDFs at scale. = Gli sviluppatori chiamano Google Gemini con input di immagini e testo per estrarre dati di fatture strutturati da PDF scansionati su larga scala."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Pre-trained Model",
+      "set": {
+        "example": "Starting from a pre-trained model like BERT and fine-tuning on domain data needs 1000x less labeled examples than training from scratch. = Partire da un pre-trained model come BERT e fare fine-tuning su dati di dominio richiede 1000x meno esempi etichettati di un training da zero."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Fine-Tuning",
+      "set": {
+        "example": "Customer support teams improve answer quality by fine-tuning a Llama base model on 5000 historical tickets resolved by senior agents. = I team di customer support migliorano la qualita' delle risposte facendo fine-tuning di un modello Llama base su 5000 ticket storici risolti da agenti senior."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "RAG",
+      "set": {
+        "italian": "RAG",
+        "example": "Internal knowledge bots use RAG to fetch the most relevant Confluence pages and pass them as context to the LLM before answering. = I bot di knowledge interni usano RAG per recuperare le pagine Confluence piu' rilevanti e passarle come contesto all'LLM prima di rispondere."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Knowledge Base",
+      "set": {
+        "example": "Connecting Bedrock to a knowledge base of indexed PDFs lets support agents query company manuals with grounded citations in every response. = Collegare Bedrock a una knowledge base di PDF indicizzati permette agli agenti di support di interrogare i manuali aziendali con citazioni ancorate in ogni risposta."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Agent",
+      "set": {
+        "example": "Bedrock Agents orchestrate multi-step workflows by chaining LLM reasoning with tool calls to APIs and Lambda functions on the user's behalf. = Bedrock Agents orchestrano workflow multi-step concatenando il ragionamento LLM con chiamate a strumenti, API e funzioni Lambda per conto dell'utente."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_19",
+      "english": "Embedding",
+      "set": {
+        "example": "Storing OpenAI text embedding vectors in pgvector lets the support search return semantically similar tickets even when keywords differ. = Memorizzare vettori di embedding di OpenAI in pgvector permette alla ricerca support di restituire ticket semanticamente simili anche con parole chiave diverse."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "MLOps",
+      "set": {
+        "example": "Adopting MLOps practices like CI/CD for models and automated drift checks reduced production incidents on the fraud team by 70% last year. = Adottare pratiche MLOps come CI/CD per i modelli e controlli automatici di drift ha ridotto del 70% gli incidenti in produzione del team antifrode l'anno scorso."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "Model Drift",
+      "set": {
+        "example": "Recommendation engines retrain weekly because seasonal shopping patterns cause significant model drift between Black Friday and January. = I motori di raccomandazione si riaddestrano settimanalmente perche' i pattern di shopping stagionali causano un drift di modello significativo tra Black Friday e gennaio."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "Model Monitoring",
+      "set": {
+        "example": "Production model monitoring tracks input distribution skew and prediction confidence so engineers retrain before accuracy degrades on real users. = Il model monitoring di produzione traccia lo skew della distribuzione di input e la confidence delle predizioni cosi' gli ingegneri riaddestrano prima che l'accuratezza degradi sugli utenti reali."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "A/B Test Models",
+      "set": {
+        "example": "Recommendation teams A/B test models by routing 10% of traffic to a new ranker for two weeks before promoting it based on click-through gains. = I team di raccomandazione fanno A/B test models indirizzando il 10% del traffico verso un nuovo ranker per due settimane prima di promuoverlo in base ai guadagni di click-through."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "Inference",
+      "set": {
+        "example": "Reducing batch inference latency from 200ms to 50ms required quantizing the model from FP32 to INT8 and using NVIDIA TensorRT. = Ridurre la latenza di inferenza batch da 200ms a 50ms ha richiesto di quantizzare il modello da FP32 a INT8 e usare NVIDIA TensorRT."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "Batch Inference",
+      "set": {
+        "example": "Nightly batch inference jobs score 100 million customer records in 30 minutes using a Spark cluster reading from S3 and writing to Snowflake. = Job di batch inference notturni valutano 100 milioni di record clienti in 30 minuti usando un cluster Spark che legge da S3 e scrive su Snowflake."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "Real-Time Inference",
+      "set": {
+        "example": "Fraud detection at checkout needs real-time inference under 50ms so transactions complete before the user notices any spinner delay. = Il rilevamento frodi al checkout necessita di real-time inference sotto i 50ms cosi' le transazioni si completano prima che l'utente noti ritardi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "Multi-Model Endpoint",
+      "set": {
+        "example": "Hosting fifty per-customer models behind a single SageMaker multi-model endpoint cut hosting costs 80% versus one endpoint per tenant. = Ospitare cinquanta modelli per cliente dietro un singolo multi-model endpoint SageMaker ha tagliato i costi di hosting dell'80% rispetto a un endpoint per tenant."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_20",
+      "english": "Bias Detection",
+      "set": {
+        "example": "Compliance teams run bias detection reports on loan approval models to ensure protected demographic groups are not unfairly rejected. = I team di compliance eseguono report di bias detection sui modelli di approvazione prestiti per garantire che gruppi demografici protetti non siano respinti ingiustamente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_9",
+      "english": "Microservices Architecture",
+      "set": {
+        "example": "Netflix decomposed its monolith into a microservices architecture with hundreds of independently deployable services owned by small teams. = Netflix ha scomposto il suo monolite in una microservices architecture con centinaia di servizi deployabili indipendentemente di proprieta' di piccoli team."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_9",
+      "english": "Backend for Frontend",
+      "set": {
+        "example": "The mobile team built a dedicated backend for frontend that aggregates data from twelve microservices into one payload tuned for slow networks. = Il team mobile ha costruito un backend for frontend dedicato che aggrega dati da dodici microservizi in un payload ottimizzato per reti lente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_9",
+      "english": "Service Discovery",
+      "set": {
+        "example": "Consul provides service discovery so containers can resolve healthy backend instances by name without hardcoding IP addresses or ports. = Consul fornisce service discovery cosi' i container possono risolvere istanze backend integre per nome senza hardcodare indirizzi IP o porte."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_9",
+      "english": "Service Mesh",
+      "set": {
+        "english": "Istio Sidecar Injection",
+        "italian": "Iniezione di sidecar Istio",
+        "example": "Enabling Istio sidecar injection on a namespace auto-attaches an Envoy proxy to every new pod, adding mTLS and traffic policy without app changes. = Abilitare l'iniezione di sidecar Istio su un namespace aggancia automaticamente un proxy Envoy a ogni nuovo pod, aggiungendo mTLS e policy di traffico senza modifiche all'app.",
+        "note": "Pattern caratteristico di service mesh come Istio o Linkerd: il sidecar intercetta tutto il traffico pod."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_9",
+      "english": "Sidecar Pattern",
+      "set": {
+        "example": "Deploying an Envoy proxy as a sidecar pattern container handles TLS termination and retries without modifying the main application code. = Deployare un proxy Envoy come container in sidecar pattern gestisce la terminazione TLS e i retry senza modificare il codice dell'applicazione principale."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_9",
+      "english": "Strangler Pattern",
+      "set": {
+        "example": "Legacy modernizations apply the strangler pattern by routing one endpoint at a time from the old monolith to new microservices behind a proxy. = Le modernizzazioni di legacy applicano lo strangler pattern instradando un endpoint alla volta dal vecchio monolite a nuovi microservizi dietro un proxy."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_9",
+      "english": "Shared Nothing",
+      "set": {
+        "example": "Horizontally scaling stateless API servers works best with a shared nothing design where each instance keeps no session state locally. = Scalare orizzontalmente API server stateless funziona meglio con un design shared nothing dove ogni istanza non mantiene stato di sessione localmente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_10",
+      "english": "CQRS",
+      "set": {
+        "italian": "CQRS",
+        "example": "Adopting CQRS in an order service routes writes to a normalized PostgreSQL store and reads to a denormalized Elasticsearch index. = Adottare CQRS in un servizio ordini instrada le scritture verso PostgreSQL normalizzato e le letture verso un indice Elasticsearch denormalizzato."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_10",
+      "english": "Event Sourcing",
+      "set": {
+        "english": "Aggregate Snapshot",
+        "italian": "Snapshot di aggregato",
+        "example": "Periodic aggregate snapshot rows cut event sourcing replay time from hours to seconds when rebuilding an account balance from the ledger. = Righe periodiche di aggregate snapshot riducono il tempo di replay event sourcing da ore a secondi quando si ricostruisce il saldo di un conto dal ledger.",
+        "note": "Ottimizzazione classica in event sourcing: si parte dallo snapshot e si applicano solo gli eventi successivi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_10",
+      "english": "Saga Pattern",
+      "set": {
+        "example": "Order checkout uses a saga pattern across payment, inventory, and shipping services with compensating actions if any single step fails. = Il checkout ordine usa un saga pattern attraverso i servizi di pagamento, inventario e spedizione con azioni compensative se un singolo step fallisce."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_10",
+      "english": "Orchestration",
+      "set": {
+        "example": "AWS Step Functions provides workflow orchestration of Lambda functions with visual state machines and built-in retry and error handling. = AWS Step Functions fornisce orchestrazione di workflow di funzioni Lambda con macchine a stati visuali e retry ed error handling integrati."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_10",
+      "english": "Outbox Pattern",
+      "set": {
+        "example": "Persisting events in an outbox pattern table inside the same DB transaction guarantees they are eventually published to Kafka by a relay process. = Persistere eventi in una tabella di outbox pattern nella stessa transazione DB garantisce che siano alla fine pubblicati su Kafka da un processo relay."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_10",
+      "english": "Event Replay",
+      "set": {
+        "example": "Bug fixes in projection logic are validated by triggering an event replay against a staging read model before promoting it to production. = Le correzioni nei bug della logica di proiezione si validano attivando un event replay su un read model di staging prima di promuoverlo in produzione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_10",
+      "english": "Event Notification",
+      "set": {
+        "example": "Microservices publish lightweight event notification messages on Kafka topics that downstream consumers query the source system to enrich. = I microservizi pubblicano messaggi di event notification leggeri su topic Kafka che i consumer downstream usano per arricchire interrogando il sistema sorgente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_11",
+      "english": "Circuit Breaker",
+      "set": {
+        "english": "Half-Open Probe",
+        "italian": "Sondaggio half-open",
+        "example": "A half-open probe periodically lets one request through a tripped circuit breaker to test if the downstream dependency has recovered. = Un half-open probe lascia periodicamente passare una richiesta attraverso un circuit breaker scattato per verificare se la dipendenza downstream e' tornata sana.",
+        "note": "Stato intermedio tra open e closed nel pattern circuit breaker: limita gli effetti del recupero."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_11",
+      "english": "Bulkhead",
+      "set": {
+        "english": "Thread Pool Isolation",
+        "italian": "Isolamento dei thread pool",
+        "example": "Hystrix applies thread pool isolation as a bulkhead so a slow downstream call cannot exhaust threads shared with healthy endpoints. = Hystrix applica thread pool isolation come bulkhead cosi' una chiamata lenta a un downstream non puo' esaurire i thread condivisi con endpoint sani.",
+        "note": "Implementazione concreta del pattern bulkhead: pool separati per ogni dipendenza."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_11",
+      "english": "Retry Pattern",
+      "set": {
+        "example": "Idempotent API clients implement a retry pattern with exponential backoff to recover transparently from transient 503 responses or network blips. = I client API idempotenti implementano un retry pattern con backoff esponenziale per recuperare in modo trasparente da risposte 503 transitorie o blip di rete."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_11",
+      "english": "Jitter",
+      "set": {
+        "example": "Adding random jitter to client retry delays prevents the thundering herd that would otherwise hammer a recovering service at the same instant. = Aggiungere jitter casuale ai delay di retry dei client previene il thundering herd che altrimenti martellerebbe un servizio in recupero nello stesso istante."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_11",
+      "english": "Thundering Herd",
+      "set": {
+        "example": "When a CDN cache entry expires, the thundering herd of concurrent requests can overwhelm the origin unless a request coalescer is in place. = Quando una entry di cache CDN scade, il thundering herd di richieste concorrenti puo' sommergere l'origin a meno che non sia in atto un coalescer di richieste."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_11",
+      "english": "Timeout",
+      "set": {
+        "example": "Setting a 500ms timeout on downstream HTTP calls prevents one slow dependency from cascading into request queue buildup across the fleet. = Impostare un timeout di 500ms sulle chiamate HTTP downstream impedisce a una dipendenza lenta di propagarsi in un accumulo di code di richieste su tutta la flotta."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_11",
+      "english": "Graceful Degradation",
+      "set": {
+        "example": "Amazon practices graceful degradation by hiding personalized recommendations when the ML service is slow, still letting users browse and check out. = Amazon pratica la graceful degradation nascondendo le raccomandazioni personalizzate quando il servizio ML e' lento, permettendo comunque agli utenti di navigare e fare checkout."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_11",
+      "english": "Chaos Engineering",
+      "set": {
+        "example": "Netflix runs Chaos Monkey to practice chaos engineering by randomly terminating production EC2 instances and verifying services self-heal. = Netflix esegue Chaos Monkey per praticare chaos engineering terminando casualmente istanze EC2 di produzione e verificando che i servizi si auto-curino."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_12",
+      "english": "Cell-Based Architecture",
+      "set": {
+        "example": "AWS adopts cell-based architecture so a failure in one isolated cell cannot exceed a small percentage of customer requests across the region. = AWS adotta cell-based architecture cosi' un fallimento in una cella isolata non puo' superare una piccola percentuale di richieste cliente nella regione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_12",
+      "english": "Blast Radius",
+      "set": {
+        "example": "Cell-based architectures intentionally cap the blast radius of a deployment bug to a single cell of 5% of users instead of the whole fleet. = Le cell-based architecture limitano intenzionalmente il blast radius di un bug di deploy a una singola cella del 5% di utenti invece dell'intera flotta."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_12",
+      "english": "Shuffle Sharding",
+      "set": {
+        "example": "Route 53 uses shuffle sharding to assign each customer a unique combination of name servers so noisy neighbors only affect tiny tenant cohorts. = Route 53 usa shuffle sharding per assegnare a ogni cliente una combinazione unica di name server cosi' vicini rumorosi colpiscono solo coorti minuscole di tenant."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_12",
+      "english": "Isolation",
+      "set": {
+        "example": "Dedicating separate AWS accounts per environment provides hard isolation so a misconfigured dev IAM role cannot reach production data. = Dedicare account AWS separati per ambiente fornisce una isolation rigida cosi' un ruolo IAM di dev mal configurato non puo' raggiungere dati di produzione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_12",
+      "english": "Tenant Isolation",
+      "set": {
+        "example": "SaaS platforms enforce tenant isolation via row-level security in PostgreSQL so a query bug never returns another customer's data. = Le piattaforme SaaS impongono tenant isolation tramite row-level security in PostgreSQL cosi' un bug di query non restituisce mai i dati di un altro cliente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_12",
+      "english": "Pool Model",
+      "set": {
+        "example": "Most B2C SaaS apps use a pool model where all tenants share infrastructure to maximize density and minimize per-customer fixed cost. = Molte app SaaS B2C usano un pool model dove tutti i tenant condividono l'infrastruttura per massimizzare la densita' e minimizzare il costo fisso per cliente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_12",
+      "english": "Cellular Routing",
+      "set": {
+        "example": "An API gateway performs cellular routing by mapping each tenant ID to its assigned cell via a sticky lookup table maintained at the edge. = Un API gateway esegue cellular routing mappando ogni tenant ID alla cella assegnata tramite una tabella di lookup sticky mantenuta all'edge."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_12",
+      "english": "Capacity Planning",
+      "set": {
+        "example": "Quarterly capacity planning reviews forecast peak traffic from marketing campaigns so EC2 reservations cover demand without overprovisioning. = Le revisioni trimestrali di capacity planning prevedono il traffico di picco dalle campagne marketing cosi' le riservazioni EC2 coprono la domanda senza overprovisioning."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cloud_architecture_12",
+      "english": "Resilience Engineering",
+      "set": {
+        "example": "Mature SRE teams invest in resilience engineering through chaos game days and dependency reviews to prevent cascading outages in production. = I team SRE maturi investono in resilience engineering tramite chaos game day e revisioni di dipendenza per prevenire outage a cascata in produzione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_5",
+      "english": "SOC 2",
+      "set": {
+        "italian": "SOC 2",
+        "example": "Sales prospects in regulated industries require a current SOC 2 Type II report before signing contracts above the enterprise tier. = I prospect commerciali in settori regolamentati richiedono un report SOC 2 Type II corrente prima di firmare contratti sopra l'enterprise tier."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_5",
+      "english": "ISO 27001",
+      "set": {
+        "italian": "ISO 27001",
+        "example": "European customers often require ISO 27001 certification covering the cloud provider's data centers before procurement teams approve vendor contracts. = I clienti europei richiedono spesso la certificazione ISO 27001 sui data center del cloud provider prima che i team procurement approvino i contratti vendor."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_5",
+      "english": "HIPAA",
+      "set": {
+        "italian": "HIPAA",
+        "example": "US healthcare startups sign an AWS HIPAA BAA before storing any patient PHI on S3 buckets or RDS instances inside production accounts. = Le startup sanitarie USA firmano un BAA AWS HIPAA prima di memorizzare qualsiasi PHI di paziente su bucket S3 o istanze RDS in account di produzione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_5",
+      "english": "PCI-DSS",
+      "set": {
+        "italian": "PCI-DSS",
+        "example": "Payment platforms reduce PCI-DSS scope by tokenizing card numbers through Stripe so raw PAN data never touches their own infrastructure. = Le piattaforme di pagamento riducono lo scope PCI-DSS tokenizzando i numeri di carta tramite Stripe cosi' i dati PAN raw non toccano mai la loro infrastruttura."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_5",
+      "english": "GDPR",
+      "set": {
+        "italian": "GDPR",
+        "example": "European SaaS providers map data flows and sign DPAs with every subprocessor to demonstrate GDPR compliance during customer security reviews. = I provider SaaS europei mappano i flussi di dati e firmano DPA con ogni subprocessor per dimostrare la conformita' GDPR durante le revisioni di sicurezza dei clienti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_5",
+      "english": "FedRAMP",
+      "set": {
+        "example": "US federal agencies can only adopt cloud services that hold a current FedRAMP Moderate or High authorization from the Joint Authorization Board. = Le agenzie federali USA possono adottare solo servizi cloud che mantengono una autorizzazione FedRAMP Moderate o High corrente dal Joint Authorization Board."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_5",
+      "english": "C5",
+      "set": {
+        "italian": "C5",
+        "note": "Cloud Computing Compliance Criteria Catalogue: standard tedesco del BSI per la sicurezza dei servizi cloud."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_5",
+      "english": "NIS2",
+      "set": {
+        "example": "Italian banks and energy operators must comply with NIS2 by 2024, expanding incident reporting duties to a wider set of essential entities. = Le banche e gli operatori energetici italiani devono conformarsi a NIS2 entro il 2024, ampliando gli obblighi di reporting incidenti a un set piu' ampio di entita' essenziali."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_5",
+      "english": "AGID",
+      "set": {
+        "italian": "AGID",
+        "example": "Italian public administrations must select cloud providers from the AGID qualified marketplace before migrating any citizen-facing service. = Le pubbliche amministrazioni italiane devono selezionare cloud provider dal marketplace qualificato AGID prima di migrare qualsiasi servizio rivolto ai cittadini.",
+        "note": "Agenzia per l'Italia Digitale: ente che qualifica i servizi cloud per la PA italiana."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_6",
+      "english": "Security of the Cloud",
+      "set": {
+        "example": "Under the shared responsibility model, AWS handles security of the cloud, meaning the data center physical access, hardware, and global network. = Nel modello di responsabilita' condivisa, AWS gestisce la security of the cloud, cioe' l'accesso fisico al data center, l'hardware e la rete globale."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_6",
+      "english": "Security in the Cloud",
+      "set": {
+        "example": "Customers own security in the cloud, including IAM policies, S3 bucket configurations, and patching their own EC2 operating systems. = I clienti possiedono la security in the cloud, incluse policy IAM, configurazioni di bucket S3 e patching dei propri sistemi operativi EC2."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_6",
+      "english": "Provider Responsibility",
+      "set": {
+        "example": "Under the shared model, provider responsibility ends at the hypervisor while everything above, like guest OS hardening, falls to the customer. = Nel modello condiviso, la provider responsibility termina all'hypervisor mentre tutto sopra, come l'hardening del guest OS, ricade sul cliente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_6",
+      "english": "Customer Responsibility",
+      "set": {
+        "example": "Misconfigured public S3 buckets fall under customer responsibility in the shared model and are a common root cause of large data breaches. = I bucket S3 pubblici mal configurati ricadono sotto la customer responsibility nel modello condiviso e sono una root cause comune di grandi breach di dati."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_6",
+      "english": "Data Controller",
+      "set": {
+        "note": "Titolare del trattamento ai sensi del GDPR: decide finalita' e mezzi del trattamento dei dati personali."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_6",
+      "english": "DPA",
+      "set": {
+        "italian": "DPA",
+        "example": "Enterprise customers require a signed DPA before any production data leaves their accounts to a SaaS subprocessor handling personal information. = I clienti enterprise richiedono un DPA firmato prima che qualsiasi dato di produzione lasci i loro account verso un subprocessor SaaS che tratta informazioni personali."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "Audit",
+      "set": {
+        "example": "External auditors run an annual SOC 2 audit reviewing change management evidence, IAM reviews, and incident response runbooks for the past year. = Gli auditor esterni eseguono un audit SOC 2 annuale rivedendo le evidenze di change management, le revisioni IAM e i runbook di incident response dell'anno passato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "Auditor",
+      "set": {
+        "example": "An external auditor verifies sample evidence such as IAM access reviews and change tickets to issue the annual SOC 2 Type II attestation. = Un auditor esterno verifica evidenze campione come revisioni di accesso IAM e ticket di change per emettere l'attestazione annuale SOC 2 Type II."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "AWS Organizations",
+      "set": {
+        "example": "Enterprises group hundreds of accounts under AWS Organizations to centralize SCP guardrails, consolidated billing, and shared landing zones. = Le aziende raggruppano centinaia di account sotto AWS Organizations per centralizzare guardrail SCP, billing consolidato e landing zone condivise."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "Control Tower",
+      "set": {
+        "example": "Enterprises bootstrap a multi-account AWS environment with Control Tower to apply baseline guardrails and account vending in minutes. = Le aziende avviano un ambiente AWS multi-account con Control Tower per applicare guardrail di baseline e vendere account in pochi minuti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "Guardrail",
+      "set": {
+        "example": "An SCP guardrail in AWS Organizations denies the use of expensive instance types outside the data science account regardless of IAM permissions. = Un guardrail SCP in AWS Organizations nega l'uso di istanze costose fuori dall'account di data science indipendentemente dai permessi IAM."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_7",
+      "english": "Policy as Code",
+      "set": {
+        "example": "Storing OPA Rego policies in Git and enforcing them in CI lets the platform team treat security rules as policy as code with full review history. = Memorizzare policy OPA Rego in Git e applicarle in CI permette al team di piattaforma di trattare le regole di sicurezza come policy as code con pieno storico di revisione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_8",
+      "english": "PII",
+      "set": {
+        "italian": "PII",
+        "example": "Engineering teams scan log streams with Macie to detect accidental PII leakage like email addresses or social security numbers in plaintext. = I team di engineering scansionano stream di log con Macie per rilevare leakage accidentale di PII come email o numeri di previdenza sociale in chiaro."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_8",
+      "english": "Data Residency",
+      "set": {
+        "english": "EU Sovereign Region",
+        "italian": "Regione sovrana UE",
+        "example": "Banks pick the AWS EU sovereign region in Germany to meet data residency commitments while keeping operational control limited to EU citizens. = Le banche scelgono la regione sovrana AWS UE in Germania per rispettare gli impegni di data residency mantenendo il controllo operativo limitato a cittadini UE.",
+        "note": "Variante regionale pensata per requisiti stringenti di data residency e sovranita' europea."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_8",
+      "english": "Data Sovereignty",
+      "set": {
+        "example": "European regulators emphasize data sovereignty because data stored on US-owned clouds may still be subject to the US CLOUD Act extraterritorial reach. = I regolatori europei sottolineano la data sovereignty perche' i dati su cloud di proprieta' USA possono comunque essere soggetti alla portata extraterritoriale del CLOUD Act USA."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_8",
+      "english": "Data Minimization",
+      "set": {
+        "example": "GDPR Article 5 mandates data minimization, so signup forms should only request fields strictly necessary for delivering the service. = L'articolo 5 GDPR impone la data minimization, quindi i form di iscrizione dovrebbero chiedere solo i campi strettamente necessari a erogare il servizio."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_8",
+      "english": "Anonymization",
+      "set": {
+        "example": "True anonymization makes a record impossible to link back to an individual even with auxiliary data, which removes it from GDPR scope. = Una vera anonymization rende un record impossibile da ricollegare a un individuo anche con dati ausiliari, il che lo esclude dallo scope GDPR."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_8",
+      "english": "Pseudonymization",
+      "set": {
+        "example": "Replacing customer emails with reversible tokens is pseudonymization under GDPR, lowering risk but keeping the data within regulatory scope. = Sostituire le email cliente con token reversibili e' pseudonymization sotto il GDPR, riducendo il rischio ma tenendo i dati nello scope normativo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cloud_security_8",
+      "english": "Privacy by Design",
+      "set": {
+        "example": "Mature product teams embed privacy by design into every new feature with a DPIA review before any personal data field reaches production. = I team di prodotto maturi integrano privacy by design in ogni nuova feature con una revisione DPIA prima che qualsiasi campo di dati personali raggiunga la produzione."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Tagging Strategy",
+      "set": {
+        "example": "Defining a corporate tagging strategy with mandatory Owner, CostCenter, and Environment fields enables accurate per-team chargeback reporting. = Definire una tagging strategy aziendale con campi obbligatori Owner, CostCenter e Environment abilita reportistica chargeback accurata per team."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Mandatory Tag",
+      "set": {
+        "example": "FinOps teams enforce a mandatory tag policy via AWS Config so any EC2 instance launched without CostCenter is flagged for the owning team. = I team FinOps impongono una policy di mandatory tag tramite AWS Config cosi' ogni istanza EC2 lanciata senza CostCenter viene segnalata al team proprietario."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Tag Standardization",
+      "set": {
+        "example": "Without tag standardization, FinOps reports break because Owner, owner, and OwnerName all describe the same field but in different cases. = Senza tag standardization, i report FinOps si rompono perche' Owner, owner e OwnerName descrivono lo stesso campo ma in case diversi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Tag Enforcement",
+      "set": {
+        "example": "Automated tag enforcement via Service Control Policies denies EC2 launches missing the CostCenter tag, blocking untagged spend at the source. = L'automatica tag enforcement tramite Service Control Policy nega i lanci EC2 privi del tag CostCenter, bloccando la spesa senza tag all'origine."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Tag Editor",
+      "set": {
+        "example": "Cleanup days often start in AWS Tag Editor where engineers bulk-apply missing CostCenter tags to hundreds of legacy resources at once. = I giorni di pulizia spesso partono in AWS Tag Editor dove gli ingegneri applicano in massa tag CostCenter mancanti a centinaia di risorse legacy in una volta."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Cost Center Tag",
+      "set": {
+        "example": "Finance attributes the monthly AWS bill to teams using a cost center tag mapped from each team's Workday cost center hierarchy. = Finance attribuisce la bolletta AWS mensile ai team usando un cost center tag mappato dalla gerarchia dei centri di costo Workday di ciascun team."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Project Tag",
+      "set": {
+        "example": "Adding a project tag to every resource lets product managers see the true cloud cost of each initiative in their monthly steering review. = Aggiungere un project tag a ogni risorsa permette ai product manager di vedere il vero costo cloud di ogni iniziativa nella revisione mensile di steering."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Owner Tag",
+      "set": {
+        "example": "When an idle RDS instance is found, the owner tag tells the FinOps team which engineer to email before scheduling automatic deletion. = Quando si trova un'istanza RDS inattiva, l'owner tag dice al team FinOps quale ingegnere contattare prima di schedulare la cancellazione automatica."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Untagged Resource",
+      "set": {
+        "example": "Weekly reports flag every untagged resource older than 24 hours so the FinOps team can chase down the orphan and assign accountability. = Report settimanali segnalano ogni untagged resource piu' vecchia di 24 ore cosi' il team FinOps puo' rintracciare l'orfano e assegnare responsabilita'."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_5",
+      "english": "Cost Allocation Report",
+      "set": {
+        "example": "Finance pulls the monthly cost allocation report from Cost Explorer broken down by CostCenter tag to charge each business unit accurately. = Finance estrae mensilmente il cost allocation report da Cost Explorer suddiviso per tag CostCenter per addebitare accuratamente ogni business unit."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_6",
+      "english": "Chargeback Report",
+      "set": {
+        "example": "FinOps publishes a monthly chargeback report mapping each AWS line item to a cost center so engineering directors see their team's true cloud spend. = FinOps pubblica un chargeback report mensile mappando ogni riga AWS a un cost center cosi' i director di engineering vedono la vera spesa cloud del loro team."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_6",
+      "english": "Internal Billing",
+      "set": {
+        "example": "Finance runs internal billing every month to charge product teams for their actual cloud consumption based on FinOps tag attribution. = Finance esegue internal billing ogni mese per addebitare ai team di prodotto il loro consumo cloud reale basato sull'attribuzione tag FinOps."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_6",
+      "english": "Cost per Customer",
+      "set": {
+        "example": "Tracking cost per customer over time reveals which big enterprise accounts deliver low gross margin and need pricing or efficiency action. = Tracciare il cost per customer nel tempo rivela quali grandi account enterprise generano basso margine lordo e richiedono interventi di pricing o efficienza."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_6",
+      "english": "Cost Anomaly",
+      "set": {
+        "english": "Anomaly Root Cause",
+        "italian": "Causa principale dell'anomalia",
+        "example": "After AWS Cost Anomaly Detection fires, FinOps runs a quick anomaly root cause review to see if the spike came from a leaked credential. = Quando AWS Cost Anomaly Detection scatta, FinOps fa una rapida revisione di anomaly root cause per capire se il picco viene da una credenziale leakata.",
+        "note": "Passo investigativo che segue il rilevamento automatico di una cost anomaly."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_6",
+      "english": "KPI",
+      "set": {
+        "italian": "KPI",
+        "example": "FinOps dashboards surface a few core KPI like unit cost per active user and reserved instance coverage to align engineering with finance goals. = I dashboard FinOps mostrano pochi KPI fondamentali come costo unitario per utente attivo e copertura di reserved instance per allineare engineering con gli obiettivi finance."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_6",
+      "english": "Cost Visibility",
+      "set": {
+        "example": "Sharing weekly cost visibility dashboards with every engineering team turned ambient awareness into a 15% drop in S3 storage spend last quarter. = Condividere dashboard settimanali di cost visibility con ogni team di engineering ha trasformato la consapevolezza in un calo del 15% della spesa S3 lo scorso trimestre."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_6",
+      "english": "Spend Attribution",
+      "set": {
+        "example": "Accurate spend attribution requires every AWS resource to carry CostCenter and Owner tags so FinOps can drill from a bill line to a person. = Una accurata spend attribution richiede che ogni risorsa AWS porti tag CostCenter e Owner cosi' FinOps puo' navigare da una riga di bolletta a una persona."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "RI Utilization",
+      "set": {
+        "example": "Monthly FinOps reviews target above 95% RI utilization so reserved instance commitments are not wasted on idle or oversized capacity. = Le revisioni mensili FinOps mirano sopra il 95% di RI utilization cosi' gli impegni di reserved instance non sono sprecati su capacita' inattiva o sovradimensionata."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "RI Coverage",
+      "set": {
+        "example": "Treating 80% steady-state EC2 hours under RI coverage cuts compute spend by roughly 30% versus on-demand pricing for the same instances. = Coprire l'80% delle ore EC2 stabili con RI coverage taglia la spesa compute di circa il 30% rispetto al prezzo on-demand per le stesse istanze."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "Compute Savings Plan",
+      "set": {
+        "example": "Locking in a three-year Compute Savings Plan at $50/hour delivers up to 66% off equivalent on-demand pricing across EC2, Fargate, and Lambda. = Bloccare un Compute Savings Plan triennale a $50/ora porta fino al 66% di sconto sul prezzo on-demand equivalente su EC2, Fargate e Lambda."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "EC2 Instance Savings Plan",
+      "set": {
+        "example": "An EC2 Instance Savings Plan locks teams into a specific family in one region but typically beats Compute Savings Plan discounts by 5-10%. = Un EC2 Instance Savings Plan blocca i team su una specifica famiglia in una regione ma tipicamente batte gli sconti del Compute Savings Plan del 5-10%."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "Standard RI",
+      "set": {
+        "example": "Finance buys three-year Standard RI for predictable RDS Postgres baseline to get the deepest discount tier offered by AWS reservations. = Finance compra Standard RI triennali per la baseline RDS Postgres prevedibile per ottenere il tier di sconto piu' profondo offerto dalle riservazioni AWS."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "RI Marketplace",
+      "set": {
+        "example": "After a regional shutdown, FinOps lists unused reservations on the AWS RI Marketplace to recover residual value from the multi-year commitment. = Dopo uno shutdown regionale, FinOps elenca le riservazioni inutilizzate sull'AWS RI Marketplace per recuperare valore residuo dall'impegno pluriennale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "Recommendations",
+      "set": {
+        "example": "AWS Cost Explorer recommendations suggest rightsizing 50 idle EC2 instances per month, saving the platform team approximately $12K annually. = Le recommendations di AWS Cost Explorer suggeriscono rightsizing di 50 istanze EC2 inattive al mese, facendo risparmiare al team piattaforma circa 12K dollari annui."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "Commitment Discount",
+      "set": {
+        "example": "Locking baseline Lambda invocations under a commitment discount via Savings Plans cuts that portion of the bill by roughly 17% over on-demand. = Bloccare le invocazioni Lambda di baseline con un commitment discount tramite Savings Plan taglia quella parte della bolletta di circa il 17% rispetto all'on-demand."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "No Upfront",
+      "set": {
+        "italian": "No Upfront",
+        "example": "Startups pick no upfront Savings Plans to preserve cash, accepting slightly smaller discounts than the all upfront equivalent over three years. = Le startup scelgono Savings Plan no upfront per preservare la cassa, accettando sconti leggermente inferiori dell'equivalente all upfront su tre anni."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_7",
+      "english": "All Upfront",
+      "set": {
+        "italian": "All Upfront",
+        "example": "Finance teams with surplus cash pick all upfront Savings Plans on three-year terms to maximize the discount versus monthly no upfront billing. = I team finance con cassa in eccesso scelgono Savings Plan all upfront triennali per massimizzare lo sconto rispetto al billing mensile no upfront."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_8",
+      "english": "FinOps Practitioner",
+      "set": {
+        "example": "A certified FinOps Practitioner facilitates cross-functional meetings between engineering and finance to align cloud spend with business outcomes. = Un FinOps Practitioner certificato facilita meeting trasversali tra engineering e finance per allineare la spesa cloud con i risultati di business."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_8",
+      "english": "Cost Culture",
+      "set": {
+        "example": "Shipping a healthy cost culture means engineers see their team's daily spend on a Grafana dashboard next to latency and error metrics. = Costruire una cost culture sana significa che gli ingegneri vedono la spesa giornaliera del loro team su un dashboard Grafana accanto a metriche di latenza ed errori."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_8",
+      "english": "Engineering Accountability",
+      "set": {
+        "example": "Strong engineering accountability moves cloud spend ownership from finance to each squad lead reviewing weekly cost anomalies for their service. = Una forte engineering accountability sposta la proprieta' della spesa cloud da finance a ogni squad lead che rivede settimanalmente le anomalie di costo del suo servizio."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_8",
+      "english": "Variable Cost Model",
+      "set": {
+        "example": "Adopting a variable cost model in cloud means infrastructure spend scales daily with traffic instead of large quarterly hardware purchases. = Adottare un variable cost model nel cloud significa che la spesa di infrastruttura scala giornalmente con il traffico invece di grandi acquisti hardware trimestrali."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_8",
+      "english": "Cloud Economics",
+      "set": {
+        "example": "Understanding cloud economics involves modeling unit cost per request and reserved instance break-even points before signing long-term commitments. = Capire la cloud economics significa modellare il costo unitario per richiesta e i punti di break-even di reserved instance prima di firmare impegni pluriennali."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_8",
+      "english": "CapEx vs OpEx",
+      "set": {
+        "example": "Cloud migration shifts CFO conversations from CapEx vs OpEx tradeoffs to operating expense forecasting models tied directly to product usage growth. = La migrazione al cloud sposta le conversazioni del CFO dai tradeoff CapEx vs OpEx a modelli di forecasting di spesa operativa legati direttamente alla crescita d'uso del prodotto."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cloud_cost_8",
+      "english": "Cost Maturity",
+      "set": {
+        "example": "Annual FinOps assessments score teams on cost maturity across visibility, optimization, and operations to roadmap next-quarter investments. = Le valutazioni FinOps annuali punteggiano i team sulla cost maturity tra visibilita', ottimizzazione e operazioni per pianificare gli investimenti del trimestre successivo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_5",
+      "english": "AWS Certified Cloud Practitioner",
+      "set": {
+        "example": "New hires often start with AWS Certified Cloud Practitioner to learn AWS terminology before pursuing role-specific Associate-level certifications. = I nuovi assunti spesso iniziano con AWS Certified Cloud Practitioner per imparare la terminologia AWS prima di puntare a certificazioni Associate specifiche per ruolo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_5",
+      "english": "AWS Solutions Architect Associate",
+      "set": {
+        "italian": "AWS Solutions Architect Associate",
+        "example": "Mid-level engineers target the AWS Solutions Architect Associate exam to validate design knowledge across compute, storage, and networking. = Gli ingegneri intermedi puntano all'esame AWS Solutions Architect Associate per validare conoscenze di design tra compute, storage e networking."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_5",
+      "english": "AWS Solutions Architect Professional",
+      "set": {
+        "italian": "AWS Solutions Architect Professional",
+        "example": "Architects with three years on AWS pursue Solutions Architect Professional to validate enterprise migration and cost optimization scenarios. = Gli architetti con tre anni su AWS puntano a Solutions Architect Professional per validare scenari di migrazione enterprise e ottimizzazione costi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_5",
+      "english": "AWS Developer Associate",
+      "set": {
+        "italian": "AWS Developer Associate",
+        "example": "Backend engineers writing Lambda functions target AWS Developer Associate to deepen knowledge of SDKs, deployment patterns, and serverless tradeoffs. = Gli ingegneri backend che scrivono funzioni Lambda puntano a AWS Developer Associate per approfondire SDK, pattern di deploy e tradeoff serverless."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_5",
+      "english": "AWS SysOps Administrator",
+      "set": {
+        "italian": "AWS SysOps Administrator",
+        "example": "Platform engineers running production AWS workloads pursue SysOps Administrator to validate monitoring, automation, and incident response. = Gli ingegneri di piattaforma con workload AWS in produzione puntano a SysOps Administrator per validare monitoring, automazione e incident response."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_5",
+      "english": "AWS DevOps Engineer Professional",
+      "set": {
+        "italian": "AWS DevOps Engineer Professional",
+        "example": "Senior DevOps engineers pursue AWS DevOps Engineer Professional to validate CI/CD, infrastructure as code, and observability at scale. = Gli ingegneri DevOps senior puntano ad AWS DevOps Engineer Professional per validare CI/CD, infrastruttura come codice e osservabilita' su larga scala."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_5",
+      "english": "Recertification",
+      "set": {
+        "example": "AWS requires recertification every three years, typically through a shorter renewal exam or by passing a higher-level certification in the same path. = AWS richiede recertification ogni tre anni, tipicamente con un esame di renewal piu' breve o passando una certificazione di livello superiore nello stesso percorso."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_5",
+      "english": "AWS Skill Builder",
+      "set": {
+        "example": "Engineers prep certification exams on AWS Skill Builder by following the official learning plans, practice questions, and hands-on labs each week. = Gli ingegneri preparano gli esami di certificazione su AWS Skill Builder seguendo i learning plan ufficiali, le domande di pratica e i lab hands-on ogni settimana."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_6",
+      "english": "Azure Fundamentals",
+      "set": {
+        "italian": "Azure Fundamentals",
+        "example": "Engineers new to Microsoft cloud start with Azure Fundamentals AZ-900 to learn portal navigation, billing concepts, and core service categories. = Gli ingegneri nuovi al cloud Microsoft partono da Azure Fundamentals AZ-900 per imparare navigazione del portale, concetti di billing e categorie di servizi principali."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_6",
+      "english": "Azure Administrator",
+      "set": {
+        "italian": "Azure Administrator",
+        "example": "Operations engineers managing production Azure subscriptions pursue Azure Administrator AZ-104 to validate skills in storage, networking, and IAM. = Gli ingegneri operations che gestiscono subscription Azure di produzione puntano ad Azure Administrator AZ-104 per validare competenze in storage, networking e IAM."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_6",
+      "english": "Azure Developer",
+      "set": {
+        "italian": "Azure Developer",
+        "example": "Backend developers writing Functions and App Service targets Azure Developer AZ-204 to deepen SDK and deployment expertise across the platform. = Gli sviluppatori backend che scrivono Functions e App Service mirano ad Azure Developer AZ-204 per approfondire l'expertise di SDK e deploy sulla piattaforma."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_6",
+      "english": "Azure Solutions Architect",
+      "set": {
+        "italian": "Azure Solutions Architect",
+        "example": "Senior architects pursue Azure Solutions Architect AZ-305 to validate skills in designing resilient, secure, and cost-effective Azure landing zones. = Gli architetti senior puntano ad Azure Solutions Architect AZ-305 per validare competenze nel progettare landing zone Azure resilienti, sicure ed efficienti in costi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_6",
+      "english": "GCP Cloud Digital Leader",
+      "set": {
+        "italian": "GCP Cloud Digital Leader",
+        "example": "Non-technical stakeholders take GCP Cloud Digital Leader to understand cloud terminology, GCP service categories, and cloud migration tradeoffs. = Gli stakeholder non tecnici sostengono GCP Cloud Digital Leader per capire terminologia cloud, categorie di servizi GCP e tradeoff di migrazione cloud."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_6",
+      "english": "GCP Associate Cloud Engineer",
+      "set": {
+        "italian": "GCP Associate Cloud Engineer",
+        "example": "Engineers new to Google Cloud target the GCP Associate Cloud Engineer exam to validate skills in deploying and operating workloads on the platform. = Gli ingegneri nuovi a Google Cloud puntano all'esame GCP Associate Cloud Engineer per validare competenze nel deploy e operatione di workload sulla piattaforma."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_6",
+      "english": "GCP Professional Cloud Architect",
+      "set": {
+        "italian": "GCP Professional Cloud Architect",
+        "example": "Senior architects pursue GCP Professional Cloud Architect to validate solution design and capacity planning across Google Cloud regions. = Gli architetti senior puntano a GCP Professional Cloud Architect per validare design di soluzioni e capacity planning tra regioni Google Cloud."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_6",
+      "english": "CKA",
+      "set": {
+        "italian": "CKA",
+        "example": "Platform engineers prove hands-on Kubernetes operational skills via the CKA exam, a three-hour live cluster troubleshooting test from the CNCF. = Gli ingegneri di piattaforma dimostrano competenze operative pratiche su Kubernetes con l'esame CKA, un test live di troubleshooting cluster di tre ore della CNCF."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_6",
+      "english": "CKAD",
+      "set": {
+        "italian": "CKAD",
+        "example": "Application developers shipping microservices on Kubernetes pursue CKAD to validate skill writing manifests, debugging pods, and tuning resources. = Gli sviluppatori che pubblicano microservizi su Kubernetes puntano a CKAD per scrivere manifest, fare debug di pod e tarare le risorse."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_6",
+      "english": "HashiCorp Certified",
+      "set": {
+        "example": "Platform teams adopting Terraform pursue HashiCorp Certified Terraform Associate to standardize practices across infrastructure as code engineers. = I team di piattaforma che adottano Terraform puntano a HashiCorp Certified Terraform Associate per standardizzare le pratiche tra ingegneri di infrastruttura come codice."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_7",
+      "english": "Solutions Architect",
+      "set": {
+        "example": "A Solutions Architect designs end-to-end customer architectures spanning compute, storage, networking, and security to meet specific SLAs and budgets. = Un Solutions Architect progetta architetture cliente end-to-end attraverso compute, storage, networking e sicurezza per soddisfare SLA e budget specifici."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_7",
+      "english": "DevOps Engineer",
+      "set": {
+        "example": "A DevOps Engineer builds CI/CD pipelines, automates infrastructure as code, and shortens the feedback loop between developers and production systems. = Un DevOps Engineer costruisce pipeline CI/CD, automatizza infrastruttura come codice e accorcia il feedback loop tra sviluppatori e sistemi di produzione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_7",
+      "english": "SRE",
+      "set": {
+        "italian": "SRE",
+        "example": "Google pioneered the SRE role to apply software engineering practices to operations, defining SLOs, error budgets, and toil reduction as core duties. = Google ha aperto la strada al ruolo SRE per applicare pratiche di software engineering alle operations, definendo SLO, error budget e riduzione del toil come compiti fondamentali."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_7",
+      "english": "Platform Engineer",
+      "set": {
+        "example": "A Platform Engineer builds internal developer platforms and golden paths so product teams can deploy services in hours instead of weeks. = Un Platform Engineer costruisce piattaforme interne per sviluppatori e golden path cosi' i team di prodotto possono deployare servizi in ore invece che settimane."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_7",
+      "english": "Cloud Security Engineer",
+      "set": {
+        "example": "A Cloud Security Engineer audits IAM policies, runs threat modeling on new architectures, and operates the CSPM tooling across all corporate accounts. = Un Cloud Security Engineer fa audit di policy IAM, esegue threat modeling su nuove architetture e opera il tooling CSPM su tutti gli account aziendali."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_7",
+      "english": "FinOps Engineer",
+      "set": {
+        "example": "A FinOps Engineer builds tag enforcement, anomaly detection, and chargeback reports so engineering directors own and reduce their cloud spend. = Un FinOps Engineer costruisce tag enforcement, anomaly detection e report di chargeback cosi' i director di engineering riducono la spesa cloud."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_7",
+      "english": "Cloud Developer",
+      "set": {
+        "example": "A Cloud Developer writes Lambda functions, Cosmos DB integrations, and managed-service code rather than worrying about VMs or operating systems. = Un Cloud Developer scrive funzioni Lambda, integrazioni Cosmos DB e codice di servizi gestiti invece di preoccuparsi di VM o sistemi operativi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_7",
+      "english": "Cloud Consultant",
+      "set": {
+        "example": "A Cloud Consultant guides enterprise customers through migration assessments, landing zone design, and FinOps maturity programs on short engagements. = Un Cloud Consultant guida i clienti enterprise attraverso assessment di migrazione, design di landing zone e programmi di maturita' FinOps in engagement brevi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_8",
+      "english": "Continuous Learning",
+      "set": {
+        "example": "Cloud careers depend on continuous learning because AWS launches new services and pricing models faster than any single engineer can passively absorb. = Le carriere cloud dipendono dal continuous learning perche' AWS lancia nuovi servizi e modelli di pricing piu' velocemente di quanto qualsiasi ingegnere possa assorbire passivamente."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_8",
+      "english": "Hands-On Practice",
+      "set": {
+        "example": "Effective hands-on practice means building a small project like a serverless URL shortener instead of only watching certification prep videos. = Una hands-on practice efficace significa costruire un piccolo progetto come un URL shortener serverless invece di guardare solo video di prep certificazione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_8",
+      "english": "Personal Project",
+      "set": {
+        "example": "Shipping a personal project like a deployed Telegram bot on Lambda demonstrates real cloud skills better than any certification listed on a resume. = Pubblicare un personal project come un bot Telegram deployato su Lambda dimostra competenze cloud reali meglio di qualsiasi certificazione su un CV."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_8",
+      "english": "Tech Blog",
+      "set": {
+        "example": "Maintaining a tech blog with weekly posts on cloud experiments builds a personal brand that opens doors to conference talks and senior interviews. = Mantenere un tech blog con post settimanali su esperimenti cloud costruisce un personal brand che apre porte a talk a conferenze e interview senior."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_8",
+      "english": "KubeCon",
+      "set": {
+        "example": "Attending KubeCon Europe yearly gives platform engineers direct exposure to upcoming CNCF projects and informal hallway chats with maintainers. = Partecipare a KubeCon Europe annualmente offre agli ingegneri di piattaforma esposizione diretta a progetti CNCF in arrivo e chiacchierate di corridoio con i maintainer."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cloud_foundations_8",
+      "english": "Cloud Career",
+      "set": {
+        "example": "A strong cloud career compounds when engineers rotate through roles like SRE, platform, and security to gain cross-cutting expertise over five years. = Una solida cloud career si accumula quando gli ingegneri ruotano per ruoli come SRE, piattaforma e sicurezza per acquisire expertise trasversale in cinque anni."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_2",
+      "english": "Subscription",
+      "set": {
+        "english": "Push Subscription",
+        "italian": "Push subscription",
+        "example": "Configuring a push subscription on Pub/Sub forwards each message to an HTTPS endpoint instead of having consumers pull from the queue. = Configurare una push subscription su Pub/Sub inoltra ogni messaggio a un endpoint HTTPS invece di far pull dei consumer dalla coda.",
+        "note": "Variante di subscription in sistemi di messaging come GCP Pub/Sub: push vs pull."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cloud_iac_1",
+      "english": "Provisioning",
+      "set": {
+        "english": "Provisioning Drift",
+        "italian": "Drift di provisioning",
+        "example": "Provisioning drift happens when an engineer changes a security group manually in the AWS console and Terraform state no longer matches reality. = Il provisioning drift accade quando un ingegnere cambia un security group manualmente nella console AWS e lo stato Terraform non corrisponde piu' alla realta'.",
+        "note": "Problema tipico di IaC: la risorsa reale diverge dal codice dichiarativo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cloud_architecture_4",
+      "english": "Stateful",
+      "set": {
+        "english": "StatefulSet",
+        "italian": "StatefulSet",
+        "example": "Running PostgreSQL primaries on Kubernetes uses a StatefulSet so each pod gets a stable network identity and dedicated persistent volume. = Eseguire i primari PostgreSQL su Kubernetes usa uno StatefulSet cosi' ogni pod ottiene un'identita' di rete stabile e un volume persistente dedicato.",
+        "note": "Workload controller Kubernetes pensato per applicazioni stateful con identita' stabili."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cloud_architecture_4",
+      "english": "Stateless",
+      "set": {
+        "english": "Stateless Token",
+        "italian": "Token stateless",
+        "example": "JWT works as a stateless token because the server validates signature and claims without looking up a session in any backend store. = Il JWT funziona come token stateless perche' il server valida firma e claim senza cercare una sessione in alcuno store backend.",
+        "note": "Pattern di autenticazione che evita di tenere stato di sessione lato server."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cloud_services_17",
+      "english": "Endpoint",
+      "set": {
+        "english": "Async Inference Endpoint",
+        "italian": "Endpoint di inferenza asincrona",
+        "example": "Long-running predictions on large payloads use an async inference endpoint on SageMaker, which queues requests and writes results back to S3. = Le predizioni lunghe su payload grandi usano un async inference endpoint su SageMaker, che mette in coda le richieste e scrive i risultati su S3.",
+        "note": "Tipologia specifica di endpoint SageMaker per workload ML che eccedono i limiti di latenza sincrona."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cloud_services_3",
+      "english": "Event Bus",
+      "set": {
+        "english": "Cross-Account Event Bus",
+        "italian": "Event bus cross-account",
+        "example": "Defining a cross-account event bus in EventBridge lets a central security account receive findings from every workload account in the organization. = Definire un cross-account event bus in EventBridge permette a un account di sicurezza centrale di ricevere finding da ogni account di workload nell'organizzazione.",
+        "note": "Configurazione specifica di event bus EventBridge per condividere eventi tra account AWS."
+      }
+    }
+  ]
+}

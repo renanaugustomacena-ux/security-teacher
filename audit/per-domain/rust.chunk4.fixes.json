@@ -1,0 +1,1251 @@
+{
+  "fixes": [
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Assert Ne",
+      "set": {
+        "example": "Use assert_ne! when a regression check needs to confirm that an optimisation actually changed the produced value. = Usa assert_ne! quando un controllo di regressione deve confermare che un'ottimizzazione abbia effettivamente cambiato il valore prodotto."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Test Output",
+      "set": {
+        "example": "Pass --nocapture to surface println! diagnostics from a flaky test you are trying to localise without rewriting it. = Passa --nocapture per far emergere le diagnostiche println! di un test instabile che stai cercando di localizzare senza riscriverlo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Test Threading",
+      "set": {
+        "example": "Force --test-threads=1 when integration tests share a temporary database that cannot tolerate parallel writers. = Forza --test-threads=1 quando i test di integrazione condividono un database temporaneo che non tollera scrittori paralleli."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_2",
+      "english": "Integration Test",
+      "set": {
+        "example": "Place an integration test under tests/ to exercise the public API exactly as a downstream crate would consume it. = Posiziona un test di integrazione sotto tests/ per esercitare l'API pubblica esattamente come la consumerebbe un crate a valle."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_2",
+      "english": "Doc Test",
+      "set": {
+        "example": "Add a doc test inside the rustdoc comment so that the example shown to users is compiled and run by cargo test. = Aggiungi un doc test dentro il commento rustdoc cosi' l'esempio mostrato agli utenti viene compilato ed eseguito da cargo test."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_2",
+      "english": "Common Module",
+      "set": {
+        "example": "Stash shared helpers in tests/common/mod.rs so multiple integration test files can reuse the same fixtures. = Riponi gli helper condivisi in tests/common/mod.rs cosi' piu' file di test di integrazione possono riusare le stesse fixture."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_2",
+      "english": "Test Fixture",
+      "set": {
+        "example": "Build a test fixture that seeds a temporary database with users so every scenario starts from the same known baseline. = Costruisci una test fixture che popola un database temporaneo con utenti cosi' ogni scenario parte dalla stessa baseline conosciuta."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_2",
+      "english": "Mock",
+      "set": {
+        "italian": "Mock",
+        "example": "Reach for mockall to fabricate a fake HTTP client whose responses are scripted by the test, isolating the unit under test. = Ricorri a mockall per fabbricare un client HTTP finto le cui risposte sono scritte dal test, isolando l'unita' sotto test."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_2",
+      "english": "Test Coverage",
+      "set": {
+        "example": "Run cargo tarpaulin in CI to publish test coverage trends and block merges that drop the percentage below a threshold. = Esegui cargo tarpaulin in CI per pubblicare i trend di test coverage e bloccare i merge che fanno scendere la percentuale sotto una soglia."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_3",
+      "english": "Property Testing",
+      "set": {
+        "example": "With property testing the framework synthesises hundreds of inputs hunting for the smallest case that violates an invariant you stated. = Con il property testing il framework sintetizza centinaia di input cercando il caso piu' piccolo che viola un invariante che hai dichiarato."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_3",
+      "english": "Proptest",
+      "set": {
+        "italian": "Proptest",
+        "example": "When unit tests miss edge cases, switching to proptest lets a generator probe round-trip serialisation across thousands of random values. = Quando i test unitari mancano edge case, passare a proptest permette a un generatore di sondare la serializzazione round-trip su migliaia di valori casuali."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_3",
+      "english": "Quickcheck",
+      "set": {
+        "italian": "Quickcheck",
+        "example": "Drawing inspiration from Haskell, quickcheck shrinks a failing input to a minimal reproducer that pinpoints the bug. = Ispirandosi a Haskell, quickcheck riduce un input fallito a un riproduttore minimale che individua il bug."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_3",
+      "english": "Test Generator",
+      "set": {
+        "example": "A custom test generator can produce structurally valid AST nodes so fuzzing focuses on real parser logic instead of trivial rejections. = Un generatore di test personalizzato puo' produrre nodi AST strutturalmente validi cosi' il fuzzing si concentra sulla vera logica del parser invece che su rifiuti banali."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_3",
+      "english": "Snapshot Test",
+      "set": {
+        "example": "Compare each rendered template against a stored snapshot so any accidental change in formatting trips the test immediately. = Confronta ogni template renderizzato con uno snapshot salvato cosi' qualsiasi cambio accidentale nella formattazione fa scattare il test immediatamente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_3",
+      "english": "Golden Test",
+      "set": {
+        "example": "A golden test pins the byte-for-byte output of a serialiser so any silent regression in the format is caught the moment it lands. = Un golden test fissa l'output byte per byte di un serializzatore cosi' qualsiasi regressione silenziosa nel formato viene catturata appena arriva."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_3",
+      "english": "Differential Testing",
+      "set": {
+        "example": "Running differential testing against a reference parser reveals divergences that pure unit tests would never construct on their own. = Eseguire differential testing contro un parser di riferimento rivela divergenze che i puri test unitari non costruirebbero mai da soli."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_4",
+      "english": "Benchmark",
+      "set": {
+        "example": "A benchmark that measures hot loops in release mode catches accidental performance regressions before they reach production. = Un benchmark che misura i cicli hot in modalita' release cattura regressioni di performance accidentali prima che raggiungano la produzione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_4",
+      "english": "Criterion",
+      "set": {
+        "italian": "Criterion",
+        "example": "Adopt criterion when you need statistically rigorous comparisons across commits rather than wall-clock numbers that drift with the host load. = Adotta criterion quando ti servono confronti statisticamente rigorosi tra commit invece di numeri wall-clock che derivano col carico della macchina."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_4",
+      "english": "Profiling",
+      "set": {
+        "example": "Instrument the binary with perf and flamegraph to turn profiling data into a visual map of where CPU time really goes. = Strumenta il binario con perf e flamegraph per trasformare i dati di profiling in una mappa visiva di dove va davvero il tempo CPU."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_4",
+      "english": "Iai",
+      "set": {
+        "italian": "Iai",
+        "example": "Switch to iai when wall-clock noise dominates microbenchmarks: cycle counters give reproducible numbers even on a shared CI runner. = Passa a iai quando il rumore wall-clock domina i microbenchmark: i cycle counter danno numeri riproducibili anche su un runner CI condiviso."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_4",
+      "english": "Regression Test",
+      "set": {
+        "example": "Every fixed bug deserves a regression test that fails first against the broken code, then passes once the patch lands. = Ogni bug corretto merita un regression test che prima fallisce contro il codice rotto, poi passa appena arriva la patch."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Read File",
+      "set": {
+        "example": "For small configuration files, fs::read_to_string lets you read the whole file in a single call without manual buffering. = Per piccoli file di configurazione, fs::read_to_string ti permette di leggere l'intero file in una singola chiamata senza buffering manuale."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Write File",
+      "set": {
+        "example": "Use fs::write to atomically replace a small file in one syscall, avoiding the partial-update window that an open-truncate-write cycle leaves. = Usa fs::write per sostituire atomicamente un piccolo file in una singola syscall, evitando la finestra di aggiornamento parziale che un ciclo open-truncate-write lascia."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "File Open",
+      "set": {
+        "example": "When you need fine-grained control over flags, File::open returns a handle you can pair with OpenOptions for append or exclusive create. = Quando ti serve controllo a grana fine sui flag, File::open restituisce un handle che puoi accoppiare con OpenOptions per append o create esclusivo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Buf Reader",
+      "set": {
+        "example": "Wrap a File in a BufReader to collapse many tiny read syscalls into a few large ones, dramatically improving throughput on line-oriented input. = Avvolgi un File in un BufReader per collassare molte piccole syscall di read in poche grandi, migliorando drasticamente il throughput su input a righe."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Read Line",
+      "set": {
+        "example": "Iterate over reader.lines() to consume log files one record at a time without ever materialising the whole file in memory. = Itera su reader.lines() per consumare file di log un record alla volta senza mai materializzare l'intero file in memoria."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_1",
+      "english": "Path",
+      "set": {
+        "english": "Filesystem Path",
+        "italian": "Path del filesystem (Path)",
+        "example": "Operating on disk files requires a Filesystem Path to locate them, distinct from a module path used by use statements in source code. = Operare su file su disco richiede un Filesystem Path per localizzarli, distinto da un module path usato dagli statement use nel codice sorgente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "TCP Listener",
+      "set": {
+        "english": "Blocking TCP Listener",
+        "italian": "Listener TCP bloccante (std::net::TcpListener)",
+        "example": "For a simple synchronous server, a Blocking TCP Listener from std::net accepts connections one at a time without pulling in an async runtime. = Per un semplice server sincrono, un Blocking TCP Listener da std::net accetta connessioni una alla volta senza tirare dentro un runtime async."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "TCP Stream",
+      "set": {
+        "english": "Blocking TCP Stream",
+        "italian": "Stream TCP bloccante (std::net::TcpStream)",
+        "example": "A Blocking TCP Stream lets a tiny CLI tool open a connection, write a request and read the reply without bringing in tokio at all. = Un Blocking TCP Stream permette a un piccolo tool CLI di aprire una connessione, scrivere una richiesta e leggere la risposta senza portare dentro tokio."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "Socket Address",
+      "set": {
+        "example": "Parse a Socket Address with \"host:port\".parse::<SocketAddr>() so DNS-free configuration files can describe bind targets compactly. = Fai parse di un Socket Address con \"host:port\".parse::<SocketAddr>() cosi' file di configurazione senza DNS possono descrivere i bind target in modo compatto."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "Hyper",
+      "set": {
+        "italian": "Hyper",
+        "example": "When you outgrow reqwest and need full control over connection pooling or HTTP/2, hyper exposes the low-level pieces. = Quando superi reqwest e ti serve pieno controllo sul pooling di connessioni o HTTP/2, hyper espone i pezzi di basso livello."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "Reqwest",
+      "set": {
+        "italian": "Reqwest",
+        "example": "For a quick CLI that scrapes JSON from an API, reqwest gives you a builder, retries and TLS without any boilerplate. = Per un veloce CLI che recupera JSON da un'API, reqwest ti da' un builder, i retry e TLS senza alcun boilerplate."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "Axum",
+      "set": {
+        "italian": "Axum",
+        "example": "When building a new REST service on tokio, axum lets you express routes as plain async functions with extractor arguments. = Quando costruisci un nuovo servizio REST su tokio, axum ti permette di esprimere le route come semplici funzioni async con argomenti extractor."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_2",
+      "english": "Warp",
+      "set": {
+        "italian": "Warp",
+        "example": "If you prefer a composable, filter-style API, warp lets you assemble routes as small filters chained together with combinators. = Se preferisci un'API componibile in stile filtri, warp ti permette di assemblare le route come piccoli filtri concatenati con combinatori."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Serde",
+      "set": {
+        "italian": "Serde",
+        "example": "Nearly every Rust service that touches JSON or TOML reaches for serde derives so config types are parsed and validated with zero boilerplate. = Quasi ogni servizio Rust che tocca JSON o TOML ricorre alle derive di serde cosi' i tipi di config sono parsati e validati senza boilerplate."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Serde JSON",
+      "set": {
+        "italian": "Serde JSON",
+        "example": "Pair serde_json with axum extractors so HTTP request bodies are deserialised straight into typed structs in handler arguments. = Accoppia serde_json con gli extractor di axum cosi' i body delle richieste HTTP sono deserializzati direttamente in struct tipate negli argomenti dell'handler."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Serde YAML",
+      "set": {
+        "italian": "Serde YAML",
+        "example": "Loading a Kubernetes manifest from disk becomes trivial when serde_yaml maps the YAML tree onto strongly typed configuration structs. = Caricare un manifest Kubernetes da disco diventa banale quando serde_yaml mappa l'albero YAML su struct di configurazione tipate."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Toml",
+      "set": {
+        "italian": "Toml",
+        "example": "Reading Cargo.toml in a build script is straightforward because toml deserialises the workspace metadata into typed structs in a few lines. = Leggere Cargo.toml in uno script di build e' immediato perche' toml deserializza i metadati del workspace in struct tipate in poche righe."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Bincode",
+      "set": {
+        "italian": "Bincode",
+        "example": "For inter-process communication where you control both ends, bincode produces compact binary frames much faster than JSON. = Per la comunicazione tra processi dove controlli entrambi i lati, bincode produce frame binari compatti molto piu' velocemente di JSON."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Postcard",
+      "set": {
+        "italian": "Postcard",
+        "example": "On a microcontroller without heap allocation, postcard serialises serde-derived types into a fixed-size buffer for transmission. = Su un microcontroller senza allocazione heap, postcard serializza tipi derivati da serde in un buffer di dimensione fissa per la trasmissione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Skip Field",
+      "set": {
+        "example": "Annotate the password column with #[serde(skip)] so the cached User struct never accidentally leaks credentials into a JSON response. = Annota la colonna password con #[serde(skip)] cosi' la struct User in cache non perde mai accidentalmente le credenziali in una risposta JSON."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_3",
+      "english": "Rename Field",
+      "set": {
+        "example": "Use #[serde(rename)] to map a Rust snake_case field onto the camelCase key that an external JavaScript API expects. = Usa #[serde(rename)] per mappare un campo Rust in snake_case sulla chiave camelCase che si aspetta un'API JavaScript esterna."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Tokio Net",
+      "set": {
+        "example": "Reach for tokio::net when a single async server must hold tens of thousands of concurrent TCP connections without spawning a thread per peer. = Ricorri a tokio::net quando un singolo server async deve tenere decine di migliaia di connessioni TCP concorrenti senza creare un thread per peer."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Async Read Ext",
+      "set": {
+        "example": "Bring AsyncReadExt into scope to call read_to_end on an async socket and await the whole payload without blocking other tasks. = Porta AsyncReadExt in scope per chiamare read_to_end su un socket async e attendere l'intero payload senza bloccare altri task."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Async Write Ext",
+      "set": {
+        "example": "Use AsyncWriteExt::write_all to push an outbound HTTP frame onto a tokio TcpStream and yield while the kernel drains the send buffer. = Usa AsyncWriteExt::write_all per spingere un frame HTTP in uscita su un TcpStream tokio e cedere mentre il kernel svuota il buffer di send."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Async Buf Read",
+      "set": {
+        "example": "Reading line-delimited protocols from a network socket is much simpler once AsyncBufRead lets you await lines without manual framing. = Leggere protocolli line-delimited da un socket di rete e' molto piu' semplice quando AsyncBufRead ti permette di attendere righe senza framing manuale."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Tokio Spawn",
+      "set": {
+        "example": "Hand long-running work to tokio::spawn so the accept loop stays responsive and each connection is driven by its own scheduled task. = Affida il lavoro a lunga durata a tokio::spawn cosi' il loop di accept rimane reattivo e ogni connessione e' guidata dal proprio task schedulato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Async Server",
+      "set": {
+        "example": "By multiplexing connections on a thread pool, an Async Server can sustain tens of thousands of clients on hardware that would choke a blocking design. = Multiplexando le connessioni su un thread pool, un Async Server puo' sostenere decine di migliaia di client su hardware che soffocherebbe un design bloccante."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Async Client",
+      "set": {
+        "example": "Firing concurrent requests from an Async Client lets a crawler hit dozens of endpoints in flight without paying for one OS thread each. = Lanciare richieste concorrenti da un Async Client permette a un crawler di colpire decine di endpoint in volo senza pagare un thread OS ciascuno."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "rust_io_4",
+      "english": "Mpsc",
+      "set": {
+        "english": "Tokio Mpsc",
+        "italian": "Canale async tokio multi-producer (tokio::sync::mpsc)",
+        "example": "Use the Tokio Mpsc channel to fan multiple async tasks into a single consumer that drains messages with backpressure built in. = Usa il canale Tokio Mpsc per far convergere piu' task async in un singolo consumer che drena i messaggi con backpressure integrata."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Tokio",
+      "set": {
+        "english": "Tokio Runtime",
+        "italian": "Runtime async Tokio (Tokio)",
+        "example": "Most modern Rust services pick the Tokio Runtime because the broader async ecosystem (axum, hyper, tonic) is built on top of its scheduler. = La maggior parte dei servizi Rust moderni sceglie il Tokio Runtime perche' il piu' ampio ecosistema async (axum, hyper, tonic) e' costruito sopra il suo scheduler."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Async Std",
+      "set": {
+        "italian": "Async Std",
+        "example": "Teams who want APIs that mirror std but are awaited reach for async-std, trading the broader tokio ecosystem for stdlib-shaped ergonomics. = I team che vogliono API che rispecchiano std ma awaitate ricorrono ad async-std, scambiando il piu' ampio ecosistema tokio per ergonomia in forma di stdlib."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Hyper",
+      "set": {
+        "italian": "Hyper",
+        "example": "Service meshes and load balancers written in Rust pick hyper because its low-level handles let them tune connection pools and HTTP/2 framing. = Service mesh e load balancer scritti in Rust scelgono hyper perche' le sue handle di basso livello permettono di tarare i pool di connessione e il framing HTTP/2."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Tonic",
+      "set": {
+        "italian": "Tonic",
+        "example": "For polyglot microservices that talk over gRPC, tonic generates strongly typed Rust clients and servers straight from a .proto contract. = Per microservizi poliglotti che comunicano via gRPC, tonic genera client e server Rust fortemente tipati direttamente da un contratto .proto."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Tower",
+      "set": {
+        "italian": "Tower",
+        "example": "Middleware like retries, timeouts and load balancing are written once against tower::Service and then reused across axum, tonic and hyper. = Middleware come retry, timeout e load balancing sono scritti una volta contro tower::Service e poi riutilizzati su axum, tonic e hyper."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Axum",
+      "set": {
+        "italian": "Axum",
+        "example": "When designing a fresh JSON API, axum lets you wire handlers, extractors and tower middleware into a single typed application in a few dozen lines. = Quando progetti una nuova API JSON, axum ti permette di collegare handler, extractor e middleware tower in una singola applicazione tipata in poche decine di righe."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Reqwest",
+      "set": {
+        "italian": "Reqwest",
+        "example": "Integration tests that need to hit a real upstream API often shell out to reqwest, which handles TLS, redirects and JSON in one call. = I test di integrazione che devono colpire una vera API upstream spesso ricorrono a reqwest, che gestisce TLS, redirect e JSON in una sola chiamata."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Tungstenite",
+      "set": {
+        "italian": "Tungstenite",
+        "example": "Chat servers that must speak the WebSocket protocol pull in tungstenite to handle the handshake, framing and ping-pong machinery for them. = I server di chat che devono parlare il protocollo WebSocket tirano dentro tungstenite per gestire l'handshake, il framing e la macchina di ping-pong al posto loro."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_1",
+      "english": "Tonic Build",
+      "set": {
+        "italian": "Tonic Build",
+        "example": "Plug tonic-build into build.rs so each cargo build regenerates Rust types from updated .proto files without checking generated code into git. = Inserisci tonic-build in build.rs cosi' ogni cargo build rigenera i tipi Rust dai file .proto aggiornati senza committare codice generato in git."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_2",
+      "english": "Serde",
+      "set": {
+        "english": "Serde Framework",
+        "italian": "Framework Serde (serde)",
+        "example": "The Serde Framework powers nearly every config loader and HTTP body parser in Rust by deriving Serialize and Deserialize on user types. = Il Serde Framework alimenta quasi ogni config loader e parser di body HTTP in Rust derivando Serialize e Deserialize sui tipi utente."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_2",
+      "english": "Diesel",
+      "set": {
+        "italian": "Diesel",
+        "example": "Teams that prefer compile-time-checked SQL and a blocking runtime adopt diesel so query mistakes show up as type errors instead of runtime panics. = I team che preferiscono SQL controllato a compile-time e un runtime bloccante adottano diesel cosi' gli errori di query appaiono come type error invece che panic a runtime."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_2",
+      "english": "SQLx",
+      "set": {
+        "italian": "SQLx",
+        "example": "An async service that talks to PostgreSQL often picks sqlx because its query! macro validates SQL against a live database during build. = Un servizio async che parla con PostgreSQL spesso sceglie sqlx perche' il suo macro query! valida l'SQL contro un database vivo durante la build."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_2",
+      "english": "Sea ORM",
+      "set": {
+        "italian": "Sea ORM",
+        "example": "When you want an active-record-style API on top of sqlx, sea-orm generates entities and relationships from the existing database schema. = Quando vuoi un'API in stile active-record sopra sqlx, sea-orm genera entita' e relazioni dallo schema database esistente."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_2",
+      "english": "Polars",
+      "set": {
+        "italian": "Polars",
+        "example": "Data scientists migrating from pandas reach for polars when they need lazy execution and multi-threaded group-bys on millions of rows. = I data scientist che migrano da pandas ricorrono a polars quando serve esecuzione lazy e group-by multi-thread su milioni di righe."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_2",
+      "english": "Arrow",
+      "set": {
+        "italian": "Arrow",
+        "example": "Cross-language analytics pipelines exchange columnar batches in the Apache Arrow format so Rust and Python can share data with zero copies. = Pipeline di analytics cross-lingua scambiano batch colonnari nel formato Apache Arrow cosi' Rust e Python possono condividere dati con zero copie."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_2",
+      "english": "Ndarray",
+      "set": {
+        "italian": "Ndarray",
+        "example": "Numerical code that needs NumPy-like N-dimensional arrays without leaving Rust adopts ndarray for its broadcasting and slicing operators. = Codice numerico che ha bisogno di array N-dimensionali in stile NumPy senza lasciare Rust adotta ndarray per i suoi operatori di broadcasting e slicing."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_2",
+      "english": "Csv",
+      "set": {
+        "italian": "Csv",
+        "example": "Importing legacy spreadsheet exports into a Rust ETL job becomes a one-liner once csv deserialises each row straight into a typed struct. = Importare vecchie esportazioni di fogli di calcolo in un job ETL Rust diventa una riga sola quando csv deserializza ogni riga direttamente in una struct tipata."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_2",
+      "english": "Image",
+      "set": {
+        "italian": "Image",
+        "example": "A thumbnail microservice can lean on image to decode PNG, JPEG and WebP uploads and re-encode them at a target resolution in a few lines. = Un microservizio di thumbnail puo' appoggiarsi su image per decodificare upload PNG, JPEG e WebP e ricodificarli a una risoluzione target in poche righe."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_2",
+      "english": "Plotters",
+      "set": {
+        "italian": "Plotters",
+        "example": "Embed plotters into a benchmark suite to render performance graphs as SVG artifacts that CI can publish alongside the test report. = Integra plotters in una suite di benchmark per renderizzare grafici di performance come artifact SVG che CI puo' pubblicare insieme al report dei test."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_3",
+      "english": "Clap",
+      "set": {
+        "italian": "Clap",
+        "example": "Every serious Rust CLI tool reaches for clap so flags, subcommands and help text are derived from a strongly typed struct definition. = Ogni serio tool CLI Rust ricorre a clap cosi' flag, sottocomandi e testo di help sono derivati da una definizione di struct tipata."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_3",
+      "english": "Structopt",
+      "set": {
+        "italian": "Structopt",
+        "example": "Legacy projects pinned to old toolchains still ship structopt arguments, but new code should migrate to clap derive which absorbed its API. = Vecchi progetti bloccati su toolchain datate ancora spediscono argomenti structopt, ma il nuovo codice dovrebbe migrare a clap derive che ne ha assorbito l'API."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_3",
+      "english": "Indicatif",
+      "set": {
+        "italian": "Indicatif",
+        "example": "A long-running cargo subcommand drops in indicatif so users see a per-task progress bar instead of staring at a frozen terminal. = Un sottocomando cargo a lunga durata aggiunge indicatif cosi' gli utenti vedono una progress bar per task invece di fissare un terminale congelato."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_3",
+      "english": "Crossterm",
+      "set": {
+        "italian": "Crossterm",
+        "example": "Cross-platform TUI tools pick crossterm to handle key events and cursor movement on Windows, macOS and Linux from a single code path. = I tool TUI cross-platform scelgono crossterm per gestire eventi tastiera e movimento del cursore su Windows, macOS e Linux da un singolo code path."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_3",
+      "english": "Ratatui",
+      "set": {
+        "italian": "Ratatui",
+        "example": "Building a terminal dashboard for a Rust daemon becomes pleasant once ratatui supplies widgets like tables, sparklines and gauges. = Costruire una dashboard da terminale per un demone Rust diventa piacevole quando ratatui fornisce widget come tabelle, sparkline e gauge."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_3",
+      "english": "Anyhow",
+      "set": {
+        "english": "Anyhow Crate",
+        "italian": "Crate anyhow (anyhow)",
+        "example": "Application binaries pull in the Anyhow Crate so most fallible call sites can use ? and attach context messages without designing a custom error enum. = I binari di applicazione tirano dentro la Crate Anyhow cosi' la maggior parte dei call site fallibili puo' usare ? e attaccare messaggi di contesto senza progettare un enum di errore custom."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_3",
+      "english": "Thiserror",
+      "set": {
+        "english": "Thiserror Crate",
+        "italian": "Crate thiserror (thiserror)",
+        "example": "Library crates favour the Thiserror Crate so callers see a precise error enum with variants instead of an opaque anyhow::Error. = I crate libreria preferiscono la Crate Thiserror cosi' i chiamanti vedono un enum di errore preciso con varianti invece di un opaco anyhow::Error."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_3",
+      "english": "Tracing",
+      "set": {
+        "italian": "Tracing",
+        "example": "Async services adopt tracing because spans correlate log lines from many parallel tasks into a single coherent request timeline. = I servizi async adottano tracing perche' gli span correlano linee di log da molti task paralleli in una singola timeline di richiesta coerente."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_3",
+      "english": "Env Logger",
+      "set": {
+        "italian": "Env Logger",
+        "example": "Quick scripts and one-off binaries wire up env_logger so users can flip verbosity through RUST_LOG without recompiling the program. = Script veloci e binari one-off collegano env_logger cosi' gli utenti possono cambiare la verbosita' tramite RUST_LOG senza ricompilare il programma."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_3",
+      "english": "Once Cell",
+      "set": {
+        "italian": "Once Cell",
+        "example": "Cache an expensive regex inside once_cell::sync::Lazy so it is compiled exactly once on the first call and reused by every later handler. = Cache una regex costosa dentro once_cell::sync::Lazy cosi' viene compilata esattamente una volta alla prima chiamata e riusata da ogni handler successivo."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_4",
+      "english": "Rayon",
+      "set": {
+        "italian": "Rayon",
+        "example": "Convert a hot iter() chain into par_iter() with rayon and a CPU-bound pipeline suddenly fans out across every available core. = Converti una catena hot iter() in par_iter() con rayon e una pipeline CPU-bound improvvisamente si distribuisce su ogni core disponibile."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_4",
+      "english": "Crossbeam",
+      "set": {
+        "italian": "Crossbeam",
+        "example": "Concurrent data structures like lock-free queues come from crossbeam when std primitives are too coarse for the throughput you need. = Strutture dati concorrenti come code lock-free vengono da crossbeam quando le primitive std sono troppo grossolane per il throughput che ti serve."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_4",
+      "english": "Regex",
+      "set": {
+        "italian": "Regex",
+        "example": "Server-side input validation pulls in regex because its DFA-based engine refuses to compile patterns whose backtracking would blow up. = La validazione di input lato server tira dentro regex perche' il suo motore basato su DFA si rifiuta di compilare pattern il cui backtracking esploderebbe."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_4",
+      "english": "Chrono",
+      "set": {
+        "italian": "Chrono",
+        "example": "Billing code that needs timezone-aware arithmetic and ISO-8601 parsing leans on chrono rather than re-deriving date math by hand. = Codice di fatturazione che ha bisogno di aritmetica con timezone e parsing ISO-8601 si appoggia su chrono invece di rifare i conti sulle date a mano."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_4",
+      "english": "Uuid",
+      "set": {
+        "italian": "Uuid",
+        "example": "Generate stable, collision-free identifiers for new database rows by calling uuid::Uuid::new_v4 instead of relying on auto-increment columns. = Genera identificatori stabili e senza collisioni per nuove righe di database chiamando uuid::Uuid::new_v4 invece di affidarti a colonne auto-incrementate."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_4",
+      "english": "Rand",
+      "set": {
+        "italian": "Rand",
+        "example": "For deterministic simulations and tests, rand lets you seed an RNG explicitly so the same run produces the same random sequence each time. = Per simulazioni e test deterministici, rand ti permette di seedare un RNG esplicitamente cosi' la stessa esecuzione produce la stessa sequenza casuale ogni volta."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_4",
+      "english": "Bevy",
+      "set": {
+        "italian": "Bevy",
+        "example": "Hobbyists prototyping a 2D game in Rust often reach for bevy because its ECS scheduler parallelises systems on multiple cores out of the box. = Gli hobbisti che prototipano un gioco 2D in Rust spesso ricorrono a bevy perche' il suo scheduler ECS parallelizza i sistemi su piu' core out of the box."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_4",
+      "english": "Egui",
+      "set": {
+        "italian": "Egui",
+        "example": "Embedding a debug overlay in a game or graphics tool becomes trivial when egui draws the whole UI from a stateless function each frame. = Integrare un overlay di debug in un gioco o tool grafico diventa banale quando egui disegna l'intera UI da una funzione senza stato ogni frame."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "rust_ecosystem_4",
+      "english": "Ring",
+      "set": {
+        "italian": "Ring",
+        "example": "TLS implementations such as rustls depend on ring for audited primitives like AES-GCM and ECDSA that have been hardened against side channels. = Implementazioni TLS come rustls dipendono da ring per primitive auditate come AES-GCM ed ECDSA che sono state irrobustite contro i side channel."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_13",
+      "english": "Idiomatic Code",
+      "set": {
+        "example": "Reviewers prize Idiomatic Code that prefers iterator chains over manual indexing, because the resulting expressions describe intent more than mechanics. = I reviewer apprezzano il Codice Idiomatico che preferisce catene di iterator all'indicizzazione manuale, perche' le espressioni risultanti descrivono l'intento piu' della meccanica."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_13",
+      "english": "Rustacean",
+      "set": {
+        "example": "Long-time Rustacean contributors recognise idiomatic patterns at a glance, while newcomers benefit from clippy nudging them in the same direction. = I contributori Rustacean di lunga data riconoscono pattern idiomatici a colpo d'occhio, mentre i nuovi arrivati beneficiano di clippy che li spinge nella stessa direzione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_13",
+      "english": "Clippy Lints",
+      "set": {
+        "example": "Enforce Clippy Lints in CI with -D warnings so a forgotten clone() or shadowed binding cannot quietly slip into the main branch. = Imponi i Clippy Lints in CI con -D warnings cosi' un clone() dimenticato o un binding shadowato non possono entrare silenziosamente sul main."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_13",
+      "english": "Cargo Fmt",
+      "set": {
+        "example": "Run cargo fmt --check inside a pre-commit hook so style debates never reach pull requests and diffs stay focused on logic. = Esegui cargo fmt --check dentro un hook pre-commit cosi' i dibattiti sullo stile non raggiungono mai le pull request e le diff restano concentrate sulla logica."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_13",
+      "english": "Make Invalid States Unrepresentable",
+      "set": {
+        "example": "When you Make Invalid States Unrepresentable through enum variants, the compiler rules out illegal combinations long before a runtime check would catch them. = Quando rendi gli stati invalidi non rappresentabili tramite varianti enum, il compilatore esclude combinazioni illegali molto prima che un controllo a runtime le catturi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "Release Mode",
+      "set": {
+        "example": "Switch to Release Mode whenever you measure throughput so the inliner and optimiser produce numbers that resemble what production will see. = Passa alla Release Mode ogni volta che misuri il throughput cosi' l'inliner e l'optimizer producono numeri che assomigliano a quelli che vedra' la produzione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "Profile",
+      "set": {
+        "example": "Customise the release Profile in Cargo.toml with lto and codegen-units = 1 so production builds favour throughput over compile time. = Personalizza il Profile release in Cargo.toml con lto e codegen-units = 1 cosi' le build di produzione favoriscono il throughput sul tempo di compilazione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "LTO",
+      "set": {
+        "italian": "LTO"
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "Inline",
+      "set": {
+        "example": "Sprinkle #[inline] only on tiny cross-crate helpers where you have measured a real call-overhead cost; trust the optimiser inside a single crate. = Cospargi #[inline] solo su piccoli helper cross-crate dove hai misurato un vero costo di overhead di chiamata; fidati dell'optimizer dentro un singolo crate."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "Const Fn",
+      "set": {
+        "example": "Mark a pure helper as const fn so its result can populate a static lookup table at compile time instead of paying the cost each program start. = Marca un helper puro come const fn cosi' il suo risultato puo' popolare una lookup table statica a tempo di compilazione invece di pagare il costo a ogni avvio del programma."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "SIMD",
+      "set": {
+        "example": "Vectorise an image-processing inner loop with std::simd to process multiple pixels per instruction on x86_64 and aarch64 alike. = Vettorizza un loop interno di image processing con std::simd per processare piu' pixel per istruzione sia su x86_64 sia su aarch64."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_14",
+      "english": "Allocation Free",
+      "set": {
+        "example": "Make a hot request handler Allocation Free by reusing a thread-local buffer so per-request latency does not depend on the global allocator. = Rendi un hot request handler Allocation Free riusando un buffer thread-local cosi' la latenza per richiesta non dipende dall'allocatore globale."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "No Main",
+      "set": {
+        "example": "Enable #![no_main] on a bootloader crate so the linker calls a custom entry symbol that initialises hardware before any Rust code runs. = Abilita #![no_main] su un crate bootloader cosi' il linker chiama un simbolo di entry custom che inizializza l'hardware prima che qualunque codice Rust giri."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "Microcontroller",
+      "set": {
+        "example": "Flashing Rust onto a Cortex-M Microcontroller delivers memory safety on hardware that traditionally only saw bare C with manual buffer management. = Flashare Rust su un Microcontroller Cortex-M consegna memory safety su hardware che tradizionalmente vedeva solo C bare con gestione manuale dei buffer."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "Cortex M",
+      "set": {
+        "example": "The cortex-m crate exposes interrupt control and peripheral access traits so embedded code can talk to the chip without inline assembly. = Il crate cortex-m espone trait di controllo interrupt e accesso ai periferici cosi' il codice embedded puo' parlare col chip senza assembly inline."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "Heapless",
+      "set": {
+        "example": "On embedded targets without an allocator, heapless Vec and String types reserve their capacity at compile time so allocation never panics. = Su target embedded senza allocatore, i tipi heapless Vec e String riservano la loro capacita' a tempo di compilazione cosi' l'allocazione non va mai in panic."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "Panic Handler",
+      "set": {
+        "example": "A no_std firmware must declare its own Panic Handler so that an unwrap on a sensor failure ends in a controlled reset rather than undefined behaviour. = Un firmware no_std deve dichiarare il proprio Panic Handler cosi' che un unwrap su un fallimento sensore finisca in un reset controllato invece che undefined behaviour."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "Bare Metal",
+      "set": {
+        "example": "Running Bare Metal Rust on a RISC-V board means there is no OS underneath: your crate owns the interrupt table and the memory map. = Eseguire Rust Bare Metal su una board RISC-V significa che non c'e' un OS sotto: il tuo crate possiede la tabella degli interrupt e la mappa di memoria."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "Cross Compilation",
+      "set": {
+        "example": "Use cargo build --target thumbv7em-none-eabihf for Cross Compilation so a laptop can produce firmware that boots on an ARM Cortex-M4. = Usa cargo build --target thumbv7em-none-eabihf per la Cross Compilation cosi' un laptop puo' produrre firmware che si avvia su un ARM Cortex-M4."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_15",
+      "english": "No Std",
+      "set": {
+        "english": "Embedded No Std",
+        "italian": "Senza libreria standard in embedded (no_std)",
+        "example": "Pick Embedded No Std on a bootloader or microcontroller crate where the std library cannot run because there is no heap or operating system. = Scegli Embedded No Std su un crate bootloader o microcontroller dove la libreria std non puo' girare perche' non c'e' heap o sistema operativo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_16",
+      "english": "Edition",
+      "set": {
+        "english": "Rust Edition",
+        "italian": "Edizione del linguaggio Rust (edition)",
+        "example": "Bumping the Rust Edition from 2021 to 2024 opts a crate into syntactic and lint changes without breaking dependencies that stayed on the old edition. = Aumentare la Rust Edition da 2021 a 2024 fa entrare un crate in cambiamenti sintattici e di lint senza rompere le dipendenze che sono rimaste sulla vecchia edizione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_16",
+      "english": "Beta Channel",
+      "set": {
+        "example": "Run nightly CI on the Beta Channel so you spot the regressions that will hit stable users in six weeks while there is still time to file a bug. = Esegui CI notturna sul Beta Channel cosi' individui le regressioni che colpiranno gli utenti stable in sei settimane mentre c'e' ancora tempo per aprire un bug."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "rust_foundations_16",
+      "english": "Nightly Channel",
+      "set": {
+        "example": "Crates that depend on unstable features pin a Nightly Channel toolchain in rust-toolchain.toml so every contributor builds with the same compiler. = I crate che dipendono da feature instabili fissano una toolchain Nightly Channel in rust-toolchain.toml cosi' ogni contributore builda con lo stesso compilatore."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "rust_macros_1",
+      "english": "Println Macro",
+      "set": {
+        "english": "Println Format Macro",
+        "italian": "Macro di formattazione println! (println)",
+        "example": "Use the Println Format Macro when you need compile-time-checked format strings with positional, named and width arguments. = Usa il Println Format Macro quando ti servono format string controllate a compile-time con argomenti posizionali, nominali e di larghezza."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "String Slice",
+      "set": {
+        "english": "Borrowed String Slice",
+        "italian": "Slice di stringa preso in prestito (&str)",
+        "example": "Accept a Borrowed String Slice as a function parameter so callers can pass either a &String or a string literal without an extra allocation. = Accetta un Borrowed String Slice come parametro di funzione cosi' i chiamanti possono passare o un &String o un literal di stringa senza un'allocazione extra."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "Iterator",
+      "set": {
+        "english": "Std Iterator Trait",
+        "italian": "Trait std::iter::Iterator (Iterator)",
+        "example": "Implement the Std Iterator Trait on a custom collection so chained adapters like map and filter automatically work without writing helper methods. = Implementa il trait Std Iterator Trait su una collezione custom cosi' adapter concatenati come map e filter funzionano automaticamente senza scrivere metodi helper."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "Copy",
+      "set": {
+        "english": "Marker Copy Trait",
+        "italian": "Trait marker Copy (Copy)",
+        "example": "Derive the Marker Copy Trait on a small Point struct so assignments and parameter passing duplicate the value implicitly instead of moving ownership. = Derivare il Marker Copy Trait su una piccola struct Point cosi' assegnamenti e passaggio parametri duplicano il valore implicitamente invece di muovere la proprieta'."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_2",
+      "english": "Clone",
+      "set": {
+        "english": "Explicit Clone Trait",
+        "italian": "Trait Clone esplicito (Clone)",
+        "example": "Derive the Explicit Clone Trait when callers may legitimately want an owned deep copy that a Copy implementation would be too cheap to express. = Derivare l'Explicit Clone Trait quando i chiamanti potrebbero legittimamente volere una copia profonda owned che un'implementazione Copy sarebbe troppo economica per esprimere."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "String Conversion",
+      "set": {
+        "english": "Owned String Conversion",
+        "italian": "Conversione a String owned (String::from)",
+        "example": "Apply Owned String Conversion via to_string() when you need to store a literal in a struct field that outlives the source slice. = Applica una Owned String Conversion via to_string() quando devi memorizzare un literal in un campo di struct che sopravvive allo slice sorgente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "rust_ownership_12",
+      "english": "Auto Deref",
+      "set": {
+        "english": "Smart Pointer Auto Deref",
+        "italian": "Auto-deref di smart pointer (Deref coercion)",
+        "example": "Calling .len() on a String works because Smart Pointer Auto Deref coerces &String into &str without an explicit &* by hand. = Chiamare .len() su una String funziona perche' lo Smart Pointer Auto Deref converte &String in &str senza un &* esplicito a mano."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_3",
+      "english": "NLL",
+      "set": {
+        "english": "NLL Borrow Analysis",
+        "italian": "Analisi prestiti non-lessicale (NLL borrow analysis)",
+        "example": "Thanks to NLL Borrow Analysis a borrow now ends at its last real use, so a mutable reborrow is accepted as soon as the previous borrow is unused. = Grazie all'NLL Borrow Analysis un prestito termina ora al suo ultimo uso reale, cosi' un reborrow mutabile viene accettato appena il prestito precedente non serve piu'."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_1",
+      "english": "Static Lifetime",
+      "set": {
+        "english": "Static Lifetime Bound",
+        "italian": "Vincolo di lifetime statico ('static)",
+        "example": "A Static Lifetime Bound on a value means it can be moved to any thread because no reference inside it depends on data that might be freed. = Un Static Lifetime Bound su un valore significa che puo' essere mosso a qualunque thread perche' nessun riferimento dentro dipende da dati che potrebbero essere liberati."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "rust_ownership_8",
+      "english": "Fat Pointer",
+      "set": {
+        "english": "Slice Fat Pointer",
+        "italian": "Fat pointer di slice (&[T])",
+        "example": "A Slice Fat Pointer carries both the data address and the length, which is why functions accepting &[T] never need a separate count argument. = Un Slice Fat Pointer porta sia l'indirizzo dei dati sia la lunghezza, ecco perche' le funzioni che accettano &[T] non hanno mai bisogno di un argomento count separato."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "rust_structs_2",
+      "english": "Builder Pattern",
+      "set": {
+        "english": "Struct Builder Pattern",
+        "italian": "Struct con pattern builder (builder pattern)",
+        "example": "Apply the Struct Builder Pattern to a Config type so callers can set only the fields they care about while the rest fall back to sensible defaults. = Applica lo Struct Builder Pattern a un tipo Config cosi' i chiamanti possono impostare solo i campi che gli interessano mentre il resto ricade su default sensati."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Newtype Pattern",
+      "set": {
+        "english": "Trait Newtype Wrapper",
+        "italian": "Wrapper newtype per implementare trait (newtype wrapper)",
+        "example": "Use a Trait Newtype Wrapper around Vec<u8> to implement Display on bytes without violating the orphan rule on a foreign type. = Usa un Trait Newtype Wrapper attorno a Vec<u8> per implementare Display sui byte senza violare la orphan rule su un tipo esterno."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "rust_unsafe_2",
+      "english": "Repr C",
+      "set": {
+        "english": "FFI Repr C",
+        "italian": "Layout FFI compatibile con C (#[repr(C)])",
+        "example": "Apply FFI Repr C to any struct passed across the C boundary so the field order and padding match what the foreign code expects. = Applica FFI Repr C a qualunque struct passata oltre il confine C cosi' l'ordine dei campi e il padding combaciano con cio' che si aspetta il codice esterno."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "rust_testing_1",
+      "english": "Assert Eq",
+      "set": {
+        "english": "Test Assert Eq",
+        "italian": "Asserzione di uguaglianza in test (assert_eq!)",
+        "example": "Use Test Assert Eq instead of panic!(\"mismatch\") so failure messages automatically include both the actual and expected values. = Usa Test Assert Eq invece di panic!(\"mismatch\") cosi' i messaggi di fallimento includono automaticamente sia il valore reale sia quello atteso."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_3",
+      "english": "Trait Object",
+      "set": {
+        "english": "Boxed Trait Object",
+        "italian": "Oggetto trait su heap (Box<dyn Trait>)",
+        "example": "A Boxed Trait Object stores a heap-allocated value plus a vtable pointer, allowing a Vec to hold heterogeneous types behind one Box<dyn Display>. = Un Boxed Trait Object memorizza un valore allocato su heap piu' un puntatore alla vtable, permettendo a un Vec di tenere tipi eterogenei dietro un singolo Box<dyn Display>."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "Dynamic Dispatch",
+      "set": {
+        "english": "Trait Dynamic Dispatch",
+        "italian": "Dispatch dinamico per trait (dyn Trait)",
+        "example": "With Trait Dynamic Dispatch the called method is resolved through a vtable at run time, trading a tiny indirection for the ability to store mixed types. = Con il Trait Dynamic Dispatch il metodo chiamato e' risolto attraverso una vtable a runtime, scambiando una piccola indirezione con la capacita' di memorizzare tipi misti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "rust_traits_3",
+      "english": "Static Dispatch",
+      "set": {
+        "english": "Generic Static Dispatch",
+        "italian": "Dispatch statico tramite generici (static dispatch)",
+        "example": "Thanks to Generic Static Dispatch the compiler monomorphises each call site so the optimiser can inline the trait method without any vtable lookup. = Grazie al Generic Static Dispatch il compilatore monomorfizza ogni call site cosi' l'optimizer puo' inlinare il metodo del trait senza alcun lookup vtable."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_6",
+      "english": "VTable",
+      "set": {
+        "english": "Trait Object VTable",
+        "italian": "VTable di un trait object (vtable)",
+        "example": "A Trait Object VTable is a small static table holding function pointers, the destructor and the type size used to dispatch dyn Trait calls. = Una Trait Object VTable e' una piccola tabella statica che tiene puntatori a funzione, il destructor e la dimensione del tipo usati per dispatchare chiamate dyn Trait."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_5",
+      "english": "Object Safety",
+      "set": {
+        "english": "Trait Object Safety",
+        "italian": "Object safety per trait object (object safety)",
+        "example": "The Trait Object Safety rules forbid methods that return Self or use generic parameters, because such signatures cannot be encoded into a vtable. = Le regole di Trait Object Safety vietano metodi che restituiscono Self o usano parametri generici, perche' tali signature non possono essere codificate in una vtable."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Supertrait",
+      "set": {
+        "english": "Trait Supertrait Bound",
+        "italian": "Trait base richiesto da un altro trait (supertrait)",
+        "example": "Adding Display as a Trait Supertrait Bound means every implementor of your trait must already implement Display, simplifying error messages. = Aggiungere Display come Trait Supertrait Bound significa che ogni implementatore del tuo trait deve gia' implementare Display, semplificando i messaggi d'errore."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Orphan Rule",
+      "set": {
+        "english": "Coherence Orphan Rule",
+        "italian": "Orphan rule della coerenza (orphan rule)",
+        "example": "The Coherence Orphan Rule blocks impl Display for Vec<u8> in a downstream crate so upstream changes can never silently change behaviour for someone else. = La Coherence Orphan Rule blocca impl Display for Vec<u8> in un crate a valle cosi' cambi a monte non possono mai cambiare silenziosamente il comportamento per qualcun altro."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Coherence",
+      "set": {
+        "english": "Trait Coherence",
+        "italian": "Coerenza degli impl di trait (trait coherence)",
+        "example": "Thanks to Trait Coherence, for any concrete type and trait at most one implementation can exist across the whole dependency graph. = Grazie alla Trait Coherence, per ogni tipo concreto e trait al massimo una implementazione puo' esistere in tutto il grafo delle dipendenze."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_8",
+      "english": "Phantom Type",
+      "set": {
+        "english": "Typestate Phantom Type",
+        "italian": "Phantom type per typestate (PhantomData)",
+        "example": "A Typestate Phantom Type marker like PhantomData<Open> lets the compiler reject calling read on a file handle that statically represents a closed state. = Un marker Typestate Phantom Type come PhantomData<Open> permette al compilatore di rifiutare la chiamata di read su un file handle che rappresenta staticamente uno stato chiuso."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "rust_traits_7",
+      "english": "Specialization",
+      "set": {
+        "english": "Trait Specialization",
+        "italian": "Specializzazione di trait impl (specialization)",
+        "example": "Nightly Trait Specialization lets a more specific impl override a blanket one, so a hand-tuned Vec<u8> path can beat the generic Vec<T> code. = La Trait Specialization su nightly permette a un impl piu' specifico di sovrascrivere uno blanket, cosi' un percorso Vec<u8> ottimizzato a mano puo' battere il codice generico Vec<T>."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "rust_lifetimes_3",
+      "english": "Lifetime Variance",
+      "set": {
+        "english": "Subtyping Lifetime Variance",
+        "italian": "Varianza dei lifetime nel subtyping (lifetime variance)",
+        "example": "The Subtyping Lifetime Variance rules decide whether a &'a T can be used where &'b T was expected, ruling out unsound conversions between lifetimes. = Le regole di Subtyping Lifetime Variance decidono se un &'a T puo' essere usato dove era atteso &'b T, escludendo conversioni unsound tra lifetime."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "rust_async_3",
+      "english": "Pin",
+      "set": {
+        "english": "Async Pin",
+        "italian": "Pin per future self-referenziali (Pin<&mut Self>)",
+        "example": "Using Async Pin guarantees that a self-referential future will not be moved in memory, which is precisely what self-borrowing state machines require. = Usare Async Pin garantisce che un future self-referenziale non venga mosso in memoria, che e' esattamente cio' che richiedono le state machine che si auto-prestano."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_1",
+      "english": "Move Closure",
+      "set": {
+        "english": "Thread Move Closure",
+        "italian": "Closure move per thread (move ||)",
+        "example": "Pass a Thread Move Closure to std::thread::spawn so captured variables transfer ownership into the new thread instead of being borrowed from the spawner. = Passa una Thread Move Closure a std::thread::spawn cosi' le variabili catturate trasferiscono la proprieta' nel nuovo thread invece di essere prese in prestito dallo spawner."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "Mutex",
+      "set": {
+        "english": "Std Mutex",
+        "italian": "Mutex bloccante della stdlib (std::sync::Mutex)",
+        "example": "Wrap shared mutable state in a Std Mutex so any of the worker threads spawned by a thread pool can serialise their updates safely. = Avvolgi stato mutabile condiviso in un Std Mutex cosi' qualunque dei worker thread creati da un thread pool puo' serializzare i propri aggiornamenti in sicurezza."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "rust_concurrency_4",
+      "english": "RwLock",
+      "set": {
+        "english": "Std RwLock",
+        "italian": "RwLock della stdlib (std::sync::RwLock)",
+        "example": "Reach for a Std RwLock when reads dominate writes, since several reader threads can hold the lock simultaneously while a writer waits exclusively. = Ricorri a uno Std RwLock quando le letture dominano le scritture, dato che piu' thread lettori possono tenere il lock contemporaneamente mentre uno scrittore aspetta esclusivamente."
+      }
+    }
+  ]
+}

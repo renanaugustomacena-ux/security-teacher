@@ -1,0 +1,1423 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "mon_observability_4",
+      "english": "Time Range",
+      "set": {
+        "example": "Selecting a 24-hour time range on a Grafana dashboard helps spot the daily traffic spike around 9 AM. = Selezionando un intervallo temporale di 24 ore in una dashboard Grafana si individua il picco di traffico giornaliero intorno alle 9 del mattino."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "mon_observability_4",
+      "english": "Time Range",
+      "set": {
+        "rename_to": "Default Time Range",
+        "italian": "Intervallo temporale predefinito",
+        "example": "Setting the default time range to last 1 hour keeps dashboards focused on recent activity without overwhelming new viewers. = Impostare l'intervallo temporale predefinito alle ultime 1 ora mantiene le dashboard focalizzate sull'attivita' recente senza sovraccaricare i nuovi utenti."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "CPU Usage",
+      "set": {
+        "example": "A sustained spike above 90% in this metric often signals a runaway loop or insufficient capacity for the workload. = Un picco prolungato sopra il 90% in questa metrica spesso segnala un loop fuori controllo o capacita' insufficiente per il carico di lavoro."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "Memory Usage",
+      "set": {
+        "example": "Watching this metric helps you catch leaks early, before the OOM killer terminates the process at 2 AM. = Monitorare questa metrica aiuta a individuare le perdite per tempo, prima che l'OOM killer termini il processo alle 2 di notte."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "OOM Killer",
+      "set": {
+        "example": "When Linux runs out of memory, the OOM killer picks the highest-scoring process and terminates it to keep the system alive. = Quando Linux esaurisce la memoria, l'OOM killer seleziona il processo con il punteggio piu' alto e lo termina per mantenere il sistema attivo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_1",
+      "english": "CPU Throttling",
+      "set": {
+        "example": "Kubernetes enforces this on containers exceeding their CPU limit, causing latency spikes that are easy to miss without container metrics. = Kubernetes lo applica sui container che superano il loro limite di CPU, causando picchi di latenza facili da non notare senza metriche dei container."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_2",
+      "english": "Read Latency",
+      "set": {
+        "example": "A p99 above 50ms on this metric usually points to slow disks, hot keys, or a missing database index. = Un p99 sopra i 50ms su questa metrica solitamente indica dischi lenti, chiavi calde o un indice di database mancante."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_2",
+      "english": "Write Latency",
+      "set": {
+        "example": "Spikes in this metric during fsync calls often reveal a saturated disk or a noisy neighbor on shared storage. = Picchi in questa metrica durante le chiamate fsync spesso rivelano un disco saturo o un vicino rumoroso su storage condiviso."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_2",
+      "english": "Disk Free",
+      "set": {
+        "example": "Alerting when disk free drops below 15% gives ops enough lead time to clean logs before the database refuses writes. = Allertare quando lo spazio libero scende sotto il 15% da' agli operatori tempo sufficiente per pulire i log prima che il database rifiuti le scritture."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_3",
+      "english": "Latency",
+      "set": {
+        "rename_to": "End-to-End Latency",
+        "italian": "Latenza end-to-end",
+        "example": "End-to-end latency measures the full request path from browser to database and back, exposing slow hops invisible to component-level metrics. = La latenza end-to-end misura l'intero percorso della richiesta dal browser al database e ritorno, esponendo salti lenti invisibili alle metriche a livello di componente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_3",
+      "english": "Packet Loss",
+      "set": {
+        "example": "Even 1% of this on a TCP link can cripple throughput because retransmissions and congestion control cut the window aggressively. = Anche l'1% di questo su un link TCP puo' paralizzare il throughput perche' ritrasmissioni e controllo della congestione riducono la finestra in modo aggressivo."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_3",
+      "english": "Errors per Second",
+      "set": {
+        "example": "Plotting this metric next to request rate makes spikes obvious and helps separate code bugs from traffic surges. = Tracciare questa metrica accanto al tasso di richieste rende evidenti i picchi e aiuta a separare bug di codice da impennate di traffico."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_4",
+      "english": "Request Rate",
+      "set": {
+        "example": "Tracking this metric per endpoint helps capacity planning and reveals when a single client starts hammering the API. = Tracciare questa metrica per endpoint aiuta nella pianificazione della capacita' e rivela quando un singolo client inizia a martellare l'API."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_4",
+      "english": "Error Rate",
+      "set": {
+        "example": "An SLO often caps this metric at 0.1%, so anything sustained above that immediately burns the error budget. = Uno SLO spesso limita questa metrica allo 0.1%, quindi qualsiasi valore prolungato sopra brucia immediatamente l'error budget."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_4",
+      "english": "Response Time",
+      "set": {
+        "example": "Page response time above 2 seconds typically pushes users to abandon the workflow, so this metric drives both UX and revenue. = Un tempo di risposta della pagina sopra i 2 secondi spinge tipicamente gli utenti ad abbandonare il flusso, quindi questa metrica influenza sia UX sia ricavi."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_4",
+      "english": "Queue Length",
+      "set": {
+        "example": "A growing value in this metric is a leading indicator: consumers are falling behind producers and back-pressure will hit soon. = Un valore crescente in questa metrica e' un indicatore anticipatore: i consumer sono in ritardo sui producer e la back-pressure colpira' presto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_4",
+      "english": "Saturation",
+      "set": {
+        "rename_to": "Resource Saturation",
+        "italian": "Saturazione delle risorse",
+        "example": "Resource saturation tracks how full a queue or pool is; above 80% you typically see latency curves bend sharply upward. = La saturazione delle risorse misura quanto e' piena una coda o un pool; sopra l'80% le curve di latenza tipicamente si piegano bruscamente verso l'alto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "mon_metrics_4",
+      "english": "Active Users",
+      "set": {
+        "example": "Plotting this metric alongside CPU usage helps prove that a 3 PM slowdown coincides with daily user peak load. = Tracciare questa metrica insieme all'uso di CPU aiuta a dimostrare che un rallentamento alle 15 coincide con il picco giornaliero di utenti."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_1",
+      "english": "Severity",
+      "set": {
+        "rename_to": "Log Severity",
+        "italian": "Severita' del log",
+        "example": "Log severity ranges from DEBUG to FATAL and lets you filter noisy environments to just the lines worth a 3 AM page. = La severita' del log varia da DEBUG a FATAL e permette di filtrare ambienti rumorosi mostrando solo le righe che meritano una chiamata alle 3 di notte."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_2",
+      "english": "Context",
+      "set": {
+        "example": "Attaching context like request_id and user_id to every log line lets you reconstruct a full user journey across services. = Allegare contesto come request_id e user_id a ogni riga di log permette di ricostruire l'intero percorso di un utente attraverso i servizi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_2",
+      "english": "Plain Text Log",
+      "set": {
+        "example": "Old syslog-style output is hard to query; teams often migrate from plain text to JSON to unlock structured log search. = L'output vecchio stile syslog e' difficile da interrogare; i team spesso migrano dal testo semplice al JSON per sbloccare la ricerca strutturata sui log."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_3",
+      "english": "Facility",
+      "set": {
+        "example": "In syslog, the facility code (like auth, cron, mail) lets the daemon route messages to different files automatically. = In syslog, il codice di facility (come auth, cron, mail) permette al daemon di instradare i messaggi automaticamente verso file diversi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "mon_logs_3",
+      "english": "Log File",
+      "set": {
+        "example": "A typical log file under /var/log can grow to gigabytes per day, so rotation and compression are essential to avoid filling disks. = Un tipico file di log sotto /var/log puo' crescere fino a gigabyte al giorno, quindi rotazione e compressione sono essenziali per evitare di riempire i dischi."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_1",
+      "english": "Elasticsearch",
+      "set": {
+        "italian": "Elasticsearch",
+        "note": "Motore di ricerca e analisi distribuito basato su Lucene; cuore dello stack ELK per indicizzare e interrogare grandi volumi di log."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_1",
+      "english": "Logstash",
+      "set": {
+        "italian": "Logstash",
+        "note": "Pipeline di ingestione e trasformazione dati dello stack Elastic; legge da input, applica filtri e scrive verso output come Elasticsearch."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_1",
+      "english": "Kibana",
+      "set": {
+        "italian": "Kibana",
+        "note": "Interfaccia web di visualizzazione e analisi per dati Elasticsearch: dashboard, ricerca interattiva e gestione degli indici."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_1",
+      "english": "KQL",
+      "set": {
+        "italian": "KQL",
+        "note": "Kibana Query Language: sintassi compatta per filtrare documenti in Kibana usando coppie campo:valore e operatori booleani."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_1",
+      "english": "KQL",
+      "set": {
+        "rename_to": "Kibana Query Language",
+        "italian": "Kibana Query Language",
+        "example": "Kibana Query Language lets analysts write status:500 AND service:checkout to pinpoint failing checkout requests in seconds. = Il Kibana Query Language permette agli analisti di scrivere status:500 AND service:checkout per individuare in pochi secondi le richieste di checkout fallite."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_2",
+      "english": "Loki",
+      "set": {
+        "italian": "Loki",
+        "note": "Sistema di aggregazione log di Grafana Labs: indicizza solo le label (non il contenuto), riducendo costi rispetto a Elasticsearch."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_3",
+      "english": "Fluentd",
+      "set": {
+        "italian": "Fluentd",
+        "note": "Raccoglitore log unificato CNCF scritto in Ruby/C; usa plugin per input, filtri e output verso decine di backend."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_3",
+      "english": "Fluent Bit",
+      "set": {
+        "italian": "Fluent Bit",
+        "note": "Versione leggera di Fluentd scritta in C, pensata per container e edge: bassa memoria e alte prestazioni."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_3",
+      "english": "Tag",
+      "set": {
+        "example": "In Fluentd, a tag like nginx.access routes the event through matching filter and output sections in the config. = In Fluentd, un tag come nginx.access instrada l'evento attraverso le sezioni di filter e output corrispondenti nella configurazione."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_3",
+      "english": "Tag",
+      "set": {
+        "rename_to": "Fluentd Tag",
+        "italian": "Tag Fluentd",
+        "example": "A Fluentd tag like app.web.access drives match blocks: source plugins assign it and output plugins use it to filter events. = Un tag Fluentd come app.web.access guida i blocchi match: i plugin sorgente lo assegnano e i plugin di output lo usano per filtrare gli eventi."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "CloudWatch Logs",
+      "set": {
+        "italian": "CloudWatch Logs",
+        "note": "Servizio AWS per raccogliere, conservare e ricercare log di applicazioni e servizi cloud; integrato con CloudWatch Metrics e Alarms."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "Logs Insights",
+      "set": {
+        "italian": "Logs Insights",
+        "note": "Linguaggio di query interattivo di CloudWatch Logs per aggregare, filtrare e visualizzare log con sintassi simile a pipe."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "Cloud Logging",
+      "set": {
+        "italian": "Cloud Logging",
+        "note": "Servizio gestito di Google Cloud per ingestione, conservazione e ricerca dei log; integrato con Cloud Monitoring e BigQuery."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "Cloud Logging",
+      "set": {
+        "rename_to": "GCP Cloud Logging",
+        "italian": "GCP Cloud Logging",
+        "example": "GCP Cloud Logging can route entries via sinks to BigQuery, Pub/Sub or Cloud Storage, enabling long-term analytics and compliance archives. = GCP Cloud Logging puo' instradare le voci tramite sink verso BigQuery, Pub/Sub o Cloud Storage, abilitando analisi a lungo termine e archivi di compliance."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "Azure Monitor Logs",
+      "set": {
+        "italian": "Azure Monitor Logs",
+        "note": "Componente di Azure Monitor che raccoglie e indicizza log in workspace Log Analytics, interrogabili in KQL."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "Datadog Logs",
+      "set": {
+        "italian": "Datadog Logs",
+        "note": "Modulo di gestione log SaaS di Datadog: ingestione, archiviazione tiered, pipeline di parsing e correlazione con metriche e tracce."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "Splunk",
+      "set": {
+        "italian": "Splunk",
+        "note": "Piattaforma proprietaria per ricerca, monitoraggio e analisi di dati machine-generated; storica nel SIEM e nella log analytics."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "mon_logs_tools_4",
+      "english": "Splunk",
+      "set": {
+        "rename_to": "Splunk SPL",
+        "italian": "Splunk SPL",
+        "example": "Splunk SPL pipes operators together, so index=web status=500 | stats count by host quickly shows error counts per host. = Splunk SPL concatena operatori in pipe, quindi index=web status=500 | stats count by host mostra rapidamente i conteggi di errori per host."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_1",
+      "english": "Annotation",
+      "set": {
+        "rename_to": "Alertmanager Annotation",
+        "italian": "Annotazione Alertmanager",
+        "example": "An Alertmanager annotation like summary: \"high error rate\" provides human-friendly context that ends up directly in the PagerDuty notification. = Un'annotazione Alertmanager come summary: \"high error rate\" fornisce contesto leggibile che finisce direttamente nella notifica PagerDuty."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_1",
+      "english": "Silence",
+      "set": {
+        "example": "Adding a 2-hour silence in Alertmanager before maintenance prevents pagers from firing while engineers intentionally restart services. = Aggiungere un silenziamento di 2 ore in Alertmanager prima della manutenzione evita che i pager si attivino mentre gli ingegneri riavviano intenzionalmente i servizi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_2",
+      "english": "Acknowledge",
+      "set": {
+        "example": "The on-call engineer must acknowledge a PagerDuty alert within 5 minutes, otherwise it escalates to the secondary rotation. = L'ingegnere on-call deve prendere in carico un alert PagerDuty entro 5 minuti, altrimenti viene escalato al secondario."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_2",
+      "english": "Resolve",
+      "set": {
+        "example": "Once metrics return to baseline, the responder marks the incident as resolved so the postmortem timeline can be closed. = Quando le metriche tornano alla baseline, il responsabile contrassegna l'incidente come risolto cosi' che la timeline del postmortem possa essere chiusa."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_2",
+      "english": "Primary",
+      "set": {
+        "example": "The primary on-call carries the pager during business hours and is the first responder for any production alert. = Il primario on-call porta il pager durante l'orario lavorativo ed e' il primo responsabile per qualsiasi alert di produzione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_2",
+      "english": "Handover",
+      "set": {
+        "example": "A weekly on-call handover document lists ongoing incidents, known flaky alerts and any silences still in effect. = Un documento settimanale di passaggio di consegne on-call elenca gli incidenti in corso, gli alert noti instabili e i silenziamenti ancora attivi."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_2",
+      "english": "Override",
+      "set": {
+        "example": "Setting a PagerDuty override for Friday night lets a colleague cover your shift without permanently changing the rotation. = Impostare una sostituzione PagerDuty per il venerdi' sera permette a un collega di coprire il tuo turno senza modificare permanentemente la rotazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_2",
+      "english": "Override",
+      "set": {
+        "rename_to": "Rotation Override",
+        "italian": "Sostituzione della rotazione",
+        "example": "A rotation override in PagerDuty replaces the scheduled on-call for a fixed window without rewriting the entire rotation rules. = Una sostituzione della rotazione in PagerDuty rimpiazza l'on-call programmato per una finestra fissa senza riscrivere le intere regole di rotazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_3",
+      "english": "Push Notification",
+      "set": {
+        "example": "Critical alerts often deliver a push notification to the on-call's phone so the pager triggers even when the app is in background. = Gli alert critici tipicamente inviano una notifica push al telefono dell'on-call cosi' che il pager si attivi anche con l'app in background."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_3",
+      "english": "Mute",
+      "set": {
+        "example": "Engineers mute non-critical channels during deep work and rely only on pager-grade alerts to interrupt them. = Gli ingegneri silenziano i canali non critici durante il lavoro profondo e contano solo su alert di livello pager per interromperli."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "mon_alerting_3",
+      "english": "Quiet Hours",
+      "set": {
+        "example": "Setting quiet hours from 11 PM to 7 AM downgrades non-critical alerts to email, protecting sleep without blocking real pages. = Impostare ore di silenzio dalle 23 alle 7 declassa gli alert non critici a email, proteggendo il sonno senza bloccare le chiamate reali."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_1",
+      "english": "Prometheus",
+      "set": {
+        "italian": "Prometheus",
+        "note": "Sistema di monitoraggio open source basato su time series e modello pull; progetto CNCF, usa PromQL come linguaggio di query."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Quantile",
+      "set": {
+        "example": "The 0.99 quantile (p99) of request latency tells you how slow the worst 1% of requests are, where averages would hide it. = Il quantile 0.99 (p99) della latenza delle richieste indica quanto sono lente le peggiori 1% di richieste, dove le medie lo nasconderebbero."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Naming Convention",
+      "set": {
+        "example": "Prometheus naming conventions like http_requests_total or process_cpu_seconds_total make metrics self-describing and easy to dashboard. = Le convenzioni di naming di Prometheus come http_requests_total o process_cpu_seconds_total rendono le metriche autoesplicative e facili da mostrare in dashboard."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Alerting Rule",
+      "set": {
+        "example": "An alerting rule in Prometheus fires when a PromQL expression stays true for the configured 'for' duration, e.g. 5 minutes. = Una regola di alerting in Prometheus si attiva quando un'espressione PromQL resta vera per la durata 'for' configurata, ad esempio 5 minuti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Group",
+      "set": {
+        "example": "A rule group in Prometheus evaluates its rules sequentially at a shared interval, allowing later rules to reuse recording-rule outputs. = Un gruppo di regole in Prometheus valuta le sue regole sequenzialmente a un intervallo condiviso, permettendo a regole successive di riutilizzare output di recording rule."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Block",
+      "set": {
+        "example": "Prometheus stores TSDB data in immutable 2-hour blocks on disk, which are later merged and compacted for efficient long-range queries. = Prometheus salva i dati TSDB in blocchi immutabili di 2 ore su disco, che vengono poi uniti e compattati per query a lungo raggio efficienti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "WAL",
+      "set": {
+        "italian": "WAL",
+        "note": "Write-Ahead Log: file su disco in cui Prometheus scrive i campioni in arrivo prima di consolidarli nei blocchi TSDB, per resistere ai crash."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "WAL",
+      "set": {
+        "example": "Prometheus appends every incoming sample to the WAL first, so a crash before block flush still recovers the last 2 hours of data. = Prometheus aggiunge prima ogni campione in arrivo al WAL, cosi' che un crash prima del flush del blocco recuperi comunque le ultime 2 ore di dati."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Compaction",
+      "set": {
+        "example": "TSDB compaction merges adjacent 2-hour blocks into larger ones, cutting disk usage and speeding up queries that span weeks. = La compattazione TSDB unisce blocchi adiacenti di 2 ore in blocchi piu' grandi, riducendo l'uso del disco e accelerando query che coprono settimane."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Remote Write",
+      "set": {
+        "example": "Configuring Prometheus remote write to Thanos or Cortex ships samples to long-term storage, going beyond the local 15-day retention. = Configurare il remote write di Prometheus verso Thanos o Cortex invia campioni a storage a lungo termine, superando la retention locale di 15 giorni."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Remote Read",
+      "set": {
+        "example": "Enabling remote read lets PromQL queries fetch historical samples from an external store like Thanos transparently. = Abilitare la lettura remota permette alle query PromQL di recuperare campioni storici da uno store esterno come Thanos in modo trasparente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_4",
+      "english": "Promtool",
+      "set": {
+        "example": "Running promtool check rules alerts.yml in CI validates alert syntax before bad rules can ever reach a production Prometheus. = Eseguire promtool check rules alerts.yml in CI valida la sintassi degli alert prima che regole errate possano raggiungere un Prometheus di produzione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "PromQL",
+      "set": {
+        "italian": "PromQL",
+        "example": "PromQL expressions like rate(http_requests_total[5m]) compute per-second request rate over a 5-minute window for dashboards. = Le espressioni PromQL come rate(http_requests_total[5m]) calcolano il tasso di richieste al secondo su una finestra di 5 minuti per le dashboard."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Selector",
+      "set": {
+        "example": "A PromQL selector like http_requests_total{job=\"api\"} narrows the time series before any function like rate() or sum() is applied. = Un selettore PromQL come http_requests_total{job=\"api\"} restringe le time series prima che venga applicata qualsiasi funzione come rate() o sum()."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Label Matcher",
+      "set": {
+        "example": "A label matcher such as env=\"prod\" filters series in PromQL so dashboards do not accidentally mix staging and production traffic. = Un matcher di label come env=\"prod\" filtra le serie in PromQL cosi' che le dashboard non mescolino accidentalmente traffico di staging e produzione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Equality Match",
+      "set": {
+        "example": "Using an equality match like status=\"500\" in PromQL isolates only the 5xx series so error rate panels stay focused and fast. = Usare un match di uguaglianza come status=\"500\" in PromQL isola solo le serie 5xx cosi' che i pannelli di error rate restino focalizzati e veloci."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Regex Match",
+      "set": {
+        "example": "A regex match like path=~\"/api/v[12]/.*\" in PromQL targets multiple API versions in a single selector without writing each one out. = Un match con regex come path=~\"/api/v[12]/.*\" in PromQL colpisce piu' versioni di API in un solo selettore senza scriverle tutte."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "mon_promql_1",
+      "english": "Negative Match",
+      "set": {
+        "example": "Writing job!=\"canary\" as a negative match in PromQL excludes the experimental canary fleet so SLO dashboards reflect only stable traffic. = Scrivere job!=\"canary\" come match negativo in PromQL esclude la flotta canary sperimentale cosi' che le dashboard SLO riflettano solo traffico stabile."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_1",
+      "english": "Grafana",
+      "set": {
+        "italian": "Grafana",
+        "note": "Piattaforma open source per dashboard e visualizzazione di metriche, log e tracce; supporta decine di datasource (Prometheus, Loki, Elastic)."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_4",
+      "english": "Unit",
+      "set": {
+        "italian": "Unit",
+        "note": "In Grafana, l'unita' assegnata a un pannello (ms, MB, %, requests/sec) determina formattazione e suffissi automatici nei tooltip e nell'asse Y."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_4",
+      "english": "Annotation",
+      "set": {
+        "rename_to": "Grafana Annotation",
+        "italian": "Annotazione Grafana",
+        "example": "A Grafana annotation tied to a Loki query draws release markers on every panel, helping link a latency spike to the right deploy. = Un'annotazione Grafana collegata a una query Loki disegna marcatori di release su ogni pannello, aiutando a collegare un picco di latenza al deploy giusto."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_2",
+      "english": "Jaeger",
+      "set": {
+        "italian": "Jaeger",
+        "note": "Sistema di tracing distribuito open source CNCF (originario di Uber); compatibile con OpenTelemetry, usato per analisi delle latenze inter-servizio."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_3",
+      "english": "Zipkin",
+      "set": {
+        "italian": "Zipkin",
+        "note": "Sistema di tracing distribuito open source nato in Twitter; precursore di OpenTelemetry, ancora supportato come backend storico."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_3",
+      "english": "Tempo",
+      "set": {
+        "italian": "Tempo",
+        "note": "Backend di tracing di Grafana Labs ad alta scala basato su object storage (S3, GCS); economico e integrato nativamente con Grafana."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_3",
+      "english": "Honeycomb",
+      "set": {
+        "italian": "Honeycomb",
+        "note": "Piattaforma SaaS di observability orientata a eventi ad alta cardinalita'; pensata per analisi esplorativa dei comportamenti dei servizi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_3",
+      "english": "Lightstep",
+      "set": {
+        "italian": "Lightstep",
+        "note": "Piattaforma SaaS di observability (ora parte di ServiceNow Cloud Observability); focus su tracing distribuito e analisi delle performance."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_2",
+      "english": "New Relic",
+      "set": {
+        "italian": "New Relic",
+        "note": "Piattaforma SaaS APM e observability full-stack; copre metriche, log, tracce, RUM e infrastruttura con un unico agente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_3",
+      "english": "Datadog",
+      "set": {
+        "italian": "Datadog",
+        "note": "Piattaforma SaaS di observability che unifica metriche, log, tracce, RUM, sicurezza e CI visibility in un unico prodotto."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_3",
+      "english": "RUM",
+      "set": {
+        "italian": "RUM",
+        "note": "Real User Monitoring: raccolta di metriche di performance e UX direttamente dai browser degli utenti reali, non da test sintetici."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_4",
+      "english": "Environment Tag",
+      "set": {
+        "example": "Stamping every metric with an environment tag like env:prod or env:staging lets one dashboard filter cleanly across deployment stages. = Marcare ogni metrica con un tag ambiente come env:prod o env:staging permette a una dashboard di filtrare puliti attraverso gli stage di deploy."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_4",
+      "english": "Version Tag",
+      "set": {
+        "example": "Adding version:1.2.3 to APM traces makes it trivial to compare error rates between releases and roll back the bad one. = Aggiungere version:1.2.3 alle tracce APM rende banale confrontare gli error rate tra release e fare rollback di quella problematica."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_4",
+      "english": "Cost Attribution",
+      "set": {
+        "example": "Cost attribution via team tags shows which squad's spans drive most of the Datadog APM bill, focusing optimization where it pays off. = L'attribuzione dei costi tramite tag di team mostra quale squad genera la maggior parte della bolletta Datadog APM, focalizzando l'ottimizzazione dove rende."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Node Exporter",
+      "set": {
+        "example": "Deploying Node Exporter as a DaemonSet exposes CPU, memory and disk metrics from every Linux node to Prometheus on port 9100. = Distribuire Node Exporter come DaemonSet espone metriche CPU, memoria e disco da ogni nodo Linux verso Prometheus sulla porta 9100."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Node Exporter",
+      "set": {
+        "rename_to": "Node Exporter Collector",
+        "italian": "Collector di Node Exporter",
+        "example": "Disabling the unused 'wifi' collector in Node Exporter trims metric cardinality and keeps the /metrics endpoint fast under load. = Disabilitare il collector 'wifi' inutilizzato in Node Exporter riduce la cardinalita' delle metriche e mantiene veloce l'endpoint /metrics sotto carico."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Collector Module",
+      "set": {
+        "example": "A custom collector module in Node Exporter can scrape SMART data from disks, surfacing failing drives before they cause outages. = Un modulo collector personalizzato in Node Exporter puo' leggere dati SMART dai dischi, evidenziando dischi guasti prima che causino disservizi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "cAdvisor",
+      "set": {
+        "example": "Kubernetes ships cAdvisor inside the kubelet to expose per-container CPU, memory and network metrics that Prometheus scrapes by default. = Kubernetes include cAdvisor dentro il kubelet per esporre metriche CPU, memoria e rete per container che Prometheus raccoglie di default."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "cAdvisor",
+      "set": {
+        "rename_to": "cAdvisor Container Metrics",
+        "italian": "Metriche container di cAdvisor",
+        "example": "Querying cAdvisor container metrics like container_memory_working_set_bytes lets you alert on pods nearing their memory limits before OOM kills hit. = Interrogare le metriche container di cAdvisor come container_memory_working_set_bytes permette di allertare sui pod vicini ai loro limiti di memoria prima che arrivino gli OOM kill."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Process Exporter",
+      "set": {
+        "example": "Process Exporter groups individual PIDs by command pattern so you can monitor CPU and RSS for nginx workers without listing every PID. = Process Exporter raggruppa i singoli PID per pattern di comando cosi' che si possano monitorare CPU e RSS dei worker nginx senza elencare ogni PID."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "systemd Metrics",
+      "set": {
+        "example": "Enabling systemd metrics in Node Exporter exposes per-unit state, letting Prometheus alert when nginx.service unexpectedly enters failed state. = Abilitare le metriche systemd in Node Exporter espone lo stato per unit, permettendo a Prometheus di allertare quando nginx.service entra inaspettatamente in stato failed."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Hardware Sensor",
+      "set": {
+        "example": "Reading hardware sensors via lm_sensors and exposing them to Prometheus flags overheating CPUs hours before thermal throttling shows up. = Leggere i sensori hardware tramite lm_sensors ed esporli a Prometheus segnala CPU surriscaldate ore prima che si manifesti il thermal throttling."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "IPMI",
+      "set": {
+        "italian": "IPMI",
+        "example": "Using ipmi_exporter to scrape IPMI fan and temperature data catches failing fans days before they cause a thermal shutdown of the server. = Usare ipmi_exporter per leggere dati IPMI di ventole e temperature individua ventole guaste giorni prima che causino uno spegnimento termico del server."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "NUMA",
+      "set": {
+        "italian": "NUMA",
+        "example": "Pinning a high-throughput database to a single NUMA node avoids cross-socket memory accesses, often cutting tail latency by double digits. = Vincolare un database ad alto throughput a un singolo nodo NUMA evita accessi memoria cross-socket, spesso riducendo la tail latency di doppie cifre percentuali."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Kernel Metric",
+      "set": {
+        "example": "Watching kernel metrics like context_switches_total spikes helps catch noisy neighbors competing for the same CPU on a shared host. = Osservare metriche kernel come i picchi di context_switches_total aiuta a individuare vicini rumorosi in competizione per la stessa CPU su un host condiviso."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "SNMP",
+      "set": {
+        "italian": "SNMP",
+        "example": "Using snmp_exporter to poll switches via SNMP brings per-interface bandwidth and error counters straight into Prometheus dashboards. = Usare snmp_exporter per interrogare switch via SNMP porta contatori di banda ed errori per interfaccia direttamente nelle dashboard Prometheus."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "MIB",
+      "set": {
+        "italian": "MIB",
+        "example": "Loading a vendor MIB file into snmp_exporter translates raw OIDs into readable metric names like ifInOctets for switch interface counters. = Caricare un file MIB del vendor in snmp_exporter traduce gli OID grezzi in nomi di metrica leggibili come ifInOctets per i contatori di interfaccia degli switch."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "NetFlow",
+      "set": {
+        "italian": "NetFlow",
+        "example": "Collecting NetFlow records from routers reveals top talkers and unusual destinations, often surfacing data exfiltration before alerts fire. = Raccogliere record NetFlow dai router rivela i top talker e destinazioni inusuali, spesso facendo emergere esfiltrazione dati prima che scattino gli alert."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "Telegraf",
+      "set": {
+        "italian": "Telegraf",
+        "note": "Agente di raccolta metriche plugin-based di InfluxData; spedisce dati a InfluxDB, Prometheus, Kafka e decine di altri output."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "ICMP Probe",
+      "set": {
+        "example": "An ICMP probe from blackbox_exporter pings a router every 30 seconds, alerting ops the moment a remote site becomes unreachable. = Una sonda ICMP da blackbox_exporter pinga un router ogni 30 secondi, allertando gli operatori nel momento in cui un sito remoto diventa irraggiungibile."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_2",
+      "english": "DNS Probe",
+      "set": {
+        "example": "Running a DNS probe every minute against api.example.com catches NXDOMAIN or DNSSEC failures before users start filing tickets. = Eseguire una sonda DNS ogni minuto contro api.example.com individua NXDOMAIN o fallimenti DNSSEC prima che gli utenti aprano ticket."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_3",
+      "english": "Container Metric",
+      "set": {
+        "example": "Plotting container CPU throttling alongside request latency exposes pods hitting their CPU limit and explains random p99 spikes. = Tracciare il CPU throttling del container insieme alla latenza delle richieste rivela pod che raggiungono il loro limite di CPU e spiega picchi p99 casuali."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_3",
+      "english": "cgroup",
+      "set": {
+        "example": "Linux cgroups enforce per-container CPU and memory limits, so reading /sys/fs/cgroup files reveals exactly why a pod was throttled. = I cgroup di Linux impongono limiti CPU e memoria per container, quindi leggere i file in /sys/fs/cgroup rivela esattamente perche' un pod e' stato throttled."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_3",
+      "english": "OOM Kill",
+      "set": {
+        "example": "An OOM kill on a JVM pod shows up as exit code 137 in Kubernetes events and usually means the heap exceeded the container limit. = Un OOM kill su un pod JVM appare come exit code 137 negli eventi Kubernetes e di solito significa che l'heap ha superato il limite del container."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_3",
+      "english": "CrashLoopBackOff",
+      "set": {
+        "example": "A pod in CrashLoopBackOff is restarting too fast, so kubectl logs --previous is the first command to see why it died last time. = Un pod in CrashLoopBackOff si sta riavviando troppo in fretta, quindi kubectl logs --previous e' il primo comando per vedere perche' e' morto l'ultima volta."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_3",
+      "english": "Image Pull",
+      "set": {
+        "example": "Slow image pull times on a fresh node bottleneck rollouts, so caching common base images on a registry mirror often pays for itself fast. = Tempi lenti di pull dell'immagine su un nodo appena creato rallentano i rollout, quindi mettere in cache immagini base comuni su un mirror del registry ripaga rapidamente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_4",
+      "english": "Connection Pool",
+      "set": {
+        "example": "A PostgreSQL connection pool capped at 100 keeps the database stable even when 500 app instances each try to open their own connections. = Un pool di connessioni PostgreSQL limitato a 100 mantiene il database stabile anche quando 500 istanze app provano ognuna ad aprire le proprie connessioni."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_4",
+      "english": "Replication Lag",
+      "set": {
+        "example": "Alerting when replication lag exceeds 5 seconds in PostgreSQL catches network or disk issues before read replicas serve very stale data. = Allertare quando il lag di replica supera i 5 secondi in PostgreSQL individua problemi di rete o disco prima che le repliche di lettura servano dati molto vecchi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_4",
+      "english": "Buffer Pool",
+      "set": {
+        "example": "A MySQL buffer pool hit ratio below 95% in production usually means innodb_buffer_pool_size is too small for the working set. = Un buffer pool hit ratio MySQL sotto il 95% in produzione di solito significa che innodb_buffer_pool_size e' troppo piccolo per il working set."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_4",
+      "english": "Lock Wait",
+      "set": {
+        "example": "Long lock wait times in PostgreSQL often point to a single slow transaction blocking many others; pg_stat_activity helps you find the culprit. = Tempi lunghi di attesa di lock in PostgreSQL spesso indicano una singola transazione lenta che ne blocca molte altre; pg_stat_activity aiuta a trovare il colpevole."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_4",
+      "english": "Deadlock",
+      "set": {
+        "example": "PostgreSQL automatically detects a deadlock and aborts the cheapest transaction, but a high frequency suggests bad locking order in your code. = PostgreSQL rileva automaticamente un deadlock e annulla la transazione meno costosa, ma una frequenza alta suggerisce un ordine di lock errato nel tuo codice."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_4",
+      "english": "Index Usage",
+      "set": {
+        "example": "Inspecting pg_stat_user_indexes for low index usage flags unused indexes that waste disk and slow down every INSERT and UPDATE. = Ispezionare pg_stat_user_indexes per basso uso degli indici segnala indici inutilizzati che sprecano disco e rallentano ogni INSERT e UPDATE."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_4",
+      "english": "pgBouncer",
+      "set": {
+        "italian": "pgBouncer",
+        "note": "Connection pooler leggero per PostgreSQL; tipicamente messo davanti al database per gestire migliaia di connessioni client con poche connessioni server."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_1",
+      "english": "CloudWatch",
+      "set": {
+        "italian": "CloudWatch",
+        "note": "Servizio di monitoring nativo AWS: raccoglie metriche e log da servizi AWS e applicazioni, espone alarm e dashboard."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_1",
+      "english": "EMF",
+      "set": {
+        "italian": "EMF",
+        "note": "Embedded Metric Format: convenzione JSON di AWS per emettere metriche custom direttamente nei log CloudWatch senza chiamate PutMetricData."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_1",
+      "english": "Container Insights",
+      "set": {
+        "example": "Container Insights on EKS automatically scrapes per-pod CPU, memory and network metrics into CloudWatch without extra exporter setup. = Container Insights su EKS raccoglie automaticamente metriche CPU, memoria e rete per pod in CloudWatch senza configurazione di exporter aggiuntivi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_1",
+      "english": "Lambda Insights",
+      "set": {
+        "example": "Enabling Lambda Insights surfaces cold start counts, CPU and memory per invocation, exposing functions silently running too close to their limits. = Abilitare Lambda Insights fa emergere conteggi di cold start, CPU e memoria per invocazione, esponendo funzioni che girano silenziosamente troppo vicino ai loro limiti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_1",
+      "english": "Cost Explorer",
+      "set": {
+        "example": "Filtering Cost Explorer by tag environment=prod over the last 30 days exposes which production services drive the bulk of the AWS bill. = Filtrare Cost Explorer per tag environment=prod sugli ultimi 30 giorni espone quali servizi di produzione generano la maggior parte della bolletta AWS."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_1",
+      "english": "Trusted Advisor",
+      "set": {
+        "example": "Trusted Advisor flags idle EC2 instances and over-provisioned EBS volumes, often surfacing easy savings worth thousands per month. = Trusted Advisor segnala istanze EC2 inattive e volumi EBS sovradimensionati, spesso facendo emergere risparmi facili da migliaia al mese."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_2",
+      "english": "Azure Monitor",
+      "set": {
+        "italian": "Azure Monitor",
+        "note": "Servizio di osservabilita' di Azure che raccoglie metriche e log da risorse, applicazioni e infrastruttura; comprende Log Analytics e alert."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_2",
+      "english": "KQL",
+      "set": {
+        "italian": "KQL",
+        "note": "Kusto Query Language: linguaggio di query simile a SQL ma pipeline-oriented, usato in Azure Monitor Logs e Microsoft Sentinel."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_2",
+      "english": "KQL",
+      "set": {
+        "rename_to": "Azure KQL",
+        "italian": "Azure KQL",
+        "example": "Azure KQL queries like AppRequests | where ResultCode == 500 | summarize count() by Name expose the noisiest failing endpoints in seconds. = Le query Azure KQL come AppRequests | where ResultCode == 500 | summarize count() by Name espongono in pochi secondi gli endpoint piu' rumorosi che falliscono."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_2",
+      "english": "Application Insights",
+      "set": {
+        "italian": "Application Insights",
+        "example": "Wiring Application Insights into an ASP.NET app gives end-to-end tracing across HTTP, SQL and dependency calls without code changes. = Collegare Application Insights a un'app ASP.NET fornisce tracing end-to-end attraverso chiamate HTTP, SQL e dipendenze senza modifiche al codice."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_2",
+      "english": "Action Group",
+      "set": {
+        "example": "An Azure Monitor action group bundles email, SMS and webhook receivers so every alert rule reuses the same on-call notification policy. = Un action group di Azure Monitor raggruppa receiver email, SMS e webhook cosi' che ogni regola di alert riutilizzi la stessa policy di notifica on-call."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_2",
+      "english": "Service Health",
+      "set": {
+        "example": "Subscribing to Azure Service Health alerts lets the on-call know within minutes that a regional outage is on Microsoft's side, not the app's. = Iscriversi agli alert Azure Service Health permette all'on-call di sapere in pochi minuti che un disservizio regionale e' lato Microsoft, non dell'app."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_2",
+      "english": "Resource Health",
+      "set": {
+        "example": "Azure Resource Health distinguishes platform-side failures from user-driven misconfigurations, saving hours of fruitless on-call debugging. = Azure Resource Health distingue i fallimenti lato piattaforma da configurazioni errate dell'utente, risparmiando ore di debug on-call infruttuoso."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Cloud Monitoring",
+      "set": {
+        "italian": "Cloud Monitoring",
+        "note": "Servizio gestito di osservabilita' di Google Cloud (ex Stackdriver) per metriche, dashboard, SLO e alert su risorse GCP e on-prem."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Cloud Logging",
+      "set": {
+        "italian": "Cloud Logging",
+        "example": "Cloud Logging captures every GCP audit event by default, making it the first stop when investigating who deleted a Cloud SQL instance. = Cloud Logging cattura di default ogni evento di audit GCP, rendendolo la prima tappa quando si indaga su chi ha eliminato un'istanza Cloud SQL."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Cloud Logging",
+      "set": {
+        "rename_to": "GCP Cloud Logging Service",
+        "italian": "Servizio GCP Cloud Logging",
+        "example": "The GCP Cloud Logging service ingests structured entries from every project and exposes them to Cloud Monitoring, BigQuery and external SIEMs via sinks. = Il servizio GCP Cloud Logging ingerisce voci strutturate da ogni progetto e le espone a Cloud Monitoring, BigQuery e SIEM esterni tramite sink."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Cloud Trace",
+      "set": {
+        "italian": "Cloud Trace",
+        "example": "Cloud Trace auto-instruments App Engine and Cloud Run requests, so a single click shows downstream latencies across every backend hop. = Cloud Trace strumenta automaticamente le richieste App Engine e Cloud Run, cosi' che un singolo click mostri le latenze downstream attraverso ogni hop di backend."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Cloud Profiler",
+      "set": {
+        "italian": "Cloud Profiler",
+        "example": "Enabling Cloud Profiler on a Go service collects CPU and heap samples in production, revealing hot functions invisible to local benchmarks. = Abilitare Cloud Profiler su un servizio Go raccoglie campioni CPU e heap in produzione, rivelando funzioni calde invisibili ai benchmark locali."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Workload Identity",
+      "set": {
+        "example": "Workload Identity binds a Kubernetes service account to a GCP IAM service account, killing the need for long-lived JSON key files. = Workload Identity collega un service account Kubernetes a un service account IAM GCP, eliminando la necessita' di file di chiave JSON a lunga vita."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Log Sink",
+      "set": {
+        "example": "A log sink routing security audit logs to BigQuery enables SQL-based forensics months after the original Cloud Logging retention has expired. = Un log sink che instrada gli audit log di sicurezza verso BigQuery abilita analisi forensiche in SQL mesi dopo la scadenza della retention originale di Cloud Logging."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "MQL",
+      "set": {
+        "italian": "MQL",
+        "note": "Monitoring Query Language: linguaggio di query di Google Cloud Monitoring orientato a pipeline e time series, alternativo ai grafici a click."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "MQL",
+      "set": {
+        "example": "An MQL query like fetch gce_instance | metric 'compute.googleapis.com/instance/cpu/utilization' | every 1m powers GCP dashboards in code. = Una query MQL come fetch gce_instance | metric 'compute.googleapis.com/instance/cpu/utilization' | every 1m alimenta dashboard GCP in codice."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_3",
+      "english": "Managed Prometheus",
+      "set": {
+        "example": "Switching from self-hosted Prometheus to Managed Prometheus on GCP keeps the same PromQL while offloading sharding and storage operations. = Passare da Prometheus self-hosted a Managed Prometheus su GCP mantiene lo stesso PromQL scaricando le operazioni di sharding e storage."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_4",
+      "english": "Custom Namespace",
+      "set": {
+        "example": "Publishing app metrics under a custom namespace like MyCompany/Checkout in CloudWatch keeps them clearly separated from AWS service metrics. = Pubblicare metriche dell'app sotto un namespace personalizzato come MyCompany/Checkout in CloudWatch le tiene chiaramente separate dalle metriche dei servizi AWS."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_4",
+      "english": "Dimension",
+      "set": {
+        "example": "Adding a dimension like InstanceId=i-0a1b2c3d to a CloudWatch metric makes it possible to graph per-instance trends instead of one fleet average. = Aggiungere una dimensione come InstanceId=i-0a1b2c3d a una metrica CloudWatch permette di tracciare trend per istanza invece di una sola media di flotta."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_4",
+      "english": "High-Resolution Metric",
+      "set": {
+        "example": "A 1-second high-resolution metric in CloudWatch is essential for autoscaling fast-moving workloads where 60-second granularity would miss spikes. = Una metrica ad alta risoluzione da 1 secondo in CloudWatch e' essenziale per l'autoscaling di carichi rapidi dove la granularita' a 60 secondi mancherebbe i picchi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_4",
+      "english": "Cost Per Metric",
+      "set": {
+        "example": "Auditing cost per metric in CloudWatch often reveals high-cardinality custom metrics doubling the monitoring bill without anyone noticing. = Verificare il costo per metrica in CloudWatch spesso rivela metriche custom ad alta cardinalita' che raddoppiano la bolletta di monitoring senza che nessuno se ne accorga."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_4",
+      "english": "Aggregation Period",
+      "set": {
+        "example": "Choosing a 5-minute aggregation period balances signal smoothness and alert reactivity better than the noisy 1-minute default for most SLOs. = Scegliere un periodo di aggregazione di 5 minuti bilancia meglio la smussatura del segnale e la reattivita' degli alert rispetto al default rumoroso di 1 minuto per la maggior parte degli SLO."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_4",
+      "english": "Quota",
+      "set": {
+        "example": "Hitting a CloudWatch PutMetricData quota of 150 transactions per second silently drops samples, so quota dashboards belong next to error dashboards. = Raggiungere una quota CloudWatch PutMetricData di 150 transazioni al secondo scarta silenziosamente i campioni, quindi le dashboard di quota stanno accanto a quelle di errore."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_4",
+      "english": "Multi-Cloud",
+      "set": {
+        "example": "A multi-cloud setup spanning AWS and GCP often centralizes metrics in a single Grafana to avoid swapping between two unfamiliar consoles. = Un setup multi-cloud che copre AWS e GCP spesso centralizza le metriche in un unico Grafana per evitare di passare tra due console diverse."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "SLO",
+      "set": {
+        "italian": "SLO",
+        "example": "Setting an SLO of 99.9% availability defines the error budget the team can spend on risky deploys each month. = Impostare un SLO del 99.9% di disponibilita' definisce l'error budget che il team puo' spendere in deploy rischiosi al mese."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "SLO",
+      "set": {
+        "rename_to": "Service Level Objective (SLO)",
+        "italian": "SLO",
+        "example": "A Service Level Objective targeting 99.95% successful checkout requests over 30 days gives product and SRE a shared, measurable promise to users. = Un Service Level Objective che mira al 99.95% di richieste di checkout riuscite su 30 giorni da' a prodotto e SRE una promessa misurabile e condivisa verso gli utenti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "SLI",
+      "set": {
+        "italian": "SLI",
+        "example": "A good SLI for an API is the ratio of HTTP 200 responses to total requests, computed over a rolling 5-minute window. = Un buon SLI per un'API e' il rapporto tra risposte HTTP 200 e richieste totali, calcolato su una finestra mobile di 5 minuti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "SLI",
+      "set": {
+        "rename_to": "Service Level Indicator (SLI)",
+        "italian": "SLI",
+        "example": "Choosing the right Service Level Indicator (like latency at the load balancer) directly determines whether your SLO actually reflects user pain. = Scegliere il giusto Service Level Indicator (come la latenza al load balancer) determina direttamente se il tuo SLO riflette davvero il dolore degli utenti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "Error Budget",
+      "set": {
+        "example": "If the SLO is 99.9% over 30 days, the error budget is roughly 43 minutes of allowed downtime per month before deploys must freeze. = Se lo SLO e' 99.9% su 30 giorni, l'error budget e' circa 43 minuti di downtime ammesso al mese prima che i deploy debbano essere congelati."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "Error Budget",
+      "set": {
+        "rename_to": "Error Budget Policy",
+        "italian": "Policy dell'error budget",
+        "example": "An error budget policy might freeze all non-critical deploys once 75% of the monthly budget is burned, forcing focus on reliability work. = Una policy dell'error budget puo' congelare tutti i deploy non critici una volta bruciato il 75% del budget mensile, costringendo a focalizzarsi su lavoro di affidabilita'."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "Toil",
+      "set": {
+        "example": "Manually rotating credentials each month is classic toil: repetitive, automatable, no lasting value beyond the moment it's done. = Ruotare manualmente le credenziali ogni mese e' classico toil: ripetitivo, automatizzabile, senza valore duraturo oltre il momento in cui viene fatto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "Toil Reduction",
+      "set": {
+        "example": "A 50% toil reduction target frees SREs to invest the freed time into reliability projects instead of feeding the operational fire. = Un obiettivo di riduzione del toil del 50% libera gli SRE per investire il tempo guadagnato in progetti di affidabilita' invece di alimentare il fuoco operativo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "Embrace Risk",
+      "set": {
+        "example": "SRE culture asks teams to embrace risk by spending the error budget on faster releases rather than chasing 100% uptime no one will pay for. = La cultura SRE chiede ai team di abbracciare il rischio spendendo l'error budget su release piu' veloci invece di rincorrere il 100% di uptime che nessuno paghera'."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_2",
+      "english": "Postmortem",
+      "set": {
+        "example": "A blameless postmortem after a 30-minute outage focuses on the system gaps that let the bug slip through, not on the engineer who pushed it. = Un postmortem blameless dopo un disservizio di 30 minuti si concentra sulle lacune del sistema che hanno lasciato passare il bug, non sull'ingegnere che lo ha pushato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_2",
+      "english": "Lessons Learned",
+      "set": {
+        "example": "Capturing lessons learned as concrete action items prevents the same outage from repeating, turning a painful event into permanent improvement. = Catturare le lezioni apprese come azioni concrete evita che lo stesso disservizio si ripeta, trasformando un evento doloroso in miglioramento permanente."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_3",
+      "english": "Capacity Planning",
+      "set": {
+        "example": "Quarterly capacity planning compares Black Friday forecasts to current headroom, triggering EC2 reservations months before the traffic peak. = La pianificazione della capacita' trimestrale confronta le previsioni Black Friday con il margine attuale, attivando reservation EC2 mesi prima del picco di traffico."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_3",
+      "english": "Forecast",
+      "set": {
+        "example": "A linear forecast on disk usage trends shows the database server will run out of space in 6 weeks, giving ops time to plan a resize. = Una previsione lineare sui trend di uso del disco mostra che il server di database finira' lo spazio in 6 settimane, dando tempo agli operatori per pianificare un resize."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_3",
+      "english": "Headroom",
+      "set": {
+        "example": "Keeping at least 30% CPU headroom on database nodes leaves room to absorb a sudden traffic doubling without triggering autoscale lag. = Mantenere almeno il 30% di margine CPU sui nodi di database lascia spazio per assorbire un raddoppio improvviso di traffico senza scatenare lag di autoscaling."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_3",
+      "english": "Headroom",
+      "set": {
+        "rename_to": "Capacity Headroom",
+        "italian": "Margine di capacita'",
+        "example": "Reviewing capacity headroom quarterly helps SREs justify ordering more nodes before the next product launch, not in the middle of an outage. = Rivedere il margine di capacita' trimestralmente aiuta gli SRE a giustificare l'ordine di nuovi nodi prima del prossimo lancio di prodotto, non nel mezzo di un disservizio."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_3",
+      "english": "Baseline",
+      "set": {
+        "example": "Establishing a 30-day traffic baseline makes any sudden 3x spike easy to spot and lets autoscaling thresholds be tuned against real numbers. = Stabilire una baseline di traffico di 30 giorni rende facile individuare qualsiasi picco improvviso 3x e permette di regolare le soglie di autoscaling su numeri reali."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_3",
+      "english": "Peak Load",
+      "set": {
+        "example": "The Black Friday peak load reaches 8x normal traffic, so capacity plans size the cluster for that hour rather than the daily average. = Il carico di picco del Black Friday raggiunge 8x del traffico normale, quindi i piani di capacita' dimensionano il cluster per quell'ora invece che sulla media giornaliera."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_3",
+      "english": "Load Test",
+      "set": {
+        "example": "Running a k6 load test against staging at 2x peak traffic surfaces the bottleneck (a slow SQL query) days before the real launch. = Eseguire un load test con k6 contro staging a 2x del traffico di picco fa emergere il collo di bottiglia (una query SQL lenta) giorni prima del lancio reale."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_3",
+      "english": "Auto-Scaling",
+      "set": {
+        "example": "Configuring auto-scaling on CPU above 70% adds new pods within minutes, absorbing traffic bursts without paging the on-call team. = Configurare l'auto-scaling su CPU sopra il 70% aggiunge nuovi pod in pochi minuti, assorbendo burst di traffico senza chiamare il team on-call."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_4",
+      "english": "Chaos Engineering",
+      "set": {
+        "example": "Chaos Engineering experiments like killing random pods in production validate that retries and circuit breakers actually do their job under fire. = Esperimenti di Chaos Engineering come uccidere pod casuali in produzione verificano che retry e circuit breaker facciano davvero il loro lavoro sotto pressione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_4",
+      "english": "Game Day",
+      "set": {
+        "example": "A quarterly Game Day simulates a full region failure, forcing the team to practice runbooks and uncover stale documentation before it matters. = Un Game Day trimestrale simula un fallimento di intera regione, costringendo il team a esercitarsi sui runbook e scoprire documentazione obsoleta prima che importi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_4",
+      "english": "RTO",
+      "set": {
+        "example": "An RTO of 1 hour means the business expects services back online within 60 minutes of a disaster, shaping every recovery automation choice. = Un RTO di 1 ora significa che il business si aspetta i servizi di nuovo online entro 60 minuti da un disastro, plasmando ogni scelta di automazione di recovery."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_4",
+      "english": "Canary Release",
+      "set": {
+        "example": "A canary release routes 1% of traffic to the new version first, so any spike in errors or latency triggers an automatic rollback. = Una release canary instrada prima l'1% del traffico verso la nuova versione, cosi' che qualsiasi picco di errori o latenza scateni un rollback automatico."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_1",
+      "english": "Incident Response",
+      "set": {
+        "example": "A clear incident response process assigns commander, scribe and comms within the first 5 minutes so the team doesn't waste time arguing roles. = Un processo chiaro di risposta agli incidenti assegna commander, scribe e comunicazioni nei primi 5 minuti cosi' che il team non perda tempo a discutere i ruoli."
+      }
+    }
+  ]
+}

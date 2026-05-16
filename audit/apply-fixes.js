@@ -71,6 +71,7 @@ function parseItem(startIdx) {
 
 function setFieldOnBlock(blockStart, blockEnd, field, newVal) {
   const re = new RegExp(`^(\\s*)${field}:(\\s*)(.*)$`);
+  const remove = newVal === null;
   for (let i = blockStart; i <= blockEnd; i++) {
     const m = lines[i].match(re);
     if (!m) continue;
@@ -101,8 +102,15 @@ function setFieldOnBlock(blockStart, blockEnd, field, newVal) {
       }
     }
 
-    // Remove old lines, insert new single-line field.
-    lines.splice(i, endLine - i + 1, `${indent}${field}: ${encodeValue(newVal)},`);
+    if (remove) {
+      lines.splice(i, endLine - i + 1);
+    } else {
+      lines.splice(i, endLine - i + 1, `${indent}${field}: ${encodeValue(newVal)},`);
+    }
+    return true;
+  }
+  if (remove) {
+    // Field doesn't exist, nothing to remove.
     return true;
   }
   // Field doesn't exist; insert just before the block's closing brace.

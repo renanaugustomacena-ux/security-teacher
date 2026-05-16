@@ -1,0 +1,1526 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "linux_basics_1",
+      "english": "Bash",
+      "set": {
+        "italian": "Bash",
+        "note": "Bourne Again SHell: shell GNU predefinita su molte distribuzioni Linux."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_2",
+      "english": "Path",
+      "set": {
+        "example": "When a script fails with 'command not found', verify the full path in your PATH variable before assuming the binary is missing. = Quando uno script fallisce con 'comando non trovato', verifica il percorso completo nella variabile PATH prima di assumere che il binario manchi."
+      }
+    },
+    {
+      "level": "0",
+      "lesson": "linux_basics_3",
+      "english": "Process",
+      "set": {
+        "example": "Every running program is a process with a unique PID that you can inspect via ps aux or top during incident analysis. = Ogni programma in esecuzione e' un processo con un PID unico che puoi ispezionare via ps aux o top durante l'analisi di un incidente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Copy",
+      "set": {
+        "example": "Use cp -a to copy a directory recursively while preserving timestamps, permissions and symlinks for a faithful backup. = Usa cp -a per copiare una directory ricorsivamente preservando timestamp, permessi e symlink per un backup fedele."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Touch",
+      "set": {
+        "italian": "touch",
+        "example": "Developers often touch a placeholder .keep file to commit otherwise-empty directories into git. = Gli sviluppatori spesso usano touch per creare un file segnaposto .keep e committare directory altrimenti vuote in git.",
+        "note": "Comando POSIX standard; nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_file_ops",
+      "english": "Rename",
+      "set": {
+        "example": "Sysadmins rename log files with mv access.log access.log.1 before triggering a daemon reload to rotate without losing entries. = I sysadmin rinominano i file di log con mv access.log access.log.1 prima di triggerare un reload del demone per ruotarli senza perdere voci."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Cat",
+      "set": {
+        "italian": "cat",
+        "example": "Pipe cat /etc/passwd into grep to search for a specific user account during a security audit. = Pipa cat /etc/passwd dentro grep per cercare un account utente specifico durante un audit di sicurezza.",
+        "note": "Comando POSIX standard; nessuna traduzione italiana. Concatena e stampa file."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Less",
+      "set": {
+        "italian": "less",
+        "example": "Pipe a long systemd journal into less so you can scroll, search with /pattern, and quit without printing the whole buffer. = Pipa un journal systemd lungo in less per scorrerlo, cercare con /pattern e uscire senza stampare l'intero buffer.",
+        "note": "Comando POSIX standard; nessuna traduzione italiana. Pager interattivo bidirezionale."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "More",
+      "set": {
+        "italian": "more",
+        "example": "Old admin scripts still pipe verbose output into more when less is unavailable on minimal recovery shells. = Vecchi script di amministrazione ancora pipano output verboso in more quando less non e' disponibile su shell di ripristino minimali.",
+        "note": "Comando POSIX standard; nessuna traduzione italiana. Pager unidirezionale storico."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_view",
+      "english": "Pager",
+      "set": {
+        "example": "Set PAGER=less in your shell profile so man pages and git log open in your preferred pager automatically. = Imposta PAGER=less nel profilo della shell cosi' le man page e git log si aprono automaticamente nel tuo pager preferito."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Find",
+      "set": {
+        "italian": "find",
+        "example": "Use find /var/log -mtime +30 -name '*.log' to list log files older than thirty days during disk cleanup. = Usa find /var/log -mtime +30 -name '*.log' per elencare file di log piu' vecchi di trenta giorni durante la pulizia del disco.",
+        "note": "Comando POSIX standard; nessuna traduzione italiana. Ricerca ricorsiva nel filesystem."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Locate",
+      "set": {
+        "italian": "locate",
+        "example": "Run locate sshd_config to find configuration paths instantly via the prebuilt mlocate database instead of scanning the disk. = Esegui locate sshd_config per trovare istantaneamente i percorsi di configurazione tramite il database mlocate precompilato invece di scansionare il disco.",
+        "note": "Comando standard; nessuna traduzione italiana. Richiede updatedb periodico."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Which",
+      "set": {
+        "italian": "which",
+        "example": "Confirm a tool's installation path with which python3 before adding it to a cron job or systemd unit. = Conferma il percorso di installazione di uno strumento con which python3 prima di aggiungerlo a un cron job o unit systemd.",
+        "note": "Comando POSIX standard; nessuna traduzione italiana. Mostra il primo eseguibile nel PATH."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Whereis",
+      "set": {
+        "italian": "whereis",
+        "example": "Run whereis nginx to discover the binary, its source and its man page locations in one call. = Esegui whereis nginx per scoprire in un'unica chiamata binario, sorgenti e percorsi delle man page.",
+        "note": "Comando standard; nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "linux_search",
+      "english": "Type",
+      "set": {
+        "example": "Use type cd inside bash to discover whether a name is a builtin, alias or external command before troubleshooting unexpected behaviour. = Usa type cd dentro bash per scoprire se un nome e' un builtin, un alias o un comando esterno prima di indagare comportamenti inattesi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Nano",
+      "set": {
+        "italian": "nano",
+        "note": "Editor di testo per terminale; nessuna traduzione italiana del nome."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Vim",
+      "set": {
+        "italian": "vim",
+        "note": "Vi IMproved: editor modale per terminale; nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Insert Mode",
+      "set": {
+        "example": "Press i in vim to enter insert mode and start typing, then Esc to return to normal mode for navigation. = Premi i in vim per entrare in modalita' inserimento e iniziare a digitare, poi Esc per tornare in modalita' normale per la navigazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_editors",
+      "english": "Search",
+      "set": {
+        "example": "Trigger a forward search in vim with /TODO and press n to jump between every TODO marker in the file. = Avvia una ricerca in avanti in vim con /TODO e premi n per saltare tra ogni marcatore TODO nel file."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Grep",
+      "set": {
+        "italian": "grep",
+        "example": "Hunt failed logins with grep -i 'failed password' /var/log/auth.log during an SSH brute-force investigation. = Cerca i login falliti con grep -i 'failed password' /var/log/auth.log durante un'indagine su brute-force SSH.",
+        "note": "Comando POSIX standard; nessuna traduzione italiana. Global Regular Expression Print."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Pipeline",
+      "set": {
+        "italian": "pipeline",
+        "example": "Build a pipeline like ps aux | grep nginx | awk '{print $2}' to extract every nginx PID in one line. = Costruisci una pipeline come ps aux | grep nginx | awk '{print $2}' per estrarre ogni PID di nginx in una sola riga.",
+        "note": "Termine tecnico universale; nessuna traduzione italiana adottata."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Cut",
+      "set": {
+        "italian": "cut",
+        "example": "Extract usernames from /etc/passwd with cut -d: -f1 /etc/passwd during a quick account inventory. = Estrai i nomi utente da /etc/passwd con cut -d: -f1 /etc/passwd durante un rapido inventario degli account.",
+        "note": "Comando POSIX standard; nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_proc",
+      "english": "Awk",
+      "set": {
+        "italian": "awk",
+        "example": "Sum a numeric column with awk '{s+=$3} END{print s}' access.log to aggregate bytes served from web logs. = Somma una colonna numerica con awk '{s+=$3} END{print s}' access.log per aggregare i byte serviti dai log web.",
+        "note": "Comando e linguaggio POSIX; nessuna traduzione italiana. Dai cognomi Aho, Weinberger, Kernighan."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Word Count",
+      "set": {
+        "example": "Count lines in a config file with wc -l /etc/nginx/nginx.conf before refactoring a long monolithic block. = Conta le righe di un file di configurazione con wc -l /etc/nginx/nginx.conf prima di rifattorizzare un lungo blocco monolitico."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_text_util",
+      "english": "Patch",
+      "set": {
+        "italian": "patch",
+        "example": "Apply a vendor security fix with patch -p1 < cve-2024-1234.diff inside the source tree before recompiling. = Applica una correzione di sicurezza del vendor con patch -p1 < cve-2024-1234.diff dentro l'albero dei sorgenti prima di ricompilare.",
+        "note": "Comando POSIX standard; nessuna traduzione italiana. Applica diff testuali."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Archive",
+      "set": {
+        "example": "Bundle a project into a single archive with tar -cf project.tar src/ before transferring it over scp. = Raggruppa un progetto in un singolo archivio con tar -cf project.tar src/ prima di trasferirlo via scp."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Tarball",
+      "set": {
+        "italian": "tarball",
+        "note": "Termine gergale per archivio .tar.gz; nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Zip",
+      "set": {
+        "italian": "zip",
+        "note": "Formato di archivio compresso multipiattaforma; nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Gzip",
+      "set": {
+        "italian": "gzip",
+        "note": "GNU zip: compressore standard; nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Flag z",
+      "set": {
+        "italian": "flag z",
+        "note": "Indica gzip per tar (-z); termine tecnico, nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "List Contents",
+      "set": {
+        "example": "Peek inside an archive without extracting via tar -tzf release.tar.gz to verify expected paths before deployment. = Sbircia dentro un archivio senza estrarlo via tar -tzf release.tar.gz per verificare i percorsi attesi prima del deploy."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_users",
+      "english": "Delete User",
+      "set": {
+        "example": "Remove a former employee's account with deluser --remove-home alice on Debian systems during offboarding. = Rimuovi l'account di un ex dipendente con deluser --remove-home alice sui sistemi Debian durante l'offboarding."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_identity",
+      "english": "Finger",
+      "set": {
+        "italian": "finger",
+        "example": "Legacy systems still expose finger alice to display login times, shell and project info from a remote daemon. = Sistemi legacy ancora espongono finger alice per mostrare orari di login, shell e info di progetto da un demone remoto.",
+        "note": "Comando storico; nessuna traduzione italiana. Spesso disabilitato per motivi di sicurezza."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_basics",
+      "english": "DNS",
+      "set": {
+        "italian": "DNS",
+        "note": "Domain Name System: traduce nomi host in indirizzi IP."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Ethernet",
+      "set": {
+        "italian": "Ethernet",
+        "note": "Standard IEEE 802.3 per reti cablate; termine universale, nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_config",
+      "english": "Localhost",
+      "set": {
+        "italian": "localhost",
+        "example": "Bind a development server to localhost (127.0.0.1) to expose it only to the local machine while you debug. = Lega un server di sviluppo a localhost (127.0.0.1) per esporlo solo alla macchina locale mentre fai debug.",
+        "note": "Nome convenzionale per l'interfaccia di loopback; nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_remote",
+      "english": "SSH",
+      "set": {
+        "italian": "SSH",
+        "note": "Secure Shell: protocollo per accesso remoto cifrato (RFC 4251)."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "linux_net_diag",
+      "english": "Trace",
+      "set": {
+        "italian": "trace",
+        "example": "Run traceroute 8.8.8.8 to trace each network hop and pinpoint where latency spikes between you and a remote host. = Esegui traceroute 8.8.8.8 per tracciare ogni hop di rete e individuare dove la latenza schizza tra te e un host remoto.",
+        "note": "Termine tecnico spesso lasciato in inglese; in italiano talvolta 'tracciare'."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "PID",
+      "set": {
+        "italian": "PID",
+        "note": "Process IDentifier: numero unico assegnato dal kernel a ogni processo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Top",
+      "set": {
+        "italian": "top",
+        "note": "Comando standard per monitorare processi in tempo reale; nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_proc_mgmt",
+      "english": "Nice",
+      "set": {
+        "italian": "nice",
+        "example": "Launch a heavy build via nice -n 19 make -j8 so it yields CPU time to interactive workloads. = Avvia una build pesante con nice -n 19 make -j8 cosi' cede tempo di CPU ai carichi interattivi.",
+        "note": "Comando POSIX standard; nessuna traduzione italiana. Imposta la priorita' di scheduling."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_scheduling",
+      "english": "At",
+      "set": {
+        "example": "Schedule a one-shot reboot with echo 'reboot' | at 03:00 tomorrow to apply kernel updates outside business hours. = Pianifica un reboot one-shot con echo 'reboot' | at 03:00 tomorrow per applicare aggiornamenti del kernel fuori orario lavorativo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "linux_monitoring",
+      "english": "Watch",
+      "set": {
+        "italian": "watch",
+        "example": "Refresh disk usage every two seconds with watch -n2 df -h to monitor a runaway log file in real time. = Aggiorna l'uso del disco ogni due secondi con watch -n2 df -h per monitorare in tempo reale un file di log fuori controllo.",
+        "note": "Comando standard; nessuna traduzione italiana. Esegue un comando periodicamente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_info",
+      "english": "USB",
+      "set": {
+        "italian": "USB",
+        "note": "Universal Serial Bus: standard di interfaccia per periferiche."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Null",
+      "set": {
+        "italian": "null",
+        "note": "Dispositivo speciale /dev/null che scarta ogni input; nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Stdio",
+      "set": {
+        "example": "Redirect both stdio streams via command >out.log 2>&1 to capture stdout and stderr in a single log file. = Reindirizza entrambi i flussi stdio con command >out.log 2>&1 per catturare stdout e stderr in un unico file di log."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Grub",
+      "set": {
+        "italian": "GRUB",
+        "note": "GRand Unified Bootloader: bootloader predefinito su molte distribuzioni Linux."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Shebang",
+      "set": {
+        "italian": "shebang",
+        "note": "La sequenza #! all'inizio di uno script che indica l'interprete; termine universale, nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "Export",
+      "set": {
+        "italian": "export",
+        "example": "Run export DEBUG=1 in a parent shell so every child process inherits the variable for verbose logging. = Esegui export DEBUG=1 in una shell padre cosi' ogni processo figlio eredita la variabile per il logging verboso.",
+        "note": "Builtin di bash; nessuna traduzione italiana. Promuove una variabile a variabile d'ambiente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_control",
+      "english": "Case",
+      "set": {
+        "italian": "case",
+        "example": "Branch on input with case $1 in start) ...;; stop) ...;; *) usage;; esac to dispatch service control actions. = Diramati sull'input con case $1 in start) ...;; stop) ...;; *) usage;; esac per dispacciare azioni di controllo del servizio.",
+        "note": "Costrutto di bash; nessuna traduzione italiana. Equivale a switch in altri linguaggi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Return",
+      "set": {
+        "example": "End a bash function with return 1 to signal failure so callers can check $? and branch accordingly. = Termina una funzione bash con return 1 per segnalare un fallimento cosi' i chiamanti possono controllare $? e diramare di conseguenza."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Debug",
+      "set": {
+        "italian": "debug",
+        "note": "Si attiva con set -x o bash -x script.sh per stampare ogni comando eseguito; termine universale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Regex",
+      "set": {
+        "italian": "regex",
+        "note": "Espressione regolare: pattern testuale per matching avanzato. Forma abbreviata universale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Extended",
+      "set": {
+        "example": "Switch grep into extended regex mode with grep -E '(foo|bar)' file.txt to use alternation without escaping the pipe. = Passa grep in modalita' regex estesa con grep -E '(foo|bar)' file.txt per usare l'alternanza senza dover fare escape della pipe."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "ASCII",
+      "set": {
+        "italian": "ASCII",
+        "note": "American Standard Code for Information Interchange: codifica a 7 bit per caratteri di base."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "UTF-8",
+      "set": {
+        "italian": "UTF-8",
+        "note": "Unicode Transformation Format 8-bit: codifica universale a larghezza variabile, retrocompatibile con ASCII."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_encoding",
+      "english": "Base64",
+      "set": {
+        "italian": "Base64",
+        "note": "Codifica che rappresenta dati binari come testo ASCII usando 64 caratteri stampabili."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Tee",
+      "set": {
+        "italian": "tee",
+        "example": "Pipe build output to tee build.log so the same stream appears on your terminal and gets saved for later review. = Pipa l'output della build a tee build.log cosi' lo stesso flusso appare sul terminale e viene salvato per una revisione successiva.",
+        "note": "Comando POSIX standard; nessuna traduzione italiana. Sdoppia un flusso come una giunzione a T."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Process Substitution",
+      "set": {
+        "example": "Compare two live command outputs without temp files using diff <(ls /etc) <(ls /etc.bak) via process substitution. = Confronta due output di comandi al volo senza file temporanei usando diff <(ls /etc) <(ls /etc.bak) tramite la sostituzione di processo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Journal",
+      "set": {
+        "italian": "journal",
+        "example": "Inspect today's systemd journal with journalctl --since today -u nginx to triage a service that flapped during business hours. = Ispeziona il journal systemd di oggi con journalctl --since today -u nginx per triare un servizio che ha avuto interruzioni in orario lavorativo.",
+        "note": "Log binario gestito da systemd-journald; termine spesso lasciato in inglese."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Stateful",
+      "set": {
+        "italian": "stateful",
+        "note": "Firewall che traccia lo stato delle connessioni TCP/UDP; termine tecnico standard in italiano."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_crypto",
+      "english": "Asymmetric",
+      "set": {
+        "example": "RSA and Ed25519 are asymmetric algorithms where a public key encrypts and only the matching private key can decrypt. = RSA ed Ed25519 sono algoritmi asimmetrici dove una chiave pubblica cifra e solo la chiave privata corrispondente puo' decifrare."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Sudoers",
+      "set": {
+        "italian": "sudoers",
+        "note": "File /etc/sudoers che definisce i permessi sudo; editarlo solo via visudo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Escalate",
+      "set": {
+        "example": "Attackers escalate privileges from a low-privilege shell to root by exploiting a SUID binary or kernel CVE. = Gli aggressori scalano i privilegi da una shell con bassi privilegi a root sfruttando un binario SUID o una CVE del kernel."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "PAM",
+      "set": {
+        "italian": "PAM",
+        "example": "Stack PAM modules in /etc/pam.d/sshd to layer two-factor auth on top of password-based SSH logins. = Impila moduli PAM in /etc/pam.d/sshd per stratificare l'auth a due fattori sopra i login SSH basati su password.",
+        "note": "Pluggable Authentication Modules: framework modulare per l'autenticazione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Chroot",
+      "set": {
+        "italian": "chroot",
+        "note": "Comando che cambia la directory radice apparente di un processo, creando una jail filesystem."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Audit Trail",
+      "set": {
+        "example": "A complete audit trail in /var/log/audit/audit.log lets investigators reconstruct who ran what after a breach. = Una traccia di audit completa in /var/log/audit/audit.log permette agli investigatori di ricostruire chi ha eseguito cosa dopo una violazione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Logwatch",
+      "set": {
+        "italian": "Logwatch",
+        "example": "Schedule Logwatch nightly so it emails a structured summary of yesterday's auth, kernel and cron logs to the admin. = Pianifica Logwatch ogni notte cosi' invia per email un sommario strutturato dei log di auth, kernel e cron del giorno prima all'admin.",
+        "note": "Tool standard di analisi log; nome proprio, nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Intrusion",
+      "set": {
+        "example": "Deploy an intrusion detection system like AIDE to flag unauthorized changes to critical system binaries. = Distribuisci un sistema di rilevamento intrusioni come AIDE per segnalare modifiche non autorizzate ai binari di sistema critici."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Fail2Ban",
+      "set": {
+        "italian": "Fail2Ban",
+        "example": "Configure Fail2Ban to scan /var/log/auth.log and auto-ban IPs that fail SSH login five times in ten minutes. = Configura Fail2Ban per scansionare /var/log/auth.log e bannare automaticamente gli IP che falliscono il login SSH cinque volte in dieci minuti.",
+        "note": "Demone Python che banna IP malevoli via iptables/nftables; nome proprio."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Event",
+      "set": {
+        "example": "Each auditd event captures the user, syscall and timestamp so security teams can reconstruct an attack chain. = Ogni evento di auditd cattura utente, syscall e timestamp cosi' i team di sicurezza possono ricostruire una catena d'attacco."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Alert",
+      "set": {
+        "example": "Wire an alert from Logwatch to PagerDuty when failed sudo attempts exceed a threshold within five minutes. = Cabla un'allerta da Logwatch a PagerDuty quando i tentativi sudo falliti superano una soglia in cinque minuti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Monitor",
+      "set": {
+        "example": "Use auditctl -w /etc/passwd -p wa to monitor write and attribute changes on the password file for tamper detection. = Usa auditctl -w /etc/passwd -p wa per monitorare scritture e cambi attributo sul file delle password per rilevare manomissioni."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Baseline",
+      "set": {
+        "example": "Capture a system baseline with AIDE right after install so later scans can flag any drift from the trusted state. = Cattura una linea di base del sistema con AIDE subito dopo l'installazione cosi' le scansioni successive possono segnalare ogni deriva dallo stato fidato."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Forensics",
+      "set": {
+        "example": "Linux forensics work captures memory with LiME and disk images with dd before mounting them read-only for analysis. = Il lavoro di analisi forense Linux cattura la memoria con LiME e immagini del disco con dd prima di montarle in sola lettura per l'analisi."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_audit",
+      "english": "Incident",
+      "set": {
+        "example": "Trigger your incident response runbook the moment an alert escalates from suspicious to confirmed compromise. = Innesca il runbook di risposta agli incidenti nel momento in cui un'allerta passa da sospetta a compromissione confermata."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Package",
+      "set": {
+        "example": "Install a single package with apt install nginx and the manager resolves dependencies automatically. = Installa un singolo pacchetto con apt install nginx e il gestore risolve le dipendenze automaticamente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Repository",
+      "set": {
+        "example": "Add a third-party repository to /etc/apt/sources.list.d/ and import its GPG key before installing trusted packages. = Aggiungi un repository di terze parti a /etc/apt/sources.list.d/ e importa la sua chiave GPG prima di installare pacchetti fidati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Install",
+      "set": {
+        "example": "Install development headers with apt install build-essential before compiling a kernel module or C extension from source. = Installa gli header di sviluppo con apt install build-essential prima di compilare un modulo del kernel o un'estensione C dai sorgenti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Upgrade",
+      "set": {
+        "example": "Apply security fixes with apt upgrade after apt update, ideally inside a maintenance window with a fresh snapshot. = Applica le correzioni di sicurezza con apt upgrade dopo apt update, idealmente in una finestra di manutenzione con uno snapshot fresco."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Source Code",
+      "set": {
+        "example": "Download the source code with apt source nginx to inspect upstream patches before rebuilding the package locally. = Scarica il codice sorgente con apt source nginx per ispezionare le patch upstream prima di ricompilare il pacchetto localmente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Mirror",
+      "set": {
+        "example": "Point apt at a nearby mirror like archive.ubuntu.com geographic regional URL to cut package download latency. = Punta apt a un mirror vicino come un URL regionale archive.ubuntu.com per ridurre la latenza di download dei pacchetti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Backup",
+      "set": {
+        "example": "Schedule a nightly backup with rsync --link-dest to keep incremental snapshots while sharing unchanged files via hardlinks. = Pianifica un backup notturno con rsync --link-dest per mantenere snapshot incrementali condividendo i file invariati via hardlink."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Restore",
+      "set": {
+        "example": "Practice a restore from your latest backup at least quarterly so a real disaster doesn't reveal corrupted archives. = Esercita un ripristino dal tuo backup piu' recente almeno ogni trimestre cosi' un vero disastro non rivela archivi corrotti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Sync",
+      "set": {
+        "example": "Mirror a project folder to a remote NAS with rsync -avz --delete to sync changes and prune removed files. = Specchia una cartella di progetto su un NAS remoto con rsync -avz --delete per sincronizzare le modifiche e potare i file rimossi."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Snapshot",
+      "set": {
+        "example": "Take a Btrfs snapshot before a risky upgrade so you can roll back instantly if the system fails to boot afterwards. = Prendi uno snapshot Btrfs prima di un aggiornamento rischioso cosi' puoi rollbackare istantaneamente se il sistema non si avvia dopo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Incremental",
+      "set": {
+        "example": "Use incremental backups via rsnapshot to store only the daily diff while keeping a full restore point at hand. = Usa backup incrementali via rsnapshot per memorizzare solo il diff giornaliero mantenendo a portata di mano un punto di ripristino completo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Clone",
+      "set": {
+        "example": "Clone a failing disk to a new drive with dd if=/dev/sda of=/dev/sdb bs=4M conv=noerror,sync to preserve a forensic image. = Clona un disco difettoso su un nuovo drive con dd if=/dev/sda of=/dev/sdb bs=4M conv=noerror,sync per preservare un'immagine forense."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Retention",
+      "set": {
+        "example": "Set a retention policy of 7 daily, 4 weekly and 12 monthly snapshots to balance recovery options against storage costs. = Imposta una policy di conservazione di 7 snapshot giornalieri, 4 settimanali e 12 mensili per bilanciare opzioni di recupero e costi di storage."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Integrity",
+      "set": {
+        "example": "Verify backup integrity with sha256sum manifests so silent disk corruption doesn't quietly poison your archive over time. = Verifica l'integrita' del backup con manifesti sha256sum cosi' una corruzione silenziosa del disco non avvelena di nascosto il tuo archivio nel tempo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Web Server",
+      "set": {
+        "example": "Run a production web server like nginx behind a reverse proxy with rate limiting to absorb sudden traffic spikes. = Esegui un server web di produzione come nginx dietro un reverse proxy con rate limiting per assorbire picchi di traffico improvvisi."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Request",
+      "set": {
+        "example": "Inspect a raw HTTP request with curl -v https://example.com to see headers, method and TLS handshake details. = Ispeziona una richiesta HTTP grezza con curl -v https://example.com per vedere header, metodo e dettagli dell'handshake TLS."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Response",
+      "set": {
+        "example": "Cache a slow upstream response with Nginx proxy_cache to cut latency for repeated GET requests on the same URL. = Memorizza in cache una risposta upstream lenta con Nginx proxy_cache per ridurre la latenza su richieste GET ripetute allo stesso URL."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Header",
+      "set": {
+        "example": "Strip a leaky Server header in nginx via server_tokens off so responses don't disclose the exact daemon version. = Rimuovi l'header Server che divulga troppo in nginx via server_tokens off cosi' le risposte non rivelano la versione esatta del demone."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Proxy",
+      "set": {
+        "example": "Front your backend with an nginx reverse proxy to terminate TLS, add caching and unify access logs in one place. = Metti davanti al backend un reverse proxy nginx per terminare il TLS, aggiungere caching e unificare i log di accesso in un unico punto."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Load Balancing",
+      "set": {
+        "example": "Distribute traffic across three backend hosts with nginx upstream load balancing so a single node failure doesn't take down the site. = Distribuisci il traffico su tre host di backend con il bilanciamento del carico upstream di nginx cosi' il fallimento di un singolo nodo non abbatte il sito."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Configuration",
+      "set": {
+        "example": "Validate nginx configuration with nginx -t before reloading to avoid a typo taking the whole site offline. = Valida la configurazione di nginx con nginx -t prima di ricaricare per evitare che un refuso butti offline l'intero sito."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Virtual Host",
+      "set": {
+        "example": "Host multiple domains on one IP via nginx server_name blocks so each virtual host serves its own document root. = Ospita piu' domini su un solo IP via blocchi server_name di nginx cosi' ogni host virtuale serve la propria document root."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "SSL/TLS",
+      "set": {
+        "italian": "SSL/TLS",
+        "example": "Terminate SSL/TLS at nginx with a Let's Encrypt certificate auto-renewed via certbot to keep HTTPS valid for free. = Termina SSL/TLS su nginx con un certificato Let's Encrypt rinnovato automaticamente via certbot per mantenere HTTPS valido gratuitamente.",
+        "note": "Secure Sockets Layer / Transport Layer Security: protocolli per crittografare il traffico di rete."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Database",
+      "set": {
+        "example": "Connect to a PostgreSQL database with psql -h db.example.com -U analyst reports during ad hoc data exploration. = Connettiti a un database PostgreSQL con psql -h db.example.com -U analyst reports durante un'esplorazione dati ad hoc."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Query",
+      "set": {
+        "example": "Profile a slow SQL query with EXPLAIN ANALYZE before adding an index to confirm it actually changes the execution plan. = Profila una query SQL lenta con EXPLAIN ANALYZE prima di aggiungere un indice per confermare che cambi davvero il piano di esecuzione."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Record",
+      "set": {
+        "example": "Insert a new record with INSERT INTO users(name, email) VALUES('Alice', 'a@example.com') and capture the returning id. = Inserisci un nuovo record con INSERT INTO users(name, email) VALUES('Alice', 'a@example.com') e cattura l'id restituito."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Client",
+      "set": {
+        "example": "Use the mysql client to connect from a jump host so you never expose the database port to the public internet. = Usa il client mysql per connetterti da un jump host cosi' non esponi mai la porta del database a internet pubblica."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Server",
+      "set": {
+        "example": "Run the database server on a dedicated host with tuned shared_buffers so application traffic doesn't starve queries. = Esegui il server del database su un host dedicato con shared_buffers tarato cosi' il traffico applicativo non affama le query."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Dump",
+      "set": {
+        "example": "Export a logical dump with pg_dump -Fc prod > prod.dump every night so you can restore into a fresh staging instance. = Esporta un dump logico con pg_dump -Fc prod > prod.dump ogni notte cosi' puoi ripristinarlo in un'istanza staging fresca."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Import",
+      "set": {
+        "example": "Import a SQL dump via psql -d staging -f prod.sql to reproduce a production bug against the same data shape. = Importa un dump SQL via psql -d staging -f prod.sql per riprodurre un bug di produzione contro la stessa forma dei dati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Grant",
+      "set": {
+        "example": "Grant read-only access with GRANT SELECT ON reports TO analyst so a BI user can query without altering data. = Concedi accesso in sola lettura con GRANT SELECT ON reports TO analyst cosi' un utente BI puo' interrogare senza alterare i dati."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Container",
+      "set": {
+        "example": "Run an isolated container with docker run --rm -it alpine sh to experiment inside a minimal Linux userspace. = Esegui un container isolato con docker run --rm -it alpine sh per sperimentare dentro uno userspace Linux minimale."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Image",
+      "set": {
+        "example": "Pin a container image by digest like nginx@sha256:abc... in production manifests so deploys are reproducible. = Fissa un'immagine container per digest come nginx@sha256:abc... nei manifest di produzione cosi' i deploy sono riproducibili."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Docker",
+      "set": {
+        "italian": "Docker",
+        "example": "Launch a one-off task with docker run --rm alpine sh -c 'apk add curl && curl example.com' to test a network egress path. = Avvia un task one-off con docker run --rm alpine sh -c 'apk add curl && curl example.com' per testare un percorso di egress di rete.",
+        "note": "Docker Inc. e il suo runtime di container; nome proprio, nessuna traduzione italiana."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Network",
+      "set": {
+        "example": "Create an overlay docker network so containers on different hosts can talk over an encrypted virtual subnet. = Crea una rete overlay docker cosi' container su host diversi possono parlarsi tramite una subnet virtuale cifrata."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Orchestration",
+      "set": {
+        "example": "Kubernetes performs container orchestration by scheduling pods across nodes and restarting them if a worker dies. = Kubernetes esegue l'orchestrazione dei container schedulando pod tra i nodi e riavviandoli se un worker muore."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Registry",
+      "set": {
+        "example": "Push a built image to a private registry with docker push registry.internal/app:1.2.3 before rolling out to production. = Pusha un'immagine compilata su un registry privato con docker push registry.internal/app:1.2.3 prima del rollout in produzione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Namespace",
+      "set": {
+        "example": "Containers rely on Linux namespace primitives (pid, net, mnt, user) to give each workload an isolated view of the system. = I container si appoggiano alle primitive namespace di Linux (pid, net, mnt, user) per dare a ogni workload una vista isolata del sistema."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Cgroups",
+      "set": {
+        "italian": "cgroups",
+        "example": "Cap a runaway container at one CPU and 512Mi via cgroups so it cannot starve the rest of the host. = Limita un container fuori controllo a una CPU e 512Mi tramite cgroups cosi' non puo' affamare il resto dell'host.",
+        "note": "Control Groups: feature kernel per limitare e isolare risorse di gruppi di processi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Microservices",
+      "set": {
+        "example": "Split a monolith into microservices so each team can deploy its own container image independently several times a day. = Spezza un monolite in microservizi cosi' ogni team puo' fare deploy della propria immagine container in modo indipendente piu' volte al giorno."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Virtual Machine",
+      "set": {
+        "example": "Boot a virtual machine on KVM with qemu-system-x86_64 -m 4G -hda disk.qcow2 to test a different distro without dual-boot. = Avvia una macchina virtuale su KVM con qemu-system-x86_64 -m 4G -hda disk.qcow2 per testare una distro diversa senza dual-boot."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Hypervisor",
+      "set": {
+        "example": "KVM turns the Linux kernel into a type-1 hypervisor that schedules guest VMs alongside regular processes. = KVM trasforma il kernel Linux in un hypervisor di tipo 1 che schedula VM guest accanto ai processi regolari."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Guest",
+      "set": {
+        "example": "Install the qemu-guest-agent inside each guest OS so the hypervisor can request clean shutdowns and consistent snapshots. = Installa qemu-guest-agent in ogni sistema operativo guest cosi' l'hypervisor puo' richiedere shutdown puliti e snapshot consistenti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Snapshot",
+      "set": {
+        "english": "VM Snapshot",
+        "italian": "snapshot di VM",
+        "example": "Take a VM snapshot in libvirt before applying a kernel upgrade so you can revert in seconds if it fails to boot. = Prendi uno snapshot di VM in libvirt prima di applicare un upgrade del kernel cosi' puoi tornare indietro in pochi secondi se non si avvia."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Emulation",
+      "set": {
+        "example": "Run ARM binaries on an x86 host via QEMU full emulation when native hardware isn't available for cross-compilation tests. = Esegui binari ARM su un host x86 via emulazione completa QEMU quando l'hardware nativo non e' disponibile per test di cross-compilazione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Provisioning",
+      "set": {
+        "example": "Automate VM provisioning with Terraform and cloud-init so a new host comes up fully configured in under five minutes. = Automatizza il provisioning delle VM con Terraform e cloud-init cosi' un nuovo host si presenta completamente configurato in meno di cinque minuti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Cloud",
+      "set": {
+        "example": "Most modern cloud infrastructure rents out Linux VMs by the hour from hypervisor pools spanning entire datacenters. = La maggior parte dell'infrastruttura cloud moderna affitta VM Linux a ore da pool di hypervisor che coprono interi datacenter."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Migration",
+      "set": {
+        "example": "Trigger a live migration in libvirt with virsh migrate --live so a guest moves to another host without dropping connections. = Innesca una migrazione live in libvirt con virsh migrate --live cosi' un guest si sposta su un altro host senza droppare le connessioni."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Benchmark",
+      "set": {
+        "example": "Run sysbench cpu --threads=8 run as a quick benchmark to compare two kernel versions on the same hardware. = Esegui sysbench cpu --threads=8 run come benchmark rapido per confrontare due versioni del kernel sullo stesso hardware."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Tuning",
+      "set": {
+        "example": "Apply network tuning via sysctl net.core.somaxconn=4096 so a busy nginx can accept more concurrent inbound connections. = Applica tuning di rete via sysctl net.core.somaxconn=4096 cosi' un nginx affollato puo' accettare piu' connessioni inbound concorrenti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Throughput",
+      "set": {
+        "example": "Measure disk throughput with fio --rw=read --bs=1M --size=1G to compare an NVMe device against a spinning disk. = Misura il throughput del disco con fio --rw=read --bs=1M --size=1G per confrontare un dispositivo NVMe con un disco rotativo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Cache",
+      "set": {
+        "example": "Drop the kernel page cache with echo 3 > /proc/sys/vm/drop_caches when measuring cold-read I/O performance reliably. = Svuota la cache pagine del kernel con echo 3 > /proc/sys/vm/drop_caches quando misuri prestazioni di lettura a freddo in modo affidabile."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Overhead",
+      "set": {
+        "example": "Strace can add huge overhead to a hot loop, so attach it briefly during reproduction and detach as soon as you have data. = Strace puo' aggiungere un overhead enorme a un loop caldo, quindi attaccalo brevemente durante la riproduzione e staccalo appena hai i dati."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Scalability",
+      "set": {
+        "example": "Design a stateless web tier for horizontal scalability so adding more backend pods linearly increases request throughput. = Progetta un tier web stateless per scalabilita' orizzontale cosi' aggiungere piu' pod di backend aumenta linearmente il throughput delle richieste."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Interrupt",
+      "set": {
+        "example": "Inspect per-CPU interrupt counts in /proc/interrupts to confirm a NIC's IRQs are spread across cores under heavy network load. = Ispeziona i conteggi delle interrupt per CPU in /proc/interrupts per confermare che le IRQ di una NIC siano distribuite tra i core sotto carico di rete pesante."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Scheduler",
+      "set": {
+        "example": "Switch the kernel scheduler policy to SCHED_FIFO with chrt for latency-critical audio threads on a Linux audio workstation. = Cambia la policy dello scheduler del kernel a SCHED_FIFO con chrt per thread audio latency-critical su una workstation audio Linux."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Memory Management",
+      "set": {
+        "example": "Tune kernel memory management via sysctl vm.swappiness=10 so the system prefers freeing caches over swapping to disk. = Regola la gestione memoria del kernel via sysctl vm.swappiness=10 cosi' il sistema preferisce liberare cache invece di andare in swap su disco."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Mainline",
+      "set": {
+        "example": "Track the mainline kernel branch on kernel.org to test bleeding-edge drivers before they land in a stable point release. = Segui il ramo mainline del kernel su kernel.org per testare driver bleeding-edge prima che atterrino in un point release stabile."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "LTS",
+      "set": {
+        "italian": "LTS",
+        "example": "Pin production servers to an LTS kernel release so you get security backports for years without breaking-change churn. = Fissa i server di produzione a una release LTS del kernel cosi' ottieni backport di sicurezza per anni senza il logorio dei cambi breaking.",
+        "note": "Long Term Support: rilasci con supporto esteso (tipicamente 5-6 anni)."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Compile",
+      "set": {
+        "example": "Compile a custom kernel with make -j$(nproc) bzImage modules then install it via make modules_install && make install for testing. = Compila un kernel personalizzato con make -j$(nproc) bzImage modules poi installalo via make modules_install && make install per testarlo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_devices",
+      "english": "Console",
+      "set": {
+        "english": "Device Console",
+        "italian": "console del dispositivo",
+        "example": "Append console=ttyS0,115200 to the kernel cmdline so the device console streams boot output over a serial cable. = Aggiungi console=ttyS0,115200 alla cmdline del kernel cosi' la console del dispositivo trasmette l'output di boot via cavo seriale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Argument",
+      "set": {
+        "english": "Positional Argument",
+        "italian": "argomento posizionale",
+        "example": "Inside a bash script $1 and $2 expose the first and second positional argument passed on the command line. = Dentro uno script bash $1 e $2 espongono il primo e il secondo argomento posizionale passato sulla riga di comando."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "linux_perms",
+      "english": "Execute",
+      "set": {
+        "english": "Execute Permission",
+        "italian": "permesso di esecuzione",
+        "example": "Grant execute permission on a script with chmod +x deploy.sh before invoking it directly via ./deploy.sh. = Concedi il permesso di esecuzione su uno script con chmod +x deploy.sh prima di invocarlo direttamente via ./deploy.sh."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_vars",
+      "english": "PATH",
+      "set": {
+        "english": "PATH Variable",
+        "italian": "variabile PATH",
+        "example": "Prepend ~/.local/bin to the PATH variable in your .bashrc so personal scripts shadow system-wide tools when invoked by name. = Anteponi ~/.local/bin alla variabile PATH nel tuo .bashrc cosi' gli script personali sovrascrivono gli strumenti di sistema quando invocati per nome."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Filesystem",
+      "set": {
+        "english": "VFS Filesystem Layer",
+        "italian": "strato VFS del filesystem",
+        "example": "Linux unifies ext4, xfs, btrfs and others behind the VFS filesystem layer so userspace sees a single syscall API. = Linux unifica ext4, xfs, btrfs e altri dietro lo strato VFS del filesystem cosi' lo userspace vede un'unica API di syscall."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Group",
+      "set": {
+        "english": "Regex Capture Group",
+        "italian": "gruppo di cattura regex",
+        "example": "Wrap parts of a pattern in parentheses to define a regex capture group like (\\d+) and reference it later as \\1 in sed. = Avvolgi parti di un pattern tra parentesi per definire un gruppo di cattura regex come (\\d+) e referenziarlo dopo come \\1 in sed."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Kernel",
+      "set": {
+        "english": "Kernel Log",
+        "italian": "log del kernel",
+        "example": "Tail the kernel log with dmesg -wH to watch hardware events like USB attach and OOM kills in human-readable form. = Segui il log del kernel con dmesg -wH per osservare eventi hardware come connessioni USB e OOM kill in forma leggibile."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_disks",
+      "english": "Usage",
+      "set": {
+        "english": "Disk Usage",
+        "italian": "uso del disco",
+        "example": "Find heavy directories with du -sh /var/* | sort -h to investigate disk usage before adding more storage to a server. = Trova le directory pesanti con du -sh /var/* | sort -h per investigare l'uso del disco prima di aggiungere altro storage a un server."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "linux_archives",
+      "english": "Verbose",
+      "set": {
+        "english": "Verbose Flag",
+        "italian": "flag verboso",
+        "example": "Add the verbose flag -v to tar -xvzf release.tar.gz so each extracted path prints on screen for progress visibility. = Aggiungi il flag verboso -v a tar -xvzf release.tar.gz cosi' ogni percorso estratto viene stampato a schermo per visibilita' sul progresso."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "linux_kernel",
+      "english": "Version",
+      "set": {
+        "english": "Kernel Version",
+        "italian": "versione del kernel",
+        "example": "Print the running kernel version with uname -r before deciding whether a CVE patch applies to your server. = Stampa la versione del kernel in esecuzione con uname -r prima di decidere se una patch CVE si applica al tuo server."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Remove",
+      "set": {
+        "english": "Package Removal",
+        "italian": "rimozione di pacchetto",
+        "example": "Trigger a clean package removal with apt purge nginx so both the binaries and configuration files are wiped. = Innesca una rimozione di pacchetto pulita con apt purge nginx cosi' sia i binari sia i file di configurazione vengono cancellati."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "tail",
+      "set": {
+        "english": "Log Tail",
+        "italian": "tail dei log",
+        "example": "Follow a live log tail with tail -F /var/log/syslog so you keep tracking the file even after it gets rotated. = Segui un tail dei log live con tail -F /var/log/syslog cosi' continui a tracciare il file anche dopo che viene ruotato."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Pattern",
+      "set": {
+        "english": "Regex Pattern",
+        "italian": "pattern regex",
+        "example": "Build a regex pattern like ^ERROR.*timeout$ to match log lines that start with ERROR and end with timeout. = Costruisci un pattern regex come ^ERROR.*timeout$ per matchare righe di log che iniziano con ERROR e finiscono con timeout."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_regex",
+      "english": "Grep",
+      "set": {
+        "english": "egrep / grep -E",
+        "italian": "egrep / grep -E",
+        "example": "Use egrep or grep -E for extended regex so you can write alternation like '(error|warn)' without backslash escaping. = Usa egrep o grep -E per regex estese cosi' puoi scrivere alternanze come '(error|warn)' senza escape con backslash."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_streams",
+      "english": "Redirect",
+      "set": {
+        "english": "Stream Redirection",
+        "italian": "redirezione dei flussi",
+        "example": "Combine stream redirection like 2>&1 with > to send both stdout and stderr from a long-running command into one file. = Combina la redirezione dei flussi come 2>&1 con > per inviare sia stdout sia stderr da un comando di lunga durata in un unico file."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Echo",
+      "set": {
+        "english": "Echo Builtin",
+        "italian": "builtin echo",
+        "example": "Use the echo builtin in bash with -e to interpret escape sequences like \\n while building multiline diagnostic messages. = Usa il builtin echo in bash con -e per interpretare sequenze di escape come \\n mentre costruisci messaggi diagnostici multiriga."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Patch",
+      "set": {
+        "english": "Kernel Patch File",
+        "italian": "file di patch del kernel",
+        "example": "Apply a kernel patch file with patch -p1 < linux-6.6-security.diff inside the source tree before make oldconfig. = Applica un file di patch del kernel con patch -p1 < linux-6.6-security.diff dentro l'albero dei sorgenti prima di make oldconfig."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Archive",
+      "set": {
+        "english": "Backup Archive",
+        "italian": "archivio di backup",
+        "example": "Encrypt a backup archive with tar -cz mydata/ | gpg -c > mydata.tar.gz.gpg before uploading it to off-site storage. = Cifra un archivio di backup con tar -cz mydata/ | gpg -c > mydata.tar.gz.gpg prima di caricarlo su storage off-site."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Profile",
+      "set": {
+        "english": "Performance Profile",
+        "italian": "profilo prestazionale",
+        "example": "Capture a performance profile with perf record -g -- ./benchmark then visualize hot stacks via FlameGraph for analysis. = Cattura un profilo prestazionale con perf record -g -- ./benchmark poi visualizza gli stack caldi via FlameGraph per analisi."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_basics",
+      "english": "Read",
+      "set": {
+        "english": "Read Builtin",
+        "italian": "builtin read",
+        "example": "Prompt for input with read -p 'Continue? ' answer inside a bash script before running a destructive step. = Richiedi input con read -p 'Continue? ' answer dentro uno script bash prima di eseguire un passo distruttivo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Latency",
+      "set": {
+        "english": "P99 Latency",
+        "italian": "latenza P99",
+        "example": "Alert on P99 latency rather than the median so a small fraction of slow users still surfaces in your dashboards. = Allerta sulla latenza P99 invece della mediana cosi' una piccola frazione di utenti lenti emerge comunque nelle tue dashboard."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_firewall",
+      "english": "Firewall",
+      "set": {
+        "english": "Linux Firewall",
+        "italian": "firewall Linux",
+        "example": "Configure a Linux firewall via nftables or ufw to drop inbound traffic by default and only allow ports 22 and 443. = Configura un firewall Linux via nftables o ufw per droppare il traffico inbound di default e permettere solo le porte 22 e 443."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_backup",
+      "english": "Remote",
+      "set": {
+        "english": "Remote Backup",
+        "italian": "backup remoto",
+        "example": "Push a nightly remote backup to off-site storage with rsync -avz over SSH so a site fire doesn't destroy your only copy. = Pusha un backup remoto notturno su storage off-site con rsync -avz su SSH cosi' un incendio in sede non distrugge la tua unica copia."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Connection",
+      "set": {
+        "english": "DB Connection Pool",
+        "italian": "pool di connessioni DB",
+        "example": "Front Postgres with a DB connection pool like PgBouncer so thousands of short-lived clients reuse a few warm sessions. = Metti davanti a Postgres un pool di connessioni DB come PgBouncer cosi' migliaia di client di breve durata riusano poche sessioni calde."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_virtualization",
+      "english": "Host",
+      "set": {
+        "english": "Hypervisor Host",
+        "italian": "host hypervisor",
+        "example": "Reserve at least 20% headroom on each hypervisor host so noisy neighbour VMs don't starve the host itself. = Riserva almeno il 20% di margine su ogni host hypervisor cosi' VM rumorose non affamano l'host stesso."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_performance",
+      "english": "Trace",
+      "set": {
+        "english": "Strace Trace",
+        "italian": "trace di strace",
+        "example": "Capture an strace trace with strace -fp $(pidof nginx) to pinpoint which syscall blocks during a request stall. = Cattura un trace di strace con strace -fp $(pidof nginx) per identificare quale syscall blocca durante uno stallo di richiesta."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_web",
+      "english": "Log",
+      "set": {
+        "english": "Access Log",
+        "italian": "log di accesso",
+        "example": "Tail the nginx access log in real time with tail -f /var/log/nginx/access.log while reproducing a customer-reported 502. = Segui il log di accesso di nginx in tempo reale con tail -f /var/log/nginx/access.log mentre riproduci un 502 segnalato da un cliente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_containers",
+      "english": "Volume",
+      "set": {
+        "english": "Docker Volume",
+        "italian": "volume Docker",
+        "example": "Mount a named Docker volume on /var/lib/postgresql/data so the database survives container restarts and recreations. = Monta un volume Docker nominato su /var/lib/postgresql/data cosi' il database sopravvive a riavvii e ricreazioni del container."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "linux_kernel_adv",
+      "english": "Driver",
+      "set": {
+        "english": "Kernel Driver",
+        "italian": "driver del kernel",
+        "example": "Load a kernel driver dynamically with modprobe nvidia and confirm the device binding via lspci -k afterwards. = Carica un driver del kernel dinamicamente con modprobe nvidia e conferma il binding al dispositivo via lspci -k subito dopo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Update",
+      "set": {
+        "english": "Package Index Update",
+        "italian": "aggiornamento indice pacchetti",
+        "example": "Run a package index update with apt update so the next apt install sees the most recent versions from each repository. = Esegui un aggiornamento dell'indice pacchetti con apt update cosi' il prossimo apt install vede le versioni piu' recenti da ogni repository."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "bash_funcs",
+      "english": "Source",
+      "set": {
+        "english": "Source Builtin",
+        "italian": "builtin source",
+        "example": "Load helper functions into the current shell with the source builtin like source ./lib.sh so they remain available afterwards. = Carica funzioni di supporto nella shell corrente con il builtin source come source ./lib.sh cosi' restano disponibili dopo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "linux_logs",
+      "english": "Debug",
+      "set": {
+        "english": "Debug Log",
+        "italian": "log di debug",
+        "example": "Increase the daemon's debug log level via journalctl -p debug -u myservice to capture verbose diagnostic events. = Aumenta il livello del log di debug del demone via journalctl -p debug -u myservice per catturare eventi diagnostici verbosi."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_packages",
+      "english": "Binary",
+      "set": {
+        "english": "Binary Package",
+        "italian": "pacchetto binario",
+        "example": "Install a precompiled binary package via dpkg -i app.deb when the upstream doesn't ship a repository for your distro. = Installa un pacchetto binario precompilato via dpkg -i app.deb quando l'upstream non rilascia un repository per la tua distro."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "linux_access",
+      "english": "Audit",
+      "set": {
+        "english": "Sudo Audit",
+        "italian": "audit di sudo",
+        "example": "Run a sudo audit by grepping /var/log/auth.log for 'COMMAND=' lines to list every privileged command executed last week. = Esegui un audit di sudo grepando /var/log/auth.log per le righe 'COMMAND=' per elencare ogni comando privilegiato eseguito la settimana scorsa."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "linux_db",
+      "english": "Table",
+      "set": {
+        "english": "DB Table",
+        "italian": "tabella DB",
+        "example": "Inspect a DB table structure with \\d+ users inside psql to see columns, indexes and foreign keys at a glance. = Ispeziona la struttura di una tabella DB con \\d+ users dentro psql per vedere colonne, indici e foreign key a colpo d'occhio."
+      }
+    }
+  ]
+}

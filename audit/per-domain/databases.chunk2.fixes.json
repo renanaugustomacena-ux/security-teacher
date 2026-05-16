@@ -1,0 +1,1470 @@
+{
+  "fixes": [
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "KEYS",
+      "set": {
+        "example": "Avoid running KEYS user:* on a production Redis instance because the command scans the entire keyspace and blocks the single-threaded server. = Evita di eseguire KEYS user:* su un'istanza Redis in produzione perché il comando scansiona l'intero keyspace e blocca il server single-thread."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "SCAN",
+      "set": {
+        "example": "Use SCAN 0 MATCH session:* COUNT 100 inside a loop to iterate keys in production without blocking the server like KEYS would. = Usa SCAN 0 MATCH session:* COUNT 100 dentro un loop per iterare le chiavi in produzione senza bloccare il server come farebbe KEYS."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "INCR",
+      "set": {
+        "example": "Track page views by calling INCR page:home on every request so the counter increments atomically without a race condition. = Traccia le visualizzazioni della pagina chiamando INCR page:home a ogni richiesta cosi il contatore si incrementa atomicamente senza race condition."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "DECR",
+      "set": {
+        "example": "When an order ships, DECR stock:item:42 reduces the available stock by one in a single atomic operation. = Quando un ordine viene spedito, DECR stock:item:42 riduce di uno lo stock disponibile in una singola operazione atomica."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "FLUSHDB",
+      "set": {
+        "example": "Reach for FLUSHDB only in local test environments because it wipes every key in the current database with no confirmation. = Usa FLUSHDB solo in ambienti di test locali perché cancella ogni chiave del database corrente senza chiedere conferma."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Redis List",
+      "set": {
+        "example": "A Redis list backed by a doubly linked list makes LPUSH/RPOP a constant-time queue for background job workers. = Una lista Redis basata su lista doppiamente collegata rende LPUSH/RPOP una coda in tempo costante per worker di job in background."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "LPUSH",
+      "set": {
+        "example": "The job producer calls LPUSH queue:emails task1 so workers can pop tasks from the right end with RPOP. = Il producer di job chiama LPUSH queue:emails task1 cosi i worker possono fare pop dei task dall'estremità destra con RPOP."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "RPUSH",
+      "set": {
+        "example": "Append a new log line by calling RPUSH access:log entry so the order of insertion is preserved on the right side of the list. = Aggiungi una nuova riga di log chiamando RPUSH access:log entry cosi l'ordine di inserimento è preservato sul lato destro della lista."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "LPOP",
+      "set": {
+        "example": "A worker pulls the next task with LPOP queue:emails, removing and returning the head of the list atomically. = Un worker preleva il prossimo task con LPOP queue:emails, rimuovendo e restituendo la testa della lista atomicamente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Redis Set",
+      "set": {
+        "example": "Use a Redis set like SADD online:users alice bob to track active sessions while automatically deduplicating user IDs. = Usa un set Redis come SADD online:users alice bob per tracciare le sessioni attive deduplicando automaticamente gli ID utente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "SADD",
+      "set": {
+        "example": "Tag an article by running SADD tags:article:1 ssr node and Redis will silently skip a tag that is already present. = Tagga un articolo eseguendo SADD tags:article:1 ssr node e Redis salterà silenziosamente un tag già presente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Redis Hash",
+      "set": {
+        "example": "Store a user profile as a Redis hash with HSET user:1 name Marco age 30 so each field can be updated independently. = Memorizza il profilo utente come hash Redis con HSET user:1 name Marco age 30 cosi ogni campo può essere aggiornato indipendentemente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "HGET",
+      "set": {
+        "example": "Read a single field from a stored profile with HGET user:1 email instead of loading the entire hash. = Leggi un singolo campo dal profilo memorizzato con HGET user:1 email invece di caricare l'intero hash."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "Sorted Set",
+      "set": {
+        "example": "Build a leaderboard with a sorted set: ZADD leaderboard 100 marco 95 alice keeps entries ordered by score automatically. = Costruisci una classifica con un sorted set: ZADD leaderboard 100 marco 95 alice mantiene le voci ordinate per punteggio automaticamente."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_10",
+      "english": "ZADD",
+      "set": {
+        "example": "Add a player to a high-score table with ZADD scores 95 alice and the sorted set re-ranks entries in O(log N). = Aggiungi un giocatore alla tabella dei punteggi con ZADD scores 95 alice e il sorted set ri-classifica le voci in O(log N)."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "TTL",
+      "set": {
+        "example": "Check how long a cached session has left to live with TTL session:abc, which returns the remaining seconds or -1 if no expiry is set. = Controlla quanto vive ancora una sessione in cache con TTL session:abc, che restituisce i secondi rimanenti o -1 se non è impostata scadenza."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "EXPIRE",
+      "set": {
+        "example": "After writing a one-time token, call EXPIRE token:reset:abc 900 so Redis deletes it automatically in fifteen minutes. = Dopo aver scritto un token monouso, chiama EXPIRE token:reset:abc 900 cosi Redis lo cancella automaticamente in quindici minuti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "PERSIST",
+      "set": {
+        "example": "When promoting a temporary cache entry to a permanent value, PERSIST cart:42 removes the existing TTL and stops the key from expiring. = Quando promuovi una voce temporanea a valore permanente, PERSIST cart:42 rimuove il TTL esistente e impedisce alla chiave di scadere."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "Cache",
+      "set": {
+        "example": "Putting a cache layer in front of PostgreSQL lets read-heavy endpoints answer in microseconds instead of milliseconds. = Mettere un livello di cache davanti a PostgreSQL permette agli endpoint read-heavy di rispondere in microsecondi invece che millisecondi."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "Cache Miss",
+      "set": {
+        "example": "On a cache miss, the application falls back to PostgreSQL, fetches the row, and writes it back to Redis for the next request. = In caso di cache miss, l'applicazione ricade su PostgreSQL, recupera la riga e la scrive di nuovo su Redis per la richiesta successiva."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "Cache Invalidation",
+      "set": {
+        "example": "After updating a user's email, cache invalidation deletes the cached profile so the next read fetches fresh data from the database. = Dopo aver aggiornato l'email di un utente, l'invalidazione cache cancella il profilo in cache cosi la prossima lettura recupera dati freschi dal database."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "Cache-Aside",
+      "set": {
+        "example": "With the cache-aside pattern the application checks Redis first, queries PostgreSQL on a miss, then writes the result back to Redis. = Con il pattern cache-aside l'applicazione controlla prima Redis, interroga PostgreSQL in caso di miss, poi riscrive il risultato su Redis."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "Write-Through",
+      "set": {
+        "example": "A write-through cache synchronously writes the same update to both Redis and PostgreSQL, keeping them consistent at the cost of latency. = Una cache write-through scrive sincronamente lo stesso aggiornamento sia su Redis sia su PostgreSQL, mantenendoli coerenti al costo di latenza."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_11",
+      "english": "Eviction Policy",
+      "set": {
+        "example": "Setting maxmemory-policy allkeys-lru tells Redis to drop the least recently used keys when memory fills up. = Impostare maxmemory-policy allkeys-lru dice a Redis di scartare le chiavi usate meno recentemente quando la memoria si riempie."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "Pub/Sub",
+      "set": {
+        "example": "With Redis Pub/Sub a notification service can PUBLISH to a channel and every connected subscriber receives the message in near real time. = Con Redis Pub/Sub un servizio di notifica può fare PUBLISH su un canale e ogni subscriber connesso riceve il messaggio in tempo quasi reale."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "PUBLISH",
+      "set": {
+        "example": "Notify every chat client by calling PUBLISH chat:room:42 \"hi\" and Redis fans the message out to all subscribers of that channel. = Notifica ogni client di chat chiamando PUBLISH chat:room:42 \"hi\" e Redis distribuisce il messaggio a tutti i subscriber di quel canale."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "SUBSCRIBE",
+      "set": {
+        "example": "A notification worker runs SUBSCRIBE notifications and blocks until a publisher fires a message on that channel. = Un worker di notifiche esegue SUBSCRIBE notifications e si blocca finché un publisher non manda un messaggio su quel canale."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "Channel",
+      "set": {
+        "example": "Group related events into a single channel like orders:created so subscribers can listen to one stream of business updates. = Raggruppa eventi correlati in un singolo canale come orders:created cosi i subscriber possono ascoltare un solo flusso di aggiornamenti di business."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "Redis Streams",
+      "set": {
+        "example": "Redis Streams give you an append-only log with consumer groups, perfect for distributing event processing across many workers. = Redis Streams ti danno un log append-only con consumer group, perfetto per distribuire l'elaborazione di eventi su molti worker."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "XADD",
+      "set": {
+        "example": "Append a click event with XADD events * type click user_id 42 and Redis returns the generated stream entry ID. = Aggiungi un evento click con XADD events * type click user_id 42 e Redis restituisce l'ID generato della voce di stream."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "XREAD",
+      "set": {
+        "example": "A worker pulls the next batch of events with XREAD COUNT 10 STREAMS events $ and blocks waiting for new entries. = Un worker preleva il prossimo batch di eventi con XREAD COUNT 10 STREAMS events $ e si blocca aspettando nuove voci."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "Consumer Group",
+      "set": {
+        "example": "Create a consumer group with XGROUP CREATE events workers $ so multiple workers can split the stream and process events in parallel. = Crea un consumer group con XGROUP CREATE events workers $ cosi più worker possono dividersi lo stream ed elaborare eventi in parallelo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "Persistence",
+      "set": {
+        "english": "Redis Persistence",
+        "italian": "Persistenza Redis",
+        "example": "Enable Redis persistence with both RDB snapshots and an AOF log so the in-memory dataset survives a server restart. = Abilita la persistenza Redis sia con snapshot RDB sia con un log AOF cosi il dataset in memoria sopravvive a un riavvio del server."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_12",
+      "english": "AOF",
+      "set": {
+        "italian": "AOF",
+        "example": "Turn on AOF with appendonly yes and Redis writes every mutating command to a log that can replay the state after a crash. = Attiva l'AOF con appendonly yes e Redis scrive ogni comando di mutazione in un log che può riprodurre lo stato dopo un crash.",
+        "note": "Append Only File: log persistente delle scritture Redis."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "EXPLAIN",
+      "set": {
+        "example": "Run EXPLAIN SELECT * FROM users WHERE email = $1 to see the execution plan Postgres would pick without actually running the query. = Esegui EXPLAIN SELECT * FROM users WHERE email = $1 per vedere il piano di esecuzione che Postgres sceglierebbe senza eseguire effettivamente la query."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "EXPLAIN ANALYZE",
+      "set": {
+        "example": "Use EXPLAIN ANALYZE on a slow report query to see real timings per plan node, not just the planner's cost estimates. = Usa EXPLAIN ANALYZE su una query di reportistica lenta per vedere i tempi reali per nodo del piano, non solo le stime di costo del planner."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "Cost",
+      "set": {
+        "example": "When EXPLAIN reports cost=0.00..15.50, the planner expects roughly 15 page-fetch units of effort to execute the query. = Quando EXPLAIN riporta cost=0.00..15.50, il planner si aspetta circa 15 unità di costo di pagina per eseguire la query."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "Nested Loop",
+      "set": {
+        "example": "For a join between two small tables the planner often picks a nested loop, scanning the inner side once per outer row. = Per un join tra due tabelle piccole il planner spesso sceglie un nested loop, scansionando il lato interno una volta per ogni riga esterna."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "Hash Join",
+      "set": {
+        "example": "When joining two large tables on equality the planner builds an in-memory hash join, hashing the smaller side and probing with the bigger. = Quando si fanno join di due grandi tabelle su uguaglianza, il planner costruisce un hash join in memoria, facendo hash del lato più piccolo e sondando con il più grande."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "Merge Join",
+      "set": {
+        "example": "If both inputs are already sorted on the join key, the planner picks a merge join and walks them in a single linear pass. = Se entrambi gli input sono già ordinati sulla chiave di join, il planner sceglie un merge join e li percorre in un singolo passaggio lineare."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "Buffers",
+      "set": {
+        "example": "Run EXPLAIN (ANALYZE, BUFFERS) to see how many shared and disk buffers each plan node read, exposing hidden I/O cost. = Esegui EXPLAIN (ANALYZE, BUFFERS) per vedere quanti buffer condivisi e di disco ha letto ogni nodo del piano, esponendo il costo I/O nascosto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_1",
+      "english": "Estimated vs Actual",
+      "set": {
+        "example": "Watch for an estimated vs actual row mismatch of 10x or more in EXPLAIN ANALYZE: it usually signals stale statistics. = Osserva una discrepanza stimato vs reale di 10x o più in EXPLAIN ANALYZE: di solito segnala statistiche obsolete."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "Statistics",
+      "set": {
+        "example": "Postgres updates table statistics during autovacuum so the planner knows row counts, distinct values, and value distributions. = Postgres aggiorna le statistiche di tabella durante autovacuum cosi il planner conosce numero di righe, valori distinti e distribuzioni di valori."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "ANALYZE",
+      "set": {
+        "example": "After a bulk import run ANALYZE users so the planner sees the new row distribution and stops choosing seq scans by mistake. = Dopo un import massivo esegui ANALYZE users cosi il planner vede la nuova distribuzione di righe e smette di scegliere seq scan per errore."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "Histogram",
+      "set": {
+        "example": "Postgres stores a histogram of column values per table so the planner can estimate how many rows match a range predicate. = Postgres memorizza un istogramma dei valori di colonna per tabella cosi il planner può stimare quante righe soddisfano un predicato di range."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "Query Optimizer",
+      "set": {
+        "example": "The query optimizer in PostgreSQL evaluates dozens of plan shapes and picks the one with the lowest estimated cost. = L'ottimizzatore di query in PostgreSQL valuta dozzine di forme di piano e sceglie quella con il costo stimato più basso."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "Cost-Based Optimizer",
+      "set": {
+        "example": "PostgreSQL and Oracle use a cost-based optimizer that compares plan costs derived from statistics rather than fixed rules. = PostgreSQL e Oracle usano un ottimizzatore basato sui costi che confronta i costi dei piani derivati dalle statistiche invece di regole fisse."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "Cardinality Estimation",
+      "set": {
+        "example": "Bad cardinality estimation can make the planner pick a nested loop over a million rows instead of a hash join. = Una cattiva stima di cardinalità può portare il planner a scegliere un nested loop su un milione di righe invece di un hash join."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "Selectivity",
+      "set": {
+        "english": "Predicate Selectivity",
+        "italian": "Selettività del predicato",
+        "example": "A predicate's selectivity is the fraction of rows it keeps: WHERE active = true with 95% true rows has 0.95 selectivity. = La selettività di un predicato è la frazione di righe che mantiene: WHERE active = true con 95% di righe true ha selettività 0.95."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "Stale Statistics",
+      "set": {
+        "example": "After loading ten million rows into an empty table the planner will pick bad plans until ANALYZE refreshes the stale statistics. = Dopo aver caricato dieci milioni di righe in una tabella vuota il planner sceglierà piani errati finché ANALYZE non aggiorna le statistiche obsolete."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_2",
+      "english": "Sample Size",
+      "set": {
+        "example": "Tune sample size with ALTER TABLE users ALTER COLUMN id SET STATISTICS 1000 when default sampling produces poor histograms. = Regola la dimensione del campione con ALTER TABLE users ALTER COLUMN id SET STATISTICS 1000 quando il sampling di default produce istogrammi scarsi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "Query Tuning",
+      "set": {
+        "example": "Effective query tuning combines reading EXPLAIN plans, fixing missing indexes, and rewriting predicates to make them sargable. = Un tuning efficace delle query combina la lettura dei piani EXPLAIN, la correzione di indici mancanti e la riscrittura di predicati per renderli sargable."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "pg_stat_statements",
+      "set": {
+        "italian": "pg_stat_statements",
+        "example": "Query pg_stat_statements ORDER BY total_exec_time DESC LIMIT 20 to find the worst queries by cumulative CPU time. = Interroga pg_stat_statements ORDER BY total_exec_time DESC LIMIT 20 per trovare le peggiori query per tempo CPU cumulativo.",
+        "note": "Estensione PostgreSQL che registra statistiche di esecuzione per ogni query."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "N+1 Problem",
+      "set": {
+        "example": "An ORM hits the N+1 problem when it loads 100 orders and then issues 100 extra SELECTs to fetch each order's customer. = Un ORM incontra il problema N+1 quando carica 100 ordini e poi emette 100 SELECT extra per recuperare il cliente di ogni ordine."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "Eager Loading",
+      "set": {
+        "example": "Switch to eager loading with User.findAll({ include: [Order] }) to fetch users and their orders in a single JOIN. = Passa all'eager loading con User.findAll({ include: [Order] }) per recuperare utenti e i loro ordini in una singola JOIN."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "Lazy Loading",
+      "set": {
+        "example": "Most ORMs default to lazy loading: associations are not fetched until the code accesses them, which often triggers the N+1 problem. = La maggior parte degli ORM usa lazy loading di default: le associazioni non vengono recuperate finché il codice non vi accede, causando spesso il problema N+1."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "Query Rewrite",
+      "set": {
+        "example": "Apply a manual query rewrite to replace OR conditions with UNION ALL when the planner cannot use indexes on disjunctive predicates. = Applica una riscrittura manuale della query per sostituire condizioni OR con UNION ALL quando il planner non può usare indici su predicati disgiuntivi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "Predicate Pushdown",
+      "set": {
+        "example": "With predicate pushdown a federated query engine sends WHERE filters to the remote source so only matching rows traverse the network. = Con il predicate pushdown un motore di query federato invia i filtri WHERE alla sorgente remota cosi solo le righe corrispondenti attraversano la rete."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "Sargable",
+      "set": {
+        "italian": "Sargable",
+        "example": "A sargable predicate like WHERE created_at > NOW() - INTERVAL '1 day' can use an index, while WHERE DATE(created_at) = ... cannot. = Un predicato sargable come WHERE created_at > NOW() - INTERVAL '1 day' può usare un indice, mentre WHERE DATE(created_at) = ... no.",
+        "note": "Search ARGument ABLE: predicato che il planner può soddisfare con un index seek."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_3",
+      "english": "Query Hint",
+      "set": {
+        "example": "An Oracle query hint like /*+ INDEX(users idx_email) */ forces the optimizer to use a specific index instead of its own pick. = Un query hint Oracle come /*+ INDEX(users idx_email) */ forza l'ottimizzatore a usare un indice specifico invece della sua scelta."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_4",
+      "english": "Performance",
+      "set": {
+        "example": "Database performance often dominates an API's p95 latency, so profiling slow queries is usually the highest-leverage optimization. = Le performance del database spesso dominano la latenza p95 di un'API, quindi profilare le query lente è solitamente l'ottimizzazione più efficace."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_4",
+      "english": "Throughput",
+      "set": {
+        "example": "A well-tuned PostgreSQL on NVMe storage can sustain throughput of tens of thousands of point reads per second on a single node. = Un PostgreSQL ben configurato su storage NVMe può sostenere un throughput di decine di migliaia di letture puntuali al secondo su un singolo nodo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_4",
+      "english": "IOPS",
+      "set": {
+        "example": "Cloud disks are priced by IOPS, so an OLTP workload doing many small random reads may need provisioned IOPS instead of standard storage. = I dischi cloud sono pagati per IOPS, quindi un carico OLTP che fa molte letture random piccole può richiedere IOPS dedicati invece dello storage standard."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_4",
+      "english": "Connection Pool",
+      "set": {
+        "example": "Keep a connection pool of 20 connections per application instance so requests reuse warm connections instead of paying TLS+auth costs. = Mantieni un pool di 20 connessioni per istanza dell'applicazione cosi le richieste riusano connessioni calde invece di pagare i costi TLS+auth."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_4",
+      "english": "Connection Pooling",
+      "set": {
+        "example": "Put PgBouncer in front of PostgreSQL for connection pooling so 10000 client connections multiplex onto 50 backend connections. = Metti PgBouncer davanti a PostgreSQL per il connection pooling cosi 10000 connessioni client si multiplexano su 50 connessioni backend."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_4",
+      "english": "Query Cache",
+      "set": {
+        "example": "Application-level query cache in Redis can avoid re-running an expensive aggregation that is read 1000 times per minute. = Una cache di query a livello applicativo in Redis può evitare di ri-eseguire un'aggregazione costosa letta 1000 volte al minuto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_4",
+      "english": "Buffer Pool",
+      "set": {
+        "example": "InnoDB's buffer pool caches table and index pages in RAM, so hot rows are served without touching the disk on every read. = Il buffer pool di InnoDB mette in cache le pagine di tabelle e indici in RAM, cosi le righe calde vengono servite senza toccare il disco a ogni lettura."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_4",
+      "english": "Shared Buffers",
+      "set": {
+        "example": "Set shared_buffers to about 25% of system RAM on a dedicated Postgres host, e.g. 4GB on a 16GB machine. = Imposta shared_buffers a circa il 25% della RAM di sistema su un host Postgres dedicato, es. 4GB su una macchina da 16GB."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "db_optimization_4",
+      "english": "Hot Path",
+      "set": {
+        "example": "Profile the hot path first: the login endpoint runs on every request, so saving 5ms there beats optimizing a nightly cron job. = Profila prima il percorso caldo: l'endpoint di login gira a ogni richiesta, quindi risparmiare 5ms li batte ottimizzare un cron job notturno."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "Backup",
+      "set": {
+        "example": "Schedule a nightly backup that exports the database to S3 and run a quarterly restore drill to confirm the file is usable. = Pianifica un backup notturno che esporta il database su S3 ed esegui un'esercitazione di ripristino trimestrale per confermare che il file sia utilizzabile."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "Full Backup",
+      "set": {
+        "example": "Take a weekly full backup of the entire database on Sunday night, then capture daily incrementals to keep storage costs down. = Esegui un backup completo settimanale dell'intero database la domenica notte, poi cattura incrementali giornalieri per contenere i costi di storage."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "Incremental Backup",
+      "set": {
+        "example": "An incremental backup of WAL segments since the last full backup writes a fraction of the data and finishes in minutes. = Un backup incrementale dei segmenti WAL dall'ultimo backup completo scrive una frazione dei dati e termina in pochi minuti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "pg_dump",
+      "set": {
+        "italian": "pg_dump",
+        "example": "Export a logical dump with pg_dump -U postgres mydb -F c -f backup.dump so you can restore individual tables later. = Esporta un dump logico con pg_dump -U postgres mydb -F c -f backup.dump cosi puoi ripristinare tabelle singole in seguito.",
+        "note": "Utility a riga di comando di PostgreSQL per backup logici."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "mysqldump",
+      "set": {
+        "italian": "mysqldump",
+        "example": "Run mysqldump -u root -p --single-transaction mydb > backup.sql to get a consistent dump without locking InnoDB tables. = Esegui mysqldump -u root -p --single-transaction mydb > backup.sql per ottenere un dump consistente senza lockare tabelle InnoDB.",
+        "note": "Utility a riga di comando di MySQL/MariaDB per backup logici."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "Logical Backup",
+      "set": {
+        "example": "A logical backup like pg_dump emits SQL statements, so you can restore into a different Postgres major version without compatibility issues. = Un backup logico come pg_dump emette istruzioni SQL, cosi puoi ripristinare in una versione major diversa di Postgres senza problemi di compatibilità."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "Physical Backup",
+      "set": {
+        "example": "Use pg_basebackup for a physical backup that copies the data directory bit by bit and restores faster than a logical dump. = Usa pg_basebackup per un backup fisico che copia la directory dei dati byte per byte e si ripristina più velocemente di un dump logico."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "Hot Backup",
+      "set": {
+        "example": "A hot backup runs while users are still writing to the database, using WAL archiving to capture a consistent snapshot. = Un backup a caldo gira mentre gli utenti stanno ancora scrivendo nel database, usando l'archiviazione WAL per catturare uno snapshot consistente."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "Cold Backup",
+      "set": {
+        "example": "A cold backup requires stopping the database first, so it is fine for a dev environment but unacceptable for 24/7 production. = Un backup a freddo richiede di fermare prima il database, quindi va bene per ambienti di dev ma è inaccettabile per produzione 24/7."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_1",
+      "english": "Backup Schedule",
+      "set": {
+        "example": "Define a backup schedule in cron such as 0 3 * * * /usr/local/bin/backup.sh to run every night at 3 AM with retention. = Definisci una schedule di backup in cron come 0 3 * * * /usr/local/bin/backup.sh per girare ogni notte alle 3 del mattino con retention."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "Restore",
+      "set": {
+        "example": "After provisioning a fresh database server, restore from last night's dump with pg_restore -d mydb backup.dump and verify row counts. = Dopo aver provisionato un server di database fresco, ripristina dal dump della scorsa notte con pg_restore -d mydb backup.dump e verifica i conteggi di righe."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "pg_restore",
+      "set": {
+        "italian": "pg_restore",
+        "example": "Restore a custom-format dump with pg_restore -U postgres -d mydb -j 4 backup.dump using four parallel workers for speed. = Ripristina un dump in formato custom con pg_restore -U postgres -d mydb -j 4 backup.dump usando quattro worker paralleli per velocità.",
+        "note": "Utility a riga di comando di PostgreSQL per ripristinare dump in formato custom o directory."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "Point-in-Time Recovery",
+      "set": {
+        "example": "Point-in-time recovery lets you replay WAL up to 14:00 yesterday so you can recover a table dropped by an accidental DELETE. = Il point-in-time recovery permette di rieseguire il WAL fino alle 14:00 di ieri cosi puoi recuperare una tabella cancellata da una DELETE accidentale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "Disaster Recovery",
+      "set": {
+        "example": "Document a disaster recovery plan that lists the steps to restore production into a second region within the agreed RTO. = Documenta un piano di disaster recovery che elenca i passi per ripristinare la produzione in una seconda regione entro l'RTO concordato."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "RTO",
+      "set": {
+        "italian": "RTO",
+        "example": "An RTO of 30 minutes means the business expects the database to be back online no more than half an hour after a major incident. = Un RTO di 30 minuti significa che il business si aspetta che il database torni online non più di mezz'ora dopo un incidente grave.",
+        "note": "Recovery Time Objective: tempo massimo tollerato di downtime."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "RPO",
+      "set": {
+        "italian": "RPO",
+        "example": "An RPO of 5 minutes means you can lose at most the last 5 minutes of writes, which usually requires WAL streaming to a standby. = Un RPO di 5 minuti significa che puoi perdere al massimo gli ultimi 5 minuti di scritture, il che richiede di solito streaming WAL verso uno standby.",
+        "note": "Recovery Point Objective: perdita massima di dati tollerata."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "WAL Archive",
+      "set": {
+        "example": "Configure archive_command = 'cp %p /mnt/wal/%f' so Postgres ships WAL segments to a WAL archive used for point-in-time recovery. = Configura archive_command = 'cp %p /mnt/wal/%f' cosi Postgres invia i segmenti WAL a un archivio WAL usato per il point-in-time recovery."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "Standby",
+      "set": {
+        "example": "Keep a standby replica in a second data center so a failover promotes it to primary if the main site goes down. = Tieni una replica standby in un secondo data center cosi un failover la promuove a primario se il sito principale va giù."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "Verify Backup",
+      "set": {
+        "example": "Verify backup integrity by restoring it nightly into a sandbox and running SELECT count(*) against a known reference table. = Verifica l'integrità del backup ripristinandolo ogni notte in una sandbox ed eseguendo SELECT count(*) su una tabella di riferimento nota."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_2",
+      "english": "Restore Drill",
+      "set": {
+        "example": "Run a quarterly restore drill where the on-call engineer recovers production into a staging server using only the documented runbook. = Esegui un'esercitazione di ripristino trimestrale dove l'ingegnere on-call recupera la produzione in uno staging usando solo il runbook documentato."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "User Management",
+      "set": {
+        "example": "Centralize user management in PostgreSQL with roles and GRANT statements so every change is auditable in version control. = Centralizza la gestione utenti in PostgreSQL con ruoli e istruzioni GRANT cosi ogni cambiamento è tracciabile nel version control."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "CREATE USER",
+      "set": {
+        "example": "Provision a new application account with CREATE USER app_api WITH PASSWORD 'strong-secret' so the service can log in. = Provisiona un nuovo account applicativo con CREATE USER app_api WITH PASSWORD 'strong-secret' cosi il servizio può autenticarsi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "CREATE ROLE",
+      "set": {
+        "example": "Group permissions with CREATE ROLE app_readonly then GRANT SELECT to it once and assign the role to every read-only user. = Raggruppa i permessi con CREATE ROLE app_readonly poi fai GRANT SELECT una sola volta e assegna il ruolo a ogni utente in sola lettura."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "GRANT",
+      "set": {
+        "example": "Allow the reporting team to read sales data with GRANT SELECT ON sales TO reports without giving them write access. = Permetti al team di reporting di leggere i dati di vendita con GRANT SELECT ON sales TO reports senza dargli accesso in scrittura."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "REVOKE",
+      "set": {
+        "example": "When an analyst changes team, run REVOKE INSERT, UPDATE, DELETE ON orders FROM alice to immediately drop write privileges. = Quando un analista cambia team, esegui REVOKE INSERT, UPDATE, DELETE ON orders FROM alice per togliere subito i privilegi di scrittura."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "Privilege",
+      "set": {
+        "example": "A SELECT privilege on a table lets a role read rows but not modify them, while INSERT and UPDATE require separate grants. = Un privilegio SELECT su una tabella permette a un ruolo di leggere le righe ma non di modificarle, mentre INSERT e UPDATE richiedono grant separati."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "Role",
+      "set": {
+        "example": "Assign the app_readonly role to a new analyst with GRANT app_readonly TO alice instead of granting individual table permissions. = Assegna il ruolo app_readonly a un nuovo analista con GRANT app_readonly TO alice invece di concedere permessi per tabella singola."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "Superuser",
+      "set": {
+        "example": "Reserve superuser privileges for break-glass accounts only because a superuser bypasses every grant and security policy. = Riserva i privilegi superuser solo per account break-glass perché un superuser bypassa ogni grant e policy di sicurezza."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "Least Privilege",
+      "set": {
+        "example": "Follow least privilege by giving the reporting service only SELECT on the views it needs, not full read on every base table. = Segui il privilegio minimo dando al servizio di reporting solo SELECT sulle viste che gli servono, non lettura completa su ogni tabella base."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_3",
+      "english": "pg_hba.conf",
+      "set": {
+        "italian": "pg_hba.conf",
+        "example": "Edit pg_hba.conf to add host all all 10.0.0.0/24 scram-sha-256 and reload PostgreSQL so the VPN subnet can authenticate. = Modifica pg_hba.conf per aggiungere host all all 10.0.0.0/24 scram-sha-256 e ricarica PostgreSQL cosi la subnet VPN può autenticarsi.",
+        "note": "File di configurazione PostgreSQL per Host-Based Authentication."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Monitoring",
+      "set": {
+        "example": "Set up monitoring that scrapes pg_stat_activity every 15 seconds so you see connection spikes before they exhaust max_connections. = Imposta un monitoraggio che fa scrape di pg_stat_activity ogni 15 secondi cosi vedi i picchi di connessione prima che esauriscano max_connections."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Metric",
+      "set": {
+        "example": "Track the four golden metrics for a database: latency, throughput, error rate, and saturation of CPU and I/O. = Traccia le quattro metriche d'oro per un database: latenza, throughput, tasso di errori e saturazione di CPU e I/O."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Connection Count",
+      "set": {
+        "example": "Alert on connection count exceeding 80% of max_connections so the on-call has time to scale PgBouncer before the database refuses logins. = Genera alert quando il numero di connessioni supera l'80% di max_connections cosi l'on-call ha tempo di scalare PgBouncer prima che il database rifiuti login."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Cache Hit Ratio",
+      "set": {
+        "example": "Aim for a cache hit ratio above 99% on OLTP workloads; a sudden drop usually means the working set has outgrown shared_buffers. = Punta a un rapporto di cache hit sopra il 99% per carichi OLTP; un calo improvviso significa di solito che il working set è cresciuto oltre shared_buffers."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Long-Running Query",
+      "set": {
+        "example": "Kill any long-running query active for more than 5 minutes on the OLTP cluster, since it is likely holding locks and blocking writers. = Termina ogni long-running query attiva da più di 5 minuti sul cluster OLTP, perché probabilmente sta tenendo lock e bloccando i writer."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Lock Contention",
+      "set": {
+        "example": "When lock contention shows up in pg_locks, look for a transaction that took an exclusive lock on a hot row and forgot to commit. = Quando appare contesa di lock in pg_locks, cerca una transazione che ha preso un lock esclusivo su una riga calda e ha dimenticato di fare commit."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Alert",
+      "set": {
+        "example": "Configure an alert that pages the on-call when replication lag exceeds 60 seconds, so they investigate before clients see stale reads. = Configura un alert che chiama l'on-call quando il replication lag supera i 60 secondi, cosi indaga prima che i client vedano letture stale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Dashboard",
+      "set": {
+        "example": "Build a Grafana dashboard with panels for QPS, latency, lock waits, and replication lag so the team sees database health at a glance. = Costruisci una dashboard Grafana con pannelli per QPS, latenza, attese su lock e replication lag cosi il team vede la salute del database a colpo d'occhio."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "db_administration_4",
+      "english": "Health Check",
+      "set": {
+        "example": "Expose a /healthz endpoint that runs SELECT 1 against the database so the load balancer can drop unhealthy app instances quickly. = Esponi un endpoint /healthz che esegue SELECT 1 sul database cosi il load balancer può rimuovere rapidamente le istanze app non in salute."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Replication",
+      "set": {
+        "example": "Set up streaming replication from the primary to two replicas so reads scale out and a failover is possible if the primary dies. = Configura una replicazione streaming dal primario a due repliche cosi le letture scalano e un failover è possibile se il primario muore."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Master-Slave",
+      "set": {
+        "example": "Older docs still call the topology master-slave, but modern PostgreSQL guides now use primary-replica for inclusive language. = Vecchi documenti chiamano ancora la topologia master-slave, ma le guide moderne di PostgreSQL ora usano primary-replica per un linguaggio inclusivo."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Primary-Replica",
+      "set": {
+        "example": "In a primary-replica topology only the primary accepts writes, while replicas apply the WAL stream and can serve read traffic. = In una topologia primario-replica solo il primario accetta scritture, mentre le repliche applicano lo stream WAL e possono servire traffico di lettura."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Streaming Replication",
+      "set": {
+        "example": "Streaming replication in PostgreSQL ships WAL records to a standby over a TCP connection with near-zero replication lag. = La replicazione streaming in PostgreSQL invia i record WAL a uno standby su una connessione TCP con replication lag quasi zero."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Logical Replication",
+      "set": {
+        "example": "Use logical replication via CREATE PUBLICATION to replicate selected tables between Postgres major versions during an upgrade. = Usa la replicazione logica via CREATE PUBLICATION per replicare tabelle selezionate tra versioni major di Postgres durante un upgrade."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Physical Replication",
+      "set": {
+        "example": "Physical replication copies WAL byte-for-byte so the replica is a bit-identical copy of the primary, useful for HA failover. = La replicazione fisica copia il WAL byte per byte cosi la replica è una copia bit-identica del primario, utile per failover HA."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_1",
+      "english": "Replication Lag",
+      "set": {
+        "example": "Track replication lag with SELECT NOW() - pg_last_xact_replay_timestamp() and alert if it stays above 5 seconds. = Traccia il replication lag con SELECT NOW() - pg_last_xact_replay_timestamp() e genera alert se resta sopra i 5 secondi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_2",
+      "english": "High Availability",
+      "set": {
+        "example": "A high availability target of 99.99% allows only 52 minutes of downtime per year, which usually requires automatic failover. = Un obiettivo di alta disponibilità del 99.99% consente solo 52 minuti di downtime all'anno, il che richiede di solito failover automatico."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_2",
+      "english": "Failover",
+      "set": {
+        "example": "During a primary outage, an automatic failover promotes the most up-to-date replica and rewrites the VIP to point at it. = Durante un'interruzione del primario, un failover automatico promuove la replica più aggiornata e riscrive il VIP per puntarla."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_2",
+      "english": "Automatic Failover",
+      "set": {
+        "example": "Run Patroni on every node to coordinate automatic failover via etcd, so a replica gets promoted within 30 seconds of a primary crash. = Esegui Patroni su ogni nodo per coordinare il failover automatico via etcd, cosi una replica viene promossa entro 30 secondi dal crash del primario."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_2",
+      "english": "Manual Failover",
+      "set": {
+        "example": "For a critical maintenance window the DBA performs a manual failover, ensuring write traffic is drained before promoting the standby. = Per una finestra di manutenzione critica il DBA esegue un failover manuale, assicurandosi che il traffico di scrittura sia drenato prima di promuovere lo standby."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_2",
+      "english": "Switchover",
+      "set": {
+        "example": "Plan a switchover during a low-traffic window so the primary role moves to a fresh node and the old primary becomes a replica. = Pianifica uno switchover in una finestra a basso traffico cosi il ruolo di primario si sposta a un nodo fresco e il vecchio primario diventa una replica."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_2",
+      "english": "Split Brain",
+      "set": {
+        "example": "If both old primary and promoted replica accept writes after a network partition, you have a split brain and must reconcile diverged data. = Se sia il vecchio primario sia la replica promossa accettano scritture dopo una partizione di rete, hai uno split brain e devi riconciliare dati divergenti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_2",
+      "english": "Fencing",
+      "set": {
+        "example": "After promoting a replica, the cluster manager performs fencing on the old primary by killing its process so it cannot accept writes. = Dopo aver promosso una replica, il cluster manager esegue il fencing del vecchio primario terminandone il processo cosi non può accettare scritture."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_2",
+      "english": "Heartbeat",
+      "set": {
+        "example": "Each node sends a heartbeat to the cluster manager every second, so a missing heartbeat for 10 seconds triggers failover. = Ogni nodo manda un heartbeat al cluster manager ogni secondo, cosi un heartbeat mancante per 10 secondi innesca il failover."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_2",
+      "english": "Quorum",
+      "set": {
+        "english": "HA Quorum",
+        "italian": "Quorum HA",
+        "example": "In a three-node etcd cluster the HA quorum is two, so a single-node failure still allows the remaining majority to elect a leader. = In un cluster etcd a tre nodi il quorum HA è due, cosi il fallimento di un singolo nodo permette ancora alla maggioranza rimanente di eleggere un leader."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_2",
+      "english": "VIP",
+      "set": {
+        "example": "A VIP that floats between primary and standby lets clients keep using the same connection string after a failover without code changes. = Un VIP che si sposta tra primario e standby permette ai client di continuare a usare la stessa stringa di connessione dopo un failover senza modifiche di codice."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_3",
+      "english": "Read Replica",
+      "set": {
+        "example": "Route reporting queries to a read replica so heavy analytics scans never compete with OLTP writes on the primary database. = Instrada le query di reportistica a una replica in lettura cosi le scansioni analytics pesanti non competono mai con le scritture OLTP sul database primario."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_3",
+      "english": "Hot Standby",
+      "set": {
+        "example": "A PostgreSQL hot standby keeps replaying WAL while also serving read-only queries, doubling the available read capacity. = Un hot standby PostgreSQL continua a rieseguire il WAL e contemporaneamente serve query in sola lettura, raddoppiando la capacità di lettura disponibile."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_3",
+      "english": "Warm Standby",
+      "set": {
+        "example": "A warm standby applies WAL but refuses client connections, so it is ready to promote quickly without serving live read traffic. = Un warm standby applica il WAL ma rifiuta connessioni client, cosi è pronto a essere promosso rapidamente senza servire traffico di lettura live."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_3",
+      "english": "Cold Standby",
+      "set": {
+        "example": "A cold standby is a powered-off copy of the database that must be booted and recovered from WAL before it can accept connections. = Un cold standby è una copia spenta del database che deve essere avviata e recuperata dal WAL prima di poter accettare connessioni."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_3",
+      "english": "Read-Write Split",
+      "set": {
+        "example": "Configure ProxySQL with a read-write split so SELECT queries hit the replicas and INSERT/UPDATE go to the primary automatically. = Configura ProxySQL con un read-write split cosi le query SELECT colpiscono le repliche e INSERT/UPDATE vanno al primario automaticamente."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_3",
+      "english": "Replica Lag",
+      "set": {
+        "example": "When replica lag spikes after a bulk INSERT, route critical SELECTs back to the primary to avoid serving stale rows to users. = Quando il lag della replica si impenna dopo un INSERT massivo, instrada le SELECT critiche di nuovo al primario per evitare di servire righe obsolete agli utenti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_3",
+      "english": "Stale Read",
+      "set": {
+        "example": "A stale read happens when a user updates a profile then immediately re-reads it from a lagging replica and sees the old value. = Una lettura stale accade quando un utente aggiorna un profilo e subito dopo lo rilegge da una replica in ritardo vedendo il vecchio valore."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_3",
+      "english": "Cascading Replication",
+      "set": {
+        "example": "Cascading replication lets a replica feed WAL to other replicas, reducing the network load on the primary in large fleets. = La replicazione a cascata permette a una replica di alimentare il WAL ad altre repliche, riducendo il carico di rete sul primario in grandi flotte."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_3",
+      "english": "Multi-Master",
+      "set": {
+        "example": "A multi-master MySQL cluster accepts writes on any node, but you must design schemas to avoid write conflicts on the same primary key. = Un cluster MySQL multi-master accetta scritture su qualsiasi nodo, ma devi progettare gli schemi per evitare conflitti di scrittura sulla stessa chiave primaria."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_4",
+      "english": "Patroni",
+      "set": {
+        "italian": "Patroni",
+        "example": "Deploy Patroni on each Postgres node and configure etcd as its DCS to coordinate automatic failover across the cluster. = Distribuisci Patroni su ogni nodo Postgres e configura etcd come suo DCS per coordinare il failover automatico nel cluster.",
+        "note": "Template Python per HA PostgreSQL basato su un Distributed Configuration Store (etcd/Consul/ZooKeeper)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_4",
+      "english": "pg_basebackup",
+      "set": {
+        "italian": "pg_basebackup",
+        "example": "Initialize a new replica by running pg_basebackup -h primary -D /var/lib/postgres/data -U replicator -X stream against the primary. = Inizializza una nuova replica eseguendo pg_basebackup -h primary -D /var/lib/postgres/data -U replicator -X stream contro il primario.",
+        "note": "Utility PostgreSQL per creare backup fisici a livello di file."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_4",
+      "english": "PgBouncer",
+      "set": {
+        "italian": "PgBouncer",
+        "example": "Put PgBouncer in front of PostgreSQL with pool_mode = transaction to multiplex thousands of client connections onto a few backends. = Metti PgBouncer davanti a PostgreSQL con pool_mode = transaction per multiplexare migliaia di connessioni client su pochi backend.",
+        "note": "Connection pooler leggero per PostgreSQL scritto in C."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_4",
+      "english": "Orchestrator",
+      "set": {
+        "italian": "Orchestrator",
+        "example": "Use Orchestrator's web UI to visualize MySQL replication topology and trigger a controlled failover with one click. = Usa la UI web di Orchestrator per visualizzare la topologia di replicazione MySQL e attivare un failover controllato con un clic.",
+        "note": "HA topology manager per MySQL sviluppato originariamente da Outbrain e GitHub."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_4",
+      "english": "MaxScale",
+      "set": {
+        "italian": "MaxScale",
+        "example": "Deploy MaxScale in front of a MariaDB cluster so it routes queries by type, hides failovers, and exposes a single endpoint. = Distribuisci MaxScale davanti a un cluster MariaDB cosi instrada le query per tipo, nasconde i failover ed espone un singolo endpoint.",
+        "note": "Database proxy ufficiale di MariaDB con load balancing e routing."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_4",
+      "english": "Vitess",
+      "set": {
+        "italian": "Vitess",
+        "example": "To scale MySQL horizontally, teams adopt Vitess to shard a deployment behind a SQL proxy that hides the topology from applications. = Per scalare MySQL orizzontalmente, i team adottano Vitess per fare sharding di un deployment dietro un proxy SQL che nasconde la topologia alle applicazioni.",
+        "note": "Cluster MySQL sharded sviluppato originariamente da YouTube, ora progetto CNCF."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_4",
+      "english": "Citus",
+      "set": {
+        "italian": "Citus",
+        "example": "Install the Citus extension on PostgreSQL and call create_distributed_table('events', 'tenant_id') to shard a table across nodes. = Installa l'estensione Citus su PostgreSQL e chiama create_distributed_table('events', 'tenant_id') per fare sharding di una tabella tra i nodi.",
+        "note": "Estensione PostgreSQL che trasforma il cluster in un database distribuito."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_4",
+      "english": "pglogical",
+      "set": {
+        "italian": "pglogical",
+        "example": "Use pglogical to replicate selected tables from PostgreSQL 12 to PostgreSQL 16 during a zero-downtime major-version upgrade. = Usa pglogical per replicare tabelle selezionate da PostgreSQL 12 a PostgreSQL 16 durante un upgrade major a downtime zero.",
+        "note": "Estensione PostgreSQL per replica logica selettiva e cross-version."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_4",
+      "english": "Slony",
+      "set": {
+        "italian": "Slony",
+        "example": "Legacy PostgreSQL deployments still use Slony, a trigger-based replication tool that predates built-in streaming replication. = Deployment PostgreSQL legacy usano ancora Slony, uno strumento di replica basato su trigger precedente alla replicazione streaming nativa.",
+        "note": "Sistema di replica master/slave per PostgreSQL basato su trigger, ormai datato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "db_replication_4",
+      "english": "Repmgr",
+      "set": {
+        "italian": "Repmgr",
+        "example": "Bootstrap a new PostgreSQL standby and register it with repmgr standby clone -h primary so the cluster tracks its state. = Inizializza un nuovo standby PostgreSQL e registralo con repmgr standby clone -h primary cosi il cluster traccia il suo stato.",
+        "note": "Suite di tool open source di EDB per gestire replicazione e failover di PostgreSQL."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Sharding",
+      "set": {
+        "english": "Database Sharding",
+        "italian": "Sharding di database",
+        "example": "Database sharding splits a 10TB orders table across 16 nodes by hash(tenant_id), so each node holds about 600GB and a fraction of writes. = Lo sharding di database divide una tabella ordini da 10TB su 16 nodi per hash(tenant_id), cosi ogni nodo contiene circa 600GB e una frazione delle scritture."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Shard",
+      "set": {
+        "example": "Each shard in the cluster holds rows whose tenant_id hashes into its assigned range, allowing parallel reads and writes. = Ogni shard nel cluster contiene righe il cui tenant_id ha hash che cade nel suo range assegnato, permettendo letture e scritture in parallelo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Horizontal Partitioning",
+      "set": {
+        "example": "Apply horizontal partitioning to split the orders table by year, keeping recent partitions hot in memory while archiving old ones to cheap storage. = Applica il partizionamento orizzontale per dividere la tabella ordini per anno, mantenendo le partizioni recenti calde in memoria mentre archivi le vecchie su storage economico."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Vertical Partitioning",
+      "set": {
+        "example": "Use vertical partitioning to keep frequently scanned columns in one table and rarely read BLOBs in a separate one for cache locality. = Usa il partizionamento verticale per tenere le colonne frequentemente scansionate in una tabella e i BLOB letti raramente in una separata per cache locality."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Range Sharding",
+      "set": {
+        "example": "With range sharding by user_id, ids 1-1M go to shard 1 and 1M-2M to shard 2, which is simple but can create a hot tail shard. = Con range sharding per user_id, gli id 1-1M vanno allo shard 1 e 1M-2M allo shard 2, semplice ma può creare uno shard di coda caldo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Hash Sharding",
+      "set": {
+        "example": "Hash sharding maps each key with shard = hash(key) % num_shards so traffic spreads evenly but range scans must hit every shard. = L'hash sharding mappa ogni chiave con shard = hash(key) % num_shards cosi il traffico si distribuisce uniformemente ma le scansioni di range devono colpire ogni shard."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Directory-Based Sharding",
+      "set": {
+        "example": "Directory-based sharding stores a tenant_id -> shard mapping in a lookup service, letting operators move tenants without rehashing. = Lo sharding basato su directory memorizza una mappatura tenant_id -> shard in un servizio di lookup, permettendo agli operatori di spostare tenant senza rehashing."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Geo Sharding",
+      "set": {
+        "example": "Use geo sharding to place European user data in the EU region for GDPR and US users in us-east, cutting latency and keeping data sovereign. = Usa geo sharding per posizionare i dati degli utenti europei nella regione EU per GDPR e gli utenti US in us-east, riducendo la latenza e mantenendo la sovranità dei dati."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_5",
+      "english": "Hot Shard",
+      "set": {
+        "example": "A hot shard appears when one tenant generates 60% of traffic; mitigate by sub-sharding that tenant across additional nodes. = Uno shard caldo appare quando un tenant genera il 60% del traffico; mitiga sub-shardando quel tenant su nodi aggiuntivi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_6",
+      "english": "Consistent Hashing",
+      "set": {
+        "example": "Consistent hashing places nodes on a ring so adding or removing one shard only reshuffles 1/N of the keys instead of all of them. = L'hashing consistente posiziona i nodi su un anello cosi aggiungere o rimuovere uno shard rimescola solo 1/N delle chiavi invece di tutte."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_6",
+      "english": "Hash Ring",
+      "set": {
+        "example": "Each node hashes to a position on the hash ring, and a key is owned by the next node clockwise from its hash. = Ogni nodo viene hashato su una posizione dell'anello hash, e una chiave è posseduta dal nodo successivo in senso orario rispetto al suo hash."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_6",
+      "english": "Virtual Node",
+      "set": {
+        "example": "Cassandra assigns each physical node hundreds of virtual nodes on the ring so load stays balanced even with few servers. = Cassandra assegna a ogni nodo fisico centinaia di nodi virtuali sull'anello cosi il carico resta bilanciato anche con pochi server."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_6",
+      "english": "Resharding",
+      "set": {
+        "example": "Trigger a resharding when one shard hits 80% disk usage, copying half its data to a new shard while keeping the cluster online. = Innesca un resharding quando uno shard raggiunge l'80% di uso disco, copiando metà dei suoi dati a un nuovo shard mantenendo il cluster online."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_6",
+      "english": "Rebalancing",
+      "set": {
+        "example": "After adding three new shards, the cluster triggers automatic rebalancing to spread tokens evenly and even out per-node disk usage. = Dopo aver aggiunto tre nuovi shard, il cluster innesca un rebalancing automatico per distribuire i token uniformemente e bilanciare l'uso disco per nodo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_6",
+      "english": "Token Range",
+      "set": {
+        "example": "In Cassandra each node owns a contiguous token range of the partitioner output and is responsible for replicas of keys hashing into it. = In Cassandra ogni nodo possiede un intervallo di token contiguo dell'output del partitioner ed è responsabile delle repliche di chiavi che hashano lì."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_6",
+      "english": "Coordinator Node",
+      "set": {
+        "example": "Any Cassandra node can act as the coordinator node for a query, routing the request to the replicas that own the partition. = Qualsiasi nodo Cassandra può fare da coordinatore per una query, instradando la richiesta alle repliche che possiedono la partizione."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_6",
+      "english": "Cross-Shard Query",
+      "set": {
+        "example": "Avoid cross-shard queries on the OLTP path: they pay network round trips to every shard and stall on the slowest replica. = Evita cross-shard query sul percorso OLTP: pagano round trip di rete a ogni shard e si bloccano sulla replica più lenta."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_6",
+      "english": "Scatter-Gather",
+      "set": {
+        "example": "A scatter-gather query fans out to every shard, gathers partial results, and merges them in the coordinator for the final answer. = Una query scatter-gather si propaga a ogni shard, raccoglie i risultati parziali e li unisce nel coordinatore per la risposta finale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_6",
+      "english": "Hotspot",
+      "set": {
+        "example": "A hotspot on the timestamp shard key means new rows always land on the same shard; switch to a random suffix to spread writes. = Un hotspot sulla chiave di shard timestamp significa che le nuove righe finiscono sempre sullo stesso shard; passa a un suffisso random per distribuire le scritture."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Table Partitioning",
+      "set": {
+        "example": "Apply table partitioning by month on a time-series table so old partitions can be detached and archived without rewriting the parent. = Applica il partizionamento di tabella per mese su una tabella time-series cosi le vecchie partizioni possono essere staccate e archiviate senza riscrivere il padre."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Range Partitioning",
+      "set": {
+        "example": "Define range partitioning with PARTITION BY RANGE (created_at) so each monthly partition holds one slice of data and prunes well. = Definisci range partitioning con PARTITION BY RANGE (created_at) cosi ogni partizione mensile contiene una fetta di dati e fa pruning bene."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "List Partitioning",
+      "set": {
+        "example": "Use list partitioning with PARTITION BY LIST (country) to keep each country's rows in its own partition for regulatory isolation. = Usa list partitioning con PARTITION BY LIST (country) per tenere le righe di ogni paese nella propria partizione per isolamento normativo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Hash Partitioning",
+      "set": {
+        "example": "Use hash partitioning with PARTITION BY HASH (user_id) and 16 partitions to spread writes evenly when there is no natural range key. = Usa hash partitioning con PARTITION BY HASH (user_id) e 16 partizioni per distribuire le scritture uniformemente quando non c'è una chiave di range naturale."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Partition Pruning",
+      "set": {
+        "example": "Partition pruning eliminates partitions that cannot match a WHERE clause, so a query for last week scans only one monthly partition. = Il partition pruning elimina le partizioni che non possono soddisfare una clausola WHERE, cosi una query per la scorsa settimana scansiona una sola partizione mensile."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Subpartition",
+      "set": {
+        "example": "Define a subpartition per month inside each yearly range partition so very large fact tables stay small at the leaf level. = Definisci una sottopartizione per mese dentro ogni partizione di range annuale cosi tabelle di fatti molto grandi restano piccole a livello foglia."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Partition Key",
+      "set": {
+        "example": "Choose a partition key whose values distribute evenly and appear in most query predicates, otherwise pruning will not kick in. = Scegli una chiave di partizione i cui valori si distribuiscano uniformemente e appaiano nella maggior parte dei predicati, altrimenti il pruning non scatta."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Native Partitioning",
+      "set": {
+        "example": "PostgreSQL 10+ ships native partitioning with declarative PARTITION BY syntax, replacing the older inheritance-based approach. = PostgreSQL 10+ include un partizionamento nativo con sintassi dichiarativa PARTITION BY, sostituendo il vecchio approccio basato su inheritance."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_7",
+      "english": "Detach Partition",
+      "set": {
+        "example": "Archive old data with ALTER TABLE measurements DETACH PARTITION measurements_2024 to remove the partition without scanning the parent. = Archivia vecchi dati con ALTER TABLE measurements DETACH PARTITION measurements_2024 per rimuovere la partizione senza scansionare il padre."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_8",
+      "english": "Distributed SQL",
+      "set": {
+        "example": "A distributed SQL system like CockroachDB scales horizontally across regions while still providing ACID transactions and serializable isolation. = Un sistema SQL distribuito come CockroachDB scala orizzontalmente tra regioni fornendo comunque transazioni ACID e isolamento serializzabile."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_8",
+      "english": "CockroachDB",
+      "set": {
+        "italian": "CockroachDB",
+        "example": "Run CockroachDB on three nodes across three availability zones to survive a full AZ outage with no manual failover required. = Esegui CockroachDB su tre nodi in tre zone di disponibilità per sopravvivere a un'interruzione completa di una AZ senza failover manuale.",
+        "note": "Database SQL distribuito open core, compatibile con il protocollo PostgreSQL."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_8",
+      "english": "YugabyteDB",
+      "set": {
+        "italian": "YugabyteDB",
+        "example": "Teams looking for distributed SQL pick YugabyteDB to reuse the PostgreSQL query layer on top of a sharded storage engine. = I team che cercano SQL distribuito scelgono YugabyteDB per riusare il layer di query PostgreSQL su un motore di storage shardato.",
+        "note": "Database SQL distribuito open source compatibile PostgreSQL."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_8",
+      "english": "Spanner",
+      "set": {
+        "example": "Google Spanner provides globally distributed, externally consistent SQL by combining Paxos replication with the TrueTime API. = Google Spanner fornisce SQL distribuito globalmente ed esternamente consistente combinando replica Paxos con l'API TrueTime."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "db_replication_8",
+      "english": "Raft Consensus",
+      "set": {
+        "example": "etcd and CockroachDB use Raft consensus so a write commits only after a majority of replicas durably acknowledge it. = etcd e CockroachDB usano il consenso Raft cosi una scrittura fa commit solo dopo che la maggioranza delle repliche la conferma durevolmente."
+      }
+    }
+  ]
+}

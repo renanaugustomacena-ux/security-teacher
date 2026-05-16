@@ -1,0 +1,1294 @@
+{
+  "fixes": [
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_5",
+      "english": "Return by Reference",
+      "set": {
+        "example": "Returning the internal buffer by reference from getBuffer() lets callers modify it in place without paying the cost of a deep copy. = Restituire il buffer interno per riferimento da getBuffer() permette ai chiamanti di modificarlo in-place senza pagare il costo di una copia profonda."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "Function Overloading",
+      "set": {
+        "example": "Defining two overloads of print, one for int and one for std::string, demonstrates function overloading and lets the compiler pick the right one. = Definire due overload di print, uno per int e uno per std::string, dimostra il sovraccarico di funzioni e lascia che il compilatore scelga quello giusto."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_6",
+      "english": "Default Argument",
+      "set": {
+        "example": "The logger function declares a level parameter with a default argument of INFO so callers can omit it when they want the standard verbosity. = La funzione di logging dichiara un parametro livello con un argomento di default INFO così i chiamanti possono ometterlo quando vogliono la verbosità standard."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Logical Operator",
+      "set": {
+        "example": "The validator uses the && logical operator to require that both username and password fields are non-empty before submitting the form. = Il validatore usa l'operatore logico && per richiedere che sia il campo username che password siano non vuoti prima di inviare il form."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Enum Class",
+      "set": {
+        "italian": "enum class",
+        "example": "Declaring HttpStatus as an enum class keeps its OK constant scoped, so it does not collide with a macro named OK from a legacy C header. = Dichiarare HttpStatus come enum class mantiene la sua costante OK con scope, così non entra in conflitto con una macro OK di un vecchio header C.",
+        "note": "Termine C++: enum class (parola chiave del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "cpp_foundations_7",
+      "english": "Constexpr",
+      "set": {
+        "italian": "constexpr",
+        "example": "Marking the sq function as constexpr lets the compiler evaluate sq(7) at compile time and embed the constant 49 directly into the generated code. = Marcare la funzione sq come constexpr permette al compilatore di valutare sq(7) a tempo di compilazione e incorporare la costante 49 direttamente nel codice generato.",
+        "note": "Termine C++: constexpr (parola chiave del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_1",
+      "english": "Class Member",
+      "set": {
+        "example": "Every field declared inside the class body becomes a class member that shares access rules with the surrounding type. = Ogni campo dichiarato dentro il corpo della classe diventa un membro di classe che condivide le regole di accesso con il tipo circostante."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Access Specifier",
+      "set": {
+        "example": "Switching from public to private at the top of the class body is an access specifier that hides implementation details from outside code. = Passare da public a private in cima al corpo della classe è uno specificatore di accesso che nasconde i dettagli di implementazione dal codice esterno."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Public",
+      "set": {
+        "italian": "public",
+        "example": "Marking the start() method as public exposes it as part of the official API that other modules can call directly. = Marcare il metodo start() come public lo espone come parte dell'API ufficiale che altri moduli possono chiamare direttamente.",
+        "note": "Termine C++: public (parola chiave del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Private",
+      "set": {
+        "italian": "private",
+        "example": "Keeping the cached_hash field private prevents external code from corrupting an internal optimization detail. = Mantenere il campo cached_hash come private impedisce al codice esterno di corrompere un dettaglio di ottimizzazione interno.",
+        "note": "Termine C++: private (parola chiave del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Protected",
+      "set": {
+        "italian": "protected",
+        "example": "Declaring the helper method validateState() as protected lets derived classes reuse it while still hiding it from unrelated client code. = Dichiarare il metodo helper validateState() come protected permette alle classi derivate di riusarlo mantenendolo nascosto al codice client non correlato.",
+        "note": "Termine C++: protected (parola chiave del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_2",
+      "english": "Class Invariant",
+      "set": {
+        "example": "The BoundedQueue establishes the class invariant that size never exceeds capacity, and every public method must restore it before returning. = La BoundedQueue stabilisce l'invariante di classe che size non superi mai capacity, e ogni metodo pubblico deve ripristinarlo prima di ritornare."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Move Assignment",
+      "set": {
+        "example": "Assigning a temporary string built from a file read triggers move assignment, which swaps internal buffers and skips an allocation. = Assegnare una stringa temporanea costruita dalla lettura di un file attiva l'assegnazione di spostamento, che scambia i buffer interni e salta un'allocazione."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Defaulted Function",
+      "set": {
+        "example": "Writing Widget() = default tells the compiler to synthesize the body, making it a defaulted function that is clearer than an empty {} block. = Scrivere Widget() = default dice al compilatore di sintetizzare il corpo, rendendola una funzione di default più chiara di un blocco {} vuoto."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "cpp_oop_3",
+      "english": "Rule of Three",
+      "set": {
+        "example": "If your class manages a raw resource, the rule of three says you must define the destructor, copy constructor, and copy assignment together. = Se la tua classe gestisce una risorsa grezza, la regola del tre dice che devi definire insieme distruttore, costruttore di copia e assegnazione di copia."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_5",
+      "english": "Public Inheritance",
+      "set": {
+        "example": "Modeling Dog as a class derived from Animal with public inheritance signals an is-a relationship so a Dog can substitute for an Animal anywhere. = Modellare Dog come classe derivata da Animal con ereditarietà pubblica segnala una relazione is-a così un Dog può sostituire un Animal ovunque."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_8",
+      "english": "Template Method",
+      "set": {
+        "example": "The Report base class implements processData as a template method that fixes the algorithm skeleton and delegates the formatting step to derived classes. = La classe base Report implementa processData come metodo template che fissa lo scheletro dell'algoritmo e delega lo step di formattazione alle classi derivate."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "cpp_oop_8",
+      "english": "Empty Base Optimization",
+      "set": {
+        "note": "Sigla EBO: permette a una classe di ereditare da una base senza dati aggiungendo zero byte alla dimensione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_9",
+      "english": "Dynamic Dispatch",
+      "set": {
+        "example": "When the render loop calls shape->draw() on a base pointer, dynamic dispatch consults the vtable to invoke Circle::draw or Square::draw at runtime. = Quando il loop di rendering chiama shape->draw() su un puntatore base, il dispatch dinamico consulta la vtable per invocare Circle::draw o Square::draw a runtime."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_9",
+      "english": "Static Dispatch",
+      "set": {
+        "example": "Calling a non-virtual sort() through a concrete Vector reference uses static dispatch, letting the compiler inline the function body directly. = Chiamare un sort() non virtuale tramite un riferimento Vector concreto usa il dispatch statico, permettendo al compilatore di fare inline del corpo della funzione direttamente."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_9",
+      "english": "Early Binding",
+      "set": {
+        "example": "When a non-virtual method is called on a concrete object, early binding resolves the call at compile time and skips the vtable lookup entirely. = Quando un metodo non virtuale viene chiamato su un oggetto concreto, il binding anticipato risolve la chiamata a tempo di compilazione e salta del tutto il lookup nella vtable."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_11",
+      "english": "Contract Programming",
+      "set": {
+        "example": "Applying contract programming to the sqrt routine documents a precondition that the input is non-negative and a postcondition that the squared result equals it. = Applicare la programmazione a contratto alla routine sqrt documenta una precondizione che l'input sia non negativo e una postcondizione che il risultato al quadrato sia uguale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_11",
+      "english": "ABI Stability",
+      "set": {
+        "example": "Standard library implementers obsess over ABI stability because changing the layout of std::string would break every binary linked against the old version. = Gli implementatori della libreria standard sono ossessionati dalla stabilità ABI perché cambiare il layout di std::string romperebbe ogni binario collegato alla vecchia versione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_12",
+      "english": "Tag Dispatch",
+      "set": {
+        "example": "The advance algorithm uses tag dispatch on iterator_category to pick a constant-time implementation for random-access iterators and a linear one otherwise. = L'algoritmo advance usa tag dispatch su iterator_category per scegliere un'implementazione a tempo costante per iteratori ad accesso casuale e una lineare altrimenti."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "cpp_oop_12",
+      "english": "Static Polymorphism",
+      "set": {
+        "example": "Replacing the virtual base hierarchy with a CRTP template gave the matrix library static polymorphism and let the compiler inline every call site. = Sostituire la gerarchia base virtuale con un template CRTP ha dato alla libreria matrici polimorfismo statico e ha permesso al compilatore di fare inline di ogni call site."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_13",
+      "english": "Operator Overloading",
+      "set": {
+        "example": "Implementing operator+ for the Money class is a classic use of operator overloading: callers write usd1 + usd2 instead of usd1.add(usd2). = Implementare operator+ per la classe Money è un uso classico del sovraccarico operatori: i chiamanti scrivono usd1 + usd2 invece di usd1.add(usd2)."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_14",
+      "english": "Comparison Chain",
+      "set": {
+        "example": "Implementing operator< as a comparison chain over surname then first name then birth date gives consistent ordering for the contact list. = Implementare operator< come una catena di confronto su cognome poi nome poi data di nascita dà un ordinamento coerente per la lista contatti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_16",
+      "english": "Self-Assignment",
+      "set": {
+        "example": "Before freeing the old buffer, the assignment operator checks for self-assignment with if (this == &other) so that v = v does not corrupt internal state. = Prima di liberare il vecchio buffer, l'operatore di assegnazione controlla l'auto-assegnazione con if (this == &other) così v = v non corrompe lo stato interno."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "cpp_oop_16",
+      "english": "Copy and Swap",
+      "set": {
+        "example": "The String class implements assignment with the copy and swap idiom, building a temporary and swapping it in to get a strong exception guarantee for free. = La classe String implementa l'assegnazione con l'idioma copy and swap, costruendo un temporaneo e scambiandolo per ottenere gratis la garanzia forte sulle eccezioni."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Multiset",
+      "set": {
+        "italian": "std::multiset",
+        "example": "The vote-counting routine stores ballots in a std::multiset so it can keep repeated identical preferences while still iterating them in sorted order. = La routine di conteggio voti memorizza le schede in un std::multiset così può tenere preferenze identiche ripetute pur iterandole in ordine ordinato.",
+        "note": "Termine C++: std::multiset (contenitore standard, non si traduce)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_2",
+      "english": "Unordered Map",
+      "set": {
+        "italian": "std::unordered_map",
+        "example": "The session cache stores user-id to token lookups in a std::unordered_map so average lookup runs in O(1) instead of the O(log n) of std::map. = La cache delle sessioni memorizza le mappature user-id verso token in un std::unordered_map così la ricerca media gira in O(1) invece dell'O(log n) di std::map.",
+        "note": "Termine C++: std::unordered_map (contenitore standard, non si traduce)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Priority Queue",
+      "set": {
+        "example": "The task scheduler stores pending jobs in a std::priority_queue so that the highest-priority entry is always returned from top() in logarithmic time. = Lo scheduler dei task memorizza i lavori in attesa in una std::priority_queue così che la voce con priorità più alta sia sempre restituita da top() in tempo logaritmico."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Front",
+      "set": {
+        "example": "After enqueuing several requests into a std::queue, calling front() returns the oldest one without removing it so you can inspect before popping. = Dopo aver accodato diverse richieste in una std::queue, chiamare front() restituisce la più vecchia senza rimuoverla così puoi ispezionarla prima di fare pop."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Container Concept",
+      "set": {
+        "example": "Standard containers satisfy a shared container concept that requires begin(), end(), size(), and value_type so generic algorithms can operate on any of them. = I container standard soddisfano un concetto di container condiviso che richiede begin(), end(), size() e value_type così gli algoritmi generici possono operare su uno qualsiasi di essi."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_3",
+      "english": "Empty Check",
+      "set": {
+        "example": "Before calling top() on the priority queue, the worker performs an empty check with empty() to avoid undefined behavior on an exhausted queue. = Prima di chiamare top() sulla coda con priorità, il worker esegue una verifica vuoto con empty() per evitare comportamento indefinito su una coda esaurita."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Iterator",
+      "set": {
+        "example": "Holding an iterator returned by find() lets you both check whether the key exists and read its value with a single map lookup. = Tenere un iteratore restituito da find() ti permette sia di verificare se la chiave esiste sia di leggere il suo valore con una sola ricerca nella mappa."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "End",
+      "set": {
+        "example": "Comparing the iterator from find() against end() is the standard way to detect that the requested key was not present in the container. = Confrontare l'iteratore restituito da find() con end() è il modo standard per rilevare che la chiave richiesta non era presente nel container."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Const Iterator",
+      "set": {
+        "example": "Iterating a const std::vector& produces a const iterator so the read-only loop body cannot accidentally mutate the original data. = Iterare un const std::vector& produce un iteratore const così il corpo del loop di sola lettura non può accidentalmente modificare i dati originali."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Random Access Iterator",
+      "set": {
+        "example": "Because std::vector provides a random access iterator, the binary search algorithm can jump to the midpoint with it + n in constant time. = Poiche' std::vector fornisce un iteratore ad accesso casuale, l'algoritmo di ricerca binaria puo' saltare al punto medio con it + n in tempo costante."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Bidirectional Iterator",
+      "set": {
+        "example": "std::list exposes a bidirectional iterator so you can move forward with ++it and backward with --it, but jumping by n positions still costs O(n). = std::list espone un iteratore bidirezionale così puoi muoverti avanti con ++it e indietro con --it, ma saltare di n posizioni costa comunque O(n)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Forward Iterator",
+      "set": {
+        "example": "std::forward_list only exposes a forward iterator, so algorithms that need to walk backwards must build a reversed copy first. = std::forward_list espone solo un iteratore forward, così gli algoritmi che devono camminare all'indietro devono prima costruire una copia rovesciata."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Iterator Invalidation",
+      "set": {
+        "example": "Calling push_back on a std::vector during a range-for loop can trigger reallocation and cause iterator invalidation, leading to a crash on the next ++it. = Chiamare push_back su un std::vector durante un range-for può scatenare una riallocazione e causare invalidazione dell'iteratore, portando a un crash sul successivo ++it."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "cpp_stl_4",
+      "english": "Iterator Adapter",
+      "set": {
+        "example": "Passing std::back_inserter(dest) to std::copy uses an iterator adapter that turns each assignment into a push_back on the destination container. = Passare std::back_inserter(dest) a std::copy usa un adattatore di iteratori che trasforma ogni assegnamento in una push_back sul container di destinazione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_3",
+      "english": "Weak Ptr",
+      "set": {
+        "italian": "std::weak_ptr",
+        "example": "Storing an observer as a std::weak_ptr lets the subject notify it without preventing its deletion, breaking the cycle that two shared_ptrs would create. = Memorizzare un observer come std::weak_ptr permette al subject di notificarlo senza impedirne la cancellazione, rompendo il ciclo che due shared_ptr creerebbero.",
+        "note": "Termine C++: std::weak_ptr (smart pointer standard, non si traduce)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_3",
+      "english": "Lock",
+      "set": {
+        "example": "Calling lock() on a std::weak_ptr atomically promotes it to a std::shared_ptr if the managed object still exists, or returns nullptr otherwise. = Chiamare lock() su un std::weak_ptr lo promuove atomicamente a std::shared_ptr se l'oggetto gestito esiste ancora, o restituisce nullptr altrimenti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_3",
+      "english": "Expired",
+      "set": {
+        "example": "Before attempting a lock, the cache calls expired() on the weak_ptr to skip cleanup work for entries whose managed object is already gone. = Prima di tentare un lock, la cache chiama expired() sul weak_ptr per saltare il lavoro di pulizia per voci il cui oggetto gestito è già sparito."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_3",
+      "english": "Observer Pattern",
+      "set": {
+        "example": "Implementing the observer pattern with std::weak_ptr handles to listeners lets the subject prune dead observers automatically when their owners go away. = Implementare il pattern observer con handle std::weak_ptr ai listener permette al subject di rimuovere automaticamente gli observer morti quando i loro proprietari spariscono."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_3",
+      "english": "Break Cycle",
+      "set": {
+        "example": "Switching the child-to-parent link in the tree from shared_ptr to weak_ptr breaks the cycle that would otherwise leak the entire subtree on shutdown. = Cambiare il collegamento figlio-padre nell'albero da shared_ptr a weak_ptr rompe il ciclo che altrimenti farebbe trapelare l'intero sottoalbero alla chiusura."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_3",
+      "english": "Pointer Lifetime",
+      "set": {
+        "example": "Mixing raw pointers with smart pointers makes pointer lifetime hard to reason about because two owners disagree on who calls delete and when. = Mescolare puntatori grezzi con smart pointer rende difficile ragionare sulla durata del puntatore perché due proprietari sono in disaccordo su chi chiama delete e quando."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_3",
+      "english": "Non-Owning Reference",
+      "set": {
+        "example": "Passing a Widget* parameter that the function only reads from is best documented as a non-owning reference, signalling the caller keeps ownership. = Passare un parametro Widget* che la funzione si limita a leggere è meglio documentato come riferimento non possessivo, segnalando che il chiamante mantiene la proprietà."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_4",
+      "english": "Resource",
+      "set": {
+        "example": "Treating a file handle, a mutex, or a socket as a resource lets RAII wrappers release each one deterministically when the scope ends. = Trattare un handle di file, un mutex o un socket come una risorsa permette ai wrapper RAII di rilasciare ciascuno deterministicamente alla fine dello scope."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_4",
+      "english": "Release On Destruction",
+      "set": {
+        "example": "Designing the SocketGuard so that release on destruction closes the file descriptor guarantees the socket is freed even when an exception propagates. = Progettare SocketGuard così che il rilascio nel distruttore chiuda il file descriptor garantisce che il socket sia liberato anche quando un'eccezione si propaga."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_4",
+      "english": "Stack Allocation",
+      "set": {
+        "example": "Preferring stack allocation for small short-lived objects avoids heap fragmentation and gives the compiler more opportunities to keep values in registers. = Preferire l'allocazione su stack per oggetti piccoli e di breve durata evita la frammentazione dell'heap e dà al compilatore più occasioni per tenere i valori nei registri."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_4",
+      "english": "Lock Guard",
+      "set": {
+        "italian": "std::lock_guard",
+        "example": "Wrapping the critical section in a std::lock_guard guarantees the mutex is unlocked even if the protected code throws an exception. = Avvolgere la sezione critica in un std::lock_guard garantisce che il mutex sia sbloccato anche se il codice protetto lancia un'eccezione.",
+        "note": "Termine C++: std::lock_guard (classe RAII standard, non si traduce)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_4",
+      "english": "File Guard",
+      "set": {
+        "example": "Wrapping the FILE* in a small file guard class that calls fclose in its destructor turns the legacy C handle into an RAII-friendly resource. = Avvolgere il FILE* in una piccola classe file guard che chiama fclose nel suo distruttore trasforma l'handle C legacy in una risorsa RAII-friendly."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_4",
+      "english": "Exception Safety",
+      "set": {
+        "example": "Holding every resource behind an RAII wrapper turns exception safety from a hand-written checklist into a property the type system enforces automatically. = Tenere ogni risorsa dietro un wrapper RAII trasforma la sicurezza alle eccezioni da una checklist scritta a mano in una proprietà che il sistema di tipi impone automaticamente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "cpp_memory_4",
+      "english": "Deterministic Destruction",
+      "set": {
+        "example": "Unlike languages with garbage collection, C++ offers deterministic destruction so the file is closed exactly at the point the local scope exits. = A differenza dei linguaggi con garbage collector, C++ offre distruzione deterministica così il file viene chiuso esattamente nel punto in cui lo scope locale termina."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Exception",
+      "set": {
+        "example": "When the JSON parser hits a malformed token, it throws an exception so the caller can react to the error in one centralized catch block. = Quando il parser JSON incontra un token malformato, lancia un'eccezione così il chiamante può reagire all'errore in un unico blocco catch centralizzato."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Try Block",
+      "set": {
+        "example": "Wrapping the database query inside a try block lets the connection-failure handler take over instead of crashing the entire request pipeline. = Avvolgere la query al database dentro un blocco try permette al gestore di errore di connessione di subentrare invece di far crashare l'intera pipeline di richieste."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Catch Block",
+      "set": {
+        "example": "Adding a catch block for std::filesystem::filesystem_error after the file copy lets the program log the path and retry instead of aborting. = Aggiungere un blocco catch per std::filesystem::filesystem_error dopo la copia del file permette al programma di loggare il percorso e riprovare invece di abortire."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Throw",
+      "set": {
+        "example": "Inside the validator, the code reaches throw std::invalid_argument(\"id must be positive\") as soon as it spots a negative user id. = Dentro il validatore, il codice raggiunge throw std::invalid_argument(\"id must be positive\") appena rileva un id utente negativo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Catch All",
+      "set": {
+        "example": "Adding a final catch(...) catch all at the top of main logs an opaque message and ensures the process never terminates silently on an unknown exception. = Aggiungere un catch(...) finale di tipo cattura tutto in cima a main logga un messaggio opaco e assicura che il processo non termini mai silenziosamente su un'eccezione sconosciuta."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Stack Unwinding",
+      "set": {
+        "example": "When an exception leaves the try block, stack unwinding destroys every local object in reverse construction order so RAII guards release their resources. = Quando un'eccezione lascia il blocco try, lo srotolamento dello stack distrugge ogni oggetto locale in ordine di costruzione inverso così le guardie RAII rilasciano le loro risorse."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_1",
+      "english": "Catch By Reference",
+      "set": {
+        "example": "Writing catch (const std::exception& e) uses catch by reference and avoids the object slicing that a by-value catch would cause for derived exception types. = Scrivere catch (const std::exception& e) usa catch per riferimento ed evita lo slicing dell'oggetto che un catch per valore causerebbe per i tipi di eccezione derivati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "Out of Range",
+      "set": {
+        "example": "Calling v.at(100) on a vector of size 10 throws std::out_of_range, which the wrapper handler maps to an HTTP 400 response with a clear message. = Chiamare v.at(100) su un vector di size 10 lancia std::out_of_range, che il gestore wrapper mappa a una risposta HTTP 400 con un messaggio chiaro."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "What Method",
+      "set": {
+        "example": "Calling the what method on the caught exception returns a C string with the original message, perfect for logging the failure without losing context. = Chiamare il metodo what sull'eccezione catturata restituisce una stringa C col messaggio originale, perfetto per loggare il fallimento senza perdere il contesto."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_2",
+      "english": "Exception Specification",
+      "set": {
+        "example": "Legacy code may carry a dynamic exception specification like throw(int), but modern C++ removed it and now uses noexcept to mark non-throwing functions. = Il codice legacy può portare una specifica dinamica come throw(int), ma il C++ moderno l'ha rimossa e ora usa noexcept per marcare funzioni che non lanciano."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Noexcept",
+      "set": {
+        "italian": "noexcept",
+        "example": "Marking the swap function as noexcept lets std::vector use moves during reallocation, which is dramatically faster than the copy fallback. = Marcare la funzione swap come noexcept permette a std::vector di usare i move durante la riallocazione, che è drammaticamente più veloce del fallback con copia.",
+        "note": "Termine C++: noexcept (parola chiave del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Conditional Noexcept",
+      "set": {
+        "example": "Declaring a wrapper as noexcept(noexcept(inner())) gives conditional noexcept that propagates the inner function's exception guarantee to its caller. = Dichiarare un wrapper come noexcept(noexcept(inner())) dà un noexcept condizionale che propaga al chiamante la garanzia di eccezione della funzione interna."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Strong Guarantee",
+      "set": {
+        "example": "Implementing operator= with copy-and-swap delivers the strong guarantee: if the assignment throws, the target object is left exactly in its original state. = Implementare operator= con copy-and-swap fornisce la garanzia forte: se l'assegnazione lancia, l'oggetto target resta esattamente nel suo stato originale."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Basic Guarantee",
+      "set": {
+        "example": "Even if insert() throws halfway through, the container still meets the basic guarantee: no resources leak and the structure remains in a valid, destructible state. = Anche se insert() lancia a metà, il container soddisfa comunque la garanzia base: nessuna risorsa trapela e la struttura rimane in uno stato valido e distruggibile."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Move Noexcept",
+      "set": {
+        "example": "Declaring the move constructor as move noexcept tells std::vector to choose moves over copies when growing, doubling the reserve speed for heavy types. = Dichiarare il costruttore di move come move-noexcept dice a std::vector di scegliere i move invece delle copie durante la crescita, raddoppiando la velocità di reserve per i tipi pesanti."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Throw From Destructor",
+      "set": {
+        "example": "Letting a destructor throw from destructor during stack unwinding causes std::terminate, so production code wraps the body in a try/catch that logs the error. = Lasciare che un distruttore lanci dal distruttore durante lo srotolamento dello stack causa std::terminate, quindi il codice di produzione avvolge il corpo in un try/catch che logga l'errore."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Terminate",
+      "set": {
+        "italian": "std::terminate",
+        "example": "An uncaught exception that escapes main triggers std::terminate, which by default calls abort and produces a core dump for post-mortem debugging. = Un'eccezione non catturata che sfugge da main attiva std::terminate, che di default chiama abort e produce un core dump per il debug post-mortem.",
+        "note": "Termine C++: std::terminate (funzione standard, non si traduce)."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Expected",
+      "set": {
+        "italian": "std::expected",
+        "example": "Returning std::expected<Config, ParseError> from loadConfig lets callers handle the error path without exceptions while still propagating rich diagnostics. = Restituire std::expected<Config, ParseError> da loadConfig permette ai chiamanti di gestire il percorso di errore senza eccezioni pur propagando diagnostiche ricche.",
+        "note": "Termine C++: std::expected (tipo standard C++23, non si traduce)."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Error Code",
+      "set": {
+        "example": "The filesystem API overload that takes a std::error_code reference reports failures via an error code instead of throwing, which is ideal for hot loops. = L'overload dell'API filesystem che prende un riferimento std::error_code segnala i fallimenti tramite un codice di errore invece di lanciare, ideale per loop critici."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Outcome",
+      "set": {
+        "italian": "Boost.Outcome",
+        "example": "The HTTP client library uses Boost.Outcome to return a success-or-error union from every request without paying for the cost of stack unwinding. = La libreria client HTTP usa Boost.Outcome per restituire un'unione successo-o-errore da ogni richiesta senza pagare il costo dello srotolamento dello stack.",
+        "note": "Termine: Boost.Outcome (libreria Boost per gestione errori, nome proprio)."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Assertion",
+      "set": {
+        "example": "Adding assert(p != nullptr) at the top of the function turns a silent crash later into an immediate assertion failure that points straight at the bug. = Aggiungere assert(p != nullptr) in cima alla funzione trasforma un crash silenzioso successivo in un fallimento di asserzione immediato che indica direttamente il bug."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Contract Check",
+      "set": {
+        "example": "Inserting a contract check at the start of withdraw() verifies that the amount is positive before any balance mutation, catching misuse close to the call site. = Inserire una verifica di contratto all'inizio di withdraw() verifica che l'importo sia positivo prima di ogni mutazione del saldo, catturando l'uso scorretto vicino al call site."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Defensive Programming",
+      "set": {
+        "example": "Public APIs that accept user input rely on defensive programming, validating every argument as if the caller were actively trying to break the contract. = Le API pubbliche che accettano input utente si affidano alla programmazione difensiva, validando ogni argomento come se il chiamante stesse attivamente cercando di rompere il contratto."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Error Propagation",
+      "set": {
+        "example": "Returning std::expected from each layer keeps error propagation explicit, so the upper handler sees both the original cause and the call site that produced it. = Restituire std::expected da ogni livello mantiene la propagazione errori esplicita, così il gestore superiore vede sia la causa originale sia il call site che l'ha prodotta."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_4",
+      "english": "Fail Fast",
+      "set": {
+        "example": "Adopting a fail fast policy at startup means a missing config key aborts the program immediately instead of crashing hours later during a key request. = Adottare una politica di fail fast all'avvio significa che una chiave di config mancante abortisce il programma immediatamente invece di crashare ore dopo durante una richiesta importante."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Capture By Value",
+      "set": {
+        "example": "Declaring [count] in the lambda performs capture by value, freezing the current count so later mutations of the outer variable do not affect the closure. = Dichiarare [count] nella lambda esegue la cattura per valore, congelando il count corrente così mutazioni successive della variabile esterna non influenzano la closure."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Capture By Reference",
+      "set": {
+        "example": "Writing [&total] in the accumulator lambda is capture by reference, so each invocation updates the same outer total used by the rest of the function. = Scrivere [&total] nella lambda accumulatore è cattura per riferimento, così ogni invocazione aggiorna lo stesso total esterno usato dal resto della funzione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Default Capture",
+      "set": {
+        "example": "Using [=] as a default capture grabs every named local by value, but the Core Guidelines warn against it because the dependency list becomes invisible. = Usare [=] come cattura di default prende ogni locale citato per valore, ma le Core Guidelines avvertono di evitarlo perché la lista di dipendenze diventa invisibile."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Init Capture",
+      "set": {
+        "example": "Writing [handle = std::move(ptr)] in the capture list is an init capture that moves the unique_ptr into the closure, transferring ownership cleanly. = Scrivere [handle = std::move(ptr)] nella lista di cattura è una cattura con inizializzazione che sposta lo unique_ptr nella closure, trasferendo la proprietà in modo pulito."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Closure",
+      "set": {
+        "example": "Each lambda expression generates a unique closure type whose data members store every captured variable in the order they appear in the capture list. = Ogni espressione lambda genera un tipo di chiusura unico i cui membri dati memorizzano ogni variabile catturata nell'ordine in cui appare nella lista di cattura."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_1",
+      "english": "Trailing Return",
+      "set": {
+        "example": "Writing [](int x) -> double { return x / 2.0; } uses an explicit trailing return type to force the lambda to yield a double instead of an int. = Scrivere [](int x) -> double { return x / 2.0; } usa un tipo di ritorno trailing esplicito per forzare la lambda a produrre un double invece di un int."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Callable",
+      "set": {
+        "example": "std::invoke accepts any callable, so the same notify function can dispatch to a free function, a member pointer, or a lambda with no extra glue code. = std::invoke accetta qualsiasi callable, così la stessa funzione notify può fare dispatch a una funzione libera, un puntatore a membro o una lambda senza glue code extra."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Functor",
+      "set": {
+        "example": "Defining a Counter struct with int operator()() turns it into a functor that std::generate can call repeatedly while preserving its internal state. = Definire una struct Counter con int operator()() la trasforma in un funtore che std::generate puo' chiamare ripetutamente preservando il suo stato interno."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Bind",
+      "set": {
+        "italian": "std::bind",
+        "example": "Using std::bind(send, socket, std::placeholders::_1) preconfigures the socket argument and returns a callable that expects only the payload. = Usare std::bind(send, socket, std::placeholders::_1) preconfigura l'argomento socket e restituisce un callable che attende solo il payload.",
+        "note": "Termine C++: std::bind (funzione standard, non si traduce). Spesso preferibile una lambda."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Type Erased Functor",
+      "set": {
+        "example": "std::function<void(Event)> is the canonical type erased functor: it can hold any callable matching the signature while hiding the concrete type from the caller. = std::function<void(Event)> è il funtore con tipo cancellato canonico: può contenere qualsiasi callable che corrisponda alla firma nascondendo il tipo concreto al chiamante."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Function Wrapper",
+      "set": {
+        "example": "Storing every plugin entry point as a std::function turns the registry into a function wrapper that accepts lambdas, free functions, and member functions alike. = Memorizzare ogni entry point di plugin come std::function trasforma il registro in un wrapper di funzione che accetta lambda, funzioni libere e funzioni membro indistintamente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_2",
+      "english": "Invoke",
+      "set": {
+        "italian": "std::invoke",
+        "example": "Calling std::invoke uniformly invokes a free function, a lambda, or a pointer-to-member, which is essential when writing generic forwarding utilities. = Chiamare std::invoke invoca uniformemente una funzione libera, una lambda o un puntatore-a-membro, essenziale per scrivere utility di forwarding generiche.",
+        "note": "Termine C++: std::invoke (funzione standard, non si traduce)."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Generic Lambda",
+      "set": {
+        "example": "Declaring auto add = [](auto a, auto b) { return a + b; } makes it a generic lambda whose call operator is itself a function template. = Dichiarare auto add = [](auto a, auto b) { return a + b; } la rende una lambda generica il cui operatore di chiamata è esso stesso un template di funzione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Variadic Lambda",
+      "set": {
+        "example": "Writing [](auto&&... args) { log(std::forward<decltype(args)>(args)...); } produces a variadic lambda that forwards any number and type of arguments. = Scrivere [](auto&&... args) { log(std::forward<decltype(args)>(args)...); } produce una lambda variadica che inoltra qualsiasi numero e tipo di argomenti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Stateless Lambda",
+      "set": {
+        "example": "Because []() { return 42; } is a stateless lambda with no captures, it converts implicitly to a plain function pointer and can be passed to C APIs. = Poiché []() { return 42; } è una lambda senza stato senza catture, si converte implicitamente in un puntatore a funzione semplice e può essere passata a API C."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Stateful Lambda",
+      "set": {
+        "example": "The progress reporter [count = 0]() mutable { return ++count; } is a stateful lambda whose internal counter survives across successive invocations. = Il reporter di avanzamento [count = 0]() mutable { return ++count; } è una lambda con stato il cui contatore interno sopravvive tra invocazioni successive."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Recursive Lambda",
+      "set": {
+        "example": "To write a recursive lambda you either capture a std::function holding the lambda itself or use C++23 deducing this so the body can call itself by name. = Per scrivere una lambda ricorsiva o catturi una std::function che contiene la lambda stessa o usi il deducing this di C++23 così il corpo può chiamarsi per nome."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Immediately Invoked",
+      "set": {
+        "example": "The config initializer uses an immediately invoked lambda const auto cfg = [] { /* build */ return c; }(); to build a complex const value in one expression. = L'inizializzatore di config usa una lambda invocata immediatamente const auto cfg = [] { /* build */ return c; }(); per costruire un valore const complesso in un'unica espressione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_3",
+      "english": "Lambda Overload",
+      "set": {
+        "example": "The visitor for std::variant uses the overload set trick to combine several lambdas into a single lambda overload object that dispatches on the active type. = Il visitor per std::variant usa il trucco dell'overload set per combinare diverse lambda in un singolo oggetto di overload di lambda che fa dispatch sul tipo attivo."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Functional Header",
+      "set": {
+        "example": "Pulling in the functional header is required before using std::function, std::bind, std::ref, or any of the standard function objects in your translation unit. = Includere l'header functional è necessario prima di usare std::function, std::bind, std::ref o uno qualsiasi degli oggetti funzione standard nella tua unità di traduzione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Greater Functor",
+      "set": {
+        "example": "Passing std::greater<int>{} as the comparator turns std::sort into a descending sort because the greater functor inverts the default less-than ordering. = Passare std::greater<int>{} come comparatore trasforma std::sort in un ordinamento decrescente perché il funtore greater inverte l'ordinamento predefinito less-than."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Less Functor",
+      "set": {
+        "example": "std::set defaults its comparator to std::less<T>, so providing the less functor explicitly is rarely needed unless you want the heterogeneous overload std::less<>. = std::set imposta di default il comparatore a std::less<T>, quindi fornire il funtore less esplicitamente raramente serve, a meno di voler l'overload eterogeneo std::less<>."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Plus Functor",
+      "set": {
+        "example": "Passing std::plus<>{} to std::accumulate lets the plus functor sum heterogeneous types via deduction, avoiding the int truncation of the legacy overload. = Passare std::plus<>{} a std::accumulate permette al funtore plus di sommare tipi eterogenei via deduzione, evitando il troncamento a int dell'overload legacy."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Reference Wrapper",
+      "set": {
+        "example": "Wrapping a logger object with std::ref produces a reference wrapper so that std::thread stores a reference instead of silently copying the object. = Avvolgere un oggetto logger con std::ref produce un wrapper di riferimento così std::thread memorizza un riferimento invece di copiare silenziosamente l'oggetto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Partial Application",
+      "set": {
+        "example": "Using std::bind_front(add, 5) builds a new callable through partial application that always adds five to whatever single argument it later receives. = Usare std::bind_front(add, 5) costruisce un nuovo callable tramite applicazione parziale che aggiunge sempre cinque a qualsiasi singolo argomento riceva successivamente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Pipeline",
+      "set": {
+        "example": "Chaining views with v | std::views::filter(odd) | std::views::transform(square) builds a lazy pipeline that visits each element only when consumed. = Concatenare viste con v | std::views::filter(odd) | std::views::transform(square) costruisce una pipeline pigra che visita ogni elemento solo quando consumato."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "cpp_lambdas_4",
+      "english": "Composition",
+      "set": {
+        "english": "Function Composition",
+        "italian": "Composizione di funzioni",
+        "example": "Building const auto fg = [&](auto x) { return f(g(x)); } captures function composition explicitly so callers can apply the combined transformation in one step. = Costruire const auto fg = [&](auto x) { return f(g(x)); } cattura la composizione di funzioni esplicitamente così i chiamanti possono applicare la trasformazione combinata in un solo passo.",
+        "note": "Rinominato da Composition per disambiguare dalla composizione OO di livello 3."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Auto Keyword",
+      "set": {
+        "example": "Switching the loop variable to auto with auto it = m.begin() lets the auto keyword pick std::map<K,V>::iterator without you having to spell the long type. = Cambiare la variabile di loop in auto con auto it = m.begin() lascia che la parola chiave auto scelga std::map<K,V>::iterator senza dover scrivere il tipo lungo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Decltype",
+      "set": {
+        "italian": "decltype",
+        "example": "Writing decltype(container.front()) gives the precise reference-or-value type that container.front() yields, which is invaluable when authoring generic wrappers. = Scrivere decltype(container.front()) dà il tipo preciso riferimento-o-valore che container.front() produce, prezioso quando si scrivono wrapper generici.",
+        "note": "Termine C++: decltype (parola chiave del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Decltype Auto",
+      "set": {
+        "italian": "decltype(auto)",
+        "example": "Returning decltype(auto) from a forwarding helper preserves whether the wrapped call yields a reference or a value, matching the original expression precisely. = Restituire decltype(auto) da un helper di forwarding preserva se la chiamata avvolta produce un riferimento o un valore, corrispondendo precisamente all'espressione originale.",
+        "note": "Termine C++: decltype(auto) (sintassi del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Nullptr",
+      "set": {
+        "italian": "nullptr",
+        "example": "Initializing the raw pointer with nullptr instead of 0 disambiguates overload resolution so f(int) is no longer accidentally selected over f(char*). = Inizializzare il puntatore grezzo con nullptr invece di 0 disambigua la risoluzione degli overload così f(int) non viene più selezionato accidentalmente al posto di f(char*).",
+        "note": "Termine C++: nullptr (parola chiave del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Range For",
+      "set": {
+        "example": "Rewriting the index-based loop as a range for like for (auto& item : items) keeps the body focused on what to do and not how to walk the container. = Riscrivere il loop basato su indice come un range-for tipo for (auto& item : items) mantiene il corpo focalizzato sul cosa fare e non sul come percorrere il container."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Brace Initialization",
+      "set": {
+        "example": "Writing int n{3.14} fails to compile because brace initialization forbids the narrowing conversion that int n = 3.14 would silently accept. = Scrivere int n{3.14} non compila perché l'inizializzazione con graffe vieta la conversione narrowing che int n = 3.14 accetterebbe silenziosamente."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Uniform Initialization",
+      "set": {
+        "example": "Adopting uniform initialization with braces gives a single consistent syntax for constructing arrays, aggregates, and class objects across the entire codebase. = Adottare l'inizializzazione uniforme con graffe dà una sintassi unica e coerente per costruire array, aggregati e oggetti di classe in tutto il codice."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_1",
+      "english": "Auto Variable",
+      "set": {
+        "example": "Declaring iterators and lambda results as an auto variable keeps deeply templated types out of the source code and shortens the surface area for refactors. = Dichiarare iteratori e risultati di lambda come una variabile auto tiene i tipi profondamente template fuori dal codice sorgente e riduce la superficie per i refactor."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Move Semantics",
+      "set": {
+        "example": "Adopting move semantics in the JSON parser eliminated the deep copies of large string nodes and cut overall parse time by nearly half. = Adottare la semantica del move nel parser JSON ha eliminato le copie profonde dei grandi nodi string e ha tagliato il tempo totale di parsing di quasi la metà."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Std Move",
+      "set": {
+        "italian": "std::move",
+        "example": "Wrapping the source vector in std::move(v) at the return statement casts it to an rvalue so the caller receives the buffer through the move constructor. = Avvolgere il vector sorgente in std::move(v) nello statement return lo casta a rvalue così il chiamante riceve il buffer tramite il costruttore di move.",
+        "note": "Termine C++: std::move (funzione standard, non si traduce)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Lvalue",
+      "set": {
+        "italian": "lvalue",
+        "example": "A named variable like int x = 0; is the textbook lvalue: it has an identifiable memory location, so you can take its address with &x. = Una variabile con nome come int x = 0; è il lvalue da manuale: ha una posizione di memoria identificabile, quindi puoi prenderne l'indirizzo con &x.",
+        "note": "Termine C++: lvalue (categoria di valore del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Rvalue",
+      "set": {
+        "italian": "rvalue",
+        "example": "The temporary returned by makeBuffer() is an rvalue, which is exactly why operator= can move from it instead of copying its underlying memory. = Il temporaneo restituito da makeBuffer() è un rvalue, ed è esattamente il motivo per cui operator= può fare move da esso invece di copiare la sua memoria sottostante.",
+        "note": "Termine C++: rvalue (categoria di valore del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Xvalue",
+      "set": {
+        "italian": "xvalue",
+        "example": "The result of std::move(v) is an xvalue, an expiring value whose resources you may steal because the original object will not be observed again. = Il risultato di std::move(v) è un xvalue, un valore in scadenza le cui risorse puoi rubare perché l'oggetto originale non sarà più osservato.",
+        "note": "Termine C++: xvalue (categoria di valore del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Prvalue",
+      "set": {
+        "italian": "prvalue",
+        "example": "A literal expression like 42 or std::string(\"hi\") is a prvalue, a pure rvalue with no identity that materializes only when bound to a reference or stored. = Un'espressione letterale come 42 o std::string(\"hi\") è un prvalue, un rvalue puro senza identità che si materializza solo quando è legato a un riferimento o memorizzato.",
+        "note": "Termine C++: prvalue (categoria di valore del linguaggio, non si traduce)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Move Constructor",
+      "set": {
+        "english": "Rvalue Move Constructor",
+        "italian": "Costruttore di move (rvalue)",
+        "example": "Defining Buffer(Buffer&& other) noexcept as an rvalue move constructor swaps the heap pointer with the source and leaves the source in an empty state. = Definire Buffer(Buffer&& other) noexcept come costruttore di move da rvalue scambia il puntatore heap con la sorgente e lascia la sorgente in uno stato vuoto.",
+        "note": "Rinominato per disambiguare dal Move Constructor di livello 2."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_2",
+      "english": "Move Assignment",
+      "set": {
+        "english": "Rvalue Move Assignment",
+        "italian": "Assegnazione di move (rvalue)",
+        "example": "Implementing Buffer& operator=(Buffer&&) noexcept as an rvalue move assignment releases the current resource and steals the one bound to the rvalue source. = Implementare Buffer& operator=(Buffer&&) noexcept come assegnazione di move da rvalue rilascia la risorsa corrente e ruba quella legata alla sorgente rvalue.",
+        "note": "Rinominato per disambiguare dal Move Assignment di livello 2."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Default Function",
+      "set": {
+        "example": "Writing Point() = default declares an explicitly default function whose compiler-generated body initializes each member with its in-class default. = Scrivere Point() = default dichiara una funzione di default esplicita il cui corpo generato dal compilatore inizializza ogni membro col suo default in-class."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Deleted Function",
+      "set": {
+        "english": "Modern Deleted Function",
+        "italian": "Funzione eliminata (modern C++)",
+        "example": "Marking the copy constructor as = delete creates a modern deleted function so any attempt to copy a UniqueHandle is flagged at compile time. = Marcare il costruttore di copia come = delete crea una funzione eliminata moderna così qualsiasi tentativo di copiare un UniqueHandle è segnalato a compile time.",
+        "note": "Rinominato per disambiguare dal Deleted Function di livello 2."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Override Specifier",
+      "set": {
+        "example": "Adding the override specifier to draw() in Circle makes the compiler fail loudly if the base class signature drifts and the derived method no longer overrides anything. = Aggiungere lo specificatore override a draw() in Circle fa fallire il compilatore in modo evidente se la firma della base cambia e il metodo derivato non sovrascrive più nulla."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Final Specifier",
+      "set": {
+        "example": "Marking SecurityPolicy with the final specifier prevents third-party code from deriving a subclass that could weaken the audited checks of the base class. = Marcare SecurityPolicy con lo specificatore final impedisce al codice di terze parti di derivare una sottoclasse che potrebbe indebolire i controlli auditati della classe base."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Constexpr",
+      "set": {
+        "english": "Constexpr Function Modern",
+        "italian": "Funzione constexpr (modern C++)",
+        "example": "Tagging the helper as constexpr lets you write constexpr auto v = compute(7); so the constexpr function is evaluated entirely at compile time. = Etichettare l'helper come constexpr permette di scrivere constexpr auto v = compute(7); così la funzione constexpr viene valutata interamente a tempo di compilazione.",
+        "note": "Rinominato per disambiguare dal Constexpr di livello 1."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Strongly Typed Enum",
+      "set": {
+        "example": "Replacing the C-style flag set with a strongly typed enum class Permission removes implicit integer conversions and makes invalid combinations a compile error. = Sostituire il set di flag stile C con un enum class Permission fortemente tipizzato rimuove le conversioni implicite a intero e rende combinazioni invalide un errore di compilazione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Static Assert",
+      "set": {
+        "english": "Modern Static Assert",
+        "italian": "Asserzione a tempo di compilazione moderna (static_assert)",
+        "example": "Adding a modern static_assert(sizeof(Header) == 64, \"unexpected packet layout\"); freezes the binary protocol layout into the build instead of catching it at runtime. = Aggiungere un static_assert(sizeof(Header) == 64, \"unexpected packet layout\"); moderno congela il layout del protocollo binario nella build invece di catturarlo a runtime.",
+        "note": "Rinominato per disambiguare dal Static Assert di livello 8 (cpp_templates_4)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Raw String Literal",
+      "set": {
+        "example": "Writing R\"(C:\\Users\\re\\file.txt)\" as a raw string literal avoids the tower of backslash escapes that the equivalent regular string would need. = Scrivere R\"(C:\\Users\\re\\file.txt)\" come letterale stringa raw evita la torre di escape con backslash che la stringa regolare equivalente richiederebbe."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "Right Angle Brackets",
+      "set": {
+        "example": "Since C++11 you can write std::vector<std::vector<int>> with adjacent right angle brackets, and the parser no longer mistakes >> for the shift operator. = Da C++11 puoi scrivere std::vector<std::vector<int>> con parentesi angolari di chiusura adiacenti, e il parser non confonde più >> con l'operatore di shift."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_3",
+      "english": "User-Defined Literal",
+      "set": {
+        "english": "Modern User-Defined Literal",
+        "italian": "Letterale definito utente (modern C++)",
+        "example": "Defining auto operator\"\"_ms(unsigned long long n) introduces a modern user-defined literal so timeout(250_ms) reads naturally and is type-checked. = Definire auto operator\"\"_ms(unsigned long long n) introduce un letterale definito utente moderno così timeout(250_ms) si legge naturalmente ed è type-checked.",
+        "note": "Rinominato per disambiguare dal User-Defined Literal di livello 5 (cpp_oop_16)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Tuple",
+      "set": {
+        "italian": "std::tuple",
+        "example": "Returning std::tuple<bool, int, std::string> from parse() lets the caller use structured bindings to unpack ok, code, and message in a single line. = Restituire std::tuple<bool, int, std::string> da parse() permette al chiamante di usare i binding strutturati per estrarre ok, code e message in una sola riga.",
+        "note": "Termine C++: std::tuple (template standard, non si traduce)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Pair",
+      "set": {
+        "example": "The map insert() function returns a std::pair whose first element is the iterator to the entry and whose second element is true if the insertion happened. = La funzione insert() della map restituisce un std::pair il cui primo elemento è l'iteratore alla voce e il secondo è true se l'inserimento è avvenuto."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Array",
+      "set": {
+        "english": "Modern Array",
+        "italian": "Array a dimensione fissa moderno (std::array)",
+        "example": "Replacing the int v[5] raw block with a modern std::array<int, 5> gives bounds checking via at(), iterators, and value semantics for free. = Sostituire il blocco grezzo int v[5] con un std::array<int, 5> moderno fornisce controllo dei limiti via at(), iteratori e semantica per valore gratuitamente.",
+        "note": "Rinominato per disambiguare dall'Array di livello 6 (cpp_stl_1)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Random",
+      "set": {
+        "italian": "std::random",
+        "example": "Switching from rand() to the std::random engines and distributions lets you choose mt19937 and uniform_int_distribution for reproducible high-quality sampling. = Passare da rand() ai motori e distribuzioni di std::random permette di scegliere mt19937 e uniform_int_distribution per campionamenti di alta qualità riproducibili.",
+        "note": "Termine C++: libreria std::random (libreria standard, non si traduce)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Thread",
+      "set": {
+        "italian": "std::thread",
+        "example": "Spawning a background worker with std::thread t(loadAssets); kicks off the load on another OS thread while the main one continues to handle input. = Avviare un worker in background con std::thread t(loadAssets); lancia il caricamento su un altro thread OS mentre il main continua a gestire l'input.",
+        "note": "Termine C++: std::thread (classe standard, non si traduce)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Type Traits",
+      "set": {
+        "example": "Constraining a template with std::enable_if_t<std::is_integral_v<T>> uses type traits to disable the overload for floating-point arguments at compile time. = Vincolare un template con std::enable_if_t<std::is_integral_v<T>> usa i type traits per disabilitare l'overload per argomenti in virgola mobile a tempo di compilazione."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "cpp_modern_cpp_4",
+      "english": "Make Shared",
+      "set": {
+        "english": "Modern Make Shared",
+        "italian": "Fabbrica moderna per shared_ptr (std::make_shared)",
+        "example": "Calling std::make_shared<Widget>(args...) as a modern make shared performs one heap allocation for both the object and the control block, saving a cache miss per pointer. = Chiamare std::make_shared<Widget>(args...) come make_shared moderno esegue una sola allocazione heap sia per l'oggetto che per il control block, risparmiando un cache miss per puntatore.",
+        "note": "Rinominato per disambiguare dal Make Shared di livello 9 (cpp_memory_2)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Structured Bindings",
+      "set": {
+        "example": "Writing auto [it, inserted] = map.try_emplace(key, value); destructures the returned pair with structured bindings into two clearly named locals. = Scrivere auto [it, inserted] = map.try_emplace(key, value); destruttura la coppia restituita con binding strutturati in due locali con nomi chiari."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "If Init",
+      "set": {
+        "example": "Using if (auto it = m.find(k); it != m.end()) is an if-init form that scopes the iterator to the conditional branches and keeps the outer namespace clean. = Usare if (auto it = m.find(k); it != m.end()) è una forma if-init che limita l'iteratore ai rami condizionali e tiene pulito il namespace esterno."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Constexpr If",
+      "set": {
+        "example": "Switching on the type with if constexpr (std::is_integral_v<T>) compiles only the matching branch, so the unused arm cannot trigger spurious template errors. = Fare switch sul tipo con if constexpr (std::is_integral_v<T>) compila solo il ramo corrispondente, così il braccio inutilizzato non può scatenare errori template spuri."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Inline Variable",
+      "set": {
+        "english": "Header Inline Variable",
+        "italian": "Variabile inline d'header",
+        "example": "Defining inline constexpr int kMaxClients = 256; in a header as a header inline variable gives every translation unit the same address without duplicate-symbol linker errors. = Definire inline constexpr int kMaxClients = 256; in un header come variabile inline d'header dà a ogni unità di traduzione lo stesso indirizzo senza errori del linker di simboli duplicati.",
+        "note": "Rinominato per disambiguare dall'Inline Variable di livello 2 (cpp_oop_4)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Optional",
+      "set": {
+        "italian": "std::optional",
+        "example": "Returning std::optional<User> from lookup() makes the absence of a match an explicit part of the type, removing the need for sentinel ids or null pointers. = Restituire std::optional<User> da lookup() rende l'assenza di una corrispondenza una parte esplicita del tipo, eliminando la necessità di id sentinella o puntatori null.",
+        "note": "Termine C++: std::optional (template standard, non si traduce)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Variant",
+      "set": {
+        "italian": "std::variant",
+        "example": "Modeling an AST node as std::variant<Number, String, Call> turns the heterogeneous payload into a type-safe std::variant that std::visit can dispatch on. = Modellare un nodo AST come std::variant<Number, String, Call> trasforma il payload eterogeneo in una std::variant type-safe su cui std::visit può fare dispatch.",
+        "note": "Termine C++: std::variant (template standard, non si traduce)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std Any",
+      "set": {
+        "italian": "std::any",
+        "example": "The plugin registry stores opaque user data in std::any so each plugin can stash anything and recover it later with std::any_cast at the matching type. = Il registro dei plugin memorizza dati utente opachi in std::any così ogni plugin può conservare qualsiasi cosa e recuperarla in seguito con std::any_cast al tipo corrispondente.",
+        "note": "Termine C++: std::any (template standard, non si traduce)."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "cpp_modern_cpp_5",
+      "english": "Std String View",
+      "set": {
+        "italian": "std::string_view",
+        "example": "Changing the parser parameter from const std::string& to std::string_view as a non-owning view lets callers pass string literals without paying for a temporary allocation. = Cambiare il parametro del parser da const std::string& a std::string_view come vista non proprietaria permette ai chiamanti di passare letterali stringa senza pagare un'allocazione temporanea.",
+        "note": "Termine C++: std::string_view (classe standard, non si traduce)."
+      }
+    }
+  ]
+}

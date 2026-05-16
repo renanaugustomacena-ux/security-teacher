@@ -1,214 +1,156 @@
 topicId,level,lesson,english,italian,issueType
 "devsecops",0,"dso_shift_left_3","Operate","Operare",near-identical-translation
-"devsecops",1,"dso_ci_cd_3","GitHub Actions","GitHub Actions (automazione CI/CD GitHub)",fake-translation
+"devsecops",1,"dso_ci_cd_3","GitHub Actions","GitHub Actions",identical-translation
 "devsecops",2,"dso_sast_1","False Positive","Falso positivo",near-identical-translation
 "devsecops",2,"dso_sast_1","False Negative","Falso negativo",near-identical-translation
-"devsecops",2,"dso_sast_2","SonarQube","SonarQube (piattaforma analisi qualità codice)",fake-translation
-"devsecops",2,"dso_sast_2","Semgrep","Semgrep (SAST a regole semantiche)",fake-translation
-"devsecops",2,"dso_sast_2","CodeQL","CodeQL (analisi statica semantica GitHub)",fake-translation
-"devsecops",2,"dso_sast_2","Bandit","Bandit (SAST per Python)",fake-translation
-"devsecops",2,"dso_sast_2","gosec","gosec (SAST per Go)",fake-translation
-"devsecops",2,"dso_sast_2","Brakeman","Brakeman (SAST per Ruby on Rails)",fake-translation
-"devsecops",2,"dso_sast_2","Checkmarx","Checkmarx (SAST commerciale)",fake-translation
-"devsecops",2,"dso_sast_2","Fortify","Fortify (SAST commerciale OpenText)",fake-translation
-"devsecops",2,"dso_sast_2","Veracode","Veracode (SAST commerciale)",fake-translation
+"devsecops",2,"dso_sast_2","SonarQube","SonarQube",identical-translation
+"devsecops",2,"dso_sast_2","Semgrep","Semgrep",identical-translation
+"devsecops",2,"dso_sast_2","CodeQL","CodeQL",identical-translation
+"devsecops",2,"dso_sast_2","Bandit","Bandit",identical-translation
+"devsecops",2,"dso_sast_2","gosec","gosec",identical-translation
+"devsecops",2,"dso_sast_2","Brakeman","Brakeman",identical-translation
+"devsecops",2,"dso_sast_2","Checkmarx","Checkmarx",identical-translation
+"devsecops",2,"dso_sast_2","Fortify","Fortify",identical-translation
+"devsecops",2,"dso_sast_2","Veracode","Veracode",identical-translation
 "devsecops",2,"dso_sast_4","Approve","Approvare",near-identical-translation
-"devsecops",3,"dso_sca_2","Snyk","Snyk (piattaforma sicurezza dipendenze)",fake-translation
-"devsecops",3,"dso_sca_2","Dependabot","Dependabot (aggiornamento automatico dipendenze)",fake-translation
-"devsecops",3,"dso_sca_2","Renovate","Renovate (aggiornamento dipendenze configurabile)",fake-translation
-"devsecops",3,"dso_sca_3","Syft","Syft (generatore SBOM)",fake-translation
-"devsecops",3,"dso_sca_3","Grype","Grype (scanner di vulnerabilità immagini)",fake-translation
+"devsecops",3,"dso_sca_2","Snyk","Snyk",identical-translation
+"devsecops",3,"dso_sca_2","Dependabot","Dependabot",identical-translation
+"devsecops",3,"dso_sca_2","Renovate","Renovate",identical-translation
+"devsecops",3,"dso_sca_3","Syft","Syft",identical-translation
+"devsecops",3,"dso_sca_3","Grype","Grype",identical-translation
 "devsecops",3,"dso_sca_3","Component","Componente",near-identical-translation
 "devsecops",4,"dso_secrets_1","Secret","Segreto",near-identical-translation
 "devsecops",4,"dso_secrets_1","Credential","Credenziale",near-identical-translation
-"devsecops",4,"dso_secrets_2","HashiCorp Vault","HashiCorp Vault (gestore segreti enterprise)",fake-translation
-"devsecops",4,"dso_secrets_2","AWS Secrets Manager","AWS Secrets Manager (gestore segreti AWS)",fake-translation
-"devsecops",4,"dso_secrets_2","AWS Parameter Store","AWS Parameter Store (gestore parametri AWS)",fake-translation
-"devsecops",4,"dso_secrets_2","Azure Key Vault","Azure Key Vault (gestore segreti Azure)",fake-translation
-"devsecops",4,"dso_secrets_2","GCP Secret Manager","GCP Secret Manager (gestore segreti Google)",fake-translation
-"devsecops",4,"dso_secrets_2","Doppler","Doppler (piattaforma di gestione segreti)",fake-translation
-"devsecops",4,"dso_secrets_3","Gitleaks","gitleaks (scanner segreti git)",fake-translation
-"devsecops",4,"dso_secrets_3","TruffleHog","TruffleHog (scanner segreti git)",fake-translation
-"devsecops",4,"dso_secrets_3","detect-secrets","detect-secrets (scanner segreti Yelp)",fake-translation
-"devsecops",5,"dso_dast_2","OWASP ZAP","OWASP ZAP (proxy DAST open source)",fake-translation
-"devsecops",5,"dso_dast_2","Burp Suite","Burp Suite (proxy di test sicurezza web)",fake-translation
-"devsecops",5,"dso_dast_2","Nuclei","Nuclei (scanner di vulnerabilità a template)",fake-translation
-"devsecops",5,"dso_dast_2","Nikto","Nikto (scanner web legacy)",fake-translation
-"devsecops",5,"dso_dast_2","Acunetix","Acunetix (DAST commerciale)",fake-translation
-"devsecops",5,"dso_dast_2","Netsparker","Netsparker (DAST commerciale, ora Invicti)",fake-translation
-"devsecops",5,"dso_dast_2","Wapiti","Wapiti (DAST open source)",fake-translation
-"devsecops",5,"dso_dast_2","Arachni","Arachni (DAST modulare in Ruby)",fake-translation
-"devsecops",5,"dso_dast_2","Stackhawk","StackHawk (DAST integrato in CI)",fake-translation
-"devsecops",5,"dso_dast_3","AFL++","AFL++ (fuzzer evolutivo)",fake-translation
-"devsecops",5,"dso_dast_3","libFuzzer","libFuzzer (fuzzer in-process LLVM)",fake-translation
-"devsecops",5,"dso_dast_3","go-fuzz","go-fuzz (fuzzer per Go)",fake-translation
-"devsecops",5,"dso_dast_3","OSS-Fuzz","OSS-Fuzz (fuzzing continuo Google open source)",fake-translation
-"devsecops",6,"dso_container_security_1","Trivy","Trivy (scanner di vulnerabilità Aqua)",fake-translation
-"devsecops",6,"dso_container_security_1","Grype","Grype (scanner di vulnerabilità immagini)",fake-translation
-"devsecops",6,"dso_container_security_1","Clair","Clair (scanner immagini Quay/Red Hat)",fake-translation
-"devsecops",6,"dso_container_security_1","Anchore","Anchore (piattaforma sicurezza container)",fake-translation
-"devsecops",6,"dso_container_security_3","Cosign","Cosign (firma di immagini container)",fake-translation
-"devsecops",6,"dso_container_security_3","Falco","Falco (rilevatore eventi runtime cloud-native)",fake-translation
-"devsecops",6,"dso_container_security_4","Hadolint","Hadolint (linter Dockerfile)",fake-translation
-"devsecops",6,"dso_container_security_4","Dockle","Dockle (linter sicurezza container)",fake-translation
-"devsecops",6,"dso_container_security_4","kube-bench","kube-bench (benchmark CIS Kubernetes)",fake-translation
-"devsecops",7,"dso_iac_security_1","Terraform","Terraform (IaC HashiCorp)",fake-translation
-"devsecops",7,"dso_iac_security_1","CloudFormation","CloudFormation (IaC AWS)",fake-translation
-"devsecops",7,"dso_iac_security_1","Pulumi","Pulumi (IaC con linguaggi general-purpose)",fake-translation
-"devsecops",7,"dso_iac_security_1","Bicep","Bicep (DSL IaC per Azure)",fake-translation
-"devsecops",7,"dso_iac_security_1","Plan","Piano",near-identical-translation
-"devsecops",7,"dso_iac_security_2","Checkov","Checkov (scanner sicurezza IaC)",fake-translation
-"devsecops",7,"dso_iac_security_2","tfsec","tfsec (scanner sicurezza Terraform)",fake-translation
-"devsecops",7,"dso_iac_security_2","Terrascan","Terrascan (scanner sicurezza IaC)",fake-translation
-"devsecops",7,"dso_iac_security_2","KICS","KICS (scanner IaC Checkmarx)",fake-translation
-"devsecops",7,"dso_iac_security_2","cfn-nag","cfn-nag (linter sicurezza CloudFormation)",fake-translation
-"devsecops",7,"dso_iac_security_4","Atlantis","Atlantis (automazione Terraform via PR)",fake-translation
-"devsecops",7,"dso_iac_security_4","Terraform Cloud","Terraform Cloud (servizio gestito Terraform)",fake-translation
+"devsecops",4,"dso_secrets_2","HashiCorp Vault","HashiCorp Vault",identical-translation
+"devsecops",4,"dso_secrets_2","AWS Secrets Manager","AWS Secrets Manager",identical-translation
+"devsecops",4,"dso_secrets_2","AWS Parameter Store","AWS Parameter Store",identical-translation
+"devsecops",4,"dso_secrets_2","Azure Key Vault","Azure Key Vault",identical-translation
+"devsecops",4,"dso_secrets_2","GCP Secret Manager","GCP Secret Manager",identical-translation
+"devsecops",4,"dso_secrets_2","Doppler","Doppler",identical-translation
+"devsecops",4,"dso_secrets_3","Gitleaks","Gitleaks",identical-translation
+"devsecops",4,"dso_secrets_3","TruffleHog","TruffleHog",identical-translation
+"devsecops",4,"dso_secrets_3","detect-secrets","detect-secrets",identical-translation
+"devsecops",5,"dso_dast_2","OWASP ZAP","OWASP ZAP",identical-translation
+"devsecops",5,"dso_dast_2","Burp Suite","Burp Suite",identical-translation
+"devsecops",5,"dso_dast_2","Nuclei","Nuclei",identical-translation
+"devsecops",5,"dso_dast_2","Nikto","Nikto",identical-translation
+"devsecops",5,"dso_dast_2","Acunetix","Acunetix",identical-translation
+"devsecops",5,"dso_dast_2","Netsparker","Netsparker",identical-translation
+"devsecops",5,"dso_dast_2","Wapiti","Wapiti",identical-translation
+"devsecops",5,"dso_dast_2","Arachni","Arachni",identical-translation
+"devsecops",5,"dso_dast_2","Stackhawk","Stackhawk",identical-translation
+"devsecops",5,"dso_dast_3","AFL++","AFL++",identical-translation
+"devsecops",5,"dso_dast_3","libFuzzer","libFuzzer",identical-translation
+"devsecops",5,"dso_dast_3","go-fuzz","go-fuzz",identical-translation
+"devsecops",5,"dso_dast_3","OSS-Fuzz","OSS-Fuzz",identical-translation
+"devsecops",6,"dso_container_security_1","Trivy","Trivy",identical-translation
+"devsecops",6,"dso_container_security_1","Clair","Clair",identical-translation
+"devsecops",6,"dso_container_security_1","Anchore","Anchore",identical-translation
+"devsecops",6,"dso_container_security_3","Cosign","Cosign",identical-translation
+"devsecops",6,"dso_container_security_3","Falco","Falco",identical-translation
+"devsecops",6,"dso_container_security_4","Hadolint","Hadolint",identical-translation
+"devsecops",6,"dso_container_security_4","Dockle","Dockle",identical-translation
+"devsecops",6,"dso_container_security_4","kube-bench","kube-bench",identical-translation
+"devsecops",7,"dso_iac_security_1","Terraform","Terraform",identical-translation
+"devsecops",7,"dso_iac_security_1","CloudFormation","CloudFormation",identical-translation
+"devsecops",7,"dso_iac_security_1","Pulumi","Pulumi",identical-translation
+"devsecops",7,"dso_iac_security_1","Bicep","Bicep",identical-translation
+"devsecops",7,"dso_iac_security_2","Checkov","Checkov",identical-translation
+"devsecops",7,"dso_iac_security_2","tfsec","tfsec",identical-translation
+"devsecops",7,"dso_iac_security_2","Terrascan","Terrascan",identical-translation
+"devsecops",7,"dso_iac_security_2","KICS","KICS",identical-translation
+"devsecops",7,"dso_iac_security_2","cfn-nag","cfn-nag",identical-translation
+"devsecops",7,"dso_iac_security_4","Atlantis","Atlantis",identical-translation
+"devsecops",7,"dso_iac_security_4","Terraform Cloud","Terraform Cloud",identical-translation
 "devsecops",8,"dso_policy_1","Decision","Decisione",near-identical-translation
 "devsecops",8,"dso_policy_1","Data","Dati",near-identical-translation
-"devsecops",8,"dso_policy_3","Kyverno","Kyverno (policy engine Kubernetes)",fake-translation
-"devsecops",8,"dso_policy_4","Kubeconform","Kubeconform (validatore manifest K8s)",fake-translation
+"devsecops",8,"dso_policy_3","Kyverno","Kyverno",identical-translation
+"devsecops",8,"dso_policy_4","Kubeconform","Kubeconform",identical-translation
 "devsecops",9,"dso_supply_chain_1","Attestation","Attestazione",near-identical-translation
-"devsecops",9,"dso_supply_chain_3","Cosign","Cosign (firma di immagini container)",fake-translation
+"devsecops",9,"dso_supply_chain_3","Cosign keyless signing","Firma keyless con Cosign",tautological-example
 "devsecops",10,"dso_compliance_as_code_1","Control","Controllo",near-identical-translation
 "devsecops",10,"dso_compliance_as_code_1","Evidence","Evidenza",near-identical-translation
-"devsecops",10,"dso_compliance_as_code_1","Attestation","Attestazione",near-identical-translation
-"devsecops",10,"dso_compliance_as_code_2","InSpec","InSpec (framework compliance Chef)",fake-translation
-"devsecops",10,"dso_compliance_as_code_2","OpenSCAP","OpenSCAP (auditing automatico standard SCAP)",fake-translation
-"devsecops",10,"dso_compliance_as_code_2","Cloud Custodian","Cloud Custodian (governance cloud open source)",fake-translation
-"devsecops",10,"dso_compliance_as_code_2","Drata","Drata (piattaforma compliance automatizzata)",fake-translation
-"devsecops",10,"dso_compliance_as_code_2","Vanta","Vanta (piattaforma compliance automatizzata)",fake-translation
+"devsecops",10,"dso_compliance_as_code_2","InSpec","InSpec",identical-translation
+"devsecops",10,"dso_compliance_as_code_2","OpenSCAP","OpenSCAP",identical-translation
+"devsecops",10,"dso_compliance_as_code_2","Cloud Custodian","Cloud Custodian",identical-translation
+"devsecops",10,"dso_compliance_as_code_2","Drata","Drata",identical-translation
+"devsecops",10,"dso_compliance_as_code_2","Vanta","Vanta",identical-translation
 "devsecops",10,"dso_compliance_as_code_2","Profile","Profilo",near-identical-translation
-"devsecops",11,"dso_cloud_security_2","Prisma Cloud","Prisma Cloud (CNAPP Palo Alto)",fake-translation
-"devsecops",11,"dso_cloud_security_2","Wiz","Wiz (CNAPP cloud-native)",fake-translation
-"devsecops",11,"dso_cloud_security_2","Lacework","Lacework (CNAPP)",fake-translation
-"devsecops",11,"dso_cloud_security_2","Orca Security","Orca Security (CNAPP agentless)",fake-translation
-"devsecops",11,"dso_cloud_security_2","AWS Security Hub","AWS Security Hub (centralizza alert sicurezza AWS)",fake-translation
-"devsecops",11,"dso_cloud_security_2","GCP Security Command Center","GCP Security Command Center (centralizza sicurezza GCP)",fake-translation
-"devsecops",11,"dso_cloud_security_2","Microsoft Defender for Cloud","Microsoft Defender for Cloud (CNAPP Azure)",fake-translation
-"devsecops",11,"dso_cloud_security_2","Steampipe","Steampipe (query SQL su API cloud)",fake-translation
-"devsecops",11,"dso_cloud_security_2","Prowler","Prowler (audit AWS/Azure/GCP open source)",fake-translation
-"devsecops",11,"dso_cloud_security_2","ScoutSuite","ScoutSuite (audit multi-cloud)",fake-translation
+"devsecops",11,"dso_cloud_security_2","Prisma Cloud","Prisma Cloud",identical-translation
+"devsecops",11,"dso_cloud_security_2","Wiz","Wiz",identical-translation
+"devsecops",11,"dso_cloud_security_2","Lacework","Lacework",identical-translation
+"devsecops",11,"dso_cloud_security_2","Orca Security","Orca Security",identical-translation
+"devsecops",11,"dso_cloud_security_2","AWS Security Hub","AWS Security Hub",identical-translation
+"devsecops",11,"dso_cloud_security_2","GCP Security Command Center","GCP Security Command Center",identical-translation
+"devsecops",11,"dso_cloud_security_2","Microsoft Defender for Cloud","Microsoft Defender for Cloud",identical-translation
+"devsecops",11,"dso_cloud_security_2","Steampipe","Steampipe",identical-translation
+"devsecops",11,"dso_cloud_security_2","Prowler","Prowler",identical-translation
+"devsecops",11,"dso_cloud_security_2","ScoutSuite","ScoutSuite",identical-translation
 "devsecops",11,"dso_cloud_security_3","Role","Ruolo",near-identical-translation
-"devsecops",11,"dso_cloud_security_4","Customer-Managed Key","Chiave gestita dal cliente",redundant-note
 "devsecops",12,"dso_threat_modeling_1","Mitigation","Mitigazione",near-identical-translation
 "devsecops",12,"dso_threat_modeling_3","Tactic","Tattica",near-identical-translation
 "devsecops",12,"dso_threat_modeling_3","Procedure","Procedura",near-identical-translation
 "devsecops",12,"dso_threat_modeling_3","TTPs","TTP",near-identical-translation
-"devsecops",12,"dso_threat_modeling_4","IriusRisk","IriusRisk (piattaforma threat modeling)",fake-translation
-"devsecops",12,"dso_threat_modeling_4","Data Flow Diagram","Diagramma di flusso dati",redundant-note
-"devsecops",13,"dso_automation_2","Splunk SOAR","Splunk SOAR (piattaforma SOAR)",fake-translation
-"devsecops",13,"dso_automation_2","Cortex XSOAR","Cortex XSOAR (SOAR Palo Alto)",fake-translation
-"devsecops",13,"dso_automation_2","Tines","Tines (piattaforma SOAR no-code)",fake-translation
-"devsecops",13,"dso_automation_2","Tracecat","Tracecat (SOAR open source)",fake-translation
-"devsecops",13,"dso_automation_2","Shuffle","Shuffle (SOAR open source)",fake-translation
-"devsecops",13,"dso_automation_2","TheHive","TheHive (piattaforma case management sicurezza)",fake-translation
-"devsecops",13,"dso_automation_2","n8n","n8n (automazione workflow open source)",fake-translation
+"devsecops",12,"dso_threat_modeling_4","IriusRisk","IriusRisk",identical-translation
+"devsecops",13,"dso_automation_2","Splunk SOAR","Splunk SOAR",identical-translation
+"devsecops",13,"dso_automation_2","Cortex XSOAR","Cortex XSOAR",identical-translation
+"devsecops",13,"dso_automation_2","Tines","Tines",identical-translation
+"devsecops",13,"dso_automation_2","Tracecat","Tracecat",identical-translation
+"devsecops",13,"dso_automation_2","Shuffle","Shuffle",identical-translation
+"devsecops",13,"dso_automation_2","TheHive","TheHive",identical-translation
+"devsecops",13,"dso_automation_2","n8n","n8n",identical-translation
 "devsecops",13,"dso_automation_2","Connector","Connettore",near-identical-translation
-"devsecops",14,"dso_tools_api_3","Server-Side Request Forgery","Server-Side Request Forgery (SSRF)",fake-translation
-"devsecops",14,"dso_tools_api_4","Salt Security","Salt Security (piattaforma API security)",fake-translation
-"devsecops",14,"dso_tools_api_4","Noname Security","Noname Security (piattaforma API security)",fake-translation
-"devsecops",14,"dso_tools_api_4","Postman","Postman (client API)",fake-translation
-"devsecops",14,"dso_tools_api_4","Schemathesis","Schemathesis (fuzzer di OpenAPI/GraphQL)",fake-translation
-"devsecops",15,"dso_tools_runtime_1","Contrast Security","Contrast Security (piattaforma RASP/IAST)",fake-translation
-"devsecops",15,"dso_tools_runtime_2","Falco","Falco (rilevatore eventi runtime cloud-native)",fake-translation
-"devsecops",15,"dso_tools_runtime_2","AppArmor","AppArmor (LSM Linux a profili)",fake-translation
-"devsecops",15,"dso_tools_runtime_2","Cilium","Cilium (CNI eBPF Kubernetes)",fake-translation
-"devsecops",15,"dso_tools_runtime_3","CrowdStrike","CrowdStrike (EDR commerciale)",fake-translation
-"devsecops",15,"dso_tools_runtime_3","SentinelOne","SentinelOne (EDR commerciale)",fake-translation
-"devsecops",15,"dso_tools_runtime_3","Microsoft Defender","Microsoft Defender (EDR Microsoft)",fake-translation
-"devsecops",15,"dso_tools_runtime_3","Osquery","osquery (telemetria endpoint via SQL)",fake-translation
-"devsecops",15,"dso_tools_runtime_3","Wazuh","Wazuh (SIEM/EDR open source)",fake-translation
-"devsecops",15,"dso_tools_runtime_4","Istio","Istio (service mesh open source)",fake-translation
-"devsecops",15,"dso_tools_runtime_4","Linkerd","Linkerd (service mesh ultra-leggero)",fake-translation
-"devsecops",15,"dso_tools_runtime_4","Consul Connect","Consul Connect (service mesh HashiCorp)",fake-translation
-"devsecops",16,"dso_ci_cd_gitops_1","Argo CD","Argo CD (motore GitOps Kubernetes)",fake-translation
-"devsecops",16,"dso_ci_cd_gitops_1","Flux","Flux (motore GitOps Kubernetes)",fake-translation
-"devsecops",16,"dso_ci_cd_gitops_4","Mergify","Mergify (automazione merge PR)",fake-translation
-"devsecops",17,"dso_tools_monitoring_1","Splunk","Splunk (piattaforma SIEM e log)",fake-translation
-"devsecops",17,"dso_tools_monitoring_2","Mean Time To Detect","Tempo medio di rilevamento",redundant-note
-"devsecops",17,"dso_tools_monitoring_3","Loki","Loki (sistema di log Grafana)",fake-translation
-"devsecops",17,"dso_tools_monitoring_3","Fluentd","Fluentd (raccoglitore log unificato)",fake-translation
+"devsecops",14,"dso_tools_api_3","Server-Side Request Forgery","Server-Side Request Forgery",identical-translation
+"devsecops",14,"dso_tools_api_4","Salt Security","Salt Security",identical-translation
+"devsecops",14,"dso_tools_api_4","Noname Security","Noname Security",identical-translation
+"devsecops",14,"dso_tools_api_4","Postman","Postman",identical-translation
+"devsecops",14,"dso_tools_api_4","Schemathesis","Schemathesis",identical-translation
+"devsecops",15,"dso_tools_runtime_1","Contrast Security","Contrast Security",identical-translation
+"devsecops",15,"dso_tools_runtime_2","Falco runtime detection","Rilevamento runtime con Falco",tautological-example
+"devsecops",15,"dso_tools_runtime_2","AppArmor","AppArmor",identical-translation
+"devsecops",15,"dso_tools_runtime_2","Cilium","Cilium",identical-translation
+"devsecops",15,"dso_tools_runtime_3","CrowdStrike","CrowdStrike",identical-translation
+"devsecops",15,"dso_tools_runtime_3","SentinelOne","SentinelOne",identical-translation
+"devsecops",15,"dso_tools_runtime_3","Microsoft Defender","Microsoft Defender",identical-translation
+"devsecops",15,"dso_tools_runtime_3","Osquery","Osquery",identical-translation
+"devsecops",15,"dso_tools_runtime_3","Wazuh","Wazuh",identical-translation
+"devsecops",15,"dso_tools_runtime_4","Istio","Istio",identical-translation
+"devsecops",15,"dso_tools_runtime_4","Linkerd","Linkerd",identical-translation
+"devsecops",15,"dso_tools_runtime_4","Consul Connect","Consul Connect",identical-translation
+"devsecops",16,"dso_ci_cd_gitops_1","Argo CD","Argo CD",identical-translation
+"devsecops",16,"dso_ci_cd_gitops_1","Flux","Flux",identical-translation
+"devsecops",16,"dso_ci_cd_gitops_4","Mergify","Mergify",identical-translation
+"devsecops",17,"dso_tools_monitoring_1","Splunk","Splunk",identical-translation
+"devsecops",17,"dso_tools_monitoring_1","Microsoft Sentinel","Microsoft Sentinel",tautological-example
+"devsecops",17,"dso_tools_monitoring_1","Microsoft Sentinel","Microsoft Sentinel",identical-translation
+"devsecops",17,"dso_tools_monitoring_3","Loki","Loki",identical-translation
+"devsecops",17,"dso_tools_monitoring_3","Fluentd","Fluentd",identical-translation
 "devsecops",18,"dso_automation_incident_1","Incident","Incidente",near-identical-translation
 "devsecops",18,"dso_automation_incident_1","Scribe","Scriba",near-identical-translation
+"devsecops",18,"dso_automation_incident_2","Incident Triage","Triage degli incidenti",tautological-example
 "devsecops",18,"dso_automation_incident_2","Eradication","Eradicazione",near-identical-translation
-"devsecops",19,"dso_container_security_k8s_1","Role","Ruolo",near-identical-translation
 "devsecops",19,"dso_container_security_k8s_1","Verb","Verbo",near-identical-translation
-"devsecops",19,"dso_container_security_k8s_2","Calico","Calico (CNI Kubernetes con NetworkPolicy)",fake-translation
+"devsecops",19,"dso_container_security_k8s_2","Calico","Calico",identical-translation
 "devsecops",19,"dso_container_security_k8s_2","Microsegmentation","Microsegmentazione",near-identical-translation
+"devsecops",19,"dso_container_security_k8s_3","Gatekeeper Constraints","Constraint Gatekeeper",tautological-example
 "devsecops",19,"dso_container_security_k8s_3","Mutation","Mutazione",near-identical-translation
-"devsecops",19,"dso_container_security_k8s_4","kubescape","Kubescape (scanner di sicurezza K8s)",fake-translation
+"devsecops",19,"dso_container_security_k8s_4","kubescape","kubescape",identical-translation
 "devsecops",20,"dso_culture_maturity_1","Activity","Attività",near-identical-translation
 "devsecops",20,"dso_culture_maturity_1","Practice","Pratica",near-identical-translation
-"devsecops",20,"dso_culture_maturity_4","Internal Developer Platform","Piattaforma interna sviluppatori",redundant-note
-"devsecops",21,"dso_compliance_reg_1","SOC 2","SOC 2 (standard di audit servizi cloud)",fake-translation
+"devsecops",21,"dso_compliance_reg_1","SOC 2","SOC 2",identical-translation
 "devsecops",21,"dso_compliance_reg_1","Type 1","Tipo 1",near-identical-translation
 "devsecops",21,"dso_compliance_reg_1","Type 2","Tipo 2",near-identical-translation
-"devsecops",21,"dso_compliance_reg_2","ISO 27001","ISO 27001 (standard di gestione sicurezza)",fake-translation
+"devsecops",21,"dso_compliance_reg_2","ISO 27001","ISO 27001",identical-translation
 "devsecops",21,"dso_compliance_reg_2","Nonconformity","Non conformità",near-identical-translation
 "devsecops",21,"dso_compliance_reg_3","Segmentation","Segmentazione",near-identical-translation
-"devsecops",21,"dso_compliance_reg_4","GDPR","GDPR (Regolamento UE protezione dati)",fake-translation
-"devsecops",22,"dso_culture_training_2","Hack the Box","Hack The Box (piattaforma CTF)",fake-translation
-"devsecops",22,"dso_culture_training_2","TryHackMe","TryHackMe (piattaforma CTF didattica)",fake-translation
-"devsecops",22,"dso_culture_training_2","Secure Code Warrior","Secure Code Warrior (piattaforma training secure coding)",fake-translation
-"devsecops",22,"dso_culture_training_3","Community of Practice","Comunità di pratica",redundant-note
-"devsecops",23,"dso_culture_career_2","CISSP","CISSP (certificazione senior di sicurezza)",fake-translation
-"devsecops",23,"dso_culture_career_2","CCSP","CCSP (certificazione cloud security)",fake-translation
-"devsecops",23,"dso_culture_career_2","OSCP","OSCP (certificazione pentest Offensive Security)",fake-translation
-"devsecops",23,"dso_culture_career_2","AWS Security Specialty","AWS Security Specialty (certificazione AWS sicurezza)",fake-translation
+"devsecops",21,"dso_compliance_reg_3","FedRAMP Continuous Monitoring","Continuous monitoring FedRAMP",tautological-example
+"devsecops",21,"dso_compliance_reg_4","GDPR","GDPR",identical-translation
+"devsecops",22,"dso_culture_training_2","Hack the Box","Hack The Box",identical-translation
+"devsecops",22,"dso_culture_training_2","TryHackMe","TryHackMe",identical-translation
+"devsecops",22,"dso_culture_training_2","Secure Code Warrior","Secure Code Warrior",identical-translation
+"devsecops",23,"dso_culture_career_2","CISSP","CISSP",identical-translation
+"devsecops",23,"dso_culture_career_2","CCSP","CCSP",identical-translation
+"devsecops",23,"dso_culture_career_2","OSCP","OSCP",identical-translation
+"devsecops",23,"dso_culture_career_2","AWS Security Specialty","AWS Security Specialty",identical-translation
 "devsecops",23,"dso_culture_career_4","Conference","Conferenza",near-identical-translation
 "devsecops",23,"dso_culture_career_4","Mentor","Mentore",near-identical-translation
-"devsecops",0,"dso_shift_left_3","plan","",duplicate-across-lessons
-"devsecops",7,"dso_iac_security_1","plan","",duplicate-across-lessons
-"devsecops",0,"dso_shift_left_3","build","",duplicate-across-lessons
-"devsecops",1,"dso_ci_cd_1","build","",duplicate-across-lessons
-"devsecops",0,"dso_shift_left_4","devsecops engineer","",duplicate-across-lessons
-"devsecops",23,"dso_culture_career_1","devsecops engineer","",duplicate-across-lessons
-"devsecops",0,"dso_shift_left_4","appsec engineer","",duplicate-across-lessons
-"devsecops",23,"dso_culture_career_1","appsec engineer","",duplicate-across-lessons
-"devsecops",1,"dso_ci_cd_1","trigger","",duplicate-across-lessons
-"devsecops",13,"dso_automation_1","trigger","",duplicate-across-lessons
-"devsecops",1,"dso_ci_cd_4","audit log","",duplicate-across-lessons
-"devsecops",17,"dso_tools_monitoring_3","audit log","",duplicate-across-lessons
-"devsecops",2,"dso_sast_1","severity","",duplicate-across-lessons
-"devsecops",18,"dso_automation_incident_1","severity","",duplicate-across-lessons
-"devsecops",2,"dso_sast_4","code owner","",duplicate-across-lessons
-"devsecops",16,"dso_ci_cd_gitops_3","code owner","",duplicate-across-lessons
-"devsecops",3,"dso_sca_1","vulnerability database","",duplicate-across-lessons
-"devsecops",6,"dso_container_security_1","vulnerability database","",duplicate-across-lessons
-"devsecops",3,"dso_sca_3","grype","",duplicate-across-lessons
-"devsecops",6,"dso_container_security_1","grype","",duplicate-across-lessons
-"devsecops",3,"dso_sca_4","triage","",duplicate-across-lessons
-"devsecops",18,"dso_automation_incident_2","triage","",duplicate-across-lessons
-"devsecops",4,"dso_secrets_1","access token","",duplicate-across-lessons
-"devsecops",14,"dso_tools_api_2","access token","",duplicate-across-lessons
-"devsecops",5,"dso_dast_4","scope","",duplicate-across-lessons
-"devsecops",14,"dso_tools_api_2","scope","",duplicate-across-lessons
-"devsecops",6,"dso_container_security_3","cosign","",duplicate-across-lessons
-"devsecops",9,"dso_supply_chain_3","cosign","",duplicate-across-lessons
-"devsecops",6,"dso_container_security_3","admission controller","",duplicate-across-lessons
-"devsecops",8,"dso_policy_3","admission controller","",duplicate-across-lessons
-"devsecops",6,"dso_container_security_3","falco","",duplicate-across-lessons
-"devsecops",15,"dso_tools_runtime_2","falco","",duplicate-across-lessons
-"devsecops",7,"dso_iac_security_4","sentinel","",duplicate-across-lessons
-"devsecops",17,"dso_tools_monitoring_1","sentinel","",duplicate-across-lessons
-"devsecops",8,"dso_policy_2","policy library","",duplicate-across-lessons
-"devsecops",10,"dso_compliance_as_code_4","policy library","",duplicate-across-lessons
-"devsecops",8,"dso_policy_3","opa gatekeeper","",duplicate-across-lessons
-"devsecops",19,"dso_container_security_k8s_3","opa gatekeeper","",duplicate-across-lessons
-"devsecops",8,"dso_policy_3","constraint template","",duplicate-across-lessons
-"devsecops",19,"dso_container_security_k8s_3","constraint template","",duplicate-across-lessons
-"devsecops",8,"dso_policy_3","pod security standard","",duplicate-across-lessons
-"devsecops",19,"dso_container_security_k8s_3","pod security standard","",duplicate-across-lessons
-"devsecops",9,"dso_supply_chain_1","attestation","",duplicate-across-lessons
-"devsecops",10,"dso_compliance_as_code_1","attestation","",duplicate-across-lessons
-"devsecops",9,"dso_supply_chain_1","trust boundary","",duplicate-across-lessons
-"devsecops",12,"dso_threat_modeling_1","trust boundary","",duplicate-across-lessons
-"devsecops",9,"dso_supply_chain_4","signed commit","",duplicate-across-lessons
-"devsecops",16,"dso_ci_cd_gitops_2","signed commit","",duplicate-across-lessons
-"devsecops",10,"dso_compliance_as_code_1","auditor","",duplicate-across-lessons
-"devsecops",21,"dso_compliance_reg_1","auditor","",duplicate-across-lessons
-"devsecops",10,"dso_compliance_as_code_3","continuous monitoring","",duplicate-across-lessons
-"devsecops",21,"dso_compliance_reg_3","continuous monitoring","",duplicate-across-lessons
-"devsecops",11,"dso_cloud_security_3","role","",duplicate-across-lessons
-"devsecops",19,"dso_container_security_k8s_1","role","",duplicate-across-lessons

@@ -1,0 +1,1228 @@
+{
+  "fixes": [
+    {
+      "level": "7",
+      "lesson": "cpp_stl_5",
+      "english": "Find",
+      "set": {
+        "english": "Std Find Algorithm",
+        "italian": "Algoritmo std::find",
+        "example": "The command parser uses the std::find algorithm to locate the first occurrence of the delimiter character in the input buffer. = Il parser dei comandi usa l'algoritmo std::find per localizzare la prima occorrenza del carattere delimitatore nel buffer di input.",
+        "note": "Rinominato per distinguerlo dall'item 'Find' come membro di mappe/set di cpp_stl_2."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "cpp_templates_3",
+      "english": "Default Argument",
+      "set": {
+        "english": "Template Default Argument",
+        "italian": "Argomento template di default",
+        "example": "A template default argument for the allocator parameter spares callers from spelling it out every time they instantiate the container. = Un argomento template di default per il parametro allocatore evita ai chiamanti di scriverlo ogni volta che istanziano il contenitore.",
+        "note": "Rinominato per distinguerlo dall'item 'Default Argument' delle funzioni di cpp_foundations_6."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "cpp_exceptions_3",
+      "english": "Noexcept Operator",
+      "set": {
+        "english": "Noexcept Query Operator",
+        "italian": "Operatore di query noexcept",
+        "example": "Calling the noexcept query operator on a candidate expression lets a template choose a faster path when it can prove the call never throws. = Chiamare l'operatore di query noexcept su un'espressione candidata permette a un template di scegliere un percorso piu' veloce quando puo' provare che la chiamata non lancia mai.",
+        "note": "Rinominato per distinguerlo dall'item 'Noexcept Operator' come specificatore in cpp_oop_16."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "cpp_concurrency_3",
+      "english": "Atomic",
+      "set": {
+        "english": "Atomic Memory Operation",
+        "italian": "Operazione atomica di memoria (std::atomic)",
+        "example": "An atomic memory operation on a shared counter lets multiple threads increment it without a mutex while still avoiding torn reads. = Un'operazione atomica di memoria su un contatore condiviso permette a piu' thread di incrementarlo senza un mutex evitando comunque letture rotte.",
+        "note": "Rinominato per distinguerlo dall'item 'Atomic' come tipo std::atomic in cpp_modern_cpp_4."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_1",
+      "english": "Singleton",
+      "set": {
+        "english": "Singleton Pattern",
+        "italian": "Pattern singleton",
+        "example": "The logger class applies the singleton pattern so every subsystem writes through the same instance and the same output stream. = La classe logger applica il pattern singleton cosi' ogni sottosistema scrive attraverso la stessa istanza e lo stesso stream di output.",
+        "note": "Rinominato per distinguerlo dall'item 'Singleton' introduttivo in cpp_oop_4."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "cpp_patterns_2",
+      "english": "CRTP",
+      "set": {
+        "english": "CRTP Pattern",
+        "italian": "Pattern CRTP",
+        "example": "The physics engine uses the CRTP pattern to inject optimized collision methods into each shape class at compile time without virtual dispatch. = Il motore fisico usa il pattern CRTP per iniettare metodi di collisione ottimizzati in ogni classe forma a tempo di compilazione senza dispatch virtuale.",
+        "note": "Rinominato per distinguerlo dall'item 'CRTP' introduttivo in cpp_oop_12."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_2",
+      "english": "Triplet",
+      "set": {
+        "example": "Selecting the x64-windows-static triplet tells vcpkg to build dependencies as static libraries linked against the static CRT. = Selezionare il triplet x64-windows-static dice a vcpkg di compilare le dipendenze come librerie statiche linkate contro il CRT statico."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_2",
+      "english": "Lockfile",
+      "set": {
+        "example": "Committing the conan.lock lockfile pins each transitive dependency to an exact revision so two developers get identical builds. = Committare il lockfile conan.lock fissa ogni dipendenza transitiva a una revisione esatta cosi' due sviluppatori ottengono build identiche."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_2",
+      "english": "Binary Cache",
+      "set": {
+        "example": "Pointing vcpkg at a shared binary cache turns a cold CI build of OpenCV from twelve minutes into a sixty-second download. = Puntare vcpkg a una cache binaria condivisa trasforma una build CI a freddo di OpenCV da dodici minuti a un download di sessanta secondi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_3",
+      "english": "Translation Unit",
+      "set": {
+        "example": "Each .cpp file with all its included headers forms one translation unit that the compiler processes independently before linking. = Ogni file .cpp con tutti i suoi header inclusi forma una unita' di traduzione che il compilatore processa indipendentemente prima del link."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_3",
+      "english": "Preprocessor",
+      "set": {
+        "example": "Running g++ -E lets you see what the preprocessor produces after include expansion and macro substitution but before the parser runs. = Eseguire g++ -E permette di vedere cosa produce il preprocessore dopo l'espansione degli include e la sostituzione delle macro ma prima del parser."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_3",
+      "english": "ODR",
+      "set": {
+        "example": "Defining the same inline function in two .cpp files with different bodies silently breaks ODR and yields whichever copy the linker picks. = Definire la stessa funzione inline in due file .cpp con corpi diversi rompe silenziosamente ODR e fornisce qualunque copia il linker scelga."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_3",
+      "english": "Internal Linkage",
+      "set": {
+        "example": "Marking a helper function with static gives it internal linkage so each translation unit gets its own private copy without symbol clashes. = Marcare una funzione di aiuto con static le da' linkage interno cosi' ogni unita' di traduzione ottiene la propria copia privata senza conflitti di simbolo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_3",
+      "english": "External Linkage",
+      "set": {
+        "example": "A free function defined in a .cpp file without static gets external linkage so other translation units can call it through the linker. = Una funzione libera definita in un file .cpp senza static ottiene linkage esterno cosi' altre unita' di traduzione possono chiamarla attraverso il linker."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_3",
+      "english": "Inline Linkage",
+      "set": {
+        "example": "Header-only function templates rely on inline linkage so identical instantiations in different translation units coexist without ODR errors. = I template di funzione header-only si affidano al linkage inline cosi' istanziazioni identiche in unita' di traduzione diverse coesistono senza errori ODR."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_3",
+      "english": "Symbol Table",
+      "set": {
+        "example": "Running nm on a .o object lists its symbol table so you can confirm whether a function is exported, weak, or only referenced. = Eseguire nm su un oggetto .o elenca la sua tabella dei simboli cosi' puoi confermare se una funzione e' esportata, weak o solo referenziata."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_3",
+      "english": "Dynamic Library",
+      "set": {
+        "example": "Shipping the rendering backend as a dynamic library lets the host application swap implementations at startup without recompiling. = Distribuire il backend di rendering come libreria dinamica permette all'applicazione host di scambiare implementazioni all'avvio senza ricompilare."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Precompiled Header",
+      "set": {
+        "example": "Putting heavy STL includes into a precompiled header cuts the build of a large project from minutes to seconds on incremental rebuilds. = Mettere include STL pesanti in un header precompilato taglia la build di un progetto grande da minuti a secondi nei rebuild incrementali."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Unity Build",
+      "set": {
+        "example": "Switching CMake to a unity build merges many .cpp files into a single translation unit so the compiler parses each header only once. = Passare CMake a una unity build fonde molti file .cpp in una singola unita' di traduzione cosi' il compilatore analizza ogni header una sola volta."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Forward Declaration",
+      "set": {
+        "example": "Replacing an include with a forward declaration of class Logger in the public header cuts compile time without breaking client code. = Sostituire un include con una dichiarazione anticipata di class Logger nell'header pubblico taglia il tempo di compilazione senza rompere il codice client."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Include Guard",
+      "set": {
+        "example": "Wrapping a header in an include guard pair like #ifndef FOO_H / #define FOO_H prevents the same declarations from being seen twice. = Avvolgere un header in una coppia di include guard come #ifndef FOO_H / #define FOO_H impedisce che le stesse dichiarazioni siano viste due volte."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Pragma Once",
+      "set": {
+        "example": "Most modern compilers honor pragma once at the top of a header, replacing the older ifndef-define-endif idiom with a single line. = La maggior parte dei compilatori moderni onora pragma once in cima a un header, sostituendo il vecchio idioma ifndef-define-endif con una sola riga."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "CCache",
+      "set": {
+        "italian": "ccache",
+        "example": "Wiring ccache in front of g++ on a CI runner turns a rebuild of identical sources into a near-instant disk fetch instead of a fresh compile. = Mettere ccache davanti a g++ su un runner CI trasforma una ricompilazione di sorgenti identici in un recupero da disco quasi istantaneo invece di una compilazione da zero.",
+        "note": "Termine italiano: ccache (nome del tool di cache di compilazione, non si traduce)."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Distcc",
+      "set": {
+        "italian": "distcc",
+        "example": "Configuring distcc across a small build farm lets the local machine offload preprocessed translation units to idle workstations for parallel work. = Configurare distcc su una piccola build farm permette alla macchina locale di scaricare unita' di traduzione preprocessate su workstation inattive in parallelo.",
+        "note": "Termine italiano: distcc (nome del tool di compilazione distribuita, non si traduce)."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "cpp_build_4",
+      "english": "Module Build",
+      "set": {
+        "example": "Migrating the geometry library to a C++20 module build replaces dozens of textual includes with a single import statement and faster reparse. = Migrare la libreria di geometria a una build di moduli C++20 sostituisce decine di include testuali con una singola istruzione import e reparse piu' veloci."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_1",
+      "english": "Cache Line",
+      "set": {
+        "example": "Aligning two hot atomics on separate 64-byte cache lines prevents one core's write from invalidating the other core's read. = Allineare due atomic caldi su linee di cache separate da 64 byte impedisce che la scrittura di un core invalidi la lettura dell'altro core."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_1",
+      "english": "Cache Hit",
+      "set": {
+        "example": "Reusing the same small lookup table across the hot loop keeps it warm in L1 so almost every access lands as a cache hit. = Riusare la stessa piccola tabella di lookup attraverso il loop caldo la tiene calda in L1 cosi' quasi ogni accesso atterra come cache hit."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_1",
+      "english": "Cache Miss",
+      "set": {
+        "english": "L1 Cache Miss",
+        "italian": "Mancanza dati in cache L1 (L1 cache miss)",
+        "example": "Sampling perf shows that the irregular pointer chase suffers an L1 cache miss on nearly every node, dwarfing the actual arithmetic cost. = Campionare con perf mostra che l'inseguimento irregolare di puntatori subisce una mancanza dati in cache L1 su quasi ogni nodo, oscurando il costo aritmetico effettivo.",
+        "note": "Rinominato per distinguerlo dall'item 'Cache Miss' introduttivo in cpp_oop_12."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_1",
+      "english": "False Sharing",
+      "set": {
+        "example": "Padding per-thread counters to a full cache line each is the classic fix for false sharing in lock-free histograms. = Riempire i contatori per thread fino a una linea di cache piena ciascuno e' la soluzione classica per il false sharing in istogrammi lock-free."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_1",
+      "english": "Memory Layout",
+      "set": {
+        "example": "Reordering the hot fields of a Particle struct to pack frequently-touched members first improves the memory layout for the simulation loop. = Riordinare i campi caldi di una struct Particle per impacchettare prima i membri toccati spesso migliora il layout di memoria per il loop di simulazione."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_1",
+      "english": "AoS vs SoA",
+      "set": {
+        "example": "Choosing AoS vs SoA for a particle system is really a question of whether each kernel touches one field or all fields per element. = Scegliere tra AoS vs SoA per un sistema di particelle e' in realta' la domanda se ogni kernel tocca un campo o tutti i campi per elemento."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_1",
+      "english": "Data Locality",
+      "set": {
+        "example": "Sorting entities by archetype before iterating gives the update loop strong data locality and a measurable boost in instructions per cycle. = Ordinare le entita' per archetipo prima di iterare da' al loop di aggiornamento una forte localita' dei dati e un boost misurabile in istruzioni per ciclo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_2",
+      "english": "Hotspot",
+      "set": {
+        "example": "Profiling the codec revealed that 80 percent of CPU time concentrated in a single hotspot inside the bitstream reader. = Profilare il codec ha rivelato che l'80 percento del tempo CPU si concentrava in un singolo hotspot dentro il lettore di bitstream."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_2",
+      "english": "Flame Graph",
+      "set": {
+        "example": "Reading the flame graph from left to right highlighted that JSON parsing dominated startup, not the GPU initialization we had suspected. = Leggere il flame graph da sinistra a destra ha evidenziato che il parsing JSON dominava lo startup, non l'inizializzazione GPU che sospettavamo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_2",
+      "english": "Perf",
+      "set": {
+        "italian": "perf",
+        "example": "Running perf record on the production binary and then perf report ranks the hot functions without rebuilding with extra instrumentation. = Eseguire perf record sul binario di produzione e poi perf report classifica le funzioni calde senza ricompilare con strumentazione extra.",
+        "note": "Termine italiano: perf (nome del profiler Linux, non si traduce)."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_2",
+      "english": "Perf Counter",
+      "set": {
+        "example": "Reading the LLC-load-misses perf counter pinpoints which loop saturates the last-level cache better than wall-clock timings ever could. = Leggere il perf counter LLC-load-misses individua quale loop satura la cache di ultimo livello meglio di quanto i tempi a parete potrebbero mai fare."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_2",
+      "english": "Microbenchmark",
+      "set": {
+        "example": "Writing a microbenchmark with google-benchmark for the new hash function isolates its cost from the surrounding application noise. = Scrivere un microbenchmark con google-benchmark per la nuova funzione hash isola il suo costo dal rumore applicativo circostante."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_2",
+      "english": "Benchmark Library",
+      "set": {
+        "example": "Adopting Google's benchmark library gives you DoNotOptimize, fixture setup, and statistical iteration counts for free. = Adottare la benchmark library di Google ti da' gratis DoNotOptimize, setup di fixture e conteggi di iterazione statistici."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_3",
+      "english": "TBB",
+      "set": {
+        "example": "Replacing a hand-rolled thread pool with TBB's parallel_for cut the image filter latency by 4x on an 8-core laptop. = Sostituire un thread pool fatto a mano con il parallel_for di TBB ha tagliato la latenza del filtro immagini di 4 volte su un laptop a 8 core."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_3",
+      "english": "Thread Pool",
+      "set": {
+        "example": "Submitting short tasks to a shared thread pool avoids the per-task overhead of spawning and joining a fresh std::thread each time. = Inviare task brevi a un thread pool condiviso evita l'overhead per task di spawnare e fare join di un nuovo std::thread ogni volta."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_3",
+      "english": "Work Stealing",
+      "set": {
+        "example": "Idle TBB workers use work stealing to pull tasks from the back of a busy peer's deque, keeping all cores fed without central coordination. = I worker TBB inattivi usano il work stealing per prendere task dal fondo del deque di un peer occupato, tenendo tutti i core alimentati senza coordinazione centrale."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "Branch Prediction Hint",
+      "set": {
+        "example": "Annotating the error path with the [[unlikely]] branch prediction hint lets the compiler lay out the common case as straight-line code. = Annotare il percorso di errore con l'hint di branch prediction [[unlikely]] permette al compilatore di disporre il caso comune come codice lineare."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "Hot Path",
+      "set": {
+        "example": "Inlining the validation helper into the request hot path removes a function call from every packet handled at line rate. = Inlinare l'helper di validazione nell'hot path della richiesta rimuove una chiamata di funzione da ogni pacchetto gestito a piena velocita'."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "Inline Hint",
+      "set": {
+        "example": "Adding the inline hint to a tiny accessor nudges the compiler to expand it at every call site instead of emitting an out-of-line function. = Aggiungere l'inline hint a un piccolo accessor spinge il compilatore a espanderlo a ogni call site invece di emettere una funzione fuori linea."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "Restrict",
+      "set": {
+        "example": "Marking the output buffer with __restrict promises the compiler that input and output do not overlap, unlocking aggressive vectorization. = Marcare il buffer di output con __restrict promette al compilatore che input e output non si sovrappongono, sbloccando vettorizzazione aggressiva."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "Profile Guided",
+      "set": {
+        "example": "A profile guided optimization pass feeds real workload counters back into the second build so the compiler can rearrange hot blocks. = Una passata di ottimizzazione guidata da profile reimmette i contatori del carico reale nella seconda build cosi' il compilatore puo' riorganizzare i blocchi caldi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "Small Buffer Optimization",
+      "set": {
+        "example": "std::string and std::function both rely on small buffer optimization to skip the heap when the contained value fits inline. = std::string e std::function si affidano entrambi alla small buffer optimization per saltare l'heap quando il valore contenuto sta inline."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "cpp_performance_4",
+      "english": "Empty Optimization",
+      "set": {
+        "example": "Inheriting from a stateless allocator instead of holding it as a member triggers empty base optimization and saves a pointer of footprint. = Ereditare da un allocatore senza stato invece di tenerlo come membro innesca l'empty base optimization e risparmia un puntatore di footprint."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Template Metaprogramming",
+      "set": {
+        "example": "Heavy template metaprogramming let Eigen pick the optimal matrix routine at compile time without paying runtime dispatch costs. = La pesante template metaprogramming ha permesso a Eigen di scegliere la routine matriciale ottimale a compile time senza pagare costi di dispatch runtime."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Metafunction",
+      "set": {
+        "example": "Implementing remove_pointer as a recursive metafunction strips one level of indirection from a type at compile time. = Implementare remove_pointer come metafunzione ricorsiva rimuove un livello di indirezione da un tipo a compile time."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Type List",
+      "set": {
+        "example": "Storing the supported event handlers in a type list lets a single template generate registration code for every event without duplication. = Memorizzare gli handler di eventi supportati in una lista di tipi permette a un singolo template di generare codice di registrazione per ogni evento senza duplicazioni."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Recursive Template",
+      "set": {
+        "example": "Computing the factorial of N with a recursive template that specializes on zero is the textbook example of compile-time recursion. = Calcolare il fattoriale di N con un template ricorsivo che si specializza su zero e' l'esempio da manuale di ricorsione a compile time."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Tag Type",
+      "set": {
+        "english": "Dispatch Tag Type",
+        "italian": "Dispatch tag type",
+        "example": "Introducing a dispatch tag type like std::piecewise_construct_t lets std::pair pick a special constructor without ambiguous overload resolution. = Introdurre un dispatch tag type come std::piecewise_construct_t permette a std::pair di scegliere un costruttore speciale senza risoluzione di overload ambigua.",
+        "note": "Rinominato per distinguerlo dall'item 'Tag Type' generico di cpp_patterns_4."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Type Erasure",
+      "set": {
+        "english": "Type Erasure Idiom",
+        "italian": "Idioma di type erasure",
+        "example": "Implementing an Any class by hand showcases the type erasure idiom: a void pointer plus a small virtual table of operations on the concrete type. = Implementare a mano una classe Any mostra l'idioma di type erasure: un puntatore void piu' una piccola tabella virtuale di operazioni sul tipo concreto.",
+        "note": "Rinominato per distinguerlo dall'item 'Type Erasure' introduttivo in cpp_oop_10."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_1",
+      "english": "Index Sequence",
+      "set": {
+        "example": "Unpacking a tuple into a function call typically uses std::index_sequence to expand each element as a separate template argument. = Spacchettare una tupla in una chiamata di funzione usa tipicamente std::index_sequence per espandere ogni elemento come argomento template separato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_2",
+      "english": "Constexpr If",
+      "set": {
+        "english": "Compile Time If Branch",
+        "italian": "Branch compile-time (if constexpr)",
+        "example": "A compile time if branch inside a serializer template picks the integer path or the string path with no dead-code instantiation for the rejected one. = Un branch compile-time dentro un template serializer sceglie il percorso intero o il percorso stringa senza istanziazione di codice morto per quello rifiutato.",
+        "note": "Rinominato per distinguerlo dall'item 'Constexpr If' introduttivo in cpp_modern_cpp_5."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_2",
+      "english": "Compile Time String",
+      "set": {
+        "example": "Using a structural fixed_string as a compile time string lets a template be parameterized by a literal like \"json-event\" directly. = Usare una fixed_string strutturale come stringa compile-time permette a un template di essere parametrizzato da un literal come \"json-event\" direttamente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_2",
+      "english": "Reflection",
+      "set": {
+        "example": "Library-level reflection in Boost.PFR auto-generates serialization for plain aggregates without macros or extra ceremony. = La reflection a livello di libreria in Boost.PFR genera automaticamente serializzazione per aggregati semplici senza macro o cerimonia extra."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_2",
+      "english": "Static Reflection",
+      "set": {
+        "example": "Once C++26 static reflection lands, iterating over the members of a struct at compile time will no longer require macros or codegen scripts. = Quando la static reflection di C++26 arrivera', iterare sui membri di una struct a compile time non richiedera' piu' macro o script di codegen."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_2",
+      "english": "Type Computation",
+      "set": {
+        "example": "A small type computation layer maps tuple<int, double, string> to tuple<vector<int>, vector<double>, vector<string>> for a columnar storage adapter. = Un piccolo strato di calcolo di tipo mappa tuple<int, double, string> a tuple<vector<int>, vector<double>, vector<string>> per un adapter di storage colonnare."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_2",
+      "english": "Constexpr Function",
+      "set": {
+        "english": "Constexpr Metaprogramming Function",
+        "italian": "Funzione constexpr di metaprogrammazione",
+        "example": "Replacing a recursive TMP factorial with a constexpr metaprogramming function written like ordinary C++ keeps compile times short and the code readable. = Sostituire un fattoriale TMP ricorsivo con una funzione constexpr di metaprogrammazione scritta come C++ ordinario tiene corti i tempi di compilazione e leggibile il codice.",
+        "note": "Rinominato per distinguerlo dall'item 'Constexpr Function' introduttivo in cpp_templates_8."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_2",
+      "english": "Compile Time Computation",
+      "set": {
+        "english": "Constexpr Compile Time Computation",
+        "italian": "Computazione a compile time con constexpr",
+        "example": "Pushing CRC table generation into a constexpr compile time computation embeds the precomputed table directly into the binary as read-only data. = Spostare la generazione della tabella CRC in una computazione a compile time con constexpr incorpora la tabella precalcolata direttamente nel binario come dato di sola lettura.",
+        "note": "Rinominato per distinguerlo dall'item 'Compile Time Computation' introduttivo in cpp_templates_8."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_3",
+      "english": "Is Trivial",
+      "set": {
+        "example": "Guarding a memcpy fast path with std::is_trivial_v<T> ensures the optimization only fires for types where bitwise copy is well-defined. = Proteggere un percorso veloce memcpy con std::is_trivial_v<T> assicura che l'ottimizzazione scatti solo per tipi dove la copia bit a bit e' ben definita."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_3",
+      "english": "Is Standard Layout",
+      "set": {
+        "example": "Static asserting std::is_standard_layout_v<T> on a packet struct documents the ABI contract that C consumers can read its layout safely. = Affermare staticamente std::is_standard_layout_v<T> su una struct packet documenta il contratto ABI che i consumatori C possono leggerne il layout in sicurezza."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_3",
+      "english": "Is Convertible",
+      "set": {
+        "example": "Constraining a constructor with std::is_convertible_v<U, T> rejects narrowing conversions at the SFINAE layer instead of failing inside the body. = Vincolare un costruttore con std::is_convertible_v<U, T> rifiuta conversioni restringenti a livello SFINAE invece di fallire dentro il corpo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_3",
+      "english": "Is Function",
+      "set": {
+        "example": "Wrapping a callable in a class requires std::is_function_v<T> to distinguish raw function types from function pointers and lambdas. = Avvolgere un callable in una classe richiede std::is_function_v<T> per distinguere tipi funzione raw da puntatori a funzione e lambda."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_3",
+      "english": "Negation",
+      "set": {
+        "example": "Composing std::negation with std::is_same gives a readable predicate for \"not exactly this type\" inside an enable_if expression. = Comporre std::negation con std::is_same fornisce un predicato leggibile per \"non esattamente questo tipo\" dentro un'espressione enable_if."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_3",
+      "english": "Variable Trait",
+      "set": {
+        "example": "Reaching for std::is_integral_v<T> instead of std::is_integral<T>::value is the variable trait spelling that C++17 added across the standard library. = Usare std::is_integral_v<T> invece di std::is_integral<T>::value e' la forma di variabile di tratto che C++17 ha aggiunto in tutta la libreria standard."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Custom Concept",
+      "set": {
+        "example": "A custom concept Hashable<T> built around std::hash<T> spells out the exact contract that cache keys must satisfy at the API boundary. = Un concept personalizzato Hashable<T> costruito intorno a std::hash<T> esplicita il contratto esatto che le chiavi di cache devono soddisfare al bordo dell'API."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Nested Requirement",
+      "set": {
+        "example": "A nested requirement of the form requires sizeof(T) <= 16 inside a concept enforces a small-type invariant alongside the interface checks. = Un requisito annidato della forma requires sizeof(T) <= 16 dentro un concept impone un invariante di tipo piccolo accanto ai controlli di interfaccia."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Type Requirement",
+      "set": {
+        "example": "A type requirement like typename T::value_type inside requires{} forces the candidate to expose a value_type alias before the overload is considered. = Un requisito di tipo come typename T::value_type dentro requires{} forza il candidato a esporre un alias value_type prima che l'overload sia considerato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Mp Eleven",
+      "set": {
+        "example": "Reaching for Boost.MP11 brings list, set, and map algorithms over type lists with an API that mirrors std::ranges for runtime values. = Ricorrere a Boost.MP11 porta algoritmi list, set e map su liste di tipi con un'API che rispecchia std::ranges per valori runtime."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Boost Hana",
+      "set": {
+        "example": "Boost.Hana lets you write metaprogramming code that looks like normal C++ by promoting types to first-class compile-time values. = Boost.Hana permette di scrivere codice di metaprogrammazione che assomiglia a C++ normale promuovendo i tipi a valori compile-time di prima classe."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Concepts Library",
+      "set": {
+        "example": "Pulling from the standard concepts library gives you ready-made std::regular and std::invocable instead of hand-rolling each predicate. = Attingere dalla libreria di concept standard ti da' gia' pronti std::regular e std::invocable invece di scrivere a mano ogni predicato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Auto Deduction",
+      "set": {
+        "example": "Combining a concept name with auto deduction in sum(std::integral auto a, std::integral auto b) infers operand types under a constraint. = Combinare un nome di concept con la deduzione auto in sum(std::integral auto a, std::integral auto b) inferisce i tipi degli operandi sotto un vincolo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Trailing Requires",
+      "set": {
+        "example": "Placing a trailing requires after the parameter list lets you reuse the parameter names inside the constraint expression without restating them. = Mettere un trailing requires dopo la lista dei parametri permette di riutilizzare i nomi dei parametri dentro l'espressione di vincolo senza ripeterli."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "cpp_metaprogramming_4",
+      "english": "Constexpr Lambda",
+      "set": {
+        "english": "Metaprogramming Constexpr Lambda",
+        "italian": "Lambda constexpr di metaprogrammazione",
+        "example": "Encoding a small compile-time table generator as a metaprogramming constexpr lambda keeps the helper local to its caller without polluting any namespace. = Codificare un piccolo generatore di tabelle compile-time come lambda constexpr di metaprogrammazione tiene l'helper locale al suo chiamante senza inquinare alcun namespace.",
+        "note": "Rinominato per distinguerlo dall'item 'Constexpr Lambda' introduttivo in cpp_lambdas_3."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Test Macro",
+      "set": {
+        "example": "Each GoogleTest test macro like TEST(Calculator, AddsPositives) generates a class and registers it with the global test runner. = Ogni macro di test GoogleTest come TEST(Calculator, AddsPositives) genera una classe e la registra con il test runner globale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Expect",
+      "set": {
+        "example": "Use EXPECT_EQ for assertions that should continue past a failure so a single test reports every broken expectation at once. = Usa EXPECT_EQ per asserzioni che dovrebbero continuare dopo un fallimento cosi' un singolo test riporta tutte le aspettative rotte in una volta."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Assert",
+      "set": {
+        "example": "Reach for ASSERT_TRUE on a precondition like a non-null pointer so subsequent lines never dereference garbage when the check fails. = Usa ASSERT_TRUE su una precondizione come un puntatore non nullo cosi' le righe successive non dereferenziano spazzatura quando il controllo fallisce."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Test Fixture",
+      "set": {
+        "example": "Inheriting from a test fixture class lets every related case start from the same freshly seeded database without duplicating setup code. = Ereditare da una classe test fixture permette a ogni caso correlato di partire dallo stesso database appena seminato senza duplicare il codice di setup."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Setup",
+      "set": {
+        "example": "Overriding SetUp() on a GoogleTest fixture prepares per-test resources like a temp directory before the test body executes. = Overridare SetUp() su una fixture GoogleTest prepara risorse per test come una directory temporanea prima che il corpo del test esegua."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Teardown",
+      "set": {
+        "example": "Implementing TearDown() to delete the scratch files keeps the workspace clean between test cases regardless of which assertion failed. = Implementare TearDown() per cancellare i file di scratch tiene pulito il workspace tra i casi di test indipendentemente da quale asserzione e' fallita."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Parameterized Test",
+      "set": {
+        "example": "A parameterized test that iterates over a vector of input/expected pairs cuts a dozen near-identical TEST blocks down to one. = Un test parametrizzato che itera su un vettore di coppie input/atteso riduce una dozzina di blocchi TEST quasi identici a uno solo."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Test Suite",
+      "set": {
+        "example": "Grouping related cases under one test suite name lets you run --gtest_filter=Calculator.* to focus on a subsystem during development. = Raggruppare casi correlati sotto un nome di test suite permette di eseguire --gtest_filter=Calculator.* per focalizzarsi su un sottosistema durante lo sviluppo."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_1",
+      "english": "Death Test",
+      "set": {
+        "example": "Writing a death test with EXPECT_DEATH(launch(nullptr), \"null channel\") verifies that the production code aborts loudly on a contract violation. = Scrivere un death test con EXPECT_DEATH(launch(nullptr), \"null channel\") verifica che il codice di produzione aborti rumorosamente su una violazione di contratto."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Doctest",
+      "set": {
+        "italian": "doctest",
+        "example": "Dropping a single doctest header into a small library brings test cases, assertions, and a runner without pulling in CMake-level dependencies. = Mettere un singolo header doctest in una piccola libreria porta casi di test, asserzioni e un runner senza tirare dentro dipendenze a livello CMake.",
+        "note": "Termine italiano: doctest (nome del framework di test C++ leggero, non si traduce)."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Test Case",
+      "set": {
+        "example": "Wrapping each scenario in its own TEST_CASE block keeps Catch2 reports easy to read and lets one failure not abort the whole binary. = Avvolgere ogni scenario nel proprio blocco TEST_CASE tiene i report di Catch2 facili da leggere e permette a un fallimento di non abortire l'intero binario."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Section",
+      "set": {
+        "example": "Splitting variations of a workflow into Catch2 SECTION blocks reuses the surrounding setup while reporting each branch as a distinct outcome. = Suddividere variazioni di un workflow in blocchi SECTION di Catch2 riusa il setup circostante riportando ogni ramo come un esito distinto."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Require",
+      "set": {
+        "example": "Use REQUIRE for a precondition that must hold before the rest of the section runs, since a failure aborts the test case immediately. = Usa REQUIRE per una precondizione che deve valere prima che il resto della sezione esegua, dato che un fallimento aborta immediatamente il caso di test."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Check",
+      "set": {
+        "example": "Reach for CHECK when you want every related assertion to report a failure independently rather than stopping at the first broken expectation. = Usa CHECK quando vuoi che ogni asserzione correlata riporti un fallimento indipendentemente invece di fermarsi alla prima aspettativa rotta."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Tag",
+      "set": {
+        "example": "Annotating slow scenarios with the [slow] Catch2 tag lets CI run the fast subset on every commit and the full suite nightly. = Annotare scenari lenti con il tag Catch2 [slow] permette al CI di eseguire il sottoinsieme veloce a ogni commit e l'intera suite di notte."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "BDD Style",
+      "set": {
+        "example": "Writing a Catch2 scenario in BDD style with GIVEN/WHEN/THEN clauses turns the test source into living documentation for non-engineers too. = Scrivere uno scenario Catch2 in stile BDD con clausole GIVEN/WHEN/THEN trasforma il sorgente del test in documentazione vivente anche per non ingegneri."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_2",
+      "english": "Header Only",
+      "set": {
+        "example": "Shipping a small math utility as a header only library lets users drop one file into their tree without configuring any build system. = Distribuire una piccola utility matematica come libreria header-only permette agli utenti di mettere un file nel loro albero senza configurare alcun build system."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "GMock",
+      "set": {
+        "example": "Building a fake payment gateway with GMock lets the checkout test simulate timeouts and refunds without touching the real network. = Costruire un finto gateway di pagamento con GMock permette al test di checkout di simulare timeout e rimborsi senza toccare la rete reale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "Mock Class",
+      "set": {
+        "example": "Generating a mock class that inherits from a pure-virtual interface lets the unit test inject scripted behavior in place of the real dependency. = Generare una classe mock che eredita da un'interfaccia puramente virtuale permette allo unit test di iniettare comportamento scriptato al posto della dipendenza reale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "Mock Method",
+      "set": {
+        "example": "Declaring each overridden function with MOCK_METHOD turns it into a configurable mock method that records calls and returns scripted values. = Dichiarare ogni funzione overridata con MOCK_METHOD la trasforma in un metodo mock configurabile che registra chiamate e restituisce valori scriptati."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "Expectation",
+      "set": {
+        "example": "Setting an EXPECT_CALL expectation that send_email() runs exactly once with a specific subject catches silent regressions in the notification path. = Impostare un'aspettativa EXPECT_CALL che send_email() esegua esattamente una volta con un soggetto specifico cattura regressioni silenziose nel percorso di notifica."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "Stub",
+      "set": {
+        "example": "Swapping the production clock with a stub that always returns midnight makes timezone-related tests deterministic and easy to debug. = Sostituire l'orologio di produzione con uno stub che restituisce sempre mezzanotte rende deterministici e facili da debuggare i test legati ai fusi orari."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "LibFuzzer",
+      "set": {
+        "italian": "libFuzzer",
+        "example": "Wiring a parser entry point to libFuzzer and running for ten minutes uncovers crash inputs that hand-written tests had never imagined. = Collegare un entry point di parser a libFuzzer ed eseguirlo per dieci minuti scopre input di crash che i test scritti a mano non avevano mai immaginato.",
+        "note": "Termine italiano: libFuzzer (nome del fuzzer in-process di LLVM, non si traduce)."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_3",
+      "english": "Property Test",
+      "set": {
+        "example": "A rapidcheck property test asserts that serialize then deserialize round-trips any Order value, exploring far more inputs than a handful of examples. = Un property test in rapidcheck asserisce che serializzare poi deserializzare fa round-trip su qualunque valore Order, esplorando molti piu' input di una manciata di esempi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_4",
+      "english": "Code Coverage",
+      "set": {
+        "example": "Failing the CI when code coverage drops below 80 percent on the parser module catches new branches that arrive without accompanying tests. = Far fallire il CI quando la copertura del codice scende sotto l'80 percento sul modulo parser cattura nuovi rami che arrivano senza test che li accompagnino."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_4",
+      "english": "Gcov",
+      "set": {
+        "italian": "gcov",
+        "example": "Compiling with --coverage and running gcov over the .gcda files produces a per-line execution count that highlights untested branches. = Compilare con --coverage ed eseguire gcov sui file .gcda produce un conteggio di esecuzione per riga che evidenzia rami non testati.",
+        "note": "Termine italiano: gcov (nome del tool di copertura di GCC, non si traduce)."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_4",
+      "english": "Lcov",
+      "set": {
+        "italian": "lcov",
+        "example": "Piping gcov data through lcov and then genhtml produces a navigable HTML report that managers can browse without touching a terminal. = Passare i dati di gcov attraverso lcov e poi genhtml produce un report HTML navigabile che i manager possono sfogliare senza toccare un terminale.",
+        "note": "Termine italiano: lcov (nome del frontend di copertura, non si traduce)."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_4",
+      "english": "Branch Coverage",
+      "set": {
+        "example": "Insisting on branch coverage rather than just line coverage forces tests to exercise both sides of every if and switch statement explicitly. = Insistere sulla branch coverage piuttosto che solo sulla line coverage forza i test a esercitare esplicitamente entrambi i lati di ogni if e switch."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_4",
+      "english": "Line Coverage",
+      "set": {
+        "example": "Reaching high line coverage on the validation module gives at least basic confidence that no untested statement sneaks into a release build. = Raggiungere alta line coverage sul modulo di validazione da' almeno una fiducia di base che nessuno statement non testato si infili in una release build."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_4",
+      "english": "Mutation Testing",
+      "set": {
+        "example": "Running mutation testing with mull rewrites operators in the source and reports any mutant that the test suite still happily accepts. = Eseguire mutation testing con mull riscrive operatori nel sorgente e segnala ogni mutante che la suite di test accetta ancora felicemente."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_4",
+      "english": "Benchmark",
+      "set": {
+        "example": "Wrapping the hash insertion loop in a benchmark with google-benchmark gives a stable nanosecond figure to compare against future changes. = Avvolgere il loop di inserimento hash in un benchmark con google-benchmark da' una cifra stabile in nanosecondi da confrontare con cambiamenti futuri."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_4",
+      "english": "Regression Test",
+      "set": {
+        "example": "Adding a focused regression test that replays the exact input from the bug report prevents the same crash from sneaking back in next quarter. = Aggiungere un test di regressione focalizzato che replica l'input esatto dal bug report impedisce allo stesso crash di rientrare il prossimo trimestre."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_4",
+      "english": "CI Pipeline",
+      "set": {
+        "example": "Splitting the CI pipeline into a fast build-and-unit-tests stage and a slow integration stage gives developers feedback within minutes on every push. = Suddividere la pipeline CI in uno stage build-and-unit-tests veloce e uno stage di integrazione lento da' agli sviluppatori feedback in pochi minuti su ogni push."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "cpp_testing_4",
+      "english": "Snapshot Test",
+      "set": {
+        "example": "Capturing the rendered HTML in a snapshot test and diffing future runs against the stored file catches accidental template regressions instantly. = Catturare l'HTML renderizzato in un test di snapshot e fare diff delle esecuzioni future contro il file salvato cattura istantaneamente regressioni accidentali del template."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Resource Pointer",
+      "set": {
+        "example": "Annotating a raw pointer parameter as gsl::owner<T*> declares it a resource pointer that the callee must eventually free or hand off. = Annotare un parametro puntatore raw come gsl::owner<T*> lo dichiara un puntatore risorsa che il chiamato deve eventualmente liberare o passare oltre."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Not Null",
+      "set": {
+        "example": "Replacing a raw pointer parameter with gsl::not_null<Widget*> turns a runtime crash into a compile-time and construction-time contract. = Sostituire un parametro puntatore raw con gsl::not_null<Widget*> trasforma un crash a runtime in un contratto a compile time e in costruzione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Narrow Cast",
+      "set": {
+        "example": "Reaching for gsl::narrow_cast<int>(big_value) makes a narrowing conversion explicit and throws a runtime_error if it actually loses information. = Usare gsl::narrow_cast<int>(big_value) rende esplicita una conversione restringente e lancia un runtime_error se perde davvero informazione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Final Action",
+      "set": {
+        "example": "Wrapping a temporary FILE handle in gsl::finally attaches a final action that closes it even if the next lines throw an exception. = Avvolgere un handle FILE temporaneo in gsl::finally collega un'azione finale che lo chiude anche se le righe successive lanciano un'eccezione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Compile Time Constants",
+      "set": {
+        "example": "Preferring inline constexpr Pi over a macro keeps compile time constants type-safe, debuggable, and scoped to their namespace. = Preferire inline constexpr Pi a una macro tiene le costanti compile-time type-safe, debuggabili e con scope nel loro namespace."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Concrete Type",
+      "set": {
+        "example": "Returning a concrete type like Result<Order, Error> instead of a polymorphic base avoids virtual dispatch and clarifies ownership at the call site. = Restituire un tipo concreto come Result<Order, Error> invece di una base polimorfica evita il dispatch virtuale e chiarisce la proprieta' al call site."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Style Guide",
+      "set": {
+        "example": "Adopting the Google C++ Style Guide as the team's style guide answers naming, header layout, and exception questions before they cause arguments. = Adottare la Google C++ Style Guide come guida di stile del team risponde a domande su naming, layout degli header ed eccezioni prima che causino discussioni.",
+        "note": "Esempi diffusi: Google C++ Style Guide, LLVM Coding Standards, C++ Core Guidelines."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_9",
+      "english": "Best Practice",
+      "set": {
+        "example": "Treating \"prefer std::string_view for non-owning string parameters\" as a project best practice eliminates a whole class of allocation surprises. = Trattare \"preferisci std::string_view per parametri stringa non-owning\" come una best practice di progetto elimina un'intera classe di sorprese di allocazione."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Sanitizer",
+      "set": {
+        "example": "Rebuilding the test binary with a sanitizer enabled turns silent undefined behavior into a loud diagnostic the moment the bug executes. = Ricompilare il binario di test con un sanitizer abilitato trasforma comportamento indefinito silenzioso in una diagnostica rumorosa nel momento in cui il bug esegue."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Address Sanitizer",
+      "set": {
+        "example": "Compiling tests with -fsanitize=address routes every allocation through Address Sanitizer so heap overflows and use-after-frees abort immediately. = Compilare i test con -fsanitize=address instrada ogni allocazione attraverso Address Sanitizer cosi' overflow di heap e use-after-free abortiscono immediatamente."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Undefined Behavior Sanitizer",
+      "set": {
+        "example": "Running -fsanitize=undefined turns on the Undefined Behavior Sanitizer that flags signed overflow, misaligned loads, and null this in real time. = Eseguire -fsanitize=undefined accende l'Undefined Behavior Sanitizer che segnala overflow signed, load disallineati e this nullo in tempo reale."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Thread Sanitizer",
+      "set": {
+        "example": "Running the smoke test with -fsanitize=thread lets the Thread Sanitizer detect data races between the network reader and the cache mutator. = Eseguire lo smoke test con -fsanitize=thread permette al Thread Sanitizer di rilevare data race tra il network reader e il cache mutator."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Memory Sanitizer",
+      "set": {
+        "example": "Building a debug binary with -fsanitize=memory turns on the Memory Sanitizer that traces reads of uninitialized bytes back to their origin. = Compilare un binario debug con -fsanitize=memory accende il Memory Sanitizer che traccia letture di byte non inizializzati fino alla loro origine."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Leak Sanitizer",
+      "set": {
+        "example": "Enabling the Leak Sanitizer at program exit prints a stack trace for every allocation that nobody freed by the time main returned. = Abilitare il Leak Sanitizer all'uscita del programma stampa uno stack trace per ogni allocazione che nessuno ha liberato al ritorno di main."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Static Analyzer",
+      "set": {
+        "example": "Running a static analyzer like the Clang Static Analyzer in CI surfaces null dereferences and dead stores without executing a single test. = Eseguire un analizzatore statico come il Clang Static Analyzer in CI fa emergere null dereference e dead store senza eseguire un singolo test."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Clang Tidy",
+      "set": {
+        "example": "Enabling the modernize-* checks in Clang-Tidy on legacy code automatically suggests using auto, nullptr, and range-for in dozens of places at once. = Abilitare i check modernize-* di Clang-Tidy su codice legacy suggerisce automaticamente di usare auto, nullptr e range-for in decine di posti in una volta."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Cppcheck",
+      "set": {
+        "italian": "cppcheck",
+        "example": "Running cppcheck nightly over the firmware tree catches uninitialized variables and dead code that the regular compiler warnings let through. = Eseguire cppcheck di notte sull'albero del firmware cattura variabili non inizializzate e codice morto che gli avvisi normali del compilatore lasciano passare.",
+        "note": "Termine italiano: cppcheck (nome dell'analizzatore statico, non si traduce)."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_10",
+      "english": "Compiler Warning",
+      "set": {
+        "example": "Promoting every compiler warning to an error with -Werror forces the team to fix issues as soon as they appear instead of letting them accumulate. = Promuovere ogni avviso del compilatore a errore con -Werror forza il team a sistemare i problemi non appena appaiono invece di lasciarli accumulare."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "Legacy Code",
+      "set": {
+        "example": "Approaching a legacy code module starts with adding a characterization test that pins down its current behavior before any refactoring begins. = Approcciare un modulo di codice legacy inizia con l'aggiungere un test di caratterizzazione che fissa il suo comportamento attuale prima di iniziare qualunque refactoring."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "Replace Auto Ptr",
+      "set": {
+        "example": "A bulk replace auto_ptr to std::unique_ptr pass on a C++03 codebase removes the broken copy semantics and unlocks move-only ownership transfer. = Una passata di sostituzione massiva da auto_ptr a std::unique_ptr su un codebase C++03 rimuove la semantica di copia rotta e sblocca trasferimenti di proprieta' solo-move."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "Range Based",
+      "set": {
+        "example": "Rewriting an index-counted for loop as a range based for over the container removes off-by-one bugs and reads closer to the original intent. = Riscrivere un for con indici come un for range-based sul container rimuove bug off-by-one e si legge piu' vicino all'intento originale."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "NULL to Nullptr",
+      "set": {
+        "example": "Sweeping NULL to nullptr across a C++03 codebase fixes ambiguous overload resolution when a function has both pointer and integer overloads. = Spazzare NULL a nullptr in un codebase C++03 risolve risoluzione di overload ambigua quando una funzione ha sia overload puntatore sia interi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "C Style Cast",
+      "set": {
+        "example": "Replacing a C style cast with the appropriate static_cast or reinterpret_cast makes the intent explicit and is much easier to grep for later. = Sostituire un cast stile C con il static_cast o reinterpret_cast appropriato rende esplicito l'intento ed e' molto piu' facile da cercare con grep dopo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "Use Auto",
+      "set": {
+        "example": "Modernization tools recommend use auto for verbose iterator types like std::map<Key,Value>::const_iterator that add no info for the reader. = I tool di modernizzazione raccomandano usa auto per tipi di iteratore verbosi come std::map<Key,Value>::const_iterator che non aggiungono info al lettore."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "Replace TypeDef",
+      "set": {
+        "example": "Switching to replace typedef with using alias declarations enables templated aliases like template<class T> using Vec = std::vector<T> that typedef cannot express. = Passare a sostituire typedef con dichiarazioni di alias using abilita alias templatizzati come template<class T> using Vec = std::vector<T> che typedef non puo' esprimere."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_11",
+      "english": "Replace Enum",
+      "set": {
+        "example": "A replace enum with enum class sweep removes silent implicit conversions to int and forces qualified access to every enumerator. = Una sostituzione di enum con enum class rimuove conversioni implicite silenziose a int e forza l'accesso qualificato a ogni enumeratore."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_12",
+      "english": "Code Review",
+      "set": {
+        "example": "Treating each code review as both quality control and a teaching moment quietly raises the whole team's baseline over the course of a quarter. = Trattare ogni code review come sia controllo qualita' sia momento di insegnamento alza silenziosamente la baseline dell'intero team nel corso di un trimestre."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_12",
+      "english": "Pull Request",
+      "set": {
+        "example": "Opening a small pull request scoped to one concern is much easier to review than a thousand-line dump that bundles unrelated changes together. = Aprire una pull request piccola e focalizzata su una preoccupazione e' molto piu' facile da revisionare di uno scarico di mille righe che impacchetta cambiamenti non correlati."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_12",
+      "english": "Merge Request",
+      "set": {
+        "example": "On GitLab the same workflow is called a merge request, and many teams gate them on green CI before reviewers are even allowed to approve. = Su GitLab lo stesso workflow si chiama merge request, e molti team le bloccano su CI verde prima ancora che i revisori possano approvare."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_12",
+      "english": "Pre-Commit Hook",
+      "set": {
+        "example": "Installing a pre-commit hook that runs clang-format and clang-tidy on staged files catches style and lint issues before they ever reach review. = Installare un hook pre-commit che esegue clang-format e clang-tidy sui file staged cattura problemi di stile e lint prima che raggiungano la review."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_12",
+      "english": "Format Check",
+      "set": {
+        "example": "Running a clang-format --dry-run --Werror format check in CI fails any PR whose files do not match the committed .clang-format style. = Eseguire un format check clang-format --dry-run --Werror in CI fa fallire ogni PR i cui file non corrispondono allo stile .clang-format committato."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_12",
+      "english": "Lint",
+      "set": {
+        "example": "Treating a clang-tidy lint warning the same as a compiler error keeps cruft like unused variables and risky casts out of the main branch. = Trattare un avviso di lint clang-tidy come un errore del compilatore tiene fuori dal branch principale schifezze come variabili non usate e cast rischiosi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_12",
+      "english": "Clean Code",
+      "set": {
+        "example": "Refactoring a 400-line function into focused helpers is the kind of clean code work that pays back the team for years of future maintenance. = Rifattorizzare una funzione di 400 righe in helper focalizzati e' il tipo di lavoro di codice pulito che ripaga il team per anni di manutenzione futura."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_12",
+      "english": "Technical Debt",
+      "set": {
+        "example": "Tracking technical debt as explicit tickets makes it visible at planning time instead of slowly strangling velocity in invisible ways. = Tracciare il debito tecnico come ticket espliciti lo rende visibile in fase di pianificazione invece di strangolare lentamente la velocita' in modi invisibili."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "cpp_foundations_12",
+      "english": "Pair Programming",
+      "set": {
+        "example": "Scheduling a few hours of pair programming on a thorny concurrency bug usually finds it faster than two engineers debugging in isolation. = Pianificare qualche ora di pair programming su un bug di concorrenza spinoso di solito lo trova piu' velocemente di due ingegneri che debuggano in isolamento."
+      }
+    }
+  ]
+}

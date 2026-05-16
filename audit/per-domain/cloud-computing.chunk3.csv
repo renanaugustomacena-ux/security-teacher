@@ -1,0 +1,330 @@
+topicId,level,lesson,english,italian,issueType
+"cloud-computing",17,"cloud_services_12","Feature Flag","Interruttore funzionalità (feature flag)",tautological-example
+"cloud-computing",17,"cloud_services_12","A/B Testing","Test su due varianti (A/B testing)",trivial-example
+"cloud-computing",17,"cloud_services_12","Shadow Traffic","Traffico shadow",tautological-example
+"cloud-computing",17,"cloud_services_12","Shadow Traffic","Traffico shadow",trivial-example
+"cloud-computing",17,"cloud_services_12","Rollback","Ritorno a versione precedente (rollback)",trivial-example
+"cloud-computing",17,"cloud_services_12","Progressive Delivery","Consegna progressiva",tautological-example
+"cloud-computing",17,"cloud_services_12","Traffic Shifting","Spostamento progressivo del traffico (traffic shifting)",tautological-example
+"cloud-computing",18,"cloud_services_13","Data Warehouse","Magazzino dati analitico (data warehouse)",trivial-example
+"cloud-computing",18,"cloud_services_13","Redshift","Redshift (data warehouse AWS)",tautological-example
+"cloud-computing",18,"cloud_services_13","Redshift","Redshift (data warehouse AWS)",fake-translation
+"cloud-computing",18,"cloud_services_13","Redshift","Redshift (data warehouse AWS)",trivial-example
+"cloud-computing",18,"cloud_services_13","BigQuery","BigQuery (data warehouse Google)",tautological-example
+"cloud-computing",18,"cloud_services_13","BigQuery","BigQuery (data warehouse Google)",fake-translation
+"cloud-computing",18,"cloud_services_13","Snowflake","Snowflake (data warehouse cloud)",tautological-example
+"cloud-computing",18,"cloud_services_13","Snowflake","Snowflake (data warehouse cloud)",fake-translation
+"cloud-computing",18,"cloud_services_13","Synapse Analytics","Data warehouse Azure (Synapse Analytics)",trivial-example
+"cloud-computing",18,"cloud_services_13","Columnar Storage","Storage columnar",tautological-example
+"cloud-computing",18,"cloud_services_13","Columnar Storage","Storage columnar",trivial-example
+"cloud-computing",18,"cloud_services_13","Slot","Unità di calcolo BigQuery (slot)",trivial-example
+"cloud-computing",18,"cloud_services_13","Cluster Key","Chiave di cluster",trivial-example
+"cloud-computing",18,"cloud_services_13","Materialized View","Vista materializzata",tautological-example
+"cloud-computing",18,"cloud_services_14","Lake Formation","Governance dei data lake (AWS Lake Formation)",tautological-example
+"cloud-computing",18,"cloud_services_14","Lake Formation","Governance dei data lake (AWS Lake Formation)",trivial-example
+"cloud-computing",18,"cloud_services_14","Parquet","Formato colonnare comune (Parquet)",tautological-example
+"cloud-computing",18,"cloud_services_14","Parquet","Formato colonnare comune (Parquet)",trivial-example
+"cloud-computing",18,"cloud_services_14","Avro","Formato di serializzazione di riga (Avro)",tautological-example
+"cloud-computing",18,"cloud_services_14","Avro","Formato di serializzazione di riga (Avro)",trivial-example
+"cloud-computing",18,"cloud_services_14","ORC","Formato colonnare ottimizzato per riga (ORC)",tautological-example
+"cloud-computing",18,"cloud_services_14","ORC","Formato colonnare ottimizzato per riga (ORC)",trivial-example
+"cloud-computing",18,"cloud_services_14","Delta Lake","Storage transazionale Databricks (Delta Lake)",tautological-example
+"cloud-computing",18,"cloud_services_14","Delta Lake","Storage transazionale Databricks (Delta Lake)",trivial-example
+"cloud-computing",18,"cloud_services_14","Iceberg","Formato tabella moderno (Apache Iceberg)",trivial-example
+"cloud-computing",18,"cloud_services_14","Athena","Query SQL su S3 (AWS Athena)",tautological-example
+"cloud-computing",18,"cloud_services_14","Athena","Query SQL su S3 (AWS Athena)",trivial-example
+"cloud-computing",18,"cloud_services_15","ETL","ETL (Extract, Transform, Load)",tautological-example
+"cloud-computing",18,"cloud_services_15","ETL","ETL (Extract, Transform, Load)",fake-translation
+"cloud-computing",18,"cloud_services_15","ETL","ETL (Extract, Transform, Load)",trivial-example
+"cloud-computing",18,"cloud_services_15","ELT","ELT (Extract, Load, Transform)",tautological-example
+"cloud-computing",18,"cloud_services_15","ELT","ELT (Extract, Load, Transform)",fake-translation
+"cloud-computing",18,"cloud_services_15","Glue","Glue (colla)",fake-translation
+"cloud-computing",18,"cloud_services_15","Glue","Glue (colla)",trivial-example
+"cloud-computing",18,"cloud_services_15","Glue Crawler","Scoperta schema dati (AWS Glue Crawler)",trivial-example
+"cloud-computing",18,"cloud_services_15","Data Catalog","Catalogo metadati (data catalog)",trivial-example
+"cloud-computing",18,"cloud_services_15","Dataflow","Esecutore Apache Beam (Google Dataflow)",tautological-example
+"cloud-computing",18,"cloud_services_15","Dataflow","Esecutore Apache Beam (Google Dataflow)",trivial-example
+"cloud-computing",18,"cloud_services_15","Apache Beam","Apache Beam (modello unificato batch+stream)",fake-translation
+"cloud-computing",18,"cloud_services_15","Apache Beam","Apache Beam (modello unificato batch+stream)",trivial-example
+"cloud-computing",18,"cloud_services_15","EMR","EMR (Elastic MapReduce)",tautological-example
+"cloud-computing",18,"cloud_services_15","EMR","EMR (Elastic MapReduce)",fake-translation
+"cloud-computing",18,"cloud_services_15","EMR","EMR (Elastic MapReduce)",trivial-example
+"cloud-computing",18,"cloud_services_15","Dataproc","Hadoop/Spark gestito (Google Dataproc)",tautological-example
+"cloud-computing",18,"cloud_services_15","Dataproc","Hadoop/Spark gestito (Google Dataproc)",trivial-example
+"cloud-computing",18,"cloud_services_15","Spark","Apache Spark (motore di calcolo distribuito)",trivial-example
+"cloud-computing",18,"cloud_services_16","Change Data Capture","Acquisizione delle modifiche ai dati (CDC)",trivial-example
+"cloud-computing",18,"cloud_services_16","Event Sourcing","Archivio degli eventi (event sourcing)",tautological-example
+"cloud-computing",18,"cloud_services_16","Event Sourcing","",duplicate-across-lessons
+"cloud-computing",18,"cloud_services_16","Stream Processing","Elaborazione stream",tautological-example
+"cloud-computing",18,"cloud_services_16","Watermark","Watermark (filigrana)",tautological-example
+"cloud-computing",18,"cloud_services_16","Watermark","Watermark (filigrana)",fake-translation
+"cloud-computing",18,"cloud_services_16","Watermark","Watermark (filigrana)",trivial-example
+"cloud-computing",18,"cloud_services_16","Exactly-Once","Consegna esatta una volta (exactly-once)",tautological-example
+"cloud-computing",18,"cloud_services_16","At-Least-Once","Consegna almeno una volta (at-least-once)",tautological-example
+"cloud-computing",18,"cloud_services_16","At-Least-Once","Consegna almeno una volta (at-least-once)",trivial-example
+"cloud-computing",18,"cloud_services_16","Lambda Architecture","Architettura lambda",tautological-example
+"cloud-computing",18,"cloud_services_16","Kappa Architecture","Architettura kappa",tautological-example
+"cloud-computing",18,"cloud_services_16","Kappa Architecture","Architettura kappa",trivial-example
+"cloud-computing",19,"cloud_services_17","SageMaker","Amazon SageMaker (piattaforma ML AWS)",tautological-example
+"cloud-computing",19,"cloud_services_17","SageMaker","Amazon SageMaker (piattaforma ML AWS)",trivial-example
+"cloud-computing",19,"cloud_services_17","Studio","IDE web per ML (SageMaker Studio)",trivial-example
+"cloud-computing",19,"cloud_services_17","Training Job","Job di training",trivial-example
+"cloud-computing",19,"cloud_services_17","Feature Store","Archivio feature condivise (feature store)",trivial-example
+"cloud-computing",19,"cloud_services_17","Hyperparameter Tuning","Tuning iperparametri",tautological-example
+"cloud-computing",19,"cloud_services_17","AutoPilot","AutoML AWS (SageMaker AutoPilot)",tautological-example
+"cloud-computing",19,"cloud_services_17","AutoPilot","AutoML AWS (SageMaker AutoPilot)",trivial-example
+"cloud-computing",19,"cloud_services_18","Vertex AI","Vertex AI (piattaforma ML Google Cloud)",tautological-example
+"cloud-computing",19,"cloud_services_18","Vertex AI","Vertex AI (piattaforma ML Google Cloud)",fake-translation
+"cloud-computing",19,"cloud_services_18","Vertex AI","Vertex AI (piattaforma ML Google Cloud)",trivial-example
+"cloud-computing",19,"cloud_services_18","AutoML","Machine learning automatizzato (AutoML)",tautological-example
+"cloud-computing",19,"cloud_services_18","AutoML","Machine learning automatizzato (AutoML)",trivial-example
+"cloud-computing",19,"cloud_services_18","Workbench","Notebook gestiti (Vertex Workbench)",tautological-example
+"cloud-computing",19,"cloud_services_18","Workbench","Notebook gestiti (Vertex Workbench)",trivial-example
+"cloud-computing",19,"cloud_services_18","Model Garden","Catalogo modelli Vertex (Model Garden)",tautological-example
+"cloud-computing",19,"cloud_services_18","Model Garden","Catalogo modelli Vertex (Model Garden)",trivial-example
+"cloud-computing",19,"cloud_services_18","Vertex Pipelines","Pipeline ML gestite (Vertex Pipelines)",tautological-example
+"cloud-computing",19,"cloud_services_18","Vertex Endpoints","Endpoint di inference (Vertex Endpoints)",trivial-example
+"cloud-computing",19,"cloud_services_18","TPU","TPU (Tensor Processing Unit)",tautological-example
+"cloud-computing",19,"cloud_services_18","TPU","TPU (Tensor Processing Unit)",fake-translation
+"cloud-computing",19,"cloud_services_18","TPU","TPU (Tensor Processing Unit)",trivial-example
+"cloud-computing",19,"cloud_services_18","Feature Engineering","Costruzione di feature (feature engineering)",tautological-example
+"cloud-computing",19,"cloud_services_18","Vertex AI Search","Ricerca semantica Google (Vertex AI Search)",tautological-example
+"cloud-computing",19,"cloud_services_19","Bedrock","LLM gestiti AWS (AWS Bedrock)",tautological-example
+"cloud-computing",19,"cloud_services_19","Azure OpenAI","LLM OpenAI su Azure (Azure OpenAI Service)",tautological-example
+"cloud-computing",19,"cloud_services_19","Azure OpenAI","LLM OpenAI su Azure (Azure OpenAI Service)",trivial-example
+"cloud-computing",19,"cloud_services_19","Gemini","Gemini (LLM multimodale Google)",tautological-example
+"cloud-computing",19,"cloud_services_19","Gemini","Gemini (LLM multimodale Google)",fake-translation
+"cloud-computing",19,"cloud_services_19","Gemini","Gemini (LLM multimodale Google)",trivial-example
+"cloud-computing",19,"cloud_services_19","Pre-trained Model","Modello pre-addestrato",tautological-example
+"cloud-computing",19,"cloud_services_19","Pre-trained Model","Modello pre-addestrato",trivial-example
+"cloud-computing",19,"cloud_services_19","Fine-Tuning","Addestramento mirato (fine-tuning)",trivial-example
+"cloud-computing",19,"cloud_services_19","RAG","RAG (Retrieval-Augmented Generation)",tautological-example
+"cloud-computing",19,"cloud_services_19","RAG","RAG (Retrieval-Augmented Generation)",fake-translation
+"cloud-computing",19,"cloud_services_19","Knowledge Base","Base di conoscenza (knowledge base)",trivial-example
+"cloud-computing",19,"cloud_services_19","Agent","Agente",tautological-example
+"cloud-computing",19,"cloud_services_19","Agent","Agente",near-identical-translation
+"cloud-computing",19,"cloud_services_19","Agent","Agente",trivial-example
+"cloud-computing",19,"cloud_services_19","Embedding","Rappresentazione vettoriale (embedding)",tautological-example
+"cloud-computing",19,"cloud_services_19","Embedding","Rappresentazione vettoriale (embedding)",trivial-example
+"cloud-computing",19,"cloud_services_20","MLOps","DevOps per ML (MLOps)",tautological-example
+"cloud-computing",19,"cloud_services_20","MLOps","DevOps per ML (MLOps)",trivial-example
+"cloud-computing",19,"cloud_services_20","Model Drift","Deriva del modello (model drift)",tautological-example
+"cloud-computing",19,"cloud_services_20","Model Monitoring","Monitoring del modello",trivial-example
+"cloud-computing",19,"cloud_services_20","A/B Test Models","A/B test modelli",near-identical-translation
+"cloud-computing",19,"cloud_services_20","A/B Test Models","A/B test modelli",trivial-example
+"cloud-computing",19,"cloud_services_20","Inference","Inferenza",tautological-example
+"cloud-computing",19,"cloud_services_20","Inference","Inferenza",near-identical-translation
+"cloud-computing",19,"cloud_services_20","Inference","Inferenza",trivial-example
+"cloud-computing",19,"cloud_services_20","Batch Inference","Inferenza batch",tautological-example
+"cloud-computing",19,"cloud_services_20","Real-Time Inference","Inferenza in tempo reale",tautological-example
+"cloud-computing",19,"cloud_services_20","Multi-Model Endpoint","Endpoint multi-modello",tautological-example
+"cloud-computing",19,"cloud_services_20","Multi-Model Endpoint","Endpoint multi-modello",trivial-example
+"cloud-computing",19,"cloud_services_20","Bias Detection","Rilevazione bias",tautological-example
+"cloud-computing",20,"cloud_architecture_9","Microservices Architecture","Architettura a microservizi",tautological-example
+"cloud-computing",20,"cloud_architecture_9","Backend for Frontend","Backend per frontend (BFF)",trivial-example
+"cloud-computing",20,"cloud_architecture_9","Service Discovery","Scoperta di servizi (service discovery)",tautological-example
+"cloud-computing",20,"cloud_architecture_9","Service Mesh","Rete di servizi gestita (service mesh)",tautological-example
+"cloud-computing",20,"cloud_architecture_9","Service Mesh","",duplicate-across-lessons
+"cloud-computing",20,"cloud_architecture_9","Sidecar Pattern","Pattern sidecar",tautological-example
+"cloud-computing",20,"cloud_architecture_9","Strangler Pattern","Pattern strangler",tautological-example
+"cloud-computing",20,"cloud_architecture_9","Shared Nothing","Architettura senza condivisione (shared nothing)",tautological-example
+"cloud-computing",20,"cloud_architecture_10","CQRS","CQRS (Command Query Responsibility Segregation)",tautological-example
+"cloud-computing",20,"cloud_architecture_10","CQRS","CQRS (Command Query Responsibility Segregation)",fake-translation
+"cloud-computing",20,"cloud_architecture_10","CQRS","CQRS (Command Query Responsibility Segregation)",trivial-example
+"cloud-computing",20,"cloud_architecture_10","Event Sourcing","Archivio degli eventi (event sourcing)",tautological-example
+"cloud-computing",20,"cloud_architecture_10","Event Sourcing","",duplicate-across-lessons
+"cloud-computing",20,"cloud_architecture_10","Saga Pattern","Pattern saga",tautological-example
+"cloud-computing",20,"cloud_architecture_10","Orchestration","Orchestrazione",tautological-example
+"cloud-computing",20,"cloud_architecture_10","Orchestration","Orchestrazione",near-identical-translation
+"cloud-computing",20,"cloud_architecture_10","Outbox Pattern","Pattern outbox",tautological-example
+"cloud-computing",20,"cloud_architecture_10","Event Replay","Riproduzione degli eventi (event replay)",tautological-example
+"cloud-computing",20,"cloud_architecture_10","Event Notification","Notifica evento",tautological-example
+"cloud-computing",20,"cloud_architecture_11","Circuit Breaker","Interruttore di circuito (circuit breaker)",tautological-example
+"cloud-computing",20,"cloud_architecture_11","Circuit Breaker","",duplicate-across-lessons
+"cloud-computing",20,"cloud_architecture_11","Bulkhead","Pattern compartimenti stagni (bulkhead)",tautological-example
+"cloud-computing",20,"cloud_architecture_11","Bulkhead","",duplicate-across-lessons
+"cloud-computing",20,"cloud_architecture_11","Retry Pattern","Pattern retry",tautological-example
+"cloud-computing",20,"cloud_architecture_11","Jitter","variazione casuale (Jitter)",trivial-example
+"cloud-computing",20,"cloud_architecture_11","Thundering Herd","mandria tonante (Thundering Herd)",tautological-example
+"cloud-computing",20,"cloud_architecture_11","Timeout","tempo limite (Timeout)",trivial-example
+"cloud-computing",20,"cloud_architecture_11","Graceful Degradation","Degradazione graziosa",tautological-example
+"cloud-computing",20,"cloud_architecture_11","Chaos Engineering","ingegneria del caos (Chaos Engineering)",tautological-example
+"cloud-computing",20,"cloud_architecture_12","Cell-Based Architecture","Architettura a celle",tautological-example
+"cloud-computing",20,"cloud_architecture_12","Blast Radius","Raggio di esplosione",trivial-example
+"cloud-computing",20,"cloud_architecture_12","Shuffle Sharding","partizionamento mescolato (Shuffle Sharding)",tautological-example
+"cloud-computing",20,"cloud_architecture_12","Isolation","Isolamento",tautological-example
+"cloud-computing",20,"cloud_architecture_12","Tenant Isolation","Isolamento tenant",trivial-example
+"cloud-computing",20,"cloud_architecture_12","Pool Model","Modello pool",trivial-example
+"cloud-computing",20,"cloud_architecture_12","Cellular Routing","Routing cellulare",tautological-example
+"cloud-computing",20,"cloud_architecture_12","Cellular Routing","Routing cellulare",trivial-example
+"cloud-computing",20,"cloud_architecture_12","Capacity Planning","Pianificazione capacità",tautological-example
+"cloud-computing",20,"cloud_architecture_12","Resilience Engineering","ingegneria della resilienza (Resilience Engineering)",tautological-example
+"cloud-computing",21,"cloud_security_5","SOC 2","SOC 2 (standard di audit servizi cloud)",tautological-example
+"cloud-computing",21,"cloud_security_5","SOC 2","SOC 2 (standard di audit servizi cloud)",fake-translation
+"cloud-computing",21,"cloud_security_5","SOC 2","SOC 2 (standard di audit servizi cloud)",trivial-example
+"cloud-computing",21,"cloud_security_5","ISO 27001","ISO 27001 (standard di gestione sicurezza)",tautological-example
+"cloud-computing",21,"cloud_security_5","ISO 27001","ISO 27001 (standard di gestione sicurezza)",fake-translation
+"cloud-computing",21,"cloud_security_5","HIPAA","HIPAA (legge USA su dati sanitari)",tautological-example
+"cloud-computing",21,"cloud_security_5","HIPAA","HIPAA (legge USA su dati sanitari)",fake-translation
+"cloud-computing",21,"cloud_security_5","HIPAA","HIPAA (legge USA su dati sanitari)",trivial-example
+"cloud-computing",21,"cloud_security_5","PCI-DSS","PCI DSS (standard sicurezza dati pagamenti)",tautological-example
+"cloud-computing",21,"cloud_security_5","PCI-DSS","PCI DSS (standard sicurezza dati pagamenti)",trivial-example
+"cloud-computing",21,"cloud_security_5","GDPR","GDPR (Regolamento UE protezione dati)",tautological-example
+"cloud-computing",21,"cloud_security_5","GDPR","GDPR (Regolamento UE protezione dati)",fake-translation
+"cloud-computing",21,"cloud_security_5","GDPR","GDPR (Regolamento UE protezione dati)",trivial-example
+"cloud-computing",21,"cloud_security_5","FedRAMP","programma autorizzazione cloud federale USA (FedRAMP)",tautological-example
+"cloud-computing",21,"cloud_security_5","C5","C5 (BSI Germania)",fake-translation
+"cloud-computing",21,"cloud_security_5","NIS2","direttiva UE cybersecurity (NIS2)",tautological-example
+"cloud-computing",21,"cloud_security_5","AGID","AGID / Agenzia per l'Italia Digitale",tautological-example
+"cloud-computing",21,"cloud_security_5","AGID","AGID / Agenzia per l'Italia Digitale",fake-translation
+"cloud-computing",21,"cloud_security_6","Security of the Cloud","Sicurezza del cloud",trivial-example
+"cloud-computing",21,"cloud_security_6","Security in the Cloud","Sicurezza nel cloud",trivial-example
+"cloud-computing",21,"cloud_security_6","Provider Responsibility","Responsabilità del provider",tautological-example
+"cloud-computing",21,"cloud_security_6","Customer Responsibility","Responsabilità del cliente",tautological-example
+"cloud-computing",21,"cloud_security_6","Data Controller","Titolare del trattamento",redundant-note
+"cloud-computing",21,"cloud_security_6","DPA","DPA (Data Processing Agreement)",fake-translation
+"cloud-computing",21,"cloud_security_6","DPA","DPA (Data Processing Agreement)",trivial-example
+"cloud-computing",21,"cloud_security_7","Audit","verifica di conformità (Audit)",trivial-example
+"cloud-computing",21,"cloud_security_7","Auditor","revisore (Auditor)",trivial-example
+"cloud-computing",21,"cloud_security_7","AWS Organizations","gestione multi-account AWS (AWS Organizations)",tautological-example
+"cloud-computing",21,"cloud_security_7","Control Tower","AWS Control Tower / landing zone gestita",tautological-example
+"cloud-computing",21,"cloud_security_7","Guardrail","regola di protezione (Guardrail)",tautological-example
+"cloud-computing",21,"cloud_security_7","Policy as Code","policy in codice versionato (Policy as Code)",trivial-example
+"cloud-computing",21,"cloud_security_8","PII","PII (informazioni personali)",fake-translation
+"cloud-computing",21,"cloud_security_8","PII","PII (informazioni personali)",trivial-example
+"cloud-computing",21,"cloud_security_8","Data Residency","Residenza dei dati",trivial-example
+"cloud-computing",21,"cloud_security_8","Data Residency","",duplicate-across-lessons
+"cloud-computing",21,"cloud_security_8","Data Sovereignty","Sovranità dei dati",tautological-example
+"cloud-computing",21,"cloud_security_8","Data Minimization","Minimizzazione dei dati",trivial-example
+"cloud-computing",21,"cloud_security_8","Anonymization","Anonimizzazione",tautological-example
+"cloud-computing",21,"cloud_security_8","Anonymization","Anonimizzazione",trivial-example
+"cloud-computing",21,"cloud_security_8","Pseudonymization","Pseudonimizzazione",tautological-example
+"cloud-computing",21,"cloud_security_8","Privacy by Design","privacy nella progettazione (Privacy by Design)",tautological-example
+"cloud-computing",22,"cloud_cost_5","Tagging Strategy","Strategia di tagging",trivial-example
+"cloud-computing",22,"cloud_cost_5","Mandatory Tag","Tag obbligatorio",trivial-example
+"cloud-computing",22,"cloud_cost_5","Tag Standardization","Standardizzazione tag",tautological-example
+"cloud-computing",22,"cloud_cost_5","Tag Enforcement","Imposizione tag",trivial-example
+"cloud-computing",22,"cloud_cost_5","Tag Editor","AWS Tag Editor / strumento di tagging risorse",tautological-example
+"cloud-computing",22,"cloud_cost_5","Tag Editor","AWS Tag Editor / strumento di tagging risorse",trivial-example
+"cloud-computing",22,"cloud_cost_5","Cost Center Tag","Tag centro di costo",tautological-example
+"cloud-computing",22,"cloud_cost_5","Cost Center Tag","Tag centro di costo",trivial-example
+"cloud-computing",22,"cloud_cost_5","Project Tag","Tag progetto",tautological-example
+"cloud-computing",22,"cloud_cost_5","Project Tag","Tag progetto",trivial-example
+"cloud-computing",22,"cloud_cost_5","Owner Tag","Tag proprietario",tautological-example
+"cloud-computing",22,"cloud_cost_5","Untagged Resource","Risorsa senza tag",tautological-example
+"cloud-computing",22,"cloud_cost_5","Untagged Resource","Risorsa senza tag",trivial-example
+"cloud-computing",22,"cloud_cost_5","Cost Allocation Report","Report allocazione costi",tautological-example
+"cloud-computing",22,"cloud_cost_6","Chargeback Report","Report chargeback",tautological-example
+"cloud-computing",22,"cloud_cost_6","Internal Billing","Fatturazione interna",tautological-example
+"cloud-computing",22,"cloud_cost_6","Internal Billing","Fatturazione interna",trivial-example
+"cloud-computing",22,"cloud_cost_6","Cost per Customer","Costo per cliente",tautological-example
+"cloud-computing",22,"cloud_cost_6","Cost per Customer","Costo per cliente",trivial-example
+"cloud-computing",22,"cloud_cost_6","Cost Anomaly","Anomalia di costo",trivial-example
+"cloud-computing",22,"cloud_cost_6","Cost Anomaly","",duplicate-across-lessons
+"cloud-computing",22,"cloud_cost_6","KPI","KPI (indicatore chiave)",fake-translation
+"cloud-computing",22,"cloud_cost_6","KPI","KPI (indicatore chiave)",trivial-example
+"cloud-computing",22,"cloud_cost_6","Cost Visibility","Visibilità dei costi",tautological-example
+"cloud-computing",22,"cloud_cost_6","Cost Visibility","Visibilità dei costi",trivial-example
+"cloud-computing",22,"cloud_cost_6","Spend Attribution","Attribuzione della spesa",tautological-example
+"cloud-computing",22,"cloud_cost_6","Spend Attribution","Attribuzione della spesa",trivial-example
+"cloud-computing",22,"cloud_cost_7","RI Utilization","Utilizzo RI",tautological-example
+"cloud-computing",22,"cloud_cost_7","RI Utilization","Utilizzo RI",trivial-example
+"cloud-computing",22,"cloud_cost_7","RI Coverage","Copertura RI",trivial-example
+"cloud-computing",22,"cloud_cost_7","Compute Savings Plan","piano risparmio compute (Compute Savings Plan)",tautological-example
+"cloud-computing",22,"cloud_cost_7","EC2 Instance Savings Plan","piano risparmio EC2 (EC2 Instance Savings Plan)",trivial-example
+"cloud-computing",22,"cloud_cost_7","Standard RI","RI standard",tautological-example
+"cloud-computing",22,"cloud_cost_7","Standard RI","RI standard",trivial-example
+"cloud-computing",22,"cloud_cost_7","RI Marketplace","Marketplace RI",trivial-example
+"cloud-computing",22,"cloud_cost_7","Recommendations","Raccomandazioni",trivial-example
+"cloud-computing",22,"cloud_cost_7","Commitment Discount","Sconto da impegno",tautological-example
+"cloud-computing",22,"cloud_cost_7","Commitment Discount","Sconto da impegno",trivial-example
+"cloud-computing",22,"cloud_cost_7","No Upfront","No upfront (nessun anticipo)",tautological-example
+"cloud-computing",22,"cloud_cost_7","No Upfront","No upfront (nessun anticipo)",fake-translation
+"cloud-computing",22,"cloud_cost_7","No Upfront","No upfront (nessun anticipo)",trivial-example
+"cloud-computing",22,"cloud_cost_7","All Upfront","All upfront (tutto in anticipo)",tautological-example
+"cloud-computing",22,"cloud_cost_7","All Upfront","All upfront (tutto in anticipo)",fake-translation
+"cloud-computing",22,"cloud_cost_8","FinOps Practitioner","Praticante FinOps",trivial-example
+"cloud-computing",22,"cloud_cost_8","Cost Culture","Cultura dei costi",trivial-example
+"cloud-computing",22,"cloud_cost_8","Engineering Accountability","Responsabilità ingegneristica",tautological-example
+"cloud-computing",22,"cloud_cost_8","Variable Cost Model","Modello a costo variabile",trivial-example
+"cloud-computing",22,"cloud_cost_8","Cloud Economics","Economia del cloud",tautological-example
+"cloud-computing",22,"cloud_cost_8","Cloud Economics","Economia del cloud",trivial-example
+"cloud-computing",22,"cloud_cost_8","CapEx vs OpEx","spesa capitale vs spesa operativa (CapEx vs OpEx)",trivial-example
+"cloud-computing",22,"cloud_cost_8","Cost Maturity","Maturità dei costi",tautological-example
+"cloud-computing",23,"cloud_foundations_5","AWS Certified Cloud Practitioner","AWS Cloud Practitioner (certificazione di base)",trivial-example
+"cloud-computing",23,"cloud_foundations_5","AWS Solutions Architect Associate","AWS Solutions Architect Associate (certificazione architettura AWS)",fake-translation
+"cloud-computing",23,"cloud_foundations_5","AWS Solutions Architect Associate","AWS Solutions Architect Associate (certificazione architettura AWS)",trivial-example
+"cloud-computing",23,"cloud_foundations_5","AWS Solutions Architect Professional","AWS Solutions Architect Professional (certificazione architettura AWS avanzata)",fake-translation
+"cloud-computing",23,"cloud_foundations_5","AWS Solutions Architect Professional","AWS Solutions Architect Professional (certificazione architettura AWS avanzata)",trivial-example
+"cloud-computing",23,"cloud_foundations_5","AWS Developer Associate","AWS Developer Associate (certificazione sviluppatore AWS)",fake-translation
+"cloud-computing",23,"cloud_foundations_5","AWS Developer Associate","AWS Developer Associate (certificazione sviluppatore AWS)",trivial-example
+"cloud-computing",23,"cloud_foundations_5","AWS SysOps Administrator","AWS SysOps Administrator (certificazione operations AWS)",fake-translation
+"cloud-computing",23,"cloud_foundations_5","AWS SysOps Administrator","AWS SysOps Administrator (certificazione operations AWS)",trivial-example
+"cloud-computing",23,"cloud_foundations_5","AWS DevOps Engineer Professional","AWS DevOps Engineer Professional (certificazione DevOps AWS)",fake-translation
+"cloud-computing",23,"cloud_foundations_5","AWS DevOps Engineer Professional","AWS DevOps Engineer Professional (certificazione DevOps AWS)",trivial-example
+"cloud-computing",23,"cloud_foundations_5","Recertification","Ricertificazione",trivial-example
+"cloud-computing",23,"cloud_foundations_5","AWS Skill Builder","piattaforma di formazione AWS (AWS Skill Builder)",tautological-example
+"cloud-computing",23,"cloud_foundations_6","Azure Fundamentals","Azure Fundamentals (AZ-900)",fake-translation
+"cloud-computing",23,"cloud_foundations_6","Azure Fundamentals","Azure Fundamentals (AZ-900)",trivial-example
+"cloud-computing",23,"cloud_foundations_6","Azure Administrator","Azure Administrator (AZ-104)",fake-translation
+"cloud-computing",23,"cloud_foundations_6","Azure Administrator","Azure Administrator (AZ-104)",trivial-example
+"cloud-computing",23,"cloud_foundations_6","Azure Developer","Azure Developer (AZ-204)",fake-translation
+"cloud-computing",23,"cloud_foundations_6","Azure Developer","Azure Developer (AZ-204)",trivial-example
+"cloud-computing",23,"cloud_foundations_6","Azure Solutions Architect","Azure Solutions Architect (AZ-305)",fake-translation
+"cloud-computing",23,"cloud_foundations_6","Azure Solutions Architect","Azure Solutions Architect (AZ-305)",trivial-example
+"cloud-computing",23,"cloud_foundations_6","GCP Cloud Digital Leader","GCP Cloud Digital Leader (certificazione di base)",fake-translation
+"cloud-computing",23,"cloud_foundations_6","GCP Cloud Digital Leader","GCP Cloud Digital Leader (certificazione di base)",trivial-example
+"cloud-computing",23,"cloud_foundations_6","GCP Associate Cloud Engineer","GCP Associate Cloud Engineer (certificazione di base Google Cloud)",fake-translation
+"cloud-computing",23,"cloud_foundations_6","GCP Associate Cloud Engineer","GCP Associate Cloud Engineer (certificazione di base Google Cloud)",trivial-example
+"cloud-computing",23,"cloud_foundations_6","GCP Professional Cloud Architect","GCP Professional Cloud Architect (certificazione architettura Google Cloud)",fake-translation
+"cloud-computing",23,"cloud_foundations_6","GCP Professional Cloud Architect","GCP Professional Cloud Architect (certificazione architettura Google Cloud)",trivial-example
+"cloud-computing",23,"cloud_foundations_6","CKA","CKA (Certified Kubernetes Administrator)",tautological-example
+"cloud-computing",23,"cloud_foundations_6","CKA","CKA (Certified Kubernetes Administrator)",fake-translation
+"cloud-computing",23,"cloud_foundations_6","CKA","CKA (Certified Kubernetes Administrator)",trivial-example
+"cloud-computing",23,"cloud_foundations_6","CKAD","CKAD (Certified Kubernetes Application Developer)",tautological-example
+"cloud-computing",23,"cloud_foundations_6","CKAD","CKAD (Certified Kubernetes Application Developer)",fake-translation
+"cloud-computing",23,"cloud_foundations_6","HashiCorp Certified","certificazioni Terraform/Vault (HashiCorp Certified)",trivial-example
+"cloud-computing",23,"cloud_foundations_7","Solutions Architect","architetto di soluzioni (Solutions Architect)",tautological-example
+"cloud-computing",23,"cloud_foundations_7","DevOps Engineer","ingegnere DevOps (DevOps Engineer)",tautological-example
+"cloud-computing",23,"cloud_foundations_7","DevOps Engineer","ingegnere DevOps (DevOps Engineer)",trivial-example
+"cloud-computing",23,"cloud_foundations_7","SRE","SRE (Site Reliability Engineer)",tautological-example
+"cloud-computing",23,"cloud_foundations_7","SRE","SRE (Site Reliability Engineer)",fake-translation
+"cloud-computing",23,"cloud_foundations_7","SRE","SRE (Site Reliability Engineer)",trivial-example
+"cloud-computing",23,"cloud_foundations_7","Platform Engineer","ingegnere di piattaforma (Platform Engineer)",tautological-example
+"cloud-computing",23,"cloud_foundations_7","Cloud Security Engineer","ingegnere sicurezza cloud (Cloud Security Engineer)",tautological-example
+"cloud-computing",23,"cloud_foundations_7","FinOps Engineer","ingegnere FinOps (FinOps Engineer)",tautological-example
+"cloud-computing",23,"cloud_foundations_7","FinOps Engineer","ingegnere FinOps (FinOps Engineer)",trivial-example
+"cloud-computing",23,"cloud_foundations_7","Cloud Developer","sviluppatore cloud (Cloud Developer)",tautological-example
+"cloud-computing",23,"cloud_foundations_7","Cloud Consultant","consulente cloud (Cloud Consultant)",tautological-example
+"cloud-computing",23,"cloud_foundations_7","Cloud Consultant","consulente cloud (Cloud Consultant)",trivial-example
+"cloud-computing",23,"cloud_foundations_8","Continuous Learning","Apprendimento continuo",trivial-example
+"cloud-computing",23,"cloud_foundations_8","Hands-On Practice","Pratica hands-on",tautological-example
+"cloud-computing",23,"cloud_foundations_8","Hands-On Practice","Pratica hands-on",trivial-example
+"cloud-computing",23,"cloud_foundations_8","Personal Project","Progetto personale",trivial-example
+"cloud-computing",23,"cloud_foundations_8","Tech Blog","Blog tecnico",trivial-example
+"cloud-computing",23,"cloud_foundations_8","KubeCon","conferenza Kubernetes (KubeCon)",tautological-example
+"cloud-computing",23,"cloud_foundations_8","KubeCon","conferenza Kubernetes (KubeCon)",trivial-example
+"cloud-computing",23,"cloud_foundations_8","Cloud Career","Carriera cloud",trivial-example
+"cloud-computing",0,"cloud_foundations_1","Provider","",duplicate-across-lessons
+"cloud-computing",0,"cloud_foundations_1","Resource","",duplicate-across-lessons
+"cloud-computing",0,"cloud_foundations_2","Pay-as-you-go","",duplicate-across-lessons
+"cloud-computing",0,"cloud_foundations_2","Subscription","",duplicate-across-lessons
+"cloud-computing",13,"cloud_services_2","Subscription","",duplicate-across-lessons
+"cloud-computing",0,"cloud_foundations_3","Multi-Cloud","",duplicate-across-lessons
+"cloud-computing",0,"cloud_foundations_3","Edge Computing","",duplicate-across-lessons
+"cloud-computing",0,"cloud_foundations_4","Edge Location","",duplicate-across-lessons
+"cloud-computing",1,"cloud_compute_1","Provisioning","",duplicate-across-lessons
+"cloud-computing",8,"cloud_iac_1","Provisioning","",duplicate-across-lessons
+"cloud-computing",1,"cloud_compute_2","Spot Instance","",duplicate-across-lessons
+"cloud-computing",2,"cloud_storage_2","Throughput","",duplicate-across-lessons
+"cloud-computing",2,"cloud_storage_4","Redundancy","",duplicate-across-lessons
+"cloud-computing",3,"cloud_networking_2","Stateful","",duplicate-across-lessons
+"cloud-computing",12,"cloud_architecture_4","Stateful","",duplicate-across-lessons
+"cloud-computing",3,"cloud_networking_2","Stateless","",duplicate-across-lessons
+"cloud-computing",12,"cloud_architecture_4","Stateless","",duplicate-across-lessons
+"cloud-computing",3,"cloud_networking_4","Endpoint","",duplicate-across-lessons
+"cloud-computing",5,"cloud_serverless_2","Endpoint","",duplicate-across-lessons
+"cloud-computing",19,"cloud_services_17","Endpoint","",duplicate-across-lessons
+"cloud-computing",5,"cloud_serverless_3","Event Bus","",duplicate-across-lessons
+"cloud-computing",13,"cloud_services_3","Event Bus","",duplicate-across-lessons
+"cloud-computing",12,"cloud_architecture_4","Circuit Breaker","",duplicate-across-lessons

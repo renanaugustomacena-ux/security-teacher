@@ -1,0 +1,239 @@
+topicId,level,lesson,english,italian,issueType
+"system-monitoring",0,"mon_observability_1","Observability","Osservabilità",near-identical-translation
+"system-monitoring",0,"mon_observability_1","Telemetry","Telemetria",near-identical-translation
+"system-monitoring",0,"mon_observability_1","Metric","Metrica",near-identical-translation
+"system-monitoring",0,"mon_observability_1","Incident","Incidente",near-identical-translation
+"system-monitoring",0,"mon_observability_4","Aggregation","Aggregazione",near-identical-translation
+"system-monitoring",0,"mon_observability_4","Time Range","Intervallo temporale",trivial-example
+"system-monitoring",0,"mon_observability_4","Time Range","",duplicate-across-lessons
+"system-monitoring",0,"mon_observability_4","Granularity","Granularità",near-identical-translation
+"system-monitoring",1,"mon_metrics_1","CPU Usage","Utilizzo della CPU",tautological-example
+"system-monitoring",1,"mon_metrics_1","Memory Usage","Utilizzo della memoria",tautological-example
+"system-monitoring",1,"mon_metrics_1","OOM Killer","Killer per memoria esaurita",trivial-example
+"system-monitoring",1,"mon_metrics_1","CPU Throttling","Throttling della CPU",tautological-example
+"system-monitoring",1,"mon_metrics_2","Read Latency","Latenza di lettura",tautological-example
+"system-monitoring",1,"mon_metrics_2","Write Latency","Latenza di scrittura",tautological-example
+"system-monitoring",1,"mon_metrics_2","Write Latency","Latenza di scrittura",trivial-example
+"system-monitoring",1,"mon_metrics_2","Disk Free","Spazio libero",trivial-example
+"system-monitoring",1,"mon_metrics_3","Latency","Latenza",near-identical-translation
+"system-monitoring",1,"mon_metrics_3","Latency","",duplicate-across-lessons
+"system-monitoring",1,"mon_metrics_3","Packet Loss","Perdita di pacchetti",tautological-example
+"system-monitoring",1,"mon_metrics_3","Errors per Second","Errori al secondo",tautological-example
+"system-monitoring",1,"mon_metrics_4","Request Rate","Tasso di richieste",tautological-example
+"system-monitoring",1,"mon_metrics_4","Error Rate","Tasso di errore",tautological-example
+"system-monitoring",1,"mon_metrics_4","Error Rate","Tasso di errore",trivial-example
+"system-monitoring",1,"mon_metrics_4","Response Time","Tempo di risposta",trivial-example
+"system-monitoring",1,"mon_metrics_4","Queue Length","Lunghezza della coda",tautological-example
+"system-monitoring",1,"mon_metrics_4","Saturation","Saturazione",near-identical-translation
+"system-monitoring",1,"mon_metrics_4","Saturation","",duplicate-across-lessons
+"system-monitoring",1,"mon_metrics_4","Active Users","Utenti attivi",tautological-example
+"system-monitoring",1,"mon_metrics_4","Active Users","Utenti attivi",trivial-example
+"system-monitoring",2,"mon_logs_1","Error","Errore",near-identical-translation
+"system-monitoring",2,"mon_logs_1","Critical","Critico",near-identical-translation
+"system-monitoring",2,"mon_logs_1","Fatal","Fatale",near-identical-translation
+"system-monitoring",2,"mon_logs_1","Severity","Severità",near-identical-translation
+"system-monitoring",2,"mon_logs_1","Severity","",duplicate-across-lessons
+"system-monitoring",2,"mon_logs_2","Context","Contesto",near-identical-translation
+"system-monitoring",2,"mon_logs_2","Context","Contesto",trivial-example
+"system-monitoring",2,"mon_logs_2","Plain Text Log","Log in testo semplice",tautological-example
+"system-monitoring",2,"mon_logs_3","Compression","Compressione",near-identical-translation
+"system-monitoring",2,"mon_logs_3","Archive","Archivio",near-identical-translation
+"system-monitoring",2,"mon_logs_3","Facility","Categoria (facility)",trivial-example
+"system-monitoring",2,"mon_logs_3","Log File","File di log",trivial-example
+"system-monitoring",2,"mon_logs_4","Verbose","Verboso",near-identical-translation
+"system-monitoring",3,"mon_logs_tools_1","Elasticsearch","Elasticsearch (motore di ricerca distribuito)",fake-translation
+"system-monitoring",3,"mon_logs_tools_1","Logstash","Logstash (pipeline di ingestione log)",fake-translation
+"system-monitoring",3,"mon_logs_tools_1","Kibana","Kibana (interfaccia visualizzazione Elasticsearch)",fake-translation
+"system-monitoring",3,"mon_logs_tools_1","KQL","KQL (Kibana Query Language)",fake-translation
+"system-monitoring",3,"mon_logs_tools_1","KQL","",duplicate-across-lessons
+"system-monitoring",3,"mon_logs_tools_2","Loki","Loki (sistema di log Grafana)",fake-translation
+"system-monitoring",3,"mon_logs_tools_3","Fluentd","Fluentd (raccoglitore log unificato)",fake-translation
+"system-monitoring",3,"mon_logs_tools_3","Fluent Bit","Fluent Bit (raccoglitore log leggero)",fake-translation
+"system-monitoring",3,"mon_logs_tools_3","Filter","Filtro",near-identical-translation
+"system-monitoring",3,"mon_logs_tools_3","Tag","Etichetta (Tag)",tautological-example
+"system-monitoring",3,"mon_logs_tools_3","Tag","",duplicate-across-lessons
+"system-monitoring",3,"mon_logs_tools_4","CloudWatch Logs","CloudWatch Logs (servizio log AWS)",fake-translation
+"system-monitoring",3,"mon_logs_tools_4","Logs Insights","Logs Insights (query log AWS)",fake-translation
+"system-monitoring",3,"mon_logs_tools_4","Cloud Logging","Cloud Logging (servizio log Google)",fake-translation
+"system-monitoring",3,"mon_logs_tools_4","Cloud Logging","",duplicate-across-lessons
+"system-monitoring",3,"mon_logs_tools_4","Azure Monitor Logs","Azure Monitor Logs (servizio log Azure)",fake-translation
+"system-monitoring",3,"mon_logs_tools_4","Datadog Logs","Datadog Logs (servizio log Datadog)",fake-translation
+"system-monitoring",3,"mon_logs_tools_4","Splunk","Splunk (piattaforma SIEM e log)",fake-translation
+"system-monitoring",3,"mon_logs_tools_4","Splunk","",duplicate-across-lessons
+"system-monitoring",4,"mon_alerting_1","Annotation","Annotazione",near-identical-translation
+"system-monitoring",4,"mon_alerting_1","Annotation","",duplicate-across-lessons
+"system-monitoring",4,"mon_alerting_1","Silence","Silenziamento",tautological-example
+"system-monitoring",4,"mon_alerting_2","Acknowledge","Prendere in carico",tautological-example
+"system-monitoring",4,"mon_alerting_2","Resolve","Risolvere",tautological-example
+"system-monitoring",4,"mon_alerting_2","Primary","Primario",near-identical-translation
+"system-monitoring",4,"mon_alerting_2","Primary","Primario",trivial-example
+"system-monitoring",4,"mon_alerting_2","Secondary","Secondario",near-identical-translation
+"system-monitoring",4,"mon_alerting_2","Handover","Passaggio di consegne",trivial-example
+"system-monitoring",4,"mon_alerting_2","Override","Sostituzione",trivial-example
+"system-monitoring",4,"mon_alerting_2","Override","",duplicate-across-lessons
+"system-monitoring",4,"mon_alerting_3","Push Notification","Notifica push",tautological-example
+"system-monitoring",4,"mon_alerting_3","Mute","Silenziare",trivial-example
+"system-monitoring",4,"mon_alerting_3","Quiet Hours","Ore di silenzio",tautological-example
+"system-monitoring",4,"mon_alerting_3","Quiet Hours","Ore di silenzio",trivial-example
+"system-monitoring",4,"mon_alerting_4","False Positive","Falso positivo",near-identical-translation
+"system-monitoring",4,"mon_alerting_4","False Negative","Falso negativo",near-identical-translation
+"system-monitoring",5,"mon_prometheus_1","Prometheus","Prometheus (sistema monitoring time-series)",fake-translation
+"system-monitoring",5,"mon_prometheus_1","Federation","Federazione",near-identical-translation
+"system-monitoring",5,"mon_prometheus_3","Quantile","Soglia di distribuzione (Quantile)",trivial-example
+"system-monitoring",5,"mon_prometheus_3","Cardinality","Cardinalità",near-identical-translation
+"system-monitoring",5,"mon_prometheus_3","Naming Convention","Convenzione di naming",trivial-example
+"system-monitoring",5,"mon_prometheus_4","Alerting Rule","Regola di alerting",tautological-example
+"system-monitoring",5,"mon_prometheus_4","Group","Gruppo",tautological-example
+"system-monitoring",5,"mon_prometheus_4","Group","Gruppo",trivial-example
+"system-monitoring",5,"mon_prometheus_4","Block","Blocco",near-identical-translation
+"system-monitoring",5,"mon_prometheus_4","Block","Blocco",trivial-example
+"system-monitoring",5,"mon_prometheus_4","WAL","WAL (write-ahead log)",fake-translation
+"system-monitoring",5,"mon_prometheus_4","WAL","WAL (write-ahead log)",trivial-example
+"system-monitoring",5,"mon_prometheus_4","Compaction","Compattazione",tautological-example
+"system-monitoring",5,"mon_prometheus_4","Remote Write","Scrittura remota",tautological-example
+"system-monitoring",5,"mon_prometheus_4","Remote Read","Lettura remota",tautological-example
+"system-monitoring",5,"mon_prometheus_4","Remote Read","Lettura remota",trivial-example
+"system-monitoring",5,"mon_prometheus_4","Promtool","Utility CLI Prometheus (Promtool)",trivial-example
+"system-monitoring",6,"mon_promql_1","PromQL","Linguaggio query Prometheus (PromQL)",tautological-example
+"system-monitoring",6,"mon_promql_1","Selector","Selettore",near-identical-translation
+"system-monitoring",6,"mon_promql_1","Selector","Selettore",trivial-example
+"system-monitoring",6,"mon_promql_1","Label Matcher","Matcher di label",trivial-example
+"system-monitoring",6,"mon_promql_1","Equality Match","Match di uguaglianza",trivial-example
+"system-monitoring",6,"mon_promql_1","Regex Match","Match con regex",trivial-example
+"system-monitoring",6,"mon_promql_1","Negative Match","Match negativo",tautological-example
+"system-monitoring",6,"mon_promql_4","Multi-Burn-Rate","Multi burn-rate",near-identical-translation
+"system-monitoring",7,"mon_grafana_1","Grafana","Grafana (piattaforma di dashboard)",fake-translation
+"system-monitoring",7,"mon_grafana_3","Variable","Variabile",near-identical-translation
+"system-monitoring",7,"mon_grafana_3","Multi-Value","Multi-valore",near-identical-translation
+"system-monitoring",7,"mon_grafana_3","Constant","Costante",near-identical-translation
+"system-monitoring",7,"mon_grafana_4","Legend","Legenda",near-identical-translation
+"system-monitoring",7,"mon_grafana_4","Unit","Unità",identical-translation
+"system-monitoring",7,"mon_grafana_4","Annotation","Annotazione",near-identical-translation
+"system-monitoring",7,"mon_grafana_4","Annotation","",duplicate-across-lessons
+"system-monitoring",8,"mon_dashboards_2","Multi-Dimensional","Multi-dimensionale",near-identical-translation
+"system-monitoring",8,"mon_dashboards_4","Theme","Tema",near-identical-translation
+"system-monitoring",9,"mon_traces_2","Jaeger","Jaeger (piattaforma di tracing distribuito)",fake-translation
+"system-monitoring",9,"mon_traces_3","Zipkin","Zipkin (piattaforma di tracing distribuito)",fake-translation
+"system-monitoring",9,"mon_traces_3","Tempo","Tempo (backend di tracing Grafana)",fake-translation
+"system-monitoring",9,"mon_traces_3","Honeycomb","Honeycomb (piattaforma observability)",fake-translation
+"system-monitoring",9,"mon_traces_3","Lightstep","Lightstep (piattaforma observability)",fake-translation
+"system-monitoring",9,"mon_traces_4","Exemplar","Esemplare",near-identical-translation
+"system-monitoring",10,"mon_apm_2","New Relic","New Relic (piattaforma APM)",fake-translation
+"system-monitoring",10,"mon_apm_2","Application","Applicazione",near-identical-translation
+"system-monitoring",10,"mon_apm_3","Datadog","Datadog (piattaforma observability)",fake-translation
+"system-monitoring",10,"mon_apm_3","RUM","RUM (monitoraggio reale)",fake-translation
+"system-monitoring",10,"mon_apm_4","Environment Tag","Tag ambiente",trivial-example
+"system-monitoring",10,"mon_apm_4","Version Tag","Tag di versione",tautological-example
+"system-monitoring",10,"mon_apm_4","Cost Attribution","Attribuzione dei costi",tautological-example
+"system-monitoring",10,"mon_apm_4","Cost Attribution","Attribuzione dei costi",trivial-example
+"system-monitoring",11,"mon_infrastructure_1","Node Exporter","Esportatore metriche host (Node Exporter)",tautological-example
+"system-monitoring",11,"mon_infrastructure_1","Node Exporter","",duplicate-across-lessons
+"system-monitoring",11,"mon_infrastructure_1","Collector Module","Modulo collector",trivial-example
+"system-monitoring",11,"mon_infrastructure_1","cAdvisor","Esportatore metriche container (cAdvisor)",tautological-example
+"system-monitoring",11,"mon_infrastructure_1","cAdvisor","",duplicate-across-lessons
+"system-monitoring",11,"mon_infrastructure_1","Process Exporter","Esportatore metriche di processo (Process Exporter)",tautological-example
+"system-monitoring",11,"mon_infrastructure_1","systemd Metrics","Metriche systemd",tautological-example
+"system-monitoring",11,"mon_infrastructure_1","Hardware Sensor","Sensore hardware",tautological-example
+"system-monitoring",11,"mon_infrastructure_1","Hardware Sensor","Sensore hardware",trivial-example
+"system-monitoring",11,"mon_infrastructure_1","IPMI","Interfaccia di gestione hardware (IPMI)",tautological-example
+"system-monitoring",11,"mon_infrastructure_1","IPMI","Interfaccia di gestione hardware (IPMI)",trivial-example
+"system-monitoring",11,"mon_infrastructure_1","NUMA","Accesso non uniforme alla memoria (NUMA)",tautological-example
+"system-monitoring",11,"mon_infrastructure_1","Kernel Metric","Metrica del kernel",tautological-example
+"system-monitoring",11,"mon_infrastructure_2","SNMP","Protocollo di gestione di rete (SNMP)",tautological-example
+"system-monitoring",11,"mon_infrastructure_2","MIB","Base informativa di gestione (MIB)",tautological-example
+"system-monitoring",11,"mon_infrastructure_2","NetFlow","Protocollo Cisco di flussi di rete (NetFlow)",tautological-example
+"system-monitoring",11,"mon_infrastructure_2","NetFlow","Protocollo Cisco di flussi di rete (NetFlow)",trivial-example
+"system-monitoring",11,"mon_infrastructure_2","Telegraf","Telegraf (agente di metriche InfluxData)",tautological-example
+"system-monitoring",11,"mon_infrastructure_2","Telegraf","Telegraf (agente di metriche InfluxData)",fake-translation
+"system-monitoring",11,"mon_infrastructure_2","ICMP Probe","Sonda ICMP",trivial-example
+"system-monitoring",11,"mon_infrastructure_2","DNS Probe","Sonda DNS",trivial-example
+"system-monitoring",11,"mon_infrastructure_3","Container Metric","Metrica container",tautological-example
+"system-monitoring",11,"mon_infrastructure_3","cgroup","Gruppo di controllo Linux (cgroup)",tautological-example
+"system-monitoring",11,"mon_infrastructure_3","OOM Kill","Uccisione per memoria esaurita (OOM Kill)",tautological-example
+"system-monitoring",11,"mon_infrastructure_3","CrashLoopBackOff","Pod che si riavvia in loop (CrashLoopBackOff)",tautological-example
+"system-monitoring",11,"mon_infrastructure_3","Image Pull","Pull dell'immagine",trivial-example
+"system-monitoring",11,"mon_infrastructure_4","Connection Pool","Pool di connessioni",trivial-example
+"system-monitoring",11,"mon_infrastructure_4","Replication Lag","Lag di replica",tautological-example
+"system-monitoring",11,"mon_infrastructure_4","Buffer Pool","Pool di pagine in memoria (Buffer Pool)",tautological-example
+"system-monitoring",11,"mon_infrastructure_4","Lock Wait","Attesa di lock",tautological-example
+"system-monitoring",11,"mon_infrastructure_4","Deadlock","Stallo da lock circolari (Deadlock)",tautological-example
+"system-monitoring",11,"mon_infrastructure_4","Index Usage","Uso degli indici",trivial-example
+"system-monitoring",11,"mon_infrastructure_4","pgBouncer","PgBouncer (connection pooler PostgreSQL)",tautological-example
+"system-monitoring",11,"mon_infrastructure_4","pgBouncer","PgBouncer (connection pooler PostgreSQL)",fake-translation
+"system-monitoring",12,"mon_cloud_1","CloudWatch","CloudWatch (monitoring AWS)",tautological-example
+"system-monitoring",12,"mon_cloud_1","CloudWatch","CloudWatch (monitoring AWS)",fake-translation
+"system-monitoring",12,"mon_cloud_1","EMF","EMF (Embedded Metric Format)",tautological-example
+"system-monitoring",12,"mon_cloud_1","EMF","EMF (Embedded Metric Format)",fake-translation
+"system-monitoring",12,"mon_cloud_1","EMF","EMF (Embedded Metric Format)",trivial-example
+"system-monitoring",12,"mon_cloud_1","Container Insights","Monitoring container AWS (Container Insights)",tautological-example
+"system-monitoring",12,"mon_cloud_1","Lambda Insights","Monitoring Lambda AWS (Lambda Insights)",tautological-example
+"system-monitoring",12,"mon_cloud_1","Cost Explorer","Strumento costi AWS (Cost Explorer)",tautological-example
+"system-monitoring",12,"mon_cloud_1","Cost Explorer","Strumento costi AWS (Cost Explorer)",trivial-example
+"system-monitoring",12,"mon_cloud_1","Trusted Advisor","Consigli AWS (Trusted Advisor)",tautological-example
+"system-monitoring",12,"mon_cloud_2","Azure Monitor","Azure Monitor (monitoring Azure)",tautological-example
+"system-monitoring",12,"mon_cloud_2","Azure Monitor","Azure Monitor (monitoring Azure)",fake-translation
+"system-monitoring",12,"mon_cloud_2","KQL","KQL (Kusto Query Language)",tautological-example
+"system-monitoring",12,"mon_cloud_2","KQL","KQL (Kusto Query Language)",fake-translation
+"system-monitoring",12,"mon_cloud_2","KQL","KQL (Kusto Query Language)",trivial-example
+"system-monitoring",12,"mon_cloud_2","KQL","",duplicate-across-lessons
+"system-monitoring",12,"mon_cloud_2","Application Insights","APM Azure (Application Insights)",tautological-example
+"system-monitoring",12,"mon_cloud_2","Application Insights","APM Azure (Application Insights)",trivial-example
+"system-monitoring",12,"mon_cloud_2","Action Group","Gruppo di azioni",tautological-example
+"system-monitoring",12,"mon_cloud_2","Service Health","Stato dei servizi cloud (Service Health)",tautological-example
+"system-monitoring",12,"mon_cloud_2","Service Health","Stato dei servizi cloud (Service Health)",trivial-example
+"system-monitoring",12,"mon_cloud_2","Resource Health","Stato risorse Azure (Resource Health)",tautological-example
+"system-monitoring",12,"mon_cloud_3","Cloud Monitoring","Cloud Monitoring (monitoring Google Cloud)",tautological-example
+"system-monitoring",12,"mon_cloud_3","Cloud Monitoring","Cloud Monitoring (monitoring Google Cloud)",fake-translation
+"system-monitoring",12,"mon_cloud_3","Cloud Logging","Cloud Logging (servizio log Google)",tautological-example
+"system-monitoring",12,"mon_cloud_3","Cloud Logging","Cloud Logging (servizio log Google)",fake-translation
+"system-monitoring",12,"mon_cloud_3","Cloud Logging","",duplicate-across-lessons
+"system-monitoring",12,"mon_cloud_3","Cloud Trace","Cloud Trace (tracing Google Cloud)",tautological-example
+"system-monitoring",12,"mon_cloud_3","Cloud Trace","Cloud Trace (tracing Google Cloud)",fake-translation
+"system-monitoring",12,"mon_cloud_3","Cloud Profiler","Cloud Profiler (profiling Google Cloud)",tautological-example
+"system-monitoring",12,"mon_cloud_3","Cloud Profiler","Cloud Profiler (profiling Google Cloud)",fake-translation
+"system-monitoring",12,"mon_cloud_3","Workload Identity","Identità GCP per carichi di lavoro (Workload Identity)",tautological-example
+"system-monitoring",12,"mon_cloud_3","Log Sink","Destinazione di esportazione log (Log Sink)",trivial-example
+"system-monitoring",12,"mon_cloud_3","MQL","MQL (Monitoring Query Language)",tautological-example
+"system-monitoring",12,"mon_cloud_3","MQL","MQL (Monitoring Query Language)",fake-translation
+"system-monitoring",12,"mon_cloud_3","MQL","MQL (Monitoring Query Language)",trivial-example
+"system-monitoring",12,"mon_cloud_3","Managed Prometheus","Prometheus gestito",tautological-example
+"system-monitoring",12,"mon_cloud_3","Managed Prometheus","Prometheus gestito",trivial-example
+"system-monitoring",12,"mon_cloud_4","Custom Namespace","Namespace personalizzato",trivial-example
+"system-monitoring",12,"mon_cloud_4","Dimension","Dimensione",near-identical-translation
+"system-monitoring",12,"mon_cloud_4","Dimension","Dimensione",trivial-example
+"system-monitoring",12,"mon_cloud_4","Statistic","Statistica",near-identical-translation
+"system-monitoring",12,"mon_cloud_4","High-Resolution Metric","Metrica ad alta risoluzione",tautological-example
+"system-monitoring",12,"mon_cloud_4","Cost Per Metric","Costo per metrica",near-identical-translation
+"system-monitoring",12,"mon_cloud_4","Cost Per Metric","Costo per metrica",trivial-example
+"system-monitoring",12,"mon_cloud_4","Aggregation Period","Periodo di aggregazione",trivial-example
+"system-monitoring",12,"mon_cloud_4","Quota","Limite di utilizzo (Quota)",trivial-example
+"system-monitoring",12,"mon_cloud_4","Multi-Cloud","Uso di più provider cloud (Multi-cloud)",tautological-example
+"system-monitoring",13,"mon_sre_1","SLO","Service Level Objective",trivial-example
+"system-monitoring",13,"mon_sre_1","SLO","",duplicate-across-lessons
+"system-monitoring",13,"mon_sre_1","SLI","Service Level Indicator",trivial-example
+"system-monitoring",13,"mon_sre_1","SLI","",duplicate-across-lessons
+"system-monitoring",13,"mon_sre_1","Error Budget","Budget di errore",trivial-example
+"system-monitoring",13,"mon_sre_1","Error Budget","",duplicate-across-lessons
+"system-monitoring",13,"mon_sre_1","Toil","Lavoro ripetitivo",tautological-example
+"system-monitoring",13,"mon_sre_1","Toil","Lavoro ripetitivo",trivial-example
+"system-monitoring",13,"mon_sre_1","Toil Reduction","Riduzione del toil",trivial-example
+"system-monitoring",13,"mon_sre_1","Embrace Risk","Abbracciare il rischio",tautological-example
+"system-monitoring",13,"mon_sre_1","Embrace Risk","Abbracciare il rischio",trivial-example
+"system-monitoring",13,"mon_sre_2","Postmortem","Analisi post-incidente (Postmortem)",trivial-example
+"system-monitoring",13,"mon_sre_2","Lessons Learned","Lezioni apprese",tautological-example
+"system-monitoring",13,"mon_sre_3","Capacity Planning","Pianificazione della capacità",tautological-example
+"system-monitoring",13,"mon_sre_3","Capacity Planning","Pianificazione della capacità",trivial-example
+"system-monitoring",13,"mon_sre_3","Forecast","Previsione",tautological-example
+"system-monitoring",13,"mon_sre_3","Forecast","Previsione",trivial-example
+"system-monitoring",13,"mon_sre_3","Headroom","Margine",trivial-example
+"system-monitoring",13,"mon_sre_3","Headroom","",duplicate-across-lessons
+"system-monitoring",13,"mon_sre_3","Baseline","Valore di riferimento (Baseline)",trivial-example
+"system-monitoring",13,"mon_sre_3","Peak Load","Carico di picco",trivial-example
+"system-monitoring",13,"mon_sre_3","Load Test","Test di carico",trivial-example
+"system-monitoring",13,"mon_sre_3","Auto-Scaling","Scalabilità automatica (Auto-scaling)",tautological-example
+"system-monitoring",13,"mon_sre_4","Chaos Engineering","Ingegneria del caos (Chaos Engineering)",tautological-example
+"system-monitoring",13,"mon_sre_4","Game Day","Esercitazione di disastri (Game Day)",trivial-example
+"system-monitoring",13,"mon_sre_4","RTO","Obiettivo del tempo di ripristino (RTO)",trivial-example
+"system-monitoring",13,"mon_sre_4","Canary Release","Release canary",trivial-example
+"system-monitoring",14,"mon_incidents_1","Incident Response","Risposta agli incidenti",tautological-example
+"system-monitoring",14,"mon_incidents_1","Incident Response","Risposta agli incidenti",trivial-example

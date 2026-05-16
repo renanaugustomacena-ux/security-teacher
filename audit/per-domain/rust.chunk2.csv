@@ -1,0 +1,237 @@
+topicId,level,lesson,english,italian,issueType
+"rust",7,"rust_error_handling_2","Assert Macro","Macro assert",trivial-example
+"rust",7,"rust_error_handling_2","Unreachable","Dichiara codice irraggiungibile (unreachable!)",tautological-example
+"rust",7,"rust_error_handling_3","Error Trait","Trait Error",trivial-example
+"rust",7,"rust_error_handling_3","From Trait","Trait From",trivial-example
+"rust",7,"rust_error_handling_3","Error Enum","Enum di errore",trivial-example
+"rust",7,"rust_error_handling_3","Thiserror","Derivazione di errori Rust (thiserror)",tautological-example
+"rust",7,"rust_error_handling_3","Thiserror","",duplicate-across-lessons
+"rust",7,"rust_error_handling_3","Anyhow","Errore generico per applicazioni (anyhow)",tautological-example
+"rust",7,"rust_error_handling_3","Anyhow","",duplicate-across-lessons
+"rust",7,"rust_error_handling_3","Error Source","Sorgente errore",trivial-example
+"rust",7,"rust_error_handling_4","Map","Trasforma il valore se presente (map)",tautological-example
+"rust",7,"rust_error_handling_4","Map","Trasforma il valore se presente (map)",trivial-example
+"rust",7,"rust_error_handling_4","Map","",duplicate-across-lessons
+"rust",7,"rust_error_handling_4","Map Err","Trasforma l'errore di Result (map_err)",trivial-example
+"rust",7,"rust_error_handling_4","And Then","Concatena operazioni Option/Result (and_then)",trivial-example
+"rust",7,"rust_error_handling_4","And Then","",duplicate-across-lessons
+"rust",7,"rust_error_handling_4","Or Else","Fallback se Result è Err (or_else)",trivial-example
+"rust",7,"rust_error_handling_4","Unwrap Or","Estrai o usa il default (unwrap_or)",trivial-example
+"rust",7,"rust_error_handling_4","Unwrap Or","",duplicate-across-lessons
+"rust",7,"rust_error_handling_4","Unwrap Or Else","Unwrap con calcolo di default (unwrap_or_else)",trivial-example
+"rust",7,"rust_error_handling_4","Ok Method","Metodo ok",trivial-example
+"rust",7,"rust_error_handling_4","Try From","Conversione fallibile (TryFrom)",trivial-example
+"rust",7,"rust_error_handling_4","Default Error","Errore di default",trivial-example
+"rust",8,"rust_collections_1","Vec","Vettore Vec",trivial-example
+"rust",8,"rust_collections_1","Vec Macro","Macro vec",trivial-example
+"rust",8,"rust_collections_1","Vec Macro","",duplicate-across-lessons
+"rust",8,"rust_collections_1","Push","Aggiungi in coda (push)",tautological-example
+"rust",8,"rust_collections_1","Push","Aggiungi in coda (push)",trivial-example
+"rust",8,"rust_collections_1","Pop","Rimuovi dalla coda (pop)",tautological-example
+"rust",8,"rust_collections_1","Index","Indice",trivial-example
+"rust",8,"rust_collections_1","Get","Accesso opzionale (get)",tautological-example
+"rust",8,"rust_collections_1","Get","Accesso opzionale (get)",trivial-example
+"rust",8,"rust_collections_1","Length","Lunghezza",trivial-example
+"rust",8,"rust_collections_1","Capacity","Capacità",tautological-example
+"rust",8,"rust_collections_1","Capacity","Capacità",near-identical-translation
+"rust",8,"rust_collections_1","Capacity","Capacità",trivial-example
+"rust",8,"rust_collections_1","With Capacity","Con capacità",trivial-example
+"rust",8,"rust_collections_1","Iterate","Iterare",near-identical-translation
+"rust",8,"rust_collections_2","HashMap","Mappa hash (HashMap)",tautological-example
+"rust",8,"rust_collections_2","HashMap","Mappa hash (HashMap)",trivial-example
+"rust",8,"rust_collections_2","Insert","Inserimento",tautological-example
+"rust",8,"rust_collections_2","Insert","Inserimento",trivial-example
+"rust",8,"rust_collections_2","Get From Map","Get da map",trivial-example
+"rust",8,"rust_collections_2","Remove","Rimozione",tautological-example
+"rust",8,"rust_collections_2","Remove","Rimozione",trivial-example
+"rust",8,"rust_collections_2","Contains Key","Verifica presenza chiave (contains_key)",trivial-example
+"rust",8,"rust_collections_2","HashSet","Insieme hash (HashSet)",tautological-example
+"rust",8,"rust_collections_2","HashSet","Insieme hash (HashSet)",trivial-example
+"rust",8,"rust_collections_3","Iterator Trait","Trait Iterator",trivial-example
+"rust",8,"rust_collections_3","Iter","Iteratore di riferimenti (iter)",tautological-example
+"rust",8,"rust_collections_3","Iter Mut","Iteratore di riferimenti mutabili (iter_mut)",trivial-example
+"rust",8,"rust_collections_3","Into Iter","Iteratore consumante (into_iter)",trivial-example
+"rust",8,"rust_collections_3","Map Iter","Map su iteratore",trivial-example
+"rust",8,"rust_collections_3","Filter","Filtra elementi (filter)",tautological-example
+"rust",8,"rust_collections_3","Collect","Raccoglie in collezione (collect)",tautological-example
+"rust",8,"rust_collections_3","Collect","",duplicate-across-lessons
+"rust",8,"rust_collections_3","Sum","Somma",tautological-example
+"rust",8,"rust_collections_3","Sum","Somma",trivial-example
+"rust",8,"rust_collections_3","Sum","",duplicate-across-lessons
+"rust",8,"rust_collections_3","Count","Conta gli elementi (count)",tautological-example
+"rust",8,"rust_collections_3","Count","Conta gli elementi (count)",trivial-example
+"rust",8,"rust_collections_3","Lazy Evaluation","Valutazione lazy",trivial-example
+"rust",8,"rust_collections_4","String Push Char","Aggiunta di char",trivial-example
+"rust",8,"rust_collections_4","String Split","Split di stringa",trivial-example
+"rust",8,"rust_collections_4","String Replace","Replace",trivial-example
+"rust",8,"rust_collections_4","To Lowercase","Minuscole (to_lowercase)",trivial-example
+"rust",8,"rust_collections_4","To Uppercase","Maiuscole (to_uppercase)",trivial-example
+"rust",8,"rust_collections_4","String Contains","Verifica sottostringa (String::contains)",trivial-example
+"rust",8,"rust_collections_4","String Starts With","Inizia con prefisso (starts_with)",trivial-example
+"rust",8,"rust_collections_4","Parse","Analizza una stringa in tipo (parse)",tautological-example
+"rust",8,"rust_collections_4","Parse","Analizza una stringa in tipo (parse)",trivial-example
+"rust",9,"rust_traits_1","Trait","Interfaccia generica Rust (trait)",trivial-example
+"rust",9,"rust_traits_1","Trait Method","Metodo di trait",tautological-example
+"rust",9,"rust_traits_1","Trait Bound","Vincolo di trait",trivial-example
+"rust",9,"rust_traits_1","Multiple Bounds","Vincoli multipli",trivial-example
+"rust",9,"rust_traits_1","Where Clause","Clausola where",tautological-example
+"rust",9,"rust_traits_1","Where Clause","",duplicate-across-lessons
+"rust",9,"rust_traits_1","Impl Trait","Tipo opaco implementante (impl Trait)",tautological-example
+"rust",9,"rust_traits_1","Trait Function","Funzione di trait",trivial-example
+"rust",9,"rust_traits_3","Dyn Keyword","Parola chiave dyn",trivial-example
+"rust",9,"rust_traits_3","Dynamic Dispatch","Dispatch dinamico",tautological-example
+"rust",9,"rust_traits_3","Dynamic Dispatch","",duplicate-across-lessons
+"rust",9,"rust_traits_3","Trait Reference","Riferimento a trait",trivial-example
+"rust",9,"rust_traits_3","Erased Type","Tipo erased",trivial-example
+"rust",9,"rust_traits_3","Erased Type","",duplicate-across-lessons
+"rust",9,"rust_traits_4","Supertrait","Trait richiesto da un altro (supertrait)",trivial-example
+"rust",9,"rust_traits_4","Supertrait","",duplicate-across-lessons
+"rust",9,"rust_traits_4","Blanket Implementation","Implementazione blanket",trivial-example
+"rust",9,"rust_traits_4","Marker Trait","Trait marker",trivial-example
+"rust",9,"rust_traits_4","Marker Trait","",duplicate-across-lessons
+"rust",9,"rust_traits_4","Auto Trait","Trait dedotto automaticamente (auto trait)",tautological-example
+"rust",9,"rust_traits_4","Auto Trait","",duplicate-across-lessons
+"rust",9,"rust_traits_4","Negative Impl","Implementazione negativa",tautological-example
+"rust",9,"rust_traits_4","Negative Impl","Implementazione negativa",trivial-example
+"rust",9,"rust_traits_4","Trait Inheritance","Ereditarietà di trait",trivial-example
+"rust",9,"rust_traits_4","Trait Inheritance","",duplicate-across-lessons
+"rust",9,"rust_traits_4","Trait Aliasing","Alias di trait composti (trait alias)",trivial-example
+"rust",10,"rust_generics_1","Type Parameter","Parametro di tipo",tautological-example
+"rust",10,"rust_generics_1","Type Parameter","Parametro di tipo",trivial-example
+"rust",10,"rust_generics_1","Type Argument","Argomento di tipo",trivial-example
+"rust",10,"rust_generics_1","Generic Type","Tipo generico",trivial-example
+"rust",10,"rust_generics_1","Type Constraint","Vincolo di tipo",trivial-example
+"rust",10,"rust_generics_1","Default Type Parameter","Parametro di tipo predefinito",trivial-example
+"rust",10,"rust_generics_1","Const Generic","Generico const",tautological-example
+"rust",10,"rust_generics_2","Generic Enum","Enum generico",trivial-example
+"rust",10,"rust_generics_2","Generic Impl","Impl generico",trivial-example
+"rust",10,"rust_generics_2","Generic Trait","Trait generico",trivial-example
+"rust",10,"rust_generics_2","Generic Type Alias","Alias di tipo generico",trivial-example
+"rust",10,"rust_generics_3","Code Bloat","Esplosione di codice generato (code bloat)",trivial-example
+"rust",10,"rust_generics_3","Compile Time","Tempo di compilazione",trivial-example
+"rust",10,"rust_generics_3","Compile Time","",duplicate-across-lessons
+"rust",10,"rust_generics_3","Zero Runtime Cost","Zero costo a runtime",trivial-example
+"rust",10,"rust_generics_3","Static Dispatch","Dispatch statico",trivial-example
+"rust",10,"rust_generics_3","Static Dispatch","",duplicate-across-lessons
+"rust",10,"rust_generics_3","Generic Erasure","Erasure dei generici",trivial-example
+"rust",10,"rust_generics_3","Inlining","Espansione inline (inlining)",trivial-example
+"rust",10,"rust_generics_3","Type Resolution","Risoluzione di tipo",tautological-example
+"rust",10,"rust_generics_4","Where Clause","Clausola where",tautological-example
+"rust",10,"rust_generics_4","Where Clause","",duplicate-across-lessons
+"rust",10,"rust_generics_4","Higher-Ranked Trait Bound","Trait bound a ranghi superiori (HRTB)",trivial-example
+"rust",10,"rust_generics_4","Unsized Type","Tipo non dimensionato",tautological-example
+"rust",10,"rust_generics_4","Trait Inheritance","Ereditarietà di trait",tautological-example
+"rust",10,"rust_generics_4","Trait Inheritance","Ereditarietà di trait",trivial-example
+"rust",10,"rust_generics_4","Trait Inheritance","",duplicate-across-lessons
+"rust",10,"rust_generics_4","Generic Lifetime","Lifetime generica",trivial-example
+"rust",10,"rust_generics_4","Generic Lifetime","",duplicate-across-lessons
+"rust",11,"rust_lifetimes_1","Lifetime Annotation","Annotazione di lifetime",tautological-example
+"rust",11,"rust_lifetimes_1","Lifetime Parameter","Parametro di lifetime",trivial-example
+"rust",11,"rust_lifetimes_1","Lifetime Elision","Elisione di lifetime",tautological-example
+"rust",11,"rust_lifetimes_1","Lifetime Bound","Vincolo di lifetime",trivial-example
+"rust",11,"rust_lifetimes_1","Outlives","Vincolo di durata ""vive più a lungo"" ('a: 'b)",trivial-example
+"rust",11,"rust_lifetimes_1","Borrow Lifetime","Lifetime di borrow",trivial-example
+"rust",11,"rust_lifetimes_1","Borrow Lifetime","",duplicate-across-lessons
+"rust",11,"rust_lifetimes_1","Anonymous Lifetime","Lifetime anonima",trivial-example
+"rust",11,"rust_lifetimes_2","Method Lifetime","Lifetime di metodo",trivial-example
+"rust",11,"rust_lifetimes_3","Borrow Checker","Controllore di prestiti (borrow checker)",trivial-example
+"rust",11,"rust_lifetimes_3","Borrow Checker","",duplicate-across-lessons
+"rust",11,"rust_lifetimes_3","Reborrow","Nuovo prestito da uno esistente (reborrow)",trivial-example
+"rust",11,"rust_lifetimes_3","Reborrow","",duplicate-across-lessons
+"rust",11,"rust_lifetimes_3","Invariant","Invariante",near-identical-translation
+"rust",11,"rust_lifetimes_3","Invariant","Invariante",trivial-example
+"rust",11,"rust_lifetimes_4","Generic Lifetime","Lifetime generica",tautological-example
+"rust",11,"rust_lifetimes_4","Generic Lifetime","",duplicate-across-lessons
+"rust",11,"rust_lifetimes_4","HRTB","Higher-Ranked Trait Bound (HRTB)",trivial-example
+"rust",11,"rust_lifetimes_4","Self-Referential","Self-referenziale",tautological-example
+"rust",11,"rust_lifetimes_4","Self-Referential","Self-referenziale",near-identical-translation
+"rust",11,"rust_lifetimes_4","Lifetime in Traits","Lifetime nei trait",trivial-example
+"rust",12,"rust_foundations_9","Module","Modulo",near-identical-translation
+"rust",12,"rust_foundations_9","Module","Modulo",trivial-example
+"rust",12,"rust_foundations_9","Mod Keyword","Parola chiave mod",trivial-example
+"rust",12,"rust_foundations_9","Use Statement","Istruzione use",trivial-example
+"rust",12,"rust_foundations_9","Path","Percorso",trivial-example
+"rust",12,"rust_foundations_9","Path","",duplicate-across-lessons
+"rust",12,"rust_foundations_9","Pub Keyword","Parola chiave pub",trivial-example
+"rust",12,"rust_foundations_9","Crate Root","Radice del crate",trivial-example
+"rust",12,"rust_foundations_9","Crate Keyword","Parola chiave crate",trivial-example
+"rust",12,"rust_foundations_9","Super Path","Percorso super",trivial-example
+"rust",12,"rust_foundations_9","Self Path","Percorso self",trivial-example
+"rust",12,"rust_foundations_9","Module File","File di modulo",trivial-example
+"rust",12,"rust_foundations_10","Workspace","Spazio di lavoro multi-crate (workspace)",trivial-example
+"rust",12,"rust_foundations_10","Workspace Member","Membro del workspace",trivial-example
+"rust",12,"rust_foundations_10","Path Dependency","Dipendenza per percorso",trivial-example
+"rust",12,"rust_foundations_10","Crates.io","Registro pubblico di crate (crates.io)",tautological-example
+"rust",12,"rust_foundations_10","Dev Dependency","Dipendenza di sviluppo",trivial-example
+"rust",12,"rust_foundations_10","Feature Flag","Flag di feature crate (feature flag)",trivial-example
+"rust",12,"rust_foundations_10","Semver","Versionamento semantico (SemVer)",trivial-example
+"rust",12,"rust_foundations_10","Version Specifier","Specificatore di versione",trivial-example
+"rust",12,"rust_foundations_11","Private","Privato",near-identical-translation
+"rust",12,"rust_foundations_11","Private","Privato",trivial-example
+"rust",12,"rust_foundations_11","Public","Pubblico",near-identical-translation
+"rust",12,"rust_foundations_11","Public","Pubblico",trivial-example
+"rust",12,"rust_foundations_11","Pub Super","Visibilità al modulo padre (pub(super))",trivial-example
+"rust",12,"rust_foundations_11","Pub Use","Re-esportazione pubblica (pub use)",tautological-example
+"rust",12,"rust_foundations_11","Pub Use","Re-esportazione pubblica (pub use)",trivial-example
+"rust",12,"rust_foundations_11","API Surface","Superficie API",trivial-example
+"rust",12,"rust_foundations_11","Private Module","Modulo privato",tautological-example
+"rust",12,"rust_foundations_11","Glob Import","Import glob",trivial-example
+"rust",12,"rust_foundations_11","Prelude","Set di simboli importati di default (prelude)",trivial-example
+"rust",12,"rust_foundations_11","Re-Export","Ri-esportazione",tautological-example
+"rust",12,"rust_foundations_11","Re-Export","Ri-esportazione",trivial-example
+"rust",12,"rust_foundations_12","Cargo Test","Esegue i test (cargo test)",tautological-example
+"rust",12,"rust_foundations_12","Cargo Test","Esegue i test (cargo test)",trivial-example
+"rust",12,"rust_foundations_12","Cargo Test","",duplicate-across-lessons
+"rust",12,"rust_foundations_12","Cargo Doc","Genera documentazione (cargo doc)",tautological-example
+"rust",12,"rust_foundations_12","Cargo Doc","Genera documentazione (cargo doc)",trivial-example
+"rust",12,"rust_foundations_12","Cargo Update","Aggiorna lockfile (cargo update)",tautological-example
+"rust",12,"rust_foundations_12","Cargo Update","Aggiorna lockfile (cargo update)",trivial-example
+"rust",12,"rust_foundations_12","Cargo Add","Aggiunge dipendenza (cargo add)",tautological-example
+"rust",12,"rust_foundations_12","Cargo Add","Aggiunge dipendenza (cargo add)",trivial-example
+"rust",12,"rust_foundations_12","Cargo Remove","Rimuove dipendenza (cargo remove)",tautological-example
+"rust",12,"rust_foundations_12","Cargo Remove","Rimuove dipendenza (cargo remove)",trivial-example
+"rust",12,"rust_foundations_12","Cargo Publish","Pubblica su crates.io (cargo publish)",tautological-example
+"rust",12,"rust_foundations_12","Cargo Bench","Esegue benchmark (cargo bench)",tautological-example
+"rust",12,"rust_foundations_12","Cargo Bench","Esegue benchmark (cargo bench)",trivial-example
+"rust",12,"rust_foundations_12","Cargo Tree","Albero delle dipendenze (cargo tree)",tautological-example
+"rust",12,"rust_foundations_12","Cargo Tree","Albero delle dipendenze (cargo tree)",trivial-example
+"rust",12,"rust_foundations_12","Cargo Audit","Audit di vulnerabilità (cargo audit)",tautological-example
+"rust",12,"rust_foundations_12","Cargo Expand","Mostra macro espanse (cargo expand)",tautological-example
+"rust",12,"rust_foundations_12","Cargo Expand","Mostra macro espanse (cargo expand)",trivial-example
+"rust",13,"rust_collections_5","Pipe Syntax","Sintassi a pipe",trivial-example
+"rust",13,"rust_collections_5","Capture","Cattura",near-identical-translation
+"rust",13,"rust_collections_5","Capture","Cattura",trivial-example
+"rust",13,"rust_collections_5","Move Closure","Chiusura che cattura per move (move closure)",trivial-example
+"rust",13,"rust_collections_5","Move Closure","",duplicate-across-lessons
+"rust",13,"rust_collections_5","Anonymous Function","Funzione anonima",trivial-example
+"rust",13,"rust_collections_5","Higher-Order Function","Funzione di ordine superiore",tautological-example
+"rust",13,"rust_collections_6","Iterator Adaptor","Adattatore di iteratore",trivial-example
+"rust",13,"rust_collections_6","Map Adaptor","Adattatore map",trivial-example
+"rust",13,"rust_collections_6","Filter Adaptor","Adattatore filter",trivial-example
+"rust",13,"rust_collections_6","Take","Prende e lascia il default (std::mem::take)",tautological-example
+"rust",13,"rust_collections_6","Take","Prende e lascia il default (std::mem::take)",trivial-example
+"rust",13,"rust_collections_6","Take","",duplicate-across-lessons
+"rust",13,"rust_collections_6","Skip","Salta n elementi (skip)",tautological-example
+"rust",13,"rust_collections_6","Skip","Salta n elementi (skip)",trivial-example
+"rust",13,"rust_collections_6","Zip","Abbina due iteratori (zip)",tautological-example
+"rust",13,"rust_collections_6","Zip","Abbina due iteratori (zip)",trivial-example
+"rust",13,"rust_collections_6","Chain","Concatena iteratori (chain)",tautological-example
+"rust",13,"rust_collections_6","Chain","Concatena iteratori (chain)",trivial-example
+"rust",13,"rust_collections_6","Enumerate","Aggiunge l'indice (enumerate)",tautological-example
+"rust",13,"rust_collections_6","Enumerate","Aggiunge l'indice (enumerate)",trivial-example
+"rust",13,"rust_collections_6","Flat Map","Mappa e appiattisce (flat_map)",trivial-example
+"rust",13,"rust_collections_6","Peekable","Iteratore con peek (peekable)",tautological-example
+"rust",13,"rust_collections_7","Collect","Raccoglie in collezione (collect)",tautological-example
+"rust",13,"rust_collections_7","Collect","",duplicate-across-lessons
+"rust",13,"rust_collections_7","Fold","Accumula da sinistra (fold)",tautological-example
+"rust",13,"rust_collections_7","Reduce","Fold senza valore iniziale (reduce)",tautological-example
+"rust",13,"rust_collections_7","Sum","Somma",tautological-example
+"rust",13,"rust_collections_7","Sum","Somma",trivial-example
+"rust",13,"rust_collections_7","Sum","",duplicate-across-lessons
+"rust",13,"rust_collections_7","Product","Prodotto",tautological-example
+"rust",13,"rust_collections_7","Product","Prodotto",trivial-example
+"rust",13,"rust_collections_7","Max","Massimo elemento (max)",tautological-example
+"rust",13,"rust_collections_7","Max","Massimo elemento (max)",trivial-example
+"rust",13,"rust_collections_7","Min","Minimo elemento (min)",tautological-example
+"rust",13,"rust_collections_7","Min","Minimo elemento (min)",trivial-example
+"rust",13,"rust_collections_7","Find","Trova primo elemento corrispondente (find)",tautological-example

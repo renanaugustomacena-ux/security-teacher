@@ -1,0 +1,249 @@
+topicId,level,lesson,english,italian,issueType
+"docker-k8s",20,"dk_mon_2","SLI","Service Level Indicator (SLI)",tautological-example
+"docker-k8s",20,"dk_mon_2","SLI","Service Level Indicator (SLI)",trivial-example
+"docker-k8s",20,"dk_mon_2","Error Budget","budget degli errori SLO (Error Budget)",tautological-example
+"docker-k8s",20,"dk_mon_2","Uptime","tempo di funzionamento (Uptime)",tautological-example
+"docker-k8s",20,"dk_mon_2","Uptime","tempo di funzionamento (Uptime)",trivial-example
+"docker-k8s",20,"dk_mon_2","Latency","Latenza",near-identical-translation
+"docker-k8s",20,"dk_mon_2","Latency","Latenza",trivial-example
+"docker-k8s",20,"dk_mon_2","Throughput","volume di operazioni al secondo (Throughput)",tautological-example
+"docker-k8s",20,"dk_mon_2","Throughput","volume di operazioni al secondo (Throughput)",trivial-example
+"docker-k8s",20,"dk_mon_3","Log Aggregation","Aggregazione di log",tautological-example
+"docker-k8s",20,"dk_mon_3","Log Aggregation","Aggregazione di log",trivial-example
+"docker-k8s",20,"dk_mon_3","EFK Stack","Stack EFK",trivial-example
+"docker-k8s",20,"dk_mon_3","Loki","Loki (sistema di log Grafana)",tautological-example
+"docker-k8s",20,"dk_mon_3","Loki","Loki (sistema di log Grafana)",fake-translation
+"docker-k8s",20,"dk_mon_3","Loki","Loki (sistema di log Grafana)",trivial-example
+"docker-k8s",20,"dk_mon_3","Promtail","agente Loki di raccolta log (Promtail)",tautological-example
+"docker-k8s",20,"dk_mon_3","Promtail","agente Loki di raccolta log (Promtail)",trivial-example
+"docker-k8s",20,"dk_mon_3","Stdout/Stderr","output e errori standard (Stdout/Stderr)",trivial-example
+"docker-k8s",20,"dk_mon_3","Structured Logging","Logging strutturato",trivial-example
+"docker-k8s",20,"dk_mon_3","Log Rotation","Rotazione log",trivial-example
+"docker-k8s",20,"dk_mon_3","JSON Logs","Log JSON",tautological-example
+"docker-k8s",20,"dk_mon_3","JSON Logs","Log JSON",trivial-example
+"docker-k8s",20,"dk_mon_3","Log Level","Livello di log",trivial-example
+"docker-k8s",20,"dk_mon_3","Log Retention","Retention dei log",trivial-example
+"docker-k8s",20,"dk_mon_4","Distributed Tracing","Tracing distribuito",tautological-example
+"docker-k8s",20,"dk_mon_4","Jaeger","Jaeger (piattaforma di tracing distribuito)",tautological-example
+"docker-k8s",20,"dk_mon_4","Jaeger","Jaeger (piattaforma di tracing distribuito)",fake-translation
+"docker-k8s",20,"dk_mon_4","Jaeger","Jaeger (piattaforma di tracing distribuito)",trivial-example
+"docker-k8s",20,"dk_mon_4","OpenTelemetry","framework observability standard (OpenTelemetry)",tautological-example
+"docker-k8s",20,"dk_mon_4","Span","unità di lavoro tracciata (Span)",trivial-example
+"docker-k8s",20,"dk_mon_4","Trace ID","identificatore della trace (Trace ID)",tautological-example
+"docker-k8s",20,"dk_mon_4","Trace ID","identificatore della trace (Trace ID)",trivial-example
+"docker-k8s",20,"dk_mon_4","Sampling","campionamento delle trace (Sampling)",trivial-example
+"docker-k8s",20,"dk_mon_4","Context Propagation","Propagazione del contesto",tautological-example
+"docker-k8s",20,"dk_mon_4","Context Propagation","Propagazione del contesto",trivial-example
+"docker-k8s",20,"dk_mon_4","OTLP","OpenTelemetry Protocol (OTLP)",tautological-example
+"docker-k8s",20,"dk_mon_4","OTLP","OpenTelemetry Protocol (OTLP)",trivial-example
+"docker-k8s",20,"dk_mon_4","Tempo","Tempo (backend di tracing Grafana)",fake-translation
+"docker-k8s",20,"dk_mon_4","Tempo","Tempo (backend di tracing Grafana)",trivial-example
+"docker-k8s",20,"dk_mon_4","Grafana","Grafana (piattaforma di dashboard)",tautological-example
+"docker-k8s",20,"dk_mon_4","Grafana","Grafana (piattaforma di dashboard)",fake-translation
+"docker-k8s",21,"dk_gitops_1","GitOps","Git come fonte di verità per il deploy (GitOps)",tautological-example
+"docker-k8s",21,"dk_gitops_1","GitOps","Git come fonte di verità per il deploy (GitOps)",trivial-example
+"docker-k8s",21,"dk_gitops_1","Source of Truth","Fonte di verità",trivial-example
+"docker-k8s",21,"dk_gitops_1","Declarative Deployment","Deployment dichiarativo",tautological-example
+"docker-k8s",21,"dk_gitops_1","Continuous Deployment","Deploy continuo",trivial-example
+"docker-k8s",21,"dk_gitops_1","Observable","Osservabile",near-identical-translation
+"docker-k8s",21,"dk_gitops_1","Observable","Osservabile",trivial-example
+"docker-k8s",21,"dk_gitops_1","Auditable","Auditabile",near-identical-translation
+"docker-k8s",21,"dk_gitops_1","Auditable","Auditabile",trivial-example
+"docker-k8s",21,"dk_gitops_1","Reconciliation","Riconciliazione",tautological-example
+"docker-k8s",21,"dk_gitops_1","Reconciliation","Riconciliazione",trivial-example
+"docker-k8s",21,"dk_gitops_1","Drift","Drift (deriva)",tautological-example
+"docker-k8s",21,"dk_gitops_1","Drift","Drift (deriva)",fake-translation
+"docker-k8s",21,"dk_gitops_1","Drift","Drift (deriva)",trivial-example
+"docker-k8s",21,"dk_gitops_1","Drift Detection","Rilevamento del drift",tautological-example
+"docker-k8s",21,"dk_gitops_2","ArgoCD","Argo CD (motore GitOps Kubernetes)",tautological-example
+"docker-k8s",21,"dk_gitops_2","ArgoCD","Argo CD (motore GitOps Kubernetes)",trivial-example
+"docker-k8s",21,"dk_gitops_2","Application","risorsa Argo CD (Application)",tautological-example
+"docker-k8s",21,"dk_gitops_2","Application","risorsa Argo CD (Application)",trivial-example
+"docker-k8s",21,"dk_gitops_2","Source","Sorgente",tautological-example
+"docker-k8s",21,"dk_gitops_2","Source","Sorgente",trivial-example
+"docker-k8s",21,"dk_gitops_2","Destination","Destinazione",tautological-example
+"docker-k8s",21,"dk_gitops_2","Destination","Destinazione",near-identical-translation
+"docker-k8s",21,"dk_gitops_2","Sync","sincronizzazione Argo CD (Sync)",tautological-example
+"docker-k8s",21,"dk_gitops_2","Sync","sincronizzazione Argo CD (Sync)",trivial-example
+"docker-k8s",21,"dk_gitops_2","Auto Sync","sincronizzazione automatica (Auto Sync)",tautological-example
+"docker-k8s",21,"dk_gitops_2","Self Heal","auto-correzione (Self Heal)",tautological-example
+"docker-k8s",21,"dk_gitops_2","Prune","Prune (potatura)",tautological-example
+"docker-k8s",21,"dk_gitops_2","Prune","Prune (potatura)",fake-translation
+"docker-k8s",21,"dk_gitops_2","Sync Wave","ondata di sincronizzazione (Sync Wave)",tautological-example
+"docker-k8s",21,"dk_gitops_2","Sync Wave","ondata di sincronizzazione (Sync Wave)",trivial-example
+"docker-k8s",21,"dk_gitops_2","AppProject","progetto di Argo CD (AppProject)",tautological-example
+"docker-k8s",21,"dk_gitops_2","AppProject","progetto di Argo CD (AppProject)",trivial-example
+"docker-k8s",21,"dk_gitops_3","FluxCD","Flux CD (motore GitOps Kubernetes)",tautological-example
+"docker-k8s",21,"dk_gitops_3","FluxCD","Flux CD (motore GitOps Kubernetes)",trivial-example
+"docker-k8s",21,"dk_gitops_3","GitRepository","sorgente Git in Flux (GitRepository)",tautological-example
+"docker-k8s",21,"dk_gitops_3","GitRepository","sorgente Git in Flux (GitRepository)",trivial-example
+"docker-k8s",21,"dk_gitops_3","Kustomization","risorsa Flux Kustomize (Kustomization)",tautological-example
+"docker-k8s",21,"dk_gitops_3","HelmRelease","release Helm gestita da Flux (HelmRelease)",tautological-example
+"docker-k8s",21,"dk_gitops_3","OCI Repository","Repository OCI",trivial-example
+"docker-k8s",21,"dk_gitops_3","Source Controller","controller delle fonti Flux (Source Controller)",tautological-example
+"docker-k8s",21,"dk_gitops_3","Source Controller","controller delle fonti Flux (Source Controller)",trivial-example
+"docker-k8s",21,"dk_gitops_3","Notification Controller","notifiche Flux (Notification Controller)",tautological-example
+"docker-k8s",21,"dk_gitops_3","Notification Controller","notifiche Flux (Notification Controller)",trivial-example
+"docker-k8s",21,"dk_gitops_3","Flagger","progressive delivery Kubernetes (Flagger)",tautological-example
+"docker-k8s",21,"dk_gitops_3","Flagger","progressive delivery Kubernetes (Flagger)",trivial-example
+"docker-k8s",21,"dk_gitops_3","Image Reflector","scanner immagini Flux (Image Reflector)",tautological-example
+"docker-k8s",21,"dk_gitops_3","Image Automation","Automazione immagini",trivial-example
+"docker-k8s",21,"dk_gitops_4","Progressive Delivery","rilascio progressivo (Progressive Delivery)",tautological-example
+"docker-k8s",21,"dk_gitops_4","Canary Release","rilascio canary (Canary Release)",tautological-example
+"docker-k8s",21,"dk_gitops_4","Canary Release","rilascio canary (Canary Release)",trivial-example
+"docker-k8s",21,"dk_gitops_4","Blue/Green Deployment","Deploy blue/green",trivial-example
+"docker-k8s",21,"dk_gitops_4","Feature Flag","interruttore funzionalità (Feature Flag)",tautological-example
+"docker-k8s",21,"dk_gitops_4","A/B Testing","test su due varianti (A/B Testing)",tautological-example
+"docker-k8s",21,"dk_gitops_4","A/B Testing","test su due varianti (A/B Testing)",trivial-example
+"docker-k8s",21,"dk_gitops_4","Argo Rollouts","progressive delivery Argo (Argo Rollouts)",tautological-example
+"docker-k8s",21,"dk_gitops_4","Analysis Run","AnalysisRun / esecuzione analisi Argo Rollouts",trivial-example
+"docker-k8s",21,"dk_gitops_4","Promotion","Promozione",near-identical-translation
+"docker-k8s",21,"dk_gitops_4","Promotion","Promozione",trivial-example
+"docker-k8s",21,"dk_gitops_4","Auto Rollback","Rollback automatico",tautological-example
+"docker-k8s",21,"dk_gitops_4","Auto Rollback","Rollback automatico",trivial-example
+"docker-k8s",21,"dk_gitops_4","Shadow Traffic","Traffico shadow",tautological-example
+"docker-k8s",21,"dk_gitops_4","Shadow Traffic","Traffico shadow",trivial-example
+"docker-k8s",22,"dk_op_1","CRD","Custom Resource Definition (CRD)",tautological-example
+"docker-k8s",22,"dk_op_1","CRD","Custom Resource Definition (CRD)",trivial-example
+"docker-k8s",22,"dk_op_1","OpenAPI Schema","Schema OpenAPI",trivial-example
+"docker-k8s",22,"dk_op_1","Validation","Validazione",near-identical-translation
+"docker-k8s",22,"dk_op_1","Validation","Validazione",trivial-example
+"docker-k8s",22,"dk_op_1","Conversion Webhook","Webhook di conversione",tautological-example
+"docker-k8s",22,"dk_op_1","Status Subresource","Subresource status",tautological-example
+"docker-k8s",22,"dk_op_1","Finalizer","hook di rimozione risorsa (Finalizer)",tautological-example
+"docker-k8s",22,"dk_op_1","Finalizer","hook di rimozione risorsa (Finalizer)",trivial-example
+"docker-k8s",22,"dk_op_1","Short Name","Nome breve",trivial-example
+"docker-k8s",22,"dk_op_2","Custom Controller","Controller personalizzato",trivial-example
+"docker-k8s",22,"dk_op_2","Reconcile Loop","Loop di riconciliazione",tautological-example
+"docker-k8s",22,"dk_op_2","Reconcile Loop","Loop di riconciliazione",trivial-example
+"docker-k8s",22,"dk_op_2","Reconcile Loop","",duplicate-across-lessons
+"docker-k8s",22,"dk_op_2","Operational Knowledge","Conoscenza operativa",trivial-example
+"docker-k8s",22,"dk_op_2","Event-Driven","Guidato da eventi",trivial-example
+"docker-k8s",22,"dk_op_2","Watch","osservazione di eventi K8s (Watch)",tautological-example
+"docker-k8s",22,"dk_op_2","Watch","osservazione di eventi K8s (Watch)",trivial-example
+"docker-k8s",22,"dk_op_2","Informer","cache+watch K8s (Informer)",tautological-example
+"docker-k8s",22,"dk_op_2","Informer","cache+watch K8s (Informer)",trivial-example
+"docker-k8s",22,"dk_op_2","Work Queue","Coda di lavoro",tautological-example
+"docker-k8s",22,"dk_op_2","Work Queue","Coda di lavoro",trivial-example
+"docker-k8s",22,"dk_op_2","Idempotent","Idempotente",near-identical-translation
+"docker-k8s",22,"dk_op_2","Idempotent","Idempotente",trivial-example
+"docker-k8s",22,"dk_op_3","Operator SDK","SDK Red Hat per Operator (Operator SDK)",tautological-example
+"docker-k8s",22,"dk_op_3","Operator SDK","SDK Red Hat per Operator (Operator SDK)",trivial-example
+"docker-k8s",22,"dk_op_3","Kubebuilder","SDK ufficiale per Operator (Kubebuilder)",tautological-example
+"docker-k8s",22,"dk_op_3","Kubebuilder","SDK ufficiale per Operator (Kubebuilder)",trivial-example
+"docker-k8s",22,"dk_op_3","controller-runtime","libreria di base Operator (controller-runtime)",tautological-example
+"docker-k8s",22,"dk_op_3","Helm Operator","Operator Helm",tautological-example
+"docker-k8s",22,"dk_op_3","Helm Operator","Operator Helm",trivial-example
+"docker-k8s",22,"dk_op_3","Ansible Operator","Operator Ansible",tautological-example
+"docker-k8s",22,"dk_op_3","Ansible Operator","Operator Ansible",trivial-example
+"docker-k8s",22,"dk_op_3","Go Operator","Operator Go",tautological-example
+"docker-k8s",22,"dk_op_3","Reconciler","loop di riconciliazione (Reconciler)",tautological-example
+"docker-k8s",22,"dk_op_3","Reconciler","loop di riconciliazione (Reconciler)",trivial-example
+"docker-k8s",22,"dk_op_3","Bundle","pacchetto Operator (Bundle)",trivial-example
+"docker-k8s",22,"dk_op_3","OperatorHub","catalogo Operator (OperatorHub)",tautological-example
+"docker-k8s",22,"dk_op_3","OLM","Operator Lifecycle Manager (OLM)",tautological-example
+"docker-k8s",22,"dk_op_3","OLM","Operator Lifecycle Manager (OLM)",trivial-example
+"docker-k8s",22,"dk_op_4","Prometheus Operator","operator K8s per Prometheus (Prometheus Operator)",tautological-example
+"docker-k8s",22,"dk_op_4","Redis Operator","Operator Redis",tautological-example
+"docker-k8s",22,"dk_op_4","Redis Operator","Operator Redis",trivial-example
+"docker-k8s",22,"dk_op_4","Strimzi","Strimzi (Kafka operator)",tautological-example
+"docker-k8s",22,"dk_op_4","Strimzi","Strimzi (Kafka operator)",fake-translation
+"docker-k8s",22,"dk_op_4","Strimzi","Strimzi (Kafka operator)",trivial-example
+"docker-k8s",22,"dk_op_4","Velero","backup e ripristino di Kubernetes (Velero)",tautological-example
+"docker-k8s",22,"dk_op_4","Velero","backup e ripristino di Kubernetes (Velero)",trivial-example
+"docker-k8s",22,"dk_op_4","External DNS","sincronizza DNS con Service/Ingress (External DNS)",tautological-example
+"docker-k8s",22,"dk_op_4","External DNS","sincronizza DNS con Service/Ingress (External DNS)",trivial-example
+"docker-k8s",22,"dk_op_4","MetalLB","LoadBalancer bare-metal (MetalLB)",tautological-example
+"docker-k8s",22,"dk_op_4","Crossplane","control plane multi-cloud (Crossplane)",tautological-example
+"docker-k8s",22,"dk_op_4","Knative","piattaforma serverless K8s (Knative)",tautological-example
+"docker-k8s",22,"dk_op_4","Knative","piattaforma serverless K8s (Knative)",trivial-example
+"docker-k8s",23,"dk_pro_1","CKA","Certified Kubernetes Administrator (CKA)",tautological-example
+"docker-k8s",23,"dk_pro_1","CKA","Certified Kubernetes Administrator (CKA)",trivial-example
+"docker-k8s",23,"dk_pro_1","CKAD","Certified Kubernetes Application Developer (CKAD)",tautological-example
+"docker-k8s",23,"dk_pro_1","CKAD","Certified Kubernetes Application Developer (CKAD)",trivial-example
+"docker-k8s",23,"dk_pro_1","CKS","Certified Kubernetes Security Specialist (CKS)",tautological-example
+"docker-k8s",23,"dk_pro_1","CKS","Certified Kubernetes Security Specialist (CKS)",trivial-example
+"docker-k8s",23,"dk_pro_1","Hands-On Exam","Esame pratico",trivial-example
+"docker-k8s",23,"dk_pro_1","kubectl Mastery","Padronanza kubectl",tautological-example
+"docker-k8s",23,"dk_pro_1","kubectl Mastery","Padronanza kubectl",trivial-example
+"docker-k8s",23,"dk_pro_1","Imperative Commands","Comandi imperativi",tautological-example
+"docker-k8s",23,"dk_pro_1","Imperative Commands","Comandi imperativi",trivial-example
+"docker-k8s",23,"dk_pro_1","--dry-run","Modalità dry-run",trivial-example
+"docker-k8s",23,"dk_pro_1","kubectl Alias","Alias kubectl",trivial-example
+"docker-k8s",23,"dk_pro_1","Vim Skills","Competenze Vim",tautological-example
+"docker-k8s",23,"dk_pro_2","Cluster Design","Design del cluster",tautological-example
+"docker-k8s",23,"dk_pro_2","Cluster Design","Design del cluster",trivial-example
+"docker-k8s",23,"dk_pro_2","High Availability","Alta disponibilità",trivial-example
+"docker-k8s",23,"dk_pro_2","High Availability","",duplicate-across-lessons
+"docker-k8s",23,"dk_pro_2","Topology Spread","distribuzione su topologia (Topology Spread)",tautological-example
+"docker-k8s",23,"dk_pro_2","Anti-Affinity","Anti-affinità",tautological-example
+"docker-k8s",23,"dk_pro_2","Anti-Affinity","Anti-affinità",near-identical-translation
+"docker-k8s",23,"dk_pro_2","Affinity","Affinità",tautological-example
+"docker-k8s",23,"dk_pro_2","Affinity","Affinità",near-identical-translation
+"docker-k8s",23,"dk_pro_2","Affinity","Affinità",trivial-example
+"docker-k8s",23,"dk_pro_2","Taint","etichetta che respinge pod K8s (Taint)",tautological-example
+"docker-k8s",23,"dk_pro_2","Taint","etichetta che respinge pod K8s (Taint)",trivial-example
+"docker-k8s",23,"dk_pro_2","Toleration","Tolerazione",tautological-example
+"docker-k8s",23,"dk_pro_2","Toleration","Tolerazione",near-identical-translation
+"docker-k8s",23,"dk_pro_2","Toleration","",duplicate-across-lessons
+"docker-k8s",23,"dk_pro_2","Node Selector","Selettore di nodo",trivial-example
+"docker-k8s",23,"dk_pro_2","Node Selector","",duplicate-across-lessons
+"docker-k8s",23,"dk_pro_2","Bootstrap","fase di avvio iniziale (Bootstrap)",tautological-example
+"docker-k8s",23,"dk_pro_2","Bootstrap","fase di avvio iniziale (Bootstrap)",trivial-example
+"docker-k8s",23,"dk_pro_3","Disaster Recovery","ripristino dopo disastro (Disaster Recovery)",trivial-example
+"docker-k8s",23,"dk_pro_3","RTO","Recovery Time Objective (RTO)",tautological-example
+"docker-k8s",23,"dk_pro_3","RTO","Recovery Time Objective (RTO)",trivial-example
+"docker-k8s",23,"dk_pro_3","RPO","Recovery Point Objective (RPO)",tautological-example
+"docker-k8s",23,"dk_pro_3","etcd Backup","Backup etcd",trivial-example
+"docker-k8s",23,"dk_pro_3","Velero Backup","Backup con Velero",trivial-example
+"docker-k8s",23,"dk_pro_3","Restore Test","Test di restore",trivial-example
+"docker-k8s",23,"dk_pro_3","Multi-Region","Multi-regione",tautological-example
+"docker-k8s",23,"dk_pro_3","Multi-Region","Multi-regione",near-identical-translation
+"docker-k8s",23,"dk_pro_3","Multi-Region","Multi-regione",trivial-example
+"docker-k8s",23,"dk_pro_3","Failover","commutazione automatica di guasto (Failover)",trivial-example
+"docker-k8s",23,"dk_pro_3","Active-Passive","attivo-passivo / un nodo lavora, l'altro attende",tautological-example
+"docker-k8s",23,"dk_pro_3","Active-Passive","attivo-passivo / un nodo lavora, l'altro attende",trivial-example
+"docker-k8s",23,"dk_pro_3","Active-Active","attivo-attivo / più nodi servono in parallelo",tautological-example
+"docker-k8s",23,"dk_pro_3","Active-Active","attivo-attivo / più nodi servono in parallelo",trivial-example
+"docker-k8s",23,"dk_pro_4","Multi-Cluster","più cluster federati (Multi-Cluster)",tautological-example
+"docker-k8s",23,"dk_pro_4","Multi-Cluster","più cluster federati (Multi-Cluster)",trivial-example
+"docker-k8s",23,"dk_pro_4","Cluster API","progetto upstream gestione cluster (Cluster API)",tautological-example
+"docker-k8s",23,"dk_pro_4","Cluster API","progetto upstream gestione cluster (Cluster API)",trivial-example
+"docker-k8s",23,"dk_pro_4","KubeFed","federazione di cluster Kubernetes (KubeFed)",tautological-example
+"docker-k8s",23,"dk_pro_4","KubeFed","federazione di cluster Kubernetes (KubeFed)",trivial-example
+"docker-k8s",23,"dk_pro_4","FinOps","operazioni finanziarie cloud (FinOps)",tautological-example
+"docker-k8s",23,"dk_pro_4","Cost Allocation","Allocazione dei costi",trivial-example
+"docker-k8s",23,"dk_pro_4","Kubecost","monitoraggio costi K8s (Kubecost)",tautological-example
+"docker-k8s",23,"dk_pro_4","Kubecost","monitoraggio costi K8s (Kubecost)",trivial-example
+"docker-k8s",23,"dk_pro_4","OpenCost","costi K8s open source CNCF (OpenCost)",tautological-example
+"docker-k8s",23,"dk_pro_4","LimitRange","limiti per oggetto K8s (LimitRange)",tautological-example
+"docker-k8s",23,"dk_pro_4","Spot Savings","Risparmio con spot",trivial-example
+"docker-k8s",0,"dk_containers_1","Image","",duplicate-across-lessons
+"docker-k8s",6,"dk_compose_2","image","",duplicate-across-lessons
+"docker-k8s",10,"dk_k8s_intro_4","Namespace","",duplicate-across-lessons
+"docker-k8s",0,"dk_containers_3","Container Runtime","",duplicate-across-lessons
+"docker-k8s",10,"dk_k8s_intro_3","Container Runtime","",duplicate-across-lessons
+"docker-k8s",2,"dk_dockerfile_1","WORKDIR","",duplicate-across-lessons
+"docker-k8s",3,"dk_dockerfile_adv_3","WORKDIR","",duplicate-across-lessons
+"docker-k8s",3,"dk_dockerfile_adv_3","ENV","",duplicate-across-lessons
+"docker-k8s",3,"dk_dockerfile_adv_4","HEALTHCHECK","",duplicate-across-lessons
+"docker-k8s",7,"dk_compose_adv_1","Healthcheck","",duplicate-across-lessons
+"docker-k8s",3,"dk_dockerfile_adv_4","Health Status","",duplicate-across-lessons
+"docker-k8s",7,"dk_compose_adv_1","Health Status","",duplicate-across-lessons
+"docker-k8s",4,"dk_network_3","Network Alias","",duplicate-across-lessons
+"docker-k8s",6,"dk_compose_3","Network Alias","",duplicate-across-lessons
+"docker-k8s",14,"dk_config_1","Hot Reload","",duplicate-across-lessons
+"docker-k8s",6,"dk_compose_1","Service","",duplicate-across-lessons
+"docker-k8s",7,"dk_compose_adv_4","Rollback","",duplicate-across-lessons
+"docker-k8s",12,"dk_workloads_1","Rollback","",duplicate-across-lessons
+"docker-k8s",8,"dk_registry_2","Image Promotion","",duplicate-across-lessons
+"docker-k8s",8,"dk_registry_4","Image Promotion","",duplicate-across-lessons
+"docker-k8s",10,"dk_k8s_intro_2","Reconcile Loop","",duplicate-across-lessons
+"docker-k8s",10,"dk_k8s_intro_2","High Availability","",duplicate-across-lessons
+"docker-k8s",10,"dk_k8s_intro_3","Pod","",duplicate-across-lessons
+"docker-k8s",11,"dk_pods_1","Pod","",duplicate-across-lessons
+"docker-k8s",12,"dk_workloads_1","maxUnavailable","",duplicate-across-lessons
+"docker-k8s",12,"dk_workloads_2","Headless Service","",duplicate-across-lessons
+"docker-k8s",18,"dk_k8s_sec_2","Service Account Token","",duplicate-across-lessons
+"docker-k8s",15,"dk_storage_4","Topology Aware","",duplicate-across-lessons
+"docker-k8s",16,"dk_k8s_net_4","topology Aware","",duplicate-across-lessons

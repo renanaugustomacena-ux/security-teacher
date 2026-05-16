@@ -1,0 +1,1376 @@
+{
+  "fixes": [
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_3",
+      "english": "GitHub Actions",
+      "set": {
+        "italian": "GitHub Actions",
+        "note": "Servizio CI/CD nativo di GitHub: i workflow vengono definiti in YAML dentro .github/workflows/."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "SonarQube",
+      "set": {
+        "italian": "SonarQube",
+        "note": "Piattaforma di analisi statica della qualita' del codice; supporta molti linguaggi e integra regole di sicurezza."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Semgrep",
+      "set": {
+        "italian": "Semgrep",
+        "note": "SAST open source basato su regole semantiche scritte in YAML; veloce e personalizzabile."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "CodeQL",
+      "set": {
+        "italian": "CodeQL",
+        "note": "Motore di analisi statica semantica di GitHub: tratta il codice come dati interrogabili con query QL."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Bandit",
+      "set": {
+        "italian": "Bandit",
+        "note": "SAST specifico per codice Python, mantenuto dal progetto PyCQA."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "gosec",
+      "set": {
+        "italian": "gosec",
+        "note": "SAST specifico per codice Go: cerca pattern non sicuri tipici del linguaggio."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Brakeman",
+      "set": {
+        "italian": "Brakeman",
+        "note": "SAST dedicato alle applicazioni Ruby on Rails."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Checkmarx",
+      "set": {
+        "italian": "Checkmarx",
+        "note": "Piattaforma SAST commerciale enterprise con supporto a oltre 30 linguaggi."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Fortify",
+      "set": {
+        "italian": "Fortify",
+        "note": "Suite SAST commerciale di OpenText (ex Micro Focus, ex HP)."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "dso_sast_2",
+      "english": "Veracode",
+      "set": {
+        "italian": "Veracode",
+        "note": "Piattaforma SAST/DAST commerciale erogata in modalita' SaaS."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_2",
+      "english": "Snyk",
+      "set": {
+        "italian": "Snyk",
+        "note": "Piattaforma commerciale per sicurezza di dipendenze, container, IaC e codice."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_2",
+      "english": "Dependabot",
+      "set": {
+        "italian": "Dependabot",
+        "note": "Servizio GitHub che apre automaticamente pull request per aggiornare dipendenze vulnerabili."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_2",
+      "english": "Renovate",
+      "set": {
+        "italian": "Renovate",
+        "note": "Bot open source di aggiornamento dipendenze, altamente configurabile via renovate.json."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_3",
+      "english": "Syft",
+      "set": {
+        "italian": "Syft",
+        "note": "CLI di Anchore per generare SBOM in formati SPDX o CycloneDX da immagini e filesystem."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dso_sca_3",
+      "english": "Grype",
+      "set": {
+        "italian": "Grype",
+        "note": "Scanner di vulnerabilita' di Anchore: legge SBOM o immagini e confronta con i database CVE."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "HashiCorp Vault",
+      "set": {
+        "italian": "HashiCorp Vault",
+        "note": "Gestore enterprise di segreti, chiavi e credenziali dinamiche con motore di policy ACL."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "AWS Secrets Manager",
+      "set": {
+        "italian": "AWS Secrets Manager",
+        "note": "Servizio AWS per archiviare e ruotare automaticamente segreti e credenziali di database."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "AWS Parameter Store",
+      "set": {
+        "italian": "AWS Parameter Store",
+        "note": "Servizio AWS Systems Manager per parametri di configurazione e segreti, piu' economico di Secrets Manager."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "Azure Key Vault",
+      "set": {
+        "italian": "Azure Key Vault",
+        "note": "Servizio Azure per chiavi crittografiche, segreti e certificati, con backend HSM opzionale."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "GCP Secret Manager",
+      "set": {
+        "italian": "GCP Secret Manager",
+        "note": "Servizio Google Cloud per archiviare segreti versionati con controllo IAM granulare."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_2",
+      "english": "Doppler",
+      "set": {
+        "italian": "Doppler",
+        "note": "Piattaforma SaaS per centralizzare e sincronizzare segreti tra ambienti e team."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_3",
+      "english": "Gitleaks",
+      "set": {
+        "italian": "Gitleaks",
+        "note": "Scanner open source per intercettare segreti e chiavi commessi nella storia git."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_3",
+      "english": "TruffleHog",
+      "set": {
+        "italian": "TruffleHog",
+        "note": "Scanner di segreti per repository git, capace di verificare se le chiavi trovate sono ancora attive."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "dso_secrets_3",
+      "english": "detect-secrets",
+      "set": {
+        "italian": "detect-secrets",
+        "note": "Strumento Yelp con baseline auditabile per evitare commit di nuovi segreti tramite pre-commit hook."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "OWASP ZAP",
+      "set": {
+        "italian": "OWASP ZAP",
+        "note": "Zed Attack Proxy: DAST open source di OWASP per intercettare e attaccare traffico HTTP."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Burp Suite",
+      "set": {
+        "italian": "Burp Suite",
+        "note": "Proxy di test per sicurezza web di PortSwigger, lo standard de facto del web pentesting."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Nuclei",
+      "set": {
+        "italian": "Nuclei",
+        "note": "Scanner di ProjectDiscovery basato su template YAML, ottimo per detection veloce di CVE note."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Nikto",
+      "set": {
+        "italian": "Nikto",
+        "note": "Scanner web storico in Perl: riconosce vecchie versioni di server e configurazioni a rischio."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Acunetix",
+      "set": {
+        "italian": "Acunetix",
+        "note": "DAST commerciale di Invicti con focus su scansioni web automatizzate."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Netsparker",
+      "set": {
+        "italian": "Netsparker",
+        "note": "DAST commerciale ribrandizzato Invicti, noto per le scansioni a basso falso positivo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Wapiti",
+      "set": {
+        "italian": "Wapiti",
+        "note": "DAST open source in Python che esegue fuzzing dei parametri HTTP."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Arachni",
+      "set": {
+        "italian": "Arachni",
+        "note": "DAST modulare in Ruby, oggi non piu' mantenuto attivamente."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_2",
+      "english": "Stackhawk",
+      "set": {
+        "italian": "Stackhawk",
+        "note": "DAST commerciale pensato per essere lanciato dentro la CI da sviluppatori e team DevOps."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_3",
+      "english": "AFL++",
+      "set": {
+        "italian": "AFL++",
+        "note": "Fork attivo di American Fuzzy Lop con strumentazione evolutiva avanzata per fuzzing di binari."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_3",
+      "english": "libFuzzer",
+      "set": {
+        "italian": "libFuzzer",
+        "note": "Fuzzer in-process del progetto LLVM, integrato con sanitizer come ASan e UBSan."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_3",
+      "english": "go-fuzz",
+      "set": {
+        "italian": "go-fuzz",
+        "note": "Fuzzer storico per Go di Dmitry Vyukov; oggi sostituito dal fuzzing nativo del compilatore."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "dso_dast_3",
+      "english": "OSS-Fuzz",
+      "set": {
+        "italian": "OSS-Fuzz",
+        "note": "Servizio Google che esegue fuzzing continuo gratuito sui principali progetti open source."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Trivy",
+      "set": {
+        "italian": "Trivy",
+        "note": "Scanner di vulnerabilita' open source di Aqua: copre immagini, filesystem, IaC, segreti e SBOM."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Clair",
+      "set": {
+        "italian": "Clair",
+        "note": "Scanner di immagini di CoreOS/Red Hat, integrato storicamente nel registry Quay."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Anchore",
+      "set": {
+        "italian": "Anchore",
+        "note": "Piattaforma commerciale di sicurezza container basata sui suoi progetti open source Syft e Grype."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_3",
+      "english": "Cosign",
+      "set": {
+        "italian": "Cosign",
+        "note": "Strumento Sigstore per firmare e verificare immagini container e altri artefatti OCI."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_3",
+      "english": "Falco",
+      "set": {
+        "italian": "Falco",
+        "note": "Rilevatore di eventi runtime cloud-native (CNCF) basato su regole su syscall ed eventi K8s."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_4",
+      "english": "Hadolint",
+      "set": {
+        "italian": "Hadolint",
+        "note": "Linter per Dockerfile: segnala anti-pattern di build e di sicurezza."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_4",
+      "english": "Dockle",
+      "set": {
+        "italian": "Dockle",
+        "note": "Linter di sicurezza per immagini container che valida le best practice CIS Docker Benchmark."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_4",
+      "english": "kube-bench",
+      "set": {
+        "italian": "kube-bench",
+        "note": "Strumento Aqua che verifica la conformita' di un cluster Kubernetes al CIS Benchmark."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_1",
+      "english": "Terraform",
+      "set": {
+        "italian": "Terraform",
+        "note": "IaC di HashiCorp basato sul DSL HCL: descrive risorse cloud in modo dichiarativo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_1",
+      "english": "CloudFormation",
+      "set": {
+        "italian": "CloudFormation",
+        "note": "Servizio IaC nativo di AWS basato su template YAML o JSON."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_1",
+      "english": "Pulumi",
+      "set": {
+        "italian": "Pulumi",
+        "note": "IaC che permette di descrivere l'infrastruttura in linguaggi general-purpose come TypeScript, Python o Go."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_1",
+      "english": "Bicep",
+      "set": {
+        "italian": "Bicep",
+        "note": "DSL IaC di Microsoft pensato come evoluzione piu' leggibile dei template ARM di Azure."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "Checkov",
+      "set": {
+        "italian": "Checkov",
+        "note": "Scanner di sicurezza IaC di Bridgecrew/Prisma per Terraform, CloudFormation, Kubernetes e altri."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "tfsec",
+      "set": {
+        "italian": "tfsec",
+        "note": "Scanner di sicurezza specifico per Terraform, oggi confluito nel progetto Trivy di Aqua."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "Terrascan",
+      "set": {
+        "italian": "Terrascan",
+        "note": "Scanner IaC di Tenable basato su policy Rego, supporta piu' tipologie di IaC."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "KICS",
+      "set": {
+        "italian": "KICS",
+        "note": "Keeping Infrastructure as Code Secure: scanner IaC open source mantenuto da Checkmarx."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_2",
+      "english": "cfn-nag",
+      "set": {
+        "italian": "cfn-nag",
+        "note": "Linter di sicurezza specifico per template CloudFormation, sviluppato da Stelligent."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_4",
+      "english": "Atlantis",
+      "set": {
+        "italian": "Atlantis",
+        "note": "Strumento open source che automatizza terraform plan/apply tramite commenti sulle pull request."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_4",
+      "english": "Terraform Cloud",
+      "set": {
+        "italian": "Terraform Cloud",
+        "note": "Servizio gestito di HashiCorp per esecuzione remota di Terraform con state, RBAC e policy Sentinel."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_3",
+      "english": "Kyverno",
+      "set": {
+        "italian": "Kyverno",
+        "note": "Policy engine nativo Kubernetes: le policy si scrivono in YAML invece che in Rego."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_4",
+      "english": "Kubeconform",
+      "set": {
+        "italian": "Kubeconform",
+        "note": "Validatore offline veloce di manifest Kubernetes contro gli OpenAPI schema ufficiali."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_2",
+      "english": "InSpec",
+      "set": {
+        "italian": "InSpec",
+        "note": "Framework di compliance di Chef per scrivere controlli eseguibili in un DSL Ruby."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_2",
+      "english": "OpenSCAP",
+      "set": {
+        "italian": "OpenSCAP",
+        "note": "Toolkit open source che automatizza audit di sicurezza basati sullo standard SCAP del NIST."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_2",
+      "english": "Cloud Custodian",
+      "set": {
+        "italian": "Cloud Custodian",
+        "note": "Motore di governance cloud open source: descrive policy in YAML per AWS, Azure e GCP."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_2",
+      "english": "Drata",
+      "set": {
+        "italian": "Drata",
+        "note": "Piattaforma SaaS che automatizza la raccolta di evidenze per SOC 2, ISO 27001 e altri framework."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_2",
+      "english": "Vanta",
+      "set": {
+        "italian": "Vanta",
+        "note": "Concorrente diretto di Drata per l'automazione di audit di compliance e raccolta evidenze."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "Prisma Cloud",
+      "set": {
+        "italian": "Prisma Cloud",
+        "note": "CNAPP commerciale di Palo Alto Networks, nato dall'acquisizione di RedLock e Twistlock."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "Wiz",
+      "set": {
+        "italian": "Wiz",
+        "note": "CNAPP cloud-native agentless con graph engine per correlare configurazioni, identita' e workload."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "Lacework",
+      "set": {
+        "italian": "Lacework",
+        "note": "CNAPP commerciale con focus su anomaly detection basato su behavioral baseline."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "Orca Security",
+      "set": {
+        "italian": "Orca Security",
+        "note": "CNAPP agentless che usa snapshot dei volumi per scansionare workload senza installare agenti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "AWS Security Hub",
+      "set": {
+        "italian": "AWS Security Hub",
+        "note": "Servizio AWS che centralizza alert e finding di sicurezza da GuardDuty, Inspector, Macie e tool terzi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "GCP Security Command Center",
+      "set": {
+        "italian": "GCP Security Command Center",
+        "note": "Centro di comando sicurezza di Google Cloud: aggrega vulnerabilita', misconfig e threat detection."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "Microsoft Defender for Cloud",
+      "set": {
+        "italian": "Microsoft Defender for Cloud",
+        "note": "CNAPP di Microsoft per Azure, AWS e GCP, con CSPM e workload protection integrati."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "Steampipe",
+      "set": {
+        "italian": "Steampipe",
+        "note": "Strumento di Turbot che espone API cloud come tabelle SQL interrogabili via Postgres."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "Prowler",
+      "set": {
+        "italian": "Prowler",
+        "note": "Tool open source di audit per AWS, Azure, GCP e Kubernetes, copre CIS, PCI-DSS, HIPAA e altri."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_2",
+      "english": "ScoutSuite",
+      "set": {
+        "italian": "ScoutSuite",
+        "note": "Strumento open source di NCC Group per audit multi-cloud delle configurazioni di sicurezza."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dso_cloud_security_4",
+      "english": "Customer-Managed Key",
+      "set": {
+        "note": "Sigla comune: CMK. A differenza delle chiavi gestite dal provider, il cliente controlla rotazione, revoca e policy d'uso."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dso_threat_modeling_4",
+      "english": "IriusRisk",
+      "set": {
+        "italian": "IriusRisk",
+        "note": "Piattaforma commerciale di threat modeling automatizzato con libreria di pattern e contromisure."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dso_threat_modeling_4",
+      "english": "Data Flow Diagram",
+      "set": {
+        "note": "Sigla comune: DFD. Mostra processi, archivi dati e flussi attraverso i trust boundary; base degli esercizi STRIDE."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_2",
+      "english": "Splunk SOAR",
+      "set": {
+        "italian": "Splunk SOAR",
+        "note": "Piattaforma SOAR di Splunk, ex Phantom Cyber: orchestrazione e risposta automatica agli incidenti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_2",
+      "english": "Cortex XSOAR",
+      "set": {
+        "italian": "Cortex XSOAR",
+        "note": "Piattaforma SOAR di Palo Alto Networks, ex Demisto, con marketplace di playbook e integrazioni."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_2",
+      "english": "Tines",
+      "set": {
+        "italian": "Tines",
+        "note": "Piattaforma SOAR no-code basata su storyboard visuali per costruire workflow di risposta."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_2",
+      "english": "Tracecat",
+      "set": {
+        "italian": "Tracecat",
+        "note": "SOAR open source moderno, pensato come alternativa self-hostable alle soluzioni commerciali."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_2",
+      "english": "Shuffle",
+      "set": {
+        "italian": "Shuffle",
+        "note": "SOAR open source con migliaia di app integrate; orientato a security automation generica."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_2",
+      "english": "TheHive",
+      "set": {
+        "italian": "TheHive",
+        "note": "Piattaforma open source di case management per team SOC, integrata con Cortex per arricchimento IOC."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_2",
+      "english": "n8n",
+      "set": {
+        "italian": "n8n",
+        "note": "Tool open source di automazione workflow generica, usato anche come SOAR low-cost."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_3",
+      "english": "Server-Side Request Forgery",
+      "set": {
+        "italian": "Server-Side Request Forgery",
+        "note": "Sigla comune: SSRF. Vulnerabilita' che permette al server di emettere richieste verso destinazioni controllate dall'attaccante."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_4",
+      "english": "Salt Security",
+      "set": {
+        "italian": "Salt Security",
+        "note": "Piattaforma commerciale di API security basata su discovery automatica e behavioral analytics."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_4",
+      "english": "Noname Security",
+      "set": {
+        "italian": "Noname Security",
+        "note": "Piattaforma di API security acquisita da Akamai, copre discovery, posture e runtime protection."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_4",
+      "english": "Postman",
+      "set": {
+        "italian": "Postman",
+        "note": "Client API molto diffuso; in ambito security usato per fuzzing manuale e collection di test."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_4",
+      "english": "Schemathesis",
+      "set": {
+        "italian": "Schemathesis",
+        "note": "Fuzzer property-based che genera test partendo da schemi OpenAPI o GraphQL."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_1",
+      "english": "Contrast Security",
+      "set": {
+        "italian": "Contrast Security",
+        "note": "Piattaforma commerciale con agenti RASP e IAST che istrumentano le applicazioni in produzione."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_2",
+      "english": "AppArmor",
+      "set": {
+        "italian": "AppArmor",
+        "note": "Linux Security Module a profili che limita capacita', percorsi e syscall per ogni processo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_2",
+      "english": "Cilium",
+      "set": {
+        "italian": "Cilium",
+        "note": "CNI Kubernetes basato su eBPF: fornisce networking, NetworkPolicy avanzate e observability L7."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_3",
+      "english": "CrowdStrike",
+      "set": {
+        "italian": "CrowdStrike",
+        "note": "Piattaforma EDR commerciale (Falcon) leader di mercato, con telemetry cloud-native."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_3",
+      "english": "SentinelOne",
+      "set": {
+        "italian": "SentinelOne",
+        "note": "EDR/XDR commerciale con motori AI-based per detection e response automatici."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_3",
+      "english": "Microsoft Defender",
+      "set": {
+        "italian": "Microsoft Defender",
+        "note": "Suite EDR di Microsoft, integrata in Windows e disponibile per Linux, macOS e mobile."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_3",
+      "english": "Osquery",
+      "set": {
+        "italian": "Osquery",
+        "note": "Strumento di Facebook/Meta che espone lo stato di un endpoint come tabelle SQL interrogabili."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_3",
+      "english": "Wazuh",
+      "set": {
+        "italian": "Wazuh",
+        "note": "Piattaforma open source SIEM/XDR/EDR, fork storico di OSSEC con stack Elastic integrato."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_4",
+      "english": "Istio",
+      "set": {
+        "italian": "Istio",
+        "note": "Service mesh open source basato su sidecar Envoy: gestisce traffico, mTLS e policy L7."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_4",
+      "english": "Linkerd",
+      "set": {
+        "italian": "Linkerd",
+        "note": "Service mesh CNCF ultra-leggero, scritto in Rust, focalizzato su semplicita' e performance."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_4",
+      "english": "Consul Connect",
+      "set": {
+        "italian": "Consul Connect",
+        "note": "Service mesh di HashiCorp basato su Consul, supporta mTLS e service discovery cross-cluster."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_1",
+      "english": "Argo CD",
+      "set": {
+        "italian": "Argo CD",
+        "note": "Motore GitOps CNCF per Kubernetes: sincronizza manifest da repo Git verso uno o piu' cluster."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_1",
+      "english": "Flux",
+      "set": {
+        "italian": "Flux",
+        "note": "Motore GitOps CNCF concorrente di Argo CD, basato su controller modulari e Kustomize/Helm."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_4",
+      "english": "Mergify",
+      "set": {
+        "italian": "Mergify",
+        "note": "Servizio SaaS per automatizzare merge, rebase e backport delle pull request via regole YAML."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_1",
+      "english": "Splunk",
+      "set": {
+        "italian": "Splunk",
+        "note": "Piattaforma storica di indicizzazione log e SIEM, basata sul linguaggio di query SPL."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_2",
+      "english": "Mean Time To Detect",
+      "set": {
+        "note": "Sigla comune: MTTD. Misura quanto tempo passa tra l'inizio di un incidente e la sua effettiva rilevazione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_3",
+      "english": "Loki",
+      "set": {
+        "italian": "Loki",
+        "note": "Sistema di log di Grafana Labs ispirato a Prometheus: indicizza solo metadati, non il contenuto."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_3",
+      "english": "Fluentd",
+      "set": {
+        "italian": "Fluentd",
+        "note": "Collector di log CNCF unificato, con piu' di mille plugin per input, parser e output."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_2",
+      "english": "Calico",
+      "set": {
+        "italian": "Calico",
+        "note": "CNI Kubernetes con supporto avanzato a NetworkPolicy L3/L4 e policy globali."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_4",
+      "english": "kubescape",
+      "set": {
+        "italian": "kubescape",
+        "note": "Scanner di sicurezza Kubernetes open source di ARMO, copre framework NSA-CISA, MITRE ATT&CK e altri."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dso_culture_maturity_4",
+      "english": "Internal Developer Platform",
+      "set": {
+        "note": "Sigla comune: IDP. Astrae l'infrastruttura dietro un'interfaccia self-service per gli sviluppatori."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dso_compliance_reg_1",
+      "english": "SOC 2",
+      "set": {
+        "italian": "SOC 2",
+        "note": "Standard AICPA per audit di servizi cloud su Trust Service Criteria (sicurezza, disponibilita', riservatezza, ecc.)."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dso_compliance_reg_2",
+      "english": "ISO 27001",
+      "set": {
+        "italian": "ISO 27001",
+        "note": "Standard internazionale per la gestione di un Information Security Management System (ISMS)."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dso_compliance_reg_4",
+      "english": "GDPR",
+      "set": {
+        "italian": "GDPR",
+        "note": "Regolamento UE 2016/679 sulla protezione dei dati personali; in italiano spesso citato come RGPD."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dso_culture_training_2",
+      "english": "Hack the Box",
+      "set": {
+        "italian": "Hack The Box",
+        "note": "Piattaforma CTF online molto popolare per esercitarsi su macchine vulnerabili e laboratori."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dso_culture_training_2",
+      "english": "TryHackMe",
+      "set": {
+        "italian": "TryHackMe",
+        "note": "Piattaforma CTF didattica con percorsi guidati pensati anche per principianti."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dso_culture_training_2",
+      "english": "Secure Code Warrior",
+      "set": {
+        "italian": "Secure Code Warrior",
+        "note": "Piattaforma commerciale di training su secure coding con sfide a tempo per sviluppatori."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dso_culture_training_3",
+      "english": "Community of Practice",
+      "set": {
+        "note": "Sigla comune: CoP. Gruppo trasversale di praticanti che condividono know-how su un dominio specifico."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dso_culture_career_2",
+      "english": "CISSP",
+      "set": {
+        "italian": "CISSP",
+        "note": "Certified Information Systems Security Professional: certificazione senior di sicurezza erogata da (ISC)2."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dso_culture_career_2",
+      "english": "CCSP",
+      "set": {
+        "italian": "CCSP",
+        "note": "Certified Cloud Security Professional: certificazione (ISC)2 dedicata alla sicurezza cloud."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dso_culture_career_2",
+      "english": "OSCP",
+      "set": {
+        "italian": "OSCP",
+        "note": "Offensive Security Certified Professional: certificazione di pentest molto pratica e hands-on."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dso_culture_career_2",
+      "english": "AWS Security Specialty",
+      "set": {
+        "italian": "AWS Security Specialty",
+        "note": "Certificazione AWS specialistica focalizzata sui servizi di sicurezza della piattaforma."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dso_iac_security_1",
+      "english": "Plan",
+      "set": {
+        "english": "Terraform Plan",
+        "italian": "Piano Terraform",
+        "example": "Reviewing the Terraform plan in a pull request comment lets the security team catch misconfigurations before apply. = Revisionare il piano Terraform in un commento della pull request permette al team di sicurezza di intercettare misconfigurazioni prima dell'apply.",
+        "note": "Output di terraform plan: descrive le modifiche che apply applichera' effettivamente."
+      }
+    },
+    {
+      "level": "1",
+      "lesson": "dso_ci_cd_1",
+      "english": "Build",
+      "set": {
+        "english": "Build Stage",
+        "italian": "Fase di build",
+        "example": "The build stage compiles the source, runs unit tests, and produces an immutable artifact ready for downstream pipeline steps. = La fase di build compila i sorgenti, esegue gli unit test e produce un artefatto immutabile pronto per le fasi successive della pipeline.",
+        "note": "Una delle stage classiche di una pipeline CI; segue checkout e precede test e deploy."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dso_culture_career_1",
+      "english": "DevSecOps Engineer",
+      "set": {
+        "english": "Senior DevSecOps Engineer",
+        "italian": "DevSecOps Engineer senior",
+        "example": "A senior DevSecOps engineer mentors the team, owns the security tooling roadmap and leads cross-team initiatives. = Un DevSecOps engineer senior fa mentoring al team, possiede la roadmap del tooling di sicurezza e guida iniziative cross-team.",
+        "note": "Profilo di carriera avanzato rispetto al DevSecOps Engineer entry-level del Livello 0."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dso_culture_career_1",
+      "english": "AppSec Engineer",
+      "set": {
+        "english": "Senior AppSec Engineer",
+        "italian": "AppSec Engineer senior",
+        "example": "A senior AppSec engineer designs the secure SDLC, runs threat modeling reviews and coaches product teams on OWASP risks. = Un AppSec engineer senior progetta il secure SDLC, conduce review di threat modeling e fa coaching ai team di prodotto sui rischi OWASP.",
+        "note": "Application Security; ruolo senior rispetto al profilo entry-level del Livello 0."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "dso_automation_1",
+      "english": "Trigger",
+      "set": {
+        "english": "Automation Trigger",
+        "italian": "Innesco di automazione",
+        "example": "An automation trigger fires the SOAR playbook whenever a high-severity alert from the SIEM matches the configured conditions. = Un innesco di automazione fa partire il playbook SOAR quando un alert ad alta severita' dal SIEM corrisponde alle condizioni configurate.",
+        "note": "In ambito SOAR, di solito un evento o un alert che avvia un workflow di risposta."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_3",
+      "english": "Audit Log",
+      "set": {
+        "english": "Centralized Audit Log",
+        "italian": "Registro di audit centralizzato",
+        "example": "Shipping every component's audit log to a centralized store lets analysts correlate suspicious activity across the entire platform. = Inviare il registro di audit di ogni componente in un archivio centralizzato permette agli analisti di correlare attivita' sospette su tutta la piattaforma.",
+        "note": "A differenza dell'audit log della singola pipeline, qui i log arrivano da molte fonti diverse."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dso_automation_incident_1",
+      "english": "Severity",
+      "set": {
+        "english": "Incident Severity",
+        "italian": "Severita' dell'incidente",
+        "example": "Assigning an incident severity at intake drives the response playbook, escalation path, and required communication cadence. = Assegnare una severita' all'incidente in fase di intake guida il playbook di risposta, il percorso di escalation e la cadenza di comunicazione richiesta.",
+        "note": "Classifica un incidente attivo (es. SEV-1, SEV-2), non un singolo finding statico."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_3",
+      "english": "Code Owner",
+      "set": {
+        "english": "Repository Code Owner",
+        "italian": "Code owner del repository",
+        "example": "Defining repository code owners in CODEOWNERS makes sure security-critical paths always require review from the designated team. = Definire i code owner del repository nel file CODEOWNERS fa si' che i percorsi critici per la sicurezza richiedano sempre la review dal team designato.",
+        "note": "GitHub e GitLab impongono automaticamente il review degli owner sui path indicati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Vulnerability Database",
+      "set": {
+        "english": "Container Vulnerability Database",
+        "italian": "Database di vulnerabilita' container",
+        "example": "Scanners enrich findings by joining the package list of an image with a container vulnerability database such as Trivy DB or Anchore Feeds. = Gli scanner arricchiscono i finding incrociando la lista dei pacchetti di un'immagine con un database di vulnerabilita' container come Trivy DB o Anchore Feeds.",
+        "note": "Tipicamente derivato da NVD/OSV e ottimizzato per immagini OCI."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dso_container_security_1",
+      "english": "Grype",
+      "set": {
+        "english": "Grype image scan",
+        "italian": "Scansione immagine con Grype",
+        "example": "A Grype image scan against the freshly built container catches base-image CVEs before the image is pushed to the registry. = Una scansione immagine con Grype sul container appena costruito intercetta CVE della base image prima del push nel registry.",
+        "note": "Grype puo' leggere direttamente un'immagine o un SBOM Syft generato in precedenza."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dso_automation_incident_2",
+      "english": "Triage",
+      "set": {
+        "english": "Incident Triage",
+        "italian": "Triage degli incidenti",
+        "example": "Incident triage during the response phase decides which alerts deserve a full investigation and which can be closed as benign. = Il triage degli incidenti durante la fase di risposta decide quali alert meritano un'indagine completa e quali possono essere chiusi come benigni.",
+        "note": "Diverso dal triage delle CVE in SCA: qui si lavora su incidenti attivi, non su finding statici."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_2",
+      "english": "Access Token",
+      "set": {
+        "english": "OAuth Access Token",
+        "italian": "Access token OAuth",
+        "example": "An OAuth access token carries the granted scopes and is presented as a bearer credential on each protected API request. = Un access token OAuth porta con se' gli scope concessi ed e' presentato come credenziale bearer in ogni richiesta API protetta.",
+        "note": "Tipicamente JWT firmato o opaque token validato dal resource server."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dso_tools_api_2",
+      "english": "Scope",
+      "set": {
+        "english": "OAuth Scope",
+        "italian": "Scope OAuth",
+        "example": "Requesting only the OAuth scopes the client actually needs limits the blast radius if the access token is later compromised. = Richiedere solo gli scope OAuth di cui il client ha effettivamente bisogno limita il blast radius se l'access token viene poi compromesso.",
+        "note": "Diverso dallo scope di un pentest engagement: qui descrive permessi concessi a un'app OAuth."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "dso_supply_chain_3",
+      "english": "Cosign",
+      "set": {
+        "english": "Cosign keyless signing",
+        "italian": "Firma keyless con Cosign",
+        "example": "Cosign keyless signing uses an OIDC identity and Fulcio to issue short-lived certificates instead of long-lived keys. = La firma keyless con Cosign usa un'identita' OIDC e Fulcio per emettere certificati a breve durata invece di chiavi a lunga durata.",
+        "note": "Cosign appartiene a Sigstore; in modalita' keyless integra Fulcio e Rekor."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dso_policy_3",
+      "english": "Admission Controller",
+      "set": {
+        "english": "Policy Admission Controller",
+        "italian": "Admission controller di policy",
+        "example": "A policy admission controller wraps the Kubernetes API server and evaluates each incoming object against Rego or YAML policies before persistence. = Un admission controller di policy avvolge l'API server Kubernetes e valuta ogni oggetto in ingresso contro policy Rego o YAML prima della persistenza.",
+        "note": "Esempi classici: OPA Gatekeeper e Kyverno. Si distingue dal generico admission controller built-in di K8s."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "dso_tools_runtime_2",
+      "english": "Falco",
+      "set": {
+        "english": "Falco runtime detection",
+        "italian": "Rilevamento runtime con Falco",
+        "example": "Falco runtime detection streams kernel syscalls and Kubernetes audit events, then matches them against YAML rules to alert in real time. = Il rilevamento runtime con Falco intercetta syscall del kernel ed eventi di audit Kubernetes, poi li confronta con regole YAML per generare alert in tempo reale.",
+        "note": "Progetto CNCF graduated, originariamente sviluppato da Sysdig."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "dso_tools_monitoring_1",
+      "english": "Sentinel",
+      "set": {
+        "english": "Microsoft Sentinel",
+        "italian": "Microsoft Sentinel",
+        "example": "Microsoft Sentinel ingests logs from Azure and third-party connectors to deliver cloud-native SIEM and SOAR capabilities. = Microsoft Sentinel ingerisce log da Azure e connettori di terze parti per offrire funzionalita' SIEM e SOAR cloud-native.",
+        "note": "Da non confondere con HashiCorp Sentinel (Livello 7), che e' un motore di policy IaC."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_4",
+      "english": "Policy Library",
+      "set": {
+        "english": "Compliance Policy Library",
+        "italian": "Libreria di policy di compliance",
+        "example": "A compliance policy library maps each control of frameworks like SOC 2 or ISO 27001 to executable Rego or YAML checks. = Una libreria di policy di compliance mappa ogni controllo di framework come SOC 2 o ISO 27001 a check Rego o YAML eseguibili.",
+        "note": "Diversa dalla generica policy library di admission control: qui le policy sono organizzate per controllo di compliance."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_3",
+      "english": "OPA Gatekeeper",
+      "set": {
+        "english": "Gatekeeper Constraints",
+        "italian": "Constraint Gatekeeper",
+        "example": "Gatekeeper constraints reuse the cluster-wide constraint templates to enforce policy on specific namespaces, kinds and label selectors. = I constraint Gatekeeper riutilizzano i constraint template del cluster per imporre policy su namespace, kind e label selector specifici.",
+        "note": "Concentra l'attenzione sui constraint operativi, non sull'installazione dell'engine OPA Gatekeeper (Livello 8)."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_3",
+      "english": "Constraint Template",
+      "set": {
+        "english": "Cluster Constraint Template",
+        "italian": "Template di vincolo del cluster",
+        "example": "A cluster constraint template defines a parameterized Rego rule that platform teams reuse across many tenant namespaces. = Un template di vincolo del cluster definisce una regola Rego parametrizzata che i team di piattaforma riutilizzano su molti namespace tenant.",
+        "note": "Stessa primitiva del Livello 8, qui presentata dal punto di vista dell'operatore di cluster K8s."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_3",
+      "english": "Pod Security Standard",
+      "set": {
+        "english": "Restricted Pod Security Standard",
+        "italian": "Pod Security Standard restricted",
+        "example": "Enforcing the Restricted Pod Security Standard on production namespaces blocks privileged pods, host mounts and most capabilities by default. = Imporre il Pod Security Standard restricted sui namespace di produzione blocca di default i pod privileged, i mount dell'host e la maggior parte delle capability.",
+        "note": "Profilo piu' rigido dei tre livelli PSS (privileged, baseline, restricted)."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dso_compliance_as_code_1",
+      "english": "Attestation",
+      "set": {
+        "english": "Compliance Attestation",
+        "italian": "Attestazione di compliance",
+        "example": "A compliance attestation bundles signed evidence about a control so an auditor can verify it without re-collecting the underlying logs. = Un'attestazione di compliance impacchetta evidenze firmate su un controllo cosi' l'auditor puo' verificarla senza ricollezionare i log sottostanti.",
+        "note": "Diversa dall'attestazione supply-chain (Livello 9): qui descrive uno stato di controllo, non un artefatto di build."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dso_threat_modeling_1",
+      "english": "Trust Boundary",
+      "set": {
+        "english": "Threat Model Trust Boundary",
+        "italian": "Confine di fiducia del threat model",
+        "example": "Each threat model trust boundary marks where data crosses between zones with different privileges, prompting STRIDE analysis on the flow. = Ogni confine di fiducia del threat model segna dove i dati attraversano zone con privilegi diversi, innescando un'analisi STRIDE sul flusso.",
+        "note": "Nei DFD il trust boundary e' la linea tratteggiata fra processi/archivi a fiducia diversa."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dso_ci_cd_gitops_2",
+      "english": "Signed Commit",
+      "set": {
+        "english": "GPG-Signed Commit",
+        "italian": "Commit firmato con GPG",
+        "example": "Branch protection in GitOps repos can require every GPG-signed commit so that only verified maintainers can land manifests on main. = La branch protection nei repo GitOps puo' richiedere ogni commit firmato con GPG cosi' solo i maintainer verificati possono pubblicare manifest su main.",
+        "note": "Esistono anche varianti S/MIME e SSH; GPG resta lo standard storico su GitHub e GitLab."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dso_compliance_reg_1",
+      "english": "Auditor",
+      "set": {
+        "english": "External SOC 2 Auditor",
+        "italian": "Auditor SOC 2 esterno",
+        "example": "An external SOC 2 auditor samples evidence across the audit window and issues a Type 2 report attesting that controls operated effectively. = Un auditor SOC 2 esterno campiona le evidenze durante la finestra di audit ed emette un report Type 2 che attesta che i controlli hanno operato in modo efficace.",
+        "note": "Tipicamente uno studio CPA accreditato AICPA; diverso dal generico auditor interno (Livello 10)."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dso_compliance_reg_3",
+      "english": "Continuous Monitoring",
+      "set": {
+        "english": "FedRAMP Continuous Monitoring",
+        "italian": "Continuous monitoring FedRAMP",
+        "example": "FedRAMP continuous monitoring requires monthly POA&M updates and quarterly scans to keep the authorization to operate valid. = Il continuous monitoring FedRAMP richiede aggiornamenti POA&M mensili e scansioni trimestrali per mantenere valida l'autorizzazione a operare.",
+        "note": "Sigla comune: ConMon. Si distingue dal continuous monitoring di compliance generica del Livello 10."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "dso_container_security_k8s_1",
+      "english": "Role",
+      "set": {
+        "english": "Kubernetes Role",
+        "italian": "Role Kubernetes",
+        "example": "A Kubernetes Role grants verbs like get, list and watch on namespaced resources, while a ClusterRole spans the entire cluster. = Una Role Kubernetes concede verbi come get, list e watch su risorse di un namespace, mentre una ClusterRole copre l'intero cluster.",
+        "note": "Diverso dal generico Role IAM cloud del Livello 11: qui e' una risorsa K8s RBAC namespaced."
+      }
+    }
+  ]
+}

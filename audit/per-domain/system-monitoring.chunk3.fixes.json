@@ -1,0 +1,1479 @@
+{
+  "fixes": [
+    {
+      "level": "5",
+      "lesson": "mon_prometheus_3",
+      "english": "Label",
+      "set": {
+        "english": "Label Cardinality",
+        "italian": "Cardinalita' delle label",
+        "example": "Prometheus label cardinality explodes if you put user-id on a metric, costing gigabytes of memory and slowing every query. = La cardinalita' delle label Prometheus esplode se metti user-id su una metrica, costando gigabyte di memoria e rallentando ogni query.",
+        "note": "Rinominato per distinguerlo dall'item 'Label' del modulo tooling log."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_1",
+      "english": "Dashboard",
+      "set": {
+        "english": "Home Dashboard",
+        "italian": "Home dashboard",
+        "example": "Setting a team home dashboard makes every Grafana login land on the SLO summary instead of the empty welcome screen. = Impostare una home dashboard di team fa atterrare ogni login Grafana sul sommario SLO invece che sulla schermata di benvenuto vuota.",
+        "note": "Rinominato per distinguerlo dall'item 'Dashboard' del modulo osservabilita' base."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_1",
+      "english": "Time Range",
+      "set": {
+        "english": "Relative Time Range",
+        "italian": "Intervallo temporale relativo",
+        "example": "Setting a relative time range of 'last 6 hours' keeps the dashboard fresh as users come and go without picking absolute dates. = Impostare un intervallo temporale relativo di 'ultime 6 ore' tiene la dashboard fresca mentre gli utenti vanno e vengono senza scegliere date assolute.",
+        "note": "Rinominato per distinguerlo dall'item 'Time Range' del modulo osservabilita' base."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_2",
+      "english": "Gauge",
+      "set": {
+        "english": "Gauge Panel",
+        "italian": "Pannello gauge",
+        "example": "A gauge panel renders the current SLO attainment as a half-circle so the on-call sees the headroom at a glance. = Un pannello gauge renderizza l'attuale raggiungimento SLO come un semicerchio cosi il reperibile vede a colpo d'occhio il margine.",
+        "note": "Rinominato per distinguerlo dall'item 'Gauge' del modulo Prometheus."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_4",
+      "english": "Override",
+      "set": {
+        "english": "Field Override",
+        "italian": "Override di campo",
+        "example": "A field override changes the unit for a single series in the panel without affecting how every other series renders. = Un override di campo cambia l'unita' per una singola serie nel pannello senza influenzare come si renderizzano tutte le altre serie.",
+        "note": "Rinominato per distinguerlo dall'item 'Override' del modulo alerting."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "mon_grafana_4",
+      "english": "Threshold",
+      "set": {
+        "english": "Threshold Color",
+        "italian": "Colore di soglia",
+        "example": "Mapping threshold colors to red above 1 second p99 latency lets the dashboard reader spot a regression without reading any axis. = Mappare colori di soglia su rosso oltre 1 secondo di latenza p99 permette al lettore della dashboard di notare una regressione senza leggere alcun asse.",
+        "note": "Rinominato per distinguerlo dall'item 'Threshold' del modulo alerting."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "mon_dashboards_4",
+      "english": "Plugin",
+      "set": {
+        "english": "Datasource Plugin",
+        "italian": "Plugin di datasource",
+        "example": "Installing the Datadog datasource plugin lets a Grafana panel query Datadog metrics alongside Prometheus and Loki in one dashboard. = Installare il plugin di datasource Datadog permette a un pannello Grafana di interrogare metriche Datadog insieme a Prometheus e Loki in un'unica dashboard.",
+        "note": "Rinominato per distinguerlo dall'item 'Plugin' del modulo tooling log."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_1",
+      "english": "Tag",
+      "set": {
+        "english": "Span Tag",
+        "italian": "Tag di span",
+        "example": "Adding a user.id span tag lets you filter Jaeger traces to the exact session a customer reported, cutting investigation to seconds. = Aggiungere un tag di span user.id permette di filtrare le tracce Jaeger sulla sessione esatta segnalata dal cliente, riducendo l'investigazione a pochi secondi.",
+        "note": "Rinominato per distinguerlo dall'item 'Tag' del modulo Grafana."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_1",
+      "english": "Trace",
+      "set": {
+        "english": "Trace Context",
+        "italian": "Contesto di trace",
+        "example": "The trace context header propagates the trace id across HTTP, gRPC, and message queues so the trace stays intact end to end. = L'header di trace context propaga l'id di trace fra HTTP, gRPC e code di messaggi cosi la trace resta intatta da capo a fondo.",
+        "note": "Rinominato per distinguerlo dall'item 'Trace' del modulo osservabilita' base."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "mon_traces_3",
+      "english": "Service Discovery",
+      "set": {
+        "english": "Trace-Based Discovery",
+        "italian": "Discovery basata su trace",
+        "example": "Using trace-based discovery builds the service graph from real spans, covering async paths a Prometheus scrape never sees. = Usare una discovery basata su trace costruisce il grafo dei servizi da span reali, coprendo path asincroni che uno scrape Prometheus non vede mai.",
+        "note": "Rinominato per distinguerlo dall'item 'Service Discovery' del modulo Prometheus."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_1",
+      "english": "Throughput",
+      "set": {
+        "english": "Service Apdex",
+        "italian": "Apdex di servizio",
+        "example": "A service Apdex of 0.85 across the checkout API means 85% of requests are fast or tolerable to the user. = Un Apdex di servizio di 0.85 sull'API checkout significa che l'85% delle richieste e' veloce o tollerabile per l'utente.",
+        "note": "Rinominato per distinguerlo dall'item 'Throughput' dei moduli metriche."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "mon_apm_2",
+      "english": "Agent",
+      "set": {
+        "english": "APM Agent",
+        "italian": "Agent APM",
+        "example": "The Datadog APM agent auto-instruments Express, MySQL, and Redis calls in a Node service with one require('dd-trace').init() line. = L'agent APM di Datadog auto-strumenta chiamate a Express, MySQL e Redis in un servizio Node con una sola riga require('dd-trace').init().",
+        "note": "Rinominato per distinguerlo dall'item 'Agent' del modulo trace."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "Node Exporter",
+      "set": {
+        "english": "Node Exporter Textfile",
+        "italian": "Textfile di Node Exporter",
+        "example": "The textfile collector for Node Exporter reads /var/lib/node_exporter/*.prom so cron jobs publish custom metrics without their own HTTP server. = Il textfile collector per Node Exporter legge /var/lib/node_exporter/*.prom cosi i job cron pubblicano metriche custom senza un proprio server HTTP.",
+        "note": "Rinominato per distinguerlo dall'item 'Node Exporter' del modulo Prometheus."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "mon_infrastructure_1",
+      "english": "cAdvisor",
+      "set": {
+        "english": "cAdvisor Container Metric",
+        "italian": "Metrica container di cAdvisor",
+        "example": "A cAdvisor container metric like container_cpu_usage_seconds_total breaks down CPU by namespace, pod, and container in one place. = Una metrica container di cAdvisor come container_cpu_usage_seconds_total scompone la CPU per namespace, pod e container in un unico posto.",
+        "note": "Rinominato per distinguerlo dall'item 'cAdvisor' del modulo Prometheus."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "mon_cloud_4",
+      "english": "Custom Metric",
+      "set": {
+        "english": "EMF Metric",
+        "italian": "Metrica EMF",
+        "example": "An EMF metric in CloudWatch Embedded Metric Format lets the Lambda function log a JSON payload that becomes a CloudWatch metric. = Una metrica EMF nel formato Embedded Metric Format di CloudWatch permette alla funzione Lambda di loggare un payload JSON che diventa una metrica CloudWatch.",
+        "note": "Rinominato per distinguerlo dall'item 'Custom Metric' del modulo APM."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "Error Budget",
+      "set": {
+        "english": "Error Budget Burn",
+        "italian": "Consumo dell'error budget",
+        "example": "An error budget burn at 14.4x means the current hour spends the next day's budget, a clear signal to halt risky releases. = Un consumo dell'error budget a 14.4x significa che l'ora corrente spende il budget del giorno successivo, un segnale chiaro per fermare le release rischiose.",
+        "note": "Rinominato per distinguerlo dall'item 'Error Budget' del modulo osservabilita' base."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "SLI",
+      "set": {
+        "english": "SLI Query",
+        "italian": "Query dello SLI",
+        "example": "The SLI query divides successful requests by total requests so the result is a 0-to-1 ratio that the SLO target can compare against. = La query dello SLI divide le richieste riuscite per le richieste totali cosi il risultato e' un rapporto 0-1 confrontabile con il target dello SLO.",
+        "note": "Rinominato per distinguerlo dall'item 'SLI' del modulo osservabilita' base."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "mon_sre_1",
+      "english": "SLO",
+      "set": {
+        "english": "SLO Window",
+        "italian": "Finestra dello SLO",
+        "example": "Most teams compute the SLO over a rolling 28-day window so a single bad day does not dominate the budget for a full quarter. = La maggior parte dei team calcola lo SLO su una finestra mobile di 28 giorni cosi un singolo brutto giorno non domina il budget per un trimestre intero.",
+        "note": "Rinominato per distinguerlo dall'item 'SLO' del modulo osservabilita' base."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_1",
+      "english": "Resolution",
+      "set": {
+        "english": "Resolution Notice",
+        "italian": "Comunicazione di risoluzione",
+        "example": "Post a clear resolution notice to the incident channel and status page so customers know the regression is fully recovered. = Pubblica una comunicazione di risoluzione chiara nel canale dell'incidente e nella status page cosi i clienti sanno che la regressione e' completamente risolta.",
+        "note": "Rinominato per distinguerlo dall'item 'Resolution' del modulo osservabilita' base."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_3",
+      "english": "MTTR",
+      "set": {
+        "english": "MTTR Trend",
+        "italian": "Trend di MTTR",
+        "example": "Plot the MTTR trend per service per quarter to spot whether new tooling or playbooks actually shorten incident response. = Disegna il trend di MTTR per servizio per trimestre per capire se nuovo tooling o playbook accorciano davvero la risposta agli incidenti.",
+        "note": "Rinominato per distinguerlo dall'item 'MTTR' del modulo osservabilita' base."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "mon_incidents_3",
+      "english": "Rollback",
+      "set": {
+        "english": "Rollback Decision",
+        "italian": "Decisione di rollback",
+        "example": "The incident commander makes the rollback decision once mitigation steps fail, choosing the last green deploy as the target. = L'incident commander prende la decisione di rollback una volta che gli step di mitigazione falliscono, scegliendo come target l'ultimo deploy verde.",
+        "note": "Rinominato per distinguerlo dall'item 'Rollback' del modulo SRE."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_1",
+      "english": "Service Dependency",
+      "set": {
+        "english": "Dependency Chain",
+        "italian": "Catena di dipendenze",
+        "example": "The PagerDuty dependency chain routes a database paging alert to the storage team while still notifying impacted service owners. = La catena di dipendenze di PagerDuty instrada un alert di paging del database al team storage notificando comunque i proprietari dei servizi impattati.",
+        "note": "Rinominato per distinguerlo dall'item 'Service Dependency' del modulo trace."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "mon_alerting_pro_1",
+      "english": "Status Page",
+      "set": {
+        "english": "Statuspage.io",
+        "italian": "Statuspage.io",
+        "example": "Atlassian Statuspage.io publishes incident updates to subscribed customers via email, SMS, and RSS in one platform. = Atlassian Statuspage.io pubblica aggiornamenti di incidente ai clienti iscritti via email, SMS e RSS in un'unica piattaforma.",
+        "note": "Rinominato per distinguerlo dall'item 'Status Page' del modulo osservabilita' base."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_1",
+      "english": "Collector",
+      "set": {
+        "english": "OpenTelemetry Collector",
+        "italian": "OpenTelemetry Collector",
+        "example": "The OpenTelemetry Collector receives OTLP, processes spans with batching and tail sampling, and exports to Tempo and Loki. = L'OpenTelemetry Collector riceve OTLP, processa span con batching e tail sampling ed esporta a Tempo e Loki.",
+        "note": "Rinominato per distinguerlo dall'item 'Collector' del modulo trace."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_1",
+      "english": "Exporter",
+      "set": {
+        "english": "OTLP Exporter",
+        "italian": "Exporter OTLP",
+        "example": "The OTLP exporter ships spans, metrics, and logs to any backend that speaks OpenTelemetry Protocol over gRPC. = L'exporter OTLP invia span, metriche e log a qualsiasi backend che parla OpenTelemetry Protocol su gRPC.",
+        "note": "Rinominato per distinguerlo dall'item 'Exporter' del modulo Prometheus."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_1",
+      "english": "Pipeline",
+      "set": {
+        "english": "Processor Chain",
+        "italian": "Catena di processor",
+        "example": "An OTel Collector processor chain batches spans, drops health-check noise, and adds resource attributes before they hit the exporter. = Una catena di processor del Collector OTel fa batch degli span, elimina il rumore degli health-check e aggiunge resource attribute prima che colpiscano l'exporter.",
+        "note": "Rinominato per distinguerlo dall'item 'Pipeline' del modulo tooling log."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_1",
+      "english": "Receiver",
+      "set": {
+        "english": "OTLP Receiver",
+        "italian": "Receiver OTLP",
+        "example": "The OTLP receiver listens on port 4317 for gRPC and 4318 for HTTP, the default ports across every OpenTelemetry SDK. = Il receiver OTLP ascolta sulla porta 4317 per gRPC e 4318 per HTTP, le porte di default di ogni SDK OpenTelemetry.",
+        "note": "Rinominato per distinguerlo dall'item 'Receiver' del modulo Alertmanager."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_2",
+      "english": "Auto-Instrumentation",
+      "set": {
+        "english": "Auto-Instrumentation Agent",
+        "italian": "Agent di auto-instrumentation",
+        "example": "The Java auto-instrumentation agent attaches via -javaagent and emits OTLP spans for JDBC, HTTP, and Kafka with zero code changes. = L'agent di auto-instrumentation Java si attacca via -javaagent ed emette span OTLP per JDBC, HTTP e Kafka con zero modifiche al codice.",
+        "note": "Rinominato per distinguerlo dall'item 'Auto-Instrumentation' del modulo APM."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "mon_otel_4",
+      "english": "Tail Sampling",
+      "set": {
+        "english": "Rate-Limited Sampling",
+        "italian": "Campionamento a rate limitato",
+        "example": "Configuring rate-limited sampling caps the OTel Collector at 100 spans per second per service to protect the backend from traffic spikes. = Configurare il campionamento a rate limitato cappa il Collector OTel a 100 span al secondo per servizio per proteggere il backend dai picchi di traffico.",
+        "note": "Rinominato per distinguerlo dall'item 'Tail Sampling' del modulo log."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "mon_k8s_4",
+      "english": "Distributed Tracing",
+      "set": {
+        "english": "Service Mesh Tracing",
+        "italian": "Tracing del service mesh",
+        "example": "Enabling service mesh tracing in Istio injects W3C trace context across every pod-to-pod call without changing application code. = Abilitare il tracing del service mesh in Istio inietta il W3C trace context fra ogni chiamata pod-a-pod senza modificare il codice applicativo.",
+        "note": "Rinominato per distinguerlo dall'item 'Distributed Tracing' del modulo trace."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "mon_security_2",
+      "english": "Audit Log",
+      "set": {
+        "english": "Falco Audit Log",
+        "italian": "Audit log di Falco",
+        "example": "A Falco audit log alert fires when a pod opens a shell, catching attacker activity that container scanning would miss. = Un alert di audit log di Falco scatta quando un pod apre una shell, catturando attivita' di attacco che lo scanning dei container non vedrebbe.",
+        "note": "Rinominato per distinguerlo dall'item 'Audit Log' del modulo Kubernetes."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_2",
+      "english": "Clustering",
+      "set": {
+        "italian": "Clustering",
+        "example": "Unsupervised clustering groups similar alert patterns so the on-call sees one synthetic incident instead of fifty correlated pages. = Il clustering non supervisionato raggruppa pattern di alert simili cosi il reperibile vede un solo incidente sintetico invece di cinquanta pagine correlate."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_2",
+      "english": "Confidence Score",
+      "set": {
+        "italian": "Punteggio di confidenza",
+        "example": "Suppress AIOps alerts whose confidence score falls below 0.8 to keep noise away from the on-call channel. = Sopprimi gli alert AIOps il cui punteggio di confidenza scende sotto 0.8 per tenere il rumore lontano dal canale di reperibilita'."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_2",
+      "english": "Drift",
+      "set": {
+        "english": "Concept Drift",
+        "italian": "Concept drift",
+        "example": "A fraud detector suffers concept drift when customer behaviour shifts after Black Friday, forcing a retrain with fresh labels. = Un fraud detector soffre di concept drift quando il comportamento dei clienti cambia dopo il Black Friday, costringendo a un retrain con etichette fresche.",
+        "note": "Rinominato per distinguerlo dall'item 'Drift' del modulo dashboards-as-code."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_2",
+      "english": "EWMA",
+      "set": {
+        "italian": "EWMA",
+        "example": "An EWMA smooths spiky error-rate metrics so we react to sustained shifts rather than every single outlier sample. = Una EWMA leviga metriche di error-rate piene di picchi cosi reagiamo a spostamenti sostenuti invece che a ogni singolo outlier.",
+        "note": "Exponentially Weighted Moving Average: media mobile pesata esponenzialmente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_2",
+      "english": "Feature Engineering",
+      "set": {
+        "italian": "Feature engineering",
+        "example": "Good feature engineering extracts rolling p95 latency and error-rate deltas before training the anomaly detector. = Un buon feature engineering estrae p95 di latenza in rolling e delta di error-rate prima di addestrare il rilevatore di anomalie."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_2",
+      "english": "Isolation Forest",
+      "set": {
+        "italian": "Isolation Forest",
+        "example": "An Isolation Forest model flags anomalous database queries by isolating points that require fewer random splits than normal traffic. = Un modello Isolation Forest segnala query database anomale isolando punti che richiedono meno split casuali del traffico normale.",
+        "note": "Algoritmo unsupervised per anomaly detection basato su alberi randomici."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_2",
+      "english": "LSTM",
+      "set": {
+        "italian": "LSTM",
+        "example": "An LSTM network learns long-range dependencies in request-rate sequences that ARIMA and exponential smoothing fail to capture. = Una rete LSTM apprende dipendenze a lungo raggio nelle sequenze di request-rate che ARIMA e exponential smoothing non riescono a catturare.",
+        "note": "Long Short-Term Memory: rete neurale ricorrente con celle a memoria."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_2",
+      "english": "Time Series ML",
+      "set": {
+        "italian": "Machine learning su serie temporali",
+        "example": "We train a time series ML model on six months of CPU and memory metrics to forecast capacity exhaustion two weeks ahead. = Addestriamo un modello ML su serie temporali con sei mesi di metriche CPU e memoria per prevedere l'esaurimento di capacita' con due settimane di anticipo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_2",
+      "english": "Z-Score",
+      "set": {
+        "italian": "Z-score",
+        "example": "Trigger an alert when the request latency z-score exceeds 3 sigma over the rolling 30-minute window. = Lancia un alert quando lo z-score della latenza supera 3 sigma sulla finestra mobile di 30 minuti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_3",
+      "english": "AppDynamics",
+      "set": {
+        "italian": "AppDynamics",
+        "note": "Piattaforma APM di Cisco con capacita' AIOps.",
+        "example": "Inside Cisco's stack, AppDynamics traces business transactions across Java microservices end to end. = Dentro lo stack Cisco, AppDynamics traccia transazioni di business attraverso microservizi Java da capo a fondo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_3",
+      "english": "BigPanda",
+      "set": {
+        "italian": "BigPanda",
+        "note": "Piattaforma AIOps specializzata in correlazione di allarmi.",
+        "example": "An ops bridge built on BigPanda correlates ServiceNow, PagerDuty, and Datadog signals into one incident. = Un ops bridge costruito su BigPanda correla segnali ServiceNow, PagerDuty e Datadog in un singolo incidente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_3",
+      "english": "Causal Inference",
+      "set": {
+        "italian": "Inferenza causale",
+        "example": "With causal inference the AIOps engine distinguishes the deploy that triggered the outage from the unrelated traffic spike minutes later. = Con l'inferenza causale il motore AIOps distingue il deploy che ha innescato il disservizio dal picco di traffico non correlato avvenuto pochi minuti dopo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_3",
+      "english": "Continuous Learning",
+      "set": {
+        "italian": "Apprendimento continuo",
+        "example": "A pipeline with continuous learning keeps the anomaly detector aligned with seasonal traffic shifts instead of drifting after weeks. = Una pipeline con apprendimento continuo mantiene il rilevatore di anomalie allineato agli spostamenti stagionali di traffico invece di andare in drift dopo settimane."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_3",
+      "english": "Datadog Watchdog",
+      "set": {
+        "italian": "Watchdog di Datadog",
+        "example": "With Datadog Watchdog enabled the platform automatically surfaces anomalous latency on a specific endpoint without anyone configuring a threshold. = Con Datadog Watchdog attivo la piattaforma fa emergere automaticamente latenze anomale su uno specifico endpoint senza che nessuno configuri una soglia."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_3",
+      "english": "Dynatrace",
+      "set": {
+        "italian": "Dynatrace",
+        "note": "Piattaforma APM AI-driven, motore Davis.",
+        "example": "OneAgent from Dynatrace auto-instruments JVM, .NET, and Node processes the moment it lands on the host. = OneAgent di Dynatrace auto-strumenta processi JVM, .NET e Node nel momento in cui arriva sull'host."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_3",
+      "english": "Moogsoft",
+      "set": {
+        "italian": "Moogsoft",
+        "note": "Pioniere AIOps per gestione e correlazione incidenti.",
+        "example": "Operations teams adopt Moogsoft to deduplicate noisy alerts into a handful of probable-cause clusters. = I team operations adottano Moogsoft per deduplicare alert rumorosi in una manciata di cluster a causa probabile."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_3",
+      "english": "Probabilistic Alert",
+      "set": {
+        "italian": "Alert probabilistico",
+        "example": "A probabilistic alert ships a confidence band so on-call can decide whether the dip is a real customer-facing regression. = Un alert probabilistico include una banda di confidenza cosi il reperibile puo' decidere se il calo e' una vera regressione percepita dal cliente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_3",
+      "english": "Topology Map",
+      "set": {
+        "italian": "Mappa di topologia",
+        "example": "An accurate topology map feeds the AIOps engine so root cause analysis can follow the actual service dependencies. = Una mappa di topologia accurata alimenta il motore AIOps cosi l'analisi della causa radice puo' seguire le reali dipendenze tra servizi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_4",
+      "english": "AI Safety",
+      "set": {
+        "italian": "Sicurezza dell'AI",
+        "example": "Strong AI safety guardrails prevent the copilot from running destructive kubectl delete commands without explicit human approval. = Robusti guardrail di sicurezza dell'AI impediscono al copilot di eseguire comandi kubectl delete distruttivi senza approvazione umana esplicita."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_4",
+      "english": "Copilot",
+      "set": {
+        "italian": "Copilot",
+        "example": "An ops copilot suggests the PromQL expression that aggregates request rate per route, ready for the on-call to refine. = Un copilot operativo suggerisce l'espressione PromQL che aggrega il request rate per rotta, pronta perche' il reperibile la perfezioni.",
+        "note": "Assistente AI integrato negli strumenti ops (es. Grafana AI Assistant, GitHub Copilot)."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_4",
+      "english": "LLM",
+      "set": {
+        "italian": "LLM",
+        "example": "An LLM digests stack traces, recent deploys, and runbooks to draft a plausible root-cause hypothesis for the on-call. = Un LLM digerisce stack trace, deploy recenti e runbook per redigere un'ipotesi plausibile di causa radice per il reperibile.",
+        "note": "Large Language Model: modello linguistico di grandi dimensioni."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_4",
+      "english": "Prompt Engineering",
+      "set": {
+        "italian": "Prompt engineering",
+        "example": "Careful prompt engineering grounds the LLM with current runbooks so it stops inventing flag names that never existed. = Un attento prompt engineering ancora l'LLM ai runbook attuali cosi smette di inventare nomi di flag mai esistiti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_4",
+      "english": "RAG",
+      "set": {
+        "italian": "RAG",
+        "example": "A RAG pipeline retrieves the relevant runbook chunks for the current alert before the LLM drafts a remediation plan. = Una pipeline RAG recupera i pezzi di runbook rilevanti per l'alert corrente prima che l'LLM rediga un piano di rimedio.",
+        "note": "Retrieval-Augmented Generation: arricchisce l'LLM con contesto recuperato da una knowledge base."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "mon_aiops_4",
+      "english": "RCA Suggestion",
+      "set": {
+        "italian": "Suggerimento di RCA",
+        "example": "Each RCA suggestion ranks recent deploys, config changes, and dependency incidents that most likely triggered the regression. = Ogni suggerimento di RCA classifica i deploy recenti, i cambi di config e gli incidenti di dipendenze che con maggior probabilita' hanno innescato la regressione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_1",
+      "english": "Ansible",
+      "set": {
+        "italian": "Ansible",
+        "note": "Strumento Red Hat di automazione configurazione e deploy senza agent.",
+        "example": "A daily Ansible playbook reconciles configuration drift on hundreds of legacy VMs that lack a container runtime. = Un playbook Ansible giornaliero riconcilia il drift di configurazione su centinaia di VM legacy senza container runtime."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_1",
+      "english": "Approval Workflow",
+      "set": {
+        "italian": "Workflow di approvazione",
+        "example": "High-blast-radius remediations enter an approval workflow so a senior on-call signs off in Slack before any production change runs. = I rimedi ad alto raggio d'azione entrano in un workflow di approvazione cosi un reperibile senior firma in Slack prima che parta qualsiasi cambio in produzione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_1",
+      "english": "Audit Trail",
+      "set": {
+        "english": "Tamper-Proof Audit Trail",
+        "italian": "Audit trail anti-manomissione",
+        "example": "A tamper-proof audit trail signs each automation event with a hash chain so a compromised operator cannot rewrite history undetected. = Un audit trail anti-manomissione firma ogni evento di automazione con una catena di hash cosi un operatore compromesso non puo' riscrivere la storia senza essere rilevato.",
+        "note": "Rinominato per distinguerlo dall'item 'Audit Trail' del modulo sicurezza."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_1",
+      "english": "Auto-Remediation",
+      "set": {
+        "italian": "Rimedio automatico",
+        "example": "An auto-remediation runbook drains and restarts a misbehaving Kafka broker the moment its lag exceeds the configured threshold. = Un runbook di rimedio automatico drena e riavvia un broker Kafka malfunzionante appena il suo lag supera la soglia configurata."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_1",
+      "english": "Idempotency",
+      "set": {
+        "italian": "Idempotenza",
+        "example": "Strict idempotency lets the remediation job retry safely after a transient API timeout without restarting healthy pods twice. = Una idempotenza stretta permette al job di rimedio di ritentare in sicurezza dopo un timeout API transitorio senza riavviare due volte i pod sani."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_1",
+      "english": "Rundeck",
+      "set": {
+        "italian": "Rundeck",
+        "note": "Strumento di orchestrazione runbook self-service.",
+        "example": "Operations expose self-service Rundeck jobs so support engineers restart a service without shell access. = Le operations espongono job Rundeck self-service cosi i support engineer riavviano un servizio senza accesso shell."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_1",
+      "english": "StackStorm",
+      "set": {
+        "italian": "StackStorm",
+        "note": "Piattaforma open source di automazione event-driven.",
+        "example": "Using StackStorm rules, a webhook event from PagerDuty triggers an Ansible playbook on the affected host. = Con regole StackStorm, un evento webhook da PagerDuty innesca un playbook Ansible sull'host interessato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_2",
+      "english": "Audit Bot Action",
+      "set": {
+        "italian": "Audit delle azioni del bot",
+        "example": "Enabling audit bot action logs which engineer triggered the database failover and when, satisfying SOX traceability requirements. = Abilitare l'audit delle azioni del bot registra quale ingegnere ha innescato il failover del database e quando, soddisfacendo i requisiti di tracciabilita' SOX."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_2",
+      "english": "ChatOps",
+      "set": {
+        "italian": "ChatOps",
+        "example": "With ChatOps the on-call kicks off the database failover by typing a single slash command in the incident Slack channel. = Con ChatOps il reperibile fa partire il failover del database digitando un singolo comando slash nel canale Slack dell'incidente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_2",
+      "english": "Errbot",
+      "set": {
+        "italian": "Errbot",
+        "note": "Framework ChatOps scritto in Python.",
+        "example": "Teams that already standardise on Python often pick Errbot to script ChatOps plugins next to their tooling. = I team che gia' standardizzano Python spesso scelgono Errbot per scriptare plugin ChatOps a fianco del proprio tooling."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_2",
+      "english": "Hubot",
+      "set": {
+        "italian": "Hubot",
+        "note": "Bot ChatOps originale creato da GitHub in CoffeeScript.",
+        "example": "The original ChatOps demos from GitHub showed Hubot deploying production code from a chat message. = Le demo ChatOps originali di GitHub mostravano Hubot fare deploy di codice di produzione da un messaggio chat."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_2",
+      "english": "Incident Channel",
+      "set": {
+        "italian": "Canale dell'incidente",
+        "example": "Each major incident spawns a dedicated incident channel like #inc-2024-05-payments so timeline and decisions stay in one place. = Ogni incidente maggiore genera un canale dell'incidente dedicato tipo #inc-2024-05-payments cosi cronologia e decisioni restano in un unico posto."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_2",
+      "english": "Slash Command",
+      "set": {
+        "italian": "Comando slash",
+        "example": "The /incident declare slash command opens a Zoom bridge, pages the secondary, and creates a Jira ticket in one shot. = Il comando slash /incident declare apre un ponte Zoom, chiama il secondario e crea un ticket Jira in un'unica azione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_2",
+      "english": "Workflow Builder",
+      "set": {
+        "italian": "Workflow Builder",
+        "example": "Slack Workflow Builder lets non-engineers chain a form submission to an OpsGenie alert without writing any code. = Slack Workflow Builder permette ai non ingegneri di concatenare l'invio di un modulo a un alert OpsGenie senza scrivere codice."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_3",
+      "english": "Bulkhead Pattern",
+      "set": {
+        "italian": "Pattern bulkhead",
+        "example": "The bulkhead pattern caps the thread pool dedicated to the slow legacy service so it cannot starve the checkout path. = Il pattern bulkhead limita il pool di thread dedicato al servizio legacy lento cosi non puo' affamare il path di checkout."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_3",
+      "english": "Graceful Degradation",
+      "set": {
+        "italian": "Degrado controllato",
+        "example": "With graceful degradation the storefront falls back to cached product listings when the recommendation service goes down instead of erroring. = Con un degrado controllato lo storefront ricade sui listini prodotto in cache quando il servizio raccomandazioni cade invece di andare in errore."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_3",
+      "english": "Liveness Probe",
+      "set": {
+        "english": "Startup Probe",
+        "italian": "Startup probe",
+        "example": "A startup probe gives slow-booting JVM workloads up to five minutes before Kubernetes flips them to liveness checks. = Una startup probe da' ai workload JVM lenti al boot fino a cinque minuti prima che Kubernetes passi ai liveness check.",
+        "note": "Rinominato per distinguerlo dall'item 'Liveness Probe' del modulo osservabilita' base."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_3",
+      "english": "PDB",
+      "set": {
+        "italian": "PDB",
+        "example": "A PDB with minAvailable: 2 prevents node drains from taking down more than one replica of the order service at once. = Un PDB con minAvailable: 2 impedisce ai drain di nodo di abbattere piu' di una replica del servizio ordini contemporaneamente.",
+        "note": "Pod Disruption Budget: limita le interruzioni volontarie in Kubernetes."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_3",
+      "english": "Reactive Loop",
+      "set": {
+        "italian": "Loop reattivo",
+        "example": "A reactive loop watches CRD events and reconciles desired state, the pattern behind every Kubernetes operator. = Un loop reattivo osserva gli eventi CRD e riconcilia lo stato desiderato, il pattern dietro ogni operator Kubernetes."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_3",
+      "english": "Restart Policy",
+      "set": {
+        "italian": "Politica di riavvio",
+        "example": "Setting restartPolicy: Always on the deployment keeps the cache pods alive through transient memory spikes during peak traffic. = Impostare restartPolicy: Always sul deployment tiene vivi i pod di cache durante picchi di memoria transitori al traffico di picco."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_3",
+      "english": "Self-Healing System",
+      "set": {
+        "italian": "Sistema auto-riparante",
+        "example": "A self-healing system reschedules failed pods, restarts crashed containers, and rotates expired certificates without paging humans. = Un sistema auto-riparante rischedula i pod falliti, riavvia i container crashati e ruota i certificati scaduti senza chiamare gli umani."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_3",
+      "english": "Watchdog",
+      "set": {
+        "english": "Watchdog Timer",
+        "italian": "Watchdog timer",
+        "example": "A watchdog timer in the daemon resets a counter every cycle so the kernel kills the process if the loop ever hangs longer than 60 seconds. = Un watchdog timer nel daemon resetta un contatore ad ogni ciclo cosi il kernel uccide il processo se il loop si blocca per piu' di 60 secondi.",
+        "note": "Rinominato per distinguerlo dall'item 'Watchdog' del modulo APM."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_4",
+      "english": "Approval Gate",
+      "set": {
+        "italian": "Gate di approvazione",
+        "example": "A manual approval gate sits between staging and production so a release engineer signs off on every customer-facing rollout. = Un gate di approvazione manuale sta tra staging e produzione cosi un release engineer firma ogni rollout visibile al cliente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_4",
+      "english": "Argo CD",
+      "set": {
+        "italian": "Argo CD",
+        "note": "Motore GitOps dichiarativo per Kubernetes.",
+        "example": "Inside the cluster, Argo CD continuously reconciles live Kubernetes state with the manifests in the main branch. = Dentro il cluster, Argo CD riconcilia continuamente lo stato live di Kubernetes con i manifest del branch main."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_4",
+      "english": "Drift Detection",
+      "set": {
+        "italian": "Rilevamento del drift",
+        "example": "Automated drift detection alerts when an operator hot-patches the staging cluster, restoring the manifest from Git within minutes. = Il rilevamento automatico del drift segnala quando un operatore patcha a caldo il cluster di staging, ripristinando il manifest da Git in pochi minuti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_4",
+      "english": "Flux",
+      "set": {
+        "italian": "Flux",
+        "note": "Toolkit GitOps Kubernetes della CNCF (Weaveworks).",
+        "example": "An in-cluster Flux installation watches the Git repo and applies new manifests within minutes of a merge. = Una installazione Flux nel cluster osserva il repo Git e applica nuovi manifest entro pochi minuti da un merge."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_4",
+      "english": "GitOps",
+      "set": {
+        "italian": "GitOps",
+        "example": "Adopting GitOps makes the production cluster a deterministic projection of the main branch, so every change shows up in pull-request history. = Adottare GitOps rende il cluster di produzione una proiezione deterministica del branch main, cosi ogni cambio compare nella cronologia delle pull request."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_4",
+      "english": "Pipeline as Code",
+      "set": {
+        "italian": "Pipeline come codice",
+        "example": "Adopting pipeline as code keeps the GitHub Actions workflow in the repo, so reviewers see CI changes in the same PR as the application change. = Adottare la pipeline come codice tiene il workflow di GitHub Actions nel repo, cosi i revisori vedono i cambi di CI nella stessa PR del cambio applicativo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_4",
+      "english": "Policy as Code",
+      "set": {
+        "italian": "Policy come codice",
+        "example": "OPA Gatekeeper enforces policy as code by rejecting every Kubernetes manifest that omits resource limits at admission time. = OPA Gatekeeper applica la policy come codice rifiutando ogni manifest Kubernetes che omette resource limit al momento dell'admission."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_4",
+      "english": "Progressive Delivery",
+      "set": {
+        "italian": "Consegna progressiva",
+        "example": "With progressive delivery the rollout sends 5% of traffic to the canary, watches SLO burn rate, and auto-rolls back on error spikes. = Con la consegna progressiva il rollout manda il 5% del traffico al canary, osserva il burn rate dello SLO e fa rollback automatico ai picchi di errore."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_4",
+      "english": "Pull-Based Deploy",
+      "set": {
+        "italian": "Deploy pull-based",
+        "example": "A pull-based deploy lets the in-cluster Argo CD agent reconcile from Git, avoiding any kubectl credentials stored in the CI runner. = Un deploy pull-based lascia che l'agente Argo CD nel cluster riconcili da Git, evitando qualsiasi credenziale kubectl conservata nel runner CI."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "mon_automation_4",
+      "english": "Self-Service Deploy",
+      "set": {
+        "italian": "Deploy self-service",
+        "example": "A self-service deploy lets product teams ship to staging via a Backstage button while the platform team owns the underlying pipeline. = Un deploy self-service permette ai team di prodotto di rilasciare su staging tramite un pulsante Backstage mentre il team piattaforma possiede la pipeline sottostante."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_1",
+      "english": "Apply",
+      "set": {
+        "italian": "Apply",
+        "example": "Running terraform apply on the saved plan creates the Datadog monitors and Grafana folders in the exact order Terraform planned. = Eseguire terraform apply sul plan salvato crea i monitor Datadog e le cartelle Grafana nell'ordine esatto pianificato da Terraform."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_1",
+      "english": "Datadog Provider",
+      "set": {
+        "italian": "Provider Datadog",
+        "example": "The Datadog provider lets a single HCL file declare 200 monitors, freeing the team from clicking through the UI for every change. = Il provider Datadog permette a un singolo file HCL di dichiarare 200 monitor, liberando il team dal cliccare nella UI per ogni cambio."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_1",
+      "english": "Drift",
+      "set": {
+        "english": "Stale State Lock",
+        "italian": "Lock di stato bloccato",
+        "example": "A stale Terraform state lock from a killed CI job blocks every new plan until you force-unlock the offending lock ID. = Un lock di stato Terraform bloccato da un job CI ucciso blocca ogni nuovo plan finche' non fai force-unlock dell'ID di lock incriminato.",
+        "note": "Rinominato per evitare collisione con 'Drift' dei moduli dashboards-as-code e AIOps."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_1",
+      "english": "Plan",
+      "set": {
+        "italian": "Plan",
+        "example": "terraform plan prints the dashboard and monitor diff so reviewers see exactly what will change before apply. = terraform plan stampa il diff di dashboard e monitor cosi i revisori vedono esattamente cosa cambiera' prima dell'apply."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_1",
+      "english": "Provider",
+      "set": {
+        "english": "Terraform Provider",
+        "italian": "Terraform provider",
+        "example": "The Grafana Terraform provider authenticates with an API key and creates dashboards, folders, and alert rules from HCL. = Il Terraform provider di Grafana si autentica con una API key e crea dashboard, cartelle e regole di alert da HCL.",
+        "note": "Rinominato per distinguerlo dall'item 'Provider' del modulo dashboards-as-code."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_1",
+      "english": "Resource",
+      "set": {
+        "english": "Terraform Resource",
+        "italian": "Terraform resource",
+        "example": "A grafana_dashboard Terraform resource encodes one Grafana dashboard, version-pinned and reviewed like any other HCL block. = Una Terraform resource grafana_dashboard codifica una dashboard Grafana, version-pinned e revisionata come qualunque altro blocco HCL.",
+        "note": "Rinominato per distinguerlo dall'item 'Resource' del modulo OpenTelemetry."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_1",
+      "english": "Terraform",
+      "set": {
+        "italian": "Terraform",
+        "note": "IaC dichiarativo di HashiCorp, supporta provider multipli.",
+        "example": "A monorepo of Terraform modules provisions VPCs, IAM roles, and managed Postgres across three AWS accounts. = Un monorepo di moduli Terraform fa provisioning di VPC, ruoli IAM e Postgres managed su tre account AWS."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_1",
+      "english": "Workspace",
+      "set": {
+        "italian": "Workspace",
+        "example": "Separate Terraform workspaces hold the prod and staging state for the monitoring stack, preventing accidental cross-environment edits. = Workspace Terraform separati contengono lo stato di prod e staging per lo stack di monitoring, prevenendo modifiche accidentali tra ambienti."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_2",
+      "english": "Grafonnet",
+      "set": {
+        "italian": "Grafonnet",
+        "example": "The Grafonnet library wraps the raw Grafana JSON schema in typed Jsonnet helpers so panel changes survive Grafana upgrades. = La libreria Grafonnet incapsula lo schema JSON grezzo di Grafana in helper Jsonnet tipizzati cosi i cambi di pannello sopravvivono agli upgrade di Grafana."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_2",
+      "english": "Helper Function",
+      "set": {
+        "italian": "Funzione helper",
+        "example": "A helper function wraps the standard p99 latency panel so every team gets the same axes, units, and threshold colors. = Una funzione helper incapsula il pannello standard di latenza p99 cosi ogni team ottiene gli stessi assi, unita' e colori di soglia."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_2",
+      "english": "Jsonnet",
+      "set": {
+        "italian": "Jsonnet",
+        "note": "Linguaggio di templating JSON sviluppato in Google.",
+        "example": "Internal SRE teams adopt Jsonnet to template hundreds of similar Grafana dashboards from one definition. = I team SRE interni adottano Jsonnet per templatizzare centinaia di dashboard Grafana simili da una sola definizione."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_2",
+      "english": "Library",
+      "set": {
+        "italian": "Libreria",
+        "example": "Internal Jsonnet libraries bundle the company panel palette and SLO query helpers so every team starts from a consistent baseline. = Le librerie Jsonnet interne raggruppano la palette di pannelli aziendale e gli helper di query SLO cosi ogni team parte da una baseline coerente."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_2",
+      "english": "Tanka",
+      "set": {
+        "italian": "Tanka",
+        "note": "Gestore Kubernetes basato su Jsonnet, di Grafana Labs.",
+        "example": "Grafana Labs ships Tanka to deploy its own internal Kubernetes workloads from versioned Jsonnet bundles. = Grafana Labs rilascia Tanka per fare deploy dei propri workload Kubernetes interni da bundle Jsonnet versionati."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_2",
+      "english": "Templating",
+      "set": {
+        "italian": "Templating",
+        "example": "Dashboard templating generates one panel set per microservice from a single Jsonnet function, cutting copy-paste maintenance to zero. = Il templating delle dashboard genera un set di pannelli per microservizio da una singola funzione Jsonnet, riducendo a zero la manutenzione copia-incolla."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_2",
+      "english": "jb",
+      "set": {
+        "italian": "jb",
+        "example": "jb install github.com/grafana/grafonnet pulls the library into vendor/ and pins it via jsonnetfile.lock.json. = jb install github.com/grafana/grafonnet scarica la libreria in vendor/ e la blocca tramite jsonnetfile.lock.json.",
+        "note": "jsonnet-bundler: gestore di dipendenze Jsonnet."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_3",
+      "english": "CI Validation",
+      "set": {
+        "italian": "Validazione in CI",
+        "example": "Automated CI validation runs promtool check rules on every PR so a syntax error in a recording rule never lands in main. = La validazione CI automatica esegue promtool check rules su ogni PR cosi un errore di sintassi in una recording rule non arriva mai su main."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_3",
+      "english": "Dashboard as Code",
+      "set": {
+        "italian": "Dashboard come codice",
+        "example": "Treating dashboard as code lets reviewers comment on a panel addition in the same pull request that ships the feature flag. = Trattare le dashboard come codice permette ai revisori di commentare l'aggiunta di un pannello nella stessa pull request che rilascia il feature flag."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_3",
+      "english": "JSON Diff",
+      "set": {
+        "italian": "Diff JSON",
+        "example": "Plain JSON diffs explode with reordered keys, so we run a normalisation step before comparing exported Grafana dashboards. = I diff JSON puri esplodono con chiavi riordinate, quindi eseguiamo uno step di normalizzazione prima di confrontare dashboard Grafana esportate."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_3",
+      "english": "Linting",
+      "set": {
+        "italian": "Linting",
+        "example": "dashboard-linter flags panels missing units and titles so reviewers do not chase obvious mistakes during code review. = dashboard-linter segnala pannelli che omettono unita' di misura e titoli cosi i revisori non rincorrono errori ovvi durante il code review."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_3",
+      "english": "Per-Service Bundle",
+      "set": {
+        "italian": "Bundle per servizio",
+        "example": "Each service ships a per-service bundle with its own SLOs, dashboards, and alerts under services/<name>/observability. = Ogni servizio rilascia un bundle per servizio con i propri SLO, dashboard e alert sotto services/<name>/observability."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_3",
+      "english": "Snapshot Test",
+      "set": {
+        "italian": "Test snapshot",
+        "example": "A snapshot test compares the generated dashboard JSON against a golden file, surfacing accidental panel removals at build time. = Un test snapshot confronta il JSON di dashboard generato con un file di riferimento, facendo emergere rimozioni accidentali di pannelli al build time."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_3",
+      "english": "Versioning",
+      "set": {
+        "italian": "Versionamento",
+        "example": "SemVer-style versioning of the shared dashboard library lets teams pin to v2.x while a breaking v3 stabilises. = Il versionamento in stile SemVer della libreria di dashboard condivisa permette ai team di restare su v2.x mentre una v3 con breaking change si stabilizza."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_4",
+      "english": "Auto-Generated Rules",
+      "set": {
+        "italian": "Regole auto-generate",
+        "example": "Sloth produces auto-generated recording and alerting rules from one SLO YAML so SREs stop hand-writing duplicated PromQL. = Sloth produce recording e alerting rule auto-generate da un YAML SLO cosi gli SRE smettono di scrivere a mano PromQL duplicato."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_4",
+      "english": "Burn Rate Alert",
+      "set": {
+        "italian": "Alert di burn rate",
+        "example": "A multi-window burn rate alert fires when the past hour burns the next 14 hours of error budget at the current rate. = Un alert di burn rate multi-window scatta quando l'ora scorsa brucia le successive 14 ore di error budget al ritmo attuale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_4",
+      "english": "Nobl9",
+      "set": {
+        "italian": "Nobl9",
+        "note": "Piattaforma SaaS commerciale per gestione SLO.",
+        "example": "Reliability teams pick Nobl9 to centralise SLO budgets across Datadog, New Relic, and Prometheus in one UI. = I team reliability scelgono Nobl9 per centralizzare i budget SLO fra Datadog, New Relic e Prometheus in un'unica UI."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_4",
+      "english": "OpenSLO",
+      "set": {
+        "italian": "OpenSLO",
+        "example": "The OpenSLO project defines a vendor-neutral YAML spec so the same SLO definition feeds Sloth, Nobl9, and other compliant tools. = Il progetto OpenSLO definisce una specifica YAML neutra al vendor cosi la stessa definizione di SLO alimenta Sloth, Nobl9 e altri strumenti compatibili.",
+        "note": "Standard aperto per la definizione di SLO sotto la CNCF."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_4",
+      "english": "Pyrra",
+      "set": {
+        "italian": "Pyrra",
+        "example": "The Pyrra controller runs in Kubernetes and exposes SLO status pages directly off the in-cluster Prometheus. = Il controller Pyrra gira in Kubernetes ed espone pagine di stato SLO direttamente sul Prometheus nel cluster.",
+        "note": "Controller SLO open source per Kubernetes."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_4",
+      "english": "Reliability Score",
+      "set": {
+        "italian": "Punteggio di affidabilita'",
+        "example": "A composite reliability score blends SLO attainment, MTTR, and toil hours into a single number for quarterly reviews. = Un punteggio di affidabilita' composito unisce raggiungimento SLO, MTTR e ore di toil in un singolo numero per le review trimestrali."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_4",
+      "english": "Service Catalog",
+      "set": {
+        "italian": "Catalogo dei servizi",
+        "example": "The service catalog in Backstage links each service to its SLOs, on-call schedule, runbooks, and Grafana dashboards. = Il catalogo dei servizi in Backstage lega ogni servizio ai suoi SLO, calendario on-call, runbook e dashboard Grafana."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "mon_oac_4",
+      "english": "Sloth",
+      "set": {
+        "italian": "Sloth",
+        "example": "The Sloth CLI compiles a YAML SLO spec into a complete set of Prometheus recording and multi-window burn-rate alerting rules. = La CLI Sloth compila una specifica SLO YAML in un set completo di recording rule Prometheus e alert multi-window di burn rate.",
+        "note": "Generatore open source di regole SLO per Prometheus."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_1",
+      "english": "Compensation",
+      "set": {
+        "italian": "Compenso",
+        "example": "On-call compensation in the Italian CCNL combines a fixed monthly allowance with a per-callout fee when you actually get paged. = Il compenso di reperibilita' nel CCNL italiano unisce una indennita' mensile fissa con un compenso per chiamata quando vieni effettivamente paginato."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_1",
+      "english": "Follow the Sun",
+      "set": {
+        "italian": "Follow the sun",
+        "example": "A follow-the-sun rotation hands the pager from EMEA to APAC to AMER so nobody is on call during their local night. = Una rotazione follow-the-sun passa il pager da EMEA a APAC ad AMER cosi nessuno e' reperibile durante la propria notte locale."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_1",
+      "english": "On-Call Buddy",
+      "set": {
+        "italian": "Buddy di reperibilita'",
+        "example": "Pairing a new hire with an on-call buddy for the first three rotations halves the time to confident incident response. = Affiancare un neoassunto a un buddy di reperibilita' per le prime tre rotazioni dimezza il tempo per una risposta agli incidenti sicura."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_1",
+      "english": "Pages Per Shift",
+      "set": {
+        "italian": "Pagine per turno",
+        "example": "Google publishes a target of two pages per shift maximum so on-call engineers can still recover sleep and focus on project work. = Google pubblica un target massimo di due pagine per turno cosi gli ingegneri reperibili possono ancora recuperare il sonno e concentrarsi sui progetti."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_1",
+      "english": "Ramp-Up",
+      "set": {
+        "italian": "Ramp-up",
+        "example": "A formal ramp-up program walks the new SRE through shadow shifts, runbook reviews, and supervised pages before primary duty. = Un programma di ramp-up formale guida il nuovo SRE attraverso turni di affiancamento, review di runbook e pagine supervisionate prima della responsabilita' primaria."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_1",
+      "english": "Shadow Shift",
+      "set": {
+        "italian": "Turno di affiancamento",
+        "example": "During a shadow shift the trainee sees every page and join every call while the primary on-call drives the response. = Durante un turno di affiancamento il trainee vede ogni pagina e si unisce a ogni call mentre il primario di reperibilita' guida la risposta."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_1",
+      "english": "Sleep Disruption",
+      "set": {
+        "italian": "Disturbo del sonno",
+        "example": "Repeated sleep disruption from 3 AM pages typically costs the next workday in degraded focus, not just the awake minutes. = Un disturbo del sonno ripetuto da pagine delle 3 di notte costa tipicamente il giorno lavorativo seguente in concentrazione degradata, non solo i minuti svegli."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_2",
+      "english": "Black-Box Monitoring",
+      "set": {
+        "italian": "Monitoraggio black-box",
+        "example": "Our black-box monitoring hits the public login endpoint every minute from three regions so we see what real users would see. = Il nostro monitoraggio black-box colpisce l'endpoint di login pubblico ogni minuto da tre regioni cosi vediamo cosa vedrebbero gli utenti reali."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_2",
+      "english": "Customer SLI",
+      "set": {
+        "italian": "SLI customer-facing",
+        "example": "A customer-facing SLI measures end-to-end checkout success from the browser, capturing CDN, edge, and backend failures together. = Uno SLI customer-facing misura il successo end-to-end del checkout dal browser, catturando insieme i fallimenti di CDN, edge e backend."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_2",
+      "english": "Errors",
+      "set": {
+        "english": "Error Class",
+        "italian": "Classe di errore",
+        "example": "Splitting the error signal by class (4xx, 5xx, timeout, dependency) tells you whether to fix the client or the service. = Suddividere il segnale di errore per classe (4xx, 5xx, timeout, dipendenza) ti dice se aggiustare il client o il servizio.",
+        "note": "Rinominato per distinguerlo dall'item 'Errors' del modulo metriche base."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_2",
+      "english": "Golden Signals",
+      "set": {
+        "english": "Symptom-Driven Alert",
+        "italian": "Alert orientato ai sintomi",
+        "example": "A symptom-driven alert pages on user-visible error-rate, not on internal causes like queue depth that may not affect customers. = Un alert orientato ai sintomi paginariizza sull'error-rate visibile all'utente, non su cause interne come la profondita' di coda che potrebbero non impattare i clienti.",
+        "note": "Rinominato per distinguerlo dall'item 'Golden Signals' del modulo metriche."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_2",
+      "english": "Latency",
+      "set": {
+        "english": "Latency Percentile",
+        "italian": "Percentile di latenza",
+        "example": "Tracking a latency percentile at p99.9 surfaces the painful outliers a p50 dashboard happily smooths away, often hitting a single slow user hard. = Tracciare un percentile di latenza al p99.9 fa emergere gli outlier dolorosi che una dashboard p50 leviga allegramente, spesso colpendo duramente un singolo utente lento.",
+        "note": "Rinominato per distinguerlo dall'item 'Latency' del modulo metriche base."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_2",
+      "english": "RED Method",
+      "set": {
+        "english": "Four Golden Signals",
+        "italian": "Quattro segnali d'oro",
+        "example": "The four golden signals from the Google SRE book are latency, traffic, errors, and saturation, every service should expose all four. = I quattro segnali d'oro dal libro SRE di Google sono latenza, traffico, errori e saturazione, ogni servizio dovrebbe esporli tutti e quattro.",
+        "note": "Rinominato per distinguerlo dall'item 'RED Method' del modulo Kubernetes."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_2",
+      "english": "Saturation",
+      "set": {
+        "english": "Saturation Headroom",
+        "italian": "Margine di saturazione",
+        "example": "Tracking saturation headroom on the JVM heap warns weeks in advance that the next traffic season will OOM the pods. = Tracciare il margine di saturazione sull'heap JVM avvisa con settimane di anticipo che la prossima stagione di traffico mandera' in OOM i pod.",
+        "note": "Rinominato per distinguerlo dall'item 'Saturation' del modulo metriche base."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_2",
+      "english": "Traffic",
+      "set": {
+        "italian": "Traffico",
+        "example": "Tracking request traffic per route exposes the long tail of low-volume endpoints that nobody owns until they break. = Tracciare il traffico di richieste per rotta espone la lunga coda di endpoint a basso volume che nessuno possiede finche' non si rompono."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_2",
+      "english": "USE Method",
+      "set": {
+        "english": "Brendan Gregg",
+        "italian": "Brendan Gregg",
+        "example": "The Netflix performance engineer Brendan Gregg defined the USE method as utilisation, saturation, and errors per resource. = Il performance engineer di Netflix Brendan Gregg ha definito il metodo USE come utilizzo, saturazione ed errori per risorsa.",
+        "note": "Rinominato per distinguerlo dall'item 'USE Method' del modulo Kubernetes."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_2",
+      "english": "White-Box Monitoring",
+      "set": {
+        "italian": "Monitoraggio white-box",
+        "example": "Our white-box monitoring scrapes the in-process Prometheus endpoint so SREs see queue depth and GC pauses, not just external timings. = Il nostro monitoraggio white-box raccoglie dall'endpoint Prometheus in-processo cosi gli SRE vedono profondita' di coda e pause GC, non solo i tempi esterni."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_3",
+      "english": "Continuous Learning",
+      "set": {
+        "english": "Conference Talk",
+        "italian": "Talk in conferenza",
+        "example": "Submitting a SREcon conference talk on your postmortem culture forces you to distil lessons learnt into a 30-minute story. = Proporre un talk a SREcon sulla tua cultura di postmortem ti costringe a distillare lezioni apprese in una storia di 30 minuti.",
+        "note": "Rinominato per distinguerlo dall'item 'Continuous Learning' del modulo AIOps."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_3",
+      "english": "DevOps Engineer",
+      "set": {
+        "italian": "Ingegnere DevOps",
+        "example": "A DevOps engineer owns the CI/CD platform end to end and removes the wall between dev push and prod deploy. = Un ingegnere DevOps possiede la piattaforma CI/CD da capo a fondo e rimuove il muro fra dev push e deploy in prod."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_3",
+      "english": "Embedded SRE",
+      "set": {
+        "italian": "SRE embedded",
+        "example": "An embedded SRE sits inside the payments team for two quarters, hardening SLOs and runbooks before rotating back to the platform. = Un SRE embedded siede nel team payments per due trimestri, irrobustendo SLO e runbook prima di tornare in piattaforma."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_3",
+      "english": "On-Call Question",
+      "set": {
+        "italian": "Domanda sulla reperibilita'",
+        "example": "Always ask an on-call question during interviews: rotation length, paging volume, and how the team treats sleep-disrupting pages. = Fai sempre una domanda sulla reperibilita' durante i colloqui: durata della rotazione, volume di paginazioni e come il team tratta le pagine che disturbano il sonno."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_3",
+      "english": "Reliability Engineering",
+      "set": {
+        "italian": "Ingegneria dell'affidabilita'",
+        "example": "Mature reliability engineering treats uptime as a product feature with a roadmap, error budgets, and explicit reliability OKRs. = L'ingegneria dell'affidabilita' matura tratta l'uptime come una feature di prodotto con roadmap, error budget e OKR di affidabilita' espliciti."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_3",
+      "english": "SRE Engineer",
+      "set": {
+        "italian": "Ingegnere SRE",
+        "example": "A typical SRE engineer at a hyperscaler splits time between writing automation, reviewing capacity, and joining the on-call rotation. = Un tipico ingegnere SRE in un hyperscaler divide il tempo fra scrivere automazione, rivedere la capacita' e partecipare alla rotazione on-call."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_3",
+      "english": "Tech Lead",
+      "set": {
+        "italian": "Tech lead",
+        "example": "The tech lead drives architecture for the alerting platform, owns the migration roadmap, and mentors the two junior SREs. = Il tech lead guida l'architettura per la piattaforma di alerting, possiede la roadmap di migrazione e fa mentoring ai due SRE junior."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_3",
+      "english": "Technical Interview",
+      "set": {
+        "italian": "Colloquio tecnico",
+        "example": "A standard SRE technical interview combines a coding exercise, a Linux debugging scenario, and a systems design discussion. = Un colloquio tecnico SRE standard unisce un esercizio di coding, uno scenario di debug Linux e una discussione di systems design."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_4",
+      "english": "Cultural Change",
+      "set": {
+        "italian": "Cambiamento culturale",
+        "example": "Cultural change is the slowest part of SRE adoption, since blameless postmortems clash with command-and-control habits. = Il cambiamento culturale e' la parte piu' lenta dell'adozione di SRE, poiche' i postmortem blameless cozzano con le abitudini di command-and-control."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_4",
+      "english": "Executive Sponsor",
+      "set": {
+        "italian": "Sponsor esecutivo",
+        "example": "An executive sponsor at VP level unblocks budget for the new on-call tooling and shields the team from competing priorities. = Uno sponsor esecutivo a livello VP sblocca il budget per il nuovo tooling on-call e protegge il team dalle priorita' concorrenti."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_4",
+      "english": "Observability Maturity",
+      "set": {
+        "italian": "Maturita' di osservabilita'",
+        "example": "Higher observability maturity shows up as engineers debugging from traces and logs without paging an SRE for tribal context. = Una maturita' di osservabilita' superiore si vede quando gli ingegneri debuggano da trace e log senza chiamare un SRE per contesto tribale."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_4",
+      "english": "Proactive Stage",
+      "set": {
+        "italian": "Fase proattiva",
+        "example": "In the proactive stage the team uses SLO trends and capacity forecasts to prevent the incidents the reactive stage would chase. = Nella fase proattiva il team usa trend SLO e previsioni di capacita' per prevenire gli incidenti che la fase reattiva inseguirebbe."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_4",
+      "english": "Quarterly Review",
+      "set": {
+        "italian": "Revisione trimestrale",
+        "example": "The quarterly reliability review pulls SLO attainment, top toil drivers, and the next quarter's roadmap into one leadership meeting. = La revisione trimestrale di affidabilita' raccoglie raggiungimento SLO, principali driver di toil e roadmap del trimestre successivo in un'unica riunione con la leadership."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_4",
+      "english": "Reactive Stage",
+      "set": {
+        "italian": "Fase reattiva",
+        "example": "Teams stuck in the reactive stage spend every week firefighting alerts and never get traction on the toil reduction backlog. = I team bloccati nella fase reattiva passano ogni settimana a spegnere alert e non guadagnano mai trazione sul backlog di riduzione del toil."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_4",
+      "english": "Reliability KPI",
+      "set": {
+        "italian": "KPI di affidabilita'",
+        "example": "A reliability KPI like 'percent of services meeting their SLO' lets execs compare reliability across business units in one chart. = Un KPI di affidabilita' come 'percentuale di servizi che rispettano lo SLO' permette agli executive di confrontare l'affidabilita' fra business unit in un solo grafico."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_4",
+      "english": "Reliability Roadmap",
+      "set": {
+        "italian": "Roadmap di affidabilita'",
+        "example": "A 12-month reliability roadmap sequences SLO rollouts, error budget policy work, and on-call ergonomics into themed quarters. = Una roadmap di affidabilita' a 12 mesi sequenzia rollout SLO, lavori sulla error budget policy ed ergonomia on-call in trimestri tematici."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "mon_pro_sre_4",
+      "english": "Strategic Stage",
+      "set": {
+        "italian": "Fase strategica",
+        "example": "At the strategic stage SRE leadership shapes product roadmaps with reliability budgets and architecture review veto rights. = Alla fase strategica la leadership SRE plasma le roadmap di prodotto con budget di affidabilita' e diritti di veto sulle architecture review."
+      }
+    }
+  ]
+}

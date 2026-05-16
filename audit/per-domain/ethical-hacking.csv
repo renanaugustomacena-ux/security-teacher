@@ -8,687 +8,176 @@ topicId,level,lesson,english,italian,issueType
 "ethical-hacking",2,"ethack_passive_recon_1","Metadata","Metadati",near-identical-translation
 "ethical-hacking",4,"ethack_vuln_scanning_4","False Positive","Falso positivo",near-identical-translation
 "ethical-hacking",4,"ethack_vuln_scanning_4","False Negative","Falso negativo",near-identical-translation
-"ethical-hacking",6,"ethack_web_hacking_1","SQL Injection","Iniezione SQL (SQLi)",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_1","Error-Based SQLi","SQLi basata su errore",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_1","UNION-Based SQLi","SQLi basata su UNION",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_1","Boolean-Based Blind SQLi","SQLi cieca booleana",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_1","Time-Based Blind SQLi","SQLi cieca basata su tempo",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_1","sqlmap","Strumento automatico per SQLi (sqlmap)",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_1","Stacked Queries","Query impilate",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_1","NoSQL Injection","Iniezione NoSQL",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_1","Out-of-Band SQLi","SQLi out-of-band",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_2","XSS","Cross-Site Scripting (XSS)",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_2","Reflected XSS","XSS riflessa",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_2","Stored XSS","XSS persistente",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_2","DOM XSS","XSS DOM",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_2","XSS Payload","Payload XSS",trivial-example
-"ethical-hacking",6,"ethack_web_hacking_2","BeEF","Framework di exploitation browser (BeEF)",tautological-example
-"ethical-hacking",6,"ethack_web_hacking_2","HttpOnly Cookie","Cookie HttpOnly",tautological-example
-"ethical-hacking",7,"ethack_advanced_web_2","Insecure Deserialization","Deserializzazione non sicura",tautological-example
-"ethical-hacking",8,"ethack_network_hacking_1","mitmproxy","mitmproxy (proxy MITM)",fake-translation
-"ethical-hacking",8,"ethack_network_hacking_1","MAC Spoofing","Spoofing MAC",tautological-example
-"ethical-hacking",8,"ethack_network_hacking_2","Responder","Responder (tool LLMNR/NBT-NS)",fake-translation
-"ethical-hacking",8,"ethack_network_hacking_3","macof","macof (tool MAC flooding)",fake-translation
-"ethical-hacking",8,"ethack_network_hacking_3","Bettercap","Bettercap (framework MITM)",fake-translation
-"ethical-hacking",8,"ethack_network_hacking_3","Yersinia","Yersinia (Layer 2 attack tool)",fake-translation
-"ethical-hacking",8,"ethack_network_hacking_4","Chisel","Chisel (TCP tunnel)",fake-translation
-"ethical-hacking",8,"ethack_network_hacking_4","proxychains","proxychains (tool routing)",fake-translation
-"ethical-hacking",8,"ethack_network_hacking_4","sshuttle","sshuttle (VPN povera via SSH)",fake-translation
-"ethical-hacking",9,"ethack_wireless_1","WPA2","WPA2 (protocollo Wi-Fi sicuro)",fake-translation
-"ethical-hacking",9,"ethack_wireless_1","WPA3","WPA3 (protocollo Wi-Fi più recente)",fake-translation
-"ethical-hacking",9,"ethack_wireless_1","PMKID","PMKID (identificatore chiave WPA2 vulnerabile)",fake-translation
-"ethical-hacking",9,"ethack_wireless_1","EAPOL","EAPOL (Extensible Auth Protocol over LAN)",fake-translation
-"ethical-hacking",9,"ethack_wireless_2","Aircrack-ng","Aircrack-ng (suite Wi-Fi)",fake-translation
-"ethical-hacking",9,"ethack_wireless_2","airodump-ng","airodump-ng (capture Wi-Fi)",fake-translation
-"ethical-hacking",9,"ethack_wireless_2","aireplay-ng","aireplay-ng (injection Wi-Fi)",fake-translation
-"ethical-hacking",9,"ethack_wireless_2","Wifite","Wifite (automatizzatore Wi-Fi)",fake-translation
-"ethical-hacking",9,"ethack_wireless_2","Kismet","Kismet (sniffer Wi-Fi)",fake-translation
-"ethical-hacking",9,"ethack_wireless_2","Hashcat","Hashcat (cracker GPU)",fake-translation
-"ethical-hacking",9,"ethack_wireless_2","hcxdumptool","hcxdumptool (PMKID capture)",fake-translation
-"ethical-hacking",9,"ethack_wireless_2","BSSID","BSSID (MAC dell'access point)",fake-translation
-"ethical-hacking",9,"ethack_wireless_3","Wifiphisher","Wifiphisher (rogue AP framework)",fake-translation
-"ethical-hacking",9,"ethack_wireless_4","802.11w","802.11w (Protected Management Frames)",fake-translation
-"ethical-hacking",9,"ethack_wireless_4","PEAP","PEAP (Protected EAP)",tautological-example
-"ethical-hacking",9,"ethack_wireless_4","PEAP","PEAP (Protected EAP)",fake-translation
-"ethical-hacking",9,"ethack_wireless_4","EAP-TLS","EAP-TLS (autenticazione a certificati Wi-Fi)",tautological-example
-"ethical-hacking",9,"ethack_wireless_4","EAP-TLS","EAP-TLS (autenticazione a certificati Wi-Fi)",fake-translation
-"ethical-hacking",9,"ethack_wireless_4","Wireless Hardening","Hardening wireless",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_1","Brute Force","Forza bruta",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_1","Hybrid Attack","Attacco ibrido",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_1","Rainbow Table","Tabella arcobaleno",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_1","Mask Attack","Attacco con maschera",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_1","Rule-Based Attack","Attacco basato su regole",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_1","Combinator Attack","Attacco combinatorio",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_1","Credential Stuffing","riutilizzo di credenziali rubate (Credential Stuffing)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_1","Password Spraying","pochi tentativi su molti utenti (Password Spraying)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_1","Online Attack","Attacco online",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_2","hashcat","hashcat (cracker GPU)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_2","hashcat","hashcat (cracker GPU)",fake-translation
-"ethical-hacking",10,"ethack_password_cracking_2","John the Ripper","John the Ripper (cracker classico)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_2","John the Ripper","John the Ripper (cracker classico)",fake-translation
-"ethical-hacking",10,"ethack_password_cracking_2","Hydra","Hydra (online cracker)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_2","Hydra","Hydra (online cracker)",fake-translation
-"ethical-hacking",10,"ethack_password_cracking_2","Medusa","Medusa (parallel login bruteforcer)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_2","Medusa","Medusa (parallel login bruteforcer)",fake-translation
-"ethical-hacking",10,"ethack_password_cracking_2","Patator","Patator (multi-purpose bruteforcer)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_2","Patator","Patator (multi-purpose bruteforcer)",fake-translation
-"ethical-hacking",10,"ethack_password_cracking_2","Ncrack","Ncrack (network auth cracking)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_2","Ncrack","Ncrack (network auth cracking)",fake-translation
-"ethical-hacking",10,"ethack_password_cracking_2","rockyou.txt","rockyou.txt (wordlist celebre)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_2","rockyou.txt","rockyou.txt (wordlist celebre)",fake-translation
-"ethical-hacking",10,"ethack_password_cracking_2","CeWL","CeWL (custom wordlist generator)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_2","CeWL","CeWL (custom wordlist generator)",fake-translation
-"ethical-hacking",10,"ethack_password_cracking_2","crunch","crunch (password generator)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_2","crunch","crunch (password generator)",fake-translation
-"ethical-hacking",10,"ethack_password_cracking_3","MD5","Hash debole (MD5)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_3","MD5","Hash debole (MD5)",trivial-example
-"ethical-hacking",10,"ethack_password_cracking_3","SHA-1","Hash deprecato (SHA-1)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_3","NTLM","Hash Windows (NTLM)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_3","NetNTLMv2","Hash di rete (NetNTLMv2)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_3","Bcrypt","Hash robusto (Bcrypt)",tautological-example
+"ethical-hacking",6,"ethack_web_hacking_1","sqlmap","sqlmap",identical-translation
+"ethical-hacking",6,"ethack_web_hacking_2","XSS","XSS",identical-translation
+"ethical-hacking",6,"ethack_web_hacking_2","BeEF","BeEF",identical-translation
+"ethical-hacking",8,"ethack_network_hacking_1","mitmproxy","mitmproxy",identical-translation
+"ethical-hacking",8,"ethack_network_hacking_2","Responder","Responder",identical-translation
+"ethical-hacking",8,"ethack_network_hacking_3","macof","macof",identical-translation
+"ethical-hacking",8,"ethack_network_hacking_3","Bettercap","Bettercap",identical-translation
+"ethical-hacking",8,"ethack_network_hacking_3","Yersinia","Yersinia",identical-translation
+"ethical-hacking",8,"ethack_network_hacking_4","Chisel","Chisel",identical-translation
+"ethical-hacking",8,"ethack_network_hacking_4","proxychains","proxychains",identical-translation
+"ethical-hacking",8,"ethack_network_hacking_4","sshuttle","sshuttle",identical-translation
+"ethical-hacking",9,"ethack_wireless_1","WPA2","WPA2",identical-translation
+"ethical-hacking",9,"ethack_wireless_1","WPA3","WPA3",tautological-example
+"ethical-hacking",9,"ethack_wireless_1","WPA3","WPA3",identical-translation
+"ethical-hacking",9,"ethack_wireless_1","PMKID","PMKID",identical-translation
+"ethical-hacking",9,"ethack_wireless_1","EAPOL","EAPOL",identical-translation
+"ethical-hacking",9,"ethack_wireless_2","Aircrack-ng","Aircrack-ng",identical-translation
+"ethical-hacking",9,"ethack_wireless_2","airodump-ng","airodump-ng",identical-translation
+"ethical-hacking",9,"ethack_wireless_2","aireplay-ng","aireplay-ng",identical-translation
+"ethical-hacking",9,"ethack_wireless_2","Wifite","Wifite",identical-translation
+"ethical-hacking",9,"ethack_wireless_2","Kismet","Kismet",tautological-example
+"ethical-hacking",9,"ethack_wireless_2","Kismet","Kismet",identical-translation
+"ethical-hacking",9,"ethack_wireless_2","Hashcat","Hashcat",identical-translation
+"ethical-hacking",9,"ethack_wireless_2","hcxdumptool","hcxdumptool",identical-translation
+"ethical-hacking",9,"ethack_wireless_2","BSSID","BSSID",identical-translation
+"ethical-hacking",9,"ethack_wireless_3","Wifiphisher","Wifiphisher",identical-translation
+"ethical-hacking",9,"ethack_wireless_4","802.11w","802.11w",identical-translation
+"ethical-hacking",9,"ethack_wireless_4","PEAP","PEAP",identical-translation
+"ethical-hacking",9,"ethack_wireless_4","EAP-TLS","EAP-TLS",identical-translation
+"ethical-hacking",10,"ethack_password_cracking_2","John the Ripper","John the Ripper",identical-translation
+"ethical-hacking",10,"ethack_password_cracking_2","Hydra","Hydra",identical-translation
+"ethical-hacking",10,"ethack_password_cracking_2","Medusa","Medusa",identical-translation
+"ethical-hacking",10,"ethack_password_cracking_2","Patator","Patator",identical-translation
+"ethical-hacking",10,"ethack_password_cracking_2","Ncrack","Ncrack",identical-translation
+"ethical-hacking",10,"ethack_password_cracking_2","rockyou.txt","rockyou.txt",identical-translation
+"ethical-hacking",10,"ethack_password_cracking_2","CeWL","CeWL",identical-translation
+"ethical-hacking",10,"ethack_password_cracking_2","crunch","crunch",identical-translation
 "ethical-hacking",10,"ethack_password_cracking_3","Argon2","Hash moderno (Argon2)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_3","PBKDF2","Derivazione di chiave (PBKDF2)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_3","Salt","Sale crittografico (Salt)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_3","Salt","Sale crittografico (Salt)",trivial-example
-"ethical-hacking",10,"ethack_password_cracking_3","Pepper","Segreto globale di hashing (Pepper)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_4","unshadow","Combinatore passwd e shadow (unshadow)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_4","NTDS.dit","Database Active Directory (NTDS.dit)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_4","secretsdump","Estrattore hash remoto (secretsdump)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_4","Mimikatz","Estrattore credenziali Windows (Mimikatz)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_4","Pass the Hash","Autenticazione con hash rubato (Pass the Hash)",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_4","Pass the Ticket","pass-the-ticket / autenticazione con ticket Kerberos rubato",tautological-example
-"ethical-hacking",10,"ethack_password_cracking_4","Credential Manager","Gestore credenziali",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_1","Privilege Escalation","Scalata dei privilegi",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_1","Vertical Privesc","Privesc verticale",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_1","Horizontal Privesc","Privesc orizzontale",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_1","GTFOBins","GTFOBins (database escalation Linux)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_1","GTFOBins","GTFOBins (database escalation Linux)",fake-translation
-"ethical-hacking",11,"ethack_post_exploitation_1","sudo -l","sudo -l (lista permessi sudo)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_1","sudo -l","sudo -l (lista permessi sudo)",fake-translation
-"ethical-hacking",11,"ethack_post_exploitation_1","Kernel Exploit","Exploit del kernel",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_1","UAC Bypass","Bypass UAC",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_1","Token Impersonation","Impersonazione di token",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_1","Potato Attack","Attacco Potato",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_2","Persistence","Persistenza",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_2","Persistence","Persistenza",near-identical-translation
-"ethical-hacking",11,"ethack_post_exploitation_2","Scheduled Task","Attività pianificata",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_2","Run Key","Chiave Run (registry)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_2","Systemd Service","Servizio systemd",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_2","WMI Persistence","Persistenza WMI",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_2","DLL Hijacking","Dirottamento DLL",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_3","Pivoting","movimento laterale tra reti (Pivoting)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_3","Lateral Movement","Movimento laterale",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_3","WinRM","WinRM (Windows Remote Management)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_3","WinRM","WinRM (Windows Remote Management)",fake-translation
-"ethical-hacking",11,"ethack_post_exploitation_3","PsExec","PsExec (esecuzione remota)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_3","PsExec","PsExec (esecuzione remota)",fake-translation
-"ethical-hacking",11,"ethack_post_exploitation_3","WMI Lateral","Movimento laterale WMI",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_3","DCOM","DCOM (Distributed COM)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_3","DCOM","DCOM (Distributed COM)",fake-translation
-"ethical-hacking",11,"ethack_post_exploitation_3","Impacket","Impacket (Python network library)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_3","Impacket","Impacket (Python network library)",fake-translation
-"ethical-hacking",11,"ethack_post_exploitation_3","CrackMapExec","CrackMapExec (Swiss army knife)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_3","CrackMapExec","CrackMapExec (Swiss army knife)",fake-translation
-"ethical-hacking",11,"ethack_post_exploitation_3","NetExec","NetExec (CME successor)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_3","NetExec","NetExec (CME successor)",fake-translation
-"ethical-hacking",11,"ethack_post_exploitation_3","BloodHound","BloodHound (AD path analyzer)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_3","BloodHound","BloodHound (AD path analyzer)",fake-translation
-"ethical-hacking",11,"ethack_post_exploitation_4","Active Directory","Active Directory (servizio identità Microsoft)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_4","Active Directory","Active Directory (servizio identità Microsoft)",fake-translation
-"ethical-hacking",11,"ethack_post_exploitation_4","Kerberos","Kerberos (protocollo auth)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_4","Kerberos","Kerberos (protocollo auth)",fake-translation
-"ethical-hacking",11,"ethack_post_exploitation_4","Kerberoasting","estrazione hash da ticket Kerberos (Kerberoasting)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_4","AS-REP Roasting","abuso utenti senza pre-auth Kerberos (AS-REP Roasting)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_4","DCSync","replica forzata segreti AD (DCSync)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_4","DCShadow","DC fittizio per scrivere in AD (DCShadow)",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_4","Constrained Delegation","Delega vincolata",tautological-example
-"ethical-hacking",11,"ethack_post_exploitation_4","Unconstrained Delegation","Delega non vincolata",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_1","Phishing","pesca di credenziali via email (Phishing)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_1","Spear Phishing","phishing mirato (Spear Phishing)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_1","Whaling","Caccia alle balene (Whaling)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_1","Vishing","Phishing vocale (Vishing)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_1","Smishing","Phishing via SMS (Smishing)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_1","Smishing","Phishing via SMS (Smishing)",trivial-example
-"ethical-hacking",12,"ethack_social_engineering_1","Clone Phishing","Phishing clonato",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_1","BEC","Compromissione email aziendale (BEC)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_1","Phishing Kit","Kit di phishing",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_1","Evilginx","Evilginx (proxy phishing)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_1","Evilginx","Evilginx (proxy phishing)",fake-translation
-"ethical-hacking",12,"ethack_social_engineering_1","Phishing Awareness","Consapevolezza al phishing",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_2","Pretexting","Inventarsi un pretesto (Pretexting)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_2","Tailgating","Pedinamento (Tailgating)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_2","Piggybacking","accesso fisico al seguito di altri (Piggybacking)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_2","Baiting","Esca (Baiting)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_2","Quid Pro Quo","Qualcosa per qualcosa",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_2","Impersonation","Impersonificazione",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_2","Urgency","Urgenza",tautological-example
+"ethical-hacking",10,"ethack_password_cracking_4","Mimikatz","Mimikatz",identical-translation
+"ethical-hacking",11,"ethack_post_exploitation_1","sudo -l","sudo -l",identical-translation
+"ethical-hacking",11,"ethack_post_exploitation_3","WinRM","WinRM",identical-translation
+"ethical-hacking",11,"ethack_post_exploitation_3","PsExec","PsExec",identical-translation
+"ethical-hacking",11,"ethack_post_exploitation_3","DCOM","DCOM",identical-translation
+"ethical-hacking",11,"ethack_post_exploitation_3","Impacket","Impacket",identical-translation
+"ethical-hacking",11,"ethack_post_exploitation_3","CrackMapExec","CrackMapExec",identical-translation
+"ethical-hacking",11,"ethack_post_exploitation_3","NetExec","NetExec",identical-translation
+"ethical-hacking",11,"ethack_post_exploitation_3","BloodHound","BloodHound",identical-translation
+"ethical-hacking",11,"ethack_post_exploitation_4","Active Directory","Active Directory",identical-translation
+"ethical-hacking",11,"ethack_post_exploitation_4","Kerberos","Kerberos",identical-translation
+"ethical-hacking",12,"ethack_social_engineering_1","Evilginx","Evilginx",identical-translation
 "ethical-hacking",12,"ethack_social_engineering_2","Urgency","Urgenza",near-identical-translation
-"ethical-hacking",12,"ethack_social_engineering_2","Scarcity","Scarsità",tautological-example
 "ethical-hacking",12,"ethack_social_engineering_2","Scarcity","Scarsità",near-identical-translation
-"ethical-hacking",12,"ethack_social_engineering_2","Rapport Building","Costruzione del rapporto",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_3","SET","Social Engineering Toolkit (SET)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_3","Gophish","Gophish (framework phishing)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_3","Gophish","Gophish (framework phishing)",fake-translation
-"ethical-hacking",12,"ethack_social_engineering_3","KnowBe4","KnowBe4 (security awareness)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_3","KnowBe4","KnowBe4 (security awareness)",fake-translation
-"ethical-hacking",12,"ethack_social_engineering_3","King Phisher","King Phisher (framework phishing)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_3","King Phisher","King Phisher (framework phishing)",fake-translation
-"ethical-hacking",12,"ethack_social_engineering_3","theHarvester","theHarvester (OSINT email)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_3","theHarvester","theHarvester (OSINT email)",fake-translation
-"ethical-hacking",12,"ethack_social_engineering_3","Maltego","Maltego (OSINT graph)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_3","Maltego","Maltego (OSINT graph)",fake-translation
-"ethical-hacking",12,"ethack_social_engineering_3","Hunter.io","Hunter.io (email finder)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_3","Hunter.io","Hunter.io (email finder)",fake-translation
-"ethical-hacking",12,"ethack_social_engineering_3","OSINT for SE","OSINT per ingegneria sociale",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_3","LinkedIn OSINT","OSINT LinkedIn",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_3","Email Spoofing","Spoofing email",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_4","Security Awareness","Consapevolezza della sicurezza",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_4","SPF","SPF (Sender Policy Framework)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_4","SPF","SPF (Sender Policy Framework)",fake-translation
-"ethical-hacking",12,"ethack_social_engineering_4","DKIM","DKIM (DomainKeys Identified Mail)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_4","DKIM","DKIM (DomainKeys Identified Mail)",fake-translation
-"ethical-hacking",12,"ethack_social_engineering_4","DMARC","DMARC (politica anti-spoofing email)",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_4","DMARC","DMARC (politica anti-spoofing email)",fake-translation
-"ethical-hacking",12,"ethack_social_engineering_4","Phishing Reporting","Segnalazione phishing",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_4","Email Gateway","Gateway email",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_4","Sandbox Detonation","Detonazione in sandbox",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_4","Verification Procedure","Procedura di verifica",tautological-example
-"ethical-hacking",12,"ethack_social_engineering_4","Zero Trust","nessuna fiducia di default (Zero Trust)",tautological-example
-"ethical-hacking",13,"ethack_tools_1","Metasploit","Metasploit (framework exploitation)",tautological-example
-"ethical-hacking",13,"ethack_tools_1","Metasploit","Metasploit (framework exploitation)",fake-translation
-"ethical-hacking",13,"ethack_tools_1","msfconsole","msfconsole (interfaccia Metasploit)",tautological-example
-"ethical-hacking",13,"ethack_tools_1","msfconsole","msfconsole (interfaccia Metasploit)",fake-translation
-"ethical-hacking",13,"ethack_tools_1","Auxiliary Module","Modulo ausiliario",tautological-example
-"ethical-hacking",13,"ethack_tools_1","Exploit Module","Modulo exploit",tautological-example
-"ethical-hacking",13,"ethack_tools_1","Post Module","Modulo post-exploitation",tautological-example
-"ethical-hacking",13,"ethack_tools_1","Workspace","Workspace (Metasploit)",tautological-example
-"ethical-hacking",13,"ethack_tools_1","Workspace","Workspace (Metasploit)",fake-translation
-"ethical-hacking",13,"ethack_tools_1","Sessions","Sessioni (Metasploit)",tautological-example
-"ethical-hacking",13,"ethack_tools_1","Resource Script","Script di risorsa",tautological-example
-"ethical-hacking",13,"ethack_tools_1","Armitage","Armitage (GUI Metasploit)",tautological-example
-"ethical-hacking",13,"ethack_tools_1","Armitage","Armitage (GUI Metasploit)",fake-translation
-"ethical-hacking",13,"ethack_tools_2","Nmap","Nmap (Network Mapper)",tautological-example
-"ethical-hacking",13,"ethack_tools_2","Nmap","Nmap (Network Mapper)",fake-translation
-"ethical-hacking",13,"ethack_tools_2","OS Detection","Rilevamento sistema operativo",tautological-example
-"ethical-hacking",13,"ethack_tools_2","NSE","Nmap Scripting Engine (NSE)",tautological-example
-"ethical-hacking",13,"ethack_tools_2","Zenmap","Zenmap (GUI Nmap)",tautological-example
-"ethical-hacking",13,"ethack_tools_2","Zenmap","Zenmap (GUI Nmap)",fake-translation
-"ethical-hacking",13,"ethack_tools_2","Masscan","Masscan (port scanner veloce)",tautological-example
-"ethical-hacking",13,"ethack_tools_2","Masscan","Masscan (port scanner veloce)",fake-translation
-"ethical-hacking",13,"ethack_tools_2","RustScan","RustScan (port scanner moderno)",tautological-example
-"ethical-hacking",13,"ethack_tools_2","RustScan","RustScan (port scanner moderno)",fake-translation
-"ethical-hacking",13,"ethack_tools_3","Wireshark","Wireshark (analizzatore protocolli)",tautological-example
-"ethical-hacking",13,"ethack_tools_3","Wireshark","Wireshark (analizzatore protocolli)",fake-translation
-"ethical-hacking",13,"ethack_tools_3","Display Filter","Filtro di visualizzazione",tautological-example
-"ethical-hacking",13,"ethack_tools_3","Capture Filter","Filtro di cattura",tautological-example
-"ethical-hacking",13,"ethack_tools_3","tcpdump","tcpdump (CLI sniffer)",tautological-example
-"ethical-hacking",13,"ethack_tools_3","tcpdump","tcpdump (CLI sniffer)",fake-translation
-"ethical-hacking",13,"ethack_tools_3","tshark","tshark (Wireshark CLI)",tautological-example
-"ethical-hacking",13,"ethack_tools_3","tshark","tshark (Wireshark CLI)",fake-translation
-"ethical-hacking",13,"ethack_tools_3","tshark","tshark (Wireshark CLI)",trivial-example
-"ethical-hacking",13,"ethack_tools_3","Burp Suite Professional","Burp Suite Professional (versione commerciale)",fake-translation
-"ethical-hacking",13,"ethack_tools_3","Burp Extender","Burp Extender (BApp Store)",tautological-example
-"ethical-hacking",13,"ethack_tools_3","Burp Extender","Burp Extender (BApp Store)",fake-translation
-"ethical-hacking",13,"ethack_tools_3","Burp Extender","Burp Extender (BApp Store)",trivial-example
-"ethical-hacking",13,"ethack_tools_3","Turbo Intruder","Turbo Intruder (estensione Burp ad alta velocità)",tautological-example
-"ethical-hacking",13,"ethack_tools_3","Turbo Intruder","Turbo Intruder (estensione Burp ad alta velocità)",fake-translation
-"ethical-hacking",13,"ethack_tools_3","Proxy History","Cronologia proxy",tautological-example
-"ethical-hacking",13,"ethack_tools_3","Caido","Caido (alternativa Burp moderna)",tautological-example
-"ethical-hacking",13,"ethack_tools_3","Caido","Caido (alternativa Burp moderna)",fake-translation
-"ethical-hacking",13,"ethack_tools_4","sqlmap","sqlmap (SQLi automation)",tautological-example
-"ethical-hacking",13,"ethack_tools_4","sqlmap","sqlmap (SQLi automation)",fake-translation
-"ethical-hacking",13,"ethack_tools_4","Nikto","Nikto (web scanner)",tautological-example
-"ethical-hacking",13,"ethack_tools_4","Nikto","Nikto (web scanner)",fake-translation
-"ethical-hacking",13,"ethack_tools_4","Recon-ng","Recon-ng (OSINT framework)",tautological-example
-"ethical-hacking",13,"ethack_tools_4","Recon-ng","Recon-ng (OSINT framework)",fake-translation
-"ethical-hacking",13,"ethack_tools_4","Recon-ng","Recon-ng (OSINT framework)",trivial-example
-"ethical-hacking",13,"ethack_tools_4","Hydra","Hydra (login bruteforcer)",tautological-example
-"ethical-hacking",13,"ethack_tools_4","Hydra","Hydra (login bruteforcer)",fake-translation
-"ethical-hacking",13,"ethack_tools_4","Empire","Empire (PowerShell C2)",tautological-example
-"ethical-hacking",13,"ethack_tools_4","Empire","Empire (PowerShell C2)",fake-translation
-"ethical-hacking",13,"ethack_tools_4","Sliver","Sliver (open source C2)",tautological-example
-"ethical-hacking",13,"ethack_tools_4","Sliver","Sliver (open source C2)",fake-translation
-"ethical-hacking",13,"ethack_tools_4","Havoc","Havoc (modern C2)",tautological-example
-"ethical-hacking",13,"ethack_tools_4","Havoc","Havoc (modern C2)",fake-translation
-"ethical-hacking",13,"ethack_tools_4","Mythic","Mythic (multi-platform C2)",tautological-example
-"ethical-hacking",13,"ethack_tools_4","Mythic","Mythic (multi-platform C2)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_1","Cobalt Strike","Cobalt Strike (C2 commerciale)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_1","Cobalt Strike","Cobalt Strike (C2 commerciale)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_1","Beacon","Beacon (Cobalt Strike implant)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_1","Aggressor Script","Aggressor Script (script di automazione Cobalt Strike)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_1","Aggressor Script","Aggressor Script (script di automazione Cobalt Strike)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_1","Malleable C2","C2 malleabile",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_1","PowerShell Empire","PowerShell Empire (framework C2 PowerShell)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_1","Listener","processo in ascolto C2 (Listener)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_1","Beaconing","chiamate periodiche al C2 (Beaconing)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_1","Jitter","jitter / variazione casuale dell'intervallo",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_1","Jitter","jitter / variazione casuale dell'intervallo",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_2","Mimikatz","Mimikatz (estrattore credenziali Windows)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_2","Mimikatz","Mimikatz (estrattore credenziali Windows)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_2","sekurlsa","sekurlsa (modulo Mimikatz)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_2","sekurlsa","sekurlsa (modulo Mimikatz)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_2","lsadump","lsadump (Mimikatz)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_2","lsadump","lsadump (Mimikatz)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_2","lsadump","lsadump (Mimikatz)",trivial-example
-"ethical-hacking",14,"ethack_advanced_tools_2","Kekeo","Kekeo (Kerberos toolkit)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_2","Kekeo","Kekeo (Kerberos toolkit)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_2","Rubeus","Rubeus (Kerberos C#)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_2","Rubeus","Rubeus (Kerberos C#)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_2","Pypykatz","Pypykatz (Mimikatz Python)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_2","Pypykatz","Pypykatz (Mimikatz Python)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_2","LaZagne","LaZagne (credential recovery)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_2","LaZagne","LaZagne (credential recovery)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_2","SeatBelt","SeatBelt (situational awareness)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_2","SeatBelt","SeatBelt (situational awareness)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_2","SharpUp","SharpUp (privesc enum)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_2","SharpUp","SharpUp (privesc enum)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_2","WinPEAS","WinPEAS (Windows enum)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_2","WinPEAS","WinPEAS (Windows enum)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_3","BloodHound","BloodHound (AD attack graph)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_3","BloodHound","BloodHound (AD attack graph)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_3","SharpHound","SharpHound (BloodHound collector)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_3","SharpHound","SharpHound (BloodHound collector)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_3","PowerView","PowerView (AD recon)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_3","PowerView","PowerView (AD recon)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_3","ADRecon","ADRecon (AD report generator)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_3","ADRecon","ADRecon (AD report generator)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_3","PingCastle","PingCastle (AD audit)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_3","PingCastle","PingCastle (AD audit)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_3","ADCS","ADCS (Active Directory Certificate Services)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_3","ADCS","ADCS (Active Directory Certificate Services)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_3","Certipy","Certipy (ADCS abuse)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_3","Certipy","Certipy (ADCS abuse)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_3","Coercion Attack","Attacco di coercizione",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_3","NTLM Relay","inoltro autenticazione Windows (NTLM Relay)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_4","Responder","Responder (avvelenamento LLMNR/NBT-NS)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_4","Responder","Responder (avvelenamento LLMNR/NBT-NS)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_4","mitm6","mitm6 (IPv6 abuse)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_4","mitm6","mitm6 (IPv6 abuse)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_4","mitm6","mitm6 (IPv6 abuse)",trivial-example
-"ethical-hacking",14,"ethack_advanced_tools_4","CrackMapExec","CrackMapExec (CME)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_4","NetExec","strumento post-exploitation di rete (NetExec)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_4","GetUserSPNs.py","GetUserSPNs.py (Impacket — enumera SPN)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_4","GetNPUsers.py","GetNPUsers.py (Impacket — utenti senza pre-auth)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_4","wmiexec.py","wmiexec.py (Impacket — esecuzione comandi via WMI)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_4","evil-winrm","evil-winrm (Ruby WinRM)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_4","evil-winrm","evil-winrm (Ruby WinRM)",fake-translation
-"ethical-hacking",14,"ethack_advanced_tools_4","pwntools","pwntools (Python exploit toolkit)",tautological-example
-"ethical-hacking",14,"ethack_advanced_tools_4","pwntools","pwntools (Python exploit toolkit)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_1","APK Decompilation","Decompilazione APK",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_1","apktool","apktool (APK reversing)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_1","apktool","apktool (APK reversing)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_1","jadx","jadx (DEX to Java)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_1","jadx","jadx (DEX to Java)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_1","AndroidManifest","AndroidManifest.xml",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_1","Smali","Smali (Android assembly)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_1","Smali","Smali (Android assembly)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_1","Drozer","Drozer (Android assessment)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_1","Drozer","Drozer (Android assessment)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_1","ADB","Android Debug Bridge (ADB)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_1","Rooting","Rooting (Android)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_1","Rooting","Rooting (Android)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_1","Android Emulator","Emulatore Android",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_2","IPA","Pacchetto iOS (IPA)",trivial-example
-"ethical-hacking",15,"ethack_mobile_hacking_2","Jailbreak","sblocco sistema iOS (Jailbreak)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_2","Cydia","Cydia (jailbreak app store)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_2","Cydia","Cydia (jailbreak app store)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_2","Frida","Frida (dynamic instrumentation)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_2","Frida","Frida (dynamic instrumentation)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_2","Objection","Objection (Frida wrapper)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_2","Objection","Objection (Frida wrapper)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_2","SSL Pinning","SSL pinning / certificato hardcoded nell'app",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_2","SSL Pinning","SSL pinning / certificato hardcoded nell'app",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_2","class-dump","class-dump (iOS class info)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_2","class-dump","class-dump (iOS class info)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_2","Hopper","Hopper (disassembler iOS)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_2","Hopper","Hopper (disassembler iOS)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_2","Keychain","Keychain (iOS credential store)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_3","OWASP Mobile Top 10","OWASP Mobile Top 10 (top 10 rischi mobile)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_3","OWASP Mobile Top 10","OWASP Mobile Top 10 (top 10 rischi mobile)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_3","MASVS","MASVS (Mobile App Security Verification Standard)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_3","MASVS","MASVS (Mobile App Security Verification Standard)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_3","MSTG","MSTG (Mobile Security Testing Guide)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_3","MSTG","MSTG (Mobile Security Testing Guide)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_3","MobSF","MobSF (Mobile Security Framework)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_3","MobSF","MobSF (Mobile Security Framework)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_3","Insecure Storage","Archiviazione insicura",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_3","Hardcoded Secret","Segreto hardcoded",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_3","Insecure Deeplink","Deeplink insicuro",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_3","Tapjacking","clickjacking su touchscreen (Tapjacking)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_4","Burp Mobile Assistant","Burp Mobile Assistant (estensione Burp per mobile)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_4","Burp Mobile Assistant","Burp Mobile Assistant (estensione Burp per mobile)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_4","Genymotion","Genymotion (Android emulator)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_4","Genymotion","Genymotion (Android emulator)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_4","Corellium","Corellium (iOS virtualization)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_4","Corellium","Corellium (iOS virtualization)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_4","iMobax","iMobax (iOS deep link tool)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_4","iMobax","iMobax (iOS deep link tool)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_4","iMobax","iMobax (iOS deep link tool)",trivial-example
-"ethical-hacking",15,"ethack_mobile_hacking_4","Magisk","Magisk (Android root)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_4","Magisk","Magisk (Android root)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_4","Xposed Framework","Xposed Framework (framework hooking Android)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_4","reFlutter","reFlutter (Flutter pentest)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_4","reFlutter","reFlutter (Flutter pentest)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_4","Magnet AXIOM","Magnet AXIOM (mobile forensics)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_4","apkleaks","apkleaks (secret scanner)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_4","apkleaks","apkleaks (secret scanner)",fake-translation
-"ethical-hacking",15,"ethack_mobile_hacking_4","Bytecode Viewer","Bytecode Viewer (decompiler bytecode Java/Android)",tautological-example
-"ethical-hacking",15,"ethack_mobile_hacking_4","Bytecode Viewer","Bytecode Viewer (decompiler bytecode Java/Android)",fake-translation
-"ethical-hacking",16,"ethack_cloud_hacking_1","S3 Bucket Enumeration","Enumerazione bucket S3",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_1","IAM Exploitation","Sfruttamento IAM",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_1","IMDSv2","IMDSv2 (mitigazione metadata)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_1","IMDSv2","IMDSv2 (mitigazione metadata)",fake-translation
-"ethical-hacking",16,"ethack_cloud_hacking_1","AssumeRole","AssumeRole (AWS STS)",fake-translation
-"ethical-hacking",16,"ethack_cloud_hacking_1","Pacu","Pacu (AWS exploitation framework)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_1","Pacu","Pacu (AWS exploitation framework)",fake-translation
-"ethical-hacking",16,"ethack_cloud_hacking_1","CloudTrail","CloudTrail (logging AWS)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_1","CloudTrail","CloudTrail (logging AWS)",fake-translation
-"ethical-hacking",16,"ethack_cloud_hacking_1","aws cli","aws cli (AWS command line)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_1","aws cli","aws cli (AWS command line)",fake-translation
-"ethical-hacking",16,"ethack_cloud_hacking_2","Azure AD","Entra ID (Azure AD)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_2","AADInternals","AADInternals (Azure AD toolkit)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_2","AADInternals","AADInternals (Azure AD toolkit)",fake-translation
-"ethical-hacking",16,"ethack_cloud_hacking_2","ROADtools","ROADtools (Azure AD recon)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_2","ROADtools","ROADtools (Azure AD recon)",fake-translation
-"ethical-hacking",16,"ethack_cloud_hacking_2","Azure Storage Enum","Enumerazione storage Azure",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_2","GCP IAM","GCP IAM (gestione identità Google Cloud)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_2","GCP IAM","GCP IAM (gestione identità Google Cloud)",fake-translation
-"ethical-hacking",16,"ethack_cloud_hacking_2","GCP Bucket","Bucket GCP",trivial-example
-"ethical-hacking",16,"ethack_cloud_hacking_2","Cloud Functions","Cloud Functions (funzioni serverless GCP)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_2","Cloud Functions","Cloud Functions (funzioni serverless GCP)",fake-translation
-"ethical-hacking",16,"ethack_cloud_hacking_2","Azure VM","VM Azure",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_3","Cloud Misconfig","Misconfigurazione cloud",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_3","Public Bucket","Bucket pubblico",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_3","Wildcard Trust","Trust con wildcard",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_3","Misconfigured CORS","CORS mal configurato",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_4","Container Escape","Fuga dal container (Container Escape)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_4","Privileged Container","Container privilegiato",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_4","Kubernetes","Kubernetes (K8s)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_4","Kubernetes","Kubernetes (K8s)",fake-translation
-"ethical-hacking",16,"ethack_cloud_hacking_4","kubectl","CLI di Kubernetes (kubectl)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_4","kube-hunter","Scanner di sicurezza Kubernetes (kube-hunter)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_4","kube-hunter","Scanner di sicurezza Kubernetes (kube-hunter)",trivial-example
-"ethical-hacking",16,"ethack_cloud_hacking_4","kubeaudit","Auditor di sicurezza Kubernetes (kubeaudit)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_4","Peirates","Strumento pentest Kubernetes (Peirates)",tautological-example
-"ethical-hacking",16,"ethack_cloud_hacking_4","ScoutSuite","Auditor multi-cloud (ScoutSuite)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_1","Static Analysis","Analisi statica",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_1","Strings","Estrazione stringhe da binari (strings)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_1","FLOSS","FLOSS (FLARE Obfuscated String Solver)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_1","FLOSS","FLOSS (FLARE Obfuscated String Solver)",fake-translation
-"ethical-hacking",17,"ethack_malware_analysis_1","PE Analysis","Analisi PE (Portable Executable)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_1","YARA Rule","Regola YARA",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_1","YARA Signature","Firma YARA",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_1","Decompiler","Decompilatore",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_2","Dynamic Analysis","Analisi dinamica",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_2","Cuckoo Sandbox","Cuckoo Sandbox (sandbox di analisi malware)",fake-translation
-"ethical-hacking",17,"ethack_malware_analysis_2","Any.Run","Any.Run (online sandbox)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_2","Any.Run","Any.Run (online sandbox)",fake-translation
-"ethical-hacking",17,"ethack_malware_analysis_2","Procmon","Process Monitor",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_2","Process Hacker","Process Hacker (utility ispezione processi Windows)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_2","Process Hacker","Process Hacker (utility ispezione processi Windows)",fake-translation
-"ethical-hacking",17,"ethack_malware_analysis_2","API Hooking","Hooking di API",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_2","x64dbg","x64dbg (Windows debugger)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_2","x64dbg","x64dbg (Windows debugger)",fake-translation
-"ethical-hacking",17,"ethack_malware_analysis_2","INetSim","INetSim (fake network)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_2","INetSim","INetSim (fake network)",fake-translation
-"ethical-hacking",17,"ethack_malware_analysis_3","Reverse Engineering","Ingegneria inversa (Reverse Engineering)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_3","Ghidra","Ghidra (NSA reverse engineering)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_3","Ghidra","Ghidra (NSA reverse engineering)",fake-translation
-"ethical-hacking",17,"ethack_malware_analysis_3","IDA Pro","IDA Pro (disassemblatore commerciale)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_3","IDA Pro","IDA Pro (disassemblatore commerciale)",fake-translation
-"ethical-hacking",17,"ethack_malware_analysis_3","radare2","radare2 (open source RE)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_3","radare2","radare2 (open source RE)",fake-translation
-"ethical-hacking",17,"ethack_malware_analysis_3","Binary Ninja","Binary Ninja (disassemblatore moderno)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_3","Binary Ninja","Binary Ninja (disassemblatore moderno)",fake-translation
-"ethical-hacking",17,"ethack_malware_analysis_3","Control Flow Graph","Grafo del flusso di controllo",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_3","Cross-References","Riferimenti incrociati / xrefs",trivial-example
-"ethical-hacking",17,"ethack_malware_analysis_3","Symbolic Execution","Esecuzione simbolica",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_3","angr","angr (binary analysis platform)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_3","angr","angr (binary analysis platform)",fake-translation
-"ethical-hacking",17,"ethack_malware_analysis_4","Malware","Software malevolo (Malware)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_4","Ransomware","malware estorsivo (Ransomware)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_4","Rootkit","malware nascosto a livello kernel (Rootkit)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_4","Keylogger","Registratore di tastiera (Keylogger)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_4","Worm","Verme (Worm)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_4","Botnet","rete di bot infetti (Botnet)",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_4","Fileless Malware","Malware fileless",tautological-example
-"ethical-hacking",17,"ethack_malware_analysis_4","Polymorphic Malware","Malware polimorfico",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_1","Shellcode Writing","Scrittura di shellcode",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_1","Position Independent Code","Codice indipendente dalla posizione",trivial-example
-"ethical-hacking",18,"ethack_exploit_dev_1","Null-Free Shellcode","Shellcode senza null byte",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_1","Alphanumeric Shellcode","Shellcode alfanumerico",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_1","Polymorphic Encoding","Encoding polimorfico",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_1","Self-Modifying Code","Codice auto-modificante",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_1","syscall","syscall (chiamata di sistema)",fake-translation
-"ethical-hacking",18,"ethack_exploit_dev_1","Direct Syscalls","Syscall dirette",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_1","Direct Syscalls","Syscall dirette",trivial-example
-"ethical-hacking",18,"ethack_exploit_dev_1","Unicode Shellcode","Shellcode unicode",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_2","ROP","Return Oriented Programming (ROP)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_2","JOP","Jump Oriented Programming (JOP)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_2","ROPgadget","ROPgadget (gadget finder)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_2","ROPgadget","ROPgadget (gadget finder)",fake-translation
-"ethical-hacking",18,"ethack_exploit_dev_2","ASLR Bypass","Bypass ASLR",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_2","DEP Bypass","Bypass DEP",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_2","Heap Spraying","saturazione heap con payload (Heap Spraying)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_2","Use After Free","use-after-free / uso di memoria già liberata",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_2","Double Free","liberazione duplicata (Double Free)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_2","Format String","vulnerabilità da stringa di formato (Format String)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_3","AFL","American Fuzzy Lop (AFL)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_3","AFL","American Fuzzy Lop (AFL)",trivial-example
-"ethical-hacking",18,"ethack_exploit_dev_3","AFL++","AFL++ (fork moderno)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_3","AFL++","AFL++ (fork moderno)",fake-translation
-"ethical-hacking",18,"ethack_exploit_dev_3","libFuzzer","libFuzzer (fuzzer in-process LLVM)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_3","libFuzzer","libFuzzer (fuzzer in-process LLVM)",fake-translation
-"ethical-hacking",18,"ethack_exploit_dev_3","Coverage-Guided Fuzzing","Fuzzing guidato da coverage",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_3","Crash Triage","Triage dei crash",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_3","Corpus","Corpus (input fuzzing)",fake-translation
-"ethical-hacking",18,"ethack_exploit_dev_3","Honggfuzz","Honggfuzz (fuzzer Google)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_3","Honggfuzz","Honggfuzz (fuzzer Google)",fake-translation
-"ethical-hacking",18,"ethack_exploit_dev_4","Browser Exploit","Exploit del browser",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_4","JIT Spray","spray nel buffer JIT (JIT Spray)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_4","Type Confusion","Confusione di tipo",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_4","Kernel Exploit","Exploit del kernel",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_4","Kernel Exploit","Exploit del kernel",trivial-example
-"ethical-hacking",18,"ethack_exploit_dev_4","SMEP","Supervisor Mode Execution Prevention (SMEP)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_4","SMAP","Supervisor Mode Access Prevention (SMAP)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_4","KASLR","KASLR (Kernel ASLR)",tautological-example
-"ethical-hacking",18,"ethack_exploit_dev_4","KASLR","KASLR (Kernel ASLR)",fake-translation
-"ethical-hacking",19,"ethack_red_team_1","Domain Fronting","camuffamento del traffico C2 (Domain Fronting)",tautological-example
-"ethical-hacking",19,"ethack_red_team_1","Redirector","proxy che maschera il C2 (Redirector)",tautological-example
-"ethical-hacking",19,"ethack_red_team_1","Callback","chiamata di ritorno al C2 (Callback)",tautological-example
-"ethical-hacking",19,"ethack_red_team_1","P2P Beacon","Beacon peer-to-peer",tautological-example
-"ethical-hacking",19,"ethack_red_team_1","External C2","C2 esterno",tautological-example
-"ethical-hacking",19,"ethack_red_team_1","Long Haul C2","C2 a lungo termine",tautological-example
-"ethical-hacking",19,"ethack_red_team_1","Short Haul C2","C2 a breve termine",tautological-example
-"ethical-hacking",19,"ethack_red_team_2","AV Evasion","Evasione antivirus",tautological-example
-"ethical-hacking",19,"ethack_red_team_2","EDR Bypass","Bypass EDR",tautological-example
-"ethical-hacking",19,"ethack_red_team_2","Process Injection","Iniezione di processo",tautological-example
-"ethical-hacking",19,"ethack_red_team_2","Process Hollowing","sostituzione codice di processo legittimo (Process Hollowing)",tautological-example
-"ethical-hacking",19,"ethack_red_team_2","Reflective DLL Loading","Caricamento DLL riflessivo",tautological-example
-"ethical-hacking",19,"ethack_red_team_2","AMSI Bypass","Bypass AMSI",tautological-example
-"ethical-hacking",19,"ethack_red_team_2","ETW Bypass","Bypass ETW",tautological-example
-"ethical-hacking",19,"ethack_red_team_2","Indirect Syscalls","Syscall indirette",tautological-example
-"ethical-hacking",19,"ethack_red_team_2","Unhooking","rimozione di hook EDR (Unhooking)",tautological-example
-"ethical-hacking",19,"ethack_red_team_2","Sandbox Evasion","Evasione sandbox",tautological-example
-"ethical-hacking",19,"ethack_red_team_3","OPSEC","Sicurezza operativa (OPSEC)",tautological-example
-"ethical-hacking",19,"ethack_red_team_3","Living off the Land","Vivere del territorio (LotL)",tautological-example
-"ethical-hacking",19,"ethack_red_team_3","LOLBAS","Living Off the Land Binaries (LOLBAS)",tautological-example
-"ethical-hacking",19,"ethack_red_team_3","GTFOBins","GTFOBins (Linux LotL)",tautological-example
-"ethical-hacking",19,"ethack_red_team_3","GTFOBins","GTFOBins (Linux LotL)",fake-translation
-"ethical-hacking",19,"ethack_red_team_3","Log Tampering","Manomissione dei log",tautological-example
-"ethical-hacking",19,"ethack_red_team_3","Timestomping","Timestomping (manipolazione timestamp)",tautological-example
-"ethical-hacking",19,"ethack_red_team_3","Timestomping","Timestomping (manipolazione timestamp)",fake-translation
-"ethical-hacking",19,"ethack_red_team_3","Anti-Forensics","tecniche per ostacolare le indagini (Anti-Forensics)",tautological-example
-"ethical-hacking",19,"ethack_red_team_3","Operational Container","Container operativo",tautological-example
-"ethical-hacking",19,"ethack_red_team_4","Adversary Simulation","Simulazione avversaria",tautological-example
-"ethical-hacking",19,"ethack_red_team_4","Threat Emulation","Emulazione di minacce",tautological-example
-"ethical-hacking",19,"ethack_red_team_4","TTPs","TTP / Tattiche tecniche e procedure",tautological-example
-"ethical-hacking",19,"ethack_red_team_4","Atomic Red Team","Atomic Red Team (libreria test atomici di attacco)",tautological-example
-"ethical-hacking",19,"ethack_red_team_4","Atomic Red Team","Atomic Red Team (libreria test atomici di attacco)",fake-translation
-"ethical-hacking",19,"ethack_red_team_4","CALDERA","CALDERA (MITRE adversary emulation)",tautological-example
-"ethical-hacking",19,"ethack_red_team_4","CALDERA","CALDERA (MITRE adversary emulation)",fake-translation
-"ethical-hacking",19,"ethack_red_team_4","Purple Team Exercise","Esercizio purple team",tautological-example
-"ethical-hacking",19,"ethack_red_team_4","Detection Engineering","ingegneria della rilevazione (Detection Engineering)",tautological-example
-"ethical-hacking",19,"ethack_red_team_4","Sigma Rule","Regola Sigma",tautological-example
-"ethical-hacking",19,"ethack_red_team_4","Initial Access","Accesso iniziale",tautological-example
-"ethical-hacking",19,"ethack_red_team_4","Assumed Breach","Breach presunto",tautological-example
-"ethical-hacking",20,"ethack_reporting_1","Technical Details","Dettagli tecnici",tautological-example
-"ethical-hacking",20,"ethack_reporting_1","Recommendations","Raccomandazioni",tautological-example
+"ethical-hacking",12,"ethack_social_engineering_3","Gophish","Gophish",identical-translation
+"ethical-hacking",12,"ethack_social_engineering_3","KnowBe4","KnowBe4",identical-translation
+"ethical-hacking",12,"ethack_social_engineering_3","King Phisher","King Phisher",identical-translation
+"ethical-hacking",12,"ethack_social_engineering_3","Hunter.io","Hunter.io",identical-translation
+"ethical-hacking",12,"ethack_social_engineering_4","SPF","SPF",identical-translation
+"ethical-hacking",12,"ethack_social_engineering_4","DKIM","DKIM",identical-translation
+"ethical-hacking",12,"ethack_social_engineering_4","DMARC","DMARC",identical-translation
+"ethical-hacking",13,"ethack_tools_1","Metasploit","Metasploit",identical-translation
+"ethical-hacking",13,"ethack_tools_1","msfconsole","msfconsole",identical-translation
+"ethical-hacking",13,"ethack_tools_1","Workspace","Workspace",identical-translation
+"ethical-hacking",13,"ethack_tools_1","Armitage","Armitage",identical-translation
+"ethical-hacking",13,"ethack_tools_2","Nmap","Nmap",identical-translation
+"ethical-hacking",13,"ethack_tools_2","Zenmap","Zenmap",identical-translation
+"ethical-hacking",13,"ethack_tools_2","Masscan","Masscan",identical-translation
+"ethical-hacking",13,"ethack_tools_2","RustScan","RustScan",identical-translation
+"ethical-hacking",13,"ethack_tools_3","Wireshark","Wireshark",identical-translation
+"ethical-hacking",13,"ethack_tools_3","tcpdump","tcpdump",identical-translation
+"ethical-hacking",13,"ethack_tools_3","tshark","tshark",identical-translation
+"ethical-hacking",13,"ethack_tools_3","Burp Suite Professional","Burp Suite Professional",tautological-example
+"ethical-hacking",13,"ethack_tools_3","Burp Suite Professional","Burp Suite Professional",identical-translation
+"ethical-hacking",13,"ethack_tools_3","Burp Extender","Burp Extender",identical-translation
+"ethical-hacking",13,"ethack_tools_3","Turbo Intruder","Turbo Intruder",identical-translation
+"ethical-hacking",13,"ethack_tools_3","Caido","Caido",identical-translation
+"ethical-hacking",13,"ethack_tools_4","Empire","Empire",identical-translation
+"ethical-hacking",13,"ethack_tools_4","Sliver","Sliver",identical-translation
+"ethical-hacking",13,"ethack_tools_4","Havoc","Havoc",identical-translation
+"ethical-hacking",13,"ethack_tools_4","Mythic","Mythic",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_1","Cobalt Strike","Cobalt Strike",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_1","Beacon","Beacon",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_1","Aggressor Script","Aggressor Script",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_1","PowerShell Empire","PowerShell Empire",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_1","Jitter","Jitter",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_2","sekurlsa","sekurlsa",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_2","lsadump","lsadump",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_2","Kekeo","Kekeo",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_2","Rubeus","Rubeus",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_2","Pypykatz","Pypykatz",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_2","LaZagne","LaZagne",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_2","SeatBelt","SeatBelt",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_2","SharpUp","SharpUp",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_2","WinPEAS","WinPEAS",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_3","SharpHound","SharpHound",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_3","PowerView","PowerView",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_3","ADRecon","ADRecon",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_3","PingCastle","PingCastle",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_3","ADCS","ADCS",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_3","Certipy","Certipy",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_4","mitm6","mitm6",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_4","GetUserSPNs.py","GetUserSPNs.py",tautological-example
+"ethical-hacking",14,"ethack_advanced_tools_4","GetUserSPNs.py","GetUserSPNs.py",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_4","GetNPUsers.py","GetNPUsers.py",tautological-example
+"ethical-hacking",14,"ethack_advanced_tools_4","GetNPUsers.py","GetNPUsers.py",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_4","wmiexec.py","wmiexec.py",tautological-example
+"ethical-hacking",14,"ethack_advanced_tools_4","wmiexec.py","wmiexec.py",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_4","evil-winrm","evil-winrm",identical-translation
+"ethical-hacking",14,"ethack_advanced_tools_4","pwntools","pwntools",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_1","apktool","apktool",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_1","jadx","jadx",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_1","Smali","Smali",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_1","Drozer","Drozer",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_1","Rooting","Rooting",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_2","Cydia","Cydia",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_2","Frida","Frida",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_2","Objection","Objection",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_2","SSL Pinning","SSL Pinning",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_2","class-dump","class-dump",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_2","Hopper","Hopper",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_2","Keychain","Keychain",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_3","OWASP Mobile Top 10","OWASP Mobile Top 10",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_3","MASVS","MASVS",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_3","MSTG","MSTG",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_3","MobSF","MobSF",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_4","Burp Mobile Assistant","Burp Mobile Assistant",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_4","Genymotion","Genymotion",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_4","Corellium","Corellium",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_4","iMobax","iMobax",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_4","Magisk","Magisk",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_4","Xposed Framework","Xposed Framework",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_4","reFlutter","reFlutter",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_4","Magnet AXIOM","Magnet AXIOM",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_4","apkleaks","apkleaks",identical-translation
+"ethical-hacking",15,"ethack_mobile_hacking_4","Bytecode Viewer","Bytecode Viewer",identical-translation
+"ethical-hacking",16,"ethack_cloud_hacking_1","IMDSv2","IMDSv2",identical-translation
+"ethical-hacking",16,"ethack_cloud_hacking_1","AssumeRole","AssumeRole",identical-translation
+"ethical-hacking",16,"ethack_cloud_hacking_1","Pacu","Pacu",identical-translation
+"ethical-hacking",16,"ethack_cloud_hacking_1","CloudTrail","CloudTrail",identical-translation
+"ethical-hacking",16,"ethack_cloud_hacking_1","aws cli","aws cli",identical-translation
+"ethical-hacking",16,"ethack_cloud_hacking_2","AADInternals","AADInternals",identical-translation
+"ethical-hacking",16,"ethack_cloud_hacking_2","ROADtools","ROADtools",identical-translation
+"ethical-hacking",16,"ethack_cloud_hacking_2","GCP IAM","GCP IAM",identical-translation
+"ethical-hacking",16,"ethack_cloud_hacking_2","Cloud Functions","Cloud Functions",identical-translation
+"ethical-hacking",16,"ethack_cloud_hacking_4","Kubernetes","Kubernetes",identical-translation
+"ethical-hacking",17,"ethack_malware_analysis_1","FLOSS","FLOSS",identical-translation
+"ethical-hacking",17,"ethack_malware_analysis_2","Cuckoo Sandbox","Cuckoo Sandbox",identical-translation
+"ethical-hacking",17,"ethack_malware_analysis_2","Any.Run","Any.Run",identical-translation
+"ethical-hacking",17,"ethack_malware_analysis_2","Process Hacker","Process Hacker",identical-translation
+"ethical-hacking",17,"ethack_malware_analysis_2","x64dbg","x64dbg",identical-translation
+"ethical-hacking",17,"ethack_malware_analysis_2","INetSim","INetSim",identical-translation
+"ethical-hacking",17,"ethack_malware_analysis_3","Ghidra","Ghidra",identical-translation
+"ethical-hacking",17,"ethack_malware_analysis_3","IDA Pro","IDA Pro",identical-translation
+"ethical-hacking",17,"ethack_malware_analysis_3","radare2","radare2",identical-translation
+"ethical-hacking",17,"ethack_malware_analysis_3","Binary Ninja","Binary Ninja",identical-translation
+"ethical-hacking",17,"ethack_malware_analysis_3","angr","angr",identical-translation
+"ethical-hacking",18,"ethack_exploit_dev_1","syscall","syscall",identical-translation
+"ethical-hacking",18,"ethack_exploit_dev_2","ROPgadget","ROPgadget",identical-translation
+"ethical-hacking",18,"ethack_exploit_dev_3","AFL++","AFL++",identical-translation
+"ethical-hacking",18,"ethack_exploit_dev_3","libFuzzer","libFuzzer",identical-translation
+"ethical-hacking",18,"ethack_exploit_dev_3","Corpus","Corpus",identical-translation
+"ethical-hacking",18,"ethack_exploit_dev_3","Honggfuzz","Honggfuzz",identical-translation
+"ethical-hacking",18,"ethack_exploit_dev_4","KASLR","KASLR",identical-translation
+"ethical-hacking",19,"ethack_red_team_3","Timestomping","Timestomping",identical-translation
+"ethical-hacking",19,"ethack_red_team_4","Atomic Red Team","Atomic Red Team",identical-translation
+"ethical-hacking",19,"ethack_red_team_4","CALDERA","CALDERA",identical-translation
 "ethical-hacking",20,"ethack_reporting_1","Conclusion","Conclusione",near-identical-translation
 "ethical-hacking",20,"ethack_reporting_1","Appendix","Appendice",near-identical-translation
-"ethical-hacking",20,"ethack_reporting_2","Impact","Impatto",tautological-example
 "ethical-hacking",20,"ethack_reporting_2","Impact","Impatto",near-identical-translation
-"ethical-hacking",20,"ethack_reporting_2","CVSS Score","Punteggio CVSS",tautological-example
-"ethical-hacking",20,"ethack_reporting_2","Risk Score","Punteggio di rischio",tautological-example
-"ethical-hacking",20,"ethack_reporting_2","Remediation Steps","Passi di correzione",tautological-example
-"ethical-hacking",20,"ethack_reporting_2","Affected Assets","Asset interessati",tautological-example
-"ethical-hacking",20,"ethack_reporting_2","References","Riferimenti",tautological-example
-"ethical-hacking",20,"ethack_reporting_3","Q&A Session","Sessione Q&A",tautological-example
-"ethical-hacking",20,"ethack_reporting_3","Client Education","Formazione cliente",tautological-example
-"ethical-hacking",20,"ethack_reporting_4","Dradis","Piattaforma collaborativa di pentest (Dradis)",tautological-example
-"ethical-hacking",20,"ethack_reporting_4","Faraday","IDE collaborativo per pentest (Faraday)",tautological-example
-"ethical-hacking",20,"ethack_reporting_4","PlexTrac","Piattaforma reportistica pentest (PlexTrac)",tautological-example
-"ethical-hacking",20,"ethack_reporting_4","AttackForge","Piattaforma di gestione pentest (AttackForge)",tautological-example
-"ethical-hacking",20,"ethack_reporting_4","Markdown Report","Report in Markdown",tautological-example
-"ethical-hacking",20,"ethack_reporting_4","LaTeX Report","Report LaTeX",tautological-example
-"ethical-hacking",20,"ethack_reporting_4","Pwndoc","Generatore report open source (Pwndoc)",tautological-example
-"ethical-hacking",21,"ethack_legal_1","GDPR","Regolamento UE protezione dati (GDPR)",tautological-example
-"ethical-hacking",21,"ethack_legal_1","PCI DSS","Standard sicurezza dati pagamenti (PCI DSS)",tautological-example
-"ethical-hacking",21,"ethack_legal_1","HIPAA","Legge sulla privacy sanitaria USA (HIPAA)",tautological-example
-"ethical-hacking",21,"ethack_legal_1","SOX","Legge Sarbanes-Oxley (SOX)",tautological-example
-"ethical-hacking",21,"ethack_legal_1","NIS2","Direttiva UE sulla sicurezza informatica (NIS2)",tautological-example
-"ethical-hacking",21,"ethack_legal_1","DORA","Regolamento UE sulla resilienza digitale (DORA)",tautological-example
-"ethical-hacking",21,"ethack_legal_2","Rules of Engagement","Regole di ingaggio",tautological-example
-"ethical-hacking",21,"ethack_legal_2","NDA","Accordo di non divulgazione (NDA)",tautological-example
-"ethical-hacking",21,"ethack_legal_2","Liability Clause","Clausola di responsabilità",tautological-example
-"ethical-hacking",21,"ethack_legal_2","Indemnification","Indennizzo",tautological-example
-"ethical-hacking",21,"ethack_legal_2","Data Handling","Gestione dei dati",tautological-example
-"ethical-hacking",21,"ethack_legal_2","Data Destruction","Distruzione dei dati",tautological-example
-"ethical-hacking",21,"ethack_legal_3","Bug Bounty Program","Programma bug bounty",tautological-example
-"ethical-hacking",21,"ethack_legal_3","Safe Harbor","Porto sicuro / Safe harbor",tautological-example
-"ethical-hacking",21,"ethack_legal_3","Responsible Disclosure","Divulgazione responsabile",tautological-example
-"ethical-hacking",21,"ethack_legal_3","Coordinated Disclosure","Divulgazione coordinata",tautological-example
-"ethical-hacking",21,"ethack_legal_3","Duplicate","Duplicato",tautological-example
 "ethical-hacking",21,"ethack_legal_3","Duplicate","Duplicato",near-identical-translation
-"ethical-hacking",21,"ethack_legal_3","Out of Scope","Fuori scope",tautological-example
-"ethical-hacking",21,"ethack_legal_4","Privacy by Design","privacy nella progettazione (Privacy by Design)",tautological-example
-"ethical-hacking",21,"ethack_legal_4","Data Minimization","Minimizzazione dei dati",tautological-example
-"ethical-hacking",21,"ethack_legal_4","Whistleblower","Informatore (Whistleblower)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_1","Jeopardy CTF","CTF a stile Jeopardy",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_1","Web Challenge","Sfida web",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_1","Pwn Challenge","Sfida pwn",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_1","Reverse Challenge","Sfida di reverse",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_1","Crypto Challenge","Sfida di crittografia",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_1","Forensics Challenge","Sfida di forensics",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_1","Write-up","Soluzione scritta (Write-up)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_2","HackTheBox","Piattaforma di hacking pratico (HackTheBox)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_2","TryHackMe","Piattaforma di apprendimento hacking (TryHackMe)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_2","OffSec PG","OffSec Proving Grounds",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_2","OffSec PG","OffSec Proving Grounds",trivial-example
-"ethical-hacking",22,"ethack_ctf_labs_2","VulnHub","Catalogo VM vulnerabili (VulnHub)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_2","PortSwigger Academy","Accademia online sicurezza web (PortSwigger Academy)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_2","OverTheWire","Giochi di guerra di sicurezza (OverTheWire)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_2","PicoCTF","CTF educativo (picoCTF)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_2","Root Me","Piattaforma sfide hacking (Root Me)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_2","CTFtime","Calendario CTF (CTFtime)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_2","PwnCollege","Piattaforma educativa exploitation (pwn.college)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_3","Walkthrough","Soluzione guidata (Walkthrough)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_3","IppSec","YouTuber walkthrough HackTheBox (IppSec)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_3","CherryTree","App per appunti pentesting (CherryTree)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_4","VirtualBox","Hypervisor Oracle gratuito (VirtualBox)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_4","VMware","Suite di virtualizzazione (VMware)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_4","Proxmox","Hypervisor open source (Proxmox)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_4","Kali Linux","Distribuzione Linux per pentesting (Kali Linux)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_4","Parrot OS","Distribuzione di sicurezza basata su Debian (Parrot OS)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_4","BlackArch","Distribuzione pentest basata su Arch (BlackArch)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_4","Snapshot","istantanea di stato (Snapshot)",tautological-example
-"ethical-hacking",22,"ethack_ctf_labs_4","Network Segmentation","Segmentazione di rete",tautological-example
-"ethical-hacking",23,"ethack_career_1","OSCP","Offensive Security Certified Professional (OSCP)",tautological-example
-"ethical-hacking",23,"ethack_career_1","CEH","Certified Ethical Hacker (CEH)",tautological-example
-"ethical-hacking",23,"ethack_career_1","PNPT","Practical Network Penetration Tester (PNPT)",tautological-example
-"ethical-hacking",23,"ethack_career_1","eJPT","Junior Penetration Tester (eJPT)",tautological-example
-"ethical-hacking",23,"ethack_career_1","GPEN","GIAC Penetration Tester (GPEN)",tautological-example
-"ethical-hacking",23,"ethack_career_1","CRTP","Certified Red Team Professional (CRTP)",tautological-example
-"ethical-hacking",23,"ethack_career_1","CRTO","Certified Red Team Operator (CRTO)",tautological-example
-"ethical-hacking",23,"ethack_career_1","OSWE","Offensive Security Web Expert (OSWE)",tautological-example
-"ethical-hacking",23,"ethack_career_2","OSEP","Offensive Security Experienced Penetration Tester (OSEP)",tautological-example
-"ethical-hacking",23,"ethack_career_2","OSED","Offensive Security Exploit Developer (OSED)",tautological-example
-"ethical-hacking",23,"ethack_career_2","OSCE3","Tripla certificazione Offensive Security (OSCE3)",tautological-example
-"ethical-hacking",23,"ethack_career_2","OSCE3","Tripla certificazione Offensive Security (OSCE3)",trivial-example
-"ethical-hacking",23,"ethack_career_2","CISSP","Certificazione gestione sicurezza (CISSP)",tautological-example
-"ethical-hacking",23,"ethack_career_2","CRTM","Certified Red Team Master (CRTM)",tautological-example
-"ethical-hacking",23,"ethack_career_2","OSWA","Offensive Security Web Assessor (OSWA)",tautological-example
-"ethical-hacking",23,"ethack_career_2","CCSAS","Specialista Cobalt Strike (CCSAS)",tautological-example
-"ethical-hacking",23,"ethack_career_2","GXPN","Certificazione sviluppo exploit avanzato (GXPN)",tautological-example
-"ethical-hacking",23,"ethack_career_2","CARTP","Certificazione red team Azure (CARTP)",tautological-example
-"ethical-hacking",23,"ethack_career_2","AWS Security Specialty","Certificazione sicurezza AWS (AWS Security Specialty)",tautological-example
-"ethical-hacking",23,"ethack_career_3","Junior Pentester","Pentester junior",tautological-example
-"ethical-hacking",23,"ethack_career_3","Senior Pentester","Pentester senior",tautological-example
-"ethical-hacking",23,"ethack_career_3","Red Team Operator","Operatore offensivo (Red Team Operator)",tautological-example
-"ethical-hacking",23,"ethack_career_3","Security Researcher","Ricercatore di sicurezza",tautological-example
-"ethical-hacking",23,"ethack_career_3","Exploit Developer","Sviluppatore di exploit (Exploit Developer)",tautological-example
-"ethical-hacking",23,"ethack_career_3","Malware Analyst","Analista malware",tautological-example
-"ethical-hacking",23,"ethack_career_4","Methodology Selection","Selezione metodologia",tautological-example
-"ethical-hacking",23,"ethack_career_4","Scoping Call","Call di scoping",tautological-example
-"ethical-hacking",23,"ethack_career_4","Proposal","Proposta commerciale",tautological-example
-"ethical-hacking",23,"ethack_career_4","Retainer","Compenso ricorrente (Retainer)",tautological-example
-"ethical-hacking",23,"ethack_career_4","Fixed Price","Prezzo fisso",tautological-example
-"ethical-hacking",23,"ethack_career_4","Continuous Learning","Apprendimento continuo",tautological-example
-"ethical-hacking",0,"ethack_foundations_1","rules of engagement","",duplicate-across-lessons
-"ethical-hacking",21,"ethack_legal_2","rules of engagement","",duplicate-across-lessons
-"ethical-hacking",0,"ethack_foundations_2","responsible disclosure","",duplicate-across-lessons
-"ethical-hacking",21,"ethack_legal_3","responsible disclosure","",duplicate-across-lessons
-"ethical-hacking",0,"ethack_foundations_2","proof of concept","",duplicate-across-lessons
-"ethical-hacking",20,"ethack_reporting_2","proof of concept","",duplicate-across-lessons
-"ethical-hacking",0,"ethack_foundations_3","attack vector","",duplicate-across-lessons
-"ethical-hacking",4,"ethack_vuln_scanning_2","attack vector","",duplicate-across-lessons
-"ethical-hacking",0,"ethack_foundations_3","payload","",duplicate-across-lessons
-"ethical-hacking",5,"ethack_exploitation_1","payload","",duplicate-across-lessons
-"ethical-hacking",0,"ethack_foundations_4","statement of work","",duplicate-across-lessons
-"ethical-hacking",21,"ethack_legal_2","statement of work","",duplicate-across-lessons
-"ethical-hacking",0,"ethack_foundations_4","code of ethics","",duplicate-across-lessons
-"ethical-hacking",21,"ethack_legal_4","code of ethics","",duplicate-across-lessons
-"ethical-hacking",1,"ethack_methodology_1","lateral movement","",duplicate-across-lessons
-"ethical-hacking",11,"ethack_post_exploitation_3","lateral movement","",duplicate-across-lessons
-"ethical-hacking",1,"ethack_methodology_1","persistence","",duplicate-across-lessons
-"ethical-hacking",11,"ethack_post_exploitation_2","persistence","",duplicate-across-lessons
-"ethical-hacking",1,"ethack_methodology_3","pivoting","",duplicate-across-lessons
-"ethical-hacking",11,"ethack_post_exploitation_3","pivoting","",duplicate-across-lessons
-"ethical-hacking",1,"ethack_methodology_4","living off the land","",duplicate-across-lessons
-"ethical-hacking",19,"ethack_red_team_3","living off the land","",duplicate-across-lessons
-"ethical-hacking",2,"ethack_passive_recon_3","theharvester","",duplicate-across-lessons
-"ethical-hacking",12,"ethack_social_engineering_3","theharvester","",duplicate-across-lessons
-"ethical-hacking",2,"ethack_passive_recon_3","maltego","",duplicate-across-lessons
-"ethical-hacking",12,"ethack_social_engineering_3","maltego","",duplicate-across-lessons
-"ethical-hacking",2,"ethack_passive_recon_3","recon-ng","",duplicate-across-lessons
-"ethical-hacking",13,"ethack_tools_4","recon-ng","",duplicate-across-lessons
-"ethical-hacking",3,"ethack_active_recon_4","wordlist","",duplicate-across-lessons
-"ethical-hacking",10,"ethack_password_cracking_2","wordlist","",duplicate-across-lessons
-"ethical-hacking",4,"ethack_vuln_scanning_1","nikto","",duplicate-across-lessons
-"ethical-hacking",13,"ethack_tools_4","nikto","",duplicate-across-lessons
-"ethical-hacking",4,"ethack_vuln_scanning_4","severity rating","",duplicate-across-lessons
-"ethical-hacking",20,"ethack_reporting_2","severity rating","",duplicate-across-lessons
-"ethical-hacking",4,"ethack_vuln_scanning_4","risk score","",duplicate-across-lessons
-"ethical-hacking",20,"ethack_reporting_2","risk score","",duplicate-across-lessons
-"ethical-hacking",5,"ethack_exploitation_3","egghunter","",duplicate-across-lessons
-"ethical-hacking",18,"ethack_exploit_dev_1","egghunter","",duplicate-across-lessons
-"ethical-hacking",6,"ethack_web_hacking_1","sqlmap","",duplicate-across-lessons
-"ethical-hacking",13,"ethack_tools_4","sqlmap","",duplicate-across-lessons
-"ethical-hacking",8,"ethack_network_hacking_2","responder","",duplicate-across-lessons
-"ethical-hacking",14,"ethack_advanced_tools_4","responder","",duplicate-across-lessons
-"ethical-hacking",9,"ethack_wireless_2","hashcat","",duplicate-across-lessons
-"ethical-hacking",10,"ethack_password_cracking_2","hashcat","",duplicate-across-lessons
-"ethical-hacking",10,"ethack_password_cracking_2","hydra","",duplicate-across-lessons
-"ethical-hacking",13,"ethack_tools_4","hydra","",duplicate-across-lessons
-"ethical-hacking",10,"ethack_password_cracking_4","mimikatz","",duplicate-across-lessons
-"ethical-hacking",14,"ethack_advanced_tools_2","mimikatz","",duplicate-across-lessons
-"ethical-hacking",11,"ethack_post_exploitation_1","gtfobins","",duplicate-across-lessons
-"ethical-hacking",19,"ethack_red_team_3","gtfobins","",duplicate-across-lessons
-"ethical-hacking",11,"ethack_post_exploitation_1","kernel exploit","",duplicate-across-lessons
-"ethical-hacking",18,"ethack_exploit_dev_4","kernel exploit","",duplicate-across-lessons
-"ethical-hacking",11,"ethack_post_exploitation_3","crackmapexec","",duplicate-across-lessons
-"ethical-hacking",14,"ethack_advanced_tools_4","crackmapexec","",duplicate-across-lessons
-"ethical-hacking",11,"ethack_post_exploitation_3","netexec","",duplicate-across-lessons
-"ethical-hacking",14,"ethack_advanced_tools_4","netexec","",duplicate-across-lessons
-"ethical-hacking",11,"ethack_post_exploitation_3","bloodhound","",duplicate-across-lessons
-"ethical-hacking",14,"ethack_advanced_tools_3","bloodhound","",duplicate-across-lessons
+"ethical-hacking",22,"ethack_ctf_labs_2","OffSec PG","OffSec PG",identical-translation
+"ethical-hacking",23,"ethack_career_2","OSCE3","OSCE3",identical-translation
+"ethical-hacking",3,"ethack_active_recon_4","Wordlist","",duplicate-across-lessons
+"ethical-hacking",10,"ethack_password_cracking_2","Wordlist","",duplicate-across-lessons

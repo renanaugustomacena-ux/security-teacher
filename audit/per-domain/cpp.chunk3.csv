@@ -1,0 +1,224 @@
+topicId,level,lesson,english,italian,issueType
+"cpp",19,"cpp_build_2","Triplet","Piattaforma target Vcpkg (triplet)",trivial-example
+"cpp",19,"cpp_build_2","Lockfile","File di blocco delle versioni (lockfile)",trivial-example
+"cpp",19,"cpp_build_2","Binary Cache","Cache binaria",trivial-example
+"cpp",19,"cpp_build_3","Translation Unit","Unità di traduzione",trivial-example
+"cpp",19,"cpp_build_3","Preprocessor","Preprocessore",near-identical-translation
+"cpp",19,"cpp_build_3","Preprocessor","Preprocessore",trivial-example
+"cpp",19,"cpp_build_3","ODR","Regola della definizione unica (ODR)",tautological-example
+"cpp",19,"cpp_build_3","ODR","Regola della definizione unica (ODR)",trivial-example
+"cpp",19,"cpp_build_3","Internal Linkage","Linkage interno",trivial-example
+"cpp",19,"cpp_build_3","External Linkage","Linkage esterno",trivial-example
+"cpp",19,"cpp_build_3","Inline Linkage","Linkage inline",trivial-example
+"cpp",19,"cpp_build_3","Symbol Table","Tabella dei simboli",trivial-example
+"cpp",19,"cpp_build_3","Dynamic Library","Libreria dinamica",trivial-example
+"cpp",19,"cpp_build_4","Precompiled Header","Header precompilato",trivial-example
+"cpp",19,"cpp_build_4","Unity Build","Compilazione unificata (unity build)",tautological-example
+"cpp",19,"cpp_build_4","Unity Build","Compilazione unificata (unity build)",trivial-example
+"cpp",19,"cpp_build_4","Forward Declaration","Dichiarazione anticipata",tautological-example
+"cpp",19,"cpp_build_4","Forward Declaration","Dichiarazione anticipata",trivial-example
+"cpp",19,"cpp_build_4","Include Guard","Protezione doppia inclusione (include guard)",tautological-example
+"cpp",19,"cpp_build_4","Pragma Once","Direttiva di inclusione singola (#pragma once)",tautological-example
+"cpp",19,"cpp_build_4","CCache","ccache (cache di compilazione)",tautological-example
+"cpp",19,"cpp_build_4","CCache","ccache (cache di compilazione)",fake-translation
+"cpp",19,"cpp_build_4","CCache","ccache (cache di compilazione)",trivial-example
+"cpp",19,"cpp_build_4","Distcc","distcc (compilazione distribuita)",tautological-example
+"cpp",19,"cpp_build_4","Distcc","distcc (compilazione distribuita)",fake-translation
+"cpp",19,"cpp_build_4","Module Build","Build di moduli",trivial-example
+"cpp",20,"cpp_performance_1","Cache Line","Linea di cache",trivial-example
+"cpp",20,"cpp_performance_1","Cache Hit","Dato trovato in cache (cache hit)",trivial-example
+"cpp",20,"cpp_performance_1","Cache Miss","Dato assente in cache (cache miss)",trivial-example
+"cpp",20,"cpp_performance_1","Cache Miss","",duplicate-across-lessons
+"cpp",20,"cpp_performance_1","False Sharing","Condivisione falsa di linee cache (false sharing)",tautological-example
+"cpp",20,"cpp_performance_1","Memory Layout","Layout di memoria",tautological-example
+"cpp",20,"cpp_performance_1","AoS vs SoA","Array di struct vs struct di array (AoS vs SoA)",trivial-example
+"cpp",20,"cpp_performance_1","Data Locality","Località dei dati",tautological-example
+"cpp",20,"cpp_performance_1","Data Locality","Località dei dati",trivial-example
+"cpp",20,"cpp_performance_2","Hotspot","Punto caldo del codice (hotspot)",trivial-example
+"cpp",20,"cpp_performance_2","Flame Graph","Grafico a fiamma (flame graph)",tautological-example
+"cpp",20,"cpp_performance_2","Flame Graph","Grafico a fiamma (flame graph)",trivial-example
+"cpp",20,"cpp_performance_2","Perf","perf (profiler Linux)",tautological-example
+"cpp",20,"cpp_performance_2","Perf","perf (profiler Linux)",fake-translation
+"cpp",20,"cpp_performance_2","Perf","perf (profiler Linux)",trivial-example
+"cpp",20,"cpp_performance_2","Perf Counter","Contatore perf",trivial-example
+"cpp",20,"cpp_performance_2","Microbenchmark","Benchmark a piccola granularità (microbenchmark)",trivial-example
+"cpp",20,"cpp_performance_2","Benchmark Library","Libreria benchmark",trivial-example
+"cpp",20,"cpp_performance_3","Intrinsics","Intrinseci",near-identical-translation
+"cpp",20,"cpp_performance_3","TBB","Intel TBB (libreria parallelismo)",trivial-example
+"cpp",20,"cpp_performance_3","Thread Pool","Pool di thread",trivial-example
+"cpp",20,"cpp_performance_3","Work Stealing","Furto di lavoro tra thread (work stealing)",tautological-example
+"cpp",20,"cpp_performance_3","Work Stealing","Furto di lavoro tra thread (work stealing)",trivial-example
+"cpp",20,"cpp_performance_4","Branch Prediction Hint","Hint di branch prediction",trivial-example
+"cpp",20,"cpp_performance_4","Hot Path","Percorso caldo del codice (hot path)",trivial-example
+"cpp",20,"cpp_performance_4","Inline Hint","Hint inline",trivial-example
+"cpp",20,"cpp_performance_4","Restrict","Puntatore non aliasing (restrict)",tautological-example
+"cpp",20,"cpp_performance_4","Profile Guided","Guidato da profile",trivial-example
+"cpp",20,"cpp_performance_4","Small Buffer Optimization","Ottimizzazione buffer piccoli (small buffer optimization)",trivial-example
+"cpp",20,"cpp_performance_4","Empty Optimization","Ottimizzazione vuoto",trivial-example
+"cpp",21,"cpp_metaprogramming_1","Template Metaprogramming","Metaprogrammazione a template",trivial-example
+"cpp",21,"cpp_metaprogramming_1","Metafunction","Metafunzione",trivial-example
+"cpp",21,"cpp_metaprogramming_1","Type List","Lista di tipi",trivial-example
+"cpp",21,"cpp_metaprogramming_1","Recursive Template","Template ricorsivo",tautological-example
+"cpp",21,"cpp_metaprogramming_1","Tag Type","Tipo tag",tautological-example
+"cpp",21,"cpp_metaprogramming_1","Tag Type","Tipo tag",trivial-example
+"cpp",21,"cpp_metaprogramming_1","Tag Type","",duplicate-across-lessons
+"cpp",21,"cpp_metaprogramming_1","Type Erasure","Cancellazione di tipo",tautological-example
+"cpp",21,"cpp_metaprogramming_1","Type Erasure","Cancellazione di tipo",trivial-example
+"cpp",21,"cpp_metaprogramming_1","Type Erasure","",duplicate-across-lessons
+"cpp",21,"cpp_metaprogramming_1","Index Sequence","Sequenza di indici (std::index_sequence)",trivial-example
+"cpp",21,"cpp_metaprogramming_2","Constexpr If","Branch a tempo di compilazione (if constexpr)",trivial-example
+"cpp",21,"cpp_metaprogramming_2","Constexpr If","",duplicate-across-lessons
+"cpp",21,"cpp_metaprogramming_2","Compile Time String","Stringa compile-time",trivial-example
+"cpp",21,"cpp_metaprogramming_2","Reflection","Riflessione",trivial-example
+"cpp",21,"cpp_metaprogramming_2","Static Reflection","Riflessione statica",tautological-example
+"cpp",21,"cpp_metaprogramming_2","Type Computation","Calcolo di tipo",trivial-example
+"cpp",21,"cpp_metaprogramming_3","Is Trivial","Verifica tipo triviale (is_trivial)",trivial-example
+"cpp",21,"cpp_metaprogramming_3","Is Standard Layout","Verifica layout standard del tipo (is_standard_layout)",trivial-example
+"cpp",21,"cpp_metaprogramming_3","Is Convertible","Verifica convertibilità tra tipi (is_convertible)",trivial-example
+"cpp",21,"cpp_metaprogramming_3","Is Function","Verifica tipo funzione (is_function)",trivial-example
+"cpp",21,"cpp_metaprogramming_3","Negation","NOT logico di trait (std::negation)",trivial-example
+"cpp",21,"cpp_metaprogramming_3","Variable Trait","Variabile di tratto",trivial-example
+"cpp",21,"cpp_metaprogramming_4","Custom Concept","Concept personalizzato",trivial-example
+"cpp",21,"cpp_metaprogramming_4","Nested Requirement","Requisito annidato",trivial-example
+"cpp",21,"cpp_metaprogramming_4","Type Requirement","Requisito di tipo",trivial-example
+"cpp",21,"cpp_metaprogramming_4","Mp Eleven","Boost.MP11",trivial-example
+"cpp",21,"cpp_metaprogramming_4","Boost Hana","Libreria di metaprogrammazione (Boost.Hana)",trivial-example
+"cpp",21,"cpp_metaprogramming_4","Concepts Library","Libreria di concept",trivial-example
+"cpp",21,"cpp_metaprogramming_4","Auto Deduction","Deduzione auto",trivial-example
+"cpp",21,"cpp_metaprogramming_4","Trailing Requires","Requires finale",tautological-example
+"cpp",22,"cpp_testing_1","Test Macro","Macro di test",trivial-example
+"cpp",22,"cpp_testing_1","Expect","EXPECT_* / asserzioni non fatali GTest",tautological-example
+"cpp",22,"cpp_testing_1","Expect","EXPECT_* / asserzioni non fatali GTest",trivial-example
+"cpp",22,"cpp_testing_1","Assert","ASSERT_* / asserzioni fatali GTest",tautological-example
+"cpp",22,"cpp_testing_1","Assert","ASSERT_* / asserzioni fatali GTest",trivial-example
+"cpp",22,"cpp_testing_1","Test Fixture","Fixture di test",trivial-example
+"cpp",22,"cpp_testing_1","Setup","Preparazione del test (setup)",tautological-example
+"cpp",22,"cpp_testing_1","Setup","Preparazione del test (setup)",trivial-example
+"cpp",22,"cpp_testing_1","Teardown","Pulizia post-test (teardown)",tautological-example
+"cpp",22,"cpp_testing_1","Teardown","Pulizia post-test (teardown)",trivial-example
+"cpp",22,"cpp_testing_1","Parameterized Test","Test parametrizzato",tautological-example
+"cpp",22,"cpp_testing_1","Test Suite","Suite di test",trivial-example
+"cpp",22,"cpp_testing_1","Death Test","Test che verifica un crash atteso (death test)",tautological-example
+"cpp",22,"cpp_testing_1","Death Test","Test che verifica un crash atteso (death test)",trivial-example
+"cpp",22,"cpp_testing_2","Doctest","doctest (framework di test C++ leggero)",tautological-example
+"cpp",22,"cpp_testing_2","Doctest","doctest (framework di test C++ leggero)",fake-translation
+"cpp",22,"cpp_testing_2","Doctest","doctest (framework di test C++ leggero)",trivial-example
+"cpp",22,"cpp_testing_2","Test Case","Caso di test (test case)",trivial-example
+"cpp",22,"cpp_testing_2","Section","Sezione",trivial-example
+"cpp",22,"cpp_testing_2","Require","Asserzione critica Catch2 (REQUIRE)",tautological-example
+"cpp",22,"cpp_testing_2","Require","Asserzione critica Catch2 (REQUIRE)",trivial-example
+"cpp",22,"cpp_testing_2","Check","Asserzione non fatale Catch2 (CHECK)",tautological-example
+"cpp",22,"cpp_testing_2","Check","Asserzione non fatale Catch2 (CHECK)",trivial-example
+"cpp",22,"cpp_testing_2","Tag","Etichetta del test (tag)",tautological-example
+"cpp",22,"cpp_testing_2","Tag","Etichetta del test (tag)",trivial-example
+"cpp",22,"cpp_testing_2","BDD Style","Stile BDD",trivial-example
+"cpp",22,"cpp_testing_2","Header Only","Libreria solo header (header-only)",trivial-example
+"cpp",22,"cpp_testing_3","GMock","Libreria mock di Google (GMock)",tautological-example
+"cpp",22,"cpp_testing_3","GMock","Libreria mock di Google (GMock)",trivial-example
+"cpp",22,"cpp_testing_3","Mock Class","Classe mock",trivial-example
+"cpp",22,"cpp_testing_3","Mock Method","Metodo mock",trivial-example
+"cpp",22,"cpp_testing_3","Expectation","Aspettativa",trivial-example
+"cpp",22,"cpp_testing_3","Stub","Sostituto minimale (stub)",trivial-example
+"cpp",22,"cpp_testing_3","LibFuzzer","libFuzzer (fuzzer in-process LLVM)",tautological-example
+"cpp",22,"cpp_testing_3","LibFuzzer","libFuzzer (fuzzer in-process LLVM)",fake-translation
+"cpp",22,"cpp_testing_3","LibFuzzer","libFuzzer (fuzzer in-process LLVM)",trivial-example
+"cpp",22,"cpp_testing_3","Property Test","Test basato su proprietà (property test)",tautological-example
+"cpp",22,"cpp_testing_3","Property Test","Test basato su proprietà (property test)",trivial-example
+"cpp",22,"cpp_testing_4","Code Coverage","Copertura del codice",trivial-example
+"cpp",22,"cpp_testing_4","Gcov","gcov (copertura GCC)",tautological-example
+"cpp",22,"cpp_testing_4","Gcov","gcov (copertura GCC)",fake-translation
+"cpp",22,"cpp_testing_4","Gcov","gcov (copertura GCC)",trivial-example
+"cpp",22,"cpp_testing_4","Lcov","lcov (interfaccia copertura)",tautological-example
+"cpp",22,"cpp_testing_4","Lcov","lcov (interfaccia copertura)",fake-translation
+"cpp",22,"cpp_testing_4","Lcov","lcov (interfaccia copertura)",trivial-example
+"cpp",22,"cpp_testing_4","Branch Coverage","Copertura dei rami",tautological-example
+"cpp",22,"cpp_testing_4","Branch Coverage","Copertura dei rami",trivial-example
+"cpp",22,"cpp_testing_4","Line Coverage","Copertura per riga",tautological-example
+"cpp",22,"cpp_testing_4","Line Coverage","Copertura per riga",trivial-example
+"cpp",22,"cpp_testing_4","Mutation Testing","Test di mutazione",tautological-example
+"cpp",22,"cpp_testing_4","Mutation Testing","Test di mutazione",trivial-example
+"cpp",22,"cpp_testing_4","Benchmark","Test prestazionale (benchmark)",tautological-example
+"cpp",22,"cpp_testing_4","Benchmark","Test prestazionale (benchmark)",trivial-example
+"cpp",22,"cpp_testing_4","Regression Test","Test di regressione",tautological-example
+"cpp",22,"cpp_testing_4","Regression Test","Test di regressione",trivial-example
+"cpp",22,"cpp_testing_4","CI Pipeline","Pipeline CI",tautological-example
+"cpp",22,"cpp_testing_4","CI Pipeline","Pipeline CI",trivial-example
+"cpp",22,"cpp_testing_4","Snapshot Test","Test di snapshot",tautological-example
+"cpp",23,"cpp_foundations_9","Resource Pointer","Puntatore risorsa",trivial-example
+"cpp",23,"cpp_foundations_9","Not Null","Puntatore non nullo (gsl::not_null)",trivial-example
+"cpp",23,"cpp_foundations_9","Narrow Cast","Cast restrittivo controllato (gsl::narrow_cast)",trivial-example
+"cpp",23,"cpp_foundations_9","Final Action","Azione finale",trivial-example
+"cpp",23,"cpp_foundations_9","Compile Time Constants","Costanti compile-time",trivial-example
+"cpp",23,"cpp_foundations_9","Concrete Type","Tipo concreto",trivial-example
+"cpp",23,"cpp_foundations_9","Style Guide","Guida di stile",trivial-example
+"cpp",23,"cpp_foundations_9","Style Guide","Guida di stile",redundant-note
+"cpp",23,"cpp_foundations_9","Best Practice","Pratica raccomandata (best practice)",tautological-example
+"cpp",23,"cpp_foundations_9","Best Practice","Pratica raccomandata (best practice)",trivial-example
+"cpp",23,"cpp_foundations_10","Sanitizer","Strumento rilevazione errori a runtime (sanitizer)",tautological-example
+"cpp",23,"cpp_foundations_10","Sanitizer","Strumento rilevazione errori a runtime (sanitizer)",trivial-example
+"cpp",23,"cpp_foundations_10","Address Sanitizer","Sanitizer per memoria (AddressSanitizer)",trivial-example
+"cpp",23,"cpp_foundations_10","Undefined Behavior Sanitizer","Sanitizer per comportamento indefinito (UBSan)",trivial-example
+"cpp",23,"cpp_foundations_10","Thread Sanitizer","Sanitizer per data race (ThreadSanitizer)",trivial-example
+"cpp",23,"cpp_foundations_10","Memory Sanitizer","Sanitizer per memoria non inizializzata (MemorySanitizer)",trivial-example
+"cpp",23,"cpp_foundations_10","Leak Sanitizer","Sanitizer per perdite memoria (LeakSanitizer)",trivial-example
+"cpp",23,"cpp_foundations_10","Static Analyzer","Analizzatore statico",tautological-example
+"cpp",23,"cpp_foundations_10","Clang Tidy","Analizzatore statico e linter C++ (Clang-Tidy)",trivial-example
+"cpp",23,"cpp_foundations_10","Cppcheck","cppcheck (analizzatore statico)",tautological-example
+"cpp",23,"cpp_foundations_10","Cppcheck","cppcheck (analizzatore statico)",fake-translation
+"cpp",23,"cpp_foundations_10","Cppcheck","cppcheck (analizzatore statico)",trivial-example
+"cpp",23,"cpp_foundations_10","Compiler Warning","Avviso del compilatore",trivial-example
+"cpp",23,"cpp_foundations_11","Legacy Code","Codice legacy",tautological-example
+"cpp",23,"cpp_foundations_11","Legacy Code","Codice legacy",trivial-example
+"cpp",23,"cpp_foundations_11","Replace Auto Ptr","Sostituire auto_ptr",trivial-example
+"cpp",23,"cpp_foundations_11","Range Based","Basato su intervalli (range-based)",trivial-example
+"cpp",23,"cpp_foundations_11","NULL to Nullptr","Da NULL a nullptr",trivial-example
+"cpp",23,"cpp_foundations_11","C Style Cast","Cast stile C",trivial-example
+"cpp",23,"cpp_foundations_11","Use Auto","Usa auto",tautological-example
+"cpp",23,"cpp_foundations_11","Use Auto","Usa auto",near-identical-translation
+"cpp",23,"cpp_foundations_11","Use Auto","Usa auto",trivial-example
+"cpp",23,"cpp_foundations_11","Replace TypeDef","Sostituire typedef",tautological-example
+"cpp",23,"cpp_foundations_11","Replace TypeDef","Sostituire typedef",trivial-example
+"cpp",23,"cpp_foundations_11","Replace Enum","Sostituire enum",trivial-example
+"cpp",23,"cpp_foundations_12","Code Review","Revisione del codice (code review)",tautological-example
+"cpp",23,"cpp_foundations_12","Pull Request","Richiesta di integrazione (pull request)",trivial-example
+"cpp",23,"cpp_foundations_12","Merge Request","Richiesta di fusione (GitLab) (merge request)",trivial-example
+"cpp",23,"cpp_foundations_12","Pre-Commit Hook","Hook pre-commit",tautological-example
+"cpp",23,"cpp_foundations_12","Pre-Commit Hook","Hook pre-commit",trivial-example
+"cpp",23,"cpp_foundations_12","Format Check","Verifica di formato",trivial-example
+"cpp",23,"cpp_foundations_12","Lint","Analisi statica del codice (lint)",tautological-example
+"cpp",23,"cpp_foundations_12","Lint","Analisi statica del codice (lint)",trivial-example
+"cpp",23,"cpp_foundations_12","Clean Code","Codice pulito",tautological-example
+"cpp",23,"cpp_foundations_12","Clean Code","Codice pulito",trivial-example
+"cpp",23,"cpp_foundations_12","Technical Debt","Debito tecnico",tautological-example
+"cpp",23,"cpp_foundations_12","Technical Debt","Debito tecnico",trivial-example
+"cpp",23,"cpp_foundations_12","Pair Programming","Programmazione in coppia (pair programming)",tautological-example
+"cpp",23,"cpp_foundations_12","Pair Programming","Programmazione in coppia (pair programming)",trivial-example
+"cpp",8,"cpp_templates_3","Default Argument","",duplicate-across-lessons
+"cpp",1,"cpp_foundations_8","File Stream","",duplicate-across-lessons
+"cpp",2,"cpp_oop_3","Move Constructor","",duplicate-across-lessons
+"cpp",2,"cpp_oop_3","Deleted Function","",duplicate-across-lessons
+"cpp",2,"cpp_oop_4","Inline Variable","",duplicate-across-lessons
+"cpp",2,"cpp_oop_4","Singleton","",duplicate-across-lessons
+"cpp",17,"cpp_patterns_1","Singleton","",duplicate-across-lessons
+"cpp",3,"cpp_oop_8","Mixin","",duplicate-across-lessons
+"cpp",4,"cpp_oop_10","Type Erasure","",duplicate-across-lessons
+"cpp",4,"cpp_oop_12","Cache Miss","",duplicate-across-lessons
+"cpp",4,"cpp_oop_12","CRTP","",duplicate-across-lessons
+"cpp",17,"cpp_patterns_2","CRTP","",duplicate-across-lessons
+"cpp",5,"cpp_oop_16","User-Defined Literal","",duplicate-across-lessons
+"cpp",5,"cpp_oop_16","Noexcept Operator","",duplicate-across-lessons
+"cpp",10,"cpp_exceptions_3","Noexcept Operator","",duplicate-across-lessons
+"cpp",6,"cpp_stl_1","Array","",duplicate-across-lessons
+"cpp",6,"cpp_stl_2","Find","",duplicate-across-lessons
+"cpp",7,"cpp_stl_5","Find","",duplicate-across-lessons
+"cpp",8,"cpp_templates_4","Static Assert","",duplicate-across-lessons
+"cpp",8,"cpp_templates_4","Template Bloat","",duplicate-across-lessons
+"cpp",9,"cpp_memory_2","Make Shared","",duplicate-across-lessons
+"cpp",11,"cpp_lambdas_3","Constexpr Lambda","",duplicate-across-lessons
+"cpp",21,"cpp_metaprogramming_4","Constexpr Lambda","",duplicate-across-lessons
+"cpp",12,"cpp_modern_cpp_4","Atomic","",duplicate-across-lessons
+"cpp",15,"cpp_concurrency_3","Atomic","",duplicate-across-lessons
+"cpp",14,"cpp_templates_8","Constexpr Function","",duplicate-across-lessons
+"cpp",21,"cpp_metaprogramming_2","Constexpr Function","",duplicate-across-lessons
+"cpp",14,"cpp_templates_8","Compile Time Computation","",duplicate-across-lessons
+"cpp",21,"cpp_metaprogramming_2","Compile Time Computation","",duplicate-across-lessons

@@ -1,0 +1,1428 @@
+{
+  "fixes": [
+    {
+      "level": "0",
+      "lesson": "db_foundations_4",
+      "english": "Persistence",
+      "set": {
+        "english": "Disk Persistence",
+        "italian": "Persistenza su disco",
+        "example": "Disk persistence guarantees that a committed write survives a process crash or sudden power loss to the database server. = La persistenza su disco garantisce che una scrittura confermata sopravviva al crash del processo o all'interruzione improvvisa di corrente del server database."
+      }
+    },
+    {
+      "level": "2",
+      "lesson": "db_sql_6",
+      "english": "GROUPING",
+      "set": {
+        "example": "Running totals per region need GROUP BY region with a GROUPING SETS clause when subtotals across multiple dimensions are required. = I totali per regione richiedono GROUP BY region con una clausola GROUPING SETS quando servono subtotali su piu' dimensioni."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_1",
+      "english": "Cardinality",
+      "set": {
+        "english": "Relationship Cardinality",
+        "italian": "Cardinalita' della relazione",
+        "example": "Modeling orders and customers as one-to-many sets the relationship cardinality and shapes every join we will later write. = Modellare ordini e clienti come uno-a-molti fissa la cardinalita' della relazione e plasma ogni join che scriveremo in seguito."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "db_design_4",
+      "english": "Polymorphic Association",
+      "set": {
+        "example": "A polymorphic association on a Comment table lets one foreign key reference posts, photos, or videos through a discriminator column. = Un'associazione polimorfica su una tabella Comment permette a una chiave esterna di riferire post, foto o video tramite una colonna discriminatore."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_2",
+      "english": "Armstrong Axioms",
+      "set": {
+        "example": "Reflexivity, augmentation, and transitivity from the Armstrong axioms drive every functional dependency proof in normalization theory. = Riflessivita', aumento e transitivita' degli assiomi di Armstrong guidano ogni prova di dipendenza funzionale nella teoria della normalizzazione."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "db_normalization_3",
+      "english": "Dependency Preservation",
+      "set": {
+        "example": "Dependency preservation matters because a decomposition that loses an FD forces extra joins to enforce business rules at query time. = La preservazione delle dipendenze conta perche' una decomposizione che perde una FD costringe a join extra per applicare le regole di business al momento della query."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "Index Lookup",
+      "set": {
+        "example": "An index lookup on user_id turns a 50ms full scan over ten million rows into a sub-millisecond point read. = Un index lookup su user_id trasforma una scansione completa da 50ms su dieci milioni di righe in una lettura puntuale sotto il millisecondo."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "Full Table Scan",
+      "set": {
+        "example": "A full table scan on a billion-row events table will bury the disk in IO and slow every other query on the box. = Una scansione completa su una tabella eventi da un miliardo di righe seppellira' il disco di IO e rallentera' ogni altra query sulla macchina."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "Selectivity",
+      "set": {
+        "english": "Index Selectivity",
+        "italian": "Selettivita' dell'indice",
+        "example": "Indexing a boolean column rarely pays off because its index selectivity is so poor the planner prefers a sequential scan. = Indicizzare una colonna booleana raramente conviene perche' la selettivita' del suo indice e' cosi' bassa che il planner preferisce una scansione sequenziale."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "Cardinality",
+      "set": {
+        "english": "Column Cardinality",
+        "italian": "Cardinalita' della colonna",
+        "example": "High column cardinality on email or user_id makes a B-tree extremely effective at narrowing down the matching rows. = Un'alta cardinalita' della colonna su email o user_id rende un B-tree estremamente efficace nel restringere le righe corrispondenti."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "Index Maintenance",
+      "set": {
+        "example": "Heavy index maintenance during bulk inserts is often the hidden cost behind nightly ETL jobs running slower than expected. = La pesante manutenzione degli indici durante gli insert in massa e' spesso il costo nascosto dietro job ETL notturni piu' lenti del previsto."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_1",
+      "english": "Index Bloat",
+      "set": {
+        "example": "After months of updates and deletes, index bloat can double on-disk size and force a REINDEX during the next maintenance window. = Dopo mesi di update e delete, il bloat dell'indice puo' raddoppiare la dimensione su disco e forzare un REINDEX nella prossima finestra di manutenzione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "B-tree Index",
+      "set": {
+        "example": "A B-tree index on a timestamp column powers fast range queries like fetching every order placed in the last 24 hours. = Un indice B-tree su una colonna timestamp alimenta query di intervallo veloci come recuperare ogni ordine piazzato nelle ultime 24 ore."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Hash Index",
+      "set": {
+        "example": "Equality lookups on a session_id column are perfectly served by a hash index since range scans are not part of that workload. = Le ricerche per uguaglianza su una colonna session_id sono perfettamente servite da un hash index dato che le scansioni di intervallo non fanno parte di quel carico."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "GIN Index",
+      "set": {
+        "example": "A GIN index over a tsvector column lets Postgres serve full-text search across millions of articles in tens of milliseconds. = Un indice GIN su una colonna tsvector permette a Postgres di servire ricerca full-text su milioni di articoli in decine di millisecondi."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "GiST Index",
+      "set": {
+        "example": "Geometry searches like nearest-coffee-shop benefit from a GiST index because it supports custom distance operators over spatial data. = Le ricerche geometriche come il bar piu' vicino beneficiano di un indice GiST perche' supporta operatori di distanza personalizzati su dati spaziali."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "BRIN Index",
+      "set": {
+        "example": "Time-series tables ordered by insertion time love a BRIN index because it summarizes block ranges with almost no storage overhead. = Le tabelle time-series ordinate per tempo di inserimento amano un indice BRIN perche' riassume intervalli di blocchi quasi senza overhead di archiviazione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_2",
+      "english": "Unique Index",
+      "set": {
+        "example": "A unique index on email enforces that no two users share the same address even under concurrent registration attempts. = Un indice univoco su email impone che nessuna coppia di utenti condivida lo stesso indirizzo, anche sotto tentativi concorrenti di registrazione."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Index-Only Scan",
+      "set": {
+        "example": "An index-only scan avoids hitting the heap entirely when every column the query needs already lives inside the index itself. = Una scansione solo indice evita di toccare l'heap quando tutte le colonne necessarie alla query gia' risiedono nell'indice stesso."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Index Skip Scan",
+      "set": {
+        "example": "Oracle uses an index skip scan to reuse a composite index even when the leading column is missing from the WHERE clause. = Oracle usa un index skip scan per riutilizzare un indice composito anche quando la colonna principale manca dalla clausola WHERE."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Bitmap Index Scan",
+      "set": {
+        "example": "Postgres switches to a bitmap index scan when several indexes can be combined with AND to filter a huge result set efficiently. = Postgres passa a una bitmap index scan quando piu' indici possono essere combinati con AND per filtrare efficientemente un grande result set."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Index Cost",
+      "set": {
+        "example": "The optimizer compares index cost against a sequential scan and picks the plan with the lowest estimated total. = L'ottimizzatore confronta il costo dell'indice con una scansione sequenziale e sceglie il piano con il totale stimato piu' basso."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Over-indexing",
+      "set": {
+        "example": "Over-indexing a write-heavy table slows every INSERT and UPDATE while bringing no benefit to queries the team never actually runs. = Eccedere con gli indici su una tabella ad alto carico di scrittura rallenta ogni INSERT e UPDATE senza alcun beneficio per query che il team non esegue mai."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Unused Index",
+      "set": {
+        "example": "Drop any unused index detected by pg_stat_user_indexes after a full month of production traffic to reclaim disk and write speed. = Elimina ogni indice inutilizzato rilevato da pg_stat_user_indexes dopo un mese pieno di traffico in produzione per recuperare disco e velocita' di scrittura."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_3",
+      "english": "Reindex",
+      "set": {
+        "example": "Run REINDEX CONCURRENTLY on a bloated index during off-peak hours to rebuild it without blocking application writes. = Esegui REINDEX CONCURRENTLY su un indice gonfio nelle ore di basso traffico per ricostruirlo senza bloccare le scritture applicative."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "Full-Text Index",
+      "set": {
+        "example": "A full-text index lets the search bar match documents on stemmed keywords instead of brittle LIKE expressions. = Un indice full-text permette alla barra di ricerca di abbinare documenti su parole chiave stemmate invece che su fragili espressioni LIKE."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "Spatial Index",
+      "set": {
+        "example": "PostGIS relies on a spatial index to answer find-all-stores-within-5km queries against millions of geolocated rows in real time. = PostGIS si affida a un indice spaziale per rispondere a query trova-tutti-i-negozi-entro-5km su milioni di righe geolocalizzate in tempo reale."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "JSON Index",
+      "set": {
+        "italian": "JSON Index",
+        "example": "Build a JSON Index on the metadata column so queries that filter by metadata->>'country' stay fast as documents grow. = Costruisci un JSON Index sulla colonna metadata cosi' le query che filtrano per metadata->>'country' restano veloci man mano che i documenti crescono."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "Inverted Index",
+      "set": {
+        "example": "Elasticsearch stores every document term inside an inverted index so the engine can jump straight to matching documents at query time. = Elasticsearch memorizza ogni termine del documento dentro un inverted index cosi' il motore puo' saltare direttamente ai documenti corrispondenti al momento della query."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "Bitmap Index",
+      "set": {
+        "example": "Data warehouses use a bitmap index on low-cardinality columns like gender or status to combine filters with cheap AND operations. = I data warehouse usano un indice bitmap su colonne a bassa cardinalita' come genere o stato per combinare filtri con economiche operazioni AND."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "Clustered Index",
+      "set": {
+        "note": null
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "Non-Clustered Index",
+      "set": {
+        "example": "A non-clustered index on email leaves the table heap untouched and stores only the indexed key plus a pointer to each row. = Un indice non clusterizzato su email lascia intatto l'heap della tabella e memorizza solo la chiave indicizzata piu' un puntatore a ogni riga."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "Heap",
+      "set": {
+        "italian": "Heap",
+        "example": "Postgres stores rows in an unordered heap, so without an index a SELECT must read every page in physical order to find matches. = Postgres memorizza le righe in un heap non ordinato, quindi senza indice una SELECT deve leggere ogni pagina in ordine fisico per trovare corrispondenze."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "IOT",
+      "set": {
+        "italian": "IOT",
+        "example": "Oracle's IOT keeps row data inside the primary-key B-tree leaves, which speeds equality reads but penalizes random updates. = L'IOT di Oracle tiene i dati delle righe dentro le foglie del B-tree di chiave primaria, il che velocizza le letture per uguaglianza ma penalizza gli update casuali."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "db_indexing_4",
+      "english": "Hot Index",
+      "set": {
+        "example": "Monitoring spots a hot index when the same B-tree leaf page is updated thousands of times per second by a single workload. = Il monitoring individua un hot index quando la stessa pagina foglia del B-tree viene aggiornata migliaia di volte al secondo da un singolo carico."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "BEGIN",
+      "set": {
+        "italian": "BEGIN",
+        "example": "Wrap a multi-statement balance transfer inside BEGIN and COMMIT so a failure halfway rolls back both the debit and the credit. = Avvolgi un trasferimento di saldo multi-statement dentro BEGIN e COMMIT cosi' un fallimento a meta' fa il rollback sia del debito sia del credito."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "COMMIT",
+      "set": {
+        "italian": "COMMIT",
+        "example": "Only issue COMMIT after every business rule has been validated, otherwise partial changes will become permanently visible to other sessions. = Emetti COMMIT solo dopo che ogni regola di business e' stata validata, altrimenti modifiche parziali diventeranno permanentemente visibili ad altre sessioni."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "ROLLBACK",
+      "set": {
+        "italian": "ROLLBACK",
+        "example": "When the second UPDATE raises a unique violation, issue ROLLBACK to undo the first one and leave the database in its prior state. = Quando il secondo UPDATE solleva una violazione di unicita', emetti ROLLBACK per annullare il primo e lasciare il database nello stato precedente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "SAVEPOINT",
+      "set": {
+        "italian": "SAVEPOINT",
+        "example": "Set a SAVEPOINT before risky bulk operations so you can roll back to it without losing earlier work in the same transaction. = Imposta un SAVEPOINT prima di operazioni di massa rischiose cosi' puoi rollbackare a esso senza perdere il lavoro precedente nella stessa transazione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "Auto-commit",
+      "set": {
+        "italian": "Auto-commit",
+        "example": "Most JDBC drivers ship with auto-commit on, which silently turns every statement into its own one-statement transaction. = La maggior parte dei driver JDBC arriva con auto-commit attivo, che trasforma silenziosamente ogni statement in una propria transazione di un solo statement."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "Distributed Transaction",
+      "set": {
+        "example": "A distributed transaction spanning the orders and inventory databases must coordinate commits to keep both systems in agreement. = Una transazione distribuita che attraversa i database ordini e inventario deve coordinare i commit per tenere entrambi i sistemi in accordo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_1",
+      "english": "Two-Phase Commit",
+      "set": {
+        "english": "Classic Two-Phase Commit",
+        "italian": "Two-Phase Commit classico",
+        "example": "Classic two-phase commit makes the coordinator prepare every participant before telling them all to commit or abort in lockstep. = Il two-phase commit classico fa preparare al coordinatore ogni partecipante prima di dire a tutti di committare o abortire in lockstep."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "ACID",
+      "set": {
+        "italian": "ACID",
+        "example": "Relational databases promise ACID guarantees so the application can treat every transaction as all-or-nothing and durably stored. = I database relazionali promettono garanzie ACID cosi' l'applicazione puo' trattare ogni transazione come tutto-o-niente e memorizzata in modo durabile."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "Atomicity",
+      "set": {
+        "example": "Atomicity ensures the funds-transfer transaction either debits and credits both accounts together or leaves neither side touched. = L'atomicita' garantisce che la transazione di trasferimento fondi o addebita e accredita entrambi i conti insieme o non tocca nessuno dei due lati."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "Consistency",
+      "set": {
+        "example": "Consistency means every committed transaction leaves the database satisfying every CHECK constraint and foreign key still in force. = La coerenza significa che ogni transazione committata lascia il database soddisfacendo ogni vincolo CHECK e chiave esterna ancora in vigore."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "Isolation",
+      "set": {
+        "example": "Isolation prevents the booking transaction from seeing half-applied changes made by a concurrent payment-refund flow. = L'isolamento impedisce alla transazione di prenotazione di vedere modifiche applicate a meta' fatte da un flusso concorrente di rimborso pagamento."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "Durability",
+      "set": {
+        "example": "Durability is why a confirmed payment must still appear in the ledger even after an unexpected power loss at the database host. = La durabilita' e' il motivo per cui un pagamento confermato deve apparire ancora nel registro anche dopo un'inaspettata interruzione di corrente sull'host database."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "WAL",
+      "set": {
+        "italian": "WAL",
+        "example": "Postgres flushes WAL records to disk before the actual data pages, so crash recovery can always replay committed work. = Postgres scrive i record WAL su disco prima delle effettive pagine dati, cosi' il crash recovery puo' sempre rieseguire il lavoro committato."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "Undo Log",
+      "set": {
+        "example": "InnoDB keeps an undo log per transaction so concurrent readers can reconstruct a row's prior version under MVCC. = InnoDB tiene un undo log per transazione cosi' i lettori concorrenti possono ricostruire la versione precedente di una riga sotto MVCC."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_2",
+      "english": "Crash Recovery",
+      "set": {
+        "example": "After an unclean shutdown, crash recovery replays the WAL forward and rolls back any transaction that never reached commit. = Dopo uno shutdown sporco, il crash recovery rilegge il WAL in avanti e fa il rollback di ogni transazione che non ha mai raggiunto il commit."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Isolation Level",
+      "set": {
+        "example": "Tuning the isolation level from Read Committed to Repeatable Read fixed the inventory double-decrement bug seen during flash sales. = Aumentare l'isolation level da Read Committed a Repeatable Read ha risolto il bug di doppio decremento dell'inventario visto durante i flash sale."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Read Uncommitted",
+      "set": {
+        "italian": "Read Uncommitted",
+        "example": "Read Uncommitted lets a query see another transaction's uncommitted writes, which can leak phantom data that later disappears. = Read Uncommitted permette a una query di vedere scritture non committate di un'altra transazione, il che puo' fare emergere dati fantasma che spariscono dopo."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Read Committed",
+      "set": {
+        "italian": "Read Committed",
+        "example": "Read Committed is the Postgres default and blocks dirty reads while still allowing non-repeatable reads inside the same transaction. = Read Committed e' il default di Postgres e blocca le letture sporche pur consentendo letture non ripetibili dentro la stessa transazione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Repeatable Read",
+      "set": {
+        "italian": "Repeatable Read",
+        "example": "Repeatable Read freezes the snapshot at transaction start so a re-read of the same row always returns the same values. = Repeatable Read congela lo snapshot all'inizio della transazione cosi' una rilettura della stessa riga restituisce sempre gli stessi valori."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Serializable",
+      "set": {
+        "italian": "Serializable",
+        "example": "Serializable gives the strongest guarantee by making concurrent transactions appear as if they had run one after the other. = Serializable da' la garanzia piu' forte facendo apparire le transazioni concorrenti come se fossero state eseguite una dopo l'altra."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Dirty Read",
+      "set": {
+        "example": "A dirty read happens when one session sees a row that another session has updated but not yet committed to the database. = Una lettura sporca accade quando una sessione vede una riga che un'altra sessione ha aggiornato ma non ancora committato sul database."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Phantom Read",
+      "set": {
+        "example": "A phantom read appears when a query rerun inside the same transaction returns new rows inserted by a concurrent transaction. = Una lettura fantasma compare quando una query rieseguita dentro la stessa transazione restituisce nuove righe inserite da una transazione concorrente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Snapshot Isolation",
+      "set": {
+        "example": "Snapshot isolation gives every transaction a consistent view of the data captured at its start, ignoring later concurrent writes. = Lo snapshot isolation da' a ogni transazione una vista coerente dei dati catturata al suo inizio, ignorando le scritture concorrenti successive."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_3",
+      "english": "Serialization Failure",
+      "set": {
+        "example": "Under Serializable isolation, the engine may abort one transaction with a serialization failure so the client must retry the whole flow. = Sotto isolamento Serializable, il motore puo' abortire una transazione con un serialization failure quindi il client deve ritentare l'intero flusso."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Concurrency",
+      "set": {
+        "example": "Database concurrency is what lets a thousand checkout sessions hit the orders table at once without corrupting each other's writes. = La concorrenza del database e' cio' che permette a mille sessioni di checkout di colpire la tabella ordini insieme senza corrompere le scritture reciproche."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Shared Lock",
+      "set": {
+        "example": "Running SELECT FOR SHARE takes a shared lock so other readers may proceed while writers are forced to wait their turn. = Eseguire SELECT FOR SHARE prende un lock condiviso cosi' altri lettori possono procedere mentre gli scrittori sono costretti ad aspettare il loro turno."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Exclusive Lock",
+      "set": {
+        "example": "A SELECT FOR UPDATE grabs an exclusive lock on the matching rows so no concurrent writer can change them until commit. = Una SELECT FOR UPDATE prende un lock esclusivo sulle righe corrispondenti cosi' nessuno scrittore concorrente puo' modificarle fino al commit."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Row Lock",
+      "set": {
+        "example": "Postgres prefers a row lock over a table lock so two transactions updating different orders rarely block each other. = Postgres preferisce un row lock a un table lock cosi' due transazioni che aggiornano ordini diversi raramente si bloccano a vicenda."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Table Lock",
+      "set": {
+        "example": "ALTER TABLE acquires a heavy table lock that blocks every read and write until the schema change has fully completed. = ALTER TABLE acquisisce un pesante table lock che blocca ogni lettura e scrittura finche' il cambio di schema non e' completato."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "MVCC",
+      "set": {
+        "english": "Postgres MVCC",
+        "italian": "MVCC di Postgres",
+        "example": "Postgres MVCC stores multiple row versions so readers never block writers and each transaction sees a consistent snapshot. = MVCC di Postgres memorizza piu' versioni di riga cosi' i lettori non bloccano mai gli scrittori e ogni transazione vede uno snapshot coerente."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Optimistic Locking",
+      "set": {
+        "example": "Optimistic locking with a version column lets two users edit the same record and only the second saver hits a conflict at commit. = Il lock ottimistico con una colonna version permette a due utenti di modificare lo stesso record e solo il secondo a salvare incappa in un conflitto al commit."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "db_transactions_4",
+      "english": "Pessimistic Locking",
+      "set": {
+        "example": "Pessimistic locking on a hot seat-booking row prevents two customers from grabbing the last available seat at the same moment. = Il lock pessimistico su una riga calda di prenotazione posto impedisce a due clienti di afferrare l'ultimo posto disponibile nello stesso istante."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "Subquery",
+      "set": {
+        "example": "A subquery in the WHERE clause computes the average order total and filters customers who spent more than that threshold. = Una subquery nella clausola WHERE calcola il totale medio degli ordini e filtra i clienti che hanno speso piu' di quella soglia."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "NOT EXISTS",
+      "set": {
+        "italian": "NOT EXISTS",
+        "example": "Use NOT EXISTS to find customers without any orders, since it short-circuits as soon as the inner query produces a row. = Usa NOT EXISTS per trovare clienti senza alcun ordine, dato che si interrompe appena la query interna produce una riga."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "Scalar Subquery",
+      "set": {
+        "example": "Pulling the latest login date with a scalar subquery in the SELECT list keeps the main query single-row-per-customer. = Estrarre l'ultima data di login con una scalar subquery nella lista SELECT mantiene la query principale a una riga per cliente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "Inline View",
+      "set": {
+        "example": "Wrapping a heavy aggregation as an inline view inside FROM lets the outer query treat its result as just another table. = Avvolgere un'aggregazione pesante come inline view dentro FROM permette alla query esterna di trattare il suo risultato come un'altra tabella."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "ANY",
+      "set": {
+        "italian": "ANY",
+        "example": "Use price > ANY (SELECT price FROM competitors) to flag products that beat at least one rival's published price. = Usa price > ANY (SELECT price FROM competitors) per segnalare i prodotti che battono almeno un prezzo pubblicato dai concorrenti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "ALL",
+      "set": {
+        "italian": "ALL",
+        "example": "Filter with price < ALL (SELECT price FROM competitors) to keep products that undercut every single rival on record. = Filtra con price < ALL (SELECT price FROM competitors) per tenere i prodotti che battono ogni singolo concorrente registrato."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_9",
+      "english": "LATERAL JOIN",
+      "set": {
+        "italian": "LATERAL JOIN",
+        "example": "A LATERAL JOIN gives each customer row access to a per-customer subquery, like fetching their three most recent orders. = Una LATERAL JOIN da' a ogni riga cliente accesso a una subquery per cliente, come recuperare i suoi tre ordini piu' recenti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "CTE",
+      "set": {
+        "italian": "CTE",
+        "example": "Splitting a 200-line analytical query into named CTE steps makes each stage easier to debug and reuse across reports. = Suddividere una query analitica di 200 righe in step CTE nominati rende ogni fase piu' facile da debuggare e riutilizzare tra report."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "WITH",
+      "set": {
+        "italian": "WITH",
+        "example": "Open the query with WITH recent_orders AS (...) to name the rolling-window result and reference it twice in the final SELECT. = Apri la query con WITH recent_orders AS (...) per nominare il risultato a finestra mobile e riferirlo due volte nella SELECT finale."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "Recursive CTE",
+      "set": {
+        "example": "A recursive CTE walks an org_chart table from CEO down to interns by joining each manager row to its direct reports. = Una CTE ricorsiva attraversa una tabella org_chart dal CEO agli stagisti unendo ogni riga manager ai suoi riporti diretti."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "Anchor Member",
+      "set": {
+        "example": "The anchor member of a recursive CTE seeds the result with the top-level rows that the recursive step then walks downward. = Il membro di ancoraggio di una CTE ricorsiva inizializza il risultato con le righe di livello piu' alto che lo step ricorsivo poi attraversa verso il basso."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "Multiple CTEs",
+      "set": {
+        "example": "Chaining multiple CTEs in one WITH block lets a report stage filtering, aggregation, and ranking as separate readable steps. = Concatenare CTE multiple in un singolo blocco WITH permette a un report di organizzare filtraggio, aggregazione e ranking come step leggibili separati."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_10",
+      "english": "Tree Traversal",
+      "set": {
+        "example": "Use a recursive CTE for tree traversal of a comment thread so the query returns every nested reply along with its depth. = Usa una CTE ricorsiva per l'attraversamento ad albero di un thread commenti cosi' la query restituisce ogni risposta annidata insieme alla sua profondita'."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "Window Function",
+      "set": {
+        "example": "A window function like AVG(amount) OVER (PARTITION BY customer_id) keeps row detail while adding per-customer aggregates. = Una funzione finestra come AVG(amount) OVER (PARTITION BY customer_id) mantiene il dettaglio di riga aggiungendo aggregati per cliente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "OVER",
+      "set": {
+        "italian": "OVER",
+        "example": "The OVER clause turns a regular aggregate into a window function, so each row keeps its detail and gains a per-group statistic. = La clausola OVER trasforma un aggregato normale in una funzione finestra, cosi' ogni riga mantiene il dettaglio e guadagna una statistica per gruppo."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "PARTITION BY",
+      "set": {
+        "italian": "PARTITION BY",
+        "example": "Add PARTITION BY region inside OVER so the running total restarts for each region instead of accumulating across the whole table. = Aggiungi PARTITION BY region dentro OVER cosi' il totale corrente riparte per ogni regione invece di accumulare sull'intera tabella."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "ROW_NUMBER",
+      "set": {
+        "italian": "ROW_NUMBER",
+        "example": "ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY created_at DESC) lets you keep only the most recent record per user. = ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY created_at DESC) permette di tenere solo il record piu' recente per utente."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "RANK",
+      "set": {
+        "italian": "RANK",
+        "example": "RANK assigns the same position to ties and then skips the next numbers, so two silver medalists are both ranked 2 with no rank 3. = RANK assegna la stessa posizione ai pari merito e poi salta i numeri successivi, cosi' due medaglie d'argento sono entrambe in posizione 2 senza una posizione 3."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "DENSE_RANK",
+      "set": {
+        "italian": "DENSE_RANK",
+        "example": "DENSE_RANK gives tied rows the same position but never skips numbers, so two silver medals are both ranked 2 and the next row is 3. = DENSE_RANK da' alle righe a pari merito la stessa posizione ma non salta mai numeri, cosi' due argenti sono in posizione 2 e la riga successiva e' 3."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "LAG",
+      "set": {
+        "italian": "LAG",
+        "example": "LAG(amount) OVER (ORDER BY date) lets each row see the prior day's amount and compute a day-over-day delta in one pass. = LAG(amount) OVER (ORDER BY date) permette a ogni riga di vedere l'importo del giorno precedente e calcolare un delta giorno-su-giorno in una passata."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "LEAD",
+      "set": {
+        "italian": "LEAD",
+        "example": "LEAD(status) OVER (ORDER BY event_time) lets each event row peek at the next status so churn transitions are easy to detect. = LEAD(status) OVER (ORDER BY event_time) permette a ogni riga evento di sbirciare lo stato successivo cosi' le transizioni di churn sono facili da rilevare."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "NTILE",
+      "set": {
+        "italian": "NTILE",
+        "example": "NTILE(4) OVER (ORDER BY revenue DESC) buckets customers into four equal-size revenue quartiles for a quick spend-tier report. = NTILE(4) OVER (ORDER BY revenue DESC) suddivide i clienti in quattro quartili di ricavo di pari dimensione per un veloce report di fasce di spesa."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_11",
+      "english": "Frame Clause",
+      "set": {
+        "example": "A frame clause like ROWS BETWEEN 6 PRECEDING AND CURRENT ROW turns a running average into a true 7-day moving window. = Una clausola di frame come ROWS BETWEEN 6 PRECEDING AND CURRENT ROW trasforma una media corrente in una vera finestra mobile a 7 giorni."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "Function",
+      "set": {
+        "example": "Wrap recurring tax math inside a SQL function so every report uses the same formula instead of copying it across queries. = Avvolgere il calcolo ricorrente delle tasse dentro una funzione SQL cosi' ogni report usa la stessa formula invece di copiarla tra query."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "Trigger",
+      "set": {
+        "italian": "Trigger",
+        "example": "An AFTER INSERT trigger on orders writes a row into the audit_log so every new order leaves a tamper-evident trail. = Un trigger AFTER INSERT su orders scrive una riga in audit_log cosi' ogni nuovo ordine lascia una traccia a prova di manomissione."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "PL/pgSQL",
+      "set": {
+        "italian": "PL/pgSQL",
+        "example": "PL/pgSQL is Postgres' procedural language and lets stored functions loop, branch, and raise exceptions just like a real program. = PL/pgSQL e' il linguaggio procedurale di Postgres e permette alle funzioni memorizzate di iterare, ramificare e sollevare eccezioni come un vero programma."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "PL/SQL",
+      "set": {
+        "italian": "PL/SQL",
+        "example": "PL/SQL is Oracle's procedural extension to SQL and ships in every Oracle database for stored procedures and triggers. = PL/SQL e' l'estensione procedurale di SQL di Oracle e arriva in ogni database Oracle per stored procedure e trigger."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "View",
+      "set": {
+        "example": "Define a view named active_customers so dashboards can SELECT from one stable name instead of copying the filter logic everywhere. = Definisci una vista chiamata active_customers cosi' le dashboard possono SELECT da un nome stabile invece di copiare la logica del filtro ovunque."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "EXEC",
+      "set": {
+        "italian": "EXEC",
+        "example": "In SQL Server, EXEC sp_who2 returns active sessions while EXEC dbo.calc_tax @amount runs a stored procedure with parameters. = In SQL Server, EXEC sp_who2 restituisce le sessioni attive mentre EXEC dbo.calc_tax @amount esegue una stored procedure con parametri."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "db_sql_12",
+      "english": "CALL",
+      "set": {
+        "italian": "CALL",
+        "example": "Standard SQL invokes stored procedures with CALL refresh_dashboard(); Postgres and MySQL both accept the same syntax. = SQL standard invoca le stored procedure con CALL refresh_dashboard(); Postgres e MySQL accettano entrambi la stessa sintassi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_1",
+      "english": "Key-Value Store",
+      "set": {
+        "example": "A key-value store like Redis powers session caches because a single GET sessions:abc returns the user state in microseconds. = Un key-value store come Redis alimenta le cache di sessione perche' una singola GET sessions:abc restituisce lo stato utente in microsecondi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_1",
+      "english": "Column-Family Store",
+      "set": {
+        "example": "Cassandra is a column-family store that groups related columns under one row key for fast time-series writes across a cluster. = Cassandra e' un column-family store che raggruppa colonne correlate sotto una chiave di riga per scritture time-series veloci su un cluster."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_1",
+      "english": "Search Engine",
+      "set": {
+        "example": "Elasticsearch acts as the search engine behind product catalog pages, ranking matches by relevance instead of insertion order. = Elasticsearch agisce come motore di ricerca dietro le pagine del catalogo prodotti, classificando i match per rilevanza invece che per ordine di inserimento."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_1",
+      "english": "Multi-Model Database",
+      "set": {
+        "example": "ArangoDB is a multi-model database that exposes document, graph, and key-value APIs against the same underlying storage engine. = ArangoDB e' un database multi-modello che espone API documentali, a grafo e chiave-valore sullo stesso motore di archiviazione sottostante."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_1",
+      "english": "NewSQL",
+      "set": {
+        "italian": "NewSQL",
+        "example": "CockroachDB and Spanner are NewSQL engines that keep SQL and ACID guarantees while scaling horizontally across regions. = CockroachDB e Spanner sono motori NewSQL che mantengono SQL e garanzie ACID scalando orizzontalmente tra regioni."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_1",
+      "english": "Schema-less",
+      "set": {
+        "example": "A schema-less collection lets the same MongoDB users collection store documents with very different shapes side by side. = Una collezione senza schema permette alla stessa collezione MongoDB users di memorizzare documenti con forme molto diverse fianco a fianco."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_1",
+      "english": "Polyglot Persistence",
+      "set": {
+        "example": "Polyglot persistence picks Postgres for orders, Redis for sessions, and Elasticsearch for search instead of stretching one engine. = La persistenza poliglotta sceglie Postgres per gli ordini, Redis per le sessioni ed Elasticsearch per la ricerca invece di forzare un solo motore."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "Availability",
+      "set": {
+        "example": "In the CAP theorem, availability means every non-failing node still answers every read and write request without errors. = Nel teorema CAP, la disponibilita' significa che ogni nodo non fallito risponde ancora a ogni richiesta di lettura e scrittura senza errori."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "Partition Tolerance",
+      "set": {
+        "example": "Partition tolerance is the CAP property that keeps the system useful even when network splits cut nodes off from each other. = La tolleranza alle partizioni e' la proprieta' CAP che mantiene utile il sistema anche quando split di rete tagliano fuori i nodi tra loro."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "BASE",
+      "set": {
+        "italian": "BASE",
+        "example": "BASE describes how Cassandra and DynamoDB stay available under partitions and let replicas converge instead of refusing writes. = BASE descrive come Cassandra e DynamoDB restano disponibili sotto partizione e lasciano convergere le repliche invece di rifiutare le scritture."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "Eventual Consistency",
+      "set": {
+        "english": "DynamoDB Eventual Consistency",
+        "italian": "Coerenza eventuale in DynamoDB",
+        "example": "DynamoDB eventual consistency means a default read may return slightly stale data right after a write but converges within seconds. = La coerenza eventuale in DynamoDB significa che una lettura di default puo' restituire dati leggermente vecchi subito dopo una scrittura ma converge in pochi secondi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "Strong Consistency",
+      "set": {
+        "example": "Spanner offers strong consistency across regions by using TrueTime so every read sees the most recent committed write globally. = Spanner offre coerenza forte tra regioni usando TrueTime cosi' ogni lettura vede la scrittura committata piu' recente a livello globale."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "Linearizability",
+      "set": {
+        "example": "Linearizability is the gold standard for distributed reads: every operation appears to take effect atomically at a single point in time. = La linearizzabilita' e' lo standard d'oro per le letture distribuite: ogni operazione sembra avere effetto atomicamente in un singolo punto nel tempo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "PACELC",
+      "set": {
+        "italian": "PACELC",
+        "example": "PACELC extends CAP by adding that, even without a partition, a system must trade latency against consistency on every request. = PACELC estende CAP aggiungendo che, anche senza partizione, un sistema deve scambiare latenza con coerenza su ogni richiesta."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_2",
+      "english": "Quorum",
+      "set": {
+        "italian": "Quorum",
+        "example": "A Cassandra write at quorum succeeds only after a majority of replicas acknowledge it, balancing latency against durability. = Una scrittura Cassandra al quorum riesce solo dopo che la maggioranza delle repliche la conferma, bilanciando latenza e durabilita'."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Document Model",
+      "set": {
+        "example": "The document model in MongoDB stores a whole user profile, with addresses and preferences, in one JSON document instead of joined tables. = Il modello a documenti in MongoDB memorizza un intero profilo utente, con indirizzi e preferenze, in un documento JSON invece che in tabelle unite."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "BSON",
+      "set": {
+        "italian": "BSON",
+        "example": "MongoDB stores documents on disk as BSON so binary types like ObjectId and Date can travel without lossy JSON conversions. = MongoDB memorizza i documenti su disco come BSON cosi' tipi binari come ObjectId e Date possono viaggiare senza conversioni JSON con perdita."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Embedded Document",
+      "set": {
+        "example": "An order document can hold its line items as an embedded document array so reading the full order needs just one query. = Un documento ordine puo' contenere le sue righe come array di documenti embedded cosi' leggere l'ordine completo richiede una sola query."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Reference",
+      "set": {
+        "example": "A reference field on a comment stores the parent post's ObjectId so the application can fetch the post in a second query. = Un campo di riferimento su un commento memorizza l'ObjectId del post genitore cosi' l'applicazione puo' recuperare il post in una seconda query."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Wide Row",
+      "set": {
+        "example": "Cassandra models a per-user activity feed as a wide row keyed by user_id with one column per event timestamp on the cluster. = Cassandra modella un feed attivita' per utente come riga larga con chiave user_id e una colonna per timestamp di evento sul cluster."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Vertex",
+      "set": {
+        "example": "In Neo4j the user account becomes a vertex with properties like email and name while friendships are stored as connecting edges. = In Neo4j l'account utente diventa un vertice con proprieta' come email e nome mentre le amicizie sono memorizzate come archi connettori."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Edge",
+      "set": {
+        "english": "Graph Edge",
+        "italian": "Arco di grafo",
+        "example": "A FOLLOWS graph edge between two user vertices in Neo4j lets the engine traverse social connections in constant hops. = Un arco di grafo FOLLOWS tra due vertici utente in Neo4j permette al motore di attraversare connessioni sociali in salti costanti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_3",
+      "english": "Schemaless Document",
+      "set": {
+        "example": "A schemaless document in MongoDB can add new fields per row, so legacy users coexist with newer profiles that include phone numbers. = Un documento senza schema in MongoDB puo' aggiungere nuovi campi per riga, cosi' utenti legacy convivono con profili piu' recenti che includono numeri di telefono."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_4",
+      "english": "Read Repair",
+      "set": {
+        "example": "Cassandra runs read repair in the background so a replica that returns stale data is asynchronously updated to match the others. = Cassandra esegue read repair in background cosi' una replica che restituisce dati vecchi viene aggiornata asincronicamente per allinearsi alle altre."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_4",
+      "english": "Anti-Entropy",
+      "set": {
+        "example": "Anti-entropy in DynamoDB-style systems uses Merkle trees to compare replicas and ship only the missing data between nodes. = L'anti-entropia nei sistemi stile DynamoDB usa Merkle tree per confrontare le repliche e spedire solo i dati mancanti tra i nodi."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_4",
+      "english": "Vector Clock",
+      "set": {
+        "example": "A vector clock attached to each write lets a Dynamo-style store detect and reconcile concurrent updates across replicas. = Un clock vettoriale allegato a ogni scrittura permette a uno store stile Dynamo di rilevare e riconciliare update concorrenti tra repliche."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_4",
+      "english": "CRDT",
+      "set": {
+        "italian": "CRDT",
+        "example": "Collaborative editors use a CRDT like an OR-Set so two offline clients can edit the shared document and merge without conflicts. = Gli editor collaborativi usano un CRDT come un OR-Set cosi' due client offline possono modificare il documento condiviso e fondere senza conflitti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_4",
+      "english": "Tunable Consistency",
+      "set": {
+        "example": "Cassandra exposes tunable consistency so each query can pick ONE, QUORUM, or ALL based on its latency and freshness needs. = Cassandra espone coerenza regolabile cosi' ogni query puo' scegliere ONE, QUORUM o ALL in base ai suoi bisogni di latenza e freschezza."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_4",
+      "english": "Hinted Handoff",
+      "set": {
+        "italian": "Hinted Handoff",
+        "example": "Cassandra uses hinted handoff so a coordinator buffers writes for an offline replica and replays them once the node returns. = Cassandra usa hinted handoff cosi' un coordinatore bufferizza le scritture per una replica offline e le rigioca quando il nodo torna."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "db_nosql_4",
+      "english": "Causal Consistency",
+      "set": {
+        "example": "Causal consistency guarantees that if one comment replies to another, every reader sees the original before the reply. = La coerenza causale garantisce che se un commento risponde a un altro, ogni lettore veda l'originale prima della risposta."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "MongoDB",
+      "set": {
+        "italian": "MongoDB",
+        "example": "MongoDB powers product catalogs where each item document can carry its own attributes without changing a global schema. = MongoDB alimenta cataloghi prodotti dove ogni documento item puo' portare i propri attributi senza cambiare uno schema globale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "Collection",
+      "set": {
+        "example": "A MongoDB collection named users groups every user document the same way an RDBMS would group rows inside a table. = Una collezione MongoDB chiamata users raggruppa ogni documento utente come un RDBMS raggrupperebbe righe dentro una tabella."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "Document",
+      "set": {
+        "example": "Each MongoDB document is a JSON-like record that can nest arrays and sub-objects without joining other documents at read time. = Ogni documento MongoDB e' un record simile a JSON che puo' annidare array e sotto-oggetti senza unire altri documenti in lettura."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "ObjectId",
+      "set": {
+        "italian": "ObjectId",
+        "example": "MongoDB assigns each new document a 12-byte ObjectId that embeds a timestamp and a process counter for global uniqueness. = MongoDB assegna a ogni nuovo documento un ObjectId di 12 byte che incorpora un timestamp e un contatore di processo per unicita' globale."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "find",
+      "set": {
+        "italian": "find",
+        "example": "db.orders.find({ status: \"paid\" }) returns every paid order document in the collection as a cursor the driver can iterate. = db.orders.find({ status: \"paid\" }) restituisce ogni documento ordine pagato nella collezione come cursore che il driver puo' iterare."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "findOne",
+      "set": {
+        "italian": "findOne",
+        "example": "db.users.findOne({ email: \"a@b.com\" }) returns the first matching user document or null when no user has that email. = db.users.findOne({ email: \"a@b.com\" }) restituisce il primo documento utente corrispondente o null quando nessun utente ha quell'email."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "insertOne",
+      "set": {
+        "italian": "insertOne",
+        "example": "db.users.insertOne({ email: \"x@y.com\", role: \"admin\" }) adds the document and returns the generated ObjectId for the new row. = db.users.insertOne({ email: \"x@y.com\", role: \"admin\" }) aggiunge il documento e restituisce l'ObjectId generato per la nuova riga."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "insertMany",
+      "set": {
+        "italian": "insertMany",
+        "example": "db.events.insertMany(batch) ingests a thousand event documents in one round trip, far faster than looping insertOne in the driver. = db.events.insertMany(batch) ingerisce mille documenti evento in un singolo round trip, molto piu' veloce di un loop di insertOne nel driver."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "updateOne",
+      "set": {
+        "italian": "updateOne",
+        "example": "db.orders.updateOne({ _id: id }, { $set: { status: \"shipped\" } }) flips a single order to shipped without touching siblings. = db.orders.updateOne({ _id: id }, { $set: { status: \"shipped\" } }) cambia un singolo ordine a shipped senza toccare i fratelli."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_5",
+      "english": "deleteOne",
+      "set": {
+        "italian": "deleteOne",
+        "example": "db.sessions.deleteOne({ token: \"abc\" }) removes one expired session document while leaving every other active session intact. = db.sessions.deleteOne({ token: \"abc\" }) rimuove un documento sessione scaduto lasciando intatta ogni altra sessione attiva."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$gt",
+      "set": {
+        "italian": "$gt",
+        "example": "db.products.find({ price: { $gt: 100 } }) returns every product whose price field is strictly greater than 100 in the collection. = db.products.find({ price: { $gt: 100 } }) restituisce ogni prodotto il cui campo price e' strettamente maggiore di 100 nella collezione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$lt",
+      "set": {
+        "italian": "$lt",
+        "example": "db.users.find({ age: { $lt: 18 } }) selects minors only by matching documents whose age field is strictly less than 18. = db.users.find({ age: { $lt: 18 } }) seleziona solo minorenni abbinando documenti il cui campo age e' strettamente minore di 18."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$in",
+      "set": {
+        "italian": "$in",
+        "example": "db.orders.find({ status: { $in: [\"paid\", \"shipped\"] } }) selects orders whose status appears in the provided list of values. = db.orders.find({ status: { $in: [\"paid\", \"shipped\"] } }) seleziona gli ordini il cui status compare nella lista di valori fornita."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$nin",
+      "set": {
+        "italian": "$nin",
+        "example": "db.users.find({ country: { $nin: [\"US\", \"CA\"] } }) returns every user whose country is not part of the excluded list. = db.users.find({ country: { $nin: [\"US\", \"CA\"] } }) restituisce ogni utente il cui country non e' parte della lista esclusa."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$set",
+      "set": {
+        "italian": "$set",
+        "example": "db.users.updateOne({ _id: id }, { $set: { verified: true } }) flips one field on a document and leaves the rest untouched. = db.users.updateOne({ _id: id }, { $set: { verified: true } }) cambia un campo su un documento e lascia il resto intatto."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$unset",
+      "set": {
+        "italian": "$unset",
+        "example": "db.users.updateOne({ _id: id }, { $unset: { temp_token: \"\" } }) removes the temp_token field entirely from that single document. = db.users.updateOne({ _id: id }, { $unset: { temp_token: \"\" } }) rimuove completamente il campo temp_token da quel singolo documento."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$inc",
+      "set": {
+        "italian": "$inc",
+        "example": "db.posts.updateOne({ _id: id }, { $inc: { views: 1 } }) atomically bumps the views counter on a post without a read-modify-write loop. = db.posts.updateOne({ _id: id }, { $inc: { views: 1 } }) incrementa atomicamente il contatore views su un post senza un ciclo read-modify-write."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$push",
+      "set": {
+        "italian": "$push",
+        "example": "db.users.updateOne({ _id: id }, { $push: { roles: \"editor\" } }) appends a new role to the existing roles array in one step. = db.users.updateOne({ _id: id }, { $push: { roles: \"editor\" } }) aggiunge un nuovo ruolo all'array roles esistente in un passo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$pull",
+      "set": {
+        "italian": "$pull",
+        "example": "db.users.updateOne({ _id: id }, { $pull: { roles: \"viewer\" } }) drops every viewer entry from that user's roles array. = db.users.updateOne({ _id: id }, { $pull: { roles: \"viewer\" } }) rimuove ogni voce viewer dall'array roles di quell'utente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_6",
+      "english": "$exists",
+      "set": {
+        "italian": "$exists",
+        "example": "db.users.find({ phone: { $exists: false } }) returns every user document missing a phone field for the next migration step. = db.users.find({ phone: { $exists: false } }) restituisce ogni documento utente privo del campo phone per il prossimo step di migrazione."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$match",
+      "set": {
+        "italian": "$match",
+        "example": "Putting $match as the first aggregation stage filters documents early so later stages process a much smaller working set. = Mettere $match come prima fase di aggregazione filtra i documenti presto cosi' le fasi successive elaborano un working set molto piu' piccolo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$group",
+      "set": {
+        "italian": "$group",
+        "example": "An aggregation stage like $group: { _id: \"$country\", total: { $sum: \"$amount\" } } rolls revenue up per country. = Una fase di aggregazione come $group: { _id: \"$country\", total: { $sum: \"$amount\" } } aggrega il fatturato per paese."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$project",
+      "set": {
+        "italian": "$project",
+        "example": "Adding $project: { name: 1, email: 1, _id: 0 } trims the output documents to just the fields the API actually returns. = Aggiungere $project: { name: 1, email: 1, _id: 0 } restringe i documenti di output ai soli campi che l'API restituisce davvero."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$sort",
+      "set": {
+        "italian": "$sort",
+        "example": "Appending $sort: { createdAt: -1 } at the end of a pipeline returns the newest matching documents first to the client. = Aggiungere $sort: { createdAt: -1 } alla fine di una pipeline restituisce per primi al client i documenti corrispondenti piu' recenti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$lookup",
+      "set": {
+        "italian": "$lookup",
+        "example": "$lookup from orders joins the users collection to its orders so an aggregation can read both sides in a single pipeline. = $lookup from orders unisce la collezione users ai suoi ordini cosi' un'aggregazione puo' leggere entrambi i lati in una singola pipeline."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$unwind",
+      "set": {
+        "italian": "$unwind",
+        "example": "Using $unwind: \"$tags\" on a posts pipeline flattens each tag in the array into its own document for downstream grouping. = Usare $unwind: \"$tags\" su una pipeline posts appiattisce ogni tag dell'array in un proprio documento per il raggruppamento a valle."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$limit",
+      "set": {
+        "italian": "$limit",
+        "example": "Adding $limit: 10 after a $sort keeps only the top 10 documents so the rest of the pipeline never has to inspect them. = Aggiungere $limit: 10 dopo un $sort tiene solo i primi 10 documenti cosi' il resto della pipeline non deve mai esaminarli."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_7",
+      "english": "$facet",
+      "set": {
+        "italian": "$facet",
+        "example": "$facet runs several sub-pipelines in parallel so one aggregation can return a list, a count, and a histogram in a single round trip. = $facet esegue piu' sotto-pipeline in parallelo cosi' una aggregazione puo' restituire una lista, un conteggio e un istogramma in un singolo round trip."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "Primary",
+      "set": {
+        "english": "Replica Set Primary",
+        "italian": "Primary del replica set",
+        "example": "In a MongoDB replica set, only the primary accepts writes while every secondary stays in sync by replaying the primary's oplog. = In un replica set MongoDB, solo il primary accetta scritture mentre ogni secondary resta sincronizzato rigiocando l'oplog del primary."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "Secondary",
+      "set": {
+        "english": "Replica Set Secondary",
+        "italian": "Secondary del replica set",
+        "example": "A replica set secondary serves read traffic when the driver allows secondaryPreferred reads and keeps a hot backup of every primary write. = Un secondary del replica set serve traffico di lettura quando il driver permette letture secondaryPreferred e mantiene un backup caldo di ogni scrittura del primary."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "Arbiter",
+      "set": {
+        "english": "Replica Set Arbiter",
+        "italian": "Arbiter del replica set",
+        "example": "An arbiter votes in elections without storing data, so a three-member replica set can break ties using a cheap arbiter node. = Un arbiter vota nelle elezioni senza memorizzare dati, cosi' un replica set a tre membri puo' rompere i pareggi usando un nodo arbiter economico."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "Oplog",
+      "set": {
+        "italian": "Oplog",
+        "example": "The oplog is a capped collection on the primary that records every write so secondaries can tail it and replay changes. = L'oplog e' una capped collection sul primary che registra ogni scrittura cosi' i secondary possono tailarla e rigiocare le modifiche."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "Sharding",
+      "set": {
+        "italian": "Sharding",
+        "example": "Sharding the events collection on user_id spreads write load across shards and keeps each chunk small enough to fit in cache. = Sharding sulla collezione events per user_id distribuisce il carico di scrittura tra gli shard e mantiene ogni chunk abbastanza piccolo da stare in cache."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "Shard Key",
+      "set": {
+        "english": "MongoDB Shard Key",
+        "italian": "Shard key di MongoDB",
+        "example": "Pick a MongoDB shard key with high cardinality and uniform write distribution so no single shard becomes a write hotspot. = Scegli una shard key di MongoDB con alta cardinalita' e distribuzione uniforme delle scritture cosi' nessun shard diventa un hotspot."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "Mongos",
+      "set": {
+        "italian": "Mongos",
+        "example": "Clients connect to a mongos router which inspects the shard key and forwards each query to the right shards in the cluster. = I client si connettono a un router mongos che ispeziona la shard key e inoltra ogni query agli shard giusti del cluster."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "db_nosql_8",
+      "english": "Config Server",
+      "set": {
+        "example": "A sharded MongoDB cluster runs a three-node config server replica set that stores chunk ranges and cluster metadata. = Un cluster MongoDB sharded esegue un replica set di config server a tre nodi che memorizza gli intervalli di chunk e i metadata del cluster."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "Redis",
+      "set": {
+        "italian": "Redis",
+        "example": "Redis backs session caches and rate limiters because every GET and SET round-trip completes in well under a millisecond. = Redis supporta cache di sessione e rate limiter perche' ogni round-trip GET e SET si completa ben sotto il millisecondo."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "GET",
+      "set": {
+        "italian": "GET",
+        "example": "Calling GET session:abc123 on Redis returns the cached user payload in a single round-trip without touching the primary database. = Chiamare GET session:abc123 su Redis restituisce il payload utente in cache in un singolo round-trip senza toccare il database primario."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "db_nosql_9",
+      "english": "DEL",
+      "set": {
+        "italian": "DEL",
+        "example": "Running DEL session:abc123 forces an immediate logout by removing the cached session key from Redis in one round trip. = Eseguire DEL session:abc123 forza un logout immediato rimuovendo la chiave di sessione in cache da Redis in un singolo round trip."
+      }
+    }
+  ]
+}

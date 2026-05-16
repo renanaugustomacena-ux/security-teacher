@@ -4065,7 +4065,7 @@ export default {
               pronunciation: '/sɪˈmæntɪk ˌseɡmenˈteɪʃən/',
               phonetic: 'si-MAN-tik seg-men-TEI-scen',
               example:
-                "Semantic segmentation labels every pixel in the image with a class like 'sky', 'tree', or 'building'. = La segmentazione semantica etichetta ogni pixel nell'immagine con una classe come 'cielo', 'albero' o 'edificio'.",
+                'For autonomous driving, models perform semantic segmentation to label every pixel as road, sidewalk, vehicle, or pedestrian. = Per la guida autonoma, i modelli eseguono la segmentazione semantica per etichettare ogni pixel come strada, marciapiede, veicolo o pedone.',
               context: 'computer-vision',
               difficulty: 'intermediate',
             },
@@ -4790,15 +4790,14 @@ export default {
               code: 'model.fit(epochs=10)',
             },
             {
-              english: 'Iteration',
-              italian: 'Iterazione',
+              english: 'Warmup Steps',
+              italian: 'Passi di riscaldamento (warmup)',
               pronunciation: '/ˌɪtəˈreɪʃən/',
               phonetic: 'i-te-REI-scen',
-              example:
-                'Each iteration processes one batch of 64 samples and updates the model weights once. = Ogni iterazione elabora un batch di 64 campioni e aggiorna i pesi del modello una volta.',
+              example: `Setting 500 warmup steps lets the learning rate ramp up gradually and avoids early gradient explosions in transformer training. = Impostare 500 warmup step lascia che il learning rate salga gradualmente ed evita esplosioni precoci del gradiente nell'addestramento dei transformer.`,
               context: 'model-training',
               difficulty: 'intermediate',
-              note: 'Diversa da epoch: 1 epoch = N iterations.',
+              note: 'Comune nei transformer e nei modelli con learning rate scheduler.',
             },
             {
               english: 'Hyperparameter Tuning',
@@ -5478,15 +5477,15 @@ export default {
               note: 'Mean Absolute Percentage Error.',
             },
             {
-              english: 'R-Squared',
-              italian: 'R quadrato',
+              english: 'Pseudo R-Squared',
+              italian: 'Pseudo R quadrato',
               pronunciation: '/ɑːr ˈskweərd/',
               phonetic: 'AR-SKUERD',
-              example:
-                'An R-squared of 0.92 on the test set confirms the regression model captures most variation in sales data. = Un R quadrato di 0.92 sul test set conferma che il modello di regressione cattura la maggior parte della variazione nei dati di vendita.',
+              example: `For logistic regression we report McFadden's pseudo R-squared because the standard R-squared is not defined for binary outcomes. = Per la regressione logistica riportiamo lo pseudo R quadrato di McFadden perché l'R quadrato standard non è definito per esiti binari.`,
               context: 'evaluation',
               difficulty: 'intermediate',
               code: 'r2_score(y_true, y_pred)',
+              note: 'Esistono diverse formulazioni: McFadden, Cox-Snell, Nagelkerke.',
             },
             {
               english: 'Adjusted R-Squared',
@@ -5510,14 +5509,15 @@ export default {
               code: 'median_absolute_error(y_true, y_pred)',
             },
             {
-              english: 'Explained Variance',
-              italian: 'Varianza spiegata',
+              english: 'Predicted vs Actual Plot',
+              italian: 'Grafico predetto vs reale',
               pronunciation: '/ɪkˈspleɪnd ˈveəriəns/',
               phonetic: 'ek-SPLEIND VER-ians',
               example:
-                "When explained variance equals R-squared, it confirms there is no systematic bias in the model's residuals. = Quando la varianza spiegata è uguale all'R quadrato, conferma che non c'è bias sistematico nei residui del modello.",
+                'Inspecting the predicted vs actual plot quickly reveals whether the regression systematically over- or under-predicts in certain ranges. = Ispezionare il grafico predetto vs reale rivela rapidamente se la regressione sovra- o sotto-stima sistematicamente in certi intervalli.',
               context: 'evaluation',
               difficulty: 'intermediate',
+              note: 'Idealmente i punti si dispongono lungo la diagonale y=x.',
             },
             {
               english: 'Residual Plot',
@@ -5856,15 +5856,16 @@ export default {
               code: 'DataLoader(dataset, batch_size=32, shuffle=True)',
             },
             {
-              english: 'Dataset',
-              italian: 'Contenitore di dati (Dataset)',
+              english: 'Collate Function',
+              italian: 'Funzione di collazione (collate)',
               pronunciation: '/ˈdeɪtəset/',
               phonetic: 'DEI-ta-set',
               example:
-                'Creating a custom PyTorch Dataset class lets you load images, apply transforms, and return tensors cleanly. = Creare una classe Dataset PyTorch personalizzata permette di caricare immagini, applicare trasformazioni e restituire tensori in modo pulito.',
+                'A custom collate function lets the DataLoader pad variable-length sequences into a single batch tensor cleanly. = Una funzione di collate personalizzata permette al DataLoader di fare padding di sequenze a lunghezza variabile in un singolo tensore batch in modo pulito.',
               context: 'tools',
               difficulty: 'intermediate',
               code: 'class MyData(Dataset):',
+              note: `Si passa al DataLoader tramite l'argomento collate_fn.`,
             },
             {
               english: 'Tensor (PyTorch)',
@@ -8141,7 +8142,7 @@ export default {
                 'Healthcare regulations require explainability so doctors can understand why the model flagged a patient as high-risk. = Le normative sanitarie richiedono la spiegabilità così i medici possano capire perché il modello ha segnalato un paziente come ad alto rischio.',
               context: 'ethics',
               difficulty: 'advanced',
-              note: 'Spesso lasciato in inglese: "explainability".',
+              note: 'Tecniche come SHAP e LIME forniscono spiegazioni post-hoc richieste da normative come GDPR per decisioni automatizzate.',
             },
             {
               english: 'Interpretability',
@@ -9591,15 +9592,16 @@ export default {
               tool: 'InfluxDB, TimescaleDB',
             },
             {
-              english: 'Vector Database',
-              italian: 'Database vettoriale',
+              english: 'Graph Database',
+              italian: 'Database a grafo',
               pronunciation: '/ˈvektər ˈdeɪtəbeɪs/',
               phonetic: 'VEK-ter DEI-ta-beis',
               example:
-                'Semantic search over 10 million documents requires a specialized vector database that indexes high-dimensional embeddings. = La ricerca semantica su 10 milioni di documenti richiede un database vettoriale specializzato che indicizza embedding ad alta dimensionalità.',
+                'Recommendation pipelines often store user-item relationships in a graph database to enable multi-hop traversals at query time. = Le pipeline di raccomandazione spesso memorizzano le relazioni utente-item in un database a grafo per abilitare attraversamenti multi-hop al momento della query.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Pinecone, Qdrant, Milvus',
+              note: 'Esempi: Neo4j, Amazon Neptune, ArangoDB.',
             },
           ],
         },
@@ -9609,15 +9611,16 @@ export default {
           description: 'Centralizzare le feature ML',
           items: [
             {
-              english: 'Feature Store',
-              italian: 'Archivio feature condivise (Feature Store)',
+              english: 'Feature Pipeline',
+              italian: 'Pipeline di feature',
               pronunciation: '/ˈfiːtʃər stɔːr/',
               phonetic: 'FII-cer STOR',
               example:
-                'The centralized feature store ensures that training and serving pipelines compute identical feature values, preventing skew. = Il feature store centralizzato assicura che le pipeline di addestramento e serving calcolino valori di feature identici, prevenendo lo skew.',
+                'The feature pipeline ingests raw event logs hourly, computes rolling aggregates, and writes the results to both online and offline stores. = La pipeline di feature ingerisce i log eventi grezzi ogni ora, calcola aggregati a finestra mobile e scrive i risultati su store online e offline.',
               context: 'data-engineering',
               difficulty: 'advanced',
               tool: 'Feast, Tecton',
+              note: 'Tipicamente orchestrata con Airflow, Dagster o framework specifici come Feast.',
             },
             {
               english: 'Online Features',
@@ -9887,14 +9890,15 @@ export default {
               note: 'Projected Gradient Descent.',
             },
             {
-              english: 'Adversarial Training',
-              italian: 'Addestramento avversario',
+              english: 'Defensive Distillation',
+              italian: 'Distillazione difensiva',
               pronunciation: '/ˌædvərˈseəriəl ˈtreɪnɪŋ/',
               phonetic: 'ad-ver-SE-rial TREI-ning',
               example:
-                'Including adversarial examples in the training set through adversarial training improved robustness at the cost of 3% clean accuracy. = Includere esempi avversari nel set di addestramento tramite addestramento avversario ha migliorato la robustezza al costo del 3% di accuratezza pulita.',
+                'Defensive distillation trains a second model on softened probability outputs of the first to make adversarial perturbations harder to craft. = La distillazione difensiva addestra un secondo modello sulle probabilità ammorbidite del primo per rendere più difficile costruire perturbazioni avversarie.',
               context: 'ethics',
               difficulty: 'advanced',
+              note: 'Successivamente dimostrata aggirabile da attacchi C&W ma utile come baseline difensiva.',
             },
             {
               english: 'Robustness',
@@ -10350,14 +10354,15 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Citation',
-              italian: 'Citazione',
+              english: 'Citation Index',
+              italian: 'Indice di citazione',
               pronunciation: '/saɪˈteɪʃən/',
               phonetic: 'sai-TEI-scen',
               example:
-                "A paper's citation count helps gauge its influence, though truly novel work may take years to accumulate citations. = Il conteggio delle citazioni di un articolo aiuta a valutare la sua influenza, anche se lavori davvero nuovi possono impiegare anni ad accumulare citazioni.",
+                'Tools like Google Scholar and Semantic Scholar build a citation index that lets you trace which later papers extend a given result. = Strumenti come Google Scholar e Semantic Scholar costruiscono un indice di citazione che permette di tracciare quali articoli successivi estendono un dato risultato.',
               context: 'research',
               difficulty: 'advanced',
+              note: 'Misure derivate includono h-index e impact factor.',
             },
             {
               english: 'Reproducibility Crisis',
@@ -10521,14 +10526,14 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Ablation Study',
-              italian: 'Studio di ablazione',
+              english: 'Sensitivity Analysis',
+              italian: 'Analisi di sensibilità',
               pronunciation: '/əˈbleɪʃən ˈstʌdi/',
               phonetic: 'a-BLEI-scen STA-di',
-              example:
-                'The ablation study revealed that removing positional encoding had a catastrophic effect on long-range dependencies. = Lo studio di ablazione ha rivelato che rimuovere la codifica posizionale ha avuto un effetto catastrofico sulle dipendenze a lungo raggio.',
+              example: `A sensitivity analysis on the learning rate showed results were stable between 1e-4 and 5e-4 but degraded sharply outside that range. = Un'analisi di sensibilità sul learning rate ha mostrato che i risultati erano stabili tra 1e-4 e 5e-4 ma degradavano bruscamente fuori da quell'intervallo.`,
               context: 'research',
               difficulty: 'advanced',
+              note: `Più ampia dell'ablation study: varia parametri continui, non solo presenza/assenza di componenti.`,
             },
             {
               english: 'Baseline',
@@ -11023,14 +11028,15 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Standardization',
-              italian: 'Standardizzazione',
+              english: 'Maturity Assessment',
+              italian: 'Valutazione della maturità',
               pronunciation: '/ˌstændərdaɪˈzeɪʃən/',
               phonetic: 'stan-dar-dai-ZEI-scen',
               example:
-                'Company-wide standardization of experiment tracking and model packaging accelerated cross-team collaboration significantly. = La standardizzazione aziendale del tracciamento esperimenti e impacchettamento modelli ha accelerato significativamente la collaborazione tra team.',
+                'A quarterly MLOps maturity assessment scores teams on automation, monitoring, and governance to highlight the next investment areas. = Una valutazione trimestrale della maturità MLOps valuta i team su automazione, monitoraggio e governance per evidenziare le prossime aree di investimento.',
               context: 'mlops',
               difficulty: 'advanced',
+              note: 'Spesso basata su framework come Google MLOps Maturity Model o Microsoft MLOps Capability Model.',
             },
             {
               english: 'Cookbook',

@@ -1,0 +1,317 @@
+topicId,level,lesson,english,italian,issueType
+"cloud-computing",0,"cloud_foundations_1","Cloud","Cloud (nuvola)",fake-translation
+"cloud-computing",0,"cloud_foundations_1","Tenant","Tenant (inquilino)",fake-translation
+"cloud-computing",0,"cloud_foundations_1","Scalability","Scalabilità",near-identical-translation
+"cloud-computing",0,"cloud_foundations_1","Elasticity","Elasticità",near-identical-translation
+"cloud-computing",0,"cloud_foundations_1","On-Demand","On-demand (a richiesta)",fake-translation
+"cloud-computing",0,"cloud_foundations_2","PaaS","Piattaforma come servizio",tautological-example
+"cloud-computing",0,"cloud_foundations_2","SaaS","Software come servizio",trivial-example
+"cloud-computing",0,"cloud_foundations_2","Serverless","Serverless (senza server)",fake-translation
+"cloud-computing",0,"cloud_foundations_3","Public Cloud","Cloud pubblico",trivial-example
+"cloud-computing",0,"cloud_foundations_3","Hybrid Cloud","Cloud ibrido",tautological-example
+"cloud-computing",0,"cloud_foundations_3","Hybrid Cloud","",duplicate-across-lessons
+"cloud-computing",0,"cloud_foundations_4","Region","Regione",near-identical-translation
+"cloud-computing",0,"cloud_foundations_4","Latency","Latenza",near-identical-translation
+"cloud-computing",0,"cloud_foundations_4","Geo-Replication","Geo-replicazione",near-identical-translation
+"cloud-computing",0,"cloud_foundations_4","Data Residency","Residenza dei dati",trivial-example
+"cloud-computing",0,"cloud_foundations_4","Data Residency","",duplicate-across-lessons
+"cloud-computing",0,"cloud_foundations_4","Region Pair","Coppia di regioni",trivial-example
+"cloud-computing",1,"cloud_compute_1","EC2","EC2 (Elastic Compute Cloud)",fake-translation
+"cloud-computing",1,"cloud_compute_1","Guest OS","Sistema operativo guest",trivial-example
+"cloud-computing",1,"cloud_compute_1","Snapshot","Istantanea (snapshot)",trivial-example
+"cloud-computing",1,"cloud_compute_2","AMI","AMI (immagine macchina Amazon)",fake-translation
+"cloud-computing",1,"cloud_compute_2","AMI","AMI (immagine macchina Amazon)",trivial-example
+"cloud-computing",1,"cloud_compute_2","vCPU","vCPU (CPU virtuale)",fake-translation
+"cloud-computing",1,"cloud_compute_2","Memory","Memoria",near-identical-translation
+"cloud-computing",1,"cloud_compute_2","Memory","Memoria",trivial-example
+"cloud-computing",1,"cloud_compute_2","Reserved Instance","Istanza riservata",tautological-example
+"cloud-computing",1,"cloud_compute_2","Reserved Instance","",duplicate-across-lessons
+"cloud-computing",1,"cloud_compute_2","Image","Immagine",trivial-example
+"cloud-computing",1,"cloud_compute_3","Auto Scaling","Auto-scaling",near-identical-translation
+"cloud-computing",1,"cloud_compute_3","Scaling Policy","Politica di scaling",trivial-example
+"cloud-computing",1,"cloud_compute_3","Capacity","Capacità",near-identical-translation
+"cloud-computing",1,"cloud_compute_3","Capacity","Capacità",trivial-example
+"cloud-computing",1,"cloud_compute_4","Sticky Session","Sessione persistente",tautological-example
+"cloud-computing",1,"cloud_compute_4","Target Group","Gruppo target",trivial-example
+"cloud-computing",2,"cloud_storage_1","S3","S3 (Simple Storage Service)",fake-translation
+"cloud-computing",2,"cloud_storage_1","Bucket","Contenitore di oggetti (bucket)",trivial-example
+"cloud-computing",2,"cloud_storage_1","Object","Oggetto",trivial-example
+"cloud-computing",2,"cloud_storage_1","Blob","Blob (Binary Large Object)",fake-translation
+"cloud-computing",2,"cloud_storage_1","Metadata","Metadati",near-identical-translation
+"cloud-computing",2,"cloud_storage_2","EBS","EBS (Elastic Block Store)",tautological-example
+"cloud-computing",2,"cloud_storage_2","EBS","EBS (Elastic Block Store)",fake-translation
+"cloud-computing",2,"cloud_storage_2","Volume","Unità di archiviazione (volume)",trivial-example
+"cloud-computing",2,"cloud_storage_2","IOPS","IOPS (operazioni I/O al secondo)",fake-translation
+"cloud-computing",2,"cloud_storage_2","File Storage","Archiviazione a file",tautological-example
+"cloud-computing",2,"cloud_storage_2","File Storage","Archiviazione a file",trivial-example
+"cloud-computing",2,"cloud_storage_2","EFS","EFS (Elastic File System)",tautological-example
+"cloud-computing",2,"cloud_storage_2","EFS","EFS (Elastic File System)",fake-translation
+"cloud-computing",2,"cloud_storage_2","EFS","EFS (Elastic File System)",trivial-example
+"cloud-computing",2,"cloud_storage_2","NFS","NFS (Network File System)",tautological-example
+"cloud-computing",2,"cloud_storage_2","NFS","NFS (Network File System)",fake-translation
+"cloud-computing",2,"cloud_storage_2","NFS","NFS (Network File System)",trivial-example
+"cloud-computing",2,"cloud_storage_2","SMB","SMB (Server Message Block)",fake-translation
+"cloud-computing",2,"cloud_storage_2","SMB","SMB (Server Message Block)",trivial-example
+"cloud-computing",2,"cloud_storage_2","Mount Point","Punto di mount",trivial-example
+"cloud-computing",2,"cloud_storage_3","Cool Tier","Livello di accesso infrequente (cool tier)",tautological-example
+"cloud-computing",2,"cloud_storage_3","Retrieval","Recupero",trivial-example
+"cloud-computing",2,"cloud_storage_4","Replication","Replicazione",near-identical-translation
+"cloud-computing",2,"cloud_storage_4","Replication","",duplicate-across-lessons
+"cloud-computing",2,"cloud_storage_4","Durability","Durabilità",near-identical-translation
+"cloud-computing",2,"cloud_storage_4","Durability","Durabilità",trivial-example
+"cloud-computing",2,"cloud_storage_4","Vault","Caveau digitale (vault)",trivial-example
+"cloud-computing",3,"cloud_networking_1","VPC","VPC (Virtual Private Cloud)",fake-translation
+"cloud-computing",3,"cloud_networking_1","VNet","VNet (rete virtuale Azure)",fake-translation
+"cloud-computing",3,"cloud_networking_1","VNet","VNet (rete virtuale Azure)",trivial-example
+"cloud-computing",3,"cloud_networking_1","Public Subnet","Subnet pubblica",tautological-example
+"cloud-computing",3,"cloud_networking_1","Public Subnet","Subnet pubblica",trivial-example
+"cloud-computing",3,"cloud_networking_1","CIDR Block","Blocco CIDR",trivial-example
+"cloud-computing",3,"cloud_networking_1","Route Table","Tabella di routing",tautological-example
+"cloud-computing",3,"cloud_networking_1","NAT Gateway","Gateway NAT gestito (NAT Gateway)",tautological-example
+"cloud-computing",3,"cloud_networking_1","Egress","Traffico in uscita (egress)",tautological-example
+"cloud-computing",3,"cloud_networking_1","Egress","Traffico in uscita (egress)",trivial-example
+"cloud-computing",3,"cloud_networking_2","Inbound Rule","Regola inbound",trivial-example
+"cloud-computing",3,"cloud_networking_2","Allow List","Lista di permessi",trivial-example
+"cloud-computing",3,"cloud_networking_2","Deny List","Lista di blocco",trivial-example
+"cloud-computing",3,"cloud_networking_3","DNS","DNS (Domain Name System)",tautological-example
+"cloud-computing",3,"cloud_networking_3","DNS","DNS (Domain Name System)",fake-translation
+"cloud-computing",3,"cloud_networking_3","DNS","DNS (Domain Name System)",trivial-example
+"cloud-computing",3,"cloud_networking_3","Hosted Zone","Zona DNS gestita (hosted zone)",trivial-example
+"cloud-computing",3,"cloud_networking_3","A Record","Record A",trivial-example
+"cloud-computing",3,"cloud_networking_3","CNAME","CNAME (alias)",fake-translation
+"cloud-computing",3,"cloud_networking_3","CNAME","CNAME (alias)",trivial-example
+"cloud-computing",3,"cloud_networking_3","Alias Record","Record alias",tautological-example
+"cloud-computing",3,"cloud_networking_3","TTL","TTL (Time To Live)",fake-translation
+"cloud-computing",3,"cloud_networking_3","TTL","TTL (Time To Live)",trivial-example
+"cloud-computing",3,"cloud_networking_3","TTL","",duplicate-across-lessons
+"cloud-computing",3,"cloud_networking_3","Routing Policy","Politica di routing",trivial-example
+"cloud-computing",3,"cloud_networking_3","Geolocation Routing","Routing geolocalizzato",tautological-example
+"cloud-computing",3,"cloud_networking_4","VPN","VPN (rete privata virtuale)",fake-translation
+"cloud-computing",3,"cloud_networking_4","ExpressRoute","Circuito dedicato verso Azure (ExpressRoute)",tautological-example
+"cloud-computing",3,"cloud_networking_4","BGP","BGP (Border Gateway Protocol)",fake-translation
+"cloud-computing",3,"cloud_networking_4","BGP","BGP (Border Gateway Protocol)",trivial-example
+"cloud-computing",4,"cloud_iam_1","IAM","IAM (Identity and Access Management)",tautological-example
+"cloud-computing",4,"cloud_iam_1","IAM","IAM (Identity and Access Management)",fake-translation
+"cloud-computing",4,"cloud_iam_1","IAM","IAM (Identity and Access Management)",trivial-example
+"cloud-computing",4,"cloud_iam_1","User","Utente",trivial-example
+"cloud-computing",4,"cloud_iam_1","Role","Ruolo",near-identical-translation
+"cloud-computing",4,"cloud_iam_1","Role","Ruolo",trivial-example
+"cloud-computing",4,"cloud_iam_1","Identity","Identità",near-identical-translation
+"cloud-computing",4,"cloud_iam_1","Identity","Identità",trivial-example
+"cloud-computing",4,"cloud_iam_1","Access Key","Chiave di accesso",trivial-example
+"cloud-computing",4,"cloud_iam_1","Secret Key","Chiave segreta",trivial-example
+"cloud-computing",4,"cloud_iam_1","ARN","ARN (Amazon Resource Name)",tautological-example
+"cloud-computing",4,"cloud_iam_1","ARN","ARN (Amazon Resource Name)",fake-translation
+"cloud-computing",4,"cloud_iam_2","Resource","Risorsa",trivial-example
+"cloud-computing",4,"cloud_iam_2","Resource","",duplicate-across-lessons
+"cloud-computing",4,"cloud_iam_2","Effect","Effetto",near-identical-translation
+"cloud-computing",4,"cloud_iam_2","Condition","Condizione",near-identical-translation
+"cloud-computing",4,"cloud_iam_2","Resource-Based Policy","Policy basata su risorsa",trivial-example
+"cloud-computing",4,"cloud_iam_3","Federation","Federazione",near-identical-translation
+"cloud-computing",4,"cloud_iam_3","Federation","",duplicate-across-lessons
+"cloud-computing",4,"cloud_iam_3","STS","STS (Security Token Service)",fake-translation
+"cloud-computing",4,"cloud_iam_3","Token","Credenziale d'accesso temporanea (token)",trivial-example
+"cloud-computing",4,"cloud_iam_4","MFA","MFA (autenticazione multi-fattore)",fake-translation
+"cloud-computing",4,"cloud_iam_4","MFA","MFA (autenticazione multi-fattore)",trivial-example
+"cloud-computing",4,"cloud_iam_4","Two-Factor Authentication","Autenticazione a due fattori",trivial-example
+"cloud-computing",4,"cloud_iam_4","TOTP","TOTP (password basata sul tempo)",fake-translation
+"cloud-computing",4,"cloud_iam_4","TOTP","TOTP (password basata sul tempo)",trivial-example
+"cloud-computing",4,"cloud_iam_4","SSO","SSO (single sign-on)",tautological-example
+"cloud-computing",4,"cloud_iam_4","SSO","SSO (single sign-on)",fake-translation
+"cloud-computing",4,"cloud_iam_4","OIDC","OIDC (OpenID Connect)",fake-translation
+"cloud-computing",4,"cloud_iam_4","Identity Provider","Provider di identità",trivial-example
+"cloud-computing",4,"cloud_iam_4","Conditional Access","Accesso condizionale",tautological-example
+"cloud-computing",4,"cloud_iam_4","Conditional Access","Accesso condizionale",trivial-example
+"cloud-computing",5,"cloud_serverless_1","Function","Funzione",trivial-example
+"cloud-computing",5,"cloud_serverless_1","Event","Evento",near-identical-translation
+"cloud-computing",5,"cloud_serverless_1","Event","Evento",trivial-example
+"cloud-computing",5,"cloud_serverless_1","Context","Contesto",near-identical-translation
+"cloud-computing",5,"cloud_serverless_1","Trigger","Innesco (trigger)",trivial-example
+"cloud-computing",5,"cloud_serverless_1","Cold Start","Avvio a freddo (cold start)",tautological-example
+"cloud-computing",5,"cloud_serverless_1","Warm Start","Avvio a caldo (warm start)",tautological-example
+"cloud-computing",5,"cloud_serverless_1","Warm Start","Avvio a caldo (warm start)",trivial-example
+"cloud-computing",5,"cloud_serverless_1","Provisioned Concurrency","Concorrenza riservata",tautological-example
+"cloud-computing",5,"cloud_serverless_2","REST API","API REST",trivial-example
+"cloud-computing",5,"cloud_serverless_2","HTTP API","Variante leggera di API Gateway (HTTP API)",tautological-example
+"cloud-computing",5,"cloud_serverless_2","HTTP API","Variante leggera di API Gateway (HTTP API)",trivial-example
+"cloud-computing",5,"cloud_serverless_2","Resource Path","Percorso della risorsa",trivial-example
+"cloud-computing",5,"cloud_serverless_2","Method","Metodo",near-identical-translation
+"cloud-computing",5,"cloud_serverless_2","Integration","Integrazione",near-identical-translation
+"cloud-computing",5,"cloud_serverless_3","Event Source","Sorgente di eventi",trivial-example
+"cloud-computing",5,"cloud_serverless_3","Webhook","Chiamata HTTP automatica (webhook)",trivial-example
+"cloud-computing",5,"cloud_serverless_3","Idempotency","Idempotenza",near-identical-translation
+"cloud-computing",5,"cloud_serverless_4","Step Functions","Orchestratore serverless (Step Functions)",tautological-example
+"cloud-computing",5,"cloud_serverless_4","Choice State","Stato di scelta",trivial-example
+"cloud-computing",5,"cloud_serverless_4","Map State","Stato map",trivial-example
+"cloud-computing",5,"cloud_serverless_4","ASL","ASL (Amazon States Language)",tautological-example
+"cloud-computing",5,"cloud_serverless_4","ASL","ASL (Amazon States Language)",fake-translation
+"cloud-computing",5,"cloud_serverless_4","ASL","ASL (Amazon States Language)",trivial-example
+"cloud-computing",6,"cloud_database_1","RDS","RDS (Relational Database Service)",tautological-example
+"cloud-computing",6,"cloud_database_1","RDS","RDS (Relational Database Service)",fake-translation
+"cloud-computing",6,"cloud_database_1","Read Replica","Replica di lettura",tautological-example
+"cloud-computing",6,"cloud_database_1","Read Replica","Replica di lettura",trivial-example
+"cloud-computing",6,"cloud_database_1","Connection Pool","Pool di connessioni",trivial-example
+"cloud-computing",6,"cloud_database_2","Sort Key","Chiave di ordinamento",tautological-example
+"cloud-computing",6,"cloud_database_2","Sort Key","Chiave di ordinamento",trivial-example
+"cloud-computing",6,"cloud_database_2","Item","Elemento (item)",trivial-example
+"cloud-computing",6,"cloud_database_2","On-Demand Mode","Modalità on-demand",tautological-example
+"cloud-computing",6,"cloud_database_2","Eventually Consistent","Coerenza eventuale (eventually consistent)",tautological-example
+"cloud-computing",6,"cloud_database_2","Eventually Consistent","Coerenza eventuale (eventually consistent)",trivial-example
+"cloud-computing",6,"cloud_database_3","TTL","TTL (tempo di vita)",fake-translation
+"cloud-computing",6,"cloud_database_3","TTL","",duplicate-across-lessons
+"cloud-computing",6,"cloud_database_3","Eviction","Espulsione dalla cache (eviction)",trivial-example
+"cloud-computing",6,"cloud_database_3","Write-Through","Scrittura sincrona in cache e DB (write-through)",tautological-example
+"cloud-computing",6,"cloud_database_3","Write-Through","Scrittura sincrona in cache e DB (write-through)",trivial-example
+"cloud-computing",6,"cloud_database_3","Lazy Loading","Caricamento pigro",tautological-example
+"cloud-computing",6,"cloud_database_3","Lazy Loading","Caricamento pigro",trivial-example
+"cloud-computing",6,"cloud_database_4","Time-Series Database","Database time-series",trivial-example
+"cloud-computing",6,"cloud_database_4","OLTP","OLTP (transazioni online)",fake-translation
+"cloud-computing",6,"cloud_database_4","OLAP","OLAP (analisi online)",fake-translation
+"cloud-computing",7,"cloud_containers_1","Container","Contenitore isolato (container)",tautological-example
+"cloud-computing",7,"cloud_containers_1","Dockerfile","Ricetta di immagine container (Dockerfile)",trivial-example
+"cloud-computing",7,"cloud_containers_1","Multi-Stage Build","Build multi-stage",tautological-example
+"cloud-computing",7,"cloud_containers_1","Image Tag","Tag immagine",trivial-example
+"cloud-computing",7,"cloud_containers_1","OCI","OCI (Open Container Initiative)",tautological-example
+"cloud-computing",7,"cloud_containers_1","OCI","OCI (Open Container Initiative)",fake-translation
+"cloud-computing",7,"cloud_containers_1","Init Container","Container di inizializzazione (init container)",tautological-example
+"cloud-computing",7,"cloud_containers_2","Container Registry","Registry container",trivial-example
+"cloud-computing",7,"cloud_containers_2","ECR","ECR (Elastic Container Registry)",tautological-example
+"cloud-computing",7,"cloud_containers_2","ECR","ECR (Elastic Container Registry)",fake-translation
+"cloud-computing",7,"cloud_containers_2","ECR","ECR (Elastic Container Registry)",trivial-example
+"cloud-computing",7,"cloud_containers_2","ACR","ACR (Azure Container Registry)",tautological-example
+"cloud-computing",7,"cloud_containers_2","ACR","ACR (Azure Container Registry)",fake-translation
+"cloud-computing",7,"cloud_containers_2","ACR","ACR (Azure Container Registry)",trivial-example
+"cloud-computing",7,"cloud_containers_2","GCR","GCR (Google Container Registry)",tautological-example
+"cloud-computing",7,"cloud_containers_2","GCR","GCR (Google Container Registry)",fake-translation
+"cloud-computing",7,"cloud_containers_2","Push","Caricamento di immagine (push)",tautological-example
+"cloud-computing",7,"cloud_containers_2","Push","Caricamento di immagine (push)",trivial-example
+"cloud-computing",7,"cloud_containers_2","Pull","Scaricamento di immagine (pull)",tautological-example
+"cloud-computing",7,"cloud_containers_2","Pull","Scaricamento di immagine (pull)",trivial-example
+"cloud-computing",7,"cloud_containers_2","Image Scanning","Scansione immagini",trivial-example
+"cloud-computing",7,"cloud_containers_2","Replication","Replicazione",near-identical-translation
+"cloud-computing",7,"cloud_containers_2","Replication","",duplicate-across-lessons
+"cloud-computing",7,"cloud_containers_3","ECS","ECS (Elastic Container Service)",tautological-example
+"cloud-computing",7,"cloud_containers_3","ECS","ECS (Elastic Container Service)",fake-translation
+"cloud-computing",7,"cloud_containers_3","ECS","ECS (Elastic Container Service)",trivial-example
+"cloud-computing",7,"cloud_containers_3","Fargate","Esecuzione container serverless AWS (Fargate)",tautological-example
+"cloud-computing",7,"cloud_containers_3","Launch Type","Tipo di lancio",trivial-example
+"cloud-computing",7,"cloud_containers_3","Container Insights","Monitoring container AWS (Container Insights)",tautological-example
+"cloud-computing",7,"cloud_containers_4","Kubernetes","Kubernetes (orchestratore container)",tautological-example
+"cloud-computing",7,"cloud_containers_4","Kubernetes","Kubernetes (orchestratore container)",fake-translation
+"cloud-computing",7,"cloud_containers_4","EKS","EKS (Elastic Kubernetes Service)",tautological-example
+"cloud-computing",7,"cloud_containers_4","EKS","EKS (Elastic Kubernetes Service)",fake-translation
+"cloud-computing",7,"cloud_containers_4","EKS","EKS (Elastic Kubernetes Service)",trivial-example
+"cloud-computing",7,"cloud_containers_4","AKS","AKS (Azure Kubernetes Service)",tautological-example
+"cloud-computing",7,"cloud_containers_4","AKS","AKS (Azure Kubernetes Service)",fake-translation
+"cloud-computing",7,"cloud_containers_4","AKS","AKS (Azure Kubernetes Service)",trivial-example
+"cloud-computing",7,"cloud_containers_4","GKE","GKE (Google Kubernetes Engine)",tautological-example
+"cloud-computing",7,"cloud_containers_4","GKE","GKE (Google Kubernetes Engine)",fake-translation
+"cloud-computing",7,"cloud_containers_4","GKE","GKE (Google Kubernetes Engine)",trivial-example
+"cloud-computing",7,"cloud_containers_4","Node","Nodo",tautological-example
+"cloud-computing",7,"cloud_containers_4","Node","Nodo",near-identical-translation
+"cloud-computing",7,"cloud_containers_4","Node","Nodo",trivial-example
+"cloud-computing",7,"cloud_containers_4","Control Plane","Piano di controllo (control plane)",trivial-example
+"cloud-computing",7,"cloud_containers_4","Worker Node","Nodo worker",tautological-example
+"cloud-computing",7,"cloud_containers_4","Worker Node","Nodo worker",trivial-example
+"cloud-computing",7,"cloud_containers_4","Karpenter","Autoscaler nodi AWS-native (Karpenter)",tautological-example
+"cloud-computing",7,"cloud_containers_4","Karpenter","Autoscaler nodi AWS-native (Karpenter)",trivial-example
+"cloud-computing",8,"cloud_iac_1","Imperative","Imperativo",tautological-example
+"cloud-computing",8,"cloud_iac_1","Imperative","Imperativo",near-identical-translation
+"cloud-computing",8,"cloud_iac_1","Imperative","Imperativo",trivial-example
+"cloud-computing",8,"cloud_iac_1","Idempotent","Idempotente",near-identical-translation
+"cloud-computing",8,"cloud_iac_1","Idempotent","Idempotente",trivial-example
+"cloud-computing",8,"cloud_iac_1","Pet vs Cattle","Animali domestici vs bestiame (pet vs cattle)",trivial-example
+"cloud-computing",8,"cloud_iac_1","GitOps","Git come fonte di verità per il deploy (GitOps)",tautological-example
+"cloud-computing",8,"cloud_iac_1","GitOps","Git come fonte di verità per il deploy (GitOps)",trivial-example
+"cloud-computing",8,"cloud_iac_2","Terraform","Strumento IaC HashiCorp (Terraform)",tautological-example
+"cloud-computing",8,"cloud_iac_2","OpenTofu","Fork open source di Terraform (OpenTofu)",tautological-example
+"cloud-computing",8,"cloud_iac_2","HCL","HCL (HashiCorp Configuration Language)",fake-translation
+"cloud-computing",8,"cloud_iac_2","HCL","HCL (HashiCorp Configuration Language)",trivial-example
+"cloud-computing",8,"cloud_iac_2","Provider","Fornitore Terraform (provider)",trivial-example
+"cloud-computing",8,"cloud_iac_2","Provider","",duplicate-across-lessons
+"cloud-computing",8,"cloud_iac_2","Resource","Risorsa",trivial-example
+"cloud-computing",8,"cloud_iac_2","Resource","",duplicate-across-lessons
+"cloud-computing",8,"cloud_iac_2","Variable","Variabile",near-identical-translation
+"cloud-computing",8,"cloud_iac_2","Output","Valore esposto (output)",tautological-example
+"cloud-computing",8,"cloud_iac_2","Module","Modulo",near-identical-translation
+"cloud-computing",8,"cloud_iac_2","Module","Modulo",trivial-example
+"cloud-computing",8,"cloud_iac_2","Workspace","Area di lavoro (workspace)",tautological-example
+"cloud-computing",8,"cloud_iac_3","State Lock","Lock dello state",tautological-example
+"cloud-computing",8,"cloud_iac_3","Plan","Piano di esecuzione (plan)",trivial-example
+"cloud-computing",8,"cloud_iac_3","Refresh","Aggiornamento dello stato (refresh)",tautological-example
+"cloud-computing",8,"cloud_iac_3","Import","Importazione risorse esistenti (import)",tautological-example
+"cloud-computing",8,"cloud_iac_3","Lifecycle Block","Blocco lifecycle",trivial-example
+"cloud-computing",8,"cloud_iac_4","CloudFormation","IaC nativo AWS (CloudFormation)",tautological-example
+"cloud-computing",8,"cloud_iac_4","CloudFormation","IaC nativo AWS (CloudFormation)",trivial-example
+"cloud-computing",8,"cloud_iac_4","Stack","Pila di risorse cloud (stack)",trivial-example
+"cloud-computing",8,"cloud_iac_4","Stack Set","Stack su più account/regioni (StackSet)",tautological-example
+"cloud-computing",8,"cloud_iac_4","Change Set","Anteprima delle modifiche (change set)",trivial-example
+"cloud-computing",8,"cloud_iac_4","Pulumi","IaC con linguaggi general-purpose (Pulumi)",tautological-example
+"cloud-computing",8,"cloud_iac_4","CDK","CDK (Cloud Development Kit)",fake-translation
+"cloud-computing",8,"cloud_iac_4","Bicep","DSL IaC per Azure (Bicep)",tautological-example
+"cloud-computing",8,"cloud_iac_4","Bicep","DSL IaC per Azure (Bicep)",trivial-example
+"cloud-computing",8,"cloud_iac_4","ARM Template","Template ARM",tautological-example
+"cloud-computing",8,"cloud_iac_4","Crossplane","Control plane multi-cloud (Crossplane)",tautological-example
+"cloud-computing",8,"cloud_iac_4","Crossplane","",duplicate-across-lessons
+"cloud-computing",9,"cloud_cost_1","Pay-as-you-go","Pagamento a consumo (pay-as-you-go)",tautological-example
+"cloud-computing",9,"cloud_cost_1","Pay-as-you-go","Pagamento a consumo (pay-as-you-go)",trivial-example
+"cloud-computing",9,"cloud_cost_1","Pay-as-you-go","",duplicate-across-lessons
+"cloud-computing",9,"cloud_cost_1","On-Demand Pricing","Prezzo on-demand",tautological-example
+"cloud-computing",9,"cloud_cost_1","Reserved Instance","Istanza riservata",tautological-example
+"cloud-computing",9,"cloud_cost_1","Reserved Instance","",duplicate-across-lessons
+"cloud-computing",9,"cloud_cost_1","Savings Plan","Piano di risparmio cloud (savings plan)",tautological-example
+"cloud-computing",9,"cloud_cost_1","Spot Instance","Istanza spot",tautological-example
+"cloud-computing",9,"cloud_cost_1","Spot Instance","",duplicate-across-lessons
+"cloud-computing",9,"cloud_cost_1","Convertible RI","RI convertibile",tautological-example
+"cloud-computing",9,"cloud_cost_1","Credit","Credito",near-identical-translation
+"cloud-computing",9,"cloud_cost_1","Credit","Credito",trivial-example
+"cloud-computing",9,"cloud_cost_2","Cost Explorer","Strumento costi AWS (Cost Explorer)",tautological-example
+"cloud-computing",9,"cloud_cost_2","Cost Explorer","Strumento costi AWS (Cost Explorer)",trivial-example
+"cloud-computing",9,"cloud_cost_2","Billing Dashboard","Dashboard di fatturazione",trivial-example
+"cloud-computing",9,"cloud_cost_2","Budget","Soglia di spesa (budget)",trivial-example
+"cloud-computing",9,"cloud_cost_2","Cost Allocation Tag","Tag di allocazione costi",trivial-example
+"cloud-computing",9,"cloud_cost_2","Showback","Visibilità costi senza addebito (showback)",tautological-example
+"cloud-computing",9,"cloud_cost_2","Chargeback","Addebito interno costi (chargeback)",tautological-example
+"cloud-computing",9,"cloud_cost_2","Cost Anomaly","Anomalia di costo",tautological-example
+"cloud-computing",9,"cloud_cost_2","Cost Anomaly","",duplicate-across-lessons
+"cloud-computing",9,"cloud_cost_2","Trusted Advisor","Consigli di ottimizzazione AWS (Trusted Advisor)",tautological-example
+"cloud-computing",9,"cloud_cost_2","Trusted Advisor","Consigli di ottimizzazione AWS (Trusted Advisor)",trivial-example
+"cloud-computing",9,"cloud_cost_2","CUR","CUR (Cost and Usage Report)",fake-translation
+"cloud-computing",9,"cloud_cost_2","CUR","CUR (Cost and Usage Report)",trivial-example
+"cloud-computing",9,"cloud_cost_3","Rightsizing","Dimensionamento corretto (rightsizing)",tautological-example
+"cloud-computing",9,"cloud_cost_3","Idle Resource","Risorsa inattiva",trivial-example
+"cloud-computing",9,"cloud_cost_3","Underutilized","Sotto-utilizzato",trivial-example
+"cloud-computing",9,"cloud_cost_3","Auto-Stop","Spegnimento automatico (auto-stop)",tautological-example
+"cloud-computing",9,"cloud_cost_3","Auto-Stop","Spegnimento automatico (auto-stop)",trivial-example
+"cloud-computing",9,"cloud_cost_3","Storage Lifecycle","Lifecycle dello storage",trivial-example
+"cloud-computing",9,"cloud_cost_3","Compute Optimizer","Consigli di ottimizzazione risorse AWS (Compute Optimizer)",tautological-example
+"cloud-computing",9,"cloud_cost_3","Utilization","Utilizzo",trivial-example
+"cloud-computing",9,"cloud_cost_3","Resource Optimization","Ottimizzazione risorse",tautological-example
+"cloud-computing",9,"cloud_cost_4","FinOps","Operazioni finanziarie cloud (FinOps)",tautological-example
+"cloud-computing",9,"cloud_cost_4","Cost Awareness","Consapevolezza dei costi",tautological-example
+"cloud-computing",9,"cloud_cost_4","Forecasting","Forecasting (previsioni)",fake-translation
+"cloud-computing",9,"cloud_cost_4","Cost Center","Centro di costo",trivial-example
+"cloud-computing",9,"cloud_cost_4","Waste","Spreco",trivial-example
+"cloud-computing",9,"cloud_cost_4","Cloud Bill","Bolletta cloud",trivial-example
+"cloud-computing",10,"cloud_monitoring_1","CloudWatch","CloudWatch (monitoring AWS)",tautological-example
+"cloud-computing",10,"cloud_monitoring_1","CloudWatch","CloudWatch (monitoring AWS)",fake-translation
+"cloud-computing",10,"cloud_monitoring_1","Metric","Metrica",near-identical-translation
+"cloud-computing",10,"cloud_monitoring_1","Metric","Metrica",trivial-example
+"cloud-computing",10,"cloud_monitoring_1","Custom Metric","Metrica personalizzata",trivial-example
+"cloud-computing",10,"cloud_monitoring_1","Namespace","Spazio dei nomi (namespace)",trivial-example
+"cloud-computing",10,"cloud_monitoring_1","Dimension","Dimensione",near-identical-translation
+"cloud-computing",10,"cloud_monitoring_1","Dimension","Dimensione",trivial-example
+"cloud-computing",10,"cloud_monitoring_1","Statistic","Statistica",near-identical-translation
+"cloud-computing",10,"cloud_monitoring_1","Period","Periodo",near-identical-translation
+"cloud-computing",10,"cloud_monitoring_1","Embedded Metric Format","Formato metriche embedded CloudWatch (EMF)",trivial-example
+"cloud-computing",10,"cloud_monitoring_2","Log Group","Gruppo di log CloudWatch (log group)",trivial-example
+"cloud-computing",10,"cloud_monitoring_2","Log Retention","Retention dei log",trivial-example
+"cloud-computing",10,"cloud_monitoring_2","Centralized Logging","Logging centralizzato",tautological-example
+"cloud-computing",10,"cloud_monitoring_2","Centralized Logging","Logging centralizzato",trivial-example
+"cloud-computing",10,"cloud_monitoring_2","Log Encryption","Cifratura log",trivial-example
+"cloud-computing",10,"cloud_monitoring_3","Alarm","Allarme",near-identical-translation
+"cloud-computing",10,"cloud_monitoring_3","Alarm","Allarme",trivial-example
+"cloud-computing",10,"cloud_monitoring_3","Threshold","Soglia",trivial-example
+"cloud-computing",10,"cloud_monitoring_3","Alarm State","Stato di allarme",tautological-example
+"cloud-computing",10,"cloud_monitoring_3","Anomaly Detection","Rilevazione anomalie",tautological-example
+"cloud-computing",10,"cloud_monitoring_3","Alert Fatigue","Stanchezza da alert",trivial-example

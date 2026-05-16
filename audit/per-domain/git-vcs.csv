@@ -1,5 +1,4 @@
 topicId,level,lesson,english,italian,issueType
-"git-vcs",0,"git_foundations_1","Version Control","Controllo di versione",redundant-note
 "git-vcs",0,"git_foundations_2","Author","Autore",near-identical-translation
 "git-vcs",0,"git_foundations_3","Version","Versione",near-identical-translation
 "git-vcs",0,"git_foundations_4","Collaboration","Collaborazione",near-identical-translation
@@ -7,7 +6,6 @@ topicId,level,lesson,english,italian,issueType
 "git-vcs",1,"git_basics_4","Sequence","Sequenza",near-identical-translation
 "git-vcs",3,"git_merging_3","Continue Merge","Continua merge",near-identical-translation
 "git-vcs",4,"git_remote_1","Remote","Remoto",near-identical-translation
-"git-vcs",4,"git_remote_3","set-upstream","Imposta upstream",redundant-note
 "git-vcs",5,"git_collaboration_1","Approve PR","Approvare PR",near-identical-translation
 "git-vcs",5,"git_collaboration_3","Contributor","Contributore",near-identical-translation
 "git-vcs",7,"git_history_1","Continue Rebase","Continuare rebase",near-identical-translation
@@ -15,75 +13,16 @@ topicId,level,lesson,english,italian,issueType
 "git-vcs",8,"git_stash_3","Reset to HEAD","Reset a HEAD",near-identical-translation
 "git-vcs",8,"git_stash_4","Stash Multiple","Stash multipli",near-identical-translation
 "git-vcs",9,"git_managing_1","Continue Revert","Continuare revert",near-identical-translation
-"git-vcs",12,"git_config_4","export-ignore","export-ignore / escludi dall'archive",fake-translation
+"git-vcs",12,"git_config_3","rerere.enabled","rerere.enabled",identical-translation
+"git-vcs",12,"git_config_4","export-ignore","export-ignore",identical-translation
 "git-vcs",15,"git_internals_4","Protocol v2","Protocollo v2",near-identical-translation
 "git-vcs",16,"git_cicd_1","actions/checkout","Action checkout",near-identical-translation
+"git-vcs",20,"git_security_1","Credential Helper Store","credential helper store",identical-translation
+"git-vcs",21,"git_platforms_1","GitHub Enterprise","GitHub Enterprise",identical-translation
 "git-vcs",21,"git_platforms_2","Pages on GitLab","Pages su GitLab",near-identical-translation
 "git-vcs",21,"git_platforms_4","Migration","Migrazione",near-identical-translation
 "git-vcs",23,"git_professional_3","Glossary","Glossario",near-identical-translation
-"git-vcs",0,"git_foundations_1",".gitignore","",duplicate-across-lessons
-"git-vcs",12,"git_config_4",".gitignore","",duplicate-across-lessons
-"git-vcs",0,"git_foundations_2","reference","",duplicate-across-lessons
-"git-vcs",15,"git_internals_2","reference","",duplicate-across-lessons
-"git-vcs",0,"git_foundations_4","open source","",duplicate-across-lessons
-"git-vcs",5,"git_collaboration_3","open source","",duplicate-across-lessons
-"git-vcs",1,"git_basics_1","commit message","",duplicate-across-lessons
-"git-vcs",11,"git_advworkflow_4","commit message","",duplicate-across-lessons
-"git-vcs",1,"git_basics_1","atomic commit","",duplicate-across-lessons
-"git-vcs",11,"git_advworkflow_4","atomic commit","",duplicate-across-lessons
-"git-vcs",1,"git_basics_4","readme","",duplicate-across-lessons
-"git-vcs",23,"git_professional_3","readme","",duplicate-across-lessons
-"git-vcs",1,"git_basics_4","license file","",duplicate-across-lessons
-"git-vcs",23,"git_professional_2","license file","",duplicate-across-lessons
-"git-vcs",1,"git_basics_4","workflow","",duplicate-across-lessons
-"git-vcs",16,"git_cicd_1","workflow","",duplicate-across-lessons
-"git-vcs",2,"git_branching_2","detached head","",duplicate-across-lessons
-"git-vcs",18,"git_troubleshooting_4","detached head","",duplicate-across-lessons
-"git-vcs",2,"git_branching_4","branch protection","",duplicate-across-lessons
-"git-vcs",18,"git_troubleshooting_2","branch protection","",duplicate-across-lessons
-"git-vcs",3,"git_merging_1","squash merge","",duplicate-across-lessons
-"git-vcs",13,"git_advanced_2","squash merge","",duplicate-across-lessons
-"git-vcs",3,"git_merging_2","rerere","",duplicate-across-lessons
-"git-vcs",12,"git_config_3","rerere","",duplicate-across-lessons
-"git-vcs",3,"git_merging_3","linear history","",duplicate-across-lessons
-"git-vcs",7,"git_history_1","linear history","",duplicate-across-lessons
-"git-vcs",4,"git_remote_2","refs/remotes","",duplicate-across-lessons
-"git-vcs",15,"git_internals_2","refs/remotes","",duplicate-across-lessons
-"git-vcs",4,"git_remote_4","personal access token","",duplicate-across-lessons
-"git-vcs",20,"git_security_1","personal access token","",duplicate-across-lessons
-"git-vcs",4,"git_remote_4","ssh key","",duplicate-across-lessons
-"git-vcs",20,"git_security_2","ssh key","",duplicate-across-lessons
-"git-vcs",4,"git_remote_4","public key","",duplicate-across-lessons
-"git-vcs",20,"git_security_2","public key","",duplicate-across-lessons
-"git-vcs",4,"git_remote_4","private key","",duplicate-across-lessons
-"git-vcs",20,"git_security_2","private key","",duplicate-across-lessons
-"git-vcs",4,"git_remote_4","ssh-agent","",duplicate-across-lessons
-"git-vcs",20,"git_security_2","ssh-agent","",duplicate-across-lessons
-"git-vcs",5,"git_collaboration_1","merge request","",duplicate-across-lessons
-"git-vcs",21,"git_platforms_2","merge request","",duplicate-across-lessons
-"git-vcs",5,"git_collaboration_2","code review","",duplicate-across-lessons
-"git-vcs",11,"git_advworkflow_3","code review","",duplicate-across-lessons
-"git-vcs",5,"git_collaboration_3","maintainer","",duplicate-across-lessons
-"git-vcs",23,"git_professional_2","maintainer","",duplicate-across-lessons
-"git-vcs",5,"git_collaboration_3","cla","",duplicate-across-lessons
-"git-vcs",23,"git_professional_2","cla","",duplicate-across-lessons
-"git-vcs",5,"git_collaboration_4","github","",duplicate-across-lessons
-"git-vcs",21,"git_platforms_1","github","",duplicate-across-lessons
-"git-vcs",6,"git_workflow_2","continuous deployment","",duplicate-across-lessons
-"git-vcs",16,"git_cicd_4","continuous deployment","",duplicate-across-lessons
-"git-vcs",6,"git_workflow_3","trunk-based development","",duplicate-across-lessons
-"git-vcs",17,"git_monorepo_4","trunk-based development","",duplicate-across-lessons
-"git-vcs",6,"git_workflow_3","release train","",duplicate-across-lessons
-"git-vcs",13,"git_advanced_4","release train","",duplicate-across-lessons
-"git-vcs",7,"git_history_1","skip commit","",duplicate-across-lessons
-"git-vcs",9,"git_managing_2","skip commit","",duplicate-across-lessons
-"git-vcs",7,"git_history_1","rewrite history","",duplicate-across-lessons
-"git-vcs",19,"git_advanced_x_2","rewrite history","",duplicate-across-lessons
-"git-vcs",7,"git_history_3","pull.rebase","",duplicate-across-lessons
-"git-vcs",12,"git_config_1","pull.rebase","",duplicate-across-lessons
-"git-vcs",12,"git_config_3","credential helper","",duplicate-across-lessons
-"git-vcs",20,"git_security_1","credential helper","",duplicate-across-lessons
-"git-vcs",14,"git_lfs_4","missing object","",duplicate-across-lessons
-"git-vcs",18,"git_troubleshooting_3","missing object","",duplicate-across-lessons
-"git-vcs",20,"git_security_4","dependabot","",duplicate-across-lessons
-"git-vcs",22,"git_automation_2","dependabot","",duplicate-across-lessons
+"git-vcs",2,"git_branching_2","Symbolic Reference","",duplicate-across-lessons
+"git-vcs",15,"git_internals_2","Symbolic Reference","",duplicate-across-lessons
+"git-vcs",21,"git_platforms_1","GitHub Enterprise","",duplicate-in-lesson
+"git-vcs",21,"git_platforms_1","GitHub Enterprise","",duplicate-in-lesson

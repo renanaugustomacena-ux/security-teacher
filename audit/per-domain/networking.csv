@@ -4,30 +4,24 @@ topicId,level,lesson,english,italian,issueType
 "networking",0,"net_foundations_2","Segment","Segmento",near-identical-translation
 "networking",0,"net_foundations_3","Topology","Topologia",near-identical-translation
 "networking",0,"net_foundations_3","Latency","Latenza",near-identical-translation
-"networking",1,"net_osi_2","Segment","Segmento",near-identical-translation
 "networking",1,"net_osi_2","Datagram","Datagramma",near-identical-translation
 "networking",1,"net_osi_4","Mnemonic","Mnemonico",near-identical-translation
 "networking",2,"net_tcpip_1","Port","porta",near-identical-translation
-"networking",2,"net_tcpip_2","SYN","SYN (synchronize)",fake-translation
+"networking",2,"net_tcpip_2","SYN","SYN",identical-translation
 "networking",2,"net_tcpip_2","SYN-ACK","SYN-ACK",identical-translation
-"networking",2,"net_tcpip_2","ACK","ACK (acknowledgement)",fake-translation
-"networking",2,"net_tcpip_2","FIN","FIN (finish)",fake-translation
-"networking",2,"net_tcpip_2","RST","RST (reset)",fake-translation
-"networking",2,"net_tcpip_2","PSH","PSH (push)",fake-translation
+"networking",2,"net_tcpip_2","ACK","ACK",identical-translation
+"networking",2,"net_tcpip_2","FIN","FIN",identical-translation
+"networking",2,"net_tcpip_2","RST","RST",identical-translation
+"networking",2,"net_tcpip_2","PSH","PSH",identical-translation
 "networking",2,"net_tcpip_3","Port 80","porta 80",near-identical-translation
 "networking",2,"net_tcpip_3","Port 443","porta 443",near-identical-translation
 "networking",2,"net_tcpip_3","Port 22","porta 22",near-identical-translation
 "networking",2,"net_tcpip_3","Port 53","porta 53",near-identical-translation
 "networking",2,"net_tcpip_3","Port 25","porta 25",near-identical-translation
 "networking",2,"net_tcpip_4","QUIC","QUIC",identical-translation
-"networking",3,"net_addressing_1","IP Address","indirizzo IP",trivial-example
 "networking",3,"net_addressing_1","IPv4","IPv4",identical-translation
 "networking",3,"net_addressing_1","Localhost","localhost",identical-translation
-"networking",3,"net_addressing_2","Subnet Mask","maschera di sottorete",trivial-example
-"networking",3,"net_addressing_2","Network Address","indirizzo di rete",trivial-example
-"networking",3,"net_addressing_2","Broadcast Address","indirizzo di broadcast",trivial-example
 "networking",3,"net_addressing_2","Supernetting","supernetting",identical-translation
-"networking",3,"net_addressing_2","Address Class","classe di indirizzi",tautological-example
 "networking",3,"net_addressing_3","IPv6","IPv6",identical-translation
 "networking",3,"net_addressing_3","EUI-64","EUI-64",identical-translation
 "networking",3,"net_addressing_3","Tunneling","tunneling",identical-translation
@@ -36,38 +30,21 @@ topicId,level,lesson,english,italian,issueType
 "networking",3,"net_addressing_4","Unicast","unicast",identical-translation
 "networking",3,"net_addressing_4","Multicast","multicast",identical-translation
 "networking",3,"net_addressing_4","Broadcast","broadcast",identical-translation
-"networking",4,"net_switching_1","OUI","identificativo del produttore (OUI)",trivial-example
 "networking",4,"net_switching_1","Preamble","preambolo",near-identical-translation
-"networking",4,"net_switching_1","Broadcast Domain","dominio di broadcast",trivial-example
 "networking",4,"net_switching_2","Store-and-Forward","store-and-forward",identical-translation
 "networking",4,"net_switching_4","EtherChannel","EtherChannel",identical-translation
-"networking",5,"net_routing_1","Hop","salto (hop)",trivial-example
 "networking",5,"net_routing_1","Convergence","convergenza",near-identical-translation
-"networking",5,"net_routing_2","Policy-Based Routing","Routing basato su policy",trivial-example
-"networking",5,"net_routing_2","Policy-Based Routing","Routing basato su policy",redundant-note
-"networking",5,"net_routing_3","RIP","RIP (Routing Information Protocol)",fake-translation
-"networking",5,"net_routing_3","OSPF","OSPF (Open Shortest Path First)",fake-translation
+"networking",5,"net_routing_3","RIP","RIP",identical-translation
+"networking",5,"net_routing_3","OSPF","OSPF",identical-translation
 "networking",5,"net_routing_3","EIGRP","EIGRP",identical-translation
-"networking",5,"net_routing_3","Neighbor","Vicino",trivial-example
-"networking",5,"net_routing_4","Summarization","riassunto delle rotte (summarization)",trivial-example
-"networking",5,"net_routing_4","Bidirectional Forwarding Detection","rilevamento di inoltro bidirezionale (BFD)",redundant-note
-"networking",6,"net_dns_1","Iterative Query","query iterativa",trivial-example
-"networking",6,"net_dns_3","DNS Cache","cache DNS",trivial-example
-"networking",6,"net_dns_3","TTL","TTL (tempo di vita)",fake-translation
-"networking",6,"net_dns_3","TTL","TTL (tempo di vita)",trivial-example
 "networking",6,"net_dns_4","DNSSEC","DNSSEC",identical-translation
 "networking",6,"net_dns_4","NXDOMAIN","NXDOMAIN",identical-translation
 "networking",7,"net_protocols_1","HTTP/1.1","HTTP/1.1",identical-translation
 "networking",7,"net_protocols_1","HTTP/2","HTTP/2",identical-translation
 "networking",7,"net_protocols_1","HTTP/3","HTTP/3",identical-translation
 "networking",7,"net_protocols_1","Pipelining","pipelining",identical-translation
-"networking",7,"net_protocols_1","Pipelining","pipelining",trivial-example
-"networking",7,"net_protocols_2","Request","richiesta",trivial-example
-"networking",7,"net_protocols_2","HTTP Header","header HTTP",trivial-example
 "networking",7,"net_protocols_2","GET","GET",identical-translation
 "networking",7,"net_protocols_2","POST","POST",identical-translation
-"networking",7,"net_protocols_2","404 Not Found","404 Non trovato",trivial-example
-"networking",7,"net_protocols_2","500 Internal Server Error","500 Errore interno del server",trivial-example
 "networking",7,"net_protocols_3","TLS 1.3","TLS 1.3",identical-translation
 "networking",7,"net_protocols_4","Cookie","cookie",identical-translation
 "networking",7,"net_protocols_4","Session","sessione",near-identical-translation
@@ -78,8 +55,8 @@ topicId,level,lesson,english,italian,issueType
 "networking",8,"net_wireless_1","Frequency","frequenza",near-identical-translation
 "networking",8,"net_wireless_1","Association","associazione",near-identical-translation
 "networking",8,"net_wireless_2","802.11","802.11",identical-translation
-"networking",8,"net_wireless_2","802.11ac","802.11ac (Wi-Fi 5)",fake-translation
-"networking",8,"net_wireless_2","802.11ax","802.11ax (Wi-Fi 6)",fake-translation
+"networking",8,"net_wireless_2","802.11ac","802.11ac",identical-translation
+"networking",8,"net_wireless_2","802.11ax","802.11ax",identical-translation
 "networking",8,"net_wireless_2","Wi-Fi 6E","Wi-Fi 6E",identical-translation
 "networking",8,"net_wireless_2","Wi-Fi 7","Wi-Fi 7",identical-translation
 "networking",8,"net_wireless_2","MIMO","MIMO",identical-translation
@@ -93,21 +70,13 @@ topicId,level,lesson,english,italian,issueType
 "networking",8,"net_wireless_4","Roaming","roaming",identical-translation
 "networking",8,"net_wireless_4","Band Steering","band steering",identical-translation
 "networking",8,"net_wireless_4","CAPWAP","CAPWAP",identical-translation
-"networking",9,"net_firewalls_1","Default Policy","policy predefinita",trivial-example
-"networking",9,"net_firewalls_1","Five-Tuple","Cinquina",trivial-example
 "networking",9,"net_firewalls_2","WAF","WAF",identical-translation
-"networking",9,"net_firewalls_3","Wildcard Mask","Maschera wildcard",trivial-example
-"networking",9,"net_firewalls_3","Rule Order","ordine delle regole",trivial-example
 "networking",9,"net_firewalls_4","iptables","iptables",identical-translation
 "networking",9,"net_firewalls_4","nftables","nftables",identical-translation
 "networking",9,"net_firewalls_4","ufw","ufw",identical-translation
 "networking",9,"net_firewalls_4","firewalld","firewalld",identical-translation
-"networking",9,"net_firewalls_4","Table","Tabella",trivial-example
-"networking",9,"net_firewalls_4","Match","condizione di corrispondenza (match)",trivial-example
-"networking",9,"net_firewalls_4","Connection Tracking","Tracking connessioni",trivial-example
-"networking",10,"net_vpn_1","Tunneling Protocol","protocollo di tunneling",trivial-example
-"networking",10,"net_vpn_1","Encryption","cifratura (encryption)",trivial-example
-"networking",10,"net_vpn_1","MTU Issue","problema MTU",trivial-example
+"networking",9,"net_firewalls_4","Connection Tracking","Tracking connessioni",tautological-example
+"networking",10,"net_vpn_1","VPN encapsulation","incapsulamento VPN",tautological-example
 "networking",10,"net_vpn_2","IPsec","IPsec",identical-translation
 "networking",10,"net_vpn_2","IKE","IKE",identical-translation
 "networking",10,"net_vpn_2","IKEv2","IKEv2",identical-translation
@@ -116,17 +85,12 @@ topicId,level,lesson,english,italian,issueType
 "networking",10,"net_vpn_2","Phase 2","Fase 2",near-identical-translation
 "networking",10,"net_vpn_3","WireGuard","WireGuard",identical-translation
 "networking",10,"net_vpn_3","OpenVPN","OpenVPN",identical-translation
-"networking",10,"net_vpn_3","Public Key","chiave pubblica",trivial-example
-"networking",10,"net_vpn_4","Rekey","Rinegozia chiave",trivial-example
-"networking",10,"net_vpn_4","Perfect Forward Secrecy","segretezza futura (PFS)",trivial-example
 "networking",10,"net_vpn_4","L2TP","L2TP",identical-translation
 "networking",10,"net_vpn_4","PPTP","PPTP",identical-translation
 "networking",10,"net_vpn_4","DMVPN","DMVPN",identical-translation
 "networking",10,"net_vpn_4","Tailscale","Tailscale",identical-translation
 "networking",11,"net_services_nat_1","NAT Overload","NAT overload",identical-translation
 "networking",11,"net_services_nat_1","CGNAT","CGNAT",identical-translation
-"networking",11,"net_services_proxy_2","Open Proxy","Proxy aperto",trivial-example
-"networking",11,"net_services_lb_3","Layer 4 Load Balancer","bilanciatore Layer 4",trivial-example
 "networking",11,"net_services_pf_4","UPnP","UPnP",identical-translation
 "networking",11,"net_services_pf_4","NAT-PMP","NAT-PMP",identical-translation
 "networking",11,"net_services_pf_4","STUN","STUN",identical-translation
@@ -138,12 +102,11 @@ topicId,level,lesson,english,italian,issueType
 "networking",12,"net_protocols_email_1","DKIM","DKIM",identical-translation
 "networking",12,"net_protocols_email_1","DMARC","DMARC",identical-translation
 "networking",12,"net_protocols_email_1","STARTTLS","STARTTLS",identical-translation
+"networking",12,"net_protocols_file_2","FTPS","FTPS",tautological-example
 "networking",12,"net_protocols_file_2","FTPS","FTPS",identical-translation
-"networking",12,"net_protocols_file_2","FTPS","FTPS",trivial-example
 "networking",12,"net_protocols_file_2","SFTP","SFTP",identical-translation
 "networking",12,"net_protocols_file_2","SCP","SCP",identical-translation
 "networking",12,"net_protocols_file_2","TFTP","TFTP",identical-translation
-"networking",12,"net_protocols_file_2","Passive Mode","Modalità passiva",trivial-example
 "networking",12,"net_protocols_file_2","Rsync","rsync",identical-translation
 "networking",12,"net_protocols_file_2","WebDAV","WebDAV",identical-translation
 "networking",12,"net_protocols_file_2","SMB","SMB",identical-translation
@@ -154,10 +117,9 @@ topicId,level,lesson,english,italian,issueType
 "networking",12,"net_protocols_other_4","SNMP","SNMP",identical-translation
 "networking",12,"net_protocols_other_4","MIB","MIB",identical-translation
 "networking",12,"net_protocols_other_4","OID","OID",identical-translation
-"networking",12,"net_protocols_other_4","OID","OID",trivial-example
 "networking",12,"net_protocols_other_4","NTP","NTP",identical-translation
 "networking",12,"net_protocols_other_4","LDAP","LDAP",identical-translation
-"networking",12,"net_protocols_other_4","Active Directory","Active Directory (servizio identità Microsoft)",fake-translation
+"networking",12,"net_protocols_other_4","Active Directory","Active Directory",identical-translation
 "networking",12,"net_protocols_other_4","Syslog","syslog",identical-translation
 "networking",12,"net_protocols_other_4","RADIUS","RADIUS",identical-translation
 "networking",12,"net_protocols_other_4","TACACS+","TACACS+",identical-translation
@@ -167,10 +129,7 @@ topicId,level,lesson,english,italian,issueType
 "networking",13,"net_tools_basic_1","hostname","hostname",identical-translation
 "networking",13,"net_tools_basic_1","nslookup","nslookup",identical-translation
 "networking",13,"net_tools_basic_1","dig","dig",identical-translation
-"networking",13,"net_tools_basic_1","host","host",identical-translation
 "networking",13,"net_tools_basic_1","whois","whois",identical-translation
-"networking",13,"net_tools_basic_1","arp","arp",identical-translation
-"networking",13,"net_tools_basic_1","arp","arp",trivial-example
 "networking",13,"net_tools_basic_1","ifconfig","ifconfig",identical-translation
 "networking",13,"net_tools_modern_2","netstat","netstat",identical-translation
 "networking",13,"net_tools_modern_2","nmcli","nmcli",identical-translation
@@ -180,31 +139,24 @@ topicId,level,lesson,english,italian,issueType
 "networking",13,"net_tools_modern_2","ethtool","ethtool",identical-translation
 "networking",13,"net_tools_modern_2","route","route",identical-translation
 "networking",13,"net_tools_capture_3","tcpdump","tcpdump",identical-translation
-"networking",13,"net_tools_capture_3","Wireshark","Wireshark (analizzatore di protocollo grafico)",fake-translation
+"networking",13,"net_tools_capture_3","Wireshark","Wireshark",identical-translation
 "networking",13,"net_tools_capture_3","tshark","tshark",identical-translation
 "networking",13,"net_tools_capture_3","pcap","pcap",identical-translation
 "networking",13,"net_tools_capture_3","BPF","BPF",identical-translation
 "networking",13,"net_tools_scan_4","nmap","nmap",identical-translation
 "networking",13,"net_tools_scan_4","masscan","masscan",identical-translation
 "networking",13,"net_tools_scan_4","fping","fping",identical-translation
-"networking",13,"net_tools_scan_4","OS Detection","rilevamento sistema operativo",trivial-example
 "networking",13,"net_tools_scan_4","NSE","NSE",identical-translation
 "networking",13,"net_tools_scan_4","Zenmap","Zenmap",identical-translation
-"networking",14,"net_troubleshoot_1","Jitter","jitter",identical-translation
 "networking",14,"net_troubleshoot_2","MSS Clamping","MSS clamping",identical-translation
-"networking",14,"net_troubleshoot_2","Don't Fragment","flag Don't Fragment (DF)",trivial-example
+"networking",14,"net_troubleshoot_2","Jumbograms","Jumbogram",tautological-example
 "networking",14,"net_troubleshoot_2","Jumbograms","Jumbogram",near-identical-translation
-"networking",14,"net_troubleshoot_2","Jumbograms","Jumbogram",trivial-example
 "networking",14,"net_troubleshoot_3","Bufferbloat","bufferbloat",identical-translation
-"networking",14,"net_troubleshoot_3","Bandwidth-Delay Product","prodotto banda-ritardo (BDP)",trivial-example
 "networking",14,"net_troubleshoot_3","BBR","BBR",identical-translation
-"networking",14,"net_troubleshoot_methodology_4","Root Cause","Causa radice",trivial-example
 "networking",14,"net_troubleshoot_methodology_4","Observability","osservabilità",near-identical-translation
 "networking",15,"net_qos_1","CBWFQ","CBWFQ",identical-translation
 "networking",15,"net_qos_dscp_2","DSCP","DSCP",identical-translation
 "networking",15,"net_qos_dscp_2","ToS","ToS",identical-translation
-"networking",15,"net_qos_dscp_2","EF","EF (Expedited Forwarding)",fake-translation
-"networking",15,"net_qos_dscp_2","AF","AF (Assured Forwarding)",fake-translation
 "networking",15,"net_qos_dscp_2","CoS","CoS",identical-translation
 "networking",15,"net_qos_rsvp_3","RSVP","RSVP",identical-translation
 "networking",15,"net_qos_rsvp_3","IntServ","IntServ",identical-translation
@@ -219,18 +171,19 @@ topicId,level,lesson,english,italian,issueType
 "networking",15,"net_qos_linux_4","fq_codel","fq_codel",identical-translation
 "networking",15,"net_qos_linux_4","CAKE","CAKE",identical-translation
 "networking",15,"net_qos_linux_4","HTB","HTB",identical-translation
-"networking",15,"net_qos_linux_4","Class","Classe",tautological-example
 "networking",15,"net_qos_linux_4","Class","Classe",near-identical-translation
 "networking",15,"net_qos_linux_4","Filter","Filtro",near-identical-translation
 "networking",16,"net_routing_bgp_1","BGP","BGP",identical-translation
 "networking",16,"net_routing_bgp_1","eBGP","eBGP",identical-translation
 "networking",16,"net_routing_bgp_1","iBGP","iBGP",identical-translation
-"networking",16,"net_routing_ospf_2","OSPF","OSPF",identical-translation
+"networking",16,"net_routing_ospf_2","OSPFv3","OSPFv3",tautological-example
+"networking",16,"net_routing_ospf_2","OSPFv3","OSPFv3",identical-translation
 "networking",16,"net_routing_ospf_2","LSA","LSA",identical-translation
 "networking",16,"net_routing_ospf_2","LSDB","LSDB",identical-translation
 "networking",16,"net_routing_ospf_2","ABR","ABR",identical-translation
 "networking",16,"net_routing_ospf_2","ASBR","ASBR",identical-translation
-"networking",16,"net_routing_eigrp_3","EIGRP","EIGRP",identical-translation
+"networking",16,"net_routing_eigrp_3","EIGRP named mode","EIGRP named mode",tautological-example
+"networking",16,"net_routing_eigrp_3","EIGRP named mode","EIGRP named mode",identical-translation
 "networking",16,"net_routing_eigrp_3","DUAL","DUAL",identical-translation
 "networking",16,"net_routing_eigrp_3","Successor","Successore",near-identical-translation
 "networking",16,"net_routing_eigrp_3","IS-IS","IS-IS",identical-translation
@@ -239,33 +192,26 @@ topicId,level,lesson,english,italian,issueType
 "networking",16,"net_routing_mpls_4","LDP","LDP",identical-translation
 "networking",17,"net_sdn_1","OpenFlow","OpenFlow",identical-translation
 "networking",17,"net_sdn_1","Programmability","programmabilità",near-identical-translation
-"networking",17,"net_sdn_1","Programmability","programmabilità",trivial-example
-"networking",17,"net_sdn_nfv_2","Underlay Network","rete underlay",trivial-example
 "networking",17,"net_sdn_nfv_2","VXLAN","VXLAN",identical-translation
 "networking",17,"net_sdn_nfv_2","VNI","VNI",identical-translation
 "networking",17,"net_sdn_nfv_2","VTEP","VTEP",identical-translation
 "networking",17,"net_sdn_nfv_2","GRE","GRE",identical-translation
 "networking",17,"net_sdn_nfv_2","Geneve","Geneve",identical-translation
 "networking",17,"net_sdn_nfv_2","EVPN","EVPN",identical-translation
-"networking",17,"net_sdn_p4_3","Programmable Switch","Switch programmabile",tautological-example
 "networking",17,"net_sdn_p4_3","Parser","parser",identical-translation
 "networking",17,"net_sdn_p4_3","eBPF","eBPF",identical-translation
 "networking",17,"net_sdn_p4_3","XDP","XDP",identical-translation
 "networking",17,"net_sdn_p4_3","DPDK","DPDK",identical-translation
 "networking",17,"net_sdn_p4_3","SmartNIC","SmartNIC",identical-translation
-"networking",17,"net_sdn_p4_3","Network OS","sistema operativo di rete (NOS)",trivial-example
 "networking",17,"net_sdn_p4_3","Disaggregation","Disaggregazione",near-identical-translation
 "networking",17,"net_sdn_intent_4","Telemetry","telemetria",near-identical-translation
-"networking",17,"net_sdn_intent_4","Cisco DNA Center","Cisco DNA Center (gestione di rete intent-based)",fake-translation
+"networking",17,"net_sdn_intent_4","Cisco DNA Center","Cisco DNA Center",identical-translation
 "networking",17,"net_sdn_intent_4","ACI","ACI",identical-translation
-"networking",17,"net_sdn_intent_4","Service Mesh","rete di microservizi (service mesh)",tautological-example
 "networking",17,"net_sdn_intent_4","eBGP Unnumbered","eBGP unnumbered",identical-translation
-"networking",18,"net_security_idsips_1","Snort","Snort (IDS/IPS open source)",fake-translation
-"networking",18,"net_security_idsips_1","Suricata","Suricata (IDS/IPS multi-thread open source)",fake-translation
-"networking",18,"net_security_idsips_1","Signature","Firma",trivial-example
+"networking",18,"net_security_idsips_1","Snort","Snort",identical-translation
+"networking",18,"net_security_idsips_1","Suricata","Suricata",identical-translation
 "networking",18,"net_security_idsips_1","False Positive","falso positivo",near-identical-translation
 "networking",18,"net_security_idsips_1","False Negative","falso negativo",near-identical-translation
-"networking",18,"net_security_idsips_1","Inline Mode","modalità inline",trivial-example
 "networking",18,"net_security_dmz_2","Honeypot","honeypot",identical-translation
 "networking",18,"net_security_dmz_2","Honeynet","honeynet",identical-translation
 "networking",18,"net_security_dmz_2","Tarpit","tarpit",identical-translation
@@ -278,16 +224,13 @@ topicId,level,lesson,english,italian,issueType
 "networking",18,"net_security_attacks_4","DDoS","DDoS",identical-translation
 "networking",18,"net_security_attacks_4","SYN Flood","SYN flood",identical-translation
 "networking",18,"net_security_attacks_4","Spoofing","spoofing",identical-translation
-"networking",18,"net_security_attacks_4","Spoofing","spoofing",trivial-example
 "networking",18,"net_security_attacks_4","Sniffing","sniffing",identical-translation
 "networking",18,"net_security_attacks_4","Botnet","botnet",identical-translation
 "networking",19,"net_cloud_vpc_1","VPC","VPC",identical-translation
 "networking",19,"net_cloud_vpc_1","VNet","VNet",identical-translation
-"networking",19,"net_cloud_vpc_1","VNet","VNet",trivial-example
 "networking",19,"net_cloud_vpc_1","Security Group","security group",identical-translation
 "networking",19,"net_cloud_vpc_1","NACL","NACL",identical-translation
 "networking",19,"net_cloud_vpc_1","Region","Regione",near-identical-translation
-"networking",19,"net_cloud_vpc_1","Region","Regione",trivial-example
 "networking",19,"net_cloud_peering_2","Transit Gateway","transit gateway",identical-translation
 "networking",19,"net_cloud_peering_2","PrivateLink","PrivateLink",identical-translation
 "networking",19,"net_cloud_peering_2","Direct Connect","Direct Connect",identical-translation
@@ -295,7 +238,6 @@ topicId,level,lesson,english,italian,issueType
 "networking",19,"net_cloud_peering_2","Cloud Interconnect","Cloud Interconnect",identical-translation
 "networking",19,"net_cloud_peering_2","Multi-Cloud","multi-cloud",identical-translation
 "networking",19,"net_cloud_lb_3","ELB","ELB",identical-translation
-"networking",19,"net_cloud_lb_3","ELB","ELB",trivial-example
 "networking",19,"net_cloud_lb_3","ALB","ALB",identical-translation
 "networking",19,"net_cloud_lb_3","NLB","NLB",identical-translation
 "networking",19,"net_cloud_lb_3","Listener","listener",identical-translation
@@ -303,7 +245,6 @@ topicId,level,lesson,english,italian,issueType
 "networking",19,"net_cloud_dns_4","Route 53","Route 53",identical-translation
 "networking",19,"net_cloud_dns_4","Traffic Director","Traffic Director",identical-translation
 "networking",20,"net_auto_tools_1","Ansible","Ansible",identical-translation
-"networking",20,"net_auto_tools_1","Inventory","inventario (inventory)",trivial-example
 "networking",20,"net_auto_tools_1","Module","modulo",near-identical-translation
 "networking",20,"net_auto_tools_1","Puppet","Puppet",identical-translation
 "networking",20,"net_auto_tools_1","Terraform","Terraform",identical-translation
@@ -312,7 +253,7 @@ topicId,level,lesson,english,italian,issueType
 "networking",20,"net_auto_apis_2","RESTCONF","RESTCONF",identical-translation
 "networking",20,"net_auto_apis_2","YANG","YANG",identical-translation
 "networking",20,"net_auto_apis_2","gNMI","gNMI",identical-translation
-"networking",20,"net_auto_apis_2","gRPC","gRPC (RPC ad alte prestazioni Google)",fake-translation
+"networking",20,"net_auto_apis_2","gRPC","gRPC",identical-translation
 "networking",20,"net_auto_apis_2","OpenConfig","OpenConfig",identical-translation
 "networking",20,"net_auto_apis_2","JSON-RPC","JSON-RPC",identical-translation
 "networking",20,"net_auto_python_3","Netmiko","Netmiko",identical-translation
@@ -322,43 +263,35 @@ topicId,level,lesson,english,italian,issueType
 "networking",20,"net_auto_python_3","pyATS","pyATS",identical-translation
 "networking",20,"net_auto_python_3","TextFSM","TextFSM",identical-translation
 "networking",20,"net_auto_python_3","Genie","Genie",identical-translation
-"networking",20,"net_auto_python_3","Genie","Genie",trivial-example
 "networking",20,"net_auto_python_3","Jinja2","Jinja2",identical-translation
 "networking",20,"net_auto_python_3","NetBox","NetBox",identical-translation
 "networking",20,"net_auto_python_3","Scrapli","Scrapli",identical-translation
 "networking",20,"net_auto_cicd_4","NetDevOps","NetDevOps",identical-translation
-"networking",20,"net_auto_cicd_4","Infrastructure as Code","Infrastruttura come codice",trivial-example
-"networking",20,"net_auto_cicd_4","Network Lab","Lab di rete",trivial-example
 "networking",20,"net_auto_cicd_4","Batfish","Batfish",identical-translation
-"networking",20,"net_auto_cicd_4","Rollback","ripristino (rollback)",trivial-example
 "networking",20,"net_auto_cicd_4","GitOps","GitOps",identical-translation
 "networking",21,"net_monitor_flow_1","NetFlow","NetFlow",identical-translation
 "networking",21,"net_monitor_flow_1","sFlow","sFlow",identical-translation
 "networking",21,"net_monitor_flow_1","IPFIX","IPFIX",identical-translation
 "networking",21,"net_monitor_flow_1","Top Talkers","Top talker",near-identical-translation
 "networking",21,"net_monitor_snmp_2","SNMP Walk","SNMP walk",identical-translation
-"networking",21,"net_monitor_snmp_2","Community String","stringa community SNMP",trivial-example
 "networking",21,"net_monitor_snmp_2","SNMPv3","SNMPv3",identical-translation
-"networking",21,"net_monitor_snmp_2","Polling Interval","Intervallo di polling",trivial-example
-"networking",21,"net_monitor_npm_3","Zabbix","Zabbix (sistema monitoring open source)",fake-translation
-"networking",21,"net_monitor_npm_3","PRTG","PRTG (sistema monitoring Paessler)",fake-translation
-"networking",21,"net_monitor_npm_3","Nagios","Nagios (sistema monitoring storico)",fake-translation
-"networking",21,"net_monitor_npm_3","LibreNMS","LibreNMS (monitoring di rete open source)",fake-translation
-"networking",21,"net_monitor_npm_3","Grafana","Grafana (piattaforma di dashboard)",fake-translation
-"networking",21,"net_monitor_npm_3","Prometheus","Prometheus (sistema monitoring time-series)",fake-translation
+"networking",21,"net_monitor_npm_3","Zabbix","Zabbix",identical-translation
+"networking",21,"net_monitor_npm_3","PRTG","PRTG",identical-translation
+"networking",21,"net_monitor_npm_3","Nagios","Nagios",identical-translation
+"networking",21,"net_monitor_npm_3","LibreNMS","LibreNMS",identical-translation
+"networking",21,"net_monitor_npm_3","Grafana","Grafana",identical-translation
+"networking",21,"net_monitor_npm_3","Prometheus","Prometheus",identical-translation
 "networking",21,"net_monitor_npm_3","SmokePing","SmokePing",identical-translation
 "networking",21,"net_monitor_npm_3","Cacti","Cacti",identical-translation
 "networking",21,"net_monitor_npm_3","ntopng","ntopng",identical-translation
-"networking",21,"net_monitor_logs_4","Severity Level","Livello di severità",trivial-example
 "networking",21,"net_monitor_logs_4","Alertmanager","Alertmanager",identical-translation
-"networking",21,"net_monitor_logs_4","PagerDuty","PagerDuty (piattaforma on-call)",fake-translation
+"networking",21,"net_monitor_logs_4","PagerDuty","PagerDuty",identical-translation
 "networking",22,"net_design_topology_1","Spine","spine",identical-translation
 "networking",22,"net_design_topology_1","Leaf","leaf",identical-translation
 "networking",22,"net_design_ha_2","HSRP","HSRP",identical-translation
 "networking",22,"net_design_ha_2","VRRP","VRRP",identical-translation
 "networking",22,"net_design_ha_2","GLBP","GLBP",identical-translation
 "networking",22,"net_design_ha_2","VSS","VSS",identical-translation
-"networking",22,"net_design_dcn_3","End of Row","switch end-of-row (EoR)",trivial-example
 "networking",22,"net_design_dcn_3","Oversubscription","oversubscription",identical-translation
 "networking",22,"net_design_dcn_3","Pod","pod",identical-translation
 "networking",22,"net_design_dcn_3","Super Spine","super spine",identical-translation
@@ -366,57 +299,19 @@ topicId,level,lesson,english,italian,issueType
 "networking",22,"net_design_dcn_3","Service Leaf","service leaf",identical-translation
 "networking",22,"net_design_segment_4","RPO","RPO",identical-translation
 "networking",22,"net_design_segment_4","RTO","RTO",identical-translation
-"networking",23,"net_pro_certs_1","CCNA","CCNA (certificazione Cisco di base)",fake-translation
-"networking",23,"net_pro_certs_1","CCNP","CCNP (certificazione Cisco professional)",fake-translation
-"networking",23,"net_pro_certs_1","CCIE","CCIE (certificazione Cisco expert)",fake-translation
-"networking",23,"net_pro_certs_1","CompTIA Network+","CompTIA Network+ (certificazione di base)",fake-translation
-"networking",23,"net_pro_certs_1","JNCIA","JNCIA (certificazione Juniper di base)",fake-translation
-"networking",23,"net_pro_certs_1","AWS Advanced Networking","AWS Advanced Networking (certificazione AWS rete)",fake-translation
-"networking",23,"net_pro_certs_1","PCNSE","PCNSE (certificazione Palo Alto)",fake-translation
-"networking",23,"net_pro_certs_1","Fortinet NSE","Fortinet NSE (certificazione Fortinet)",fake-translation
-"networking",23,"net_pro_certs_1","Wireshark Certification","certificazione Wireshark",trivial-example
-"networking",23,"net_pro_roles_2","Network Administrator","amministratore di rete",trivial-example
+"networking",23,"net_pro_certs_1","CCNA","CCNA",identical-translation
+"networking",23,"net_pro_certs_1","CCNP","CCNP",identical-translation
+"networking",23,"net_pro_certs_1","CCIE","CCIE",identical-translation
+"networking",23,"net_pro_certs_1","CompTIA Network+","CompTIA Network+",identical-translation
+"networking",23,"net_pro_certs_1","JNCIA","JNCIA",identical-translation
+"networking",23,"net_pro_certs_1","AWS Advanced Networking","AWS Advanced Networking",identical-translation
+"networking",23,"net_pro_certs_1","PCNSE","PCNSE",identical-translation
+"networking",23,"net_pro_certs_1","Fortinet NSE","Fortinet NSE",identical-translation
 "networking",23,"net_pro_practice_3","Documentation","documentazione",near-identical-translation
-"networking",23,"net_pro_practice_3","Configuration Backup","Backup configurazione",trivial-example
-"networking",23,"net_pro_practice_3","Least Privilege","Privilegio minimo",trivial-example
 "networking",23,"net_pro_career_4","IETF","IETF",identical-translation
 "networking",23,"net_pro_career_4","RFC","RFC",identical-translation
 "networking",23,"net_pro_career_4","NANOG","NANOG",identical-translation
 "networking",23,"net_pro_career_4","RIPE","RIPE",identical-translation
-"networking",23,"net_pro_career_4","Continuous Learning","apprendimento continuo",trivial-example
-"networking",0,"net_foundations_1","host","",duplicate-across-lessons
-"networking",13,"net_tools_basic_1","host","",duplicate-across-lessons
-"networking",0,"net_foundations_2","segment","",duplicate-across-lessons
-"networking",1,"net_osi_2","segment","",duplicate-across-lessons
-"networking",0,"net_foundations_3","jitter","",duplicate-across-lessons
-"networking",14,"net_troubleshoot_1","jitter","",duplicate-across-lessons
-"networking",0,"net_foundations_3","packet loss","",duplicate-across-lessons
-"networking",14,"net_troubleshoot_1","packet loss","",duplicate-across-lessons
-"networking",0,"net_foundations_4","router","",duplicate-across-lessons
-"networking",5,"net_routing_1","router","",duplicate-across-lessons
-"networking",0,"net_foundations_4","switch","",duplicate-across-lessons
-"networking",4,"net_switching_2","switch","",duplicate-across-lessons
-"networking",0,"net_foundations_4","access point","",duplicate-across-lessons
-"networking",8,"net_wireless_1","access point","",duplicate-across-lessons
-"networking",1,"net_osi_2","stack","",duplicate-across-lessons
-"networking",22,"net_design_ha_2","stack","",duplicate-across-lessons
-"networking",1,"net_osi_3","encapsulation","",duplicate-across-lessons
-"networking",10,"net_vpn_1","encapsulation","",duplicate-across-lessons
-"networking",1,"net_osi_3","mtu","",duplicate-across-lessons
-"networking",14,"net_troubleshoot_2","mtu","",duplicate-across-lessons
-"networking",2,"net_tcpip_1","ip","",duplicate-across-lessons
-"networking",13,"net_tools_modern_2","ip","",duplicate-across-lessons
-"networking",2,"net_tcpip_4","best-effort","",duplicate-across-lessons
-"networking",15,"net_qos_1","best-effort","",duplicate-across-lessons
-"networking",3,"net_addressing_4","ttl","",duplicate-across-lessons
-"networking",6,"net_dns_3","ttl","",duplicate-across-lessons
-"networking",4,"net_switching_4","arp","",duplicate-across-lessons
-"networking",13,"net_tools_basic_1","arp","",duplicate-across-lessons
-"networking",5,"net_routing_3","ospf","",duplicate-across-lessons
-"networking",16,"net_routing_ospf_2","ospf","",duplicate-across-lessons
-"networking",5,"net_routing_3","eigrp","",duplicate-across-lessons
-"networking",16,"net_routing_eigrp_3","eigrp","",duplicate-across-lessons
-"networking",11,"net_services_lb_3","health check","",duplicate-across-lessons
-"networking",19,"net_cloud_dns_4","health check","",duplicate-across-lessons
-"networking",11,"net_services_pf_4","dmz","",duplicate-across-lessons
-"networking",18,"net_security_dmz_2","dmz","",duplicate-across-lessons
+"networking",23,"net_pro_career_4","Continuous Learning","apprendimento continuo",tautological-example
+"networking",4,"net_switching_2","Layer 3 switch","",duplicate-across-lessons
+"networking",5,"net_routing_4","Layer 3 Switch","",duplicate-across-lessons

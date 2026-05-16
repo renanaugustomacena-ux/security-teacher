@@ -1,0 +1,1996 @@
+{
+  "fixes": [
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "Magisk",
+      "set": {
+        "italian": "Magisk",
+        "example": "Pentesters install Magisk to root an Android test device so they can hook system calls and inspect protected app storage. = I pentester installano Magisk per rootare un dispositivo Android di test in modo da agganciare le syscall e ispezionare lo storage protetto delle app.",
+        "note": "Tool open source per ottenere root su Android in modo 'systemless' senza modificare /system."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "Xposed Framework",
+      "set": {
+        "italian": "Xposed Framework",
+        "example": "Mobile testers load an Xposed Framework module to hook SSL pinning checks at runtime and intercept the app's HTTPS traffic. = I tester mobile caricano un modulo Xposed Framework per agganciare i controlli di SSL pinning a runtime e intercettare il traffico HTTPS dell'app.",
+        "note": "Framework di hooking Android che permette di modificare il comportamento delle app senza ricompilarle."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "reFlutter",
+      "set": {
+        "italian": "reFlutter",
+        "example": "On a hardened Flutter app, auditors patch the binary with reFlutter so Burp Suite finally sees the HTTPS calls in cleartext. = Su un'app Flutter hardened, gli auditor patchano il binario con reFlutter cosi' Burp Suite finalmente vede le chiamate HTTPS in chiaro.",
+        "note": "Tool che ripatcha un APK Flutter per abilitare il proxying e ispezionare il traffico di rete."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "Magnet AXIOM",
+      "set": {
+        "italian": "Magnet AXIOM",
+        "note": "Suite commerciale di mobile e cloud forensics usata da law enforcement e team DFIR."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "apkleaks",
+      "set": {
+        "italian": "apkleaks",
+        "example": "Bug bounty hunters run apkleaks against a downloaded APK to spot hardcoded AWS keys and Firebase URLs before manual review. = I bug bounty hunter eseguono apkleaks su un APK scaricato per scovare chiavi AWS e URL Firebase hardcoded prima della review manuale.",
+        "note": "Scanner che estrae secret e URL sospetti dai file di un APK Android."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "Bytecode Viewer",
+      "set": {
+        "italian": "Bytecode Viewer",
+        "example": "Reverse engineers open a suspicious DEX inside Bytecode Viewer to switch between Smali, Java, and JD-GUI decompilations in one window. = I reverse engineer aprono un DEX sospetto in Bytecode Viewer per passare tra Smali, Java e JD-GUI in una sola finestra.",
+        "note": "Decompilatore open source per bytecode Java e Android (DEX) con piu' motori di analisi integrati."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "S3 Bucket Enumeration",
+      "set": {
+        "example": "During cloud recon, attackers brute-force predictable names to find an exposed S3 bucket enumeration target full of internal backups. = Durante la ricognizione cloud, gli attaccanti forzano nomi prevedibili per trovare un target di S3 bucket enumeration con backup interni esposti."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "IAM Exploitation",
+      "set": {
+        "example": "After stealing low-privilege AWS keys, the operator pivots through IAM exploitation by chaining iam:PassRole into a full admin role. = Dopo aver rubato chiavi AWS a basso privilegio, l'operatore pivota tramite IAM exploitation incatenando iam:PassRole in un ruolo admin completo."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "IMDSv2",
+      "set": {
+        "italian": "IMDSv2",
+        "example": "EC2 instances enforcing IMDSv2 require a session token, blocking the trivial SSRF-to-credentials attack that worked against IMDSv1. = Le istanze EC2 che forzano IMDSv2 richiedono un session token, bloccando l'attacco SSRF-to-credentials banale che funzionava su IMDSv1.",
+        "note": "Versione 2 dell'Instance Metadata Service di AWS: mitiga gli attacchi SSRF richiedendo un token PUT."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "AssumeRole",
+      "set": {
+        "italian": "AssumeRole",
+        "note": "Operazione AWS STS che restituisce credenziali temporanee per impersonare un ruolo IAM diverso."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "Pacu",
+      "set": {
+        "italian": "Pacu",
+        "example": "Red teamers load stolen AWS keys into Pacu and run the iam__enum_permissions module to map every action the principal can perform. = I red team caricano chiavi AWS rubate in Pacu ed eseguono il modulo iam__enum_permissions per mappare ogni azione che il principal puo' eseguire.",
+        "note": "Framework open source di Rhino Security Labs per il pentest di ambienti AWS."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "CloudTrail",
+      "set": {
+        "italian": "CloudTrail",
+        "example": "After the breach, the IR team reconstructs the attacker timeline from CloudTrail events showing every API call made with the leaked keys. = Dopo il breach, il team IR ricostruisce la timeline dell'attaccante dagli eventi CloudTrail che mostrano ogni chiamata API fatta con le chiavi trapelate.",
+        "note": "Servizio AWS che registra tutte le chiamate API effettuate nell'account per audit e investigazioni."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_1",
+      "english": "aws cli",
+      "set": {
+        "italian": "aws cli",
+        "example": "With temporary credentials exported, the operator types aws cli commands like 'aws s3 ls' to enumerate buckets without touching the web console. = Con le credenziali temporanee esportate, l'operatore digita comandi aws cli come 'aws s3 ls' per enumerare i bucket senza toccare la console web.",
+        "note": "Command-line interface ufficiale per interagire con tutti i servizi AWS da terminale o script."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "Azure AD",
+      "set": {
+        "example": "Microsoft rebranded Azure AD as Entra ID, but most pentesting tools and docs still use the legacy name when targeting tenants. = Microsoft ha rinominato Azure AD come Entra ID, ma la maggior parte dei tool di pentesting e dei docs usa ancora il nome legacy quando attacca i tenant."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "AADInternals",
+      "set": {
+        "italian": "AADInternals",
+        "example": "Operators load AADInternals in PowerShell to forge SAML tokens and impersonate any user across an Entra ID tenant during red team ops. = Gli operatori caricano AADInternals in PowerShell per forgiare token SAML e impersonare qualsiasi utente in un tenant Entra ID durante operazioni di red team.",
+        "note": "Modulo PowerShell offensivo per ricognizione e attacco contro Entra ID (ex Azure AD)."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "ROADtools",
+      "set": {
+        "italian": "ROADtools",
+        "example": "Recon teams run ROADtools to dump an entire Entra ID directory into a local Neo4j graph and find privilege escalation paths visually. = I team di ricognizione usano ROADtools per dumpare un'intera directory Entra ID in un grafo Neo4j locale e trovare percorsi di privilege escalation visivamente.",
+        "note": "Toolkit Python per esplorare e ricognire tenant Entra ID, con visualizzazione in BloodHound-style."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "Azure Storage Enum",
+      "set": {
+        "example": "Cloud pentesters perform Azure Storage Enum with MicroBurst to discover public blob containers leaking unencrypted database backups. = I cloud pentester fanno Azure Storage Enum con MicroBurst per scoprire blob container pubblici che espongono backup di database non cifrati."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "GCP IAM",
+      "set": {
+        "italian": "GCP IAM",
+        "example": "An over-permissive GCP IAM binding granting roles/owner to allAuthenticatedUsers gives any Google account full control of the project. = Una policy GCP IAM eccessiva che concede roles/owner a allAuthenticatedUsers da a qualsiasi account Google il controllo totale del progetto.",
+        "note": "Servizio Identity and Access Management di Google Cloud: gestisce chi puo' fare cosa su quali risorse."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "GCP Bucket",
+      "set": {
+        "example": "An auditor finds a GCP Bucket with allUsers read access leaking customer PDFs that were assumed to be private. = Un auditor trova un GCP Bucket con accesso in lettura per allUsers che espone PDF dei clienti che si pensava fossero privati."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "Cloud Functions",
+      "set": {
+        "italian": "Cloud Functions",
+        "example": "A vulnerable Cloud Functions endpoint that echoes environment variables leaks the service account JSON used to call other GCP APIs. = Un endpoint Cloud Functions vulnerabile che restituisce le variabili d'ambiente espone il JSON del service account usato per chiamare altre API GCP.",
+        "note": "Piattaforma serverless di Google Cloud: esegue codice on-demand in risposta a eventi HTTP o pub/sub."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_2",
+      "english": "Azure VM",
+      "set": {
+        "example": "An exposed RDP port on an Azure VM combined with a weak admin password gives an opportunistic attacker full domain access. = Una porta RDP esposta su una Azure VM combinata con una password admin debole da a un attaccante opportunista accesso completo al dominio."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_3",
+      "english": "Cloud Misconfig",
+      "set": {
+        "example": "A single Cloud Misconfig like a wide-open security group rule can expose a production database to the entire internet within seconds. = Un singolo Cloud Misconfig come una regola security group aperta a tutti puo' esporre un database di produzione all'intera Internet in pochi secondi."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_3",
+      "english": "Public Bucket",
+      "set": {
+        "example": "Auditors regularly find a Public Bucket holding internal CRM exports because someone toggled 'Block Public Access' off to share one file. = Gli auditor trovano regolarmente un Public Bucket contenente export del CRM interno perche' qualcuno ha disattivato 'Block Public Access' per condividere un file."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_3",
+      "english": "Wildcard Trust",
+      "set": {
+        "example": "An IAM role with a Wildcard Trust policy letting * AssumeRole effectively grants any AWS account in the world admin access. = Un ruolo IAM con una policy Wildcard Trust che permette * AssumeRole concede di fatto accesso admin a qualsiasi account AWS al mondo."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_3",
+      "english": "Misconfigured CORS",
+      "set": {
+        "example": "An API with Misconfigured CORS reflecting Origin and Access-Control-Allow-Credentials lets a malicious site steal authenticated responses from the victim's browser. = Un'API con Misconfigured CORS che riflette Origin e Access-Control-Allow-Credentials permette a un sito malevolo di rubare risposte autenticate dal browser della vittima."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "Container Escape",
+      "set": {
+        "example": "A successful Container Escape jumps from a compromised Docker workload to the host kernel, exposing every other container on the node. = Un Container Escape riuscito salta da un workload Docker compromesso al kernel dell'host, esponendo ogni altro container sul nodo."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "Privileged Container",
+      "set": {
+        "example": "Mounting / on a Privileged Container with --privileged is a one-line path from inside the container to full root on the host. = Montare / dentro un Privileged Container con --privileged e' un percorso di una riga dal container al root completo sull'host."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "Kubernetes",
+      "set": {
+        "italian": "Kubernetes",
+        "example": "Misconfigured Kubernetes clusters with anonymous access to the kubelet API let attackers exec into pods without any credentials. = Cluster Kubernetes mal configurati con accesso anonimo all'API del kubelet permettono agli attaccanti di fare exec nei pod senza credenziali.",
+        "note": "Piattaforma open source per orchestrare container; spesso abbreviata K8s (8 lettere tra K e s)."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "kubectl",
+      "set": {
+        "example": "After stealing a service account token, the operator runs kubectl get secrets --all-namespaces to harvest every credential in the cluster. = Dopo aver rubato un token di service account, l'operatore esegue kubectl get secrets --all-namespaces per raccogliere ogni credenziale nel cluster."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "kube-hunter",
+      "set": {
+        "example": "Defenders run kube-hunter from a pod to surface exploitable misconfigurations like an unauthenticated /api/v1/namespaces endpoint before attackers do. = I difensori eseguono kube-hunter da un pod per scoprire mal-configurazioni sfruttabili come un endpoint /api/v1/namespaces non autenticato prima degli attaccanti."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "kubeaudit",
+      "set": {
+        "example": "Running kubeaudit all on a YAML manifest flags pods missing securityContext, running as root, or allowing privilege escalation. = Eseguire kubeaudit all su un manifest YAML segnala pod senza securityContext, in esecuzione come root o che permettono privilege escalation."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "Peirates",
+      "set": {
+        "example": "Once inside a pod, attackers launch Peirates to enumerate service accounts, mount tokens, and escalate to cluster-admin from a single compromised container. = Una volta dentro un pod, gli attaccanti lanciano Peirates per enumerare service account, montare token e scalare a cluster-admin da un singolo container compromesso."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "ethack_cloud_hacking_4",
+      "english": "ScoutSuite",
+      "set": {
+        "example": "Cloud auditors point ScoutSuite at AWS, Azure, and GCP credentials to generate a single HTML report flagging risky configurations across providers. = Gli auditor cloud puntano ScoutSuite su credenziali AWS, Azure e GCP per generare un singolo report HTML che segnala configurazioni rischiose tra i provider."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_1",
+      "english": "Static Analysis",
+      "set": {
+        "example": "Analysts begin with Static Analysis of a suspicious binary, extracting strings and imports before ever detonating it in a sandbox. = Gli analisti iniziano con la Static Analysis di un binario sospetto, estraendo stringhe e import prima di farlo detonare in una sandbox."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_1",
+      "english": "Strings",
+      "set": {
+        "example": "Running Strings on a packed Windows trojan often leaks the C2 domain in cleartext when the packer fails to encrypt every section. = Eseguire Strings su un trojan Windows packed spesso espone il dominio C2 in chiaro quando il packer non riesce a cifrare ogni sezione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_1",
+      "english": "FLOSS",
+      "set": {
+        "italian": "FLOSS",
+        "example": "When plain strings returns garbage on an obfuscated sample, analysts switch to FLOSS to recover deobfuscated strings via emulation. = Quando plain strings restituisce robaccia su un sample offuscato, gli analisti passano a FLOSS per recuperare stringhe deoffuscate via emulazione.",
+        "note": "FLARE Obfuscated String Solver: tool Mandiant che estrae stringhe nascoste tramite emulazione."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_1",
+      "english": "PE Analysis",
+      "set": {
+        "example": "Defenders perform PE Analysis with pefile to inspect imports, sections, and the rich header for clues about the compiler and packer used. = I difensori fanno PE Analysis con pefile per ispezionare import, sezioni e rich header alla ricerca di indizi su compilatore e packer usati."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_1",
+      "english": "YARA Rule",
+      "set": {
+        "example": "Hunt teams write a YARA Rule matching the unique XOR loop of a known dropper to scan millions of files across the fleet. = I team di hunt scrivono una YARA Rule che matcha il loop XOR unico di un dropper noto per scansionare milioni di file sulla flotta."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_1",
+      "english": "YARA Signature",
+      "set": {
+        "example": "A robust YARA Signature combines multiple strings with a condition like '2 of them and filesize < 1MB' to minimize false positives. = Una YARA Signature robusta combina piu' stringhe con una condizione come '2 of them and filesize < 1MB' per minimizzare i falsi positivi."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_1",
+      "english": "Decompiler",
+      "set": {
+        "example": "Analysts feed a stripped binary into a Decompiler like Ghidra to recover pseudo-C and reason about logic without reading raw assembly. = Gli analisti danno in pasto un binario stripped a un Decompiler come Ghidra per recuperare pseudo-C e ragionare sulla logica senza leggere assembly grezzo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_2",
+      "english": "Dynamic Analysis",
+      "set": {
+        "example": "After static review, analysts move to Dynamic Analysis by detonating the sample in a sandbox and watching its real network, file, and registry behavior. = Dopo la revisione statica, gli analisti passano alla Dynamic Analysis facendo detonare il sample in una sandbox e osservando il vero comportamento di rete, file e registry."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_2",
+      "english": "Cuckoo Sandbox",
+      "set": {
+        "italian": "Cuckoo Sandbox",
+        "note": "Sandbox open source di analisi malware automatizzata: esegue il sample in una VM e raccoglie comportamento."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_2",
+      "english": "Any.Run",
+      "set": {
+        "italian": "Any.Run",
+        "example": "Triage analysts upload an unknown sample to Any.Run and interact with the malware live in a browser to trigger conditional behaviors. = Gli analisti di triage caricano un sample sconosciuto su Any.Run e interagiscono con il malware live in un browser per triggerare comportamenti condizionali.",
+        "note": "Sandbox online interattiva per analisi malware: l'analista vede e clicca dentro la VM dal browser."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_2",
+      "english": "Procmon",
+      "set": {
+        "example": "Detonating a dropper while Procmon captures gives a full timeline of every file, registry, and process operation triggered by the sample. = Far detonare un dropper mentre Procmon cattura da una timeline completa di ogni operazione file, registry e di processo triggerata dal sample."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_2",
+      "english": "Process Hacker",
+      "set": {
+        "italian": "Process Hacker",
+        "example": "While the malware runs, analysts use Process Hacker to spot suspicious injected threads inside legitimate processes like explorer.exe. = Mentre il malware gira, gli analisti usano Process Hacker per individuare thread sospetti iniettati in processi legittimi come explorer.exe.",
+        "note": "Utility avanzata di ispezione processi Windows: mostra handle, thread, memoria con piu' dettaglio di Task Manager."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_2",
+      "english": "API Hooking",
+      "set": {
+        "example": "Sandboxes use API Hooking to redirect calls like CreateFile and WriteFile through a logger that records exactly what the sample tried to do. = Le sandbox usano API Hooking per redirigere chiamate come CreateFile e WriteFile attraverso un logger che registra esattamente cosa il sample ha provato a fare."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_2",
+      "english": "x64dbg",
+      "set": {
+        "italian": "x64dbg",
+        "example": "Reverse engineers attach x64dbg to a packed Windows trojan and dump the unpacked payload from memory after the OEP is reached. = I reverse engineer attaccano x64dbg a un trojan Windows packed e dumpano il payload unpacked dalla memoria una volta raggiunto l'OEP.",
+        "note": "Debugger open source x86/x64 per Windows, scriptabile e successore spirituale di OllyDbg."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_2",
+      "english": "INetSim",
+      "set": {
+        "italian": "INetSim",
+        "example": "Sandbox networks run INetSim to fake DNS, HTTP and SMTP responses so malware happily reaches out without ever touching the real internet. = Le reti sandbox eseguono INetSim per fingere risposte DNS, HTTP e SMTP cosi' il malware contatta felicemente i server senza mai toccare Internet vera.",
+        "note": "Simulatore di servizi di rete che risponde al malware come fosse un Internet reale, ma in laboratorio."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "Reverse Engineering",
+      "set": {
+        "example": "Skilled Reverse Engineering of a custom encryption routine lets defenders write a decryptor for ransomware victims without paying the ransom. = Un abile Reverse Engineering di una routine di cifratura custom permette ai difensori di scrivere un decryptor per vittime di ransomware senza pagare il riscatto."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "Ghidra",
+      "set": {
+        "italian": "Ghidra",
+        "example": "Open-source teams prefer Ghidra over IDA because it decompiles for free across many CPU architectures and supports collaborative projects. = I team open source preferiscono Ghidra a IDA perche' decompila gratis su molte architetture CPU e supporta progetti collaborativi.",
+        "note": "Suite di reverse engineering rilasciata dalla NSA nel 2019, alternativa gratuita a IDA Pro."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "IDA Pro",
+      "set": {
+        "italian": "IDA Pro",
+        "example": "Veteran reversers still reach for IDA Pro when analyzing complex C++ binaries because of its mature decompiler and FLIRT signatures. = I reverser veterani ricorrono ancora a IDA Pro per analizzare binari C++ complessi grazie al decompiler maturo e alle signature FLIRT.",
+        "note": "Disassemblatore commerciale Hex-Rays, standard de facto per reverse engineering professionale."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "radare2",
+      "set": {
+        "italian": "radare2",
+        "example": "CTF players script binary analysis with radare2 from the terminal, piping r2 commands into Python via r2pipe to automate exploit recipes. = I giocatori CTF scriptano analisi di binari con radare2 da terminale, instradando comandi r2 in Python via r2pipe per automatizzare ricette di exploit.",
+        "note": "Framework di reverse engineering open source, completamente CLI, con un ecosistema di plugin attorno."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "Binary Ninja",
+      "set": {
+        "italian": "Binary Ninja",
+        "example": "Modern researchers favor Binary Ninja for its clean intermediate language and Python API that makes writing analysis plugins almost trivial. = I ricercatori moderni preferiscono Binary Ninja per il suo intermediate language pulito e l'API Python che rende quasi banale scrivere plugin di analisi.",
+        "note": "Disassemblatore commerciale moderno di Vector 35, noto per la sua intermediate language a piu' livelli."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "Control Flow Graph",
+      "set": {
+        "example": "Reading a function's Control Flow Graph in Ghidra lets analysts spot the decryption loop branching off the main entry path at a glance. = Leggere il Control Flow Graph di una funzione in Ghidra permette agli analisti di individuare il loop di decifratura che si dirama dal path principale a colpo d'occhio."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "Cross-References",
+      "set": {
+        "example": "Following Cross-References in IDA reveals every function that calls a suspicious API like VirtualAllocEx, narrowing the malicious code path quickly. = Seguire le Cross-References in IDA rivela ogni funzione che chiama una API sospetta come VirtualAllocEx, restringendo rapidamente il path di codice malevolo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "Symbolic Execution",
+      "set": {
+        "example": "Researchers use Symbolic Execution with angr to solve a malware's check function automatically, revealing the kill-switch domain without manual reverse work. = I ricercatori usano Symbolic Execution con angr per risolvere automaticamente la funzione di check di un malware, rivelando il dominio kill-switch senza reverse manuale."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_3",
+      "english": "angr",
+      "set": {
+        "italian": "angr",
+        "example": "Researchers script angr to symbolically explore a binary, finding inputs that hit a hidden branch flagged by static analysis. = I ricercatori scriptano angr per esplorare simbolicamente un binario, trovando input che colpiscono un ramo nascosto segnalato dall'analisi statica.",
+        "note": "Framework Python di binary analysis sviluppato a UCSB: combina symbolic execution e static analysis."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_4",
+      "english": "Malware",
+      "set": {
+        "example": "Endpoint telemetry pipelines triage tens of thousands of Malware samples a day to feed signatures and IOC feeds. = Le pipeline di telemetria endpoint triagiano decine di migliaia di sample Malware al giorno per alimentare signature e feed IOC."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_4",
+      "english": "Ransomware",
+      "set": {
+        "example": "Modern Ransomware operators exfiltrate files first and then encrypt, threatening public leak if the victim refuses to pay the demand. = Gli operatori Ransomware moderni esfiltrano prima i file e poi cifrano, minacciando un leak pubblico se la vittima rifiuta di pagare."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_4",
+      "english": "Rootkit",
+      "set": {
+        "example": "A kernel-mode Rootkit hooks SSDT entries to hide processes and files from every userland tool, including Task Manager and dir. = Un Rootkit kernel-mode aggancia voci SSDT per nascondere processi e file a ogni tool userland, incluso Task Manager e dir."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_4",
+      "english": "Keylogger",
+      "set": {
+        "example": "A simple Keylogger using SetWindowsHookEx silently records every keystroke and ships it to the C2 over an innocuous HTTPS POST. = Un semplice Keylogger che usa SetWindowsHookEx registra silenziosamente ogni tasto e lo spedisce al C2 con un POST HTTPS innocuo."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_4",
+      "english": "Worm",
+      "set": {
+        "example": "The 2017 NotPetya Worm spread through SMB EternalBlue exploits in minutes, paralyzing global shipping and pharma companies. = Il Worm NotPetya del 2017 si e' propagato tramite exploit SMB EternalBlue in pochi minuti, paralizzando aziende globali di shipping e pharma."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_4",
+      "english": "Botnet",
+      "set": {
+        "example": "A modern Botnet rents thousands of infected IoT devices to attackers who launch volumetric DDoS attacks against e-commerce sites. = Una Botnet moderna affitta migliaia di dispositivi IoT infetti ad attaccanti che lanciano attacchi DDoS volumetrici contro siti e-commerce."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_4",
+      "english": "Fileless Malware",
+      "set": {
+        "example": "Modern Fileless Malware lives entirely in PowerShell or WMI memory, defeating signature-based AV that scans the disk for malicious binaries. = Il Fileless Malware moderno vive interamente in memoria PowerShell o WMI, sconfiggendo l'AV signature-based che scansiona il disco per binari malevoli."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "ethack_malware_analysis_4",
+      "english": "Polymorphic Malware",
+      "set": {
+        "example": "Effective Polymorphic Malware mutates its decryption routine on every infection, ensuring no two samples share a static signature for AV to catch. = Il Polymorphic Malware efficace muta la routine di decifratura a ogni infezione, garantendo che nessun sample condivida una signature statica catturabile dall'AV."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Shellcode Writing",
+      "set": {
+        "example": "Effective Shellcode Writing starts in assembly, hand-crafting a tiny stub that calls execve('/bin/sh') without using a single null byte. = Un buon Shellcode Writing parte in assembly, costruendo a mano un piccolo stub che chiama execve('/bin/sh') senza usare un singolo null byte."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Position Independent Code",
+      "set": {
+        "example": "Exploit payloads require Position Independent Code so the shellcode runs correctly wherever the OS or attacker maps it in memory. = I payload di exploit richiedono Position Independent Code cosi' lo shellcode gira correttamente ovunque l'OS o l'attaccante lo mappi in memoria."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Null-Free Shellcode",
+      "set": {
+        "example": "When exploiting a strcpy overflow, only Null-Free Shellcode survives because a single 0x00 byte truncates the buffer copy. = Quando si sfrutta un overflow strcpy, solo Null-Free Shellcode sopravvive perche' un singolo byte 0x00 tronca la copia del buffer."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Alphanumeric Shellcode",
+      "set": {
+        "example": "If only printable input is accepted, exploit devs encode payloads as Alphanumeric Shellcode using tools like msfvenom -e x86/alpha_mixed. = Se solo input stampabile e' accettato, gli exploit dev codificano payload come Alphanumeric Shellcode con tool come msfvenom -e x86/alpha_mixed."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Polymorphic Encoding",
+      "set": {
+        "example": "Applying Polymorphic Encoding with Shikata Ga Nai mutates the shellcode bytes every run, defeating naive signature-based detection on the wire. = Applicare Polymorphic Encoding con Shikata Ga Nai muta i byte dello shellcode a ogni run, sconfiggendo la detection signature-based ingenua in rete."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Self-Modifying Code",
+      "set": {
+        "example": "Some packers ship Self-Modifying Code that rewrites its next instructions at runtime, making static disassembly almost useless for reverse engineers. = Alcuni packer rilasciano Self-Modifying Code che riscrive le istruzioni successive a runtime, rendendo il disassemblaggio statico quasi inutile per i reverse engineer."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "syscall",
+      "set": {
+        "italian": "syscall",
+        "note": "Chiamata di sistema: il modo in cui un programma user-mode richiede un servizio al kernel."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Direct Syscalls",
+      "set": {
+        "example": "Red team implants invoke Direct Syscalls via syscall stubs to skip user-mode hooks placed by EDR products on ntdll.dll. = Gli implant red team invocano Direct Syscalls via syscall stub per saltare gli hook user-mode piazzati dai prodotti EDR su ntdll.dll."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Egghunter",
+      "set": {
+        "english": "Egghunter Stage Resolver",
+        "italian": "Risolutore di stage egghunter",
+        "example": "When buffer space is tiny, exploit devs deploy an Egghunter Stage Resolver that scans memory for a unique tag and jumps to the larger payload placed there. = Quando lo spazio nel buffer e' minimo, gli exploit dev usano un Egghunter Stage Resolver che scansiona la memoria per un tag unico e salta al payload piu' grande messo lì.",
+        "note": "Tecnica avanzata di exploit dev: piccolo shellcode che trova un secondo payload in memoria tramite un marker."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_1",
+      "english": "Unicode Shellcode",
+      "set": {
+        "example": "When a vulnerable program widens input to UTF-16, only Unicode Shellcode crafted around interleaved null bytes can survive the conversion intact. = Quando un programma vulnerabile espande l'input a UTF-16, solo Unicode Shellcode costruito attorno a null byte interleaved sopravvive intatto alla conversione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_2",
+      "english": "ROP",
+      "set": {
+        "example": "When DEP marks the stack non-executable, exploit writers chain existing gadgets into a ROP payload that calls VirtualProtect to disable protection. = Quando DEP marca lo stack come non eseguibile, gli exploit writer concatenano gadget esistenti in un payload ROP che chiama VirtualProtect per disabilitare la protezione."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_2",
+      "english": "JOP",
+      "set": {
+        "example": "Advanced exploits use JOP instead of return-based chains when CFI prevents tampering with return addresses on the stack. = Gli exploit avanzati usano JOP invece di catene return-based quando CFI impedisce di manomettere indirizzi di ritorno sullo stack."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_2",
+      "english": "ROPgadget",
+      "set": {
+        "italian": "ROPgadget",
+        "example": "Exploit devs feed a vulnerable binary into ROPgadget to list every pop/ret and mov gadget needed to build a stage-zero chain. = Gli exploit dev danno in pasto un binario vulnerabile a ROPgadget per elencare ogni gadget pop/ret e mov necessario per costruire una chain di stage zero.",
+        "note": "Tool open source che cerca gadget ROP utilizzabili in un binario o libreria."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_2",
+      "english": "ASLR Bypass",
+      "set": {
+        "example": "A common ASLR Bypass leaks a single libc address through a format string flaw, recovering the full layout via known offsets. = Un comune ASLR Bypass espone un singolo indirizzo libc tramite un bug format string, recuperando il layout completo via offset noti."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_2",
+      "english": "DEP Bypass",
+      "set": {
+        "example": "Reliable DEP Bypass usually pivots to a ROP chain that calls VirtualProtect or mprotect to flip a memory region from RW to RWX before jumping. = Un DEP Bypass affidabile pivota tipicamente a una chain ROP che chiama VirtualProtect o mprotect per cambiare una regione di memoria da RW a RWX prima del salto."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_2",
+      "english": "Heap Spraying",
+      "set": {
+        "example": "Browser exploits historically relied on Heap Spraying to fill the heap with NOP sleds plus shellcode, making an unreliable jump probably land in the payload. = Gli exploit browser storicamente si basavano su Heap Spraying per riempire l'heap con NOP sled e shellcode, facendo si' che un salto inaffidabile probabilmente atterri nel payload."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_2",
+      "english": "Use After Free",
+      "set": {
+        "example": "A classic Use After Free in a browser engine lets attackers reclaim freed memory with attacker-controlled data, hijacking a vtable call. = Un classico Use After Free in un browser engine permette agli attaccanti di riallocare memoria liberata con dati controllati, dirottando una chiamata vtable."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_2",
+      "english": "Double Free",
+      "set": {
+        "example": "A Double Free on glibc malloc can corrupt the tcache freelist, eventually granting an arbitrary write primitive to a skilled attacker. = Un Double Free su glibc malloc puo' corrompere la freelist tcache, finendo per concedere a un attaccante esperto una primitiva di scrittura arbitraria."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_2",
+      "english": "Format String",
+      "set": {
+        "example": "An overlooked printf(user_input) creates a Format String flaw that leaks stack memory with %p and writes arbitrary bytes with %n. = Un printf(user_input) trascurato crea una vulnerabilita' Format String che espone memoria stack con %p e scrive byte arbitrari con %n."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "AFL",
+      "set": {
+        "example": "Security researchers fuzz a parser by feeding it to AFL with a small seed corpus and watching the coverage map grow as new crashes appear. = I ricercatori di sicurezza fuzzano un parser dandolo in pasto ad AFL con un piccolo corpus di seed e osservando crescere la mappa di coverage mentre appaiono nuovi crash."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "AFL++",
+      "set": {
+        "italian": "AFL++",
+        "example": "Modern fuzzing campaigns prefer AFL++ over original AFL because it ships with QEMU mode, persistent mode, and dozens of community patches enabled. = Le campagne di fuzzing moderne preferiscono AFL++ all'AFL originale perche' include QEMU mode, persistent mode e decine di patch della community abilitate.",
+        "note": "Fork moderno e attivamente mantenuto di AFL: integra le migliori contribuzioni della community."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "libFuzzer",
+      "set": {
+        "italian": "libFuzzer",
+        "example": "Library authors integrate libFuzzer harnesses directly into their build, running coverage-guided fuzzing in-process inside CI for every commit. = Gli autori di librerie integrano harness libFuzzer direttamente nel build, eseguendo fuzzing coverage-guided in-process dentro CI a ogni commit.",
+        "note": "Engine di fuzzing in-process incluso in LLVM: link contro libFuzzer e definisci LLVMFuzzerTestOneInput."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "Coverage-Guided Fuzzing",
+      "set": {
+        "example": "Modern Coverage-Guided Fuzzing instruments the target so the fuzzer keeps inputs that hit new edges, discovering bugs deep in seldom-executed code. = Il Coverage-Guided Fuzzing moderno strumenta il target cosi' il fuzzer tiene gli input che colpiscono nuovi edge, scoprendo bug in profondita' in codice raramente eseguito."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "Crash Triage",
+      "set": {
+        "example": "After a 24-hour fuzz run, engineers do Crash Triage with !exploitable in WinDbg to bucket thousands of dumps into a handful of unique root causes. = Dopo un fuzz run di 24 ore, gli ingegneri fanno Crash Triage con !exploitable in WinDbg per raggruppare migliaia di dump in poche root cause uniche."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "Corpus",
+      "set": {
+        "italian": "Corpus",
+        "note": "Insieme di input di partenza forniti al fuzzer; un buon Corpus accelera la scoperta di nuovi path."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_3",
+      "english": "Honggfuzz",
+      "set": {
+        "italian": "Honggfuzz",
+        "example": "Performance-sensitive campaigns choose Honggfuzz for its hardware-feedback mode using Intel PT or BTS to drive coverage with minimal overhead. = Le campagne sensibili alle performance scelgono Honggfuzz per la modalita' hardware-feedback con Intel PT o BTS che guida la coverage con overhead minimo.",
+        "note": "Fuzzer sviluppato in Google: supporta feedback hardware e fuzzing parallelo a basso overhead."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_4",
+      "english": "Browser Exploit",
+      "set": {
+        "example": "A modern Browser Exploit chains a JIT type confusion to a sandbox escape via a Windows kernel bug to land code on the victim's host. = Un Browser Exploit moderno concatena una type confusion JIT a una sandbox escape via un bug del kernel Windows per atterrare codice sull'host della vittima."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_4",
+      "english": "JIT Spray",
+      "set": {
+        "example": "Old browser exploits used JIT Spray to coerce a JavaScript engine into emitting attacker-chosen byte sequences as executable JIT code. = Vecchi exploit browser usavano JIT Spray per costringere un engine JavaScript a emettere sequenze di byte scelte dall'attaccante come codice JIT eseguibile."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_4",
+      "english": "Type Confusion",
+      "set": {
+        "example": "A Type Confusion in a JavaScript engine lets attacker code treat a String as an Array, bypassing bounds checks for full memory read/write. = Una Type Confusion in un engine JavaScript permette al codice attaccante di trattare una String come un Array, bypassando i bound check per read/write completi in memoria."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_4",
+      "english": "Kernel Exploit",
+      "set": {
+        "english": "Kernel-Mode LPE Exploit",
+        "italian": "Exploit LPE kernel-mode",
+        "example": "A reliable Kernel-Mode LPE Exploit corrupts a Windows token to grant SYSTEM privileges to an attacker-controlled process from a normal user. = Un Kernel-Mode LPE Exploit affidabile corrompe un token Windows per concedere privilegi SYSTEM a un processo controllato dall'attaccante partendo da utente normale.",
+        "note": "Exploit di local privilege escalation che sfrutta un bug nel kernel per arrivare a SYSTEM o root."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_4",
+      "english": "SMEP",
+      "set": {
+        "example": "On modern Intel CPUs, SMEP prevents the kernel from executing pages mapped in user-mode, killing the classic ret2usr kernel exploit technique. = Sulle CPU Intel moderne, SMEP impedisce al kernel di eseguire pagine mappate in user-mode, uccidendo la classica tecnica ret2usr per exploit kernel."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_4",
+      "english": "SMAP",
+      "set": {
+        "example": "Beyond SMEP, modern CPUs add SMAP so the kernel cannot read or write user-mode pages without explicit STAC/CLAC instructions. = Oltre a SMEP, le CPU moderne aggiungono SMAP cosi' il kernel non puo' leggere o scrivere pagine user-mode senza esplicite istruzioni STAC/CLAC."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "ethack_exploit_dev_4",
+      "english": "KASLR",
+      "set": {
+        "italian": "KASLR",
+        "example": "Linux boots with KASLR randomizing the kernel base on every start, forcing exploits to first leak a kernel pointer before chaining gadgets. = Linux fa boot con KASLR che randomizza la base del kernel ad ogni avvio, costringendo gli exploit a esporre prima un puntatore kernel prima di concatenare gadget.",
+        "note": "Kernel Address Space Layout Randomization: estende ASLR al kernel per rendere harder gli exploit LPE."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_1",
+      "english": "Domain Fronting",
+      "set": {
+        "example": "Operators hide their C2 traffic with Domain Fronting, sending TLS to a trusted CDN front while the inner Host header reaches the attacker's server. = Gli operatori nascondono il loro traffico C2 con Domain Fronting, mandando TLS verso un CDN front di fiducia mentre l'Host header interno raggiunge il server dell'attaccante."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_1",
+      "english": "Redirector",
+      "set": {
+        "example": "Mature red team infra puts a Redirector between the implant and the real C2, so blue teams burn the cheap front instead of the long-lived backend. = L'infra red team matura mette un Redirector tra implant e C2 reale, cosi' i blue team bruciano il front a basso costo invece del backend long-lived."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_1",
+      "english": "Callback",
+      "set": {
+        "example": "Each implant sends a periodic Callback to the C2 with system info and waits for new tasks before sleeping for the configured jitter. = Ogni implant manda un Callback periodico al C2 con info sistema e aspetta nuovi task prima di dormire per il jitter configurato."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_1",
+      "english": "P2P Beacon",
+      "set": {
+        "example": "Internal pivot hosts run a P2P Beacon over SMB named pipes so only one machine egresses, keeping the rest of the implants quiet on the wire. = Gli host di pivot interni eseguono un P2P Beacon su SMB named pipe cosi' solo una macchina fa egress, mantenendo gli altri implant silenziosi in rete."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_1",
+      "english": "External C2",
+      "set": {
+        "example": "An External C2 channel tunnels Cobalt Strike commands through a third-party app like Slack or GitHub, blending into the network's allowed egress. = Un canale External C2 tunnela comandi Cobalt Strike attraverso un'app di terze parti come Slack o GitHub, mimetizzandosi nell'egress autorizzato della rete."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_1",
+      "english": "Long Haul C2",
+      "set": {
+        "example": "Operators keep a Long Haul C2 with multi-hour sleep cycles as a stealthy fallback if the noisy short-haul implants get burned. = Gli operatori tengono un Long Haul C2 con cicli di sleep di molte ore come fallback stealth se gli implant short-haul rumorosi vengono bruciati."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_1",
+      "english": "Short Haul C2",
+      "set": {
+        "example": "Active engagement uses a Short Haul C2 with 30-second beacons to allow interactive hands-on-keyboard work during the operator's shift. = L'ingaggio attivo usa uno Short Haul C2 con beacon ogni 30 secondi per permettere lavoro hands-on-keyboard interattivo durante il turno dell'operatore."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_2",
+      "english": "AV Evasion",
+      "set": {
+        "example": "Red team tooling invests heavily in AV Evasion by encrypting payloads, stripping signatures, and adding sleep masks to defeat memory scans. = Il tooling red team investe pesantemente in AV Evasion cifrando payload, rimuovendo signature e aggiungendo sleep mask per battere le memory scan."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_2",
+      "english": "EDR Bypass",
+      "set": {
+        "example": "A modern EDR Bypass combines indirect syscalls with API unhooking to make a malicious process look indistinguishable from notepad to the sensor. = Un EDR Bypass moderno combina syscall indirette con unhooking di API per rendere un processo malevolo indistinguibile da notepad agli occhi del sensor."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_2",
+      "english": "Process Injection",
+      "set": {
+        "example": "Operators use Process Injection like CreateRemoteThread to run their shellcode inside a benign signed process such as svchost.exe. = Gli operatori usano Process Injection come CreateRemoteThread per eseguire il loro shellcode dentro un processo benigno firmato come svchost.exe."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_2",
+      "english": "Process Hollowing",
+      "set": {
+        "example": "Classic Process Hollowing launches a suspended legitimate binary, then replaces its mapped image with malicious code before resuming the main thread. = Il classico Process Hollowing lancia un binario legittimo sospeso, poi rimpiazza la sua immagine mappata con codice malevolo prima di riprendere il thread principale."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_2",
+      "english": "Reflective DLL Loading",
+      "set": {
+        "example": "Stealthy Reflective DLL Loading lets implants map a DLL into a process without ever writing it to disk or calling LoadLibrary, evading file-based detection. = Il Reflective DLL Loading stealth permette agli implant di mappare una DLL in un processo senza mai scriverla su disco o chiamare LoadLibrary, evadendo la detection file-based."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_2",
+      "english": "AMSI Bypass",
+      "set": {
+        "example": "A one-liner AMSI Bypass patches amsi.dll!AmsiScanBuffer in-process so subsequent PowerShell scripts run without ever being scanned. = Un AMSI Bypass in una riga patcha amsi.dll!AmsiScanBuffer in-process cosi' gli script PowerShell successivi vengono eseguiti senza mai essere scansionati."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_2",
+      "english": "ETW Bypass",
+      "set": {
+        "example": "An ETW Bypass that patches the EtwEventWrite entry blinds many EDR sensors to .NET assembly loads and PowerShell activity. = Un ETW Bypass che patcha l'entry EtwEventWrite acceca molti sensor EDR rispetto a caricamento di assembly .NET e attivita' PowerShell."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_2",
+      "english": "Indirect Syscalls",
+      "set": {
+        "example": "Modern implants prefer Indirect Syscalls so the syscall instruction executes inside ntdll, defeating EDR stack analysis that flags non-ntdll origins. = Gli implant moderni preferiscono Indirect Syscalls cosi' l'istruzione syscall si esegue dentro ntdll, sconfiggendo l'analisi stack EDR che segnala origini non-ntdll."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_2",
+      "english": "Unhooking",
+      "set": {
+        "example": "Operators perform Unhooking by reloading a clean ntdll.dll from disk over the EDR-patched copy in memory before issuing sensitive API calls. = Gli operatori fanno Unhooking ricaricando una ntdll.dll pulita da disco sopra la copia patchata dall'EDR in memoria prima di chiamate API sensibili."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_2",
+      "english": "Sandbox Evasion",
+      "set": {
+        "example": "Classic Sandbox Evasion tricks include checking CPU count, recent document MRU lists, and sleeping for hours so transient analysis sandboxes give up first. = I trucchi classici di Sandbox Evasion includono controllare il numero di CPU, le liste MRU di documenti recenti e dormire per ore cosi' le sandbox di analisi transitorie si arrendono prima."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_3",
+      "english": "OPSEC",
+      "set": {
+        "example": "Strong OPSEC keeps every operator action consistent with normal admin behavior so blue team hunts cannot single out the red team in logs. = Un OPSEC forte mantiene ogni azione dell'operatore consistente con il normale comportamento admin cosi' le hunt blue team non possono individuare il red team nei log."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_3",
+      "english": "Living off the Land",
+      "set": {
+        "english": "Living off the Land Red Team Tradecraft",
+        "italian": "Tradecraft red team Living off the Land",
+        "example": "Strict Living off the Land Red Team Tradecraft has operators run only signed Windows binaries like wmic and certutil, leaving no custom EXE for blue teams to flag. = Una rigorosa Living off the Land Red Team Tradecraft fa eseguire agli operatori solo binari Windows firmati come wmic e certutil, senza lasciare nessun EXE custom da segnalare al blue team.",
+        "note": "Stile operativo red team che riusa SOLO strumenti gia' presenti sul sistema per minimizzare l'attribuzione."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_3",
+      "english": "LOLBAS",
+      "set": {
+        "example": "Operators consult LOLBAS to find a signed Windows binary like mshta.exe that can download and execute remote payloads bypassing app-locker rules. = Gli operatori consultano LOLBAS per trovare un binario Windows firmato come mshta.exe che puo' scaricare ed eseguire payload remoti bypassando le regole AppLocker."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_3",
+      "english": "GTFOBins",
+      "set": {
+        "english": "GTFOBins Red Team Reference",
+        "italian": "Riferimento red team GTFOBins",
+        "example": "On a Linux box, red teamers open the GTFOBins Red Team Reference to find which sudo-allowed binary spawns a root shell with a one-line abuse. = Su una box Linux, i red team aprono il GTFOBins Red Team Reference per scoprire quale binario sudo-consentito genera una shell root con un abuso di una riga.",
+        "note": "Catalogo curato di binari Unix abusabili per privilege escalation, bind shell, file read e altri attacchi."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_3",
+      "english": "Log Tampering",
+      "set": {
+        "example": "Stealthy attackers do Log Tampering by selectively removing only their own RDP login entries from Security.evtx rather than clearing the whole log. = Gli attaccanti stealth fanno Log Tampering rimuovendo selettivamente solo le proprie voci di login RDP da Security.evtx invece di pulire l'intero log."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_3",
+      "english": "Timestomping",
+      "set": {
+        "italian": "Timestomping",
+        "example": "Operators perform Timestomping on a dropped payload to match the surrounding system files, hiding the new binary from timeline-based forensics. = Gli operatori fanno Timestomping su un payload droppato per matchare i file di sistema circostanti, nascondendo il nuovo binario alla forensics basata su timeline.",
+        "note": "Tecnica anti-forensics che modifica i timestamp di un file per nasconderlo nella cronologia del sistema."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_3",
+      "english": "Anti-Forensics",
+      "set": {
+        "example": "Mature Anti-Forensics tradecraft combines log tampering, timestomping, and secure file wiping so an incident responder finds almost no trail. = Un tradecraft Anti-Forensics maturo combina log tampering, timestomping e wipe sicuro dei file cosi' un incident responder non trova quasi nessuna traccia."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_3",
+      "english": "Operational Container",
+      "set": {
+        "example": "Operators run from an Operational Container with carefully built persona browser data, hiding the engagement traffic from corporate-issued laptops. = Gli operatori lavorano da un Operational Container con dati browser di persona costruiti con cura, nascondendo il traffico dell'ingaggio dai laptop aziendali."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "Adversary Simulation",
+      "set": {
+        "example": "An Adversary Simulation engagement scripts a full APT29 playbook step by step so the SOC can measure detection at each TTP. = Un ingaggio di Adversary Simulation scripta un intero playbook APT29 passo per passo cosi' il SOC puo' misurare la detection a ogni TTP."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "Threat Emulation",
+      "set": {
+        "example": "Targeted Threat Emulation runs reproduce the unique behaviors of a named actor like FIN7 so defenders validate whether their controls cover that specific threat. = Le run di Threat Emulation mirate riproducono i comportamenti unici di un attore noto come FIN7 cosi' i difensori validano se i loro controlli coprono quella specifica minaccia."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "TTPs",
+      "set": {
+        "example": "MITRE ATT&CK catalogues thousands of attacker TTPs that defenders map to detection coverage in their SIEM. = MITRE ATT&CK cataloga migliaia di TTPs di attaccanti che i difensori mappano alla coverage di detection nel loro SIEM."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "Atomic Red Team",
+      "set": {
+        "italian": "Atomic Red Team",
+        "example": "Detection engineers run Atomic Red Team tests like T1059.001 every release to confirm their PowerShell detection rules still fire as expected. = I detection engineer eseguono test Atomic Red Team come T1059.001 a ogni release per confermare che le loro regole di detection PowerShell scattino ancora come previsto.",
+        "note": "Libreria open source di Red Canary con test atomici di attacco mappati su tecniche MITRE ATT&CK."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "CALDERA",
+      "set": {
+        "italian": "CALDERA",
+        "example": "Defenders deploy CALDERA agents across a lab network and launch automated adversary plans to stress-test their EDR and SIEM under realistic chains. = I difensori deploiano agent CALDERA su una rete lab e lanciano piani avversari automatici per stressare EDR e SIEM con catene realistiche.",
+        "note": "Framework open source di MITRE per automazione di adversary emulation, basato sul knowledge graph ATT&CK."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "Purple Team Exercise",
+      "set": {
+        "example": "A Purple Team Exercise puts attackers and defenders in the same room, iterating on detections after every TTP until coverage is verified. = Un Purple Team Exercise mette attaccanti e difensori nella stessa stanza, iterando sulle detection dopo ogni TTP finche' la coverage non e' verificata."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "Detection Engineering",
+      "set": {
+        "example": "Mature Detection Engineering teams treat every Sigma or KQL rule like production code, with version control, tests, and tuning metrics. = I team maturi di Detection Engineering trattano ogni regola Sigma o KQL come codice di produzione, con version control, test e metriche di tuning."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "Sigma Rule",
+      "set": {
+        "example": "Analysts share a Sigma Rule via GitHub so any SIEM, from Splunk to Sentinel, can convert and deploy the same detection with minimal effort. = Gli analisti condividono una Sigma Rule via GitHub cosi' qualsiasi SIEM, da Splunk a Sentinel, puo' convertirla e deployare la stessa detection con sforzo minimo."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "Initial Access",
+      "set": {
+        "example": "Most red team engagements model realistic Initial Access via spearphishing attachments rather than skipping straight to assumed-breach. = La maggior parte degli ingaggi red team modella un Initial Access realistico via allegati spearphishing invece di saltare dritto all'assumed-breach."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "ethack_red_team_4",
+      "english": "Assumed Breach",
+      "set": {
+        "example": "An Assumed Breach engagement starts with a planted implant on a workstation, focusing the test on lateral movement and detection rather than on phishing. = Un ingaggio Assumed Breach inizia con un implant piazzato su una workstation, focalizzando il test su lateral movement e detection invece che su phishing."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_1",
+      "english": "Technical Details",
+      "set": {
+        "example": "Engineers expect the Technical Details section to include exact requests, responses, payloads, and reproduction steps for every finding. = Gli ingegneri si aspettano che la sezione Technical Details includa request, response, payload esatti e passi di riproduzione per ogni finding."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_1",
+      "english": "Recommendations",
+      "set": {
+        "example": "Strong Recommendations are concrete and prioritized, telling engineers exactly which config to flip or which library version to upgrade. = Buoni Recommendations sono concreti e prioritizzati, dicono agli ingegneri esattamente quale config cambiare o quale versione di libreria aggiornare."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_2",
+      "english": "Impact",
+      "set": {
+        "example": "Stakeholders read the Impact section first because it translates raw technical risk into concrete business consequences they care about. = Gli stakeholder leggono prima la sezione Impact perche' traduce il rischio tecnico grezzo in conseguenze concrete di business che li interessano."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_2",
+      "english": "CVSS Score",
+      "set": {
+        "example": "A 9.8 CVSS Score on an authentication bypass forces immediate executive escalation under most companies' incident policies. = Un CVSS Score di 9.8 su un authentication bypass forza un'escalation esecutiva immediata sotto le policy di incident della maggior parte delle aziende."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_2",
+      "english": "Risk Score",
+      "set": {
+        "english": "Composite Risk Score",
+        "italian": "Punteggio di rischio composito",
+        "example": "Engagements compute a Composite Risk Score per finding combining likelihood, impact, and asset criticality into a single number for prioritization. = Gli ingaggi calcolano un Composite Risk Score per finding combinando probabilita', impatto e criticita' dell'asset in un singolo numero per la prioritizzazione.",
+        "note": "Punteggio aggregato (non solo CVSS) che pesa probabilita', impatto e contesto dell'asset."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_2",
+      "english": "Remediation Steps",
+      "set": {
+        "example": "Good Remediation Steps cite the vulnerable code lines, propose a patched diff, and link to vendor documentation for the recommended fix. = Buoni Remediation Steps citano le righe di codice vulnerabili, propongono un diff patchato e linkano alla documentazione del vendor per il fix raccomandato."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_2",
+      "english": "Affected Assets",
+      "set": {
+        "example": "Listing Affected Assets by hostname and IP lets the operations team open ticket queues with the right owner per finding in minutes. = Elencare gli Affected Assets per hostname e IP permette al team operations di aprire code di ticket con il giusto owner per finding in pochi minuti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_2",
+      "english": "References",
+      "set": {
+        "example": "Good References point to CVE entries, OWASP cheat sheets, and original advisories so engineers can deep-dive without re-doing the research. = Buoni References puntano a voci CVE, cheat sheet OWASP e advisory originali cosi' gli ingegneri possono approfondire senza rifare la ricerca."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_2",
+      "english": "Proof of Concept",
+      "set": {
+        "english": "Reporting Proof of Concept",
+        "italian": "Proof of Concept del report",
+        "example": "A clean Reporting Proof of Concept screenshots the exploit running end-to-end so a non-technical reader still grasps that the bug is real. = Un Reporting Proof of Concept pulito mostra screenshot dell'exploit che gira end-to-end cosi' anche un lettore non tecnico capisce che il bug e' reale.",
+        "note": "Sezione del report di pentest che dimostra concretamente la sfruttabilita' della vulnerabilita'."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_2",
+      "english": "Severity Rating",
+      "set": {
+        "english": "Report Severity Rating",
+        "italian": "Livello di gravita' nel report",
+        "example": "Each finding carries a Report Severity Rating from Critical to Informational so triage teams can sort hundreds of issues by impact at a glance. = Ogni finding porta un Report Severity Rating da Critical a Informational cosi' i team di triage possono ordinare centinaia di issue per impatto a colpo d'occhio.",
+        "note": "Livello assegnato in fase di reporting (Critical/High/Medium/Low/Informational); distinto dal CVSS grezzo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_3",
+      "english": "Q&A Session",
+      "set": {
+        "example": "Closing the engagement with a live Q&A Session lets developers ask follow-up questions on each finding instead of guessing from the PDF. = Chiudere l'ingaggio con una Q&A Session live permette agli sviluppatori di fare domande di follow-up su ogni finding invece di indovinare dal PDF."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_3",
+      "english": "Client Education",
+      "set": {
+        "example": "Strong Client Education turns every finding into a short workshop on the underlying class of bug so the same pattern stops recurring in future code. = Una buona Client Education trasforma ogni finding in un piccolo workshop sulla classe di bug sottostante cosi' lo stesso pattern smette di ricorrere nel codice futuro."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_4",
+      "english": "Dradis",
+      "set": {
+        "example": "Multi-tester engagements consolidate findings in Dradis so the lead consultant exports one consistent PDF report at the end of the project. = Gli ingaggi multi-tester consolidano i finding in Dradis cosi' il consulente lead esporta un singolo report PDF coerente a fine progetto."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_4",
+      "english": "Faraday",
+      "set": {
+        "example": "Teams use Faraday as a collaborative IDE during pentests, ingesting nmap and burp output into a shared workspace updated in real time. = I team usano Faraday come IDE collaborativo durante i pentest, ingerendo output di nmap e burp in un workspace condiviso aggiornato in tempo reale."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_4",
+      "english": "PlexTrac",
+      "set": {
+        "example": "Pentest firms standardize on PlexTrac to streamline writeups, client portals, and retest tracking across dozens of concurrent engagements. = Le firm di pentest standardizzano su PlexTrac per snellire writeup, portali client e tracking dei retest su decine di ingaggi concorrenti."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_4",
+      "english": "AttackForge",
+      "set": {
+        "example": "Enterprise security teams adopt AttackForge to manage pentest workflows, integrate Jira, and track remediation SLAs across business units. = I team di security enterprise adottano AttackForge per gestire workflow di pentest, integrare Jira e tracciare SLA di remediation su business unit."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_4",
+      "english": "Markdown Report",
+      "set": {
+        "example": "Bug bounty hunters draft a Markdown Report inside the platform editor, embedding code blocks and inline images for clean reviewer reading. = I bug bounty hunter scrivono un Markdown Report nell'editor della piattaforma, integrando blocchi di codice e immagini inline per una lettura pulita."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_4",
+      "english": "LaTeX Report",
+      "set": {
+        "example": "Academic-style pentest deliverables ship as a LaTeX Report compiled with custom class files for branded title pages and consistent typography. = I deliverable di pentest accademici vengono consegnati come LaTeX Report compilato con class file custom per copertine brandizzate e tipografia coerente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "ethack_reporting_4",
+      "english": "Pwndoc",
+      "set": {
+        "example": "Boutique pentest shops self-host Pwndoc to generate consistent DOCX reports from a vulnerability database curated across past engagements. = Le boutique di pentest self-hostano Pwndoc per generare report DOCX coerenti da un database di vulnerabilita' curato attraverso ingaggi passati."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_1",
+      "english": "GDPR",
+      "set": {
+        "example": "European companies hit by a breach must notify the supervisory authority within 72 hours under GDPR Article 33 or face heavy fines. = Le aziende europee colpite da breach devono notificare l'autorita' di controllo entro 72 ore sotto l'articolo 33 di GDPR o rischiare multe pesanti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_1",
+      "english": "PCI DSS",
+      "set": {
+        "example": "Merchants handling card numbers undergo annual PCI DSS audits and quarterly external vulnerability scans by an ASV. = I merchant che gestiscono numeri di carta passano audit PCI DSS annuali e scansioni di vulnerabilita' esterne trimestrali da parte di un ASV."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_1",
+      "english": "HIPAA",
+      "set": {
+        "example": "US healthcare providers must safeguard PHI under HIPAA, encrypting databases and signing BAAs with every cloud provider that touches patient data. = I provider sanitari USA devono proteggere PHI sotto HIPAA, cifrando i database e firmando BAA con ogni cloud provider che tocca i dati paziente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_1",
+      "english": "SOX",
+      "set": {
+        "example": "Public US companies enforce strict change management on financial systems to satisfy SOX Section 404 controls reviewed by external auditors. = Le aziende pubbliche USA applicano un change management severo sui sistemi finanziari per soddisfare i controlli SOX sezione 404 revisionati da auditor esterni."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_1",
+      "english": "NIS2",
+      "set": {
+        "example": "European operators of essential services must implement risk-based cybersecurity measures and incident reporting under NIS2 by October 2024. = Gli operatori europei di servizi essenziali devono implementare misure di cybersecurity risk-based e reporting di incidenti sotto NIS2 entro ottobre 2024."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_1",
+      "english": "DORA",
+      "set": {
+        "example": "EU financial entities must prove ICT resilience under DORA starting in 2025, including mandatory threat-led penetration tests every three years. = Le entita' finanziarie UE devono dimostrare resilienza ICT sotto DORA dal 2025, inclusi threat-led penetration test obbligatori ogni tre anni."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_2",
+      "english": "Rules of Engagement",
+      "set": {
+        "english": "Legal Rules of Engagement Document",
+        "italian": "Documento legale Rules of Engagement",
+        "example": "Counsel reviews the Legal Rules of Engagement Document before kickoff, pinning down allowed IP ranges, hours, and out-of-scope systems in writing. = Il legale revisiona il Legal Rules of Engagement Document prima del kickoff, fissando per iscritto range IP autorizzati, orari e sistemi fuori scope.",
+        "note": "Documento contrattuale firmato che definisce limiti tecnici e legali del pentest (abbreviato RoE)."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_2",
+      "english": "NDA",
+      "set": {
+        "example": "Every pentest starts by signing an NDA so testers can access sensitive source code and findings without legal exposure for either side. = Ogni pentest inizia firmando un NDA cosi' i tester possono accedere a codice sorgente e finding sensibili senza esposizione legale per nessuna delle due parti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_2",
+      "english": "Liability Clause",
+      "set": {
+        "example": "The Liability Clause caps the pentest firm's exposure to the fee paid for the engagement, excluding consequential damages from production outages. = La Liability Clause limita l'esposizione della firm di pentest al fee pagato per l'ingaggio, escludendo danni consequenziali da outage di produzione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_2",
+      "english": "Indemnification",
+      "set": {
+        "example": "Strong Indemnification language transfers responsibility to whichever party caused a third-party claim, protecting the other from collateral lawsuits. = Una clausola di Indemnification forte trasferisce la responsabilita' alla parte che ha causato la rivendicazione di terzi, proteggendo l'altra da cause collaterali."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_2",
+      "english": "Data Handling",
+      "set": {
+        "example": "Strict Data Handling rules force testers to keep customer dumps only on encrypted endpoints and shred them within 30 days of report delivery. = Regole rigide di Data Handling costringono i tester a tenere i dump dei clienti solo su endpoint cifrati e a distruggerli entro 30 giorni dalla consegna del report."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_2",
+      "english": "Data Destruction",
+      "set": {
+        "example": "Final Data Destruction is certified in writing once the consultant runs DoD-grade wipe on workstations and removes all evidence from cloud storage. = La Data Destruction finale viene certificata per iscritto una volta che il consulente esegue wipe DoD-grade sulle workstation e rimuove tutte le evidenze dal cloud storage."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_2",
+      "english": "Statement of Work",
+      "set": {
+        "english": "Pentest Statement of Work",
+        "italian": "Statement of Work del pentest",
+        "example": "Lawyers and the technical lead jointly review a Pentest Statement of Work to confirm targets, timelines, deliverables, and payment milestones. = Avvocati e lead tecnico revisionano congiuntamente un Pentest Statement of Work per confermare target, tempistiche, deliverable e milestone di pagamento.",
+        "note": "Documento contrattuale (SOW) che descrive scope, deliverable, tempi e costi di un ingaggio di pentest."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_3",
+      "english": "Bug Bounty Program",
+      "set": {
+        "example": "Mature companies launch a Bug Bounty Program on HackerOne with tiered payouts so independent researchers report bugs instead of dropping them publicly. = Le aziende mature lanciano un Bug Bounty Program su HackerOne con payout a livelli cosi' i ricercatori indipendenti riportano i bug invece di pubblicarli."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_3",
+      "english": "Safe Harbor",
+      "set": {
+        "example": "A clear Safe Harbor clause in the policy promises not to sue researchers who follow the program scope and timely disclosure rules. = Una clausola Safe Harbor chiara nella policy promette di non far causa ai ricercatori che rispettano lo scope del programma e le regole di disclosure tempestiva."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_3",
+      "english": "Responsible Disclosure",
+      "set": {
+        "english": "Bounty Responsible Disclosure Policy",
+        "italian": "Policy Responsible Disclosure dei bounty",
+        "example": "A solid Bounty Responsible Disclosure Policy sets a fixed window like 90 days before researchers may publish technical details on their blog. = Una Bounty Responsible Disclosure Policy solida fissa una finestra come 90 giorni prima che i ricercatori possano pubblicare dettagli tecnici sul loro blog.",
+        "note": "Variante bounty: regole pubbliche su come riportare un bug e quando il ricercatore puo' pubblicare."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_3",
+      "english": "Coordinated Disclosure",
+      "set": {
+        "example": "Mature Coordinated Disclosure synchronizes vendor patches, advisory publication, and PoC release so users have time to update before exploits go public. = Una Coordinated Disclosure matura sincronizza le patch vendor, la pubblicazione dell'advisory e il rilascio della PoC cosi' gli utenti hanno tempo di aggiornare prima che gli exploit diventino pubblici."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_3",
+      "english": "Duplicate",
+      "set": {
+        "example": "Bounty triagers mark a submission as Duplicate when it matches an earlier report still under triage, paying only the first valid finder. = I triager di bounty marcano una submission come Duplicate quando coincide con un report precedente ancora in triage, pagando solo il primo finder valido."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_3",
+      "english": "Out of Scope",
+      "set": {
+        "example": "Reports against staging-only subdomains get rejected as Out of Scope per the public bug bounty program policy. = I report contro sottodomini solo staging vengono rifiutati come Out of Scope secondo la policy pubblica del bug bounty program."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_4",
+      "english": "Privacy by Design",
+      "set": {
+        "example": "Mature engineering teams apply Privacy by Design from sprint zero, minimizing PII collection and pseudonymizing data before any analytics. = I team di engineering maturi applicano Privacy by Design dallo sprint zero, minimizzando la raccolta di PII e pseudonimizzando i dati prima di qualsiasi analytics."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_4",
+      "english": "Data Minimization",
+      "set": {
+        "example": "Strict Data Minimization rejects collecting birth dates when month-and-year suffices, shrinking the regulatory surface in case of a future breach. = Una Data Minimization rigida rifiuta di raccogliere date di nascita quando mese e anno bastano, riducendo la superficie regolatoria in caso di futuro breach."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_4",
+      "english": "Whistleblower",
+      "set": {
+        "example": "EU companies must offer Whistleblower channels under Directive 2019/1937 so employees report wrongdoing without fear of retaliation. = Le aziende UE devono offrire canali per Whistleblower sotto la Direttiva 2019/1937 cosi' i dipendenti possano segnalare illeciti senza paura di ritorsioni."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "ethack_legal_4",
+      "english": "Code of Ethics",
+      "set": {
+        "english": "Professional Code of Ethics",
+        "italian": "Codice etico professionale",
+        "example": "Certifications like CEH and OSCP require holders to sign a Professional Code of Ethics binding them to lawful and respectful conduct on engagements. = Certificazioni come CEH e OSCP richiedono ai titolari di firmare un Professional Code of Ethics che li vincola a una condotta lecita e rispettosa negli ingaggi.",
+        "note": "Documento etico vincolante per i professionisti certificati: definisce condotta lecita e responsabilita'."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_1",
+      "english": "Jeopardy CTF",
+      "set": {
+        "example": "Most online competitions run as a Jeopardy CTF with independent challenges across web, pwn, crypto, and forensics that teams solve for points. = La maggior parte delle competizioni online gira come Jeopardy CTF con sfide indipendenti su web, pwn, crypto e forensics che i team risolvono per punti."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_1",
+      "english": "Web Challenge",
+      "set": {
+        "example": "A typical Web Challenge ships a vulnerable Flask app with an SQL injection or SSTI bug that players exploit to read /flag.txt. = Una tipica Web Challenge rilascia un'app Flask vulnerabile con un bug di SQL injection o SSTI che i giocatori sfruttano per leggere /flag.txt."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_1",
+      "english": "Pwn Challenge",
+      "set": {
+        "example": "A Pwn Challenge gives players a compiled binary and a remote nc endpoint, asking them to exploit a buffer overflow for a shell. = Una Pwn Challenge da ai giocatori un binario compilato e un endpoint nc remoto, chiedendo loro di sfruttare un buffer overflow per una shell."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_1",
+      "english": "Reverse Challenge",
+      "set": {
+        "example": "A Reverse Challenge ships a stripped ELF that checks a license string; players must reverse the algorithm and produce a valid key. = Una Reverse Challenge rilascia un ELF stripped che controlla una stringa di licenza; i giocatori devono fare reverse dell'algoritmo e produrre una chiave valida."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_1",
+      "english": "Crypto Challenge",
+      "set": {
+        "example": "A Crypto Challenge often hands out a misused AES-CBC oracle that leaks plaintext one byte at a time when fed crafted ciphertexts. = Una Crypto Challenge spesso fornisce un oracle AES-CBC mal usato che espone plaintext un byte alla volta quando alimentato con ciphertext costruiti ad hoc."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_1",
+      "english": "Forensics Challenge",
+      "set": {
+        "example": "A Forensics Challenge gives a memory dump and asks players to recover a hidden flag from a malicious process's heap using Volatility. = Una Forensics Challenge fornisce un memory dump e chiede ai giocatori di recuperare una flag nascosta dall'heap di un processo malevolo usando Volatility."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_1",
+      "english": "Write-up",
+      "set": {
+        "example": "After a CTF ends, top teams publish a Write-up on their blog explaining the intended solution path step by step for the community. = Dopo che un CTF finisce, i top team pubblicano un Write-up sul loro blog spiegando il percorso di soluzione previsto passo per passo per la community."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_2",
+      "english": "HackTheBox",
+      "set": {
+        "example": "Aspiring pentesters grind HackTheBox machines daily, building a CV of rooted boxes that proves practical skill to prospective employers. = Gli aspiranti pentester grindano macchine HackTheBox ogni giorno, costruendo un CV di box rootate che dimostra abilita' pratica ai datori di lavoro."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_2",
+      "english": "TryHackMe",
+      "set": {
+        "example": "Beginners often start on TryHackMe because its rooms include guided tasks and inline learning material before harder exploitation. = I principianti iniziano spesso su TryHackMe perche' le sue room includono task guidati e materiale didattico inline prima dello sfruttamento piu' duro."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_2",
+      "english": "OffSec PG",
+      "set": {
+        "italian": "OffSec PG",
+        "example": "OSCP candidates drill against OffSec PG Practice machines for weeks because they emulate the exam style more closely than HackTheBox boxes. = I candidati OSCP si esercitano su macchine OffSec PG Practice per settimane perche' emulano lo stile dell'esame piu' fedelmente delle box HackTheBox.",
+        "note": "Offensive Security Proving Grounds: piattaforma di lab a pagamento creata dal vendor di OSCP."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_2",
+      "english": "VulnHub",
+      "set": {
+        "example": "Self-learners download VulnHub VMs to spin up old-school boot2root labs entirely offline on their own VirtualBox host. = Gli autodidatti scaricano VM VulnHub per accendere lab boot2root old-school interamente offline sul proprio host VirtualBox."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_2",
+      "english": "PortSwigger Academy",
+      "set": {
+        "example": "Web hackers learn through PortSwigger Academy labs that pair each Burp Suite feature with hands-on exploitation of realistic web bugs. = Gli web hacker imparano tramite lab di PortSwigger Academy che abbinano ogni feature di Burp Suite a uno sfruttamento pratico di bug web realistici."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_2",
+      "english": "OverTheWire",
+      "set": {
+        "example": "Beginners cut their Linux teeth on OverTheWire's Bandit wargame, learning shell tools one level at a time over SSH. = I principianti si fanno le ossa con Linux sul wargame Bandit di OverTheWire, imparando i tool shell un livello alla volta via SSH."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_2",
+      "english": "PicoCTF",
+      "set": {
+        "example": "High school students try PicoCTF every year because its challenges teach core security concepts with progressively harder difficulty curves. = Gli studenti delle superiori provano PicoCTF ogni anno perche' le sue sfide insegnano i concetti core di sicurezza con curve di difficolta' progressivamente piu' dure."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_2",
+      "english": "Root Me",
+      "set": {
+        "example": "Players grind hundreds of categorized challenges on Root Me, climbing a global ranking that recruiters in Europe occasionally browse. = I giocatori grindano centinaia di sfide categorizzate su Root Me, scalando una classifica globale che i recruiter in Europa a volte sfogliano."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_2",
+      "english": "CTFtime",
+      "set": {
+        "example": "Competitive teams plan their season around CTFtime, picking weighted events that boost their global ranking by year-end. = I team competitivi pianificano la loro stagione attorno a CTFtime, scegliendo eventi pesati che spingono il loro ranking globale a fine anno."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_2",
+      "english": "PwnCollege",
+      "set": {
+        "example": "Aspiring exploit developers grind PwnCollege dojos to build the binary exploitation muscles needed for OSED-level work. = Gli aspiranti exploit developer grindano i dojo di PwnCollege per costruire i muscoli di binary exploitation necessari per lavori di livello OSED."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_3",
+      "english": "Walkthrough",
+      "set": {
+        "example": "After failing a machine, players read a community Walkthrough to learn the intended path and absorb the technique for next time. = Dopo aver fallito una macchina, i giocatori leggono un Walkthrough della community per imparare il path previsto e assorbire la tecnica per la prossima volta."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_3",
+      "english": "IppSec",
+      "set": {
+        "example": "Aspiring pentesters watch IppSec videos to absorb both the tools and the methodical mindset behind solving HackTheBox boxes end to end. = Gli aspiranti pentester guardano i video di IppSec per assorbire sia i tool sia il mindset metodico dietro alla risoluzione end-to-end di box HackTheBox."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_3",
+      "english": "CherryTree",
+      "set": {
+        "example": "OSCP candidates write engagement notes in CherryTree, exploiting its hierarchical tree to mirror network topology and findings per host. = I candidati OSCP scrivono note di ingaggio in CherryTree, sfruttando il suo albero gerarchico per rispecchiare topologia di rete e finding per host."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_4",
+      "english": "VirtualBox",
+      "set": {
+        "example": "Home labs commonly run on VirtualBox because Oracle ships it free across Windows, Linux, and macOS with snapshot support out of the box. = I lab casalinghi girano spesso su VirtualBox perche' Oracle lo distribuisce gratis su Windows, Linux e macOS con supporto snapshot integrato."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_4",
+      "english": "VMware",
+      "set": {
+        "example": "Professional pentesters often prefer VMware Workstation for its mature NAT stack and rock-solid snapshot performance during long engagements. = I pentester professionisti preferiscono spesso VMware Workstation per il suo stack NAT maturo e le performance solidissime degli snapshot su ingaggi lunghi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_4",
+      "english": "Proxmox",
+      "set": {
+        "example": "Home labbers run Proxmox on a single mini-PC to host dozens of victim VMs, accessing them remotely via the web console from any laptop. = Gli home labber girano Proxmox su un singolo mini-PC per ospitare decine di VM vittima, accedendoci da remoto via console web da qualsiasi laptop."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_4",
+      "english": "Kali Linux",
+      "set": {
+        "example": "Most pentest engagements run from a Kali Linux VM with pre-installed tools like nmap, Burp Suite, and Metasploit ready out of the box. = La maggior parte degli ingaggi di pentest gira da una VM Kali Linux con tool pre-installati come nmap, Burp Suite e Metasploit pronti out of the box."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_4",
+      "english": "Parrot OS",
+      "set": {
+        "example": "Some testers prefer Parrot OS over Kali for its lighter footprint and dedicated AnonSurf mode that routes traffic through Tor by default. = Alcuni tester preferiscono Parrot OS a Kali per il footprint piu' leggero e la modalita' AnonSurf dedicata che instrada il traffico via Tor di default."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_4",
+      "english": "BlackArch",
+      "set": {
+        "example": "Power users layer BlackArch repositories on top of vanilla Arch to access thousands of pentest tools without rebuilding their daily-driver OS. = Gli utenti esperti aggiungono i repository BlackArch su un Arch vanilla per accedere a migliaia di tool di pentest senza ricostruire il sistema operativo da daily driver."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_4",
+      "english": "Snapshot",
+      "set": {
+        "example": "Lab operators take a Snapshot of the victim VM before each exploit attempt so they can revert in seconds when shellcode crashes the target. = Gli operatori del lab fanno uno Snapshot della VM vittima prima di ogni tentativo di exploit cosi' possono fare revert in secondi quando lo shellcode crasha il target."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "ethack_ctf_labs_4",
+      "english": "Network Segmentation",
+      "set": {
+        "example": "Home labs use VLAN-based Network Segmentation to isolate vulnerable VMs from the family laptops sharing the same physical router. = I lab casalinghi usano una Network Segmentation basata su VLAN per isolare le VM vulnerabili dai laptop di famiglia che condividono lo stesso router fisico."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_1",
+      "english": "OSCP",
+      "set": {
+        "example": "Hiring managers treat the OSCP as a baseline filter for junior pentest roles thanks to its hands-on 24-hour exploitation exam. = Gli hiring manager trattano l'OSCP come filtro base per ruoli junior di pentest grazie al suo esame pratico di sfruttamento di 24 ore."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_1",
+      "english": "CEH",
+      "set": {
+        "example": "Government contractors often require the CEH because it appears on the DoD 8570 list of approved cybersecurity certifications. = Gli appaltatori governativi richiedono spesso la CEH perche' appare nella lista DoD 8570 delle certificazioni cybersecurity approvate."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_1",
+      "english": "PNPT",
+      "set": {
+        "example": "The PNPT exam ships an entire enterprise-style Active Directory environment that candidates must own end to end in five days. = L'esame PNPT rilascia un intero ambiente Active Directory enterprise-style che i candidati devono ownare end-to-end in cinque giorni."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_1",
+      "english": "eJPT",
+      "set": {
+        "example": "Career switchers start with eJPT because INE's online proctoring and beginner-friendly scope let them prove fundamentals in a weekend. = Chi cambia carriera inizia con eJPT perche' il proctoring online di INE e lo scope beginner-friendly permettono di dimostrare le basi in un weekend."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_1",
+      "english": "GPEN",
+      "set": {
+        "example": "Corporate training budgets often cover GPEN because SANS courses qualify for GIAC's high-rigor multiple-choice exam reputation. = I budget di formazione aziendali coprono spesso GPEN perche' i corsi SANS qualificano per la reputazione dell'esame GIAC ad alto rigore."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_1",
+      "english": "CRTP",
+      "set": {
+        "example": "Aspiring red teamers tackle CRTP from Altered Security to master Active Directory abuse like Kerberoasting and constrained delegation chains. = Gli aspiranti red team affrontano CRTP di Altered Security per padroneggiare abusi di Active Directory come Kerberoasting e catene di constrained delegation."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_1",
+      "english": "CRTO",
+      "set": {
+        "example": "Operators ready for advanced ops earn the CRTO by completing Zero-Point Security labs and a full Cobalt Strike-style engagement exam. = Gli operatori pronti per ops avanzate prendono la CRTO completando i lab di Zero-Point Security e un esame stile ingaggio Cobalt Strike completo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_1",
+      "english": "OSWE",
+      "set": {
+        "example": "Web specialists pursue OSWE for its 48-hour exam that requires chaining source code review with custom exploit scripts against modern apps. = Gli specialisti web inseguono OSWE per l'esame da 48 ore che richiede di concatenare review del codice sorgente con script di exploit custom contro app moderne."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_2",
+      "english": "OSEP",
+      "set": {
+        "example": "Red team candidates take OSEP to learn modern AV/EDR evasion alongside Active Directory attack chains in the PEN-300 course. = I candidati red team prendono OSEP per imparare evasione AV/EDR moderna assieme a catene di attacco Active Directory nel corso PEN-300."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_2",
+      "english": "OSED",
+      "set": {
+        "example": "Aspiring exploit developers earn OSED via the EXP-301 course, building Windows kernel and userland exploits from scratch in 48-hour labs. = Gli aspiranti exploit developer prendono OSED via il corso EXP-301, costruendo exploit Windows kernel e userland da zero in lab di 48 ore."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_2",
+      "english": "OSCE3",
+      "set": {
+        "italian": "OSCE3",
+        "example": "Holding OSCE3 means a candidate combined OSWE, OSEP, and OSED, marking them as an Offensive Security triple-certified specialist. = Avere OSCE3 significa che un candidato ha combinato OSWE, OSEP e OSED, marcandolo come specialista Offensive Security tripla certificazione.",
+        "note": "Riconoscimento Offensive Security ottenuto unendo OSWE + OSEP + OSED nello stesso profilo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_2",
+      "english": "CISSP",
+      "set": {
+        "example": "Senior security roles often demand CISSP because the (ISC)2 exam covers eight management-level domains valued by enterprise hiring panels. = I ruoli senior di sicurezza spesso richiedono CISSP perche' l'esame (ISC)2 copre otto domini di livello manageriale apprezzati dai panel di hiring enterprise."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_2",
+      "english": "CRTM",
+      "set": {
+        "example": "Lead operators chase CRTM from Altered Security to prove they can design, plan, and run full multi-domain red team campaigns. = Gli operatori lead inseguono CRTM di Altered Security per dimostrare di poter progettare, pianificare e condurre intere campagne red team multi-dominio."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_2",
+      "english": "OSWA",
+      "set": {
+        "example": "Web pentest beginners often warm up with OSWA from Offensive Security, focusing on practical app testing methodology before tackling OSWE. = I principianti del web pentest si scaldano spesso con OSWA di Offensive Security, concentrandosi su metodologia di test pratica prima di affrontare OSWE."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_2",
+      "english": "CCSAS",
+      "set": {
+        "example": "Cobalt Strike specialists prove deep operator knowledge by earning CCSAS, the certification Fortra runs around its flagship C2 framework. = Gli specialisti Cobalt Strike dimostrano conoscenza operativa profonda prendendo CCSAS, la certificazione che Fortra gestisce attorno al suo framework C2 di punta."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_2",
+      "english": "GXPN",
+      "set": {
+        "example": "Veteran exploit developers add GXPN to their portfolio because the SANS SEC660 course covers advanced fuzzing, ROP, and kernel exploitation. = Gli exploit developer veterani aggiungono GXPN al loro portfolio perche' il corso SANS SEC660 copre fuzzing avanzato, ROP ed exploitation del kernel."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_2",
+      "english": "CARTP",
+      "set": {
+        "example": "Cloud red team candidates earn CARTP to demonstrate hands-on offensive techniques against real Azure tenants in a 24-hour exam. = I candidati red team cloud prendono CARTP per dimostrare tecniche offensive pratiche contro tenant Azure reali in un esame di 24 ore."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_2",
+      "english": "AWS Security Specialty",
+      "set": {
+        "example": "Cloud security architects pursue the AWS Security Specialty to prove deep knowledge of IAM, KMS, GuardDuty, and incident response on AWS. = Gli architect cloud security inseguono la AWS Security Specialty per dimostrare conoscenza profonda di IAM, KMS, GuardDuty e incident response su AWS."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_3",
+      "english": "Junior Pentester",
+      "set": {
+        "example": "A new Junior Pentester usually runs scoped scans and tags low-hanging findings under a senior lead before owning entire engagements alone. = Un nuovo Junior Pentester di solito esegue scan scopati e tagga i finding low-hanging sotto un lead senior prima di ownare interi ingaggi da solo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_3",
+      "english": "Senior Pentester",
+      "set": {
+        "example": "An effective Senior Pentester scopes engagements, mentors juniors, and writes the executive summary that lands on the CISO's desk. = Un Senior Pentester efficace scopa gli ingaggi, fa mentoring ai junior e scrive l'executive summary che atterra sulla scrivania del CISO."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_3",
+      "english": "Red Team Operator",
+      "set": {
+        "example": "A skilled Red Team Operator runs long-haul implants, designs phishing pretexts, and stays evasive against modern EDR for weeks at a time. = Un Red Team Operator esperto gestisce implant long-haul, progetta pretest di phishing e rimane evasivo contro EDR moderni per settimane intere."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_3",
+      "english": "Security Researcher",
+      "set": {
+        "example": "A dedicated Security Researcher spends months reverse-engineering a niche IoT firmware to publish a CVE chain at a major conference. = Un Security Researcher dedicato passa mesi facendo reverse engineering di un firmware IoT di nicchia per pubblicare una catena CVE a una grande conferenza."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_3",
+      "english": "Exploit Developer",
+      "set": {
+        "example": "An advanced Exploit Developer turns a leaked crash dump into a working RCE chain that survives DEP, ASLR, and CFG on modern Windows. = Un Exploit Developer avanzato trasforma un crash dump leakato in una catena RCE funzionante che sopravvive a DEP, ASLR e CFG su Windows moderno."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_3",
+      "english": "Malware Analyst",
+      "set": {
+        "example": "A senior Malware Analyst at a SOC reverses a fresh banking trojan within hours to deliver YARA signatures and IOCs to global hunters. = Un Malware Analyst senior in un SOC reversa un trojan bancario fresco in poche ore per consegnare signature YARA e IOC agli hunter globali."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_4",
+      "english": "Methodology Selection",
+      "set": {
+        "example": "Smart Methodology Selection picks PTES for a black-box pentest but switches to OWASP WSTG when the entire engagement focuses on a single web app. = Una Methodology Selection intelligente sceglie PTES per un pentest black-box ma passa a OWASP WSTG quando l'intero ingaggio si concentra su un'unica web app."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_4",
+      "english": "Scoping Call",
+      "set": {
+        "example": "Every engagement opens with a Scoping Call where consultants nail down target lists, test windows, and emergency stop conditions with the client. = Ogni ingaggio si apre con una Scoping Call dove i consulenti fissano liste di target, finestre di test e condizioni di stop d'emergenza con il cliente."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_4",
+      "english": "Proposal",
+      "set": {
+        "example": "A polished Proposal bundles scope, methodology, deliverables, pricing, and CVs of the assigned testers in a single PDF for the prospect to sign. = Una Proposal curata raggruppa scope, metodologia, deliverable, prezzi e CV dei tester assegnati in un singolo PDF da firmare per il prospect."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_4",
+      "english": "Retainer",
+      "set": {
+        "example": "Banks lock in a Retainer with a pentest vendor so the same team can respond to incident or do quarterly tests without re-negotiating each time. = Le banche bloccano un Retainer con un vendor di pentest cosi' lo stesso team puo' rispondere agli incident o fare test trimestrali senza ri-negoziare ogni volta."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_4",
+      "english": "Fixed Price",
+      "set": {
+        "example": "Procurement teams prefer Fixed Price engagements because the cost stays predictable regardless of how many vulnerabilities testers ultimately uncover. = I team procurement preferiscono ingaggi Fixed Price perche' il costo resta prevedibile indipendentemente da quante vulnerabilita' i tester scoprono."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "ethack_career_4",
+      "english": "Continuous Learning",
+      "set": {
+        "example": "Sharp pentesters protect a Continuous Learning routine by carving out one hour daily for CVE writeups, CTFs, or new tools released that week. = I pentester sharp proteggono una routine di Continuous Learning ritagliandosi un'ora al giorno per writeup di CVE, CTF o nuovi tool rilasciati quella settimana."
+      }
+    },
+    {
+      "level": "4",
+      "lesson": "ethack_vuln_scanning_2",
+      "english": "Attack Vector",
+      "set": {
+        "english": "CVSS Attack Vector",
+        "italian": "Vettore di attacco CVSS",
+        "example": "A CVSS Attack Vector of Network means an unauthenticated remote attacker can reach the bug without any local foothold. = Un CVSS Attack Vector di Network significa che un attaccante remoto non autenticato puo' raggiungere il bug senza alcun appiglio locale.",
+        "note": "Metrica CVSS che codifica la distanza richiesta per sfruttare il bug: Network, Adjacent, Local, Physical."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "ethack_exploitation_1",
+      "english": "Payload",
+      "set": {
+        "english": "Exploitation Payload",
+        "italian": "Payload di sfruttamento",
+        "example": "Once the buffer overflow gains control, the Exploitation Payload typically spawns a Meterpreter reverse shell back to the attacker. = Una volta che il buffer overflow ottiene il controllo, il Exploitation Payload tipicamente avvia una reverse shell Meterpreter verso l'attaccante.",
+        "note": "Codice consegnato dall'exploit dopo aver dirottato l'esecuzione: shell, beacon, dropper o backdoor."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1313 @@
+{
+  "fixes": [
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "SLI",
+      "set": {
+        "italian": "SLI",
+        "example": "Pick a clear SLI such as the percentage of HTTP 200 responses over five minutes so the SLO has a measurable signal. = Scegli un SLI chiaro come la percentuale di risposte HTTP 200 su cinque minuti cosi' l'SLO ha un segnale misurabile."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "Error Budget",
+      "set": {
+        "example": "With a 99.9% SLO the error budget allows about 43 minutes of downtime per month before alerts page the on-call. = Con un SLO del 99,9% l'error budget consente circa 43 minuti di downtime al mese prima che gli alert chiamino l'on-call."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "Uptime",
+      "set": {
+        "example": "Production tier targets four nines of uptime, meaning the service may be unavailable for at most 52 minutes per year. = Il tier di produzione punta a quattro nove di uptime, cioe' il servizio puo' essere non disponibile al massimo 52 minuti l'anno."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "Latency",
+      "set": {
+        "example": "Track p99 latency on checkout requests so slow tail responses are caught even when the average looks healthy. = Misura la latency p99 sulle richieste di checkout cosi' le risposte lente in coda emergono anche quando la media sembra sana."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_2",
+      "english": "Throughput",
+      "set": {
+        "example": "Measure throughput in requests per second per pod to know when the HPA should scale out to handle peak load. = Misura il throughput in richieste al secondo per pod per sapere quando l'HPA deve scalare orizzontalmente per gestire il carico di picco."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_3",
+      "english": "Log Aggregation",
+      "set": {
+        "italian": "Aggregazione dei log",
+        "example": "Centralize pod stdout through a log aggregation pipeline so engineers can grep across hundreds of replicas without sshing into nodes. = Centralizza lo stdout dei pod tramite una pipeline di aggregazione dei log cosi' gli ingegneri possono grepare su centinaia di repliche senza sshare nei nodi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_3",
+      "english": "EFK Stack",
+      "set": {
+        "example": "Deploy the EFK stack on the cluster so Fluentd ships container logs to Elasticsearch and Kibana renders them. = Distribuisci lo stack EFK sul cluster cosi' Fluentd invia i log dei container a Elasticsearch e Kibana li renderizza."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_3",
+      "english": "Loki",
+      "set": {
+        "italian": "Loki",
+        "example": "Pair Loki with Promtail so logs are indexed only by labels, keeping storage cheap compared to a full Elasticsearch cluster. = Abbina Loki a Promtail cosi' i log sono indicizzati solo per label, mantenendo lo storage economico rispetto a un cluster Elasticsearch completo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_3",
+      "english": "Promtail",
+      "set": {
+        "italian": "Promtail",
+        "example": "Run Promtail as a DaemonSet so every node tails container log files and pushes them to Loki with pod labels attached. = Esegui Promtail come DaemonSet cosi' ogni nodo legge i file di log dei container e li invia a Loki con le label dei pod allegate."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_3",
+      "english": "Stdout/Stderr",
+      "set": {
+        "example": "Write application logs to stdout/stderr only, letting the container runtime capture them instead of writing to files inside the image. = Scrivi i log applicativi solo su stdout/stderr, lasciando che il container runtime li catturi invece di scrivere su file dentro l'immagine."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_3",
+      "english": "Structured Logging",
+      "set": {
+        "example": "Adopt structured logging in JSON so Loki and Elasticsearch can parse fields like trace_id and user_id without regex hacks. = Adotta il logging strutturato in JSON cosi' Loki ed Elasticsearch possono parsare campi come trace_id e user_id senza hack con regex."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_3",
+      "english": "Log Rotation",
+      "set": {
+        "example": "Kubelet handles log rotation per container at 10MB by default, so apps do not need their own rotation strategy. = Kubelet gestisce la rotation dei log per container a 10MB di default, cosi' le app non devono avere la loro strategia di rotation."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_3",
+      "english": "JSON Logs",
+      "set": {
+        "example": "Emit JSON logs so Loki can extract structured fields and filter by status code or latency without parsing free-form text. = Emetti log JSON cosi' Loki puo' estrarre campi strutturati e filtrare per status code o latency senza parsare testo libero."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_3",
+      "english": "Log Level",
+      "set": {
+        "example": "Set the log level to info in production and debug only when troubleshooting to keep storage costs under control. = Imposta il log level a info in produzione e a debug solo durante il troubleshooting per tenere i costi di storage sotto controllo."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_3",
+      "english": "Log Retention",
+      "set": {
+        "example": "Tune log retention to thirty days for hot storage and ship older logs to S3 to balance debuggability with cost. = Tara la retention dei log a trenta giorni per lo storage caldo e invia i log piu' vecchi su S3 per bilanciare debuggabilita' e costi."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_4",
+      "english": "Distributed Tracing",
+      "set": {
+        "italian": "Tracing distribuito",
+        "example": "Instrument microservices with distributed tracing so a single user request can be followed across API gateway, auth and database hops. = Strumenta i microservizi con tracing distribuito cosi' una singola richiesta utente puo' essere seguita tra API gateway, auth e hop al database."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_4",
+      "english": "Jaeger",
+      "set": {
+        "italian": "Jaeger",
+        "example": "Open Jaeger UI to inspect a slow checkout trace and discover that the auth service contributes 800ms of the 1.2s total. = Apri la UI di Jaeger per ispezionare una trace di checkout lenta e scoprire che il servizio auth contribuisce con 800ms degli 1,2s totali."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_4",
+      "english": "OpenTelemetry",
+      "set": {
+        "italian": "OpenTelemetry",
+        "example": "Use the OpenTelemetry SDK to export traces, metrics and logs through a single vendor-neutral pipeline. = Usa l'SDK OpenTelemetry per esportare tracce, metriche e log attraverso una singola pipeline vendor-neutral."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_4",
+      "english": "Span",
+      "set": {
+        "italian": "Span",
+        "example": "Wrap the database call in its own span so its duration and SQL statement show up as a child of the HTTP handler span. = Avvolgi la chiamata al database in uno span dedicato cosi' la sua durata e lo statement SQL appaiono come figlio dello span dell'handler HTTP."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_4",
+      "english": "Trace ID",
+      "set": {
+        "italian": "Trace ID",
+        "example": "Propagate the trace ID via the traceparent header so logs from every service can be correlated to one user request. = Propaga il Trace ID tramite l'header traceparent cosi' i log di ogni servizio possono essere correlati a una sola richiesta utente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_4",
+      "english": "Sampling",
+      "set": {
+        "italian": "Sampling",
+        "example": "Apply tail-based sampling at 5% so the backend keeps interesting slow or errored traces while dropping routine ones. = Applica un sampling tail-based al 5% cosi' il backend conserva le tracce interessanti, lente o con errore, scartando quelle routine."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_4",
+      "english": "Context Propagation",
+      "set": {
+        "italian": "Propagazione del contesto",
+        "example": "Without context propagation the trace breaks at every service boundary, leaving orphan spans that cannot be assembled into a full trace. = Senza propagazione del contesto la trace si interrompe a ogni confine di servizio, lasciando span orfani che non si possono assemblare in una trace completa."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_4",
+      "english": "OTLP",
+      "set": {
+        "italian": "OTLP",
+        "example": "Configure the collector to receive OTLP over gRPC on port 4317 so every SDK can ship traces in the same wire format. = Configura il collector per ricevere OTLP su gRPC sulla porta 4317 cosi' ogni SDK puo' inviare le tracce nello stesso formato."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_4",
+      "english": "Tempo",
+      "set": {
+        "italian": "Tempo",
+        "example": "Store traces in Grafana Tempo using object storage so retention can stretch to weeks without an expensive Elasticsearch cluster. = Conserva le tracce in Grafana Tempo usando object storage cosi' la retention puo' estendersi a settimane senza un costoso cluster Elasticsearch."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "dk_mon_4",
+      "english": "Grafana",
+      "set": {
+        "italian": "Grafana",
+        "example": "Build a Grafana dashboard that overlays Prometheus latency, Loki errors and Tempo traces for one cohesive incident view. = Costruisci una dashboard Grafana che sovrappone latency da Prometheus, errori da Loki e trace da Tempo per una vista d'incidente coesa."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_1",
+      "english": "GitOps",
+      "set": {
+        "italian": "GitOps",
+        "example": "Adopt GitOps so every cluster change is a pull request reviewed and audited just like application code. = Adotta GitOps cosi' ogni modifica al cluster e' una pull request revisionata e tracciata come il codice applicativo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_1",
+      "english": "Source of Truth",
+      "set": {
+        "example": "When Git is the source of truth, manual kubectl edit changes are reverted at the next reconciliation. = Quando Git e' la fonte di verita', le modifiche manuali con kubectl edit vengono annullate alla prossima riconciliazione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_1",
+      "english": "Declarative Deployment",
+      "set": {
+        "italian": "Deployment dichiarativo",
+        "example": "Switch to declarative deployment so the YAML in Git fully describes the desired cluster state instead of imperative kubectl steps. = Passa al deployment dichiarativo cosi' lo YAML in Git descrive integralmente lo stato desiderato del cluster invece di passi imperativi con kubectl."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_1",
+      "english": "Continuous Deployment",
+      "set": {
+        "example": "Every merge to main triggers continuous deployment, with the GitOps controller syncing the staging cluster within seconds. = Ogni merge su main attiva il deploy continuo, con il controller GitOps che sincronizza il cluster di staging in pochi secondi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_1",
+      "english": "Observable",
+      "set": {
+        "example": "Argo CD makes the cluster observable: a red badge on the Application view shows immediately which resource has drifted from Git. = Argo CD rende il cluster osservabile: un badge rosso sulla vista Application mostra subito quale risorsa ha derivato da Git."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_1",
+      "english": "Auditable",
+      "set": {
+        "example": "Because each change lands as a Git commit, GitOps deployments are auditable: git blame answers who changed what and when. = Poiche' ogni modifica arriva come commit Git, i deploy GitOps sono auditabili: git blame risponde chi ha cambiato cosa e quando."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_1",
+      "english": "Reconciliation",
+      "set": {
+        "italian": "Riconciliazione",
+        "example": "On every reconciliation Argo CD compares live cluster state to Git and applies the diff to converge toward the desired manifests. = A ogni riconciliazione Argo CD confronta lo stato live del cluster con Git e applica il diff per convergere verso i manifesti desiderati."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_1",
+      "english": "Drift",
+      "set": {
+        "italian": "Drift",
+        "example": "A hotfix applied with kubectl edit caused drift, so Argo CD flagged the Deployment as OutOfSync until Git was updated. = Un hotfix applicato con kubectl edit ha causato drift, quindi Argo CD ha segnalato il Deployment come OutOfSync finche' Git non e' stato aggiornato."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_1",
+      "english": "Drift Detection",
+      "set": {
+        "italian": "Rilevamento del drift",
+        "example": "Enable drift detection so every three minutes the controller scans the cluster and alerts when manual changes diverge from Git. = Abilita il rilevamento del drift cosi' ogni tre minuti il controller scansiona il cluster e segnala quando le modifiche manuali divergono da Git."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "ArgoCD",
+      "set": {
+        "italian": "ArgoCD",
+        "example": "Install ArgoCD into its own namespace and let it manage application manifests across staging and production clusters. = Installa ArgoCD nel suo namespace e lascia che gestisca i manifesti applicativi tra cluster di staging e produzione."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Application",
+      "set": {
+        "italian": "Application",
+        "example": "Create an Argo CD Application pointing at the manifests path so the controller syncs that folder into the target cluster. = Crea un'Application di Argo CD che punta al path dei manifesti cosi' il controller sincronizza quella cartella nel cluster target."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Source",
+      "set": {
+        "italian": "Source",
+        "example": "The source block defines repo URL, path and revision so ArgoCD pulls from exactly the right Git folder and branch. = Il blocco source definisce URL del repo, path e revisione cosi' ArgoCD scarica esattamente dal folder e dal branch Git giusti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Destination",
+      "set": {
+        "italian": "Destination",
+        "example": "The destination block sends manifests to the production cluster API server and the namespace named payments. = Il blocco destination invia i manifesti all'API server del cluster di produzione e al namespace chiamato payments."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Sync",
+      "set": {
+        "italian": "Sync",
+        "example": "Run argocd app sync payments to apply the latest commit immediately instead of waiting for the polling interval. = Esegui argocd app sync payments per applicare subito l'ultimo commit invece di aspettare l'intervallo di polling."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Auto Sync",
+      "set": {
+        "italian": "Auto Sync",
+        "example": "Enable auto sync on the staging Application so every commit to main reaches the cluster without a human kubectl. = Abilita Auto Sync sull'Application di staging cosi' ogni commit su main raggiunge il cluster senza kubectl umano."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Self Heal",
+      "set": {
+        "italian": "Self Heal",
+        "example": "Turn on Self Heal so any ad-hoc kubectl scale by an engineer is immediately rolled back to the replica count in Git. = Attiva Self Heal cosi' ogni kubectl scale ad-hoc fatto da un ingegnere viene immediatamente riportato al numero di repliche in Git."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Prune",
+      "set": {
+        "italian": "Prune",
+        "example": "Enable Prune so when a manifest is deleted from Git the corresponding ConfigMap is also removed from the cluster. = Abilita Prune cosi' quando un manifesto viene cancellato da Git anche il ConfigMap corrispondente viene rimosso dal cluster."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "Sync Wave",
+      "set": {
+        "italian": "Sync Wave",
+        "example": "Set a sync-wave annotation of -1 on the CRD so it is installed before the controllers that depend on it. = Imposta un'annotazione sync-wave a -1 sulla CRD cosi' viene installata prima dei controller che dipendono da essa."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_2",
+      "english": "AppProject",
+      "set": {
+        "italian": "AppProject",
+        "example": "Use an AppProject to limit which Git repos and namespaces a team can touch, enforcing least-privilege boundaries. = Usa un AppProject per limitare quali repo Git e namespace un team puo' toccare, imponendo confini di minimo privilegio."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "FluxCD",
+      "set": {
+        "italian": "FluxCD",
+        "example": "Bootstrap FluxCD into the cluster with flux bootstrap github so the GitOps controllers manage themselves from the same repo. = Avvia FluxCD nel cluster con flux bootstrap github cosi' i controller GitOps si gestiscono dallo stesso repo."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "GitRepository",
+      "set": {
+        "italian": "GitRepository",
+        "example": "Declare a GitRepository pointing at github.com/team/manifests so Flux pulls the latest commit every minute. = Dichiara un GitRepository che punta a github.com/team/manifests cosi' Flux scarica l'ultimo commit ogni minuto."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "Kustomization",
+      "set": {
+        "italian": "Kustomization",
+        "example": "Reference a Kustomization at path ./overlays/prod so Flux builds production manifests from the shared base. = Referenzia una Kustomization al path ./overlays/prod cosi' Flux costruisce i manifesti di produzione dalla base condivisa."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "HelmRelease",
+      "set": {
+        "italian": "HelmRelease",
+        "example": "Define a HelmRelease for nginx-ingress 4.7 so Flux installs and upgrades the chart whenever the version in Git changes. = Definisci una HelmRelease per nginx-ingress 4.7 cosi' Flux installa e aggiorna il chart quando cambia la versione in Git."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "OCI Repository",
+      "set": {
+        "example": "Switch a Source to an OCI Repository so manifests are pulled from a container registry alongside the application images. = Cambia una Source in un OCI Repository cosi' i manifesti sono scaricati da un registry container insieme alle immagini applicative."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "Source Controller",
+      "set": {
+        "italian": "Source Controller",
+        "example": "The Source Controller fetches Git, Helm and OCI artifacts every minute and exposes their contents to the other Flux controllers. = Il Source Controller scarica artefatti Git, Helm e OCI ogni minuto e ne espone il contenuto agli altri controller di Flux."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "Notification Controller",
+      "set": {
+        "italian": "Notification Controller",
+        "example": "Wire the Notification Controller to Slack so a failed Kustomization reconciliation pages the platform channel immediately. = Collega il Notification Controller a Slack cosi' una riconciliazione di Kustomization fallita avvisa subito il canale piattaforma."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "Flagger",
+      "set": {
+        "italian": "Flagger",
+        "example": "Add Flagger on top of Flux so a canary rollout can shift traffic from 5% to 100% based on Prometheus success-rate metrics. = Aggiungi Flagger sopra a Flux cosi' un rollout canary puo' spostare il traffico dal 5% al 100% in base a metriche di success-rate Prometheus."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "Image Reflector",
+      "set": {
+        "italian": "Image Reflector",
+        "example": "The Image Reflector polls the container registry every minute and records the newest semver tag for each tracked image. = L'Image Reflector interroga il registry container ogni minuto e registra il tag semver piu' recente per ogni immagine tracciata."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_3",
+      "english": "Image Automation",
+      "set": {
+        "example": "With Image Automation enabled, a new myapp:1.4.2 tag in the registry is committed to Git automatically by the controller. = Con Image Automation abilitata, un nuovo tag myapp:1.4.2 nel registry viene committato in Git automaticamente dal controller."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_4",
+      "english": "Progressive Delivery",
+      "set": {
+        "italian": "Progressive Delivery",
+        "example": "Adopt progressive delivery so a new build is exposed to 1% of users first and rolled forward only when error rates stay flat. = Adotta progressive delivery cosi' una nuova build viene esposta prima all'1% degli utenti e avanza solo se gli errori restano stabili."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_4",
+      "english": "Canary Release",
+      "set": {
+        "italian": "Canary Release",
+        "example": "Roll out a canary release to 10% of pods first, watching latency dashboards before promoting the new image to 100%. = Rilascia una canary release al 10% dei pod prima, osservando le dashboard di latency prima di promuovere la nuova immagine al 100%."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_4",
+      "english": "Blue/Green Deployment",
+      "set": {
+        "example": "With a blue/green deployment the new green stack runs alongside blue and a single service flip cuts over traffic atomically. = Con un deploy blue/green lo stack green gira accanto al blue e un singolo swap del service sposta il traffico atomicamente."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_4",
+      "english": "Feature Flag",
+      "set": {
+        "italian": "Feature Flag",
+        "example": "Hide the new checkout flow behind a feature flag so engineers can enable it for internal users before opening it to everyone. = Nascondi il nuovo flow di checkout dietro un feature flag cosi' gli ingegneri possono abilitarlo agli utenti interni prima di aprirlo a tutti."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_4",
+      "english": "A/B Testing",
+      "set": {
+        "italian": "A/B Testing",
+        "example": "Run A/B testing on the homepage banner so half of the users see version A and the conversion rate decides the winner. = Esegui A/B testing sul banner della homepage cosi' meta' degli utenti vede la versione A e il tasso di conversione decide il vincitore."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_4",
+      "english": "Argo Rollouts",
+      "set": {
+        "italian": "Argo Rollouts",
+        "example": "Install Argo Rollouts so a Rollout resource replaces Deployment and unlocks canary and blue/green strategies. = Installa Argo Rollouts cosi' una risorsa Rollout sostituisce Deployment e sblocca strategie canary e blue/green."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_4",
+      "english": "Analysis Run",
+      "set": {
+        "italian": "AnalysisRun",
+        "example": "An AnalysisRun queries Prometheus for the 5xx rate during a canary step and aborts the rollout if the threshold is breached. = Un AnalysisRun interroga Prometheus per il tasso di 5xx durante uno step di canary e annulla il rollout se la soglia viene superata."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_4",
+      "english": "Promotion",
+      "set": {
+        "example": "After three canary steps pass their analysis, manual promotion to 100% requires a kubectl argo rollouts promote command. = Dopo tre step canary che passano l'analisi, la promozione manuale al 100% richiede il comando kubectl argo rollouts promote."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_4",
+      "english": "Auto Rollback",
+      "set": {
+        "italian": "Rollback automatico",
+        "example": "With auto rollback wired to Prometheus, a sudden p99 latency spike during a canary step reverts the deployment within seconds. = Con il rollback automatico collegato a Prometheus, un picco improvviso di latency p99 durante uno step canary annulla il deploy in pochi secondi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "dk_gitops_4",
+      "english": "Shadow Traffic",
+      "set": {
+        "italian": "Shadow traffic",
+        "example": "Mirror 100% of production requests as shadow traffic to the new build so load-test data is real without affecting users. = Specchia il 100% delle richieste di produzione come shadow traffic verso la nuova build cosi' i dati di load-test sono reali senza impattare gli utenti."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "CRD",
+      "set": {
+        "italian": "CRD",
+        "example": "Install a Backup CRD into the cluster so users can declare backup jobs as native Kubernetes resources alongside Pods. = Installa una CRD Backup nel cluster cosi' gli utenti possono dichiarare job di backup come risorse native Kubernetes accanto ai Pod."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "OpenAPI Schema",
+      "set": {
+        "example": "Declare an OpenAPI schema in the CRD with a required image field so the apiserver rejects malformed Custom Resources at admission. = Dichiara uno schema OpenAPI nella CRD con un campo image richiesto cosi' l'apiserver rifiuta Custom Resource malformate in ammissione."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "Validation",
+      "set": {
+        "example": "Schema validation rejects a Backup resource missing the schedule field before it ever reaches the operator's reconcile loop. = La validazione dello schema rifiuta una risorsa Backup senza il campo schedule prima che raggiunga il reconcile loop dell'operator."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "Conversion Webhook",
+      "set": {
+        "italian": "Webhook di conversione",
+        "example": "Register a conversion webhook so the apiserver can translate stored v1alpha1 objects into the served v1 schema on every read. = Registra un webhook di conversione cosi' l'apiserver puo' tradurre gli oggetti v1alpha1 memorizzati nello schema v1 servito a ogni lettura."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "Status Subresource",
+      "set": {
+        "italian": "Status subresource",
+        "example": "Enable the status subresource so the controller can patch .status without conflicting with kubectl edit changes on .spec. = Abilita la status subresource cosi' il controller puo' patchare .status senza confliggere con modifiche kubectl edit su .spec."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "Finalizer",
+      "set": {
+        "italian": "Finalizer",
+        "example": "Add a finalizer to the Custom Resource so deletion is blocked until the operator has cleaned up external cloud objects. = Aggiungi un finalizer alla Custom Resource cosi' la cancellazione e' bloccata finche' l'operator non ha ripulito gli oggetti cloud esterni."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_1",
+      "english": "Short Name",
+      "set": {
+        "example": "Declare a short name like bk on the CRD so engineers can type kubectl get bk instead of kubectl get backups. = Dichiara uno short name come bk sulla CRD cosi' gli ingegneri possono digitare kubectl get bk invece di kubectl get backups."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_2",
+      "english": "Custom Controller",
+      "set": {
+        "example": "Run the custom controller as a Deployment in the cluster so it can watch its CRD and reconcile actual state against spec. = Esegui il controller personalizzato come Deployment nel cluster cosi' puo' osservare la sua CRD e riconciliare lo stato reale rispetto a spec."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_2",
+      "english": "Reconcile Loop",
+      "set": {
+        "english": "Operator Reconcile Loop",
+        "italian": "Reconcile loop dell'operator",
+        "example": "Inside the operator reconcile loop, compare desired spec against live state and issue patches to converge cluster reality. = Dentro il reconcile loop dell'operator, confronta la spec desiderata con lo stato live ed emetti patch per far convergere la realta' del cluster.",
+        "note": "Rinominato per distinguerlo dal generico 'Reconcile Loop' di dk_k8s_intro_2."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_2",
+      "english": "Operational Knowledge",
+      "set": {
+        "example": "An operator encodes operational knowledge like 'always promote a Postgres replica before deleting the primary' into reconcile logic. = Un operator codifica conoscenza operativa come 'promuovi sempre una replica Postgres prima di cancellare il primario' nella logica di reconcile."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_2",
+      "english": "Event-Driven",
+      "set": {
+        "example": "Operators are event-driven: the informer pushes a notification only when a watched resource changes, avoiding constant polling. = Gli operator sono guidati da eventi: l'informer manda una notifica solo quando una risorsa osservata cambia, evitando polling continuo."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_2",
+      "english": "Watch",
+      "set": {
+        "italian": "Watch",
+        "example": "Open a watch on Backup resources so the controller receives ADD, MODIFY and DELETE events instead of polling the apiserver. = Apri un watch sulle risorse Backup cosi' il controller riceve eventi ADD, MODIFY e DELETE invece di interrogare l'apiserver."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_2",
+      "english": "Informer",
+      "set": {
+        "italian": "Informer",
+        "example": "Use a shared Informer in controller-runtime so every reconciler reads from the same local cache instead of hammering the apiserver. = Usa un Informer condiviso in controller-runtime cosi' ogni reconciler legge dalla stessa cache locale invece di martellare l'apiserver."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_2",
+      "english": "Work Queue",
+      "set": {
+        "example": "The work queue deduplicates reconcile keys so a flurry of events for the same resource collapses into one reconcile invocation. = La coda di lavoro deduplica le chiavi di reconcile cosi' una raffica di eventi per la stessa risorsa collassa in una sola invocazione di reconcile."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_2",
+      "english": "Idempotent",
+      "set": {
+        "example": "Reconcile must be idempotent: invoking it twice on the same resource version must yield the same cluster state with no side effects. = Reconcile deve essere idempotente: invocarlo due volte sulla stessa versione della risorsa deve produrre lo stesso stato del cluster senza effetti collaterali."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "Operator SDK",
+      "set": {
+        "italian": "Operator SDK",
+        "example": "Scaffold a new operator with operator-sdk init so the SDK generates project layout, Dockerfile and bundle metadata in one command. = Scaffoldare un nuovo operator con operator-sdk init cosi' l'SDK genera layout del progetto, Dockerfile e metadata di bundle in un comando."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "Kubebuilder",
+      "set": {
+        "italian": "Kubebuilder",
+        "example": "Bootstrap the project with kubebuilder init --domain example.com so the layout includes controller-runtime and CRD scaffolding. = Avvia il progetto con kubebuilder init --domain example.com cosi' il layout include controller-runtime e lo scaffolding delle CRD."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "controller-runtime",
+      "set": {
+        "italian": "controller-runtime",
+        "example": "Import sigs.k8s.io/controller-runtime so the operator gets a Manager, caching informers and a reconciler interface out of the box. = Importa sigs.k8s.io/controller-runtime cosi' l'operator ottiene un Manager, informer con cache e un'interfaccia reconciler di default."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "Helm Operator",
+      "set": {
+        "example": "A Helm Operator wraps an existing Helm chart so users can install it via a Custom Resource without learning Helm CLI commands. = Un Helm Operator avvolge un chart Helm esistente cosi' gli utenti possono installarlo via Custom Resource senza imparare i comandi Helm CLI."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "Ansible Operator",
+      "set": {
+        "example": "An Ansible Operator runs the linked playbook whenever the Custom Resource changes, ideal for teams already invested in Ansible. = Un Ansible Operator esegue il playbook collegato quando la Custom Resource cambia, ideale per team gia' investiti in Ansible."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "Go Operator",
+      "set": {
+        "example": "Choose a Go operator when reconcile logic is complex enough to need typed clients, finalizers and fine control over the work queue. = Scegli un Go operator quando la logica di reconcile e' complessa abbastanza da richiedere client tipati, finalizer e controllo fine sulla work queue."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "Reconciler",
+      "set": {
+        "italian": "Reconciler",
+        "example": "Implement the Reconcile method on the Reconciler so each event produces patches that drive live state toward the Custom Resource spec. = Implementa il metodo Reconcile sul Reconciler cosi' ogni evento produce patch che portano lo stato live verso la spec della Custom Resource."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "Bundle",
+      "set": {
+        "example": "Publish the operator as a Bundle image so OLM can install it from the catalog with a single Subscription resource. = Pubblica l'operator come Bundle image cosi' OLM puo' installarlo dal catalogo con una sola risorsa Subscription."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "OperatorHub",
+      "set": {
+        "italian": "OperatorHub",
+        "example": "Browse OperatorHub from the OpenShift console to install cert-manager with one click instead of authoring Helm values by hand. = Sfoglia OperatorHub dalla console OpenShift per installare cert-manager con un click invece di scrivere a mano i values Helm."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_3",
+      "english": "OLM",
+      "set": {
+        "italian": "OLM",
+        "example": "On OpenShift clusters, OLM watches the catalog and installs, upgrades or rolls back operators when a Subscription specifies a new channel. = Sui cluster OpenShift, OLM osserva il catalogo e installa, aggiorna o annulla operator quando una Subscription specifica un nuovo channel."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_4",
+      "english": "Prometheus Operator",
+      "set": {
+        "italian": "Prometheus Operator",
+        "example": "Install Prometheus Operator so ServiceMonitor and PrometheusRule resources replace hand-edited prometheus.yml across the cluster. = Installa Prometheus Operator cosi' le risorse ServiceMonitor e PrometheusRule sostituiscono il prometheus.yml editato a mano nel cluster."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_4",
+      "english": "Redis Operator",
+      "set": {
+        "example": "A Redis Operator reconciles a Redis Custom Resource into a three-node sentinel cluster with automatic failover and backup. = Un Redis Operator riconcilia una Custom Resource Redis in un cluster sentinel a tre nodi con failover e backup automatici."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_4",
+      "english": "Strimzi",
+      "set": {
+        "italian": "Strimzi",
+        "example": "Deploy Strimzi to run Apache Kafka on Kubernetes: a Kafka resource declares brokers, topics and users as native objects. = Distribuisci Strimzi per eseguire Apache Kafka su Kubernetes: una risorsa Kafka dichiara broker, topic e utenti come oggetti nativi."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_4",
+      "english": "Velero",
+      "set": {
+        "italian": "Velero",
+        "example": "Schedule nightly Velero backups so all namespaces are snapshotted to S3 and can be restored after an accidental cluster wipe. = Schedula backup notturni con Velero cosi' tutti i namespace sono fotografati su S3 e possono essere ripristinati dopo un wipe accidentale."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_4",
+      "english": "External DNS",
+      "set": {
+        "italian": "External DNS",
+        "example": "Run External DNS so a new Ingress with host shop.example.com is automatically registered as an A record in Route 53. = Esegui External DNS cosi' un nuovo Ingress con host shop.example.com viene registrato automaticamente come record A su Route 53."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_4",
+      "english": "MetalLB",
+      "set": {
+        "italian": "MetalLB",
+        "example": "Install MetalLB in layer-2 mode on a bare-metal cluster so Services of type LoadBalancer get an IP from the office subnet. = Installa MetalLB in modalita' layer-2 su un cluster bare-metal cosi' i Service di tipo LoadBalancer ottengono un IP dalla subnet dell'ufficio."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_4",
+      "english": "Crossplane",
+      "set": {
+        "italian": "Crossplane",
+        "example": "Use Crossplane to declare an AWS RDS instance as a Custom Resource so cloud infrastructure follows the same GitOps flow as apps. = Usa Crossplane per dichiarare un'istanza AWS RDS come Custom Resource cosi' l'infrastruttura cloud segue lo stesso flow GitOps delle app."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "dk_op_4",
+      "english": "Knative",
+      "set": {
+        "italian": "Knative",
+        "example": "Deploy a Knative Service so the workload scales to zero between requests and back up automatically when traffic returns. = Distribuisci un Knative Service cosi' il workload scala a zero tra le richieste e risale automaticamente al ritorno del traffico."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "CKA",
+      "set": {
+        "italian": "CKA",
+        "example": "Book the CKA exam through the Linux Foundation and prepare with two hours of cluster troubleshooting drills every evening. = Prenota l'esame CKA tramite la Linux Foundation e preparati con due ore di drill di troubleshooting del cluster ogni sera."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "CKAD",
+      "set": {
+        "italian": "CKAD",
+        "example": "Pass the CKAD by drilling on writing Pod, Job and ConfigMap manifests in under two minutes each during practice sessions. = Supera il CKAD facendo drill su come scrivere manifesti Pod, Job e ConfigMap in meno di due minuti ognuno durante le sessioni di pratica."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "CKS",
+      "set": {
+        "italian": "CKS",
+        "example": "The CKS exam covers PodSecurityAdmission, NetworkPolicy and seccomp profiles, so build a hardened cluster lab before sitting it. = L'esame CKS copre PodSecurityAdmission, NetworkPolicy e profili seccomp, quindi costruisci un lab di cluster hardenato prima di affrontarlo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "Hands-On Exam",
+      "set": {
+        "example": "The CKA is a hands-on exam: candidates sit in a live terminal for two hours solving real cluster scenarios, no multiple choice. = Il CKA e' un esame pratico: i candidati lavorano in un terminale live per due ore risolvendo scenari reali di cluster, senza scelta multipla."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "kubectl Mastery",
+      "set": {
+        "example": "Real kubectl mastery means knowing get, describe, edit, patch and rollout flags by muscle memory so exam time is not lost to man pages. = Vera padronanza di kubectl significa conoscere get, describe, edit, patch e flag di rollout a memoria muscolare cosi' il tempo d'esame non si perde sui man."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "Imperative Commands",
+      "set": {
+        "example": "Reach for imperative commands like kubectl create deployment nginx --image=nginx:1.25 to save minutes over writing YAML from scratch under exam pressure. = Usa comandi imperativi come kubectl create deployment nginx --image=nginx:1.25 per risparmiare minuti rispetto a scrivere YAML da zero sotto pressione d'esame."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "--dry-run",
+      "set": {
+        "example": "Add --dry-run=client -o yaml to any kubectl create so the manifest prints to stdout for review instead of hitting the cluster. = Aggiungi --dry-run=client -o yaml a ogni kubectl create cosi' il manifesto stampa su stdout per revisione invece di colpire il cluster."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "kubectl Alias",
+      "set": {
+        "example": "Set the alias k=kubectl plus completion -F __start_kubectl k in .bashrc so every command shortens to k get pods. = Imposta l'alias k=kubectl piu' completion -F __start_kubectl k in .bashrc cosi' ogni comando si accorcia in k get pods."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_1",
+      "english": "Vim Skills",
+      "set": {
+        "example": "Strong Vim skills, like dd to delete a YAML line and . to repeat, save crucial seconds during CKAD exam editing. = Buone competenze Vim, come dd per cancellare una riga YAML e . per ripetere, risparmiano secondi cruciali durante l'editing nell'esame CKAD."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Cluster Design",
+      "set": {
+        "example": "Good cluster design picks three control-plane nodes across availability zones plus an external etcd to survive a full AZ outage. = Un buon design del cluster sceglie tre nodi di control-plane tra zone di disponibilita' piu' un etcd esterno per sopravvivere a un'AZ giu'."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "High Availability",
+      "set": {
+        "english": "Cluster High Availability",
+        "italian": "Alta disponibilita' del cluster",
+        "example": "Achieve cluster high availability with three control-plane nodes behind a load balancer so losing one master never interrupts the apiserver. = Ottieni l'alta disponibilita' del cluster con tre nodi di control-plane dietro un load balancer cosi' perderne uno non interrompe mai l'apiserver.",
+        "note": "Rinominato per distinguerlo dal generico 'High Availability' di dk_k8s_intro_2."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Topology Spread",
+      "set": {
+        "italian": "Topology Spread",
+        "example": "Use topology spread constraints with maxSkew 1 over the zone topology key so replicas of frontend land in three different AZs. = Usa topology spread constraint con maxSkew 1 sulla topology key zone cosi' le repliche di frontend atterrano in tre AZ diverse."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Anti-Affinity",
+      "set": {
+        "example": "Configure pod anti-affinity by hostname so each frontend replica runs on a different node, surviving a single-node failure. = Configura podAntiAffinity per hostname cosi' ogni replica frontend gira su un nodo diverso, sopravvivendo a un guasto di un singolo nodo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Affinity",
+      "set": {
+        "example": "Set node affinity to schedule cache pods only on nodes with the label disktype=nvme so latency-sensitive workloads land on fast disks. = Imposta nodeAffinity per schedulare i pod di cache solo su nodi con label disktype=nvme cosi' i workload latency-sensitive atterrano su dischi veloci."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Taint",
+      "set": {
+        "italian": "Taint",
+        "example": "Apply a taint nvidia.com/gpu=true:NoSchedule on GPU nodes so only pods that tolerate it can land there, freeing GPUs for ML jobs. = Applica un taint nvidia.com/gpu=true:NoSchedule sui nodi GPU cosi' solo i pod che lo tollerano atterrano li', liberando GPU per i job ML."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Toleration",
+      "set": {
+        "english": "Pod Toleration",
+        "italian": "Tolerazione di pod",
+        "example": "Add a pod toleration for the dedicated=ml:NoSchedule taint so only ML training pods are admitted onto the reserved GPU nodes. = Aggiungi una tolerazione di pod per il taint dedicated=ml:NoSchedule cosi' solo i pod di training ML sono ammessi sui nodi GPU riservati.",
+        "note": "Rinominato per distinguerlo dal generico 'Toleration' di dk_workloads_3."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Node Selector",
+      "set": {
+        "english": "Cluster Node Selector",
+        "italian": "Selettore di nodo a livello cluster",
+        "example": "Use a cluster node selector like zone=us-east-1a on a critical Deployment so traffic stays inside one AZ for predictable latency. = Usa un selettore di nodo a livello cluster come zone=us-east-1a su un Deployment critico cosi' il traffico resta dentro una AZ per latency prevedibile.",
+        "note": "Rinominato per distinguerlo dal generico 'Node Selector' di dk_workloads_3."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_2",
+      "english": "Bootstrap",
+      "set": {
+        "italian": "Bootstrap",
+        "example": "Run kubeadm init --pod-network-cidr=10.244.0.0/16 to bootstrap the control plane, then join workers with the printed token. = Esegui kubeadm init --pod-network-cidr=10.244.0.0/16 per fare bootstrap del control plane, poi unisci i worker con il token stampato."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "Disaster Recovery",
+      "set": {
+        "italian": "Disaster Recovery",
+        "example": "Practice disaster recovery quarterly: wipe a staging cluster, restore etcd and Velero backups, and confirm apps come back green. = Esercita il disaster recovery ogni trimestre: cancella un cluster di staging, ripristina backup etcd e Velero, e conferma che le app tornano verdi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "RTO",
+      "set": {
+        "italian": "RTO",
+        "example": "Set an RTO of fifteen minutes for the payments service so the runbook prescribes Velero restore plus DNS failover under that window. = Imposta un RTO di quindici minuti per il servizio pagamenti cosi' il runbook prescrive restore Velero e DNS failover entro quel tempo."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "RPO",
+      "set": {
+        "italian": "RPO",
+        "example": "An RPO of five minutes means etcd snapshots and database WAL backups must run at least that often to bound data loss. = Un RPO di cinque minuti significa che snapshot etcd e backup WAL del database devono girare almeno con quella frequenza per limitare la perdita di dati."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "etcd Backup",
+      "set": {
+        "example": "Schedule an etcd backup every fifteen minutes with etcdctl snapshot save so a corrupted state can be restored quickly. = Schedula un backup etcd ogni quindici minuti con etcdctl snapshot save cosi' uno stato corrotto puo' essere ripristinato velocemente."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "Velero Backup",
+      "set": {
+        "example": "Trigger a Velero backup before each major upgrade so namespaces, PVs and CRD instances can be restored if rollout corrupts state. = Avvia un backup Velero prima di ogni major upgrade cosi' namespace, PV e istanze CRD si possono ripristinare se il rollout corrompe lo stato."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "Restore Test",
+      "set": {
+        "example": "Run a monthly restore test against a scratch cluster so the runbook is verified working before a real incident demands it. = Esegui un test di restore mensile contro un cluster di prova cosi' il runbook e' verificato funzionante prima che un vero incidente lo richieda."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "Multi-Region",
+      "set": {
+        "italian": "Multi-region",
+        "example": "Run separate Kubernetes clusters per region and front them with global anycast DNS so a regional outage redirects traffic in seconds. = Esegui cluster Kubernetes separati per regione e mettici davanti DNS anycast globale cosi' un'outage regionale redirige il traffico in pochi secondi."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "Failover",
+      "set": {
+        "italian": "Failover",
+        "example": "When a region health check fails, Route 53 triggers failover and DNS shifts users to the warm standby cluster automatically. = Quando un health check regionale fallisce, Route 53 attiva il failover e il DNS sposta gli utenti sul cluster di standby caldo automaticamente."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "Active-Passive",
+      "set": {
+        "example": "An active-passive setup keeps the secondary cluster idle but synced, only promoted when the primary region goes fully offline. = Un setup active-passive tiene il cluster secondario idle ma sincronizzato, promosso solo quando la regione primaria va completamente offline."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_3",
+      "english": "Active-Active",
+      "set": {
+        "example": "An active-active topology splits traffic across two regions in real time, doubling capacity but requiring conflict-free data replication. = Una topologia active-active divide il traffico tra due regioni in tempo reale, raddoppiando la capacita' ma richiedendo replica dati senza conflitti."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_4",
+      "english": "Multi-Cluster",
+      "set": {
+        "italian": "Multi-cluster",
+        "example": "A multi-cluster setup isolates tenants by giving each team its own cluster while sharing platform tooling through a federated GitOps repo. = Un setup multi-cluster isola i tenant dando a ogni team il suo cluster condividendo il tooling di piattaforma con un repo GitOps federato."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_4",
+      "english": "Cluster API",
+      "set": {
+        "italian": "Cluster API",
+        "example": "Use Cluster API to declare a Cluster resource so a management cluster provisions worker clusters across AWS, vSphere and Azure. = Usa Cluster API per dichiarare una risorsa Cluster cosi' un cluster di management provisiona cluster worker su AWS, vSphere e Azure."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_4",
+      "english": "KubeFed",
+      "set": {
+        "italian": "KubeFed",
+        "example": "With KubeFed installed, FederatedDeployment objects propagate the same workload into every joined cluster with per-cluster overrides for replicas. = Con KubeFed installato, gli oggetti FederatedDeployment propagano lo stesso workload in ogni cluster aderente con override per-cluster sulle repliche."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_4",
+      "english": "FinOps",
+      "set": {
+        "italian": "FinOps",
+        "example": "Adopt FinOps reviews each sprint so platform, finance and product agree which workloads justify their cloud spend before the next quarter. = Adotta review FinOps a ogni sprint cosi' piattaforma, finance e prodotto concordano quali workload giustificano la loro spesa cloud prima del trimestre."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_4",
+      "english": "Cost Allocation",
+      "set": {
+        "example": "Drive cost allocation through the team label on every namespace so the monthly bill maps cleanly back to product squads. = Guida l'allocazione dei costi tramite la label team su ogni namespace cosi' la bolletta mensile si mappa pulita alle squad di prodotto."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_4",
+      "english": "Kubecost",
+      "set": {
+        "italian": "Kubecost",
+        "example": "Install Kubecost in the cluster so each namespace gets a daily dollar figure for CPU, memory and persistent volume consumption. = Installa Kubecost nel cluster cosi' ogni namespace ottiene una cifra giornaliera in dollari per consumo di CPU, memoria e persistent volume."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_4",
+      "english": "OpenCost",
+      "set": {
+        "italian": "OpenCost",
+        "example": "Deploy OpenCost, the CNCF cost project, so teams can plug into Prometheus and Grafana without paying a SaaS vendor. = Distribuisci OpenCost, il progetto CNCF sui costi, cosi' i team possono collegarsi a Prometheus e Grafana senza pagare un vendor SaaS."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_4",
+      "english": "LimitRange",
+      "set": {
+        "italian": "LimitRange",
+        "example": "Apply a LimitRange in every tenant namespace so containers inherit a 500m CPU and 256Mi memory default if the manifest omits them. = Applica un LimitRange in ogni namespace tenant cosi' i container ereditano un default 500m CPU e 256Mi di memoria se il manifesto li omette."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "dk_pro_4",
+      "english": "Spot Savings",
+      "set": {
+        "example": "Move stateless batch jobs onto spot instances so cloud spend drops by up to 70% in exchange for accepting two-minute eviction notices. = Sposta i job batch stateless su istanze spot cosi' la spesa cloud cala fino al 70% in cambio di accettare avvisi di eviction di due minuti."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_2",
+      "english": "image",
+      "set": {
+        "english": "Compose image field",
+        "italian": "Campo image di Compose",
+        "example": "The Compose image field pins the container source like postgres:16 so docker compose up pulls the exact same digest every developer expects. = Il campo image di Compose fissa la sorgente del container come postgres:16 cosi' docker compose up scarica lo stesso digest che ogni sviluppatore si aspetta.",
+        "note": "Rinominato per distinguerlo dal generico 'Image' di dk_containers_1."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_4",
+      "english": "Namespace",
+      "set": {
+        "english": "Kubernetes Namespace",
+        "italian": "Namespace Kubernetes",
+        "example": "Create a Kubernetes namespace per environment so dev, staging and prod can apply independent RBAC, quotas and NetworkPolicy inside one cluster. = Crea un namespace Kubernetes per ambiente cosi' dev, staging e prod possono applicare RBAC, quote e NetworkPolicy indipendenti dentro un cluster.",
+        "note": "Rinominato per distinguerlo dal generico 'Namespace' (Linux) di dk_containers_1."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "dk_k8s_intro_3",
+      "english": "Container Runtime",
+      "set": {
+        "english": "Kubernetes Container Runtime",
+        "italian": "Container runtime di Kubernetes",
+        "example": "Since dockershim was removed, a Kubernetes container runtime like containerd or CRI-O talks to kubelet through the CRI interface on every node. = Da quando dockershim e' stato rimosso, un container runtime di Kubernetes come containerd o CRI-O parla con kubelet tramite l'interfaccia CRI su ogni nodo.",
+        "note": "Rinominato per distinguerlo dal generico 'Container Runtime' di dk_containers_3."
+      }
+    },
+    {
+      "level": "3",
+      "lesson": "dk_dockerfile_adv_3",
+      "english": "WORKDIR",
+      "set": {
+        "english": "WORKDIR advanced usage",
+        "italian": "Uso avanzato di WORKDIR",
+        "example": "Advanced WORKDIR usage in a multi-stage Dockerfile resets the working directory per stage so COPY targets are unambiguous between builder and runtime. = L'uso avanzato di WORKDIR in un Dockerfile multi-stage resetta la working directory per stage cosi' i target di COPY sono inequivoci tra builder e runtime.",
+        "note": "Rinominato per distinguerlo dalla direttiva base 'WORKDIR' di dk_dockerfile_1."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_1",
+      "english": "Healthcheck",
+      "set": {
+        "english": "Compose healthcheck",
+        "italian": "Healthcheck di Compose",
+        "example": "Add a Compose healthcheck running curl -f /health so depends_on with condition: service_healthy waits for the dependency to be truly ready. = Aggiungi un healthcheck Compose che esegue curl -f /health cosi' depends_on con condition: service_healthy attende che la dipendenza sia davvero pronta.",
+        "note": "Rinominato per distinguerlo dalla direttiva 'HEALTHCHECK' del Dockerfile in dk_dockerfile_adv_4."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "dk_compose_adv_1",
+      "english": "Health Status",
+      "set": {
+        "english": "Compose health status",
+        "italian": "Stato di salute in Compose",
+        "example": "Read the Compose health status column in docker compose ps to spot which dependencies are still in starting state before debugging. = Leggi la colonna dello stato di salute di Compose in docker compose ps per individuare quali dipendenze sono ancora in starting prima di debuggare.",
+        "note": "Rinominato per distinguerlo dall'item 'Health Status' di dk_dockerfile_adv_4 (lato Dockerfile)."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "dk_compose_3",
+      "english": "Network Alias",
+      "set": {
+        "english": "Compose network alias",
+        "italian": "Network alias in Compose",
+        "example": "Give the api service a Compose network alias of db-proxy so other containers can resolve it by that friendlier DNS name inside the network. = Dai al service api un network alias Compose db-proxy cosi' gli altri container possono risolverlo con quel nome DNS piu' amichevole nella rete.",
+        "note": "Rinominato per distinguerlo dall'item 'Network Alias' di dk_network_3 (Docker engine)."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "dk_config_1",
+      "english": "Hot Reload",
+      "set": {
+        "english": "ConfigMap Hot Reload",
+        "italian": "Hot Reload di ConfigMap",
+        "example": "Mount the ConfigMap as a volume so ConfigMap hot reload propagates updated keys into running pods without a Deployment restart. = Monta il ConfigMap come volume cosi' l'hot reload di ConfigMap propaga le chiavi aggiornate nei pod attivi senza riavviare il Deployment.",
+        "note": "Rinominato per distinguerlo dall'item 'Hot Reload' di dk_volumes_3 (Compose dev workflow)."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "dk_workloads_1",
+      "english": "Rollback",
+      "set": {
+        "english": "Deployment Rollback",
+        "italian": "Rollback di Deployment",
+        "example": "Run kubectl rollout undo deployment/api to trigger a Deployment rollback that swaps traffic back to the previous ReplicaSet within seconds. = Esegui kubectl rollout undo deployment/api per attivare un rollback di Deployment che riporta il traffico al ReplicaSet precedente in pochi secondi.",
+        "note": "Rinominato per distinguerlo dall'item 'Rollback' di dk_compose_adv_4 (lato Compose)."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "dk_registry_4",
+      "english": "Image Promotion",
+      "set": {
+        "english": "CI/CD Image Promotion",
+        "italian": "Promozione immagini in CI/CD",
+        "example": "The pipeline performs CI/CD image promotion by retagging the staging digest as production and copying it to the prod registry. = La pipeline esegue la promozione immagini in CI/CD ri-taggando il digest di staging come production e copiandolo al registry di produzione.",
+        "note": "Rinominato per distinguerlo dall'item 'Image Promotion' di dk_registry_2 (registry workflow)."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "dk_pods_1",
+      "english": "Pod",
+      "set": {
+        "english": "Pod Resource",
+        "italian": "Risorsa Pod",
+        "example": "A Pod resource wraps one or more containers sharing the same network and volumes, like the app container next to a log-shipping sidecar. = Una risorsa Pod racchiude uno o piu' container che condividono rete e volumi, come il container app accanto a un sidecar log-shipper.",
+        "note": "Rinominato per distinguerlo dal concetto 'Pod' introdotto in dk_k8s_intro_3."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "dk_k8s_sec_2",
+      "english": "Service Account Token",
+      "set": {
+        "english": "ServiceAccount Token Secret",
+        "italian": "Secret del token ServiceAccount",
+        "example": "Mount the ServiceAccount token Secret into the pod so workloads can call the apiserver with bearer auth scoped by RBAC. = Monta il Secret del token ServiceAccount nel pod cosi' i workload possono chiamare l'apiserver con bearer auth limitata da RBAC.",
+        "note": "Rinominato per distinguerlo dall'item 'Service Account Token' di dk_config_4 (lato config)."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "dk_k8s_net_4",
+      "english": "topology Aware",
+      "set": {
+        "english": "Topology Aware Routing",
+        "italian": "Routing topology-aware",
+        "example": "Enable Topology Aware Routing on a Service so kube-proxy prefers endpoints in the same zone, cutting cross-AZ traffic and latency. = Abilita il Topology Aware Routing su un Service cosi' kube-proxy preferisce endpoint nella stessa zona, riducendo traffico cross-AZ e latency.",
+        "note": "Rinominato per distinguerlo dall'item 'Topology Aware' di dk_storage_4 (lato storage)."
+      }
+    }
+  ]
+}

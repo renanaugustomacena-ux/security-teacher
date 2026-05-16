@@ -31,7 +31,7 @@ export default {
                 "Before deploying, our team relies on version control to review every change since the last release. = Prima di fare il deploy, il nostro team usa il controllo di versione per verificare ogni modifica dall'ultima release.",
               context: 'foundations',
               difficulty: 'beginner',
-              note: 'Spesso abbreviato VCS (Version Control System).',
+              note: `In italiano si dice spesso 'versionamento' per indicare l'atto di tenere traccia delle versioni del codice.`,
             },
             {
               english: 'Repository',
@@ -2264,7 +2264,7 @@ export default {
               context: 'remote',
               difficulty: 'intermediate',
               command: 'git push -u origin feature',
-              note: '-u è abbreviazione di --set-upstream.',
+              note: `Una volta impostato l'upstream con -u, i futuri git push e git pull funzionano senza specificare il remote.`,
             },
             {
               english: 'Force Push',
@@ -2745,14 +2745,15 @@ export default {
               difficulty: 'intermediate',
             },
             {
-              english: 'Open Source',
-              italian: 'codice sorgente aperto (open source)',
+              english: 'Open Source License',
+              italian: 'licenza open source',
               pronunciation: '/ˈoʊpən sɔːrs/',
               phonetic: 'O-pen SORS',
               example:
-                'In Git, Open Source projects often use forks for contributions. = I progetti open source spesso usano fork per i contributi.',
+                'Choosing an open source license like MIT or Apache 2.0 determines how others can reuse your code. = Scegliere una licenza open source come MIT o Apache 2.0 determina come gli altri possono riutilizzare il tuo codice.',
               context: 'collaboration',
               difficulty: 'intermediate',
+              note: `Senza una licenza esplicita, il codice e' considerato 'all rights reserved' di default.`,
             },
             {
               english: 'Contributor',
@@ -3422,15 +3423,16 @@ export default {
               command: 'git rebase main',
             },
             {
-              english: 'Linear History',
-              italian: 'Storia lineare',
+              english: 'Linear History Policy',
+              italian: 'policy di history lineare',
               pronunciation: '/ˈlɪniər ˈhɪstəri/',
               phonetic: 'LI-nia HI-sto-ri',
               example:
-                'To understand how the codebase evolved, rebase produces a linear history which helps trace when specific changes were introduced. = Per capire come si e evoluto il codice, il rebase produce una storia lineare il che aiuta a tracciare quando sono state introdotte specifiche modifiche.',
+                'Enabling a linear history policy on main forces every PR to be rebased or squashed before merging. = Abilitare una policy di history lineare su main forza ogni PR a essere rebasato o squashato prima del merge.',
               context: 'history',
               difficulty: 'intermediate',
               command: 'git log --graph --oneline',
+              note: 'GitHub e GitLab offrono questa opzione tra le branch protection rules.',
             },
             {
               english: 'Replay Commits',
@@ -4565,15 +4567,15 @@ export default {
               command: 'git cherry-pick -x a3f5e21',
             },
             {
-              english: 'Skip Commit',
-              italian: 'Saltare commit',
+              english: 'Skip Commit During Rebase',
+              italian: 'saltare un commit durante un rebase',
               pronunciation: '/skɪp kəˈmɪt/',
               phonetic: 'SKIP KO-mit',
-              example:
-                'When investigating past changes to understand a bug, skip an empty cherry-pick providing a clear audit trail. = Quando si indagano le modifiche passate per capire un bug, salta un cherry-pick vuoto fornendo una traccia di audit chiara.',
+              example: `When a rebase stops on a conflict you no longer want, you can skip commit during rebase with git rebase --skip. = Quando un rebase si ferma su un conflitto che non vuoi piu', puoi saltare quel commit durante il rebase con git rebase --skip.`,
               context: 'history',
               difficulty: 'intermediate',
               command: 'git cherry-pick --skip',
+              note: 'Il commit saltato non finisce nella nuova history e va perso se non referenziato.',
             },
             {
               english: 'Cherry-pick Strategy',
@@ -5636,14 +5638,15 @@ export default {
               command: 'npx tsc --noEmit',
             },
             {
-              english: 'Code Review',
-              italian: 'Revisione del codice',
+              english: 'Code Review Checklist',
+              italian: 'checklist di code review',
               pronunciation: '/koʊd rɪˈvjuː/',
               phonetic: 'KOUD ri-VIU',
               example:
-                'When following established development practices, Code Review catches bugs early so releases happen smoothly and on schedule. = Quando si seguono le pratiche di sviluppo stabilite, la code review rileva bug presto cosi i rilasci avvengono in modo fluido e nei tempi.',
+                'Teams often standardize a code review checklist covering tests, security, and naming before approving a PR. = I team spesso standardizzano una checklist di code review che copre test, sicurezza e naming prima di approvare una PR.',
               context: 'workflow',
               difficulty: 'intermediate',
+              note: `Riduce il carico cognitivo del reviewer e rende la revisione piu' uniforme.`,
             },
             {
               english: 'Static Analysis',
@@ -5687,15 +5690,15 @@ export default {
           description: 'Convenzioni per messaggi efficaci',
           items: [
             {
-              english: 'Commit Message',
-              italian: 'Messaggio di commit',
+              english: 'Commit Message Body',
+              italian: 'corpo del messaggio di commit',
               pronunciation: '/kəˈmɪt ˈmesɪdʒ/',
               phonetic: 'KO-mit ME-sig',
-              example:
-                'For a production-grade workflow, a good commit message explains why which reduces the risk of broken deployments. = Per un flusso di lavoro di qualita produttiva, un buon messaggio di commit spiega il perché il che riduce il rischio di deploy falliti.',
+              example: `The commit message body explains why a change was made, separated from the subject by a blank line. = Il corpo del messaggio di commit spiega perche' e' stata fatta una modifica, separato dal soggetto da una riga vuota.`,
               context: 'workflow',
               difficulty: 'intermediate',
               command: 'git commit -m "feat: add login"',
+              note: 'La convenzione prevede subject di max 50 caratteri e body wrappato a 72.',
             },
             {
               english: 'Subject Line',
@@ -5764,15 +5767,15 @@ export default {
               code: 'fix(api): handle null user',
             },
             {
-              english: 'Atomic Commit',
-              italian: 'Commit atomico',
+              english: 'Atomic Commit Principle',
+              italian: 'principio del commit atomico',
               pronunciation: '/əˈtɒmɪk kəˈmɪt/',
               phonetic: 'a-TO-mik KO-mit',
               example:
-                'In a well-organized development process, an atomic commit does one thing only helping teams deliver features predictably. = In un processo di sviluppo ben organizzato, un commit atomico fa solo una cosa aiutando i team a consegnare funzionalita in modo prevedibile.',
+                'Following the atomic commit principle means each commit represents one logical change that can be reverted independently. = Seguire il principio del commit atomico significa che ogni commit rappresenta un singolo cambiamento logico revertibile in modo indipendente.',
               context: 'workflow',
               difficulty: 'intermediate',
-              note: 'Più facile da revertire e da revieware.',
+              note: 'Facilita git bisect, code review e i revert chirurgici.',
             },
             {
               english: 'commitlint',
@@ -5920,16 +5923,16 @@ export default {
               command: 'git config --global init.defaultBranch main',
             },
             {
-              english: 'pull.rebase',
-              italian: 'Rebase su pull',
+              english: 'pull.rebase global default',
+              italian: 'default globale di pull.rebase',
               pronunciation: '/pʊl ˈriːbeɪs/',
               phonetic: 'PUL RI-beis',
               example:
-                "To tailor Git to your team's needs, pull.rebase avoids merge commits on pull so everyone follows consistent settings. = Per adattare Git alle esigenze del team, pull.rebase evita merge commit sui pull cosi tutti seguono impostazioni consistenti.",
+                'Setting the pull.rebase global default to true with git config --global avoids accidental merge commits on every pull. = Impostare il default globale di pull.rebase a true con git config --global evita merge commit accidentali ad ogni pull.',
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global pull.rebase true',
-              note: 'Storia più lineare, ma richiede attenzione.',
+              note: `Il valore 'merges' preserva i merge commit locali durante il rebase del pull.`,
             },
           ],
         },
@@ -6155,16 +6158,15 @@ export default {
               command: 'git config --global credential.helper store',
             },
             {
-              english: 'rerere',
-              italian: 'riuso registrato delle risoluzioni (rerere)',
+              english: 'rerere.enabled',
+              italian: 'rerere.enabled',
               pronunciation: '/ˈriːriːriː/',
               phonetic: 'RI-ri-ri',
-              example:
-                "As part of onboarding new developers, rerere remembers conflict resolutions ensuring consistent behavior across the team. = Come parte dell'onboarding dei nuovi sviluppatori, rerere ricorda le risoluzioni di conflitti assicurando un comportamento consistente nel team.",
+              example: `Set rerere.enabled to true in your git config so Git records and reuses your conflict resolutions automatically. = Imposta rerere.enabled a true nella tua config Git affinche' Git registri e riutilizzi automaticamente le tue risoluzioni dei conflitti.`,
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global rerere.enabled true',
-              note: 'REuse REcorded REsolution: utile su rebase ripetuti.',
+              note: 'Chiave booleana di config. Quando attiva, Git salva le risoluzioni dei conflitti in .git/rr-cache e le riapplica.',
             },
           ],
         },
@@ -6174,15 +6176,15 @@ export default {
           description: 'File di configurazione del repo',
           items: [
             {
-              english: '.gitignore',
-              italian: 'File .gitignore',
+              english: 'global gitignore',
+              italian: 'gitignore globale',
               pronunciation: '/dɒt ɡɪt ɪɡˈnɔːr/',
               phonetic: 'DOT GIT ig-NOR',
-              example:
-                'For a personalized development setup, to see untracked files to ignore, run .gitignore which streamlines repetitive tasks. = Per una configurazione di sviluppo personalizzata, .gitignore elenca file non tracciati da ignorare il che semplifica le attivita ripetitive.',
+              example: `You can configure a global gitignore via core.excludesfile to ignore editor files in every repo. = Puoi configurare un gitignore globale tramite core.excludesfile per ignorare i file dell'editor in ogni repo.`,
               context: 'config',
               difficulty: 'intermediate',
               code: 'node_modules/\\n.env\\n*.log',
+              note: `A differenza del .gitignore di progetto, vale per tutti i repo dell'utente.`,
             },
             {
               english: 'Glob Pattern',
@@ -6207,15 +6209,16 @@ export default {
               code: '*.log\\n!important.log',
             },
             {
-              english: 'Global gitignore',
-              italian: 'Gitignore globale',
+              english: 'core.excludesFile Path',
+              italian: 'percorso di core.excludesFile',
               pronunciation: '/ˈɡloʊbəl ɡɪt ɪɡˈnɔːr/',
               phonetic: 'GLO-bal GIT ig-NOR',
               example:
-                "To tailor Git to your team's needs, a global gitignore covers all repos so everyone follows consistent settings. = Per adattare Git alle esigenze del team, un gitignore globale copre tutti i repo cosi tutti seguono impostazioni consistenti.",
+                'Setting the core.excludesFile path with git config --global lets you point Git to a custom global ignore file. = Impostare il percorso di core.excludesFile con git config --global ti permette di puntare Git verso un file di ignore globale personalizzato.',
               context: 'config',
               difficulty: 'intermediate',
               command: 'git config --global core.excludesFile ~/.gitignore_global',
+              note: `Il default e' ~/.config/git/ignore se la chiave non e' impostata.`,
             },
             {
               english: '.gitattributes',
@@ -6241,7 +6244,7 @@ export default {
             },
             {
               english: 'export-ignore',
-              italian: "export-ignore / escludi dall'archive",
+              italian: 'export-ignore',
               pronunciation: '/ɪkˈspɔːrt ɪɡˈnɔːr/',
               phonetic: 'eks-PORT ig-NOR',
               example:
@@ -6249,6 +6252,7 @@ export default {
               context: 'config',
               difficulty: 'intermediate',
               code: 'tests/ export-ignore',
+              note: 'Attributo di .gitattributes che esclude i file dagli archivi generati da git archive (tar/zip).',
             },
             {
               english: 'merge=ours',
@@ -6464,16 +6468,16 @@ export default {
               command: 'git subtree push --prefix=lib <url> main',
             },
             {
-              english: 'Squash Merge',
-              italian: 'Squash subtree',
+              english: 'Squash Merge Strategy',
+              italian: 'strategia di squash merge',
               pronunciation: '/skwɒʃ mɜːrdʒ/',
               phonetic: 'SKUOSC MERG',
               example:
-                'For power users who need maximum control, --squash collapses subtree history enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, --squash collassa la storia del subtree abilitando operazioni non possibili con i comandi base.',
+                'The squash merge strategy condenses every commit on a feature branch into a single commit on main. = La strategia di squash merge condensa ogni commit di un feature branch in un singolo commit su main.',
               context: 'advanced',
               difficulty: 'advanced',
               command: 'git subtree add --squash',
-              note: 'Tiene la history del repo principale pulita.',
+              note: `Mantiene una history lineare ma perde la granularita' dei commit originali.`,
             },
             {
               english: 'Subtree Split',
@@ -6696,14 +6700,14 @@ export default {
               code: 'vendor/',
             },
             {
-              english: 'Release Train',
-              italian: 'Treno di release',
+              english: 'Release Train Cadence',
+              italian: 'cadenza del release train',
               pronunciation: '/rɪˈliːs treɪn/',
               phonetic: 'ri-LIIS TREIN',
-              example:
-                'When handling edge cases in large codebases, release trains coordinate multi-repo releases which proves invaluable in enterprise environments. = Quando si gestiscono casi limite in codebase grandi, i release train coordinano release multi-repo il che si rivela inestimabile in ambienti enterprise.',
+              example: `Chrome ships on a fixed release train cadence, cutting a new stable branch every four weeks regardless of feature readiness. = Chrome rilascia con una cadenza fissa del release train, tagliando un nuovo branch stabile ogni quattro settimane indipendentemente dalla maturita' delle feature.`,
               context: 'advanced',
               difficulty: 'advanced',
+              note: 'Le feature non pronte vengono semplicemente posticipate al treno successivo.',
             },
             {
               english: 'Lockfile',
@@ -7377,15 +7381,15 @@ export default {
           description: 'Branch, tag e HEAD come ref',
           items: [
             {
-              english: 'Reference',
-              italian: 'riferimento a oggetto (reference)',
+              english: 'Symbolic Reference',
+              italian: 'riferimento simbolico (symbolic ref)',
               pronunciation: '/ˈrefərəns/',
               phonetic: 'RE-fe-rens',
-              example:
-                "Deep inside Git's storage system, a ref is a name pointing to a commit providing the foundation for all higher-level operations. = In profondita nel sistema di archiviazione di Git, un ref è un nome che punta a un commit fornendo la base per tutte le operazioni di alto livello.",
+              example: `HEAD is a symbolic reference that points to the current branch ref instead of a commit hash directly. = HEAD e' un riferimento simbolico che punta alla ref del branch corrente invece che direttamente a un hash di commit.`,
               context: 'internals',
               difficulty: 'advanced',
               code: 'refs/heads/main',
+              note: 'Le symbolic ref permettono il dereference automatico verso il commit reale.',
             },
             {
               english: 'refs/heads',
@@ -7410,15 +7414,16 @@ export default {
               code: '.git/refs/tags/v1.0',
             },
             {
-              english: 'refs/remotes',
-              italian: 'cartella dei puntatori remoti (refs/remotes)',
+              english: 'refs/remotes layout',
+              italian: 'layout di refs/remotes',
               pronunciation: '/refs rɪˈmoʊts/',
               phonetic: 'REFS-ri-MOUTS',
               example:
-                "To understand Git's internal architecture, use refs/remotes to track remote branches which is useful when troubleshooting complex issues. = Per capire l'architettura interna di Git, refs/remotes traccia i branch remoti il che e utile quando si risolvono problemi complessi.",
+                'Inspecting the refs/remotes layout under .git/refs/remotes shows one directory per configured remote. = Ispezionare il layout di refs/remotes sotto .git/refs/remotes mostra una directory per ogni remote configurato.',
               context: 'internals',
               difficulty: 'advanced',
               code: '.git/refs/remotes/origin/main',
+              note: 'Le ref vengono spesso compattate in .git/packed-refs per efficienza.',
             },
             {
               english: 'HEAD File',
@@ -7745,15 +7750,16 @@ export default {
               code: '.github/workflows/ci.yml',
             },
             {
-              english: 'Workflow',
-              italian: 'flusso di automazione (workflow)',
+              english: 'Workflow File',
+              italian: 'file di workflow',
               pronunciation: '/ˈwɜːrkfloʊ/',
               phonetic: 'UERK-flou',
               example:
-                'As part of DevOps best practices, a workflow defines automation steps enabling rapid and safe releases to production. = Come parte delle best practice DevOps, un workflow definisce step di automazione abilitando rilasci rapidi e sicuri in produzione.',
+                'GitHub Actions reads each workflow file under .github/workflows/ and executes its jobs on the triggered events. = GitHub Actions legge ogni file di workflow sotto .github/workflows/ ed esegue i suoi job sugli eventi triggherati.',
               context: 'ci-cd',
               difficulty: 'advanced',
               code: 'name: CI\\non: push',
+              note: 'I file di workflow sono YAML e supportano matrici, condizioni e reusable workflows.',
             },
             {
               english: 'Trigger',
@@ -8096,14 +8102,15 @@ export default {
               note: 'Deploy automatici basati su stato del repo.',
             },
             {
-              english: 'Continuous Deployment',
-              italian: 'rilascio continuo automatico (continuous deployment)',
+              english: 'Continuous Deployment Pipeline',
+              italian: 'pipeline di continuous deployment',
               pronunciation: '/kənˈtɪnjuəs dɪˈplɔɪmənt/',
               phonetic: 'kon-TI-nius di-PLOI-ment',
               example:
-                'For reliable software delivery, CD deploys every passing build so code is tested and deployed consistently. = Per una consegna software affidabile, CD deploya ogni build che passa cosi il codice viene testato e distribuito in modo consistente.',
+                'A mature continuous deployment pipeline pushes every green commit on main straight to production without human gates. = Una pipeline di continuous deployment matura spinge ogni commit verde su main direttamente in produzione senza gate umani.',
               context: 'ci-cd',
               difficulty: 'advanced',
+              note: `Si distingue dal continuous delivery, dove l'ultimo step di deploy resta manuale.`,
             },
             {
               english: 'Blue-Green Deploy',
@@ -8656,14 +8663,15 @@ export default {
               note: 'Vantaggio chiave del monorepo.',
             },
             {
-              english: 'Trunk-based Development',
-              italian: 'sviluppo sul ramo unico (trunk-based development)',
+              english: 'Trunk-based Development at Scale',
+              italian: 'trunk-based development su larga scala',
               pronunciation: '/trʌŋk beɪst dɪˈveləpmənt/',
               phonetic: 'TRANK-BEIST di-VE-lop-ment',
               example:
-                'For large-scale monorepo architectures, most monorepos use trunk-based dev which enables efficient builds and deployments at scale. = Per architetture monorepo su larga scala, la maggior parte dei monorepo usa trunk-based dev il che abilita build e deploy efficienti su larga scala.',
+                'Adopting trunk-based development at scale in a monorepo requires fast CI and feature flags to hide unfinished code. = Adottare il trunk-based development su larga scala in un monorepo richiede una CI veloce e feature flag per nascondere il codice incompleto.',
               context: 'monorepo',
               difficulty: 'advanced',
+              note: 'Google e Meta sono casi classici di TBD applicato a migliaia di sviluppatori.',
             },
             {
               english: 'Tooling Stability',
@@ -8863,15 +8871,15 @@ export default {
               note: 'Usalo SEMPRE invece di --force.',
             },
             {
-              english: 'Branch Protection',
-              italian: 'Protezione del ramo',
+              english: 'Branch Protection Bypass',
+              italian: 'bypass della branch protection',
               pronunciation: '/brɑːntʃ prəˈtekʃən/',
               phonetic: 'BRANC pro-TEK-scion',
-              example:
-                'To fix accidental commits or merges, the Branch Protection setting prevents force push providing a safety net for development mistakes. = Per correggere commit o merge accidentali, la protezione del ramo blocca force push fornendo una rete di sicurezza per errori di sviluppo.',
+              example: `Only admins should have branch protection bypass enabled, and every use should be logged for audit. = Solo gli amministratori dovrebbero avere il bypass della branch protection abilitato, e ogni uso andrebbe loggato per l'audit.`,
               context: 'troubleshooting',
               difficulty: 'advanced',
               tool: 'GitHub',
+              note: `GitHub Enterprise traccia i bypass nell'audit log dell'organizzazione.`,
             },
             {
               english: 'Restore from Mirror',
@@ -8936,15 +8944,16 @@ export default {
               command: 'git fsck --full',
             },
             {
-              english: 'Missing Object',
-              italian: 'Oggetto mancante',
+              english: 'Missing Object Recovery',
+              italian: 'recupero di oggetti mancanti',
               pronunciation: '/ˈmɪsɪŋ ˈɒbdʒɪkt/',
               phonetic: 'MI-sing OB-gekt',
               example:
-                'To fix accidental commits or merges, missing objects break operations providing a safety net for development mistakes. = Per correggere commit o merge accidentali, oggetti mancanti rompono le operazioni fornendo una rete di sicurezza per errori di sviluppo.',
+                'Run git fsck and then git fetch from a known good remote to attempt missing object recovery on a corrupted repo. = Esegui git fsck e poi git fetch da un remote integro per tentare il recupero di oggetti mancanti su un repo corrotto.',
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git fetch origin',
+              note: `Se l'oggetto non e' in alcun remote, e' definitivamente perso.`,
             },
             {
               english: 'Broken Index',
@@ -9041,16 +9050,15 @@ export default {
           description: 'Bug e gotcha frequenti',
           items: [
             {
-              english: 'Detached HEAD',
-              italian: 'HEAD scollegato dal ramo (detached HEAD)',
+              english: 'Detached HEAD Warning',
+              italian: 'avviso di detached HEAD',
               pronunciation: '/dɪˈtætʃt hed/',
               phonetic: 'di-TACT HED',
-              example:
-                "During emergency recovery situations, Detached HEAD risks losing commits which can save hours of manual rework. = Durante situazioni di recupero d'emergenza, detached HEAD rischia di perdere commit il che puo risparmiare ore di rilavorazione manuale.",
+              example: `After checking out a tag, the detached HEAD warning reminds you that new commits won't belong to any branch. = Dopo aver fatto checkout di un tag, l'avviso di detached HEAD ti ricorda che i nuovi commit non apparterranno ad alcun branch.`,
               context: 'troubleshooting',
               difficulty: 'advanced',
               command: 'git switch -c rescue',
-              note: 'Crea sempre un branch quando lavori in detached.',
+              note: 'Per non perdere il lavoro, crea subito un branch con git switch -c.',
             },
             {
               english: 'Wrong Branch Commit',
@@ -9322,15 +9330,15 @@ export default {
               note: 'Più semplice di filter-repo per casi comuni.',
             },
             {
-              english: 'Rewrite History',
-              italian: 'Riscrivere la history',
+              english: 'Rewrite History with filter-repo',
+              italian: 'riscrivere la history con filter-repo',
               pronunciation: '/ˈriːraɪt ˈhɪstəri/',
               phonetic: 'RI-rait HI-sto-ri',
               example:
-                'For complex repository management, rewriting history changes commit hashes giving experienced developers fine-grained control. = Per la gestione avanzata del repository, riscrivere la history cambia gli hash dei commit dando agli sviluppatori esperti un controllo granulare.',
+                'To purge a leaked secret from every commit you rewrite history with filter-repo, then force-push and rotate the credential. = Per ripulire un segreto trapelato da ogni commit si riscrive la history con filter-repo, poi si fa force-push e si ruota la credenziale.',
               context: 'advanced',
               difficulty: 'advanced',
-              note: 'Coordinare col team: tutti devono ri-clonare.',
+              note: 'git-filter-repo ha sostituito il deprecato filter-branch per le riscritture massive.',
             },
             {
               english: 'Path Filter',
@@ -9651,15 +9659,16 @@ export default {
           description: "Gestire l'autenticazione",
           items: [
             {
-              english: 'Credential Helper',
-              italian: 'gestore credenziali Git (credential helper)',
+              english: 'Credential Helper Store',
+              italian: 'credential helper store',
               pronunciation: '/krəˈdenʃəl ˈhelpər/',
               phonetic: 'kre-DEN-scial HEL-per',
               example:
-                'For power users who need maximum control, a credential helper caches credentials enabling operations not possible with basic commands. = Per gli utenti avanzati che necessitano il massimo controllo, un credential helper cacha le credenziali abilitando operazioni non possibili con i comandi base.',
+                'Avoid the credential helper store in production: it writes passwords in plain text under ~/.git-credentials. = Evita il credential helper store in produzione: scrive le password in chiaro sotto ~/.git-credentials.',
               context: 'strategy',
               difficulty: 'advanced',
               command: 'git config credential.helper store',
+              note: `Preferisci 'manager' su Windows/macOS o 'libsecret' su Linux per cifratura nativa.`,
             },
             {
               english: 'credential.helper store',
@@ -9718,16 +9727,16 @@ export default {
               command: 'git config credential.helper libsecret',
             },
             {
-              english: 'Personal Access Token',
-              italian: 'token di accesso personale (personal access token)',
+              english: 'Fine-grained Personal Access Token',
+              italian: 'personal access token fine-grained',
               pronunciation: '/ˈpɜːrsənəl ˈækses ˈtoʊkən/',
               phonetic: 'PER-so-nal AK-ses TO-ken',
               example:
-                'For enterprise-scale projects, PATs replace passwords for HTTPS which provides structure for teams of any size. = Per progetti su scala enterprise, i PAT sostituiscono le password per HTTPS il che fornisce struttura per team di qualsiasi dimensione.',
+                'GitHub recommends a fine-grained personal access token scoped to specific repos instead of the classic PAT. = GitHub raccomanda un personal access token fine-grained limitato a repo specifici invece del PAT classico.',
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'GitHub PAT',
-              note: "GitHub ha disabilitato l'auth password nel 2021.",
+              note: 'I token fine-grained scadono obbligatoriamente e supportano permessi per risorsa.',
             },
             {
               english: 'Fine-grained PAT',
@@ -9770,16 +9779,16 @@ export default {
           description: 'Autenticazione SSH per Git',
           items: [
             {
-              english: 'SSH Key',
-              italian: 'Chiave SSH',
+              english: 'SSH Key Passphrase',
+              italian: 'passphrase della chiave SSH',
               pronunciation: '/es es eɪtʃ kiː/',
               phonetic: 'SSH-KII',
               example:
-                'For enterprise-scale projects, SSH keys authenticate without passwords which provides structure for teams of any size. = Per progetti su scala enterprise, le chiavi SSH autenticano senza password il che fornisce struttura per team di qualsiasi dimensione.',
+                'Setting an SSH key passphrase protects the private key on disk even if the file is leaked. = Impostare una passphrase della chiave SSH protegge la chiave privata su disco anche se il file viene compromesso.',
               context: 'strategy',
               difficulty: 'advanced',
               command: 'ssh-keygen -t ed25519',
-              note: 'ED25519 raccomandato over RSA per nuovi setup.',
+              note: 'ssh-agent memorizza la passphrase decifrata per la sessione corrente.',
             },
             {
               english: 'ed25519',
@@ -9793,37 +9802,39 @@ export default {
               command: 'ssh-keygen -t ed25519 -C "you@ex.com"',
             },
             {
-              english: 'Public Key',
-              italian: 'Chiave pubblica',
+              english: 'Public Key Fingerprint',
+              italian: 'fingerprint della chiave pubblica',
               pronunciation: '/ˈpʌblɪk kiː/',
               phonetic: 'PA-blik KII',
-              example:
-                "When planning your team's branching model, upload your public key to GitHub ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, carica la tua chiave pubblica su GitHub assicurando una collaborazione fluida su larga scala.",
+              example: `Comparing the public key fingerprint shown by ssh-keygen -lf with the one on GitHub confirms authenticity. = Confrontare il fingerprint della chiave pubblica mostrato da ssh-keygen -lf con quello su GitHub ne conferma l'autenticita'.`,
               context: 'strategy',
               difficulty: 'advanced',
               code: '~/.ssh/id_ed25519.pub',
+              note: 'Le fingerprint moderne usano SHA256 mentre quelle legacy usavano MD5.',
             },
             {
-              english: 'Private Key',
-              italian: 'Chiave privata',
+              english: 'Private Key Permissions',
+              italian: 'permessi della chiave privata',
               pronunciation: '/ˈpraɪvət kiː/',
               phonetic: 'PRAI-vet KII',
               example:
-                'In choosing the right Git workflow, never share your private key so the process fits your release cadence. = Nella scelta del giusto flusso Git, non condividere mai la tua chiave privata cosi il processo si adatta alla cadenza di rilascio.',
+                'SSH refuses to use a key when private key permissions are too open, expecting 600 on Unix systems. = SSH rifiuta di usare una chiave quando i permessi della chiave privata sono troppo aperti, aspettandosi 600 su sistemi Unix.',
               context: 'strategy',
               difficulty: 'advanced',
               code: '~/.ssh/id_ed25519',
+              note: 'Usa chmod 600 ~/.ssh/id_ed25519 per allinearti al requisito di SSH.',
             },
             {
-              english: 'ssh-agent',
-              italian: 'agente di chiavi SSH (ssh-agent)',
+              english: 'ssh-agent forwarding',
+              italian: 'forwarding di ssh-agent',
               pronunciation: '/es es eɪtʃ ˈeɪdʒənt/',
               phonetic: 'SSH-EI-gent',
               example:
-                "When planning your team's branching model, ssh-agent caches passphrases ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, ssh-agent cacha le passphrase assicurando una collaborazione fluida su larga scala.",
+                'Enabling ssh-agent forwarding with ssh -A lets a remote server authenticate using your local keys without copying them. = Abilitare il forwarding di ssh-agent con ssh -A permette a un server remoto di autenticarsi usando le tue chiavi locali senza copiarle.',
               context: 'strategy',
               difficulty: 'advanced',
               command: 'eval "$(ssh-agent -s)" && ssh-add',
+              note: `Da usare con cautela: chi e' root sul server puo' usare le tue chiavi.`,
             },
             {
               english: 'authorized_keys',
@@ -10130,16 +10141,16 @@ export default {
           description: 'La piattaforma più diffusa',
           items: [
             {
-              english: 'GitHub',
-              italian: 'piattaforma di hosting Git (GitHub)',
+              english: 'GitHub Enterprise',
+              italian: 'GitHub Enterprise',
               pronunciation: '/ˈɡɪthʌb/',
               phonetic: 'GIT-hab',
               example:
-                'When establishing team conventions, GitHub is the largest Git host promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, gitHub è il più grande host Git promuovendo la consistenza tra tutti i contributori.',
+                'Large companies host their own GitHub Enterprise instance to keep source code inside the corporate network. = Le grandi aziende ospitano una propria istanza GitHub Enterprise per mantenere il codice sorgente dentro la rete aziendale.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'GitHub',
-              note: 'Acquistato da Microsoft nel 2018.',
+              note: 'Esistono due varianti: Enterprise Cloud (SaaS) e Enterprise Server (self-hosted).',
             },
             {
               english: 'gh CLI',
@@ -10295,14 +10306,15 @@ export default {
               command: 'glab mr create',
             },
             {
-              english: 'Merge Request',
-              italian: 'MR (Merge Request)',
+              english: 'Merge Request Pipeline',
+              italian: 'pipeline della merge request',
               pronunciation: '/mɜːrdʒ rɪˈkwest/',
               phonetic: 'MERG ri-KUEST',
               example:
-                "As part of your developer toolkit, MR is GitLab's name for PR saving time on repetitive Git tasks. = Come parte del toolkit dello sviluppatore, MR è il nome GitLab per PR risparmiando tempo sulle attivita Git ripetitive.",
+                'GitLab runs a dedicated merge request pipeline that tests the post-merge result rather than the source branch alone. = GitLab esegue una pipeline della merge request dedicata che testa il risultato post-merge invece del solo branch sorgente.',
               context: 'tools',
               difficulty: 'advanced',
+              note: `Si distingue dalle branch pipeline perche' usa un merge ref effimero.`,
             },
             {
               english: 'Issue Boards',
@@ -10718,16 +10730,16 @@ export default {
           description: 'Bot per automatizzare il workflow',
           items: [
             {
-              english: 'Dependabot',
-              italian: 'aggiornamento automatico dipendenze (Dependabot)',
+              english: 'Dependabot Grouped Updates',
+              italian: 'aggiornamenti raggruppati di Dependabot',
               pronunciation: '/dɪˈpendəbɒt/',
               phonetic: 'di-PEN-da-bot',
-              example:
-                'For reliable software delivery, use Dependabot to open dependency updates so code is tested and deployed consistently. = Per una consegna software affidabile, dependabot apre aggiornamenti di dipendenze cosi il codice viene testato e distribuito in modo consistente.',
+              example: `Configuring Dependabot grouped updates reduces PR noise by combining minor and patch bumps into a single weekly PR. = Configurare aggiornamenti raggruppati di Dependabot riduce il rumore delle PR combinando bump minor e patch in un'unica PR settimanale.`,
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Dependabot',
               code: '.github/dependabot.yml',
+              note: `Si configurano in .github/dependabot.yml con la chiave 'groups'.`,
             },
             {
               english: 'Renovate',
@@ -11225,27 +11237,26 @@ export default {
               note: 'Standard: Contributor Covenant.',
             },
             {
-              english: 'License File',
-              italian: 'File di licenza',
+              english: 'License File Header',
+              italian: 'intestazione del file di licenza',
               pronunciation: '/ˈlaɪsəns faɪl/',
               phonetic: 'LAI-sens FAIL',
-              example:
-                "When establishing team conventions, LICENSE clarifies usage rights promoting consistency across all contributors. = Quando si stabiliscono le convenzioni del team, LICENSE chiarisce i diritti d'uso promuovendo la consistenza tra tutti i contributori.",
+              example: `Some projects require a license file header at the top of every source file to make attribution explicit. = Alcuni progetti richiedono un'intestazione del file di licenza in cima a ogni file sorgente per rendere esplicita l'attribuzione.`,
               context: 'strategy',
               difficulty: 'advanced',
               code: 'LICENSE',
-              note: 'MIT, Apache 2.0, GPL sono comuni.',
+              note: `Strumenti come addlicense automatizzano l'inserimento dell'header nei file.`,
             },
             {
-              english: 'CLA',
-              italian: 'contributor agreement (CLA)',
+              english: 'CLA Bot',
+              italian: 'bot per la CLA',
               pronunciation: '/siː el eɪ/',
               phonetic: 'CLA',
-              example:
-                "When planning your team's branching model, CLA assigns contribution rights ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, CLA assegna diritti di contribuzione assicurando una collaborazione fluida su larga scala.",
+              example: `Projects like Kubernetes install a CLA bot that blocks PRs until the contributor signs the agreement. = Progetti come Kubernetes installano un bot per la CLA che blocca le PR finche' il contributor non firma l'accordo.`,
               context: 'strategy',
               difficulty: 'advanced',
               tool: 'CLA Assistant',
+              note: `EasyCLA della Linux Foundation e' uno dei piu' diffusi.`,
             },
             {
               english: 'DCO',
@@ -11259,15 +11270,15 @@ export default {
               command: 'git commit --signoff',
             },
             {
-              english: 'Maintainer',
-              italian: 'manutentore del progetto (maintainer)',
+              english: 'Maintainer Responsibility',
+              italian: `responsabilita' del maintainer`,
               pronunciation: '/meɪnˈteɪnər/',
               phonetic: 'mein-TEI-ner',
-              example:
-                "When planning your team's branching model, maintainers steward the project ensuring smooth collaboration at scale. = Quando si pianifica il modello di branching del team, i maintainer guidano il progetto assicurando una collaborazione fluida su larga scala.",
+              example: `A core maintainer responsibility is triaging incoming issues and guiding contributors toward acceptable patches. = Una responsabilita' chiave del maintainer e' il triage delle issue in arrivo e guidare i contributor verso patch accettabili.`,
               context: 'strategy',
               difficulty: 'advanced',
               code: 'MAINTAINERS.md',
+              note: `I burnout dei maintainer sono uno dei rischi di sostenibilita' nell'open source.`,
             },
             {
               english: 'RFC Process',
@@ -11310,15 +11321,15 @@ export default {
           description: 'Far entrare nuovi sviluppatori',
           items: [
             {
-              english: 'README',
-              italian: 'file di descrizione del progetto (README)',
+              english: 'README Badge',
+              italian: 'badge del README',
               pronunciation: '/ˌriːdˈmiː/',
               phonetic: 'RID-MI',
-              example:
-                "In choosing the right Git workflow, README is the project front door so the process fits your release cadence. = Nella scelta del giusto flusso Git, README è la porta d'ingresso del progetto cosi il processo si adatta alla cadenza di rilascio.",
+              example: `Adding a README badge for CI status gives visitors immediate confidence in the project's health. = Aggiungere un badge del README per lo stato della CI da' ai visitatori fiducia immediata nello stato di salute del progetto.`,
               context: 'strategy',
               difficulty: 'advanced',
               code: 'README.md',
+              note: 'Servizi come shields.io generano badge SVG da metriche di repo o CI.',
             },
             {
               english: 'Setup Guide',

@@ -1,0 +1,271 @@
+topicId,level,lesson,english,italian,issueType
+"docker-k8s",15,"dk_storage_4","emptyDir","volume effimero (emptyDir)",tautological-example
+"docker-k8s",15,"dk_storage_4","Ephemeral Volume","Volume effimero",tautological-example
+"docker-k8s",15,"dk_storage_4","Ephemeral Volume","Volume effimero",trivial-example
+"docker-k8s",16,"dk_k8s_net_1","CNI","Container Network Interface (CNI)",tautological-example
+"docker-k8s",16,"dk_k8s_net_1","CNI","Container Network Interface (CNI)",trivial-example
+"docker-k8s",16,"dk_k8s_net_1","Calico","Calico (CNI Kubernetes con NetworkPolicy)",tautological-example
+"docker-k8s",16,"dk_k8s_net_1","Calico","Calico (CNI Kubernetes con NetworkPolicy)",fake-translation
+"docker-k8s",16,"dk_k8s_net_1","Calico","Calico (CNI Kubernetes con NetworkPolicy)",trivial-example
+"docker-k8s",16,"dk_k8s_net_1","Cilium","Cilium (CNI eBPF Kubernetes)",tautological-example
+"docker-k8s",16,"dk_k8s_net_1","Cilium","Cilium (CNI eBPF Kubernetes)",fake-translation
+"docker-k8s",16,"dk_k8s_net_1","Cilium","Cilium (CNI eBPF Kubernetes)",trivial-example
+"docker-k8s",16,"dk_k8s_net_1","Flannel","Flannel (CNI Kubernetes semplice)",tautological-example
+"docker-k8s",16,"dk_k8s_net_1","Flannel","Flannel (CNI Kubernetes semplice)",fake-translation
+"docker-k8s",16,"dk_k8s_net_1","Flannel","Flannel (CNI Kubernetes semplice)",trivial-example
+"docker-k8s",16,"dk_k8s_net_1","Weave Net","Weave Net (CNI Kubernetes)",tautological-example
+"docker-k8s",16,"dk_k8s_net_1","Weave Net","Weave Net (CNI Kubernetes)",fake-translation
+"docker-k8s",16,"dk_k8s_net_1","Weave Net","Weave Net (CNI Kubernetes)",trivial-example
+"docker-k8s",16,"dk_k8s_net_1","Pod CIDR","CIDR dei pod",tautological-example
+"docker-k8s",16,"dk_k8s_net_1","Pod CIDR","CIDR dei pod",trivial-example
+"docker-k8s",16,"dk_k8s_net_1","Service CIDR","CIDR dei service",tautological-example
+"docker-k8s",16,"dk_k8s_net_1","Service CIDR","CIDR dei service",trivial-example
+"docker-k8s",16,"dk_k8s_net_1","BGP","Border Gateway Protocol (BGP)",trivial-example
+"docker-k8s",16,"dk_k8s_net_1","IP-in-IP","incapsulamento IP in IP (IP-in-IP)",tautological-example
+"docker-k8s",16,"dk_k8s_net_1","IP-in-IP","incapsulamento IP in IP (IP-in-IP)",trivial-example
+"docker-k8s",16,"dk_k8s_net_1","VXLAN","Virtual eXtensible LAN (VXLAN)",tautological-example
+"docker-k8s",16,"dk_k8s_net_1","VXLAN","Virtual eXtensible LAN (VXLAN)",trivial-example
+"docker-k8s",16,"dk_k8s_net_2","NetworkPolicy","policy di rete K8s (NetworkPolicy)",tautological-example
+"docker-k8s",16,"dk_k8s_net_2","NetworkPolicy","policy di rete K8s (NetworkPolicy)",trivial-example
+"docker-k8s",16,"dk_k8s_net_2","Ingress Rules","Regole ingress",tautological-example
+"docker-k8s",16,"dk_k8s_net_2","Ingress Rules","Regole ingress",trivial-example
+"docker-k8s",16,"dk_k8s_net_2","Egress Rules","Regole egress",tautological-example
+"docker-k8s",16,"dk_k8s_net_2","Egress Rules","Regole egress",trivial-example
+"docker-k8s",16,"dk_k8s_net_2","podSelector","selettore di pod nella policy (podSelector)",tautological-example
+"docker-k8s",16,"dk_k8s_net_2","podSelector","selettore di pod nella policy (podSelector)",trivial-example
+"docker-k8s",16,"dk_k8s_net_2","namespaceSelector","selettore di namespace (namespaceSelector)",tautological-example
+"docker-k8s",16,"dk_k8s_net_2","namespaceSelector","selettore di namespace (namespaceSelector)",trivial-example
+"docker-k8s",16,"dk_k8s_net_2","ipBlock","blocco IP nella policy (ipBlock)",tautological-example
+"docker-k8s",16,"dk_k8s_net_2","ipBlock","blocco IP nella policy (ipBlock)",trivial-example
+"docker-k8s",16,"dk_k8s_net_2","Default Deny","nega di default (Default Deny)",tautological-example
+"docker-k8s",16,"dk_k8s_net_2","Network Segmentation","Segmentazione di rete",trivial-example
+"docker-k8s",16,"dk_k8s_net_2","Cilium NetworkPolicy","CiliumNetworkPolicy",near-identical-translation
+"docker-k8s",16,"dk_k8s_net_2","Cilium NetworkPolicy","CiliumNetworkPolicy",trivial-example
+"docker-k8s",16,"dk_k8s_net_3","CoreDNS","DNS cluster di Kubernetes (CoreDNS)",tautological-example
+"docker-k8s",16,"dk_k8s_net_3","CoreDNS","DNS cluster di Kubernetes (CoreDNS)",trivial-example
+"docker-k8s",16,"dk_k8s_net_3","Cluster DNS","DNS del cluster",tautological-example
+"docker-k8s",16,"dk_k8s_net_3","Cluster DNS","DNS del cluster",trivial-example
+"docker-k8s",16,"dk_k8s_net_3","Search Path","Path di ricerca DNS",trivial-example
+"docker-k8s",16,"dk_k8s_net_3","dnsPolicy","policy DNS del pod (dnsPolicy)",tautological-example
+"docker-k8s",16,"dk_k8s_net_3","dnsPolicy","policy DNS del pod (dnsPolicy)",trivial-example
+"docker-k8s",16,"dk_k8s_net_3","Corefile","configurazione di CoreDNS (Corefile)",tautological-example
+"docker-k8s",16,"dk_k8s_net_3","Corefile","configurazione di CoreDNS (Corefile)",trivial-example
+"docker-k8s",16,"dk_k8s_net_3","Upstream DNS","DNS upstream",trivial-example
+"docker-k8s",16,"dk_k8s_net_3","Stub Domain","dominio inoltrato (Stub Domain)",tautological-example
+"docker-k8s",16,"dk_k8s_net_3","Stub Domain","dominio inoltrato (Stub Domain)",trivial-example
+"docker-k8s",16,"dk_k8s_net_3","Cache Plugin","Plugin di cache",trivial-example
+"docker-k8s",16,"dk_k8s_net_3","NodeLocal DNSCache","cache DNS sul nodo (NodeLocal DNSCache)",tautological-example
+"docker-k8s",16,"dk_k8s_net_4","kube-proxy","proxy di rete su ogni nodo (kube-proxy)",tautological-example
+"docker-k8s",16,"dk_k8s_net_4","kube-proxy","proxy di rete su ogni nodo (kube-proxy)",trivial-example
+"docker-k8s",16,"dk_k8s_net_4","kube-proxy","",duplicate-across-lessons
+"docker-k8s",16,"dk_k8s_net_4","iptables Mode","Modalità iptables",trivial-example
+"docker-k8s",16,"dk_k8s_net_4","IPVS Mode","Modalità IPVS",trivial-example
+"docker-k8s",16,"dk_k8s_net_4","Connection Tracking","Tracking delle connessioni",trivial-example
+"docker-k8s",16,"dk_k8s_net_4","externalTrafficPolicy","policy traffico esterno (externalTrafficPolicy)",tautological-example
+"docker-k8s",16,"dk_k8s_net_4","internalTrafficPolicy","policy traffico interno (internalTrafficPolicy)",trivial-example
+"docker-k8s",16,"dk_k8s_net_4","Cluster Networking Model","Modello di networking cluster",trivial-example
+"docker-k8s",16,"dk_k8s_net_4","Source NAT","traduzione indirizzo sorgente (Source NAT)",trivial-example
+"docker-k8s",17,"dk_helm_1","Helm","package manager per Kubernetes (Helm)",tautological-example
+"docker-k8s",17,"dk_helm_1","Helm","package manager per Kubernetes (Helm)",trivial-example
+"docker-k8s",17,"dk_helm_1","Chart","pacchetto Helm (Chart)",trivial-example
+"docker-k8s",17,"dk_helm_1","Release","istanza installata di un chart (Release)",trivial-example
+"docker-k8s",17,"dk_helm_1","Repository","archivio di chart (Repository)",trivial-example
+"docker-k8s",17,"dk_helm_1","helm install","Installa chart",tautological-example
+"docker-k8s",17,"dk_helm_1","helm install","Installa chart",trivial-example
+"docker-k8s",17,"dk_helm_1","helm upgrade","Aggiorna release",tautological-example
+"docker-k8s",17,"dk_helm_1","helm upgrade","Aggiorna release",trivial-example
+"docker-k8s",17,"dk_helm_1","helm uninstall","Rimuovi release",tautological-example
+"docker-k8s",17,"dk_helm_1","helm uninstall","Rimuovi release",trivial-example
+"docker-k8s",17,"dk_helm_1","helm list","Lista release",tautological-example
+"docker-k8s",17,"dk_helm_1","helm list","Lista release",trivial-example
+"docker-k8s",17,"dk_helm_1","helm rollback","Rollback release",trivial-example
+"docker-k8s",17,"dk_helm_1","helm search","Cerca chart",trivial-example
+"docker-k8s",17,"dk_helm_2","Chart.yaml","metadati del chart (Chart.yaml)",tautological-example
+"docker-k8s",17,"dk_helm_2","Chart.yaml","metadati del chart (Chart.yaml)",trivial-example
+"docker-k8s",17,"dk_helm_2","values.yaml","valori di default del chart (values.yaml)",tautological-example
+"docker-k8s",17,"dk_helm_2","values.yaml","valori di default del chart (values.yaml)",trivial-example
+"docker-k8s",17,"dk_helm_2","templates/","Cartella templates",tautological-example
+"docker-k8s",17,"dk_helm_2","charts/","Cartella charts",tautological-example
+"docker-k8s",17,"dk_helm_2","charts/","Cartella charts",trivial-example
+"docker-k8s",17,"dk_helm_2","NOTES.txt","File NOTES.txt",tautological-example
+"docker-k8s",17,"dk_helm_2","NOTES.txt","File NOTES.txt",trivial-example
+"docker-k8s",17,"dk_helm_2","_helpers.tpl","template helper Helm (_helpers.tpl)",tautological-example
+"docker-k8s",17,"dk_helm_2","apiVersion","apiVersion del chart",trivial-example
+"docker-k8s",17,"dk_helm_2","Chart Version","Versione del chart",trivial-example
+"docker-k8s",17,"dk_helm_2","appVersion","appVersion / versione dell'applicazione",tautological-example
+"docker-k8s",17,"dk_helm_2","appVersion","appVersion / versione dell'applicazione",fake-translation
+"docker-k8s",17,"dk_helm_2","appVersion","appVersion / versione dell'applicazione",trivial-example
+"docker-k8s",17,"dk_helm_2","Dependencies","Dipendenze",tautological-example
+"docker-k8s",17,"dk_helm_3","Go Template","Template Go",trivial-example
+"docker-k8s",17,"dk_helm_3",".Values","Oggetto .Values",tautological-example
+"docker-k8s",17,"dk_helm_3",".Values","Oggetto .Values",trivial-example
+"docker-k8s",17,"dk_helm_3",".Release","Oggetto .Release",tautological-example
+"docker-k8s",17,"dk_helm_3",".Release","Oggetto .Release",trivial-example
+"docker-k8s",17,"dk_helm_3",".Chart","Oggetto .Chart",tautological-example
+"docker-k8s",17,"dk_helm_3",".Chart","Oggetto .Chart",trivial-example
+"docker-k8s",17,"dk_helm_3","Pipeline","Pipeline (template)",tautological-example
+"docker-k8s",17,"dk_helm_3","Pipeline","Pipeline (template)",fake-translation
+"docker-k8s",17,"dk_helm_3","Pipeline","Pipeline (template)",trivial-example
+"docker-k8s",17,"dk_helm_3","if/else","costrutti condizionali nei template (if/else)",trivial-example
+"docker-k8s",17,"dk_helm_3","range","Ciclo range",tautological-example
+"docker-k8s",17,"dk_helm_3","range","Ciclo range",trivial-example
+"docker-k8s",17,"dk_helm_3","with","Blocco with",tautological-example
+"docker-k8s",17,"dk_helm_3","with","Blocco with",trivial-example
+"docker-k8s",17,"dk_helm_3","include","Funzione include",tautological-example
+"docker-k8s",17,"dk_helm_3","include","Funzione include",trivial-example
+"docker-k8s",17,"dk_helm_3","tpl Function","Funzione tpl",trivial-example
+"docker-k8s",17,"dk_helm_4","Hook","aggancio del ciclo di vita Helm (Hook)",tautological-example
+"docker-k8s",17,"dk_helm_4","Hook","aggancio del ciclo di vita Helm (Hook)",trivial-example
+"docker-k8s",17,"dk_helm_4","pre-install","Hook pre-install",tautological-example
+"docker-k8s",17,"dk_helm_4","pre-install","Hook pre-install",trivial-example
+"docker-k8s",17,"dk_helm_4","post-install","Hook post-install",tautological-example
+"docker-k8s",17,"dk_helm_4","post-install","Hook post-install",trivial-example
+"docker-k8s",17,"dk_helm_4","pre-upgrade","Hook pre-upgrade",tautological-example
+"docker-k8s",17,"dk_helm_4","pre-upgrade","Hook pre-upgrade",trivial-example
+"docker-k8s",17,"dk_helm_4","pre-delete","Hook pre-delete",tautological-example
+"docker-k8s",17,"dk_helm_4","pre-delete","Hook pre-delete",trivial-example
+"docker-k8s",17,"dk_helm_4","Hook Weight","Peso dell'hook",tautological-example
+"docker-k8s",17,"dk_helm_4","Hook Weight","Peso dell'hook",trivial-example
+"docker-k8s",17,"dk_helm_4","Sub-chart","chart annidato (Sub-chart)",tautological-example
+"docker-k8s",17,"dk_helm_4","helm dependency update","Aggiorna dipendenze",trivial-example
+"docker-k8s",17,"dk_helm_4","Library Chart","Chart libreria",tautological-example
+"docker-k8s",17,"dk_helm_4","helm package","Impacchetta chart",trivial-example
+"docker-k8s",18,"dk_k8s_sec_1","RBAC","Role-Based Access Control (RBAC)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_1","RBAC","Role-Based Access Control (RBAC)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_1","RoleBinding","aggancio ruolo a soggetto K8s (RoleBinding)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_1","RoleBinding","aggancio ruolo a soggetto K8s (RoleBinding)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_1","ClusterRoleBinding","aggancio cluster-wide (ClusterRoleBinding)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_1","Subject","Soggetto",tautological-example
+"docker-k8s",18,"dk_k8s_sec_1","Subject","Soggetto",trivial-example
+"docker-k8s",18,"dk_k8s_sec_1","Verbs","Verbs (verbi)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_1","Verbs","Verbs (verbi)",fake-translation
+"docker-k8s",18,"dk_k8s_sec_1","apiGroups","gruppi API nei ruoli (apiGroups)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_1","apiGroups","gruppi API nei ruoli (apiGroups)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_1","kubectl auth can-i","Verifica permessi",trivial-example
+"docker-k8s",18,"dk_k8s_sec_1","Aggregated Role","Role aggregato",tautological-example
+"docker-k8s",18,"dk_k8s_sec_2","ServiceAccount","account di servizio K8s (ServiceAccount)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_2","ServiceAccount","account di servizio K8s (ServiceAccount)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_2","automountServiceAccountToken","monta token SA (automountServiceAccountToken)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_2","IRSA","IAM Roles for Service Accounts (IRSA)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_2","IRSA","IAM Roles for Service Accounts (IRSA)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_2","Workload Identity","identità GCP per carichi (Workload Identity)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_2","Workload Identity","identità GCP per carichi (Workload Identity)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_2","OIDC","OpenID Connect (OIDC)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_2","Bound Token","Token vincolato",tautological-example
+"docker-k8s",18,"dk_k8s_sec_2","Bound Token","Token vincolato",trivial-example
+"docker-k8s",18,"dk_k8s_sec_2","TokenRequest API","API TokenRequest",trivial-example
+"docker-k8s",18,"dk_k8s_sec_3","PodSecurityPolicy","vecchia policy di sicurezza pod (PodSecurityPolicy)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_3","Pod Security Standards","standard sicurezza pod (Pod Security Standards)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_3","privileged Profile","Profilo privileged",trivial-example
+"docker-k8s",18,"dk_k8s_sec_3","restricted Profile","Profilo restricted",trivial-example
+"docker-k8s",18,"dk_k8s_sec_3","securityContext","contesto di sicurezza (securityContext)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_3","runAsNonRoot","esegui non come root (runAsNonRoot)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_3","runAsNonRoot","esegui non come root (runAsNonRoot)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_3","runAsUser","UID di esecuzione (runAsUser)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_3","runAsUser","UID di esecuzione (runAsUser)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_3","fsGroup","GID dei volumi (fsGroup)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_3","fsGroup","GID dei volumi (fsGroup)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_3","seccompProfile","profilo seccomp (seccompProfile)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_3","seccompProfile","profilo seccomp (seccompProfile)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_4","OPA","Open Policy Agent (OPA)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_4","OPA","Open Policy Agent (OPA)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_4","Gatekeeper","OPA Gatekeeper / OPA per Kubernetes",tautological-example
+"docker-k8s",18,"dk_k8s_sec_4","Gatekeeper","OPA Gatekeeper / OPA per Kubernetes",trivial-example
+"docker-k8s",18,"dk_k8s_sec_4","Rego","linguaggio policy di OPA (Rego)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_4","Rego","linguaggio policy di OPA (Rego)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_4","ConstraintTemplate","template di policy Gatekeeper (ConstraintTemplate)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_4","Constraint","istanza di policy Gatekeeper (Constraint)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_4","Admission Webhook","Webhook di ammissione",tautological-example
+"docker-k8s",18,"dk_k8s_sec_4","Validating Admission","Ammissione validante",tautological-example
+"docker-k8s",18,"dk_k8s_sec_4","Mutating Admission","Ammissione mutante",tautological-example
+"docker-k8s",18,"dk_k8s_sec_4","Mutating Admission","Ammissione mutante",trivial-example
+"docker-k8s",18,"dk_k8s_sec_4","Kyverno","Kyverno (policy engine Kubernetes)",tautological-example
+"docker-k8s",18,"dk_k8s_sec_4","Kyverno","Kyverno (policy engine Kubernetes)",fake-translation
+"docker-k8s",18,"dk_k8s_sec_4","Kyverno","Kyverno (policy engine Kubernetes)",trivial-example
+"docker-k8s",18,"dk_k8s_sec_4","Audit Mode","Modalità audit",tautological-example
+"docker-k8s",19,"dk_scale_1","HPA","Horizontal Pod Autoscaler (HPA)",tautological-example
+"docker-k8s",19,"dk_scale_1","HPA","Horizontal Pod Autoscaler (HPA)",trivial-example
+"docker-k8s",19,"dk_scale_1","Target Utilization","Utilizzo target",trivial-example
+"docker-k8s",19,"dk_scale_1","minReplicas","repliche minime HPA (minReplicas)",tautological-example
+"docker-k8s",19,"dk_scale_1","minReplicas","repliche minime HPA (minReplicas)",trivial-example
+"docker-k8s",19,"dk_scale_1","maxReplicas","repliche massime HPA (maxReplicas)",tautological-example
+"docker-k8s",19,"dk_scale_1","maxReplicas","repliche massime HPA (maxReplicas)",trivial-example
+"docker-k8s",19,"dk_scale_1","Custom Metric","Metrica personalizzata",trivial-example
+"docker-k8s",19,"dk_scale_1","External Metric","Metrica esterna",tautological-example
+"docker-k8s",19,"dk_scale_1","External Metric","Metrica esterna",trivial-example
+"docker-k8s",19,"dk_scale_1","Cooldown Period","Periodo di cooldown",trivial-example
+"docker-k8s",19,"dk_scale_1","Stabilization Window","Finestra di stabilizzazione",tautological-example
+"docker-k8s",19,"dk_scale_1","metrics-server","metriche delle risorse K8s (metrics-server)",tautological-example
+"docker-k8s",19,"dk_scale_1","metrics-server","metriche delle risorse K8s (metrics-server)",trivial-example
+"docker-k8s",19,"dk_scale_2","VPA","Vertical Pod Autoscaler (VPA)",tautological-example
+"docker-k8s",19,"dk_scale_2","VPA","Vertical Pod Autoscaler (VPA)",trivial-example
+"docker-k8s",19,"dk_scale_2","Auto Mode","Modalità Auto",tautological-example
+"docker-k8s",19,"dk_scale_2","Auto Mode","Modalità Auto",trivial-example
+"docker-k8s",19,"dk_scale_2","Cluster Autoscaler","scaler dei nodi (Cluster Autoscaler)",tautological-example
+"docker-k8s",19,"dk_scale_2","Cluster Autoscaler","scaler dei nodi (Cluster Autoscaler)",trivial-example
+"docker-k8s",19,"dk_scale_2","Node Group","Gruppo di nodi",trivial-example
+"docker-k8s",19,"dk_scale_2","Karpenter","autoscaler nodi AWS-native (Karpenter)",tautological-example
+"docker-k8s",19,"dk_scale_2","Karpenter","autoscaler nodi AWS-native (Karpenter)",trivial-example
+"docker-k8s",19,"dk_scale_2","Spot Instances","Istanze spot",trivial-example
+"docker-k8s",19,"dk_scale_2","Resource Bin Packing","Bin packing risorse",trivial-example
+"docker-k8s",19,"dk_scale_2","Resource Recommendation","Raccomandazione risorse",trivial-example
+"docker-k8s",19,"dk_scale_2","Right-Sizing","dimensionamento corretto risorse (Right-Sizing)",tautological-example
+"docker-k8s",19,"dk_scale_3","PodDisruptionBudget","budget di interruzione pod (PodDisruptionBudget)",trivial-example
+"docker-k8s",19,"dk_scale_3","PDB","PodDisruptionBudget (PDB)",tautological-example
+"docker-k8s",19,"dk_scale_3","PDB","PodDisruptionBudget (PDB)",trivial-example
+"docker-k8s",19,"dk_scale_3","minAvailable","pod minimi disponibili (minAvailable)",tautological-example
+"docker-k8s",19,"dk_scale_3","minAvailable","pod minimi disponibili (minAvailable)",trivial-example
+"docker-k8s",19,"dk_scale_3","maxUnavailable","maxUnavailable / pod fuori servizio durante l'aggiornamento",tautological-example
+"docker-k8s",19,"dk_scale_3","maxUnavailable","maxUnavailable / pod fuori servizio durante l'aggiornamento",fake-translation
+"docker-k8s",19,"dk_scale_3","maxUnavailable","",duplicate-across-lessons
+"docker-k8s",19,"dk_scale_3","Voluntary Disruption","Interruzione volontaria",tautological-example
+"docker-k8s",19,"dk_scale_3","Involuntary Disruption","Interruzione involontaria",trivial-example
+"docker-k8s",19,"dk_scale_3","Eviction","sfratto del pod (Eviction)",tautological-example
+"docker-k8s",19,"dk_scale_3","Eviction","sfratto del pod (Eviction)",trivial-example
+"docker-k8s",19,"dk_scale_3","Eviction API","API di eviction",tautological-example
+"docker-k8s",19,"dk_scale_3","Eviction API","API di eviction",trivial-example
+"docker-k8s",19,"dk_scale_3","Graceful Termination","Terminazione graceful",tautological-example
+"docker-k8s",19,"dk_scale_3","Graceful Termination","Terminazione graceful",trivial-example
+"docker-k8s",19,"dk_scale_3","Pod Priority","Priorità del pod",trivial-example
+"docker-k8s",19,"dk_scale_4","KEDA","Kubernetes Event-Driven Autoscaling (KEDA)",tautological-example
+"docker-k8s",19,"dk_scale_4","KEDA","Kubernetes Event-Driven Autoscaling (KEDA)",trivial-example
+"docker-k8s",19,"dk_scale_4","ScaledObject","oggetto KEDA scalabile (ScaledObject)",tautological-example
+"docker-k8s",19,"dk_scale_4","ScaledObject","oggetto KEDA scalabile (ScaledObject)",trivial-example
+"docker-k8s",19,"dk_scale_4","Scaler","fornitore di metriche KEDA (Scaler)",tautological-example
+"docker-k8s",19,"dk_scale_4","Scaler","fornitore di metriche KEDA (Scaler)",trivial-example
+"docker-k8s",19,"dk_scale_4","Trigger","evento scatenante (Trigger)",tautological-example
+"docker-k8s",19,"dk_scale_4","Trigger","evento scatenante (Trigger)",trivial-example
+"docker-k8s",19,"dk_scale_4","Scale to Zero","Scale a zero",near-identical-translation
+"docker-k8s",19,"dk_scale_4","Scale to Zero","Scale a zero",trivial-example
+"docker-k8s",19,"dk_scale_4","Cron Trigger","Trigger cron",tautological-example
+"docker-k8s",19,"dk_scale_4","Cron Trigger","Trigger cron",trivial-example
+"docker-k8s",19,"dk_scale_4","Polling Interval","Intervallo di polling",tautological-example
+"docker-k8s",19,"dk_scale_4","Polling Interval","Intervallo di polling",trivial-example
+"docker-k8s",19,"dk_scale_4","Cooldown","tempo di raffreddamento (Cooldown)",trivial-example
+"docker-k8s",19,"dk_scale_4","TriggerAuthentication","autenticazione del trigger KEDA (TriggerAuthentication)",tautological-example
+"docker-k8s",19,"dk_scale_4","ScaledJob","Job autoscalato KEDA (ScaledJob)",tautological-example
+"docker-k8s",19,"dk_scale_4","ScaledJob","Job autoscalato KEDA (ScaledJob)",trivial-example
+"docker-k8s",20,"dk_mon_1","Metrics Server","metrics-server / metriche delle risorse K8s",tautological-example
+"docker-k8s",20,"dk_mon_1","Metrics Server","metrics-server / metriche delle risorse K8s",trivial-example
+"docker-k8s",20,"dk_mon_1","kubectl top","mostra utilizzo risorse (kubectl top)",tautological-example
+"docker-k8s",20,"dk_mon_1","kubectl top","mostra utilizzo risorse (kubectl top)",trivial-example
+"docker-k8s",20,"dk_mon_1","Prometheus","Prometheus (sistema monitoring time-series)",tautological-example
+"docker-k8s",20,"dk_mon_1","Prometheus","Prometheus (sistema monitoring time-series)",fake-translation
+"docker-k8s",20,"dk_mon_1","Prometheus","Prometheus (sistema monitoring time-series)",trivial-example
+"docker-k8s",20,"dk_mon_1","PromQL","linguaggio query Prometheus (PromQL)",tautological-example
+"docker-k8s",20,"dk_mon_1","ServiceMonitor","CRD scraping servizi (ServiceMonitor)",tautological-example
+"docker-k8s",20,"dk_mon_1","PodMonitor","CRD scraping pod (PodMonitor)",tautological-example
+"docker-k8s",20,"dk_mon_1","PodMonitor","CRD scraping pod (PodMonitor)",trivial-example
+"docker-k8s",20,"dk_mon_1","Exporter","esportatore di metriche (Exporter)",tautological-example
+"docker-k8s",20,"dk_mon_1","Exporter","esportatore di metriche (Exporter)",trivial-example
+"docker-k8s",20,"dk_mon_1","kube-state-metrics","metriche di stato K8s (kube-state-metrics)",tautological-example
+"docker-k8s",20,"dk_mon_1","Scrape Interval","Intervallo di scraping",tautological-example
+"docker-k8s",20,"dk_mon_1","Scrape Interval","Intervallo di scraping",trivial-example
+"docker-k8s",20,"dk_mon_1","Time Series","Serie temporali",trivial-example
+"docker-k8s",20,"dk_mon_2","Liveness Endpoint","Endpoint liveness",trivial-example
+"docker-k8s",20,"dk_mon_2","Readiness Endpoint","Endpoint readiness",trivial-example
+"docker-k8s",20,"dk_mon_2","Health Check","controllo di salute (Health Check)",tautological-example
+"docker-k8s",20,"dk_mon_2","Health Check","controllo di salute (Health Check)",trivial-example
+"docker-k8s",20,"dk_mon_2","Golden Signals","latenza, traffico, errori, saturazione (Golden Signals)",tautological-example
+"docker-k8s",20,"dk_mon_2","SLO","Service Level Objective (SLO)",tautological-example
+"docker-k8s",20,"dk_mon_2","SLO","Service Level Objective (SLO)",trivial-example

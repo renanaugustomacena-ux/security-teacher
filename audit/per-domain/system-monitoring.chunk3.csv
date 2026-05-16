@@ -1,0 +1,240 @@
+topicId,level,lesson,english,italian,issueType
+"system-monitoring",20,"mon_aiops_2","Time Series ML","Machine learning su serie temporali",tautological-example
+"system-monitoring",20,"mon_aiops_2","Time Series ML","Machine learning su serie temporali",trivial-example
+"system-monitoring",20,"mon_aiops_2","LSTM","Rete ricorrente a memoria lunga (LSTM)",tautological-example
+"system-monitoring",20,"mon_aiops_2","LSTM","Rete ricorrente a memoria lunga (LSTM)",trivial-example
+"system-monitoring",20,"mon_aiops_2","Isolation Forest","Algoritmo anomaly detection (Isolation Forest)",tautological-example
+"system-monitoring",20,"mon_aiops_2","Z-Score","Punteggio standardizzato (Z-score)",trivial-example
+"system-monitoring",20,"mon_aiops_2","EWMA","Media mobile esponenziale ponderata (EWMA)",tautological-example
+"system-monitoring",20,"mon_aiops_2","Clustering","Raggruppamento di dati simili (Clustering)",tautological-example
+"system-monitoring",20,"mon_aiops_2","Clustering","Raggruppamento di dati simili (Clustering)",trivial-example
+"system-monitoring",20,"mon_aiops_2","Feature Engineering","Costruzione di feature (Feature Engineering)",tautological-example
+"system-monitoring",20,"mon_aiops_2","Drift","Drift del modello",trivial-example
+"system-monitoring",20,"mon_aiops_2","Drift","",duplicate-across-lessons
+"system-monitoring",20,"mon_aiops_2","Confidence Score","Punteggio di confidenza",trivial-example
+"system-monitoring",20,"mon_aiops_3","Dynatrace","Dynatrace (piattaforma APM AI-driven)",tautological-example
+"system-monitoring",20,"mon_aiops_3","Dynatrace","Dynatrace (piattaforma APM AI-driven)",fake-translation
+"system-monitoring",20,"mon_aiops_3","Dynatrace","Dynatrace (piattaforma APM AI-driven)",trivial-example
+"system-monitoring",20,"mon_aiops_3","AppDynamics","AppDynamics (piattaforma APM Cisco)",tautological-example
+"system-monitoring",20,"mon_aiops_3","AppDynamics","AppDynamics (piattaforma APM Cisco)",fake-translation
+"system-monitoring",20,"mon_aiops_3","AppDynamics","AppDynamics (piattaforma APM Cisco)",trivial-example
+"system-monitoring",20,"mon_aiops_3","Moogsoft","Moogsoft (AIOps per gestione incidenti)",tautological-example
+"system-monitoring",20,"mon_aiops_3","Moogsoft","Moogsoft (AIOps per gestione incidenti)",fake-translation
+"system-monitoring",20,"mon_aiops_3","Moogsoft","Moogsoft (AIOps per gestione incidenti)",trivial-example
+"system-monitoring",20,"mon_aiops_3","BigPanda","BigPanda (AIOps per correlazione allarmi)",tautological-example
+"system-monitoring",20,"mon_aiops_3","BigPanda","BigPanda (AIOps per correlazione allarmi)",fake-translation
+"system-monitoring",20,"mon_aiops_3","BigPanda","BigPanda (AIOps per correlazione allarmi)",trivial-example
+"system-monitoring",20,"mon_aiops_3","Datadog Watchdog","Rilevatore anomalie automatico (Datadog Watchdog)",trivial-example
+"system-monitoring",20,"mon_aiops_3","Topology Map","Mappa della topologia",trivial-example
+"system-monitoring",20,"mon_aiops_3","Causal Inference","Inferenza causale",tautological-example
+"system-monitoring",20,"mon_aiops_3","Probabilistic Alert","Alert probabilistico",tautological-example
+"system-monitoring",20,"mon_aiops_3","Continuous Learning","Apprendimento continuo",tautological-example
+"system-monitoring",20,"mon_aiops_3","Continuous Learning","",duplicate-across-lessons
+"system-monitoring",20,"mon_aiops_4","LLM","Modello linguistico di grandi dimensioni (LLM)",tautological-example
+"system-monitoring",20,"mon_aiops_4","LLM","Modello linguistico di grandi dimensioni (LLM)",trivial-example
+"system-monitoring",20,"mon_aiops_4","Copilot","Assistente AI (Copilot)",trivial-example
+"system-monitoring",20,"mon_aiops_4","RCA Suggestion","Suggerimento RCA",tautological-example
+"system-monitoring",20,"mon_aiops_4","Prompt Engineering","Progettazione di prompt (Prompt Engineering)",tautological-example
+"system-monitoring",20,"mon_aiops_4","RAG","Generazione aumentata dal recupero (RAG)",tautological-example
+"system-monitoring",20,"mon_aiops_4","AI Safety","Sicurezza dell'AI",tautological-example
+"system-monitoring",21,"mon_automation_1","Auto-Remediation","Rimedio automatico",tautological-example
+"system-monitoring",21,"mon_automation_1","Auto-Remediation","Rimedio automatico",trivial-example
+"system-monitoring",21,"mon_automation_1","StackStorm","StackStorm (piattaforma di automazione eventi)",tautological-example
+"system-monitoring",21,"mon_automation_1","StackStorm","StackStorm (piattaforma di automazione eventi)",fake-translation
+"system-monitoring",21,"mon_automation_1","Rundeck","Rundeck (orchestrazione runbook)",tautological-example
+"system-monitoring",21,"mon_automation_1","Rundeck","Rundeck (orchestrazione runbook)",fake-translation
+"system-monitoring",21,"mon_automation_1","Rundeck","Rundeck (orchestrazione runbook)",trivial-example
+"system-monitoring",21,"mon_automation_1","Ansible","Ansible (strumento automazione configurazione)",tautological-example
+"system-monitoring",21,"mon_automation_1","Ansible","Ansible (strumento automazione configurazione)",fake-translation
+"system-monitoring",21,"mon_automation_1","Ansible","Ansible (strumento automazione configurazione)",trivial-example
+"system-monitoring",21,"mon_automation_1","Idempotency","Idempotenza",near-identical-translation
+"system-monitoring",21,"mon_automation_1","Idempotency","Idempotenza",trivial-example
+"system-monitoring",21,"mon_automation_1","Approval Workflow","Workflow di approvazione",trivial-example
+"system-monitoring",21,"mon_automation_2","ChatOps","Operazioni dal canale chat (ChatOps)",tautological-example
+"system-monitoring",21,"mon_automation_2","Slash Command","Comando slash",tautological-example
+"system-monitoring",21,"mon_automation_2","Slash Command","Comando slash",trivial-example
+"system-monitoring",21,"mon_automation_2","Hubot","Hubot (bot ChatOps GitHub)",tautological-example
+"system-monitoring",21,"mon_automation_2","Hubot","Hubot (bot ChatOps GitHub)",fake-translation
+"system-monitoring",21,"mon_automation_2","Errbot","Errbot (bot ChatOps Python)",tautological-example
+"system-monitoring",21,"mon_automation_2","Errbot","Errbot (bot ChatOps Python)",fake-translation
+"system-monitoring",21,"mon_automation_2","Errbot","Errbot (bot ChatOps Python)",trivial-example
+"system-monitoring",21,"mon_automation_2","Workflow Builder","Costruttore di workflow",trivial-example
+"system-monitoring",21,"mon_automation_2","Incident Channel","Canale dell'incidente",trivial-example
+"system-monitoring",21,"mon_automation_2","Audit Bot Action","Audit delle azioni del bot",trivial-example
+"system-monitoring",21,"mon_automation_3","Self-Healing System","Sistema auto-riparante",tautological-example
+"system-monitoring",21,"mon_automation_3","Restart Policy","Politica di restart",trivial-example
+"system-monitoring",21,"mon_automation_3","PDB","PDB (Pod Disruption Budget)",fake-translation
+"system-monitoring",21,"mon_automation_3","Reactive Loop","Loop reattivo",trivial-example
+"system-monitoring",21,"mon_automation_3","Graceful Degradation","Degrado controllato",tautological-example
+"system-monitoring",21,"mon_automation_3","Bulkhead Pattern","Pattern bulkhead",trivial-example
+"system-monitoring",21,"mon_automation_4","GitOps","Git come fonte di verità per il deploy (GitOps)",tautological-example
+"system-monitoring",21,"mon_automation_4","Argo CD","Argo CD (motore GitOps Kubernetes)",tautological-example
+"system-monitoring",21,"mon_automation_4","Argo CD","Argo CD (motore GitOps Kubernetes)",fake-translation
+"system-monitoring",21,"mon_automation_4","Argo CD","Argo CD (motore GitOps Kubernetes)",trivial-example
+"system-monitoring",21,"mon_automation_4","Flux","Flux (motore GitOps Kubernetes)",tautological-example
+"system-monitoring",21,"mon_automation_4","Flux","Flux (motore GitOps Kubernetes)",fake-translation
+"system-monitoring",21,"mon_automation_4","Pull-Based Deploy","Deploy pull-based",tautological-example
+"system-monitoring",21,"mon_automation_4","Drift Detection","Rilevamento drift",tautological-example
+"system-monitoring",21,"mon_automation_4","Self-Service Deploy","Deploy self-service",tautological-example
+"system-monitoring",21,"mon_automation_4","Self-Service Deploy","Deploy self-service",trivial-example
+"system-monitoring",21,"mon_automation_4","Pipeline as Code","Pipeline come codice",tautological-example
+"system-monitoring",21,"mon_automation_4","Pipeline as Code","Pipeline come codice",trivial-example
+"system-monitoring",21,"mon_automation_4","Policy as Code","Policy come codice",trivial-example
+"system-monitoring",21,"mon_automation_4","Approval Gate","Gate di approvazione",trivial-example
+"system-monitoring",21,"mon_automation_4","Progressive Delivery","Consegna progressiva",tautological-example
+"system-monitoring",22,"mon_oac_1","Terraform","Terraform (IaC HashiCorp)",tautological-example
+"system-monitoring",22,"mon_oac_1","Terraform","Terraform (IaC HashiCorp)",fake-translation
+"system-monitoring",22,"mon_oac_1","Module","Modulo",near-identical-translation
+"system-monitoring",22,"mon_oac_1","State","Stato",near-identical-translation
+"system-monitoring",22,"mon_oac_1","Plan","Pianifica modifiche IaC (Plan)",trivial-example
+"system-monitoring",22,"mon_oac_1","Apply","Applica modifiche IaC (Apply)",trivial-example
+"system-monitoring",22,"mon_oac_1","Datadog Provider","Provider Datadog",trivial-example
+"system-monitoring",22,"mon_oac_1","Drift","Scostamento dallo stato dichiarato (Drift)",trivial-example
+"system-monitoring",22,"mon_oac_1","Drift","",duplicate-across-lessons
+"system-monitoring",22,"mon_oac_1","Workspace","Area di lavoro (Workspace)",tautological-example
+"system-monitoring",22,"mon_oac_2","Jsonnet","Jsonnet (linguaggio template JSON)",tautological-example
+"system-monitoring",22,"mon_oac_2","Jsonnet","Jsonnet (linguaggio template JSON)",fake-translation
+"system-monitoring",22,"mon_oac_2","Jsonnet","Jsonnet (linguaggio template JSON)",trivial-example
+"system-monitoring",22,"mon_oac_2","Grafonnet","Libreria Jsonnet per Grafana (Grafonnet)",tautological-example
+"system-monitoring",22,"mon_oac_2","Library","Libreria",trivial-example
+"system-monitoring",22,"mon_oac_2","Tanka","Tanka (gestore Kubernetes con Jsonnet)",tautological-example
+"system-monitoring",22,"mon_oac_2","Tanka","Tanka (gestore Kubernetes con Jsonnet)",fake-translation
+"system-monitoring",22,"mon_oac_2","Tanka","Tanka (gestore Kubernetes con Jsonnet)",trivial-example
+"system-monitoring",22,"mon_oac_2","jb","jb (jsonnet-bundler)",fake-translation
+"system-monitoring",22,"mon_oac_2","jb","jb (jsonnet-bundler)",trivial-example
+"system-monitoring",22,"mon_oac_2","Templating","Sistema di template (Templating)",tautological-example
+"system-monitoring",22,"mon_oac_2","Helper Function","Funzione helper",tautological-example
+"system-monitoring",22,"mon_oac_2","Helper Function","Funzione helper",trivial-example
+"system-monitoring",22,"mon_oac_3","Dashboard as Code","Dashboard come codice",tautological-example
+"system-monitoring",22,"mon_oac_3","Dashboard as Code","Dashboard come codice",trivial-example
+"system-monitoring",22,"mon_oac_3","JSON Diff","Diff JSON",tautological-example
+"system-monitoring",22,"mon_oac_3","Linting","Analisi statica del codice (Linting)",trivial-example
+"system-monitoring",22,"mon_oac_3","CI Validation","Validazione CI",tautological-example
+"system-monitoring",22,"mon_oac_3","Snapshot Test","Test snapshot",tautological-example
+"system-monitoring",22,"mon_oac_3","Versioning","Versionamento",trivial-example
+"system-monitoring",22,"mon_oac_3","Per-Service Bundle","Bundle per servizio",trivial-example
+"system-monitoring",22,"mon_oac_4","Sloth","Generatore di SLO Prometheus (Sloth)",tautological-example
+"system-monitoring",22,"mon_oac_4","OpenSLO","Standard aperto per SLO (OpenSLO)",tautological-example
+"system-monitoring",22,"mon_oac_4","OpenSLO","Standard aperto per SLO (OpenSLO)",trivial-example
+"system-monitoring",22,"mon_oac_4","Burn Rate Alert","Alert di burn rate",tautological-example
+"system-monitoring",22,"mon_oac_4","Auto-Generated Rules","Regole auto-generate",trivial-example
+"system-monitoring",22,"mon_oac_4","Pyrra","Strumento gestione SLO (Pyrra)",tautological-example
+"system-monitoring",22,"mon_oac_4","Pyrra","Strumento gestione SLO (Pyrra)",trivial-example
+"system-monitoring",22,"mon_oac_4","Nobl9","Nobl9 (piattaforma SLO commerciale)",tautological-example
+"system-monitoring",22,"mon_oac_4","Nobl9","Nobl9 (piattaforma SLO commerciale)",fake-translation
+"system-monitoring",22,"mon_oac_4","Nobl9","Nobl9 (piattaforma SLO commerciale)",trivial-example
+"system-monitoring",22,"mon_oac_4","Service Catalog","Catalogo dei servizi",trivial-example
+"system-monitoring",22,"mon_oac_4","Reliability Score","Punteggio di affidabilità",trivial-example
+"system-monitoring",23,"mon_pro_sre_1","Pages Per Shift","Avvisi per turno",trivial-example
+"system-monitoring",23,"mon_pro_sre_1","Sleep Disruption","Disturbo del sonno",tautological-example
+"system-monitoring",23,"mon_pro_sre_1","Compensation","Compenso",trivial-example
+"system-monitoring",23,"mon_pro_sre_1","Follow the Sun","On-call distribuito sui fusi orari (Follow-the-sun)",tautological-example
+"system-monitoring",23,"mon_pro_sre_1","On-Call Buddy","Compagno di reperibilità",trivial-example
+"system-monitoring",23,"mon_pro_sre_1","Ramp-Up","Fase di onboarding e crescita (Ramp-up)",tautological-example
+"system-monitoring",23,"mon_pro_sre_1","Shadow Shift","Turno in affiancamento",tautological-example
+"system-monitoring",23,"mon_pro_sre_1","Shadow Shift","Turno in affiancamento",trivial-example
+"system-monitoring",23,"mon_pro_sre_2","Latency","Latenza",tautological-example
+"system-monitoring",23,"mon_pro_sre_2","Latency","Latenza",near-identical-translation
+"system-monitoring",23,"mon_pro_sre_2","Latency","Latenza",trivial-example
+"system-monitoring",23,"mon_pro_sre_2","Latency","",duplicate-across-lessons
+"system-monitoring",23,"mon_pro_sre_2","Traffic","Traffico",tautological-example
+"system-monitoring",23,"mon_pro_sre_2","Traffic","Traffico",near-identical-translation
+"system-monitoring",23,"mon_pro_sre_2","Traffic","Traffico",trivial-example
+"system-monitoring",23,"mon_pro_sre_2","Errors","Errori",tautological-example
+"system-monitoring",23,"mon_pro_sre_2","Errors","Errori",near-identical-translation
+"system-monitoring",23,"mon_pro_sre_2","Saturation","Saturazione",tautological-example
+"system-monitoring",23,"mon_pro_sre_2","Saturation","Saturazione",near-identical-translation
+"system-monitoring",23,"mon_pro_sre_2","Saturation","",duplicate-across-lessons
+"system-monitoring",23,"mon_pro_sre_2","RED Method","Metodo RED",tautological-example
+"system-monitoring",23,"mon_pro_sre_2","RED Method","Metodo RED",trivial-example
+"system-monitoring",23,"mon_pro_sre_2","RED Method","",duplicate-across-lessons
+"system-monitoring",23,"mon_pro_sre_2","USE Method","Metodo USE",tautological-example
+"system-monitoring",23,"mon_pro_sre_2","USE Method","Metodo USE",trivial-example
+"system-monitoring",23,"mon_pro_sre_2","USE Method","",duplicate-across-lessons
+"system-monitoring",23,"mon_pro_sre_2","Black-Box Monitoring","Monitoraggio black-box",tautological-example
+"system-monitoring",23,"mon_pro_sre_2","White-Box Monitoring","Monitoraggio white-box",tautological-example
+"system-monitoring",23,"mon_pro_sre_2","Customer SLI","SLI cliente",tautological-example
+"system-monitoring",23,"mon_pro_sre_3","SRE Engineer","Ingegnere SRE",trivial-example
+"system-monitoring",23,"mon_pro_sre_3","DevOps Engineer","Ingegnere DevOps",tautological-example
+"system-monitoring",23,"mon_pro_sre_3","DevOps Engineer","Ingegnere DevOps",trivial-example
+"system-monitoring",23,"mon_pro_sre_3","Embedded SRE","SRE embedded",tautological-example
+"system-monitoring",23,"mon_pro_sre_3","Embedded SRE","SRE embedded",trivial-example
+"system-monitoring",23,"mon_pro_sre_3","Reliability Engineering","Ingegneria dell'affidabilità",tautological-example
+"system-monitoring",23,"mon_pro_sre_3","Tech Lead","Responsabile tecnico (Tech Lead)",trivial-example
+"system-monitoring",23,"mon_pro_sre_3","Technical Interview","Colloquio tecnico",trivial-example
+"system-monitoring",23,"mon_pro_sre_3","On-Call Question","Domanda sulla reperibilità",trivial-example
+"system-monitoring",23,"mon_pro_sre_3","Continuous Learning","Apprendimento continuo",tautological-example
+"system-monitoring",23,"mon_pro_sre_3","Continuous Learning","",duplicate-across-lessons
+"system-monitoring",23,"mon_pro_sre_4","Reactive Stage","Fase reattiva",trivial-example
+"system-monitoring",23,"mon_pro_sre_4","Proactive Stage","Fase proattiva",trivial-example
+"system-monitoring",23,"mon_pro_sre_4","Strategic Stage","Fase strategica",trivial-example
+"system-monitoring",23,"mon_pro_sre_4","Observability Maturity","Maturità di osservabilità",tautological-example
+"system-monitoring",23,"mon_pro_sre_4","Cultural Change","Cambio culturale",trivial-example
+"system-monitoring",23,"mon_pro_sre_4","Executive Sponsor","Sponsor esecutivo",tautological-example
+"system-monitoring",23,"mon_pro_sre_4","Executive Sponsor","Sponsor esecutivo",trivial-example
+"system-monitoring",23,"mon_pro_sre_4","Reliability KPI","KPI di affidabilità",trivial-example
+"system-monitoring",23,"mon_pro_sre_4","Quarterly Review","Revisione trimestrale",trivial-example
+"system-monitoring",23,"mon_pro_sre_4","Reliability Roadmap","Roadmap di affidabilità",trivial-example
+"system-monitoring",0,"mon_observability_1","Trace","",duplicate-across-lessons
+"system-monitoring",9,"mon_traces_1","Trace","",duplicate-across-lessons
+"system-monitoring",0,"mon_observability_1","Dashboard","",duplicate-across-lessons
+"system-monitoring",7,"mon_grafana_1","Dashboard","",duplicate-across-lessons
+"system-monitoring",0,"mon_observability_2","SLO","",duplicate-across-lessons
+"system-monitoring",0,"mon_observability_2","SLI","",duplicate-across-lessons
+"system-monitoring",0,"mon_observability_2","Error Budget","",duplicate-across-lessons
+"system-monitoring",0,"mon_observability_2","MTTR","",duplicate-across-lessons
+"system-monitoring",0,"mon_observability_3","Liveness Probe","",duplicate-across-lessons
+"system-monitoring",21,"mon_automation_3","Liveness Probe","",duplicate-across-lessons
+"system-monitoring",0,"mon_observability_3","Status Page","",duplicate-across-lessons
+"system-monitoring",15,"mon_alerting_pro_1","Status Page","",duplicate-across-lessons
+"system-monitoring",0,"mon_observability_4","Resolution","",duplicate-across-lessons
+"system-monitoring",14,"mon_incidents_1","Resolution","",duplicate-across-lessons
+"system-monitoring",7,"mon_grafana_1","Time Range","",duplicate-across-lessons
+"system-monitoring",1,"mon_metrics_2","Throughput","",duplicate-across-lessons
+"system-monitoring",1,"mon_metrics_4","Throughput","",duplicate-across-lessons
+"system-monitoring",10,"mon_apm_1","Throughput","",duplicate-across-lessons
+"system-monitoring",1,"mon_metrics_4","Golden Signals","",duplicate-across-lessons
+"system-monitoring",23,"mon_pro_sre_2","Golden Signals","",duplicate-across-lessons
+"system-monitoring",2,"mon_logs_4","Tail Sampling","",duplicate-across-lessons
+"system-monitoring",3,"mon_logs_tools_1","Pipeline","",duplicate-across-lessons
+"system-monitoring",16,"mon_otel_1","Pipeline","",duplicate-across-lessons
+"system-monitoring",3,"mon_logs_tools_2","Label","",duplicate-across-lessons
+"system-monitoring",5,"mon_prometheus_3","Label","",duplicate-across-lessons
+"system-monitoring",7,"mon_grafana_1","Tag","",duplicate-across-lessons
+"system-monitoring",9,"mon_traces_1","Tag","",duplicate-across-lessons
+"system-monitoring",3,"mon_logs_tools_3","Plugin","",duplicate-across-lessons
+"system-monitoring",8,"mon_dashboards_4","Plugin","",duplicate-across-lessons
+"system-monitoring",4,"mon_alerting_1","Threshold","",duplicate-across-lessons
+"system-monitoring",7,"mon_grafana_4","Threshold","",duplicate-across-lessons
+"system-monitoring",7,"mon_grafana_4","Override","",duplicate-across-lessons
+"system-monitoring",5,"mon_prometheus_1","Service Discovery","",duplicate-across-lessons
+"system-monitoring",9,"mon_traces_3","Service Discovery","",duplicate-across-lessons
+"system-monitoring",5,"mon_prometheus_2","Exporter","",duplicate-across-lessons
+"system-monitoring",5,"mon_prometheus_2","Node Exporter","",duplicate-across-lessons
+"system-monitoring",5,"mon_prometheus_2","cAdvisor","",duplicate-across-lessons
+"system-monitoring",5,"mon_prometheus_3","Gauge","",duplicate-across-lessons
+"system-monitoring",7,"mon_grafana_2","Gauge","",duplicate-across-lessons
+"system-monitoring",8,"mon_dashboards_3","Provider","",duplicate-across-lessons
+"system-monitoring",22,"mon_oac_1","Provider","",duplicate-across-lessons
+"system-monitoring",8,"mon_dashboards_3","Drift","",duplicate-across-lessons
+"system-monitoring",9,"mon_traces_1","Distributed Tracing","",duplicate-across-lessons
+"system-monitoring",17,"mon_k8s_4","Distributed Tracing","",duplicate-across-lessons
+"system-monitoring",9,"mon_traces_2","Agent","",duplicate-across-lessons
+"system-monitoring",10,"mon_apm_2","Agent","",duplicate-across-lessons
+"system-monitoring",9,"mon_traces_2","Collector","",duplicate-across-lessons
+"system-monitoring",16,"mon_otel_1","Collector","",duplicate-across-lessons
+"system-monitoring",9,"mon_traces_4","Service Dependency","",duplicate-across-lessons
+"system-monitoring",15,"mon_alerting_pro_1","Service Dependency","",duplicate-across-lessons
+"system-monitoring",10,"mon_apm_3","Custom Metric","",duplicate-across-lessons
+"system-monitoring",12,"mon_cloud_4","Custom Metric","",duplicate-across-lessons
+"system-monitoring",10,"mon_apm_3","Watchdog","",duplicate-across-lessons
+"system-monitoring",21,"mon_automation_3","Watchdog","",duplicate-across-lessons
+"system-monitoring",10,"mon_apm_4","Auto-Instrumentation","",duplicate-across-lessons
+"system-monitoring",13,"mon_sre_4","Rollback","",duplicate-across-lessons
+"system-monitoring",15,"mon_alerting_pro_2","Receiver","",duplicate-across-lessons
+"system-monitoring",16,"mon_otel_1","Receiver","",duplicate-across-lessons
+"system-monitoring",16,"mon_otel_2","Resource","",duplicate-across-lessons
+"system-monitoring",22,"mon_oac_1","Resource","",duplicate-across-lessons
+"system-monitoring",17,"mon_k8s_3","Audit Log","",duplicate-across-lessons
+"system-monitoring",17,"mon_k8s_4","USE Method","",duplicate-across-lessons
+"system-monitoring",21,"mon_automation_1","Audit Trail","",duplicate-across-lessons

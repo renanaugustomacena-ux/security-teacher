@@ -556,14 +556,15 @@ export default {
               difficulty: 'beginner',
             },
             {
-              english: 'Build',
-              italian: 'Compilazione',
+              english: 'Build Stage',
+              italian: 'Fase di build',
               pronunciation: '/bɪld/',
               phonetic: 'BILD',
               example:
-                "The reproducible build environment guarantees that two engineers compiling the same commit get identical artifacts. = L'ambiente di build riproducibile garantisce che due ingegneri che compilano lo stesso commit ottengano artefatti identici.",
+                'The build stage compiles the source, runs unit tests, and produces an immutable artifact ready for downstream pipeline steps. = La fase di build compila i sorgenti, esegue gli unit test e produce un artefatto immutabile pronto per le fasi successive della pipeline.',
               context: 'ci-cd',
               difficulty: 'beginner',
+              note: 'Una delle stage classiche di una pipeline CI; segue checkout e precede test e deploy.',
             },
             {
               english: 'Artifact',
@@ -695,7 +696,7 @@ export default {
           items: [
             {
               english: 'GitHub Actions',
-              italian: 'GitHub Actions (automazione CI/CD GitHub)',
+              italian: 'GitHub Actions',
               pronunciation: '/ˈɡɪthʌb ˈækʃənz/',
               phonetic: 'GHIT-hab AK-scions',
               example:
@@ -703,6 +704,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'beginner',
               tool: 'GitHub Actions',
+              note: 'Servizio CI/CD nativo di GitHub: i workflow vengono definiti in YAML dentro .github/workflows/.',
             },
             {
               english: 'Action',
@@ -1044,7 +1046,7 @@ export default {
           items: [
             {
               english: 'SonarQube',
-              italian: 'SonarQube (piattaforma analisi qualità codice)',
+              italian: 'SonarQube',
               pronunciation: '/ˈsəʊnɑːkjuːb/',
               phonetic: 'SO-nar-kiub',
               example:
@@ -1053,10 +1055,11 @@ export default {
               difficulty: 'beginner',
               tool: 'SonarQube',
               command: 'sonar-scanner -Dsonar.projectKey=app',
+              note: `Piattaforma di analisi statica della qualita' del codice; supporta molti linguaggi e integra regole di sicurezza.`,
             },
             {
               english: 'Semgrep',
-              italian: 'Semgrep (SAST a regole semantiche)',
+              italian: 'Semgrep',
               pronunciation: '/ˈsɛmɡrɛp/',
               phonetic: 'SEM-grep',
               example:
@@ -1065,10 +1068,11 @@ export default {
               difficulty: 'beginner',
               tool: 'Semgrep',
               command: 'semgrep --config auto .',
+              note: 'SAST open source basato su regole semantiche scritte in YAML; veloce e personalizzabile.',
             },
             {
               english: 'CodeQL',
-              italian: 'CodeQL (analisi statica semantica GitHub)',
+              italian: 'CodeQL',
               pronunciation: '/kəʊd kjuː ɛl/',
               phonetic: 'KOUD-KIU-EL',
               example:
@@ -1076,11 +1080,11 @@ export default {
               context: 'sast',
               difficulty: 'beginner',
               tool: 'CodeQL',
-              note: 'Semantic code analysis di GitHub.',
+              note: 'Motore di analisi statica semantica di GitHub: tratta il codice come dati interrogabili con query QL.',
             },
             {
               english: 'Bandit',
-              italian: 'Bandit (SAST per Python)',
+              italian: 'Bandit',
               pronunciation: '/ˈbændɪt/',
               phonetic: 'BAN-dit',
               example:
@@ -1089,10 +1093,11 @@ export default {
               difficulty: 'beginner',
               tool: 'Bandit',
               command: 'bandit -r myproject/',
+              note: 'SAST specifico per codice Python, mantenuto dal progetto PyCQA.',
             },
             {
               english: 'gosec',
-              italian: 'gosec (SAST per Go)',
+              italian: 'gosec',
               pronunciation: '/ˈɡəʊsɛk/',
               phonetic: 'GO-sek',
               example:
@@ -1101,10 +1106,11 @@ export default {
               difficulty: 'beginner',
               tool: 'gosec',
               command: 'gosec ./...',
+              note: 'SAST specifico per codice Go: cerca pattern non sicuri tipici del linguaggio.',
             },
             {
               english: 'Brakeman',
-              italian: 'Brakeman (SAST per Ruby on Rails)',
+              italian: 'Brakeman',
               pronunciation: '/ˈbreɪkmən/',
               phonetic: 'BREIK-man',
               example:
@@ -1113,10 +1119,11 @@ export default {
               difficulty: 'beginner',
               tool: 'Brakeman',
               command: 'brakeman -A',
+              note: 'SAST dedicato alle applicazioni Ruby on Rails.',
             },
             {
               english: 'Checkmarx',
-              italian: 'Checkmarx (SAST commerciale)',
+              italian: 'Checkmarx',
               pronunciation: '/ˈtʃɛkmɑːks/',
               phonetic: 'CIEK-marks',
               example:
@@ -1124,10 +1131,11 @@ export default {
               context: 'sast',
               difficulty: 'beginner',
               tool: 'Checkmarx',
+              note: 'Piattaforma SAST commerciale enterprise con supporto a oltre 30 linguaggi.',
             },
             {
               english: 'Fortify',
-              italian: 'Fortify (SAST commerciale OpenText)',
+              italian: 'Fortify',
               pronunciation: '/ˈfɔːtɪfaɪ/',
               phonetic: 'FOR-ti-fai',
               example:
@@ -1135,10 +1143,11 @@ export default {
               context: 'sast',
               difficulty: 'beginner',
               tool: 'Fortify',
+              note: 'Suite SAST commerciale di OpenText (ex Micro Focus, ex HP).',
             },
             {
               english: 'Veracode',
-              italian: 'Veracode (SAST commerciale)',
+              italian: 'Veracode',
               pronunciation: '/ˈvɛrəkəʊd/',
               phonetic: 'VE-ra-koud',
               example:
@@ -1146,6 +1155,7 @@ export default {
               context: 'sast',
               difficulty: 'beginner',
               tool: 'Veracode',
+              note: `Piattaforma SAST/DAST commerciale erogata in modalita' SaaS.`,
             },
             {
               english: 'SARIF',
@@ -1510,7 +1520,7 @@ export default {
           items: [
             {
               english: 'Snyk',
-              italian: 'Snyk (piattaforma sicurezza dipendenze)',
+              italian: 'Snyk',
               pronunciation: '/sniːk/',
               phonetic: 'SNIK',
               example:
@@ -1519,10 +1529,11 @@ export default {
               difficulty: 'beginner',
               tool: 'Snyk',
               command: 'snyk test',
+              note: 'Piattaforma commerciale per sicurezza di dipendenze, container, IaC e codice.',
             },
             {
               english: 'Dependabot',
-              italian: 'Dependabot (aggiornamento automatico dipendenze)',
+              italian: 'Dependabot',
               pronunciation: '/dɪˈpɛndəbɒt/',
               phonetic: 'di-PEN-da-bot',
               example:
@@ -1531,10 +1542,11 @@ export default {
               difficulty: 'beginner',
               tool: 'Dependabot',
               code: 'updates:\n  - package-ecosystem: npm',
+              note: 'Servizio GitHub che apre automaticamente pull request per aggiornare dipendenze vulnerabili.',
             },
             {
               english: 'Renovate',
-              italian: 'Renovate (aggiornamento dipendenze configurabile)',
+              italian: 'Renovate',
               pronunciation: '/ˈrɛnəveɪt/',
               phonetic: 'RE-no-veit',
               example:
@@ -1542,6 +1554,7 @@ export default {
               context: 'sca',
               difficulty: 'beginner',
               tool: 'Renovate',
+              note: 'Bot open source di aggiornamento dipendenze, altamente configurabile via renovate.json.',
             },
             {
               english: 'OWASP Dependency-Check',
@@ -1664,7 +1677,7 @@ export default {
             },
             {
               english: 'Syft',
-              italian: 'Syft (generatore SBOM)',
+              italian: 'Syft',
               pronunciation: '/sɪft/',
               phonetic: 'SIFT',
               example:
@@ -1673,10 +1686,11 @@ export default {
               difficulty: 'beginner',
               tool: 'Syft',
               command: 'syft myimage:latest -o cyclonedx-json',
+              note: 'CLI di Anchore per generare SBOM in formati SPDX o CycloneDX da immagini e filesystem.',
             },
             {
               english: 'Grype',
-              italian: 'Grype (scanner di vulnerabilità immagini)',
+              italian: 'Grype',
               pronunciation: '/ɡraɪp/',
               phonetic: 'GRAIP',
               example:
@@ -1685,6 +1699,7 @@ export default {
               difficulty: 'beginner',
               tool: 'Grype',
               command: 'grype sbom:./sbom.json',
+              note: `Scanner di vulnerabilita' di Anchore: legge SBOM o immagini e confronta con i database CVE.`,
             },
             {
               english: 'VEX',
@@ -1979,7 +1994,7 @@ export default {
           items: [
             {
               english: 'HashiCorp Vault',
-              italian: 'HashiCorp Vault (gestore segreti enterprise)',
+              italian: 'HashiCorp Vault',
               pronunciation: '/ˈhæʃɪkɔːp vɔːlt/',
               phonetic: 'HASH-i-korp VOLT',
               example:
@@ -1988,10 +2003,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Vault',
               command: 'vault kv get secret/db',
+              note: 'Gestore enterprise di segreti, chiavi e credenziali dinamiche con motore di policy ACL.',
             },
             {
               english: 'AWS Secrets Manager',
-              italian: 'AWS Secrets Manager (gestore segreti AWS)',
+              italian: 'AWS Secrets Manager',
               pronunciation: '/eɪ dʌbljuː ɛs ˈsiːkrɪts ˈmænɪdʒə/',
               phonetic: 'EI-DABL-IU-ES SI-krets MA-ni-ger',
               example:
@@ -2000,10 +2016,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS Secrets Manager',
               command: 'aws secretsmanager get-secret-value --secret-id db',
+              note: 'Servizio AWS per archiviare e ruotare automaticamente segreti e credenziali di database.',
             },
             {
               english: 'AWS Parameter Store',
-              italian: 'AWS Parameter Store (gestore parametri AWS)',
+              italian: 'AWS Parameter Store',
               pronunciation: '/eɪ dʌbljuː ɛs pəˈræmɪtə stɔː/',
               phonetic: 'EI-DABL-IU-ES pa-RA-me-ter STOR',
               example:
@@ -2012,10 +2029,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'AWS SSM',
               command: 'aws ssm get-parameter --name /app/db --with-decryption',
+              note: `Servizio AWS Systems Manager per parametri di configurazione e segreti, piu' economico di Secrets Manager.`,
             },
             {
               english: 'Azure Key Vault',
-              italian: 'Azure Key Vault (gestore segreti Azure)',
+              italian: 'Azure Key Vault',
               pronunciation: '/ˈæʒə kiː vɔːlt/',
               phonetic: 'A-zer KI-VOLT',
               example:
@@ -2024,10 +2042,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Azure Key Vault',
               command: 'az keyvault secret show --name api --vault-name kv',
+              note: 'Servizio Azure per chiavi crittografiche, segreti e certificati, con backend HSM opzionale.',
             },
             {
               english: 'GCP Secret Manager',
-              italian: 'GCP Secret Manager (gestore segreti Google)',
+              italian: 'GCP Secret Manager',
               pronunciation: '/dʒiː siː piː ˈsiːkrɪt ˈmænɪdʒə/',
               phonetic: 'GI-SI-PI SI-kret MA-ni-ger',
               example:
@@ -2036,6 +2055,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'GCP Secret Manager',
               command: 'gcloud secrets versions access latest --secret=db',
+              note: 'Servizio Google Cloud per archiviare segreti versionati con controllo IAM granulare.',
             },
             {
               english: 'Sealed Secret',
@@ -2061,7 +2081,7 @@ export default {
             },
             {
               english: 'Doppler',
-              italian: 'Doppler (piattaforma di gestione segreti)',
+              italian: 'Doppler',
               pronunciation: '/ˈdɒplər/',
               phonetic: 'DO-pler',
               example:
@@ -2069,6 +2089,7 @@ export default {
               context: 'secrets',
               difficulty: 'intermediate',
               tool: 'Doppler',
+              note: 'Piattaforma SaaS per centralizzare e sincronizzare segreti tra ambienti e team.',
             },
             {
               english: '1Password CLI',
@@ -2112,7 +2133,7 @@ export default {
             },
             {
               english: 'Gitleaks',
-              italian: 'gitleaks (scanner segreti git)',
+              italian: 'Gitleaks',
               pronunciation: '/ˈɡɪtliːks/',
               phonetic: 'GHIT-liks',
               example:
@@ -2121,10 +2142,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Gitleaks',
               command: 'gitleaks detect --source .',
+              note: 'Scanner open source per intercettare segreti e chiavi commessi nella storia git.',
             },
             {
               english: 'TruffleHog',
-              italian: 'TruffleHog (scanner segreti git)',
+              italian: 'TruffleHog',
               pronunciation: '/ˈtrʌflhɒɡ/',
               phonetic: 'TRA-fol-hog',
               example:
@@ -2133,10 +2155,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'TruffleHog',
               command: 'trufflehog filesystem --directory=.',
+              note: 'Scanner di segreti per repository git, capace di verificare se le chiavi trovate sono ancora attive.',
             },
             {
               english: 'detect-secrets',
-              italian: 'detect-secrets (scanner segreti Yelp)',
+              italian: 'detect-secrets',
               pronunciation: '/dɪˈtɛkt ˈsiːkrɪts/',
               phonetic: 'di-TEKT SI-krets',
               example:
@@ -2145,6 +2168,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'detect-secrets',
               command: 'detect-secrets scan',
+              note: 'Strumento Yelp con baseline auditabile per evitare commit di nuovi segreti tramite pre-commit hook.',
             },
             {
               english: 'GitHub Secret Scanning',
@@ -2450,7 +2474,7 @@ export default {
           items: [
             {
               english: 'OWASP ZAP',
-              italian: 'OWASP ZAP (proxy DAST open source)',
+              italian: 'OWASP ZAP',
               pronunciation: '/ˈəʊwɒsp zæp/',
               phonetic: 'O-uosp ZAP',
               example:
@@ -2459,10 +2483,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'OWASP ZAP',
               command: 'zap-baseline.py -t https://target',
+              note: 'Zed Attack Proxy: DAST open source di OWASP per intercettare e attaccare traffico HTTP.',
             },
             {
               english: 'Burp Suite',
-              italian: 'Burp Suite (proxy di test sicurezza web)',
+              italian: 'Burp Suite',
               pronunciation: '/bɜːp swiːt/',
               phonetic: 'BERP SUIT',
               example:
@@ -2470,10 +2495,11 @@ export default {
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'Burp Suite',
+              note: 'Proxy di test per sicurezza web di PortSwigger, lo standard de facto del web pentesting.',
             },
             {
               english: 'Nuclei',
-              italian: 'Nuclei (scanner di vulnerabilità a template)',
+              italian: 'Nuclei',
               pronunciation: '/ˈnjuːkliaɪ/',
               phonetic: 'NIU-klei',
               example:
@@ -2482,10 +2508,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Nuclei',
               command: 'nuclei -u https://target -t cves/',
+              note: 'Scanner di ProjectDiscovery basato su template YAML, ottimo per detection veloce di CVE note.',
             },
             {
               english: 'Nikto',
-              italian: 'Nikto (scanner web legacy)',
+              italian: 'Nikto',
               pronunciation: '/ˈnɪktəʊ/',
               phonetic: 'NIK-to',
               example:
@@ -2494,10 +2521,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Nikto',
               command: 'nikto -h target',
+              note: 'Scanner web storico in Perl: riconosce vecchie versioni di server e configurazioni a rischio.',
             },
             {
               english: 'Acunetix',
-              italian: 'Acunetix (DAST commerciale)',
+              italian: 'Acunetix',
               pronunciation: '/ækjuːˈnɛtɪks/',
               phonetic: 'a-kiu-NE-tiks',
               example:
@@ -2505,10 +2533,11 @@ export default {
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'Acunetix',
+              note: 'DAST commerciale di Invicti con focus su scansioni web automatizzate.',
             },
             {
               english: 'Netsparker',
-              italian: 'Netsparker (DAST commerciale, ora Invicti)',
+              italian: 'Netsparker',
               pronunciation: '/ˈnɛtˌspɑːkə/',
               phonetic: 'NET-spar-ker',
               example:
@@ -2516,10 +2545,11 @@ export default {
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'Netsparker (Invicti)',
+              note: 'DAST commerciale ribrandizzato Invicti, noto per le scansioni a basso falso positivo.',
             },
             {
               english: 'Wapiti',
-              italian: 'Wapiti (DAST open source)',
+              italian: 'Wapiti',
               pronunciation: '/wəˈpiːti/',
               phonetic: 'ua-PI-ti',
               example:
@@ -2528,6 +2558,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Wapiti',
               command: 'wapiti -u https://target',
+              note: 'DAST open source in Python che esegue fuzzing dei parametri HTTP.',
             },
             {
               english: 'sqlmap',
@@ -2543,7 +2574,7 @@ export default {
             },
             {
               english: 'Arachni',
-              italian: 'Arachni (DAST modulare in Ruby)',
+              italian: 'Arachni',
               pronunciation: '/əˈræknɪ/',
               phonetic: 'a-RAK-ni',
               example:
@@ -2551,10 +2582,11 @@ export default {
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'Arachni',
+              note: `DAST modulare in Ruby, oggi non piu' mantenuto attivamente.`,
             },
             {
               english: 'Stackhawk',
-              italian: 'StackHawk (DAST integrato in CI)',
+              italian: 'Stackhawk',
               pronunciation: '/ˈstækhɔːk/',
               phonetic: 'STAK-hok',
               example:
@@ -2562,6 +2594,7 @@ export default {
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'StackHawk',
+              note: 'DAST commerciale pensato per essere lanciato dentro la CI da sviluppatori e team DevOps.',
             },
           ],
         },
@@ -2592,7 +2625,7 @@ export default {
             },
             {
               english: 'AFL++',
-              italian: 'AFL++ (fuzzer evolutivo)',
+              italian: 'AFL++',
               pronunciation: '/eɪ ɛf ɛl plʌs plʌs/',
               phonetic: 'EI-EF-EL PLAS PLAS',
               example:
@@ -2600,10 +2633,11 @@ export default {
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'AFL++',
+              note: 'Fork attivo di American Fuzzy Lop con strumentazione evolutiva avanzata per fuzzing di binari.',
             },
             {
               english: 'libFuzzer',
-              italian: 'libFuzzer (fuzzer in-process LLVM)',
+              italian: 'libFuzzer',
               pronunciation: '/lɪb ˈfʌzər/',
               phonetic: 'LIB-FA-zer',
               example:
@@ -2611,10 +2645,11 @@ export default {
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'libFuzzer',
+              note: 'Fuzzer in-process del progetto LLVM, integrato con sanitizer come ASan e UBSan.',
             },
             {
               english: 'go-fuzz',
-              italian: 'go-fuzz (fuzzer per Go)',
+              italian: 'go-fuzz',
               pronunciation: '/ɡəʊ fʌz/',
               phonetic: 'GO-FAZ',
               example:
@@ -2623,10 +2658,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'go-fuzz',
               command: 'go test -fuzz=Fuzz',
+              note: 'Fuzzer storico per Go di Dmitry Vyukov; oggi sostituito dal fuzzing nativo del compilatore.',
             },
             {
               english: 'OSS-Fuzz',
-              italian: 'OSS-Fuzz (fuzzing continuo Google open source)',
+              italian: 'OSS-Fuzz',
               pronunciation: '/ɒs ɛs fʌz/',
               phonetic: 'OS-ES FAZ',
               example:
@@ -2634,6 +2670,7 @@ export default {
               context: 'dast',
               difficulty: 'intermediate',
               tool: 'OSS-Fuzz',
+              note: 'Servizio Google che esegue fuzzing continuo gratuito sui principali progetti open source.',
             },
             {
               english: 'Coverage-Guided Fuzzing',
@@ -2824,7 +2861,7 @@ export default {
             },
             {
               english: 'Trivy',
-              italian: 'Trivy (scanner di vulnerabilità Aqua)',
+              italian: 'Trivy',
               pronunciation: '/ˈtrɪvi/',
               phonetic: 'TRI-vi',
               example:
@@ -2833,22 +2870,24 @@ export default {
               difficulty: 'intermediate',
               tool: 'Trivy',
               command: 'trivy image nginx:latest',
+              note: `Scanner di vulnerabilita' open source di Aqua: copre immagini, filesystem, IaC, segreti e SBOM.`,
             },
             {
-              english: 'Grype',
-              italian: 'Grype (scanner di vulnerabilità immagini)',
+              english: 'Grype image scan',
+              italian: 'Scansione immagine con Grype',
               pronunciation: '/ɡraɪp/',
               phonetic: 'GRAIP',
               example:
-                'Pairing Grype with Syft creates a pipeline where images are catalogued and then scanned for vulnerabilities automatically. = Abbinare Grype a Syft crea una pipeline dove le immagini vengono catalogate e poi scansionate per vulnerabilità automaticamente.',
+                'A Grype image scan against the freshly built container catches base-image CVEs before the image is pushed to the registry. = Una scansione immagine con Grype sul container appena costruito intercetta CVE della base image prima del push nel registry.',
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Grype',
               command: 'grype docker.io/myapp:1.0',
+              note: `Grype puo' leggere direttamente un'immagine o un SBOM Syft generato in precedenza.`,
             },
             {
               english: 'Clair',
-              italian: 'Clair (scanner immagini Quay/Red Hat)',
+              italian: 'Clair',
               pronunciation: '/kleər/',
               phonetic: 'KLER',
               example:
@@ -2856,10 +2895,11 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Clair',
+              note: 'Scanner di immagini di CoreOS/Red Hat, integrato storicamente nel registry Quay.',
             },
             {
               english: 'Anchore',
-              italian: 'Anchore (piattaforma sicurezza container)',
+              italian: 'Anchore',
               pronunciation: '/ˈæŋkɔːr/',
               phonetic: 'AN-kor',
               example:
@@ -2867,6 +2907,7 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Anchore',
+              note: 'Piattaforma commerciale di sicurezza container basata sui suoi progetti open source Syft e Grype.',
             },
             {
               english: 'Layer',
@@ -2879,14 +2920,14 @@ export default {
               difficulty: 'intermediate',
             },
             {
-              english: 'Vulnerability Database',
-              italian: 'Database di vulnerabilità',
+              english: 'Container Vulnerability Database',
+              italian: `Database di vulnerabilita' container`,
               pronunciation: '/ˌvʌlnərəˈbɪləti ˈdeɪtəbeɪs/',
               phonetic: 'val-ne-ra-BI-li-ti DEI-ta-beis',
-              example:
-                'Grype checks every installed package against the public vulnerability database and flags any match above medium severity. = Grype controlla ogni pacchetto installato contro il database di vulnerabilità pubblico e segnala qualsiasi corrispondenza sopra la severità media.',
+              example: `Scanners enrich findings by joining the package list of an image with a container vulnerability database such as Trivy DB or Anchore Feeds. = Gli scanner arricchiscono i finding incrociando la lista dei pacchetti di un'immagine con un database di vulnerabilita' container come Trivy DB o Anchore Feeds.`,
               context: 'container-security',
               difficulty: 'intermediate',
+              note: 'Tipicamente derivato da NVD/OSV e ottimizzato per immagini OCI.',
             },
             {
               english: 'Severity Threshold',
@@ -3058,7 +3099,7 @@ export default {
             },
             {
               english: 'Cosign',
-              italian: 'Cosign (firma di immagini container)',
+              italian: 'Cosign',
               pronunciation: '/ˈkəʊsaɪn/',
               phonetic: 'KO-sain',
               example:
@@ -3067,6 +3108,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Cosign (Sigstore)',
               command: 'cosign verify --key cosign.pub myimage',
+              note: 'Strumento Sigstore per firmare e verificare immagini container e altri artefatti OCI.',
             },
             {
               english: 'Notary',
@@ -3102,7 +3144,7 @@ export default {
             },
             {
               english: 'Falco',
-              italian: 'Falco (rilevatore eventi runtime cloud-native)',
+              italian: 'Falco',
               pronunciation: '/ˈfælkəʊ/',
               phonetic: 'FAL-ko',
               example:
@@ -3110,6 +3152,7 @@ export default {
               context: 'container-security',
               difficulty: 'intermediate',
               tool: 'Falco',
+              note: 'Rilevatore di eventi runtime cloud-native (CNCF) basato su regole su syscall ed eventi K8s.',
             },
             {
               english: 'Container Escape',
@@ -3182,7 +3225,7 @@ export default {
             },
             {
               english: 'Hadolint',
-              italian: 'Hadolint (linter Dockerfile)',
+              italian: 'Hadolint',
               pronunciation: '/ˈhædəlɪnt/',
               phonetic: 'HA-do-lint',
               example:
@@ -3191,10 +3234,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Hadolint',
               command: 'hadolint Dockerfile',
+              note: 'Linter per Dockerfile: segnala anti-pattern di build e di sicurezza.',
             },
             {
               english: 'Dockle',
-              italian: 'Dockle (linter sicurezza container)',
+              italian: 'Dockle',
               pronunciation: '/ˈdɒkl/',
               phonetic: 'DO-kol',
               example:
@@ -3203,6 +3247,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Dockle',
               command: 'dockle myimage:latest',
+              note: 'Linter di sicurezza per immagini container che valida le best practice CIS Docker Benchmark.',
             },
             {
               english: 'CIS Docker Benchmark',
@@ -3217,7 +3262,7 @@ export default {
             },
             {
               english: 'kube-bench',
-              italian: 'kube-bench (benchmark CIS Kubernetes)',
+              italian: 'kube-bench',
               pronunciation: '/kjuːb bɛntʃ/',
               phonetic: 'KIUB-BENCH',
               example:
@@ -3226,6 +3271,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'kube-bench',
               command: 'kube-bench run --targets node',
+              note: `Strumento Aqua che verifica la conformita' di un cluster Kubernetes al CIS Benchmark.`,
             },
             {
               english: 'Quay Security Scanner',
@@ -3290,7 +3336,7 @@ export default {
             },
             {
               english: 'Terraform',
-              italian: 'Terraform (IaC HashiCorp)',
+              italian: 'Terraform',
               pronunciation: '/ˈtɛrəfɔːm/',
               phonetic: 'TE-ra-form',
               example:
@@ -3299,10 +3345,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Terraform',
               command: 'terraform plan',
+              note: 'IaC di HashiCorp basato sul DSL HCL: descrive risorse cloud in modo dichiarativo.',
             },
             {
               english: 'CloudFormation',
-              italian: 'CloudFormation (IaC AWS)',
+              italian: 'CloudFormation',
               pronunciation: '/klaʊdfɔːˈmeɪʃən/',
               phonetic: 'KLAUD-for-MEI-scion',
               example:
@@ -3310,10 +3357,11 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'AWS CloudFormation',
+              note: 'Servizio IaC nativo di AWS basato su template YAML o JSON.',
             },
             {
               english: 'Pulumi',
-              italian: 'Pulumi (IaC con linguaggi general-purpose)',
+              italian: 'Pulumi',
               pronunciation: '/pʊˈluːmi/',
               phonetic: 'pu-LU-mi',
               example:
@@ -3321,6 +3369,7 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Pulumi',
+              note: `IaC che permette di descrivere l'infrastruttura in linguaggi general-purpose come TypeScript, Python o Go.`,
             },
             {
               english: 'ARM Template',
@@ -3335,7 +3384,7 @@ export default {
             },
             {
               english: 'Bicep',
-              italian: 'Bicep (DSL IaC per Azure)',
+              italian: 'Bicep',
               pronunciation: '/ˈbaɪsɛp/',
               phonetic: 'BAI-sep',
               example:
@@ -3343,6 +3392,7 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Azure Bicep',
+              note: `DSL IaC di Microsoft pensato come evoluzione piu' leggibile dei template ARM di Azure.`,
             },
             {
               english: 'Misconfiguration',
@@ -3377,15 +3427,15 @@ export default {
               note: 'Può contenere segreti in chiaro.',
             },
             {
-              english: 'Plan',
-              italian: 'Piano',
+              english: 'Terraform Plan',
+              italian: 'Piano Terraform',
               pronunciation: '/plæn/',
               phonetic: 'PLAN',
-              example:
-                "Reviewing the Terraform plan output in a pull request comment lets the security team catch misconfigurations before apply. = Revisionare l'output del piano Terraform in un commento della pull request permette al team di sicurezza di intercettare misconfigurazioni prima dell'apply.",
+              example: `Reviewing the Terraform plan in a pull request comment lets the security team catch misconfigurations before apply. = Revisionare il piano Terraform in un commento della pull request permette al team di sicurezza di intercettare misconfigurazioni prima dell'apply.`,
               context: 'iac-security',
               difficulty: 'intermediate',
               command: 'terraform plan -out=plan.tfplan',
+              note: `Output di terraform plan: descrive le modifiche che apply applichera' effettivamente.`,
             },
           ],
         },
@@ -3396,7 +3446,7 @@ export default {
           items: [
             {
               english: 'Checkov',
-              italian: 'Checkov (scanner sicurezza IaC)',
+              italian: 'Checkov',
               pronunciation: '/ˈtʃɛkɒv/',
               phonetic: 'CIE-kov',
               example:
@@ -3405,10 +3455,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Checkov',
               command: 'checkov -d .',
+              note: 'Scanner di sicurezza IaC di Bridgecrew/Prisma per Terraform, CloudFormation, Kubernetes e altri.',
             },
             {
               english: 'tfsec',
-              italian: 'tfsec (scanner sicurezza Terraform)',
+              italian: 'tfsec',
               pronunciation: '/tiː ɛf sɛk/',
               phonetic: 'TI-EF-SEK',
               example:
@@ -3417,10 +3468,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'tfsec',
               command: 'tfsec .',
+              note: 'Scanner di sicurezza specifico per Terraform, oggi confluito nel progetto Trivy di Aqua.',
             },
             {
               english: 'Terrascan',
-              italian: 'Terrascan (scanner sicurezza IaC)',
+              italian: 'Terrascan',
               pronunciation: '/ˈtɛrəskæn/',
               phonetic: 'TE-ra-skan',
               example:
@@ -3429,10 +3481,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Terrascan',
               command: 'terrascan scan -t aws',
+              note: `Scanner IaC di Tenable basato su policy Rego, supporta piu' tipologie di IaC.`,
             },
             {
               english: 'KICS',
-              italian: 'KICS (scanner IaC Checkmarx)',
+              italian: 'KICS',
               pronunciation: '/kɪks/',
               phonetic: 'KIKS',
               example:
@@ -3440,10 +3493,11 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'KICS by Checkmarx',
+              note: 'Keeping Infrastructure as Code Secure: scanner IaC open source mantenuto da Checkmarx.',
             },
             {
               english: 'cfn-nag',
-              italian: 'cfn-nag (linter sicurezza CloudFormation)',
+              italian: 'cfn-nag',
               pronunciation: '/siː ɛf ɛn næɡ/',
               phonetic: 'SI-EF-EN NAG',
               example:
@@ -3452,6 +3506,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'cfn-nag',
               command: 'cfn_nag_scan -i template.yaml',
+              note: 'Linter di sicurezza specifico per template CloudFormation, sviluppato da Stelligent.',
             },
             {
               english: 'Snyk IaC',
@@ -3639,7 +3694,7 @@ export default {
             },
             {
               english: 'Atlantis',
-              italian: 'Atlantis (automazione Terraform via PR)',
+              italian: 'Atlantis',
               pronunciation: '/ætˈlæntɪs/',
               phonetic: 'at-LAN-tis',
               example:
@@ -3647,10 +3702,11 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Atlantis',
+              note: 'Strumento open source che automatizza terraform plan/apply tramite commenti sulle pull request.',
             },
             {
               english: 'Terraform Cloud',
-              italian: 'Terraform Cloud (servizio gestito Terraform)',
+              italian: 'Terraform Cloud',
               pronunciation: '/ˈtɛrəfɔːm klaʊd/',
               phonetic: 'TE-ra-form KLAUD',
               example:
@@ -3658,6 +3714,7 @@ export default {
               context: 'iac-security',
               difficulty: 'intermediate',
               tool: 'Terraform Cloud',
+              note: 'Servizio gestito di HashiCorp per esecuzione remota di Terraform con state, RBAC e policy Sentinel.',
             },
             {
               english: 'Sentinel',
@@ -3978,14 +4035,14 @@ export default {
           description: 'Bloccare risorse non conformi in K8s',
           items: [
             {
-              english: 'Admission Controller',
-              italian: 'Controllore di ammissione',
+              english: 'Policy Admission Controller',
+              italian: 'Admission controller di policy',
               pronunciation: '/ədˈmɪʃən kənˈtrəʊlə/',
               phonetic: 'ad-MI-scion kon-TRO-ler',
-              example:
-                "The Kubernetes admission controller rejects any pod spec that references an unsigned or unscanned container image. = L'admission controller Kubernetes rifiuta qualsiasi specifica pod che referenzi un'immagine container non firmata o non scansionata.",
+              example: `A policy admission controller wraps the Kubernetes API server and evaluates each incoming object against Rego or YAML policies before persistence. = Un admission controller di policy avvolge l'API server Kubernetes e valuta ogni oggetto in ingresso contro policy Rego o YAML prima della persistenza.`,
               context: 'policy',
               difficulty: 'intermediate',
+              note: 'Esempi classici: OPA Gatekeeper e Kyverno. Si distingue dal generico admission controller built-in di K8s.',
             },
             {
               english: 'Validating Webhook',
@@ -4009,7 +4066,7 @@ export default {
             },
             {
               english: 'Kyverno',
-              italian: 'Kyverno (policy engine Kubernetes)',
+              italian: 'Kyverno',
               pronunciation: '/ˈkaɪvɜːnəʊ/',
               phonetic: 'KAI-ver-no',
               example:
@@ -4018,6 +4075,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Kyverno',
               code: 'apiVersion: kyverno.io/v1\nkind: ClusterPolicy',
+              note: 'Policy engine nativo Kubernetes: le policy si scrivono in YAML invece che in Rego.',
             },
             {
               english: 'OPA Gatekeeper',
@@ -4112,7 +4170,7 @@ export default {
             },
             {
               english: 'Kubeconform',
-              italian: 'Kubeconform (validatore manifest K8s)',
+              italian: 'Kubeconform',
               pronunciation: '/ˈkjuːbˌkɒnfɔːm/',
               phonetic: 'KIUB-kon-form',
               example:
@@ -4121,6 +4179,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Kubeconform',
               command: 'kubeconform deploy.yaml',
+              note: 'Validatore offline veloce di manifest Kubernetes contro gli OpenAPI schema ufficiali.',
             },
             {
               english: 'Policy Pipeline',
@@ -4438,16 +4497,16 @@ export default {
               tool: 'Sigstore',
             },
             {
-              english: 'Cosign',
-              italian: 'Cosign (firma di immagini container)',
+              english: 'Cosign keyless signing',
+              italian: 'Firma keyless con Cosign',
               pronunciation: '/ˈkəʊsaɪn/',
               phonetic: 'KO-sain',
-              example:
-                "After building the release artifact, the CI pipeline uses Cosign to attach a keyless signature verified by Fulcio and Rekor. = Dopo aver costruito l'artefatto di rilascio, la pipeline CI usa Cosign per allegare una firma senza chiave verificata da Fulcio e Rekor.",
+              example: `Cosign keyless signing uses an OIDC identity and Fulcio to issue short-lived certificates instead of long-lived keys. = La firma keyless con Cosign usa un'identita' OIDC e Fulcio per emettere certificati a breve durata invece di chiavi a lunga durata.`,
               context: 'supply-chain',
               difficulty: 'intermediate',
               tool: 'Cosign',
               command: 'cosign sign --key cosign.key myimage',
+              note: `Cosign appartiene a Sigstore; in modalita' keyless integra Fulcio e Rekor.`,
             },
             {
               english: 'Fulcio',
@@ -4719,14 +4778,14 @@ export default {
               difficulty: 'intermediate',
             },
             {
-              english: 'Attestation',
-              italian: 'Attestazione',
+              english: 'Compliance Attestation',
+              italian: 'Attestazione di compliance',
               pronunciation: '/ˌætɛˈsteɪʃən/',
               phonetic: 'a-tes-TEI-scion',
-              example:
-                "Attaching a signed attestation to the container image proves it passed all required security scans before release. = Allegare un'attestazione firmata all'immagine container dimostra che ha superato tutte le scansioni di sicurezza richieste prima del rilascio.",
+              example: `A compliance attestation bundles signed evidence about a control so an auditor can verify it without re-collecting the underlying logs. = Un'attestazione di compliance impacchetta evidenze firmate su un controllo cosi' l'auditor puo' verificarla senza ricollezionare i log sottostanti.`,
               context: 'compliance-as-code',
               difficulty: 'intermediate',
+              note: `Diversa dall'attestazione supply-chain (Livello 9): qui descrive uno stato di controllo, non un artefatto di build.`,
             },
             {
               english: 'Auditor',
@@ -4777,7 +4836,7 @@ export default {
           items: [
             {
               english: 'InSpec',
-              italian: 'InSpec (framework compliance Chef)',
+              italian: 'InSpec',
               pronunciation: '/ˈɪnspɛk/',
               phonetic: 'IN-spek',
               example:
@@ -4786,6 +4845,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'Chef InSpec',
               command: 'inspec exec my-profile',
+              note: 'Framework di compliance di Chef per scrivere controlli eseguibili in un DSL Ruby.',
             },
             {
               english: 'Chef Compliance',
@@ -4800,7 +4860,7 @@ export default {
             },
             {
               english: 'OpenSCAP',
-              italian: 'OpenSCAP (auditing automatico standard SCAP)',
+              italian: 'OpenSCAP',
               pronunciation: '/ˈəʊpənskæp/',
               phonetic: 'O-pen-skap',
               example:
@@ -4809,6 +4869,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'OpenSCAP',
               command: 'oscap xccdf eval --profile cis',
+              note: 'Toolkit open source che automatizza audit di sicurezza basati sullo standard SCAP del NIST.',
             },
             {
               english: 'Compliance Operator',
@@ -4823,7 +4884,7 @@ export default {
             },
             {
               english: 'Cloud Custodian',
-              italian: 'Cloud Custodian (governance cloud open source)',
+              italian: 'Cloud Custodian',
               pronunciation: '/klaʊd kʌˈstəʊdiən/',
               phonetic: 'KLAUD kas-TO-dian',
               example:
@@ -4831,10 +4892,11 @@ export default {
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'Cloud Custodian',
+              note: 'Motore di governance cloud open source: descrive policy in YAML per AWS, Azure e GCP.',
             },
             {
               english: 'Drata',
-              italian: 'Drata (piattaforma compliance automatizzata)',
+              italian: 'Drata',
               pronunciation: '/ˈdrɑːtə/',
               phonetic: 'DRA-ta',
               example:
@@ -4842,10 +4904,11 @@ export default {
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'Drata',
+              note: 'Piattaforma SaaS che automatizza la raccolta di evidenze per SOC 2, ISO 27001 e altri framework.',
             },
             {
               english: 'Vanta',
-              italian: 'Vanta (piattaforma compliance automatizzata)',
+              italian: 'Vanta',
               pronunciation: '/ˈvæntə/',
               phonetic: 'VAN-ta',
               example:
@@ -4853,6 +4916,7 @@ export default {
               context: 'compliance-as-code',
               difficulty: 'intermediate',
               tool: 'Vanta',
+              note: `Concorrente diretto di Drata per l'automazione di audit di compliance e raccolta evidenze.`,
             },
             {
               english: 'Tugboat Logic',
@@ -5032,14 +5096,15 @@ export default {
               difficulty: 'intermediate',
             },
             {
-              english: 'Policy Library',
-              italian: 'Libreria di policy',
+              english: 'Compliance Policy Library',
+              italian: 'Libreria di policy di compliance',
               pronunciation: '/ˈpɒləsi ˈlaɪbrəri/',
               phonetic: 'PO-li-si LAI-bra-ri',
               example:
-                'The central policy library contains over two hundred tested Rego rules shared across all engineering teams. = La libreria di policy centrale contiene oltre duecento regole Rego testate condivise tra tutti i team di ingegneria.',
+                'A compliance policy library maps each control of frameworks like SOC 2 or ISO 27001 to executable Rego or YAML checks. = Una libreria di policy di compliance mappa ogni controllo di framework come SOC 2 o ISO 27001 a check Rego o YAML eseguibili.',
               context: 'compliance-as-code',
               difficulty: 'intermediate',
+              note: 'Diversa dalla generica policy library di admission control: qui le policy sono organizzate per controllo di compliance.',
             },
             {
               english: 'Mandatory Field',
@@ -5230,7 +5295,7 @@ export default {
           items: [
             {
               english: 'Prisma Cloud',
-              italian: 'Prisma Cloud (CNAPP Palo Alto)',
+              italian: 'Prisma Cloud',
               pronunciation: '/ˈprɪzmə klaʊd/',
               phonetic: 'PRIZ-ma KLAUD',
               example:
@@ -5238,10 +5303,11 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Palo Alto Prisma Cloud',
+              note: `CNAPP commerciale di Palo Alto Networks, nato dall'acquisizione di RedLock e Twistlock.`,
             },
             {
               english: 'Wiz',
-              italian: 'Wiz (CNAPP cloud-native)',
+              italian: 'Wiz',
               pronunciation: '/wɪz/',
               phonetic: 'UIZ',
               example:
@@ -5249,10 +5315,11 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Wiz',
+              note: `CNAPP cloud-native agentless con graph engine per correlare configurazioni, identita' e workload.`,
             },
             {
               english: 'Lacework',
-              italian: 'Lacework (CNAPP)',
+              italian: 'Lacework',
               pronunciation: '/ˈleɪswɜːk/',
               phonetic: 'LEIS-uork',
               example:
@@ -5260,10 +5327,11 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Lacework',
+              note: 'CNAPP commerciale con focus su anomaly detection basato su behavioral baseline.',
             },
             {
               english: 'Orca Security',
-              italian: 'Orca Security (CNAPP agentless)',
+              italian: 'Orca Security',
               pronunciation: '/ˈɔːkə sɪˈkjʊərəti/',
               phonetic: 'OR-ka si-KIU-ri-ti',
               example:
@@ -5271,10 +5339,11 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Orca Security',
+              note: 'CNAPP agentless che usa snapshot dei volumi per scansionare workload senza installare agenti.',
             },
             {
               english: 'AWS Security Hub',
-              italian: 'AWS Security Hub (centralizza alert sicurezza AWS)',
+              italian: 'AWS Security Hub',
               pronunciation: '/eɪ dʌbljuː ɛs sɪˈkjʊərəti hʌb/',
               phonetic: 'EI-DABL-IU-ES si-KIU-ri-ti HAB',
               example:
@@ -5282,10 +5351,11 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'AWS Security Hub',
+              note: 'Servizio AWS che centralizza alert e finding di sicurezza da GuardDuty, Inspector, Macie e tool terzi.',
             },
             {
               english: 'GCP Security Command Center',
-              italian: 'GCP Security Command Center (centralizza sicurezza GCP)',
+              italian: 'GCP Security Command Center',
               pronunciation: '/dʒiː siː piː sɪˈkjʊərəti kəˈmɑːnd ˈsɛntə/',
               phonetic: 'GI-SI-PI si-KIU-ri-ti ko-MAND SEN-ter',
               example:
@@ -5293,10 +5363,11 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'GCP Security Command Center',
+              note: `Centro di comando sicurezza di Google Cloud: aggrega vulnerabilita', misconfig e threat detection.`,
             },
             {
               english: 'Microsoft Defender for Cloud',
-              italian: 'Microsoft Defender for Cloud (CNAPP Azure)',
+              italian: 'Microsoft Defender for Cloud',
               pronunciation: '/ˈmaɪkrəʊsɒft dɪˈfɛndə fɔː klaʊd/',
               phonetic: 'MAI-kro-soft di-FEN-der FOR KLAUD',
               example:
@@ -5304,10 +5375,11 @@ export default {
               context: 'cloud-security',
               difficulty: 'intermediate',
               tool: 'Microsoft Defender for Cloud',
+              note: 'CNAPP di Microsoft per Azure, AWS e GCP, con CSPM e workload protection integrati.',
             },
             {
               english: 'Steampipe',
-              italian: 'Steampipe (query SQL su API cloud)',
+              italian: 'Steampipe',
               pronunciation: '/ˈstiːmpaɪp/',
               phonetic: 'STIM-paip',
               example:
@@ -5316,10 +5388,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Steampipe',
               command: 'steampipe query "select * from aws_s3_bucket"',
+              note: 'Strumento di Turbot che espone API cloud come tabelle SQL interrogabili via Postgres.',
             },
             {
               english: 'Prowler',
-              italian: 'Prowler (audit AWS/Azure/GCP open source)',
+              italian: 'Prowler',
               pronunciation: '/ˈpraʊlər/',
               phonetic: 'PRAU-ler',
               example:
@@ -5328,10 +5401,11 @@ export default {
               difficulty: 'intermediate',
               tool: 'Prowler',
               command: 'prowler aws --severity HIGH',
+              note: 'Tool open source di audit per AWS, Azure, GCP e Kubernetes, copre CIS, PCI-DSS, HIPAA e altri.',
             },
             {
               english: 'ScoutSuite',
-              italian: 'ScoutSuite (audit multi-cloud)',
+              italian: 'ScoutSuite',
               pronunciation: '/skaʊt swiːt/',
               phonetic: 'SKAUT SUIT',
               example:
@@ -5340,6 +5414,7 @@ export default {
               difficulty: 'intermediate',
               tool: 'ScoutSuite',
               command: 'scout aws',
+              note: 'Strumento open source di NCC Group per audit multi-cloud delle configurazioni di sicurezza.',
             },
           ],
         },
@@ -5489,7 +5564,7 @@ export default {
                 'Switching to a customer-managed key for S3 encryption gives the security team full control over key rotation and access. = Passare a una chiave gestita dal cliente per la crittografia S3 dà al team di sicurezza pieno controllo su rotazione e accesso alla chiave.',
               context: 'cloud-security',
               difficulty: 'intermediate',
-              note: 'Customer-Managed Key (CMK).',
+              note: `Sigla comune: CMK. A differenza delle chiavi gestite dal provider, il cliente controlla rotazione, revoca e policy d'uso.`,
             },
             {
               english: 'VPC Endpoint',
@@ -5632,14 +5707,14 @@ export default {
               difficulty: 'intermediate',
             },
             {
-              english: 'Trust Boundary',
-              italian: 'Confine di fiducia',
+              english: 'Threat Model Trust Boundary',
+              italian: 'Confine di fiducia del threat model',
               pronunciation: '/trʌst ˈbaʊndəri/',
               phonetic: 'TRAST BAUN-da-ri',
-              example:
-                'Defining a clear trust boundary between the CI runner and the production cluster limits lateral movement in case of breach. = Definire un confine di fiducia chiaro tra il runner CI e il cluster di produzione limita il movimento laterale in caso di violazione.',
+              example: `Each threat model trust boundary marks where data crosses between zones with different privileges, prompting STRIDE analysis on the flow. = Ogni confine di fiducia del threat model segna dove i dati attraversano zone con privilegi diversi, innescando un'analisi STRIDE sul flusso.`,
               context: 'shift-left',
               difficulty: 'intermediate',
+              note: `Nei DFD il trust boundary e' la linea tratteggiata fra processi/archivi a fiducia diversa.`,
             },
             {
               english: 'Risk',
@@ -5935,7 +6010,7 @@ export default {
             },
             {
               english: 'IriusRisk',
-              italian: 'IriusRisk (piattaforma threat modeling)',
+              italian: 'IriusRisk',
               pronunciation: '/ˈaɪriəsrɪsk/',
               phonetic: 'AI-rius-risk',
               example:
@@ -5943,6 +6018,7 @@ export default {
               context: 'shift-left',
               difficulty: 'intermediate',
               tool: 'IriusRisk',
+              note: 'Piattaforma commerciale di threat modeling automatizzato con libreria di pattern e contromisure.',
             },
             {
               english: 'pytm',
@@ -5965,7 +6041,7 @@ export default {
                 "The data flow diagram clearly shows where encrypted data crosses trust boundaries between the API and the database. = Il diagramma di flusso dati mostra chiaramente dove i dati crittografati attraversano i confini di fiducia tra l'API e il database.",
               context: 'shift-left',
               difficulty: 'intermediate',
-              note: 'DFD: Data Flow Diagram.',
+              note: 'Sigla comune: DFD. Mostra processi, archivi dati e flussi attraverso i trust boundary; base degli esercizi STRIDE.',
             },
             {
               english: 'Architecture Diagram',
@@ -6087,14 +6163,14 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Trigger',
-              italian: 'Innesco',
+              english: 'Automation Trigger',
+              italian: 'Innesco di automazione',
               pronunciation: '/ˈtrɪɡər/',
               phonetic: 'TRI-gher',
-              example:
-                'We configured a cron trigger to run full dependency scans every night at midnight. = Abbiamo configurato un trigger cron per eseguire scansioni complete delle dipendenze ogni notte a mezzanotte.',
+              example: `An automation trigger fires the SOAR playbook whenever a high-severity alert from the SIEM matches the configured conditions. = Un innesco di automazione fa partire il playbook SOAR quando un alert ad alta severita' dal SIEM corrisponde alle condizioni configurate.`,
               context: 'automation',
               difficulty: 'advanced',
+              note: 'In ambito SOAR, di solito un evento o un alert che avvia un workflow di risposta.',
             },
             {
               english: 'Webhook',
@@ -6145,7 +6221,7 @@ export default {
           items: [
             {
               english: 'Splunk SOAR',
-              italian: 'Splunk SOAR (piattaforma SOAR)',
+              italian: 'Splunk SOAR',
               pronunciation: '/splʌŋk sɔː/',
               phonetic: 'SPLANK SOR',
               example:
@@ -6153,10 +6229,11 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Splunk SOAR',
+              note: 'Piattaforma SOAR di Splunk, ex Phantom Cyber: orchestrazione e risposta automatica agli incidenti.',
             },
             {
               english: 'Cortex XSOAR',
-              italian: 'Cortex XSOAR (SOAR Palo Alto)',
+              italian: 'Cortex XSOAR',
               pronunciation: '/ˈkɔːtɛks ɛks sɔː/',
               phonetic: 'KOR-teks EX-SOR',
               example:
@@ -6164,10 +6241,11 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Palo Alto XSOAR',
+              note: 'Piattaforma SOAR di Palo Alto Networks, ex Demisto, con marketplace di playbook e integrazioni.',
             },
             {
               english: 'Tines',
-              italian: 'Tines (piattaforma SOAR no-code)',
+              italian: 'Tines',
               pronunciation: '/taɪnz/',
               phonetic: 'TAINS',
               example:
@@ -6175,10 +6253,11 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Tines',
+              note: 'Piattaforma SOAR no-code basata su storyboard visuali per costruire workflow di risposta.',
             },
             {
               english: 'Tracecat',
-              italian: 'Tracecat (SOAR open source)',
+              italian: 'Tracecat',
               pronunciation: '/ˈtreɪskæt/',
               phonetic: 'TREIS-kat',
               example:
@@ -6186,10 +6265,11 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Tracecat',
+              note: 'SOAR open source moderno, pensato come alternativa self-hostable alle soluzioni commerciali.',
             },
             {
               english: 'Shuffle',
-              italian: 'Shuffle (SOAR open source)',
+              italian: 'Shuffle',
               pronunciation: '/ˈʃʌfl/',
               phonetic: 'SCIA-fol',
               example:
@@ -6197,10 +6277,11 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Shuffle',
+              note: 'SOAR open source con migliaia di app integrate; orientato a security automation generica.',
             },
             {
               english: 'TheHive',
-              italian: 'TheHive (piattaforma case management sicurezza)',
+              italian: 'TheHive',
               pronunciation: '/ðə haɪv/',
               phonetic: 'DE HAIV',
               example:
@@ -6208,10 +6289,11 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               tool: 'TheHive',
+              note: 'Piattaforma open source di case management per team SOC, integrata con Cortex per arricchimento IOC.',
             },
             {
               english: 'n8n',
-              italian: 'n8n (automazione workflow open source)',
+              italian: 'n8n',
               pronunciation: '/ɛn eɪt ɛn/',
               phonetic: 'EN-EIT-EN',
               example:
@@ -6219,6 +6301,7 @@ export default {
               context: 'automation',
               difficulty: 'advanced',
               tool: 'n8n',
+              note: 'Tool open source di automazione workflow generica, usato anche come SOAR low-cost.',
             },
             {
               english: 'Workflow Engine',
@@ -6625,14 +6708,14 @@ export default {
               note: 'JSON Web Token.',
             },
             {
-              english: 'Access Token',
-              italian: 'Token di accesso',
+              english: 'OAuth Access Token',
+              italian: 'Access token OAuth',
               pronunciation: '/ˈæksɛs ˈtəʊkən/',
               phonetic: 'AK-ses TO-ken',
-              example:
-                'The CI pipeline exchanges an OIDC claim for a short-lived access token that can only read the artifact registry. = La pipeline CI scambia un claim OIDC per un access token a breve durata che può solo leggere il registry degli artefatti.',
+              example: `An OAuth access token carries the granted scopes and is presented as a bearer credential on each protected API request. = Un access token OAuth porta con se' gli scope concessi ed e' presentato come credenziale bearer in ogni richiesta API protetta.`,
               context: 'tools',
               difficulty: 'advanced',
+              note: 'Tipicamente JWT firmato o opaque token validato dal resource server.',
             },
             {
               english: 'Refresh Token',
@@ -6645,14 +6728,14 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Scope',
-              italian: 'Ambito',
+              english: 'OAuth Scope',
+              italian: 'Scope OAuth',
               pronunciation: '/skəʊp/',
               phonetic: 'SKOUP',
-              example:
-                "Defining a clear scope for the engagement prevents testers from accidentally disrupting production services. = Definire uno scope chiaro per l'impegno impedisce ai tester di interrompere accidentalmente i servizi in produzione.",
+              example: `Requesting only the OAuth scopes the client actually needs limits the blast radius if the access token is later compromised. = Richiedere solo gli scope OAuth di cui il client ha effettivamente bisogno limita il blast radius se l'access token viene poi compromesso.`,
               context: 'tools',
               difficulty: 'advanced',
+              note: `Diverso dallo scope di un pentest engagement: qui descrive permessi concessi a un'app OAuth.`,
             },
             {
               english: 'PKCE',
@@ -6757,14 +6840,14 @@ export default {
             },
             {
               english: 'Server-Side Request Forgery',
-              italian: 'Server-Side Request Forgery (SSRF)',
+              italian: 'Server-Side Request Forgery',
               pronunciation: '/ˈsɜːvə saɪd rɪˈkwɛst ˈfɔːdʒəri/',
               phonetic: 'SER-ver-SAID ri-KUEST FOR-ge-ri',
               example:
                 "The SSRF vulnerability in the PDF generator allowed attackers to reach the AWS metadata endpoint and steal IAM credentials. = La vulnerabilità SSRF nel generatore PDF permetteva agli attaccanti di raggiungere l'endpoint dei metadati AWS e rubare credenziali IAM.",
               context: 'tools',
               difficulty: 'advanced',
-              note: 'Abbreviato SSRF.',
+              note: `Sigla comune: SSRF. Vulnerabilita' che permette al server di emettere richieste verso destinazioni controllate dall'attaccante.`,
             },
             {
               english: 'Improper Inventory',
@@ -6815,7 +6898,7 @@ export default {
           items: [
             {
               english: 'Salt Security',
-              italian: 'Salt Security (piattaforma API security)',
+              italian: 'Salt Security',
               pronunciation: '/sɔːlt sɪˈkjʊərəti/',
               phonetic: 'SOLT si-KIU-ri-ti',
               example:
@@ -6823,10 +6906,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Salt Security',
+              note: 'Piattaforma commerciale di API security basata su discovery automatica e behavioral analytics.',
             },
             {
               english: 'Noname Security',
-              italian: 'Noname Security (piattaforma API security)',
+              italian: 'Noname Security',
               pronunciation: '/ˈnəʊneɪm sɪˈkjʊərəti/',
               phonetic: 'NOU-neim si-KIU-ri-ti',
               example:
@@ -6834,10 +6918,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Noname Security',
+              note: 'Piattaforma di API security acquisita da Akamai, copre discovery, posture e runtime protection.',
             },
             {
               english: 'Postman',
-              italian: 'Postman (client API)',
+              italian: 'Postman',
               pronunciation: '/ˈpəʊstmən/',
               phonetic: 'POST-man',
               example:
@@ -6845,6 +6930,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Postman',
+              note: 'Client API molto diffuso; in ambito security usato per fuzzing manuale e collection di test.',
             },
             {
               english: 'Newman',
@@ -6860,7 +6946,7 @@ export default {
             },
             {
               english: 'Schemathesis',
-              italian: 'Schemathesis (fuzzer di OpenAPI/GraphQL)',
+              italian: 'Schemathesis',
               pronunciation: '/ˌskiːməˈθiːsɪs/',
               phonetic: 'ski-ma-TI-sis',
               example:
@@ -6869,6 +6955,7 @@ export default {
               difficulty: 'advanced',
               tool: 'Schemathesis',
               command: 'schemathesis run openapi.yaml',
+              note: 'Fuzzer property-based che genera test partendo da schemi OpenAPI o GraphQL.',
             },
             {
               english: 'API Fuzzing',
@@ -6985,7 +7072,7 @@ export default {
             },
             {
               english: 'Contrast Security',
-              italian: 'Contrast Security (piattaforma RASP/IAST)',
+              italian: 'Contrast Security',
               pronunciation: '/ˈkɒntrɑːst sɪˈkjʊərəti/',
               phonetic: 'KON-trast si-KIU-ri-ti',
               example:
@@ -6993,6 +7080,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Contrast Security',
+              note: 'Piattaforma commerciale con agenti RASP e IAST che istrumentano le applicazioni in produzione.',
             },
             {
               english: 'IAST',
@@ -7054,16 +7142,17 @@ export default {
           description: 'Runtime threat detection',
           items: [
             {
-              english: 'Falco',
-              italian: 'Falco (rilevatore eventi runtime cloud-native)',
+              english: 'Falco runtime detection',
+              italian: 'Rilevamento runtime con Falco',
               pronunciation: '/ˈfælkəʊ/',
               phonetic: 'FAL-ko',
               example:
-                'When a container spawns an unexpected shell process, Falco generates a high-priority alert within milliseconds. = Quando un container avvia un processo shell inaspettato, Falco genera un avviso ad alta priorità in pochi millisecondi.',
+                'Falco runtime detection streams kernel syscalls and Kubernetes audit events, then matches them against YAML rules to alert in real time. = Il rilevamento runtime con Falco intercetta syscall del kernel ed eventi di audit Kubernetes, poi li confronta con regole YAML per generare alert in tempo reale.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Falco',
               command: 'falco --rule-file rules.yaml',
+              note: 'Progetto CNCF graduated, originariamente sviluppato da Sysdig.',
             },
             {
               english: 'Tetragon',
@@ -7119,7 +7208,7 @@ export default {
             },
             {
               english: 'AppArmor',
-              italian: 'AppArmor (LSM Linux a profili)',
+              italian: 'AppArmor',
               pronunciation: '/ˈæpɑːmə/',
               phonetic: 'AP-ar-mor',
               example:
@@ -7127,6 +7216,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'AppArmor',
+              note: `Linux Security Module a profili che limita capacita', percorsi e syscall per ogni processo.`,
             },
             {
               english: 'SELinux',
@@ -7152,7 +7242,7 @@ export default {
             },
             {
               english: 'Cilium',
-              italian: 'Cilium (CNI eBPF Kubernetes)',
+              italian: 'Cilium',
               pronunciation: '/ˈsɪliəm/',
               phonetic: 'SI-lium',
               example:
@@ -7160,6 +7250,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Cilium',
+              note: 'CNI Kubernetes basato su eBPF: fornisce networking, NetworkPolicy avanzate e observability L7.',
             },
           ],
         },
@@ -7192,7 +7283,7 @@ export default {
             },
             {
               english: 'CrowdStrike',
-              italian: 'CrowdStrike (EDR commerciale)',
+              italian: 'CrowdStrike',
               pronunciation: '/ˈkraʊdstraɪk/',
               phonetic: 'KRAUD-straik',
               example:
@@ -7200,10 +7291,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'CrowdStrike Falcon',
+              note: 'Piattaforma EDR commerciale (Falcon) leader di mercato, con telemetry cloud-native.',
             },
             {
               english: 'SentinelOne',
-              italian: 'SentinelOne (EDR commerciale)',
+              italian: 'SentinelOne',
               pronunciation: '/ˈsɛntɪnlwʌn/',
               phonetic: 'SEN-ti-nel-UAN',
               example:
@@ -7211,10 +7303,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'SentinelOne',
+              note: 'EDR/XDR commerciale con motori AI-based per detection e response automatici.',
             },
             {
               english: 'Microsoft Defender',
-              italian: 'Microsoft Defender (EDR Microsoft)',
+              italian: 'Microsoft Defender',
               pronunciation: '/ˈmaɪkrəʊsɒft dɪˈfɛndə/',
               phonetic: 'MAI-kro-soft di-FEN-der',
               example:
@@ -7222,6 +7315,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Microsoft Defender',
+              note: 'Suite EDR di Microsoft, integrata in Windows e disponibile per Linux, macOS e mobile.',
             },
             {
               english: 'Sysmon',
@@ -7236,7 +7330,7 @@ export default {
             },
             {
               english: 'Osquery',
-              italian: 'osquery (telemetria endpoint via SQL)',
+              italian: 'Osquery',
               pronunciation: '/əʊˈɛs ˈkwɪəri/',
               phonetic: 'OS-KUI-ri',
               example:
@@ -7245,10 +7339,11 @@ export default {
               difficulty: 'advanced',
               tool: 'Osquery',
               command: 'osqueryi "SELECT * FROM users"',
+              note: 'Strumento di Facebook/Meta che espone lo stato di un endpoint come tabelle SQL interrogabili.',
             },
             {
               english: 'Wazuh',
-              italian: 'Wazuh (SIEM/EDR open source)',
+              italian: 'Wazuh',
               pronunciation: '/ˈwɑːzuː/',
               phonetic: 'UA-zu',
               example:
@@ -7256,6 +7351,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Wazuh',
+              note: 'Piattaforma open source SIEM/XDR/EDR, fork storico di OSSEC con stack Elastic integrato.',
             },
             {
               english: 'Threat Hunting',
@@ -7308,7 +7404,7 @@ export default {
             },
             {
               english: 'Istio',
-              italian: 'Istio (service mesh open source)',
+              italian: 'Istio',
               pronunciation: '/ˈɪstiəʊ/',
               phonetic: 'IS-tio',
               example:
@@ -7316,10 +7412,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Istio',
+              note: 'Service mesh open source basato su sidecar Envoy: gestisce traffico, mTLS e policy L7.',
             },
             {
               english: 'Linkerd',
-              italian: 'Linkerd (service mesh ultra-leggero)',
+              italian: 'Linkerd',
               pronunciation: '/ˈlɪŋkɜːd/',
               phonetic: 'LINK-erd',
               example:
@@ -7327,10 +7424,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Linkerd',
+              note: `Service mesh CNCF ultra-leggero, scritto in Rust, focalizzato su semplicita' e performance.`,
             },
             {
               english: 'Consul Connect',
-              italian: 'Consul Connect (service mesh HashiCorp)',
+              italian: 'Consul Connect',
               pronunciation: '/ˈkɒnsʊl kəˈnɛkt/',
               phonetic: 'KON-sul ko-NEKT',
               example:
@@ -7338,6 +7436,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'HashiCorp Consul',
+              note: 'Service mesh di HashiCorp basato su Consul, supporta mTLS e service discovery cross-cluster.',
             },
             {
               english: 'Zero Trust Network',
@@ -7422,7 +7521,7 @@ export default {
             },
             {
               english: 'Argo CD',
-              italian: 'Argo CD (motore GitOps Kubernetes)',
+              italian: 'Argo CD',
               pronunciation: '/ˈɑːɡəʊ siː diː/',
               phonetic: 'AR-go SI-DI',
               example:
@@ -7430,10 +7529,11 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Argo CD',
+              note: `Motore GitOps CNCF per Kubernetes: sincronizza manifest da repo Git verso uno o piu' cluster.`,
             },
             {
               english: 'Flux',
-              italian: 'Flux (motore GitOps Kubernetes)',
+              italian: 'Flux',
               pronunciation: '/flʌks/',
               phonetic: 'FLAKS',
               example:
@@ -7441,6 +7541,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Flux',
+              note: 'Motore GitOps CNCF concorrente di Argo CD, basato su controller modulari e Kustomize/Helm.',
             },
             {
               english: 'Declarative State',
@@ -7520,15 +7621,15 @@ export default {
           description: 'Firmare commit e tag',
           items: [
             {
-              english: 'Signed Commit',
-              italian: 'Commit firmato',
+              english: 'GPG-Signed Commit',
+              italian: 'Commit firmato con GPG',
               pronunciation: '/saɪnd kəˈmɪt/',
               phonetic: 'SAIND ko-MIT',
-              example:
-                'Requiring every signed commit on the main branch proves that an authorized developer authored each change. = Richiedere ogni commit firmato sul branch main dimostra che uno sviluppatore autorizzato ha creato ogni modifica.',
+              example: `Branch protection in GitOps repos can require every GPG-signed commit so that only verified maintainers can land manifests on main. = La branch protection nei repo GitOps puo' richiedere ogni commit firmato con GPG cosi' solo i maintainer verificati possono pubblicare manifest su main.`,
               context: 'ci-cd',
               difficulty: 'advanced',
               command: 'git commit -S -m "msg"',
+              note: 'Esistono anche varianti S/MIME e SSH; GPG resta lo standard storico su GitHub e GitLab.',
             },
             {
               english: 'Signed Tag',
@@ -7675,15 +7776,15 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Code Owner',
-              italian: 'Proprietario del codice',
+              english: 'Repository Code Owner',
+              italian: 'Code owner del repository',
               pronunciation: '/kəʊd ˈəʊnə/',
               phonetic: 'KOUD OU-ner',
-              example:
-                'Defining a code owner for the authentication module ensures that every change to login logic gets expert review. = Definire un code owner per il modulo di autenticazione assicura che ogni modifica alla logica di login riceva una review esperta.',
+              example: `Defining repository code owners in CODEOWNERS makes sure security-critical paths always require review from the designated team. = Definire i code owner del repository nel file CODEOWNERS fa si' che i percorsi critici per la sicurezza richiedano sempre la review dal team designato.`,
               context: 'ci-cd',
               difficulty: 'advanced',
               code: '* @platform-team',
+              note: 'GitHub e GitLab impongono automaticamente il review degli owner sui path indicati.',
             },
             {
               english: 'Stale Review Dismissal',
@@ -7809,7 +7910,7 @@ export default {
             },
             {
               english: 'Mergify',
-              italian: 'Mergify (automazione merge PR)',
+              italian: 'Mergify',
               pronunciation: '/ˈmɜːdʒɪfaɪ/',
               phonetic: 'MER-gi-fai',
               example:
@@ -7817,6 +7918,7 @@ export default {
               context: 'ci-cd',
               difficulty: 'advanced',
               tool: 'Mergify',
+              note: 'Servizio SaaS per automatizzare merge, rebase e backport delle pull request via regole YAML.',
             },
             {
               english: 'Spectral',
@@ -7880,7 +7982,7 @@ export default {
             },
             {
               english: 'Splunk',
-              italian: 'Splunk (piattaforma SIEM e log)',
+              italian: 'Splunk',
               pronunciation: '/splʌŋk/',
               phonetic: 'SPLANK',
               example:
@@ -7888,6 +7990,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Splunk',
+              note: 'Piattaforma storica di indicizzazione log e SIEM, basata sul linguaggio di query SPL.',
             },
             {
               english: 'Elastic Stack',
@@ -7912,15 +8015,15 @@ export default {
               tool: 'IBM QRadar',
             },
             {
-              english: 'Sentinel',
-              italian: 'Motore policy HashiCorp (Sentinel)',
+              english: 'Microsoft Sentinel',
+              italian: 'Microsoft Sentinel',
               pronunciation: '/ˈsɛntɪnl/',
               phonetic: 'SEN-ti-nel',
-              example:
-                'A Sentinel policy prevents any Terraform plan from creating resources without the mandatory cost-center tag. = Una policy Sentinel impedisce a qualsiasi piano Terraform di creare risorse senza il tag di centro di costo obbligatorio.',
+              example: `Microsoft Sentinel ingests logs from Azure and third-party connectors to deliver cloud-native SIEM and SOAR capabilities. = Microsoft Sentinel ingerisce log da Azure e connettori di terze parti per offrire funzionalita' SIEM e SOAR cloud-native.`,
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Microsoft Sentinel',
+              note: `Da non confondere con HashiCorp Sentinel (Livello 7), che e' un motore di policy IaC.`,
             },
             {
               english: 'Chronicle',
@@ -7999,7 +8102,7 @@ export default {
                 'Automating alert triage reduced our mean time to detect from eight hours to under forty-five minutes. = Automatizzare il triage degli avvisi ha ridotto il nostro tempo medio di rilevamento da otto ore a meno di quarantacinque minuti.',
               context: 'tools',
               difficulty: 'advanced',
-              note: 'MTTD: Mean Time To Detect.',
+              note: `Sigla comune: MTTD. Misura quanto tempo passa tra l'inizio di un incidente e la sua effettiva rilevazione.`,
             },
             {
               english: 'Mean Time To Respond',
@@ -8103,7 +8206,7 @@ export default {
             },
             {
               english: 'Loki',
-              italian: 'Loki (sistema di log Grafana)',
+              italian: 'Loki',
               pronunciation: '/ˈləʊki/',
               phonetic: 'LO-ki',
               example:
@@ -8111,10 +8214,11 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Grafana Loki',
+              note: 'Sistema di log di Grafana Labs ispirato a Prometheus: indicizza solo metadati, non il contenuto.',
             },
             {
               english: 'Fluentd',
-              italian: 'Fluentd (raccoglitore log unificato)',
+              italian: 'Fluentd',
               pronunciation: '/ˈfluːənt diː/',
               phonetic: 'FLU-ent-DI',
               example:
@@ -8122,6 +8226,7 @@ export default {
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Fluentd',
+              note: `Collector di log CNCF unificato, con piu' di mille plugin per input, parser e output.`,
             },
             {
               english: 'Vector',
@@ -8135,14 +8240,14 @@ export default {
               tool: 'Vector by Datadog',
             },
             {
-              english: 'Audit Log',
-              italian: 'Registro di audit',
+              english: 'Centralized Audit Log',
+              italian: 'Registro di audit centralizzato',
               pronunciation: '/ˈɔːdɪt lɒɡ/',
               phonetic: 'O-dit LOG',
-              example:
-                "After the incident, we traced the unauthorized pipeline change through the audit log to identify the compromised account. = Dopo l'incidente, abbiamo tracciato la modifica non autorizzata alla pipeline attraverso il registro di audit per identificare l'account compromesso.",
+              example: `Shipping every component's audit log to a centralized store lets analysts correlate suspicious activity across the entire platform. = Inviare il registro di audit di ogni componente in un archivio centralizzato permette agli analisti di correlare attivita' sospette su tutta la piattaforma.`,
               context: 'tools',
               difficulty: 'advanced',
+              note: `A differenza dell'audit log della singola pipeline, qui i log arrivano da molte fonti diverse.`,
             },
             {
               english: 'Log Retention',
@@ -8349,14 +8454,14 @@ export default {
               note: 'Abbreviato IR.',
             },
             {
-              english: 'Severity',
-              italian: 'Gravità',
+              english: 'Incident Severity',
+              italian: `Severita' dell'incidente`,
               pronunciation: '/sɪˈvɛrəti/',
               phonetic: 'si-VE-re-ti',
-              example:
-                'Only findings with a severity of high or critical block the pipeline; medium issues generate warnings. = Solo i finding con severità alta o critica bloccano la pipeline; i problemi medi generano avvisi.',
+              example: `Assigning an incident severity at intake drives the response playbook, escalation path, and required communication cadence. = Assegnare una severita' all'incidente in fase di intake guida il playbook di risposta, il percorso di escalation e la cadenza di comunicazione richiesta.`,
               context: 'automation',
               difficulty: 'advanced',
+              note: 'Classifica un incidente attivo (es. SEV-1, SEV-2), non un singolo finding statico.',
             },
             {
               english: 'SEV-1',
@@ -8447,14 +8552,14 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Triage',
-              italian: 'Classificazione iniziale per priorità (triage)',
+              english: 'Incident Triage',
+              italian: 'Triage degli incidenti',
               pronunciation: '/ˈtriːɑːʒ/',
               phonetic: 'TRI-asg',
-              example:
-                'During weekly triage meetings, the team classifies new vulnerability findings by severity and business impact. = Durante le riunioni di triage settimanali, il team classifica i nuovi finding di vulnerabilità per severità e impatto aziendale.',
+              example: `Incident triage during the response phase decides which alerts deserve a full investigation and which can be closed as benign. = Il triage degli incidenti durante la fase di risposta decide quali alert meritano un'indagine completa e quali possono essere chiusi come benigni.`,
               context: 'automation',
               difficulty: 'advanced',
+              note: 'Diverso dal triage delle CVE in SCA: qui si lavora su incidenti attivi, non su finding statici.',
             },
             {
               english: 'Containment',
@@ -8785,15 +8890,15 @@ export default {
               note: 'Role-Based Access Control.',
             },
             {
-              english: 'Role',
-              italian: 'Ruolo',
+              english: 'Kubernetes Role',
+              italian: 'Role Kubernetes',
               pronunciation: '/rəʊl/',
               phonetic: 'ROUL',
-              example:
-                'Creating a dedicated deployment role with only the required permissions prevents developers from exceeding their access. = Creare un ruolo di deployment dedicato con solo i permessi necessari impedisce agli sviluppatori di eccedere il loro accesso.',
+              example: `A Kubernetes Role grants verbs like get, list and watch on namespaced resources, while a ClusterRole spans the entire cluster. = Una Role Kubernetes concede verbi come get, list e watch su risorse di un namespace, mentre una ClusterRole copre l'intero cluster.`,
               context: 'container-security',
               difficulty: 'advanced',
               code: 'kind: Role\nrules:\n- verbs: [get,list]',
+              note: `Diverso dal generico Role IAM cloud del Livello 11: qui e' una risorsa K8s RBAC namespaced.`,
             },
             {
               english: 'ClusterRole',
@@ -8947,7 +9052,7 @@ export default {
             },
             {
               english: 'Calico',
-              italian: 'Calico (CNI Kubernetes con NetworkPolicy)',
+              italian: 'Calico',
               pronunciation: '/ˈkælɪkəʊ/',
               phonetic: 'KA-li-ko',
               example:
@@ -8955,6 +9060,7 @@ export default {
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'Calico',
+              note: 'CNI Kubernetes con supporto avanzato a NetworkPolicy L3/L4 e policy globali.',
             },
             {
               english: 'Cilium NetworkPolicy',
@@ -8995,14 +9101,14 @@ export default {
           description: 'PSS e Gatekeeper',
           items: [
             {
-              english: 'Pod Security Standard',
-              italian: 'Standard di sicurezza pod K8s (Pod Security Standard)',
+              english: 'Restricted Pod Security Standard',
+              italian: 'Pod Security Standard restricted',
               pronunciation: '/pɒd sɪˈkjʊərəti ˈstændəd/',
               phonetic: 'POD si-KIU-ri-ti STAN-dard',
-              example:
-                "Applying the restricted Pod Security Standard prevents containers from running as root or mounting host paths. = Applicare il Pod Security Standard ristretto impedisce ai container di girare come root o montare percorsi dell'host.",
+              example: `Enforcing the Restricted Pod Security Standard on production namespaces blocks privileged pods, host mounts and most capabilities by default. = Imporre il Pod Security Standard restricted sui namespace di produzione blocca di default i pod privileged, i mount dell'host e la maggior parte delle capability.`,
               context: 'container-security',
               difficulty: 'advanced',
+              note: `Profilo piu' rigido dei tre livelli PSS (privileged, baseline, restricted).`,
             },
             {
               english: 'Privileged Profile',
@@ -9035,25 +9141,27 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'OPA Gatekeeper',
-              italian: 'OPA per Kubernetes (OPA Gatekeeper)',
+              english: 'Gatekeeper Constraints',
+              italian: 'Constraint Gatekeeper',
               pronunciation: '/ˈəʊpə ˈɡeɪtkiːpə/',
               phonetic: 'O-pa GHEIT-ki-per',
               example:
-                "Deploying OPA Gatekeeper on the cluster enforces constraint templates that reject non-compliant workloads at admission. = Deployare OPA Gatekeeper sul cluster impone constraint template che rifiutano i workload non conformi all'ammissione.",
+                'Gatekeeper constraints reuse the cluster-wide constraint templates to enforce policy on specific namespaces, kinds and label selectors. = I constraint Gatekeeper riutilizzano i constraint template del cluster per imporre policy su namespace, kind e label selector specifici.',
               context: 'container-security',
               difficulty: 'advanced',
               tool: 'OPA Gatekeeper',
+              note: `Concentra l'attenzione sui constraint operativi, non sull'installazione dell'engine OPA Gatekeeper (Livello 8).`,
             },
             {
-              english: 'Constraint Template',
-              italian: 'Template di vincolo',
+              english: 'Cluster Constraint Template',
+              italian: 'Template di vincolo del cluster',
               pronunciation: '/kənˈstreɪnt ˈtɛmpleɪt/',
               phonetic: 'kon-STREINT TEM-pleit',
               example:
-                'A parameterized constraint template lets teams reuse the same validation logic with different threshold values. = Un constraint template parametrizzato permette ai team di riutilizzare la stessa logica di validazione con valori di soglia diversi.',
+                'A cluster constraint template defines a parameterized Rego rule that platform teams reuse across many tenant namespaces. = Un template di vincolo del cluster definisce una regola Rego parametrizzata che i team di piattaforma riutilizzano su molti namespace tenant.',
               context: 'container-security',
               difficulty: 'advanced',
+              note: `Stessa primitiva del Livello 8, qui presentata dal punto di vista dell'operatore di cluster K8s.`,
             },
             {
               english: 'Mutation',
@@ -9192,7 +9300,7 @@ export default {
             },
             {
               english: 'kubescape',
-              italian: 'Kubescape (scanner di sicurezza K8s)',
+              italian: 'kubescape',
               pronunciation: '/ˈkjuːbskeɪp/',
               phonetic: 'KIUB-skeip',
               example:
@@ -9201,6 +9309,7 @@ export default {
               difficulty: 'advanced',
               tool: 'kubescape',
               command: 'kubescape scan framework nsa',
+              note: 'Scanner di sicurezza Kubernetes open source di ARMO, copre framework NSA-CISA, MITRE ATT&CK e altri.',
             },
             {
               english: 'CIS K8s Benchmark',
@@ -9607,7 +9716,7 @@ export default {
                 'The internal developer platform abstracts away infrastructure complexity while embedding security controls by default. = La piattaforma interna per sviluppatori astrae la complessità infrastrutturale incorporando controlli di sicurezza di default.',
               context: 'culture',
               difficulty: 'advanced',
-              note: 'Internal Developer Platform.',
+              note: `Sigla comune: IDP. Astrae l'infrastruttura dietro un'interfaccia self-service per gli sviluppatori.`,
             },
             {
               english: 'Developer Experience',
@@ -9680,13 +9789,14 @@ export default {
           items: [
             {
               english: 'SOC 2',
-              italian: 'SOC 2 (standard di audit servizi cloud)',
+              italian: 'SOC 2',
               pronunciation: '/sɒk tuː/',
               phonetic: 'SOK-TU',
               example:
                 'Achieving SOC 2 Type 2 certification required demonstrating that security controls operated effectively over a twelve-month period. = Ottenere la certificazione SOC 2 Type 2 ha richiesto di dimostrare che i controlli di sicurezza hanno operato efficacemente per un periodo di dodici mesi.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
+              note: `Standard AICPA per audit di servizi cloud su Trust Service Criteria (sicurezza, disponibilita', riservatezza, ecc.).`,
             },
             {
               english: 'Type 1',
@@ -9719,14 +9829,15 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Auditor',
-              italian: 'Revisore (auditor)',
+              english: 'External SOC 2 Auditor',
+              italian: 'Auditor SOC 2 esterno',
               pronunciation: '/ˈɔːdɪtə/',
               phonetic: 'O-di-tor',
               example:
-                "The external CPA auditor spent two weeks reviewing control evidence before issuing the SOC 2 Type 2 opinion. = L'auditor CPA esterno ha trascorso due settimane revisionando le evidenze dei controlli prima di emettere l'opinione SOC 2 Type 2.",
+                'An external SOC 2 auditor samples evidence across the audit window and issues a Type 2 report attesting that controls operated effectively. = Un auditor SOC 2 esterno campiona le evidenze durante la finestra di audit ed emette un report Type 2 che attesta che i controlli hanno operato in modo efficace.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
+              note: 'Tipicamente uno studio CPA accreditato AICPA; diverso dal generico auditor interno (Livello 10).',
             },
             {
               english: 'Audit Window',
@@ -9787,13 +9898,14 @@ export default {
           items: [
             {
               english: 'ISO 27001',
-              italian: 'ISO 27001 (standard di gestione sicurezza)',
+              italian: 'ISO 27001',
               pronunciation: '/ˈaɪsəʊ tuː ˈsɛvənθaʊzənd ʌn/',
               phonetic: 'AI-so 27-mila-1',
               example:
                 'Obtaining ISO 27001 certification proved to enterprise clients that our information security management system meets international standards. = Ottenere la certificazione ISO 27001 ha dimostrato ai clienti enterprise che il nostro sistema di gestione della sicurezza delle informazioni soddisfa gli standard internazionali.',
               context: 'compliance-as-code',
               difficulty: 'advanced',
+              note: 'Standard internazionale per la gestione di un Information Security Management System (ISMS).',
             },
             {
               english: 'ISMS',
@@ -9971,15 +10083,14 @@ export default {
               note: 'ATO.',
             },
             {
-              english: 'Continuous Monitoring',
-              italian: 'Monitoraggio continuo',
+              english: 'FedRAMP Continuous Monitoring',
+              italian: 'Continuous monitoring FedRAMP',
               pronunciation: '/kənˈtɪnjʊəs ˈmɒnɪtərɪŋ/',
               phonetic: 'kon-TI-nius MO-ni-to-ring',
-              example:
-                'With continuous monitoring in place, any drift from the approved security baseline triggers an alert within minutes. = Con il monitoraggio continuo in atto, qualsiasi drift dalla baseline di sicurezza approvata attiva un avviso entro pochi minuti.',
+              example: `FedRAMP continuous monitoring requires monthly POA&M updates and quarterly scans to keep the authorization to operate valid. = Il continuous monitoring FedRAMP richiede aggiornamenti POA&M mensili e scansioni trimestrali per mantenere valida l'autorizzazione a operare.`,
               context: 'compliance-as-code',
               difficulty: 'advanced',
-              note: 'ConMon.',
+              note: 'Sigla comune: ConMon. Si distingue dal continuous monitoring di compliance generica del Livello 10.',
             },
             {
               english: '3PAO',
@@ -10012,14 +10123,14 @@ export default {
           items: [
             {
               english: 'GDPR',
-              italian: 'GDPR (Regolamento UE protezione dati)',
+              italian: 'GDPR',
               pronunciation: '/dʒiː diː piː ɑːr/',
               phonetic: 'GI-DI-PI-AR',
               example:
                 "Under the GDPR, organizations must report personal data breaches to the supervisory authority within seventy-two hours. = Secondo il GDPR, le organizzazioni devono segnalare le violazioni dei dati personali all'autorità di controllo entro settantadue ore.",
               context: 'compliance-as-code',
               difficulty: 'advanced',
-              note: 'General Data Protection Regulation.',
+              note: 'Regolamento UE 2016/679 sulla protezione dei dati personali; in italiano spesso citato come RGPD.',
             },
             {
               english: 'Data Subject',
@@ -10263,7 +10374,7 @@ export default {
             },
             {
               english: 'Hack the Box',
-              italian: 'Hack The Box (piattaforma CTF)',
+              italian: 'Hack The Box',
               pronunciation: '/hæk ðə bɒks/',
               phonetic: 'HAK DE BOKS',
               example:
@@ -10271,10 +10382,11 @@ export default {
               context: 'culture',
               difficulty: 'advanced',
               tool: 'Hack The Box',
+              note: 'Piattaforma CTF online molto popolare per esercitarsi su macchine vulnerabili e laboratori.',
             },
             {
               english: 'TryHackMe',
-              italian: 'TryHackMe (piattaforma CTF didattica)',
+              italian: 'TryHackMe',
               pronunciation: '/traɪ hæk miː/',
               phonetic: 'TRAI HAK MI',
               example:
@@ -10282,10 +10394,11 @@ export default {
               context: 'culture',
               difficulty: 'advanced',
               tool: 'TryHackMe',
+              note: 'Piattaforma CTF didattica con percorsi guidati pensati anche per principianti.',
             },
             {
               english: 'Secure Code Warrior',
-              italian: 'Secure Code Warrior (piattaforma training secure coding)',
+              italian: 'Secure Code Warrior',
               pronunciation: '/sɪˈkjʊə kəʊd ˈwɒriə/',
               phonetic: 'si-KIUR KOUD UO-rior',
               example:
@@ -10293,6 +10406,7 @@ export default {
               context: 'culture',
               difficulty: 'advanced',
               tool: 'Secure Code Warrior',
+              note: 'Piattaforma commerciale di training su secure coding con sfide a tempo per sviluppatori.',
             },
             {
               english: 'Leaderboard',
@@ -10370,7 +10484,7 @@ export default {
                 'Our DevSecOps community of practice maintains a shared wiki with runbooks, tool evaluations, and solved incident patterns. = La nostra comunità di pratica DevSecOps mantiene un wiki condiviso con runbook, valutazioni di strumenti e pattern di incidenti risolti.',
               context: 'culture',
               difficulty: 'advanced',
-              note: 'Community of Practice (CoP).',
+              note: 'Sigla comune: CoP. Gruppo trasversale di praticanti che condividono know-how su un dominio specifico.',
             },
             {
               english: 'Brown Bag Session',
@@ -10580,24 +10694,26 @@ export default {
           description: 'Posizioni nel DevSecOps',
           items: [
             {
-              english: 'DevSecOps Engineer',
-              italian: 'Ingegnere DevSecOps',
+              english: 'Senior DevSecOps Engineer',
+              italian: 'DevSecOps Engineer senior',
               pronunciation: '/dɛvˈsɛkˌɒps ˌɛndʒɪˈnɪər/',
               phonetic: 'DEV-sek-ops en-gi-NIR',
               example:
-                'A DevSecOps engineer wires security in CI. = Un ingegnere DevSecOps integra la sicurezza in CI.',
+                'A senior DevSecOps engineer mentors the team, owns the security tooling roadmap and leads cross-team initiatives. = Un DevSecOps engineer senior fa mentoring al team, possiede la roadmap del tooling di sicurezza e guida iniziative cross-team.',
               context: 'culture',
               difficulty: 'advanced',
+              note: 'Profilo di carriera avanzato rispetto al DevSecOps Engineer entry-level del Livello 0.',
             },
             {
-              english: 'AppSec Engineer',
-              italian: 'Ingegnere AppSec',
+              english: 'Senior AppSec Engineer',
+              italian: 'AppSec Engineer senior',
               pronunciation: '/ˈæpˌsɛk ˌɛndʒɪˈnɪər/',
               phonetic: 'AP-sek en-gi-NIR',
               example:
-                'Our AppSec engineer leads threat modeling sessions and reviews pull requests for OWASP Top 10 vulnerabilities. = Il nostro AppSec engineer guida le sessioni di threat modeling e revisiona le pull request per vulnerabilità OWASP Top 10.',
+                'A senior AppSec engineer designs the secure SDLC, runs threat modeling reviews and coaches product teams on OWASP risks. = Un AppSec engineer senior progetta il secure SDLC, conduce review di threat modeling e fa coaching ai team di prodotto sui rischi OWASP.',
               context: 'culture',
               difficulty: 'advanced',
+              note: 'Application Security; ruolo senior rispetto al profilo entry-level del Livello 0.',
             },
             {
               english: 'Toolchain Architect',
@@ -10688,36 +10804,36 @@ export default {
           items: [
             {
               english: 'CISSP',
-              italian: 'CISSP (certificazione senior di sicurezza)',
+              italian: 'CISSP',
               pronunciation: '/siː aɪ ɛs ɛs piː/',
               phonetic: 'SI-AI-ES-ES-PI',
               example:
                 'Earning the CISSP certification demonstrated broad security knowledge across eight domains from risk management to software security. = Ottenere la certificazione CISSP ha dimostrato una vasta conoscenza della sicurezza in otto domini dalla gestione del rischio alla sicurezza software.',
               context: 'culture',
               difficulty: 'advanced',
-              note: 'Certified Information Systems Security Professional.',
+              note: 'Certified Information Systems Security Professional: certificazione senior di sicurezza erogata da (ISC)2.',
             },
             {
               english: 'CCSP',
-              italian: 'CCSP (certificazione cloud security)',
+              italian: 'CCSP',
               pronunciation: '/siː siː ɛs piː/',
               phonetic: 'SI-SI-ES-PI',
               example:
                 'The CCSP certification validates expertise in cloud security architecture, governance, and compliance frameworks. = La certificazione CCSP valida la competenza in architettura di sicurezza cloud, governance e framework di compliance.',
               context: 'culture',
               difficulty: 'advanced',
-              note: 'Certified Cloud Security Professional.',
+              note: 'Certified Cloud Security Professional: certificazione (ISC)2 dedicata alla sicurezza cloud.',
             },
             {
               english: 'OSCP',
-              italian: 'OSCP (certificazione pentest Offensive Security)',
+              italian: 'OSCP',
               pronunciation: '/əʊ ɛs siː piː/',
               phonetic: 'O-ES-SI-PI',
               example:
                 "Passing the hands-on OSCP exam required exploiting multiple machines in a simulated corporate network within twenty-four hours. = Superare l'esame pratico OSCP ha richiesto lo sfruttamento di molteplici macchine in una rete aziendale simulata entro ventiquattro ore.",
               context: 'culture',
               difficulty: 'advanced',
-              note: 'Offensive Security Certified Professional.',
+              note: 'Offensive Security Certified Professional: certificazione di pentest molto pratica e hands-on.',
             },
             {
               english: 'GIAC GCSA',
@@ -10743,7 +10859,7 @@ export default {
             },
             {
               english: 'AWS Security Specialty',
-              italian: 'AWS Security Specialty (certificazione AWS sicurezza)',
+              italian: 'AWS Security Specialty',
               pronunciation: '/eɪ dʌbljuː ɛs sɪˈkjʊərəti ˈspɛʃəlti/',
               phonetic: 'EI-DABL-IU-ES si-KIU-ri-ti SPE-scial-ti',
               example:
@@ -10751,6 +10867,7 @@ export default {
               context: 'culture',
               difficulty: 'advanced',
               tool: 'AWS Certification',
+              note: 'Certificazione AWS specialistica focalizzata sui servizi di sicurezza della piattaforma.',
             },
             {
               english: 'AZ-500',

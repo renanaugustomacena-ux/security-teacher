@@ -159,7 +159,7 @@ async function auditTopic(filePath) {
         const key = dupKey(item.english || '');
         if (key) {
           const prior = seen.get(key) || [];
-          prior.push({ level: levelNum, lesson: lesson.id });
+          prior.push({ level: levelNum, lesson: lesson.id, english: item.english });
           seen.set(key, prior);
         }
       }
@@ -169,7 +169,7 @@ async function auditTopic(filePath) {
   // Flag duplicates:
   //  - same-lesson  → 'duplicate-in-lesson'  (always bad: same term twice in one lesson)
   //  - cross-lesson → 'duplicate-across-lessons' (sometimes intentional: intro vs advanced)
-  for (const [key, occurrences] of seen) {
+  for (const occurrences of seen.values()) {
     if (occurrences.length < 2) continue;
 
     // Count per (level, lesson)
@@ -193,7 +193,7 @@ async function auditTopic(filePath) {
         topicId,
         level: occ.level,
         lesson: occ.lesson,
-        english: key,
+        english: occ.english,
         italian: '',
         type,
       });

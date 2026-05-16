@@ -31,13 +31,11 @@ topicId,level,lesson,english,italian,issueType
 "ai-engineering",7,"ai_transformers_3","Autoregressive","Autoregressivo",near-identical-translation
 "ai-engineering",7,"ai_transformers_3","Generation","Generazione",near-identical-translation
 "ai-engineering",8,"ai_vision_3","Segmentation","Segmentazione",near-identical-translation
-"ai-engineering",8,"ai_vision_3","Semantic Segmentation","Segmentazione semantica",tautological-example
 "ai-engineering",9,"ai_prompt_1","Context","Contesto",near-identical-translation
 "ai-engineering",9,"ai_prompt_3","Citation","Citazione",near-identical-translation
 "ai-engineering",9,"ai_prompt_4","Temperature","Temperatura",near-identical-translation
 "ai-engineering",9,"ai_prompt_4","Guardrails","Guardrail",near-identical-translation
 "ai-engineering",10,"ai_training_1","Epoch","Epoca",near-identical-translation
-"ai-engineering",10,"ai_training_1","Iteration","Iterazione",near-identical-translation
 "ai-engineering",10,"ai_training_3","Convergence","Convergenza",near-identical-translation
 "ai-engineering",11,"ai_evaluation_1","Precision","Precisione",near-identical-translation
 "ai-engineering",11,"ai_evaluation_1","False Positive","Falso positivo",near-identical-translation
@@ -54,7 +52,6 @@ topicId,level,lesson,english,italian,issueType
 "ai-engineering",15,"ai_mlops_3","CI/CD for ML","CI/CD per ML",near-identical-translation
 "ai-engineering",16,"ai_deployment_1","Latency","Latenza",near-identical-translation
 "ai-engineering",16,"ai_deployment_4","Observability","Osservabilità",near-identical-translation
-"ai-engineering",17,"ai_responsible_2","Explainability","Spiegabilità",redundant-note
 "ai-engineering",17,"ai_responsible_2","Interpretability","Interpretabilità",near-identical-translation
 "ai-engineering",18,"ai_rl_1","Agent","Agente",near-identical-translation
 "ai-engineering",18,"ai_rl_1","State","Stato",near-identical-translation
@@ -62,29 +59,11 @@ topicId,level,lesson,english,italian,issueType
 "ai-engineering",19,"ai_advanced_1","Expert","Esperto",near-identical-translation
 "ai-engineering",19,"ai_advanced_3","Multimodal","Multimodale",near-identical-translation
 "ai-engineering",19,"ai_advanced_4","Memory","Memoria",near-identical-translation
+"ai-engineering",21,"ai_security_1","Defensive Distillation","Distillazione difensiva",tautological-example
 "ai-engineering",21,"ai_security_1","Perturbation","Perturbazione",near-identical-translation
 "ai-engineering",22,"ai_research_1","Conference","Conferenza",near-identical-translation
-"ai-engineering",22,"ai_research_1","Citation","Citazione",near-identical-translation
 "ai-engineering",22,"ai_research_3","Replication","Replicazione",near-identical-translation
 "ai-engineering",22,"ai_research_4","Neuro-Symbolic","Neuro-simbolico",near-identical-translation
 "ai-engineering",23,"ai_pro_4","Innovation","Innovazione",near-identical-translation
-"ai-engineering",0,"ai_foundations_1","dataset","",duplicate-across-lessons
-"ai-engineering",12,"ai_frameworks_2","dataset","",duplicate-across-lessons
-"ai-engineering",0,"ai_foundations_3","iteration","",duplicate-across-lessons
-"ai-engineering",10,"ai_training_1","iteration","",duplicate-across-lessons
-"ai-engineering",1,"ai_data_3","standardization","",duplicate-across-lessons
-"ai-engineering",23,"ai_pro_3","standardization","",duplicate-across-lessons
-"ai-engineering",2,"ai_supervised_2","r-squared","",duplicate-across-lessons
-"ai-engineering",11,"ai_evaluation_3","r-squared","",duplicate-across-lessons
-"ai-engineering",3,"ai_unsupervised_2","explained variance","",duplicate-across-lessons
-"ai-engineering",11,"ai_evaluation_3","explained variance","",duplicate-across-lessons
-"ai-engineering",9,"ai_prompt_3","vector database","",duplicate-across-lessons
-"ai-engineering",20,"ai_scale_2","vector database","",duplicate-across-lessons
-"ai-engineering",9,"ai_prompt_3","citation","",duplicate-across-lessons
-"ai-engineering",22,"ai_research_1","citation","",duplicate-across-lessons
-"ai-engineering",11,"ai_evaluation_4","ablation study","",duplicate-across-lessons
-"ai-engineering",22,"ai_research_3","ablation study","",duplicate-across-lessons
-"ai-engineering",14,"ai_generative_1","adversarial training","",duplicate-across-lessons
-"ai-engineering",21,"ai_security_1","adversarial training","",duplicate-across-lessons
-"ai-engineering",16,"ai_deployment_4","feature store","",duplicate-across-lessons
-"ai-engineering",20,"ai_scale_3","feature store","",duplicate-across-lessons
+"ai-engineering",21,"ai_security_1","Defensive Distillation","",duplicate-across-lessons
+"ai-engineering",21,"ai_security_4","Defensive Distillation","",duplicate-across-lessons

@@ -1,12 +1,11 @@
 topicId,level,lesson,english,italian,issueType
-"nodejs",0,"node_foundations_1","Non-Blocking","Non bloccante",tautological-example
 "nodejs",0,"node_foundations_3","Module","Modulo",near-identical-translation
 "nodejs",0,"node_foundations_3","Process","Processo",near-identical-translation
 "nodejs",0,"node_foundations_4","Version","Versione",near-identical-translation
 "nodejs",0,"node_foundations_4","Argument","Argomento",near-identical-translation
 "nodejs",1,"node_modules_2","Import","Importa",near-identical-translation
 "nodejs",1,"node_modules_2","Export","Esporta",near-identical-translation
-"nodejs",1,"node_modules_3","Install","Installa",near-identical-translation
+"nodejs",1,"node_modules_3","npm install","npm install",identical-translation
 "nodejs",2,"node_foundations_5","Parameter","Parametro",near-identical-translation
 "nodejs",2,"node_foundations_7","Variable","Variabile",near-identical-translation
 "nodejs",2,"node_foundations_7","Immutable","Immutabile",near-identical-translation
@@ -14,19 +13,16 @@ topicId,level,lesson,english,italian,issueType
 "nodejs",2,"node_foundations_8","Method","Metodo",near-identical-translation
 "nodejs",3,"node_async_1","Continuation","Continuazione",near-identical-translation
 "nodejs",3,"node_async_2","Resolve","Risolvi",near-identical-translation
-"nodejs",3,"node_async_3","await","Attesa di una Promise (await)",trivial-example
 "nodejs",3,"node_async_3","Sequential","Sequenziale",near-identical-translation
 "nodejs",3,"node_async_3","Parallel","Parallelo",near-identical-translation
 "nodejs",3,"node_async_3","Promisification","Promisificazione",near-identical-translation
 "nodejs",3,"node_async_4","Starvation","Starvazione",near-identical-translation
-"nodejs",4,"node_runtime_2","Open","Apertura file (open)",tautological-example
 "nodejs",4,"node_runtime_2","Copy File","Copia file",near-identical-translation
 "nodejs",5,"node_runtime_5","Port","Porta",near-identical-translation
 "nodejs",5,"node_runtime_7","201 Created","201 Creato",near-identical-translation
 "nodejs",6,"node_express_1","Application","Applicazione",near-identical-translation
 "nodejs",6,"node_express_1","Generator","Generatore",near-identical-translation
 "nodejs",6,"node_express_2","Route","Rotta",near-identical-translation
-"nodejs",6,"node_express_4","Mount","Montaggio",tautological-example
 "nodejs",7,"node_api_1","Idempotent","Idempotente",near-identical-translation
 "nodejs",7,"node_api_2","Pagination","Paginazione",near-identical-translation
 "nodejs",7,"node_api_3","Controller","Controllore",near-identical-translation
@@ -37,641 +33,269 @@ topicId,level,lesson,english,italian,issueType
 "nodejs",8,"node_middleware_2","Credentials","Credenziali",near-identical-translation
 "nodejs",8,"node_middleware_3","Compression","Compressione",near-identical-translation
 "nodejs",9,"node_database_1","Document","Documento",near-identical-translation
-"nodejs",9,"node_database_1","Model","Modello",near-identical-translation
+"nodejs",9,"node_database_1","Mongoose Model","Mongoose Model",identical-translation
 "nodejs",9,"node_database_2","Migration","Migrazione",near-identical-translation
 "nodejs",9,"node_database_3","Relation","Relazione",near-identical-translation
 "nodejs",10,"node_security_1","Session","Sessione",near-identical-translation
-"nodejs",10,"node_security_4","Passport.js","Middleware di autenticazione per Node.js (Passport.js)",tautological-example
 "nodejs",11,"node_runtime_9","Error","Errore",near-identical-translation
-"nodejs",13,"node_events_1","EventEmitter","classe pub-sub di Node (EventEmitter)",tautological-example
-"nodejs",13,"node_events_1","on","on (ascolta)",fake-translation
-"nodejs",13,"node_events_1","on","on (ascolta)",trivial-example
-"nodejs",13,"node_events_1","emit","emetti",tautological-example
-"nodejs",13,"node_events_1","emit","emetti",trivial-example
-"nodejs",13,"node_events_1","once","once (una volta)",tautological-example
-"nodejs",13,"node_events_1","once","once (una volta)",fake-translation
-"nodejs",13,"node_events_1","once","once (una volta)",trivial-example
-"nodejs",13,"node_events_1","off","off (rimuovi)",tautological-example
-"nodejs",13,"node_events_1","off","off (rimuovi)",fake-translation
-"nodejs",13,"node_events_1","off","off (rimuovi)",trivial-example
-"nodejs",13,"node_events_1","removeListener","rimuovi listener",tautological-example
-"nodejs",13,"node_events_1","removeListener","rimuovi listener",trivial-example
-"nodejs",13,"node_events_1","removeAllListeners","rimuovi tutti i listener",tautological-example
-"nodejs",13,"node_events_1","Listener","handler di eventi (Listener)",trivial-example
-"nodejs",13,"node_events_1","Max Listeners","Numero massimo di listener",trivial-example
-"nodejs",13,"node_events_1","EventEmitter Inheritance","Eredità da EventEmitter",trivial-example
-"nodejs",13,"node_events_2","Event-Driven","Guidato dagli eventi",trivial-example
-"nodejs",13,"node_events_2","Publisher","Pubblicatore",trivial-example
-"nodejs",13,"node_events_2","Subscriber","Sottoscrittore",trivial-example
-"nodejs",13,"node_events_2","Pub/Sub","pubblicazione e sottoscrizione (Pub/Sub)",tautological-example
-"nodejs",13,"node_events_2","Loose Coupling","Accoppiamento lasco",trivial-example
-"nodejs",13,"node_events_2","Event Sourcing","archivio degli eventi (Event Sourcing)",tautological-example
-"nodejs",13,"node_events_2","Error Event","Evento error",trivial-example
-"nodejs",13,"node_events_3","Event Name","Nome evento",trivial-example
-"nodejs",13,"node_events_3","Event Bus","Bus di eventi",trivial-example
-"nodejs",13,"node_events_3","Async Listener","Listener asincrono",tautological-example
-"nodejs",13,"node_events_3","Async Listener","Listener asincrono",trivial-example
-"nodejs",13,"node_events_3","Listener Order","Ordine listener",trivial-example
-"nodejs",13,"node_events_3","prependListener","aggiunge listener in testa (prependListener)",tautological-example
-"nodejs",13,"node_events_3","prependListener","aggiunge listener in testa (prependListener)",trivial-example
-"nodejs",13,"node_events_3","EventTarget","interfaccia DOM per eventi (EventTarget)",tautological-example
-"nodejs",13,"node_events_3","CustomEvent","evento personalizzato DOM (CustomEvent)",tautological-example
-"nodejs",13,"node_events_3","CustomEvent","evento personalizzato DOM (CustomEvent)",trivial-example
-"nodejs",13,"node_events_3","Hook","aggancio del ciclo di vita (Hook)",tautological-example
-"nodejs",13,"node_events_3","Hook","aggancio del ciclo di vita (Hook)",trivial-example
-"nodejs",13,"node_events_4","events.on","iteratore async di eventi (events.on)",tautological-example
-"nodejs",13,"node_events_4","events.on","iteratore async di eventi (events.on)",trivial-example
-"nodejs",13,"node_events_4","events.once","attende un singolo evento (events.once)",tautological-example
-"nodejs",13,"node_events_4","events.once","attende un singolo evento (events.once)",trivial-example
-"nodejs",13,"node_events_4","AbortSignal","segnale di annullamento (AbortSignal)",tautological-example
-"nodejs",13,"node_events_4","AbortSignal","segnale di annullamento (AbortSignal)",trivial-example
-"nodejs",13,"node_events_4","Async Generator","Generatore asincrono",tautological-example
-"nodejs",13,"node_events_4","Channel","Canale",trivial-example
-"nodejs",13,"node_events_4","Topic","canale tematico di messaggi (Topic)",trivial-example
-"nodejs",13,"node_events_4","Event Filtering","Filtraggio eventi",trivial-example
-"nodejs",13,"node_events_4","Event Throttling","Throttling eventi",trivial-example
+"nodejs",13,"node_events_1","EventEmitter","EventEmitter",identical-translation
+"nodejs",13,"node_events_1","emit","emit",identical-translation
+"nodejs",13,"node_events_1","once","once",identical-translation
+"nodejs",13,"node_events_1","off","off",identical-translation
+"nodejs",13,"node_events_4","Reactive","Reattivo",tautological-example
 "nodejs",13,"node_events_4","Reactive","Reattivo",near-identical-translation
-"nodejs",13,"node_events_4","Reactive","Reattivo",trivial-example
-"nodejs",14,"node_testing_1","Jest","Jest (framework di test JavaScript)",tautological-example
-"nodejs",14,"node_testing_1","Jest","Jest (framework di test JavaScript)",fake-translation
-"nodejs",14,"node_testing_1","Mocha","Mocha (framework di test JavaScript)",tautological-example
-"nodejs",14,"node_testing_1","Mocha","Mocha (framework di test JavaScript)",fake-translation
-"nodejs",14,"node_testing_1","Mocha","Mocha (framework di test JavaScript)",trivial-example
-"nodejs",14,"node_testing_1","Chai","Chai (libreria di asserzioni)",tautological-example
-"nodejs",14,"node_testing_1","Chai","Chai (libreria di asserzioni)",fake-translation
-"nodejs",14,"node_testing_1","Chai","Chai (libreria di asserzioni)",trivial-example
-"nodejs",14,"node_testing_1","Vitest","Vitest (framework di test ESM moderno)",tautological-example
-"nodejs",14,"node_testing_1","Vitest","Vitest (framework di test ESM moderno)",fake-translation
-"nodejs",14,"node_testing_1","Vitest","Vitest (framework di test ESM moderno)",trivial-example
-"nodejs",14,"node_testing_1","node:test","runner di test integrato in Node (node:test)",tautological-example
-"nodejs",14,"node_testing_1","node:test","runner di test integrato in Node (node:test)",trivial-example
-"nodejs",14,"node_testing_1","Tap","framework di test TAP (Tap)",tautological-example
-"nodejs",14,"node_testing_1","Tap","framework di test TAP (Tap)",trivial-example
-"nodejs",14,"node_testing_1","Tape","framework di test TAP minimalista (Tape)",tautological-example
-"nodejs",14,"node_testing_1","Tape","framework di test TAP minimalista (Tape)",trivial-example
-"nodejs",14,"node_testing_1","AVA","framework di test concorrente (AVA)",tautological-example
-"nodejs",14,"node_testing_1","AVA","framework di test concorrente (AVA)",trivial-example
-"nodejs",14,"node_testing_1","Test Runner","Esecutore di test",trivial-example
-"nodejs",14,"node_testing_2","describe","blocco di test (describe)",tautological-example
-"nodejs",14,"node_testing_2","describe","blocco di test (describe)",trivial-example
-"nodejs",14,"node_testing_2","it","singolo test (it)",trivial-example
-"nodejs",14,"node_testing_2","test","singolo test (Vitest/Jest) (test)",tautological-example
-"nodejs",14,"node_testing_2","test","singolo test (Vitest/Jest) (test)",trivial-example
-"nodejs",14,"node_testing_2","expect","aspettati",tautological-example
-"nodejs",14,"node_testing_2","expect","aspettati",trivial-example
-"nodejs",14,"node_testing_2","Matcher","asserzione di Jest (Matcher)",trivial-example
-"nodejs",14,"node_testing_2","beforeEach","prima di ognuno",tautological-example
-"nodejs",14,"node_testing_2","beforeEach","prima di ognuno",trivial-example
-"nodejs",14,"node_testing_2","afterEach","dopo ognuno",tautological-example
-"nodejs",14,"node_testing_2","afterEach","dopo ognuno",trivial-example
-"nodejs",14,"node_testing_2","beforeAll","prima di tutti",tautological-example
-"nodejs",14,"node_testing_2","beforeAll","prima di tutti",trivial-example
-"nodejs",14,"node_testing_2","Test Case","Caso di test",trivial-example
-"nodejs",14,"node_testing_2","Test Suite","Suite di test",trivial-example
-"nodejs",14,"node_testing_3","Mock","oggetto fittizio per i test (Mock)",trivial-example
-"nodejs",14,"node_testing_3","Stub","sostituto minimale (Stub)",trivial-example
+"nodejs",14,"node_testing_1","Jest","Jest",identical-translation
+"nodejs",14,"node_testing_1","Mocha","Mocha",identical-translation
+"nodejs",14,"node_testing_1","Chai","Chai",identical-translation
+"nodejs",14,"node_testing_1","Vitest","Vitest",identical-translation
+"nodejs",14,"node_testing_1","node:test","node:test",identical-translation
+"nodejs",14,"node_testing_1","Tap","Tap",identical-translation
+"nodejs",14,"node_testing_1","Tape","Tape",identical-translation
+"nodejs",14,"node_testing_1","AVA","AVA",identical-translation
 "nodejs",14,"node_testing_3","Spy","Spia",near-identical-translation
-"nodejs",14,"node_testing_3","Mock Function","Funzione mock",trivial-example
-"nodejs",14,"node_testing_3","mockReturnValue","valore di ritorno fittizio (mockReturnValue)",tautological-example
-"nodejs",14,"node_testing_3","mockReturnValue","valore di ritorno fittizio (mockReturnValue)",trivial-example
-"nodejs",14,"node_testing_3","mockResolvedValue","Promise risolta fittizia (mockResolvedValue)",tautological-example
-"nodejs",14,"node_testing_3","mockResolvedValue","Promise risolta fittizia (mockResolvedValue)",trivial-example
-"nodejs",14,"node_testing_3","Sinon","Sinon (libreria mock/stub/spy)",tautological-example
-"nodejs",14,"node_testing_3","Sinon","Sinon (libreria mock/stub/spy)",fake-translation
-"nodejs",14,"node_testing_3","Sinon","Sinon (libreria mock/stub/spy)",trivial-example
-"nodejs",14,"node_testing_3","nock","mock di richieste HTTP (nock)",tautological-example
-"nodejs",14,"node_testing_3","nock","mock di richieste HTTP (nock)",trivial-example
-"nodejs",14,"node_testing_3","msw","Mock Service Worker (msw)",tautological-example
-"nodejs",14,"node_testing_3","msw","Mock Service Worker (msw)",trivial-example
-"nodejs",14,"node_testing_4","Integration Test","Test di integrazione",tautological-example
-"nodejs",14,"node_testing_4","End-to-End","test da capo a capo (End-to-End)",trivial-example
-"nodejs",14,"node_testing_4","Supertest","test HTTP per Express (Supertest)",tautological-example
-"nodejs",14,"node_testing_4","Supertest","test HTTP per Express (Supertest)",trivial-example
-"nodejs",14,"node_testing_4","Snapshot Test","Test snapshot",tautological-example
-"nodejs",14,"node_testing_4","Snapshot Test","Test snapshot",trivial-example
-"nodejs",14,"node_testing_4","Code Coverage","Copertura del codice",tautological-example
-"nodejs",14,"node_testing_4","Code Coverage","Copertura del codice",trivial-example
-"nodejs",14,"node_testing_4","Istanbul","strumento di copertura (Istanbul)",tautological-example
-"nodejs",14,"node_testing_4","Istanbul","strumento di copertura (Istanbul)",trivial-example
-"nodejs",14,"node_testing_4","Test Database","Database di test",trivial-example
-"nodejs",14,"node_testing_4","Fixture","dati di test riutilizzabili (Fixture)",tautological-example
-"nodejs",14,"node_testing_4","Fixture","dati di test riutilizzabili (Fixture)",trivial-example
-"nodejs",14,"node_testing_4","Faker","generatore di dati fittizi (Faker)",tautological-example
-"nodejs",14,"node_testing_4","Faker","generatore di dati fittizi (Faker)",trivial-example
-"nodejs",14,"node_testing_4","Test in Watch Mode","Test in modalità watch",trivial-example
-"nodejs",15,"node_security_5","Input Validation","Validazione input",trivial-example
-"nodejs",15,"node_security_5","Sanitization","Sanificazione",tautological-example
-"nodejs",15,"node_security_5","XSS","Cross-Site Scripting (XSS)",tautological-example
-"nodejs",15,"node_security_5","XSS","Cross-Site Scripting (XSS)",trivial-example
-"nodejs",15,"node_security_5","SQL Injection","iniezione di codice SQL (SQL Injection)",tautological-example
-"nodejs",15,"node_security_5","Parameterized Query","Query parametrizzata",trivial-example
-"nodejs",15,"node_security_5","Command Injection","iniezione di comando shell (Command Injection)",tautological-example
-"nodejs",15,"node_security_5","Command Injection","iniezione di comando shell (Command Injection)",trivial-example
-"nodejs",15,"node_security_5","Path Traversal","attraversamento di percorso (Path Traversal)",tautological-example
-"nodejs",15,"node_security_5","Validator","libreria di validazione (Validator)",tautological-example
-"nodejs",15,"node_security_5","Validator","libreria di validazione (Validator)",trivial-example
-"nodejs",15,"node_security_5","express-validator","middleware di validazione (express-validator)",tautological-example
-"nodejs",15,"node_security_5","Whitelist","lista bianca di consentiti (Whitelist)",trivial-example
-"nodejs",15,"node_security_6","Helmet","middleware di sicurezza header (Helmet)",tautological-example
-"nodejs",15,"node_security_6","Helmet","middleware di sicurezza header (Helmet)",trivial-example
-"nodejs",15,"node_security_6","CSP","Content Security Policy",tautological-example
-"nodejs",15,"node_security_6","CSP","Content Security Policy",trivial-example
-"nodejs",15,"node_security_6","HSTS","Strict-Transport-Security (HSTS)",tautological-example
-"nodejs",15,"node_security_6","HSTS","Strict-Transport-Security (HSTS)",trivial-example
-"nodejs",15,"node_security_6","X-Frame-Options","header anti-clickjacking (X-Frame-Options)",tautological-example
-"nodejs",15,"node_security_6","X-Frame-Options","header anti-clickjacking (X-Frame-Options)",trivial-example
-"nodejs",15,"node_security_6","X-Content-Type-Options","header anti-MIME-sniffing (X-Content-Type-Options)",tautological-example
-"nodejs",15,"node_security_6","Referrer Policy","Referrer-Policy / header di referrer",trivial-example
-"nodejs",15,"node_security_6","Permissions-Policy","header permessi browser (Permissions-Policy)",tautological-example
-"nodejs",15,"node_security_6","NoSniff","valore di X-Content-Type-Options (NoSniff)",tautological-example
-"nodejs",15,"node_security_6","Subresource Integrity","Integrità sottorisorsa",trivial-example
-"nodejs",15,"node_security_6","Trust Boundary","Confine di fiducia",trivial-example
-"nodejs",15,"node_security_7","Rate Limiting","Limitazione di frequenza",tautological-example
-"nodejs",15,"node_security_7","express-rate-limit","middleware di rate limiting (express-rate-limit)",tautological-example
-"nodejs",15,"node_security_7","Brute Force","Forza bruta",tautological-example
-"nodejs",15,"node_security_7","Brute Force","Forza bruta",trivial-example
-"nodejs",15,"node_security_7","Account Lockout","Blocco account",trivial-example
-"nodejs",15,"node_security_7","CAPTCHA","test umano-vs-bot (CAPTCHA)",tautological-example
-"nodejs",15,"node_security_7","CAPTCHA","test umano-vs-bot (CAPTCHA)",trivial-example
-"nodejs",15,"node_security_7","IP Allowlist","Allowlist IP",tautological-example
-"nodejs",15,"node_security_7","IP Allowlist","Allowlist IP",trivial-example
-"nodejs",15,"node_security_7","WAF","Web Application Firewall",trivial-example
-"nodejs",15,"node_security_7","DDoS","Distributed Denial of Service (DDoS)",tautological-example
-"nodejs",15,"node_security_7","DDoS","Distributed Denial of Service (DDoS)",trivial-example
-"nodejs",15,"node_security_7","Token Bucket","algoritmo a secchio di gettoni (Token Bucket)",tautological-example
-"nodejs",15,"node_security_8","npm audit","scanner npm integrato (npm audit)",tautological-example
-"nodejs",15,"node_security_8","npm audit","scanner npm integrato (npm audit)",trivial-example
-"nodejs",15,"node_security_8","npm audit fix","applica patch automatiche (npm audit fix)",tautological-example
-"nodejs",15,"node_security_8","npm audit fix","applica patch automatiche (npm audit fix)",trivial-example
-"nodejs",15,"node_security_8","CVE","Common Vulnerabilities and Exposures (CVE)",trivial-example
-"nodejs",15,"node_security_8","Snyk","Snyk (piattaforma sicurezza dipendenze)",tautological-example
-"nodejs",15,"node_security_8","Snyk","Snyk (piattaforma sicurezza dipendenze)",fake-translation
-"nodejs",15,"node_security_8","Snyk","Snyk (piattaforma sicurezza dipendenze)",trivial-example
-"nodejs",15,"node_security_8","Dependabot","Dependabot (aggiornamento automatico dipendenze)",tautological-example
-"nodejs",15,"node_security_8","Dependabot","Dependabot (aggiornamento automatico dipendenze)",fake-translation
-"nodejs",15,"node_security_8","Dependabot","Dependabot (aggiornamento automatico dipendenze)",trivial-example
-"nodejs",15,"node_security_8","Typosquatting","nomi simili per ingannare utenti (Typosquatting)",tautological-example
-"nodejs",15,"node_security_8","Lockfile","file di blocco delle versioni (Lockfile)",trivial-example
-"nodejs",15,"node_security_8","npm ci","installazione strict da lockfile (npm ci)",tautological-example
-"nodejs",15,"node_security_8","npm ci","installazione strict da lockfile (npm ci)",trivial-example
-"nodejs",15,"node_security_8","Provenance","Provenienza",trivial-example
-"nodejs",16,"node_api_5","WebSocket","canale full-duplex su HTTP (WebSocket)",tautological-example
-"nodejs",16,"node_api_5","ws Library","Libreria ws",trivial-example
-"nodejs",16,"node_api_5","Frame","unità WebSocket (Frame)",trivial-example
-"nodejs",16,"node_api_5","Ping/Pong","heartbeat WebSocket (Ping/Pong)",tautological-example
-"nodejs",16,"node_api_5","Ping/Pong","heartbeat WebSocket (Ping/Pong)",trivial-example
-"nodejs",16,"node_api_5","Close Frame","Frame di chiusura",trivial-example
-"nodejs",16,"node_api_5","wss","WebSocket cifrato (wss)",tautological-example
-"nodejs",16,"node_api_5","wss","WebSocket cifrato (wss)",trivial-example
-"nodejs",16,"node_api_5","Reconnection","Riconnessione",trivial-example
-"nodejs",16,"node_api_5","Heartbeat","battito di vita (Heartbeat)",tautological-example
-"nodejs",16,"node_api_5","Heartbeat","battito di vita (Heartbeat)",trivial-example
-"nodejs",16,"node_api_6","Socket.io","libreria real-time bidirezionale (Socket.io)",tautological-example
-"nodejs",16,"node_api_6","Socket","punto di connessione di rete (Socket)",trivial-example
-"nodejs",16,"node_api_6","Room","stanza di Socket.IO (Room)",trivial-example
-"nodejs",16,"node_api_6","Namespace","spazio dei nomi Socket.IO (Namespace)",trivial-example
-"nodejs",16,"node_api_6","Broadcasting","Broadcast",tautological-example
-"nodejs",16,"node_api_6","Broadcasting","Broadcast",trivial-example
-"nodejs",16,"node_api_6","Acknowledgement","Conferma di ricezione",trivial-example
-"nodejs",16,"node_api_6","Polling Fallback","Fallback a polling",tautological-example
-"nodejs",16,"node_api_7","Chat App","App di chat",trivial-example
-"nodejs",16,"node_api_7","Live Updates","Aggiornamenti in tempo reale",tautological-example
-"nodejs",16,"node_api_7","Live Updates","Aggiornamenti in tempo reale",trivial-example
-"nodejs",16,"node_api_7","Presence","Presenza",tautological-example
-"nodejs",16,"node_api_7","Presence","Presenza",near-identical-translation
-"nodejs",16,"node_api_7","Presence","Presenza",trivial-example
-"nodejs",16,"node_api_7","Multiplayer","Multigiocatore",trivial-example
-"nodejs",16,"node_api_7","Server Sent Events","Eventi inviati dal server",trivial-example
-"nodejs",16,"node_api_7","Long Polling","polling esteso (Long Polling)",tautological-example
-"nodejs",16,"node_api_7","Long Polling","polling esteso (Long Polling)",trivial-example
-"nodejs",16,"node_api_7","Sticky Session","Sessione persistente",tautological-example
-"nodejs",16,"node_api_7","Scaling Sockets","Scalare i socket",tautological-example
-"nodejs",16,"node_api_7","Scaling Sockets","Scalare i socket",trivial-example
-"nodejs",16,"node_api_8","WebRTC","comunicazione real-time peer-to-peer (WebRTC)",tautological-example
-"nodejs",16,"node_api_8","Signaling","segnalazione WebRTC (Signaling)",trivial-example
-"nodejs",16,"node_api_8","STUN","STUN / scoperta dell'indirizzo pubblico",tautological-example
-"nodejs",16,"node_api_8","STUN","STUN / scoperta dell'indirizzo pubblico",fake-translation
-"nodejs",16,"node_api_8","STUN","STUN / scoperta dell'indirizzo pubblico",trivial-example
-"nodejs",16,"node_api_8","TURN","relay di traffico per NAT (TURN)",tautological-example
-"nodejs",16,"node_api_8","TURN","relay di traffico per NAT (TURN)",trivial-example
-"nodejs",16,"node_api_8","mediasoup","SFU WebRTC Node.js (mediasoup)",tautological-example
-"nodejs",16,"node_api_8","mediasoup","SFU WebRTC Node.js (mediasoup)",trivial-example
-"nodejs",16,"node_api_8","Live Streaming","Streaming live",trivial-example
-"nodejs",16,"node_api_8","HLS","HTTP Live Streaming (HLS)",tautological-example
-"nodejs",16,"node_api_8","HLS","HTTP Live Streaming (HLS)",trivial-example
-"nodejs",16,"node_api_8","FFmpeg","suite multimediale (FFmpeg)",tautological-example
-"nodejs",16,"node_api_8","FFmpeg","suite multimediale (FFmpeg)",trivial-example
-"nodejs",16,"node_api_8","RTMP","Real-Time Messaging Protocol (RTMP)",tautological-example
-"nodejs",16,"node_api_8","Transcoding","Transcodifica",tautological-example
-"nodejs",16,"node_api_8","Transcoding","Transcodifica",trivial-example
-"nodejs",17,"node_runtime_13","Worker Thread","Thread worker",tautological-example
-"nodejs",17,"node_runtime_13","Worker Thread","Thread worker",trivial-example
-"nodejs",17,"node_runtime_13","Main Thread","Thread principale",trivial-example
-"nodejs",17,"node_runtime_13","parentPort","canale verso il main thread (parentPort)",tautological-example
-"nodejs",17,"node_runtime_13","postMessage","invia messaggio (postMessage)",tautological-example
-"nodejs",17,"node_runtime_13","postMessage","invia messaggio (postMessage)",trivial-example
-"nodejs",17,"node_runtime_13","workerData","dati passati al worker (workerData)",tautological-example
-"nodejs",17,"node_runtime_13","workerData","dati passati al worker (workerData)",trivial-example
-"nodejs",17,"node_runtime_13","SharedArrayBuffer","buffer condiviso tra worker (SharedArrayBuffer)",tautological-example
-"nodejs",17,"node_runtime_13","Atomics","operazioni atomiche su SAB (Atomics)",tautological-example
-"nodejs",17,"node_runtime_13","CPU-Bound","limitato dalla CPU (CPU-Bound)",trivial-example
-"nodejs",17,"node_runtime_13","Worker Pool","Pool di worker",trivial-example
-"nodejs",17,"node_runtime_13","Piscina","pool di Worker Threads (Piscina)",tautological-example
-"nodejs",17,"node_runtime_13","Piscina","pool di Worker Threads (Piscina)",trivial-example
-"nodejs",17,"node_runtime_14","child_process","modulo processi figli (child_process)",tautological-example
-"nodejs",17,"node_runtime_14","child_process","modulo processi figli (child_process)",trivial-example
-"nodejs",17,"node_runtime_14","spawn","lancia processo figlio (spawn)",tautological-example
-"nodejs",17,"node_runtime_14","spawn","lancia processo figlio (spawn)",trivial-example
-"nodejs",17,"node_runtime_14","exec","esegue comando in shell (exec)",tautological-example
-"nodejs",17,"node_runtime_14","execFile","esegue eseguibile senza shell (execFile)",tautological-example
-"nodejs",17,"node_runtime_14","fork","lancia un processo Node figlio (fork)",tautological-example
-"nodejs",17,"node_runtime_14","fork","lancia un processo Node figlio (fork)",trivial-example
-"nodejs",17,"node_runtime_14","IPC","Inter-Process Communication (IPC)",tautological-example
-"nodejs",17,"node_runtime_14","IPC","Inter-Process Communication (IPC)",trivial-example
-"nodejs",17,"node_runtime_14","stdio","configurazione I/O dei processi figli (stdio)",tautological-example
-"nodejs",17,"node_runtime_14","stdio","configurazione I/O dei processi figli (stdio)",trivial-example
-"nodejs",17,"node_runtime_14","Exit Code","Codice di uscita",trivial-example
-"nodejs",17,"node_runtime_14","Kill","Termina",tautological-example
-"nodejs",17,"node_runtime_14","Kill","Termina",trivial-example
-"nodejs",17,"node_runtime_14","Signal","Segnale",tautological-example
-"nodejs",17,"node_runtime_14","Signal","Segnale",near-identical-translation
-"nodejs",17,"node_runtime_14","Signal","Segnale",trivial-example
-"nodejs",17,"node_runtime_15","Cluster","modulo cluster di Node (Cluster)",tautological-example
-"nodejs",17,"node_runtime_15","Cluster","modulo cluster di Node (Cluster)",trivial-example
-"nodejs",17,"node_runtime_15","Master","processo principale del cluster (Master)",trivial-example
-"nodejs",17,"node_runtime_15","Primary Process","Processo primario",tautological-example
-"nodejs",17,"node_runtime_15","Primary Process","Processo primario",trivial-example
-"nodejs",17,"node_runtime_15","Worker Process","Processo worker",trivial-example
-"nodejs",17,"node_runtime_15","Round Robin","a turno (Round Robin)",trivial-example
-"nodejs",17,"node_runtime_15","CPU Cores","Core CPU",trivial-example
-"nodejs",17,"node_runtime_15","Zero-Downtime Reload","Reload senza downtime",trivial-example
-"nodejs",17,"node_runtime_15","Shared Port","Porta condivisa",trivial-example
-"nodejs",17,"node_runtime_15","Worker Crash","Crash worker",trivial-example
-"nodejs",17,"node_runtime_15","Shared State","Stato condiviso",trivial-example
-"nodejs",17,"node_runtime_16","Concurrency","Concorrenza",tautological-example
-"nodejs",17,"node_runtime_16","Concurrency","Concorrenza",trivial-example
-"nodejs",17,"node_runtime_16","Parallelism","Parallelismo",tautological-example
-"nodejs",17,"node_runtime_16","Parallelism","Parallelismo",near-identical-translation
-"nodejs",17,"node_runtime_16","Mutex","mutua esclusione (Mutex)",trivial-example
-"nodejs",17,"node_runtime_16","p-limit","limita la concorrenza di Promise (p-limit)",tautological-example
-"nodejs",17,"node_runtime_16","p-limit","limita la concorrenza di Promise (p-limit)",trivial-example
-"nodejs",17,"node_runtime_16","Queue","Coda",trivial-example
-"nodejs",17,"node_runtime_16","Throttle","limita la frequenza (Throttle)",tautological-example
-"nodejs",17,"node_runtime_16","Throttle","limita la frequenza (Throttle)",trivial-example
-"nodejs",17,"node_runtime_16","Debounce","ritarda fino alla pausa (Debounce)",tautological-example
-"nodejs",18,"node_typescript_1","TypeScript","TypeScript (linguaggio JS tipizzato)",tautological-example
-"nodejs",18,"node_typescript_1","TypeScript","TypeScript (linguaggio JS tipizzato)",fake-translation
-"nodejs",18,"node_typescript_1","tsc","compilatore TypeScript (tsc)",tautological-example
-"nodejs",18,"node_typescript_1","tsc","compilatore TypeScript (tsc)",trivial-example
-"nodejs",18,"node_typescript_1","tsconfig.json","configurazione TypeScript (tsconfig.json)",tautological-example
-"nodejs",18,"node_typescript_1","tsconfig.json","configurazione TypeScript (tsconfig.json)",trivial-example
-"nodejs",18,"node_typescript_1","ts-node","esecutore TypeScript runtime (ts-node)",tautological-example
-"nodejs",18,"node_typescript_1","ts-node","esecutore TypeScript runtime (ts-node)",trivial-example
-"nodejs",18,"node_typescript_1","tsx","esecutore TypeScript veloce (tsx)",tautological-example
-"nodejs",18,"node_typescript_1","tsx","esecutore TypeScript veloce (tsx)",trivial-example
-"nodejs",18,"node_typescript_1","Strict Mode","Modalità rigorosa",tautological-example
-"nodejs",18,"node_typescript_1","Strict Mode","Modalità rigorosa",trivial-example
-"nodejs",18,"node_typescript_1","Target","versione di JS di output (Target)",tautological-example
-"nodejs",18,"node_typescript_1","Target","versione di JS di output (Target)",trivial-example
-"nodejs",18,"node_typescript_1","Type Definitions","Definizioni di tipo",trivial-example
-"nodejs",18,"node_typescript_1","DefinitelyTyped","repository di tipi @types (DefinitelyTyped)",tautological-example
-"nodejs",18,"node_typescript_1","DefinitelyTyped","repository di tipi @types (DefinitelyTyped)",trivial-example
-"nodejs",18,"node_typescript_2","Type Annotation","Annotazione di tipo",trivial-example
-"nodejs",18,"node_typescript_2","Primitive Type","Tipo primitivo",tautological-example
-"nodejs",18,"node_typescript_2","any","tipo qualsiasi (sconsigliato) (any)",tautological-example
-"nodejs",18,"node_typescript_2","any","tipo qualsiasi (sconsigliato) (any)",trivial-example
-"nodejs",18,"node_typescript_2","unknown","tipo sconosciuto sicuro (unknown)",tautological-example
-"nodejs",18,"node_typescript_2","unknown","tipo sconosciuto sicuro (unknown)",trivial-example
-"nodejs",18,"node_typescript_2","never","tipo che non assume valore (never)",tautological-example
-"nodejs",18,"node_typescript_2","never","tipo che non assume valore (never)",trivial-example
-"nodejs",18,"node_typescript_2","void","tipo di funzione senza ritorno (void)",tautological-example
-"nodejs",18,"node_typescript_2","Literal Type","Tipo letterale",trivial-example
-"nodejs",18,"node_typescript_2","Union Type","Tipo unione",trivial-example
-"nodejs",18,"node_typescript_2","Intersection Type","Tipo intersezione",trivial-example
-"nodejs",18,"node_typescript_2","Type Inference","Inferenza di tipo",trivial-example
-"nodejs",18,"node_typescript_3","Interface","Interfaccia",trivial-example
-"nodejs",18,"node_typescript_3","type Alias","Alias di tipo",trivial-example
-"nodejs",18,"node_typescript_3","Optional Property","Proprietà opzionale",trivial-example
-"nodejs",18,"node_typescript_3","readonly","sola lettura",tautological-example
-"nodejs",18,"node_typescript_3","readonly","sola lettura",trivial-example
-"nodejs",18,"node_typescript_3","Index Signature","Firma di indice",tautological-example
-"nodejs",18,"node_typescript_3","Index Signature","Firma di indice",trivial-example
-"nodejs",18,"node_typescript_3","Generic","Generico",tautological-example
-"nodejs",18,"node_typescript_3","Generic","Generico",near-identical-translation
-"nodejs",18,"node_typescript_3","Generic","Generico",trivial-example
-"nodejs",18,"node_typescript_3","Type Parameter","Parametro di tipo",trivial-example
-"nodejs",18,"node_typescript_3","Enum","Enumerazione",tautological-example
-"nodejs",18,"node_typescript_3","Enum","Enumerazione",trivial-example
-"nodejs",18,"node_typescript_3","Tuple","Tupla",near-identical-translation
-"nodejs",18,"node_typescript_3","Tuple","Tupla",trivial-example
-"nodejs",18,"node_typescript_3","Record","Record<K,V> / mappa chiave-valore tipizzata",tautological-example
-"nodejs",18,"node_typescript_3","Record","Record<K,V> / mappa chiave-valore tipizzata",trivial-example
-"nodejs",18,"node_typescript_4","Utility Type","Tipo di utilità",trivial-example
-"nodejs",18,"node_typescript_4","Partial","Parziale",tautological-example
-"nodejs",18,"node_typescript_4","Partial","Parziale",near-identical-translation
-"nodejs",18,"node_typescript_4","Partial","Parziale",trivial-example
-"nodejs",18,"node_typescript_4","Pick","Pick<T,K> / sottoinsieme di proprietà",tautological-example
-"nodejs",18,"node_typescript_4","Pick","Pick<T,K> / sottoinsieme di proprietà",trivial-example
-"nodejs",18,"node_typescript_4","Omit","Omit<T,K> / esclude proprietà",tautological-example
-"nodejs",18,"node_typescript_4","Omit","Omit<T,K> / esclude proprietà",trivial-example
-"nodejs",18,"node_typescript_4","Type Guard","Guardia di tipo",trivial-example
-"nodejs",18,"node_typescript_4","Type Assertion","Asserzione di tipo",trivial-example
-"nodejs",18,"node_typescript_4","Mapped Type","Tipo mappato",tautological-example
-"nodejs",18,"node_typescript_4","Mapped Type","Tipo mappato",trivial-example
-"nodejs",18,"node_typescript_4","Conditional Type","Tipo condizionale",tautological-example
-"nodejs",18,"node_typescript_4","Decorator","Decoratore",tautological-example
-"nodejs",18,"node_typescript_4","Decorator","Decoratore",near-identical-translation
-"nodejs",18,"node_typescript_4","Declaration File","File di dichiarazione",trivial-example
-"nodejs",19,"node_foundations_9","MVC","Model-View-Controller (MVC)",tautological-example
-"nodejs",19,"node_foundations_9","MVC","Model-View-Controller (MVC)",trivial-example
-"nodejs",19,"node_foundations_9","Model","Modello",near-identical-translation
-"nodejs",19,"node_foundations_9","Model","Modello",trivial-example
-"nodejs",19,"node_foundations_9","View","Vista",trivial-example
-"nodejs",19,"node_foundations_9","Hexagonal Architecture","Architettura esagonale",tautological-example
-"nodejs",19,"node_foundations_9","Clean Architecture","architettura a cerchi concentrici (Clean Architecture)",tautological-example
-"nodejs",19,"node_foundations_9","DDD","Domain-Driven Design",tautological-example
-"nodejs",19,"node_foundations_9","DDD","Domain-Driven Design",trivial-example
-"nodejs",19,"node_foundations_9","Bounded Context","Contesto delimitato",trivial-example
-"nodejs",19,"node_foundations_9","Aggregate","Aggregato",near-identical-translation
-"nodejs",19,"node_foundations_9","Aggregate","Aggregato",trivial-example
-"nodejs",19,"node_foundations_10","Dependency Injection","Iniezione di dipendenze",trivial-example
-"nodejs",19,"node_foundations_10","Inversion of Control","Inversione del controllo",trivial-example
-"nodejs",19,"node_foundations_10","Constructor Injection","Iniezione via costruttore",tautological-example
-"nodejs",19,"node_foundations_10","DI Container","Container DI",trivial-example
-"nodejs",19,"node_foundations_10","InversifyJS","DI container TypeScript (InversifyJS)",tautological-example
-"nodejs",19,"node_foundations_10","tsyringe","DI container leggero (tsyringe)",tautological-example
-"nodejs",19,"node_foundations_10","tsyringe","DI container leggero (tsyringe)",trivial-example
-"nodejs",19,"node_foundations_10","NestJS","NestJS (framework Node enterprise)",tautological-example
-"nodejs",19,"node_foundations_10","NestJS","NestJS (framework Node enterprise)",fake-translation
-"nodejs",19,"node_foundations_10","Provider","fornitore di dipendenze (Provider)",trivial-example
-"nodejs",19,"node_foundations_10","Module (Nest)","Modulo (Nest)",near-identical-translation
-"nodejs",19,"node_foundations_10","Module (Nest)","Modulo (Nest)",trivial-example
-"nodejs",19,"node_foundations_10","Singleton","pattern unica istanza (Singleton)",trivial-example
-"nodejs",19,"node_foundations_11","Repository Pattern","Pattern repository",tautological-example
-"nodejs",19,"node_foundations_11","Service Layer","Strato di servizio",trivial-example
-"nodejs",19,"node_foundations_11","Strategy Pattern","Pattern strategia",trivial-example
-"nodejs",19,"node_foundations_11","Decorator Pattern","Pattern decoratore",trivial-example
-"nodejs",19,"node_foundations_11","Singleton Pattern","Pattern singleton",trivial-example
-"nodejs",19,"node_foundations_11","Observer Pattern","Pattern observer",tautological-example
-"nodejs",19,"node_foundations_11","Observer Pattern","Pattern observer",trivial-example
-"nodejs",19,"node_foundations_11","CQRS","Command Query Responsibility Segregation (CQRS)",tautological-example
-"nodejs",19,"node_foundations_11","CQRS","Command Query Responsibility Segregation (CQRS)",trivial-example
-"nodejs",19,"node_foundations_11","SOLID","principi di design OOP (SOLID)",tautological-example
-"nodejs",19,"node_foundations_11","SOLID","principi di design OOP (SOLID)",trivial-example
-"nodejs",19,"node_foundations_12","src","/ cartella del codice sorgente (src)",tautological-example
-"nodejs",19,"node_foundations_12","src","/ cartella del codice sorgente (src)",trivial-example
-"nodejs",19,"node_foundations_12","dist","/ cartella del build di distribuzione (dist)",tautological-example
-"nodejs",19,"node_foundations_12","dist","/ cartella del build di distribuzione (dist)",trivial-example
-"nodejs",19,"node_foundations_12","config","cartella di configurazione (config)",tautological-example
-"nodejs",19,"node_foundations_12","config","cartella di configurazione (config)",trivial-example
-"nodejs",19,"node_foundations_12","Domain Folder","Cartella dominio",trivial-example
-"nodejs",19,"node_foundations_12","Barrel File","File barrel",trivial-example
-"nodejs",19,"node_foundations_12","Feature Folder","Cartella feature",tautological-example
-"nodejs",19,"node_foundations_12","Feature Folder","Cartella feature",trivial-example
-"nodejs",19,"node_foundations_12","Style Guide","Guida di stile",trivial-example
-"nodejs",19,"node_foundations_12","Linting","analisi statica del codice (Linting)",tautological-example
-"nodejs",19,"node_foundations_12","Linting","analisi statica del codice (Linting)",trivial-example
-"nodejs",20,"node_performance_1","Profiling","Profilazione",tautological-example
-"nodejs",20,"node_performance_1","Flame Graph","grafico a fiamma (Flame Graph)",trivial-example
-"nodejs",20,"node_performance_1","0x","profiler per Node.js (0x)",trivial-example
-"nodejs",20,"node_performance_1","clinic.js","suite di profiling Node (clinic.js)",tautological-example
-"nodejs",20,"node_performance_1","clinic.js","suite di profiling Node (clinic.js)",trivial-example
-"nodejs",20,"node_performance_1","CPU Profile","Profilo CPU",trivial-example
-"nodejs",20,"node_performance_1","Heap Snapshot","Snapshot dell'heap",trivial-example
-"nodejs",20,"node_performance_1","Performance API","API di misurazione perf (Performance API)",trivial-example
-"nodejs",20,"node_performance_1","Benchmark","test prestazionale (Benchmark)",trivial-example
-"nodejs",20,"node_performance_1","Autocannon","strumento di load testing HTTP (Autocannon)",tautological-example
-"nodejs",20,"node_performance_1","Autocannon","strumento di load testing HTTP (Autocannon)",trivial-example
-"nodejs",20,"node_performance_2","Heap","memoria dinamica (Heap)",trivial-example
-"nodejs",20,"node_performance_2","New Space","Nuovo spazio",trivial-example
-"nodejs",20,"node_performance_2","Old Space","Vecchio spazio",trivial-example
-"nodejs",20,"node_performance_2","Mark and Sweep","Marca e spazza",tautological-example
-"nodejs",20,"node_performance_2","Mark and Sweep","Marca e spazza",trivial-example
-"nodejs",20,"node_performance_2","WeakRef","riferimento debole (WeakRef)",tautological-example
-"nodejs",20,"node_performance_2","OOM","Out of Memory",tautological-example
-"nodejs",20,"node_performance_2","process.memoryUsage","uso di memoria del processo (process.memoryUsage)",tautological-example
-"nodejs",20,"node_performance_3","Cache","memoria intermedia (Cache)",trivial-example
-"nodejs",20,"node_performance_3","Redis","Redis (database in memoria chiave-valore)",tautological-example
-"nodejs",20,"node_performance_3","Redis","Redis (database in memoria chiave-valore)",fake-translation
-"nodejs",20,"node_performance_3","Redis","Redis (database in memoria chiave-valore)",trivial-example
-"nodejs",20,"node_performance_3","ioredis","client Redis Node.js (ioredis)",tautological-example
-"nodejs",20,"node_performance_3","ioredis","client Redis Node.js (ioredis)",trivial-example
-"nodejs",20,"node_performance_3","Memoization","Memoizzazione",tautological-example
-"nodejs",20,"node_performance_3","Memoization","Memoizzazione",trivial-example
-"nodejs",20,"node_performance_3","TTL","time to live (TTL)",tautological-example
-"nodejs",20,"node_performance_3","TTL","time to live (TTL)",trivial-example
-"nodejs",20,"node_performance_3","Eviction","sfratto dalla cache (Eviction)",tautological-example
-"nodejs",20,"node_performance_3","Eviction","sfratto dalla cache (Eviction)",trivial-example
-"nodejs",20,"node_performance_3","LRU","Least Recently Used (LRU)",tautological-example
-"nodejs",20,"node_performance_3","LRU","Least Recently Used (LRU)",trivial-example
-"nodejs",20,"node_performance_3","Cache Miss","dato assente in cache (Cache Miss)",trivial-example
-"nodejs",20,"node_performance_4","Event Loop Lag","Ritardo event loop",tautological-example
-"nodejs",20,"node_performance_4","Event Loop Lag","Ritardo event loop",trivial-example
-"nodejs",20,"node_performance_4","Blocking Code","Codice bloccante",tautological-example
-"nodejs",20,"node_performance_4","Blocking Code","Codice bloccante",trivial-example
-"nodejs",20,"node_performance_4","Lazy Loading","Caricamento pigro",tautological-example
-"nodejs",20,"node_performance_4","Lazy Loading","Caricamento pigro",trivial-example
-"nodejs",20,"node_performance_4","JIT Compilation","Compilazione JIT",trivial-example
-"nodejs",20,"node_performance_4","Hot Path","percorso caldo del codice (Hot Path)",trivial-example
-"nodejs",20,"node_performance_4","Tree Shaking","tree shaking / scuotimento dell'albero (rimozione codice morto)",tautological-example
-"nodejs",20,"node_performance_4","Tree Shaking","tree shaking / scuotimento dell'albero (rimozione codice morto)",fake-translation
-"nodejs",20,"node_performance_4","Tree Shaking","tree shaking / scuotimento dell'albero (rimozione codice morto)",trivial-example
-"nodejs",20,"node_performance_4","Bundle Size","Dimensione bundle",trivial-example
-"nodejs",20,"node_performance_4","Cold Start","partenza a freddo (Cold Start)",tautological-example
-"nodejs",20,"node_performance_4","p99 Latency","Latenza p99",tautological-example
-"nodejs",20,"node_performance_4","p99 Latency","Latenza p99",trivial-example
-"nodejs",21,"node_deployment_1","Process Manager","gestore di processi (Process Manager)",trivial-example
-"nodejs",21,"node_deployment_1","PM2","PM2 (process manager Node.js)",tautological-example
-"nodejs",21,"node_deployment_1","PM2","PM2 (process manager Node.js)",fake-translation
-"nodejs",21,"node_deployment_1","pm2 start","avvia processo PM2 (pm2 start)",tautological-example
-"nodejs",21,"node_deployment_1","pm2 start","avvia processo PM2 (pm2 start)",trivial-example
-"nodejs",21,"node_deployment_1","Cluster Mode","Modalità cluster",trivial-example
-"nodejs",21,"node_deployment_1","Ecosystem File","File ecosystem",trivial-example
-"nodejs",21,"node_deployment_1","pm2 logs","visualizza log PM2 (pm2 logs)",tautological-example
-"nodejs",21,"node_deployment_1","pm2 logs","visualizza log PM2 (pm2 logs)",trivial-example
-"nodejs",21,"node_deployment_1","Auto Restart","Riavvio automatico",trivial-example
-"nodejs",21,"node_deployment_1","Memory Limit","Limite memoria",trivial-example
-"nodejs",21,"node_deployment_1","pm2 monit","monitor in tempo reale PM2 (pm2 monit)",tautological-example
-"nodejs",21,"node_deployment_1","pm2 monit","monitor in tempo reale PM2 (pm2 monit)",trivial-example
-"nodejs",21,"node_deployment_1","pm2 startup","installa al boot (pm2 startup)",tautological-example
-"nodejs",21,"node_deployment_2","Docker","Docker (piattaforma container)",tautological-example
-"nodejs",21,"node_deployment_2","Docker","Docker (piattaforma container)",fake-translation
-"nodejs",21,"node_deployment_2","Docker","Docker (piattaforma container)",trivial-example
-"nodejs",21,"node_deployment_2","Dockerfile","ricetta di immagine container (Dockerfile)",trivial-example
-"nodejs",21,"node_deployment_2","Multi-Stage Build","Build multi-stadio",tautological-example
-"nodejs",21,"node_deployment_2","Multi-Stage Build","Build multi-stadio",trivial-example
-"nodejs",21,"node_deployment_2","Alpine Image","Immagine Alpine",tautological-example
-"nodejs",21,"node_deployment_2","Alpine Image","Immagine Alpine",trivial-example
-"nodejs",21,"node_deployment_2",".dockerignore","esclusioni dal build Docker (.dockerignore)",tautological-example
-"nodejs",21,"node_deployment_2","docker-compose","orchestratore multi-container (docker-compose)",tautological-example
-"nodejs",21,"node_deployment_2","Volume","archiviazione persistente per container (Volume)",tautological-example
-"nodejs",21,"node_deployment_2","Container","contenitore isolato (Container)",trivial-example
-"nodejs",21,"node_deployment_2","docker build","costruisce immagine (docker build)",tautological-example
-"nodejs",21,"node_deployment_2","docker build","costruisce immagine (docker build)",trivial-example
-"nodejs",21,"node_deployment_3","Environment Variable","Variabile d'ambiente",trivial-example
-"nodejs",21,"node_deployment_3","NODE_ENV","NODE_ENV / variabile d'ambiente di Node",tautological-example
-"nodejs",21,"node_deployment_3","NODE_ENV","NODE_ENV / variabile d'ambiente di Node",fake-translation
-"nodejs",21,"node_deployment_3","NODE_ENV","NODE_ENV / variabile d'ambiente di Node",trivial-example
-"nodejs",21,"node_deployment_3",".env File","File .env",trivial-example
-"nodejs",21,"node_deployment_3","dotenv","carica .env in process.env (dotenv)",tautological-example
-"nodejs",21,"node_deployment_3","dotenv","carica .env in process.env (dotenv)",trivial-example
-"nodejs",21,"node_deployment_3","Twelve-Factor","metodologia 12 fattori (Twelve-Factor)",trivial-example
-"nodejs",21,"node_deployment_3","Config as Code","Config come codice",trivial-example
-"nodejs",21,"node_deployment_3","Secret Management","Gestione segreti",trivial-example
-"nodejs",21,"node_deployment_3","Feature Flag","interruttore funzionalità (Feature Flag)",tautological-example
-"nodejs",21,"node_deployment_3","Config Validation","Validazione config",trivial-example
-"nodejs",21,"node_deployment_4","Liveness Probe","Probe di liveness",tautological-example
-"nodejs",21,"node_deployment_4","Liveness Probe","Probe di liveness",trivial-example
-"nodejs",21,"node_deployment_4","Readiness Probe","Probe di readiness",tautological-example
-"nodejs",21,"node_deployment_4","Readiness Probe","Probe di readiness",trivial-example
-"nodejs",21,"node_deployment_4","Graceful Shutdown","Spegnimento controllato",tautological-example
-"nodejs",21,"node_deployment_4","SIGTERM","segnale di terminazione (SIGTERM)",tautological-example
-"nodejs",21,"node_deployment_4","SIGTERM","segnale di terminazione (SIGTERM)",trivial-example
-"nodejs",21,"node_deployment_4","Zero Downtime","nessun fuori servizio (Zero Downtime)",tautological-example
-"nodejs",21,"node_deployment_4","Canary Release","Rilascio canary",tautological-example
-"nodejs",21,"node_deployment_4","Canary Release","Rilascio canary",trivial-example
-"nodejs",21,"node_deployment_4","Reverse Proxy","Proxy inverso",trivial-example
+"nodejs",14,"node_testing_3","Sinon","Sinon",identical-translation
+"nodejs",14,"node_testing_3","nock","nock",identical-translation
+"nodejs",14,"node_testing_3","msw","msw",identical-translation
+"nodejs",14,"node_testing_4","Supertest","Supertest",identical-translation
+"nodejs",14,"node_testing_4","Istanbul","Istanbul",identical-translation
+"nodejs",14,"node_testing_4","Faker","Faker",identical-translation
+"nodejs",15,"node_security_5","XSS","XSS",identical-translation
+"nodejs",15,"node_security_5","express-validator","express-validator",identical-translation
+"nodejs",15,"node_security_6","helmet middleware","helmet middleware",identical-translation
+"nodejs",15,"node_security_6","CSP","CSP",identical-translation
+"nodejs",15,"node_security_6","HSTS","HSTS",identical-translation
+"nodejs",15,"node_security_7","express-rate-limit","express-rate-limit",identical-translation
+"nodejs",15,"node_security_7","CAPTCHA","CAPTCHA",identical-translation
+"nodejs",15,"node_security_7","WAF","WAF",identical-translation
+"nodejs",15,"node_security_7","DDoS","DDoS",identical-translation
+"nodejs",15,"node_security_8","npm audit","npm audit",identical-translation
+"nodejs",15,"node_security_8","npm audit fix","npm audit fix",identical-translation
+"nodejs",15,"node_security_8","CVE","CVE",identical-translation
+"nodejs",15,"node_security_8","Snyk","Snyk",identical-translation
+"nodejs",15,"node_security_8","Dependabot","Dependabot",identical-translation
+"nodejs",15,"node_security_8","npm ci","npm ci",identical-translation
+"nodejs",16,"node_api_5","WebSocket","WebSocket",identical-translation
+"nodejs",16,"node_api_5","Ping/Pong","ping/pong",identical-translation
+"nodejs",16,"node_api_5","wss","wss",identical-translation
+"nodejs",16,"node_api_5","Heartbeat","heartbeat",identical-translation
+"nodejs",16,"node_api_6","Socket.io","Socket.io",identical-translation
+"nodejs",16,"node_api_6","Socket","socket",identical-translation
+"nodejs",16,"node_api_6","Room","room",identical-translation
+"nodejs",16,"node_api_6","Namespace","namespace",identical-translation
+"nodejs",16,"node_api_6","Broadcasting","broadcasting",identical-translation
+"nodejs",16,"node_api_6","Acknowledgement","acknowledgement",identical-translation
+"nodejs",16,"node_api_6","Polling Fallback","polling fallback",identical-translation
+"nodejs",16,"node_api_7","Live Updates","live updates",identical-translation
+"nodejs",16,"node_api_7","Presence","presence",identical-translation
+"nodejs",16,"node_api_7","Multiplayer","multiplayer",identical-translation
+"nodejs",16,"node_api_7","Server Sent Events","Server Sent Events",identical-translation
+"nodejs",16,"node_api_7","Long Polling","long polling",identical-translation
+"nodejs",16,"node_api_7","Sticky Session","sticky session",identical-translation
+"nodejs",16,"node_api_7","Scaling Sockets","scalare i socket",tautological-example
+"nodejs",16,"node_api_8","WebRTC","WebRTC",identical-translation
+"nodejs",16,"node_api_8","Signaling","signaling",identical-translation
+"nodejs",16,"node_api_8","STUN","STUN",identical-translation
+"nodejs",16,"node_api_8","TURN","TURN",identical-translation
+"nodejs",16,"node_api_8","mediasoup","mediasoup",identical-translation
+"nodejs",16,"node_api_8","Live Streaming","live streaming",identical-translation
+"nodejs",16,"node_api_8","HLS","HLS",identical-translation
+"nodejs",16,"node_api_8","FFmpeg","FFmpeg",identical-translation
+"nodejs",16,"node_api_8","RTMP","RTMP",identical-translation
+"nodejs",17,"node_runtime_13","Worker Thread","Worker Thread",identical-translation
+"nodejs",17,"node_runtime_13","Main Thread","main thread",identical-translation
+"nodejs",17,"node_runtime_13","parentPort","parentPort",identical-translation
+"nodejs",17,"node_runtime_13","postMessage","postMessage",identical-translation
+"nodejs",17,"node_runtime_13","workerData","workerData",identical-translation
+"nodejs",17,"node_runtime_13","SharedArrayBuffer","SharedArrayBuffer",identical-translation
+"nodejs",17,"node_runtime_13","Atomics","Atomics",identical-translation
+"nodejs",17,"node_runtime_13","CPU-Bound","CPU-bound",identical-translation
+"nodejs",17,"node_runtime_13","Worker Pool","worker pool",identical-translation
+"nodejs",17,"node_runtime_13","Piscina","Piscina",identical-translation
+"nodejs",17,"node_runtime_14","child_process","child_process",identical-translation
+"nodejs",17,"node_runtime_14","spawn","spawn",identical-translation
+"nodejs",17,"node_runtime_14","exec","exec",identical-translation
+"nodejs",17,"node_runtime_14","execFile","execFile",identical-translation
+"nodejs",17,"node_runtime_14","fork","fork",identical-translation
+"nodejs",17,"node_runtime_14","IPC","IPC",identical-translation
+"nodejs",17,"node_runtime_14","stdio","stdio",identical-translation
+"nodejs",17,"node_runtime_14","Exit Code","exit code",identical-translation
+"nodejs",17,"node_runtime_14","Kill","kill",identical-translation
+"nodejs",17,"node_runtime_14","Signal","signal",identical-translation
+"nodejs",17,"node_runtime_15","Cluster","Cluster",identical-translation
+"nodejs",17,"node_runtime_15","Master","master",identical-translation
+"nodejs",17,"node_runtime_15","Worker Process","worker process",identical-translation
+"nodejs",17,"node_runtime_15","Round Robin","round robin",identical-translation
+"nodejs",17,"node_runtime_15","CPU Cores","CPU core",near-identical-translation
+"nodejs",17,"node_runtime_16","Parallelism","parallelismo",near-identical-translation
+"nodejs",17,"node_runtime_16","Mutex","mutex",identical-translation
+"nodejs",17,"node_runtime_16","p-limit","p-limit",identical-translation
+"nodejs",17,"node_runtime_16","Queue","queue",identical-translation
+"nodejs",17,"node_runtime_16","Throttle","throttle",identical-translation
+"nodejs",17,"node_runtime_16","Debounce","debounce",identical-translation
+"nodejs",18,"node_typescript_1","TypeScript","TypeScript",identical-translation
+"nodejs",18,"node_typescript_1","tsc","tsc",identical-translation
+"nodejs",18,"node_typescript_1","tsconfig.json","tsconfig.json",identical-translation
+"nodejs",18,"node_typescript_1","ts-node","ts-node",identical-translation
+"nodejs",18,"node_typescript_1","tsx","tsx",identical-translation
+"nodejs",18,"node_typescript_1","Target","target",identical-translation
+"nodejs",18,"node_typescript_1","Type Definitions","type definitions",identical-translation
+"nodejs",18,"node_typescript_1","DefinitelyTyped","DefinitelyTyped",identical-translation
+"nodejs",18,"node_typescript_2","any","any",identical-translation
+"nodejs",18,"node_typescript_2","unknown","unknown",identical-translation
+"nodejs",18,"node_typescript_2","never","never",identical-translation
+"nodejs",18,"node_typescript_2","void","void",identical-translation
+"nodejs",18,"node_typescript_2","Literal Type","literal type",identical-translation
+"nodejs",18,"node_typescript_2","Union Type","union type",identical-translation
+"nodejs",18,"node_typescript_2","Intersection Type","intersection type",identical-translation
+"nodejs",18,"node_typescript_3","Interface","interface",identical-translation
+"nodejs",18,"node_typescript_3","type Alias","type alias",identical-translation
+"nodejs",18,"node_typescript_3","readonly","readonly",identical-translation
+"nodejs",18,"node_typescript_3","Index Signature","index signature",identical-translation
+"nodejs",18,"node_typescript_3","Generic","generic",identical-translation
+"nodejs",18,"node_typescript_3","Enum","enum",identical-translation
+"nodejs",18,"node_typescript_3","Tuple","tuple",identical-translation
+"nodejs",18,"node_typescript_3","Record","Record",identical-translation
+"nodejs",18,"node_typescript_4","Utility Type","utility type",identical-translation
+"nodejs",18,"node_typescript_4","Partial","Partial",identical-translation
+"nodejs",18,"node_typescript_4","Pick","Pick",identical-translation
+"nodejs",18,"node_typescript_4","Omit","Omit",identical-translation
+"nodejs",18,"node_typescript_4","Type Guard","type guard",identical-translation
+"nodejs",18,"node_typescript_4","Type Assertion","type assertion",identical-translation
+"nodejs",18,"node_typescript_4","Mapped Type","mapped type",identical-translation
+"nodejs",18,"node_typescript_4","Conditional Type","conditional type",identical-translation
+"nodejs",18,"node_typescript_4","Decorator","decorator",identical-translation
+"nodejs",18,"node_typescript_4","Declaration File","declaration file",identical-translation
+"nodejs",19,"node_foundations_9","MVC","MVC",identical-translation
+"nodejs",19,"node_foundations_9","View","view",identical-translation
+"nodejs",19,"node_foundations_9","Clean Architecture","Clean Architecture",identical-translation
+"nodejs",19,"node_foundations_9","DDD","DDD",identical-translation
+"nodejs",19,"node_foundations_9","Bounded Context","bounded context",identical-translation
+"nodejs",19,"node_foundations_9","Aggregate Root","aggregate root",identical-translation
+"nodejs",19,"node_foundations_10","Dependency Injection","dependency injection",identical-translation
+"nodejs",19,"node_foundations_10","Inversion of Control","inversion of control",identical-translation
+"nodejs",19,"node_foundations_10","Constructor Injection","constructor injection",tautological-example
+"nodejs",19,"node_foundations_10","Constructor Injection","constructor injection",identical-translation
+"nodejs",19,"node_foundations_10","DI Container","DI container",identical-translation
+"nodejs",19,"node_foundations_10","InversifyJS","InversifyJS",identical-translation
+"nodejs",19,"node_foundations_10","tsyringe","tsyringe",identical-translation
+"nodejs",19,"node_foundations_10","NestJS","NestJS",identical-translation
+"nodejs",19,"node_foundations_10","Provider","provider",identical-translation
+"nodejs",19,"node_foundations_10","Module (Nest)","module (Nest)",identical-translation
+"nodejs",19,"node_foundations_10","Singleton","singleton",identical-translation
+"nodejs",19,"node_foundations_11","Repository Pattern","repository pattern",identical-translation
+"nodejs",19,"node_foundations_11","Application Service","application service",identical-translation
+"nodejs",19,"node_foundations_11","Strategy Pattern","strategy pattern",identical-translation
+"nodejs",19,"node_foundations_11","Decorator Pattern","decorator pattern",identical-translation
+"nodejs",19,"node_foundations_11","Singleton Pattern","singleton pattern",identical-translation
+"nodejs",19,"node_foundations_11","CQRS","CQRS",identical-translation
+"nodejs",19,"node_foundations_11","SOLID","SOLID",identical-translation
+"nodejs",19,"node_foundations_12","src","src",identical-translation
+"nodejs",19,"node_foundations_12","dist","dist",identical-translation
+"nodejs",19,"node_foundations_12","config","config",identical-translation
+"nodejs",19,"node_foundations_12","Barrel File","barrel file",identical-translation
+"nodejs",19,"node_foundations_12","Feature Folder","feature folder",identical-translation
+"nodejs",19,"node_foundations_12","Style Guide","style guide",identical-translation
+"nodejs",19,"node_foundations_12","Linting","linting",identical-translation
+"nodejs",20,"node_performance_1","Profiling","profiling",identical-translation
+"nodejs",20,"node_performance_1","Flame Graph","flame graph",identical-translation
+"nodejs",20,"node_performance_1","clinic.js","clinic.js",identical-translation
+"nodejs",20,"node_performance_1","CPU Profile","CPU profile",identical-translation
+"nodejs",20,"node_performance_1","Heap Snapshot","heap snapshot",identical-translation
+"nodejs",20,"node_performance_1","Performance API","Performance API",identical-translation
+"nodejs",20,"node_performance_1","Benchmark","benchmark",identical-translation
+"nodejs",20,"node_performance_1","Autocannon","Autocannon",identical-translation
+"nodejs",20,"node_performance_2","New Space","new space",identical-translation
+"nodejs",20,"node_performance_2","WeakRef","WeakRef",identical-translation
+"nodejs",20,"node_performance_2","OOM","OOM",identical-translation
+"nodejs",20,"node_performance_2","process.memoryUsage","process.memoryUsage",identical-translation
+"nodejs",20,"node_performance_3","Redis","Redis",identical-translation
+"nodejs",20,"node_performance_3","ioredis","ioredis",identical-translation
+"nodejs",20,"node_performance_3","TTL","TTL",identical-translation
+"nodejs",20,"node_performance_3","Eviction","Eviction",identical-translation
+"nodejs",20,"node_performance_3","LRU","LRU",identical-translation
+"nodejs",20,"node_performance_4","Hot Path","Hot Path",identical-translation
+"nodejs",20,"node_performance_4","Tree Shaking","Tree Shaking",identical-translation
+"nodejs",20,"node_performance_4","Cold Start","Cold Start",identical-translation
+"nodejs",20,"node_performance_4","p99 Latency","p99 Latency",identical-translation
+"nodejs",21,"node_deployment_1","PM2","PM2",identical-translation
+"nodejs",21,"node_deployment_1","pm2 start","pm2 start",identical-translation
+"nodejs",21,"node_deployment_1","pm2 logs","pm2 logs",identical-translation
+"nodejs",21,"node_deployment_1","pm2 monit","pm2 monit",identical-translation
+"nodejs",21,"node_deployment_1","pm2 startup","pm2 startup",identical-translation
+"nodejs",21,"node_deployment_2","Docker","Docker",identical-translation
+"nodejs",21,"node_deployment_2","Dockerfile","Dockerfile",identical-translation
+"nodejs",21,"node_deployment_2",".dockerignore",".dockerignore",identical-translation
+"nodejs",21,"node_deployment_2","docker-compose","docker-compose",identical-translation
+"nodejs",21,"node_deployment_2","docker build","docker build",identical-translation
+"nodejs",21,"node_deployment_3","NODE_ENV","NODE_ENV",identical-translation
+"nodejs",21,"node_deployment_3","dotenv","dotenv",identical-translation
+"nodejs",21,"node_deployment_3","Twelve-Factor","Twelve-Factor",identical-translation
+"nodejs",21,"node_deployment_3","Feature Flag","Feature Flag",identical-translation
+"nodejs",21,"node_deployment_4","SIGTERM","SIGTERM",identical-translation
+"nodejs",21,"node_deployment_4","Zero Downtime","Zero Downtime",identical-translation
 "nodejs",22,"node_api_9","Monolith","Monolite",near-identical-translation
-"nodejs",22,"node_api_9","Monolith","Monolite",trivial-example
-"nodejs",22,"node_api_9","Service Discovery","Discovery dei servizi",tautological-example
-"nodejs",22,"node_api_9","Retry","Riprova",tautological-example
-"nodejs",22,"node_api_9","Retry","Riprova",trivial-example
-"nodejs",22,"node_api_9","Bulkhead","Paratia",tautological-example
-"nodejs",22,"node_api_10","RabbitMQ","RabbitMQ (broker di messaggi AMQP)",tautological-example
-"nodejs",22,"node_api_10","RabbitMQ","RabbitMQ (broker di messaggi AMQP)",fake-translation
-"nodejs",22,"node_api_10","RabbitMQ","RabbitMQ (broker di messaggi AMQP)",trivial-example
-"nodejs",22,"node_api_10","Kafka","Apache Kafka (broker di messaggi distribuito)",tautological-example
-"nodejs",22,"node_api_10","BullMQ","coda di lavori basata su Redis (BullMQ)",tautological-example
-"nodejs",22,"node_api_10","BullMQ","coda di lavori basata su Redis (BullMQ)",trivial-example
-"nodejs",22,"node_api_10","Producer","Produttore",trivial-example
-"nodejs",22,"node_api_10","Consumer","Consumatore",trivial-example
-"nodejs",22,"node_api_10","Topic","canale tematico di messaggi (Topic)",trivial-example
-"nodejs",22,"node_api_10","Job","unità di lavoro (Job)",trivial-example
-"nodejs",22,"node_api_11","RPC","Remote Procedure Call (RPC)",tautological-example
-"nodejs",22,"node_api_11","RPC","Remote Procedure Call (RPC)",trivial-example
-"nodejs",22,"node_api_11","gRPC","gRPC (RPC ad alte prestazioni Google)",tautological-example
-"nodejs",22,"node_api_11","gRPC","gRPC (RPC ad alte prestazioni Google)",fake-translation
-"nodejs",22,"node_api_11","gRPC","gRPC (RPC ad alte prestazioni Google)",trivial-example
-"nodejs",22,"node_api_11","Protocol Buffers","serializzazione Google (Protocol Buffers)",tautological-example
-"nodejs",22,"node_api_11","tRPC","RPC tipizzato TypeScript end-to-end (tRPC)",tautological-example
-"nodejs",22,"node_api_11","GraphQL","GraphQL (linguaggio di query per API)",tautological-example
-"nodejs",22,"node_api_11","GraphQL","GraphQL (linguaggio di query per API)",fake-translation
-"nodejs",22,"node_api_11","Resolver","funzione che risolve campo GraphQL (Resolver)",trivial-example
-"nodejs",22,"node_api_11","Schema-First","progettazione a partire dallo schema (Schema-First)",tautological-example
+"nodejs",22,"node_api_10","RabbitMQ","RabbitMQ",identical-translation
+"nodejs",22,"node_api_10","Kafka","Kafka",identical-translation
+"nodejs",22,"node_api_10","BullMQ","BullMQ",identical-translation
+"nodejs",22,"node_api_10","Topic","Topic",identical-translation
+"nodejs",22,"node_api_10","Job","Job",identical-translation
+"nodejs",22,"node_api_11","RPC","RPC",identical-translation
+"nodejs",22,"node_api_11","gRPC","gRPC",identical-translation
+"nodejs",22,"node_api_11","Protocol Buffers","Protocol Buffers",identical-translation
+"nodejs",22,"node_api_11","tRPC","tRPC",identical-translation
+"nodejs",22,"node_api_11","GraphQL","GraphQL",identical-translation
+"nodejs",22,"node_api_11","Resolver","Resolver",identical-translation
+"nodejs",22,"node_api_11","Schema-First","Schema-First",identical-translation
 "nodejs",22,"node_api_11","Federation","Federazione",near-identical-translation
-"nodejs",22,"node_api_12","Observability","Osservabilità",tautological-example
 "nodejs",22,"node_api_12","Observability","Osservabilità",near-identical-translation
-"nodejs",22,"node_api_12","Distributed Tracing","Tracing distribuito",tautological-example
-"nodejs",22,"node_api_12","OpenTelemetry","framework observability standard (OpenTelemetry)",tautological-example
-"nodejs",22,"node_api_12","Trace ID","ID trace",trivial-example
+"nodejs",22,"node_api_12","OpenTelemetry","OpenTelemetry",identical-translation
 "nodejs",22,"node_api_12","Metric","Metrica",near-identical-translation
-"nodejs",22,"node_api_12","Prometheus","Prometheus (sistema monitoring time-series)",tautological-example
-"nodejs",22,"node_api_12","Prometheus","Prometheus (sistema monitoring time-series)",fake-translation
-"nodejs",22,"node_api_12","Prometheus","Prometheus (sistema monitoring time-series)",trivial-example
-"nodejs",22,"node_api_12","Grafana","Grafana (piattaforma di dashboard)",tautological-example
-"nodejs",22,"node_api_12","Grafana","Grafana (piattaforma di dashboard)",fake-translation
-"nodejs",22,"node_api_12","Grafana","Grafana (piattaforma di dashboard)",trivial-example
-"nodejs",22,"node_api_12","Structured Logging","Logging strutturato",tautological-example
-"nodejs",22,"node_api_12","Structured Logging","Logging strutturato",trivial-example
-"nodejs",22,"node_api_12","SLO","Service Level Objective",trivial-example
-"nodejs",23,"node_foundations_13","Monorepo","repository unificato di progetti (Monorepo)",trivial-example
-"nodejs",23,"node_foundations_13","pnpm","gestore pacchetti efficiente (pnpm)",tautological-example
-"nodejs",23,"node_foundations_13","pnpm","gestore pacchetti efficiente (pnpm)",trivial-example
-"nodejs",23,"node_foundations_13","Yarn Workspaces","Workspace Yarn",tautological-example
-"nodejs",23,"node_foundations_13","Nx","Nx (build system monorepo)",fake-translation
-"nodejs",23,"node_foundations_13","Nx","Nx (build system monorepo)",trivial-example
-"nodejs",23,"node_foundations_13","Turborepo","Turborepo (build system monorepo veloce)",tautological-example
-"nodejs",23,"node_foundations_13","Turborepo","Turborepo (build system monorepo veloce)",fake-translation
-"nodejs",23,"node_foundations_13","Lerna","Lerna (gestore monorepo JavaScript)",tautological-example
-"nodejs",23,"node_foundations_13","Lerna","Lerna (gestore monorepo JavaScript)",fake-translation
-"nodejs",23,"node_foundations_13","Lerna","Lerna (gestore monorepo JavaScript)",trivial-example
-"nodejs",23,"node_foundations_13","Hoisting","risalita delle dipendenze comuni (Hoisting)",tautological-example
-"nodejs",23,"node_foundations_13","Hoisting","risalita delle dipendenze comuni (Hoisting)",trivial-example
-"nodejs",23,"node_foundations_13","Shared Library","Libreria condivisa",trivial-example
-"nodejs",23,"node_foundations_14","npm publish","pubblica pacchetto su npm (npm publish)",tautological-example
-"nodejs",23,"node_foundations_14","npm publish","pubblica pacchetto su npm (npm publish)",trivial-example
-"nodejs",23,"node_foundations_14","Public Package","Pacchetto pubblico",tautological-example
-"nodejs",23,"node_foundations_14","Scoped Package","Pacchetto con scope",tautological-example
-"nodejs",23,"node_foundations_14","Scoped Package","Pacchetto con scope",trivial-example
-"nodejs",23,"node_foundations_14","Private Package","Pacchetto privato",tautological-example
-"nodejs",23,"node_foundations_14","Version Bump","Aumento versione",trivial-example
-"nodejs",23,"node_foundations_14","Changelog","registro delle modifiche (Changelog)",trivial-example
-"nodejs",23,"node_foundations_14","Semantic Release","Rilascio semantico",trivial-example
-"nodejs",23,"node_foundations_14","Conventional Commits","Commit convenzionali",tautological-example
-"nodejs",23,"node_foundations_14","npm Tag","Tag npm",trivial-example
-"nodejs",23,"node_foundations_14","Deprecate","Deprecare",tautological-example
+"nodejs",22,"node_api_12","Prometheus","Prometheus",identical-translation
+"nodejs",22,"node_api_12","Grafana","Grafana",identical-translation
+"nodejs",22,"node_api_12","SLO","SLO",identical-translation
+"nodejs",23,"node_foundations_13","Monorepo","Monorepo",identical-translation
+"nodejs",23,"node_foundations_13","pnpm","pnpm",identical-translation
+"nodejs",23,"node_foundations_13","Yarn Workspaces","Yarn Workspaces",identical-translation
+"nodejs",23,"node_foundations_13","Turborepo","Turborepo",identical-translation
+"nodejs",23,"node_foundations_13","Lerna","Lerna",identical-translation
+"nodejs",23,"node_foundations_13","Hoisting","Hoisting",identical-translation
+"nodejs",23,"node_foundations_14","npm publish","npm publish",identical-translation
+"nodejs",23,"node_foundations_14","Changelog","Changelog",identical-translation
+"nodejs",23,"node_foundations_14","Semantic Release","Rilascio semantico",tautological-example
 "nodejs",23,"node_foundations_14","Deprecate","Deprecare",near-identical-translation
-"nodejs",23,"node_foundations_14","Deprecate","Deprecare",trivial-example
-"nodejs",23,"node_foundations_15","CI","Integrazione Continua",trivial-example
-"nodejs",23,"node_foundations_15","CD","Consegna Continua",trivial-example
-"nodejs",23,"node_foundations_15","GitHub Actions","GitHub Actions (automazione CI/CD GitHub)",tautological-example
-"nodejs",23,"node_foundations_15","GitHub Actions","GitHub Actions (automazione CI/CD GitHub)",fake-translation
-"nodejs",23,"node_foundations_15","GitHub Actions","GitHub Actions (automazione CI/CD GitHub)",trivial-example
-"nodejs",23,"node_foundations_15","ESLint","ESLint (linter JavaScript)",tautological-example
-"nodejs",23,"node_foundations_15","ESLint","ESLint (linter JavaScript)",fake-translation
-"nodejs",23,"node_foundations_15","ESLint","ESLint (linter JavaScript)",trivial-example
-"nodejs",23,"node_foundations_15","Prettier","Prettier (formattatore di codice)",tautological-example
-"nodejs",23,"node_foundations_15","Prettier","Prettier (formattatore di codice)",fake-translation
-"nodejs",23,"node_foundations_15","Prettier","Prettier (formattatore di codice)",trivial-example
-"nodejs",23,"node_foundations_15","Husky","Husky (gestore hook Git)",tautological-example
-"nodejs",23,"node_foundations_15","Husky","Husky (gestore hook Git)",fake-translation
-"nodejs",23,"node_foundations_15","Husky","Husky (gestore hook Git)",trivial-example
-"nodejs",23,"node_foundations_15","lint-staged","linta solo i file in stage (lint-staged)",tautological-example
-"nodejs",23,"node_foundations_15","Code Review","Revisione del codice",tautological-example
-"nodejs",23,"node_foundations_15","Code Review","Revisione del codice",trivial-example
-"nodejs",23,"node_foundations_15","Commit Hook","hook al momento del commit (Commit Hook)",trivial-example
-"nodejs",23,"node_foundations_16","Code Smell","Cattivo odore di codice",trivial-example
-"nodejs",23,"node_foundations_16","Refactoring","ristrutturazione del codice (Refactoring)",tautological-example
-"nodejs",23,"node_foundations_16","Technical Debt","Debito tecnico",tautological-example
-"nodejs",23,"node_foundations_16","Technical Debt","Debito tecnico",trivial-example
-"nodejs",23,"node_foundations_16","Mentoring","mentorato (Mentoring)",tautological-example
-"nodejs",23,"node_foundations_16","Postmortem","analisi post-incidente (Postmortem)",trivial-example
-"nodejs",23,"node_foundations_16","On-Call","Reperibilità",tautological-example
-"nodejs",23,"node_foundations_16","On-Call","Reperibilità",trivial-example
-"nodejs",23,"node_foundations_16","RFC","Request for Comments (RFC)",trivial-example
-"nodejs",23,"node_foundations_16","Architecture Decision Record","Record di decisione architetturale",trivial-example
-"nodejs",23,"node_foundations_16","Continuous Learning","Apprendimento continuo",tautological-example
-"nodejs",0,"node_foundations_2","concurrency","",duplicate-across-lessons
-"nodejs",17,"node_runtime_16","concurrency","",duplicate-across-lessons
-"nodejs",0,"node_foundations_2","heap","",duplicate-across-lessons
-"nodejs",20,"node_performance_2","heap","",duplicate-across-lessons
-"nodejs",0,"node_foundations_4","install","",duplicate-across-lessons
-"nodejs",1,"node_modules_3","install","",duplicate-across-lessons
-"nodejs",1,"node_modules_3","update","",duplicate-across-lessons
-"nodejs",7,"node_api_2","update","",duplicate-across-lessons
-"nodejs",2,"node_foundations_7","hoisting","",duplicate-across-lessons
-"nodejs",23,"node_foundations_13","hoisting","",duplicate-across-lessons
-"nodejs",2,"node_foundations_7","strict mode","",duplicate-across-lessons
-"nodejs",18,"node_typescript_1","strict mode","",duplicate-across-lessons
+"nodejs",23,"node_foundations_15","GitHub Actions","GitHub Actions",identical-translation
+"nodejs",23,"node_foundations_15","ESLint","ESLint",identical-translation
+"nodejs",23,"node_foundations_15","Prettier","Prettier",identical-translation
+"nodejs",23,"node_foundations_15","Husky","Husky",identical-translation
+"nodejs",23,"node_foundations_15","lint-staged","lint-staged",identical-translation
+"nodejs",23,"node_foundations_15","Commit Hook","Commit Hook",identical-translation
+"nodejs",23,"node_foundations_16","Refactoring","Refactoring",identical-translation
+"nodejs",23,"node_foundations_16","Mentoring","Mentoring",identical-translation
+"nodejs",23,"node_foundations_16","Postmortem","Postmortem",identical-translation
+"nodejs",23,"node_foundations_16","RFC","RFC",identical-translation
+"nodejs",1,"node_modules_3","Update","",duplicate-across-lessons
+"nodejs",7,"node_api_2","Update","",duplicate-across-lessons
+"nodejs",2,"node_foundations_7","Hoisting","",duplicate-across-lessons
+"nodejs",23,"node_foundations_13","Hoisting","",duplicate-across-lessons
 "nodejs",3,"node_async_2","finally","",duplicate-across-lessons
 "nodejs",11,"node_runtime_10","finally","",duplicate-across-lessons
 "nodejs",3,"node_async_3","try/catch","",duplicate-across-lessons
 "nodejs",11,"node_runtime_10","try/catch","",duplicate-across-lessons
-"nodejs",4,"node_runtime_2","encoding","",duplicate-across-lessons
-"nodejs",12,"node_streams_1","encoding","",duplicate-across-lessons
-"nodejs",4,"node_runtime_2","permissions","",duplicate-across-lessons
-"nodejs",8,"node_middleware_4","permissions","",duplicate-across-lessons
-"nodejs",5,"node_runtime_6","delete","",duplicate-across-lessons
-"nodejs",7,"node_api_2","delete","",duplicate-across-lessons
-"nodejs",5,"node_runtime_7","status code","",duplicate-across-lessons
-"nodejs",11,"node_runtime_11","status code","",duplicate-across-lessons
-"nodejs",7,"node_api_2","collection","",duplicate-across-lessons
-"nodejs",9,"node_database_1","collection","",duplicate-across-lessons
-"nodejs",7,"node_api_3","service layer","",duplicate-across-lessons
-"nodejs",19,"node_foundations_11","service layer","",duplicate-across-lessons
-"nodejs",7,"node_api_3","schema","",duplicate-across-lessons
-"nodejs",9,"node_database_1","schema","",duplicate-across-lessons
-"nodejs",8,"node_middleware_4","helmet","",duplicate-across-lessons
-"nodejs",15,"node_security_6","helmet","",duplicate-across-lessons
-"nodejs",9,"node_database_1","model","",duplicate-across-lessons
-"nodejs",19,"node_foundations_9","model","",duplicate-across-lessons
-"nodejs",9,"node_database_1","aggregate","",duplicate-across-lessons
-"nodejs",19,"node_foundations_9","aggregate","",duplicate-across-lessons
+"nodejs",4,"node_runtime_2","Encoding","",duplicate-across-lessons
+"nodejs",12,"node_streams_1","Encoding","",duplicate-across-lessons
+"nodejs",4,"node_runtime_2","Permissions","",duplicate-across-lessons
+"nodejs",8,"node_middleware_4","Permissions","",duplicate-across-lessons
+"nodejs",5,"node_runtime_6","DELETE","",duplicate-across-lessons
+"nodejs",7,"node_api_2","Delete","",duplicate-across-lessons
+"nodejs",5,"node_runtime_7","Status Code","",duplicate-across-lessons
+"nodejs",11,"node_runtime_11","Status Code","",duplicate-across-lessons
+"nodejs",7,"node_api_2","Collection","",duplicate-across-lessons
+"nodejs",9,"node_database_1","Collection","",duplicate-across-lessons
+"nodejs",7,"node_api_3","Schema","",duplicate-across-lessons
+"nodejs",9,"node_database_1","Schema","",duplicate-across-lessons
 "nodejs",12,"node_streams_3","pipeline","",duplicate-across-lessons
-"nodejs",23,"node_foundations_15","pipeline","",duplicate-across-lessons
-"nodejs",13,"node_events_2","observer pattern","",duplicate-across-lessons
-"nodejs",19,"node_foundations_11","observer pattern","",duplicate-across-lessons
-"nodejs",13,"node_events_2","memory leak","",duplicate-across-lessons
-"nodejs",20,"node_performance_2","memory leak","",duplicate-across-lessons
-"nodejs",13,"node_events_4","topic","",duplicate-across-lessons
-"nodejs",22,"node_api_10","topic","",duplicate-across-lessons
+"nodejs",23,"node_foundations_15","Pipeline","",duplicate-across-lessons
+"nodejs",13,"node_events_2","Memory Leak","",duplicate-across-lessons
+"nodejs",20,"node_performance_2","Memory Leak","",duplicate-across-lessons
+"nodejs",13,"node_events_4","Topic","",duplicate-across-lessons
+"nodejs",22,"node_api_10","Topic","",duplicate-across-lessons

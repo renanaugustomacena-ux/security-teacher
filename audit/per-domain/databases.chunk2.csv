@@ -1,0 +1,289 @@
+topicId,level,lesson,english,italian,issueType
+"databases",10,"db_nosql_9","KEYS","Chiavi (KEYS)",tautological-example
+"databases",10,"db_nosql_9","KEYS","Chiavi (KEYS)",trivial-example
+"databases",10,"db_nosql_9","SCAN","Scansiona (SCAN)",tautological-example
+"databases",10,"db_nosql_9","SCAN","Scansiona (SCAN)",trivial-example
+"databases",10,"db_nosql_9","INCR","Incrementa (INCR)",tautological-example
+"databases",10,"db_nosql_9","INCR","Incrementa (INCR)",trivial-example
+"databases",10,"db_nosql_9","DECR","Decrementa (DECR)",tautological-example
+"databases",10,"db_nosql_9","DECR","Decrementa (DECR)",trivial-example
+"databases",10,"db_nosql_9","FLUSHDB","Svuota DB (FLUSHDB)",tautological-example
+"databases",10,"db_nosql_9","FLUSHDB","Svuota DB (FLUSHDB)",trivial-example
+"databases",10,"db_nosql_10","Redis List","Lista Redis",tautological-example
+"databases",10,"db_nosql_10","Redis List","Lista Redis",trivial-example
+"databases",10,"db_nosql_10","LPUSH","Push a sinistra (LPUSH)",tautological-example
+"databases",10,"db_nosql_10","LPUSH","Push a sinistra (LPUSH)",trivial-example
+"databases",10,"db_nosql_10","RPUSH","Push a destra (RPUSH)",tautological-example
+"databases",10,"db_nosql_10","RPUSH","Push a destra (RPUSH)",trivial-example
+"databases",10,"db_nosql_10","LPOP","Pop a sinistra (LPOP)",tautological-example
+"databases",10,"db_nosql_10","LPOP","Pop a sinistra (LPOP)",trivial-example
+"databases",10,"db_nosql_10","Redis Set","Set Redis",tautological-example
+"databases",10,"db_nosql_10","Redis Set","Set Redis",trivial-example
+"databases",10,"db_nosql_10","SADD","Aggiungi a set (SADD)",tautological-example
+"databases",10,"db_nosql_10","SADD","Aggiungi a set (SADD)",trivial-example
+"databases",10,"db_nosql_10","Redis Hash","Hash Redis",tautological-example
+"databases",10,"db_nosql_10","Redis Hash","Hash Redis",trivial-example
+"databases",10,"db_nosql_10","HGET","Ottieni campo hash (HGET)",tautological-example
+"databases",10,"db_nosql_10","HGET","Ottieni campo hash (HGET)",trivial-example
+"databases",10,"db_nosql_10","Sorted Set","Set ordinato",tautological-example
+"databases",10,"db_nosql_10","Sorted Set","Set ordinato",trivial-example
+"databases",10,"db_nosql_10","ZADD","Aggiungi a sorted set (ZADD)",tautological-example
+"databases",10,"db_nosql_10","ZADD","Aggiungi a sorted set (ZADD)",trivial-example
+"databases",10,"db_nosql_11","TTL","Tempo di vita (TTL)",tautological-example
+"databases",10,"db_nosql_11","TTL","Tempo di vita (TTL)",trivial-example
+"databases",10,"db_nosql_11","EXPIRE","Scadi (EXPIRE)",tautological-example
+"databases",10,"db_nosql_11","EXPIRE","Scadi (EXPIRE)",trivial-example
+"databases",10,"db_nosql_11","PERSIST","Rendi persistente (PERSIST)",tautological-example
+"databases",10,"db_nosql_11","PERSIST","Rendi persistente (PERSIST)",trivial-example
+"databases",10,"db_nosql_11","Cache","memoria intermedia (Cache)",trivial-example
+"databases",10,"db_nosql_11","Cache Miss","dato assente in cache (Cache Miss)",trivial-example
+"databases",10,"db_nosql_11","Cache Invalidation","Invalidazione cache",tautological-example
+"databases",10,"db_nosql_11","Cache Invalidation","Invalidazione cache",trivial-example
+"databases",10,"db_nosql_11","Cache-Aside","pattern di cache a fianco (Cache-Aside)",tautological-example
+"databases",10,"db_nosql_11","Write-Through","scrittura sincrona in cache e DB (Write-Through)",tautological-example
+"databases",10,"db_nosql_11","Write-Through","scrittura sincrona in cache e DB (Write-Through)",trivial-example
+"databases",10,"db_nosql_11","Eviction Policy","Politica di sfratto",trivial-example
+"databases",10,"db_nosql_12","Pub/Sub","pubblicazione e sottoscrizione (Pub/Sub)",tautological-example
+"databases",10,"db_nosql_12","PUBLISH","Pubblica (PUBLISH)",tautological-example
+"databases",10,"db_nosql_12","PUBLISH","Pubblica (PUBLISH)",trivial-example
+"databases",10,"db_nosql_12","SUBSCRIBE","Iscriviti (SUBSCRIBE)",tautological-example
+"databases",10,"db_nosql_12","SUBSCRIBE","Iscriviti (SUBSCRIBE)",trivial-example
+"databases",10,"db_nosql_12","Channel","Canale",trivial-example
+"databases",10,"db_nosql_12","Redis Streams","Stream Redis",tautological-example
+"databases",10,"db_nosql_12","Redis Streams","Stream Redis",trivial-example
+"databases",10,"db_nosql_12","XADD","Aggiungi a stream (XADD)",tautological-example
+"databases",10,"db_nosql_12","XADD","Aggiungi a stream (XADD)",trivial-example
+"databases",10,"db_nosql_12","XREAD","Leggi stream (XREAD)",tautological-example
+"databases",10,"db_nosql_12","XREAD","Leggi stream (XREAD)",trivial-example
+"databases",10,"db_nosql_12","Consumer Group","Gruppo di consumatori",tautological-example
+"databases",10,"db_nosql_12","Consumer Group","Gruppo di consumatori",trivial-example
+"databases",10,"db_nosql_12","Persistence","Persistenza",near-identical-translation
+"databases",10,"db_nosql_12","Persistence","Persistenza",trivial-example
+"databases",10,"db_nosql_12","Persistence","",duplicate-across-lessons
+"databases",10,"db_nosql_12","AOF","Append Only File (AOF)",tautological-example
+"databases",10,"db_nosql_12","AOF","Append Only File (AOF)",trivial-example
+"databases",11,"db_optimization_1","EXPLAIN","Spiega (EXPLAIN)",tautological-example
+"databases",11,"db_optimization_1","EXPLAIN","Spiega (EXPLAIN)",trivial-example
+"databases",11,"db_optimization_1","EXPLAIN ANALYZE","Spiega e analizza (EXPLAIN ANALYZE)",tautological-example
+"databases",11,"db_optimization_1","Cost","Costo stimato di esecuzione della query",trivial-example
+"databases",11,"db_optimization_1","Nested Loop","Loop annidato",tautological-example
+"databases",11,"db_optimization_1","Nested Loop","Loop annidato",trivial-example
+"databases",11,"db_optimization_1","Hash Join","join basato su hash (Hash Join)",tautological-example
+"databases",11,"db_optimization_1","Hash Join","join basato su hash (Hash Join)",trivial-example
+"databases",11,"db_optimization_1","Merge Join","join per fusione ordinata (Merge Join)",tautological-example
+"databases",11,"db_optimization_1","Merge Join","join per fusione ordinata (Merge Join)",trivial-example
+"databases",11,"db_optimization_1","Buffers","Buffer",near-identical-translation
+"databases",11,"db_optimization_1","Buffers","Buffer",trivial-example
+"databases",11,"db_optimization_1","Estimated vs Actual","Stimato vs Reale",trivial-example
+"databases",11,"db_optimization_2","Statistics","Statistiche",near-identical-translation
+"databases",11,"db_optimization_2","Statistics","Statistiche",trivial-example
+"databases",11,"db_optimization_2","ANALYZE","Analizza (ANALYZE)",tautological-example
+"databases",11,"db_optimization_2","ANALYZE","Analizza (ANALYZE)",trivial-example
+"databases",11,"db_optimization_2","Histogram","Istogramma",tautological-example
+"databases",11,"db_optimization_2","Histogram","Istogramma",trivial-example
+"databases",11,"db_optimization_2","Histogram","",duplicate-across-lessons
+"databases",11,"db_optimization_2","Query Optimizer","Ottimizzatore query",trivial-example
+"databases",11,"db_optimization_2","Cost-Based Optimizer","Ottimizzatore basato sui costi",trivial-example
+"databases",11,"db_optimization_2","Cardinality Estimation","Stima di cardinalità",tautological-example
+"databases",11,"db_optimization_2","Selectivity","Selettività",tautological-example
+"databases",11,"db_optimization_2","Selectivity","Selettività",near-identical-translation
+"databases",11,"db_optimization_2","Selectivity","",duplicate-across-lessons
+"databases",11,"db_optimization_2","Stale Statistics","Statistiche obsolete",tautological-example
+"databases",11,"db_optimization_2","Stale Statistics","Statistiche obsolete",trivial-example
+"databases",11,"db_optimization_2","Sample Size","Dimensione campione",trivial-example
+"databases",11,"db_optimization_3","Query Tuning","Tuning della query",tautological-example
+"databases",11,"db_optimization_3","Query Tuning","Tuning della query",trivial-example
+"databases",11,"db_optimization_3","pg_stat_statements","Vista delle query più costose (pg_stat_statements)",tautological-example
+"databases",11,"db_optimization_3","pg_stat_statements","Vista delle query più costose (pg_stat_statements)",trivial-example
+"databases",11,"db_optimization_3","N+1 Problem","Problema N+1",trivial-example
+"databases",11,"db_optimization_3","Eager Loading","Caricamento ansioso (Eager Loading)",tautological-example
+"databases",11,"db_optimization_3","Lazy Loading","Caricamento pigro (Lazy Loading)",tautological-example
+"databases",11,"db_optimization_3","Lazy Loading","Caricamento pigro (Lazy Loading)",trivial-example
+"databases",11,"db_optimization_3","Query Rewrite","Riscrittura query",tautological-example
+"databases",11,"db_optimization_3","Query Rewrite","Riscrittura query",trivial-example
+"databases",11,"db_optimization_3","Predicate Pushdown","Pushdown del predicato",tautological-example
+"databases",11,"db_optimization_3","Predicate Pushdown","Pushdown del predicato",trivial-example
+"databases",11,"db_optimization_3","Sargable","sargable / query ottimizzabile dall'indice",fake-translation
+"databases",11,"db_optimization_3","Sargable","sargable / query ottimizzabile dall'indice",trivial-example
+"databases",11,"db_optimization_3","Query Hint","Suggerimento query",tautological-example
+"databases",11,"db_optimization_3","Query Hint","Suggerimento query",trivial-example
+"databases",11,"db_optimization_4","Performance","prestazioni (Performance)",trivial-example
+"databases",11,"db_optimization_4","Latency","Latenza",near-identical-translation
+"databases",11,"db_optimization_4","Throughput","volume di operazioni al secondo (Throughput)",trivial-example
+"databases",11,"db_optimization_4","IOPS","Operazioni I/O al secondo (IOPS)",trivial-example
+"databases",11,"db_optimization_4","Connection Pool","Pool di connessioni",trivial-example
+"databases",11,"db_optimization_4","Connection Pooling","pool di connessioni (Connection Pooling)",tautological-example
+"databases",11,"db_optimization_4","Connection Pooling","pool di connessioni (Connection Pooling)",trivial-example
+"databases",11,"db_optimization_4","Query Cache","Cache di query",trivial-example
+"databases",11,"db_optimization_4","Buffer Pool","pool di pagine in memoria (Buffer Pool)",trivial-example
+"databases",11,"db_optimization_4","Shared Buffers","Shared buffer",near-identical-translation
+"databases",11,"db_optimization_4","Shared Buffers","Shared buffer",trivial-example
+"databases",11,"db_optimization_4","Hot Path","Percorso caldo",trivial-example
+"databases",12,"db_administration_1","Backup","copia di sicurezza (Backup)",trivial-example
+"databases",12,"db_administration_1","Full Backup","Backup completo",trivial-example
+"databases",12,"db_administration_1","Incremental Backup","Backup incrementale",tautological-example
+"databases",12,"db_administration_1","Incremental Backup","Backup incrementale",trivial-example
+"databases",12,"db_administration_1","pg_dump","Utility di backup PostgreSQL (pg_dump)",tautological-example
+"databases",12,"db_administration_1","pg_dump","Utility di backup PostgreSQL (pg_dump)",trivial-example
+"databases",12,"db_administration_1","mysqldump","Utility di backup MySQL (mysqldump)",tautological-example
+"databases",12,"db_administration_1","mysqldump","Utility di backup MySQL (mysqldump)",trivial-example
+"databases",12,"db_administration_1","Logical Backup","Backup logico",tautological-example
+"databases",12,"db_administration_1","Logical Backup","Backup logico",trivial-example
+"databases",12,"db_administration_1","Physical Backup","Backup fisico",tautological-example
+"databases",12,"db_administration_1","Physical Backup","Backup fisico",trivial-example
+"databases",12,"db_administration_1","Hot Backup","Backup a caldo",tautological-example
+"databases",12,"db_administration_1","Hot Backup","Backup a caldo",trivial-example
+"databases",12,"db_administration_1","Cold Backup","Backup a freddo",tautological-example
+"databases",12,"db_administration_1","Cold Backup","Backup a freddo",trivial-example
+"databases",12,"db_administration_1","Backup Schedule","Schedule di backup",trivial-example
+"databases",12,"db_administration_2","Restore","Ripristino (Restore)",tautological-example
+"databases",12,"db_administration_2","Restore","Ripristino (Restore)",trivial-example
+"databases",12,"db_administration_2","pg_restore","Utility di ripristino PostgreSQL (pg_restore)",tautological-example
+"databases",12,"db_administration_2","pg_restore","Utility di ripristino PostgreSQL (pg_restore)",trivial-example
+"databases",12,"db_administration_2","Point-in-Time Recovery","Recovery a un punto nel tempo",trivial-example
+"databases",12,"db_administration_2","Disaster Recovery","ripristino dopo disastro (Disaster Recovery)",trivial-example
+"databases",12,"db_administration_2","RTO","Tempo di ripristino (RTO)",tautological-example
+"databases",12,"db_administration_2","RTO","Tempo di ripristino (RTO)",trivial-example
+"databases",12,"db_administration_2","RPO","Punto di ripristino (RPO)",tautological-example
+"databases",12,"db_administration_2","RPO","Punto di ripristino (RPO)",trivial-example
+"databases",12,"db_administration_2","WAL Archive","Archivio WAL",tautological-example
+"databases",12,"db_administration_2","WAL Archive","Archivio WAL",trivial-example
+"databases",12,"db_administration_2","Standby","nodo di riserva (Standby)",trivial-example
+"databases",12,"db_administration_2","Verify Backup","Verifica backup",trivial-example
+"databases",12,"db_administration_2","Restore Drill","Esercitazione di ripristino",trivial-example
+"databases",12,"db_administration_3","User Management","Gestione utenti",tautological-example
+"databases",12,"db_administration_3","CREATE USER","Crea utente",tautological-example
+"databases",12,"db_administration_3","CREATE USER","Crea utente",trivial-example
+"databases",12,"db_administration_3","CREATE ROLE","Crea ruolo",tautological-example
+"databases",12,"db_administration_3","CREATE ROLE","Crea ruolo",trivial-example
+"databases",12,"db_administration_3","GRANT","Concedi (GRANT)",tautological-example
+"databases",12,"db_administration_3","GRANT","Concedi (GRANT)",trivial-example
+"databases",12,"db_administration_3","REVOKE","Revoca (REVOKE)",tautological-example
+"databases",12,"db_administration_3","REVOKE","Revoca (REVOKE)",trivial-example
+"databases",12,"db_administration_3","Privilege","Privilegio",near-identical-translation
+"databases",12,"db_administration_3","Privilege","Privilegio",trivial-example
+"databases",12,"db_administration_3","Role","Ruolo",near-identical-translation
+"databases",12,"db_administration_3","Role","Ruolo",trivial-example
+"databases",12,"db_administration_3","Superuser","utente con tutti i privilegi (Superuser)",trivial-example
+"databases",12,"db_administration_3","Least Privilege","Privilegio minimo",trivial-example
+"databases",12,"db_administration_3","pg_hba.conf","File di policy autenticazione PostgreSQL (pg_hba.conf)",tautological-example
+"databases",12,"db_administration_3","pg_hba.conf","File di policy autenticazione PostgreSQL (pg_hba.conf)",trivial-example
+"databases",12,"db_administration_4","Monitoring","Monitoraggio",trivial-example
+"databases",12,"db_administration_4","Metric","Metrica di monitoraggio (indicatore misurabile)",trivial-example
+"databases",12,"db_administration_4","Connection Count","Numero di connessioni",trivial-example
+"databases",12,"db_administration_4","Cache Hit Ratio","Rapporto di cache hit",trivial-example
+"databases",12,"db_administration_4","Long-Running Query","Query a lunga esecuzione",trivial-example
+"databases",12,"db_administration_4","Lock Contention","Contesa di lock",tautological-example
+"databases",12,"db_administration_4","Lock Contention","Contesa di lock",trivial-example
+"databases",12,"db_administration_4","Alert","Avviso (Alert)",trivial-example
+"databases",12,"db_administration_4","Dashboard","cruscotto di monitoraggio (Dashboard)",trivial-example
+"databases",12,"db_administration_4","Health Check","Controllo di salute",trivial-example
+"databases",13,"db_replication_1","Replication","Replicazione",tautological-example
+"databases",13,"db_replication_1","Replication","Replicazione",near-identical-translation
+"databases",13,"db_replication_1","Master-Slave","primario-secondario (replica) (Master-Slave)",tautological-example
+"databases",13,"db_replication_1","Master-Slave","primario-secondario (replica) (Master-Slave)",trivial-example
+"databases",13,"db_replication_1","Primary-Replica","Primario-replica",tautological-example
+"databases",13,"db_replication_1","Primary-Replica","Primario-replica",near-identical-translation
+"databases",13,"db_replication_1","Primary-Replica","Primario-replica",trivial-example
+"databases",13,"db_replication_1","Streaming Replication","Replicazione streaming",tautological-example
+"databases",13,"db_replication_1","Logical Replication","Replicazione logica",tautological-example
+"databases",13,"db_replication_1","Logical Replication","Replicazione logica",trivial-example
+"databases",13,"db_replication_1","Physical Replication","Replicazione fisica",tautological-example
+"databases",13,"db_replication_1","Replication Lag","Ritardo di replicazione",trivial-example
+"databases",13,"db_replication_2","High Availability","Alta disponibilità",trivial-example
+"databases",13,"db_replication_2","Failover","Subentro (Failover)",tautological-example
+"databases",13,"db_replication_2","Failover","Subentro (Failover)",trivial-example
+"databases",13,"db_replication_2","Automatic Failover","Failover automatico",tautological-example
+"databases",13,"db_replication_2","Automatic Failover","Failover automatico",trivial-example
+"databases",13,"db_replication_2","Manual Failover","Failover manuale",tautological-example
+"databases",13,"db_replication_2","Switchover","cambio pianificato di primario (Switchover)",tautological-example
+"databases",13,"db_replication_2","Switchover","cambio pianificato di primario (Switchover)",trivial-example
+"databases",13,"db_replication_2","Split Brain","cluster diviso in due primari (Split Brain)",tautological-example
+"databases",13,"db_replication_2","Fencing","Recinzione (Fencing)",tautological-example
+"databases",13,"db_replication_2","Fencing","Recinzione (Fencing)",trivial-example
+"databases",13,"db_replication_2","Heartbeat","Battito (Heartbeat)",tautological-example
+"databases",13,"db_replication_2","Heartbeat","Battito (Heartbeat)",trivial-example
+"databases",13,"db_replication_2","Quorum","soglia minima di nodi (Quorum)",trivial-example
+"databases",13,"db_replication_2","Quorum","",duplicate-across-lessons
+"databases",13,"db_replication_2","VIP","IP virtuale (VIP)",trivial-example
+"databases",13,"db_replication_3","Read Replica","Replica in lettura",tautological-example
+"databases",13,"db_replication_3","Read Replica","Replica in lettura",trivial-example
+"databases",13,"db_replication_3","Hot Standby","replica leggibile (Hot Standby)",trivial-example
+"databases",13,"db_replication_3","Warm Standby","replica non leggibile (Warm Standby)",trivial-example
+"databases",13,"db_replication_3","Cold Standby","replica spenta (Cold Standby)",trivial-example
+"databases",13,"db_replication_3","Read-Write Split","Split lettura-scrittura",tautological-example
+"databases",13,"db_replication_3","Read-Write Split","Split lettura-scrittura",trivial-example
+"databases",13,"db_replication_3","Replica Lag","Lag della replica",tautological-example
+"databases",13,"db_replication_3","Replica Lag","Lag della replica",trivial-example
+"databases",13,"db_replication_3","Stale Read","Lettura stale",trivial-example
+"databases",13,"db_replication_3","Cascading Replication","Replicazione a cascata",tautological-example
+"databases",13,"db_replication_3","Cascading Replication","Replicazione a cascata",trivial-example
+"databases",13,"db_replication_3","Multi-Master","scrittura su più nodi (Multi-Master)",tautological-example
+"databases",13,"db_replication_3","Multi-Master","scrittura su più nodi (Multi-Master)",trivial-example
+"databases",13,"db_replication_4","Patroni","Gestore HA per PostgreSQL (Patroni)",tautological-example
+"databases",13,"db_replication_4","Patroni","Gestore HA per PostgreSQL (Patroni)",trivial-example
+"databases",13,"db_replication_4","pg_basebackup","Backup fisico PostgreSQL (pg_basebackup)",tautological-example
+"databases",13,"db_replication_4","pg_basebackup","Backup fisico PostgreSQL (pg_basebackup)",trivial-example
+"databases",13,"db_replication_4","PgBouncer","Connection pooler PostgreSQL (PgBouncer)",tautological-example
+"databases",13,"db_replication_4","PgBouncer","Connection pooler PostgreSQL (PgBouncer)",trivial-example
+"databases",13,"db_replication_4","Orchestrator","HA manager MySQL (Orchestrator)",tautological-example
+"databases",13,"db_replication_4","Orchestrator","HA manager MySQL (Orchestrator)",trivial-example
+"databases",13,"db_replication_4","MaxScale","Proxy MariaDB (MaxScale)",tautological-example
+"databases",13,"db_replication_4","MaxScale","Proxy MariaDB (MaxScale)",trivial-example
+"databases",13,"db_replication_4","Vitess","Sharding MySQL per scala (Vitess)",tautological-example
+"databases",13,"db_replication_4","Vitess","Sharding MySQL per scala (Vitess)",trivial-example
+"databases",13,"db_replication_4","Citus","Estensione PostgreSQL distribuita (Citus)",tautological-example
+"databases",13,"db_replication_4","pglogical","Replica logica PostgreSQL (pglogical)",tautological-example
+"databases",13,"db_replication_4","Slony","Replica master-slave PostgreSQL (Slony)",tautological-example
+"databases",13,"db_replication_4","Slony","Replica master-slave PostgreSQL (Slony)",trivial-example
+"databases",13,"db_replication_4","Repmgr","repmgr (failover manager PostgreSQL)",tautological-example
+"databases",13,"db_replication_4","Repmgr","repmgr (failover manager PostgreSQL)",fake-translation
+"databases",13,"db_replication_4","Repmgr","repmgr (failover manager PostgreSQL)",trivial-example
+"databases",14,"db_replication_5","Sharding","partizionamento orizzontale (Sharding)",tautological-example
+"databases",14,"db_replication_5","Sharding","partizionamento orizzontale (Sharding)",trivial-example
+"databases",14,"db_replication_5","Sharding","",duplicate-across-lessons
+"databases",14,"db_replication_5","Shard","Frammento (Shard)",trivial-example
+"databases",14,"db_replication_5","Horizontal Partitioning","Partizionamento orizzontale",tautological-example
+"databases",14,"db_replication_5","Horizontal Partitioning","Partizionamento orizzontale",trivial-example
+"databases",14,"db_replication_5","Vertical Partitioning","Partizionamento verticale",tautological-example
+"databases",14,"db_replication_5","Vertical Partitioning","Partizionamento verticale",trivial-example
+"databases",14,"db_replication_5","Range Sharding","Sharding per range",tautological-example
+"databases",14,"db_replication_5","Range Sharding","Sharding per range",trivial-example
+"databases",14,"db_replication_5","Hash Sharding","Sharding per hash",tautological-example
+"databases",14,"db_replication_5","Hash Sharding","Sharding per hash",trivial-example
+"databases",14,"db_replication_5","Directory-Based Sharding","Sharding basato su directory",tautological-example
+"databases",14,"db_replication_5","Geo Sharding","Sharding geografico",tautological-example
+"databases",14,"db_replication_5","Geo Sharding","Sharding geografico",trivial-example
+"databases",14,"db_replication_5","Hot Shard","Shard caldo",trivial-example
+"databases",14,"db_replication_6","Consistent Hashing","Hashing consistente",tautological-example
+"databases",14,"db_replication_6","Hash Ring","Anello hash",trivial-example
+"databases",14,"db_replication_6","Virtual Node","Nodo virtuale",tautological-example
+"databases",14,"db_replication_6","Virtual Node","Nodo virtuale",trivial-example
+"databases",14,"db_replication_6","Resharding","ridistribuzione degli shard (Resharding)",tautological-example
+"databases",14,"db_replication_6","Resharding","ridistribuzione degli shard (Resharding)",trivial-example
+"databases",14,"db_replication_6","Rebalancing","Riequilibratura",tautological-example
+"databases",14,"db_replication_6","Rebalancing","Riequilibratura",trivial-example
+"databases",14,"db_replication_6","Token Range","Intervallo di token",trivial-example
+"databases",14,"db_replication_6","Coordinator Node","Nodo coordinatore",trivial-example
+"databases",14,"db_replication_6","Cross-Shard Query","Query cross-shard",trivial-example
+"databases",14,"db_replication_6","Scatter-Gather","disperdi e raccogli risultati (Scatter-Gather)",tautological-example
+"databases",14,"db_replication_6","Scatter-Gather","disperdi e raccogli risultati (Scatter-Gather)",trivial-example
+"databases",14,"db_replication_6","Hotspot","punto di sovraccarico (Hotspot)",trivial-example
+"databases",14,"db_replication_7","Table Partitioning","Partizionamento di tabella",tautological-example
+"databases",14,"db_replication_7","Range Partitioning","Partizionamento per range",tautological-example
+"databases",14,"db_replication_7","List Partitioning","Partizionamento per lista",tautological-example
+"databases",14,"db_replication_7","Hash Partitioning","Partizionamento per hash",tautological-example
+"databases",14,"db_replication_7","Hash Partitioning","Partizionamento per hash",trivial-example
+"databases",14,"db_replication_7","Partition Pruning","esclusione partizioni inutili (Partition Pruning)",tautological-example
+"databases",14,"db_replication_7","Subpartition","Sottopartizione",tautological-example
+"databases",14,"db_replication_7","Subpartition","Sottopartizione",trivial-example
+"databases",14,"db_replication_7","Partition Key","Chiave di partizione",trivial-example
+"databases",14,"db_replication_7","Native Partitioning","Partizionamento nativo",trivial-example
+"databases",14,"db_replication_7","Detach Partition","Stacca partizione",tautological-example
+"databases",14,"db_replication_7","Detach Partition","Stacca partizione",trivial-example
+"databases",14,"db_replication_8","Distributed SQL","SQL distribuito",tautological-example
+"databases",14,"db_replication_8","Distributed SQL","SQL distribuito",trivial-example
+"databases",14,"db_replication_8","CockroachDB","Database SQL distribuito (CockroachDB)",tautological-example
+"databases",14,"db_replication_8","YugabyteDB","Database SQL distribuito (YugabyteDB)",tautological-example
+"databases",14,"db_replication_8","Spanner","Cloud Spanner (database globale Google)",trivial-example
+"databases",14,"db_replication_8","Raft Consensus","Consenso Raft",trivial-example

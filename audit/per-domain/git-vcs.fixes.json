@@ -1,0 +1,341 @@
+{
+  "fixes": [
+    {
+      "level": "12",
+      "lesson": "git_config_3",
+      "english": "rerere.enabled",
+      "set": {
+        "italian": "rerere.enabled",
+        "note": "Chiave booleana di config. Quando attiva, Git salva le risoluzioni dei conflitti in .git/rr-cache e le riapplica."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "git_config_4",
+      "english": "export-ignore",
+      "set": {
+        "italian": "export-ignore",
+        "note": "Attributo di .gitattributes che esclude i file dagli archivi generati da git archive (tar/zip)."
+      }
+    },
+    {
+      "level": "15",
+      "lesson": "git_internals_2",
+      "english": "Reference",
+      "set": {
+        "english": "Symbolic Reference",
+        "italian": "riferimento simbolico (symbolic ref)",
+        "example": "HEAD is a symbolic reference that points to the current branch ref instead of a commit hash directly. = HEAD e' un riferimento simbolico che punta alla ref del branch corrente invece che direttamente a un hash di commit.",
+        "note": "Le symbolic ref permettono il dereference automatico verso il commit reale."
+      }
+    },
+    {
+      "level": "5",
+      "lesson": "git_collaboration_3",
+      "english": "Open Source",
+      "set": {
+        "english": "Open Source License",
+        "italian": "licenza open source",
+        "example": "Choosing an open source license like MIT or Apache 2.0 determines how others can reuse your code. = Scegliere una licenza open source come MIT o Apache 2.0 determina come gli altri possono riutilizzare il tuo codice.",
+        "note": "Senza una licenza esplicita, il codice e' considerato 'all rights reserved' di default."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "git_advworkflow_4",
+      "english": "Commit Message",
+      "set": {
+        "english": "Commit Message Body",
+        "italian": "corpo del messaggio di commit",
+        "example": "The commit message body explains why a change was made, separated from the subject by a blank line. = Il corpo del messaggio di commit spiega perche' e' stata fatta una modifica, separato dal soggetto da una riga vuota.",
+        "note": "La convenzione prevede subject di max 50 caratteri e body wrappato a 72."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "git_advworkflow_4",
+      "english": "Atomic Commit",
+      "set": {
+        "english": "Atomic Commit Principle",
+        "italian": "principio del commit atomico",
+        "example": "Following the atomic commit principle means each commit represents one logical change that can be reverted independently. = Seguire il principio del commit atomico significa che ogni commit rappresenta un singolo cambiamento logico revertibile in modo indipendente.",
+        "note": "Facilita git bisect, code review e i revert chirurgici."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "git_professional_3",
+      "english": "README",
+      "set": {
+        "english": "README Badge",
+        "italian": "badge del README",
+        "example": "Adding a README badge for CI status gives visitors immediate confidence in the project's health. = Aggiungere un badge del README per lo stato della CI da' ai visitatori fiducia immediata nello stato di salute del progetto.",
+        "note": "Servizi come shields.io generano badge SVG da metriche di repo o CI."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "git_professional_2",
+      "english": "License File",
+      "set": {
+        "english": "License File Header",
+        "italian": "intestazione del file di licenza",
+        "example": "Some projects require a license file header at the top of every source file to make attribution explicit. = Alcuni progetti richiedono un'intestazione del file di licenza in cima a ogni file sorgente per rendere esplicita l'attribuzione.",
+        "note": "Strumenti come addlicense automatizzano l'inserimento dell'header nei file."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "git_cicd_1",
+      "english": "Workflow",
+      "set": {
+        "english": "Workflow File",
+        "italian": "file di workflow",
+        "example": "GitHub Actions reads each workflow file under .github/workflows/ and executes its jobs on the triggered events. = GitHub Actions legge ogni file di workflow sotto .github/workflows/ ed esegue i suoi job sugli eventi triggherati.",
+        "note": "I file di workflow sono YAML e supportano matrici, condizioni e reusable workflows."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "git_troubleshooting_4",
+      "english": "Detached HEAD",
+      "set": {
+        "english": "Detached HEAD Warning",
+        "italian": "avviso di detached HEAD",
+        "example": "After checking out a tag, the detached HEAD warning reminds you that new commits won't belong to any branch. = Dopo aver fatto checkout di un tag, l'avviso di detached HEAD ti ricorda che i nuovi commit non apparterranno ad alcun branch.",
+        "note": "Per non perdere il lavoro, crea subito un branch con git switch -c."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "git_troubleshooting_2",
+      "english": "Branch Protection",
+      "set": {
+        "english": "Branch Protection Bypass",
+        "italian": "bypass della branch protection",
+        "example": "Only admins should have branch protection bypass enabled, and every use should be logged for audit. = Solo gli amministratori dovrebbero avere il bypass della branch protection abilitato, e ogni uso andrebbe loggato per l'audit.",
+        "note": "GitHub Enterprise traccia i bypass nell'audit log dell'organizzazione."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "git_advanced_2",
+      "english": "Squash Merge",
+      "set": {
+        "english": "Squash Merge Strategy",
+        "italian": "strategia di squash merge",
+        "example": "The squash merge strategy condenses every commit on a feature branch into a single commit on main. = La strategia di squash merge condensa ogni commit di un feature branch in un singolo commit su main.",
+        "note": "Mantiene una history lineare ma perde la granularita' dei commit originali."
+      }
+    },
+    {
+      "level": "7",
+      "lesson": "git_history_1",
+      "english": "Linear History",
+      "set": {
+        "english": "Linear History Policy",
+        "italian": "policy di history lineare",
+        "example": "Enabling a linear history policy on main forces every PR to be rebased or squashed before merging. = Abilitare una policy di history lineare su main forza ogni PR a essere rebasato o squashato prima del merge.",
+        "note": "GitHub e GitLab offrono questa opzione tra le branch protection rules."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "git_security_1",
+      "english": "Personal Access Token",
+      "set": {
+        "english": "Fine-grained Personal Access Token",
+        "italian": "personal access token fine-grained",
+        "example": "GitHub recommends a fine-grained personal access token scoped to specific repos instead of the classic PAT. = GitHub raccomanda un personal access token fine-grained limitato a repo specifici invece del PAT classico.",
+        "note": "I token fine-grained scadono obbligatoriamente e supportano permessi per risorsa."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "git_security_2",
+      "english": "SSH Key",
+      "set": {
+        "english": "SSH Key Passphrase",
+        "italian": "passphrase della chiave SSH",
+        "example": "Setting an SSH key passphrase protects the private key on disk even if the file is leaked. = Impostare una passphrase della chiave SSH protegge la chiave privata su disco anche se il file viene compromesso.",
+        "note": "ssh-agent memorizza la passphrase decifrata per la sessione corrente."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "git_security_2",
+      "english": "Public Key",
+      "set": {
+        "english": "Public Key Fingerprint",
+        "italian": "fingerprint della chiave pubblica",
+        "example": "Comparing the public key fingerprint shown by ssh-keygen -lf with the one on GitHub confirms authenticity. = Confrontare il fingerprint della chiave pubblica mostrato da ssh-keygen -lf con quello su GitHub ne conferma l'autenticita'.",
+        "note": "Le fingerprint moderne usano SHA256 mentre quelle legacy usavano MD5."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "git_security_2",
+      "english": "Private Key",
+      "set": {
+        "english": "Private Key Permissions",
+        "italian": "permessi della chiave privata",
+        "example": "SSH refuses to use a key when private key permissions are too open, expecting 600 on Unix systems. = SSH rifiuta di usare una chiave quando i permessi della chiave privata sono troppo aperti, aspettandosi 600 su sistemi Unix.",
+        "note": "Usa chmod 600 ~/.ssh/id_ed25519 per allinearti al requisito di SSH."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "git_platforms_2",
+      "english": "Merge Request",
+      "set": {
+        "english": "Merge Request Pipeline",
+        "italian": "pipeline della merge request",
+        "example": "GitLab runs a dedicated merge request pipeline that tests the post-merge result rather than the source branch alone. = GitLab esegue una pipeline della merge request dedicata che testa il risultato post-merge invece del solo branch sorgente.",
+        "note": "Si distingue dalle branch pipeline perche' usa un merge ref effimero."
+      }
+    },
+    {
+      "level": "11",
+      "lesson": "git_advworkflow_3",
+      "english": "Code Review",
+      "set": {
+        "english": "Code Review Checklist",
+        "italian": "checklist di code review",
+        "example": "Teams often standardize a code review checklist covering tests, security, and naming before approving a PR. = I team spesso standardizzano una checklist di code review che copre test, sicurezza e naming prima di approvare una PR.",
+        "note": "Riduce il carico cognitivo del reviewer e rende la revisione piu' uniforme."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "git_professional_2",
+      "english": "Maintainer",
+      "set": {
+        "english": "Maintainer Responsibility",
+        "italian": "responsabilita' del maintainer",
+        "example": "A core maintainer responsibility is triaging incoming issues and guiding contributors toward acceptable patches. = Una responsabilita' chiave del maintainer e' il triage delle issue in arrivo e guidare i contributor verso patch accettabili.",
+        "note": "I burnout dei maintainer sono uno dei rischi di sostenibilita' nell'open source."
+      }
+    },
+    {
+      "level": "23",
+      "lesson": "git_professional_2",
+      "english": "CLA",
+      "set": {
+        "english": "CLA Bot",
+        "italian": "bot per la CLA",
+        "example": "Projects like Kubernetes install a CLA bot that blocks PRs until the contributor signs the agreement. = Progetti come Kubernetes installano un bot per la CLA che blocca le PR finche' il contributor non firma l'accordo.",
+        "note": "EasyCLA della Linux Foundation e' uno dei piu' diffusi."
+      }
+    },
+    {
+      "level": "21",
+      "lesson": "git_platforms_1",
+      "english": "GitHub",
+      "set": {
+        "english": "GitHub Enterprise",
+        "italian": "GitHub Enterprise",
+        "example": "Large companies host their own GitHub Enterprise instance to keep source code inside the corporate network. = Le grandi aziende ospitano una propria istanza GitHub Enterprise per mantenere il codice sorgente dentro la rete aziendale.",
+        "note": "Esistono due varianti: Enterprise Cloud (SaaS) e Enterprise Server (self-hosted)."
+      }
+    },
+    {
+      "level": "16",
+      "lesson": "git_cicd_4",
+      "english": "Continuous Deployment",
+      "set": {
+        "english": "Continuous Deployment Pipeline",
+        "italian": "pipeline di continuous deployment",
+        "example": "A mature continuous deployment pipeline pushes every green commit on main straight to production without human gates. = Una pipeline di continuous deployment matura spinge ogni commit verde su main direttamente in produzione senza gate umani.",
+        "note": "Si distingue dal continuous delivery, dove l'ultimo step di deploy resta manuale."
+      }
+    },
+    {
+      "level": "17",
+      "lesson": "git_monorepo_4",
+      "english": "Trunk-based Development",
+      "set": {
+        "english": "Trunk-based Development at Scale",
+        "italian": "trunk-based development su larga scala",
+        "example": "Adopting trunk-based development at scale in a monorepo requires fast CI and feature flags to hide unfinished code. = Adottare il trunk-based development su larga scala in un monorepo richiede una CI veloce e feature flag per nascondere il codice incompleto.",
+        "note": "Google e Meta sono casi classici di TBD applicato a migliaia di sviluppatori."
+      }
+    },
+    {
+      "level": "13",
+      "lesson": "git_advanced_4",
+      "english": "Release Train",
+      "set": {
+        "english": "Release Train Cadence",
+        "italian": "cadenza del release train",
+        "example": "Chrome ships on a fixed release train cadence, cutting a new stable branch every four weeks regardless of feature readiness. = Chrome rilascia con una cadenza fissa del release train, tagliando un nuovo branch stabile ogni quattro settimane indipendentemente dalla maturita' delle feature.",
+        "note": "Le feature non pronte vengono semplicemente posticipate al treno successivo."
+      }
+    },
+    {
+      "level": "9",
+      "lesson": "git_managing_2",
+      "english": "Skip Commit",
+      "set": {
+        "english": "Skip Commit During Rebase",
+        "italian": "saltare un commit durante un rebase",
+        "example": "When a rebase stops on a conflict you no longer want, you can skip commit during rebase with git rebase --skip. = Quando un rebase si ferma su un conflitto che non vuoi piu', puoi saltare quel commit durante il rebase con git rebase --skip.",
+        "note": "Il commit saltato non finisce nella nuova history e va perso se non referenziato."
+      }
+    },
+    {
+      "level": "19",
+      "lesson": "git_advanced_x_2",
+      "english": "Rewrite History",
+      "set": {
+        "english": "Rewrite History with filter-repo",
+        "italian": "riscrivere la history con filter-repo",
+        "example": "To purge a leaked secret from every commit you rewrite history with filter-repo, then force-push and rotate the credential. = Per ripulire un segreto trapelato da ogni commit si riscrive la history con filter-repo, poi si fa force-push e si ruota la credenziale.",
+        "note": "git-filter-repo ha sostituito il deprecato filter-branch per le riscritture massive."
+      }
+    },
+    {
+      "level": "20",
+      "lesson": "git_security_1",
+      "english": "Credential Helper",
+      "set": {
+        "english": "Credential Helper Store",
+        "italian": "credential helper store",
+        "example": "Avoid the credential helper store in production: it writes passwords in plain text under ~/.git-credentials. = Evita il credential helper store in produzione: scrive le password in chiaro sotto ~/.git-credentials.",
+        "note": "Preferisci 'manager' su Windows/macOS o 'libsecret' su Linux per cifratura nativa."
+      }
+    },
+    {
+      "level": "12",
+      "lesson": "git_config_4",
+      "english": "Global gitignore",
+      "set": {
+        "english": "core.excludesFile Path",
+        "italian": "percorso di core.excludesFile",
+        "example": "Setting the core.excludesFile path with git config --global lets you point Git to a custom global ignore file. = Impostare il percorso di core.excludesFile con git config --global ti permette di puntare Git verso un file di ignore globale personalizzato.",
+        "note": "Il default e' ~/.config/git/ignore se la chiave non e' impostata."
+      }
+    },
+    {
+      "level": "18",
+      "lesson": "git_troubleshooting_3",
+      "english": "Missing Object",
+      "set": {
+        "english": "Missing Object Recovery",
+        "italian": "recupero di oggetti mancanti",
+        "example": "Run git fsck and then git fetch from a known good remote to attempt missing object recovery on a corrupted repo. = Esegui git fsck e poi git fetch da un remote integro per tentare il recupero di oggetti mancanti su un repo corrotto.",
+        "note": "Se l'oggetto non e' in alcun remote, e' definitivamente perso."
+      }
+    },
+    {
+      "level": "22",
+      "lesson": "git_automation_2",
+      "english": "Dependabot",
+      "set": {
+        "english": "Dependabot Grouped Updates",
+        "italian": "aggiornamenti raggruppati di Dependabot",
+        "example": "Configuring Dependabot grouped updates reduces PR noise by combining minor and patch bumps into a single weekly PR. = Configurare aggiornamenti raggruppati di Dependabot riduce il rumore delle PR combinando bump minor e patch in un'unica PR settimanale.",
+        "note": "Si configurano in .github/dependabot.yml con la chiave 'groups'."
+      }
+    }
+  ]
+}

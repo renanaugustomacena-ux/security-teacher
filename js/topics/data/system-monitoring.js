@@ -459,14 +459,14 @@ export default {
             },
             {
               english: 'Time Range',
-              italian: 'Intervallo temporale',
+              italian: 'Intervallo temporale predefinito',
               pronunciation: '/taɪm reɪndʒ/',
               phonetic: 'TAIM REINJ',
-              example:
-                "Set the time range to last 24 hours. = Imposta l'intervallo temporale alle ultime 24 ore.",
+              example: `Setting the default time range to last 1 hour keeps dashboards focused on recent activity without overwhelming new viewers. = Impostare l'intervallo temporale predefinito alle ultime 1 ora mantiene le dashboard focalizzate sull'attivita' recente senza sovraccaricare i nuovi utenti.`,
               context: 'observability',
               difficulty: 'beginner',
               tool: 'Grafana',
+              rename_to: 'Default Time Range',
             },
             {
               english: 'Granularity',
@@ -499,8 +499,7 @@ export default {
               italian: 'Utilizzo della CPU',
               pronunciation: '/siː piː juː ˈjuːsɪdʒ/',
               phonetic: 'SI-PI-IU IU-sij',
-              example:
-                "CPU usage spiked to 95% during the load test. = L'utilizzo della CPU è schizzato al 95% durante il test di carico.",
+              example: `A sustained spike above 90% in this metric often signals a runaway loop or insufficient capacity for the workload. = Un picco prolungato sopra il 90% in questa metrica spesso segnala un loop fuori controllo o capacita' insufficiente per il carico di lavoro.`,
               context: 'metrics',
               difficulty: 'beginner',
               command: 'top',
@@ -523,8 +522,7 @@ export default {
               italian: 'Utilizzo della memoria',
               pronunciation: '/ˈmeməri ˈjuːsɪdʒ/',
               phonetic: 'ME-mo-ri IU-sij',
-              example:
-                "Memory usage approaches the container limit. = L'utilizzo della memoria si avvicina al limite del container.",
+              example: `Watching this metric helps you catch leaks early, before the OOM killer terminates the process at 2 AM. = Monitorare questa metrica aiuta a individuare le perdite per tempo, prima che l'OOM killer termini il processo alle 2 di notte.`,
               context: 'metrics',
               difficulty: 'beginner',
               command: 'free -h',
@@ -556,8 +554,7 @@ export default {
               italian: 'Killer per memoria esaurita',
               pronunciation: '/oʊ oʊ em ˈkɪlər/',
               phonetic: 'O-O-EM KI-ler',
-              example:
-                "The OOM killer terminated the process. = L'OOM killer ha terminato il processo.",
+              example: `When Linux runs out of memory, the OOM killer picks the highest-scoring process and terminates it to keep the system alive. = Quando Linux esaurisce la memoria, l'OOM killer seleziona il processo con il punteggio piu' alto e lo termina per mantenere il sistema attivo.`,
               context: 'metrics',
               difficulty: 'beginner',
               note: 'Out Of Memory: il kernel Linux uccide processi quando la RAM finisce.',
@@ -601,7 +598,7 @@ export default {
               pronunciation: '/siː piː juː ˈθrɒtlɪŋ/',
               phonetic: 'SI-PI-IU TROT-ling',
               example:
-                'CPU throttling slows down hot containers. = Il throttling rallenta i container "caldi".',
+                'Kubernetes enforces this on containers exceeding their CPU limit, causing latency spikes that are easy to miss without container metrics. = Kubernetes lo applica sui container che superano il loro limite di CPU, causando picchi di latenza facili da non notare senza metriche dei container.',
               context: 'metrics',
               difficulty: 'beginner',
               code: 'container_cpu_cfs_throttled_seconds_total',
@@ -663,7 +660,7 @@ export default {
               pronunciation: '/riːd ˈleɪtənsi/',
               phonetic: 'RID LEI-ten-si',
               example:
-                'Read latency increased after the cache flush. = La latenza di lettura è aumentata dopo il flush della cache.',
+                'A p99 above 50ms on this metric usually points to slow disks, hot keys, or a missing database index. = Un p99 sopra i 50ms su questa metrica solitamente indica dischi lenti, chiavi calde o un indice di database mancante.',
               context: 'metrics',
               difficulty: 'beginner',
             },
@@ -673,7 +670,7 @@ export default {
               pronunciation: '/raɪt ˈleɪtənsi/',
               phonetic: 'RAIT LEI-ten-si',
               example:
-                'Write latency spikes during fsync. = La latenza di scrittura ha picchi durante fsync.',
+                'Spikes in this metric during fsync calls often reveal a saturated disk or a noisy neighbor on shared storage. = Picchi in questa metrica durante le chiamate fsync spesso rivelano un disco saturo o un vicino rumoroso su storage condiviso.',
               context: 'metrics',
               difficulty: 'beginner',
             },
@@ -715,8 +712,7 @@ export default {
               italian: 'Spazio libero',
               pronunciation: '/dɪsk friː/',
               phonetic: 'DISK FRII',
-              example:
-                'Alert when disk free drops below 10%. = Allerta quando lo spazio libero scende sotto il 10%.',
+              example: `Alerting when disk free drops below 15% gives ops enough lead time to clean logs before the database refuses writes. = Allertare quando lo spazio libero scende sotto il 15% da' agli operatori tempo sufficiente per pulire i log prima che il database rifiuti le scritture.`,
               context: 'metrics',
               difficulty: 'beginner',
               code: 'node_filesystem_free_bytes / node_filesystem_size_bytes < 0.1',
@@ -751,22 +747,21 @@ export default {
             },
             {
               english: 'Latency',
-              italian: 'Latenza',
+              italian: 'Latenza end-to-end',
               pronunciation: '/ˈleɪtənsi/',
               phonetic: 'LEI-ten-si',
-              example:
-                'Network latency between regions is 100 ms. = La latenza di rete tra regioni è 100 ms.',
+              example: `End-to-end latency measures the full request path from browser to database and back, exposing slow hops invisible to component-level metrics. = La latenza end-to-end misura l'intero percorso della richiesta dal browser al database e ritorno, esponendo salti lenti invisibili alle metriche a livello di componente.`,
               context: 'metrics',
               difficulty: 'beginner',
               command: 'ping example.com',
+              rename_to: 'End-to-End Latency',
             },
             {
               english: 'Packet Loss',
               italian: 'Perdita di pacchetti',
               pronunciation: '/ˈpækɪt lɒs/',
               phonetic: 'PA-ket LOS',
-              example:
-                "Packet loss above 1% degrades video calls. = Una perdita di pacchetti sopra l'1% degrada le videochiamate.",
+              example: `Even 1% of this on a TCP link can cripple throughput because retransmissions and congestion control cut the window aggressively. = Anche l'1% di questo su un link TCP puo' paralizzare il throughput perche' ritrasmissioni e controllo della congestione riducono la finestra in modo aggressivo.`,
               context: 'metrics',
               difficulty: 'beginner',
               command: 'mtr example.com',
@@ -809,7 +804,7 @@ export default {
               pronunciation: '/ˈerərz pər ˈsekənd/',
               phonetic: 'E-rerz per SE-kend',
               example:
-                'Errors per second jumped after the deploy. = Gli errori al secondo sono saliti dopo il deploy.',
+                'Plotting this metric next to request rate makes spikes obvious and helps separate code bugs from traffic surges. = Tracciare questa metrica accanto al tasso di richieste rende evidenti i picchi e aiuta a separare bug di codice da impennate di traffico.',
               context: 'metrics',
               difficulty: 'beginner',
               code: 'rate(http_requests_total{code=~"5.."}[5m])',
@@ -848,8 +843,7 @@ export default {
               italian: 'Tasso di richieste',
               pronunciation: '/rɪˈkwest reɪt/',
               phonetic: 'ri-KUEST REIT',
-              example:
-                'Request rate jumped during the marketing campaign. = Il tasso di richieste è salito durante la campagna marketing.',
+              example: `Tracking this metric per endpoint helps capacity planning and reveals when a single client starts hammering the API. = Tracciare questa metrica per endpoint aiuta nella pianificazione della capacita' e rivela quando un singolo client inizia a martellare l'API.`,
               context: 'metrics',
               difficulty: 'beginner',
               code: 'rate(http_requests_total[5m])',
@@ -859,8 +853,7 @@ export default {
               italian: 'Tasso di errore',
               pronunciation: '/ˈerər reɪt/',
               phonetic: 'E-rer REIT',
-              example:
-                "Error rate above 1% triggers an alert. = Un tasso di errore sopra l'1% attiva un alert.",
+              example: `An SLO often caps this metric at 0.1%, so anything sustained above that immediately burns the error budget. = Uno SLO spesso limita questa metrica allo 0.1%, quindi qualsiasi valore prolungato sopra brucia immediatamente l'error budget.`,
               context: 'metrics',
               difficulty: 'beginner',
               code: 'sum(rate(http_requests_total{code=~"5.."}[5m])) / sum(rate(http_requests_total[5m]))',
@@ -871,7 +864,7 @@ export default {
               pronunciation: '/rɪˈspɒns taɪm/',
               phonetic: 'ri-SPONS TAIM',
               example:
-                'Average response time is under 200 ms. = Il tempo di risposta medio è sotto i 200 ms.',
+                'Page response time above 2 seconds typically pushes users to abandon the workflow, so this metric drives both UX and revenue. = Un tempo di risposta della pagina sopra i 2 secondi spinge tipicamente gli utenti ad abbandonare il flusso, quindi questa metrica influenza sia UX sia ricavi.',
               context: 'metrics',
               difficulty: 'beginner',
             },
@@ -892,21 +885,20 @@ export default {
               italian: 'Lunghezza della coda',
               pronunciation: '/kjuː leŋθ/',
               phonetic: 'KIU LENGTH',
-              example:
-                "Queue length growing means consumers can't keep up. = Una coda che cresce significa che i consumatori non riescono a stare al passo.",
+              example: `A growing value in this metric is a leading indicator: consumers are falling behind producers and back-pressure will hit soon. = Un valore crescente in questa metrica e' un indicatore anticipatore: i consumer sono in ritardo sui producer e la back-pressure colpira' presto.`,
               context: 'metrics',
               difficulty: 'beginner',
             },
             {
               english: 'Saturation',
-              italian: 'Saturazione',
+              italian: 'Saturazione delle risorse',
               pronunciation: '/ˌsætʃəˈreɪʃən/',
               phonetic: 'sa-cu-REI-scion',
-              example:
-                'When CPU saturation hits 100%, new requests queue up and latency climbs rapidly. = Quando la saturazione della CPU raggiunge il 100%, le nuove richieste si accodano e la latenza sale rapidamente.',
+              example: `Resource saturation tracks how full a queue or pool is; above 80% you typically see latency curves bend sharply upward. = La saturazione delle risorse misura quanto e' piena una coda o un pool; sopra l'80% le curve di latenza tipicamente si piegano bruscamente verso l'alto.`,
               context: 'metrics',
               difficulty: 'beginner',
               note: 'Una delle quattro USE: Utilization, Saturation, Errors.',
+              rename_to: 'Resource Saturation',
             },
             {
               english: 'Concurrency',
@@ -923,8 +915,7 @@ export default {
               italian: 'Utenti attivi',
               pronunciation: '/ˈæktɪv ˈjuːzərz/',
               phonetic: 'AK-tiv IU-serz',
-              example:
-                'Active users dropped 20% after the bug. = Gli utenti attivi sono calati del 20% dopo il bug.',
+              example: `Plotting this metric alongside CPU usage helps prove that a 3 PM slowdown coincides with daily user peak load. = Tracciare questa metrica insieme all'uso di CPU aiuta a dimostrare che un rallentamento alle 15 coincide con il picco giornaliero di utenti.`,
               context: 'metrics',
               difficulty: 'beginner',
             },
@@ -1056,14 +1047,14 @@ export default {
             },
             {
               english: 'Severity',
-              italian: 'Severità',
+              italian: `Severita' del log`,
               pronunciation: '/sɪˈverɪti/',
               phonetic: 'se-VE-ri-ti',
-              example:
-                'In Kibana you can filter log entries by severity to quickly isolate errors from the noise. = In Kibana puoi filtrare le voci di log per severità per isolare rapidamente gli errori dal rumore.',
+              example: `Log severity ranges from DEBUG to FATAL and lets you filter noisy environments to just the lines worth a 3 AM page. = La severita' del log varia da DEBUG a FATAL e permette di filtrare ambienti rumorosi mostrando solo le righe che meritano una chiamata alle 3 di notte.`,
               context: 'logs',
               difficulty: 'beginner',
               tool: 'Kibana',
+              rename_to: 'Log Severity',
             },
             {
               english: 'Log Threshold',
@@ -1130,8 +1121,7 @@ export default {
               italian: 'Contesto',
               pronunciation: '/ˈkɒntekst/',
               phonetic: 'KON-tekst',
-              example:
-                'Add user_id and request_id as context. = Aggiungi user_id e request_id come contesto.',
+              example: `Attaching context like request_id and user_id to every log line lets you reconstruct a full user journey across services. = Allegare contesto come request_id e user_id a ogni riga di log permette di ricostruire l'intero percorso di un utente attraverso i servizi.`,
               context: 'logs',
               difficulty: 'beginner',
               note: 'Campi extra che aiutano la diagnosi.',
@@ -1152,8 +1142,7 @@ export default {
               italian: 'Log in testo semplice',
               pronunciation: '/pleɪn tekst lɒɡ/',
               phonetic: 'PLEIN TEKST LOG',
-              example:
-                'Plain text logs are hard to query at scale. = I log in testo semplice sono difficili da interrogare su larga scala.',
+              example: `Old syslog-style output is hard to query; teams often migrate from plain text to JSON to unlock structured log search. = L'output vecchio stile syslog e' difficile da interrogare; i team spesso migrano dal testo semplice al JSON per sbloccare la ricerca strutturata sui log.`,
               context: 'logs',
               difficulty: 'beginner',
             },
@@ -1282,7 +1271,7 @@ export default {
               pronunciation: '/fəˈsɪlɪti/',
               phonetic: 'fa-SI-li-ti',
               example:
-                "Use the local0 facility for app logs. = Usa la facility local0 per i log dell'app.",
+                'In syslog, the facility code (like auth, cron, mail) lets the daemon route messages to different files automatically. = In syslog, il codice di facility (come auth, cron, mail) permette al daemon di instradare i messaggi automaticamente verso file diversi.',
               context: 'logs',
               difficulty: 'beginner',
               note: 'Concetto syslog: identifica la sorgente.',
@@ -1302,8 +1291,7 @@ export default {
               italian: 'File di log',
               pronunciation: '/lɒɡ faɪl/',
               phonetic: 'LOG FAIL',
-              example:
-                'Tail the log file to see live events. = Fai tail sul file di log per vedere eventi live.',
+              example: `A typical log file under /var/log can grow to gigabytes per day, so rotation and compression are essential to avoid filling disks. = Un tipico file di log sotto /var/log puo' crescere fino a gigabyte al giorno, quindi rotazione e compressione sono essenziali per evitare di riempire i dischi.`,
               context: 'logs',
               difficulty: 'beginner',
               command: 'tail -f /var/log/app.log',
@@ -1452,7 +1440,7 @@ export default {
             },
             {
               english: 'Elasticsearch',
-              italian: 'Elasticsearch (motore di ricerca distribuito)',
+              italian: 'Elasticsearch',
               pronunciation: '/ɪˈlæstɪkˌsɜːrtʃ/',
               phonetic: 'i-LAS-tik-serch',
               example:
@@ -1461,10 +1449,11 @@ export default {
               difficulty: 'beginner',
               command: 'curl http://localhost:9200/_cat/indices',
               tool: 'Elasticsearch',
+              note: 'Motore di ricerca e analisi distribuito basato su Lucene; cuore dello stack ELK per indicizzare e interrogare grandi volumi di log.',
             },
             {
               english: 'Logstash',
-              italian: 'Logstash (pipeline di ingestione log)',
+              italian: 'Logstash',
               pronunciation: '/ˈlɒɡstæʃ/',
               phonetic: 'LOG-stash',
               example:
@@ -1472,11 +1461,11 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               tool: 'Logstash',
-              note: 'Pesante in memoria; spesso sostituito con Filebeat o Fluent Bit.',
+              note: 'Pipeline di ingestione e trasformazione dati dello stack Elastic; legge da input, applica filtri e scrive verso output come Elasticsearch.',
             },
             {
               english: 'Kibana',
-              italian: 'Kibana (interfaccia visualizzazione Elasticsearch)',
+              italian: 'Kibana',
               pronunciation: '/kɪˈbɑːnə/',
               phonetic: 'ki-BA-na',
               example:
@@ -1484,6 +1473,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               tool: 'Kibana',
+              note: 'Interfaccia web di visualizzazione e analisi per dati Elasticsearch: dashboard, ricerca interattiva e gestione degli indici.',
             },
             {
               english: 'Beats',
@@ -1543,15 +1533,17 @@ export default {
             },
             {
               english: 'KQL',
-              italian: 'KQL (Kibana Query Language)',
+              italian: 'Kibana Query Language',
               pronunciation: '/keɪ kjuː el/',
               phonetic: 'KEI-KIU-EL',
               example:
-                "Using KQL in Kibana, we queried all 500 errors on host web-1 in the last hour with a single expression. = Usando KQL in Kibana, abbiamo interrogato tutti gli errori 500 sull'host web-1 nell'ultima ora con una singola espressione.",
+                'Kibana Query Language lets analysts write status:500 AND service:checkout to pinpoint failing checkout requests in seconds. = Il Kibana Query Language permette agli analisti di scrivere status:500 AND service:checkout per individuare in pochi secondi le richieste di checkout fallite.',
               context: 'logs',
               difficulty: 'beginner',
               code: 'response.status_code: 500 and host.name: "web-1"',
               tool: 'Kibana',
+              note: 'Kibana Query Language: sintassi compatta per filtrare documenti in Kibana usando coppie campo:valore e operatori booleani.',
+              rename_to: 'Kibana Query Language',
             },
           ],
         },
@@ -1562,7 +1554,7 @@ export default {
           items: [
             {
               english: 'Loki',
-              italian: 'Loki (sistema di log Grafana)',
+              italian: 'Loki',
               pronunciation: '/ˈloʊki/',
               phonetic: 'LO-ki',
               example:
@@ -1570,7 +1562,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               tool: 'Loki',
-              note: 'Indicizza solo le label, non il contenuto: meno costoso.',
+              note: 'Sistema di aggregazione log di Grafana Labs: indicizza solo le label (non il contenuto), riducendo costi rispetto a Elasticsearch.',
             },
             {
               english: 'LogQL',
@@ -1682,7 +1674,7 @@ export default {
           items: [
             {
               english: 'Fluentd',
-              italian: 'Fluentd (raccoglitore log unificato)',
+              italian: 'Fluentd',
               pronunciation: '/ˈfluːəntdiː/',
               phonetic: 'FLU-ent-DI',
               example:
@@ -1690,11 +1682,11 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               tool: 'Fluentd',
-              note: 'Progetto CNCF graduato; scritto in Ruby.',
+              note: 'Raccoglitore log unificato CNCF scritto in Ruby/C; usa plugin per input, filtri e output verso decine di backend.',
             },
             {
               english: 'Fluent Bit',
-              italian: 'Fluent Bit (raccoglitore log leggero)',
+              italian: 'Fluent Bit',
               pronunciation: '/ˈfluːənt bɪt/',
               phonetic: 'FLU-ent BIT',
               example:
@@ -1702,7 +1694,7 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               tool: 'Fluent Bit',
-              note: 'Ideale come DaemonSet in Kubernetes.',
+              note: 'Versione leggera di Fluentd scritta in C, pensata per container e edge: bassa memoria e alte prestazioni.',
             },
             {
               english: 'Source',
@@ -1750,14 +1742,15 @@ export default {
             },
             {
               english: 'Tag',
-              italian: 'Etichetta (Tag)',
+              italian: 'Tag Fluentd',
               pronunciation: '/tæɡ/',
               phonetic: 'TAG',
               example:
-                'Tags route logs through Fluentd plugins. = I tag instradano i log attraverso i plugin Fluentd.',
+                'A Fluentd tag like app.web.access drives match blocks: source plugins assign it and output plugins use it to filter events. = Un tag Fluentd come app.web.access guida i blocchi match: i plugin sorgente lo assegnano e i plugin di output lo usano per filtrare gli eventi.',
               context: 'logs',
               difficulty: 'beginner',
               code: 'tag nginx.access',
+              rename_to: 'Fluentd Tag',
             },
             {
               english: 'Plugin',
@@ -1800,7 +1793,7 @@ export default {
           items: [
             {
               english: 'CloudWatch Logs',
-              italian: 'CloudWatch Logs (servizio log AWS)',
+              italian: 'CloudWatch Logs',
               pronunciation: '/klaʊdwɒtʃ lɒɡz/',
               phonetic: 'KLAUD-uoch LOGZ',
               example:
@@ -1809,6 +1802,7 @@ export default {
               difficulty: 'beginner',
               tool: 'AWS CloudWatch',
               command: 'aws logs tail /aws/lambda/my-fn --follow',
+              note: 'Servizio AWS per raccogliere, conservare e ricercare log di applicazioni e servizi cloud; integrato con CloudWatch Metrics e Alarms.',
             },
             {
               english: 'Log Group',
@@ -1834,7 +1828,7 @@ export default {
             },
             {
               english: 'Logs Insights',
-              italian: 'Logs Insights (query log AWS)',
+              italian: 'Logs Insights',
               pronunciation: '/lɒɡz ˈɪnsaɪts/',
               phonetic: 'LOGZ IN-saits',
               example:
@@ -1843,6 +1837,7 @@ export default {
               difficulty: 'beginner',
               code: 'fields @timestamp, @message | sort @timestamp desc',
               tool: 'AWS CloudWatch',
+              note: 'Linguaggio di query interattivo di CloudWatch Logs per aggregare, filtrare e visualizzare log con sintassi simile a pipe.',
             },
             {
               english: 'Stackdriver',
@@ -1858,19 +1853,20 @@ export default {
             },
             {
               english: 'Cloud Logging',
-              italian: 'Cloud Logging (servizio log Google)',
+              italian: 'GCP Cloud Logging',
               pronunciation: '/klaʊd ˈlɒɡɪŋ/',
               phonetic: 'KLAUD LOG-ing',
-              example:
-                'GKE automatically ships container stdout to Cloud Logging, so we get Kubernetes logs without extra agents. = GKE invia automaticamente lo stdout dei container a Cloud Logging, così otteniamo i log Kubernetes senza agent aggiuntivi.',
+              example: `GCP Cloud Logging can route entries via sinks to BigQuery, Pub/Sub or Cloud Storage, enabling long-term analytics and compliance archives. = GCP Cloud Logging puo' instradare le voci tramite sink verso BigQuery, Pub/Sub o Cloud Storage, abilitando analisi a lungo termine e archivi di compliance.`,
               context: 'logs',
               difficulty: 'beginner',
               tool: 'GCP',
               command: 'gcloud logging read "severity>=ERROR"',
+              note: 'Servizio gestito di Google Cloud per ingestione, conservazione e ricerca dei log; integrato con Cloud Monitoring e BigQuery.',
+              rename_to: 'GCP Cloud Logging',
             },
             {
               english: 'Azure Monitor Logs',
-              italian: 'Azure Monitor Logs (servizio log Azure)',
+              italian: 'Azure Monitor Logs',
               pronunciation: '/ˈæʒər ˈmɒnɪtər lɒɡz/',
               phonetic: 'A-jur MON-i-tor LOGZ',
               example:
@@ -1878,10 +1874,11 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               tool: 'Azure Monitor',
+              note: 'Componente di Azure Monitor che raccoglie e indicizza log in workspace Log Analytics, interrogabili in KQL.',
             },
             {
               english: 'Datadog Logs',
-              italian: 'Datadog Logs (servizio log Datadog)',
+              italian: 'Datadog Logs',
               pronunciation: '/ˈdætədɒɡ lɒɡz/',
               phonetic: 'DA-ta-dog LOGZ',
               example:
@@ -1889,18 +1886,20 @@ export default {
               context: 'logs',
               difficulty: 'beginner',
               tool: 'Datadog',
+              note: 'Modulo di gestione log SaaS di Datadog: ingestione, archiviazione tiered, pipeline di parsing e correlazione con metriche e tracce.',
             },
             {
               english: 'Splunk',
-              italian: 'Splunk (piattaforma SIEM e log)',
+              italian: 'Splunk SPL',
               pronunciation: '/splʌŋk/',
               phonetic: 'SPLANK',
               example:
-                'The security team uses Splunk to correlate firewall logs with application events for threat detection. = Il team di sicurezza usa Splunk per correlare i log del firewall con gli eventi applicativi per il rilevamento delle minacce.',
+                'Splunk SPL pipes operators together, so index=web status=500 | stats count by host quickly shows error counts per host. = Splunk SPL concatena operatori in pipe, quindi index=web status=500 | stats count by host mostra rapidamente i conteggi di errori per host.',
               context: 'logs',
               difficulty: 'beginner',
               tool: 'Splunk',
-              note: 'Costoso ma molto diffuso in ambito enterprise.',
+              note: 'Piattaforma proprietaria per ricerca, monitoraggio e analisi di dati machine-generated; storica nel SIEM e nella log analytics.',
+              rename_to: 'Splunk SPL',
             },
             {
               english: 'Ingest Rate',
@@ -1998,14 +1997,14 @@ export default {
             },
             {
               english: 'Annotation',
-              italian: 'Annotazione',
+              italian: 'Annotazione Alertmanager',
               pronunciation: '/ˌænəˈteɪʃən/',
               phonetic: 'an-no-TEI-scion',
-              example:
-                "Every alert includes an annotation with the runbook URL so the on-call engineer can start troubleshooting immediately. = Ogni alert include un'annotazione con l'URL del runbook così l'ingegnere reperibile può iniziare la diagnosi immediatamente.",
+              example: `An Alertmanager annotation like summary: "high error rate" provides human-friendly context that ends up directly in the PagerDuty notification. = Un'annotazione Alertmanager come summary: "high error rate" fornisce contesto leggibile che finisce direttamente nella notifica PagerDuty.`,
               context: 'alerting',
               difficulty: 'intermediate',
               code: 'annotations:\n  summary: "DB latency high"',
+              rename_to: 'Alertmanager Annotation',
             },
             {
               english: 'Notification',
@@ -2035,7 +2034,7 @@ export default {
               pronunciation: '/ˈsaɪləns/',
               phonetic: 'SAI-lens',
               example:
-                "Silence the alert during the maintenance window. = Silenzia l'alert durante la finestra di manutenzione.",
+                'Adding a 2-hour silence in Alertmanager before maintenance prevents pagers from firing while engineers intentionally restart services. = Aggiungere un silenziamento di 2 ore in Alertmanager prima della manutenzione evita che i pager si attivino mentre gli ingegneri riavviano intenzionalmente i servizi.',
               context: 'alerting',
               difficulty: 'intermediate',
               tool: 'Alertmanager',
@@ -2096,8 +2095,7 @@ export default {
               italian: 'Prendere in carico',
               pronunciation: '/əkˈnɒlɪdʒ/',
               phonetic: 'ak-NO-lij',
-              example:
-                "Acknowledge the alert before working on it. = Prendi in carico l'alert prima di lavorarci.",
+              example: `The on-call engineer must acknowledge a PagerDuty alert within 5 minutes, otherwise it escalates to the secondary rotation. = L'ingegnere on-call deve prendere in carico un alert PagerDuty entro 5 minuti, altrimenti viene escalato al secondario.`,
               context: 'alerting',
               difficulty: 'intermediate',
               note: 'Ack ferma le rinotifiche.',
@@ -2107,8 +2105,7 @@ export default {
               italian: 'Risolvere',
               pronunciation: '/rɪˈzɒlv/',
               phonetic: 'ri-SOLV',
-              example:
-                "Resolve the alert when service is restored. = Risolvi l'alert quando il servizio è ripristinato.",
+              example: `Once metrics return to baseline, the responder marks the incident as resolved so the postmortem timeline can be closed. = Quando le metriche tornano alla baseline, il responsabile contrassegna l'incidente come risolto cosi' che la timeline del postmortem possa essere chiusa.`,
               context: 'alerting',
               difficulty: 'intermediate',
             },
@@ -2117,8 +2114,7 @@ export default {
               italian: 'Primario',
               pronunciation: '/ˈpraɪməri/',
               phonetic: 'PRAI-ma-ri',
-              example:
-                'The primary on-call gets paged first. = Il primario di reperibilità viene chiamato per primo.',
+              example: `The primary on-call carries the pager during business hours and is the first responder for any production alert. = Il primario on-call porta il pager durante l'orario lavorativo ed e' il primo responsabile per qualsiasi alert di produzione.`,
               context: 'alerting',
               difficulty: 'intermediate',
             },
@@ -2138,20 +2134,20 @@ export default {
               pronunciation: '/ˈhændˌoʊvər/',
               phonetic: 'HAND-o-ver',
               example:
-                'On-call handover happens every Monday. = Il passaggio di consegne avviene ogni lunedì.',
+                'A weekly on-call handover document lists ongoing incidents, known flaky alerts and any silences still in effect. = Un documento settimanale di passaggio di consegne on-call elenca gli incidenti in corso, gli alert noti instabili e i silenziamenti ancora attivi.',
               context: 'alerting',
               difficulty: 'intermediate',
             },
             {
               english: 'Override',
-              italian: 'Sostituzione',
+              italian: 'Sostituzione della rotazione',
               pronunciation: '/ˌoʊvərˈraɪd/',
               phonetic: 'o-ver-RAID',
-              example:
-                'I need an override to skip my on-call. = Mi serve un override per saltare la mia reperibilità.',
+              example: `A rotation override in PagerDuty replaces the scheduled on-call for a fixed window without rewriting the entire rotation rules. = Una sostituzione della rotazione in PagerDuty rimpiazza l'on-call programmato per una finestra fissa senza riscrivere le intere regole di rotazione.`,
               context: 'alerting',
               difficulty: 'intermediate',
               tool: 'PagerDuty',
+              rename_to: 'Rotation Override',
             },
           ],
         },
@@ -2196,8 +2192,7 @@ export default {
               italian: 'Notifica push',
               pronunciation: '/pʊʃ ˌnoʊtɪfɪˈkeɪʃən/',
               phonetic: 'PUSH no-ti-fi-KEI-scion',
-              example:
-                "Push notifications via the PagerDuty app. = Notifiche push tramite l'app PagerDuty.",
+              example: `Critical alerts often deliver a push notification to the on-call's phone so the pager triggers even when the app is in background. = Gli alert critici tipicamente inviano una notifica push al telefono dell'on-call cosi' che il pager si attivi anche con l'app in background.`,
               context: 'alerting',
               difficulty: 'intermediate',
               tool: 'PagerDuty',
@@ -2252,7 +2247,7 @@ export default {
               pronunciation: '/mjuːt/',
               phonetic: 'MIUT',
               example:
-                "Don't mute the pager during your shift. = Non silenziare il pager durante il tuo turno.",
+                'Engineers mute non-critical channels during deep work and rely only on pager-grade alerts to interrupt them. = Gli ingegneri silenziano i canali non critici durante il lavoro profondo e contano solo su alert di livello pager per interromperli.',
               context: 'alerting',
               difficulty: 'intermediate',
             },
@@ -2262,7 +2257,7 @@ export default {
               pronunciation: '/ˈkwaɪət ˈaʊərz/',
               phonetic: 'KUAI-et AU-erz',
               example:
-                'Quiet hours route alerts to email only. = Le quiet hours instradano gli alert solo a email.',
+                'Setting quiet hours from 11 PM to 7 AM downgrades non-critical alerts to email, protecting sleep without blocking real pages. = Impostare ore di silenzio dalle 23 alle 7 declassa gli alert non critici a email, proteggendo il sonno senza bloccare le chiamate reali.',
               context: 'alerting',
               difficulty: 'intermediate',
             },
@@ -2395,7 +2390,7 @@ export default {
           items: [
             {
               english: 'Prometheus',
-              italian: 'Prometheus (sistema monitoring time-series)',
+              italian: 'Prometheus',
               pronunciation: '/prəˈmiːθiəs/',
               phonetic: 'PRO-met-eus',
               example:
@@ -2403,7 +2398,7 @@ export default {
               context: 'prometheus',
               difficulty: 'intermediate',
               tool: 'Prometheus',
-              note: 'Pull-based: lui interroga gli endpoint, non il contrario.',
+              note: 'Sistema di monitoraggio open source basato su time series e modello pull; progetto CNCF, usa PromQL come linguaggio di query.',
             },
             {
               english: 'Time Series Database',
@@ -2694,21 +2689,21 @@ export default {
               pronunciation: '/ˈkwɒntaɪl/',
               phonetic: 'KUAN-tail',
               example:
-                "The 99th quantile is the slowest 1%. = Il 99esimo quantile è l'1% più lento.",
+                'The 0.99 quantile (p99) of request latency tells you how slow the worst 1% of requests are, where averages would hide it. = Il quantile 0.99 (p99) della latenza delle richieste indica quanto sono lente le peggiori 1% di richieste, dove le medie lo nasconderebbero.',
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'histogram_quantile(0.99, ...)',
             },
             {
-              english: 'Label',
-              italian: 'Etichetta di metrica (Label)',
+              english: 'Label Cardinality',
+              italian: `Cardinalita' delle label`,
               pronunciation: '/ˈleɪbəl/',
               phonetic: 'LEI-bol',
-              example:
-                "By adding environment and region as labels, we can filter dashboard panels to show only production traffic from EU. = Aggiungendo ambiente e regione come label, possiamo filtrare i pannelli della dashboard per mostrare solo il traffico di produzione dall'UE.",
+              example: `Prometheus label cardinality explodes if you put user-id on a metric, costing gigabytes of memory and slowing every query. = La cardinalita' delle label Prometheus esplode se metti user-id su una metrica, costando gigabyte di memoria e rallentando ogni query.`,
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'http_requests_total{code="200", method="GET"}',
+              note: `Rinominato per distinguerlo dall'item 'Label' del modulo tooling log.`,
             },
             {
               english: 'Cardinality',
@@ -2727,7 +2722,7 @@ export default {
               pronunciation: '/ˈneɪmɪŋ kənˈvenʃən/',
               phonetic: 'NEI-ming kon-VEN-scion',
               example:
-                'Counters end with _total by convention. = I counter finiscono con _total per convenzione.',
+                'Prometheus naming conventions like http_requests_total or process_cpu_seconds_total make metrics self-describing and easy to dashboard. = Le convenzioni di naming di Prometheus come http_requests_total o process_cpu_seconds_total rendono le metriche autoesplicative e facili da mostrare in dashboard.',
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'http_requests_total',
@@ -2766,8 +2761,7 @@ export default {
               italian: 'Regola di alerting',
               pronunciation: '/əˈlɜːrtɪŋ ruːl/',
               phonetic: 'a-LER-ting RUL',
-              example:
-                'Alerting rules generate Prometheus alerts. = Le alerting rule generano alert Prometheus.',
+              example: `An alerting rule in Prometheus fires when a PromQL expression stays true for the configured 'for' duration, e.g. 5 minutes. = Una regola di alerting in Prometheus si attiva quando un'espressione PromQL resta vera per la durata 'for' configurata, ad esempio 5 minuti.`,
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'alert: HighErrorRate\nexpr: ...\nfor: 5m',
@@ -2778,7 +2772,7 @@ export default {
               pronunciation: '/ɡruːp/',
               phonetic: 'GRUP',
               example:
-                'Group rules to run them sequentially. = Raggruppa le regole per eseguirle sequenzialmente.',
+                'A rule group in Prometheus evaluates its rules sequentially at a shared interval, allowing later rules to reuse recording-rule outputs. = Un gruppo di regole in Prometheus valuta le sue regole sequenzialmente a un intervallo condiviso, permettendo a regole successive di riutilizzare output di recording rule.',
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'groups:\n  - name: http\n    rules: [...]',
@@ -2800,28 +2794,26 @@ export default {
               pronunciation: '/blɒk/',
               phonetic: 'BLOK',
               example:
-                'TSDB writes 2-hour blocks of data. = Il TSDB scrive blocchi di dati da 2 ore.',
+                'Prometheus stores TSDB data in immutable 2-hour blocks on disk, which are later merged and compacted for efficient long-range queries. = Prometheus salva i dati TSDB in blocchi immutabili di 2 ore su disco, che vengono poi uniti e compattati per query a lungo raggio efficienti.',
               context: 'prometheus',
               difficulty: 'intermediate',
             },
             {
               english: 'WAL',
-              italian: 'WAL (write-ahead log)',
+              italian: 'WAL',
               pronunciation: '/wɔːl/',
               phonetic: 'UOL',
-              example:
-                'The WAL prevents data loss on crash. = Il WAL evita perdita di dati al crash.',
+              example: `Prometheus appends every incoming sample to the WAL first, so a crash before block flush still recovers the last 2 hours of data. = Prometheus aggiunge prima ogni campione in arrivo al WAL, cosi' che un crash prima del flush del blocco recuperi comunque le ultime 2 ore di dati.`,
               context: 'prometheus',
               difficulty: 'intermediate',
-              note: 'Write-Ahead Log: stesso concetto dei DBMS classici.',
+              note: 'Write-Ahead Log: file su disco in cui Prometheus scrive i campioni in arrivo prima di consolidarli nei blocchi TSDB, per resistere ai crash.',
             },
             {
               english: 'Compaction',
               italian: 'Compattazione',
               pronunciation: '/kəmˈpækʃən/',
               phonetic: 'kom-PAK-scion',
-              example:
-                'Compaction merges blocks for efficiency. = La compaction unisce blocchi per efficienza.',
+              example: `TSDB compaction merges adjacent 2-hour blocks into larger ones, cutting disk usage and speeding up queries that span weeks. = La compattazione TSDB unisce blocchi adiacenti di 2 ore in blocchi piu' grandi, riducendo l'uso del disco e accelerando query che coprono settimane.`,
               context: 'prometheus',
               difficulty: 'intermediate',
             },
@@ -2831,7 +2823,7 @@ export default {
               pronunciation: '/rɪˈmoʊt raɪt/',
               phonetic: 'ri-MOT RAIT',
               example:
-                'Remote write streams data to long-term storage. = Remote write invia i dati allo storage a lungo termine.',
+                'Configuring Prometheus remote write to Thanos or Cortex ships samples to long-term storage, going beyond the local 15-day retention. = Configurare il remote write di Prometheus verso Thanos o Cortex invia campioni a storage a lungo termine, superando la retention locale di 15 giorni.',
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'remote_write:\n  - url: https://thanos/api/v1/write',
@@ -2843,7 +2835,7 @@ export default {
               pronunciation: '/rɪˈmoʊt riːd/',
               phonetic: 'ri-MOT RID',
               example:
-                'Remote read queries external storage. = Remote read interroga lo storage esterno.',
+                'Enabling remote read lets PromQL queries fetch historical samples from an external store like Thanos transparently. = Abilitare la lettura remota permette alle query PromQL di recuperare campioni storici da uno store esterno come Thanos in modo trasparente.',
               context: 'prometheus',
               difficulty: 'intermediate',
             },
@@ -2853,7 +2845,7 @@ export default {
               pronunciation: '/ˈprɒmtuːl/',
               phonetic: 'PROM-tul',
               example:
-                'Use promtool to validate config files. = Usa promtool per validare i file di configurazione.',
+                'Running promtool check rules alerts.yml in CI validates alert syntax before bad rules can ever reach a production Prometheus. = Eseguire promtool check rules alerts.yml in CI valida la sintassi degli alert prima che regole errate possano raggiungere un Prometheus di produzione.',
               context: 'prometheus',
               difficulty: 'intermediate',
               command: 'promtool check rules /etc/prometheus/rules.yml',
@@ -2877,11 +2869,11 @@ export default {
           items: [
             {
               english: 'PromQL',
-              italian: 'Linguaggio query Prometheus (PromQL)',
+              italian: 'PromQL',
               pronunciation: '/prɒm kjuː el/',
               phonetic: 'PROM-KIU-EL',
               example:
-                'PromQL is the Prometheus query language. = PromQL è il linguaggio di query di Prometheus.',
+                'PromQL expressions like rate(http_requests_total[5m]) compute per-second request rate over a 5-minute window for dashboards. = Le espressioni PromQL come rate(http_requests_total[5m]) calcolano il tasso di richieste al secondo su una finestra di 5 minuti per le dashboard.',
               context: 'prometheus',
               difficulty: 'intermediate',
               tool: 'Prometheus',
@@ -2914,7 +2906,7 @@ export default {
               pronunciation: '/sɪˈlektər/',
               phonetic: 'se-LEK-ter',
               example:
-                'A selector picks matching series. = Un selettore seleziona le serie corrispondenti.',
+                'A PromQL selector like http_requests_total{job="api"} narrows the time series before any function like rate() or sum() is applied. = Un selettore PromQL come http_requests_total{job="api"} restringe le time series prima che venga applicata qualsiasi funzione come rate() o sum().',
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'up{job="api"}',
@@ -2924,8 +2916,7 @@ export default {
               italian: 'Matcher di label',
               pronunciation: '/ˈleɪbəl ˈmætʃər/',
               phonetic: 'LEI-bol MA-cer',
-              example:
-                'A label matcher filters by label value. = Un label matcher filtra per valore di label.',
+              example: `A label matcher such as env="prod" filters series in PromQL so dashboards do not accidentally mix staging and production traffic. = Un matcher di label come env="prod" filtra le serie in PromQL cosi' che le dashboard non mescolino accidentalmente traffico di staging e produzione.`,
               context: 'prometheus',
               difficulty: 'intermediate',
               code: '{code=~"5.."}',
@@ -2936,8 +2927,7 @@ export default {
               italian: 'Match di uguaglianza',
               pronunciation: '/iːˈkwɒlɪti mætʃ/',
               phonetic: 'i-KUO-li-ti MACH',
-              example:
-                'An equality match uses the equals sign. = Un match di uguaglianza usa il segno di uguale.',
+              example: `Using an equality match like status="500" in PromQL isolates only the 5xx series so error rate panels stay focused and fast. = Usare un match di uguaglianza come status="500" in PromQL isola solo le serie 5xx cosi' che i pannelli di error rate restino focalizzati e veloci.`,
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'job="prometheus"',
@@ -2947,7 +2937,7 @@ export default {
               italian: 'Match con regex',
               pronunciation: '/ˈredʒeks mætʃ/',
               phonetic: 'RE-jeks MACH',
-              example: 'Use =~ for regex matching on labels. = Usa =~ per match regex sulle label.',
+              example: `A regex match like path=~"/api/v[12]/.*" in PromQL targets multiple API versions in a single selector without writing each one out. = Un match con regex come path=~"/api/v[12]/.*" in PromQL colpisce piu' versioni di API in un solo selettore senza scriverle tutte.`,
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'instance=~"web-.*"',
@@ -2957,8 +2947,7 @@ export default {
               italian: 'Match negativo',
               pronunciation: '/ˈneɡətɪv mætʃ/',
               phonetic: 'NE-ghe-tiv MACH',
-              example:
-                'Negative match excludes specific labels. = Il match negativo esclude label specifiche.',
+              example: `Writing job!="canary" as a negative match in PromQL excludes the experimental canary fleet so SLO dashboards reflect only stable traffic. = Scrivere job!="canary" come match negativo in PromQL esclude la flotta canary sperimentale cosi' che le dashboard SLO riflettano solo traffico stabile.`,
               context: 'prometheus',
               difficulty: 'intermediate',
               code: 'mode!="idle"',
@@ -3354,7 +3343,7 @@ export default {
           items: [
             {
               english: 'Grafana',
-              italian: 'Grafana (piattaforma di dashboard)',
+              italian: 'Grafana',
               pronunciation: '/ɡrəˈfɑːnə/',
               phonetic: 'GRA-fa-na',
               example:
@@ -3362,17 +3351,19 @@ export default {
               context: 'grafana',
               difficulty: 'intermediate',
               tool: 'Grafana',
+              note: 'Piattaforma open source per dashboard e visualizzazione di metriche, log e tracce; supporta decine di datasource (Prometheus, Loki, Elastic).',
             },
             {
-              english: 'Dashboard',
-              italian: 'Cruscotto di monitoraggio (Dashboard)',
+              english: 'Home Dashboard',
+              italian: 'Home dashboard',
               pronunciation: '/ˈdæʃbɔːrd/',
               phonetic: 'DASH-bord',
               example:
-                "The SRE team organises each service into its own dashboard with panels for latency percentiles, error rates, and throughput, so the on-call engineer can triage incidents at a glance. = Il team SRE organizza ogni servizio nel proprio cruscotto con pannelli per i percentili di latenza, tassi di errore e throughput, così il reperibile può fare triage degli incidenti a colpo d'occhio.",
+                'Setting a team home dashboard makes every Grafana login land on the SLO summary instead of the empty welcome screen. = Impostare una home dashboard di team fa atterrare ogni login Grafana sul sommario SLO invece che sulla schermata di benvenuto vuota.',
               context: 'grafana',
               difficulty: 'intermediate',
               tool: 'Grafana',
+              note: `Rinominato per distinguerlo dall'item 'Dashboard' del modulo osservabilita' base.`,
             },
             {
               english: 'Panel',
@@ -3397,14 +3388,14 @@ export default {
               tool: 'Grafana',
             },
             {
-              english: 'Time Range',
-              italian: 'Intervallo temporale',
+              english: 'Relative Time Range',
+              italian: 'Intervallo temporale relativo',
               pronunciation: '/taɪm reɪndʒ/',
               phonetic: 'TAIM REINJ',
-              example:
-                "During an incident, the on-call engineer narrows the time range to the last 15 minutes to focus on the spike, then widens it to 7 days to check whether the pattern is recurring. = Durante un incidente, il reperibile restringe l'intervallo temporale agli ultimi 15 minuti per concentrarsi sul picco, poi lo amplia a 7 giorni per verificare se il pattern è ricorrente.",
+              example: `Setting a relative time range of 'last 6 hours' keeps the dashboard fresh as users come and go without picking absolute dates. = Impostare un intervallo temporale relativo di 'ultime 6 ore' tiene la dashboard fresca mentre gli utenti vanno e vengono senza scegliere date assolute.`,
               context: 'grafana',
               difficulty: 'intermediate',
+              note: `Rinominato per distinguerlo dall'item 'Time Range' del modulo osservabilita' base.`,
             },
             {
               english: 'Refresh Interval',
@@ -3485,14 +3476,14 @@ export default {
               difficulty: 'intermediate',
             },
             {
-              english: 'Gauge',
-              italian: 'Metrica scalare istantanea (Gauge)',
+              english: 'Gauge Panel',
+              italian: 'Pannello gauge',
               pronunciation: '/ɡeɪdʒ/',
               phonetic: 'GHEIJ',
-              example:
-                'The disk capacity gauge shifts from green to amber at 70% and to red at 90%, giving the ops team an instant visual cue about storage pressure. = Il gauge della capacità disco passa da verde ad ambra al 70% e a rosso al 90%, dando al team ops un segnale visivo immediato sulla pressione dello storage.',
+              example: `A gauge panel renders the current SLO attainment as a half-circle so the on-call sees the headroom at a glance. = Un pannello gauge renderizza l'attuale raggiungimento SLO come un semicerchio cosi il reperibile vede a colpo d'occhio il margine.`,
               context: 'grafana',
               difficulty: 'intermediate',
+              note: `Rinominato per distinguerlo dall'item 'Gauge' del modulo Prometheus.`,
             },
             {
               english: 'Bar Chart',
@@ -3695,34 +3686,36 @@ export default {
               difficulty: 'intermediate',
             },
             {
-              english: 'Threshold',
-              italian: 'Soglia',
+              english: 'Threshold Color',
+              italian: 'Colore di soglia',
               pronunciation: '/ˈθreʃoʊld/',
               phonetic: 'TRESH-old',
               example:
-                'Setting a green threshold at 0-70%, amber at 70-90%, and red above 90% on the CPU gauge gives the operations team an instant traffic-light view of server load. = Impostare una soglia verde allo 0-70%, ambra al 70-90% e rossa sopra il 90% sul gauge CPU dà al team operativo una vista a semaforo istantanea del carico del server.',
+                'Mapping threshold colors to red above 1 second p99 latency lets the dashboard reader spot a regression without reading any axis. = Mappare colori di soglia su rosso oltre 1 secondo di latenza p99 permette al lettore della dashboard di notare una regressione senza leggere alcun asse.',
               context: 'grafana',
               difficulty: 'intermediate',
+              note: `Rinominato per distinguerlo dall'item 'Threshold' del modulo alerting.`,
             },
             {
               english: 'Unit',
-              italian: 'Unità',
+              italian: 'Unit',
               pronunciation: '/ˈjuːnɪt/',
               phonetic: 'IU-nit',
               example:
                 'Configuring the unit to "bytes (IEC)" makes Grafana automatically render 1073741824 as "1 GiB", keeping memory panels readable without mental math. = Configurare l\'unità a "bytes (IEC)" fa sì che Grafana renderizzi automaticamente 1073741824 come "1 GiB", mantenendo i pannelli memoria leggibili senza calcoli mentali.',
               context: 'grafana',
               difficulty: 'intermediate',
+              note: `In Grafana, l'unita' assegnata a un pannello (ms, MB, %, requests/sec) determina formattazione e suffissi automatici nei tooltip e nell'asse Y.`,
             },
             {
-              english: 'Override',
-              italian: 'Sovrascrittura di valore (Override)',
+              english: 'Field Override',
+              italian: 'Override di campo',
               pronunciation: '/ˌoʊvərˈraɪd/',
               phonetic: 'o-ver-RAID',
-              example:
-                'An override rule assigns a fixed red color to the "errors" series and blue to "success", ensuring consistent visual language across all dashboards in the organization. = Una regola di sovrascrittura assegna un colore rosso fisso alla serie "errors" e blu a "success", garantendo un linguaggio visivo coerente in tutti i cruscotti dell\'organizzazione.',
+              example: `A field override changes the unit for a single series in the panel without affecting how every other series renders. = Un override di campo cambia l'unita' per una singola serie nel pannello senza influenzare come si renderizzano tutte le altre serie.`,
               context: 'grafana',
               difficulty: 'intermediate',
+              note: `Rinominato per distinguerlo dall'item 'Override' del modulo alerting.`,
             },
             {
               english: 'Y-Axis',
@@ -3746,13 +3739,13 @@ export default {
             },
             {
               english: 'Annotation',
-              italian: 'Annotazione',
+              italian: 'Annotazione Grafana',
               pronunciation: '/ˌænəˈteɪʃən/',
               phonetic: 'an-no-TEI-scion',
-              example:
-                "The CI pipeline pushes an annotation to Grafana after every production deploy, drawing a vertical line on all time-series panels that makes it trivial to correlate a new release with a latency spike. = La pipeline CI invia un'annotazione a Grafana dopo ogni deploy in produzione, disegnando una linea verticale su tutti i pannelli serie temporali che rende banale correlare una nuova release con un picco di latenza.",
+              example: `A Grafana annotation tied to a Loki query draws release markers on every panel, helping link a latency spike to the right deploy. = Un'annotazione Grafana collegata a una query Loki disegna marcatori di release su ogni pannello, aiutando a collegare un picco di latenza al deploy giusto.`,
               context: 'grafana',
               difficulty: 'intermediate',
+              rename_to: 'Grafana Annotation',
             },
             {
               english: 'Stack Mode',
@@ -4131,15 +4124,15 @@ export default {
           description: 'Plugin di Grafana',
           items: [
             {
-              english: 'Plugin',
-              italian: 'Estensione modulare (Plugin)',
+              english: 'Datasource Plugin',
+              italian: 'Plugin di datasource',
               pronunciation: '/ˈplʌɡɪn/',
               phonetic: 'PLA-ghin',
-              example:
-                'Installing the Polystat plugin via grafana-cli adds a panel type that shows multi-stat hexagons, perfect for displaying the health of dozens of microservices in a single compact view. = Installare il plugin Polystat tramite grafana-cli aggiunge un tipo di pannello che mostra esagoni multi-stat, perfetto per visualizzare lo stato di decine di microservizi in una singola vista compatta.',
+              example: `Installing the Datadog datasource plugin lets a Grafana panel query Datadog metrics alongside Prometheus and Loki in one dashboard. = Installare il plugin di datasource Datadog permette a un pannello Grafana di interrogare metriche Datadog insieme a Prometheus e Loki in un'unica dashboard.`,
               context: 'dashboards',
               difficulty: 'intermediate',
               command: 'grafana-cli plugins install grafana-piechart-panel',
+              note: `Rinominato per distinguerlo dall'item 'Plugin' del modulo tooling log.`,
             },
             {
               english: 'Panel Plugin',
@@ -4261,14 +4254,14 @@ export default {
               tool: 'Jaeger, Zipkin, Tempo',
             },
             {
-              english: 'Trace',
-              italian: 'Traccia',
+              english: 'Trace Context',
+              italian: 'Contesto di trace',
               pronunciation: '/treɪs/',
               phonetic: 'TREIS',
-              example:
-                "Opening a single trace in the Jaeger UI reveals every service call, database query, and cache lookup that a user checkout went through, from the initial HTTP POST to the final confirmation email. = Aprendo una singola traccia nell'UI di Jaeger si rivela ogni chiamata di servizio, query al database e lookup nella cache che un checkout utente ha attraversato, dalla POST HTTP iniziale all'email di conferma finale.",
+              example: `The trace context header propagates the trace id across HTTP, gRPC, and message queues so the trace stays intact end to end. = L'header di trace context propaga l'id di trace fra HTTP, gRPC e code di messaggi cosi la trace resta intatta da capo a fondo.`,
               context: 'traces',
               difficulty: 'intermediate',
+              note: `Rinominato per distinguerlo dall'item 'Trace' del modulo osservabilita' base.`,
             },
             {
               english: 'Span',
@@ -4344,15 +4337,15 @@ export default {
               note: "Header HTTP che portano l'identità della traccia.",
             },
             {
-              english: 'Tag',
-              italian: 'Etichetta (Tag)',
+              english: 'Span Tag',
+              italian: 'Tag di span',
               pronunciation: '/tæɡ/',
               phonetic: 'TAG',
-              example:
-                'Adding a "user.tier=premium" tag to every span lets the team filter traces in Jaeger to investigate latency issues affecting only paying customers. = Aggiungere un\'etichetta "user.tier=premium" a ogni span permette al team di filtrare le tracce in Jaeger per investigare problemi di latenza che colpiscono solo i clienti paganti.',
+              example: `Adding a user.id span tag lets you filter Jaeger traces to the exact session a customer reported, cutting investigation to seconds. = Aggiungere un tag di span user.id permette di filtrare le tracce Jaeger sulla sessione esatta segnalata dal cliente, riducendo l'investigazione a pochi secondi.`,
               context: 'traces',
               difficulty: 'intermediate',
               code: 'span.set_tag("user.id", 42)',
+              note: `Rinominato per distinguerlo dall'item 'Tag' del modulo Grafana.`,
             },
           ],
         },
@@ -4363,7 +4356,7 @@ export default {
           items: [
             {
               english: 'Jaeger',
-              italian: 'Jaeger (piattaforma di tracing distribuito)',
+              italian: 'Jaeger',
               pronunciation: '/ˈjeɪɡər/',
               phonetic: 'IEI-gher',
               example:
@@ -4371,6 +4364,7 @@ export default {
               context: 'traces',
               difficulty: 'intermediate',
               tool: 'Jaeger',
+              note: 'Sistema di tracing distribuito open source CNCF (originario di Uber); compatibile con OpenTelemetry, usato per analisi delle latenze inter-servizio.',
             },
             {
               english: 'Agent',
@@ -4476,7 +4470,7 @@ export default {
           items: [
             {
               english: 'Zipkin',
-              italian: 'Zipkin (piattaforma di tracing distribuito)',
+              italian: 'Zipkin',
               pronunciation: '/ˈzɪpkɪn/',
               phonetic: 'ZIP-kin',
               example:
@@ -4484,6 +4478,7 @@ export default {
               context: 'traces',
               difficulty: 'intermediate',
               tool: 'Zipkin',
+              note: 'Sistema di tracing distribuito open source nato in Twitter; precursore di OpenTelemetry, ancora supportato come backend storico.',
             },
             {
               english: 'B3 Header',
@@ -4498,7 +4493,7 @@ export default {
             },
             {
               english: 'Tempo',
-              italian: 'Tempo (backend di tracing Grafana)',
+              italian: 'Tempo',
               pronunciation: '/ˈtempoʊ/',
               phonetic: 'TEM-po',
               example:
@@ -4506,7 +4501,7 @@ export default {
               context: 'traces',
               difficulty: 'intermediate',
               tool: 'Grafana Tempo',
-              note: 'Memorizza tracce su object storage; molto economico.',
+              note: 'Backend di tracing di Grafana Labs ad alta scala basato su object storage (S3, GCS); economico e integrato nativamente con Grafana.',
             },
             {
               english: 'TraceQL',
@@ -4543,7 +4538,7 @@ export default {
             },
             {
               english: 'Honeycomb',
-              italian: 'Honeycomb (piattaforma observability)',
+              italian: 'Honeycomb',
               pronunciation: '/ˈhʌnikoʊm/',
               phonetic: 'HA-ni-kom',
               example:
@@ -4551,10 +4546,11 @@ export default {
               context: 'traces',
               difficulty: 'intermediate',
               tool: 'Honeycomb',
+              note: `Piattaforma SaaS di observability orientata a eventi ad alta cardinalita'; pensata per analisi esplorativa dei comportamenti dei servizi.`,
             },
             {
               english: 'Lightstep',
-              italian: 'Lightstep (piattaforma observability)',
+              italian: 'Lightstep',
               pronunciation: '/ˈlaɪtˌstep/',
               phonetic: 'LAIT-step',
               example:
@@ -4562,16 +4558,18 @@ export default {
               context: 'traces',
               difficulty: 'intermediate',
               tool: 'Lightstep',
+              note: 'Piattaforma SaaS di observability (ora parte di ServiceNow Cloud Observability); focus su tracing distribuito e analisi delle performance.',
             },
             {
-              english: 'Service Discovery',
-              italian: 'Discovery dei servizi',
+              english: 'Trace-Based Discovery',
+              italian: 'Discovery basata su trace',
               pronunciation: '/ˈsɜːrvɪs dɪˈskʌvəri/',
               phonetic: 'SER-vis dis-KO-ve-ri',
               example:
-                'Instead of maintaining a manual service catalogue, the platform team uses trace data to automatically build a real-time service discovery map that shows every upstream and downstream dependency in the mesh. = Invece di mantenere un catalogo servizi manuale, il team piattaforma usa i dati di traccia per costruire automaticamente una mappa di discovery dei servizi in tempo reale che mostra ogni dipendenza upstream e downstream nel mesh.',
+                'Using trace-based discovery builds the service graph from real spans, covering async paths a Prometheus scrape never sees. = Usare una discovery basata su trace costruisce il grafo dei servizi da span reali, coprendo path asincroni che uno scrape Prometheus non vede mai.',
               context: 'traces',
               difficulty: 'intermediate',
+              note: `Rinominato per distinguerlo dall'item 'Service Discovery' del modulo Prometheus.`,
             },
             {
               english: 'Object Storage',
@@ -4743,14 +4741,14 @@ export default {
               tool: 'Datadog APM, New Relic',
             },
             {
-              english: 'Throughput',
-              italian: 'Volume di operazioni al secondo (Throughput)',
+              english: 'Service Apdex',
+              italian: 'Apdex di servizio',
               pronunciation: '/ˈθruːpʊt/',
               phonetic: 'TRU-put',
-              example:
-                "During Black Friday, the APM dashboard showed the API throughput peak at 12,000 transactions per minute, helping the team confirm that the auto-scaling rules had kicked in correctly. = Durante il Black Friday, il cruscotto APM ha mostrato il picco di throughput dell'API a 12.000 transazioni al minuto, aiutando il team a confermare che le regole di auto-scaling si erano attivate correttamente.",
+              example: `A service Apdex of 0.85 across the checkout API means 85% of requests are fast or tolerable to the user. = Un Apdex di servizio di 0.85 sull'API checkout significa che l'85% delle richieste e' veloce o tollerabile per l'utente.`,
               context: 'apm',
               difficulty: 'intermediate',
+              note: `Rinominato per distinguerlo dall'item 'Throughput' dei moduli metriche.`,
             },
             {
               english: 'Apdex Score',
@@ -4826,7 +4824,7 @@ export default {
           items: [
             {
               english: 'New Relic',
-              italian: 'New Relic (piattaforma APM)',
+              italian: 'New Relic',
               pronunciation: '/njuː ˈrelɪk/',
               phonetic: 'NIU RE-lik',
               example:
@@ -4834,6 +4832,7 @@ export default {
               context: 'apm',
               difficulty: 'intermediate',
               tool: 'New Relic',
+              note: 'Piattaforma SaaS APM e observability full-stack; copre metriche, log, tracce, RUM e infrastruttura con un unico agente.',
             },
             {
               english: 'NRQL',
@@ -4857,15 +4856,15 @@ export default {
               difficulty: 'intermediate',
             },
             {
-              english: 'Agent',
-              italian: 'Agente locale (Agent)',
+              english: 'APM Agent',
+              italian: 'Agent APM',
               pronunciation: '/ˈeɪdʒənt/',
               phonetic: 'EI-jent',
-              example:
-                "Installing the New Relic Python agent with pip and wrapping the WSGI entry point automatically instruments every Django view, SQL query, and external HTTP call without code changes. = Installare l'agente Python di New Relic con pip e avvolgere l'entry point WSGI strumenta automaticamente ogni vista Django, query SQL e chiamata HTTP esterna senza modifiche al codice.",
+              example: `The Datadog APM agent auto-instruments Express, MySQL, and Redis calls in a Node service with one require('dd-trace').init() line. = L'agent APM di Datadog auto-strumenta chiamate a Express, MySQL e Redis in un servizio Node con una sola riga require('dd-trace').init().`,
               context: 'apm',
               difficulty: 'intermediate',
               command: 'pip install newrelic',
+              note: `Rinominato per distinguerlo dall'item 'Agent' del modulo trace.`,
             },
             {
               english: 'Application',
@@ -4939,7 +4938,7 @@ export default {
           items: [
             {
               english: 'Datadog',
-              italian: 'Datadog (piattaforma observability)',
+              italian: 'Datadog',
               pronunciation: '/ˈdætədɒɡ/',
               phonetic: 'DA-ta-dog',
               example:
@@ -4947,6 +4946,7 @@ export default {
               context: 'apm',
               difficulty: 'intermediate',
               tool: 'Datadog',
+              note: 'Piattaforma SaaS di observability che unifica metriche, log, tracce, RUM, sicurezza e CI visibility in un unico prodotto.',
             },
             {
               english: 'Datadog Agent',
@@ -5005,14 +5005,14 @@ export default {
             },
             {
               english: 'RUM',
-              italian: 'RUM (monitoraggio reale)',
+              italian: 'RUM',
               pronunciation: '/rʌm/',
               phonetic: 'RAM',
               example:
                 "The RUM dashboard reveals that Chrome 120 users experience a 2-second longer time-to-interactive than Firefox users, pointing to a polyfill regression introduced in the latest frontend deploy. = Il cruscotto RUM rivela che gli utenti Chrome 120 sperimentano un time-to-interactive più lungo di 2 secondi rispetto agli utenti Firefox, indicando una regressione del polyfill introdotta nell'ultimo deploy frontend.",
               context: 'apm',
               difficulty: 'intermediate',
-              note: 'Real User Monitoring.',
+              note: 'Real User Monitoring: raccolta di metriche di performance e UX direttamente dai browser degli utenti reali, non da test sintetici.',
             },
             {
               english: 'Watchdog',
@@ -5123,7 +5123,7 @@ export default {
               pronunciation: '/ɪnˈvaɪrənmənt tæɡ/',
               phonetic: 'in-VAI-ron-ment TAG',
               example:
-                "Always tag spans with the environment. = Tagga sempre gli span con l'ambiente.",
+                'Stamping every metric with an environment tag like env:prod or env:staging lets one dashboard filter cleanly across deployment stages. = Marcare ogni metrica con un tag ambiente come env:prod o env:staging permette a una dashboard di filtrare puliti attraverso gli stage di deploy.',
               context: 'apm',
               difficulty: 'intermediate',
               code: 'env: production',
@@ -5134,7 +5134,7 @@ export default {
               pronunciation: '/ˈvɜːrʒən tæɡ/',
               phonetic: 'VER-jion TAG',
               example:
-                'Version tags pinpoint a regression to a release. = I tag di versione individuano una regressione su una release.',
+                'Adding version:1.2.3 to APM traces makes it trivial to compare error rates between releases and roll back the bad one. = Aggiungere version:1.2.3 alle tracce APM rende banale confrontare gli error rate tra release e fare rollback di quella problematica.',
               context: 'apm',
               difficulty: 'intermediate',
               code: 'version: v1.4.2',
@@ -5154,8 +5154,7 @@ export default {
               italian: 'Attribuzione dei costi',
               pronunciation: '/kɒst ˌætrɪˈbjuːʃən/',
               phonetic: 'KOST a-tri-BIU-scion',
-              example:
-                "Cost attribution links spend to teams. = L'attribuzione dei costi collega la spesa ai team.",
+              example: `Cost attribution via team tags shows which squad's spans drive most of the Datadog APM bill, focusing optimization where it pays off. = L'attribuzione dei costi tramite tag di team mostra quale squad genera la maggior parte della bolletta Datadog APM, focalizzando l'ottimizzazione dove rende.`,
               context: 'apm',
               difficulty: 'intermediate',
             },
@@ -5176,24 +5175,25 @@ export default {
           description: 'Monitoraggio degli host',
           items: [
             {
-              english: 'Node Exporter',
-              italian: 'Esportatore metriche host (Node Exporter)',
+              english: 'Node Exporter Textfile',
+              italian: 'Textfile di Node Exporter',
               pronunciation: '/noʊd ɪkˈspɔːrtər/',
               phonetic: 'NOUD eks-POR-ter',
               example:
-                'Node Exporter exposes kernel and OS metrics. = Node Exporter espone metriche del kernel e OS.',
+                'The textfile collector for Node Exporter reads /var/lib/node_exporter/*.prom so cron jobs publish custom metrics without their own HTTP server. = Il textfile collector per Node Exporter legge /var/lib/node_exporter/*.prom cosi i job cron pubblicano metriche custom senza un proprio server HTTP.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'node_exporter',
               command: 'curl http://localhost:9100/metrics',
+              rename_to: 'Node Exporter Collector',
+              note: `Rinominato per distinguerlo dall'item 'Node Exporter' del modulo Prometheus.`,
             },
             {
               english: 'Collector Module',
               italian: 'Modulo collector',
               pronunciation: '/kəˈlektər ˈmɒdjuːl/',
               phonetic: 'kol-LEK-ter MO-diul',
-              example:
-                'Disable unused collector modules. = Disabilita i moduli collector non usati.',
+              example: `A custom collector module in Node Exporter can scrape SMART data from disks, surfacing failing drives before they cause outages. = Un modulo collector personalizzato in Node Exporter puo' leggere dati SMART dai dischi, evidenziando dischi guasti prima che causino disservizi.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: '--collector.systemd',
@@ -5210,23 +5210,24 @@ export default {
               code: '--collector.textfile.directory=/var/lib/node_exporter/textfile_collector',
             },
             {
-              english: 'cAdvisor',
-              italian: 'Esportatore metriche container (cAdvisor)',
+              english: 'cAdvisor Container Metric',
+              italian: 'Metrica container di cAdvisor',
               pronunciation: '/siː ˈædvaɪzər/',
               phonetic: 'SI-AD-vai-zer',
               example:
-                "cAdvisor reports container resource usage. = cAdvisor riporta l'uso risorse dei container.",
+                'A cAdvisor container metric like container_cpu_usage_seconds_total breaks down CPU by namespace, pod, and container in one place. = Una metrica container di cAdvisor come container_cpu_usage_seconds_total scompone la CPU per namespace, pod e container in un unico posto.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'cAdvisor',
+              rename_to: 'cAdvisor Container Metrics',
+              note: `Rinominato per distinguerlo dall'item 'cAdvisor' del modulo Prometheus.`,
             },
             {
               english: 'Process Exporter',
               italian: 'Esportatore metriche di processo (Process Exporter)',
               pronunciation: '/ˈprɒses ɪkˈspɔːrtər/',
               phonetic: 'PRO-ses eks-POR-ter',
-              example:
-                'Process exporter monitors specific processes. = Process exporter monitora processi specifici.',
+              example: `Process Exporter groups individual PIDs by command pattern so you can monitor CPU and RSS for nginx workers without listing every PID. = Process Exporter raggruppa i singoli PID per pattern di comando cosi' che si possano monitorare CPU e RSS dei worker nginx senza elencare ogni PID.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'process-exporter',
@@ -5237,7 +5238,7 @@ export default {
               pronunciation: '/ˈsɪstəmdiː ˈmetrɪks/',
               phonetic: 'SIS-tem-DI ME-triks',
               example:
-                'systemd metrics track service unit state. = Le metriche systemd tracciano lo stato delle unit.',
+                'Enabling systemd metrics in Node Exporter exposes per-unit state, letting Prometheus alert when nginx.service unexpectedly enters failed state. = Abilitare le metriche systemd in Node Exporter espone lo stato per unit, permettendo a Prometheus di allertare quando nginx.service entra inaspettatamente in stato failed.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'node_systemd_unit_state{name="nginx.service",state="active"}',
@@ -5248,28 +5249,29 @@ export default {
               pronunciation: '/ˈhɑːrdweər ˈsensər/',
               phonetic: 'HARD-uer SEN-sor',
               example:
-                'Hardware sensors measure temperature. = I sensori hardware misurano la temperatura.',
+                'Reading hardware sensors via lm_sensors and exposing them to Prometheus flags overheating CPUs hours before thermal throttling shows up. = Leggere i sensori hardware tramite lm_sensors ed esporli a Prometheus segnala CPU surriscaldate ore prima che si manifesti il thermal throttling.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'sensors',
             },
             {
               english: 'IPMI',
-              italian: 'Interfaccia di gestione hardware (IPMI)',
+              italian: 'IPMI',
               pronunciation: '/aɪ piː em aɪ/',
               phonetic: 'AI-PI-EM-AI',
-              example: 'IPMI exposes baseboard sensors. = IPMI espone i sensori della baseboard.',
+              example:
+                'Using ipmi_exporter to scrape IPMI fan and temperature data catches failing fans days before they cause a thermal shutdown of the server. = Usare ipmi_exporter per leggere dati IPMI di ventole e temperature individua ventole guaste giorni prima che causino uno spegnimento termico del server.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               note: 'Intelligent Platform Management Interface, comune nei server bare-metal.',
             },
             {
               english: 'NUMA',
-              italian: 'Accesso non uniforme alla memoria (NUMA)',
+              italian: 'NUMA',
               pronunciation: '/ˈnuːmə/',
               phonetic: 'NU-ma',
               example:
-                'NUMA awareness improves database performance. = La consapevolezza NUMA migliora le performance del database.',
+                'Pinning a high-throughput database to a single NUMA node avoids cross-socket memory accesses, often cutting tail latency by double digits. = Vincolare un database ad alto throughput a un singolo nodo NUMA evita accessi memoria cross-socket, spesso riducendo la tail latency di doppie cifre percentuali.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               note: 'Non-Uniform Memory Access.',
@@ -5280,7 +5282,7 @@ export default {
               pronunciation: '/ˈkɜːrnəl ˈmetrɪk/',
               phonetic: 'KER-nel ME-trik',
               example:
-                'Kernel metrics expose interrupts and softirqs. = Le metriche del kernel espongono interrupt e softirq.',
+                'Watching kernel metrics like context_switches_total spikes helps catch noisy neighbors competing for the same CPU on a shared host. = Osservare metriche kernel come i picchi di context_switches_total aiuta a individuare vicini rumorosi in competizione per la stessa CPU su un host condiviso.',
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -5293,11 +5295,11 @@ export default {
           items: [
             {
               english: 'SNMP',
-              italian: 'Protocollo di gestione di rete (SNMP)',
+              italian: 'SNMP',
               pronunciation: '/es en em piː/',
               phonetic: 'ES-EN-EM-PI',
               example:
-                'SNMP collects metrics from network devices. = SNMP raccoglie metriche dai dispositivi di rete.',
+                'Using snmp_exporter to poll switches via SNMP brings per-interface bandwidth and error counters straight into Prometheus dashboards. = Usare snmp_exporter per interrogare switch via SNMP porta contatori di banda ed errori per interfaccia direttamente nelle dashboard Prometheus.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               note: 'Simple Network Management Protocol.',
@@ -5315,11 +5317,11 @@ export default {
             },
             {
               english: 'MIB',
-              italian: 'Base informativa di gestione (MIB)',
+              italian: 'MIB',
               pronunciation: '/em aɪ biː/',
               phonetic: 'EM-AI-BI',
               example:
-                'MIBs define what an SNMP device exposes. = I MIB definiscono cosa espone un dispositivo SNMP.',
+                'Loading a vendor MIB file into snmp_exporter translates raw OIDs into readable metric names like ifInOctets for switch interface counters. = Caricare un file MIB del vendor in snmp_exporter traduce gli OID grezzi in nomi di metrica leggibili come ifInOctets per i contatori di interfaccia degli switch.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               note: 'Management Information Base.',
@@ -5337,18 +5339,18 @@ export default {
             },
             {
               english: 'NetFlow',
-              italian: 'Protocollo Cisco di flussi di rete (NetFlow)',
+              italian: 'NetFlow',
               pronunciation: '/ˈnetfloʊ/',
               phonetic: 'NET-flou',
               example:
-                'NetFlow captures traffic flow records. = NetFlow cattura i record dei flussi di traffico.',
+                'Collecting NetFlow records from routers reveals top talkers and unusual destinations, often surfacing data exfiltration before alerts fire. = Raccogliere record NetFlow dai router rivela i top talker e destinazioni inusuali, spesso facendo emergere esfiltrazione dati prima che scattino gli alert.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               note: 'Protocollo Cisco per il flow accounting.',
             },
             {
               english: 'Telegraf',
-              italian: 'Telegraf (agente di metriche InfluxData)',
+              italian: 'Telegraf',
               pronunciation: '/ˈteləɡræf/',
               phonetic: 'TE-le-graf',
               example:
@@ -5356,6 +5358,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'Telegraf',
+              note: 'Agente di raccolta metriche plugin-based di InfluxData; spedisce dati a InfluxDB, Prometheus, Kafka e decine di altri output.',
             },
             {
               english: 'Blackbox Probe',
@@ -5374,7 +5377,8 @@ export default {
               italian: 'Sonda ICMP',
               pronunciation: '/aɪ siː em piː proʊb/',
               phonetic: 'AI-SI-EM-PI PROUB',
-              example: 'An ICMP probe pings the target. = Una sonda ICMP fa ping del target.',
+              example:
+                'An ICMP probe from blackbox_exporter pings a router every 30 seconds, alerting ops the moment a remote site becomes unreachable. = Una sonda ICMP da blackbox_exporter pinga un router ogni 30 secondi, allertando gli operatori nel momento in cui un sito remoto diventa irraggiungibile.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'ping -c 4 example.com',
@@ -5396,7 +5400,7 @@ export default {
               pronunciation: '/diː en es proʊb/',
               phonetic: 'DI-EN-ES PROUB',
               example:
-                'A DNS probe checks resolution latency. = Una sonda DNS controlla la latenza di risoluzione.',
+                'Running a DNS probe every minute against api.example.com catches NXDOMAIN or DNSSEC failures before users start filing tickets. = Eseguire una sonda DNS ogni minuto contro api.example.com individua NXDOMAIN o fallimenti DNSSEC prima che gli utenti aprano ticket.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'dig +short example.com',
@@ -5414,7 +5418,7 @@ export default {
               pronunciation: '/kənˈteɪnər ˈmetrɪk/',
               phonetic: 'kon-TEI-ner ME-trik',
               example:
-                'Container metrics include CPU and memory limits. = Le metriche container includono limiti di CPU e memoria.',
+                'Plotting container CPU throttling alongside request latency exposes pods hitting their CPU limit and explains random p99 spikes. = Tracciare il CPU throttling del container insieme alla latenza delle richieste rivela pod che raggiungono il loro limite di CPU e spiega picchi p99 casuali.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'container_memory_usage_bytes',
@@ -5424,8 +5428,7 @@ export default {
               italian: 'Gruppo di controllo Linux (cgroup)',
               pronunciation: '/siː ɡruːp/',
               phonetic: 'SI-GRUP',
-              example:
-                'cgroups enforce container resource limits. = I cgroup applicano i limiti di risorse dei container.',
+              example: `Linux cgroups enforce per-container CPU and memory limits, so reading /sys/fs/cgroup files reveals exactly why a pod was throttled. = I cgroup di Linux impongono limiti CPU e memoria per container, quindi leggere i file in /sys/fs/cgroup rivela esattamente perche' un pod e' stato throttled.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               note: 'Control groups Linux.',
@@ -5446,8 +5449,7 @@ export default {
               italian: 'Uccisione per memoria esaurita (OOM Kill)',
               pronunciation: '/oʊ oʊ em kɪl/',
               phonetic: 'O-O-EM KIL',
-              example:
-                'OOM kills happen when memory limit is exceeded. = Gli OOM kill avvengono al superamento del limite memoria.',
+              example: `An OOM kill on a JVM pod shows up as exit code 137 in Kubernetes events and usually means the heap exceeded the container limit. = Un OOM kill su un pod JVM appare come exit code 137 negli eventi Kubernetes e di solito significa che l'heap ha superato il limite del container.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'dmesg | grep -i oom',
@@ -5457,8 +5459,7 @@ export default {
               italian: 'Pod che si riavvia in loop (CrashLoopBackOff)',
               pronunciation: '/kræʃ luːp bæk ɒf/',
               phonetic: 'KRASH-LUP-BAK-OF',
-              example:
-                'CrashLoopBackOff means restart back-off is in effect. = CrashLoopBackOff significa che il back-off restart è attivo.',
+              example: `A pod in CrashLoopBackOff is restarting too fast, so kubectl logs --previous is the first command to see why it died last time. = Un pod in CrashLoopBackOff si sta riavviando troppo in fretta, quindi kubectl logs --previous e' il primo comando per vedere perche' e' morto l'ultima volta.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'Kubernetes',
@@ -5469,8 +5470,7 @@ export default {
               italian: "Pull dell'immagine",
               pronunciation: '/ˈɪmɪdʒ pʊl/',
               phonetic: 'I-mij PUL',
-              example:
-                "Slow image pulls delay container start. = Pull lenti dell'immagine ritardano l'avvio del container.",
+              example: `Slow image pull times on a fresh node bottleneck rollouts, so caching common base images on a registry mirror often pays for itself fast. = Tempi lenti di pull dell'immagine su un nodo appena creato rallentano i rollout, quindi mettere in cache immagini base comuni su un mirror del registry ripaga rapidamente.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -5543,7 +5543,7 @@ export default {
               pronunciation: '/kəˈnekʃən puːl/',
               phonetic: 'co-NEK-scion PUL',
               example:
-                "Monitor connection pool exhaustion. = Monitora l'esaurimento del pool di connessioni.",
+                'A PostgreSQL connection pool capped at 100 keeps the database stable even when 500 app instances each try to open their own connections. = Un pool di connessioni PostgreSQL limitato a 100 mantiene il database stabile anche quando 500 istanze app provano ognuna ad aprire le proprie connessioni.',
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -5553,7 +5553,7 @@ export default {
               pronunciation: '/ˌreplɪˈkeɪʃən læɡ/',
               phonetic: 'rep-li-KEI-scion LAG',
               example:
-                'Replication lag breaks read-after-write consistency. = Il lag di replica rompe la consistenza read-after-write.',
+                'Alerting when replication lag exceeds 5 seconds in PostgreSQL catches network or disk issues before read replicas serve very stale data. = Allertare quando il lag di replica supera i 5 secondi in PostgreSQL individua problemi di rete o disco prima che le repliche di lettura servano dati molto vecchi.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'pg_replication_lag_seconds',
@@ -5563,8 +5563,7 @@ export default {
               italian: 'Pool di pagine in memoria (Buffer Pool)',
               pronunciation: '/ˈbʌfər puːl/',
               phonetic: 'BA-fer PUL',
-              example:
-                'Buffer pool hit ratio impacts performance. = Il rapporto di hit del buffer pool impatta le performance.',
+              example: `A MySQL buffer pool hit ratio below 95% in production usually means innodb_buffer_pool_size is too small for the working set. = Un buffer pool hit ratio MySQL sotto il 95% in produzione di solito significa che innodb_buffer_pool_size e' troppo piccolo per il working set.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'MySQL InnoDB',
@@ -5575,7 +5574,7 @@ export default {
               pronunciation: '/lɒk weɪt/',
               phonetic: 'LOK UEIT',
               example:
-                'Lock waits indicate transaction contention. = Le attese di lock indicano contesa tra transazioni.',
+                'Long lock wait times in PostgreSQL often point to a single slow transaction blocking many others; pg_stat_activity helps you find the culprit. = Tempi lunghi di attesa di lock in PostgreSQL spesso indicano una singola transazione lenta che ne blocca molte altre; pg_stat_activity aiuta a trovare il colpevole.',
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -5585,7 +5584,7 @@ export default {
               pronunciation: '/ˈdedlɒk/',
               phonetic: 'DED-lok',
               example:
-                "Deadlocks must be retried by the application. = I deadlock vanno ritentati dall'applicazione.",
+                'PostgreSQL automatically detects a deadlock and aborts the cheapest transaction, but a high frequency suggests bad locking order in your code. = PostgreSQL rileva automaticamente un deadlock e annulla la transazione meno costosa, ma una frequenza alta suggerisce un ordine di lock errato nel tuo codice.',
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -5606,13 +5605,13 @@ export default {
               pronunciation: '/ˈɪndeks ˈjuːsɪdʒ/',
               phonetic: 'IN-deks IU-sij',
               example:
-                'Track unused indexes to drop them. = Traccia gli indici non usati per droppare.',
+                'Inspecting pg_stat_user_indexes for low index usage flags unused indexes that waste disk and slow down every INSERT and UPDATE. = Ispezionare pg_stat_user_indexes per basso uso degli indici segnala indici inutilizzati che sprecano disco e rallentano ogni INSERT e UPDATE.',
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
             {
               english: 'pgBouncer',
-              italian: 'PgBouncer (connection pooler PostgreSQL)',
+              italian: 'pgBouncer',
               pronunciation: '/piː dʒiː ˈbaʊnsər/',
               phonetic: 'PI-JI BAUN-ser',
               example:
@@ -5620,6 +5619,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'pgBouncer',
+              note: 'Connection pooler leggero per PostgreSQL; tipicamente messo davanti al database per gestire migliaia di connessioni client con poche connessioni server.',
             },
             {
               english: 'Database Exporter',
@@ -5650,7 +5650,7 @@ export default {
           items: [
             {
               english: 'CloudWatch',
-              italian: 'CloudWatch (monitoring AWS)',
+              italian: 'CloudWatch',
               pronunciation: '/klaʊdwɒtʃ/',
               phonetic: 'KLAUD-uoch',
               example:
@@ -5658,6 +5658,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'AWS CloudWatch',
+              note: 'Servizio di monitoring nativo AWS: raccoglie metriche e log da servizi AWS e applicazioni, espone alarm e dashboard.',
             },
             {
               english: 'CloudWatch Alarm',
@@ -5694,7 +5695,7 @@ export default {
             },
             {
               english: 'EMF',
-              italian: 'EMF (Embedded Metric Format)',
+              italian: 'EMF',
               pronunciation: '/iː em ef/',
               phonetic: 'I-EM-EF',
               example:
@@ -5702,6 +5703,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: '{"_aws":{"CloudWatchMetrics":[...]},"value":42}',
+              note: 'Embedded Metric Format: convenzione JSON di AWS per emettere metriche custom direttamente nei log CloudWatch senza chiamate PutMetricData.',
             },
             {
               english: 'X-Ray',
@@ -5720,7 +5722,7 @@ export default {
               pronunciation: '/kənˈteɪnər ˈɪnsaɪts/',
               phonetic: 'kon-TEI-ner IN-saits',
               example:
-                'Container Insights monitors ECS and EKS. = Container Insights monitora ECS ed EKS.',
+                'Container Insights on EKS automatically scrapes per-pod CPU, memory and network metrics into CloudWatch without extra exporter setup. = Container Insights su EKS raccoglie automaticamente metriche CPU, memoria e rete per pod in CloudWatch senza configurazione di exporter aggiuntivi.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'AWS CloudWatch',
@@ -5731,7 +5733,7 @@ export default {
               pronunciation: '/ˈlæmdə ˈɪnsaɪts/',
               phonetic: 'LAM-da IN-saits',
               example:
-                'Lambda Insights tracks cold starts and memory. = Lambda Insights traccia cold start e memoria.',
+                'Enabling Lambda Insights surfaces cold start counts, CPU and memory per invocation, exposing functions silently running too close to their limits. = Abilitare Lambda Insights fa emergere conteggi di cold start, CPU e memoria per invocazione, esponendo funzioni che girano silenziosamente troppo vicino ai loro limiti.',
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -5740,7 +5742,8 @@ export default {
               italian: 'Strumento costi AWS (Cost Explorer)',
               pronunciation: '/kɒst ɪkˈsplɔːrər/',
               phonetic: 'KOST eks-PLO-rer',
-              example: 'Cost Explorer charts AWS spending. = Cost Explorer grafica la spesa AWS.',
+              example:
+                'Filtering Cost Explorer by tag environment=prod over the last 30 days exposes which production services drive the bulk of the AWS bill. = Filtrare Cost Explorer per tag environment=prod sugli ultimi 30 giorni espone quali servizi di produzione generano la maggior parte della bolletta AWS.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'AWS Cost Explorer',
@@ -5751,7 +5754,7 @@ export default {
               pronunciation: '/ˈtrʌstɪd ədˈvaɪzər/',
               phonetic: 'TRAS-tid ad-VAI-zer',
               example:
-                'Trusted Advisor flags security and cost issues. = Trusted Advisor segnala problemi di sicurezza e costo.',
+                'Trusted Advisor flags idle EC2 instances and over-provisioned EBS volumes, often surfacing easy savings worth thousands per month. = Trusted Advisor segnala istanze EC2 inattive e volumi EBS sovradimensionati, spesso facendo emergere risparmi facili da migliaia al mese.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'AWS Trusted Advisor',
@@ -5765,7 +5768,7 @@ export default {
           items: [
             {
               english: 'Azure Monitor',
-              italian: 'Azure Monitor (monitoring Azure)',
+              italian: 'Azure Monitor',
               pronunciation: '/ˈæʒər ˈmɒnɪtər/',
               phonetic: 'A-jur MON-i-ter',
               example:
@@ -5773,6 +5776,7 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'Azure Monitor',
+              note: `Servizio di osservabilita' di Azure che raccoglie metriche e log da risorse, applicazioni e infrastruttura; comprende Log Analytics e alert.`,
             },
             {
               english: 'Log Analytics Workspace',
@@ -5787,23 +5791,23 @@ export default {
             },
             {
               english: 'KQL',
-              italian: 'KQL (Kusto Query Language)',
+              italian: 'Azure KQL',
               pronunciation: '/keɪ kjuː el/',
               phonetic: 'KEI-KIU-EL',
-              example:
-                "KQL is Microsoft's query language. = KQL è il linguaggio di query di Microsoft.",
+              example: `Azure KQL queries like AppRequests | where ResultCode == 500 | summarize count() by Name expose the noisiest failing endpoints in seconds. = Le query Azure KQL come AppRequests | where ResultCode == 500 | summarize count() by Name espongono in pochi secondi gli endpoint piu' rumorosi che falliscono.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'AppRequests | where ResultCode == 500 | summarize count() by bin(TimeGenerated, 5m)',
               tool: 'Azure Monitor',
+              note: 'Kusto Query Language: linguaggio di query simile a SQL ma pipeline-oriented, usato in Azure Monitor Logs e Microsoft Sentinel.',
+              rename_to: 'Azure KQL',
             },
             {
               english: 'Application Insights',
-              italian: 'APM Azure (Application Insights)',
+              italian: 'Application Insights',
               pronunciation: '/ˌæplɪˈkeɪʃən ˈɪnsaɪts/',
               phonetic: 'ap-pli-KEI-scion IN-saits',
-              example:
-                "Application Insights is Azure's APM. = Application Insights è l'APM di Azure.",
+              example: `Wiring Application Insights into an ASP.NET app gives end-to-end tracing across HTTP, SQL and dependency calls without code changes. = Collegare Application Insights a un'app ASP.NET fornisce tracing end-to-end attraverso chiamate HTTP, SQL e dipendenze senza modifiche al codice.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'Azure Application Insights',
@@ -5823,8 +5827,7 @@ export default {
               italian: 'Gruppo di azioni',
               pronunciation: '/ˈækʃən ɡruːp/',
               phonetic: 'AK-scion GRUP',
-              example:
-                'Action groups deliver alerts to channels. = I gruppi di azioni consegnano alert ai canali.',
+              example: `An Azure Monitor action group bundles email, SMS and webhook receivers so every alert rule reuses the same on-call notification policy. = Un action group di Azure Monitor raggruppa receiver email, SMS e webhook cosi' che ogni regola di alert riutilizzi la stessa policy di notifica on-call.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'Azure Monitor',
@@ -5844,8 +5847,7 @@ export default {
               italian: 'Stato dei servizi cloud (Service Health)',
               pronunciation: '/ˈsɜːrvɪs helθ/',
               phonetic: 'SER-vis HELTH',
-              example:
-                'Service Health surfaces Azure outages. = Service Health mostra le interruzioni Azure.',
+              example: `Subscribing to Azure Service Health alerts lets the on-call know within minutes that a regional outage is on Microsoft's side, not the app's. = Iscriversi agli alert Azure Service Health permette all'on-call di sapere in pochi minuti che un disservizio regionale e' lato Microsoft, non dell'app.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -5854,8 +5856,7 @@ export default {
               italian: 'Stato risorse Azure (Resource Health)',
               pronunciation: '/rɪˈsɔːrs helθ/',
               phonetic: 'ri-SORS HELTH',
-              example:
-                'Resource Health reports on a single resource. = Resource Health riporta su una singola risorsa.',
+              example: `Azure Resource Health distinguishes platform-side failures from user-driven misconfigurations, saving hours of fruitless on-call debugging. = Azure Resource Health distingue i fallimenti lato piattaforma da configurazioni errate dell'utente, risparmiando ore di debug on-call infruttuoso.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -5878,7 +5879,7 @@ export default {
           items: [
             {
               english: 'Cloud Monitoring',
-              italian: 'Cloud Monitoring (monitoring Google Cloud)',
+              italian: 'Cloud Monitoring',
               pronunciation: '/klaʊd ˈmɒnɪtərɪŋ/',
               phonetic: 'KLAUD MON-i-to-ring',
               example:
@@ -5886,36 +5887,37 @@ export default {
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'GCP Cloud Monitoring',
+              note: `Servizio gestito di osservabilita' di Google Cloud (ex Stackdriver) per metriche, dashboard, SLO e alert su risorse GCP e on-prem.`,
             },
             {
               english: 'Cloud Logging',
-              italian: 'Cloud Logging (servizio log Google)',
+              italian: 'Servizio GCP Cloud Logging',
               pronunciation: '/klaʊd ˈlɒɡɪŋ/',
               phonetic: 'KLAUD LOG-ing',
               example:
-                'Cloud Logging stores all GCP audit logs. = Cloud Logging memorizza tutti gli audit log GCP.',
+                'The GCP Cloud Logging service ingests structured entries from every project and exposes them to Cloud Monitoring, BigQuery and external SIEMs via sinks. = Il servizio GCP Cloud Logging ingerisce voci strutturate da ogni progetto e le espone a Cloud Monitoring, BigQuery e SIEM esterni tramite sink.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'GCP Cloud Logging',
+              rename_to: 'GCP Cloud Logging Service',
             },
             {
               english: 'Cloud Trace',
-              italian: 'Cloud Trace (tracing Google Cloud)',
+              italian: 'Cloud Trace',
               pronunciation: '/klaʊd treɪs/',
               phonetic: 'KLAUD TREIS',
-              example:
-                'Cloud Trace ingests OpenTelemetry traces. = Cloud Trace ingerisce tracce OpenTelemetry.',
+              example: `Cloud Trace auto-instruments App Engine and Cloud Run requests, so a single click shows downstream latencies across every backend hop. = Cloud Trace strumenta automaticamente le richieste App Engine e Cloud Run, cosi' che un singolo click mostri le latenze downstream attraverso ogni hop di backend.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'GCP Cloud Trace',
             },
             {
               english: 'Cloud Profiler',
-              italian: 'Cloud Profiler (profiling Google Cloud)',
+              italian: 'Cloud Profiler',
               pronunciation: '/klaʊd ˈproʊfaɪlər/',
               phonetic: 'KLAUD PRO-fai-ler',
               example:
-                'Cloud Profiler samples production CPU and heap. = Cloud Profiler campiona CPU e heap in produzione.',
+                'Enabling Cloud Profiler on a Go service collects CPU and heap samples in production, revealing hot functions invisible to local benchmarks. = Abilitare Cloud Profiler su un servizio Go raccoglie campioni CPU e heap in produzione, rivelando funzioni calde invisibili ai benchmark locali.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'GCP Cloud Profiler',
@@ -5935,8 +5937,7 @@ export default {
               italian: 'Identità GCP per carichi di lavoro (Workload Identity)',
               pronunciation: '/ˈwɜːrkloʊd aɪˈdentɪti/',
               phonetic: 'UORK-loud ai-DEN-ti-ti',
-              example:
-                'Workload Identity gives pods GCP credentials. = Workload Identity dà credenziali GCP ai pod.',
+              example: `Workload Identity binds a Kubernetes service account to a GCP IAM service account, killing the need for long-lived JSON key files. = Workload Identity collega un service account Kubernetes a un service account IAM GCP, eliminando la necessita' di file di chiave JSON a lunga vita.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'GCP, GKE',
@@ -5947,7 +5948,7 @@ export default {
               pronunciation: '/lɒɡ sɪŋk/',
               phonetic: 'LOG SINK',
               example:
-                'A log sink exports logs to BigQuery. = Un log sink esporta log su BigQuery.',
+                'A log sink routing security audit logs to BigQuery enables SQL-based forensics months after the original Cloud Logging retention has expired. = Un log sink che instrada gli audit log di sicurezza verso BigQuery abilita analisi forensiche in SQL mesi dopo la scadenza della retention originale di Cloud Logging.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'gcloud logging sinks create my-sink ...',
@@ -5964,13 +5965,13 @@ export default {
             },
             {
               english: 'MQL',
-              italian: 'MQL (Monitoring Query Language)',
+              italian: 'MQL',
               pronunciation: '/em kjuː el/',
               phonetic: 'EM-KIU-EL',
-              example: 'MQL queries time series in GCP. = MQL interroga le time series in GCP.',
+              example: `An MQL query like fetch gce_instance | metric 'compute.googleapis.com/instance/cpu/utilization' | every 1m powers GCP dashboards in code. = Una query MQL come fetch gce_instance | metric 'compute.googleapis.com/instance/cpu/utilization' | every 1m alimenta dashboard GCP in codice.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
-              note: 'GCP sta migrando a PromQL.',
+              note: 'Monitoring Query Language: linguaggio di query di Google Cloud Monitoring orientato a pipeline e time series, alternativo ai grafici a click.',
             },
             {
               english: 'Managed Prometheus',
@@ -5978,7 +5979,7 @@ export default {
               pronunciation: '/ˈmænɪdʒd prəˈmiːθiəs/',
               phonetic: 'MA-nijd PRO-met-eus',
               example:
-                'Managed Prometheus runs at GCP scale. = Managed Prometheus gira alla scala GCP.',
+                'Switching from self-hosted Prometheus to Managed Prometheus on GCP keeps the same PromQL while offloading sharding and storage operations. = Passare da Prometheus self-hosted a Managed Prometheus su GCP mantiene lo stesso PromQL scaricando le operazioni di sharding e storage.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'GCP Managed Service for Prometheus',
@@ -5991,22 +5992,23 @@ export default {
           description: 'Metriche personalizzate cloud',
           items: [
             {
-              english: 'Custom Metric',
-              italian: 'Metrica personalizzata',
+              english: 'EMF Metric',
+              italian: 'Metrica EMF',
               pronunciation: '/ˈkʌstəm ˈmetrɪk/',
               phonetic: 'KAS-tom ME-trik',
               example:
-                'A custom metric tracks orders per minute. = Una metrica custom traccia gli ordini al minuto.',
+                'An EMF metric in CloudWatch Embedded Metric Format lets the Lambda function log a JSON payload that becomes a CloudWatch metric. = Una metrica EMF nel formato Embedded Metric Format di CloudWatch permette alla funzione Lambda di loggare un payload JSON che diventa una metrica CloudWatch.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               command: 'aws cloudwatch put-metric-data ...',
+              note: `Rinominato per distinguerlo dall'item 'Custom Metric' del modulo APM.`,
             },
             {
               english: 'Custom Namespace',
               italian: 'Namespace personalizzato',
               pronunciation: '/ˈkʌstəm ˈneɪmspeɪs/',
               phonetic: 'KAS-tom NEIM-speis',
-              example: 'Use a custom namespace per team. = Usa un namespace custom per team.',
+              example: `Publishing app metrics under a custom namespace like MyCompany/Checkout in CloudWatch keeps them clearly separated from AWS service metrics. = Pubblicare metriche dell'app sotto un namespace personalizzato come MyCompany/Checkout in CloudWatch le tiene chiaramente separate dalle metriche dei servizi AWS.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'Namespace: MyApp/Orders',
@@ -6017,7 +6019,7 @@ export default {
               pronunciation: '/dɪˈmenʃən/',
               phonetic: 'di-MEN-scion',
               example:
-                'A dimension is like a Prometheus label. = Una dimension è come una label Prometheus.',
+                'Adding a dimension like InstanceId=i-0a1b2c3d to a CloudWatch metric makes it possible to graph per-instance trends instead of one fleet average. = Aggiungere una dimensione come InstanceId=i-0a1b2c3d a una metrica CloudWatch permette di tracciare trend per istanza invece di una sola media di flotta.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               code: 'Dimensions=[{"Name":"Service","Value":"checkout"}]',
@@ -6037,8 +6039,7 @@ export default {
               italian: 'Metrica ad alta risoluzione',
               pronunciation: '/haɪ ˌrezəˈluːʃən ˈmetrɪk/',
               phonetic: 'HAI rez-o-LU-scion ME-trik',
-              example:
-                'High-resolution metrics record per-second data. = Le metriche ad alta risoluzione registrano dati al secondo.',
+              example: `A 1-second high-resolution metric in CloudWatch is essential for autoscaling fast-moving workloads where 60-second granularity would miss spikes. = Una metrica ad alta risoluzione da 1 secondo in CloudWatch e' essenziale per l'autoscaling di carichi rapidi dove la granularita' a 60 secondi mancherebbe i picchi.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
               note: 'Costo extra in cloud.',
@@ -6048,8 +6049,7 @@ export default {
               italian: 'Costo per metrica',
               pronunciation: '/kɒst pər ˈmetrɪk/',
               phonetic: 'KOST per ME-trik',
-              example:
-                'Cloud APMs charge per custom metric. = Gli APM cloud fanno pagare per metrica custom.',
+              example: `Auditing cost per metric in CloudWatch often reveals high-cardinality custom metrics doubling the monitoring bill without anyone noticing. = Verificare il costo per metrica in CloudWatch spesso rivela metriche custom ad alta cardinalita' che raddoppiano la bolletta di monitoring senza che nessuno se ne accorga.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -6058,7 +6058,7 @@ export default {
               italian: 'Periodo di aggregazione',
               pronunciation: '/ˌæɡrɪˈɡeɪʃən ˈpɪəriəd/',
               phonetic: 'a-gri-GHEI-scion PI-ri-od',
-              example: "Default aggregation is 1 minute. = L'aggregazione di default è 1 minuto.",
+              example: `Choosing a 5-minute aggregation period balances signal smoothness and alert reactivity better than the noisy 1-minute default for most SLOs. = Scegliere un periodo di aggregazione di 5 minuti bilancia meglio la smussatura del segnale e la reattivita' degli alert rispetto al default rumoroso di 1 minuto per la maggior parte degli SLO.`,
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -6068,7 +6068,7 @@ export default {
               pronunciation: '/ˈkwoʊtə/',
               phonetic: 'KUO-ta',
               example:
-                'Cloud quotas limit metric publish rate. = Le quote cloud limitano il publish rate delle metriche.',
+                'Hitting a CloudWatch PutMetricData quota of 150 transactions per second silently drops samples, so quota dashboards belong next to error dashboards. = Raggiungere una quota CloudWatch PutMetricData di 150 transazioni al secondo scarta silenziosamente i campioni, quindi le dashboard di quota stanno accanto a quelle di errore.',
               context: 'infrastructure',
               difficulty: 'intermediate',
             },
@@ -6088,7 +6088,7 @@ export default {
               pronunciation: '/ˈmʌlti klaʊd/',
               phonetic: 'MAL-ti KLAUD',
               example:
-                'Multi-cloud monitoring requires a neutral tool. = Il monitoraggio multi-cloud richiede uno strumento neutrale.',
+                'A multi-cloud setup spanning AWS and GCP often centralizes metrics in a single Grafana to avoid swapping between two unfamiliar consoles. = Un setup multi-cloud che copre AWS e GCP spesso centralizza le metriche in un unico Grafana per evitare di passare tra due console diverse.',
               context: 'infrastructure',
               difficulty: 'intermediate',
               tool: 'Datadog, Grafana Cloud',
@@ -6121,36 +6121,40 @@ export default {
               note: 'Disciplina inventata da Google.',
             },
             {
-              english: 'SLO',
-              italian: 'Service Level Objective',
+              english: 'SLO Window',
+              italian: 'Finestra dello SLO',
               pronunciation: '/es el oʊ/',
               phonetic: 'ES-EL-O',
               example:
-                "An SLO sets the reliability target. = Un SLO fissa l'obiettivo di affidabilità.",
+                'Most teams compute the SLO over a rolling 28-day window so a single bad day does not dominate the budget for a full quarter. = La maggior parte dei team calcola lo SLO su una finestra mobile di 28 giorni cosi un singolo brutto giorno non domina il budget per un trimestre intero.',
               context: 'sre',
               difficulty: 'advanced',
               code: 'availability_slo: 99.9%',
+              rename_to: 'Service Level Objective (SLO)',
+              note: `Rinominato per distinguerlo dall'item 'SLO' del modulo osservabilita' base.`,
             },
             {
-              english: 'SLI',
-              italian: 'Service Level Indicator',
+              english: 'SLI Query',
+              italian: 'Query dello SLI',
               pronunciation: '/es el aɪ/',
               phonetic: 'ES-EL-AI',
-              example: "The SLI measures actual reliability. = L'SLI misura l'affidabilità reale.",
+              example: `The SLI query divides successful requests by total requests so the result is a 0-to-1 ratio that the SLO target can compare against. = La query dello SLI divide le richieste riuscite per le richieste totali cosi il risultato e' un rapporto 0-1 confrontabile con il target dello SLO.`,
               context: 'sre',
               difficulty: 'advanced',
               code: 'sum(rate(http_requests_total{code!~"5.."}[28d])) / sum(rate(http_requests_total[28d]))',
+              rename_to: 'Service Level Indicator (SLI)',
+              note: `Rinominato per distinguerlo dall'item 'SLI' del modulo osservabilita' base.`,
             },
             {
-              english: 'Error Budget',
-              italian: 'Budget di errore',
+              english: 'Error Budget Burn',
+              italian: `Consumo dell'error budget`,
               pronunciation: '/ˈerər ˈbʌdʒɪt/',
               phonetic: 'E-rer BAD-jit',
-              example:
-                "Spend the error budget on innovation. = Spendi l'error budget in innovazione.",
+              example: `An error budget burn at 14.4x means the current hour spends the next day's budget, a clear signal to halt risky releases. = Un consumo dell'error budget a 14.4x significa che l'ora corrente spende il budget del giorno successivo, un segnale chiaro per fermare le release rischiose.`,
               context: 'sre',
               difficulty: 'advanced',
-              note: "Quanto puoi sbagliare e restare nell'SLO.",
+              note: `Rinominato per distinguerlo dall'item 'Error Budget' del modulo osservabilita' base.`,
+              rename_to: 'Error Budget Policy',
             },
             {
               english: 'Error Budget Policy',
@@ -6167,8 +6171,7 @@ export default {
               italian: 'Lavoro ripetitivo',
               pronunciation: '/tɔɪl/',
               phonetic: 'TOIL',
-              example:
-                'Toil is manual repetitive ops work. = Il toil è lavoro operativo manuale e ripetitivo.',
+              example: `Manually rotating credentials each month is classic toil: repetitive, automatable, no lasting value beyond the moment it's done. = Ruotare manualmente le credenziali ogni mese e' classico toil: ripetitivo, automatizzabile, senza valore duraturo oltre il momento in cui viene fatto.`,
               context: 'sre',
               difficulty: 'advanced',
               note: 'Concetto SRE: va eliminato con automazione.',
@@ -6178,7 +6181,7 @@ export default {
               italian: 'Riduzione del toil',
               pronunciation: '/tɔɪl rɪˈdʌkʃən/',
               phonetic: 'TOIL ri-DAK-scion',
-              example: 'Cap toil at 50% of SRE time. = Limita il toil al 50% del tempo SRE.',
+              example: `A 50% toil reduction target frees SREs to invest the freed time into reliability projects instead of feeding the operational fire. = Un obiettivo di riduzione del toil del 50% libera gli SRE per investire il tempo guadagnato in progetti di affidabilita' invece di alimentare il fuoco operativo.`,
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -6208,8 +6211,7 @@ export default {
               italian: 'Abbracciare il rischio',
               pronunciation: '/ɪmˈbreɪs rɪsk/',
               phonetic: 'em-BREIS RISK',
-              example:
-                'Embrace risk to avoid over-engineering. = Abbraccia il rischio per evitare over-engineering.',
+              example: `SRE culture asks teams to embrace risk by spending the error budget on faster releases rather than chasing 100% uptime no one will pay for. = La cultura SRE chiede ai team di abbracciare il rischio spendendo l'error budget su release piu' veloci invece di rincorrere il 100% di uptime che nessuno paghera'.`,
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -6225,8 +6227,7 @@ export default {
               italian: 'Analisi post-incidente (Postmortem)',
               pronunciation: '/ˈpoʊstmɔːrtəm/',
               phonetic: 'POST-mor-tem',
-              example:
-                'Every major incident gets a postmortem. = Ogni incidente maggiore ha un postmortem.',
+              example: `A blameless postmortem after a 30-minute outage focuses on the system gaps that let the bug slip through, not on the engineer who pushed it. = Un postmortem blameless dopo un disservizio di 30 minuti si concentra sulle lacune del sistema che hanno lasciato passare il bug, non sull'ingegnere che lo ha pushato.`,
               context: 'sre',
               difficulty: 'advanced',
               note: 'In Italia spesso chiamato "post-incident review".',
@@ -6308,7 +6309,7 @@ export default {
               pronunciation: '/ˈlesənz lɜːrnd/',
               phonetic: 'LE-senz LERND',
               example:
-                'Lessons learned avoid repeating mistakes. = Le lezioni apprese evitano di ripetere errori.',
+                'Capturing lessons learned as concrete action items prevents the same outage from repeating, turning a painful event into permanent improvement. = Catturare le lezioni apprese come azioni concrete evita che lo stesso disservizio si ripeta, trasformando un evento doloroso in miglioramento permanente.',
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -6334,8 +6335,7 @@ export default {
               italian: 'Pianificazione della capacità',
               pronunciation: '/kəˈpæsɪti ˈplænɪŋ/',
               phonetic: 'ka-PA-si-ti PLAN-ing',
-              example:
-                'Capacity planning predicts future load. = La pianificazione della capacità prevede il carico futuro.',
+              example: `Quarterly capacity planning compares Black Friday forecasts to current headroom, triggering EC2 reservations months before the traffic peak. = La pianificazione della capacita' trimestrale confronta le previsioni Black Friday con il margine attuale, attivando reservation EC2 mesi prima del picco di traffico.`,
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -6344,20 +6344,19 @@ export default {
               italian: 'Previsione',
               pronunciation: '/ˈfɔːrkæst/',
               phonetic: 'FOR-kast',
-              example:
-                'Forecast traffic for the next quarter. = Prevedi il traffico per il prossimo trimestre.',
+              example: `A linear forecast on disk usage trends shows the database server will run out of space in 6 weeks, giving ops time to plan a resize. = Una previsione lineare sui trend di uso del disco mostra che il server di database finira' lo spazio in 6 settimane, dando tempo agli operatori per pianificare un resize.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'Headroom',
-              italian: 'Margine',
+              italian: `Margine di capacita'`,
               pronunciation: '/ˈhedruːm/',
               phonetic: 'HED-rum',
-              example:
-                'Keep at least 30% headroom for spikes. = Tieni almeno 30% di margine per i picchi.',
+              example: `Reviewing capacity headroom quarterly helps SREs justify ordering more nodes before the next product launch, not in the middle of an outage. = Rivedere il margine di capacita' trimestralmente aiuta gli SRE a giustificare l'ordine di nuovi nodi prima del prossimo lancio di prodotto, non nel mezzo di un disservizio.`,
               context: 'sre',
               difficulty: 'advanced',
+              rename_to: 'Capacity Headroom',
             },
             {
               english: 'Baseline',
@@ -6365,7 +6364,7 @@ export default {
               pronunciation: '/ˈbeɪslaɪn/',
               phonetic: 'BEIS-lain',
               example:
-                'A baseline shows normal behaviour. = Una baseline mostra il comportamento normale.',
+                'Establishing a 30-day traffic baseline makes any sudden 3x spike easy to spot and lets autoscaling thresholds be tuned against real numbers. = Stabilire una baseline di traffico di 30 giorni rende facile individuare qualsiasi picco improvviso 3x e permette di regolare le soglie di autoscaling su numeri reali.',
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -6374,8 +6373,7 @@ export default {
               italian: 'Carico di picco',
               pronunciation: '/piːk loʊd/',
               phonetic: 'PIK LOUD',
-              example:
-                'Black Friday is our peak load. = Il Black Friday è il nostro carico di picco.',
+              example: `The Black Friday peak load reaches 8x normal traffic, so capacity plans size the cluster for that hour rather than the daily average. = Il carico di picco del Black Friday raggiunge 8x del traffico normale, quindi i piani di capacita' dimensionano il cluster per quell'ora invece che sulla media giornaliera.`,
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -6385,7 +6383,7 @@ export default {
               pronunciation: '/loʊd test/',
               phonetic: 'LOUD TEST',
               example:
-                'A load test simulates expected traffic. = Un test di carico simula il traffico atteso.',
+                'Running a k6 load test against staging at 2x peak traffic surfaces the bottleneck (a slow SQL query) days before the real launch. = Eseguire un load test con k6 contro staging a 2x del traffico di picco fa emergere il collo di bottiglia (una query SQL lenta) giorni prima del lancio reale.',
               context: 'sre',
               difficulty: 'advanced',
               tool: 'k6, JMeter, Locust',
@@ -6425,8 +6423,7 @@ export default {
               italian: 'Scalabilità automatica (Auto-scaling)',
               pronunciation: '/ˈɔːtoʊ ˈskeɪlɪŋ/',
               phonetic: 'O-to SKEI-ling',
-              example:
-                "Auto-scaling adds nodes during peak load. = L'auto-scaling aggiunge nodi durante il picco.",
+              example: `Configuring auto-scaling on CPU above 70% adds new pods within minutes, absorbing traffic bursts without paging the on-call team. = Configurare l'auto-scaling su CPU sopra il 70% aggiunge nuovi pod in pochi minuti, assorbendo burst di traffico senza chiamare il team on-call.`,
               context: 'sre',
               difficulty: 'advanced',
               tool: 'HPA, Cluster Autoscaler',
@@ -6444,7 +6441,7 @@ export default {
               pronunciation: '/ˈkeɪɒs ˌendʒɪˈnɪərɪŋ/',
               phonetic: 'KEI-os en-ji-NI-ring',
               example:
-                'Chaos engineering proves system resilience. = Il chaos engineering dimostra la resilienza del sistema.',
+                'Chaos Engineering experiments like killing random pods in production validate that retries and circuit breakers actually do their job under fire. = Esperimenti di Chaos Engineering come uccidere pod casuali in produzione verificano che retry e circuit breaker facciano davvero il loro lavoro sotto pressione.',
               context: 'sre',
               difficulty: 'advanced',
               tool: 'Chaos Mesh, Litmus',
@@ -6455,7 +6452,7 @@ export default {
               pronunciation: '/ɡeɪm deɪ/',
               phonetic: 'GHEIM DEI',
               example:
-                'A game day rehearses incident response. = Un game day prova la risposta agli incidenti.',
+                'A quarterly Game Day simulates a full region failure, forcing the team to practice runbooks and uncover stale documentation before it matters. = Un Game Day trimestrale simula un fallimento di intera regione, costringendo il team a esercitarsi sui runbook e scoprire documentazione obsoleta prima che importi.',
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -6486,7 +6483,7 @@ export default {
               pronunciation: '/ɑːr tiː oʊ/',
               phonetic: 'AR-TI-O',
               example:
-                'A 30-minute RTO is a tight target. = Un RTO di 30 minuti è un obiettivo stretto.',
+                'An RTO of 1 hour means the business expects services back online within 60 minutes of a disaster, shaping every recovery automation choice. = Un RTO di 1 ora significa che il business si aspetta i servizi di nuovo online entro 60 minuti da un disastro, plasmando ogni scelta di automazione di recovery.',
               context: 'sre',
               difficulty: 'advanced',
               note: 'Recovery Time Objective.',
@@ -6506,8 +6503,7 @@ export default {
               italian: 'Release canary',
               pronunciation: '/kəˈneəri rɪˈliːs/',
               phonetic: 'ca-NE-ri ri-LIS',
-              example:
-                "A canary release rolls out to 1% first. = Una release canary rilascia all'1% per primo.",
+              example: `A canary release routes 1% of traffic to the new version first, so any spike in errors or latency triggers an automatic rollback. = Una release canary instrada prima l'1% del traffico verso la nuova versione, cosi' che qualsiasi picco di errori o latenza scateni un rollback automatico.`,
               context: 'sre',
               difficulty: 'advanced',
               tool: 'Argo Rollouts, Flagger',
@@ -6564,8 +6560,7 @@ export default {
               italian: 'Risposta agli incidenti',
               pronunciation: '/ˈɪnsɪdənt rɪˈspɒns/',
               phonetic: 'IN-si-dent ri-SPONS',
-              example:
-                'Incident response coordinates the team. = La risposta agli incidenti coordina il team.',
+              example: `A clear incident response process assigns commander, scribe and comms within the first 5 minutes so the team doesn't waste time arguing roles. = Un processo chiaro di risposta agli incidenti assegna commander, scribe e comunicazioni nei primi 5 minuti cosi' che il team non perda tempo a discutere i ruoli.`,
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6636,8 +6631,7 @@ export default {
               italian: 'Aggiornamento di stato',
               pronunciation: '/ˈsteɪtəs ˈʌpdeɪt/',
               phonetic: 'STEI-tus AP-deit',
-              example:
-                'Send status updates every 30 minutes. = Invia aggiornamenti ogni 30 minuti.',
+              example: `During a SEV1 outage the incident commander pushes a status update every 15 minutes so leadership and customers stay aligned. = Durante un disservizio SEV1 l'incident commander invia uno status update ogni 15 minuti perché leadership e clienti restino allineati.`,
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6647,19 +6641,19 @@ export default {
               pronunciation: '/ˈkʌstəmər kəˌmjuːnɪˈkeɪʃən/',
               phonetic: 'KAS-to-mer ko-miu-ni-KEI-scion',
               example:
-                'Customer communication shapes brand trust. = La comunicazione al cliente plasma la fiducia del brand.',
+                'Clear customer communication during downtime preserves trust far more effectively than a postmortem published days later. = Una customer communication chiara durante il downtime preserva la fiducia molto più di un postmortem pubblicato giorni dopo.',
               context: 'incidents',
               difficulty: 'advanced',
             },
             {
-              english: 'Resolution',
-              italian: 'Risoluzione',
+              english: 'Resolution Notice',
+              italian: 'Comunicazione di risoluzione',
               pronunciation: '/ˌrezəˈluːʃən/',
               phonetic: 'rez-o-LU-scion',
-              example:
-                'Confirm resolution before standing down. = Conferma la risoluzione prima di chiudere.',
+              example: `Post a clear resolution notice to the incident channel and status page so customers know the regression is fully recovered. = Pubblica una comunicazione di risoluzione chiara nel canale dell'incidente e nella status page cosi i clienti sanno che la regressione e' completamente risolta.`,
               context: 'incidents',
               difficulty: 'advanced',
+              note: `Rinominato per distinguerlo dall'item 'Resolution' del modulo osservabilita' base.`,
             },
           ],
         },
@@ -6669,12 +6663,12 @@ export default {
           description: 'Classificare gli incidenti',
           items: [
             {
-              english: 'Severity',
-              italian: 'Severità',
+              english: 'Severity Level',
+              italian: 'Livello di severità',
               pronunciation: '/sɪˈverɪti/',
               phonetic: 'se-VE-ri-ti',
               example:
-                'Severity drives how loud you escalate. = La severità decide quanto si scala forte.',
+                'Assigning the right severity level early routes the page to the correct on-call rotation and unlocks the SEV1 war-room workflow. = Assegnare presto il giusto livello di severità instrada la chiamata al turno on-call giusto e attiva il workflow della war-room SEV1.',
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6683,8 +6677,7 @@ export default {
               italian: 'Incidente di gravità 1 (SEV1)',
               pronunciation: '/sev wʌn/',
               phonetic: 'SEV-UAN',
-              example:
-                'SEV1 means total customer-facing outage. = SEV1 significa interruzione totale ai clienti.',
+              example: `A total checkout outage on Black Friday triggers a SEV1 incident with an executive bridge call within minutes. = Un'interruzione totale del checkout durante il Black Friday attiva un incidente SEV1 con una bridge call dirigenziale in pochi minuti.`,
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6694,7 +6687,7 @@ export default {
               pronunciation: '/sev tuː/',
               phonetic: 'SEV-TU',
               example:
-                'SEV2 is major impact, but workarounds exist. = SEV2 è impatto maggiore, ma con workaround.',
+                'Search returning empty results for premium users while the rest of the site works qualifies as a SEV2 incident. = La ricerca che restituisce risultati vuoti per gli utenti premium mentre il resto del sito funziona si qualifica come incidente SEV2.',
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6703,7 +6696,8 @@ export default {
               italian: 'Incidente di gravità 3 (SEV3)',
               pronunciation: '/sev θriː/',
               phonetic: 'SEV-TRI',
-              example: 'SEV3 is partial degradation. = SEV3 è degrado parziale.',
+              example:
+                'A 5% spike in checkout latency without errors is usually filed as a SEV3 needing follow-up but no late-night page. = Un picco del 5% nella latenza del checkout senza errori è di solito classificato SEV3 con follow-up ma senza chiamata notturna.',
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6712,7 +6706,8 @@ export default {
               italian: 'Incidente di gravità 4 (SEV4)',
               pronunciation: '/sev fɔːr/',
               phonetic: 'SEV-FOR',
-              example: 'SEV4 covers minor cosmetic issues. = SEV4 copre problemi cosmetici minori.',
+              example:
+                'A misaligned button on the help page is typically logged as SEV4 and rolled into the next sprint, not paged on-call. = Un bottone disallineato sulla pagina di aiuto viene di solito registrato come SEV4 e gestito nello sprint successivo, non in reperibilità.',
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6721,8 +6716,7 @@ export default {
               italian: 'Inoltro al livello superiore (Escalation)',
               pronunciation: '/ˌeskəˈleɪʃən/',
               phonetic: 'es-ca-LEI-scion',
-              example:
-                "Escalation engages senior leadership. = L'escalation coinvolge la leadership senior.",
+              example: `If the primary on-call does not acknowledge within five minutes, the escalation policy pages the secondary and then the manager. = Se l'on-call primario non riconosce entro cinque minuti, la policy di escalation chiama il secondario e poi il manager.`,
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6742,7 +6736,7 @@ export default {
               pronunciation: '/ˈmeɪdʒər ˈɪnsɪdənt/',
               phonetic: 'MEI-jer IN-si-dent',
               example:
-                'A major incident impacts revenue. = Un incidente maggiore impatta il fatturato.',
+                'Banks declare a major incident when payment processing fails because each minute of downtime translates into measurable revenue loss. = Le banche dichiarano un major incident quando il processing pagamenti si interrompe perché ogni minuto di downtime equivale a perdita di fatturato misurabile.',
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6751,8 +6745,7 @@ export default {
               italian: 'Matrice di severità',
               pronunciation: '/sɪˈverɪti ˈmeɪtrɪks/',
               phonetic: 'se-VE-ri-ti MEI-triks',
-              example:
-                "A severity matrix removes ambiguity. = Una matrice di severità rimuove l'ambiguità.",
+              example: `A clear severity matrix removes arguments at 3am by mapping symptoms like "payments down" directly to SEV1 with no debate. = Una severity matrix chiara elimina le discussioni alle 3 di notte mappando sintomi come 'pagamenti giù' direttamente a SEV1 senza dibattito.`,
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6762,7 +6755,7 @@ export default {
               pronunciation: '/ˈkʌstəmər ˈɪmpæktɪŋ/',
               phonetic: 'KAS-to-mer IM-pak-ting',
               example:
-                'Customer-impacting events trigger SEV1. = Eventi con impatto cliente attivano SEV1.',
+                'Anything customer-impacting goes on the public status page within five minutes, even before the root cause is known. = Tutto ciò che è customer-impacting va sulla pagina di stato pubblica entro cinque minuti, anche prima che la causa radice sia nota.',
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6775,45 +6768,44 @@ export default {
           items: [
             {
               english: 'RCA',
-              italian: 'RCA (analisi causa radice)',
+              italian: 'RCA',
               pronunciation: '/ɑːr siː eɪ/',
               phonetic: 'AR-SI-EI',
               example:
                 "The RCA identifies the underlying issue. = L'RCA identifica il problema sottostante.",
               context: 'incidents',
               difficulty: 'advanced',
-              note: 'Root Cause Analysis.',
+              note: 'Root Cause Analysis: analisi della causa radice di un incidente.',
             },
             {
-              english: 'MTTR',
-              italian: 'MTTR (tempo medio di ripristino)',
+              english: 'Incident MTTR',
+              italian: 'MTTR di incidente',
               pronunciation: '/em tiː tiː ɑːr/',
               phonetic: 'EM-TI-TI-AR',
-              example: "Reduce MTTR by improving runbooks. = Riduci l'MTTR migliorando i runbook.",
+              example: `Tracking incident MTTR per service tells you where runbooks need investment and where automation will pay back fastest. = Tracciare l'MTTR di incidente per servizio dice dove investire sui runbook e dove l'automazione renderà più velocemente.`,
               context: 'incidents',
               difficulty: 'advanced',
             },
             {
               english: 'MTTA',
-              italian: 'MTTA (tempo medio di ack)',
+              italian: 'MTTA',
               pronunciation: '/em tiː tiː eɪ/',
               phonetic: 'EM-TI-TI-EI',
               example:
                 "Track MTTA to find slow first responders. = Traccia l'MTTA per individuare risponditori lenti.",
               context: 'incidents',
               difficulty: 'advanced',
-              note: 'Mean Time To Acknowledge.',
+              note: 'Mean Time To Acknowledge: tempo medio prima che un on-call prenda in carico una chiamata.',
             },
             {
               english: 'MTTD',
-              italian: 'MTTD (tempo medio di rilevamento)',
+              italian: 'MTTD',
               pronunciation: '/em tiː tiː diː/',
               phonetic: 'EM-TI-TI-DI',
-              example:
-                'A low MTTD means good monitoring. = Un MTTD basso significa buon monitoraggio.',
+              example: `Pushing MTTD below five minutes usually requires synthetic monitoring on critical user journeys plus anomaly detection on Golden Signals. = Portare l'MTTD sotto i cinque minuti richiede di solito monitoring sintetico sui percorsi utente critici più anomaly detection sui Golden Signals.`,
               context: 'incidents',
               difficulty: 'advanced',
-              note: 'Mean Time To Detection.',
+              note: 'Mean Time To Detection: tempo medio per accorgersi che un problema è in corso.',
             },
             {
               english: 'Mitigation',
@@ -6821,7 +6813,7 @@ export default {
               pronunciation: '/ˌmɪtɪˈɡeɪʃən/',
               phonetic: 'mi-ti-GHEI-scion',
               example:
-                "Mitigation stops the bleeding first. = La mitigazione ferma l'emorragia per prima.",
+                'Flipping the feature flag off is a fast mitigation that buys engineers time to find and ship a proper fix the next day. = Spegnere il feature flag è una mitigation veloce che dà agli ingegneri il tempo di trovare e rilasciare una fix vera il giorno dopo.',
               context: 'incidents',
               difficulty: 'advanced',
               note: 'La fix definitiva può aspettare.',
@@ -6831,8 +6823,7 @@ export default {
               italian: 'Soluzione temporanea',
               pronunciation: '/ˈwɜːrkəraʊnd/',
               phonetic: 'UORK-a-raund',
-              example:
-                'A workaround is a temporary fix. = Una workaround è una soluzione temporanea.',
+              example: `A documented workaround like "restart the worker every hour" is acceptable for a few days, never as a permanent solution. = Un workaround documentato come 'riavvia il worker ogni ora' è accettabile per qualche giorno, mai come soluzione permanente.`,
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6842,17 +6833,16 @@ export default {
               pronunciation: '/ˈhɒtfɪks/',
               phonetic: 'HOT-fiks',
               example:
-                'A hotfix patches a critical bug fast. = Un hotfix corregge un bug critico velocemente.',
+                'We pushed a hotfix to production at 2am to patch the SQL injection before bots could weaponise the disclosed CVE. = Abbiamo rilasciato un hotfix in produzione alle 2 di notte per chiudere la SQL injection prima che i bot weaponizzassero il CVE divulgato.',
               context: 'incidents',
               difficulty: 'advanced',
             },
             {
-              english: 'Rollback',
-              italian: 'Ritorno a versione precedente (Rollback)',
+              english: 'Production Rollback',
+              italian: 'Rollback di produzione',
               pronunciation: '/ˈroʊlbæk/',
               phonetic: 'ROL-bak',
-              example:
-                'Rollback to the last known-good release. = Rollback alla last known-good release.',
+              example: `Once error rates spiked we triggered an immediate production rollback to the previous container image rather than chase a forward fix. = Quando i tassi di errore sono esplosi abbiamo attivato un rollback di produzione immediato all'immagine container precedente invece di inseguire una fix in avanti.`,
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6888,8 +6878,7 @@ export default {
               italian: 'Procedura operativa (Runbook)',
               pronunciation: '/ˈrʌnbʊk/',
               phonetic: 'RAN-buk',
-              example:
-                'A runbook documents the response steps. = Un runbook documenta i passi di risposta.',
+              example: `When the database CPU alert fires the on-call opens the dedicated runbook and follows the diagnostic queries step by step. = Quando scatta l'alert sulla CPU del database l'on-call apre il runbook dedicato e segue le query diagnostiche passo per passo.`,
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6899,7 +6888,7 @@ export default {
               pronunciation: '/ˈpleɪbʊk/',
               phonetic: 'PLEI-buk',
               example:
-                'A playbook is a higher-level runbook. = Un playbook è un runbook di livello più alto.',
+                'Our DDoS playbook lists exactly who to call at Cloudflare and which mitigation rules to enable in what order. = Il nostro playbook DDoS elenca esattamente chi chiamare in Cloudflare e quali regole di mitigation abilitare in quale ordine.',
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6908,8 +6897,7 @@ export default {
               italian: 'Automazione runbook',
               pronunciation: '/ˈrʌnbʊk ˌɔːtəˈmeɪʃən/',
               phonetic: 'RAN-buk o-to-MEI-scion',
-              example:
-                "Runbook automation runs steps without humans. = L'automazione runbook esegue i passi senza umani.",
+              example: `Investing in runbook automation lets a tier-1 alert auto-restart a stuck pod before the on-call even reaches their laptop. = Investire in runbook automation permette a un alert tier-1 di riavviare automaticamente un pod bloccato prima che l'on-call raggiunga il laptop.`,
               context: 'incidents',
               difficulty: 'advanced',
               tool: 'Rundeck, StackStorm',
@@ -6929,8 +6917,7 @@ export default {
               italian: 'Rimedio',
               pronunciation: '/rɪˌmiːdiˈeɪʃən/',
               phonetic: 'ri-mi-di-EI-scion',
-              example:
-                'Remediation steps fix the problem. = I passi di rimedio correggono il problema.',
+              example: `Add a remediation section to each runbook with the exact kubectl commands, expected output, and how to verify success. = Aggiungi una sezione di remediation a ogni runbook con i comandi kubectl esatti, l'output atteso e come verificare il successo.`,
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6939,8 +6926,7 @@ export default {
               italian: 'Albero decisionale',
               pronunciation: '/dɪˈsɪʒən triː/',
               phonetic: 'di-SI-jion TRI',
-              example:
-                'A decision tree guides the responder. = Un albero decisionale guida il responder.',
+              example: `A simple decision tree at the top of the runbook routes the responder to the right diagnostic branch in under a minute. = Un semplice decision tree all'inizio del runbook instrada il responder al ramo diagnostico giusto in meno di un minuto.`,
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6950,7 +6936,7 @@ export default {
               pronunciation: '/ˈwɪki/',
               phonetic: 'UI-ki',
               example:
-                'Store runbooks in a searchable wiki. = Conserva i runbook in un wiki ricercabile.',
+                'Storing runbooks in a searchable wiki like Confluence makes them discoverable from incident chat with a single link. = Mantenere i runbook in un wiki ricercabile come Confluence li rende scopribili dalla chat di incidente con un singolo link.',
               context: 'incidents',
               difficulty: 'advanced',
               tool: 'Confluence, Notion',
@@ -6960,7 +6946,8 @@ export default {
               italian: 'Documento vivente',
               pronunciation: '/ˈlɪvɪŋ ˈdɒkjumənt/',
               phonetic: 'LI-ving DO-kiu-ment',
-              example: 'A runbook is a living document. = Un runbook è un documento vivente.',
+              example:
+                'Treating runbooks as a living document means every postmortem produces a concrete diff against the existing procedure. = Trattare i runbook come living document significa che ogni postmortem produce un diff concreto contro la procedura esistente.',
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -6980,7 +6967,7 @@ export default {
               pronunciation: '/drɪl/',
               phonetic: 'DRIL',
               example:
-                'Run quarterly drills with the runbook. = Esegui esercitazioni trimestrali con il runbook.',
+                'Run a quarterly game-day drill where you simulate a region failure and time how long full recovery actually takes. = Esegui un game-day drill trimestrale dove simuli il fallimento di una region e misuri quanto tempo richiede davvero il ripristino.',
               context: 'incidents',
               difficulty: 'advanced',
             },
@@ -7002,7 +6989,7 @@ export default {
           items: [
             {
               english: 'PagerDuty',
-              italian: 'PagerDuty (piattaforma on-call)',
+              italian: 'PagerDuty',
               pronunciation: '/ˈpeɪdʒər ˈdjuːti/',
               phonetic: 'PEI-jer DIU-ti',
               example:
@@ -7028,7 +7015,7 @@ export default {
               pronunciation: '/ˈʃedjuːl/',
               phonetic: 'SHE-jul',
               example:
-                'A schedule defines who is on-call when. = Uno schedule definisce chi è di reperibilità e quando.',
+                'Building a follow-the-sun schedule across three regions keeps on-call coverage at sane hours for every team member. = Costruire uno schedule follow-the-sun su tre region mantiene la copertura on-call in orari sani per ogni membro del team.',
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7038,7 +7025,7 @@ export default {
               pronunciation: '/ˈleɪər/',
               phonetic: 'LEI-er',
               example:
-                'Layered schedules cover holidays and time zones. = Schedule a layer coprono ferie e fusi orari.',
+                'Holiday coverage is implemented as an override layer on top of the primary rotation without rewriting the base schedule. = La copertura per le ferie si implementa come layer di override sopra alla rotazione primaria senza riscrivere lo schedule base.',
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7048,20 +7035,21 @@ export default {
               pronunciation: '/ɪˈvent ruːl/',
               phonetic: 'i-VENT RUL',
               example:
-                'Event rules transform incoming alerts. = Le event rule trasformano gli alert in arrivo.',
+                'We wrote a PagerDuty event rule that drops alerts tagged env=staging during business hours to stop noisy interruptions. = Abbiamo scritto un event rule PagerDuty che scarta gli alert taggati env=staging negli orari di ufficio per fermare interruzioni rumorose.',
               context: 'alerting',
               difficulty: 'advanced',
               tool: 'PagerDuty',
             },
             {
-              english: 'Service Dependency',
-              italian: 'Dipendenza tra servizi',
+              english: 'Dependency Chain',
+              italian: 'Catena di dipendenze',
               pronunciation: '/ˈsɜːrvɪs dɪˈpendənsi/',
               phonetic: 'SER-vis di-PEN-den-si',
               example:
-                'Service dependencies group related alerts. = Le dipendenze tra servizi raggruppano alert correlati.',
+                'The PagerDuty dependency chain routes a database paging alert to the storage team while still notifying impacted service owners. = La catena di dipendenze di PagerDuty instrada un alert di paging del database al team storage notificando comunque i proprietari dei servizi impattati.',
               context: 'alerting',
               difficulty: 'advanced',
+              note: `Rinominato per distinguerlo dall'item 'Service Dependency' del modulo trace.`,
             },
             {
               english: 'Incident Workflow',
@@ -7069,7 +7057,7 @@ export default {
               pronunciation: '/ˈɪnsɪdənt ˈwɜːrkfloʊ/',
               phonetic: 'IN-si-dent UORK-flou',
               example:
-                'Incident workflows automate responses. = I workflow di incidente automatizzano le risposte.',
+                'Our incident workflow auto-creates a Slack channel, opens a Zoom bridge, and pings the comms lead within thirty seconds of a SEV1. = Il nostro incident workflow crea automaticamente un canale Slack, apre un bridge Zoom e pinga il comms lead entro trenta secondi da un SEV1.',
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7079,27 +7067,26 @@ export default {
               pronunciation: '/ˈsteɪkˌhoʊldər/',
               phonetic: 'STEIK-hol-der',
               example:
-                'Stakeholder updates inform business teams. = Gli aggiornamenti agli stakeholder informano i team business.',
+                'Send tailored stakeholder updates to executives every thirty minutes so they can answer customer questions without paging engineers. = Invia stakeholder update mirati ai dirigenti ogni trenta minuti così possono rispondere ai clienti senza disturbare gli ingegneri.',
               context: 'alerting',
               difficulty: 'advanced',
             },
             {
-              english: 'Status Page',
-              italian: 'Pagina di stato',
+              english: 'Statuspage.io',
+              italian: 'Statuspage.io',
               pronunciation: '/ˈsteɪtəs peɪdʒ/',
               phonetic: 'STEI-tus PEIJ',
-              example:
-                'PagerDuty Status Pages communicate to customers. = Le PagerDuty Status Pages comunicano ai clienti.',
+              example: `Atlassian Statuspage.io publishes incident updates to subscribed customers via email, SMS, and RSS in one platform. = Atlassian Statuspage.io pubblica aggiornamenti di incidente ai clienti iscritti via email, SMS e RSS in un'unica piattaforma.`,
               context: 'alerting',
               difficulty: 'advanced',
+              note: `Rinominato per distinguerlo dall'item 'Status Page' del modulo osservabilita' base.`,
             },
             {
               english: 'API Token',
               italian: 'Token API',
               pronunciation: '/eɪ piː aɪ ˈtoʊkən/',
               phonetic: 'EI-PI-AI TO-ken',
-              example:
-                'Use an API token to integrate with CI. = Usa un token API per integrare con CI.',
+              example: `Store the PagerDuty API token in a vault and inject it into CI via a short-lived secret rather than committing it to repo. = Conserva l'API token PagerDuty in un vault e iniettalo nella CI tramite un secret a breve vita invece di committarlo in repo.`,
               context: 'alerting',
               difficulty: 'advanced',
               command:
@@ -7114,40 +7101,39 @@ export default {
           items: [
             {
               english: 'OpsGenie',
-              italian: 'OpsGenie (piattaforma on-call Atlassian)',
+              italian: 'OpsGenie',
               pronunciation: '/ɒps ˈdʒiːni/',
               phonetic: 'OPS-JI-ni',
               example:
-                "OpsGenie is Atlassian's on-call tool. = OpsGenie è lo strumento di reperibilità di Atlassian.",
+                'Teams already deep in the Atlassian stack often pick OpsGenie because escalations flow naturally into Jira and Confluence runbooks. = I team già radicati nello stack Atlassian spesso scelgono OpsGenie perché le escalation fluiscono naturalmente in Jira e nei runbook Confluence.',
               context: 'alerting',
               difficulty: 'advanced',
               tool: 'OpsGenie',
             },
             {
               english: 'Squadcast',
-              italian: 'Squadcast (piattaforma on-call)',
+              italian: 'Squadcast',
               pronunciation: '/ˈskwɒdkæst/',
               phonetic: 'SKUOD-kast',
               example:
-                "Squadcast is a PagerDuty alternative. = Squadcast è un'alternativa a PagerDuty.",
+                'Smaller teams pick Squadcast as a budget-friendly PagerDuty alternative that still ships SLO tracking and postmortem templates. = I team più piccoli scelgono Squadcast come alternativa economica a PagerDuty che offre comunque tracking SLO e template di postmortem.',
               context: 'alerting',
               difficulty: 'advanced',
               tool: 'Squadcast',
             },
             {
               english: 'Splunk On-Call',
-              italian: 'Splunk On-Call (ex-VictorOps)',
+              italian: 'Splunk On-Call',
               pronunciation: '/splʌŋk ɒn kɔːl/',
               phonetic: 'SPLANK ON-KOL',
-              example:
-                'Splunk On-Call was formerly VictorOps. = Splunk On-Call era VictorOps in passato.',
+              example: `Shops with heavy Splunk investments often consolidate paging on Splunk On-Call to keep logs, alerts and incidents in one bill. = Le aziende con investimenti pesanti su Splunk consolidano spesso il paging su Splunk On-Call per tenere log, alert e incidenti in un'unica fattura.`,
               context: 'alerting',
               difficulty: 'advanced',
               tool: 'Splunk On-Call',
             },
             {
               english: 'Better Uptime',
-              italian: 'Better Uptime (piattaforma uptime + on-call)',
+              italian: 'Better Uptime',
               pronunciation: '/ˈbetər ˈʌptaɪm/',
               phonetic: 'BE-ter AP-taim',
               example:
@@ -7158,7 +7144,7 @@ export default {
             },
             {
               english: 'Grafana OnCall',
-              italian: 'Grafana OnCall (gestione on-call open source)',
+              italian: 'Grafana OnCall',
               pronunciation: '/ɡrəˈfɑːnə ɒn kɔːl/',
               phonetic: 'GRA-fa-na ON-KOL',
               example:
@@ -7173,7 +7159,7 @@ export default {
               pronunciation: '/əˈlɜːrt ˈmænɪdʒər/',
               phonetic: 'a-LERT MA-ni-jer',
               example:
-                'Alertmanager is the Prometheus dispatcher. = Alertmanager è il dispatcher di Prometheus.',
+                'We point every Prometheus replica at the same Alertmanager cluster so deduplicated pages reach PagerDuty exactly once. = Puntiamo ogni replica Prometheus allo stesso cluster Alertmanager così le pagine deduplicate arrivano a PagerDuty esattamente una volta.',
               context: 'alerting',
               difficulty: 'advanced',
               tool: 'Alertmanager',
@@ -7206,7 +7192,7 @@ export default {
               pronunciation: '/ˌɪnhɪˈbɪʃən/',
               phonetic: 'in-i-BI-scion',
               example:
-                "Inhibition mutes alerts during a known outage. = L'inibizione silenzia alert durante un'interruzione nota.",
+                'An inhibition rule silences pod-level alerts whenever the parent node is already firing a NodeDown to cut noise during outages. = Una regola di inhibition silenzia gli alert a livello di pod quando il nodo padre sta già sparando un NodeDown per tagliare rumore durante i disservizi.',
               context: 'alerting',
               difficulty: 'advanced',
               tool: 'Alertmanager',
@@ -7216,8 +7202,7 @@ export default {
               italian: 'Template',
               pronunciation: '/ˈtempleɪts/',
               phonetic: 'TEM-pleits',
-              example:
-                'Templates customise notification text. = I template personalizzano il testo delle notifiche.',
+              example: `Custom Alertmanager templates inject the runbook URL and Grafana dashboard link straight into the Slack message body. = Template Alertmanager custom iniettano l'URL del runbook e il link al dashboard Grafana direttamente nel corpo del messaggio Slack.`,
               context: 'alerting',
               difficulty: 'advanced',
               tool: 'Alertmanager',
@@ -7235,7 +7220,7 @@ export default {
               pronunciation: '/əˈlɜːrt ˈɡruːpɪŋ/',
               phonetic: 'a-LERT GRU-ping',
               example:
-                'Alert grouping reduces pager noise. = Il raggruppamento degli alert riduce il rumore del pager.',
+                'Smart alert grouping turns one hundred per-pod failures during a rolling restart into a single page with a clear summary. = Un alert grouping intelligente trasforma cento fallimenti per-pod durante un rolling restart in un singolo page con un riassunto chiaro.',
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7245,7 +7230,7 @@ export default {
               pronunciation: '/ˌdiːˌduːplɪˈkeɪʃən/',
               phonetic: 'di-du-pli-KEI-scion',
               example:
-                'Deduplication combines repeated alerts. = La deduplica combina alert ripetuti.',
+                'Without deduplication, repeated firings of the same Prometheus alert across replicas would flood the on-call queue with identical tickets. = Senza deduplication i firing ripetuti dello stesso alert Prometheus tra repliche inonderebbero la coda on-call di ticket identici.',
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7254,7 +7239,8 @@ export default {
               italian: 'Raggruppare per',
               pronunciation: '/ɡruːp baɪ/',
               phonetic: 'GRUP BAI',
-              example: 'Group by alertname and cluster. = Raggruppa per alertname e cluster.',
+              example:
+                'Set group_by to alertname and cluster so every alert storm from a single cluster lands in one consolidated PagerDuty incident. = Imposta group_by su alertname e cluster così ogni tempesta di alert da un singolo cluster arriva in un incidente PagerDuty consolidato.',
               context: 'alerting',
               difficulty: 'advanced',
               code: 'group_by: ["alertname", "cluster"]',
@@ -7264,8 +7250,7 @@ export default {
               italian: 'Attesa di gruppo',
               pronunciation: '/ɡruːp weɪt/',
               phonetic: 'GRUP UEIT',
-              example:
-                'Group wait gives time to gather similar alerts. = Group wait dà tempo per raccogliere alert simili.',
+              example: `Setting group_wait to thirty seconds lets Alertmanager batch correlated firings before paging the on-call only once. = Impostare group_wait a trenta secondi permette ad Alertmanager di accorpare i firing correlati prima di chiamare l'on-call una sola volta.`,
               context: 'alerting',
               difficulty: 'advanced',
               code: 'group_wait: 30s',
@@ -7276,7 +7261,7 @@ export default {
               pronunciation: '/ɡruːp ˈɪntərvəl/',
               phonetic: 'GRUP IN-ter-val',
               example:
-                'Group interval batches new alerts together. = Group interval batcha alert nuovi insieme.',
+                'A five-minute group_interval prevents a new alert in the same group from re-paging immediately after the first notification went out. = Un group_interval di cinque minuti impedisce a un nuovo alert dello stesso gruppo di rinotificare subito dopo la prima notifica.',
               context: 'alerting',
               difficulty: 'advanced',
               code: 'group_interval: 5m',
@@ -7286,8 +7271,7 @@ export default {
               italian: 'Intervallo di ripetizione',
               pronunciation: '/rɪˈpiːt ˈɪntərvəl/',
               phonetic: 'ri-PIT IN-ter-val',
-              example:
-                'Repeat interval re-pages if not resolved. = Repeat interval rinota se non risolto.',
+              example: `We use a four-hour repeat_interval on persistent alerts so the on-call gets re-paged if the incident drags into the next handoff. = Usiamo un repeat_interval di quattro ore sugli alert persistenti così l'on-call viene richiamato se l'incidente sconfina nel turno successivo.`,
               context: 'alerting',
               difficulty: 'advanced',
               code: 'repeat_interval: 4h',
@@ -7298,7 +7282,7 @@ export default {
               pronunciation: '/səˈpreʃən/',
               phonetic: 'sa-PRES-scion',
               example:
-                'Suppression hides alerts caused by another. = La soppressione nasconde alert causati da un altro.',
+                'Maintenance windows automatically apply suppression on dependent service alerts so a planned DB restart does not page five teams. = Le finestre di manutenzione applicano automaticamente suppression sugli alert dei servizi dipendenti così un riavvio DB pianificato non chiama cinque team.',
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7345,7 +7329,8 @@ export default {
               italian: 'Spam di alert',
               pronunciation: '/əˈlɜːrt spæm/',
               phonetic: 'a-LERT SPAM',
-              example: 'Alert spam erodes trust. = Lo spam di alert erode la fiducia.',
+              example:
+                'Six months of unaddressed alert spam at one bank trained engineers to mute the channel completely, hiding a real SEV1 for hours. = Sei mesi di alert spam ignorati in una banca hanno abituato gli ingegneri a silenziare il canale, nascondendo un vero SEV1 per ore.',
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7355,7 +7340,7 @@ export default {
               pronunciation: '/kɔːz əˈlɜːrt/',
               phonetic: 'KOZ a-LERT',
               example:
-                'Avoid cause-based alerts when possible. = Evita alert basati sulle cause quando possibile.',
+                'Falling into the cause alert antipattern means paging on every disk-full warning instead of on the user-visible 500 errors they may produce. = Cadere nel cause alert antipattern significa chiamare per ogni warning disco pieno invece che sugli errori 500 visibili agli utenti.',
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7365,7 +7350,7 @@ export default {
               pronunciation: '/ˈθreʃoʊld hel/',
               phonetic: 'TRESH-old HEL',
               example:
-                "Threshold hell happens with hundreds of static alerts. = L'inferno delle soglie nasce con centinaia di alert statici.",
+                'Teams stuck in threshold hell maintain hundreds of static cutoffs that all need re-tuning every time traffic patterns shift seasonally. = I team bloccati nel threshold hell mantengono centinaia di soglie statiche da ritarare ogni volta che il traffico cambia stagionalmente.',
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7375,7 +7360,7 @@ export default {
               pronunciation: '/ˈbɜːrnaʊt/',
               phonetic: 'BERN-aut',
               example:
-                'On-call burnout drives engineers away. = Il burnout da reperibilità fa scappare gli ingegneri.',
+                'Three weeks of 3am pages caused on-call burnout for the SRE team, who collectively asked HR to redesign the rotation. = Tre settimane di chiamate alle 3 di notte hanno causato burnout al team SRE, che ha collettivamente chiesto a HR di ridisegnare la rotazione.',
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7404,8 +7389,7 @@ export default {
               italian: 'Eccesso di alert',
               pronunciation: '/ˈoʊvər əˈlɜːrtɪŋ/',
               phonetic: 'O-ver a-LER-ting',
-              example:
-                "Over-alerting is the most common mistake. = L'eccesso di alert è l'errore più comune.",
+              example: `Symptoms of over-alerting include engineers acknowledging pages without reading them and dashboards covered in permanently red panels. = I sintomi dell'over-alerting includono ingegneri che riconoscono le chiamate senza leggerle e dashboard coperti di pannelli sempre rossi.`,
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7414,8 +7398,7 @@ export default {
               italian: 'Mancanza di alert',
               pronunciation: '/ˈʌndər əˈlɜːrtɪŋ/',
               phonetic: 'AN-der a-LER-ting',
-              example:
-                'Under-alerting hides real outages. = La mancanza di alert nasconde interruzioni reali.',
+              example: `Chronic under-alerting becomes obvious when a customer tweet about a checkout outage arrives before any internal page does. = L'under-alerting cronico diventa ovvio quando un tweet di un cliente su un disservizio del checkout arriva prima di qualsiasi pagina interna.`,
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7425,7 +7408,7 @@ export default {
               pronunciation: '/noʊ ˈoʊnərʃɪp/',
               phonetic: 'NO O-ner-ship',
               example:
-                "No ownership means no one fixes the alert. = Senza owner nessuno corregge l'alert.",
+                'When a critical alert hits the no ownership state nobody investigates and the same incident recurs every two weeks unfixed. = Quando un alert critico raggiunge lo stato no ownership nessuno indaga e lo stesso incidente si ripete ogni due settimane senza correzione.',
               context: 'alerting',
               difficulty: 'advanced',
             },
@@ -7457,11 +7440,11 @@ export default {
           items: [
             {
               english: 'OpenTelemetry',
-              italian: 'Framework di osservabilità standard (OpenTelemetry)',
+              italian: 'OpenTelemetry',
               pronunciation: '/ˈoʊpən təˈlemətri/',
               phonetic: 'O-pen te-LE-me-tri',
               example:
-                'OpenTelemetry is the CNCF observability standard. = OpenTelemetry è lo standard di osservabilità CNCF.',
+                'Adopting OpenTelemetry across services lets you switch from Jaeger to Tempo as a backend without touching application instrumentation. = Adottare OpenTelemetry tra i servizi permette di passare da Jaeger a Tempo come backend senza toccare la strumentazione applicativa.',
               context: 'observability',
               difficulty: 'advanced',
               tool: 'OpenTelemetry',
@@ -7469,11 +7452,11 @@ export default {
             },
             {
               english: 'OTel',
-              italian: 'Abbreviazione di OpenTelemetry (OTel)',
+              italian: 'OTel',
               pronunciation: '/oʊtel/',
               phonetic: 'O-tel',
               example:
-                'OTel unifies metrics, logs and traces. = OTel unifica metriche, log e tracce.',
+                'Junior engineers usually meet OTel through the auto-instrumentation agents before ever writing a manual span. = I junior engineer di solito incontrano OTel attraverso gli agent di auto-instrumentation prima ancora di scrivere uno span manuale.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -7490,46 +7473,46 @@ export default {
             },
             {
               english: 'API',
-              italian: 'Interfaccia di programmazione (API)',
+              italian: 'API',
               pronunciation: '/eɪ piː aɪ/',
               phonetic: 'EI-PI-AI',
-              example:
-                "The OTel API stays vendor-neutral. = L'API OTel resta neutrale rispetto al vendor.",
+              example: `Splitting the OTel API from the SDK lets library authors instrument their code without forcing a specific exporter on consumers. = Separare l'API OTel dall'SDK permette agli autori di librerie di strumentare il codice senza imporre un exporter specifico ai consumatori.`,
               context: 'observability',
               difficulty: 'advanced',
             },
             {
-              english: 'Collector',
-              italian: 'Raccoglitore centrale (Collector)',
+              english: 'OpenTelemetry Collector',
+              italian: 'OpenTelemetry Collector',
               pronunciation: '/kəˈlektər/',
               phonetic: 'kol-LEK-ter',
-              example:
-                'The OTel Collector receives, processes and exports data. = Il Collector OTel riceve, processa ed esporta i dati.',
+              example: `The OpenTelemetry Collector receives OTLP, processes spans with batching and tail sampling, and exports to Tempo and Loki. = L'OpenTelemetry Collector riceve OTLP, processa span con batching e tail sampling ed esporta a Tempo e Loki.`,
               context: 'observability',
               difficulty: 'advanced',
               tool: 'OpenTelemetry Collector',
+              note: `Rinominato per distinguerlo dall'item 'Collector' del modulo trace.`,
             },
             {
               english: 'OTLP',
-              italian: 'Protocollo OpenTelemetry (OTLP)',
+              italian: 'OTLP',
               pronunciation: '/oʊ tiː el piː/',
               phonetic: 'O-TI-EL-PI',
               example:
-                'OTLP is the OpenTelemetry wire protocol. = OTLP è il protocollo di trasporto di OpenTelemetry.',
+                'Almost every modern observability backend now ingests OTLP directly, removing the need for vendor-specific exporters. = Quasi ogni backend di observability moderno ingerisce OTLP direttamente, eliminando la necessità di exporter vendor-specific.',
               context: 'observability',
               difficulty: 'advanced',
               note: 'OpenTelemetry Protocol, basato su gRPC o HTTP.',
             },
             {
-              english: 'Receiver',
-              italian: 'Ricevitore OTel (Receiver)',
+              english: 'OTLP Receiver',
+              italian: 'Receiver OTLP',
               pronunciation: '/rɪˈsiːvər/',
               phonetic: 'ri-SI-ver',
               example:
-                'A receiver accepts data into the Collector. = Un receiver accetta dati nel Collector.',
+                'The OTLP receiver listens on port 4317 for gRPC and 4318 for HTTP, the default ports across every OpenTelemetry SDK. = Il receiver OTLP ascolta sulla porta 4317 per gRPC e 4318 per HTTP, le porte di default di ogni SDK OpenTelemetry.',
               context: 'observability',
               difficulty: 'advanced',
               code: 'receivers:\n  otlp:\n    protocols:\n      grpc:',
+              note: `Rinominato per distinguerlo dall'item 'Receiver' del modulo Alertmanager.`,
             },
             {
               english: 'Processor',
@@ -7543,26 +7526,26 @@ export default {
               code: 'processors:\n  batch:\n    timeout: 5s',
             },
             {
-              english: 'Exporter',
-              italian: 'Esportatore OTel (Exporter)',
+              english: 'OTel Exporter',
+              italian: 'OTel Exporter',
               pronunciation: '/ɪkˈspɔːrtər/',
               phonetic: 'eks-POR-ter',
               example:
-                'An exporter ships data to a backend. = Un exporter invia dati a un backend.',
+                'Configure an OTLP/HTTP OTel exporter to ship spans to Honeycomb without standing up a self-managed collector tier first. = Configura un OTel exporter OTLP/HTTP per inviare span a Honeycomb senza dover prima alzare un tier di collector self-managed.',
               context: 'observability',
               difficulty: 'advanced',
               code: 'exporters:\n  otlphttp:\n    endpoint: https://api.honeycomb.io',
             },
             {
-              english: 'Pipeline',
-              italian: 'Sequenza di stadi (Pipeline)',
+              english: 'Processor Chain',
+              italian: 'Catena di processor',
               pronunciation: '/ˈpaɪplaɪn/',
               phonetic: 'PAIP-lain',
-              example:
-                'A pipeline links receivers, processors and exporters. = Una pipeline collega receiver, processor ed exporter.',
+              example: `An OTel Collector processor chain batches spans, drops health-check noise, and adds resource attributes before they hit the exporter. = Una catena di processor del Collector OTel fa batch degli span, elimina il rumore degli health-check e aggiunge resource attribute prima che colpiscano l'exporter.`,
               context: 'observability',
               difficulty: 'advanced',
               code: 'service:\n  pipelines:\n    traces:\n      receivers: [otlp]',
+              note: `Rinominato per distinguerlo dall'item 'Pipeline' del modulo tooling log.`,
             },
           ],
         },
@@ -7572,12 +7555,11 @@ export default {
           description: "Strumentare un'applicazione",
           items: [
             {
-              english: 'Auto-Instrumentation',
-              italian: 'Strumentazione automatica',
+              english: 'OTel Auto-Instrumentation',
+              italian: 'Auto-instrumentation OTel',
               pronunciation: '/ˈɔːtoʊ ˌɪnstrəmənˈteɪʃən/',
               phonetic: 'O-to in-stru-men-TEI-scion',
-              example:
-                "Auto-instrumentation adds telemetry without code changes. = L'auto-instrumentation aggiunge telemetria senza cambi al codice.",
+              example: `Drop the OTel auto-instrumentation agent into a Spring Boot app to capture HTTP, JDBC and Kafka spans without code changes. = Inserisci l'agent di auto-instrumentation OTel in un'app Spring Boot per catturare span HTTP, JDBC e Kafka senza modifiche al codice.`,
               context: 'observability',
               difficulty: 'advanced',
               command: 'opentelemetry-instrument python app.py',
@@ -7587,8 +7569,7 @@ export default {
               italian: 'Agent Java',
               pronunciation: '/ˈdʒɑːvə ˈeɪdʒənt/',
               phonetic: 'JA-va EI-jent',
-              example:
-                "The Java agent attaches at JVM startup. = L'agent Java si aggancia all'avvio della JVM.",
+              example: `Attach the OTel Java agent via -javaagent at JVM startup so existing JARs gain distributed tracing with zero code rebuilds. = Attacca il Java agent OTel via -javaagent all'avvio della JVM così i JAR esistenti acquisiscono tracing distribuito senza rebuild di codice.`,
               context: 'observability',
               difficulty: 'advanced',
               command: 'java -javaagent:opentelemetry-javaagent.jar -jar app.jar',
@@ -7609,7 +7590,8 @@ export default {
               italian: 'Produttore di metriche (Meter)',
               pronunciation: '/ˈmiːtər/',
               phonetic: 'MI-ter',
-              example: 'A meter creates and records metrics. = Un meter crea e registra metriche.',
+              example:
+                'Acquire a meter scoped to the orders package so every counter and histogram shares the right resource attributes automatically. = Ottieni un meter con scope nel package orders così ogni counter e histogram condivide automaticamente i resource attribute corretti.',
               context: 'observability',
               difficulty: 'advanced',
               code: 'meter = metrics.get_meter("orders")',
@@ -7619,8 +7601,7 @@ export default {
               italian: 'Tipo di span',
               pronunciation: '/spæn kaɪnd/',
               phonetic: 'SPAN KAIND',
-              example:
-                'Span kinds include CLIENT, SERVER, INTERNAL. = I tipi di span includono CLIENT, SERVER, INTERNAL.',
+              example: `Setting span kind to SERVER on the HTTP handler lets backends render service-graph dependencies correctly from a single trace. = Impostare lo span kind a SERVER sull'handler HTTP permette ai backend di disegnare le dipendenze del service graph correttamente da una singola trace.`,
               context: 'observability',
               difficulty: 'advanced',
               code: 'span = tracer.start_span("checkout", kind=SpanKind.SERVER)',
@@ -7631,7 +7612,7 @@ export default {
               pronunciation: '/əˈtrɪbjuːt/',
               phonetic: 'a-TRI-biut',
               example:
-                'Set http.method as a span attribute. = Imposta http.method come attributo dello span.',
+                'Add an http.route attribute to each request span so dashboards can aggregate latency by endpoint rather than by raw URL. = Aggiungi un attributo http.route a ogni span di richiesta così i dashboard possono aggregare la latenza per endpoint invece che per URL grezza.',
               context: 'observability',
               difficulty: 'advanced',
               code: 'span.set_attribute("http.method", "POST")',
@@ -7664,7 +7645,7 @@ export default {
               pronunciation: '/ˈbæɡɪdʒ/',
               phonetic: 'BA-ghij',
               example:
-                'Baggage carries context across service boundaries. = Baggage porta il contesto attraverso i confini dei servizi.',
+                'Use OTel baggage to carry the tenant ID across microservices so downstream logs and spans share the same customer context. = Usa il baggage OTel per portare il tenant ID tra microservizi così log e span downstream condividono lo stesso contesto cliente.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -7674,7 +7655,7 @@ export default {
               pronunciation: '/spæn ˈlɪmɪt/',
               phonetic: 'SPAN LI-mit',
               example:
-                'Span limits cap memory per trace. = I limiti di span limitano la memoria per traccia.',
+                'Bumping the span limit for attribute count avoids silently dropping useful fields when instrumenting verbose GraphQL resolvers. = Alzare lo span limit sul conteggio di attributi evita di scartare silenziosamente campi utili strumentando resolver GraphQL verbosi.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -7691,7 +7672,7 @@ export default {
               pronunciation: '/ˈtreɪspeərənt/',
               phonetic: 'TREIS-pe-rent',
               example:
-                "Traceparent is the W3C trace header. = Traceparent è l'header di traccia W3C.",
+                'Forwarding the traceparent header through an API gateway is mandatory to keep upstream and downstream spans in the same trace tree. = Inoltrare il traceparent header attraverso un API gateway è obbligatorio per tenere span upstream e downstream nello stesso trace tree.',
               context: 'observability',
               difficulty: 'advanced',
               code: 'traceparent: 00-7f3c1bc0e4a-b8d3-01',
@@ -7702,7 +7683,7 @@ export default {
               pronunciation: '/ˈtreɪssteɪt/',
               phonetic: 'TREIS-steit',
               example:
-                'Tracestate carries vendor-specific data. = Tracestate porta dati specifici del vendor.',
+                'Vendors stash sampling priority hints inside tracestate so each backend can keep its proprietary metadata across hops. = I vendor infilano hint sulla priorità di sampling dentro tracestate così ogni backend mantiene i suoi metadata proprietari tra gli hop.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -7712,7 +7693,7 @@ export default {
               pronunciation: '/ˈdʌbəlju θriː siː/',
               phonetic: 'DA-bol-iu-TRI-SI',
               example:
-                'W3C Trace Context is the modern standard. = Il W3C Trace Context è lo standard moderno.',
+                'Standardising on W3C Trace Context lets a Datadog-instrumented service interoperate cleanly with a Jaeger-instrumented downstream. = Standardizzare su W3C Trace Context permette a un servizio strumentato Datadog di interoperare pulitamente con un downstream strumentato Jaeger.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -7733,7 +7714,7 @@ export default {
               pronunciation: '/ɪnˈdʒekt/',
               phonetic: 'in-JEKT',
               example:
-                'Inject the context into outgoing headers. = Inietta il contesto negli header in uscita.',
+                'Outgoing HTTP clients must inject the active trace context into request headers or the downstream span becomes an orphan root. = I client HTTP in uscita devono iniettare il contesto di trace attivo negli header della richiesta o lo span downstream diventa una root orfana.',
               context: 'observability',
               difficulty: 'advanced',
               code: 'inject(carrier=headers)',
@@ -7744,7 +7725,7 @@ export default {
               pronunciation: '/ɪkˈstrækt/',
               phonetic: 'eks-TRAKT',
               example:
-                'Extract the context from incoming headers. = Estrai il contesto dagli header in arrivo.',
+                'Server middleware extracts the propagated trace context from incoming headers before opening the request span on the carrier. = Il middleware server estrae il contesto di trace propagato dagli header in arrivo prima di aprire lo span di richiesta sul carrier.',
               context: 'observability',
               difficulty: 'advanced',
               code: 'context = extract(carrier=headers)',
@@ -7754,8 +7735,7 @@ export default {
               italian: 'Metadata gRPC',
               pronunciation: '/dʒiː ɑːr piː siː ˈmetəˌdeɪtə/',
               phonetic: 'JI-AR-PI-SI ME-ta-dei-ta',
-              example:
-                'gRPC metadata carries traceparent over HTTP/2. = I metadata gRPC portano traceparent su HTTP/2.',
+              example: `Trace context rides as gRPC metadata under the traceparent key, since HTTP/2 trailers are the closest analogue to REST headers. = Il contesto di trace viaggia come gRPC metadata sotto la chiave traceparent, poiché i trailer HTTP/2 sono l'analogo più vicino agli header REST.`,
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -7765,7 +7745,7 @@ export default {
               pronunciation: '/ˈmesɪdʒ ˈhedər/',
               phonetic: 'ME-sij HE-der',
               example:
-                'Message headers propagate context in Kafka. = Gli header dei messaggi propagano il contesto in Kafka.',
+                'Producers stamp the traceparent into each Kafka message header so consumers can stitch downstream spans onto the original transaction. = I producer marchiano il traceparent in ogni message header Kafka così i consumer possono cucire span downstream sulla transazione originale.',
               context: 'observability',
               difficulty: 'advanced',
               tool: 'Kafka',
@@ -7776,7 +7756,7 @@ export default {
               pronunciation: '/krɒs ˈsɜːrvɪs ˈkɒntekst/',
               phonetic: 'KROS SER-vis KON-tekst',
               example:
-                'Cross-service context links spans into one trace. = Il contesto cross-service unisce span in una traccia.',
+                'Without cross-service context you end up with hundreds of single-span traces and zero way to debug a slow request end-to-end. = Senza cross-service context ti ritrovi centinaia di trace mono-span e nessun modo per debuggare end-to-end una richiesta lenta.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -7785,8 +7765,7 @@ export default {
               italian: 'Contesto asincrono',
               pronunciation: '/ˈeɪsɪŋk ˈkɒntekst/',
               phonetic: 'EI-sink KON-tekst',
-              example:
-                'Async context survives await boundaries. = Il contesto asincrono sopravvive ai confini await.',
+              example: `Wrapping a callback with the runtime's async context API ensures the span stays attached after an await crosses event-loop turns. = Avvolgere una callback con l'API di async context del runtime garantisce che lo span resti agganciato anche dopo un await che attraversa giri di event-loop.`,
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -7813,7 +7792,8 @@ export default {
               italian: 'Modalità agent',
               pronunciation: '/ˈeɪdʒənt moʊd/',
               phonetic: 'EI-jent MOUD',
-              example: 'Agent mode deploys per-host. = La modalità agent fa deploy per host.',
+              example:
+                'Deploying the Collector in agent mode on every host keeps telemetry local until a gateway tier can batch and ship it. = Distribuire il Collector in agent mode su ogni host mantiene la telemetria locale finché un tier gateway può aggregarla e inviarla.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -7823,7 +7803,7 @@ export default {
               pronunciation: '/ˈɡeɪtˌweɪ moʊd/',
               phonetic: 'GHEIT-uei MOUD',
               example:
-                'Gateway mode aggregates traffic centrally. = La modalità gateway aggrega il traffico centralmente.',
+                'In gateway mode a small fleet of Collector replicas aggregates traffic from every agent before exporting to backends like Tempo or Mimir. = In gateway mode una piccola flotta di repliche Collector aggrega traffico da ogni agent prima di esportare verso backend come Tempo o Mimir.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -7832,18 +7812,19 @@ export default {
               italian: 'Pod per ogni nodo Kubernetes (DaemonSet)',
               pronunciation: '/ˈdiːmənset/',
               phonetic: 'DI-mon-set',
-              example: 'Run the Collector as a DaemonSet. = Esegui il Collector come DaemonSet.',
+              example:
+                'Running the OTel Collector as a DaemonSet guarantees that pods on every Kubernetes node ship to a local sidecar over loopback. = Far girare il Collector OTel come DaemonSet garantisce che i pod su ogni nodo Kubernetes inviino a un sidecar locale via loopback.',
               context: 'observability',
               difficulty: 'advanced',
               tool: 'Kubernetes',
             },
             {
-              english: 'Tail Sampling',
-              italian: 'Campionamento a fine trace (Tail Sampling)',
+              english: 'OTel Tail Sampling',
+              italian: 'Tail sampling OTel',
               pronunciation: '/teɪl ˈsɑːmplɪŋ/',
               phonetic: 'TEIL SAM-pling',
               example:
-                'Tail sampling decides after the trace ends. = Il tail sampling decide dopo la fine della traccia.',
+                'Enable OTel tail sampling at the gateway tier so the policy keeps every trace containing an error or a span over 1 second. = Abilita il tail sampling OTel al tier gateway così la policy mantiene ogni trace che contiene un errore o uno span sopra il secondo.',
               context: 'observability',
               difficulty: 'advanced',
               code: 'tail_sampling:\n  policies: [...]',
@@ -7853,8 +7834,7 @@ export default {
               italian: 'Campionamento a inizio trace (Head Sampling)',
               pronunciation: '/hed ˈsɑːmplɪŋ/',
               phonetic: 'HED SAM-pling',
-              example:
-                "Head sampling decides at the trace start. = Il head sampling decide all'inizio della traccia.",
+              example: `Cheap-to-decide head sampling drops 90% of traces at the SDK so backends store only a representative slice of production traffic. = L'head sampling economico da decidere scarta il 90% delle trace nell'SDK così i backend memorizzano solo una fetta rappresentativa del traffico.`,
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -7922,7 +7902,7 @@ export default {
               pronunciation: '/kjuːb steɪt ˈmetrɪks/',
               phonetic: 'KIUB-STEIT ME-triks',
               example:
-                "kube-state-metrics exposes K8s API state. = kube-state-metrics espone lo stato dell'API K8s.",
+                'Charts of kube_pod_status_phase from kube-state-metrics surface CrashLoopBackOff outbreaks long before users notice failures. = I grafici di kube_pod_status_phase da kube-state-metrics mostrano outbreak di CrashLoopBackOff molto prima che gli utenti si accorgano dei fallimenti.',
               context: 'infrastructure',
               difficulty: 'advanced',
               tool: 'kube-state-metrics',
@@ -7933,7 +7913,7 @@ export default {
               pronunciation: '/pɒd feɪz/',
               phonetic: 'POD FEIZ',
               example:
-                'Pod phase can be Pending, Running, Succeeded. = La fase del pod può essere Pending, Running, Succeeded.',
+                'Alert when pod phase remains Pending for over five minutes because it usually signals scheduler trouble or missing resources. = Lancia un alert quando la pod phase resta Pending per più di cinque minuti perché di solito segnala problemi di scheduler o risorse mancanti.',
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_pod_status_phase{phase="Running"}',
@@ -7943,7 +7923,8 @@ export default {
               italian: 'Stato del nodo',
               pronunciation: '/noʊd ˈsteɪtəs/',
               phonetic: 'NOUD STEI-tus',
-              example: 'A NotReady node loses workloads. = Un nodo NotReady perde i workload.',
+              example:
+                'Wire a panel showing node status across the fleet so a single NotReady worker pops red on the on-call dashboard immediately. = Cabla un pannello che mostra il node status su tutta la flotta così un singolo worker NotReady diventa rosso subito sul dashboard on-call.',
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_node_status_condition{condition="Ready",status="true"}',
@@ -7964,8 +7945,7 @@ export default {
               italian: 'Stato del job',
               pronunciation: '/dʒɒb ˈsteɪtəs/',
               phonetic: 'JOB STEI-tus',
-              example:
-                'Failed jobs should trigger an alert. = I job falliti devono attivare un alert.',
+              example: `Page the on-call whenever a critical nightly backup job status remains Failed for two consecutive runs without recovery. = Chiama l'on-call quando un job status di backup notturno critico resta Failed per due esecuzioni consecutive senza recovery.`,
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_job_status_failed > 0',
@@ -7976,7 +7956,7 @@ export default {
               pronunciation: '/krɒn dʒɒb/',
               phonetic: 'KRON-JOB',
               example:
-                'Monitor CronJob last_schedule_time. = Monitora last_schedule_time dei CronJob.',
+                'Verify that the kube_cronjob_next_schedule_time gauge stays in the near future, otherwise the CronJob has silently stopped firing. = Verifica che la gauge kube_cronjob_next_schedule_time resti nel prossimo futuro, altrimenti il CronJob ha smesso silenziosamente di partire.',
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_cronjob_next_schedule_time',
@@ -7987,14 +7967,14 @@ export default {
               pronunciation: '/piː viː siː/',
               phonetic: 'PI-VI-SI',
               example:
-                'A pending PVC blocks pod scheduling. = Una PVC pending blocca lo scheduling del pod.',
+                'Track pending PVC count per namespace to catch storage-class misconfiguration before a Deployment rollout stalls on scheduling. = Traccia il numero di PVC pending per namespace per beccare misconfigurazioni della storage-class prima che un rollout di Deployment si pianti sullo scheduling.',
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_persistentvolumeclaim_status_phase',
             },
             {
               english: 'HPA',
-              italian: 'HPA (autoscaler orizzontale)',
+              italian: 'HPA',
               pronunciation: '/eɪtʃ piː eɪ/',
               phonetic: 'EICH-PI-EI',
               example:
@@ -8002,14 +7982,14 @@ export default {
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_horizontalpodautoscaler_status_current_replicas',
+              note: 'Horizontal Pod Autoscaler: oggetto Kubernetes che ridimensiona automaticamente le repliche di un Deployment in base alle metriche.',
             },
             {
               english: 'Resource Quota',
               italian: 'Quota di risorse',
               pronunciation: '/rɪˈsɔːrs ˈkwoʊtə/',
               phonetic: 'ri-SORS KUO-ta',
-              example:
-                "A resource quota caps namespace usage. = Una resource quota limita l'uso del namespace.",
+              example: `Charting resource quota usage per namespace catches teams approaching their CPU ceiling before deploys start failing with Forbidden errors. = Graficare l'uso della resource quota per namespace becca i team vicini al tetto di CPU prima che i deploy falliscano con errori Forbidden.`,
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'kube_resourcequota{resource="cpu", type="hard"}',
@@ -8020,7 +8000,7 @@ export default {
               pronunciation: '/ˈleɪbəl sɪˈlektər/',
               phonetic: 'LEI-bol se-LEK-ter',
               example:
-                'Use label selectors to scope queries. = Usa selettori di label per delimitare le query.',
+                'Tighten the ServiceMonitor label selector to app.kubernetes.io/name=api so scraping does not accidentally pick up sidecars on the same port. = Stringi il label selector del ServiceMonitor su app.kubernetes.io/name=api così lo scraping non prende per errore sidecar sulla stessa porta.',
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'app=api',
@@ -8048,8 +8028,7 @@ export default {
               italian: 'Chart Prometheus completo (kube-prometheus-stack)',
               pronunciation: '/kjuːb prəˈmiːθiəs stæk/',
               phonetic: 'KIUB PRO-met-eus STAK',
-              example:
-                'kube-prometheus-stack bundles a full observability stack. = kube-prometheus-stack racchiude uno stack completo.',
+              example: `A fresh helm install of kube-prometheus-stack gives you Prometheus, Alertmanager, Grafana and the operator wired together in minutes. = Un'installazione helm fresca di kube-prometheus-stack ti dà Prometheus, Alertmanager, Grafana e l'operator collegati in pochi minuti.`,
               context: 'infrastructure',
               difficulty: 'advanced',
               command: 'helm install monitoring prometheus-community/kube-prometheus-stack',
@@ -8071,7 +8050,7 @@ export default {
               pronunciation: '/pɒd ˈmɒnɪtər/',
               phonetic: 'POD MON-i-ter',
               example:
-                'A PodMonitor scrapes pods directly. = Un PodMonitor fa scrape dei pod direttamente.',
+                'Use a PodMonitor when your workload exposes metrics directly on pod IPs without a fronting Service to scrape from. = Usa un PodMonitor quando il workload espone metriche direttamente sugli IP dei pod senza un Service davanti da cui scrappare.',
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'apiVersion: monitoring.coreos.com/v1\nkind: PodMonitor',
@@ -8082,7 +8061,7 @@ export default {
               pronunciation: '/prəˈmiːθiəs ruːl/',
               phonetic: 'PRO-met-eus RUL',
               example:
-                'PrometheusRule defines alerts as a CRD. = PrometheusRule definisce gli alert come CRD.',
+                'Define a PrometheusRule named api-burn-rate so deploying alerts becomes a git commit instead of a manual Prometheus reload. = Definisci una PrometheusRule chiamata api-burn-rate così rilasciare alert diventa un git commit invece di un reload manuale di Prometheus.',
               context: 'infrastructure',
               difficulty: 'advanced',
               code: 'apiVersion: monitoring.coreos.com/v1\nkind: PrometheusRule',
@@ -8093,7 +8072,7 @@ export default {
               pronunciation: '/əˈlɜːrt ˈmænɪdʒər kənˈfɪɡ/',
               phonetic: 'a-LERT MA-ni-jer kon-FIG',
               example:
-                'AlertmanagerConfig provides per-namespace routing. = AlertmanagerConfig dà routing per namespace.',
+                'Each tenant team owns its own AlertmanagerConfig so they can route severity=critical to their own PagerDuty without ops involvement. = Ogni team tenant possiede il suo AlertmanagerConfig così può instradare severity=critical alla sua PagerDuty senza coinvolgere ops.',
               context: 'infrastructure',
               difficulty: 'advanced',
             },
@@ -8102,7 +8081,7 @@ export default {
               italian: 'Definizione di risorsa personalizzata (CRD)',
               pronunciation: '/siː ɑːr diː/',
               phonetic: 'SI-AR-DI',
-              example: "CRDs extend the Kubernetes API. = I CRD estendono l'API Kubernetes.",
+              example: `Installing a new CRD via apiextensions.k8s.io lets the operator manage application-specific resources as if they were native kinds. = Installare una nuova CRD via apiextensions.k8s.io permette all'operator di gestire risorse applicative come se fossero kind nativi.`,
               context: 'infrastructure',
               difficulty: 'advanced',
               note: 'Custom Resource Definition.',
@@ -8132,8 +8111,7 @@ export default {
               italian: 'Pacchetto Helm (Helm Chart)',
               pronunciation: '/helm tʃɑːrt/',
               phonetic: 'HELM CIART',
-              example:
-                "Install via the official Helm chart. = Installa tramite l'Helm chart ufficiale.",
+              example: `Pin the Helm chart version in your GitOps repo so a CI run never silently upgrades production to a breaking chart release. = Blocca la versione dell'Helm chart nel repo GitOps così una run di CI non aggiorna silenziosamente la produzione a una release chart breaking.`,
               context: 'infrastructure',
               difficulty: 'advanced',
               command:
@@ -8152,7 +8130,7 @@ export default {
               pronunciation: '/kənˈteɪnər lɒɡ/',
               phonetic: 'kon-TEI-ner LOG',
               example:
-                'Container logs are streamed via stdout/stderr. = I log del container sono inviati tramite stdout/stderr.',
+                'Aggregate container log lines into Loki by tailing /var/log/pods so a kubectl delete pod does not lose any audit data. = Aggrega le righe di container log in Loki tailando /var/log/pods così un kubectl delete pod non perde dati di audit.',
               context: 'infrastructure',
               difficulty: 'advanced',
               command: 'kubectl logs -f mypod',
@@ -8163,7 +8141,7 @@ export default {
               pronunciation: '/pɒd lɒɡz/',
               phonetic: 'POD LOGZ',
               example:
-                'kubectl logs aggregates pod containers. = kubectl logs aggrega i container del pod.',
+                'Use kubectl logs -f --tail=200 to stream the last lines of pod logs while a deploy rolls out so failures surface immediately. = Usa kubectl logs -f --tail=200 per streammare le ultime righe dei pod logs mentre un deploy si rolla così i fallimenti emergono subito.',
               context: 'infrastructure',
               difficulty: 'advanced',
               command: 'kubectl logs mypod -c myc',
@@ -8195,7 +8173,7 @@ export default {
               italian: 'Path dei log',
               pronunciation: '/lɒɡ pæθ/',
               phonetic: 'LOG PATH',
-              example: '/var/log/pods is the K8s log path. = /var/log/pods è il path dei log K8s.',
+              example: `Mount the host /var/log/pods log path into the Promtail DaemonSet so it can read every container's stdout without API calls. = Monta il log path host /var/log/pods nel DaemonSet Promtail così può leggere lo stdout di ogni container senza chiamate API.`,
               context: 'infrastructure',
               difficulty: 'advanced',
               code: '/var/log/pods/<ns>_<pod>_<id>/',
@@ -8217,7 +8195,7 @@ export default {
               pronunciation: '/ɪˈvent/',
               phonetic: 'i-VENT',
               example:
-                'kubectl describe shows recent events. = kubectl describe mostra gli eventi recenti.',
+                'Stream Kubernetes Event objects into your SIEM so suspicious patterns like repeated FailedScheduling or BackOff surface on a security dashboard. = Streamma gli oggetti Event di Kubernetes nel SIEM così pattern sospetti come FailedScheduling o BackOff ripetuti emergono in un dashboard di sicurezza.',
               context: 'infrastructure',
               difficulty: 'advanced',
               command: 'kubectl get events --sort-by=.lastTimestamp',
@@ -8228,7 +8206,7 @@ export default {
               pronunciation: '/stɜːrn/',
               phonetic: 'STERN',
               example:
-                'Stern tails logs from many pods at once. = Stern fa tail dei log di molti pod insieme.',
+                'During an incident, stern -n payments app=api tails logs from every replica in one terminal instead of juggling kubectl windows. = Durante un incidente, stern -n payments app=api taila i log di ogni replica in un terminale invece di giocolare con finestre kubectl.',
               context: 'infrastructure',
               difficulty: 'advanced',
               command: 'stern -n default app=api',
@@ -8250,7 +8228,7 @@ export default {
               pronunciation: '/ˈklʌstər ˈlɒɡɪŋ/',
               phonetic: 'KLAS-ter LOG-ing',
               example:
-                'Cluster logging centralises all node logs. = Il cluster logging centralizza tutti i log dei nodi.',
+                'A solid cluster logging pipeline ships every node and pod log to a central Elasticsearch within seconds of the line being written. = Una solida pipeline di cluster logging spedisce ogni log di nodo e pod a un Elasticsearch centrale entro secondi dalla scrittura della riga.',
               context: 'infrastructure',
               difficulty: 'advanced',
             },
@@ -8274,21 +8252,21 @@ export default {
             },
             {
               english: 'Istio',
-              italian: 'Istio (service mesh open source)',
+              italian: 'Istio',
               pronunciation: '/ˈɪstioʊ/',
               phonetic: 'IS-tio',
               example:
-                'Istio is the most popular service mesh. = Istio è il service mesh più popolare.',
+                'Enabling Istio on a Kubernetes cluster injects an Envoy sidecar into every pod and gives you mTLS, retries and tracing out of the box. = Abilitare Istio su un cluster Kubernetes inietta un sidecar Envoy in ogni pod e fornisce mTLS, retry e tracing pronti.',
               context: 'infrastructure',
               difficulty: 'advanced',
               tool: 'Istio',
             },
             {
               english: 'Linkerd',
-              italian: 'Linkerd (service mesh ultra-leggero)',
+              italian: 'Linkerd',
               pronunciation: '/ˈlɪŋkərd/',
               phonetic: 'LINK-erd',
-              example: 'Linkerd is the lightweight CNCF mesh. = Linkerd è il mesh CNCF leggero.',
+              example: `Compared to Istio, Linkerd ships a much smaller Rust-based proxy that keeps p99 latency overhead under one millisecond per hop. = Rispetto a Istio, Linkerd offre un proxy Rust molto più piccolo che mantiene l'overhead di latenza p99 sotto un millisecondo per hop.`,
               context: 'infrastructure',
               difficulty: 'advanced',
               tool: 'Linkerd',
@@ -8298,7 +8276,7 @@ export default {
               italian: 'Proxy L7 di service mesh (Envoy)',
               pronunciation: '/ˈenvɔɪ ˈprɒksi/',
               phonetic: 'EN-voi PROK-si',
-              example: 'Envoy is the data plane in Istio. = Envoy è il data plane in Istio.',
+              example: `An Envoy Proxy sidecar terminates mTLS, emits RED metrics, and applies retry policies without the application needing any networking code. = Un sidecar Envoy Proxy termina mTLS, emette metriche RED e applica policy di retry senza che l'applicazione abbia bisogno di codice di rete.`,
               context: 'infrastructure',
               difficulty: 'advanced',
               tool: 'Envoy',
@@ -8318,8 +8296,7 @@ export default {
               italian: 'Telemetria del mesh',
               pronunciation: '/meʃ təˈlemətri/',
               phonetic: 'MESH te-LE-me-tri',
-              example:
-                'Mesh telemetry exposes RED metrics. = La telemetria del mesh espone metriche RED.',
+              example: `Out-of-the-box mesh telemetry from Istio gives you per-service RED metrics in Grafana without instrumenting application code. = La mesh telemetry pronta all'uso di Istio dà metriche RED per servizio in Grafana senza strumentare codice applicativo.`,
               context: 'infrastructure',
               difficulty: 'advanced',
             },
@@ -8329,7 +8306,7 @@ export default {
               pronunciation: '/red ˈmeθəd/',
               phonetic: 'RED ME-tod',
               example:
-                'RED stands for Rate, Errors, Duration. = RED sta per Rate, Errors, Duration.',
+                'Apply the RED method to every microservice dashboard to expose request rate, error rate and duration in a uniform layout. = Applica il RED method a ogni dashboard di microservizio per esporre rate di richieste, tasso di errore e durata in un layout uniforme.',
               context: 'infrastructure',
               difficulty: 'advanced',
               note: 'Concetto di Tom Wilkie per metriche di servizio.',
@@ -8346,14 +8323,15 @@ export default {
               note: 'Concetto di Brendan Gregg per metriche di risorse.',
             },
             {
-              english: 'Distributed Tracing',
-              italian: 'Tracing distribuito',
+              english: 'Service Mesh Tracing',
+              italian: 'Tracing del service mesh',
               pronunciation: '/dɪˈstrɪbjətɪd ˈtreɪsɪŋ/',
               phonetic: 'di-STRI-biu-tid TREI-sing',
               example:
-                'Service mesh enables tracing without code changes. = Il service mesh abilita tracing senza cambi al codice.',
+                'Enabling service mesh tracing in Istio injects W3C trace context across every pod-to-pod call without changing application code. = Abilitare il tracing del service mesh in Istio inietta il W3C trace context fra ogni chiamata pod-a-pod senza modificare il codice applicativo.',
               context: 'infrastructure',
               difficulty: 'advanced',
+              note: `Rinominato per distinguerlo dall'item 'Distributed Tracing' del modulo trace.`,
             },
             {
               english: 'Mutual TLS',
@@ -8387,7 +8365,7 @@ export default {
               pronunciation: '/ˈfɔːrkæstɪŋ/',
               phonetic: 'FOR-kas-ting',
               example:
-                'Forecasting predicts future resource needs. = La previsione predice i bisogni futuri di risorse.',
+                'Capacity forecasting based on six weeks of history catches the holiday peak in time to pre-reserve EC2 instances and avoid spot evictions. = Il forecasting di capacità basato su sei settimane di storia becca il picco festivo in tempo per pre-riservare istanze EC2 ed evitare eviction degli spot.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8408,7 +8386,7 @@ export default {
               pronunciation: '/ˌsiːzəˈnælɪti/',
               phonetic: 'si-zo-NA-li-ti',
               example:
-                'Seasonality shows weekly traffic patterns. = La stagionalità mostra pattern settimanali di traffico.',
+                'Detecting seasonality in checkout traffic is critical because Sunday-evening spikes can be 4x Tuesday-afternoon baseline volumes. = Rilevare la seasonality nel traffico del checkout è critico perché i picchi della domenica sera possono essere 4x i volumi base del martedì pomeriggio.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8424,22 +8402,21 @@ export default {
             },
             {
               english: 'Prophet',
-              italian: 'Prophet (libreria forecasting Meta)',
+              italian: 'Prophet',
               pronunciation: '/ˈprɒfɪt/',
               phonetic: 'PRO-fit',
-              example:
-                'Prophet by Facebook handles seasonality well. = Prophet di Facebook gestisce bene la stagionalità.',
+              example: `We feed Prophet a year of Prometheus history per cluster to forecast the next quarter's compute spend within a 5% confidence band. = Diamo in pasto a Prophet un anno di storia Prometheus per cluster per prevedere la spesa compute del prossimo trimestre entro una banda di confidenza del 5%.`,
               context: 'capacity',
               difficulty: 'advanced',
               tool: 'Prophet',
             },
             {
               english: 'ARIMA',
-              italian: 'ARIMA (modello forecasting statistico)',
+              italian: 'ARIMA',
               pronunciation: '/əˈriːmə/',
               phonetic: 'a-RI-ma',
               example:
-                'ARIMA models classical time series forecasting. = ARIMA modella previsioni classiche di time series.',
+                'Classical ARIMA still beats fancier deep-learning baselines when the workload is stable and you only have a few hundred data points. = Il classico ARIMA batte ancora baseline deep-learning più sofisticati quando il workload è stabile e hai solo poche centinaia di punti dati.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8448,7 +8425,7 @@ export default {
               italian: 'Smoothing esponenziale stagionale (Holt-Winters)',
               pronunciation: '/hoʊlt ˈwɪntərz/',
               phonetic: 'HOLT UIN-terz',
-              example: 'PromQL has a holt_winters function. = PromQL ha una funzione holt_winters.',
+              example: `Running Holt-Winters on memory_used over the last hour produces a smoothed prediction that flags slow leaks long before OOMKilled. = Eseguire Holt-Winters su memory_used nell'ultima ora produce una predizione smussata che segnala leak lenti molto prima di OOMKilled.`,
               context: 'capacity',
               difficulty: 'advanced',
               code: 'holt_winters(memory_used[1h], 0.3, 0.1)',
@@ -8495,8 +8472,7 @@ export default {
               italian: 'Metrica di saturazione',
               pronunciation: '/ˌsætʃəˈreɪʃən ˈmetrɪk/',
               phonetic: 'sa-cu-REI-scion ME-trik',
-              example:
-                'Saturation metrics warn before failure. = Le metriche di saturazione avvisano prima del guasto.',
+              example: `Tracking the disk IO saturation metric ahead of utilisation surfaces queueing pressure before the latency SLO actually breaks. = Tracciare la saturation metric sull'IO disco prima dell'utilizzo mostra la pressione di accodamento prima che l'SLO di latenza si rompa davvero.`,
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8516,7 +8492,7 @@ export default {
               pronunciation: '/kjuː depθ/',
               phonetic: 'KIU DEPTH',
               example:
-                'Queue depth shows backpressure. = La profondità di coda mostra la backpressure.',
+                'Watching SQS queue depth instead of consumer CPU tells you immediately when downstream processing cannot keep up with producers. = Guardare la queue depth di SQS invece della CPU del consumer dice subito quando il processing downstream non riesce a stare dietro ai producer.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8526,16 +8502,17 @@ export default {
               pronunciation: '/ˈbækˌpreʃər/',
               phonetic: 'BAK-pre-scer',
               example:
-                'Backpressure protects downstream systems. = La contropressione protegge i sistemi a valle.',
+                'Healthy backpressure makes a Kafka consumer slow producers down via lag rather than letting downstream services topple under load. = Una backpressure sana fa rallentare i producer da parte di un consumer Kafka tramite il lag invece di far crollare i servizi downstream sotto carico.',
               context: 'capacity',
               difficulty: 'advanced',
             },
             {
-              english: 'Headroom',
-              italian: 'Margine',
+              english: 'Capacity Headroom',
+              italian: 'Headroom di capacità',
               pronunciation: '/ˈhedruːm/',
               phonetic: 'HED-rum',
-              example: 'Maintain enough headroom for failover. = Mantieni margine per il failover.',
+              example:
+                'Keep at least 30% capacity headroom on every cluster so a single AZ failure does not push the survivors into latency-melting saturation. = Mantieni almeno il 30% di headroom di capacità su ogni cluster così il fallimento di una singola AZ non spinge i superstiti in saturation distruttiva per la latenza.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8550,12 +8527,12 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'USE Method',
-              italian: 'Metodo USE',
+              english: 'USE Method (capacity)',
+              italian: 'Metodo USE (capacità)',
               pronunciation: '/juːz ˈmeθəd/',
               phonetic: 'IUZ ME-tod',
               example:
-                'USE method covers utilisation, saturation, errors. = Il metodo USE copre utilization, saturation, errori.',
+                'Apply the USE method (capacity view) to every resource by checking utilisation, saturation and errors during capacity planning reviews. = Applica il metodo USE (vista capacità) a ogni risorsa controllando utilizzo, saturation ed errori durante le review di capacity planning.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8574,8 +8551,7 @@ export default {
               italian: 'Analisi del collo di bottiglia',
               pronunciation: '/ˈbɒtəlnek əˈnæləsɪs/',
               phonetic: 'BO-tol-nek a-NA-le-sis',
-              example:
-                "Bottleneck analysis finds the weakest link. = L'analisi del collo di bottiglia trova l'anello debole.",
+              example: `Proper bottleneck analysis often reveals that doubling DB connections fixes more latency than scaling stateless workers horizontally. = Un'analisi del collo di bottiglia fatta bene spesso rivela che raddoppiare le connessioni DB migliora la latenza più che scalare worker stateless orizzontalmente.`,
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8584,8 +8560,7 @@ export default {
               italian: 'Dimensionamento corretto risorse (Right-sizing)',
               pronunciation: '/raɪt ˈsaɪzɪŋ/',
               phonetic: 'RAIT SAI-zing',
-              example:
-                'Right-sizing avoids wasted compute spend. = Il right-sizing evita spreco di compute.',
+              example: `Quarterly right-sizing on EKS workloads typically reclaims 25-40% of reserved CPU just by aligning requests with observed p95 usage. = Il right-sizing trimestrale sui workload EKS recupera tipicamente il 25-40% della CPU riservata solo allineando le request all'uso p95 osservato.`,
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8602,7 +8577,7 @@ export default {
               pronunciation: '/ˈfɪnɒps/',
               phonetic: 'FIN-OPS',
               example:
-                "FinOps brings finance into engineering. = FinOps porta il finance nell'ingegneria.",
+                'Mature FinOps practice puts engineers and finance in the same weekly meeting to review unit economics and approve commit-spend decisions. = Una pratica FinOps matura mette ingegneri e finance nello stesso meeting settimanale per rivedere unit economics e approvare decisioni di commitment di spesa.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8611,8 +8586,7 @@ export default {
               italian: 'Costo per richiesta',
               pronunciation: '/kɒst pər rɪˈkwest/',
               phonetic: 'KOST per ri-KUEST',
-              example:
-                'Track cost per request over time. = Traccia il costo per richiesta nel tempo.',
+              example: `Plotting cost per request alongside latency shows when a microservice rewrite actually paid back the engineering investment. = Plottare il costo per richiesta accanto alla latenza mostra quando un rewrite di microservizio ha davvero ripagato l'investimento ingegneristico.`,
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8622,7 +8596,7 @@ export default {
               pronunciation: '/ˈjuːnɪt ˌekəˈnɒmɪks/',
               phonetic: 'IU-nit e-ko-NO-miks',
               example:
-                "Unit economics ties cost to features. = L'economia unitaria lega i costi alle feature.",
+                'Healthy unit economics means each premium customer generates more revenue than the cost of the cloud resources their traffic consumes. = Unit economics sane significano che ogni cliente premium genera più ricavi del costo delle risorse cloud consumate dal suo traffico.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8632,7 +8606,7 @@ export default {
               pronunciation: '/spɒt ˈɪnstəns/',
               phonetic: 'SPOT IN-stans',
               example:
-                'Spot instances cut costs by 70%. = Le istanze spot tagliano i costi del 70%.',
+                'Running stateless batch jobs on AWS spot instance fleets typically slashes compute spend by 70% at the cost of handling random reclaims. = Eseguire job batch stateless su flotte di spot instance AWS taglia tipicamente la spesa compute del 70% al costo di gestire reclamation casuali.',
               context: 'capacity',
               difficulty: 'advanced',
               tool: 'AWS, GCP',
@@ -8643,7 +8617,7 @@ export default {
               pronunciation: '/rɪˈzɜːrvd ˈɪnstəns/',
               phonetic: 'ri-ZERVD IN-stans',
               example:
-                'Reserved instances need long-term commitment. = Le istanze riservate richiedono impegno a lungo termine.',
+                'A three-year reserved instance commitment on the baseline database fleet cuts hourly cost by half versus on-demand pricing. = Un impegno reserved instance triennale sulla flotta database di base taglia il costo orario della metà rispetto al pricing on-demand.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8663,8 +8637,7 @@ export default {
               italian: 'Mostra costi senza addebito (Showback)',
               pronunciation: '/ˈʃoʊbæk/',
               phonetic: 'SHO-bak',
-              example:
-                'Showback reports costs without billing teams. = Il showback riporta i costi senza fatturare ai team.',
+              example: `Quarterly showback reports make engineering teams aware of their cloud bill without yet creating the political friction of real chargebacks. = Report di showback trimestrali rendono i team engineering consapevoli della loro bolletta cloud senza ancora creare l'attrito politico dei chargeback veri.`,
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8674,7 +8647,7 @@ export default {
               pronunciation: '/ˈtʃɑːrdʒbæk/',
               phonetic: 'CIARJ-bak',
               example:
-                'Chargeback bills costs back to teams. = Il chargeback addebita i costi ai team.',
+                'Real chargeback bills each cost-center for its observed cloud usage and creates direct incentives to delete idle resources every sprint. = Un chargeback vero addebita a ogni cost-center il suo uso cloud osservato e crea incentivi diretti a cancellare risorse inattive ogni sprint.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8684,7 +8657,7 @@ export default {
               pronunciation: '/ˈaɪdəl rɪˈsɔːrs/',
               phonetic: 'AI-dol ri-SORS',
               example:
-                'Idle resources waste money silently. = Le risorse inattive sprecano denaro silenziosamente.',
+                'Scanning for idle resource patterns like CPU under 5% for 30 days routinely uncovers six-figure annual savings in mature accounts. = Scansionare pattern di idle resource come CPU sotto il 5% per 30 giorni scopre regolarmente risparmi annui a sei cifre in account maturi.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8694,7 +8667,7 @@ export default {
               pronunciation: '/ˈweɪstɪd spend/',
               phonetic: 'UEIS-tid SPEND',
               example:
-                'Identify wasted spend with tagging. = Identifica la spesa sprecata con i tag.',
+                'Tagging every resource with cost-center and environment lets FinOps queries surface wasted spend on forgotten dev clusters within minutes. = Taggare ogni risorsa con cost-center e environment permette alle query FinOps di mostrare wasted spend su cluster di dev dimenticati in pochi minuti.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8721,7 +8694,7 @@ export default {
               pronunciation: '/ˈbentʃmɑːrk/',
               phonetic: 'BENCH-mark',
               example:
-                'A benchmark compares before and after. = Un benchmark confronta prima e dopo.',
+                'Run the same wrk benchmark against staging before and after a Postgres index change to quantify the latency win in p95 milliseconds. = Esegui lo stesso benchmark wrk contro staging prima e dopo un cambio di indice Postgres per quantificare la vittoria di latenza in millisecondi p95.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8731,7 +8704,7 @@ export default {
               pronunciation: '/ˈproʊfaɪlɪŋ/',
               phonetic: 'PRO-fai-ling',
               example:
-                'Profiling identifies CPU hot paths. = La profilazione identifica i percorsi caldi di CPU.',
+                'Continuous profiling with pprof in production catches CPU-hungry regressions in p99 latency that synthetic benchmarks never reproduce. = Il profiling continuo con pprof in produzione becca regressioni CPU-affamate nella latenza p99 che i benchmark sintetici non riproducono mai.',
               context: 'capacity',
               difficulty: 'advanced',
               tool: 'pprof, py-spy',
@@ -8742,7 +8715,7 @@ export default {
               pronunciation: '/fleɪm ɡræf/',
               phonetic: 'FLEIM GRAF',
               example:
-                'A flame graph visualises CPU stacks. = Un flame graph visualizza gli stack di CPU.',
+                'A CPU flame graph from production reveals that 40% of compute time goes into JSON serialisation, pointing at a clear optimisation target. = Un flame graph CPU dalla produzione rivela che il 40% del tempo compute va in serializzazione JSON, indicando un chiaro target di ottimizzazione.',
               context: 'capacity',
               difficulty: 'advanced',
               tool: 'perf, FlameScope',
@@ -8752,7 +8725,8 @@ export default {
               italian: 'Punto caldo del codice (Hot Spot)',
               pronunciation: '/hɒt spɒt/',
               phonetic: 'HOT-SPOT',
-              example: "A hot spot is a slow code area. = Un hot spot è un'area di codice lenta.",
+              example:
+                'Profilers expose a hot spot in the auth middleware: every request was unnecessarily re-parsing the JWT signing key from disk. = I profiler mostrano un hot spot nel middleware di auth: ogni richiesta ri-parserava inutilmente la chiave di firma JWT dal disco.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8761,7 +8735,7 @@ export default {
               italian: 'Perdita di memoria',
               pronunciation: '/ˈmeməri liːk/',
               phonetic: 'ME-mo-ri LIK',
-              example: 'A memory leak grows over time. = Una memory leak cresce nel tempo.',
+              example: `A subtle memory leak in a Node.js worker grew RSS by 100MB per hour and only triggered OOMKilled five days into the deploy. = Un memory leak sottile in un worker Node.js faceva crescere la RSS di 100MB l'ora e ha attivato OOMKilled solo cinque giorni dopo il deploy.`,
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8770,8 +8744,7 @@ export default {
               italian: 'Raccolta della spazzatura (Garbage Collection)',
               pronunciation: '/ˈɡɑːrbɪdʒ kəˈlekʃən/',
               phonetic: 'GAR-bij ko-LEK-scion',
-              example:
-                'Long GC pauses kill p99 latency. = Lunghe pause GC uccidono la latenza p99.',
+              example: `Switching the JVM to the G1 garbage collection algorithm cut our p99 GC pause time from 800ms to under 50ms during peak hours. = Passare la JVM all'algoritmo G1 di garbage collection ha tagliato il tempo di pausa GC p99 da 800ms a sotto 50ms durante le ore di picco.`,
               context: 'capacity',
               difficulty: 'advanced',
               tool: 'JVM, .NET, Go',
@@ -8781,8 +8754,7 @@ export default {
               italian: 'Strato di cache',
               pronunciation: '/kæʃ ˈleɪər/',
               phonetic: 'KASH LEI-er',
-              example:
-                'A cache layer reduces backend load. = Uno strato di cache riduce il carico backend.',
+              example: `Introducing a Redis cache layer in front of the product catalogue cut p95 latency from 180ms to 12ms and halved DB CPU usage. = Introdurre un cache layer Redis davanti al catalogo prodotti ha tagliato la latenza p95 da 180ms a 12ms e dimezzato l'uso CPU del DB.`,
               context: 'capacity',
               difficulty: 'advanced',
               tool: 'Redis, Memcached',
@@ -8793,7 +8765,7 @@ export default {
               pronunciation: '/ˈdeɪtəbeɪs ˈtjuːnɪŋ/',
               phonetic: 'DEI-ta-beis TIU-ning',
               example:
-                'Database tuning often beats new hardware. = Il tuning del database spesso batte hardware nuovo.',
+                'Two days of careful database tuning with EXPLAIN ANALYZE often outperforms a costly hardware upgrade by an order of magnitude. = Due giorni di database tuning attento con EXPLAIN ANALYZE superano spesso un costoso upgrade hardware di un ordine di grandezza.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8803,7 +8775,7 @@ export default {
               pronunciation: '/kəˈpæsɪti test/',
               phonetic: 'ka-PA-si-ti TEST',
               example:
-                'A capacity test verifies headroom. = Un test di capacità verifica il margine.',
+                'Run a quarterly capacity test that pushes production-shape load until the first SLO breaks, then document the exact saturation point. = Esegui un capacity test trimestrale che spinge carico di forma produttiva fino a rompere il primo SLO, poi documenta il punto esatto di saturation.',
               context: 'capacity',
               difficulty: 'advanced',
             },
@@ -8835,11 +8807,12 @@ export default {
               note: 'Security Information and Event Management.',
             },
             {
-              english: 'Splunk',
-              italian: 'Splunk (piattaforma SIEM e log)',
+              english: 'Splunk SIEM',
+              italian: 'Splunk',
               pronunciation: '/splʌŋk/',
               phonetic: 'SPLANK',
-              example: 'Splunk is a market-leading SIEM. = Splunk è un SIEM leader di mercato.',
+              example:
+                'Many enterprise SOCs still standardise on Splunk SIEM because it correlates auth, firewall and EDR logs in a single search head. = Molti SOC enterprise standardizzano ancora su Splunk SIEM perché correla log di auth, firewall ed EDR in una singola search head.',
               context: 'observability',
               difficulty: 'advanced',
               tool: 'Splunk',
@@ -8850,7 +8823,7 @@ export default {
               pronunciation: '/ˈsentɪnəl/',
               phonetic: 'SEN-ti-nel',
               example:
-                'Sentinel is the Microsoft cloud-native SIEM. = Sentinel è il SIEM cloud-native Microsoft.',
+                'Microsoft Sentinel pulls signals directly from Entra ID, Defender and Office 365 so identity-based attacks surface without custom connectors. = Microsoft Sentinel pesca segnali direttamente da Entra ID, Defender e Office 365 così gli attacchi basati su identità emergono senza connettori custom.',
               context: 'observability',
               difficulty: 'advanced',
               tool: 'Microsoft Sentinel',
@@ -8860,17 +8833,19 @@ export default {
               italian: 'IBM QRadar (SIEM enterprise)',
               pronunciation: '/ˈkjuː ˌreɪdɑːr/',
               phonetic: 'KIU REI-dar',
-              example: "QRadar is IBM's SIEM platform. = QRadar è la piattaforma SIEM di IBM.",
+              example:
+                'Large banks still rely on IBM QRadar because its risk-scoring engine integrates cleanly with on-prem mainframe audit feeds. = Le grandi banche si affidano ancora a IBM QRadar perché il suo motore di risk-scoring si integra pulitamente con i feed di audit mainframe on-prem.',
               context: 'observability',
               difficulty: 'advanced',
               tool: 'IBM QRadar',
             },
             {
               english: 'Wazuh',
-              italian: 'Wazuh (SIEM open source)',
+              italian: 'Wazuh',
               pronunciation: '/ˈwɑːzuː/',
               phonetic: 'UAZ-u',
-              example: 'Wazuh is the open-source SIEM. = Wazuh è il SIEM open-source.',
+              example:
+                'Smaller teams adopt Wazuh as an open-source SIEM bundled with HIDS agents to ship a SOC capability without enterprise license costs. = I team più piccoli adottano Wazuh come SIEM open-source bundlato con agent HIDS per spedire una capacità SOC senza costi di licenza enterprise.',
               context: 'observability',
               difficulty: 'advanced',
               tool: 'Wazuh',
@@ -8891,7 +8866,7 @@ export default {
               pronunciation: '/ˈsɪɡmə ruːl/',
               phonetic: 'SIG-ma RUL',
               example:
-                'Sigma rules are SIEM-portable detection rules. = Le regole Sigma sono regole di detection portabili tra SIEM.',
+                'Writing detections as Sigma rules in YAML lets the same logic compile to Splunk SPL, Elastic EQL and Sentinel KQL queries automatically. = Scrivere detection come Sigma rule in YAML permette alla stessa logica di compilare automaticamente in query Splunk SPL, Elastic EQL e Sentinel KQL.',
               context: 'observability',
               difficulty: 'advanced',
               code: 'detection:\n  selection:\n    EventID: 4625',
@@ -8912,7 +8887,7 @@ export default {
               pronunciation: '/ˌkɒrəˈleɪʃən/',
               phonetic: 'kor-re-LEI-scion',
               example:
-                'Correlation joins events into one alert. = La correlazione unisce eventi in un alert.',
+                'Cross-source correlation links a failed SSH burst on one host to a successful login from the same IP on another within a single incident. = La correlation cross-source collega un burst SSH fallito su un host a un login riuscito dallo stesso IP su un altro dentro un singolo incidente.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -8921,8 +8896,7 @@ export default {
               italian: 'Intelligence sulle minacce (Threat Intelligence)',
               pronunciation: '/θret ɪnˈtelɪdʒəns/',
               phonetic: 'TRET in-TEL-li-jens',
-              example:
-                'Threat intelligence feeds known bad IPs. = La threat intelligence fornisce IP malevoli noti.',
+              example: `Subscribing to commercial threat intelligence feeds enriches every login event with a real-time reputation score for the source IP. = Sottoscrivere feed commerciali di threat intelligence arricchisce ogni evento di login con un punteggio di reputazione real-time per l'IP sorgente.`,
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -8934,12 +8908,12 @@ export default {
           description: 'Log di audit',
           items: [
             {
-              english: 'Audit Log',
-              italian: 'Registro di audit (Audit Log)',
+              english: 'Application Audit Log',
+              italian: 'Audit log applicativo',
               pronunciation: '/ˈɔːdɪt lɒɡ/',
               phonetic: 'O-dit LOG',
               example:
-                'Audit logs record who did what when. = Gli audit log registrano chi ha fatto cosa e quando.',
+                'Every privileged action in the admin panel writes an application audit log entry with actor, target, before/after state and signed timestamp. = Ogni azione privilegiata nel pannello admin scrive una entry di audit log applicativo con attore, target, stato prima/dopo e timestamp firmato.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -8959,8 +8933,7 @@ export default {
               italian: 'Log degli API AWS (AWS CloudTrail)',
               pronunciation: '/klaʊdtreɪl/',
               phonetic: 'KLAUD-treil',
-              example:
-                'CloudTrail records every AWS API call. = CloudTrail registra ogni chiamata API AWS.',
+              example: `Forwarding CloudTrail events to a dedicated security account creates a tamper-resistant record of every API call across the entire AWS organisation. = Inoltrare gli eventi CloudTrail a un account di sicurezza dedicato crea un record resistente alla manomissione di ogni chiamata API in tutta l'organizzazione AWS.`,
               context: 'observability',
               difficulty: 'advanced',
               tool: 'AWS CloudTrail',
@@ -8970,49 +8943,49 @@ export default {
               italian: 'Pista di audit',
               pronunciation: '/ˈɔːdɪt treɪl/',
               phonetic: 'O-dit TREIL',
-              example:
-                'Compliance requires a full audit trail. = La compliance richiede una pista di audit completa.',
+              example: `SOC 2 Type II auditors expect a complete audit trail covering every production access for the entire 12-month observation window. = Gli auditor SOC 2 Type II si aspettano un audit trail completo che copra ogni accesso produttivo per l'intera finestra di osservazione di 12 mesi.`,
               context: 'observability',
               difficulty: 'advanced',
             },
             {
               english: 'PCI DSS',
-              italian: 'PCI DSS (standard sicurezza dati pagamenti)',
+              italian: 'PCI DSS',
               pronunciation: '/piː siː aɪ diː es es/',
               phonetic: 'PI-SI-AI DI-ES-ES',
               example:
                 'PCI DSS regulates payment-related logging. = PCI DSS regola il logging legato ai pagamenti.',
               context: 'observability',
               difficulty: 'advanced',
+              note: 'Payment Card Industry Data Security Standard: standard internazionale per la protezione dei dati delle carte di pagamento.',
             },
             {
               english: 'GDPR',
-              italian: 'GDPR (Regolamento UE protezione dati)',
+              italian: 'GDPR',
               pronunciation: '/dʒiː diː piː ɑːr/',
               phonetic: 'JI-DI-PI-AR',
               example:
                 'GDPR sets strict data retention rules in the EU. = Il GDPR stabilisce regole rigide di retention dei dati in UE.',
               context: 'observability',
               difficulty: 'advanced',
-              note: 'Cruciale in Italia: regola fondamentale per il logging.',
+              note: 'General Data Protection Regulation (UE 2016/679): regolamento europeo che disciplina il trattamento dei dati personali.',
             },
             {
               english: 'SOC 2',
-              italian: 'SOC 2 (standard di audit servizi cloud)',
+              italian: 'SOC 2',
               pronunciation: '/sɒk tuː/',
               phonetic: 'SOK TU',
               example:
-                'SOC 2 audits look at logging maturity. = Gli audit SOC 2 valutano la maturità del logging.',
+                'Closing a SOC 2 Type II audit requires twelve months of evidence that every production change went through a documented change-approval workflow. = Chiudere un audit SOC 2 Type II richiede dodici mesi di evidenza che ogni modifica in produzione sia passata da un workflow documentato di approvazione.',
               context: 'observability',
               difficulty: 'advanced',
+              note: 'Standard di audit AICPA per fornitori di servizi cloud, basato sui Trust Service Criteria (sicurezza, disponibilità, integrità, riservatezza, privacy).',
             },
             {
               english: 'Tamper-Proof',
               italian: 'A prova di manomissione',
               pronunciation: '/ˈtæmpər pruːf/',
               phonetic: 'TAM-per PRUF',
-              example:
-                'Tamper-proof logs use append-only storage. = I log a prova di manomissione usano storage append-only.',
+              example: `Streaming logs into an append-only S3 bucket with object lock makes the archive tamper-proof and acceptable as evidence in compliance audits. = Streammare i log in un bucket S3 append-only con object lock rende l'archivio tamper-proof e accettabile come evidenza negli audit di compliance.`,
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -9021,8 +8994,7 @@ export default {
               italian: 'Inoltratore di log (Forwarder)',
               pronunciation: '/ˈfɔːrwərdər/',
               phonetic: 'FOR-uar-der',
-              example:
-                'A Splunk forwarder ships logs upstream. = Un forwarder Splunk invia log a monte.',
+              example: `Deploy a Splunk universal forwarder on every Linux host so syslog, auditd and application logs reach the indexer over an encrypted channel. = Distribuisci un Splunk universal forwarder su ogni host Linux così syslog, auditd e log applicativi raggiungono l'indexer su un canale cifrato.`,
               context: 'observability',
               difficulty: 'advanced',
               tool: 'Splunk Forwarder',
@@ -9032,8 +9004,7 @@ export default {
               italian: 'Tempo di indicizzazione',
               pronunciation: '/ˈɪndeks taɪm/',
               phonetic: 'IN-deks TAIM',
-              example:
-                'Index time controls how data is stored. = Il tempo di indicizzazione controlla come i dati sono memorizzati.',
+              example: `Field extraction performed at index time in Splunk consumes more disk but makes subsequent search queries return results in milliseconds. = L'estrazione dei field eseguita a index time in Splunk consuma più disco ma fa restituire alle query di search successive risultati in millisecondi.`,
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -9050,7 +9021,7 @@ export default {
               pronunciation: '/kəmˈplaɪəns ˈmɒnɪtərɪŋ/',
               phonetic: 'kom-PLAI-ans MON-i-to-ring',
               example:
-                'Compliance monitoring proves controls work. = Il monitoraggio di compliance dimostra che i controlli funzionano.',
+                'Continuous compliance monitoring fires a ticket the moment an S3 bucket gets accidentally flipped from private to public access. = Il compliance monitoring continuo apre un ticket nel momento in cui un bucket S3 viene accidentalmente girato da accesso privato a pubblico.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -9069,8 +9040,7 @@ export default {
               italian: 'Evidenza',
               pronunciation: '/ˈevɪdəns/',
               phonetic: 'E-vi-dens',
-              example:
-                'Auditors ask for evidence on demand. = Gli auditor chiedono evidenza a richiesta.',
+              example: `Auditors expect signed log evidence of every quarterly access review, not a verbal claim that someone in the team performed it. = Gli auditor si aspettano evidence firmata via log di ogni access review trimestrale, non una dichiarazione verbale che qualcuno del team l'abbia fatta.`,
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -9089,8 +9059,7 @@ export default {
               italian: 'Storage WORM',
               pronunciation: '/wɜːrm ˈstɔːrɪdʒ/',
               phonetic: 'UORM STO-rij',
-              example:
-                "WORM storage prevents log alteration. = Lo storage WORM previene l'alterazione dei log.",
+              example: `Compliance teams park forensic logs on WORM storage like S3 Object Lock so even a privileged actor cannot rewrite history during an investigation. = I team di compliance parcheggiano i log forensi su WORM storage tipo S3 Object Lock così nemmeno un attore privilegiato può riscrivere la storia durante un'indagine.`,
               context: 'observability',
               difficulty: 'advanced',
               note: 'Write Once Read Many.',
@@ -9100,8 +9069,7 @@ export default {
               italian: 'Immutabilità',
               pronunciation: '/ˌɪmjuːˈtæbɪlɪti/',
               phonetic: 'i-miu-ta-BI-li-ti',
-              example:
-                "Immutability is the core compliance property. = L'immutabilità è la proprietà base della compliance.",
+              example: `Cryptographic hash chains give logs append-only immutability so any retroactive edit is mathematically detectable during forensic review. = Le catene di hash crittografici danno ai log un'immutability append-only così ogni modifica retroattiva è matematicamente rilevabile in fase forense.`,
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -9111,7 +9079,7 @@ export default {
               pronunciation: '/piː aɪ aɪ/',
               phonetic: 'PI-AI-AI',
               example:
-                'Never log PII without explicit consent. = Non loggare mai PII senza consenso esplicito.',
+                'Run a PII scanner over every log stream so a fiscal code leaking into an error message gets redacted before reaching long-term storage. = Esegui uno scanner PII su ogni stream di log così un codice fiscale che trapela in un messaggio di errore viene redatto prima di raggiungere lo storage a lungo termine.',
               context: 'observability',
               difficulty: 'advanced',
               note: 'Personally Identifiable Information.',
@@ -9139,14 +9107,14 @@ export default {
             },
             {
               english: 'DLP',
-              italian: 'Prevenzione perdita dati (DLP)',
+              italian: 'DLP',
               pronunciation: '/diː el piː/',
               phonetic: 'DI-EL-PI',
               example:
-                'DLP scans logs for sensitive data. = DLP scansiona i log per dati sensibili.',
+                'A DLP policy on outbound email blocks any message containing what looks like a credit-card number before it ever leaves the company gateway. = Una policy DLP sulla posta in uscita blocca qualsiasi messaggio che contiene quello che sembra un numero di carta prima che esca dal gateway aziendale.',
               context: 'observability',
               difficulty: 'advanced',
-              note: 'Data Loss Prevention.',
+              note: `Data Loss Prevention: insieme di controlli che bloccano l'esfiltrazione accidentale o malevola di dati sensibili.`,
             },
           ],
         },
@@ -9160,8 +9128,7 @@ export default {
               italian: 'Rilevamento anomalie',
               pronunciation: '/əˈnɒməli dɪˈtekʃən/',
               phonetic: 'a-NO-ma-li di-TEK-scion',
-              example:
-                'Anomaly detection finds unusual patterns. = Il rilevamento anomalie trova pattern inusuali.',
+              example: `Behavioural anomaly detection flags a developer downloading the entire customer database at 3am when their normal pattern is a few rows per day. = La anomaly detection comportamentale segnala uno sviluppatore che scarica l'intero database clienti alle 3 di notte quando il suo pattern normale è qualche riga al giorno.`,
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -9191,7 +9158,7 @@ export default {
               pronunciation: '/ˈlætərəl ˈmuːvmənt/',
               phonetic: 'LA-te-ral MU-vment',
               example:
-                'Lateral movement spreads inside the network. = Il movimento laterale si diffonde dentro la rete.',
+                'Catching lateral movement early relies on alerting whenever a service account suddenly authenticates against hosts it has never touched before. = Beccare presto il lateral movement si basa su alert quando un service account improvvisamente si autentica contro host che non aveva mai toccato.',
               context: 'observability',
               difficulty: 'advanced',
             },
@@ -9207,57 +9174,57 @@ export default {
             },
             {
               english: 'IOC',
-              italian: 'IOC (indicatore di compromissione)',
+              italian: 'IOC',
               pronunciation: '/aɪ oʊ siː/',
               phonetic: 'AI-O-SI',
               example:
-                'An IOC is a forensic clue of attack. = Un IOC è un indizio forense di attacco.',
+                'Subscribing to vendor IOC feeds lets the SIEM auto-block known malicious IPs within seconds of their first appearance in a threat report. = Sottoscrivere feed IOC di vendor permette al SIEM di auto-bloccare IP malevoli noti entro secondi dalla loro prima apparizione in un threat report.',
               context: 'observability',
               difficulty: 'advanced',
-              note: 'Indicator Of Compromise.',
+              note: `Indicator Of Compromise: artefatto osservabile (hash, IP, dominio, chiave di registro) che suggerisce un'intrusione in corso o passata.`,
             },
             {
               english: 'TTP',
-              italian: 'Tattiche, tecniche e procedure (TTP)',
+              italian: 'TTP',
               pronunciation: '/tiː tiː piː/',
               phonetic: 'TI-TI-PI',
               example:
                 'TTPs describe attacker behaviour patterns. = I TTP descrivono pattern di comportamento attaccante.',
               context: 'observability',
               difficulty: 'advanced',
-              note: 'Tactics, Techniques, Procedures.',
+              note: `Tactics, Techniques and Procedures: livelli del comportamento dell'attaccante, dal piano strategico alle azioni operative.`,
             },
             {
               english: 'MITRE ATT&CK',
               italian: 'Framework di tattiche di attacco (MITRE ATT&CK)',
               pronunciation: '/ˈmaɪtər əˈtæk/',
               phonetic: 'MAI-ter a-TAK',
-              example:
-                'MITRE ATT&CK is the de-facto threat framework. = MITRE ATT&CK è il framework di minacce de facto.',
+              example: `Mapping every detection to a MITRE ATT&CK technique lets the SOC see at a glance which kill-chain phases have weak coverage. = Mappare ogni detection a una tecnica MITRE ATT&CK permette al SOC di vedere a colpo d'occhio quali fasi della kill-chain hanno copertura debole.`,
               context: 'observability',
               difficulty: 'advanced',
               tool: 'MITRE ATT&CK',
             },
             {
               english: 'EDR',
-              italian: 'Rilevamento e risposta endpoint (EDR)',
+              italian: 'EDR',
               pronunciation: '/iː diː ɑːr/',
               phonetic: 'I-DI-AR',
-              example:
-                'EDR monitors endpoint behaviour. = EDR monitora il comportamento degli endpoint.',
+              example: `When the EDR agent flags a suspicious PowerShell child process, the SOC can isolate the host from the network straight from the console. = Quando l'agent EDR segnala un processo figlio PowerShell sospetto, il SOC può isolare l'host dalla rete direttamente dalla console.`,
               context: 'observability',
               difficulty: 'advanced',
               tool: 'CrowdStrike, SentinelOne',
-              note: 'Endpoint Detection and Response.',
+              note: `Endpoint Detection and Response: agent che monitora processi, rete e filesystem sull'endpoint e fornisce capacità di risposta remota.`,
             },
             {
               english: 'SOC',
-              italian: 'SOC (Security Operations Center)',
+              italian: 'SOC',
               pronunciation: '/sɒk/',
               phonetic: 'SOK',
-              example: 'The SOC watches alerts 24x7. = Il SOC sorveglia gli alert 24x7.',
+              example:
+                'A modern SOC runs in a follow-the-sun model with hand-offs across three continents so a critical alert never waits more than five minutes. = Un SOC moderno gira in modello follow-the-sun con hand-off su tre continenti così un alert critico non aspetta mai più di cinque minuti.',
               context: 'observability',
               difficulty: 'advanced',
+              note: 'Security Operations Center: team (e relativa piattaforma) che monitora 24x7 alert di sicurezza e coordina la risposta agli incidenti.',
             },
           ],
         },
@@ -9280,18 +9247,17 @@ export default {
               italian: 'IT operations potenziate da AI (AIOps)',
               pronunciation: '/ˈeɪɒps/',
               phonetic: 'AI-OPS',
-              example:
-                'AIOps applies machine learning to operations. = AIOps applica il machine learning alle operations.',
+              example: `Adopting AIOps platforms like Moogsoft cut alert volume by 80% by clustering raw signals into a handful of correlated situations per day. = Adottare piattaforme AIOps come Moogsoft ha tagliato il volume di alert dell'80% raggruppando segnali grezzi in poche situazioni correlate al giorno.`,
               context: 'automation',
               difficulty: 'advanced',
             },
             {
-              english: 'Anomaly Detection',
-              italian: 'Rilevamento anomalie',
+              english: 'ML Anomaly Detection',
+              italian: 'ML Anomaly Detection',
               pronunciation: '/əˈnɒməli dɪˈtekʃən/',
               phonetic: 'a-NO-ma-li di-TEK-scion',
               example:
-                'Anomaly detection beats static thresholds. = Il rilevamento anomalie batte le soglie statiche.',
+                'ML anomaly detection on Prometheus histograms catches slow regressions that static thresholds miss until a customer files a support ticket. = La ML anomaly detection su istogrammi Prometheus becca regressioni lente che le soglie statiche perdono finché un cliente non apre un ticket di supporto.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Datadog Watchdog, Elastic ML',
@@ -9301,8 +9267,7 @@ export default {
               italian: 'Alerting predittivo',
               pronunciation: '/prɪˈdɪktɪv əˈlɜːrtɪŋ/',
               phonetic: 'pre-DIK-tiv a-LER-ting',
-              example:
-                "Predictive alerting fires before failure. = L'alerting predittivo si attiva prima del guasto.",
+              example: `With predictive alerting on disk growth, the on-call expands storage during business hours instead of being paged at 3am for a full volume. = Con il predictive alerting sulla crescita disco, l'on-call espande lo storage in orari di ufficio invece di essere chiamato alle 3 di notte per un volume pieno.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9311,8 +9276,7 @@ export default {
               italian: 'Riduzione del rumore',
               pronunciation: '/nɔɪz rɪˈdʌkʃən/',
               phonetic: 'NOIZ ri-DAK-scion',
-              example:
-                'Noise reduction filters out duplicate alerts. = La riduzione del rumore filtra gli alert duplicati.',
+              example: `ML-driven noise reduction collapses thousands of repeated CPU spikes during a deploy into a single situation the on-call actually reads. = La noise reduction guidata da ML collassa migliaia di picchi CPU ripetuti durante un deploy in una singola situazione che l'on-call legge davvero.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9322,7 +9286,7 @@ export default {
               pronunciation: '/ɪˈvent ˌkɒrəˈleɪʃən/',
               phonetic: 'i-VENT kor-re-LEI-scion',
               example:
-                'Event correlation groups related signals. = La correlazione degli eventi raggruppa segnali correlati.',
+                'Smart event correlation links a switch failure to the downstream pod evictions and database timeouts into one root-cause incident, not three. = Una event correlation intelligente collega un guasto switch alle eviction di pod downstream e ai timeout DB in un unico incidente root-cause, non tre.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9332,7 +9296,7 @@ export default {
               pronunciation: '/ruːt kɔːz əˈnæləsɪs/',
               phonetic: 'RUT KOZ a-NA-le-sis',
               example:
-                'AIOps suggests likely root causes. = AIOps suggerisce probabili cause radice.',
+                'Topology-aware root cause analysis points to the failed Redis node within seconds, instead of forcing engineers to chase symptom dashboards. = Una root cause analysis topology-aware indica il nodo Redis guasto in pochi secondi, invece di costringere gli ingegneri a inseguire dashboard di sintomi.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9342,17 +9306,16 @@ export default {
               pronunciation: '/təˈpɒlədʒi əˈweərnəs/',
               phonetic: 'to-PO-lo-ji a-UER-nes',
               example:
-                'Topology awareness improves correlation. = La consapevolezza della topologia migliora la correlazione.',
+                'Without topology awareness an AIOps engine cannot tell that a database outage will inevitably ripple into the dependent payment microservice. = Senza topology awareness un motore AIOps non riesce a capire che un disservizio del database si propagherà inevitabilmente al microservizio pagamenti dipendente.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
-              english: 'Forecasting',
-              italian: 'Previsione',
+              english: 'AIOps Forecasting',
+              italian: 'AIOps Forecasting',
               pronunciation: '/ˈfɔːrkæstɪŋ/',
               phonetic: 'FOR-kas-ting',
-              example:
-                'AIOps forecasts capacity weeks ahead. = AIOps prevede la capacità con settimane di anticipo.',
+              example: `AIOps forecasting predicts the next quarter's compute needs from production telemetry, freeing capacity planners from spreadsheet guesswork. = L'AIOps forecasting predice il fabbisogno compute del prossimo trimestre dalla telemetria di produzione, liberando i capacity planner dalle congetture su fogli di calcolo.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9362,7 +9325,7 @@ export default {
               pronunciation: '/ˈpætərn ˌrekəɡˈnɪʃən/',
               phonetic: 'PA-tern re-kog-NI-scion',
               example:
-                'Pattern recognition spots recurring incidents. = Il riconoscimento di pattern individua incidenti ricorrenti.',
+                'Running pattern recognition over six months of incident history surfaces a recurring Sunday-night memory leak nobody had spotted as a trend. = Far girare pattern recognition su sei mesi di storia incidenti mostra un memory leak ricorrente della domenica notte che nessuno aveva visto come trend.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9372,7 +9335,7 @@ export default {
               pronunciation: '/self ˈhiːlɪŋ/',
               phonetic: 'SELF HI-ling',
               example:
-                'Self-healing systems remediate without humans. = I sistemi che si auto-riparano si correggono senza umani.',
+                'True self-healing systems detect a stuck pod, kill it, scale up replacements, and only escalate to humans if recovery actions fail twice. = I veri sistemi self-healing rilevano un pod bloccato, lo uccidono, scalano sostituti e fanno escalation a umani solo se le azioni di recovery falliscono due volte.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9388,82 +9351,84 @@ export default {
               italian: 'Machine learning su serie temporali',
               pronunciation: '/taɪm ˈsɪəriːz em el/',
               phonetic: 'TAIM SI-riz EM-EL',
-              example:
-                'Time series ML predicts future values. = Il ML su serie temporali predice valori futuri.',
+              example: `We train a time series ML model on six months of CPU and memory metrics to forecast capacity exhaustion two weeks ahead. = Addestriamo un modello ML su serie temporali con sei mesi di metriche CPU e memoria per prevedere l'esaurimento di capacita' con due settimane di anticipo.`,
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'LSTM',
-              italian: 'Rete ricorrente a memoria lunga (LSTM)',
+              italian: 'LSTM',
               pronunciation: '/el es tiː em/',
               phonetic: 'EL-ES-TI-EM',
               example:
-                'LSTM models capture long dependencies. = I modelli LSTM catturano dipendenze lunghe.',
+                'An LSTM network learns long-range dependencies in request-rate sequences that ARIMA and exponential smoothing fail to capture. = Una rete LSTM apprende dipendenze a lungo raggio nelle sequenze di request-rate che ARIMA e exponential smoothing non riescono a catturare.',
               context: 'automation',
               difficulty: 'advanced',
-              note: 'Long Short-Term Memory.',
+              note: 'Long Short-Term Memory: rete neurale ricorrente con celle a memoria.',
             },
             {
               english: 'Isolation Forest',
-              italian: 'Algoritmo anomaly detection (Isolation Forest)',
+              italian: 'Isolation Forest',
               pronunciation: '/ˌaɪsəˈleɪʃən ˈfɒrɪst/',
               phonetic: 'ai-zo-LEI-scion FO-rest',
               example:
-                'Isolation forest is great for anomaly detection. = Isolation forest è ottimo per il rilevamento anomalie.',
+                'An Isolation Forest model flags anomalous database queries by isolating points that require fewer random splits than normal traffic. = Un modello Isolation Forest segnala query database anomale isolando punti che richiedono meno split casuali del traffico normale.',
               context: 'automation',
               difficulty: 'advanced',
+              note: 'Algoritmo unsupervised per anomaly detection basato su alberi randomici.',
             },
             {
               english: 'Z-Score',
-              italian: 'Punteggio standardizzato (Z-score)',
+              italian: 'Z-score',
               pronunciation: '/ziː skɔːr/',
               phonetic: 'ZED-SKOR',
-              example: 'A z-score above 3 flags outliers. = Uno z-score sopra 3 segnala outlier.',
+              example:
+                'Trigger an alert when the request latency z-score exceeds 3 sigma over the rolling 30-minute window. = Lancia un alert quando lo z-score della latenza supera 3 sigma sulla finestra mobile di 30 minuti.',
               context: 'automation',
               difficulty: 'advanced',
               code: '(value - mean) / stddev',
             },
             {
               english: 'EWMA',
-              italian: 'Media mobile esponenziale ponderata (EWMA)',
+              italian: 'EWMA',
               pronunciation: '/iː ˈdʌbəlju em eɪ/',
               phonetic: 'I-DA-bol-iu-EM-EI',
               example:
-                'EWMA gives more weight to recent samples. = EWMA dà più peso ai campioni recenti.',
+                'An EWMA smooths spiky error-rate metrics so we react to sustained shifts rather than every single outlier sample. = Una EWMA leviga metriche di error-rate piene di picchi cosi reagiamo a spostamenti sostenuti invece che a ogni singolo outlier.',
               context: 'automation',
               difficulty: 'advanced',
-              note: 'Exponentially Weighted Moving Average.',
+              note: 'Exponentially Weighted Moving Average: media mobile pesata esponenzialmente.',
             },
             {
               english: 'Clustering',
-              italian: 'Raggruppamento di dati simili (Clustering)',
+              italian: 'Clustering',
               pronunciation: '/ˈklʌstərɪŋ/',
               phonetic: 'KLAS-te-ring',
               example:
-                'Clustering groups similar incidents. = Il clustering raggruppa incidenti simili.',
+                'Unsupervised clustering groups similar alert patterns so the on-call sees one synthetic incident instead of fifty correlated pages. = Il clustering non supervisionato raggruppa pattern di alert simili cosi il reperibile vede un solo incidente sintetico invece di cinquanta pagine correlate.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'Feature Engineering',
-              italian: 'Costruzione di feature (Feature Engineering)',
+              italian: 'Feature engineering',
               pronunciation: '/ˈfiːtʃər ˌendʒɪˈnɪərɪŋ/',
               phonetic: 'FI-cer en-ji-NI-ring',
               example:
-                'Feature engineering extracts useful signals. = Il feature engineering estrae segnali utili.',
+                'Good feature engineering extracts rolling p95 latency and error-rate deltas before training the anomaly detector. = Un buon feature engineering estrae p95 di latenza in rolling e delta di error-rate prima di addestrare il rilevatore di anomalie.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
-              english: 'Drift',
-              italian: 'Drift del modello',
+              english: 'Concept Drift',
+              italian: 'Concept drift',
               pronunciation: '/drɪft/',
               phonetic: 'DRIFT',
               example:
-                'Detect model drift to retrain on time. = Rileva il model drift per riaddestrare per tempo.',
+                'A fraud detector suffers concept drift when customer behaviour shifts after Black Friday, forcing a retrain with fresh labels. = Un fraud detector soffre di concept drift quando il comportamento dei clienti cambia dopo il Black Friday, costringendo a un retrain con etichette fresche.',
               context: 'automation',
               difficulty: 'advanced',
+              note: `Rinominato per distinguerlo dall'item 'Drift' del modulo dashboards-as-code.`,
             },
             {
               english: 'Training Pipeline',
@@ -9480,8 +9445,7 @@ export default {
               italian: 'Punteggio di confidenza',
               pronunciation: '/ˈkɒnfɪdəns skɔːr/',
               phonetic: 'KON-fi-dens SKOR',
-              example:
-                'Suppress alerts below 80% confidence. = Sopprimi alert sotto 80% di confidenza.',
+              example: `Suppress AIOps alerts whose confidence score falls below 0.8 to keep noise away from the on-call channel. = Sopprimi gli alert AIOps il cui punteggio di confidenza scende sotto 0.8 per tenere il rumore lontano dal canale di reperibilita'.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9494,64 +9458,67 @@ export default {
           items: [
             {
               english: 'Dynatrace',
-              italian: 'Dynatrace (piattaforma APM AI-driven)',
+              italian: 'Dynatrace',
               pronunciation: '/ˈdaɪnəˌtreɪs/',
               phonetic: 'DAI-na-treis',
-              example: 'Dynatrace Davis is the AI engine. = Dynatrace Davis è il motore AI.',
+              example: `OneAgent from Dynatrace auto-instruments JVM, .NET, and Node processes the moment it lands on the host. = OneAgent di Dynatrace auto-strumenta processi JVM, .NET e Node nel momento in cui arriva sull'host.`,
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Dynatrace',
+              note: 'Piattaforma APM AI-driven, motore Davis.',
             },
             {
               english: 'AppDynamics',
-              italian: 'AppDynamics (piattaforma APM Cisco)',
+              italian: 'AppDynamics',
               pronunciation: '/æp daɪˈnæmɪks/',
               phonetic: 'AP dai-NA-miks',
-              example:
-                "AppDynamics is Cisco's APM with AIOps. = AppDynamics è l'APM Cisco con AIOps.",
+              example: `Inside Cisco's stack, AppDynamics traces business transactions across Java microservices end to end. = Dentro lo stack Cisco, AppDynamics traccia transazioni di business attraverso microservizi Java da capo a fondo.`,
               context: 'automation',
               difficulty: 'advanced',
               tool: 'AppDynamics',
+              note: `Piattaforma APM di Cisco con capacita' AIOps.`,
             },
             {
               english: 'Moogsoft',
-              italian: 'Moogsoft (AIOps per gestione incidenti)',
+              italian: 'Moogsoft',
               pronunciation: '/ˈmuːɡsɒft/',
               phonetic: 'MUG-soft',
-              example: "Moogsoft pioneered AIOps. = Moogsoft ha aperto la strada all'AIOps.",
+              example:
+                'Operations teams adopt Moogsoft to deduplicate noisy alerts into a handful of probable-cause clusters. = I team operations adottano Moogsoft per deduplicare alert rumorosi in una manciata di cluster a causa probabile.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Moogsoft',
+              note: 'Pioniere AIOps per gestione e correlazione incidenti.',
             },
             {
               english: 'BigPanda',
-              italian: 'BigPanda (AIOps per correlazione allarmi)',
+              italian: 'BigPanda',
               pronunciation: '/bɪɡ ˈpændə/',
               phonetic: 'BIG-PAN-da',
               example:
-                'BigPanda focuses on event correlation. = BigPanda si concentra sulla correlazione di eventi.',
+                'An ops bridge built on BigPanda correlates ServiceNow, PagerDuty, and Datadog signals into one incident. = Un ops bridge costruito su BigPanda correla segnali ServiceNow, PagerDuty e Datadog in un singolo incidente.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'BigPanda',
+              note: 'Piattaforma AIOps specializzata in correlazione di allarmi.',
             },
             {
               english: 'Datadog Watchdog',
-              italian: 'Rilevatore anomalie automatico (Datadog Watchdog)',
+              italian: 'Watchdog di Datadog',
               pronunciation: '/ˈdætədɒɡ ˈwɒtʃdɒɡ/',
               phonetic: 'DA-ta-dog UOCH-dog',
               example:
-                'Watchdog automatically surfaces issues. = Watchdog fa emergere automaticamente i problemi.',
+                'With Datadog Watchdog enabled the platform automatically surfaces anomalous latency on a specific endpoint without anyone configuring a threshold. = Con Datadog Watchdog attivo la piattaforma fa emergere automaticamente latenze anomale su uno specifico endpoint senza che nessuno configuri una soglia.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Datadog',
             },
             {
               english: 'Topology Map',
-              italian: 'Mappa della topologia',
+              italian: 'Mappa di topologia',
               pronunciation: '/təˈpɒlədʒi mæp/',
               phonetic: 'to-PO-lo-ji MAP',
-              example:
-                'A topology map informs the AI engine. = Una mappa della topologia informa il motore AI.',
+              example: `An accurate topology map feeds the AIOps engine so root cause analysis can follow the actual service dependencies. = Una mappa di topologia accurata alimenta il motore AIOps cosi l'analisi della causa radice puo' seguire le reali dipendenze tra servizi.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9560,8 +9527,7 @@ export default {
               italian: 'Inferenza causale',
               pronunciation: '/ˈkɔːzəl ˈɪnfərəns/',
               phonetic: 'KO-zal IN-fe-rens',
-              example:
-                "Causal inference identifies the trigger. = L'inferenza causale identifica l'innesco.",
+              example: `With causal inference the AIOps engine distinguishes the deploy that triggered the outage from the unrelated traffic spike minutes later. = Con l'inferenza causale il motore AIOps distingue il deploy che ha innescato il disservizio dal picco di traffico non correlato avvenuto pochi minuti dopo.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9570,8 +9536,7 @@ export default {
               italian: 'Alert probabilistico',
               pronunciation: '/ˌprɒbəbɪˈlɪstɪk əˈlɜːrt/',
               phonetic: 'pro-ba-bi-LI-stik a-LERT',
-              example:
-                "Probabilistic alerts include uncertainty. = Gli alert probabilistici includono l'incertezza.",
+              example: `A probabilistic alert ships a confidence band so on-call can decide whether the dip is a real customer-facing regression. = Un alert probabilistico include una banda di confidenza cosi il reperibile puo' decidere se il calo e' una vera regressione percepita dal cliente.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9591,7 +9556,7 @@ export default {
               pronunciation: '/kənˈtɪnjuəs ˈlɜːrnɪŋ/',
               phonetic: 'kon-TI-nius LER-ning',
               example:
-                "Continuous learning adapts to new patterns. = L'apprendimento continuo si adatta ai nuovi pattern.",
+                'A pipeline with continuous learning keeps the anomaly detector aligned with seasonal traffic shifts instead of drifting after weeks. = Una pipeline con apprendimento continuo mantiene il rilevatore di anomalie allineato agli spostamenti stagionali di traffico invece di andare in drift dopo settimane.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9614,24 +9579,24 @@ export default {
             },
             {
               english: 'LLM',
-              italian: 'Modello linguistico di grandi dimensioni (LLM)',
+              italian: 'LLM',
               pronunciation: '/el el em/',
               phonetic: 'EL-EL-EM',
-              example:
-                'LLMs help interpret stack traces. = Gli LLM aiutano a interpretare gli stack trace.',
+              example: `An LLM digests stack traces, recent deploys, and runbooks to draft a plausible root-cause hypothesis for the on-call. = Un LLM digerisce stack trace, deploy recenti e runbook per redigere un'ipotesi plausibile di causa radice per il reperibile.`,
               context: 'automation',
               difficulty: 'advanced',
-              note: 'Large Language Model.',
+              note: 'Large Language Model: modello linguistico di grandi dimensioni.',
             },
             {
               english: 'Copilot',
-              italian: 'Assistente AI (Copilot)',
+              italian: 'Copilot',
               pronunciation: '/ˈkoʊpaɪlət/',
               phonetic: 'KO-pai-lot',
-              example: 'A copilot suggests PromQL queries. = Un copilot suggerisce query PromQL.',
+              example: `An ops copilot suggests the PromQL expression that aggregates request rate per route, ready for the on-call to refine. = Un copilot operativo suggerisce l'espressione PromQL che aggrega il request rate per rotta, pronta perche' il reperibile la perfezioni.`,
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Grafana AI Assistant',
+              note: 'Assistente AI integrato negli strumenti ops (es. Grafana AI Assistant, GitHub Copilot).',
             },
             {
               english: 'Incident Summary',
@@ -9645,11 +9610,10 @@ export default {
             },
             {
               english: 'RCA Suggestion',
-              italian: 'Suggerimento RCA',
+              italian: 'Suggerimento di RCA',
               pronunciation: '/ɑːr siː eɪ səˈdʒestʃən/',
               phonetic: 'AR-SI-EI sa-JES-cion',
-              example:
-                'RCA suggestions point to recent changes. = I suggerimenti RCA puntano a cambi recenti.',
+              example: `Each RCA suggestion ranks recent deploys, config changes, and dependency incidents that most likely triggered the regression. = Ogni suggerimento di RCA classifica i deploy recenti, i cambi di config e gli incidenti di dipendenze che con maggior probabilita' hanno innescato la regressione.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9675,32 +9639,29 @@ export default {
             },
             {
               english: 'Prompt Engineering',
-              italian: 'Progettazione di prompt (Prompt Engineering)',
+              italian: 'Prompt engineering',
               pronunciation: '/prɒmpt ˌendʒɪˈnɪərɪŋ/',
               phonetic: 'PROMPT en-ji-NI-ring',
-              example:
-                'Prompt engineering shapes LLM responses. = Il prompt engineering modella le risposte LLM.',
+              example: `Careful prompt engineering grounds the LLM with current runbooks so it stops inventing flag names that never existed. = Un attento prompt engineering ancora l'LLM ai runbook attuali cosi smette di inventare nomi di flag mai esistiti.`,
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'RAG',
-              italian: 'Generazione aumentata dal recupero (RAG)',
+              italian: 'RAG',
               pronunciation: '/ræɡ/',
               phonetic: 'RAG',
-              example:
-                "RAG injects runbook context into the LLM. = RAG inietta contesto runbook nell'LLM.",
+              example: `A RAG pipeline retrieves the relevant runbook chunks for the current alert before the LLM drafts a remediation plan. = Una pipeline RAG recupera i pezzi di runbook rilevanti per l'alert corrente prima che l'LLM rediga un piano di rimedio.`,
               context: 'automation',
               difficulty: 'advanced',
-              note: 'Retrieval-Augmented Generation.',
+              note: `Retrieval-Augmented Generation: arricchisce l'LLM con contesto recuperato da una knowledge base.`,
             },
             {
               english: 'AI Safety',
-              italian: "Sicurezza dell'AI",
+              italian: `Sicurezza dell'AI`,
               pronunciation: '/eɪ aɪ ˈseɪfti/',
               phonetic: 'EI-AI SEIF-ti',
-              example:
-                'AI safety guards against destructive actions. = La sicurezza AI protegge da azioni distruttive.',
+              example: `Strong AI safety guardrails prevent the copilot from running destructive kubectl delete commands without explicit human approval. = Robusti guardrail di sicurezza dell'AI impediscono al copilot di eseguire comandi kubectl delete distruttivi senza approvazione umana esplicita.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9726,7 +9687,7 @@ export default {
               pronunciation: '/ˈɔːtoʊ rɪˌmiːdiˈeɪʃən/',
               phonetic: 'O-to ri-mi-di-EI-scion',
               example:
-                'Auto-remediation restarts crashed pods. = Il rimedio automatico riavvia i pod crashati.',
+                'An auto-remediation runbook drains and restarts a misbehaving Kafka broker the moment its lag exceeds the configured threshold. = Un runbook di rimedio automatico drena e riavvia un broker Kafka malfunzionante appena il suo lag supera la soglia configurata.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9742,42 +9703,46 @@ export default {
             },
             {
               english: 'StackStorm',
-              italian: 'StackStorm (piattaforma di automazione eventi)',
+              italian: 'StackStorm',
               pronunciation: '/stæk stɔːrm/',
               phonetic: 'STAK-storm',
-              example:
-                'StackStorm orchestrates auto-remediation flows. = StackStorm orchestra flussi di rimedio automatico.',
+              example: `Using StackStorm rules, a webhook event from PagerDuty triggers an Ansible playbook on the affected host. = Con regole StackStorm, un evento webhook da PagerDuty innesca un playbook Ansible sull'host interessato.`,
               context: 'automation',
               difficulty: 'advanced',
               tool: 'StackStorm',
+              note: 'Piattaforma open source di automazione event-driven.',
             },
             {
               english: 'Rundeck',
-              italian: 'Rundeck (orchestrazione runbook)',
+              italian: 'Rundeck',
               pronunciation: '/ˈrʌndek/',
               phonetic: 'RAN-dek',
               example:
-                'Rundeck schedules and exposes ops jobs. = Rundeck schedula ed espone job operativi.',
+                'Operations expose self-service Rundeck jobs so support engineers restart a service without shell access. = Le operations espongono job Rundeck self-service cosi i support engineer riavviano un servizio senza accesso shell.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Rundeck',
+              note: 'Strumento di orchestrazione runbook self-service.',
             },
             {
               english: 'Ansible',
-              italian: 'Ansible (strumento automazione configurazione)',
+              italian: 'Ansible',
               pronunciation: '/ˈænsɪbəl/',
               phonetic: 'AN-si-bol',
-              example: 'Ansible runs remediation playbooks. = Ansible esegue playbook di rimedio.',
+              example:
+                'A daily Ansible playbook reconciles configuration drift on hundreds of legacy VMs that lack a container runtime. = Un playbook Ansible giornaliero riconcilia il drift di configurazione su centinaia di VM legacy senza container runtime.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Ansible',
+              note: 'Strumento Red Hat di automazione configurazione e deploy senza agent.',
             },
             {
               english: 'Idempotency',
               italian: 'Idempotenza',
               pronunciation: '/ˌaɪdemˈpoʊtənsi/',
               phonetic: 'ai-dem-PO-ten-si',
-              example: 'Remediation must be idempotent. = Il rimedio deve essere idempotente.',
+              example:
+                'Strict idempotency lets the remediation job retry safely after a transient API timeout without restarting healthy pods twice. = Una idempotenza stretta permette al job di rimedio di ritentare in sicurezza dopo un timeout API transitorio senza riavviare due volte i pod sani.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9797,8 +9762,7 @@ export default {
               italian: 'Workflow di approvazione',
               pronunciation: '/əˈpruːvəl ˈwɜːrkfloʊ/',
               phonetic: 'a-PRU-val UORK-flou',
-              example:
-                'Critical remediations need approval. = I rimedi critici richiedono approvazione.',
+              example: `High-blast-radius remediations enter an approval workflow so a senior on-call signs off in Slack before any production change runs. = I rimedi ad alto raggio d'azione entrano in un workflow di approvazione cosi un reperibile senior firma in Slack prima che parta qualsiasi cambio in produzione.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9813,14 +9777,14 @@ export default {
               difficulty: 'advanced',
             },
             {
-              english: 'Audit Trail',
-              italian: 'Pista di audit',
+              english: 'Tamper-Proof Audit Trail',
+              italian: 'Audit trail anti-manomissione',
               pronunciation: '/ˈɔːdɪt treɪl/',
               phonetic: 'O-dit TREIL',
-              example:
-                'Every automated action needs an audit trail. = Ogni azione automatica richiede una pista di audit.',
+              example: `A tamper-proof audit trail signs each automation event with a hash chain so a compromised operator cannot rewrite history undetected. = Un audit trail anti-manomissione firma ogni evento di automazione con una catena di hash cosi un operatore compromesso non puo' riscrivere la storia senza essere rilevato.`,
               context: 'automation',
               difficulty: 'advanced',
+              note: `Rinominato per distinguerlo dall'item 'Audit Trail' del modulo sicurezza.`,
             },
           ],
         },
@@ -9831,11 +9795,10 @@ export default {
           items: [
             {
               english: 'ChatOps',
-              italian: 'Operazioni dal canale chat (ChatOps)',
+              italian: 'ChatOps',
               pronunciation: '/tʃæt ɒps/',
               phonetic: 'CIAT-OPS',
-              example:
-                'ChatOps runs commands from a chat channel. = ChatOps esegue comandi da un canale chat.',
+              example: `With ChatOps the on-call kicks off the database failover by typing a single slash command in the incident Slack channel. = Con ChatOps il reperibile fa partire il failover del database digitando un singolo comando slash nel canale Slack dell'incidente.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9855,51 +9818,50 @@ export default {
               italian: 'Comando slash',
               pronunciation: '/slæʃ kəˈmænd/',
               phonetic: 'SLASH ko-MAND',
-              example:
-                'Slash commands invoke ChatOps actions. = I comandi slash invocano azioni ChatOps.',
+              example: `The /incident declare slash command opens a Zoom bridge, pages the secondary, and creates a Jira ticket in one shot. = Il comando slash /incident declare apre un ponte Zoom, chiama il secondario e crea un ticket Jira in un'unica azione.`,
               context: 'automation',
               difficulty: 'advanced',
               code: '/incident declare',
             },
             {
               english: 'Hubot',
-              italian: 'Hubot (bot ChatOps GitHub)',
+              italian: 'Hubot',
               pronunciation: '/ˈhjuːbɒt/',
               phonetic: 'HIU-bot',
               example:
-                'Hubot was the original ChatOps framework. = Hubot era il framework ChatOps originale.',
+                'The original ChatOps demos from GitHub showed Hubot deploying production code from a chat message. = Le demo ChatOps originali di GitHub mostravano Hubot fare deploy di codice di produzione da un messaggio chat.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Hubot',
+              note: 'Bot ChatOps originale creato da GitHub in CoffeeScript.',
             },
             {
               english: 'Errbot',
-              italian: 'Errbot (bot ChatOps Python)',
+              italian: 'Errbot',
               pronunciation: '/ˈɜːrbɒt/',
               phonetic: 'ER-bot',
-              example: 'Errbot is the Python ChatOps engine. = Errbot è il motore ChatOps Python.',
+              example: `Teams that already standardise on Python often pick Errbot to script ChatOps plugins next to their tooling. = I team che gia' standardizzano Python spesso scelgono Errbot per scriptare plugin ChatOps a fianco del proprio tooling.`,
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Errbot',
+              note: 'Framework ChatOps scritto in Python.',
             },
             {
               english: 'Workflow Builder',
-              italian: 'Costruttore di workflow',
+              italian: 'Workflow Builder',
               pronunciation: '/ˈwɜːrkfloʊ ˈbɪldər/',
               phonetic: 'UORK-flou BIL-der',
-              example:
-                'Slack Workflow Builder needs no code. = Slack Workflow Builder non richiede codice.',
+              example: `Slack Workflow Builder lets non-engineers chain a form submission to an OpsGenie alert without writing any code. = Slack Workflow Builder permette ai non ingegneri di concatenare l'invio di un modulo a un alert OpsGenie senza scrivere codice.`,
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Slack',
             },
             {
               english: 'Incident Channel',
-              italian: "Canale dell'incidente",
+              italian: `Canale dell'incidente`,
               pronunciation: '/ˈɪnsɪdənt ˈtʃænəl/',
               phonetic: 'IN-si-dent CIA-nel',
-              example:
-                'Each incident gets a dedicated channel. = Ogni incidente ha un canale dedicato.',
+              example: `Each major incident spawns a dedicated incident channel like #inc-2024-05-payments so timeline and decisions stay in one place. = Ogni incidente maggiore genera un canale dell'incidente dedicato tipo #inc-2024-05-payments cosi cronologia e decisioni restano in un unico posto.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9918,8 +9880,7 @@ export default {
               italian: 'Audit delle azioni del bot',
               pronunciation: '/ˈɔːdɪt bɒt ˈækʃən/',
               phonetic: 'O-dit BOT AK-scion',
-              example:
-                'All bot actions are logged for audit. = Tutte le azioni del bot sono loggate per audit.',
+              example: `Enabling audit bot action logs which engineer triggered the database failover and when, satisfying SOX traceability requirements. = Abilitare l'audit delle azioni del bot registra quale ingegnere ha innescato il failover del database e quando, soddisfacendo i requisiti di tracciabilita' SOX.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -9947,42 +9908,42 @@ export default {
               pronunciation: '/self ˈhiːlɪŋ ˈsɪstəm/',
               phonetic: 'SELF HI-ling SIS-tem',
               example:
-                'Self-healing systems recover without humans. = I sistemi auto-riparanti si riprendono senza umani.',
+                'A self-healing system reschedules failed pods, restarts crashed containers, and rotates expired certificates without paging humans. = Un sistema auto-riparante rischedula i pod falliti, riavvia i container crashati e ruota i certificati scaduti senza chiamare gli umani.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
-              english: 'Liveness Probe',
-              italian: 'Sonda di liveness',
+              english: 'Startup Probe',
+              italian: 'Startup probe',
               pronunciation: '/ˈlaɪvnəs proʊb/',
               phonetic: 'LAIV-nes PROUB',
-              example:
-                'A failing liveness probe restarts the pod. = Una liveness probe fallita riavvia il pod.',
+              example: `A startup probe gives slow-booting JVM workloads up to five minutes before Kubernetes flips them to liveness checks. = Una startup probe da' ai workload JVM lenti al boot fino a cinque minuti prima che Kubernetes passi ai liveness check.`,
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Kubernetes',
+              note: `Rinominato per distinguerlo dall'item 'Liveness Probe' del modulo osservabilita' base.`,
             },
             {
               english: 'Restart Policy',
-              italian: 'Politica di restart',
+              italian: 'Politica di riavvio',
               pronunciation: '/ˈriːstɑːrt ˈpɒlɪsi/',
               phonetic: 'RI-start PO-li-si',
               example:
-                'restartPolicy: Always keeps pods alive. = restartPolicy: Always tiene i pod vivi.',
+                'Setting restartPolicy: Always on the deployment keeps the cache pods alive through transient memory spikes during peak traffic. = Impostare restartPolicy: Always sul deployment tiene vivi i pod di cache durante picchi di memoria transitori al traffico di picco.',
               context: 'automation',
               difficulty: 'advanced',
               code: 'restartPolicy: Always',
             },
             {
               english: 'PDB',
-              italian: 'PDB (Pod Disruption Budget)',
+              italian: 'PDB',
               pronunciation: '/piː diː biː/',
               phonetic: 'PI-DI-BI',
-              example:
-                'A PDB prevents too many simultaneous restarts. = Un PDB previene troppi restart simultanei.',
+              example: `A PDB with minAvailable: 2 prevents node drains from taking down more than one replica of the order service at once. = Un PDB con minAvailable: 2 impedisce ai drain di nodo di abbattere piu' di una replica del servizio ordini contemporaneamente.`,
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Kubernetes',
+              note: 'Pod Disruption Budget: limita le interruzioni volontarie in Kubernetes.',
             },
             {
               english: 'Kubernetes Operator',
@@ -10001,19 +9962,19 @@ export default {
               pronunciation: '/riˈæktɪv luːp/',
               phonetic: 'ri-AK-tiv LUP',
               example:
-                'A reactive loop watches and reconciles. = Un loop reattivo osserva e riconcilia.',
+                'A reactive loop watches CRD events and reconciles desired state, the pattern behind every Kubernetes operator. = Un loop reattivo osserva gli eventi CRD e riconcilia lo stato desiderato, il pattern dietro ogni operator Kubernetes.',
               context: 'automation',
               difficulty: 'advanced',
             },
             {
-              english: 'Watchdog',
-              italian: 'Rilevatore anomalie Datadog (Watchdog)',
+              english: 'Watchdog Timer',
+              italian: 'Watchdog timer',
               pronunciation: '/ˈwɒtʃdɒɡ/',
               phonetic: 'UOCH-dog',
-              example:
-                'A watchdog process restarts hung daemons. = Un processo watchdog riavvia daemon bloccati.',
+              example: `A watchdog timer in the daemon resets a counter every cycle so the kernel kills the process if the loop ever hangs longer than 60 seconds. = Un watchdog timer nel daemon resetta un contatore ad ogni ciclo cosi il kernel uccide il processo se il loop si blocca per piu' di 60 secondi.`,
               context: 'automation',
               difficulty: 'advanced',
+              note: `Rinominato per distinguerlo dall'item 'Watchdog' del modulo APM.`,
             },
             {
               english: 'Graceful Degradation',
@@ -10021,7 +9982,7 @@ export default {
               pronunciation: '/ˈɡreɪsfəl ˌdeɡrəˈdeɪʃən/',
               phonetic: 'GREIS-ful de-gra-DEI-scion',
               example:
-                'Graceful degradation hides backend issues. = Il degrado controllato nasconde i problemi backend.',
+                'With graceful degradation the storefront falls back to cached product listings when the recommendation service goes down instead of erroring. = Con un degrado controllato lo storefront ricade sui listini prodotto in cache quando il servizio raccomandazioni cade invece di andare in errore.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -10030,8 +9991,7 @@ export default {
               italian: 'Pattern bulkhead',
               pronunciation: '/ˈbʌlkhed ˈpætərn/',
               phonetic: 'BALK-hed PA-tern',
-              example:
-                'The bulkhead pattern isolates failures. = Il pattern bulkhead isola i guasti.',
+              example: `The bulkhead pattern caps the thread pool dedicated to the slow legacy service so it cannot starve the checkout path. = Il pattern bulkhead limita il pool di thread dedicato al servizio legacy lento cosi non puo' affamare il path di checkout.`,
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -10055,54 +10015,55 @@ export default {
           items: [
             {
               english: 'GitOps',
-              italian: 'Git come fonte di verità per il deploy (GitOps)',
+              italian: 'GitOps',
               pronunciation: '/ɡɪt ɒps/',
               phonetic: 'GIT-OPS',
               example:
-                'GitOps treats Git as the source of truth. = GitOps tratta Git come fonte di verità.',
+                'Adopting GitOps makes the production cluster a deterministic projection of the main branch, so every change shows up in pull-request history. = Adottare GitOps rende il cluster di produzione una proiezione deterministica del branch main, cosi ogni cambio compare nella cronologia delle pull request.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Argo CD, Flux',
             },
             {
               english: 'Argo CD',
-              italian: 'Argo CD (motore GitOps Kubernetes)',
+              italian: 'Argo CD',
               pronunciation: '/ˈɑːrɡoʊ siː diː/',
               phonetic: 'AR-go SI-DI',
               example:
-                'Argo CD syncs cluster state from Git. = Argo CD sincronizza lo stato del cluster da Git.',
+                'Inside the cluster, Argo CD continuously reconciles live Kubernetes state with the manifests in the main branch. = Dentro il cluster, Argo CD riconcilia continuamente lo stato live di Kubernetes con i manifest del branch main.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Argo CD',
+              note: 'Motore GitOps dichiarativo per Kubernetes.',
             },
             {
               english: 'Flux',
-              italian: 'Flux (motore GitOps Kubernetes)',
+              italian: 'Flux',
               pronunciation: '/flʌks/',
               phonetic: 'FLAKS',
               example:
-                'Flux is the GitOps toolkit by Weaveworks. = Flux è il toolkit GitOps di Weaveworks.',
+                'An in-cluster Flux installation watches the Git repo and applies new manifests within minutes of a merge. = Una installazione Flux nel cluster osserva il repo Git e applica nuovi manifest entro pochi minuti da un merge.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Flux',
+              note: 'Toolkit GitOps Kubernetes della CNCF (Weaveworks).',
             },
             {
               english: 'Pull-Based Deploy',
               italian: 'Deploy pull-based',
               pronunciation: '/pʊl beɪst dɪˈplɔɪ/',
               phonetic: 'PUL-BEIST di-PLOI',
-              example:
-                'Pull-based deploys avoid CI cluster credentials. = I deploy pull-based evitano credenziali CI per il cluster.',
+              example: `A pull-based deploy lets the in-cluster Argo CD agent reconcile from Git, avoiding any kubectl credentials stored in the CI runner. = Un deploy pull-based lascia che l'agente Argo CD nel cluster riconcili da Git, evitando qualsiasi credenziale kubectl conservata nel runner CI.`,
               context: 'automation',
               difficulty: 'advanced',
             },
             {
               english: 'Drift Detection',
-              italian: 'Rilevamento drift',
+              italian: 'Rilevamento del drift',
               pronunciation: '/drɪft dɪˈtekʃən/',
               phonetic: 'DRIFT di-TEK-scion',
               example:
-                'Drift detection compares cluster to Git. = Il rilevamento drift confronta cluster e Git.',
+                'Automated drift detection alerts when an operator hot-patches the staging cluster, restoring the manifest from Git within minutes. = Il rilevamento automatico del drift segnala quando un operatore patcha a caldo il cluster di staging, ripristinando il manifest da Git in pochi minuti.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -10112,7 +10073,7 @@ export default {
               pronunciation: '/self ˈsɜːrvɪs dɪˈplɔɪ/',
               phonetic: 'SELF SER-vis di-PLOI',
               example:
-                'Self-service deploys empower devs. = I deploy self-service danno potere agli sviluppatori.',
+                'A self-service deploy lets product teams ship to staging via a Backstage button while the platform team owns the underlying pipeline. = Un deploy self-service permette ai team di prodotto di rilasciare su staging tramite un pulsante Backstage mentre il team piattaforma possiede la pipeline sottostante.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -10122,7 +10083,7 @@ export default {
               pronunciation: '/ˈpaɪplaɪn æz koʊd/',
               phonetic: 'PAIP-lain AS KOUD',
               example:
-                'Pipeline as code makes CI reviewable. = Pipeline come codice rende il CI revisionabile.',
+                'Adopting pipeline as code keeps the GitHub Actions workflow in the repo, so reviewers see CI changes in the same PR as the application change. = Adottare la pipeline come codice tiene il workflow di GitHub Actions nel repo, cosi i revisori vedono i cambi di CI nella stessa PR del cambio applicativo.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'GitHub Actions, GitLab CI',
@@ -10132,7 +10093,7 @@ export default {
               italian: 'Policy come codice',
               pronunciation: '/ˈpɒlɪsi æz koʊd/',
               phonetic: 'PO-li-si AS KOUD',
-              example: 'OPA enforces policy as code. = OPA applica policy come codice.',
+              example: `OPA Gatekeeper enforces policy as code by rejecting every Kubernetes manifest that omits resource limits at admission time. = OPA Gatekeeper applica la policy come codice rifiutando ogni manifest Kubernetes che omette resource limit al momento dell'admission.`,
               context: 'automation',
               difficulty: 'advanced',
               tool: 'OPA, Kyverno',
@@ -10143,7 +10104,7 @@ export default {
               pronunciation: '/əˈpruːvəl ɡeɪt/',
               phonetic: 'a-PRU-val GHEIT',
               example:
-                'An approval gate guards production. = Un gate di approvazione protegge la produzione.',
+                'A manual approval gate sits between staging and production so a release engineer signs off on every customer-facing rollout. = Un gate di approvazione manuale sta tra staging e produzione cosi un release engineer firma ogni rollout visibile al cliente.',
               context: 'automation',
               difficulty: 'advanced',
             },
@@ -10153,7 +10114,7 @@ export default {
               pronunciation: '/prəˈɡresɪv dɪˈlɪvəri/',
               phonetic: 'pro-GRES-siv di-LI-ve-ri',
               example:
-                'Progressive delivery uses canary plus monitoring. = La consegna progressiva usa canary più monitoraggio.',
+                'With progressive delivery the rollout sends 5% of traffic to the canary, watches SLO burn rate, and auto-rolls back on error spikes. = Con la consegna progressiva il rollout manda il 5% del traffico al canary, osserva il burn rate dello SLO e fa rollback automatico ai picchi di errore.',
               context: 'automation',
               difficulty: 'advanced',
               tool: 'Argo Rollouts, Flagger',
@@ -10176,36 +10137,39 @@ export default {
           items: [
             {
               english: 'Terraform',
-              italian: 'Terraform (IaC HashiCorp)',
+              italian: 'Terraform',
               pronunciation: '/ˈterəfɔːrm/',
               phonetic: 'TE-ra-form',
               example:
-                'Terraform manages cloud resources declaratively. = Terraform gestisce risorse cloud in modo dichiarativo.',
+                'A monorepo of Terraform modules provisions VPCs, IAM roles, and managed Postgres across three AWS accounts. = Un monorepo di moduli Terraform fa provisioning di VPC, ruoli IAM e Postgres managed su tre account AWS.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Terraform',
+              note: 'IaC dichiarativo di HashiCorp, supporta provider multipli.',
             },
             {
-              english: 'Provider',
-              italian: 'Fornitore di servizi (Provider)',
+              english: 'Terraform Provider',
+              italian: 'Terraform provider',
               pronunciation: '/prəˈvaɪdər/',
               phonetic: 'pro-VAI-der',
               example:
-                'The Grafana provider creates dashboards. = Il provider Grafana crea dashboard.',
+                'The Grafana Terraform provider authenticates with an API key and creates dashboards, folders, and alert rules from HCL. = Il Terraform provider di Grafana si autentica con una API key e crea dashboard, cartelle e regole di alert da HCL.',
               context: 'tools',
               difficulty: 'advanced',
               code: 'provider "grafana" {\n  url  = "https://grafana.example.com"\n  auth = var.api_key\n}',
+              note: `Rinominato per distinguerlo dall'item 'Provider' del modulo dashboards-as-code.`,
             },
             {
-              english: 'Resource',
-              italian: 'Risorsa',
+              english: 'Terraform Resource',
+              italian: 'Terraform resource',
               pronunciation: '/rɪˈsɔːrs/',
               phonetic: 'ri-SORS',
               example:
-                'A grafana_dashboard resource creates one dashboard. = Una risorsa grafana_dashboard crea una dashboard.',
+                'A grafana_dashboard Terraform resource encodes one Grafana dashboard, version-pinned and reviewed like any other HCL block. = Una Terraform resource grafana_dashboard codifica una dashboard Grafana, version-pinned e revisionata come qualunque altro blocco HCL.',
               context: 'tools',
               difficulty: 'advanced',
               code: 'resource "grafana_dashboard" "api" { ... }',
+              note: `Rinominato per distinguerlo dall'item 'Resource' del modulo OpenTelemetry.`,
             },
             {
               english: 'Module',
@@ -10231,21 +10195,20 @@ export default {
             },
             {
               english: 'Plan',
-              italian: 'Pianifica modifiche IaC (Plan)',
+              italian: 'Plan',
               pronunciation: '/plæn/',
               phonetic: 'PLAN',
-              example:
-                'terraform plan shows the expected diff. = terraform plan mostra il diff atteso.',
+              example: `terraform plan prints the dashboard and monitor diff so reviewers see exactly what will change before apply. = terraform plan stampa il diff di dashboard e monitor cosi i revisori vedono esattamente cosa cambiera' prima dell'apply.`,
               context: 'tools',
               difficulty: 'advanced',
               command: 'terraform plan -out=plan.bin',
             },
             {
               english: 'Apply',
-              italian: 'Applica modifiche IaC (Apply)',
+              italian: 'Apply',
               pronunciation: '/əˈplaɪ/',
               phonetic: 'a-PLAI',
-              example: 'terraform apply enacts the plan. = terraform apply applica il plan.',
+              example: `Running terraform apply on the saved plan creates the Datadog monitors and Grafana folders in the exact order Terraform planned. = Eseguire terraform apply sul plan salvato crea i monitor Datadog e le cartelle Grafana nell'ordine esatto pianificato da Terraform.`,
               context: 'tools',
               difficulty: 'advanced',
               command: 'terraform apply plan.bin',
@@ -10256,28 +10219,28 @@ export default {
               pronunciation: '/ˈdætədɒɡ prəˈvaɪdər/',
               phonetic: 'DA-ta-dog pro-VAI-der',
               example:
-                'The Datadog provider manages monitors. = Il provider Datadog gestisce i monitor.',
+                'The Datadog provider lets a single HCL file declare 200 monitors, freeing the team from clicking through the UI for every change. = Il provider Datadog permette a un singolo file HCL di dichiarare 200 monitor, liberando il team dal cliccare nella UI per ogni cambio.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'terraform-provider-datadog',
             },
             {
-              english: 'Drift',
-              italian: 'Scostamento dallo stato dichiarato (Drift)',
+              english: 'Stale State Lock',
+              italian: 'Lock di stato bloccato',
               pronunciation: '/drɪft/',
               phonetic: 'DRIFT',
-              example:
-                'terraform plan detects manual drift. = terraform plan rileva drift manuale.',
+              example: `A stale Terraform state lock from a killed CI job blocks every new plan until you force-unlock the offending lock ID. = Un lock di stato Terraform bloccato da un job CI ucciso blocca ogni nuovo plan finche' non fai force-unlock dell'ID di lock incriminato.`,
               context: 'tools',
               difficulty: 'advanced',
+              note: `Rinominato per evitare collisione con 'Drift' dei moduli dashboards-as-code e AIOps.`,
             },
             {
               english: 'Workspace',
-              italian: 'Area di lavoro (Workspace)',
+              italian: 'Workspace',
               pronunciation: '/ˈwɜːrkspeɪs/',
               phonetic: 'UORK-speis',
               example:
-                'Workspaces separate prod and staging state. = I workspace separano lo stato di prod e staging.',
+                'Separate Terraform workspaces hold the prod and staging state for the monitoring stack, preventing accidental cross-environment edits. = Workspace Terraform separati contengono lo stato di prod e staging per lo stack di monitoring, prevenendo modifiche accidentali tra ambienti.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'terraform workspace new prod',
@@ -10291,23 +10254,24 @@ export default {
           items: [
             {
               english: 'Jsonnet',
-              italian: 'Jsonnet (linguaggio template JSON)',
+              italian: 'Jsonnet',
               pronunciation: '/ˈdʒeɪsɒnet/',
               phonetic: 'JEI-so-net',
               example:
-                'Jsonnet templates JSON dashboards. = Jsonnet templatizza le dashboard JSON.',
+                'Internal SRE teams adopt Jsonnet to template hundreds of similar Grafana dashboards from one definition. = I team SRE interni adottano Jsonnet per templatizzare centinaia di dashboard Grafana simili da una sola definizione.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Jsonnet',
               command: 'jsonnet -J vendor dashboard.jsonnet > dash.json',
+              note: 'Linguaggio di templating JSON sviluppato in Google.',
             },
             {
               english: 'Grafonnet',
-              italian: 'Libreria Jsonnet per Grafana (Grafonnet)',
+              italian: 'Grafonnet',
               pronunciation: '/ɡrəˈfɒnet/',
               phonetic: 'gra-FO-net',
               example:
-                'Grafonnet is the Jsonnet library for Grafana. = Grafonnet è la libreria Jsonnet per Grafana.',
+                'The Grafonnet library wraps the raw Grafana JSON schema in typed Jsonnet helpers so panel changes survive Grafana upgrades. = La libreria Grafonnet incapsula lo schema JSON grezzo di Grafana in helper Jsonnet tipizzati cosi i cambi di pannello sopravvivono agli upgrade di Grafana.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Grafonnet',
@@ -10317,7 +10281,8 @@ export default {
               italian: 'Libreria',
               pronunciation: '/ˈlaɪbrəri/',
               phonetic: 'LAI-bra-ri',
-              example: 'A library bundles common helpers. = Una libreria racchiude helper comuni.',
+              example:
+                'Internal Jsonnet libraries bundle the company panel palette and SLO query helpers so every team starts from a consistent baseline. = Le librerie Jsonnet interne raggruppano la palette di pannelli aziendale e gli helper di query SLO cosi ogni team parte da una baseline coerente.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10334,32 +10299,35 @@ export default {
             },
             {
               english: 'Tanka',
-              italian: 'Tanka (gestore Kubernetes con Jsonnet)',
+              italian: 'Tanka',
               pronunciation: '/ˈtɑːŋkə/',
               phonetic: 'TAN-ka',
               example:
-                'Tanka deploys Jsonnet to Kubernetes. = Tanka fa deploy di Jsonnet in Kubernetes.',
+                'Grafana Labs ships Tanka to deploy its own internal Kubernetes workloads from versioned Jsonnet bundles. = Grafana Labs rilascia Tanka per fare deploy dei propri workload Kubernetes interni da bundle Jsonnet versionati.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Tanka',
+              note: 'Gestore Kubernetes basato su Jsonnet, di Grafana Labs.',
             },
             {
               english: 'jb',
-              italian: 'jb (jsonnet-bundler)',
+              italian: 'jb',
               pronunciation: '/dʒeɪ biː/',
               phonetic: 'JEI-BI',
-              example: 'jb manages Jsonnet dependencies. = jb gestisce le dipendenze Jsonnet.',
+              example:
+                'jb install github.com/grafana/grafonnet pulls the library into vendor/ and pins it via jsonnetfile.lock.json. = jb install github.com/grafana/grafonnet scarica la libreria in vendor/ e la blocca tramite jsonnetfile.lock.json.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'jb install github.com/grafana/grafonnet-lib/grafonnet',
+              note: 'jsonnet-bundler: gestore di dipendenze Jsonnet.',
             },
             {
               english: 'Templating',
-              italian: 'Sistema di template (Templating)',
+              italian: 'Templating',
               pronunciation: '/ˈtempleɪtɪŋ/',
               phonetic: 'TEM-plei-ting',
               example:
-                'Templating reduces dashboard duplication. = Il templating riduce la duplicazione di dashboard.',
+                'Dashboard templating generates one panel set per microservice from a single Jsonnet function, cutting copy-paste maintenance to zero. = Il templating delle dashboard genera un set di pannelli per microservizio da una singola funzione Jsonnet, riducendo a zero la manutenzione copia-incolla.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10378,8 +10346,7 @@ export default {
               italian: 'Funzione helper',
               pronunciation: '/ˈhelpər ˈfʌŋkʃən/',
               phonetic: 'HEL-per FANK-scen',
-              example:
-                'Helper functions DRY up Jsonnet code. = Le funzioni helper rendono DRY il codice Jsonnet.',
+              example: `A helper function wraps the standard p99 latency panel so every team gets the same axes, units, and threshold colors. = Una funzione helper incapsula il pannello standard di latenza p99 cosi ogni team ottiene gli stessi assi, unita' e colori di soglia.`,
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10405,8 +10372,7 @@ export default {
               italian: 'Dashboard come codice',
               pronunciation: '/ˈdæʃbɔːrd æz koʊd/',
               phonetic: 'DASH-bord AS KOUD',
-              example:
-                'Dashboard as code unlocks code review. = Dashboard come codice abilita il code review.',
+              example: `Treating dashboard as code lets reviewers comment on a panel addition in the same pull request that ships the feature flag. = Trattare le dashboard come codice permette ai revisori di commentare l'aggiunta di un pannello nella stessa pull request che rilascia il feature flag.`,
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10416,28 +10382,27 @@ export default {
               pronunciation: '/ˈdʒeɪsɒn dɪf/',
               phonetic: 'JEI-son DIF',
               example:
-                'JSON diffs are noisy without normalisation. = I diff JSON sono rumorosi senza normalizzazione.',
+                'Plain JSON diffs explode with reordered keys, so we run a normalisation step before comparing exported Grafana dashboards. = I diff JSON puri esplodono con chiavi riordinate, quindi eseguiamo uno step di normalizzazione prima di confrontare dashboard Grafana esportate.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Linting',
-              italian: 'Analisi statica del codice (Linting)',
+              italian: 'Linting',
               pronunciation: '/ˈlɪntɪŋ/',
               phonetic: 'LIN-ting',
-              example:
-                'Lint dashboards in CI to enforce rules. = Lintare le dashboard in CI per applicare regole.',
+              example: `dashboard-linter flags panels missing units and titles so reviewers do not chase obvious mistakes during code review. = dashboard-linter segnala pannelli che omettono unita' di misura e titoli cosi i revisori non rincorrono errori ovvi durante il code review.`,
               context: 'tools',
               difficulty: 'advanced',
               tool: 'dashboard-linter',
             },
             {
               english: 'CI Validation',
-              italian: 'Validazione CI',
+              italian: 'Validazione in CI',
               pronunciation: '/siː aɪ ˌvælɪˈdeɪʃən/',
               phonetic: 'SI-AI va-li-DEI-scion',
               example:
-                'CI validation runs promtool check rules. = La validazione CI esegue promtool check rules.',
+                'Automated CI validation runs promtool check rules on every PR so a syntax error in a recording rule never lands in main. = La validazione CI automatica esegue promtool check rules su ogni PR cosi un errore di sintassi in una recording rule non arriva mai su main.',
               context: 'tools',
               difficulty: 'advanced',
               command: 'promtool check rules rules.yml',
@@ -10458,7 +10423,7 @@ export default {
               pronunciation: '/ˈsnæpʃɒt test/',
               phonetic: 'SNAP-shot TEST',
               example:
-                'Snapshot tests detect unintended changes. = I test snapshot rilevano cambi non voluti.',
+                'A snapshot test compares the generated dashboard JSON against a golden file, surfacing accidental panel removals at build time. = Un test snapshot confronta il JSON di dashboard generato con un file di riferimento, facendo emergere rimozioni accidentali di pannelli al build time.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10468,7 +10433,7 @@ export default {
               pronunciation: '/ˈvɜːrʒənɪŋ/',
               phonetic: 'VER-jio-ning',
               example:
-                'Tag dashboard releases with SemVer. = Tagga le release di dashboard con SemVer.',
+                'SemVer-style versioning of the shared dashboard library lets teams pin to v2.x while a breaking v3 stabilises. = Il versionamento in stile SemVer della libreria di dashboard condivisa permette ai team di restare su v2.x mentre una v3 con breaking change si stabilizza.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10488,7 +10453,7 @@ export default {
               pronunciation: '/pər ˈsɜːrvɪs ˈbʌndəl/',
               phonetic: 'per SER-vis BAN-dol',
               example:
-                'Each service ships its own bundle. = Ogni servizio rilascia il proprio bundle.',
+                'Each service ships a per-service bundle with its own SLOs, dashboards, and alerts under services/<name>/observability. = Ogni servizio rilascia un bundle per servizio con i propri SLO, dashboard e alert sotto services/<name>/observability.',
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10511,25 +10476,27 @@ export default {
           items: [
             {
               english: 'Sloth',
-              italian: 'Generatore di SLO Prometheus (Sloth)',
+              italian: 'Sloth',
               pronunciation: '/sloʊθ/',
               phonetic: 'SLOTH',
               example:
-                'Sloth generates Prometheus rules from SLO YAML. = Sloth genera regole Prometheus da YAML SLO.',
+                'The Sloth CLI compiles a YAML SLO spec into a complete set of Prometheus recording and multi-window burn-rate alerting rules. = La CLI Sloth compila una specifica SLO YAML in un set completo di recording rule Prometheus e alert multi-window di burn rate.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Sloth',
+              note: 'Generatore open source di regole SLO per Prometheus.',
             },
             {
               english: 'OpenSLO',
-              italian: 'Standard aperto per SLO (OpenSLO)',
+              italian: 'OpenSLO',
               pronunciation: '/ˈoʊpən es el oʊ/',
               phonetic: 'O-pen ES-EL-O',
               example:
-                'OpenSLO is a vendor-neutral SLO format. = OpenSLO è un formato SLO neutrale al vendor.',
+                'The OpenSLO project defines a vendor-neutral YAML spec so the same SLO definition feeds Sloth, Nobl9, and other compliant tools. = Il progetto OpenSLO definisce una specifica YAML neutra al vendor cosi la stessa definizione di SLO alimenta Sloth, Nobl9 e altri strumenti compatibili.',
               context: 'tools',
               difficulty: 'advanced',
               code: 'apiVersion: openslo/v1\nkind: SLO',
+              note: 'Standard aperto per la definizione di SLO sotto la CNCF.',
             },
             {
               english: 'SLO Definition',
@@ -10546,8 +10513,7 @@ export default {
               italian: 'Alert di burn rate',
               pronunciation: '/bɜːrn reɪt əˈlɜːrt/',
               phonetic: 'BERN-REIT a-LERT',
-              example:
-                'Burn rate alerts use multi-window strategy. = Gli alert di burn rate usano strategia multi-window.',
+              example: `A multi-window burn rate alert fires when the past hour burns the next 14 hours of error budget at the current rate. = Un alert di burn rate multi-window scatta quando l'ora scorsa brucia le successive 14 ore di error budget al ritmo attuale.`,
               context: 'tools',
               difficulty: 'advanced',
               code: 'expr: error_budget_burn_rate > 14.4',
@@ -10558,30 +10524,32 @@ export default {
               pronunciation: '/ˈɔːtoʊ ˈdʒenəreɪtɪd ruːlz/',
               phonetic: 'O-to JE-ne-rei-tid RULZ',
               example:
-                'Sloth auto-generates burn rate rules. = Sloth auto-genera regole di burn rate.',
+                'Sloth produces auto-generated recording and alerting rules from one SLO YAML so SREs stop hand-writing duplicated PromQL. = Sloth produce recording e alerting rule auto-generate da un YAML SLO cosi gli SRE smettono di scrivere a mano PromQL duplicato.',
               context: 'tools',
               difficulty: 'advanced',
             },
             {
               english: 'Pyrra',
-              italian: 'Strumento gestione SLO (Pyrra)',
+              italian: 'Pyrra',
               pronunciation: '/ˈpɪrə/',
               phonetic: 'PI-ra',
-              example: 'Pyrra is an SLO controller for K8s. = Pyrra è un controller SLO per K8s.',
+              example:
+                'The Pyrra controller runs in Kubernetes and exposes SLO status pages directly off the in-cluster Prometheus. = Il controller Pyrra gira in Kubernetes ed espone pagine di stato SLO direttamente sul Prometheus nel cluster.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Pyrra',
+              note: 'Controller SLO open source per Kubernetes.',
             },
             {
               english: 'Nobl9',
-              italian: 'Nobl9 (piattaforma SLO commerciale)',
+              italian: 'Nobl9',
               pronunciation: '/ˈnoʊbəl naɪn/',
               phonetic: 'NO-bol NAIN',
-              example:
-                'Nobl9 is a SaaS reliability platform. = Nobl9 è una piattaforma SaaS di reliability.',
+              example: `Reliability teams pick Nobl9 to centralise SLO budgets across Datadog, New Relic, and Prometheus in one UI. = I team reliability scelgono Nobl9 per centralizzare i budget SLO fra Datadog, New Relic e Prometheus in un'unica UI.`,
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Nobl9',
+              note: 'Piattaforma SaaS commerciale per gestione SLO.',
             },
             {
               english: 'SLO Library',
@@ -10599,18 +10567,17 @@ export default {
               pronunciation: '/ˈsɜːrvɪs ˈkætəlɒɡ/',
               phonetic: 'SER-vis KA-ta-log',
               example:
-                'A service catalog lists each SLO. = Un catalogo dei servizi elenca ogni SLO.',
+                'The service catalog in Backstage links each service to its SLOs, on-call schedule, runbooks, and Grafana dashboards. = Il catalogo dei servizi in Backstage lega ogni servizio ai suoi SLO, calendario on-call, runbook e dashboard Grafana.',
               context: 'tools',
               difficulty: 'advanced',
               tool: 'Backstage',
             },
             {
               english: 'Reliability Score',
-              italian: 'Punteggio di affidabilità',
+              italian: `Punteggio di affidabilita'`,
               pronunciation: '/rɪˌlaɪəˈbɪlɪti skɔːr/',
               phonetic: 'ri-lai-a-BI-li-ti SKOR',
-              example:
-                'A reliability score ranks services. = Un punteggio di affidabilità classifica i servizi.',
+              example: `A composite reliability score blends SLO attainment, MTTR, and toil hours into a single number for quarterly reviews. = Un punteggio di affidabilita' composito unisce raggiungimento SLO, MTTR e ore di toil in un singolo numero per le review trimestrali.`,
               context: 'tools',
               difficulty: 'advanced',
             },
@@ -10642,11 +10609,11 @@ export default {
             },
             {
               english: 'Pages Per Shift',
-              italian: 'Avvisi per turno',
+              italian: 'Pagine per turno',
               pronunciation: '/ˈpeɪdʒɪz pər ʃɪft/',
               phonetic: 'PEI-jiz per SHIFT',
               example:
-                'Aim for fewer than two pages per shift. = Mira a meno di due avvisi per turno.',
+                'Google publishes a target of two pages per shift maximum so on-call engineers can still recover sleep and focus on project work. = Google pubblica un target massimo di due pagine per turno cosi gli ingegneri reperibili possono ancora recuperare il sonno e concentrarsi sui progetti.',
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -10656,7 +10623,7 @@ export default {
               pronunciation: '/sliːp dɪsˈrʌpʃən/',
               phonetic: 'SLIP dis-RAP-scion',
               example:
-                'Sleep disruption is the worst on-call cost. = Il disturbo del sonno è il peggior costo della reperibilità.',
+                'Repeated sleep disruption from 3 AM pages typically costs the next workday in degraded focus, not just the awake minutes. = Un disturbo del sonno ripetuto da pagine delle 3 di notte costa tipicamente il giorno lavorativo seguente in concentrazione degradata, non solo i minuti svegli.',
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -10665,49 +10632,44 @@ export default {
               italian: 'Compenso',
               pronunciation: '/ˌkɒmpenˈseɪʃən/',
               phonetic: 'kom-pen-SEI-scion',
-              example:
-                'Pay extra compensation for night work. = Paga compenso extra per il lavoro notturno.',
+              example: `On-call compensation in the Italian CCNL combines a fixed monthly allowance with a per-callout fee when you actually get paged. = Il compenso di reperibilita' nel CCNL italiano unisce una indennita' mensile fissa con un compenso per chiamata quando vieni effettivamente paginato.`,
               context: 'sre',
               difficulty: 'advanced',
               note: 'In Italia, regolato dal contratto collettivo (CCNL).',
             },
             {
               english: 'Follow the Sun',
-              italian: 'On-call distribuito sui fusi orari (Follow-the-sun)',
+              italian: 'Follow the sun',
               pronunciation: '/ˈfɒloʊ ðə sʌn/',
               phonetic: 'FOL-lou da SAN',
-              example:
-                'Follow the sun spreads on-call across timezones. = Follow the sun distribuisce la reperibilità tra fusi orari.',
+              example: `A follow-the-sun rotation hands the pager from EMEA to APAC to AMER so nobody is on call during their local night. = Una rotazione follow-the-sun passa il pager da EMEA a APAC ad AMER cosi nessuno e' reperibile durante la propria notte locale.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'On-Call Buddy',
-              italian: 'Compagno di reperibilità',
+              italian: `Buddy di reperibilita'`,
               pronunciation: '/ɒn kɔːl ˈbʌdi/',
               phonetic: 'ON-KOL BA-di',
-              example:
-                'An on-call buddy helps newcomers. = Un compagno di reperibilità aiuta i nuovi.',
+              example: `Pairing a new hire with an on-call buddy for the first three rotations halves the time to confident incident response. = Affiancare un neoassunto a un buddy di reperibilita' per le prime tre rotazioni dimezza il tempo per una risposta agli incidenti sicura.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'Ramp-Up',
-              italian: 'Fase di onboarding e crescita (Ramp-up)',
+              italian: 'Ramp-up',
               pronunciation: '/ræmp ʌp/',
               phonetic: 'RAMP-AP',
-              example:
-                'Ramp-up training prepares engineers for on-call. = Il ramp-up prepara gli ingegneri alla reperibilità.',
+              example: `A formal ramp-up program walks the new SRE through shadow shifts, runbook reviews, and supervised pages before primary duty. = Un programma di ramp-up formale guida il nuovo SRE attraverso turni di affiancamento, review di runbook e pagine supervisionate prima della responsabilita' primaria.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'Shadow Shift',
-              italian: 'Turno in affiancamento',
+              italian: 'Turno di affiancamento',
               pronunciation: '/ˈʃædoʊ ʃɪft/',
               phonetic: 'SHA-dou SHIFT',
-              example:
-                'Shadow shifts let new on-call observe. = I turni in affiancamento fanno osservare il nuovo reperibile.',
+              example: `During a shadow shift the trainee sees every page and join every call while the primary on-call drives the response. = Durante un turno di affiancamento il trainee vede ogni pagina e si unisce a ogni call mentre il primario di reperibilita' guida la risposta.`,
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -10739,83 +10701,83 @@ export default {
           description: "I segnali d'oro e oltre",
           items: [
             {
-              english: 'Golden Signals',
-              italian: "Segnali d'oro",
+              english: 'Symptom-Driven Alert',
+              italian: 'Alert orientato ai sintomi',
               pronunciation: '/ˈɡoʊldən ˈsɪɡnəlz/',
               phonetic: 'GOL-den SIG-nelz',
-              example:
-                "Latency, traffic, errors, saturation are the golden signals. = Latenza, traffico, errori, saturazione sono i segnali d'oro.",
+              example: `A symptom-driven alert pages on user-visible error-rate, not on internal causes like queue depth that may not affect customers. = Un alert orientato ai sintomi paginariizza sull'error-rate visibile all'utente, non su cause interne come la profondita' di coda che potrebbero non impattare i clienti.`,
               context: 'sre',
               difficulty: 'advanced',
-              note: 'Definiti dal libro SRE di Google.',
+              note: `Rinominato per distinguerlo dall'item 'Golden Signals' del modulo metriche.`,
             },
             {
-              english: 'Latency',
-              italian: 'Latenza',
+              english: 'Latency Percentile',
+              italian: 'Percentile di latenza',
               pronunciation: '/ˈleɪtənsi/',
               phonetic: 'LEI-ten-si',
               example:
-                "Latency measures user-perceived speed. = La latenza misura la velocità percepita dall'utente.",
+                'Tracking a latency percentile at p99.9 surfaces the painful outliers a p50 dashboard happily smooths away, often hitting a single slow user hard. = Tracciare un percentile di latenza al p99.9 fa emergere gli outlier dolorosi che una dashboard p50 leviga allegramente, spesso colpendo duramente un singolo utente lento.',
               context: 'sre',
               difficulty: 'advanced',
+              note: `Rinominato per distinguerlo dall'item 'Latency' del modulo metriche base.`,
             },
             {
               english: 'Traffic',
               italian: 'Traffico',
               pronunciation: '/ˈtræfɪk/',
               phonetic: 'TRA-fik',
-              example:
-                'Traffic measures demand on the system. = Il traffico misura la domanda sul sistema.',
+              example: `Tracking request traffic per route exposes the long tail of low-volume endpoints that nobody owns until they break. = Tracciare il traffico di richieste per rotta espone la lunga coda di endpoint a basso volume che nessuno possiede finche' non si rompono.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
-              english: 'Errors',
-              italian: 'Errori',
+              english: 'Error Class',
+              italian: 'Classe di errore',
               pronunciation: '/ˈerərz/',
               phonetic: 'E-rerz',
               example:
-                'Errors track the rate of failed requests. = Gli errori tracciano il tasso di richieste fallite.',
+                'Splitting the error signal by class (4xx, 5xx, timeout, dependency) tells you whether to fix the client or the service. = Suddividere il segnale di errore per classe (4xx, 5xx, timeout, dipendenza) ti dice se aggiustare il client o il servizio.',
               context: 'sre',
               difficulty: 'advanced',
+              note: `Rinominato per distinguerlo dall'item 'Errors' del modulo metriche base.`,
             },
             {
-              english: 'Saturation',
-              italian: 'Saturazione',
+              english: 'Saturation Headroom',
+              italian: 'Margine di saturazione',
               pronunciation: '/ˌsætʃəˈreɪʃən/',
               phonetic: 'sa-cu-REI-scion',
-              example:
-                'Saturation marks how full the system is. = La saturazione segna quanto è pieno il sistema.',
+              example: `Tracking saturation headroom on the JVM heap warns weeks in advance that the next traffic season will OOM the pods. = Tracciare il margine di saturazione sull'heap JVM avvisa con settimane di anticipo che la prossima stagione di traffico mandera' in OOM i pod.`,
               context: 'sre',
               difficulty: 'advanced',
+              note: `Rinominato per distinguerlo dall'item 'Saturation' del modulo metriche base.`,
             },
             {
-              english: 'RED Method',
-              italian: 'Metodo RED',
+              english: 'Four Golden Signals',
+              italian: `Quattro segnali d'oro`,
               pronunciation: '/red ˈmeθəd/',
               phonetic: 'RED ME-tod',
-              example: 'RED method targets services. = Il metodo RED riguarda i servizi.',
+              example: `The four golden signals from the Google SRE book are latency, traffic, errors, and saturation, every service should expose all four. = I quattro segnali d'oro dal libro SRE di Google sono latenza, traffico, errori e saturazione, ogni servizio dovrebbe esporli tutti e quattro.`,
               context: 'sre',
               difficulty: 'advanced',
-              note: 'Rate, Errors, Duration.',
+              note: `Rinominato per distinguerlo dall'item 'RED Method' del modulo Kubernetes.`,
             },
             {
-              english: 'USE Method',
-              italian: 'Metodo USE',
+              english: 'Brendan Gregg',
+              italian: 'Brendan Gregg',
               pronunciation: '/juːz ˈmeθəd/',
               phonetic: 'IUZ ME-tod',
-              example: 'USE method targets resources. = Il metodo USE riguarda le risorse.',
+              example:
+                'The Netflix performance engineer Brendan Gregg defined the USE method as utilisation, saturation, and errors per resource. = Il performance engineer di Netflix Brendan Gregg ha definito il metodo USE come utilizzo, saturazione ed errori per risorsa.',
               context: 'sre',
               difficulty: 'advanced',
-              note: 'Utilization, Saturation, Errors.',
+              note: `Rinominato per distinguerlo dall'item 'USE Method' del modulo Kubernetes.`,
             },
             {
               english: 'Black-Box Monitoring',
               italian: 'Monitoraggio black-box',
               pronunciation: '/blæk bɒks ˈmɒnɪtərɪŋ/',
               phonetic: 'BLAK-BOKS MON-i-to-ring',
-              example:
-                "Black-box monitoring tests from outside. = Il monitoraggio black-box testa dall'esterno.",
+              example: `Our black-box monitoring hits the public login endpoint every minute from three regions so we see what real users would see. = Il nostro monitoraggio black-box colpisce l'endpoint di login pubblico ogni minuto da tre regioni cosi vediamo cosa vedrebbero gli utenti reali.`,
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -10824,18 +10786,17 @@ export default {
               italian: 'Monitoraggio white-box',
               pronunciation: '/waɪt bɒks ˈmɒnɪtərɪŋ/',
               phonetic: 'UAIT-BOKS MON-i-to-ring',
-              example:
-                'White-box monitoring inspects internal state. = Il monitoraggio white-box ispeziona lo stato interno.',
+              example: `Our white-box monitoring scrapes the in-process Prometheus endpoint so SREs see queue depth and GC pauses, not just external timings. = Il nostro monitoraggio white-box raccoglie dall'endpoint Prometheus in-processo cosi gli SRE vedono profondita' di coda e pause GC, non solo i tempi esterni.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'Customer SLI',
-              italian: 'SLI cliente',
+              italian: 'SLI customer-facing',
               pronunciation: '/ˈkʌstəmər es el aɪ/',
               phonetic: 'KAS-to-mer ES-EL-AI',
               example:
-                "Customer SLIs prioritise user experience. = Gli SLI cliente prioritizzano l'esperienza utente.",
+                'A customer-facing SLI measures end-to-end checkout success from the browser, capturing CDN, edge, and backend failures together. = Uno SLI customer-facing misura il successo end-to-end del checkout dal browser, catturando insieme i fallimenti di CDN, edge e backend.',
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -10851,8 +10812,7 @@ export default {
               italian: 'Ingegnere SRE',
               pronunciation: '/es ɑːr iː ˌendʒɪˈnɪər/',
               phonetic: 'ES-AR-I en-ji-NIR',
-              example:
-                'An SRE engineer codes 50% of the time. = Un ingegnere SRE codifica per il 50% del tempo.',
+              example: `A typical SRE engineer at a hyperscaler splits time between writing automation, reviewing capacity, and joining the on-call rotation. = Un tipico ingegnere SRE in un hyperscaler divide il tempo fra scrivere automazione, rivedere la capacita' e partecipare alla rotazione on-call.`,
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -10872,7 +10832,7 @@ export default {
               pronunciation: '/devˈɒps ˌendʒɪˈnɪər/',
               phonetic: 'DEV-OPS en-ji-NIR',
               example:
-                'DevOps engineers blur dev and ops. = Gli ingegneri DevOps sfumano dev e ops.',
+                'A DevOps engineer owns the CI/CD platform end to end and removes the wall between dev push and prod deploy. = Un ingegnere DevOps possiede la piattaforma CI/CD da capo a fondo e rimuove il muro fra dev push e deploy in prod.',
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -10882,27 +10842,25 @@ export default {
               pronunciation: '/ɪmˈbedɪd es ɑːr iː/',
               phonetic: 'em-BE-did ES-AR-I',
               example:
-                'Embedded SREs join product teams. = Gli SRE embedded si uniscono ai team prodotto.',
+                'An embedded SRE sits inside the payments team for two quarters, hardening SLOs and runbooks before rotating back to the platform. = Un SRE embedded siede nel team payments per due trimestri, irrobustendo SLO e runbook prima di tornare in piattaforma.',
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'Reliability Engineering',
-              italian: "Ingegneria dell'affidabilità",
+              italian: `Ingegneria dell'affidabilita'`,
               pronunciation: '/rɪˌlaɪəˈbɪlɪti ˌendʒɪˈnɪərɪŋ/',
               phonetic: 'ri-lai-a-BI-li-ti en-ji-NI-ring',
-              example:
-                "Reliability engineering treats reliability as a feature. = L'ingegneria dell'affidabilità tratta l'affidabilità come feature.",
+              example: `Mature reliability engineering treats uptime as a product feature with a roadmap, error budgets, and explicit reliability OKRs. = L'ingegneria dell'affidabilita' matura tratta l'uptime come una feature di prodotto con roadmap, error budget e OKR di affidabilita' espliciti.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'Tech Lead',
-              italian: 'Responsabile tecnico (Tech Lead)',
+              italian: 'Tech lead',
               pronunciation: '/tek liːd/',
               phonetic: 'TEK-LID',
-              example:
-                'A tech lead drives technical direction. = Un tech lead guida la direzione tecnica.',
+              example: `The tech lead drives architecture for the alerting platform, owns the migration roadmap, and mentors the two junior SREs. = Il tech lead guida l'architettura per la piattaforma di alerting, possiede la roadmap di migrazione e fa mentoring ai due SRE junior.`,
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -10922,29 +10880,29 @@ export default {
               pronunciation: '/ˈteknɪkəl ˈɪntərvjuː/',
               phonetic: 'TEK-ni-kol IN-ter-viu',
               example:
-                'SRE interviews include systems design. = I colloqui SRE includono il systems design.',
+                'A standard SRE technical interview combines a coding exercise, a Linux debugging scenario, and a systems design discussion. = Un colloquio tecnico SRE standard unisce un esercizio di coding, uno scenario di debug Linux e una discussione di systems design.',
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'On-Call Question',
-              italian: 'Domanda sulla reperibilità',
+              italian: `Domanda sulla reperibilita'`,
               pronunciation: '/ɒn kɔːl ˈkwestʃən/',
               phonetic: 'ON-KOL KUES-cion',
-              example:
-                'Always ask about on-call expectations. = Chiedi sempre delle aspettative di reperibilità.',
+              example: `Always ask an on-call question during interviews: rotation length, paging volume, and how the team treats sleep-disrupting pages. = Fai sempre una domanda sulla reperibilita' durante i colloqui: durata della rotazione, volume di paginazioni e come il team tratta le pagine che disturbano il sonno.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
-              english: 'Continuous Learning',
-              italian: 'Apprendimento continuo',
+              english: 'Conference Talk',
+              italian: 'Talk in conferenza',
               pronunciation: '/kənˈtɪnjuəs ˈlɜːrnɪŋ/',
               phonetic: 'kon-TI-nius LER-ning',
               example:
-                "Continuous learning is non-negotiable in SRE. = L'apprendimento continuo è non negoziabile in SRE.",
+                'Submitting a SREcon conference talk on your postmortem culture forces you to distil lessons learnt into a 30-minute story. = Proporre un talk a SREcon sulla tua cultura di postmortem ti costringe a distillare lezioni apprese in una storia di 30 minuti.',
               context: 'sre',
               difficulty: 'advanced',
+              note: `Rinominato per distinguerlo dall'item 'Continuous Learning' del modulo AIOps.`,
             },
           ],
         },
@@ -10969,7 +10927,7 @@ export default {
               pronunciation: '/riˈæktɪv steɪdʒ/',
               phonetic: 'ri-AK-tiv STEIJ',
               example:
-                'In the reactive stage you firefight. = Nella fase reattiva si spengono incendi.',
+                'Teams stuck in the reactive stage spend every week firefighting alerts and never get traction on the toil reduction backlog. = I team bloccati nella fase reattiva passano ogni settimana a spegnere alert e non guadagnano mai trazione sul backlog di riduzione del toil.',
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -10978,8 +10936,7 @@ export default {
               italian: 'Fase proattiva',
               pronunciation: '/proʊˈæktɪv steɪdʒ/',
               phonetic: 'pro-AK-tiv STEIJ',
-              example:
-                'A proactive stage prevents incidents. = Una fase proattiva previene gli incidenti.',
+              example: `In the proactive stage the team uses SLO trends and capacity forecasts to prevent the incidents the reactive stage would chase. = Nella fase proattiva il team usa trend SLO e previsioni di capacita' per prevenire gli incidenti che la fase reattiva inseguirebbe.`,
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -10988,28 +10945,25 @@ export default {
               italian: 'Fase strategica',
               pronunciation: '/strəˈtiːdʒɪk steɪdʒ/',
               phonetic: 'stra-TI-jik STEIJ',
-              example:
-                "Strategic SRE shapes product decisions. = L'SRE strategico plasma le decisioni di prodotto.",
+              example: `At the strategic stage SRE leadership shapes product roadmaps with reliability budgets and architecture review veto rights. = Alla fase strategica la leadership SRE plasma le roadmap di prodotto con budget di affidabilita' e diritti di veto sulle architecture review.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'Observability Maturity',
-              italian: 'Maturità di osservabilità',
+              italian: `Maturita' di osservabilita'`,
               pronunciation: '/əbˌzɜːrvəˈbɪlɪti məˈtjʊərɪti/',
               phonetic: 'ob-zer-va-BI-li-ti ma-TIU-ri-ti',
-              example:
-                'Observability maturity scales with cardinality. = La maturità di osservabilità scala con la cardinalità.',
+              example: `Higher observability maturity shows up as engineers debugging from traces and logs without paging an SRE for tribal context. = Una maturita' di osservabilita' superiore si vede quando gli ingegneri debuggano da trace e log senza chiamare un SRE per contesto tribale.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'Cultural Change',
-              italian: 'Cambio culturale',
+              italian: 'Cambiamento culturale',
               pronunciation: '/ˈkʌltʃərəl tʃeɪndʒ/',
               phonetic: 'KAL-cu-ral CIEINJ',
-              example:
-                "SRE adoption requires cultural change. = L'adozione di SRE richiede cambio culturale.",
+              example: `Cultural change is the slowest part of SRE adoption, since blameless postmortems clash with command-and-control habits. = Il cambiamento culturale e' la parte piu' lenta dell'adozione di SRE, poiche' i postmortem blameless cozzano con le abitudini di command-and-control.`,
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -11018,18 +10972,16 @@ export default {
               italian: 'Sponsor esecutivo',
               pronunciation: '/ɪɡˈzekjətɪv ˈspɒnsər/',
               phonetic: 'eg-ZE-kiu-tiv SPON-ser',
-              example:
-                'Executive sponsorship unlocks budget. = Lo sponsor esecutivo sblocca il budget.',
+              example: `An executive sponsor at VP level unblocks budget for the new on-call tooling and shields the team from competing priorities. = Uno sponsor esecutivo a livello VP sblocca il budget per il nuovo tooling on-call e protegge il team dalle priorita' concorrenti.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'Reliability KPI',
-              italian: 'KPI di affidabilità',
+              italian: `KPI di affidabilita'`,
               pronunciation: '/rɪˌlaɪəˈbɪlɪti keɪ piː aɪ/',
               phonetic: 'ri-lai-a-BI-li-ti KEI-PI-AI',
-              example:
-                'A reliability KPI ties SRE to business. = Un KPI di affidabilità lega SRE al business.',
+              example: `A reliability KPI like 'percent of services meeting their SLO' lets execs compare reliability across business units in one chart. = Un KPI di affidabilita' come 'percentuale di servizi che rispettano lo SLO' permette agli executive di confrontare l'affidabilita' fra business unit in un solo grafico.`,
               context: 'sre',
               difficulty: 'advanced',
             },
@@ -11038,18 +10990,16 @@ export default {
               italian: 'Revisione trimestrale',
               pronunciation: '/ˈkwɔːrtərli rɪˈvjuː/',
               phonetic: 'KUOR-ter-li ri-VIU',
-              example:
-                'A quarterly review checks SLO trends. = Una revisione trimestrale verifica i trend SLO.',
+              example: `The quarterly reliability review pulls SLO attainment, top toil drivers, and the next quarter's roadmap into one leadership meeting. = La revisione trimestrale di affidabilita' raccoglie raggiungimento SLO, principali driver di toil e roadmap del trimestre successivo in un'unica riunione con la leadership.`,
               context: 'sre',
               difficulty: 'advanced',
             },
             {
               english: 'Reliability Roadmap',
-              italian: 'Roadmap di affidabilità',
+              italian: `Roadmap di affidabilita'`,
               pronunciation: '/rɪˌlaɪəˈbɪlɪti ˈroʊdmæp/',
               phonetic: 'ri-lai-a-BI-li-ti ROUD-map',
-              example:
-                'A reliability roadmap aligns the team. = Una roadmap di affidabilità allinea il team.',
+              example: `A 12-month reliability roadmap sequences SLO rollouts, error budget policy work, and on-call ergonomics into themed quarters. = Una roadmap di affidabilita' a 12 mesi sequenzia rollout SLO, lavori sulla error budget policy ed ergonomia on-call in trimestri tematici.`,
               context: 'sre',
               difficulty: 'advanced',
             },
