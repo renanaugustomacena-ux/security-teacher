@@ -26,8 +26,10 @@
 import { ttsService } from '../services/TTSService.js';
 import { sfxService } from '../services/SfxService.js';
 import { analyticsService } from '../services/AnalyticsService.js';
-// eslint-disable-next-line no-unused-vars
 import { masteryService } from '../services/MasteryService.js';
+import { questService } from '../services/QuestService.js';
+import { currencyService } from '../services/CurrencyService.js';
+import { hintService } from '../services/HintService.js';
 import { practiceHUD } from '../PracticeHUD.js';
 import { nearMiss } from '../utils/StringDistance.js';
 import { TopicVelocita } from './TopicVelocita.js';
@@ -1664,6 +1666,7 @@ export class TopicPracticeManager {
       this.sessionXP += xpEarned;
       this.progressManager.addXP(xpEarned);
       this.progressManager.incrementTopicWord(this.currentTopicId);
+      currencyService.earn(1, 'practice_correct');
     } else {
       this.consecutiveCorrect = 0;
     }
@@ -1698,6 +1701,28 @@ export class TopicPracticeManager {
       expectedAnswer: expectedAnswer || '',
       streakAtTime: this.consecutiveCorrect,
     });
+  }
+
+  _updateMasteryBatch() {
+    const seen = new Set();
+    for (const q of this.questions) {
+      const english = q.english || q.item?.english || '';
+      if (!english) continue;
+      const context = q.context || q.item?.context || 'general';
+      const itemKey = `${this.currentTopicId}:${this.currentLevel}:${context}:${english}`;
+      if (seen.has(itemKey)) continue;
+      seen.add(itemKey);
+      const a = analyticsService.getItemAnalytics(itemKey);
+      if (a) {
+        masteryService.updateMastery(itemKey, a);
+      }
+    }
+  }
+
+  _getHints() {
+    if (!this.questions || this.currentQuestionIndex >= this.questions.length) return [];
+    const q = this.questions[this.currentQuestionIndex];
+    return hintService.generateHints(q, this.currentMode);
   }
 
   _hapticTap(ms) {
@@ -1836,6 +1861,21 @@ export class TopicPracticeManager {
   completePractice() {
     // Track practice session completion for achievements
     this.progressManager?.recordPracticeSession?.(this.score, this.questions.length);
+
+    // Quest metrics
+    questService.recordMetric('practiceCount', 1);
+    questService.recordMetric('weekXP', this.sessionXP);
+    questService.recordMetric('sessionXP', this.sessionXP);
+    questService.recordMetric('maxStreak', this.maxStreak);
+    if (this.score === this.questions.length && this.questions.length > 0) {
+      questService.recordMetric('perfectScores', 1);
+      currencyService.earn(10, 'perfect_session');
+    }
+    if (this.currentMode === 'terminal') questService.recordMetric('terminalCount', 1);
+    if (this.currentMode === 'codelab') questService.recordMetric('codelabCount', 1);
+
+    // Batch mastery update for all items practiced
+    this._updateMasteryBatch();
 
     const container = document.getElementById('topic-practice-content');
     if (!container) return;
